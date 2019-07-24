@@ -313,7 +313,7 @@ namespace DashworksTestAutomation.Helpers
 
         public static void DeleteTask(TaskPropertiesDto task)
         {
-            DeleteTaskFromDb(task.GetId());
+            DeleteTaskFromDb(task.Id);
         }
 
         private static void DeleteTaskFromDb(string taskId)
@@ -340,6 +340,30 @@ namespace DashworksTestAutomation.Helpers
             DatabaseHelper.ExecuteQuery($"delete from [aspnetdb].[dbo].[aspnet_UsersInRoles] where [UserId] = '{user.Id}'");
             DatabaseHelper.ExecuteQuery($"delete from [aspnetdb].[dbo].[aspnet_Membership] where [UserId] = '{user.Id}'");
             DatabaseHelper.ExecuteQuery($"delete from [aspnetdb].[dbo].[aspnet_Users] where [UserName] = '{user.Username}'");
+        }
+
+        #endregion
+
+        #region ReauestType
+
+        public static string GetRequestTypeId(string name, string projectId)
+        {
+            var query =
+                $"select rtl.[RequestTypeId] from [PM].[dbo].[RequestTypeLanguage] as rtl join[PM].[dbo].[RequestTypes] as rt on rtl.RequestTypeId = rt.RequestTypeId where rtl.RequestType = '{name}' and rt.ProjectId = {projectId}";
+            var userId = DatabaseHelper.ExecuteReader(query, 0)[0];
+            return userId;
+        }
+
+        #endregion
+
+        #region Slot
+
+        public static string GetSlotId(string name, string projectId)
+        {
+            var query =
+                $"select [SlotId] from [PM].[dbo].[CapacitySlots] where [SlotName] = '{name}' and [ProjectId] = {projectId}";
+            var userId = DatabaseHelper.ExecuteReader(query, 0)[0];
+            return userId;
         }
 
         #endregion

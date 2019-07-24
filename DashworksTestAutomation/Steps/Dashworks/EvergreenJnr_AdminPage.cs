@@ -1800,7 +1800,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             if (!_tasks.Value.Any())
                 throw new Exception("No tasks were created!");
 
-            Assert.That(GetTaskCapacityEnabledFlag(_tasks.Value.Last().GetId()),
+            Assert.That(GetTaskCapacityEnabledFlag(_tasks.Value.Last().Id),
                 Is.EqualTo(flagState), $"Flag state is in different state");
         }
 
@@ -2535,6 +2535,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var createReadiness = _driver.NowAt<CreateReadinessPage>();
             createReadiness.ColourDropbox.Click();
+        }
+
+        [Then(@"User sees following options for Colour Template selector on Create Readiness page:")]
+        public void WhenUserSeesFollowingOptionsForColourTemplateSelectorOnCreateReadinessPage(Table items)
+        {
+            var createReadiness = _driver.NowAt<CreateReadinessPage>();
+
+            Assert.AreEqual(items.Rows.SelectMany(row => row.Values).ToList(),
+                createReadiness.ColourPicker.Select(x => x.Text).ToList(), "Incorrect options in lists dropdown");
         }
 
         [Then(@"List of available colours displayed to user on Edit Readiness")]

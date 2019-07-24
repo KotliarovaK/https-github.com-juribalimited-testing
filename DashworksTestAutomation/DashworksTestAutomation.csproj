@@ -196,6 +196,7 @@
     <Compile Include="Extensions\WebDriverExtensions.cs" />
     <Compile Include="Extensions\WebElementExtensions.cs" />
     <Compile Include="Helpers\BaseFilter.cs" />
+    <Compile Include="Helpers\PreferenceLanguageConverter.cs" />
     <Compile Include="Helpers\ColorsConvertor.cs" />
     <Compile Include="Helpers\ColorWidgetConvertor.cs" />
     <Compile Include="Helpers\ColumnNameToUrlConvertor.cs" />
@@ -347,7 +348,10 @@
     <Compile Include="Steps\Dashworks\AdminPage\Rings\AfterScenario\RemoveRingsAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Rings\AfterScenario\SetDefaultRingAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Rings\BeforeScenario\SaveDefaultRingBeforeScenario.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\Slots\AfterScenario\RemoveSlotAfterScenario.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\Slots\Api\CreateSlotViaApi.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Slots\CreateSlot.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\Slots\NavigationSlots.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Teams\AfterScenario\RemoveTeamAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Teams\AfterScenario\SetDefaultTeamAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Teams\Api\CreateTeamViaApi.cs" />
