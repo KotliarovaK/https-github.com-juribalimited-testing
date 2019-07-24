@@ -997,6 +997,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS16903")]
         [NUnit.Framework.CategoryAttribute("DAS16907")]
         [NUnit.Framework.CategoryAttribute("DAS16857")]
+        [NUnit.Framework.CategoryAttribute("DAS17005")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "001BAQXT6JWFPI", "Devices Evergreen Capacity Project", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "Username", "ACG370114", "User Evergreen Capacity Project", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "7zip", "Computer Scheduled Test (Jo)", null)]
@@ -1040,7 +1041,8 @@ this.FeatureBackground();
                     "DAS16668",
                     "DAS16903",
                     "DAS16907",
-                    "DAS16857"};
+                    "DAS16857",
+                    "DAS17005"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -1177,6 +1179,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS16857")]
+        [NUnit.Framework.CategoryAttribute("DAS16928")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "001BAQXT6JWFPI", "Overall Readiness", "GREY", "Devices Evergreen Capacity Project", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "Username", "ACG370114", "Readiness", "GREY", "User Evergreen Capacity Project", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "7zip", "Overall Readiness", "GREY", "Devices Evergreen Capacity Project", null)]
@@ -1214,7 +1217,8 @@ this.FeatureBackground();
                     "AllLists",
                     "EvergreenJnr_ItemDetails",
                     "ItemDetailsDisplay",
-                    "DAS16857"};
+                    "DAS16857",
+                    "DAS16928"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
