@@ -175,11 +175,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheE
 	And User navigate to Evergreen link
 	And User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
-	
 	When User navigates to "ProjectForDAS13812" project details
 	Then Project "ProjectForDAS13812" is displayed to user
 	When User clicks "Capacity" tab
-	
 	And User selects "Slots" tab on the Project details page
 	And User enters "Slot 2" text in the Search field for "Capacity Slot" column
 	And User clicks content from "Capacity Slot" column

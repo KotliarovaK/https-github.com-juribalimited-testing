@@ -412,20 +412,17 @@ this.FeatureBackground();
 #line 74
  testRunner.And("User selects \"Slots\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 75
- testRunner.Then("Success message is displayed and contains \"Your capacity slot has been created\" t" +
-                    "ext", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 76
  testRunner.When("User opens settings for \"Slot 14478\" row", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 77
+#line 76
  testRunner.And("User selects \"Duplicate\" option from settings menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 78
+#line 77
  testRunner.Then("Success message is displayed and contains \"Your capacity slot has been created, c" +
                     "lick here to view the Slot 14478 (copy) slot\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 79
+#line 78
  testRunner.When("User clicks newly created object link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 80
+#line 79
  testRunner.Then("\"Slot 14478 (copy)\" content is displayed in \"Slot Name\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 81
+#line 80
  testRunner.And("\"14478\" content is displayed in \"Display Name\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -481,40 +478,40 @@ this.FeatureBackground();
                         "DAS13980",
                         "DAS13981",
                         "DAS17458"});
-#line 84
+#line 83
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 85
+#line 84
  testRunner.When("User navigates to \"Windows 7 Migration (Computer Scheduled Project)\" project deta" +
                     "ils", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 86
+#line 85
  testRunner.And("User clicks \"Capacity\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 87
+#line 86
  testRunner.And("User selects \"Slots\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 88
+#line 87
  testRunner.And("User clicks String Filter button for \"Paths\" column on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 89
+#line 88
  testRunner.When("User selects \"No Paths\" checkbox from String Filter on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 90
+#line 89
  testRunner.When("User clicks Reset Filters button on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 91
+#line 90
  testRunner.And("User opens settings for \"User Slot\" row", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 92
+#line 91
  testRunner.And("User selects \"Move to position\" option from settings menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 93
+#line 92
  testRunner.And("User remembers the Move to position dialog size", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 94
+#line 93
  testRunner.And("User enters \"1.2\" value in Move to position dialog", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 95
+#line 94
  testRunner.Then("User checks that Move to position dialog has the same size", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 96
+#line 95
  testRunner.And("Button \"Move\" in Move to position dialog is displayed disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 97
+#line 96
  testRunner.And("Alert message is displayed and contains \"Enter integer value between 1 and 32767\"" +
                     " text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 98
+#line 97
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -568,7 +565,7 @@ this.FeatureBackground();
                         "Slots",
                         "DAS13791",
                         "Cleanup"});
-#line 101
+#line 100
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -584,7 +581,7 @@ this.FeatureBackground();
                         "All Devices",
                         "None",
                         "Standalone Project"});
-#line 102
+#line 101
  testRunner.When("Project created via API and opened", ((string)(null)), table9, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
@@ -607,11 +604,11 @@ this.FeatureBackground();
                         "Slot 10003",
                         "10003",
                         "Teams and Paths"});
-#line 105
+#line 104
  testRunner.And("User creates new Slot via Api", ((string)(null)), table10, "And ");
-#line 110
+#line 109
  testRunner.And("User clicks \"Capacity\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 111
+#line 110
  testRunner.And("User selects \"Slots\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
@@ -622,9 +619,9 @@ this.FeatureBackground();
                         "Slot 10002"});
             table11.AddRow(new string[] {
                         "Slot 10003"});
-#line 112
+#line 111
  testRunner.Then("User sees next Slots on the Capacity Slots page:", ((string)(null)), table11, "Then ");
-#line 117
+#line 116
  testRunner.When("User move \"Slot 10001\" item to \"32767\" position on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
@@ -635,9 +632,9 @@ this.FeatureBackground();
                         "Slot 10003"});
             table12.AddRow(new string[] {
                         "Slot 10001"});
-#line 118
+#line 117
  testRunner.Then("User sees next Slots on the Capacity Slots page:", ((string)(null)), table12, "Then ");
-#line 123
+#line 122
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();

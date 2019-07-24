@@ -72,7 +72,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCopySuffixDisplayingForNames
 	| ProjectForDAS14478 | Slot 14478 | 14478       | Teams and Paths |
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	Then Success message is displayed and contains "Your capacity slot has been created" text
 	When User opens settings for "Slot 14478" row
 	And User selects "Duplicate" option from settings menu
 	Then Success message is displayed and contains "Your capacity slot has been created, click here to view the Slot 14478 (copy) slot" text

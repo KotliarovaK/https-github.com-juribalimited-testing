@@ -84,7 +84,6 @@ namespace DashworksTestAutomation.Tests.Senior.Senior_CreatingProjects
         [NUnit.Framework.CategoryAttribute("ProjectsOnSenior")]
         [NUnit.Framework.CategoryAttribute("Projects_Administration")]
         [NUnit.Framework.CategoryAttribute("ComputerScheduledProject")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void Projects_CreateComputerScheduledProject()
         {
             System.Exception lastException = null;
@@ -116,8 +115,7 @@ namespace DashworksTestAutomation.Tests.Senior.Senior_CreatingProjects
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Projects_CreateComputerScheduledProject", null, new string[] {
                         "ProjectsOnSenior",
                         "Projects_Administration",
-                        "ComputerScheduledProject",
-                        "Cleanup"});
+                        "ComputerScheduledProject"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
