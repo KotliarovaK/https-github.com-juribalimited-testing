@@ -10,11 +10,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotAppearsAfterDuplicateActionWith
 	When Project created via API and opened
 	| ProjectName        | Scope       | ProjectTemplate | Mode               |
 	| ProjectForDAS13979 | All Devices | None            | Standalone Project |
+	And User creates new Slot via Api
+	| Project            | SlotName   | DisplayName | Tasks | CapacityType    | Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday |
+	| ProjectForDAS13979 | Slot 13979 | 13979       |       | Teams and Paths | 0      | 1       | 2         | 3        | 4      | 5        | 6      |
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User creates new Slot
-	| SlotName   | DisplayName | Tasks | CapacityType    | Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday |
-	| Slot 13979 | 13979       |       | Teams and Paths | 0      | 1       | 2         | 3        | 4      | 5        | 6      |
 	And User opens settings for "Slot 13979" row
 	And User selects "Duplicate" option from settings menu
 	Then Success message is displayed and contains "Your capacity slot has been created, click here to view the Slot 13979 (copy) slot" text
@@ -67,11 +67,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCopySuffixDisplayingForNames
 	When Project created via API and opened
 	| ProjectName        | Scope       | ProjectTemplate | Mode               |
 	| ProjectForDAS14478 | All Devices | None            | Standalone Project |
+	And User creates new Slot via Api
+	| Project            | SlotName   | DisplayName | CapacityType    |
+	| ProjectForDAS14478 | Slot 14478 | 14478       | Teams and Paths |
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User creates new Slot
-	| SlotName   | DisplayName | CapacityType    |
-	| Slot 14478 | 14478       | Teams and Paths |
 	Then Success message is displayed and contains "Your capacity slot has been created" text
 	When User opens settings for "Slot 14478" row
 	And User selects "Duplicate" option from settings menu
@@ -102,13 +102,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotIsMovedToLastPositionIfValueEntere
 	When Project created via API and opened
 	| ProjectName        | Scope       | ProjectTemplate | Mode               |
 	| ProjectForDAS13791 | All Devices | None            | Standalone Project |
+	And User creates new Slot via Api
+	| Project            | SlotName   | DisplayName | CapacityType    |
+	| ProjectForDAS13791 | Slot 10001 | 10001       | Teams and Paths |
+	| ProjectForDAS13791 | Slot 10002 | 10002       | Teams and Paths |
+	| ProjectForDAS13791 | Slot 10003 | 10003       | Teams and Paths |
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User creates new Slot
-	| SlotName   | DisplayName | CapacityType    |
-	| Slot 10001 | 10001       | Teams and Paths |
-	| Slot 10002 | 10002       | Teams and Paths |
-	| Slot 10003 | 10003       | Teams and Paths |
 	Then User sees next Slots on the Capacity Slots page:
 	| slots      |
 	| Slot 10001 |

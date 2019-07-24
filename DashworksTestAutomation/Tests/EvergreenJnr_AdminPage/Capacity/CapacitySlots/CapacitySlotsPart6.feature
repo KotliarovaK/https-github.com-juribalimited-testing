@@ -10,13 +10,13 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSortingWorkCorrectlyForRequestTypeTea
 	When Project created via API and opened
 	| ProjectName        | Scope       | ProjectTemplate | Mode               |
 	| ProjectForDAS13792 | All Devices | None            | Standalone Project |
+	And User creates new Slot via Api
+	| Project            | SlotName | DisplayName | CapacityUnits | CapacityType    |
+	| ProjectForDAS13792 | Slot 1   | Slot 1      | Unassigned    |                 |
+	| ProjectForDAS13792 | Slot 2   | Slot 2      |               | Teams and Paths |
+	| ProjectForDAS13792 | Slot 3   | Slot 3      |               |                 |
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User creates new Slot
-	| SlotName | DisplayName | CapacityUnits | CapacityType    |
-	| Slot 1   | Slot 1      | Unassigned    |                 |
-	| Slot 2   | Slot 2      |               | Teams and Paths |
-	| Slot 3   | Slot 3      |               |                 |
 	When User click on 'Capacity Units' column header
 	Then data in table is sorted by "Capacity Units" column in ascending order on the Admin page
 	When User click on 'Capacity Units' column header
@@ -43,15 +43,15 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSortingWorkCorrectlyForRequestTypeTea
 	Then "All Capacity Units,No units" is displayed in the dropdown filter for "Capacity Units" column
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13811
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13811 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatListOfSelectedItemsIsTruncatedForRequestTypeTeamsAndCapacityUnitsColumnOnCapacitySlotsGrid
 	When User navigates to "Windows 7 Migration (Computer Scheduled Project)" project details
+	And User creates new Slot via Api
+	| Project                                          | SlotName    | DisplayName | CapacityType    | Paths                                                  | Teams                        | CapacityUnits                              |
+	| Windows 7 Migration (Computer Scheduled Project) | DAS_13811_1 | 13811_1     | Teams and Paths | Computer: PC Rebuild‡Computer: Workstation Replacement | Administrative Team‡Admin IT |                                            |
+	| Windows 7 Migration (Computer Scheduled Project) | DAS_13811_2 | 13811_2     | Capacity Units  |                                                        |                              | Unassigned‡Capacity Unit 1‡Capacity Unit 2 |
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User creates new Slot
-	| SlotName    | DisplayName | CapacityType    | Paths                                                  | Teams                        | CapacityUnits                              |
-	| DAS_13811_1 | 13811_1     | Teams and Paths | Computer: PC Rebuild‡Computer: Workstation Replacement | Administrative Team‡Admin IT |                                            |
-	| DAS_13811_2 | 13811_2     | Capacity Units  |                                                        |                              | Unassigned‡Capacity Unit 1‡Capacity Unit 2 |
 	Then User sees following text in cell truncated with ellipsis:
 	| cellText                                               |
 	| Computer: PC Rebuild,Computer: Workstation Replacement |
@@ -71,15 +71,15 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatInSlotsColumnOnCapacityUnitsPageTheCo
 	When Project created via API and opened
 	| ProjectName        | Scope       | ProjectTemplate | Mode               |
 	| ProjectForDAS13526 | All Devices | None            | Standalone Project |
-	And User clicks "Capacity" tab
 	And User creates new Capacity Unit via api
 	| Name   | Description | IsDefault | Project            |
 	| Unit 1 |             | false     | ProjectForDAS13526 |
 	| Unit 2 |             | false     | ProjectForDAS13526 |
+	And User creates new Slot via Api
+	| Project            | SlotName | DisplayName |
+	| ProjectForDAS13526 | Slot 1   | Slot 1      |
+	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User creates new Slot
-	| SlotName | DisplayName |
-	| Slot 1   | Slot 1      |
 	And User selects "Units" tab on the Project details page
 	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
 	Then "1" content is displayed in "Slots" column
@@ -99,7 +99,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatInSlotsColumnOnCapacityUnitsPageTheCo
 	When User enters "Unit 2" text in the Search field for "Capacity Unit" column
 	Then "1" content is displayed in "Slots" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Senior_Projects @DAS13812 @DAS13676 @Cleanup @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Senior_Projects @DAS13812 @DAS13676 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheEditCapacitySlotScreenIfAnAllocatedTaskHasSinceBeenChanged
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -143,11 +143,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheE
 	When User navigate to Evergreen link
 	And User clicks "Admin" on the left-hand menu
 	When User navigates to "ProjectForDAS13812" project details
+	And User creates new Slot via Api
+	| Project            | SlotName | DisplayName | Tasks                                                                   |
+	| ProjectForDAS13812 | Slot 1   | Slot 1      | Stage13812 \ 1Task13812‡Stage13812 \ 2Task13812‡Stage13812 \ 3Task13812 |
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User creates new Slot
-	| SlotName | DisplayName | Tasks                                                                   |
-	| Slot 1   | Slot 1      | Stage13812 \ 1Task13812‡Stage13812 \ 2Task13812‡Stage13812 \ 3Task13812 |
 	And User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "ProjectForDAS13812" Project

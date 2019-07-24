@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Senior_Projects @DAS13152 @Cleanup @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Senior_Projects @DAS13152 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForCapacityUnitsType
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -34,11 +34,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForCa
 	And User navigate to Evergreen link
 	And User clicks "Admin" on the left-hand menu
 	And User navigates to "ProjectForDAS13152" project details
+	And User creates new Slot via Api
+	| Project            | SlotName  | DisplayName | CapacityType   | Tasks                  | CapacityUnits |
+	| ProjectForDAS13152 | Slot13152 | 13152       | Capacity Units | Stage13152 \ Task13152 | Unassigned    |
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User creates new Slot
-	| SlotName  | DisplayName | CapacityType   | Tasks                  | CapacityUnits |
-	| Slot13152 | 13152       | Capacity Units | Stage13152 \ Task13152 | Unassigned    |
 	When User clicks content from "Capacity Slot" column
 	Then "Stage13152 \ Task13152" value is displayed in the "Tasks" dropdown
 	And "Unassigned" value is displayed in the "Capacity Units" dropdown
@@ -52,7 +52,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForCa
 	Then "All Capacity Units" content is displayed in "Capacity Units" field
 	And "Application" text value is displayed in the "Object Type" dropdown
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Senior_Projects @DAS13152 @Cleanup @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Senior_Projects @DAS13152 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTeamsAndRequestTypes
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user

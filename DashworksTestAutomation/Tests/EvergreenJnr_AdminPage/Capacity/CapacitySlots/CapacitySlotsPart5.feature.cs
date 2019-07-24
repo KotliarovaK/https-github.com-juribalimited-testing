@@ -150,12 +150,9 @@ this.FeatureBackground();
                         "Standalone Project"});
 #line 10
  testRunner.When("Project created via API and opened", ((string)(null)), table1, "When ");
-#line 13
- testRunner.And("User clicks \"Capacity\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 14
- testRunner.And("User selects \"Slots\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Project",
                         "SlotName",
                         "DisplayName",
                         "Tasks",
@@ -168,6 +165,7 @@ this.FeatureBackground();
                         "Saturday",
                         "Sunday"});
             table2.AddRow(new string[] {
+                        "ProjectForDAS13979",
                         "Slot 13979",
                         "13979",
                         "",
@@ -179,8 +177,12 @@ this.FeatureBackground();
                         "4",
                         "5",
                         "6"});
-#line 15
- testRunner.And("User creates new Slot", ((string)(null)), table2, "And ");
+#line 13
+ testRunner.And("User creates new Slot via Api", ((string)(null)), table2, "And ");
+#line 16
+ testRunner.And("User clicks \"Capacity\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 17
+ testRunner.And("User selects \"Slots\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 18
  testRunner.And("User opens settings for \"Slot 13979\" row", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 19
@@ -392,21 +394,23 @@ this.FeatureBackground();
                         "Standalone Project"});
 #line 67
  testRunner.When("Project created via API and opened", ((string)(null)), table7, "When ");
-#line 70
- testRunner.And("User clicks \"Capacity\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 71
- testRunner.And("User selects \"Slots\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Project",
                         "SlotName",
                         "DisplayName",
                         "CapacityType"});
             table8.AddRow(new string[] {
+                        "ProjectForDAS14478",
                         "Slot 14478",
                         "14478",
                         "Teams and Paths"});
-#line 72
- testRunner.And("User creates new Slot", ((string)(null)), table8, "And ");
+#line 70
+ testRunner.And("User creates new Slot via Api", ((string)(null)), table8, "And ");
+#line 73
+ testRunner.And("User clicks \"Capacity\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 74
+ testRunner.And("User selects \"Slots\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 75
  testRunner.Then("Success message is displayed and contains \"Your capacity slot has been created\" t" +
                     "ext", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -582,29 +586,33 @@ this.FeatureBackground();
                         "Standalone Project"});
 #line 102
  testRunner.When("Project created via API and opened", ((string)(null)), table9, "When ");
-#line 105
- testRunner.And("User clicks \"Capacity\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 106
- testRunner.And("User selects \"Slots\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Project",
                         "SlotName",
                         "DisplayName",
                         "CapacityType"});
             table10.AddRow(new string[] {
+                        "ProjectForDAS13791",
                         "Slot 10001",
                         "10001",
                         "Teams and Paths"});
             table10.AddRow(new string[] {
+                        "ProjectForDAS13791",
                         "Slot 10002",
                         "10002",
                         "Teams and Paths"});
             table10.AddRow(new string[] {
+                        "ProjectForDAS13791",
                         "Slot 10003",
                         "10003",
                         "Teams and Paths"});
-#line 107
- testRunner.And("User creates new Slot", ((string)(null)), table10, "And ");
+#line 105
+ testRunner.And("User creates new Slot via Api", ((string)(null)), table10, "And ");
+#line 110
+ testRunner.And("User clicks \"Capacity\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 111
+ testRunner.And("User selects \"Slots\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "slots"});

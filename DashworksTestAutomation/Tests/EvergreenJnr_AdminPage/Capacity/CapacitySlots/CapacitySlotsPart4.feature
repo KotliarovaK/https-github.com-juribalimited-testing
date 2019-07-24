@@ -10,13 +10,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotIsSuccessfullyCreatedUsingExist
 	When Project created via API and opened
 	| ProjectName             | Scope       | ProjectTemplate | Mode               |
 	| 13382ProjectForCapacity | All Devices | None            | Standalone Project |
+	And User creates new Slot via Api
+	| Project                 | SlotName  | DisplayName |
+	| 13382ProjectForCapacity | Slot13147 | Name13147   |
+	| 13382ProjectForCapacity | NewName   | Name1       |
+	| 13382ProjectForCapacity | Name1     | Name1       |
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User creates new Slot
-	| SlotName  | DisplayName |
-	| Slot13147 | Name13147   |
-	| NewName   | Name1       |
-	| Name1     | Name1       |
 	When User have opened Column Settings for "Capacity Slot" column
 	And User clicks Column button on the Column Settings panel
 	Then Column Settings was opened
@@ -37,11 +37,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlyLanguageIsDisplayedForSlotsA
 	And User clicks "Details" tab
 	And User clicks the "ADD LANGUAGE" Action button
 	And User selects "Dutch" language on the Project details page
-	And User clicks "Capacity" tab
-	And User selects "Slots" tab on the Project details page
-	And User creates new Slot
-	| SlotName       | DisplayName |
-	| ChecksLanguage | DAS13955    |
+	And User creates new Slot via Api
+	| Project             | SlotName       | DisplayName |
+	| ChecksLanguage13955 | ChecksLanguage | DAS13955    |
 	And User clicks "Capacity" tab
 	And User clicks "Details" tab
 	And User opens menu for selected language
@@ -73,10 +71,10 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlyLanguageIsDisplayedForSlotsA
 	When User clicks "REMOVE" button in the warning message on Admin page
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User creates new Slot
-	| SlotName         | DisplayName |
-	| ChecksLanguage 2 | DAS13955    |
-	And User clicks newly created object link
+	And User creates new Slot via Api
+	| Project             | SlotName         | DisplayName |
+	| ChecksLanguage13955 | ChecksLanguage 2 | DAS13955    |
+	And User navigates to newly created Slot
 	Then See Translations link on the Capacity Slot page is not displayed
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13661 @Cleanup
@@ -84,25 +82,24 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCreatedSlotWithSelectedTypeTeamsAndRe
 	When Project created via API and opened
 	| ProjectName        | Scope       | ProjectTemplate | Mode               |
 	| ProjectForDAS14103 | All Devices | None            | Standalone Project |
+	And User creates new Slot via Api
+	| Project            | SlotName                        | DisplayName                     | CapacityType    |
+	| ProjectForDAS14103 | capacity type = Teams and Paths | capacity type = Teams and Paths | Teams and Paths |
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User creates new Slot
-	| SlotName                        | DisplayName                     | CapacityType    |
-	| capacity type = Teams and Paths | capacity type = Teams and Paths | Teams and Paths |
-	Then Success message is displayed and contains "Your capacity slot has been created" text
-	And "" content is displayed in "Capacity Units" column
+	Then "" content is displayed in "Capacity Units" column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13417 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatNoUnitsOptionsWasAddedToCapacityUnitsFilter
 	When Project created via API and opened
 	| ProjectName        | Scope       | ProjectTemplate | Mode               |
 	| ProjectForDAS13417 | All Devices | None            | Standalone Project |
+	And User creates new Slot via Api
+	| Project            | SlotName                        | DisplayName                     | CapacityType    |
+	| ProjectForDAS13417 | capacity type = Teams and Paths | capacity type = Teams and Paths | Teams and Paths |
+	| ProjectForDAS13417 | capacity type = Capacity Units  | capacity type = Capacity Units  | Capacity Units  |
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User creates new Slot
-	| SlotName                        | DisplayName                     | CapacityType    |
-	| capacity type = Teams and Paths | capacity type = Teams and Paths | Teams and Paths |
-	| capacity type = Capacity Units  | capacity type = Capacity Units  | Capacity Units  |
 	When User clicks String Filter button for "Capacity Units" column on the Admin page
 	And User selects "All Capacity Units" checkbox from String Filter with item list on the Admin page
 	Then Rows counter shows "1" of "2" rows

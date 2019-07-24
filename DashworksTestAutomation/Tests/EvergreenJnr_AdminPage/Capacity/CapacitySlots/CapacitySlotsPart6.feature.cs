@@ -150,33 +150,37 @@ this.FeatureBackground();
                         "Standalone Project"});
 #line 10
  testRunner.When("Project created via API and opened", ((string)(null)), table1, "When ");
-#line 13
- testRunner.And("User clicks \"Capacity\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 14
- testRunner.And("User selects \"Slots\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Project",
                         "SlotName",
                         "DisplayName",
                         "CapacityUnits",
                         "CapacityType"});
             table2.AddRow(new string[] {
+                        "ProjectForDAS13792",
                         "Slot 1",
                         "Slot 1",
                         "Unassigned",
                         ""});
             table2.AddRow(new string[] {
+                        "ProjectForDAS13792",
                         "Slot 2",
                         "Slot 2",
                         "",
                         "Teams and Paths"});
             table2.AddRow(new string[] {
+                        "ProjectForDAS13792",
                         "Slot 3",
                         "Slot 3",
                         "",
                         ""});
-#line 15
- testRunner.And("User creates new Slot", ((string)(null)), table2, "And ");
+#line 13
+ testRunner.And("User creates new Slot via Api", ((string)(null)), table2, "And ");
+#line 18
+ testRunner.And("User clicks \"Capacity\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 19
+ testRunner.And("User selects \"Slots\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 20
  testRunner.When("User click on \'Capacity Units\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 21
@@ -247,6 +251,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Capacity")]
         [NUnit.Framework.CategoryAttribute("Slots")]
         [NUnit.Framework.CategoryAttribute("DAS13811")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckThatListOfSelectedItemsIsTruncatedForRequestTypeTeamsAndCapacityUnitsColumnOnCapacitySlotsGrid()
         {
             System.Exception lastException = null;
@@ -282,7 +287,8 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "Capacity",
                         "Slots",
-                        "DAS13811"});
+                        "DAS13811",
+                        "Cleanup"});
 #line 47
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -291,12 +297,9 @@ this.FeatureBackground();
 #line 48
  testRunner.When("User navigates to \"Windows 7 Migration (Computer Scheduled Project)\" project deta" +
                     "ils", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 49
- testRunner.And("User clicks \"Capacity\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 50
- testRunner.And("User selects \"Slots\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Project",
                         "SlotName",
                         "DisplayName",
                         "CapacityType",
@@ -304,6 +307,7 @@ this.FeatureBackground();
                         "Teams",
                         "CapacityUnits"});
             table3.AddRow(new string[] {
+                        "Windows 7 Migration (Computer Scheduled Project)",
                         "DAS_13811_1",
                         "13811_1",
                         "Teams and Paths",
@@ -311,14 +315,19 @@ this.FeatureBackground();
                         "Administrative Team‡Admin IT",
                         ""});
             table3.AddRow(new string[] {
+                        "Windows 7 Migration (Computer Scheduled Project)",
                         "DAS_13811_2",
                         "13811_2",
                         "Capacity Units",
                         "",
                         "",
                         "Unassigned‡Capacity Unit 1‡Capacity Unit 2"});
-#line 51
- testRunner.And("User creates new Slot", ((string)(null)), table3, "And ");
+#line 49
+ testRunner.And("User creates new Slot via Api", ((string)(null)), table3, "And ");
+#line 53
+ testRunner.And("User clicks \"Capacity\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 54
+ testRunner.And("User selects \"Slots\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "cellText"});
@@ -419,8 +428,6 @@ this.FeatureBackground();
                         "Standalone Project"});
 #line 71
  testRunner.When("Project created via API and opened", ((string)(null)), table6, "When ");
-#line 74
- testRunner.And("User clicks \"Capacity\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
@@ -437,19 +444,23 @@ this.FeatureBackground();
                         "",
                         "false",
                         "ProjectForDAS13526"});
-#line 75
+#line 74
  testRunner.And("User creates new Capacity Unit via api", ((string)(null)), table7, "And ");
-#line 79
- testRunner.And("User selects \"Slots\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Project",
                         "SlotName",
                         "DisplayName"});
             table8.AddRow(new string[] {
+                        "ProjectForDAS13526",
                         "Slot 1",
                         "Slot 1"});
-#line 80
- testRunner.And("User creates new Slot", ((string)(null)), table8, "And ");
+#line 78
+ testRunner.And("User creates new Slot via Api", ((string)(null)), table8, "And ");
+#line 81
+ testRunner.And("User clicks \"Capacity\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 82
+ testRunner.And("User selects \"Slots\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 83
  testRunner.And("User selects \"Units\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 84
@@ -508,7 +519,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS13812")]
         [NUnit.Framework.CategoryAttribute("DAS13676")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheEditCapacitySlotScreenIfAnAllocatedTaskHasSinceBeenChanged()
         {
             System.Exception lastException = null;
@@ -547,7 +557,6 @@ this.FeatureBackground();
                         "Senior_Projects",
                         "DAS13812",
                         "DAS13676",
-                        "Cleanup",
                         "Cleanup"});
 #line 103
 this.ScenarioInitialize(scenarioInfo);
@@ -685,21 +694,23 @@ this.FeatureBackground();
  testRunner.And("User clicks \"Admin\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 145
  testRunner.When("User navigates to \"ProjectForDAS13812\" project details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 146
- testRunner.And("User clicks \"Capacity\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 147
- testRunner.And("User selects \"Slots\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Project",
                         "SlotName",
                         "DisplayName",
                         "Tasks"});
             table15.AddRow(new string[] {
+                        "ProjectForDAS13812",
                         "Slot 1",
                         "Slot 1",
                         "Stage13812 \\ 1Task13812‡Stage13812 \\ 2Task13812‡Stage13812 \\ 3Task13812"});
-#line 148
- testRunner.And("User creates new Slot", ((string)(null)), table15, "And ");
+#line 146
+ testRunner.And("User creates new Slot via Api", ((string)(null)), table15, "And ");
+#line 149
+ testRunner.And("User clicks \"Capacity\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 150
+ testRunner.And("User selects \"Slots\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 151
  testRunner.And("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 152

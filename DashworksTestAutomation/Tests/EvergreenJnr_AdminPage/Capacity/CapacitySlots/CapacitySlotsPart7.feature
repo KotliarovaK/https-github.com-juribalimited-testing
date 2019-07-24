@@ -115,15 +115,15 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnlyDateTasksCanBeAvailableForSelectio
 	| 2Task13593 |
 	| 6Task13593 |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13500 @DAS13636 @Do_Not_Run_With_Capacity @Do_Not_Run_With_Slots @Do_Not_Run_With_Senior @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13500 @DAS13636 @Do_Not_Run_With_Capacity @Do_Not_Run_With_Slots @Do_Not_Run_With_Senior @Cleanup @Not_Run
 Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreUnpublishedAfterBeingAssociatedToACapacitySlot
 	When User navigates to "Windows 7 Migration (Computer Scheduled Project)" project details
+	And User creates new Slot
+	| Project                                          | SlotName | DisplayName | Tasks                                                                                                                                              |
+	| Windows 7 Migration (Computer Scheduled Project) | Slot 1   | Slot 1      | Pre-Migration \ Scheduled Date‡Pre-Migration \ Forecast Date‡Computer Information ---- Text fill; Text fill; \ Group Computer Rag Radio Date Owner |
 	And User clicks content from "Project" column
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User creates new Slot
-	| SlotName | DisplayName | Tasks                                                                                                                                              |
-	| Slot 1   | Slot 1      | Pre-Migration \ Scheduled Date‡Pre-Migration \ Forecast Date‡Computer Information ---- Text fill; Text fill; \ Group Computer Rag Radio Date Owner |
 	#TODO Remove commented steps. I have saved them just to save data during NotRun removing
 	#And User clicks the "CREATE NEW SLOT" Action button
 	#And User type "Slot 1" Name in the "Slot Name" field on the Project details page
@@ -191,15 +191,10 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCapacityEnabledFlagUpdatesAfterAdding
 	Then Success message is displayed with "Task successfully created" text
 	When User publishes the task
 	Then selected task was published
-	When User navigate to Evergreen link
-	And User clicks "Admin" on the left-hand menu
-	And User navigates to "Windows 7 Migration (Computer Scheduled Project)" project details
-	And User clicks "Capacity" tab
-	And User selects "Slots" tab on the Project details page
-	And User creates new Slot
-	| SlotName      | DisplayName    | CapacityType   | Tasks                                                       |
-	| SlotTask13502 | Slot Task13502 | Capacity Units | Computer Information ---- Text fill; Text fill; \ Task13502 |
-	When User clicks newly created object link
+	When User creates new Slot via Api
+	| Project                                          | SlotName      | DisplayName    | CapacityType   | Tasks                                                       |
+	| Windows 7 Migration (Computer Scheduled Project) | SlotTask13502 | Slot Task13502 | Capacity Units | Computer Information ---- Text fill; Text fill; \ Task13502 |
+	And User navigates to newly created Slot
 	Then CapacityEnabled flag is equal to "True"
 	When User removes "Computer Information ---- Text fill; Text fill; \ Task13502" on the Project details page
 	And User clicks the "UPDATE" Action button
@@ -227,14 +222,11 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreDeletedAfterBeingAssociatedTo
 	Then Success message is displayed with "Task successfully created" text
 	When User publishes the task
 	Then selected task was published
-	When User navigate to Evergreen link
+	When User creates new Slot via Api
+	| Project                                          | SlotName | DisplayName | CapacityType   | Tasks                                                                                                                                                    |
+	| Windows 7 Migration (Computer Scheduled Project) | Slot 1   | Slot 1      | Capacity Units | Computer Information ---- Text fill; Text fill; \ 1Task13500‡Computer Information ---- Text fill; Text fill; \ 2Task13500‡Pre-Migration \ Scheduled Date |
+	And User navigates to newly created Slot
 	And User clicks "Admin" on the left-hand menu
-	And User navigates to "Windows 7 Migration (Computer Scheduled Project)" project details
-	And User clicks "Capacity" tab
-	And User selects "Slots" tab on the Project details page
-	And User creates new Slot
-	| SlotName | DisplayName | CapacityType   | Tasks                                                                                                                                                    |
-	| Slot 1   | Slot 1      | Capacity Units | Computer Information ---- Text fill; Text fill; \ 1Task13500‡Computer Information ---- Text fill; Text fill; \ 2Task13500‡Pre-Migration \ Scheduled Date |
 	And User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "Windows 7 Migration (Computer Scheduled Project)" Project
