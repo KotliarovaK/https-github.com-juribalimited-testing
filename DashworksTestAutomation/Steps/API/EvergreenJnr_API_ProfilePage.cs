@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Net;
+using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Providers;
+using DashworksTestAutomation.Utils;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using NUnit.Framework;
@@ -17,11 +20,13 @@ namespace DashworksTestAutomation.Steps.API
     {
         private readonly RestWebClient _client;
         private readonly RemoteWebDriver _driver;
+        private readonly UserDto _user;
 
-        public EvergreenJnr_API_ProfilePage(RestWebClient client, RemoteWebDriver driver)
+        public EvergreenJnr_API_ProfilePage(RestWebClient client, RemoteWebDriver driver, UserDto user)
         {
             _client = client;
             _driver = driver;
+            _user = user;
         }
 
         [Then(@"default list page Size is ""(.*)"" and Cache ""(.*)""")]
@@ -73,6 +78,45 @@ namespace DashworksTestAutomation.Steps.API
             _driver.WaitForDataLoading();
             var lastNetworkRequest = JsonConvert.DeserializeObject<JArray>(_driver.GetNetworkLogByJavascript()).Last;
             Assert.That(lastNetworkRequest["name"].ToString(), Does.Contain($"?$top={pageSize}"), $"Page Size is not {pageSize}");
+        }
+
+        [When(@"User language is changed to ""(.*)"" via API")]
+        public void WhenUserChangesAccountLanguageInProfile(string lng)
+        {
+            var requestUri = $"{UrlProvider.RestClientBaseUrl}userProfile/updatePreferences";
+            var request = new RestRequest(requestUri);
+
+            request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
+            request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
+            request.AddParameter("Referer", UrlProvider.EvergreenUrl);
+            request.AddParameter("Accept", "application/json");
+            request.AddParameter("Content-Type", "application/json");
+
+            request.AddParameter("displayMode", 0);
+            request.AddParameter("languageName", PreferenceLanguageConverter.Convert(lng));
+            request.AddParameter("timeZone", "GMT Standard Time");
+            request.AddParameter("userId", DatabaseWorker.GetUserIdByLogin(_user.Username));
+
+
+            var response = _client.Value.Put(request);
+
+            if (response.StatusCode != HttpStatusCode.OK)
+                throw new Exception(
+                    $"Unable to execute request. Error details: {JsonConvert.DeserializeObject<JObject>(response.Content)["details"]}");
+        }
+
+        [When(@"User navigates to Create Readiness page of ""(.*)"" project")]
+        public void WhenUserNavigatesToCreateReadinessPageOfParticularProject(string project)
+        {
+            _driver.Navigate().GoToUrl($"{UrlProvider.EvergreenUrl}#/admin/project/{DatabaseHelper.GetProjectId(project)}/readiness/createReadiness");
+            _driver.WaitForDataLoading();
+        }
+
+        [When(@"User navigates to Readiness page of ""(.*)"" project")]
+        public void WhenUserNavigatesToReadinessPageOfParticularProject(string project)
+        {
+            _driver.Navigate().GoToUrl($"{UrlProvider.EvergreenUrl}#/admin/project/{DatabaseHelper.GetProjectId(project)}/readiness");
+            _driver.WaitForDataLoading();
         }
     }
 }
