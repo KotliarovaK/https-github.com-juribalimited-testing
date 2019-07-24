@@ -10,11 +10,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorMessageAppearsWhenCreatingDuplica
 	When Project created via API and opened
 	| ProjectName     | Scope       | ProjectTemplate | Mode               |
 	| ProjectDAS13779 | All Devices | None            | Standalone Project |
+	And User creates new Slot via Api
+	| Project         | SlotName     | DisplayName | SlotAvailableFrom | SlotAvailableTo |
+	| ProjectDAS13779 | SlotDAS13779 | 13779       | 29 Oct 2018       | 29 Oct 2018     |
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User creates new Slot
-	| SlotName     | DisplayName | SlotAvailableFrom | SlotAvailableTo |
-	| SlotDAS13779 | 13779       | 29 Oct 2018       | 29 Oct 2018     |
 	And User selects "Override Dates" tab on the Project details page
 	And User clicks the "CREATE OVERRIDE DATE" Action button
 	Then Create Override Date is displayed correctly
@@ -44,12 +44,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorInConsoleAfterSettingSameOverri
 	When Project created via API and opened
 	| ProjectName     | Scope       | ProjectTemplate | Mode               |
 	| ProjectDAS13442 | All Devices | None            | Standalone Project |
-	And User clicks "Capacity" tab
-	And User selects "Slots" tab on the Project details page
-	And User creates new Slot
-	| SlotName  | DisplayName |
-	| Slot13442 | 13442       |
-	When User clicks newly created object link
+	And User creates new Slot via Api
+	| Project         | SlotName  | DisplayName |
+	| ProjectDAS13442 | Slot13442 | 13442       |
+	And User navigates to newly created Slot
 	And User clicks "Capacity" tab
 	And User selects "Override Dates" tab on the Project details page
 	And User clicks the "CREATE OVERRIDE DATE" Action button
