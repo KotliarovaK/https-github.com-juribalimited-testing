@@ -55,6 +55,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Slots
                 dropdown.GetDropdownByName("Capacity Type").Click();
                 action.GetOptionByName(slot.CapacityType).Click();
 
+                dropdown.GetDropdownByName("Object Type").Click();
+                action.GetOptionByName(slot.ObjectType).Click();
+
                 var page = _driver.NowAt<Capacity_SlotsPage>();
                 page.EnterValueByDayName(slot.Monday, "Monday");
                 page.EnterValueByDayName(slot.Tuesday, "Tuesday");

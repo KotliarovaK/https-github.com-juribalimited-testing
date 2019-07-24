@@ -5,15 +5,12 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13441
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13441 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatCapacitySlotClearedWhenObjectTypeIsChangedOnCapacitySlotForm
-	When User navigates to "User Scheduled Project in Italian & Japanese (Jo)" project details
-	And User clicks "Capacity" tab
-	And User selects "Slots" tab on the Project details page
-	And User creates new Slot
-	| SlotName             | DisplayName | ObjectType | Tasks              |
-	| CapacitySlotDAS13441 | DAS13441    | Device     | Stage 1 \ DDL Task for a Computer‡Stage 1 \ Date Task for a Computer Italian |
-	And User clicks newly created object link
+	When User creates new Slot via Api
+	| Project                                           | SlotName             | DisplayName | ObjectType | Tasks                                                                        |
+	| User Scheduled Project in Italian & Japanese (Jo) | CapacitySlotDAS13441 | DAS13441    | Device     | Stage 1 \ DDL Task for a Computer‡Stage 1 \ Date Task for a Computer Italian |
+	And User navigates to newly created Slot
 	Then User sees following tiles selected in the "Tasks" field:
 	| Items                                      |
 	| Stage 1 \ DDL Task for a Computer          |

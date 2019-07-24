@@ -1800,7 +1800,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             if (!_tasks.Value.Any())
                 throw new Exception("No tasks were created!");
 
-            Assert.That(GetTaskCapacityEnabledFlag(_tasks.Value.Last().GetId()),
+            Assert.That(GetTaskCapacityEnabledFlag(_tasks.Value.Last().Id),
                 Is.EqualTo(flagState), $"Flag state is in different state");
         }
 

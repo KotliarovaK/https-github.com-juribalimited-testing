@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DashworksTestAutomation.Helpers;
 
 namespace DashworksTestAutomation.DTO.Evergreen.Admin.Slots
 {
     public class SlotDto
     {
+        public string Project { get; set; }
         public string SlotName { get; set; }
         public string DisplayName { get; set; }
-        private string _capacityType;
 
+        private string _capacityType;
         public string CapacityType
         {
             get
@@ -23,7 +25,51 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.Slots
             set => _capacityType = value;
         }
 
-        public string ObjectType { get; set; }
+        public int CapacityTypeId
+        {
+            get
+            {
+                switch (CapacityType)
+                {
+                    case "Capacity Units":
+                        return 2;
+                    case "Teams and Paths":
+                        return 1;
+                    default:
+                        throw new Exception($"Unknown Capacity type: {CapacityType}");
+                }
+            }
+        }
+
+        private string _objectType;
+        public string ObjectType
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(_objectType))
+                    _objectType = "Devices";
+                return _objectType;
+            }
+            set => _objectType = value;
+        }
+
+        public int ObjectTypeId
+        {
+            get
+            {
+                switch (ObjectType)
+                {
+                    case "User":
+                        return 1;
+                    case "Device":
+                        return 2;
+                    case "Application":
+                        return 3;
+                    default:
+                        throw new Exception($"Unknown Object type: {ObjectType}");
+                }
+            }
+        }
 
         public DateTime SlotAvailableFrom { get; set; }
         public DateTime SlotAvailableTo { get; set; }
@@ -62,5 +108,24 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.Slots
             set => CapacityUnitsList = value.Split('‡').ToList();
         }
         public List<string> CapacityUnitsList { get; set; }
+
+        private string _id;
+        public string Id
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(_id))
+                    _id = DatabaseHelper.GetSlotId(this.SlotName, DatabaseHelper.GetProjectId(Project));
+                return _id;
+            }
+        }
+
+        public SlotDto()
+        {
+            PathsList = new List<string>();
+            TeamsList = new List<string>();
+            TasksList = new List<string>();
+            CapacityUnitsList = new List<string>();
+        }
     }
 }
