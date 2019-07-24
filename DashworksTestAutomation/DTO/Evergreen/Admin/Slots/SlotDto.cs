@@ -47,7 +47,7 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.Slots
             get
             {
                 if (string.IsNullOrEmpty(_objectType))
-                    _objectType = "Devices";
+                    _objectType = "Device";
                 return _objectType;
             }
             set => _objectType = value;

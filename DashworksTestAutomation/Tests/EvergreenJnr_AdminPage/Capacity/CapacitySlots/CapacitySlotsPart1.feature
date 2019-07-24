@@ -8,7 +8,7 @@ Background: Pre-Conditions
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13171 @DAS13432 @DAS13430 @DAS13412 @DAS13493 @DAS13375 @DAS13711 @DAS17271 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingIntoTheCell
 	When Project created via API and opened
-	| ProjectName           | Scope         | ProjectTemplate | Mode               |
+	| ProjectName             | Scope       | ProjectTemplate | Mode               |
 	| ProjectForCapacity13171 | All Devices | None            | Standalone Project |
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
@@ -25,11 +25,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingI
 	| SlotName      | DisplayName | CapacityType   |
 	| CapacitySlot1 | DAS13432    | Capacity Units |
 	Then Error message with "A capacity slot already exists with this name" text is displayed
-	When User creates new Slot
-	| SlotName       | DisplayName |
-	| UniqueNameSlot | DAS13432    |
-	Then Success message is displayed and contains "Your capacity slot has been created" text
-	When User clicks newly created object link
+	When User creates new Slot via Api
+	| Project                 | SlotName       | DisplayName |
+	| ProjectForCapacity13171 | UniqueNameSlot | DAS13432    |
+	And User navigates to newly created Slot
 	And User type "NewSlotName" Name in the "Slot Name" field on the Project details page
 	And User type "NewDisplayName" Name in the "Display Name" field on the Project details page
 	And User clicks the "UPDATE" Action button
@@ -53,12 +52,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsUnableToCreateMoreThanOneOverrid
 	When Project created via API and opened
 	| ProjectName     | Scope       | ProjectTemplate | Mode               |
 	| ProjectDAS13780 | All Devices | None            | Standalone Project |
+	When User creates new Slot via Api
+	| Project         | SlotName       | DisplayName | SlotAvailableFrom | SlotAvailableTo |
+	| ProjectDAS13780 | SlotDAS13780_1 | 13780_1     | 17 Oct 2018       | 18 Oct 2018     |
+	| ProjectDAS13780 | SlotDAS13780_2 | 13780_2     | 17 Oct 2018       | 18 Oct 2018     |
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	When User creates new Slot
-	| SlotName       | DisplayName | SlotAvailableFrom | SlotAvailableTo |
-	| SlotDAS13780_1 | 13780_1     | 17 Oct 2018       | 18 Oct 2018     |
-	| SlotDAS13780_2 | 13780_2     | 17 Oct 2018       | 18 Oct 2018     |
 	And User selects "Override Dates" tab on the Project details page
 	And User clicks the "CREATE OVERRIDE DATE" Action button
 	And User enters "17 Oct 2018" date in the "Override Start Date" field
@@ -86,12 +85,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToUpdateCapacityUnitOrSlotUs
 	When Project created via API and opened
 	| ProjectName     | Scope       | ProjectTemplate | Mode               |
 	| ProjectDAS13789 | All Devices | None            | Standalone Project |
-	And User clicks "Capacity" tab
-	And User selects "Slots" tab on the Project details page
-	When User creates new Slot
-	| SlotName             | DisplayName  | SlotAvailableFrom | SlotAvailableTo |
-	| capacityslotDAS13789 | DAS13779slot | 28 Oct 2018       | 29 Oct 2018     |
-	And User clicks newly created object link
+	When User creates new Slot via Api
+	| Project         | SlotName             | DisplayName  | SlotAvailableFrom | SlotAvailableTo |
+	| ProjectDAS13789 | capacityslotDAS13789 | DAS13779slot | 28 Oct 2018       | 29 Oct 2018     |
+	And User navigates to newly created Slot
 	And User type "CAPACITYSLOTdas13789" Name in the "Slot Name" field on the Project details page
 	And User type "das13779SLOT" Name in the "Display Name" field on the Project details page
 	And User clicks the "UPDATE" Action button
@@ -113,12 +110,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotAvailableFromAndSlotAvailableToCan
 	When Project created via API and opened
 	| ProjectName                | Scope       | ProjectTemplate | Mode               |
 	| ProjectForCapacityDAS13824 | All Devices | None            | Standalone Project |
-	And User clicks "Capacity" tab
-	And User selects "Slots" tab on the Project details page
-	And User creates new Slot
+	And User creates new Slot via Api
 	| SlotName             | DisplayName | SlotAvailableFrom | SlotAvailableTo |
 	| CapacitySlotDAS13824 | DAS13824    | 29 Oct 2018       | 30 Oct 2018     |
-	And User clicks newly created object link
+	And User navigates to newly created Slot
 	And User enters "" value to "Slot Available From" date field on Capacity Slot form page
 	And User enters "" value to "Slot Available To" date field on Capacity Slot form page
 	And User clicks the "UPDATE" Action button

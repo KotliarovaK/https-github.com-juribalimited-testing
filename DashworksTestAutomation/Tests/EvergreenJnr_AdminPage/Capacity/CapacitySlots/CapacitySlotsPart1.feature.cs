@@ -202,42 +202,41 @@ this.FeatureBackground();
                     "yed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Project",
                         "SlotName",
                         "DisplayName"});
             table4.AddRow(new string[] {
+                        "ProjectForCapacity13171",
                         "UniqueNameSlot",
                         "DAS13432"});
 #line 28
- testRunner.When("User creates new Slot", ((string)(null)), table4, "When ");
+ testRunner.When("User creates new Slot via Api", ((string)(null)), table4, "When ");
 #line 31
- testRunner.Then("Success message is displayed and contains \"Your capacity slot has been created\" t" +
-                    "ext", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("User navigates to newly created Slot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 32
- testRunner.When("User clicks newly created object link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 33
  testRunner.And("User type \"NewSlotName\" Name in the \"Slot Name\" field on the Project details page" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 34
+#line 33
  testRunner.And("User type \"NewDisplayName\" Name in the \"Display Name\" field on the Project detail" +
                     "s page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 35
+#line 34
  testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 36
+#line 35
  testRunner.Then("Success message is displayed and contains \"The capacity slot details have been up" +
                     "dated\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 37
+#line 36
  testRunner.And("\"NewSlotName\" text is displayed in the table content", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 38
+#line 37
  testRunner.When("User click on \'Capacity Slot\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 39
+#line 38
  testRunner.Then("data in table is sorted by \"Capacity Slot\" column in ascending order on the Admin" +
                     " page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 40
+#line 39
  testRunner.When("User click on \'Capacity Slot\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 41
+#line 40
  testRunner.Then("data in table is sorted by \"Capacity Slot\" column in descending order on the Admi" +
                     "n page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 42
+#line 41
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
@@ -248,16 +247,16 @@ this.FeatureBackground();
                         "CapacitySlot2",
                         "DAS13432",
                         "Teams and Paths"});
-#line 43
+#line 42
  testRunner.When("User creates new Slot", ((string)(null)), table5, "When ");
-#line 46
+#line 45
  testRunner.Then("Success message is displayed and contains \"Your capacity slot has been created\" t" +
                     "ext", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 47
+#line 46
  testRunner.When("User clicks String Filter button for \"Capacity Units\" column on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 48
+#line 47
  testRunner.When("User selects \"All Capacity Units\" checkbox from String Filter on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 49
+#line 48
  testRunner.Then("\"No units\" is displayed in the dropdown filter for \"Capacity Units\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -311,7 +310,7 @@ this.FeatureBackground();
                         "Override_Dates",
                         "DAS13780",
                         "Cleanup"});
-#line 52
+#line 51
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -327,71 +326,74 @@ this.FeatureBackground();
                         "All Devices",
                         "None",
                         "Standalone Project"});
-#line 53
+#line 52
  testRunner.When("Project created via API and opened", ((string)(null)), table6, "When ");
-#line 56
- testRunner.And("User clicks \"Capacity\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 57
- testRunner.And("User selects \"Slots\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Project",
                         "SlotName",
                         "DisplayName",
                         "SlotAvailableFrom",
                         "SlotAvailableTo"});
             table7.AddRow(new string[] {
+                        "ProjectDAS13780",
                         "SlotDAS13780_1",
                         "13780_1",
                         "17 Oct 2018",
                         "18 Oct 2018"});
             table7.AddRow(new string[] {
+                        "ProjectDAS13780",
                         "SlotDAS13780_2",
                         "13780_2",
                         "17 Oct 2018",
                         "18 Oct 2018"});
-#line 58
- testRunner.When("User creates new Slot", ((string)(null)), table7, "When ");
-#line 62
+#line 55
+ testRunner.When("User creates new Slot via Api", ((string)(null)), table7, "When ");
+#line 59
+ testRunner.And("User clicks \"Capacity\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 60
+ testRunner.And("User selects \"Slots\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 61
  testRunner.And("User selects \"Override Dates\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 62
+ testRunner.And("User clicks the \"CREATE OVERRIDE DATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 63
- testRunner.And("User clicks the \"CREATE OVERRIDE DATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User enters \"17 Oct 2018\" date in the \"Override Start Date\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 64
- testRunner.And("User enters \"17 Oct 2018\" date in the \"Override Start Date\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User enters \"17 Oct 2018\" date in the \"Override End Date\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 65
- testRunner.And("User enters \"17 Oct 2018\" date in the \"Override End Date\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 66
  testRunner.And("User selects \"SlotDAS13780_1\" in the \"Slot\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 66
+ testRunner.And("User enters \"0\" value in the \"Capacity\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 67
- testRunner.And("User enters \"0\" value in the \"Capacity\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 68
- testRunner.And("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks the \"CREATE OVERRIDE DATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 69
- testRunner.And("User clicks the \"CREATE OVERRIDE DATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User enters \"17 Oct 2018\" date in the \"Override Start Date\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 70
- testRunner.And("User enters \"17 Oct 2018\" date in the \"Override Start Date\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User enters \"17 Oct 2018\" date in the \"Override End Date\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 71
- testRunner.And("User enters \"17 Oct 2018\" date in the \"Override End Date\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 72
  testRunner.And("User selects \"SlotDAS13780_2\" in the \"Slot\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 73
+#line 72
  testRunner.And("User enters \"0\" value in the \"Capacity\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 73
+ testRunner.And("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 74
- testRunner.And("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 75
  testRunner.And("User clicks the \"CREATE OVERRIDE DATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 76
+#line 75
  testRunner.And("User enters \"17 Oct 2018\" date in the \"Override Start Date\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 77
+#line 76
  testRunner.And("User enters \"17 Oct 2018\" date in the \"Override End Date\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 78
+#line 77
  testRunner.And("User selects \"All\" in the \"Slot\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 79
+#line 78
  testRunner.And("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 80
+#line 79
  testRunner.Then("Error message with \"An override already exists for this date\" text is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 81
+#line 80
  testRunner.And("\"2\" rows label displays in Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 82
+#line 81
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -447,7 +449,7 @@ this.FeatureBackground();
                         "Units",
                         "DAS13789",
                         "Cleanup"});
-#line 85
+#line 84
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -463,61 +465,59 @@ this.FeatureBackground();
                         "All Devices",
                         "None",
                         "Standalone Project"});
-#line 86
+#line 85
  testRunner.When("Project created via API and opened", ((string)(null)), table8, "When ");
-#line 89
- testRunner.And("User clicks \"Capacity\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 90
- testRunner.And("User selects \"Slots\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Project",
                         "SlotName",
                         "DisplayName",
                         "SlotAvailableFrom",
                         "SlotAvailableTo"});
             table9.AddRow(new string[] {
+                        "ProjectDAS13789",
                         "capacityslotDAS13789",
                         "DAS13779slot",
                         "28 Oct 2018",
                         "29 Oct 2018"});
+#line 88
+ testRunner.When("User creates new Slot via Api", ((string)(null)), table9, "When ");
 #line 91
- testRunner.When("User creates new Slot", ((string)(null)), table9, "When ");
-#line 94
- testRunner.And("User clicks newly created object link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 95
+ testRunner.And("User navigates to newly created Slot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 92
  testRunner.And("User type \"CAPACITYSLOTdas13789\" Name in the \"Slot Name\" field on the Project det" +
                     "ails page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 96
+#line 93
  testRunner.And("User type \"das13779SLOT\" Name in the \"Display Name\" field on the Project details " +
                     "page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 97
+#line 94
  testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 98
+#line 95
  testRunner.Then("Error message is not displayed on the Capacity Slots page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 99
+#line 96
  testRunner.And("Success message is displayed and contains \"The capacity slot details have been up" +
                     "dated\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 100
+#line 97
  testRunner.When("User selects \"Units\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 101
+#line 98
  testRunner.And("User clicks the \"CREATE PROJECT CAPACITY UNIT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 102
+#line 99
  testRunner.And("User type \"capacityunitDAS13789\" Name in the \"Capacity Unit Name\" field on the Pr" +
                     "oject details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 103
+#line 100
  testRunner.And("User type \"13789\" Name in the \"Description\" field on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 104
+#line 101
  testRunner.And("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 105
+#line 102
  testRunner.And("User clicks newly created object link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 106
+#line 103
  testRunner.And("User type \"CAPACITYUINTdas13789\" Name in the \"Capacity Unit Name\" field on the Pr" +
                     "oject details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 107
+#line 104
  testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 108
+#line 105
  testRunner.Then("Error message is not displayed on the Capacity Slots page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 109
+#line 106
  testRunner.And("Success message is displayed and contains \"The capacity unit details have been up" +
                     "dated\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -574,7 +574,7 @@ this.FeatureBackground();
                         "DAS13824",
                         "DAS14250",
                         "Cleanup"});
-#line 112
+#line 109
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -590,12 +590,8 @@ this.FeatureBackground();
                         "All Devices",
                         "None",
                         "Standalone Project"});
-#line 113
+#line 110
  testRunner.When("Project created via API and opened", ((string)(null)), table10, "When ");
-#line 116
- testRunner.And("User clicks \"Capacity\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 117
- testRunner.And("User selects \"Slots\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "SlotName",
@@ -607,24 +603,24 @@ this.FeatureBackground();
                         "DAS13824",
                         "29 Oct 2018",
                         "30 Oct 2018"});
-#line 118
- testRunner.And("User creates new Slot", ((string)(null)), table11, "And ");
-#line 121
- testRunner.And("User clicks newly created object link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 122
+#line 113
+ testRunner.And("User creates new Slot via Api", ((string)(null)), table11, "And ");
+#line 116
+ testRunner.And("User navigates to newly created Slot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 117
  testRunner.And("User enters \"\" value to \"Slot Available From\" date field on Capacity Slot form pa" +
                     "ge", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 123
+#line 118
  testRunner.And("User enters \"\" value to \"Slot Available To\" date field on Capacity Slot form page" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 124
+#line 119
  testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 125
+#line 120
  testRunner.And("User clicks content from \"Capacity Slot\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 126
+#line 121
  testRunner.Then("User sees \"\" value in the \"Slot Available From\" date field on Capacity Slot form " +
                     "page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 127
+#line 122
  testRunner.And("User sees \"\" value in the \"Slot Available To\" date field on Capacity Slot form pa" +
                     "ge", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
