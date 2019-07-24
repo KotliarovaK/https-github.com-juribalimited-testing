@@ -8,7 +8,7 @@ namespace DashworksTestAutomation.Helpers
         {
             switch (columnName)
             {
-                case "Windows7Mi: Date & Time Task":
+                case "Windows7Mi: Computer Information ---- Text fill; Text fill; \\ Date & Time Task":
                     return "project_task_1_9950_2_Task";
 
                 case "Boot Up Date":
@@ -69,19 +69,19 @@ namespace DashworksTestAutomation.Helpers
                 case "Windows7Mi: Object ID":
                     return "project_1_objectID";
 
-                case "Windows7Mi: SS Project Date Enabled":
+                case "Windows7Mi: Portal Self Service \\ SS Project Date Enabled":
                     return "project_task_1_13063_4_Task";
 
                 case "Enabled":
                     return "enabled";
 
-                case "Windows7Mi: Read Only on Project Object Page":
+                case "Windows7Mi: Stage for User Tasks \\ Read Only on Project Object Page":
                     return "project_task_1_13090_1_Task";
 
                 case "Application Key":
                     return "packageKey";
 
-                case "Windows7Mi: Technical Test":
+                case "Windows7Mi: Application Information \\ Technical Test":
                     return "project_task_1_480_1_Task";
 
                 case "Owner Department Full Path":
@@ -94,7 +94,7 @@ namespace DashworksTestAutomation.Helpers
                     switch (pageName)
                     {
                         case "Devices":
-                            return "project_1_applicationColorStatus";
+                            return "project_1_linkedApplicationReadiness";
                         case "Applications":
                             return "project_1_applicationReadiness";
                         default:

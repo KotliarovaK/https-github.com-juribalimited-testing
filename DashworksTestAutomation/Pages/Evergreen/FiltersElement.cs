@@ -48,9 +48,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = SearchTextBoxSelector)]
         public IWebElement SearchTextBox { get; set; }
 
-        [FindsBy(How = How.XPath,
-            Using =
-                ".//button[@class='btn btn-default input-toggle mat-icon-button _mat-animation-noopable ng-star-inserted']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@id='context']//div[contains(@class,'searchPanel')]/button")]
         public IWebElement SearchTextBoxResetButton { get; set; }
 
         [FindsBy(How = How.XPath,

@@ -535,7 +535,7 @@ this.FeatureBackground();
             table19.AddRow(new string[] {
                         "Boot Up Date"});
             table19.AddRow(new string[] {
-                        "Windows7Mi: Date & Time Task"});
+                        "Windows7Mi: Computer Information ---- Text fill; Text fill; \\ Date & Time Task"});
 #line 120
  testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table19, "When ");
 #line 124
@@ -554,12 +554,13 @@ this.FeatureBackground();
 #line 128
  testRunner.Then("ColumnName is removed from the list", ((string)(null)), table20, "Then ");
 #line 131
- testRunner.When("User click on \'Windows7Mi: Date & Time Task\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User click on \'Windows7Mi: Computer Information ---- Text fill; Text fill; \\ Date" +
+                    " & Time Task\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table21.AddRow(new string[] {
-                        "Windows7Mi: Date & Time Task"});
+                        "Windows7Mi: Computer Information ---- Text fill; Text fill; \\ Date & Time Task"});
 #line 132
  testRunner.When("User remove sorted column on \"Devices\" page by URL", ((string)(null)), table21, "When ");
 #line 135
@@ -568,7 +569,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table22.AddRow(new string[] {
-                        "Windows7Mi: Date & Time Task"});
+                        "Windows7Mi: Computer Information ---- Text fill; Text fill; \\ Date & Time Task"});
 #line 136
  testRunner.Then("ColumnName is removed from the list", ((string)(null)), table22, "Then ");
 #line hidden
@@ -632,7 +633,7 @@ this.FeatureBackground();
             table23.AddRow(new string[] {
                         "Boot Up Date"});
             table23.AddRow(new string[] {
-                        "Windows7Mi: Date & Time Task"});
+                        "Windows7Mi: Computer Information ---- Text fill; Text fill; \\ Date & Time Task"});
             table23.AddRow(new string[] {
                         "Build Date"});
 #line 142
@@ -647,7 +648,7 @@ this.FeatureBackground();
             table24.AddRow(new string[] {
                         "Boot Up Date"});
             table24.AddRow(new string[] {
-                        "Windows7Mi: Date & Time Task"});
+                        "Windows7Mi: Computer Information ---- Text fill; Text fill; \\ Date & Time Task"});
             table24.AddRow(new string[] {
                         "Build Date"});
 #line 149
@@ -664,13 +665,13 @@ this.FeatureBackground();
 #line 156
  testRunner.Then("ColumnName is removed from the list", ((string)(null)), table25, "Then ");
 #line 159
- testRunner.Then("date in table is sorted by \'Windows7Mi: Date & Time Task\' column in descending or" +
-                    "der", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("date in table is sorted by \'Windows7Mi: Computer Information ---- Text fill; Text" +
+                    " fill; \\ Date & Time Task\' column in descending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table26.AddRow(new string[] {
-                        "Windows7Mi: Date & Time Task"});
+                        "Windows7Mi: Computer Information ---- Text fill; Text fill; \\ Date & Time Task"});
 #line 160
  testRunner.When("User remove sorted column on \"Devices\" page by URL", ((string)(null)), table26, "When ");
 #line 163
@@ -679,7 +680,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table27.AddRow(new string[] {
-                        "Windows7Mi: Date & Time Task"});
+                        "Windows7Mi: Computer Information ---- Text fill; Text fill; \\ Date & Time Task"});
 #line 164
  testRunner.Then("ColumnName is removed from the list", ((string)(null)), table27, "Then ");
 #line 167
@@ -1324,7 +1325,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table46 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table46.AddRow(new string[] {
-                        "Windows7Mi: SS Project Date Enabled"});
+                        "Windows7Mi: Portal Self Service \\ SS Project Date Enabled"});
             table46.AddRow(new string[] {
                         "Owner Common Name"});
 #line 330
@@ -1333,13 +1334,14 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table47 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table47.AddRow(new string[] {
-                        "Windows7Mi: SS Project Date Enabled"});
+                        "Windows7Mi: Portal Self Service \\ SS Project Date Enabled"});
             table47.AddRow(new string[] {
                         "Owner Common Name"});
 #line 334
  testRunner.Then("ColumnName is added to the list", ((string)(null)), table47, "Then ");
 #line 338
- testRunner.And("\"Windows7Mi: SS Project Date Enabled\" column is added to URL on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\"Windows7Mi: Portal Self Service \\ SS Project Date Enabled\" column is added to UR" +
+                    "L on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 339
  testRunner.And("\"Owner Common Name\" column is added to URL on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -1363,7 +1365,7 @@ this.FeatureBackground();
 #line 346
  testRunner.And("ColumnName is removed from the list", ((string)(null)), table49, "And ");
 #line 349
- testRunner.And("\"28\" subcategories is displayed for \"Device Owner\" category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\"19\" subcategories is displayed for \"Device Owner\" category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1429,16 +1431,16 @@ this.FeatureBackground();
             table50.AddRow(new string[] {
                         "Enabled"});
             table50.AddRow(new string[] {
-                        "Windows7Mi: Read Only on Project Object Page"});
+                        "Windows7Mi: Stage for User Tasks \\ Read Only on Project Object Page"});
 #line 353
- testRunner.When("User add following columns using URL to the \"Users\" page:", ((string)(null)), table50, "When ");
+testRunner.When("User add following columns using URL to the \"Users\" page:", ((string)(null)), table50, "When ");
 #line 358
  testRunner.Then("\"Last Logon Date\" column is added to URL on \"Users\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 359
  testRunner.And("\"Enabled\" column is added to URL on \"Users\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 360
- testRunner.And("\"Windows7Mi: Read Only on Project Object Page\" column is added to URL on \"Users\" " +
-                    "page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\"Windows7Mi: Stage for User Tasks \\ Read Only on Project Object Page\" column is a" +
+                    "dded to URL on \"Users\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 361
  testRunner.When("User removes all columns by URL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 362
@@ -1453,7 +1455,7 @@ this.FeatureBackground();
             table51.AddRow(new string[] {
                         "Enabled"});
             table51.AddRow(new string[] {
-                        "Windows7Mi: Read Only on Project Object Page"});
+                        "Windows7Mi: Stage for User Tasks \\ Read Only on Project Object Page"});
 #line 364
  testRunner.And("ColumnName is removed from the list", ((string)(null)), table51, "And ");
 #line 369
@@ -1523,7 +1525,7 @@ this.FeatureBackground();
             table52.AddRow(new string[] {
                         "Application Key"});
             table52.AddRow(new string[] {
-                        "Windows7Mi: Technical Test"});
+                        "Windows7Mi: Application Information \\ Technical Test"});
 #line 374
  testRunner.When("User add following columns using URL to the \"Applications\" page:", ((string)(null)), table52, "When ");
 #line 378
@@ -1531,7 +1533,8 @@ this.FeatureBackground();
 #line 379
  testRunner.And("\"Application Key\" column is added to URL on \"Applications\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 380
- testRunner.And("\"Windows7Mi: Technical Test\" column is added to URL on \"Applications\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\"Windows7Mi: Application Information \\ Technical Test\" column is added to URL on " +
+                    "\"Applications\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 381
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 382
@@ -1544,21 +1547,22 @@ this.FeatureBackground();
             table53.AddRow(new string[] {
                         "Started"});
 #line 383
- testRunner.When("User add \"Windows7Mi: Technical Test\" filter where type is \"Equals\" with added co" +
-                    "lumn and following checkboxes:", ((string)(null)), table53, "When ");
+ testRunner.When("User add \"Windows7Mi: Application Information \\ Technical Test\" filter where type" +
+                    " is \"Equals\" with added column and following checkboxes:", ((string)(null)), table53, "When ");
 #line 387
- testRunner.Then("\"Windows7Mi: Technical Test\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"Windows7Mi: Application Information \\ Technical Test\" filter is added to the lis" +
+                    "t", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 388
- testRunner.And("\"7\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\"6\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table54 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table54.AddRow(new string[] {
-                        "Windows7Mi: Technical Test"});
+                        "Windows7Mi: Application Information \\ Technical Test"});
 #line 389
  testRunner.When("User remove column on \"Applications\" page by URL", ((string)(null)), table54, "When ");
 #line 392
- testRunner.Then("\"7\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"6\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 393
  testRunner.And("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 394
@@ -1569,7 +1573,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table55 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table55.AddRow(new string[] {
-                        "Windows7Mi: Technical Test"});
+                        "Windows7Mi: Application Information \\ Technical Test"});
 #line 396
  testRunner.And("ColumnName is removed from the list", ((string)(null)), table55, "And ");
 #line 399

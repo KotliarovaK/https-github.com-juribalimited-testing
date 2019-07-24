@@ -979,7 +979,37 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ItemDetailsContent_ActionsWithTable.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_ItemDetails\ItemDetails_TabsMenu.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsTabs\ItemDetailsTabCounterChecking\ItemDetails_TabCounterChecking_ApplicationsPage.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ItemDetails_TabCounterChecking_ApplicationsPage.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsTabs\ItemDetailsTabCounterChecking\ItemDetails_TabCounterChecking_DevicesPage.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ItemDetails_TabCounterChecking_DevicesPage.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsTabs\ItemDetailsTabCounterChecking\ItemDetails_TabCounterChecking_GroupsPage.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ItemDetails_TabCounterChecking_GroupsPage.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsTabs\ItemDetailsTabCounterChecking\ItemDetails_TabCounterChecking_MailboxesPage.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ItemDetails_TabCounterChecking_MailboxesPage.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsTabs\ItemDetailsTabCounterChecking\ItemDetails_TabCounterChecking_UsersPage.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ItemDetails_TabCounterChecking_UsersPage.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsTabs\ItemDetails_TabContentChecking.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ItemDetails_TabContentChecking.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsTabs\ItemDetails_TabsMenu.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ItemDetails_TabsMenu.feature</DependentUpon>
@@ -1675,7 +1705,31 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ItemDetailsContent_ActionsWithTable.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_ItemDetails\ItemDetails_TabsMenu.feature">
+    <None Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsTabs\ItemDetailsTabCounterChecking\ItemDetails_TabCounterChecking_ApplicationsPage.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ItemDetails_TabCounterChecking_ApplicationsPage.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsTabs\ItemDetailsTabCounterChecking\ItemDetails_TabCounterChecking_DevicesPage.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ItemDetails_TabCounterChecking_DevicesPage.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsTabs\ItemDetailsTabCounterChecking\ItemDetails_TabCounterChecking_GroupsPage.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ItemDetails_TabCounterChecking_GroupsPage.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsTabs\ItemDetailsTabCounterChecking\ItemDetails_TabCounterChecking_MailboxesPage.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ItemDetails_TabCounterChecking_MailboxesPage.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsTabs\ItemDetailsTabCounterChecking\ItemDetails_TabCounterChecking_UsersPage.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ItemDetails_TabCounterChecking_UsersPage.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsTabs\ItemDetails_TabContentChecking.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ItemDetails_TabContentChecking.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsTabs\ItemDetails_TabsMenu.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ItemDetails_TabsMenu.feature.cs</LastGenOutput>
     </None>
