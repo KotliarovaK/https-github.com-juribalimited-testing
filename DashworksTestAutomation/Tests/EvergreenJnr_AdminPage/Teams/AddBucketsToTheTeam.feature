@@ -39,10 +39,9 @@ Scenario: EvergreenJnr_AdminPage_AddingBucketsToTheTeam
 	Then Change Team page is displayed to the user
 	When User selects "Team 10" in the Team dropdown
 	And User clicks the "CHANGE" Action button
-	Then Success message is displayed and contains "The selected bucket has been reassigned to the selected team" text
+	Then Success message is displayed and contains "The selected buckets have been reassigned to the selected team" text
 	Then There are no errors in the browser console
 	When User click on Back button
-
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13421 @DAS12788 @Teams
 Scenario: EvergreenJnr_AdminPage_CheckBucketsSortingAndFiltersForTeams

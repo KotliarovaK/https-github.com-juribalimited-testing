@@ -4,6 +4,7 @@ using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using System.Linq;
+using System.Threading;
 using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using TechTalk.SpecFlow;
@@ -20,7 +21,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver = driver;
         }
 
-
         [When(@"User clicks on the Unlimited field on the Capacity Slots page")]
         public void WhenUserClicksOnTheUnlimitedFieldOnTheOnTheCapacitySlotsPage()
         {
@@ -32,6 +32,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenUserSeesNextSlotsOnTheCapacitySlotsPage(Table slots)
         {
             var page = _driver.NowAt<Capacity_SlotsPage>();
+            //Wait for table content to be fully loaded
+            Thread.Sleep(1400);
             _driver.WaitForDataLoading();
 
             for (var i = 0; i < slots.RowCount; i++)

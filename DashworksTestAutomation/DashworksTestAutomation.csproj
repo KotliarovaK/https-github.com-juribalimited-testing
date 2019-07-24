@@ -118,6 +118,7 @@
     <Compile Include="DTO\Evergreen\Admin\Bucket\BucketDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\CapacityUnits\CapacityUnitDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\Rings\RingDto.cs" />
+    <Compile Include="DTO\Evergreen\Admin\Slots\SlotDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\Teams\TeamDto.cs" />
     <Compile Include="DTO\Evergreen\API\ColumnDto.cs" />
     <Compile Include="DTO\Evergreen\DashboardDto.cs" />
@@ -159,6 +160,7 @@
     <Compile Include="DTO\RuntimeVariables\Buckets\BucketUnassignedId.cs" />
     <Compile Include="DTO\RuntimeVariables\Rings\Rings.cs" />
     <Compile Include="DTO\RuntimeVariables\Rings\RingUnassignedId.cs" />
+    <Compile Include="DTO\RuntimeVariables\Slots.cs" />
     <Compile Include="DTO\RuntimeVariables\Teams\TeamDefaultId.cs" />
     <Compile Include="DTO\RuntimeVariables\Teams\Teams.cs" />
     <Compile Include="DTO\RuntimeVariables\DownloadedFileName.cs" />
@@ -194,6 +196,7 @@
     <Compile Include="Extensions\WebDriverExtensions.cs" />
     <Compile Include="Extensions\WebElementExtensions.cs" />
     <Compile Include="Helpers\BaseFilter.cs" />
+    <Compile Include="Helpers\PreferenceLanguageConverter.cs" />
     <Compile Include="Helpers\ColorsConvertor.cs" />
     <Compile Include="Helpers\ColorWidgetConvertor.cs" />
     <Compile Include="Helpers\ColumnNameToUrlConvertor.cs" />
@@ -239,7 +242,6 @@
     <Compile Include="Pages\Evergreen\AdminDetailsPages\ChangeTeamPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\BaseFormPagePage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateCapacityUnitPage.cs" />
-    <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateNewSlotPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\ProjectDetailsPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\ReassignBucketsPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\ImportProjectPage.cs" />
@@ -346,6 +348,7 @@
     <Compile Include="Steps\Dashworks\AdminPage\Rings\AfterScenario\RemoveRingsAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Rings\AfterScenario\SetDefaultRingAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Rings\BeforeScenario\SaveDefaultRingBeforeScenario.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\Slots\CreateSlot.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Teams\AfterScenario\RemoveTeamAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Teams\AfterScenario\SetDefaultTeamAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Teams\Api\CreateTeamViaApi.cs" />

@@ -1771,8 +1771,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         private void SendKeysToTheNamedTextbox(string text, string fieldName)
         {
             var projectElement = _driver.NowAt<ProjectsPage>();
-            projectElement.GetFieldByName(fieldName).ClearWithBackspaces();
-            projectElement.GetFieldByName(fieldName).SendKeys(text);
+            projectElement.SendKeysToTheNamedTextbox(text, fieldName);
         }
 
         [When(@"User selects ""(.*)"" checkbox in the ""(.*)"" field on the Project details page")]
@@ -1867,8 +1866,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<Capacity_SlotsPage>();
             page.EnterValueByDayName(value, columnName);
-            var body = _driver.NowAt<BaseGridPage>();
-            body.BodyContainer.Click();
         }
 
         [Then(@"following items are displayed in the dropdown:")]
@@ -2538,6 +2535,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var createReadiness = _driver.NowAt<CreateReadinessPage>();
             createReadiness.ColourDropbox.Click();
+        }
+
+        [Then(@"User sees following options for Colour Template selector on Create Readiness page:")]
+        public void WhenUserSeesFollowingOptionsForColourTemplateSelectorOnCreateReadinessPage(Table items)
+        {
+            var createReadiness = _driver.NowAt<CreateReadinessPage>();
+
+            Assert.AreEqual(items.Rows.SelectMany(row => row.Values).ToList(),
+                createReadiness.ColourPicker.Select(x => x.Text).ToList(), "Incorrect options in lists dropdown");
         }
 
         [Then(@"List of available colours displayed to user on Edit Readiness")]

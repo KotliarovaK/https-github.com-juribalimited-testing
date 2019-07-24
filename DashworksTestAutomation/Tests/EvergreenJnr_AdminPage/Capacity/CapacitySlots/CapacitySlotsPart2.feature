@@ -10,16 +10,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCapacitySlotClearedWhenObjectTypeIsCha
 	When User navigates to "User Scheduled Project in Italian & Japanese (Jo)" project details
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE SLOT" Action button
-	And User type "CapacitySlotDAS13441" Name in the "Slot Name" field on the Project details page
-	And User type "DAS13441" Name in the "Display Name" field on the Project details page
-	And User selects "Device" in the "Object Type" dropdown
-	And User selects next items in the "Tasks" dropdown:
-	| Items                                      |
-	| Stage 1 \ DDL Task for a Computer          |
-	| Stage 1 \ Date Task for a Computer Italian |
-	And User clicks on "Teams" dropdown on the Capacity Slots page
-	And User clicks the "CREATE" Action button
+	And User creates new Slot
+	| SlotName             | DisplayName | ObjectType | Tasks              |
+	| CapacitySlotDAS13441 | DAS13441    | Device     | Stage 1 \ DDL Task for a Computer‡Stage 1 \ Date Task for a Computer Italian |
 	And User clicks newly created object link
 	Then User sees following tiles selected in the "Tasks" field:
 	| Items                                      |
@@ -34,10 +27,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToDeleteParticularCapacitySl
 	When User navigates to "Project K-Computer Scheduled Project" project details
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE SLOT" Action button
-	And User type "CapacitySlot13866" Name in the "Slot Name" field on the Project details page
-	And User type "DAS13866" Name in the "Display Name" field on the Project details page
-	When User clicks the "CREATE" Action button
+	And User creates new Slot
+	| SlotName          | DisplayName |
+	| CapacitySlot13866 | DAS13866    |
 	Then Success message with "Your capacity slot has been created" text is displayed on the Projects page
 	When User select "Capacity Slot" rows in the grid
 	| SelectedRowsName  |
@@ -83,28 +75,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsLinkFromUnitGridLeadsToCorrectFil
 	| Capacity Unit 1 |             | false     | User Scheduled Project in Italian & Japanese (Jo) |
 	| Capacity Unit 2 |             | false     | User Scheduled Project in Italian & Japanese (Jo) |
 	When User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE SLOT" Action button
-	And User type "Slot1" Name in the "Slot Name" field on the Project details page
-	And User type "Slot 1" Name in the "Display Name" field on the Project details page
-	And User clicks the "CREATE" Action button
-	Then Success message is displayed and contains "Your capacity slot has been created" text
-	When User clicks the "CREATE SLOT" Action button
-	And User type "Slot2" Name in the "Slot Name" field on the Project details page
-	And User type "Slot 2" Name in the "Display Name" field on the Project details page
-	And User selects "Capacity Unit 1" checkbox in the "Capacity Units" field on the Project details page
-	And User clicks the "CREATE" Action button
-	Then Success message is displayed and contains "Your capacity slot has been created" text
-	When User clicks the "CREATE SLOT" Action button
-	And User type "Slot3" Name in the "Slot Name" field on the Project details page
-	And User type "Slot 3" Name in the "Display Name" field on the Project details page
-	And User selects "Capacity Unit 2" checkbox in the "Capacity Units" field on the Project details page
-	And User clicks the "CREATE" Action button
-	Then Success message is displayed and contains "Your capacity slot has been created" text
-	When User clicks the "CREATE SLOT" Action button
-	And User type "Slot4" Name in the "Slot Name" field on the Project details page
-	And User type "Slot 4" Name in the "Display Name" field on the Project details page
-	Then User selects "Teams and Paths" option in "Capacity Type" dropdown
-	When User clicks the "CREATE" Action button
+	And User creates new Slot
+	| SlotName | DisplayName | CapacityUnits   | CapacityType    |
+	| Slot1    | Slot 1      |                 |                 |
+	| Slot2    | Slot 2      | Capacity Unit 1 |                 |
+	| Slot3    | Slot 3      | Capacity Unit 2 |                 |
+	| Slot4    | Slot 4      | Capacity Unit 2 | Teams and Paths |
 	Then Success message is displayed and contains "Your capacity slot has been created" text
 	#act1
 	When User clicks "Capacity" tab

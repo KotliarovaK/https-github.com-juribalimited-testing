@@ -26,7 +26,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
 
         [FindsBy(How = How.XPath, Using = "//div[@class='cdk-overlay-pane small-dialogs-styling']")]
         public IWebElement MoveToPositionDialog { get; set; }
-        
+
         [FindsBy(How = How.XPath, Using = ".//input[contains(@placeholder, 'Move to position')]")]
         public IWebElement MoveToPositionInput { get; set; }
 
@@ -48,7 +48,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
             };
         }
 
-
         public IWebElement RemoveTaskIcon(string taskName)
         {
             return Driver.FindElement(By.XPath($".//span[text()='{taskName}']/parent:: mat-chip/button"));
@@ -56,7 +55,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
 
         public void EnterValueByColumnName(string value, string columnName)
         {
-            var byControl =By.XPath($"//thead//td[text()='{columnName}']//ancestor::table//input");
+            var byControl = By.XPath($"//thead//td[text()='{columnName}']//ancestor::table//input");
             Driver.WaitForDataLoading();
             Driver.WaitForElementToBeDisplayed(byControl);
             Driver.FindElement(byControl).Click();
@@ -66,12 +65,16 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
 
         public void EnterValueByDayName(string value, string columnName)
         {
-            var byControl = By.XPath($".//input[@id='{columnName.ToLower()}']");
-            Driver.WaitForDataLoading();
-            Driver.WaitForElementToBeDisplayed(byControl);
-            Driver.FindElement(byControl).Click();
-            Driver.FindElement(byControl).Clear();
-            Driver.FindElement(byControl).SendKeys(value);
+            if (!string.IsNullOrEmpty(value))
+            {
+                var byControl = By.XPath($".//input[@id='{columnName.ToLower()}']");
+                Driver.WaitForDataLoading();
+                Driver.WaitForElementToBeDisplayed(byControl);
+                Driver.FindElement(byControl).Click();
+                Driver.FindElement(byControl).Clear();
+                Driver.FindElement(byControl).SendKeys(value);
+                BodyContainer.Click();
+            }
         }
 
         public void ClickDropdownByName(string dropdownName)

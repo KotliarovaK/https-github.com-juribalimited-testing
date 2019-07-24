@@ -145,7 +145,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThat500ErrorIsNotDisplayedAfterAddi
 	| Red                |
 	| Amber              |
 	| Green              |
-	| Not Applicable     |
+	| None               |
 	Then "<FilterName>" filter is added to the list
 	When User clicks the Filters button
 	And User click on '<ColumnHeader>' column header
@@ -250,7 +250,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatGridIsDisplayedCorrectlyAfterAdding
 	| ColumnName             |
 	| Owner accountexpires   |
 	| frscomputerreferencebl |
-	And "17,225" rows are displayed in the agGrid
+	And "17,279" rows are displayed in the agGrid
 	And full list content is displayed to the user
 	And There are no errors in the browser console
 	And table content is present

@@ -12,18 +12,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotAppearsAfterDuplicateActionWith
 	| ProjectForDAS13979 | All Devices | None            | Standalone Project |
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE SLOT" Action button
-	And User type "Slot 13979" Name in the "Slot Name" field on the Project details page
-	And User type "13979" Name in the "Display Name" field on the Project details page
-	Then User selects "Teams and Paths" option in "Capacity Type" dropdown
-	When User changes value to "0" for "Monday" day column
-	And User changes value to "1" for "Tuesday" day column
-	And User changes value to "2" for "Wednesday" day column
-	And User changes value to "3" for "Thursday" day column
-	And User changes value to "4" for "Friday" day column
-	And User changes value to "5" for "Saturday" day column
-	And User changes value to "6" for "Sunday" day column
-	And User clicks the "CREATE" Action button
+	And User creates new Slot
+	| SlotName   | DisplayName | Tasks | CapacityType    | Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday |
+	| Slot 13979 | 13979       |       | Teams and Paths | 0      | 1       | 2         | 3        | 4      | 5        | 6      |
 	And User opens settings for "Slot 13979" row
 	And User selects "Duplicate" option from settings menu
 	Then Success message is displayed and contains "Your capacity slot has been created, click here to view the Slot 13979 (copy) slot" text
@@ -78,11 +69,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCopySuffixDisplayingForNames
 	| ProjectForDAS14478 | All Devices | None            | Standalone Project |
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE SLOT" Action button
-	And User type "Slot 14478" Name in the "Slot Name" field on the Project details page
-	And User type "14478" Name in the "Display Name" field on the Project details page
-	Then User selects "Teams and Paths" option in "Capacity Type" dropdown
-	When User clicks the "CREATE" Action button
+	And User creates new Slot
+	| SlotName   | DisplayName | CapacityType    |
+	| Slot 14478 | 14478       | Teams and Paths |
 	Then Success message is displayed and contains "Your capacity slot has been created" text
 	When User opens settings for "Slot 14478" row
 	And User selects "Duplicate" option from settings menu
@@ -115,21 +104,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotIsMovedToLastPositionIfValueEntere
 	| ProjectForDAS13791 | All Devices | None            | Standalone Project |
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE SLOT" Action button
-	And User type "Slot 10001" Name in the "Slot Name" field on the Project details page
-	And User type "10001" Name in the "Display Name" field on the Project details page
-	Then User selects "Teams and Paths" option in "Capacity Type" dropdown
-	When User clicks the "CREATE" Action button
-	And User clicks the "CREATE SLOT" Action button
-	And User type "Slot 10002" Name in the "Slot Name" field on the Project details page
-	And User type "10002" Name in the "Display Name" field on the Project details page
-	Then User selects "Teams and Paths" option in "Capacity Type" dropdown
-	When User clicks the "CREATE" Action button
-	And User clicks the "CREATE SLOT" Action button
-	And User type "Slot 10003" Name in the "Slot Name" field on the Project details page
-	And User type "10003" Name in the "Display Name" field on the Project details page
-	Then User selects "Teams and Paths" option in "Capacity Type" dropdown
-	When User clicks the "CREATE" Action button
+	And User creates new Slot
+	| SlotName   | DisplayName | CapacityType    |
+	| Slot 10001 | 10001       | Teams and Paths |
+	| Slot 10002 | 10002       | Teams and Paths |
+	| Slot 10003 | 10003       | Teams and Paths |
 	Then User sees next Slots on the Capacity Slots page:
 	| slots      |
 	| Slot 10001 |

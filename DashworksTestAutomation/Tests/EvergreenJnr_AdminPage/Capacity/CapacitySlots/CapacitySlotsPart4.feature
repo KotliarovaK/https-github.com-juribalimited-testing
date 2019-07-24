@@ -12,22 +12,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotIsSuccessfullyCreatedUsingExist
 	| 13382ProjectForCapacity | All Devices | None            | Standalone Project |
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	When User clicks the "CREATE SLOT" Action button
-	And User type "Slot13147" Name in the "Slot Name" field on the Project details page
-	And User type "Name13147" Name in the "Display Name" field on the Project details page
-	And User clicks the "CREATE" Action button
-	Then Success message is displayed and contains "Your capacity slot has been created" text
-	And There are no errors in the browser console
-	When User clicks the "CREATE SLOT" Action button
-	And User type "NewName" Name in the "Slot Name" field on the Project details page
-	And User type "Name1" Name in the "Display Name" field on the Project details page
-	And User clicks the "CREATE" Action button
-	Then Success message is displayed and contains "Your capacity slot has been created" text
-	And There are no errors in the browser console
-	When User clicks the "CREATE SLOT" Action button
-	And User type "Name1" Name in the "Slot Name" field on the Project details page
-	And User type "Name1" Name in the "Display Name" field on the Project details page
-	And User clicks the "CREATE" Action button
+	And User creates new Slot
+	| SlotName  | DisplayName |
+	| Slot13147 | Name13147   |
+	| NewName   | Name1       |
+	| Name1     | Name1       |
 	When User have opened Column Settings for "Capacity Slot" column
 	And User clicks Column button on the Column Settings panel
 	Then Column Settings was opened
@@ -50,10 +39,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlyLanguageIsDisplayedForSlotsA
 	And User selects "Dutch" language on the Project details page
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE SLOT" Action button
-	And User type "ChecksLanguage" Name in the "Slot Name" field on the Project details page
-	And User type "DAS13955" Name in the "Display Name" field on the Project details page
-	And User clicks the "CREATE" Action button
+	And User creates new Slot
+	| SlotName       | DisplayName |
+	| ChecksLanguage | DAS13955    |
 	And User clicks "Capacity" tab
 	And User clicks "Details" tab
 	And User opens menu for selected language
@@ -85,10 +73,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlyLanguageIsDisplayedForSlotsA
 	When User clicks "REMOVE" button in the warning message on Admin page
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE SLOT" Action button
-	And User type "ChecksLanguage 2" Name in the "Slot Name" field on the Project details page
-	And User type "DAS13955" Name in the "Display Name" field on the Project details page
-	And User clicks the "CREATE" Action button
+	And User creates new Slot
+	| SlotName         | DisplayName |
+	| ChecksLanguage 2 | DAS13955    |
 	And User clicks newly created object link
 	Then See Translations link on the Capacity Slot page is not displayed
 
@@ -99,11 +86,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCreatedSlotWithSelectedTypeTeamsAndRe
 	| ProjectForDAS14103 | All Devices | None            | Standalone Project |
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE SLOT" Action button
-	And User type "capacity type = Teams and Paths" Name in the "Slot Name" field on the Project details page
-	And User type "capacity type = Teams and Paths" Name in the "Display Name" field on the Project details page
-	Then User selects "Teams and Paths" option in "Capacity Type" dropdown
-	When User clicks the "CREATE" Action button
+	And User creates new Slot
+	| SlotName                        | DisplayName                     | CapacityType    |
+	| capacity type = Teams and Paths | capacity type = Teams and Paths | Teams and Paths |
 	Then Success message is displayed and contains "Your capacity slot has been created" text
 	And "" content is displayed in "Capacity Units" column
 
@@ -114,18 +99,10 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatNoUnitsOptionsWasAddedToCapacityUnits
 	| ProjectForDAS13417 | All Devices | None            | Standalone Project |
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE SLOT" Action button
-	And User type "capacity type = Teams and Paths" Name in the "Slot Name" field on the Project details page
-	And User type "capacity type = Teams and Paths" Name in the "Display Name" field on the Project details page
-	Then User selects "Teams and Paths" option in "Capacity Type" dropdown
-	When User clicks the "CREATE" Action button
-	Then Success message is displayed and contains "Your capacity slot has been created" text
-	When User clicks the "CREATE SLOT" Action button
-	And User type "capacity type = Capacity Units" Name in the "Slot Name" field on the Project details page
-	And User type "capacity type = Capacity Units" Name in the "Display Name" field on the Project details page
-	Then User selects "Capacity Units" option in "Capacity Type" dropdown
-	When User clicks the "CREATE" Action button
-	Then Success message is displayed and contains "Your capacity slot has been created" text
+	And User creates new Slot
+	| SlotName                        | DisplayName                     | CapacityType    |
+	| capacity type = Teams and Paths | capacity type = Teams and Paths | Teams and Paths |
+	| capacity type = Capacity Units  | capacity type = Capacity Units  | Capacity Units  |
 	When User clicks String Filter button for "Capacity Units" column on the Admin page
 	And User selects "All Capacity Units" checkbox from String Filter with item list on the Admin page
 	Then Rows counter shows "1" of "2" rows

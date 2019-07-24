@@ -95,14 +95,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatInactiveAutomationShouldBeLoggedButNot
 	Then "INACTIVE AUTOMATION" content is displayed for "Outcome" column
 	When User clicks Export button on the Admin page
 	Then User checks that file "Dashworks export" was downloaded
-	Then User verifies "Outcome" column content in the "Dashworks export" downloaded file
-	| ColumnContent       |
-	| INACTIVE AUTOMATION |
-	| SUCCESS             |
-	| INACTIVE AUTOMATION |
-	| SUCCESS             |
-	| INACTIVE AUTOMATION |
-	| SUCCESS             |
+	When User clicks String Filter button for "Type" column on the Admin page
+	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	Then "SUCCESS" content is displayed for "Outcome" column
 
 @Evergreen @EvergreenJnr_AdminPage @AutomationLog @Automations @DAS17104 @DAS16974 @DAS16316 @DAS17263 @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckSuccessfulRunInOutcomeColumn

@@ -798,7 +798,7 @@ this.FeatureBackground();
             table16.AddRow(new string[] {
                         "Green"});
             table16.AddRow(new string[] {
-                        "Not Applicable"});
+                        "None"});
 #line 142
  testRunner.When(string.Format("User add \"{0}\" filter where type is \"Equals\" with added column and following chec" +
                         "kboxes:", filterName), ((string)(null)), table16, "When ");
@@ -1220,7 +1220,7 @@ this.FeatureBackground();
 #line 249
  testRunner.Then("ColumnName is added to the list", ((string)(null)), table26, "Then ");
 #line 253
- testRunner.And("\"17,225\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\"17,279\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 254
  testRunner.And("full list content is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 255

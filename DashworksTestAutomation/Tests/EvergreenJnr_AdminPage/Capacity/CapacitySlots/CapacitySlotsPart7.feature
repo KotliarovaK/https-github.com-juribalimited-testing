@@ -121,13 +121,17 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreUnpublishedAfterBeingAssociat
 	And User clicks content from "Project" column
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE NEW SLOT" Action button
-	And User type "Slot 1" Name in the "Slot Name" field on the Project details page
-	And User type "Slot 1" Name in the "Display Name" field on the Project details page
-	And User selects "Pre-Migration \ Scheduled Date" checkbox in the "Tasks" field on the Project details page
-	And User selects "Pre-Migration \ Forecast Date" checkbox in the "Tasks" field on the Project details page
-	And User selects "Computer Information ---- Text fill; Text fill; \ Group Computer Rag Radio Date Owner" checkbox in the "Tasks" field on the Project details page
-	And User clicks the "CREATE" Action button
+	And User creates new Slot
+	| SlotName | DisplayName | Tasks                                                                                                                                              |
+	| Slot 1   | Slot 1      | Pre-Migration \ Scheduled Date‡Pre-Migration \ Forecast Date‡Computer Information ---- Text fill; Text fill; \ Group Computer Rag Radio Date Owner |
+	#TODO Remove commented steps. I have saved them just to save data during NotRun removing
+	#And User clicks the "CREATE NEW SLOT" Action button
+	#And User type "Slot 1" Name in the "Slot Name" field on the Project details page
+	#And User type "Slot 1" Name in the "Display Name" field on the Project details page
+	#And User selects "Pre-Migration \ Scheduled Date" checkbox in the "Tasks" field on the Project details page
+	#And User selects "Pre-Migration \ Forecast Date" checkbox in the "Tasks" field on the Project details page
+	#And User selects "Computer Information ---- Text fill; Text fill; \ Group Computer Rag Radio Date Owner" checkbox in the "Tasks" field on the Project details page
+	#And User clicks the "CREATE" Action button
 	And User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "Windows 7 Migration (Computer Scheduled Project)" Project
@@ -192,13 +196,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCapacityEnabledFlagUpdatesAfterAdding
 	And User navigates to "Windows 7 Migration (Computer Scheduled Project)" project details
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE SLOT" Action button
-	And User type "SlotTask13502" Name in the "Slot Name" field on the Project details page
-	And User type "Slot Task13502" Name in the "Display Name" field on the Project details page
-	And User selects "Capacity Units" in the "Capacity Type" dropdown
-	And User selects "Computer Information ---- Text fill; Text fill; \ Task13502" checkbox in the "Tasks" field on the Project details page
-	And User clicks the "CREATE" Action button
-	Then Success message is displayed and contains "Your capacity slot has been created" text
+	And User creates new Slot
+	| SlotName      | DisplayName    | CapacityType   | Tasks                                                       |
+	| SlotTask13502 | Slot Task13502 | Capacity Units | Computer Information ---- Text fill; Text fill; \ Task13502 |
 	When User clicks newly created object link
 	Then CapacityEnabled flag is equal to "True"
 	When User removes "Computer Information ---- Text fill; Text fill; \ Task13502" on the Project details page
@@ -232,14 +232,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreDeletedAfterBeingAssociatedTo
 	And User navigates to "Windows 7 Migration (Computer Scheduled Project)" project details
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE SLOT" Action button
-	And User type "Slot 1" Name in the "Slot Name" field on the Project details page
-	And User type "Slot 1" Name in the "Display Name" field on the Project details page
-	And User selects "Capacity Units" in the "Capacity Type" dropdown
-	And User selects "Computer Information ---- Text fill; Text fill; \ 1Task13500" checkbox in the "Tasks" field on the Project details page
-	And User selects "Computer Information ---- Text fill; Text fill; \ 2Task13500" checkbox in the "Tasks" field on the Project details page
-	And User selects "Pre-Migration \ Scheduled Date" checkbox in the "Tasks" field on the Project details page
-	And User clicks the "CREATE" Action button
+	And User creates new Slot
+	| SlotName | DisplayName | CapacityType   | Tasks                                                                                                                                                    |
+	| Slot 1   | Slot 1      | Capacity Units | Computer Information ---- Text fill; Text fill; \ 1Task13500‡Computer Information ---- Text fill; Text fill; \ 2Task13500‡Pre-Migration \ Scheduled Date |
 	And User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "Windows 7 Migration (Computer Scheduled Project)" Project

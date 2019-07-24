@@ -128,6 +128,15 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             };
         }
 
+        public void SendKeysToTheNamedTextbox(string text, string fieldName)
+        {
+            if (!string.IsNullOrEmpty(text))
+            {
+                GetFieldByName(fieldName).ClearWithBackspaces();
+                GetFieldByName(fieldName).SendKeys(text);
+            }
+        }
+
         public string GetDllPanelHeight()
         {
             return Driver.FindElement(By.XPath(".//div[@class='cdk-overlay-pane']")).GetCssValue("height");

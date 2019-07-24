@@ -16,24 +16,18 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingI
 	And User clicks on the Unlimited field on the Capacity Slots page
 	Then Unlimited text disappears from column
 	When User clicks the "CANCEL" Action button
-	And User clicks the "CREATE SLOT" Action button
-	And User type "CapacitySlot1" Name in the "Slot Name" field on the Project details page
-	And User type "DAS13432" Name in the "Display Name" field on the Project details page
-	Then "All Capacity Units" content is displayed in "Capacity Units" field
-	When User selects "Capacity Units" in the "Capacity Type" dropdown
-	When User clicks the "CREATE" Action button
+	And User creates new Slot
+	| SlotName      | DisplayName | CapacityType   | CapacityUnits      |
+	| CapacitySlot1 | DAS13432    | Capacity Units | All Capacity Units |
 	Then Success message is displayed and contains "Your capacity slot has been created" text
 	Then "All Capacity Units" content is displayed in "Capacity Units" column
-	When User clicks the "CREATE SLOT" Action button
-	And User type "CapacitySlot1" Name in the "Slot Name" field on the Project details page
-	And User type "DAS13432" Name in the "Display Name" field on the Project details page
-	And User selects "Capacity Units" in the "Capacity Type" dropdown
-	And User clicks the "CREATE" Action button
+	When User creates new Slot
+	| SlotName      | DisplayName | CapacityType   |
+	| CapacitySlot1 | DAS13432    | Capacity Units |
 	Then Error message with "A capacity slot already exists with this name" text is displayed
-	When User clicks the "CREATE SLOT" Action button
-	And User type "UniqueNameSlot" Name in the "Slot Name" field on the Project details page
-	And User type "DAS13432" Name in the "Display Name" field on the Project details page
-	And User clicks the "CREATE" Action button
+	When User creates new Slot
+	| SlotName       | DisplayName |
+	| UniqueNameSlot | DAS13432    |
 	Then Success message is displayed and contains "Your capacity slot has been created" text
 	When User clicks newly created object link
 	And User type "NewSlotName" Name in the "Slot Name" field on the Project details page
@@ -46,11 +40,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingI
 	When User click on 'Capacity Slot' column header
 	Then data in table is sorted by "Capacity Slot" column in descending order on the Admin page
 	And There are no errors in the browser console
-	When User clicks the "CREATE SLOT" Action button
-	And User type "CapacitySlot2" Name in the "Slot Name" field on the Project details page
-	And User type "DAS13432" Name in the "Display Name" field on the Project details page
-	When User selects "Teams and Paths" in the "Capacity Type" dropdown
-	When User clicks the "CREATE" Action button
+	When User creates new Slot
+	| SlotName      | DisplayName | CapacityType    |
+	| CapacitySlot2 | DAS13432    | Teams and Paths |
 	Then Success message is displayed and contains "Your capacity slot has been created" text
 	When User clicks String Filter button for "Capacity Units" column on the Admin page
 	When User selects "All Capacity Units" checkbox from String Filter on the Admin page
@@ -63,18 +55,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsUnableToCreateMoreThanOneOverrid
 	| ProjectDAS13780 | All Devices | None            | Standalone Project |
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE SLOT" Action button
-	And User type "SlotDAS13780_1" Name in the "Slot Name" field on the Project details page
-	And User type "13780_1" Name in the "Display Name" field on the Project details page
-	And User enters "17 Oct 2018" value to "Slot Available From" date field on Capacity Slot form page
-	And User enters "18 Oct 2018" value to "Slot Available To" date field on Capacity Slot form page
-	And User clicks the "CREATE" Action button
-	And User clicks the "CREATE SLOT" Action button
-	And User type "SlotDAS13780_2" Name in the "Slot Name" field on the Project details page
-	And User type "13780_2" Name in the "Display Name" field on the Project details page
-	And User enters "17 Oct 2018" value to "Slot Available From" date field on Capacity Slot form page
-	And User enters "18 Oct 2018" value to "Slot Available To" date field on Capacity Slot form page
-	And User clicks the "CREATE" Action button
+	When User creates new Slot
+	| SlotName       | DisplayName | SlotAvailableFrom | SlotAvailableTo |
+	| SlotDAS13780_1 | 13780_1     | 17 Oct 2018       | 18 Oct 2018     |
+	| SlotDAS13780_2 | 13780_2     | 17 Oct 2018       | 18 Oct 2018     |
 	And User selects "Override Dates" tab on the Project details page
 	And User clicks the "CREATE OVERRIDE DATE" Action button
 	And User enters "17 Oct 2018" date in the "Override Start Date" field
@@ -104,12 +88,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToUpdateCapacityUnitOrSlotUs
 	| ProjectDAS13789 | All Devices | None            | Standalone Project |
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE SLOT" Action button
-	And User type "capacityslotDAS13789" Name in the "Slot Name" field on the Project details page
-	And User type "DAS13779slot" Name in the "Display Name" field on the Project details page
-	And User enters "28 Oct 2018" value to "Slot Available From" date field on Capacity Slot form page
-	And User enters "29 Oct 2018" value to "Slot Available To" date field on Capacity Slot form page
-	And User clicks the "CREATE" Action button
+	When User creates new Slot
+	| SlotName             | DisplayName  | SlotAvailableFrom | SlotAvailableTo |
+	| capacityslotDAS13789 | DAS13779slot | 28 Oct 2018       | 29 Oct 2018     |
 	And User clicks newly created object link
 	And User type "CAPACITYSLOTdas13789" Name in the "Slot Name" field on the Project details page
 	And User type "das13779SLOT" Name in the "Display Name" field on the Project details page
@@ -134,13 +115,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotAvailableFromAndSlotAvailableToCan
 	| ProjectForCapacityDAS13824 | All Devices | None            | Standalone Project |
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE SLOT" Action button
-	And User type "CapacitySlotDAS13824" Name in the "Slot Name" field on the Project details page
-	And User type "DAS13824" Name in the "Display Name" field on the Project details page
-	And User selects "Capacity Units" in the "Capacity Type" dropdown
-	And User enters "29 Oct 2018" value to "Slot Available From" date field on Capacity Slot form page
-	And User enters "30 Oct 2018" value to "Slot Available To" date field on Capacity Slot form page
-	And User clicks the "CREATE" Action button
+	And User creates new Slot
+	| SlotName             | DisplayName | SlotAvailableFrom | SlotAvailableTo |
+	| CapacitySlotDAS13824 | DAS13824    | 29 Oct 2018       | 30 Oct 2018     |
 	And User clicks newly created object link
 	And User enters "" value to "Slot Available From" date field on Capacity Slot form page
 	And User enters "" value to "Slot Available To" date field on Capacity Slot form page
