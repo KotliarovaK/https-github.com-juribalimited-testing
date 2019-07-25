@@ -185,7 +185,6 @@
     <Compile Include="DTO\RuntimeVariables\UsersWithSharedLists.cs" />
     <Compile Include="DTO\RuntimeVariables\WebsiteUrl.cs" />
     <Compile Include="DTO\UserDto.cs" />
-    <Compile Include="Extensions\AssertExtensions.cs" />
     <Compile Include="Extensions\CookieExtensions.cs" />
     <Compile Include="Extensions\EnumExtensions.cs" />
     <Compile Include="Extensions\ExtensionMethods.cs" />
