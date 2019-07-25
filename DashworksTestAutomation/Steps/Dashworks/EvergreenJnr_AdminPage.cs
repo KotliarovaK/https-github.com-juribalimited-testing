@@ -622,8 +622,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<ProjectsPage>();
             var checkbox = page.GetAssociatedCheckboxByName(radioButtonName);
-            Assert.AreEqual(true, page.GetAssociatedCheckboxByName(radioButtonName).Selected,
-                "Checkbox state is incorrect");
+            Assert.AreEqual(true, checkbox.Selected, "Checkbox Selected state is incorrect");
             Assert.AreEqual(true, Convert.ToBoolean(checkbox.GetAttribute("disabled")), "Checkbox state is incorrect");
         }
 
