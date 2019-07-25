@@ -85,11 +85,18 @@ namespace DashworksTestAutomation.Base
                 try
                 {
                     var testStatus = GetTestStatus();
+                    Logger.Write($"Test status is '{testStatus}'");
                     if (!string.IsNullOrEmpty(testStatus) && testStatus.Equals("Failed"))
                     {
                         var testName = GetTestName();
                         if (!string.IsNullOrEmpty(testName))
-                            driver?.CreateScreenshot(testName);
+                        {
+                            if (driver != null)
+                                driver.CreateScreenshot(testName);
+                            else
+                                Logger.Write("Unable to get screenshot as no Driver in the context");
+                        }
+                        
                     }
 
                     if (driver != null)
