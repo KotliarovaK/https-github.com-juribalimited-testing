@@ -8323,7 +8323,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS17411")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.TestCaseAttribute("Applications", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", null)]
         [NUnit.Framework.TestCaseAttribute("Users", null)]
@@ -8360,8 +8359,7 @@ this.FeatureBackground();
                     "AllLists",
                     "EvergreenJnr_FilterFeature",
                     "FilterFunctionality",
-                    "DAS17411",
-                    "Cleanup"};
+                    "DAS17411"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -8408,7 +8406,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS16178")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesList_CheckProjectOwnerItemsCounter()
         {
             System.Exception lastException = null;
@@ -8442,8 +8439,7 @@ this.FeatureBackground();
                         "Devices",
                         "EvergreenJnr_FilterFeature",
                         "FilterFunctionality",
-                        "DAS16178",
-                        "Cleanup"});
+                        "DAS16178"});
 #line 1944
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -8487,6 +8483,322 @@ this.FeatureBackground();
                     "with\" with added column and following value:", ((string)(null)), table161, "And ");
 #line 1959
  testRunner.Then("\"2,471\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckDepartmentLevelFilterItems")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
+        [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
+        [NUnit.Framework.CategoryAttribute("DAS17004")]
+        public virtual void EvergreenJnr_DevicesList_CheckDepartmentLevelFilterItems()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckDepartmentLevelFilterItemsInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_CheckDepartmentLevelFilterItemsInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckDepartmentLevelFilterItems", null, new string[] {
+                        "Evergreen",
+                        "Devices",
+                        "EvergreenJnr_FilterFeature",
+                        "FilterFunctionality",
+                        "DAS17004"});
+#line 1962
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 1963
+ testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1964
+ testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table162 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedCheckboxes"});
+            table162.AddRow(new string[] {
+                        "Support"});
+            table162.AddRow(new string[] {
+                        "Technology"});
+#line 1965
+ testRunner.And("User add \"Department Level 1\" filter where type is \"Equals\" with added column and" +
+                    " following checkboxes:", ((string)(null)), table162, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table163 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedValues"});
+            table163.AddRow(new string[] {
+                        "Facilities"});
+            table163.AddRow(new string[] {
+                        "Application Development"});
+#line 1969
+ testRunner.And("User Add And \"Department Level 2\" filter where type is \"Equals\" with added column" +
+                    " and Lookup option", ((string)(null)), table163, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table164 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedCheckboxes"});
+            table164.AddRow(new string[] {
+                        "Admin"});
+            table164.AddRow(new string[] {
+                        "Support"});
+            table164.AddRow(new string[] {
+                        "Helpdesk"});
+#line 1973
+ testRunner.And("User Add And \"Department Level 3\" filter where type is \"Does not equal\" without a" +
+                    "dded column and following checkboxes:", ((string)(null)), table164, "And ");
+#line 1978
+ testRunner.Then("\"1,699\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckDepartmentLevelFilterItems")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Users")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
+        [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
+        [NUnit.Framework.CategoryAttribute("DAS17004")]
+        public virtual void EvergreenJnr_UsersList_CheckDepartmentLevelFilterItems()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UsersList_CheckDepartmentLevelFilterItemsInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UsersList_CheckDepartmentLevelFilterItemsInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckDepartmentLevelFilterItems", null, new string[] {
+                        "Evergreen",
+                        "Users",
+                        "EvergreenJnr_FilterFeature",
+                        "FilterFunctionality",
+                        "DAS17004"});
+#line 1981
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 1982
+ testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1983
+ testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table165 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedCheckboxes"});
+            table165.AddRow(new string[] {
+                        "Sales"});
+            table165.AddRow(new string[] {
+                        "Finance"});
+#line 1984
+ testRunner.And("User add \"Department Level 1\" filter where type is \"Equals\" with added column and" +
+                    " following checkboxes:", ((string)(null)), table165, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table166 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedValues"});
+            table166.AddRow(new string[] {
+                        "Marketing"});
+#line 1988
+ testRunner.And("User Add And \"Department Level 2\" filter where type is \"Equals\" with added column" +
+                    " and Lookup option", ((string)(null)), table166, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table167 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedCheckboxes"});
+            table167.AddRow(new string[] {
+                        "Admin"});
+            table167.AddRow(new string[] {
+                        "Support"});
+            table167.AddRow(new string[] {
+                        "Helpdesk"});
+#line 1991
+ testRunner.And("User Add And \"Department Level 3\" filter where type is \"Does not equal\" without a" +
+                    "dded column and following checkboxes:", ((string)(null)), table167, "And ");
+#line 1996
+ testRunner.Then("\"1,800\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckDepartmentLevelFilterItems")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Applications")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
+        [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
+        [NUnit.Framework.CategoryAttribute("DAS17004")]
+        public virtual void EvergreenJnr_ApplicationsList_CheckDepartmentLevelFilterItems()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ApplicationsList_CheckDepartmentLevelFilterItemsInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ApplicationsList_CheckDepartmentLevelFilterItemsInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckDepartmentLevelFilterItems", null, new string[] {
+                        "Evergreen",
+                        "Applications",
+                        "EvergreenJnr_FilterFeature",
+                        "FilterFunctionality",
+                        "DAS17004"});
+#line 1999
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 2000
+ testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2001
+ testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table168 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedCheckboxes",
+                        "Association"});
+            table168.AddRow(new string[] {
+                        "Sales",
+                        "Used on device"});
+            table168.AddRow(new string[] {
+                        "Support",
+                        "Entitled to device"});
+            table168.AddRow(new string[] {
+                        "Technology",
+                        "Installed on device"});
+#line 2002
+ testRunner.And("User add \"Device Department Level 1\" filter where type is \"Equals\" with selected " +
+                    "Checkboxes and following Association:", ((string)(null)), table168, "And ");
+#line 2007
+ testRunner.Then("\"854\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckDepartmentLevelFilterItems")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Mailboxes")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
+        [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
+        [NUnit.Framework.CategoryAttribute("DAS17004")]
+        public virtual void EvergreenJnr_MailboxesList_CheckDepartmentLevelFilterItems()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_MailboxesList_CheckDepartmentLevelFilterItemsInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_MailboxesList_CheckDepartmentLevelFilterItemsInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_MailboxesList_CheckDepartmentLevelFilterItems", null, new string[] {
+                        "Evergreen",
+                        "Mailboxes",
+                        "EvergreenJnr_FilterFeature",
+                        "FilterFunctionality",
+                        "DAS17004"});
+#line 2010
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 2011
+ testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2012
+ testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table169 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedCheckboxes"});
+            table169.AddRow(new string[] {
+                        "Support"});
+            table169.AddRow(new string[] {
+                        "Technology"});
+#line 2013
+ testRunner.And("User add \"Department Level 1\" filter where type is \"Equals\" with added column and" +
+                    " following checkboxes:", ((string)(null)), table169, "And ");
+#line 2017
+ testRunner.Then("\"6,707\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
