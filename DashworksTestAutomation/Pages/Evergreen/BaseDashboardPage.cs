@@ -77,7 +77,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = "//mat-option[@role='option']")]
         public IList<IWebElement> ActionsProjectOrEvergreenOptions { get; set; }
-        
+
         [FindsBy(How = How.XPath, Using = "//mat-option[@role='option']")]
         public IWebElement ProjectSection { get; set; }
 
@@ -361,7 +361,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IList<IWebElement> LastLogonColumnData { get; set; }
 
         #endregion TableColumns
-        
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -417,7 +417,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             {
                 selector = $".//div[@role='presentation']/span[text()='{columnName}']/..";
             }
-            
+
             Driver.WaitForElementToBeDisplayed(By.XPath(selector));
             return Driver.FindElement(By.XPath(selector));
         }
@@ -626,7 +626,15 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
             Driver.WaitForDataLoading();
             Driver.WaitForElementToBeDisplayed(byControl);
-            Driver.FindElement(byControl).Click();
+            try
+            {
+                Driver.FindElement(byControl).Click();
+            }
+            catch (StaleElementReferenceException)
+            {
+                if (Driver.IsElementDisplayed(byControl, WebDriverExtensions.WaitTime.Short))
+                    Driver.FindElement(byControl).Click();
+            }
         }
 
         /// <summary>

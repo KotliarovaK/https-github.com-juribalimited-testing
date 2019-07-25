@@ -166,7 +166,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheE
 	When User clicks the "CANCEL" Action button
 	And User creates new Slot
 	| SlotName | DisplayName | Tasks                                           |
-	| Slot 2   | Slot 2      | Stage13812 \ 2Task13812†Stage13812 \ 3Task13812 |
+	| Slot 2   | Slot 2      | Stage13812 \ 2Task13812‡Stage13812 \ 3Task13812 |
 	And User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "ProjectForDAS13812" Project

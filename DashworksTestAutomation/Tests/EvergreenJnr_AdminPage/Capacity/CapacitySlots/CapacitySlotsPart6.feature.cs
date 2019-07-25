@@ -752,7 +752,7 @@ this.FeatureBackground();
             table16.AddRow(new string[] {
                         "Slot 2",
                         "Slot 2",
-                        "Stage13812 \\ 2Task13812†Stage13812 \\ 3Task13812"});
+                        "Stage13812 \\ 2Task13812‡Stage13812 \\ 3Task13812"});
 #line 167
  testRunner.And("User creates new Slot", ((string)(null)), table16, "And ");
 #line 170

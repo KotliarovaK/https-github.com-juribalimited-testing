@@ -219,7 +219,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatToolTipIsDisplayedWithCreateProjectB
 	Then tooltip is displayed with "This list must be saved before using it to create a project" text for Create Project button
 	And Create Project button is disabled on the Base Dashboard Page
 
-@Evergreen @AllLists @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS14189 @Projects
+	#Remove Not_Run. Added temporary by Vitalli to check how it will be on Bamboo
+@Evergreen @AllLists @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS14189 @Projects @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatTheCorrectCreateMenuOptionsAreDisplayedForEachObjectListType
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user

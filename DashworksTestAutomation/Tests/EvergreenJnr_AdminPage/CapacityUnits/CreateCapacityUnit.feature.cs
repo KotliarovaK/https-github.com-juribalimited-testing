@@ -311,11 +311,8 @@ this.FeatureBackground();
 #line 67
  testRunner.Then("\"DefaultCapacityUnit13720\" text is displayed in the table content", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 68
- testRunner.When("User enters \"DefaultCapacityUnit13720\" text in the Search field for \"Capacity Uni" +
-                    "t\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks content from \"Capacity Unit\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 69
- testRunner.And("User clicks content from \"Capacity Unit\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 70
  testRunner.Then("\"Default Unit\" checkbox is checked and cannot be unchecked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -369,12 +366,12 @@ this.FeatureBackground();
                         "DAS13013",
                         "DAS12926",
                         "Cleanup"});
-#line 73
+#line 72
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 74
+#line 73
  testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -385,26 +382,26 @@ this.FeatureBackground();
                         "SameNameCaseSensative",
                         "SameNameCaseSensative",
                         "false"});
-#line 75
+#line 74
  testRunner.And("User creates new Capacity Unit via api", ((string)(null)), table4, "And ");
-#line 78
+#line 77
  testRunner.And("User clicks \"Evergreen\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 79
+#line 78
  testRunner.And("User clicks \"Capacity Units\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 80
+#line 79
  testRunner.When("User clicks the \"CREATE EVERGREEN CAPACITY UNIT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 81
+#line 80
  testRunner.And("User type \"samenamecaseSensative\" Name in the \"Capacity Unit Name\" field on the P" +
                     "roject details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 82
+#line 81
  testRunner.And("User type \"SameNameCaseSensative\" Name in the \"Description\" field on the Project " +
                     "details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 83
+#line 82
  testRunner.And("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 84
+#line 83
  testRunner.Then("Error message with \"A capacity unit already exists with this name\" text is displa" +
                     "yed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 85
+#line 84
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();

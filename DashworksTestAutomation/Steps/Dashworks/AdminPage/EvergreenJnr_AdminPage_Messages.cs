@@ -123,6 +123,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         {
             var page = _driver.NowAt<BaseGridPage>();
             page.CloseMessageButton.Click();
+            _driver.WaitForElementToBeNotDisplayed(page.CloseMessageButton);
         }
 
         [Then(@"Info message is displayed and contains ""(.*)"" text")]
