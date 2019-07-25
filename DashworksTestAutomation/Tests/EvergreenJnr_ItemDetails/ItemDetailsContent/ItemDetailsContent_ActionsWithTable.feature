@@ -32,6 +32,15 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatCorrectMessageIsDisplayedForDev
 	When User navigates to the "Devices" sub-menu on the Details page
 	Then "No devices found for this application" message is displayed on the Details Page
 
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17278
+Scenario: EvergreenJnr_DevicesList_CheckThatCorrectMessageIsDisplayedForDevicesSectionIfTheOwnerEqualUnknownForDeviceObjectInEvergreen
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "06Y8HSNCPVHENV"
+	And User click content from "Hostname" column
+	When User navigates to the "Users" main-menu on the Details page
+	Then "No users found for this device" message is displayed on the Details Page
+
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12235 @DAS13409 @DAS13657 @DAS14923
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColumnsForExpandedSections
 	When User clicks "<PageName>" on the left-hand menu
