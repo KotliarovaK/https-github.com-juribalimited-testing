@@ -1920,7 +1920,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatProjectNameCategoryAppearsForList
     | 2      |
 	Then "4" rows are displayed in the agGrid
 
-@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS17411 @Cleanup
+@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS17411
 Scenario Outline: EvergreenJnr_Lists_CheckThatProjectNameIsNotDisplayedForNotDevicesList
 	When User clicks "<ListName>" on the left-hand menu
 	And User clicks the Columns button
@@ -1940,7 +1940,7 @@ Examples:
 	| Mailboxes		| 
 	| Users			|
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS16178 @Cleanup
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS16178
 Scenario: EvergreenJnr_DevicesList_CheckProjectOwnerItemsCounter
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Filters button
@@ -1957,3 +1957,61 @@ Scenario: EvergreenJnr_DevicesList_CheckProjectOwnerItemsCounter
     | Values |
     | 9      |
 	Then "2,471" rows are displayed in the agGrid
+
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS17004
+Scenario: EvergreenJnr_DevicesList_CheckDepartmentLevelFilterItems
+	When User clicks "Devices" on the left-hand menu
+	And User clicks the Filters button
+	And User add "Department Level 1" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Support            |
+	| Technology         |
+	And User Add And "Department Level 2" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues          |
+	| Facilities              |
+	| Application Development |
+	And User Add And "Department Level 3" filter where type is "Does not equal" without added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Admin              |
+	| Support            |
+	| Helpdesk           |
+	Then "1,699" rows are displayed in the agGrid
+
+@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS17004
+Scenario: EvergreenJnr_UsersList_CheckDepartmentLevelFilterItems
+	When User clicks "Users" on the left-hand menu
+	And User clicks the Filters button
+	And User add "Department Level 1" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Sales            |
+	| Finance         |
+	And User Add And "Department Level 2" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues |
+	| Marketing      |
+	And User Add And "Department Level 3" filter where type is "Does not equal" without added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Admin              |
+	| Support            |
+	| Helpdesk           |
+	Then "1,800" rows are displayed in the agGrid
+
+@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS17004
+Scenario: EvergreenJnr_ApplicationsList_CheckDepartmentLevelFilterItems
+	When User clicks "Applications" on the left-hand menu
+	And User clicks the Filters button
+	And User add "Device Department Level 1" filter where type is "Equals" with selected Checkboxes and following Association:
+	| SelectedCheckboxes | Association         |
+	| Sales              | Used on device      |
+	| Support            | Entitled to device  |
+	| Technology         | Installed on device |
+	Then "854" rows are displayed in the agGrid
+
+@Evergreen @Mailboxes @EvergreenJnr_FilterFeature @FilterFunctionality @DAS17004
+Scenario: EvergreenJnr_MailboxesList_CheckDepartmentLevelFilterItems
+	When User clicks "Mailboxes" on the left-hand menu
+	And User clicks the Filters button
+	And User add "Department Level 1" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Support            |
+	| Technology         |
+	Then "6,707" rows are displayed in the agGrid
