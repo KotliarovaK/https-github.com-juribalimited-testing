@@ -594,11 +594,13 @@ this.FeatureBackground();
  testRunner.When("Project created via API and opened", ((string)(null)), table10, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Project",
                         "SlotName",
                         "DisplayName",
                         "SlotAvailableFrom",
                         "SlotAvailableTo"});
             table11.AddRow(new string[] {
+                        "ProjectForCapacityDAS13824",
                         "CapacitySlotDAS13824",
                         "DAS13824",
                         "29 Oct 2018",

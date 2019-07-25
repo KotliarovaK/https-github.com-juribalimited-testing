@@ -111,8 +111,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotAvailableFromAndSlotAvailableToCan
 	| ProjectName                | Scope       | ProjectTemplate | Mode               |
 	| ProjectForCapacityDAS13824 | All Devices | None            | Standalone Project |
 	And User creates new Slot via Api
-	| SlotName             | DisplayName | SlotAvailableFrom | SlotAvailableTo |
-	| CapacitySlotDAS13824 | DAS13824    | 29 Oct 2018       | 30 Oct 2018     |
+	| Project                    | SlotName             | DisplayName | SlotAvailableFrom | SlotAvailableTo |
+	| ProjectForCapacityDAS13824 | CapacitySlotDAS13824 | DAS13824    | 29 Oct 2018       | 30 Oct 2018     |
 	And User navigates to newly created Slot
 	And User enters "" value to "Slot Available From" date field on Capacity Slot form page
 	And User enters "" value to "Slot Available To" date field on Capacity Slot form page
