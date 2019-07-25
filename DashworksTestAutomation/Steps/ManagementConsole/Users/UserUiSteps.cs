@@ -67,7 +67,7 @@ namespace DashworksTestAutomation.Steps.ManagementConsole
             page.Password.SendKeys(user.Password);
             page.ConfirmPassword.SendKeys(user.ConfirmPassword);
             if (user.UserRoles.Any())
-                foreach (string role in user.UserRoles)
+                foreach (string role in user.UserRoles.Where(x => !string.IsNullOrEmpty(x)))
                 {
                     page.Roles.SelectboxSelect(role);
                 }
