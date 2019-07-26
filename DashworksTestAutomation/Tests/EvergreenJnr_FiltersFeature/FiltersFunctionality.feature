@@ -2015,3 +2015,25 @@ Scenario: EvergreenJnr_MailboxesList_CheckDepartmentLevelFilterItems
 	| Support            |
 	| Technology         |
 	Then "6,707" rows are displayed in the agGrid
+
+@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS16912
+Scenario Outline: EvergreenJnr_AllLists_CheckThatComplinceNoneOptionIsTranslatedInFilter
+	When User clicks "<ListName>" on the left-hand menu
+	And User language is changed to "Deutsch" via API
+	And User clicks refresh button in the browser
+	And User clicks the Filters button
+	And user select "<TranslatedColumnName>" filter
+	Then Following checkboxes are available for current opened filter:
+	| checkboxes |
+	| Unbekannt  |
+	| Rot        |
+	| Bernstein  |
+	| Grün       |
+	| Keine      |
+
+Examples: 
+	| ListName     | TranslatedColumnName        |
+	| Devices      | Anwendungskonformität       |
+	| Users        | Geräteanwendungskonformität |
+	| Applications | Konformität                 |
+	| Mailboxes    | Konformität des Inhabers    |

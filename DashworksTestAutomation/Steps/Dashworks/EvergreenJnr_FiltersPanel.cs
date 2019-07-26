@@ -401,8 +401,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User add ""(.*)"" filter where type is ""(.*)"" with added column and following checkboxes:")]
         public void WhenUserAddFilterWhereTypeIsWithAddedColumnAndFollowingCheckboxes(string filterName,
             string operatorValue, Table table)
-
-
         {
             var filtersNames = _driver.NowAt<FiltersElement>();
             filtersNames.AddFilter(filterName);

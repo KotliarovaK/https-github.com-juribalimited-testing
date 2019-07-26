@@ -8803,6 +8803,91 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatComplinceNoneOptionIsTranslatedInFilter")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("AllLists")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
+        [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
+        [NUnit.Framework.CategoryAttribute("DAS16912")]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Anwendungskonformität", null)]
+        [NUnit.Framework.TestCaseAttribute("Users", "Geräteanwendungskonformität", null)]
+        [NUnit.Framework.TestCaseAttribute("Applications", "Konformität", null)]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Konformität des Inhabers", null)]
+        public virtual void EvergreenJnr_AllLists_CheckThatComplinceNoneOptionIsTranslatedInFilter(string listName, string translatedColumnName, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatComplinceNoneOptionIsTranslatedInFilterInternal(listName,translatedColumnName,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckThatComplinceNoneOptionIsTranslatedInFilterInternal(string listName, string translatedColumnName, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "AllLists",
+                    "EvergreenJnr_FilterFeature",
+                    "FilterFunctionality",
+                    "DAS16912"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatComplinceNoneOptionIsTranslatedInFilter", null, @__tags);
+#line 2020
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 2021
+ testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2022
+ testRunner.And("User language is changed to \"Deutsch\" via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 2023
+ testRunner.And("User clicks refresh button in the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 2024
+ testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 2025
+ testRunner.And(string.Format("user select \"{0}\" filter", translatedColumnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table170 = new TechTalk.SpecFlow.Table(new string[] {
+                        "checkboxes"});
+            table170.AddRow(new string[] {
+                        "Unbekannt"});
+            table170.AddRow(new string[] {
+                        "Rot"});
+            table170.AddRow(new string[] {
+                        "Bernstein"});
+            table170.AddRow(new string[] {
+                        "Grün"});
+            table170.AddRow(new string[] {
+                        "Keine"});
+#line 2026
+ testRunner.Then("Following checkboxes are available for current opened filter:", ((string)(null)), table170, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore
