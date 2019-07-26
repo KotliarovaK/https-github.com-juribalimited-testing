@@ -54,7 +54,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
                 _driver.WaitForElementToBeDisplayed(listPageElement.ResultsRowsCount);
 
-                StringAssert.AreEqualIgnoringCase(numberOfRows == "1" ? $"{numberOfRows} row" : $"{numberOfRows} rows",
+                Utils.Verify.AreEqualIgnoringCase(numberOfRows == "1" ? $"{numberOfRows} row" : $"{numberOfRows} rows",
                     listPageElement.ResultsRowsCount.Text, "Incorrect rows count");
                 Logger.Write(
                     $"Evergreen Global Search returned the correct number of rows for: {numberOfRows}  search");
@@ -63,9 +63,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 _driver.IsElementDisplayed(listPageElement.ResultsRowsCount);
                 _driver.WaitForElementToBeNotDisplayed(listPageElement.ResultsRowsCount);
-                Assert.IsFalse(listPageElement.ResultsRowsCount.Displayed(), "Rows count is displayed");
+                Utils.Verify.IsFalse(listPageElement.ResultsRowsCount.Displayed(), "Rows count is displayed");
                 _driver.WaitForElementToBeDisplayed(listPageElement.ResultsRowsCount);
-                Assert.IsTrue(listPageElement.ResultsRowsCount.Displayed(),
+                Utils.Verify.IsTrue(listPageElement.ResultsRowsCount.Displayed(),
                     "'No Results Found' message not displayed");
                 Logger.Write(
                     $"Evergreen agGrid Search returned '{listPageElement.ResultsRowsCount.Text}' message");
@@ -86,14 +86,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var searchElement = _driver.NowAt<GlobalSearchElement>();
             _driver.WaitForElementToBeDisplayed(searchElement.NoResultFound);
-            Assert.AreEqual(text, searchElement.NoResultFound.Text, $"{text} is not displayed");
+            Utils.Verify.AreEqual(text, searchElement.NoResultFound.Text, $"{text} is not displayed");
         }
 
         [Then(@"""(.*)"" message is not displayed below Global Search field")]
         public void ThenMessageIsNotDisplayedBelowGlobalSearchField(string text)
         {
             var searchElement = _driver.NowAt<GlobalSearchElement>();
-            Assert.IsFalse(searchElement.NoResultFound.Displayed(), $"{text} is not displayed");
+            Utils.Verify.IsFalse(searchElement.NoResultFound.Displayed(), $"{text} is not displayed");
         }
 
         [Then(@"message ""(.*)"" is displayed to the user below Search results")]
@@ -101,7 +101,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<GlobalSearchElement>();
             _driver.WaitForDataLoading();
-            Assert.AreEqual(message, page.NoResultsFoundMessage.Text, $"{message} is not displayed");
+            Utils.Verify.AreEqual(message, page.NoResultsFoundMessage.Text, $"{message} is not displayed");
         }
 
         [Then(@"Search results are displayed below Global Search field")]
@@ -109,7 +109,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var searchElement = _driver.NowAt<GlobalSearchElement>();
             _driver.WaitForElementToBeDisplayed(searchElement.SearchResults);
-            Assert.IsTrue(searchElement.SearchResults.Displayed(), "Search Result are not displayed");
+            Utils.Verify.IsTrue(searchElement.SearchResults.Displayed(), "Search Result are not displayed");
         }
 
         [Then(@"list of results is displayed to the user")]
@@ -117,8 +117,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var searchElement = _driver.NowAt<GlobalSearchElement>();
             _driver.WaitForElementToBeDisplayed(searchElement.TableOfSearchResults);
-            Assert.IsTrue(searchElement.TableOfSearchResults.Displayed());
-            Assert.IsTrue(searchElement.TableContent.Displayed());
+            Utils.Verify.IsTrue(searchElement.TableOfSearchResults.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
+            Utils.Verify.IsTrue(searchElement.TableContent.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"reset button in Global Search field is displayed")]
@@ -126,7 +126,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var searchElement = _driver.NowAt<GlobalSearchElement>();
             _driver.WaitForElementToBeDisplayed(searchElement.GlobalSearchTextBoxResetButton);
-            Assert.IsTrue(searchElement.GlobalSearchTextBoxResetButton.Displayed(), "Reset button is not displayed");
+            Utils.Verify.IsTrue(searchElement.GlobalSearchTextBoxResetButton.Displayed(), "Reset button is not displayed");
             Logger.Write("Reset button is displayed");
         }
     }

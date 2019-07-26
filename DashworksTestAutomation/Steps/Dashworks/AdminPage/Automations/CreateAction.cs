@@ -25,8 +25,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations
         {
             var page = _driver.NowAt<CreateActionsPage>();
             _driver.WaitForElementToBeDisplayed(page.CreateActionTitle);
-            Assert.IsTrue(page.CreateActionTitle.Displayed());
-            Assert.IsTrue(page.ActionNameField.Displayed(), "Create Action page is not displayed");
+            Utils.Verify.IsTrue(page.CreateActionTitle.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
+            Utils.Verify.IsTrue(page.ActionNameField.Displayed(), "Create Action page is not displayed");
         }
     }
 }

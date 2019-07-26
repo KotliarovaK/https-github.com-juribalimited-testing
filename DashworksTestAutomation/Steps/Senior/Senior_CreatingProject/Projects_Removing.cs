@@ -135,7 +135,7 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
 
             _driver.WaitForDataLoading();
-            Assert.IsFalse(page.CheckThatCreatedElementIsRemoved(_deletedTeamName.Value),
+            Utils.Verify.IsFalse(page.CheckThatCreatedElementIsRemoved(_deletedTeamName.Value),
                 "Selected Team is displayed in the table");
         }
 
@@ -144,7 +144,7 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
 
-            Assert.IsFalse(page.CheckThatCreatedElementIsRemoved(_deletedGroupName.Value),
+            Utils.Verify.IsFalse(page.CheckThatCreatedElementIsRemoved(_deletedGroupName.Value),
                 "Selected Group is displayed in the table");
         }
 
@@ -153,7 +153,7 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
 
-            Assert.IsFalse(page.CheckThatCreatedElementIsRemoved(_deletedTaskName.Value),
+            Utils.Verify.IsFalse(page.CheckThatCreatedElementIsRemoved(_deletedTaskName.Value),
                 "Selected Task is displayed in the table");
         }
 
@@ -162,7 +162,7 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
 
-            Assert.IsFalse(page.CheckThatCreatedElementIsRemoved(_deletedStageName.Value),
+            Utils.Verify.IsFalse(page.CheckThatCreatedElementIsRemoved(_deletedStageName.Value),
                 "Selected Stage is displayed in the table");
         }
 
@@ -171,7 +171,7 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
 
-            Assert.IsFalse(page.CheckThatCreatedElementIsRemoved(_projectDto.Categories.Last().Name),
+            Utils.Verify.IsFalse(page.CheckThatCreatedElementIsRemoved(_projectDto.Categories.Last().Name),
                 "Selected Category is displayed in the table");
         }
 
@@ -180,7 +180,7 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
 
-            Assert.IsFalse(page.CheckThatCreatedElementIsRemoved(_deletedRequestTypeName.Value),
+            Utils.Verify.IsFalse(page.CheckThatCreatedElementIsRemoved(_deletedRequestTypeName.Value),
                 "Selected Request Type is displayed in the table");
         }
 
@@ -189,7 +189,7 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
 
-            Assert.IsFalse(page.CheckThatCreatedElementIsRemoved(_projectDto.MailTemplateProperties.Name),
+            Utils.Verify.IsFalse(page.CheckThatCreatedElementIsRemoved(_projectDto.MailTemplateProperties.Name),
                 "Selected Mail Template is displayed in the table");
         }
 

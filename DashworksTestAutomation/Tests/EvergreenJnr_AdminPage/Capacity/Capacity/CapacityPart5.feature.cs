@@ -90,6 +90,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Capacity.Capacity
         [NUnit.Framework.CategoryAttribute("DAS14068")]
         [NUnit.Framework.CategoryAttribute("DAS14218")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Capacity")]
         [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_CapacityUnits")]
         [NUnit.Framework.CategoryAttribute("Set_Default_Capacity_Unit")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitInAProjectMappedToEvergreenDefaultCapacityUnit()
@@ -130,6 +131,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Capacity.Capacity
                         "DAS14068",
                         "DAS14218",
                         "Cleanup",
+                        "Do_Not_Run_With_Capacity",
                         "Do_Not_Run_With_CapacityUnits",
                         "Set_Default_Capacity_Unit"});
 #line 9

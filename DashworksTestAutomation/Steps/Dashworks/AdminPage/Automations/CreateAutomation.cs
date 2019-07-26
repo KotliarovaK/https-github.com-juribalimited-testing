@@ -36,8 +36,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations
         public void ThenCreateAutomationPageIsDisplayedToTheUser()
         {
             var page = _driver.NowAt<CreateAutomationsPage>();
-            Assert.IsTrue(page.CreateAutomationsTitle.Displayed());
-            Assert.IsTrue(page.AutomationNameField.Displayed(), "Create Automation page is not displayed");
+            Utils.Verify.IsTrue(page.CreateAutomationsTitle.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
+            Utils.Verify.IsTrue(page.AutomationNameField.Displayed(), "Create Automation page is not displayed");
         }
 
         //TODO Use this step after completed

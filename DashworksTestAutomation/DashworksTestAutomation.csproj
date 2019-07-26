@@ -1221,7 +1221,9 @@
     <Compile Include="Utils\KillDriverProcesses.cs" />
     <Compile Include="Utils\LockCategory.cs" />
     <Compile Include="Utils\Logger.cs" />
+    <Compile Include="Utils\MsgUtils.cs" />
     <Compile Include="Utils\TestDataGenerator.cs" />
+    <Compile Include="Utils\Verify.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

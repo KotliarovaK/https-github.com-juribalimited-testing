@@ -26,7 +26,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         public void ThenActionsDrop_DownIsDisplayedOnTheItemDetailsPage()
         {
             var actionPanel = _driver.NowAt<ActionPanelPage>();
-            Assert.IsTrue(actionPanel.ActionsDropDown.Displayed, "Actions drop-down is not displayed!");
+            Utils.Verify.IsTrue(actionPanel.ActionsDropDown.Displayed, "Actions drop-down is not displayed!");
         }
 
         [When(@"User clicks Actions button on the Item Details page")]

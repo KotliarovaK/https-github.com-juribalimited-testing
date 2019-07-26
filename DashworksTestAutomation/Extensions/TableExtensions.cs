@@ -62,9 +62,9 @@ namespace DashworksTestAutomation.Extensions
             if (rowsToCompare > actualTable.RowCount)
                 throw new Exception($"Unable to compare tables. Tables have less than {rowsToCompare} rows");
 
-            Assert.AreEqual(expectedTable.Header.Count, actualTable.Header.Count,
+            Utils.Verify.AreEqual(expectedTable.Header.Count, actualTable.Header.Count,
                 "Headers count is different");
-            //Assert.AreEqual(expectedTable.RowCount, actualTable.RowCount,
+            //Utils.Verify.AreEqual(expectedTable.RowCount, actualTable.RowCount,
             //    $"Rows count is different in tables: {expectedTable.RowCount} != {actualTable.RowCount}");
 
             for (int i = 0; i < rowsToCompare; i++)
@@ -73,7 +73,7 @@ namespace DashworksTestAutomation.Extensions
                 var actualTableRow = actualTable.Rows[i];
                 for (int j = 0; j < actualTable.Header.Count; j++)
                 {
-                    Assert.AreEqual(expectedTableRow[j], actualTableRow[j], "Content in Tables doesn't match");
+                    Utils.Verify.AreEqual(expectedTableRow[j], actualTableRow[j], "Content in Tables doesn't match");
                 }
             }
         }

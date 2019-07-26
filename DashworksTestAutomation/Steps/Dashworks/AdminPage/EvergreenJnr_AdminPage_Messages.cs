@@ -32,7 +32,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         public void ThenWarningPop_UpIsNotDisplayed()
         {
             var page = _driver.NowAt<ProjectsPage>();
-            Assert.IsFalse(page.WarningPopUp.Displayed(), "Warning Pop-up is displayed");
+            Utils.Verify.IsFalse(page.WarningPopUp.Displayed(), "Warning Pop-up is displayed");
         }
 
         [Then(@"Blue banner with ""(.*)"" text is displayed")]
@@ -40,7 +40,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         {
             var page = _driver.NowAt<BaseGridPage>();
             //_driver.WaitForElementToBeDisplayed(page.BlueBanner);
-            StringAssert.Contains(text, page.BlueBanner.Text, "Blue banner is not displayed");
+            Utils.Verify.Contains(text, page.BlueBanner.Text, "Blue banner is not displayed");
         }
 
         [Then(@"Warning message with ""(.*)"" text is displayed on the Admin page")]
@@ -64,10 +64,10 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             }
 
             _driver.WaitForElementToContainsText(message.WarningMessage, text);
-            Assert.AreEqual("rgba(235, 175, 37, 1)", message.GetMessageColor()); //Amber color
+            Utils.Verify.AreEqual("rgba(235, 175, 37, 1)", message.GetMessageColor(), "PLEASE ADD EXCEPTION MESSAGE"); //Amber color
             //Waiting for message text change
             Thread.Sleep(1000);
-            Assert.IsTrue(message.TextMessage(text),
+            Utils.Verify.IsTrue(message.TextMessage(text),
                 $"{text} is NOT displayed on the Project page");
         }
 
@@ -97,7 +97,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitForElementToBeDisplayed(page.CancelButtonInWarning);
             page.CancelButtonInWarning.Click();
-            Assert.IsFalse(page.WarningMessage.Displayed());
+            Utils.Verify.IsFalse(page.WarningMessage.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [When(@"User clicks Delete button in the warning message")]
@@ -131,9 +131,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         {
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitForElementToBeDisplayed(page.BlueBanner);
-            Assert.AreEqual("rgba(49, 122, 193, 1)", page.GetMessageColor()); //Blue color
-            //Assert.AreEqual("1530px", page.GetMessageWidthOnAdminPage());
-            StringAssert.Contains(text, page.BlueBanner.Text, "Success Message is not displayed");
+            Utils.Verify.AreEqual("rgba(49, 122, 193, 1)", page.GetMessageColor(), "PLEASE ADD EXCEPTION MESSAGE"); //Blue color
+            //Utils.Verify.AreEqual("1530px", page.GetMessageWidthOnAdminPage());
+            Utils.Verify.Contains(text, page.BlueBanner.Text, "Success Message is not displayed");
         }
 
         [Then(@"Success message is displayed and contains ""(.*)"" text")]
@@ -141,8 +141,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         {
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitForElementToContainsText(page.SuccessMessage, text);
-            Assert.AreEqual("rgba(126, 189, 56, 1)", page.GetMessageColor()); //Green color
-            StringAssert.Contains(text, page.SuccessMessage.Text, "Success Message is not displayed");
+            Utils.Verify.AreEqual("rgba(126, 189, 56, 1)", page.GetMessageColor(), "PLEASE ADD EXCEPTION MESSAGE"); //Green color
+            Utils.Verify.Contains(text, page.SuccessMessage.Text, "Success Message is not displayed");
         }
 
         [Then(@"Green banner contains following text ""(.*)""")]
@@ -150,7 +150,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         {
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitForElementToBeDisplayed(page.SuccessMessage);
-            StringAssert.Contains(text, page.SuccessMessageThirdPart.Text, "Success Message is not displayed");
+            Utils.Verify.Contains(text, page.SuccessMessageThirdPart.Text, "Success Message is not displayed");
         }
 
         [Then(@"Error message with ""(.*)"" text is displayed")]
@@ -159,8 +159,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitForDataLoading();
             _driver.WaitForElementToContainsText(page.ErrorMessage, text);
-            Assert.AreEqual("rgba(242, 88, 49, 1)", page.GetMessageColor()); //Red color
-            Assert.AreEqual(text, page.ErrorMessage.Text, "Error Message is not displayed");
+            Utils.Verify.AreEqual("rgba(242, 88, 49, 1)", page.GetMessageColor(), "PLEASE ADD EXCEPTION MESSAGE"); //Red color
+            Utils.Verify.AreEqual(text, page.ErrorMessage.Text, "Error Message is not displayed");
         }
 
         [Then(@"""(.*)"" error in the Scope Changes displayed to the User")]
@@ -169,7 +169,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitForDataLoading();
             _driver.WaitForElementToBeDisplayed(page.ScopeChangesError);
-            Assert.AreEqual(text, page.ScopeChangesError.Text, "Error Message is not displayed in the Scope Changes");
+            Utils.Verify.AreEqual(text, page.ScopeChangesError.Text, "Error Message is not displayed in the Scope Changes");
         }
 
         [Then(@"""(.*)"" message is displayed on the Admin Page")]
@@ -177,7 +177,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         {
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitForElementToBeDisplayed(page.NoFoundMessage);
-            Assert.AreEqual(message, page.NoFoundMessage.Text, $"{message} is not displayed");
+            Utils.Verify.AreEqual(message, page.NoFoundMessage.Text, $"{message} is not displayed");
         }
 
         [Then(@"User sees banner at the top of work area")]
@@ -185,7 +185,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         {
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitForElementToBeDisplayed(page.Banner);
-            Assert.That(page.Banner.Displayed, Is.True, "Banner is not displayed");
+            Utils.Verify.That(page.Banner.Displayed, Is.True, "Banner is not displayed");
         }
 
         [Then(@"Success message is displayed correctly")]
@@ -193,9 +193,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         {
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitForElementToBeDisplayed(page.SuccessMessage);
-            Assert.AreEqual("rgba(126, 189, 56, 1)", page.GetMessageColor()); //Green color
+            Utils.Verify.AreEqual("rgba(126, 189, 56, 1)", page.GetMessageColor(), "PLEASE ADD EXCEPTION MESSAGE"); //Green color
             //TODO update web element or move this assertion to separate step after Olga replay in https://juriba.atlassian.net/browse/DAS-14037
-            //Assert.False(_driver.IsElementHaveHorizontalScrollbar(
+            //Utils.Verify.False(_driver.IsElementHaveHorizontalScrollbar(
             //        _driver.FindElement(By.XPath(".//admin-project-units-list/.."))), "Table has scrollbar");
         }
 
@@ -205,7 +205,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             var pageBase = _driver.NowAt<BaseGridPage>();
             _driver.WaitForElementToBeDisplayed(pageBase.SuccessMessage);
             var pageBuckets = _driver.NowAt<BucketsPage>();
-            Assert.IsTrue(pageBuckets.SuccessUpdatedMessageBucketsPage(bucketName),
+            Utils.Verify.IsTrue(pageBuckets.SuccessUpdatedMessageBucketsPage(bucketName),
                 $"Success Message is not displayed for {bucketName}");
         }
 
@@ -231,7 +231,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
 
             _driver.WaitForElementToBeDisplayed(projectElement.SuccessMessage);
             Thread.Sleep(10000);
-            Assert.IsTrue(projectElement.TextMessage(textMessage),
+            Utils.Verify.IsTrue(projectElement.TextMessage(textMessage),
                 $"{textMessage} is not displayed on the Project page");
         }
 
@@ -248,7 +248,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         public void ThenSuccessMessageIsDisplayedAndContainsLink(string text)
         {
             var projectElement = _driver.NowAt<BaseGridPage>();
-            Assert.IsTrue(projectElement.GetLinkByText(text).Displayed(), $"Message with {text} link is not displayed");
+            Utils.Verify.IsTrue(projectElement.GetLinkByText(text).Displayed(), $"Message with {text} link is not displayed");
         }
 
         [Then(@"Error message is not displayed on the Capacity Units page")]
@@ -257,14 +257,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         public void ThenErrorMessageIsNotDisplayedOnTheProjectsPage()
         {
             var page = _driver.NowAt<BaseGridPage>();
-            Assert.IsFalse(page.ErrorMessage.Displayed(), "Error Message is displayed");
+            Utils.Verify.IsFalse(page.ErrorMessage.Displayed(), "Error Message is displayed");
         }
 
         [Then(@"Warning message is not displayed on the Admin page")]
         public void ThenWarningMessageIsNotDisplayedOnTheAdminPage()
         {
             var page = _driver.NowAt<BaseGridPage>();
-            Assert.IsFalse(page.WarningMessage.Displayed());
+            Utils.Verify.IsFalse(page.WarningMessage.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"Success message is not displayed on the Admin page")]
@@ -276,7 +276,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             {
                 Thread.Sleep(3000);
             }
-            Assert.IsFalse(message.SuccessMessage.Displayed());
+            Utils.Verify.IsFalse(message.SuccessMessage.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"Filling field error with ""(.*)"" text is displayed")]
@@ -284,17 +284,18 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         {
             var page = _driver.NowAt<BaseGridPage>();
             page.BodyContainer.Click();
-            Assert.IsTrue(page.GetFillingFieldErrorByText(text).Displayed(), $"Filling field error with {text} is not displayed");
-            Assert.AreEqual("rgba(242, 88, 49, 1)", page.GetFillingFieldErrorByText(text).GetCssValue("color"));
-            Assert.AreEqual("rgba(242, 88, 49, 1)", page.UnderFieldWarningIcon.GetCssValue("color"));
+            Utils.Verify.IsTrue(page.GetFillingFieldErrorByText(text).Displayed(), $"Filling field error with {text} is not displayed");
+            Utils.Verify.AreEqual("rgba(242, 88, 49, 1)",
+                page.GetFillingFieldErrorByText(text).GetCssValue("color"), "PLEASE ADD EXCEPTION MESSAGE");
+            Utils.Verify.AreEqual("rgba(242, 88, 49, 1)", page.UnderFieldWarningIcon.GetCssValue("color"), "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"Filling field error is not displayed")]
         public void ThenFillingFieldErrorIsNotDisplayed()
         {
             var page = _driver.NowAt<BaseGridPage>();
-            Assert.IsFalse(page.FieldWarningMessage.Displayed());
-            Assert.IsFalse(page.UnderFieldWarningIcon.Displayed(), "Filling field error is displayed");
+            Utils.Verify.IsFalse(page.FieldWarningMessage.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
+            Utils.Verify.IsFalse(page.UnderFieldWarningIcon.Displayed(), "Filling field error is displayed");
         }
     }
 }

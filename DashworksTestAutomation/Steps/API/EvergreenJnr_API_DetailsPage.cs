@@ -56,7 +56,7 @@ namespace DashworksTestAutomation.Steps.API
             var content = _response.Value.Content;
             var allItems = JsonConvert.DeserializeObject<JObject>(content)["metadata"];
             var item = allItems.First(x => x["friendlyName"].ToString().Equals(fieldName));
-            Assert.AreEqual(state, item["visible"].ToString(), $"Incorrect display state for {fieldName}");
+            Utils.Verify.AreEqual(state, item["visible"].ToString(), $"Incorrect display state for {fieldName}");
         }
 
         [Then(@"following fields are displayed with next state on Details tab API")]
@@ -68,7 +68,7 @@ namespace DashworksTestAutomation.Steps.API
             foreach (var row in table.Rows)
             {
                 var item = allItems.First(x => x["friendlyName"].ToString().Equals(row["FieldName"]));
-                Assert.AreEqual(row["DisplayState"], item["visible"].ToString(),
+                Utils.Verify.AreEqual(row["DisplayState"], item["visible"].ToString(),
                     $"Incorrect display state for {row["FieldName"]}");
             }
         }
@@ -86,7 +86,7 @@ namespace DashworksTestAutomation.Steps.API
                     pair.ToString().Contains("pendingStickyDepartmentMessage") ||
                     pair.ToString().Contains("pendingStickyLocationMessage"))
                     continue;
-                Assert.IsFalse(!string.IsNullOrEmpty(pair.Last.ToString()),
+                Utils.Verify.IsFalse(!string.IsNullOrEmpty(pair.Last.ToString()),
                     "'Unknown' text is displayed for field ");
             }
         }

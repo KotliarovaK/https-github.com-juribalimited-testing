@@ -44,49 +44,49 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         public void ThenTab_MenuOnTheDetailsPageIsExpanded(string tabMenuName)
         {
             var detailsPage = _driver.NowAt<NavigationPage>();
-            Assert.IsTrue(detailsPage.GetExpandedTabByName(tabMenuName), $"{tabMenuName} tab-menu is not expanded!");
+            Utils.Verify.IsTrue(detailsPage.GetExpandedTabByName(tabMenuName), $"{tabMenuName} tab-menu is not expanded!");
         }
 
         [Then(@"""(.*)"" tab-menu on the Details page is not expanded")]
         public void ThenTab_MenuOnTheDetailsPageIsNotExpanded(string tabMenuName)
         {
             var detailsPage = _driver.NowAt<NavigationPage>();
-            Assert.IsFalse(detailsPage.GetExpandedTabByName(tabMenuName), $"{tabMenuName} tab-menu is expanded!");
+            Utils.Verify.IsFalse(detailsPage.GetExpandedTabByName(tabMenuName), $"{tabMenuName} tab-menu is expanded!");
         }
 
         [Then(@"""(.*)"" tab is displayed on left menu on the Details page")]
         public void ThenTabIsDisplayedOnLeftMenuOnTheDetailsPage(string tabName)
         {
             var detailsPage = _driver.NowAt<NavigationPage>();
-            Assert.IsTrue(detailsPage.GetTabByName(tabName), $"{tabName} tab is not displayed!");
+            Utils.Verify.IsTrue(detailsPage.GetTabByName(tabName), $"{tabName} tab is not displayed!");
         }
 
         [Then(@"""(.*)"" tab is not displayed on left menu on the Details page")]
         public void ThenTabIsNotDisplayedOnLeftMenuOnTheDetailsPage(string tabName)
         {
             var detailsPage = _driver.NowAt<NavigationPage>();
-            Assert.IsFalse(detailsPage.GetTabByName(tabName), $"{tabName} tab is displayed!");
+            Utils.Verify.IsFalse(detailsPage.GetTabByName(tabName), $"{tabName} tab is displayed!");
         }
 
         [Then(@"""(.*)"" tab is displayed on left menu on the Details page with ""(.*)"" count of items")]
         public void ThenTabIsDisplayedOnLeftMenuOnTheDetailsPageWithCountOfItems(string tabName, string countOfItems)
         {
             var detailsPage = _driver.NowAt<NavigationPage>();
-            Assert.IsTrue(detailsPage.GetDisplayStatusOfTabWithCountOfItemsByName(tabName, countOfItems), $"{tabName} tab is displayed incorrectly!");
+            Utils.Verify.IsTrue(detailsPage.GetDisplayStatusOfTabWithCountOfItemsByName(tabName, countOfItems), $"{tabName} tab is displayed incorrectly!");
         }
 
         [Then(@"""(.*)"" tab is displayed on left menu on the Details page and contains count of items")]
         public void ThenTabIsDisplayedOnLeftMenuOnTheDetailsPageAndContainsCountOfItems(string tabName)
         {
             var detailsPage = _driver.NowAt<NavigationPage>();
-            Assert.IsTrue(detailsPage.GetCountOfItemsDisplayStatusByTabName(tabName), $"Tab {tabName} must contain the number of elements!");
+            Utils.Verify.IsTrue(detailsPage.GetCountOfItemsDisplayStatusByTabName(tabName), $"Tab {tabName} must contain the number of elements!");
         }
 
         [Then(@"""(.*)"" tab is displayed on left menu on the Details page and NOT contains count of items")]
         public void ThenTabIsDisplayedOnLeftMenuOnTheDetailsPageAndNotContainsCountOfItems(string tabName)
         {
             var detailsPage = _driver.NowAt<NavigationPage>();
-            Assert.IsFalse(detailsPage.GetCountOfItemsDisplayStatusByTabName(tabName), $"Tab {tabName} must contain the number of elements!");
+            Utils.Verify.IsFalse(detailsPage.GetCountOfItemsDisplayStatusByTabName(tabName), $"Tab {tabName} must contain the number of elements!");
         }
 
         [Then(@"""(.*)"" sub-tab is displayed with disabled state on left menu on the Details page")]
@@ -94,7 +94,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         {
             _driver.WaitForDataLoading();
             var detailsPage = _driver.NowAt<NavigationPage>();
-            Assert.IsTrue(detailsPage.GetDisplayStatusForDisabledSubTabByName(tabName), $"{tabName} Tab must be disabled!");
+            Utils.Verify.IsTrue(detailsPage.GetDisplayStatusForDisabledSubTabByName(tabName), $"{tabName} Tab must be disabled!");
         }
 
         [Then(@"""(.*)"" main-tab is displayed with disabled state on left menu on the Details page")]
@@ -102,7 +102,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         {
             _driver.WaitForDataLoading();
             var detailsPage = _driver.NowAt<NavigationPage>();
-            Assert.IsTrue(detailsPage.GetDisplayStatusForDisabledMainTabByName(tabName), $"{tabName} Tab must be disabled!");
+            Utils.Verify.IsTrue(detailsPage.GetDisplayStatusForDisabledMainTabByName(tabName), $"{tabName} Tab must be disabled!");
         }
 
         [Then(@"User sees following main-tabs on left menu on the Details page:")]
@@ -112,7 +112,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
 
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var actualList = detailsPage.MainTabsOnDetailsPageList.Select(value => value.Text).ToList();
-            Assert.AreEqual(expectedList, actualList, "Tabs for the details page are incorrect");
+            Utils.Verify.AreEqual(expectedList, actualList, "Tabs for the details page are incorrect");
         }
 
         [Then(@"""(.*)"" main-menu on the Details page contains following sub-menu:")]
@@ -124,7 +124,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             detailsPage.GetTabMenuByName(tabMenuName).Click();
             _driver.WaitForDataLoading();
             foreach (var row in table.Rows)
-                Assert.IsTrue(detailsPage.GetDisplayStatusSubTabByName(row["SubTabName"]), $"'{row["SubTabName"]}' tab is not displayed!");
+                Utils.Verify.IsTrue(detailsPage.GetDisplayStatusSubTabByName(row["SubTabName"]), $"'{row["SubTabName"]}' tab is not displayed!");
         }
 
         [Then(@"""(.*)"" main-menu on the Details page contains following sub-menu with count of items:")]
@@ -136,9 +136,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             foreach (var row in table.Rows)
             {
                 if (!string.IsNullOrEmpty(row["CountOfItems"]))
-                    Assert.IsTrue(detailsPage.GetDisplayStatusOfTabWithCountOfItemsByName(row["SubTabName"], row["CountOfItems"]), "Some subcategory is not displayed correctly!");
+                    Utils.Verify.IsTrue(detailsPage.GetDisplayStatusOfTabWithCountOfItemsByName(row["SubTabName"], row["CountOfItems"]), "Some subcategory is not displayed correctly!");
                 else
-                    Assert.IsTrue(detailsPage.GetTabByName(row["SubTabName"]), "Subcategory is not displayed correctly!");
+                    Utils.Verify.IsTrue(detailsPage.GetTabByName(row["SubTabName"]), "Subcategory is not displayed correctly!");
             }
         }
     }

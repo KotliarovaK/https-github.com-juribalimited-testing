@@ -75,7 +75,7 @@ namespace DashworksTestAutomation.DTO.RuntimeVariables
 
             var pageOptions = JsonConvert.DeserializeObject<JObject>(content);
             var userLanguage = pageOptions["languageName"].ToString();
-            Assert.AreEqual(language, userLanguage, "Profile language was not changed");
+            Utils.Verify.AreEqual(language, userLanguage, "Profile language was not changed");
 
             #endregion
         }

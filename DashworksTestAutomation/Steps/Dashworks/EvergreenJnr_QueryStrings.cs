@@ -52,7 +52,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             //Only check the login link is visible if the forced login splash page is not displayed
             if (!loginPage.LoginSplashPanel.Displayed()) return;
-            Assert.IsTrue(loginPage.LoginLink.Displayed, "Login link is NOT visible");
+            Utils.Verify.IsTrue(loginPage.LoginLink.Displayed, "Login link is NOT visible");
             Logger.Write("Login link is visible");
         }
 
@@ -80,7 +80,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
             else
             {
-                Assert.IsTrue(loginPage.SplashLoginGroupBox.Displayed(), "Login Splash page is NOT visible");
+                Utils.Verify.IsTrue(loginPage.SplashLoginGroupBox.Displayed(), "Login Splash page is NOT visible");
                 Logger.Write("Login Splash page is visible");
             }
         }
@@ -127,15 +127,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
             if (!dashboardPage.ResultsOnPageCount.Displayed())
             {
-                Assert.IsTrue(dashboardPage.NoResultsFoundMessage.Displayed(),
+                Utils.Verify.IsTrue(dashboardPage.NoResultsFoundMessage.Displayed(),
                     "'No Results Found' message is not displayed");
                 Logger.Write(
                     $"Evergreen agGrid Search returned '{dashboardPage.NoResultsFoundMessage.Text}' message");
             }
             else
             {
-                Assert.IsTrue(dashboardPage.ResultsOnPageCount.Displayed(), "Results count is not displayed");
-                Assert.IsTrue(dashboardPage.TableBody.Displayed(), "Table is not displayed");
+                Utils.Verify.IsTrue(dashboardPage.ResultsOnPageCount.Displayed(), "Results count is not displayed");
+                Utils.Verify.IsTrue(dashboardPage.TableBody.Displayed(), "Table is not displayed");
                 Logger.Write("Main agGrid dataset is displayed");
             }
         }

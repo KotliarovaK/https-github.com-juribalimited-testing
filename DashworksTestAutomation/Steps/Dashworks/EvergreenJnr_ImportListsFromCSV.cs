@@ -29,7 +29,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenImportPageIsDisplayedToTheUser(string pageHeader)
         {
             var importPage = _driver.NowAt<ImportListsFromCSVPage>();
-            Assert.IsTrue(importPage.GetImportPageHeader(pageHeader).Displayed(), $"{pageHeader} Import page is not displayed");
+            Utils.Verify.IsTrue(importPage.GetImportPageHeader(pageHeader).Displayed(), $"{pageHeader} Import page is not displayed");
         }
 
         [When(@"User selects ""(.*)"" file to upload on Import Lists from CSV page")]

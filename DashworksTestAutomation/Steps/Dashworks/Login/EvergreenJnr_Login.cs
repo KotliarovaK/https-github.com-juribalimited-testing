@@ -111,8 +111,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.Login
         {
             var headerMenu = _driver.NowAt<DashworksHeaderMenuElement>();
 
-            Assert.AreEqual("Home - Dashworks", _driver.Title, "Incorrect page is displayed");
-            Assert.AreEqual("Home", headerMenu.PageHeader.Text, "Incorrect page is displayed");
+            Utils.Verify.AreEqual("Home - Dashworks", _driver.Title, "Incorrect page is displayed");
+            Utils.Verify.AreEqual("Home", headerMenu.PageHeader.Text, "Incorrect page is displayed");
             Logger.Write("Dashworks homepage is displayed and is in a logged in state");
         }
 

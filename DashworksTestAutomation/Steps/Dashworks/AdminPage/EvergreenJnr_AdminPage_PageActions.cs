@@ -26,14 +26,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         public void ThenPageIsDisplayedToTheUserOnAdminPage(string pageName)
         {
             var page = _driver.NowAtWithoutWait<BaseGridPage>();
-            Assert.IsTrue(page.GetOpenedPageByName(pageName).Displayed(), $"{pageName} page is not loaded");
+            Utils.Verify.IsTrue(page.GetOpenedPageByName(pageName).Displayed(), $"{pageName} page is not loaded");
         }
 
         [Then(@"""(.*)"" sub-menu section is expanded")]
         public void ThenSub_MenuSectionIsExpanded(string section)
         {
             var page = _driver.NowAtWithoutWait<BaseGridPage>();
-            Assert.IsTrue(page.GetExpandedSubMenuSection(section).Displayed(), $"{section} section is collapsed");
+            Utils.Verify.IsTrue(page.GetExpandedSubMenuSection(section).Displayed(), $"{section} section is collapsed");
         }
 
         [Then(@"""(.*)"" field is empty on the Admin page")]
@@ -41,14 +41,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         {
             var page = _driver.NowAtWithoutWait<BaseGridPage>();
             _driver.WaitForDataLoading();
-            Assert.IsTrue(page.GetEmptyFieldByName(fieldName).Displayed(), $"{fieldName} field is populated");
+            Utils.Verify.IsTrue(page.GetEmptyFieldByName(fieldName).Displayed(), $"{fieldName} field is populated");
         }
 
         [Then(@"""(.*)"" object name is displayed to the User")]
         public void ThenObjectNameIsDisplayedToTheUser(string objectName)
         {
             var page = _driver.NowAtWithoutWait<BaseGridPage>();
-            Assert.IsTrue(page.GetObjectTitle(objectName).Displayed(), $"{objectName} is not displayed");
+            Utils.Verify.IsTrue(page.GetObjectTitle(objectName).Displayed(), $"{objectName} is not displayed");
         }
     }
 }

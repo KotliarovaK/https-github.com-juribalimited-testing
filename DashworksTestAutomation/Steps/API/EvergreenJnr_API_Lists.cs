@@ -79,7 +79,7 @@ namespace DashworksTestAutomation.Steps.API
                 _driver.WaitForDataLoading();
                 list.GetListElementByName(listName).Click();
                 _driver.WaitForDataLoading();
-                Assert.IsTrue(list.ActiveCustomList.Displayed());
+                Utils.Verify.IsTrue(list.ActiveCustomList.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
             }
         }
 
@@ -239,7 +239,7 @@ namespace DashworksTestAutomation.Steps.API
                 _driver.WaitForDataLoading();
                 list.GetListElementByName(listName).Click();
                 _driver.WaitForDataLoading();
-                Assert.IsTrue(list.ActiveCustomList.Displayed());
+                Utils.Verify.IsTrue(list.ActiveCustomList.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
             }
         }
 

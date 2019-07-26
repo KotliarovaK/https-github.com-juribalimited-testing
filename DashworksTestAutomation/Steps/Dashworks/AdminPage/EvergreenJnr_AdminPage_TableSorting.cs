@@ -30,7 +30,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             var actualList = adminTable.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSorted(actualList);
             _driver.WaitForDataLoading();
-            Assert.IsTrue(adminTable.AscendingSortingIcon.Displayed);
+            Utils.Verify.IsTrue(adminTable.AscendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"data in table is sorted by ""(.*)"" column in descending order on the Admin page")]
@@ -41,7 +41,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             var expectedList = adminTable.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSorted(expectedList, false);
             _driver.WaitForDataLoading();
-            Assert.IsTrue(adminTable.DescendingSortingIcon.Displayed);
+            Utils.Verify.IsTrue(adminTable.DescendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"data in table is sorted by ""(.*)"" column in ascending order by default on the Admin page")]
@@ -80,7 +80,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
 
             var actualList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsNumericListSorted(actualList);
-            Assert.IsTrue(listPageMenu.AscendingSortingIcon.Displayed);
+            Utils.Verify.IsTrue(listPageMenu.AscendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"numeric data in table is sorted by ""(.*)"" column in descending order on the Admin page")]
@@ -90,7 +90,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             _driver.WaitForDataLoading();
             var expectedList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsNumericListSorted(expectedList, false);
-            Assert.IsTrue(listPageMenu.DescendingSortingIcon.Displayed);
+            Utils.Verify.IsTrue(listPageMenu.DescendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"date in table is sorted by ""(.*)"" column in ascending order on the Admin page")]
@@ -99,7 +99,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             var listPageMenu = _driver.NowAt<BaseDashboardPage>();
             var originalList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSortedByDate(originalList, false);
-            Assert.IsTrue(listPageMenu.AscendingSortingIcon.Displayed);
+            Utils.Verify.IsTrue(listPageMenu.AscendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"date in table is sorted by ""(.*)"" column in descending order on the Admin page")]
@@ -108,7 +108,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             var listPageMenu = _driver.NowAt<BaseDashboardPage>();
             var originalList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSortedByDate(originalList, false);
-            Assert.IsTrue(listPageMenu.DescendingSortingIcon.Displayed);
+            Utils.Verify.IsTrue(listPageMenu.DescendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
         }
 
 
@@ -120,7 +120,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             var expectedList = adminTable.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSorted(expectedList, false);
             _driver.WaitForDataLoading();
-            Assert.IsTrue(adminTable.AscendingSortingIcon.Displayed);
+            Utils.Verify.IsTrue(adminTable.AscendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
         }
 
 
@@ -132,7 +132,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             var expectedList = adminTable.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSorted(expectedList);
             _driver.WaitForDataLoading();
-            Assert.IsTrue(adminTable.DescendingSortingIcon.Displayed);
+            Utils.Verify.IsTrue(adminTable.DescendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"Data in table is sorted by ""(.*)"" column in the next way")]
@@ -142,7 +142,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             var actualList = adminTable.GetColumnContent(columnName).Distinct().ToList();
             var expectedList = table.Rows.SelectMany(row => row.Values).Where(x => !x.Equals(String.Empty)).ToList();
 
-            Assert.That(expectedList, Is.EqualTo(actualList));
+            Utils.Verify.That(expectedList, Is.EqualTo(actualList));
         }
     }
 }

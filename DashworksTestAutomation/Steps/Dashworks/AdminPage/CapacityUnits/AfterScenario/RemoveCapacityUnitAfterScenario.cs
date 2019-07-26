@@ -5,6 +5,8 @@ using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
+using NUnit.Framework;
+using NUnit.Framework.Constraints;
 using RestSharp;
 using TechTalk.SpecFlow;
 
@@ -20,6 +22,24 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.CapacityUnits.AfterS
         {
             _capacityUnits = capacityUnit;
             _client = client;
+        }
+
+        [When(@"test method")]
+        public void WhenTestMethod()
+        {
+            //throw new Exception("MY EXCEPTION");
+            //NUnit.Framework.Utils.Verify.True(true);
+            try
+            {
+                Utils.Verify.AreEqual(13, 11, "My test fail");
+                //Utils.Verify.IsEmpty("");
+                //That(13, Is.EqualTo(11), "My test fail");
+                //That(Is.Empty(""));
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
 
         [AfterScenario("Cleanup", Order = 10)]

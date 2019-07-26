@@ -22,20 +22,20 @@ namespace DashworksTestAutomation.Steps
         {
             var header = _driver.NowAt<DashworksHeaderMenuElement>();
 
-            Assert.AreEqual("Logout - Dashworks", _driver.Title);
+            Utils.Verify.AreEqual("Logout - Dashworks", _driver.Title, "PLEASE ADD EXCEPTION MESSAGE");
 
-            Assert.AreEqual("Logout", header.PageHeader.Text);
+            Utils.Verify.AreEqual("Logout", header.PageHeader.Text, "PLEASE ADD EXCEPTION MESSAGE");
 
             var logoutPage = _driver.NowAt<LogoutPage>();
 
             //Message is different depending on the language
             try
             {
-                Assert.AreEqual("You have been successfully logged out", logoutPage.SignedOutMessage.Text);
+                Utils.Verify.AreEqual("You have been successfully logged out", logoutPage.SignedOutMessage.Text, "PLEASE ADD EXCEPTION MESSAGE");
             }
             catch
             {
-                Assert.AreEqual("You have successfully been logged out", logoutPage.SignedOutMessage.Text);
+                Utils.Verify.AreEqual("You have successfully been logged out", logoutPage.SignedOutMessage.Text, "PLEASE ADD EXCEPTION MESSAGE");
             }
 
             Logger.Write("Dashworks Signed Out page is displayed");
@@ -46,7 +46,7 @@ namespace DashworksTestAutomation.Steps
         {
             var header = _driver.NowAt<DashworksHeaderMenuElement>();
 
-            Assert.IsTrue(header.LoginLink.Displayed(), "Login link was not displayed");
+            Utils.Verify.IsTrue(header.LoginLink.Displayed(), "Login link was not displayed");
 
             Logger.Write("User is successfully logged out");
         }

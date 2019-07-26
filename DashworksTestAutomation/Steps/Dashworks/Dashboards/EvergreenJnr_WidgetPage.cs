@@ -339,7 +339,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             foreach (var element in dropdownContainer)
             {
                 var innerColour = element.FindElement(By.XPath(AddWidgetPage.ColorSchemeDropdownContent));
-                Assert.IsTrue(_driver.IsElementExists(innerColour), "Colour item is not found");
+                Utils.Verify.IsTrue(_driver.IsElementExists(innerColour), "Colour item is not found");
             }
             var page = _driver.NowAt<BaseGridPage>();
             page.BodyContainer.Click();
@@ -350,7 +350,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<AddWidgetPage>();
             _driver.WaitForDataLoading();
-            Assert.IsFalse(page.ColorScheme.Displayed(), "Colour Scheme dropdown is displayed to the user");
+            Utils.Verify.IsFalse(page.ColorScheme.Displayed(), "Colour Scheme dropdown is displayed to the user");
         }
 
         [Then(@"Table widget displayed inside preview pane correctly")]
@@ -362,14 +362,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var widget = _driver.NowAt<AddWidgetPage>();
             int widgetWidth = widget.GetTableWidgetPreview().Size.Width;
 
-            Assert.That(widgetWidth > prevWidth * 0.85 && widgetWidth < prevWidth, Is.True, "Widget preview less than 85 percent preview box");
+            Utils.Verify.That(widgetWidth > prevWidth * 0.85 && widgetWidth < prevWidth, Is.True, "Widget preview less than 85 percent preview box");
         }
     
         [Then(@"Widget title ""(.*)"" is displayed on Widget page")]
         public void ThenWidgetTitleDisplayedOnThePage(string text)
         {
             var page = _driver.NowAt<AddWidgetPage>();
-            Assert.AreEqual(text, page.Title.GetAttribute("innerHTML"), "Widget title is not the same");
+            Utils.Verify.AreEqual(text, page.Title.GetAttribute("innerHTML"), "Widget title is not the same");
         }
 
         [Then(@"Error message with ""(.*)"" text is displayed on Widget page")]
@@ -378,7 +378,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<AddWidgetPage>();
             _driver.WaitForDataLoading();
             _driver.WaitForElementToBeDisplayed(page.ErrorMessage);
-            Assert.AreEqual(text, page.ErrorMessage.Text, "Error Message is not displayed");
+            Utils.Verify.AreEqual(text, page.ErrorMessage.Text, "Error Message is not displayed");
         }
 
         [Then(@"Unsaved Changes alert not displayed to the user")]
@@ -386,7 +386,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<AddWidgetPage>();
             _driver.WaitForElementToBeNotDisplayed(page.UnsavedChangesAlert);
-            Assert.IsFalse(_driver.IsElementDisplayed(page.UnsavedChangesAlert));
+            Utils.Verify.IsFalse(_driver.IsElementDisplayed(page.UnsavedChangesAlert), "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"User sees ""(.*)"" text in alert on Edit Widget page")]
@@ -394,7 +394,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<AddWidgetPage>();
             _driver.WaitForElementToBeDisplayed(page.UnsavedChangesAlert);
-            Assert.AreEqual(text, page.GetUnsavedChangesAlertText().Text);
+            Utils.Verify.AreEqual(text, page.GetUnsavedChangesAlertText().Text, "PLEASE ADD EXCEPTION MESSAGE");
         }
  
         [Then(@"User sees following options for Order By selector on Create Widget page:")]
@@ -403,7 +403,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<AddWidgetPage>();
             page.OrderBy.Click();
 
-            Assert.AreEqual(items.Rows.SelectMany(row => row.Values).ToList(),
+            Utils.Verify.AreEqual(items.Rows.SelectMany(row => row.Values).ToList(),
                 page.GetDropdownOptions().Select(p => p.Text), "Incorrect options in lists dropdown");
         }
 
@@ -412,21 +412,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<AddWidgetPage>();
             _driver.WaitForDataLoading();
-            Assert.IsTrue(page.GetDashboardCheckboxByName(checkboxName).GetAttribute("class").Contains("checked"));
+            Utils.Verify.IsTrue(page.GetDashboardCheckboxByName(checkboxName).GetAttribute("class").Contains("checked"),
+                "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"""(.*)"" checkbox is not displayed on the Create Widget page")]
         public void ThenCheckboxIsNotDisplayedOnTheCreateWidgetPage(string checkboxName)
         {
             var page = _driver.NowAt<AddWidgetPage>();
-            Assert.IsFalse(page.GetCheckboxByName(checkboxName), $"{checkboxName} checkbox is displayed");
+            Utils.Verify.IsFalse(page.GetCheckboxByName(checkboxName), $"{checkboxName} checkbox is displayed");
         }
 
         [Then(@"User sees ""(.*)"" warning text below Lists field")]
         public void ThenUserSeesWarningTextBelowListsField(string text)
         {
             var page = _driver.NowAt<AddWidgetPage>();
-            Assert.AreEqual(text, page.WarningTextUnderField.Text);
+            Utils.Verify.AreEqual(text, page.WarningTextUnderField.Text, "PLEASE ADD EXCEPTION MESSAGE");
         }
         
         [Then(@"Aggregate Function dropdown is placed above the Aggregate By dropdown")]
@@ -434,7 +435,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<AddWidgetPage>();
 
-            Assert.That(page.AggregateFunction.Location.Y, Is.LessThan(page.AggregateBy.Location.Y));
+            Utils.Verify.That(page.AggregateFunction.Location.Y, Is.LessThan(page.AggregateBy.Location.Y));
         }
 
         [Then(@"""(.*)"" dropdown is missing")]
@@ -442,7 +443,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<AddWidgetPage>();
 
-            Assert.That(page.Dropdowns.Any(x=>x.Text.Equals(label)), Is.EqualTo(false));
+            Utils.Verify.That(page.Dropdowns.Any(x=>x.Text.Equals(label)), Is.EqualTo(false));
         }
 
         [Then(@"Aggregate By dropdown is disabled")]
@@ -450,7 +451,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<AddWidgetPage>();
 
-            Assert.That(page.IsAggregateByDropdownDisabled, Is.EqualTo(true));
+            Assert.That(page.IsAggregateByDropdownDisabled, Is.EqualTo(true), "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"User sees following options for Aggregate By selector on Create Widget page:")]
@@ -459,7 +460,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<AddWidgetPage>();
             page.AggregateBy.Click();
 
-            Assert.AreEqual(items.Rows.SelectMany(row => row.Values).ToList(),
+            Utils.Verify.AreEqual(items.Rows.SelectMany(row => row.Values).ToList(),
                 page.GetDropdownOptions().Select(p => p.Text), "Incorrect options in lists dropdown");
         }
 
@@ -479,14 +480,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             switch (checkbox)
             {
                 case "Show legend":
-                    Assert.That(page.ShowLegendLabel.Text, Is.EqualTo("Show legend"), "Show legend label wrong");
+                    Utils.Verify.That(page.ShowLegendLabel.Text, Is.EqualTo("Show legend"), "Show legend label wrong");
                     break;
                 case "Show data labels":
-                    Assert.That(page.ShowDataLabel.Text, Is.EqualTo("Show data labels"), "Show data labels label wrong");
+                    Utils.Verify.That(page.ShowDataLabel.Text, Is.EqualTo("Show data labels"), "Show data labels label wrong");
                     break;
 
                 default:
-                    Assert.True(false, "Wrong checkbox specified");
+                    Utils.Verify.IsTrue(false, "Wrong checkbox specified");
                     break;
             }
         }
