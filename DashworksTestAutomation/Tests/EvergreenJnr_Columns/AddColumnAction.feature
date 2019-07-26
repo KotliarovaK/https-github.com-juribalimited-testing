@@ -342,3 +342,23 @@ Scenario Outline: EvergreenJnr_AllList_CheckThatSortingByEvergreenRingColumnWork
 	| ListName     |
 	| Users        |
 	| Mailboxes    |
+
+@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS16912
+Scenario Outline: EvergreenJnr_AllLists_CheckThatComplinceNoneOptionIsTranslated
+	When User add following columns using URL to the "<ListName>" page:
+	| ColumnName   |
+	| <FilterName> |
+	And User clicks the Filters button
+	And User add "<FilterName>" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| <FilterValue>               |
+	And User language is changed to "Deutsch" via API
+	And User clicks refresh button in the browser
+	Then "<TranslatedFilterValue>" content is displayed in the "<TranslatedColumnName>" column
+
+Examples: 
+	| ListName     | FilterName                    | FilterValue | TranslatedColumnName        | TranslatedFilterValue |
+	| Devices      | Application Compliance        | None        | Anwendungskonformität       | KEINE                 |
+	| Users        | Device Application Compliance | Red         | Geräteanwendungskonformität | ROT                   |
+	| Applications | Compliance                    | Green       | Konformität                 | GRÜN                  |
+	| Mailboxes    | Owner Compliance              | Unknown     | Konformität des Inhabers    | UNBEKANNT             |

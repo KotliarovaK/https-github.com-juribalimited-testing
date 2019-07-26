@@ -401,8 +401,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User add ""(.*)"" filter where type is ""(.*)"" with added column and following checkboxes:")]
         public void WhenUserAddFilterWhereTypeIsWithAddedColumnAndFollowingCheckboxes(string filterName,
             string operatorValue, Table table)
-
-
         {
             var filtersNames = _driver.NowAt<FiltersElement>();
             filtersNames.AddFilter(filterName);
@@ -824,6 +822,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenListIsDisplayedForSavedListFilter(string listName)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
+            filterElement.FilterSearchInputs.FirstOrDefault().Click();
             Utils.Verify.IsTrue(filterElement.ListNameForSavedListFilter(listName),
                 $"{listName} is not displayed for Saved List filter");
         }

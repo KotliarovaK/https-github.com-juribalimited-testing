@@ -291,6 +291,14 @@ namespace DashworksTestAutomation.Helpers
                             throw new Exception($"'{pageName}' page not found in convertor");
                     }
 
+                case "Application Compliance":
+                    switch (pageName)
+                    {
+                        case "Devices":
+                            return "applicationCompliance";
+                        default:
+                            throw new Exception($"'{pageName}' page not found in convertor");
+                    }
 
 
                 default:
