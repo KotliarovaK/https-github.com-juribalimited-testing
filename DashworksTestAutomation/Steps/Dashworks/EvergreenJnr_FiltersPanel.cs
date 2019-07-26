@@ -824,6 +824,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenListIsDisplayedForSavedListFilter(string listName)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
+            filterElement.FilterSearchInputs.FirstOrDefault().Click();
             Assert.IsTrue(filterElement.ListNameForSavedListFilter(listName),
                 $"{listName} is not displayed for Saved List filter");
         }
