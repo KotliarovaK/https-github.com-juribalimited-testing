@@ -119,7 +119,7 @@ Scenario: EvergreenJnr_AdminPage_AddingMailboxesFromBuckets
 	And There are no errors in the browser console
 	And Delete "TestBucket8" Bucket in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12905 @DAS12930 @DAS13973 @Buckets @Cleanup @Cleanup @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12905 @DAS12930 @DAS13973 @Buckets @Cleanup @Not_Run
 Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketAreDisplayedCorrectlyInProjectHistory 
 	When Project created via API and opened
 	| ProjectName  | Scope       | ProjectTemplate | Mode      |
