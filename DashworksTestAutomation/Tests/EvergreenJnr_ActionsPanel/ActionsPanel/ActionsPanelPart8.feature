@@ -12,8 +12,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatBulkUpdateOfThousandsOfRowsUpdateToSuc
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName         |
-	| Havoc(BigD: Task 0 |
+	| ColumnName                   |
+	| Havoc(BigD: Stage 0 \ Task 0 |
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Havoc(BigD: In Scope" filter where type is "Equals" with added column and following checkboxes:
@@ -34,7 +34,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatBulkUpdateOfThousandsOfRowsUpdateToSuc
 	And User clicks "UPDATE" button on message box
 	And Success message with "7578 of 7578 objects were in the selected project and have been queued" text is displayed on Action panel
 	When User refreshes agGrid
-	Then "STARTED" content is displayed for "Havoc(BigD: Task 0" column
+	Then "STARTED" content is displayed for "Havoc(BigD: Stage 0 \ Task 0" column
 
 @Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13386
 Scenario: EvergreenJnr_DevicesList_CheckThatBulkUpdateOfTasksDoesNotIncludeUnpublishedTasks
