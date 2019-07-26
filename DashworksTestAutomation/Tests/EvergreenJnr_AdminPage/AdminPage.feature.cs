@@ -524,13 +524,10 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("AdminPage")]
-        [NUnit.Framework.CategoryAttribute("Buckets")]
-        [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS12948")]
         [NUnit.Framework.CategoryAttribute("DAS13073")]
         [NUnit.Framework.CategoryAttribute("DAS12999")]
         [NUnit.Framework.CategoryAttribute("DAS13973")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects()
         {
@@ -565,13 +562,10 @@ this.FeatureBackground();
                         "Admin",
                         "EvergreenJnr_AdminPage",
                         "AdminPage",
-                        "Buckets",
-                        "Projects",
                         "DAS12948",
                         "DAS13073",
                         "DAS12999",
                         "DAS13973",
-                        "Cleanup",
                         "Cleanup"});
 #line 108
 this.ScenarioInitialize(scenarioInfo);
@@ -709,7 +703,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("AdminPage")]
-        [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS12763")]
         [NUnit.Framework.CategoryAttribute("DAS12767")]
         [NUnit.Framework.CategoryAttribute("DAS13973")]
@@ -750,7 +743,6 @@ this.FeatureBackground();
                         "Admin",
                         "EvergreenJnr_AdminPage",
                         "AdminPage",
-                        "Projects",
                         "DAS12763",
                         "DAS12767",
                         "DAS13973",
