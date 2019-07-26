@@ -283,13 +283,13 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFi
 Examples: 
 	| operatorValue    | filterOption    | rowsCount | operatorValueInInfo |
 	| Equals           | 00BDM1JUR8IF419 | 1         | is                  |
-	| Does not equal   | 00BDM1JUR8IF419 | 17,224    | is not              |
+	| Does not equal   | 00BDM1JUR8IF419 | 17,278    | is not              |
 	| Contains         | 00B             | 6         | contains            |
-	| Does not contain | 00BDM1J         | 17,224    | does not contain    |
+	| Does not contain | 00BDM1J         | 17,278    | does not contain    |
 	| Begins with      | 00              | 14        | begins with         |
 	| Ends with        | 41              | 7         | ends with           |
 	| Empty            |                 |           | is empty            |
-	| Not empty        |                 | 17,225    | is not empty        |
+	| Not empty        |                 | 17,279    | is not empty        |
 
 @Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS10696 @DAS12199 @DAS12220
 Scenario Outline: EvergreenJnr_UsersList_CheckThatFilterOperatorsIsCorrectInFilterInfo
@@ -377,10 +377,10 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFi
 Examples: 
 	| operatorValue  | filterOption | rowsCount | operatorValueInInfo |
 	| Equals         | 22 Nov 2012  | 16        | is                  |
-	| Does not equal | 22 Nov 2012  | 17,209    | is not              |
+	| Does not equal | 22 Nov 2012  | 17,263    | is not              |
 	| Before         | 22 Nov 2012  | 1         | is before           |
 	| After          | 14 May 2012  | 16        | is after            |
-	| Empty          |              | 17,208    | is empty            |
+	| Empty          |              | 17,262    | is empty            |
 	| Not empty      |              | 17        | is not empty        |
 
 @Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS10696
@@ -418,7 +418,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatApplicationSavedListFilterIsWor
 	| SelectedList   | Association        |
 	| TestList2854B3 | Not used on device |
 	Then "Any Application" filter is added to the list
-	And "17,126" rows are displayed in the agGrid
+	And "17,185" rows are displayed in the agGrid
 	And Options is displayed in added filter info
 	| Values  |
 	| in list |
@@ -630,6 +630,14 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSpaceAfterCommasInTheFiltersContaine
 	| Values |
 	|        |
 	Then "Department Code" filter is added to the list
+	Then "(Compliance = Unknown, Red, Amber or Green) OR (Import != A01 SMS (Spoof)) OR (Department Code ~ ABC) OR (Department Code !~ ACV) OR (Department Code BEGINS WITH AXZ) OR (Department Code ENDS WITH YQA) OR (Department Code = EMPTY) OR (Department Code != EMPTY)" text is displayed in filter container
+
+	@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11054 @DAS11578
+Scenario: EvergreenJnr_DevicesList_CheckThatSpaceAfterCommasInTheBootUpDateAndCpuCountFiltersContainerIsDisplayed
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
 	When User add "Boot Up Date" filter where type is "Before" with added column and "14 Dec 2017" Date filter
 	Then "Boot Up Date" filter is added to the list
 	When User add "Boot Up Date" filter where type is "After" with added column and "3 Dec 2017" Date filter
@@ -650,7 +658,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSpaceAfterCommasInTheFiltersContaine
 	| Values |
 	| 13     |
 	Then "CPU Count" filter is added to the list
-	Then "(Compliance = Unknown, Red, Amber or Green) OR (Import != A01 SMS (Spoof)) OR (Department Code ~ ABC) OR (Department Code !~ ACV) OR (Department Code BEGINS WITH AXZ) OR (Department Code ENDS WITH YQA) OR (Department Code = EMPTY) OR (Department Code != EMPTY) OR (Boot Up Date < 14 Dec 2017) OR (Boot Up Date > 03 Dec 2017) OR (CPU Count > 66) OR (CPU Count >= 12) OR (CPU Count < 31) OR (CPU Count <= 13)" text is displayed in filter container
+	Then "(Boot Up Date < 2017-12-14) OR (Boot Up Date > 2017-12-03) OR (CPU Count > 66) OR (CPU Count >= 12) OR (CPU Count < 31) OR (CPU Count <= 13)" text is displayed in filter container
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS10790 @DAS13206 @DAS13178 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatApplicationFiltersBeingAppliedAgainstTheDevicesListAreRestoredCorrectlyAndAreShownInTheFiltersPanel
@@ -671,6 +679,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatApplicationFiltersBeingAppliedAgains
 	When User navigates to the "TestList44C8B6" list
 	Then "TestList44C8B6" list is displayed to user
 	Then "11" rows are displayed in the agGrid
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
 	And "(Application = 7zip (2015) ASSOCIATION = ("entitled to device"))" text is displayed in filter container
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
@@ -696,13 +706,13 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRelevantDataSetBeDisplayedAfterEditi
 	Then Filters panel is displayed to the user
 	When User add "Compliance" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
-	| Not Applicable     |
+	| None               |
 	Then message 'No devices found' is displayed to the user
 	When User click Edit button for "Compliance" filter
 	When User change selected checkboxes:
-	| Option         | State |
-	| Not Applicable | false |
-	| Green          | true  |
+	| Option | State |
+	| None   | false |
+	| Green  | true  |
 	#Then "71" rows are displayed in the agGrid
 
 @Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS11552 @DAS12207
@@ -767,8 +777,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatMultipleFilterCriteriaToApplicationN
 	Then "TestListF9A187" list is displayed to user
 	And "10,257" rows are displayed in the agGrid
 	And Edit List menu is not displayed
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
 	And "(Application Name ~ (adobe, microsoft) ASSOCIATION = (installed on device))" text is displayed in filter container
-
 
 @Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS11468 @DAS12152 @DAS12602 @DAS13376 @DAS14222 @Cleanup
 Scenario: EvergreenJnr_AllLists_CheckThat500ErrorIsNotDisplayedForStaticListAfterRemovingAssociationsList
@@ -898,13 +909,13 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatConsoleErrorsAreNotDisplayedFor
 	Then There are no errors in the browser console
 
 Examples: 
-	| ListName     | FilterName                   |
-	| Devices      | Build Date                   |
-	| Devices      | Owner Last Logon Date        |
-	| Devices      | Windows7Mi: Date & Time Task |
-	| Users        | Barry'sUse: Scheduled Date   |
-	| Applications | UserSchedu: Date App Req A   |
-	| Mailboxes    | Created Date                 |
+	| ListName     | FilterName                                                                     |
+	| Devices      | Build Date                                                                     |
+	| Devices      | Owner Last Logon Date                                                          |
+	| Devices      | Windows7Mi: Computer Information ---- Text fill; Text fill; \ Date & Time Task |
+	| Users        | Barry'sUse: Project Dates \ Scheduled Date                                     |
+	| Applications | UserSchedu: Three \ Date App Req A                                             |
+	| Mailboxes    | Created Date                                                                   |
 
 @Evergreen @AllLists @EvergreenJnr_FilterFeature @FiltersDisplay @DAS11829
 Scenario Outline: EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisplayedForOrganisationCategoryFilters
@@ -1022,6 +1033,8 @@ Scenario: EvergreenJnr_AllLists_CheckThatTextInTheFilterPanelDisplaysTheCurrentL
 	| SelectedList     | Association    |
 	| ApplicationList1 | Used on device |
 	When User create dynamic list with "DevicesList1" name on "Devices" page
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
 	Then "(Application (Saved List) = ApplicationList1 ASSOCIATION = ("used on device"))" text is displayed in filter container
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -1151,7 +1164,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatCapacityUnitSubcategoryPlacedIn
 	Then Filters panel is displayed to the user
 	When User clicks Add New button on the Filter panel
 	Then "Evergreen" section is displayed in the Filter panel
-	When User closes "Selected Columns" filter category
+	When User closes "Suggested" filter category
 	And User expands "Evergreen" filter category
 	Then the following Filters subcategories are displayed for open category:
 	| Subcategories           |
@@ -1320,7 +1333,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatGridIsDisplayedCorrectlyAfterAdding
 	When User add "admincount" filter where type is "Empty" without added column and following value:
 	| Values |
 	| 123    |
-	Then "17,225" rows are displayed in the agGrid
+	Then "17,279" rows are displayed in the agGrid
 	And full list content is displayed to the user
 	And There are no errors in the browser console
 	And table content is present
@@ -1533,8 +1546,8 @@ Scenario Outline: EvergreenJnr_UsersList_CheckThatPrimaryDeviceOperatorsShowText
 
 Examples:
 	| OperatorValue | RowsCount |
-	| Empty         | 28,067    |
-	| Not empty     | 13,272    |
+	| Empty         | 28,117    |
+	| Not empty     | 13,222    |
 
 @Evergreen @Devices @Evergreen_FiltersFeature @NewFilterCheck @DAS13831
 Scenario: EvergreenJnr_DevicesList_CheckThatDateFilterContainsBetweenOperator
@@ -1554,7 +1567,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatBetweenOperatorIsDisplayedInTheDateFilt
 	When User add "Build Date" filter where type is "Between" with added column and Date options
 	| StartDateInclusive | EndDateInclusive |
 	| 17 Feb 2017        | 08 Aug 2017      |
-	Then "22" rows are displayed in the agGrid
+	Then "27" rows are displayed in the agGrid
 	Then "17 Feb 2017" content is displayed in the "Build Date" column
 	Then "8 Aug 2017" content is displayed in the "Build Date" column
 	Then "(Build Date between (2017-02-17, 2017-08-08))" text is displayed in filter container
@@ -1584,13 +1597,13 @@ Scenario: EvergreenJnr_AllLists_CheckThatBetweenOperatorIsDisplayedInTheDateFilt
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "MigrationP: Date Task for Package Stage" filter where type is "Between" with added column and Date options
+	When User add "MigrationP: Package Stage \ Date Task for Package Stage" filter where type is "Between" with added column and Date options
 	| StartDateInclusive | EndDateInclusive |
 	| 11 Nov 2012        | 22 Nov 2019      |
 	Then "19" rows are displayed in the agGrid
-	Then "12 Nov 2012" content is displayed in the "MigrationP: Date Task for Package Stage" column
-	Then "22 Nov 2012" content is displayed in the "MigrationP: Date Task for Package Stage" column
-	Then "(MigrationP: Date Task for Package Stage between (2012-11-11, 2019-11-22))" text is displayed in filter container
+	Then "12 Nov 2012" content is displayed in the "MigrationP: Package Stage \ Date Task for Package Stage" column
+	Then "22 Nov 2012" content is displayed in the "MigrationP: Package Stage \ Date Task for Package Stage" column
+	Then "(MigrationP: Package Stage \ Date Task for Package Stage between (2012-11-11, 2019-11-22))" text is displayed in filter container
 
 @Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS13831 @DAS15376
 Scenario: EvergreenJnr_ApplicationsList_CheckThatBetweenOperatorIsDisplayedInTheUserLastLogonDateFilter
@@ -1630,16 +1643,16 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTaskSlotHasEmptyAndNotEmptyOperators
 	Then "Devices" list should be displayed to the user
 	When User clicks the Columns button
 	And ColumnName is entered into the search box and the selection is clicked
-	| ColumnName                  |
-	| 1803: Scheduled Date (Slot) |
+	| ColumnName                                  |
+	| 1803: Pre-Migration \ Scheduled Date (Slot) |
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When user select "1803: Scheduled Date (Slot)" filter
+	When user select "1803: Pre-Migration \ Scheduled Date (Slot)" filter
 	And User select "Equals" Operator value
 	And User enters "Empty" text in Search field at selected Lookup Filter
 	And User clicks checkbox at selected Lookup Filter
 	And User clicks Save filter button
-	Then Column "1803: Scheduled Date (Slot)" with no data displayed
+	Then Column "1803: Pre-Migration \ Scheduled Date (Slot)" with no data displayed
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS15899
 Scenario: EvergreenJnr_DevicesList_CheckStageNameInTheFiltestForDevicesLists
@@ -1741,6 +1754,8 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatApplicationReadinessSubCategoryIsM
 	And User enters "readiness" text in Search field at Filters Panel 
 	And User closes "Project Tasks: EmailMigra" filter category
 	And User closes "Project: MailboxEve" filter category
+	And User closes "Project: TST" filter category
+	And User closes "Project: USEMEFORA1" filter category
 	Then the following Filters subcategories are displayed for open category:
 	| Subcategories         |
 	| EmailMigra: Readiness |

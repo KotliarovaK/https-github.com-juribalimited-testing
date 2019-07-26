@@ -156,7 +156,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDashworksFirstSeenFilterIsAdded
 
 Examples:
 	| ListName     | RowsCount |
-	| Devices      | 17,225    |
+	| Devices      | 17,219    |
 	| Users        | 41,335    |
 	| Applications | 2,223     |
 	| Mailboxes    | 14,784    |
@@ -186,7 +186,7 @@ Examples:
 	| Babel(Engl: Application Readiness | Equals, Does not equal | None         | Babel(Engl: Application Readiness is None  | 302       |
 	| Barry'sUse: Application Readiness | Equals, Does not equal | None         | Barry'sUse: Application Readiness is None  | 1,072     |
 	| ComputerSc: Application Readiness | Equals, Does not equal | Green        | ComputerSc: Application Readiness is Green | 911       |
-	| Havoc(BigD: Application Readiness | Equals, Does not equal | None         | Havoc(BigD: Application Readiness is None  | 1,067     |
+	| Havoc(BigD: Application Readiness | Equals, Does not equal | None         | Havoc(BigD: Application Readiness is None  | 1,066     |
 	| MigrationP: Application Readiness | Equals, Does not equal | Blue         | MigrationP: Application Readiness is Blue  | 189       |
 	| UserSchedu: Application Readiness | Equals, Does not equal | None         | UserSchedu: Application Readiness is None  | 981       |
 
