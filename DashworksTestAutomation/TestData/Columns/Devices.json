@@ -21019,7 +21019,7 @@
     "typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.0.0, Culture=neutral, PublicKeyToken=d39bfb6c4b804e93"
   },
   {
-    "id": "deviceOwnerDepartmentLevelField_1",
+    "id": "deviceOwnerDepartmentLevelFieldId_1",
     "label": "Owner Department Level 1",
     "translatedShortLabel": null,
     "translatedTextLabel": "Owner Department Level 1",
@@ -21064,7 +21064,7 @@
     "typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.0.0, Culture=neutral, PublicKeyToken=d39bfb6c4b804e93"
   },
   {
-    "id": "deviceOwnerDepartmentLevelField_2",
+    "id": "deviceOwnerDepartmentLevelFieldId_2",
     "label": "Owner Department Level 2",
     "translatedShortLabel": null,
     "translatedTextLabel": "Owner Department Level 2",
@@ -21109,7 +21109,7 @@
     "typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.0.0, Culture=neutral, PublicKeyToken=d39bfb6c4b804e93"
   },
   {
-    "id": "deviceOwnerDepartmentLevelField_3",
+    "id": "deviceOwnerDepartmentLevelFieldId_3",
     "label": "Owner Department Level 3",
     "translatedShortLabel": null,
     "translatedTextLabel": "Owner Department Level 3",
@@ -21154,7 +21154,7 @@
     "typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.0.0, Culture=neutral, PublicKeyToken=d39bfb6c4b804e93"
   },
   {
-    "id": "deviceOwnerDepartmentLevelField_4",
+    "id": "deviceOwnerDepartmentLevelFieldId_4",
     "label": "Owner Department Level 4",
     "translatedShortLabel": null,
     "translatedTextLabel": "Owner Department Level 4",
@@ -21199,7 +21199,7 @@
     "typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.0.0, Culture=neutral, PublicKeyToken=d39bfb6c4b804e93"
   },
   {
-    "id": "deviceOwnerDepartmentLevelField_5",
+    "id": "deviceOwnerDepartmentLevelFieldId_5",
     "label": "Owner Department Level 5",
     "translatedShortLabel": null,
     "translatedTextLabel": "Owner Department Level 5",
@@ -21244,7 +21244,7 @@
     "typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.0.0, Culture=neutral, PublicKeyToken=d39bfb6c4b804e93"
   },
   {
-    "id": "deviceOwnerDepartmentLevelField_6",
+    "id": "deviceOwnerDepartmentLevelFieldId_6",
     "label": "Owner Department Level 6",
     "translatedShortLabel": null,
     "translatedTextLabel": "Owner Department Level 6",
@@ -21289,7 +21289,7 @@
     "typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.0.0, Culture=neutral, PublicKeyToken=d39bfb6c4b804e93"
   },
   {
-    "id": "deviceOwnerDepartmentLevelField_7",
+    "id": "deviceOwnerDepartmentLevelFieldId_7",
     "label": "Owner Department Level 7",
     "translatedShortLabel": null,
     "translatedTextLabel": "Owner Department Level 7",
@@ -25052,7 +25052,7 @@
     "typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.0.0, Culture=neutral, PublicKeyToken=d39bfb6c4b804e93"
   },
   {
-    "id": "departmentLevelField_1",
+    "id": "departmentLevelFieldId_1",
     "label": "Department Level 1",
     "translatedShortLabel": null,
     "translatedTextLabel": "Department Level 1",
@@ -25097,7 +25097,7 @@
     "typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.0.0, Culture=neutral, PublicKeyToken=d39bfb6c4b804e93"
   },
   {
-    "id": "departmentLevelField_2",
+    "id": "departmentLevelFieldId_2",
     "label": "Department Level 2",
     "translatedShortLabel": null,
     "translatedTextLabel": "Department Level 2",
@@ -25142,7 +25142,7 @@
     "typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.0.0, Culture=neutral, PublicKeyToken=d39bfb6c4b804e93"
   },
   {
-    "id": "departmentLevelField_3",
+    "id": "departmentLevelFieldId_3",
     "label": "Department Level 3",
     "translatedShortLabel": null,
     "translatedTextLabel": "Department Level 3",
@@ -25187,7 +25187,7 @@
     "typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.0.0, Culture=neutral, PublicKeyToken=d39bfb6c4b804e93"
   },
   {
-    "id": "departmentLevelField_4",
+    "id": "departmentLevelFieldId_4",
     "label": "Department Level 4",
     "translatedShortLabel": null,
     "translatedTextLabel": "Department Level 4",
@@ -25232,7 +25232,7 @@
     "typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.0.0, Culture=neutral, PublicKeyToken=d39bfb6c4b804e93"
   },
   {
-    "id": "departmentLevelField_5",
+    "id": "departmentLevelFieldId_5",
     "label": "Department Level 5",
     "translatedShortLabel": null,
     "translatedTextLabel": "Department Level 5",
@@ -25277,7 +25277,7 @@
     "typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.0.0, Culture=neutral, PublicKeyToken=d39bfb6c4b804e93"
   },
   {
-    "id": "departmentLevelField_6",
+    "id": "departmentLevelFieldId_6",
     "label": "Department Level 6",
     "translatedShortLabel": null,
     "translatedTextLabel": "Department Level 6",
@@ -25322,7 +25322,7 @@
     "typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.0.0, Culture=neutral, PublicKeyToken=d39bfb6c4b804e93"
   },
   {
-    "id": "departmentLevelField_7",
+    "id": "departmentLevelFieldId_7",
     "label": "Department Level 7",
     "translatedShortLabel": null,
     "translatedTextLabel": "Department Level 7",
@@ -32251,6 +32251,91 @@
     "typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.0.0, Culture=neutral, PublicKeyToken=d39bfb6c4b804e93"
   },
   {
+    "id": "project_73_shortName",
+    "label": ":/: Name",
+    "translatedShortLabel": "Name",
+    "translatedTextLabel": ":/: Name",
+    "customTranslatedTextLabel": null,
+    "translatedCategory": "Project: :/",
+    "translatedNoItems": null,
+    "category": "Project-:/",
+    "filterType": 0,
+    "type": "textlist",
+    "operators": [
+      {
+        "key": "Equals",
+        "translatedDropdownValue": "Equals",
+        "translatedTextValue": "is"
+      },
+      {
+        "key": "Does not equal",
+        "translatedDropdownValue": "Does not equal",
+        "translatedTextValue": "is not"
+      },
+      {
+        "key": "Contains",
+        "translatedDropdownValue": "Contains",
+        "translatedTextValue": "Contains"
+      },
+      {
+        "key": "Does not contain",
+        "translatedDropdownValue": "Does not contain",
+        "translatedTextValue": "Does not contain"
+      },
+      {
+        "key": "Begins with",
+        "translatedDropdownValue": "Begins with",
+        "translatedTextValue": "Begins with"
+      },
+      {
+        "key": "Does not begin with",
+        "translatedDropdownValue": "Does not begin with",
+        "translatedTextValue": "Does not begin with"
+      },
+      {
+        "key": "Ends with",
+        "translatedDropdownValue": "Ends with",
+        "translatedTextValue": "Ends with"
+      },
+      {
+        "key": "Does not end with",
+        "translatedDropdownValue": "Does not end with",
+        "translatedTextValue": "Does not end with"
+      },
+      {
+        "key": "Empty",
+        "translatedDropdownValue": "Empty",
+        "translatedTextValue": "is empty"
+      },
+      {
+        "key": "Not empty",
+        "translatedDropdownValue": "Not empty",
+        "translatedTextValue": "is not empty"
+      }
+    ],
+    "options": [],
+    "optionsUrl": "",
+    "getOptionsMethodParams": null,
+    "validate": false,
+    "displayType": null,
+    "displayOrder": 0,
+    "parameterCount": 0,
+    "getAssociationsMethodParams": null,
+    "associations": null,
+    "hasCorrespondingColumn": true,
+    "columns": [
+      {
+        "translatedName": "Name",
+        "name": "project_73_shortName"
+      }
+    ],
+    "tooltip": null,
+    "includeOperators": null,
+    "savedListFilter": false,
+    "objectTypeId": 0,
+    "typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.0.0, Culture=neutral, PublicKeyToken=d39bfb6c4b804e93"
+  },
+  {
     "id": "project_73_objectId",
     "label": ":/: Object ID",
     "translatedShortLabel": "Object ID",
@@ -33567,6 +33652,91 @@
       {
         "translatedName": "In Scope",
         "name": "project_63_inScope"
+      }
+    ],
+    "tooltip": null,
+    "includeOperators": null,
+    "savedListFilter": false,
+    "objectTypeId": 0,
+    "typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.0.0, Culture=neutral, PublicKeyToken=d39bfb6c4b804e93"
+  },
+  {
+    "id": "project_63_shortName",
+    "label": "1803: Name",
+    "translatedShortLabel": "Name",
+    "translatedTextLabel": "1803: Name",
+    "customTranslatedTextLabel": null,
+    "translatedCategory": "Project: 1803",
+    "translatedNoItems": null,
+    "category": "Project-1803",
+    "filterType": 0,
+    "type": "textlist",
+    "operators": [
+      {
+        "key": "Equals",
+        "translatedDropdownValue": "Equals",
+        "translatedTextValue": "is"
+      },
+      {
+        "key": "Does not equal",
+        "translatedDropdownValue": "Does not equal",
+        "translatedTextValue": "is not"
+      },
+      {
+        "key": "Contains",
+        "translatedDropdownValue": "Contains",
+        "translatedTextValue": "Contains"
+      },
+      {
+        "key": "Does not contain",
+        "translatedDropdownValue": "Does not contain",
+        "translatedTextValue": "Does not contain"
+      },
+      {
+        "key": "Begins with",
+        "translatedDropdownValue": "Begins with",
+        "translatedTextValue": "Begins with"
+      },
+      {
+        "key": "Does not begin with",
+        "translatedDropdownValue": "Does not begin with",
+        "translatedTextValue": "Does not begin with"
+      },
+      {
+        "key": "Ends with",
+        "translatedDropdownValue": "Ends with",
+        "translatedTextValue": "Ends with"
+      },
+      {
+        "key": "Does not end with",
+        "translatedDropdownValue": "Does not end with",
+        "translatedTextValue": "Does not end with"
+      },
+      {
+        "key": "Empty",
+        "translatedDropdownValue": "Empty",
+        "translatedTextValue": "is empty"
+      },
+      {
+        "key": "Not empty",
+        "translatedDropdownValue": "Not empty",
+        "translatedTextValue": "is not empty"
+      }
+    ],
+    "options": [],
+    "optionsUrl": "",
+    "getOptionsMethodParams": null,
+    "validate": false,
+    "displayType": null,
+    "displayOrder": 0,
+    "parameterCount": 0,
+    "getAssociationsMethodParams": null,
+    "associations": null,
+    "hasCorrespondingColumn": true,
+    "columns": [
+      {
+        "translatedName": "Name",
+        "name": "project_63_shortName"
       }
     ],
     "tooltip": null,
@@ -35337,6 +35507,91 @@
       {
         "translatedName": "In Scope",
         "name": "project_46_inScope"
+      }
+    ],
+    "tooltip": null,
+    "includeOperators": null,
+    "savedListFilter": false,
+    "objectTypeId": 0,
+    "typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.0.0, Culture=neutral, PublicKeyToken=d39bfb6c4b804e93"
+  },
+  {
+    "id": "project_46_shortName",
+    "label": "Babel(Engl: Name",
+    "translatedShortLabel": "Name",
+    "translatedTextLabel": "Babel(Engl: Name",
+    "customTranslatedTextLabel": null,
+    "translatedCategory": "Project: Babel(Engl",
+    "translatedNoItems": null,
+    "category": "Project-Babel(Engl",
+    "filterType": 0,
+    "type": "textlist",
+    "operators": [
+      {
+        "key": "Equals",
+        "translatedDropdownValue": "Equals",
+        "translatedTextValue": "is"
+      },
+      {
+        "key": "Does not equal",
+        "translatedDropdownValue": "Does not equal",
+        "translatedTextValue": "is not"
+      },
+      {
+        "key": "Contains",
+        "translatedDropdownValue": "Contains",
+        "translatedTextValue": "Contains"
+      },
+      {
+        "key": "Does not contain",
+        "translatedDropdownValue": "Does not contain",
+        "translatedTextValue": "Does not contain"
+      },
+      {
+        "key": "Begins with",
+        "translatedDropdownValue": "Begins with",
+        "translatedTextValue": "Begins with"
+      },
+      {
+        "key": "Does not begin with",
+        "translatedDropdownValue": "Does not begin with",
+        "translatedTextValue": "Does not begin with"
+      },
+      {
+        "key": "Ends with",
+        "translatedDropdownValue": "Ends with",
+        "translatedTextValue": "Ends with"
+      },
+      {
+        "key": "Does not end with",
+        "translatedDropdownValue": "Does not end with",
+        "translatedTextValue": "Does not end with"
+      },
+      {
+        "key": "Empty",
+        "translatedDropdownValue": "Empty",
+        "translatedTextValue": "is empty"
+      },
+      {
+        "key": "Not empty",
+        "translatedDropdownValue": "Not empty",
+        "translatedTextValue": "is not empty"
+      }
+    ],
+    "options": [],
+    "optionsUrl": "",
+    "getOptionsMethodParams": null,
+    "validate": false,
+    "displayType": null,
+    "displayOrder": 0,
+    "parameterCount": 0,
+    "getAssociationsMethodParams": null,
+    "associations": null,
+    "hasCorrespondingColumn": true,
+    "columns": [
+      {
+        "translatedName": "Name",
+        "name": "project_46_shortName"
       }
     ],
     "tooltip": null,
@@ -38426,6 +38681,91 @@
     "typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.0.0, Culture=neutral, PublicKeyToken=d39bfb6c4b804e93"
   },
   {
+    "id": "project_38_shortName",
+    "label": "Barry'sUse: Name",
+    "translatedShortLabel": "Name",
+    "translatedTextLabel": "Barry'sUse: Name",
+    "customTranslatedTextLabel": null,
+    "translatedCategory": "Project: Barry'sUse",
+    "translatedNoItems": null,
+    "category": "Project-Barry'sUse",
+    "filterType": 0,
+    "type": "textlist",
+    "operators": [
+      {
+        "key": "Equals",
+        "translatedDropdownValue": "Equals",
+        "translatedTextValue": "is"
+      },
+      {
+        "key": "Does not equal",
+        "translatedDropdownValue": "Does not equal",
+        "translatedTextValue": "is not"
+      },
+      {
+        "key": "Contains",
+        "translatedDropdownValue": "Contains",
+        "translatedTextValue": "Contains"
+      },
+      {
+        "key": "Does not contain",
+        "translatedDropdownValue": "Does not contain",
+        "translatedTextValue": "Does not contain"
+      },
+      {
+        "key": "Begins with",
+        "translatedDropdownValue": "Begins with",
+        "translatedTextValue": "Begins with"
+      },
+      {
+        "key": "Does not begin with",
+        "translatedDropdownValue": "Does not begin with",
+        "translatedTextValue": "Does not begin with"
+      },
+      {
+        "key": "Ends with",
+        "translatedDropdownValue": "Ends with",
+        "translatedTextValue": "Ends with"
+      },
+      {
+        "key": "Does not end with",
+        "translatedDropdownValue": "Does not end with",
+        "translatedTextValue": "Does not end with"
+      },
+      {
+        "key": "Empty",
+        "translatedDropdownValue": "Empty",
+        "translatedTextValue": "is empty"
+      },
+      {
+        "key": "Not empty",
+        "translatedDropdownValue": "Not empty",
+        "translatedTextValue": "is not empty"
+      }
+    ],
+    "options": [],
+    "optionsUrl": "",
+    "getOptionsMethodParams": null,
+    "validate": false,
+    "displayType": null,
+    "displayOrder": 0,
+    "parameterCount": 0,
+    "getAssociationsMethodParams": null,
+    "associations": null,
+    "hasCorrespondingColumn": true,
+    "columns": [
+      {
+        "translatedName": "Name",
+        "name": "project_38_shortName"
+      }
+    ],
+    "tooltip": null,
+    "includeOperators": null,
+    "savedListFilter": false,
+    "objectTypeId": 0,
+    "typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.0.0, Culture=neutral, PublicKeyToken=d39bfb6c4b804e93"
+  },
+  {
     "id": "project_38_objectId",
     "label": "Barry'sUse: Object ID",
     "translatedShortLabel": "Object ID",
@@ -40167,6 +40507,91 @@
       {
         "translatedName": "In Scope",
         "name": "project_40_inScope"
+      }
+    ],
+    "tooltip": null,
+    "includeOperators": null,
+    "savedListFilter": false,
+    "objectTypeId": 0,
+    "typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.0.0, Culture=neutral, PublicKeyToken=d39bfb6c4b804e93"
+  },
+  {
+    "id": "project_40_shortName",
+    "label": "ComputerSc: Name",
+    "translatedShortLabel": "Name",
+    "translatedTextLabel": "ComputerSc: Name",
+    "customTranslatedTextLabel": null,
+    "translatedCategory": "Project: ComputerSc",
+    "translatedNoItems": null,
+    "category": "Project-ComputerSc",
+    "filterType": 0,
+    "type": "textlist",
+    "operators": [
+      {
+        "key": "Equals",
+        "translatedDropdownValue": "Equals",
+        "translatedTextValue": "is"
+      },
+      {
+        "key": "Does not equal",
+        "translatedDropdownValue": "Does not equal",
+        "translatedTextValue": "is not"
+      },
+      {
+        "key": "Contains",
+        "translatedDropdownValue": "Contains",
+        "translatedTextValue": "Contains"
+      },
+      {
+        "key": "Does not contain",
+        "translatedDropdownValue": "Does not contain",
+        "translatedTextValue": "Does not contain"
+      },
+      {
+        "key": "Begins with",
+        "translatedDropdownValue": "Begins with",
+        "translatedTextValue": "Begins with"
+      },
+      {
+        "key": "Does not begin with",
+        "translatedDropdownValue": "Does not begin with",
+        "translatedTextValue": "Does not begin with"
+      },
+      {
+        "key": "Ends with",
+        "translatedDropdownValue": "Ends with",
+        "translatedTextValue": "Ends with"
+      },
+      {
+        "key": "Does not end with",
+        "translatedDropdownValue": "Does not end with",
+        "translatedTextValue": "Does not end with"
+      },
+      {
+        "key": "Empty",
+        "translatedDropdownValue": "Empty",
+        "translatedTextValue": "is empty"
+      },
+      {
+        "key": "Not empty",
+        "translatedDropdownValue": "Not empty",
+        "translatedTextValue": "is not empty"
+      }
+    ],
+    "options": [],
+    "optionsUrl": "",
+    "getOptionsMethodParams": null,
+    "validate": false,
+    "displayType": null,
+    "displayOrder": 0,
+    "parameterCount": 0,
+    "getAssociationsMethodParams": null,
+    "associations": null,
+    "hasCorrespondingColumn": true,
+    "columns": [
+      {
+        "translatedName": "Name",
+        "name": "project_40_shortName"
       }
     ],
     "tooltip": null,
@@ -46791,6 +47216,91 @@
     "typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.0.0, Culture=neutral, PublicKeyToken=d39bfb6c4b804e93"
   },
   {
+    "id": "project_55_shortName",
+    "label": "DeviceSche: Name",
+    "translatedShortLabel": "Name",
+    "translatedTextLabel": "DeviceSche: Name",
+    "customTranslatedTextLabel": null,
+    "translatedCategory": "Project: DeviceSche",
+    "translatedNoItems": null,
+    "category": "Project-DeviceSche",
+    "filterType": 0,
+    "type": "textlist",
+    "operators": [
+      {
+        "key": "Equals",
+        "translatedDropdownValue": "Equals",
+        "translatedTextValue": "is"
+      },
+      {
+        "key": "Does not equal",
+        "translatedDropdownValue": "Does not equal",
+        "translatedTextValue": "is not"
+      },
+      {
+        "key": "Contains",
+        "translatedDropdownValue": "Contains",
+        "translatedTextValue": "Contains"
+      },
+      {
+        "key": "Does not contain",
+        "translatedDropdownValue": "Does not contain",
+        "translatedTextValue": "Does not contain"
+      },
+      {
+        "key": "Begins with",
+        "translatedDropdownValue": "Begins with",
+        "translatedTextValue": "Begins with"
+      },
+      {
+        "key": "Does not begin with",
+        "translatedDropdownValue": "Does not begin with",
+        "translatedTextValue": "Does not begin with"
+      },
+      {
+        "key": "Ends with",
+        "translatedDropdownValue": "Ends with",
+        "translatedTextValue": "Ends with"
+      },
+      {
+        "key": "Does not end with",
+        "translatedDropdownValue": "Does not end with",
+        "translatedTextValue": "Does not end with"
+      },
+      {
+        "key": "Empty",
+        "translatedDropdownValue": "Empty",
+        "translatedTextValue": "is empty"
+      },
+      {
+        "key": "Not empty",
+        "translatedDropdownValue": "Not empty",
+        "translatedTextValue": "is not empty"
+      }
+    ],
+    "options": [],
+    "optionsUrl": "",
+    "getOptionsMethodParams": null,
+    "validate": false,
+    "displayType": null,
+    "displayOrder": 0,
+    "parameterCount": 0,
+    "getAssociationsMethodParams": null,
+    "associations": null,
+    "hasCorrespondingColumn": true,
+    "columns": [
+      {
+        "translatedName": "Name",
+        "name": "project_55_shortName"
+      }
+    ],
+    "tooltip": null,
+    "includeOperators": null,
+    "savedListFilter": false,
+    "objectTypeId": 0,
+    "typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.0.0, Culture=neutral, PublicKeyToken=d39bfb6c4b804e93"
+  },
+  {
     "id": "project_55_objectId",
     "label": "DeviceSche: Object ID",
     "translatedShortLabel": "Object ID",
@@ -49381,6 +49891,91 @@
     "typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.0.0, Culture=neutral, PublicKeyToken=d39bfb6c4b804e93"
   },
   {
+    "id": "project_43_shortName",
+    "label": "Havoc(BigD: Name",
+    "translatedShortLabel": "Name",
+    "translatedTextLabel": "Havoc(BigD: Name",
+    "customTranslatedTextLabel": null,
+    "translatedCategory": "Project: Havoc(BigD",
+    "translatedNoItems": null,
+    "category": "Project-Havoc(BigD",
+    "filterType": 0,
+    "type": "textlist",
+    "operators": [
+      {
+        "key": "Equals",
+        "translatedDropdownValue": "Equals",
+        "translatedTextValue": "is"
+      },
+      {
+        "key": "Does not equal",
+        "translatedDropdownValue": "Does not equal",
+        "translatedTextValue": "is not"
+      },
+      {
+        "key": "Contains",
+        "translatedDropdownValue": "Contains",
+        "translatedTextValue": "Contains"
+      },
+      {
+        "key": "Does not contain",
+        "translatedDropdownValue": "Does not contain",
+        "translatedTextValue": "Does not contain"
+      },
+      {
+        "key": "Begins with",
+        "translatedDropdownValue": "Begins with",
+        "translatedTextValue": "Begins with"
+      },
+      {
+        "key": "Does not begin with",
+        "translatedDropdownValue": "Does not begin with",
+        "translatedTextValue": "Does not begin with"
+      },
+      {
+        "key": "Ends with",
+        "translatedDropdownValue": "Ends with",
+        "translatedTextValue": "Ends with"
+      },
+      {
+        "key": "Does not end with",
+        "translatedDropdownValue": "Does not end with",
+        "translatedTextValue": "Does not end with"
+      },
+      {
+        "key": "Empty",
+        "translatedDropdownValue": "Empty",
+        "translatedTextValue": "is empty"
+      },
+      {
+        "key": "Not empty",
+        "translatedDropdownValue": "Not empty",
+        "translatedTextValue": "is not empty"
+      }
+    ],
+    "options": [],
+    "optionsUrl": "",
+    "getOptionsMethodParams": null,
+    "validate": false,
+    "displayType": null,
+    "displayOrder": 0,
+    "parameterCount": 0,
+    "getAssociationsMethodParams": null,
+    "associations": null,
+    "hasCorrespondingColumn": true,
+    "columns": [
+      {
+        "translatedName": "Name",
+        "name": "project_43_shortName"
+      }
+    ],
+    "tooltip": null,
+    "includeOperators": null,
+    "savedListFilter": false,
+    "objectTypeId": 0,
+    "typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.0.0, Culture=neutral, PublicKeyToken=d39bfb6c4b804e93"
+  },
+  {
     "id": "project_43_objectId",
     "label": "Havoc(BigD: Object ID",
     "translatedShortLabel": "Object ID",
@@ -50697,6 +51292,91 @@
       {
         "translatedName": "In Scope",
         "name": "project_50_inScope"
+      }
+    ],
+    "tooltip": null,
+    "includeOperators": null,
+    "savedListFilter": false,
+    "objectTypeId": 0,
+    "typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.0.0, Culture=neutral, PublicKeyToken=d39bfb6c4b804e93"
+  },
+  {
+    "id": "project_50_shortName",
+    "label": "ICSP: Name",
+    "translatedShortLabel": "Name",
+    "translatedTextLabel": "ICSP: Name",
+    "customTranslatedTextLabel": null,
+    "translatedCategory": "Project: ICSP",
+    "translatedNoItems": null,
+    "category": "Project-ICSP",
+    "filterType": 0,
+    "type": "textlist",
+    "operators": [
+      {
+        "key": "Equals",
+        "translatedDropdownValue": "Equals",
+        "translatedTextValue": "is"
+      },
+      {
+        "key": "Does not equal",
+        "translatedDropdownValue": "Does not equal",
+        "translatedTextValue": "is not"
+      },
+      {
+        "key": "Contains",
+        "translatedDropdownValue": "Contains",
+        "translatedTextValue": "Contains"
+      },
+      {
+        "key": "Does not contain",
+        "translatedDropdownValue": "Does not contain",
+        "translatedTextValue": "Does not contain"
+      },
+      {
+        "key": "Begins with",
+        "translatedDropdownValue": "Begins with",
+        "translatedTextValue": "Begins with"
+      },
+      {
+        "key": "Does not begin with",
+        "translatedDropdownValue": "Does not begin with",
+        "translatedTextValue": "Does not begin with"
+      },
+      {
+        "key": "Ends with",
+        "translatedDropdownValue": "Ends with",
+        "translatedTextValue": "Ends with"
+      },
+      {
+        "key": "Does not end with",
+        "translatedDropdownValue": "Does not end with",
+        "translatedTextValue": "Does not end with"
+      },
+      {
+        "key": "Empty",
+        "translatedDropdownValue": "Empty",
+        "translatedTextValue": "is empty"
+      },
+      {
+        "key": "Not empty",
+        "translatedDropdownValue": "Not empty",
+        "translatedTextValue": "is not empty"
+      }
+    ],
+    "options": [],
+    "optionsUrl": "",
+    "getOptionsMethodParams": null,
+    "validate": false,
+    "displayType": null,
+    "displayOrder": 0,
+    "parameterCount": 0,
+    "getAssociationsMethodParams": null,
+    "associations": null,
+    "hasCorrespondingColumn": true,
+    "columns": [
+      {
+        "translatedName": "Name",
+        "name": "project_50_shortName"
       }
     ],
     "tooltip": null,
@@ -53051,6 +53731,91 @@
     "typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.0.0, Culture=neutral, PublicKeyToken=d39bfb6c4b804e93"
   },
   {
+    "id": "project_34_shortName",
+    "label": "MigrationP: Name",
+    "translatedShortLabel": "Name",
+    "translatedTextLabel": "MigrationP: Name",
+    "customTranslatedTextLabel": null,
+    "translatedCategory": "Project: MigrationP",
+    "translatedNoItems": null,
+    "category": "Project-MigrationP",
+    "filterType": 0,
+    "type": "textlist",
+    "operators": [
+      {
+        "key": "Equals",
+        "translatedDropdownValue": "Equals",
+        "translatedTextValue": "is"
+      },
+      {
+        "key": "Does not equal",
+        "translatedDropdownValue": "Does not equal",
+        "translatedTextValue": "is not"
+      },
+      {
+        "key": "Contains",
+        "translatedDropdownValue": "Contains",
+        "translatedTextValue": "Contains"
+      },
+      {
+        "key": "Does not contain",
+        "translatedDropdownValue": "Does not contain",
+        "translatedTextValue": "Does not contain"
+      },
+      {
+        "key": "Begins with",
+        "translatedDropdownValue": "Begins with",
+        "translatedTextValue": "Begins with"
+      },
+      {
+        "key": "Does not begin with",
+        "translatedDropdownValue": "Does not begin with",
+        "translatedTextValue": "Does not begin with"
+      },
+      {
+        "key": "Ends with",
+        "translatedDropdownValue": "Ends with",
+        "translatedTextValue": "Ends with"
+      },
+      {
+        "key": "Does not end with",
+        "translatedDropdownValue": "Does not end with",
+        "translatedTextValue": "Does not end with"
+      },
+      {
+        "key": "Empty",
+        "translatedDropdownValue": "Empty",
+        "translatedTextValue": "is empty"
+      },
+      {
+        "key": "Not empty",
+        "translatedDropdownValue": "Not empty",
+        "translatedTextValue": "is not empty"
+      }
+    ],
+    "options": [],
+    "optionsUrl": "",
+    "getOptionsMethodParams": null,
+    "validate": false,
+    "displayType": null,
+    "displayOrder": 0,
+    "parameterCount": 0,
+    "getAssociationsMethodParams": null,
+    "associations": null,
+    "hasCorrespondingColumn": true,
+    "columns": [
+      {
+        "translatedName": "Name",
+        "name": "project_34_shortName"
+      }
+    ],
+    "tooltip": null,
+    "includeOperators": null,
+    "savedListFilter": false,
+    "objectTypeId": 0,
+    "typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.0.0, Culture=neutral, PublicKeyToken=d39bfb6c4b804e93"
+  },
+  {
     "id": "project_34_objectId",
     "label": "MigrationP: Object ID",
     "translatedShortLabel": "Object ID",
@@ -55176,6 +55941,91 @@
     "typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.0.0, Culture=neutral, PublicKeyToken=d39bfb6c4b804e93"
   },
   {
+    "id": "project_65_shortName",
+    "label": "Pr00: Name",
+    "translatedShortLabel": "Name",
+    "translatedTextLabel": "Pr00: Name",
+    "customTranslatedTextLabel": null,
+    "translatedCategory": "Project: Pr00",
+    "translatedNoItems": null,
+    "category": "Project-Pr00",
+    "filterType": 0,
+    "type": "textlist",
+    "operators": [
+      {
+        "key": "Equals",
+        "translatedDropdownValue": "Equals",
+        "translatedTextValue": "is"
+      },
+      {
+        "key": "Does not equal",
+        "translatedDropdownValue": "Does not equal",
+        "translatedTextValue": "is not"
+      },
+      {
+        "key": "Contains",
+        "translatedDropdownValue": "Contains",
+        "translatedTextValue": "Contains"
+      },
+      {
+        "key": "Does not contain",
+        "translatedDropdownValue": "Does not contain",
+        "translatedTextValue": "Does not contain"
+      },
+      {
+        "key": "Begins with",
+        "translatedDropdownValue": "Begins with",
+        "translatedTextValue": "Begins with"
+      },
+      {
+        "key": "Does not begin with",
+        "translatedDropdownValue": "Does not begin with",
+        "translatedTextValue": "Does not begin with"
+      },
+      {
+        "key": "Ends with",
+        "translatedDropdownValue": "Ends with",
+        "translatedTextValue": "Ends with"
+      },
+      {
+        "key": "Does not end with",
+        "translatedDropdownValue": "Does not end with",
+        "translatedTextValue": "Does not end with"
+      },
+      {
+        "key": "Empty",
+        "translatedDropdownValue": "Empty",
+        "translatedTextValue": "is empty"
+      },
+      {
+        "key": "Not empty",
+        "translatedDropdownValue": "Not empty",
+        "translatedTextValue": "is not empty"
+      }
+    ],
+    "options": [],
+    "optionsUrl": "",
+    "getOptionsMethodParams": null,
+    "validate": false,
+    "displayType": null,
+    "displayOrder": 0,
+    "parameterCount": 0,
+    "getAssociationsMethodParams": null,
+    "associations": null,
+    "hasCorrespondingColumn": true,
+    "columns": [
+      {
+        "translatedName": "Name",
+        "name": "project_65_shortName"
+      }
+    ],
+    "tooltip": null,
+    "includeOperators": null,
+    "savedListFilter": false,
+    "objectTypeId": 0,
+    "typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.0.0, Culture=neutral, PublicKeyToken=d39bfb6c4b804e93"
+  },
+  {
     "id": "project_65_objectId",
     "label": "Pr00: Object ID",
     "translatedShortLabel": "Object ID",
@@ -57287,6 +58137,91 @@
       {
         "translatedName": "In Scope",
         "name": "project_49_inScope"
+      }
+    ],
+    "tooltip": null,
+    "includeOperators": null,
+    "savedListFilter": false,
+    "objectTypeId": 0,
+    "typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.0.0, Culture=neutral, PublicKeyToken=d39bfb6c4b804e93"
+  },
+  {
+    "id": "project_49_shortName",
+    "label": "prK: Name",
+    "translatedShortLabel": "Name",
+    "translatedTextLabel": "prK: Name",
+    "customTranslatedTextLabel": null,
+    "translatedCategory": "Project: prK",
+    "translatedNoItems": null,
+    "category": "Project-prK",
+    "filterType": 0,
+    "type": "textlist",
+    "operators": [
+      {
+        "key": "Equals",
+        "translatedDropdownValue": "Equals",
+        "translatedTextValue": "is"
+      },
+      {
+        "key": "Does not equal",
+        "translatedDropdownValue": "Does not equal",
+        "translatedTextValue": "is not"
+      },
+      {
+        "key": "Contains",
+        "translatedDropdownValue": "Contains",
+        "translatedTextValue": "Contains"
+      },
+      {
+        "key": "Does not contain",
+        "translatedDropdownValue": "Does not contain",
+        "translatedTextValue": "Does not contain"
+      },
+      {
+        "key": "Begins with",
+        "translatedDropdownValue": "Begins with",
+        "translatedTextValue": "Begins with"
+      },
+      {
+        "key": "Does not begin with",
+        "translatedDropdownValue": "Does not begin with",
+        "translatedTextValue": "Does not begin with"
+      },
+      {
+        "key": "Ends with",
+        "translatedDropdownValue": "Ends with",
+        "translatedTextValue": "Ends with"
+      },
+      {
+        "key": "Does not end with",
+        "translatedDropdownValue": "Does not end with",
+        "translatedTextValue": "Does not end with"
+      },
+      {
+        "key": "Empty",
+        "translatedDropdownValue": "Empty",
+        "translatedTextValue": "is empty"
+      },
+      {
+        "key": "Not empty",
+        "translatedDropdownValue": "Not empty",
+        "translatedTextValue": "is not empty"
+      }
+    ],
+    "options": [],
+    "optionsUrl": "",
+    "getOptionsMethodParams": null,
+    "validate": false,
+    "displayType": null,
+    "displayOrder": 0,
+    "parameterCount": 0,
+    "getAssociationsMethodParams": null,
+    "associations": null,
+    "hasCorrespondingColumn": true,
+    "columns": [
+      {
+        "translatedName": "Name",
+        "name": "project_49_shortName"
       }
     ],
     "tooltip": null,
@@ -59711,6 +60646,91 @@
     "typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.0.0, Culture=neutral, PublicKeyToken=d39bfb6c4b804e93"
   },
   {
+    "id": "project_66_shortName",
+    "label": "ProjBroken: Name",
+    "translatedShortLabel": "Name",
+    "translatedTextLabel": "ProjBroken: Name",
+    "customTranslatedTextLabel": null,
+    "translatedCategory": "Project: ProjBroken",
+    "translatedNoItems": null,
+    "category": "Project-ProjBroken",
+    "filterType": 0,
+    "type": "textlist",
+    "operators": [
+      {
+        "key": "Equals",
+        "translatedDropdownValue": "Equals",
+        "translatedTextValue": "is"
+      },
+      {
+        "key": "Does not equal",
+        "translatedDropdownValue": "Does not equal",
+        "translatedTextValue": "is not"
+      },
+      {
+        "key": "Contains",
+        "translatedDropdownValue": "Contains",
+        "translatedTextValue": "Contains"
+      },
+      {
+        "key": "Does not contain",
+        "translatedDropdownValue": "Does not contain",
+        "translatedTextValue": "Does not contain"
+      },
+      {
+        "key": "Begins with",
+        "translatedDropdownValue": "Begins with",
+        "translatedTextValue": "Begins with"
+      },
+      {
+        "key": "Does not begin with",
+        "translatedDropdownValue": "Does not begin with",
+        "translatedTextValue": "Does not begin with"
+      },
+      {
+        "key": "Ends with",
+        "translatedDropdownValue": "Ends with",
+        "translatedTextValue": "Ends with"
+      },
+      {
+        "key": "Does not end with",
+        "translatedDropdownValue": "Does not end with",
+        "translatedTextValue": "Does not end with"
+      },
+      {
+        "key": "Empty",
+        "translatedDropdownValue": "Empty",
+        "translatedTextValue": "is empty"
+      },
+      {
+        "key": "Not empty",
+        "translatedDropdownValue": "Not empty",
+        "translatedTextValue": "is not empty"
+      }
+    ],
+    "options": [],
+    "optionsUrl": "",
+    "getOptionsMethodParams": null,
+    "validate": false,
+    "displayType": null,
+    "displayOrder": 0,
+    "parameterCount": 0,
+    "getAssociationsMethodParams": null,
+    "associations": null,
+    "hasCorrespondingColumn": true,
+    "columns": [
+      {
+        "translatedName": "Name",
+        "name": "project_66_shortName"
+      }
+    ],
+    "tooltip": null,
+    "includeOperators": null,
+    "savedListFilter": false,
+    "objectTypeId": 0,
+    "typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.0.0, Culture=neutral, PublicKeyToken=d39bfb6c4b804e93"
+  },
+  {
     "id": "project_66_objectId",
     "label": "ProjBroken: Object ID",
     "translatedShortLabel": "Object ID",
@@ -61027,6 +62047,91 @@
       {
         "translatedName": "In Scope",
         "name": "project_67_inScope"
+      }
+    ],
+    "tooltip": null,
+    "includeOperators": null,
+    "savedListFilter": false,
+    "objectTypeId": 0,
+    "typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.0.0, Culture=neutral, PublicKeyToken=d39bfb6c4b804e93"
+  },
+  {
+    "id": "project_67_shortName",
+    "label": "ProjWith: Name",
+    "translatedShortLabel": "Name",
+    "translatedTextLabel": "ProjWith: Name",
+    "customTranslatedTextLabel": null,
+    "translatedCategory": "Project: ProjWith",
+    "translatedNoItems": null,
+    "category": "Project-ProjWith",
+    "filterType": 0,
+    "type": "textlist",
+    "operators": [
+      {
+        "key": "Equals",
+        "translatedDropdownValue": "Equals",
+        "translatedTextValue": "is"
+      },
+      {
+        "key": "Does not equal",
+        "translatedDropdownValue": "Does not equal",
+        "translatedTextValue": "is not"
+      },
+      {
+        "key": "Contains",
+        "translatedDropdownValue": "Contains",
+        "translatedTextValue": "Contains"
+      },
+      {
+        "key": "Does not contain",
+        "translatedDropdownValue": "Does not contain",
+        "translatedTextValue": "Does not contain"
+      },
+      {
+        "key": "Begins with",
+        "translatedDropdownValue": "Begins with",
+        "translatedTextValue": "Begins with"
+      },
+      {
+        "key": "Does not begin with",
+        "translatedDropdownValue": "Does not begin with",
+        "translatedTextValue": "Does not begin with"
+      },
+      {
+        "key": "Ends with",
+        "translatedDropdownValue": "Ends with",
+        "translatedTextValue": "Ends with"
+      },
+      {
+        "key": "Does not end with",
+        "translatedDropdownValue": "Does not end with",
+        "translatedTextValue": "Does not end with"
+      },
+      {
+        "key": "Empty",
+        "translatedDropdownValue": "Empty",
+        "translatedTextValue": "is empty"
+      },
+      {
+        "key": "Not empty",
+        "translatedDropdownValue": "Not empty",
+        "translatedTextValue": "is not empty"
+      }
+    ],
+    "options": [],
+    "optionsUrl": "",
+    "getOptionsMethodParams": null,
+    "validate": false,
+    "displayType": null,
+    "displayOrder": 0,
+    "parameterCount": 0,
+    "getAssociationsMethodParams": null,
+    "associations": null,
+    "hasCorrespondingColumn": true,
+    "columns": [
+      {
+        "translatedName": "Name",
+        "name": "project_67_shortName"
       }
     ],
     "tooltip": null,
@@ -62496,6 +63601,91 @@
     "typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.0.0, Culture=neutral, PublicKeyToken=d39bfb6c4b804e93"
   },
   {
+    "id": "project_69_shortName",
+    "label": "TST1: Name",
+    "translatedShortLabel": "Name",
+    "translatedTextLabel": "TST1: Name",
+    "customTranslatedTextLabel": null,
+    "translatedCategory": "Project: TST1",
+    "translatedNoItems": null,
+    "category": "Project-TST1",
+    "filterType": 0,
+    "type": "textlist",
+    "operators": [
+      {
+        "key": "Equals",
+        "translatedDropdownValue": "Equals",
+        "translatedTextValue": "is"
+      },
+      {
+        "key": "Does not equal",
+        "translatedDropdownValue": "Does not equal",
+        "translatedTextValue": "is not"
+      },
+      {
+        "key": "Contains",
+        "translatedDropdownValue": "Contains",
+        "translatedTextValue": "Contains"
+      },
+      {
+        "key": "Does not contain",
+        "translatedDropdownValue": "Does not contain",
+        "translatedTextValue": "Does not contain"
+      },
+      {
+        "key": "Begins with",
+        "translatedDropdownValue": "Begins with",
+        "translatedTextValue": "Begins with"
+      },
+      {
+        "key": "Does not begin with",
+        "translatedDropdownValue": "Does not begin with",
+        "translatedTextValue": "Does not begin with"
+      },
+      {
+        "key": "Ends with",
+        "translatedDropdownValue": "Ends with",
+        "translatedTextValue": "Ends with"
+      },
+      {
+        "key": "Does not end with",
+        "translatedDropdownValue": "Does not end with",
+        "translatedTextValue": "Does not end with"
+      },
+      {
+        "key": "Empty",
+        "translatedDropdownValue": "Empty",
+        "translatedTextValue": "is empty"
+      },
+      {
+        "key": "Not empty",
+        "translatedDropdownValue": "Not empty",
+        "translatedTextValue": "is not empty"
+      }
+    ],
+    "options": [],
+    "optionsUrl": "",
+    "getOptionsMethodParams": null,
+    "validate": false,
+    "displayType": null,
+    "displayOrder": 0,
+    "parameterCount": 0,
+    "getAssociationsMethodParams": null,
+    "associations": null,
+    "hasCorrespondingColumn": true,
+    "columns": [
+      {
+        "translatedName": "Name",
+        "name": "project_69_shortName"
+      }
+    ],
+    "tooltip": null,
+    "includeOperators": null,
+    "savedListFilter": false,
+    "objectTypeId": 0,
+    "typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.0.0, Culture=neutral, PublicKeyToken=d39bfb6c4b804e93"
+  },
+  {
     "id": "project_69_objectId",
     "label": "TST1: Object ID",
     "translatedShortLabel": "Object ID",
@@ -63947,6 +65137,91 @@
       {
         "translatedName": "In Scope",
         "name": "project_72_inScope"
+      }
+    ],
+    "tooltip": null,
+    "includeOperators": null,
+    "savedListFilter": false,
+    "objectTypeId": 0,
+    "typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.0.0, Culture=neutral, PublicKeyToken=d39bfb6c4b804e93"
+  },
+  {
+    "id": "project_72_shortName",
+    "label": "USEMEFORA2: Name",
+    "translatedShortLabel": "Name",
+    "translatedTextLabel": "USEMEFORA2: Name",
+    "customTranslatedTextLabel": null,
+    "translatedCategory": "Project: USEMEFORA2",
+    "translatedNoItems": null,
+    "category": "Project-USEMEFORA2",
+    "filterType": 0,
+    "type": "textlist",
+    "operators": [
+      {
+        "key": "Equals",
+        "translatedDropdownValue": "Equals",
+        "translatedTextValue": "is"
+      },
+      {
+        "key": "Does not equal",
+        "translatedDropdownValue": "Does not equal",
+        "translatedTextValue": "is not"
+      },
+      {
+        "key": "Contains",
+        "translatedDropdownValue": "Contains",
+        "translatedTextValue": "Contains"
+      },
+      {
+        "key": "Does not contain",
+        "translatedDropdownValue": "Does not contain",
+        "translatedTextValue": "Does not contain"
+      },
+      {
+        "key": "Begins with",
+        "translatedDropdownValue": "Begins with",
+        "translatedTextValue": "Begins with"
+      },
+      {
+        "key": "Does not begin with",
+        "translatedDropdownValue": "Does not begin with",
+        "translatedTextValue": "Does not begin with"
+      },
+      {
+        "key": "Ends with",
+        "translatedDropdownValue": "Ends with",
+        "translatedTextValue": "Ends with"
+      },
+      {
+        "key": "Does not end with",
+        "translatedDropdownValue": "Does not end with",
+        "translatedTextValue": "Does not end with"
+      },
+      {
+        "key": "Empty",
+        "translatedDropdownValue": "Empty",
+        "translatedTextValue": "is empty"
+      },
+      {
+        "key": "Not empty",
+        "translatedDropdownValue": "Not empty",
+        "translatedTextValue": "is not empty"
+      }
+    ],
+    "options": [],
+    "optionsUrl": "",
+    "getOptionsMethodParams": null,
+    "validate": false,
+    "displayType": null,
+    "displayOrder": 0,
+    "parameterCount": 0,
+    "getAssociationsMethodParams": null,
+    "associations": null,
+    "hasCorrespondingColumn": true,
+    "columns": [
+      {
+        "translatedName": "Name",
+        "name": "project_72_shortName"
       }
     ],
     "tooltip": null,
@@ -66056,6 +67331,91 @@
     "typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.0.0, Culture=neutral, PublicKeyToken=d39bfb6c4b804e93"
   },
   {
+    "id": "project_70_shortName",
+    "label": "UseMeForAu: Name",
+    "translatedShortLabel": "Name",
+    "translatedTextLabel": "UseMeForAu: Name",
+    "customTranslatedTextLabel": null,
+    "translatedCategory": "Project: UseMeForAu",
+    "translatedNoItems": null,
+    "category": "Project-UseMeForAu",
+    "filterType": 0,
+    "type": "textlist",
+    "operators": [
+      {
+        "key": "Equals",
+        "translatedDropdownValue": "Equals",
+        "translatedTextValue": "is"
+      },
+      {
+        "key": "Does not equal",
+        "translatedDropdownValue": "Does not equal",
+        "translatedTextValue": "is not"
+      },
+      {
+        "key": "Contains",
+        "translatedDropdownValue": "Contains",
+        "translatedTextValue": "Contains"
+      },
+      {
+        "key": "Does not contain",
+        "translatedDropdownValue": "Does not contain",
+        "translatedTextValue": "Does not contain"
+      },
+      {
+        "key": "Begins with",
+        "translatedDropdownValue": "Begins with",
+        "translatedTextValue": "Begins with"
+      },
+      {
+        "key": "Does not begin with",
+        "translatedDropdownValue": "Does not begin with",
+        "translatedTextValue": "Does not begin with"
+      },
+      {
+        "key": "Ends with",
+        "translatedDropdownValue": "Ends with",
+        "translatedTextValue": "Ends with"
+      },
+      {
+        "key": "Does not end with",
+        "translatedDropdownValue": "Does not end with",
+        "translatedTextValue": "Does not end with"
+      },
+      {
+        "key": "Empty",
+        "translatedDropdownValue": "Empty",
+        "translatedTextValue": "is empty"
+      },
+      {
+        "key": "Not empty",
+        "translatedDropdownValue": "Not empty",
+        "translatedTextValue": "is not empty"
+      }
+    ],
+    "options": [],
+    "optionsUrl": "",
+    "getOptionsMethodParams": null,
+    "validate": false,
+    "displayType": null,
+    "displayOrder": 0,
+    "parameterCount": 0,
+    "getAssociationsMethodParams": null,
+    "associations": null,
+    "hasCorrespondingColumn": true,
+    "columns": [
+      {
+        "translatedName": "Name",
+        "name": "project_70_shortName"
+      }
+    ],
+    "tooltip": null,
+    "includeOperators": null,
+    "savedListFilter": false,
+    "objectTypeId": 0,
+    "typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.0.0, Culture=neutral, PublicKeyToken=d39bfb6c4b804e93"
+  },
+  {
     "id": "project_70_objectId",
     "label": "UseMeForAu: Object ID",
     "translatedShortLabel": "Object ID",
@@ -68102,6 +69462,91 @@
       {
         "translatedName": "In Scope",
         "name": "project_56_inScope"
+      }
+    ],
+    "tooltip": null,
+    "includeOperators": null,
+    "savedListFilter": false,
+    "objectTypeId": 0,
+    "typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.0.0, Culture=neutral, PublicKeyToken=d39bfb6c4b804e93"
+  },
+  {
+    "id": "project_56_shortName",
+    "label": "UserEvergr: Name",
+    "translatedShortLabel": "Name",
+    "translatedTextLabel": "UserEvergr: Name",
+    "customTranslatedTextLabel": null,
+    "translatedCategory": "Project: UserEvergr",
+    "translatedNoItems": null,
+    "category": "Project-UserEvergr",
+    "filterType": 0,
+    "type": "textlist",
+    "operators": [
+      {
+        "key": "Equals",
+        "translatedDropdownValue": "Equals",
+        "translatedTextValue": "is"
+      },
+      {
+        "key": "Does not equal",
+        "translatedDropdownValue": "Does not equal",
+        "translatedTextValue": "is not"
+      },
+      {
+        "key": "Contains",
+        "translatedDropdownValue": "Contains",
+        "translatedTextValue": "Contains"
+      },
+      {
+        "key": "Does not contain",
+        "translatedDropdownValue": "Does not contain",
+        "translatedTextValue": "Does not contain"
+      },
+      {
+        "key": "Begins with",
+        "translatedDropdownValue": "Begins with",
+        "translatedTextValue": "Begins with"
+      },
+      {
+        "key": "Does not begin with",
+        "translatedDropdownValue": "Does not begin with",
+        "translatedTextValue": "Does not begin with"
+      },
+      {
+        "key": "Ends with",
+        "translatedDropdownValue": "Ends with",
+        "translatedTextValue": "Ends with"
+      },
+      {
+        "key": "Does not end with",
+        "translatedDropdownValue": "Does not end with",
+        "translatedTextValue": "Does not end with"
+      },
+      {
+        "key": "Empty",
+        "translatedDropdownValue": "Empty",
+        "translatedTextValue": "is empty"
+      },
+      {
+        "key": "Not empty",
+        "translatedDropdownValue": "Not empty",
+        "translatedTextValue": "is not empty"
+      }
+    ],
+    "options": [],
+    "optionsUrl": "",
+    "getOptionsMethodParams": null,
+    "validate": false,
+    "displayType": null,
+    "displayOrder": 0,
+    "parameterCount": 0,
+    "getAssociationsMethodParams": null,
+    "associations": null,
+    "hasCorrespondingColumn": true,
+    "columns": [
+      {
+        "translatedName": "Name",
+        "name": "project_56_shortName"
       }
     ],
     "tooltip": null,
@@ -70346,6 +71791,91 @@
     "typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.0.0, Culture=neutral, PublicKeyToken=d39bfb6c4b804e93"
   },
   {
+    "id": "project_47_shortName",
+    "label": "UserSched2: Name",
+    "translatedShortLabel": "Name",
+    "translatedTextLabel": "UserSched2: Name",
+    "customTranslatedTextLabel": null,
+    "translatedCategory": "Project: UserSched2",
+    "translatedNoItems": null,
+    "category": "Project-UserSched2",
+    "filterType": 0,
+    "type": "textlist",
+    "operators": [
+      {
+        "key": "Equals",
+        "translatedDropdownValue": "Equals",
+        "translatedTextValue": "is"
+      },
+      {
+        "key": "Does not equal",
+        "translatedDropdownValue": "Does not equal",
+        "translatedTextValue": "is not"
+      },
+      {
+        "key": "Contains",
+        "translatedDropdownValue": "Contains",
+        "translatedTextValue": "Contains"
+      },
+      {
+        "key": "Does not contain",
+        "translatedDropdownValue": "Does not contain",
+        "translatedTextValue": "Does not contain"
+      },
+      {
+        "key": "Begins with",
+        "translatedDropdownValue": "Begins with",
+        "translatedTextValue": "Begins with"
+      },
+      {
+        "key": "Does not begin with",
+        "translatedDropdownValue": "Does not begin with",
+        "translatedTextValue": "Does not begin with"
+      },
+      {
+        "key": "Ends with",
+        "translatedDropdownValue": "Ends with",
+        "translatedTextValue": "Ends with"
+      },
+      {
+        "key": "Does not end with",
+        "translatedDropdownValue": "Does not end with",
+        "translatedTextValue": "Does not end with"
+      },
+      {
+        "key": "Empty",
+        "translatedDropdownValue": "Empty",
+        "translatedTextValue": "is empty"
+      },
+      {
+        "key": "Not empty",
+        "translatedDropdownValue": "Not empty",
+        "translatedTextValue": "is not empty"
+      }
+    ],
+    "options": [],
+    "optionsUrl": "",
+    "getOptionsMethodParams": null,
+    "validate": false,
+    "displayType": null,
+    "displayOrder": 0,
+    "parameterCount": 0,
+    "getAssociationsMethodParams": null,
+    "associations": null,
+    "hasCorrespondingColumn": true,
+    "columns": [
+      {
+        "translatedName": "Name",
+        "name": "project_47_shortName"
+      }
+    ],
+    "tooltip": null,
+    "includeOperators": null,
+    "savedListFilter": false,
+    "objectTypeId": 0,
+    "typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.0.0, Culture=neutral, PublicKeyToken=d39bfb6c4b804e93"
+  },
+  {
     "id": "project_47_objectId",
     "label": "UserSched2: Object ID",
     "translatedShortLabel": "Object ID",
@@ -72062,6 +73592,91 @@
       {
         "translatedName": "In Scope",
         "name": "project_41_inScope"
+      }
+    ],
+    "tooltip": null,
+    "includeOperators": null,
+    "savedListFilter": false,
+    "objectTypeId": 0,
+    "typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.0.0, Culture=neutral, PublicKeyToken=d39bfb6c4b804e93"
+  },
+  {
+    "id": "project_41_shortName",
+    "label": "UserSchedu: Name",
+    "translatedShortLabel": "Name",
+    "translatedTextLabel": "UserSchedu: Name",
+    "customTranslatedTextLabel": null,
+    "translatedCategory": "Project: UserSchedu",
+    "translatedNoItems": null,
+    "category": "Project-UserSchedu",
+    "filterType": 0,
+    "type": "textlist",
+    "operators": [
+      {
+        "key": "Equals",
+        "translatedDropdownValue": "Equals",
+        "translatedTextValue": "is"
+      },
+      {
+        "key": "Does not equal",
+        "translatedDropdownValue": "Does not equal",
+        "translatedTextValue": "is not"
+      },
+      {
+        "key": "Contains",
+        "translatedDropdownValue": "Contains",
+        "translatedTextValue": "Contains"
+      },
+      {
+        "key": "Does not contain",
+        "translatedDropdownValue": "Does not contain",
+        "translatedTextValue": "Does not contain"
+      },
+      {
+        "key": "Begins with",
+        "translatedDropdownValue": "Begins with",
+        "translatedTextValue": "Begins with"
+      },
+      {
+        "key": "Does not begin with",
+        "translatedDropdownValue": "Does not begin with",
+        "translatedTextValue": "Does not begin with"
+      },
+      {
+        "key": "Ends with",
+        "translatedDropdownValue": "Ends with",
+        "translatedTextValue": "Ends with"
+      },
+      {
+        "key": "Does not end with",
+        "translatedDropdownValue": "Does not end with",
+        "translatedTextValue": "Does not end with"
+      },
+      {
+        "key": "Empty",
+        "translatedDropdownValue": "Empty",
+        "translatedTextValue": "is empty"
+      },
+      {
+        "key": "Not empty",
+        "translatedDropdownValue": "Not empty",
+        "translatedTextValue": "is not empty"
+      }
+    ],
+    "options": [],
+    "optionsUrl": "",
+    "getOptionsMethodParams": null,
+    "validate": false,
+    "displayType": null,
+    "displayOrder": 0,
+    "parameterCount": 0,
+    "getAssociationsMethodParams": null,
+    "associations": null,
+    "hasCorrespondingColumn": true,
+    "columns": [
+      {
+        "translatedName": "Name",
+        "name": "project_41_shortName"
       }
     ],
     "tooltip": null,
@@ -77741,6 +79356,91 @@
     "typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.0.0, Culture=neutral, PublicKeyToken=d39bfb6c4b804e93"
   },
   {
+    "id": "project_58_shortName",
+    "label": "Windows101: Name",
+    "translatedShortLabel": "Name",
+    "translatedTextLabel": "Windows101: Name",
+    "customTranslatedTextLabel": null,
+    "translatedCategory": "Project: Windows101",
+    "translatedNoItems": null,
+    "category": "Project-Windows101",
+    "filterType": 0,
+    "type": "textlist",
+    "operators": [
+      {
+        "key": "Equals",
+        "translatedDropdownValue": "Equals",
+        "translatedTextValue": "is"
+      },
+      {
+        "key": "Does not equal",
+        "translatedDropdownValue": "Does not equal",
+        "translatedTextValue": "is not"
+      },
+      {
+        "key": "Contains",
+        "translatedDropdownValue": "Contains",
+        "translatedTextValue": "Contains"
+      },
+      {
+        "key": "Does not contain",
+        "translatedDropdownValue": "Does not contain",
+        "translatedTextValue": "Does not contain"
+      },
+      {
+        "key": "Begins with",
+        "translatedDropdownValue": "Begins with",
+        "translatedTextValue": "Begins with"
+      },
+      {
+        "key": "Does not begin with",
+        "translatedDropdownValue": "Does not begin with",
+        "translatedTextValue": "Does not begin with"
+      },
+      {
+        "key": "Ends with",
+        "translatedDropdownValue": "Ends with",
+        "translatedTextValue": "Ends with"
+      },
+      {
+        "key": "Does not end with",
+        "translatedDropdownValue": "Does not end with",
+        "translatedTextValue": "Does not end with"
+      },
+      {
+        "key": "Empty",
+        "translatedDropdownValue": "Empty",
+        "translatedTextValue": "is empty"
+      },
+      {
+        "key": "Not empty",
+        "translatedDropdownValue": "Not empty",
+        "translatedTextValue": "is not empty"
+      }
+    ],
+    "options": [],
+    "optionsUrl": "",
+    "getOptionsMethodParams": null,
+    "validate": false,
+    "displayType": null,
+    "displayOrder": 0,
+    "parameterCount": 0,
+    "getAssociationsMethodParams": null,
+    "associations": null,
+    "hasCorrespondingColumn": true,
+    "columns": [
+      {
+        "translatedName": "Name",
+        "name": "project_58_shortName"
+      }
+    ],
+    "tooltip": null,
+    "includeOperators": null,
+    "savedListFilter": false,
+    "objectTypeId": 0,
+    "typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.0.0, Culture=neutral, PublicKeyToken=d39bfb6c4b804e93"
+  },
+  {
     "id": "project_58_objectId",
     "label": "Windows101: Object ID",
     "translatedShortLabel": "Object ID",
@@ -79212,6 +80912,91 @@
       {
         "translatedName": "In Scope",
         "name": "project_60_inScope"
+      }
+    ],
+    "tooltip": null,
+    "includeOperators": null,
+    "savedListFilter": false,
+    "objectTypeId": 0,
+    "typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.0.0, Culture=neutral, PublicKeyToken=d39bfb6c4b804e93"
+  },
+  {
+    "id": "project_60_shortName",
+    "label": "Windows102: Name",
+    "translatedShortLabel": "Name",
+    "translatedTextLabel": "Windows102: Name",
+    "customTranslatedTextLabel": null,
+    "translatedCategory": "Project: Windows102",
+    "translatedNoItems": null,
+    "category": "Project-Windows102",
+    "filterType": 0,
+    "type": "textlist",
+    "operators": [
+      {
+        "key": "Equals",
+        "translatedDropdownValue": "Equals",
+        "translatedTextValue": "is"
+      },
+      {
+        "key": "Does not equal",
+        "translatedDropdownValue": "Does not equal",
+        "translatedTextValue": "is not"
+      },
+      {
+        "key": "Contains",
+        "translatedDropdownValue": "Contains",
+        "translatedTextValue": "Contains"
+      },
+      {
+        "key": "Does not contain",
+        "translatedDropdownValue": "Does not contain",
+        "translatedTextValue": "Does not contain"
+      },
+      {
+        "key": "Begins with",
+        "translatedDropdownValue": "Begins with",
+        "translatedTextValue": "Begins with"
+      },
+      {
+        "key": "Does not begin with",
+        "translatedDropdownValue": "Does not begin with",
+        "translatedTextValue": "Does not begin with"
+      },
+      {
+        "key": "Ends with",
+        "translatedDropdownValue": "Ends with",
+        "translatedTextValue": "Ends with"
+      },
+      {
+        "key": "Does not end with",
+        "translatedDropdownValue": "Does not end with",
+        "translatedTextValue": "Does not end with"
+      },
+      {
+        "key": "Empty",
+        "translatedDropdownValue": "Empty",
+        "translatedTextValue": "is empty"
+      },
+      {
+        "key": "Not empty",
+        "translatedDropdownValue": "Not empty",
+        "translatedTextValue": "is not empty"
+      }
+    ],
+    "options": [],
+    "optionsUrl": "",
+    "getOptionsMethodParams": null,
+    "validate": false,
+    "displayType": null,
+    "displayOrder": 0,
+    "parameterCount": 0,
+    "getAssociationsMethodParams": null,
+    "associations": null,
+    "hasCorrespondingColumn": true,
+    "columns": [
+      {
+        "translatedName": "Name",
+        "name": "project_60_shortName"
       }
     ],
     "tooltip": null,
@@ -80701,6 +82486,91 @@
     "typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.0.0, Culture=neutral, PublicKeyToken=d39bfb6c4b804e93"
   },
   {
+    "id": "project_62_shortName",
+    "label": "Windows10T: Name",
+    "translatedShortLabel": "Name",
+    "translatedTextLabel": "Windows10T: Name",
+    "customTranslatedTextLabel": null,
+    "translatedCategory": "Project: Windows10T",
+    "translatedNoItems": null,
+    "category": "Project-Windows10T",
+    "filterType": 0,
+    "type": "textlist",
+    "operators": [
+      {
+        "key": "Equals",
+        "translatedDropdownValue": "Equals",
+        "translatedTextValue": "is"
+      },
+      {
+        "key": "Does not equal",
+        "translatedDropdownValue": "Does not equal",
+        "translatedTextValue": "is not"
+      },
+      {
+        "key": "Contains",
+        "translatedDropdownValue": "Contains",
+        "translatedTextValue": "Contains"
+      },
+      {
+        "key": "Does not contain",
+        "translatedDropdownValue": "Does not contain",
+        "translatedTextValue": "Does not contain"
+      },
+      {
+        "key": "Begins with",
+        "translatedDropdownValue": "Begins with",
+        "translatedTextValue": "Begins with"
+      },
+      {
+        "key": "Does not begin with",
+        "translatedDropdownValue": "Does not begin with",
+        "translatedTextValue": "Does not begin with"
+      },
+      {
+        "key": "Ends with",
+        "translatedDropdownValue": "Ends with",
+        "translatedTextValue": "Ends with"
+      },
+      {
+        "key": "Does not end with",
+        "translatedDropdownValue": "Does not end with",
+        "translatedTextValue": "Does not end with"
+      },
+      {
+        "key": "Empty",
+        "translatedDropdownValue": "Empty",
+        "translatedTextValue": "is empty"
+      },
+      {
+        "key": "Not empty",
+        "translatedDropdownValue": "Not empty",
+        "translatedTextValue": "is not empty"
+      }
+    ],
+    "options": [],
+    "optionsUrl": "",
+    "getOptionsMethodParams": null,
+    "validate": false,
+    "displayType": null,
+    "displayOrder": 0,
+    "parameterCount": 0,
+    "getAssociationsMethodParams": null,
+    "associations": null,
+    "hasCorrespondingColumn": true,
+    "columns": [
+      {
+        "translatedName": "Name",
+        "name": "project_62_shortName"
+      }
+    ],
+    "tooltip": null,
+    "includeOperators": null,
+    "savedListFilter": false,
+    "objectTypeId": 0,
+    "typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.0.0, Culture=neutral, PublicKeyToken=d39bfb6c4b804e93"
+  },
+  {
     "id": "project_62_objectId",
     "label": "Windows10T: Object ID",
     "translatedShortLabel": "Object ID",
@@ -82181,6 +84051,91 @@
     "typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.0.0, Culture=neutral, PublicKeyToken=d39bfb6c4b804e93"
   },
   {
+    "id": "project_59_shortName",
+    "label": "Windows10U: Name",
+    "translatedShortLabel": "Name",
+    "translatedTextLabel": "Windows10U: Name",
+    "customTranslatedTextLabel": null,
+    "translatedCategory": "Project: Windows10U",
+    "translatedNoItems": null,
+    "category": "Project-Windows10U",
+    "filterType": 0,
+    "type": "textlist",
+    "operators": [
+      {
+        "key": "Equals",
+        "translatedDropdownValue": "Equals",
+        "translatedTextValue": "is"
+      },
+      {
+        "key": "Does not equal",
+        "translatedDropdownValue": "Does not equal",
+        "translatedTextValue": "is not"
+      },
+      {
+        "key": "Contains",
+        "translatedDropdownValue": "Contains",
+        "translatedTextValue": "Contains"
+      },
+      {
+        "key": "Does not contain",
+        "translatedDropdownValue": "Does not contain",
+        "translatedTextValue": "Does not contain"
+      },
+      {
+        "key": "Begins with",
+        "translatedDropdownValue": "Begins with",
+        "translatedTextValue": "Begins with"
+      },
+      {
+        "key": "Does not begin with",
+        "translatedDropdownValue": "Does not begin with",
+        "translatedTextValue": "Does not begin with"
+      },
+      {
+        "key": "Ends with",
+        "translatedDropdownValue": "Ends with",
+        "translatedTextValue": "Ends with"
+      },
+      {
+        "key": "Does not end with",
+        "translatedDropdownValue": "Does not end with",
+        "translatedTextValue": "Does not end with"
+      },
+      {
+        "key": "Empty",
+        "translatedDropdownValue": "Empty",
+        "translatedTextValue": "is empty"
+      },
+      {
+        "key": "Not empty",
+        "translatedDropdownValue": "Not empty",
+        "translatedTextValue": "is not empty"
+      }
+    ],
+    "options": [],
+    "optionsUrl": "",
+    "getOptionsMethodParams": null,
+    "validate": false,
+    "displayType": null,
+    "displayOrder": 0,
+    "parameterCount": 0,
+    "getAssociationsMethodParams": null,
+    "associations": null,
+    "hasCorrespondingColumn": true,
+    "columns": [
+      {
+        "translatedName": "Name",
+        "name": "project_59_shortName"
+      }
+    ],
+    "tooltip": null,
+    "includeOperators": null,
+    "savedListFilter": false,
+    "objectTypeId": 0,
+    "typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.0.0, Culture=neutral, PublicKeyToken=d39bfb6c4b804e93"
+  },
+  {
     "id": "project_59_objectId",
     "label": "Windows10U: Object ID",
     "translatedShortLabel": "Object ID",
@@ -83652,6 +85607,91 @@
       {
         "translatedName": "In Scope",
         "name": "project_1_inScope"
+      }
+    ],
+    "tooltip": null,
+    "includeOperators": null,
+    "savedListFilter": false,
+    "objectTypeId": 0,
+    "typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.0.0, Culture=neutral, PublicKeyToken=d39bfb6c4b804e93"
+  },
+  {
+    "id": "project_1_shortName",
+    "label": "Windows7Mi: Name",
+    "translatedShortLabel": "Name",
+    "translatedTextLabel": "Windows7Mi: Name",
+    "customTranslatedTextLabel": null,
+    "translatedCategory": "Project: Windows7Mi",
+    "translatedNoItems": null,
+    "category": "Project-Windows7Mi",
+    "filterType": 0,
+    "type": "textlist",
+    "operators": [
+      {
+        "key": "Equals",
+        "translatedDropdownValue": "Equals",
+        "translatedTextValue": "is"
+      },
+      {
+        "key": "Does not equal",
+        "translatedDropdownValue": "Does not equal",
+        "translatedTextValue": "is not"
+      },
+      {
+        "key": "Contains",
+        "translatedDropdownValue": "Contains",
+        "translatedTextValue": "Contains"
+      },
+      {
+        "key": "Does not contain",
+        "translatedDropdownValue": "Does not contain",
+        "translatedTextValue": "Does not contain"
+      },
+      {
+        "key": "Begins with",
+        "translatedDropdownValue": "Begins with",
+        "translatedTextValue": "Begins with"
+      },
+      {
+        "key": "Does not begin with",
+        "translatedDropdownValue": "Does not begin with",
+        "translatedTextValue": "Does not begin with"
+      },
+      {
+        "key": "Ends with",
+        "translatedDropdownValue": "Ends with",
+        "translatedTextValue": "Ends with"
+      },
+      {
+        "key": "Does not end with",
+        "translatedDropdownValue": "Does not end with",
+        "translatedTextValue": "Does not end with"
+      },
+      {
+        "key": "Empty",
+        "translatedDropdownValue": "Empty",
+        "translatedTextValue": "is empty"
+      },
+      {
+        "key": "Not empty",
+        "translatedDropdownValue": "Not empty",
+        "translatedTextValue": "is not empty"
+      }
+    ],
+    "options": [],
+    "optionsUrl": "",
+    "getOptionsMethodParams": null,
+    "validate": false,
+    "displayType": null,
+    "displayOrder": 0,
+    "parameterCount": 0,
+    "getAssociationsMethodParams": null,
+    "associations": null,
+    "hasCorrespondingColumn": true,
+    "columns": [
+      {
+        "translatedName": "Name",
+        "name": "project_1_shortName"
       }
     ],
     "tooltip": null,
