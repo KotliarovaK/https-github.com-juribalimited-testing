@@ -673,8 +673,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatApplicationFiltersBeingAppliedAgains
 	Then "11" rows are displayed in the agGrid
 	Then "(Application = 7zip (2015) ASSOCIATION = ("entitled to device"))" text is displayed in filter container
 	Then "Application 7zip (2015) entitled to device" is displayed in added filter info
-	When User closes filter container
-	And User create dynamic list with "TestList44C8B6" name on "Devices" page
+	When User create dynamic list with "TestList44C8B6" name on "Devices" page
 	Then "TestList44C8B6" list is displayed to user
 	When User navigates to the "All Devices" list
 	When User navigates to the "TestList44C8B6" list

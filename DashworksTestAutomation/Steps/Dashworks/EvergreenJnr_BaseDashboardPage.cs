@@ -498,7 +498,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             _driver.MoveToElement(page.FilterContainerButton);
-            page.FilterContainerButton.Click();
+            if(!_driver.IsElementDisplayed(page.FilterContainer)) page.FilterContainerButton.Click();
             Utils.Verify.AreEqual(text, page.FilterContainer.Text.TrimStart(' ').TrimEnd(' '),
                 "Filter is created incorrectly");
         }
