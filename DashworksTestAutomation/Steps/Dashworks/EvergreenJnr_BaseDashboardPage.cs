@@ -503,6 +503,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 "Filter is created incorrectly");
         }
 
+        [When(@"User closes filter container")]
         [When(@"User opens filter container")]
         public void WhenUserOpensFilterContainer()
         {

@@ -86,7 +86,7 @@ Examples:
 	| Babel(Engl: Target App Readiness | Equals, Does not equal | None         | Babel(Engl: Target App Readiness is None  | 302       |
 	| Barry'sUse: Target App Readiness | Equals, Does not equal | None         | Barry'sUse: Target App Readiness is None  | 1,045     |
 	| ComputerSc: Target App Readiness | Equals, Does not equal | Green        | ComputerSc: Target App Readiness is Green | 913       |
-	| Havoc(BigD: Target App Readiness | Equals, Does not equal | None         | Havoc(BigD: Target App Readiness is None  | 1,067     |
+	| Havoc(BigD: Target App Readiness | Equals, Does not equal | None         | Havoc(BigD: Target App Readiness is None  | 1,066     |
 	| MigrationP: Target App Readiness | Equals, Does not equal | Blue         | MigrationP: Target App Readiness is Blue  | 189       |
 	| UserSchedu: Target App Readiness | Equals, Does not equal | Grey         | UserSchedu: Target App Readiness is Grey  | 981       |
 
@@ -289,11 +289,11 @@ Scenario: EvergreenJnr_DevicesList_CheckThatMultiSelectProjectTaskFiltersAreDisp
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Windows7Mi: Values but no RAG" filter where type is "Equals" without added column and following checkboxes:
+	When User add "Windows7Mi: Migration \ Values but no RAG" filter where type is "Equals" without added column and following checkboxes:
 	| SelectedCheckboxes |
 	| One                |
 	| Three              |
-	And User Add And "UserSchedu: Radio Rag Date Comp" filter where type is "Equals" with added column and following checkboxes:
+	And User Add And "UserSchedu: One \ Radio Rag Date Comp" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| Not Applicable     |
 	| Started            |
@@ -307,15 +307,15 @@ Scenario: EvergreenJnr_DevicesList_CheckThatMultiSelectProjectTaskFiltersAreDisp
 	When User navigates to the "Devices_ProjectTaskFilters_AND" list
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	Then "Windows7Mi: Values but no RAG is One or Three" is displayed in added filter info
-	And "UserSchedu: Radio Rag Date Comp is Not Applicable, Started, Failed or Complete" is displayed in added filter info
-	When User click Edit button for "Windows7Mi: Values but no RAG" filter
+	Then "Windows7Mi: Migration \ Values but no RAG is One or Three" is displayed in added filter info
+	And "UserSchedu: One \ Radio Rag Date Comp is Not Applicable, Started, Failed or Complete" is displayed in added filter info
+	When User click Edit button for "Windows7Mi: Migration \ Values but no RAG" filter
 	And User change selected checkboxes:
 	| Option | State |
 	| One    | false |
 	| Two    | false |
 	| Three  | true  |
-	And User click Edit button for "UserSchedu: Radio Rag Date Comp" filter
+	And User click Edit button for "UserSchedu: One \ Radio Rag Date Comp" filter
 	And User select "Does not equal" Operator value
 	And User change selected checkboxes:
 	| Option         | State |
@@ -333,16 +333,16 @@ Scenario: EvergreenJnr_UsersList_CheckThatMultiSelectProjectTaskFiltersAreDispla
 	Then "Users" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Windows7Mi: Read Only on Bulk Update Page" filter where type is "Equals" without added column and following checkboxes:
+	When User add "Windows7Mi: Stage for User Tasks \ Read Only on Bulk Update Page" filter where type is "Equals" without added column and following checkboxes:
 	| SelectedCheckboxes |
 	| Not Applicable     |
 	| Started            |
 	| Failed             |
 	| Complete           |
-	And User Add And "Windows7Mi: T-60 SMS Message Sent" filter where type is "Equals" with added column and following checkboxes:
+	And User Add And "Windows7Mi: User Acceptance Test \ T-60 SMS Message Sent" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| Not Applicable     |
-	Then "4,641" rows are displayed in the agGrid
+	Then "4,655" rows are displayed in the agGrid
 	When User create dynamic list with "Users_ProjectTaskFilters_AND" name on "Users" page
 	Then "Users_ProjectTaskFilters_AND" list is displayed to user
 	When User navigates to the "All Users" list
@@ -350,9 +350,9 @@ Scenario: EvergreenJnr_UsersList_CheckThatMultiSelectProjectTaskFiltersAreDispla
 	When User navigates to the "Users_ProjectTaskFilters_AND" list
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	Then "Windows7Mi: Read Only on Bulk Update Page is Not Applicable, Started, Failed or Complete" is displayed in added filter info
-	And "Windows7Mi: T-60 SMS Message Sent is Not Applicable" is displayed in added filter info
-	When User click Edit button for "Windows7Mi: Read Only on Bulk Update Page" filter
+	Then "Windows7Mi: Stage for User Tasks \ Read Only on Bulk Update Page is Not Applicable, Started, Failed or Complete" is displayed in added filter info
+	And "Windows7Mi: User Acceptance Test \ T-60 SMS Message Sent is Not Applicable" is displayed in added filter info
+	When User click Edit button for "Windows7Mi: Stage for User Tasks \ Read Only on Bulk Update Page" filter
 	And User select "Does not equal" Operator value
 	And User change selected checkboxes:
 	| Option         | State |
@@ -361,13 +361,13 @@ Scenario: EvergreenJnr_UsersList_CheckThatMultiSelectProjectTaskFiltersAreDispla
 	| Started        | true  |
 	| Failed         | true  |
 	| Complete       | true  |
-	And User click Edit button for "Windows7Mi: T-60 SMS Message Sent" filter
+	And User click Edit button for "Windows7Mi: User Acceptance Test \ T-60 SMS Message Sent" filter
 	And User change selected checkboxes:
 	| Option         | State |
 	| Not Applicable | true  |
 	| Not Sent       | false |
 	| Sent           | true  |
-	Then "4,642" rows are displayed in the agGrid
+	Then "4,656" rows are displayed in the agGrid
 	When User update current custom list
 
 @Evergreen @AllLists @Evergreen_FiltersFeature @NewFilterCheck @DAS11830 @DAS14288
@@ -380,7 +380,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatOptionsIsAvailableForFiltersOfP
 	Then "Off, On" checkbox is available for this filter
 
 Examples:
-	| PageName     | FilterName                     |
-	| Users        | ComputerSc: User Off/On        |
-	| Devices      | ComputerSc: Computer Off/On    |
-	| Applications | ComputerSc: Application Off/On |
+	| PageName     | FilterName                           |
+	| Users        | ComputerSc: One \ User Off/On        |
+	| Devices      | ComputerSc: One \ Computer Off/On    |
+	| Applications | ComputerSc: One \ Application Off/On |
