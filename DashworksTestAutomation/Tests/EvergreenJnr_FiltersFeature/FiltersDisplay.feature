@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user   
 
-@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS15374 @Cleanup
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS15374 @Cleanup
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatDatesDisplayIsRegionSpecific
 	When User language is changed to "<Language>" via API
 	And User clicks "Devices" on the left-hand menu
