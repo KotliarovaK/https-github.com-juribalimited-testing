@@ -92,3 +92,36 @@ Scenario: EvergreenJnr_DevicesList_CheckSortOrderForBulkUpdateCapacitySlot
 	| London - City Afternoon      |
 	| London - Southbank Morning   |
 	| London - Southbank Afternoon |
+
+@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS17103
+Scenario: EvergreenJnr_AllLists_CheckDisplayingOfTooltipsInDatePickerOfBulkUpdate
+	When User clicks "Devices" on the left-hand menu
+	And User clicks the Actions button
+	And User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00I0COBFWHOF27   |
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update task value" Bulk Update Type on Action panel
+	And User selects "1803 Rollout" Project on Action panel
+	And User selects "Pre-Migration" Stage on Action panel
+	And User selects "Scheduled Date" Task on Action panel
+	And User selects "Update" Update Date on Action panel
+	And User selects "6 Nov 2018" Date on Action panel
+	And User clicks datepicker for Action panel
+	And User selects "6" day selection
+	And User clicks datepicker for Action panel
+	Then Day with "5" number displayed green in Datepicker
+	And Datepicker has tooltip with "8" rows for value "5"
+	When User selects "5" day selection
+	Then following values are presented in "Capacity Slot" drop-down on Action panel:
+	| Options                    |
+	| Birmingham Morning         |
+	| London - City Morning      |
+	| London - Southbank Morning |
+	| London Depot 09:00 - 11:00 |
+	| London Depot 11:00 - 13:00 |
+	| London Depot 13:00 - 15:00 |
+	| London Depot 15:00 - 17:00 |
+	And following values are not presented in "Capacity Slot" drop-down on Action panel:
+	| Options            |
+	| Manchester Morning |

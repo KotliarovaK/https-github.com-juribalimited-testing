@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net;
+using System.Threading;
 using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
@@ -83,26 +84,10 @@ namespace DashworksTestAutomation.Steps.API
         [When(@"User language is changed to ""(.*)"" via API")]
         public void WhenUserChangesAccountLanguageInProfile(string lng)
         {
-            var requestUri = $"{UrlProvider.RestClientBaseUrl}userProfile/updatePreferences";
-            var request = new RestRequest(requestUri);
-
-            request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
-            request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
-            request.AddParameter("Referer", UrlProvider.EvergreenUrl);
-            request.AddParameter("Accept", "application/json");
-            request.AddParameter("Content-Type", "application/json");
-
-            request.AddParameter("displayMode", 0);
-            request.AddParameter("languageName", PreferenceLanguageConverter.Convert(lng));
-            request.AddParameter("timeZone", "GMT Standard Time");
-            request.AddParameter("userId", DatabaseWorker.GetUserIdByLogin(_user.Username));
-
-
-            var response = _client.Value.Put(request);
-
-            if (response.StatusCode != HttpStatusCode.OK)
-                throw new Exception(
-                    $"Unable to execute request. Error details: {JsonConvert.DeserializeObject<JObject>(response.Content)["details"]}");
+            _client.ChangeUserProfileLanguage(_user.Username, PreferenceLanguageConverter.Convert(lng));
+            //Need to refresh page to apply language change
+            _driver.Navigate().Refresh();
+            _driver.WaitForDataLoading();
         }
 
         [When(@"User navigates to Create Readiness page of ""(.*)"" project")]
