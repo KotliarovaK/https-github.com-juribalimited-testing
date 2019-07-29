@@ -1135,7 +1135,7 @@ this.FeatureBackground();
                         "",
                         ""});
 #line 360
- testRunner.And("User creates new Task on Senior", ((string)(null)), table15, "And ");
+ testRunner.And("User creates Task", ((string)(null)), table15, "And ");
 #line 363
  testRunner.Then("Success message is displayed with \"Task successfully created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 364
@@ -1166,7 +1166,7 @@ this.FeatureBackground();
                         "",
                         ""});
 #line 368
- testRunner.And("User creates new Task on Senior", ((string)(null)), table16, "And ");
+ testRunner.And("User creates Task", ((string)(null)), table16, "And ");
 #line 371
  testRunner.Then("Success message is displayed with \"Task successfully created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 372
@@ -1197,7 +1197,7 @@ this.FeatureBackground();
                         "",
                         ""});
 #line 376
- testRunner.And("User creates new Task on Senior", ((string)(null)), table17, "And ");
+ testRunner.And("User creates Task", ((string)(null)), table17, "And ");
 #line 379
  testRunner.Then("Success message is displayed with \"Task successfully created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 380
@@ -1224,7 +1224,7 @@ this.FeatureBackground();
                         "",
                         ""});
 #line 382
- testRunner.And("User creates new Task on Senior", ((string)(null)), table18, "And ");
+ testRunner.And("User creates Task", ((string)(null)), table18, "And ");
 #line 385
  testRunner.Then("Success message is displayed with \"Task successfully created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 386
