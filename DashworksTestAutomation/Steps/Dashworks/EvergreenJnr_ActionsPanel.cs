@@ -8,7 +8,9 @@ using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Remote;
+using OpenQA.Selenium.Support.UI;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -274,6 +276,42 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.BodyContainer.Click();
         }
 
+        [Then(@"following values are presented in ""(.*)"" drop-down on Action panel:")]
+        public void ThenFollowingValuesArePresentedInDrop_DownOnActionPanel(string fieldName, Table table)
+        {
+            var field = _driver.NowAt<ActionsElement>();
+            field.GetDropdownOnActionPanelByName(fieldName).Click();
+            var action = _driver.NowAt<BaseDashboardPage>();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = action.OptionListOnActionsPanel.Select(value => value.Text).ToList();
+
+            foreach (var expectedIem in expectedList)
+            {
+                Assert.That(actualList.Contains(expectedIem), Is.True, $"Values in {fieldName} drop-down is missing");
+            }
+
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            page.BodyContainer.Click();
+        }
+
+        [Then(@"following values are not presented in ""(.*)"" drop-down on Action panel:")]
+        public void ThenFollowingValuesAreNotPresentedInDrop_DownOnActionPanel(string fieldName, Table table)
+        {
+            var field = _driver.NowAt<ActionsElement>();
+            field.GetDropdownOnActionPanelByName(fieldName).Click();
+            var action = _driver.NowAt<BaseDashboardPage>();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = action.OptionListOnActionsPanel.Select(value => value.Text).ToList();
+
+            foreach (var expectedIem in expectedList)
+            {
+                Assert.That(actualList, Does.Not.Contain(expectedIem), $"Values in {fieldName} drop-down is displayed");
+            }
+
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            page.BodyContainer.Click();
+        }
+
         [Then(@"following values are displayed in ""(.*)"" drop-down with searchfield on Action panel:")]
         public void ThenFollowingValuesAreDisplayedInDrop_DownWithSearchfieldOnActionPanel(string fieldName, Table table)
         {
@@ -365,6 +403,37 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var action = _driver.NowAt<BaseDashboardPage>();
             action.UpdateDateDropdown.Click();
             action.GetOptionByName(updateDate).Click();
+        }
+
+        [When(@"User selects ""(.*)"" day selection")]
+        public void WhenUserConfirmsDateSelectionOnActionPanel(string day)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForElementToBeDisplayed(action.DayInDatePicker(day));
+            action.DayInDatePicker(day).Click();
+        }
+
+        [When(@"User clicks datepicker for Action panel")]
+        public void WhenUserClicksDatePicker()
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.DatePickerIcon.Click();
+        }
+
+        [Then(@"Datepicker has tooltip with ""(.*)"" rows for value ""(.*)""")]
+        public void ThenTooltipForSpecificDayHasCorrectRowNumber(string rowNumber, string dayNumber)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
+            Assert.That(action.GetTooltipForDay(dayNumber).Count().Equals(Convert.ToInt32(rowNumber)), Is.True, "Wrong tooltips");
+        }
+
+        [Then(@"Day with ""(.*)"" number displayed green in Datepicker")]
+        public void ThenDayInDatePickerDisplayedGreen(string dayNumber)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForElementToBeDisplayed(action.DayInDatePicker(dayNumber));
+            Assert.That(action.DayInDatePicker(dayNumber).GetCssValue("background-color"), Is.EqualTo("rgba(126, 189, 56, 1)"), "Day color is wrong");
         }
 
         [When(@"User selects ""(.*)"" Date on Action panel")]
