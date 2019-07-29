@@ -13,19 +13,24 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.Automations
         public bool Active { get; set; }
         public int automationId => -1;
         public string automationName { get; set; }
-        private string _scheduleTypeId;
         public string automationSqlAgentJobId { get; set; }
         public string description { get; set; }
         private string AutomationlistId { get; set; }
         private string AutomationListName { get; set; }
-        //private string ObjectTypeId { get; set; }
+        private string _objectTypeId;
         public bool stopOnFailedAction { get; set; }
 
         [JsonProperty("automationScheduleTypeId")]
+        public int AutomationScheduleTypeId { get; private set; }
+        private string _run;
         public string Run
         {
-            get => _scheduleTypeId;
-            set => _scheduleTypeId = GetScheduleTypeId(value);
+            get => _run;
+            set
+            {
+                AutomationScheduleTypeId = GetScheduleTypeId(value);
+                _run = value;
+            }
         }
 
         [JsonProperty("listId")]
@@ -40,7 +45,16 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.Automations
         }
 
         [JsonProperty("objectTypeId")]
-        public string ObjectTypeId => SetListIdForObjectTypeId();
+        public int Object
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(_objectTypeId))
+                    _objectTypeId = SetListIdForObjectTypeId();
+
+                return int.Parse(_objectTypeId);
+            }
+        }
 
         private string SetListIdForObjectTypeId()
         {
@@ -54,17 +68,17 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.Automations
                         .LastOrDefault();
                 }
 
-                    return DatabaseHelper
-                        .ExecuteReader(
-                            $"select[ObjectTypeId] from[DesktopBI].[dbo].[EvergreenList] where[ListId] = '{this.AutomationListName}'",
-                            0).LastOrDefault();
+                return DatabaseHelper
+                    .ExecuteReader(
+                        $"select[ObjectTypeId] from[DesktopBI].[dbo].[EvergreenList] where[ListId] = '{this.AutomationListName}'",
+                        0).LastOrDefault();
             }
             catch (Exception e)
             {
                 Logger.Write($"Unable to execute query {e}");
                 throw e;
             }
-           
+
             //else 
             //    throw new NotImplementedException();
         }
@@ -86,17 +100,19 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.Automations
             }
         }
 
-        //select[ObjectTypeId] from[DesktopBI].[dbo].[EvergreenList] where[ListId] = 2
-
-        private string GetScheduleTypeId(string runType)
+        private int GetScheduleTypeId(string runType)
         {
-            if (runType.Equals("Manual"))
-                return "1";
-            if (runType.Equals("After Transform"))
-                return "2";
-            if (runType.Equals("Dashworks Daily"))
-                return "3";
-            return "NOT FOUND";
+            switch (runType)
+            {
+                case "Manual":
+                    return 1;
+                case "After Transform":
+                    return 2;
+                case "Dashworks Daily":
+                    return 3;
+                default:
+                    throw new Exception($"'{runType}' is not defined Run Type");
+            }
         }
 
         private string GetAutomationListId(string listName)

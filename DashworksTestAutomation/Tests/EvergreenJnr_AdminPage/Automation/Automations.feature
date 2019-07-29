@@ -117,10 +117,15 @@ Scenario: EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations
 Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuIsWorkedCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
+	When User creates new Automation via API
+	| AutomationName        | Description | Active | StopOnFailedAction | Scope     | Run    |
+	| 15431_First_Inactive  | DAS15431    | false  | false              | All Users | Manual |
+	| 15431_Second_Inactive | DAS15431    | false  | false              | All Users | Manual |
+	| 15431_Third_Active    | DAS15431    | true   | false              | All Users | Manual |
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
 	#First inactive automation
-	When User clicks Cog-menu for "zAutomation Devices" item on Admin page
+	When User clicks Cog-menu for "15431_First_Inactive" item on Admin page
 	Then User sees following cog-menu items on Admin page:
 	| items            |
 	| Edit             |
@@ -131,7 +136,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuIsWorkedCorrectly
 	| Make active      |
 	| Delete           |
 	#Second inactive automation
-	When User clicks Cog-menu for "Akhila Edinburgh Computer 1" item on Admin page
+	When User clicks Cog-menu for "15431_Second_Inactive" item on Admin page
 	Then User sees following cog-menu items on Admin page:
 	| items            |
 	| Edit             |
@@ -142,7 +147,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuIsWorkedCorrectly
 	| Make active      |
 	| Delete           |
 	#Third active automation
-	When User clicks Cog-menu for "Akhila Edinburgh Computer 2" item on Admin page
+	When User clicks Cog-menu for "15431_Third_Active" item on Admin page
 	Then User sees following cog-menu items on Admin page:
 	| items            |
 	| Edit             |
@@ -153,11 +158,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuIsWorkedCorrectly
 	| Move to position |
 	| Make inactive    |
 	| Delete           |
-	When User enters "Akhila Edinburgh Computer 2" text in the Search field for "Automation" column
+	When User enters "15431_Third_Active" text in the Search field for "Automation" column
 	Then "TRUE" content is displayed for "Active" column
-	When User clicks "Make inactive" option in Cog-menu for "Akhila Edinburgh Computer 2" item on Admin page
+	When User clicks "Make inactive" option in Cog-menu for "15431_Third_Active" item on Admin page
+	When User enters "15431_Third_Active" text in the Search field for "Automation" column
 	Then "FALSE" content is displayed for "Active" column
-	When User clicks Cog-menu for "Akhila Edinburgh Computer 2" item on Admin page
+	When User clicks Cog-menu for "15431_Third_Active" item on Admin page
 	Then User sees following cog-menu items on Admin page:
 	| items            |
 	| Edit             |
@@ -167,11 +173,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuIsWorkedCorrectly
 	| Move to position |
 	| Make active      |
 	| Delete           |
-	When User clicks "Make active" option in Cog-menu for "Akhila Edinburgh Computer 2" item on Admin page
+	When User clicks "Make active" option in Cog-menu for "15431_Third_Active" item on Admin page
+	When User enters "15431_Third_Active" text in the Search field for "Automation" column
 	Then "TRUE" content is displayed for "Active" column
-	When User clicks "Edit" option in Cog-menu for "Akhila Edinburgh Computer 2" item on Admin page
+	When User clicks "Edit" option in Cog-menu for "15431_Third_Active" item on Admin page
 	Then Edit Automation page is displayed to the User
-	Then Automation "Akhila Edinburgh Computer 2" is displayed to user
+	Then Automation "15431_Third_Active" is displayed to user
 
 #Need to use three Automations: inactive, inactive, active
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15431 @DAS15742 @DAS16764 @Not_Ready

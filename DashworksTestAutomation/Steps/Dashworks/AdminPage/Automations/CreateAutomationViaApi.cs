@@ -25,7 +25,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations
             _client = client;
         }
 
-        //TODO Use this step after completed
         [ When(@"User creates new Automation via API")]
         public void WhenUserCreatesNewAutomationViaAPI(Table table)
         {
