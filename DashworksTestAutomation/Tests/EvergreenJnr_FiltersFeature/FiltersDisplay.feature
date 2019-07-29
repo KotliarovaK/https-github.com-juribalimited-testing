@@ -694,8 +694,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatApplicationFiltersBeingAppliedAgains
 	Then "11" rows are displayed in the agGrid
 	Then "(Application = 7zip (2015) ASSOCIATION = ("entitled to device"))" text is displayed in filter container
 	Then "Application 7zip (2015) entitled to device" is displayed in added filter info
-	When User closes filter container
-	And User create dynamic list with "TestList44C8B6" name on "Devices" page
+	When User create dynamic list with "TestList44C8B6" name on "Devices" page
 	Then "TestList44C8B6" list is displayed to user
 	When User navigates to the "All Devices" list
 	When User navigates to the "TestList44C8B6" list
@@ -1797,3 +1796,21 @@ Scenario: EvergreenJnr_DevicesList_CheckThatStatusFilterAvailableOptionsList
 	| Migrated      |
 	| Complete      |
 	| Offboarded    |
+
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS17579
+Scenario: EvergreenJnr_ApplicationsList_CheckUserPostalCodeOptionsDisplaying
+	When User clicks "Applications" on the left-hand menu
+	And User clicks the Filters button
+	When user select "User Postal Code" filter
+	Then following operator options available:
+	| operator            |
+	| Equals              |
+	| Does not equal      |
+	| Contains            |
+	| Does not contain    |
+	| Begins with         |
+	| Does not begin with |
+	| Ends with           |
+	| Does not end with   |
+	| Empty               |
+	| Not empty           |

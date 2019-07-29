@@ -333,6 +333,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.SelectOperator(operatorValue);
         }
 
+        [Then(@"following operator options available:")]
+        public void WhenUserSeeOperatorValue(Table table)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            var expectedList = table.Rows.SelectMany(row => row.Values);
+
+            Utils.Verify.That(expectedList, Is.EqualTo(filterElement.SelectOperatorOptions()), "Lists are different");
+        }
+
         [When(@"User adds column for the selected filter")]
         public void WhenUserAddsColumnForTheSelectedFilter()
         {
