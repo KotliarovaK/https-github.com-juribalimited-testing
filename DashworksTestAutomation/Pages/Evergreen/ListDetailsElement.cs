@@ -124,7 +124,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             doc.LoadHtml(pageSource);
             var node = doc.DocumentNode.SelectNodes($".//div[@id='{openPermissionsSection}']")[0];
             var openPermissionsSectionTooltip = node.InnerHtml;
-            Assert.AreEqual(tooltipText, openPermissionsSectionTooltip, "Tooltip is incorrect for button");
+            Utils.Verify.AreEqual(tooltipText, openPermissionsSectionTooltip, "Tooltip is incorrect for button");
         }
 
         public string GetSelectedValue(IWebElement dropdown)

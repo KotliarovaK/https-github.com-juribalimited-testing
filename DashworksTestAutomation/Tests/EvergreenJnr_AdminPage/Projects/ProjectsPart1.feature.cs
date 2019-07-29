@@ -90,6 +90,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects
         [NUnit.Framework.CategoryAttribute("DAS12744")]
         [NUnit.Framework.CategoryAttribute("DAS12999")]
         [NUnit.Framework.CategoryAttribute("Projects")]
+        [NUnit.Framework.CategoryAttribute("TEST")]
         [NUnit.Framework.TestCaseAttribute("Devices", null)]
         [NUnit.Framework.TestCaseAttribute("Users", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", null)]
@@ -129,7 +130,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects
                     "DAS11697",
                     "DAS12744",
                     "DAS12999",
-                    "Projects"};
+                    "Projects",
+                    "TEST"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -170,6 +172,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Project_Creation_and_Scope")]
         [NUnit.Framework.CategoryAttribute("Projects")]
+        [NUnit.Framework.CategoryAttribute("TEST")]
         public virtual void EvergreenJnr_AdminPage_CheckThatAllAssociationsAreSelectedByDefaultInTheProjectApplicationsScope()
         {
             System.Exception lastException = null;
@@ -208,7 +211,8 @@ this.FeatureBackground();
                         "DAS12773",
                         "Cleanup",
                         "Project_Creation_and_Scope",
-                        "Projects"});
+                        "Projects",
+                        "TEST"});
 #line 24
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -287,6 +291,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Project_Creation_and_Scope")]
         [NUnit.Framework.CategoryAttribute("Projects")]
+        [NUnit.Framework.CategoryAttribute("TEST")]
         public virtual void EvergreenJnr_AdminPage_CheckThatExistingProjectNameCantBeRemoved()
         {
             System.Exception lastException = null;
@@ -323,7 +328,8 @@ this.FeatureBackground();
                         "DAS14283",
                         "Cleanup",
                         "Project_Creation_and_Scope",
-                        "Projects"});
+                        "Projects",
+                        "TEST"});
 #line 54
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -384,9 +390,9 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12162")]
         [NUnit.Framework.CategoryAttribute("DAS12532")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Project_Creation_and_Scope")]
         [NUnit.Framework.CategoryAttribute("Projects")]
+        [NUnit.Framework.CategoryAttribute("TEST")]
         public virtual void EvergreenJnr_AdminPage_CheckThatNoErrorsAreDisplayedInTheProjectScopeChangesSectionAfterUsingSavedDevicesList()
         {
             System.Exception lastException = null;
@@ -428,9 +434,9 @@ this.FeatureBackground();
                         "DAS12162",
                         "DAS12532",
                         "Cleanup",
-                        "Cleanup",
                         "Project_Creation_and_Scope",
-                        "Projects"});
+                        "Projects",
+                        "TEST"});
 #line 75
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

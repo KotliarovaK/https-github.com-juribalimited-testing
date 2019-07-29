@@ -49,7 +49,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenColumnIsPinned(string columnName, string pinStatus)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            Assert.AreEqual(columnName, page.GetPinnedColumnName(pinStatus), "Column is pinned incorrectly");
+            Utils.Verify.AreEqual(columnName, page.GetPinnedColumnName(pinStatus), "Column is pinned incorrectly");
         }
 
         [When(@"User opens settings for ""(.*)"" row")]
@@ -119,10 +119,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var menuTopYCoordinate = page.GetElementTopYCoordinate(page.AgMenu);
             var manuLeftXCoordinate = page.GetElementLeftXCoordinate(page.AgMenu);
 
-            Assert.That(menuTopYCoordinate, Is.GreaterThan(cellTopYCoordinte));
-            Assert.That(menuTopYCoordinate, Is.LessThan(cellBottomYCoordinte));
-            Assert.That(manuLeftXCoordinate, Is.GreaterThan(cellLeftXCoordinte));
-            Assert.That(manuLeftXCoordinate, Is.LessThan(cellRightXCoordinte));
+            Utils.Verify.That(menuTopYCoordinate, Is.GreaterThan(cellTopYCoordinte));
+            Utils.Verify.That(menuTopYCoordinate, Is.LessThan(cellBottomYCoordinte));
+            Utils.Verify.That(manuLeftXCoordinate, Is.GreaterThan(cellLeftXCoordinte));
+            Utils.Verify.That(manuLeftXCoordinate, Is.LessThan(cellRightXCoordinte));
         }
 
         [Then(@"User sees context menu with next options")]
@@ -135,9 +135,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             foreach (var row in table.Rows)
             {
-                Assert.That(options.FindAll(x => x.Equals(row["OptionsName"])).Count == 1);
+                Utils.Verify.That(options.FindAll(x => x.Equals(row["OptionsName"])).Count == 1, "PLEASE ADD EXCEPTION MESSAGE");
             }
-            Assert.That(options.Count, Is.EqualTo(table.Rows.Count));
+            Utils.Verify.That(options.Count, Is.EqualTo(table.Rows.Count));
         }
 
         [When(@"User selects '(.*)' option in context menu")]
@@ -157,7 +157,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             _driver.InsertFromClipboard(searchElement.SearchEverythingField);
 
-            Assert.That(searchElement.SearchEverythingField.GetAttribute("value").Replace("\t", "   "),
+            Utils.Verify.That(searchElement.SearchEverythingField.GetAttribute("value").Replace("\t", "   "),
                 Is.EqualTo(data.Replace(@"\t", "   ")));
         }
 
@@ -190,7 +190,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var expectedList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSorted(expectedList, false);
             _driver.WaitForDataLoading();
-            Assert.IsTrue(listPageMenu.DescendingSortingIcon.Displayed);
+            Utils.Verify.IsTrue(listPageMenu.DescendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"data in table is sorted by '(.*)' column in ascending order")]
@@ -201,7 +201,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var actualList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSorted(actualList);
             _driver.WaitForDataLoading();
-            Assert.IsTrue(listPageMenu.AscendingSortingIcon.Displayed);
+            Utils.Verify.IsTrue(listPageMenu.AscendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"date in table is sorted by '(.*)' column in descending order")]
@@ -211,7 +211,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             var originalList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSortedByDate(originalList, false);
-            Assert.IsTrue(listPageMenu.DescendingSortingIcon.Displayed);
+            Utils.Verify.IsTrue(listPageMenu.DescendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"date in table is sorted by '(.*)' column in ascending order")]
@@ -221,7 +221,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             var originalList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSortedByDate(originalList);
-            Assert.IsTrue(listPageMenu.AscendingSortingIcon.Displayed);
+            Utils.Verify.IsTrue(listPageMenu.AscendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"numeric data in table is sorted by '(.*)' column in ascending order")]
@@ -230,7 +230,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listPageMenu = _driver.NowAt<BaseDashboardPage>();
             var actualList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsNumericListSorted(actualList);
-            Assert.IsTrue(listPageMenu.AscendingSortingIcon.Displayed);
+            Utils.Verify.IsTrue(listPageMenu.AscendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"numeric data in table is sorted by '(.*)' column in descending order")]
@@ -240,7 +240,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
             var expectedList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsNumericListSorted(expectedList, false);
-            Assert.IsTrue(listPageMenu.DescendingSortingIcon.Displayed);
+            Utils.Verify.IsTrue(listPageMenu.DescendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"color data is sorted by '(.*)' column in ascending order")]
@@ -256,7 +256,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 SortingHelper.IsListSortedByEnum<Color>(new List<string>(expectedList));
             }
-            Assert.IsTrue(listPageMenu.AscendingSortingIcon.Displayed);
+            Utils.Verify.IsTrue(listPageMenu.AscendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"color data is sorted by '(.*)' column in descending order")]
@@ -272,7 +272,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 SortingHelper.IsListSortedByEnum<Color>(new List<string>(expectedList), false);
             }
-            Assert.IsTrue(listPageMenu.DescendingSortingIcon.Displayed);
+            Utils.Verify.IsTrue(listPageMenu.DescendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"boolean data is sorted by '(.*)' column in ascending order")]
@@ -281,7 +281,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listPageMenu = _driver.NowAt<BaseDashboardPage>();
             var expectedList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSortedByEnum<BooleanState>(new List<string>(expectedList));
-            Assert.IsTrue(listPageMenu.AscendingSortingIcon.Displayed);
+            Utils.Verify.IsTrue(listPageMenu.AscendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"boolean data is sorted by '(.*)' column in descending order")]
@@ -290,7 +290,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listPageMenu = _driver.NowAt<BaseDashboardPage>();
             var expectedList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSortedByEnum<BooleanState>(new List<string>(expectedList), false);
-            Assert.IsTrue(listPageMenu.DescendingSortingIcon.Displayed);
+            Utils.Verify.IsTrue(listPageMenu.DescendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"The first cell of the table matches to default sorting ""(.*)"" list")]
@@ -301,19 +301,19 @@ namespace DashworksTestAutomation.Steps.Dashworks
             switch (listName)
             {
                 case "Devices":
-                    Assert.AreEqual("001BAQXT6JWFPI", content.GetColumnContent("Hostname").First());
+                    Utils.Verify.AreEqual("001BAQXT6JWFPI", content.GetColumnContent("Hostname").First(), "PLEASE ADD EXCEPTION MESSAGE");
                     break;
 
                 case "Users":
-                    Assert.AreEqual("Empty", content.GetColumnContent("Username").First());
+                    Utils.Verify.AreEqual("Empty", content.GetColumnContent("Username").First(), "PLEASE ADD EXCEPTION MESSAGE");
                     break;
 
                 case "Applications":
-                    Assert.AreEqual("Empty", content.GetColumnContent("Application").First());
+                    Utils.Verify.AreEqual("Empty", content.GetColumnContent("Application").First(), "PLEASE ADD EXCEPTION MESSAGE");
                     break;
 
                 case "Mailboxes":
-                    Assert.AreEqual("Empty", content.GetColumnContent("Email Address").First());
+                    Utils.Verify.AreEqual("Empty", content.GetColumnContent("Email Address").First(), "PLEASE ADD EXCEPTION MESSAGE");
                     break;
 
                 default:
@@ -336,7 +336,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
             var contentId = page.GetListContentByColumnName(columnName).ToList();
             var contentList = contentId.Select(x => x.Text).ToList();
-            Assert.Contains(textContent, contentList, $"{textContent} is not displayed");
+            Utils.Verify.Contains(textContent, contentList, $"{textContent} is not displayed");
         }
 
         [Then(@"""(.*)"" content is displayed in ""(.*)"" column")]
@@ -345,7 +345,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForDataLoading();
             var originalList = page.GetRowContentByColumnName(columnName);
-            Assert.AreEqual(textContent, originalList, "Content is not displayed correctly");
+            Utils.Verify.AreEqual(textContent, originalList, "Content is not displayed correctly");
         }
 
         [Then(@"""(.*)"" text is displayed in the ""(.*)"" column")]
@@ -353,7 +353,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseGridPage>();
             var originalList = page.GetColumnContentByColumnNameForCapacity(columnName);
-            Assert.AreEqual(text, originalList, "Content is not displayed correctly");
+            Utils.Verify.AreEqual(text, originalList, "Content is not displayed correctly");
         }
 
         [Then(@"""(.*)"" content is displayed for ""(.*)"" column")]
@@ -362,14 +362,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForDataLoading();
             var originalList = page.GetColumnContentByColumnName(columnName);
-            Assert.AreEqual(textContent, originalList, "Content is not displayed correctly");
+            Utils.Verify.AreEqual(textContent, originalList, "Content is not displayed correctly");
         }
 
         [Then(@"some data is displayed in the ""(.*)"" column")]
         public void ThenSomeDataIsDisplayedInTheColumn(string columnName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            Assert.IsNotEmpty(page.GetColumnContentByColumnName(columnName));
+            Utils.Verify.IsNotEmpty(page.GetColumnContentByColumnName(columnName), "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"""(.*)"" italic content is displayed")]
@@ -377,7 +377,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForDataLoading();
-            Assert.IsTrue(page.GetItalicContentByColumnName(textContent).Displayed, "Content is not styled in italic or not displayed");
+            Utils.Verify.IsTrue(page.GetItalicContentByColumnName(textContent).Displayed, "Content is not styled in italic or not displayed");
         }
 
         [Then(@"full list content is displayed to the user")]
@@ -385,7 +385,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForElementToBeDisplayed(page.TableContent);
-            Assert.IsTrue(page.TableRows.Count > 5, "Table is empty");
+            Utils.Verify.IsTrue(page.TableRows.Count > 5, "Table is empty");
         }
 
         [Then(@"User sees ""(.*)"" rows in grid")]
@@ -394,7 +394,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForDataLoading();
             _driver.WaitForElementToBeDisplayed(page.TableContent);
-            Assert.That(page.TableRows.Count, Is.EqualTo(rowsCount));
+            Utils.Verify.That(page.TableRows.Count, Is.EqualTo(rowsCount));
         }
 
         [Then(@"Content is present in the newly added column")]
@@ -409,7 +409,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 var content = page.GetColumnContent(row["ColumnName"]);
 
                 //Check that at least 10 cells has some content
-                Assert.IsTrue(content.Count(x => !string.IsNullOrEmpty(x)) > 10, "Newly added column is empty");
+                Utils.Verify.IsTrue(content.Count(x => !string.IsNullOrEmpty(x)) > 10, "Newly added column is empty");
                 //Reset column sorting to default value
                 WhenUserClickOnColumnHeader(row["ColumnName"]);
                 WhenUserClickOnColumnHeader(row["ColumnName"]);
@@ -431,7 +431,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             foreach (var element in content)
             {
                 var evergreenIcon = element.FindElement(By.XPath(BaseDashboardPage.ImageSelector));
-                Assert.IsTrue(_driver.IsElementExists(evergreenIcon), "Evergreen Icon is not found");
+                Utils.Verify.IsTrue(_driver.IsElementExists(evergreenIcon), "Evergreen Icon is not found");
             }
         }
 
@@ -443,7 +443,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var rows = page.TableRows;
             foreach (var row in rows)
             {
-                Assert.That(row.FindElement(By.XPath(BaseDashboardPage.GridCell)).Displayed, Is.True);
+                Utils.Verify.That(row.FindElement(By.XPath(BaseDashboardPage.GridCell)).Displayed, Is.True);
             }
         }
 
@@ -451,7 +451,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenAppropriateHeaderFontWeightIsDisplayed()
         {
             var dashboardPage = _driver.NowAt<BaseDashboardPage>();
-            Assert.AreEqual("400", dashboardPage.GetHeaderFontWeight());
+            Utils.Verify.AreEqual("400", dashboardPage.GetHeaderFontWeight(), "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"Column is displayed in following order:")]
@@ -461,20 +461,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             var columnNames = page.GetAllColumnHeaders().Select(column => column.Text).ToList();
             var expectedList = table.Rows.SelectMany(row => row.Values).Where(x => !x.Equals(String.Empty)).ToList();
-            Assert.AreEqual(expectedList, columnNames, "Columns order is incorrect");
+            Utils.Verify.AreEqual(expectedList, columnNames, "Columns order is incorrect");
         }
 
         [Then(@"URL is ""(.*)""")]
         public void ThenURLIs(string urlPart)
         {
             var expectedUrl = $"{UrlProvider.Url}{urlPart}";
-            Assert.AreEqual(expectedUrl, _driver.Url, $"URL is not {expectedUrl}");
+            Utils.Verify.AreEqual(expectedUrl, _driver.Url, $"URL is not {expectedUrl}");
         }
 
         [Then(@"URL contains ""(.*)""")]
         public void ThenURLContains(string url)
         {
-            StringAssert.Contains(url, _driver.Url, $"URL is not contains {url}");
+            Utils.Verify.Contains(url, _driver.Url, $"URL is not contains {url}");
         }
 
         [Then(@"URL contains only ""(.*)"" filter")]
@@ -488,7 +488,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 if (!string.IsNullOrEmpty(filter))
                 {
-                    StringAssert.Contains(urlFilterExpected, filter, $"URL is not contains {filter}");
+                    Utils.Verify.Contains(urlFilterExpected, filter, $"URL is not contains {filter}");
                 }
             }
         }
@@ -499,10 +499,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseDashboardPage>();
             _driver.MoveToElement(page.FilterContainerButton);
             page.FilterContainerButton.Click();
-            Assert.AreEqual(text, page.FilterContainer.Text.TrimStart(' ').TrimEnd(' '),
+            Utils.Verify.AreEqual(text, page.FilterContainer.Text.TrimStart(' ').TrimEnd(' '),
                 "Filter is created incorrectly");
         }
 
+        [When(@"User closes filter container")]
         [When(@"User opens filter container")]
         public void WhenUserOpensFilterContainer()
         {
@@ -515,14 +516,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var content = _driver.NowAt<BaseDashboardPage>();
             content.GetHrefByColumnName(columnName);
-            Assert.IsTrue(content.GetHrefByColumnName(columnName) != null);
+            Utils.Verify.IsTrue(content.GetHrefByColumnName(columnName) != null, "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"""(.*)"" text is displayed in filter container for ""(.*)"" list name")]
         public void ThenTextIsDisplayedInFilterContainerForListName(string text, string listName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            Assert.AreEqual(text.Replace("{LIST_ID}", _listDetails.GetListIdByName(listName)),
+            Utils.Verify.AreEqual(text.Replace("{LIST_ID}", _listDetails.GetListIdByName(listName)),
                 page.FilterContainer.Text.TrimStart(' ').TrimEnd(' '),
                 "Filter is created incorrectly");
         }
@@ -561,7 +562,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     .Select(g => new { Value = g.Key, Count = g.Count() })
                     .Where(x => x.Count > 1).ToList();
 
-                Assert.That(
+                Utils.Verify.That(
                     duplicates.Where(x => x.Value.Equals(column["duplicatedValue"])).FirstOrDefault().Count.ToString(),
                     Is.EqualTo(column["duplicateCount"]), "Duplicates counts are not equal");
             }
@@ -575,8 +576,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 var cell = grid.GetGridCellByText(column["cellText"]);
 
-                Assert.That(cell.GetCssValue("text-overflow"), Is.EqualTo("ellipsis"), "Data in cell not truncated");
-                Assert.That(cell.GetCssValue("overflow"), Is.EqualTo("hidden"), "Data in cell not truncated");
+                Utils.Verify.That(cell.GetCssValue("text-overflow"), Is.EqualTo("ellipsis"), "Data in cell not truncated");
+                Utils.Verify.That(cell.GetCssValue("overflow"), Is.EqualTo("hidden"), "Data in cell not truncated");
             }
         }
 
@@ -588,7 +589,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             foreach (var row in table.Rows)
             {
                 var content = page.GetColumnContent(row["ColumnName"]);
-                Assert.IsFalse(content.Count(x => !string.IsNullOrEmpty(x)) > 20, "Column is empty");
+                Utils.Verify.IsFalse(content.Count(x => !string.IsNullOrEmpty(x)) > 20, "Column is empty");
             }
         }
 
@@ -616,7 +617,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             string rememberedNumber = foundRowsCounter.Storage.SessionStorage.GetItem("column_value");
 
-            StringAssert.AreEqualIgnoringCase(rememberedNumber == "1" ? $"{rememberedNumber} row" : $"{rememberedNumber} rows",
+            Utils.Verify.AreEqualIgnoringCase(rememberedNumber == "1" ? $"{rememberedNumber} row" : $"{rememberedNumber} rows",
                 foundRowsCounter.ListRowsCounter.Text.Replace(",",""), "Incorrect rows count");
         }
 
@@ -624,7 +625,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenErrorIsDisplayedToTheUser()
         {
             var page = _driver.NowAt<BaseGridPage>();
-            Assert.IsTrue(page.ErrorBox.Displayed(), "Error is displayed");
+            Utils.Verify.IsTrue(page.ErrorBox.Displayed(), "Error is displayed");
         }
 
         [When(@"User navigates to ""(.*)"" URL in a new tab")]
@@ -644,7 +645,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenWarningPop_UpIsDisplayedToTheUser()
         {
             var page = _driver.NowAt<BaseGridPage>();
-            Assert.IsTrue(page.WarningPopUpPanel.Displayed(), "Warning Pop-up is not displayed");
+            Utils.Verify.IsTrue(page.WarningPopUpPanel.Displayed(), "Warning Pop-up is not displayed");
         }
 
         [When(@"User clicks ""(.*)"" button in the Warning Pop-up message")]
@@ -658,8 +659,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenErrorPageIsDisplayedCorrectly()
         {
             var page = _driver.NowAt<BaseGridPage>();
-            Assert.IsTrue(page.Error403.Displayed());
-            Assert.IsFalse(page.PageTitle.Displayed(), "Error page is not displayed correctly");
+            Utils.Verify.IsTrue(page.Error403.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
+            Utils.Verify.IsFalse(page.PageTitle.Displayed(), "Error page is not displayed correctly");
         }
     }
 }

@@ -46,7 +46,7 @@ namespace DashworksTestAutomation.Steps.Base
                 if (entry.Level == LogLevel.Severe)
                     errorsList.Add(entry);
 
-            Assert.That(errorsList.Count, 
+            Utils.Verify.That(errorsList.Count, 
                 Is.EqualTo(errorsList.FindAll(x=>x.Message.Contains("the server responded with a status of 404 (Not Found)")).Count), 
                 "There are another errors in console");
         }

@@ -448,7 +448,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             doc.LoadHtml(pageSource);
             var node = doc.DocumentNode.SelectNodes($".//div[@id='{editFilterButton}']")[0];
             var editFilterButtonTooltip = node.InnerHtml;
-            Assert.AreEqual(tooltipText, editFilterButtonTooltip, "Tooltip is incorrect for button");
+            Utils.Verify.AreEqual(tooltipText, editFilterButtonTooltip, "Tooltip is incorrect for button");
         }
 
         public List<IWebElement> GetAddedFilters()

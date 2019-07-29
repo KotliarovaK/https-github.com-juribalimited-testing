@@ -45,7 +45,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenRingSettingsMapsToEvergreenIsDisplayedCorrectly(string ringName)
         {
             var page = _driver.NowAt<CreateRingPage>();
-            Assert.AreEqual(ringName, page.MapsToEvergreenField.GetAttribute("value"), $"'{ringName}' text is not displayed in Maps to Evergreen Ring field");
+            Utils.Verify.AreEqual(ringName, page.MapsToEvergreenField.GetAttribute("value"), $"'{ringName}' text is not displayed in Maps to Evergreen Ring field");
         }
 
         [When(@"User doubleclicks Create button on Create Ring page")]

@@ -7266,19 +7266,19 @@ this.FeatureBackground();
                         "Evergreen",
                         "1"});
             table129.AddRow(new string[] {
-                        "Project: Barry\'sUse",
+                        "Project Rings: Barry\'sUse",
                         "1"});
             table129.AddRow(new string[] {
-                        "Project: MigrationP",
+                        "Project Rings: MigrationP",
                         "1"});
             table129.AddRow(new string[] {
-                        "Project: UserEvergr",
+                        "Project Rings: UserEvergr",
                         "1"});
             table129.AddRow(new string[] {
-                        "Project: UserSched2",
+                        "Project Rings: UserSched2",
                         "1"});
             table129.AddRow(new string[] {
-                        "Project: UserSchedu",
+                        "Project Rings: UserSchedu",
                         "1"});
 #line 1679
  testRunner.Then("Category with counter is displayed on Filter panel", ((string)(null)), table129, "Then ");
@@ -7351,10 +7351,10 @@ this.FeatureBackground();
                         "Evergreen",
                         "1"});
             table130.AddRow(new string[] {
-                        "Project: EmailMigra",
+                        "Project Rings: EmailMigra",
                         "1"});
             table130.AddRow(new string[] {
-                        "Project: MailboxEve",
+                        "Project Rings: MailboxEve",
                         "1"});
 #line 1694
  testRunner.Then("Category with counter is displayed on Filter panel", ((string)(null)), table130, "Then ");
@@ -7487,8 +7487,8 @@ this.FeatureBackground();
 #line 1714
  testRunner.And("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1715
- testRunner.And("user select \"Windows7Mi: Send Applications List - User Object Task (Team)\" filter" +
-                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("user select \"Windows7Mi: Communication \\ Send Applications List - User Object Tas" +
+                    "k (Team)\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1716
  testRunner.And("User clicks in search field in the Filter block", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1717
@@ -7576,8 +7576,8 @@ this.FeatureBackground();
             table132.AddRow(new string[] {
                         "Empty"});
 #line 1734
- testRunner.When("User add \"UserEvergr: Dropdown Non RAG Date (User) (Slot)\" filter where type is \"" +
-                    "Does not equal\" with added column and following checkboxes:", ((string)(null)), table132, "When ");
+ testRunner.When("User add \"UserEvergr: Stage 2 \\ Dropdown Non RAG Date (User) (Slot)\" filter where" +
+                    " type is \"Does not equal\" with added column and following checkboxes:", ((string)(null)), table132, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table133 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedValues"});
@@ -7587,7 +7587,8 @@ this.FeatureBackground();
  testRunner.When("User Add And \"Domain\" filter where type is \"Equals\" with added column and Lookup " +
                     "option", ((string)(null)), table133, "When ");
 #line 1740
- testRunner.When("User click on \'UserEvergr: Dropdown Non RAG Date (User) (Slot)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User click on \'UserEvergr: Stage 2 \\ Dropdown Non RAG Date (User) (Slot)\' column " +
+                    "header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table134 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
@@ -7606,10 +7607,11 @@ this.FeatureBackground();
             table134.AddRow(new string[] {
                         "User Slot 2"});
 #line 1741
- testRunner.Then("following content is displayed in the \"UserEvergr: Dropdown Non RAG Date (User) (" +
-                    "Slot)\" column", ((string)(null)), table134, "Then ");
+ testRunner.Then("following content is displayed in the \"UserEvergr: Stage 2 \\ Dropdown Non RAG Dat" +
+                    "e (User) (Slot)\" column", ((string)(null)), table134, "Then ");
 #line 1750
- testRunner.When("User click on \'UserEvergr: Dropdown Non RAG Date (User) (Slot)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User click on \'UserEvergr: Stage 2 \\ Dropdown Non RAG Date (User) (Slot)\' column " +
+                    "header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table135 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
@@ -7628,8 +7630,8 @@ this.FeatureBackground();
             table135.AddRow(new string[] {
                         "User Slot 1"});
 #line 1751
- testRunner.Then("following content is displayed in the \"UserEvergr: Dropdown Non RAG Date (User) (" +
-                    "Slot)\" column", ((string)(null)), table135, "Then ");
+ testRunner.Then("following content is displayed in the \"UserEvergr: Stage 2 \\ Dropdown Non RAG Dat" +
+                    "e (User) (Slot)\" column", ((string)(null)), table135, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -7695,8 +7697,8 @@ this.FeatureBackground();
             table136.AddRow(new string[] {
                         "Empty"});
 #line 1767
- testRunner.When("User add \"1803: Scheduled Date (Slot)\" filter where type is \"Does not equal\" with" +
-                    " added column and Lookup option", ((string)(null)), table136, "When ");
+ testRunner.When("User add \"1803: Pre-Migration \\ Scheduled Date (Slot)\" filter where type is \"Does" +
+                    " not equal\" with added column and Lookup option", ((string)(null)), table136, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table137 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedValues"});
@@ -7706,7 +7708,7 @@ this.FeatureBackground();
  testRunner.When("User Add And \"Device Type\" filter where type is \"Equals\" with added column and Lo" +
                     "okup option", ((string)(null)), table137, "When ");
 #line 1773
- testRunner.When("User click on \'1803: Scheduled Date (Slot)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User click on \'1803: Pre-Migration \\ Scheduled Date (Slot)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table138 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
@@ -7731,9 +7733,10 @@ this.FeatureBackground();
             table138.AddRow(new string[] {
                         "London Depot 09:00 - 11:00"});
 #line 1774
- testRunner.Then("following content is displayed in the \"1803: Scheduled Date (Slot)\" column", ((string)(null)), table138, "Then ");
+ testRunner.Then("following content is displayed in the \"1803: Pre-Migration \\ Scheduled Date (Slot" +
+                    ")\" column", ((string)(null)), table138, "Then ");
 #line 1786
- testRunner.When("User click on \'1803: Scheduled Date (Slot)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User click on \'1803: Pre-Migration \\ Scheduled Date (Slot)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table139 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
@@ -7758,7 +7761,8 @@ this.FeatureBackground();
             table139.AddRow(new string[] {
                         "Birmingham Morning"});
 #line 1787
- testRunner.Then("following content is displayed in the \"1803: Scheduled Date (Slot)\" column", ((string)(null)), table139, "Then ");
+ testRunner.Then("following content is displayed in the \"1803: Pre-Migration \\ Scheduled Date (Slot" +
+                    ")\" column", ((string)(null)), table139, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -7824,11 +7828,12 @@ this.FeatureBackground();
             table140.AddRow(new string[] {
                         "Empty"});
 #line 1806
- testRunner.When("User add \"UserEvergr: Radiobutton Readiness Date Owner (Application) (Slot)\" filt" +
-                    "er where type is \"Does not equal\" with added column and following checkboxes:", ((string)(null)), table140, "When ");
+ testRunner.When("User add \"UserEvergr: Stage 3 \\ Radiobutton Readiness Date Owner (Application) (S" +
+                    "lot)\" filter where type is \"Does not equal\" with added column and following chec" +
+                    "kboxes:", ((string)(null)), table140, "When ");
 #line 1809
- testRunner.When("User click on \'UserEvergr: Radiobutton Readiness Date Owner (Application) (Slot)\'" +
-                    " column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User click on \'UserEvergr: Stage 3 \\ Radiobutton Readiness Date Owner (Applicatio" +
+                    "n) (Slot)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table141 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
@@ -7843,11 +7848,11 @@ this.FeatureBackground();
             table141.AddRow(new string[] {
                         "Application Slot 2"});
 #line 1810
- testRunner.Then("following content is displayed in the \"UserEvergr: Radiobutton Readiness Date Own" +
-                    "er (Application) (Slot)\" column", ((string)(null)), table141, "Then ");
+ testRunner.Then("following content is displayed in the \"UserEvergr: Stage 3 \\ Radiobutton Readines" +
+                    "s Date Owner (Application) (Slot)\" column", ((string)(null)), table141, "Then ");
 #line 1817
- testRunner.When("User click on \'UserEvergr: Radiobutton Readiness Date Owner (Application) (Slot)\'" +
-                    " column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User click on \'UserEvergr: Stage 3 \\ Radiobutton Readiness Date Owner (Applicatio" +
+                    "n) (Slot)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table142 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
@@ -7862,8 +7867,8 @@ this.FeatureBackground();
             table142.AddRow(new string[] {
                         "Application Slot 1"});
 #line 1818
- testRunner.Then("following content is displayed in the \"UserEvergr: Radiobutton Readiness Date Own" +
-                    "er (Application) (Slot)\" column", ((string)(null)), table142, "Then ");
+ testRunner.Then("following content is displayed in the \"UserEvergr: Stage 3 \\ Radiobutton Readines" +
+                    "s Date Owner (Application) (Slot)\" column", ((string)(null)), table142, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -7929,8 +7934,8 @@ this.FeatureBackground();
             table143.AddRow(new string[] {
                         "Empty"});
 #line 1832
- testRunner.When("User add \"MailboxEve: Scheduled - mailbox (Slot)\" filter where type is \"Does not " +
-                    "equal\" with added column and Lookup option", ((string)(null)), table143, "When ");
+ testRunner.When("User add \"MailboxEve: 1 \\ Scheduled - mailbox (Slot)\" filter where type is \"Does " +
+                    "not equal\" with added column and Lookup option", ((string)(null)), table143, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table144 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
@@ -7944,7 +7949,7 @@ this.FeatureBackground();
  testRunner.When("User Add And \"Owner Display Name\" filter where type is \"Equals\" with added column" +
                     " and following value:", ((string)(null)), table144, "When ");
 #line 1840
- testRunner.When("User click on \'MailboxEve: Scheduled - mailbox (Slot)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User click on \'MailboxEve: 1 \\ Scheduled - mailbox (Slot)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table145 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
@@ -7955,10 +7960,10 @@ this.FeatureBackground();
             table145.AddRow(new string[] {
                         "TRT-Mailbox-Nov 11, 2018-Nov 24, 2018\\RT=A\\T=Admin"});
 #line 1841
- testRunner.Then("following content is displayed in the \"MailboxEve: Scheduled - mailbox (Slot)\" co" +
-                    "lumn", ((string)(null)), table145, "Then ");
+ testRunner.Then("following content is displayed in the \"MailboxEve: 1 \\ Scheduled - mailbox (Slot)" +
+                    "\" column", ((string)(null)), table145, "Then ");
 #line 1846
- testRunner.When("User click on \'MailboxEve: Scheduled - mailbox (Slot)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User click on \'MailboxEve: 1 \\ Scheduled - mailbox (Slot)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table146 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
@@ -7969,8 +7974,8 @@ this.FeatureBackground();
             table146.AddRow(new string[] {
                         "CA -Mailbox-Nov 1, 2018-Nov 10, 2018"});
 #line 1847
- testRunner.Then("following content is displayed in the \"MailboxEve: Scheduled - mailbox (Slot)\" co" +
-                    "lumn", ((string)(null)), table146, "Then ");
+ testRunner.Then("following content is displayed in the \"MailboxEve: 1 \\ Scheduled - mailbox (Slot)" +
+                    "\" column", ((string)(null)), table146, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

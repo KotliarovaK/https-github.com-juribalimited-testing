@@ -51,7 +51,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             var getColor = page.CancelButtonInPopUp.GetCssValue("background-color");
-            Assert.AreEqual("rgba(236, 237, 239, 1)", getColor, "Cancel button is colored incorrect");
+            Utils.Verify.AreEqual("rgba(236, 237, 239, 1)", getColor, "Cancel button is colored incorrect");
         }
 
         [Then(@"Delete button in the pop up is colored amber")]
@@ -59,7 +59,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             var getColor = page.DeleteButtonInPopUp.GetCssValue("background-color");
-            Assert.AreEqual("rgba(242, 88, 49, 1)", getColor, "Delete button is colored incorrect");
+            Utils.Verify.AreEqual("rgba(242, 88, 49, 1)", getColor, "Delete button is colored incorrect");
         }
 
         [Then(@"User checks that file ""(.*)"" was downloaded")]
@@ -77,7 +77,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             var content = File.ReadAllText(filePath);
             var actualTable = content.CsvToTable().GetDataByKey($"{columnName}");
             var expectedTable = table.GetDataByKey("ColumnContent");
-            Assert.AreEqual(actualTable, expectedTable);
+            Utils.Verify.AreEqual(actualTable, expectedTable, "PLEASE ADD EXCEPTION MESSAGE");
         }
     }
 }

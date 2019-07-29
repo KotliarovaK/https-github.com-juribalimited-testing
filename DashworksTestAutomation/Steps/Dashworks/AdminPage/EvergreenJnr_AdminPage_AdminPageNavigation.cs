@@ -59,85 +59,85 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             {
                 case "Projects":
                     var projectsPage = _driver.NowAt<AdminLeftHandMenu>();
-                    StringAssert.Contains(projectsPage.ProjectsPage.Text.ToLower(), pageTitle.ToLower(),
+                    Utils.Verify.Contains(projectsPage.ProjectsPage.Text.ToLower(), pageTitle.ToLower(),
                         "Incorrect page is displayed to user");
                     break;
 
                 case "Teams":
                     var teamsPage = _driver.NowAt<AdminLeftHandMenu>();
-                    StringAssert.Contains(teamsPage.TeamsPage.Text.ToLower(), pageTitle.ToLower(),
+                    Utils.Verify.Contains(teamsPage.TeamsPage.Text.ToLower(), pageTitle.ToLower(),
                         "Incorrect page is displayed to user");
                     break;
 
                 case "Buckets":
                     var bucketsPage = _driver.NowAt<AdminLeftHandMenu>();
-                    StringAssert.Contains(bucketsPage.BucketsPage.Text.ToLower(), pageTitle.ToLower(),
+                    Utils.Verify.Contains(bucketsPage.BucketsPage.Text.ToLower(), pageTitle.ToLower(),
                         "Incorrect page is displayed to user");
                     break;
 
                 case "Automations":
                     var automationsPage = _driver.NowAt<AdminLeftHandMenu>();
-                    StringAssert.Contains(automationsPage.Automations.Text.ToLower(), pageTitle.ToLower(),
+                    Utils.Verify.Contains(automationsPage.Automations.Text.ToLower(), pageTitle.ToLower(),
                         "Incorrect page is displayed to user");
                     break;
 
                 case "Capacity Units":
                     var capacityUnitsPage = _driver.NowAt<AdminLeftHandMenu>();
-                    StringAssert.Contains(capacityUnitsPage.CapacityUnitsPage.Text.ToLower(), pageTitle.ToLower(),
+                    Utils.Verify.Contains(capacityUnitsPage.CapacityUnitsPage.Text.ToLower(), pageTitle.ToLower(),
                         "Incorrect page is displayed to user");
                     break;
 
                 case "Rings":
                     var ringsPage = _driver.NowAt<AdminLeftHandMenu>();
-                    StringAssert.Contains(ringsPage.RingsPage.Text.ToLower(), pageTitle.ToLower(),
+                    Utils.Verify.Contains(ringsPage.RingsPage.Text.ToLower(), pageTitle.ToLower(),
                         "Incorrect page is displayed to user");
                     break;
 
                 case "Create Project":
                     var createProjectPage = _driver.NowAt<CreateProjectPage>();
-                    StringAssert.Contains(createProjectPage.CreateProjectFormTitle.Text.ToLower(), pageTitle.ToLower(),
+                    Utils.Verify.Contains(createProjectPage.CreateProjectFormTitle.Text.ToLower(), pageTitle.ToLower(),
                         "Incorrect page is displayed to user");
                     break;
 
                 case "Create Team":
                     var createTeamPage = _driver.NowAt<CreateTeamPage>();
-                    StringAssert.Contains(createTeamPage.CreateTeamFormTitle.Text.ToLower(), pageTitle.ToLower(),
+                    Utils.Verify.Contains(createTeamPage.CreateTeamFormTitle.Text.ToLower(), pageTitle.ToLower(),
                         "Incorrect page is displayed to user");
                     break;
 
                 case "Create Evergreen Bucket":
                     var createBucketPage = _driver.NowAt<CreateBucketPage>();
-                    StringAssert.Contains(createBucketPage.CreateBucketFormTitle.Text.ToLower(), pageTitle.ToLower(),
+                    Utils.Verify.Contains(createBucketPage.CreateBucketFormTitle.Text.ToLower(), pageTitle.ToLower(),
                         "Incorrect page is displayed to user");
                     break;
 
                 case "Create Project Capacity Unit":
                     var createProjectCapacityUnitPage = _driver.NowAt<CreateCapacityUnitPage>();
-                    StringAssert.Contains(createProjectCapacityUnitPage.CreateCapacityUnitTitle.Text.ToLower(), pageTitle.ToLower(),
+                    Utils.Verify.Contains(createProjectCapacityUnitPage.CreateCapacityUnitTitle.Text.ToLower(), pageTitle.ToLower(),
                         "Incorrect page is displayed to user");
                     break;
 
                 case "Create Evergreen Capacity Unit":
                     var createEvergreenCapacityUnitPage = _driver.NowAt<CreateCapacityUnitPage>();
-                    StringAssert.Contains(createEvergreenCapacityUnitPage.CreateCapacityUnitTitle.Text.ToLower(), pageTitle.ToLower(),
+                    Utils.Verify.Contains(createEvergreenCapacityUnitPage.CreateCapacityUnitTitle.Text.ToLower(), pageTitle.ToLower(),
                         "Incorrect page is displayed to user");
                     break;
 
                 case "Create Ring":
                     var createRingPage = _driver.NowAt<CreateRingPage>();
-                    StringAssert.Contains(createRingPage.CreateRingFormTitle.Text.ToLower(), pageTitle.ToLower(),
+                    Utils.Verify.Contains(createRingPage.CreateRingFormTitle.Text.ToLower(), pageTitle.ToLower(),
                         "Incorrect page is displayed to user");
                     break;
 
                 case "Create Project Ring":
                     var createProjectRingPage = _driver.NowAt<CreateRingPage>();
-                    StringAssert.Contains(createProjectRingPage.CreateRingFormTitle.Text.ToLower(), pageTitle.ToLower(),
+                    Utils.Verify.Contains(createProjectRingPage.CreateRingFormTitle.Text.ToLower(), pageTitle.ToLower(),
                         "Incorrect page is displayed to user");
                     break;
 
                 case "Import Project":
                     var importProjectPage = _driver.NowAt<ImportProjectPage>();
-                    StringAssert.Contains(importProjectPage.ImportProjectFormTitle.Text.ToLower(), pageTitle.ToLower(),
+                    Utils.Verify.Contains(importProjectPage.ImportProjectFormTitle.Text.ToLower(), pageTitle.ToLower(),
                         "Incorrect page is displayed to user");
                     break;
 
@@ -176,14 +176,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         public void ThenTabIsSelectedOnTheAdminPage(string tabName)
         {
             var projectTabs = _driver.NowAt<ProjectsPage>();
-            Assert.IsTrue(projectTabs.GetsSelectedTabByName(tabName).Displayed(), "Selected tab is not active");
+            Utils.Verify.IsTrue(projectTabs.GetsSelectedTabByName(tabName).Displayed(), "Selected tab is not active");
         }
 
         [Then(@"""(.*)"" tab in Project selected on the Admin page")]
         public void ThenTabInProjectSelectedOnTheAdminPage(string tabName)
         {
             var projectTabs = _driver.NowAt<ProjectsPage>();
-            Assert.IsTrue(projectTabs.GetsSelectedTabInProjectByName(tabName).Displayed(), $"'{tabName}' tab is not active");
+            Utils.Verify.IsTrue(projectTabs.GetsSelectedTabInProjectByName(tabName).Displayed(), $"'{tabName}' tab is not active");
         }
 
         [When(@"User selects ""(.*)"" tab on the Capacity Units page")]
@@ -197,7 +197,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         public void ThenTabIsNotDisplayedToTheUserOnAdminPageNavigation(string tabName)
         {
             var page = _driver.NowAt<AdminLeftHandMenu>();
-            Assert.IsFalse(page.Automations.Displayed(), $"{tabName} tab still displayed");
+            Utils.Verify.IsFalse(page.Automations.Displayed(), $"{tabName} tab still displayed");
         }
     }
 }

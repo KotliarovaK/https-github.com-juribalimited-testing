@@ -29,38 +29,38 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             _driver.WaitForDataLoading();
 
             var page = _driver.NowAt<TabContent>();
-            Assert.IsTrue(page.CheckThatSelectedTabHasOpened(tabName), $"{tabName} tab is not loaded!");
+            Utils.Verify.IsTrue(page.CheckThatSelectedTabHasOpened(tabName), $"{tabName} tab is not loaded!");
         }
 
         [Then(@"Details page for ""(.*)"" item is displayed to the user")]
         public void ThenDetailsPageForItemIsDisplayedToTheUser(string pageName)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            NUnit.Framework.Assert.IsTrue(detailsPage.GroupIcon.Displayed());
+            Utils.Verify.IsTrue(detailsPage.GroupIcon.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
 
             var page = _driver.NowAt<TabContent>();
-            NUnit.Framework.Assert.IsTrue(page.GetItemDetailsPageByName(pageName).Displayed(), $"{pageName} page is not loaded!");
+            Utils.Verify.IsTrue(page.GetItemDetailsPageByName(pageName).Displayed(), $"{pageName} page is not loaded!");
         }
 
         [Then(@"field with ""(.*)"" text is displayed in expanded tab on the Details Page")]
         public void ThenFieldWithTextIsDisplayedInExpandedTabOnTheDetailsPage(string text)
         {
             var content = _driver.NowAt<TabContent>();
-            Assert.IsTrue(content.GetTheDisplayStateOfContentOnOpenTab(text), $"{text} content is not found in opened tab!");
+            Utils.Verify.IsTrue(content.GetTheDisplayStateOfContentOnOpenTab(text), $"{text} content is not found in opened tab!");
         }
 
         [Then(@"field with ""(.*)"" text is not displayed in expanded tab on the Details Page")]
         public void ThenFieldWithTextIsNotDisplayedInExpandedTabOnTheDetailsPage(string text)
         {
             var content = _driver.NowAt<TabContent>();
-            Assert.IsFalse(content.GetTheDisplayStateOfContentOnOpenTab(text), $"{text} content is not found in opened tab!");
+            Utils.Verify.IsFalse(content.GetTheDisplayStateOfContentOnOpenTab(text), $"{text} content is not found in opened tab!");
         }
 
         [Then(@"element table is displayed on the Details page")]
         public void ThenElementTableIsDisplayedOnTheDetailsPage()
         {
             var content = _driver.NowAt<TabContent>();
-            Assert.IsTrue(content.ElementsTable.Displayed, "Element table is not displayed!");
+            Utils.Verify.IsTrue(content.ElementsTable.Displayed, "Element table is not displayed!");
         }
 
         [Then(@"appropriate colored filter icons are displayed for following colors:")]
@@ -71,7 +71,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             {
                 var getColor = page.GetColorIconsForColorFilters(row["Color"]).GetAttribute("style").Split(';')
                     .First().Split(':').Last().TrimStart(' ').TrimEnd(' ');
-                Assert.AreEqual(ColorsConvertor.Convert(row["Color"]), getColor, "Colors are different or not displayed!");
+                Utils.Verify.AreEqual(ColorsConvertor.Convert(row["Color"]), getColor, "Colors are different or not displayed!");
             }
         }
 
@@ -79,7 +79,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         public void ThenContentIsNotDisplayedInTheGridOnTheItemDetailsPage(string textContent)
         {
             var projectTabs = _driver.NowAt<TabContent>();
-            Assert.IsFalse(projectTabs.GetContentDisplayState(textContent), $"{textContent} content should not be displayed in the grid on the Item details page!");
+            Utils.Verify.IsFalse(projectTabs.GetContentDisplayState(textContent), $"{textContent} content should not be displayed in the grid on the Item details page!");
         }
     }
 }

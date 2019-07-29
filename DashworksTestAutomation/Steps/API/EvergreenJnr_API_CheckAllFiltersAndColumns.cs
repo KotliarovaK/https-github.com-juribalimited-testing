@@ -39,7 +39,7 @@ namespace DashworksTestAutomation.Steps.API
 
             var expectedList = FileSystemHelper.ReadJsonListFromSystem<FilterDto>($"Filters\\{list}.json");
 
-            Assert.AreEqual(expectedList.Count, currentFilters.Count, "Filters count are different");
+            Utils.Verify.AreEqual(expectedList.Count, currentFilters.Count, "Filters count are different");
 
             return response;
         }
@@ -56,7 +56,7 @@ namespace DashworksTestAutomation.Steps.API
 
             var expectedList = FileSystemHelper.ReadJsonListFromSystem<ColumnDto>($"Columns\\{list}.json");
 
-            Assert.AreEqual(expectedList.Count, currentColumns.Count, "Columns count are different");
+            Utils.Verify.AreEqual(expectedList.Count, currentColumns.Count, "Columns count are different");
 
             return response;
         }
@@ -72,7 +72,7 @@ namespace DashworksTestAutomation.Steps.API
 
             foreach (ColumnDto columnDto in expectedList)
             {
-                Assert.True(currentColumns.Contains(columnDto), $"Incorrect data for column with '{columnDto.Label}' name");
+                Utils.Verify.IsTrue(currentColumns.Contains(columnDto), $"Incorrect data for column with '{columnDto.Label}' name");
             }
         }
 
@@ -87,7 +87,7 @@ namespace DashworksTestAutomation.Steps.API
 
             foreach (FilterDto filterDto in expectedList)
             {
-                Assert.True(currentFilters.Contains(filterDto), $"Incorrect data for filter with '{filterDto.ColumnName}' name");
+                Utils.Verify.IsTrue(currentFilters.Contains(filterDto), $"Incorrect data for filter with '{filterDto.ColumnName}' name");
             }
         }
 
@@ -122,8 +122,8 @@ namespace DashworksTestAutomation.Steps.API
                 var results = responseData["results"] as JArray;
                 var resultsCount = results.Count;
 
-                Assert.True(metadataCount > 0, "Metadata count is zero");
-                Assert.True(resultsCount > 0, "Results Count is zero");
+                Utils.Verify.IsTrue(metadataCount > 0, "Metadata count is zero");
+                Utils.Verify.IsTrue(resultsCount > 0, "Results Count is zero");
             }
         }
     }

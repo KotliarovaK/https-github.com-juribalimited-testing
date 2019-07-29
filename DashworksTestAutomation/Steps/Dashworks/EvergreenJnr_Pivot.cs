@@ -52,7 +52,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenColumnsPanelIsDisplayedToTheUser()
         {
             var pivotElement = _driver.NowAt<PivotElementPage>();
-            Assert.IsTrue(pivotElement.PivotPanel.Displayed(), "Pivot panel is not displayed");
+            Utils.Verify.IsTrue(pivotElement.PivotPanel.Displayed(), "Pivot panel is not displayed");
             Logger.Write("Pivot panel is visible");
         }
 
@@ -67,7 +67,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenPanelIsDisplayedToTheUser(string panelName)
         {
             var pivotElement = _driver.NowAt<PivotElementPage>();
-            Assert.IsTrue(pivotElement.GetPanelByName(panelName).Displayed(), $"{panelName} panel is not displayed");
+            Utils.Verify.IsTrue(pivotElement.GetPanelByName(panelName).Displayed(), $"{panelName} panel is not displayed");
             Logger.Write($"{panelName} panel is visible");
         }
 
@@ -173,14 +173,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenResetButtonOnMainPanelIsDisplayed()
         {
             var page = _driver.NowAt<PivotElementPage>();
-            Assert.IsTrue(page.ResetPivotButton.Displayed(), "Reset button on main panel is not displayed");
+            Utils.Verify.IsTrue(page.ResetPivotButton.Displayed(), "Reset button on main panel is not displayed");
         }
 
         [Then(@"reset button on main panel is not displayed")]
         public void ThenResetButtonOnMainPanelIsNotDisplayed()
         {
             var page = _driver.NowAt<PivotElementPage>();
-            Assert.IsFalse(page.ResetPivotButton.Displayed(), "Reset button on main panel is displayed");
+            Utils.Verify.IsFalse(page.ResetPivotButton.Displayed(), "Reset button on main panel is displayed");
         }
 
         [When(@"User clicks reset button on main panel")]
@@ -196,7 +196,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<PivotElementPage>();
             var allCategories = page.PivotCategories.Select(x => x.Text).ToList();
 
-            Assert.That(allCategories, Does.Contain(categoryName));
+            Utils.Verify.That(allCategories, Does.Contain(categoryName));
         }
 
         [When(@"User creates Pivot list with ""(.*)"" name")]
@@ -208,11 +208,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.SaveButton.Click();
 
             _driver.WaitForElementToBeDisplayed(page.SaveNewListButton);
-            Assert.IsTrue(page.SaveNewListButton.Displayed(), "'Save' button is not displayed");
+            Utils.Verify.IsTrue(page.SaveNewListButton.Displayed(), "'Save' button is not displayed");
             page.SaveNewListButton.Click();
 
             _driver.WaitForElementToBeDisplayed(page.SaveButton);
-            Assert.IsTrue(page.SaveButton.Displayed(), "'Save' button is not displayed");
+            Utils.Verify.IsTrue(page.SaveButton.Displayed(), "'Save' button is not displayed");
             
             page.PivotNameTextBox.SendKeys(listName);
             page.SaveButton.Click();
@@ -221,7 +221,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             //Thread.Sleep(300);
             //var listElement = _driver.NowAt<CustomListElement>();
             //_driver.WaitWhileControlIsDisplayedObsolete<CustomListElement>(() => listElement.SuccessCreateMessage);
-            //Assert.IsTrue(listElement.SuccessCreateMessage.Displayed(), "Success message is not displayed");
+            //Utils.Verify.IsTrue(listElement.SuccessCreateMessage.Displayed(), "Success message is not displayed");
         }
 
         [Then(@"Pivot run was completed")]
@@ -231,14 +231,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             //Small wait for Pivot loaded
             Thread.Sleep(500);
             _driver.WaitForDataLoading();
-            Assert.IsFalse(page.NoPivotTableMessage.Displayed(), "Pivot run was failed");
+            Utils.Verify.IsFalse(page.NoPivotTableMessage.Displayed(), "Pivot run was failed");
         }
 
         [Then(@"Plus button is not displayed in the left-pinned column")]
         public void ThenPlusButtonIsNotDisplayedInTheLeft_PinnedColumn()
         {
             var page = _driver.NowAt<PivotElementPage>();
-            Assert.IsFalse(page.PlusButton.Displayed(), "Plus button is not displayed in the left-pinned column");
+            Utils.Verify.IsFalse(page.PlusButton.Displayed(), "Plus button is not displayed in the left-pinned column");
         }
 
         [Then(@"No pivot generated message is displayed")]
@@ -246,7 +246,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             _driver.WaitForDataLoading();
             var page = _driver.NowAt<PivotElementPage>();
-            Assert.IsTrue(page.NoPivotTableMessage.Displayed(), "'No pivot generated' is not displayed");
+            Utils.Verify.IsTrue(page.NoPivotTableMessage.Displayed(), "'No pivot generated' is not displayed");
         }
 
         [Then(@"Save button is inactive for Pivot list")]
@@ -254,7 +254,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<PivotElementPage>();
             var state = page.SaveButton.GetAttribute("disabled");
-            Assert.AreEqual("true", state, "Save button is active");
+            Utils.Verify.AreEqual("true", state, "Save button is active");
         }
 
         [Then(@"Save button is active for Pivot list")]
@@ -262,14 +262,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<PivotElementPage>();
             var state = page.SaveButton.GetAttribute("disabled");
-            Assert.AreEqual("false", state, "Save button is not active");
+            Utils.Verify.AreEqual("false", state, "Save button is not active");
         }
 
         [Then(@"Pivot Name field is empty")]
         public void ThenPivotNameFieldIsEmpty()
         {
             var page = _driver.NowAt<PivotElementPage>();
-            Assert.IsEmpty(page.PivotNameTextBox.GetAttribute("value"), "Pivot Name field is not empty");
+            Utils.Verify.IsEmpty(page.PivotNameTextBox.GetAttribute("value"), "Pivot Name field is not empty");
         }
 
         [When(@"User selects aggregate function ""(.*)"" on Pivot")]
@@ -287,7 +287,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             pivot.AggregateFunction.Click();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var actualList = pivot.AggregateOptionsOnPivotPanel.Select(value => value.Text).ToList();
-            Assert.AreEqual(expectedList, actualList, "Aggregate function in drop-down are different");
+            Utils.Verify.AreEqual(expectedList, actualList, "Aggregate function in drop-down are different");
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             page.BodyContainer.Click();
         }
@@ -297,7 +297,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             _driver.WaitForDataLoading();
             var pivot = _driver.NowAt<PivotElementPage>();
-            Assert.IsTrue(pivot.GetColumnsDisplayedForAggregateFunctions(text).Displayed(), $"{text} is not displayed in the columns for aggregate functions");
+            Utils.Verify.IsTrue(pivot.GetColumnsDisplayedForAggregateFunctions(text).Displayed(), $"{text} is not displayed in the columns for aggregate functions");
         }
 
         [Then(@"""(.*)"" is displayed at the top left corner on Pivot")]
@@ -305,7 +305,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             _driver.WaitForDataLoading();
             var pivot = _driver.NowAt<PivotElementPage>();
-            Assert.IsTrue(pivot.GetTopLeftCornerText(text).Displayed(), $"{text} is not displayed at the top left corner");
+            Utils.Verify.IsTrue(pivot.GetTopLeftCornerText(text).Displayed(), $"{text} is not displayed at the top left corner");
         }
 
         [When(@"User clicks Plus button for ""(.*)"" Pivot value")]
@@ -324,7 +324,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var button = page.GetPlusButtonOnPivotByName(buttonName);
             _driver.MouseHover(button);
             var toolTipText = _driver.GetTooltipText();
-            Assert.AreEqual(text, toolTipText, "Tooltip text is not correctly");
+            Utils.Verify.AreEqual(text, toolTipText, "Tooltip text is not correctly");
         }
 
         [Then(@"close button for ""(.*)"" chip have tooltip with ""(.*)"" text")]
@@ -334,7 +334,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var element = page.GetCloseButtonForElementsByNameOnPivot(chipName);
             _driver.MouseHover(element);
             var toolTipText = _driver.GetTooltipText();
-            Assert.AreEqual(text, toolTipText, "Tooltip text is not correctly");
+            Utils.Verify.AreEqual(text, toolTipText, "Tooltip text is not correctly");
         }
 
         [Then(@"""(.*)"" chip have tooltip with ""(.*)"" text")]
@@ -344,7 +344,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var element = page.GetChipByNameOnPivot(chipName);
             _driver.MouseHover(element);
             var toolTipText = _driver.GetTooltipText();
-            Assert.AreEqual(text, toolTipText, "Tooltip text is not correctly");
+            Utils.Verify.AreEqual(text, toolTipText, "Tooltip text is not correctly");
         }
 
         [Then(@"back button on Pivot panel have tooltip with ""(.*)"" text")]
@@ -353,7 +353,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<PivotElementPage>();
             _driver.MouseHover(page.BackButtonOnPivotPanel);
             var toolTipText = _driver.GetTooltipText();
-            Assert.AreEqual(text, toolTipText, "Tooltip text is not correctly");
+            Utils.Verify.AreEqual(text, toolTipText, "Tooltip text is not correctly");
         }
 
         #endregion
@@ -365,14 +365,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenChipIsNotDisplayed(string chipName)
         {
             var page = _driver.NowAt<PivotElementPage>();
-            Assert.IsFalse(page.GetChipNameOnPivot(chipName), $"'{chipName}' chip is displayed");
+            Utils.Verify.IsFalse(page.GetChipNameOnPivot(chipName), $"'{chipName}' chip is displayed");
         }
 
         [Then(@"""(.*)"" chip for Value is not displayed")]
         public void ThenChipForValueIsNotDisplayed(string chipName)
         {
             var page = _driver.NowAt<PivotElementPage>();
-            Assert.IsFalse(page.GetChipValueNameOnPivot(chipName), $"'{chipName}' chip is displayed");
+            Utils.Verify.IsFalse(page.GetChipValueNameOnPivot(chipName), $"'{chipName}' chip is displayed");
         }
 
         [Then(@"""(.*)"" chip for Row Groups is displayed")]
@@ -380,14 +380,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenChipIsDisplayed(string chipName)
         {
             var page = _driver.NowAt<PivotElementPage>();
-            Assert.IsTrue(page.GetChipNameOnPivot(chipName), $"'{chipName}' chip is not displayed");
+            Utils.Verify.IsTrue(page.GetChipNameOnPivot(chipName), $"'{chipName}' chip is not displayed");
         }
 
         [Then(@"""(.*)"" chip for Value is displayed")]
         public void ThenChipForValueIsDisplayed(string chipName)
         {
             var page = _driver.NowAt<PivotElementPage>();
-            Assert.IsTrue(page.GetChipValueNameOnPivot(chipName), $"'{chipName}' chip is not displayed");
+            Utils.Verify.IsTrue(page.GetChipValueNameOnPivot(chipName), $"'{chipName}' chip is not displayed");
         }
 
         [When(@"User clicks close button for ""(.*)"" chip")]
@@ -417,21 +417,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var columnElement = _driver.NowAt<PivotElementPage>();
             _driver.WaitForDataLoading();
             _driver.WaitForElementToBeDisplayed(columnElement.FirstEmptyValueLeftPinned);
-            Assert.IsTrue(columnElement.FirstEmptyValueLeftPinned.Displayed(), "Empty value is not displayed on the first place");
+            Utils.Verify.IsTrue(columnElement.FirstEmptyValueLeftPinned.Displayed(), "Empty value is not displayed on the first place");
         }
 
         [Then(@"Empty value is not displayed on the first place for the Pivot")]
         public void ThenEmptyValueIsNotDisplayedOnTheFirstPlaceForThePivot()
         {
             var columnElement = _driver.NowAt<PivotElementPage>();
-            Assert.IsFalse(columnElement.FirstEmptyValueLeftPinned.Displayed(), "Empty value is displayed on the first place");
+            Utils.Verify.IsFalse(columnElement.FirstEmptyValueLeftPinned.Displayed(), "Empty value is displayed on the first place");
         }
 
         [Then(@"Empty value is displayed on the first place for the Pivot column header")]
         public void ThenEmptyValueIsDisplayedOnTheFirstPlaceForThePivotColumnHeader()
         {
             var columnElement = _driver.NowAt<PivotElementPage>();
-            Assert.IsTrue(columnElement.FirstEmptyValueHeaders.Displayed(), "Empty value is not displayed on the first place for column header");
+            Utils.Verify.IsTrue(columnElement.FirstEmptyValueHeaders.Displayed(), "Empty value is not displayed on the first place for column header");
         }
 
         [Then(@"Pivot column headers is displayed in following order:")]
@@ -441,7 +441,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             var columnNames = columnElement.GetPivotHeadersContentToList();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            Assert.AreEqual(expectedList, columnNames, "Columns order on Pivot page is incorrect");
+            Utils.Verify.AreEqual(expectedList, columnNames, "Columns order on Pivot page is incorrect");
         }
 
         [Then(@"Pivot left-pinned column content is displayed in following order:")]
@@ -451,7 +451,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
             var columnNames = columnElement.GetLeftPinnedColumnContentToList();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            Assert.AreEqual(expectedList, columnNames, "Columns order on Pivot page is incorrect");
+            Utils.Verify.AreEqual(expectedList, columnNames, "Columns order on Pivot page is incorrect");
         }
 
         [When(@"User expanded ""(.*)"" left-pinned value on Pivot")]
@@ -472,7 +472,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 for (var i = 0; i < columnElement.GetLeftPinnedColumnContentOnPivot().Count; i++)
                     if (leftPinnedContentList[i].Equals(row["Value1"]))
                     {
-                        Assert.AreEqual(columnContentList[i], row["Value2"]);
+                        Utils.Verify.AreEqual(columnContentList[i], row["Value2"], "PLEASE ADD EXCEPTION MESSAGE");
                     }
             }
         }
@@ -572,7 +572,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenExportButtonIsDisplayed()
         {
             var pivot = _driver.NowAt<PivotElementPage>();
-            Assert.IsTrue(pivot.ExportButton.Displayed(), "Export button is not displayed");
+            Utils.Verify.IsTrue(pivot.ExportButton.Displayed(), "Export button is not displayed");
         }
     }
 }

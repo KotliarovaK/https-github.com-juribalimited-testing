@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @DAS13956 @DAS14068 @DAS14218 @Cleanup @Do_Not_Run_With_CapacityUnits @Set_Default_Capacity_Unit
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @DAS13956 @DAS14068 @DAS14218 @Cleanup @Do_Not_Run_With_Capacity @Do_Not_Run_With_CapacityUnits @Set_Default_Capacity_Unit
 Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitInAProjectMappedToEvergreenDefaultCapacityUnit
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user

@@ -85,7 +85,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project
 
             var page = _driver.NowAt<ProjectsPage>();
             _driver.WaitForDataLoading();
-            Assert.IsTrue(page.ActiveProjectByName(pName), $"{pName} is not displayed on the Project page");
+            Utils.Verify.IsTrue(page.ActiveProjectByName(pName), $"{pName} is not displayed on the Project page");
         }
 
         [AfterScenario("Cleanup")]

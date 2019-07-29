@@ -143,7 +143,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table1.AddRow(new string[] {
-                        "Havoc(BigD: Task 0"});
+                        "Havoc(BigD: Stage 0 \\ Task 0"});
 #line 14
  testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table1, "When ");
 #line 17
@@ -190,7 +190,7 @@ this.FeatureBackground();
 #line 36
  testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 37
- testRunner.Then("\"STARTED\" content is displayed for \"Havoc(BigD: Task 0\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"STARTED\" content is displayed for \"Havoc(BigD: Stage 0 \\ Task 0\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -32,21 +32,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenBucketDropdownIsNotDisplayedOnTheProjectDetailsPage()
         {
             var projectPage = _driver.NowAt<ProjectsPage>();
-            Assert.IsFalse(projectPage.BucketDropdown.Displayed(), "Bucket dropdown is displayed");
+            Utils.Verify.IsFalse(projectPage.BucketDropdown.Displayed(), "Bucket dropdown is displayed");
         }
 
         [Then(@"Add Buckets page is displayed to the user")]
         public void ThenAddBucketsPageIsDisplayedToTheUser()
         {
             var page = _driver.NowAt<AddBucketToTeamPage>();
-            Assert.IsTrue(page.PageTitle.Displayed(), "Add Buckets page is not displayed");
+            Utils.Verify.IsTrue(page.PageTitle.Displayed(), "Add Buckets page is not displayed");
         }
 
         [Then(@"Reassign Buckets page is displayed to the user")]
         public void ThenReassignBucketsPageIsDisplayedToTheUser()
         {
             var page = _driver.NowAt<ReassignBucketsPage>();
-            Assert.IsTrue(page.PageReassignBucketsTitle.Displayed(), "Reassign Buckets page is not displayed");
+            Utils.Verify.IsTrue(page.PageReassignBucketsTitle.Displayed(), "Reassign Buckets page is not displayed");
         }
 
         [When(@"User selects ""(.*)"" in the Select a team dropdown")]
@@ -69,7 +69,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenDefaultBucketCheckboxIsSelected()
         {
             var page = _driver.NowAt<BucketsPage>();
-            Assert.IsTrue(page.SelectedDefaultBucketCheckbox.Displayed(), "Default Bucket checkbox is not selected");
+            Utils.Verify.IsTrue(page.SelectedDefaultBucketCheckbox.Displayed(), "Default Bucket checkbox is not selected");
         }
 
         [When(@"User clicks ""(.*)"" tab on the Buckets page")]
@@ -109,7 +109,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenBucketDetailsIsDisplayedToTheUser(string bucketName)
         {
             var teamElement = _driver.NowAt<BucketsPage>();
-            Assert.IsTrue(teamElement.AppropriateBucketName(bucketName),
+            Utils.Verify.IsTrue(teamElement.AppropriateBucketName(bucketName),
                 $"{bucketName} is not displayed on the Bucket page");
         }
 
@@ -117,7 +117,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenMoveToAnotherBucketPageIsDisplayedToTheUser()
         {
             var page = _driver.NowAt<MoveToAnotherBucketPage>();
-            Assert.IsTrue(page.MoveToSelectBox.Displayed, "Move To Another Bucket Page is not displayed to the user");
+            Utils.Verify.IsTrue(page.MoveToSelectBox.Displayed, "Move To Another Bucket Page is not displayed to the user");
         }
 
         [When(@"User moves selected objects to ""(.*)"" Capacity Unit")]
@@ -132,14 +132,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenBucketIsDisplayedToUser(string bucketName)
         {
             var page = _driver.NowAt<BucketsPage>();
-            Assert.IsTrue(page.ActiveBucketByName(bucketName), $"{bucketName} is not displayed on the Buckets page");
+            Utils.Verify.IsTrue(page.ActiveBucketByName(bucketName), $"{bucketName} is not displayed on the Buckets page");
         }
 
         [Then(@"No items text is displayed")]
         public void ThenNoItemsTextIsDisplayed()
         {
             var text = _driver.NowAt<BucketsPage>();
-            Assert.IsTrue(text.NoItemsMessage.Displayed, "No items text is not displayed");
+            Utils.Verify.IsTrue(text.NoItemsMessage.Displayed, "No items text is not displayed");
         }
 
         [When(@"User clicks Update Bucket button on the Buckets page")]
@@ -155,7 +155,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseGridPage>();
             var expectedRowList = table.Rows.SelectMany(row => row.Values).ToList();
             var actualRowList = page.RowsList.Select(value => value.Text).ToList();
-            Assert.AreEqual(expectedRowList, actualRowList, "Buckets lists are different");
+            Utils.Verify.AreEqual(expectedRowList, actualRowList, "Buckets lists are different");
         }
 
         [Then(@"User sees Buckets in next default sort order:")]
@@ -165,7 +165,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
 
             for (var i = 0; i < buckets.RowCount; i++)
-                Assert.That(page.GridBucketsNames[i].Text, Is.EqualTo(buckets.Rows[i].Values.FirstOrDefault()),
+                Utils.Verify.That(page.GridBucketsNames[i].Text, Is.EqualTo(buckets.Rows[i].Values.FirstOrDefault()),
                     "Buckets are not the same");
         }
 

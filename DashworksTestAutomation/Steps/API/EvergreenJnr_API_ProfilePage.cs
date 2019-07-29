@@ -67,8 +67,8 @@ namespace DashworksTestAutomation.Steps.API
             }
             else
             {
-                Assert.AreEqual(pageSize, gridPageSize, "Incorrect Page Size on Account page");
-                Assert.AreEqual(pageCache, gridPageCache, "Incorrect Cache Size on Account page");
+                Utils.Verify.AreEqual(pageSize, gridPageSize, "Incorrect Page Size on Account page");
+                Utils.Verify.AreEqual(pageCache, gridPageCache, "Incorrect Cache Size on Account page");
             }
         }
 
@@ -77,7 +77,7 @@ namespace DashworksTestAutomation.Steps.API
         {
             _driver.WaitForDataLoading();
             var lastNetworkRequest = JsonConvert.DeserializeObject<JArray>(_driver.GetNetworkLogByJavascript()).Last;
-            Assert.That(lastNetworkRequest["name"].ToString(), Does.Contain($"?$top={pageSize}"), $"Page Size is not {pageSize}");
+            Utils.Verify.That(lastNetworkRequest["name"].ToString(), Does.Contain($"?$top={pageSize}"), $"Page Size is not {pageSize}");
         }
 
         [When(@"User language is changed to ""(.*)"" via API")]

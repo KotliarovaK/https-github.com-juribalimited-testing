@@ -673,7 +673,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatApplicationFiltersBeingAppliedAgains
 	Then "11" rows are displayed in the agGrid
 	Then "(Application = 7zip (2015) ASSOCIATION = ("entitled to device"))" text is displayed in filter container
 	Then "Application 7zip (2015) entitled to device" is displayed in added filter info
-	When User create dynamic list with "TestList44C8B6" name on "Devices" page
+	When User closes filter container
+	And User create dynamic list with "TestList44C8B6" name on "Devices" page
 	Then "TestList44C8B6" list is displayed to user
 	When User navigates to the "All Devices" list
 	When User navigates to the "TestList44C8B6" list
@@ -682,8 +683,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatApplicationFiltersBeingAppliedAgains
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	And "(Application = 7zip (2015) ASSOCIATION = ("entitled to device"))" text is displayed in filter container
-	When User clicks the Filters button
-	Then Filters panel is displayed to the user
 	And "Application 7zip (2015) entitled to device" is displayed in added filter info
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11539
@@ -1247,15 +1246,14 @@ Scenario: EvergreenJnr_AllLists_CheckThatDeletedBucketIsNotAvailableInEvergreenB
 	When user select "Evergreen Bucket" filter
 	Then "Bucket_DAS12940_to_be_deleted" checkbox is not available for current opened filter
 
-@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS13201
+@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS13201 @Cleanup
 Scenario: EvergreenJnr_AllLists_CheckThatDeletedCapacityUnitIsNotAvailableInEvergreenCapacityUnitFilter
-	When User clicks Admin on the left-hand menu
-	When User clicks "Evergreen" link on the Admin page
-	When User clicks "Capacity Units" tab
-	And User clicks the "CREATE EVERGREEN CAPACITY UNIT" Action button
-	And User type "Capacity_Unit_DAS13201_to_be_deleted" Name in the "Capacity Unit Name" field on the Project details page
-	And User type "13201" Name in the "Description" field on the Project details page
-	And User clicks the "CREATE" Action button
+	When User creates new Capacity Unit via api
+	| Name                                 | Description | IsDefault |
+	| Capacity_Unit_DAS13201_to_be_deleted | 13201       | false     |
+	And User clicks Admin on the left-hand menu
+	And User clicks "Evergreen" link on the Admin page
+	And User clicks "Capacity Units" tab
 	And User select "Capacity Unit" rows in the grid
 	| SelectedRowsName                     |
 	| Capacity_Unit_DAS13201_to_be_deleted |

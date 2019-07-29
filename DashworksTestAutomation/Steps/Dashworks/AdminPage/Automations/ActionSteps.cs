@@ -55,14 +55,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations
             var element = _driver.NowAt<BaseDashboardPage>();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var actualList = element.OptionListOnActionsPanel.Select(value => value.Text).ToList();
-            Assert.AreEqual(expectedList, actualList, $"Value for {dropDownName} are different");
+            Utils.Verify.AreEqual(expectedList, actualList, $"Value for {dropDownName} are different");
         }
 
         [Then(@"Actions page is displayed to the User")]
         public void ThenActionsPageIsDisplayedToTheUser()
         {
             var page = _driver.NowAt<ActionsPage>();
-            Assert.IsTrue(page.CreateActionButton.Displayed(), "Actions page is not displayed");
+            Utils.Verify.IsTrue(page.CreateActionButton.Displayed(), "Actions page is not displayed");
         }
     }
 }

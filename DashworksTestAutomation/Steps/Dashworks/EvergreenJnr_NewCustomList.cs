@@ -38,7 +38,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForDataLoading();
-            Assert.IsFalse(page.SaveCustomListButton.Displayed(),
+            Utils.Verify.IsFalse(page.SaveCustomListButton.Displayed(),
                 "Save New Custom List panel is displayed");
             Logger.Write("The Save to Custom List Element was NOT displayed");
         }
@@ -48,7 +48,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForElementToBeDisplayed(page.SaveCustomListButton);
-            Assert.IsTrue(page.SaveCustomListButton.Displayed(),
+            Utils.Verify.IsTrue(page.SaveCustomListButton.Displayed(),
                 "Save Custom list is displayed");
 
             Logger.Write("The Save to Custom List Element was NOT displayed");
@@ -86,14 +86,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSettingsPanelIsDisplayedToTheUser()
         {
             var listElement = _driver.NowAt<CustomListElement>();
-            Assert.IsTrue(listElement.SettingsPanel.Displayed(), "Settings panel is not displayed");
+            Utils.Verify.IsTrue(listElement.SettingsPanel.Displayed(), "Settings panel is not displayed");
         }
 
         [Then(@"""(.*)"" list is displayed in the bottom section of the List Panel")]
         public void ThenListIsDisplayedInTheBottomSectionOfTheListPanel(string listName)
         {
             var listElement = _driver.NowAt<CustomListElement>();
-            Assert.IsTrue(listElement.ListInBottomSection(listName).Displayed(),
+            Utils.Verify.IsTrue(listElement.ListInBottomSection(listName).Displayed(),
                 $"'{listName}' is not displayed in the bottom section");
         }
 
@@ -101,7 +101,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenListIsNotDisplayedInTheBottomSectionOfTheListPanel(string listName)
         {
             var listElement = _driver.NowAt<CustomListElement>();
-            Assert.IsFalse(listElement.DisplayStatusForListByName(listName), $"'{listName}' is displayed in the bottom section");
+            Utils.Verify.IsFalse(listElement.DisplayStatusForListByName(listName), $"'{listName}' is displayed in the bottom section");
         }
 
         [When(@"User create custom list with ""(.*)"" name")]
@@ -110,7 +110,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listElement = _driver.NowAt<CustomListElement>();
 
             _driver.WaitForElementToBeDisplayed(listElement.CreateNewListButton);
-            Assert.IsTrue(listElement.CreateNewListButton.Displayed(), "'Save' button is displayed");
+            Utils.Verify.IsTrue(listElement.CreateNewListButton.Displayed(), "'Save' button is displayed");
             listElement.CreateNewListButton.Click();
 
             _driver.WaitForElementToBeDisplayed(listElement.SaveAsNewListButton);
@@ -119,7 +119,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             listElement.SaveAsNewListButton.Click();
 
             _driver.WaitForElementToBeDisplayed(listElement.SaveButton);
-            Assert.IsTrue(listElement.SaveButton.Displayed(), "SaveButton is displayed");
+            Utils.Verify.IsTrue(listElement.SaveButton.Displayed(), "SaveButton is displayed");
             listElement.ListNameTextBox.SendKeys(listName);
             listElement.SaveButton.Click();
 
@@ -137,7 +137,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             //_driver.WaitForElementToBeDisplayed(listElement.TopToolsSubmenu);
             //listElement.TopToolsSubmenu.Click();
             _driver.WaitForElementToBeDisplayed(listElement.SaveButton);
-            Assert.IsTrue(listElement.SaveButton.Displayed(), "SaveButton is displayed");
+            Utils.Verify.IsTrue(listElement.SaveButton.Displayed(), "SaveButton is displayed");
             listElement.ListNameTextBox.SendKeys(listName);
             listElement.SaveButton.Click();
         }
@@ -185,7 +185,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             if (!listElement.ListNameTextBox.Displayed())
                 listElement.CreateNewListButton.Click();
             _driver.WaitForElementToBeDisplayed(listElement.SaveButton);
-            Assert.IsTrue(Convert.ToBoolean(listElement.SaveButton.GetAttribute("disabled")), "Save button is active");
+            Utils.Verify.IsTrue(Convert.ToBoolean(listElement.SaveButton.GetAttribute("disabled")), "Save button is active");
         }
 
         [Then(@"""(.*)"" list is displayed to user")]
@@ -194,7 +194,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForDataLoading();
             _driver.WaitForElementToBeDisplayed(page.ActiveCustomList);
-            Assert.AreEqual(listName, page.ActiveCustomListName());
+            Utils.Verify.AreEqual(listName, page.ActiveCustomListName(), "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"""(.*)"" edited list is displayed to user")]
@@ -204,21 +204,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
             _driver.WaitForDataLoadingInActionsPanel();
             _driver.WaitForElementToBeDisplayed(page.ActiveCustomListEdited);
-            Assert.AreEqual(listName, page.ActiveCustomListEdited.Text);
+            Utils.Verify.AreEqual(listName, page.ActiveCustomListEdited.Text, "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"""(.*)"" list name is displayed correctly")]
         public void ThenListNameIsDisplayedCorrectly(string listName)
         {
             var listElement = _driver.NowAt<CustomListElement>();
-            Assert.AreEqual(listName, listElement.CheckAllListName(listName).Text, "Incorrect list name is displayed");
+            Utils.Verify.AreEqual(listName, listElement.CheckAllListName(listName).Text, "Incorrect list name is displayed");
         }
 
         [Then(@"""(.*)"" list name is displayed correctly on top tools panel")]
         public void ThenListNameIsDisplayedCorrectlyOnTopToolsPanel(string listName)
         {
             var listElement = _driver.NowAt<CustomListElement>();
-            Assert.IsTrue(listElement.GetListNameOnTopToolsPanel(listName).Displayed(), $"'{listName}' list is not displayed on top tools panel");
+            Utils.Verify.IsTrue(listElement.GetListNameOnTopToolsPanel(listName).Displayed(), $"'{listName}' list is not displayed on top tools panel");
         }
 
         [When(@"User open sub menu for ""(.*)"" list")]
@@ -255,8 +255,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenDeleteAndCancelButtonsAreAvailableInTheWarningMessage()
         {
             var listDetailsElement = _driver.NowAt<CustomListElement>();
-            Assert.IsTrue(listDetailsElement.CancelButtonInWarningMessage.Displayed, "Cancel button is not displayed");
-            Assert.IsTrue(listDetailsElement.DeleteButtonInWarning.Displayed, "Delete button is not displayed");
+            Utils.Verify.IsTrue(listDetailsElement.CancelButtonInWarningMessage.Displayed, "Cancel button is not displayed");
+            Utils.Verify.IsTrue(listDetailsElement.DeleteButtonInWarning.Displayed, "Delete button is not displayed");
         }
 
         [When(@"User clicks Delete button on the warning message in the lists panel")]
@@ -281,9 +281,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenListMessageIsDisplayedInTheListPanel(string listName, string warningText)
         {
             var listElement = _driver.NowAt<CustomListElement>();
-            Assert.IsTrue(listElement.ListNameWarningMessage(listName),
+            Utils.Verify.IsTrue(listElement.ListNameWarningMessage(listName),
                 $"'{listName}' is not displayed in the list details panel");
-            Assert.IsTrue(listElement.RemovingDependencyListMessage(warningText),
+            Utils.Verify.IsTrue(listElement.RemovingDependencyListMessage(warningText),
                 $"'{warningText}' message is not displayed in the list details panel");
         }
 
@@ -317,14 +317,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listElement = _driver.NowAt<CustomListElement>();
 
             _driver.WaitForElementToBeDisplayed(listElement.SaveAsDropdown);
-            Assert.IsTrue(listElement.EditedList.Displayed(), "Edit List menu is not displayed");
+            Utils.Verify.IsTrue(listElement.EditedList.Displayed(), "Edit List menu is not displayed");
         }
 
         [Then(@"Edit List menu is not displayed")]
         public void ThenEditListMenuIsNotDisplayed()
         {
             var listElement = _driver.NowAt<CustomListElement>();
-            Assert.IsFalse(listElement.SaveAsDropdown.Displayed(), "Edit List menu is displayed");
+            Utils.Verify.IsFalse(listElement.SaveAsDropdown.Displayed(), "Edit List menu is displayed");
         }
 
         [When(@"User removes custom list with ""(.*)"" name")]
@@ -360,7 +360,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenCancelButtonIsDisplayedWithCorrectlyColor()
         {
             var button = _driver.NowAt<CustomListElement>();
-            Assert.IsTrue(button.CancelButtonColor.Displayed(),
+            Utils.Verify.IsTrue(button.CancelButtonColor.Displayed(),
                 "Cancel button is not displayed or displayed with incorrectly color");
         }
 
@@ -368,7 +368,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenUserSeesCancelButtonInBanner()
         {
             var button = _driver.NowAt<CustomListElement>();
-            Assert.IsTrue(button.CancelDeletingButton.Displayed(), "Cancel button is not displayed in banner");
+            Utils.Verify.IsTrue(button.CancelDeletingButton.Displayed(), "Cancel button is not displayed in banner");
         }
 
         [When(@"User duplicates list with ""(.*)"" name")]
@@ -395,7 +395,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenListNameAutomaticallyChangedToName(string listName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            Assert.AreEqual(listName, page.ActiveCustomListName());
+            Utils.Verify.AreEqual(listName, page.ActiveCustomListName(), "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"list with ""(.*)"" name is not displayed")]
@@ -403,7 +403,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenListWithNameIsRemoved(string listName)
         {
             var listElement = _driver.NowAt<CustomListElement>();
-            Assert.IsFalse(listElement.CheckThatListIsRemoved(listName), $"List with {listName} is not removed");
+            Utils.Verify.IsFalse(listElement.CheckThatListIsRemoved(listName), $"List with {listName} is not removed");
         }
 
         [When(@"User navigates to the ""(.*)"" list")]
@@ -429,23 +429,23 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listElement = _driver.NowAt<CustomListElement>();
             _driver.WaitForDataLoading();
             _driver.WaitForElementToBeDisplayed(listElement.SuccessCreateMessage);
-            Assert.AreEqual(message, listElement.SuccessCreateMessage.Text, $"{message} is not displayed");
+            Utils.Verify.AreEqual(message, listElement.SuccessCreateMessage.Text, $"{message} is not displayed");
         }
 
         [Then(@"Save and Cancel buttons are displayed on the list panel")]
         public void ThenSaveAndCancelButtonsAreDisplayedOnTheListPanel()
         {
             var listElement = _driver.NowAt<CustomListElement>();
-            Assert.IsTrue(listElement.SaveButton.Displayed());
-            Assert.IsTrue(listElement.CancelButton.Displayed());
+            Utils.Verify.IsTrue(listElement.SaveButton.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
+            Utils.Verify.IsTrue(listElement.CancelButton.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"Save and Cancel buttons are not displayed on the list panel")]
         public void ThenSaveAndCancelButtonsAreNotDisplayedOnTheListPanel()
         {
             var listElement = _driver.NowAt<CustomListElement>();
-            Assert.IsFalse(listElement.SaveButton.Displayed());
-            Assert.IsFalse(listElement.CancelButton.Displayed());
+            Utils.Verify.IsFalse(listElement.SaveButton.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
+            Utils.Verify.IsFalse(listElement.CancelButton.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"lists are sorted in alphabetical order")]
@@ -453,7 +453,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listElement = _driver.NowAt<CustomListElement>();
             var list = listElement.ListsNames.Select(x => x.Text).ToList();
-            Assert.AreEqual(list.OrderBy(s => s), list, "Lists names are not in alphabetical order");
+            Utils.Verify.AreEqual(list.OrderBy(s => s), list, "Lists names are not in alphabetical order");
         }
 
         [Then(@"Update list option is NOT available")]
@@ -464,7 +464,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             if (!listElement.UpdateCurrentListButton.Displayed()) listElement.SaveAsDropdown.Click();
 
-            Assert.IsFalse(listElement.UpdateCurrentListButton.Displayed(), "Update Current List button is displayed");
+            Utils.Verify.IsFalse(listElement.UpdateCurrentListButton.Displayed(), "Update Current List button is displayed");
         }
 
         [Then(@"Delete List option is NOT available")]
@@ -474,7 +474,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.MouseHover(By.XPath(listElement.SettingButtonSelector));
             _driver.WaitForElementToBeDisplayed(By.XPath(listElement.SettingButtonSelector));
             _driver.FindElement(By.XPath(listElement.SettingButtonSelector)).Click();
-            Assert.IsFalse(listElement.DeleteButton.Displayed(), "Delete Current List button is displayed");
+            Utils.Verify.IsFalse(listElement.DeleteButton.Displayed(), "Delete Current List button is displayed");
         }
 
         [Then(@"Delete List option is available")]
@@ -484,7 +484,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.MouseHover(By.XPath(listElement.SettingButtonSelector));
             _driver.WaitForElementToBeDisplayed(By.XPath(listElement.SettingButtonSelector));
             _driver.FindElement(By.XPath(listElement.SettingButtonSelector)).Click();
-            Assert.IsTrue(listElement.DeleteButton.Displayed(), "Delete Current List button is NOT displayed");
+            Utils.Verify.IsTrue(listElement.DeleteButton.Displayed(), "Delete Current List button is NOT displayed");
         }
 
         [Then(@"Update list option is available")]
@@ -494,7 +494,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForElementToBeDisplayed(listElement.SaveAsDropdown);
             if (!listElement.UpdateCurrentListButton.Displayed()) listElement.SaveAsDropdown.Click();
 
-            Assert.IsTrue(listElement.UpdateCurrentListButton.Displayed(),
+            Utils.Verify.IsTrue(listElement.UpdateCurrentListButton.Displayed(),
                 "Update Current List button is NOT displayed");
         }
 
@@ -505,7 +505,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForElementToBeDisplayed(listElement.SaveAsDropdown);
             if (!listElement.SaveAsNewListButton.Displayed()) listElement.SaveAsDropdown.Click();
 
-            Assert.IsFalse(listElement.SaveAsNewListButton.Displayed(), "Save As New List button is displayed");
+            Utils.Verify.IsFalse(listElement.SaveAsNewListButton.Displayed(), "Save As New List button is displayed");
         }
 
         [Then(@"Save as a new list option is available")]
@@ -516,21 +516,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForElementToBeDisplayed(listElement.SaveAsDropdown);
             if (!listElement.SaveAsNewListButton.Displayed()) listElement.SaveAsDropdown.Click();
 
-            Assert.IsTrue(listElement.SaveAsNewListButton.Displayed(), "Save As New List button is NOT displayed");
+            Utils.Verify.IsTrue(listElement.SaveAsNewListButton.Displayed(), "Save As New List button is NOT displayed");
         }
 
         [Then(@"Star icon is displayed for ""(.*)"" list")]
         public void ThenStarIconIsDisplayedForList(string listName)
         {
             var listElement = _driver.NowAt<CustomListElement>();
-            Assert.IsTrue(listElement.GetFavoriteStatus(listName));
+            Utils.Verify.IsTrue(listElement.GetFavoriteStatus(listName), "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"Star icon is not displayed for ""(.*)"" list")]
         public void ThenStarIconIsNotDisplayedForList(string listName)
         {
             var listElement = _driver.NowAt<CustomListElement>();
-            Assert.IsFalse(listElement.GetFavoriteStatus(listName));
+            Utils.Verify.IsFalse(listElement.GetFavoriteStatus(listName), "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [When(@"User enters ""(.*)"" text in Search field at List Panel")]
@@ -548,7 +548,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listElement = _driver.NowAt<CustomListElement>();
             _driver.WaitForElementToBeDisplayed(
                 listElement.SearchTextBoxResetButtonInListPanel);
-            Assert.IsTrue(listElement.SearchTextBoxResetButtonInListPanel.Displayed(), "Reset button is not displayed");
+            Utils.Verify.IsTrue(listElement.SearchTextBoxResetButtonInListPanel.Displayed(), "Reset button is not displayed");
             Logger.Write("Reset button is displayed");
         }
 

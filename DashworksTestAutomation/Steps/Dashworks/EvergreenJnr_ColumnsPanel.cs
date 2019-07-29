@@ -28,7 +28,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenColumnsPanelIsDisplayedToTheUser()
         {
             var columnElement = _driver.NowAt<ColumnsElement>();
-            Assert.IsTrue(columnElement.ColumnsPanel.Displayed(), "Columns panel is not displayed");
+            Utils.Verify.IsTrue(columnElement.ColumnsPanel.Displayed(), "Columns panel is not displayed");
             Logger.Write("Columns panel is visible");
         }
 
@@ -110,7 +110,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var currentUrl = _driver.Url;
             const string pattern = @"\$select=(.*)";
             var urlPartToCheck = Regex.Match(currentUrl, pattern).Groups[1].Value;
-            StringAssert.Contains(ColumnNameToUrlConvertor.Convert(pageName, columnName).ToLower(),
+            Utils.Verify.Contains(ColumnNameToUrlConvertor.Convert(pageName, columnName).ToLower(),
                 urlPartToCheck.ToLower(), $"{columnName} is not added to URL");
         }
 
@@ -169,8 +169,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var currentUrl = _driver.Url;
             var sorting = _driver.NowAt<BaseDashboardPage>();
-            Assert.IsTrue(sorting.AscendingSortingIcon.Displayed(), "Ascending icon is not displayed");
-            StringAssert.Contains("%20asc", currentUrl, columnName);
+            Utils.Verify.IsTrue(sorting.AscendingSortingIcon.Displayed(), "Ascending icon is not displayed");
+            Utils.Verify.Contains("%20asc", currentUrl, columnName);
         }
 
         [Then(@"default URL is displayed on ""(.*)"" page")]
@@ -179,7 +179,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var currentUrl = _driver.Url;
             const string pattern = @"evergreen\/#\/(.*)";
             var currentPageName = Regex.Match(currentUrl, pattern).Groups[1].Value;
-            Assert.AreEqual(currentPageName, pageName.ToLower(), "Incorrect Page Name in URL");
+            Utils.Verify.AreEqual(currentPageName, pageName.ToLower(), "Incorrect Page Name in URL");
         }
 
         [When(@"User remove sorted column on ""(.*)"" page by URL")]
@@ -293,7 +293,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var resetButton = columnElement.SearchTextBoxResetButton;
             if (resetButton.Displayed()) resetButton.Click();
 
-            Assert.AreEqual(subCategoriesCount, columnElement.GetSubcategoriesCountByCategoryName(categoryName),
+            Utils.Verify.AreEqual(subCategoriesCount, columnElement.GetSubcategoriesCountByCategoryName(categoryName),
                 $"Incorrect subcategories count for {categoryName} category");
         }
 
@@ -301,7 +301,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSubcategoryIsDisplayedForCategory(string subCategory, string categoryName)
         {
             var columnElement = _driver.NowAt<ColumnsElement>();
-            Assert.AreEqual(subCategory, columnElement.GetSubcategoryByCategoryName(categoryName),
+            Utils.Verify.AreEqual(subCategory, columnElement.GetSubcategoryByCategoryName(categoryName),
                 $"Incorrect subcategory for {categoryName} category");
         }
 
@@ -309,7 +309,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSubcategoryIsSelectedInColumnPanel(string subCategoriesName)
         {
             var columnElement = _driver.NowAt<ColumnsElement>();
-            Assert.IsTrue(columnElement.SubcategoryIsSelected(subCategoriesName),
+            Utils.Verify.IsTrue(columnElement.SubcategoryIsSelected(subCategoriesName),
                 $"{subCategoriesName} is not selected");
         }
 
@@ -317,7 +317,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSectionIsNotDisplayedInTheColumnsPanel(string categoryName)
         {
             var columnElement = _driver.NowAt<ColumnsElement>();
-            Assert.IsFalse(columnElement.CategoryIsDisplayed(categoryName),
+            Utils.Verify.IsFalse(columnElement.CategoryIsDisplayed(categoryName),
                 $"{categoryName} category still displayed in Column Panel");
         }
 
@@ -325,7 +325,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSectionIsDisplayedInTheColumnsPanel(string categoryName)
         {
             var columnElement = _driver.NowAt<ColumnsElement>();
-            Assert.IsTrue(columnElement.CategoryIsDisplayed(categoryName),
+            Utils.Verify.IsTrue(columnElement.CategoryIsDisplayed(categoryName),
                 $"{categoryName} category is not displayed in Column Panel");
         }
 
@@ -363,7 +363,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var columnElement = _driver.NowAt<ColumnsElement>();
             var groupCount = columnElement.GroupTitle.Count;
             _driver.WaitForDataLoading();
-            Assert.AreEqual(groupCount, columnElement.MinimizeGroupButton.Count, "Minimize buttons are not displayed");
+            Utils.Verify.AreEqual(groupCount, columnElement.MinimizeGroupButton.Count, "Minimize buttons are not displayed");
         }
 
         [Then(@"Maximize buttons are displayed for all category in Columns panel")]
@@ -372,14 +372,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var columnElement = _driver.NowAt<ColumnsElement>();
             _driver.WaitForDataLoading();
             var groupCount = columnElement.GroupTitle.Count - 1;
-            Assert.AreEqual(groupCount, columnElement.MaximizeGroupButton.Count, "Maximize buttons are not displayed");
+            Utils.Verify.AreEqual(groupCount, columnElement.MaximizeGroupButton.Count, "Maximize buttons are not displayed");
         }
 
         [Then(@"Maximize or Minimize button is not displayed for ""(.*)"" category")]
         public void ThenMaximizeOrMinimizeButtonIsNotDisplayedForCategory(string categoryName)
         {
             var columnElement = _driver.NowAt<ColumnsElement>();
-            Assert.IsFalse(columnElement.MaximizeOrMinimizeButtonByCategory(categoryName).Displayed(),
+            Utils.Verify.IsFalse(columnElement.MaximizeOrMinimizeButtonByCategory(categoryName).Displayed(),
                 $"Maximize/Minimize button is displayed for empty {categoryName} category");
         }
 
@@ -387,7 +387,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenMinimizeButtonIsDisplayedForCategory(string categoryName)
         {
             var columnElement = _driver.NowAt<ColumnsElement>();
-            Assert.IsTrue(columnElement.MinimizeButtonByCategory(categoryName).Displayed(),
+            Utils.Verify.IsTrue(columnElement.MinimizeButtonByCategory(categoryName).Displayed(),
                 $"Minimize button is not displayed for {categoryName} category");
         }
 
@@ -395,7 +395,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenMaximizeButtonIsDisplayedForCategory(string categoryName)
         {
             var columnElement = _driver.NowAt<ColumnsElement>();
-            Assert.IsTrue(columnElement.MaximizeButtonByCategory(categoryName).Displayed(),
+            Utils.Verify.IsTrue(columnElement.MaximizeButtonByCategory(categoryName).Displayed(),
                 $"Maximize button is not displayed for {categoryName} category");
         }
 
@@ -431,7 +431,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             var content = page.GetColumnContent(columnName);
-            Assert.IsFalse(content.Contains("-1"), "The Lowest value is not null");
+            Utils.Verify.IsFalse(content.Contains("-1"), "The Lowest value is not null");
         }
 
         private void CheckColumnDisplayedState(Table table, bool displayedState)
@@ -441,7 +441,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
             Thread.Sleep(1000);
             foreach (var row in table.Rows)
-                Assert.AreEqual(displayedState, listPageMenu.IsColumnPresent(row["ColumnName"]),
+                Utils.Verify.AreEqual(displayedState, listPageMenu.IsColumnPresent(row["ColumnName"]),
                     $"Column '{row["ColumnName"]}' displayed state should be {displayedState}");
         }
 
@@ -451,7 +451,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<ColumnsElement>();
 
             foreach (var row in table.Rows)
-                Assert.That(page.GetSubcategoriesCountByCategoryName(row["Category"]).ToString(),Is.EqualTo(row["Number"]),
+                Utils.Verify.That(page.GetSubcategoriesCountByCategoryName(row["Category"]).ToString(),Is.EqualTo(row["Number"]),
                     $"Check {row["Category"]} category");
         }
 
@@ -461,7 +461,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<ColumnsElement>();
 
             foreach (var row in table.Rows)
-                Assert.That(page.CategoryIsDisplayed(row["Category"]), Is.False,
+                Utils.Verify.That(page.CategoryIsDisplayed(row["Category"]), Is.False,
                     $"Check {row["Category"]} category");
         }
     }

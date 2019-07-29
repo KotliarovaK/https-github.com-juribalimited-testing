@@ -104,7 +104,7 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
         public void ThenButtonIsDisplayed(string buttonName)
         {
             var button = _driver.NowAt<MainElementsOfProjectCreation>();
-            Assert.IsTrue(button.GetButtonElementByName(buttonName).Displayed, $"{button} is not displayed");
+            Utils.Verify.IsTrue(button.GetButtonElementByName(buttonName).Displayed, $"{button} is not displayed");
         }
 
         [When(@"User changes state of the checkbox ""(.*)"" on Senior")]
@@ -120,7 +120,7 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
 
             _driver.WaitForElementToBeDisplayed(page.SuccessMessage);
-            StringAssert.Contains(text, page.SuccessMessage.Text, "Success Message is not displayed");
+            Utils.Verify.Contains(text, page.SuccessMessage.Text, "Success Message is not displayed");
         }
 
         [Then(@"Error message is displayed with ""(.*)"" text")]
@@ -129,14 +129,14 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
 
             _driver.WaitForElementToBeDisplayed(page.ErrorMessage);
-            StringAssert.Contains(text, page.ErrorMessage.Text, "Error Message is not displayed");
+            Utils.Verify.Contains(text, page.ErrorMessage.Text, "Error Message is not displayed");
         }
 
         [Then(@"""(.*)"" displayed in the table on Senior")]
         public void ThenDisplayedInTheTableOnSenior(string text)
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
-            Assert.IsTrue(page.GetTableContentByText(text).Displayed(), $"{text} is not displayed in the table on Senior");
+            Utils.Verify.IsTrue(page.GetTableContentByText(text).Displayed(), $"{text} is not displayed in the table on Senior");
         }
 
         [Then(@"information message is displayed with ""(.*)"" text")]
@@ -145,7 +145,7 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
 
             _driver.WaitForElementToBeDisplayed(page.InformationMessage);
-            StringAssert.Contains(text, page.InformationMessage.Text, "Information Message is not displayed");
+            Utils.Verify.Contains(text, page.InformationMessage.Text, "Information Message is not displayed");
         }
 
         [Then(@"Success message is displayed")]
@@ -154,7 +154,7 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
             _driver.WaitForDataLoading();
             _driver.WaitForElementToBeDisplayed(page.SuccessMessage);
-            Assert.IsTrue(page.SuccessMessage.Displayed(), "Success Message is not displayed");
+            Utils.Verify.IsTrue(page.SuccessMessage.Displayed(), "Success Message is not displayed");
         }
 
         [Then(@"Error message is not displayed")]
@@ -162,7 +162,7 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
             if (page.ErrorMessage.Displayed())
-                Assert.IsFalse(page.ErrorMessage.Displayed(),
+                Utils.Verify.IsFalse(page.ErrorMessage.Displayed(),
                     $"Error message is displayed with following text: {page.ErrorMessage.Text}");
         }
 
@@ -281,7 +281,7 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
             var page = _driver.NowAt<RequestType_DetailsPage>();
             table.CreateInstance<RequestType_DetailsDto>().CopyPropertiesTo(_requestTypeDetailsDto);
             page.DefaultRequestTypeCheckbox.SetCheckboxState(_requestTypeDetailsDto.DefaultRequestType);
-            Assert.IsTrue(page.DefaultRequestTypeCheckbox.Selected, "Selected checkbox is not checked");
+            Utils.Verify.IsTrue(page.DefaultRequestTypeCheckbox.Selected, "Selected checkbox is not checked");
 
             page.UpdateDetailsButton.Click();
         }
@@ -441,9 +441,9 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
                                 _taskPropertiesDetailsDto.TaskProjectRoleString);
 
                         _driver.WaitForDataLoadingOnProjects();
-                        Assert.AreEqual(_taskPropertiesDetailsDto.TaskHaADueDate, page.TaskHaADueDate.Selected,
+                        Utils.Verify.AreEqual(_taskPropertiesDetailsDto.TaskHaADueDate, page.TaskHaADueDate.Selected,
                             "Cheked state is incorrect");
-                        Assert.AreEqual(_taskPropertiesDetailsDto.TaskHaADueDate,
+                        Utils.Verify.AreEqual(_taskPropertiesDetailsDto.TaskHaADueDate,
                             Convert.ToBoolean(page.TaskHaADueDate.GetAttribute("disabled")),
                             "Checkbox state is incorrect");
                         if (!string.IsNullOrEmpty(_taskPropertiesDetailsDto.DateModeString))
@@ -549,7 +549,7 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
 
             _driver.WaitForElementToBeDisplayed(page.SuccessPublishedTaskFlag);
-            Assert.IsTrue(page.SuccessPublishedTaskFlag.Displayed(), "Success Flag is not displayed");
+            Utils.Verify.IsTrue(page.SuccessPublishedTaskFlag.Displayed(), "Success Flag is not displayed");
         }
 
         [When(@"User navigate to ""(.*)"" page")]
@@ -768,12 +768,12 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
                     }
 
                     var team = page.GetTheCreatedElementInTableByName(_projectDto.TeamProperties.Last().TeamName);
-                    Assert.IsTrue(team.Displayed(), "Selected Team is not displayed in the table");
+                    Utils.Verify.IsTrue(team.Displayed(), "Selected Team is not displayed in the table");
                 }
                 else
                 {
                     var team = page.GetTheCreatedElementInTableByName(_projectDto.TeamProperties.Last().TeamName);
-                    Assert.IsTrue(team.Displayed(), "Selected Team is not displayed in the table");
+                    Utils.Verify.IsTrue(team.Displayed(), "Selected Team is not displayed in the table");
                 }
             }
             catch
@@ -786,7 +786,7 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
             var group = page.GetTheCreatedElementInTableByName(_projectDto.GroupProperties.First().GroupName);
-            Assert.IsTrue(group.Displayed(), "Selected Group is not displayed in the table");
+            Utils.Verify.IsTrue(group.Displayed(), "Selected Group is not displayed in the table");
         }
 
         [Then(@"created Task is displayed in the table")]
@@ -794,7 +794,7 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
             var task = page.GetTheCreatedTaskInTableByName(_projectDto.Tasks.Last().Name);
-            Assert.IsTrue(task.Displayed(), "Selected Task is not displayed in the table");
+            Utils.Verify.IsTrue(task.Displayed(), "Selected Task is not displayed in the table");
         }
 
         [Then(@"created Email is displayed in the table")]
@@ -802,7 +802,7 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
             var email = page.GetTheCreatedEmailInTableByName(_projectDto.MailTemplateProperties.Name);
-            Assert.IsTrue(email.Displayed(), "Selected Email is not displayed in the table");
+            Utils.Verify.IsTrue(email.Displayed(), "Selected Email is not displayed in the table");
         }
 
         [Then(@"created Request Type is displayed in the table")]
@@ -810,7 +810,7 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
             _driver.WaitForDataLoadingOnProjects();
-            Assert.IsTrue(page.GetTheCreatedRequestTypeInTableByName(_projectDto.ReqestTypes.Last().Name).Displayed(),
+            Utils.Verify.IsTrue(page.GetTheCreatedRequestTypeInTableByName(_projectDto.ReqestTypes.Last().Name).Displayed(),
                 "Selected Request Type is not displayed in the table");
         }
 
@@ -818,7 +818,7 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
         public void ThenCreatedCategoryIsDisplayedInTheTable()
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
-            Assert.IsTrue(page.GetTheCreatedCategoryInTableByName(_projectDto.Categories.Last().Name).Displayed,
+            Utils.Verify.IsTrue(page.GetTheCreatedCategoryInTableByName(_projectDto.Categories.Last().Name).Displayed,
                 "Selected Category is not displayed in the table");
         }
 
@@ -827,7 +827,7 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
 
-            Assert.IsTrue(page.GetTheCreatedElementInTableByName(_projectDto.Stages.Last().StageName).Displayed(),
+            Utils.Verify.IsTrue(page.GetTheCreatedElementInTableByName(_projectDto.Stages.Last().StageName).Displayed(),
                 "Selected Stage is not displayed in the table");
         }
 
@@ -836,7 +836,7 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
             _driver.WaitForDataLoadingOnProjects();
-            Assert.IsTrue(page.GetDefaultRequestTypeCountByName(_projectDto.ReqestTypes.Last().Name).Displayed(),
+            Utils.Verify.IsTrue(page.GetDefaultRequestTypeCountByName(_projectDto.ReqestTypes.Last().Name).Displayed(),
                 "Selected Request Type is not 'Default'");
         }
 
@@ -847,7 +847,7 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
             var teamName = _projectDto.TeamProperties.Last().TeamName;
             var groupsInTeam = _projectDto.GroupProperties.Count(x => x.OwnedByTeam.Equals(teamName));
             var groups = page.GetGroupsCountByTeamName(_projectDto.TeamProperties.Last().TeamName);
-            Assert.AreEqual(groups, groupsInTeam, "Number of groups is incorrect");
+            Utils.Verify.AreEqual(groups, groupsInTeam, "Number of groups is incorrect");
         }
 
         [When(@"User navigates to ""(.*)"" Team")]
@@ -861,7 +861,7 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
         public void ThenTeamHaveADefaultValue(string teamName)
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
-            Assert.IsTrue(page.GetDefaultRequestTypeCountByName(teamName).Displayed(),
+            Utils.Verify.IsTrue(page.GetDefaultRequestTypeCountByName(teamName).Displayed(),
                 "Selected Team is not 'Default'");
         }
 
@@ -869,8 +869,8 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
         public void ThenDefaultTeamCheckboxIsCheckedAndCannotBeUnchecked()
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
-            Assert.AreEqual(true, page.DefaultTeamCheckbox.Selected, "Cheked state is incorrect");
-            Assert.AreEqual(true, Convert.ToBoolean(page.DefaultTeamCheckbox.GetAttribute("disabled")),
+            Utils.Verify.AreEqual(true, page.DefaultTeamCheckbox.Selected, "Cheked state is incorrect");
+            Utils.Verify.AreEqual(true, Convert.ToBoolean(page.DefaultTeamCheckbox.GetAttribute("disabled")),
                 "Checkbox state is incorrect");
         }
 
@@ -898,12 +898,12 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
                     }
 
                     var groups = page.GetGroupsCountByTeamName(_projectDto.TeamProperties.Last().TeamName);
-                    Assert.AreEqual(groups, numberOfGroups, "Number of groups is incorrect");
+                    Utils.Verify.AreEqual(groups, numberOfGroups, "Number of groups is incorrect");
                 }
                 else
                 {
                     var groups = page.GetGroupsCountByTeamName(_projectDto.TeamProperties.Last().TeamName);
-                    Assert.AreEqual(groups, numberOfGroups, "Number of groups is incorrect");
+                    Utils.Verify.AreEqual(groups, numberOfGroups, "Number of groups is incorrect");
                 }
             }
             catch
@@ -928,12 +928,12 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
                     }
 
                     var members = page.GetMembersCountByTeamName(_projectDto.TeamProperties.Last().TeamName);
-                    Assert.AreEqual(members, numberOfMembers, "Number of members is incorrect");
+                    Utils.Verify.AreEqual(members, numberOfMembers, "Number of members is incorrect");
                 }
                 else
                 {
                     var members = page.GetMembersCountByTeamName(_projectDto.TeamProperties.Last().TeamName);
-                    Assert.AreEqual(members, numberOfMembers, "Number of members is incorrect");
+                    Utils.Verify.AreEqual(members, numberOfMembers, "Number of members is incorrect");
                 }
             }
             catch

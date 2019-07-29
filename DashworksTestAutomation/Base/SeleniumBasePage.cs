@@ -52,12 +52,12 @@ namespace DashworksTestAutomation.Base
         public void CheckElementDisabledState(IWebElement element, bool expectedCondition, string exceptionMessage)
         {
             Driver.WaitForElementToBeDisplayed(element);
-            Assert.AreEqual(expectedCondition, element.Disabled(), exceptionMessage);
+            Utils.Verify.AreEqual(expectedCondition, element.Disabled(), exceptionMessage);
         }
 
         public void CheckElementDisplayedState(IWebElement element, bool expectedCondition, string exceptionMessage)
         {
-            Assert.AreEqual(expectedCondition, Driver.IsElementDisplayed(element, WebDriverExtensions.WaitTime.Short), exceptionMessage);
+            Utils.Verify.AreEqual(expectedCondition, Driver.IsElementDisplayed(element, WebDriverExtensions.WaitTime.Short), exceptionMessage);
         }
     }
 }

@@ -48,7 +48,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 var page = _driver.NowAt<BaseDashboardPage>();
                 _driver.WaitForDataLoading();
                 _driver.WaitForElementToBeDisplayed(page.NoResultsFoundMessage);
-                Assert.IsTrue(page.NoResultsFoundMessage.Displayed(), $"{message} is not displayed");
+                Utils.Verify.IsTrue(page.NoResultsFoundMessage.Displayed(), $"{message} is not displayed");
                 _driver.WaitForDataLoading();
             }
         }
@@ -75,7 +75,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
                 _driver.WaitForElementToBeDisplayed(listPageElement.ResultsOnPageCount);
 
-                StringAssert.AreEqualIgnoringCase(numberOfRows == "1" ? $"{numberOfRows} row" : $"{numberOfRows} rows",
+                Utils.Verify.AreEqualIgnoringCase(numberOfRows == "1" ? $"{numberOfRows} row" : $"{numberOfRows} rows",
                     listPageElement.ResultsOnPageCount.Text,
                     "Incorrect rows count");
 
@@ -86,9 +86,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 _driver.IsElementDisplayed(listPageElement.NoResultsFoundMessage);
                 _driver.WaitForElementToBeNotDisplayed(listPageElement.ResultsOnPageCount);
-                Assert.IsFalse(listPageElement.ResultsOnPageCount.Displayed(), "Rows count is displayed");
+                Utils.Verify.IsFalse(listPageElement.ResultsOnPageCount.Displayed(), "Rows count is displayed");
                 _driver.WaitForElementToBeDisplayed(listPageElement.NoResultsFoundMessage);
-                Assert.IsTrue(listPageElement.NoResultsFoundMessage.Displayed(),
+                Utils.Verify.IsTrue(listPageElement.NoResultsFoundMessage.Displayed(),
                     "'No Results Found' message not displayed");
                 Logger.Write(
                     $"Evergreen agGrid Search returned '{listPageElement.NoResultsFoundMessage.Text}' message");
@@ -103,12 +103,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForElementToBeDisplayed(listPageElement.ResultsOnPageCount);
             if (listPageElement.TableSearchTextBox.Displayed())
             {
-                Assert.IsEmpty(listPageElement.TableSearchTextBox.GetAttribute("value"), "Search textbox is not empty");
+                Utils.Verify.IsEmpty(listPageElement.TableSearchTextBox.GetAttribute("value"), "Search textbox is not empty");
             }
             else
             {
                 listPageElement.TableSearchButton.Click();
-                Assert.IsEmpty(listPageElement.TableSearchTextBox.GetAttribute("value"), "Search textbox is not empty");
+                Utils.Verify.IsEmpty(listPageElement.TableSearchTextBox.GetAttribute("value"), "Search textbox is not empty");
             }
         }
 
@@ -126,7 +126,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var resetButton = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForElementToBeDisplayed(resetButton.SearchTextBoxResetButton);
-            Assert.IsTrue(resetButton.SearchTextBoxResetButton.Displayed(), "Reset button is not displayed");
+            Utils.Verify.IsTrue(resetButton.SearchTextBoxResetButton.Displayed(), "Reset button is not displayed");
             Logger.Write("Reset button is displayed");
         }
 
@@ -143,7 +143,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var resetButton = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForElementToBeDisplayed(resetButton.SearchTextBoxResetButtonInPanel);
 
-            Assert.IsTrue(resetButton.SearchTextBoxResetButtonInPanel.Displayed(), "Reset button is not displayed");
+            Utils.Verify.IsTrue(resetButton.SearchTextBoxResetButtonInPanel.Displayed(), "Reset button is not displayed");
             Logger.Write("Reset button is displayed");
         }
 

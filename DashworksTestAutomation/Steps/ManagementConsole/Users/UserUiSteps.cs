@@ -120,7 +120,7 @@ namespace DashworksTestAutomation.Steps.ManagementConsole
             page.SearchButton.Click();
 
             var user = page.GetTheCreatedElementInTableByName(_projectDto.ManageUsers.Last().Username);
-            Assert.IsTrue(user.Displayed(), "Selected User is not displayed in the table");
+            Utils.Verify.IsTrue(user.Displayed(), "Selected User is not displayed in the table");
         }
 
         [When(@"User select user with ""(.*)"" name to add as member")]
@@ -184,7 +184,7 @@ namespace DashworksTestAutomation.Steps.ManagementConsole
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
 
-            Assert.IsFalse(page.CheckThatCreatedElementIsRemoved(_deletedUserName.Value),
+            Utils.Verify.IsFalse(page.CheckThatCreatedElementIsRemoved(_deletedUserName.Value),
                 "Selected User is displayed in the table");
         }
     }

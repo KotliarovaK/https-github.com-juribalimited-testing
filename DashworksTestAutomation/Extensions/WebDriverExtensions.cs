@@ -248,7 +248,7 @@ namespace DashworksTestAutomation.Extensions
             foreach (var entry in driver.Manage().Logs.GetLog(LogType.Browser).ToList())
                 if (entry.Level == LogLevel.Severe)
                     errorsList.Add(entry);
-            Assert.IsEmpty(errorsList, "Error message is displayed in the console");
+            Utils.Verify.IsEmpty(errorsList, "Error message is displayed in the console");
         }
 
         #region Web element extensions

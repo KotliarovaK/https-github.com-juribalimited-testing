@@ -48,7 +48,7 @@ namespace DashworksTestAutomation
         {
             var page = _driver.NowAt<BulkUpdatePage>();
             _driver.WaitForDataLoadingOnProjects();
-            Assert.That(page.BulkUpdateTypeOptions.Any(x => x.Text.Equals(option)), Is.True, "Option was not found in list");
+            Utils.Verify.That(page.BulkUpdateTypeOptions.Any(x => x.Text.Equals(option)), Is.True, "Option was not found in list");
         }
     }
 }

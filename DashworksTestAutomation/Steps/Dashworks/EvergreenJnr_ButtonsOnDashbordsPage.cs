@@ -98,14 +98,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var button = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForElementToBeDisplayed(button.CreateActionButton);
-            Assert.IsTrue(Convert.ToBoolean(button.CreateActionButton.GetAttribute("aria-disabled")), "Filter Button is active!");
+            Utils.Verify.IsTrue(Convert.ToBoolean(button.CreateActionButton.GetAttribute("aria-disabled")), "Filter Button is active!");
         }
 
         [Then(@"Create button is not displayed")]
         public void ThenCreateButtonIsNotDisplayed()
         {
             var button = _driver.NowAt<BaseDashboardPage>();
-            Assert.IsFalse(button.CreateActionButton.Displayed(),
+            Utils.Verify.IsFalse(button.CreateActionButton.Displayed(),
                 "Create button is displayed on the Base Dashboard Page");
         }
 
@@ -113,7 +113,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenCreateButtonIsDisplayed()
         {
             var button = _driver.NowAt<BaseDashboardPage>();
-            Assert.IsTrue(button.CreateActionButton.Displayed(),
+            Utils.Verify.IsTrue(button.CreateActionButton.Displayed(),
                 "Create button is not displayed on the Base Dashboard Page");
         }
 
@@ -130,7 +130,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenButtonIsDisplayedOnTheBaseDashboardPage(string buttonName)
         {
             var button = _driver.NowAt<BaseDashboardPage>();
-            Assert.IsTrue(button.GetCreateButtonByName(buttonName).Displayed(),
+            Utils.Verify.IsTrue(button.GetCreateButtonByName(buttonName).Displayed(),
                 $"{buttonName} button is not displayed on the Base Dashboard Page");
         }
 
@@ -140,7 +140,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var button = _driver.NowAt<BaseDashboardPage>();
             _driver.MouseHover(button.CreateProjectButton);
             var toolTipText = _driver.GetTooltipText();
-            Assert.AreEqual(text, toolTipText);
+            Utils.Verify.AreEqual(text, toolTipText, "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"Filters Button is disabled")]
@@ -148,7 +148,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var menu = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForElementToBeDisplayed(menu.FilterButton);
-            Assert.IsTrue(Convert.ToBoolean(menu.FilterButton.GetAttribute("disabled")), "Filter Button is active");
+            Utils.Verify.IsTrue(Convert.ToBoolean(menu.FilterButton.GetAttribute("disabled")), "Filter Button is active");
         }
 
         [Then(@"Filter button on AGgrid is disabled")]
@@ -156,7 +156,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var menu = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForElementToBeDisplayed(menu.FilterContainerButton);
-            Assert.IsTrue(Convert.ToBoolean(menu.FilterContainerButton.GetAttribute("disabled")),
+            Utils.Verify.IsTrue(Convert.ToBoolean(menu.FilterContainerButton.GetAttribute("disabled")),
                 "Filter button on AGgrid is active");
         }
 
@@ -164,7 +164,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenEmptyLinkIsDisplayedForFirstRowInTheColumn(string columnName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            Assert.AreEqual("Empty", page.GetColumnContent(columnName).First());
+            Utils.Verify.AreEqual("Empty", page.GetColumnContent(columnName).First(), "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"Account Profile menu is displayed correctly")]
@@ -178,10 +178,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
             catch
             {
-                Assert.IsTrue(menu.UserItemsMenu.Displayed);
+                Utils.Verify.IsTrue(menu.UserItemsMenu.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
             }
 
-            Assert.IsTrue(menu.UserItemsMenu.Displayed, "Item Menu is not displayed correctly");
+            Utils.Verify.IsTrue(menu.UserItemsMenu.Displayed, "Item Menu is not displayed correctly");
         }
 
         [Then(@"Notifications message is displayed correctly")]
@@ -195,10 +195,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
             catch
             {
-                Assert.IsTrue(menu.UserNotificationsMessage.Displayed);
+                Utils.Verify.IsTrue(menu.UserNotificationsMessage.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
             }
 
-            Assert.IsTrue(menu.UserNotificationsMessage.Displayed,
+            Utils.Verify.IsTrue(menu.UserNotificationsMessage.Displayed,
                 "User Notifications Message is not displayed correctly");
         }
 
@@ -209,7 +209,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             //Waiting for changed List details button state
             Thread.Sleep(500);
             _driver.WaitForElementToBeDisplayed(menu.ListDetailsButton);
-            Assert.IsTrue(Convert.ToBoolean(menu.ListDetailsButton.GetAttribute("disabled")),
+            Utils.Verify.IsTrue(Convert.ToBoolean(menu.ListDetailsButton.GetAttribute("disabled")),
                 "List Details Button is active");
         }
 
@@ -218,7 +218,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var menu = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForElementToBeDisplayed(menu.ListDetailsButton);
-            StringAssert.Contains("active", menu.ActionsButton.GetAttribute("class"), "Actions button is inactive");
+            Utils.Verify.Contains("active", menu.ActionsButton.GetAttribute("class"), "Actions button is inactive");
         }
 
         [Then(@"Actions button is not active")]
@@ -226,7 +226,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var menu = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForElementToBeDisplayed(menu.ListDetailsButton);
-            StringAssert.DoesNotContain("active", menu.ActionsButton.GetAttribute("class"), "Actions button is active");
+            Utils.Verify.DoesNotContain("active", menu.ActionsButton.GetAttribute("class"), "Actions button is active");
         }
     }
 }
