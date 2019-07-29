@@ -5,6 +5,27 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user   
 
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS15374 @Cleanup
+Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatDatesDisplayIsRegionSpecific
+	When User language is changed to "<Language>" via API
+	And User clicks "Devices" on the left-hand menu
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "1803: Pre-Migration \ Scheduled Date" filter where type is "<Option>" with added column and following value:
+	| Values         |
+	| <ExpectedDate> |
+	Then "1803: Pre-Migration \ Scheduled Date" filter is added to the list
+	And Values is displayed in added filter info
+	| Values         |
+	| <ExpectedDate> |
+
+Examples: 
+	| Language   | Option | ExpectedDate  |
+	| english us | Equals | Jul 10, 2019  |
+	| english uk | Equals | 10 Jul 2019   |
+	| deutsch    | Gleich | 10. Juli 2019 |
+	| français   | Avant  | 10 juil. 2019 |
+	
 @Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS10651
 Scenario: EvergreenJnr_ApplicationsList_CheckTrueFalseOptionsAndImagesInFilterInfo
 	When User clicks "Applications" on the left-hand menu

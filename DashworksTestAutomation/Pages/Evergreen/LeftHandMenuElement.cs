@@ -11,16 +11,16 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[text()='Dashboards']")]
         public IWebElement Dashboards { get; set; }
         
-        [FindsBy(How = How.XPath, Using = ".//span[text()='Devices']")]
+        [FindsBy(How = How.XPath, Using = ".//a[@href='#/devices']")]
         public IWebElement Devices { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[text()='Users']")]
+        [FindsBy(How = How.XPath, Using = ".//a[@href='#/users']")]
         public IWebElement Users { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[text()='Applications']")]
+        [FindsBy(How = How.XPath, Using = ".//a[@href='#/applications']")]
         public IWebElement Applications { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[text()='Mailboxes']")]
+        [FindsBy(How = How.XPath, Using = ".//a[@href='#/mailboxes']")]
         public IWebElement Mailboxes { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[text()='Projects']")]
