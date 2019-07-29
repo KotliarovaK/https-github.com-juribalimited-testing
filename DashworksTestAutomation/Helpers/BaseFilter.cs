@@ -226,6 +226,14 @@ namespace DashworksTestAutomation.Helpers
                 }
                 else
                 {
+                    try
+                    {
+                        _driver.FindElement(By.XPath(".//div[@class='filter-panel']//i[contains(@class,'icon-search')]")).Click();
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e);
+                    }
                     _driver.FindElement(
                         By.XPath(string.Format(CheckboxSelectorName, row["SelectedCheckboxes"]))).Click();
                 }
