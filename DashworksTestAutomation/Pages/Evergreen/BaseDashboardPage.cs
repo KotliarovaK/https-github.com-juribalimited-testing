@@ -114,6 +114,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = "//input[@aria-label='Owner']")]
         public IWebElement OwnerField { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//button[@aria-label='Open calendar']")]
+        public IWebElement DatePickerIcon { get; set; }
+
         [FindsBy(How = How.XPath, Using = "//input[@aria-label='Date']")]
         public IWebElement DateField { get; set; }
 
@@ -868,5 +871,18 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Driver.WaitForDataLoading();
             return Driver.FindElement(selector);
         }
+
+        public IList<IWebElement> GetTooltipForDay(string dayNumber)
+        {
+            var selector = By.XPath($".//td[@role='gridcell']//div[text() = '{dayNumber}']/span/span");
+            return Driver.FindElements(selector);
+        }
+
+        public IWebElement DayInDatePicker(string dayNumber)
+        {
+            var selector = By.XPath($".//div[text() = '{dayNumber}']/parent::td[@role='gridcell']");
+            return Driver.FindElement(selector);
+        }
+
     }
 }
