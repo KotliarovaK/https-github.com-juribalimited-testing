@@ -438,6 +438,16 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Driver.SelectCustomSelectbox(selectBox, operatorValue);
         }
 
+        public List<string> SelectOperatorOptions()
+        {
+            Driver.WaitForElementToBeDisplayed(
+                By.XPath(".//div[@class='filter-panel']//div[@class='mat-select-trigger']"));
+            var selectBox =
+                Driver.FindElement(By.XPath(".//div[@class='filter-panel']//div[@class='mat-select-trigger']"));
+
+            return Driver.GetOptionsFromMatSelectbox(selectBox).Select(iw => iw.Text).ToList();
+        }
+
         public void EditFilterButtonToolTip(string tooltipText)
         {
             var editFilterButton = Driver.FindElement(By.XPath(

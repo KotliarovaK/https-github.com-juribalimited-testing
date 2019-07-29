@@ -5,6 +5,27 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user   
 
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS15374 @Cleanup
+Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatDatesDisplayIsRegionSpecific
+	When User language is changed to "<Language>" via API
+	And User clicks "Devices" on the left-hand menu
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "1803: Pre-Migration \ Scheduled Date" filter where type is "<Option>" with added column and following value:
+	| Values         |
+	| <ExpectedDate> |
+	Then "1803: Pre-Migration \ Scheduled Date" filter is added to the list
+	And Values is displayed in added filter info
+	| Values         |
+	| <ExpectedDate> |
+
+Examples: 
+	| Language   | Option | ExpectedDate  |
+	| english us | Equals | Jul 10, 2019  |
+	| english uk | Equals | 10 Jul 2019   |
+	| deutsch    | Gleich | 10. Juli 2019 |
+	| français   | Avant  | 10 juil. 2019 |
+	
 @Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS10651
 Scenario: EvergreenJnr_ApplicationsList_CheckTrueFalseOptionsAndImagesInFilterInfo
 	When User clicks "Applications" on the left-hand menu
@@ -682,8 +703,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatApplicationFiltersBeingAppliedAgains
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	And "(Application = 7zip (2015) ASSOCIATION = ("entitled to device"))" text is displayed in filter container
-	When User clicks the Filters button
-	Then Filters panel is displayed to the user
 	And "Application 7zip (2015) entitled to device" is displayed in added filter info
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11539
@@ -1247,15 +1266,14 @@ Scenario: EvergreenJnr_AllLists_CheckThatDeletedBucketIsNotAvailableInEvergreenB
 	When user select "Evergreen Bucket" filter
 	Then "Bucket_DAS12940_to_be_deleted" checkbox is not available for current opened filter
 
-@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS13201
+@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS13201 @Cleanup
 Scenario: EvergreenJnr_AllLists_CheckThatDeletedCapacityUnitIsNotAvailableInEvergreenCapacityUnitFilter
-	When User clicks Admin on the left-hand menu
-	When User clicks "Evergreen" link on the Admin page
-	When User clicks "Capacity Units" tab
-	And User clicks the "CREATE EVERGREEN CAPACITY UNIT" Action button
-	And User type "Capacity_Unit_DAS13201_to_be_deleted" Name in the "Capacity Unit Name" field on the Project details page
-	And User type "13201" Name in the "Description" field on the Project details page
-	And User clicks the "CREATE" Action button
+	When User creates new Capacity Unit via api
+	| Name                                 | Description | IsDefault |
+	| Capacity_Unit_DAS13201_to_be_deleted | 13201       | false     |
+	And User clicks Admin on the left-hand menu
+	And User clicks "Evergreen" link on the Admin page
+	And User clicks "Capacity Units" tab
 	And User select "Capacity Unit" rows in the grid
 	| SelectedRowsName                     |
 	| Capacity_Unit_DAS13201_to_be_deleted |
@@ -1778,3 +1796,21 @@ Scenario: EvergreenJnr_DevicesList_CheckThatStatusFilterAvailableOptionsList
 	| Migrated      |
 	| Complete      |
 	| Offboarded    |
+
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS17579
+Scenario: EvergreenJnr_ApplicationsList_CheckUserPostalCodeOptionsDisplaying
+	When User clicks "Applications" on the left-hand menu
+	And User clicks the Filters button
+	When user select "User Postal Code" filter
+	Then following operator options available:
+	| operator            |
+	| Equals              |
+	| Does not equal      |
+	| Contains            |
+	| Does not contain    |
+	| Begins with         |
+	| Does not begin with |
+	| Ends with           |
+	| Does not end with   |
+	| Empty               |
+	| Not empty           |

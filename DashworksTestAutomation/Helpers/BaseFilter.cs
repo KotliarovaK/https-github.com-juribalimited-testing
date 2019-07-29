@@ -53,8 +53,9 @@ namespace DashworksTestAutomation.Helpers
                 _driver.FindElement(By.XPath(
                         ".//div[@class='filterAddPanel ng-star-inserted']//div[contains(@class, 'add-column-checkbox')]//div[@class='mat-checkbox-inner-container']"))
                     .Click();
-            _driver.MouseHover(By.XPath("//div[contains(@class, 'actions')]//span[text()='UPDATE']/ancestor::button"));
-            _driver.FindElement(By.XPath("//div[contains(@class, 'actions')]//span[text()='UPDATE']/ancestor::button")).Click();
+            var unpdateButtonSelector = ".//div[contains(@class, 'actions')]//div[@class='actions-btn']/button";
+            _driver.MouseHover(By.XPath(unpdateButtonSelector));
+            _driver.FindElement(By.XPath(unpdateButtonSelector)).Click();
         }
     }
 
@@ -225,10 +226,18 @@ namespace DashworksTestAutomation.Helpers
                 }
                 else
                 {
+                    try
+                    {
+                        _driver.FindElement(By.XPath(".//div[@class='filter-panel']//i[contains(@class,'icon-search')]")).Click();
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e);
+                    }
                     _driver.FindElement(
                         By.XPath(string.Format(CheckboxSelectorName, row["SelectedCheckboxes"]))).Click();
                 }
-                
+
             SaveFilter();
         }
 

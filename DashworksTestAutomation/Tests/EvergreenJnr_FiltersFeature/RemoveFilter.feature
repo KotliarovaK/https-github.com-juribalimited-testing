@@ -139,3 +139,13 @@ Scenario: EvergreenJnr_AllLists_CheckThatCancelingUnsavedFilterDoesNotReloadList
 	When User clicks Add New button on the Filter panel
 	When user select "Compliance" filter
 	When User deletes filter and agGrid does not reload
+
+@Evergreen @AllLists @Evergreen_FiltersFeature @RemoveFilter @DAS17436
+Scenario: EvergreenJnr_DevicesLists_CheckBrokenListDisplayingAfterFilterRemoving
+	When User clicks "Devices" on the left-hand menu
+	And User navigates to the "Device List (Complex) - BROKEN LIST" list
+	Then "Device List (Complex) - BROKEN LIST" list is displayed to user
+	And "This list has errors" message is displayed on the Admin Page
+	When User clicks the Filters button
+	And User have reset all filters
+	Then "17,279" rows are displayed in the agGrid

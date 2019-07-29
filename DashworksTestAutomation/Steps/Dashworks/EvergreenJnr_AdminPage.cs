@@ -1753,6 +1753,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserTypeNameInTheFieldOnTheProjectDetailsPage(string name, string fieldName)
         {
             SendKeysToTheNamedTextbox(name, fieldName);
+
+            if (fieldName.Equals("Ring name"))
+                _rings.Value.Add(new RingDto() { Name = name });
+
+            if (fieldName.Equals("Capacity Unit Name"))
+                _capacityUnits.Value.Add(new CapacityUnitDto() { Name = name });
         }
 
         [When(@"User type ""(.*)"" Name in the ""(.*)"" field on the '(.*)' Project details page")]

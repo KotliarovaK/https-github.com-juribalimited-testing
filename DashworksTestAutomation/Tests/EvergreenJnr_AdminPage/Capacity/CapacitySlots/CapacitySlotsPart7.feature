@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Senior_Projects @DAS13593 @Cleanup @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Senior_Projects @DAS13593 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatOnlyDateTasksCanBeAvailableForSelectionInCreateSlotPage
 	When Project created via API and opened
 	| ProjectName     | Scope       | ProjectTemplate | Mode               |
@@ -20,6 +20,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnlyDateTasksCanBeAvailableForSelectio
 	And User clicks "Create Stage" button
 	And User navigate to "Tasks" tab
 	And User clicks "Create Task" button
+	#Please keep Taks creation via UI to verify DAS-15668
 	And User creates Task
 	| Name       | Help  | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString |
 	| 1Task13593 | 13593 | Stage13593       | Normal         | Date            | Computer         |                          |
