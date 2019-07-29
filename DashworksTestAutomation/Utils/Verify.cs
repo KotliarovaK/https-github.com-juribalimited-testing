@@ -95,10 +95,11 @@ namespace DashworksTestAutomation.Utils
             var result = constraint.ApplyTo(actual);
             if (!result.IsSuccess)
             {
+                var exceptionMessage = $"{message}\r\nExpected {result.Description}\r\nBut was: {MsgUtils.FormatValue(actual)}";
                 Logger.Write($"Expected {result.Description}");
                 Logger.Write($"But was: {MsgUtils.FormatValue(actual)}");
                 Logger.Write(message);
-                throw new Exception(message);
+                throw new Exception(exceptionMessage);
             }
         }
 
@@ -112,9 +113,10 @@ namespace DashworksTestAutomation.Utils
             var result = constraint.ApplyTo(actual);
             if (!result.IsSuccess)
             {
+                var exceptionMessage = $"{getExceptionMessage()}\r\nExpected {result.Description}\r\nBut was: {MsgUtils.FormatValue(actual)}";
                 Logger.Write($"Expected {result.Description}");
                 Logger.Write($"But was: {MsgUtils.FormatValue(actual)}");
-                throw new Exception(getExceptionMessage());
+                throw new Exception(exceptionMessage);
             }
         }
 

@@ -62,7 +62,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 ".//table[@class='table projectDetails']/*//span[text()='Evergreen Ring']/ancestor::tr/td[@class='fld-value']//div[@class='editText']")]
         public IWebElement ProjectSummaryRingValue { get; set; }
 
-        [FindsBy(How = How.XPath, Using =".//input[@placeholder='New Ring']")]
+        [FindsBy(How = How.XPath, Using = ".//input[@placeholder='New Ring']")]
         public IWebElement ProjectSummaryRingPopupDDL { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div/mat-option/span[@class='mat-option-text']")]
@@ -112,7 +112,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public string GetSelectedText()
         {
-            return ((IJavaScriptExecutor) Driver).ExecuteScript("return window.getSelection().toString()").ToString();
+            return ((IJavaScriptExecutor)Driver).ExecuteScript("return window.getSelection().toString()").ToString();
         }
 
         public void ExpandAllSections()
@@ -209,12 +209,17 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(byControl);
         }
 
+        public By GetLinkByNameSelector(string linkName)
+        {
+            var selector = $".//a[@href][text()='{linkName}']";
+            return By.XPath(selector);
+        }
+
         public IWebElement GetLinkByName(string linkName)
         {
-            var byControl =
-                By.XPath($".//a[@href][text()='{linkName}']");
-            Driver.WaitForElementToBeDisplayed(byControl);
-            return Driver.FindElement(byControl);
+            var by = GetLinkByNameSelector(linkName);
+            Driver.WaitForElementToBeDisplayed(by);
+            return Driver.FindElement(by);
         }
 
         public IWebElement GetIconByName(string detailsIconName)
@@ -298,13 +303,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(selector);
         }
 
-        public IWebElement GetCompareTitleWithValueOnTheDetailsPage(string title, string value)
-        {
-            var selector = By.XPath($".//td//span[text()='{title}']//ancestor::tr/td/div[text()='{value}']");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
         public IWebElement FieldContentByName(string fieldName, string text)
         {
             var selector = By.XPath($".//td//span[text()='{fieldName}']//ancestor::div//span[text()='{text}']");
@@ -312,7 +310,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(selector);
         }
 
-        public IWebElement GetFieldToOpenTheTableByName (string fieldName)
+        public IWebElement GetFieldToOpenTheTableByName(string fieldName)
         {
             var selector = By.XPath($"//div[@class='application-category-title']//span[contains(text(), '{fieldName}')]");
             Driver.WaitForElementToBeDisplayed(selector);
@@ -339,9 +337,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElements(by).Select(x => x.Text).ToList();
         }
 
-        public IWebElement GetItemDetailsPageByName (string itemName)
+        public IWebElement GetItemDetailsPageByName(string itemName)
         {
-            var selector = By.XPath($"//div[@id='pagetitle-text']//h1[text()='{itemName}']");
+            var selector = By.XPath($".//div[@id='pagetitle-text']//h1[text()='{itemName}']");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }

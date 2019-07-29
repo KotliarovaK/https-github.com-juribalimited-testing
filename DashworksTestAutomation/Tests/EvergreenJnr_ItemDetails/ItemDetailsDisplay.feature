@@ -142,4 +142,29 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatUserDetailsIsOpenedCorrectlyWithSam
 	When User navigates to the "Users" main-menu on the Details page
 	And User clicks "Nicole P. Braun" link on the Details Page
 	Then Details page for "QLL295118 (Nicole P. Braun)" item is displayed to the user
-	And "Key" title matches the "23726" value
+	And User verifies data in the fields on details page
+	| Field | Data  |
+	| Key   | 23726 |
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17300
+Scenario: EvergreenJnr_DevicesList_ChecksThatUserDetailsIsSimilarOnGridAndDetailsPage
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "001BAQXT6JWFPI"
+	And User click content from "Hostname" column
+	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	When User navigates to the "Users" main-menu on the Details page
+	Then text is displayed in the table content
+	| Text                                   |
+	| QLL295118                              |
+	| US-E                                   |
+	| Nicole P. Braun                        |
+	| QLL295118.Users.Jersey City.US-E.local |
+	When User clicks "QLL295118" link on the Details Page
+	Then Details page for "QLL295118 (Nicole P. Braun)" item is displayed to the user
+	And User verifies data in the fields on details page
+	| Field              | Data                                   |
+	| Username           | QLL295118                              |
+	| Domain             | US-E                                   |
+	| Display Name       | Nicole P. Braun                        |
+	| Distinguished Name | QLL295118.Users.Jersey City.US-E.local |

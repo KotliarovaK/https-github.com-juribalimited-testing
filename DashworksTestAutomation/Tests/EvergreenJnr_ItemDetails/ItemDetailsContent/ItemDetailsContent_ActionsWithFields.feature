@@ -299,7 +299,9 @@ Scenario: EvergreenJnr_DevicesList_CheckDeviceTabUIOnTheDeviceDetails
 	Then "Devices" list should be displayed to the user
 	When User click content from "Hostname" column
 	When User navigates to the "Details" main-menu on the Details page
-	Then "Key" title matches the "9141" value
+	Then User verifies data in the fields on details page
+	| Field | Data |
+	| Key   | 9141 |
 	Then following content is displayed on the Details Page
 	| Title                     | Value           |
 	| Hostname                  | 001BAQXT6JWFPI  |
