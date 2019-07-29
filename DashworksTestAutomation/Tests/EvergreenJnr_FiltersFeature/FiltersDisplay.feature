@@ -1252,9 +1252,9 @@ Scenario: EvergreenJnr_AllLists_CheckThatDeletedCapacityUnitIsNotAvailableInEver
 	When User creates new Capacity Unit via api
 	| Name                                 | Description | IsDefault |
 	| Capacity_Unit_DAS13201_to_be_deleted | 13201       | false     |
-	When User clicks Admin on the left-hand menu
-	When User clicks "Evergreen" link on the Admin page
-	When User clicks "Capacity Units" tab
+	And User clicks Admin on the left-hand menu
+	And User clicks "Evergreen" link on the Admin page
+	And User clicks "Capacity Units" tab
 	And User select "Capacity Unit" rows in the grid
 	| SelectedRowsName                     |
 	| Capacity_Unit_DAS13201_to_be_deleted |
