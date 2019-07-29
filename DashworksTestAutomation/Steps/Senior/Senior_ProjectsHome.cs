@@ -77,7 +77,7 @@ namespace DashworksTestAutomation.Steps.Projects
         {
             var message = _driver.NowAt<ProjectsHomePage>();
 
-            Assert.IsTrue(message.DefaultProjectNewsTitle.Displayed(), "Default message is not displayed");
+            Utils.Verify.IsTrue(message.DefaultProjectNewsTitle.Displayed(), "Default message is not displayed");
         }
 
         [Then(@"Project Name is displayed correctly")]
@@ -86,14 +86,14 @@ namespace DashworksTestAutomation.Steps.Projects
             var menu = _driver.NowAt<MainElementsOfProjectCreation>();
 
             var projectName = menu.GetOpenedProjectName(_projectDto.ProjectName);
-            Assert.IsTrue(projectName.Displayed, "Project Name is not displayed correctly");
+            Utils.Verify.IsTrue(projectName.Displayed, "Project Name is not displayed correctly");
         }
 
         [Then(@"Project with ""(.*)"" name is displayed correctly")]
         public void ThenProjectWithNameIsDisplayedCorrectly(string projectName)
         {
             var menu = _driver.NowAt<MainElementsOfProjectCreation>();
-            Assert.IsTrue(menu.GetOpenedProjectName(projectName).Displayed, "Project Name is not displayed correctly");
+            Utils.Verify.IsTrue(menu.GetOpenedProjectName(projectName).Displayed, "Project Name is not displayed correctly");
         }
     }
 }

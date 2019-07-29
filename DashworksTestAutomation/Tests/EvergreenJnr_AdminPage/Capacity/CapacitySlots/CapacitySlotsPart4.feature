@@ -5,29 +5,18 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13382 @DAS13149 @DAS13147 @DAS15827 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13382 @DAS13149 @DAS13147 @DAS15827 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotIsSuccessfullyCreatedUsingExistingDisplayName
 	When Project created via API and opened
 	| ProjectName             | Scope       | ProjectTemplate | Mode               |
 	| 13382ProjectForCapacity | All Devices | None            | Standalone Project |
+	And User creates new Slot via Api
+	| Project                 | SlotName  | DisplayName |
+	| 13382ProjectForCapacity | Slot13147 | Name13147   |
+	| 13382ProjectForCapacity | NewName   | Name1       |
+	| 13382ProjectForCapacity | Name1     | Name1       |
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	When User clicks the "CREATE SLOT" Action button
-	And User type "Slot13147" Name in the "Slot Name" field on the Project details page
-	And User type "Name13147" Name in the "Display Name" field on the Project details page
-	And User clicks the "CREATE" Action button
-	Then Success message is displayed and contains "Your capacity slot has been created" text
-	And There are no errors in the browser console
-	When User clicks the "CREATE SLOT" Action button
-	And User type "NewName" Name in the "Slot Name" field on the Project details page
-	And User type "Name1" Name in the "Display Name" field on the Project details page
-	And User clicks the "CREATE" Action button
-	Then Success message is displayed and contains "Your capacity slot has been created" text
-	And There are no errors in the browser console
-	When User clicks the "CREATE SLOT" Action button
-	And User type "Name1" Name in the "Slot Name" field on the Project details page
-	And User type "Name1" Name in the "Display Name" field on the Project details page
-	And User clicks the "CREATE" Action button
 	When User have opened Column Settings for "Capacity Slot" column
 	And User clicks Column button on the Column Settings panel
 	Then Column Settings was opened
@@ -40,7 +29,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotIsSuccessfullyCreatedUsingExist
 	| NewName   |
 	| Name1     |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13955 @DAS13681 @DAS14208 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13955 @DAS13681 @DAS14208 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlyLanguageIsDisplayedForSlotsAfterChangingOrRemovingLanguage
 	When Project created via API and opened
 	| ProjectName         | Scope       | ProjectTemplate | Mode               |
@@ -48,12 +37,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlyLanguageIsDisplayedForSlotsA
 	And User clicks "Details" tab
 	And User clicks the "ADD LANGUAGE" Action button
 	And User selects "Dutch" language on the Project details page
-	And User clicks "Capacity" tab
-	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE SLOT" Action button
-	And User type "ChecksLanguage" Name in the "Slot Name" field on the Project details page
-	And User type "DAS13955" Name in the "Display Name" field on the Project details page
-	And User clicks the "CREATE" Action button
+	And User creates new Slot via Api
+	| Project             | SlotName       | DisplayName |
+	| ChecksLanguage13955 | ChecksLanguage | DAS13955    |
 	And User clicks "Capacity" tab
 	And User clicks "Details" tab
 	And User opens menu for selected language
@@ -85,47 +71,35 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlyLanguageIsDisplayedForSlotsA
 	When User clicks "REMOVE" button in the warning message on Admin page
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE SLOT" Action button
-	And User type "ChecksLanguage 2" Name in the "Slot Name" field on the Project details page
-	And User type "DAS13955" Name in the "Display Name" field on the Project details page
-	And User clicks the "CREATE" Action button
-	And User clicks newly created object link
+	And User creates new Slot via Api
+	| Project             | SlotName         | DisplayName |
+	| ChecksLanguage13955 | ChecksLanguage 2 | DAS13955    |
+	And User navigates to newly created Slot
 	Then See Translations link on the Capacity Slot page is not displayed
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13661 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13661 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatCreatedSlotWithSelectedTypeTeamsAndRequestTypesIsDisplayedWithCorrectlyValue
 	When Project created via API and opened
 	| ProjectName        | Scope       | ProjectTemplate | Mode               |
 	| ProjectForDAS14103 | All Devices | None            | Standalone Project |
+	And User creates new Slot via Api
+	| Project            | SlotName                        | DisplayName                     | CapacityType    |
+	| ProjectForDAS14103 | capacity type = Teams and Paths | capacity type = Teams and Paths | Teams and Paths |
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE SLOT" Action button
-	And User type "capacity type = Teams and Paths" Name in the "Slot Name" field on the Project details page
-	And User type "capacity type = Teams and Paths" Name in the "Display Name" field on the Project details page
-	Then User selects "Teams and Paths" option in "Capacity Type" dropdown
-	When User clicks the "CREATE" Action button
-	Then Success message is displayed and contains "Your capacity slot has been created" text
-	And "" content is displayed in "Capacity Units" column
+	Then "" content is displayed in "Capacity Units" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13417 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13417 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatNoUnitsOptionsWasAddedToCapacityUnitsFilter
 	When Project created via API and opened
 	| ProjectName        | Scope       | ProjectTemplate | Mode               |
 	| ProjectForDAS13417 | All Devices | None            | Standalone Project |
+	And User creates new Slot via Api
+	| Project            | SlotName                        | DisplayName                     | CapacityType    |
+	| ProjectForDAS13417 | capacity type = Teams and Paths | capacity type = Teams and Paths | Teams and Paths |
+	| ProjectForDAS13417 | capacity type = Capacity Units  | capacity type = Capacity Units  | Capacity Units  |
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE SLOT" Action button
-	And User type "capacity type = Teams and Paths" Name in the "Slot Name" field on the Project details page
-	And User type "capacity type = Teams and Paths" Name in the "Display Name" field on the Project details page
-	Then User selects "Teams and Paths" option in "Capacity Type" dropdown
-	When User clicks the "CREATE" Action button
-	Then Success message is displayed and contains "Your capacity slot has been created" text
-	When User clicks the "CREATE SLOT" Action button
-	And User type "capacity type = Capacity Units" Name in the "Slot Name" field on the Project details page
-	And User type "capacity type = Capacity Units" Name in the "Display Name" field on the Project details page
-	Then User selects "Capacity Units" option in "Capacity Type" dropdown
-	When User clicks the "CREATE" Action button
-	Then Success message is displayed and contains "Your capacity slot has been created" text
 	When User clicks String Filter button for "Capacity Units" column on the Admin page
 	And User selects "All Capacity Units" checkbox from String Filter with item list on the Admin page
 	Then Rows counter shows "1" of "2" rows

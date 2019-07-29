@@ -32,7 +32,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Forms
         [FindsBy(How = How.XPath, Using = ".//mat-select[@id='colorTemplate']")]
         public IWebElement ColourDropbox { get; set; }
 
-        
+        [FindsBy(How = How.XPath, Using = ".//span[@class='mat-option-text']//span")]
+        public IList<IWebElement> ColourPicker { get; set; }
 
 
         public override List<By> GetPageIdentitySelectors()

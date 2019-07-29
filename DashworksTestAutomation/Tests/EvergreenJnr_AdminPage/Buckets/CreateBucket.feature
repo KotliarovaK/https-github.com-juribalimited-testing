@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11770 @Buckets @Delete_Newly_Created_Bucket
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11770 @Buckets @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedBucketUsingTheSpaceAsAFirstSymbol
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -25,7 +25,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedBucketUsing
 	Then Error message with "A bucket already exists with this name" text is displayed
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @DAS16636 @Buckets @Set_Default_Bucket @Delete_Newly_Created_Bucket @Do_Not_Run_With_Buckets
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @DAS16636 @Buckets @Set_Default_Bucket @Cleanup @Do_Not_Run_With_Buckets
 Scenario: EvergreenJnr_AdminPage_CreatingDefaultBucket
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -58,4 +58,4 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyBucketNa
 	Then "Create Evergreen Bucket" page should be displayed to the user
 	When User enters " " in the "Bucket Name" field
 	And User selects "Admin IT" team in the Team dropdown on the Buckets page
-	Then Create Bucket button is disabled
+	Then "CREATE" Action button is disabled

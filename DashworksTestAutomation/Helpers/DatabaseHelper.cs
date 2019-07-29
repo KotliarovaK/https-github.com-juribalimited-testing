@@ -4,10 +4,12 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Bucket;
 using DashworksTestAutomation.DTO.Evergreen.Admin.CapacityUnits;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Rings;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Teams;
+using DashworksTestAutomation.DTO.Projects;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
 using TechTalk.SpecFlow;
@@ -111,9 +113,23 @@ namespace DashworksTestAutomation.Helpers
 
         public static CapacityUnitDto GetCapacityUnit(string name)
         {
+            return GetCapacityUnitFromDb(name);
+        }
+
+        public static CapacityUnitDto GetCapacityUnit(string name, string projectName)
+        {
+            return GetCapacityUnitFromDb(name, projectName);
+        }
+
+        //Null for Evergreen projects
+        private static CapacityUnitDto GetCapacityUnitFromDb(string name, string projectName = "")
+        {
+            string query = string.IsNullOrEmpty(projectName)
+                ? $"select [UnitId], [UnitName], [UnitDescription], [IsDefault], [ProjectID] from [PM].[dbo].[CapacityUnits] where UnitName='{name}' and [ProjectID] is NULL"
+                : $"select [UnitId], [UnitName], [UnitDescription], [IsDefault], [ProjectID] from [PM].[dbo].[CapacityUnits] where UnitName='{name}' and [ProjectId] = {GetProjectId(projectName)}";
+
             var dataTable = DatabaseHelper
-                .ExecuteReaderWithoutZeroResultCheck(
-                    $"select [UnitId], [UnitName], [UnitDescription], [IsDefault] from [PM].[dbo].[CapacityUnits] where UnitName='{name}'");
+                .ExecuteReaderWithoutZeroResultCheck(query);
 
             if (dataTable.Rows.Count < 1)
                 throw new Exception($"Unable to find Capacity Unit with name {name} in the Database");
@@ -186,7 +202,6 @@ namespace DashworksTestAutomation.Helpers
                 Logger.Write($"Some issues appears during Team Unlinking: {e}");
             }
         }
-
 
         #endregion
 
@@ -281,6 +296,74 @@ namespace DashworksTestAutomation.Helpers
 
             return DatabaseHelper.ExecuteReader(
                 $"select [ListId] from [DesktopBI].[dbo].[EvergreenList] where [ListName]='{listName}'", 0).LastOrDefault();
+        }
+
+        #endregion
+
+        #region Task
+
+        public static string GetTaskId(TaskPropertiesDto task)
+        {
+            var query =
+                $"select ptl.TaskId from [PM].[dbo].[ProjectTaskLanguage] as ptl join[PM].[dbo].[ProjectTasks] as pt on ptl.TaskId = pt.TaskID where pt.ProjectID = {task.ProjectId} and ptl.[TaskName] = '{task.Name}'";
+            var taskId =
+                DatabaseHelper.ExecuteReader(query, 0).LastOrDefault();
+            return taskId;
+        }
+
+        public static void DeleteTask(TaskPropertiesDto task)
+        {
+            DeleteTaskFromDb(task.Id);
+        }
+
+        private static void DeleteTaskFromDb(string taskId)
+        {
+            DatabaseHelper.ExecuteQuery($"delete from [PM].[dbo].[ProjectTaskLanguage] where [TaskID] = {taskId}");
+            DatabaseHelper.ExecuteQuery($"delete from [PM].[dbo].[ProjectTasks] where [TaskID] = {taskId}");
+        }
+
+        #endregion
+
+        #region User
+
+        public static string GetUserId(string name)
+        {
+            var userId =
+                DatabaseHelper.ExecuteReader(
+                    $"select [UserId] from [aspnetdb].[dbo].[aspnet_Users] where [LoweredUserName] = '{name}'",
+                    0)[0];
+            return userId;
+        }
+
+        public static void DeleteUser(UserDto user)
+        {
+            DatabaseHelper.ExecuteQuery($"delete from [aspnetdb].[dbo].[aspnet_UsersInRoles] where [UserId] = '{user.Id}'");
+            DatabaseHelper.ExecuteQuery($"delete from [aspnetdb].[dbo].[aspnet_Membership] where [UserId] = '{user.Id}'");
+            DatabaseHelper.ExecuteQuery($"delete from [aspnetdb].[dbo].[aspnet_Users] where [UserName] = '{user.Username}'");
+        }
+
+        #endregion
+
+        #region ReauestType
+
+        public static string GetRequestTypeId(string name, string projectId)
+        {
+            var query =
+                $"select rtl.[RequestTypeId] from [PM].[dbo].[RequestTypeLanguage] as rtl join[PM].[dbo].[RequestTypes] as rt on rtl.RequestTypeId = rt.RequestTypeId where rtl.RequestType = '{name}' and rt.ProjectId = {projectId}";
+            var userId = DatabaseHelper.ExecuteReader(query, 0)[0];
+            return userId;
+        }
+
+        #endregion
+
+        #region Slot
+
+        public static string GetSlotId(string name, string projectId)
+        {
+            var query =
+                $"select [SlotId] from [PM].[dbo].[CapacitySlots] where [SlotName] = '{name}' and [ProjectId] = {projectId}";
+            var userId = DatabaseHelper.ExecuteReader(query, 0)[0];
+            return userId;
         }
 
         #endregion

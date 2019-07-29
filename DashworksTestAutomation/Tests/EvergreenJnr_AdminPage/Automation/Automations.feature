@@ -416,7 +416,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridLoadsWithActionsForAnAutoma
 	When User type "15309_Action" Name in the "Action Name" field on the Automation details page
 	When User selects "Update path" in the "Action Type" dropdown
 	When User selects "1803 Rollout" in the Project dropdown
-	When User selects "Undetermined" in the Path dropdown
+	When User selects "Undetermined" in the "Path" dropdown for Actions
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "click here to view the 15309_Action action" link
 	When User have opened column settings for "Action" column
@@ -484,7 +484,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeListIsLoadedWithCor
 	| All Devices      |
 	| 1803 Rollout     |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15886 @DAS15423 @DAS16317 @DAS16316 @DAS17223 @DAS17336 @Delete_Newly_Created_List
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15886 @DAS15423 @DAS16317 @DAS16316 @DAS17223 @DAS17336 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextForDeletedList
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Filters button
@@ -595,7 +595,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateAndCreateActionsFunctionalityForAuto
 	When User type "17171_Action" Name in the "Action Name" field on the Automation details page
 	When User selects "Update path" in the "Action Type" dropdown
 	When User selects "Migration Project Phase 2 (User Project)" in the Project dropdown
-	When User selects "[Default (User)]" in the Path dropdown
+	When User selects "[Default (User)]" in the "Path" dropdown for Actions
 	When User clicks the "CREATE" Action button
 	Then Error message with "This automation is currently running" text is displayed
 	When User clicks "Actions" tab
@@ -604,7 +604,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateAndCreateActionsFunctionalityForAuto
 	When User clicks the "UPDATE" Action button
 	Then Error message with "This automation is currently running" text is displayed
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17003 @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17003 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_ChechAutomationsPermissions
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -637,7 +637,7 @@ Scenario: EvergreenJnr_AdminPage_ChechAutomationsPermissions
 	And User select "Manage Users" option in Management Console
 	And User removes "17003User" User
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17003 @Delete_Newly_Created_List @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17003 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_ChechAutomationsPermissionsForScopeDropdownLists
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user

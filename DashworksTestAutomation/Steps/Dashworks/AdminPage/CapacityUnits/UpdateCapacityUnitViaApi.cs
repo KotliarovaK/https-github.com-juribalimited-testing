@@ -62,11 +62,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.CapacityUnits
                 if (string.IsNullOrEmpty(capacityUnits[i].Name))
                     throw new Exception("Unable to update Capacity Unit with empty name");
 
-                var request = new RestRequest(requestUri);
-
-                request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
-                request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
-                request.AddParameter("Referer", UrlProvider.EvergreenUrl);
+                var request = requestUri.GenerateRequest();
                 request.AddParameter("objectId", null);
                 request.AddParameter("name", capacityUnits[i].Name);
                 request.AddParameter("description", capacityUnits[i].Description);

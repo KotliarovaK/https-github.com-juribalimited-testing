@@ -5,25 +5,16 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13792 @DAS13788 @DAS14241 @Delete_Newly_Created_Project @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13792 @DAS13788 @DAS14241 @Cleanup @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotAppearsAfterDuplicateActionWithCorrectNameAndSameContent
 	When Project created via API and opened
 	| ProjectName        | Scope       | ProjectTemplate | Mode               |
 	| ProjectForDAS13979 | All Devices | None            | Standalone Project |
+	And User creates new Slot via Api
+	| Project            | SlotName   | DisplayName | Tasks | CapacityType    | Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday |
+	| ProjectForDAS13979 | Slot 13979 | 13979       |       | Teams and Paths | 0      | 1       | 2         | 3        | 4      | 5        | 6      |
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE SLOT" Action button
-	And User type "Slot 13979" Name in the "Slot Name" field on the Project details page
-	And User type "13979" Name in the "Display Name" field on the Project details page
-	Then User selects "Teams and Paths" option in "Capacity Type" dropdown
-	When User changes value to "0" for "Monday" day column
-	And User changes value to "1" for "Tuesday" day column
-	And User changes value to "2" for "Wednesday" day column
-	And User changes value to "3" for "Thursday" day column
-	And User changes value to "4" for "Friday" day column
-	And User changes value to "5" for "Saturday" day column
-	And User changes value to "6" for "Sunday" day column
-	And User clicks the "CREATE" Action button
 	And User opens settings for "Slot 13979" row
 	And User selects "Duplicate" option from settings menu
 	Then Success message is displayed and contains "Your capacity slot has been created, click here to view the Slot 13979 (copy) slot" text
@@ -71,19 +62,16 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotAppearsAfterDuplicateActionWith
 	When User clicks refresh button in the browser
 	Then Counter shows "1" found rows
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS14478 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS14478 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatCopySuffixDisplayingForNames
 	When Project created via API and opened
 	| ProjectName        | Scope       | ProjectTemplate | Mode               |
 	| ProjectForDAS14478 | All Devices | None            | Standalone Project |
+	And User creates new Slot via Api
+	| Project            | SlotName   | DisplayName | CapacityType    |
+	| ProjectForDAS14478 | Slot 14478 | 14478       | Teams and Paths |
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE SLOT" Action button
-	And User type "Slot 14478" Name in the "Slot Name" field on the Project details page
-	And User type "14478" Name in the "Display Name" field on the Project details page
-	Then User selects "Teams and Paths" option in "Capacity Type" dropdown
-	When User clicks the "CREATE" Action button
-	Then Success message is displayed and contains "Your capacity slot has been created" text
 	When User opens settings for "Slot 14478" row
 	And User selects "Duplicate" option from settings menu
 	Then Success message is displayed and contains "Your capacity slot has been created, click here to view the Slot 14478 (copy) slot" text
@@ -91,11 +79,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCopySuffixDisplayingForNames
 	Then "Slot 14478 (copy)" content is displayed in "Slot Name" field
 	And "14478" content is displayed in "Display Name" field
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13980 @DAS13981
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13980 @DAS13981 @DAS17458
 Scenario: EvergreenJnr_AdminPage_CheckThatMessageDisplayedAndMoveBtnDisabledWhenInvalidValueEnteredInSlotMoveToPositionDialog
 	When User navigates to "Windows 7 Migration (Computer Scheduled Project)" project details
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
+	And User clicks String Filter button for "Paths" column on the Admin page
+	When User selects "No Paths" checkbox from String Filter on the Admin page
+	When User clicks Reset Filters button on the Admin page
 	And User opens settings for "User Slot" row
 	And User selects "Move to position" option from settings menu
 	And User remembers the Move to position dialog size
@@ -105,28 +96,18 @@ Scenario: EvergreenJnr_AdminPage_CheckThatMessageDisplayedAndMoveBtnDisabledWhen
 	And Alert message is displayed and contains "Enter integer value between 1 and 32767" text
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13791 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13791 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatSlotIsMovedToLastPositionIfValueEnteredInMoveToPositionIsGreaterThanTotalresocordsNumber
 	When Project created via API and opened
 	| ProjectName        | Scope       | ProjectTemplate | Mode               |
 	| ProjectForDAS13791 | All Devices | None            | Standalone Project |
+	And User creates new Slot via Api
+	| Project            | SlotName   | DisplayName | CapacityType    |
+	| ProjectForDAS13791 | Slot 10001 | 10001       | Teams and Paths |
+	| ProjectForDAS13791 | Slot 10002 | 10002       | Teams and Paths |
+	| ProjectForDAS13791 | Slot 10003 | 10003       | Teams and Paths |
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE SLOT" Action button
-	And User type "Slot 10001" Name in the "Slot Name" field on the Project details page
-	And User type "10001" Name in the "Display Name" field on the Project details page
-	Then User selects "Teams and Paths" option in "Capacity Type" dropdown
-	When User clicks the "CREATE" Action button
-	And User clicks the "CREATE SLOT" Action button
-	And User type "Slot 10002" Name in the "Slot Name" field on the Project details page
-	And User type "10002" Name in the "Display Name" field on the Project details page
-	Then User selects "Teams and Paths" option in "Capacity Type" dropdown
-	When User clicks the "CREATE" Action button
-	And User clicks the "CREATE SLOT" Action button
-	And User type "Slot 10003" Name in the "Slot Name" field on the Project details page
-	And User type "10003" Name in the "Display Name" field on the Project details page
-	Then User selects "Teams and Paths" option in "Capacity Type" dropdown
-	When User clicks the "CREATE" Action button
 	Then User sees next Slots on the Capacity Slots page:
 	| slots      |
 	| Slot 10001 |

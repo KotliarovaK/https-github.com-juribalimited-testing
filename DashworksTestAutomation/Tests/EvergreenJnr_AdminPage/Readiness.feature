@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS15665 @DAS14994 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS15665 @DAS14994 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatOptionsInTheCogMenuForReadinessAreCorrect
 	When User clicks Admin on the left-hand menu
 	When User clicks the "CREATE PROJECT" Action button
@@ -37,7 +37,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOptionsInTheCogMenuForReadinessAreCorr
 	| Make default for applications |
 	| Delete                        |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS15884 @DAS15789 @DAS16131 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS15884 @DAS15789 @DAS16131 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAppearWhenDeleteReadiness
 	When User clicks Admin on the left-hand menu
 	When User clicks the "CREATE PROJECT" Action button
@@ -77,7 +77,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAppearWhenDeleteReadine
 	When User clicks "DELETE" button in the Readiness dialog screen
 	Then There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS16131 @DAS16226 @DAS16163 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS16131 @DAS16226 @DAS16163 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckReadinessDialogContainerDisplay
 	When User clicks Admin on the left-hand menu
 	When User clicks the "CREATE PROJECT" Action button
@@ -382,3 +382,45 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageAboutUnconfirmedChangesA
 	Then "You have unsaved changes. Are you sure you want to leave the page?" text is displayed in the warning message
 	Then "YES" button is displayed in the warning message
 	Then "NO" button is displayed in the warning message
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS16363
+Scenario: EvergreenJnr_AdminPage_CheckThatReadinessAreTranslatedAccordingToAccountLanguageOnCreatePage
+	When User language is changed to "Deutsch" via API
+	And User navigates to Create Readiness page of "1803 Rollout" project
+	And User clicks Colour Template field on Edit Readiness
+	Then User sees following options for Colour Template selector on Create Readiness page:
+	| ColorTemplate |
+	| SCHWARZ       |
+	| BLAU          |
+	| TÜRKIS        |
+	| ROT           |
+	| BRAUN         |
+	| PINK          |
+	| BERNSTEIN     |
+	| ORANGE        |
+	| LILA          |
+	| GRÜN          |
+	| GRAU          |
+	| SILBER        |
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS16363
+Scenario: EvergreenJnr_AdminPage_CheckThatReadinessAreTranslatedAccordingToAccountLanguageOnEditPage
+	When User language is changed to "Deutsch" via API
+	And User navigates to Readiness page of "1803 Rollout" project
+	And User enters "GREEN" text in the Search field for "Readiness" column
+	And User click content from "Readiness" column
+	And User clicks Colour Template field on Edit Readiness
+	Then User sees following options for Colour Template selector on Create Readiness page:
+	| ColorTemplate |
+	| SCHWARZ       |
+	| BLAU          |
+	| TÜRKIS        |
+	| ROT           |
+	| BRAUN         |
+	| PINK          |
+	| BERNSTEIN     |
+	| ORANGE        |
+	| LILA          |
+	| GRÜN          |
+	| GRAU          |
+	| SILBER        |

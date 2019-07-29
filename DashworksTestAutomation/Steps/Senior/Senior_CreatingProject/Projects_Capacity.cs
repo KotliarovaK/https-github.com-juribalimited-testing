@@ -139,7 +139,7 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
         {
             var page = _driver.NowAt<Capacity_SummaryPage>();
             _driver.WaitForElementToBeDisplayed(page.Table);
-            Assert.IsTrue(page.Table.Displayed, "Table is not displayed for selected request type");
+            Utils.Verify.IsTrue(page.Table.Displayed, "Table is not displayed for selected request type");
         }
 
         [When(@"User updates the Override Dates on Capacity tab")]

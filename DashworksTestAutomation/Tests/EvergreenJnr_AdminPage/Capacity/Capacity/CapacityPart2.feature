@@ -5,10 +5,10 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13790 @DAS13528 @DAS13165 @DAS13164 @DAS13154 @DAS14037 @DAS14236 @DAS13157 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13790 @DAS13528 @DAS13165 @DAS13164 @DAS13154 @DAS14037 @DAS14236 @DAS13157 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBannerForCreatedUnit
 	When Project created via API and opened
-	| ProjectName           | Scope         | ProjectTemplate | Mode               |
+	| ProjectName             | Scope       | ProjectTemplate | Mode               |
 	| ProjectForCapacity13790 | All Devices | None            | Standalone Project |
 	And User clicks "Capacity" tab
 	And User selects "Units" tab on the Project details page
@@ -25,31 +25,23 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBanner
 	When User updates the "Default Unit" checkbox state
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The capacity unit details have been updated" text
-	#Remove # after DAS-14037 fixed
-	#Then Success message is displayed correctly
+	Then Success message is displayed correctly
 	When User enters "13720" text in the Search field for "Description" column
 	And User click content from "Capacity Unit" column
 	Then "Default Unit" checkbox is checked and cannot be unchecked
 	When User clicks the "CANCEL" Action button
-	And User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
-	And User type " CapacityUnit13790 " Name in the "Capacity Unit Name" field on the Project details page
-	And User type "DAS13528" Name in the "Description" field on the Project details page
-	And User clicks the "CREATE" Action button
-	Then Error message with "A capacity unit already exists with this name" text is displayed
-	When User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
-	And User type "CapacityUnit2" Name in the "Capacity Unit Name" field on the Project details page
-	And User type "DAS13528" Name in the "Description" field on the Project details page
-	And User clicks the "CREATE" Action button
-	Then Success message is displayed and contains "The capacity unit has been created" text
+	And User creates new Capacity Unit via api
+	| Name              | Description | IsDefault | Project                 |
+	| CapacityUnit13790 | DAS13528    | false     | ProjectForCapacity13790 |
+	| CapacityUnit2     | DAS13528    | false     | ProjectForCapacity13790 |
 	When User selects "Capacity Details" tab on the Project details page
 	And User selects "Clone evergreen capacity units to project capacity units" in the "Capacity Units" dropdown
 	And User clicks the "UPDATE" Action button
-	#Remove # after DAS-14037 fixed
-	#Then Success message is displayed correctly
+	Then Success message is displayed correctly
 	Then Success message is displayed and contains "The project capacity details have been updated" text
 	Then There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @DAS12672 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @DAS12672 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreated
 	When Project created via API and opened
 	| ProjectName           | Scope         | ProjectTemplate | Mode               |
@@ -79,9 +71,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreated
 	When User clicks newly created object link
 	Then URL contains "capacity/units/unit/"
 	And "Default Unit" checkbox is checked and cannot be unchecked
-	# commented until DAS-13151
-	# And "UPDATE" Action button is disabled 
-	# And "CANCEL" Action button is disabled
+	#DAS-13151
+	And "UPDATE" Action button is disabled
+	And "CANCEL" Action button is enabled
 	When User clicks "Capacity" tab
 	And User selects "Units" tab on the Project details page
 	And User enters "CapacityUnit12672" text in the Search field for "Capacity Unit" column
@@ -97,9 +89,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreated
 	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
 	Then "TRUE" content is displayed in "Default" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS14240 @DAS16372
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS14240 @DAS16372 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatCapacityUnitsGridUpdatedAfterUnitUpdatingOrCreation
-	When User navigates to "Email Migration" project details
+	When User creates new Capacity Unit via api
+	| Name              | Description | IsDefault | Project         |
+	| CapacityUnit14240 | 14240       | false     | Email Migration |
+	And User navigates to "Email Migration" project details
 	And User clicks "Capacity" tab
 	And User selects "Units" tab on the Project details page
 	And User clicks content from "Capacity Unit" column
@@ -118,18 +113,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCapacityUnitsGridUpdatedAfterUnitUpdat
 	And User clicks content from "Project" column
 	And User clicks "Capacity" tab
 	And User selects "Units" tab on the Project details page
-	When User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
-	And User type "CapacityUnit14240" Name in the "Capacity Unit Name" field on the Project details page
-	And User type "14240" Name in the "Description" field on the Project details page
-	And User clicks the "CREATE" Action button
-	Then Success message is displayed and contains "The capacity unit has been created" text
-	And User sees next Units on the Capacity Units page:
+	Then User sees next Units on the Capacity Units page:
 	| units             |
 	| Unassigned        |
 	| CapacityUnit14240 |
 	When User enters "CapacityUnit14240" text in the Search field for "Capacity Unit" column
 	And User click content from "Capacity Unit" column
-	And User type "CapacityUnit14240NameUpdated" Name in the "Capacity Unit Name" field on the Project details page
+	And User type "CapacityUnit14240NameUpdated" Name in the "Capacity Unit Name" field on the 'Email Migration' Project details page
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The capacity unit details have been updated" text
 	And User sees next Units on the Capacity Units page:
@@ -146,7 +136,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCapacityUnitsGridUpdatedAfterUnitUpdat
 	Then Success message is displayed and contains "The selected unit has been deleted" text
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13945 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13945 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitWithEmptyName
 	When Project created via API and opened
 	| ProjectName        | Scope       | ProjectTemplate | Mode               |
@@ -156,4 +146,4 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitWithEmptyNam
 	And User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
 	And User type " " Name in the "Capacity Unit Name" field on the Project details page
 	And User type "13945" Name in the "Description" field on the Project details page
-	Then Create Capacity Unit button is disabled
+	Then "CREATE" Action button is disabled

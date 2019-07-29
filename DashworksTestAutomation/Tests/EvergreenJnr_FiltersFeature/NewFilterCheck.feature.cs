@@ -523,7 +523,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("NewFilterCheck")]
         [NUnit.Framework.CategoryAttribute("DAS10578")]
         [NUnit.Framework.CategoryAttribute("DAS14159")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "17,225", null)]
+        [NUnit.Framework.TestCaseAttribute("Devices", "17,219", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "41,335", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "2,223", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "14,784", null)]
@@ -623,7 +623,7 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Babel(Engl: Application Readiness", "Equals, Does not equal", "None", "Babel(Engl: Application Readiness is None", "302", null)]
         [NUnit.Framework.TestCaseAttribute("Barry\'sUse: Application Readiness", "Equals, Does not equal", "None", "Barry\'sUse: Application Readiness is None", "1,072", null)]
         [NUnit.Framework.TestCaseAttribute("ComputerSc: Application Readiness", "Equals, Does not equal", "Green", "ComputerSc: Application Readiness is Green", "911", null)]
-        [NUnit.Framework.TestCaseAttribute("Havoc(BigD: Application Readiness", "Equals, Does not equal", "None", "Havoc(BigD: Application Readiness is None", "1,067", null)]
+        [NUnit.Framework.TestCaseAttribute("Havoc(BigD: Application Readiness", "Equals, Does not equal", "None", "Havoc(BigD: Application Readiness is None", "1,066", null)]
         [NUnit.Framework.TestCaseAttribute("MigrationP: Application Readiness", "Equals, Does not equal", "Blue", "MigrationP: Application Readiness is Blue", "189", null)]
         [NUnit.Framework.TestCaseAttribute("UserSchedu: Application Readiness", "Equals, Does not equal", "None", "UserSchedu: Application Readiness is None", "981", null)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatApplicationReadinessFilterIsAddedToTheList(string columnName, string operators, string filterOption, string text, string rowsCount, string[] exampleTags)

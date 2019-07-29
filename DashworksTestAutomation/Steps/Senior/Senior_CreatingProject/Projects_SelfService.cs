@@ -107,7 +107,7 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
             page.Languages.SelectboxSelect(_welcomeDto.Language.GetValue());
             page.AddLanguageButton.Click();
             var language = page.GetLanguagesByName(_welcomeDto.Language.GetValue());
-            Assert.IsTrue(language.Displayed(), "Selected Language is not displayed");
+            Utils.Verify.IsTrue(language.Displayed(), "Selected Language is not displayed");
             page.GetDeleteButtonByLanguages(_welcomeDto.Language.GetValue()).Click();
             _driver.AcceptAlert();
 

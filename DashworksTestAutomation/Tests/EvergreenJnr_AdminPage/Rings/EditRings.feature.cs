@@ -87,7 +87,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Rings
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Rings")]
         [NUnit.Framework.CategoryAttribute("DAS14839")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckThatRingsDetailsPageCanBeSeenAfterTypeOfRingWasChanged()
         {
             System.Exception lastException = null;
@@ -123,7 +123,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Rings
                         "EvergreenJnr_AdminPage",
                         "Rings",
                         "DAS14839",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

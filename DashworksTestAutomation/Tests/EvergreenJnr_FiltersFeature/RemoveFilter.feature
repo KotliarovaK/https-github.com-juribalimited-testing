@@ -24,7 +24,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatResetIsUpdatingRowCount
 	Then ColumnName is added to the list
 	| ColumnName |
 	| Compliance |
-	And "17,225" rows are displayed in the agGrid
+	And "17,279" rows are displayed in the agGrid
 	Then "Compliance" filter is removed from filters
 
 @Evergreen @Devices @Evergreen_FiltersFeature @RemoveFilter @DAS11506
@@ -45,7 +45,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDeleteByUrlIsUpdatingRowCount
 	Then ColumnName is added to the list
 	| ColumnName |
 	| Compliance |
-	And "17,225" rows are displayed in the agGrid
+	And "17,279" rows are displayed in the agGrid
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	And "Compliance" filter is removed from filters
@@ -97,7 +97,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatFiltersIsResetAndDataOnTheGridUpda
 	Then "14,784" rows are displayed in the agGrid
 	And "City" filter is removed from filters
 
-@Evergreen @AllLists @Evergreen_FiltersFeature @RemoveFilter @DAS12635 @Delete_Newly_Created_List
+@Evergreen @AllLists @Evergreen_FiltersFeature @RemoveFilter @DAS12635 @Cleanup
 Scenario: EvergreenJnr_AllLists_CheckThatCancelingUnsavedFilterDoesNotReloadList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user

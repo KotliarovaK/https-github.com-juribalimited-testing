@@ -87,7 +87,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Readiness")]
         [NUnit.Framework.CategoryAttribute("DAS15665")]
         [NUnit.Framework.CategoryAttribute("DAS14994")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckThatOptionsInTheCogMenuForReadinessAreCorrect()
         {
             System.Exception lastException = null;
@@ -123,7 +123,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "Readiness",
                         "DAS15665",
                         "DAS14994",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -203,7 +203,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS15884")]
         [NUnit.Framework.CategoryAttribute("DAS15789")]
         [NUnit.Framework.CategoryAttribute("DAS16131")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAppearWhenDeleteReadiness()
         {
             System.Exception lastException = null;
@@ -240,7 +240,7 @@ this.FeatureBackground();
                         "DAS15884",
                         "DAS15789",
                         "DAS16131",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 41
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -338,7 +338,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS16131")]
         [NUnit.Framework.CategoryAttribute("DAS16226")]
         [NUnit.Framework.CategoryAttribute("DAS16163")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckReadinessDialogContainerDisplay()
         {
             System.Exception lastException = null;
@@ -375,7 +375,7 @@ this.FeatureBackground();
                         "DAS16131",
                         "DAS16226",
                         "DAS16163",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 81
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1606,6 +1606,188 @@ this.FeatureBackground();
  testRunner.Then("\"YES\" button is displayed in the warning message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 384
  testRunner.Then("\"NO\" button is displayed in the warning message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckThatReadinessAreTranslatedAccordingToAccountLanguageO" +
+            "nCreatePage")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Admin")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
+        [NUnit.Framework.CategoryAttribute("Readiness")]
+        [NUnit.Framework.CategoryAttribute("DAS16363")]
+        public virtual void EvergreenJnr_AdminPage_CheckThatReadinessAreTranslatedAccordingToAccountLanguageOnCreatePage()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AdminPage_CheckThatReadinessAreTranslatedAccordingToAccountLanguageOnCreatePageInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AdminPage_CheckThatReadinessAreTranslatedAccordingToAccountLanguageOnCreatePageInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckThatReadinessAreTranslatedAccordingToAccountLanguageO" +
+                    "nCreatePage", null, new string[] {
+                        "Evergreen",
+                        "Admin",
+                        "EvergreenJnr_AdminPage",
+                        "Readiness",
+                        "DAS16363"});
+#line 387
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 388
+ testRunner.When("User language is changed to \"Deutsch\" via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 389
+ testRunner.And("User navigates to Create Readiness page of \"1803 Rollout\" project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 390
+ testRunner.And("User clicks Colour Template field on Edit Readiness", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColorTemplate"});
+            table14.AddRow(new string[] {
+                        "SCHWARZ"});
+            table14.AddRow(new string[] {
+                        "BLAU"});
+            table14.AddRow(new string[] {
+                        "TÜRKIS"});
+            table14.AddRow(new string[] {
+                        "ROT"});
+            table14.AddRow(new string[] {
+                        "BRAUN"});
+            table14.AddRow(new string[] {
+                        "PINK"});
+            table14.AddRow(new string[] {
+                        "BERNSTEIN"});
+            table14.AddRow(new string[] {
+                        "ORANGE"});
+            table14.AddRow(new string[] {
+                        "LILA"});
+            table14.AddRow(new string[] {
+                        "GRÜN"});
+            table14.AddRow(new string[] {
+                        "GRAU"});
+            table14.AddRow(new string[] {
+                        "SILBER"});
+#line 391
+ testRunner.Then("User sees following options for Colour Template selector on Create Readiness page" +
+                    ":", ((string)(null)), table14, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckThatReadinessAreTranslatedAccordingToAccountLanguageO" +
+            "nEditPage")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Admin")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
+        [NUnit.Framework.CategoryAttribute("Readiness")]
+        [NUnit.Framework.CategoryAttribute("DAS16363")]
+        public virtual void EvergreenJnr_AdminPage_CheckThatReadinessAreTranslatedAccordingToAccountLanguageOnEditPage()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AdminPage_CheckThatReadinessAreTranslatedAccordingToAccountLanguageOnEditPageInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AdminPage_CheckThatReadinessAreTranslatedAccordingToAccountLanguageOnEditPageInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckThatReadinessAreTranslatedAccordingToAccountLanguageO" +
+                    "nEditPage", null, new string[] {
+                        "Evergreen",
+                        "Admin",
+                        "EvergreenJnr_AdminPage",
+                        "Readiness",
+                        "DAS16363"});
+#line 407
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 408
+ testRunner.When("User language is changed to \"Deutsch\" via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 409
+ testRunner.And("User navigates to Readiness page of \"1803 Rollout\" project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 410
+ testRunner.And("User enters \"GREEN\" text in the Search field for \"Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 411
+ testRunner.And("User click content from \"Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 412
+ testRunner.And("User clicks Colour Template field on Edit Readiness", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColorTemplate"});
+            table15.AddRow(new string[] {
+                        "SCHWARZ"});
+            table15.AddRow(new string[] {
+                        "BLAU"});
+            table15.AddRow(new string[] {
+                        "TÜRKIS"});
+            table15.AddRow(new string[] {
+                        "ROT"});
+            table15.AddRow(new string[] {
+                        "BRAUN"});
+            table15.AddRow(new string[] {
+                        "PINK"});
+            table15.AddRow(new string[] {
+                        "BERNSTEIN"});
+            table15.AddRow(new string[] {
+                        "ORANGE"});
+            table15.AddRow(new string[] {
+                        "LILA"});
+            table15.AddRow(new string[] {
+                        "GRÜN"});
+            table15.AddRow(new string[] {
+                        "GRAU"});
+            table15.AddRow(new string[] {
+                        "SILBER"});
+#line 413
+ testRunner.Then("User sees following options for Colour Template selector on Create Readiness page" +
+                    ":", ((string)(null)), table15, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

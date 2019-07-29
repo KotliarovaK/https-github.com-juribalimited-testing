@@ -4,6 +4,7 @@ using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using System.Linq;
+using System.Threading;
 using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using TechTalk.SpecFlow;
@@ -20,7 +21,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver = driver;
         }
 
-
         [When(@"User clicks on the Unlimited field on the Capacity Slots page")]
         public void WhenUserClicksOnTheUnlimitedFieldOnTheOnTheCapacitySlotsPage()
         {
@@ -32,10 +32,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenUserSeesNextSlotsOnTheCapacitySlotsPage(Table slots)
         {
             var page = _driver.NowAt<Capacity_SlotsPage>();
+            //Wait for table content to be fully loaded
+            Thread.Sleep(1400);
             _driver.WaitForDataLoading();
 
             for (var i = 0; i < slots.RowCount; i++)
-                Assert.That(page.GridSlotsNames[i].Text, Is.EqualTo(slots.Rows[i].Values.FirstOrDefault()),
+                Utils.Verify.That(page.GridSlotsNames[i].Text, Is.EqualTo(slots.Rows[i].Values.FirstOrDefault()),
                     "Slots are not the same");
         }
 
@@ -58,7 +60,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<CreateCapacitySlotPage>();
 
-            Assert.That(page.GetValueFromDateByPlaceholder(field), Is.EqualTo(valueExpected));
+            Utils.Verify.That(page.GetValueFromDateByPlaceholder(field), Is.EqualTo(valueExpected));
         }
 
         [When(@"User clicks ""(.*)"" link on the Capacity Slot page")]
@@ -72,14 +74,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSeeTranslationsLinkOnTheCapacitySlotPageIsNotDisplayed()
         {
             var page = _driver.NowAt<Capacity_SlotsPage>();
-            Assert.IsFalse(page.LanguageTranslationsLink.Displayed(), "See Translations link is displayed");
+            Utils.Verify.IsFalse(page.LanguageTranslationsLink.Displayed(), "See Translations link is displayed");
         }
 
         [Then(@"""(.*)"" Language is displayed in Translations table on the Capacity Slot page")]
         public void ThenLanguageIsDisplayedInTranslationsTableOnTheCapacitySlotPage(string language)
         {
             var page = _driver.NowAt<Capacity_SlotsPage>();
-            Assert.IsTrue(page.GetLanguageInTranslationsTableByName(language).Displayed, $"{language} is not displayed in Translations table");
+            Utils.Verify.IsTrue(page.GetLanguageInTranslationsTableByName(language).Displayed, $"{language} is not displayed in Translations table");
         }
 
         [When(@"User types ""(.*)"" in Display Name field for ""(.*)"" Language in Translations table on the Capacity Slot page")]
@@ -94,7 +96,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenIsDisplayedInDisplayNameFieldForLanguageInTranslationsTableOnTheCapacitySlotPage(string text, string language)
         {
             var page = _driver.NowAt<Capacity_SlotsPage>();
-            Assert.AreEqual(text, page.GetDisplayNameFieldByLanguage(language).GetAttribute("value"), $"'{text}' text is not displayed in Display Name field");
+            Utils.Verify.AreEqual(text, page.GetDisplayNameFieldByLanguage(language).GetAttribute("value"), $"'{text}' text is not displayed in Display Name field");
         }
 
         [When(@"User selects next items in the ""(.*)"" dropdown:")]

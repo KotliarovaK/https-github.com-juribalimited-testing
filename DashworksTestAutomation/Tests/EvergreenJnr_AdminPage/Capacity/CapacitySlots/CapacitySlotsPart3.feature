@@ -5,19 +5,16 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Override_Dates @DAS13779 @DAS14176 @DAS14177 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Override_Dates @DAS13779 @DAS14176 @DAS14177 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatErrorMessageAppearsWhenCreatingDuplicateOverrideDate
 	When Project created via API and opened
 	| ProjectName     | Scope       | ProjectTemplate | Mode               |
 	| ProjectDAS13779 | All Devices | None            | Standalone Project |
+	And User creates new Slot via Api
+	| Project         | SlotName     | DisplayName | SlotAvailableFrom | SlotAvailableTo |
+	| ProjectDAS13779 | SlotDAS13779 | 13779       | 29 Oct 2018       | 29 Oct 2018     |
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE SLOT" Action button
-	And User type "SlotDAS13779" Name in the "Slot Name" field on the Project details page
-	And User type "13779" Name in the "Display Name" field on the Project details page
-	And User enters "29 Oct 2018" value to "Slot Available From" date field on Capacity Slot form page
-	And User enters "29 Oct 2018" value to "Slot Available To" date field on Capacity Slot form page
-	And User clicks the "CREATE" Action button
 	And User selects "Override Dates" tab on the Project details page
 	And User clicks the "CREATE OVERRIDE DATE" Action button
 	Then Create Override Date is displayed correctly
@@ -42,19 +39,15 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorMessageAppearsWhenCreatingDuplica
 	And "1" rows label displays in Action panel
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Override_Dates @DAS13442 @DAS13440 @DAS17418 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Override_Dates @DAS13442 @DAS13440 @DAS17418 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorInConsoleAfterSettingSameOverrideDatesForOneSlot
 	When Project created via API and opened
 	| ProjectName     | Scope       | ProjectTemplate | Mode               |
 	| ProjectDAS13442 | All Devices | None            | Standalone Project |
-	And User clicks "Capacity" tab
-	And User selects "Slots" tab on the Project details page
-	When User clicks the "CREATE SLOT" Action button
-	And User type "Slot13442" Name in the "Slot Name" field on the Project details page
-	And User type "13442" Name in the "Display Name" field on the Project details page
-	And User clicks the "CREATE" Action button
-	Then Success message is displayed and contains "Your capacity slot has been created" text
-	When User clicks newly created object link
+	And User creates new Slot via Api
+	| Project         | SlotName  | DisplayName |
+	| ProjectDAS13442 | Slot13442 | 13442       |
+	And User navigates to newly created Slot
 	And User clicks "Capacity" tab
 	And User selects "Override Dates" tab on the Project details page
 	And User clicks the "CREATE OVERRIDE DATE" Action button

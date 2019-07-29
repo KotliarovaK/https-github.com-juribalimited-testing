@@ -50,8 +50,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
             #region Check menu Items
 
             Logger.Write("Check User account menu items count");
-            Assert.AreEqual(2, MenuItems.Count);
-            Assert.IsTrue(ProfileButton.Displayed(), "My Profile menu item is not displayed");
+            Utils.Verify.AreEqual(2, MenuItems.Count, "PLEASE ADD EXCEPTION MESSAGE");
+            Utils.Verify.IsTrue(ProfileButton.Displayed(), "My Profile menu item is not displayed");
 
             #endregion Check menu Items
 

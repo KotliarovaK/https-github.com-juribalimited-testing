@@ -19,7 +19,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.Login
     {
         private readonly RemoteWebDriver _driver;
 
-        public EvergreenJnr_Login(RemoteWebDriver driver, UserDto user, UsedUsers usedUsers, RestWebClient client) : base(user, usedUsers, client)
+        public EvergreenJnr_Login(RemoteWebDriver driver, UserDto user, UsedUsers usedUsers, RestWebClient client, AuthObject authObject) : 
+            base(user, usedUsers, client, authObject)
         {
             _driver = driver;
         }
@@ -51,13 +52,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.Login
 
             if (loginPage.LoginGroupBox.Displayed())
             {
-                loginPage.UserNameTextBox.SendKeys(user.UserName);
+                loginPage.UserNameTextBox.SendKeys(user.Username);
                 loginPage.PasswordTextBox.SendKeys(user.Password);
                 loginPage.LoginButton.Click();
             }
             else
             {
-                loginPage.SplashUserNameTextBox.SendKeys(user.UserName);
+                loginPage.SplashUserNameTextBox.SendKeys(user.Username);
                 loginPage.SplashPasswordTextBox.SendKeys(user.Password);
                 loginPage.SplashLoginButton.Click();
             }
@@ -73,13 +74,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.Login
 
             if (loginPage.LoginGroupBox.Displayed())
             {
-                loginPage.UserNameTextBox.SendKeys(User.UserName);
+                loginPage.UserNameTextBox.SendKeys(User.Username);
                 loginPage.PasswordTextBox.SendKeys(User.Password);
                 loginPage.LoginButton.Click();
             }
             else
             {
-                loginPage.SplashUserNameTextBox.SendKeys(User.UserName);
+                loginPage.SplashUserNameTextBox.SendKeys(User.Username);
                 loginPage.SplashPasswordTextBox.SendKeys(User.Password);
                 loginPage.SplashLoginButton.Click();
             }
@@ -110,8 +111,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.Login
         {
             var headerMenu = _driver.NowAt<DashworksHeaderMenuElement>();
 
-            Assert.AreEqual("Home - Dashworks", _driver.Title, "Incorrect page is displayed");
-            Assert.AreEqual("Home", headerMenu.PageHeader.Text, "Incorrect page is displayed");
+            Utils.Verify.AreEqual("Home - Dashworks", _driver.Title, "Incorrect page is displayed");
+            Utils.Verify.AreEqual("Home", headerMenu.PageHeader.Text, "Incorrect page is displayed");
             Logger.Write("Dashworks homepage is displayed and is in a logged in state");
         }
 

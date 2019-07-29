@@ -84,7 +84,6 @@ namespace DashworksTestAutomation.Tests.Senior.Senior_CreatingProjects
         [NUnit.Framework.CategoryAttribute("ProjectsOnSenior")]
         [NUnit.Framework.CategoryAttribute("Projects_Administration")]
         [NUnit.Framework.CategoryAttribute("MailboxScheduledProject")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Team")]
         public virtual void Projects_CreateMailboxScheduledProject()
         {
             System.Exception lastException = null;
@@ -116,8 +115,7 @@ namespace DashworksTestAutomation.Tests.Senior.Senior_CreatingProjects
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Projects_CreateMailboxScheduledProject", null, new string[] {
                         "ProjectsOnSenior",
                         "Projects_Administration",
-                        "MailboxScheduledProject",
-                        "Delete_Newly_Created_Team"});
+                        "MailboxScheduledProject"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

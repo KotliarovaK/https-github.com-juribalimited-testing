@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13720 @DAS13431 @DAS13162 @DAS14037 @DAS15823 @Delete_Newly_Created_Project @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13720 @DAS13431 @DAS13162 @DAS14037 @DAS15823 @Cleanup @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatDefaultCapacityUnitRenamedInUnassignedWithoutErrors
 	When Project created via API and opened
 	| ProjectName             | Scope     | ProjectTemplate | Mode               |
@@ -31,7 +31,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDefaultCapacityUnitRenamedInUnassigned
 	| Users         |
 	| Applications  |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13431 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13431 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckDefaultColumnsForDevicesProjectCapacityUnits
 	When Project created via API and opened
 	| ProjectName         | Scope       | ProjectTemplate | Mode               |
@@ -49,7 +49,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultColumnsForDevicesProjectCapacityUni
 	| Users         |
 	| Applications  |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13431 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13431 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckDefaultColumnsForMailboxesProjectCapacityUnits
 	When Project created via API and opened
 	| ProjectName           | Scope         | ProjectTemplate | Mode               |
@@ -67,10 +67,10 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultColumnsForMailboxesProjectCapacityU
 	| Mailboxes     |
 	| Applications  |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Override_Dates @DAS13723 @DAS13370 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Override_Dates @DAS13723 @DAS13370 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedValueIsDisplayedForCapacityColumn
 	When Project created via API and opened
-	| ProjectName           | Scope         | ProjectTemplate | Mode               |
+	| ProjectName             | Scope       | ProjectTemplate | Mode               |
 	| ProjectForCapacity13723 | All Devices | None            | Standalone Project |
 	And User clicks "Capacity" tab
 	And User selects "Override Dates" tab on the Project details page

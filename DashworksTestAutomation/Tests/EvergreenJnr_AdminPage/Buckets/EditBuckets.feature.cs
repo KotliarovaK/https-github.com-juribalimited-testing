@@ -89,7 +89,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Buckets
         [NUnit.Framework.CategoryAttribute("DAS11748")]
         [NUnit.Framework.CategoryAttribute("Buckets")]
         [NUnit.Framework.CategoryAttribute("Set_Default_Bucket")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Bucket")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Buckets")]
         public virtual void EvergreenJnr_AdminPage_CheckThatNotificationMessageIsDisplayedAfterUpdatingBucketToDefaultType()
         {
@@ -128,7 +128,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Buckets
                         "DAS11748",
                         "Buckets",
                         "Set_Default_Bucket",
-                        "Delete_Newly_Created_Bucket",
+                        "Cleanup",
                         "Do_Not_Run_With_Buckets"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);

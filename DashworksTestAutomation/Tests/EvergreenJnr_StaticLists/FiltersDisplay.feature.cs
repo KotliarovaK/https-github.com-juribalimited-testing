@@ -92,7 +92,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
         [NUnit.Framework.CategoryAttribute("DAS12152")]
         [NUnit.Framework.CategoryAttribute("DAS12351")]
         [NUnit.Framework.CategoryAttribute("DAS13389")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesList_CheckThatDynamicFiltersAreClearedForStaticListsWhenOpenedAfterDynamicLists()
         {
             System.Exception lastException = null;
@@ -131,7 +131,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
                         "DAS12152",
                         "DAS12351",
                         "DAS13389",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 10
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -207,7 +207,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12221")]
         [NUnit.Framework.CategoryAttribute("DAS12232")]
         [NUnit.Framework.CategoryAttribute("DAS12351")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesList_CheckThatFiltersAndColumnsAreRestoredForSavedList()
         {
             System.Exception lastException = null;
@@ -246,7 +246,7 @@ this.FeatureBackground();
                         "DAS12221",
                         "DAS12232",
                         "DAS12351",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 38
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -278,7 +278,7 @@ this.FeatureBackground();
 #line 49
  testRunner.Then("\"TestList886350\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 50
- testRunner.And("\"5,161\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\"5,179\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 51
  testRunner.When("User navigates to the \"All Devices\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 52
@@ -288,7 +288,7 @@ this.FeatureBackground();
 #line 54
  testRunner.Then("\"TestList886350\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 55
- testRunner.And("\"5,161\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\"5,179\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 56
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 57
@@ -311,7 +311,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS10695")]
         [NUnit.Framework.CategoryAttribute("DAS12152")]
         [NUnit.Framework.CategoryAttribute("DAS12966")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedWhenAddingExistingObjectToStaticList()
         {
             System.Exception lastException = null;
@@ -349,7 +349,7 @@ this.FeatureBackground();
                         "DAS10695",
                         "DAS12152",
                         "DAS12966",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 61
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

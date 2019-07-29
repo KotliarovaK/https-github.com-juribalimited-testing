@@ -104,35 +104,35 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 case "Devices":
                     //Check Devices heading is visible
                     var devicesPage = _driver.NowAt<DevicesPage>();
-                    StringAssert.Contains(devicesPage.Heading.Text.ToLower(), listPage.ToLower(),
+                    Utils.Verify.Contains(devicesPage.Heading.Text.ToLower(), listPage.ToLower(),
                         "Incorrect list is displayed to user");
                     break;
 
                 case "Users":
                     //Check Users heading is visible
                     var usersPage = _driver.NowAt<UsersPage>();
-                    StringAssert.Contains(usersPage.Heading.Text.ToLower(), listPage.ToLower(),
+                    Utils.Verify.Contains(usersPage.Heading.Text.ToLower(), listPage.ToLower(),
                         "Incorrect list is displayed to user");
                     break;
 
                 case "Applications":
                     //Check Applications heading is visible
                     var applicationsPage = _driver.NowAt<ApplicationsPage>();
-                    StringAssert.Contains(applicationsPage.Heading.Text.ToLower(), listPage.ToLower(),
+                    Utils.Verify.Contains(applicationsPage.Heading.Text.ToLower(), listPage.ToLower(),
                         "Incorrect list is displayed to user");
                     break;
 
                 case "Mailboxes":
                     //Check Mailboxes heading is visible
                     var mailboxesPage = _driver.NowAt<MailboxesPage>();
-                    StringAssert.Contains(mailboxesPage.Heading.Text.ToLower(), listPage.ToLower(),
+                    Utils.Verify.Contains(mailboxesPage.Heading.Text.ToLower(), listPage.ToLower(),
                         "Incorrect list is displayed to user");
                     break;
 
                 case "Admin":
                     //Check Admin heading is visible
                     var adminPage = _driver.NowAt<Pages.Evergreen.AdminPage>();
-                    StringAssert.Contains(adminPage.Heading.Text.ToLower(), listPage.ToLower(),
+                    Utils.Verify.Contains(adminPage.Heading.Text.ToLower(), listPage.ToLower(),
                         "Incorrect list is displayed to user");
                     break;
 
@@ -146,17 +146,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User clicks Admin on the left-hand menu")]
         public void WhenUserClicksAdminOnTheLeft_HandMenu()
         {
-            _driver.NowAt<LeftHandMenuElement>();
-            //menu.Admin.Click();
-            //Admin tab on the left-hand menu is temporarily unavailable
-            _driver.NavigateToUrl($"{UrlProvider.EvergreenUrl}#//admin");
+            var menu =_driver.NowAt<LeftHandMenuElement>();
+            menu.Admin.Click();
         }
 
         [Then(@"Admin page should be displayed to the user")]
         public void ThenAdminPageShouldBeDisplayedToTheUser()
         {
             var page = _driver.NowAt<AdminLeftHandMenu>();
-            Assert.IsTrue(page.AdminSubMenu.Displayed(), "Admin page was not displayed");
+            Utils.Verify.IsTrue(page.AdminSubMenu.Displayed(), "Admin page was not displayed");
             Logger.Write("Admin page is visible");
         }
 
@@ -164,7 +162,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenUpdateReadinessIsDisplayedToTheUser()
         {
             var page = _driver.NowAt<UpdateReadinessPage>();
-            Assert.IsTrue(page.UpdateReadinessTitle.Displayed(), "Update Readiness page was not displayed");
+            Utils.Verify.IsTrue(page.UpdateReadinessTitle.Displayed(), "Update Readiness page was not displayed");
             Logger.Write("Update Readiness page is visible");
         }
 
@@ -172,7 +170,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenAdminMenuItemIsHidden()
         {
             var menu = _driver.NowAtWithoutWait<LeftHandMenuElement>();
-            Assert.IsFalse(menu.Admin.Displayed(), "Admin menu item is displayed");
+            Utils.Verify.IsFalse(menu.Admin.Displayed(), "Admin menu item is displayed");
         }
 
         [When(@"User navigates to ""(.*)"" Object on PMObject page")]
@@ -204,8 +202,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenLeft_HandMenuIsHighlighted(string menuName)
         {
             var menu = _driver.NowAtWithoutWait<BaseDashboardPage>();
-            Assert.AreEqual(menu.GetHighlightedLeftMenuByName(menuName).GetCssValue("color"), "rgba(242, 88, 49, 1)");
-            Assert.IsTrue(menu.GetHighlightedLeftMenuByName(menuName).Displayed(), $"");
+            Utils.Verify.AreEqual(menu.GetHighlightedLeftMenuByName(menuName).GetCssValue("color"),
+                "rgba(242, 88, 49, 1)", "PLEASE ADD EXCEPTION MESSAGE");
+            Utils.Verify.IsTrue(menu.GetHighlightedLeftMenuByName(menuName).Displayed(), $"");
         }
     }
 }

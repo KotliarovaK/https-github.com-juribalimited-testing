@@ -87,7 +87,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS15364")]
         [NUnit.Framework.CategoryAttribute("DAS15316")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingCardWidgetUsedCpuVirtField()
         {
             System.Exception lastException = null;
@@ -123,7 +123,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "Widgets",
                         "DAS15364",
                         "DAS15316",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -381,8 +381,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS16069")]
         [NUnit.Framework.CategoryAttribute("DAS15134")]
         [NUnit.Framework.CategoryAttribute("DAS15355")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Dashboard")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatCardWidgetValuesLeadsToApplicationsListFilteredPage()
         {
             System.Exception lastException = null;
@@ -419,8 +419,8 @@ this.FeatureBackground();
                         "DAS16069",
                         "DAS15134",
                         "DAS15355",
-                        "Delete_Newly_Created_List",
-                        "Delete_Newly_Created_Dashboard"});
+                        "Cleanup",
+                        "Cleanup"});
 #line 62
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -593,7 +593,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS15134")]
         [NUnit.Framework.CategoryAttribute("DAS16263")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Dashboard")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatCardWidgetIncludeSelectionOfEvergreenColours()
         {
             System.Exception lastException = null;
@@ -629,7 +629,7 @@ this.FeatureBackground();
                         "Widgets",
                         "DAS15134",
                         "DAS16263",
-                        "Delete_Newly_Created_Dashboard"});
+                        "Cleanup"});
 #line 127
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -681,8 +681,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS15722")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Dashboard")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatCardWidgetHavingDateColumnsDisplayedCorrectlyOnDashboard()
         {
             System.Exception lastException = null;
@@ -717,8 +717,8 @@ this.FeatureBackground();
                         "EvergreenJnr_DashboardsPage",
                         "Widgets",
                         "DAS15722",
-                        "Delete_Newly_Created_List",
-                        "Delete_Newly_Created_Dashboard"});
+                        "Cleanup",
+                        "Cleanup"});
 #line 147
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -800,8 +800,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Evergreen@EvergreenJnr_DashboardsPage")]
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS15355")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Dashboard")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckComplianceFirstCellIconsForCardWidget()
         {
             System.Exception lastException = null;
@@ -834,8 +834,8 @@ this.FeatureBackground();
                         "Evergreen@EvergreenJnr_DashboardsPage",
                         "Widgets",
                         "DAS15355",
-                        "Delete_Newly_Created_List",
-                        "Delete_Newly_Created_Dashboard"});
+                        "Cleanup",
+                        "Cleanup"});
 #line 170
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -960,8 +960,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS15355")]
         [NUnit.Framework.CategoryAttribute("DAS15662")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Dashboard")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckReadinessFirstCellIconsForCardWidget()
         {
             System.Exception lastException = null;
@@ -996,8 +996,8 @@ this.FeatureBackground();
                         "Widgets",
                         "DAS15355",
                         "DAS15662",
-                        "Delete_Newly_Created_List",
-                        "Delete_Newly_Created_Dashboard"});
+                        "Cleanup",
+                        "Cleanup"});
 #line 213
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1102,8 +1102,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS16266")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Dashboard")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatCardWidgetIsDisplayedCorrectlyWithBlankFirstCell()
         {
             System.Exception lastException = null;
@@ -1138,8 +1138,8 @@ this.FeatureBackground();
                         "EvergreenJnr_DashboardsPage",
                         "Widgets",
                         "DAS16266",
-                        "Delete_Newly_Created_List",
-                        "Delete_Newly_Created_Dashboard"});
+                        "Cleanup",
+                        "Cleanup"});
 #line 259
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1193,8 +1193,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS15914")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Dashboard")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhenFirstCellSelected()
         {
             System.Exception lastException = null;
@@ -1229,8 +1229,8 @@ this.FeatureBackground();
                         "EvergreenJnr_DashboardsPage",
                         "Widgets",
                         "DAS15914",
-                        "Delete_Newly_Created_List",
-                        "Delete_Newly_Created_Dashboard"});
+                        "Cleanup",
+                        "Cleanup"});
 #line 280
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1330,8 +1330,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS16127")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Dashboard")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhenListHasReadinessColumnFirst()
         {
             System.Exception lastException = null;
@@ -1366,8 +1366,8 @@ this.FeatureBackground();
                         "EvergreenJnr_DashboardsPage",
                         "Widgets",
                         "DAS16127",
-                        "Delete_Newly_Created_List",
-                        "Delete_Newly_Created_Dashboard"});
+                        "Cleanup",
+                        "Cleanup"});
 #line 309
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1457,8 +1457,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS15765")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Dashboard")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhenFirstCellIsEmpty()
         {
             System.Exception lastException = null;
@@ -1493,8 +1493,8 @@ this.FeatureBackground();
                         "EvergreenJnr_DashboardsPage",
                         "Widgets",
                         "DAS15765",
-                        "Delete_Newly_Created_List",
-                        "Delete_Newly_Created_Dashboard"});
+                        "Cleanup",
+                        "Cleanup"});
 #line 334
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1590,8 +1590,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS16336")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Dashboard")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatNoErrorsInConsoleAfterAddingApplicationReadinessFirstCellWidget()
         {
             System.Exception lastException = null;
@@ -1626,8 +1626,8 @@ this.FeatureBackground();
                         "EvergreenJnr_DashboardsPage",
                         "Widgets",
                         "DAS16336",
-                        "Delete_Newly_Created_List",
-                        "Delete_Newly_Created_Dashboard"});
+                        "Cleanup",
+                        "Cleanup"});
 #line 362
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1740,8 +1740,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS16325")]
         [NUnit.Framework.CategoryAttribute("DAS15145")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Dashboard")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhenFirstCellIsSortedBool()
         {
             System.Exception lastException = null;
@@ -1777,8 +1777,8 @@ this.FeatureBackground();
                         "Widgets",
                         "DAS16325",
                         "DAS15145",
-                        "Delete_Newly_Created_List",
-                        "Delete_Newly_Created_Dashboard"});
+                        "Cleanup",
+                        "Cleanup"});
 #line 411
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1858,8 +1858,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Evergreen@EvergreenJnr_DashboardsPage")]
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS16347")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Dashboard")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckWidgetCreatingFromListHavingSortedRingColumn()
         {
             System.Exception lastException = null;
@@ -1892,8 +1892,8 @@ this.FeatureBackground();
                         "Evergreen@EvergreenJnr_DashboardsPage",
                         "Widgets",
                         "DAS16347",
-                        "Delete_Newly_Created_List",
-                        "Delete_Newly_Created_Dashboard"});
+                        "Cleanup",
+                        "Cleanup"});
 #line 433
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1982,8 +1982,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS15514")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Dashboard")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.TestCaseAttribute("First", null)]
         [NUnit.Framework.TestCaseAttribute("Last", null)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatCardSelectingAggregateFunctionShowsFieldsWithCorrectDatatypeInAggregateByDropdown(string aggFunc, string[] exampleTags)
@@ -2019,8 +2019,8 @@ this.FeatureBackground();
                     "EvergreenJnr_DashboardsPage",
                     "Widgets",
                     "DAS15514",
-                    "Delete_Newly_Created_List",
-                    "Delete_Newly_Created_Dashboard"};
+                    "Cleanup",
+                    "Cleanup"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));

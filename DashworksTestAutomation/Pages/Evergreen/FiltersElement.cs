@@ -48,9 +48,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = SearchTextBoxSelector)]
         public IWebElement SearchTextBox { get; set; }
 
-        [FindsBy(How = How.XPath,
-            Using =
-                ".//button[@class='btn btn-default input-toggle mat-icon-button _mat-animation-noopable ng-star-inserted']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@id='context']//div[contains(@class,'searchPanel')]/button")]
         public IWebElement SearchTextBoxResetButton { get; set; }
 
         [FindsBy(How = How.XPath,
@@ -149,9 +147,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = ".//mat-select[@mat-container-class='my-container']")]
         public IWebElement OperatorDropdown { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//body")]
-        public IWebElement BodyContainer { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div/mat-option/span[@class='mat-option-text']")]
         public IList<IWebElement> OperatorOptions { get; set; }
@@ -453,7 +448,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             doc.LoadHtml(pageSource);
             var node = doc.DocumentNode.SelectNodes($".//div[@id='{editFilterButton}']")[0];
             var editFilterButtonTooltip = node.InnerHtml;
-            Assert.AreEqual(tooltipText, editFilterButtonTooltip, "Tooltip is incorrect for button");
+            Utils.Verify.AreEqual(tooltipText, editFilterButtonTooltip, "Tooltip is incorrect for button");
         }
 
         public List<IWebElement> GetAddedFilters()

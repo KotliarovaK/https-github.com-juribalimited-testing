@@ -1,10 +1,14 @@
 ﻿using System.ComponentModel;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Helpers;
 
 namespace DashworksTestAutomation.DTO.Projects
 {
     public class TaskPropertiesDto
     {
+        private string _id;
+        public string ProjectId { get; set; }
+
         public string Name { get; set; }
         public string Help { get; set; }
         public string StagesNameString { get; set; }
@@ -18,6 +22,17 @@ namespace DashworksTestAutomation.DTO.Projects
         public string TaskValuesTemplateString { get; set; }
         public TaskValuesTemplateEnum TaskValuesTemplate;
         public bool ApplyToAllCheckbox { get; set; }
+
+        public string Id
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(_id))
+                    _id = DatabaseHelper.GetTaskId(this);
+
+                return _id;
+            }
+        }
     }
 
     public enum TaskTypeEnum

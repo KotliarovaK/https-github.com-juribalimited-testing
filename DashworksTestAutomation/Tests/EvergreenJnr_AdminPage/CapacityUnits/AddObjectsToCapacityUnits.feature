@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @DAS13808 @DAS14200 @DAS14236 @Delete_Newly_Created_Capacity_Unit
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @DAS13808 @DAS14200 @DAS14236 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatDevicesAreAddedCorrectly
 	When User creates new Capacity Unit via api
 	| Name                     | Description | IsDefault |
@@ -36,7 +36,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDevicesAreAddedCorrectly
 	When User enters "CapacityUnit12141Devices" text in the Search field for "Capacity Unit" column
 	Then "5" content is displayed in "Devices" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @DAS13808 @DAS14200 @DAS14236 @Delete_Newly_Created_Capacity_Unit
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @DAS13808 @DAS14200 @DAS14236 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatUsersAreAddedCorrectly
 	When User creates new Capacity Unit via api
 	| Name                   | Description | IsDefault |
@@ -67,7 +67,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatUsersAreAddedCorrectly
 	When User enters "CapacityUnit12141Users" text in the Search field for "Capacity Unit" column
 	Then "5" content is displayed in "Users" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @DAS13808 @DAS14200 @DAS14236 @DAS14237 @DAS14757 @DAS16124 @Delete_Newly_Created_Capacity_Unit
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @DAS13808 @DAS14200 @DAS14236 @DAS14237 @DAS14757 @DAS16124 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatApplicationsAreAddedCorrectly
 	When User creates new Capacity Unit via api
 	| Name                          | Description  | IsDefault |
@@ -98,7 +98,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatApplicationsAreAddedCorrectly
 	When User enters "CapacityUnit12141Applications" text in the Search field for "Capacity Unit" column
 	Then "5" content is displayed in "Applications" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @DAS13808 @DAS14200 @DAS14236 @Delete_Newly_Created_Capacity_Unit
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @DAS13808 @DAS14200 @DAS14236 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatMailboxesAreAddedCorrectly
 	When User creates new Capacity Unit via api
 	| Name                       | Description | IsDefault |

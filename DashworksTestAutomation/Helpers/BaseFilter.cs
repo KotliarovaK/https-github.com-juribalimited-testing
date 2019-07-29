@@ -248,11 +248,11 @@ namespace DashworksTestAutomation.Helpers
                 switch (_operatorValue)
                 {
                     case "Does not equal":
-                        Assert.True(_optionsTable.Rows.Select(x => x["SelectedCheckboxes"]).All(x => !value.Equals(x)));
+                        Utils.Verify.IsTrue(_optionsTable.Rows.Select(x => x["SelectedCheckboxes"]).All(x => !value.Equals(x)), "PLEASE ADD EXCEPTION MESSAGE");
                         break;
 
                     case "Equals":
-                        Assert.True(_optionsTable.Rows.Select(x => x["SelectedCheckboxes"]).All(x => value.Equals(x)));
+                        Utils.Verify.IsTrue(_optionsTable.Rows.Select(x => x["SelectedCheckboxes"]).All(x => value.Equals(x)), "PLEASE ADD EXCEPTION MESSAGE");
                         break;
 
                     default:
@@ -324,7 +324,7 @@ namespace DashworksTestAutomation.Helpers
                     var addedOptions = _driver.FindElements(By.XPath(allAddedOptionsSelector))
                         .Select(value => value.Text).ToList();
                     _driver.WaitForDataLoading();
-                    Assert.Contains(row["Values"], addedOptions);
+                    Utils.Verify.Contains(row["Values"], addedOptions, "PLEASE ADD EXCEPTION MESSAGE");
                 }
             }
             SaveFilter();

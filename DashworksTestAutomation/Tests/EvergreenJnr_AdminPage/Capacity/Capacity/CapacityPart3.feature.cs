@@ -88,7 +88,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Capacity.Capacity
         [NUnit.Framework.CategoryAttribute("Capacity")]
         [NUnit.Framework.CategoryAttribute("Units")]
         [NUnit.Framework.CategoryAttribute("DAS13166")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckThatCapacityUnitCanBeCreatedWithNameAlreadyUsedInDifferentProject()
         {
             System.Exception lastException = null;
@@ -125,7 +125,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Capacity.Capacity
                         "Capacity",
                         "Units",
                         "DAS13166",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -177,7 +177,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Units")]
         [NUnit.Framework.CategoryAttribute("DAS13945")]
         [NUnit.Framework.CategoryAttribute("DAS12672")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitStartedWithSpace()
         {
             System.Exception lastException = null;
@@ -214,7 +214,7 @@ this.FeatureBackground();
                         "Units",
                         "DAS13945",
                         "DAS12672",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 24
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -293,7 +293,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Capacity")]
         [NUnit.Framework.CategoryAttribute("DAS13159")]
         [NUnit.Framework.CategoryAttribute("DAS13754")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckingSortOrderForCapacityUnits()
         {
             System.Exception lastException = null;
@@ -329,7 +329,7 @@ this.FeatureBackground();
                         "Capacity",
                         "DAS13159",
                         "DAS13754",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 51
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -348,65 +348,53 @@ this.FeatureBackground();
                         "Standalone Project"});
 #line 52
  testRunner.When("Project created via API and opened", ((string)(null)), table5, "When ");
-#line 55
- testRunner.And("User clicks \"Capacity\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 56
- testRunner.And("User selects \"Units\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 57
- testRunner.When("User clicks the \"CREATE PROJECT CAPACITY UNIT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 58
- testRunner.And("User type \"CapacityUnit13790\" Name in the \"Capacity Unit Name\" field on the Proje" +
-                    "ct details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 59
- testRunner.And("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 60
- testRunner.Then("Success message is displayed and contains \"The capacity unit has been created\" te" +
-                    "xt", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 61
- testRunner.When("User clicks the \"CREATE PROJECT CAPACITY UNIT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 62
- testRunner.And("User type \"NewUnit\" Name in the \"Capacity Unit Name\" field on the Project details" +
-                    " page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 63
- testRunner.And("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 64
- testRunner.Then("Success message is displayed and contains \"The capacity unit has been created\" te" +
-                    "xt", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 65
- testRunner.When("User clicks the \"CREATE PROJECT CAPACITY UNIT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 66
- testRunner.And("User type \"13159\" Name in the \"Capacity Unit Name\" field on the Project details p" +
-                    "age", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 67
- testRunner.And("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 68
- testRunner.Then("Success message is displayed and contains \"The capacity unit has been created\" te" +
-                    "xt", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 69
- testRunner.When("User clicks the \"CREATE PROJECT CAPACITY UNIT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 70
- testRunner.And("User type \"A13159Unit\" Name in the \"Capacity Unit Name\" field on the Project deta" +
-                    "ils page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 71
- testRunner.And("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 72
- testRunner.Then("Success message is displayed and contains \"The capacity unit has been created\" te" +
-                    "xt", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "Description",
+                        "IsDefault",
+                        "Project"});
+            table6.AddRow(new string[] {
+                        "CapacityUnit13790",
+                        "",
+                        "false",
+                        "13159ProjectForCapacity"});
+            table6.AddRow(new string[] {
+                        "NewUnit",
+                        "",
+                        "false",
+                        "13159ProjectForCapacity"});
+            table6.AddRow(new string[] {
+                        "13159",
+                        "",
+                        "false",
+                        "13159ProjectForCapacity"});
+            table6.AddRow(new string[] {
+                        "A13159Unit",
+                        "",
+                        "false",
+                        "13159ProjectForCapacity"});
+#line 55
+ testRunner.And("User creates new Capacity Unit via api", ((string)(null)), table6, "And ");
+#line 61
+ testRunner.And("User clicks \"Capacity\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 62
+ testRunner.And("User selects \"Units\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "Items"});
-            table6.AddRow(new string[] {
+            table7.AddRow(new string[] {
                         "Unassigned"});
-            table6.AddRow(new string[] {
+            table7.AddRow(new string[] {
                         "13159"});
-            table6.AddRow(new string[] {
+            table7.AddRow(new string[] {
                         "A13159Unit"});
-            table6.AddRow(new string[] {
+            table7.AddRow(new string[] {
                         "CapacityUnit13790"});
-            table6.AddRow(new string[] {
+            table7.AddRow(new string[] {
                         "NewUnit"});
-#line 73
- testRunner.Then("\"Capacity Unit\" column content is displayed in the following order:", ((string)(null)), table6, "Then ");
+#line 63
+ testRunner.Then("\"Capacity Unit\" column content is displayed in the following order:", ((string)(null)), table7, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -422,7 +410,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Capacity")]
         [NUnit.Framework.CategoryAttribute("Senior_Projects")]
         [NUnit.Framework.CategoryAttribute("DAS14029")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatDefaultValueForCapacityModeFieldEqualsCapacityUnits()
         {
             System.Exception lastException = null;
@@ -460,63 +448,63 @@ this.FeatureBackground();
                         "Capacity",
                         "Senior_Projects",
                         "DAS14029",
-                        "Delete_Newly_Created_Project"});
-#line 82
+                        "Cleanup"});
+#line 72
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 83
+#line 73
  testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 84
+#line 74
  testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 85
+#line 75
  testRunner.When("User clicks create Project button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 86
+#line 76
  testRunner.Then("\"Create Project\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "ProjectName",
                         "ShortName",
                         "Description",
                         "Type"});
-            table7.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "Project14029 Snr",
                         "13498",
                         "",
                         ""});
-#line 87
- testRunner.When("User creates new Project on Senior", ((string)(null)), table7, "When ");
-#line 90
+#line 77
+ testRunner.When("User creates new Project on Senior", ((string)(null)), table8, "When ");
+#line 80
  testRunner.And("User navigate to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 91
+#line 81
  testRunner.And("User clicks \"Admin\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 92
+#line 82
  testRunner.And("User navigates to \"Project14029 Snr\" project details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 93
+#line 83
  testRunner.And("User clicks \"Capacity\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 94
+#line 84
  testRunner.And("User selects \"Capacity Details\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 95
+#line 85
  testRunner.Then("Capacity Units value is displayed for Capacity Mode field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                         "ProjectName",
                         "Scope",
                         "ProjectTemplate",
                         "Mode"});
-            table8.AddRow(new string[] {
+            table9.AddRow(new string[] {
                         "Project14029",
                         "All Devices",
                         "None",
                         "Standalone Project"});
-#line 96
- testRunner.When("Project created via API and opened", ((string)(null)), table8, "When ");
-#line 99
+#line 86
+ testRunner.When("Project created via API and opened", ((string)(null)), table9, "When ");
+#line 89
  testRunner.And("User clicks \"Capacity\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 100
+#line 90
  testRunner.And("User selects \"Capacity Details\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 101
+#line 91
  testRunner.Then("Capacity Units value is displayed for Capacity Mode field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

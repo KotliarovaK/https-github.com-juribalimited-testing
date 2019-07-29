@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15364 @DAS15316 @Delete_Newly_Created_List
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15364 @DAS15316 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingCardWidgetUsedCpuVirtField
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName                 |
@@ -58,7 +58,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValueLeadsToCorrectFilt
 	Then "1803: Pre-Migration \ Scheduled Date is 5 Nov 2018" is displayed in added filter info
 	And "Any Device in list 1803 Rollout" is displayed in added filter info
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16069 @DAS15134 @DAS15355 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16069 @DAS15134 @DAS15355 @Cleanup @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValuesLeadsToApplicationsListFilteredPage
 	When User clicks "Applications" on the left-hand menu
 	And User clicks the Filters button
@@ -123,7 +123,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValuesLeadsToApplicatio
 	Then Save as a new list option is available
 	And "43" rows are displayed in the agGrid
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15134 @DAS16263 @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15134 @DAS16263 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIncludeSelectionOfEvergreenColours
 	When Dashboard with "Dashboard for DAS15134" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
@@ -143,7 +143,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIncludeSelectionOfEverg
 	When User clicks the "UPDATE" Action button
 	Then "Amber" color is displayed for widget
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15722 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15722 @Cleanup @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetHavingDateColumnsDisplayedCorrectlyOnDashboard
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName                 |
@@ -166,7 +166,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetHavingDateColumnsDispla
 	And User clicks data in card "WidgetForDAS15722" widget
 	Then "1" rows are displayed in the agGrid
 
-@Evergreen@EvergreenJnr_DashboardsPage @Widgets @DAS15355 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+@Evergreen@EvergreenJnr_DashboardsPage @Widgets @DAS15355 @Cleanup @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckComplianceFirstCellIconsForCardWidget
 	When User clicks "Applications" on the left-hand menu
 	And User clicks the Columns button
@@ -209,7 +209,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckComplianceFirstCellIconsForCardWidget
 	When User clicks the "UPDATE" Action button
 	Then Icon Only is displayed for Card widget
 	
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15355 @DAS15662 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15355 @DAS15662 @Cleanup @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckReadinessFirstCellIconsForCardWidget
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Columns button
@@ -255,7 +255,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckReadinessFirstCellIconsForCardWidget
 	Then "Grey" color is displayed for Card Widget
 	Then Icon Only is displayed for Card widget
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16266 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16266 @Cleanup @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIsDisplayedCorrectlyWithBlankFirstCell
 	When User clicks "Devices" on the left-hand menu
 	When User click on 'Owner Display Name' column header
@@ -276,7 +276,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIsDisplayedCorrectlyWit
 	When User clicks the "CREATE" Action button
 	Then Widget Preview shows "Empty" as First Cell value
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15914 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15914 @Cleanup @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhenFirstCellSelected
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Filters button
@@ -305,7 +305,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhe
 	Then Widget Preview is displayed to the user
 	Then Widget Preview shows "READY" as First Cell value
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16127 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16127 @Cleanup @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhenListHasReadinessColumnFirst
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Filters button
@@ -330,7 +330,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhe
 	And Widget Preview shows "GREEN" as First Cell value
 	And There are no errors in the browser console
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15765 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15765 @Cleanup @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhenFirstCellIsEmpty
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Filters button
@@ -358,7 +358,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhe
 	And Widget Preview shows "Empty" as First Cell value
 	And There are no errors in the browser console
 	
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16336 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16336 @Cleanup @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorsInConsoleAfterAddingApplicationReadinessFirstCellWidget
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -407,7 +407,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorsInConsoleAfterAddingAppli
 	Then "Really Extremely Orange" color is displayed for Card Widget
 	Then Icon and Text is displayed for Card widget
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16325 @DAS15145 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16325 @DAS15145 @Cleanup @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhenFirstCellIsSortedBool
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Columns button
@@ -429,7 +429,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhe
 	And Widget Preview shows "TRUE" as First Cell value
 	And There are no errors in the browser console
 
-@Evergreen@EvergreenJnr_DashboardsPage @Widgets @DAS16347 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+@Evergreen@EvergreenJnr_DashboardsPage @Widgets @DAS16347 @Cleanup @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckWidgetCreatingFromListHavingSortedRingColumn
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Columns button
@@ -454,7 +454,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckWidgetCreatingFromListHavingSortedRin
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15514 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15514 @Cleanup @Cleanup
 Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatCardSelectingAggregateFunctionShowsFieldsWithCorrectDatatypeInAggregateByDropdown
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName                           |

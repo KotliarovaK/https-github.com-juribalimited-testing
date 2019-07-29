@@ -7,6 +7,7 @@ using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
 {
+    //TODO This should be removed. Looks like not used anymore
     [Binding]
     internal class EvergreenJnr_AdminPage_AfterScenario : TechTalk.SpecFlow.Steps
     {

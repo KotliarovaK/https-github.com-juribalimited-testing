@@ -2,8 +2,11 @@
 using System.Linq;
 using DashworksTestAutomation.DTO.Evergreen.Admin.CapacityUnits;
 using DashworksTestAutomation.DTO.RuntimeVariables;
+using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
+using NUnit.Framework;
+using NUnit.Framework.Constraints;
 using RestSharp;
 using TechTalk.SpecFlow;
 
@@ -21,7 +24,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.CapacityUnits.AfterS
             _client = client;
         }
 
-        [AfterScenario("Delete_Newly_Created_Capacity_Unit", Order = 10)]
+        [AfterScenario("Cleanup", Order = 10)]
         public void DeleteNewlyCreatedCapacityUnit()
         {
             try
@@ -35,11 +38,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.CapacityUnits.AfterS
                 {
                     try
                     {
-                        var request = new RestRequest(requestUri);
-
-                        request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
-                        request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
-                        request.AddParameter("Referer", UrlProvider.EvergreenUrl);
+                        var request = requestUri.GenerateRequest();
                         request.AddParameter("objectId", null);
                         request.AddParameter("selectedObjectsList", capacityUnit.GetId());
 

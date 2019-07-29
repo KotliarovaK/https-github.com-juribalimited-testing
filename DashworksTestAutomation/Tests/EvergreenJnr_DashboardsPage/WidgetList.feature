@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15432 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15432 @Cleanup @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorsAreDisplayedWhenCreateListWidgetWithStaticList
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -23,7 +23,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorsAreDisplayedWhenCreateLis
 	Then "Widget_For_DAS15432" Widget is displayed to the user
 	And There are no errors in the browser console
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15413 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15413 @Cleanup @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatDataFromTheWidgetMatchesTheOriginalDynamicLists
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user

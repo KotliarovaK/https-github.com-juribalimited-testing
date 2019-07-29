@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11748 @Buckets @Set_Default_Bucket @Delete_Newly_Created_Bucket @Do_Not_Run_With_Buckets
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11748 @Buckets @Set_Default_Bucket @Cleanup @Do_Not_Run_With_Buckets
 Scenario: EvergreenJnr_AdminPage_CheckThatNotificationMessageIsDisplayedAfterUpdatingBucketToDefaultType
 	When User creates new Bucket via api
 	| Name        | TeamName  | IsDefault |

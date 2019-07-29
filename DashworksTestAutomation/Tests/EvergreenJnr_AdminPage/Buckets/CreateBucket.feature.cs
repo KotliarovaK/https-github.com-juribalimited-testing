@@ -88,7 +88,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Buckets
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS11770")]
         [NUnit.Framework.CategoryAttribute("Buckets")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Bucket")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedBucketUsingTheSpaceAsAFirstSymbol()
         {
             System.Exception lastException = null;
@@ -125,7 +125,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Buckets
                         "AdminPage",
                         "DAS11770",
                         "Buckets",
-                        "Delete_Newly_Created_Bucket"});
+                        "Cleanup"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -181,7 +181,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS16636")]
         [NUnit.Framework.CategoryAttribute("Buckets")]
         [NUnit.Framework.CategoryAttribute("Set_Default_Bucket")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Bucket")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Buckets")]
         public virtual void EvergreenJnr_AdminPage_CreatingDefaultBucket()
         {
@@ -221,7 +221,7 @@ this.FeatureBackground();
                         "DAS16636",
                         "Buckets",
                         "Set_Default_Bucket",
-                        "Delete_Newly_Created_Bucket",
+                        "Cleanup",
                         "Do_Not_Run_With_Buckets"});
 #line 29
 this.ScenarioInitialize(scenarioInfo);
@@ -350,7 +350,7 @@ this.FeatureBackground();
 #line 60
  testRunner.And("User selects \"Admin IT\" team in the Team dropdown on the Buckets page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 61
- testRunner.Then("Create Bucket button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"CREATE\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

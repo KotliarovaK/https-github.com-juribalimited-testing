@@ -145,7 +145,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThat500ErrorIsNotDisplayedAfterAddi
 	| Red                |
 	| Amber              |
 	| Green              |
-	| Not Applicable     |
+	| None               |
 	Then "<FilterName>" filter is added to the list
 	When User clicks the Filters button
 	And User click on '<ColumnHeader>' column header
@@ -250,7 +250,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatGridIsDisplayedCorrectlyAfterAdding
 	| ColumnName             |
 	| Owner accountexpires   |
 	| frscomputerreferencebl |
-	And "17,225" rows are displayed in the agGrid
+	And "17,279" rows are displayed in the agGrid
 	And full list content is displayed to the user
 	And There are no errors in the browser console
 	And table content is present
@@ -342,3 +342,23 @@ Scenario Outline: EvergreenJnr_AllList_CheckThatSortingByEvergreenRingColumnWork
 	| ListName     |
 	| Users        |
 	| Mailboxes    |
+
+@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS16912
+Scenario Outline: EvergreenJnr_AllLists_CheckThatComplinceNoneOptionIsTranslated
+	When User add following columns using URL to the "<ListName>" page:
+	| ColumnName   |
+	| <FilterName> |
+	And User clicks the Filters button
+	And User add "<FilterName>" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| <FilterValue>               |
+	And User language is changed to "Deutsch" via API
+	And User clicks refresh button in the browser
+	Then "<TranslatedFilterValue>" content is displayed in the "<TranslatedColumnName>" column
+
+Examples: 
+	| ListName     | FilterName                    | FilterValue | TranslatedColumnName        | TranslatedFilterValue |
+	| Devices      | Application Compliance        | None        | Anwendungskonformität       | KEINE                 |
+	| Users        | Device Application Compliance | Red         | Geräteanwendungskonformität | ROT                   |
+	| Applications | Compliance                    | Green       | Konformität                 | GRÜN                  |
+	| Mailboxes    | Owner Compliance              | Unknown     | Konformität des Inhabers    | UNBEKANNT             |

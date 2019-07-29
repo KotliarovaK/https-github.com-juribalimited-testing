@@ -44,8 +44,8 @@ namespace DashworksTestAutomation.Steps.Projects
         {
             var page = _driver.NowAt<Projects_DashboardsGroupsPage>();
             _driver.WaitForDataLoading();
-            Assert.IsTrue(page.GetPageHeaderByGroupName(groupName).Displayed, "Selected Group is not displayed");
-            Assert.IsTrue(page.Table.Displayed, "Table for selected group is not loaded");
+            Utils.Verify.IsTrue(page.GetPageHeaderByGroupName(groupName).Displayed, "Selected Group is not displayed");
+            Utils.Verify.IsTrue(page.Table.Displayed, "Table for selected group is not loaded");
         }
 
         [When(@"User creates new Project on Senior")]
@@ -91,7 +91,7 @@ namespace DashworksTestAutomation.Steps.Projects
         public void ThenCсEmailFieldIsDisplayedWithTextOnSenior(string emailText)
         {
             var page = _driver.NowAt<DetailsPage>();
-            Assert.IsTrue(page.GetTextInCcEmailAddressField(emailText).Displayed(),
+            Utils.Verify.IsTrue(page.GetTextInCcEmailAddressField(emailText).Displayed(),
                 $"Email with '{emailText}' text is not displayed");
         }
 
@@ -99,7 +99,7 @@ namespace DashworksTestAutomation.Steps.Projects
         public void ThenBCсEmailFieldIsDisplayedWithTextOnSenior(string emailText)
         {
             var page = _driver.NowAt<DetailsPage>();
-            Assert.IsTrue(page.GetTextInBccEmailAddressField(emailText).Displayed(),
+            Utils.Verify.IsTrue(page.GetTextInBccEmailAddressField(emailText).Displayed(),
                 $"Email with '{emailText}' text is not displayed");
         }
 
@@ -121,42 +121,14 @@ namespace DashworksTestAutomation.Steps.Projects
         public void ThenCсEmailFieldOnSeniorIsEmpty()
         {
             var page = _driver.NowAt<DetailsPage>();
-            Assert.IsEmpty(page.CcEmail.GetAttribute("value"), "CC email field is not empty");
+            Utils.Verify.IsEmpty(page.CcEmail.GetAttribute("value"), "CC email field is not empty");
         }
 
         [Then(@"BCC email field on Senior is empty")]
         public void ThenBссEmailFieldOnSeniorIsEmpty()
         {
             var page = _driver.NowAt<DetailsPage>();
-            Assert.IsEmpty(page.BccEmail.GetAttribute("value"), "BCC email field is not empty");
-        }
-
-        [When(@"User creates new Task on Senior")]
-        public void WhenUserCreatesNewTaskOnSenior(Table table)
-        {
-            var page = _driver.NowAt<TaskPropertiesPage>();
-            foreach (var row in table.Rows)
-            {
-                page.Name.SendKeys(row["Name"]);
-                page.Help.SendKeys(row["Help"]);
-                page.StageName.SelectboxSelect(row["StagesName"]);
-                if (!string.IsNullOrEmpty(row["TaskType"]))
-                    page.TaskType.SelectboxSelect(row["TaskType"]);
-                if (!string.IsNullOrEmpty(row["ValueType"]))
-                    page.ValueType.SelectboxSelect(row["ValueType"]);
-                _driver.WaitForDataLoadingOnProjects();
-                page.ObjectType.SelectboxSelect(row["ObjectType"]);
-                if (!string.IsNullOrEmpty(row["TaskValuesTemplate"]))
-                    page.TaskValuesTemplate.SelectboxSelect(row["TaskValuesTemplate"]);
-
-                if (!string.IsNullOrEmpty(row["ApplyToAllCheckbox"]))
-                {
-                    _driver.WaitForDataLoadingOnProjects();
-                    page.ApplyToAllCheckbox.SetCheckboxState(Convert.ToBoolean(row["ApplyToAllCheckbox"]));
-                }
-
-                page.ConfirmCreateTaskButton.Click();
-            }
+            Utils.Verify.IsEmpty(page.BccEmail.GetAttribute("value"), "BCC email field is not empty");
         }
 
         [When(@"User selects ""(.*)"" as Task Value Type")]
@@ -172,10 +144,9 @@ namespace DashworksTestAutomation.Steps.Projects
         {
             var action = _driver.NowAt<TaskPropertiesPage>();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            System.Threading.Thread.Sleep(500);
+            Thread.Sleep(500);
             var actualList = action.OptionsOfObjectTypeProperty.Select(value => value.Text).ToList();
-            Assert.AreEqual(expectedList, actualList, "Items are different");
+            Utils.Verify.AreEqual(expectedList, actualList, "Items are different");
         }
-
     }
 }

@@ -163,7 +163,7 @@ this.FeatureBackground();
 #line 24
  testRunner.Then("ColumnName is added to the list", ((string)(null)), table2, "Then ");
 #line 27
- testRunner.And("\"17,225\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\"17,279\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 28
  testRunner.Then("\"Compliance\" filter is removed from filters", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -253,7 +253,7 @@ this.FeatureBackground();
 #line 45
  testRunner.Then("ColumnName is added to the list", ((string)(null)), table4, "Then ");
 #line 48
- testRunner.And("\"17,225\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\"17,279\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 49
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 50
@@ -473,7 +473,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
         [NUnit.Framework.CategoryAttribute("RemoveFilter")]
         [NUnit.Framework.CategoryAttribute("DAS12635")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AllLists_CheckThatCancelingUnsavedFilterDoesNotReloadList()
         {
             System.Exception lastException = null;
@@ -508,7 +508,7 @@ this.FeatureBackground();
                         "Evergreen_FiltersFeature",
                         "RemoveFilter",
                         "DAS12635",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 101
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

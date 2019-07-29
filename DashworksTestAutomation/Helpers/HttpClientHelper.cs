@@ -14,6 +14,7 @@ namespace DashworksTestAutomation.Helpers
     {
         private readonly CookieContainer _cookies = new CookieContainer();
         private readonly HttpClientHandler _handler = new HttpClientHandler();
+        public readonly AuthObject AuthObject;
 
         public IEnumerable<Cookie> CookiesJar;
 
@@ -25,8 +26,8 @@ namespace DashworksTestAutomation.Helpers
         public HttpClientHelper(UserDto credentials, RestClient client)
         {
             _handler.CookieContainer = _cookies;
-            var auth = client.GetAuthenticationDetails(UrlProvider.Url);
-            InitCookies(credentials, auth);
+            AuthObject = client.GetAuthenticationDetails(UrlProvider.Url);
+            InitCookies(credentials, AuthObject);
         }
 
         public IEnumerable<OpenQA.Selenium.Cookie> SeleniumCookiesJar => CookiesJar.Select(x => x.ToSeleniumCookies());
@@ -45,7 +46,7 @@ namespace DashworksTestAutomation.Helpers
                         new KeyValuePair<string, string>("__VIEWSTATEGENERATOR", auth.ViewstateGenerator),
                         new KeyValuePair<string, string>("__VIEWSTATE", auth.Viewstate),
                         new KeyValuePair<string, string>("__EVENTVALIDATION", auth.Eventvalidation),
-                        new KeyValuePair<string, string>("TB_UserName", credentials.UserName),
+                        new KeyValuePair<string, string>("TB_UserName", credentials.Username),
                         new KeyValuePair<string, string>("TB_Password", credentials.Password),
                         new KeyValuePair<string, string>("Btn_Login", "Login")
                     });

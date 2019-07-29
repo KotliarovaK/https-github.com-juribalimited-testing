@@ -81,7 +81,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_API_FiltersAndColumns
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckAllColumnsAndFilters")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("API")]
         [NUnit.Framework.CategoryAttribute("FiltersAndColumns")]
         public virtual void EvergreenJnr_DevicesList_CheckAllColumnsAndFilters()
@@ -115,7 +114,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_API_FiltersAndColumns
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckAllColumnsAndFilters", null, new string[] {
                         "Evergreen",
                         "Devices",
-                        "EvergreenJnr_Columns",
                         "API",
                         "FiltersAndColumns"});
 #line 8
@@ -136,7 +134,6 @@ this.FeatureBackground();
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckFiltersAndColumnsResponseData")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("API")]
         [NUnit.Framework.CategoryAttribute("FiltersAndColumns")]
         public virtual void EvergreenJnr_DevicesList_CheckFiltersAndColumnsResponseData()
@@ -170,7 +167,6 @@ this.FeatureBackground();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckFiltersAndColumnsResponseData", null, new string[] {
                         "Evergreen",
                         "Devices",
-                        "EvergreenJnr_Columns",
                         "API",
                         "FiltersAndColumns"});
 #line 13

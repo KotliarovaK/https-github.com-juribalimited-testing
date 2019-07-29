@@ -104,7 +104,7 @@ Scenario: EvergreenJnr_AdminPage_CheckPositionOfContextMenuInGridForCapacityUnit
 	Then User sees context menu placed near "True" cell in the grid
 
 #Should be added one more beforeScenario to make Unassigned backed default again
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Buckets @Projects @DAS12948 @DAS13073 @DAS12999 @DAS13973 @Delete_Newly_Created_Project @Delete_Newly_Created_Bucket @VDO
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12948 @DAS13073 @DAS12999 @DAS13973 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -165,7 +165,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Match to Evergreen Bucket" is displayed in the Bucket dropdown
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12763 @DAS12767 @DAS13973 @Delete_Newly_Created_Project @Delete_Newly_Created_Bucket @archived
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12763 @DAS12767 @DAS13973 @Cleanup @Cleanup @archived
 Scenario: EvergreenJnr_AdminPage_CheckDisplayingBucketsAfterCreationProjectsWithDifferentOptions
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -275,7 +275,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDisplayingBucketsAfterCreationProjectsWith
 	#And User clicks String Filter button for "Project" column on the Admin page
 	#Then "3Project12763" is not displayed in the filter dropdown
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS15989 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS15989 @Cleanup
 Scenario: EvergreenJnr_ImportProjectPage_CheckThatExtraUnknownReadinessIsNotCreatedWhileImportingToANewProject
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -291,7 +291,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckThatExtraUnknownReadinessIsNotCrea
 	When User clicks "Readiness" tab
 	Then "UNKNOWN" content is not displayed in the grid on the Project details page
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS16089 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS16089 @Cleanup
 Scenario: EvergreenJnr_ImportProjectPage_CheckBannerMessageAfterImportProjectWithoutReadiness 
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user

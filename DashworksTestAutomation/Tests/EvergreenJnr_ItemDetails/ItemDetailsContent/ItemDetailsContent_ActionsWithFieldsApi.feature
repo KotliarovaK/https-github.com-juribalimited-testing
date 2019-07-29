@@ -4,7 +4,7 @@
 Background: Pre-Conditions
 	Given User is logged in to the Evergreen via API
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11478 @DAS11477 @DAS11476 @DAS11510 @API
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11478 @DAS11477 @DAS11476 @API
 Scenario Outline: EvergreenJnr_AllLists_CheckStateOfSelectedFieldOnDetailsTabOnAPI
 	When I perform test request to the "<PageName>" API and get "<ItemName>" item summary for "<SectionName>" section
 	Then "<FieldName>" field display state is "<DisplayState>" on Details tab API
@@ -14,7 +14,6 @@ Examples:
 	| Mailboxes | alfredo.m.daniel@dwlabs.local | Mailbox      | Mailbox Database  | True         |
 	| Mailboxes | alfredo.m.daniel@dwlabs.local | Mailbox      | Cloud Mail Server | False        |
 	| Mailboxes | alex.cristea@juriba.com       | Mailbox      | Mail Server       | False        |
-	| Devices   | 001BAQXT6JWFPI                | Device Owner | Last Logoff Date  | False        |
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17274 @API
 Scenario: EvergreenJnr_UserList_CheckThatDataDepartmentAndLocationTabIsDisplayedCorrectly

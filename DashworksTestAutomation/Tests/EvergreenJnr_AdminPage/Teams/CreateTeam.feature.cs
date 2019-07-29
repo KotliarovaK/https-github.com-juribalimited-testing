@@ -88,7 +88,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Teams
         [NUnit.Framework.CategoryAttribute("DAS11726")]
         [NUnit.Framework.CategoryAttribute("DAS11747")]
         [NUnit.Framework.CategoryAttribute("DAS13471")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Team")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Teams")]
         public virtual void EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyTeamName()
         {
@@ -126,7 +126,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Teams
                         "DAS11726",
                         "DAS11747",
                         "DAS13471",
-                        "Delete_Newly_Created_Team",
+                        "Cleanup",
                         "Teams"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
@@ -194,7 +194,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Teams")]
         [NUnit.Framework.CategoryAttribute("Save_Default_Team")]
         [NUnit.Framework.CategoryAttribute("Set_Default_Team")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Team")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedTeamUsingTheSpaceAsAFirstSymbol()
         {
             System.Exception lastException = null;
@@ -238,7 +238,7 @@ this.FeatureBackground();
                         "Do_Not_Run_With_Teams",
                         "Save_Default_Team",
                         "Set_Default_Team",
-                        "Delete_Newly_Created_Team"});
+                        "Cleanup"});
 #line 32
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

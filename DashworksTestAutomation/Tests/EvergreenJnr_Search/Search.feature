@@ -6,7 +6,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Devices @EvergreenJnr_Search @Search @DAS10704 @DAS12762 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_Search @Search @DAS10704 @DAS12762 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatQuickSearchResetWhenMovingBetweenLists
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName |
@@ -173,7 +173,7 @@ Scenario: EvergreenJnr_DevicesList_Search_CheckThatMultiSelectFilterSearchFieldH
 	And User enters "CheckTheResetButton" text in Search field at selected Lookup Filter
 	Then reset button in Search field at selected Filter is displayed
 
-@Evergreen @Devices @EvergreenJnr_Search @Search @DAS11350 @DAS11951 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_Search @Search @DAS11350 @DAS11951 @Cleanup
 Scenario: EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtListPanel 
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user

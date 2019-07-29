@@ -54,11 +54,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Dashboard
         }
 
 
-        [AfterScenario("Delete_Newly_Created_Dashboard")]
+        [AfterScenario("Cleanup")]
         public void DeleteNewlyCreatedDashboard()
         {
             try
             {
+                if (string.IsNullOrEmpty(_dashboard.Value.dashboardId))
+                    return;
+
                 var requestUri = $"{UrlProvider.RestClientBaseUrl}dashboard/{_dashboard.Value.dashboardId}";
 
                 var request = new RestRequest(requestUri);

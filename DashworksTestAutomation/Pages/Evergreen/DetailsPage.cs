@@ -168,7 +168,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             var allFieldsContent = Driver.FindElements(By.XPath(".//tbody/tr/td[2]"));
 
-            foreach (var element in allFieldsContent) Assert.IsFalse(string.IsNullOrEmpty(element.Text));
+            foreach (var element in allFieldsContent) Utils.Verify.IsFalse(string.IsNullOrEmpty(element.Text), "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         public int GetColumnNumberByName(string columnName)

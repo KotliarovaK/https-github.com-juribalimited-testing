@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15356 @Delete_Newly_Created_List
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15356 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWidgetWithSpecificColumns
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName          |

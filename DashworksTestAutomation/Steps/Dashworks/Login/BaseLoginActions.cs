@@ -21,12 +21,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.Login
         protected readonly RestWebClient _client;
         protected readonly UsedUsers UsedUsers;
         protected readonly UserDto User;
+        protected readonly AuthObject _authObject;
 
-        public BaseLoginActions(UserDto user, UsedUsers usedUsers, RestWebClient client)
+        public BaseLoginActions(UserDto user, UsedUsers usedUsers, RestWebClient client, AuthObject authObject)
         {
             User = user;
             UsedUsers = usedUsers;
             _client = client;
+            _authObject = authObject;
         }
 
         protected UserDto GetFreeUserAndAddToUsedUsersList()
@@ -46,6 +48,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.Login
             var restClient = new RestClient(UrlProvider.Url);
             //Get cookies
             var client = new HttpClientHelper(user, restClient);
+            //We will use those properties to work with Senior API
+            client.AuthObject.CopyPropertiesTo(_authObject);
 
             //Init session
             if (driver != null)
@@ -67,11 +71,11 @@ namespace DashworksTestAutomation.Steps.Dashworks.Login
             //Change profile language
             try
             {
-                _client.ChangeUserProfileLanguage(User.UserName, User.Language);
+                _client.ChangeUserProfileLanguage(User.Username, User.Language);
             }
             catch (Exception)
             {
-                _client.ChangeUserProfileLanguage(User.UserName, User.Language);
+                _client.ChangeUserProfileLanguage(User.Username, User.Language);
             }
         }
 
@@ -82,6 +86,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.Login
             var restClient = new RestClient(UrlProvider.Url);
             //Get cookies
             var client = new HttpClientHelper(user, restClient);
+            //We will use those properties to work with Senior API
+            client.AuthObject.CopyPropertiesTo(_authObject);
 
             //Init session
             if (driver != null)

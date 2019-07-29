@@ -90,6 +90,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Automation
         [NUnit.Framework.CategoryAttribute("DAS15832")]
         [NUnit.Framework.CategoryAttribute("DAS15833")]
         [NUnit.Framework.CategoryAttribute("DAS17276")]
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptions()
         {
             System.Exception lastException = null;
@@ -127,7 +128,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Automation
                         "DAS15427",
                         "DAS15832",
                         "DAS15833",
-                        "DAS17276"});
+                        "DAS17276",
+                        "Not_Ready"});
 #line 11
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -168,7 +170,7 @@ this.FeatureBackground();
 #line 28
  testRunner.When("User selects \"1803 Rollout\" in the Project dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 29
- testRunner.When("User selects \"Undetermined\" in the Path dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \"Undetermined\" in the \"Path\" dropdown for Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 30
  testRunner.When("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 31
@@ -181,7 +183,7 @@ this.FeatureBackground();
 #line 34
  testRunner.When("User selects \"1803 Rollout\" in the Project dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 35
- testRunner.When("User selects \"Undetermined\" in the Path dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \"Undetermined\" in the \"Path\" dropdown for Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 36
  testRunner.When("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 37
@@ -196,7 +198,7 @@ this.FeatureBackground();
 #line 41
  testRunner.When("User selects \"1803 Rollout\" in the Project dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 42
- testRunner.When("User selects \"Undetermined\" in the Path dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \"Undetermined\" in the \"Path\" dropdown for Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 43
  testRunner.When("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 44
@@ -351,7 +353,7 @@ this.FeatureBackground();
 #line 92
  testRunner.When("User selects \"1803 Rollout\" in the Project dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 93
- testRunner.When("User selects \"Undetermined\" in the Path dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \"Undetermined\" in the \"Path\" dropdown for Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 94
  testRunner.Then("\"Undetermined\" content is displayed in the Path Automation dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 95
@@ -594,7 +596,7 @@ this.FeatureBackground();
 #line 183
  testRunner.When("User selects \"1803 Rollout\" in the Project dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 184
- testRunner.When("User selects \"Undetermined\" in the Path dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \"Undetermined\" in the \"Path\" dropdown for Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 185
  testRunner.And("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 186
@@ -657,8 +659,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Actions")]
         [NUnit.Framework.CategoryAttribute("DAS15938")]
         [NUnit.Framework.CategoryAttribute("DAS17076")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_CheckParametersToCreateUpdatePathAction()
         {
@@ -695,8 +697,8 @@ this.FeatureBackground();
                         "Actions",
                         "DAS15938",
                         "DAS17076",
-                        "Delete_Newly_Created_Project",
-                        "Delete_Newly_Created_List",
+                        "Cleanup",
+                        "Cleanup",
                         "Not_Ready"});
 #line 212
 this.ScenarioInitialize(scenarioInfo);
@@ -833,7 +835,7 @@ this.FeatureBackground();
 #line 273
  testRunner.Then("\"CANCEL\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 274
- testRunner.When("User selects \"User Migration\" in the Path dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \"User Migration\" in the \"Path\" dropdown for Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 275
  testRunner.Then("\"SAVE AND CREATE ANOTHER\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 276
@@ -858,6 +860,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS16143")]
         [NUnit.Framework.CategoryAttribute("DAS17336")]
         [NUnit.Framework.CategoryAttribute("DAS17367")]
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_CheckEditActionPage()
         {
             System.Exception lastException = null;
@@ -894,7 +897,8 @@ this.FeatureBackground();
                         "DAS15425",
                         "DAS16143",
                         "DAS17336",
-                        "DAS17367"});
+                        "DAS17367",
+                        "Not_Ready"});
 #line 282
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -933,7 +937,7 @@ this.FeatureBackground();
 #line 298
  testRunner.When("User selects \"User Evergreen Capacity Project\" in the Project dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 299
- testRunner.When("User selects \"[Default (User)]\" in the Path dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \"[Default (User)]\" in the \"Path\" dropdown for Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 300
  testRunner.And("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 301
@@ -991,6 +995,306 @@ this.FeatureBackground();
  testRunner.When("User clicks the \"CANCEL\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 326
  testRunner.Then("Actions page is displayed to the User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActions")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Admin")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
+        [NUnit.Framework.CategoryAttribute("Actions")]
+        [NUnit.Framework.CategoryAttribute("DAS16992")]
+        [NUnit.Framework.CategoryAttribute("DAS17427")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
+        public virtual void EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActions()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActionsInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActionsInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActions", null, new string[] {
+                        "Evergreen",
+                        "Admin",
+                        "EvergreenJnr_AdminPage",
+                        "Actions",
+                        "DAS16992",
+                        "DAS17427",
+                        "Cleanup",
+                        "Cleanup",
+                        "Not_Ready"});
+#line 329
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 331
+ testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 332
+ testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 333
+ testRunner.And("User add \"City\" filter where type is \"Equals\" with added column and \"Edinburgh\" L" +
+                    "ookup option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 334
+ testRunner.And("User create dynamic list with \"Edinburgh Devices\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 335
+ testRunner.And("User clicks Create Project from the main list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 336
+ testRunner.Then("\"Create Project\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 337
+ testRunner.Then("Create Project button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 338
+ testRunner.When("User enters \"Edinburgh Devices Migration\" in the \"Project Name\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 339
+ testRunner.When("User clicks Create button on the Create Project page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 340
+ testRunner.Then("Success message is displayed and contains \"The project has been created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 341
+ testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 342
+ testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 343
+ testRunner.When("User navigate to \"Edinburgh Devices Migration\" Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 344
+ testRunner.Then("\"Manage Project Details\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 345
+ testRunner.When("User navigate to \"Stages\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 346
+ testRunner.Then("\"Manage Stages\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 347
+ testRunner.When("User clicks \"Create Stage\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
+                        "StageName"});
+            table13.AddRow(new string[] {
+                        "Pre-Migration"});
+#line 348
+ testRunner.And("User create Stage", ((string)(null)), table13, "And ");
+#line 351
+ testRunner.And("User clicks \"Create Stage\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 352
+ testRunner.When("User clicks \"Create Stage\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
+                        "StageName"});
+            table14.AddRow(new string[] {
+                        "Migration"});
+#line 353
+ testRunner.And("User create Stage", ((string)(null)), table14, "And ");
+#line 356
+ testRunner.And("User clicks \"Create Stage\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 357
+ testRunner.And("User navigate to \"Tasks\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 358
+ testRunner.Then("\"Manage Tasks\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 359
+ testRunner.When("User clicks \"Create Task\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "Help",
+                        "StagesName",
+                        "TaskType",
+                        "ValueType",
+                        "ObjectType",
+                        "TaskValuesTemplate",
+                        "ApplyToAllCheckbox"});
+            table15.AddRow(new string[] {
+                        "Device Task 1",
+                        "DAS16992",
+                        "Pre-Migration",
+                        "Normal",
+                        "Date",
+                        "Computer",
+                        "",
+                        ""});
+#line 360
+ testRunner.And("User creates new Task on Senior", ((string)(null)), table15, "And ");
+#line 363
+ testRunner.Then("Success message is displayed with \"Task successfully created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 364
+ testRunner.When("User publishes the task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 365
+ testRunner.Then("selected task was published", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 366
+ testRunner.When("User clicks \"Cancel\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 367
+ testRunner.And("User clicks \"Create Task\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "Help",
+                        "StagesName",
+                        "TaskType",
+                        "ValueType",
+                        "ObjectType",
+                        "TaskValuesTemplate",
+                        "ApplyToAllCheckbox"});
+            table16.AddRow(new string[] {
+                        "Device Task 3",
+                        "DAS16992",
+                        "Pre-Migration",
+                        "Group",
+                        "Date",
+                        "Computer",
+                        "",
+                        ""});
+#line 368
+ testRunner.And("User creates new Task on Senior", ((string)(null)), table16, "And ");
+#line 371
+ testRunner.Then("Success message is displayed with \"Task successfully created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 372
+ testRunner.When("User publishes the task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 373
+ testRunner.Then("selected task was published", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 374
+ testRunner.When("User clicks \"Cancel\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 375
+ testRunner.And("User clicks \"Create Task\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "Help",
+                        "StagesName",
+                        "TaskType",
+                        "ValueType",
+                        "ObjectType",
+                        "TaskValuesTemplate",
+                        "ApplyToAllCheckbox"});
+            table17.AddRow(new string[] {
+                        "Device Task 2",
+                        "DAS16992",
+                        "Pre-Migration",
+                        "Normal",
+                        "Date",
+                        "Computer",
+                        "",
+                        ""});
+#line 376
+ testRunner.And("User creates new Task on Senior", ((string)(null)), table17, "And ");
+#line 379
+ testRunner.Then("Success message is displayed with \"Task successfully created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 380
+ testRunner.When("User clicks \"Cancel\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 381
+ testRunner.And("User clicks \"Create Task\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "Help",
+                        "StagesName",
+                        "TaskType",
+                        "ValueType",
+                        "ObjectType",
+                        "TaskValuesTemplate",
+                        "ApplyToAllCheckbox"});
+            table18.AddRow(new string[] {
+                        "Device Task 4",
+                        "DAS16992",
+                        "Pre-Migration",
+                        "Normal",
+                        "Date",
+                        "Computer",
+                        "",
+                        ""});
+#line 382
+ testRunner.And("User creates new Task on Senior", ((string)(null)), table18, "And ");
+#line 385
+ testRunner.Then("Success message is displayed with \"Task successfully created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 386
+ testRunner.When("User publishes the task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 387
+ testRunner.Then("selected task was published", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 388
+ testRunner.When("User navigate to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 389
+ testRunner.And("User clicks \"Admin\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 390
+ testRunner.Then("Admin page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 391
+ testRunner.When("User clicks \"Automations\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 392
+ testRunner.Then("\"Automations\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 393
+ testRunner.When("User clicks the \"CREATE AUTOMATION\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 394
+ testRunner.Then("Create Automation page is displayed to the User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 395
+ testRunner.When("User type \"DAS16992_Edinburgh_Automation\" Name in the \"Automation Name\" field on " +
+                    "the Automation details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 396
+ testRunner.When("User type \"Task value change\" Name in the \"Description\" field on the Automation d" +
+                    "etails page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 397
+ testRunner.When("User selects \"Edinburgh Devices\" in the Scope Automation dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 398
+ testRunner.When("User selects \"Manual\" in the \"Run\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 399
+ testRunner.When("User selects \"Active\" checkbox on the Automation Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 400
+ testRunner.And("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 402
+ testRunner.Then("\"CREATE\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 403
+ testRunner.Then("\"CREATE\" Action button have tooltip with \"Some values are missing or not valid\" t" +
+                    "ext", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 404
+ testRunner.Then("\"SAVE AND CREATE ANOTHER\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 405
+ testRunner.Then("\"SAVE AND CREATE ANOTHER\" Action button have tooltip with \"Some values are missin" +
+                    "g or not valid\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 406
+ testRunner.When("User type \"DAS16992_Action\" Name in the \"Action Name\" field on the Automation det" +
+                    "ails page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 407
+ testRunner.When("User selects \"Update task value\" in the \"Action Type\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 408
+ testRunner.When("User selects \"Edinburgh Devices Migration\" in the Project dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 409
+ testRunner.When("User selects \"Pre-Migration\" in the \"Stage\" dropdown for Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table19.AddRow(new string[] {
+                        "Device Task 1"});
+#line 410
+ testRunner.Then("following items are displayed in the \"Task\" dropdown for Actions:", ((string)(null)), table19, "Then ");
+#line 413
+ testRunner.When("User selects \"Device Task 1\" in the \"Task\" dropdown for Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 414
+ testRunner.When("User selects \"Unknown\" Value for Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 415
+ testRunner.Then("\"UPDATE\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 416
+ testRunner.When("User clicks the \"SAVE AND CREATE ANOTHER\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 417
+ testRunner.Then("Create Action page is displayed to the User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -34,11 +34,7 @@ namespace DashworksTestAutomation.Steps.Base
         [Then(@"There are no errors in the browser console")]
         public void ThenThereAreNoErrorsInTheBrowserConsole()
         {
-            var errorsList = new List<LogEntry>();
-            foreach (var entry in _driver.Manage().Logs.GetLog(LogType.Browser).ToList())
-                if (entry.Level == LogLevel.Severe)
-                    errorsList.Add(entry);
-            Assert.IsEmpty(errorsList, "Error message is displayed in the console");
+            _driver.CheckConsoleErrors();
         }
 
         [Then(@"There are only page not found errors in console")]
@@ -50,7 +46,7 @@ namespace DashworksTestAutomation.Steps.Base
                 if (entry.Level == LogLevel.Severe)
                     errorsList.Add(entry);
 
-            Assert.That(errorsList.Count, 
+            Utils.Verify.That(errorsList.Count, 
                 Is.EqualTo(errorsList.FindAll(x=>x.Message.Contains("the server responded with a status of 404 (Not Found)")).Count), 
                 "There are another errors in console");
         }

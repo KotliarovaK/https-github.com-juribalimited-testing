@@ -2,12 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Utils;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Remote;
@@ -242,6 +242,15 @@ namespace DashworksTestAutomation.Extensions
             } while (wasLoadingSpinnerDisplayed && attempts < 3);
         }
 
+        public static void CheckConsoleErrors(this RemoteWebDriver driver)
+        {
+            var errorsList = new List<LogEntry>();
+            foreach (var entry in driver.Manage().Logs.GetLog(LogType.Browser).ToList())
+                if (entry.Level == LogLevel.Severe)
+                    errorsList.Add(entry);
+            Utils.Verify.IsEmpty(errorsList, "Error message is displayed in the console");
+        }
+
         #region Web element extensions
 
         public static void SelectCustomSelectbox(this RemoteWebDriver driver, IWebElement selectbox, string option)
@@ -377,6 +386,13 @@ namespace DashworksTestAutomation.Extensions
             action.KeyUp(Keys.Shift).Build().Perform();
         }
 
+        public static void SearchOnPage(this RemoteWebDriver driver)
+        {
+            Actions action = new Actions(driver);
+            action.KeyDown(Keys.Control).SendKeys("F").Build().Perform();
+            action.KeyUp(Keys.Control).Build().Perform();
+        }
+
         #endregion Actions
 
         #region Actions with Javascript
@@ -400,6 +416,20 @@ namespace DashworksTestAutomation.Extensions
             IJavaScriptExecutor ex = driver;
             var netData = ex.ExecuteScript(scriptToExecute);
             return netData.ToString();
+        }
+
+        public static bool IsElementHaveVerticalScrollbar(this RemoteWebDriver driver, IWebElement element)
+        {
+            IJavaScriptExecutor ex = driver;
+            bool result = (bool)ex.ExecuteScript("return arguments[0].scrollHeight > arguments[0].clientHeight", element);
+            return result;
+        }
+
+        public static bool IsElementHaveHorizontalScrollbar(this RemoteWebDriver driver, IWebElement element)
+        {
+            IJavaScriptExecutor ex = driver;
+            bool result = (bool)ex.ExecuteScript("return arguments[0].scrollHeight > arguments[0].clientHeight", element);
+            return result;
         }
 
         #endregion Actions with Javascript
@@ -1687,11 +1717,11 @@ namespace DashworksTestAutomation.Extensions
 
         public enum WaitTime
         {
-            [Description("6")]
+            [System.ComponentModel.Description("6")]
             Short,
-            [Description("15")]
+            [System.ComponentModel.Description("15")]
             Medium,
-            [Description("30")]
+            [System.ComponentModel.Description("30")]
             Long
         }
 

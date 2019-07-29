@@ -41,6 +41,8 @@ namespace DashworksTestAutomation.Base
         [BeforeScenario]
         public void OnStartUp()
         {
+            Logger.Write($"TEST STARTED: {GetTestName()}");
+
             List<string> testTags = TestContext.CurrentContext.Test.Properties["Category"].Select(x => x.ToString()).ToList();
 
             //If we are not able to get nUnit tags the try to get them from SpecFlow
@@ -60,13 +62,13 @@ namespace DashworksTestAutomation.Base
             }
         }
 
-        [AfterScenario]
-        public void OnTearDown()
+        [AfterScenario(Order = 0)]
+        public void TestResultsAndScreen()
         {
             try
             {
-                List<string> testTags = TestContext.CurrentContext.Test.Properties["Category"].Select(x => x.ToString()).ToList();
-                LockCategory.RemoveTags(testTags);
+                List<string> testTags = TestContext.CurrentContext.Test.Properties["Category"].Select(x => x.ToString())
+                    .ToList();
 
                 RemoteWebDriver driver = null;
                 if (!testTags.Contains("API"))
@@ -83,35 +85,79 @@ namespace DashworksTestAutomation.Base
                 try
                 {
                     var testStatus = GetTestStatus();
+                    Logger.Write($"Test status is '{testStatus}'");
                     if (!string.IsNullOrEmpty(testStatus) && testStatus.Equals("Failed"))
                     {
                         var testName = GetTestName();
                         if (!string.IsNullOrEmpty(testName))
-                            driver?.CreateScreenshot(testName);
-                    }
-                    else if (!string.IsNullOrEmpty(testStatus) && testStatus.Equals("Passed"))
-                    {
-                        BambooUtil.UnleashTest(GetTestName());
+                        {
+                            if (driver != null)
+                                driver.CreateScreenshot(testName);
+                            else
+                                Logger.Write("Unable to get screenshot as no Driver in the context");
+                        }
+                        
                     }
 
                     if (driver != null)
-                        Logger.Write($"Closing window at: {driver.Url}");
+                        Logger.Write($"Test finished on: {driver.Url}");
                 }
                 catch (Exception e)
                 {
                     Logger.Write(e);
                 }
-
-                driver?.QuitDriver();
-            }
-            catch (ObjectContainerException e)
-            {
-                //There are no driver in the context
-                Logger.Write($"There are no driver in the context: {e}");
             }
             catch (Exception e)
             {
                 Logger.Write(e);
+            }
+        }
+
+        [AfterScenario(Order = 10000)]
+        public void QuiteDriver()
+        {
+            try
+            {
+                List<string> testTags = TestContext.CurrentContext.Test.Properties["Category"].Select(x => x.ToString())
+                    .ToList();
+                LockCategory.RemoveTags(testTags);
+
+                try
+                {
+                    var testStatus = GetTestStatus();
+                    if (!string.IsNullOrEmpty(testStatus) && testStatus.Equals("Passed"))
+                        BambooUtil.UnleashTest(GetTestName());
+                }
+                catch (Exception e)
+                {
+                    Logger.Write($"Unable to unleash test: {e}");
+                }
+
+                RemoteWebDriver driver = null;
+                if (!testTags.Contains("API"))
+                    try
+                    {
+                        driver = _objectContainer.Resolve<RemoteWebDriver>();
+                    }
+                    catch (Exception e)
+                    {
+                        Logger.Write($"UNABLE to get driver from context. It was closed before or doesn't exist: {e}");
+                        driver = null;
+                    }
+
+                driver?.QuitDriver();
+            }
+            catch (Exception e)
+            {
+                Logger.Write(e);
+            }
+            finally
+            {
+                try
+                {
+                    Logger.Write($"TEST FINISHED: {GetTestName()}");
+                }
+                catch { }
             }
         }
 

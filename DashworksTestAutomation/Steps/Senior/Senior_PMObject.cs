@@ -20,7 +20,7 @@ namespace DashworksTestAutomation.Steps.Projects
         public void ThenPMObjectPageForObjectIsDisplayedToTheUser(string objectName)
         {
             var page = _driver.NowAt<Projects_PMObjectPage>();
-            Assert.IsTrue(page.GetObjectOnPMObjectpageByName(objectName).Displayed(), $"Something went wrong. PMObject page for {objectName} object is not displayed!");
+            Utils.Verify.IsTrue(page.GetObjectOnPMObjectpageByName(objectName).Displayed(), $"Something went wrong. PMObject page for {objectName} object is not displayed!");
         }
 
         [When(@"User navigate to ""(.*)"" tab on PMObject page")]
@@ -34,7 +34,7 @@ namespace DashworksTestAutomation.Steps.Projects
         public void ThenApplicationTabContentIsDisplayedCorrectly()
         {
             var page = _driver.NowAt<Projects_PMObjectPage>();
-            Assert.IsTrue(page.TabContent.Displayed, "Selected tab is not loaded or displayed incorrectly");
+            Utils.Verify.IsTrue(page.TabContent.Displayed, "Selected tab is not loaded or displayed incorrectly");
         }
 
         [When(@"User select ""(.*)"" View State on Applications tab")]
@@ -60,7 +60,7 @@ namespace DashworksTestAutomation.Steps.Projects
         {
             var page = _driver.NowAt<Projects_PMObjectPage>();
             var color = page.ColorItem.GetAttribute("title");
-            Assert.AreEqual(color, colorName, "Colors for item are different");
+            Utils.Verify.AreEqual(color, colorName, "Colors for item are different");
         }
     }
 }

@@ -798,7 +798,7 @@ this.FeatureBackground();
             table16.AddRow(new string[] {
                         "Green"});
             table16.AddRow(new string[] {
-                        "Not Applicable"});
+                        "None"});
 #line 142
  testRunner.When(string.Format("User add \"{0}\" filter where type is \"Equals\" with added column and following chec" +
                         "kboxes:", filterName), ((string)(null)), table16, "When ");
@@ -1220,7 +1220,7 @@ this.FeatureBackground();
 #line 249
  testRunner.Then("ColumnName is added to the list", ((string)(null)), table26, "Then ");
 #line 253
- testRunner.And("\"17,225\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\"17,279\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 254
  testRunner.And("full list content is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 255
@@ -1592,6 +1592,89 @@ this.FeatureBackground();
  testRunner.When("User click on \'Evergreen Ring\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 339
  testRunner.Then("data in table is sorted by \'Evergreen Ring\' column in descending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatComplinceNoneOptionIsTranslated")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("AllLists")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
+        [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
+        [NUnit.Framework.CategoryAttribute("DAS16912")]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Application Compliance", "None", "Anwendungskonformität", "KEINE", null)]
+        [NUnit.Framework.TestCaseAttribute("Users", "Device Application Compliance", "Red", "Geräteanwendungskonformität", "ROT", null)]
+        [NUnit.Framework.TestCaseAttribute("Applications", "Compliance", "Green", "Konformität", "GRÜN", null)]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Owner Compliance", "Unknown", "Konformität des Inhabers", "UNBEKANNT", null)]
+        public virtual void EvergreenJnr_AllLists_CheckThatComplinceNoneOptionIsTranslated(string listName, string filterName, string filterValue, string translatedColumnName, string translatedFilterValue, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatComplinceNoneOptionIsTranslatedInternal(listName,filterName,filterValue,translatedColumnName,translatedFilterValue,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckThatComplinceNoneOptionIsTranslatedInternal(string listName, string filterName, string filterValue, string translatedColumnName, string translatedFilterValue, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "AllLists",
+                    "EvergreenJnr_FilterFeature",
+                    "FilterFunctionality",
+                    "DAS16912"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatComplinceNoneOptionIsTranslated", null, @__tags);
+#line 347
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table35 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table35.AddRow(new string[] {
+                        string.Format("{0}", filterName)});
+#line 348
+ testRunner.When(string.Format("User add following columns using URL to the \"{0}\" page:", listName), ((string)(null)), table35, "When ");
+#line 351
+ testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table36 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedCheckboxes"});
+            table36.AddRow(new string[] {
+                        string.Format("{0}", filterValue)});
+#line 352
+ testRunner.And(string.Format("User add \"{0}\" filter where type is \"Equals\" with added column and following chec" +
+                        "kboxes:", filterName), ((string)(null)), table36, "And ");
+#line 355
+ testRunner.And("User language is changed to \"Deutsch\" via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 356
+ testRunner.And("User clicks refresh button in the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 357
+ testRunner.Then(string.Format("\"{0}\" content is displayed in the \"{1}\" column", translatedFilterValue, translatedColumnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

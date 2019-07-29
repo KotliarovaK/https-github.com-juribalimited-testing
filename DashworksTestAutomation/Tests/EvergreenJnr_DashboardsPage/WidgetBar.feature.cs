@@ -86,7 +86,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS15356")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWidgetWithSpecificColumns()
         {
             System.Exception lastException = null;
@@ -121,7 +121,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "EvergreenJnr_DashboardsPage",
                         "Widgets",
                         "DAS15356",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

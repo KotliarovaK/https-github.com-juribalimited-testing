@@ -97,7 +97,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Buckets
         [NUnit.Framework.CategoryAttribute("DAS12768")]
         [NUnit.Framework.CategoryAttribute("Project_Creation_and_Scope")]
         [NUnit.Framework.CategoryAttribute("Buckets")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckThatOnboardedObjectsAreDisplayedAfterChangingProjectBucketsSetting()
         {
             System.Exception lastException = null;
@@ -143,7 +143,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Buckets
                         "DAS12768",
                         "Project_Creation_and_Scope",
                         "Buckets",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

@@ -32,7 +32,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public const string SelectedColumnSubcategory = "//div[contains(@class, 'sub-categories')]//div//span";
 
-        public const string OptionOnActionsPanel = "//mat-option[@role='option']";
+        public const string OptionOnActionsPanel = ".//mat-option[@role='option']";
 
         public const string GridCellByText = ".//div[@role='gridcell' and @title='{0}']";
 
@@ -77,7 +77,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = "//mat-option[@role='option']")]
         public IList<IWebElement> ActionsProjectOrEvergreenOptions { get; set; }
-        
+
         [FindsBy(How = How.XPath, Using = "//mat-option[@role='option']")]
         public IWebElement ProjectSection { get; set; }
 
@@ -139,7 +139,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Using = ".//div[@role='presentation']//div[@class='ag-header-cell']//header-cell//input")]
         public IWebElement SelectAllRowsAction { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[@class='ag-selection-checkbox']/span[@class='checkbox-unchecked']")]
+        [FindsBy(How = How.XPath, Using = ".//span[@class='ag-selection-checkbox']/span[contains(@class,'checkbox-unchecked')]/../*[not(contains(@class,'ag-hidden'))][1]")]
         public IList<IWebElement> SelectRowsCheckboxes { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'btn-close')]")]
@@ -361,7 +361,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IList<IWebElement> LastLogonColumnData { get; set; }
 
         #endregion TableColumns
-        
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -417,7 +417,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             {
                 selector = $".//div[@role='presentation']/span[text()='{columnName}']/..";
             }
-            
+
             Driver.WaitForElementToBeDisplayed(By.XPath(selector));
             return Driver.FindElement(By.XPath(selector));
         }
@@ -626,7 +626,15 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
             Driver.WaitForDataLoading();
             Driver.WaitForElementToBeDisplayed(byControl);
-            Driver.FindElement(byControl).Click();
+            try
+            {
+                Driver.FindElement(byControl).Click();
+            }
+            catch (StaleElementReferenceException)
+            {
+                if (Driver.IsElementDisplayed(byControl, WebDriverExtensions.WaitTime.Short))
+                    Driver.FindElement(byControl).Click();
+            }
         }
 
         /// <summary>
@@ -849,7 +857,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IList<IWebElement> GetListContentByColumnName(string columnName)
         {
-            var selector = By.XPath($"//div[@class='ag-center-cols-clipper']//div[contains(@class, 'ag-row')]/div[{GetColumnNumberByName(columnName)}]/span");
+            var selector = By.XPath($"//div[@class='ag-center-cols-clipper']//div[contains(@class, 'ag-row')]/div[{GetColumnNumberByName(columnName)}]//span");
             Driver.WaitForDataLoading();
             return Driver.FindElements(selector).ToList();
         }

@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12760 @DAS13254 @Buckets @Delete_Newly_Created_Bucket
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12760 @DAS13254 @Buckets @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckMessageThatDisplayedWhenDeletingBucket
 	When User creates new Bucket via api
 	| Name        | TeamName  | IsDefault |
@@ -22,15 +22,15 @@ Scenario: EvergreenJnr_AdminPage_CheckMessageThatDisplayedWhenDeletingBucket
 	And User selects "Delete" in the Actions
 	And User clicks Delete button 
 	Then Warning message with "You cannot delete the default bucket" text is displayed on the Admin page
-	When User enters "Unassigned" text in the Search field for "Bucket" column
-	And User clicks Select All checkbox on the grid
+	When User clicks Select All checkbox on the grid
+	And User enters "Unassigned" text in the Search field for "Bucket" column
 	And User clicks Select All checkbox on the grid
 	And User clicks on Actions button
 	And User selects "Delete" in the Actions
 	When User clicks Delete button 
 	Then Warning message with "You cannot delete the default bucket" text is displayed on the Admin page
-	When User enters "TestBucket4" text in the Search field for "Bucket" column
-	And User clicks Select All checkbox on the grid
+	When User clicks Select All checkbox on the grid
+	And User enters "TestBucket4" text in the Search field for "Bucket" column
 	And User clicks Select All checkbox on the grid
 	And User clicks on Actions button
 	And User selects "Delete" in the Actions
@@ -80,10 +80,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSpecificWarningMessageIsNotDisplayedAf
 	And User clicks on Actions button
 	And User selects "Delete" in the Actions
 	When User clicks Delete button
-	Then "You can not delete the default bucket" warning message is not displayed on the Buckets page
+	Then Warning message with "You can not delete the default bucket" text is not displayed on the Admin page
 	Then Warning message with "This bucket will be permanently deleted and any objects within it reassigned to the default bucket" text is displayed on the Admin page
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12331 @Buckets @Delete_Newly_Created_Bucket
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12331 @Buckets @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatWarningNotificationIsDisappearedAfterSwitchingFocusToAnotherBucket 
 	When User creates new Bucket via api
 	| Name         | TeamName | IsDefault |
@@ -103,8 +104,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatWarningNotificationIsDisappearedAfter
 	When User select "Bucket" rows in the grid
 	| SelectedRowsName |
 	| 1Bucket12331     |
-	Then "This bucket will be permanently deleted and any objects within it reassigned to the default bucket" warning message is not displayed on the Buckets page
+	Then Warning message with "This bucket will be permanently deleted and any objects within it reassigned to the default bucket" text is not displayed on the Admin page
 	When User select "Bucket" rows in the grid
 	| SelectedRowsName |
 	| 2Bucket12331     |
-	Then "This bucket will be permanently deleted and any objects within it reassigned to the default bucket" warning message is not displayed on the Buckets page
+	Then Warning message with "This bucket will be permanently deleted and any objects within it reassigned to the default bucket" text is not displayed on the Admin page

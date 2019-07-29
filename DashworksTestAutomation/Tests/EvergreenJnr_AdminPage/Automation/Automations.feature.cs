@@ -1352,7 +1352,7 @@ this.FeatureBackground();
 #line 418
  testRunner.When("User selects \"1803 Rollout\" in the Project dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 419
- testRunner.When("User selects \"Undetermined\" in the Path dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \"Undetermined\" in the \"Path\" dropdown for Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 420
  testRunner.And("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 421
@@ -1623,7 +1623,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS16316")]
         [NUnit.Framework.CategoryAttribute("DAS17223")]
         [NUnit.Framework.CategoryAttribute("DAS17336")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextForDeletedList()
         {
             System.Exception lastException = null;
@@ -1664,7 +1664,7 @@ this.FeatureBackground();
                         "DAS16316",
                         "DAS17223",
                         "DAS17336",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 488
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -2032,7 +2032,7 @@ this.FeatureBackground();
 #line 597
  testRunner.When("User selects \"Migration Project Phase 2 (User Project)\" in the Project dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 598
- testRunner.When("User selects \"[Default (User)]\" in the Path dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \"[Default (User)]\" in the \"Path\" dropdown for Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 599
  testRunner.When("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 600
@@ -2060,6 +2060,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS17003")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_ChechAutomationsPermissions()
         {
@@ -2095,6 +2096,7 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "Automations",
                         "DAS17003",
+                        "Cleanup",
                         "Not_Ready"});
 #line 608
 this.ScenarioInitialize(scenarioInfo);
@@ -2185,7 +2187,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS17003")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_ChechAutomationsPermissionsForScopeDropdownLists()
         {
@@ -2221,7 +2223,7 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "Automations",
                         "DAS17003",
-                        "Delete_Newly_Created_List",
+                        "Cleanup",
                         "Not_Ready"});
 #line 641
 this.ScenarioInitialize(scenarioInfo);

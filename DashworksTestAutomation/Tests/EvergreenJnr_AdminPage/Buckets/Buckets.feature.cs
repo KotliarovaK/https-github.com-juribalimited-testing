@@ -90,7 +90,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Buckets
         [NUnit.Framework.CategoryAttribute("DAS13420")]
         [NUnit.Framework.CategoryAttribute("DAS13837")]
         [NUnit.Framework.CategoryAttribute("Buckets")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Bucket")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_AddingDevicesFromBuckets()
         {
@@ -130,7 +130,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Buckets
                         "DAS13420",
                         "DAS13837",
                         "Buckets",
-                        "Delete_Newly_Created_Bucket",
+                        "Cleanup",
                         "Not_Run"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
@@ -258,7 +258,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS13420")]
         [NUnit.Framework.CategoryAttribute("DAS13837")]
         [NUnit.Framework.CategoryAttribute("Buckets")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Bucket")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_AddingMailboxesFromBuckets()
         {
@@ -297,7 +297,7 @@ this.FeatureBackground();
                         "DAS13420",
                         "DAS13837",
                         "Buckets",
-                        "Delete_Newly_Created_Bucket",
+                        "Cleanup",
                         "Not_Run"});
 #line 62
 this.ScenarioInitialize(scenarioInfo);
@@ -451,13 +451,11 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("AdminPage")]
-        [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS12905")]
         [NUnit.Framework.CategoryAttribute("DAS12930")]
         [NUnit.Framework.CategoryAttribute("DAS13973")]
         [NUnit.Framework.CategoryAttribute("Buckets")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Bucket")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketAreDisplayedCorrectlyInProjectHistory()
         {
@@ -493,13 +491,11 @@ this.FeatureBackground();
                         "Admin",
                         "EvergreenJnr_AdminPage",
                         "AdminPage",
-                        "Projects",
                         "DAS12905",
                         "DAS12930",
                         "DAS13973",
                         "Buckets",
-                        "Delete_Newly_Created_Bucket",
-                        "Delete_Newly_Created_Project",
+                        "Cleanup",
                         "Not_Run"});
 #line 123
 this.ScenarioInitialize(scenarioInfo);

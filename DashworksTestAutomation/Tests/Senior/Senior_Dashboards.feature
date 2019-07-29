@@ -45,7 +45,7 @@ Scenario: Senior_ChecksThatUserCantRemoveDefaultTeamOnSeniorPage
 	Then information message is displayed with "Team was successfully updated." text
 	And Default Team checkbox is checked and cannot be unchecked
 
-@Senior @Dashworks @Projects_Dashworks @Senior_Projects @Senior_Tasks @DAS14322 @Delete_Newly_Created_Project
+@Senior @Dashworks @Projects_Dashworks @Senior_Projects @Senior_Tasks @DAS14322 @Cleanup
 Scenario: Senior_ChecksThatAnyTabsCanBeOpenedAfterAddingNewValuesToTask
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -63,9 +63,9 @@ Scenario: Senior_ChecksThatAnyTabsCanBeOpenedAfterAddingNewValuesToTask
 	And User clicks "Create Stage" button
 	And User navigate to "Tasks" tab
 	And User clicks "Create Task" button
-	And User creates new Task on Senior
-	| Name      | Help      | StagesName  | TaskType | ValueType   | ObjectType | TaskValuesTemplate | ApplyToAllCheckbox |
-	| for 14322 | for 14322 | Stage 14322 | Normal   | Radiobutton | User       | None               |                    |
+	And User creates Task
+	| Name      | Help      | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString |
+	| for 14322 | for 14322 | Stage 14322      | Normal         | Radiobutton     | User             | None                     |
 	Then Success message is displayed with "Task successfully created" text
 	When User navigate to "Values" page
 	And User clicks "Add value" button

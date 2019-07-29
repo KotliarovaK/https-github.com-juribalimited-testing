@@ -30,10 +30,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Forms
 
         public IWebElement GetDropdownCheckboxByName(string checkboxName)
         {
-            var selector = By.XPath($".//li//label//span[contains(text(), '{checkboxName}')]//parent::label/div[contains(@class,'mat-checkbox')]");
+            var selector = By.XPath($".//*[contains(text(), '{checkboxName}')]//parent::label/div[@class='mat-checkbox-inner-container']");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
-
     }
 }

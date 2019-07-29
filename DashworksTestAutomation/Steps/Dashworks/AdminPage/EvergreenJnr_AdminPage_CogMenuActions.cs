@@ -41,7 +41,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         public void ThenCogMenuIsNotDisplayedOnTheAdminPage()
         {
             var cogMenu = _driver.NowAt<CogMenuElements>();
-            Assert.IsFalse(cogMenu.CogMenu.Displayed(), "Cog menu is displayed");
+            Utils.Verify.IsFalse(cogMenu.CogMenu.Displayed(), "Cog menu is displayed");
         }
 
         [Then(@"User sees following cog-menu items on Admin page:")]
@@ -49,7 +49,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             for (var i = 0; i < items.RowCount; i++)
-                Assert.That(page.CogMenuItems[i].Text, Is.EqualTo(items.Rows[i].Values.FirstOrDefault()),
+                Utils.Verify.That(page.CogMenuItems[i].Text, Is.EqualTo(items.Rows[i].Values.FirstOrDefault()),
                     "Items are not the same");
         }
 
@@ -89,8 +89,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
 
             _driver.WaitForDataLoading();
             cogMenu.CogMenu.Click();
-            Assert.AreEqual("rgba(21, 40, 69, 1)", cogMenu.GetCogMenuDropdownColor());
-            Assert.AreEqual("rgba(0, 0, 0, 0)", cogMenu.GetCogMenuDropdownLabelColor());
+            Utils.Verify.AreEqual("rgba(21, 40, 69, 1)", cogMenu.GetCogMenuDropdownColor(), "PLEASE ADD EXCEPTION MESSAGE");
+            Utils.Verify.AreEqual("rgba(0, 0, 0, 0)", cogMenu.GetCogMenuDropdownLabelColor(), "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"""(.*)"" item is not displayed in the grid on Admin page")]
@@ -98,7 +98,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         {
             var cogMenu = _driver.NowAt<CogMenuElements>();
 
-            Assert.IsFalse(cogMenu.CheckItemDisplay(itenName), "Status display is incorrect");
+            Utils.Verify.IsFalse(cogMenu.CheckItemDisplay(itenName), "Status display is incorrect");
         }
     }
 }

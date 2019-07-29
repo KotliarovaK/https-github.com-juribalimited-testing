@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS14867 @DAS15417 @DAS16694 @Delete_Newly_Created_Ring
+@Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS14867 @DAS15417 @DAS16694 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorDisplayedWhenDeletingRing
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page

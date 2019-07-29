@@ -45,7 +45,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenAccountProfileDropdownIsDisplayedToUser()
         {
             var header = _driver.NowAt<HeaderElement>();
-            Assert.AreEqual(2, header.MenuItems.Count, "Account Profile dropdown is not displayed");
+            Utils.Verify.AreEqual(2, header.MenuItems.Count, "Account Profile dropdown is not displayed");
         }
 
         [When(@"User clicks Profile in Account Dropdown")]
@@ -69,7 +69,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenChangePasswordPageIsDisplayedToUser()
         {
             var page = _driver.NowAt<ChangePasswordPage>();
-            Assert.IsTrue(page.CurrentPasswordField.Displayed(), "Change Password page is not displayed");
+            Utils.Verify.IsTrue(page.CurrentPasswordField.Displayed(), "Change Password page is not displayed");
         }
 
         [When(@"User enters ""(.*)"" in the Current Password field")]
@@ -133,14 +133,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenListPageSizeIsChangedTo(string size)
         {
             var page = _driver.NowAt<AdvancedPage>();
-            Assert.AreEqual(size, page.ListPageSizeField.GetAttribute("value"), "List Page Size is not changed");
+            Utils.Verify.AreEqual(size, page.ListPageSizeField.GetAttribute("value"), "List Page Size is not changed");
         }
 
         [Then(@"List Pages to Cache is changed to ""(.*)""")]
         public void ThenListPagesToCacheIsChangedTo(string size)
         {
             var page = _driver.NowAt<AdvancedPage>();
-            Assert.AreEqual(size, page.ListPagesToCache.GetAttribute("value"), "List Page Size is not changed");
+            Utils.Verify.AreEqual(size, page.ListPagesToCache.GetAttribute("value"), "List Page Size is not changed");
         }
 
         [When(@"User changes Display Mode to ""(.*)""")]
@@ -170,9 +170,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<PreferencesPage>();
             _driver.WaitForDataLoading();
-            Assert.IsTrue(page.LeftHandMenuOnFrench.Displayed(), "Left Hand Menu is not translated into French");
-            Assert.IsTrue(page.UpdateButtonOnFrench.Displayed(), "Update Button is not translated into French");
-            Assert.IsTrue(page.CaptionOnFrench.Displayed(), "Caption is not translated into French");
+            Utils.Verify.IsTrue(page.LeftHandMenuOnFrench.Displayed(), "Left Hand Menu is not translated into French");
+            Utils.Verify.IsTrue(page.UpdateButtonOnFrench.Displayed(), "Update Button is not translated into French");
+            Utils.Verify.IsTrue(page.CaptionOnFrench.Displayed(), "Caption is not translated into French");
         }
 
         [Then(@"Display Mode is changed to High Contrast")]
@@ -180,8 +180,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<PreferencesPage>();
             _driver.WaitForDataLoading();
-            Assert.AreEqual("rgba(21, 40, 69, 1)", page.GetUpdateButtonColor());
-            Assert.AreEqual("rgba(21, 40, 69, 1)", page.GetLinkMenuColor());
+            Utils.Verify.AreEqual("rgba(21, 40, 69, 1)", page.GetUpdateButtonColor(), "PLEASE ADD EXCEPTION MESSAGE");
+            Utils.Verify.AreEqual("rgba(21, 40, 69, 1)", page.GetLinkMenuColor(), "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [When(@"User changes Full Name to ""(.*)""")]
@@ -196,7 +196,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenErrorMessageIsNotDisplayedOnProfilePage()
         {
             var page = _driver.NowAt<AccountDetailsPage>();
-            Assert.IsFalse(page.ErrorMessage.Displayed(),
+            Utils.Verify.IsFalse(page.ErrorMessage.Displayed(),
                 $"Error message is displayed on Account Page");
         }
 
@@ -204,7 +204,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenIsDisplayedInFullNameField(string fullName)
         {
             var page = _driver.NowAt<AccountDetailsPage>();
-            Assert.AreEqual(fullName, page.FullNameField.GetAttribute("value"),
+            Utils.Verify.AreEqual(fullName, page.FullNameField.GetAttribute("value"),
                 $"{fullName} is not displayed in Full Name field");
         }
 
@@ -221,7 +221,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenIsDisplayedInEmailField(string email)
         {
             var page = _driver.NowAt<AccountDetailsPage>();
-            Assert.AreEqual(email, page.EmailField.GetAttribute("value"), $"{email} is not displayed in Email field");
+            Utils.Verify.AreEqual(email, page.EmailField.GetAttribute("value"), $"{email} is not displayed in Email field");
         }
 
         [When(@"User clears Full name field")]
@@ -266,7 +266,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<AccountDetailsPage>();
             _driver.WaitForElementToBeDisplayed(page.SuccessMessage);
-            Assert.AreEqual(text, page.SuccessMessage.Text, "Success Message is not displayed");
+            Utils.Verify.AreEqual(text, page.SuccessMessage.Text, "Success Message is not displayed");
             try
             {
                 page.CloseMessageButton.Click();
@@ -280,7 +280,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<ChangePasswordPage>();
             _driver.WaitForElementToBeDisplayed(page.SuccessMessage);
-            StringAssert.Contains(text, page.SuccessMessage.Text, "Success Message is not displayed");
+            Utils.Verify.Contains(text, page.SuccessMessage.Text, "Success Message is not displayed");
             //Waiting for success green banner is displayed
             Thread.Sleep(4000);
         }
@@ -290,7 +290,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<ChangePasswordPage>();
             _driver.WaitForElementToBeDisplayed(page.ErrorMessage);
-            StringAssert.Contains(text, page.ErrorMessage.Text, "Error Message is not displayed");
+            Utils.Verify.Contains(text, page.ErrorMessage.Text, "Error Message is not displayed");
             try
             {
                 page.CloseMessageButton.Click();
@@ -304,7 +304,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<AccountDetailsPage>();
             _driver.WaitForElementToBeDisplayed(page.ErrorMessage);
-            Assert.AreEqual(errorMessage, page.ErrorMessage.Text, "Incorrect Error message text");
+            Utils.Verify.AreEqual(errorMessage, page.ErrorMessage.Text, "Incorrect Error message text");
             try
             {
                 page.CloseMessageButton.Click();
@@ -318,7 +318,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<AdvancedPage>();
             _driver.WaitForElementToBeDisplayed(page.SuccessMessage);
-            Assert.AreEqual(text, page.SuccessMessage.Text, "Success Message is not displayed");
+            Utils.Verify.AreEqual(text, page.SuccessMessage.Text, "Success Message is not displayed");
             page.CloseMessageButton.Click();
             _driver.WaitForElementToBeNotDisplayed(page.SuccessMessage);
         }
@@ -327,7 +327,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenUserPictureIsChangedToUploadedPhoto()
         {
             var page = _driver.NowAt<AccountDetailsPage>();
-            StringAssert.DoesNotContain("img/UnknownUser.jpg", page.UserPicture.GetAttribute("style"),
+            Utils.Verify.DoesNotContain("img/UnknownUser.jpg", page.UserPicture.GetAttribute("style"),
                 "Picture is not changed");
         }
 
@@ -335,7 +335,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenUserPictureChangedToDefault()
         {
             var page = _driver.NowAt<AccountDetailsPage>();
-            StringAssert.Contains("img/UnknownUser.jpg", page.UserPicture.GetAttribute("style"),
+            Utils.Verify.Contains("img/UnknownUser.jpg", page.UserPicture.GetAttribute("style"),
                 "Picture is not default");
         }
 
@@ -343,9 +343,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenNotificationMessageIsDisplayedForAFewSecondsOnPreferencesPage()
         {
             var page = _driver.NowAt<PreferencesPage>();
-            Assert.IsTrue(page.SuccessMessage.Displayed(), "Success message is not displayed");
+            Utils.Verify.IsTrue(page.SuccessMessage.Displayed(), "Success message is not displayed");
             Thread.Sleep(10000);
-            Assert.IsFalse(page.SuccessMessage.Displayed(), "Success message is displayed for more than 5 seconds");
+            Utils.Verify.IsFalse(page.SuccessMessage.Displayed(), "Success message is displayed for more than 5 seconds");
         }
 
         [Then(@"following Roles are available for User:")]
@@ -354,7 +354,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<AccountDetailsPage>();
             var expectedList = table.Rows.SelectMany(row => row.Values);
             var actualList = page.AvailableRoles.Select(value => value.Text);
-            Assert.AreEqual(expectedList, actualList, "Available Roles are different");
+            Utils.Verify.AreEqual(expectedList, actualList, "Available Roles are different");
         }
 
         [AfterScenario("Remove_Profile_Changes")]
@@ -400,40 +400,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 page.ConfirmPasswordField.Clear();
                 page.ConfirmPasswordField.SendKeys("m!gration");
                 page.UpdateButton.Click();
-            }
-            catch
-            {
-            }
-        }
-
-        [AfterScenario("Delete_Newly_Created_User")]
-        public void DeleteNewlyCreatedUser()
-        {
-            try
-            {
-                var header = _driver.NowAt<HeaderElement>();
-                header.LogOut();
-                _driver.WaitForDataLoading();
-                var loginPage1 = _driver.NowAt<LoginPanelPage>();
-                loginPage1.LoginLink.Click();
-                var loginPage = _driver.NowAt<LoginPage>();
-                loginPage.SplashUserNameTextBox.SendKeys("admin");
-                loginPage.SplashPasswordTextBox.SendKeys("m!gration");
-                loginPage.SplashLoginButton.Click();
-                _driver.WaitForDataLoading();
-                var page = _driver.NowAt<ManagementConsolePage>();
-                page.ManageLink.Click();
-                _driver.WaitForDataLoading();
-                page.ManageUsersLink.Click();
-                _driver.WaitForDataLoading();
-                var page1 = _driver.NowAt<MainElementsOfProjectCreation>();
-                page1.SearchTextBox.Clear();
-                page1.SearchTextBox.SendKeys("DAS13288");
-                page1.SearchButton.Click();
-                _driver.WaitForDataLoading();
-                page1.GetDeleteButtonElementByName("DAS13288").Click();
-                _driver.WaitForDataLoading();
-                _driver.AcceptAlert();
             }
             catch
             {

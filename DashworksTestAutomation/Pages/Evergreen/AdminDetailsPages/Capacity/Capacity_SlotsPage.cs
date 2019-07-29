@@ -26,11 +26,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
 
         [FindsBy(How = How.XPath, Using = "//div[@class='cdk-overlay-pane small-dialogs-styling']")]
         public IWebElement MoveToPositionDialog { get; set; }
-        
+
         [FindsBy(How = How.XPath, Using = ".//input[contains(@placeholder, 'Move to position')]")]
         public IWebElement MoveToPositionInput { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='dialog-small mat-dialog-content']//*[@role='alert']//span[1]")]
+        [FindsBy(How = How.XPath, Using = ".//mat-error/span")]
         public IWebElement MoveToPositionAlert { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//div[@aria-live='assertive'][text()='0 shown']")]
@@ -48,7 +48,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
             };
         }
 
-
         public IWebElement RemoveTaskIcon(string taskName)
         {
             return Driver.FindElement(By.XPath($".//span[text()='{taskName}']/parent:: mat-chip/button"));
@@ -56,7 +55,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
 
         public void EnterValueByColumnName(string value, string columnName)
         {
-            var byControl =By.XPath($"//thead//td[text()='{columnName}']//ancestor::table//input");
+            var byControl = By.XPath($"//thead//td[text()='{columnName}']//ancestor::table//input");
             Driver.WaitForDataLoading();
             Driver.WaitForElementToBeDisplayed(byControl);
             Driver.FindElement(byControl).Click();
@@ -66,12 +65,16 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
 
         public void EnterValueByDayName(string value, string columnName)
         {
-            var byControl = By.XPath($".//input[@id='{columnName.ToLower()}']");
-            Driver.WaitForDataLoading();
-            Driver.WaitForElementToBeDisplayed(byControl);
-            Driver.FindElement(byControl).Click();
-            Driver.FindElement(byControl).Clear();
-            Driver.FindElement(byControl).SendKeys(value);
+            if (!string.IsNullOrEmpty(value))
+            {
+                var byControl = By.XPath($".//input[@id='{columnName.ToLower()}']");
+                Driver.WaitForDataLoading();
+                Driver.WaitForElementToBeDisplayed(byControl);
+                Driver.FindElement(byControl).Click();
+                Driver.FindElement(byControl).Clear();
+                Driver.FindElement(byControl).SendKeys(value);
+                BodyContainer.Click();
+            }
         }
 
         public void ClickDropdownByName(string dropdownName)
@@ -131,7 +134,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
 
         public IWebElement GetMoveToPositionDialogButtonByText(string buttonText)
         {
-            var selector = By.XPath($"//div[@class='dialog-small mat-dialog-content']/following-sibling :: div//button/span[contains(text(), '{buttonText.ToUpper()}')]/parent :: button");
+            var selector = By.XPath($".//change-order-dialog//span[contains(text(), '{buttonText.ToUpper()}')]//parent::button");
             return Driver.FindElement(selector);
         }
     }

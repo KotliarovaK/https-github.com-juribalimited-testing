@@ -60,9 +60,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAllColumnsAreVisibleInTheirRelevantC
 	| Compliance |
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
-	Then "11" subcategories is displayed for "Device" category
-	When User have reset all columns
 	Then "13" subcategories is displayed for "Device" category
+	When User have reset all columns
+	Then "15" subcategories is displayed for "Device" category
 
 @Evergreen @Mailboxes @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11548 @DAS13423
 Scenario: EvergreenJnr_MailboxesList_CheckThatCategoryRemainsOpenAfterAddingColumns
@@ -95,7 +95,7 @@ Scenario: EvergreenJnr_DevicesList_CheckTheColumnCategoriesUpdatesAfterAddingCol
 	| ColumnName |
 	| Build Date |
 
-@Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11768 @DAS11951 @Delete_Newly_Created_List
+@Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11768 @DAS11951 @Cleanup
 Scenario: EvergreenJnr_UsersList_CheckTheColumnCategoriesUpdatesAfterAddingColumnForDynamicLists
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -122,7 +122,7 @@ Scenario: EvergreenJnr_UsersList_CheckTheColumnCategoriesUpdatesAfterAddingColum
 	| ColumnName |
 	| Zip Code   |
 
-@Evergreen @Applications @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11768 @DAS12152 @DAS12553 @DAS12602 @Delete_Newly_Created_List
+@Evergreen @Applications @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11768 @DAS12152 @DAS12553 @DAS12602 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckTheColumnCategoriesUpdatesAfterAddingColumnForStaticLists
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -151,7 +151,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckTheColumnCategoriesUpdatesAfterAddi
 	| ColumnName           |
 	| Windows7Mi: In Scope |
 
-@Evergreen @Mailboxes @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11768 @DAS11951 @Delete_Newly_Created_List
+@Evergreen @Mailboxes @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11768 @DAS11951 @Cleanup
 Scenario: EvergreenJnr_MailboxesList_CheckTheColumnCategoriesUpdatesAfterAddingColumnForDynamicLists
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -162,21 +162,21 @@ Scenario: EvergreenJnr_MailboxesList_CheckTheColumnCategoriesUpdatesAfterAddingC
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName                 |
-	| EmailMigra: Scheduled date |
+	| ColumnName                                 |
+	| EmailMigra: Pre-Migration \ Scheduled date |
 	Then ColumnName is added to the list
-	| ColumnName                 |
-	| EmailMigra: Scheduled date |
+	| ColumnName                                 |
+	| EmailMigra: Pre-Migration \ Scheduled date |
 	When User navigates to the "All Mailboxes" list
 	Then "Mailboxes" list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName                 |
-	| EmailMigra: Scheduled date |
+	| ColumnName                                 |
+	| EmailMigra: Pre-Migration \ Scheduled date |
 	Then ColumnName is added to the list
-	| ColumnName                 |
-	| EmailMigra: Scheduled date |
+	| ColumnName                                 |
+	| EmailMigra: Pre-Migration \ Scheduled date |
 
 @Evergreen @AllLists @EvergreenJnr_GridActions @ColumnOrder @DAS11463
 Scenario: EvergreenJnr_AllLists_CheckThatColumnsIsNotRemovedAfterDraggingThemOutsideTheAgGrid
@@ -274,7 +274,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatColumnsPanelIsDisplayedCorrectlyAfter
 	Then Columns panel is displayed to the user
 	Then Maximize button is displayed for "User" category
 
-@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13059 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13059 @Cleanup
 Scenario: EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromTheAllListTheColumnsIsDisplayedCorrectlyOnDevicesPage
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -318,7 +318,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromThe
 	| Compliance         |
 	| Import             |
 
-@Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13059 @Delete_Newly_Created_List
+@Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13059 @Cleanup
 Scenario: EvergreenJnr_UsersList_ChecksThatAfterAddingRowsToAStaticListFromTheAllListTheColumnsIsDisplayedCorrectlyOnUsersPage
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -359,7 +359,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatAfterAddingRowsToAStaticListFromTheAl
 	| Compliance         |
 	| Enabled            |
 
-@Evergreen @Applications @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13059 @Delete_Newly_Created_List
+@Evergreen @Applications @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13059 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatAfterAddingRowsToAStaticListFromTheAllListTheColumnsIsDisplayedCorrectlyOnApplicationsPage
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -399,7 +399,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatAfterAddingRowsToAStaticListFr
 	| Compliance  |
 	| Import      |
 
-@Evergreen @Mailboxes @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13059 @Delete_Newly_Created_List
+@Evergreen @Mailboxes @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13059 @Cleanup
 Scenario: EvergreenJnr_MailboxesList_ChecksThatAfterAddingRowsToAStaticListFromTheAllListTheColumnsIsDisplayedCorrectlyOnMailboxesPage
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -441,7 +441,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatAfterAddingRowsToAStaticListFromT
 	| Alias              |
 	| Import             |
 
-@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13059 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13059 @Cleanup
 Scenario: EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromADynamicListTheColumnsIsDisplayedCorrectlyOnDevicesPage
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -487,7 +487,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromADy
 	| Owner Display Name |
 	| Import             |
 
-@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13059 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13059 @Cleanup
 Scenario: EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromAStaticListTheColumnsIsDisplayedCorrectlyOnDevicesPage
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -740,6 +740,13 @@ Scenario: EvergreenJnr_UsersList_ChecksThatSubcategoriesOnColumnsPanelAreDisplay
 	| Cost Centre          |
 	| Department Code      |
 	| Department Full Path |
+	| Department Level 1   |
+	| Department Level 2   |
+	| Department Level 3   |
+	| Department Level 4   |
+	| Department Level 5   |
+	| Department Level 6   |
+	| Department Level 7   |
 	| Department Name      |
 
 @Evergreen @AllLists @EvergreenJnr_Columns @ColumnSectionDisplay @DAS12922
@@ -889,20 +896,20 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatOnlyRingsCategoryOfSameTypeProjectA
 	And User clicks the Columns button
 	And User enters "ring" text in Search field at Columns Panel
 	Then Category with counter is displayed on Columns panel
-	| Category            | Number |
-	| Evergreen           | 1      |
-	| Project: 1803       | 1      |
-	| Project: Babel(Engl | 1      |
-	| Project: ComputerSc | 1      |
-	| Project: DeviceSche | 1      |
-	| Project: Havoc(BigD | 1      |
-	| Project: ICSP       | 1      |
-	| Project: prK        | 1      |
-	| Project: Windows101 | 1      |
-	| Project: Windows102 | 1      |
-	| Project: Windows10T | 1      |
-	| Project: Windows10U | 1      |
-	| Project: Windows7Mi | 1      |
+	| Category                  | Number |
+	| Evergreen                 | 1      |
+	| Project Rings: 1803       | 1      |
+	| Project Rings: Babel(Engl | 1      |
+	| Project Rings: ComputerSc | 1      |
+	| Project Rings: DeviceSche | 1      |
+	| Project Rings: Havoc(BigD | 1      |
+	| Project Rings: ICSP       | 1      |
+	| Project Rings: prK        | 1      |
+	| Project Rings: Windows101 | 1      |
+	| Project Rings: Windows102 | 1      |
+	| Project Rings: Windows10T | 1      |
+	| Project Rings: Windows10U | 1      |
+	| Project Rings: Windows7Mi | 1      |
 
 @Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS15140 @Do_Not_Run_With_Projects
 Scenario: EvergreenJnr_UsersList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAreAvailableInPanel
@@ -910,13 +917,13 @@ Scenario: EvergreenJnr_UsersList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAre
 	And User clicks the Columns button
 	And User enters "ring" text in Search field at Columns Panel
 	Then Category with counter is displayed on Columns panel
-	| Category            | Number |
-	| Evergreen           | 1      |
-	| Project: Barry'sUse | 1      |
-	| Project: MigrationP | 1      |
-	| Project: UserEvergr | 1      |
-	| Project: UserSched2 | 1      |
-	| Project: UserSchedu | 1      |
+	| Category                  | Number |
+	| Evergreen                 | 1      |
+	| Project Rings: Barry'sUse | 1      |
+	| Project Rings: MigrationP | 1      |
+	| Project Rings: UserEvergr | 1      |
+	| Project Rings: UserSched2 | 1      |
+	| Project Rings: UserSchedu | 1      |
 
 @Evergreen @Mailboxes @EvergreenJnr_Columns @ColumnSectionDisplay @DAS15140 @Do_Not_Run_With_Projects
 Scenario: EvergreenJnr_MailboxesList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAreAvailableInPanel
@@ -924,10 +931,10 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatOnlyRingsCategoryOfSameTypeProjec
 	And User clicks the Columns button
 	And User enters "ring" text in Search field at Columns Panel
 	Then Category with counter is displayed on Columns panel
-	| Category            | Number |
-	| Evergreen           | 1      |
-	| Project: EmailMigra | 1      |
-	| Project: MailboxEve | 1      |
+	| Category                  | Number |
+	| Evergreen                 | 1      |
+	| Project Rings: EmailMigra | 1      |
+	| Project Rings: MailboxEve | 1      |
 
 @Evergreen @Applications @EvergreenJnr_Columns @ColumnSectionDisplay @DAS15140 @Do_Not_Run_With_Projects
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAreAvailableInPanel

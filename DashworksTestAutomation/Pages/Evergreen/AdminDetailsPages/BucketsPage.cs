@@ -49,12 +49,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.IsElementDisplayed(By.XPath($".//h1[text()='{bucketName}']"));
         }
 
-        public bool WarningDeleteBucketMessage(string warningText)
-        {
-            return Driver.IsElementDisplayed(
-                By.XPath($".//div[@id='messageAdmin'][text()='{warningText}']"));
-        }
-
         public void ClickTabByName(string tabName)
         {
             var tabNameSelector = $".//div[@role='tab']/div[text()='{tabName}']";

@@ -32,6 +32,15 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatCorrectMessageIsDisplayedForDev
 	When User navigates to the "Devices" sub-menu on the Details page
 	Then "No devices found for this application" message is displayed on the Details Page
 
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17278
+Scenario: EvergreenJnr_DevicesList_CheckThatCorrectMessageIsDisplayedForDevicesSectionIfTheOwnerEqualUnknownForDeviceObjectInEvergreen
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "06Y8HSNCPVHENV"
+	And User click content from "Hostname" column
+	When User navigates to the "Users" main-menu on the Details page
+	Then "No users found for this device" message is displayed on the Details Page
+
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12235 @DAS13409 @DAS13657 @DAS14923
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColumnsForExpandedSections
 	When User clicks "<PageName>" on the left-hand menu
@@ -401,13 +410,13 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOneUnknownFilterValueIsShownInGroupD
 	| Unknown |
 	When User clicks "True" checkbox from String Filter on the Details Page
 	Then Content is present in the table on the Details Page
-	When User clicks Reset Filters button on the Details Page
+	When User clicks Reset Filters button on the Item Details page
 	And User enters "wheelern" text in the Search field for "Username" column on the Details Page
 	Then Rows counter shows "1" of "7" rows
-	When User clicks Reset Filters button on the Details Page
+	When User clicks Reset Filters button on the Item Details page
 	And User enters "Administrator" text in the Search field for "Display Name" column on the Details Page
 	Then Rows counter shows "1" of "7" rows
-	When User clicks Reset Filters button on the Details Page
+	When User clicks Reset Filters button on the Item Details page
 	And User clicks String Filter button for "Domain" column
 	When User selects "DWLABS" checkbox from String Filter on the Details Page
 	Then Rows counter shows "0" of "7" rows
@@ -423,22 +432,22 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAllTextIsDisplayedAfterClearingFilte
 	When User clicks String Filter button for "Compliance" column
 	And User clicks "Red" checkbox from String Filter on the Details Page
 	Then All text is not displayed for "Compliance" column in the String Filter
-	When User clicks Reset Filters button on the Details Page
+	When User clicks Reset Filters button on the Item Details page
 	Then All text is displayed for "Compliance" column in the String Filter
 	When User enters "ea" text in the Search field for "Application" column on the Details Page
 	Then Rows counter contains "3" found row of all rows
-	When User clicks Reset Filters button on the Details Page
+	When User clicks Reset Filters button on the Item Details page
 	And User enters "3.0.0" text in the Search field for "Version" column on the Details Page
 	Then Rows counter contains "1" found row of all rows
-	When User clicks Reset Filters button on the Details Page
+	When User clicks Reset Filters button on the Item Details page
 	And User clicks String Filter button for "Used" column
 	And User clicks "Unknown" checkbox from String Filter on the Details Page
 	Then Rows counter contains "0" found row of all rows
-	When User clicks Reset Filters button on the Details Page
+	When User clicks Reset Filters button on the Item Details page
 	And User clicks String Filter button for "Entitled" column
 	When User clicks "True" checkbox from String Filter on the Details Page
 	Then Rows counter contains "0" found row of all rows
-	When User clicks Reset Filters button on the Details Page
+	When User clicks Reset Filters button on the Item Details page
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12088 @DAS12321
 Scenario: EvergreenJnr_MailboxesList_CheckThatMailboxPermissionsAndFolderPermissionsDataAreDisplayedCorrectly
@@ -819,7 +828,7 @@ Scenario: EvergreenJnr_DevicesList_CheckingThatInRangeOperatorWorkingCorrectly
 	| 22 May 2014 | 22 May 2018 |
 	Then Rows counter contains "2" found row of all rows
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13335 @DAS14923 @DAS12963 @DAS16233 @Delete_Newly_Created_Bucket
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13335 @DAS14923 @DAS12963 @DAS16233 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckUpdatingDeviceBucketViaRelatedUserProjectSummaryWhenMailboxesSectionIsExpanded
 	When User clicks Admin on the left-hand menu
 	When User clicks "Evergreen" link on the Admin page
@@ -900,7 +909,8 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatDevicesUsersUsedQuantityMatchE
 	And User clicks String Filter button for "Used" column
 	And User clicks "False" checkbox from String Filter on the Details Page
 	And User clicks "Unknown" checkbox from String Filter on the Details Page
-	Then Rows counter shows "99" of "173" rows
+	And User closes Checkbox filter for "Used" column
+	Then Rows counter shows "94" of "168" rows
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS14431
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatNoConsoleErrorDisplayedAndMenuPositionStaysTheSameWhenSettingDeliveryDate
@@ -1023,7 +1033,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatIconsForReadinessDdlOnRelatedTabAreD
 	| GREY                    |
 	| NONE                    |
 
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17182 @DAS17219 @DAS17254
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17182 @DAS17219 @DAS17254 @DAS17255
 Scenario: EvergreenJnr_MailboxesList_CheckThatUsersTabIsDisplayedWithCorrectColumnsOnMailboxesDetailsPageForProjectMode
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -1056,6 +1066,9 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatUsersTabIsDisplayedWithCorrectColu
 	And "RED" content is displayed for "Stage 2" column
 	And "GREEN" content is displayed for "Stage 3" column
 	And "BLUE" content is displayed for "Stage Z" column
+	Then "1" rows found label displays on Details Page
+	When User clicks String Filter button for "Path" column
+	Then "[Default (User)]" checkbox is checked on the Details Page
 	
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17182 @DAS17218 @DAS11053 @DAS14923
 Scenario: EvergreenJnr_UsersList_CheckThatDevicesTabIsDisplayedWithCorrectColumnsOnUsersDetailsPageForProjectMode
@@ -1168,3 +1181,42 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatUsersAreReloadedAfterSelectingAPr
 	When User switches to the "Email Migration" project in the Top bar on Item details page
 	Then "1" rows found label displays on Details Page
 	And "hansonay" content is displayed in "Username" column
+
+	#Ann.Ilchenko 7/19/19: will be fully available for the "pulsar" release.
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17159 @DAS17161 @DAS17162 @DAS17228 @DAS17229 @DAS17265 @Not_Ready
+Scenario: EvergreenJnr_DevicesList_CheckThatAgGridActionsWorksCorrectlyForDetailsPage
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "001BAQXT6JWFPI"
+	And User click content from "Hostname" column
+	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	When User navigates to the "Details" main-menu on the Details page
+	And User navigates to the "Custom Fields" sub-menu on the Details page
+		#cannot be checked because there is only one item in the table (need to wait for new data in GD?)
+	#When User click on 'Custom Field' column header
+	#Then date in table is sorted by 'Custom Field' column in ascending order
+	#When User click on 'Custom Field' column header
+	#Then date in table is sorted by 'Custom Field' column in descending order
+	Then ColumnName is displayed in following order on the Details page:
+	| ColumnName   |
+	| Custom Field |
+	| Value        |
+		#need to ask Lana about the number of columns for 'pulsar'
+	#When User move 'Value' column to 'Custom Field' column
+	#Then ColumnName is displayed in following order on the Details page:
+	#| ColumnName   |
+	#| Value        |
+	#| Custom Field |
+	Then 'Reset Filters' button is displayed on the Item Details page
+	Then 'Refresh' button is displayed on the Item Details page
+	Then 'Export' button is displayed on the Item Details page
+	Then 'Group By' button is displayed on the Item Details page
+	Then Reset Filters button on the Item Details page is disable
+	When User enters "com" text in the Search field for "Custom Field" column on the Details Page
+	Then Reset Filters button on the Item Details page is enabled
+	Then Rows counter shows "1" of "1" rows
+	When User clicks Reset Filters button on the Item Details page
+	Then Reset Filters button on the Item Details page is disable
+		#need to add static data for gold data to enable this check.
+	#When User clicks Group By button on the Details page and selects "Value" value
+	#Then "" content is not displayed in the grid on the Item details page

@@ -3,6 +3,7 @@ using System.Linq;
 using System.Net;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Teams;
 using DashworksTestAutomation.DTO.RuntimeVariables;
+using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Providers;
 using RestSharp;
 using TechTalk.SpecFlow;
@@ -41,11 +42,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Teams.Api
                 if (string.IsNullOrEmpty(team.TeamName))
                     throw new Exception("Unable to create Team with empty name");
 
-                var request = new RestRequest(requestUri);
-
-                request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
-                request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
-                request.AddParameter("Referer", UrlProvider.EvergreenUrl);
+                var request = requestUri.GenerateRequest();
                 request.AddParameter("teamName", team.TeamName);
                 request.AddParameter("description", team.Description);
                 request.AddParameter("isDefault", team.IsDefault);
