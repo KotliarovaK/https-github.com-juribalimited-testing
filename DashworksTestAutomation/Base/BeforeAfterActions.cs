@@ -86,7 +86,7 @@ namespace DashworksTestAutomation.Base
                 {
                     var testStatus = GetTestStatus();
                     Logger.Write($"Test status is '{testStatus}'");
-                    if (!string.IsNullOrEmpty(testStatus) && testStatus.Equals("Failed"))
+                    if (!string.IsNullOrEmpty(testStatus) && (testStatus.Equals("Failed") || testStatus.Equals("Inconclusive")))
                     {
                         var testName = GetTestName();
                         if (!string.IsNullOrEmpty(testName))
