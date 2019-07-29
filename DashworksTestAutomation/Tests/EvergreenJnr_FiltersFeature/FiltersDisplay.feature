@@ -1776,3 +1776,21 @@ Scenario: EvergreenJnr_DevicesList_CheckThatStatusFilterAvailableOptionsList
 	| Migrated      |
 	| Complete      |
 	| Offboarded    |
+
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS17579
+Scenario: EvergreenJnr_ApplicationsList_CheckUserPostalCodeOptionsDisplaying
+	When User clicks "Applications" on the left-hand menu
+	And User clicks the Filters button
+	When user select "User Postal Code" filter
+	Then following operator options available:
+	| operator            |
+	| Equals              |
+	| Does not equal      |
+	| Contains            |
+	| Does not contain    |
+	| Begins with         |
+	| Does not begin with |
+	| Ends with           |
+	| Does not end with   |
+	| Empty               |
+	| Not empty           |
