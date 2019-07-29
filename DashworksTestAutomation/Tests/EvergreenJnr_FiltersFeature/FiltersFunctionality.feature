@@ -1677,13 +1677,13 @@ Scenario: EvergreenJnr_UsersList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAre
 	And User clicks Add New button on the Filter panel
 	And User enters "ring" text in Search field at Filters Panel
 	Then Category with counter is displayed on Filter panel
-	| Category            | Number |
-	| Evergreen           | 1      |
-	| Project: Barry'sUse | 1      |
-	| Project: MigrationP | 1      |
-	| Project: UserEvergr | 1      |
-	| Project: UserSched2 | 1      |
-	| Project: UserSchedu | 1      |
+	| Category                  | Number |
+	| Evergreen                 | 1      |
+	| Project Rings: Barry'sUse | 1      |
+	| Project Rings: MigrationP | 1      |
+	| Project Rings: UserEvergr | 1      |
+	| Project Rings: UserSched2 | 1      |
+	| Project Rings: UserSchedu | 1      |
 
 @Evergreen @Mailboxes @Evergreen_FiltersFeature @FilterFunctionality @DAS15140
 Scenario: EvergreenJnr_MailboxesList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAreAvailableInPanel
@@ -1692,10 +1692,10 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatOnlyRingsCategoryOfSameTypeProjec
 	And User clicks Add New button on the Filter panel
 	And User enters "ring" text in Search field at Filters Panel
 	Then Category with counter is displayed on Filter panel
-	| Category            | Number |
-	| Evergreen           | 1      |
-	| Project: EmailMigra | 1      |
-	| Project: MailboxEve | 1      |
+	| Category                  | Number |
+	| Evergreen                 | 1      |
+	| Project Rings: EmailMigra | 1      |
+	| Project Rings: MailboxEve | 1      |
 
 @Evergreen @Applications @Evergreen_FiltersFeature @FilterFunctionality @DAS15140
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAreAvailableInPanel
@@ -1712,7 +1712,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUrlOfSavedListHasNoEmptyParameter
 	Then "Users" list should be displayed to the user
 	When User clicks the Filters button
 	And User clicks Add New button on the Filter panel
-	And user select "Windows7Mi: Send Applications List - User Object Task (Team)" filter
+	And user select "Windows7Mi: Communication \ Send Applications List - User Object Task (Team)" filter
 	And User clicks in search field in the Filter block
 	And User enters "Unassigned" text in Search field at selected Lookup Filter
 	And User clicks checkbox at selected Lookup Filter
@@ -1731,14 +1731,14 @@ Scenario: EvergreenJnr_UsersList_CheckSlotsSortOrderForUsersList
 	Then "Users" list should be displayed to the user
 	When User clicks the Filters button
 	And User clicks Add New button on the Filter panel
-	When User add "UserEvergr: Dropdown Non RAG Date (User) (Slot)" filter where type is "Does not equal" with added column and following checkboxes:
+	When User add "UserEvergr: Stage 2 \ Dropdown Non RAG Date (User) (Slot)" filter where type is "Does not equal" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| Empty              |
 	When User Add And "Domain" filter where type is "Equals" with added column and Lookup option
 	| SelectedValues |
 	| BCLABS         |
-	When User click on 'UserEvergr: Dropdown Non RAG Date (User) (Slot)' column header
-	Then following content is displayed in the "UserEvergr: Dropdown Non RAG Date (User) (Slot)" column
+	When User click on 'UserEvergr: Stage 2 \ Dropdown Non RAG Date (User) (Slot)' column header
+	Then following content is displayed in the "UserEvergr: Stage 2 \ Dropdown Non RAG Date (User) (Slot)" column
 	| Values      |
 	| User Slot 1 |
 	| User Slot 1 |
@@ -1747,8 +1747,8 @@ Scenario: EvergreenJnr_UsersList_CheckSlotsSortOrderForUsersList
 	| User Slot 1 |
 	| User Slot 2 |
 	| User Slot 2 |
-	When User click on 'UserEvergr: Dropdown Non RAG Date (User) (Slot)' column header
-	Then following content is displayed in the "UserEvergr: Dropdown Non RAG Date (User) (Slot)" column
+	When User click on 'UserEvergr: Stage 2 \ Dropdown Non RAG Date (User) (Slot)' column header
+	Then following content is displayed in the "UserEvergr: Stage 2 \ Dropdown Non RAG Date (User) (Slot)" column
 	| Values      |
 	| User Slot 2 |
 	| User Slot 2 |
@@ -1764,14 +1764,14 @@ Scenario: EvergreenJnr_DevicesList_CheckSlotsSortOrderForDevicesList
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	And User clicks Add New button on the Filter panel
-	When User add "1803: Scheduled Date (Slot)" filter where type is "Does not equal" with added column and Lookup option
+	When User add "1803: Pre-Migration \ Scheduled Date (Slot)" filter where type is "Does not equal" with added column and Lookup option
 	| SelectedValues |
 	| Empty          |
 	When User Add And "Device Type" filter where type is "Equals" with added column and Lookup option
 	| SelectedValues |
 	| Laptop         |
-	When User click on '1803: Scheduled Date (Slot)' column header
-	Then following content is displayed in the "1803: Scheduled Date (Slot)" column
+	When User click on '1803: Pre-Migration \ Scheduled Date (Slot)' column header
+	Then following content is displayed in the "1803: Pre-Migration \ Scheduled Date (Slot)" column
 	| Values                     |
 	| Birmingham Morning         |
 	| Manchester Morning         |
@@ -1783,8 +1783,8 @@ Scenario: EvergreenJnr_DevicesList_CheckSlotsSortOrderForDevicesList
 	| London Depot 09:00 - 11:00 |
 	| London Depot 09:00 - 11:00 |
 	| London Depot 09:00 - 11:00 |
-	When User click on '1803: Scheduled Date (Slot)' column header
-	Then following content is displayed in the "1803: Scheduled Date (Slot)" column
+	When User click on '1803: Pre-Migration \ Scheduled Date (Slot)' column header
+	Then following content is displayed in the "1803: Pre-Migration \ Scheduled Date (Slot)" column
 	| Values                     |
 	| London Depot 09:00 - 11:00 |
 	| London Depot 09:00 - 11:00 |
@@ -1803,19 +1803,19 @@ Scenario: EvergreenJnr_ApplicationsList_CheckSlotsSortOrderForApplicationsList
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
 	And User clicks Add New button on the Filter panel
-	When User add "UserEvergr: Radiobutton Readiness Date Owner (Application) (Slot)" filter where type is "Does not equal" with added column and following checkboxes:
+	When User add "UserEvergr: Stage 3 \ Radiobutton Readiness Date Owner (Application) (Slot)" filter where type is "Does not equal" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| Empty              |
-	When User click on 'UserEvergr: Radiobutton Readiness Date Owner (Application) (Slot)' column header
-	Then following content is displayed in the "UserEvergr: Radiobutton Readiness Date Owner (Application) (Slot)" column
+	When User click on 'UserEvergr: Stage 3 \ Radiobutton Readiness Date Owner (Application) (Slot)' column header
+	Then following content is displayed in the "UserEvergr: Stage 3 \ Radiobutton Readiness Date Owner (Application) (Slot)" column
 	| Values             |
 	| Application Slot 1 |
 	| Application Slot 1 |
 	| Application Slot 1 |
 	| Application Slot 1 |
 	| Application Slot 2 |
-	When User click on 'UserEvergr: Radiobutton Readiness Date Owner (Application) (Slot)' column header
-	Then following content is displayed in the "UserEvergr: Radiobutton Readiness Date Owner (Application) (Slot)" column
+	When User click on 'UserEvergr: Stage 3 \ Radiobutton Readiness Date Owner (Application) (Slot)' column header
+	Then following content is displayed in the "UserEvergr: Stage 3 \ Radiobutton Readiness Date Owner (Application) (Slot)" column
 	| Values             |
 	| Application Slot 2 |
 	| Application Slot 1 |
@@ -1829,7 +1829,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckSlotsSortOrderForMailboxes
 	Then "Mailboxes" list should be displayed to the user
 	When User clicks the Filters button
 	And User clicks Add New button on the Filter panel
-	When User add "MailboxEve: Scheduled - mailbox (Slot)" filter where type is "Does not equal" with added column and Lookup option
+	When User add "MailboxEve: 1 \ Scheduled - mailbox (Slot)" filter where type is "Does not equal" with added column and Lookup option
 	| SelectedValues |
 	| Empty          |
 	When User Add And "Owner Display Name" filter where type is "Equals" with added column and following value:
@@ -1837,14 +1837,14 @@ Scenario: EvergreenJnr_MailboxesList_CheckSlotsSortOrderForMailboxes
 	| Spruill, Shea             |
 	| Bandyopadhyay, Sudipta    |
 	| Balanceactiv, Info        |
-	When User click on 'MailboxEve: Scheduled - mailbox (Slot)' column header
-	Then following content is displayed in the "MailboxEve: Scheduled - mailbox (Slot)" column
+	When User click on 'MailboxEve: 1 \ Scheduled - mailbox (Slot)' column header
+	Then following content is displayed in the "MailboxEve: 1 \ Scheduled - mailbox (Slot)" column
 	| Values                                             |
 	| CA -Mailbox-Nov 1, 2018-Nov 10, 2018               |
 	| CA -Mailbox-Nov 11, 2018-Nov 30, 2018              |
 	| TRT-Mailbox-Nov 11, 2018-Nov 24, 2018\RT=A\T=Admin |
-	When User click on 'MailboxEve: Scheduled - mailbox (Slot)' column header
-	Then following content is displayed in the "MailboxEve: Scheduled - mailbox (Slot)" column
+	When User click on 'MailboxEve: 1 \ Scheduled - mailbox (Slot)' column header
+	Then following content is displayed in the "MailboxEve: 1 \ Scheduled - mailbox (Slot)" column
 	| Values                                             |
 	| TRT-Mailbox-Nov 11, 2018-Nov 24, 2018\RT=A\T=Admin |
 	| CA -Mailbox-Nov 11, 2018-Nov 30, 2018              |

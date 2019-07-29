@@ -262,7 +262,7 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Babel(Engl: Target App Readiness", "Equals, Does not equal", "None", "Babel(Engl: Target App Readiness is None", "302", null)]
         [NUnit.Framework.TestCaseAttribute("Barry\'sUse: Target App Readiness", "Equals, Does not equal", "None", "Barry\'sUse: Target App Readiness is None", "1,045", null)]
         [NUnit.Framework.TestCaseAttribute("ComputerSc: Target App Readiness", "Equals, Does not equal", "Green", "ComputerSc: Target App Readiness is Green", "913", null)]
-        [NUnit.Framework.TestCaseAttribute("Havoc(BigD: Target App Readiness", "Equals, Does not equal", "None", "Havoc(BigD: Target App Readiness is None", "1,067", null)]
+        [NUnit.Framework.TestCaseAttribute("Havoc(BigD: Target App Readiness", "Equals, Does not equal", "None", "Havoc(BigD: Target App Readiness is None", "1,066", null)]
         [NUnit.Framework.TestCaseAttribute("MigrationP: Target App Readiness", "Equals, Does not equal", "Blue", "MigrationP: Target App Readiness is Blue", "189", null)]
         [NUnit.Framework.TestCaseAttribute("UserSchedu: Target App Readiness", "Equals, Does not equal", "Grey", "UserSchedu: Target App Readiness is Grey", "981", null)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatTargetAppReadinessFilterIsAddedToTheList(string columnName, string operators, string filterOption, string text, string rowsCount, string[] exampleTags)
@@ -1100,8 +1100,8 @@ this.FeatureBackground();
             table15.AddRow(new string[] {
                         "Three"});
 #line 292
- testRunner.When("User add \"Windows7Mi: Values but no RAG\" filter where type is \"Equals\" without ad" +
-                    "ded column and following checkboxes:", ((string)(null)), table15, "When ");
+ testRunner.When("User add \"Windows7Mi: Migration \\ Values but no RAG\" filter where type is \"Equals" +
+                    "\" without added column and following checkboxes:", ((string)(null)), table15, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
@@ -1114,8 +1114,8 @@ this.FeatureBackground();
             table16.AddRow(new string[] {
                         "Complete"});
 #line 296
- testRunner.And("User Add And \"UserSchedu: Radio Rag Date Comp\" filter where type is \"Equals\" with" +
-                    " added column and following checkboxes:", ((string)(null)), table16, "And ");
+ testRunner.And("User Add And \"UserSchedu: One \\ Radio Rag Date Comp\" filter where type is \"Equals" +
+                    "\" with added column and following checkboxes:", ((string)(null)), table16, "And ");
 #line 302
  testRunner.Then("\"233\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 303
@@ -1134,13 +1134,13 @@ this.FeatureBackground();
 #line 309
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 310
- testRunner.Then("\"Windows7Mi: Values but no RAG is One or Three\" is displayed in added filter info" +
-                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"Windows7Mi: Migration \\ Values but no RAG is One or Three\" is displayed in added" +
+                    " filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 311
- testRunner.And("\"UserSchedu: Radio Rag Date Comp is Not Applicable, Started, Failed or Complete\" " +
-                    "is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\"UserSchedu: One \\ Radio Rag Date Comp is Not Applicable, Started, Failed or Comp" +
+                    "lete\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 312
- testRunner.When("User click Edit button for \"Windows7Mi: Values but no RAG\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User click Edit button for \"Windows7Mi: Migration \\ Values but no RAG\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
                         "Option",
@@ -1157,7 +1157,7 @@ this.FeatureBackground();
 #line 313
  testRunner.And("User change selected checkboxes:", ((string)(null)), table17, "And ");
 #line 318
- testRunner.And("User click Edit button for \"UserSchedu: Radio Rag Date Comp\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User click Edit button for \"UserSchedu: One \\ Radio Rag Date Comp\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 319
  testRunner.And("User select \"Does not equal\" Operator value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -1262,18 +1262,18 @@ this.FeatureBackground();
             table19.AddRow(new string[] {
                         "Complete"});
 #line 336
- testRunner.When("User add \"Windows7Mi: Read Only on Bulk Update Page\" filter where type is \"Equals" +
-                    "\" without added column and following checkboxes:", ((string)(null)), table19, "When ");
+ testRunner.When("User add \"Windows7Mi: Stage for User Tasks \\ Read Only on Bulk Update Page\" filte" +
+                    "r where type is \"Equals\" without added column and following checkboxes:", ((string)(null)), table19, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
             table20.AddRow(new string[] {
                         "Not Applicable"});
 #line 342
- testRunner.And("User Add And \"Windows7Mi: T-60 SMS Message Sent\" filter where type is \"Equals\" wi" +
-                    "th added column and following checkboxes:", ((string)(null)), table20, "And ");
+ testRunner.And("User Add And \"Windows7Mi: User Acceptance Test \\ T-60 SMS Message Sent\" filter wh" +
+                    "ere type is \"Equals\" with added column and following checkboxes:", ((string)(null)), table20, "And ");
 #line 345
- testRunner.Then("\"4,641\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"4,655\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 346
  testRunner.When("User create dynamic list with \"Users_ProjectTaskFilters_AND\" name on \"Users\" page" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1290,13 +1290,14 @@ this.FeatureBackground();
 #line 352
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 353
- testRunner.Then("\"Windows7Mi: Read Only on Bulk Update Page is Not Applicable, Started, Failed or " +
-                    "Complete\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"Windows7Mi: Stage for User Tasks \\ Read Only on Bulk Update Page is Not Applicab" +
+                    "le, Started, Failed or Complete\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 354
- testRunner.And("\"Windows7Mi: T-60 SMS Message Sent is Not Applicable\" is displayed in added filte" +
-                    "r info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\"Windows7Mi: User Acceptance Test \\ T-60 SMS Message Sent is Not Applicable\" is d" +
+                    "isplayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 355
- testRunner.When("User click Edit button for \"Windows7Mi: Read Only on Bulk Update Page\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User click Edit button for \"Windows7Mi: Stage for User Tasks \\ Read Only on Bulk " +
+                    "Update Page\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 356
  testRunner.And("User select \"Does not equal\" Operator value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -1321,7 +1322,8 @@ this.FeatureBackground();
 #line 357
  testRunner.And("User change selected checkboxes:", ((string)(null)), table21, "And ");
 #line 364
- testRunner.And("User click Edit button for \"Windows7Mi: T-60 SMS Message Sent\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User click Edit button for \"Windows7Mi: User Acceptance Test \\ T-60 SMS Message S" +
+                    "ent\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
                         "Option",
@@ -1338,7 +1340,7 @@ this.FeatureBackground();
 #line 365
  testRunner.And("User change selected checkboxes:", ((string)(null)), table22, "And ");
 #line 370
- testRunner.Then("\"4,642\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"4,656\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 371
  testRunner.When("User update current custom list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -1355,9 +1357,9 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("NewFilterCheck")]
         [NUnit.Framework.CategoryAttribute("DAS11830")]
         [NUnit.Framework.CategoryAttribute("DAS14288")]
-        [NUnit.Framework.TestCaseAttribute("Users", "ComputerSc: User Off/On", null)]
-        [NUnit.Framework.TestCaseAttribute("Devices", "ComputerSc: Computer Off/On", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", "ComputerSc: Application Off/On", null)]
+        [NUnit.Framework.TestCaseAttribute("Users", "ComputerSc: One \\ User Off/On", null)]
+        [NUnit.Framework.TestCaseAttribute("Devices", "ComputerSc: One \\ Computer Off/On", null)]
+        [NUnit.Framework.TestCaseAttribute("Applications", "ComputerSc: One \\ Application Off/On", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatOptionsIsAvailableForFiltersOfProjectTaskCategories(string pageName, string filterName, string[] exampleTags)
         {
             System.Exception lastException = null;
