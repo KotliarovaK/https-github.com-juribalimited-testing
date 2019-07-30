@@ -41,29 +41,24 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksLinkOnTheDetailsPage(string linkName)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            if (!detailsPage.GetLinkByName(linkName).Displayed)
-                try
-                {
-                    Thread.Sleep(30000);
-                    _driver.Navigate().Refresh();
-                    detailsPage.GetLinkByName(linkName).Click();
-                }
-                catch (Exception)
-                {
-                    Thread.Sleep(50000);
-                    _driver.Navigate().Refresh();
-                    detailsPage.GetLinkByName(linkName).Click();
-                }
-            else
-                detailsPage.GetLinkByName(linkName).Click();
+            if (!_driver.IsElementDisplayed(detailsPage.GetLinkByNameSelector(linkName), WebDriverExtensions.WaitTime.Short))
+                _driver.WaitForElementToBeDisplayedAfterRefresh(detailsPage.GetLinkByNameSelector(linkName), true, 50);
+            detailsPage.GetLinkByName(linkName).Click();
+            _driver.WaitForDataLoading();
         }
 
-        [Then(@"""(.*)"" title matches the ""(.*)"" value")]
-        public void ThenTitleMatchesTheValue(string title, string value)
+        //	| Field | Data |
+        [Then(@"User verifies data in the fields on details page")]
+        public void ThenUserVerifiesDataInTheFieldsOnDetailsPage(Table table)
         {
-            var detailsPage = _driver.NowAt<DetailsPage>();
-            Utils.Verify.IsTrue(detailsPage.GetCompareTitleWithValueOnTheDetailsPage(title, value).Displayed(),
-                $"{title} does not match the {value}");
+            var detailsPage = _driver.NowAt<BaseDetailsPage>();
+            foreach (TableRow row in table.Rows)
+            {
+                var field = row["Field"];
+                var value = row["Data"];
+                Utils.Verify.AreEqual(detailsPage.GetFieldContentByTitleName(field), value,
+                    $"Incorrect data in the '{field}' field");
+            }
         }
 
         [Then(@"""(.*)"" content is displayed in ""(.*)"" field on Item Details page")]

@@ -208,13 +208,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return colId;
         }
 
-        public string GetColumnContentByColumnName(string columnName)
-        {
-            var by = By.XPath(
-                $".//div[contains(@class, 'ag-body-viewport')]//div[contains(@class, 'ag-body-container')]/div/div[{GetColumnNumberByNameOnPivot(columnName)}]");
-            return Driver.FindElement(by).Text;
-        }
-
         public List<string> GetPivotColumnContent()
         {
             var by = By.XPath(

@@ -802,6 +802,7 @@ namespace DashworksTestAutomation.Extensions
             WaitForElementDisplayConditionAfterRefresh(driver, element, false, waitSeconds, waitForDataLoading);
         }
 
+        //Only elements from PageObject are allowed!!!
         public static void WaitForElementToBeDisplayedAfterRefresh(this RemoteWebDriver driver, IWebElement element, bool waitForDataLoading = false, int waitSeconds = WaitTimeoutSeconds)
         {
             WaitForElementDisplayConditionAfterRefresh(driver, element, true, waitSeconds, waitForDataLoading);
@@ -855,11 +856,7 @@ namespace DashworksTestAutomation.Extensions
                     if (waitForDataLoading)
                         WaitForDataLoading((RemoteWebDriver)driver);
 
-                    var elements = driver.FindElements(locator);
-                    //If no elements found
-                    if (!elements.Any())
-                        return false.Equals(displayedCondition);
-                    return elements.Any(x => x.Displayed().Equals(displayedCondition));
+                    return IsElementDisplayed((RemoteWebDriver)driver, locator, WaitTime.Short).Equals(displayedCondition);
                 }
                 catch (NoSuchElementException)
                 {
@@ -891,7 +888,7 @@ namespace DashworksTestAutomation.Extensions
                     if (waitForDataLoading)
                         WaitForDataLoading((RemoteWebDriver)driver);
 
-                    return element.Displayed().Equals(displayedCondition);
+                    return IsElementDisplayed((RemoteWebDriver)driver, element, WaitTime.Short).Equals(displayedCondition);
                 }
                 catch (NoSuchElementException)
                 {

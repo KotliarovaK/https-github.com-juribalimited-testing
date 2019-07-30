@@ -423,6 +423,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             dashboardPage.CheckColumnContent(text);
         }
 
+        [Then(@"text is displayed in the table content")]
+        public void ThenTextIsDisplayedInTheTableContent(Table table)
+        {
+            var dashboardPage = _driver.NowAt<BaseDashboardPage>();
+            foreach (TableRow row in table.Rows)
+            {
+                dashboardPage.CheckColumnContent(row["Text"]);
+            }
+        }
+
         [Then(@"Evergreen Icon is displayed to the user")]
         public void ThenEvergreenIconIsDisplayedToTheUser()
         {

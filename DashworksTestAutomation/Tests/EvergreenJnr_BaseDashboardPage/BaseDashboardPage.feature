@@ -219,8 +219,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatToolTipIsDisplayedWithCreateProjectB
 	Then tooltip is displayed with "This list must be saved before using it to create a project" text for Create Project button
 	And Create Project button is disabled on the Base Dashboard Page
 
-	#Remove Not_Run. Added temporary by Vitalli to check how it will be on Bamboo
-@Evergreen @AllLists @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS14189 @Projects @Not_Run
+@Evergreen @AllLists @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS14189 @Projects
 Scenario Outline: EvergreenJnr_AllLists_CheckThatTheCorrectCreateMenuOptionsAreDisplayedForEachObjectListType
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -235,8 +234,7 @@ Examples:
 	| Users        | 
 	| Mailboxes    | 
 
-	#Remove Not_Run tag. Added by Vitalii just for test
-@Evergreen @Applications @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS14189 @Projects @Not_Run
+@Evergreen @Applications @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS14189 @Projects
 Scenario: EvergreenJnr_ApplicationList_CheckThatTheCorrectCreateMenuOptionsAreDisplayedForApplicationPage
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user

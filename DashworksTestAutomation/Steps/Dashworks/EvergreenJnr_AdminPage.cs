@@ -1285,7 +1285,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
             catch (Exception)
             {
-                Thread.Sleep(60000);
+                Thread.Sleep(30000);
                 _driver.Navigate().Refresh();
                 _driver.WaitForDataLoading();
                 var projectTabs = _driver.NowAt<ProjectsPage>();

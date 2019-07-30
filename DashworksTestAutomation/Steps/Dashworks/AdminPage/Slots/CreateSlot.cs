@@ -38,7 +38,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Slots
                 var action = _driver.NowAt<BaseDashboardPage>();
                 action.GetActionsButtonByName("CREATE SLOT").Click();
 
-                var projectElement = _driver.NowAt<ProjectsPage>();
+                 var projectElement = _driver.NowAt<ProjectsPage>();
 
                 projectElement.SendKeysToTheNamedTextbox(slot.SlotName, "Slot Name");
                 projectElement.SendKeysToTheNamedTextbox(slot.DisplayName, "Display Name");
