@@ -32,13 +32,15 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlMessageAppearsWhenDefaultLang
 	#Then User clicks on "1A701E05916148A6A3F" search result
 	#When User navigates to the "Projects" tab
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @DAS13422
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @DAS13422 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckingPercentageCapacityToReachBeforeShowingAmberField
-	When User navigates to "Email Migration" project details
+	When Project created via API and opened
+	| ProjectName        | Scope        | ProjectTemplate | Mode               |
+	| ProjectForDAS13422 | 1803 Rollout | None            | Standalone Project |
 	And User clicks "Capacity" tab
 	And User changes Percentage to reach before showing amber to "101"
 	Then "UPDATE" Action button is disabled
-	When User changes Percentage to reach before showing amber to Random Number
+	When User changes Percentage to reach before showing amber to "100"
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The project capacity details have been updated" text
 

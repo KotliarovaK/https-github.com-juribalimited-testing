@@ -845,13 +845,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             capacityElement.SetCapacityToReachBeforeShowAmber(value);
         }
 
-        [When(@"User changes Percentage to reach before showing amber to Random Number")]
-        public void WhenUserChangesPercentageToReachBeforeShowingAmberToRandomNumber()
-        {
-            var capacityElement = _driver.NowAt<Capacity_DetailsPage>();
-            capacityElement.SetCapacityToReachBeforeShowAmber(TestDataGenerator.RandomNum(99, 1).ToString());
-        }
-
         [Then(@"Default Team checkbox is not active")]
         public void ThenDefaultTeamCheckboxIsNotActive()
         {
