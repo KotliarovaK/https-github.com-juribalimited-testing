@@ -57,14 +57,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatListOfSelectedItemsIsTruncatedForReque
 	| Computer: PC Rebuild,Computer: Workstation Replacement |
 	| Admin IT,Administrative Team                           |
 	| Capacity Unit 1,Capacity Unit 2,Unassigned             |
-	When User select "Capacity Slot" rows in the grid
-	| SelectedRowsName |
-	| DAS_13811_1      |
-	| DAS_13811_2      |
-	And User clicks Actions button on the Projects page
-	And User clicks Delete button in Actions
-	And User clicks Delete button
-	And User clicks Delete button in the warning message
 	
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13526 @DAS17419 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatInSlotsColumnOnCapacityUnitsPageTheCorrectDataIsDisplayed
