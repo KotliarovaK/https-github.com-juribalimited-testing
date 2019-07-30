@@ -274,6 +274,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS17104")]
         [NUnit.Framework.CategoryAttribute("DAS17110")]
         [NUnit.Framework.CategoryAttribute("DAS17169")]
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_CheckThatInactiveAutomationShouldBeLoggedButNotRun()
         {
             System.Exception lastException = null;
@@ -309,7 +310,8 @@ this.FeatureBackground();
                         "Automations",
                         "DAS17104",
                         "DAS17110",
-                        "DAS17169"});
+                        "DAS17169",
+                        "Not_Ready"});
 #line 71
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
