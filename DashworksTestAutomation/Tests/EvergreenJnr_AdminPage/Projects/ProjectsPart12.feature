@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Cleanup @Cleanup @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Cleanup @Cleanup @Projects @TEST
 Scenario Outline: EvergreenJnr_ChangingApplicationScopeListToAnotherListForMailboxProject
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -56,7 +56,7 @@ Examples:
 	| All Applications | StaticList1529  | Applications to add (0 of 0 selected) | Applications to add (0 of 0 selected) |
 	| StaticList1529   | DynamicList87   | Applications to add (0 of 0 selected) | Applications to add (0 of 0 selected) |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Cleanup @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Cleanup @Projects @TEST
 Scenario: EvergreenJnr_AdminPage_AddingAndDeletingPermissionsForMailboxProject
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -123,7 +123,7 @@ Scenario: EvergreenJnr_AdminPage_AddingAndDeletingPermissionsForMailboxProject
 	| AvailabilityOnly |
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13205 @Cleanup @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13205 @Cleanup @Projects @TEST
 Scenario: EvergreenJnr_AdminPage_CheckThatBannerDisplaysOnScopeDetailsPage
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
@@ -134,7 +134,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatBannerDisplaysOnScopeDetailsPage
 	And User clicks newly created object link
 	Then User sees banner at the top of work area
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS12680 @DAS12108 @Cleanup @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS12680 @DAS12108 @Cleanup @Projects @TEST
 Scenario: EvergreenJnr_AdminPage_AddingRequestTypesAndCategories
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
