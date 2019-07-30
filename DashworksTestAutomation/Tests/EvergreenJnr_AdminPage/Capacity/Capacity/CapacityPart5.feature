@@ -48,7 +48,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingMapsToEvergreenColumnDisplayedForDiffer
 	When User enters "2" text in the Search field for "Capacity Unit" column
 	Then "" content is displayed for "Maps to Evergreen" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13156 @Cleanup @Set_Default_Capacity_Unit @Do_Not_Run_With_CapacityUnits
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13156 @Cleanup @Set_Default_Capacity_Unit @Do_Not_Run_With_CapacityUnits @Do_Not_Run_With_Units @Do_Not_Run_With_Capacity
 Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedApplicationsAreDisplayedCapacityUnits
 	Given Save Default Capacity Unit for 'Email Migration' project
 	When User creates new Capacity Unit via api

@@ -116,6 +116,7 @@
     <Compile Include="DTO\ColorCompliance.cs" />
     <Compile Include="DTO\Evergreen\Admin\Automations\AutomationsDTO.cs" />
     <Compile Include="DTO\Evergreen\Admin\Bucket\BucketDto.cs" />
+    <Compile Include="DTO\Evergreen\Admin\CapacityUnits\CapacityDetailsDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\CapacityUnits\CapacityUnitDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\Rings\RingDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\Slots\SlotDto.cs" />
@@ -158,6 +159,7 @@
     <Compile Include="DTO\RuntimeVariables\Buckets\Buckets.cs" />
     <Compile Include="DTO\RuntimeVariables\Automation.cs" />
     <Compile Include="DTO\RuntimeVariables\Buckets\BucketUnassignedId.cs" />
+    <Compile Include="DTO\RuntimeVariables\CapacityDetails.cs" />
     <Compile Include="DTO\RuntimeVariables\Rings\Rings.cs" />
     <Compile Include="DTO\RuntimeVariables\Rings\RingUnassignedId.cs" />
     <Compile Include="DTO\RuntimeVariables\Slots.cs" />
@@ -1924,7 +1926,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Steps\Dashworks\AdminPage\CapacityDetails\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

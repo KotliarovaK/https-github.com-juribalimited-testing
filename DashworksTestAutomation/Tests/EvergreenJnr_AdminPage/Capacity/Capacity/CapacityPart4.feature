@@ -38,6 +38,12 @@ Scenario: EvergreenJnr_AdminPage_CheckingPercentageCapacityToReachBeforeShowingA
 	And User clicks "Capacity" tab
 	And User changes Percentage to reach before showing amber to "101"
 	Then "UPDATE" Action button is disabled
+	#Disabled if user try to change to pervious value
+	When User changes Percentage to reach before showing amber to "100"
+	Then "UPDATE" Action button is disabled
+	When User changes Percentage to reach before showing amber to "99"
+	And User clicks the "UPDATE" Action button
+	Then Success message is displayed and contains "The project capacity details have been updated" text
 	When User changes Percentage to reach before showing amber to "100"
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The project capacity details have been updated" text

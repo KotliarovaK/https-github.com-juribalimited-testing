@@ -103,7 +103,7 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.Slots
         }
         public List<string> TasksList { get; set; }
 
-        public string Capacity
+        public string CapacityUnits
         {
             set => CapacityUnitsList = value.Split('‡').ToList();
         }

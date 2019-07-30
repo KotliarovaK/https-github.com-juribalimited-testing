@@ -467,7 +467,7 @@ this.FeatureBackground();
                         "User Scheduled Project in Italian & Japanese (Jo)",
                         "Slot4",
                         "Slot 4",
-                        "Capacity Unit 2",
+                        "",
                         "Teams and Paths"});
 #line 74
  testRunner.And("User creates new Slot via Api", ((string)(null)), table9, "And ");

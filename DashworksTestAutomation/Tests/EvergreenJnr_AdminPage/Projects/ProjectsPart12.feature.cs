@@ -89,6 +89,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Projects")]
+        [NUnit.Framework.CategoryAttribute("TEST")]
         [NUnit.Framework.TestCaseAttribute("All Applications", "StaticList1529", "Applications to add (0 of 0 selected)", "Applications to add (0 of 0 selected)", null)]
         [NUnit.Framework.TestCaseAttribute("StaticList1529", "DynamicList87", "Applications to add (0 of 0 selected)", "Applications to add (0 of 0 selected)", null)]
         public virtual void EvergreenJnr_ChangingApplicationScopeListToAnotherListForMailboxProject(string changingToList1, string changingToList2, string objectsToAdd1, string objectsToAdd2, string[] exampleTags)
@@ -127,7 +128,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects
                     "DAS12999",
                     "Cleanup",
                     "Cleanup",
-                    "Projects"};
+                    "Projects",
+                    "TEST"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -245,6 +247,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12999")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Projects")]
+        [NUnit.Framework.CategoryAttribute("TEST")]
         public virtual void EvergreenJnr_AdminPage_AddingAndDeletingPermissionsForMailboxProject()
         {
             System.Exception lastException = null;
@@ -280,7 +283,8 @@ this.FeatureBackground();
                         "AdminPage",
                         "DAS12999",
                         "Cleanup",
-                        "Projects"});
+                        "Projects",
+                        "TEST"});
 #line 60
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -444,6 +448,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS13205")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Projects")]
+        [NUnit.Framework.CategoryAttribute("TEST")]
         public virtual void EvergreenJnr_AdminPage_CheckThatBannerDisplaysOnScopeDetailsPage()
         {
             System.Exception lastException = null;
@@ -479,7 +484,8 @@ this.FeatureBackground();
                         "AdminPage",
                         "DAS13205",
                         "Cleanup",
-                        "Projects"});
+                        "Projects",
+                        "TEST"});
 #line 127
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -517,6 +523,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12108")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Projects")]
+        [NUnit.Framework.CategoryAttribute("TEST")]
         public virtual void EvergreenJnr_AdminPage_AddingRequestTypesAndCategories()
         {
             System.Exception lastException = null;
@@ -554,7 +561,8 @@ this.FeatureBackground();
                         "DAS12680",
                         "DAS12108",
                         "Cleanup",
-                        "Projects"});
+                        "Projects",
+                        "TEST"});
 #line 138
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

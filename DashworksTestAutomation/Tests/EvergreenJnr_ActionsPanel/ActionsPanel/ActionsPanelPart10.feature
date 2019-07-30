@@ -94,7 +94,7 @@ Scenario: EvergreenJnr_DevicesList_CheckSortOrderForBulkUpdateCapacitySlot
 	| London - Southbank Afternoon |
 
 @Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS17103
-Scenario: EvergreenJnr_AllLists_CheckDisplayingOfTooltipsInDatePickerOfBulkUpdate
+Scenario: EvergreenJnr_DevicesList_CheckTooltipDisplayingInDatePickerOfBulkUpdate
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Actions button
 	And User select "Hostname" rows in the grid
@@ -125,3 +125,24 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingOfTooltipsInDatePickerOfBulkUpdat
 	And following values are not presented in "Capacity Slot" drop-down on Action panel:
 	| Options            |
 	| Manchester Morning |
+
+@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS17580 @Cleanup
+Scenario: EvergreenJnr_UsersList_CheckDateColorDisplayingInBulkUpdateDatePicker
+	When User creates new Slot via Api
+	| Project                         | SlotName | DisplayName | CapacityType   | ObjectType | Sunday | Tasks                   |
+	| User Evergreen Capacity Project | slot1    | slot 1      | Capacity Units | User       | 0      | Stage 2 \ Scheduled Date |
+	| User Evergreen Capacity Project | slot2    | slot 2      | Capacity Units | User       | 5      | Stage 2 \ Scheduled Date |
+	| User Evergreen Capacity Project | slot3    | slot 3      | Capacity Units | User       |        | Stage 2 \ Scheduled Date |
+	And User clicks "Users" on the left-hand menu
+	And User clicks the Actions button
+	And User select "Display Name" rows in the grid
+	| SelectedRowsName                   |
+	| Exchange Online-ApplicationAccount |
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update task value" Bulk Update Type on Action panel
+	And User selects "User Evergreen Capacity Project" Project on Action panel
+	And User selects "Stage 2" Stage on Action panel
+	And User selects "Scheduled Date" Task on Action panel
+	And User selects "Update" Update Date on Action panel
+	And User clicks datepicker for Action panel
+	Then Column "Sunday" displayed green in Datepicker
