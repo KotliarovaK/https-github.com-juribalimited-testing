@@ -14,12 +14,12 @@ using TechTalk.SpecFlow.Assist;
 namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations
 {
     [Binding]
-    public class CreateAutomationViaApi : SpecFlowContext
+    public class CreateAutomationsViaApi : SpecFlowContext
     {
         private readonly Automation _automation;
         private readonly RestWebClient _client;
 
-        private CreateAutomationViaApi(Automation automation, RestWebClient client)
+        private CreateAutomationsViaApi(Automation automation, RestWebClient client)
         {
             _automation = automation;
             _client = client;
