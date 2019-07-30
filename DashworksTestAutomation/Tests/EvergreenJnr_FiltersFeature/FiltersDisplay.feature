@@ -1797,7 +1797,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatStatusFilterAvailableOptionsList
 	| Complete      |
 	| Offboarded    |
 
-@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS17579
+	#Remove NotReady after Pulsar release
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS17579 @Not_Ready
 Scenario: EvergreenJnr_ApplicationsList_CheckUserPostalCodeOptionsDisplaying
 	When User clicks "Applications" on the left-hand menu
 	And User clicks the Filters button

@@ -88,34 +88,63 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Slots.Api
                     request.AddParameter("requestTypes", "");
                 else
                 {
-                    var ids = String.Join(",",
-                        new List<string>(slot.PathsList.Select(x => DatabaseHelper.GetRequestTypeId(x, DatabaseHelper.GetProjectId(slot.Project)))));
-                    request.AddParameter("requestTypes", ids);
+                    if (slot.PathsList.Any(x => !string.IsNullOrEmpty(x)))
+                    {
+                        var paths = slot.PathsList.Where(x => !string.IsNullOrEmpty(x));
+                        var ids = String.Join(",",
+                            new List<string>(paths.Select(x =>
+                                DatabaseHelper.GetRequestTypeId(x, DatabaseHelper.GetProjectId(slot.Project)))));
+                        request.AddParameter("requestTypes", ids);
+                    }
+                    else
+                        request.AddParameter("requestTypes", "");
                 }
 
                 if (slot.CapacityType.Equals("Capacity Units") || !slot.TeamsList.Any())
                     request.AddParameter("teams", "");
                 else
                 {
-                    var teamsIds = String.Join(",",
-                        new List<string>(slot.TeamsList.Select(team => new TeamDto() { TeamName = team }.GetId())));
-                    request.AddParameter("teams", teamsIds);
+                    if (slot.TeamsList.Any(x => !string.IsNullOrEmpty(x)))
+                    {
+                        var teams = slot.TeamsList.Where(x => !string.IsNullOrEmpty(x));
+                        var teamsIds = String.Join(",",
+                            new List<string>(teams.Select(team => new TeamDto() { TeamName = team }.GetId())));
+                        request.AddParameter("teams", teamsIds);
+                    }
+                    else
+                        request.AddParameter("teams", "");
                 }
 
                 if (slot.CapacityType.Equals("Teams and Paths") || !slot.CapacityUnitsList.Any())
                     request.AddParameter("units", "");
                 else
                 {
-                    var ids = String.Join(",",
-                        new List<string>(slot.TeamsList.Select(team => new CapacityUnitDto() { Name = team, Project = slot.Project }.GetId())));
-                    request.AddParameter("units", ids);
+                    if (slot.CapacityUnitsList.Any(x => !string.IsNullOrEmpty(x)))
+                    {
+                        var cunits = slot.CapacityUnitsList.Where(x => !string.IsNullOrEmpty(x));
+                        var ids = String.Join(",",
+                            new List<string>(cunits.Select(team => new CapacityUnitDto() { Name = team, Project = slot.Project }.GetId())));
+                        request.AddParameter("units", ids);
+                    }
+                    else
+                        request.AddParameter("units", "");
                 }
 
                 if (slot.TasksList.Any())
                 {
-                    var ids = String.Join(",",
-                        new List<string>(slot.TasksList.Select(task => new TaskPropertiesDto() { Name = task.Split('\\').Last().TrimStart(), ProjectId = DatabaseHelper.GetProjectId(slot.Project) }.Id).ToList()));
-                    request.AddParameter("tasks", ids);
+                    if (slot.TasksList.Any(x => !string.IsNullOrEmpty(x)))
+                    {
+                        var tasks = slot.TasksList.Where(x => !string.IsNullOrEmpty(x));
+                        var ids = String.Join(",",
+                            new List<string>(tasks.Select(task => new TaskPropertiesDto()
+                            {
+                                Name = task.Split('\\').Last().TrimStart(),
+                                ProjectId = DatabaseHelper.GetProjectId(slot.Project)
+                            }.Id).ToList()));
+                        request.AddParameter("tasks", ids);
+                    }
+                    else
+                        request.AddParameter("tasks", "");
                 }
                 else
                 {

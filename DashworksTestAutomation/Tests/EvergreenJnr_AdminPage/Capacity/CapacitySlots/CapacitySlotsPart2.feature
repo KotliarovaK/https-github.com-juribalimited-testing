@@ -76,7 +76,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsLinkFromUnitGridLeadsToCorrectFil
 	| User Scheduled Project in Italian & Japanese (Jo) | Slot1    | Slot 1      |                 |                 |
 	| User Scheduled Project in Italian & Japanese (Jo) | Slot2    | Slot 2      | Capacity Unit 1 |                 |
 	| User Scheduled Project in Italian & Japanese (Jo) | Slot3    | Slot 3      | Capacity Unit 2 |                 |
-	| User Scheduled Project in Italian & Japanese (Jo) | Slot4    | Slot 4      | Capacity Unit 2 | Teams and Paths |
+	| User Scheduled Project in Italian & Japanese (Jo) | Slot4    | Slot 4      |                 | Teams and Paths |
 	#act1
 	When User clicks "Units" tab
 	And User enters "Unassigned" text in the Search field for "Capacity Unit" column
