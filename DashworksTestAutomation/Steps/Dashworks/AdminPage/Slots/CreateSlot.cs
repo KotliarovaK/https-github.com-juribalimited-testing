@@ -38,7 +38,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Slots
                 var action = _driver.NowAt<BaseDashboardPage>();
                 action.GetActionsButtonByName("CREATE SLOT").Click();
 
-                 var projectElement = _driver.NowAt<ProjectsPage>();
+                var projectElement = _driver.NowAt<ProjectsPage>();
 
                 projectElement.SendKeysToTheNamedTextbox(slot.SlotName, "Slot Name");
                 projectElement.SendKeysToTheNamedTextbox(slot.DisplayName, "Display Name");
@@ -54,6 +54,26 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Slots
                 var dropdown = _driver.NowAt<BaseGridPage>();
                 dropdown.GetDropdownByName("Capacity Type").Click();
                 action.GetOptionByName(slot.CapacityType).Click();
+
+                #region Assertion. Just comment with comment if some bugs appears
+
+                switch (slot.CapacityType)
+                {
+                    case "Capacity Units":
+                        Utils.Verify.IsTrue(dropdown.GetTextInFieldByFieldName("Capacity Units").GetAttribute("value").Contains("All Capacity Units"),
+                            $"Default text in Capacity Units field is incorrect");
+                        break;
+                    case "Teams and Paths":
+                        Utils.Verify.IsTrue(dropdown.GetTextInFieldByFieldName("Teams").GetAttribute("value").Contains("All Teams"),
+                            $"Default text in Teams field is incorrect");
+                        Utils.Verify.IsTrue(dropdown.GetTextInFieldByFieldName("Paths").GetAttribute("value").Contains("All Paths"),
+                            $"Default text in Paths field is incorrect");
+                        break;
+                    default:
+                        throw new Exception($"Unknown Capacity Type: {slot.CapacityType}");
+                }
+
+                #endregion
 
                 dropdown.GetDropdownByName("Object Type").Click();
                 action.GetOptionByName(slot.ObjectType).Click();

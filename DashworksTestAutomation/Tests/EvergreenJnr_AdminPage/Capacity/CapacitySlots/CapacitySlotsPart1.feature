@@ -15,10 +15,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingI
 	And User clicks the "CREATE SLOT" Action button
 	And User clicks on the Unlimited field on the Capacity Slots page
 	Then Unlimited text disappears from column
+	Then "All Capacity Units" content is displayed in "Capacity Units" field
 	When User clicks the "CANCEL" Action button
 	And User creates new Slot
-	| SlotName      | DisplayName | CapacityType   | CapacityUnits      |
-	| CapacitySlot1 | DAS13432    | Capacity Units | All Capacity Units |
+	| SlotName      | DisplayName | CapacityType   |
+	| CapacitySlot1 | DAS13432    | Capacity Units |
 	Then Success message is displayed and contains "Your capacity slot has been created" text
 	Then "All Capacity Units" content is displayed in "Capacity Units" column
 	When User creates new Slot
