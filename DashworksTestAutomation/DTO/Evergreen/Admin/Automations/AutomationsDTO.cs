@@ -1,67 +1,131 @@
-﻿using System.Linq;
+﻿using System;
+using System.Drawing.Text;
+using System.Linq;
 using DashworksTestAutomation.Helpers;
+using DashworksTestAutomation.Utils;
+using Newtonsoft.Json;
 
 namespace DashworksTestAutomation.DTO.Evergreen.Admin.Automations
 {
     public class AutomationsDto
     {
-        private string _scheduleTypeId;
-
-        public bool active { get; set; }
+        [JsonProperty("active")]
+        public bool Active { get; set; }
         public int automationId => -1;
         public string automationName { get; set; }
-
-        public string automationScheduleTypeId
-        {
-            get => _scheduleTypeId;
-            set => _scheduleTypeId = GetScheduleTypeId(value);
-        }
-
         public string automationSqlAgentJobId { get; set; }
         public string description { get; set; }
-        public string listId { get; set; }
-        public string objectTypeId { get; set; }
+        private string AutomationlistId { get; set; }
+        private string AutomationListName { get; set; }
+        private string _objectTypeId;
         public bool stopOnFailedAction { get; set; }
 
-        private string GetScheduleTypeId(string runType)
+        [JsonProperty("automationScheduleTypeId")]
+        public int AutomationScheduleTypeId { get; private set; }
+        private string _run;
+        public string Run
         {
-            if (runType.Equals("Manual"))
-                return "1";
-            if (runType.Equals("After Transform"))
-                return "2";
-            if (runType.Equals("Dashworks Daily"))
-                return "3";
-            return "NOT FOUND";
+            get => _run;
+            set
+            {
+                AutomationScheduleTypeId = GetScheduleTypeId(value);
+                _run = value;
+            }
         }
 
-        private string GetProjectListIdScope(string listName)
+        [JsonProperty("listId")]
+        public string Scope
         {
-            return DatabaseHelper.ExecuteReader(
-                $"select [ListId] from [DesktopBI].[dbo].[EvergreenList] where [ListName]='{listName}'", 0).LastOrDefault();
+            get => AutomationlistId;
+            set
+            {
+                AutomationListName = value;
+                AutomationlistId = GetAutomationListId(value);
+            }
         }
 
-        private string GetListId(string listName)
+        [JsonProperty("objectTypeId")]
+        public int Object
         {
-            if (listName.Equals("All Devices") || listName.Equals("All Users") || listName.Equals("All Mailboxes") || listName.Equals("All Mailboxes"))
+            get
+            {
+                if (string.IsNullOrEmpty(_objectTypeId))
+                    _objectTypeId = SetListIdForObjectTypeId();
+
+                return int.Parse(_objectTypeId);
+            }
+        }
+
+        private string SetListIdForObjectTypeId()
+        {
+            try
+            {
+                if (GetAutomationListId(AutomationListName).Equals("-1"))
+                {
+                    return DatabaseHelper.ExecuteReader(
+                            $"select[ObjectTypeID] from[PM].[dbo].[ObjectTypes] where [ObjectType] = '{GetProjectObjectTypeScope(this.AutomationListName)}'",
+                            0)
+                        .LastOrDefault();
+                }
+
+                return DatabaseHelper
+                    .ExecuteReader(
+                        $"select[ObjectTypeId] from[DesktopBI].[dbo].[EvergreenList] where[ListId] = '{this.AutomationListName}'",
+                        0).LastOrDefault();
+            }
+            catch (Exception e)
+            {
+                Logger.Write($"Unable to execute query {e}");
+                throw e;
+            }
+
+            //else 
+            //    throw new NotImplementedException();
+        }
+
+        private string GetProjectObjectTypeScope(string listName)
+        {
+            switch (listName)
+            {
+                case "All Devices":
+                    return "Computer";
+                case "All Users":
+                    return "User";
+                case "All Mailboxes":
+                    return "Mailbox";
+                case "All Applications":
+                    return "Application";
+                default:
+                    return "NOT FOUND";
+            }
+        }
+
+        private int GetScheduleTypeId(string runType)
+        {
+            switch (runType)
+            {
+                case "Manual":
+                    return 1;
+                case "After Transform":
+                    return 2;
+                case "Dashworks Daily":
+                    return 3;
+                default:
+                    throw new Exception($"'{runType}' is not defined Run Type");
+            }
+        }
+
+        private string GetAutomationListId(string listName)
+        {
+            if (new string[] { "All Devices", "All Users", "All Mailboxes" }.Contains(listName))
+            {
                 return "-1";
+            }
             else
             {
-                GetProjectListIdScope(listName);
+                return DatabaseHelper.ExecuteReader(
+                    $"select [ListId] from [DesktopBI].[dbo].[EvergreenList] where [ListName]='{listName}'", 0).LastOrDefault();
             }
-            return "NOT FOUND";
-        }
-
-        private string GetObjectTypeId(string scope)
-        {
-            if (scope.Equals("All Devices"))
-                return "2";
-            if (scope.Equals("All Users"))
-                return "1";
-            if (scope.Equals("All Mailboxes"))
-                return "4";
-            if (scope.Equals("All Applications"))
-                return "3";
-            return "NOT FOUND";
         }
     }
 }

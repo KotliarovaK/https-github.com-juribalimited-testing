@@ -66,22 +66,16 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsLogGridForRunningAutomationWith
 	When User enters "16890_Automation" text in the Search field for "Automation" column
 	Then "ONE OR MORE ACTIONS FAILED" content is displayed for "Outcome" column
 
-@Evergreen @EvergreenJnr_AdminPage @AutomationLog @Automations @DAS17104 @DAS17110 @DAS17169
+@Evergreen @EvergreenJnr_AdminPage @AutomationLog @Automations @DAS17104 @DAS17110 @DAS17169 @Not_Ready
 #Use Inactive automation
 Scenario: EvergreenJnr_AdminPage_CheckThatInactiveAutomationShouldBeLoggedButNotRun
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
+	When User creates new Automation via API
+	| AutomationName   | Description | Active | StopOnFailedAction | Scope     | Run    |
+	| 17104_Automation | 17104       | false  | false              | All Users | Manual |
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
-	When User clicks the "CREATE AUTOMATION" Action button
-	Then Create Automation page is displayed to the User
-	When User type "17104_Automation" Name in the "Automation Name" field on the Automation details page
-	When User type "17104" Name in the "Description" field on the Automation details page
-	When User selects "All Users" in the Scope Automation dropdown
-	Then "CREATE" Action button is disabled
-	When User selects "Manual" in the "Run" dropdown
-	And User clicks the "CREATE" Action button
-	When User clicks "Automations" navigation link on the Admin page
 	When User enters "17104_Automation" text in the Search field for "Automation" column
 	When User selects all rows on the grid
 	When User clicks on Actions button

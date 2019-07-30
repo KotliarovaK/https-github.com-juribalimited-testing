@@ -357,7 +357,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActions
 	And User navigate to "Tasks" tab
 	Then "Manage Tasks" page is displayed to the user
 	When User clicks "Create Task" button
-	And User creates new Task on Senior
+	And User creates Task
 	| Name          | Help     | StagesName    | TaskType | ValueType | ObjectType | TaskValuesTemplate | ApplyToAllCheckbox |
 	| Device Task 1 | DAS16992 | Pre-Migration | Normal   | Date      | Computer   |                    |                    |
 	Then Success message is displayed with "Task successfully created" text
@@ -365,7 +365,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActions
 	Then selected task was published
 	When User clicks "Cancel" button
 	And User clicks "Create Task" button
-	And User creates new Task on Senior
+	And User creates Task
 	| Name          | Help     | StagesName    | TaskType | ValueType | ObjectType | TaskValuesTemplate | ApplyToAllCheckbox |
 	| Device Task 3 | DAS16992 | Pre-Migration | Group    | Date      | Computer   |                    |                    |
 	Then Success message is displayed with "Task successfully created" text
@@ -373,13 +373,13 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActions
 	Then selected task was published
 	When User clicks "Cancel" button
 	And User clicks "Create Task" button
-	And User creates new Task on Senior
+	And User creates Task
 	| Name          | Help     | StagesName    | TaskType | ValueType | ObjectType | TaskValuesTemplate | ApplyToAllCheckbox |
 	| Device Task 2 | DAS16992 | Pre-Migration | Normal   | Date      | Computer   |                    |                    |
 	Then Success message is displayed with "Task successfully created" text
 	When User clicks "Cancel" button
 	And User clicks "Create Task" button
-	And User creates new Task on Senior
+	And User creates Task
 	| Name          | Help     | StagesName    | TaskType | ValueType | ObjectType | TaskValuesTemplate | ApplyToAllCheckbox |
 	| Device Task 4 | DAS16992 | Pre-Migration | Normal   | Date      | Computer   |                    |                    |
 	Then Success message is displayed with "Task successfully created" text
