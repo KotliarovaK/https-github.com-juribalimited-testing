@@ -7,7 +7,6 @@ using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Forms;
 using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
 using DashworksTestAutomation.Providers;
-using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
@@ -25,7 +24,10 @@ using DashworksTestAutomation.DTO.RuntimeVariables.Buckets;
 using DashworksTestAutomation.DTO.RuntimeVariables.CapacityUnits;
 using DashworksTestAutomation.DTO.RuntimeVariables.Rings;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Automations;
+using DashworksTestAutomation.Utils;
+using NUnit.Framework.Internal;
 using TechTalk.SpecFlow;
+using Logger = DashworksTestAutomation.Utils.Logger;
 
 namespace DashworksTestAutomation.Steps.Dashworks
 {
@@ -840,8 +842,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserChangesPercentageToReachBeforeShowingAmberTo(string value)
         {
             var capacityElement = _driver.NowAt<Capacity_DetailsPage>();
-            capacityElement.CapacityToReachBeforeShowAmber.Clear();
-            capacityElement.CapacityToReachBeforeShowAmber.SendKeys(value);
+            capacityElement.SetCapacityToReachBeforeShowAmber(value);
+        }
+
+        [When(@"User changes Percentage to reach before showing amber to Random Number")]
+        public void WhenUserChangesPercentageToReachBeforeShowingAmberToRandomNumber()
+        {
+            var capacityElement = _driver.NowAt<Capacity_DetailsPage>();
+            capacityElement.SetCapacityToReachBeforeShowAmber(TestDataGenerator.RandomNum(99, 1).ToString());
         }
 
         [Then(@"Default Team checkbox is not active")]

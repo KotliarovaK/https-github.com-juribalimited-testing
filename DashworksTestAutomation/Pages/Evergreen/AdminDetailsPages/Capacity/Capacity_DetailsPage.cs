@@ -22,5 +22,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
                 SelectorFor(this, p => p.PageTitle)
             };
         }
+
+        public void SetCapacityToReachBeforeShowAmber(string value)
+        {
+            CapacityToReachBeforeShowAmber.Clear();
+            CapacityToReachBeforeShowAmber.SendKeys(value);
+        }
     }
 }

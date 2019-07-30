@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DashworksTestAutomation.Helpers;
 using Newtonsoft.Json;
 
 namespace DashworksTestAutomation.DTO.ItemDetails
@@ -24,7 +25,7 @@ namespace DashworksTestAutomation.DTO.ItemDetails
             get
             {
                 if (string.IsNullOrEmpty(_id))
-                    _id = "NOT IMPLEMENTED. Get From DB";
+                    _id = DatabaseHelper.GetCustomFieldId(this.FieldName);
 
                 return _id;
             }
