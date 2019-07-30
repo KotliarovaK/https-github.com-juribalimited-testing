@@ -463,20 +463,20 @@ this.FeatureBackground();
 
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckDisplayingOfTooltipsInDatePickerOfBulkUpdate")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckTooltipDisplayingInDatePickerOfBulkUpdate")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("AllLists")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS17103")]
-        public virtual void EvergreenJnr_AllLists_CheckDisplayingOfTooltipsInDatePickerOfBulkUpdate()
+        public virtual void EvergreenJnr_DevicesList_CheckTooltipDisplayingInDatePickerOfBulkUpdate()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AllLists_CheckDisplayingOfTooltipsInDatePickerOfBulkUpdateInternal();
+                    this.EvergreenJnr_DevicesList_CheckTooltipDisplayingInDatePickerOfBulkUpdateInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -495,9 +495,9 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_AllLists_CheckDisplayingOfTooltipsInDatePickerOfBulkUpdateInternal()
+        private void EvergreenJnr_DevicesList_CheckTooltipDisplayingInDatePickerOfBulkUpdateInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckDisplayingOfTooltipsInDatePickerOfBulkUpdate", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckTooltipDisplayingInDatePickerOfBulkUpdate", null, new string[] {
                         "Evergreen",
                         "AllLists",
                         "EvergreenJnr_FilterFeature",
@@ -571,6 +571,121 @@ this.FeatureBackground();
                         "Manchester Morning"});
 #line 125
  testRunner.And("following values are not presented in \"Capacity Slot\" drop-down on Action panel:", ((string)(null)), table11, "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckDateColorDisplayingInBulkUpdateDatePicker")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("AllLists")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
+        [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
+        [NUnit.Framework.CategoryAttribute("DAS17580")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        public virtual void EvergreenJnr_UsersList_CheckDateColorDisplayingInBulkUpdateDatePicker()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UsersList_CheckDateColorDisplayingInBulkUpdateDatePickerInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UsersList_CheckDateColorDisplayingInBulkUpdateDatePickerInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckDateColorDisplayingInBulkUpdateDatePicker", null, new string[] {
+                        "Evergreen",
+                        "AllLists",
+                        "EvergreenJnr_FilterFeature",
+                        "FilterFunctionality",
+                        "DAS17580",
+                        "Cleanup"});
+#line 130
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Project",
+                        "SlotName",
+                        "DisplayName",
+                        "CapacityType",
+                        "ObjectType",
+                        "Sunday",
+                        "Tasks"});
+            table12.AddRow(new string[] {
+                        "User Evergreen Capacity Project",
+                        "slot1",
+                        "slot 1",
+                        "Capacity Units",
+                        "User",
+                        "0",
+                        "Stage 2 \\ Scheduled Date"});
+            table12.AddRow(new string[] {
+                        "User Evergreen Capacity Project",
+                        "slot2",
+                        "slot 2",
+                        "Capacity Units",
+                        "User",
+                        "5",
+                        "Stage 2 \\ Scheduled Date"});
+            table12.AddRow(new string[] {
+                        "User Evergreen Capacity Project",
+                        "slot3",
+                        "slot 3",
+                        "Capacity Units",
+                        "User",
+                        "",
+                        "Stage 2 \\ Scheduled Date"});
+#line 131
+ testRunner.When("User creates new Slot via Api", ((string)(null)), table12, "When ");
+#line 136
+ testRunner.And("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 137
+ testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedRowsName"});
+            table13.AddRow(new string[] {
+                        "Exchange Online-ApplicationAccount"});
+#line 138
+ testRunner.And("User select \"Display Name\" rows in the grid", ((string)(null)), table13, "And ");
+#line 141
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 142
+ testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 143
+ testRunner.And("User selects \"User Evergreen Capacity Project\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 144
+ testRunner.And("User selects \"Stage 2\" Stage on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 145
+ testRunner.And("User selects \"Scheduled Date\" Task on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 146
+ testRunner.And("User selects \"Update\" Update Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 147
+ testRunner.And("User clicks datepicker for Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 148
+ testRunner.Then("Column \"Sunday\" displayed green in Datepicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

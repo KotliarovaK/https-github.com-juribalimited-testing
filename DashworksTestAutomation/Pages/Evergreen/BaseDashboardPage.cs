@@ -884,5 +884,29 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(selector);
         }
 
+        public string GetDayColumnNumberByName(string dayName)
+        {
+            var selector = By.XPath($".//thead[@class='mat-calendar-table-header']//th[@aria-label]");
+
+            IList<IWebElement> headers = Driver.FindElements(selector);
+
+            foreach (var header in headers)
+            {
+                if (header.GetAttribute("aria-label").ToLower().Equals(dayName.ToLower()))
+                {
+                    int a = headers.IndexOf(header)+1;
+                    return a.ToString();
+                }
+            }
+            return "day not found";
+        }
+
+        public IList<IWebElement> GetListOfDaysInDatePicker(string column)
+        {
+            var selector = By.XPath($".//tbody/tr[@role='row']/td[{column}]");
+
+            return Driver.FindElements(selector);
+        }
+
     }
 }
