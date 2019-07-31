@@ -367,5 +367,16 @@ namespace DashworksTestAutomation.Helpers
         }
 
         #endregion
+
+        #region Custom Field
+
+        public static string GetCustomFieldId(string name)
+        {
+            string query = $"SELECT [CustomFieldID] FROM [DesktopBI].[dbo].[CustomFields] where Label = '{name}'";
+            var id = DatabaseHelper.ExecuteReader(query, 0)[0];
+            return id;
+        }
+
+        #endregion
     }
 }

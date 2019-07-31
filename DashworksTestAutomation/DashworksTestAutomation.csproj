@@ -124,6 +124,7 @@
     <Compile Include="DTO\Evergreen\API\ColumnDto.cs" />
     <Compile Include="DTO\Evergreen\DashboardDto.cs" />
     <Compile Include="DTO\Evergreen\API\FilterDto.cs" />
+    <Compile Include="DTO\ItemDetails\CustomFieldDto.cs" />
     <Compile Include="DTO\Projects\Capacity\Capacity_SummaryDto.cs" />
     <Compile Include="DTO\Projects\StagePropertiesDto.cs" />
     <Compile Include="DTO\Projects\Tasks\TaskProperties_EmailsDto.cs" />
@@ -371,6 +372,7 @@
     <Compile Include="Steps\Dashworks\EvergreenJnr_BaseFormPage.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_ListsPanel.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_Pivot.cs" />
+    <Compile Include="Steps\Dashworks\ItemDetailsPage\Api\CreateCustomFieldViaApi.cs" />
     <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_ActionsPanel.cs" />
     <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_AggridHeaderCounter.cs" />
     <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_Navigation.cs" />

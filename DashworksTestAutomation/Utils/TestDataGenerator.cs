@@ -23,10 +23,11 @@ namespace DashworksTestAutomation.Utils
         /// This method handle situation when same random numbers are generated instantly
         /// </summary>
         /// <param name="maxValue"></param>
+        /// <param name="minValue"></param>
         /// <returns></returns>
-        public static int RandomNum(int maxValue)
+        public static int RandomNum(int maxValue, int minValue = 0)
         {
-            int randNum = new Random().Next(maxValue);
+            int randNum = new Random().Next(minValue, maxValue);
             int attempts = 5;
             while (randNum == _randomNumber && attempts > 0)
             {
