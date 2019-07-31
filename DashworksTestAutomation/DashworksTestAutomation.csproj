@@ -1930,6 +1930,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Steps\Dashworks\AdminPage\CapacityDetails\" />
+    <Folder Include="Tests\EvergreenJnr_ItemDetails\CustomFields\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
 using Newtonsoft.Json;
@@ -42,11 +43,7 @@ namespace DashworksTestAutomation.DTO.RuntimeVariables
 
             #endregion
 
-            request = new RestRequest(requestUri);
-
-            request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
-            request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
-            request.AddParameter("Referer", UrlProvider.EvergreenUrl);
+            request = requestUri.GenerateRequest();
             request.AddParameter("displayMode", 0);
             request.AddParameter("languageName", language);
             request.AddParameter("userId", userId);
