@@ -200,7 +200,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS13110")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUsesDynamicListAsAScope()
         {
@@ -237,7 +236,6 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "AdminPage",
                         "DAS13110",
-                        "Cleanup",
                         "Cleanup",
                         "Projects"});
 #line 37
@@ -528,7 +526,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS13110")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUsesStaticListAsAScope()
         {
             System.Exception lastException = null;
@@ -565,7 +562,6 @@ this.FeatureBackground();
                         "AdminPage",
                         "Projects",
                         "DAS13110",
-                        "Cleanup",
                         "Cleanup"});
 #line 166
 this.ScenarioInitialize(scenarioInfo);

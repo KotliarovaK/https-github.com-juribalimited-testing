@@ -456,6 +456,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.AreEqual(list.OrderBy(s => s), list, "Lists names are not in alphabetical order");
         }
 
+        [When(@"User clicks ""(.*)"" list name in left panel")]
+        public void WhenUserClicksListNameInLeftPane(string listName)
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            listElement.ListsNames.First(x => x.Text.Equals(listName)).Click();
+        }
+
+        [Then(@"Columnmetadata request contains ArchivedItem parameter")]
+        public void ThenColumnmetadataRequestContainsArchivedItem()
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            Utils.Verify.IsTrue(_driver.GetAllRequests().Any(x => x.Contains("archiveditems=false")), "Request has no needed parameters");
+        }
+
         [Then(@"Update list option is NOT available")]
         public void ThenUpdateListOptionIsNotAvailable()
         {

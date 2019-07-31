@@ -1798,10 +1798,11 @@ Scenario: EvergreenJnr_DevicesList_CheckThatStatusFilterAvailableOptionsList
 	| Offboarded    |
 
 	#Remove NotReady after Pulsar release
-@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS17579 @Not_Ready
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS17579 @DAS16485 @Not_Ready
 Scenario: EvergreenJnr_ApplicationsList_CheckUserPostalCodeOptionsDisplaying
 	When User clicks "Applications" on the left-hand menu
 	And User clicks the Filters button
+	Then Filter Expression icon displayed within correct block
 	When user select "User Postal Code" filter
 	Then following operator options available:
 	| operator            |

@@ -7,7 +7,6 @@ using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Forms;
 using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
 using DashworksTestAutomation.Providers;
-using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
@@ -25,7 +24,10 @@ using DashworksTestAutomation.DTO.RuntimeVariables.Buckets;
 using DashworksTestAutomation.DTO.RuntimeVariables.CapacityUnits;
 using DashworksTestAutomation.DTO.RuntimeVariables.Rings;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Automations;
+using DashworksTestAutomation.Utils;
+using NUnit.Framework.Internal;
 using TechTalk.SpecFlow;
+using Logger = DashworksTestAutomation.Utils.Logger;
 
 namespace DashworksTestAutomation.Steps.Dashworks
 {
@@ -840,8 +842,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserChangesPercentageToReachBeforeShowingAmberTo(string value)
         {
             var capacityElement = _driver.NowAt<Capacity_DetailsPage>();
-            capacityElement.CapacityToReachBeforeShowAmber.Clear();
-            capacityElement.CapacityToReachBeforeShowAmber.SendKeys(value);
+            capacityElement.SetCapacityToReachBeforeShowAmber(value);
         }
 
         [Then(@"Default Team checkbox is not active")]
@@ -2677,6 +2678,41 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<ProjectsPage>();
             _driver.WaitForDataLoading();
             Utils.Verify.IsTrue(page.ActiveProjectByName(projectName), $"{projectName} is not displayed on the Project page");
+        }
+
+        [When(@"User hides side panel in project details page")]
+        public void WhenUserHidesSidePanelInProjectDetails()
+        {
+            var page = _driver.NowAt<ProjectsPage>();
+
+            page.CloseSidePanelCross.Click();
+            _driver.WaitForElementToBeNotDisplayed(page.CloseSidePanelCross);
+        }
+
+        [Then(@"Button toggle zindex is greater than tab zindex")]
+        public void ThenButtonToggleZindexIsGreaterThanTabZindex()
+        {
+            var page = _driver.NowAt<ProjectsPage>();
+            _driver.WaitForDataLoading();
+
+            int zIndexExpend = Convert.ToInt32(page.ExpandSidePanelIcon.GetCssValue("z-index"));
+            int zIndexTabs = Convert.ToInt32(page.ScopeChangesTabsHeader.GetCssValue("z-index"));
+
+            Utils.Verify.That(zIndexExpend, Is.GreaterThan(zIndexTabs),
+                $"Wrong overlapping: zIndex: {zIndexExpend} < zIndex: {zIndexTabs}");
+        }
+
+        [Then(@"Button toggle zindex is greater than notification zindex")]
+        public void ThenButtonToggleZindexIsGreaterThanNotificationZindex()
+        {
+            var page = _driver.NowAt<ProjectsPage>();
+            _driver.WaitForDataLoading();
+
+            int zIndexExpend = Convert.ToInt32(page.ExpandSidePanelIcon.GetCssValue("z-index"));
+            int zIndexMessage = Convert.ToInt32(page.ScopeChangesNotificationsPane.GetCssValue("z-index"));
+
+            Utils.Verify.That(zIndexExpend, Is.GreaterThan(zIndexMessage),
+                $"Wrong overlapping: zIndex: {zIndexExpend} < zIndex: {zIndexMessage}");
         }
 
         private string GetProjectId(string projectName)

@@ -87,25 +87,25 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.Slots
 
         public string Paths
         {
-            set => PathsList = value.Split('‡').ToList();
+            set => PathsList = value.Split('‡').Where(x => !string.IsNullOrEmpty(x)).ToList();
         }
         public List<string> PathsList { get; set; }
 
         public string Teams
         {
-            set => TeamsList = value.Split('‡').ToList();
+            set => TeamsList = value.Split('‡').Where(x => !string.IsNullOrEmpty(x)).ToList();
         }
         public List<string> TeamsList { get; set; }
 
         public string Tasks
         {
-            set => TasksList = value.Split('‡').ToList();
+            set => TasksList = value.Split('‡').Where(x => !string.IsNullOrEmpty(x)).ToList();
         }
         public List<string> TasksList { get; set; }
 
         public string CapacityUnits
         {
-            set => CapacityUnitsList = value.Split('‡').ToList();
+            set => CapacityUnitsList = value.Split('‡').Where(x => !string.IsNullOrEmpty(x)).ToList();
         }
         public List<string> CapacityUnitsList { get; set; }
 

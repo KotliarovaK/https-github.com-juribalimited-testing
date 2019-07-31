@@ -228,5 +228,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForElementToBeDisplayed(menu.ListDetailsButton);
             Utils.Verify.DoesNotContain("active", menu.ActionsButton.GetAttribute("class"), "Actions button is active");
         }
+
+        [Then(@"Filter Expression icon displayed within correct block")]
+        public void ThenFilterExpressionIconDisplayedWithinCorrectBlock()
+        {
+            var filterPane = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForElementToBeDisplayed(filterPane.FilterButton);
+
+            Utils.Verify.That(filterPane.FilterExpressionIcon.Displayed, "Filter expression icon placed in wrong block");
+        }
     }
 }

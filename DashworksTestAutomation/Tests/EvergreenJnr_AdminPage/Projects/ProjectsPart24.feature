@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS16816 @Cleanup @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS16816 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatFillingFieldErrorIsNotDisplayed
 	When User clicks "Users" on the left-hand menu
 	When Evergreen QueryStringURL is entered for Simple QueryType
@@ -72,7 +72,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTrueValueDisplayedInGridForEvergreenPr
 	When User enters "15666Project" text in the Search field for "Project" column
 	Then "TRUE" content is displayed in "Evergreen" column 
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS17122 @Cleanup @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS17122 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckRedErrorMessageOnScopeChangesIfBrokenListIsSetInProjectScope
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Filters button
@@ -97,3 +97,13 @@ Scenario: EvergreenJnr_AdminPage_CheckRedErrorMessageOnScopeChangesIfBrokenListI
 	When User enters "17122_Project" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	Then "The scope changes could not be loaded, there may be an error with one of the lists referred to in the scope details" error in the Scope Changes displayed to the User
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS17510 @Not_Ready
+Scenario: EvergreenJnr_AdminPage_CheckHidePanelIconOverlappingInScopeChanges
+	When User navigates to "Mailbox Evergreen Capacity Project" project details
+	And User selects "Scope" tab on the Project details page
+	And User selects "Scope Changes" tab on the Project details page
+	And User hides side panel in project details page
+	Then Button toggle zindex is greater than tab zindex
+	When User navigates to "Migration Project Phase 2 (User Project)" project details
+	Then Button toggle zindex is greater than notification zindex
