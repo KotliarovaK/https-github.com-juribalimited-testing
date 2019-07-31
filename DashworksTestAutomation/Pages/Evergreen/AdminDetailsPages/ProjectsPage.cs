@@ -119,6 +119,20 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//mat-optgroup//span")]
         public IList<IWebElement> ScopeDropdownSectionList { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='btn-group-sm pull-right ng-star-inserted']")]
+        public IWebElement CloseSidePanelCross { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'buttonToggleSubmenu')]")]
+        public IWebElement ExpandSidePanelIcon { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//mat-tab-header/div[1]")]
+        public IWebElement ScopeChangesTabsHeader { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='inline-tip ng-star-inserted']")]
+        public IWebElement ScopeChangesNotificationsPane { get; set; }
+        
+
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();

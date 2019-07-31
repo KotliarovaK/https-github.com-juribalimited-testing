@@ -315,3 +315,10 @@ Scenario: EvergreenJnr_UsersList_CheckThatFullPpageWith403ErrorIsDisplayedCorrec
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console
 	And User removes "DAS16558" User
+
+@Evergreen @Devices @EvergreenJnr_BaseDashboardPage @DAS17140 @Cleanup
+Scenario: EvergreenJnr_DevicesList_CheckThatRequestHasSpecificParameterWhenNavigatingIntoList
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks "Migration Type Capacity" list name in left panel
+	Then Columnmetadata request contains ArchivedItem parameter

@@ -134,6 +134,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//button[contains(@id, 'fltrBtn')]")]
         public IWebElement FilterButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='device-context-header']//button[@aria-label='filters']")]
+        public IWebElement FilterExpressionIcon { get; set; }
+
         [FindsBy(How = How.XPath,
             Using = ".//button[contains(@class, 'pull-left context-toggle')]//i[@class='material-icons mat-clear']")]
         public IWebElement ClosePanelButton { get; set; }

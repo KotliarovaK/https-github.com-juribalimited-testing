@@ -7943,6 +7943,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
         [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS17579")]
+        [NUnit.Framework.CategoryAttribute("DAS16485")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_ApplicationsList_CheckUserPostalCodeOptionsDisplaying()
         {
@@ -7978,6 +7979,7 @@ this.FeatureBackground();
                         "Evergreen_FiltersFeature",
                         "FiltersDisplay",
                         "DAS17579",
+                        "DAS16485",
                         "Not_Ready"});
 #line 1802
 this.ScenarioInitialize(scenarioInfo);
@@ -7989,6 +7991,8 @@ this.FeatureBackground();
 #line 1804
  testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1805
+ testRunner.Then("Filter Expression icon displayed within correct block", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1806
  testRunner.When("user select \"User Postal Code\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table125 = new TechTalk.SpecFlow.Table(new string[] {
@@ -8013,7 +8017,7 @@ this.FeatureBackground();
                         "Empty"});
             table125.AddRow(new string[] {
                         "Not empty"});
-#line 1806
+#line 1807
  testRunner.Then("following operator options available:", ((string)(null)), table125, "Then ");
 #line hidden
             this.ScenarioCleanup();
