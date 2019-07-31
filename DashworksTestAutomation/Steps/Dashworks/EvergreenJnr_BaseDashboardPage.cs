@@ -329,16 +329,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             SortingHelper.IsListSorted(originalList);
         }
 
-        [Then(@"""(.*)"" content is displayed in the ""(.*)"" column")]
-        public void ThenContentIsDisplayedInTheColumn(string textContent, string columnName)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            _driver.WaitForDataLoading();
-            var contentId = page.GetListContentByColumnName(columnName).ToList();
-            var contentList = contentId.Select(x => x.Text).ToList();
-            Utils.Verify.Contains(textContent, contentList, $"{textContent} is not displayed");
-        }
-
         [Then(@"""(.*)"" content is displayed in ""(.*)"" column")]
         public void ThenContentIsDisplayedInColumn(string textContent, string columnName)
         {
@@ -346,14 +336,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
             var originalList = page.GetRowContentByColumnName(columnName);
             Utils.Verify.AreEqual(textContent, originalList, "Content is not displayed correctly");
-        }
-
-        [Then(@"""(.*)"" text is displayed in the ""(.*)"" column")]
-        public void ThenTextIsDisplayedInTheColumn(string text, string columnName)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            var originalList = page.GetColumnContentByColumnNameForCapacity(columnName);
-            Utils.Verify.AreEqual(text, originalList, "Content is not displayed correctly");
         }
 
         [Then(@"""(.*)"" content is displayed for ""(.*)"" column")]

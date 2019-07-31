@@ -37,6 +37,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'ag-cell-inline-editing')]//i[contains(@class,'mat-clear')]")]
         public IWebElement CancelInlineButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'ag-cell-inline-editing')]//input[contains(@id,'mat-input')]")]
+        public IWebElement InputInlineTextbox { get; set; }
+
         #endregion
 
         [FindsBy(How = How.XPath, Using = ".//div[@id='pagetitle-text']/descendant::h1")]
