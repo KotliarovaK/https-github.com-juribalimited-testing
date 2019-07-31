@@ -113,12 +113,12 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	| Objects                                                              |
 	| "WPF/E" (codename) Community Technology Preview (Feb 2007) (0.8.5.0) |
 	When User clicks "Users" tab in the Project Scope Changes section
-	Then "Users to add (0 of 14606 selected)" is displayed to the user in the Project Scope Changes section
+	Then "Users to add (0 of 14604 selected)" is displayed to the user in the Project Scope Changes section
 	And following objects were not found
 	| Objects                    |
 	| AAC860150 (Kerrie D. Ruiz) |
 	When User clicks "Devices" tab in the Project Scope Changes section
-	Then "Devices to add (0 of 17200 selected)" is displayed to the user in the Project Scope Changes section
+	Then "Devices to add (0 of 17254 selected)" is displayed to the user in the Project Scope Changes section
 	And following objects were not found
 	| Objects         |
 	| 019BFPQGKK5QT8N |
@@ -150,12 +150,12 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	And User clicks content from "Project" column
 	And User selects "Scope Changes" tab on the Project details page
 	Then Success message is not displayed on the Admin page
-	And "Devices to add (0 of 17200 selected)" is displayed to the user in the Project Scope Changes section
+	And "Devices to add (0 of 17254 selected)" is displayed to the user in the Project Scope Changes section
 	And following objects were not found
 	| Objects         |
 	| 019BFPQGKK5QT8N |
 	When User clicks "Users" tab in the Project Scope Changes section
-	Then "Users to add (0 of 14606 selected)" is displayed to the user in the Project Scope Changes section
+	Then "Users to add (0 of 14604 selected)" is displayed to the user in the Project Scope Changes section
 	And following objects were not found
 	| Objects                    |
 	| AAC860150 (Kerrie D. Ruiz) |

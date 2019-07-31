@@ -60,7 +60,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCo
 	And User clicks "Applications" tab in the Project Scope Changes section
 	Then "Applications to add (0 of 2081 selected)" is displayed to the user in the Project Scope Changes section
 	When User clicks "Devices" tab in the Project Scope Changes section
-	Then "Devices to add (0 of 16765 selected)" is displayed to the user in the Project Scope Changes section
+	Then "Devices to add (0 of 16819 selected)" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page
 	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
 	Then All Associations are selected by default
@@ -177,7 +177,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	Then All Associations are available
 	When User selects "Scope Changes" tab on the Project details page
 	And User clicks "Users" tab in the Project Scope Changes section 
-	Then "Users to add (0 of 14631 selected)" is displayed to the user in the Project Scope Changes section
+	Then "Users to add (0 of 14629 selected)" is displayed to the user in the Project Scope Changes section
 	When User click on Back button
 	And User enters "NewProjectName" text in the Search field for "Project" column
 	And User selects all rows on the grid

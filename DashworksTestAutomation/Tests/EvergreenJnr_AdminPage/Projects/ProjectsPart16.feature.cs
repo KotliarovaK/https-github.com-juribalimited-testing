@@ -362,7 +362,7 @@ this.FeatureBackground();
 #line 115
  testRunner.When("User clicks \"Users\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 116
- testRunner.Then("\"Users to add (0 of 14606 selected)\" is displayed to the user in the Project Scop" +
+ testRunner.Then("\"Users to add (0 of 14604 selected)\" is displayed to the user in the Project Scop" +
                     "e Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -374,7 +374,7 @@ this.FeatureBackground();
 #line 120
  testRunner.When("User clicks \"Devices\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 121
- testRunner.Then("\"Devices to add (0 of 17200 selected)\" is displayed to the user in the Project Sc" +
+ testRunner.Then("\"Devices to add (0 of 17254 selected)\" is displayed to the user in the Project Sc" +
                     "ope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
@@ -448,7 +448,7 @@ this.FeatureBackground();
 #line 152
  testRunner.Then("Success message is not displayed on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 153
- testRunner.And("\"Devices to add (0 of 17200 selected)\" is displayed to the user in the Project Sc" +
+ testRunner.And("\"Devices to add (0 of 17254 selected)\" is displayed to the user in the Project Sc" +
                     "ope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
@@ -460,7 +460,7 @@ this.FeatureBackground();
 #line 157
  testRunner.When("User clicks \"Users\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 158
- testRunner.Then("\"Users to add (0 of 14606 selected)\" is displayed to the user in the Project Scop" +
+ testRunner.Then("\"Users to add (0 of 14604 selected)\" is displayed to the user in the Project Scop" +
                     "e Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
