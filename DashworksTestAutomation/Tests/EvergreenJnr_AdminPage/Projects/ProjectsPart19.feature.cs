@@ -90,7 +90,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Projects")]
         [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("TEST")]
         public virtual void EvergreenJnr_ImportProjectPage_CheckSelectExistingProjectDropdownValuesOnImportProjectPage()
         {
             System.Exception lastException = null;
@@ -128,8 +127,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects
                         "DAS13783",
                         "Projects",
                         "Do_Not_Run_With_Projects",
-                        "Do_Not_Run_With_AdminPage",
-                        "TEST"});
+                        "Do_Not_Run_With_AdminPage"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -203,7 +201,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS13110")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Projects")]
-        [NUnit.Framework.CategoryAttribute("TEST")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUsesDynamicListAsAScope()
         {
             System.Exception lastException = null;
@@ -240,8 +237,7 @@ this.FeatureBackground();
                         "AdminPage",
                         "DAS13110",
                         "Cleanup",
-                        "Projects",
-                        "TEST"});
+                        "Projects"});
 #line 37
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -530,7 +526,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS13110")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("TEST")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUsesStaticListAsAScope()
         {
             System.Exception lastException = null;
@@ -567,8 +562,7 @@ this.FeatureBackground();
                         "AdminPage",
                         "Projects",
                         "DAS13110",
-                        "Cleanup",
-                        "TEST"});
+                        "Cleanup"});
 #line 166
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -851,7 +845,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12820")]
         [NUnit.Framework.CategoryAttribute("DAS11978")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("TEST")]
         public virtual void EvergreenJnr_AdminPage_CheckDefaultSortOrderForQueueAndHistoryTab()
         {
             System.Exception lastException = null;
@@ -889,8 +882,7 @@ this.FeatureBackground();
                         "DAS12955",
                         "DAS12820",
                         "DAS11978",
-                        "Cleanup",
-                        "TEST"});
+                        "Cleanup"});
 #line 287
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
