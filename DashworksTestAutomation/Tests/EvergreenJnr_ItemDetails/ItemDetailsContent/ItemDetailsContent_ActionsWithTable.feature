@@ -1208,6 +1208,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAgGridActionsWorksCorrectlyForDetail
 	#| Value        |
 	#| Custom Field |
 	Then 'Reset Filters' button is displayed on the Item Details page
+	When User change text in '(.*)' cell from '(.*)' column to 'SOME' text
 	Then 'Refresh' button is displayed on the Item Details page
 	Then 'Export' button is displayed on the Item Details page
 	Then 'Group By' button is displayed on the Item Details page

@@ -358,6 +358,18 @@ namespace DashworksTestAutomation.Extensions
             action.Click(element).Perform();
         }
 
+        public static void DoubleClick(this RemoteWebDriver driver, IWebElement element)
+        {
+            Actions action = new Actions(driver);
+            action.DoubleClick(element).Build().Perform();
+        }
+
+        public static void ContextClick(this RemoteWebDriver driver, IWebElement element)
+        {
+            Actions action = new Actions(driver);
+            action.ContextClick(element).Build().Perform();
+        }
+
         public static void HoverAndClick(this RemoteWebDriver driver, IWebElement element)
         {
             Actions action = new Actions(driver);

@@ -35,7 +35,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             Utils.Verify.That(page.AllDashboardsInPanel.Select(title => title.Text).ToList().Contains(dashboardName), Is.True, $"Dashboard name is missing");
         }
-        
+
         [When(@"User clicks Settings button for ""(.*)"" dashboard")]
         public void WhenUserClicksSettingsButtonForDashboard(string dashboardName)
         {
@@ -53,7 +53,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 if (!page.GetFavoriteStateInDashboardDetailsPane())
                 {
                     page.MarkFavoriteInDashboardDetails();
-                    _driver.WaitFor(()=>page.IsDashboardMarkedAsFavoriteInList(dashboardName));
+                    _driver.WaitFor(() => page.IsDashboardMarkedAsFavoriteInList(dashboardName));
                 }
             }
 
@@ -665,7 +665,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenUserSeesTextInWarningMessageOnDashboardsPage(string text, string number)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            Utils.Verify.AreEqual(text, page.TextInDeleteAlert[Convert.ToInt32(number)-1].Text, "PLEASE ADD EXCEPTION MESSAGE");
+            Utils.Verify.AreEqual(text, page.TextInDeleteAlert[Convert.ToInt32(number) - 1].Text, "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"""(.*)"" link is displayed in warning message on Dashboards page")]
@@ -688,7 +688,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             Utils.Verify.IsTrue(page.WidgetPreview.Displayed(), "Widget Preview is not displayed");
         }
-        
+
         [Then(@"Card widget displayed inside preview pane")]
         public void ThenCardWidgetDisplayedInsidePreviewPane()
         {
@@ -737,7 +737,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"following content is displayed in the ""(.*)"" column")]
         public void ThenFollowingContentIsDisplayedInTheColumn(string columnName, Table table)
         {
-            var page = _driver.NowAt<BaseDashboardPage>();
+            var page = _driver.NowAt<BaseGridPage>();
             var originalList = page.GetListContentByColumnName(columnName).Select(column => column.Text).ToList();
             var tableContent = table.Rows.SelectMany(row => row.Values);
             Utils.Verify.AreEqual(originalList, tableContent, $"Incorrect content is displayed in the {columnName}");
@@ -746,7 +746,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"Column ""(.*)"" with no data displayed")]
         public void ThenFollowingColumnDisplayedWithoutNoData(string columnName)
         {
-            var page = _driver.NowAt<BaseDashboardPage>();
+            var page = _driver.NowAt<BaseGridPage>();
             var originalList = page.GetListContentByColumnName(columnName).Select(column => column.Text).ToList();
 
             foreach (var item in originalList)
@@ -803,11 +803,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksValueFromColumn(string value, string column)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            page.GetCountForTableWidget(column,value).Click();
+            page.GetCountForTableWidget(column, value).Click();
         }
 
-       
-    
+
+
 
         [Then(@"Permission panel is displayed to the user")]
         public void ThenPermissionPanelIsDisplayedToTheUser()
@@ -820,7 +820,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectsSharingType(string from, string to)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            page.ChangePermissionSharingFieldFromTo(from,to);
+            page.ChangePermissionSharingFieldFromTo(from, to);
         }
 
         [When(@"User adds user to list of shared person")]
@@ -829,7 +829,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForElementToBeDisplayed(page.PermissionAddUserButton);
             page.PermissionAddUserButton.Click();
-            
+
             foreach (var row in table.Rows)
             {
                 if (!string.IsNullOrEmpty(row["User"]))
@@ -866,7 +866,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForElementToBeNotDisplayed(page.PermissionNameOfAddedUser);
             Utils.Verify.That(page.PermissionNameOfAddedUser.Displayed(), Is.False, "Username found in shared list");
         }
-        
+
         [When(@"User clicks Settings button for ""(.*)"" shared user")]
         public void WhenUserClickSettingsMenuForSharedUser(string user)
         {
@@ -895,7 +895,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.GetFirstDashboardFromList().Click();
         }
 
-       
+
 
 
         [Then(@"Tooltip is displayed for the point of Line widget")]
@@ -953,7 +953,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.AreEqual(expectedList, labelList, "Label order is incorrect");
         }
 
-       
+
         [When(@"User clicks ""(.*)""  button on the Dashboards page")]
         public void WhenUserClicksButtonOnTheDashboardsPage(string buttonName)
         {
@@ -1038,7 +1038,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.That(page.DataLabels.Text, Is.EqualTo(text), $"{text} data label is not displayed");
         }
 
-     
+
         [Then(@"Move to Section pop up is displayed to the User")]
         public void ThenMoveToSectionPopUpIsDisplayedToTheUser()
         {
@@ -1140,7 +1140,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.IsFalse(page.ReviewWidgetListPermissionsPopUp.Displayed(), "Review Widget List Permissions is displayed");
         }
 
-        
+
         [Then(@"Widget ""(.*)"" displayed for ""(.*)"" list on Permissions Pop-up")]
         public void ThenListPermissionsPopupShowsWidgetNameToTheUser(string widget, string listName)
         {
@@ -1154,7 +1154,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var header = _driver.NowAt<HeaderElement>();
             var page = _driver.NowAt<EvergreenDashboardsPage>();
 
-            Utils.Verify.That(page.OwnerValueForList(listName).Text, 
+            Utils.Verify.That(page.OwnerValueForList(listName).Text,
                 Is.EqualTo(header.UserNameDropdown.Text), $"Owner name was not found in Review Permissions popup");
         }
 
@@ -1171,7 +1171,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenListPermissionsPopupShowsCurrentPermissionToTheUser(string permission, string listName)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            Utils.Verify.That(page.CurrentPermissionValueForList(listName).Text, 
+            Utils.Verify.That(page.CurrentPermissionValueForList(listName).Text,
                 Is.EqualTo(permission), $"Current permission {permission} was not found in Review Permissions popup");
         }
 
@@ -1233,7 +1233,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
 
-            Utils.Verify.That(page.GetButtonStateOfReviewWidgetPermissionsPopup(buttonCapture), 
+            Utils.Verify.That(page.GetButtonStateOfReviewWidgetPermissionsPopup(buttonCapture),
                 Is.EqualTo(buttonState.ToUpper()), $"Button {buttonCapture} states is different");
         }
 

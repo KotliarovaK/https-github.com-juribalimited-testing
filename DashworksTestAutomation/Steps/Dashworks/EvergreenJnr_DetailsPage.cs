@@ -383,7 +383,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.That(page.DateRegularValueFirst.Location.Y, Is.InRange(yCoord - 10, yCoord + 10)); // calibration
         }
 
-
         [Then(@"User select ""(.*)"" checkbox from filter on the Details Page")]
         public void ThenUserSelectCheckboxFromFilterOnTheDetailsPage(string filterName)
         {
@@ -660,7 +659,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.That(page.GridRows.Count, Is.EqualTo(rowsCount),
                 $"Incorrect number of rows in agGrid.");
         }
-
 
         [Then(@"""(.*)"" rows found label displays on Details Page")]
         public void ThenCorrectFoundRowsLabelDisplaysOnTheDetailsPage(string numberOfRows)

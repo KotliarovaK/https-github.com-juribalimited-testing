@@ -332,7 +332,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"""(.*)"" content is displayed in the ""(.*)"" column")]
         public void ThenContentIsDisplayedInTheColumn(string textContent, string columnName)
         {
-            var page = _driver.NowAt<BaseDashboardPage>();
+            var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitForDataLoading();
             var contentId = page.GetListContentByColumnName(columnName).ToList();
             var contentList = contentId.Select(x => x.Text).ToList();
@@ -508,7 +508,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             _driver.MoveToElement(page.FilterContainerButton);
-            if(!_driver.IsElementDisplayed(page.FilterContainer)) page.FilterContainerButton.Click();
+            if (!_driver.IsElementDisplayed(page.FilterContainer)) page.FilterContainerButton.Click();
             Utils.Verify.AreEqual(text, page.FilterContainer.Text.TrimStart(' ').TrimEnd(' '),
                 "Filter is created incorrectly");
         }
@@ -628,7 +628,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             string rememberedNumber = foundRowsCounter.Storage.SessionStorage.GetItem("column_value");
 
             Utils.Verify.AreEqualIgnoringCase(rememberedNumber == "1" ? $"{rememberedNumber} row" : $"{rememberedNumber} rows",
-                foundRowsCounter.ListRowsCounter.Text.Replace(",",""), "Incorrect rows count");
+                foundRowsCounter.ListRowsCounter.Text.Replace(",", ""), "Incorrect rows count");
         }
 
         [Then(@"Error is displayed to the User")]

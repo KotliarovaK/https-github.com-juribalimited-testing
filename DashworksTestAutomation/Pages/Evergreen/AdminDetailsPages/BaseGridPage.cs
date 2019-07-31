@@ -29,6 +29,16 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public const string FirstColumnTableContent = ".//div[@role='gridcell']//a[@href]";
 
+        #region Inline Edit. Appears on double click on cell
+
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'ag-cell-inline-editing')]//i[contains(@class,'mat-done')]")]
+        public IWebElement SaveInlineButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'ag-cell-inline-editing')]//i[contains(@class,'mat-clear')]")]
+        public IWebElement CancelInlineButton { get; set; }
+
+        #endregion
+
         [FindsBy(How = How.XPath, Using = ".//div[@id='pagetitle-text']/descendant::h1")]
         public IWebElement PageTitle { get; set; }
 
@@ -732,6 +742,22 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             var selector = By.XPath($".//*[text()='{value}']/ancestor::label[contains(@class, 'checkbox')]");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
+        }
+
+        public IList<IWebElement> GetListContentByColumnName(string columnName)
+        {
+            var selector = By.XPath($"//div[@class='ag-center-cols-clipper']//div[contains(@class, 'ag-row')]/div[{GetColumnNumberByName(columnName)}]//span");
+            Driver.WaitForDataLoading();
+            return Driver.FindElements(selector).ToList();
+        }
+
+        public IWebElement GetCellFromColumn(string columnName, string cellText)
+        {
+            var allData = GetListContentByColumnName(columnName);
+            if (allData.Any(x => x.Text.Contains(cellText)))
+                return allData.First(x => x.Text.Contains(cellText));
+            else
+                throw new Exception($"There is no cell with '{cellText}' text in the '{columnName}' column");
         }
     }
 }

@@ -4,6 +4,7 @@ using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.ManagementConsole;
 using DashworksTestAutomation.Pages.Projects;
 using DashworksTestAutomation.Pages.Projects.CreatingProjects;
+using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
@@ -58,6 +59,13 @@ namespace DashworksTestAutomation.Steps.Projects
 
             _driver.MouseHover(page.EvergreenLink);
             page.EvergreenLink.Click();
+            _driver.WaitForDataLoading();
+        }
+
+        [When(@"User navigate to Evergreen URL")]
+        public void WhenUserNavigateToEvergreenUrl()
+        {
+            _driver.NavigateToUrl(UrlProvider.EvergreenUrl);
             _driver.WaitForDataLoading();
         }
 

@@ -10,7 +10,7 @@ using SeleniumExtras.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Evergreen
 {
-    internal class BaseDashboardPage : SeleniumBasePage
+    public class BaseDashboardPage : SeleniumBasePage
     {
         public const string ColorItem = ".//div[@class='status']";
 
@@ -435,9 +435,14 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public void ContextClickOnCell(string cellText)
         {
-            var builder = new Actions(Driver);
             Driver.WaitForDataLoading();
-            builder.ContextClick(GetGridCellByText(cellText)).Perform();
+            Driver.ContextClick(GetGridCellByText(cellText));
+        }
+
+        public void DoubleClickOnCell(string cellText)
+        {
+            Driver.WaitForDataLoading();
+            Driver.DoubleClick(GetGridCellByText(cellText));
         }
 
         public void ClearInput(IWebElement input)
@@ -861,13 +866,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(selector);
         }
 
-        public IList<IWebElement> GetListContentByColumnName(string columnName)
-        {
-            var selector = By.XPath($"//div[@class='ag-center-cols-clipper']//div[contains(@class, 'ag-row')]/div[{GetColumnNumberByName(columnName)}]//span");
-            Driver.WaitForDataLoading();
-            return Driver.FindElements(selector).ToList();
-        }
-
         public IWebElement GetHighlightedLeftMenuByName(string columnName)
         {
             var selector = By.XPath($".//div[@class='responsive-desktop-menu']//p[contains(@class, 'selected')]//span[text()='{columnName}']");
@@ -897,7 +895,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             {
                 if (header.GetAttribute("aria-label").ToLower().Equals(dayName.ToLower()))
                 {
-                    int a = headers.IndexOf(header)+1;
+                    int a = headers.IndexOf(header) + 1;
                     return a.ToString();
                 }
             }
@@ -910,6 +908,5 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
             return Driver.FindElements(selector);
         }
-
     }
 }
