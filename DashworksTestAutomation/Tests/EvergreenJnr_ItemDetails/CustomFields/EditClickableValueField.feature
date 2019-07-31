@@ -5,7 +5,8 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @CustomFields @DAS15473 @Cleanup
+	#Remove Not_Ready for Orbit
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @CustomFields @DAS15473 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_DevicesList_CheckEditableFieldDisplayAndToolTips
 	When User clicks "Projects" on the left-hand menu
 	And User navigate to Manage link
@@ -26,7 +27,8 @@ Scenario: EvergreenJnr_DevicesList_CheckEditableFieldDisplayAndToolTips
 	When User doubleclicks on 'ValueDAS15473_1' cell from 'Value' column
 	Then Save and Cancel buttons with tooltips are displayed for clickable value
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @CustomFields @DAS15473 @Cleanup
+	#Remove Not_Ready for Orbit
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @CustomFields @DAS15473 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_DevicesList_CheckDataIsUpdatedInClickableValue
 	When User clicks "Projects" on the left-hand menu
 	And User navigate to Manage link
@@ -54,7 +56,8 @@ Scenario: EvergreenJnr_DevicesList_CheckDataIsUpdatedInClickableValue
 	Then Save and Cancel buttons are NOT displayed for clickable value
 	And "UPDATED_V" content is displayed in the "Value" column
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @CustomFields @DAS15473 @Cleanup
+	#Remove Not_Ready for Orbit
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @CustomFields @DAS15473 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_DevicesList_CheckClickableValueSavedOnFocusLost
 	When User clicks "Projects" on the left-hand menu
 	And User navigate to Manage link
