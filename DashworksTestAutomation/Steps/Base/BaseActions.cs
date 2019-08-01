@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -50,6 +51,13 @@ namespace DashworksTestAutomation.Steps.Base
             Utils.Verify.That(errorsList.Count, 
                 Is.EqualTo(errorsList.FindAll(x=>x.Message.Contains("the server responded with a status of 404 (Not Found)")).Count), 
                 "There are another errors in console");
+        }
+
+        [When(@"User clicks Body container")]
+        public void WhenUserClicksBodyContainer()
+        {
+            var page = _driver.NowAt<BasePage>();
+            page.BodyContainer.Click();
         }
     }
 }

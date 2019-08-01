@@ -377,6 +377,11 @@ namespace DashworksTestAutomation.Helpers
             return id;
         }
 
+        public static void DeleteCustomField(string id)
+        {
+            DatabaseHelper.ExecuteQuery($"delete from [DesktopBI].[dbo].[CustomFields] where [CustomFieldID] = {id}");
+        }
+
         #endregion
     }
 }

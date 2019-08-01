@@ -15,6 +15,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'aggrid-container wrapper-flexbox')]")]
         public IWebElement PageIdentitySelectors { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//button[@automation='create custom - field']")]
+        public IWebElement CreateCustomFieldsButton { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[@id='aggridHeaderActions']//button[@aria-label='ResetFilters']")]
         public IWebElement ResetFiltersButton { get; set; }
 
@@ -32,7 +35,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
             Driver.WaitForDataLoading();
             return new List<By>
             {
-                SelectorFor(this, p => p.PageIdentitySelectors)
+                SelectorFor(this, p => p.PageIdentitySelectors),
+                SelectorFor(this, p => p.CreateCustomFieldsButton)
             };
         }
 

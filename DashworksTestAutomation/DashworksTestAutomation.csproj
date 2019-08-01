@@ -109,6 +109,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\BasePage.cs" />
     <Compile Include="Base\BaseTest.cs" />
     <Compile Include="Base\BeforeAfterActions.cs" />
     <Compile Include="Base\IBaseTest.cs" />
@@ -125,6 +126,7 @@
     <Compile Include="DTO\Evergreen\DashboardDto.cs" />
     <Compile Include="DTO\Evergreen\API\FilterDto.cs" />
     <Compile Include="DTO\ItemDetails\CustomFieldDto.cs" />
+    <Compile Include="DTO\ManagementConsole\SeniorCustomFieldDto.cs" />
     <Compile Include="DTO\Projects\Capacity\Capacity_SummaryDto.cs" />
     <Compile Include="DTO\Projects\StagePropertiesDto.cs" />
     <Compile Include="DTO\Projects\Tasks\TaskProperties_EmailsDto.cs" />
@@ -161,8 +163,10 @@
     <Compile Include="DTO\RuntimeVariables\Automation.cs" />
     <Compile Include="DTO\RuntimeVariables\Buckets\BucketUnassignedId.cs" />
     <Compile Include="DTO\RuntimeVariables\CapacityDetails.cs" />
+    <Compile Include="DTO\RuntimeVariables\CustomFields.cs" />
     <Compile Include="DTO\RuntimeVariables\Rings\Rings.cs" />
     <Compile Include="DTO\RuntimeVariables\Rings\RingUnassignedId.cs" />
+    <Compile Include="DTO\RuntimeVariables\SeniorCustomFields.cs" />
     <Compile Include="DTO\RuntimeVariables\Slots.cs" />
     <Compile Include="DTO\RuntimeVariables\Teams\TeamDefaultId.cs" />
     <Compile Include="DTO\RuntimeVariables\Teams\Teams.cs" />
@@ -223,6 +227,7 @@
     <Compile Include="Pages\Evergreen\ImportListsFromCSVPage.cs" />
     <Compile Include="Pages\Evergreen\Dashboards\PrintDashboardsPage.cs" />
     <Compile Include="Pages\Evergreen\ItemDetails\ActionPanelPage.cs" />
+    <Compile Include="Pages\Evergreen\ItemDetails\AddCustomFieldPopup.cs" />
     <Compile Include="Pages\Evergreen\ItemDetails\AggridHeaderCounterPage.cs" />
     <Compile Include="Pages\Evergreen\ItemDetails\ItemDetails_TopBarPage.cs" />
     <Compile Include="Pages\Evergreen\ItemDetails\NavigationPage.cs" />
@@ -283,6 +288,8 @@
     <Compile Include="Pages\LoginPanelPage.cs" />
     <Compile Include="Pages\LogoutPage.cs" />
     <Compile Include="Pages\ManagementConsole\BaseElementsPage.cs" />
+    <Compile Include="Pages\ManagementConsole\CustomFields\CustomFieldsPage.cs" />
+    <Compile Include="Pages\ManagementConsole\CustomFields\ManageCustomFieldsPage.cs" />
     <Compile Include="Pages\ManagementConsole\ManagementConsolePage.cs" />
     <Compile Include="Pages\ManagementConsole\ManageUserPage.cs" />
     <Compile Include="Pages\Projects\CreatingProjects\MainElementsOfProjectCreation.cs" />
@@ -360,6 +367,7 @@
     <Compile Include="Steps\Dashworks\AdminPage\Teams\AfterScenario\SetDefaultTeamAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Teams\Api\CreateTeamViaApi.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Teams\BeforeScenario\SaveDefaultTeamBeforeScenario.cs" />
+    <Compile Include="Steps\Dashworks\Base\EvergreenJnr_BaseGrid.cs" />
     <Compile Include="Steps\Dashworks\Dashboards\EvergreenJnr_WidgetPage.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Project\ProjectsApi.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Buckets\EvergreenJnr_BucketsPage.cs" />
@@ -372,7 +380,8 @@
     <Compile Include="Steps\Dashworks\EvergreenJnr_BaseFormPage.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_ListsPanel.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_Pivot.cs" />
-    <Compile Include="Steps\Dashworks\ItemDetailsPage\Api\CreateCustomFieldViaApi.cs" />
+    <Compile Include="Steps\Dashworks\ItemDetailsPage\CustomFields\AfterScenarios\RemoveCustomFieldAfterScenario.cs" />
+    <Compile Include="Steps\Dashworks\ItemDetailsPage\CustomFields\CreateCustomFieldViaApi.cs" />
     <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_ActionsPanel.cs" />
     <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_AggridHeaderCounter.cs" />
     <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_Navigation.cs" />
@@ -385,8 +394,10 @@
     <Compile Include="Steps\ManagementConsole\Users\Api\CreateUserViaApi.cs" />
     <Compile Include="Steps\ManagementConsole\Users\UserUiSteps.cs" />
     <Compile Include="Steps\Senior\Senior_BulkUpdate.cs" />
+    <Compile Include="Steps\Senior\Senior_CreatingProject\CustomFields\AfterScenario\RemoveCustomFieldAfterScenario.cs" />
     <Compile Include="Steps\Senior\Senior_CreatingProject\Projects_Capacity.cs" />
     <Compile Include="Steps\Senior\Senior_CreatingProject\Projects_CreateProject.cs" />
+    <Compile Include="Steps\Senior\Senior_CreatingProject\CustomFields\Projects_CustomFields.cs" />
     <Compile Include="Steps\Senior\Senior_Dashboards.cs" />
     <Compile Include="Steps\Senior\Senior_Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -968,6 +979,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataInTable.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_ItemDetails\CustomFields\EditClickableValueField.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EditClickableValueField.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsContent\ItemDetailsContent_ActionsWithFields.feature.cs">
       <AutoGen>True</AutoGen>
@@ -1700,6 +1716,10 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DataInTable.feature.cs</LastGenOutput>
     </None>
+    <None Include="Tests\EvergreenJnr_ItemDetails\CustomFields\EditClickableValueField.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>EditClickableValueField.feature.cs</LastGenOutput>
+    </None>
     <None Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsContent\ItemDetailsContent_ActionsWithFields.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ItemDetailsContent_ActionsWithFields.feature.cs</LastGenOutput>
@@ -1930,7 +1950,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Steps\Dashworks\AdminPage\CapacityDetails\" />
-    <Folder Include="Tests\EvergreenJnr_ItemDetails\CustomFields\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

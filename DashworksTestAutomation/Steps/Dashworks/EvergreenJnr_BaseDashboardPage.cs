@@ -329,16 +329,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             SortingHelper.IsListSorted(originalList);
         }
 
-        [Then(@"""(.*)"" content is displayed in the ""(.*)"" column")]
-        public void ThenContentIsDisplayedInTheColumn(string textContent, string columnName)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitForDataLoading();
-            var contentId = page.GetListContentByColumnName(columnName).ToList();
-            var contentList = contentId.Select(x => x.Text).ToList();
-            Utils.Verify.Contains(textContent, contentList, $"{textContent} is not displayed");
-        }
-
         [Then(@"""(.*)"" content is displayed in ""(.*)"" column")]
         public void ThenContentIsDisplayedInColumn(string textContent, string columnName)
         {
@@ -346,14 +336,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
             var originalList = page.GetRowContentByColumnName(columnName);
             Utils.Verify.AreEqual(textContent, originalList, "Content is not displayed correctly");
-        }
-
-        [Then(@"""(.*)"" text is displayed in the ""(.*)"" column")]
-        public void ThenTextIsDisplayedInTheColumn(string text, string columnName)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            var originalList = page.GetColumnContentByColumnNameForCapacity(columnName);
-            Utils.Verify.AreEqual(text, originalList, "Content is not displayed correctly");
         }
 
         [Then(@"""(.*)"" content is displayed for ""(.*)"" column")]
@@ -508,7 +490,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             _driver.MoveToElement(page.FilterContainerButton);
-            if(!_driver.IsElementDisplayed(page.FilterContainer)) page.FilterContainerButton.Click();
+            if (!_driver.IsElementDisplayed(page.FilterContainer)) page.FilterContainerButton.Click();
             Utils.Verify.AreEqual(text, page.FilterContainer.Text.TrimStart(' ').TrimEnd(' '),
                 "Filter is created incorrectly");
         }
@@ -628,7 +610,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             string rememberedNumber = foundRowsCounter.Storage.SessionStorage.GetItem("column_value");
 
             Utils.Verify.AreEqualIgnoringCase(rememberedNumber == "1" ? $"{rememberedNumber} row" : $"{rememberedNumber} rows",
-                foundRowsCounter.ListRowsCounter.Text.Replace(",",""), "Incorrect rows count");
+                foundRowsCounter.ListRowsCounter.Text.Replace(",", ""), "Incorrect rows count");
         }
 
         [Then(@"Error is displayed to the User")]
