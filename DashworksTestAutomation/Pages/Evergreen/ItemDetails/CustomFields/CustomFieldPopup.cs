@@ -9,14 +9,20 @@ using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 
-namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
+namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails.CustomFields
 {
-    public class AddCustomFieldPopup : BaseDashboardPage
+    public class CustomFieldPopup : BaseDashboardPage
     {
-        [FindsBy(How = How.XPath, Using = ".//*[@automation='add custom-field']")]
+        [FindsBy(How = How.XPath, Using = ".//input[@placeholder='Custom Field']")]
+        public IWebElement CustomFieldSelectbox { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//input[@placeholder='Value']")]
+        public IWebElement ValueTextbox { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//button[@automation='add custom-field']")]
         public IWebElement AddCustomFieldButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//*[@automation='cancel custom-field']")]
+        [FindsBy(How = How.XPath, Using = ".//button[@automation='cancel custom-field']")]
         public IWebElement CancelCustomFieldButton { get; set; }
 
         public override List<By> GetPageIdentitySelectors()

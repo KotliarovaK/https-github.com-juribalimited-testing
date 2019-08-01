@@ -143,16 +143,10 @@ this.FeatureBackground();
                         "FieldLabel",
                         "AllowExternalUpdate",
                         "Enabled",
-                        "User",
-                        "Computer",
-                        "Application",
-                        "Mailbox"});
+                        "Computer"});
             table1.AddRow(new string[] {
                         "CfDAS15473_1",
                         "FlDAS15473_1",
-                        "true",
-                        "true",
-                        "true",
                         "true",
                         "true",
                         "true"});
@@ -195,23 +189,23 @@ this.FeatureBackground();
 
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckDataIsUpdatedInClickableValue")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckDataIsUpdatedInClickableValue")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("Applications")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("CustomFields")]
         [NUnit.Framework.CategoryAttribute("DAS15473")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
-        public virtual void EvergreenJnr_DevicesList_CheckDataIsUpdatedInClickableValue()
+        public virtual void EvergreenJnr_ApplicationsList_CheckDataIsUpdatedInClickableValue()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_DevicesList_CheckDataIsUpdatedInClickableValueInternal();
+                    this.EvergreenJnr_ApplicationsList_CheckDataIsUpdatedInClickableValueInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -230,11 +224,11 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_DevicesList_CheckDataIsUpdatedInClickableValueInternal()
+        private void EvergreenJnr_ApplicationsList_CheckDataIsUpdatedInClickableValueInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckDataIsUpdatedInClickableValue", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckDataIsUpdatedInClickableValue", null, new string[] {
                         "Evergreen",
-                        "Devices",
+                        "Applications",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "CustomFields",
@@ -258,16 +252,10 @@ this.FeatureBackground();
                         "FieldLabel",
                         "AllowExternalUpdate",
                         "Enabled",
-                        "User",
-                        "Computer",
-                        "Application",
-                        "Mailbox"});
+                        "Application"});
             table3.AddRow(new string[] {
                         "CfDAS15473_2",
                         "FlDAS15473_2",
-                        "true",
-                        "true",
-                        "true",
                         "true",
                         "true",
                         "true"});
@@ -282,22 +270,22 @@ this.FeatureBackground();
                         "FieldName",
                         "Value"});
             table4.AddRow(new string[] {
-                        "device",
-                        "6648",
+                        "application",
+                        "507",
                         "CfDAS15473_2",
                         "ValueDAS15473_2"});
 #line 40
  testRunner.And("User creates Custom Field via API", ((string)(null)), table4, "And ");
 #line 43
- testRunner.And("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 44
- testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 45
- testRunner.When("User perform search by \"00YWR8TJU4ZF8V\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User perform search by \"ACDSee 8\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 46
- testRunner.And("User click content from \"Hostname\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User click content from \"Application\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 47
- testRunner.Then("Details page for \"00YWR8TJU4ZF8V\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Details page for \"ACDSee 8\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 48
  testRunner.When("User navigates to the \"Custom Fields\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 50
@@ -321,23 +309,23 @@ this.FeatureBackground();
 
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckClickableValueSavedOnFocusLost")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckClickableValueSavedOnFocusLost")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("Mailboxes")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("CustomFields")]
         [NUnit.Framework.CategoryAttribute("DAS15473")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
-        public virtual void EvergreenJnr_DevicesList_CheckClickableValueSavedOnFocusLost()
+        public virtual void EvergreenJnr_MailboxesList_CheckClickableValueSavedOnFocusLost()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_DevicesList_CheckClickableValueSavedOnFocusLostInternal();
+                    this.EvergreenJnr_MailboxesList_CheckClickableValueSavedOnFocusLostInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -356,11 +344,11 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_DevicesList_CheckClickableValueSavedOnFocusLostInternal()
+        private void EvergreenJnr_MailboxesList_CheckClickableValueSavedOnFocusLostInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckClickableValueSavedOnFocusLost", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_MailboxesList_CheckClickableValueSavedOnFocusLost", null, new string[] {
                         "Evergreen",
-                        "Devices",
+                        "Mailboxes",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "CustomFields",
@@ -384,16 +372,10 @@ this.FeatureBackground();
                         "FieldLabel",
                         "AllowExternalUpdate",
                         "Enabled",
-                        "User",
-                        "Computer",
-                        "Application",
                         "Mailbox"});
             table5.AddRow(new string[] {
                         "CfDAS15473_3",
                         "FlDAS15473_3",
-                        "true",
-                        "true",
-                        "true",
                         "true",
                         "true",
                         "true"});
@@ -408,22 +390,23 @@ this.FeatureBackground();
                         "FieldName",
                         "Value"});
             table6.AddRow(new string[] {
-                        "device",
-                        "6648",
+                        "mailbox",
+                        "46384",
                         "CfDAS15473_3",
                         "ValueDAS15473_3"});
 #line 69
  testRunner.And("User creates Custom Field via API", ((string)(null)), table6, "And ");
 #line 72
- testRunner.And("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 73
- testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"Mailboxes\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 74
- testRunner.When("User perform search by \"00YWR8TJU4ZF8V\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User perform search by \"0072B088173449E3A93@bclabs.local\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 75
- testRunner.And("User click content from \"Hostname\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User click content from \"Email Address\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 76
- testRunner.Then("Details page for \"00YWR8TJU4ZF8V\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Details page for \"0072B088173449E3A93@bclabs.local\" item is displayed to the user" +
+                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 77
  testRunner.When("User navigates to the \"Custom Fields\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 79

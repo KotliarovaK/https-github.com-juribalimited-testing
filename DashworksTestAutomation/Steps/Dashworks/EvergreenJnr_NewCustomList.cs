@@ -218,14 +218,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenListNameIsDisplayedCorrectlyOnTopToolsPanel(string listName)
         {
             var listElement = _driver.NowAt<CustomListElement>();
-            Utils.Verify.IsTrue(listElement.GetListNameOnTopToolsPanel(listName).Displayed(), $"'{listName}' list is not displayed on top tools panel");
-        }
-
-        [When(@"User open sub menu for ""(.*)"" list")]
-        public void WhenUserOpenSubMenuForList(string listName)
-        {
-            var listElement = _driver.NowAt<CustomListElement>();
-            listElement.GetListNameOnTopToolsPanel(listName).Click();
+            IWebElement listNameOnTopPanel = null;
+            try
+            {
+                listNameOnTopPanel = listElement.GetListNameOnTopToolsPanel(listName);
+            }
+            catch
+            {
+                Utils.Verify.That(listNameOnTopPanel, Is.Null, $"'{listName}' list is not displayed on top tools panel");
+            }
         }
 
         [When(@"User clicks ""(.*)"" link in Lists panel")]
