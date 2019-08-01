@@ -57,8 +57,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckDataIsUpdatedInClickableValue
 	And "UPDATED_V" content is displayed in the "Value" column
 
 	#Remove Not_Ready for Orbit
-@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @CustomFields @DAS15473 @Cleanup @Not_Ready
-Scenario: EvergreenJnr_UsersList_CheckClickableValueSavedOnFocusLost
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @CustomFields @DAS15473 @Cleanup @Not_Ready
+Scenario: EvergreenJnr_MailboxesList_CheckClickableValueSavedOnFocusLost
 	When User clicks "Projects" on the left-hand menu
 	And User navigate to Manage link
 	And User select "Custom Fields" option in Management Console

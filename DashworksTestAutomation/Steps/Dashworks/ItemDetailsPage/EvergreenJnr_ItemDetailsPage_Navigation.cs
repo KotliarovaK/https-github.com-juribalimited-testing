@@ -2,6 +2,7 @@
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.ItemDetails;
+using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
@@ -80,6 +81,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         {
             var detailsPage = _driver.NowAt<NavigationPage>();
             Utils.Verify.IsTrue(detailsPage.GetCountOfItemsDisplayStatusByTabName(tabName), $"Tab {tabName} must contain the number of elements!");
+        }
+
+        [Then(@"""(.*)"" tab is displayed on left menu on the Details page and contains '(.*)' count of items")]
+        public void ThenTabIsDisplayedOnLeftMenuOnTheDetailsPageAndContainsCountOfItems(string tabName, int count)
+        {
+            var detailsPage = _driver.NowAt<NavigationPage>();
+            Verify.AreEqual(detailsPage.GetCountOfItemsDisplayStatusByTabName(tabName), $"({count})", $"Incorrect count for '{tabName}' tab");
         }
 
         [Then(@"""(.*)"" tab is displayed on left menu on the Details page and NOT contains count of items")]

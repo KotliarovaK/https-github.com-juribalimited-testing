@@ -309,23 +309,23 @@ this.FeatureBackground();
 
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckClickableValueSavedOnFocusLost")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckClickableValueSavedOnFocusLost")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
+        [NUnit.Framework.CategoryAttribute("Mailboxes")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("CustomFields")]
         [NUnit.Framework.CategoryAttribute("DAS15473")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
-        public virtual void EvergreenJnr_UsersList_CheckClickableValueSavedOnFocusLost()
+        public virtual void EvergreenJnr_MailboxesList_CheckClickableValueSavedOnFocusLost()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_UsersList_CheckClickableValueSavedOnFocusLostInternal();
+                    this.EvergreenJnr_MailboxesList_CheckClickableValueSavedOnFocusLostInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -344,11 +344,11 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_UsersList_CheckClickableValueSavedOnFocusLostInternal()
+        private void EvergreenJnr_MailboxesList_CheckClickableValueSavedOnFocusLostInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckClickableValueSavedOnFocusLost", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_MailboxesList_CheckClickableValueSavedOnFocusLost", null, new string[] {
                         "Evergreen",
-                        "Users",
+                        "Mailboxes",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "CustomFields",
