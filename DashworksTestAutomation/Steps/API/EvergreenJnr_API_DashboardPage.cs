@@ -58,6 +58,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Dashboard
         public void WhenDashboardWithNameIsOpenedViaApi(string name)
         {
             _driver.Navigate().GoToUrl($"{UrlProvider.EvergreenUrl}/#/dashboards/{DatabaseHelper.GetDashboardId(name)}");
+            _driver.WaitForDataLoading();
         }
 
         [AfterScenario("Cleanup")]

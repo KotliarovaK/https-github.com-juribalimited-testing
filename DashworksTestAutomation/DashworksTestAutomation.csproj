@@ -897,6 +897,7 @@
       <DependentUpon>ItemsManagement.feature</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_DashboardsPage\DashboardSharing.feature.cs">
       <DependentUpon>DashboardSharing.feature</DependentUpon>
@@ -1700,6 +1701,7 @@
     <None Include="Tests\EvergreenJnr_DashboardsPage\ItemsManagement.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ItemsManagement.feature.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Tests\EvergreenJnr_DashboardsPage\DashboardSharing.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

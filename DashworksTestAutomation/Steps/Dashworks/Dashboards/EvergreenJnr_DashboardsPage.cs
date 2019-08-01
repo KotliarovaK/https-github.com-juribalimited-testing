@@ -867,6 +867,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.That(page.PermissionNameOfAddedUser.Displayed(), Is.False, "Username found in shared list");
         }
 
+        [When(@"User expands the list of shared lists")]
+        public void UserExpandsTheListOfSharedLists()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            page.DetailsPanelExpandListsIcon.Click();
+        }
+
+        [Then(@"User sees table headers as ""(.*)"" and ""(.*)""")]
+        public void UserSeesTableHeadersAs(string a, string b)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForElementsToBeDisplayed(page.DetailsPanelSharedListsTableHeaders);
+            Utils.Verify.That(page.DetailsPanelSharedListsTableHeaders.Select(x=>x.Text).ToList(), Is.EqualTo(new List<string>{a, b}), "Headers are different");
+        }
+
         [When(@"User clicks Settings button for ""(.*)"" shared user")]
         public void WhenUserClickSettingsMenuForSharedUser(string user)
         {
@@ -894,10 +909,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             page.GetFirstDashboardFromList().Click();
         }
-
-
-
-
+        
         [Then(@"Tooltip is displayed for the point of Line widget")]
         public void ThenTooltipIsDisplayedForThePoint(Table items)
         {

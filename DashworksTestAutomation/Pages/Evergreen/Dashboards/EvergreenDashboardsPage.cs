@@ -167,6 +167,12 @@ namespace DashworksTestAutomation.Pages
 
         [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-labelledby='sharing-label']//span[not (contains(@class, 'mat-select'))]")]
         public IWebElement SharingDropdownPermissionValue { get; set; }
+        
+        [FindsBy(How = How.XPath, Using = ".//div[@class='dependants action-panel-ddl ng-star-inserted']//button")]
+        public IWebElement DetailsPanelExpandListsIcon { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//table//tr[1]/td")]
+        public IList<IWebElement> DetailsPanelSharedListsTableHeaders { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//mat-dialog-container/permission-popup//h1[text()='Review Widget List Permissions']")]
         public IWebElement ReviewWidgetListPermissionsPopUp { get; set; }
