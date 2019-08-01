@@ -1,0 +1,199 @@
+﻿Feature: PivotPart10
+	Runs Pivot block related tests
+
+Background: Pre-Conditions
+	Given User is logged in to the Evergreen
+	Then Evergreen Dashboards page should be displayed to the user
+
+@Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14375
+Scenario: EvergreenJnr_UsersList_CheckSortedOrderForPivotProjectStatusAsColumn
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups |
+	| Building  |
+	And User selects the following Columns on Pivot:
+	| Columns |
+	| City    |
+	And User selects the following Values on Pivot:
+	| Values |
+	| Region |
+	And User clicks the "RUN PIVOT" Action button
+	When User closes the Pivot panel
+	Then Empty value is displayed on the first place for the Pivot
+	Then Empty value is displayed on the first place for the Pivot column header
+	Then Pivot column headers is displayed in following order:
+	| ColumnName  |
+	| Belfast     |
+	| Calgary     |
+	| Cardiff     |
+	| Edinburgh   |
+	| Jersey City |
+	| London      |
+	| Los Angeles |
+	| Melbourne   |
+	| New York    |
+	| San Diego   |
+
+@Evergreen @Mailboxes @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14375
+Scenario: EvergreenJnr_MailboxesList_CheckSortedOrderForPivotProjectStatusAsColumn
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups |
+	| Building  |
+	And User selects the following Columns on Pivot:
+	| Columns            |
+	| EmailMigra: Status |
+	And User selects the following Values on Pivot:
+	| Values |
+	| Region |
+	And User clicks the "RUN PIVOT" Action button
+	Then Empty value is displayed on the first place for the Pivot
+	And Pivot column headers is displayed in following order:
+	| ColumnName    |
+	| Not Onboarded |
+	| Onboarded     |
+	| Forecast      |
+	| Targeted      |
+	| Scheduled     |
+	| Migrated      |
+
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS15758 @DAS15328 @DAS14246
+Scenario Outline: EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_StingValues
+	When User clicks "<List>" on the left-hand menu
+	Then "<List>" list should be displayed to the user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups               |
+	| Evergreen Capacity Unit |
+	And User selects the following Columns on Pivot:
+	| Columns                     |
+	| General information field 1 |
+	When User selects the following Values on Pivot:
+	| Values      |
+	| <AddValues> |
+	When User selects aggregate function "Count" on Pivot
+	And User clicks the "RUN PIVOT" Action button
+	Then "<CountAggregateFunctions>" is displayed in the columns for aggregate functions
+	Then "General information field 1" is displayed at the top left corner on Pivot
+
+Examples:
+	| List         | AddValues   | CountAggregateFunctions |
+	| Devices      | Owner City  | Count(Owner City)       |
+	| Users        | Building    | Count(Building)         |
+	| Applications | Application | Count(Application)      |
+	| Mailboxes    | Building    | Count(Building)         |
+
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS15758 @DAS15328
+Scenario Outline: EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_DateValues
+	When User clicks "<List>" on the left-hand menu
+	Then "<List>" list should be displayed to the user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups               |
+	| Evergreen Capacity Unit |
+	And User selects the following Columns on Pivot:
+	| Columns                     |
+	| General information field 1 |
+	When User selects the following Values on Pivot:
+	| Values      |
+	| <AddValues> |
+	When User selects aggregate function "Count" on Pivot
+	And User clicks the "RUN PIVOT" Action button
+	Then "<CountAggregateFunctions>" is displayed in the columns for aggregate functions
+	When User selects aggregate function "First" on Pivot
+	And User clicks the "RUN PIVOT" Action button
+	Then "<FirstAggregateFunctions>" is displayed in the columns for aggregate functions
+	When User selects aggregate function "Last" on Pivot
+	And User clicks the "RUN PIVOT" Action button
+	Then "<LastAggregateFunctions>" is displayed in the columns for aggregate functions
+
+Examples:
+	| List         | AddValues                                                    | CountAggregateFunctions                                             | FirstAggregateFunctions                                             | LastAggregateFunctions                                             |
+	| Devices      | Build Date                                                   | Count(Build Date)                                                   | First(Build Date)                                                   | Last(Build Date)                                                   |
+	| Users        | Last Logon Date                                              | Count(Last Logon Date)                                              | First(Last Logon Date)                                              | Last(Last Logon Date)                                              |
+	| Applications | Windows7Mi: Application Information \ Technical Task3 (Date) | Count(Windows7Mi: Application Information \ Technical Task3 (Date)) | First(Windows7Mi: Application Information \ Technical Task3 (Date)) | Last(Windows7Mi: Application Information \ Technical Task3 (Date)) |
+	| Mailboxes    | Created Date                                                 | Count(Created Date)                                                 | First(Created Date)                                                 | Last(Created Date)                                                 |
+
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS15758 @DAS15328
+Scenario Outline: EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_NumericValues
+	When User clicks "<List>" on the left-hand menu
+	Then "<List>" list should be displayed to the user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups               |
+	| Evergreen Capacity Unit |
+	And User selects the following Columns on Pivot:
+	| Columns                     |
+	| General information field 1 |
+	When User selects the following Values on Pivot:
+	| Values      |
+	| <AddValues> |
+	When User selects aggregate function "Count" on Pivot
+	And User clicks the "RUN PIVOT" Action button
+	Then "<CountAggregateFunctions>" is displayed in the columns for aggregate functions
+	When User selects aggregate function "Sum" on Pivot
+	And User clicks the "RUN PIVOT" Action button
+	Then "<SumAggregateFunctions>" is displayed in the columns for aggregate functions
+	When User selects aggregate function "Min" on Pivot
+	And User clicks the "RUN PIVOT" Action button
+	Then "<MinAggregateFunctions>" is displayed in the columns for aggregate functions
+	When User selects aggregate function "Max" on Pivot
+	And User clicks the "RUN PIVOT" Action button
+	Then "<MaxAggregateFunctions>" is displayed in the columns for aggregate functions
+	When User selects aggregate function "Avg" on Pivot
+	And User clicks the "RUN PIVOT" Action button
+	Then "<AvgAggregateFunctions>" is displayed in the columns for aggregate functions
+
+Examples:
+	| List         | AddValues                | CountAggregateFunctions         | SumAggregateFunctions         | MinAggregateFunctions         | MaxAggregateFunctions         | AvgAggregateFunctions         |
+	| Devices      | HDD Count                | Count(HDD Count)                | Sum(HDD Count)                | Min(HDD Count)                | Max(HDD Count)                | Avg(HDD Count)                |
+	| Users        | Device Count             | Count(Device Count)             | Sum(Device Count)             | Min(Device Count)             | Max(Device Count)             | Avg(Device Count)             |
+	| Applications | 1803: Current User Count | Count(1803: Current User Count) | Sum(1803: Current User Count) | Min(1803: Current User Count) | Max(1803: Current User Count) | Avg(1803: Current User Count) |
+	| Mailboxes    | Associated Item Count    | Count(Associated Item Count)    | Sum(Associated Item Count)    | Min(Associated Item Count)    | Max(Associated Item Count)    | Avg(Associated Item Count)    |
+
+@Evergreen @DevicesLists @EvergreenJnr_Pivot @Pivot @DAS14263 @DAS16403 @DAS16407
+Scenario: EvergreenJnr_DevicesLists_CheckAddTeamsPermissionsOnDetailsPanel
+	When User clicks "Devices" on the left-hand menu
+	And User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups  |
+	| Compliance |
+	And User selects the following Columns on Pivot:
+	| Columns |
+	| City    |
+	And User selects the following Values on Pivot:
+	| Values      |
+	| Cost Centre |
+	And User clicks the "RUN PIVOT" Action button
+	Then Pivot run was completed
+	When User creates Pivot list with "DAS14263_Pivot" name
+	Then "DAS14263_Pivot" list is displayed to user
+	When User clicks the List Details button
+	Then List details panel is displayed to the user
+	When User select "Specific users / teams" sharing option
+	When User clicks the "ADD USER" Action button
+	When User selects the "Administrator" user for sharing
+	When User clicks the "CANCEL" Action button
+	When User clicks the "ADD USER" Action button
+	When User selects the "Administrator" user for sharing
+	When User clicks the "CANCEL" Action button
+	When User clicks the "ADD TEAM" Action button
+	When User selects the "Team 1062" team for sharing
+	Then "ADD TEAM" Action button is disabled
+	When User select "Edit" in Select Access dropdown
+	Then "ADD TEAM" Action button is active
+	When User clicks the "CANCEL" Action button
+	When User clicks the "ADD TEAM" Action button
+	When User selects the "Team 1062" team for sharing
+	When User select "Admin" in Select Access dropdown
+	When User clicks the "CANCEL" Action button
+	When User clicks the "ADD TEAM" Action button
+	When User selects the "Team 1062" team for sharing
+	When User select "Read" in Select Access dropdown
+	When User clicks the "CANCEL" Action button
+	When User navigates to the "DAS14263_Pivot" list
+	Then User remove list with "DAS14263_Pivot" name on "Devices" page

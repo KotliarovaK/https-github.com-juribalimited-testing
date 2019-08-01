@@ -1152,10 +1152,55 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RemoveColumn.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_Pivot\Pivot.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_Pivot\PivotPart10.feature.cs">
+      <DependentUpon>PivotPart10.feature</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Pivot.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_Pivot\PivotPart9.feature.cs">
+      <DependentUpon>PivotPart9.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_Pivot\PivotPart8.feature.cs">
+      <DependentUpon>PivotPart8.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_Pivot\PivotPart7.feature.cs">
+      <DependentUpon>PivotPart7.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_Pivot\PivotPart6.feature.cs">
+      <DependentUpon>PivotPart6.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_Pivot\PivotPart5.feature.cs">
+      <DependentUpon>PivotPart5.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_Pivot\PivotPart4.feature.cs">
+      <DependentUpon>PivotPart4.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_Pivot\PivotPart3.feature.cs">
+      <DependentUpon>PivotPart3.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_Pivot\PivotPart2.feature.cs">
+      <DependentUpon>PivotPart2.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_Pivot\PivotPart1.feature.cs">
+      <DependentUpon>PivotPart1.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_ProfileDetails\AccountDetailsFunctionality.feature.cs">
       <AutoGen>True</AutoGen>
@@ -1859,9 +1904,45 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>RemoveColumn.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_Pivot\Pivot.feature">
+    <None Include="Tests\EvergreenJnr_Pivot\PivotPart10.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Pivot.feature.cs</LastGenOutput>
+      <LastGenOutput>PivotPart10.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_Pivot\PivotPart9.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PivotPart9.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_Pivot\PivotPart8.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PivotPart8.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_Pivot\PivotPart7.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PivotPart7.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_Pivot\PivotPart6.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PivotPart6.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_Pivot\PivotPart5.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PivotPart5.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_Pivot\PivotPart4.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PivotPart4.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_Pivot\PivotPart3.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PivotPart3.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_Pivot\PivotPart2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PivotPart2.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_Pivot\PivotPart1.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PivotPart1.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_ProfileDetails\AccountDetailsFunctionality.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
