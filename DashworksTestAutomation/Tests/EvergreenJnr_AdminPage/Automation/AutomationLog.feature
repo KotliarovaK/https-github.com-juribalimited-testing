@@ -7,23 +7,13 @@ Background: Pre-Conditions
 
 @Evergreen @EvergreenJnr_AdminPage @AutomationLog @Automations @DAS16890 @DAS17063 @DAS17364 @DAS17402 @DAS17425 @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckAutomationsLogGridForRunningAutomationWithDeletedProject
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	And User enters "16890Project" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks "Automations" link on the Admin page
-	When User clicks the "CREATE AUTOMATION" Action button
-	Then Create Automation page is displayed to the User
-	When User type "16890_Automation" Name in the "Automation Name" field on the Automation details page
-	When User type "16890" Name in the "Description" field on the Automation details page
-	When User selects "All Devices" in the Scope Automation dropdown
-	When User selects "Active" checkbox on the Automation Page
-	Then "CREATE" Action button is disabled
+	When Project created via API and opened
+	| ProjectName  | Scope       | ProjectTemplate | Mode               |
+	| 16890Project | All Devices | None            | Standalone Project |
+	And User clicks Admin on the left-hand menu
+	And User creates new Automation via API
+	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
+	| 16890_Automation | 16890       | false  | false              | All Devices | Manual |
 	When User selects "Manual" in the "Run" dropdown
 	And User clicks the "CREATE" Action button
 	When User type "16890_Action" Name in the "Action Name" field on the Automation details page
