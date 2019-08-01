@@ -143,16 +143,10 @@ this.FeatureBackground();
                         "FieldLabel",
                         "AllowExternalUpdate",
                         "Enabled",
-                        "User",
-                        "Computer",
-                        "Application",
-                        "Mailbox"});
+                        "Computer"});
             table1.AddRow(new string[] {
                         "CfDAS15473_1",
                         "FlDAS15473_1",
-                        "true",
-                        "true",
-                        "true",
                         "true",
                         "true",
                         "true"});
@@ -258,16 +252,10 @@ this.FeatureBackground();
                         "FieldLabel",
                         "AllowExternalUpdate",
                         "Enabled",
-                        "User",
-                        "Computer",
-                        "Application",
-                        "Mailbox"});
+                        "Application"});
             table3.AddRow(new string[] {
                         "CfDAS15473_2",
                         "FlDAS15473_2",
-                        "true",
-                        "true",
-                        "true",
                         "true",
                         "true",
                         "true"});
@@ -384,16 +372,10 @@ this.FeatureBackground();
                         "FieldLabel",
                         "AllowExternalUpdate",
                         "Enabled",
-                        "User",
-                        "Computer",
-                        "Application",
                         "Mailbox"});
             table5.AddRow(new string[] {
                         "CfDAS15473_3",
                         "FlDAS15473_3",
-                        "true",
-                        "true",
-                        "true",
                         "true",
                         "true",
                         "true"});

@@ -12,8 +12,8 @@ Scenario: EvergreenJnr_DevicesList_CheckEditableFieldDisplayAndToolTips
 	And User navigate to Manage link
 	And User select "Custom Fields" option in Management Console
 	And User creates new Custom Field
-	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | User | Computer | Application | Mailbox |
-	| CfDAS15473_1 | FlDAS15473_1 | true                | true    | true | true     | true        | true    |
+	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | Computer |
+	| CfDAS15473_1 | FlDAS15473_1 | true                | true    | true     |
 	And User navigate to Evergreen URL
 	And User creates Custom Field via API
 	| ObjectType | ObjectId | FieldName    | Value           |
@@ -34,8 +34,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckDataIsUpdatedInClickableValue
 	And User navigate to Manage link
 	And User select "Custom Fields" option in Management Console
 	And User creates new Custom Field
-	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | User | Computer | Application | Mailbox |
-	| CfDAS15473_2 | FlDAS15473_2 | true                | true    | true | true     | true        | true    |
+	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | Application |
+	| CfDAS15473_2 | FlDAS15473_2 | true                | true    | true        |
 	And User navigate to Evergreen URL
 	And User creates Custom Field via API
 	| ObjectType  | ObjectId | FieldName    | Value           |
@@ -63,8 +63,8 @@ Scenario: EvergreenJnr_UsersList_CheckClickableValueSavedOnFocusLost
 	And User navigate to Manage link
 	And User select "Custom Fields" option in Management Console
 	And User creates new Custom Field
-	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | User | Computer | Application | Mailbox |
-	| CfDAS15473_3 | FlDAS15473_3 | true                | true    | true | true     | true        | true    |
+	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | Mailbox |
+	| CfDAS15473_3 | FlDAS15473_3 | true                | true    | true    |
 	And User navigate to Evergreen URL
 	And User creates Custom Field via API
 	| ObjectType | ObjectId | FieldName    | Value           |
