@@ -384,3 +384,20 @@ Examples:
 	| Users        | ComputerSc: One \ User Off/On        |
 	| Devices      | ComputerSc: One \ Computer Off/On    |
 	| Applications | ComputerSc: One \ Application Off/On |
+
+@Evergreen @Devices @Evergreen_FiltersFeature @NewFilterCheck @DAS16726 @Cleanup
+Scenario: EvergreenJnr_DevicesList_CheckThatNewCurrentAndLastSeenFiltersAreAvailableForSelection
+	When User clicks "Devices" on the left-hand menu
+	And User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName          |
+	| Current             |
+	| Dashworks Last Seen |
+	And User clicks the Filters button
+	And User add "Current" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| TRUE               |
+	And User add "Dashworks Last Seen" filter where type is "Equals" with added column and "25 Jul 2019" Date filter
+	And User create custom list with "TestNewColumnsAndFilters" name
+	Then "TestNewColumnsAndFilters" list is displayed to user
+	
