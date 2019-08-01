@@ -444,6 +444,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             var tabNameSelector = $".//mat-nested-tree//a[text()='{tabName}']";
             Driver.WaitForElementToBeDisplayed(By.XPath(tabNameSelector));
             Driver.FindElement(By.XPath(tabNameSelector)).Click();
+            Driver.WaitForDataLoading();
         }
 
         public void AddItem(string itemName)
