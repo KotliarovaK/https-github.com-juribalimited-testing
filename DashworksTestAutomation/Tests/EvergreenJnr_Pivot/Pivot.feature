@@ -230,23 +230,34 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatPivotsAreNotShownInTheListToSelectO
 	And User selects "Scope Details" tab on the Project details page
 	And User navigates to the "Device Scope" tab in the Scope section on the Project details page
 	Then following Values are displayed in "Scope" drop-down on the Admin page:
-	| Values                  |
-	| All Devices             |
-	| 1803 Rollout            |
-	| Depot Capacity          |
-	| Migration Type Capacity |
-	| New York - Devices     |
+	| Values                                |
+	| All Devices                           |
+	| 1803 Rollout                          |
+	| Dependant List Filter - BROKEN LIST   |
+	| Depot Capacity                        |
+	| Device List (Complex)                 |
+	| Device List (Complex) - BROKEN LIST   |
+	| Device Readiness Columns & Filters    |
+	| Migration Type Capacity               |
+	| New York - Devices                    |
+	| Using App Saved List Readiness Filter |
 	When User navigates to the "User Scope" tab in the Scope section on the Project details page
 	Then following Values are displayed in "User Scope" drop-down on the Admin page:
-	| Values                  |
-	| All Users               |
-	| Users with Device Count |
+	| Values                             |
+	| All Users                          |
+	| Users List (Complex)               |
+	| Users List (Complex) - BROKEN LIST |
+	| Users Readiness Columns & Filters  |
+	| Users with Device Count            |
 	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
 	Then following Values are displayed in "Application Scope" drop-down on the Admin page:
-	| Values             |
-	| All Applications   |
-	| 1803 Apps          |
-	| Apps with a Vendor |
+	| Values                                   |
+	| All Applications                         |
+	| 1803 Apps                                |
+	| App Readiness Columns & Filters          |
+	| Application List (Complex)               |
+	| Application List (Complex) - BROKEN LIST |
+	| Apps with a Vendor                       |
 	And User remove list with "Pivot_DAS_14224" name on "Devices" page
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13765 @DAS13833 @DAS13855
@@ -364,7 +375,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatPivotPanelIsDisplayedCorrectlyAfterC
 	And "ADD COLUMN" Action button is active
 	And "ADD VALUE" Action button is active
 
-@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14379 @DAS11291 @DAS14745
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14379 @DAS11291 @DAS14745 @DAS16399
 Scenario: EvergreenJnr_DevicesList_ChecksTooltipsOnPivot
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -386,7 +397,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksTooltipsOnPivot
 	And "Columns" plus button have tooltip with "Add column" text
 	And "Values" plus button have tooltip with "Add value" text
 	And close button for "City" chip have tooltip with "Delete this item" text
-	And "City" chip have tooltip with "City" text
+	And "City" chip have tooltip with "" text
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14377 @DAS13864
 Scenario: EvergreenJnr_DevicesList_CheckThatTaskValuesAsRowGroupsAreDisplayedInTheCorrectOrder
@@ -618,15 +629,15 @@ Scenario: EvergreenJnr_MailboxesLists_CheckThatSeverityAggregateFunctionAvailabl
 	Then Pivot run was completed
 	When User expanded "BCLABS-2007" left-pinned value on Pivot
 	Then following values are displayed for "Empty" column on Pivot
-	| Value1      | Value2         |
-	| BCLABS-2007 | GREEN          |
-	| 87          | GREEN          |
-	| 86          | GREEN          |
-	| 20          | GREEN          |
-	| 9           | NOT APPLICABLE |
-	| 3           | GREEN          |
-	| 2           | GREEN          |
-	| 0           | GREEN          |
+	| Value1      | Value2 |
+	| BCLABS-2007 | GREEN  |
+	| 87          | GREEN  |
+	| 86          | GREEN  |
+	| 20          | GREEN  |
+	| 9           | NONE   |
+	| 3           | GREEN  |
+	| 2           | GREEN  |
+	| 0           | GREEN  |
 
 @Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS13860 @DAS14556
 Scenario: EvergreenJnr_UsersLists_CheckThatSeverityAggregateFunctionAvailableForComplianceFieldForUsers
@@ -696,8 +707,8 @@ Scenario: EvergreenJnr_ApplicationsLists_CheckThatProjectReadinessTaskColumnsDis
 	| RowGroups |
 	| Vendor    |
 	And User selects the following Columns on Pivot:
-	| Columns                                                    |
-	| UserEvergr: Radiobutton Readiness Date Owner (Application) |
+	| Columns                                                              |
+	| UserEvergr: Stage 3 \ Radiobutton Readiness Date Owner (Application) |
 	And User selects the following Values on Pivot:
 	| Values     |
 	| Compliance |
@@ -741,8 +752,8 @@ Scenario: EvergreenJnr_UsersLists_CheckThatProjectReadinessTaskColumnsDisplayInC
 	| RowGroups |
 	| City      |
 	And User selects the following Columns on Pivot:
-	| Columns                                           |
-	| Windows7Mi: Group User Radiobutton Readiness Only |
+	| Columns                                                           |
+	| Windows7Mi: Communication \ Group User Radiobutton Readiness Only |
 	And User selects the following Values on Pivot:
 	| Values     |
 	| Compliance |
@@ -826,11 +837,11 @@ Scenario: EvergreenJnr_DevicesList_CheckThatProjectDeviceOwnerReadinessTaskColum
 	Then "Devices" list should be displayed to the user
 	When User navigates to Pivot
 	And User selects the following Row Groups on Pivot:
-	| RowGroups                                  |
-	| Barry'sUse: Validate User Device Ownership |
+	| RowGroups                                                          |
+	| Barry'sUse: Audit & Configuration \ Validate User Device Ownership |
 	And User selects the following Columns on Pivot:
-	| Columns                                    |
-	| Barry'sUse: Validate User Device Ownership |
+	| Columns                                                            |
+	| Barry'sUse: Audit & Configuration \ Validate User Device Ownership |
 	And User selects the following Values on Pivot:
 	| Values                      |
 	| 1803: Application Readiness |
@@ -956,10 +967,10 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatMailboxOwnerComplianceColumnsDispl
 	Then Pivot run was completed
 	And data in the table is sorted by "City" column in ascending order by default for the Pivot
 	Then Pivot column headers is displayed in following order:
-	| ColumnName     |
-	| GREEN          |
-	| UNKNOWN        |
-	| NOT APPLICABLE |
+	| ColumnName |
+	| UNKNOWN    |
+	| GREEN      |
+	| NONE       |
 
 @Evergreen @Applications @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14429
 Scenario: EvergreenJnr_ApplicationsLists_CheckThatComplianceColumnsDisplayInTheCorrectOrderForApplications
@@ -979,12 +990,12 @@ Scenario: EvergreenJnr_ApplicationsLists_CheckThatComplianceColumnsDisplayInTheC
 	Then Pivot run was completed
 	And data in the table is sorted by "<SortedColumn>" column in ascending order by default for the Pivot
 	Then Pivot column headers is displayed in following order:
-	| ColumnName     |
-	| GREEN          |
-	| AMBER          |
-	| RED            |
-	| UNKNOWN        |
-	| NOT APPLICABLE |
+	| ColumnName |
+	| UNKNOWN    |
+	| RED        |
+	| AMBER      |
+	| GREEN      |
+	| NONE       |
 
 @Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14429
 Scenario: EvergreenJnr_UsersLists_CheckThatComplianceColumnsDisplayInTheCorrectOrderForUsers
@@ -1004,12 +1015,12 @@ Scenario: EvergreenJnr_UsersLists_CheckThatComplianceColumnsDisplayInTheCorrectO
 	Then Pivot run was completed
 	And data in the table is sorted by "Domain" column in ascending order by default for the Pivot
 	Then Pivot column headers is displayed in following order:
-	| ColumnName     |
-	| GREEN          |
-	| AMBER          |
-	| RED            |
-	| UNKNOWN        |
-	| NOT APPLICABLE |
+	| ColumnName |
+	| UNKNOWN    |
+	| RED        |
+	| AMBER      |
+	| GREEN      |
+	| NONE       |
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14429
 Scenario: EvergreenJnr_DevicesLists_CheckThatComplianceColumnsDisplayInTheCorrectOrderForDevices
@@ -1030,10 +1041,10 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatComplianceColumnsDisplayInTheCorrec
 	And data in the table is sorted by "Inventory Site" column in ascending order by default for the Pivot
 	Then Pivot column headers is displayed in following order:
 	| ColumnName |
-	| GREEN      |
-	| AMBER      |
-	| RED        |
 	| UNKNOWN    |
+	| RED        |
+	| AMBER      |
+	| GREEN      |
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14430
 Scenario: EvergreenJnr_DevicesList_CheckThatDeviceOwnerComplianceColumnsDisplayInTheCorrectOrder
@@ -1180,7 +1191,7 @@ Scenario: EvergreenJnr_DevicesList_CheckResetButtonOnPivot
 	And User remove list with "PivotList_DAS_13844" name on "Devices" page
 	And User remove list with "PivotList_DAS_13844_1" name on "Devices" page
 
-@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13833 @DAS13842
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13833 @DAS13842 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatPivotPanelIsDisplayedCorrectlyAfterClicksOnManagerButton
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -1225,7 +1236,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddingColumnOnPivotIsWorksCorrectlyF
 	Then "Selected Filters" section is not displayed in the Columns panel
 	And "Device Key" subcategory is selected in Column panel
 
-@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13119 @DAS13652 @DAS13637 @DAS13649
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13119 @DAS13652 @DAS13637 @DAS17421 @DAS13649 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatPivotSubmenuIsDisplayedCorrectlyAfterClosingListsPanel
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -1247,10 +1258,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatPivotSubmenuIsDisplayedCorrectlyAfte
 	Then Dashboards sub menu is hidden on Dashboards page
 	And "PivotList_DAS13652" list name is displayed correctly on top tools panel
 	And "RUN PIVOT" Action button is displayed
-	Then Export button is displayed
-	When User open sub menu for "PivotList_DAS13652" list
-	Then User sees Dashboards sub menu on Dashboards page
-	And User remove list with "PivotList_DAS13652" name on "Devices" page
+	And Export button is displayed
 
 @Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS11103 @DAS11264 @DAS11360 @Cleanup
 Scenario Outline: EvergreenJnr_AllLists_CheckThatRemovingValueThroughTheChipsWorksCorrectly

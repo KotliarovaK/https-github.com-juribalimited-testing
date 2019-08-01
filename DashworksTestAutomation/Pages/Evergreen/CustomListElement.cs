@@ -41,7 +41,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'button-small save-actions-cancel')]")]
         public IWebElement CancelButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//i[contains(@class, 'material-icons mat-clear')]/ancestor::button[contains(@class, 'btn mat-icon-button ')]")]
+        [FindsBy(How = How.XPath, Using = ".//list-submenu-container//button")]
         public IWebElement CloseButton { get; set; }
 
         [FindsBy(How = How.XPath,

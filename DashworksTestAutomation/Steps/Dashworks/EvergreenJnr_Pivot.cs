@@ -209,6 +209,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             _driver.WaitForElementToBeDisplayed(page.SaveNewListButton);
             Utils.Verify.IsTrue(page.SaveNewListButton.Displayed(), "'Save' button is not displayed");
+            _driver.MouseHover(page.SaveNewListButton);
             page.SaveNewListButton.Click();
 
             _driver.WaitForElementToBeDisplayed(page.SaveButton);
@@ -343,7 +344,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<PivotElementPage>();
             var element = page.GetChipByNameOnPivot(chipName);
             _driver.MouseHover(element);
-            var toolTipText = _driver.GetTooltipText();
+            string toolTipText = null;
+            try
+            {
+                toolTipText = _driver.GetTooltipText();
+            }
+            catch
+            {
+                toolTipText = String.Empty;
+            }
             Utils.Verify.AreEqual(text, toolTipText, "Tooltip text is not correctly");
         }
 
