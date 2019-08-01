@@ -593,7 +593,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             listElement.SaveButton.Click();
             _driver.WaitForElementToBeNotDisplayed(listElement.SaveButton);
             _driver.WaitForDataLoading();
-            _dashboard.Value.dashboardId = GetDashboardId(dashboardName);
+            _dashboard.Value.dashboardId = DatabaseHelper.GetDashboardId(dashboardName);
         }
 
         [When(@"User types ""(.*)"" as dashboard title")]
@@ -1281,12 +1281,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         #endregion
 
-        private string GetDashboardId(string dashboardName)
-        {
-            return
-                DatabaseHelper.ExecuteReader(
-                    $"select [DashboardId] from [desktopBI].[dbo].[EvergreenDashboards] where [DashboardName] = '{dashboardName}'",
-                    0).LastOrDefault();
-        }
+        
     }
 }

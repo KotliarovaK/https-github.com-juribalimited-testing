@@ -3,6 +3,7 @@ using System.Linq;
 using System.Net;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages;
 using DashworksTestAutomation.Providers;
 using Newtonsoft.Json;
@@ -53,6 +54,11 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Dashboard
             _driver.Navigate().GoToUrl($"{UrlProvider.EvergreenUrl}/#/dashboards/{_dashboard.Value.dashboardId}");
         }
 
+        [When(@"Dashboard with ""(.*)"" name is opened via API")]
+        public void WhenDashboardWithNameIsOpenedViaApi(string name)
+        {
+            _driver.Navigate().GoToUrl($"{UrlProvider.EvergreenUrl}/#/dashboards/{DatabaseHelper.GetDashboardId(name)}");
+        }
 
         [AfterScenario("Cleanup")]
         public void DeleteNewlyCreatedDashboard()

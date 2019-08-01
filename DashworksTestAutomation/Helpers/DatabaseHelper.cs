@@ -368,6 +368,16 @@ namespace DashworksTestAutomation.Helpers
 
         #endregion
 
+        #region Dashboard
+        public static string GetDashboardId(string dashboardName)
+        {
+            return
+                DatabaseHelper.ExecuteReader(
+                    $"select [DashboardId] from [desktopBI].[dbo].[EvergreenDashboards] where [DashboardName] = '{dashboardName}'",
+                    0).LastOrDefault();
+        }
+        #endregion
+
         #region Custom Field
 
         public static string GetCustomFieldId(string name)

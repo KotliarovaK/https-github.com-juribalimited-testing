@@ -88,20 +88,6 @@ namespace DashworksTestAutomation.Steps.API
             //Need to refresh page to apply language change
             _driver.Navigate().Refresh();
             _driver.WaitForDataLoading();
-        }
-
-        [When(@"User navigates to Create Readiness page of ""(.*)"" project")]
-        public void WhenUserNavigatesToCreateReadinessPageOfParticularProject(string project)
-        {
-            _driver.Navigate().GoToUrl($"{UrlProvider.EvergreenUrl}#/admin/project/{DatabaseHelper.GetProjectId(project)}/readiness/createReadiness");
-            _driver.WaitForDataLoading();
-        }
-
-        [When(@"User navigates to Readiness page of ""(.*)"" project")]
-        public void WhenUserNavigatesToReadinessPageOfParticularProject(string project)
-        {
-            _driver.Navigate().GoToUrl($"{UrlProvider.EvergreenUrl}#/admin/project/{DatabaseHelper.GetProjectId(project)}/readiness");
-            _driver.WaitForDataLoading();
-        }
+        } 
     }
 }

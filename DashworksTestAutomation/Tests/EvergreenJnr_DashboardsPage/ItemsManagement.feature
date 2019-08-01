@@ -457,3 +457,12 @@ Examples:
 	| DashboardName      |
 	| DAS12974DUPLICATED |
 	| DAS12974duplicated |
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17592
+Scenario: EvergreenJnr_DashboardsPage_CheckDashboardTranslationsWork
+	When User language is changed to "Deutsch" via API
+	And Dashboard with "Executive Summary" name is opened via API
+	Then User sees "This widget refers to a list that is not available" text in "1" warning messages on Dashboards page
+	#display side panel
+	#expand 
+	# check language of headers
