@@ -471,6 +471,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Pivot")]
         [NUnit.Framework.CategoryAttribute("Pivot")]
         [NUnit.Framework.CategoryAttribute("DAS14206")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_UsersList_ChecksThatUserCanCreateOneMorePivotOnCreatedList()
         {
             System.Exception lastException = null;
@@ -504,7 +505,8 @@ this.FeatureBackground();
                         "Users",
                         "EvergreenJnr_Pivot",
                         "Pivot",
-                        "DAS14206"});
+                        "DAS14206",
+                        "Cleanup"});
 #line 116
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -796,7 +798,7 @@ this.FeatureBackground();
 #line 204
  testRunner.And("\"Values\" plus button have tooltip with \"Add value\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 205
- testRunner.And("close button for \"City\" chip have tooltip with \"Delete this item\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("close button for \"Compliance\" chip have tooltip with \"Delete this item\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 206
  testRunner.And("\"City\" chip have tooltip with \"\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden

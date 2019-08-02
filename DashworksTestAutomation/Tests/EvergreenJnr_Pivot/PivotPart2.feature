@@ -112,7 +112,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatUserCanCreateOneMorePivotOnSelectedPa
 	And "ADD VALUE" Action button is active
 	And User remove list with "Pivot_DAS_14206" name on "Users" page
 
-@Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS14206
+@Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS14206 @Cleanup
 Scenario: EvergreenJnr_UsersList_ChecksThatUserCanCreateOneMorePivotOnCreatedList
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -202,5 +202,5 @@ Scenario: EvergreenJnr_DevicesList_ChecksTooltipsOnPivot
 	Then "Row Groups" plus button have tooltip with "Add row group" text
 	And "Columns" plus button have tooltip with "Add column" text
 	And "Values" plus button have tooltip with "Add value" text
-	And close button for "City" chip have tooltip with "Delete this item" text
+	And close button for "Compliance" chip have tooltip with "Delete this item" text
 	And "City" chip have tooltip with "" text
