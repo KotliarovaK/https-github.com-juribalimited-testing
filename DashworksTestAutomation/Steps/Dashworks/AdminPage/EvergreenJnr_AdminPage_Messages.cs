@@ -172,6 +172,17 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             Utils.Verify.AreEqual(text, page.ScopeChangesError.Text, "Error Message is not displayed in the Scope Changes");
         }
 
+        [Then(@"'(.*)' message is displayed on empty greed")]
+        public void ThenMessageIsDisplayedOnEmptyGreed(string message)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            if (_driver.IsElementDisplayed(page.NoFoundMessage, WebDriverExtensions.WaitTime.Medium))
+                Verify.AreEqual(message, page.NoFoundMessage.Text, $"'{message}' is not displayed on empty greed");
+            else
+                throw new Exception("Empty greed message is not displayed or greed not empty");
+        }
+
+        //TODO this method should be replaced by generic: ThenMessageIsDisplayedOnEmptyGreed
         [Then(@"""(.*)"" message is displayed on the Admin Page")]
         public void ThenMessageIsDisplayedOnTheAdminPage(string message)
         {

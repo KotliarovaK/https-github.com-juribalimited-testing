@@ -97,8 +97,8 @@ Scenario: EvergreenJnr_UsersList_CancelCustomFieldCreation
 	When User navigates to the "Custom Fields" sub-menu on the Details page
 	And User clicks the "CUSTOM FIELDS" Action button
 	When User selects 'CfDAS16487_3' option from 'Custom Field' autocomplete
-	When User enters 'Somve_Value' text to 'Value' textbox
-	When User clicks Cancel button on Add Custom Field popup
+	And User enters 'Somve_Value' text to 'Value' textbox
+	And User clicks Cancel button on Add Custom Field popup
 	Then "Custom Fields" tab is displayed on left menu on the Details page and contains '1' count of items
 
 	#Remove Not_Ready for Orbit
@@ -117,11 +117,12 @@ Scenario: EvergreenJnr_UsersList_CreateCustomFieldWithSameData
 	And User click content from "Username" column
 	Then Details page for "OBM473400 (Jeannie L. Moreno)" item is displayed to the user
 	When User navigates to the "Custom Fields" sub-menu on the Details page
-	And User creates Custom Field
+	Then 'No custom fields found for this user' message is displayed on empty greed
+	When User creates Custom Field
 	| ObjectType | ObjectId | FieldName    | Value       |
 	| user       | 17884    | CfDAS17614_2 | Value_17614 |
 	Then "CfDAS17614_2" content is displayed in the "Custom Field" column
-	Then "Value_17614" content is displayed in the "Value" column
+	And "Value_17614" content is displayed in the "Value" column
 	And "Custom Fields" tab is displayed on left menu on the Details page and contains '1' count of items
 	#ADD VERIFICATION FOR ROW COUNTER!!!
 	When User creates Custom Field
@@ -131,7 +132,7 @@ Scenario: EvergreenJnr_UsersList_CreateCustomFieldWithSameData
 	| Content      |
 	| CfDAS17614_2 |
 	| CfDAS17614_2 |
-	Then Content is displayed in the "Value" column
+	And Content is displayed in the "Value" column
 	| Content     |
 	| Value_17614 |
 	| Value_17614 |
