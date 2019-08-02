@@ -96,7 +96,7 @@ namespace DashworksTestAutomation.Base
                             else
                                 Logger.Write("Unable to get screenshot as no Driver in the context");
                         }
-                        
+
                     }
 
                     if (driver != null)
@@ -122,16 +122,18 @@ namespace DashworksTestAutomation.Base
                     .ToList();
                 LockCategory.RemoveTags(testTags);
 
-                try
-                {
-                    var testStatus = GetTestStatus();
-                    if (!string.IsNullOrEmpty(testStatus) && testStatus.Equals("Passed"))
-                        BambooUtil.UnleashTest(GetTestName());
-                }
-                catch (Exception e)
-                {
-                    Logger.Write($"Unable to unleash test: {e}");
-                }
+                //Unleash test only if NOT in local run
+                if (!Browser.RemoteDriver.Equals("local"))
+                    try
+                    {
+                        var testStatus = GetTestStatus();
+                        if (!string.IsNullOrEmpty(testStatus) && testStatus.Equals("Passed"))
+                            BambooUtil.UnleashTest(GetTestName());
+                    }
+                    catch (Exception e)
+                    {
+                        Logger.Write($"Unable to unleash test: {e}");
+                    }
 
                 RemoteWebDriver driver = null;
                 if (!testTags.Contains("API"))
