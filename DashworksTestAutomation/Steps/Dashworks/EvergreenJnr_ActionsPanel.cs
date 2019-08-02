@@ -570,6 +570,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             action.GetActionsButtonByName(buttonName).Click();
+            _driver.WaitForDataLoading(50);
         }
 
         [When(@"User selects 'Save as new pilot' option")]

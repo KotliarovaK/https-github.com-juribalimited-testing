@@ -113,25 +113,25 @@ Scenario: EvergreenJnr_UsersList_CreateCustomFieldWithSameData
 	And User navigate to Evergreen URL
 	And User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
-	When User perform search by "OBM473400 "
+	When User perform search by "OBM473400"
 	And User click content from "Username" column
 	Then Details page for "OBM473400 (Jeannie L. Moreno)" item is displayed to the user
 	When User navigates to the "Custom Fields" sub-menu on the Details page
 	Then 'No custom fields found for this user' message is displayed on empty greed
 	When User creates Custom Field
 	| ObjectType | ObjectId | FieldName    | Value       |
-	| user       | 17884    | CfDAS17614_2 | Value_17614 |
-	Then "CfDAS17614_2" content is displayed in the "Custom Field" column
+	| user       | 17884    | CfDAS17614_4 | Value_17614 |
+	Then "CfDAS17614_4" content is displayed in the "Custom Field" column
 	And "Value_17614" content is displayed in the "Value" column
 	And "Custom Fields" tab is displayed on left menu on the Details page and contains '1' count of items
 	#ADD VERIFICATION FOR ROW COUNTER!!!
 	When User creates Custom Field
 	| ObjectType | ObjectId | FieldName    | Value       |
-	| user       | 98968    | CfDAS17614_2 | Value_17614 |
+	| user       | 98968    | CfDAS17614_4 | Value_17614 |
 	Then Content is displayed in the "Custom Field" column
 	| Content      |
-	| CfDAS17614_2 |
-	| CfDAS17614_2 |
+	| CfDAS17614_4 |
+	| CfDAS17614_4 |
 	And Content is displayed in the "Value" column
 	| Content     |
 	| Value_17614 |

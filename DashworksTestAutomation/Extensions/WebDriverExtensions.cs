@@ -202,6 +202,11 @@ namespace DashworksTestAutomation.Extensions
             WaitForDataToBeLoaded(driver, ".//div[contains(@class,'spinner') and not(contains(@class,'small'))]", WaitTimeout);
         }
 
+        public static void WaitForDataLoading(this RemoteWebDriver driver, int timeoutInSeconds)
+        {
+            WaitForDataToBeLoaded(driver, ".//div[contains(@class,'spinner') and not(contains(@class,'small'))]", TimeSpan.FromSeconds(timeoutInSeconds));
+        }
+
         public static void WaitForDataLoadingInActionsPanel(this RemoteWebDriver driver)
         {
             WaitForDataToBeLoaded(driver, ".//div[contains(@class,'action-progress')]", WaitTimeout);

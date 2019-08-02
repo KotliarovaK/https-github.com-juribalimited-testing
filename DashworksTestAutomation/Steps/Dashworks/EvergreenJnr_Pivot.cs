@@ -231,7 +231,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<PivotElementPage>();
             //Small wait for Pivot loaded
             Thread.Sleep(500);
-            _driver.WaitForDataLoading();
+            _driver.WaitForDataLoading(50);
             Utils.Verify.IsFalse(page.NoPivotTableMessage.Displayed(), "Pivot run was failed");
         }
 

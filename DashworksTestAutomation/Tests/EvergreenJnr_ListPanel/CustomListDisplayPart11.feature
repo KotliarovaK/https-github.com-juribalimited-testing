@@ -90,3 +90,37 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSharingiteFilterForListsIsWorkedCorr
 	Then "1803 Rollout" list is not displayed in the bottom section of the List Panel
 	When User enters "1803" text in Search field at List Panel
 	Then "1803 Rollout" list is not displayed in the bottom section of the List Panel
+
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS17627 @Cleanup
+Scenario: EvergreenJnr_DevicesList_CheckThatDashworkWorksAfterChangingPivotSettings
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User create static list with "StaticFilterList_1" name on "Devices" page with following items
+	| ItemName       |
+	| 001BAQXT6JWFPI |
+	| 001PSUMZYOW581 |
+	Then "StaticFilterList_1" list is displayed to user
+	When User navigates to the "All Devices" list
+	When User click on 'Hostname' column header
+	When User create dynamic list with "DynamicFilterList_1" name on "Devices" page
+	Then "DynamicFilterList_1" list is displayed to user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups |
+	| Hostname  |
+	And User selects the following Columns on Pivot:
+	| Columns  |
+	| Hostname |
+	And User selects the following Values on Pivot:
+	| Values   |
+	| Hostname |
+	When User clicks the "RUN PIVOT" Action button
+	And User removes "Hostname" Column for Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups |
+	| Floor     |
+	When User clicks the "RUN PIVOT" Action button
+	Then There are no errors in the browser console
+	#Just to check that application is still responding
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user

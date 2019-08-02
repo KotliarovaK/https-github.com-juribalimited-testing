@@ -35,6 +35,7 @@ namespace DashworksTestAutomation.Steps.Base
         [Then(@"There are no errors in the browser console")]
         public void ThenThereAreNoErrorsInTheBrowserConsole()
         {
+            _driver.WaitForDataLoading();
             //Bug in chromedriver. Need to wait for fix
             //_driver.CheckConsoleErrors();
         }
