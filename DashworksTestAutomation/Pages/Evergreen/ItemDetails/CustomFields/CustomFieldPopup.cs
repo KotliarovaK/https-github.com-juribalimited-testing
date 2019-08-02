@@ -37,8 +37,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails.CustomFields
 
         public enum TextBoxes
         {
-            [Description("Custom Fields")]
-            CustomFields,
+            [Description("Custom Field")]
+            CustomField,
             Value
         }
     }

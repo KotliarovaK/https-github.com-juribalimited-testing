@@ -20,6 +20,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         [FindsBy(How = How.XPath, Using = MainTabsOnDetailsPage)]
         public IList<IWebElement> MainTabsOnDetailsPageList { get; set; }
 
+        private static string TabCountSelector = ".//a[text()='{0}']//span[@class='ng-star-inserted']";
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -70,9 +72,19 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
             return Driver.IsElementDisplayed(By.XPath($"//li[contains(@class, 'das-mat-tree')]//a[text()='{name}']//span[contains(text(),'{countOfItems}')]"));
         }
 
+        public int GetCountOfItemsByTabName(string tabName)
+        {
+            if(!GetCountOfItemsDisplayStatusByTabName(tabName))
+                throw new Exception($"Count is not displayed for '{tabName}' tab");
+
+            var text = Driver.FindElement(By.XPath(string.Format(string.Format(TabCountSelector, tabName)))).Text;
+            text = text.TrimStart().TrimStart('(').TrimEnd(')');
+            return int.Parse(text);
+        }
+
         public bool GetCountOfItemsDisplayStatusByTabName(string tabName)
         {
-            return Driver.IsElementDisplayed(By.XPath($"//a[text()='{tabName}']//span[@class='ng-star-inserted']"));
+            return Driver.IsElementDisplayed(By.XPath(string.Format(TabCountSelector, tabName)));
         }
 
         public bool GetDisplayStatusForDisabledSubTabByName(string tabName)

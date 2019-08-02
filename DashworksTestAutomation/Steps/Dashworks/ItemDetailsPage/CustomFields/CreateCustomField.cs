@@ -42,13 +42,10 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage.CustomFields
 
                 var popup = _driver.NowAt<CustomFieldPopup>();
 
-                var action = _driver.NowAt<BaseDashboardPage>();
-                var dropdown = _driver.NowAt<BaseGridPage>();
-                dropdown.GetDropdownByName(CustomFieldPopup.TextBoxes.CustomFields.GetValue()).Click();
-                action.GetOptionByName(customField.FieldName).Click();
+                var page = _driver.NowAt<BaseDashboardPage>();
+                page.AutocompleteSelect(CustomFieldPopup.TextBoxes.CustomField.GetValue(), customField.FieldName, true);
 
-                var projectElement = _driver.NowAt<ProjectsPage>();
-                projectElement.SendKeysToTheNamedTextbox(customField.Value, CustomFieldPopup.TextBoxes.Value.GetValue());
+                page.PopulateNamedTextbox(CustomFieldPopup.TextBoxes.Value.GetValue(), customField.Value);
 
                 popup.AddCustomFieldButton.Click();
                 _driver.WaitForElementToBeNotDisplayed(popup.AddCustomFieldButton);

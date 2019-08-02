@@ -369,6 +369,7 @@
     <Compile Include="Steps\Dashworks\AdminPage\Teams\Api\CreateTeamViaApi.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Teams\BeforeScenario\SaveDefaultTeamBeforeScenario.cs" />
     <Compile Include="Steps\Dashworks\Base\EvergreenJnr_BaseGrid.cs" />
+    <Compile Include="Steps\Dashworks\Base\EvergreenJnr_BasePage.cs" />
     <Compile Include="Steps\Dashworks\Dashboards\EvergreenJnr_WidgetPage.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Project\ProjectsApi.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Buckets\EvergreenJnr_BucketsPage.cs" />

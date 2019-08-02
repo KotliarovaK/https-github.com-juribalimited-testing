@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Helpers;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using SeleniumExtras.PageObjects;
@@ -87,6 +88,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = "//input[@placeholder='Capacity Unit']")]
         public IWebElement CapacityUnitField { get; set; }
 
+        //TODO should be replaced by AutocompleteSelect
         [FindsBy(How = How.XPath, Using = "//input[@placeholder='Ring']")]
         public IWebElement RingField { get; set; }
 
@@ -120,6 +122,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = "//input[@aria-label='Date']")]
         public IWebElement DateField { get; set; }
 
+        //TODO should be replaced by AutocompleteSelect
         [FindsBy(How = How.XPath, Using = "//input[@placeholder='Path']")]
         public IWebElement PathDropdown { get; set; }
 
@@ -228,6 +231,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 "//div[contains(@class, 'actions-lists')]//i[contains(@class, 'mat-list')]/..//following-sibling::span[text()='All lists']")]
         public IWebElement AllListsIcon { get; set; }
 
+        //TODO should be replaced by AutocompleteSelect
         [FindsBy(How = How.XPath, Using = "//input[@placeholder='Owner']")]
         public IWebElement OwnerDropDown { get; set; }
 
@@ -368,6 +372,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         #endregion TableColumns
 
+        private static string NamedTextboxSelector = ".//input[@placeholder='{0}']";
+
+        private static string AutocompleteOptionsSelector = ".//mat-option";
+
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'mat-autocomplete-panel')]")]
+        public IWebElement AutocompleteDropdown { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -375,7 +386,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return new List<By>
             {
                 SelectorFor(this, p => p.Heading),
-                //SelectorFor(this, p => p.List)
             };
         }
 
@@ -456,6 +466,78 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 input.Clear();
                 Thread.Sleep(500);
                 attempt++;
+            }
+        }
+
+        public IWebElement GetNamedTextbox(string placeholder)
+        {
+            var by = By.XPath(string.Format(NamedTextboxSelector, placeholder));
+            if (!Driver.IsElementDisplayed(by, WebDriverExtensions.WaitTime.Medium))
+                throw new Exception($"Textbox with '{placeholder}' placeholder is not displayed");
+            return Driver.FindElement(by);
+        }
+
+        public void PopulateNamedTextbox(string placeholder, string value, bool clear = true)
+        {
+            if (clear)
+                GetNamedTextbox(placeholder).Clear();
+
+            if (!string.IsNullOrEmpty(value))
+                GetNamedTextbox(placeholder).SendKeys(value);
+        }
+
+        public void IsAutocompleteOptionsSorted(string placeholder)
+        {
+            var list = GetAllAutocompleteOptions(placeholder).ToList();
+            SortingHelper.IsListSorted(list);
+        }
+
+        public List<string> GetAllAutocompleteOptions(string placeholder)
+        {
+            GetNamedTextbox(placeholder).Click();
+
+            if (!Driver.IsElementDisplayed(By.XPath(AutocompleteOptionsSelector), WebDriverExtensions.WaitTime.Short))
+                throw new Exception($"Options are not displayed for '{placeholder}' autocomplete");
+
+            var foundOptions = AutocompleteDropdown.FindElements(By.XPath(AutocompleteOptionsSelector)).Select(x => x.Text).ToList();
+
+            return foundOptions;
+        }
+
+        public void AutocompleteSelect(string placeholder, string option, bool withSearch = false, bool containsOption = false)
+        {
+            GetNamedTextbox(placeholder).Click();
+
+            if (withSearch)
+            {
+                GetNamedTextbox(placeholder).ClearWithBackspaces();
+                GetNamedTextbox(placeholder).SendKeys(option);
+                if (!Driver.IsElementDisplayed(By.XPath(AutocompleteOptionsSelector), WebDriverExtensions.WaitTime.Short))
+                    throw new Exception($"Options are not displayed for '{placeholder}' autocomplete");
+
+                var foundOptions = AutocompleteDropdown.FindElements(By.XPath(AutocompleteOptionsSelector));
+                if (foundOptions.Any())
+                {
+                    if (containsOption)
+                    {
+                        if (foundOptions.Any(x => x.Text.Contains(option)))
+                            foundOptions.First(x => x.Text.Contains(option)).Click();
+                        else
+                            throw new Exception(
+                                $"There are no option that contains '{option}' text in the '{placeholder}' autocomplete");
+                    }
+                    else
+                    {
+                        if (foundOptions.Any(x => x.Text.Equals(option)))
+                            foundOptions.First(x => x.Text.Equals(option)).Click();
+                        else
+                            throw new Exception(
+                                $"There are no option that equals '{option}' text in the '{placeholder}' autocomplete");
+                    }
+
+                }
+                else
+                    throw new Exception($"'{option}' was not found in the '{placeholder}' autocomplete");
             }
         }
 

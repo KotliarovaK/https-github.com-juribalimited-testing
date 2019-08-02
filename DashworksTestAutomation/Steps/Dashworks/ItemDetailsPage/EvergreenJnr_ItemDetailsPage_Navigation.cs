@@ -87,7 +87,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         public void ThenTabIsDisplayedOnLeftMenuOnTheDetailsPageAndContainsCountOfItems(string tabName, int count)
         {
             var detailsPage = _driver.NowAt<NavigationPage>();
-            Verify.AreEqual(detailsPage.GetCountOfItemsDisplayStatusByTabName(tabName), $"({count})", $"Incorrect count for '{tabName}' tab");
+            Verify.AreEqual(detailsPage.GetCountOfItemsByTabName(tabName), count, $"Incorrect count for '{tabName}' tab");
         }
 
         [Then(@"""(.*)"" tab is displayed on left menu on the Details page and NOT contains count of items")]

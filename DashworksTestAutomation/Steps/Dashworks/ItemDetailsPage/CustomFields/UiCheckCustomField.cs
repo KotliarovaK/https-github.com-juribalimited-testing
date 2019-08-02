@@ -31,6 +31,16 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage.CustomFields
             _driver.MouseHover(popup.AddCustomFieldButton);
 
             Verify.AreEqual(_driver.GetTooltipText(), "Some values are missing or invalid", "Incorrect tooltip for Add Custom Field button");
+
+            _driver.MouseHover(popup.BodyContainer);
+        }
+
+        [Then(@"Add button is enabled on Add Custom Field popup")]
+        public void ThenAddButtonIsEnabledOnAddCustomFieldPopup()
+        {
+            var popup = _driver.NowAt<CustomFieldPopup>();
+
+            Verify.IsFalse(popup.AddCustomFieldButton.Disabled(), "Add Custom Field button is not enabled");
         }
 
         [Then(@"Cancel button is enabled on Add Custom Field popup")]
@@ -38,7 +48,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage.CustomFields
         {
             var popup = _driver.NowAt<CustomFieldPopup>();
 
-            Verify.IsTrue(popup.CancelCustomFieldButton.Disabled(), "Cancel Custom Field button is not disabled");
+            Verify.IsTrue(popup.CancelCustomFieldButton.Displayed(), "Cancel Custom Field button is not disabled");
         }
     }
 }

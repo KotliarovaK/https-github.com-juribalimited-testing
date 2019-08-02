@@ -164,7 +164,7 @@ this.FeatureBackground();
                         "device",
                         "6648",
                         "CfDAS15473_1",
-                        "ValueDAS15473_1"});
+                        "ValueDAS15473_#$‡!_1"});
 #line 18
  testRunner.And("User creates Custom Field via API", ((string)(null)), table2, "And ");
 #line 21
@@ -180,7 +180,7 @@ this.FeatureBackground();
 #line 26
  testRunner.When("User navigates to the \"Custom Fields\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 27
- testRunner.When("User doubleclicks on \'ValueDAS15473_1\' cell from \'Value\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User doubleclicks on \'ValueDAS15473_#$‡!_1\' cell from \'Value\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 28
  testRunner.Then("Save and Cancel buttons with tooltips are displayed for clickable value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
