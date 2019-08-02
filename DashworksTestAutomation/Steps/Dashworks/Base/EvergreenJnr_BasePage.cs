@@ -22,7 +22,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             _driver = driver;
         }
 
-        #region Autocomplete
+        #region Named Autocomplete
 
         [Then(@"'(.*)' autocomplete last option is '(.*)'")]
         public void ThenAutocompleteLastOptionIs(string placeholder, string option)
@@ -57,6 +57,18 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             page.AutocompleteSelect(placeholder, option, true);
+        }
+
+        #endregion
+
+        #region Named Textbox
+
+        [When(@"User enters '(.*)' text to '(.*)' textbox")]
+        public void WhenUserEntersTextToTextbox(string text, string placeholder)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.GetNamedTextbox(placeholder).Clear();
+            page.GetNamedTextbox(placeholder).SendKeys(text);
         }
 
         #endregion

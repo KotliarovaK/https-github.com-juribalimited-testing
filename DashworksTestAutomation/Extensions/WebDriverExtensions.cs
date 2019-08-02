@@ -310,7 +310,6 @@ namespace DashworksTestAutomation.Extensions
             string selector = ".//mat-tooltip-component";
             driver.WhatForElementToBeExists(By.XPath(selector));
             var toolTips = driver.FindElements(By.XPath(selector));
-            var t = driver.PageSource;
             if (!toolTips.Any())
                 throw new Exception("Tool tip was not displayed");
             var toolTipText = toolTips.First().FindElement(By.XPath("./div")).Text;

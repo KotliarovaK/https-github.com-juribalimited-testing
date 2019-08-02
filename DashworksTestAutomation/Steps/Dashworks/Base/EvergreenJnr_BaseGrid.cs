@@ -34,6 +34,18 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.Contains(textContent, columnContent, $"'{textContent}' is not present in the '{columnName}' column");
         }
 
+        [Then(@"Content is displayed in the ""(.*)"" column")]
+        public void ThenContentIsDisplayedInTheColumn(string columnName, Table table)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForDataLoading();
+            var column = page.GetListContentByColumnName(columnName).ToList();
+            var columnContent = column.Select(x => x.Text).ToList();
+            var expectedList = table.Rows.Select(x => x["Content"]).ToList();
+            Verify.IsTrue(columnContent.Except(expectedList).Any(), 
+                $"Expected content is not present in the '{columnName}' column");
+        }
+
         [Then(@"""(.*)"" text is displayed in the ""(.*)"" column")]
         public void ThenTextIsDisplayedInTheColumn(string text, string columnName)
         {

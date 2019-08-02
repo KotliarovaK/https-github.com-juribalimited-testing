@@ -425,6 +425,255 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CancelCustomFieldCreation")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Users")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
+        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
+        [NUnit.Framework.CategoryAttribute("CustomFields")]
+        [NUnit.Framework.CategoryAttribute("DAS16487")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
+        public virtual void EvergreenJnr_UsersList_CancelCustomFieldCreation()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UsersList_CancelCustomFieldCreationInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UsersList_CancelCustomFieldCreationInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CancelCustomFieldCreation", null, new string[] {
+                        "Evergreen",
+                        "Users",
+                        "EvergreenJnr_ItemDetails",
+                        "ItemDetailsDisplay",
+                        "CustomFields",
+                        "DAS16487",
+                        "Cleanup",
+                        "Not_Ready"});
+#line 84
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 85
+ testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 86
+ testRunner.And("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 87
+ testRunner.And("User select \"Custom Fields\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                        "FieldName",
+                        "FieldLabel",
+                        "AllowExternalUpdate",
+                        "Enabled",
+                        "User"});
+            table7.AddRow(new string[] {
+                        "CfDAS16487_3",
+                        "FlDAS16487_3",
+                        "true",
+                        "true",
+                        "true"});
+#line 88
+ testRunner.And("User creates new Custom Field", ((string)(null)), table7, "And ");
+#line 91
+ testRunner.And("User navigate to Evergreen URL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 92
+ testRunner.And("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 93
+ testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 94
+ testRunner.When("User perform search by \"VriezeGi\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 95
+ testRunner.And("User click content from \"Username\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 96
+ testRunner.Then("Details page for \"VriezeGi (Ginette Vrieze)\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 97
+ testRunner.When("User navigates to the \"Custom Fields\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 98
+ testRunner.And("User clicks the \"CUSTOM FIELDS\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 99
+ testRunner.When("User selects \'CfDAS16487_3\' option from \'Custom Field\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 100
+ testRunner.When("User enters \'Somve_Value\' text to \'Value\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 101
+ testRunner.When("User clicks Cancel button on Add Custom Field popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 102
+ testRunner.Then("\"Custom Fields\" tab is displayed on left menu on the Details page and contains \'1" +
+                    "\' count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CreateCustomFieldWithSameData")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Users")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
+        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
+        [NUnit.Framework.CategoryAttribute("CustomFields")]
+        [NUnit.Framework.CategoryAttribute("DAS16487")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
+        public virtual void EvergreenJnr_UsersList_CreateCustomFieldWithSameData()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UsersList_CreateCustomFieldWithSameDataInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UsersList_CreateCustomFieldWithSameDataInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CreateCustomFieldWithSameData", null, new string[] {
+                        "Evergreen",
+                        "Users",
+                        "EvergreenJnr_ItemDetails",
+                        "ItemDetailsDisplay",
+                        "CustomFields",
+                        "DAS16487",
+                        "Cleanup",
+                        "Not_Ready"});
+#line 106
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 107
+ testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 108
+ testRunner.And("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 109
+ testRunner.And("User select \"Custom Fields\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+                        "FieldName",
+                        "FieldLabel",
+                        "AllowExternalUpdate",
+                        "Enabled",
+                        "User"});
+            table8.AddRow(new string[] {
+                        "CfDAS17614_4",
+                        "FlDAS17614_4",
+                        "true",
+                        "true",
+                        "true"});
+#line 110
+ testRunner.And("User creates new Custom Field", ((string)(null)), table8, "And ");
+#line 113
+ testRunner.And("User navigate to Evergreen URL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 114
+ testRunner.And("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 115
+ testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 116
+ testRunner.When("User perform search by \"OBM473400 \"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 117
+ testRunner.And("User click content from \"Username\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 118
+ testRunner.Then("Details page for \"OBM473400 (Jeannie L. Moreno)\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 119
+ testRunner.When("User navigates to the \"Custom Fields\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ObjectType",
+                        "ObjectId",
+                        "FieldName",
+                        "Value"});
+            table9.AddRow(new string[] {
+                        "user",
+                        "17884",
+                        "CfDAS17614_2",
+                        "Value_17614"});
+#line 120
+ testRunner.And("User creates Custom Field", ((string)(null)), table9, "And ");
+#line 123
+ testRunner.Then("\"CfDAS17614_2\" content is displayed in the \"Custom Field\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 124
+ testRunner.Then("\"Value_17614\" content is displayed in the \"Value\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 125
+ testRunner.And("\"Custom Fields\" tab is displayed on left menu on the Details page and contains \'1" +
+                    "\' count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ObjectType",
+                        "ObjectId",
+                        "FieldName",
+                        "Value"});
+            table10.AddRow(new string[] {
+                        "user",
+                        "98968",
+                        "CfDAS17614_2",
+                        "Value_17614"});
+#line 127
+ testRunner.When("User creates Custom Field", ((string)(null)), table10, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Content"});
+            table11.AddRow(new string[] {
+                        "CfDAS17614_2"});
+            table11.AddRow(new string[] {
+                        "CfDAS17614_2"});
+#line 130
+ testRunner.Then("Content is displayed in the \"Custom Field\" column", ((string)(null)), table11, "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Content"});
+            table12.AddRow(new string[] {
+                        "Value_17614"});
+            table12.AddRow(new string[] {
+                        "Value_17614"});
+#line 134
+ testRunner.Then("Content is displayed in the \"Value\" column", ((string)(null)), table12, "Then ");
+#line 138
+ testRunner.And("\"Custom Fields\" tab is displayed on left menu on the Details page and contains \'2" +
+                    "\' count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore

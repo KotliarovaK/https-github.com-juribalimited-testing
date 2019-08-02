@@ -78,3 +78,62 @@ Scenario: EvergreenJnr_UsersList_CreateCustomField
 	Then "Value_@#†_DAS16487_2" content is displayed in the "Value" column
 	And "Custom Fields" tab is displayed on left menu on the Details page and contains '1' count of items
 	#ADD VERIFICATION FOR ROW COUNTER!!!
+
+	#Remove Not_Ready for Orbit
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @CustomFields @DAS16487 @Cleanup @Not_Ready
+Scenario: EvergreenJnr_UsersList_CancelCustomFieldCreation
+	When User clicks "Projects" on the left-hand menu
+	And User navigate to Manage link
+	And User select "Custom Fields" option in Management Console
+	And User creates new Custom Field
+	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | User |
+	| CfDAS16487_3 | FlDAS16487_3 | true                | true    | true |
+	And User navigate to Evergreen URL
+	And User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User perform search by "VriezeGi"
+	And User click content from "Username" column
+	Then Details page for "VriezeGi (Ginette Vrieze)" item is displayed to the user
+	When User navigates to the "Custom Fields" sub-menu on the Details page
+	And User clicks the "CUSTOM FIELDS" Action button
+	When User selects 'CfDAS16487_3' option from 'Custom Field' autocomplete
+	When User enters 'Somve_Value' text to 'Value' textbox
+	When User clicks Cancel button on Add Custom Field popup
+	Then "Custom Fields" tab is displayed on left menu on the Details page and contains '1' count of items
+
+	#Remove Not_Ready for Orbit
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @CustomFields @DAS16487 @Cleanup @Not_Ready
+Scenario: EvergreenJnr_UsersList_CreateCustomFieldWithSameData
+	When User clicks "Projects" on the left-hand menu
+	And User navigate to Manage link
+	And User select "Custom Fields" option in Management Console
+	And User creates new Custom Field
+	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | User |
+	| CfDAS17614_4 | FlDAS17614_4 | true                | true    | true |
+	And User navigate to Evergreen URL
+	And User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User perform search by "OBM473400 "
+	And User click content from "Username" column
+	Then Details page for "OBM473400 (Jeannie L. Moreno)" item is displayed to the user
+	When User navigates to the "Custom Fields" sub-menu on the Details page
+	And User creates Custom Field
+	| ObjectType | ObjectId | FieldName    | Value       |
+	| user       | 17884    | CfDAS17614_2 | Value_17614 |
+	Then "CfDAS17614_2" content is displayed in the "Custom Field" column
+	Then "Value_17614" content is displayed in the "Value" column
+	And "Custom Fields" tab is displayed on left menu on the Details page and contains '1' count of items
+	#ADD VERIFICATION FOR ROW COUNTER!!!
+	When User creates Custom Field
+	| ObjectType | ObjectId | FieldName    | Value       |
+	| user       | 98968    | CfDAS17614_2 | Value_17614 |
+	Then Content is displayed in the "Custom Field" column
+	| Content      |
+	| CfDAS17614_2 |
+	| CfDAS17614_2 |
+	Then Content is displayed in the "Value" column
+	| Content     |
+	| Value_17614 |
+	| Value_17614 |
+	And "Custom Fields" tab is displayed on left menu on the Details page and contains '2' count of items
+	#ADD VERIFICATION FOR ROW COUNTER!!!
