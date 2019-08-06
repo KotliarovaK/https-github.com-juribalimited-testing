@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System.Linq;
+using System.Threading;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Utils;
@@ -118,6 +119,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var tableElement = _driver.NowAtWithoutWait<BaseDashboardPage>();
             _driver.WaitForDataLoading();
             tableElement.ClickContentByColumnName(columnName);
+            _driver.WaitForDataLoading();
+        }
+
+        [When(@"User clicks content from first row of Hostname column")]
+        public void UserClickContentFromFirstRowOfHostnameColumn()
+        {
+            var tableElement = _driver.NowAtWithoutWait<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
+            tableElement.EmptyColumnDataRows.First().Click();
             _driver.WaitForDataLoading();
         }
 

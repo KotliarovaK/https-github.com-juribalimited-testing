@@ -761,6 +761,117 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesLists_CheckArchivedItemIncludingInPivot")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("DevicesLists")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Pivot")]
+        [NUnit.Framework.CategoryAttribute("Pivot")]
+        [NUnit.Framework.CategoryAttribute("DAS16815")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        public virtual void EvergreenJnr_DevicesLists_CheckArchivedItemIncludingInPivot()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesLists_CheckArchivedItemIncludingInPivotInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesLists_CheckArchivedItemIncludingInPivotInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesLists_CheckArchivedItemIncludingInPivot", null, new string[] {
+                        "Evergreen",
+                        "DevicesLists",
+                        "EvergreenJnr_Pivot",
+                        "Pivot",
+                        "DAS16815",
+                        "Cleanup"});
+#line 202
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 203
+ testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 204
+ testRunner.And("User sets includes archived devices in \"true\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 205
+ testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedCheckboxes"});
+            table21.AddRow(new string[] {
+                        "TRUE"});
+#line 206
+ testRunner.And("User add \"1803: In Scope\" filter where type is \"Equals\" with added column and fol" +
+                    "lowing checkboxes:", ((string)(null)), table21, "And ");
+#line 209
+ testRunner.And("User navigates to Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
+                        "RowGroups"});
+            table22.AddRow(new string[] {
+                        "Operating System"});
+#line 210
+ testRunner.And("User selects the following Row Groups on Pivot:", ((string)(null)), table22, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table23.AddRow(new string[] {
+                        "Device Type"});
+#line 213
+ testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table23, "And ");
+#line 216
+ testRunner.And("User clicks the \"RUN PIVOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 217
+ testRunner.Then("Pivot run was completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 218
+ testRunner.When("User creates Pivot list with \"DAS16815_Pivot\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 219
+ testRunner.Then("\"DAS16815_Pivot\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 220
+ testRunner.When("User sets includes archived devices in \"false\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 221
+ testRunner.And("User clicks the \"RUN PIVOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 222
+ testRunner.Then("Pivot run was completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 223
+ testRunner.When("User updates existing pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 224
+ testRunner.Then("\"DAS16815_Pivot\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 225
+ testRunner.When("User sets includes archived devices in \"true\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 226
+ testRunner.And("User clicks the \"RUN PIVOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 227
+ testRunner.Then("Pivot run was completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 228
+ testRunner.When("User creates Pivot list with \"DAS16815_Pivot_Updated\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 229
+ testRunner.Then("\"DAS16815_Pivot_Updated\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore

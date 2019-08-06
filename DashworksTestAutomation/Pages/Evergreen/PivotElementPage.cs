@@ -20,6 +20,15 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = "//i[contains(@class, 'icon-export')]/ancestor::button")]
         public IWebElement ExportButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//i[contains(@class, 'material-icons restore')]/ancestor::button")]
+        public IWebElement ArchivedDevicesButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//*[contains(text(), 'Archived devices not included')]")]
+        public IWebElement ArchivedDevicesNotIncludedTooltip { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//*[contains(text(), 'Archived devices included')]")]
+        public IWebElement ArchivedDevicesIncludedTooltip { get; set; }
+        
         [FindsBy(How = How.XPath, Using = ".//button[contains(@id, 'pivot')]")]
         public IWebElement PivotButton { get; set; }
 
@@ -37,6 +46,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = ".//button[contains(@role, 'menuitem')][text()='SAVE AS NEW PIVOT']")]
         public IWebElement SaveNewListButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//button[contains(@role, 'menuitem')][text()='UPDATE PIVOT']")]
+        public IWebElement UpdateListButton { get; set; }
 
         [FindsBy(How = How.XPath,
             Using =
