@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing.Text;
 using System.Linq;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Utils;
@@ -15,9 +14,7 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.Automations
         public string automationName { get; set; }
         public string automationSqlAgentJobId { get; set; }
         public string description { get; set; }
-        private string AutomationlistId { get; set; }
         private string AutomationListName { get; set; }
-        private string _objectTypeId;
         public bool stopOnFailedAction { get; set; }
 
         [JsonProperty("automationScheduleTypeId")]
@@ -33,19 +30,22 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.Automations
             }
         }
 
-        [JsonProperty("listId")]
         public string Scope
         {
-            get => AutomationlistId;
+            get => AutomationListName;
             set
             {
                 AutomationListName = value;
-                AutomationlistId = GetAutomationListId(value);
+                ListId = int.Parse(GetAutomationListId(value));
             }
         }
 
+        [JsonProperty("listId")]
+        public int ListId { get; set; }
+
+        private string _objectTypeId;
         [JsonProperty("objectTypeId")]
-        public int Object
+        public int ObjectTypeId
         {
             get
             {
@@ -117,7 +117,7 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.Automations
 
         private string GetAutomationListId(string listName)
         {
-            if (new string[] { "All Devices", "All Users", "All Mailboxes" }.Contains(listName))
+            if (new string[] { "All Devices", "All Users", "All Mailboxes", "All Applications" }.Contains(listName))
             {
                 return "-1";
             }
