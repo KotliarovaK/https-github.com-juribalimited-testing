@@ -283,7 +283,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogMessageForDeletedTaskInAction
 	When User selects "Update" Update Value on Action panel
 	When User selects "Not Applicable" Value on Action panel
 	And User selects "Update" Update Date on Action panel
-	And User selects "Aug 4, 2019" Date on Action panel
+	And User selects "7 Aug 2019" Date on Action panel
 	And User clicks the "CREATE" Action button
 	#Delete Task
 	When User clicks "Projects" on the left-hand menu
