@@ -131,6 +131,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
+        [When(@"User clicks content from first row of Device Key column")]
+        public void UserClickContentFromFirstRowOfDeviceKeyColumn()
+        {
+            var tableElement = _driver.NowAtWithoutWait<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
+            tableElement.DeviceKeyColumnDataRows.First().Click();
+            _driver.WaitForDataLoading();
+        }
+
         [Then(@"reset button in Table Search field is displayed")]
         public void ThenResetButtonInTableSearchFieldIsDisplayed()
         {

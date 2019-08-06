@@ -372,7 +372,10 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = ".//div[@col-id='hostname' and @role='gridcell']//*[contains(text(),'Empty')]")]
         public IList<IWebElement> EmptyColumnDataRows { get; set; }
-        
+
+        [FindsBy(How = How.XPath, Using = ".//div[@col-id='computerKey' and @role='gridcell']//span")]
+        public IList<IWebElement> DeviceKeyColumnDataRows { get; set; }
+
         #endregion TableColumns
 
         private static string NamedTextboxSelector = ".//input[@placeholder='{0}']";

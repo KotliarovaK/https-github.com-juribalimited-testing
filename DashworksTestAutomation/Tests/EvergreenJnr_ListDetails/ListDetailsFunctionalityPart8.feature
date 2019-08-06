@@ -98,6 +98,11 @@ Scenario: EvergreenJnr_DevicesList_CheckThatListNameUpdatesImmediatelyWhileTypin
 @Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS17632
 Scenario: EvergreenJnr_DevicesLists_CheckThatArchivedEmptyNameCantBeClicked
 	When User clicks "Devices" on the left-hand menu
+	When User add following columns using URL to the "Devices" page:
+	| ColumnName |
+	| Device Key |
 	And User sets includes archived devices in "true"
 	And User clicks content from first row of Hostname column
+	Then "Devices" list should be displayed to the user
+	When User clicks content from first row of Device Key column
 	Then "Devices" list should be displayed to the user
