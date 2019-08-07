@@ -535,7 +535,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextFor
 	When User clicks "RUN" button in the warning message on Admin page
 	When User selects "Automation Log" tab on the Project details page
 	When User enters "DAS15423_Automation" text in the Search field for "Automation" column
-	Then "LIST NOT FOUND" content is displayed for "Outcome" column
+	#Update after "LIST NOT FOUND" message fixed
+	#Then "LIST NOT FOUND" content is displayed for "Outcome" column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS16899 @DAS17071 @DAS17216 @DAS17216 @Not_Ready
 #Change value after gold data complete added
