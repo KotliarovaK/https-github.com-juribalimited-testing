@@ -124,3 +124,10 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDashworkWorksAfterChangingPivotSetti
 	#Just to check that application is still responding
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
+
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS17421
+Scenario: EvergreenJnr_DevicesList_CheckThatGridHeaderIsDisplayedCorrectlyAfterClosingListsPanel
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User closed list panel
+	Then Dashboards sub menu is hidden on Dashboards page

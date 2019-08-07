@@ -225,6 +225,23 @@ namespace DashworksTestAutomation.Steps.Dashworks
             //Utils.Verify.IsTrue(listElement.SuccessCreateMessage.Displayed(), "Success message is not displayed");
         }
 
+        [When(@"User updates existing pivot")]
+        public void WhenUserUpdatesExistingPivot()
+        {
+            var page = _driver.NowAt<PivotElementPage>();
+
+            _driver.WaitForElementToBeDisplayed(page.SaveButton);
+            page.SaveButton.Click();
+
+            _driver.WaitForElementToBeDisplayed(page.UpdateListButton);
+            Utils.Verify.IsTrue(page.UpdateListButton.Displayed(), "'update' button is not displayed");
+            _driver.MouseHover(page.UpdateListButton);
+            page.UpdateListButton.Click();
+
+            _driver.WaitForElementToBeDisplayed(page.SaveButton);
+            Utils.Verify.IsTrue(page.SaveButton.Displayed(), "'Save' button is not displayed");
+        }
+
         [Then(@"Pivot run was completed")]
         public void ThenPivotRunWasCompleted()
         {
@@ -582,6 +599,32 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var pivot = _driver.NowAt<PivotElementPage>();
             Utils.Verify.IsTrue(pivot.ExportButton.Displayed(), "Export button is not displayed");
+        }
+
+        [When(@"User sets includes archived devices in ""(.*)""")]
+        public void UserIncludesArchivedDevices(string state)
+        {
+            var pivot = _driver.NowAt<PivotElementPage>();
+            _driver.WaitForDataLoading();
+
+            if (Convert.ToBoolean(state))
+            {
+                if (_driver.IsElementExists(pivot.ArchivedDevicesNotIncludedTooltip))
+                {
+                    pivot.ArchivedDevicesButton.Click();
+                    _driver.WaitFor(()=> _driver.IsElementExists(pivot.ArchivedDevicesIncludedTooltip));
+                }
+            }
+
+            else
+            {
+                if (_driver.IsElementExists(pivot.ArchivedDevicesIncludedTooltip))
+                {
+                    pivot.ArchivedDevicesButton.Click();
+                    _driver.WaitFor(() => _driver.IsElementExists(pivot.ArchivedDevicesNotIncludedTooltip));
+                }
+            }
+             
         }
     }
 }

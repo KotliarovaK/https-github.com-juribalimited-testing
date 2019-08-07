@@ -547,6 +547,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
+        [Then(@"Custom fields agGrid columns are displayed fully")]
+        public void CustomFieldsAgGridColumnsAreDisplayedFully()
+        {
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+
+            int firstHeader = page.CustomFieldsCustomFieldHeader.Size.Width;
+            int secondHeader = page.CustomFieldsValueHeader.Size.Width;
+            int toolbar  = page.CustomFieldsAgGridToolbar.Size.Width;
+
+            // sum of column headers are little bit less than page toolbar
+            Utils.Verify.That((toolbar - firstHeader - secondHeader)<50, 
+                Is.True, "Grid headers are too small");
+            
+        }
+
         [Then(@"Fields with empty information are displayed")]
         public void ThenFieldsWithEmptyInformationAreDisplayed()
         {

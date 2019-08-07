@@ -287,7 +287,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatNoConsoleErrorsWhenViewingMailboxD
 	Then Item content is displayed to the User
 	And There are no errors in the browser console
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11483 @DAS17352 @DAS17281
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11483 @DAS17352 @DAS17281 @DAS17352
 Scenario: EvergreenJnr_DevicesList_CheckThatDataOfColumnsIsDisplayedInTheCustomFieldSection
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -300,6 +300,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDataOfColumnsIsDisplayedInTheCustomF
 	| ColumnName   |
 	| Custom Field |
 	| Value        |
+	And Custom fields agGrid columns are displayed fully 
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11479 @DAS12321
 Scenario: EvergreenJnr_MailboxesList_CheckThatLinksAndImageItemAreDisplayedInTheNameAndDisplayNameColumns

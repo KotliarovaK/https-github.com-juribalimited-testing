@@ -197,3 +197,33 @@ Scenario: EvergreenJnr_DevicesLists_CheckAddTeamsPermissionsOnDetailsPanel
 	When User clicks the "CANCEL" Action button
 	When User navigates to the "DAS14263_Pivot" list
 	Then User remove list with "DAS14263_Pivot" name on "Devices" page
+
+@Evergreen @DevicesLists @EvergreenJnr_Pivot @Pivot @DAS16815 @Cleanup
+Scenario: EvergreenJnr_DevicesLists_CheckArchivedItemIncludingInPivot
+	When User clicks "Devices" on the left-hand menu
+	And User sets includes archived devices in "true"
+	And User clicks the Filters button
+	And User add "1803: In Scope" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| TRUE               |
+	And User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups  |
+	| Operating System |
+	And User selects the following Values on Pivot:
+	| Values      |
+	| Device Type |
+	And User clicks the "RUN PIVOT" Action button
+	Then Pivot run was completed
+	When User creates Pivot list with "DAS16815_Pivot" name
+	Then "DAS16815_Pivot" list is displayed to user
+	When User sets includes archived devices in "false"
+	And User clicks the "RUN PIVOT" Action button
+	Then Pivot run was completed
+	When User updates existing pivot
+	Then "DAS16815_Pivot" list is displayed to user
+	When User sets includes archived devices in "true"
+	And User clicks the "RUN PIVOT" Action button
+	Then Pivot run was completed
+	When User creates Pivot list with "DAS16815_Pivot_Updated" name
+	Then "DAS16815_Pivot_Updated" list is displayed to user

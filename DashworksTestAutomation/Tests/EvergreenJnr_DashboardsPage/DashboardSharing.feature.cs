@@ -215,7 +215,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS16380")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckWarningMessageUsingPrivateListForPublicDashboard()
         {
             System.Exception lastException = null;
@@ -250,7 +249,6 @@ this.FeatureBackground();
                         "EvergreenJnr_DashboardsPage",
                         "Widgets",
                         "DAS16380",
-                        "Cleanup",
                         "Cleanup"});
 #line 46
 this.ScenarioInitialize(scenarioInfo);
@@ -380,7 +378,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS14841")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatWarningPopUpDisplayedWhenChangingDashboardPermisson()
         {
             System.Exception lastException = null;
@@ -415,7 +412,6 @@ this.FeatureBackground();
                         "EvergreenJnr_DashboardsPage",
                         "Widgets",
                         "DAS14841",
-                        "Cleanup",
                         "Cleanup"});
 #line 100
 this.ScenarioInitialize(scenarioInfo);
@@ -531,7 +527,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS14841")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatIgnoreAndShareWorksProperlyInWarningPermissionPoup()
         {
             System.Exception lastException = null;
@@ -566,7 +561,6 @@ this.FeatureBackground();
                         "EvergreenJnr_DashboardsPage",
                         "Widgets",
                         "DAS14841",
-                        "Cleanup",
                         "Cleanup"});
 #line 147
 this.ScenarioInitialize(scenarioInfo);
@@ -651,7 +645,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS14841")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksProperlyInWarningPermissionPopup()
         {
             System.Exception lastException = null;
@@ -686,7 +679,6 @@ this.FeatureBackground();
                         "EvergreenJnr_DashboardsPage",
                         "Widgets",
                         "DAS14841",
-                        "Cleanup",
                         "Cleanup"});
 #line 180
 this.ScenarioInitialize(scenarioInfo);
@@ -770,7 +762,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS14841")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksOnlyForParticularRow()
         {
             System.Exception lastException = null;
@@ -804,7 +795,6 @@ this.FeatureBackground();
                         "EvergreenJnr_DashboardsPage",
                         "Widgets",
                         "DAS14841",
-                        "Cleanup",
                         "Cleanup"});
 #line 213
 this.ScenarioInitialize(scenarioInfo);
@@ -941,7 +931,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS14841")]
         [NUnit.Framework.CategoryAttribute("DAS14393")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatListPermissionCantBeChangedForReadOnlySharedList()
         {
             System.Exception lastException = null;
@@ -977,7 +966,6 @@ this.FeatureBackground();
                         "Widgets",
                         "DAS14841",
                         "DAS14393",
-                        "Cleanup",
                         "Cleanup"});
 #line 264
 this.ScenarioInitialize(scenarioInfo);
@@ -1112,7 +1100,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS14841")]
         [NUnit.Framework.CategoryAttribute("DAS14282")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForEditSharedList()
         {
             System.Exception lastException = null;
@@ -1147,7 +1134,6 @@ this.FeatureBackground();
                         "Widgets",
                         "DAS14841",
                         "DAS14282",
-                        "Cleanup",
                         "Cleanup"});
 #line 313
 this.ScenarioInitialize(scenarioInfo);
@@ -1285,7 +1271,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS14841")]
         [NUnit.Framework.CategoryAttribute("DAS11120")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdminSharedList()
         {
             System.Exception lastException = null;
@@ -1321,7 +1306,6 @@ this.FeatureBackground();
                         "Widgets",
                         "DAS14841",
                         "DAS11120",
-                        "Cleanup",
                         "Cleanup"});
 #line 363
 this.ScenarioInitialize(scenarioInfo);
