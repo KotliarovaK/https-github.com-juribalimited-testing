@@ -2167,6 +2167,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             button.ExportButton.Click();
         }
 
+        //TODO should be changed to generic method. Remove Admin page
         [When(@"User clicks Group By button on the Admin page and selects ""(.*)"" value")]
         public void WhenUserClicksGroupByButtonOnTheAdminPageAndSelectsValue(string value)
         {

@@ -23,15 +23,15 @@ Scenario: EvergreenJnr_DevicesList_CheckAddCustomFieldPopupUiAndTooltips
 	And User click content from "Hostname" column
 	Then Details page for "QFI94WAUX17N4I" item is displayed to the user
 	When User navigates to the "Custom Fields" sub-menu on the Details page
-	And User clicks the "CUSTOM FIELDS" Action button
+	And User clicks the "ADD CUSTOM FIELD" Action button
 	Then Add button is displayed on Add Custom Field popup
 	And Cancel button is enabled on Add Custom Field popup
-	And 'Custom Field' autocomplete last option is 'CfDAS16487_1a'
+	And 'Custom Field' autocomplete last option is 'FlDAS16487_1a'
 	And 'Custom Field' autocomplete does NOT have option
 	| Option        |
-	| CfDAS16487_1b |
-	| CfDAS16487_1c |
-	When User selects 'CfDAS16487_1a' option after search from 'Custom Field' autocomplete
+	| FlDAS16487_1b |
+	| FlDAS16487_1c |
+	When User selects 'FlDAS16487_1a' option after search from 'Custom Field' autocomplete
 	Then Add button is enabled on Add Custom Field popup
 
 	#Remove Not_Ready for Orbit
@@ -52,8 +52,9 @@ Scenario: EvergreenJnr_MailboxesList_CreateCustomFieldWithEmptyValue
 	When User navigates to the "Custom Fields" sub-menu on the Details page
 	And User creates Custom Field
 	| ObjectType | ObjectId | FieldName    |
-	| mailbox    | 43801    | CfDAS16487_1 |
-	Then "" content is displayed in the "Value" column
+	| mailbox    | 43801    | FlDAS16487_1 |
+	Then Success message with "New custom field value added successfully" text is displayed on Action panel
+	And "" content is displayed in the "Value" column
 	And "Custom Fields" tab is displayed on left menu on the Details page and contains '1' count of items
 
 	#Remove Not_Ready for Orbit
@@ -75,7 +76,8 @@ Scenario: EvergreenJnr_UsersList_CreateCustomField
 	And User creates Custom Field
 	| ObjectType | ObjectId | FieldName    | Value                |
 	| user       | 98968    | FlDAS16487_2 | Value_@#†_DAS16487_2 |
-	Then "Value_@#†_DAS16487_2" content is displayed in the "Value" column
+	Then Success message with "New custom field value added successfully" text is displayed on Action panel
+	And "Value_@#†_DAS16487_2" content is displayed in the "Value" column
 	And "Custom Fields" tab is displayed on left menu on the Details page and contains '1' count of items
 	#ADD VERIFICATION FOR ROW COUNTER!!!
 
@@ -96,7 +98,7 @@ Scenario: EvergreenJnr_UsersList_CancelCustomFieldCreation
 	Then Details page for "VriezeGi (Ginette Vrieze)" item is displayed to the user
 	When User navigates to the "Custom Fields" sub-menu on the Details page
 	And User clicks the "CUSTOM FIELDS" Action button
-	When User selects 'CfDAS16487_3' option from 'Custom Field' autocomplete
+	When User selects 'FlDAS16487_3' option from 'Custom Field' autocomplete
 	And User enters 'Somve_Value' text to 'Value' textbox
 	And User clicks Cancel button on Add Custom Field popup
 	Then "Custom Fields" tab is displayed on left menu on the Details page and contains '1' count of items
@@ -120,18 +122,19 @@ Scenario: EvergreenJnr_UsersList_CreateCustomFieldWithSameData
 	Then 'No custom fields found for this user' message is displayed on empty greed
 	When User creates Custom Field
 	| ObjectType | ObjectId | FieldName    | Value       |
-	| user       | 17884    | CfDAS17614_4 | Value_17614 |
-	Then "CfDAS17614_4" content is displayed in the "Custom Field" column
+	| user       | 17884    | FlDAS17614_4 | Value_17614 |
+	Then "FlDAS17614_4" content is displayed in the "Custom Field" column
 	And "Value_17614" content is displayed in the "Value" column
 	And "Custom Fields" tab is displayed on left menu on the Details page and contains '1' count of items
 	#ADD VERIFICATION FOR ROW COUNTER!!!
 	When User creates Custom Field
 	| ObjectType | ObjectId | FieldName    | Value       |
-	| user       | 98968    | CfDAS17614_4 | Value_17614 |
-	Then Content is displayed in the "Custom Field" column
+	| user       | 98968    | FlDAS17614_4 | Value_17614 |
+	Then Success message with "New custom field value added successfully" text is displayed on Action panel
+	And Content is displayed in the "Custom Field" column
 	| Content      |
-	| CfDAS17614_4 |
-	| CfDAS17614_4 |
+	| FlDAS17614_4 |
+	| FlDAS17614_4 |
 	And Content is displayed in the "Value" column
 	| Content     |
 	| Value_17614 |

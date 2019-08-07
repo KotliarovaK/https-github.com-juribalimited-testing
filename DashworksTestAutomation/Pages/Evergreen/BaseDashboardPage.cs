@@ -288,6 +288,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='inline-error ng-star-inserted']")]
         public IWebElement ErrorMessage { get; set; }
 
+        //TODO should be removed. The same webElement on BaseGridPage
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'inline-tip')]")]
         public IWebElement WarningMessage { get; set; }
 

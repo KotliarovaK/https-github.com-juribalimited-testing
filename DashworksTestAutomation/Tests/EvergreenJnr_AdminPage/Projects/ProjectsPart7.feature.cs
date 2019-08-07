@@ -385,7 +385,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS13973")]
         [NUnit.Framework.CategoryAttribute("Project_Creation_and_Scope")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         public virtual void EvergreenJnr_AdminPage_CheckMailboxProjectCreationWithCloneEvergreenBuckets()
         {
@@ -424,7 +423,6 @@ this.FeatureBackground();
                         "DAS12799",
                         "DAS13973",
                         "Project_Creation_and_Scope",
-                        "Cleanup",
                         "Cleanup",
                         "Projects"});
 #line 98

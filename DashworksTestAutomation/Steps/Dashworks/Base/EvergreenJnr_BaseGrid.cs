@@ -42,7 +42,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var column = page.GetListContentByColumnName(columnName).ToList();
             var columnContent = column.Select(x => x.Text).ToList();
             var expectedList = table.Rows.Select(x => x["Content"]).ToList();
-            Verify.IsTrue(columnContent.Except(expectedList).Any(), 
+            Verify.IsTrue(columnContent.SequenceEqual(expectedList), 
                 $"Expected content is not present in the '{columnName}' column");
         }
 
