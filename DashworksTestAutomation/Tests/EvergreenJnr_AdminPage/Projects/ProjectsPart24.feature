@@ -107,3 +107,25 @@ Scenario: EvergreenJnr_AdminPage_CheckHidePanelIconOverlappingInScopeChanges
 	Then Button toggle zindex is greater than tab zindex
 	When User navigates to "Migration Project Phase 2 (User Project)" project details
 	Then Button toggle zindex is greater than notification zindex
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS17699
+Scenario Outline: EvergreenJnr_AdminPage_CheckSavingOfChangesOnScopeDetailsPage
+	When User navigates to "<ProjectName>" project details
+	And User selects "Scope" tab on the Project details page
+	And User selects "Scope Details" tab on the Project details page
+	And User navigates to the "<tab1>" tab in the Scope section on the Project details page
+	And User selects "<List1>" in the Scope Project details
+	And User navigates to the "<tab2>" tab in the Scope section on the Project details page
+	And User selects "<List2>" in the Scope Project details
+	And User selects "Scope Changes" tab on the Project details page
+	And User selects "Scope Details" tab on the Project details page
+	When User navigates to the "<tab1>" tab in the Scope section on the Project details page
+	Then Scope List dropdown displayed with "<List1>" value
+	When User navigates to the "<tab2>" tab in the Scope section on the Project details page
+	Then Scope List dropdown displayed with "<List2>" value
+
+Examples:
+	| ProjectName                        | tab1         | List1                | tab2              | List2     |
+	| 1803 Rollout                       | User Scope   | Users List (Complex) | Application Scope | 1803 Apps |
+	| Mailbox Evergreen Capacity Project | User Scope   | Users List (Complex) | Application Scope | 1803 Apps |
+	| User Evergreen Capacity Project    | Device Scope | 1803 Rollout         | Application Scope | 1803 Apps |
