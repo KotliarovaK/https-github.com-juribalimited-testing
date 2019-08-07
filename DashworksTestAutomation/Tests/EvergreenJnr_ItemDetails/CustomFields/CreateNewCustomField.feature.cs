@@ -412,7 +412,7 @@ this.FeatureBackground();
             table6.AddRow(new string[] {
                         "user",
                         "98968",
-                        "CfDAS16487_2",
+                        "FlDAS16487_2",
                         "Value_@#†_DAS16487_2"});
 #line 75
  testRunner.And("User creates Custom Field", ((string)(null)), table6, "And ");
