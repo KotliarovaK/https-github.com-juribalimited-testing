@@ -754,16 +754,66 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElement(selector);
         }
 
-        public IList<IWebElement> GetListContentByColumnName(string columnName)
+        public bool IsGridGrouped()
         {
-            var selector = By.XPath($"//div[@class='ag-center-cols-clipper']//div[contains(@class, 'ag-row')]/div[{GetColumnNumberByName(columnName)}]//span");
+            return Driver.IsElementDisplayed(By.XPath(".//div[@role='row'][@row-index]//span[@class='ag-group-value']"),
+                WebDriverExtensions.WaitTime.Short);
+        }
+
+        public IWebElement GetGroupedRowByContent(string groupedValue)
+        {
+            var selector = By.XPath($".//div[@role='row'][@row-index]//span[@class='ag-group-value'][text()='{groupedValue}']/..");
+            if (Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Long))
+                return Driver.FindElement(selector);
+            else
+                throw new Exception($"There are not row grouped by '{groupedValue}' value");
+        }
+
+        public string GetGroupedCountByContent(string groupedValue)
+        {
+            var number = GetGroupedRowByContent(groupedValue).FindElement(By.XPath(".//span[@ref='eChildCount']")).Text;
+            number = number.TrimStart('(').TrimEnd(')');
+            return number;
+        }
+
+        public void ExpandGroupedRowByContent(string groupedValue)
+        {
+            try
+            {
+                var row = GetGroupedRowByContent(groupedValue);
+                var expand = row.FindElement(By.XPath("./span[contains(@class,'expanded')]"));
+                expand.Click();
+            }
+            catch (NoSuchElementException e)
+            {
+                throw new Exception($"Unable to expand '{groupedValue}' row: {e}");
+            }
+        }
+
+        public void CollapseGroupedRowByContent(string groupedValue)
+        {
+            try
+            {
+                var row = GetGroupedRowByContent(groupedValue);
+                var expand = row.FindElement(By.XPath("./span[contains(@class,'contracted')]"));
+                expand.Click();
+            }
+            catch (NoSuchElementException e)
+            {
+                throw new Exception($"Unable to collapse '{groupedValue}' row: {e}");
+            }
+        }
+
+        public IList<IWebElement> GetColumnContentByColumnName(string columnName)
+        {
+            var selector = By.XPath($".//div[@class='ag-center-cols-clipper']//div[contains(@class, 'ag-row')]/div[{GetColumnNumberByName(columnName)}]//span");
             Driver.WaitForDataLoading();
             return Driver.FindElements(selector).ToList();
         }
 
         public IWebElement GetCellFromColumn(string columnName, string cellText)
         {
-            var allData = GetListContentByColumnName(columnName);
+            var allData = GetColumnContentByColumnName(columnName);
             if (allData.Any(x => x.Text.Contains(cellText)))
                 return allData.First(x => x.Text.Contains(cellText));
             else
