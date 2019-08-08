@@ -2011,6 +2011,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var dropdown = _driver.NowAt<BaseGridPage>();
             Utils.Verify.IsFalse(dropdown.GetMissingDropdownByName(dropdownName), $"{dropdownName} is displayed");
         }
+
         [Then(@"""(.*)"" dropdown is not displayed on the Admin Settings screen")]
         public void ThenDropdownIsNotDisplayedOnTheAdminSettingsScreen(string dropdownName)
         {
