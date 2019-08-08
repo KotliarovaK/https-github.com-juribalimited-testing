@@ -1687,16 +1687,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenWarningMessageWithTextIsDisplayedOnTheProjectDetailsPage(string text)
         {
             var message = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.Contains(text, message.WarningMessage.Text, $"{text} is not displayed in Warning message");
+            //Warning message should have rgb(230, 167, 21) color
+            var bgColor = message.WarningMessage.GetCssValue("background-color");
+            Verify.AreEqual("rgb(230, 167, 21)", bgColor, $"Waring message is not Orange: {bgColor}");
+            Verify.Contains(text, message.WarningMessage.Text, $"'{text}' is not displayed in Warning message");
         }
 
         [Then(@"No warning message displayed on the Project Details Page")]
         public void ThenNoWarningMessageIsDisplayedOnTheProjectDetailsPage()
         {
             var message = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.That(_driver.IsElementDisplayed(message.WarningMessage), Is.False, $"Warning message is displayed");
+            Verify.That(_driver.IsElementDisplayed(message.WarningMessage), Is.False, $"Warning message is displayed");
         }
-
 
         [Then(@"User selects ""(.*)"" option for selected language")]
         public void ThenUserSelectsOptionForSelectedLanguage(string optionName)

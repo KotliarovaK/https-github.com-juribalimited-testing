@@ -27,6 +27,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             cogMenu.CogMenu.Click();
         }
 
+        //TODO make it generic
         [When(@"User clicks Cog-menu for ""(.*)"" item on Admin page")]
         public void WhenUserClicksCog_MenuForItemOnAdminPage(string itemName)
         {
@@ -53,6 +54,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
                     "Items are not the same");
         }
 
+        //TODO make it generic
         [When(@"User clicks ""(.*)"" option in Cog-menu for ""(.*)"" item on Admin page")]
         public void WhenUserClicksOptionInCog_MenuForItemOnAdminPage(string option, string itemName)
         {

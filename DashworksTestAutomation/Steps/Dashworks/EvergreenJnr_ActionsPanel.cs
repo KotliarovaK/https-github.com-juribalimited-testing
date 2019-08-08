@@ -672,6 +672,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.AreEqual(textMessage, action.WarningMessageText.Text, $"{textMessage} in Warning message is not displayed");
         }
 
+        //TODO this method should be replaced by more generic
         [Then(@"the amber message is displayed correctly")]
         public void ThenTheAmberMessageIsDisplayedCorrectly()
         {
@@ -681,6 +682,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.IsTrue(action.CancelButtonOnAmberMessage.Displayed(), "Cancel Button is not displayed");
         }
 
+        //TODO this method should be replaced by more generic
         [Then(@"the amber message is not displayed")]
         public void ThenTheAmberMessageIsNotDisplayed()
         {

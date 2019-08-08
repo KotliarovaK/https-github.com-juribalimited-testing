@@ -17,7 +17,7 @@ Scenario: EvergreenJnr_DevicesList_CheckEditableFieldDisplayAndToolTips
 	And User navigate to Evergreen URL
 	And User creates Custom Field via API
 	| ObjectType | ObjectId | FieldName    | Value                |
-	| device     | 6648     | CfDAS15473_1 | ValueDAS15473_#$‡!_1 |
+	| device     | 6648     | FlDAS15473_1 | ValueDAS15473_#$‡!_1 |
 	And User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User perform search by "00YWR8TJU4ZF8V"
@@ -39,7 +39,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckDataIsUpdatedInClickableValue
 	And User navigate to Evergreen URL
 	And User creates Custom Field via API
 	| ObjectType  | ObjectId | FieldName    | Value           |
-	| application | 507      | CfDAS15473_2 | ValueDAS15473_2 |
+	| application | 507      | FlDAS15473_2 | ValueDAS15473_2 |
 	And User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User perform search by "ACDSee 8"
@@ -57,6 +57,36 @@ Scenario: EvergreenJnr_ApplicationsList_CheckDataIsUpdatedInClickableValue
 	And "UPDATED_V" content is displayed in the "Value" column
 
 	#Remove Not_Ready for Orbit
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @CustomFields @DAS17584 @Cleanup @Not_Ready
+Scenario: EvergreenJnr_ApplicationsList_CheckDataIsUpdatedUsingCogMenu
+	When User clicks "Projects" on the left-hand menu
+	And User navigate to Manage link
+	And User select "Custom Fields" option in Management Console
+	And User creates new Custom Field
+	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | Application |
+	| CfDAS17584_1 | FlDAS17584_1 | true                | true    | true        |
+	And User navigate to Evergreen URL
+	And User creates Custom Field via API
+	| ObjectType  | ObjectId | FieldName    | Value        |
+	| application | 750      | FlDAS17584_1 | Value17584_1 |
+	And User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User perform search by "PCFriendly"
+	And User click content from "Application" column
+	Then Details page for "PCFriendly" item is displayed to the user
+	When User navigates to the "Custom Fields" sub-menu on the Details page
+	#Save changes
+	When User clicks "Edit" option in Cog-menu for "FlDAS17584_1" item on Admin page
+	And User save 'UPDATED_UPD' text in clickable value
+	Then Save and Cancel buttons are NOT displayed for clickable value
+	And "UPDATED_UPD" content is displayed in the "Value" column
+	#Cancel changes
+	When User clicks "Edit" option in Cog-menu for "FlDAS17584_1" item on Admin page
+	And User clicks Cancel button for clickable value
+	Then Save and Cancel buttons are NOT displayed for clickable value
+	And "UPDATED_UPD" content is displayed in the "Value" column
+
+	#Remove Not_Ready for Orbit
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @CustomFields @DAS15473 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_MailboxesList_CheckClickableValueSavedOnFocusLost
 	When User clicks "Projects" on the left-hand menu
@@ -68,7 +98,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckClickableValueSavedOnFocusLost
 	And User navigate to Evergreen URL
 	And User creates Custom Field via API
 	| ObjectType | ObjectId | FieldName    | Value           |
-	| mailbox    | 46384    | CfDAS15473_3 | ValueDAS15473_3 |
+	| mailbox    | 46384    | FlDAS15473_3 | ValueDAS15473_3 |
 	And User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
 	When User perform search by "0072B088173449E3A93@bclabs.local"

@@ -95,11 +95,12 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         public void WhenUserClicksCancelButtonInTheWarningMessageOnTheAdminPage()
         {
             var page = _driver.NowAt<BaseGridPage>();
-            _driver.WaitForElementToBeDisplayed(page.CancelButtonInWarning);
-            page.CancelButtonInWarning.Click();
-            Utils.Verify.IsFalse(page.WarningMessage.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
+            _driver.WaitForElementToBeDisplayed(page.CancelButtonInWarningMessage);
+            page.CancelButtonInWarningMessage.Click();
+            Verify.IsFalse(page.WarningMessage.Displayed(), "Warning message was not disappears after Cancel button click.");
         }
 
+        //TODO move to the Generic class
         [When(@"User clicks Delete button in the warning message")]
         public void WhenUserClicksDeleteButtonInTheWarningMessage()
         {

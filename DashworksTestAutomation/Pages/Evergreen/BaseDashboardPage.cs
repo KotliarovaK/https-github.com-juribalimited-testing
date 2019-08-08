@@ -292,6 +292,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'inline-tip')]")]
         public IWebElement WarningMessage { get; set; }
 
+        //TODO more to the BaseGrid
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'inline-tip')]//div[@class='inline-box-text']")]
         public IWebElement WarningMessageText { get; set; }
 
