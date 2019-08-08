@@ -76,7 +76,8 @@ namespace DashworksTestAutomation.Steps.Projects
 
             _driver.MouseHover(page.LogoutLink);
             page.LogoutLink.Click();
-            _driver.WaitForDataLoading();
+            //TODO: Yurii T. 8 Aug 2019: commented below method closes alert and AcceptAlert() fails; remove this todo and commented wait if everything is ok
+            //_driver.WaitForDataLoading();
             _driver.AcceptAlert();
         }
 

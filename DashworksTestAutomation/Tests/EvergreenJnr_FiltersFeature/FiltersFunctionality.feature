@@ -245,11 +245,11 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredCorrectlyAfterL
 	| SelectedList   | Association        |
 	| TestListD75CD3 | Not used on device |
 	Then "Any Application in list TestListD75CD3 not used on device" is displayed in added filter info
-	Then "17,126" rows are displayed in the agGrid
+	Then "17,185" rows are displayed in the agGrid
 	When User perform search by "001BAQXT6JWFPI"
 	And User click content from "Hostname" column
 	Then User click back button in the browser
-	Then "17,126" rows are displayed in the agGrid
+	Then "17,185" rows are displayed in the agGrid
 	When User clicks the Filters button
 	Then "Any Application in list TestListD75CD3 not used on device" is displayed in added filter info
 
@@ -263,7 +263,7 @@ Scenario: EvergreenJnr_DevicesList_CheckNumericFilter
 	| Values |
 	| 1      |
 	Then "App Count (Installed) is less than 1" is displayed in added filter info
-	Then "5,141" rows are displayed in the agGrid
+	Then "5,195" rows are displayed in the agGrid
 
 @Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11469
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatAssociationSearchInFiltersPanelIsWorkingCorrectly
@@ -990,10 +990,10 @@ Examples:
 	| Windows7Mi: Category                      | None                 | 17,194 |
 	| Windows7Mi: Values but no RAG             | Three                | 1      |
 	| Windows7Mi: SS Application List Completed | Not Applicable       | 5,161  |
-	| MigrationP: Category                      | None                 | 17,220 |
+	| MigrationP: Category                      | None                 | 17,194 |
 	| Babel(Engl: Path                          | Machines             | 62     |
 	| ComputerSc: Path                          | Request Type A       | 132    |
-	| MigrationP: Path                          | [Default (Computer)] | 41     |
+	| MigrationP: Path                          | [Default (Computer)] | 43     |
 	| UserSchedu: Path                          | Request Type A       | 60     |
 	
 @Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12351
@@ -1010,13 +1010,13 @@ Scenario Outline: EvergreenJnr_UsersList_CheckThat500ISEInvalidColumnNameErrorIs
 	Then "<Rows>" rows are displayed in the agGrid
 
 Examples: 
-	| FilterName                                                | SelectedCheckboxes | Rows       |
-	| Windows7Mi: Category                                      | Terminated         | 1          |
-	| Windows7Mi: Read Only on Bulk Update Page                 | Not Applicable     | 4,642      |
-	| Barry'sUse: Category                                      | None               | 41,339     |
-	| Havoc(BigD: Path                                          | [Default (User)]   | 7,578      |
-	| UserSchedu: Group Stage \ Group User Default Request Type | Not Applicable     | 595        |
-	| ComputerSc: Group Stage \ Group User Default Request Type | Not Applicable     | 1,809 rows |
+	| FilterName                                                        | SelectedCheckboxes | Rows   |
+	| Windows7Mi: Category                                              | Terminated         | 1      |
+	| WWindows7Mi: Stage for User Tasks \ Read Only on Bulk Update Page | Not Applicable     | 4,642  |
+	| Barry'sUse: Category                                              | None               | 41,339 |
+	| Havoc(BigD: Path                                                  | [Default (User)]   | 7,578  |
+	| UserSchedu: Group Stage \ Group User Default Request Type         | Not Applicable     | 679    |
+	| ComputerSc: Group Stage \ Group User Default Request Type         | Not Applicable     | 1,809  |
 
 @Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12351
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnApplicationsPage
@@ -1038,7 +1038,7 @@ Examples:
 	| EmailMigra: Category       | None               | 2,223 |
 	| UserSchedu: Category       | None               | 2,223 |
 	| Babel(Engl: Path           | Tools              | 302   |
-	| EmailMigra: Path           | Public Folder      | 50    |
+	| EmailMigra: Path           | Public Folder      | 49    |
 	| UserSchedu: Path           | Request Type A     | 47    |
 
 @Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS13392
@@ -1137,7 +1137,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatApplicationFilterWorksCorrectlyForDi
 	And User is deselect "Installed on device" Association for Application filter with Lookup value
 	And User select "Not installed on device" Association for Application filter with Lookup value
 	And User clicks Save filter button
-	Then "16,281" rows are displayed in the agGrid
+	Then "16,335" rows are displayed in the agGrid
 	When User have reset all filters
 	And User add Advanced "Application" filter where type is "Equals" with following Lookup Value and Association:
 	| SelectedValues  | Association    |
@@ -1892,7 +1892,7 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckThatNotAndOffBoarderValuesInclud
 
 Examples: 
 	| FilterName         | SelectedCheckboxes | Rows   |
-	| Windows7Mi: Status | Not Onboarded      | 12,044 |
+	| Windows7Mi: Status | Not Onboarded      | 12,100 |
 	| Windows7Mi: Status | Offboarded         | 20     |
 
 @Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS17411 @Cleanup

@@ -51,9 +51,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAppearWhenDeleteReadine
 	Then Columns on Admin page is displayed in following order:
 	| ColumnName                  |
 	| Readiness                   |
+	|                             |
 	| Tooltip                     |
+	| Ready                       |
 	| Default for Applications    |
 	| Task Values Count           |
+	| Applications Count          |
 	| Object App Override Count   |
 	| Stage Overrides Count       |
 	| Task Values Templates Count |

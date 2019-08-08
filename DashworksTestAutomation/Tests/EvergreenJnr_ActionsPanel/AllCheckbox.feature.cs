@@ -328,7 +328,7 @@ this.FeatureBackground();
                         "NumberOfRows"});
             table2.AddRow(new string[] {
                         "Mary",
-                        "17"});
+                        "18"});
             table2.AddRow(new string[] {
                         "Henry",
                         "34"});
@@ -341,7 +341,7 @@ this.FeatureBackground();
 #line 62
  testRunner.And("Clearing the agGrid Search Box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 63
- testRunner.Then("\"17,225\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"17,279\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -355,7 +355,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("AllCheckbox")]
         [NUnit.Framework.CategoryAttribute("DAS10656")]
         [NUnit.Framework.CategoryAttribute("DAS12602")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "17225", "Hostname", "00BDM1JUR8IF419", "17224", null)]
+        [NUnit.Framework.TestCaseAttribute("Devices", "17279", "Hostname", "00BDM1JUR8IF419", "17278", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "41339", "Username", "002B5DC7D4D34D5C895", "41338", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "2223", "Application", "\"WPF/E\" (codename) Community Technology Preview (Feb 2007)", "2222", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "14784", "Email Address", "000F977AC8824FE39B8@bclabs.local", "14783", null)]

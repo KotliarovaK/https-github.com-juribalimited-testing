@@ -20,13 +20,15 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPa
 	And User enters "Administrative Team" text in the Search field for "Team" column
 	And User clicks content from "Team" column
 	When User enters "readonly" text in the Search field for "Username" column
-	Then Rows counter shows "1" of "6" rows
-	When User clicks "Evergreen" link on the Admin page
+	Then Rows counter contains "1" found row of all rows
+	When User click on Back button
+	And User clicks "Evergreen" link on the Admin page
+	And User resets Search fields for columns
 	And User enters "Cardiff --- Test text fill; Test text fill; ------" text in the Search field for "Bucket" column
 	Then Rows counter contains "1" found row of all rows
 	When User resets Search fields for columns
 	When User enters "=35" text in the Search field for "Devices" column
-	Then Rows counter contains "0" found row of all rows
+	Then Rows counter contains "1" found row of all rows
 	When User clicks Admin on the left-hand menu
 	When User clicks "Evergreen" link on the Admin page
 	When User clicks "Buckets" tab
@@ -36,29 +38,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPa
 	When User resets Search fields for columns
 	And User enters "=2" text in the Search field for "Users" column
 	Then Rows counter contains "2" found row of all rows
-	When User resets Search fields for columns
-	When User enters "Administration" text in the Search field for "Bucket" column
-	And User clicks content from "Bucket" column
-	And User enters "M1D" text in the Search field for "Hostname" column
-	Then Rows counter shows "1" of "2" rows
-	When User resets Search fields for columns
-	And User enters "Windows XP" text in the Search field for "Operating System" column
-	Then Rows counter shows "2" of "2" rows
-	When User clicks "Users" tab
-	When User enters "Danielle A. Tate" text in the Search field for "Display Name" column
-	Then Rows counter shows "1" of "1" rows
-	When User resets Search fields for columns
-	And User enters "TZV202" text in the Search field for "Username" column
-	Then Rows counter shows "1" of "1" rows
-	When User click on Back button
-	When User enters "Unassigned" text in the Search field for "Bucket" column
-	And User clicks content from "Bucket" column
-	When User clicks "Mailboxes" tab
-	And User enters "DiscoverySearchMailbox{D919BA05-46A6-415f-80AD-7E09334BB852}@juriba1.onmicrosoft.com" text in the Search field for "Email Address (Primary)" column
-	Then Rows counter shows "1" of "14538" rows
-	When User resets Search fields for columns
-	And User enters "RD-EXCH2K3" text in the Search field for "Server Name" column
-	Then Rows counter shows "6" of "14538" rows
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12370 @DAS12369 @DAS14212
 Scenario: EvergreenJnr_ImportProjectPage_CheckThatImportProjectButtonEnabledAfterWarningOnImportProjectPage
@@ -311,21 +290,21 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckFormattingForIntegerValues
 	When User clicks "Evergreen" link on the Admin page
 	When User clicks "Buckets" tab
 	And User enters "Unassigned" text in the Search field for "Bucket" column
-	Then "16,877" content is displayed in "Devices" column
-	Then "41,049" content is displayed in "Users" column
-	Then "14,538" content is displayed in "Mailboxes" column
+	Then "16933" content is displayed in "Devices" column
+	Then "41050" content is displayed in "Users" column
+	Then "14538" content is displayed in "Mailboxes" column
 	When User clicks "Evergreen" link on the Admin page
 	When User clicks "Capacity Units" tab
-	And User enters "Capacity Unit" text in the Search field for "Bucket" column
-	Then "9,365" content is displayed in "Devices" column
-	Then "27,140" content is displayed in "Users" column
-	Then "5,288" content is displayed in "Mailboxes" column
+	And User enters "Unassigned" text in the Search field for "Capacity Unit" column
+	Then "9420" content is displayed in "Devices" column
+	Then "27140" content is displayed in "Users" column
+	Then "5288" content is displayed in "Mailboxes" column
 	When User clicks "Evergreen" link on the Admin page
-	When User clicks "Capacity Units" tab
-	And User enters "Capacity Unit" text in the Search field for "Bucket" column
-	Then "15,682" content is displayed in "Devices" column
-	Then "38,677" content is displayed in "Users" column
-	Then "13,752" content is displayed in "Mailboxes" column
+	When User clicks "Rings" tab
+	And User enters "Unassigned" text in the Search field for "Ring" column
+	Then "15802" content is displayed in "Devices" column
+	Then "38677" content is displayed in "Users" column
+	Then "13752" content is displayed in "Mailboxes" column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS16384
 Scenario: EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromBuckets

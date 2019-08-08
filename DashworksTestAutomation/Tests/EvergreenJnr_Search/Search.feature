@@ -32,7 +32,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatQuickSearchDoesntTriggersNewListMenu
 Scenario: EvergreenJnr_AllLists_CheckSearchFilterAndTableContentDuringNavigationBetweenPages
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
-	And "17,225" rows are displayed in the agGrid
+	And "17,279" rows are displayed in the agGrid
 	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
 	| Smith          | 11           |
@@ -59,7 +59,7 @@ Scenario: EvergreenJnr_AllLists_CheckSearchFilterAndTableContentDuringNavigation
 	| Smith          | 44           |
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
-	And "17,225" rows are displayed in the agGrid
+	And "17,279" rows are displayed in the agGrid
 	And Search field is empty
 
 @Evergreen @Devices @EvergreenJnr_Search @Search @DAS12206 @DAS10475
@@ -75,8 +75,8 @@ Scenario: EvergreenJnr_DevicesList_SearchTests
 	| Virtual             | 1,996        |
 	| Windows Vista       | 475          |
 	| O'Connor            | 13           |
-	| @demo.juriba.com    | 16,717       |
-	| 192.168.6           | 5,100        |
+	| @demo.juriba.com    | 16,771       |
+	| 192.168.6           | 5,094        |
 	#| RED                 | 9,238        |
 	| 0JIE                | 1            |
 
@@ -86,10 +86,10 @@ Scenario: EvergreenJnr_DevicesList_ClearingSearchReturnsTheFullDataSet
 	Then "Devices" list should be displayed to the user
 	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
-	| Mary           | 17           |
+	| Mary           | 18           |
 	Then URL is "evergreen/#/devices"
 	And Clearing the agGrid Search Box
-	Then "17,225" rows are displayed in the agGrid
+	Then "17,279" rows are displayed in the agGrid
 	Then URL is "evergreen/#/devices"
 
 @Evergreen @Users @EvergreenJnr_Search @Search @DAS11012 @DAS12206
@@ -195,7 +195,7 @@ Scenario Outline: EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorr
 Examples: 
 	| PageName     | ColumnName                                      | SearchCriteria                              | NumberOfRows |
 	| Devices      | Compliance                                      | GREEN                                       | 100          |
-	| Devices      | Windows7Mi: Readiness                           | OUT OF SCOPE                                | 5,118        |
+	| Devices      | Windows7Mi: Readiness                           | OUT OF SCOPE                                | 5,116        |
 	#| Devices      | Windows7Mi: Group Computer Rag Radio Date Owner | Not Applicable                              | 5,161        |
 	| Applications | Import Type                                     | Altiris 6                                   | 31           |
 	| Users        | department                                      | The Last Department With A Really Lond Name | 10           |
@@ -340,11 +340,11 @@ Scenario: EvergreenJnr_DevicesLists_Search_CheckThatValidationForSpecialCharacte
 Scenario: EvergreenJnr_DevicesList_Search_ChecksThatRowCountIsResetBackToTheFullRowCountAfterClickingTheSearchCrossButton
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
-	And "17,225" rows are displayed in the agGrid
+	And "17,279" rows are displayed in the agGrid
 	When User perform search by "00K"
 	Then "8" rows are displayed in the agGrid
 	When User clicks cross icon in Table search field
-	Then "17,225" rows are displayed in the agGrid
+	Then "17,279" rows are displayed in the agGrid
 
 @Evergreen @Applications @EvergreenJnr_Search @Search @DAS13342 @DAS13366
 Scenario: EvergreenJnr_ApplicationsList_Search_ChecksThatRowCountIsResetBackToTheFullRowCountAfterClickingTheFilterButtonAfterRunningASearch
@@ -363,7 +363,7 @@ Scenario: EvergreenJnr_ApplicationsList_Search_ChecksThatRowCountIsResetBackToTh
 	Then "(Windows7Mi: Hide from End Users = false) OR (Application = DirectX SDK (Version 8.1) (3663.0))" text is displayed in filter container
 	When User perform search by "microsoft"
 	Then "395" rows are displayed in the agGrid
-	When User opens filter container
+	When User closes Tools panel
 	Then "1,067" rows are displayed in the agGrid
 
 @Evergreen @Users @EvergreenJnr_Search @Search @DAS16375

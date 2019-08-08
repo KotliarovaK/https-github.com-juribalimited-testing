@@ -155,7 +155,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement SearchTextBoxResetButton { get; set; }
 
         [FindsBy(How = How.XPath,
-            Using = ".//button[contains(@class, 'resetButton mat-button')]")]
+            Using = ".//div[contains(@class,'searchPanel')]/button")]
         public IWebElement SearchTextBoxResetButtonInPanel { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//button[@aria-label='search']")]

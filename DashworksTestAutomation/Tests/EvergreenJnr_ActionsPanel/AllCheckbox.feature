@@ -56,11 +56,11 @@ Scenario: EvergreenJnr_DevicesList_SearchWithinAllRows
 	When User select all rows
 	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria  | NumberOfRows |
-	| Mary            | 17           |
+	| Mary            | 18           |
 	| Henry           | 34           |
 	| Yolande Sylvain | 1            |
 	And Clearing the agGrid Search Box
-	Then "17,225" rows are displayed in the agGrid
+	Then "17,279" rows are displayed in the agGrid
 
 @Evergreen @AllLists @Evergreen_ActionsPanel @AllCheckbox @DAS10656 @DAS12602
 Scenario Outline: EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest
@@ -84,7 +84,7 @@ Scenario Outline: EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest
 
 Examples: 
 	| PageName     | SelectedRowsCount | Columnname    | SelectedRowName                                            | SelectedRowsCountAfterDiselect |
-	| Devices      | 17225             | Hostname      | 00BDM1JUR8IF419                                            | 17224                          |
+	| Devices      | 17279             | Hostname      | 00BDM1JUR8IF419                                            | 17278                          |
 	| Users        | 41339             | Username      | 002B5DC7D4D34D5C895                                        | 41338                          |
 	| Applications | 2223              | Application   | "WPF/E" (codename) Community Technology Preview (Feb 2007) | 2222                           |
 	| Mailboxes    | 14784             | Email Address | 000F977AC8824FE39B8@bclabs.local                           | 14783                          |

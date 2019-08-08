@@ -1395,8 +1395,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenResetButtonInSearchFieldAtSelectedFilterIsDisplayed()
         {
             var page = _driver.NowAt<FiltersElement>();
-            _driver.WaitForElementToBeDisplayed(page.SearchTextBoxResetButton);
-            Utils.Verify.IsTrue(page.SearchTextBoxResetButton.Displayed(), "Reset button is not displayed");
+            _driver.WaitForElementToBeDisplayed(page.CloseAssociationSearchButton);
+            Utils.Verify.IsTrue(page.CloseAssociationSearchButton.Displayed(), "Reset button is not displayed");
             Logger.Write("Reset button is displayed");
         }
 

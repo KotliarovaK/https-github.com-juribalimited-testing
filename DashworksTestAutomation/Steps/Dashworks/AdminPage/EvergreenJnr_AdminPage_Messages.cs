@@ -159,7 +159,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitForDataLoading();
             _driver.WaitForElementToContainsText(page.ErrorMessage, text);
-            Utils.Verify.AreEqual("rgba(242, 88, 49, 1)", page.GetMessageColor(), "PLEASE ADD EXCEPTION MESSAGE"); //Red color
+            Utils.Verify.AreEqual("rgba(242, 88, 49, 1)", page.GetErrorMessageColor(), "Colors do not match!"); //Red color
             Utils.Verify.AreEqual(text, page.ErrorMessage.Text, "Error Message is not displayed");
         }
 

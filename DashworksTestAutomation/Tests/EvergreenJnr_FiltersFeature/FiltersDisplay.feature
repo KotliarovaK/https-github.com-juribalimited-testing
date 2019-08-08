@@ -517,7 +517,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatApostrophesAreDisplayedCorrectlyInFi
 	| Values |
 	| '      |
 	Then "Owner Display Name" filter is added to the list
-	And "127" rows are displayed in the agGrid
+	And "129" rows are displayed in the agGrid
 
 @Evergreen @AllLists @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11351
 Scenario Outline: EvergreenJnr_AllLists_DevicesList_CheckThatAddColumnOptionIsAvailableForOwnerDepartmentFilter
@@ -563,7 +563,7 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckThatDateAndTimeFiltersWithDoesNo
 Examples: 
 	| FilterName                   | Value       | RowCount |
 	| Windows7Mi: Date & Time Task | 22 Nov 2012 | 17,209   |
-	| Build Date                   | 6 Nov 2004  | 17,224   |
+	| Build Date                   | 6 Nov 2004  | 17,278   |
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11187 @DAS13376
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatCustomFiltersAreContainsAllExpectedAssociations

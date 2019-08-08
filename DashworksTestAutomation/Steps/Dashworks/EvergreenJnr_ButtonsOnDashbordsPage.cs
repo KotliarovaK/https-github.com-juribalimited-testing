@@ -155,8 +155,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFilterButtonOnAGgridIsDisabled()
         {
             var menu = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitForElementToBeDisplayed(menu.FilterContainerButton);
-            Utils.Verify.IsTrue(Convert.ToBoolean(menu.FilterContainerButton.GetAttribute("disabled")),
+            _driver.WaitForElementToBeDisplayed(menu.FilterButton);
+            Utils.Verify.IsTrue(Convert.ToBoolean(menu.FilterButton.GetAttribute("disabled")),
                 "Filter button on AGgrid is active");
         }
 

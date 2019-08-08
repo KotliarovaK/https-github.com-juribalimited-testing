@@ -5,11 +5,12 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @DAS13928 @DAS14614 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @DAS13928 @DAS14614 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlMessageAppearsWhenDefaultLanguageDoesNotHaveTranslations
 	When Project created via API and opened
 	| ProjectName                | Scope     | ProjectTemplate | Mode               |
 	| ChecksDefaultLanguage13928 | All Users | None            | Standalone Project |
+	And User clicks "Scope" tab
 	And User selects "Scope Changes" tab on the Project details page
 	And User expands the object to add
 	And User selects following Objects

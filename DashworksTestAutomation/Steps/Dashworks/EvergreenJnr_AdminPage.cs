@@ -1206,6 +1206,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listPageElement = _driver.NowAt<BaseDashboardPage>();
             listPageElement.CloseToolsPanelButton.Click();
+            _driver.WaitForDataLoading();
         }
 
         [When(@"User clicks Search button and opens Search panel for agGrid")]
@@ -1839,7 +1840,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClickOnBackButton()
         {
             var button = _driver.NowAt<BaseGridPage>();
-            Thread.Sleep(20000);
             button.BackToTableButton.Click();
         }
 

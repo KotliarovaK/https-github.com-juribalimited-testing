@@ -2192,7 +2192,7 @@ this.FeatureBackground();
 #line 519
  testRunner.Then("\"Owner Display Name\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 520
- testRunner.And("\"127\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\"129\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -2368,7 +2368,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12114")]
         [NUnit.Framework.CategoryAttribute("DAS12698")]
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Date & Time Task", "22 Nov 2012", "17,209", null)]
-        [NUnit.Framework.TestCaseAttribute("Build Date", "6 Nov 2004", "17,224", null)]
+        [NUnit.Framework.TestCaseAttribute("Build Date", "6 Nov 2004", "17,278", null)]
         public virtual void EvergreenJnr_DevicesList_CheckThatDateAndTimeFiltersWithDoesNotEqualValuesAreWorkingCorrectly(string filterName, string value, string rowCount, string[] exampleTags)
         {
             System.Exception lastException = null;
