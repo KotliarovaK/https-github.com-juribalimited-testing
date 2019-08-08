@@ -738,7 +738,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFollowingContentIsDisplayedInTheColumn(string columnName, Table table)
         {
             var page = _driver.NowAt<BaseGridPage>();
-            var originalList = page.GetListContentByColumnName(columnName).Select(column => column.Text).ToList();
+            var originalList = page.GetColumnContentByColumnName(columnName).Select(column => column.Text).ToList();
             var tableContent = table.Rows.SelectMany(row => row.Values);
             Utils.Verify.AreEqual(originalList, tableContent, $"Incorrect content is displayed in the {columnName}");
         }
@@ -747,7 +747,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFollowingColumnDisplayedWithoutNoData(string columnName)
         {
             var page = _driver.NowAt<BaseGridPage>();
-            var originalList = page.GetListContentByColumnName(columnName).Select(column => column.Text).ToList();
+            var originalList = page.GetColumnContentByColumnName(columnName).Select(column => column.Text).ToList();
 
             foreach (var item in originalList)
             {
