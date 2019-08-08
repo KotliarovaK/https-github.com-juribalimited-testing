@@ -185,9 +185,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//a[contains(@class,'header-back-link')]")]
         public IWebElement BackToTableButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[text()='CANCEL']")]
-        public IWebElement CancelButtonInWarning { get; set; }
-
         [FindsBy(How = How.XPath, Using = "//span[contains(@class, 'mat-select-value-text')]//span[text()='Capacity Units']")]
         public IWebElement DefaultCapacityMode { get; set; }
 
@@ -243,6 +240,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath,
             Using = ".//button[contains(@class, 'messageAction')]/span[contains(text(), 'DELETE')]")]
         public IWebElement DeleteButtonInWarningMessage { get; set; }
+
+        [FindsBy(How = How.XPath,
+            Using = ".//button[contains(@class, 'messageAction')]/span[contains(text(), 'CANCEL')]")]
+        public IWebElement CancelButtonInWarningMessage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='empty-message ng-star-inserted'][text()='No items']")]
         public IWebElement NoItemsMessage { get; set; }

@@ -64,14 +64,22 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         #region Clicable value
 
+        //Change By double click
         [When(@"User change text in '(.*)' cell from '(.*)' column to '(.*)' text")]
         public void WhenUserChangeTextInCellFromColumnToText(string cellText, string columnName, string newCellText)
         {
             ChangeClickableValue(cellText, columnName, newCellText);
 
-            var page = _driver.NowAt<BaseGridPage>();
-            page.SaveInlineButton.Click();
-            _driver.WaitForDataLoading();
+            SaveClickableValue();
+        }
+
+        //Change by CogMenu or when already opened for edit
+        [When(@"User save '(.*)' text in clickable value")]
+        public void WhenUserSaveTextInClickableValue(string newCellText)
+        {
+            EnterTextInClickableValue(newCellText);
+
+            SaveClickableValue();
         }
 
         [When(@"User change text in '(.*)' cell from '(.*)' column to '(.*)' text without saving")]
@@ -80,11 +88,23 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             ChangeClickableValue(cellText, columnName, newCellText);
         }
 
+        private void SaveClickableValue()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            page.SaveInlineButton.Click();
+            _driver.WaitForDataLoading();
+        }
+
         private void ChangeClickableValue(string cellText, string columnName, string newCellText)
         {
             //Updated value will not be saved in test context!!!
             WhenUserDoubleclicksOnCellFromColumn(cellText, columnName);
 
+            EnterTextInClickableValue(newCellText);
+        }
+
+        private void EnterTextInClickableValue(string newCellText)
+        {
             var page = _driver.NowAt<BaseGridPage>();
             page.InputInlineTextbox.ClearWithBackspaces();
             page.InputInlineTextbox.SendKeys(newCellText);
