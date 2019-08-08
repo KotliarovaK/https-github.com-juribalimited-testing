@@ -400,6 +400,10 @@ namespace DashworksTestAutomation.Helpers
             foreach (var row in Table.Rows)
             {
                 _driver.FindElement(By.XPath(".//div[@id='context']//input[@placeholder='Search']")).Click();
+                
+                //if tests will fail then remove next string
+                _driver.FindElement(By.XPath(".//div[@id='context']//input[@placeholder='Search']")).Clear();
+
                 _driver.FindElement(By.XPath(".//div[@id='context']//input[@placeholder='Search']"))
                     .SendKeys(row["SelectedValues"]);
                 _driver.FindElement(By.XPath(
@@ -409,6 +413,8 @@ namespace DashworksTestAutomation.Helpers
 
             foreach (var row in Table.Rows)
             {
+                if(string.IsNullOrEmpty(row["Association"]))
+                    break;
                 //TODO: try to fix not found element by path below(input[@id='mat-input-7'] sometimes has 76 digit)
                 //_driver.FindElement(By.XPath("//div[contains(@class, 'associationmultiselect')]//input[@id='mat-input-7']")).SendKeys(row["Association"]);
                 _driver.FindElement(By.XPath(".//div[contains(@class, 'title-beetwen-blocks')]/following-sibling::div//input[@placeholder='Search']")).SendKeys(row["Association"]);
