@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
@@ -94,6 +93,37 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         public bool GetDisplayStatusForDisabledMainTabByName(string tabName)
         {
             return Driver.IsElementDisplayed(By.XPath($".//a[text()='{tabName}']/ancestor::mat-nested-tree-node[contains(@class, 'disabled')]"));
+        }
+
+        public List<Point> LoadingIndicatorCoordinates()
+        {
+            List<Point> points = new List<Point>();
+
+            IList < IWebElement > links = Driver.FindElements(By.XPath(".//li[contains(@class, 'das-mat-tree')]//a[contains(@href, 'details')]"));
+
+            foreach (var link in links)
+            {
+                link.Click();
+
+                for (int i = 0; i < 5; i++)
+                {
+                    try
+                    {
+                        if (Driver.FindElements(
+                                    By.XPath(".//div[contains(@class,'spinner') and not(contains(@class,'small'))]"))
+                                .Count > 0)
+                        {
+                            points.Add(Driver.FindElements(By.XPath(".//div[contains(@class,'spinner') and not(contains(@class,'small'))]")).First().Location);
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        break;
+                    }
+                }
+                Driver.WaitForDataLoading();
+            }
+            return points;
         }
     }
 }

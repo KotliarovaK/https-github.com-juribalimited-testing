@@ -8,6 +8,7 @@ using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.ItemDetails;
 using DashworksTestAutomation.Pages.Evergreen.ItemDetails.CustomFields;
 using DashworksTestAutomation.Providers;
+using DashworksTestAutomation.Utils;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
@@ -38,6 +39,10 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage.CustomFields
                 var grid = _driver.NowAt<AggridHeaderCounterPage>();
 
                 _driver.WaitForElementToBeDisplayed(grid.CreateCustomFieldsButton);
+
+                //Check that button has correct name
+                Verify.IsTrue(grid.CreateCustomFieldsButton.Text.Contains("ADD CUSTOM FIELD"), "Incorrect text is displayed for 'ADD CUSTOM FIELD' button");
+
                 grid.CreateCustomFieldsButton.Click();
 
                 var popup = _driver.NowAt<CustomFieldPopup>();

@@ -822,6 +822,76 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatLoadingIndicatorAppearsInTheSamePlace")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
+        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS17373")]
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
+        public virtual void EvergreenJnr_DevicesList_CheckThatLoadingIndicatorAppearsInTheSamePlace()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckThatLoadingIndicatorAppearsInTheSamePlaceInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_CheckThatLoadingIndicatorAppearsInTheSamePlaceInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatLoadingIndicatorAppearsInTheSamePlace", null, new string[] {
+                        "Evergreen",
+                        "Devices",
+                        "EvergreenJnr_ItemDetails",
+                        "ItemDetailsDisplay",
+                        "DAS17373",
+                        "Not_Ready"});
+#line 173
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 5
+this.FeatureBackground();
+#line 174
+ testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 175
+ testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 176
+ testRunner.When("User perform search by \"Adobe Acrobat Update\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 177
+ testRunner.And("User click content from \"Application\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 178
+ testRunner.Then("Details page for \"Adobe Acrobat Update\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 179
+ testRunner.When("User switches to the \"Devices Evergreen Capacity Project\" project in the Top bar " +
+                    "on Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 180
+ testRunner.And("User navigates to the \"Details\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 181
+ testRunner.Then("Loading indicator appears in the same place when switching between main-menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore

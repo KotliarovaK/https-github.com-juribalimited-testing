@@ -168,3 +168,14 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatUserDetailsIsSimilarOnGridAndDetail
 	| Domain             | US-E                                   |
 	| Display Name       | Nicole P. Braun                        |
 	| Distinguished Name | QLL295118.Users.Jersey City.US-E.local |
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17373 @Not_Ready
+Scenario: EvergreenJnr_DevicesList_CheckThatLoadingIndicatorAppearsInTheSamePlace
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User perform search by "Adobe Acrobat Update"
+	And User click content from "Application" column
+	Then Details page for "Adobe Acrobat Update" item is displayed to the user
+	When User switches to the "Devices Evergreen Capacity Project" project in the Top bar on Item details page
+	And User navigates to the "Details" main-menu on the Details page
+	Then Loading indicator appears in the same place when switching between main-menu

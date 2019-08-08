@@ -1,9 +1,15 @@
-﻿using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Runtime.Remoting.Messaging;
+using System.Threading;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.ItemDetails;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
@@ -33,7 +39,20 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             detailsPage.GetTabMenuByName(tabMenuName).Click();
         }
 
-        [When(@"User navigates to the ""(.*)"" sub-menu on the Details page")]
+        [Then(@"Loading indicator appears in the same place when switching between main-menu")]
+        public void LoadingIndicatorAppearsInTheSamePlaceWhenSwitchingBetweenMainMenu()
+        {
+            List<Point> loader = new List<Point>();
+
+            var detailsPage = _driver.NowAt<NavigationPage>();
+            _driver.WaitForDataLoading();
+
+            loader = detailsPage.LoadingIndicatorCoordinates();
+
+            Utils.Verify.That(loader.First(), Is.EqualTo(loader.Last()), "Wrong point loading position");
+        }
+
+       [When(@"User navigates to the ""(.*)"" sub-menu on the Details page")]
         public void WhenUserNavigatesToTheSub_MenuOnTheDetailsPage(string subMenuName)
         {
             var detailsPage = _driver.NowAt<NavigationPage>();

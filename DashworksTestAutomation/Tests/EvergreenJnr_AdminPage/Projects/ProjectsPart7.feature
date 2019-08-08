@@ -94,7 +94,7 @@ Examples:
 	| Devices   | Project2587 | StaticList6521 | 00KLL9S8NRF0X6         | Hostname      | TestList6584 |
 	| Mailboxes | Project2587 | StaticList6522 | ZVI880605@bclabs.local | Email Address | TestList6583 |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS12799 @DAS13973 @Project_Creation_and_Scope @Cleanup @Cleanup @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS12799 @DAS13973 @Project_Creation_and_Scope @Cleanup @Projects
 Scenario: EvergreenJnr_AdminPage_CheckMailboxProjectCreationWithCloneEvergreenBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user

@@ -467,12 +467,34 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filtersNames.UpdateButton.Click();
         }
 
+        [When(@"User Add And ""(.*)"" filter where type is ""(.*)"" with selected Checkboxes and following Association:")]
+        public void WhenUserAddAndFilterWhereTypeIsWithSelectedCheckboxesAndFollowingAssociation(string filterName,
+            string operatorValue, Table table)
+        {
+            var filtersNames = _driver.NowAt<FiltersElement>();
+            filtersNames.AddAndFilter(filterName);
+            var filter = new CheckboxesAssociationFilter(_driver, operatorValue, true, table);
+            filter.Do();
+            filtersNames.UpdateButton.Click();
+        }
+
         [When(@"User add ""(.*)"" filter where type is ""(.*)"" with following Value and Association:")]
         public void WhenUserAddFilterWhereTypeIsWithFollowingValueAndAssociation(string filterName,
             string operatorValue, Table table)
         {
             var filtersNames = _driver.NowAt<FiltersElement>();
             filtersNames.AddFilter(filterName);
+            var filter = new ValueAssociationFilter(_driver, operatorValue, table);
+            filter.Do();
+            _driver.WaitForDataLoading();
+        }
+
+        [When(@"User Add And ""(.*)"" filter where type is ""(.*)"" with following Value and Association:")]
+        public void WhenUserAddAndFilterWhereTypeIsWithFollowingValueAndAssociation(string filterName,
+            string operatorValue, Table table)
+        {
+            var filtersNames = _driver.NowAt<FiltersElement>();
+            filtersNames.AddAndFilter(filterName);
             var filter = new ValueAssociationFilter(_driver, operatorValue, table);
             filter.Do();
             _driver.WaitForDataLoading();
@@ -515,6 +537,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filtersNames = _driver.NowAt<FiltersElement>();
             filtersNames.AddFilter(filterName);
+            var filter = new LookupValueAssociationFilter(_driver, operatorValue, table);
+            filter.Do();
+        }
+
+        [When(@"User Add And ""(.*)"" filter where type is ""(.*)"" with following Lookup Value and Association:")]
+        public void WhenUserAddAndFilterWhereTypeIsWithFollowingLookupValueAndAssociation(string filterName,
+            string operatorValue, Table table)
+        {
+            var filtersNames = _driver.NowAt<FiltersElement>();
+            filtersNames.AddAndFilter(filterName);
             var filter = new LookupValueAssociationFilter(_driver, operatorValue, table);
             filter.Do();
         }

@@ -1577,6 +1577,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Thread.Sleep(5000);
         }
 
+        [Then(@"Scope List dropdown displayed with ""(.*)"" value")]
+        public void ScopeListDropdownDisplayedWithListValue(string listName)
+        {
+            var projectElement = _driver.NowAt<ProjectsPage>();
+            Utils.Verify.That(projectElement.ScopeListDropdownValue.Text, Is.EqualTo(listName), $"Wrong scope value displayed");
+        }
+
         [Then(@"Scope List dropdown is disabled")]
         public void ThenScopeListDropdownIsDisabled()
         {
@@ -2160,6 +2167,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             button.ExportButton.Click();
         }
 
+        //TODO should be changed to generic method. Remove Admin page
         [When(@"User clicks Group By button on the Admin page and selects ""(.*)"" value")]
         public void WhenUserClicksGroupByButtonOnTheAdminPageAndSelectsValue(string value)
         {
