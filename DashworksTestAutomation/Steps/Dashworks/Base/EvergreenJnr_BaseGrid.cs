@@ -29,7 +29,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitForDataLoading();
-            var column = page.GetListContentByColumnName(columnName).ToList();
+            var column = page.GetColumnContentByColumnName(columnName).ToList();
             var columnContent = column.Select(x => x.Text).ToList();
             Verify.Contains(textContent, columnContent, $"'{textContent}' is not present in the '{columnName}' column");
         }
@@ -39,7 +39,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitForDataLoading();
-            var column = page.GetListContentByColumnName(columnName).ToList();
+            var column = page.GetColumnContentByColumnName(columnName).ToList();
             var columnContent = column.Select(x => x.Text).ToList();
             var expectedList = table.Rows.Select(x => x["Content"]).ToList();
             Verify.IsTrue(columnContent.SequenceEqual(expectedList), 
@@ -154,6 +154,24 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.CancelInlineButton.Click();
 
             _driver.WaitForDataLoading();
+        }
+
+        #endregion
+
+        #region GroupBy
+
+        [When(@"User expands '(.*)' row in the groped grid")]
+        public void WhenUserExpandsRowInTheGropedGrid(string groupedBy)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            page.ExpandGroupedRowByContent(groupedBy);
+        }
+
+        [Then(@"Grid is not grouped")]
+        public void ThenGridIsNotGrouped()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Verify.IsFalse(page.IsGridGrouped(), "Grid is grouped");
         }
 
         #endregion
