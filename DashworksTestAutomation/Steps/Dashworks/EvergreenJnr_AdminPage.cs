@@ -1688,7 +1688,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenWarningMessageWithTextIsDisplayedOnTheProjectDetailsPage(string text)
         {
             var message = _driver.NowAt<BaseGridPage>();
-            //Warning message should have rgba(235, 175, 37, 1) color
+            //Warning message should have Orange color
             var bgColor = message.WarningMessage.GetCssValue("background-color");
             Verify.AreEqual("rgba(235, 175, 37, 1)", bgColor, $"Waring message is not Orange: {bgColor}");
             Verify.IsTrue(message.WarningMessage.Text.Contains(text), $"'{text}' is not displayed in Warning message");
