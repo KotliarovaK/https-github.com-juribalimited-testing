@@ -17,7 +17,7 @@ Scenario: EvergreenJnr_DevicesList_CheckEditableFieldDisplayAndToolTips
 	And User navigate to Evergreen URL
 	And User creates Custom Field via API
 	| ObjectType | ObjectId | FieldName    | Value                |
-	| device     | 6648     | FlDAS15473_1 | ValueDAS15473_#$‡!_1 |
+	| device     | 6648     | CfDAS15473_1 | ValueDAS15473_#$‡!_1 |
 	And User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User perform search by "00YWR8TJU4ZF8V"
@@ -39,7 +39,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckDataIsUpdatedInClickableValue
 	And User navigate to Evergreen URL
 	And User creates Custom Field via API
 	| ObjectType  | ObjectId | FieldName    | Value           |
-	| application | 507      | FlDAS15473_2 | ValueDAS15473_2 |
+	| application | 507      | CfDAS15473_2 | ValueDAS15473_2 |
 	And User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User perform search by "ACDSee 8"
@@ -68,7 +68,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckDataIsUpdatedUsingCogMenu
 	And User navigate to Evergreen URL
 	And User creates Custom Field via API
 	| ObjectType  | ObjectId | FieldName    | Value        |
-	| application | 750      | FlDAS17584_1 | Value17584_1 |
+	| application | 750      | CfDAS17584_1 | Value17584_1 |
 	And User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User perform search by "PCFriendly"
@@ -98,7 +98,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckClickableValueSavedOnFocusLost
 	And User navigate to Evergreen URL
 	And User creates Custom Field via API
 	| ObjectType | ObjectId | FieldName    | Value           |
-	| mailbox    | 46384    | FlDAS15473_3 | ValueDAS15473_3 |
+	| mailbox    | 46384    | CfDAS15473_3 | ValueDAS15473_3 |
 	And User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
 	When User perform search by "0072B088173449E3A93@bclabs.local"

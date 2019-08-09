@@ -163,7 +163,7 @@ this.FeatureBackground();
             table2.AddRow(new string[] {
                         "device",
                         "6648",
-                        "FlDAS15473_1",
+                        "CfDAS15473_1",
                         "ValueDAS15473_#$‡!_1"});
 #line 18
  testRunner.And("User creates Custom Field via API", ((string)(null)), table2, "And ");
@@ -272,7 +272,7 @@ this.FeatureBackground();
             table4.AddRow(new string[] {
                         "application",
                         "507",
-                        "FlDAS15473_2",
+                        "CfDAS15473_2",
                         "ValueDAS15473_2"});
 #line 40
  testRunner.And("User creates Custom Field via API", ((string)(null)), table4, "And ");
@@ -392,7 +392,7 @@ this.FeatureBackground();
             table6.AddRow(new string[] {
                         "application",
                         "750",
-                        "FlDAS17584_1",
+                        "CfDAS17584_1",
                         "Value17584_1"});
 #line 69
  testRunner.And("User creates Custom Field via API", ((string)(null)), table6, "And ");
@@ -513,7 +513,7 @@ this.FeatureBackground();
             table8.AddRow(new string[] {
                         "mailbox",
                         "46384",
-                        "FlDAS15473_3",
+                        "CfDAS15473_3",
                         "ValueDAS15473_3"});
 #line 99
  testRunner.And("User creates Custom Field via API", ((string)(null)), table8, "And ");
