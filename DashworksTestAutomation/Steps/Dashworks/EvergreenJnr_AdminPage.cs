@@ -1688,7 +1688,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenWarningMessageWithTextIsDisplayedOnTheProjectDetailsPage(string text)
         {
             var message = _driver.NowAt<BaseGridPage>();
-            //Warning message should have rgba(235, 175, 37, 1) color
+            //Warning message should have Orange color
             var bgColor = message.WarningMessage.GetCssValue("background-color");
             Verify.AreEqual("rgba(235, 175, 37, 1)", bgColor, $"Waring message is not Orange: {bgColor}");
             Verify.IsTrue(message.WarningMessage.Text.Contains(text), $"'{text}' is not displayed in Warning message");
@@ -2178,6 +2178,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.GroupByButton.Click();
             _driver.MouseHover(page.GetValueInGroupByFilterOnAdminPAge(value));
             page.GetValueInGroupByFilterOnAdminPAge(value).Click();
+            page.BodyContainer.Click();
+        }
+
+        //TODO should be changed to generic method. Remove Admin page
+        [Then(@"No options are selected in the Group By menu")]
+        public void NoOptionsAreSelectedInTheGroupByMenu()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            page.GroupByButton.Click();
+            var selectedCount = page.GetAllOptionsInGroupByFilter().Select(x => x.Value).Count(x => x.Equals(true));
+            Verify.AreEqual(0, selectedCount, "Some options are selected in the Group By menu");
             page.BodyContainer.Click();
         }
 
