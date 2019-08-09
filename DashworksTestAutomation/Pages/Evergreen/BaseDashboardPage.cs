@@ -520,33 +520,34 @@ namespace DashworksTestAutomation.Pages.Evergreen
             {
                 GetNamedTextbox(placeholder).ClearWithBackspaces();
                 GetNamedTextbox(placeholder).SendKeys(option);
-                if (!Driver.IsElementDisplayed(By.XPath(AutocompleteOptionsSelector), WebDriverExtensions.WaitTime.Short))
+                if (!Driver.IsElementDisplayed(By.XPath(AutocompleteOptionsSelector),
+                    WebDriverExtensions.WaitTime.Short))
                     throw new Exception($"Options are not displayed for '{placeholder}' autocomplete");
+            }
 
-                var foundOptions = AutocompleteDropdown.FindElements(By.XPath(AutocompleteOptionsSelector));
-                if (foundOptions.Any())
+            var foundOptions = AutocompleteDropdown.FindElements(By.XPath(AutocompleteOptionsSelector));
+            if (foundOptions.Any())
+            {
+                if (containsOption)
                 {
-                    if (containsOption)
-                    {
-                        if (foundOptions.Any(x => x.Text.Contains(option)))
-                            foundOptions.First(x => x.Text.Contains(option)).Click();
-                        else
-                            throw new Exception(
-                                $"There are no option that contains '{option}' text in the '{placeholder}' autocomplete");
-                    }
+                    if (foundOptions.Any(x => x.Text.Contains(option)))
+                        foundOptions.First(x => x.Text.Contains(option)).Click();
                     else
-                    {
-                        if (foundOptions.Any(x => x.Text.Equals(option)))
-                            foundOptions.First(x => x.Text.Equals(option)).Click();
-                        else
-                            throw new Exception(
-                                $"There are no option that equals '{option}' text in the '{placeholder}' autocomplete");
-                    }
-
+                        throw new Exception(
+                            $"There are no option that contains '{option}' text in the '{placeholder}' autocomplete");
                 }
                 else
-                    throw new Exception($"'{option}' was not found in the '{placeholder}' autocomplete");
+                {
+                    if (foundOptions.Any(x => x.Text.Equals(option)))
+                        foundOptions.First(x => x.Text.Equals(option)).Click();
+                    else
+                        throw new Exception(
+                            $"There are no option that equals '{option}' text in the '{placeholder}' autocomplete");
+                }
+
             }
+            else
+                throw new Exception($"'{option}' was not found in the '{placeholder}' autocomplete");
         }
 
         public int GetElementTopYCoordinate(IWebElement element)

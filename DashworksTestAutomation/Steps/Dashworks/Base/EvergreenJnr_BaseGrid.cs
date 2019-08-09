@@ -39,16 +39,24 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitForDataLoading();
-            var column = page.GetColumnContentByColumnName(columnName).ToList();
-            if (column.Any())
+            if (_driver.IsElementDisplayed(page.NoFoundMessage, WebDriverExtensions.WaitTime.Short))
             {
-                var columnContent = column.Select(x => x.Text).ToList();
-                Verify.IsFalse(columnContent.Contains(textContent), $"'{textContent}' is present in the '{columnName}' column");
+                //Message about no content in the table is displayed
+                return;
             }
             else
             {
-                //Column doesn't have any data. Everything was removed
-                return;
+                var column = page.GetColumnContentByColumnName(columnName).ToList();
+                if (column.Any())
+                {
+                    var columnContent = column.Select(x => x.Text).ToList();
+                    Verify.IsFalse(columnContent.Contains(textContent), $"'{textContent}' is present in the '{columnName}' column");
+                }
+                else
+                {
+                    //Column doesn't have any data. Everything was removed
+                    return;
+                }
             }
         }
 

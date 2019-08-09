@@ -97,11 +97,11 @@ Scenario: EvergreenJnr_UsersList_CancelCustomFieldCreation
 	And User click content from "Username" column
 	Then Details page for "VriezeGi (Ginette Vrieze)" item is displayed to the user
 	When User navigates to the "Custom Fields" sub-menu on the Details page
-	And User clicks the "CUSTOM FIELDS" Action button
+	And User clicks the "ADD CUSTOM FIELD" Action button
 	When User selects 'FlDAS16487_3' option from 'Custom Field' autocomplete
 	And User enters 'Somve_Value' text to 'Value' textbox
 	And User clicks Cancel button on Add Custom Field popup
-	Then "Custom Fields" tab is displayed on left menu on the Details page and contains '1' count of items
+	Then "Custom Fields" tab is displayed on left menu on the Details page and contains '0' count of items
 
 	#Remove Not_Ready for Orbit
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @CustomFields @DAS16487 @Cleanup @Not_Ready
