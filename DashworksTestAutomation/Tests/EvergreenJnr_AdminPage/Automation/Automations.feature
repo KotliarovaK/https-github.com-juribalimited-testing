@@ -290,6 +290,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToBottomOptionWor
 	| AM 150419 II  |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15431 @DAS15744 @DAS16764 @Not_Ready
+#Update after gold data was complete
 Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToPositionOptionWorksCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -475,6 +476,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15767 @DAS15423 @Not_Ready
 #Change value after gold data complete added
+#For Mailboxes Automations
 Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeListIsLoadedWithCorrectLists
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -535,8 +537,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextFor
 	When User clicks "RUN" button in the warning message on Admin page
 	When User selects "Automation Log" tab on the Project details page
 	When User enters "DAS15423_Automation" text in the Search field for "Automation" column
-	#Update after "LIST NOT FOUND" message fixed
-	#Then "LIST NOT FOUND" content is displayed for "Outcome" column
+	Then "LIST NOT FOUND" content is displayed for "Outcome" column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS16899 @DAS17071 @DAS17216 @DAS17216 @Not_Ready
 #Change value after gold data complete added
