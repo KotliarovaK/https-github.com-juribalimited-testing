@@ -478,6 +478,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filtersNames.UpdateButton.Click();
         }
 
+        [When(@"User add ""(.*)"" filter where type is ""(.*)"" with selected Expanded Checkboxes and following Association:")]
+        public void WhenUserAddFilterWhereTypeIsWithSelectedExpandedCheckboxesAndFollowingAssociation(string filterName,
+            string operatorValue, Table table)
+        {
+            var filtersNames = _driver.NowAt<FiltersElement>();
+            filtersNames.AddFilter(filterName);
+            var filter = new ExpandedCheckboxesAssociationFilter(_driver, operatorValue, true, table);
+            filter.Do();
+            filtersNames.UpdateButton.Click();
+        }
+
         [When(@"User add ""(.*)"" filter where type is ""(.*)"" with following Value and Association:")]
         public void WhenUserAddFilterWhereTypeIsWithFollowingValueAndAssociation(string filterName,
             string operatorValue, Table table)
@@ -1283,6 +1294,19 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var actualList = page.SelectedFiltersSubcategoryList.Select(value => value.Text).ToList();
             Utils.Verify.AreEqual(expectedList, actualList, "Subcategory values are different");
+        }
+
+        [Then(@"the following Filters subcategories are presented for open category:")]
+        public void ThenTheFollowingFiltersSubcategoriesArePresentedForOpenCategory(Table table)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = page.SelectedFiltersSubcategoryList.Select(value => value.Text).ToList();
+
+            foreach (var item in expectedList)
+            {
+                Utils.Verify.That(actualList, Does.Contain(item), $"{item} value is missing");
+            }
         }
 
         [Then(@"the following Column subcategories are displayed for open category:")]

@@ -1816,3 +1816,97 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUserPostalCodeOptionsDisplaying
 	| Does not end with   |
 	| Empty               |
 	| Not empty           |
+
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS15194
+Scenario: EvergreenJnr_ApplicationsList_CheckThatDeviceOwnerFilterCategoryHasCorrectSubcategories
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	And User clicks Add New button on the Filter panel
+	And User enters "Device Owner" text in Search field at Filters Panel
+	Then the following Filters subcategories are presented for open category:
+	| Subcategories                |
+	| Device Owner (Saved List)    |
+	| Device Owner Building        |
+	| Device Owner City            |
+	| Device Owner Compliance      |
+	| Device Owner Country         |
+	| Device Owner Description     |
+	| Device Owner Display Name    |
+	| Device Owner Domain          |
+	| Device Owner Email Address   |
+	| Device Owner Enabled         |
+	| Device Owner Floor           |
+	| Device Owner Given Name      |
+	| Device Owner GUID            |
+	| Device Owner Home Directory  |
+	| Device Owner Home Drive      |
+	| Device Owner Last Logon Date |
+	| Device Owner Key             |
+	When User clears search textbox in Filters panel
+	And User enters "Device Owner R" text in Search field at Filters Panel
+	Then the following Filters subcategories are presented for open category:
+	| Subcategories                |
+	| Device Owner Region          |
+	When User clears search textbox in Filters panel
+	And User enters "Device Owner S" text in Search field at Filters Panel
+	Then the following Filters subcategories are presented for open category:
+	| Subcategories                |
+	| Device Owner SID             |
+	| Device Owner Surname         |
+	When User clears search textbox in Filters panel
+	And User enters "Device Owner U" text in Search field at Filters Panel
+	Then the following Filters subcategories are presented for open category:
+	| Subcategories                |
+	| Device Owner Username        |
+	When User clears search textbox in Filters panel
+	And User enters "Device Owner D" text in Search field at Filters Panel
+	Then the following Filters subcategories are presented for open category:
+	| Subcategories                |
+	| Device Owner Department      |
+
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS15194
+Scenario: EvergreenJnr_ApplicationsList_CheckThatDeviceOwnerCustomFieldsFilterCategoryHasCorrectSubcategories
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	And User clicks Add New button on the Filter panel
+	And User enters "Device Owner General information field" text in Search field at Filters Panel
+	Then the following Filters subcategories are presented for open category:
+	| Subcategories                            |
+	| Device Owner General information field 1 |
+	| Device Owner General information field 2 |
+	| Device Owner General information field 3 |
+	| Device Owner General information field 4 |
+	| Device Owner General information field 5 |
+	When User clears search textbox in Filters panel
+	And User enters "Device Owner Telephone" text in Search field at Filters Panel
+	Then the following Filters subcategories are presented for open category:
+	| Subcategories          |
+	| Device Owner Telephone |
+	When User clears search textbox in Filters panel
+	And User enters "Device Owner User Field" text in Search field at Filters Panel
+	Then the following Filters subcategories are presented for open category:
+	| Subcategories             |
+	| Device Owner User Field 1 |
+	| Device Owner User Field 2 |
+	When User clears search textbox in Filters panel
+	And User enters "Device Owner Zip Code" text in Search field at Filters Panel
+	Then the following Filters subcategories are presented for open category:
+	| Subcategories         |
+	| Device Owner Zip Code |
+
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS15194 @DAS16485
+Scenario: EvergreenJnr_ApplicationsList_CheckThatDeviceOwnerCustomItemHasCorrectFilterOptions
+	When User clicks "Applications" on the left-hand menu
+	And User clicks the Filters button
+	And user select "Device Owner Zip Code" filter
+	And User select "Does not equal" Operator value
+	And User select "Contains" Operator value
+	And User select "Does not contain" Operator value
+	And User select "egins with" Operator value
+	And User select "Does not begin with" Operator value
+	And User select "Ends with" Operator value
+	And User select "Does not end with" Operator value
+	And User select "Empty" Operator value
+	And User select "Not empty" Operator value

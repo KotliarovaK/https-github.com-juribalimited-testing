@@ -106,3 +106,25 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatArchivedEmptyNameCantBeClicked
 	Then "Devices" list should be displayed to the user
 	When User clicks content from first row of Device Key column
 	Then "Devices" list should be displayed to the user
+
+@Evergreen@EvergreenJnr_DashboardsPage @Widgets @DAS17651 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatArchivedItemStillRemainsInStaticList
+	When User clicks "Devices" on the left-hand menu
+	And User sets includes archived devices in "true"
+	And User clicks the Actions button
+	And User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| Empty            |
+	And User perform search by "00I0COBFWHOF27"
+	And User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00I0COBFWHOF27   |
+	And User selects "Create static list" in the Actions dropdown
+	And User create static list with "StaticList17651" name
+	Then "StaticList17651" list is displayed to user
+	And "2" rows are displayed in the agGrid
+	When User navigates to the "1803 Rollout" list
+	Then "1803 Rollout" list is displayed to user
+	When User navigates to the "StaticList17651" list
+	Then "StaticList17651" list is displayed to user
+	And "2" rows are displayed in the agGrid

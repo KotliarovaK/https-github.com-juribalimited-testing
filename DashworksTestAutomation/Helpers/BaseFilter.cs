@@ -510,6 +510,43 @@ namespace DashworksTestAutomation.Helpers
             selectboxes.Last().Click();
             foreach (var row in table.Rows)
             {
+                if(string.IsNullOrEmpty(row["Association"]))
+                    break;
+                _driver.FindElement(By.XPath($".//li//span[text()='{row["Association"]}']")).Click();
+            }
+        }
+    }
+
+    public class ExpandedCheckboxesAssociationFilter : BaseFilter
+    {
+        protected string CheckboxSelectorName =
+            ".//span[text()='{0}']/ancestor::div[1]//div[contains(@class, 'mat-checkbox-inner-container')]";
+
+        public ExpandedCheckboxesAssociationFilter(RemoteWebDriver driver, string operatorValue, bool acceptCheckbox, Table optionsTable) :
+            base(driver, operatorValue, acceptCheckbox)
+        {
+            table = optionsTable;
+        }
+
+        protected Table table { get; set; }
+
+        public override void Do()
+        {
+            SelectOperator();
+            _driver.WaitForDataLoading();
+            foreach (var row in table.Rows)
+                _driver.FindElement(
+                    By.XPath(string.Format(CheckboxSelectorName, row["SelectedCheckboxes"]))).Click();
+            SelectOperator();
+            _driver.WaitForDataLoading();
+            var selectboxes = _driver.FindElements(By.XPath(".//div[@id='context']//input[@placeholder='Search']"));
+            selectboxes.First().Click();
+
+            selectboxes.Last().Click();
+            foreach (var row in table.Rows)
+            {
+                if (string.IsNullOrEmpty(row["Association"]))
+                    break;
                 _driver.FindElement(By.XPath($".//li//span[text()='{row["Association"]}']")).Click();
             }
         }
