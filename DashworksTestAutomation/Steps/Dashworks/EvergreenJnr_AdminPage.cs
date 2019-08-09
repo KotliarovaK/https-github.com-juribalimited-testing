@@ -2180,6 +2180,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.BodyContainer.Click();
         }
 
+        //TODO should be changed to generic method. Remove Admin page
+        [Then(@"No options are selected in the Group By menu")]
+        public void NoOptionsAreSelectedInTheGroupByMenu()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            page.GroupByButton.Click();
+            var selectedCount = page.GetAllOptionsInGroupByFilter().Select(x => x.Value).Count(x => x.Equals(true));
+            Verify.AreEqual(0, selectedCount, "Some options are selected in the Group By menu");
+            page.BodyContainer.Click();
+        }
+
         [When(@"User clicks Refresh button on the Admin page")]
         public void WhenUserClicksRefreshButtonOnTheAdminPage()
         {

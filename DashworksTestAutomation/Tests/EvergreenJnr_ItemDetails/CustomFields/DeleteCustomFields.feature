@@ -36,6 +36,7 @@ Scenario: EvergreenJnr_DevicesList_CheckCustomFieldDeleting
 	When User clicks Delete button in the warning message
 	Then Success message with "Custom field value deleted successfully" text is displayed on Action panel
 	And "No custom fields found for this device" message is displayed on the Details Page
+	And "ValueDAS16489_1" content is not displayed in the "Value" column
 	And There are no errors in the browser console
 
 #Remove Not_Ready for Orbit
@@ -60,10 +61,12 @@ Scenario: EvergreenJnr_MailboxesList_DeleteGroupedCustomFields
 	When User navigates to the "Custom Fields" sub-menu on the Details page
 	When User clicks Group By button on the Admin page and selects "Value" value
 	Then Cog menu is not displayed on the Admin page
-	When User expands 'FlDAS17695_1' row in the groped grid
+	When User expands 'ValueDAS17695_1A' row in the groped grid
 	And User clicks "Delete" option in Cog-menu for "FlDAS17695_1" item on Admin page
-	Then Warning message with "The selected Custom Field will be deleted, do you want to proceed?" text is displayed on the Project Details Page
+	Then Warning message with "The selected custom field will be deleted, do you want to proceed?" text is displayed on the Project Details Page
 	When User clicks Delete button in the warning message
 	Then Success message with "Custom field value deleted successfully" text is displayed on Action panel
 	And Grid is not grouped
+	And No options are selected in the Group By menu
+	And "ValueDAS17695_1A" content is not displayed in the "Value" column
 	And "ValueDAS17695_1B" content is displayed in the "Value" column

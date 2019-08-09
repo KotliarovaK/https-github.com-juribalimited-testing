@@ -102,7 +102,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'actions-right-button')]/button[@aria-label='ResetFilters']")]
         public IWebElement ResetFiltersButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'actions-right-button')]/button[@aria-label='GroupBy']")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'actions-right-button')]//button[@aria-label='GroupBy']")]
         public IWebElement GroupByButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'actions-right-button')]/button[@aria-label='Export']")]
@@ -754,6 +754,21 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElement(selector);
         }
 
+        public List<KeyValuePair<string, bool>> GetAllOptionsInGroupByFilter()
+        {
+            var selector = By.XPath($".//div[@class='mat-menu-content']/mat-checkbox");
+            Driver.WaitForElementToBeDisplayed(selector);
+            var allOptions = Driver.FindElements(selector);
+            List<KeyValuePair<string, bool>> result = new List<KeyValuePair<string, bool>>();
+            foreach (IWebElement option in allOptions)
+            {
+                var text = option.FindElement(By.XPath(".//span[@class='mat-checkbox-label']")).Text.TrimStart(' ');
+                var selected = option.FindElement(By.XPath(".//input[@type='checkbox']")).Selected;
+                result.Add(new KeyValuePair<string, bool>(text, selected));
+            }
+            return result;
+        }
+
         public bool IsGridGrouped()
         {
             return Driver.IsElementDisplayed(By.XPath(".//div[@role='row'][@row-index]//span[@class='ag-group-value']"),
@@ -781,7 +796,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             try
             {
                 var row = GetGroupedRowByContent(groupedValue);
-                var expand = row.FindElement(By.XPath("./span[contains(@class,'expanded')]"));
+                var expand = row.FindElement(By.XPath("./span[contains(@class,'contracted')]/span"));
                 expand.Click();
             }
             catch (NoSuchElementException e)
@@ -795,7 +810,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             try
             {
                 var row = GetGroupedRowByContent(groupedValue);
-                var expand = row.FindElement(By.XPath("./span[contains(@class,'contracted')]"));
+                var expand = row.FindElement(By.XPath("./span[contains(@class,'expanded')]/span"));
                 expand.Click();
             }
             catch (NoSuchElementException e)

@@ -34,6 +34,24 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.Contains(textContent, columnContent, $"'{textContent}' is not present in the '{columnName}' column");
         }
 
+        [Then(@"""(.*)"" content is not displayed in the ""(.*)"" column")]
+        public void ThenContentIsNotDisplayedInTheColumn(string textContent, string columnName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForDataLoading();
+            var column = page.GetColumnContentByColumnName(columnName).ToList();
+            if (column.Any())
+            {
+                var columnContent = column.Select(x => x.Text).ToList();
+                Verify.IsFalse(columnContent.Contains(textContent), $"'{textContent}' is present in the '{columnName}' column");
+            }
+            else
+            {
+                //Column doesn't have any data. Everything was removed
+                return;
+            }
+        }
+
         [Then(@"Content is displayed in the ""(.*)"" column")]
         public void ThenContentIsDisplayedInTheColumn(string columnName, Table table)
         {
@@ -42,7 +60,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var column = page.GetColumnContentByColumnName(columnName).ToList();
             var columnContent = column.Select(x => x.Text).ToList();
             var expectedList = table.Rows.Select(x => x["Content"]).ToList();
-            Verify.IsTrue(columnContent.SequenceEqual(expectedList), 
+            Verify.IsTrue(columnContent.SequenceEqual(expectedList),
                 $"Expected content is not present in the '{columnName}' column");
         }
 
