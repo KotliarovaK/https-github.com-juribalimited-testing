@@ -101,29 +101,29 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-label='Value']")]
         public IWebElement ValueDropdown { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//mat-select[contains(@class, 'mat-select')]//span[text()='Update Value']")]
+        [FindsBy(How = How.XPath, Using = ".//mat-select[contains(@class, 'mat-select')]//span[text()='Update Value']")]
         public IWebElement UpdateValueDropdown { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//mat-select[contains(@class, 'mat-select')]//span[text()='Update Date']")]
+        [FindsBy(How = How.XPath, Using = ".//mat-select[contains(@class, 'mat-select')]//span[text()='Update Date']")]
         public IWebElement UpdateDateDropdown { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//mat-select[contains(@class, 'mat-select')]//span[text()='Update Owner']")]
+        [FindsBy(How = How.XPath, Using = ".//mat-select[contains(@class, 'mat-select')]//span[text()='Update Owner']")]
         public IWebElement UpdateOwnerDropdown { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//input[@aria-label='Team']")]
+        [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Team']")]
         public IWebElement TeamField { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//input[@aria-label='Owner']")]
+        [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Owner']")]
         public IWebElement OwnerField { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[@aria-label='Open calendar']")]
         public IWebElement DatePickerIcon { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//input[@aria-label='Date']")]
+        [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Date']")]
         public IWebElement DateField { get; set; }
 
         //TODO should be replaced by AutocompleteSelect
-        [FindsBy(How = How.XPath, Using = "//input[@placeholder='Path']")]
+        [FindsBy(How = How.XPath, Using = ".//input[@placeholder='Path']")]
         public IWebElement PathDropdown { get; set; }
 
         #endregion
