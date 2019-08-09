@@ -73,9 +73,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails.CustomFields
         {
 #line 4
 #line 5
- testRunner.Given("User is logged in to the Evergreen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("User is logged in to the Projects", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 6
- testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 7
+ testRunner.And("User select \"Custom Fields\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
         }
         
@@ -126,17 +128,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails.CustomFields
                         "DAS16489",
                         "Cleanup",
                         "Not_Ready"});
-#line 10
+#line 11
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 11
- testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 12
- testRunner.And("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 13
- testRunner.And("User select \"Custom Fields\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "FieldName",
@@ -150,9 +146,9 @@ this.FeatureBackground();
                         "true",
                         "true",
                         "true"});
-#line 14
- testRunner.And("User creates new Custom Field", ((string)(null)), table1, "And ");
-#line 17
+#line 12
+ testRunner.When("User creates new Custom Field", ((string)(null)), table1, "When ");
+#line 15
  testRunner.And("User navigate to Evergreen URL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -165,50 +161,50 @@ this.FeatureBackground();
                         "6735",
                         "CfDAS16489_1",
                         "ValueDAS16489_1"});
-#line 18
+#line 16
  testRunner.And("User creates Custom Field via API", ((string)(null)), table2, "And ");
-#line 21
+#line 19
  testRunner.And("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 22
+#line 20
  testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 23
+#line 21
  testRunner.When("User perform search by \"DU37EV2NCNFI4H\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 24
+#line 22
  testRunner.And("User click content from \"Hostname\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 25
+#line 23
  testRunner.Then("Details page for \"DU37EV2NCNFI4H\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 26
+#line 24
  testRunner.When("User navigates to the \"Custom Fields\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 28
+#line 26
  testRunner.And("User clicks \"Delete\" option in Cog-menu for \"FlDAS16489_1\" item on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 29
+#line 27
  testRunner.Then("Warning message with \"The selected custom field will be deleted, do you want to p" +
                     "roceed?\" text is displayed on the Project Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 30
+#line 28
  testRunner.When("User clicks Cancel button in the warning message on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 31
+#line 29
  testRunner.Then("Warning message is not displayed on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 32
+#line 30
  testRunner.And("\"ValueDAS16489_1\" content is displayed in the \"Value\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 34
+#line 32
  testRunner.When("User clicks \"Delete\" option in Cog-menu for \"FlDAS16489_1\" item on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 35
+#line 33
  testRunner.Then("Warning message with \"The selected custom field will be deleted, do you want to p" +
                     "roceed?\" text is displayed on the Project Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 36
+#line 34
  testRunner.When("User clicks Delete button in the warning message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 37
+#line 35
  testRunner.Then("Success message with \"Custom field value deleted successfully\" text is displayed " +
                     "on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 38
+#line 36
  testRunner.And("\"No custom fields found for this device\" message is displayed on the Details Page" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 39
+#line 37
  testRunner.And("\"ValueDAS16489_1\" content is not displayed in the \"Value\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 40
+#line 38
  testRunner.And("\"Custom Fields\" tab is displayed on left menu on the Details page and contains \'0" +
                     "\' count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 41
+#line 39
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -262,17 +258,11 @@ this.FeatureBackground();
                         "DAS17695",
                         "Cleanup",
                         "Not_Ready"});
-#line 45
+#line 43
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 46
- testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 47
- testRunner.And("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 48
- testRunner.And("User select \"Custom Fields\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "FieldName",
@@ -286,9 +276,9 @@ this.FeatureBackground();
                         "true",
                         "true",
                         "true"});
-#line 49
- testRunner.And("User creates new Custom Field", ((string)(null)), table3, "And ");
-#line 52
+#line 44
+ testRunner.When("User creates new Custom Field", ((string)(null)), table3, "When ");
+#line 47
  testRunner.And("User navigate to Evergreen URL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -306,46 +296,46 @@ this.FeatureBackground();
                         "48731",
                         "CfDAS17695_1",
                         "ValueDAS17695_1B"});
-#line 53
+#line 48
  testRunner.And("User creates Custom Field via API", ((string)(null)), table4, "And ");
-#line 57
+#line 52
  testRunner.And("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 58
+#line 53
  testRunner.Then("\"Mailboxes\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 59
+#line 54
  testRunner.When("User perform search by \"gregoja@bclabs.local\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 60
+#line 55
  testRunner.And("User click content from \"Email Address\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 61
+#line 56
  testRunner.Then("Details page for \"gregoja@bclabs.local\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 62
+#line 57
  testRunner.When("User navigates to the \"Custom Fields\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 63
+#line 58
  testRunner.When("User clicks Group By button on the Admin page and selects \"Value\" value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 64
+#line 59
  testRunner.Then("Cog menu is not displayed on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 65
+#line 60
  testRunner.When("User expands \'ValueDAS17695_1A\' row in the groped grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 66
+#line 61
  testRunner.And("User clicks \"Delete\" option in Cog-menu for \"FlDAS17695_1\" item on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 67
+#line 62
  testRunner.Then("Warning message with \"The selected custom field will be deleted, do you want to p" +
                     "roceed?\" text is displayed on the Project Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 68
+#line 63
  testRunner.When("User clicks Delete button in the warning message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 69
+#line 64
  testRunner.Then("Success message with \"Custom field value deleted successfully\" text is displayed " +
                     "on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 70
+#line 65
  testRunner.And("Grid is not grouped", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 71
+#line 66
  testRunner.And("No options are selected in the Group By menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 72
+#line 67
  testRunner.And("\"Custom Fields\" tab is displayed on left menu on the Details page and contains \'1" +
                     "\' count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 73
+#line 68
  testRunner.And("\"ValueDAS17695_1A\" content is not displayed in the \"Value\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 74
+#line 69
  testRunner.And("\"ValueDAS17695_1B\" content is displayed in the \"Value\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();

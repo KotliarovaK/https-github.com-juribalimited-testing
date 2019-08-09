@@ -2,16 +2,14 @@
 	Delete Custom fields
 
 Background: Pre-Conditions
-	Given User is logged in to the Evergreen
-	Then Evergreen Dashboards page should be displayed to the user
+	Given User is logged in to the Projects
+	When User navigate to Manage link
+	And User select "Custom Fields" option in Management Console
 
 #Remove Not_Ready for Orbit
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @CustomFields @DAS16489 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_DevicesList_CheckCustomFieldDeleting
-	When User clicks "Projects" on the left-hand menu
-	And User navigate to Manage link
-	And User select "Custom Fields" option in Management Console
-	And User creates new Custom Field
+	When User creates new Custom Field
 	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | Computer |
 	| CfDAS16489_1 | FlDAS16489_1 | true                | true    | true     |
 	And User navigate to Evergreen URL
@@ -43,10 +41,7 @@ Scenario: EvergreenJnr_DevicesList_CheckCustomFieldDeleting
 #Remove Not_Ready for Orbit
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @CustomFields @DAS17695 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_MailboxesList_DeleteGroupedCustomFields
-	When User clicks "Projects" on the left-hand menu
-	And User navigate to Manage link
-	And User select "Custom Fields" option in Management Console
-	And User creates new Custom Field
+	When User creates new Custom Field
 	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | Mailbox |
 	| CfDAS17695_1 | FlDAS17695_1 | true                | true    | true    |
 	And User navigate to Evergreen URL

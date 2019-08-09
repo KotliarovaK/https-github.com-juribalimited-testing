@@ -95,9 +95,9 @@ namespace DashworksTestAutomation.Utils
             var result = constraint.ApplyTo(actual);
             if (!result.IsSuccess)
             {
-                var exceptionMessage = $"{message}\r\nExpected: {MsgUtils.FormatValue(actual)}\r\nBut was: {result.Description}";
-                Logger.Write($"Expected {MsgUtils.FormatValue(actual)}");
-                Logger.Write($"But was: {result.Description}");
+                var exceptionMessage = $"{message}\r\nExpected: {result.Description}\r\nBut was: {MsgUtils.FormatValue(actual)}";
+                Logger.Write($"Expected {result.Description}");
+                Logger.Write($"But was: {MsgUtils.FormatValue(actual)}");
                 Logger.Write(message);
                 throw new Exception(exceptionMessage);
             }

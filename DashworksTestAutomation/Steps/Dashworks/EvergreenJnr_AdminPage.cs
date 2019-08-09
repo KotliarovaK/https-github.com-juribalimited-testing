@@ -2178,6 +2178,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.GroupByButton.Click();
             _driver.MouseHover(page.GetValueInGroupByFilterOnAdminPAge(value));
             page.GetValueInGroupByFilterOnAdminPAge(value).Click();
+            //Wait for option to be applied
+            Thread.Sleep(400);
             page.BodyContainer.Click();
         }
 

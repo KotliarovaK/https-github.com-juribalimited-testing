@@ -2,16 +2,14 @@
 	Edit clickable value field
 
 Background: Pre-Conditions
-	Given User is logged in to the Evergreen
-	Then Evergreen Dashboards page should be displayed to the user
+	Given User is logged in to the Projects
+	When User navigate to Manage link
+	And User select "Custom Fields" option in Management Console
 
 	#Remove Not_Ready for Orbit
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @CustomFields @DAS15473 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_DevicesList_CheckEditableFieldDisplayAndToolTips
-	When User clicks "Projects" on the left-hand menu
-	And User navigate to Manage link
-	And User select "Custom Fields" option in Management Console
-	And User creates new Custom Field
+	When User creates new Custom Field
 	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | Computer |
 	| CfDAS15473_1 | FlDAS15473_1 | true                | true    | true     |
 	And User navigate to Evergreen URL
@@ -30,10 +28,7 @@ Scenario: EvergreenJnr_DevicesList_CheckEditableFieldDisplayAndToolTips
 	#Remove Not_Ready for Orbit
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @CustomFields @DAS15473 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_ApplicationsList_CheckDataIsUpdatedInClickableValue
-	When User clicks "Projects" on the left-hand menu
-	And User navigate to Manage link
-	And User select "Custom Fields" option in Management Console
-	And User creates new Custom Field
+	When User creates new Custom Field
 	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | Application |
 	| CfDAS15473_2 | FlDAS15473_2 | true                | true    | true        |
 	And User navigate to Evergreen URL
@@ -59,10 +54,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckDataIsUpdatedInClickableValue
 	#Remove Not_Ready for Orbit
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @CustomFields @DAS17584 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_ApplicationsList_CheckDataIsUpdatedUsingCogMenu
-	When User clicks "Projects" on the left-hand menu
-	And User navigate to Manage link
-	And User select "Custom Fields" option in Management Console
-	And User creates new Custom Field
+	When User creates new Custom Field
 	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | Application |
 	| CfDAS17584_1 | FlDAS17584_1 | true                | true    | true        |
 	And User navigate to Evergreen URL
@@ -89,10 +81,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckDataIsUpdatedUsingCogMenu
 	#Remove Not_Ready for Orbit
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @CustomFields @DAS15473 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_MailboxesList_CheckClickableValueSavedOnFocusLost
-	When User clicks "Projects" on the left-hand menu
-	And User navigate to Manage link
-	And User select "Custom Fields" option in Management Console
-	And User creates new Custom Field
+	When User creates new Custom Field
 	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | Mailbox |
 	| CfDAS15473_3 | FlDAS15473_3 | true                | true    | true    |
 	And User navigate to Evergreen URL

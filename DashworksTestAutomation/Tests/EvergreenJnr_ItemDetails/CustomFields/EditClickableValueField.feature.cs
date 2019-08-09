@@ -73,9 +73,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails.CustomFields
         {
 #line 4
 #line 5
- testRunner.Given("User is logged in to the Evergreen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("User is logged in to the Projects", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 6
- testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 7
+ testRunner.And("User select \"Custom Fields\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
         }
         
@@ -126,17 +128,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails.CustomFields
                         "DAS15473",
                         "Cleanup",
                         "Not_Ready"});
-#line 10
+#line 11
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 11
- testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 12
- testRunner.And("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 13
- testRunner.And("User select \"Custom Fields\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "FieldName",
@@ -150,9 +146,9 @@ this.FeatureBackground();
                         "true",
                         "true",
                         "true"});
-#line 14
- testRunner.And("User creates new Custom Field", ((string)(null)), table1, "And ");
-#line 17
+#line 12
+ testRunner.When("User creates new Custom Field", ((string)(null)), table1, "When ");
+#line 15
  testRunner.And("User navigate to Evergreen URL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -165,23 +161,23 @@ this.FeatureBackground();
                         "6648",
                         "CfDAS15473_1",
                         "ValueDAS15473_#$‡!_1"});
-#line 18
+#line 16
  testRunner.And("User creates Custom Field via API", ((string)(null)), table2, "And ");
-#line 21
+#line 19
  testRunner.And("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 22
+#line 20
  testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 23
+#line 21
  testRunner.When("User perform search by \"00YWR8TJU4ZF8V\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 24
+#line 22
  testRunner.And("User click content from \"Hostname\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 25
+#line 23
  testRunner.Then("Details page for \"00YWR8TJU4ZF8V\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 26
+#line 24
  testRunner.When("User navigates to the \"Custom Fields\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 27
+#line 25
  testRunner.When("User doubleclicks on \'ValueDAS15473_#$‡!_1\' cell from \'Value\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 28
+#line 26
  testRunner.Then("Save and Cancel buttons with tooltips are displayed for clickable value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -235,17 +231,11 @@ this.FeatureBackground();
                         "DAS15473",
                         "Cleanup",
                         "Not_Ready"});
-#line 32
+#line 30
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 33
- testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 34
- testRunner.And("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 35
- testRunner.And("User select \"Custom Fields\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "FieldName",
@@ -259,9 +249,9 @@ this.FeatureBackground();
                         "true",
                         "true",
                         "true"});
-#line 36
- testRunner.And("User creates new Custom Field", ((string)(null)), table3, "And ");
-#line 39
+#line 31
+ testRunner.When("User creates new Custom Field", ((string)(null)), table3, "When ");
+#line 34
  testRunner.And("User navigate to Evergreen URL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -274,34 +264,34 @@ this.FeatureBackground();
                         "507",
                         "CfDAS15473_2",
                         "ValueDAS15473_2"});
-#line 40
+#line 35
  testRunner.And("User creates Custom Field via API", ((string)(null)), table4, "And ");
-#line 43
+#line 38
  testRunner.And("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 44
+#line 39
  testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 45
+#line 40
  testRunner.When("User perform search by \"ACDSee 8\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 46
+#line 41
  testRunner.And("User click content from \"Application\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 47
+#line 42
  testRunner.Then("Details page for \"ACDSee 8\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 48
+#line 43
  testRunner.When("User navigates to the \"Custom Fields\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 50
+#line 45
  testRunner.When("User change text in \'ValueDAS15473_2\' cell from \'Value\' column to \'UPDATED_V\' tex" +
                     "t", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 46
+ testRunner.Then("Save and Cancel buttons are NOT displayed for clickable value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 47
+ testRunner.And("\"UPDATED_V\" content is displayed in the \"Value\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 49
+ testRunner.When("User doubleclicks on \'UPDATED_V\' cell from \'Value\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 50
+ testRunner.And("User clicks Cancel button for clickable value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 51
  testRunner.Then("Save and Cancel buttons are NOT displayed for clickable value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 52
- testRunner.And("\"UPDATED_V\" content is displayed in the \"Value\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 54
- testRunner.When("User doubleclicks on \'UPDATED_V\' cell from \'Value\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 55
- testRunner.And("User clicks Cancel button for clickable value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 56
- testRunner.Then("Save and Cancel buttons are NOT displayed for clickable value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 57
  testRunner.And("\"UPDATED_V\" content is displayed in the \"Value\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -355,17 +345,11 @@ this.FeatureBackground();
                         "DAS17584",
                         "Cleanup",
                         "Not_Ready"});
-#line 61
+#line 56
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 62
- testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 63
- testRunner.And("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 64
- testRunner.And("User select \"Custom Fields\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "FieldName",
@@ -379,9 +363,9 @@ this.FeatureBackground();
                         "true",
                         "true",
                         "true"});
-#line 65
- testRunner.And("User creates new Custom Field", ((string)(null)), table5, "And ");
-#line 68
+#line 57
+ testRunner.When("User creates new Custom Field", ((string)(null)), table5, "When ");
+#line 60
  testRunner.And("User navigate to Evergreen URL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -394,35 +378,35 @@ this.FeatureBackground();
                         "750",
                         "CfDAS17584_1",
                         "Value17584_1"});
-#line 69
+#line 61
  testRunner.And("User creates Custom Field via API", ((string)(null)), table6, "And ");
-#line 72
+#line 64
  testRunner.And("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 73
+#line 65
  testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 74
+#line 66
  testRunner.When("User perform search by \"PCFriendly\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 75
+#line 67
  testRunner.And("User click content from \"Application\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 76
+#line 68
  testRunner.Then("Details page for \"PCFriendly\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 77
+#line 69
  testRunner.When("User navigates to the \"Custom Fields\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 79
+#line 71
  testRunner.When("User clicks \"Edit\" option in Cog-menu for \"FlDAS17584_1\" item on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 80
+#line 72
  testRunner.And("User save \'UPDATED_UPD\' text in clickable value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 81
+#line 73
  testRunner.Then("Save and Cancel buttons are NOT displayed for clickable value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 82
+#line 74
  testRunner.And("\"UPDATED_UPD\" content is displayed in the \"Value\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 84
+#line 76
  testRunner.When("User clicks \"Edit\" option in Cog-menu for \"FlDAS17584_1\" item on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 85
+#line 77
  testRunner.And("User clicks Cancel button for clickable value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 86
+#line 78
  testRunner.Then("Save and Cancel buttons are NOT displayed for clickable value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 87
+#line 79
  testRunner.And("\"UPDATED_UPD\" content is displayed in the \"Value\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -476,17 +460,11 @@ this.FeatureBackground();
                         "DAS15473",
                         "Cleanup",
                         "Not_Ready"});
-#line 91
+#line 83
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 92
- testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 93
- testRunner.And("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 94
- testRunner.And("User select \"Custom Fields\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "FieldName",
@@ -500,9 +478,9 @@ this.FeatureBackground();
                         "true",
                         "true",
                         "true"});
-#line 95
- testRunner.And("User creates new Custom Field", ((string)(null)), table7, "And ");
-#line 98
+#line 84
+ testRunner.When("User creates new Custom Field", ((string)(null)), table7, "When ");
+#line 87
  testRunner.And("User navigate to Evergreen URL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
@@ -515,29 +493,29 @@ this.FeatureBackground();
                         "46384",
                         "CfDAS15473_3",
                         "ValueDAS15473_3"});
-#line 99
+#line 88
  testRunner.And("User creates Custom Field via API", ((string)(null)), table8, "And ");
-#line 102
+#line 91
  testRunner.And("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 103
+#line 92
  testRunner.Then("\"Mailboxes\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 104
+#line 93
  testRunner.When("User perform search by \"0072B088173449E3A93@bclabs.local\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 105
+#line 94
  testRunner.And("User click content from \"Email Address\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 106
+#line 95
  testRunner.Then("Details page for \"0072B088173449E3A93@bclabs.local\" item is displayed to the user" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 107
+#line 96
  testRunner.When("User navigates to the \"Custom Fields\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 109
+#line 98
  testRunner.When("User change text in \'ValueDAS15473_3\' cell from \'Value\' column to \'UPDATED_Focus_" +
                     "Lost\' text without saving", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 110
+#line 99
  testRunner.When("User clicks Body container", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 111
+#line 100
  testRunner.Then("Save and Cancel buttons are NOT displayed for clickable value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 112
+#line 101
  testRunner.And("\"UPDATED_Focus_Lost\" content is displayed in the \"Value\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();

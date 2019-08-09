@@ -2,16 +2,14 @@
 	Create New Custom Field
 
 Background: Pre-Conditions
-	Given User is logged in to the Evergreen
-	Then Evergreen Dashboards page should be displayed to the user
+	Given User is logged in to the Projects
+	When User navigate to Manage link
+	And User select "Custom Fields" option in Management Console
 
 	#Remove Not_Ready for Orbit
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @CustomFields @DAS16487 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_DevicesList_CheckAddCustomFieldPopupUiAndTooltips
-	When User clicks "Projects" on the left-hand menu
-	And User navigate to Manage link
-	And User select "Custom Fields" option in Management Console
-	And User creates new Custom Field
+	When User creates new Custom Field
 	| FieldName     | FieldLabel    | AllowExternalUpdate | Enabled | Computer |
 	| CfDAS16487_1a | FlDAS16487_1a | true                | true    | true     |
 	| CfDAS16487_1b | FlDAS16487_1b | true                | false   | true     |
@@ -37,10 +35,7 @@ Scenario: EvergreenJnr_DevicesList_CheckAddCustomFieldPopupUiAndTooltips
 	#Remove Not_Ready for Orbit
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @CustomFields @DAS16487 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_MailboxesList_CreateCustomFieldWithEmptyValue
-	When User clicks "Projects" on the left-hand menu
-	And User navigate to Manage link
-	And User select "Custom Fields" option in Management Console
-	And User creates new Custom Field
+	When User creates new Custom Field
 	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | Mailbox | Computer |
 	| CfDAS16487_1 | FlDAS16487_1 | true                | true    | true    | true     |
 	And User navigate to Evergreen URL
@@ -60,10 +55,7 @@ Scenario: EvergreenJnr_MailboxesList_CreateCustomFieldWithEmptyValue
 	#Remove Not_Ready for Orbit
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @CustomFields @DAS16487 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_UsersList_CreateCustomField
-	When User clicks "Projects" on the left-hand menu
-	And User navigate to Manage link
-	And User select "Custom Fields" option in Management Console
-	And User creates new Custom Field
+	When User creates new Custom Field
 	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | User |
 	| CfDAS16487_2 | FlDAS16487_2 | true                | true    | true |
 	And User navigate to Evergreen URL
@@ -84,10 +76,7 @@ Scenario: EvergreenJnr_UsersList_CreateCustomField
 	#Remove Not_Ready for Orbit
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @CustomFields @DAS16487 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_UsersList_CancelCustomFieldCreation
-	When User clicks "Projects" on the left-hand menu
-	And User navigate to Manage link
-	And User select "Custom Fields" option in Management Console
-	And User creates new Custom Field
+	When User creates new Custom Field
 	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | User |
 	| CfDAS16487_3 | FlDAS16487_3 | true                | true    | true |
 	And User navigate to Evergreen URL
@@ -106,10 +95,7 @@ Scenario: EvergreenJnr_UsersList_CancelCustomFieldCreation
 	#Remove Not_Ready for Orbit
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @CustomFields @DAS16487 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_UsersList_CreateCustomFieldWithSameData
-	When User clicks "Projects" on the left-hand menu
-	And User navigate to Manage link
-	And User select "Custom Fields" option in Management Console
-	And User creates new Custom Field
+	When User creates new Custom Field
 	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | User |
 	| CfDAS17614_4 | FlDAS17614_4 | true                | true    | true |
 	And User navigate to Evergreen URL
@@ -141,3 +127,39 @@ Scenario: EvergreenJnr_UsersList_CreateCustomFieldWithSameData
 	| Value_17614 |
 	And "Custom Fields" tab is displayed on left menu on the Details page and contains '2' count of items
 	#ADD VERIFICATION FOR ROW COUNTER!!!
+
+#Remove Not_Ready for Orbit
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @CustomFields @DAS17695 @Cleanup @Not_Ready
+Scenario: EvergreenJnr_UsersList_CheckGroupByResetAfterCreatingNewCustomField
+	When User creates new Custom Field
+	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | User |
+	| CfDAS17695_2 | FlDAS17695_2 | true                | true    | true |
+	And User navigate to Evergreen URL
+	And User creates Custom Field via API
+	| ObjectType | ObjectId | FieldName    | Value            |
+	| user       | 3532     | CfDAS17695_2 | ValueDAS17695_2A |
+	| user       | 3532     | CfDAS17695_2 | ValueDAS17695_2B |
+	And User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User perform search by "TAI6096068"
+	And User click content from "Username" column
+	And User navigates to the "Custom Fields" sub-menu on the Details page
+	And User clicks Group By button on the Admin page and selects "Custom Field" value
+	Then Cog menu is not displayed on the Admin page
+	When User creates Custom Field
+	| ObjectType | ObjectId | FieldName    | Value            |
+	| user       | 3532     | FlDAS17695_2 | ValueDAS17695_2C |
+	Then Success message with "New custom field value added successfully" text is displayed on Action panel
+	And "Custom Fields" tab is displayed on left menu on the Details page and contains '3' count of items
+	And Content is displayed in the "Custom Field" column
+	| Content      |
+	| FlDAS17695_2 |
+	| FlDAS17695_2 |
+	| FlDAS17695_2 |
+	And Content is displayed in the "Value" column
+	| Content          |
+	| ValueDAS17695_2A |
+	| ValueDAS17695_2B |
+	| ValueDAS17695_2C |
+	And Grid is not grouped
+	And No options are selected in the Group By menu
