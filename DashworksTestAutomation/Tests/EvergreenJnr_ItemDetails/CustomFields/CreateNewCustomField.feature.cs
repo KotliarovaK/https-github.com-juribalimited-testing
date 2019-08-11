@@ -86,7 +86,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails.CustomFields
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("CustomFields")]
         [NUnit.Framework.CategoryAttribute("DAS16487")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
@@ -123,7 +122,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails.CustomFields
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_ItemDetails",
-                        "ItemDetailsDisplay",
                         "CustomFields",
                         "DAS16487",
                         "Cleanup",
@@ -206,7 +204,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Mailboxes")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("CustomFields")]
         [NUnit.Framework.CategoryAttribute("DAS16487")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
@@ -243,7 +240,6 @@ this.FeatureBackground();
                         "Evergreen",
                         "Mailboxes",
                         "EvergreenJnr_ItemDetails",
-                        "ItemDetailsDisplay",
                         "CustomFields",
                         "DAS16487",
                         "Cleanup",
@@ -318,7 +314,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Users")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("CustomFields")]
         [NUnit.Framework.CategoryAttribute("DAS16487")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
@@ -355,7 +350,6 @@ this.FeatureBackground();
                         "Evergreen",
                         "Users",
                         "EvergreenJnr_ItemDetails",
-                        "ItemDetailsDisplay",
                         "CustomFields",
                         "DAS16487",
                         "Cleanup",
@@ -425,7 +419,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Users")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("CustomFields")]
         [NUnit.Framework.CategoryAttribute("DAS16487")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
@@ -462,7 +455,6 @@ this.FeatureBackground();
                         "Evergreen",
                         "Users",
                         "EvergreenJnr_ItemDetails",
-                        "ItemDetailsDisplay",
                         "CustomFields",
                         "DAS16487",
                         "Cleanup",
@@ -522,7 +514,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Users")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("CustomFields")]
         [NUnit.Framework.CategoryAttribute("DAS16487")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
@@ -559,7 +550,6 @@ this.FeatureBackground();
                         "Evergreen",
                         "Users",
                         "EvergreenJnr_ItemDetails",
-                        "ItemDetailsDisplay",
                         "CustomFields",
                         "DAS16487",
                         "Cleanup",
@@ -667,7 +657,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Users")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("CustomFields")]
         [NUnit.Framework.CategoryAttribute("DAS17695")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
@@ -704,7 +693,6 @@ this.FeatureBackground();
                         "Evergreen",
                         "Users",
                         "EvergreenJnr_ItemDetails",
-                        "ItemDetailsDisplay",
                         "CustomFields",
                         "DAS17695",
                         "Cleanup",
