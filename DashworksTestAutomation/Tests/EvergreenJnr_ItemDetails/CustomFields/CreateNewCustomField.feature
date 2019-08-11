@@ -36,8 +36,8 @@ Scenario: EvergreenJnr_DevicesList_CheckAddCustomFieldPopupUiAndTooltips
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @CustomFields @DAS16487 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_MailboxesList_CreateCustomFieldWithEmptyValue
 	When User creates new Custom Field
-	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | Mailbox | Computer |
-	| CfDAS16487_1 | FlDAS16487_1 | true                | true    | true    | true     |
+	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | Mailbox | Computer | User | Application |
+	| CfDAS16487_1 | FlDAS16487_1 | true                | true    | true    | true     | true | true        |
 	And User navigate to Evergreen URL
 	And User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user

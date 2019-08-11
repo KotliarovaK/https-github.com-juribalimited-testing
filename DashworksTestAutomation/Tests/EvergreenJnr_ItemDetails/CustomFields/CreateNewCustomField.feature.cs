@@ -260,10 +260,14 @@ this.FeatureBackground();
                         "AllowExternalUpdate",
                         "Enabled",
                         "Mailbox",
-                        "Computer"});
+                        "Computer",
+                        "User",
+                        "Application"});
             table3.AddRow(new string[] {
                         "CfDAS16487_1",
                         "FlDAS16487_1",
+                        "true",
+                        "true",
                         "true",
                         "true",
                         "true",
