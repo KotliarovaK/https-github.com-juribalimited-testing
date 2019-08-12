@@ -157,7 +157,7 @@ Scenario: EvergreenJnr_AdminPage_CheckBrokenListValidationWhenRunningAnAutomatio
 	When User selects "17011_List" in the Scope Automation dropdown
 	When User selects "Manual" in the "Run" dropdown
 	When User selects "Active" checkbox on the Automation Page
-	And User clicks the "CREATE" Action button
+	When User clicks the "CREATE" Action button
 	When User clicks "Automations" navigation link on the Admin page
 	When User clicks the "CREATE AUTOMATION" Action button
 	Then Create Automation page is displayed to the User
@@ -166,7 +166,7 @@ Scenario: EvergreenJnr_AdminPage_CheckBrokenListValidationWhenRunningAnAutomatio
 	When User selects "All Devices" in the Scope Automation dropdown
 	When User selects "Manual" in the "Run" dropdown
 	When User selects "Active" checkbox on the Automation Page
-	And User clicks the "CREATE" Action button
+	When User clicks the "CREATE" Action button
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User navigates to the "17011_List" list

@@ -16,10 +16,10 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations
     [Binding]
     public class CreateAutomationsViaApi : SpecFlowContext
     {
-        private readonly Automation _automation;
+        private readonly DTO.RuntimeVariables.Automations _automation;
         private readonly RestWebClient _client;
 
-        private CreateAutomationsViaApi(Automation automation, RestWebClient client)
+        private CreateAutomationsViaApi(DTO.RuntimeVariables.Automations automation, RestWebClient client)
         {
             _automation = automation;
             _client = client;

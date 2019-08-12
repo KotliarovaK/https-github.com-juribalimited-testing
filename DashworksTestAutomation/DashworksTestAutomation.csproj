@@ -160,7 +160,7 @@
     <Compile Include="DTO\Projects\TeamPropertiesDto.cs" />
     <Compile Include="DTO\RuntimeVariables\AddedObjects.cs" />
     <Compile Include="DTO\RuntimeVariables\Buckets\Buckets.cs" />
-    <Compile Include="DTO\RuntimeVariables\Automation.cs" />
+    <Compile Include="DTO\RuntimeVariables\Automations.cs" />
     <Compile Include="DTO\RuntimeVariables\Buckets\BucketUnassignedId.cs" />
     <Compile Include="DTO\RuntimeVariables\CapacityDetails.cs" />
     <Compile Include="DTO\RuntimeVariables\CustomFields.cs" />
@@ -332,6 +332,7 @@
     <Compile Include="Providers\BambooProvider.cs" />
     <Compile Include="Steps\API\EvergreenJnr_API_CheckAllFiltersAndColumns.cs" />
     <Compile Include="Steps\API\EvergreenJnr_API_DashboardPage.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\Automations\AfterScenario\RemoveAutomationAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\AutomationSteps.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\ActionSteps.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\CreateAutomationViaApi.cs" />

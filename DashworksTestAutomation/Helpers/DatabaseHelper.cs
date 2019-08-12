@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using DashworksTestAutomation.DTO;
+using DashworksTestAutomation.DTO.Evergreen.Admin.Automations;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Bucket;
 using DashworksTestAutomation.DTO.Evergreen.Admin.CapacityUnits;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Rings;
@@ -391,6 +392,22 @@ namespace DashworksTestAutomation.Helpers
         {
             DatabaseHelper.ExecuteQuery($"delete from [DesktopBI].[dbo].[CustomFields] where [CustomFieldID] = {id}");
         }
+
+        #endregion
+
+        #region Automation
+        //Use after check
+
+        //public static AutomationsDto GetAutomation(string automationName)
+        //{
+        //    return GetAutomationFromDb(automationName);
+        //}
+
+        //private static AutomationsDto GetAutomationFromDb(string automationName)
+        //{
+        //    var automationId =
+        //        DatabaseHelper.ExecuteReader($"select [AutomationId] from [PM].[dbo].[Automations] where [AutomationName] = '{automationName}'", 0).LastOrDefault();
+        //}
 
         #endregion
     }
