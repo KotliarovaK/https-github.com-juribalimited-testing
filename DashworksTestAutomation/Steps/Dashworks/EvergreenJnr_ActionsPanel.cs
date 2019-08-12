@@ -351,6 +351,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
+        [When(@"User types ""(.*)"" Value on Action panel")]
+        public void WhenUserTypesValueOnActionPanel(string value)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.ValueField.Clear();
+            action.ValueField.SendKeys(value);
+            action.BodyContainer.Click();
+            _driver.WaitForDataLoading();
+        }
+
         [Then(@"Tasks are displayed in alphabetical order on Action panel")]
         public void ThenTasksAreDisplayedInAlphabeticalOrderOnActionPanel()
         {

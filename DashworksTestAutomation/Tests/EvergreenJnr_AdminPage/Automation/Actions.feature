@@ -516,7 +516,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdatingTaskWhichImpactsReadinessOwnerAndD
 	When User clicks the "SAVE AND CREATE ANOTHER" Action button
 	Then Create Action page is displayed to the User
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17544 @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17544 @Cleanup @Not_Ready
 Scenario Outline: EvergreenJnr_AdminPage_CheckListOfProjectsOnTheCreateActionsPage
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -544,7 +544,7 @@ Examples:
 	| 17544_Automation_2 | All Applications | User Scheduled Test (Jo) | 1803 Rollout                       | Email Migration                    |
 	| 17544_Automation-3 | All Mailboxes    | Email Migration          | Mailbox Evergreen Capacity Project | USE ME FOR AUTOMATION(MAIL SCHDLD) |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17542 @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17542 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckThatUpdateTaskValueIsDisplayInAutomationsLog
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -568,3 +568,115 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateTaskValueIsDisplayInAutomationsL
 	And User selects "Started" Value on Action panel
 	When User clicks the "CREATE" Action button
 	Then "Workflow task" content is displayed for "Task or Field" column
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17602 @DAS17604 @Cleanup @Not_Ready
+Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateTextValue
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User creates new Automation via API
+	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
+	| 17602_Automation | 17602       | true   | false              | All Devices | Manual |
+	When User clicks "Automations" link on the Admin page
+	Then "Automations" page should be displayed to the user
+	When User enters "17602_Automation" text in the Search field for "Automation" column
+	When User clicks content from "Automation" column
+	When User clicks "Actions" tab
+	#Create Action
+	When User clicks the "CREATE ACTION" Action button
+	When User type "17602_Action" Name in the "Action Name" field on the Automation details page
+	When User selects "Update task value" in the "Action Type" dropdown
+	When User selects "Computer Scheduled Test (Jo)" in the Project dropdown
+	When User selects "One" in the "Stage" dropdown for Actions
+	When User selects "Text Computer" in the "Task" dropdown for Actions
+	And User selects "Update" Update Value on Action panel
+	When User types "To be updated" Value on Action panel
+	And User clicks the "CREATE" Action button
+	When User clicks "Automations" navigation link on the Admin page
+	When User enters "17602_Automation" text in the Search field for "Automation" column
+	When User clicks content from "Automation" column
+	When User clicks "Actions" tab
+	When User clicks content from "Action" column
+	When User selects "Update task value" in the "Action Type" dropdown
+	#Actions content check
+	Then "17602_Action" content is displayed in "Action Name" field
+	Then "Update task value" text value is displayed in the "Action Type" dropdown
+	Then "One" value is displayed in the "Stage" dropdown for Automation
+	Then "Text Computer" value is displayed in the "Task" dropdown for Automation
+	Then "Text Computer" value is displayed in the "Task" dropdown for Automation
+	Then "Update" value is displayed in the "Update Value" dropdown
+	Then "To be updated" text is displayed in "Value" field
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17602 @DAS17605 @Cleanup @Not_Ready
+Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForRemoveTextValue
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User creates new Automation via API
+	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
+	| 17605_Automation | 17605       | true   | false              | All Devices | Manual |
+	When User clicks "Automations" link on the Admin page
+	Then "Automations" page should be displayed to the user
+	When User enters "17605_Automation" text in the Search field for "Automation" column
+	When User clicks content from "Automation" column
+	When User clicks "Actions" tab
+	#Create Action with
+	When User clicks the "CREATE ACTION" Action button
+	When User type "17605_Action" Name in the "Action Name" field on the Automation details page
+	When User selects "Update task value" in the "Action Type" dropdown
+	When User selects "Computer Scheduled Test (Jo)" in the Project dropdown
+	When User selects "One" in the "Stage" dropdown for Actions
+	When User selects "Text Computer" in the "Task" dropdown for Actions
+	When User selects "Remove" in the "Update Value" dropdown for Actions
+	And User clicks the "CREATE" Action button
+	When User clicks "Automations" navigation link on the Admin page
+	When User enters "17605_Automation" text in the Search field for "Automation" column
+	When User clicks content from "Automation" column
+	When User clicks "Actions" tab
+	When User clicks content from "Action" column
+	When User selects "Update task value" in the "Action Type" dropdown
+	#Actions content check
+	Then "17605_Action" content is displayed in "Action Name" field
+	Then "Update task value" text value is displayed in the "Action Type" dropdown
+	Then "Computer Scheduled Test (Jo)" value is displayed in the "Project" dropdown for Automation
+	Then "One" value is displayed in the "Stage" dropdown for Automation
+	Then "Text Computer" value is displayed in the "Task" dropdown for Automation
+	Then "Remove" value is displayed in the "Update Value" dropdown
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17602 @DAS17606 @Cleanup @Not_Ready
+Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateDate
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User creates new Automation via API
+	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
+	| 17606_Automation | 17606       | true   | false              | All Devices | Manual |
+	When User clicks "Automations" link on the Admin page
+	Then "Automations" page should be displayed to the user
+	When User enters "17606_Automation" text in the Search field for "Automation" column
+	When User clicks content from "Automation" column
+	When User clicks "Actions" tab
+	#Create Action with
+	When User clicks the "CREATE ACTION" Action button
+	When User type "17606_Action" Name in the "Action Name" field on the Automation details page
+	When User selects "Update task value" in the "Action Type" dropdown
+	When User selects "Computer Scheduled Test (Jo)" in the Project dropdown
+	When User selects "One" in the "Stage" dropdown for Actions
+	When User selects "Date Computer" in the "Task" dropdown for Actions
+	And User selects "Update" Update Date on Action panel
+	And User selects "5 Aug 2019" Date on Action panel
+	#Delete After clarifications
+	When User selects "None" in the "Capacity Slot" dropdown for Actions
+	#Delete After clarifications
+	And User clicks the "CREATE" Action button
+	When User clicks "Automations" navigation link on the Admin page
+	When User enters "17606_Automation" text in the Search field for "Automation" column
+	When User clicks content from "Automation" column
+	When User clicks "Actions" tab
+	When User clicks content from "Action" column
+	When User selects "Update task value" in the "Action Type" dropdown
+	#Actions content check
+	Then "17606_Action" content is displayed in "Action Name" field
+	Then "Update task value" text value is displayed in the "Action Type" dropdown
+	Then "Computer Scheduled Test (Jo)" value is displayed in the "Project" dropdown for Automation
+	Then "One" value is displayed in the "Stage" dropdown for Automation
+	Then "Date Computer" value is displayed in the "Task" dropdown for Automation
+	Then "Update" value is displayed in the "Update Date" dropdown
+	Then "5 Aug 2019" content is displayed in "Date" field
