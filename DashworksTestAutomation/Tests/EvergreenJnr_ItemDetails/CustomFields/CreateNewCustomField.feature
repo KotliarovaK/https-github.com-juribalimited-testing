@@ -6,8 +6,7 @@ Background: Pre-Conditions
 	When User navigate to Manage link
 	And User select "Custom Fields" option in Management Console
 
-	#Remove Not_Ready for Orbit
-@Evergreen @Devices @EvergreenJnr_ItemDetails @CustomFields @DAS16487 @Cleanup @Not_Ready
+@Evergreen @Devices @EvergreenJnr_ItemDetails @CustomFields @DAS16487 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckAddCustomFieldPopupUiAndTooltips
 	When User creates new Custom Field
 	| FieldName     | FieldLabel    | AllowExternalUpdate | Enabled | Computer |
@@ -32,8 +31,7 @@ Scenario: EvergreenJnr_DevicesList_CheckAddCustomFieldPopupUiAndTooltips
 	When User selects 'FlDAS16487_1a' option after search from 'Custom Field' autocomplete
 	Then Add button is enabled on Add Custom Field popup
 
-	#Remove Not_Ready for Orbit
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @CustomFields @DAS16487 @Cleanup @Not_Ready
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @CustomFields @DAS16487 @Cleanup
 Scenario: EvergreenJnr_MailboxesList_CreateCustomFieldWithEmptyValue
 	When User creates new Custom Field
 	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | Mailbox | Computer | User | Application |
@@ -52,8 +50,7 @@ Scenario: EvergreenJnr_MailboxesList_CreateCustomFieldWithEmptyValue
 	And "" content is displayed in the "Value" column
 	And "Custom Fields" tab is displayed on left menu on the Details page and contains '1' count of items
 
-	#Remove Not_Ready for Orbit
-@Evergreen @Users @EvergreenJnr_ItemDetails @CustomFields @DAS16487 @Cleanup @Not_Ready
+@Evergreen @Users @EvergreenJnr_ItemDetails @CustomFields @DAS16487 @Cleanup
 Scenario: EvergreenJnr_UsersList_CreateCustomField
 	When User creates new Custom Field
 	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | User |
@@ -73,8 +70,7 @@ Scenario: EvergreenJnr_UsersList_CreateCustomField
 	And "Custom Fields" tab is displayed on left menu on the Details page and contains '1' count of items
 	#ADD VERIFICATION FOR ROW COUNTER!!!
 
-	#Remove Not_Ready for Orbit
-@Evergreen @Users @EvergreenJnr_ItemDetails @CustomFields @DAS16487 @Cleanup @Not_Ready
+@Evergreen @Users @EvergreenJnr_ItemDetails @CustomFields @DAS16487 @Cleanup
 Scenario: EvergreenJnr_UsersList_CancelCustomFieldCreation
 	When User creates new Custom Field
 	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | User |
@@ -128,8 +124,7 @@ Scenario: EvergreenJnr_UsersList_CreateCustomFieldWithSameData
 	And "Custom Fields" tab is displayed on left menu on the Details page and contains '2' count of items
 	#ADD VERIFICATION FOR ROW COUNTER!!!
 
-#Remove Not_Ready for Orbit
-@Evergreen @Users @EvergreenJnr_ItemDetails @CustomFields @DAS17695 @Cleanup @Not_Ready
+@Evergreen @Users @EvergreenJnr_ItemDetails @CustomFields @DAS17695 @Cleanup
 Scenario: EvergreenJnr_UsersList_CheckGroupByResetAfterCreatingNewCustomField
 	When User creates new Custom Field
 	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | User |

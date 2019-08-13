@@ -6,8 +6,7 @@ Background: Pre-Conditions
 	When User navigate to Manage link
 	And User select "Custom Fields" option in Management Console
 
-	#Remove Not_Ready for Orbit
-@Evergreen @Devices @EvergreenJnr_ItemDetails @CustomFields @DAS15473 @Cleanup @Not_Ready
+@Evergreen @Devices @EvergreenJnr_ItemDetails @CustomFields @DAS15473 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckEditableFieldDisplayAndToolTips
 	When User creates new Custom Field
 	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | Computer |
@@ -25,8 +24,7 @@ Scenario: EvergreenJnr_DevicesList_CheckEditableFieldDisplayAndToolTips
 	When User doubleclicks on 'ValueDAS15473_#$‡!_1' cell from 'Value' column
 	Then Save and Cancel buttons with tooltips are displayed for clickable value
 
-	#Remove Not_Ready for Orbit
-@Evergreen @Applications @EvergreenJnr_ItemDetails @CustomFields @DAS15473 @Cleanup @Not_Ready
+@Evergreen @Applications @EvergreenJnr_ItemDetails @CustomFields @DAS15473 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckDataIsUpdatedInClickableValue
 	When User creates new Custom Field
 	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | Application |
@@ -51,8 +49,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckDataIsUpdatedInClickableValue
 	Then Save and Cancel buttons are NOT displayed for clickable value
 	And "UPDATED_V" content is displayed in the "Value" column
 
-	#Remove Not_Ready for Orbit
-@Evergreen @Applications @EvergreenJnr_ItemDetails @CustomFields @DAS17584 @Cleanup @Not_Ready
+@Evergreen @Applications @EvergreenJnr_ItemDetails @CustomFields @DAS17584 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckDataIsUpdatedUsingCogMenu
 	When User creates new Custom Field
 	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | Application |
@@ -78,8 +75,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckDataIsUpdatedUsingCogMenu
 	Then Save and Cancel buttons are NOT displayed for clickable value
 	And "UPDATED_UPD" content is displayed in the "Value" column
 
-	#Remove Not_Ready for Orbit
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @CustomFields @DAS15473 @Cleanup @Not_Ready
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @CustomFields @DAS15473 @Cleanup
 Scenario: EvergreenJnr_MailboxesList_CheckClickableValueSavedOnFocusLost
 	When User creates new Custom Field
 	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | Mailbox |
