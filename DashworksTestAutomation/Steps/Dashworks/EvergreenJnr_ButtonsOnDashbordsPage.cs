@@ -81,7 +81,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var menu = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForElementToBeDisplayed(menu.CreateActionButton);
             menu.CreateActionButton.Click();
+
+            _driver.WaitForElementToBeDisplayed(menu.CreateProjectButton);
             menu.CreateProjectButton.Click();
+
             Logger.Write("Create Project Button button was clicked");
         }
 
