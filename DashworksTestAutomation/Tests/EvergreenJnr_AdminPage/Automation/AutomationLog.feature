@@ -5,17 +5,22 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_AdminPage @AutomationLog @Automations @DAS16890 @DAS17063 @DAS17364 @DAS17402 @DAS17425 @Not_Ready
+@Evergreen @EvergreenJnr_AdminPage @AutomationLog @Automations @DAS16890 @DAS17063 @DAS17364 @DAS17402 @DAS17425 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckAutomationsLogGridForRunningAutomationWithDeletedProject
 	When Project created via API and opened
 	| ProjectName  | Scope       | ProjectTemplate | Mode               |
 	| 16890Project | All Devices | None            | Standalone Project |
 	And User clicks Admin on the left-hand menu
-	And User creates new Automation via API
+	When User creates new Automation via API
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
 	| 16890_Automation | 16890       | false  | false              | All Devices | Manual |
-	When User selects "Manual" in the "Run" dropdown
-	And User clicks the "CREATE" Action button
+	When User clicks "Automations" link on the Admin page
+	Then "Automations" page should be displayed to the user
+	When User enters "16890_Automation" text in the Search field for "Automation" column
+	When User click content from "Automation" column
+	When User clicks "Actions" tab
+	#Action 1
+	When User clicks the "CREATE ACTION" Action button
 	When User type "16890_Action" Name in the "Action Name" field on the Automation details page
 	When User selects "Update path" in the "Action Type" dropdown
 	When User selects "16890Project" in the Project dropdown

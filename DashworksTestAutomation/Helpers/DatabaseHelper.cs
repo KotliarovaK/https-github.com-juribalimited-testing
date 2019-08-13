@@ -396,18 +396,11 @@ namespace DashworksTestAutomation.Helpers
         #endregion
 
         #region Automation
-        //Use after check
 
-        //public static AutomationsDto GetAutomation(string automationName)
-        //{
-        //    return GetAutomationFromDb(automationName);
-        //}
-
-        //private static AutomationsDto GetAutomationFromDb(string automationName)
-        //{
-        //    var automationId =
-        //        DatabaseHelper.ExecuteReader($"select [AutomationId] from [PM].[dbo].[Automations] where [AutomationName] = '{automationName}'", 0).LastOrDefault();
-        //}
+        public static string GetAutomationFromDb(string automationName)
+        {
+            return DatabaseHelper.ExecuteReader($"select [AutomationId] from [PM].[dbo].[Automations] where [AutomationName] = '{automationName}'", 0).LastOrDefault();
+        }
 
         #endregion
     }

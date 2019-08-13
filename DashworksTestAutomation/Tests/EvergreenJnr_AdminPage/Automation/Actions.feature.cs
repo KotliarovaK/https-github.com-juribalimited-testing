@@ -1713,6 +1713,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Actions")]
         [NUnit.Framework.CategoryAttribute("DAS17542")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_CheckThatUpdateTaskValueIsDisplayInAutomationsLog()
         {
@@ -1748,6 +1749,7 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "Actions",
                         "DAS17542",
+                        "Cleanup",
                         "Not_Ready"});
 #line 548
 this.ScenarioInitialize(scenarioInfo);

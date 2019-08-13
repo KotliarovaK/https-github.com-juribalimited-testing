@@ -523,6 +523,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextFor
 	When User clicks "Automations" link on the Admin page
 	When User enters "DAS15423_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
+	Then Edit Automation page is displayed to the User
 	Then "[List not found]" content is displayed in the Scope Automation dropdown
 	#Update after DAS-17336 fixed
 	#When User clicks "Actions" tab

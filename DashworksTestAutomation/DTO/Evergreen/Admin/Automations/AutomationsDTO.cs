@@ -8,8 +8,7 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.Automations
 {
     public class AutomationsDto
     {
-        //private string Id;
-
+        public string Id { get; set; }
         [JsonProperty("active")]
         public bool Active { get; set; }
         public int automationId => -1;
@@ -129,21 +128,5 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.Automations
                     $"select [ListId] from [DesktopBI].[dbo].[EvergreenList] where [ListName]='{listName}'", 0).LastOrDefault();
             }
         }
-        //Use after check
-        //public AutomationsDto(string id)
-        //{
-        //    Id = id;
-        //}
-
-        //public AutomationsDto() { }
-
-        //public string GetId()
-        //{
-        //    if (string.IsNullOrEmpty(Id))
-        //    {
-        //        Id = DatabaseHelper.GetAutomation(this.automationName).Id;
-        //    }
-        //    return Id;
-        //}
     }
 }

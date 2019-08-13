@@ -41,7 +41,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.CapacityUnits.AfterS
                     {
                         var request = requestUri.GenerateRequest();
                         request.AddParameter("objectId", null);
-                        //request.AddParameter("selectedObjectsList", automation.GetId());
+                        request.AddParameter("selectedObjectsList", _automations.Value.First().Id);
 
                         _client.Value.Put(request);
                     }

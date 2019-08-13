@@ -254,6 +254,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             _driver.WaitForDataLoading();
             _driver.WaitForElementToBeDisplayed(projectElement.NewProjectLink);
             projectElement.NewProjectLink.Click();
+            _driver.WaitForDataLoading();
         }
 
         [Then(@"Success message is displayed and contains ""(.*)"" link")]
