@@ -257,6 +257,18 @@ namespace DashworksTestAutomation.Extensions
             //Utils.Verify.IsEmpty(errorsList, "Error message is displayed in the console");
         }
 
+        public static void CheckConsoleErrors(this RemoteWebDriver driver, string expectedConsoleError)
+        {
+            //Bug in chromedriver. Need to wait for fix
+            //var errorsList = new List<LogEntry>();
+            //foreach (var entry in driver.Manage().Logs.GetLog(LogType.Browser).ToList())
+            //    if (entry.Level == LogLevel.Severe)
+            //        errorsList.Add(entry);
+
+            //Verify.IsTrue(errorsList.All(x => x.Message.Contains(expectedConsoleError)),
+            //    $"Unexpected errors are displayed in the console: {string.Concat(", ", errorsList.Select(x => x.Message))}");
+        }
+
         #region Web element extensions
 
         public static void SelectCustomSelectbox(this RemoteWebDriver driver, IWebElement selectbox, string option)

@@ -40,4 +40,4 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectPageDisplayedWhenOpeningNotExis
 	Then "Default Ring" checkbox is checked and cannot be unchecked
 	When User tries to open same page with "88888888" item id
 	Then Page not found displayed for the user
-	And There are only page not found errors in console
+	And There are only 'Page not found' errors in console
