@@ -325,8 +325,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 Utils.Verify.Contains(row["Options"], actualList, $"This {fieldName} project in drop-down with search field not found");
             }
 
-            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            page.BodyContainer.Click();
+            field.BodyContainer.Click();
         }
 
         [Then(@"Stages are displayed in alphabetical order on Action panel")]

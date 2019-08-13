@@ -266,13 +266,33 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.That(page.GetSelectedText(), Is.EqualTo(textSelected));
         }
 
-        [Then(@"following Values are displayed in the filter on the Details Page")]
+        [Then(@"following Boolean Values are displayed in the filter on the Details Page")]
+        public void ThenFollowingBooleanValuesAreDisplayedInTheFilterOnTheDetailsPage(Table table)
+        {
+            var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            var expectedList = table.Rows.SelectMany(row => row.Values);
+            var actualList = filterElement.FilterCheckboxBooleanValues.Select(value => value.Text);
+            Utils.Verify.AreEqual(expectedList, actualList, "Filter checkbox Boolean values are different");
+        }
+
+        [Then(@"following String Values are displayed in the filter on the Details Page")]
         public void ThenFollowingValuesAreDisplayedInTheFilterOnTheDetailsPage(Table table)
         {
             var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             var expectedList = table.Rows.SelectMany(row => row.Values);
-            var actualList = filterElement.FilterCheckboxValues.Select(value => value.Text);
-            Utils.Verify.AreEqual(expectedList, actualList, "Filter checkbox values are different");
+            var actualList = filterElement.FilterCheckboxStringValues.Select(value => value.Text);
+            Utils.Verify.AreEqual(expectedList, actualList, "Filter checkbox String values are different!");
+        }
+
+        [Then(@"following String Values are contained in the filter on the Details Page")]
+        public void ThenFollowingStringValuesAreContainedInTheFilterOnTheDetailsPage(Table table)
+        {
+            var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            var actualList = filterElement.FilterCheckboxStringValues.Select(value => value.Text).ToList();
+            foreach (var row in table.Rows)
+            {
+                Utils.Verify.Contains(row["Values"], actualList, $"{row["Values"]} String values are not contained in the filter!");
+            }
         }
 
         [When(@"User have opened Column Settings for ""(.*)"" column in the Details Page table")]
