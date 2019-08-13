@@ -995,8 +995,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksDeleteButtonInActions()
         {
             var button = _driver.NowAt<BaseGridPage>();
-            _driver.WaitForElementToBeDisplayed(button.DeleteButtonInActions);
-            button.DeleteButtonInActions.Click();
+            button.ClickDeleteButtonInActions();
             Logger.Write("Delete button was clicked");
         }
 
@@ -2242,7 +2241,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var projectElement = _driver.NowAt<BaseGridPage>();
             projectElement.ActionsButton.Click();
-            projectElement.DeleteButtonInActions.Click();
+            projectElement.ClickDeleteButtonInActions();
             projectElement.DeleteButtonOnPage.Click();
             _driver.WaitForElementToBeDisplayed(projectElement.WarningMessage);
             _driver.WaitForDataLoading();
