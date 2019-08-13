@@ -348,9 +348,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseGridPage>();
             var numbers = page.GetSumOfObjectsContent(columnName);
-            var allNumbers = numbers.Where(x => !string.IsNullOrEmpty(x)).ToList();
-            var total = allNumbers.Sum(Convert.ToInt32);
-            Verify.That(total, Is.EqualTo(sumOfObjects), $"Sum of objects in {columnName} list is incorrect!");
+            var total = numbers.Where(x => !string.IsNullOrEmpty(x)).Sum(x => Convert.ToInt32(x));
+            Utils.Verify.That(total, Is.EqualTo(sumOfObjects), $"Sum of objects in {columnName} list is incorrect!");
         }
 
         [Then(@"Project ""(.*)"" is displayed to user")]
@@ -2199,9 +2198,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksRefreshButtonOnTheAdminPage()
         {
             var button = _driver.NowAt<BaseGridPage>();
-            Thread.Sleep(10000);
-            _driver.WaitForDataLoading();
             button.RefreshButton.Click();
+            _driver.WaitForDataLoading();
         }
 
         [Then(@"""(.*)"" Onboarded objects are displayed")]
