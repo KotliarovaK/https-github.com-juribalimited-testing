@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
@@ -17,10 +18,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
     internal class EvergreenJnr_DetailsPage : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
+        private readonly ElementCoordinates _elementCoordinates;
 
-        public EvergreenJnr_DetailsPage(RemoteWebDriver driver)
+        public EvergreenJnr_DetailsPage(RemoteWebDriver driver, ElementCoordinates elementCoordinates)
         {
             _driver = driver;
+            _elementCoordinates = elementCoordinates;
         }
 
         [When(@"User opens ""(.*)"" section on the Details Page")]
@@ -368,19 +371,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserRemembersInputPosition()
         {
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            page.Storage.SessionStorage.SetItem("date_input_X", page.DateRegularValueFirst.Location.X.ToString());
-            page.Storage.SessionStorage.SetItem("date_input_Y", page.DateRegularValueFirst.Location.Y.ToString());
+
+            _elementCoordinates.Height = page.DateRegularValueFirst.Location.X;
+            _elementCoordinates.Width = page.DateRegularValueFirst.Location.Y;
         }
 
         [Then(@"User checks that date input has same position")]
         public void ThenUserChecksThatHasSamePosition()
         {
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            int xCoord = Int32.Parse(page.Storage.SessionStorage.GetItem("date_input_X"));
-            int yCoord = Int32.Parse(page.Storage.SessionStorage.GetItem("date_input_Y"));
 
-            Utils.Verify.That(page.DateRegularValueFirst.Location.X, Is.InRange(xCoord - 10, xCoord + 10)); // calibration
-            Utils.Verify.That(page.DateRegularValueFirst.Location.Y, Is.InRange(yCoord - 10, yCoord + 10)); // calibration
+            Utils.Verify.That(page.DateRegularValueFirst.Location.X, Is.InRange(_elementCoordinates.Height - 10, _elementCoordinates.Height + 10)); // calibration
+            Utils.Verify.That(page.DateRegularValueFirst.Location.Y, Is.InRange(_elementCoordinates.Width - 10, _elementCoordinates.Width + 10)); // calibration
         }
 
         [Then(@"User select ""(.*)"" checkbox from filter on the Details Page")]
