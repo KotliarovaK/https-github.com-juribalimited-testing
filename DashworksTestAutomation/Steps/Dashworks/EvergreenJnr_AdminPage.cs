@@ -348,7 +348,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseGridPage>();
             var numbers = page.GetSumOfObjectsContent(columnName);
-            var total = numbers.Sum(x => Convert.ToInt32(x));
+            var total = numbers.Where(x => !string.IsNullOrEmpty(x)).Sum(x => Convert.ToInt32(x));
             Utils.Verify.That(total, Is.EqualTo(sumOfObjects), $"Sum of objects in {columnName} list is incorrect!");
         }
 
@@ -995,8 +995,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksDeleteButtonInActions()
         {
             var button = _driver.NowAt<BaseGridPage>();
-            _driver.WaitForElementToBeDisplayed(button.DeleteButtonInActions);
-            button.DeleteButtonInActions.Click();
+            button.ClickDeleteButtonInActions();
             Logger.Write("Delete button was clicked");
         }
 
@@ -2208,9 +2207,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksRefreshButtonOnTheAdminPage()
         {
             var button = _driver.NowAt<BaseGridPage>();
-            Thread.Sleep(10000);
-            _driver.WaitForDataLoading();
             button.RefreshButton.Click();
+            _driver.WaitForDataLoading();
         }
 
         [Then(@"""(.*)"" Onboarded objects are displayed")]
@@ -2253,7 +2251,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var projectElement = _driver.NowAt<BaseGridPage>();
             projectElement.ActionsButton.Click();
-            projectElement.DeleteButtonInActions.Click();
+            projectElement.ClickDeleteButtonInActions();
             projectElement.DeleteButtonOnPage.Click();
             _driver.WaitForElementToBeDisplayed(projectElement.WarningMessage);
             _driver.WaitForDataLoading();

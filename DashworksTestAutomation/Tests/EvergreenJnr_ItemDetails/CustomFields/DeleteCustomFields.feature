@@ -6,8 +6,7 @@ Background: Pre-Conditions
 	When User navigate to Manage link
 	And User select "Custom Fields" option in Management Console
 
-#Remove Not_Ready for Orbit
-@Evergreen @Devices @EvergreenJnr_ItemDetails @CustomFields @DAS16489 @Cleanup @Not_Ready
+@Evergreen @Devices @EvergreenJnr_ItemDetails @CustomFields @DAS16489 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckCustomFieldDeleting
 	When User creates new Custom Field
 	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | Computer |
@@ -38,8 +37,7 @@ Scenario: EvergreenJnr_DevicesList_CheckCustomFieldDeleting
 	And "Custom Fields" tab is displayed on left menu on the Details page and contains '0' count of items
 	And There are no errors in the browser console
 
-#Remove Not_Ready for Orbit
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @CustomFields @DAS17695 @Cleanup @Not_Ready
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @CustomFields @DAS17695 @Cleanup
 Scenario: EvergreenJnr_MailboxesList_DeleteGroupedCustomFields
 	When User creates new Custom Field
 	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | Mailbox |
