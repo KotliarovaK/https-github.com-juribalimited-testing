@@ -1530,6 +1530,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             createProjectElement.SelectObjectForProjectCreation(objectName);
         }
 
+        [Then(@"User sees blue message ""(.*)"" on Create Project page")]
+        public void ThenUserSeesMessageInformingAboutArchivedDevicesInList(string message)
+        {
+            var createProjectElement = _driver.NowAt<ProjectsPage>();
+            Utils.Verify.That(createProjectElement.ArchivedDevicesMessage.Text, Is.EqualTo(message), "Archived message text is not displayed");
+
+            var bgColor = createProjectElement.ArchivedDevicesMessage.GetCssValue("color");
+            Utils.Verify.That(bgColor, Is.EqualTo("rgba(49, 122, 193, 1)"), "Archived message text is in different color");
+        }
+
         [Then(@"""(.*)"" content is displayed in the Scope Automation dropdown")]
         [Then(@"""(.*)"" content is displayed in the Path Automation dropdown")]
         public void ThenContentIsDisplayedInTheScopeAutomationDropdown(string dropdownValue)
