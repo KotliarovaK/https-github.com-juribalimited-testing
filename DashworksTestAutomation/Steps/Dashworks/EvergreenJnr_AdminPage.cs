@@ -867,7 +867,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var teamElement = _driver.NowAt<TeamsPage>();
             teamElement.ActionsButton.Click();
+            _driver.WaitForElementToBeDisplayed(teamElement.RemoveButtonInActions);
             teamElement.RemoveButtonInActions.Click();
+            _driver.WaitForElementToBeDisplayed(teamElement.RemoveButtonOnPage);
             teamElement.RemoveButtonOnPage.Click();
             _driver.WaitForElementToBeDisplayed(teamElement.WarningMessage);
             _driver.WaitForDataLoading();
