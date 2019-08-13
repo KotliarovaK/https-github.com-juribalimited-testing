@@ -397,8 +397,11 @@ namespace DashworksTestAutomation.Extensions
         public static void InsertFromClipboard(this RemoteWebDriver driver, IWebElement textbox)
         {
             Actions action = new Actions(driver);
-            action.Click(textbox).SendKeys(Keys.Shift + Keys.Insert).Build()
-                .Perform();
+            //TODO: below code stopped work on Aug 13 2019; splitted into 2 rows
+            //action.Click(textbox).SendKeys(Keys.Shift + Keys.Insert).Build()
+            //.Perform();
+            action.Click(textbox);
+            textbox.SendKeys(Keys.Shift + Keys.Insert);
 
             action.KeyUp(Keys.Shift).Build().Perform();
         }
