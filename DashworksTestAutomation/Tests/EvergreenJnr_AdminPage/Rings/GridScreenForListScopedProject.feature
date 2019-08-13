@@ -11,7 +11,7 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForDeviceScopedProject
 	| ProjectName   | Scope       | ProjectTemplate | Mode               |
 	| 14695_Project | All Devices | None            | Standalone Project |
 	When User clicks "Rings" tab
-	Then "0" content is displayed in "Devices" column
+	Then "" content is displayed in "Devices" column
 	Then table with Setting menu column on Admin page is displayed in following order:
 	| ColumnName |
 	| Ring       |
