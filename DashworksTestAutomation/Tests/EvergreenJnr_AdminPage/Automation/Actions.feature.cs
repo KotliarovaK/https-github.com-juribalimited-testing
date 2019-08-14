@@ -541,6 +541,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS17186")]
         [NUnit.Framework.CategoryAttribute("DAS17057")]
         [NUnit.Framework.CategoryAttribute("DAS17253")]
+        [NUnit.Framework.CategoryAttribute("DAS17625")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality()
         {
@@ -580,6 +581,7 @@ this.FeatureBackground();
                         "DAS17186",
                         "DAS17057",
                         "DAS17253",
+                        "DAS17625",
                         "Not_Ready"});
 #line 170
 this.ScenarioInitialize(scenarioInfo);
