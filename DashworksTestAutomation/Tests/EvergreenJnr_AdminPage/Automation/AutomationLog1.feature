@@ -22,9 +22,9 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueAction
 	When User clicks the "CREATE ACTION" Action button
 	And User type "17430_Action" Name in the "Action Name" field on the Automation details page
 	And User selects "Update task value" in the "Action Type" dropdown
-	When User selects "Computer Scheduled Test (Jo)" in the Project dropdown
-	When User selects "One" in the "Stage" dropdown for Actions
-	When User selects "Radio Rag Date Owner User Req B" in the "Task" dropdown for Actions
+	When User selects "USE ME FOR AUTOMATION(USR SCHDLD)" in the Project dropdown
+	When User selects "Stage 1" in the "Stage" dropdown for Actions
+	When User selects "Radiobutton Readiness Date Owner Task (User)" in the "Task" dropdown for Actions
 	And User selects "Update" Update Value on Action panel
 	And User selects "Started" Value on Action panel
 	And User selects "Update" Update Date on Action panel
@@ -42,5 +42,9 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueAction
 	When User clicks String Filter button for "Type" column on the Admin page
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
 	And User clicks content from "Objects" column
-	Then "2,001" rows are displayed in the agGrid
-	Then "AAC860150.Users.Los Angeles.US-W.local" content is displayed in "Distinguished Name" column
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                                                         |
+	| USEMEFORA2: Stage 1 \ Radiobutton Readiness Date Owner Task (User) |
+	Then "STARTED" content is displayed in "USEMEFORA2: Stage 1 \ Radiobutton Readiness Date Owner Task (User)" column

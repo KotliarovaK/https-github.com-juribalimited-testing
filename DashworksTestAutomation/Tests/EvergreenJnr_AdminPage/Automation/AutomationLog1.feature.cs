@@ -172,12 +172,12 @@ this.FeatureBackground();
 #line 24
  testRunner.And("User selects \"Update task value\" in the \"Action Type\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 25
- testRunner.When("User selects \"Computer Scheduled Test (Jo)\" in the Project dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \"USE ME FOR AUTOMATION(USR SCHDLD)\" in the Project dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 26
- testRunner.When("User selects \"One\" in the \"Stage\" dropdown for Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \"Stage 1\" in the \"Stage\" dropdown for Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 27
- testRunner.When("User selects \"Radio Rag Date Owner User Req B\" in the \"Task\" dropdown for Actions" +
-                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \"Radiobutton Readiness Date Owner Task (User)\" in the \"Task\" dropdow" +
+                    "n for Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 28
  testRunner.And("User selects \"Update\" Update Value on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 29
@@ -215,10 +215,19 @@ this.FeatureBackground();
 #line 44
  testRunner.And("User clicks content from \"Objects\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 45
- testRunner.Then("\"2,001\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 46
- testRunner.Then("\"AAC860150.Users.Los Angeles.US-W.local\" content is displayed in \"Distinguished N" +
-                    "ame\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table2.AddRow(new string[] {
+                        "USEMEFORA2: Stage 1 \\ Radiobutton Readiness Date Owner Task (User)"});
+#line 47
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table2, "When ");
+#line 50
+ testRunner.Then("\"STARTED\" content is displayed in \"USEMEFORA2: Stage 1 \\ Radiobutton Readiness Da" +
+                    "te Owner Task (User)\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
