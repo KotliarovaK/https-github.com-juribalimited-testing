@@ -133,3 +133,34 @@ Scenario: EvergreenJnr_AdminPage_CheckThatStageWithoutCorrectTasksIsNotDisplayed
 	And User selects "Update task value" in the "Action Type" dropdown
 	And User selects "DAS17691_Project" in the Project dropdown
 	Then "Stage" dropdown is not displayed on the Admin Settings screen
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17738 @Cleanup @Not_Ready
+Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueAction
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User creates new Automation via API
+	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
+	| 17738_Automation | 17430       | true   | false              | All Devices | Manual |
+	When User clicks "Automations" link on the Admin page
+	Then "Automations" page should be displayed to the user
+	When User enters "17738_Automation" text in the Search field for "Automation" column
+	And User clicks content from "Automation" column
+	Then Edit Automation page is displayed to the User
+	Then "All Devices" content is displayed in the Scope Automation dropdown
+	When User clicks "Actions" tab
+	#Create Action
+	When User clicks the "CREATE ACTION" Action button
+	And User type "17738_Action" Name in the "Action Name" field on the Automation details page
+	And User selects "Update task value" in the "Action Type" dropdown
+	When User selects "Computer Scheduled Test (Jo)" in the Project dropdown
+	When User selects "One" in the "Stage" dropdown for Actions
+	When User selects "Radio Rag Date Comp" in the "Task" dropdown for Actions
+	And User selects "Update" Update Value on Action panel
+	And User selects "Failed" Value on Action panel
+	And User selects "No change" Update Date on Action panel
+	Then "CREATE" Action button is active
+	When User selects "No change" value for "Update" dropdown on Action panel
+	Then "CREATE" Action button is disabled
+	When User selects "Update" value for "No change" dropdown on Action panel
+	And User selects "Failed" Value on Action panel
+	Then "CREATE" Action button is active
