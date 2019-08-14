@@ -39,18 +39,10 @@ namespace DashworksTestAutomation.Steps.Base
             _driver.CheckConsoleErrors();
         }
 
-        [Then(@"There are only page not found errors in console")]
+        [Then(@"There are only 'Page not found' errors in console")]
         public void ThenThereAreOnlyPageNotFoundErrorsInTheBrowserConsole()
         {
-            var errorsList = new List<LogEntry>();
-
-            foreach (var entry in _driver.Manage().Logs.GetLog(LogType.Browser).ToList())
-                if (entry.Level == LogLevel.Severe)
-                    errorsList.Add(entry);
-
-            Utils.Verify.That(errorsList.Count, 
-                Is.EqualTo(errorsList.FindAll(x=>x.Message.Contains("the server responded with a status of 404 (Not Found)")).Count), 
-                "There are another errors in console");
+            _driver.CheckConsoleErrors("the server responded with a status of 404(Not Found)");
         }
 
         [When(@"User clicks Body container")]

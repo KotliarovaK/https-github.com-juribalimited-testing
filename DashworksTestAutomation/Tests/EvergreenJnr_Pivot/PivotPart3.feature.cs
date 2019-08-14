@@ -773,13 +773,13 @@ this.FeatureBackground();
                         "Value2"});
             table25.AddRow(new string[] {
                         "USA",
-                        "RED"});
+                        "BLOCKED"});
             table25.AddRow(new string[] {
                         "Los Angeles",
                         "GREEN"});
             table25.AddRow(new string[] {
                         "San Diego",
-                        "RED"});
+                        "BLOCKED"});
 #line 178
  testRunner.Then("following values are displayed for \"Asus\" column on Pivot", ((string)(null)), table25, "Then ");
 #line hidden

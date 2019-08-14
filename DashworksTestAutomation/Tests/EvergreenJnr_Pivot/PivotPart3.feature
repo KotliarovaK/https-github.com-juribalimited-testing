@@ -176,7 +176,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatSeverityAggregateFunctionAvailableF
 	Then Pivot run was completed
 	When User expanded "USA" left-pinned value on Pivot
 	Then following values are displayed for "Asus" column on Pivot
-	| Value1      | Value2 |
-	| USA         | RED    |
-	| Los Angeles | GREEN  |
-	| San Diego   | RED    |
+	| Value1      | Value2	|
+	| USA         | BLOCKED |
+	| Los Angeles | GREEN	|
+	| San Diego   | BLOCKED |

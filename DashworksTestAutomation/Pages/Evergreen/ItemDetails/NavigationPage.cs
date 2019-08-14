@@ -20,6 +20,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         public IList<IWebElement> MainTabsOnDetailsPageList { get; set; }
 
         private static string TabCountSelector = ".//a[text()='{0}']//span[@class='ng-star-inserted']";
+        private static string SubMenuByNameSelector = ".//ul[@class='das-mat-tree-submenu']//a[text()='{0}']";
 
         public override List<By> GetPageIdentitySelectors()
         {
@@ -31,7 +32,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
             };
         }
 
-        public IWebElement  GetNavigationLinkByName(string linkName)
+        public IWebElement GetNavigationLinkByName(string linkName)
         {
             var link = By.XPath($".//div[@class='title-container']//a[text()='{linkName}']");
             Driver.WaitForElementToBeDisplayed(link);
@@ -45,11 +46,18 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
             return Driver.FindElement(selector);
         }
 
-        public IWebElement GetSubMenuByName(string name)
+        public void ClickSubMenuByName(string name)
         {
-            var selector = By.XPath($".//ul[@class='das-mat-tree-submenu']//a[text()='{name}']");
+            var selector = By.XPath(string.Format(SubMenuByNameSelector, name));
             Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
+            try
+            {
+                Driver.FindElement(selector).Click();
+            }
+            catch (StaleElementReferenceException)
+            {
+                Driver.FindElement(selector).Click();
+            }
         }
 
         public bool GetExpandedTabByName(string tabName)
@@ -73,7 +81,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
 
         public int GetCountOfItemsByTabName(string tabName)
         {
-            if(!GetCountOfItemsDisplayStatusByTabName(tabName))
+            if (!GetCountOfItemsDisplayStatusByTabName(tabName))
                 throw new Exception($"Count is not displayed for '{tabName}' tab");
 
             var text = Driver.FindElement(By.XPath(string.Format(string.Format(TabCountSelector, tabName)))).Text;
@@ -99,7 +107,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         {
             List<Point> points = new List<Point>();
 
-            IList < IWebElement > links = Driver.FindElements(By.XPath(".//li[contains(@class, 'das-mat-tree')]//a[contains(@href, 'details')]"));
+            IList<IWebElement> links = Driver.FindElements(By.XPath(".//li[contains(@class, 'das-mat-tree')]//a[contains(@href, 'details')]"));
 
             foreach (var link in links)
             {
