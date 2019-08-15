@@ -172,6 +172,7 @@ Scenario: EvergreenJnr_AdminPage_CheckBrokenListValidationWhenRunningAnAutomatio
 	When User selects "Manual" in the "Run" dropdown
 	When User selects "Active" checkbox on the Automation Page
 	When User clicks the "CREATE" Action button
+	Then Create Action page is displayed to the User
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User navigates to the "17011_List" list
@@ -193,10 +194,11 @@ Scenario: EvergreenJnr_AdminPage_CheckBrokenListValidationWhenRunningAnAutomatio
 	When User clicks the "CANCEL" Action button
 	When User clicks "Projects" link on the Admin page
 	When User clicks "Automations" link on the Admin page
-	When User enters "17011_Automation_1" text in the Search field for "Automation" column
+	When User enters "17011_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
 	Then Filling field error is not displayed
 	When User clicks the "CANCEL" Action button
+	When User enters "17011_Automation" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "17011_Automation" item on Admin page
 	When User selects "Automation Log" tab on the Project details page
 	When User clicks refresh button in the browser
