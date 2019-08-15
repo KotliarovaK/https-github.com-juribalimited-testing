@@ -90,6 +90,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Automation
         [NUnit.Framework.CategoryAttribute("DAS15832")]
         [NUnit.Framework.CategoryAttribute("DAS15833")]
         [NUnit.Framework.CategoryAttribute("DAS17276")]
+        [NUnit.Framework.CategoryAttribute("DAS17625")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptions()
         {
@@ -129,6 +130,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Automation
                         "DAS15832",
                         "DAS15833",
                         "DAS17276",
+                        "DAS17625",
                         "Not_Ready"});
 #line 11
 this.ScenarioInitialize(scenarioInfo);
@@ -542,6 +544,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS17057")]
         [NUnit.Framework.CategoryAttribute("DAS17253")]
         [NUnit.Framework.CategoryAttribute("DAS17625")]
+        [NUnit.Framework.CategoryAttribute("DAS17625")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality()
         {
@@ -581,6 +584,7 @@ this.FeatureBackground();
                         "DAS17186",
                         "DAS17057",
                         "DAS17253",
+                        "DAS17625",
                         "DAS17625",
                         "Not_Ready"});
 #line 170
@@ -1082,6 +1086,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Actions")]
         [NUnit.Framework.CategoryAttribute("DAS16992")]
         [NUnit.Framework.CategoryAttribute("DAS17427")]
+        [NUnit.Framework.CategoryAttribute("DAS17625")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActions()
@@ -1119,6 +1124,7 @@ this.FeatureBackground();
                         "Actions",
                         "DAS16992",
                         "DAS17427",
+                        "DAS17625",
                         "Cleanup",
                         "Not_Ready"});
 #line 352
@@ -1380,6 +1386,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Actions")]
         [NUnit.Framework.CategoryAttribute("DAS16992")]
         [NUnit.Framework.CategoryAttribute("DAS17234")]
+        [NUnit.Framework.CategoryAttribute("DAS17625")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_CheckUpdatingTaskWhichImpactsReadinessOwnerAndDueDate()
@@ -1417,6 +1424,7 @@ this.FeatureBackground();
                         "Actions",
                         "DAS16992",
                         "DAS17234",
+                        "DAS17625",
                         "Cleanup",
                         "Not_Ready"});
 #line 446

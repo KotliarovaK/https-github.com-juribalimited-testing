@@ -83,7 +83,7 @@ Examples:
 	| 17428_Automation_Applications | All Applications | User Scheduled Test (Jo)             | One     | Radio Rag only Rag App |
 	| 17428_Automation_Mailboxes    | All Mailboxes    | USE ME FOR AUTOMATION(MAIL SCHDLD)   | Stage 1 | Test A                 |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17691 @Cleanup @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17691 @DAS17625 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckThatStageWithoutCorrectTasksIsNotDisplayedForActions
 	When Project created via API and opened
 	| ProjectName      | Scope     | ProjectTemplate | Mode               |
@@ -134,7 +134,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatStageWithoutCorrectTasksIsNotDisplayed
 	And User selects "DAS17691_Project" in the Project dropdown
 	Then "Stage" dropdown is not displayed on the Admin Settings screen
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17738 @Cleanup @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17738 @DAS17625 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueAction
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
