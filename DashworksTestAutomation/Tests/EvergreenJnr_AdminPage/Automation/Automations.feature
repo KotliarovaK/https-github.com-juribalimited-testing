@@ -513,6 +513,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextFor
 	And User clicks the "CREATE" Action button
 	When User clicks newly created object link
 	Then Edit Automation page is displayed to the User
+	Then "DAS15423_List" content is displayed in the Scope Automation dropdown
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User navigates to the "DAS15423_List" list
@@ -531,11 +532,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextFor
 	#When User clicks "Details" tab
 	When User clicks the "CANCEL" Action button
 	When User enters "DAS15423_Automation" text in the Search field for "Automation" column
-	When User selects all rows on the grid
-	When User clicks on Actions button
-	And User selects "Run now" in the Actions
-	When User clicks the "RUN" Action button
-	When User clicks "RUN" button in the warning message on Admin page
+	When User clicks "Run now" option in Cog-menu for "DAS15423_Automation" item on Admin page
 	When User selects "Automation Log" tab on the Project details page
 	When User enters "DAS15423_Automation" text in the Search field for "Automation" column
 	Then "LIST NOT FOUND" content is displayed for "Outcome" column
