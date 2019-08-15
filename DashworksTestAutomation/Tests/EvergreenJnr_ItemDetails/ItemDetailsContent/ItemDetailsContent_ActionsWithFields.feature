@@ -329,7 +329,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCommonNameFieldIsDisplayedInTheCompu
 	Then "00OMQQXWA1DRI6" content is displayed in "Common Name" field on Item Details page
 
 	#Ann.Ilchenko 8/15/19: will be ready on 'quasar'
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16859 @DAS17645 @Not_Ready
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16859 @DAS17645 @DAS17785 @Not_Ready
 Scenario: EvergreenJnr_DevicesList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForDeviceObjects
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -340,16 +340,18 @@ Scenario: EvergreenJnr_DevicesList_CheckThatProjectDetailsDefaultViewIsDisplayed
 	And User navigates to the "Projects" main-menu on the Details page
 	And User navigates to the "Project Details" sub-menu on the Details page
 	Then following fields are displayed in the open section:
-	| Fields        |
-	| Object ID     |
-	| Device Owner  |
-	| Readiness     |
-	| Path          |
-	| Team          |
-	| Bucket        |
-	| Capacity Unit |
-	| Ring          |
-	| Category      |
+	| Fields           |
+	| Object ID        |
+	| Device Owner     |
+	| Readiness        |
+	| Path             |
+	| Team             |
+	| Bucket           |
+	| Capacity Unit    |
+	| Ring             |
+	| Category         |
+	| Self Service URL |
+	| Tags             |
 
 	#Ann.Ilchenko 8/15/19: will be ready on 'quasar'
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16858 @DAS17160 @DAS17325 @DAS17645 @Not_Ready
@@ -404,7 +406,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectDetailsDefaultViewIsDisp
 	| Tags                |
 
 	#Ann.Ilchenko 8/15/19: will be ready on 'quasar'
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16957 @DAS17645 @Not_Ready
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16957 @DAS17645 @DAS17785 @Not_Ready
 Scenario: EvergreenJnr_MailboxesList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForMailboxObjects
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -415,17 +417,19 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatProjectDetailsDefaultViewIsDisplay
 	And User navigates to the "Projects" main-menu on the Details page
 	And User navigates to the "Project Details" sub-menu on the Details page
 	Then following fields are displayed in the open section:
-	| Fields        |
-	| Object ID     |
-	| Mailbox Owner |
-	| Readiness     |
-	| Path          |
-	| Bucket        |
-	| Capacity Unit |
-	| Ring          |
-	| Category      |
-	| Language      |
-	| Tags          |
+	| Fields           |
+	| Object ID        |
+	| Mailbox Owner    |
+	| Readiness        |
+	| Path             |
+	| Team             |
+	| Bucket           |
+	| Capacity Unit    |
+	| Ring             |
+	| Category         |
+	| Self Service URL |
+	| Language         |
+	| Tags             |
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17007
 Scenario: EvergreenJnr_AllLists_CheckThatSelfServiceUrlIsNotDisplayedOnObjectDetailsPageEvenWhenItsDisabledInProjectManagement
