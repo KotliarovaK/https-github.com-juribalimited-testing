@@ -1267,6 +1267,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS16829")]
         [NUnit.Framework.CategoryAttribute("DAS16859")]
+        [NUnit.Framework.CategoryAttribute("DAS17645")]
         public virtual void EvergreenJnr_DevicesList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForDeviceObjects()
         {
             System.Exception lastException = null;
@@ -1302,7 +1303,8 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS16829",
-                        "DAS16859"});
+                        "DAS16859",
+                        "DAS17645"});
 #line 332
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1331,25 +1333,21 @@ this.FeatureBackground();
             table5.AddRow(new string[] {
                         "Object ID"});
             table5.AddRow(new string[] {
-                        "Team"});
+                        "Device Owner"});
             table5.AddRow(new string[] {
-                        "Capacity Unit"});
-            table5.AddRow(new string[] {
-                        "Bucket"});
-            table5.AddRow(new string[] {
-                        "Ring"});
-            table5.AddRow(new string[] {
-                        "Self Service URL"});
-            table5.AddRow(new string[] {
-                        "Overall Readiness"});
+                        "Readiness"});
             table5.AddRow(new string[] {
                         "Path"});
             table5.AddRow(new string[] {
+                        "Team"});
+            table5.AddRow(new string[] {
+                        "Bucket"});
+            table5.AddRow(new string[] {
+                        "Capacity Unit"});
+            table5.AddRow(new string[] {
+                        "Ring"});
+            table5.AddRow(new string[] {
                         "Category"});
-            table5.AddRow(new string[] {
-                        "Tags"});
-            table5.AddRow(new string[] {
-                        "Device Owner"});
 #line 341
  testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table5, "Then ");
 #line hidden
@@ -1368,6 +1366,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS16858")]
         [NUnit.Framework.CategoryAttribute("DAS17160")]
         [NUnit.Framework.CategoryAttribute("DAS17325")]
+        [NUnit.Framework.CategoryAttribute("DAS17645")]
         public virtual void EvergreenJnr_UsersList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForUserObjects()
         {
             System.Exception lastException = null;
@@ -1405,28 +1404,29 @@ this.FeatureBackground();
                         "DAS16829",
                         "DAS16858",
                         "DAS17160",
-                        "DAS17325"});
-#line 356
+                        "DAS17325",
+                        "DAS17645"});
+#line 354
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 357
+#line 355
  testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 358
+#line 356
  testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 359
+#line 357
  testRunner.When("User perform search by \"0072B088173449E3A93\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 360
+#line 358
  testRunner.And("User click content from \"Username\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 361
+#line 359
  testRunner.Then("Details page for \"0072B088173449E3A93\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 362
+#line 360
  testRunner.When("User switches to the \"User Evergreen Capacity Project\" project in the Top bar on " +
                     "Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 363
+#line 361
  testRunner.And("User navigates to the \"Projects\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 364
+#line 362
  testRunner.And("User navigates to the \"Project Details\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1434,28 +1434,28 @@ this.FeatureBackground();
             table6.AddRow(new string[] {
                         "Object ID"});
             table6.AddRow(new string[] {
-                        "Team"});
-            table6.AddRow(new string[] {
-                        "Capacity Unit"});
-            table6.AddRow(new string[] {
-                        "Bucket"});
-            table6.AddRow(new string[] {
-                        "Ring"});
-            table6.AddRow(new string[] {
-                        "Self Service URL"});
+                        "Primary Device"});
             table6.AddRow(new string[] {
                         "Readiness"});
             table6.AddRow(new string[] {
                         "Path"});
             table6.AddRow(new string[] {
+                        "Team"});
+            table6.AddRow(new string[] {
+                        "Bucket"});
+            table6.AddRow(new string[] {
+                        "Capacity Unit"});
+            table6.AddRow(new string[] {
+                        "Ring"});
+            table6.AddRow(new string[] {
                         "Category"});
             table6.AddRow(new string[] {
-                        "Tags"});
-            table6.AddRow(new string[] {
-                        "Primary Device"});
+                        "Self Service URL"});
             table6.AddRow(new string[] {
                         "Language"});
-#line 365
+            table6.AddRow(new string[] {
+                        "Tags"});
+#line 363
  testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table6, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -1473,6 +1473,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS16861")]
         [NUnit.Framework.CategoryAttribute("DAS17158")]
         [NUnit.Framework.CategoryAttribute("DAS17239")]
+        [NUnit.Framework.CategoryAttribute("DAS17645")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForApplicationObjects()
         {
             System.Exception lastException = null;
@@ -1510,30 +1511,31 @@ this.FeatureBackground();
                         "DAS16829",
                         "DAS16861",
                         "DAS17158",
-                        "DAS17239"});
-#line 381
+                        "DAS17239",
+                        "DAS17645"});
+#line 379
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 382
+#line 380
  testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 383
+#line 381
  testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 384
+#line 382
  testRunner.When("User perform search by \"\"WPF/E\" (codename) Community Technology Preview (Feb 2007" +
                     ")\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 385
+#line 383
  testRunner.And("User click content from \"Application\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 386
+#line 384
  testRunner.Then("Details page for \"\"WPF/E\" (codename) Community Technology Preview (Feb 2007)\" ite" +
                     "m is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 387
+#line 385
  testRunner.When("User switches to the \"Devices Evergreen Capacity Project\" project in the Top bar " +
                     "on Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 388
+#line 386
  testRunner.And("User navigates to the \"Projects\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 389
+#line 387
  testRunner.And("User navigates to the \"Project Details\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1541,28 +1543,28 @@ this.FeatureBackground();
             table7.AddRow(new string[] {
                         "Object ID"});
             table7.AddRow(new string[] {
-                        "Team"});
-            table7.AddRow(new string[] {
-                        "Capacity Unit"});
-            table7.AddRow(new string[] {
-                        "Overall Readiness"});
+                        "Readiness"});
             table7.AddRow(new string[] {
                         "App Readiness"});
-            table7.AddRow(new string[] {
-                        "Primary App"});
             table7.AddRow(new string[] {
                         "App Rationalisation"});
             table7.AddRow(new string[] {
                         "Target App"});
             table7.AddRow(new string[] {
+                        "Primary App"});
+            table7.AddRow(new string[] {
                         "Hide From End Users"});
             table7.AddRow(new string[] {
                         "Path"});
             table7.AddRow(new string[] {
+                        "Team"});
+            table7.AddRow(new string[] {
+                        "Capacity Unit"});
+            table7.AddRow(new string[] {
                         "Category"});
             table7.AddRow(new string[] {
                         "Tags"});
-#line 390
+#line 388
  testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table7, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -1578,6 +1580,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS16829")]
         [NUnit.Framework.CategoryAttribute("DAS16957")]
+        [NUnit.Framework.CategoryAttribute("DAS17645")]
         public virtual void EvergreenJnr_MailboxesList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForMailboxObjects()
         {
             System.Exception lastException = null;
@@ -1613,29 +1616,30 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS16829",
-                        "DAS16957"});
-#line 406
+                        "DAS16957",
+                        "DAS17645"});
+#line 404
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 407
+#line 405
  testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 408
+#line 406
  testRunner.Then("\"Mailboxes\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 409
+#line 407
  testRunner.When("User perform search by \"00A5B910A1004CF5AC4@bclabs.local\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 410
+#line 408
  testRunner.And("User click content from \"Email Address\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 411
+#line 409
  testRunner.Then("Details page for \"00A5B910A1004CF5AC4@bclabs.local\" item is displayed to the user" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 412
+#line 410
  testRunner.When("User switches to the \"Mailbox Evergreen Capacity Project\" project in the Top bar " +
                     "on Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 413
+#line 411
  testRunner.And("User navigates to the \"Projects\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 414
+#line 412
  testRunner.And("User navigates to the \"Project Details\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1643,26 +1647,24 @@ this.FeatureBackground();
             table8.AddRow(new string[] {
                         "Object ID"});
             table8.AddRow(new string[] {
-                        "Capacity Unit"});
+                        "Mailbox Owner"});
             table8.AddRow(new string[] {
-                        "Bucket"});
-            table8.AddRow(new string[] {
-                        "Ring"});
-            table8.AddRow(new string[] {
-                        "Self Service URL"});
-            table8.AddRow(new string[] {
-                        "Overall Readiness"});
+                        "Readiness"});
             table8.AddRow(new string[] {
                         "Path"});
             table8.AddRow(new string[] {
+                        "Bucket"});
+            table8.AddRow(new string[] {
+                        "Capacity Unit"});
+            table8.AddRow(new string[] {
+                        "Ring"});
+            table8.AddRow(new string[] {
                         "Category"});
             table8.AddRow(new string[] {
-                        "Tags"});
-            table8.AddRow(new string[] {
-                        "Mailbox Owner"});
-            table8.AddRow(new string[] {
                         "Language"});
-#line 415
+            table8.AddRow(new string[] {
+                        "Tags"});
+#line 413
  testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table8, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -1712,49 +1714,49 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS17007"});
-#line 430
+#line 427
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 431
+#line 428
  testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 432
+#line 429
  testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 433
+#line 430
  testRunner.When("User perform search by \"001BAQXT6JWFPI\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 434
+#line 431
  testRunner.And("User click content from \"Hostname\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 435
+#line 432
  testRunner.Then("Details page for \"001BAQXT6JWFPI\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 436
+#line 433
  testRunner.When("User switches to the \"Devices Evergreen Capacity Project\" project in the Top bar " +
                     "on Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 437
+#line 434
  testRunner.And("User navigates to the \"Projects\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 438
+#line 435
  testRunner.And("User navigates to the \"Project Details\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 439
+#line 436
  testRunner.Then("field with \"Self Service URL\" text is not displayed in expanded tab on the Detail" +
                     "s Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 440
+#line 437
  testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 441
+#line 438
  testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 442
+#line 439
  testRunner.When("User perform search by \"0072B088173449E3A93\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 443
+#line 440
  testRunner.And("User click content from \"Username\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 444
+#line 441
  testRunner.Then("Details page for \"0072B088173449E3A93\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 445
+#line 442
  testRunner.When("User switches to the \"User Evergreen Capacity Project\" project in the Top bar on " +
                     "Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 446
+#line 443
  testRunner.And("User navigates to the \"Projects\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 447
+#line 444
  testRunner.And("User navigates to the \"Project Details\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 448
+#line 445
  testRunner.Then("field with \"Self Service URL\" text is displayed in expanded tab on the Details Pa" +
                     "ge", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -1805,26 +1807,26 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS11510"});
-#line 451
+#line 448
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 452
+#line 449
  testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 453
+#line 450
  testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 454
+#line 451
  testRunner.When("User perform search by \"001BAQXT6JWFPI\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 455
+#line 452
  testRunner.And("User click content from \"Hostname\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 456
+#line 453
  testRunner.Then("Details page for \"001BAQXT6JWFPI\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 457
+#line 454
  testRunner.When("User navigates to the \"Details\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 458
+#line 455
  testRunner.And("User navigates to the \"Device Owner\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 459
+#line 456
  testRunner.Then("field with \"Last Logoff Date\" text is not displayed in expanded tab on the Detail" +
                     "s Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
