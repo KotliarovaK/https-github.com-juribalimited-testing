@@ -62,6 +62,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations
         public void ThenActionsPageIsDisplayedToTheUser()
         {
             var page = _driver.NowAt<ActionsPage>();
+            _driver.WaitForElementToBeDisplayed(page.CreateActionButton);
             Utils.Verify.IsTrue(page.CreateActionButton.Displayed(), "Actions page is not displayed");
         }
     }
