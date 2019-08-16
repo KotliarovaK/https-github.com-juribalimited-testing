@@ -1457,10 +1457,18 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
 	And User enters "Microsoft Office PowerPoint 2002 (XP)" text in the Search field for "Application" column on the Details Page
 	Then "GREEN" content is displayed in the "Compliance" column
-	Then "Entitled" content is displayed in the "Association" column
-	Then "Advert - A0123BFF" content is displayed in the "Advertisement" column
-	Then "Collection A011618A" content is displayed in the "Collection" column
-	Then "Install" content is displayed in the "Program" column
+	And Content is displayed in the "Advertisement" column
+	| Content           |
+	| Advert - A0123BFF |
+	| Advert - A0123BFF |
+	And Content is displayed in the "Collection" column
+	| Content             |
+	| Collection A011618A |
+	| Collection A011618A |
+	And Content is displayed in the "Program" column
+	| Content |
+	| Install |
+	| Install |
 	When User clicks String Filter button for "Compliance" column
 	Then following String Values are displayed in the filter on the Details Page
 	| Values |
@@ -1482,7 +1490,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	| Advert - A012A5EB |
 	When User closes Checkbox filter for "Advertisement" column
 	When User clicks String Filter button for "Collection" column
-	Then following Boolean Values are displayed in the filter on the Details Page
+	Then following String Values are displayed in the filter on the Details Page
 	| Values              |
 	| Collection A011166A |
 	| Collection A0114711 |
@@ -1491,7 +1499,149 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	| Collection A011EB46 |
 	When User closes Checkbox filter for "Collection" column
 	When User clicks String Filter button for "Program" column
-	Then following Boolean Values are displayed in the filter on the Details Page
+	Then following String Values are displayed in the filter on the Details Page
 	| Values  |
 	| Install |
 	When User closes Checkbox filter for "Program" column
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
+Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForApplicationsTabAdvertisementsOnDevicesPage
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "00RUUMAH9OZN9A"
+	And User click content from "Hostname" column
+	Then Details page for "00RUUMAH9OZN9A" item is displayed to the user
+	When User navigates to the "Applications" main-menu on the Details page
+	And User navigates to the "Advertisements" sub-menu on the Details page
+	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
+	And User enters "Microsoft Office PowerPoint 2002 (XP)" text in the Search field for "Application" column on the Details Page
+	Then "TierA Site01" content is displayed in the "Site" column
+	When User clicks String Filter button for "Site" column
+	Then following String Values are displayed in the filter on the Details Page
+	| Values       |
+	| TierA Site01 |
+	When User closes Checkbox filter for "Site" column
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
+Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForApplicationsTabCollectionsOnDevicesPage
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "00RUUMAH9OZN9A"
+	And User click content from "Hostname" column
+	Then Details page for "00RUUMAH9OZN9A" item is displayed to the user
+	When User navigates to the "Applications" main-menu on the Details page
+	And User navigates to the "Collections" sub-menu on the Details page
+	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
+	And User enters "Collection A01131CA" text in the Search field for "Collection" column on the Details Page
+	Then "SMS/SCCM 2007" content is displayed in the "Source Type" column
+	Then "A01 SMS (Spoof)" content is displayed in the "Source" column
+	Then "TierA Site01" content is displayed in the "Site" column
+	When User clicks String Filter button for "Source Type" column
+	Then following String Values are displayed in the filter on the Details Page
+	| Values        |
+	| SMS/SCCM 2007 |
+	When User closes Checkbox filter for "Source Type" column
+	When User clicks String Filter button for "Source" column
+	Then following String Values are displayed in the filter on the Details Page
+	| Values          |
+	| A01 SMS (Spoof) |
+	When User closes Checkbox filter for "Source" column
+	When User clicks String Filter button for "Site" column
+	Then following String Values are displayed in the filter on the Details Page
+	| Values       |
+	| TierA Site01 |
+	When User closes Checkbox filter for "Site" column
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
+Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForComplianceTabHardwareRulesOnDevicesPage
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "00RUUMAH9OZN9A"
+	And User click content from "Hostname" column
+	Then Details page for "00RUUMAH9OZN9A" item is displayed to the user
+	When User navigates to the "Compliance" main-menu on the Details page
+	And User navigates to the "Hardware Rules" sub-menu on the Details page
+	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
+	Then "AMBER" content is displayed in the "Compliance" column
+	When User clicks String Filter button for "Compliance" column
+	Then following String Values are displayed in the filter on the Details Page
+	| Values |
+	| AMBER  |
+	When User closes Checkbox filter for "Compliance" column
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
+Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForComplianceTabApplicationIssuesOnDevicesPage
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "001BAQXT6JWFPI"
+	And User click content from "Hostname" column
+	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	When User navigates to the "Compliance" main-menu on the Details page
+	And User navigates to the "Application Issues" sub-menu on the Details page
+	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
+	And User enters "Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" text in the Search field for "Application" column on the Details Page
+	Then "TierA Site01" content is displayed in the "Site" column
+	Then "TRUE" content is displayed in the "Installed" column
+	Then "RED" content is displayed in the "Compliance" column
+	When User clicks String Filter button for "Site" column
+	Then following String Values are displayed in the filter on the Details Page
+	| Values       |
+	| TierA Site01 |
+	When User closes Checkbox filter for "Site" column
+	When User clicks String Filter button for "Installed" column
+	Then following Boolean Values are displayed in the filter on the Details Page
+	| Values |
+	| True   |
+	When User closes Checkbox filter for "Installed" column
+	When User clicks String Filter button for "Compliance" column
+	Then following String Values are displayed in the filter on the Details Page
+	| Values |
+	| RED    |
+	When User closes Checkbox filter for "Compliance" column
+
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
+Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForApplicationsTabEvergreenSummaryOnDevicesPage
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User perform search by "allanj"
+	And User click content from "Username" column
+	Then Details page for "allanj (Jo Allan)" item is displayed to the user
+	When User navigates to the "Applications" main-menu on the Details page
+	And User navigates to the "Evergreen Summary" sub-menu on the Details page
+	#And User enters "Microsoft Silverlight 2 SDK (2.0.31005.0)" text in the Search field for "Application" column on the Details Page
+	#Then "UNKNOWN" text is displayed in the "Compliance" column
+	Then "JuribaDEV50" content is displayed in the "Site" column
+	Then "UNKNOWN" content is displayed in the "Installed" column
+	Then "UNKNOWN" content is displayed in the "Used" column
+	Then "TRUE" content is displayed in the "Entitled" column
+	Then "FALSE" content is displayed in the "Entitled To Divice" column
+	When User clicks String Filter button for "Compliance" column
+	Then following String Values are displayed in the filter on the Details Page
+	| Values  |
+	| UNKNOWN |
+	When User closes Checkbox filter for "Compliance" column
+	When User clicks String Filter button for "Site" column
+	Then following String Values are displayed in the filter on the Details Page
+	| Values      |
+	| JuribaDEV50 |
+	When User closes Checkbox filter for "Site" column
+	When User clicks String Filter button for "Installed" column
+	Then following Boolean Values are displayed in the filter on the Details Page
+	| Values  |
+	| Unknown |
+	When User closes Checkbox filter for "Installed" column
+	When User clicks String Filter button for "Used" column
+	Then following Boolean Values are displayed in the filter on the Details Page
+	| Values  |
+	| Unknown |
+	When User closes Checkbox filter for "Used" column
+	When User clicks String Filter button for "Entitled" column
+	Then following Boolean Values are displayed in the filter on the Details Page
+	| Values |
+	| True   |
+	When User closes Checkbox filter for "Entitled" column
+	When User clicks String Filter button for "Entitled To Divice" column
+	Then following Boolean Values are displayed in the filter on the Details Page
+	| Values |
+	| False  |
+	When User closes Checkbox filter for "Entitled To Divice" column

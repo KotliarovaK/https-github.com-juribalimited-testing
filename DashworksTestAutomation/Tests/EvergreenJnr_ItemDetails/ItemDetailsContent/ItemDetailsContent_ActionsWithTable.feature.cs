@@ -5862,87 +5862,642 @@ this.FeatureBackground();
                     "\"Application\" column on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1459
  testRunner.Then("\"GREEN\" content is displayed in the \"Compliance\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1460
- testRunner.Then("\"Entitled\" content is displayed in the \"Association\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1461
- testRunner.Then("\"Advert - A0123BFF\" content is displayed in the \"Advertisement\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1462
- testRunner.Then("\"Collection A011618A\" content is displayed in the \"Collection\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1463
- testRunner.Then("\"Install\" content is displayed in the \"Program\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1464
- testRunner.When("User clicks String Filter button for \"Compliance\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table68 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Values"});
+                        "Content"});
             table68.AddRow(new string[] {
-                        "GREEN"});
-#line 1465
- testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table68, "Then ");
-#line 1468
- testRunner.When("User closes Checkbox filter for \"Compliance\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1469
- testRunner.When("User clicks String Filter button for \"Association\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                        "Advert - A0123BFF"});
+            table68.AddRow(new string[] {
+                        "Advert - A0123BFF"});
+#line 1460
+ testRunner.And("Content is displayed in the \"Advertisement\" column", ((string)(null)), table68, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table69 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Values"});
+                        "Content"});
             table69.AddRow(new string[] {
-                        "Installed"});
+                        "Collection A011618A"});
             table69.AddRow(new string[] {
-                        "Entitled"});
-#line 1470
- testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table69, "Then ");
-#line 1474
- testRunner.When("User closes Checkbox filter for \"Association\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1475
- testRunner.When("User clicks String Filter button for \"Advertisement\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                        "Collection A011618A"});
+#line 1464
+ testRunner.And("Content is displayed in the \"Collection\" column", ((string)(null)), table69, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table70 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Values"});
+                        "Content"});
             table70.AddRow(new string[] {
-                        "Advert - A0123493"});
+                        "Install"});
             table70.AddRow(new string[] {
-                        "Advert - A0123BFF"});
-            table70.AddRow(new string[] {
-                        "Advert - A01267E3"});
-            table70.AddRow(new string[] {
-                        "Advert - A0126E99"});
-            table70.AddRow(new string[] {
-                        "Advert - A012A5EB"});
-#line 1476
- testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table70, "Then ");
-#line 1483
- testRunner.When("User closes Checkbox filter for \"Advertisement\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1484
- testRunner.When("User clicks String Filter button for \"Collection\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                        "Install"});
+#line 1468
+ testRunner.And("Content is displayed in the \"Program\" column", ((string)(null)), table70, "And ");
+#line 1472
+ testRunner.When("User clicks String Filter button for \"Compliance\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table71 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table71.AddRow(new string[] {
-                        "Collection A011166A"});
-            table71.AddRow(new string[] {
-                        "Collection A0114711"});
-            table71.AddRow(new string[] {
-                        "Collection A011618A"});
-            table71.AddRow(new string[] {
-                        "Collection A011A360"});
-            table71.AddRow(new string[] {
-                        "Collection A011EB46"});
-#line 1485
- testRunner.Then("following Boolean Values are displayed in the filter on the Details Page", ((string)(null)), table71, "Then ");
-#line 1492
- testRunner.When("User closes Checkbox filter for \"Collection\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1493
- testRunner.When("User clicks String Filter button for \"Program\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                        "GREEN"});
+#line 1473
+ testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table71, "Then ");
+#line 1476
+ testRunner.When("User closes Checkbox filter for \"Compliance\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1477
+ testRunner.When("User clicks String Filter button for \"Association\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table72 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table72.AddRow(new string[] {
+                        "Installed"});
+            table72.AddRow(new string[] {
+                        "Entitled"});
+#line 1478
+ testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table72, "Then ");
+#line 1482
+ testRunner.When("User closes Checkbox filter for \"Association\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1483
+ testRunner.When("User clicks String Filter button for \"Advertisement\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table73 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table73.AddRow(new string[] {
+                        "Advert - A0123493"});
+            table73.AddRow(new string[] {
+                        "Advert - A0123BFF"});
+            table73.AddRow(new string[] {
+                        "Advert - A01267E3"});
+            table73.AddRow(new string[] {
+                        "Advert - A0126E99"});
+            table73.AddRow(new string[] {
+                        "Advert - A012A5EB"});
+#line 1484
+ testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table73, "Then ");
+#line 1491
+ testRunner.When("User closes Checkbox filter for \"Advertisement\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1492
+ testRunner.When("User clicks String Filter button for \"Collection\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table74 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table74.AddRow(new string[] {
+                        "Collection A011166A"});
+            table74.AddRow(new string[] {
+                        "Collection A0114711"});
+            table74.AddRow(new string[] {
+                        "Collection A011618A"});
+            table74.AddRow(new string[] {
+                        "Collection A011A360"});
+            table74.AddRow(new string[] {
+                        "Collection A011EB46"});
+#line 1493
+ testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table74, "Then ");
+#line 1500
+ testRunner.When("User closes Checkbox filter for \"Collection\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1501
+ testRunner.When("User clicks String Filter button for \"Program\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table75 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table75.AddRow(new string[] {
                         "Install"});
-#line 1494
- testRunner.Then("following Boolean Values are displayed in the filter on the Details Page", ((string)(null)), table72, "Then ");
-#line 1497
+#line 1502
+ testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table75, "Then ");
+#line 1505
  testRunner.When("User closes Checkbox filter for \"Program\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRel" +
+            "atedMultiselectFilterForApplicationsTabAdvertisementsOnDevicesPage")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
+        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS17761")]
+        public virtual void EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForApplicationsTabAdvertisementsOnDevicesPage()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForApplicationsTabAdvertisementsOnDevicesPageInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForApplicationsTabAdvertisementsOnDevicesPageInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRel" +
+                    "atedMultiselectFilterForApplicationsTabAdvertisementsOnDevicesPage", null, new string[] {
+                        "Evergreen",
+                        "Devices",
+                        "EvergreenJnr_ItemDetails",
+                        "ItemDetailsDisplay",
+                        "DAS17761"});
+#line 1508
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 1509
+ testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1510
+ testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1511
+ testRunner.When("User perform search by \"00RUUMAH9OZN9A\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1512
+ testRunner.And("User click content from \"Hostname\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1513
+ testRunner.Then("Details page for \"00RUUMAH9OZN9A\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1514
+ testRunner.When("User navigates to the \"Applications\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1515
+ testRunner.And("User navigates to the \"Advertisements\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1516
+ testRunner.When("User switches to the \"Windows 7 Migration (Computer Scheduled Project)\" project i" +
+                    "n the Top bar on Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1517
+ testRunner.And("User enters \"Microsoft Office PowerPoint 2002 (XP)\" text in the Search field for " +
+                    "\"Application\" column on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1518
+ testRunner.Then("\"TierA Site01\" content is displayed in the \"Site\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1519
+ testRunner.When("User clicks String Filter button for \"Site\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table76 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table76.AddRow(new string[] {
+                        "TierA Site01"});
+#line 1520
+ testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table76, "Then ");
+#line 1523
+ testRunner.When("User closes Checkbox filter for \"Site\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRel" +
+            "atedMultiselectFilterForApplicationsTabCollectionsOnDevicesPage")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
+        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS17761")]
+        public virtual void EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForApplicationsTabCollectionsOnDevicesPage()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForApplicationsTabCollectionsOnDevicesPageInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForApplicationsTabCollectionsOnDevicesPageInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRel" +
+                    "atedMultiselectFilterForApplicationsTabCollectionsOnDevicesPage", null, new string[] {
+                        "Evergreen",
+                        "Devices",
+                        "EvergreenJnr_ItemDetails",
+                        "ItemDetailsDisplay",
+                        "DAS17761"});
+#line 1526
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 1527
+ testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1528
+ testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1529
+ testRunner.When("User perform search by \"00RUUMAH9OZN9A\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1530
+ testRunner.And("User click content from \"Hostname\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1531
+ testRunner.Then("Details page for \"00RUUMAH9OZN9A\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1532
+ testRunner.When("User navigates to the \"Applications\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1533
+ testRunner.And("User navigates to the \"Collections\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1534
+ testRunner.When("User switches to the \"Windows 7 Migration (Computer Scheduled Project)\" project i" +
+                    "n the Top bar on Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1535
+ testRunner.And("User enters \"Collection A01131CA\" text in the Search field for \"Collection\" colum" +
+                    "n on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1536
+ testRunner.Then("\"SMS/SCCM 2007\" content is displayed in the \"Source Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1537
+ testRunner.Then("\"A01 SMS (Spoof)\" content is displayed in the \"Source\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1538
+ testRunner.Then("\"TierA Site01\" content is displayed in the \"Site\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1539
+ testRunner.When("User clicks String Filter button for \"Source Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table77 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table77.AddRow(new string[] {
+                        "SMS/SCCM 2007"});
+#line 1540
+ testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table77, "Then ");
+#line 1543
+ testRunner.When("User closes Checkbox filter for \"Source Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1544
+ testRunner.When("User clicks String Filter button for \"Source\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table78 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table78.AddRow(new string[] {
+                        "A01 SMS (Spoof)"});
+#line 1545
+ testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table78, "Then ");
+#line 1548
+ testRunner.When("User closes Checkbox filter for \"Source\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1549
+ testRunner.When("User clicks String Filter button for \"Site\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table79 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table79.AddRow(new string[] {
+                        "TierA Site01"});
+#line 1550
+ testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table79, "Then ");
+#line 1553
+ testRunner.When("User closes Checkbox filter for \"Site\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRel" +
+            "atedMultiselectFilterForComplianceTabHardwareRulesOnDevicesPage")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
+        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS17761")]
+        public virtual void EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForComplianceTabHardwareRulesOnDevicesPage()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForComplianceTabHardwareRulesOnDevicesPageInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForComplianceTabHardwareRulesOnDevicesPageInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRel" +
+                    "atedMultiselectFilterForComplianceTabHardwareRulesOnDevicesPage", null, new string[] {
+                        "Evergreen",
+                        "Devices",
+                        "EvergreenJnr_ItemDetails",
+                        "ItemDetailsDisplay",
+                        "DAS17761"});
+#line 1556
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 1557
+ testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1558
+ testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1559
+ testRunner.When("User perform search by \"00RUUMAH9OZN9A\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1560
+ testRunner.And("User click content from \"Hostname\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1561
+ testRunner.Then("Details page for \"00RUUMAH9OZN9A\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1562
+ testRunner.When("User navigates to the \"Compliance\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1563
+ testRunner.And("User navigates to the \"Hardware Rules\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1564
+ testRunner.When("User switches to the \"Windows 7 Migration (Computer Scheduled Project)\" project i" +
+                    "n the Top bar on Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1565
+ testRunner.Then("\"AMBER\" content is displayed in the \"Compliance\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1566
+ testRunner.When("User clicks String Filter button for \"Compliance\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table80 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table80.AddRow(new string[] {
+                        "AMBER"});
+#line 1567
+ testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table80, "Then ");
+#line 1570
+ testRunner.When("User closes Checkbox filter for \"Compliance\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRel" +
+            "atedMultiselectFilterForComplianceTabApplicationIssuesOnDevicesPage")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
+        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS17761")]
+        public virtual void EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForComplianceTabApplicationIssuesOnDevicesPage()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForComplianceTabApplicationIssuesOnDevicesPageInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForComplianceTabApplicationIssuesOnDevicesPageInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRel" +
+                    "atedMultiselectFilterForComplianceTabApplicationIssuesOnDevicesPage", null, new string[] {
+                        "Evergreen",
+                        "Devices",
+                        "EvergreenJnr_ItemDetails",
+                        "ItemDetailsDisplay",
+                        "DAS17761"});
+#line 1573
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 1574
+ testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1575
+ testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1576
+ testRunner.When("User perform search by \"001BAQXT6JWFPI\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1577
+ testRunner.And("User click content from \"Hostname\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1578
+ testRunner.Then("Details page for \"001BAQXT6JWFPI\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1579
+ testRunner.When("User navigates to the \"Compliance\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1580
+ testRunner.And("User navigates to the \"Application Issues\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1581
+ testRunner.When("User switches to the \"Windows 7 Migration (Computer Scheduled Project)\" project i" +
+                    "n the Top bar on Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1582
+ testRunner.And("User enters \"Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" +
+                    "\" text in the Search field for \"Application\" column on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1583
+ testRunner.Then("\"TierA Site01\" content is displayed in the \"Site\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1584
+ testRunner.Then("\"TRUE\" content is displayed in the \"Installed\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1585
+ testRunner.Then("\"RED\" content is displayed in the \"Compliance\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1586
+ testRunner.When("User clicks String Filter button for \"Site\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table81 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table81.AddRow(new string[] {
+                        "TierA Site01"});
+#line 1587
+ testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table81, "Then ");
+#line 1590
+ testRunner.When("User closes Checkbox filter for \"Site\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1591
+ testRunner.When("User clicks String Filter button for \"Installed\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table82 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table82.AddRow(new string[] {
+                        "True"});
+#line 1592
+ testRunner.Then("following Boolean Values are displayed in the filter on the Details Page", ((string)(null)), table82, "Then ");
+#line 1595
+ testRunner.When("User closes Checkbox filter for \"Installed\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1596
+ testRunner.When("User clicks String Filter button for \"Compliance\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table83 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table83.AddRow(new string[] {
+                        "RED"});
+#line 1597
+ testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table83, "Then ");
+#line 1600
+ testRunner.When("User closes Checkbox filter for \"Compliance\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelat" +
+            "edMultiselectFilterForApplicationsTabEvergreenSummaryOnDevicesPage")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Users")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
+        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS17761")]
+        public virtual void EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForApplicationsTabEvergreenSummaryOnDevicesPage()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForApplicationsTabEvergreenSummaryOnDevicesPageInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForApplicationsTabEvergreenSummaryOnDevicesPageInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelat" +
+                    "edMultiselectFilterForApplicationsTabEvergreenSummaryOnDevicesPage", null, new string[] {
+                        "Evergreen",
+                        "Users",
+                        "EvergreenJnr_ItemDetails",
+                        "ItemDetailsDisplay",
+                        "DAS17761"});
+#line 1603
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 1604
+ testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1605
+ testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1606
+ testRunner.When("User perform search by \"allanj\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1607
+ testRunner.And("User click content from \"Username\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1608
+ testRunner.Then("Details page for \"allanj (Jo Allan)\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1609
+ testRunner.When("User navigates to the \"Applications\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1610
+ testRunner.And("User navigates to the \"Evergreen Summary\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1613
+ testRunner.Then("\"JuribaDEV50\" content is displayed in the \"Site\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1614
+ testRunner.Then("\"UNKNOWN\" content is displayed in the \"Installed\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1615
+ testRunner.Then("\"UNKNOWN\" content is displayed in the \"Used\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1616
+ testRunner.Then("\"TRUE\" content is displayed in the \"Entitled\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1617
+ testRunner.Then("\"FALSE\" content is displayed in the \"Entitled To Divice\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1618
+ testRunner.When("User clicks String Filter button for \"Compliance\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table84 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table84.AddRow(new string[] {
+                        "UNKNOWN"});
+#line 1619
+ testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table84, "Then ");
+#line 1622
+ testRunner.When("User closes Checkbox filter for \"Compliance\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1623
+ testRunner.When("User clicks String Filter button for \"Site\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table85 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table85.AddRow(new string[] {
+                        "JuribaDEV50"});
+#line 1624
+ testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table85, "Then ");
+#line 1627
+ testRunner.When("User closes Checkbox filter for \"Site\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1628
+ testRunner.When("User clicks String Filter button for \"Installed\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table86 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table86.AddRow(new string[] {
+                        "Unknown"});
+#line 1629
+ testRunner.Then("following Boolean Values are displayed in the filter on the Details Page", ((string)(null)), table86, "Then ");
+#line 1632
+ testRunner.When("User closes Checkbox filter for \"Installed\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1633
+ testRunner.When("User clicks String Filter button for \"Used\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table87 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table87.AddRow(new string[] {
+                        "Unknown"});
+#line 1634
+ testRunner.Then("following Boolean Values are displayed in the filter on the Details Page", ((string)(null)), table87, "Then ");
+#line 1637
+ testRunner.When("User closes Checkbox filter for \"Used\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1638
+ testRunner.When("User clicks String Filter button for \"Entitled\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table88 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table88.AddRow(new string[] {
+                        "True"});
+#line 1639
+ testRunner.Then("following Boolean Values are displayed in the filter on the Details Page", ((string)(null)), table88, "Then ");
+#line 1642
+ testRunner.When("User closes Checkbox filter for \"Entitled\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1643
+ testRunner.When("User clicks String Filter button for \"Entitled To Divice\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table89 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table89.AddRow(new string[] {
+                        "False"});
+#line 1644
+ testRunner.Then("following Boolean Values are displayed in the filter on the Details Page", ((string)(null)), table89, "Then ");
+#line 1647
+ testRunner.When("User closes Checkbox filter for \"Entitled To Divice\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             this.ScenarioCleanup();
         }
