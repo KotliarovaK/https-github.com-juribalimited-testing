@@ -2,6 +2,7 @@
 using System.Threading;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
+using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Automations;
 using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
 using NUnit.Framework;
@@ -25,6 +26,16 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations
         {
             var checkbox = _driver.NowAt<CreateAutomationsPage>();
             checkbox.SelectCheckboxByName(checkboxName).Click();
+        }
+
+        [When(@"User type ""(.*)"" Name in the ""(.*)"" field on the Automation details page")]
+        public void WhenUserTypeNameInTheFieldOnTheProjectDetailsPage(string text, string fieldName)
+        {
+            var page = _driver.NowAt<ProjectsPage>();
+
+            page.GetFieldByName(fieldName).ClearWithBackspaces();
+            page.GetFieldByName(fieldName).SendKeys(text);
+            page.BodyContainer.Click();
         }
     }
 }

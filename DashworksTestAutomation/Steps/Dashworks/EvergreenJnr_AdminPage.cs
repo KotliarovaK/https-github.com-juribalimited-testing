@@ -1774,7 +1774,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         [When(@"User changes Name to ""(.*)"" in the ""(.*)"" field on the Project details page")]
         [When(@"User type ""(.*)"" Name in the ""(.*)"" field on the Project details page")]
-        [When(@"User type ""(.*)"" Name in the ""(.*)"" field on the Automation details page")]
         public void WhenUserTypeNameInTheFieldOnTheProjectDetailsPage(string name, string fieldName)
         {
             SendKeysToTheNamedTextbox(name, fieldName);

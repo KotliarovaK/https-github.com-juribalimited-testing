@@ -300,7 +300,7 @@ Scenario: EvergreenJnr_AdminPage_CheckParametersToCreateUpdatePathAction
 	When User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The automation action has been created" text
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15425 @DAS16143 @DAS17336 @DAS17367 @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15425 @DAS16143 @DAS17336 @DAS17367 @DAS17802 @Not_Ready
 #Change value after gold data complete added
 Scenario: EvergreenJnr_AdminPage_CheckEditActionPage
 	When User clicks Admin on the left-hand menu
@@ -322,6 +322,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditActionPage
 	When User selects "[Default (User)]" in the "Path" dropdown for Actions
 	And User clicks the "CREATE" Action button
 	When User clicks "Automations" navigation link on the Admin page
+	Then There are no errors in the browser console
 	When User enters "15425_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
 	Then "UPDATE" Action button have tooltip with "No changes made" text
