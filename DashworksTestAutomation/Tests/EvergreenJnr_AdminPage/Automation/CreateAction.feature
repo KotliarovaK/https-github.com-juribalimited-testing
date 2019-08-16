@@ -72,7 +72,7 @@ Examples:
 	| 17428_Automation_Applications | All Applications | User Scheduled Test (Jo)             | One     | Radio Rag only Rag App |
 	| 17428_Automation_Mailboxes    | All Mailboxes    | USE ME FOR AUTOMATION(MAIL SCHDLD)   | Stage 1 | Test A                 |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17691 @Cleanup @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17691 @DAS17625 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckThatStageWithoutCorrectTasksIsNotDisplayedForActions
 	When Project created via API and opened
 	| ProjectName      | Scope     | ProjectTemplate | Mode               |
@@ -123,36 +123,36 @@ Scenario: EvergreenJnr_AdminPage_CheckThatStageWithoutCorrectTasksIsNotDisplayed
 	And User selects "DAS17691_Project" in the Project dropdown
 	Then "Stage" dropdown is not displayed on the Admin Settings screen
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17615 @DAS17617 @Cleanup @Not_Ready
-Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithUpdateOwnerIsLoadedCorrectly
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17738 @DAS17625 @Cleanup @Not_Ready
+Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueAction
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User creates new Automation via API
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| 17617_Automation | 17617       | true   | false              | All Devices | Manual |
+	| 17738_Automation | 17430       | true   | false              | All Devices | Manual |
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
-	When User enters "17617_Automation" text in the Search field for "Automation" column
+	When User enters "17738_Automation" text in the Search field for "Automation" column
 	And User clicks content from "Automation" column
-	And User clicks "Actions" tab
+	Then Edit Automation page is displayed to the User
+	Then "All Devices" content is displayed in the Scope Automation dropdown
+	When User clicks "Actions" tab
 	#Create Action
 	When User clicks the "CREATE ACTION" Action button
-	And User type "Update Migrated devices" Name in the "Action Name" field on the Automation details page
+	And User type "17738_Action" Name in the "Action Name" field on the Automation details page
 	And User selects "Update task value" in the "Action Type" dropdown
 	When User selects "Computer Scheduled Test (Jo)" in the Project dropdown
 	When User selects "One" in the "Stage" dropdown for Actions
-	When User selects "Radio Rag Date Owner Comp Req B" in the "Task" dropdown for Actions
-	And User selects "No change" Update Value on Action panel
+	When User selects "Radio Rag Date Comp" in the "Task" dropdown for Actions
+	And User selects "Update" Update Value on Action panel
+	And User selects "Failed" Value on Action panel
 	And User selects "No change" Update Date on Action panel
-	And User selects "Update" Update Owner on Action panel
-	And User selects "1803 Team" Team on Action panel
-	And User selects "Akhila Varghese" Owner on Action panel
-	And User clicks the "CREATE" Action button
-	When User clicks "Automations" navigation link on the Admin page
-	When User enters "17617_Automation" text in the Search field for "Automation" column
-	When User clicks content from "Automation" column
-	When User clicks "Actions" tab
-	When User clicks content from "Action" column
+	Then "CREATE" Action button is active
+	When User selects "No change" value for "Update" dropdown on Action panel
+	Then "CREATE" Action button is disabled
+	When User selects "Update" value for "No change" dropdown on Action panel
+	And User selects "Failed" Value on Action panel
+	Then "CREATE" Action button is active
 	#Actions content check
 	Then "Update Migrated devices" content is displayed in "Action Name" field
 	Then "Update task value" text value is displayed in the "Action Type" dropdown

@@ -24,6 +24,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations
         public void ThenEditActionPageIsDisplayedToTheUser()
         {
             var page = _driver.NowAt<EditActionPage>();
+            _driver.WaitForElementToBeDisplayed(page.EditActionTitle);
             Utils.Verify.IsTrue(page.EditActionTitle.Displayed(), "Edit Action page is not displayed");
         }
 
