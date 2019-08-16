@@ -725,6 +725,24 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.IsTrue(page.GetWidgetByName(widgetName).Displayed(), $"{widgetName} Widget is not displayed");
         }
 
+        [Then(@"Label ""(.*)"" displayed for ""(.*)"" widget")]
+        public void ThenWidgetLabelContainsLabel(string label, string widgetName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
+
+            Utils.Verify.That(page.GetWidgetLabels(widgetName).Select(x => x.Text).ToList(), Does.Contain(label), $"{label} label is not found");
+        }
+
+        [Then(@"Label icon displayed gray for ""(.*)"" widget")]
+        public void ThenWidgetLabelContainsImageColoredInGray(string widgetName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
+
+            Utils.Verify.That(page.GetLegendColor(widgetName), Does.Contain("#C6CBD2"), $"#C6CBD2 color is not found");
+        }
+
         [Then(@"link is not displayed for the ""(.*)"" value in the Widget")]
         public void ThenLinkIsNotDisplayedForTheValueInTheWidget(string content)
         {

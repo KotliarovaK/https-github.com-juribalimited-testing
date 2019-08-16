@@ -252,6 +252,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             listDetailsElement.DeleteButton.Click();
         }
 
+        [When(@"User waits for three seconds")]
+        public void UserWaitsForThreeSeconds()
+        {
+            Thread.Sleep(3000);
+        }
+
         [Then(@"Delete and Cancel buttons are available in the warning message")]
         public void ThenDeleteAndCancelButtonsAreAvailableInTheWarningMessage()
         {
@@ -380,6 +386,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             listElement.ClickSettingsButtonByListName(listName);
             _driver.WaitForElementToBeDisplayed(listElement.DuplicateButton);
             listElement.DuplicateButton.Click();
+            _driver.WaitForDataLoading();
         }
 
         [When(@"User opens manage pane for list with ""(.*)"" name")]

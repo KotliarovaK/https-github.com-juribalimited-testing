@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Threading;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
@@ -105,32 +106,46 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
 
         public List<Point> LoadingIndicatorCoordinates()
         {
+            Thread.Sleep(2000);
             List<Point> points = new List<Point>();
-
             IList<IWebElement> links = Driver.FindElements(By.XPath(".//li[contains(@class, 'das-mat-tree')]//a[contains(@href, 'details')]"));
 
-            foreach (var link in links)
-            {
-                link.Click();
+            int attempt = 0;
 
-                for (int i = 0; i < 5; i++)
+            while (attempt!=3 && points.Count==0)
+            {
+                foreach (var link in links)
                 {
                     try
                     {
-                        if (Driver.FindElements(
-                                    By.XPath(".//div[contains(@class,'spinner') and not(contains(@class,'small'))]"))
-                                .Count > 0)
-                        {
-                            points.Add(Driver.FindElements(By.XPath(".//div[contains(@class,'spinner') and not(contains(@class,'small'))]")).First().Location);
-                        }
+                        link.Click();
                     }
                     catch (Exception)
                     {
                         break;
                     }
+
+
+                    for (int i = 0; i < 5; i++)
+                    {
+                        try
+                        {
+                            if (Driver.FindElements(
+                                        By.XPath(".//div[contains(@class,'spinner') and not(contains(@class,'small'))]"))
+                                    .Count > 0)
+                            {
+                                points.Add(Driver.FindElements(By.XPath(".//div[contains(@class,'spinner') and not(contains(@class,'small'))]")).First().Location);
+                            }
+                        }
+                        catch (Exception)
+                        {
+                            break;
+                        }
+                    }
+                    Driver.WaitForDataLoading();
                 }
-                Driver.WaitForDataLoading();
             }
+
             return points;
         }
     }

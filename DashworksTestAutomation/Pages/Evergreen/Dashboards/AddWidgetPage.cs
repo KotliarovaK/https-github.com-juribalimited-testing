@@ -63,6 +63,9 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//*[@aria-label='ColorScheme']")]
         public IWebElement ColorScheme { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//*[@formcontrolname='colourSchemeId']//span")]
+        public IWebElement ColorSchemePlaceholder { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//mat-checkbox[@formcontrolname='showLegend']/label")]
         public IWebElement ShowLegend { get; set; }
 

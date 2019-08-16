@@ -369,3 +369,57 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenAvgAggre
 	| Operating System DESC            |
 	| HDD Total Size (GB) Average ASC  |
 	| HDD Total Size (GB) Average DESC |
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17467 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckNameAndLabelForEmptyOwnerCompliance
+	When User clicks "Devices" on the left-hand menu
+	And User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Owner Compliance" filter where type is "Does not equal" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Unknown            |
+	| Red                |
+	| Amber              |
+	| Green              |
+	| None               |
+	And User clicks Save button on the list panel
+	And User create dynamic list with "ListForDAS17467" name on "Devices" page
+	Then "ListForDAS17467" list is displayed to user
+	When Dashboard with "Dashboard for DAS17467" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User adds new Widget
+	| WidgetType | Title             | List            | SplitBy          | AggregateBy | AggregateFunction | OrderBy              | TableOrientation | MaxValues | ShowLegend | Type | Drilldown | Layout |
+	| Pie        | WidgetForDAS17467 | ListForDAS17467 | Owner Compliance |             | Count             | Owner Compliance ASC |                  |           | true       |      |           |        |
+	And User selects "Show data labels" checkbox on the Create Widget page
+	Then Widget Preview is displayed to the user
+	And Color Scheme dropdown displayed with "Compliance Colour Scheme" placeholder 
+	When User clicks the "CREATE" Action button
+	Then "WidgetForDAS17467" Widget is displayed to the user
+	And Label "Empty" displayed for "WidgetForDAS17467" widget
+	And Label icon displayed gray for "WidgetForDAS17467" widget
+	
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17467 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckColorSchemePlaceholderForReadiness
+	When User clicks "Devices" on the left-hand menu
+	And User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "1803: Readiness" filter where type is "Does not equal" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Blocked            |
+	| Amber              |
+	| Green              |
+	| Grey               |
+	| None               |
+	And User clicks Save button on the list panel
+	And User create dynamic list with "ListForDAS17467_1" name on "Devices" page
+	Then "ListForDAS17467_1" list is displayed to user
+	When Dashboard with "Dashboard for DAS17467_1" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User adds new Widget
+	| WidgetType | Title               | List              | SplitBy         | AggregateBy | AggregateFunction | OrderBy             | TableOrientation | MaxValues | ShowLegend | Type | Drilldown | Layout |
+	| Pie        | WidgetForDAS17467_1 | ListForDAS17467_1 | 1803: Readiness |             | Count             | 1803: Readiness ASC |                  |           | true       |      |           |        |
+	And User selects "Show data labels" checkbox on the Create Widget page
+	Then Widget Preview is displayed to the user
+	And Color Scheme dropdown displayed with "Readiness Colour Scheme" placeholder 
