@@ -1362,3 +1362,29 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatBlanksValueChangedToEmptyValueOnMa
 	| Values |
 	| None   |
 	When User closes Checkbox filter for "Status" column
+
+@Evergreen @Device @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17734
+Scenario: EvergreenJnr_DeviceList_CheckThatUsersTabIsDisplayedWithCorrectStagesOnDevicesDetailsPageForProjectMode
+	Then "Devices" list should be displayed to the user
+	When User perform search by "001BAQXT6JWFPI"
+	And User click content from "Hostname" column
+	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	When User navigates to the "USers" main-menu on the Details page
+	When User switches to the "USE ME FOR AUTOMATION(DEVICE SCHDLD)" project in the Top bar on Item details page
+	Then following columns are displayed on the Item details page:
+	| ColumnName            |
+	| User                  |
+	| Readiness             |
+	| Display Name          |
+	| Domain                |
+	| Owner                 |
+	| Path                  |
+	| Category              |
+	| Application Readiness |
+	| Stage A               |
+	| Stage C               |
+	| Stage D               |
+	When User enters "AAC860150" text in the Search field for "User" column on the Details Page
+	Then "GREEN" content is displayed for "Stage A" column
+	And "RED" content is displayed for "Stage C" column
+	And "AMBER" content is displayed for "Stage D" column
