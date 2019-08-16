@@ -102,7 +102,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'actions-right-button')]/button[@aria-label='ResetFilters']")]
         public IWebElement ResetFiltersButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'actions-right-button')]/button[@aria-label='GroupBy']")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'actions-right-button')]//button[@aria-label='GroupBy']")]
         public IWebElement GroupByButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'actions-right-button')]/button[@aria-label='Export']")]
@@ -150,9 +150,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='mat-select-value']/span[text()='Actions']/ancestor::mat-select")]
         public IWebElement ActionsButton { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//span[@class='mat-option-text']/span[contains(text(), 'Delete')]")]
-        public IWebElement DeleteButtonInActions { get; set; }
 
         [FindsBy(How = How.XPath,
             Using = ".//button[contains(@class, 'button-small mat-raised-button')]/span[text()='DELETE']")]
@@ -563,7 +560,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public void GetBooleanStringFilterByName(string filterName)
         {
-            var filterSelector = $"//span[text()='{filterName}']";
+            var filterSelector = $".//span[contains(@class,'boolean-text')][text()='{filterName}']";
             Driver.WaitForElementToBeDisplayed(By.XPath(filterSelector));
             Driver.FindElement(By.XPath(filterSelector)).Click();
         }
@@ -754,6 +751,21 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElement(selector);
         }
 
+        public List<KeyValuePair<string, bool>> GetAllOptionsInGroupByFilter()
+        {
+            var selector = By.XPath($".//div[@class='mat-menu-content']/mat-checkbox");
+            Driver.WaitForElementToBeDisplayed(selector);
+            var allOptions = Driver.FindElements(selector);
+            List<KeyValuePair<string, bool>> result = new List<KeyValuePair<string, bool>>();
+            foreach (IWebElement option in allOptions)
+            {
+                var text = option.FindElement(By.XPath(".//span[@class='mat-checkbox-label']")).Text.TrimStart(' ');
+                var selected = option.FindElement(By.XPath(".//input[@type='checkbox']")).Selected;
+                result.Add(new KeyValuePair<string, bool>(text, selected));
+            }
+            return result;
+        }
+
         public bool IsGridGrouped()
         {
             return Driver.IsElementDisplayed(By.XPath(".//div[@role='row'][@row-index]//span[@class='ag-group-value']"),
@@ -781,7 +793,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             try
             {
                 var row = GetGroupedRowByContent(groupedValue);
-                var expand = row.FindElement(By.XPath("./span[contains(@class,'expanded')]"));
+                var expand = row.FindElement(By.XPath("./span[contains(@class,'contracted')]/span"));
                 expand.Click();
             }
             catch (NoSuchElementException e)
@@ -795,7 +807,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             try
             {
                 var row = GetGroupedRowByContent(groupedValue);
-                var expand = row.FindElement(By.XPath("./span[contains(@class,'contracted')]"));
+                var expand = row.FindElement(By.XPath("./span[contains(@class,'expanded')]/span"));
                 expand.Click();
             }
             catch (NoSuchElementException e)
@@ -818,6 +830,26 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
                 return allData.First(x => x.Text.Contains(cellText));
             else
                 throw new Exception($"There is no cell with '{cellText}' text in the '{columnName}' column");
+        }
+
+        public void ClickDeleteButtonInActions()
+        {
+            By selector = By.XPath(".//span[@class='mat-option-text']/span[contains(text(), 'Delete')]");
+            int attemtps = 3;
+            for (int i = 0; i < attemtps; i++)
+            {
+                try
+                {
+                    Driver.WaitForElementToBeDisplayed(selector);
+                    Driver.FindElement(selector).Click();
+                    return;
+                }
+                catch (InvalidCastException)
+                {
+                    //Ignore
+                }
+            }
+            throw new Exception($"Delete button in actions was not clicked in {attemtps} attempts");
         }
     }
 }

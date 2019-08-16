@@ -88,7 +88,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectPageDisplayedWhenOpeningNotExis
 	And User clicks "Projects" link on the Admin page
 	And User tries to open not existing page
 	Then Page not found displayed for the user
-	And There are only page not found errors in console
+	And There are only 'Page not found' errors in console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Projects @Senior_Projects @DAS16137 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThat403FullPageErrorAppearsAfterUserWithoutPermissionsNavigatesToAdminPages

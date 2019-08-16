@@ -410,8 +410,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatReadinessAreTranslatedAccordingToAccou
 Scenario: EvergreenJnr_AdminPage_CheckThatReadinessAreTranslatedAccordingToAccountLanguageOnEditPage
 	When User language is changed to "Deutsch" via API
 	And User navigates to Readiness page of "1803 Rollout" project
-	And User enters "GREEN" text in the Search field for "Readiness" column
-	And User click content from "Readiness" column
+	And User enters "GREEN" text in the Search field for "Bereitschaft" column
+	And User click content from "Bereitschaft" column
 	And User clicks Colour Template field on Edit Readiness
 	Then User sees following options for Colour Template selector on Create Readiness page:
 	| ColorTemplate |
