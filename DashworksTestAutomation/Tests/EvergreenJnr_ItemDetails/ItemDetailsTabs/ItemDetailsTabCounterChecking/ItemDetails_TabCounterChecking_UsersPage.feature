@@ -173,3 +173,15 @@ Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayed
 	And "Overview" tab is displayed on left menu on the Details page and NOT contains count of items
 	And "Hardware Summary" tab is displayed on left menu on the Details page and NOT contains count of items
 	And "Application Summary" tab is displayed on left menu on the Details page and NOT contains count of items
+
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17769
+Scenario: EvergreenJnr_UsersList_CheckThatCollectionsSubMenuCounterMatchTheNumberOfCollectionsForThisUser
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User perform search by "allanj"
+	When User click content from "Username" column
+	Then Details page for "allanj (Jo Allan)" item is displayed to the user
+	When User navigates to the "Applications" main-menu on the Details page
+	When User navigates to the "Collections" sub-menu on the Details page
+	Then "9" rows found label displays on Details Page
+	Then "Collections" tab is displayed on left menu on the Details page and contains '9' count of items
