@@ -1362,3 +1362,136 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatBlanksValueChangedToEmptyValueOnMa
 	| Values |
 	| None   |
 	When User closes Checkbox filter for "Status" column
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
+Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForUsersTabOnDevicesPage
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "00RUUMAH9OZN9A"
+	And User click content from "Hostname" column
+	Then Details page for "00RUUMAH9OZN9A" item is displayed to the user
+	When User navigates to the "Users" main-menu on the Details page
+	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
+	Then "OUT OF SCOPE" content is displayed in the "Readiness" column
+	Then "TRUE" content is displayed in the "Owner" column
+	Then "NONE" content is displayed in the "Application Readiness" column
+	Then "GREY" content is displayed in the "Pre-Migration" column
+	Then "GREY" content is displayed in the "Migration" column
+	Then "" content is displayed in the "Email Controls" column
+	Then "GREY" content is displayed in the "Communication" column
+	When User clicks String Filter button for "Readiness" column
+	Then following String Values are displayed in the filter on the Details Page
+	| Values       |
+	| OUT OF SCOPE |
+	When User closes Checkbox filter for "Readiness" column
+	When User clicks String Filter button for "Owner" column
+	Then following Boolean Values are displayed in the filter on the Details Page
+	| Values |
+	| True   |
+	When User closes Checkbox filter for "Owner" column
+	When User clicks String Filter button for "Application Readiness" column
+	Then following String Values are displayed in the filter on the Details Page
+	| Values |
+	| NONE   |
+	When User closes Checkbox filter for "Application Readiness" column
+	When User clicks String Filter button for "Pre-Migration" column
+	Then following String Values are displayed in the filter on the Details Page
+	| Values |
+	| GREY   |
+	When User closes Checkbox filter for "Pre-Migration" column
+	When User clicks String Filter button for "Migration" column
+	Then following String Values are displayed in the filter on the Details Page
+	| Values |
+	| GREY   |
+	When User closes Checkbox filter for "Migration" column
+	When User clicks String Filter button for "Communication" column
+	Then following String Values are displayed in the filter on the Details Page
+	| Values |
+	| GREY   |
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
+Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForApplicationsTabEvergreenSummaryOnDevicesPage
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "00RUUMAH9OZN9A"
+	And User click content from "Hostname" column
+	Then Details page for "00RUUMAH9OZN9A" item is displayed to the user
+	When User navigates to the "Applications" main-menu on the Details page
+	And User navigates to the "Evergreen Summary" sub-menu on the Details page
+	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
+	And User enters "Microsoft Office PowerPoint 2002 (XP)" text in the Search field for "Application" column on the Details Page
+	Then "GREEN" content is displayed in the "Compliance" column
+	Then "TRUE" content is displayed in the "Installed" column
+	Then "UNKNOWN" content is displayed in the "Used" column
+	Then "TRUE" content is displayed in the "Entitled" column
+	When User clicks String Filter button for "Compliance" column
+	Then following String Values are displayed in the filter on the Details Page
+	| Values |
+	| GREEN  |
+	When User closes Checkbox filter for "Compliance" column
+	When User clicks String Filter button for "Installed" column
+	Then following Boolean Values are displayed in the filter on the Details Page
+	| Values |
+	| True   |
+	When User closes Checkbox filter for "Installed" column
+	When User clicks String Filter button for "Used" column
+	Then following Boolean Values are displayed in the filter on the Details Page
+	| Values  |
+	| Unknown |
+	When User closes Checkbox filter for "Used" column
+	When User clicks String Filter button for "Entitled" column
+	Then following Boolean Values are displayed in the filter on the Details Page
+	| Values |
+	| True   |
+	When User closes Checkbox filter for "Entitled" column
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
+Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForApplicationsTabEvergreenDetailOnDevicesPage
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "00RUUMAH9OZN9A"
+	And User click content from "Hostname" column
+	Then Details page for "00RUUMAH9OZN9A" item is displayed to the user
+	When User navigates to the "Applications" main-menu on the Details page
+	And User navigates to the "Evergreen Detail" sub-menu on the Details page
+	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
+	And User enters "Microsoft Office PowerPoint 2002 (XP)" text in the Search field for "Application" column on the Details Page
+	Then "GREEN" content is displayed in the "Compliance" column
+	Then "Entitled" content is displayed in the "Association" column
+	Then "Advert - A0123BFF" content is displayed in the "Advertisement" column
+	Then "Collection A011618A" content is displayed in the "Collection" column
+	Then "Install" content is displayed in the "Program" column
+	When User clicks String Filter button for "Compliance" column
+	Then following String Values are displayed in the filter on the Details Page
+	| Values |
+	| GREEN  |
+	When User closes Checkbox filter for "Compliance" column
+	When User clicks String Filter button for "Association" column
+	Then following String Values are displayed in the filter on the Details Page
+	| Values    |
+	| Installed |
+	| Entitled  |
+	When User closes Checkbox filter for "Association" column
+	When User clicks String Filter button for "Advertisement" column
+	Then following String Values are displayed in the filter on the Details Page
+	| Values            |
+	| Advert - A0123493 |
+	| Advert - A0123BFF |
+	| Advert - A01267E3 |
+	| Advert - A0126E99 |
+	| Advert - A012A5EB |
+	When User closes Checkbox filter for "Advertisement" column
+	When User clicks String Filter button for "Collection" column
+	Then following Boolean Values are displayed in the filter on the Details Page
+	| Values              |
+	| Collection A011166A |
+	| Collection A0114711 |
+	| Collection A011618A |
+	| Collection A011A360 |
+	| Collection A011EB46 |
+	When User closes Checkbox filter for "Collection" column
+	When User clicks String Filter button for "Program" column
+	Then following Boolean Values are displayed in the filter on the Details Page
+	| Values  |
+	| Install |
+	When User closes Checkbox filter for "Program" column
