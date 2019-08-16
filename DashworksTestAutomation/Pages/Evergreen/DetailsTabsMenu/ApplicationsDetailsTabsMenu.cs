@@ -10,7 +10,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
 {
     internal class ApplicationsDetailsTabsMenu : SeleniumBasePage
     {
-        public const string FilterCheckboxValuesSelector = ".//div[@class='boolean-icon ng-star-inserted']";
+        public const string FilterCheckboxBooleanValuesSelector = ".//div[@class='boolean-icon ng-star-inserted']";
+
+        public const string FilterCheckboxStringValuesSelector = ".//span[@class='mat-option-text']//div[@class='ng-star-inserted']";
 
         public const string FilterTypeOnTheColumnPanel = "//div//select[@id='filterType']//option";
 
@@ -55,8 +57,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
         [FindsBy(How = How.XPath, Using = FilterTypeOnTheColumnPanel)]
         public IList<IWebElement> FilterTypeValues { get; set; }
 
-        [FindsBy(How = How.XPath, Using = FilterCheckboxValuesSelector)]
-        public IList<IWebElement> FilterCheckboxValues { get; set; }
+        [FindsBy(How = How.XPath, Using = FilterCheckboxBooleanValuesSelector)]
+        public IList<IWebElement> FilterCheckboxBooleanValues { get; set; }
+
+        [FindsBy(How = How.XPath, Using = FilterCheckboxStringValuesSelector)]
+        public IList<IWebElement> FilterCheckboxStringValues { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-icon ag-icon-columns']")]
         public IWebElement ColumnButton { get; set; }
