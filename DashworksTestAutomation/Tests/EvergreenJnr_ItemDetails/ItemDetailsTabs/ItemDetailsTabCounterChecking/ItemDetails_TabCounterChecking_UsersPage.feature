@@ -224,7 +224,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatTheNumberOfCountersInTheTabIsEqualToT
 	Then "Mailboxes" tab is displayed on left menu on the Details page and contains '1' count of items
 	Then "1" rows found label displays on Details Page
 	When User type "allanj" in Global Search Field
-    Then User clicks on "allanj (Jo Allan)" search result
+    Then User clicks on "allanj (Jo Allan)" search resultThen User clicks on "allanj (Jo Allan)" search result
     And Details page for "allanj (Jo Allan)" item is displayed to the user
 	When User navigates to the "Applications" main-menu on the Details page
 	When User navigates to the "Advertisements" sub-menu on the Details page
@@ -233,3 +233,15 @@ Scenario: EvergreenJnr_UsersList_ChecksThatTheNumberOfCountersInTheTabIsEqualToT
 	When User navigates to the "Collections" sub-menu on the Details page
 	Then "Collections" tab is displayed on left menu on the Details page and contains '9' count of items
 	Then "9" rows found label displays on Details Page
+	
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17769
+Scenario: EvergreenJnr_UsersList_CheckThatCollectionsSubMenuCounterMatchTheNumberOfCollectionsForThisUser
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User perform search by "allanj"
+	When User click content from "Username" column
+	Then Details page for "allanj (Jo Allan)" item is displayed to the user
+	When User navigates to the "Applications" main-menu on the Details page
+	When User navigates to the "Collections" sub-menu on the Details page
+	Then "9" rows found label displays on Details Page
+	Then "Collections" tab is displayed on left menu on the Details page and contains '9' count of items
