@@ -336,9 +336,10 @@ Scenario: EvergreenJnr_DevicesList_CheckThatProjectDetailsDefaultViewIsDisplayed
 	When User perform search by "001BAQXT6JWFPI"
 	And User click content from "Hostname" column
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	When User navigates to the "Projects" main-menu on the Details page
 	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
-	And User navigates to the "Projects" main-menu on the Details page
-	And User navigates to the "Project Details" sub-menu on the Details page
+	Then "Windows 7 Migration (Computer Scheduled Project)" project is selected in the Top bar on Item details page
+	When User navigates to the "Project Details" sub-menu on the Details page
 	Then following fields are displayed in the open section:
 	| Fields           |
 	| Object ID        |
@@ -451,9 +452,10 @@ Scenario: EvergreenJnr_AllLists_CheckThatSelfServiceUrlIsNotDisplayedOnObjectDet
 	And User navigates to the "Projects" main-menu on the Details page
 	And User navigates to the "Project Details" sub-menu on the Details page
 	Then field with "Self Service URL" text is displayed in expanded tab on the Details Page
-	Then following content is displayed on the Details Page
-	| Title    | Value   |
-	| Language | English |
+		#Ann.Ilchenko 8/16/19: Artem asked to wait with this check.
+	#Then following content is displayed on the Details Page
+	#| Title    | Value   |
+	#| Language | English |
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11510
 Scenario: EvergreenJnr_DevicesList_CheckThatLastLogoffDateFieldIsNotDisplayedAtTheDeviceOwnerBlockOfDeviceDetails
