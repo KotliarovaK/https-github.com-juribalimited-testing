@@ -12,8 +12,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Automations
         [FindsBy(How = How.XPath, Using = ".//button//span[text()='CREATE ACTION']")]
         public IWebElement CreateActionButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//h2[contains(text(), 'Action')]")]
-        public IWebElement ActionTitle { get; set; }
+        [FindsBy(How = How.XPath, Using = ".//a[contains(text(), 'Automations')]")]
+        public IWebElement AutomationsLink { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//mat-select//div[@class='mat-select-value']/span[contains(@class, 'placeholder')]")]
         public IWebElement ValueDropdown { get; set; }
@@ -26,7 +26,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Automations
             Driver.WaitForDataLoading();
             return new List<By>
             {
-                SelectorFor(this, p => p.ActionTitle)
+                SelectorFor(this, p => p.AutomationsLink)
             };
         }
 
