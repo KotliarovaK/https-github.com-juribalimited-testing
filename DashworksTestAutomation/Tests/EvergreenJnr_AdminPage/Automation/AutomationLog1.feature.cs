@@ -80,7 +80,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Automation
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueAction")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueActionDAS17430")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
@@ -89,14 +89,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Automation
         [NUnit.Framework.CategoryAttribute("DAS17518")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
-        public virtual void EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueAction()
+        public virtual void EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueActionDAS17430()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueActionInternal();
+                    this.EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueActionDAS17430Internal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -115,9 +115,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Automation
             }
         }
 
-        private void EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueActionInternal()
+        private void EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueActionDAS17430Internal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueAction", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueActionDAS17430", null, new string[] {
                         "Evergreen",
                         "Admin",
                         "EvergreenJnr_AdminPage",
