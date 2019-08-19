@@ -353,6 +353,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.IsFalse(page.ColorScheme.Displayed(), "Colour Scheme dropdown is displayed to the user");
         }
 
+        [Then(@"Color Scheme dropdown displayed with ""(.*)"" placeholder")]
+        public void ThenColourSchemeHasCorrectPlaceholder(string placeholder)
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            _driver.WaitForDataLoading();
+            Utils.Verify.That(page.ColorSchemePlaceholder.Text, Is.EqualTo(placeholder), "Colour Scheme dropdown is displayed with wrong placeholder");
+        }
+
         [Then(@"Table widget displayed inside preview pane correctly")]
         public void ThenTableWidgetDisplayedInsidePreviewPane()
         {

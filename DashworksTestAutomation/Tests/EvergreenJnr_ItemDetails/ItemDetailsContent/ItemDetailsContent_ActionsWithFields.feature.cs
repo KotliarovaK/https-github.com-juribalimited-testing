@@ -1699,6 +1699,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS17007")]
+        [NUnit.Framework.CategoryAttribute("DAS17768")]
+        [NUnit.Framework.CategoryAttribute("DAS17768")]
         public virtual void EvergreenJnr_AllLists_CheckThatSelfServiceUrlIsNotDisplayedOnObjectDetailsPageEvenWhenItsDisabledInProjectManagement()
         {
             System.Exception lastException = null;
@@ -1733,8 +1735,9 @@ this.FeatureBackground();
                         "AllLists",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS17007"});
+                        "DAS17007",
 #line 435
+                        "DAS17768"});
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -1779,6 +1782,15 @@ this.FeatureBackground();
 #line 453
  testRunner.Then("field with \"Self Service URL\" text is displayed in expanded tab on the Details Pa" +
                     "ge", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Title",
+                        "Value"});
+            table9.AddRow(new string[] {
+                        "Language",
+                        "English"});
+#line 449
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table9, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

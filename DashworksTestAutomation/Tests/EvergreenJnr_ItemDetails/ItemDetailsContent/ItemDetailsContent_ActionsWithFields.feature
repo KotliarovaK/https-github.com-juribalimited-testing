@@ -431,7 +431,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatProjectDetailsDefaultViewIsDisplay
 	| Language         |
 	| Tags             |
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17007
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17007 @DAS17768 @DAS17768
 Scenario: EvergreenJnr_AllLists_CheckThatSelfServiceUrlIsNotDisplayedOnObjectDetailsPageEvenWhenItsDisabledInProjectManagement
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -451,6 +451,9 @@ Scenario: EvergreenJnr_AllLists_CheckThatSelfServiceUrlIsNotDisplayedOnObjectDet
 	And User navigates to the "Projects" main-menu on the Details page
 	And User navigates to the "Project Details" sub-menu on the Details page
 	Then field with "Self Service URL" text is displayed in expanded tab on the Details Page
+	Then following content is displayed on the Details Page
+	| Title    | Value   |
+	| Language | English |
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11510
 Scenario: EvergreenJnr_DevicesList_CheckThatLastLogoffDateFieldIsNotDisplayedAtTheDeviceOwnerBlockOfDeviceDetails
