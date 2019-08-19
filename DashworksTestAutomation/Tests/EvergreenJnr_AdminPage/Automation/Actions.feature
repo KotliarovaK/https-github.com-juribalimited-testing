@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @Actions @DAS15427 @DAS15832 @DAS15833 @DAS17276 @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @Actions @DAS15427 @DAS15832 @DAS15833 @DAS17276 @DAS17625 @Not_Ready
 #Change value after gold data complete added
 #Selected automation should have at least three actions
 Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptions
@@ -164,7 +164,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectlyForAutomations
 	When User clicks Delete button in the warning message
 	Then Success message is displayed and contains "The selected action has been deleted" text
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15428 @DAS15938 @DAS17186 @DAS17057 @DAS17253 @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15428 @DAS15938 @DAS17186 @DAS17057 @DAS17253 @DAS17625 @DAS17625 @Not_Ready
 #Change value after gold data complete added
 #Selected automation should have at least three actions
 Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
@@ -300,7 +300,7 @@ Scenario: EvergreenJnr_AdminPage_CheckParametersToCreateUpdatePathAction
 	When User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The automation action has been created" text
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15425 @DAS16143 @DAS17336 @DAS17367 @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15425 @DAS16143 @DAS17336 @DAS17367 @DAS17802 @Not_Ready
 #Change value after gold data complete added
 Scenario: EvergreenJnr_AdminPage_CheckEditActionPage
 	When User clicks Admin on the left-hand menu
@@ -322,6 +322,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditActionPage
 	When User selects "[Default (User)]" in the "Path" dropdown for Actions
 	And User clicks the "CREATE" Action button
 	When User clicks "Automations" navigation link on the Admin page
+	Then There are no errors in the browser console
 	When User enters "15425_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
 	Then "UPDATE" Action button have tooltip with "No changes made" text
@@ -348,7 +349,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditActionPage
 	When User clicks the "CANCEL" Action button
 	Then Actions page is displayed to the User
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS16992 @DAS17427 @Cleanup @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS16992 @DAS17427 @DAS17625 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActions
 	#Add Pre-requisites to Gold Data
 	#Pre-requisites:
@@ -442,7 +443,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActions
 	Then Create Action page is displayed to the User
 	#Add steps for running Automation (DAS-17427)
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS16992 @DAS17234 @Cleanup @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS16992 @DAS17234 @DAS17625 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckUpdatingTaskWhichImpactsReadinessOwnerAndDueDate
 	#Add Pre-requisites to Gold Data
 	#Pre-requisites:

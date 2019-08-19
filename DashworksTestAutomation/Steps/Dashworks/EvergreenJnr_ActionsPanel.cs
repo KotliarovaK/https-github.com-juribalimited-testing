@@ -325,8 +325,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 Utils.Verify.Contains(row["Options"], actualList, $"This {fieldName} project in drop-down with search field not found");
             }
 
-            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            page.BodyContainer.Click();
+            field.BodyContainer.Click();
         }
 
         [Then(@"Stages are displayed in alphabetical order on Action panel")]
@@ -465,6 +464,24 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             page.BodyContainer.Click();
         }
+
+        [When(@"User selects next Tuesday Date on Action panel")]
+        public void WhenUserSelectsNextTuesdayDateOnActionPanel()
+        {
+            DateTime today = DateTime.Today;
+            int daysUntilTuesday = ((int)DayOfWeek.Tuesday - (int)today.DayOfWeek + 7) % 7;
+            DateTime nextTuesday = today.AddDays(daysUntilTuesday);
+
+            string dateValue = nextTuesday.ToString("dd MMM yyyy");
+
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.DateField.Click();
+            action.DateField.Clear();
+            action.DateField.SendKeys(dateValue);
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            page.BodyContainer.Click();
+        }
+
 
         [Then(@"the Update Date options are displayed in following order:")]
         public void ThenTheUpdateDateOptionsAreDisplayedInFollowingOrder(Table table)

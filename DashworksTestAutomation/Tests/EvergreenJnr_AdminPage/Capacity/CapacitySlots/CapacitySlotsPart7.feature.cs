@@ -1000,6 +1000,130 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_ChecksThatTaskCanBeReselectedInTaskDropdownRightAfterDelet" +
+            "ion")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Admin")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
+        [NUnit.Framework.CategoryAttribute("Capacity")]
+        [NUnit.Framework.CategoryAttribute("Slots")]
+        [NUnit.Framework.CategoryAttribute("DAS17507")]
+        [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Capacity")]
+        [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Slots")]
+        [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Senior")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        public virtual void EvergreenJnr_AdminPage_ChecksThatTaskCanBeReselectedInTaskDropdownRightAfterDeletion()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AdminPage_ChecksThatTaskCanBeReselectedInTaskDropdownRightAfterDeletionInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AdminPage_ChecksThatTaskCanBeReselectedInTaskDropdownRightAfterDeletionInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_ChecksThatTaskCanBeReselectedInTaskDropdownRightAfterDelet" +
+                    "ion", null, new string[] {
+                        "Evergreen",
+                        "Admin",
+                        "EvergreenJnr_AdminPage",
+                        "Capacity",
+                        "Slots",
+                        "DAS17507",
+                        "Do_Not_Run_With_Capacity",
+                        "Do_Not_Run_With_Slots",
+                        "Do_Not_Run_With_Senior",
+                        "Cleanup"});
+#line 260
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 261
+ testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 262
+ testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 263
+ testRunner.When("User navigate to \"Windows 7 Migration (Computer Scheduled Project)\" Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 264
+ testRunner.Then("Project with \"Windows 7 Migration (Computer Scheduled Project)\" name is displayed" +
+                    " correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 265
+ testRunner.When("User navigate to \"Tasks\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 266
+ testRunner.And("User clicks \"Create Task\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "Help",
+                        "StagesNameString",
+                        "TaskTypeString",
+                        "ValueTypeString",
+                        "ObjectTypeString",
+                        "TaskValuesTemplateString"});
+            table26.AddRow(new string[] {
+                        "Task17507",
+                        "17507",
+                        "Computer Information ---- Text fill; Text fill;",
+                        "Normal",
+                        "Date",
+                        "Computer",
+                        ""});
+#line 267
+ testRunner.And("User creates Task", ((string)(null)), table26, "And ");
+#line 270
+ testRunner.Then("Success message is displayed with \"Task successfully created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 271
+ testRunner.When("User publishes the task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 272
+ testRunner.Then("selected task was published", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Project",
+                        "SlotName",
+                        "DisplayName",
+                        "CapacityType",
+                        "Tasks"});
+            table27.AddRow(new string[] {
+                        "Windows 7 Migration (Computer Scheduled Project)",
+                        "SlotTask17507",
+                        "Slot Task17507",
+                        "Capacity Units",
+                        "Computer Information ---- Text fill; Text fill; \\ Task17507"});
+#line 273
+ testRunner.When("User creates new Slot via Api", ((string)(null)), table27, "When ");
+#line 276
+ testRunner.And("User navigates to newly created Slot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 277
+ testRunner.When("User removes \"Computer Information ---- Text fill; Text fill; \\ Task17507\" on the" +
+                    " Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 278
+ testRunner.Then("\"Computer Information ---- Text fill; Text fill; \\ Task17507\" checkbox in the \"Ta" +
+                    "sks\" field are available to select", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore

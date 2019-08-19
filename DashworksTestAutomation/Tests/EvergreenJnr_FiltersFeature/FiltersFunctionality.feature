@@ -2038,7 +2038,7 @@ Examples:
 	| Applications | Konformität                 |
 	| Mailboxes    | Konformität des Inhabers    |
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS15082 @Not_Ready
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS15082
 Scenario: EvergreenJnr_ApplicationsList_CheckDeviceHardwareItemsCounterPartI
 	When User clicks "Applications" on the left-hand menu
 	And User clicks the Filters button
@@ -2064,7 +2064,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckDeviceHardwareItemsCounterPartI
 	|        | Installed on device |
 	Then "2,128" rows are displayed in the agGrid
 	
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS15082 @Not_Ready
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS15082 @DAS17717
 Scenario: EvergreenJnr_ApplicationsList_CheckDeviceHardwareItemsCounterPartII
 	When User clicks "Applications" on the left-hand menu
 	And User clicks the Filters button
@@ -2094,8 +2094,9 @@ Scenario: EvergreenJnr_ApplicationsList_CheckDeviceHardwareItemsCounterPartII
 	|        | Entitled to device  |
 	|        | Installed on device |
 	Then "1,032" rows are displayed in the agGrid
+	And There are no errors in the browser console
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS15082 @Not_Ready
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS15082
 Scenario: EvergreenJnr_ApplicationsList_CheckDeviceHardwareItemsCounterPartIII
 	When User clicks "Applications" on the left-hand menu
 	And User clicks the Filters button
@@ -2124,7 +2125,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckDeviceHardwareItemsCounterPartIII
 	| Virtual        |                     |
 	Then "361" rows are displayed in the agGrid
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS15082 @Not_Ready
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS15082
 Scenario: EvergreenJnr_ApplicationsList_CheckDeviceDeviceOperatingSystemItemsCounterI
 	When User clicks "Applications" on the left-hand menu
 	And User clicks the Filters button
@@ -2147,7 +2148,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckDeviceDeviceOperatingSystemItemsCou
 	| Android 5.1    |                     |
 	Then "4" rows are displayed in the agGrid
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS15082 @Not_Ready
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS15082
 Scenario: EvergreenJnr_ApplicationsList_CheckDeviceDeviceOperatingSystemItemsCounterII
 	When User clicks "Applications" on the left-hand menu
 	And User clicks the Filters button
@@ -2173,7 +2174,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckDeviceDeviceOperatingSystemItemsCou
 	Then "170" rows are displayed in the agGrid
 
 #broken link on pulsar
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS15082 @Not_Ready
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS15082
 Scenario: EvergreenJnr_ApplicationsList_CheckDeviceCustomFieldsItemsCounter
 	When User clicks "Applications" on the left-hand menu
 	And User clicks the Filters button

@@ -43,10 +43,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
         private readonly Rings _rings;
         private readonly CapacityUnits _capacityUnits;
         private readonly Tasks _tasks;
+        private readonly ElementCoordinates _elementCoordinates;
 
         public EvergreenJnr_AdminPage(RemoteWebDriver driver, Teams teams, DTO.RuntimeVariables.Projects projects,
             Buckets buckets, LastUsedBucket lastUsedBucket, AddedObjects addedObjects, Rings rings, CapacityUnits capacityUnits,
-            Tasks tasks)
+            Tasks tasks, ElementCoordinates elementCoordinates)
         {
             _driver = driver;
             _teams = teams;
@@ -57,6 +58,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _rings = rings;
             _capacityUnits = capacityUnits;
             _tasks = tasks;
+            _elementCoordinates = elementCoordinates;
         }
 
         #region Check button state
@@ -348,7 +350,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseGridPage>();
             var numbers = page.GetSumOfObjectsContent(columnName);
-            var total = numbers.Sum(x => Convert.ToInt32(x));
+            var total = numbers.Where(x => !string.IsNullOrEmpty(x)).Sum(x => Convert.ToInt32(x));
             Utils.Verify.That(total, Is.EqualTo(sumOfObjects), $"Sum of objects in {columnName} list is incorrect!");
         }
 
@@ -857,7 +859,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var teamElement = _driver.NowAt<TeamsPage>();
             teamElement.ActionsButton.Click();
+            _driver.WaitForElementToBeDisplayed(teamElement.RemoveButtonInActions);
             teamElement.RemoveButtonInActions.Click();
+            _driver.WaitForElementToBeDisplayed(teamElement.RemoveButtonOnPage);
             teamElement.RemoveButtonOnPage.Click();
             _driver.WaitForElementToBeDisplayed(teamElement.WarningMessage);
             _driver.WaitForDataLoading();
@@ -987,8 +991,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksDeleteButtonInActions()
         {
             var button = _driver.NowAt<BaseGridPage>();
-            _driver.WaitForElementToBeDisplayed(button.DeleteButtonInActions);
-            button.DeleteButtonInActions.Click();
+            button.ClickDeleteButtonInActions();
             Logger.Write("Delete button was clicked");
         }
 
@@ -1522,6 +1525,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             createProjectElement.SelectObjectForProjectCreation(objectName);
         }
 
+        [Then(@"User sees blue message ""(.*)"" on Create Project page")]
+        public void ThenUserSeesMessageInformingAboutArchivedDevicesInList(string message)
+        {
+            var createProjectElement = _driver.NowAt<ProjectsPage>();
+            Utils.Verify.That(createProjectElement.ArchivedDevicesMessage.Text, Is.EqualTo(message), "Archived message text is not displayed");
+
+            var bgColor = createProjectElement.ArchivedDevicesMessage.GetCssValue("color");
+            Utils.Verify.That(bgColor, Is.EqualTo("rgba(49, 122, 193, 1)"), "Archived message text is in different color");
+        }
+
         [Then(@"""(.*)"" content is displayed in the Scope Automation dropdown")]
         [Then(@"""(.*)"" content is displayed in the Path Automation dropdown")]
         public void ThenContentIsDisplayedInTheScopeAutomationDropdown(string dropdownValue)
@@ -1753,7 +1766,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         [When(@"User changes Name to ""(.*)"" in the ""(.*)"" field on the Project details page")]
         [When(@"User type ""(.*)"" Name in the ""(.*)"" field on the Project details page")]
-        [When(@"User type ""(.*)"" Name in the ""(.*)"" field on the Automation details page")]
         public void WhenUserTypeNameInTheFieldOnTheProjectDetailsPage(string name, string fieldName)
         {
             SendKeysToTheNamedTextbox(name, fieldName);
@@ -1908,19 +1920,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserRemembersMoveToPositionDialogSize()
         {
             var page = _driver.NowAt<Capacity_SlotsPage>();
-            page.Storage.SessionStorage.SetItem("dialog_Height", page.MoveToPositionDialog.Size.Height.ToString());
-            page.Storage.SessionStorage.SetItem("dialog_Width", page.MoveToPositionDialog.Size.Width.ToString());
+            _elementCoordinates.Height = page.MoveToPositionDialog.Size.Height;
+            _elementCoordinates.Width = page.MoveToPositionDialog.Size.Width;
         }
 
         [Then(@"User checks that Move to position dialog has the same size")]
         public void ThenUserChecksThatMoveToPositionDialogHasTheSameSize()
         {
             var page = _driver.NowAt<Capacity_SlotsPage>();
-            int height = Int32.Parse(page.Storage.SessionStorage.GetItem("dialog_Height"));
-            int width = Int32.Parse(page.Storage.SessionStorage.GetItem("dialog_Width"));
-
-            Utils.Verify.That(page.MoveToPositionDialog.Size.Height, Is.InRange(height, height + 5)); // 5pxls is max height allowed scaling
-            Utils.Verify.That(page.MoveToPositionDialog.Size.Width, Is.EqualTo(width));
+            
+            Verify.That(page.MoveToPositionDialog.Size.Height, Is.InRange(_elementCoordinates.Height, _elementCoordinates.Height + 5)); // 5pxls is max height allowed scaling
+            Verify.That(page.MoveToPositionDialog.Size.Width, Is.EqualTo(_elementCoordinates.Width));
         }
 
         [Then(@"Button ""(.*)"" in Move to position dialog is displayed disabled")]
@@ -2190,9 +2200,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksRefreshButtonOnTheAdminPage()
         {
             var button = _driver.NowAt<BaseGridPage>();
-            Thread.Sleep(10000);
-            _driver.WaitForDataLoading();
             button.RefreshButton.Click();
+            _driver.WaitForDataLoading();
         }
 
         [Then(@"""(.*)"" Onboarded objects are displayed")]
@@ -2235,7 +2244,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var projectElement = _driver.NowAt<BaseGridPage>();
             projectElement.ActionsButton.Click();
-            projectElement.DeleteButtonInActions.Click();
+            projectElement.ClickDeleteButtonInActions();
             projectElement.DeleteButtonOnPage.Click();
             _driver.WaitForElementToBeDisplayed(projectElement.WarningMessage);
             _driver.WaitForDataLoading();

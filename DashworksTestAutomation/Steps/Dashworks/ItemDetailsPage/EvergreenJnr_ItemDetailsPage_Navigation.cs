@@ -56,7 +56,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         public void WhenUserNavigatesToTheSub_MenuOnTheDetailsPage(string subMenuName)
         {
             var detailsPage = _driver.NowAt<NavigationPage>();
-            detailsPage.GetSubMenuByName(subMenuName).Click();
+            detailsPage.ClickSubMenuByName(subMenuName);
         }
 
         [Then(@"""(.*)"" tab-menu on the Admin page is expanded")]

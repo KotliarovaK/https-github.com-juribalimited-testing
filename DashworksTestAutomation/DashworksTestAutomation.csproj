@@ -164,6 +164,7 @@
     <Compile Include="DTO\RuntimeVariables\Buckets\BucketUnassignedId.cs" />
     <Compile Include="DTO\RuntimeVariables\CapacityDetails.cs" />
     <Compile Include="DTO\RuntimeVariables\CustomFields.cs" />
+    <Compile Include="DTO\RuntimeVariables\ElementCoordinates.cs" />
     <Compile Include="DTO\RuntimeVariables\Rings\Rings.cs" />
     <Compile Include="DTO\RuntimeVariables\Rings\RingUnassignedId.cs" />
     <Compile Include="DTO\RuntimeVariables\SeniorCustomFields.cs" />
@@ -518,6 +519,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AutomationLog.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Automation\AutomationLog1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AutomationLog1.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_AdminPage\Buckets\CreateBucket.feature.cs">
       <AutoGen>True</AutoGen>
@@ -1403,6 +1409,10 @@
     <None Include="Tests\EvergreenJnr_AdminPage\Automation\AutomationLog.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AutomationLog.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Automation\AutomationLog1.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AutomationLog1.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_AdminPage\Buckets\CreateBucket.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

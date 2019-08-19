@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
@@ -10,6 +11,7 @@ using DashworksTestAutomation.Pages.Evergreen.ItemDetails;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
+using TechTalk.SpecFlow.Plugins;
 
 namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
 {
@@ -52,6 +54,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
 
             var action = _driver.NowAt<BaseDashboardPage>();
             action.GetOptionByName(projectName).Click();
+
+            _driver.WaitFor(()=>topBar.ProjectsOnSwitcherPanel.Count==0);
         }
 
         [Then(@"""(.*)"" project is selected in the Top bar on Item details page")]

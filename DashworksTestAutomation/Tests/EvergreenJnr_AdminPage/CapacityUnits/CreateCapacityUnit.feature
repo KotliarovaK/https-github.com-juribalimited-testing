@@ -22,10 +22,10 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCreatedCorrectly
 	And "NotDefaultCapacityUnit13720" text is displayed in the table content
 	When User enters "NotDefaultCapacityUnit13720" text in the Search field for "Capacity Unit" column
 	Then "FALSE" value is displayed for Default column
-	And "0" content is displayed in "Devices" column
-	And "0" content is displayed in "Users" column
-	And "0" content is displayed in "Mailboxes" column
-	And "0" content is displayed in "Applications" column
+	And "" content is displayed in "Devices" column
+	And "" content is displayed in "Users" column
+	And "" content is displayed in "Mailboxes" column
+	And "" content is displayed in "Applications" column
 	When User select "Capacity Unit" rows in the grid
 	| SelectedRowsName            |
 	| NotDefaultCapacityUnit13720 |
@@ -49,10 +49,10 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitsCreatedCorrectly
 	Then "DefaultCapacityUnit13720" text is displayed in the table content
 	When User enters "DefaultCapacityUnit13720" text in the Search field for "Capacity Unit" column
 	Then "TRUE" value is displayed for Default column
-	And "0" content is displayed in "Devices" column
-	And "0" content is displayed in "Users" column
-	And "0" content is displayed in "Mailboxes" column
-	And "0" content is displayed in "Applications" column
+	And "" content is displayed in "Devices" column
+	And "" content is displayed in "Users" column
+	And "" content is displayed in "Mailboxes" column
+	And "" content is displayed in "Applications" column
 	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
 	Then "FALSE" value is displayed for Default column
 	When User enters "DefaultCapacityUnit13720" text in the Search field for "Capacity Unit" column

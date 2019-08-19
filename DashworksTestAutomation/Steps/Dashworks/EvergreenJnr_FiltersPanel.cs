@@ -1031,6 +1031,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filterElement = _driver.NowAt<FiltersElement>();
             filterElement.OperatorDropdown.Click();
+            _driver.WaitForElementsToBeDisplayed(filterElement.OperatorOptions);
             var availableOptions = filterElement.OperatorOptions.Select(value => value.Text).ToList();
             Utils.Verify.AreEqual(optionName.Split(',').Select(x => x.TrimStart(' ').TrimEnd(' ')).ToList(),
                 availableOptions, "Some options are not available for selected filter");

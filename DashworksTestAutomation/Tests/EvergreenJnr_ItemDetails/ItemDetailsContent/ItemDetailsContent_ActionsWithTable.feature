@@ -404,7 +404,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOneUnknownFilterValueIsShownInGroupD
 	Then User clicks on "Denied RODC Password Replication Group" search result
 	When User navigates to the "Members" main-menu on the Details page
 	And User clicks String Filter button for "Enabled" column
-	Then following Values are displayed in the filter on the Details Page
+	Then following Boolean Values are displayed in the filter on the Details Page
 	| Values  |
 	| True    |
 	| False   |
@@ -1222,3 +1222,143 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAgGridActionsWorksCorrectlyForDetail
 		#need to add static data for gold data to enable this check.
 	#When User clicks Group By button on the Details page and selects "Value" value
 	#Then "" content is not displayed in the grid on the Item details page
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16817 @DAS17726
+Scenario: EvergreenJnr_DevicesList_CheckThatBlanksValueChangedToEmptyValueOnDevicesPage
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "001BAQXT6JWFPI"
+	And User click content from "Hostname" column
+	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	When User navigates to the "Projects" main-menu on the Details page
+	And User navigates to the "Projects Summary" sub-menu on the Details page
+	And User clicks String Filter button for "Workflow" column
+	Then following String Values are contained in the filter on the Details Page
+	| Values         |
+	| Empty          |
+	When User clicks String Filter button for "Category" column
+	Then following String Values are contained in the filter on the Details Page
+	| Values            |
+	| Empty             |
+	When User clicks String Filter button for "Status" column
+	Then following String Values are contained in the filter on the Details Page
+	| Values |
+	| None   |
+	When User closes Checkbox filter for "Status" column
+	When User navigates to the "Owner Projects Summary" sub-menu on the Details page
+	When User clicks String Filter button for "Workflow" column
+	Then following String Values are contained in the filter on the Details Page
+	| Values         |
+	| Empty          |
+	When User clicks String Filter button for "Category" column
+	Then following String Values are contained in the filter on the Details Page
+	| Values            |
+	| Empty             |
+	When User clicks String Filter button for "Status" column
+	Then following String Values are contained in the filter on the Details Page
+	| Values |
+	| None   |
+	When User closes Checkbox filter for "Status" column
+
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16817 @DAS17726
+Scenario: EvergreenJnr_UsersList_CheckThatBlanksValueChangedToEmptyValueOnUsersPage
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User perform search by "ZXJ550185"
+	And User click content from "Username" column
+	Then Details page for "ZXJ550185" item is displayed to the user
+	When User navigates to the "Projects" main-menu on the Details page
+	And User navigates to the "User Projects" sub-menu on the Details page
+	And User clicks String Filter button for "Workflow" column
+	Then following String Values are contained in the filter on the Details Page
+	| Values         |
+	| Empty          |
+	When User clicks String Filter button for "Category" column
+	Then following String Values are contained in the filter on the Details Page
+	| Values            |
+	| Empty             |
+	When User clicks String Filter button for "Status" column
+	Then following String Values are contained in the filter on the Details Page
+	| Values |
+	| None   |
+	When User closes Checkbox filter for "Status" column
+	When User navigates to the "Device Project Summary" sub-menu on the Details page
+	And User clicks String Filter button for "Workflow" column
+	Then following String Values are contained in the filter on the Details Page
+	| Values         |
+	| Empty          |
+	When User clicks String Filter button for "Category" column
+	Then following String Values are contained in the filter on the Details Page
+	| Values            |
+	| Empty             |
+	When User clicks String Filter button for "Status" column
+	Then following String Values are contained in the filter on the Details Page
+	| Values |
+	| None   |
+	When User closes Checkbox filter for "Status" column
+	When User type "0137C8E69921432992B" in Global Search Field
+	Then User clicks on "0137C8E69921432992B (Jackson, Veronica)" search result
+	And Details page for "0137C8E69921432992B" item is displayed to the user
+	When User navigates to the "Projects" main-menu on the Details page
+	When User navigates to the "Mailbox Project Summary" sub-menu on the Details page
+	And User clicks String Filter button for "Workflow" column
+	Then following String Values are contained in the filter on the Details Page
+	| Values         |
+	| Empty          |
+	When User clicks String Filter button for "Category" column
+	Then following String Values are contained in the filter on the Details Page
+	| Values            |
+	| Empty             |
+	When User closes Checkbox filter for "Category" column
+
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16817
+Scenario: EvergreenJnr_ApplicationsList_CheckThatBlanksValueChangedToEmptyValueOnApplicationsPage
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User perform search by "ACDSee 5.0.1 PowerPack"
+	And User click content from "Application" column
+	Then Details page for "ACDSee 5.0.1 PowerPack" item is displayed to the user
+	When User navigates to the "Projects" main-menu on the Details page
+	And User navigates to the "Projects" sub-menu on the Details page
+	And User clicks String Filter button for "Workflow" column
+	Then following String Values are contained in the filter on the Details Page
+	| Values         |
+	| Empty          |
+	When User clicks String Filter button for "Category" column
+	Then following String Values are contained in the filter on the Details Page
+	| Values            |
+	| Empty             |
+	When User closes Checkbox filter for "Category" column
+
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16817 @DAS17726
+Scenario: EvergreenJnr_MailboxesList_CheckThatBlanksValueChangedToEmptyValueOnMailboxesPage
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User perform search by "06C02CDC00044A7DB59"
+	And User click content from "Email Address" column
+	Then Details page for "06C02CDC00044A7DB59" item is displayed to the user
+	When User navigates to the "Projects" main-menu on the Details page
+	And User navigates to the "Mailbox Projects" sub-menu on the Details page
+	And User clicks String Filter button for "Workflow" column
+	Then following String Values are contained in the filter on the Details Page
+	| Values         |
+	| Empty          |
+	When User clicks String Filter button for "Category" column
+	Then following String Values are contained in the filter on the Details Page
+	| Values            |
+	| Empty             |
+	When User closes Checkbox filter for "Category" column
+	And User navigates to the "Mailbox User Projects" sub-menu on the Details page
+	And User clicks String Filter button for "Workflow" column
+	Then following String Values are contained in the filter on the Details Page
+	| Values         |
+	| Empty          |
+	When User clicks String Filter button for "Category" column
+	Then following String Values are contained in the filter on the Details Page
+	| Values            |
+	| Empty             |
+	When User clicks String Filter button for "Status" column
+	Then following String Values are contained in the filter on the Details Page
+	| Values |
+	| None   |
+	When User closes Checkbox filter for "Status" column

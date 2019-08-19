@@ -106,3 +106,18 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorsAreDisplayedInTheProjectScopeC
 	And User clicks "Devices" tab in the Project Scope Changes section
 	And User clicks "Applications" tab in the Project Scope Changes section
 	Then There are no errors in the browser console
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS17664 @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckThatInformationMessageDisplayedForCreateProjectFormWhenArchivedItemsIncluded
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User sets includes archived devices in "true"
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Device Type" filter where type is "Equals" with added column and "Data Centre" Lookup option
+	And User create dynamic list with "ListForProject17664" name on "Devices" page
+	Then "ListForProject17664" list is displayed to user
+	When User clicks Create Project from the main list
+	Then "Create Project" page should be displayed to the user
+	When User enters "TestProject17664" in the "Project Name" field
+	Then User sees blue message "This list may contain archived devices which will not be onboarded" on Create Project page

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Threading;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
@@ -20,6 +21,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         public IList<IWebElement> MainTabsOnDetailsPageList { get; set; }
 
         private static string TabCountSelector = ".//a[text()='{0}']//span[@class='ng-star-inserted']";
+        private static string SubMenuByNameSelector = ".//ul[@class='das-mat-tree-submenu']//a[text()='{0}']";
 
         public override List<By> GetPageIdentitySelectors()
         {
@@ -31,7 +33,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
             };
         }
 
-        public IWebElement  GetNavigationLinkByName(string linkName)
+        public IWebElement GetNavigationLinkByName(string linkName)
         {
             var link = By.XPath($".//div[@class='title-container']//a[text()='{linkName}']");
             Driver.WaitForElementToBeDisplayed(link);
@@ -45,11 +47,18 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
             return Driver.FindElement(selector);
         }
 
-        public IWebElement GetSubMenuByName(string name)
+        public void ClickSubMenuByName(string name)
         {
-            var selector = By.XPath($".//ul[@class='das-mat-tree-submenu']//a[text()='{name}']");
+            var selector = By.XPath(string.Format(SubMenuByNameSelector, name));
             Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
+            try
+            {
+                Driver.FindElement(selector).Click();
+            }
+            catch (StaleElementReferenceException)
+            {
+                Driver.FindElement(selector).Click();
+            }
         }
 
         public bool GetExpandedTabByName(string tabName)
@@ -73,7 +82,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
 
         public int GetCountOfItemsByTabName(string tabName)
         {
-            if(!GetCountOfItemsDisplayStatusByTabName(tabName))
+            if (!GetCountOfItemsDisplayStatusByTabName(tabName))
                 throw new Exception($"Count is not displayed for '{tabName}' tab");
 
             var text = Driver.FindElement(By.XPath(string.Format(string.Format(TabCountSelector, tabName)))).Text;
@@ -97,32 +106,46 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
 
         public List<Point> LoadingIndicatorCoordinates()
         {
+            Thread.Sleep(2000);
             List<Point> points = new List<Point>();
+            IList<IWebElement> links = Driver.FindElements(By.XPath(".//li[contains(@class, 'das-mat-tree')]//a[contains(@href, 'details')]"));
 
-            IList < IWebElement > links = Driver.FindElements(By.XPath(".//li[contains(@class, 'das-mat-tree')]//a[contains(@href, 'details')]"));
+            int attempt = 0;
 
-            foreach (var link in links)
+            while (attempt!=3 && points.Count==0)
             {
-                link.Click();
-
-                for (int i = 0; i < 5; i++)
+                foreach (var link in links)
                 {
                     try
                     {
-                        if (Driver.FindElements(
-                                    By.XPath(".//div[contains(@class,'spinner') and not(contains(@class,'small'))]"))
-                                .Count > 0)
-                        {
-                            points.Add(Driver.FindElements(By.XPath(".//div[contains(@class,'spinner') and not(contains(@class,'small'))]")).First().Location);
-                        }
+                        link.Click();
                     }
                     catch (Exception)
                     {
                         break;
                     }
+
+
+                    for (int i = 0; i < 5; i++)
+                    {
+                        try
+                        {
+                            if (Driver.FindElements(
+                                        By.XPath(".//div[contains(@class,'spinner') and not(contains(@class,'small'))]"))
+                                    .Count > 0)
+                            {
+                                points.Add(Driver.FindElements(By.XPath(".//div[contains(@class,'spinner') and not(contains(@class,'small'))]")).First().Location);
+                            }
+                        }
+                        catch (Exception)
+                        {
+                            break;
+                        }
+                    }
+                    Driver.WaitForDataLoading();
                 }
-                Driver.WaitForDataLoading();
             }
+
             return points;
         }
     }
