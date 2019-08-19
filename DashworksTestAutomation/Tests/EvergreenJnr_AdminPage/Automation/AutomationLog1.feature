@@ -6,7 +6,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17430 @DAS17518 @Cleanup @Not_Ready
-Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueAction
+Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueActionDAS17430
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User creates new Automation via API

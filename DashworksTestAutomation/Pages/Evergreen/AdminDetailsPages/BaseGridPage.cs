@@ -653,6 +653,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElement(selector);
         }
 
+        public IWebElement GetFieldByFieldName(string fieldName)
+        {
+            var selector = By.XPath($".//textarea[@placeholder='{fieldName}']");
+            Driver.WaitForElementToBeDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
         public IWebElement GetDropdownByName(string dropdownName)
         {
             var selector = By.XPath($".//mat-select[@aria-label='{dropdownName}']//span");
