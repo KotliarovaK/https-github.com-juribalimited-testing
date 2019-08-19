@@ -113,7 +113,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations
 	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
 
 #Need to use three Automations: inactive, inactive, active
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15431 @DAS15739 @DAS15740 @DAS15741 @DAS16764 @DAS17222 @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15431 @DAS15739 @DAS15740 @DAS15741 @DAS16764 @DAS17222 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuIsWorkedCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
