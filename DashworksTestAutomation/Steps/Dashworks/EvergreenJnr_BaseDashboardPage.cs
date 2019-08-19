@@ -208,6 +208,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenDateInTableIsSortedByColumnInDescendingOrder(string columnName)
         {
             var listPageMenu = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
 
             var originalList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSortedByDate(originalList, false);
