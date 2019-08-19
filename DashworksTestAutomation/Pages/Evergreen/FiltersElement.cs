@@ -220,12 +220,14 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             if (Driver.IsElementExists(AddNewFilterButton))
             {
+                Driver.MoveToElement(AddNewFilterButton);
                 Driver.MouseHover(AddNewFilterButton);
                 AddNewFilterButton.Click();
             }
 
-            if (FilterCategories.Any())
-                Driver.MouseHover(FilterCategories.Last());
+            //TODO: 16Aug2019 Yurii T. don't know why we jump to the bottom and then to the top; it makes tests on CI fail
+            //if (FilterCategories.Any())
+                //Driver.MouseHover(FilterCategories.Last());
             Driver.MouseHover(By.XPath(SearchTextBoxSelector));
             Driver.WaitForElementToBeEnabled(By.XPath(SearchTextBoxSelector));
             Driver.FindElement(By.XPath(SearchTextBoxSelector)).Click();

@@ -774,14 +774,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 Utils.Verify.IsTrue(dropdown.GetDropdownByValueByName(value, dropdownName).Displayed(), $"{value} is not displayed in the {dropdownName}");
         }
 
-        [Then(@"""(.*)"" value is displayed in the ""(.*)"" dropdown for Automation")]
-        public void ThenValueIsDisplayedInTheDropdownForAutomation(string value, string dropdownName)
-        {
-            var dropdown = _driver.NowAt<BaseGridPage>();
-            var dropdownValue = dropdown.GetDropdownByNameForAutomations(dropdownName).GetAttribute("value");
-            Utils.Verify.AreEqual(dropdownValue, value, $"{value} is not displayed in the {dropdownName}");
-        }
-
         [Then(@"Capacity Units value is displayed for Capacity Mode field")]
         public void ThenCapacityUnitsValueIsDisplayedForCapacityModeField()
         {
@@ -867,7 +859,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var teamElement = _driver.NowAt<TeamsPage>();
             teamElement.ActionsButton.Click();
+            _driver.WaitForElementToBeDisplayed(teamElement.RemoveButtonInActions);
             teamElement.RemoveButtonInActions.Click();
+            _driver.WaitForElementToBeDisplayed(teamElement.RemoveButtonOnPage);
             teamElement.RemoveButtonOnPage.Click();
             _driver.WaitForElementToBeDisplayed(teamElement.WarningMessage);
             _driver.WaitForDataLoading();
@@ -1773,7 +1767,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         [When(@"User changes Name to ""(.*)"" in the ""(.*)"" field on the Project details page")]
         [When(@"User type ""(.*)"" Name in the ""(.*)"" field on the Project details page")]
-        [When(@"User type ""(.*)"" Name in the ""(.*)"" field on the Automation details page")]
         public void WhenUserTypeNameInTheFieldOnTheProjectDetailsPage(string name, string fieldName)
         {
             SendKeysToTheNamedTextbox(name, fieldName);

@@ -162,7 +162,7 @@ Scenario Outline: EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorre
 	And the Update Owner options are displayed in following order:
 	| Options               |
 	| Update                |
-	| Remove Owner          |
+	| Remove owner          |
 	| Remove owner and team |
 	| No change             |
 	When User selects "Workstation Text Task" Task on Action panel

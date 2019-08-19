@@ -76,3 +76,21 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFilterNameIsNotChangedAfterRenameWhi
 	| Option | State |
 	| Red    | false |
 	Then "EDITED_Device_Filter_DAS_12917" edited list is displayed to user
+
+@Evergreen @Devices @CustomListDisplay @EvergreenJnr_ListPanel @DAS17711 @Cleanup
+Scenario: EvergreenJnr_DevicesList_CheckThatConfirmationDeletionMessageDoesntDisappearsAfterFewSeconds
+	When User clicks "Devices" on the left-hand menu
+	And User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Device Type" filter where type is "Does not equal" without added column and "Virtual" Lookup option
+	And User create dynamic list with "List17711" name on "Devices" page
+	Then "List17711" list is displayed to user
+	When User duplicates list with "List17711" name
+	Then "List177112" list is displayed to user
+	When User navigates to the "List177112" list
+	And User clicks Settings button in the list panel
+	Then Settings panel is displayed to the user
+	When User clicks Delete in the list panel
+	Then "list will be permanently deleted" message is displayed in the lists panel
+	When User waits for three seconds
+	Then "list will be permanently deleted" message is displayed in the lists panel
