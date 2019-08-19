@@ -22,6 +22,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
 
         private static string TabCountSelector = ".//a[text()='{0}']//span[@class='ng-star-inserted']";
         private static string SubMenuByNameSelector = ".//ul[@class='das-mat-tree-submenu']//a[text()='{0}']";
+        private static string TabMenuByNameSelector = ".//li[contains(@class, 'das-mat-tree')]//a[text()='{0}']";
 
         public override List<By> GetPageIdentitySelectors()
         {
@@ -40,13 +41,22 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
             return Driver.FindElement(link);
         }
 
-        public IWebElement GetTabMenuByName(string name)
+        //TODO: some improvements are expected from Vitali 8/19/19;
+        public void GetTabMenuByName(string name)
         {
-            var selector = By.XPath($".//li[contains(@class, 'das-mat-tree')]//a[text()='{name}']");
+            var selector = By.XPath(string.Format(TabMenuByNameSelector, name));
             Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
+            try
+            {
+                Driver.FindElement(selector).Click();
+            }
+            catch (StaleElementReferenceException)
+            {
+                Driver.FindElement(selector).Click();
+            }
         }
 
+        //TODO: some improvements are expected from Vitali 8/19/19;
         public void ClickSubMenuByName(string name)
         {
             var selector = By.XPath(string.Format(SubMenuByNameSelector, name));
