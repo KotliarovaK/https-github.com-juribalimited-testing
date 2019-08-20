@@ -4,12 +4,12 @@ using DashworksTestAutomation.DTO.Evergreen.Admin.CapacityUnits;
 
 namespace DashworksTestAutomation.DTO.RuntimeVariables
 {
-    //Created capacity unit names are stored here
-    public class Automation
+    //Created Automation names are stored here
+    public class Automations
     {
         public List<AutomationsDto> Value { get; set; }
 
-        public Automation()
+        public Automations()
         {
             Value = new List<AutomationsDto>();
         }

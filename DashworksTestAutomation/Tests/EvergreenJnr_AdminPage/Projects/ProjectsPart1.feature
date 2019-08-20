@@ -50,7 +50,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAllAssociationsAreSelectedByDefaultInT
 	When User selects "Include applications" checkbox on the Project details page
 	Then All Associations are selected by default
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS14283 @Cleanup @Project_Creation_and_Scope @Projects @TEST
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS14283 @DAS17167 @Cleanup @Project_Creation_and_Scope @Projects @TEST
 Scenario: EvergreenJnr_AdminPage_CheckThatExistingProjectNameCantBeRemoved
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -61,9 +61,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatExistingProjectNameCantBeRemoved
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
-	When User enters "TestProject14283" text in the Search field for "Project" column
-	And User clicks content from "Project" column
+	When User clicks newly created object link
 	Then Project "TestProject14283" is displayed to user
+	When User selects "Dependant List Filter - BROKEN LIST" in the Scope Project details
+	Then Filling field error with "This list has errors" text is displayed
 	When User clicks "Details" tab
 	And User enters "" in the "Project Name" field
 	And User clicks Admin on the left-hand menu

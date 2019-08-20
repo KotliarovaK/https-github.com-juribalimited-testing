@@ -88,6 +88,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails.CustomFields
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("CustomFields")]
         [NUnit.Framework.CategoryAttribute("DAS16487")]
+        [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_CustomFields")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesList_CheckAddCustomFieldPopupUiAndTooltips()
         {
@@ -123,6 +124,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails.CustomFields
                         "EvergreenJnr_ItemDetails",
                         "CustomFields",
                         "DAS16487",
+                        "Do_Not_Run_With_CustomFields",
                         "Cleanup"});
 #line 10
 this.ScenarioInitialize(scenarioInfo);

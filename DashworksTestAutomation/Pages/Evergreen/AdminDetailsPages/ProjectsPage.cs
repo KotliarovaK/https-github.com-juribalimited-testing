@@ -232,9 +232,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public IWebElement GetNavigationLinkByName(string linkName)
         {
-            var button = By.XPath($".//div[@class='title-container']//a[text()='{linkName}']");
-            Driver.WaitForElementToBeDisplayed(button);
-            return Driver.FindElement(button);
+            var link = By.XPath($".//div[@class='title-container']//a[text()='{linkName}']");
+            Driver.WaitForElementToBeDisplayed(link);
+            Driver.WaitForElementToBeEnabled(link);
+            return Driver.FindElement(link);
         }
 
         public IWebElement GetButtonOnWarningContainerByName(string linkName)
