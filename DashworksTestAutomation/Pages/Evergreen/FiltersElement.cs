@@ -79,6 +79,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'filter-category ng-star-inserted')]")]
         public IList<IWebElement> FilterCategories { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'filter-category-label blue-color')]")]
+        public IList<IWebElement> FilterCategoryLabels { get; set; }
+        
         [FindsBy(How = How.XPath,
             Using =
                 "//div[@class='btn-group-sm']//button//span//i[@class='material-icons mat-clear mat-18']")]
