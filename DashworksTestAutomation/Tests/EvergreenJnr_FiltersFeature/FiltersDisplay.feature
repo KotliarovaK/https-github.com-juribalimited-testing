@@ -1910,3 +1910,12 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatDeviceOwnerCustomItemHasCorrect
 	And User select "Does not end with" Operator value
 	And User select "Empty" Operator value
 	And User select "Not empty" Operator value
+
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS17588
+Scenario: EvergreenJnr_ApplicationsList_CheckAutomationsCategoryOrder
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	And User clicks Add New button on the Filter panel
+	And User closes "Suggested" filter category
+	Then Category Automations displayed before projects categories
