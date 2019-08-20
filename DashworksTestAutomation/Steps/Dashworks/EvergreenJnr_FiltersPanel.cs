@@ -1468,5 +1468,34 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 Utils.Verify.AreEqual(ColorsConvertor.Convert(row["Color"]), getColor, "Colors are different");
             }
         }
+
+        [Then(@"Category Automations displayed before projects categories")]
+        public void SpecifiedCategoryDisplayedBeforeProjectsCategories()
+        {
+            var page = _driver.NowAt<FiltersElement>();
+
+            var VisibleLabels = page.FilterCategoryLabels.Select(x=>x.Text).ToList();
+
+            var getFirstProjectItem = VisibleLabels.Select((Value, Index) => new { Value, Index })
+               .FirstOrDefault(p => p.Value.StartsWith("Project"));
+
+            try
+            {
+                string checkIfEmpty = getFirstProjectItem.Value;
+            }
+            catch (Exception)
+            {
+                getFirstProjectItem = new
+                {
+                    Value = "NOT FOUND",
+                    Index = 2000,
+                };
+            }
+         
+            var getFirstAutomationItem = VisibleLabels.Select((Value, Index) => new { Value, Index })
+                .Single(p => p.Value.StartsWith("Automations"));
+
+            Utils.Verify.That(getFirstAutomationItem.Index, Is.LessThan(getFirstProjectItem.Index), "Looks like projects placed before Automations");
+        }
     }
 }

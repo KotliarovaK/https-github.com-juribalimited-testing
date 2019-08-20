@@ -63,6 +63,9 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//*[@aria-label='ColorScheme']")]
         public IWebElement ColorScheme { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//*[@formcontrolname='colourSchemeId']")]
+        public IWebElement ColorSchemeDropdown { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//*[@formcontrolname='colourSchemeId']//span")]
         public IWebElement ColorSchemePlaceholder { get; set; }
 
@@ -188,6 +191,11 @@ namespace DashworksTestAutomation.Pages
         public bool IsAggregateByDropdownDisabled()
         {
             return Convert.ToBoolean(AggregateBy.GetAttribute("aria-disabled"));
+        }
+
+        public bool IsColorSchemeDropdownDisabled()
+        {
+            return Convert.ToBoolean(ColorSchemeDropdown.GetAttribute("aria-disabled"));
         }
 
 
