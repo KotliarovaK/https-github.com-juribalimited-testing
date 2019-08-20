@@ -227,13 +227,13 @@ this.FeatureBackground();
                         "SlotName",
                         "DisplayName"});
             table4.AddRow(new string[] {
-                        "Project K-Computer Scheduled Project",
+                        "*Project K-Computer Scheduled Project",
                         "CapacitySlot13866",
                         "DAS13866"});
 #line 24
  testRunner.When("User creates new Slot via Api", ((string)(null)), table4, "When ");
 #line 27
- testRunner.When("User navigates to \"Project K-Computer Scheduled Project\" project details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to \"*Project K-Computer Scheduled Project\" project details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 28
  testRunner.And("User clicks \"Capacity\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 29
