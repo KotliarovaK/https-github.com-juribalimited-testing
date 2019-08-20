@@ -563,20 +563,19 @@ Scenario: EvergreenJnr_AdminPage_CheckRunNowFunctionalityToRunMoreThanOneAutomat
 	Then "SUCCESS" content is displayed for "Outcome" column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17172 @Not_Ready
-#Add to Gold data Test_Automation3 and Test_Automation4 automations
 Scenario: EvergreenJnr_AdminPage_CheckRunNowfunctionalityInBulkActions
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
-	When User enters "Test_Automation3" text in the Search field for "Automation" column
+	When User enters "DAS-15949 - all users scope" text in the Search field for "Automation" column
 	When User selects all rows on the grid
 	When User clicks on Actions button
 	And User selects "Run now" in the Actions
 	When User clicks the "RUN" Action button
 	When User clicks "RUN" button in the warning message on Admin page
 	Then Success message is displayed and contains "1 automation started," text
-	When User enters "Test_Automation4" text in the Search field for "Automation" column
+	When User enters "Devices_Scope" text in the Search field for "Automation" column
 	When User selects all rows on the grid
 	When User clicks on Actions button
 	And User selects "Run now" in the Actions
@@ -592,11 +591,11 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateAndCreateActionsFunctionalityForAuto
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
 	When User enters "Delay" text in the Search field for "Automation" column
-	When User clicks "Run now" option in Cog-menu for "Delay" item on Admin page
-	When User enters "Delay" text in the Search field for "Automation" column
-	When User clicks "Make inactive" option in Cog-menu for "Delay" item on Admin page
+	When User clicks "Run now" option in Cog-menu for "DELAY - do not delete" item on Admin page
+	When User enters "DELAY - do not delete" text in the Search field for "Automation" column
+	When User clicks "Make inactive" option in Cog-menu for "DELAY - do not delete" item on Admin page
 	Then Error message with "This automation is currently running" text is displayed
-	When User enters "Delay" text in the Search field for "Automation" column
+	When User enters "DELAY - do not delete" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
 	When User clicks "Actions" tab
 	When User clicks the "CREATE ACTION" Action button
