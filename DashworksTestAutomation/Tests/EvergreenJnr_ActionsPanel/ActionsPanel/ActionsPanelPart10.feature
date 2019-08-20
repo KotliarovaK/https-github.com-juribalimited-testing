@@ -146,3 +146,25 @@ Scenario: EvergreenJnr_UsersList_CheckDateColorDisplayingInBulkUpdateDatePicker
 	And User selects "Update" Update Date on Action panel
 	And User clicks datepicker for Action panel
 	Then Column "Sunday" displayed green in Datepicker
+
+@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS17639 @Cleanup
+Scenario: EvergreenJnr_DevicesList_CheckThatSlotIsDisplayedInDDLIfSelectDateWithUnlimitedCapacity
+	When User creates new Slot via Api
+	| Project      | SlotName   | DisplayName | CapacityType    | ObjectType | Tuesday | Tasks                     |
+	| 1803 Rollout | Slot 17639 | 17639       | Teams and Paths | Device     | 10      | Migration \ Migrated Date |
+	And User clicks "Devices" on the left-hand menu
+	And User clicks the Actions button
+	And User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00I0COBFWHOF27   |
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update task value" Bulk Update Type on Action panel
+	And User selects "1803 Rollout" Project on Action panel
+	And User selects "Migration" Stage on Action panel
+	And User selects "Migrated Date" Task on Action panel
+	And User selects "Update" Update Date on Action panel
+	And User selects next Tuesday Date on Action panel
+	Then following values are presented in "Capacity Slot" drop-down on Action panel:
+	| Options    |
+	| None       |
+	| Slot 17639 |

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using DashworksTestAutomation.Base;
@@ -517,6 +518,24 @@ namespace DashworksTestAutomation.Pages
             }
                 Driver.WaitForDataLoading();
             return webLabels;
+        }
+
+        public IList <IWebElement> GetWidgetLabels(string widgetName)
+        {
+            var legend =
+                By.XPath($".//span[text()='{widgetName}']/ancestor ::div[@class='widget-whole']//*[contains(@class, 'highcharts-legend-item')]");
+
+            Driver.WaitForDataLoading();
+            return Driver.FindElements(legend);
+        }
+
+        public List<string> GetLegendColor(string widgetName)
+        {
+            var colors =
+                By.XPath($".//span[text()='{widgetName}']/ancestor ::div[@class='widget-whole']//*[contains(@class, 'highcharts-legend-item')]//*[contains(@class, 'highcharts-point')]");
+
+            Driver.WaitForDataLoading();
+            return Driver.FindElements(colors).Select(x=>x.GetAttribute("fill")).ToList();
         }
 
         public string GetFocusedPointHover(string widgetName)

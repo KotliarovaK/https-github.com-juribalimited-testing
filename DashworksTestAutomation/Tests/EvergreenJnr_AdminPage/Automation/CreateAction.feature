@@ -9,20 +9,16 @@ Background: Pre-Conditions
 Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonForActionsWorksCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
+	When User creates new Automation via API
+	| AutomationName        | Description | Active | StopOnFailedAction | Scope       | Run    |
+	| Test_Automation_17511 | 17511       | true   | false              | All Devices | Manual |
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
-	#When User creates new Automation via API
-	#| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
-	#| 17428_Automation | DAS17428    | true   | false              | All Devices | Manual |
-	When User clicks the "CREATE AUTOMATION" Action button
-	Then Create Automation page is displayed to the User
-	When User type "Test_Automation_17511" Name in the "Automation Name" field on the Automation details page
-	When User type "17511" Name in the "Description" field on the Automation details page
-	When User selects "All Devices" in the Scope Automation dropdown
-	When User selects "Active" checkbox on the Automation Page
-	When User selects "Manual" in the "Run" dropdown
-	And User clicks the "CREATE" Action button
-	Then Create Action page is displayed to the User
+	When User enters "Test_Automation_15427" text in the Search field for "Automation" column
+	When User clicks content from "Automation" column
+	When User clicks "Actions" tab
+	#Create Action
+	When User clicks the "CREATE ACTION" Action button
 	When User type "15427_Action" Name in the "Action Name" field on the Automation details page
 	When User selects "Update path" in the "Action Type" dropdown
 	When User selects "USE ME FOR AUTOMATION(DEVICE SCHDLD)" in the Project dropdown
@@ -52,13 +48,6 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckUpdateTaskValueEditPageLoadsProjec
 	When User selects "Active" checkbox on the Automation Page
 	When User selects "Manual" in the "Run" dropdown
 	When User clicks the "CREATE" Action button
-	#When User creates new Automation via API
-	#| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
-	#| 17428_Automation | DAS17428    | true   | false              | All Devices | Manual |
-	#When User enters "17104_Automation" text in the Search field for "Automation" column
-	#When User clicks content from "Automation" column
-	#When User selects "Actions" tab on the Project details page
-	#When User clicks the "CREATE ACTION" Action button
 	When User type "Update Migrated devices to Started" Name in the "Action Name" field on the Automation details page
 	When User selects "Update task value" in the "Action Type" dropdown
 	When User selects "<Project>" in the Project dropdown
@@ -164,3 +153,92 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueAction
 	When User selects "Update" value for "No change" dropdown on Action panel
 	And User selects "Failed" Value on Action panel
 	Then "CREATE" Action button is active
+	#Actions content check
+	Then "Update Migrated devices" content is displayed in "Action Name" field
+	Then "Update task value" text value is displayed in the "Action Type" dropdown
+	Then "One" value is displayed in the "Stage" dropdown for Automation
+	Then "Radio Rag Date Owner Comp Req B" value is displayed in the "Task" dropdown for Automation
+	Then "No change" value is displayed in the "Update Value" dropdown
+	Then "No change" value is displayed in the "Update Date" dropdown
+	Then "Update" value is displayed in the "Update Owner" dropdown
+	Then "1803 Team" content is displayed in "Team" field
+	Then "Akhila Varghese" content is displayed in "Owner" field
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17615 @DAS17619 @Cleanup @Not_Ready
+Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithRemoveOwnerIsLoadedCorrectly
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User creates new Automation via API
+	| AutomationName   | Description | Active | StopOnFailedAction | Scope     | Run    |
+	| 17619_Automation | 17619       | true   | false              | All Users | Manual |
+	When User clicks "Automations" link on the Admin page
+	Then "Automations" page should be displayed to the user
+	When User enters "17619_Automation" text in the Search field for "Automation" column
+	And User clicks content from "Automation" column
+	Then Edit Automation page is displayed to the User
+	When User clicks "Actions" tab
+	#Create Action
+	When User clicks the "CREATE ACTION" Action button
+	And User type "Update Migrated devices" Name in the "Action Name" field on the Automation details page
+	And User selects "Update task value" in the "Action Type" dropdown
+	When User selects "Computer Scheduled Test (Jo)" in the Project dropdown
+	When User selects "One" in the "Stage" dropdown for Actions
+	When User selects "Radio Rag Date Owner User Req B" in the "Task" dropdown for Actions
+	And User selects "No change" Update Value on Action panel
+	And User selects "No change" Update Date on Action panel
+	And User selects "Remove" Update Owner on Action panel
+	And User clicks the "CREATE" Action button
+	When User clicks "Automations" navigation link on the Admin page
+	When User enters "17619_Automation" text in the Search field for "Automation" column
+	When User clicks content from "Automation" column
+	When User clicks "Actions" tab
+	When User clicks content from "Action" column
+	#Actions content check
+	Then "Update Migrated devices" content is displayed in "Action Name" field
+	Then "Update task value" text value is displayed in the "Action Type" dropdown
+	Then "One" value is displayed in the "Stage" dropdown for Automation
+	Then "Radio Rag Date Owner Comp Req B" value is displayed in the "Task" dropdown for Automation
+	Then "No change" value is displayed in the "Update Value" dropdown
+	Then "No change" value is displayed in the "Update Date" dropdown
+	Then "Remove" value is displayed in the "Update Owner" dropdown
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17615 @DAS17617 @Cleanup @Not_Ready
+Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithUpdateOwnerIsLoadedCorrectly
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User creates new Automation via API
+	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
+	| 17617_Automation | 17617       | true   | false              | All Devices | Manual |
+	When User clicks "Automations" link on the Admin page
+	Then "Automations" page should be displayed to the user
+	When User enters "17617_Automation" text in the Search field for "Automation" column
+	And User clicks content from "Automation" column
+	And User clicks "Actions" tab
+	#Create Action
+	When User clicks the "CREATE ACTION" Action button
+	And User type "Update Migrated devices" Name in the "Action Name" field on the Automation details page
+	And User selects "Update task value" in the "Action Type" dropdown
+	When User selects "Computer Scheduled Test (Jo)" in the Project dropdown
+	When User selects "One" in the "Stage" dropdown for Actions
+	When User selects "Radio Rag Date Owner Comp Req B" in the "Task" dropdown for Actions
+	And User selects "No change" Update Value on Action panel
+	And User selects "No change" Update Date on Action panel
+	And User selects "Update" Update Owner on Action panel
+	And User selects "1803 Team" Team on Action panel
+	And User selects "Akhila Varghese" Owner on Action panel
+	And User clicks the "CREATE" Action button
+	When User clicks "Automations" navigation link on the Admin page
+	When User enters "17617_Automation" text in the Search field for "Automation" column
+	When User clicks content from "Automation" column
+	When User clicks "Actions" tab
+	When User clicks content from "Action" column
+	#Actions content check
+	Then "Update Migrated devices" content is displayed in "Action Name" field
+	Then "Update task value" text value is displayed in the "Action Type" dropdown
+	Then "One" value is displayed in the "Stage" dropdown for Automation
+	Then "Radio Rag Date Owner Comp Req B" value is displayed in the "Task" dropdown for Automation
+	Then "No change" value is displayed in the "Update Value" dropdown
+	Then "No change" value is displayed in the "Update Date" dropdown
+	Then "Update" value is displayed in the "Update Owner" dropdown
+	Then "1803 Team" content is displayed in "Team" field
+	Then "Akhila Varghese" content is displayed in "Owner" field

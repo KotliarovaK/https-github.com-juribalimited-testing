@@ -220,6 +220,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             if (Driver.IsElementExists(AddNewFilterButton))
             {
+                Driver.MoveToElement(AddNewFilterButton);
                 Driver.MouseHover(AddNewFilterButton);
                 AddNewFilterButton.Click();
             }

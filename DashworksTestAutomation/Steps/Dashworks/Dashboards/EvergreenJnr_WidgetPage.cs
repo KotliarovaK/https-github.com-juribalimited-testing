@@ -353,6 +353,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.IsFalse(page.ColorScheme.Displayed(), "Colour Scheme dropdown is displayed to the user");
         }
 
+        [Then(@"Color Scheme dropdown displayed with ""(.*)"" placeholder")]
+        public void ThenColourSchemeHasCorrectPlaceholder(string placeholder)
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            _driver.WaitForDataLoading();
+            Utils.Verify.That(page.ColorSchemePlaceholder.Text, Is.EqualTo(placeholder), "Colour Scheme dropdown is displayed with wrong placeholder");
+        }
+
         [Then(@"Table widget displayed inside preview pane correctly")]
         public void ThenTableWidgetDisplayedInsidePreviewPane()
         {
@@ -407,6 +415,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 page.GetDropdownOptions().Select(p => p.Text), "Incorrect options in lists dropdown");
         }
 
+        [Then(@"User sees ""(.*)"" option for Order By selector on Create Widget page")]
+        public void WhenUserSeesFollowingOptionForOrderBySelectorOnCreateWidgetPage(string option)
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            Utils.Verify.AreEqual(page.OrderBy.Text, option, "Incorrect option in OrderBy dropdown");
+        }
+
         [Then(@"""(.*)"" checkbox is checked on the Create Widget page")]
         public void ThenCheckboxIsCheckedOnTheCreateWidgetPage(string checkboxName)
         {
@@ -452,6 +467,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<AddWidgetPage>();
 
             Assert.That(page.IsAggregateByDropdownDisabled, Is.EqualTo(true), "PLEASE ADD EXCEPTION MESSAGE");
+        }
+
+        [Then(@"Color Scheme dropdown is disabled")]
+        public void ThenColorSchemeDropdownIsDisabled()
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+
+            Assert.That(page.IsColorSchemeDropdownDisabled, Is.EqualTo(true), "Color Scheme dropdown displayed enabled");
         }
 
         [Then(@"User sees following options for Aggregate By selector on Create Widget page:")]

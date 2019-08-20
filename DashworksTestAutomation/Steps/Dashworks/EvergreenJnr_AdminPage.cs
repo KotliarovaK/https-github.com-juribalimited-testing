@@ -774,14 +774,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 Utils.Verify.IsTrue(dropdown.GetDropdownByValueByName(value, dropdownName).Displayed(), $"{value} is not displayed in the {dropdownName}");
         }
 
-        [Then(@"""(.*)"" value is displayed in the ""(.*)"" dropdown for Automation")]
-        public void ThenValueIsDisplayedInTheDropdownForAutomation(string value, string dropdownName)
-        {
-            var dropdown = _driver.NowAt<BaseGridPage>();
-            var dropdownValue = dropdown.GetDropdownByNameForAutomations(dropdownName).GetAttribute("value");
-            Utils.Verify.AreEqual(dropdownValue, value, $"{value} is not displayed in the {dropdownName}");
-        }
-
         [Then(@"Capacity Units value is displayed for Capacity Mode field")]
         public void ThenCapacityUnitsValueIsDisplayedForCapacityModeField()
         {
