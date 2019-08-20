@@ -174,8 +174,8 @@ this.FeatureBackground();
 #line 25
  testRunner.And("User clicks \"Delete\" option in Cog-menu for \"FlDAS16489_1\" item on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 26
- testRunner.Then("Warning message with \"The selected custom field will be deleted, do you want to p" +
-                    "roceed?\" text is displayed on the Project Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Warning message with \"The selected custom field will be permanently deleted\" text" +
+                    " is displayed on the Project Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 27
  testRunner.When("User clicks Cancel button in the warning message on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 28
@@ -185,8 +185,8 @@ this.FeatureBackground();
 #line 31
  testRunner.When("User clicks \"Delete\" option in Cog-menu for \"FlDAS16489_1\" item on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 32
- testRunner.Then("Warning message with \"The selected custom field will be deleted, do you want to p" +
-                    "roceed?\" text is displayed on the Project Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Warning message with \"The selected custom field will be permanently deleted\" text" +
+                    " is displayed on the Project Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 33
  testRunner.When("User clicks Delete button in the warning message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 34
@@ -311,8 +311,8 @@ this.FeatureBackground();
 #line 59
  testRunner.And("User clicks \"Delete\" option in Cog-menu for \"FlDAS17695_1\" item on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 60
- testRunner.Then("Warning message with \"The selected custom field will be deleted, do you want to p" +
-                    "roceed?\" text is displayed on the Project Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Warning message with \"The selected custom field will be permanently deleted\" text" +
+                    " is displayed on the Project Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 61
  testRunner.When("User clicks Delete button in the warning message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 62
