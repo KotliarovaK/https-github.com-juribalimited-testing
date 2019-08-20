@@ -36,7 +36,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         public void WhenUserNavigatesToTheMain_MenuOnTheDetailsPage(string tabMenuName)
         {
             var detailsPage = _driver.NowAt<NavigationPage>();
-            detailsPage.GetTabMenuByName(tabMenuName).Click();
+            detailsPage.GetTabMenuByName(tabMenuName);
         }
 
         [Then(@"Loading indicator appears in the same place when switching between main-menu")]
@@ -148,7 +148,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             var detailsPage = _driver.NowAt<NavigationPage>();
 
             //opens main-menu 
-            detailsPage.GetTabMenuByName(tabMenuName).Click();
+            detailsPage.GetTabMenuByName(tabMenuName);
             _driver.WaitForDataLoading();
             foreach (var row in table.Rows)
                 Utils.Verify.IsTrue(detailsPage.GetDisplayStatusSubTabByName(row["SubTabName"]), $"'{row["SubTabName"]}' tab is not displayed!");
@@ -159,7 +159,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         {
             var detailsPage = _driver.NowAt<NavigationPage>();
 
-            detailsPage.GetTabMenuByName(tabMenuName).Click();
+            detailsPage.GetTabMenuByName(tabMenuName);
             foreach (var row in table.Rows)
             {
                 if (!string.IsNullOrEmpty(row["CountOfItems"]))
