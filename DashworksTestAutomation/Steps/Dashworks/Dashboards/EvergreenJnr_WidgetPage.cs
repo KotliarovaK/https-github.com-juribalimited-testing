@@ -139,7 +139,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
                 if (createWidgetElement.SplitBy.Displayed() && !string.IsNullOrEmpty(row["SplitBy"]))
                 {
-                    _driver.WaitForElementToBeDisplayed(createWidgetElement.SplitBy);
+                    _driver.WaitForElementToContainsTextInAttribute(createWidgetElement.SplitBy, "false", "aria-disabled");
                     createWidgetElement.SplitBy.Click();
                     _driver.WaitForElementToBeDisplayed(createWidgetElement.DropdownMenu);
                     createWidgetElement.SelectObjectForWidgetCreation(row["SplitBy"]);
@@ -415,6 +415,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 page.GetDropdownOptions().Select(p => p.Text), "Incorrect options in lists dropdown");
         }
 
+        [Then(@"User sees ""(.*)"" option for Order By selector on Create Widget page")]
+        public void WhenUserSeesFollowingOptionForOrderBySelectorOnCreateWidgetPage(string option)
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            Utils.Verify.AreEqual(page.OrderBy.Text, option, "Incorrect option in OrderBy dropdown");
+        }
+
         [Then(@"""(.*)"" checkbox is checked on the Create Widget page")]
         public void ThenCheckboxIsCheckedOnTheCreateWidgetPage(string checkboxName)
         {
@@ -460,6 +467,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<AddWidgetPage>();
 
             Assert.That(page.IsAggregateByDropdownDisabled, Is.EqualTo(true), "PLEASE ADD EXCEPTION MESSAGE");
+        }
+
+        [Then(@"Color Scheme dropdown is disabled")]
+        public void ThenColorSchemeDropdownIsDisabled()
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+
+            Assert.That(page.IsColorSchemeDropdownDisabled, Is.EqualTo(true), "Color Scheme dropdown displayed enabled");
         }
 
         [Then(@"User sees following options for Aggregate By selector on Create Widget page:")]

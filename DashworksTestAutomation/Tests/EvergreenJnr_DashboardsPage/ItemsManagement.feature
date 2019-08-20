@@ -239,7 +239,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckWarningMessageDisplayingWhenDeletingW
 	| Pie        | WidgetForDAS14855 | All Applications | Vendor  | Count             |             | Count ASC |                  | 10        | true       |
 	And User clicks Ellipsis menu for "WidgetForDAS14855" Widget on Dashboards page
 	And User clicks "Delete" item from Ellipsis menu on Dashboards page
-	Then User sees ""WidgetForDAS14855" will be permanently deleted" text in warning message on Dashboards page
+	Then User sees "WidgetForDAS14855 will be permanently deleted" text in warning message on Dashboards page
 	And User sees Widget square colored in amber
 	When User clicks Cancel button in Delete Widget warning on Dashboards page
 	And User deletes "WidgetForDAS14855" Widget on Dashboards page
@@ -362,6 +362,18 @@ Scenario: EvergreenJnr_DashboardsPage_CheckErrorTextAndLinkOnTheWarningMessage
 	| List       | Widget_For_DAS16326 | Device List (Complex) - BROKEN LIST | 10      | 10         |
 	Then User sees "This widget refers to list Device List (Complex) - BROKEN LIST which has errors" text in warning message on Dashboards page
 	Then "Device List (Complex) - BROKEN LIST" link is displayed in warning message on Dashboards page
+	And There are no errors in the browser console
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17551 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckErrorTextDisplakyingWhenListRefersToBrokenList
+	When Dashboard with "Dashboard_DAS16326" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User creates new Widget
+	| WidgetType | Title               | List                                | MaxRows | MaxColumns |
+	| List       | Widget_For_DAS17551 | Dependant List Filter - BROKEN LIST | 10      | 10         |
+	Then User sees "This widget refers to list Dependant List Filter - BROKEN LIST which has errors" text in warning message on Dashboards page
+	Then "Dependant List Filter - BROKEN LIST" link is displayed in warning message on Dashboards page
 	And There are no errors in the browser console
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16623

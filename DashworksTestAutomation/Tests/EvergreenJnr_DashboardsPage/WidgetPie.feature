@@ -394,6 +394,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckNameAndLabelForEmptyOwnerCompliance
 	And User selects "Show data labels" checkbox on the Create Widget page
 	Then Widget Preview is displayed to the user
 	And Color Scheme dropdown displayed with "Compliance Colour Scheme" placeholder 
+	And Color Scheme dropdown is disabled
 	When User clicks the "CREATE" Action button
 	Then "WidgetForDAS17467" Widget is displayed to the user
 	And Label "Empty" displayed for "WidgetForDAS17467" widget
@@ -423,3 +424,35 @@ Scenario: EvergreenJnr_DashboardsPage_CheckColorSchemePlaceholderForReadiness
 	And User selects "Show data labels" checkbox on the Create Widget page
 	Then Widget Preview is displayed to the user
 	And Color Scheme dropdown displayed with "Readiness Colour Scheme" placeholder 
+	And Color Scheme dropdown is disabled
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17515 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetsWithASplitByOfAfieldWithReadinessAreForcedToUseTheReadinessColourScheme
+	When User clicks "Devices" on the left-hand menu
+	And User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                        |
+	| Windows7Mi: Application Readiness |
+	| Application Compliance            |
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User Add And "Windows7Mi: In Scope" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| TRUE               |
+	And User create dynamic list with "ListForDAS17515" name on "Devices" page
+	Then "ListForDAS17515" list is displayed to user
+	When Dashboard with "DAS17515_Dashboard" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	When User clicks the "ADD WIDGET" Action button
+	And User adds new Widget
+	| WidgetType | Title             | List            | SplitBy                           | AggregateBy | AggregateFunction | OrderBy                               | TableOrientation | MaxValues | ShowLegend | Type | Drilldown | Layout |
+	| Pie        | WidgetForDAS17515 | ListForDAS17515 | Windows7Mi: Application Readiness |             | Count             | Windows7Mi: Application Readiness ASC |                  | 10        | true       |      |           |        |
+	Then Widget Preview is displayed to the user
+	When User clicks the "CREATE" Action button
+	Then There are no errors in the browser console
+	When User clicks Ellipsis menu for "WidgetForDAS17515" Widget on Dashboards page
+	And User clicks "Edit" item from Ellipsis menu on Dashboards page
+	When User selects "Application Compliance" in the "Split By" Widget dropdown
+	Then User sees "Application Compliance ASC" option for Order By selector on Create Widget page
+	When User clicks the "UPDATE" Action button
+	Then There are no errors in the browser console

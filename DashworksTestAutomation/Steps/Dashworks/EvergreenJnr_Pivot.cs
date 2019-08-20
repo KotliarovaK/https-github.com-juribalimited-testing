@@ -624,7 +624,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     _driver.WaitFor(() => _driver.IsElementExists(pivot.ArchivedDevicesNotIncludedTooltip));
                 }
             }
-             
+
+            _driver.WaitForDataLoading();
         }
     }
 }
