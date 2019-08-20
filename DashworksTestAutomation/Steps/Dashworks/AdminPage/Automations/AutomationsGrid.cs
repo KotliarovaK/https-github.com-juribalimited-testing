@@ -43,5 +43,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations
             var dropdownValue = dropdown.GetDropdownByNameForAutomations(dropdownName).GetAttribute("value");
             Utils.Verify.AreEqual(dropdownValue, value, $"{value} is not displayed in the {dropdownName}");
         }
+
+        [When(@"User type ""(.*)"" Name in the ""(.*)"" field on the Automation details page")]
+        public void WhenUserTypeNameInTheFieldOnTheProjectDetailsPage(string text, string fieldName)
+        {
+            var page = _driver.NowAt<ProjectsPage>();
+            page.GetFieldByName(fieldName).ClearWithBackspaces();
+            page.GetFieldByName(fieldName).SendKeys(text);
+            page.BodyContainer.Click();
+        }
     }
 }

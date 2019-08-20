@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using DashworksTestAutomation.DTO;
+using DashworksTestAutomation.DTO.Evergreen.Admin.Automations;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Bucket;
 using DashworksTestAutomation.DTO.Evergreen.Admin.CapacityUnits;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Rings;
@@ -390,6 +391,15 @@ namespace DashworksTestAutomation.Helpers
         public static void DeleteCustomField(string id)
         {
             DatabaseHelper.ExecuteQuery($"delete from [DesktopBI].[dbo].[CustomFields] where [CustomFieldID] = {id}");
+        }
+
+        #endregion
+
+        #region Automation
+
+        public static string GetAutomationFromDb(string automationName)
+        {
+            return DatabaseHelper.ExecuteReader($"select [AutomationId] from [PM].[dbo].[Automations] where [AutomationName] = '{automationName}'", 0).LastOrDefault();
         }
 
         #endregion

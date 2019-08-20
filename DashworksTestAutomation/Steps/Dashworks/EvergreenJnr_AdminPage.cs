@@ -1542,6 +1542,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenContentIsDisplayedInTheScopeAutomationDropdown(string dropdownValue)
         {
             var createProjectElement = _driver.NowAt<ProjectsPage>();
+            _driver.WaitForDataLoading();
             _driver.WaitForElementToBeDisplayed(createProjectElement.ScopeProjectField);
             Utils.Verify.Contains(dropdownValue, createProjectElement.ScopeProjectField.GetAttribute("value"), $"{dropdownValue} is not displayed in the Scope Automation dropdown");
         }
