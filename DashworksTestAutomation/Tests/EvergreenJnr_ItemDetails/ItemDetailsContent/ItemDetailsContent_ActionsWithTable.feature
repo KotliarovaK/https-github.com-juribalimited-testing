@@ -1600,6 +1600,38 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	When User closes Checkbox filter for "Compliance" column
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
+Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForActiveDirectoryTabGroupsOnDevicesPage
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User perform search by "ZWS705179"
+	And User click content from "Username" column
+	Then Details page for "ZWS705179 (Derick I. Thomas)" item is displayed to the user
+	When User navigates to the "Active Directory" main-menu on the Details page
+	And User navigates to the "Groups" sub-menu on the Details page
+	And User have opened Column Settings for "Group" column in the Details Page table
+	And User clicks Column button on the Column Settings panel
+	And User select "Directory Type" checkbox on the Column Settings panel
+	And User clicks Column button on the Column Settings panel
+	Then "US-W" text is displayed in the "Domain" column
+	And "Global Security Group" content is displayed in the "Type" column
+	And "Active Directory" content is displayed in the "Directory Type" column
+	When User clicks String Filter button for "Domain" column
+	Then following String Values are displayed in the filter on the Details Page
+	| Values |
+	| US-W   |
+	When User closes Checkbox filter for "Domain" column
+	And User clicks String Filter button for "Type" column
+	Then following String Values are displayed in the filter on the Details Page
+	| Values                |
+	| Global Security Group |
+	When User closes Checkbox filter for "Type" column
+	And User clicks String Filter button for "Directory Type" column
+	Then following String Values are displayed in the filter on the Details Page
+	| Values           |
+	| Active Directory |
+	When User closes Checkbox filter for "Directory Type" column
+
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
 Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForApplicationsTabEvergreenSummaryOnDevicesPage
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
