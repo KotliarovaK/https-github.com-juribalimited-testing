@@ -142,6 +142,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     default:
                         throw new Exception($"{fieldName} not found");
                 }
+            _driver.WaitForDataLoading();
         }
 
         [When(@"User enters ""(.*)"" value in the ""(.*)"" field")]
