@@ -1370,7 +1370,7 @@ Scenario: EvergreenJnr_DeviceList_CheckThatUsersTabIsDisplayedWithCorrectStagesO
 	When User perform search by "001BAQXT6JWFPI"
 	And User click content from "Hostname" column
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
-	When User navigates to the "USers" main-menu on the Details page
+	When User navigates to the "Users" main-menu on the Details page
 	When User switches to the "USE ME FOR AUTOMATION(DEVICE SCHDLD)" project in the Top bar on Item details page
 	Then following columns are displayed on the Item details page:
 	| ColumnName            |
