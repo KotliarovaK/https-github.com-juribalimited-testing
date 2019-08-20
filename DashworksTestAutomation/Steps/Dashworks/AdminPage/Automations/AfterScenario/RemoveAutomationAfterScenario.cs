@@ -28,30 +28,26 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.CapacityUnits.AfterS
         [AfterScenario("Cleanup", Order = 10)]
         public void DeleteNewlyCreatedAutomation()
         {
-            try
+            if (!_automations.Value.Any())
+                return;
+
+            var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/automation/deleteAutomations";
+
+            foreach (AutomationsDto automation in _automations.Value)
             {
-                if (!_automations.Value.Any())
-                    return;
-
-                var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/automation/deleteAutomations";
-
-                foreach (AutomationsDto automation in _automations.Value)
+                try
                 {
-                    try
-                    {
-                        var request = requestUri.GenerateRequest();
-                        request.AddParameter("objectId", null);
-                        request.AddParameter("selectedObjectsList", automation.Id);
+                    var request = requestUri.GenerateRequest();
+                    request.AddParameter("objectId", null);
+                    request.AddParameter("selectedObjectsList", automation.Id);
 
-                        _client.Value.Put(request);
-                    }
-                    catch (Exception e)
-                    {
-                        Logger.Write($"Unable to delete Automation via API: {e}");
-                    }
+                    _client.Value.Put(request);
+                }
+                catch (Exception e)
+                {
+                    Logger.Write($"Unable to delete Automation via API: {e}");
                 }
             }
-            catch { }
         }
     }
 }
