@@ -22,9 +22,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCapacitySlotClearedWhenObjectTypeIsCha
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13866 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToDeleteParticularCapacitySlotOfParticularProject
 	When User creates new Slot via Api
-	| Project                              | SlotName          | DisplayName |
-	| Project K-Computer Scheduled Project | CapacitySlot13866 | DAS13866    |
-	When User navigates to "Project K-Computer Scheduled Project" project details
+	| Project                               | SlotName          | DisplayName |
+	| *Project K-Computer Scheduled Project | CapacitySlot13866 | DAS13866    |
+	When User navigates to "*Project K-Computer Scheduled Project" project details
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
 	When User select "Capacity Slot" rows in the grid
