@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Reflection;
+using System.Threading;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
@@ -52,12 +54,50 @@ namespace DashworksTestAutomation.Base
         public void CheckElementDisabledState(IWebElement element, bool expectedCondition, string exceptionMessage)
         {
             Driver.WaitForElementToBeDisplayed(element);
-            Utils.Verify.AreEqual(expectedCondition, element.Disabled(), exceptionMessage);
+            Verify.AreEqual(expectedCondition, element.Disabled(), exceptionMessage);
         }
 
         public void CheckElementDisplayedState(IWebElement element, bool expectedCondition, string exceptionMessage)
         {
-            Utils.Verify.AreEqual(expectedCondition, Driver.IsElementDisplayed(element, WebDriverExtensions.WaitTime.Short), exceptionMessage);
+            Verify.AreEqual(expectedCondition, Driver.IsElementDisplayed(element, WebDriverExtensions.WaitTime.Short), exceptionMessage);
+        }
+
+        //Usage By selector = page.GetByFor(() => page.LoginButton);
+        public By GetByFor<TProperty>(Expression<Func<TProperty>> expression)
+        {
+            var attribute = ReflectionExtensions.ResolveMember(expression).GetFirstDecoration<FindsByAttribute>();
+            return ByFactory.From(attribute);
+        }
+
+        //Usage By selector = page.Click(() => page.LoginButton);
+        //For cases when element can be Staled
+        public void Click<TProperty>(Expression<Func<TProperty>> expression)
+        {
+            var by = GetByFor(expression);
+            for (int i = 0; i < 5; i++)
+            {
+                try
+                {
+                    Driver.FindElement(by).Click();
+                    return;
+                }
+                catch (NoSuchElementException)
+                {
+                    Thread.Sleep(1000);
+                }
+                catch (StaleElementReferenceException)
+                {
+                    Thread.Sleep(1000);
+                }
+                catch (NullReferenceException)
+                {
+                    Thread.Sleep(1000);
+                }
+                catch (TargetInvocationException)
+                {
+                    Thread.Sleep(1000);
+                }
+            }
         }
     }
 }
