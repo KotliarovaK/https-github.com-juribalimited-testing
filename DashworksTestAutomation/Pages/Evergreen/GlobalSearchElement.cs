@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
@@ -43,8 +44,10 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IWebElement SearchResult(string searchText)
         {
-            return Driver.FindElement(
-                By.XPath($".//div[contains(@class, 'result-table')]//a[contains(text(), '{searchText}')]"));
+            var selector = By.XPath($".//div[contains(@class, 'result-table')]//a[contains(text(), '{searchText}')]");
+            if (!Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Medium))
+                throw new Exception($"'{searchText}' was not found");
+            return Driver.FindElement(selector);
         }
 
         public IWebElement SearchResultName(string searchText)
