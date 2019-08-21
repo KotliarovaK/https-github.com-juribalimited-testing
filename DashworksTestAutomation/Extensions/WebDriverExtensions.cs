@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Reflection;
 using System.Threading;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Utils;
@@ -1826,6 +1827,7 @@ namespace DashworksTestAutomation.Extensions
             }
         }
 
+        //For cases with _driver.FindBy
         public static void ExecuteAction(this RemoteWebDriver driver, Action actionToDo)
         {
             for (int i = 0; i < 5; i++)
@@ -1844,6 +1846,10 @@ namespace DashworksTestAutomation.Extensions
                     Thread.Sleep(1000);
                 }
                 catch (NullReferenceException)
+                {
+                    Thread.Sleep(1000);
+                }
+                catch (TargetInvocationException)
                 {
                     Thread.Sleep(1000);
                 }

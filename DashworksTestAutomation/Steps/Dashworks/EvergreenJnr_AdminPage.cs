@@ -532,6 +532,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserChangesPathTo(string pathName)
         {
             var projectsPage = _driver.NowAt<ProjectsPage>();
+            _driver.WaitForElementToBeDisplayed(projectsPage.PathDropdown);
             projectsPage.PathDropdown.Click();
             projectsPage.SelectPathByName(pathName).Click();
         }
@@ -1692,7 +1693,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var projectPage = _driver.NowAt<ProjectDetailsPage>();
             _driver.WaitForDataLoading();
-            projectPage.LanguageMenu.Click();
+            projectPage.Click(() => projectPage.LanguageMenu);
         }
 
         [Then(@"Warning message with ""(.*)"" text is displayed on the Project Details Page")]
