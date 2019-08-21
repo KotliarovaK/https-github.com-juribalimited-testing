@@ -688,8 +688,7 @@ this.FeatureBackground();
 #line 226
  testRunner.When("User type \"allanj\" in Global Search Field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 227
- testRunner.Then("User clicks on \"allanj (Jo Allan)\" search resultThen User clicks on \"allanj (Jo A" +
-                    "llan)\" search result", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("User clicks on \"allanj (Jo Allan)\" search result", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 228
  testRunner.And("Details page for \"allanj (Jo Allan)\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 229

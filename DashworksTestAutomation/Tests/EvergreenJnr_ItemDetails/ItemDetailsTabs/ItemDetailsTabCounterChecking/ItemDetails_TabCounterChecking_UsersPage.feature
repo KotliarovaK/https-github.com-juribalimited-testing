@@ -224,7 +224,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatTheNumberOfCountersInTheTabIsEqualToT
 	Then "Mailboxes" tab is displayed on left menu on the Details page and contains '1' count of items
 	And "1" rows found label displays on Details Page
 	When User type "allanj" in Global Search Field
-	Then User clicks on "allanj (Jo Allan)" search resultThen User clicks on "allanj (Jo Allan)" search result
+	Then User clicks on "allanj (Jo Allan)" search result
 	And Details page for "allanj (Jo Allan)" item is displayed to the user
 	When User navigates to the "Applications" main-menu on the Details page
 	And User navigates to the "Advertisements" sub-menu on the Details page
