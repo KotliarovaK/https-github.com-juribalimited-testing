@@ -1807,6 +1807,7 @@ namespace DashworksTestAutomation.Extensions
                 return false;
             }
         }
+
         public static void WaitFor(this RemoteWebDriver driver, Func<bool> flag)
         {
             bool result;
@@ -1818,13 +1819,34 @@ namespace DashworksTestAutomation.Extensions
                     result = flag();
                     break;
                 }
-
                 else
-                {
                     result = flag();
-                }
 
                 Thread.Sleep(500);
+            }
+        }
+
+        public static void ExecuteAction(this RemoteWebDriver driver, Action actionToDo)
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                try
+                {
+                    actionToDo.Invoke();
+                    return;
+                }
+                catch (NoSuchElementException)
+                {
+                    Thread.Sleep(1000);
+                }
+                catch (StaleElementReferenceException)
+                {
+                    Thread.Sleep(1000);
+                }
+                catch (NullReferenceException)
+                {
+                    Thread.Sleep(1000);
+                }
             }
         }
     }

@@ -52,11 +52,11 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             Utils.Verify.That(loader.First(), Is.EqualTo(loader.Last()), "Wrong point loading position");
         }
 
-       [When(@"User navigates to the ""(.*)"" sub-menu on the Details page")]
+        [When(@"User navigates to the ""(.*)"" sub-menu on the Details page")]
         public void WhenUserNavigatesToTheSub_MenuOnTheDetailsPage(string subMenuName)
         {
             var detailsPage = _driver.NowAt<NavigationPage>();
-            detailsPage.ClickSubMenuByName(subMenuName);
+            _driver.ExecuteAction(() => detailsPage.GetSubMenuByName(subMenuName).Click());
         }
 
         [Then(@"""(.*)"" tab-menu on the Admin page is expanded")]
@@ -117,7 +117,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         }
 
         [Then(@"""(.*)"" sub-tab is displayed with disabled state on left menu on the Details page")]
-        public void ThenSub_TabIsDisplayedWithDisabledStateOnLeftMenuOnTheDetailsPage (string tabName)
+        public void ThenSub_TabIsDisplayedWithDisabledStateOnLeftMenuOnTheDetailsPage(string tabName)
         {
             _driver.WaitForDataLoading();
             var detailsPage = _driver.NowAt<NavigationPage>();
