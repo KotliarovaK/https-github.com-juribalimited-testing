@@ -36,14 +36,16 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         public IWebElement GetNavigationLinkByName(string linkName)
         {
             var link = By.XPath($".//div[@class='title-container']//a[text()='{linkName}']");
-            Driver.WaitForElementToBeDisplayed(link);
+            if (Driver.IsElementDisplayed(link, WebDriverExtensions.WaitTime.Long))
+                throw new Exception($"'{linkName}' Navigation link was not displayed");
             return Driver.FindElement(link);
         }
 
         public IWebElement GetTabMenuByName(string name)
         {
             var selector = By.XPath($".//li[contains(@class, 'das-mat-tree')]//a[text()='{name}']");
-            Driver.WaitForElementToBeDisplayed(selector);
+            if (Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Long))
+                throw new Exception($"'{name}' Tab menu was not displayed");
             return Driver.FindElement(selector);
         }
 

@@ -29,14 +29,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         public void WhenUserClicksOnNavigationLink(string linkName)
         {
             var detailsPage = _driver.NowAt<NavigationPage>();
-            detailsPage.GetNavigationLinkByName(linkName).Click();
+            _driver.ExecuteAction(() => detailsPage.GetNavigationLinkByName(linkName).Click());
         }
 
         [When(@"User navigates to the ""(.*)"" main-menu on the Details page")]
         public void WhenUserNavigatesToTheMain_MenuOnTheDetailsPage(string tabMenuName)
         {
             var detailsPage = _driver.NowAt<NavigationPage>();
-            detailsPage.GetTabMenuByName(tabMenuName).Click();
+            _driver.ExecuteAction(() => detailsPage.GetTabMenuByName(tabMenuName).Click());
         }
 
         [Then(@"Loading indicator appears in the same place when switching between main-menu")]
@@ -148,10 +148,10 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             var detailsPage = _driver.NowAt<NavigationPage>();
 
             //opens main-menu 
-            detailsPage.GetTabMenuByName(tabMenuName).Click();
+            _driver.ExecuteAction(() => detailsPage.GetTabMenuByName(tabMenuName).Click());
             _driver.WaitForDataLoading();
             foreach (var row in table.Rows)
-                Utils.Verify.IsTrue(detailsPage.GetDisplayStatusSubTabByName(row["SubTabName"]), $"'{row["SubTabName"]}' tab is not displayed!");
+                Verify.IsTrue(detailsPage.GetDisplayStatusSubTabByName(row["SubTabName"]), $"'{row["SubTabName"]}' tab is not displayed!");
         }
 
         [Then(@"""(.*)"" main-menu on the Details page contains following sub-menu with count of items:")]
@@ -159,13 +159,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         {
             var detailsPage = _driver.NowAt<NavigationPage>();
 
-            detailsPage.GetTabMenuByName(tabMenuName).Click();
+            _driver.ExecuteAction(() => detailsPage.GetTabMenuByName(tabMenuName).Click());
             foreach (var row in table.Rows)
             {
                 if (!string.IsNullOrEmpty(row["CountOfItems"]))
-                    Utils.Verify.IsTrue(detailsPage.GetDisplayStatusOfTabWithCountOfItemsByName(row["SubTabName"], row["CountOfItems"]), "Some subcategory is not displayed correctly!");
+                    Verify.IsTrue(detailsPage.GetDisplayStatusOfTabWithCountOfItemsByName(row["SubTabName"], row["CountOfItems"]), "Some subcategory is not displayed correctly!");
                 else
-                    Utils.Verify.IsTrue(detailsPage.GetTabByName(row["SubTabName"]), "Subcategory is not displayed correctly!");
+                    Verify.IsTrue(detailsPage.GetTabByName(row["SubTabName"]), "Subcategory is not displayed correctly!");
             }
         }
     }
