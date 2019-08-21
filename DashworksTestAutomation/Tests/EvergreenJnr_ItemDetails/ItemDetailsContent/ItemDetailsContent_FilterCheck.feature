@@ -174,7 +174,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	When User navigates to the "Applications" main-menu on the Details page
 	And User navigates to the "Collections" sub-menu on the Details page
 	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
-	And User enters "Collection A01131CA" text in the Search field for "Collection" column on the Details Page
 	Then "SMS/SCCM 2007" content is displayed in the "Source Type" column
 	Then "A01 SMS (Spoof)" content is displayed in the "Source" column
 	Then "TierA Site01" content is displayed in the "Site" column
