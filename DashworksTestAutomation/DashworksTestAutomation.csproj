@@ -1000,6 +1000,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CreateNewCustomField.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr_ItemDetails\CustomFields\CustomFieldsCheck.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomFieldsCheck.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr_ItemDetails\CustomFields\DeleteCustomFields.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1794,6 +1799,10 @@
     <None Include="Tests\EvergreenJnr_ItemDetails\CustomFields\CreateNewCustomField.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CreateNewCustomField.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ItemDetails\CustomFields\CustomFieldsCheck.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CustomFieldsCheck.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_ItemDetails\CustomFields\DeleteCustomFields.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
