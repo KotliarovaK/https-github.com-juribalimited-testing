@@ -352,6 +352,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public IWebElement SelectPathByName(string pathName)
         {
             var requestTypeSelector = $".//mat-option/span[contains(text(), '{pathName}')]";
+            if (!Driver.IsElementDisplayed(By.XPath(requestTypeSelector), WebDriverExtensions.WaitTime.Medium))
+                throw new Exception($"'{pathName}' path is not present in the selectbox");
             return Driver.FindElement(By.XPath(requestTypeSelector));
         }
 

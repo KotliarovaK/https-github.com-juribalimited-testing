@@ -532,6 +532,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserChangesPathTo(string pathName)
         {
             var projectsPage = _driver.NowAt<ProjectsPage>();
+            _driver.WaitForElementToBeDisplayed(projectsPage.PathDropdown);
             projectsPage.PathDropdown.Click();
             projectsPage.SelectPathByName(pathName).Click();
         }
