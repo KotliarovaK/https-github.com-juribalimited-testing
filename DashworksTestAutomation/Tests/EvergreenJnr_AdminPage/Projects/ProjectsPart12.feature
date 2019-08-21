@@ -58,18 +58,11 @@ Examples:
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Cleanup @Projects @TEST
 Scenario: EvergreenJnr_AdminPage_AddingAndDeletingPermissionsForMailboxProject
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "TestName12581" in the "Project Name" field
-	And User selects "All Mailboxes" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks newly created object link
+	When Project created via API and opened
+	| ProjectName   | Scope         | ProjectTemplate | Mode               |
+	| TestName12581 | All Mailboxes | None            | Standalone Project |
 	Then Project "TestName12581" is displayed to user
+	When User selects "Scope" tab on the Project details page
 	When User selects "Scope Changes" tab on the Project details page
 	And User clicks "Users" tab in the Project Scope Changes section
 	Then "Users to add (0 of 14747 selected)" is displayed to the user in the Project Scope Changes section
