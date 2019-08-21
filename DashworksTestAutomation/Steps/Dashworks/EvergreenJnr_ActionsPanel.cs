@@ -605,7 +605,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var button = action.GetActionsButtonByName(buttonName);
             _driver.WaitForElementToBeEnabled(button);
             button.Click();
-            _driver.WaitForElementToBeNotDisplayed(button);
             _driver.WaitForDataLoading(50);
         }
 
