@@ -519,15 +519,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Actions.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_AdminPage\Automation\AutomationLog.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Automation\AutomationLogPart1.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AutomationLog.feature</DependentUpon>
+      <DependentUpon>AutomationLogPart1.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_AdminPage\Automation\AutomationLog1.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Automation\AutomationLogPart2.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AutomationLog1.feature</DependentUpon>
+      <DependentUpon>AutomationLogPart2.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Automation\AutomationLogPart3.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AutomationLogPart3.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_AdminPage\Buckets\CreateBucket.feature.cs">
       <AutoGen>True</AutoGen>
@@ -1410,13 +1415,17 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Actions.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_AdminPage\Automation\AutomationLog.feature">
+    <None Include="Tests\EvergreenJnr_AdminPage\Automation\AutomationLogPart1.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>AutomationLog.feature.cs</LastGenOutput>
+      <LastGenOutput>AutomationLogPart1.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_AdminPage\Automation\AutomationLog1.feature">
+    <None Include="Tests\EvergreenJnr_AdminPage\Automation\AutomationLogPart2.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>AutomationLog1.feature.cs</LastGenOutput>
+      <LastGenOutput>AutomationLogPart2.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Automation\AutomationLogPart3.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AutomationLogPart3.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_AdminPage\Buckets\CreateBucket.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
