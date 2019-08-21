@@ -59,8 +59,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
 
             _driver.WaitForDataLoadingInActionsPanel();
             _driver.WaitForDataLoadingInTopBarOnItemDetailsPage();
-            //TODO: An open question for Vitaly (about sleep) 8/19/19;
-            //Thread.Sleep(2000);
         }
 
         [Then(@"""(.*)"" project is selected in the Top bar on Item details page")]
