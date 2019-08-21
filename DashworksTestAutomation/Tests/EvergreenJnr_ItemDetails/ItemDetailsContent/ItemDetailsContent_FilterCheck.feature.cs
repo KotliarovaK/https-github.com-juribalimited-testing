@@ -1237,7 +1237,7 @@ this.FeatureBackground();
 #line 329
  testRunner.And("\"JuribaDEV50\" content is displayed in the \"Site\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 330
- testRunner.And("\"Entitled\" content is displayed in the \"Association Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("\"Entitled\" content is displayed in \"Association Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 331
  testRunner.When("User clicks String Filter button for \"Compliance\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -2119,9 +2119,9 @@ this.FeatureBackground();
 #line 568
  testRunner.When("User navigates to the \"Email Addresses\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 569
- testRunner.Then("\"TRUE\" content is displayed in the \"Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"SMTP\" content is displayed in the \"Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 570
- testRunner.Then("\"SMTP\" content is displayed in the \"Reply To\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"TRUE\" content is displayed in the \"Reply To\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 571
  testRunner.When("User clicks String Filter button for \"Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden

@@ -327,7 +327,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplaye
 	And User navigates to the "Evergreen Detail" sub-menu on the Details page
 	Then "UNKNOWN" content is displayed in the "Compliance" column
 	And "JuribaDEV50" content is displayed in the "Site" column
-	And "Entitled" content is displayed in the "Association Type" column
+	Then "Entitled" content is displayed in "Association Type" column
 	When User clicks String Filter button for "Compliance" column
 	Then following String Values are displayed in the filter on the Details Page
 	| Values  |
@@ -566,8 +566,8 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatOnlyValueIncludedInTheColumnIsDisp
 	And User click content from "Email Address" column
 	Then Details page for "002B5DC7D4D34D5C895@bclabs.local" item is displayed to the user
 	When User navigates to the "Email Addresses" sub-menu on the Details page
-	Then "TRUE" content is displayed in the "Type" column
-	Then "SMTP" content is displayed in the "Reply To" column
+	Then "SMTP" content is displayed in the "Type" column
+	Then "TRUE" content is displayed in the "Reply To" column
 	When User clicks String Filter button for "Type" column
 	Then following String Values are displayed in the filter on the Details Page
 	| Values |
