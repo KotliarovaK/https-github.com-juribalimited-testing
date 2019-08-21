@@ -446,7 +446,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForElementToBeDisplayed(action.DayInDatePicker(dayNumber));
             Assert.That(action.DayInDatePicker(dayNumber).GetCssValue("background-color"), Is.EqualTo("rgba(126, 189, 56, 1)"), "Day color is wrong");
         }
-        
+
         [Then(@"Column ""(.*)"" displayed green in Datepicker")]
         public void ThenColumnWithSpecifiedDayDisplayedGreenInDatePicker(string dayName)
         {
@@ -602,7 +602,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksTheActionButton(string buttonName)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
-            action.GetActionsButtonByName(buttonName).Click();
+            var button = action.GetActionsButtonByName(buttonName);
+            _driver.WaitForElementToBeEnabled(button);
+            button.Click();
+            _driver.WaitForElementToBeNotDisplayed(button);
             _driver.WaitForDataLoading(50);
         }
 
