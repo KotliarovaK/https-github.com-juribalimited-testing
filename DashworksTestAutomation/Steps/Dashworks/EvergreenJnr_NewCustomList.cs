@@ -275,6 +275,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForElementToBeDisplayed(listDetailsElement.DeleteWarning);
             _driver.WaitForElementToBeDisplayed(listDetailsElement.DeleteButtonInWarningMessage);
             listDetailsElement.DeleteButtonInWarningMessage.Click();
+            _driver.WaitForElementToBeNotDisplayed(listDetailsElement.DeleteButtonInWarningMessage);
         }
 
         [When(@"User clicks Cancel button in the warning message")]
@@ -419,15 +420,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForDataLoading();
-            page.GetListElementByName(listName).Click();
-            try
-            {
-                _driver.ClickByJavascript(page.GetListElementByName(listName));
-            }
-            catch (StaleElementReferenceException)
-            {
-                _driver.ClickByJavascript(page.GetListElementByName(listName));
-            }
+            _driver.ExecuteAction(() => page.GetListElementByName(listName).Click());
+            _driver.ExecuteAction(() => _driver.ClickByJavascript(page.GetListElementByName(listName)));
             _driver.WaitForDataLoading();
         }
 
