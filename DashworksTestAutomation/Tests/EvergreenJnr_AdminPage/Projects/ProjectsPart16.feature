@@ -205,18 +205,11 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12645 @Cleanup @TEST
 Scenario: EvergreenJnr_AdminPage_CheckingSortingOrderOfTheObjectsInTheProjectScopeChanges
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "TestProject12645" in the "Project Name" field
-	And User selects "All Mailboxes" in the Scope Project dropdown
-	And User clicks the "CREATE" Action button
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks newly created object link
+	When Project created via API and opened
+	| ProjectName      | Scope         | ProjectTemplate | Mode               |
+	| TestProject12645 | All Mailboxes | None            | Standalone Project |
 	Then Project "TestProject12645" is displayed to user
+	When User selects "Scope" tab on the Project details page
 	When User selects "Scope Changes" tab on the Project details page
 	When User expands the object to add
 	Then Objects are displayed in alphabetical order on the Admin page
@@ -240,28 +233,21 @@ Scenario: EvergreenJnr_AdminPage_CheckingSortingOrderOfTheObjectsInTheProjectSco
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @Cleanup @DAS11758 @DAS14190 @DAS15528 @TEST
 Scenario: EvergreenJnr_AdminPage_CheckThatSelectAllCheckboxIsWorkingCorrectlyOnAdminPage
+	When Project created via API and opened
+	| ProjectName    | Scope     | ProjectTemplate | Mode               |
+	| 1Checkbox11758 | All Users | None            | Standalone Project |
+	And Project created via API and opened
+	| ProjectName    | Scope     | ProjectTemplate | Mode               |
+	| 2Checkbox11758 | All Users | None            | Standalone Project |
+	And Project created via API and opened
+	| ProjectName    | Scope     | ProjectTemplate | Mode               |
+	| 3Checkbox11758 | All Users | None            | Standalone Project |
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "1Checkbox11758" in the "Project Name" field
-	And User selects "All Users" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
 	Then created Project with "1Checkbox11758" name is displayed correctly
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "2Checkbox11758" in the "Project Name" field
-	And User selects "All Users" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	Then created Project with "2Checkbox11758" name is displayed correctly
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "3Checkbox11758" in the "Project Name" field
-	And User selects "All Users" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	Then created Project with "3Checkbox11758" name is displayed correctly
+	And created Project with "2Checkbox11758" name is displayed correctly
+	And created Project with "3Checkbox11758" name is displayed correctly
 	When User selects all rows on the grid
 	Then 'Select All' checkbox have full checked state on the Admin page
 	When User select "Project" rows in the grid
