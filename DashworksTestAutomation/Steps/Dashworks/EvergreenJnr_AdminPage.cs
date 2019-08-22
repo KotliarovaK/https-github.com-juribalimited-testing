@@ -44,10 +44,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
         private readonly CapacityUnits _capacityUnits;
         private readonly Tasks _tasks;
         private readonly ElementCoordinates _elementCoordinates;
+        private readonly ReadinessData _readinessData;
 
         public EvergreenJnr_AdminPage(RemoteWebDriver driver, Teams teams, DTO.RuntimeVariables.Projects projects,
             Buckets buckets, LastUsedBucket lastUsedBucket, AddedObjects addedObjects, Rings rings, CapacityUnits capacityUnits,
-            Tasks tasks, ElementCoordinates elementCoordinates)
+            Tasks tasks, ElementCoordinates elementCoordinates, ReadinessData readinessData)
         {
             _driver = driver;
             _teams = teams;
@@ -59,6 +60,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _capacityUnits = capacityUnits;
             _tasks = tasks;
             _elementCoordinates = elementCoordinates;
+            _readinessData = readinessData;
         }
 
         #region Check button state
@@ -140,6 +142,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     default:
                         throw new Exception($"{fieldName} not found");
                 }
+            _driver.WaitForDataLoading();
         }
 
         [When(@"User enters ""(.*)"" value in the ""(.*)"" field")]
@@ -244,7 +247,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var projectsPage = _driver.NowAt<ProjectsPage>();
             foreach (var row in table.Rows)
             {
+                _driver.WaitForElementToBeDisplayed(projectsPage.AddMailboxFolderPermissionsButton);
                 projectsPage.AddMailboxFolderPermissionsButton.Click();
+                _driver.WaitForElementToBeDisplayed(projectsPage.PermissionsDropdown);
                 projectsPage.PermissionsDropdown.Click();
                 projectsPage.SelectPermissionsByName(row["Permissions"]);
                 projectsPage.AddPermissionsButtonInTab.Click();
@@ -527,6 +532,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserChangesPathTo(string pathName)
         {
             var projectsPage = _driver.NowAt<ProjectsPage>();
+            _driver.WaitForElementToBeDisplayed(projectsPage.PathDropdown);
             projectsPage.PathDropdown.Click();
             projectsPage.SelectPathByName(pathName).Click();
         }
@@ -1540,6 +1546,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenContentIsDisplayedInTheScopeAutomationDropdown(string dropdownValue)
         {
             var createProjectElement = _driver.NowAt<ProjectsPage>();
+            _driver.WaitForDataLoading();
             _driver.WaitForElementToBeDisplayed(createProjectElement.ScopeProjectField);
             Utils.Verify.Contains(dropdownValue, createProjectElement.ScopeProjectField.GetAttribute("value"), $"{dropdownValue} is not displayed in the Scope Automation dropdown");
         }
@@ -1686,7 +1693,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var projectPage = _driver.NowAt<ProjectDetailsPage>();
             _driver.WaitForDataLoading();
-            projectPage.LanguageMenu.Click();
+            projectPage.Click(() => projectPage.LanguageMenu);
         }
 
         [Then(@"Warning message with ""(.*)"" text is displayed on the Project Details Page")]
@@ -1928,7 +1935,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenUserChecksThatMoveToPositionDialogHasTheSameSize()
         {
             var page = _driver.NowAt<Capacity_SlotsPage>();
-            
+
             Verify.That(page.MoveToPositionDialog.Size.Height, Is.InRange(_elementCoordinates.Height, _elementCoordinates.Height + 5)); // 5pxls is max height allowed scaling
             Verify.That(page.MoveToPositionDialog.Size.Width, Is.EqualTo(_elementCoordinates.Width));
         }
@@ -2600,24 +2607,24 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserRemembersReadinessName()
         {
             var page = _driver.NowAt<CreateReadinessPage>();
-            page.Storage.SessionStorage.SetItem("readinessName", page.ReadinessField.GetAttribute("value"));
-            page.Storage.SessionStorage.SetItem("readinessToolTip", page.TooltipField.GetAttribute("value"));
-            page.Storage.SessionStorage.SetItem("readinessReady", page.ReadyCheckboxState.Selected.ToString().ToLower());
-            page.Storage.SessionStorage.SetItem("readinessDefault", page.DefaultCheckBoxState.Selected.ToString().ToLower());
+            _readinessData.Name = page.ReadinessField.GetAttribute("value");
+            _readinessData.ToolTip = page.TooltipField.GetAttribute("value");
+            _readinessData.Ready = page.ReadyCheckboxState.Selected.ToString().ToLower();
+            _readinessData.Default = page.DefaultCheckBoxState.Selected.ToString().ToLower();
         }
 
         [When(@"User enters stored readiness name in Search field for ""(.*)"" column")]
         public void WhenUserEntersStoredTextInTheSearchFieldForColumn(string columnName)
         {
             var searchElement = _driver.NowAt<BaseGridPage>();
-            searchElement.GetSearchFieldByColumnName(columnName, searchElement.Storage.SessionStorage.GetItem("readinessName"));
+            searchElement.GetSearchFieldByColumnName(columnName, _readinessData.Name);
         }
 
         [Then(@"User checks that opened readiness name is the same as stored one")]
         public void ThenUserChecksThatReadinessNameIsDifferent()
         {
             var page = _driver.NowAt<CreateReadinessPage>();
-            Utils.Verify.That(page.Storage.SessionStorage.GetItem("readinessName"), Is.EqualTo(page.ReadinessField.GetAttribute("value")), "Name is different from stored one");
+            Utils.Verify.That(_readinessData.Name, Is.EqualTo(page.ReadinessField.GetAttribute("value")), "Name is different from stored one");
         }
 
         [Then(@"Filtered readiness item equals to stored one")]
@@ -2629,8 +2636,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var tooltip = page.GetRowContentByColumnName("Tooltip");
             var defaultFor = page.GetRowContentByColumnName("Default for Applications");
 
-            Utils.Verify.That(page.Storage.SessionStorage.GetItem("readinessToolTip"), Is.EqualTo(tooltip), "Tooltip is different from stored one");
-            Utils.Verify.That(page.Storage.SessionStorage.GetItem("readinessDefault"), Is.EqualTo(defaultFor.ToLower()), "Default For state different from stored one");
+            Utils.Verify.That(_readinessData.ToolTip, Is.EqualTo(tooltip), "Tooltip is different from stored one");
+            Utils.Verify.That(_readinessData.Default, Is.EqualTo(defaultFor.ToLower()), "Default For state different from stored one");
         }
 
         [Then(@"Readiness ""(.*)"" displayed before None")]

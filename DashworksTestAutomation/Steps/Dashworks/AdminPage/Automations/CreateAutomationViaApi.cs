@@ -7,6 +7,8 @@ using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Providers;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using RestSharp;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
@@ -16,10 +18,10 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations
     [Binding]
     public class CreateAutomationsViaApi : SpecFlowContext
     {
-        private readonly Automation _automation;
+        private readonly DTO.RuntimeVariables.Automations _automation;
         private readonly RestWebClient _client;
 
-        private CreateAutomationsViaApi(Automation automation, RestWebClient client)
+        private CreateAutomationsViaApi(DTO.RuntimeVariables.Automations automation, RestWebClient client)
         {
             _automation = automation;
             _client = client;
@@ -53,7 +55,10 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations
                         $"Automation with {automation.automationName} name was not created via api: {response.ErrorMessage}");
                 }
 
-                _automation.Value.Add(automation);
+                var responseContent = JsonConvert.DeserializeObject<JObject>(response.Content);
+                string automationId = responseContent["id"].ToString();
+
+                _automation.Value.Add(new AutomationsDto(){Id = automationId });;
             }
         }
     }

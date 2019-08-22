@@ -48,10 +48,10 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations
         public void WhenUserTypeNameInTheFieldOnTheProjectDetailsPage(string text, string fieldName)
         {
             var page = _driver.NowAt<ProjectsPage>();
-
             page.GetFieldByName(fieldName).ClearWithBackspaces();
             page.GetFieldByName(fieldName).SendKeys(text);
             page.BodyContainer.Click();
+        }
         }
     }
 }

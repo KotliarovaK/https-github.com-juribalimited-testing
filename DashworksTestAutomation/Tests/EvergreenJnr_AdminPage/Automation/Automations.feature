@@ -113,7 +113,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations
 	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
 
 #Need to use three Automations: inactive, inactive, active
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15431 @DAS15739 @DAS15740 @DAS15741 @DAS16764 @DAS17222 @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15431 @DAS15739 @DAS15740 @DAS15741 @DAS16764 @DAS17222 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuIsWorkedCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -513,6 +513,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextFor
 	And User clicks the "CREATE" Action button
 	When User clicks newly created object link
 	Then Edit Automation page is displayed to the User
+	Then "DAS15423_List" content is displayed in the Scope Automation dropdown
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User navigates to the "DAS15423_List" list
@@ -523,6 +524,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextFor
 	When User clicks "Automations" link on the Admin page
 	When User enters "DAS15423_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
+	Then Edit Automation page is displayed to the User
 	Then "[List not found]" content is displayed in the Scope Automation dropdown
 	#Update after DAS-17336 fixed
 	#When User clicks "Actions" tab
@@ -530,11 +532,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextFor
 	#When User clicks "Details" tab
 	When User clicks the "CANCEL" Action button
 	When User enters "DAS15423_Automation" text in the Search field for "Automation" column
-	When User selects all rows on the grid
-	When User clicks on Actions button
-	And User selects "Run now" in the Actions
-	When User clicks the "RUN" Action button
-	When User clicks "RUN" button in the warning message on Admin page
+	When User clicks "Run now" option in Cog-menu for "DAS15423_Automation" item on Admin page
 	When User selects "Automation Log" tab on the Project details page
 	When User enters "DAS15423_Automation" text in the Search field for "Automation" column
 	Then "LIST NOT FOUND" content is displayed for "Outcome" column

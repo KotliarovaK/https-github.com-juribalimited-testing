@@ -22,9 +22,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCapacitySlotClearedWhenObjectTypeIsCha
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13866 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToDeleteParticularCapacitySlotOfParticularProject
 	When User creates new Slot via Api
-	| Project                              | SlotName          | DisplayName |
-	| Project K-Computer Scheduled Project | CapacitySlot13866 | DAS13866    |
-	When User navigates to "Project K-Computer Scheduled Project" project details
+	| Project                               | SlotName          | DisplayName |
+	| *Project K-Computer Scheduled Project | CapacitySlot13866 | DAS13866    |
+	When User navigates to "*Project K-Computer Scheduled Project" project details
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
 	When User select "Capacity Slot" rows in the grid
@@ -57,28 +57,23 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSpellingIsCorrectInCapacitySlotsDelet
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13835 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatSlotsLinkFromUnitGridLeadsToCorrectFilteredPage
-	When User navigates to "User Scheduled Project in Italian & Japanese (Jo)" project details
-	And User clicks "Capacity" tab
 	#prepare data
-	And User selects "Capacity Details" tab on the Project details page
-	Then User selects "Teams and Paths" option in "Capacity Mode" dropdown
-	When User clicks the "UPDATE" Action button
-	Then User selects "Capacity Units" option in "Capacity Mode" dropdown
-	When User clicks the "UPDATE" Action button
-	Then Success message is displayed and contains "The project capacity details have been updated" text
-	When User creates new Capacity Unit via api
-	| Name            | Description | IsDefault | Project                                           |
-	| Capacity Unit 1 |             | false     | User Scheduled Project in Italian & Japanese (Jo) |
-	| Capacity Unit 2 |             | false     | User Scheduled Project in Italian & Japanese (Jo) |
-	#When User selects "Slots" tab on the Project details page
+	When Project created via API and opened
+	| ProjectName   | Scope         | ProjectTemplate | Mode               |
+	| TestName13835 | All Mailboxes | None            | Standalone Project |
+	And User creates new Capacity Unit via api
+	| Name            | Description | IsDefault | Project       |
+	| Capacity Unit 1 |             | false     | TestName13835 |
+	| Capacity Unit 2 |             | false     | TestName13835 |
 	And User creates new Slot via Api
-	| Project                                           | SlotName | DisplayName | CapacityUnits   | CapacityType    |
-	| User Scheduled Project in Italian & Japanese (Jo) | Slot1    | Slot 1      |                 |                 |
-	| User Scheduled Project in Italian & Japanese (Jo) | Slot2    | Slot 2      | Capacity Unit 1 |                 |
-	| User Scheduled Project in Italian & Japanese (Jo) | Slot3    | Slot 3      | Capacity Unit 2 |                 |
-	| User Scheduled Project in Italian & Japanese (Jo) | Slot4    | Slot 4      |                 | Teams and Paths |
+	| Project       | SlotName | DisplayName | CapacityUnits   | CapacityType    |
+	| TestName13835 | Slot1    | Slot 1      |                 |                 |
+	| TestName13835 | Slot2    | Slot 2      | Capacity Unit 1 |                 |
+	| TestName13835 | Slot3    | Slot 3      | Capacity Unit 2 |                 |
+	| TestName13835 | Slot4    | Slot 4      |                 | Teams and Paths |
 	#act1
-	When User clicks "Units" tab
+	And User clicks "Capacity" tab
+	And User clicks "Units" tab
 	And User enters "Unassigned" text in the Search field for "Capacity Unit" column
 	Then "1" content is displayed in "Slots" column
 	When User clicks content from "Slots" column
@@ -111,31 +106,3 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsLinkFromUnitGridLeadsToCorrectFil
 	| slots |
 	| Slot1 |
 	| Slot3 |
-	#remove tests data
-	When User clicks "Capacity" tab
-	And User selects "Slots" tab on the Project details page
-	And User select "Capacity Slot" rows in the grid
-	| SelectedRowsName |
-	| Slot1           |
-	| Slot2           |
-	| Slot3           |
-	| Slot4           |
-	And User clicks Actions button on the Projects page
-	And User clicks Delete button in Actions
-	And User clicks Delete button
-	And User clicks Delete button in the warning message
-	Then Success message is displayed and contains "The selected slots have been deleted" text
-	When User selects "Units" tab on the Project details page
-	And User select "Capacity Unit" rows in the grid
-	| SelectedRowsName |
-	| Capacity Unit 1  |
-	| Capacity Unit 2  |
-	And User clicks Actions button on the Projects page
-	And User clicks Delete button in Actions
-	And User clicks Delete button
-	And User clicks Delete button in the warning message
-	Then Success message is displayed and contains "The selected units have been deleted" text
-	When User selects "Capacity Details" tab on the Project details page
-	Then User selects "Teams and Paths" option in "Capacity Mode" dropdown
-	When User clicks the "UPDATE" Action button
-	Then Success message is displayed and contains "The project capacity details have been updated" text

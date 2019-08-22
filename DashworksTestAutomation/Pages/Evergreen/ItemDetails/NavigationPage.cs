@@ -22,6 +22,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
 
         private static string TabCountSelector = ".//a[text()='{0}']//span[@class='ng-star-inserted']";
         private static string SubMenuByNameSelector = ".//ul[@class='das-mat-tree-submenu']//a[text()='{0}']";
+        private static string TabMenuByNameSelector = ".//li[contains(@class, 'das-mat-tree')]//a[text()='{0}']";
 
         public override List<By> GetPageIdentitySelectors()
         {
@@ -36,29 +37,25 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         public IWebElement GetNavigationLinkByName(string linkName)
         {
             var link = By.XPath($".//div[@class='title-container']//a[text()='{linkName}']");
-            Driver.WaitForElementToBeDisplayed(link);
+            if (Driver.IsElementDisplayed(link, WebDriverExtensions.WaitTime.Long))
+                throw new Exception($"'{linkName}' Navigation link was not displayed");
             return Driver.FindElement(link);
         }
 
         public IWebElement GetTabMenuByName(string name)
         {
-            var selector = By.XPath($".//li[contains(@class, 'das-mat-tree')]//a[text()='{name}']");
-            Driver.WaitForElementToBeDisplayed(selector);
+            var selector = By.XPath(string.Format(TabMenuByNameSelector, name));
+            if (Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Long))
+                throw new Exception($"'{name}' Tab menu was not displayed");
             return Driver.FindElement(selector);
         }
 
-        public void ClickSubMenuByName(string name)
+        public IWebElement GetSubMenuByName(string name)
         {
             var selector = By.XPath(string.Format(SubMenuByNameSelector, name));
-            Driver.WaitForElementToBeDisplayed(selector);
-            try
-            {
-                Driver.FindElement(selector).Click();
-            }
-            catch (StaleElementReferenceException)
-            {
-                Driver.FindElement(selector).Click();
-            }
+            if (Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Long))
+                throw new Exception($"'{name}' Sub menu was not displayed");
+            return Driver.FindElement(selector);
         }
 
         public bool GetExpandedTabByName(string tabName)
@@ -112,7 +109,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
 
             int attempt = 0;
 
-            while (attempt!=3 && points.Count==0)
+            while (attempt != 3 && points.Count == 0)
             {
                 foreach (var link in links)
                 {
@@ -124,7 +121,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
                     {
                         break;
                     }
-
 
                     for (int i = 0; i < 5; i++)
                     {
