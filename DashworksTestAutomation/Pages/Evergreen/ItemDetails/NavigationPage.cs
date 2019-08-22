@@ -22,6 +22,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
 
         private static string TabCountSelector = ".//a[text()='{0}']//span[@class='ng-star-inserted']";
         private static string SubMenuByNameSelector = ".//ul[@class='das-mat-tree-submenu']//a[text()='{0}']";
+        private static string TabMenuByNameSelector = ".//li[contains(@class, 'das-mat-tree')]//a[text()='{0}']";
 
         public override List<By> GetPageIdentitySelectors()
         {
@@ -43,7 +44,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
 
         public IWebElement GetTabMenuByName(string name)
         {
-            var selector = By.XPath($".//li[contains(@class, 'das-mat-tree')]//a[text()='{name}']");
+            var selector = By.XPath(string.Format(TabMenuByNameSelector, name));
             if (!Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Long))
                 throw new Exception($"'{name}' Tab menu was not displayed");
             return Driver.FindElement(selector);
