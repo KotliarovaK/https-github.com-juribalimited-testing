@@ -1035,6 +1035,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ItemDetailsContent_ActionsWithTable.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsContent\ItemDetailsContent_FilterCheck.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ItemDetailsContent_FilterCheck.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsTabs\ItemDetailsTabCounterChecking\ItemDetails_TabCounterChecking_ApplicationsPage.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1832,6 +1837,10 @@
     <None Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsContent\ItemDetailsContent_ActionsWithTable.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ItemDetailsContent_ActionsWithTable.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsContent\ItemDetailsContent_FilterCheck.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ItemDetailsContent_FilterCheck.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsTabs\ItemDetailsTabCounterChecking\ItemDetails_TabCounterChecking_ApplicationsPage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

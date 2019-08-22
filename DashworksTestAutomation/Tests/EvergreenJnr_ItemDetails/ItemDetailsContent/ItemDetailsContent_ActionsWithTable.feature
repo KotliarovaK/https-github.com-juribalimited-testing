@@ -1362,7 +1362,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatBlanksValueChangedToEmptyValueOnMa
 	| Values |
 	| None   |
 	When User closes Checkbox filter for "Status" column
-
+	
 @Evergreen @Device @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17734
 Scenario: EvergreenJnr_DeviceList_CheckThatUsersTabIsDisplayedWithCorrectStagesOnDevicesDetailsPageForProjectMode
 	When User clicks "Devices" on the left-hand menu
@@ -1370,7 +1370,7 @@ Scenario: EvergreenJnr_DeviceList_CheckThatUsersTabIsDisplayedWithCorrectStagesO
 	When User perform search by "001BAQXT6JWFPI"
 	And User click content from "Hostname" column
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
-	When User navigates to the "USers" main-menu on the Details page
+	When User navigates to the "Users" main-menu on the Details page
 	When User switches to the "USE ME FOR AUTOMATION(DEVICE SCHDLD)" project in the Top bar on Item details page
 	Then following columns are displayed on the Item details page:
 	| ColumnName            |
