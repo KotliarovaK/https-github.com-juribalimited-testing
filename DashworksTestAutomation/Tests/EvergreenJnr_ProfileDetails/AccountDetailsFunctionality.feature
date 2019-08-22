@@ -84,7 +84,7 @@ Scenario: EvergreenJnr_UserProfile_ChecksListPageSizeAPI
 	And User clicks the "UPDATE" Action button
 	Then Success message with "User preferences have been changed" text is displayed on the Advanced page
 
-@Evergreen @ProfileDetails @EvergreenJnr_FilterFeature @UserProfile @DAS11723 @DAS16979 @Not_Run
+@Evergreen @ProfileDetails @EvergreenJnr_FilterFeature @UserProfile @DAS11723 @DAS16979
 Scenario: EvergreenJnr_UserProfile_CheckThatDefaultListPageSizeIs1000API
 	Then default list page Size is "1000" and Cache "10"
 

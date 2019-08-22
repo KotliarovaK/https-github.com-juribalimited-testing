@@ -445,7 +445,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("UserProfile")]
         [NUnit.Framework.CategoryAttribute("DAS11723")]
         [NUnit.Framework.CategoryAttribute("DAS16979")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_UserProfile_CheckThatDefaultListPageSizeIs1000API()
         {
             System.Exception lastException = null;
@@ -480,8 +479,7 @@ this.FeatureBackground();
                         "EvergreenJnr_FilterFeature",
                         "UserProfile",
                         "DAS11723",
-                        "DAS16979",
-                        "Not_Run"});
+                        "DAS16979"});
 #line 88
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
