@@ -76,17 +76,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	When User click on 'Hostname' column header
 	And User create dynamic list with "DynamicList5588" name on "Devices" page
 	Then "DynamicList5588" list is displayed to user
-	When User clicks Create Project from the main list
-	Then "Create Project" page should be displayed to the user
-	When User clicks the "CREATE" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "TestProject12776" in the "Project Name" field
-	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks newly created object link
+	When Project created via API and opened
+	| ProjectName      | Scope       | ProjectTemplate | Mode               |
+	| TestProject12776 | All Devices | None            | Standalone Project |
 	Then Project "TestProject12776" is displayed to user
-	When User selects "Scope Changes" tab on the Project details page
-	When User expands the object to add 
+	When User selects "Scope" tab on the Project details page
+	And User selects "Scope Changes" tab on the Project details page
+	And User expands the object to add 
 	And User selects following Objects
 	| Objects        |
 	| SZ46M6IS71DPZ1 |
@@ -97,7 +93,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	| ACD252468 (Nicolas O. Mc Millan) |
 	And User clicks the "UPDATE ALL CHANGES" Action button
 	Then Warning message with "1 device will be added, 1 user will be added" text is displayed on the Admin page
-	Then Objects to add panel is disabled
+	And Objects to add panel is disabled
 	When User clicks "Devices" tab in the Project Scope Changes section
 	Then Objects to add panel is disabled
 	When User clicks the "UPDATE PROJECT" Action button
@@ -114,7 +110,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	| AAK881049 (Miguel W. Owen) |
 	Then "UPDATE ALL CHANGES" Action button is active
 	When User clicks "Devices" tab in the Project Scope Changes section
-	When User expands the object to add 
+	And User expands the object to add 
 	And User selects following Objects
 	| Objects        |
 	| 00SH8162NAS524 |
