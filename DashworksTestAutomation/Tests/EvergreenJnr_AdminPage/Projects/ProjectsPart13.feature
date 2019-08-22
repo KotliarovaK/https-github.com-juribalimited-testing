@@ -125,20 +125,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	| 00BDBAEA57334C7C8F4 |
 	| 000F977AC8824FE39B8 |
 	Then "StaticList12776" list is displayed to user
-	#When User clicks Create Project from the main list
-	#Then "Create Project" page should be displayed to the user
-	#When User clicks the "CREATE" Action button
-	#Then "Create Project" page should be displayed to the user
-	#When User enters "TestProject12777" in the "Project Name" field
-	#When User selects "Clone from Evergreen to Project" in the Mode Project dropdown
-	#And User clicks Create button on the Create Project page
-	#Then Success message is displayed and contains "The project has been created" text
-	#When User clicks newly created object link
 	When Project created via API and opened
-	| ProjectName      | Scope       | ProjectTemplate | Mode                            |
-	| TestProject12777 | All Devices | None            | Clone from Evergreen to Project |
+	| ProjectName      | Scope     | ProjectTemplate | Mode                            |
+	| TestProject12777 | All Users | None            | Clone from Evergreen to Project |
 	Then Project "TestProject12777" is displayed to user
-	When User clicks "Details" tab
 	Then "Clone evergreen buckets to project buckets" content is displayed in "Buckets" dropdown
 	When User clicks "Capacity" tab
 	Then "Clone evergreen capacity units to project capacity units" content is displayed in "Capacity Units" dropdown
