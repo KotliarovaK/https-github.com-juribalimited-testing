@@ -33,6 +33,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueActionDAS
 	And User selects "Admin IT" Team on Action panel
 	When User selects "Akhila Varghese" Owner on Action panel
 	And User clicks the "CREATE" Action button
+	#Create Action
 	When User clicks "Automations" navigation link on the Admin page
 	When User enters "17430_Automation" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "17430_Automation" item on Admin page
@@ -71,6 +72,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInDeviceScope
 	When User selects "Get technical information" in the "Task" dropdown for Actions
 	And User selects "Started" Value on Action panel
 	And User clicks the "CREATE" Action button
+	#Create Action
 	When User clicks "Automations" navigation link on the Admin page
 	When User enters "17636_Automation" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "17636_Automation" item on Admin page
@@ -112,6 +114,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInMailboxScop
 	And User selects "Maybe" Value on Action panel
 	And User selects "No change" Update Owner on Action panel
 	And User clicks the "CREATE" Action button
+	#Create Action
 	When User clicks "Automations" navigation link on the Admin page
 	When User enters "17642_Automation" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "17642_Automation" item on Admin page
@@ -152,6 +155,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInApplication
 	And User selects "Update" Update Value on Action panel
 	When User types "New Text value" Value on Action panel
 	And User clicks the "CREATE" Action button
+	#Create Action
 	When User clicks "Automations" navigation link on the Admin page
 	When User enters "17643_Automation" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "17643_Automation" item on Admin page
@@ -195,6 +199,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedA
 	And User selects "15 Aug 2019" Date on Action panel
 	And User selects "Radiobutton Readiness Date Slot" value for "Capacity Slot" dropdown on Action panel
 	And User clicks the "CREATE" Action button
+	#Create Action
 	When User clicks "Automations" navigation link on the Admin page
 	When User enters "17678_Automation" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "17678_Automation" item on Admin page
@@ -245,6 +250,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedA
 	And User selects "Failed" Value on Action panel
 	And User selects "Remove" Update Date on Action panel
 	And User clicks the "CREATE" Action button
+	#Create Action
 	When User clicks "Automations" navigation link on the Admin page
 	When User enters "17678_Automation_1" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "17678_Automation_1" item on Admin page

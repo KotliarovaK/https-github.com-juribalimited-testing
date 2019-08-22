@@ -77,3 +77,89 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogMessageForDeletedTaskInAction
 	When User clicks String Filter button for "Type" column on the Admin page
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
 	Then "TASK DOES NOT EXIST" content is displayed for "Outcome" column
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17681 @Cleanup @Not_Ready
+Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedUpdateValueDateOwnerCombination
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User creates new Automation via API
+	| AutomationName      | Description | Active | StopOnFailedAction | Scope                   | Run    |
+	| DAS17681_Automation | DAS17681    | true   | false              | Users with Device Count | Manual |
+	When User clicks "Automations" link on the Admin page
+	Then "Automations" page should be displayed to the user
+	When User enters "DAS17681_Automation" text in the Search field for "Automation" column
+	And User clicks content from "Automation" column
+	Then Edit Automation page is displayed to the User
+	When User clicks "Actions" tab
+	#Create Action
+	When User clicks the "CREATE ACTION" Action button
+	When User type "DAS17681_Action" Name in the "Action Name" field on the Automation details page
+	And User selects "Update task value" in the "Action Type" dropdown
+	When User selects "USE ME FOR AUTOMATION(USR SCHDLD)" in the Project dropdown
+	When User selects "Stage 1" in the "Stage" dropdown for Actions
+	When User selects "Radiobutton Readiness Date Owner Task (User)" in the "Task" dropdown for Actions
+	And User selects "Update" Update Value on Action panel
+	And User selects "On Hold" Value on Action panel
+	And User selects "Update" Update Date on Action panel
+	And User selects "1 Aug 2019" Date on Action panel
+	And User selects "Update" Update Owner on Action panel
+	And User selects "1803 Team" Team on Action panel
+	When User selects "Akhila Varghese" Owner on Action panel
+	And User clicks the "CREATE" Action button
+	#Create Action
+	When User clicks "Automations" navigation link on the Admin page
+	When User enters "DAS17681_Automation" text in the Search field for "Automation" column
+	When User clicks "Run now" option in Cog-menu for "DAS17681_Automation" item on Admin page
+	When User selects "Automation Log" tab on the Project details page
+	When User clicks refresh button in the browser
+	When User enters "DAS17681_Automation" text in the Search field for "Automation" column
+	Then "SUCCESS" content is displayed for "Outcome" column
+	When User clicks String Filter button for "Type" column on the Admin page
+	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	And User clicks content from "Objects" column
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                                                                 |
+	| USEMEFORA2: Stage 1 \ Radiobutton Readiness Date Owner Task (User)         |
+	| USEMEFORA2: Stage 1 \ Radiobutton Readiness Date Owner Task (User) (Date)  |
+	| USEMEFORA2: Stage 1 \ Radiobutton Readiness Date Owner Task (User) (Owner) |
+	| USEMEFORA2: Stage 1 \ Radiobutton Readiness Date Owner Task (User) (Team)  |
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User removes "Distinguished Name" column by Column panel
+	When User removes "Display Name" column by Column panel
+	When User removes "Username" column by Column panel
+	When User removes "Domain" column by Column panel
+	When User clicks the Columns button
+	Then "ON HOLD" content is displayed in "USEMEFORA2: Stage 1 \ Radiobutton Readiness Date Owner Task (User)" column
+	Then "1 Aug 2019" content is displayed in "USEMEFORA2: Stage 1 \ Radiobutton Readiness Date Owner Task (User) (Date)" column
+	Then "Akhila Varghese" content is displayed in "USEMEFORA2: Stage 1 \ Radiobutton Readiness Date Owner Task (User) (Owner)" column
+	Then "1803 Team" content is displayed in "USEMEFORA2: Stage 1 \ Radiobutton Readiness Date Owner Task (User) (Team)" column
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17681 @Cleanup @Not_Ready
+Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedUpdateValueDateOwnerCombinationWithNoChange
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User creates new Automation via API
+	| AutomationName   | Description | Active | StopOnFailedAction | Scope                   | Run    |
+	| 17681_Automation | 17681       | true   | false              | Users with Device Count | Manual |
+	When User clicks "Automations" link on the Admin page
+	Then "Automations" page should be displayed to the user
+	When User enters "17681_Automation" text in the Search field for "Automation" column
+	And User clicks content from "Automation" column
+	Then Edit Automation page is displayed to the User
+	When User clicks "Actions" tab
+	When User clicks the "CREATE ACTION" Action button
+	When User type "17681_Action" Name in the "Action Name" field on the Automation details page
+	And User selects "Update task value" in the "Action Type" dropdown
+	When User selects "Computer Scheduled Test (Jo)" in the Project dropdown
+	When User selects "One" in the "Stage" dropdown for Actions
+	When User selects "Radio Date Owner User" in the "Task" dropdown for Actions
+	And User selects "No change" Update Value on Action panel
+	And User selects "No change" Update Date on Action panel
+	And User selects "No change" Update Owner on Action panel
+	Then "CREATE" Action button is disabled
+	Then "SAVE AND CREATE ANOTHER" Action button is disabled
+	Then "CREATE" Action button have tooltip with "Select at least one value to change" text
+	Then "SAVE AND CREATE ANOTHER" Action button have tooltip with "Select at least one value to change" text
