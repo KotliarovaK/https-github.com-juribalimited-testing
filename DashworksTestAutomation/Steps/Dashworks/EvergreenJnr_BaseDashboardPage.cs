@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.DTO.RuntimeVariables;
@@ -9,7 +8,6 @@ using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
-using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity;
 using DashworksTestAutomation.Providers;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -24,11 +22,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
     {
         private readonly RemoteWebDriver _driver;
         private readonly ListsDetails _listDetails;
+        private readonly ColumnValue _columnValue;
 
-        public EvergreenJnr_BaseDashboardPage(RemoteWebDriver driver, ListsDetails listsDetails)
+        public EvergreenJnr_BaseDashboardPage(RemoteWebDriver driver, ListsDetails listsDetails, ColumnValue columnValue)
         {
             _driver = driver;
             _listDetails = listsDetails;
+            _columnValue = columnValue;
         }
 
         [When(@"User have opened column settings for ""(.*)"" column")]
@@ -598,7 +598,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForDataLoading();
-            page.Storage.SessionStorage.SetItem("column_value", page.GetRowContentByColumnName(columnName));
+            _columnValue.Value = page.GetRowContentByColumnName(columnName);
         }
 
         [Then(@"Rows counter number equals to remembered value")]
@@ -608,7 +608,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
             _driver.WaitForElementToBeDisplayed(foundRowsCounter.ListRowsCounter);
 
-            string rememberedNumber = foundRowsCounter.Storage.SessionStorage.GetItem("column_value");
+            string rememberedNumber = _columnValue.Value;
 
             Utils.Verify.AreEqualIgnoringCase(rememberedNumber == "1" ? $"{rememberedNumber} row" : $"{rememberedNumber} rows",
                 foundRowsCounter.ListRowsCounter.Text.Replace(",", ""), "Incorrect rows count");

@@ -6,7 +6,7 @@ Background: Pre-Conditions
 	When User navigate to Manage link
 	And User select "Custom Fields" option in Management Console
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @CustomFields @DAS16487 @Cleanup
+@Evergreen @Devices @EvergreenJnr_ItemDetails @CustomFields @DAS16487 @Do_Not_Run_With_CustomFields @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckAddCustomFieldPopupUiAndTooltips
 	When User creates new Custom Field
 	| FieldName     | FieldLabel    | AllowExternalUpdate | Enabled | Computer |

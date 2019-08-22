@@ -160,13 +160,16 @@
     <Compile Include="DTO\Projects\TeamPropertiesDto.cs" />
     <Compile Include="DTO\RuntimeVariables\AddedObjects.cs" />
     <Compile Include="DTO\RuntimeVariables\Buckets\Buckets.cs" />
-    <Compile Include="DTO\RuntimeVariables\Automation.cs" />
+    <Compile Include="DTO\RuntimeVariables\Automations.cs" />
     <Compile Include="DTO\RuntimeVariables\Buckets\BucketUnassignedId.cs" />
     <Compile Include="DTO\RuntimeVariables\CapacityDetails.cs" />
+    <Compile Include="DTO\RuntimeVariables\ColumnValue.cs" />
     <Compile Include="DTO\RuntimeVariables\CustomFields.cs" />
     <Compile Include="DTO\RuntimeVariables\ElementCoordinates.cs" />
+    <Compile Include="DTO\RuntimeVariables\ReadinessData.cs" />
     <Compile Include="DTO\RuntimeVariables\Rings\Rings.cs" />
     <Compile Include="DTO\RuntimeVariables\Rings\RingUnassignedId.cs" />
+    <Compile Include="DTO\RuntimeVariables\SectionsAndWidgetsCount.cs" />
     <Compile Include="DTO\RuntimeVariables\SeniorCustomFields.cs" />
     <Compile Include="DTO\RuntimeVariables\Slots.cs" />
     <Compile Include="DTO\RuntimeVariables\Teams\TeamDefaultId.cs" />
@@ -333,9 +336,9 @@
     <Compile Include="Providers\BambooProvider.cs" />
     <Compile Include="Steps\API\EvergreenJnr_API_CheckAllFiltersAndColumns.cs" />
     <Compile Include="Steps\API\EvergreenJnr_API_DashboardPage.cs" />
-    <Compile Include="Steps\Dashworks\AdminPage\Automations\AutomationsGrid.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\Automations\AfterScenario\RemoveAutomationAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\ActionSteps.cs" />
-    <Compile Include="Steps\Dashworks\AdminPage\Automations\AutomationSteps.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\Automations\AutomationsGrid.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\CreateAutomationViaApi.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\EditActions.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\CreateAction.cs" />
@@ -997,6 +1000,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CreateNewCustomField.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr_ItemDetails\CustomFields\CustomFieldsCheck.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomFieldsCheck.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr_ItemDetails\CustomFields\DeleteCustomFields.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1006,6 +1014,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EditClickableValueField.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsContent\ActionsWithTableContent\ItemDetailsContent_FiltersCheck.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ItemDetailsContent_FiltersCheck.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsContent\ItemDetailsContent_ActionsWithFields.feature.cs">
       <AutoGen>True</AutoGen>
@@ -1797,6 +1810,10 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CreateNewCustomField.feature.cs</LastGenOutput>
     </None>
+    <None Include="Tests\EvergreenJnr_ItemDetails\CustomFields\CustomFieldsCheck.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CustomFieldsCheck.feature.cs</LastGenOutput>
+    </None>
     <None Include="Tests\EvergreenJnr_ItemDetails\CustomFields\DeleteCustomFields.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DeleteCustomFields.feature.cs</LastGenOutput>
@@ -1804,6 +1821,10 @@
     <None Include="Tests\EvergreenJnr_ItemDetails\CustomFields\EditClickableValueField.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>EditClickableValueField.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsContent\ActionsWithTableContent\ItemDetailsContent_FiltersCheck.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ItemDetailsContent_FiltersCheck.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsContent\ItemDetailsContent_ActionsWithFields.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

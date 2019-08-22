@@ -37,38 +37,25 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         public IWebElement GetNavigationLinkByName(string linkName)
         {
             var link = By.XPath($".//div[@class='title-container']//a[text()='{linkName}']");
-            Driver.WaitForElementToBeDisplayed(link);
+            if (Driver.IsElementDisplayed(link, WebDriverExtensions.WaitTime.Long))
+                throw new Exception($"'{linkName}' Navigation link was not displayed");
             return Driver.FindElement(link);
         }
 
-        //TODO: some improvements are expected from Vitali 8/19/19;
-        public void GetTabMenuByName(string name)
+        public IWebElement GetTabMenuByName(string name)
         {
             var selector = By.XPath(string.Format(TabMenuByNameSelector, name));
-            Driver.WaitForElementToBeDisplayed(selector);
-            try
-            {
-                Driver.FindElement(selector).Click();
-            }
-            catch (StaleElementReferenceException)
-            {
-                Driver.FindElement(selector).Click();
-            }
+            if (Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Long))
+                throw new Exception($"'{name}' Tab menu was not displayed");
+            return Driver.FindElement(selector);
         }
 
-        //TODO: some improvements are expected from Vitali 8/19/19;
-        public void ClickSubMenuByName(string name)
+        public IWebElement GetSubMenuByName(string name)
         {
             var selector = By.XPath(string.Format(SubMenuByNameSelector, name));
-            Driver.WaitForElementToBeDisplayed(selector);
-            try
-            {
-                Driver.FindElement(selector).Click();
-            }
-            catch (StaleElementReferenceException)
-            {
-                Driver.FindElement(selector).Click();
-            }
+            if (Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Long))
+                throw new Exception($"'{name}' Sub menu was not displayed");
+            return Driver.FindElement(selector);
         }
 
         public bool GetExpandedTabByName(string tabName)
@@ -122,7 +109,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
 
             int attempt = 0;
 
-            while (attempt!=3 && points.Count==0)
+            while (attempt != 3 && points.Count == 0)
             {
                 foreach (var link in links)
                 {
@@ -134,7 +121,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
                     {
                         break;
                     }
-
 
                     for (int i = 0; i < 5; i++)
                     {

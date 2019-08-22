@@ -211,3 +211,19 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenLastAggr
 	| Domain DESC               |
 	| Last Logon Date Last ASC  |
 	| Last Logon Date Last DESC |
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17599 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckClickthoughNumbersBasedArchivedItemsRedirectsToFilteredListWithEnabledArchivedItems
+	When User clicks "Devices" on the left-hand menu
+	And User sets includes archived devices in "true"
+	And User create dynamic list with "List17599" name on "Devices" page
+	When Dashboard with "Dashboard for DAS17599" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User creates new Widget
+	| WidgetType | Title             | List      | SplitBy  | AggregateFunction | OrderBy      | TableOrientation | MaxValues |
+	| Table      | WidgetForDAS17599 | List17599 | Hostname | Count             | Hostname ASC |                  |           |
+	Then "WidgetForDAS17599" Widget is displayed to the user
+	And "82" count is displayed for "Empty" in the table Widget
+	When User clicks "82" value for "Empty" column
+	Then "82" rows are displayed in the agGrid

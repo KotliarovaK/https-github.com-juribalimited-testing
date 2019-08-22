@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages;
@@ -19,12 +20,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
     internal class EvergreenJnr_DashboardsPage : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
-        private readonly DTO.RuntimeVariables.Dashboard _dashboard;
+        private readonly Dashboard _dashboard;
+        private readonly SectionsAndWidgetsCount _sectionsAndWidgets;
 
-        public EvergreenJnr_DashboardsPage(RemoteWebDriver driver, DTO.RuntimeVariables.Dashboard dashboard)
+        public EvergreenJnr_DashboardsPage(RemoteWebDriver driver, Dashboard dashboard, SectionsAndWidgetsCount sectionsAndWidgets)
         {
             _driver = driver;
             _dashboard = dashboard;
+            _sectionsAndWidgets = sectionsAndWidgets;
         }
 
         [Then(@"Dashboard with ""(.*)"" title displayed in All Dashboards")]
@@ -362,8 +365,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
 
-            page.Storage.SessionStorage.SetItem("numberOfSections", page.AllSections.Count.ToString());
-            page.Storage.SessionStorage.SetItem("numberOfWidgets", page.AllWidgetsTitles.Count.ToString());
+            _sectionsAndWidgets.SectionsCount = page.AllSections.Count;
+            _sectionsAndWidgets.WidgetsCount = page.AllWidgetsTitles.Count;
         }
 
         [When(@"User remembers number of Widgets with Legend on Dashboards page")]
@@ -392,7 +395,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
 
-            int expectedCount = Int32.Parse(page.Storage.SessionStorage.GetItem("numberOfSections")) + increasedBy;
+            int expectedCount = _sectionsAndWidgets.SectionsCount + increasedBy;
             Utils.Verify.That(page.AllSections.Count, Is.EqualTo(expectedCount), "Number of Sections is different");
         }
 
@@ -401,7 +404,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
 
-            int expectedCount = Int32.Parse(page.Storage.SessionStorage.GetItem("numberOfWidgets")) + increasedBy;
+            int expectedCount = _sectionsAndWidgets.WidgetsCount + increasedBy;
             Utils.Verify.That(page.AllWidgetsTitles.Count, Is.EqualTo(expectedCount), "Number of Widgets is different");
         }
 

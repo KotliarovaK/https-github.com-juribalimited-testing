@@ -15,7 +15,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div/h1")]
         public IWebElement PageTitle { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//div[@class='menu-wrapper']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='menu-wrapper']")]
         public IWebElement LanguageMenu { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'add-language')]//div[@class='mat-select-arrow-wrapper']")]

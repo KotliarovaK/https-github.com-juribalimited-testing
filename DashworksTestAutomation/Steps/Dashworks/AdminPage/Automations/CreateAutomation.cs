@@ -22,10 +22,10 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations
     internal class CreateAutomation : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
-        private readonly Automation _automation;
+        private readonly DTO.RuntimeVariables.Automations _automation;
         private readonly RestWebClient _client;
 
-        public CreateAutomation(RemoteWebDriver driver, RestWebClient client, Automation automation)
+        public CreateAutomation(RemoteWebDriver driver, RestWebClient client, DTO.RuntimeVariables.Automations automation)
         {
             _driver = driver;
             _client = client;

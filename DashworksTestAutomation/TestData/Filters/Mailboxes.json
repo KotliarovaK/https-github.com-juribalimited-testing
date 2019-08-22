@@ -8316,6 +8316,27 @@
     "options": null
   },
   {
+    "translatedColumnName": "TST: Stg1 \\ Placeholder2",
+    "columnName": "project_task_68_13325_2_Task",
+    "translatedCategory": "Project Tasks: TST",
+    "category": "ProjectTasks-TST",
+    "categoryOrder": 11,
+    "displayType": "Date",
+    "displayOrder": 0,
+    "default": false,
+    "visible": true,
+    "hideOnColumns": false,
+    "hideOnRowGroups": false,
+    "hideOnValues": false,
+    "key": null,
+    "uRL": null,
+    "tooltip": "Task: Placeholder2 \n Task Type: Normal \n Value Type: Date \n Readiness: No",
+    "dataType": "Date",
+    "sortOrder": "Default",
+    "sortByField": "",
+    "options": null
+  },
+  {
     "translatedColumnName": "USEMEFORA1: Object ID",
     "columnName": "project_71_objectId",
     "translatedCategory": "Project: USEMEFORA1",

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Reflection;
 using System.Threading;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Utils;
@@ -1807,6 +1808,7 @@ namespace DashworksTestAutomation.Extensions
                 return false;
             }
         }
+
         public static void WaitFor(this RemoteWebDriver driver, Func<bool> flag)
         {
             bool result;
@@ -1818,13 +1820,39 @@ namespace DashworksTestAutomation.Extensions
                     result = flag();
                     break;
                 }
-
                 else
-                {
                     result = flag();
-                }
 
                 Thread.Sleep(500);
+            }
+        }
+
+        //For cases with _driver.FindBy
+        public static void ExecuteAction(this RemoteWebDriver driver, Action actionToDo)
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                try
+                {
+                    actionToDo.Invoke();
+                    return;
+                }
+                catch (NoSuchElementException)
+                {
+                    Thread.Sleep(1000);
+                }
+                catch (StaleElementReferenceException)
+                {
+                    Thread.Sleep(1000);
+                }
+                catch (NullReferenceException)
+                {
+                    Thread.Sleep(1000);
+                }
+                catch (TargetInvocationException)
+                {
+                    Thread.Sleep(1000);
+                }
             }
         }
     }

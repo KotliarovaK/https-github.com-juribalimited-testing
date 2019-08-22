@@ -652,6 +652,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             var selector = By.XPath(
                 $".//span[text()='{button}']/ancestor::button");
+            Driver.WaitForDataLoading();
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
