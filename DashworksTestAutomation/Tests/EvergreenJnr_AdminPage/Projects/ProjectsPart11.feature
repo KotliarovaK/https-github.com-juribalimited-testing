@@ -23,15 +23,10 @@ Scenario Outline: EvergreenJnr_ChangingMailboxScopeListToAnotherListForMailboxPr
 	| zunigamn@bclabs.local   |
 	Then "StaticList1429" list is displayed to user
 	Then "2" rows are displayed in the agGrid
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "MailboxesProject3" in the "Project Name" field
-	And User selects "All Mailboxes" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks newly created object link
+	When Project created via API and opened
+	| ProjectName       | Scope         | ProjectTemplate | Mode               |
+	| MailboxesProject3 | All Mailboxes | None            | Standalone Project |
+	And User selects "Scope" tab on the Project details page
 	And User selects "Scope Changes" tab on the Project details page
 	Then "Mailboxes to add (0 of 14784 selected)" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page
@@ -77,19 +72,12 @@ Scenario: EvergreenJnr_AdminPage_ChangingUserScopePermissionsForMailboxProject
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Cleanup @Projects @TEST
 Scenario: EvergreenJnr_AdminPage_ChangingApplicationScopePermissionsForMailboxProject
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "TestName12881" in the "Project Name" field
-	And User selects "All Mailboxes" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks newly created object link
+	When Project created via API and opened
+	| ProjectName   | Scope         | ProjectTemplate | Mode               |
+	| TestName12881 | All Mailboxes | None            | Standalone Project |
 	Then Project "TestName12881" is displayed to user
-	When User selects "Scope Details" tab on the Project details page
+	When User selects "Scope" tab on the Project details page
+	And User selects "Scope Details" tab on the Project details page
 	And User navigates to the "Application Scope" tab in the Scope section on the Project details page
 	And User selects "Include applications" checkbox on the Project details page
 	Then Scope List dropdown is active
