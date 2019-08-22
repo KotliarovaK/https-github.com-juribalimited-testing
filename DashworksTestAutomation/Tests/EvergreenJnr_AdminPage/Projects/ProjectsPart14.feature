@@ -7,18 +7,12 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12949 @DAS12609 @DAS12108 @DAS12756 @Cleanup @TEST
 Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameWhichStartsWithLowerCaseLetterIsDisplayedInAlphabeticalOrder
+	When Project created via API and opened
+	| ProjectName  | Scope       | ProjectTemplate | Mode               |
+	| project12949 | All Devices | None            | Standalone Project |
 	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "project12949" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks "Evergreen" link on the Admin page
-	When User clicks "Buckets" tab
+	And User clicks "Evergreen" link on the Admin page
+	And User clicks "Buckets" tab
 	Then "Buckets" page should be displayed to the user
 	When User clicks String Filter button for "Project" column on the Admin page
 	Then Projects in filter dropdown are displayed in alphabetical order
@@ -27,9 +21,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameWhichStartsWithLowerCaseLe
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
 	When User enters "project12949" text in the Search field for "Project" column
-	When User clicks content from "Project" column
-	When User clicks "Users" tab in the Project Scope Changes section
-	When User expands the object to add
+	And User clicks content from "Project" column
+	And User clicks "Users" tab in the Project Scope Changes section
+	And User expands the object to add
 	And User selects following Objects
 	| Objects                      |
 	| ADD135461 (Luke W. Clark)    |

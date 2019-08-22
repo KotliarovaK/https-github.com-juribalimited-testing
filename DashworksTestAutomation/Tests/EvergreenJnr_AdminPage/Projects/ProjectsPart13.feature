@@ -20,18 +20,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnlyFilteredListObjectsAreUsedAsAScope
 	Then "222" rows are displayed in the agGrid
 	When User create dynamic list with "DynamicList4811" name on "Devices" page
 	Then "DynamicList4811" list is displayed to user
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "DevicesProject1982" in the "Project Name" field
-	And User selects "DynamicList4811" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks newly created object link
-	When User selects "Scope Changes" tab on the Project details page
+	When Project created via API and opened
+	| ProjectName        | Scope           | ProjectTemplate | Mode               |
+	| DevicesProject1982 | DynamicList4811 | None            | Standalone Project |
+	And User selects "Scope" tab on the Project details page
+	And User selects "Scope Changes" tab on the Project details page
 	Then "Devices to add (0 of 222 selected)" is displayed to the user in the Project Scope Changes section
 	Then There are no errors in the browser console
 
