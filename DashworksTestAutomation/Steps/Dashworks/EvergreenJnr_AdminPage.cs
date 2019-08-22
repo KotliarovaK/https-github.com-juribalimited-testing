@@ -1676,6 +1676,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var projectElement = _driver.NowAt<ProjectsPage>();
             projectElement.ProjectName.ClearWithBackspaces();
             projectElement.ProjectName.SendKeys(projectName);
+            _projects.Value.Add(projectName);
             _driver.WaitForDataLoading();
         }
 
