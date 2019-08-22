@@ -247,7 +247,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var projectsPage = _driver.NowAt<ProjectsPage>();
             foreach (var row in table.Rows)
             {
+                _driver.WaitForElementToBeDisplayed(projectsPage.AddMailboxFolderPermissionsButton);
                 projectsPage.AddMailboxFolderPermissionsButton.Click();
+                _driver.WaitForElementToBeDisplayed(projectsPage.PermissionsDropdown);
                 projectsPage.PermissionsDropdown.Click();
                 projectsPage.SelectPermissionsByName(row["Permissions"]);
                 projectsPage.AddPermissionsButtonInTab.Click();
@@ -530,6 +532,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserChangesPathTo(string pathName)
         {
             var projectsPage = _driver.NowAt<ProjectsPage>();
+            _driver.WaitForElementToBeDisplayed(projectsPage.PathDropdown);
             projectsPage.PathDropdown.Click();
             projectsPage.SelectPathByName(pathName).Click();
         }
@@ -1690,7 +1693,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var projectPage = _driver.NowAt<ProjectDetailsPage>();
             _driver.WaitForDataLoading();
-            projectPage.LanguageMenu.Click();
+            projectPage.Click(() => projectPage.LanguageMenu);
         }
 
         [Then(@"Warning message with ""(.*)"" text is displayed on the Project Details Page")]
@@ -1932,7 +1935,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenUserChecksThatMoveToPositionDialogHasTheSameSize()
         {
             var page = _driver.NowAt<Capacity_SlotsPage>();
-            
+
             Verify.That(page.MoveToPositionDialog.Size.Height, Is.InRange(_elementCoordinates.Height, _elementCoordinates.Height + 5)); // 5pxls is max height allowed scaling
             Verify.That(page.MoveToPositionDialog.Size.Width, Is.EqualTo(_elementCoordinates.Width));
         }

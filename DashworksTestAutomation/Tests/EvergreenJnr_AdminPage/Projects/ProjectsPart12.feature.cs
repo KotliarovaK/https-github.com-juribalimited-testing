@@ -290,89 +290,59 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 61
- testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 62
- testRunner.Then("Admin page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 63
- testRunner.When("User clicks \"Projects\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 64
- testRunner.Then("\"Projects\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 65
- testRunner.When("User clicks the \"CREATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 66
- testRunner.Then("\"Create Project\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 67
- testRunner.When("User enters \"TestName12581\" in the \"Project Name\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 68
- testRunner.And("User selects \"All Mailboxes\" in the Scope Project dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 69
- testRunner.And("User clicks Create button on the Create Project page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 70
- testRunner.Then("Success message is displayed and contains \"The project has been created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 71
- testRunner.When("User clicks newly created object link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 72
- testRunner.Then("Project \"TestName12581\" is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 73
- testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 74
- testRunner.And("User clicks \"Users\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 75
- testRunner.Then("\"Users to add (0 of 14747 selected)\" is displayed to the user in the Project Scop" +
-                    "e Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 76
- testRunner.When("User selects \"Scope Details\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 77
- testRunner.And("User navigates to the \"User Scope\" tab in the Scope section on the Project detail" +
-                    "s page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 78
- testRunner.And("User clicks \"Other mailbox permissions\" associated checkbox on the Project detail" +
-                    "s page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Permissions"});
+                        "ProjectName",
+                        "Scope",
+                        "ProjectTemplate",
+                        "Mode"});
             table3.AddRow(new string[] {
-                        "FullAccess"});
-            table3.AddRow(new string[] {
-                        "ChangeOwner"});
-#line 79
- testRunner.And("User selects following Mailbox permissions", ((string)(null)), table3, "And ");
-#line 83
- testRunner.And("User clicks \"Mailbox folder permissions\" associated checkbox on the Project detai" +
-                    "ls page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+                        "TestName12581",
+                        "All Mailboxes",
+                        "None",
+                        "Standalone Project"});
+#line 61
+ testRunner.When("Project created via API and opened", ((string)(null)), table3, "When ");
+#line 64
+ testRunner.Then("Project \"TestName12581\" is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 65
+ testRunner.When("User selects \"Scope\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 66
+ testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 67
+ testRunner.And("User clicks \"Users\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 68
+ testRunner.Then("\"Users to add (0 of 14747 selected)\" is displayed to the user in the Project Scop" +
+                    "e Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 69
+ testRunner.When("User selects \"Scope Details\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 70
+ testRunner.And("User navigates to the \"User Scope\" tab in the Scope section on the Project detail" +
+                    "s page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 71
+ testRunner.And("User clicks \"Other mailbox permissions\" associated checkbox on the Project detail" +
+                    "s page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "Permissions"});
             table4.AddRow(new string[] {
-                        "Author"});
+                        "FullAccess"});
             table4.AddRow(new string[] {
-                        "AvailabilityOnly"});
-#line 84
- testRunner.And("User selects following Mailbox folder permissions", ((string)(null)), table4, "And ");
+                        "ChangeOwner"});
+#line 72
+ testRunner.And("User selects following Mailbox permissions", ((string)(null)), table4, "And ");
+#line 76
+ testRunner.And("User clicks \"Mailbox folder permissions\" associated checkbox on the Project detai" +
+                    "ls page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "Permissions"});
             table5.AddRow(new string[] {
-                        "FullAccess"});
-            table5.AddRow(new string[] {
-                        "ChangeOwner"});
-            table5.AddRow(new string[] {
                         "Author"});
             table5.AddRow(new string[] {
                         "AvailabilityOnly"});
-#line 88
- testRunner.Then("following Mailbox permissions are displayed to the user", ((string)(null)), table5, "Then ");
-#line 94
- testRunner.When("User clicks \"Delegated mailboxes\" associated checkbox on the Project details page" +
-                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 95
- testRunner.And("User clicks \"Owned mailboxes\" associated checkbox on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 96
- testRunner.And("User selects \"Scope Details\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 97
- testRunner.And("User navigates to the \"User Scope\" tab in the Scope section on the Project detail" +
-                    "s page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 77
+ testRunner.And("User selects following Mailbox folder permissions", ((string)(null)), table5, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "Permissions"});
@@ -384,55 +354,78 @@ this.FeatureBackground();
                         "Author"});
             table6.AddRow(new string[] {
                         "AvailabilityOnly"});
-#line 98
+#line 81
  testRunner.Then("following Mailbox permissions are displayed to the user", ((string)(null)), table6, "Then ");
-#line hidden
-            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Checkboxes"});
-            table7.AddRow(new string[] {
-                        "Owned mailboxes"});
-            table7.AddRow(new string[] {
-                        "Delegated mailboxes"});
-#line 104
- testRunner.And("following checkboxes are checked in the Scope section", ((string)(null)), table7, "And ");
-#line 108
- testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 109
- testRunner.And("User clicks \"Users\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 110
- testRunner.Then("\"Users to add (0 of 14753 selected)\" is displayed to the user in the Project Scop" +
-                    "e Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 111
- testRunner.When("User selects \"Scope Details\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 112
+#line 87
+ testRunner.When("User clicks \"Delegated mailboxes\" associated checkbox on the Project details page" +
+                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 88
+ testRunner.And("User clicks \"Owned mailboxes\" associated checkbox on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 89
+ testRunner.And("User selects \"Scope Details\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 90
  testRunner.And("User navigates to the \"User Scope\" tab in the Scope section on the Project detail" +
                     "s page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "Permissions"});
-            table8.AddRow(new string[] {
+            table7.AddRow(new string[] {
                         "FullAccess"});
-            table8.AddRow(new string[] {
+            table7.AddRow(new string[] {
+                        "ChangeOwner"});
+            table7.AddRow(new string[] {
                         "Author"});
-#line 113
- testRunner.And("User removes following Mailbox permissions", ((string)(null)), table8, "And ");
-#line 117
- testRunner.And("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 118
- testRunner.And("User selects \"Scope Details\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 119
+            table7.AddRow(new string[] {
+                        "AvailabilityOnly"});
+#line 91
+ testRunner.Then("following Mailbox permissions are displayed to the user", ((string)(null)), table7, "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Checkboxes"});
+            table8.AddRow(new string[] {
+                        "Owned mailboxes"});
+            table8.AddRow(new string[] {
+                        "Delegated mailboxes"});
+#line 97
+ testRunner.And("following checkboxes are checked in the Scope section", ((string)(null)), table8, "And ");
+#line 101
+ testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 102
+ testRunner.And("User clicks \"Users\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 103
+ testRunner.Then("\"Users to add (0 of 14753 selected)\" is displayed to the user in the Project Scop" +
+                    "e Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 104
+ testRunner.When("User selects \"Scope Details\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 105
  testRunner.And("User navigates to the \"User Scope\" tab in the Scope section on the Project detail" +
                     "s page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                         "Permissions"});
             table9.AddRow(new string[] {
-                        "ChangeOwner"});
+                        "FullAccess"});
             table9.AddRow(new string[] {
+                        "Author"});
+#line 106
+ testRunner.And("User removes following Mailbox permissions", ((string)(null)), table9, "And ");
+#line 110
+ testRunner.And("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 111
+ testRunner.And("User selects \"Scope Details\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 112
+ testRunner.And("User navigates to the \"User Scope\" tab in the Scope section on the Project detail" +
+                    "s page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Permissions"});
+            table10.AddRow(new string[] {
+                        "ChangeOwner"});
+            table10.AddRow(new string[] {
                         "AvailabilityOnly"});
-#line 120
- testRunner.Then("following Mailbox permissions are displayed to the user", ((string)(null)), table9, "Then ");
-#line 124
+#line 113
+ testRunner.Then("following Mailbox permissions are displayed to the user", ((string)(null)), table10, "Then ");
+#line 117
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -486,26 +479,26 @@ this.FeatureBackground();
                         "Cleanup",
                         "Projects",
                         "TEST"});
-#line 127
+#line 120
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 128
+#line 121
  testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 129
+#line 122
  testRunner.And("User clicks \"Projects\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 130
+#line 123
  testRunner.And("User clicks the \"CREATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 131
+#line 124
  testRunner.And("User enters \"TestName13205\" in the \"Project Name\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 132
+#line 125
  testRunner.And("User selects \"All Devices\" in the Scope Project dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 133
+#line 126
  testRunner.And("User clicks Create button on the Create Project page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 134
+#line 127
  testRunner.And("User clicks newly created object link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 135
+#line 128
  testRunner.Then("User sees banner at the top of work area", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -563,148 +556,148 @@ this.FeatureBackground();
                         "Cleanup",
                         "Projects",
                         "TEST"});
-#line 138
+#line 131
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 139
+#line 132
  testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 140
+#line 133
  testRunner.Then("Admin page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 141
+#line 134
  testRunner.When("User clicks \"Projects\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 142
+#line 135
  testRunner.Then("\"Projects\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 143
+#line 136
  testRunner.When("User clicks the \"CREATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 144
+#line 137
  testRunner.Then("\"Create Project\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 145
+#line 138
  testRunner.When("User enters \"TestName18\" in the \"Project Name\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 146
+#line 139
  testRunner.And("User selects \"All Mailboxes\" in the Scope Project dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 147
+#line 140
  testRunner.And("User clicks Create button on the Create Project page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 148
+#line 141
  testRunner.Then("Success message is displayed and contains \"The project has been created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 149
+#line 142
  testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 150
+#line 143
  testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 151
+#line 144
  testRunner.When("User navigate to \"TestName18\" Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 152
+#line 145
  testRunner.Then("Project with \"TestName18\" name is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 153
+#line 146
  testRunner.And("\"Manage Project Details\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 154
+#line 147
  testRunner.When("User navigate to \"Request Types\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 155
+#line 148
  testRunner.Then("\"Manage Request Types\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 156
+#line 149
  testRunner.When("User clicks \"Create Request Type\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Name",
-                        "Description",
-                        "ObjectTypeString"});
-            table10.AddRow(new string[] {
-                        "18RequestTypeName",
-                        "MailboxScheduledProject",
-                        "Mailbox"});
-#line 157
- testRunner.And("User create Request Type", ((string)(null)), table10, "And ");
-#line 160
- testRunner.When("User navigate to \"Categories\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 161
- testRunner.Then("\"Manage Categories\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 162
- testRunner.When("User clicks \"Create Category\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
                         "Description",
                         "ObjectTypeString"});
             table11.AddRow(new string[] {
+                        "18RequestTypeName",
+                        "MailboxScheduledProject",
+                        "Mailbox"});
+#line 150
+ testRunner.And("User create Request Type", ((string)(null)), table11, "And ");
+#line 153
+ testRunner.When("User navigate to \"Categories\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 154
+ testRunner.Then("\"Manage Categories\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 155
+ testRunner.When("User clicks \"Create Category\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "Description",
+                        "ObjectTypeString"});
+            table12.AddRow(new string[] {
                         "18MailboxCategory",
                         "UserScheduledProject",
                         "Mailbox"});
-#line 163
- testRunner.And("User create Category", ((string)(null)), table11, "And ");
-#line 166
+#line 156
+ testRunner.And("User create Category", ((string)(null)), table12, "And ");
+#line 159
  testRunner.Then("Success message is displayed with \"Category successfully created.\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 167
+#line 160
  testRunner.When("User navigate to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 168
+#line 161
  testRunner.And("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 169
+#line 162
  testRunner.Then("Admin page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 170
+#line 163
  testRunner.When("User clicks \"Projects\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 171
+#line 164
  testRunner.Then("\"Projects\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 172
+#line 165
  testRunner.When("User enters \"TestName18\" text in the Search field for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 173
+#line 166
  testRunner.And("User clicks content from \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 174
+#line 167
  testRunner.Then("Project \"TestName18\" is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 175
+#line 168
  testRunner.When("User changes Path to \"18RequestTypeName\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 176
+#line 169
  testRunner.And("User changes Category to \"18MailboxCategory\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 177
+#line 170
  testRunner.And("User selects \"Scope Details\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 178
+#line 171
  testRunner.And("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 181
+#line 174
  testRunner.Then("\"Mailboxes to add (0 of 14784 selected)\" is displayed to the user in the Project " +
                     "Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 182
+#line 175
  testRunner.And("\"Mailboxes to remove (0 of 0 selected)\" is displayed to the user in the Project S" +
                     "cope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 183
+#line 176
  testRunner.And("\"Mailboxes 0/0\" is displayed in the tab header on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 184
+#line 177
  testRunner.When("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table12.AddRow(new string[] {
+            table13.AddRow(new string[] {
                         "003F5D8E1A844B1FAA5@bclabs.local (Hunter, Melanie)"});
-            table12.AddRow(new string[] {
+            table13.AddRow(new string[] {
                         "00DB4000EDD84951993@bclabs.local (CSC, SS)"});
-            table12.AddRow(new string[] {
+            table13.AddRow(new string[] {
                         "0E3406ED5D8349D0996@bclabs.local (Mickley, Leslie)"});
-            table12.AddRow(new string[] {
+            table13.AddRow(new string[] {
                         "0E3406ED5D8349D0996@bclabs.local (Mickley, Leslie)"});
-#line 185
- testRunner.And("User selects following Objects", ((string)(null)), table12, "And ");
-#line 191
+#line 178
+ testRunner.And("User selects following Objects", ((string)(null)), table13, "And ");
+#line 184
  testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 192
+#line 185
  testRunner.Then("Warning message with \"2 mailboxes will be added\" text is displayed on the Admin p" +
                     "age", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 193
+#line 186
  testRunner.And("\"Mailboxes 2/0\" is displayed in the tab header on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 194
+#line 187
  testRunner.When("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 195
+#line 188
  testRunner.Then("Success message is displayed and contains \"2 objects queued for onboarding, 0 obj" +
                     "ects offboarded\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 196
+#line 189
  testRunner.And("\"Mailboxes to add (0 of 14782 selected)\" is displayed to the user in the Project " +
                     "Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 197
+#line 190
  testRunner.And("\"[Default (Mailbox)]\" Path is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 198
+#line 191
  testRunner.And("\"[None]\" Category is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 199
+#line 192
  testRunner.And("Add Objects panel is collapsed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 200
+#line 193
  testRunner.When("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 201
+#line 194
  testRunner.Then("no items are selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
