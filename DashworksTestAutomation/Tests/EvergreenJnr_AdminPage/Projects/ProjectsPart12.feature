@@ -129,16 +129,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatBannerDisplaysOnScopeDetailsPage
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS12680 @DAS12108 @Cleanup @Projects @TEST
 Scenario: EvergreenJnr_AdminPage_AddingRequestTypesAndCategories
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "TestName18" in the "Project Name" field
-	And User selects "All Mailboxes" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "The project has been created" text
+	When Project created via API and opened
+	| ProjectName | Scope         | ProjectTemplate | Mode               |
+	| TestName18  | All Mailboxes | None            | Standalone Project |
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "TestName18" Project
