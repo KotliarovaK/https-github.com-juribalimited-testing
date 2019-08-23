@@ -529,6 +529,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AutomationLog1.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Automation\AutomationsGrid.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AutomationsGrid.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr_AdminPage\Buckets\CreateBucket.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1447,6 +1452,10 @@
     <None Include="Tests\EvergreenJnr_AdminPage\Automation\AutomationLog1.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AutomationLog1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Automation\AutomationsGrid.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AutomationsGrid.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_AdminPage\Buckets\CreateBucket.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
