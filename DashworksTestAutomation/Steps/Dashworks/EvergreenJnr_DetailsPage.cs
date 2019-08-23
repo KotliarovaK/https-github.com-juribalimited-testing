@@ -94,10 +94,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [Then(@"empty value is displayed for ""(.*)"" field on the Details Page")]
-        public void ThenEmptyValueIsDisplayedForFieldOnTheDetailsPage(string text)
+        public void ThenEmptyValueIsDisplayedForFieldOnTheDetailsPage(string fieldName)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            Utils.Verify.AreEqual(detailsPage.GetFildWithEmptyValueByName(text), "", "PLEASE ADD EXCEPTION MESSAGE");
+            Utils.Verify.AreEqual(detailsPage.GetFildWithEmptyValueByName(fieldName), "", $"{fieldName} field must be empty!");
 
         }
 
@@ -129,8 +129,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
             _driver.WaitForDataLoading();
-            Utils.Verify.IsTrue(detailsPage.GroupIcon.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
-            Utils.Verify.IsTrue(detailsPage.ItemDetailsContainer.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
+            Utils.Verify.IsTrue(detailsPage.GroupIcon.Displayed(), "Group con is not displayed to the user!");
+            Utils.Verify.IsTrue(detailsPage.ItemDetailsContainer.Displayed(), "Details object page is not displayed to the user!");
         }
 
         [Then(@"Details page for ""(.*)"" item is displayed correctly")]
@@ -156,14 +156,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenLinksFromColumnIsDisplayedToTheUserOnTheDetailsPage(string columnName)
         {
             var content = _driver.NowAt<DetailsPage>();
-            Utils.Verify.IsTrue(content.GetHrefByColumnName(columnName) != null, "PLEASE ADD EXCEPTION MESSAGE");
+            Utils.Verify.IsTrue(content.GetHrefByColumnName(columnName) != null, $"Links from '{columnName}' column is not displayed to the user");
         }
 
         [Then(@"Links from ""(.*)"" column is NOT displayed to the user on the Details Page")]
         public void ThenLinksFromColumnIsNOTDisplayedToTheUserOnTheDetailsPage(string columnName)
         {
             var content = _driver.NowAt<DetailsPage>();
-            Utils.Verify.IsFalse(content.GetHrefByColumnName(columnName) != null, "PLEASE ADD EXCEPTION MESSAGE");
+            Utils.Verify.IsFalse(content.GetHrefByColumnName(columnName) != null, $"Links from '{columnName}' column is displayed, but should not be displayed!");
         }
 
         [Then(@"expanded section is displayed to the User")]
@@ -460,8 +460,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFilterPanelHasStandardSize()
         {
             var filterPanel = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            Utils.Verify.AreEqual("124.734px", filterPanel.GetInstalledFilterPanelHeight(), "PLEASE ADD EXCEPTION MESSAGE");
-            Utils.Verify.AreEqual("152px", filterPanel.GetInstalledFilterPanelWidth(), "PLEASE ADD EXCEPTION MESSAGE");
+            Utils.Verify.AreEqual("124.734px", filterPanel.GetInstalledFilterPanelHeight(), "Filter panel is not a standard size!");
+            Utils.Verify.AreEqual("152px", filterPanel.GetInstalledFilterPanelWidth(), "Filter panel is not a standard size!");
         }
 
         [Then(@"Site column has standard size")]
@@ -471,14 +471,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             if (!_driver.IsElementDisplayed(By.XPath(ApplicationsDetailsTabsMenu.SiteColumnSelector)))
             { }
             else
-                Utils.Verify.AreEqual("97px", filterPanel.PackageSiteColumnWidth(), "PLEASE ADD EXCEPTION MESSAGE");
+                Utils.Verify.AreEqual("97px", filterPanel.PackageSiteColumnWidth(), "Column is not a standard size!");
         }
 
         [Then(@"Bucket pop-up has standard size on the Details Page")]
         public void ThenBucketPop_UpHasStandardSizeOnTheDetailsPage()
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            Utils.Verify.AreEqual("1536px", detailsPage.GetInstalledBucketWindowWidth().Split('.').First(), "PLEASE ADD EXCEPTION MESSAGE");
+            Utils.Verify.AreEqual("1536px", detailsPage.GetInstalledBucketWindowWidth().Split('.').First(), "Bucket pop-up is not a standard size!");
         }
 
         [When(@"User enters ""(.*)"" text in the Filter field")]
@@ -612,7 +612,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenGroupIconForPageIsDisplayed()
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            Utils.Verify.IsTrue(detailsPage.GroupIcon.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
+            Utils.Verify.IsTrue(detailsPage.GroupIcon.Displayed(), "Group Icon for Group Details page is not displayed");
         }
 
         [Then(@"""(.*)"" text is displayed for opened tab")]
@@ -628,7 +628,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenStringFilterIsDisplayedForColumnOnTheDetailsPage(string columnName)
         {
             var detailsPage = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            Utils.Verify.IsFalse(Convert.ToBoolean(detailsPage.GetFilterByColumnName(columnName).GetAttribute("readonly")), "PLEASE ADD EXCEPTION MESSAGE");
+            Utils.Verify.IsFalse(Convert.ToBoolean(detailsPage.GetFilterByColumnName(columnName).GetAttribute("readonly")), $"String filter is not displayed for {columnName} column!");
         }
 
         [Then(@"User sees ""(.*)"" Evergreen Bucket in Project Summary section on the Details Page")]
@@ -660,7 +660,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
             Utils.Verify.That(detailsPage.OperatorOptions.Select(value => value.Text).ToList().All(x => x.Contains("Ring") || x.Contains("[Unassigned]")),
-                "Some options are not available for selected filter", "PLEASE ADD EXCEPTION MESSAGE");
+                "Some options are not available for selected filter");
         }
 
         [Then(@"""(.*)"" field display state is ""(.*)"" on Details tab")]
