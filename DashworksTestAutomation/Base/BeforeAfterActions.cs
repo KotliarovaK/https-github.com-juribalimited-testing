@@ -3,8 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
+using System.Net;
 using System.Reflection;
 using BoDi;
+using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
@@ -24,11 +26,14 @@ namespace DashworksTestAutomation.Base
     {
         private readonly IObjectContainer _objectContainer;
         private readonly ScenarioContext _scenarioContext;
+        //TODO remove this
+        private readonly RestWebClient _client;
 
-        public BeforeAfterActions(IObjectContainer objectContainer, ScenarioContext scenarioContext)
+        public BeforeAfterActions(IObjectContainer objectContainer, ScenarioContext scenarioContext, RestWebClient client)
         {
             _objectContainer = objectContainer;
             _scenarioContext = scenarioContext;
+            _client = client;
         }
 
         [BeforeTestRun]
@@ -161,6 +166,14 @@ namespace DashworksTestAutomation.Base
                 }
                 catch { }
             }
+
+            //TODO remove this
+            var requestUri = "http://automation.corp.juriba.com:81/lists/devices/32";
+            var request = requestUri.GenerateRequest();
+            var response = _client.Value.Get(request);
+
+            if (response.StatusCode != HttpStatusCode.OK)
+                throw new Exception($"BROKEN LIST was deleted!!!");
         }
 
         [BeforeTestRun]

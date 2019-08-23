@@ -19,7 +19,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Login
     {
         private readonly RemoteWebDriver _driver;
 
-        public EvergreenJnr_Login(RemoteWebDriver driver, UserDto user, UsedUsers usedUsers, RestWebClient client, AuthObject authObject) : 
+        public EvergreenJnr_Login(RemoteWebDriver driver, UserDto user, UsedUsers usedUsers, RestWebClient client, AuthObject authObject) :
             base(user, usedUsers, client, authObject)
         {
             _driver = driver;
@@ -38,7 +38,16 @@ namespace DashworksTestAutomation.Steps.Dashworks.Login
         public void GivenUserIsLoggedInToTheProjects()
         {
             //Login to website via api
-            LoginViaApiOnSenior(_driver);
+            LoginViaApiOnSenior(_driver, GetFreeUserAndAddToUsedUsersList());
+            //navigate to Projects page
+            _driver.NavigateToUrl(UrlProvider.ProjectsUrl);
+        }
+
+        [Given(@"User is logged in to the Projects as Admin")]
+        public void GivenUserIsLoggedInToTheProjectsAsAdmin()
+        {
+            //Login to website via api
+            LoginViaApiOnSenior(_driver, GetSupperAdminAndAddToUsedUsersList());
             //navigate to Projects page
             _driver.NavigateToUrl(UrlProvider.ProjectsUrl);
         }

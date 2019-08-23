@@ -92,20 +92,24 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         public void ThenTabIsDisplayedOnLeftMenuOnTheDetailsPageWithCountOfItems(string tabName, string countOfItems)
         {
             var detailsPage = _driver.NowAt<NavigationPage>();
-            Utils.Verify.IsTrue(detailsPage.GetDisplayStatusOfTabWithCountOfItemsByName(tabName, countOfItems), $"{tabName} tab is displayed incorrectly!");
+            Verify.IsTrue(detailsPage.GetDisplayStatusOfTabWithCountOfItemsByName(tabName, countOfItems), $"{tabName} tab is displayed incorrectly!");
         }
 
         [Then(@"""(.*)"" tab is displayed on left menu on the Details page and contains count of items")]
         public void ThenTabIsDisplayedOnLeftMenuOnTheDetailsPageAndContainsCountOfItems(string tabName)
         {
             var detailsPage = _driver.NowAt<NavigationPage>();
-            Utils.Verify.IsTrue(detailsPage.GetCountOfItemsDisplayStatusByTabName(tabName), $"Tab {tabName} must contain the number of elements!");
+            Verify.IsTrue(detailsPage.GetCountOfItemsDisplayStatusByTabName(tabName), $"Tab {tabName} must contain the number of elements!");
         }
 
         [Then(@"""(.*)"" tab is displayed on left menu on the Details page and contains '(.*)' count of items")]
         public void ThenTabIsDisplayedOnLeftMenuOnTheDetailsPageAndContainsCountOfItems(string tabName, int count)
         {
             var detailsPage = _driver.NowAt<NavigationPage>();
+            //Try to check content several times because it is updating not immediately
+            if (count != detailsPage.GetCountOfItemsByTabName(tabName))
+                //JS update count every 3 seconds
+                Thread.Sleep(3000);
             Verify.AreEqual(count, detailsPage.GetCountOfItemsByTabName(tabName), $"Incorrect count for '{tabName}' tab");
         }
 
@@ -113,7 +117,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         public void ThenTabIsDisplayedOnLeftMenuOnTheDetailsPageAndNotContainsCountOfItems(string tabName)
         {
             var detailsPage = _driver.NowAt<NavigationPage>();
-            Utils.Verify.IsFalse(detailsPage.GetCountOfItemsDisplayStatusByTabName(tabName), $"Tab {tabName} must contain the number of elements!");
+            Verify.IsFalse(detailsPage.GetCountOfItemsDisplayStatusByTabName(tabName), $"Tab {tabName} must contain the number of elements!");
         }
 
         [Then(@"""(.*)"" sub-tab is displayed with disabled state on left menu on the Details page")]
