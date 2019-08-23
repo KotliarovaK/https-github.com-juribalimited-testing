@@ -176,7 +176,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12968")]
         [NUnit.Framework.TestCaseAttribute("Devices", "30BGMTLBM9PTW5", "Hostname", "Applications", "Evergreen Summary", "Application", "Access 95", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "svc_dashworks", "Username", "Active Directory", "Groups", "Group", "Domain Admins", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", "Microsoft Office Visio 2000 Solutions - Custom Patterns", "Application", "MSI", "MSIFiles", "File Name", "setup_x86.msi", null)]
+        [NUnit.Framework.TestCaseAttribute("Applications", "Microsoft Office Visio 2000 Solutions - Custom Patterns", "Application", "MSI", "MSI Files", "File Name", "setup_x86.msi", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "aaron.u.flores@dwlabs.local", "Email Address", "Users", "Users", "Username", "floresau", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatCopyCellWorksInItemDetails(string pageName, string searchTerm, string columnName, string mainTabName, string subTabName, string selectedColumn, string targetCell, string[] exampleTags)
         {

@@ -537,6 +537,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             projectsPage.SelectPathByName(pathName).Click();
         }
 
+        //TODO should be replaced by common method
         [When(@"User changes Category to ""(.*)""")]
         public void WhenUserChangesCategoryTo(string CategoryName)
         {
@@ -1675,6 +1676,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var projectElement = _driver.NowAt<ProjectsPage>();
             projectElement.ProjectName.ClearWithBackspaces();
             projectElement.ProjectName.SendKeys(projectName);
+            _projects.Value.Add(projectName);
             _driver.WaitForDataLoading();
         }
 

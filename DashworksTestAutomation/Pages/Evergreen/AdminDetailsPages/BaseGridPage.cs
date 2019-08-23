@@ -420,6 +420,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
                 $".//div[@role='presentation']//span[text()='{columnName}']//ancestor::div[@class='ag-cell-label-container ag-header-cell-sorted-none']//span[@class='ag-icon ag-icon-menu']";
             var columnHeaderSelector = $".//span[@class='ag-header-cell-text'][text()='{columnName}']";
             Driver.WaitForDataLoading();
+            Driver.WaitForElementToBeDisplayed(By.XPath(columnHeaderSelector));
             Driver.MouseHover(By.XPath(columnHeaderSelector));
             Driver.WaitForElementToBeDisplayed(By.XPath(columnSettingsSelector));
             Driver.FindElement(By.XPath(columnSettingsSelector)).Click();

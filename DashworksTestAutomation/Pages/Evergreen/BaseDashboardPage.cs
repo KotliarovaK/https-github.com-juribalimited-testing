@@ -41,7 +41,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public const string ImageSelector = ".//i";
 
-        [FindsBy(How = How.XPath, Using = ".//div[@id='pagetitle-text']")]
+        [FindsBy(How = How.XPath, Using = ".//h1")]
         public IWebElement Heading { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//p[@class='topnav-item-menu-toggle']//button[@mattooltip='Toggle Menu']")]

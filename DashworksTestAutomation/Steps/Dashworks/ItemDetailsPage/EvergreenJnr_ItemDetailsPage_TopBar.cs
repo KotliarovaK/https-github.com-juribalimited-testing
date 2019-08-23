@@ -94,6 +94,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         public void ThenFollowingComplianceItemsAreDisplayedInTopBarOnTheItemDetailsPage(Table table)
         {
             var topBar = _driver.NowAt<ItemDetails_TopBarPage>();
+            _driver.WaitForDataLoadingInTopBarOnItemDetailsPage();
 
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var actualList = topBar.GetComplianceItemsOnTopBar();

@@ -7,16 +7,10 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12787 @DAS13529 @DAS16128 @DAS15201 @Cleanup @TEST
 Scenario: EvergreenJnr_AdminPage_CheckThatSelectedBucketsIsDisplayedForOnboardedObjectsInQueueAndHistory
+	When Project created via API and opened
+	| ProjectName   | Scope     | ProjectTemplate | Mode               |
+	| UsersProject3 | All Users | None            | Standalone Project |
 	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "UsersProject3" in the "Project Name" field
-	And User selects "All Users" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "The project has been created" text
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "UsersProject3" Project
@@ -98,18 +92,11 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectScopeChangesIsLoadedSuc
 	| ItemName  |
 	| AtomixMP3 |
 	Then "ApplicationsStaticList12157" list is displayed to user
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "<TestName>" in the "Project Name" field
-	And User selects "<MainList>" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks newly created object link
+	When Project created via API and opened
+	| ProjectName | Scope      | ProjectTemplate | Mode               |
+	| <TestName>  | <MainList> | None            | Standalone Project |
 	Then Project "<TestName>" is displayed to user
+	When User selects "Scope" tab on the Project details page
 	When User selects "<ListToScope1>" in the Scope Project details
 	And User navigates to the "<ScopeTab1>" tab in the Scope section on the Project details page
 	And User selects "<ListToScope2>" in the Scope Project details
@@ -132,13 +119,10 @@ Examples:
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11981 @Projects @Cleanup @TEST
 Scenario: EvergreenJnr_AdminPage_CheckThatItemsToAddValuesAreNotCachedAfterScopeOptionsChangeOnProjectDetailsPage
-	When User clicks Admin on the left-hand menu
-	And User clicks "Projects" link on the Admin page
-	And User clicks the "CREATE PROJECT" Action button
-	And User enters "DAS11981" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	And User clicks newly created object link
+	When Project created via API and opened
+	| ProjectName | Scope       | ProjectTemplate | Mode               |
+	| DAS11981    | All Devices | None            | Standalone Project |
+	When User selects "Scope" tab on the Project details page
 	And User navigates to the "Application Scope" tab in the Scope section on the Project details page
 	And User clicks following checkboxes on the Project details page:
 	| CheckboxesToBeClicked                  |
@@ -165,19 +149,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatItemsToAddValuesAreNotCachedAfterScope
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS13428 @Cleanup @TEST
 Scenario: EvergreenJnr_AdminPage_TheGreenBannerIsNotDisplayedIfBannerWasBeShownOnce
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "Project12965" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	Then created Project with "Project12965" name is displayed correctly
-	And Success message is displayed and contains "The project has been created" text
-	When User clicks newly created object link
+	When Project created via API and opened
+	| ProjectName  | Scope       | ProjectTemplate | Mode               |
+	| Project12965 | All Devices | None            | Standalone Project |
 	Then Project "Project12965" is displayed to user
+	When User selects "Scope" tab on the Project details page
 	When User selects "Scope Changes" tab on the Project details page
 	And User clicks "Devices" tab in the Project Scope Changes section
 	And User expands the object to add 

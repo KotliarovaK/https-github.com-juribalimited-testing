@@ -154,7 +154,7 @@ this.FeatureBackground();
                         "Value"});
             table2.AddRow(new string[] {
                         "device",
-                        "6735",
+                        "17152",
                         "CfDAS16489_1",
                         "ValueDAS16489_1"});
 #line 15
@@ -164,11 +164,11 @@ this.FeatureBackground();
 #line 19
  testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 20
- testRunner.When("User perform search by \"DU37EV2NCNFI4H\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User perform search by \"WIN-KTJC6PMV2P5\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 21
  testRunner.And("User click content from \"Hostname\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 22
- testRunner.Then("Details page for \"DU37EV2NCNFI4H\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Details page for \"WIN-KTJC6PMV2P5\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 23
  testRunner.When("User navigates to the \"Custom Fields\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 25

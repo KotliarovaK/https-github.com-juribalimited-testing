@@ -104,35 +104,35 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 case "Devices":
                     //Check Devices heading is visible
                     var devicesPage = _driver.NowAt<DevicesPage>();
-                    Utils.Verify.Contains(devicesPage.Heading.Text.ToLower(), listPage.ToLower(),
+                    Verify.AreEqual(devicesPage.Heading.Text.ToLower(), listPage.ToLower(),
                         "Incorrect list is displayed to user");
                     break;
 
                 case "Users":
                     //Check Users heading is visible
                     var usersPage = _driver.NowAt<UsersPage>();
-                    Utils.Verify.Contains(usersPage.Heading.Text.ToLower(), listPage.ToLower(),
+                    Verify.AreEqual(usersPage.Heading.Text.ToLower(), listPage.ToLower(),
                         "Incorrect list is displayed to user");
                     break;
 
                 case "Applications":
                     //Check Applications heading is visible
                     var applicationsPage = _driver.NowAt<ApplicationsPage>();
-                    Utils.Verify.Contains(applicationsPage.Heading.Text.ToLower(), listPage.ToLower(),
+                    Verify.AreEqual(applicationsPage.Heading.Text.ToLower(), listPage.ToLower(),
                         "Incorrect list is displayed to user");
                     break;
 
                 case "Mailboxes":
                     //Check Mailboxes heading is visible
                     var mailboxesPage = _driver.NowAt<MailboxesPage>();
-                    Utils.Verify.Contains(mailboxesPage.Heading.Text.ToLower(), listPage.ToLower(),
+                    Verify.AreEqual(mailboxesPage.Heading.Text.ToLower(), listPage.ToLower(),
                         "Incorrect list is displayed to user");
                     break;
 
                 case "Admin":
                     //Check Admin heading is visible
                     var adminPage = _driver.NowAt<Pages.Evergreen.AdminPage>();
-                    Utils.Verify.Contains(adminPage.Heading.Text.ToLower(), listPage.ToLower(),
+                    Verify.AreEqual(adminPage.Heading.Text.ToLower(), listPage.ToLower(),
                         "Incorrect list is displayed to user");
                     break;
 

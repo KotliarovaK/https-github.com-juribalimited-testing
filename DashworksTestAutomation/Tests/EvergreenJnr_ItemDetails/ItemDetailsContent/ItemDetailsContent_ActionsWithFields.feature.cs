@@ -1269,6 +1269,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS16859")]
         [NUnit.Framework.CategoryAttribute("DAS17645")]
         [NUnit.Framework.CategoryAttribute("DAS17785")]
+        [NUnit.Framework.CategoryAttribute("DAS17809")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_DevicesList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForDeviceObjects()
         {
@@ -1308,6 +1309,7 @@ this.FeatureBackground();
                         "DAS16859",
                         "DAS17645",
                         "DAS17785",
+                        "DAS17809",
                         "Not_Ready"});
 #line 333
 this.ScenarioInitialize(scenarioInfo);
@@ -1378,6 +1380,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS17160")]
         [NUnit.Framework.CategoryAttribute("DAS17325")]
         [NUnit.Framework.CategoryAttribute("DAS17645")]
+        [NUnit.Framework.CategoryAttribute("DAS17809")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_UsersList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForUserObjects()
         {
@@ -1418,6 +1421,7 @@ this.FeatureBackground();
                         "DAS17160",
                         "DAS17325",
                         "DAS17645",
+                        "DAS17809",
                         "Not_Ready"});
 #line 359
 this.ScenarioInitialize(scenarioInfo);
@@ -1487,6 +1491,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS17158")]
         [NUnit.Framework.CategoryAttribute("DAS17239")]
         [NUnit.Framework.CategoryAttribute("DAS17645")]
+        [NUnit.Framework.CategoryAttribute("DAS17809")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForApplicationObjects()
         {
@@ -1527,6 +1532,7 @@ this.FeatureBackground();
                         "DAS17158",
                         "DAS17239",
                         "DAS17645",
+                        "DAS17809",
                         "Not_Ready"});
 #line 385
 this.ScenarioInitialize(scenarioInfo);
@@ -1597,6 +1603,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS16957")]
         [NUnit.Framework.CategoryAttribute("DAS17645")]
         [NUnit.Framework.CategoryAttribute("DAS17785")]
+        [NUnit.Framework.CategoryAttribute("DAS17809")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_MailboxesList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForMailboxObjects()
         {
@@ -1636,6 +1643,7 @@ this.FeatureBackground();
                         "DAS16957",
                         "DAS17645",
                         "DAS17785",
+                        "DAS17809",
                         "Not_Ready"});
 #line 411
 this.ScenarioInitialize(scenarioInfo);

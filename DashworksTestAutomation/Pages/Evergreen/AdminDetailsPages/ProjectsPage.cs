@@ -372,6 +372,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public IWebElement SelectCategoryByName(string categoryName)
         {
             var categorySelector = $".//mat-option/span[contains(text(), '{categoryName}')]";
+            if (!Driver.IsElementDisplayed(By.XPath(categorySelector), WebDriverExtensions.WaitTime.Medium))
+                throw new Exception($"'{categoryName}' category was not displayed in the selectbox");
             return Driver.FindElement(By.XPath(categorySelector));
         }
 
