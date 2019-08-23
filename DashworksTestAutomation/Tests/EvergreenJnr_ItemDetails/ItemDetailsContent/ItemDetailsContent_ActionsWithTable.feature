@@ -410,7 +410,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOneUnknownFilterValueIsShownInGroupD
 	| Values  |
 	| True    |
 	| False   |
-	| Unknown |
 	When User clicks "True" checkbox from String Filter on the Details Page
 	Then Content is present in the table on the Details Page
 	When User clicks Reset Filters button on the Item Details page
