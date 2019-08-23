@@ -42,7 +42,7 @@ Examples:
 	| PageName     | SearchTerm                                              | ColumnName    | MainTabName      | SubTabName        | SelectedColumn | TargetCell    |
 	| Devices      | 30BGMTLBM9PTW5                                          | Hostname      | Applications     | Evergreen Summary | Application    | Access 95     |
 	| Users        | svc_dashworks                                           | Username      | Active Directory | Groups            | Group          | Domain Admins |
-	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | MSI              | MSIFiles          | File Name      | setup_x86.msi |
+	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | MSI              | MSI Files         | File Name      | setup_x86.msi |
 	| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users            | Users             | Username       | floresau      |
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12968

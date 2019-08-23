@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Net;
+using System.Threading;
 using DashworksTestAutomation.DTO.ItemDetails;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
@@ -54,6 +55,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage.CustomFields
 
                 popup.AddCustomFieldButton.Click();
                 _driver.WaitForElementToBeNotDisplayed(popup.AddCustomFieldButton);
+                //Sleep to wait for counter to be updated by JS
+                Thread.Sleep(2000);
                 _driver.WaitForDataLoading();
             }
         }

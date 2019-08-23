@@ -23,15 +23,10 @@ Scenario Outline: EvergreenJnr_ChangingApplicationsScopeListToAnotherList
 	| Acrobat Reader 4 |
 	Then "StaticList6379" list is displayed to user
 	Then "2" rows are displayed in the agGrid
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "DevicesProject4" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
-	And User clicks the "CREATE" Action button
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks newly created object link
+	When Project created via API and opened
+	| ProjectName     | Scope       | ProjectTemplate | Mode               |
+	| DevicesProject4 | All Devices | None            | Standalone Project |
+	And User selects "Scope" tab on the Project details page
 	And User selects "Scope Changes" tab on the Project details page
 	When User clicks "Applications" tab in the Project Scope Changes section
 	Then "Applications to add (0 of 2129 selected)" is displayed to the user in the Project Scope Changes section
@@ -72,16 +67,10 @@ Scenario Outline: EvergreenJnr_ChangingUsersScopeListToAnotherListForUserProject
 	| clarkc   |
 	Then "StaticList6329" list is displayed to user
 	Then "2" rows are displayed in the agGrid
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "DevicesProject5" in the "Project Name" field
-	And User selects "All Users" in the Scope Project dropdown
-	When User selects "<Mode>" in the Mode Project dropdown
-	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks newly created object link
+	When Project created via API and opened
+	| ProjectName     | Scope     | ProjectTemplate | Mode   |
+	| DevicesProject5 | All Users | None            | <Mode> |
+	And User selects "Scope" tab on the Project details page
 	And User selects "Scope Changes" tab on the Project details page
 	Then "Users to add (0 of 41339 selected)" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page
@@ -111,17 +100,12 @@ Scenario Outline: EvergreenJnr_AdminPage_ChangingDynamicListToAllListForUserAndM
 	Then "<Rows>" rows are displayed in the agGrid
 	When User create dynamic list with "DynamicList58" name on "<ListName>" page
 	Then "DynamicList58" list is displayed to user
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "DevicesProject8" in the "Project Name" field
-	And User selects "<ProjectList>" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks newly created object link
+	When Project created via API and opened
+	| ProjectName     | Scope         | ProjectTemplate | Mode               |
+	| DevicesProject8 | <ProjectList> | None            | Standalone Project |
+	And User selects "Scope" tab on the Project details page
 	And User selects "Scope Changes" tab on the Project details page
-	When User clicks "<ScopeChanges>" tab in the Project Scope Changes section
+	And User clicks "<ScopeChanges>" tab in the Project Scope Changes section
 	Then "<ObjectsToAdd>" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page
 	When User navigates to the "<ScopeDetails>" tab in the Scope section on the Project details page
@@ -138,9 +122,9 @@ Scenario Outline: EvergreenJnr_AdminPage_ChangingDynamicListToAllListForUserAndM
 	Then There are no errors in the browser console
 
 Examples:
-	| ListName | FilterName       | FilterValue | Rows | ProjectList | AllList     | ScopeChanges | ScopeDetails | ObjectsToAdd                         | ChangingToList | ObjectsToAdd1                     | ObjectsToAdd2                        |
-	| Devices  | Operating System | Windows 8   | 28   | All Users   | All Devices | Devices      | Device Scope | Devices to add (0 of 16819 selected) | StaticList6429 | Devices to add (0 of 24 selected) | Devices to add (0 of 16765 selected) |
-	| Users    | Domain           | CA          | 850  | All Mailbox | All Users   | Users        | User Scope   | Users to add (0 of 14747 selected)   | DynamicList17  | Users to add (0 of 0 selected)    | Users to add (0 of 14747 selected)   |
+	| ListName | FilterName       | FilterValue | Rows | ProjectList   | AllList     | ScopeChanges | ScopeDetails | ObjectsToAdd                         | ChangingToList | ObjectsToAdd1                     | ObjectsToAdd2                        |
+	| Devices  | Operating System | Windows 8   | 28   | All Users     | All Devices | Devices      | Device Scope | Devices to add (0 of 16819 selected) | StaticList6429 | Devices to add (0 of 24 selected) | Devices to add (0 of 16819 selected) |
+	| Users    | Domain           | CA          | 850  | All Mailboxes | All Users   | Users        | User Scope   | Users to add (0 of 14747 selected)   | DynamicList17  | Users to add (0 of 0 selected)    | Users to add (0 of 14747 selected)   |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13297 @Cleanup @Projects @TEST
 Scenario Outline: EvergreenJnr_ChangingApplicationScopeListToAnotherListForUserProject
@@ -160,15 +144,10 @@ Scenario Outline: EvergreenJnr_ChangingApplicationScopeListToAnotherListForUserP
 	| Windows Live Toolbar |
 	Then "StaticList6429" list is displayed to user
 	Then "2" rows are displayed in the agGrid
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "DevicesProject9" in the "Project Name" field
-	And User selects "All Users" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks newly created object link
+	When Project created via API and opened
+	| ProjectName     | Scope     | ProjectTemplate | Mode               |
+	| DevicesProject9 | All Users | None            | Standalone Project |
+	And User selects "Scope" tab on the Project details page
 	And User selects "Scope Changes" tab on the Project details page
 	When User clicks "Applications" tab in the Project Scope Changes section
 	Then "Applications to add (0 of 2081 selected)" is displayed to the user in the Project Scope Changes section

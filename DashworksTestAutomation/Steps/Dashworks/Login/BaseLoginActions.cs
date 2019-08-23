@@ -79,10 +79,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.Login
             }
         }
 
-        protected void LoginViaApiOnSenior(RemoteWebDriver driver)
+        protected void LoginViaApiOnSenior(RemoteWebDriver driver, UserDto user)
         {
-            var user = GetSupperAdminAndAddToUsedUsersList();
-
             var restClient = new RestClient(UrlProvider.Url);
             //Get cookies
             var client = new HttpClientHelper(user, restClient);

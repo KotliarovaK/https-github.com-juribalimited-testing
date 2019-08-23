@@ -1005,6 +1005,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CreateNewCustomField.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr_ItemDetails\CustomFields\CustomFieldsCheck.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomFieldsCheck.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr_ItemDetails\CustomFields\DeleteCustomFields.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1014,6 +1019,31 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EditClickableValueField.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsContent\ActionsWithTableContent\MultiselectFilterChecking\ItemDetails_MultiselectFilterChecking_ApplicationsPage.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ItemDetails_MultiselectFilterChecking_ApplicationsPage.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsContent\ActionsWithTableContent\MultiselectFilterChecking\ItemDetails_MultiselectFilterChecking_DevicesPage.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ItemDetails_MultiselectFilterChecking_DevicesPage.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsContent\ActionsWithTableContent\MultiselectFilterChecking\ItemDetails_MultiselectFilterChecking_GroupsPage.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ItemDetails_MultiselectFilterChecking_GroupsPage.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsContent\ActionsWithTableContent\MultiselectFilterChecking\ItemDetails_MultiselectFilterChecking_MailboxesPage.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ItemDetails_MultiselectFilterChecking_MailboxesPage.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsContent\ActionsWithTableContent\MultiselectFilterChecking\ItemDetails_MultiselectFilterChecking_UsersPage.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ItemDetails_MultiselectFilterChecking_UsersPage.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsContent\ItemDetailsContent_ActionsWithFields.feature.cs">
       <AutoGen>True</AutoGen>
@@ -1804,6 +1834,10 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CreateNewCustomField.feature.cs</LastGenOutput>
     </None>
+    <None Include="Tests\EvergreenJnr_ItemDetails\CustomFields\CustomFieldsCheck.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CustomFieldsCheck.feature.cs</LastGenOutput>
+    </None>
     <None Include="Tests\EvergreenJnr_ItemDetails\CustomFields\DeleteCustomFields.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DeleteCustomFields.feature.cs</LastGenOutput>
@@ -1811,6 +1845,26 @@
     <None Include="Tests\EvergreenJnr_ItemDetails\CustomFields\EditClickableValueField.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>EditClickableValueField.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsContent\ActionsWithTableContent\MultiselectFilterChecking\ItemDetails_MultiselectFilterChecking_ApplicationsPage.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ItemDetails_MultiselectFilterChecking_ApplicationsPage.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsContent\ActionsWithTableContent\MultiselectFilterChecking\ItemDetails_MultiselectFilterChecking_DevicesPage.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ItemDetails_MultiselectFilterChecking_DevicesPage.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsContent\ActionsWithTableContent\MultiselectFilterChecking\ItemDetails_MultiselectFilterChecking_GroupsPage.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ItemDetails_MultiselectFilterChecking_GroupsPage.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsContent\ActionsWithTableContent\MultiselectFilterChecking\ItemDetails_MultiselectFilterChecking_MailboxesPage.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ItemDetails_MultiselectFilterChecking_MailboxesPage.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsContent\ActionsWithTableContent\MultiselectFilterChecking\ItemDetails_MultiselectFilterChecking_UsersPage.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ItemDetails_MultiselectFilterChecking_UsersPage.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsContent\ItemDetailsContent_ActionsWithFields.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

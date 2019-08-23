@@ -65,19 +65,12 @@ Scenario: EvergreenJnr_ChecksThatDeviceScopeDDLIsDisabledWhenDoNotIncludeOwnedDe
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12751 @DAS12747 @DAS12999 @DAS12645 @Cleanup @Project_Creation_and_Scope @Projects @TEST
 Scenario: EvergreenJnr_AdminPage_CheckThatSelectedCheckboxIsSelectedAfterSwitchingBetweenTabs
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "TestProject13" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
-	When User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks newly created object link
+	When Project created via API and opened
+	| ProjectName   | Scope       | ProjectTemplate | Mode               |
+	| TestProject13 | All Devices | None            | Standalone Project |
 	Then Project "TestProject13" is displayed to user
-	When User selects "Scope Changes" tab on the Project details page
+	When User selects "Scope" tab on the Project details page
+	And User selects "Scope Changes" tab on the Project details page
 	And User clicks "Devices" tab in the Project Scope Changes section
 	Then Update Project buttons is disabled
 	When User expands the object to add
@@ -86,7 +79,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedCheckboxIsSelectedAfterSwitchi
 	| Objects        |
 	| 00HA7MKAVVFDAV |
 	Then Update Project button is active
-	And "Devices to add (1 of 17225 selected)" is displayed to the user in the Project Scope Changes section
+	And "Devices to add (1 of 17279 selected)" is displayed to the user in the Project Scope Changes section
 	When User clicks "Users" tab in the Project Scope Changes section
 	When User expands the object to add
 	Then Objects are displayed in alphabetical order on the Admin page
@@ -96,7 +89,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedCheckboxIsSelectedAfterSwitchi
 	And User clicks "Devices" tab in the Project Scope Changes section
 	When User expands the object to add 
 	Then following items are still selected
-	And "Devices to add (1 of 17225 selected)" is displayed to the user in the Project Scope Changes section
+	And "Devices to add (1 of 17279 selected)" is displayed to the user in the Project Scope Changes section
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12387 @DAS12757 @DAS12999 @DAS13199 @Cleanup @Project_Creation_and_Scope @Projects @TEST
 Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedProjects
@@ -135,7 +128,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedP
 	When User clicks Reset Filters button on the Admin page
 	When User clicks String Filter button for "Type" column on the Admin page
 	When User selects "Device scoped" checkbox from String Filter on the Admin page
-	Then Rows counter contains "8" found row of all rows
+	Then Rows counter contains "14" found row of all rows
 	When User clicks Reset Filters button on the Admin page 
 	When User enters "DDPP" text in the Search field for "Short Name" column
 	Then Rows counter contains "1" found row of all rows
