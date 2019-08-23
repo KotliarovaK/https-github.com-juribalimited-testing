@@ -168,7 +168,7 @@ namespace DashworksTestAutomation.Base
             }
 
             //TODO remove this
-            var requestUri = "http://automation.corp.juriba.com:81/lists/devices/108";
+            var requestUri = "http://automation.corp.juriba.com:81/lists/devices/32";
             var request = requestUri.GenerateRequest();
             var response = _client.Value.Get(request);
 
