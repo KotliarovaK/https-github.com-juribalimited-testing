@@ -52,6 +52,5 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations
             page.GetFieldByName(fieldName).SendKeys(text);
             page.BodyContainer.Click();
         }
-        }
     }
 }
