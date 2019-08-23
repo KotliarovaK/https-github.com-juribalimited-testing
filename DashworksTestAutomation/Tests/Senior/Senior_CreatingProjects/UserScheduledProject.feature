@@ -2,7 +2,7 @@
 	Runs Project related tests
 
 Background: Pre-Conditions
-	Given User is logged in to the Projects
+	Given User is logged in to the Projects as Admin
 	Then "Projects Home" page is displayed to the user
 
 @ProjectsOnSenior @Projects_Administration @UserScheduledProject
