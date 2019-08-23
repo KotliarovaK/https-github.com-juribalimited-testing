@@ -110,7 +110,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var currentUrl = _driver.Url;
             const string pattern = @"\$select=(.*)";
             var urlPartToCheck = Regex.Match(currentUrl, pattern).Groups[1].Value;
-            Utils.Verify.Contains(ColumnNameToUrlConvertor.Convert(pageName, columnName).ToLower(),
+            Verify.Contains(ColumnNameToUrlConvertor.Convert(pageName, columnName).ToLower(),
                 urlPartToCheck.ToLower(), $"{columnName} is not added to URL");
         }
 
@@ -431,7 +431,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             var content = page.GetColumnContent(columnName);
-            Utils.Verify.IsFalse(content.Contains("-1"), "The Lowest value is not null");
+            Verify.IsFalse(content.Contains("-1"), "The Lowest value is not null");
         }
 
         private void CheckColumnDisplayedState(Table table, bool displayedState)
@@ -441,7 +441,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
             Thread.Sleep(1000);
             foreach (var row in table.Rows)
-                Utils.Verify.AreEqual(displayedState, listPageMenu.IsColumnPresent(row["ColumnName"]),
+                Verify.AreEqual(displayedState, listPageMenu.IsColumnPresent(row["ColumnName"]),
                     $"Column '{row["ColumnName"]}' displayed state should be {displayedState}");
         }
 
