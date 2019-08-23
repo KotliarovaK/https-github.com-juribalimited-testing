@@ -89,7 +89,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
 
         public bool GetCountOfItemsDisplayStatusByTabName(string tabName)
         {
-            return Driver.IsElementDisplayed(By.XPath(string.Format(TabCountSelector, tabName)));
+            return Driver.IsElementDisplayed(By.XPath(string.Format(TabCountSelector, tabName)), WebDriverExtensions.WaitTime.Short);
         }
 
         public bool GetDisplayStatusForDisabledSubTabByName(string tabName)

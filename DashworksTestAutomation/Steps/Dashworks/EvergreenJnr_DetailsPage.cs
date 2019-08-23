@@ -113,7 +113,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenMessageIsDisplayedOnTheDetailsPage(string message)
         {
             var listElement = _driver.NowAt<DetailsPage>();
-            _driver.WaitForElementToBeDisplayed(listElement.NoFoundMessage);
+            if (!_driver.IsElementDisplayed(listElement.NoFoundMessage, WebDriverExtensions.WaitTime.Long))
+                throw new Exception($"'{message}' was not displayed");
             Utils.Verify.AreEqual(message, listElement.NoFoundMessage.Text, $"{message} is not displayed");
         }
 
@@ -576,12 +577,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             int firstHeader = page.CustomFieldsCustomFieldHeader.Size.Width;
             int secondHeader = page.CustomFieldsValueHeader.Size.Width;
-            int toolbar  = page.CustomFieldsAgGridToolbar.Size.Width;
+            int toolbar = page.CustomFieldsAgGridToolbar.Size.Width;
 
             // sum of column headers are little bit less than page toolbar
-            Utils.Verify.That((toolbar - firstHeader - secondHeader)<50, 
+            Utils.Verify.That((toolbar - firstHeader - secondHeader) < 50,
                 Is.True, "Grid headers are too small");
-            
+
         }
 
         [Then(@"Fields with empty information are displayed")]
