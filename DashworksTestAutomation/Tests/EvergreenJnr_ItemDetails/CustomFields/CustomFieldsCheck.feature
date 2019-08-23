@@ -23,7 +23,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatContextMenuCopyСellForTheRowActions
 @Evergreen @Devices @EvergreenJnr_ItemDetails @CustomFields @DAS17323 @Not_Ready
 Scenario: EvergreenJnr_DevicesList_CheckThatContextMenuCopyRowForTheRowActionsIsDisplayedAndWorkedCorrectlyForCustomFields
 	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	Then "Devices" list should be displayed to the user
 	When User perform search by "001BAQXT6JWFPI"
 	And User click content from "Hostname" column
 	When User navigates to the "Custom Fields" sub-menu on the Details page
