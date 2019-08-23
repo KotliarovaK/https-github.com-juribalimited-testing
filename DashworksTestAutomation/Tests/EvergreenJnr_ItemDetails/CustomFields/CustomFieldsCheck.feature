@@ -5,7 +5,8 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-	#Ann.Ilchenko 8/21/19: ready on 'quasar'
+	#Ann.Ilchenko 8/21/19: ready on 'quasar';
+	#Need to update the data when Ilya adds them to the GoldData;
 @Evergreen @Devices @EvergreenJnr_ItemDetails @CustomFields @DAS17323 @Not_Ready
 Scenario: EvergreenJnr_DevicesList_CheckThatContextMenuCopyСellForTheRowActionsIsDisplayedAndWorkedCorrectlyForCustomFields
 	When User clicks "Devices" on the left-hand menu
@@ -17,7 +18,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatContextMenuCopyСellForTheRowActions
 	And User selects 'Copy cell' option in context menu
 	Then Next data 'ComputerCustomField' is copied
 
-	#Ann.Ilchenko 8/21/19: ready on 'quasar'
+	#Ann.Ilchenko 8/21/19: ready on 'quasar';
+	#Need to update the data when Ilya adds them to the GoldData;
 @Evergreen @Devices @EvergreenJnr_ItemDetails @CustomFields @DAS17323 @Not_Ready
 Scenario: EvergreenJnr_DevicesList_CheckThatContextMenuCopyRowForTheRowActionsIsDisplayedAndWorkedCorrectlyForCustomFields
 	When User clicks "Devices" on the left-hand menu

@@ -1363,7 +1363,8 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatBlanksValueChangedToEmptyValueOnMa
 	| None   |
 	When User closes Checkbox filter for "Status" column
 	
-@Evergreen @Device @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17734
+	#Ann.Ilchenko 8/22/19: make changes for 'DAS17733' when GoldData will be ready
+@Evergreen @Device @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17734 @DAS17733
 Scenario: EvergreenJnr_DeviceList_CheckThatUsersTabIsDisplayedWithCorrectStagesOnDevicesDetailsPageForProjectMode
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
