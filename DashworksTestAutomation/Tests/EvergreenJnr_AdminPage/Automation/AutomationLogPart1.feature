@@ -212,7 +212,7 @@ Scenario: EvergreenJnr_AdminPage_CheckBrokenListValidationWhenRunningAnAutomatio
 	When User enters "17011_Automation" text in the Search field for "Automation" column
 	Then "LIST HAS ERRORS" content is displayed for "Outcome" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AutomationLog @Automations @DAS17212 @Not_Ready 
+@Evergreen @Admin @EvergreenJnr_AdminPage @AutomationLog @Automations @DAS17212 @Not_Ready
 Scenario Outline: EvergreenJnr_AdminPage_CheckSuccessfulRunningAutomationWithMainListsInTheScope
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user

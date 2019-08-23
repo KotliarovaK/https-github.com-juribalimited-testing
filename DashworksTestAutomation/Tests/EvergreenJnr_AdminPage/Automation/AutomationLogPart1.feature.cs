@@ -925,68 +925,6 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
-#line 249
-#line 251
-#line 254
-#line 255
-#line 256
-#line 257
-#line 258
-#line 259
-#line 260
-#line 261
-#line 264
-#line 265
-#line 266
-#line 267
-#line 268
-#line 271
-#line 272
-#line 275
-#line 276
-#line 277
-#line 279
-#line 280
-#line 281
-#line 282
-#line 283
-#line 284
-#line 285
-#line 286
-#line 287
-#line 288
-#line 289
-#line 290
-#line 292
-#line 293
-#line 294
-#line 295
-#line 296
-#line 297
-#line 298
-#line 299
-#line 300
-#line 301
-#line 303
-#line 304
-#line 305
-#line 306
-#line 307
-#line 309
-#line 310
-#line 311
-#line 312
-#line 313
-#line 314
-#line 315
-#line 316
-#line 317
-#line 318
-#line 319
-#line hidden
-            this.ScenarioCleanup();
-        }
-
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckSortingAutomationsLogGrid")]
@@ -1031,101 +969,105 @@ this.FeatureBackground();
                         "Automations",
                         "DAS17774",
                         "Not_Ready"});
-#line 323
+#line 250
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 324
+#line 251
  testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 325
+#line 252
  testRunner.Then("Admin page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 326
+#line 253
  testRunner.When("User clicks \"Automations\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 327
+#line 254
  testRunner.Then("\"Automations\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 328
+#line 255
  testRunner.When("User selects \"Automation Log\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 329
+#line 256
  testRunner.When("User click on \'Date\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 330
+#line 257
  testRunner.Then("date in table is sorted by \"Date\" column in descending order on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 331
+#line 258
  testRunner.When("User click on \'Date\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 332
+#line 259
  testRunner.Then("date in table is sorted by \"Date\" column in ascending order on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 333
+#line 260
  testRunner.When("User click on \'Type\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 334
+#line 261
  testRunner.Then("data in table is sorted by \"Type\" column in ascending order on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 335
+#line 262
  testRunner.When("User click on \'Type\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 336
+#line 263
  testRunner.Then("data in table is sorted by \"Type\" column in descending order on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 337
+#line 264
  testRunner.When("User click on \'Automation\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 338
+#line 265
  testRunner.Then("data in table is sorted by \"Automation\" column in ascending order on the Admin pa" +
                     "ge", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 339
+#line 266
  testRunner.When("User click on \'Automation\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 340
+#line 267
  testRunner.Then("data in table is sorted by \"Automation\" column in descending order on the Admin p" +
                     "age", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 341
+#line 268
  testRunner.When("User click on \'Action\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 342
+#line 269
  testRunner.Then("data in table is sorted by \"Action\" column in ascending order on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 343
+#line 270
  testRunner.When("User click on \'Action\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 344
+#line 271
  testRunner.Then("data in table is sorted by \"Action\" column in descending order on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 345
+#line 272
  testRunner.When("User click on \'Run\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 346
+#line 273
  testRunner.Then("data in table is sorted by \"Run\" column in ascending order on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 347
+#line 274
  testRunner.When("User click on \'Run\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 348
+#line 275
  testRunner.Then("data in table is sorted by \"Run\" column in descending order on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 349
+#line 276
  testRunner.When("User click on \'Objects\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 350
+#line 277
  testRunner.Then("numeric data in table is sorted by \"Objects\" column in descending order on the Ad" +
                     "min page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 351
+#line 278
  testRunner.When("User click on \'Objects\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 352
+#line 279
  testRunner.Then("numeric data in table is sorted by \"Objects\" column in ascending order on the Adm" +
                     "in page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 353
+#line 280
  testRunner.When("User click on \'Duration (hh:mm:ss)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 354
+#line 281
  testRunner.Then("data in table is sorted by \"Duration (hh:mm:ss)\" column in ascending order on the" +
                     " Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 355
+#line 282
  testRunner.When("User click on \'Duration (hh:mm:ss)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 356
+#line 283
  testRunner.Then("data in table is sorted by \"Duration (hh:mm:ss)\" column in descending order on th" +
                     "e Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 357
+#line 284
  testRunner.When("User click on \'User\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 358
+#line 285
  testRunner.Then("data in table is sorted by \"User\" column in ascending order on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 359
+#line 286
  testRunner.When("User click on \'User\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 360
+#line 287
  testRunner.Then("data in table is sorted by \"User\" column in descending order on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 361
+#line 288
  testRunner.When("User click on \'Outcome\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 362
+#line 289
  testRunner.Then("Boolean data in table is sorted by \"Outcome\" column in ascending order on the Adm" +
                     "in page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 363
+#line 290
  testRunner.When("User click on \'Outcome\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 364
+#line 291
  testRunner.Then("Boolean data in table is sorted by \"Outcome\" column in descending order on the Ad" +
                     "min page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore
