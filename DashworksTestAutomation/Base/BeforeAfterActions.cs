@@ -26,14 +26,11 @@ namespace DashworksTestAutomation.Base
     {
         private readonly IObjectContainer _objectContainer;
         private readonly ScenarioContext _scenarioContext;
-        //TODO remove this
-        private readonly RestWebClient _client;
 
-        public BeforeAfterActions(IObjectContainer objectContainer, ScenarioContext scenarioContext, RestWebClient client)
+        public BeforeAfterActions(IObjectContainer objectContainer, ScenarioContext scenarioContext)
         {
             _objectContainer = objectContainer;
             _scenarioContext = scenarioContext;
-            _client = client;
         }
 
         [BeforeTestRun]
@@ -166,14 +163,6 @@ namespace DashworksTestAutomation.Base
                 }
                 catch { }
             }
-
-            //TODO remove this
-            var requestUri = "http://automation.corp.juriba.com:81/lists/devices/32";
-            var request = requestUri.GenerateRequest();
-            var response = _client.Value.Get(request);
-
-            if (response.StatusCode != HttpStatusCode.OK)
-                throw new Exception($"BROKEN LIST was deleted!!!");
         }
 
         [BeforeTestRun]
