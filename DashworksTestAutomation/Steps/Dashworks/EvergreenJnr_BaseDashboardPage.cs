@@ -176,10 +176,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseDashboardPage>();
             foreach (var row in table.Rows)
             {
+                _driver.MouseHoverByJavascript(page.GetColumnHeaderByName(row["ColumnName"]));
                 var shiftClick = new Actions(_driver);
                 shiftClick.KeyDown(OpenQA.Selenium.Keys.Shift).Click(page.GetColumnHeaderByName(row["ColumnName"]))
                     .KeyUp(OpenQA.Selenium.Keys.Shift).Perform();
             }
+            _driver.WaitForDataLoading();
         }
 
         [Then(@"data in table is sorted by '(.*)' column in descending order")]

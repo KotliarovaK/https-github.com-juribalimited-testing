@@ -1,5 +1,4 @@
-﻿@retry:1
-Feature: RemoveColumn
+﻿Feature: RemoveColumn
 	Runs Remove column related tests
 
 Background: Pre-Conditions
