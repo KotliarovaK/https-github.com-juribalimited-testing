@@ -192,9 +192,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenListIsDisplayedToUser(string listName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitForDataLoading();
+            _driver.WaitForDataLoading(45);
             _driver.WaitForElementToBeDisplayed(page.ActiveCustomList);
-            Utils.Verify.AreEqual(listName, page.ActiveCustomListName(), "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.AreEqual(listName, page.ActiveCustomListName(), "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"""(.*)"" edited list is displayed to user")]
@@ -422,7 +422,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
             _driver.ExecuteAction(() => page.GetListElementByName(listName).Click());
             _driver.ExecuteAction(() => _driver.ClickByJavascript(page.GetListElementByName(listName)));
-            _driver.WaitForDataLoading();
+            _driver.WaitForDataLoading(45);
         }
 
         [Then(@"""(.*)"" message is displayed")]
@@ -539,14 +539,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenStarIconIsDisplayedForList(string listName)
         {
             var listElement = _driver.NowAt<CustomListElement>();
-            Utils.Verify.IsTrue(listElement.GetFavoriteStatus(listName), "PLEASE ADD EXCEPTION MESSAGE");
+            Utils.Verify.IsTrue(listElement.GetFavoriteStatus(listName), "Star icon is NOT displayed");
         }
 
         [Then(@"Star icon is not displayed for ""(.*)"" list")]
         public void ThenStarIconIsNotDisplayedForList(string listName)
         {
             var listElement = _driver.NowAt<CustomListElement>();
-            Utils.Verify.IsFalse(listElement.GetFavoriteStatus(listName), "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.IsFalse(listElement.GetFavoriteStatus(listName), "Star icon is displayed but shouldn't");
         }
 
         [When(@"User enters ""(.*)"" text in Search field at List Panel")]
