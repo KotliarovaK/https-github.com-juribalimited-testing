@@ -220,6 +220,106 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatContextMenuCopyRowForTheRowActionsIsDisplayedAndWo" +
+            "rkedCorrectlyForCustomFields")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("AllLists")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
+        [NUnit.Framework.CategoryAttribute("CustomFields")]
+        [NUnit.Framework.CategoryAttribute("DAS17909")]
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
+        [NUnit.Framework.TestCaseAttribute("Devices", "All Devices", "001BAQXT6JWFPI", "Hostname", null)]
+        [NUnit.Framework.TestCaseAttribute("Users", "All Users", "ACG370114", "Username", null)]
+        [NUnit.Framework.TestCaseAttribute("Applications", "All Applications", "Adobe Download Manager 2.0", "Application", null)]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "All Mailboxes", "000F977AC8824FE39B8", "Email Address", null)]
+        public virtual void EvergreenJnr_AllLists_CheckThatContextMenuCopyRowForTheRowActionsIsDisplayedAndWorkedCorrectlyForCustomFields(string pageName, string openPageName, string itemName, string columnName, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatContextMenuCopyRowForTheRowActionsIsDisplayedAndWorkedCorrectlyForCustomFieldsInternal(pageName,openPageName,itemName,columnName,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckThatContextMenuCopyRowForTheRowActionsIsDisplayedAndWorkedCorrectlyForCustomFieldsInternal(string pageName, string openPageName, string itemName, string columnName, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "AllLists",
+                    "EvergreenJnr_ItemDetails",
+                    "CustomFields",
+                    "DAS17909",
+                    "Not_Ready"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatContextMenuCopyRowForTheRowActionsIsDisplayedAndWo" +
+                    "rkedCorrectlyForCustomFields", null, @__tags);
+#line 36
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 37
+ testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 38
+ testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", openPageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 39
+ testRunner.When(string.Format("User perform search by \"{0}\"", itemName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 40
+ testRunner.And(string.Format("User click content from \"{0}\" column", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 41
+ testRunner.When("User navigates to the \"Custom Fields\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 42
+ testRunner.And("User have opened Column Settings for \"Custom Field\" column in the Details Page ta" +
+                    "ble", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnSettings"});
+            table1.AddRow(new string[] {
+                        "Pin Left"});
+            table1.AddRow(new string[] {
+                        "Pin Right"});
+            table1.AddRow(new string[] {
+                        "No Pin"});
+            table1.AddRow(new string[] {
+                        "Autosize This column"});
+            table1.AddRow(new string[] {
+                        "Autosize All Columns"});
+            table1.AddRow(new string[] {
+                        "Group By Custom Field"});
+            table1.AddRow(new string[] {
+                        "Sort ascending"});
+            table1.AddRow(new string[] {
+                        "Sort descending"});
+            table1.AddRow(new string[] {
+                        "No sort"});
+#line 43
+ testRunner.Then("User sees the following Column Settings", ((string)(null)), table1, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore
