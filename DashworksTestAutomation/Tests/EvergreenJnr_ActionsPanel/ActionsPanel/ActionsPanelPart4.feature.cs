@@ -261,6 +261,8 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "Projects"});
             table4.AddRow(new string[] {
+                        "*Project K-Computer Scheduled Project"});
+            table4.AddRow(new string[] {
                         "1803 Rollout"});
             table4.AddRow(new string[] {
                         "Babel (English, German and French)"});
@@ -278,8 +280,6 @@ this.FeatureBackground();
                         "Migration Project Phase 2 (User Project)"});
             table4.AddRow(new string[] {
                         "Project 00 M Computer Scheduled"});
-            table4.AddRow(new string[] {
-                        "Project K-Computer Scheduled Project"});
             table4.AddRow(new string[] {
                         "USE ME FOR AUTOMATION(DEVICE SCHDLD)"});
             table4.AddRow(new string[] {
