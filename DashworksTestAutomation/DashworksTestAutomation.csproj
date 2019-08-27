@@ -308,6 +308,8 @@
     <Compile Include="Pages\Projects\CreatingProjects\NewsPage.cs" />
     <Compile Include="Pages\Projects\CreatingProjects\Tasks\TaskProperties_RequestTypesPage.cs" />
     <Compile Include="Pages\Projects\CreatingProjects\Tasks\TaskProperties_ValuesPage.cs" />
+    <Compile Include="Pages\Projects\ChangePasswordPage.cs" />
+    <Compile Include="Pages\Projects\UserProfilePage.cs" />
     <Compile Include="Pages\Projects\ProjectLogin.cs" />
     <Compile Include="Pages\Projects\CreatingProjects\ProjectPropertiesPage.cs" />
     <Compile Include="Pages\Projects\CreatingProjects\ProjectsHomePage.cs" />
@@ -408,6 +410,7 @@
     <Compile Include="Steps\Senior\Senior_CreatingProject\Projects_CreateProject.cs" />
     <Compile Include="Steps\Senior\Senior_CreatingProject\CustomFields\Projects_CustomFields.cs" />
     <Compile Include="Steps\Senior\Senior_Dashboards.cs" />
+    <Compile Include="Steps\Senior\Senior_Preferences.cs" />
     <Compile Include="Steps\Senior\Senior_Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\Browser.cs" />
@@ -1330,6 +1333,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UserScheduledProject.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\Senior\Senior_Profile.feature.cs">
+      <DependentUpon>Senior_Profile.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Tests\Senior\Senior_Dashboards.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2098,6 +2106,10 @@
     <None Include="Tests\Senior\Senior_CreatingProjects\UserScheduledProject.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>UserScheduledProject1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Senior\Senior_Profile.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Senior_Profile.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\Senior\Senior_Dashboards.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
