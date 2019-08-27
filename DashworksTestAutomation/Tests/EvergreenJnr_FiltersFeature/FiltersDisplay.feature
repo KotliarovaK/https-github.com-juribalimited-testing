@@ -888,7 +888,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOperatorsForApplicationSavedListFilt
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Application (Saved List)" filter
-	Then "In list" option is available for this filter
+	Then "In list, Not in list" option is available for this filter
 
 @Evergreen @AllLists @EvergreenJnr_FilterFeature @FiltersDisplay @DAS11619
 Scenario Outline: EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColumn
@@ -1402,9 +1402,9 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDeviceAndGroupAndMailboxFiltersAvaila
 	| Directory Type                |
 	| Email Address                 |
 	| Enabled                       |
-	| GUID                          |
 	| Given Name                    |
 	| Group Count                   |
+	| GUID                          |
 	| Home Directory                |
 	| Home Drive                    |
 	| Last Logon Date               |

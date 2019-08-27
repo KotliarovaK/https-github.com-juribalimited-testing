@@ -3934,7 +3934,7 @@ this.FeatureBackground();
 #line 890
  testRunner.When("user select \"Application (Saved List)\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 891
- testRunner.Then("\"In list\" option is available for this filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"In list, Not in list\" option is available for this filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -6204,11 +6204,11 @@ this.FeatureBackground();
             table105.AddRow(new string[] {
                         "Enabled"});
             table105.AddRow(new string[] {
-                        "GUID"});
-            table105.AddRow(new string[] {
                         "Given Name"});
             table105.AddRow(new string[] {
                         "Group Count"});
+            table105.AddRow(new string[] {
+                        "GUID"});
             table105.AddRow(new string[] {
                         "Home Directory"});
             table105.AddRow(new string[] {

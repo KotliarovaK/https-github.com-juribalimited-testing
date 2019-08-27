@@ -122,7 +122,28 @@ namespace DashworksTestAutomation.Pages
             Driver.WaitForElementToBeDisplayed(By.XPath(listNameSelector));
             Driver.FindElement(By.XPath(listNameSelector)).Click();
         }
-        
+
+        public void SelectSplitByItem(string item)
+        {
+            var splitBy = ".//*[@aria-label='SplitBy']";
+            var expandedItems = $".//span[@class='mat-option-text']";
+            var listNameSelector = $".//mat-option//span[contains(text(), '{item}')]";
+
+            for (int i = 0; i < 3; i++)
+            {
+                if (Driver.FindElements(By.XPath(expandedItems)).Count > 0)
+                {
+                    Driver.FindElement(By.XPath(listNameSelector)).Click();
+                    break;
+                }
+                else
+                {
+                    Driver.FindElement(By.XPath(splitBy)).Click();
+                    System.Threading.Thread.Sleep(1000);
+                }
+            }
+        }
+
         public IWebElement GetUnsavedChangesAlertText()
         {
             var selector = $".//deactivate-guard-dialog/parent::mat-dialog-container//p";
