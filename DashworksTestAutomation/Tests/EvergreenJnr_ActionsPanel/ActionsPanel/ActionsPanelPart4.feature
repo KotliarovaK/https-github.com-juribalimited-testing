@@ -44,6 +44,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatProjectNamesAreDisplayedCorrectlyIn
 	And User selects "Update path" Bulk Update Type on Action panel
 	Then the following Projects are displayed in opened DLL on Action panel:
 	| Projects                                         |
+	| *Project K-Computer Scheduled Project            |
 	| 1803 Rollout                                     |
 	| Babel (English, German and French)               |
 	| Barry's User Project                             |
@@ -53,7 +54,6 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatProjectNamesAreDisplayedCorrectlyIn
 	| I-Computer Scheduled Project                     |
 	| Migration Project Phase 2 (User Project)         |
 	| Project 00 M Computer Scheduled                  |
-	| Project K-Computer Scheduled Project             |
 	| USE ME FOR AUTOMATION(DEVICE SCHDLD)             |
 	| USE ME FOR AUTOMATION(USR SCHDLD)                |
 	| User Evergreen Capacity Project                  |
