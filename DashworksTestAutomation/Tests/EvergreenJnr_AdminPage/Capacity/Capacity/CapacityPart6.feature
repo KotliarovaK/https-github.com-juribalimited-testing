@@ -45,3 +45,25 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageAboutUnconfirmedChangesA
 	Then "You have unsaved changes. Are you sure you want to leave the page?" text is displayed in the warning message
 	Then "YES" button is displayed in the warning message
 	Then "NO" button is displayed in the warning message
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS17409 @Cleanup @Not_Ready
+Scenario: EvergreenJnr_AdminPage_ChecksThatWhenValueIsZeroThenBlankShouldBeDisplayed
+	When User navigates to "1803 Rollout" project details
+	When User clicks "Capacity" tab
+	And User selects "Units" tab on the Project details page
+	When User enters "Evergreen Capacity Unit 3" text in the Search field for "Capacity Unit" column
+	Then "" content is displayed in "Devices" column
+	And "" content is displayed in "Users" column
+	And "" tooltip displayed in "Slots" column
+	And "" tooltip displayed in "Devices" column
+	And "" tooltip displayed in "Users" column
+	When User enters "Birmingham" text in the Search field for "Capacity Unit" column
+	Then "" content is displayed in "Applications" column
+	And "2" content is displayed in "Slots" column
+	And "2" tooltip displayed in "Slots" column
+	When User clicks content from "Slots" column
+	Then URL contains "/capacity/slots/:Birmingham"
+	And "Capacity Slot" column content is displayed in the following order:
+	| Items                |
+	| Birmingham Morning   |
+	| Birmingham Afternoon |

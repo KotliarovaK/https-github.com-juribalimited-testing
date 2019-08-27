@@ -56,7 +56,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
                 if (!string.IsNullOrEmpty(row["SplitBy"]))
                 {
-                    _driver.WaitForElementToBeDisplayed(createWidgetElement.SplitBy);
+                    _driver.WaitForElementToContainsTextInAttribute(createWidgetElement.SplitBy, "false", "aria-disabled");
                     createWidgetElement.SplitBy.Click();
                     _driver.WaitForElementToBeDisplayed(createWidgetElement.DropdownMenu);
                     createWidgetElement.SelectObjectForWidgetCreation(row["SplitBy"]);

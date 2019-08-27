@@ -129,3 +129,31 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetTooltipsShowsNameAndCou
 	Then Tooltip is displayed for the point of Line widget
 	| WidgetName                 | NumberOfPoint | Tooltip     |
 	| Project AllDevicesDAS15462 | 2             | OS X 10.5 1 |
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17825 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetsShowsGraphDataWhenSplitByReadinessOrComplianceFields
+	When User clicks "Devices" on the left-hand menu
+	And User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                        |
+	| Windows7Mi: Application Readiness |
+	| Application Compliance            |
+	And User create dynamic list with "ListForDAS17825" name on "Devices" page
+	Then "ListForDAS17825" list is displayed to user
+	When Dashboard with "DAS17825_Dashboard" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	When User clicks the "ADD WIDGET" Action button
+	And User adds new Widget
+	| WidgetType | Title             | List            | SplitBy                           | AggregateBy | AggregateFunction | OrderBy   | TableOrientation | MaxValues | ShowLegend | Type | Drilldown | Layout |
+	| Line       | WidgetForDAS17825 | ListForDAS17825 | Windows7Mi: Application Readiness |             | Count             | Count ASC |                  |           |            |      |           |        |
+	Then Widget Preview is displayed to the user
+	When User clicks the "CREATE" Action button
+	Then Card "WidgetForDAS17825" Widget is displayed to the user
+	And Line chart displayed in "WidgetForDAS17825" widget
+	When User clicks Ellipsis menu for "WidgetForDAS17825" Widget on Dashboards page
+	And User clicks "Edit" item from Ellipsis menu on Dashboards page
+	And User selects "Application Compliance" as Widget Split By
+	Then Widget Preview is displayed to the user
+	When User clicks the "UPDATE" Action button
+	Then Card "WidgetForDAS17825" Widget is displayed to the user
+	And Line chart displayed in "WidgetForDAS17825" widget

@@ -704,6 +704,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(by).Text;
         }
 
+        public string GetRowTooltipByColumnName(string columnName)
+        {
+            var by = By.XPath(
+                $".//div[@role='gridcell'][{GetColumnNumberByName(columnName)}]");
+            return Driver.FindElement(by).GetAttribute("title");
+        }
+
         public IWebElement GetItalicContentByColumnName(string text)
         {
             var selector = By.XPath($"//span[@class='agEmptyValue'][text()='{text}']");

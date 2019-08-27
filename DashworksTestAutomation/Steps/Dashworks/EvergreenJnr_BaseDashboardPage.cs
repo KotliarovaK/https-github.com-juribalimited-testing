@@ -339,6 +339,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.AreEqual(textContent, originalList, "Content is not displayed correctly");
         }
 
+        [Then(@"""(.*)"" tooltip displayed in ""(.*)"" column")]
+        public void ThenTooltipIsDisplayedInColumn(string textTooltip, string columnName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
+            var originalList = page.GetRowTooltipByColumnName(columnName);
+            Utils.Verify.AreEqual(textTooltip, originalList, "Tooltip is not displayed correctly");
+        }
+
         [Then(@"""(.*)"" content is displayed for ""(.*)"" column")]
         public void ThenContentIsDisplayedForColumn(string textContent, string columnName)
         {
