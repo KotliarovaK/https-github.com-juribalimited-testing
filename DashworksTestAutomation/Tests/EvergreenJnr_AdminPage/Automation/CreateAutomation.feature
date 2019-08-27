@@ -16,8 +16,8 @@ Scenario: EvergreenJnr_AdminPage_CheckActionGridInAutomations
 	#| 15309_laptop   | 15309       | true   | false              | All Devices | Manual |
 	When User clicks the "CREATE AUTOMATION" Action button
 	Then Create Automation page is displayed to the User
-	When User type "15309_laptop" Name in the "Automation Name" field on the Automation details page
-	When User type "15309" Name in the "Description" field on the Automation details page
+	When User enters '15309_laptop' text to 'Automation Name' textbox
+	When User enters '15309' text to 'Description' textbox
 	Then Main lists are displayed correctly in the Scope dropdown
 	| ListName         |
 	| All Devices      |
@@ -48,8 +48,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateAutomationFieldsIsNotPopulatedWi
 	| Manual                     |
 	| After Transform            |
 	| Scheduled: Dashworks Daily |
-	When User type "DAS16801_Automation" Name in the "Automation Name" field on the Automation details page
-	When User type "DAS16801" Name in the "Description" field on the Automation details page
+	When User enters 'DAS16801_Automation' text to 'Automation Name' textbox
+	When User enters 'DAS16801' text to 'Description' textbox
 	When User selects "1803 Rollout" in the Scope Automation dropdown
 	When User selects "Manual" in the "Run" dropdown
 	When User selects "Active" checkbox on the Automation Page
@@ -60,14 +60,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateAutomationFieldsIsNotPopulatedWi
 	Then "Automation Name" field is empty on the Admin page
 	Then "Scope" field is empty on the Admin page
 	Then "Active" checkbox is unchecked on the Admin page
-	When User type "DAS16801_Automation_Second" Name in the "Automation Name" field on the Automation details page
-	When User type "DAS16801" Name in the "Description" field on the Automation details page
+	When User enters 'DAS16801_Automation_Second' text to 'Automation Name' textbox
+	When User enters 'DAS16801' text to 'Description' textbox
 	When User selects "1803 Rollout" in the Scope Automation dropdown
 	When User selects "Manual" in the "Run" dropdown
 	When User selects "Active" checkbox on the Automation Page
 	And User clicks the "CREATE" Action button
 	When User clicks newly created object link
-	When User type "DAS16801_Automation" Name in the "Automation Name" field on the Automation details page
+	When User enters 'DAS16801_Automation' text to 'Automation Name' textbox
 	Then Filling field error with "An automation with this name already exists" text is displayed
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS16801 @DAS16805 @Not_Ready

@@ -29,6 +29,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public const string FirstColumnTableContent = ".//div[@role='gridcell']//a[@href]";
 
+        private string NamedDropdownSelector = ".//mat-select[@aria-label='{0}']//span";
+
         #region Inline Edit. Appears on double click on cell
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'ag-cell-inline-editing')]//i[contains(@class,'mat-done')]")]
@@ -193,9 +195,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = TeamInFilterDropdown)]
         public IList<IWebElement> TeamListInFilterDropdown { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//textarea[@placeholder='Project']")]
-        public IWebElement ProjectDropdown { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@placeholder='Path']")]
         public IWebElement PathtDropdown { get; set; }
@@ -663,8 +662,18 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public IWebElement GetDropdownByName(string dropdownName)
         {
-            var selector = By.XPath($".//mat-select[@aria-label='{dropdownName}']//span");
+            var selector = By.XPath(string.Format(NamedDropdownSelector, dropdownName));
             Driver.WaitForElementToBeDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        //Index starts from 1
+        public IWebElement GetDropdownByName(string dropdownName, int index)
+        {
+            index--;
+            var selector = By.XPath(string.Format(NamedDropdownSelector, dropdownName));
+            Driver.WaitFor(() => Driver.FindElements(selector).Count >= index);
+            Driver.WaitForElementToBeDisplayed(Driver.FindElements(selector)[index]);
             return Driver.FindElement(selector);
         }
 
