@@ -486,7 +486,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.BodyContainer.Click();
         }
 
-
         [Then(@"the Update Date options are displayed in following order:")]
         public void ThenTheUpdateDateOptionsAreDisplayedInFollowingOrder(Table table)
         {

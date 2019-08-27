@@ -297,10 +297,11 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueAndOwnerInDev
 	When User selects "Stage A" in the "Stage" dropdown for Actions
 	When User selects "Readiness Owner Task" in the "Task" dropdown for Actions
 	And User selects "Update" Update Value on Action panel
+	When User selects "Tested" Value on Action panel
 	And User selects "Tested" Value on Action panel
-	When User selects "Update" in the "Update Owner" dropdown for Actions
-	And User selects "Admin IT" Date on Action panel
-	And User selects "Maryna Kyslyak" value for "Capacity Slot" dropdown on Action panel
+	When User selects "Update" Update Owner on Action panel
+	When User selects "Admin IT" Team on Action panel
+	When User selects "Maryna Kyslyak" Owner on Action panel
 	And User clicks the "CREATE" Action button
 	#Create Action
 	When User clicks "Automations" navigation link on the Admin page
@@ -316,18 +317,18 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueAndOwnerInDev
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName                                                   |
-	| USEMEFORA2: Stage 2 \ Radiobutton Readiness Date Task        |
-	| USEMEFORA2: Stage 2 \ Radiobutton Readiness Date Task (Date) |
-	| USEMEFORA2: Stage 2 \ Radiobutton Readiness Date Task (Slot) |
-	Then "STARTED" content is displayed in "USEMEFORA2: Stage 2 \ Radiobutton Readiness Date Task" column
+	| ColumnName                                         |
+	| zDeviceAut: Stage A \ Readiness Owner Task         |
+	| zDeviceAut: Stage A \ Readiness Owner Task (Owner) |
+	| zDeviceAut: Stage A \ Readiness Owner Task (Team)  |
+	Then "TESTED" content is displayed in "zDeviceAut: Stage A \ Readiness Owner Task" column
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
-	When User removes "Distinguished Name" column by Column panel
-	When User removes "Display Name" column by Column panel
+	When User removes "Operating System" column by Column panel
+	When User removes "Owner Display Name" column by Column panel
 	When User clicks the Columns button
-	Then "15 Aug 2019" content is displayed in "USEMEFORA2: Stage 2 \ Radiobutton Readiness Date Task (Date)" column
-	Then "Radiobutton Readiness Date Slot" content is displayed in "USEMEFORA2: Stage 2 \ Radiobutton Readiness Date Task (Slot)" column
+	Then "Maryna Kyslyak" content is displayed in "zDeviceAut: Stage A \ Readiness Owner Task (Owner)" column
+	Then "Admin IT" content is displayed in "zDeviceAut: Stage A \ Readiness Owner Task (Team)" column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17678 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedAutomationForRemoveDate
