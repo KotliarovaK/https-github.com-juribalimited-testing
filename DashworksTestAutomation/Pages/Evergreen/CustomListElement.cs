@@ -70,7 +70,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public bool GetFavoriteStatus(string listName)
         {
             return Driver.IsElementDisplayed(By.XPath(
-                $".//span[@class='submenu-actions-list-name'][text()='{listName}']//ancestor::li//i[@class='material-icons mat-star']"));
+                $".//span[@class='submenu-actions-list-name'][text()='{listName}']//ancestor::li//i[@class='material-icons mat-star']"), WebDriverExtensions.WaitTime.Medium);
         }
 
         public void ClickSettingsButtonByListName(string listName)
@@ -156,7 +156,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = ".//span/div[contains(@class,'inline-tip')]")]
         public IWebElement DeleteWarning { get; set; }
-        
+
         [FindsBy(How = How.XPath, Using = ".//div[@class='menu']//li[contains(text(), 'Delete')]")]
         public IWebElement DeleteButton { get; set; }
 

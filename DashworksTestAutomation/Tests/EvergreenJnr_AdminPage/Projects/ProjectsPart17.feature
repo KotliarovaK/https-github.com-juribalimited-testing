@@ -44,18 +44,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedWhenDeleti
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12182 @DAS12999 @DAS13199 @DAS13297 @DAS12485 @DAS13803 @DAS13930 @Cleanup @Project_Creation_and_Scope @TEST
 Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCorrectlyUpdated
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "TestProject5" in the "Project Name" field
-	And User selects "All Users" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks newly created object link
+	When Project created via API and opened
+	| ProjectName  | Scope     | ProjectTemplate | Mode               |
+	| TestProject5 | All Users | None            | Standalone Project |
 	Then Project "TestProject5" is displayed to user
+	When User selects "Scope" tab on the Project details page
 	When User selects "Scope Changes" tab on the Project details page
 	And User clicks "Applications" tab in the Project Scope Changes section
 	Then "Applications to add (0 of 2081 selected)" is displayed to the user in the Project Scope Changes section
@@ -91,15 +84,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeleting
 	Then "Users" list should be displayed to the user
 	When User click on 'Username' column header
 	And User create dynamic list with "ListForProject" name on "Users" page
-	And User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "TestProject1" in the "Project Name" field
-	And User selects "ListForProject" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
+	When Project created via API and opened
+	| ProjectName  | Scope          | ProjectTemplate | Mode               |
+	| TestProject1 | ListForProject | None            | Standalone Project |
 	And User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User navigates to the "ListForProject" list
@@ -124,18 +111,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeleting
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11977 @DAS11959 @DAS12553 @DAS11744 @DAS12742 @DAS12999 @DAS13199 @DAS13254 @DAS13323 @DAS13393 @DAS13803 @DAS13973 @Cleanup @Project_Creation_and_Scope @Projects @TEST
 Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersListHas0ItemsInTheUsersTab
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "TestProject1" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
-	And User clicks the "CREATE" Action button
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks newly created object link
-	Then Project "TestProject1" is displayed to user
+	When Project created via API and opened
+	| ProjectName         | Scope       | ProjectTemplate | Mode               |
+	| TestProjectDAS11977 | All Devices | None            | Standalone Project |
+	Then Project "TestProjectDAS11977" is displayed to user
 	When User clicks "Details" tab
 	And User changes Project Name to "NewProjectName"
 	And User changes Project Short Name to "NewShort4875"
@@ -184,12 +163,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	And User removes selected item
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
-	When User enters "TestProject1" in the "Project Name" field
+	When User enters "TestProjectDAS11977" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
-	Then Project "TestProject1" is displayed to user
+	Then Project "TestProjectDAS11977" is displayed to user
 	When User clicks "Details" tab
 	And User changes Project Name to "NewProjectName"
 	And User changes Project Short Name to "NewShort4875"

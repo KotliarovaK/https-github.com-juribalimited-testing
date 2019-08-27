@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
@@ -46,6 +47,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Forms
             return DropdownOptions.Select(x => x.Text).ToList();
         }
 
+        //TODO should be moved to BasePage
         public void SelectDropdownOption(string dropdownName, string optionName)
         {
             GetDropdownByName(dropdownName).Click();
@@ -54,12 +56,20 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Forms
 
         private IWebElement GetDropdownByName(string name)
         {
-            return Driver.FindElement(By.XPath($".//span[@class='mat-form-field-label-wrapper']//label[text()='{name}']/ancestor::div/mat-select"));
+            var selector =
+                By.XPath(
+                    $".//span[@class='mat-form-field-label-wrapper']//label[text()='{name}']/ancestor::div/mat-select");
+            if (!Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Short))
+                throw new Exception($"'{name}' selectbox was not displayed");
+            return Driver.FindElement(selector);
         }
 
         private IWebElement GetDropdownItemByName(string name)
         {
-            return Driver.FindElement(By.XPath($".//mat-option/span[text()='{name}']"));
+            var selector = By.XPath($".//mat-option/span[text()='{name}']");
+            if (!Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Short))
+                throw new Exception($"'{name}' item was not displayed in selectobox");
+            return Driver.FindElement(selector);
         }
     }
 }

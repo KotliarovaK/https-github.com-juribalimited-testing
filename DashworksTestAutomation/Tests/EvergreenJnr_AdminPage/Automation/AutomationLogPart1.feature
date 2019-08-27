@@ -1,11 +1,11 @@
-﻿Feature: AutomationsLogPage
+﻿Feature: AutomationsLogPart1
 	Runs Automation Log Page related tests
 
 Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_AdminPage @AutomationLog @Automations @DAS16890 @DAS17063 @DAS17364 @DAS17402 @DAS17425 @Cleanup @Not_Ready
+@Evergreen @EvergreenJnr_AdminPage @AutomationLog @Automations @DAS16890 @DAS17063 @DAS17364 @DAS17402 @DAS17425 @DAS17774 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckAutomationsLogGridForRunningAutomationWithDeletedProject
 	When Project created via API and opened
 	| ProjectName  | Scope       | ProjectTemplate | Mode               |
@@ -13,9 +13,11 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsLogGridForRunningAutomationWith
 	And User clicks Admin on the left-hand menu
 	When User creates new Automation via API
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| 16890_Automation | 16890       | false  | false              | All Devices | Manual |
+	| 16890_Automation | 16890       | true   | false              | All Devices | Manual |
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
+	When User clicks Export button on the Admin page
+	Then User checks that file "Dashworks export" was downloaded
 	When User enters "16890_Automation" text in the Search field for "Automation" column
 	When User click content from "Automation" column
 	When User clicks "Actions" tab
@@ -47,21 +49,22 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsLogGridForRunningAutomationWith
 	When User selects "Automation Log" tab on the Project details page
 	When User clicks refresh button in the browser
 	When User clicks String Filter button for "Action" column on the Admin page
-	When User selects "(Blanks)" checkbox from String Filter with item list on the Admin page
-	When User clicks String Filter button for "Action" column on the Admin page
-	When User selects "New_Action" checkbox from String Filter with item list on the Admin page
-	Then "PROJECT DOES NOT EXIST" content is displayed for "Outcome" column
-	When User clicks String Filter button for "Action" column on the Admin page
-	When User selects "16890_Action" checkbox from String Filter with item list on the Admin page
+	When User selects "Select All" checkbox from String Filter with item list on the Admin page
 	When User clicks String Filter button for "Action" column on the Admin page
 	When User selects "New_Action" checkbox from String Filter with item list on the Admin page
 	Then "SUCCESS" content is displayed for "Outcome" column
-	Then some data is displayed in the "Objects" column
-	When User clicks Reset Filters button on the Admin page
-	When User enters "16890_Automation" text in the Search field for "Automation" column
-	Then "ONE OR MORE ACTIONS FAILED" content is displayed for "Outcome" column
+	When User clicks String Filter button for "Outcome" column on the Admin page
+	When User selects "Select All" checkbox from String Filter with item list on the Admin page
+	When User clicks String Filter button for "Outcome" column on the Admin page
+	When User selects "PROJECT DOES NOT EXIST" checkbox from String Filter with item list on the Admin page
+	Then "16890_Action" content is displayed for "Action" column
+	When User clicks String Filter button for "Outcome" column on the Admin page
+	When User selects "PROJECT DOES NOT EXIST" checkbox from String Filter with item list on the Admin page
+	When User clicks String Filter button for "Outcome" column on the Admin page
+	When User selects "ONE OR MORE ACTIONS FAILED" checkbox from String Filter with item list on the Admin page
+	Then "16890_Automation" content is displayed for "Automation" column
 
-@Evergreen @EvergreenJnr_AdminPage @AutomationLog @Automations @DAS17104 @DAS17110 @DAS17169 @Cleanup @Not_Ready
+@Evergreen @EvergreenJnr_AdminPage @AutomationLog @Automations @DAS17104 @DAS17110 @DAS17169 @DAS17774 @Cleanup @Not_Ready
 #Use Inactive automation
 Scenario: EvergreenJnr_AdminPage_CheckThatInactiveAutomationShouldBeLoggedButNotRun
 	When User clicks Admin on the left-hand menu
@@ -79,6 +82,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatInactiveAutomationShouldBeLoggedButNot
 	When User clicks "RUN" button in the warning message on Admin page
 	Then Success message is displayed and contains "1 automation started," text
 	When User selects "Automation Log" tab on the Project details page
+	When User clicks Group By button on the Admin page and selects "Automation" value
+	Then Cog menu is not displayed on the Admin page
+	Then Grid is grouped
+	When User clicks Group By button on the Admin page and selects "Automation" value
 	Then Date column shows Date and Time values
 	When User enters "17104_Automation" text in the Search field for "Automation" column
 	Then "INACTIVE AUTOMATION" content is displayed for "Outcome" column
@@ -205,7 +212,7 @@ Scenario: EvergreenJnr_AdminPage_CheckBrokenListValidationWhenRunningAnAutomatio
 	When User enters "17011_Automation" text in the Search field for "Automation" column
 	Then "LIST HAS ERRORS" content is displayed for "Outcome" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AutomationLog @Automations @DAS17212 @Not_Ready 
+@Evergreen @Admin @EvergreenJnr_AdminPage @AutomationLog @Automations @DAS17212 @Not_Ready
 Scenario Outline: EvergreenJnr_AdminPage_CheckSuccessfulRunningAutomationWithMainListsInTheScope
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -238,75 +245,47 @@ Examples:
 	| 17212_Applications | All Applications |
 	| 17212_Mailboxes    | All Mailboxes    |
 
-@Evergreen @EvergreenJnr_AdminPage @AutomationLog @Automations @DAS17247 @Cleanup @Not_Ready
-Scenario: EvergreenJnr_AdminPage_CheckAutomationLogMessageForDeletedTaskInAction
-	#Pre-requisites:
-	When Project created via API and opened
-	| ProjectName  | Scope       | ProjectTemplate | Mode               |
-	| 17247Project | All Devices | None            | Standalone Project |
-	When User clicks "Projects" on the left-hand menu
-	Then "Projects Home" page is displayed to the user
-	When User navigate to "17247Project" Project
-	Then "Manage Project Details" page is displayed to the user
-	When User navigate to "Stages" tab
-	Then "Manage Stages" page is displayed to the user
-	When User clicks "Create Stage" button
-	And User create Stage
-	| StageName |
-	| Test      |
-	And User clicks "Create Stage" button
-	And User navigate to "Tasks" tab
-	Then "Manage Tasks" page is displayed to the user
-	When User clicks "Create Task" button
-	And User creates Task
-	| Name          | Help  | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString | ApplyToAllCheckbox |
-	| DAS17247_Task | 17247 | Test             | Normal         | Radiobutton     | Computer         |                          | false              |
-	Then Success message is displayed with "Task successfully created" text
-	When User updates the Task page
-	| TaskHaADueDate | DateModeString | TaskProjectRoleString | TaskHasAnOwner | TaskImpactsReadiness | ShowDetails | ProjectObject | BulkUpdate | SelfService |
-	| true           | DateOnly       | None                  | false          | true                 | false       | false         | false      | false       |
-	When User publishes the task
-	Then selected task was published
-	When User navigate to Evergreen link
-	#Pre-requisites:
-	And User clicks "Admin" on the left-hand menu
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17774 @Not_Ready
+#Run steps after fixing Boolean sorting
+Scenario: EvergreenJnr_AdminPage_CheckSortingAutomationsLogGrid
+	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
-	When User clicks the "CREATE AUTOMATION" Action button
-	Then Create Automation page is displayed to the User
-	When User type "17247_Automation" Name in the "Automation Name" field on the Automation details page
-	When User type "17247" Name in the "Description" field on the Automation details page
-	When User selects "All Devices" in the Scope Automation dropdown
-	When User selects "Manual" in the "Run" dropdown
-	When User selects "Active" checkbox on the Automation Page
-	And User clicks the "CREATE" Action button
-	#Create Action
-	When User type "17247_Action" Name in the "Action Name" field on the Automation details page
-	When User selects "Update task value" in the "Action Type" dropdown
-	When User selects "17247Project" in the Project dropdown
-	When User selects "Test" in the "Stage" dropdown for Actions
-	When User selects "DAS17247_Task" in the "Task" dropdown for Actions
-	When User selects "Update" Update Value on Action panel
-	When User selects "Not Applicable" Value on Action panel
-	And User selects "Update" Update Date on Action panel
-	And User selects "7 Aug 2019" Date on Action panel
-	And User clicks the "CREATE" Action button
-	#Delete Task
-	When User clicks "Projects" on the left-hand menu
-	Then "Projects Home" page is displayed to the user
-	When User navigate to "17247Project" Project
-	When User navigate to "Tasks" tab
-	And User removes "DAS17247_Task" Task
-	#Run Automation
-	When User navigate to Evergreen link
-	And User clicks "Admin" on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Automations" link on the Admin page
-	When User enters "17247_Automation" text in the Search field for "Automation" column
-	When User clicks "Run now" option in Cog-menu for "17247_Automation" item on Admin page
 	When User selects "Automation Log" tab on the Project details page
-	When User enters "17247_Automation" text in the Search field for "Automation" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
-	Then "TASK DOES NOT EXIST" content is displayed for "Outcome" column
+	When User click on 'Date' column header
+	Then date in table is sorted by "Date" column in descending order on the Admin page
+	When User click on 'Date' column header
+	Then date in table is sorted by "Date" column in ascending order on the Admin page
+	When User click on 'Type' column header
+	Then data in table is sorted by "Type" column in ascending order on the Admin page
+	When User click on 'Type' column header
+	Then data in table is sorted by "Type" column in descending order on the Admin page
+	When User click on 'Automation' column header
+	Then data in table is sorted by "Automation" column in ascending order on the Admin page
+	When User click on 'Automation' column header
+	Then data in table is sorted by "Automation" column in descending order on the Admin page
+	When User click on 'Action' column header
+	Then data in table is sorted by "Action" column in ascending order on the Admin page
+	When User click on 'Action' column header
+	Then data in table is sorted by "Action" column in descending order on the Admin page
+	When User click on 'Run' column header
+	Then data in table is sorted by "Run" column in ascending order on the Admin page
+	When User click on 'Run' column header
+	Then data in table is sorted by "Run" column in descending order on the Admin page
+	When User click on 'Objects' column header
+	Then numeric data in table is sorted by "Objects" column in descending order on the Admin page
+	When User click on 'Objects' column header
+	Then numeric data in table is sorted by "Objects" column in ascending order on the Admin page
+	When User click on 'Duration (hh:mm:ss)' column header
+	Then data in table is sorted by "Duration (hh:mm:ss)" column in ascending order on the Admin page
+	When User click on 'Duration (hh:mm:ss)' column header
+	Then data in table is sorted by "Duration (hh:mm:ss)" column in descending order on the Admin page
+	When User click on 'User' column header
+	Then data in table is sorted by "User" column in ascending order on the Admin page
+	When User click on 'User' column header
+	Then data in table is sorted by "User" column in descending order on the Admin page
+	When User click on 'Outcome' column header
+	Then Boolean data in table is sorted by "Outcome" column in ascending order on the Admin page
+	When User click on 'Outcome' column header
+	Then Boolean data in table is sorted by "Outcome" column in descending order on the Admin page

@@ -5,13 +5,10 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @Actions @DAS15427 @DAS15832 @DAS15833 @DAS17276 @DAS17625 @Not_Ready
-#Change value after gold data complete added
-#Selected automation should have at least three actions
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @Actions @DAS15427 @DAS15832 @DAS15833 @DAS17276 @DAS17625 @DAS17774 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptions
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
-	#Delete Creating Automation after gold data complete
 	When User creates new Automation via API
 	| AutomationName        | Description | Active | StopOnFailedAction | Scope       | Run    |
 	| Test_Automation_15427 | 15427       | true   | false              | All Devices | Manual |
@@ -19,6 +16,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptio
 	Then "Automations" page should be displayed to the user
 	When User enters "Test_Automation_15427" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
+	Then Edit Automation page is displayed to the User
 	When User clicks "Actions" tab
 	#Action 1
 	When User clicks the "CREATE ACTION" Action button
@@ -27,9 +25,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptio
 	When User selects "Update path" in the "Action Type" dropdown
 	When User selects "1803 Rollout" in the Project dropdown
 	When User selects "Undetermined" in the "Path" dropdown for Actions
-	When User clicks the "CREATE" Action button
 	#Action 2
-	When User clicks the "CREATE ACTION" Action button
+	When User clicks the "SAVE AND CREATE ANOTHER" Action button
+	Then Success message is displayed and contains "The automation action has been created" text
 	When User type "15427_Action2" Name in the "Action Name" field on the Automation details page
 	When User selects "Update path" in the "Action Type" dropdown
 	When User selects "1803 Rollout" in the Project dropdown
@@ -43,6 +41,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptio
 	When User selects "1803 Rollout" in the Project dropdown
 	When User selects "Undetermined" in the "Path" dropdown for Actions
 	When User clicks the "CREATE" Action button
+	When User clicks Group By button on the Admin page and selects "Type" value
+	Then Cog menu is not displayed on the Admin page
+	Then Grid is grouped
+	When User clicks Group By button on the Admin page and selects "Type" value
 	When User clicks Cog-menu for "15427_Action1" item on Admin page
 	Then User sees following cog-menu items on Admin page:
 	| items            |
@@ -75,21 +77,16 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptio
 	Then "CANCEL" Action button is displayed
 	Then "Test_Automation_15427" object name is displayed to the User
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15427 @DAS15428 @DAS16728 @DAS16976 @DAS17067 @DAS16890 @DAS17594 @Not_Ready
-#Change value after gold data complete added
-#Selected automation should have at least three actions
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15427 @DAS15428 @DAS16728 @DAS16976 @DAS17067 @DAS16890 @DAS17594 @DAS17774 @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectlyForAutomations
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
-	When User creates new Automation via API
-	| AutomationName        | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| Test_Automation_15427 | 15427       | true   | false              | All Devices | Manual |
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
-	When User enters "Test_Automation_15427" text in the Search field for "Automation" column
+	When User enters "Devices_Scope" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
 	When User clicks "Actions" tab
-	#Action 1
+	#Create Action
 	When User clicks the "CREATE ACTION" Action button
 	Then Create Action page is displayed to the User
 	When User type "DAS15427_Action" Name in the "Action Name" field on the Automation details page
@@ -99,58 +96,50 @@ Scenario: EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectlyForAutomations
 	Then "Undetermined" content is displayed in the Path Automation dropdown
 	When User clicks the "CREATE" Action button
 	Then There are no errors in the browser console
-	#Action 2
-	When User clicks the "CREATE ACTION" Action button
-	When User type "DAS15427_Action_1" Name in the "Action Name" field on the Automation details page
-	When User selects "Update path" in the "Action Type" dropdown
-	When User selects "1803 Rollout" in the Project dropdown
-	When User selects "Undetermined" in the "Path" dropdown for Actions
-	Then "Undetermined" content is displayed in the Path Automation dropdown
-	When User clicks the "CREATE" Action button
-	#Action 3
-	When User clicks the "CREATE ACTION" Action button
-	When User type "DAS15427_Action_2" Name in the "Action Name" field on the Automation details page
-	When User selects "Update path" in the "Action Type" dropdown
-	When User selects "1803 Rollout" in the Project dropdown
-	When User selects "Undetermined" in the "Path" dropdown for Actions
-	Then "Undetermined" content is displayed in the Path Automation dropdown
-	When User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The automation action has been created" text
-	When User clicks "Move to top" option in Cog-menu for "DAS15427_Action_2" item on Admin page
+	When User clicks Export button on the Admin page
+	Then User checks that file "Dashworks export" was downloaded
+	#Create Action
+	When User clicks "Move to top" option in Cog-menu for "Secont_Action" item on Admin page
 	Then "Action" column content is displayed in the following order:
-	| Items             |
-	| DAS15427_Action_2 |
-	| DAS15427_Action   |
-	| DAS15427_Action_1 |
-	When User clicks "Move to bottom" option in Cog-menu for "DAS15427_Action_2" item on Admin page
+	| Items           |
+	| Secont_Action   |
+	| First_Action    |
+	| Third_Action    |
+	| DAS15427_Action |
+	When User clicks "Move to bottom" option in Cog-menu for "First_Action" item on Admin page
 	Then "Action" column content is displayed in the following order:
-	| Items             |
-	| DAS15427_Action   |
-	| DAS15427_Action_1 |
-	| DAS15427_Action_2 |
+	| Items           |
+	| Secont_Action   |
+	| Third_Action    |
+	| DAS15427_Action |
+	| First_Action    |
 	When User have opened column settings for "Action" column
 	And User clicks Column button on the Column Settings panel
 	And User select "Processing order" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
 	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
-	When User move "DAS15427_Action_2" item to "7" position on Admin page
+	When User move "Secont_Action" item to "4" position on Admin page
 	Then "Action" column content is displayed in the following order:
-	| Items             |
-	| DAS15427_Action   |
-	| DAS15427_Action_1 |
-	| DAS15427_Action_2 |
-	When User move "DAS15427_Action_2" item to "1" position on Admin page
+	| Items           |
+	| Third_Action    |
+	| DAS15427_Action |
+	| First_Action    |
+	| Secont_Action   |
+	When User move "Secont_Action" item to "1" position on Admin page
 	Then "Action" column content is displayed in the following order:
-	| Items             |
-	| DAS15427_Action_2 |
-	| DAS15427_Action   |
-	| DAS15427_Action_1 |
-	When User move "DAS15427_Action_2" item to "20" position on Admin page
+	| Items           |
+	| Secont_Action   |
+	| Third_Action    |
+	| DAS15427_Action |
+	| First_Action    |
+	When User move "Secont_Action" item to "20" position on Admin page
 	Then "Action" column content is displayed in the following order:
-	| Items             |
-	| DAS15427_Action   |
-	| DAS15427_Action_1 |
-	| DAS15427_Action_2 |
+	| Items           |
+	| Third_Action    |
+	| DAS15427_Action |
+	| First_Action    |
+	| Secont_Action   |
 	When User have opened column settings for "Action" column
 	When User clicks Column button on the Column Settings panel
 	And User select "Processing order" checkbox on the Column Settings panel

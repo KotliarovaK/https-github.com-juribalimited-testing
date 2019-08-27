@@ -29,14 +29,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         public void WhenUserClicksOnNavigationLink(string linkName)
         {
             var detailsPage = _driver.NowAt<NavigationPage>();
-            detailsPage.GetNavigationLinkByName(linkName).Click();
+            _driver.ExecuteAction(() => detailsPage.GetNavigationLinkByName(linkName).Click());
         }
 
         [When(@"User navigates to the ""(.*)"" main-menu on the Details page")]
         public void WhenUserNavigatesToTheMain_MenuOnTheDetailsPage(string tabMenuName)
         {
             var detailsPage = _driver.NowAt<NavigationPage>();
-            detailsPage.GetTabMenuByName(tabMenuName).Click();
+            _driver.ExecuteAction(() => detailsPage.GetTabMenuByName(tabMenuName).Click());
         }
 
         [Then(@"Loading indicator appears in the same place when switching between main-menu")]
@@ -52,11 +52,11 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             Utils.Verify.That(loader.First(), Is.EqualTo(loader.Last()), "Wrong point loading position");
         }
 
-       [When(@"User navigates to the ""(.*)"" sub-menu on the Details page")]
+        [When(@"User navigates to the ""(.*)"" sub-menu on the Details page")]
         public void WhenUserNavigatesToTheSub_MenuOnTheDetailsPage(string subMenuName)
         {
             var detailsPage = _driver.NowAt<NavigationPage>();
-            detailsPage.ClickSubMenuByName(subMenuName);
+            _driver.ExecuteAction(() => detailsPage.GetSubMenuByName(subMenuName).Click());
         }
 
         [Then(@"""(.*)"" tab-menu on the Admin page is expanded")]
@@ -92,32 +92,36 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         public void ThenTabIsDisplayedOnLeftMenuOnTheDetailsPageWithCountOfItems(string tabName, string countOfItems)
         {
             var detailsPage = _driver.NowAt<NavigationPage>();
-            Utils.Verify.IsTrue(detailsPage.GetDisplayStatusOfTabWithCountOfItemsByName(tabName, countOfItems), $"{tabName} tab is displayed incorrectly!");
+            Verify.IsTrue(detailsPage.GetDisplayStatusOfTabWithCountOfItemsByName(tabName, countOfItems), $"{tabName} tab is displayed incorrectly!");
         }
 
         [Then(@"""(.*)"" tab is displayed on left menu on the Details page and contains count of items")]
         public void ThenTabIsDisplayedOnLeftMenuOnTheDetailsPageAndContainsCountOfItems(string tabName)
         {
             var detailsPage = _driver.NowAt<NavigationPage>();
-            Utils.Verify.IsTrue(detailsPage.GetCountOfItemsDisplayStatusByTabName(tabName), $"Tab {tabName} must contain the number of elements!");
+            Verify.IsTrue(detailsPage.GetCountOfItemsDisplayStatusByTabName(tabName), $"Tab {tabName} must contain the number of elements!");
         }
 
         [Then(@"""(.*)"" tab is displayed on left menu on the Details page and contains '(.*)' count of items")]
         public void ThenTabIsDisplayedOnLeftMenuOnTheDetailsPageAndContainsCountOfItems(string tabName, int count)
         {
             var detailsPage = _driver.NowAt<NavigationPage>();
-            Verify.AreEqual(detailsPage.GetCountOfItemsByTabName(tabName), count, $"Incorrect count for '{tabName}' tab");
+            //Try to check content several times because it is updating not immediately
+            if (count != detailsPage.GetCountOfItemsByTabName(tabName))
+                //JS update count every 3 seconds
+                Thread.Sleep(3000);
+            Verify.AreEqual(count, detailsPage.GetCountOfItemsByTabName(tabName), $"Incorrect count for '{tabName}' tab");
         }
 
         [Then(@"""(.*)"" tab is displayed on left menu on the Details page and NOT contains count of items")]
         public void ThenTabIsDisplayedOnLeftMenuOnTheDetailsPageAndNotContainsCountOfItems(string tabName)
         {
             var detailsPage = _driver.NowAt<NavigationPage>();
-            Utils.Verify.IsFalse(detailsPage.GetCountOfItemsDisplayStatusByTabName(tabName), $"Tab {tabName} must contain the number of elements!");
+            Verify.IsFalse(detailsPage.GetCountOfItemsDisplayStatusByTabName(tabName), $"Tab {tabName} must contain the number of elements!");
         }
 
         [Then(@"""(.*)"" sub-tab is displayed with disabled state on left menu on the Details page")]
-        public void ThenSub_TabIsDisplayedWithDisabledStateOnLeftMenuOnTheDetailsPage (string tabName)
+        public void ThenSub_TabIsDisplayedWithDisabledStateOnLeftMenuOnTheDetailsPage(string tabName)
         {
             _driver.WaitForDataLoading();
             var detailsPage = _driver.NowAt<NavigationPage>();
@@ -148,10 +152,10 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             var detailsPage = _driver.NowAt<NavigationPage>();
 
             //opens main-menu 
-            detailsPage.GetTabMenuByName(tabMenuName).Click();
+            _driver.ExecuteAction(() => detailsPage.GetTabMenuByName(tabMenuName).Click());
             _driver.WaitForDataLoading();
             foreach (var row in table.Rows)
-                Utils.Verify.IsTrue(detailsPage.GetDisplayStatusSubTabByName(row["SubTabName"]), $"'{row["SubTabName"]}' tab is not displayed!");
+                Verify.IsTrue(detailsPage.GetDisplayStatusSubTabByName(row["SubTabName"]), $"'{row["SubTabName"]}' tab is not displayed!");
         }
 
         [Then(@"""(.*)"" main-menu on the Details page contains following sub-menu with count of items:")]
@@ -159,13 +163,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         {
             var detailsPage = _driver.NowAt<NavigationPage>();
 
-            detailsPage.GetTabMenuByName(tabMenuName).Click();
+            _driver.ExecuteAction(() => detailsPage.GetTabMenuByName(tabMenuName).Click());
             foreach (var row in table.Rows)
             {
                 if (!string.IsNullOrEmpty(row["CountOfItems"]))
-                    Utils.Verify.IsTrue(detailsPage.GetDisplayStatusOfTabWithCountOfItemsByName(row["SubTabName"], row["CountOfItems"]), "Some subcategory is not displayed correctly!");
+                    Verify.IsTrue(detailsPage.GetDisplayStatusOfTabWithCountOfItemsByName(row["SubTabName"], row["CountOfItems"]), "Some subcategory is not displayed correctly!");
                 else
-                    Utils.Verify.IsTrue(detailsPage.GetTabByName(row["SubTabName"]), "Subcategory is not displayed correctly!");
+                    Verify.IsTrue(detailsPage.GetTabByName(row["SubTabName"]), "Subcategory is not displayed correctly!");
             }
         }
     }

@@ -71,7 +71,7 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.Automations
 
                 return DatabaseHelper
                     .ExecuteReader(
-                        $"select[ObjectTypeId] from[DesktopBI].[dbo].[EvergreenList] where[ListId] = '{this.AutomationListName}'",
+                        $"select[ObjectTypeId] from[DesktopBI].[dbo].[EvergreenList] where[ListId] = '{this.ListId}'",
                         0).LastOrDefault();
             }
             catch (Exception e)

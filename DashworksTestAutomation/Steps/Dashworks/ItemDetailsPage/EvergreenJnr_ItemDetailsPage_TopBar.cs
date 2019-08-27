@@ -55,7 +55,10 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             var action = _driver.NowAt<BaseDashboardPage>();
             action.GetOptionByName(projectName).Click();
 
-            _driver.WaitFor(()=>topBar.ProjectsOnSwitcherPanel.Count==0);
+            _driver.WaitFor(() => topBar.ProjectsOnSwitcherPanel.Count == 0);
+
+            _driver.WaitForDataLoadingInActionsPanel();
+            _driver.WaitForDataLoadingInTopBarOnItemDetailsPage();
         }
 
         [Then(@"""(.*)"" project is selected in the Top bar on Item details page")]
@@ -91,6 +94,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         public void ThenFollowingComplianceItemsAreDisplayedInTopBarOnTheItemDetailsPage(Table table)
         {
             var topBar = _driver.NowAt<ItemDetails_TopBarPage>();
+            _driver.WaitForDataLoadingInTopBarOnItemDetailsPage();
 
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var actualList = topBar.GetComplianceItemsOnTopBar();

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
@@ -54,7 +55,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='mat-select-value']//span/span")]
         public IWebElement ScopeListDropdownValue { get; set; }
-        
+
         [FindsBy(How = How.XPath, Using = "//div[@class='mat-form-field-infix']/mat-select[@aria-disabled='true']")]
         public IWebElement DisabledScopeListDropdown { get; set; }
 
@@ -254,12 +255,14 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public void RemovePermissionsByName(string permissions)
         {
-            var tab = Driver.FindElement(
+            var element = Driver.FindElement(
                 By.XPath($".//li//span[text()='{permissions}']//following-sibling::button"));
-            tab.Click();
+            Driver.WhatForElementToBeExists(element);
+            element.Click();
             Driver.WaitForDataLoading();
         }
 
+        //TODO should be moved to BasePage
         public void SelectCheckboxByName(string checkboxName)
         {
             var tab = Driver.FindElement(
@@ -269,9 +272,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public void SelectPermissionsByName(string permissions)
         {
-            var tab = Driver.FindElement(
+            var element = Driver.FindElement(
                 By.XPath($".//mat-option/span[text()='{permissions}']"));
-            tab.Click();
+            Driver.WhatForElementToBeExists(element);
+            Driver.MouseHover(element);
+            element.Click();
         }
 
         public bool PermissionsDisplay(string permissions)
@@ -285,6 +290,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
                 $".//mat-checkbox[contains(@class, 'checkbox-checked')]/label/span[contains(text(), '{checkboxes}')]"));
         }
 
+        //TODO this method should be removed, replaced by generic web element
         public bool ActiveProjectByName(string projectName)
         {
             return Driver.IsElementDisplayed(By.XPath($".//h1[text()='{projectName}']"));
@@ -347,6 +353,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public IWebElement SelectPathByName(string pathName)
         {
             var requestTypeSelector = $".//mat-option/span[contains(text(), '{pathName}')]";
+            if (!Driver.IsElementDisplayed(By.XPath(requestTypeSelector), WebDriverExtensions.WaitTime.Medium))
+                throw new Exception($"'{pathName}' path is not present in the selectbox");
             return Driver.FindElement(By.XPath(requestTypeSelector));
         }
 
@@ -365,6 +373,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public IWebElement SelectCategoryByName(string categoryName)
         {
             var categorySelector = $".//mat-option/span[contains(text(), '{categoryName}')]";
+            if (!Driver.IsElementDisplayed(By.XPath(categorySelector), WebDriverExtensions.WaitTime.Medium))
+                throw new Exception($"'{categoryName}' category was not displayed in the selectbox");
             return Driver.FindElement(By.XPath(categorySelector));
         }
 

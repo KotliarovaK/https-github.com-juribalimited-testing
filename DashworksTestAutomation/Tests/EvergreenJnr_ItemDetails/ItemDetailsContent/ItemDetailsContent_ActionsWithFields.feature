@@ -329,16 +329,17 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCommonNameFieldIsDisplayedInTheCompu
 	Then "00OMQQXWA1DRI6" content is displayed in "Common Name" field on Item Details page
 
 	#Ann.Ilchenko 8/15/19: will be ready on 'quasar'
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16859 @DAS17645 @DAS17785 @Not_Ready
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16859 @DAS17645 @DAS17785 @DAS17809 @Not_Ready
 Scenario: EvergreenJnr_DevicesList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForDeviceObjects
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User perform search by "001BAQXT6JWFPI"
 	And User click content from "Hostname" column
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	When User navigates to the "Projects" main-menu on the Details page
 	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
-	And User navigates to the "Projects" main-menu on the Details page
-	And User navigates to the "Project Details" sub-menu on the Details page
+	Then "Windows 7 Migration (Computer Scheduled Project)" project is selected in the Top bar on Item details page
+	When User navigates to the "Project Details" sub-menu on the Details page
 	Then following fields are displayed in the open section:
 	| Fields           |
 	| Object ID        |
@@ -354,7 +355,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatProjectDetailsDefaultViewIsDisplayed
 	| Tags             |
 
 	#Ann.Ilchenko 8/15/19: will be ready on 'quasar'
-@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16858 @DAS17160 @DAS17325 @DAS17645 @Not_Ready
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16858 @DAS17160 @DAS17325 @DAS17645 @DAS17809 @Not_Ready
 Scenario: EvergreenJnr_UsersList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForUserObjects
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -380,7 +381,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatProjectDetailsDefaultViewIsDisplayedCo
 	| Tags             |
 
 	#Ann.Ilchenko 8/15/19: will be ready on 'quasar'
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16861 @DAS17158 @DAS17239 @DAS17645 @Not_Ready
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16861 @DAS17158 @DAS17239 @DAS17645 @DAS17809 @Not_Ready
 Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForApplicationObjects
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -406,7 +407,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectDetailsDefaultViewIsDisp
 	| Tags                |
 
 	#Ann.Ilchenko 8/15/19: will be ready on 'quasar'
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16957 @DAS17645 @DAS17785 @Not_Ready
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16957 @DAS17645 @DAS17785 @DAS17809 @Not_Ready
 Scenario: EvergreenJnr_MailboxesList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForMailboxObjects
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -431,6 +432,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatProjectDetailsDefaultViewIsDisplay
 	| Language         |
 	| Tags             |
 
+	#TODO: Remind Illia about language that needs to add for gold data 8/20/19
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17007 @DAS17768 @DAS17768
 Scenario: EvergreenJnr_AllLists_CheckThatSelfServiceUrlIsNotDisplayedOnObjectDetailsPageEvenWhenItsDisabledInProjectManagement
 	When User clicks "Devices" on the left-hand menu
@@ -451,9 +453,10 @@ Scenario: EvergreenJnr_AllLists_CheckThatSelfServiceUrlIsNotDisplayedOnObjectDet
 	And User navigates to the "Projects" main-menu on the Details page
 	And User navigates to the "Project Details" sub-menu on the Details page
 	Then field with "Self Service URL" text is displayed in expanded tab on the Details Page
-	Then following content is displayed on the Details Page
-	| Title    | Value   |
-	| Language | English |
+		#Ann.Ilchenko 8/16/19: Artem asked to wait with this check.
+	#Then following content is displayed on the Details Page
+	#| Title    | Value   |
+	#| Language | English |
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11510
 Scenario: EvergreenJnr_DevicesList_CheckThatLastLogoffDateFieldIsNotDisplayedAtTheDeviceOwnerBlockOfDeviceDetails
@@ -465,3 +468,23 @@ Scenario: EvergreenJnr_DevicesList_CheckThatLastLogoffDateFieldIsNotDisplayedAtT
 	When User navigates to the "Details" main-menu on the Details page
 	And User navigates to the "Device Owner" sub-menu on the Details page
 	Then field with "Last Logoff Date" text is not displayed in expanded tab on the Details Page
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17735
+Scenario: EvergreenJnr_DevicesList_CheckThatErrorsANotAppearInConsoleWhenNavigatingToTheMaterialTableOnObjectDetails
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "001BAQXT6JWFPI"
+	And User click content from "Hostname" column
+	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	When User switches to the "Devices Evergreen Capacity Project" project in the Top bar on Item details page
+	And User navigates to the "Details" main-menu on the Details page
+	And User navigates to the "Device" sub-menu on the Details page
+	Then following fields are displayed in the open section:
+	| Fields                    |
+	| Key                       |
+	| Hostname                  |
+	| Source                    |
+	| Source Type               |
+	| Inventory Site            |
+	| Dashworks First Seen Date |
+	Then There are no errors in the browser console

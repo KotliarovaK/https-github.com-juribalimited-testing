@@ -193,6 +193,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.ExpandGroupedRowByContent(groupedBy);
         }
 
+        [Then(@"Grid is grouped")]
+        public void ThenGridIsGrouped()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Verify.IsTrue(page.IsGridGrouped(), "Grid is not grouped");
+        }
+
         [Then(@"Grid is not grouped")]
         public void ThenGridIsNotGrouped()
         {

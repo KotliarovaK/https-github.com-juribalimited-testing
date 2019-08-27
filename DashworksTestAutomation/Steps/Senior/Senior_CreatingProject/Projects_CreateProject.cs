@@ -154,7 +154,7 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
             _driver.WaitForDataLoading();
             _driver.WaitForElementToBeDisplayed(page.SuccessMessage);
-            Utils.Verify.IsTrue(page.SuccessMessage.Displayed(), "Success Message is not displayed");
+            Verify.IsTrue(page.SuccessMessage.Displayed(), "Success Message is not displayed");
         }
 
         [Then(@"Error message is not displayed")]
