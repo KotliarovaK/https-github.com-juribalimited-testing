@@ -88,8 +88,7 @@ Scenario: EvergreenJnr_UsersLists_CheckThatSeverityAggregateFunctionAvailableFor
 	Then Filters panel is displayed to the user
 	When user select "Country" filter
 	When User select "Equals" Operator value
-	#Change Sctoland to Scotland
-	When User enters "Sctoland" text in Search field at selected Lookup Filter
+	When User enters "Scotland" text in Search field at selected Lookup Filter
 	When User clicks checkbox at selected Lookup Filter
 	When User clicks Save filter button
 	When User clicks the Pivot button
@@ -97,7 +96,7 @@ Scenario: EvergreenJnr_UsersLists_CheckThatSeverityAggregateFunctionAvailableFor
 	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
 	When User expanded "Exchange Tower" left-pinned value on Pivot
-	Then following values are displayed for "Sctoland" column on Pivot
+	Then following values are displayed for "Scotland" column on Pivot
 	| Value1         | Value2  |
 	| Exchange Tower | UNKNOWN |
 	| 2              | RED     |

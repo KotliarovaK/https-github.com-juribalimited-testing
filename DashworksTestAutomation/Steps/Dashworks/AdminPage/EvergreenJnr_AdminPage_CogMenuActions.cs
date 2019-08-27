@@ -65,7 +65,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             cogMenu.GetCogMenuByItem(itemName).Click();
             _driver.WaitForElementToBeDisplayed(cogMenu.CogMenuDropdown);
             cogMenu.GetCogmenuOptionByName(option).Click();
-            Thread.Sleep(1000);
+            Thread.Sleep(500);
+            _driver.WaitForDataLoading(60);
         }
 
         [When(@"User move ""(.*)"" item to ""(.*)"" position on Admin page")]

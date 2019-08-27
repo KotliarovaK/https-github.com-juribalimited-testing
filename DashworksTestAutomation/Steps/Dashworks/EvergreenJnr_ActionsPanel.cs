@@ -232,6 +232,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             action.AlsoMoveMailboxesField.Click();
+            _driver.WaitForElementsToBeDisplayed(action.OptionListOnActionsPanel);
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var actualList = action.OptionListOnActionsPanel.Select(value => value.Text).ToList();
             Utils.Verify.AreEqual(expectedList, actualList, "Move Mailboxes lists are different");
@@ -460,6 +461,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectsDateOnActionPanel(string dateValue)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
+            _driver.MoveToElement(action.DateField);
             action.DateField.Click();
             action.DateField.Clear();
             action.DateField.SendKeys(dateValue);
@@ -591,6 +593,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             action.UpdateValueDropdown.Click();
+            _driver.WaitForElementsToBeDisplayed(action.OptionsDll);
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var actualList = action.OptionsDll.Select(value => value.Text).ToList();
             Utils.Verify.AreEqual(expectedList, actualList, "Project list are different");

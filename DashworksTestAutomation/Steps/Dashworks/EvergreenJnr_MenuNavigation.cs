@@ -146,7 +146,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User clicks Admin on the left-hand menu")]
         public void WhenUserClicksAdminOnTheLeft_HandMenu()
         {
-            var menu =_driver.NowAt<LeftHandMenuElement>();
+            var menu = _driver.NowAt<LeftHandMenuElement>();
             menu.Admin.Click();
         }
 
@@ -154,15 +154,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenAdminPageShouldBeDisplayedToTheUser()
         {
             var page = _driver.NowAt<AdminLeftHandMenu>();
-            Utils.Verify.IsTrue(page.AdminSubMenu.Displayed(), "Admin page was not displayed");
-            Logger.Write("Admin page is visible");
+            Verify.IsTrue(_driver.IsElementExists(page.AdminSubMenu), "Admin page was not displayed");
+            if (!page.AdminSubMenu.Disabled())
+                page.ExpandSidePanelIcon.Click();
         }
 
         [Then(@"Update Readiness is displayed to the User")]
         public void ThenUpdateReadinessIsDisplayedToTheUser()
         {
             var page = _driver.NowAt<UpdateReadinessPage>();
-            Utils.Verify.IsTrue(page.UpdateReadinessTitle.Displayed(), "Update Readiness page was not displayed");
+            Verify.IsTrue(page.UpdateReadinessTitle.Displayed(), "Update Readiness page was not displayed");
             Logger.Write("Update Readiness page is visible");
         }
 
@@ -170,7 +171,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenAdminMenuItemIsHidden()
         {
             var menu = _driver.NowAtWithoutWait<LeftHandMenuElement>();
-            Utils.Verify.IsFalse(menu.Admin.Displayed(), "Admin menu item is displayed");
+            Verify.IsFalse(menu.Admin.Displayed(), "Admin menu item is displayed");
         }
 
         [When(@"User navigates to ""(.*)"" Object on PMObject page")]

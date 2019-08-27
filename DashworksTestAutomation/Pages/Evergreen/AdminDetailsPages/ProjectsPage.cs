@@ -126,6 +126,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[@class='btn-group-sm pull-right ng-star-inserted']")]
         public IWebElement CloseSidePanelCross { get; set; }
 
+        //TODO should be moved to generic page
         [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'buttonToggleSubmenu')]")]
         public IWebElement ExpandSidePanelIcon { get; set; }
 
@@ -137,8 +138,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = ".//mat-error/span[contains(text(), 'archived devices')]")]
         public IWebElement ArchivedDevicesMessage { get; set; }
-
-
 
         public override List<By> GetPageIdentitySelectors()
         {

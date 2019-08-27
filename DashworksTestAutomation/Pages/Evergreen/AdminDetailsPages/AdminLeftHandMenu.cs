@@ -53,14 +53,19 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//h1[text()='Rings']")]
         public IWebElement RingsPage { get; set; }
 
+        //TODO should be moved to generic page
+        [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'buttonToggleSubmenu')]")]
+        public IWebElement ExpandSidePanelIcon { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
             return new List<By>
             {
-                SelectorFor(this, p => p.AdminTitle),
-                SelectorFor(this, p => p.Projects),
-                SelectorFor(this, p => p.Teams),
+                //Below element are not visible in expanded menu
+                //SelectorFor(this, p => p.AdminTitle),
+                //SelectorFor(this, p => p.Projects),
+                //SelectorFor(this, p => p.Teams),
             };
         }
     }
