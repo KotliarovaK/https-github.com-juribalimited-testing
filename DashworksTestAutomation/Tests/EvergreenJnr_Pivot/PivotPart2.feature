@@ -22,23 +22,17 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatPivotsAreNotShownInTheListToSelectO
 	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
 	When User creates Pivot list with "Pivot_DAS_14224" name
-	And User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "Pivot_Project_14224" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks newly created object link
+	And Project created via API and opened
+	| ProjectName         | Scope       | ProjectTemplate | Mode               |
+	| Pivot_Project_14224 | All Devices | None            | Standalone Project |
+	And User clicks "Scope" tab
 	And User selects "Scope Details" tab on the Project details page
 	And User navigates to the "Device Scope" tab in the Scope section on the Project details page
 	Then following Values are displayed in "Scope" drop-down on the Admin page:
 	| Values                                |
 	| All Devices                           |
 	| 1803 Rollout                          |
+	| Auto: X-Proj Paths Scope              |
 	| Dependant List Filter - BROKEN LIST   |
 	| Depot Capacity                        |
 	| Device List (Complex)                 |
