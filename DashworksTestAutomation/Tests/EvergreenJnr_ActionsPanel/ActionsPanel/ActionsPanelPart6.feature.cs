@@ -248,7 +248,7 @@ this.FeatureBackground();
             table6.AddRow(new string[] {
                         "Update"});
             table6.AddRow(new string[] {
-                        "Remove Owner"});
+                        "Remove owner"});
             table6.AddRow(new string[] {
                         "Remove owner and team"});
             table6.AddRow(new string[] {

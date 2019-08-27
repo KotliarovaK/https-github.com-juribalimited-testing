@@ -53,7 +53,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelIsWorkingCorrectlyWhenS
 	Then the Update Owner options are displayed in following order:
 	| Options      |
 	| Update       |
-	| Remove Owner |
+	| Remove owner |
 	| Remove owner and team |
 	| No change             |
 	When User selects "Update" Update Owner on Action panel
