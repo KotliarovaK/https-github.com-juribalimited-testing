@@ -169,8 +169,8 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatUserDetailsIsSimilarOnGridAndDetail
 	| Display Name       | Nicole P. Braun                        |
 	| Distinguished Name | QLL295118.Users.Jersey City.US-E.local |
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17373 @Not_Ready
-Scenario: EvergreenJnr_DevicesList_CheckThatLoadingIndicatorAppearsInTheSamePlace
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17373 @Not_Ready
+Scenario: EvergreenJnr_ApplicationsList_CheckThatLoadingIndicatorAppearsInTheSamePlace
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User perform search by "Adobe Acrobat Update"
@@ -179,7 +179,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatLoadingIndicatorAppearsInTheSamePlac
 	When User switches to the "Devices Evergreen Capacity Project" project in the Top bar on Item details page
 	And User navigates to the "Details" main-menu on the Details page
 	Then Loading indicator appears in the same place when switching between main-menu
-
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17813
 Scenario: EvergreenJnr_UsersList_CheckThatToolTipForMailboxPermissionOnMailboxPermissionsTabOnUserObjectPageIsDisplayedCorrectly
 	When User clicks "Users" on the left-hand menu

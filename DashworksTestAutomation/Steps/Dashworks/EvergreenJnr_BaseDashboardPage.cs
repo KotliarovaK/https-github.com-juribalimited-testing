@@ -78,7 +78,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserNavigateToTheBottomOfTheActionPanel()
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            _driver.DragAndDrop(page.ActionsScrollBar, page.UpdateButton);
+            //TODO: 27Aug2019 Yurii: changed to moveTo
+            //_driver.DragAndDrop(page.ActionsScrollBar, page.UpdateButton);
+            _driver.MoveToElement(page.UpdateButton);
             Thread.Sleep(2000);
         }
 
@@ -86,7 +88,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserNavigateToTheTopOfTheActionPanel()
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            _driver.DragAndDrop(page.ActionsScrollBar, page.ActionsRowsCount);
+            //TODO: 27Aug2019 replaced drag and drop to moveTo
+            //_driver.DragAndDrop(page.ActionsScrollBar, page.ActionsRowsCount);
+            _driver.MoveToElement(page.ActionsRowsCount);
             Thread.Sleep(2000);
         }
 
