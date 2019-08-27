@@ -56,11 +56,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
                 if (!string.IsNullOrEmpty(row["SplitBy"]))
                 {
-                    _driver.WaitForElementToContainsTextInAttribute(createWidgetElement.SplitBy, "false", "aria-disabled");
-                    createWidgetElement.SplitBy.Click();
-                    _driver.WaitForElementToBeDisplayed(createWidgetElement.DropdownMenu);
-                    createWidgetElement.SelectObjectForWidgetCreation(row["SplitBy"]);
-                    _driver.WaitForDataLoadingOnProjects();
+                    createWidgetElement.SelectSplitByItem(row["SplitBy"]);
                 }
 
                 if (!string.IsNullOrEmpty(row["AggregateFunction"]))
@@ -139,11 +135,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
                 if (createWidgetElement.SplitBy.Displayed() && !string.IsNullOrEmpty(row["SplitBy"]))
                 {
-                    _driver.WaitForElementToContainsTextInAttribute(createWidgetElement.SplitBy, "false", "aria-disabled");
-                    createWidgetElement.SplitBy.Click();
-                    _driver.WaitForElementToBeDisplayed(createWidgetElement.DropdownMenu);
-                    createWidgetElement.SelectObjectForWidgetCreation(row["SplitBy"]);
-                    _driver.WaitForDataLoadingOnProjects();
+                    createWidgetElement.SelectSplitByItem(row["SplitBy"]);
                 }
 
                 if (createWidgetElement.AggregateFunction.Displayed() && !string.IsNullOrEmpty(row["AggregateFunction"]))
