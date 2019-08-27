@@ -179,6 +179,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatLoadingIndicatorAppearsInTheSam
 	When User switches to the "Devices Evergreen Capacity Project" project in the Top bar on Item details page
 	And User navigates to the "Details" main-menu on the Details page
 	Then Loading indicator appears in the same place when switching between main-menu
+
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17813
 Scenario: EvergreenJnr_UsersList_CheckThatToolTipForMailboxPermissionOnMailboxPermissionsTabOnUserObjectPageIsDisplayedCorrectly
 	When User clicks "Users" on the left-hand menu

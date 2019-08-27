@@ -824,21 +824,21 @@ this.FeatureBackground();
 
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatLoadingIndicatorAppearsInTheSamePlace")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatLoadingIndicatorAppearsInTheSamePlace")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("Applications")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS17373")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
-        public virtual void EvergreenJnr_DevicesList_CheckThatLoadingIndicatorAppearsInTheSamePlace()
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatLoadingIndicatorAppearsInTheSamePlace()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_DevicesList_CheckThatLoadingIndicatorAppearsInTheSamePlaceInternal();
+                    this.EvergreenJnr_ApplicationsList_CheckThatLoadingIndicatorAppearsInTheSamePlaceInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -857,11 +857,11 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_DevicesList_CheckThatLoadingIndicatorAppearsInTheSamePlaceInternal()
+        private void EvergreenJnr_ApplicationsList_CheckThatLoadingIndicatorAppearsInTheSamePlaceInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatLoadingIndicatorAppearsInTheSamePlace", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThatLoadingIndicatorAppearsInTheSamePlace", null, new string[] {
                         "Evergreen",
-                        "Devices",
+                        "Applications",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS17373",
