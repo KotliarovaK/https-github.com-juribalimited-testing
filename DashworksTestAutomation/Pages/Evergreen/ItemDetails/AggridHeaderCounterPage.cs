@@ -10,9 +10,13 @@ using SeleniumExtras.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
 {
-    internal class AggridHeaderCounterPage : SeleniumBasePage
+    //TODO looks like this should be moved to BaseGrid
+    public class AggridHeaderCounterPage : SeleniumBasePage
     {
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'aggrid-container wrapper-flexbox')]")]
+        //Commented selector point to the GroupBy button on the grid.
+        //But if greed is empty than those controls will not appears
+        //[FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'aggrid-container wrapper-flexbox')]")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='details-aggrid']")]
         public IWebElement PageIdentitySelectors { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[@automation='create custom-field']")]
