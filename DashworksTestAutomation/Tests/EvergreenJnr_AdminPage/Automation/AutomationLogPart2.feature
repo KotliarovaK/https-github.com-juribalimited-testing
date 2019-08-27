@@ -173,22 +173,22 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInApplication
 	| USEMEFORA2: Stage 1 \ Text Task (App) |
 	Then "New Text value" content is displayed in "USEMEFORA2: Stage 1 \ Text Task (App)" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17678 @Cleanup @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17799 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInDevicesScopedAutomation
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User creates new Automation via API
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope              | Run    |
-	| 17678_Automation | 17643       | true   | false              | New York - Devices | Manual |
+	| 17799_Automation | 17799       | true   | false              | New York - Devices | Manual |
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
-	When User enters "17678_Automation" text in the Search field for "Automation" column
+	When User enters "17799_Automation" text in the Search field for "Automation" column
 	And User clicks content from "Automation" column
 	Then Edit Automation page is displayed to the User
 	When User clicks "Actions" tab
 	#Create Action
 	When User clicks the "CREATE ACTION" Action button
-	When User type "17678_Action" Name in the "Action Name" field on the Automation details page
+	When User type "17799_Action" Name in the "Action Name" field on the Automation details page
 	And User selects "Update task value" in the "Action Type" dropdown
 	When User selects "zDevice Sch for Automations Feature" in the Project dropdown
 	When User selects "Stage B" in the "Stage" dropdown for Actions
@@ -199,11 +199,11 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInDevicesScop
 	And User clicks the "CREATE" Action button
 	#Create Action
 	When User clicks "Automations" navigation link on the Admin page
-	When User enters "17678_Automation" text in the Search field for "Automation" column
-	When User clicks "Run now" option in Cog-menu for "17678_Automation" item on Admin page
+	When User enters "17799_Automation" text in the Search field for "Automation" column
+	When User clicks "Run now" option in Cog-menu for "17799_Automation" item on Admin page
 	When User selects "Automation Log" tab on the Project details page
 	When User clicks refresh button in the browser
-	When User enters "17678_Automation" text in the Search field for "Automation" column
+	When User enters "17799_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
 	When User clicks String Filter button for "Type" column on the Admin page
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
