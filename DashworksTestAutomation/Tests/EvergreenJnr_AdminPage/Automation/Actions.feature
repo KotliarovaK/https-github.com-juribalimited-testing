@@ -670,3 +670,16 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateDate
 	Then "Date Computer" value is displayed in the "Task" dropdown for Automation
 	Then "Update" value is displayed in the "Update Date" dropdown
 	Then "5 Aug 2019" content is displayed in "Date" field
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17797 @Not_Ready
+Scenario: EvergreenJnr_AdminPage_CheckThanActionFieldsAreNotPrepopulatedWithOldData
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User creates new Automation via API
+	| AutomationName           | Description | Active | StopOnFailedAction | Scope       | Run    |
+	| Test_Automation_DAS15938 | DAS15938    | true   | false              | All Devices | Manual |
+	When User clicks "Automations" link on the Admin page
+	Then "Automations" page should be displayed to the user
+	When User enters "Test_Automation_DAS15938" text in the Search field for "Automation" column
+	When User clicks content from "Automation" column
+	When User clicks "Actions" tab
