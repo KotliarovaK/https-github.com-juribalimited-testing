@@ -29,7 +29,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public const string FirstColumnTableContent = ".//div[@role='gridcell']//a[@href]";
 
-        private string NamedDropdownSelector = ".//mat-select[@aria-label='{0}']//span";
+        //private string NamedDropdownSelector = ".//mat-select[@aria-label='{0}']//span";
+        private string NamedDropdownSelector = ".//label[contains(@class,'field-label')][text()='{0}']/../../mat-select";
 
         #region Inline Edit. Appears on double click on cell
 
@@ -697,7 +698,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public IWebElement GetDropdownByTextValueByName(string value, string dropdownName)
         {
-            var selector = By.XPath($".//mat-form-field//mat-select[@aria-label='{dropdownName}']//span/span[text()='{value}']");
+            var selector = By.XPath($".//label[contains(@class,'field-label')][text()='{dropdownName}']/../../mat-select//span[text()='{value}']");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }

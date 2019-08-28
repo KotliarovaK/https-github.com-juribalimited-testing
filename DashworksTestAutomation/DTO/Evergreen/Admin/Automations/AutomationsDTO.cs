@@ -8,7 +8,24 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.Automations
 {
     public class AutomationsDto
     {
-        public string Id { get; set; }
+        private string _id;
+        public string Id
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(_id))
+                {
+                    try
+                    {
+                        _id = DatabaseHelper.GetAutomationId(automationName);
+                    }
+                    catch { }
+                }
+                return _id;
+            }
+            set => _id = value;
+        }
+
         [JsonProperty("active")]
         public bool Active { get; set; }
         public int automationId => -1;
