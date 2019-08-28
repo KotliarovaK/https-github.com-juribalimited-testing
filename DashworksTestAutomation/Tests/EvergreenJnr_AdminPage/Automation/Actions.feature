@@ -701,3 +701,28 @@ Scenario: EvergreenJnr_AdminPage_CheckThanActionFieldsAreNotPrepopulatedWithOldD
 	Then "Update Value" content is displayed in "Update Value" dropdown
 	And "Update Date" content is displayed in "Update Date" dropdown
 	And "Update Owner" content is displayed in "Update Owner" dropdown
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17744 @Not_Ready @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckValueDataInTheGridForActions
+	When User creates new Automation via API and open it
+	| AutomationName | Description | Active | StopOnFailedAction | Scope     | Run    |
+	| DAS17744       | 17744       | true   | false              | All Users | Manual |
+	And User clicks "Actions" tab
+	#Action
+	And User clicks the "CREATE ACTION" Action button
+	And User enters 'DAS17744_Action' text to 'Action Name' textbox
+	And User selects "Update task value" in the "Action Type" dropdown
+	And User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
+	And User selects "One" in the "Stage" dropdown for Actions
+	And User selects "Radio Rag Date Owner User Req A" in the "Task" dropdown for Actions
+	And User selects "Update" Update Value on Action panel
+	And User selects "Started" Value on Action panel
+	And User selects "Update" Update Date on Action panel
+	And User selects "5 Sep 2019" Date on Action panel
+	And User selects "Update" Update Owner on Action panel
+	And User selects "1803 Team" Team on Action panel
+	And User selects "Lisa Bailey" Owner on Action panel
+	And User clicks the "CREATE" Action button
+	#Test
+	When User enters "DAS17744_Action" text in the Search field for "Action" column
+	Then "Started, 2019-09-05, 1803 Team, Lisa Bailey" content is displayed in "Value" column
