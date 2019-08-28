@@ -370,6 +370,7 @@ namespace DashworksTestAutomation.Helpers
         #endregion
 
         #region Dashboard
+
         public static string GetDashboardId(string dashboardName)
         {
             return
@@ -377,6 +378,7 @@ namespace DashworksTestAutomation.Helpers
                     $"select [DashboardId] from [desktopBI].[dbo].[EvergreenDashboards] where [DashboardName] = '{dashboardName}'",
                     0).LastOrDefault();
         }
+
         #endregion
 
         #region Custom Field
@@ -397,9 +399,14 @@ namespace DashworksTestAutomation.Helpers
 
         #region Automation
 
-        public static string GetAutomationFromDb(string automationName)
+        public static string GetAutomationId(string automationName)
         {
-            return DatabaseHelper.ExecuteReader($"select [AutomationId] from [PM].[dbo].[Automations] where [AutomationName] = '{automationName}'", 0).LastOrDefault();
+            return DatabaseHelper.ExecuteReader($"select [AutomationId] from [PM].[dbo].[Automations] where [AutomationName] = '{automationName}'", 0)[0];
+        }
+
+        public static string GetAutomationActionId(string actionName, string automationId)
+        {
+            return DatabaseHelper.ExecuteReader($" select [ActionId] from [PM].[dbo].[AutomationActions] where [AutomationId] = {automationId} and [ActionName] = '{actionName}'", 0)[0];
         }
 
         #endregion

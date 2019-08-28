@@ -1,16 +1,8 @@
-﻿using System;
-using System.Linq;
-using System.Net;
-using System.Threading;
-using DashworksTestAutomation.DTO.Evergreen.Admin.Automations;
-using DashworksTestAutomation.DTO.RuntimeVariables;
+﻿using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Automations;
-using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
-using DashworksTestAutomation.Providers;
-using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using RestSharp;
 using TechTalk.SpecFlow;
