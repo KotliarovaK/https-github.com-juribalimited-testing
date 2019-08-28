@@ -155,7 +155,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<AdminLeftHandMenu>();
             Verify.IsTrue(_driver.IsElementExists(page.AdminSubMenu), "Admin page was not displayed");
-            if (!page.AdminSubMenu.Disabled())
+            if (!page.AdminSubMenu.Displayed())
                 page.ExpandSidePanelIcon.Click();
         }
 
