@@ -2177,6 +2177,91 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckThanActionFieldsAreNotPrepopulatedWithOldData")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Admin")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
+        [NUnit.Framework.CategoryAttribute("Actions")]
+        [NUnit.Framework.CategoryAttribute("DAS17797")]
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
+        public virtual void EvergreenJnr_AdminPage_CheckThanActionFieldsAreNotPrepopulatedWithOldData()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AdminPage_CheckThanActionFieldsAreNotPrepopulatedWithOldDataInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AdminPage_CheckThanActionFieldsAreNotPrepopulatedWithOldDataInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckThanActionFieldsAreNotPrepopulatedWithOldData", null, new string[] {
+                        "Evergreen",
+                        "Admin",
+                        "EvergreenJnr_AdminPage",
+                        "Actions",
+                        "DAS17797",
+                        "Not_Ready"});
+#line 675
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 676
+ testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 677
+ testRunner.Then("Admin page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
+                        "AutomationName",
+                        "Description",
+                        "Active",
+                        "StopOnFailedAction",
+                        "Scope",
+                        "Run"});
+            table31.AddRow(new string[] {
+                        "Test_Automation_DAS15938",
+                        "DAS15938",
+                        "true",
+                        "false",
+                        "All Devices",
+                        "Manual"});
+#line 678
+ testRunner.When("User creates new Automation via API", ((string)(null)), table31, "When ");
+#line 681
+ testRunner.When("User clicks \"Automations\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 682
+ testRunner.Then("\"Automations\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 683
+ testRunner.When("User enters \"Test_Automation_DAS15938\" text in the Search field for \"Automation\" " +
+                    "column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 684
+ testRunner.When("User clicks content from \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 685
+ testRunner.When("User clicks \"Actions\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore
