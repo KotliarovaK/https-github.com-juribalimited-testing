@@ -231,7 +231,7 @@
     <Compile Include="Pages\Evergreen\ImportListsFromCSVPage.cs" />
     <Compile Include="Pages\Evergreen\Dashboards\PrintDashboardsPage.cs" />
     <Compile Include="Pages\Evergreen\ItemDetails\ActionPanelPage.cs" />
-    <Compile Include="Pages\Evergreen\ItemDetails\AggridHeaderCounterPage.cs" />
+    <Compile Include="Pages\Evergreen\ItemDetails\AggridHeaderCounterElement.cs" />
     <Compile Include="Pages\Evergreen\ItemDetails\CustomFields\CustomFieldPopup.cs" />
     <Compile Include="Pages\Evergreen\ItemDetails\ItemDetails_TopBarPage.cs" />
     <Compile Include="Pages\Evergreen\ItemDetails\NavigationPage.cs" />

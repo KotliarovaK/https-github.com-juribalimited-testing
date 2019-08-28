@@ -37,7 +37,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage.CustomFields
 
             foreach (CustomFieldDto customField in customFields)
             {
-                var grid = _driver.NowAt<AggridHeaderCounterPage>();
+                var grid = _driver.NowAt<AggridHeaderCounterElement>();
 
                 _driver.WaitForElementToBeDisplayed(grid.CreateCustomFieldsButton);
 
