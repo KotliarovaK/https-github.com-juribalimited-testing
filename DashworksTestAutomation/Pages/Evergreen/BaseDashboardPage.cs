@@ -383,7 +383,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         #endregion TableColumns
 
-        private static string NamedTextboxSelector = ".//input[@placeholder='{0}']";
+        private static string NamedTextboxSelector = "(.//textarea[@placeholder='{0}'] | .//input[@placeholder='{0}'])";
 
         private static string AutocompleteOptionsSelector = ".//mat-option";
 
@@ -547,7 +547,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
                         throw new Exception(
                             $"There are no option that equals '{option}' text in the '{placeholder}' autocomplete");
                 }
-
             }
             else
                 throw new Exception($"'{option}' was not found in the '{placeholder}' autocomplete");

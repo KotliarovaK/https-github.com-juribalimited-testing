@@ -79,7 +79,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUnsavedChangesPopUp
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
 	When User click content from "Automation" column
-	When User type "NewName" Name in the "Automation Name" field on the Automation details page
+	When User enters 'NewName' text to 'Automation Name' textbox
 	When User clicks "Automations" navigation link on the Admin page
 	Then "You have unsaved changes. Are you sure you want to leave the page?" text is displayed in the warning message
 	Then "YES" button is displayed in the warning message

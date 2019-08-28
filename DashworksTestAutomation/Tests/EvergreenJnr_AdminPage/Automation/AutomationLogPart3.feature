@@ -42,16 +42,16 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogMessageForDeletedTaskInAction
 	Then "Automations" page should be displayed to the user
 	When User clicks the "CREATE AUTOMATION" Action button
 	Then Create Automation page is displayed to the User
-	When User type "17247_Automation" Name in the "Automation Name" field on the Automation details page
-	When User type "17247" Name in the "Description" field on the Automation details page
+	When User enters '17247_Automation' text to 'Automation Name' textbox
+	When User enters '17247' text to 'Description' textbox
 	When User selects "All Devices" in the Scope Automation dropdown
 	When User selects "Manual" in the "Run" dropdown
 	When User selects "Active" checkbox on the Automation Page
 	And User clicks the "CREATE" Action button
 	#Create Action
-	When User type "17247_Action" Name in the "Action Name" field on the Automation details page
+	When User enters '17247_Action' text to 'Action Name' textbox
 	When User selects "Update task value" in the "Action Type" dropdown
-	When User selects "17247Project" in the Project dropdown
+	When User selects '17247Project' option from 'Project' autocomplete
 	When User selects "Test" in the "Stage" dropdown for Actions
 	When User selects "DAS17247_Task" in the "Task" dropdown for Actions
 	When User selects "Update" Update Value on Action panel
@@ -93,9 +93,9 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedU
 	When User clicks "Actions" tab
 	#Create Action
 	When User clicks the "CREATE ACTION" Action button
-	When User type "DAS17681_Action" Name in the "Action Name" field on the Automation details page
+	When User enters 'DAS17681_Action' text to 'Action Name' textbox
 	And User selects "Update task value" in the "Action Type" dropdown
-	When User selects "USE ME FOR AUTOMATION(USR SCHDLD)" in the Project dropdown
+	When User selects 'USE ME FOR AUTOMATION(USR SCHDLD)' option from 'Project' autocomplete
 	When User selects "Stage 1" in the "Stage" dropdown for Actions
 	When User selects "Radiobutton Readiness Date Owner Task (User)" in the "Task" dropdown for Actions
 	And User selects "Update" Update Value on Action panel
@@ -151,9 +151,9 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedU
 	Then Edit Automation page is displayed to the User
 	When User clicks "Actions" tab
 	When User clicks the "CREATE ACTION" Action button
-	When User type "17681_Action" Name in the "Action Name" field on the Automation details page
+	When User enters '17681_Action' text to 'Action Name' textbox
 	And User selects "Update task value" in the "Action Type" dropdown
-	When User selects "Computer Scheduled Test (Jo)" in the Project dropdown
+	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	When User selects "One" in the "Stage" dropdown for Actions
 	When User selects "Radio Date Owner User" in the "Task" dropdown for Actions
 	And User selects "No change" Update Value on Action panel

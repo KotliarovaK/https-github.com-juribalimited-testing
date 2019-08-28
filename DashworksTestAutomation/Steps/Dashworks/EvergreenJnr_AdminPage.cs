@@ -788,6 +788,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.IsTrue(page.DefaultCapacityMode.Displayed, "Default value is not displayed for Capacity Mode");
         }
 
+        //TODO looks like the same as WhenUserSelectsInTheDropdown
         [Then(@"User selects ""(.*)"" option in ""(.*)"" dropdown")]
         public void ThenUserSelectsOptionInDropdown(string option, string dropdownName)
         {
@@ -797,20 +798,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             searchElement.GetOptionByName(option).Click();
         }
 
+        //TODO looks like the same as ThenUserSelectsOptionInDropdown
         [When(@"User selects ""(.*)"" in the ""(.*)"" dropdown")]
         public void WhenUserSelectsInTheDropdown(string value, string dropdownName)
         {
             var dropdown = _driver.NowAt<BaseGridPage>();
             dropdown.GetDropdownByName(dropdownName).Click();
-            dropdown.GetDropdownValueByName(value).Click();
-        }
-
-        //Update step after changing Project dropdown selector
-        [When(@"User selects ""(.*)"" in the Project dropdown")]
-        public void WhenUserSelectsInTheProjectDropdown(string value)
-        {
-            var dropdown = _driver.NowAt<BaseGridPage>();
-            dropdown.ProjectDropdown.Click();
             dropdown.GetDropdownValueByName(value).Click();
         }
 
