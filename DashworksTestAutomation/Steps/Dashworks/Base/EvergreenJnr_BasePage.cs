@@ -64,6 +64,19 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.AutocompleteSelect(placeholder, option, true);
         }
 
+        [Then(@"""(.*)"" content is displayed in ""(.*)"" autocomplete")]
+        public void ThenContentIsDisplayedInAutocomplete(string expectedText, string placeholder)
+        {
+            CheckAutocompletAndTextboxText(placeholder, expectedText);
+        }
+
+        private void CheckAutocompletAndTextboxText(string placeholder, string expectedText)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var text = page.GetNamedTextbox(placeholder).GetAttribute("value");
+            Verify.AreEqual(expectedText, text, "Incorrect text in the autocomplete");
+        }
+
         #endregion
 
         #region Named Textbox
@@ -77,6 +90,12 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
             if (placeholder.Equals("Action Name"))
                 _automationActions.Value.Add(text);
+        }
+
+        [Then(@"""(.*)"" content is displayed in ""(.*)"" textbox")]
+        public void ThenContentIsDisplayedInTextbox(string expectedText, string placeholder)
+        {
+            CheckAutocompletAndTextboxText(placeholder, expectedText);
         }
 
         #endregion

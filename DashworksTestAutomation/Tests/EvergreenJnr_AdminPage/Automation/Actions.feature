@@ -731,3 +731,16 @@ Scenario: EvergreenJnr_AdminPage_CheckValueDataInTheGridForActions
 	#Test
 	When User enters "DAS17744_Action" text in the Search field for "Action" column
 	Then "Started, 2019-09-05, 1803 Team, Lisa Bailey" content is displayed in "Value" column
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17772 @Not_Ready @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckThatActionStageSelectboxIsDisplayedForSpecificData
+	When User creates new Automation via API and open it
+	| AutomationName | Description | Active | StopOnFailedAction | Scope     | Run    |
+	| DAS17772       | 17772       | true   | false              | All Users | Manual |
+	And User clicks "Actions" tab
+	#Action
+	And User clicks the "CREATE ACTION" Action button
+	And User enters 'DAS17772_Action' text to 'Action Name' textbox
+	And User selects "Update task value" in the "Action Type" dropdown
+	And User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
+	Then "" content is displayed in "Stage" autocomplete
