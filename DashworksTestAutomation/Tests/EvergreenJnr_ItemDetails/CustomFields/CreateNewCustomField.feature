@@ -24,8 +24,6 @@ Scenario: EvergreenJnr_DevicesList_CheckAddCustomFieldPopupUiAndTooltips
 	Then "ADD" Action button is disabled
 	And "ADD" Action button have tooltip with "Some values are missing or invalid" text
 	Then "CANCEL" Action button is enabled
-	#And Add button is displayed on Add Custom Field popup
-	#And Cancel button is enabled on Add Custom Field popup
 	When User clicks Body container
 	Then 'Custom Field' autocomplete last option is 'FlDAS16487_1a'
 	And 'Custom Field' autocomplete does NOT have option
@@ -33,7 +31,7 @@ Scenario: EvergreenJnr_DevicesList_CheckAddCustomFieldPopupUiAndTooltips
 	| FlDAS16487_1b |
 	| FlDAS16487_1c |
 	When User selects 'FlDAS16487_1a' option after search from 'Custom Field' autocomplete
-	Then Add button is enabled on Add Custom Field popup
+	Then "ADD" Action button is enabled
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @CustomFields @DAS16487 @Cleanup
 Scenario: EvergreenJnr_MailboxesList_CreateCustomFieldWithEmptyValue

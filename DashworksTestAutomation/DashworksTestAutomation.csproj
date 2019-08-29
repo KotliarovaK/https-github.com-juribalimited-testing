@@ -396,7 +396,6 @@
     <Compile Include="Steps\Dashworks\ItemDetailsPage\CustomFields\AfterScenarios\RemoveCustomFieldAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\ItemDetailsPage\CustomFields\CreateCustomField.cs" />
     <Compile Include="Steps\Dashworks\ItemDetailsPage\CustomFields\CreateCustomFieldViaApi.cs" />
-    <Compile Include="Steps\Dashworks\ItemDetailsPage\CustomFields\UiCheckCustomField.cs" />
     <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_ActionsPanel.cs" />
     <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_AggridHeaderCounter.cs" />
     <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_Navigation.cs" />
