@@ -50,10 +50,10 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectly
 	Then "<ItemName>" content is displayed in "Item" column
 
 Examples: 
-	| PageName  | LoadedPage    | ItemName            | ColumnName    | ProjectName                        |
-	| Devices   | All Devices   | 063X2ZOB8V3GUY      | Hostname      | I-Computer Scheduled Project       |
-	| Users     | All Users     | ANN485030           | Username      | I-Computer Scheduled Project       |
-	| Mailboxes | All Mailboxes | 06A573B6200A4A10BC2 | Email Address | Mailbox Evergreen Capacity Project |
+	| PageName  | LoadedPage    | ItemName                         | ColumnName    | ProjectName                        |
+	| Devices   | All Devices   | 063X2ZOB8V3GUY                   | Hostname      | I-Computer Scheduled Project       |
+	| Users     | All Users     | ANN485030                        | Username      | I-Computer Scheduled Project       |
+	| Mailboxes | All Mailboxes | 06A573B6200A4A10BC2@bclabs.local | Email Address | Mailbox Evergreen Capacity Project |
 
 #Ann.Ilchenko 8/28/19: ready on 'quasar';
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @Offboard @DAS17843 @DAS17926 @Not_Ready

@@ -175,7 +175,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
         [NUnit.Framework.TestCaseAttribute("Devices", "All Devices", "063X2ZOB8V3GUY", "Hostname", "I-Computer Scheduled Project", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "All Users", "ANN485030", "Username", "I-Computer Scheduled Project", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "All Mailboxes", "06A573B6200A4A10BC2", "Email Address", "Mailbox Evergreen Capacity Project", null)]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "All Mailboxes", "06A573B6200A4A10BC2@bclabs.local", "Email Address", "Mailbox Evergreen Capacity Project", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectlyForProjectDetailsPageWhichHasAssociatedObjects(string pageName, string loadedPage, string itemName, string columnName, string projectName, string[] exampleTags)
         {
             System.Exception lastException = null;
