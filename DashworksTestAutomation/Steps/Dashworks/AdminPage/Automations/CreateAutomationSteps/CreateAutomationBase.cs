@@ -36,6 +36,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations.CreateAu
 
             foreach (var automation in automations)
             {
+                _automation.Value.Add(automation);
+
                 if (string.IsNullOrEmpty(automation.automationName))
                     throw new Exception("Unable to create Automation with empty name");
 
@@ -54,9 +56,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations.CreateAu
 
                 var responseContent = JsonConvert.DeserializeObject<JObject>(response.Content);
                 automation.Id = responseContent["id"].ToString();
-
-                //TODO it is not clear why we put to context empty Automation with just ID but not automations from Table...
-                _automation.Value.Add(automation);
             }
 
             return _automation.Value.Last().Id;

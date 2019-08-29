@@ -744,3 +744,36 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionStageSelectboxIsDisplayedForSpec
 	And User selects "Update task value" in the "Action Type" dropdown
 	And User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
 	Then "" content is displayed in "Stage" autocomplete
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17778 @Not_Ready @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckCapacitySlotDataForActions
+	When User creates new Automation via API and open it
+	| AutomationName | Description | Active | StopOnFailedAction | Scope       | Run    |
+	| DA17778        | 17778       | true   | false              | All Devices | Manual |
+	And User clicks "Actions" tab
+	#Action 1
+	And User clicks the "CREATE ACTION" Action button
+	And User enters '17778 None' text to 'Action Name' textbox
+	And User selects "Update task value" in the "Action Type" dropdown
+	And User selects 'Devices Evergreen Capacity Project' option from 'Project' autocomplete
+	And User selects "Stage 1" in the "Stage" dropdown for Actions
+	And User selects "Scheduled Date" in the "Task" dropdown for Actions
+	And User selects "Update" Update Date on Action panel
+	And User selects "15 Aug 2019" Date on Action panel
+	And User selects "None" Capacity Unit on Action panel
+	And User clicks the "CREATE" Action button
+	#Action 2
+	And User clicks the "CREATE ACTION" Action button
+	And User enters '17778 Slot' text to 'Action Name' textbox
+	And User selects "Update task value" in the "Action Type" dropdown
+	And User selects 'Devices Evergreen Capacity Project' option from 'Project' autocomplete
+	And User selects "Stage 1" in the "Stage" dropdown for Actions
+	And User selects "Scheduled Date" in the "Task" dropdown for Actions
+	And User selects "Update" Update Date on Action panel
+	And User selects "2 Jun 2019" Date on Action panel
+	And User selects "Scheduled Slot" Capacity Unit on Action panel
+	And User clicks the "CREATE" Action button
+	#Test
+	When User enters "17778 None" text in the Search field for "Action" column
+	And User clicks content from "Action" column
+	#Add assertion here!
