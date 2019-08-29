@@ -72,3 +72,13 @@ Scenario: EvergreenJnr_Search_CheckThatAnyTabCanBeOpenedAfterSearchHasBeenPerfor
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	And There are no errors in the browser console
+
+@Evergreen @GlobalSearch @EvergreenJnr_GlobalSearch @MainFunctionality @DAS17633
+Scenario: EvergreenJnr_Search_CheckThatThereIsSameAppearanceOfTheUnknownVersionInTestLanguage
+	When User type "ACDSee 4.0 SendPix & Email Update" in Global Search Field and presses Enter key
+	Then list of results is displayed to the user
+	When User language is changed to "Test Language" via API
+	And User navigates to second tab of Search Results
+	Then Version column of Search Results has no Unknown item
+	When User clicks first "ACDSee 4.0 SendPix & Email Update" item in grid
+	Then Value column of Item Details has no Unknown item

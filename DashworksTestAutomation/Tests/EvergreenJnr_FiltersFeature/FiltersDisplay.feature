@@ -1919,3 +1919,28 @@ Scenario: EvergreenJnr_ApplicationsList_CheckAutomationsCategoryOrder
 	And User clicks Add New button on the Filter panel
 	And User closes "Suggested" filter category
 	Then Category Automations displayed before projects categories
+
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS17727 @Not_Ready
+Scenario: EvergreenJnr_ApplicationsList_CheckThatOrderOfFiltersInDeviceHardwareCategory 
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	And User clicks Add New button on the Filter panel
+	And User closes "Suggested" filter category
+	And User expands "Device Hardware" filter category
+	Then the following Filters subcategories are displayed for open category:
+	| Subcategories                       |
+	| Device CPU Architecture             |
+	| Device CPU Speed (GHz)              |
+	| Device Format                       |
+	| Device HDD Total Size (GB)          |
+	| Device IP Address                   |
+	| Device IP v6 Address                |
+	| Device Manufacturer                 |
+	| Device Memory (GB)                  |
+	| Device Model                        |
+	| Device Target Drive Free Space (GB) |
+	| Device TPM Enabled                  |
+	| Device TPM Version                  |
+	| Device Type                         |
+	| Device Virtual Machine Host         |

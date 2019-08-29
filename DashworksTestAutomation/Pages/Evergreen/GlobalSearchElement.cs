@@ -32,6 +32,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'btn input-toggle mat-icon-button ')]")]
         public IWebElement GlobalSearchTextBoxResetButton { get; set; }
+        
+        [FindsBy(How = How.XPath, Using = ".//div[@class='mat-tab-labels']//div[@cdkmonitorelementfocus][2]//div[@class='mat-tab-label-content']")]
+        public IWebElement SearchResultsSecondTab { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {
@@ -54,6 +57,20 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             return Driver.FindElement(
                 By.XPath($".//div[@id='pagetitle-text']/pagetitle-text/h1[text()='{searchText}']"));
+        }
+
+        public IList<IWebElement> GetVersionColumnDataOfSearchResult()
+        {
+            var selector = By.XPath(".//div[@col-id='version' and @role='gridcell']");
+            Driver.WaitForElementToBeDisplayed(selector);
+            return Driver.FindElements(selector);
+        }
+
+        public IList<IWebElement> GetPackageVersionColumnDataOfGrid()
+        {
+            var selector = By.XPath(".//div[@col-id='packageVersion' and @role='gridcell']");
+            Driver.WaitForElementToBeDisplayed(selector);
+            return Driver.FindElements(selector);
         }
     }
 }
