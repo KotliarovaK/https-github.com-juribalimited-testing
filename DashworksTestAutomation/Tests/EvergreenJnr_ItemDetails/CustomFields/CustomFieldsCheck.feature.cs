@@ -298,7 +298,7 @@ this.FeatureBackground();
             table1.AddRow(new string[] {
                         "Custom Field"});
 #line 47
- testRunner.Then("following Group By values ​​are displayed for User on the Item Details page", ((string)(null)), table1, "Then ");
+ testRunner.Then("following Group By values ​​are displayed for User", ((string)(null)), table1, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

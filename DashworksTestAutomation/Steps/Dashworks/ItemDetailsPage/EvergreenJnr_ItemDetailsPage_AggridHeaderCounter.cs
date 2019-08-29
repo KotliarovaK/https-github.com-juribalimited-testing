@@ -40,8 +40,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             page.GroupByButton.Click();
         }
 
-        [Then(@"following Group By values ​​are displayed for User on the Item Details page")]
-        public void ThenFollowingGroupByValuesAreDisplayedForUserOnTheItemDetailsPage(Table table)
+        [Then(@"following Group By values ​​are displayed for User")]
+        public void ThenFollowingGroupByValuesAreDisplayedForUser(Table table)
         {
             var page = _driver.NowAt<AggridHeaderCounterElement>();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
