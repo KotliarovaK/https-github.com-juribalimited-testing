@@ -179,3 +179,16 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatLoadingIndicatorAppearsInTheSam
 	When User switches to the "Devices Evergreen Capacity Project" project in the Top bar on Item details page
 	And User navigates to the "Details" main-menu on the Details page
 	Then Loading indicator appears in the same place when switching between main-menu
+
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17813
+Scenario: EvergreenJnr_UsersList_CheckThatToolTipForMailboxPermissionOnMailboxPermissionsTabOnUserObjectPageIsDisplayedCorrectly
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User perform search by "0072B088173449E3A93"
+	And User click content from "Username" column
+	Then Details page for "0072B088173449E3A93" item is displayed to the user
+	When User navigates to the "Mailboxes" main-menu on the Details page
+	When User navigates to the "Mailbox Permissions" sub-menu on the Details page
+	When User enters "Exchange 2007" text in the Search field for "Mailbox Platform" column
+	Then "FullAccess" content is displayed in "Permission" column
+	And "FullAccess" tooltip displayed in "Permission" column
