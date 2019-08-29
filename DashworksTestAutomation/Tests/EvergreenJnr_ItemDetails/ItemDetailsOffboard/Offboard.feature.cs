@@ -165,7 +165,7 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectlyForProjectDetailsPa" +
-            "geWhichHasNoAssociatedObjects")]
+            "geWhichHasAssociatedObjects")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("AllLists")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
@@ -176,14 +176,14 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Devices", "All Devices", "063X2ZOB8V3GUY", "Hostname", "I-Computer Scheduled Project", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "All Users", "ANN485030", "Username", "I-Computer Scheduled Project", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "All Mailboxes", "06A573B6200A4A10BC2", "Email Address", "Mailbox Evergreen Capacity Project", null)]
-        public virtual void EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectlyForProjectDetailsPageWhichHasNoAssociatedObjects(string pageName, string loadedPage, string itemName, string columnName, string projectName, string[] exampleTags)
+        public virtual void EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectlyForProjectDetailsPageWhichHasAssociatedObjects(string pageName, string loadedPage, string itemName, string columnName, string projectName, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectlyForProjectDetailsPageWhichHasNoAssociatedObjectsInternal(pageName,loadedPage,itemName,columnName,projectName,exampleTags);
+                    this.EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectlyForProjectDetailsPageWhichHasAssociatedObjectsInternal(pageName,loadedPage,itemName,columnName,projectName,exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -202,7 +202,7 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectlyForProjectDetailsPageWhichHasNoAssociatedObjectsInternal(string pageName, string loadedPage, string itemName, string columnName, string projectName, string[] exampleTags)
+        private void EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectlyForProjectDetailsPageWhichHasAssociatedObjectsInternal(string pageName, string loadedPage, string itemName, string columnName, string projectName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -217,7 +217,7 @@ this.FeatureBackground();
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectlyForProjectDetailsPa" +
-                    "geWhichHasNoAssociatedObjects", null, @__tags);
+                    "geWhichHasAssociatedObjects", null, @__tags);
 #line 26
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -277,7 +277,7 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectlyForProjectDetailsPa" +
-            "geWhichHasAssociatedObjects")]
+            "geWhichHasNoAssociatedObjects")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("AllLists")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
@@ -288,14 +288,14 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Devices", "All Devices", "02M88BG4P29EEM", "Hostname", "I-Computer Scheduled Project", "This device will be offboarded, this cannot be undone", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "All Users", "0088FC8A50DD4344B92", "Username", "I-Computer Scheduled Project", "This user will be offboarded, this cannot be undone", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "All Mailboxes", "alex.cristea@juriba.com", "Email Address", "Mailbox Evergreen Capacity Project", "This mailbox will be offboarded, this cannot be undone", null)]
-        public virtual void EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectlyForProjectDetailsPageWhichHasAssociatedObjects(string pageName, string loadedPage, string itemName, string columnName, string projectName, string message, string[] exampleTags)
+        public virtual void EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectlyForProjectDetailsPageWhichHasNoAssociatedObjects(string pageName, string loadedPage, string itemName, string columnName, string projectName, string message, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectlyForProjectDetailsPageWhichHasAssociatedObjectsInternal(pageName,loadedPage,itemName,columnName,projectName,message,exampleTags);
+                    this.EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectlyForProjectDetailsPageWhichHasNoAssociatedObjectsInternal(pageName,loadedPage,itemName,columnName,projectName,message,exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -314,7 +314,7 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectlyForProjectDetailsPageWhichHasAssociatedObjectsInternal(string pageName, string loadedPage, string itemName, string columnName, string projectName, string message, string[] exampleTags)
+        private void EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectlyForProjectDetailsPageWhichHasNoAssociatedObjectsInternal(string pageName, string loadedPage, string itemName, string columnName, string projectName, string message, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -329,7 +329,7 @@ this.FeatureBackground();
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectlyForProjectDetailsPa" +
-                    "geWhichHasAssociatedObjects", null, @__tags);
+                    "geWhichHasNoAssociatedObjects", null, @__tags);
 #line 60
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

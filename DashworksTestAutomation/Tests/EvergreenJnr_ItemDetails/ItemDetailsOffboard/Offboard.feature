@@ -23,7 +23,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatOffboardOptionIsWorkedCorrectly
 
 	#Ann.Ilchenko 8/28/19: ready on 'quasar';
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @Offboard @DAS17843 @DAS17926 @Not_Ready
-Scenario Outline: EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectlyForProjectDetailsPageWhichHasNoAssociatedObjects
+Scenario Outline: EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectlyForProjectDetailsPageWhichHasAssociatedObjects
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<LoadedPage>" list should be displayed to the user
 	When User perform search by "<ItemName>"
@@ -57,7 +57,7 @@ Examples:
 
 #Ann.Ilchenko 8/28/19: ready on 'quasar';
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @Offboard @DAS17843 @DAS17926 @Not_Ready
-Scenario Outline: EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectlyForProjectDetailsPageWhichHasAssociatedObjects
+Scenario Outline: EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectlyForProjectDetailsPageWhichHasNoAssociatedObjects
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<LoadedPage>" list should be displayed to the user
 	When User perform search by "<ItemName>"
