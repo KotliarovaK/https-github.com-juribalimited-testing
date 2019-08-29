@@ -1070,7 +1070,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ItemDetailsContent_ActionsWithTable.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsOffboard\Offboard.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsTopToolsBar\Offboard.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Offboard.feature</DependentUpon>
@@ -1109,6 +1109,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ItemDetails_TabsMenu.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsTopToolsBar\Relink.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Relink.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_ItemDetails\ItemDetails_TopBar.feature.cs">
       <AutoGen>True</AutoGen>
@@ -1902,7 +1907,7 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ItemDetailsContent_ActionsWithTable.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsOffboard\Offboard.feature">
+    <None Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsTopToolsBar\Offboard.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Offboard.feature.cs</LastGenOutput>
     </None>
@@ -1933,6 +1938,10 @@
     <None Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsTabs\ItemDetails_TabsMenu.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ItemDetails_TabsMenu.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsTopToolsBar\Relink.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Relink.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_ItemDetails\ItemDetails_TopBar.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

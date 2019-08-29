@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails.ItemDetailsOffboard
+namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails.ItemDetailsTopToolsBar
 {
     using TechTalk.SpecFlow;
     
@@ -287,7 +287,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
         [NUnit.Framework.TestCaseAttribute("Devices", "All Devices", "02M88BG4P29EEM", "Hostname", "I-Computer Scheduled Project", "This device will be offboarded, this cannot be undone", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "All Users", "0088FC8A50DD4344B92", "Username", "I-Computer Scheduled Project", "This user will be offboarded, this cannot be undone", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "All Mailboxes", "alex.cristea@juriba.com", "Email Address", "Mailbox Evergreen Capacity Project", "This mailbox will be offboarded, this cannot be undone", null)]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "All Mailboxes", "alex.cristea@juriba.com", "Email Address", "Email Migration", "This mailbox will be offboarded, this cannot be undone", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectlyForProjectDetailsPageWhichHasNoAssociatedObjects(string pageName, string loadedPage, string itemName, string columnName, string projectName, string message, string[] exampleTags)
         {
             System.Exception lastException = null;

@@ -84,7 +84,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectly
 	Then "<ItemName>" content is displayed in "Item" column
 
 Examples: 
-	| PageName  | LoadedPage    | ItemName                | ColumnName    | ProjectName                        | Message                                                |
-	| Devices   | All Devices   | 02M88BG4P29EEM          | Hostname      | I-Computer Scheduled Project       | This device will be offboarded, this cannot be undone  |
-	| Users     | All Users     | 0088FC8A50DD4344B92     | Username      | I-Computer Scheduled Project       | This user will be offboarded, this cannot be undone    |
-	| Mailboxes | All Mailboxes | alex.cristea@juriba.com | Email Address | Mailbox Evergreen Capacity Project | This mailbox will be offboarded, this cannot be undone |
+	| PageName  | LoadedPage    | ItemName                | ColumnName    | ProjectName                  | Message                                                |
+	| Devices   | All Devices   | 02M88BG4P29EEM          | Hostname      | I-Computer Scheduled Project | This device will be offboarded, this cannot be undone  |
+	| Users     | All Users     | 0088FC8A50DD4344B92     | Username      | I-Computer Scheduled Project | This user will be offboarded, this cannot be undone    |
+	| Mailboxes | All Mailboxes | alex.cristea@juriba.com | Email Address | Email Migration              | This mailbox will be offboarded, this cannot be undone |
