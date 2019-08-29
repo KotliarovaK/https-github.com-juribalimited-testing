@@ -8427,6 +8427,104 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatOrderOfFiltersInDeviceHardwareCategory")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Applications")]
+        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
+        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS17727")]
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatOrderOfFiltersInDeviceHardwareCategory()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ApplicationsList_CheckThatOrderOfFiltersInDeviceHardwareCategoryInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ApplicationsList_CheckThatOrderOfFiltersInDeviceHardwareCategoryInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThatOrderOfFiltersInDeviceHardwareCategory", null, new string[] {
+                        "Evergreen",
+                        "Applications",
+                        "Evergreen_FiltersFeature",
+                        "FiltersDisplay",
+                        "DAS17727",
+                        "Not_Ready"});
+#line 1924
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 1925
+ testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1926
+ testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1927
+ testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1928
+ testRunner.And("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1929
+ testRunner.And("User closes \"Suggested\" filter category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1930
+ testRunner.And("User expands \"Device Hardware\" filter category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table135 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Subcategories"});
+            table135.AddRow(new string[] {
+                        "Device CPU Architecture"});
+            table135.AddRow(new string[] {
+                        "Device CPU Speed (GHz)"});
+            table135.AddRow(new string[] {
+                        "Device Format"});
+            table135.AddRow(new string[] {
+                        "Device HDD Total Size (GB)"});
+            table135.AddRow(new string[] {
+                        "Device IP Address"});
+            table135.AddRow(new string[] {
+                        "Device IP v6 Address"});
+            table135.AddRow(new string[] {
+                        "Device Manufacturer"});
+            table135.AddRow(new string[] {
+                        "Device Memory (GB)"});
+            table135.AddRow(new string[] {
+                        "Device Model"});
+            table135.AddRow(new string[] {
+                        "Device Target Drive Free Space (GB)"});
+            table135.AddRow(new string[] {
+                        "Device TPM Enabled"});
+            table135.AddRow(new string[] {
+                        "Device TPM Version"});
+            table135.AddRow(new string[] {
+                        "Device Type"});
+            table135.AddRow(new string[] {
+                        "Device Virtual Machine Host"});
+#line 1931
+ testRunner.Then("the following Filters subcategories are displayed for open category:", ((string)(null)), table135, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore

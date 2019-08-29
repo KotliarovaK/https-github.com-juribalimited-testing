@@ -1006,8 +1006,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IList<IWebElement> GetListOfDaysInDatePicker(string column)
         {
             var selector = By.XPath($".//tbody/tr[@role='row']/td[{column}]");
-
             return Driver.FindElements(selector);
+        }
+
+        public IWebElement GetFirstGridItemByName(string itemName)
+        {
+            var selector = By.XPath($".//div[@col-id='application' and @role='gridcell']//a[contains(text(), '{itemName}')]");
+            return Driver.FindElements(selector).First();
         }
     }
 }

@@ -2173,6 +2173,69 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_Search_CheckThatThereIsSameAppearanceOfTheUnknownVersionInTestLangua" +
+            "geOnList")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
+        [NUnit.Framework.CategoryAttribute("Search")]
+        [NUnit.Framework.CategoryAttribute("DAS17633")]
+        public virtual void EvergreenJnr_Search_CheckThatThereIsSameAppearanceOfTheUnknownVersionInTestLanguageOnList()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_Search_CheckThatThereIsSameAppearanceOfTheUnknownVersionInTestLanguageOnListInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_Search_CheckThatThereIsSameAppearanceOfTheUnknownVersionInTestLanguageOnListInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_Search_CheckThatThereIsSameAppearanceOfTheUnknownVersionInTestLangua" +
+                    "geOnList", null, new string[] {
+                        "Evergreen",
+                        "Devices",
+                        "EvergreenJnr_Search",
+                        "Search",
+                        "DAS17633"});
+#line 400
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 5
+this.FeatureBackground();
+#line 401
+ testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 402
+ testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 403
+ testRunner.When("User language is changed to \"Test Language\" via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 404
+ testRunner.And("User perform search by \"acd\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 405
+ testRunner.Then("Package Version column of Search Results has no Unknown item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore
