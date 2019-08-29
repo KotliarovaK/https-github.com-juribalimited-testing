@@ -671,7 +671,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateDate
 	Then "Update" value is displayed in the "Update Date" dropdown
 	Then "5 Aug 2019" content is displayed in "Date" field
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17797 @Not_Ready @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17797 @DAS17816 @Not_Ready @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThanActionFieldsAreNotPrepopulatedWithOldData
 	When User creates new Automation via API and open it
 	| AutomationName | Description | Active | StopOnFailedAction | Scope       | Run    |
@@ -695,7 +695,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThanActionFieldsAreNotPrepopulatedWithOldD
 	#Test
 	When User enters "DAS17797_Action" text in the Search field for "Action" column
 	And User clicks content from "Action" column
-	And User selects "Radio Rag only Comp" in the "Task" dropdown for Actions
+	#DAS-17816 =>
+	Then "UPDATE" Action button is disabled
+	Then "CANCEL" Action button is active
+	Then "UPDATE" Action button have tooltip with "No changes made" text
+	#DAS-17816 <=
+	When User selects "Radio Rag only Comp" in the "Task" dropdown for Actions
 	And User clicks Body container
 	And User selects "Radio Rag Date Owner" in the "Task" dropdown for Actions
 	Then "Update Value" content is displayed in "Update Value" dropdown

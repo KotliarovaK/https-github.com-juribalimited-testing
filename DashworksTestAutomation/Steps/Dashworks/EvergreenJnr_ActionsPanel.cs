@@ -598,7 +598,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.AreEqual(expectedList, actualList, "Project list are different");
         }
 
-        #region  Action button
+        //TODO looks like this section should be moved to BaseDashboard
+        #region Action button
 
         [When(@"User clicks the ""(.*)"" Action button")]
         public void WhenUserClicksTheActionButton(string buttonName)
@@ -668,7 +669,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var button = page.GetActionsButtonByName(buttonName);
             _driver.MouseHover(button);
             var toolTipText = _driver.GetTooltipText();
-            Utils.Verify.AreEqual(text, toolTipText, "PLEASE ADD EXCEPTION MESSAGE");
+            Utils.Verify.AreEqual(text, toolTipText, "Tooltip is incorrect");
         }
 
         #endregion
