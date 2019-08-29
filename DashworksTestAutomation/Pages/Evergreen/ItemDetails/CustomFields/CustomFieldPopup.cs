@@ -13,12 +13,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails.CustomFields
 {
     public class CustomFieldPopup : BaseDashboardPage
     {
-        [FindsBy(How = How.XPath, Using = ".//input[@placeholder='Custom Field']")]
-        public IWebElement CustomFieldSelectbox { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//input[@placeholder='Value']")]
-        public IWebElement ValueTextbox { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//button[@automation='add custom-field']")]
         public IWebElement AddCustomFieldButton { get; set; }
 

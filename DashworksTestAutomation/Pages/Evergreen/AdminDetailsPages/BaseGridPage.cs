@@ -29,6 +29,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public const string FirstColumnTableContent = ".//div[@role='gridcell']//a[@href]";
 
+        //private string NamedDropdownSelector = ".//mat-select[@aria-label='{0}']//span";
+        private string NamedDropdownSelector = ".//label[contains(@class,'field-label')][text()='{0}']/../../mat-select";
+
         #region Inline Edit. Appears on double click on cell
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'ag-cell-inline-editing')]//i[contains(@class,'mat-done')]")]
@@ -193,9 +196,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = TeamInFilterDropdown)]
         public IList<IWebElement> TeamListInFilterDropdown { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//textarea[@placeholder='Project']")]
-        public IWebElement ProjectDropdown { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@placeholder='Path']")]
         public IWebElement PathtDropdown { get; set; }
@@ -663,14 +663,25 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public IWebElement GetDropdownByName(string dropdownName)
         {
-            var selector = By.XPath($".//mat-select[@aria-label='{dropdownName}']//span");
+            var selector = By.XPath(string.Format(NamedDropdownSelector, dropdownName));
             Driver.WaitForElementToBeDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        //Index starts from 1
+        public IWebElement GetDropdownByName(string dropdownName, int index)
+        {
+            index--;
+            var selector = By.XPath(string.Format(NamedDropdownSelector, dropdownName));
+            Driver.WaitFor(() => Driver.FindElements(selector).Count >= index);
+            Driver.WaitForElementToBeDisplayed(Driver.FindElements(selector)[index]);
             return Driver.FindElement(selector);
         }
 
         public IWebElement GetDropdownValueByName(string dropdownName)
         {
-            var selector = By.XPath($".//mat-option/span[text()='{dropdownName}']");
+            var text = dropdownName.Split('\'').Aggregate(string.Empty, (current, s) => current + $"[contains(text(),'{s}')]");
+            var selector = By.XPath($".//mat-option/span{text}");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
@@ -687,7 +698,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public IWebElement GetDropdownByTextValueByName(string value, string dropdownName)
         {
-            var selector = By.XPath($".//mat-form-field//mat-select[@aria-label='{dropdownName}']//span/span[text()='{value}']");
+            var selector = By.XPath($".//label[contains(@class,'field-label')][text()='{dropdownName}']/../../mat-select//span[text()='{value}']");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }

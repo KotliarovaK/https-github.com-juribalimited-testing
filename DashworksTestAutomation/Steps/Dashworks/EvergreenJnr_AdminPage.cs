@@ -752,42 +752,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"Text in {fieldName} field is different");
         }
 
-        [Then(@"""(.*)"" content is displayed in ""(.*)"" dropdown")]
-        public void ThenContentIsDisplayedInDropdown(string text, string dropdown)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            var dropdownContent = page.GetDropdownByName(dropdown).Text;
-            Utils.Verify.AreEqual(dropdownContent, text, $"Text in '{dropdown}' drop-down is different");
-        }
-
-        [Then(@"""(.*)"" text value is displayed in the ""(.*)"" dropdown")]
-        public void ThenTextValueIsDisplayedInTheDropdown(string value, string dropdownName)
-        {
-            var dropdown = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsTrue(dropdown.GetDropdownByTextValueByName(value, dropdownName).Displayed(), $"{value} is not displayed in the {dropdownName}");
-        }
-
-        [Then(@"""(.*)"" value is displayed in the ""(.*)"" dropdown")]
-        public void ThenValueIsDisplayedInTheDropdown(string value, string dropdownName)
-        {
-            var page = _driver.NowAt<Capacity_SlotsPage>();
-            var dropdown = _driver.NowAt<BaseGridPage>();
-            if (page.ExpandItemsButton.Displayed())
-            {
-                page.ExpandItemsButton.Click();
-                Utils.Verify.IsTrue(dropdown.GetDropdownByValueByName(value, dropdownName).Displayed(), $"{value} is not displayed in the {dropdownName}");
-            }
-            else
-                Utils.Verify.IsTrue(dropdown.GetDropdownByValueByName(value, dropdownName).Displayed(), $"{value} is not displayed in the {dropdownName}");
-        }
-
         [Then(@"Capacity Units value is displayed for Capacity Mode field")]
         public void ThenCapacityUnitsValueIsDisplayedForCapacityModeField()
         {
             var page = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsTrue(page.DefaultCapacityMode.Displayed, "Default value is not displayed for Capacity Mode");
+            Verify.IsTrue(page.DefaultCapacityMode.Displayed, "Default value is not displayed for Capacity Mode");
         }
 
+        //TODO looks like the same as WhenUserSelectsInTheDropdown
         [Then(@"User selects ""(.*)"" option in ""(.*)"" dropdown")]
         public void ThenUserSelectsOptionInDropdown(string option, string dropdownName)
         {
@@ -797,20 +769,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             searchElement.GetOptionByName(option).Click();
         }
 
+        //TODO looks like the same as ThenUserSelectsOptionInDropdown
         [When(@"User selects ""(.*)"" in the ""(.*)"" dropdown")]
         public void WhenUserSelectsInTheDropdown(string value, string dropdownName)
         {
             var dropdown = _driver.NowAt<BaseGridPage>();
             dropdown.GetDropdownByName(dropdownName).Click();
-            dropdown.GetDropdownValueByName(value).Click();
-        }
-
-        //Update step after changing Project dropdown selector
-        [When(@"User selects ""(.*)"" in the Project dropdown")]
-        public void WhenUserSelectsInTheProjectDropdown(string value)
-        {
-            var dropdown = _driver.NowAt<BaseGridPage>();
-            dropdown.ProjectDropdown.Click();
             dropdown.GetDropdownValueByName(value).Click();
         }
 

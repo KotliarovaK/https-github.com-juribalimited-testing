@@ -421,9 +421,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridLoadsWithActionsForAnAutoma
 	#Check that grid has at least three actions
 	When User clicks the "CREATE ACTION" Action button
 	Then Create Action page is displayed to the User
-	When User type "15309_Action" Name in the "Action Name" field on the Automation details page
+	When User enters '15309_Action' text to 'Action Name' textbox
 	When User selects "Update path" in the "Action Type" dropdown
-	When User selects "1803 Rollout" in the Project dropdown
+	When User selects '1803 Rollout' option from 'Project' autocomplete
 	When User selects "Undetermined" in the "Path" dropdown for Actions
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "click here to view the 15309_Action action" link
@@ -441,8 +441,8 @@ Scenario: EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality
 	Then "Automations" page should be displayed to the user
 	When User clicks the "CREATE AUTOMATION" Action button
 	Then Create Automation page is displayed to the User
-	When User type "16764_Automation" Name in the "Automation Name" field on the Automation details page
-	When User type "16764" Name in the "Description" field on the Automation details page
+	When User enters '16764_Automation' text to 'Automation Name' textbox
+	When User enters '16764' text to 'Description' textbox
 	When User selects "All Devices" in the Scope Automation dropdown
 	When User selects "Active" checkbox on the Automation Page
 	When User selects "Stop on failed action" checkbox on the Automation Page
@@ -505,8 +505,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextFor
 	Then "Automations" page should be displayed to the user
 	When User clicks the "CREATE AUTOMATION" Action button
 	Then Create Automation page is displayed to the User
-	When User type "DAS15423_Automation" Name in the "Automation Name" field on the Automation details page
-	When User type "DAS15423" Name in the "Description" field on the Automation details page
+	When User enters 'DAS15423_Automation' text to 'Automation Name' textbox
+	When User enters 'DAS15423' text to 'Description' textbox
 	When User selects "DAS15423_List" in the Scope Automation dropdown
 	When User selects "Manual" in the "Run" dropdown
 	When User selects "Active" checkbox on the Automation Page
@@ -598,15 +598,15 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateAndCreateActionsFunctionalityForAuto
 	When User clicks "Actions" tab
 	When User clicks the "CREATE ACTION" Action button
 	Then Create Action page is displayed to the User
-	When User type "17171_Action" Name in the "Action Name" field on the Automation details page
+	When User enters '17171_Action' text to 'Action Name' textbox
 	When User selects "Update path" in the "Action Type" dropdown
-	When User selects "Migration Project Phase 2 (User Project)" in the Project dropdown
+	When User selects 'Migration Project Phase 2 (User Project)' option from 'Project' autocomplete
 	When User selects "[Default (User)]" in the "Path" dropdown for Actions
 	When User clicks the "CREATE" Action button
 	Then Error message with "This automation is currently running" text is displayed
 	When User clicks "Actions" tab
 	When User clicks content from "Action" column
-	When User type "NewAction" Name in the "Action Name" field on the Automation details page
+	When User enters 'NewAction' text to 'Action Name' textbox
 	When User clicks the "UPDATE" Action button
 	Then Error message with "This automation is currently running" text is displayed
 
