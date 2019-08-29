@@ -505,7 +505,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenTextIsDisplayedInFilterContainer(string text)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            _driver.MoveToElement(page.FilterContainerButton);
+            _driver.MoveToElement(page.FilterOptions);
+            _driver.WaitForElementToBeDisplayed(page.FilterOptions);
             if (!_driver.IsElementDisplayed(page.FilterContainer)) page.FilterContainerButton.Click();
             Utils.Verify.AreEqual(text, page.FilterContainer.Text.TrimStart(' ').TrimEnd(' '),
                 "Filter is created incorrectly");

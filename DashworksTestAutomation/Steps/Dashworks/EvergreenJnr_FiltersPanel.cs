@@ -83,6 +83,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.CloseFilterSectionByName(categoryName);
         }
 
+        [When(@"User closes all filters categories")]
+        public void WhenUserClosesAllFiltersCategories()
+        {
+            var columnElement = _driver.NowAt<FiltersElement>();
+            foreach (var group in columnElement.GroupTitle)
+            {
+                group.Click();
+            }
+        }
+
         [When(@"User expands ""(.*)"" filter category")]
         public void ThenUserExpandsFilterCategory(string categoryName)
         {
