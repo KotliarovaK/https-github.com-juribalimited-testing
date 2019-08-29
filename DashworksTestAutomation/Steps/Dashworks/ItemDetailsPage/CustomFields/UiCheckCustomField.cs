@@ -21,6 +21,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage.CustomFields
             _driver = driver;
         }
 
+        //This should be changed to generic method
         [Then(@"Add button is displayed on Add Custom Field popup")]
         public void ThenAddButtonIsDisplayedOnAddCustomFieldPopup()
         {

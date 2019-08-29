@@ -2,10 +2,8 @@
 using System.Linq;
 using System.Net;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Automations;
-using DashworksTestAutomation.DTO.Evergreen.Admin.CapacityUnits;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
-using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Providers;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -13,22 +11,21 @@ using RestSharp;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
 
-namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations
+namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations.CreateAutomationSteps
 {
     [Binding]
-    public class CreateAutomationsViaApi : SpecFlowContext
+    public class CreateAutomationBase : SpecFlowContext
     {
-        private readonly DTO.RuntimeVariables.Automations _automation;
-        private readonly RestWebClient _client;
+        protected readonly DTO.RuntimeVariables.Automations _automation;
+        protected readonly RestWebClient _client;
 
-        private CreateAutomationsViaApi(DTO.RuntimeVariables.Automations automation, RestWebClient client)
+        public CreateAutomationBase(DTO.RuntimeVariables.Automations automation, RestWebClient client)
         {
             _automation = automation;
             _client = client;
         }
 
-        [ When(@"User creates new Automation via API")]
-        public void WhenUserCreatesNewAutomationViaAPI(Table table)
+        protected string CreateAutomationViaApi(Table table)
         {
             var automations = table.CreateSet<AutomationsDto>();
 
@@ -56,10 +53,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations
                 }
 
                 var responseContent = JsonConvert.DeserializeObject<JObject>(response.Content);
-                string automationId = responseContent["id"].ToString();
+                automation.Id = responseContent["id"].ToString();
 
-                _automation.Value.Add(new AutomationsDto(){Id = automationId });;
+                //TODO it is not clear why we put to context empty Automation with just ID but not automations from Table...
+                _automation.Value.Add(automation);
             }
+
+            return _automation.Value.Last().Id;
         }
     }
 }

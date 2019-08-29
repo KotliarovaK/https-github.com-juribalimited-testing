@@ -12,7 +12,7 @@ using RestSharp;
 
 namespace DashworksTestAutomation.DTO.RuntimeVariables
 {
-    internal class RestWebClient
+    public class RestWebClient
     {
         public RestWebClient()
         {
