@@ -20,6 +20,8 @@ namespace DashworksTestAutomation.Helpers
                     return "de-DE";
                 case "français":
                     return "fr-FR";
+                case "test language":
+                    return "yo";
 
                 default:
                     throw new Exception($"{fullLanguage} lng not found in convertor");

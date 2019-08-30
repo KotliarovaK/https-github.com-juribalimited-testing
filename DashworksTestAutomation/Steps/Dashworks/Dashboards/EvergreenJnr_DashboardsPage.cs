@@ -1107,7 +1107,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.That(page.GetCardWidgetPreviewText().Text, Is.EqualTo(option), "Widget Preview shown different value");
         }
 
+        [Then(@"There are no links placed in ""(.*)"" Widget")]
+        public void ThereAreNoLinksPlacedInWidget(string widgetName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
 
+            Utils.Verify.That(page.GetWidgetLinks(widgetName).Count, Is.EqualTo(0), $"Found some links in widget");
+        }
 
         #region Dashboards details
 
@@ -1313,7 +1320,5 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         #endregion
-
-        
     }
 }

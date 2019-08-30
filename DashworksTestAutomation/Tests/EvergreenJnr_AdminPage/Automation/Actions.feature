@@ -671,15 +671,114 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateDate
 	Then "Update" value is displayed in the "Update Date" dropdown
 	Then "5 Aug 2019" content is displayed in "Date" field
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17797 @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17797 @DAS17816 @Not_Ready @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThanActionFieldsAreNotPrepopulatedWithOldData
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User creates new Automation via API
-	| AutomationName           | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| Test_Automation_DAS15938 | DAS15938    | true   | false              | All Devices | Manual |
-	When User clicks "Automations" link on the Admin page
-	Then "Automations" page should be displayed to the user
-	When User enters "Test_Automation_DAS15938" text in the Search field for "Automation" column
-	When User clicks content from "Automation" column
-	When User clicks "Actions" tab
+	When User creates new Automation via API and open it
+	| AutomationName | Description | Active | StopOnFailedAction | Scope       | Run    |
+	| DAS17797       | 17797       | true   | false              | All Devices | Manual |
+	And User clicks "Actions" tab
+	#Action
+	And User clicks the "CREATE ACTION" Action button
+	And User enters 'DAS17797_Action' text to 'Action Name' textbox
+	And User selects "Update task value" in the "Action Type" dropdown
+	And User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
+	And User selects "One" in the "Stage" dropdown for Actions
+	And User selects "Radio Rag Date Owner" in the "Task" dropdown for Actions
+	And User selects "Update" Update Value on Action panel
+	And User selects "Complete" Value on Action panel
+	And User selects "Update" Update Date on Action panel
+	And User selects "31 Aug 2019" Date on Action panel
+	And User selects "Update" Update Owner on Action panel
+	And User selects "1803 Team" Team on Action panel
+	And User selects "Lisa Bailey" Owner on Action panel
+	And User clicks the "CREATE" Action button
+	#Test
+	When User enters "DAS17797_Action" text in the Search field for "Action" column
+	And User clicks content from "Action" column
+	#DAS-17816 =>
+	Then "UPDATE" Action button is disabled
+	Then "CANCEL" Action button is active
+	Then "UPDATE" Action button have tooltip with "No changes made" text
+	#DAS-17816 <=
+	When User selects "Radio Rag only Comp" in the "Task" dropdown for Actions
+	And User clicks Body container
+	And User selects "Radio Rag Date Owner" in the "Task" dropdown for Actions
+	Then "Update Value" content is displayed in "Update Value" dropdown
+	And "Update Date" content is displayed in "Update Date" dropdown
+	And "Update Owner" content is displayed in "Update Owner" dropdown
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17744 @Not_Ready @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckValueDataInTheGridForActions
+	When User creates new Automation via API and open it
+	| AutomationName | Description | Active | StopOnFailedAction | Scope     | Run    |
+	| DAS17744       | 17744       | true   | false              | All Users | Manual |
+	And User clicks "Actions" tab
+	#Action
+	And User clicks the "CREATE ACTION" Action button
+	And User enters 'DAS17744_Action' text to 'Action Name' textbox
+	And User selects "Update task value" in the "Action Type" dropdown
+	And User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
+	And User selects "One" in the "Stage" dropdown for Actions
+	And User selects "Radio Rag Date Owner User Req A" in the "Task" dropdown for Actions
+	And User selects "Update" Update Value on Action panel
+	And User selects "Started" Value on Action panel
+	And User selects "Update" Update Date on Action panel
+	And User selects "5 Sep 2019" Date on Action panel
+	And User selects "Update" Update Owner on Action panel
+	And User selects "1803 Team" Team on Action panel
+	And User selects "Lisa Bailey" Owner on Action panel
+	And User clicks the "CREATE" Action button
+	#Test
+	When User enters "DAS17744_Action" text in the Search field for "Action" column
+	Then "Started, 2019-09-05, 1803 Team, Lisa Bailey" content is displayed in "Value" column
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17772 @Not_Ready @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckThatActionStageSelectboxIsDisplayedForSpecificData
+	When User creates new Automation via API and open it
+	| AutomationName | Description | Active | StopOnFailedAction | Scope     | Run    |
+	| DAS17772       | 17772       | true   | false              | All Users | Manual |
+	And User clicks "Actions" tab
+	#Action
+	And User clicks the "CREATE ACTION" Action button
+	And User enters 'DAS17772_Action' text to 'Action Name' textbox
+	And User selects "Update task value" in the "Action Type" dropdown
+	And User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
+	Then "" content is displayed in "Stage" autocomplete
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17778 @Not_Ready @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckCapacitySlotDataForActions
+	When User creates new Automation via API and open it
+	| AutomationName | Description | Active | StopOnFailedAction | Scope       | Run    |
+	| DA17778        | 17778       | true   | false              | All Devices | Manual |
+	And User clicks "Actions" tab
+	#Action 1
+	And User clicks the "CREATE ACTION" Action button
+	And User enters '17778 None' text to 'Action Name' textbox
+	And User selects "Update task value" in the "Action Type" dropdown
+	And User selects 'Devices Evergreen Capacity Project' option from 'Project' autocomplete
+	And User selects 'Stage 1' option from 'Stage' autocomplete
+	And User selects 'Scheduled Date' option from 'Task' autocomplete
+	And User selects "Update" in the "Update Date" dropdown
+	And User enters '15 Aug 2019' text to 'Date' datepicker
+	And User selects "None" in the "Capacity Slot" dropdown
+	And User clicks the "CREATE" Action button
+	#Action 2
+	And User clicks the "CREATE ACTION" Action button
+	And User enters '17778 Slot' text to 'Action Name' textbox
+	And User selects "Update task value" in the "Action Type" dropdown
+	And User selects 'Devices Evergreen Capacity Project' option from 'Project' autocomplete
+	And User selects 'Stage 1' option from 'Stage' autocomplete
+	And User selects 'Scheduled Date' option from 'Task' autocomplete
+	And User selects "Update" in the "Update Date" dropdown
+	And User enters '2 Jun 2019' text to 'Date' datepicker
+	And User selects "Scheduled Slot" in the "Capacity Slot" dropdown
+	And User clicks the "CREATE" Action button
+	#Test
+	When User enters "17778 None" text in the Search field for "Action" column
+	And User clicks content from "Action" column
+	Then "None" content is displayed in "Capacity Slot" dropdown
+	When User clicks "Details" tab
+	And User clicks "Actions" tab
+	When User enters "17778 Slot" text in the Search field for "Action" column
+	And User clicks content from "Action" column
+	Then "Scheduled Slot" content is displayed in "Capacity Slot" dropdown

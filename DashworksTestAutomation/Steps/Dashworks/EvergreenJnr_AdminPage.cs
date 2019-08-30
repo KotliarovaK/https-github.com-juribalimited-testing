@@ -752,59 +752,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"Text in {fieldName} field is different");
         }
 
-        [Then(@"""(.*)"" content is displayed in ""(.*)"" dropdown")]
-        public void ThenContentIsDisplayedInDropdown(string text, string dropdown)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            var dropdownContent = page.GetDropdownByName(dropdown).Text;
-            Utils.Verify.AreEqual(dropdownContent, text, $"Text in '{dropdown}' drop-down is different");
-        }
-
-        [Then(@"""(.*)"" text value is displayed in the ""(.*)"" dropdown")]
-        public void ThenTextValueIsDisplayedInTheDropdown(string value, string dropdownName)
-        {
-            var dropdown = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsTrue(dropdown.GetDropdownByTextValueByName(value, dropdownName).Displayed(), $"{value} is not displayed in the {dropdownName}");
-        }
-
-        [Then(@"""(.*)"" value is displayed in the ""(.*)"" dropdown")]
-        public void ThenValueIsDisplayedInTheDropdown(string value, string dropdownName)
-        {
-            var page = _driver.NowAt<Capacity_SlotsPage>();
-            var dropdown = _driver.NowAt<BaseGridPage>();
-            if (page.ExpandItemsButton.Displayed())
-            {
-                page.ExpandItemsButton.Click();
-                Utils.Verify.IsTrue(dropdown.GetDropdownByValueByName(value, dropdownName).Displayed(), $"{value} is not displayed in the {dropdownName}");
-            }
-            else
-                Utils.Verify.IsTrue(dropdown.GetDropdownByValueByName(value, dropdownName).Displayed(), $"{value} is not displayed in the {dropdownName}");
-        }
-
         [Then(@"Capacity Units value is displayed for Capacity Mode field")]
         public void ThenCapacityUnitsValueIsDisplayedForCapacityModeField()
         {
             var page = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsTrue(page.DefaultCapacityMode.Displayed, "Default value is not displayed for Capacity Mode");
-        }
-
-        //TODO looks like the same as WhenUserSelectsInTheDropdown
-        [Then(@"User selects ""(.*)"" option in ""(.*)"" dropdown")]
-        public void ThenUserSelectsOptionInDropdown(string option, string dropdownName)
-        {
-            var dropdown = _driver.NowAt<BaseGridPage>();
-            dropdown.GetDropdownByName(dropdownName).Click();
-            var searchElement = _driver.NowAt<BaseDashboardPage>();
-            searchElement.GetOptionByName(option).Click();
-        }
-
-        //TODO looks like the same as ThenUserSelectsOptionInDropdown
-        [When(@"User selects ""(.*)"" in the ""(.*)"" dropdown")]
-        public void WhenUserSelectsInTheDropdown(string value, string dropdownName)
-        {
-            var dropdown = _driver.NowAt<BaseGridPage>();
-            dropdown.GetDropdownByName(dropdownName).Click();
-            dropdown.GetDropdownValueByName(value).Click();
+            Verify.IsTrue(page.DefaultCapacityMode.Displayed, "Default value is not displayed for Capacity Mode");
         }
 
         [When(@"User clicks Update Team button")]
@@ -1691,6 +1643,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             projectPage.Click(() => projectPage.LanguageMenu);
         }
 
+        //TODO move to baseGrid
         [Then(@"Warning message with ""(.*)"" text is displayed on the Project Details Page")]
         public void ThenWarningMessageWithTextIsDisplayedOnTheProjectDetailsPage(string text)
         {
@@ -2022,14 +1975,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenDropdownIsNotDisplayedOnTheAdminSettingsScreen(string dropdownName)
         {
             var dropdown = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsFalse(dropdown.GetMissingDropdownOnSettingsScreenByName(dropdownName), $"{dropdownName} is displayed");
-        }
-
-        [Then(@"""(.*)"" dropdown is displayed")]
-        public void ThenDropdownIsDisplayed(string dropdownName)
-        {
-            var dropdown = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsTrue(dropdown.GetDropdownByName(dropdownName).Displayed(), $"{dropdownName} is not displayed");
+            Verify.IsFalse(dropdown.GetMissingDropdownOnSettingsScreenByName(dropdownName), $"{dropdownName} is displayed");
         }
 
         [Then(@"Next values are selected for the ""(.*)"" field:")]
@@ -2041,13 +1987,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 page.ExpandItemsButton.Click();
                 var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
                 var actualList = page.SelectedValuesList.Select(value => value.Text).ToList();
-                Utils.Verify.AreEqual(expectedList, actualList, "The list of task values ​​is different");
+                Verify.AreEqual(expectedList, actualList, "The list of task values ​​is different");
             }
             else
             {
                 var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
                 var actualList = page.SelectedValuesList.Select(value => value.Text).ToList();
-                Utils.Verify.AreEqual(expectedList, actualList, "The list of task values ​​is different");
+                Verify.AreEqual(expectedList, actualList, "The list of task values ​​is different");
             }
         }
 

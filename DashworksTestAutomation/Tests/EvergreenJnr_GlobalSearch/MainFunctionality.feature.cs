@@ -413,6 +413,74 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_Search_CheckThatThereIsSameAppearanceOfTheUnknownVersionInTestLangua" +
+            "ge")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("GlobalSearch")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_GlobalSearch")]
+        [NUnit.Framework.CategoryAttribute("MainFunctionality")]
+        [NUnit.Framework.CategoryAttribute("DAS17633")]
+        public virtual void EvergreenJnr_Search_CheckThatThereIsSameAppearanceOfTheUnknownVersionInTestLanguage()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_Search_CheckThatThereIsSameAppearanceOfTheUnknownVersionInTestLanguageInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_Search_CheckThatThereIsSameAppearanceOfTheUnknownVersionInTestLanguageInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_Search_CheckThatThereIsSameAppearanceOfTheUnknownVersionInTestLangua" +
+                    "ge", null, new string[] {
+                        "Evergreen",
+                        "GlobalSearch",
+                        "EvergreenJnr_GlobalSearch",
+                        "MainFunctionality",
+                        "DAS17633"});
+#line 77
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 5
+this.FeatureBackground();
+#line 78
+ testRunner.When("User type \"ACDSee 4.0 SendPix & Email Update\" in Global Search Field and presses " +
+                    "Enter key", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 79
+ testRunner.Then("list of results is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 80
+ testRunner.When("User language is changed to \"Test Language\" via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 81
+ testRunner.And("User navigates to second tab of Search Results", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 82
+ testRunner.Then("Version column of Search Results has no Unknown item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 83
+ testRunner.When("User clicks first \"ACDSee 4.0 SendPix & Email Update\" item in grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 84
+ testRunner.Then("Value column of Item Details has no Unknown item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore

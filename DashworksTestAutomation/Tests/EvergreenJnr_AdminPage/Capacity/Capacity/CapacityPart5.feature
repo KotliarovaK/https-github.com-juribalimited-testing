@@ -16,8 +16,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitInAProjectMappedTo
 	| ProjectName        | Scope       | ProjectTemplate | Mode               |
 	| ProjectForDAS13956 | All Devices | None            | Standalone Project |
 	And User selects "Capacity" tab on the Project details page	
-	Then User selects "Clone evergreen capacity units to project capacity units" option in "Capacity Units" dropdown
-	When User clicks the "UPDATE" Action button
+	And User selects "Clone evergreen capacity units to project capacity units" in the "Capacity Units" dropdown
+	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The project capacity details have been updated" text
 	When User navigates to the "Units" sub-menu on the Details page
 	Then Counter shows "1" found rows
