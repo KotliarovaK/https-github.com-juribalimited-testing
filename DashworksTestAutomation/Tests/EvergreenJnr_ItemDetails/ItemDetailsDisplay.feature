@@ -180,7 +180,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatLoadingIndicatorAppearsInTheSam
 	And User navigates to the "Details" main-menu on the Details page
 	Then Loading indicator appears in the same place when switching between main-menu
 
-@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17813
+	#Ann.Ilchenko 8/30/19: ready on 'quasar';
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17813 @Not_Ready
 Scenario: EvergreenJnr_UsersList_CheckThatToolTipForMailboxPermissionOnMailboxPermissionsTabOnUserObjectPageIsDisplayedCorrectly
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user

@@ -354,18 +354,6 @@ Examples:
 	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | MSI          | File Name      |
 	| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users        | Username       |
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11628
-Scenario: EvergreenJnr_DevicesList_CheckThatTheFilterDropddownIsDisplayedFullyWhenTheFilterResultNotContainsValues
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	When User click content from "Hostname" column
-	And User navigates to the "Applications" main-menu on the Details page
-	And User have opened Column Settings for "Installed" column in the Details Page table
-	And User clicks Filter button on the Column Settings panel
-	Then Filter panel has standard size
-	Then User select "False" checkbox from filter on the Details Page
-	Then Filter panel has standard size
-
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11647
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatAutosizeOptionWorksCorrectlyForSiteColumn
 	When User clicks "Devices" on the left-hand menu
@@ -621,7 +609,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatLinksFromTheDeviceColumnInDeviceProje
 	Then Details page for "000F977AC8824FE39B8" item is displayed to the user
 	When User navigates to the "Projects" main-menu on the Details page
 	And User navigates to the "User Projects" sub-menu on the Details page
-	And User clicks "Project K-Computer Scheduled Project" link on the Details Page
+	And User clicks "*Project K-Computer Scheduled Project" link on the Details Page
 	Then "Project Object" page is displayed to the user
 	And PMObject page for "User: 000F977AC8824FE39B8 (Spruill, Shea)" object is displayed to the user
 	And User click back button in the browser
@@ -733,7 +721,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatLinksFromTheDeviceColumnInDeviceP
 	#=====================================================================================#
 	And Details page for "000F977AC8824FE39B8@bclabs.local" item is displayed to the user
 	When User navigates to the "Mailbox User Projects" sub-menu on the Details page
-	And User clicks "Project K-Computer Scheduled Project" link on the Details Page
+	And User clicks "*Project K-Computer Scheduled Project" link on the Details Page
 	Then "Project Object" page is displayed to the user
 	And PMObject page for "User: 000F977AC8824FE39B8 (Spruill, Shea)" object is displayed to the user
 	And User click back button in the browser
@@ -1005,7 +993,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatDataIsDisplayedInHardwareSummaryTabFor
 	When User navigates to the "Hardware Summary" sub-menu on the Details page
 	Then element table is displayed on the Details page
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16472 @DAS16469 @DAS15039
+	#Ann.Ilchenko 8/30/19: 'archived' because functionality has been changed.
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16472 @DAS16469 @DAS15039 @archived
 Scenario: EvergreenJnr_DevicesList_CheckThatIconsForReadinessDdlOnRelatedTabAreDisplayed
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
