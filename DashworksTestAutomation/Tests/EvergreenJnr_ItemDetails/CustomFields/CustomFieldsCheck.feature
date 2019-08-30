@@ -94,7 +94,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCustomFieldsTheGroupByElementContain
 	And User clicks Column button on the Column Settings panel
 	And User select "Value" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
-	When User clicks Group By button on the Item Details page
+	When User clicks Group By button on action top bar
 	Then following Group By values ​​are displayed for User
 	| Values       |
 	| Custom Field |
