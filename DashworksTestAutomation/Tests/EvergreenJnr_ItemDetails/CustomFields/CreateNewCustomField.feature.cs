@@ -186,13 +186,13 @@ this.FeatureBackground();
  testRunner.Then("\'Custom Field\' autocomplete last option is \'FlDAS16487_1a\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Option"});
+                        "Options"});
             table2.AddRow(new string[] {
                         "FlDAS16487_1b"});
             table2.AddRow(new string[] {
                         "FlDAS16487_1c"});
 #line 29
- testRunner.And("\'Custom Field\' autocomplete does NOT have option", ((string)(null)), table2, "And ");
+ testRunner.And("\'Custom Field\' autocomplete does NOT have options", ((string)(null)), table2, "And ");
 #line 33
  testRunner.When("User selects \'FlDAS16487_1a\' option after search from \'Custom Field\' autocomplete" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
