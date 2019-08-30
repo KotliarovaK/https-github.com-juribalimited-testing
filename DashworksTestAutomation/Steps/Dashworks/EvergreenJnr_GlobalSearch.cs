@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System.Linq;
+using System.Threading;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Utils;
@@ -129,5 +130,37 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.IsTrue(searchElement.GlobalSearchTextBoxResetButton.Displayed(), "Reset button is not displayed");
             Logger.Write("Reset button is displayed");
         }
+
+        [When(@"User navigates to second tab of Search Results")]
+        public void UserNavigatesToSecondTabOfSearchResults()
+        {
+            var searchResult = _driver.NowAt<GlobalSearchElement>();
+            searchResult.SearchResultsSecondTab.Click();
+            _driver.WaitForDataLoading();
+        }
+        
+        [Then(@"Version column of Search Results has no Unknown item")]
+        public void ThenVersionColumnOfSearchResultsHasNoUnknownItem()
+        {
+            var page = _driver.NowAt<GlobalSearchElement>();
+
+            var listOfValues = page.GetVersionColumnDataOfSearchResult().Select(x => x.Text).ToList();
+
+            Utils.Verify.That(listOfValues, Does.Not.Contain("Unknown"), "Unknown item displayed in column");
+            Utils.Verify.That(listOfValues, Does.Not.Contain("[9999999]"), "[9999999] item displayed in column");
+        }
+
+        [Then(@"Package Version column of Search Results has no Unknown item")]
+        public void ThenPackageVersionColumnOfSearchResultsHasNoUnknownItem()
+        {
+            var page = _driver.NowAt<GlobalSearchElement>();
+
+            var listOfValues = page.GetPackageVersionColumnDataOfGrid().Select(x => x.Text).ToList();
+
+            Utils.Verify.That(listOfValues, Does.Not.Contain("Unknown"), "Unknown item displayed in column");
+            Utils.Verify.That(listOfValues, Does.Not.Contain("[9999999]"), "[9999999] item displayed in column");
+        }
+
+        
     }
 }

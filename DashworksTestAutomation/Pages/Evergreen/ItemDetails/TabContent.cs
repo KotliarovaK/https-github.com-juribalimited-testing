@@ -28,6 +28,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
             };
         }
 
+        public IList<IWebElement> GetColumnSettings()
+        {
+            return Driver.FindElements(By.XPath(".//div[contains(@class, 'menu-option')]//span[@id='eName']"));
+        }
+
         public bool GetTheDisplayStateOfContentOnOpenTab(string name)
         {
             return Driver.IsElementDisplayed(By.XPath($".//div[@class='table-responsive ng-star-inserted']//span[text()='{name}']"));

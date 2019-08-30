@@ -104,35 +104,35 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 case "Devices":
                     //Check Devices heading is visible
                     var devicesPage = _driver.NowAt<DevicesPage>();
-                    Verify.AreEqual(devicesPage.Heading.Text.ToLower(), listPage.ToLower(),
+                    Verify.AreEqual(listPage.ToLower(), devicesPage.Heading.Text.ToLower(),
                         "Incorrect list is displayed to user");
                     break;
 
                 case "Users":
                     //Check Users heading is visible
                     var usersPage = _driver.NowAt<UsersPage>();
-                    Verify.AreEqual(usersPage.Heading.Text.ToLower(), listPage.ToLower(),
+                    Verify.AreEqual(listPage.ToLower(), usersPage.Heading.Text.ToLower(),
                         "Incorrect list is displayed to user");
                     break;
 
                 case "Applications":
                     //Check Applications heading is visible
                     var applicationsPage = _driver.NowAt<ApplicationsPage>();
-                    Verify.AreEqual(applicationsPage.Heading.Text.ToLower(), listPage.ToLower(),
+                    Verify.AreEqual(listPage.ToLower(), applicationsPage.Heading.Text.ToLower(),
                         "Incorrect list is displayed to user");
                     break;
 
                 case "Mailboxes":
                     //Check Mailboxes heading is visible
                     var mailboxesPage = _driver.NowAt<MailboxesPage>();
-                    Verify.AreEqual(mailboxesPage.Heading.Text.ToLower(), listPage.ToLower(),
+                    Verify.AreEqual(listPage.ToLower(), mailboxesPage.Heading.Text.ToLower(),
                         "Incorrect list is displayed to user");
                     break;
 
                 case "Admin":
                     //Check Admin heading is visible
                     var adminPage = _driver.NowAt<Pages.Evergreen.AdminPage>();
-                    Verify.AreEqual(adminPage.Heading.Text.ToLower(), listPage.ToLower(),
+                    Verify.AreEqual(listPage.ToLower(), adminPage.Heading.Text.ToLower(),
                         "Incorrect list is displayed to user");
                     break;
 
@@ -155,7 +155,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<AdminLeftHandMenu>();
             Verify.IsTrue(_driver.IsElementExists(page.AdminSubMenu), "Admin page was not displayed");
-            if (!page.AdminSubMenu.Disabled())
+            if (!page.AdminSubMenu.Displayed())
                 page.ExpandSidePanelIcon.Click();
         }
 

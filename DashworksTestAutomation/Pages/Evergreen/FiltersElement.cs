@@ -309,10 +309,10 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 Driver.MouseHover(AddAndFilterButton);
                 AddAndFilterButton.Click();
             }
-
-            if (FilterCategories.Any())
-                Driver.MouseHover(FilterCategories.Last());
-            Driver.MouseHover(SearchTextBox);
+            //TODO: 28aug2019 Yurii: removed logic that jumps to the end of the list
+            //if (FilterCategories.Any())
+                //Driver.MouseHover(FilterCategories.Last());
+            Driver.MoveToElement(SearchTextBox);
             SearchTextBox.SendKeys(filterName);
             string selector;
             if (filterName.Contains("'"))

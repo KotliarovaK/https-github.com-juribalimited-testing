@@ -63,5 +63,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
+
+        public IList<IWebElement> GetValuesColumnDataOfItemDetails()
+        {
+            var selector = By.XPath(".//td[contains(@class, 'mat-column-value')]");
+            Driver.WaitForElementToBeDisplayed(selector);
+            return Driver.FindElements(selector);
+        }
     }
 }

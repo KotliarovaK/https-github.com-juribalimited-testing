@@ -611,9 +611,12 @@ namespace DashworksTestAutomation.Extensions
 
         #region Wait for ElementS to be (not) Displayed
 
-        public static void WaitForElementsToBeNotDisplayed(this RemoteWebDriver driver, By by, int waitSeconds = WaitTimeoutSeconds)
+        public static void WaitForElementsToBeNotDisplayed(this RemoteWebDriver driver, By by, int waitSeconds = WaitTimeoutSeconds, bool allElements = true)
         {
-            WaitForElementsDisplayCondition(driver, by, false, waitSeconds);
+            if (allElements)
+                WaitForElementsDisplayCondition(driver, by, false, waitSeconds);
+            else
+                WaitForAtLeastOneElementDisplayCondition(driver, by, false, waitSeconds);
         }
 
         public static void WaitForElementsToBeNotDisplayed(this RemoteWebDriver driver, IList<IWebElement> elements, int waitSeconds = WaitTimeoutSeconds)
@@ -621,14 +624,20 @@ namespace DashworksTestAutomation.Extensions
             WaitForElementsDisplayCondition(driver, elements, false, waitSeconds);
         }
 
-        public static void WaitForElementsToBeDisplayed(this RemoteWebDriver driver, By by, int waitSeconds = WaitTimeoutSeconds)
+        public static void WaitForElementsToBeDisplayed(this RemoteWebDriver driver, By by, int waitSeconds = WaitTimeoutSeconds, bool allElements = true)
         {
-            WaitForElementsDisplayCondition(driver, by, true, waitSeconds);
+            if (allElements)
+                WaitForElementsDisplayCondition(driver, by, true, waitSeconds);
+            else
+                WaitForAtLeastOneElementDisplayCondition(driver, by, true, waitSeconds);
         }
 
-        public static void WaitForElementsToBeDisplayed(this RemoteWebDriver driver, IList<IWebElement> elements, int waitSeconds = WaitTimeoutSeconds)
+        public static void WaitForElementsToBeDisplayed(this RemoteWebDriver driver, IList<IWebElement> elements, int waitSeconds = WaitTimeoutSeconds, bool allElements = true)
         {
-            WaitForElementsDisplayCondition(driver, elements, true, waitSeconds);
+            if (allElements)
+                WaitForElementsDisplayCondition(driver, elements, true, waitSeconds);
+            else
+                WaitForAtLeastOneElementDisplayCondition(driver, elements, true, waitSeconds);
         }
 
         private static void WaitForElementsDisplayCondition(this RemoteWebDriver driver, By by, bool condition, int waitSeconds)
@@ -650,6 +659,32 @@ namespace DashworksTestAutomation.Extensions
             {
                 WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(waitSeconds));
                 wait.Until(VisibleConditionOfAllElementsLocatedBy(elements, condition));
+            }
+            catch (WebDriverTimeoutException e)
+            {
+                throw new Exception($"Not all from {elements.Count} elements were not changed Display condition to '{condition}' after {waitSeconds} seconds", e);
+            }
+        }
+
+        private static void WaitForAtLeastOneElementDisplayCondition(this RemoteWebDriver driver, By by, bool condition, int waitSeconds)
+        {
+            try
+            {
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(waitSeconds));
+                wait.Until(VisibleConditionOfAtLeastOneElementLocatedBy(by, condition));
+            }
+            catch (WebDriverTimeoutException e)
+            {
+                throw new Exception($"Elements with '{by}' selector were not changed Display condition to '{condition}' after {waitSeconds} seconds", e);
+            }
+        }
+
+        private static void WaitForAtLeastOneElementDisplayCondition(this RemoteWebDriver driver, IList<IWebElement> elements, bool condition, int waitSeconds)
+        {
+            try
+            {
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(waitSeconds));
+                wait.Until(VisibleConditionOfAtLeastOneElementLocatedBy(elements, condition));
             }
             catch (WebDriverTimeoutException e)
             {
@@ -707,6 +742,51 @@ namespace DashworksTestAutomation.Extensions
                 try
                 {
                     return elements.All(element => element.Displayed().Equals(expectedCondition));
+                }
+                catch (NoSuchElementException)
+                {
+                    // Returns false because the element is not present in DOM.
+                    return false;
+                }
+                catch (StaleElementReferenceException)
+                {
+                    // Returns false because stale element reference implies that element
+                    // is no longer visible.
+                    return false;
+                }
+            };
+        }
+
+        private static Func<IWebDriver, bool> VisibleConditionOfAtLeastOneElementLocatedBy(By locator, bool expectedCondition)
+        {
+            return (driver) =>
+            {
+                try
+                {
+                    var elements = driver.FindElements(locator);
+                    return elements.Any(element => element.Displayed().Equals(expectedCondition));
+                }
+                catch (NoSuchElementException)
+                {
+                    // Returns false because the element is not present in DOM.
+                    return false;
+                }
+                catch (StaleElementReferenceException)
+                {
+                    // Returns false because stale element reference implies that element
+                    // is no longer visible.
+                    return false;
+                }
+            };
+        }
+
+        private static Func<IWebDriver, bool> VisibleConditionOfAtLeastOneElementLocatedBy(IList<IWebElement> elements, bool expectedCondition)
+        {
+            return (driver) =>
+            {
+                try
+                {
+                    return elements.Any(element => element.Displayed().Equals(expectedCondition));
                 }
                 catch (NoSuchElementException)
                 {

@@ -396,3 +396,10 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRingsInRingsColumnShownAccordingToDi
 	| Ring 1     |
 	| Unassigned |
 	
+@Evergreen @Devices @EvergreenJnr_Search @Search @DAS17633
+Scenario: EvergreenJnr_Search_CheckThatThereIsSameAppearanceOfTheUnknownVersionInTestLanguageOnList
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User language is changed to "Test Language" via API
+	And User perform search by "acd"
+	Then Package Version column of Search Results has no Unknown item

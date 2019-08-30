@@ -85,6 +85,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = "//textarea[@placeholder='Stage']")]
         public IWebElement StageField { get; set; }
 
+        //TODO Remove this step
         [FindsBy(How = How.XPath, Using = "//input[@placeholder='Capacity Unit']")]
         public IWebElement CapacityUnitField { get; set; }
 
@@ -107,6 +108,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//mat-select[contains(@class, 'mat-select')]//span[text()='Update Value']")]
         public IWebElement UpdateValueDropdown { get; set; }
 
+        //TODO delete this webelement
         [FindsBy(How = How.XPath, Using = ".//mat-select[contains(@class, 'mat-select')]//span[text()='Update Date']")]
         public IWebElement UpdateDateDropdown { get; set; }
 
@@ -122,6 +124,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//button[@aria-label='Open calendar']")]
         public IWebElement DatePickerIcon { get; set; }
 
+        //TODO Remove this step
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Date']")]
         public IWebElement DateField { get; set; }
 
@@ -272,6 +275,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = ".//button[@aria-label='filters']")]
         public IWebElement FilterContainerButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'context-header')]//div[@role='group']")]
+        public IWebElement FilterOptions { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'sectionAddObjects wrapper-disabled')]")]
         public IWebElement DisabledObjectsToAddPanel { get; set; }
@@ -652,8 +658,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
             var selector = By.XPath(
                 $".//span[text()='{button}']/ancestor::button");
             Driver.WaitForDataLoading();
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
+            Driver.WaitForElementsToBeDisplayed(selector, 30, false);
+            return Driver.FindElements(selector).First(x => x.Displayed());
         }
 
         public IWebElement GetButtonOnMessageBoxByNameOnActionPanel(string button)
@@ -1006,8 +1012,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IList<IWebElement> GetListOfDaysInDatePicker(string column)
         {
             var selector = By.XPath($".//tbody/tr[@role='row']/td[{column}]");
-
             return Driver.FindElements(selector);
+        }
+
+        public IWebElement GetFirstGridItemByName(string itemName)
+        {
+            var selector = By.XPath($".//div[@col-id='application' and @role='gridcell']//a[contains(text(), '{itemName}')]");
+            return Driver.FindElements(selector).First();
         }
     }
 }

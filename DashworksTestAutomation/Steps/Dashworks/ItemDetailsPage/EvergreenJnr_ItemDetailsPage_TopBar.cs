@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -128,6 +129,15 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             var topBar = _driver.NowAt<ItemDetails_TopBarPage>();
 
             Utils.Verify.IsFalse(topBar.TopBarOnItemDetailsPage.Displayed(), "Top bar should not be displayed!");
+        }
+        
+        [Then(@"Value column of Item Details has no Unknown item")]
+        public void ThenValueColumnOfItemDetailsHasNoUnknownItem()
+        {
+            var page = _driver.NowAt<ItemDetails_TopBarPage>();
+
+            var listOfValues = page.GetValuesColumnDataOfItemDetails().Select(x => x.Text).ToList();
+            Utils.Verify.That(listOfValues, Does.Not.Contain("Unknown"), "Unknown item displayed in column");
         }
     }
 }

@@ -79,5 +79,15 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             var expectedTable = table.GetDataByKey("ColumnContent");
             Utils.Verify.AreEqual(actualTable, expectedTable, "PLEASE ADD EXCEPTION MESSAGE");
         }
+
+        
+        [When(@"User clicks first ""(.*)"" item in grid")]
+        public void WhenUserClicksFirstItemInGrid(string itemName)
+        {
+            var tableElement = _driver.NowAtWithoutWait<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
+            tableElement.GetFirstGridItemByName(itemName).Click();
+            _driver.WaitForDataLoading();
+        }
     }
 }
