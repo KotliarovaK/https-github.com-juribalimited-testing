@@ -1817,32 +1817,81 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUserPostalCodeOptionsDisplaying
 	| Empty               |
 	| Not empty           |
 
-@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS15194
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS15194 @DAS17743
 Scenario: EvergreenJnr_ApplicationsList_CheckThatDeviceOwnerFilterCategoryHasCorrectSubcategories
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
 	And User clicks Add New button on the Filter panel
 	And User enters "Device Owner" text in Search field at Filters Panel
+	And User closes all filters categories
+	And User expands "Device Owner" filter category
 	Then the following Filters subcategories are presented for open category:
-	| Subcategories                |
-	| Device Owner (Saved List)    |
-	| Device Owner Building        |
-	| Device Owner City            |
-	| Device Owner Compliance      |
-	| Device Owner Country         |
-	| Device Owner Description     |
-	| Device Owner Display Name    |
-	| Device Owner Domain          |
-	| Device Owner Email Address   |
-	| Device Owner Enabled         |
-	| Device Owner Floor           |
-	| Device Owner Given Name      |
-	| Device Owner GUID            |
-	| Device Owner Home Directory  |
-	| Device Owner Home Drive      |
-	| Device Owner Last Logon Date |
-	| Device Owner Key             |
+	| Subcategories                          |
+	| Device Owner (Saved List)              |
+	| Device Owner                           |
+	| Device Owner Common Name               |
+	| Device Owner Compliance                |
+	| Device Owner Compliance                |
+	| Device Owner Description               |
+	| Device Owner Directory Type            |
+	| Device Owner Display Name              |
+	| Device Owner Distinguished Name        |
+	| Device Owner Domain                    |
+	| Device Owner Email Address             |
+	| Device Owner Enabled                   |
+	| Device Owner Given Name                |
+	| Device Owner GUID                      |
+	| Device Owner Home Directory            |
+	| Device Owner Home Drive                |
+	| Device Owner Key                       |
+	| Device Owner Last Logon Date           |
+	| Device Owner Organizational Unit       |
+	| Device Owner Parent Distinguished Name |
+	| Device Owner SID                       |
+	| Device Owner Surname                   |
+	| Device Owner Username                  |
+	When User closed "Device Owner" columns category
+	And User expands "Device Owner Location" filter category
+	Then the following Filters subcategories are presented for open category:
+	| Subcategories              |
+	| Device Owner Building      |
+	| Device Owner City          |
+	| Device Owner Country       |
+	| Device Owner Floor         |
+	| Device Owner Region        |
+	| Device Owner Location Name |
+	| Device Owner Postal Code   |
+	| Device Owner State/County  |
+	When User closed "Device Owner Location" columns category
+	And User expands "Device Owner Organisation" filter category
+	Then the following Filters subcategories are presented for open category:
+	| Subcategories                     |
+	| Device Owner Cost Centre          |
+	| Device Owner Department Code      |
+	| Device Owner Department           |
+	| Device Owner Department Full Path |
+	| Device Owner Department Level 1   |
+	| Device Owner Department Level 2   |
+	| Device Owner Department Level 3   |
+	| Device Owner Department Level 4   |
+	| Device Owner Department Level 5   |
+	| Device Owner Department Level 6   |
+	| Device Owner Department Level 7   |
+	| Device Owner Department Name      |
+	When User closed "Device Owner Organisation" columns category
+	And User expands "Device Owner Custom Fields" filter category
+	Then the following Filters subcategories are presented for open category:
+	| Subcategories                            |
+	| Device Owner General information field 1 |
+	| Device Owner General information field 2 |
+	| Device Owner General information field 3 |
+	| Device Owner General information field 4 |
+	| Device Owner General information field 5 |
+	| Device Owner Telephone                   |
+	| Device Owner User Field 1                |
+	| Device Owner User Field 2                |
+	| Device Owner Zip Code                    |
 	When User clears search textbox in Filters panel
 	And User enters "Device Owner R" text in Search field at Filters Panel
 	Then the following Filters subcategories are presented for open category:
