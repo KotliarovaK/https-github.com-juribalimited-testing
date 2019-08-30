@@ -43,32 +43,5 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             var actionPanel = _driver.NowAt<ActionPanelPage>();
             actionPanel.GetActionButtonByName(actinonButton).Click();
         }
-
-        [When(@"User clicks '(.*)' button in the warning message on Item Details page")]
-        public void WhenUserClicksButtonInTheWarningMessageOnItemDetailsPage(string buttonName)
-        {
-            var button = _driver.NowAt<ActionPanelPage>();
-            _driver.WaitForElementToBeDisplayed(button.WarningMessage);
-            button.GetButtonInWarningMessage(buttonName).Click();
-            Logger.Write($"{buttonName} button was clicked");
-        }
-
-        [Then(@"Success message is displayed and contains '(.*)' text on Item Details page")]
-        public void ThenSuccessMessageIsDisplayedAndContainsTextOnItemDetailsPage(string text)
-        {
-            var page = _driver.NowAt<ActionPanelPage>();
-
-            _driver.WaitForElementToBeDisplayed(page.SuccessMessage);
-            Verify.Contains(text, page.SuccessMessage.Text, "Success Message is not displayed");
-        }
-
-        [Then(@"Warning message is displayed and contains '(.*)' text on Item Details page")]
-        public void ThenWarningMessageIsDisplayedAndContainsTextOnItemDetailsPage(string text)
-        {
-            var page = _driver.NowAt<ActionPanelPage>();
-
-            _driver.WaitForElementToBeDisplayed(page.WarningMessage);
-            Verify.Contains(text, page.WarningMessage.Text, "Warning Message is not displayed");
-        }
     }
 }

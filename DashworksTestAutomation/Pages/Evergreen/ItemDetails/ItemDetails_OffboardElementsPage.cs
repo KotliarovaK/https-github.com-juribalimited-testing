@@ -12,8 +12,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
 {
     class ItemDetails_OffboardElementsPage : SeleniumBasePage
     {
-        private string NamedButtonSelector = ".//mat-dialog-container//span[text()='{0}']/ancestor::button";
-
         [FindsBy(How = How.XPath, Using = ".//mat-dialog-container[contains(@class, 'dialogContainer')]")]
         public IWebElement OffboardPopUp { get; set; }
 
@@ -25,13 +23,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
             {
                 SelectorFor(this, p => p.OffboardPopUp)
             };
-        }
-
-        public IWebElement GetButtonInOffboardPopUpByName(string buttonName)
-        {
-            var selector = By.XPath(string.Format(NamedButtonSelector, buttonName));
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
         }
     }
 }

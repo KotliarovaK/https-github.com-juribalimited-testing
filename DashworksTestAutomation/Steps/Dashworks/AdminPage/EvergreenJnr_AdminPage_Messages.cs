@@ -132,7 +132,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         {
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitForElementToBeDisplayed(page.BlueBanner);
-            Utils.Verify.AreEqual("rgba(49, 122, 193, 1)", page.GetMessageColor(), "PLEASE ADD EXCEPTION MESSAGE"); //Blue color
+            Utils.Verify.AreEqual("rgba(49, 122, 193, 1)", page.BlueBanner.GetCssValue("background-color"), "Info message is not Blue"); //Blue color
             //Utils.Verify.AreEqual("1530px", page.GetMessageWidthOnAdminPage());
             Utils.Verify.Contains(text, page.BlueBanner.Text, "Success Message is not displayed");
         }
@@ -142,7 +142,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         {
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitForElementToContainsText(page.SuccessMessage, text);
-            Utils.Verify.AreEqual("rgba(126, 189, 56, 1)", page.GetMessageColor(), "PLEASE ADD EXCEPTION MESSAGE"); //Green color
+            Utils.Verify.AreEqual("rgba(126, 189, 56, 1)", page.SuccessMessage.GetCssValue("background-color"), "Success message is not Green"); //Green color
             Utils.Verify.Contains(text, page.SuccessMessage.Text, "Success Message is not displayed");
         }
 
@@ -162,6 +162,15 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             _driver.WaitForElementToContainsText(page.ErrorMessage, text);
             Utils.Verify.AreEqual("rgba(242, 88, 49, 1)", page.GetErrorMessageColor(), "Colors do not match!"); //Red color
             Utils.Verify.AreEqual(text, page.ErrorMessage.Text, "Error Message is not displayed");
+        }
+
+        [When(@"User clicks '(.*)' button in the warning message")]
+        public void WhenUserClicksButtonInTheWarningMessage(string buttonName)
+        {
+            var button = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForElementToBeDisplayed(button.WarningMessage);
+            button.GetMessageButtonByName(buttonName).Click();
+            Logger.Write($"{buttonName} button was clicked");
         }
 
         [Then(@"""(.*)"" error in the Scope Changes displayed to the User")]

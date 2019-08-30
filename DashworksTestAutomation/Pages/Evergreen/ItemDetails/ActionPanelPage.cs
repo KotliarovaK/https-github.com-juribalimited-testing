@@ -34,20 +34,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
 
             return new List<By>
             {
-                //SelectorFor(this, p => p.PageIdentitySelectors)
+                SelectorFor(this, p => p.PageIdentitySelectors)
             };
         }
 
         public IWebElement GetActionButtonByName(string name)
         {
             var selector = By.XPath($".//span[@class='mat-accent'][text()='{name}']/ancestor::mat-option");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
-        public IWebElement GetButtonInWarningMessage(string buttonName)
-        {
-            var selector = By.XPath($".//button[contains(@class, 'messageAction ')]//span[text()='{buttonName}']");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }

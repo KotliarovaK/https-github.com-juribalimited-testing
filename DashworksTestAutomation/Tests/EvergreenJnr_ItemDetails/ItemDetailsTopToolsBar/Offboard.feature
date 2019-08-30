@@ -6,23 +6,28 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 	#Ann.Ilchenko 8/27/19: ready on 'quasar';
-@Evergreen @Applications @EvergreenJnr_ItemDetails @Offboard @DAS17919 @Not_Ready
+@Evergreen @Applications @EvergreenJnr_ItemDetails @Offboard @DAS17919 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_ApplicationsList_CheckThatOffboardOptionIsWorkedCorrectlyForProjectDetailsPageOnApplicationsPage
+	When Project created via API and opened
+	| ProjectName  | Scope       | ProjectTemplate | Mode               |
+	| Project17919 | All Devices | None            | Standalone Project |
+	#TODO create API ONBOARDING step;
 	When User clicks "Applications" on the left-hand menu
 	Then "All Applications" list should be displayed to the user
 	When User perform search by "Technical Information Sampler: January 2003"
 	And User click content from "Application" column
 	Then Details page for "Technical Information Sampler: January 2003" item is displayed to the user
-	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
+	When User switches to the "Project17919" project in the Top bar on Item details page
 	And User navigates to the "Projects" main-menu on the Details page
 	And User navigates to the "Project Details" sub-menu on the Details page
-	When User clicks the "OFFBOARD" Action button
-	Then Warning message is displayed and contains 'This application will be offboarded, this cannot be undone' text on Item Details page
-	When User clicks 'OFFBOARD' button in the warning message on Item Details page
-	Then Success message is displayed and contains 'The application was successfully queued for offboarding from User Evergreen Capacity Project' text on Item Details page
+	And User clicks the "OFFBOARD" Action button
+	Then Warning message with "This application will be offboarded, this cannot be undone" text is displayed on the Project Details Page
+	When User clicks 'OFFBOARD' button in the warning message
+	Then Success message is displayed and contains "The application was successfully queued for offboarding from Project17919" text
 
 	#Ann.Ilchenko 8/28/19: ready on 'quasar';
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @Offboard @DAS17843 @DAS17926 @Not_Ready
+	#TODO create API ONBOARDING step;
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @Offboard @DAS17843 @DAS17926 @Cleanup @Not_Ready
 Scenario Outline: EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectlyForProjectDetailsPageWhichHasAssociatedObjects
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<LoadedPage>" list should be displayed to the user
@@ -32,11 +37,11 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectly
 	When User switches to the "<ProjectName>" project in the Top bar on Item details page
 	And User navigates to the "Projects" main-menu on the Details page
 	And User navigates to the "Project Details" sub-menu on the Details page
-	When User clicks the "OFFBOARD" Action button
+	And User clicks the "OFFBOARD" Action button
 	Then Offboard Pop-up is displayed on the Item Details page
-	When User clicks 'OFFBOARD' button in the Offboard Pop-up on the Item Details page
-	Then Warning message is displayed and contains 'The selected objects will be offboarded, this cannot be undone' text on Item Details page
-	When User clicks 'OFFBOARD' button in the Offboard Pop-up on the Item Details page
+	When User clicks the "OFFBOARD" Action button
+	Then Warning message with "The selected objects will be offboarded, this cannot be undone" text is displayed on the Project Details Page
+	When User clicks the "OFFBOARD" Action button
 	#going to check the object state
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -44,9 +49,9 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectly
 	Then "Projects" page should be displayed to the user
 	When User enters "<ProjectName>" text in the Search field for "Project" column
 	And User clicks content from "Project" column
-	When User clicks "Scope" tab
-	When User selects "History" tab on the Project details page
-	When User enters "<ItemName>" text in the Search field for "Item" column
+	And User clicks "Scope" tab
+	And User selects "History" tab on the Project details page
+	And User enters "<ItemName>" text in the Search field for "Item" column
 	Then "<ItemName>" content is displayed in "Item" column
 
 Examples: 
@@ -55,8 +60,9 @@ Examples:
 	| Users     | All Users     | ANN485030                        | Username      | I-Computer Scheduled Project       |
 	| Mailboxes | All Mailboxes | 06A573B6200A4A10BC2@bclabs.local | Email Address | Mailbox Evergreen Capacity Project |
 
-#Ann.Ilchenko 8/28/19: ready on 'quasar';
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @Offboard @DAS17843 @DAS17926 @Not_Ready
+	#Ann.Ilchenko 8/28/19: ready on 'quasar';
+	#TODO create API ONBOARDING step;
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @Offboard @DAS17843 @DAS17926 @Cleanup @Not_Ready
 Scenario Outline: EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectlyForProjectDetailsPageWhichHasNoAssociatedObjects
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<LoadedPage>" list should be displayed to the user
@@ -66,21 +72,21 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectly
 	When User switches to the "<ProjectName>" project in the Top bar on Item details page
 	And User navigates to the "Projects" main-menu on the Details page
 	And User navigates to the "Project Details" sub-menu on the Details page
-	When User clicks the "OFFBOARD" Action button
+	And User clicks the "OFFBOARD" Action button
 	Then Offboard Pop-up is displayed on the Item Details page
-	When User clicks 'OFFBOARD' button in the Offboard Pop-up on the Item Details page
-	Then Warning message is displayed and contains '<Message>' text on Item Details page
-	When User clicks 'OFFBOARD' button in the Offboard Pop-up on the Item Details page
+	When User clicks the "OFFBOARD" Action button
+	Then Warning message with "<Message>" text is displayed on the Project Details Page
+	When User clicks the "OFFBOARD" Action button
 	#going to check the object state
-	When User clicks Admin on the left-hand menu
+	And User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
 	When User enters "<ProjectName>" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	When User clicks "Scope" tab
-	When User selects "History" tab on the Project details page
-	When User enters "<ItemName>" text in the Search field for "Item" column
+	And User selects "History" tab on the Project details page
+	And User enters "<ItemName>" text in the Search field for "Item" column
 	Then "<ItemName>" content is displayed in "Item" column
 
 Examples: 

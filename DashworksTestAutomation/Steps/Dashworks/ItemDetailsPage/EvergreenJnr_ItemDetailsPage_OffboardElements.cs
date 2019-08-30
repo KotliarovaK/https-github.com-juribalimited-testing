@@ -26,12 +26,5 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             var page = _driver.NowAt<ItemDetails_OffboardElementsPage>();
             Utils.Verify.IsTrue(page.OffboardPopUp.Displayed(), "Offboard Pop-up is not displayed");
         }
-
-        [When(@"User clicks '(.*)' button in the Offboard Pop-up on the Item Details page")]
-        public void WhenUserClicksButtonInTheOffboardPop_UpOnTheItemDetailsPage(string buttonName)
-        {
-            var page = _driver.NowAt<ItemDetails_OffboardElementsPage>();
-            page.GetButtonInOffboardPopUpByName(buttonName).Click();
-        }
     }
 }

@@ -383,6 +383,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
+        //warning RED message
         [Then(@"Warning message with ""(.*)"" is displayed")]
         public void ThenWarningMessageWithIsDisplayed(string message)
         {
