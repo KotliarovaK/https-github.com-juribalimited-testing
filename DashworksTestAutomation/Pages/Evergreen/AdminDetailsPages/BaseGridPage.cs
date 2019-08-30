@@ -871,5 +871,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             }
             throw new Exception($"Delete button in actions was not clicked in {attemtps} attempts");
         }
+
+        public bool IsTooltipDisplayed()
+        {
+            string selector = ".//mat-tooltip-component";
+            var toolTips = Driver.FindElements(By.XPath(selector));
+
+            return toolTips.Count > 0;
+        }
     }
 }
