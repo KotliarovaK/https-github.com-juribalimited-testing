@@ -37,6 +37,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Automations
             return Driver.FindElement(selector);
         }
 
+        //TODO PLEASE REMOVE THIS METHOD
         public IWebElement GetDropdownByName(string dropdown)
         {
             var selector = By.XPath($".//div//*[@placeholder='{dropdown}']");

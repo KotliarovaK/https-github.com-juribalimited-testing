@@ -184,6 +184,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
+        //TODO Remove this step
         [When(@"User selects ""(.*)"" Capacity Unit on Action panel")]
         public void WhenUserSelectsCapacityUnitOnActionPanel(string capacityUnit)
         {
@@ -409,6 +410,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.BodyContainer.Click();
         }
 
+        //TODO replace by WhenUserSelectsInTheDropdown
         [When(@"User selects ""(.*)"" Update Date on Action panel")]
         public void WhenUserSelectsUpdateDateOnActionPanel(string updateDate)
         {
@@ -457,6 +459,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.IsTrue(action.GetListOfDaysInDatePicker(col).All(x => x.GetCssValue("background-color").Equals("rgba(126, 189, 56, 1)")), "Wrong cell color");
         }
 
+        //TODO Remove this step
         [When(@"User selects ""(.*)"" Date on Action panel")]
         public void WhenUserSelectsDateOnActionPanel(string dateValue)
         {
@@ -635,7 +638,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"""(.*)"" Action button is disabled")]
         public void ThenActionButtonIsDisabled(string buttonName)
         {
-            Utils.Verify.IsTrue(IsButtonDisabled(buttonName), $"{buttonName} Button state is not disabled");
+            Verify.IsTrue(IsButtonDisabled(buttonName), $"{buttonName} Button state is not disabled");
         }
 
         [Then(@"""(.*)"" Action button is enabled")]
@@ -678,7 +681,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenButtonIsNotDisplayed(string buttonName)
         {
             var action = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsFalse(action.GetButtonByName(buttonName), $"{buttonName} is displayed");
+            Verify.IsFalse(action.GetButtonByName(buttonName), $"{buttonName} is displayed");
         }
 
         [Then(@"Actions menu is not displayed to the user")]
@@ -707,7 +710,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForElementToBeDisplayed(action.WarningMessageText);
-            Utils.Verify.AreEqual(textMessage, action.WarningMessageText.Text, $"{textMessage} in Warning message is not displayed");
+            Verify.AreEqual(textMessage, action.WarningMessageText.Text, $"{textMessage} in Warning message is not displayed");
         }
 
         //TODO this method should be replaced by more generic
@@ -715,9 +718,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenTheAmberMessageIsDisplayedCorrectly()
         {
             var action = _driver.NowAt<BaseDashboardPage>();
-            Utils.Verify.IsTrue(action.WarningMessage.Displayed(), "Amber message is not displayed");
-            Utils.Verify.IsTrue(action.UpdateButtonOnAmberMessage.Displayed(), "Update Button is not displayed");
-            Utils.Verify.IsTrue(action.CancelButtonOnAmberMessage.Displayed(), "Cancel Button is not displayed");
+            Verify.IsTrue(action.WarningMessage.Displayed(), "Amber message is not displayed");
+            Verify.IsTrue(action.UpdateButtonOnAmberMessage.Displayed(), "Update Button is not displayed");
+            Verify.IsTrue(action.CancelButtonOnAmberMessage.Displayed(), "Cancel Button is not displayed");
         }
 
         //TODO this method should be replaced by more generic
@@ -733,8 +736,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForElementToBeDisplayed(action.SuccessMessage);
-            Utils.Verify.AreEqual(textMessage, action.SuccessMessage.Text, $"{textMessage} are not equal");
-            Utils.Verify.IsTrue(action.CloseButtonInSuccessMessage.Displayed(),
+            Verify.AreEqual(textMessage, action.SuccessMessage.Text, $"{textMessage} are not equal");
+            Verify.IsTrue(action.CloseButtonInSuccessMessage.Displayed(),
                 "Close button in Success message is not displayed");
         }
 

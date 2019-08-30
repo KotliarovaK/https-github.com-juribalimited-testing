@@ -29,8 +29,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public const string FirstColumnTableContent = ".//div[@role='gridcell']//a[@href]";
 
-        //private string NamedDropdownSelector = ".//mat-select[@aria-label='{0}']//span";
-        private string NamedDropdownSelector = ".//label[contains(@class,'field-label')][text()='{0}']/../../mat-select";
+        private string NamedDropdownSelector = ".//mat-select[@aria-label='{0}' or @automation='{0}']//span";
+        //TODO remove this. Just temporary solution. Looks like above selector is working fine
+        //private string NamedDropdownSelector = ".//label[contains(@class,'field-label')][text()='{0}']/../../mat-select";
 
         #region Inline Edit. Appears on double click on cell
 

@@ -1196,7 +1196,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatParticularProjectCapacityUnitFilterShow
 	And User clicks the "CREATE PROJECT" Action button
 	And User enters "13201" in the "Project Name" field
 	And User selects "All Mailboxes" in the Scope Project dropdown
-	Then User selects "Evergreen" option in "Mode" dropdown
+	When User selects "Evergreen" in the "Mode" dropdown
 	When User clicks Create button on the Create Project page
 	And User clicks "Devices" on the left-hand menu
 	And User clicks the Filters button

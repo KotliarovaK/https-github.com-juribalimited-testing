@@ -756,24 +756,29 @@ Scenario: EvergreenJnr_AdminPage_CheckCapacitySlotDataForActions
 	And User enters '17778 None' text to 'Action Name' textbox
 	And User selects "Update task value" in the "Action Type" dropdown
 	And User selects 'Devices Evergreen Capacity Project' option from 'Project' autocomplete
-	And User selects "Stage 1" in the "Stage" dropdown for Actions
-	And User selects "Scheduled Date" in the "Task" dropdown for Actions
-	And User selects "Update" Update Date on Action panel
-	And User selects "15 Aug 2019" Date on Action panel
-	And User selects "None" Capacity Unit on Action panel
+	And User selects 'Stage 1' option from 'Stage' autocomplete
+	And User selects 'Scheduled Date' option from 'Task' autocomplete
+	And User selects "Update" in the "Update Date" dropdown
+	And User enters '15 Aug 2019' text to 'Date' datepicker
+	And User selects "None" in the "Capacity Slot" dropdown
 	And User clicks the "CREATE" Action button
 	#Action 2
 	And User clicks the "CREATE ACTION" Action button
 	And User enters '17778 Slot' text to 'Action Name' textbox
 	And User selects "Update task value" in the "Action Type" dropdown
 	And User selects 'Devices Evergreen Capacity Project' option from 'Project' autocomplete
-	And User selects "Stage 1" in the "Stage" dropdown for Actions
-	And User selects "Scheduled Date" in the "Task" dropdown for Actions
-	And User selects "Update" Update Date on Action panel
-	And User selects "2 Jun 2019" Date on Action panel
-	And User selects "Scheduled Slot" Capacity Unit on Action panel
+	And User selects 'Stage 1' option from 'Stage' autocomplete
+	And User selects 'Scheduled Date' option from 'Task' autocomplete
+	And User selects "Update" in the "Update Date" dropdown
+	And User enters '2 Jun 2019' text to 'Date' datepicker
+	And User selects "Scheduled Slot" in the "Capacity Slot" dropdown
 	And User clicks the "CREATE" Action button
 	#Test
 	When User enters "17778 None" text in the Search field for "Action" column
 	And User clicks content from "Action" column
-	#Add assertion here!
+	Then "None" content is displayed in "Capacity Slot" dropdown
+	When User clicks "Details" tab
+	And User clicks "Actions" tab
+	When User enters "17778 Slot" text in the Search field for "Action" column
+	And User clicks content from "Action" column
+	Then "Scheduled Slot" content is displayed in "Capacity Slot" dropdown
