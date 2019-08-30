@@ -493,7 +493,7 @@ this.FeatureBackground();
             table3.AddRow(new string[] {
                         "Custom Field"});
 #line 98
- testRunner.Then("following Group By values ​​are displayed for User", ((string)(null)), table3, "Then ");
+ testRunner.Then("following Group By values ​​are displayed for User on grid action bar", ((string)(null)), table3, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
