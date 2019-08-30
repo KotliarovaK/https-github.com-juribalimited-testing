@@ -731,3 +731,54 @@ Scenario: EvergreenJnr_AdminPage_CheckValueDataInTheGridForActions
 	#Test
 	When User enters "DAS17744_Action" text in the Search field for "Action" column
 	Then "Started, 2019-09-05, 1803 Team, Lisa Bailey" content is displayed in "Value" column
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17772 @Not_Ready @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckThatActionStageSelectboxIsDisplayedForSpecificData
+	When User creates new Automation via API and open it
+	| AutomationName | Description | Active | StopOnFailedAction | Scope     | Run    |
+	| DAS17772       | 17772       | true   | false              | All Users | Manual |
+	And User clicks "Actions" tab
+	#Action
+	And User clicks the "CREATE ACTION" Action button
+	And User enters 'DAS17772_Action' text to 'Action Name' textbox
+	And User selects "Update task value" in the "Action Type" dropdown
+	And User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
+	Then "" content is displayed in "Stage" autocomplete
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17778 @Not_Ready @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckCapacitySlotDataForActions
+	When User creates new Automation via API and open it
+	| AutomationName | Description | Active | StopOnFailedAction | Scope       | Run    |
+	| DA17778        | 17778       | true   | false              | All Devices | Manual |
+	And User clicks "Actions" tab
+	#Action 1
+	And User clicks the "CREATE ACTION" Action button
+	And User enters '17778 None' text to 'Action Name' textbox
+	And User selects "Update task value" in the "Action Type" dropdown
+	And User selects 'Devices Evergreen Capacity Project' option from 'Project' autocomplete
+	And User selects 'Stage 1' option from 'Stage' autocomplete
+	And User selects 'Scheduled Date' option from 'Task' autocomplete
+	And User selects "Update" in the "Update Date" dropdown
+	And User enters '15 Aug 2019' text to 'Date' datepicker
+	And User selects "None" in the "Capacity Slot" dropdown
+	And User clicks the "CREATE" Action button
+	#Action 2
+	And User clicks the "CREATE ACTION" Action button
+	And User enters '17778 Slot' text to 'Action Name' textbox
+	And User selects "Update task value" in the "Action Type" dropdown
+	And User selects 'Devices Evergreen Capacity Project' option from 'Project' autocomplete
+	And User selects 'Stage 1' option from 'Stage' autocomplete
+	And User selects 'Scheduled Date' option from 'Task' autocomplete
+	And User selects "Update" in the "Update Date" dropdown
+	And User enters '2 Jun 2019' text to 'Date' datepicker
+	And User selects "Scheduled Slot" in the "Capacity Slot" dropdown
+	And User clicks the "CREATE" Action button
+	#Test
+	When User enters "17778 None" text in the Search field for "Action" column
+	And User clicks content from "Action" column
+	Then "None" content is displayed in "Capacity Slot" dropdown
+	When User clicks "Details" tab
+	And User clicks "Actions" tab
+	When User enters "17778 Slot" text in the Search field for "Action" column
+	And User clicks content from "Action" column
+	Then "Scheduled Slot" content is displayed in "Capacity Slot" dropdown

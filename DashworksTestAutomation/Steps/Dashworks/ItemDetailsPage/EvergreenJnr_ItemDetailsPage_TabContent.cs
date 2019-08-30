@@ -18,7 +18,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
     {
         private readonly RemoteWebDriver _driver;
 
-        public EvergreenJnr_ItemDetailsPage_TabContent (RemoteWebDriver driver)
+        public EvergreenJnr_ItemDetailsPage_TabContent(RemoteWebDriver driver)
         {
             _driver = driver;
         }
@@ -80,6 +80,15 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         {
             var projectTabs = _driver.NowAt<TabContent>();
             Utils.Verify.IsFalse(projectTabs.GetContentDisplayState(textContent), $"{textContent} content should not be displayed in the grid on the Item details page!");
+        }
+
+        [Then(@"User sees the following Column Settings")]
+        public void ThenUserSeesTheFollowingColumnSettings(Table table)
+        {
+            var projectTabs = _driver.NowAt<TabContent>();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = projectTabs.GetColumnSettings().Select(p => p.Text).ToList();
+            Utils.Verify.AreEqual(expectedList, actualList, "Column settings are not displayed correctly!");
         }
     }
 }

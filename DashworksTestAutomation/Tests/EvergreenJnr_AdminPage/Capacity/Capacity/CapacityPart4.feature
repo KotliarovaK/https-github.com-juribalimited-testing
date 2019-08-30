@@ -51,9 +51,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProj
 	| ProjectName        | Scope      | ProjectTemplate | Mode               |
 	| ProjectForDAS14103 | All Device | None            | Standalone Project |
 	And User clicks "Capacity" tab
-	Then User selects "Teams and Paths" option in "Capacity Mode" dropdown
-	And User selects "Clone evergreen capacity units to project capacity units" option in "Capacity Units" dropdown
-	When User clicks the "UPDATE" Action button
+	When User selects "Teams and Paths" in the "Capacity Mode" dropdown
+	And User selects "Clone evergreen capacity units to project capacity units" in the "Capacity Units" dropdown
+	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The project capacity details have been updated" text
 	When User creates new Capacity Unit via api
 	| Name                       | Description | IsDefault |

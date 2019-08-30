@@ -64,6 +64,19 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.AutocompleteSelect(placeholder, option, true);
         }
 
+        [Then(@"""(.*)"" content is displayed in ""(.*)"" autocomplete")]
+        public void ThenContentIsDisplayedInAutocomplete(string expectedText, string placeholder)
+        {
+            CheckAutocompletAndTextboxText(placeholder, expectedText);
+        }
+
+        private void CheckAutocompletAndTextboxText(string placeholder, string expectedText)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var text = page.GetNamedTextbox(placeholder).GetAttribute("value");
+            Verify.AreEqual(expectedText, text, "Incorrect text in the autocomplete");
+        }
+
         #endregion
 
         #region Named Textbox
@@ -79,9 +92,23 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 _automationActions.Value.Add(text);
         }
 
+        [Then(@"""(.*)"" content is displayed in ""(.*)"" textbox")]
+        public void ThenContentIsDisplayedInTextbox(string expectedText, string placeholder)
+        {
+            CheckAutocompletAndTextboxText(placeholder, expectedText);
+        }
+
         #endregion
 
         #region Dropdown
+
+        [When(@"User selects ""(.*)"" in the ""(.*)"" dropdown")]
+        public void WhenUserSelectsInTheDropdown(string value, string dropdownName)
+        {
+            var dropdown = _driver.NowAt<BaseGridPage>();
+            dropdown.GetDropdownByName(dropdownName).Click();
+            dropdown.GetDropdownValueByName(value).Click();
+        }
 
         [Then(@"""(.*)"" content is displayed in ""(.*)"" dropdown")]
         public void ThenContentIsDisplayedInDropdown(string text, string dropdown)
@@ -113,6 +140,27 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             }
             else
                 Verify.IsTrue(dropdown.GetDropdownByValueByName(value, dropdownName).Displayed(), $"{value} is not displayed in the {dropdownName}");
+        }
+
+        [Then(@"""(.*)"" dropdown is displayed")]
+        public void ThenDropdownIsDisplayed(string dropdownName)
+        {
+            var dropdown = _driver.NowAt<BaseGridPage>();
+            Verify.IsTrue(dropdown.GetDropdownByName(dropdownName).Displayed(), $"{dropdownName} is not displayed");
+        }
+
+        #endregion
+
+        #region Datepicker
+
+        [When(@"User enters '(.*)' text to '(.*)' datepicker")]
+        public void WhenUserEntersTextToDatepicker(string text, string placeholder)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.GetNamedTextbox(placeholder).Clear();
+            page.GetNamedTextbox(placeholder).SendKeys(text);
+
+            page.BodyContainer.Click();
         }
 
         #endregion
