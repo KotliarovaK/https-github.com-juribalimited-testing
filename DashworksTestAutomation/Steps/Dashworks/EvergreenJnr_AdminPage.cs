@@ -1240,6 +1240,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 var projectTabs = _driver.NowAt<ProjectsPage>();
                 projectTabs.ClickToTabByNameProjectScopeChanges(tabName);
                 _driver.WaitForDataLoading();
+                projectElement = _driver.NowAt<BaseGridPage>();
+                _driver.WaitForElementToBeDisplayed(projectElement.PlusButton);
                 projectElement.PlusButton.Click();
                 foreach (var row in table.Rows)
                 {
