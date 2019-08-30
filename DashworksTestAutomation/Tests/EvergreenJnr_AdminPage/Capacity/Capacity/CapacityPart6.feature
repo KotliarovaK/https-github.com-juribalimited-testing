@@ -46,7 +46,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageAboutUnconfirmedChangesA
 	Then "YES" button is displayed in the warning message
 	Then "NO" button is displayed in the warning message
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS17409 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS17409 @DAS17936 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatWhenValueIsZeroThenBlankShouldBeDisplayed
 	When User navigates to "1803 Rollout" project details
 	When User clicks "Capacity" tab
@@ -54,8 +54,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatWhenValueIsZeroThenBlankShouldBeDispl
 	When User enters "Evergreen Capacity Unit 3" text in the Search field for "Capacity Unit" column
 	Then "" content is displayed in "Devices" column
 	And "" content is displayed in "Users" column
-	#Remove commented line once DAS-17936 is fixed in Quasar
-	#And "" tooltip displayed in "Slots" column
+	And "" tooltip displayed in "Slots" column
 	And "" tooltip displayed in "Devices" column
 	And "" tooltip displayed in "Users" column
 	When User enters "Birmingham" text in the Search field for "Capacity Unit" column
