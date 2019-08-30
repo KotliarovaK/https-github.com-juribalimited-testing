@@ -660,5 +660,14 @@ namespace DashworksTestAutomation.Pages
             return Driver.FindElements(By.XPath(starIcon)).Count == 1;
         }
 
+        public IList<IWebElement> GetWidgetLinks(string widgetName)
+        {
+            var links =
+                By.XPath($".//span[text()='{widgetName}']/ancestor ::div[@class='widget-whole']//a");
+
+            Driver.WaitForDataLoading();
+            return Driver.FindElements(links);
+        }
+
     }
 }

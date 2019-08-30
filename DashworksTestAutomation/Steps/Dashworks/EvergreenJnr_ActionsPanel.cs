@@ -611,6 +611,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading(50);
         }
 
+        [Then(@"""(.*)"" button is displayed without tooltip on Update form")]
+        public void ThenUpdateButtonIsDisplayedWithoutTooltipOnUpdateForm(string buttonName)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            var button = action.GetActionsButtonByName(buttonName);
+            var form = _driver.NowAt<BaseGridPage>();
+
+            _driver.MouseHover(button);
+            Verify.IsFalse(form.IsTooltipDisplayed(), "Tooltip for Update button displayed");
+        }
+
+
         [When(@"User selects 'Save as new pilot' option")]
         public void WhenUserSelectsSaveAsNewPilotOption()
         {

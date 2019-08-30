@@ -53,3 +53,16 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDataFromTheWidgetMatchesTheOrigin
 	| Values                |
 	| Microsoft Corporation |
 
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17814 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThahtArchivedObjectsShouldNotBeLinkedToObjectDetailsFromListWidgetsClickThrough
+	When User clicks "Devices" on the left-hand menu
+	And User sets includes archived devices in "true"
+	And User create dynamic list with "List17814" name on "Devices" page
+	When Dashboard with "Dashboard for DAS17814" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User creates new Widget
+	| WidgetType | Title             | List      | MaxRows | MaxColumns |
+	| List       | WidgetForDAS17814 | List17814 | 100     | 10         |
+	Then "WidgetForDAS17814" Widget is displayed to the user
+	And There are no links placed in "WidgetForDAS17814" Widget

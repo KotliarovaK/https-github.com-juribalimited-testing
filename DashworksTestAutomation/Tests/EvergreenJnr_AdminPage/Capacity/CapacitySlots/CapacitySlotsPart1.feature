@@ -32,7 +32,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingI
 	And User navigates to newly created Slot
 	And User type "NewSlotName" Name in the "Slot Name" field on the Project details page
 	And User type "NewDisplayName" Name in the "Display Name" field on the Project details page
-	And User clicks the "UPDATE" Action button
+	Then "UPDATE" button is displayed without tooltip on Update form
+	When User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The capacity slot details have been updated" text
 	And "NewSlotName" text is displayed in the table content
 	When User click on 'Capacity Slot' column header
