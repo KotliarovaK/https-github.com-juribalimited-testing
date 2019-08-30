@@ -33,8 +33,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             page.BodyContainer.Click();
         }
 
-        [When(@"User clicks Group By button on action top bar")]
-        public void WhenUserClicksGroupByButtonOnActionTopBar()
+        [When(@"User clicks Group By button on grid action bar")]
+        public void WhenUserClicksGroupByButtonOnGridActionBar()
         {
             var page = _driver.NowAt<AggridHeaderCounterElement>();
             page.GroupByButton.Click();
