@@ -370,8 +370,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenAvgAggre
 	| HDD Total Size (GB) Average ASC  |
 	| HDD Total Size (GB) Average DESC |
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17467 @Cleanup
-Scenario: EvergreenJnr_DashboardsPage_CheckNameAndLabelForEmptyOwnerCompliance
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17467 @DAS17515 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckNameAndLabelAndColorSchemeForEmptyOwnerCompliance
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
@@ -399,8 +399,9 @@ Scenario: EvergreenJnr_DashboardsPage_CheckNameAndLabelForEmptyOwnerCompliance
 	Then "WidgetForDAS17467" Widget is displayed to the user
 	And Label "Empty" displayed for "WidgetForDAS17467" widget
 	And Label icon displayed gray for "WidgetForDAS17467" widget
+	And There are no errors in the browser console
 	
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17467 @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17467 @DAS17515 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckColorSchemePlaceholderForReadiness
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Filters button
@@ -425,10 +426,11 @@ Scenario: EvergreenJnr_DashboardsPage_CheckColorSchemePlaceholderForReadiness
 	Then Widget Preview is displayed to the user
 	And Color Scheme dropdown displayed with "Readiness Colour Scheme" placeholder 
 	And Color Scheme dropdown is disabled
+	And There are no errors in the browser console
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17515 @Cleanup
-Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetsWithASplitByOfAfieldWithReadinessAreForcedToUseTheReadinessColourScheme
-	When User clicks "Devices" on the left-hand menu
+Scenario: EvergreenJnr_DashboardsPage_CheckThatCorrectColorSchemeisUsedWhenWidgetIsSplitByReadinessAndComplianceFields	
+    When User clicks "Devices" on the left-hand menu
 	And User clicks the Columns button
 	And ColumnName is entered into the search box and the selection is clicked
 	| ColumnName                        |
@@ -448,11 +450,15 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetsWithASplitByOfAfieldWithRe
 	| WidgetType | Title             | List            | SplitBy                           | AggregateBy | AggregateFunction | OrderBy                               | TableOrientation | MaxValues | ShowLegend | Type | Drilldown | Layout |
 	| Pie        | WidgetForDAS17515 | ListForDAS17515 | Windows7Mi: Application Readiness |             | Count             | Windows7Mi: Application Readiness ASC |                  | 10        | true       |      |           |        |
 	Then Widget Preview is displayed to the user
+	And Color Scheme dropdown displayed with "Readiness Colour Scheme" placeholder
+	And Color Scheme dropdown is disabled
 	When User clicks the "CREATE" Action button
 	Then There are no errors in the browser console
 	When User clicks Ellipsis menu for "WidgetForDAS17515" Widget on Dashboards page
 	And User clicks "Edit" item from Ellipsis menu on Dashboards page
 	When User selects "Application Compliance" in the "Split By" Widget dropdown
 	Then User sees "Application Compliance ASC" option for Order By selector on Create Widget page
+	And Color Scheme dropdown displayed with "Compliance Colour Scheme" placeholder 
+	And Color Scheme dropdown is disabled
 	When User clicks the "UPDATE" Action button
 	Then There are no errors in the browser console
