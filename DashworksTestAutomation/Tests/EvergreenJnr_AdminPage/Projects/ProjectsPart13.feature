@@ -141,7 +141,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	Then Success message is displayed and contains "2 objects queued for onboarding, 0 objects offboarded" text
 	Then "UPDATE ALL CHANGES" Action button is disabled
 	When User clicks "Users" tab in the Project Scope Changes section
-	Then "Users to add (0 of 1 selected)" is displayed to the user in the Project Scope Changes section
+	Then "Users to add (0 of 41337 selected)" is displayed to the user in the Project Scope Changes section
 	When User clicks "Devices" tab in the Project Scope Changes section
 	Then Objects to add panel is active
 	When User clicks "Users" tab in the Project Scope Changes section
