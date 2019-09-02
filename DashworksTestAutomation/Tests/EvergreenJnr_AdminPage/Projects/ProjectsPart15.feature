@@ -82,15 +82,15 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectScopeChangesIsLoadedSuc
 	Then "DevicesList12157" list is displayed to user
 	When User create static list with "UsersList12157" name on "Users" page with following items
 	| ItemName  |
-	| AJC243596 |
+	| TSI892249 |
 	Then "UsersList12157" list is displayed to user
 	When User create static list with "MailboxesList12157" name on "Mailboxes" page with following items
 	| ItemName             |
 	| elsonje@bclabs.local |
 	Then "MailboxesList12157" list is displayed to user
 	When User create static list with "ApplicationsStaticList12157" name on "Applications" page with following items
-	| ItemName  |
-	| AtomixMP3 |
+	| ItemName             |
+	| Adobe SVG Viewer 3.0 |
 	Then "ApplicationsStaticList12157" list is displayed to user
 	When Project created via API and opened
 	| ProjectName | Scope      | ProjectTemplate | Mode               |
@@ -113,9 +113,9 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectScopeChangesIsLoadedSuc
 
 Examples:
 	| MainList      | TestName  | ObjectsToAdd1                      | ListToScope1       | ScopeTab1    | ListToScope2     | ScopeChanges1 | ObjectsToAdd2                    | ObjectsToAdd3                         |
-	| All Devices   | DAS12157A | Devices to add (0 of 1 selected)   | DevicesList12157   | User Scope   | UsersList12157   | Users         | Users to add (0 of 1 selected)   | Applications to add (0 of 4 selected) |
-	| All Users     | DAS12157B | Users to add (0 of 1 selected)     | UsersList12157     | Device Scope | DevicesList12157 | Devices       | Devices to add (0 of 1 selected) | Applications to add (0 of 6 selected) |
-	| All Mailboxes | DAS12157C | Mailboxes to add (0 of 1 selected) | MailboxesList12157 | User Scope   | UsersList12157   | Users         | Users to add (0 of 1 selected)   | Applications to add (0 of 0 selected) |
+	| All Devices   | DAS12157A | Devices to add (0 of 1 selected)   | DevicesList12157   | User Scope   | UsersList12157   | Users         | Users to add (0 of 1 selected)   | Applications to add (0 of 1 selected) |
+	| All Users     | DAS12157B | Users to add (0 of 1 selected)     | UsersList12157     | Device Scope | DevicesList12157 | Devices       | Devices to add (0 of 1 selected) | Applications to add (0 of 1 selected) |
+	| All Mailboxes | DAS12157C | Mailboxes to add (0 of 1 selected) | MailboxesList12157 | User Scope   | UsersList12157   | Users         | Users to add (0 of 0 selected)   | Applications to add (0 of 0 selected) |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11981 @Projects @Cleanup @TEST
 Scenario: EvergreenJnr_AdminPage_CheckThatItemsToAddValuesAreNotCachedAfterScopeOptionsChangeOnProjectDetailsPage
