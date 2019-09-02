@@ -284,6 +284,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS17409")]
         [NUnit.Framework.CategoryAttribute("DAS17936")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatWhenValueIsZeroThenBlankShouldBeDisplayed()
         {
             System.Exception lastException = null;
@@ -319,7 +320,8 @@ this.FeatureBackground();
                         "CapacityUnits",
                         "DAS17409",
                         "DAS17936",
-                        "Cleanup"});
+                        "Cleanup",
+                        "Not_Ready"});
 #line 50
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

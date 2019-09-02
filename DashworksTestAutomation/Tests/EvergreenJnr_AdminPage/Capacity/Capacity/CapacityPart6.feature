@@ -46,7 +46,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageAboutUnconfirmedChangesA
 	Then "YES" button is displayed in the warning message
 	Then "NO" button is displayed in the warning message
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS17409 @DAS17936 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS17409 @DAS17936 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_ChecksThatWhenValueIsZeroThenBlankShouldBeDisplayed
 	When User navigates to "1803 Rollout" project details
 	When User clicks "Capacity" tab
