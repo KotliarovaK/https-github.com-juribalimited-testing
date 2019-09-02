@@ -470,6 +470,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Project_Creation_and_Scope")]
         [NUnit.Framework.CategoryAttribute("Projects")]
+        [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Projects")]
         [NUnit.Framework.CategoryAttribute("TEST")]
         public virtual void EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedProjects()
         {
@@ -511,6 +512,7 @@ this.FeatureBackground();
                         "Cleanup",
                         "Project_Creation_and_Scope",
                         "Projects",
+                        "Do_Not_Run_With_Projects",
                         "TEST"});
 #line 95
 this.ScenarioInitialize(scenarioInfo);
