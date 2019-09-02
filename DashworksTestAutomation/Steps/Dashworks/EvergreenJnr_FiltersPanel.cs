@@ -1507,5 +1507,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             Utils.Verify.That(getFirstAutomationItem.Index, Is.LessThan(getFirstProjectItem.Index), "Looks like projects placed before Automations");
         }
+
+        //ul[@class='dropdown-select-results-list ng-star-inserted']//span[string-length(text()) and not(@style)]
+        [When(@"User select first checkbox from available options")]
+        public void UserSelectFirstCheckboxFromAvailableOptions()
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            filterElement.FilterCheckboxOptions.First().Click();
+        }
     }
 }

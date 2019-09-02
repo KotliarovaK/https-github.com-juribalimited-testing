@@ -388,6 +388,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.IsFalse(action.ValueDropdown.Displayed(), "Value field is displayed");
         }
 
+        //TODO replace by WhenUserSelectsInTheDropdown
         [When(@"User selects ""(.*)"" Update Value on Action panel")]
         public void WhenUserSelectsUpdateValueOnActionPanel(string value)
         {
