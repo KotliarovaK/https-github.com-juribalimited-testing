@@ -26,8 +26,8 @@ Scenario: EvergreenJnr_DevicesList_CheckAddCustomFieldPopupUiAndTooltips
 	Then "CANCEL" Action button is enabled
 	When User clicks Body container
 	Then 'Custom Field' autocomplete last option is 'FlDAS16487_1a'
-	And 'Custom Field' autocomplete does NOT have option
-	| Option        |
+	And 'Custom Field' autocomplete does NOT have options
+	| Options       |
 	| FlDAS16487_1b |
 	| FlDAS16487_1c |
 	When User selects 'FlDAS16487_1a' option after search from 'Custom Field' autocomplete

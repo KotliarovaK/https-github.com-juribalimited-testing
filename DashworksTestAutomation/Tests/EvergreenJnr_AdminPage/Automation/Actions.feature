@@ -744,6 +744,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionStageSelectboxIsDisplayedForSpec
 	And User selects "Update task value" in the "Action Type" dropdown
 	And User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
 	Then "" content is displayed in "Stage" autocomplete
+	Then 'Stage' autocomplete does NOT have options
+	| Options         |
+	| Read only tasks |
+	Then only below options are displayed in the 'Stage' autocomplete
+	| Options |
+	| Stage 1 |
+	| Stage 2 |
+	| Stage 3 |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17778 @Not_Ready @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckCapacitySlotDataForActions
