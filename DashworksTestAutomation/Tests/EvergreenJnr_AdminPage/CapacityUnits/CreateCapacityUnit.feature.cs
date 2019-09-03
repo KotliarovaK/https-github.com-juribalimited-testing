@@ -157,9 +157,9 @@ this.FeatureBackground();
  testRunner.And("Success message is displayed and contains \"Click here to view the NotDefaultCapac" +
                     "ityUnit13720 capacity unit\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 21
- testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 22
- testRunner.And("\"NotDefaultCapacityUnit13720\" text is displayed in the table content", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\"NotDefaultCapacityUnit13720\" content is displayed in the \"Capacity Unit\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 23
  testRunner.When("User enters \"NotDefaultCapacityUnit13720\" text in the Search field for \"Capacity " +
                     "Unit\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -190,7 +190,7 @@ this.FeatureBackground();
  testRunner.Then("Warning message with \"This unit will be permanently deleted and any objects withi" +
                     "n it reassigned to the default unit\" text is displayed on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 36
- testRunner.Then("Delete and Cancel buttons are available in the warning message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("Delete and Cancel buttons are available in the warning message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 37
  testRunner.When("User clicks Delete button in the warning message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 38

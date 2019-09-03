@@ -18,8 +18,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCreatedCorrectly
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The capacity unit has been created" text
 	And Success message is displayed and contains "Click here to view the NotDefaultCapacityUnit13720 capacity unit" link
-	Then There are no errors in the browser console
-	And "NotDefaultCapacityUnit13720" text is displayed in the table content
+	And There are no errors in the browser console
+	And "NotDefaultCapacityUnit13720" content is displayed in the "Capacity Unit" column
 	When User enters "NotDefaultCapacityUnit13720" text in the Search field for "Capacity Unit" column
 	Then "FALSE" value is displayed for Default column
 	And "" content is displayed in "Devices" column
@@ -33,7 +33,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCreatedCorrectly
 	And User selects "Delete" in the Actions
 	And User clicks Delete button
 	Then Warning message with "This unit will be permanently deleted and any objects within it reassigned to the default unit" text is displayed on the Admin page
-	Then Delete and Cancel buttons are available in the warning message
+	And Delete and Cancel buttons are available in the warning message
 	When User clicks Delete button in the warning message
 	Then Success message is displayed and contains "The selected unit has been deleted" text
 
