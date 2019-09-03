@@ -771,15 +771,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(byControl);
         }
 
-        //TODO delete this. Do not use!
-        public string CheckColumnContent(string columnContent)
-        {
-            var byControl =
-                By.XPath($".//div[@role='grid']//div/div[@title='{columnContent}']");
-            Driver.WaitForElementToBeDisplayed(byControl);
-            return Driver.FindElement(byControl).Text;
-        }
-
         public IWebElement GetHrefByColumnName(string columnName)
         {
             var byControl =

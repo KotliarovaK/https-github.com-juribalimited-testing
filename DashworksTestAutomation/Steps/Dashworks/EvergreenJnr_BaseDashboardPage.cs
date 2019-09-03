@@ -162,7 +162,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             _driver.InsertFromClipboard(searchElement.SearchEverythingField);
 
-            Utils.Verify.That(searchElement.SearchEverythingField.GetAttribute("value").Replace("\t", "   "),
+            Verify.That(searchElement.SearchEverythingField.GetAttribute("value").Replace("\t", "   "),
                 Is.EqualTo(data.Replace(@"\t", "   ")));
         }
 
@@ -344,7 +344,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForDataLoading();
             var originalList = page.GetRowContentByColumnName(columnName);
-            Utils.Verify.AreEqual(textContent, originalList, "Content is not displayed correctly");
+            Verify.AreEqual(textContent, originalList, "Content is not displayed correctly");
         }
 
         [Then(@"""(.*)"" tooltip displayed in ""(.*)"" column")]
@@ -409,24 +409,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
-        //TODO Delete this and replace by ThenContentIsDisplayedInTheColumn or ThenContentIsDisplayedInTheColumn
-        [Then(@"""(.*)"" text is displayed in the table content")]
-        public void ThenTextIsDisplayedInTheTableContent(string text)
-        {
-            var dashboardPage = _driver.NowAt<BaseDashboardPage>();
-            dashboardPage.CheckColumnContent(text);
-        }
-
-        [Then(@"text is displayed in the table content")]
-        public void ThenTextIsDisplayedInTheTableContent(Table table)
-        {
-            var dashboardPage = _driver.NowAt<BaseDashboardPage>();
-            foreach (TableRow row in table.Rows)
-            {
-                dashboardPage.CheckColumnContent(row["Text"]);
-            }
-        }
-
         [Then(@"Evergreen Icon is displayed to the user")]
         public void ThenEvergreenIconIsDisplayedToTheUser()
         {
@@ -435,7 +417,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             foreach (var element in content)
             {
                 var evergreenIcon = element.FindElement(By.XPath(BaseDashboardPage.ImageSelector));
-                Utils.Verify.IsTrue(_driver.IsElementExists(evergreenIcon), "Evergreen Icon is not found");
+                Verify.IsTrue(_driver.IsElementExists(evergreenIcon), "Evergreen Icon is not found");
             }
         }
 

@@ -21,14 +21,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatRingsOptionMapsToEvergreenCanBeChanged
 	Then Ring settings Maps to evergreen ring is displayed as "None"
 	When User clicks "Administration" navigation link on the Admin page
 	And User clicks Yes button in Leave Page Warning
-	When User clicks "Evergreen" link on the Admin page
-	When User clicks "Buckets" tab
-	When User clicks Reset Filters button on the Admin page
-	When User clicks String Filter button for "Project" column on the Admin page
-	When User selects "Select All" checkbox from String Filter with item list on the Admin page
-	When User clicks String Filter button for "Project" column on the Admin page
-	When User selects "ProjectForDAS14780" checkbox from String Filter with item list on the Admin page
-	Then Content is displayed in the "Bucket" column
+	And User clicks "Evergreen" link on the Admin page
+	And User clicks "Buckets" tab
+	And User clicks Reset Filters button on the Admin page
+	And User clicks String Filter button for "Project" column on the Admin page
+	And User selects "Select All" checkbox from String Filter with item list on the Admin page
+	And User clicks String Filter button for "Project" column on the Admin page
+	And User selects "ProjectForDAS14780" checkbox from String Filter with item list on the Admin page
+	Then Content in the 'Bucket' column is equal to
 	| Content    |
 	| Unassigned |
 

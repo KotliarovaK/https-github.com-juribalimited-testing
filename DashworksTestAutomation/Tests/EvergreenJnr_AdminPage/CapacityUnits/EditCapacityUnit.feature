@@ -22,13 +22,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTheUpdateCapacityUnitSettingsIsWorking
 	And User updates the "Default Unit" checkbox state
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The capacity unit details have been updated" text
-	Then "Capacity Unit Settings upd" text is displayed in the table content
+	Then "Capacity Unit Settings upd" content is displayed in the "Capacity Unit" column
 	When User enters "Capacity Unit Settings upd" text in the Search field for "Capacity Unit" column
-	Then "TRUE" value is displayed for Default column
+	Then "TRUE" content is displayed in the "Default" column
 	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
 	And User clicks content from "Capacity Unit" column
 	And User updates the "Default Unit" checkbox state
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The capacity unit details have been updated" text
 	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
-	Then "TRUE" value is displayed for Default column
+	Then "TRUE" content is displayed in the "Default" column
