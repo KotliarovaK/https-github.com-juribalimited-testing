@@ -329,6 +329,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return columnNumber;
         }
 
+        //TODO should be replaced by GetColumnContentByColumnName
         public string GetColumnContentByColumnNameForCapacity(string columnName)
         {
             var by = By.XPath(

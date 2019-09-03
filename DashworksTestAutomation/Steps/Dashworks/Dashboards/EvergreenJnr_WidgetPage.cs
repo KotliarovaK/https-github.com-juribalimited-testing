@@ -227,10 +227,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSetsWidgetSplitBy(string SplitBy)
         {
             var createWidgetElement = _driver.NowAt<AddWidgetPage>();
-            _driver.WaitForDataLoadingOnProjects();
-            createWidgetElement.SplitBy.Click();
-            createWidgetElement.SelectListForWidgetCreation(SplitBy);
-            _driver.WaitForDataLoadingOnProjects();
+            createWidgetElement.SelectSplitByItem(SplitBy);
         }
 
         [When(@"User selects ""(.*)"" as Widget Type")]
@@ -402,6 +399,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<AddWidgetPage>();
             page.OrderBy.Click();
+            Thread.Sleep(1000);
 
             Utils.Verify.AreEqual(items.Rows.SelectMany(row => row.Values).ToList(),
                 page.GetDropdownOptions().Select(p => p.Text), "Incorrect options in lists dropdown");
