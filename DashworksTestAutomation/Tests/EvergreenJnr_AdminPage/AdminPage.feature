@@ -314,7 +314,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromB
 	Then "Buckets" page should be displayed to the user
 	When User enters "Birmingham" text in the Search field for "Bucket" column
 	When User clicks content from "Devices" column
-	Then "Devices" list should be displayed to the user
+	Then "All Devices" list should be displayed to the user
 	Then ColumnName is added to the list
 	| ColumnName       |
 	| Evergreen Bucket |
@@ -323,7 +323,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromB
 	When User clicks "Evergreen" link on the Admin page
 	When User enters "Manchester" text in the Search field for "Bucket" column
 	When User clicks content from "Users" column
-	Then "Users" list should be displayed to the user
+	Then "All Users" list should be displayed to the user
 	Then ColumnName is added to the list
 	| ColumnName       |
 	| Evergreen Bucket |
@@ -332,7 +332,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromB
 	When User clicks "Evergreen" link on the Admin page
 	When User enters "Unassigned" text in the Search field for "Bucket" column
 	When User clicks content from "Mailboxes" column
-	Then "Mailboxes" list should be displayed to the user
+	Then "All Mailboxes" list should be displayed to the user
 	Then ColumnName is added to the list
 	| ColumnName       |
 	| Evergreen Bucket |
@@ -345,7 +345,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromC
 	And User clicks "Capacity Units" tab
 	Then "Capacity Units" page should be displayed to the user
 	When User clicks content from "Devices" column
-	Then "Devices" list should be displayed to the user
+	Then "All Devices" list should be displayed to the user
 	Then ColumnName is added to the list
 	| ColumnName              |
 	| Evergreen Capacity Unit |
@@ -354,7 +354,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromC
 	When User clicks "Evergreen" link on the Admin page
 	And User clicks "Capacity Units" tab
 	When User clicks content from "Users" column
-	Then "Users" list should be displayed to the user
+	Then "All Users" list should be displayed to the user
 	Then ColumnName is added to the list
 	| ColumnName              |
 	| Evergreen Capacity Unit |
@@ -364,7 +364,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromC
 	And User clicks "Capacity Units" tab
 	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
 	When User clicks content from "Mailboxes" column
-	Then "Mailboxes" list should be displayed to the user
+	Then "All Mailboxes" list should be displayed to the user
 	Then ColumnName is added to the list
 	| ColumnName              |
 	| Evergreen Capacity Unit |
@@ -374,7 +374,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromC
 	When User selects "Capacity" tab on the Project details page
 	When User selects "Units" tab on the Project details page
 	When User clicks content from "Applications" column
-	Then "Applications" list should be displayed to the user
+	Then "All Applications" list should be displayed to the user
 	Then ColumnName is added to the list
 	| ColumnName          |
 	| 1803: Capacity Unit |
@@ -387,7 +387,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromR
 	And User clicks "Rings" tab
 	Then "Rings" page should be displayed to the user
 	When User clicks content from "Devices" column
-	Then "Devices" list should be displayed to the user
+	Then "All Devices" list should be displayed to the user
 	Then ColumnName is added to the list
 	| ColumnName     |
 	| Evergreen Ring |
@@ -396,7 +396,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromR
 	When User clicks "Evergreen" link on the Admin page
 	And User clicks "Rings" tab
 	When User clicks content from "Users" column
-	Then "Users" list should be displayed to the user
+	Then "All Users" list should be displayed to the user
 	Then ColumnName is added to the list
 	| ColumnName     |
 	| Evergreen Ring |
@@ -405,7 +405,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromR
 	When User clicks "Evergreen" link on the Admin page
 	And User clicks "Rings" tab
 	When User clicks content from "Mailboxes" column
-	Then "Mailboxes" list should be displayed to the user
+	Then "All Mailboxes" list should be displayed to the user
 	Then ColumnName is added to the list
 	| ColumnName     |
 	| Evergreen Ring |
@@ -414,7 +414,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromR
 	When User clicks content from "Project" column
 	When User selects "Rings" tab on the Project details page
 	When User clicks content from "Users" column
-	Then "Users" list should be displayed to the user
+	Then "All Users" list should be displayed to the user
 	Then ColumnName is added to the list
 	| ColumnName       |
 	| Barry'sUse: Ring |

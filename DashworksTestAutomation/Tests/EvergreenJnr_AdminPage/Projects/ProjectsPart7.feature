@@ -133,7 +133,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMailboxProjectCreationWithCloneEvergreenBu
 	And User selects all rows on the grid
 	And User removes selected item
 	When User clicks "Mailboxes" on the left-hand menu
-	Then "Mailboxes" list should be displayed to the user
+	Then "All Mailboxes" list should be displayed to the user
 	When User click on 'Email Address' column header
 	And User create dynamic list with "DynamicList9513" name on "Mailboxes" page
 	Then "DynamicList9513" list is displayed to user
