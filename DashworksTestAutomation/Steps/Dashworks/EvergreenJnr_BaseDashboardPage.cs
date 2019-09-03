@@ -9,6 +9,7 @@ using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Providers;
+using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
@@ -336,6 +337,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             SortingHelper.IsListSorted(originalList);
         }
 
+        //TODO this should be deleted. Use ThenContentIsDisplayedInTheColumn or ThenContentIsDisplayedInTheColumn instead
         [Then(@"""(.*)"" content is displayed in ""(.*)"" column")]
         public void ThenContentIsDisplayedInColumn(string textContent, string columnName)
         {
@@ -351,7 +353,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForDataLoading();
             var originalList = page.GetRowTooltipByColumnName(columnName);
-            Utils.Verify.AreEqual(textTooltip, originalList, "Tooltip is not displayed correctly");
+            Verify.AreEqual(textTooltip, originalList, "Tooltip is not displayed correctly");
         }
 
         [Then(@"""(.*)"" content is displayed for ""(.*)"" column")]
@@ -360,14 +362,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForDataLoading();
             var originalList = page.GetColumnContentByColumnName(columnName);
-            Utils.Verify.AreEqual(textContent, originalList, "Content is not displayed correctly");
-        }
-
-        [Then(@"some data is displayed in the ""(.*)"" column")]
-        public void ThenSomeDataIsDisplayedInTheColumn(string columnName)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            Utils.Verify.IsNotEmpty(page.GetColumnContentByColumnName(columnName), "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.AreEqual(textContent, originalList, "Content is not displayed correctly");
         }
 
         [Then(@"""(.*)"" italic content is displayed")]
@@ -392,7 +387,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForDataLoading();
             _driver.WaitForElementToBeDisplayed(page.TableContent);
-            Utils.Verify.That(page.TableRows.Count, Is.EqualTo(rowsCount));
+            Verify.That(page.TableRows.Count, Is.EqualTo(rowsCount));
         }
 
         [Then(@"Content is present in the newly added column")]
@@ -407,7 +402,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 var content = page.GetColumnContent(row["ColumnName"]);
 
                 //Check that at least 10 cells has some content
-                Utils.Verify.IsTrue(content.Count(x => !string.IsNullOrEmpty(x)) > 10, "Newly added column is empty");
+                Verify.IsTrue(content.Count(x => !string.IsNullOrEmpty(x)) > 10, "Newly added column is empty");
                 //Reset column sorting to default value
                 WhenUserClickOnColumnHeader(row["ColumnName"]);
                 WhenUserClickOnColumnHeader(row["ColumnName"]);

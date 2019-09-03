@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Linq;
 using System.Threading;
-using System.Threading.Tasks;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Utils;
-using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
@@ -70,14 +65,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var expectedList = table.Rows.Select(x => x["Content"]).ToList();
             Verify.IsTrue(columnContent.SequenceEqual(expectedList),
                 $"Expected content is not present in the '{columnName}' column");
-        }
-
-        [Then(@"""(.*)"" text is displayed in the ""(.*)"" column")]
-        public void ThenTextIsDisplayedInTheColumn(string text, string columnName)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            var originalList = page.GetColumnContentByColumnNameForCapacity(columnName);
-            Verify.AreEqual(text, originalList, "Content is not displayed correctly");
         }
 
         [When(@"User doubleclicks on '(.*)' cell from '(.*)' column")]

@@ -104,7 +104,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatUserWithoutJustTheProjectAdministrat
 	And User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	When User refreshes agGrid
-	Then "Computer: Laptop Replacement" text is displayed in the table content
+	Then "Computer: Laptop Replacement" content is displayed in the "Windows7Mi: Path" column
 	When User clicks the Logout button
 	Then User is logged out
 	When User clicks on the Login link
