@@ -83,30 +83,15 @@ Scenario: EvergreenJnr_AdminPage_CheckPositionOfContextMenuInGridForCapacityUnit
 	Then User sees context menu placed near "True" cell in the grid
 
 #Should be added one more beforeScenario to make Unassigned backed default again
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12948 @DAS13073 @DAS12999 @DAS13973 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12948 @DAS13073 @DAS12999 @DAS13973 @Cleanup @Set_Default_Bucket @Do_Not_Run_With_Buckets
 Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "Project12948" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
-	And User selects "Standalone Project" in the Mode Project dropdown
-	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks "Evergreen" link on the Admin page
-	When User clicks "Buckets" tab
-	Then "Buckets" page should be displayed to the user
-	When User clicks the "CREATE EVERGREEN BUCKET" Action button
-	Then "Create Evergreen Bucket" page should be displayed to the user
-	When User enters "Bucket12948" in the "Bucket Name" field
-	And User selects "Admin IT" team in the Team dropdown on the Buckets page
-	And User updates the "Default Bucket" checkbox state
-	When User clicks the "CREATE" Action button
-	Then Success message is displayed and contains "The bucket has been created" text
-	When User clicks "Projects" link on the Admin page
+	When Project created via API and opened
+	| ProjectName  | Scope       | ProjectTemplate | Mode               |
+	| Project12948 | All Devices | None            | Standalone Project |
+	And User creates new Bucket via api
+	| Name        | TeamName | IsDefault |
+	| Bucket12948 | Admin IT | true      |
+	And User clicks Admin on the left-hand menu
 	Then "Projects" page should be displayed to the user
 	When User enters "Project12948" text in the Search field for "Project" column
 	And User clicks content from "Project" column
@@ -121,7 +106,10 @@ Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	Then following Items are displayed in the Queue table
 	| Items          |
 	| 0TTSZRQ1ZTIXWM |
-	Then "Unassigned" text is displayed in the table content
+	#Not sure that Unassigned should be in breackets in Buckets column
+	Then "[Unassigned]" content is displayed in the "Bucket" column
+	Then "Unassigned" content is displayed in the "Capacity Unit" column
+	Then "Unassigned" content is displayed in the "Ring" column
 	When User click on Back button
 	When User clicks "Evergreen" link on the Admin page
 	When User clicks "Buckets" tab
