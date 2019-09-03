@@ -414,6 +414,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
+        //TODO Delete this and replace by ThenContentIsDisplayedInTheColumn or ThenContentIsDisplayedInTheColumn
         [Then(@"""(.*)"" text is displayed in the table content")]
         public void ThenTextIsDisplayedInTheTableContent(string text)
         {
