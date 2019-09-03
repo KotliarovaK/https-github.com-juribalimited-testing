@@ -82,8 +82,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnSettingsOnCustomFieldsAreTrans
 	| Absteigend sortieren                      |
 	| Nicht sortieren                           |
 	
-	#Ann.Ilchenko 8/28/19: ready on 'quasar';
-@Evergreen @Devices @EvergreenJnr_ItemDetails @CustomFields @DAS17907 @Not_Ready
+@Evergreen @Devices @EvergreenJnr_ItemDetails @CustomFields @DAS17907
 Scenario: EvergreenJnr_DevicesList_CheckThatCustomFieldsTheGroupByElementContainOnlyVisibleColumns
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
