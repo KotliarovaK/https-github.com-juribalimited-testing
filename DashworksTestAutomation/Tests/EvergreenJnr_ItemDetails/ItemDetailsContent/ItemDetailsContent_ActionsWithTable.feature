@@ -993,8 +993,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatDataIsDisplayedInHardwareSummaryTabFor
 	When User navigates to the "Hardware Summary" sub-menu on the Details page
 	Then element table is displayed on the Details page
 
-	#Ann.Ilchenko 8/30/19: 'archived' because functionality has been changed.
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16472 @DAS16469 @DAS15039 @archived
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16472 @DAS15039
 Scenario: EvergreenJnr_DevicesList_CheckThatIconsForReadinessDdlOnRelatedTabAreDisplayed
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
@@ -1005,20 +1004,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatIconsForReadinessDdlOnRelatedTabAreD
 	When User navigates to the "Related" main-menu on the Details page
 	When User enters "03ME2G7TIR4GBN" text in the Search field for "Device" column on the Details Page
 	Then "31 May 2019" content is displayed in the "Date" column
-	When User clicks String Filter button for "Application Readiness" column
-	Then appropriate colored filter icons are displayed for following colors:
-	| Color                   |
-	| OUT OF SCOPE            |
-	| BLUE                    |
-	| LIGHT BLUE              |
-	| RED                     |
-	| BROWN                   |
-	| AMBER                   |
-	| REALLY EXTREMELY ORANGE |
-	| PURPLE                  |
-	| GREEN                   |
-	| GREY                    |
-	| NONE                    |
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17182 @DAS17219 @DAS17254 @DAS17255
 Scenario: EvergreenJnr_MailboxesList_CheckThatUsersTabIsDisplayedWithCorrectColumnsOnMailboxesDetailsPageForProjectMode
