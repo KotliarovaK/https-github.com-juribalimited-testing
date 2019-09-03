@@ -95,3 +95,19 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCustomFieldsTheGroupByElementContain
 	Then following Group By values ​​are displayed for User on grid action bar
 	| Values       |
 	| Custom Field |
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @CustomFields @DAS17776
+Scenario: EvergreenJnr_DevicesList_CheckThatItsNotPossibleToUnselectTheLastColumnOnCustomFieldsTab
+	When User clicks "Devices" on the left-hand menu
+	Then "All Devices" list should be displayed to the user
+	When User perform search by "001BAQXT6JWFPI"
+	And User click content from "Hostname" column
+	When User navigates to the "Custom Fields" sub-menu on the Details page
+	And User have opened Column Settings for "Custom Field" column in the Details Page table
+	And User clicks Column button on the Column Settings panel
+	When User clicks Select All checkbox on Column Settings panel
+	And User clicks Column button on the Column Settings panel
+	Then ColumnName is displayed in following order on the Details page:
+	| ColumnName   |
+	| Custom Field |
+	|              |
