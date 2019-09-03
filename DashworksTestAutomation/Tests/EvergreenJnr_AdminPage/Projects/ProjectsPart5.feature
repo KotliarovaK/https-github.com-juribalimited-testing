@@ -41,7 +41,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEmptyGreenAlertLineIsNotDisplayedOnPro
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12155 @Cleanup @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThatScopePanelHaveCorrectlySizeWhenUsedListWithLongName
 	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
+	Then "All Devices" list should be displayed to the user
 	When User click on 'Hostname' column header
 	And User create dynamic list with "VERYLONGLOOOOOOOOOOOOOOOOOOOOOOOOONGNAME" name on "Devices" page
 	Then "VERYLONGLOOOOOOOOOOOOOOOOOOOOOOOOONGNAME" list is displayed to user
@@ -57,7 +57,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopePanelHaveCorrectlySizeWhenUsedLis
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12349 @DAS12364 @DAS13199 @DAS15685 @Cleanup @Cleanup @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThat500ISEInvalidColumnNameIsNotDisplayedWhenUsedAppSavedListForFilteringDeviceList
 	When User clicks "Applications" on the left-hand menu
-	Then "Applications" list should be displayed to the user
+	Then "All Applications" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Application Key" filter where type is "Equals" without added column and following value:
@@ -66,7 +66,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThat500ISEInvalidColumnNameIsNotDisplayedW
 	And User create dynamic list with "ListName12349" name on "Applications" page
 	Then "ListName12349" list is displayed to user
 	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
+	Then "All Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:

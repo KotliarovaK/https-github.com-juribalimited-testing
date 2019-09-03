@@ -15,7 +15,7 @@ Scenario: EvergreenJnr_AdminPage_CheckNavigationToDevicesListFromProjectsRingsLi
 	And User clicks "Rings" tab
 	Then "1" content is displayed in "Devices" column
 	When User clicks content from "Devices" column
-	Then "Devices" list should be displayed to the user
+	Then "All Devices" list should be displayed to the user
 	Then "1" rows are displayed in the agGrid
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user

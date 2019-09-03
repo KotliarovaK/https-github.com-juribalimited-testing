@@ -1679,20 +1679,22 @@ this.FeatureBackground();
 
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckNameAndLabelForEmptyOwnerCompliance")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckNameAndLabelAndColorSchemeForEmptyOwnerComplianc" +
+            "e")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS17467")]
+        [NUnit.Framework.CategoryAttribute("DAS17515")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        public virtual void EvergreenJnr_DashboardsPage_CheckNameAndLabelForEmptyOwnerCompliance()
+        public virtual void EvergreenJnr_DashboardsPage_CheckNameAndLabelAndColorSchemeForEmptyOwnerCompliance()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_DashboardsPage_CheckNameAndLabelForEmptyOwnerComplianceInternal();
+                    this.EvergreenJnr_DashboardsPage_CheckNameAndLabelAndColorSchemeForEmptyOwnerComplianceInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -1711,13 +1713,15 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_DashboardsPage_CheckNameAndLabelForEmptyOwnerComplianceInternal()
+        private void EvergreenJnr_DashboardsPage_CheckNameAndLabelAndColorSchemeForEmptyOwnerComplianceInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckNameAndLabelForEmptyOwnerCompliance", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckNameAndLabelAndColorSchemeForEmptyOwnerComplianc" +
+                    "e", null, new string[] {
                         "Evergreen",
                         "EvergreenJnr_DashboardsPage",
                         "Widgets",
                         "DAS17467",
+                        "DAS17515",
                         "Cleanup"});
 #line 374
 this.ScenarioInitialize(scenarioInfo);
@@ -1805,6 +1809,8 @@ this.FeatureBackground();
  testRunner.And("Label \"Empty\" displayed for \"WidgetForDAS17467\" widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 401
  testRunner.And("Label icon displayed gray for \"WidgetForDAS17467\" widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 402
+ testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1816,6 +1822,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS17467")]
+        [NUnit.Framework.CategoryAttribute("DAS17515")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckColorSchemePlaceholderForReadiness()
         {
@@ -1850,17 +1857,18 @@ this.FeatureBackground();
                         "EvergreenJnr_DashboardsPage",
                         "Widgets",
                         "DAS17467",
+                        "DAS17515",
                         "Cleanup"});
-#line 404
+#line 405
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 405
- testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 406
- testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 407
+ testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 408
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1875,20 +1883,20 @@ this.FeatureBackground();
                         "Grey"});
             table30.AddRow(new string[] {
                         "None"});
-#line 408
+#line 409
  testRunner.When("User add \"1803: Readiness\" filter where type is \"Does not equal\" with added colum" +
                     "n and following checkboxes:", ((string)(null)), table30, "When ");
-#line 415
- testRunner.And("User clicks Save button on the list panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 416
- testRunner.And("User create dynamic list with \"ListForDAS17467_1\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks Save button on the list panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 417
- testRunner.Then("\"ListForDAS17467_1\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("User create dynamic list with \"ListForDAS17467_1\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 418
- testRunner.When("Dashboard with \"Dashboard for DAS17467_1\" name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("\"ListForDAS17467_1\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 419
- testRunner.And("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("Dashboard with \"Dashboard for DAS17467_1\" name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 420
+ testRunner.And("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 421
  testRunner.And("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1919,37 +1927,39 @@ this.FeatureBackground();
                         "",
                         "",
                         ""});
-#line 421
+#line 422
  testRunner.And("User adds new Widget", ((string)(null)), table31, "And ");
-#line 424
- testRunner.And("User selects \"Show data labels\" checkbox on the Create Widget page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 425
- testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("User selects \"Show data labels\" checkbox on the Create Widget page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 426
- testRunner.And("Color Scheme dropdown displayed with \"Readiness Colour Scheme\" placeholder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 427
+ testRunner.And("Color Scheme dropdown displayed with \"Readiness Colour Scheme\" placeholder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 428
  testRunner.And("Color Scheme dropdown is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 429
+ testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
 
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatWidgetsWithASplitByOfAfieldWithReadinessAreF" +
-            "orcedToUseTheReadinessColourScheme")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatCorrectColorSchemeisUsedWhenWidgetIsSplitByR" +
+            "eadinessAndComplianceFields")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS17515")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        public virtual void EvergreenJnr_DashboardsPage_CheckThatWidgetsWithASplitByOfAfieldWithReadinessAreForcedToUseTheReadinessColourScheme()
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatCorrectColorSchemeisUsedWhenWidgetIsSplitByReadinessAndComplianceFields()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_DashboardsPage_CheckThatWidgetsWithASplitByOfAfieldWithReadinessAreForcedToUseTheReadinessColourSchemeInternal();
+                    this.EvergreenJnr_DashboardsPage_CheckThatCorrectColorSchemeisUsedWhenWidgetIsSplitByReadinessAndComplianceFieldsInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -1968,23 +1978,23 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_DashboardsPage_CheckThatWidgetsWithASplitByOfAfieldWithReadinessAreForcedToUseTheReadinessColourSchemeInternal()
+        private void EvergreenJnr_DashboardsPage_CheckThatCorrectColorSchemeisUsedWhenWidgetIsSplitByReadinessAndComplianceFieldsInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckThatWidgetsWithASplitByOfAfieldWithReadinessAreF" +
-                    "orcedToUseTheReadinessColourScheme", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckThatCorrectColorSchemeisUsedWhenWidgetIsSplitByR" +
+                    "eadinessAndComplianceFields", null, new string[] {
                         "Evergreen",
                         "EvergreenJnr_DashboardsPage",
                         "Widgets",
                         "DAS17515",
                         "Cleanup"});
-#line 430
+#line 432
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 431
- testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 432
+#line 433
+    testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 434
  testRunner.And("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1993,29 +2003,29 @@ this.FeatureBackground();
                         "Windows7Mi: Application Readiness"});
             table32.AddRow(new string[] {
                         "Application Compliance"});
-#line 433
+#line 435
  testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table32, "And ");
-#line 437
+#line 439
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 438
+#line 440
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
             table33.AddRow(new string[] {
                         "TRUE"});
-#line 439
+#line 441
  testRunner.When("User Add And \"Windows7Mi: In Scope\" filter where type is \"Equals\" with added colu" +
                     "mn and following checkboxes:", ((string)(null)), table33, "When ");
-#line 442
- testRunner.And("User create dynamic list with \"ListForDAS17515\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 443
- testRunner.Then("\"ListForDAS17515\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 444
- testRunner.When("Dashboard with \"DAS17515_Dashboard\" name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("User create dynamic list with \"ListForDAS17515\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 445
- testRunner.And("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("\"ListForDAS17515\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 446
+ testRunner.When("Dashboard with \"DAS17515_Dashboard\" name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 447
+ testRunner.And("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 448
  testRunner.When("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
@@ -2046,26 +2056,34 @@ this.FeatureBackground();
                         "",
                         "",
                         ""});
-#line 447
+#line 449
  testRunner.And("User adds new Widget", ((string)(null)), table34, "And ");
-#line 450
- testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 451
- testRunner.When("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 452
- testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 453
- testRunner.When("User clicks Ellipsis menu for \"WidgetForDAS17515\" Widget on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("Color Scheme dropdown displayed with \"Readiness Colour Scheme\" placeholder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 454
- testRunner.And("User clicks \"Edit\" item from Ellipsis menu on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Color Scheme dropdown is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 455
- testRunner.When("User selects \"Application Compliance\" in the \"Split By\" Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 456
+ testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 457
+ testRunner.When("User clicks Ellipsis menu for \"WidgetForDAS17515\" Widget on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 458
+ testRunner.And("User clicks \"Edit\" item from Ellipsis menu on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 459
+ testRunner.When("User selects \"Application Compliance\" in the \"Split By\" Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 460
  testRunner.Then("User sees \"Application Compliance ASC\" option for Order By selector on Create Wid" +
                     "get page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 457
+#line 461
+ testRunner.And("Color Scheme dropdown displayed with \"Compliance Colour Scheme\" placeholder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 462
+ testRunner.And("Color Scheme dropdown is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 463
  testRunner.When("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 458
+#line 464
  testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

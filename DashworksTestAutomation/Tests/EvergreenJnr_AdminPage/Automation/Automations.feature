@@ -515,7 +515,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextFor
 	Then Edit Automation page is displayed to the User
 	Then "DAS15423_List" content is displayed in the Scope Automation dropdown
 	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
+	Then "All Devices" list should be displayed to the user
 	When User navigates to the "DAS15423_List" list
 	Then "DAS15423_List" list is displayed to user
 	When User removes custom list with "DAS15423_List" name
@@ -689,3 +689,30 @@ Scenario: EvergreenJnr_AdminPage_ChechAutomationsPermissionsForScopeDropdownList
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console
 	And User removes "DAS_17003" User
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15949 @Cleanup @Not_Ready
+Scenario: EvergreenJnr_AdminPage_CheckThatDeviceLisFiltertHasAppropriateAutomation
+	When User clicks "Devices" on the left-hand menu
+	And User clicks the Filters button
+	And User add "Device Type" filter where type is "Equals" with added column and "Virtual" Lookup option
+	And User create dynamic list with "DAS15949_List" name on "Devices" page
+	And User creates new Automation via API and open it
+	| AutomationName      | Description | Active | StopOnFailedAction | Scope       | Run    |
+	| DAS15949_Automation | DAS15949    | true   | false              | DAS15949_List | Manual |
+	And User clicks "Actions" tab
+	And User clicks the "CREATE ACTION" Action button
+	And User enters '15949_Action' text to 'Action Name' textbox
+	And User selects "Update path" in the "Action Type" dropdown
+	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
+	And User selects "Computer: Laptop Replacement" in the "Path" dropdown for Actions
+	And User clicks the "CREATE" Action button
+	And User clicks "Automations" link on the Admin page
+	And User clicks "Run now" option in Cog-menu for "DAS15949_Automation" item on Admin page and wait for processing
+	And User clicks "Devices" on the left-hand menu
+	And User clicks the Filters button
+	And User clicks Add New button on the Filter panel
+	And user select "DAS15949_Automation" filter
+	And User select "Equals" Operator value
+	And User select first checkbox from available options
+	And User clicks Save filter button
+	Then "5,179" rows are displayed in the agGrid

@@ -101,28 +101,28 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             switch (listPage)
             {
-                case "Devices":
+                case "All Devices":
                     //Check Devices heading is visible
                     var devicesPage = _driver.NowAt<DevicesPage>();
                     Verify.AreEqual(listPage.ToLower(), devicesPage.Heading.Text.ToLower(),
                         "Incorrect list is displayed to user");
                     break;
 
-                case "Users":
+                case "All Users":
                     //Check Users heading is visible
                     var usersPage = _driver.NowAt<UsersPage>();
                     Verify.AreEqual(listPage.ToLower(), usersPage.Heading.Text.ToLower(),
                         "Incorrect list is displayed to user");
                     break;
 
-                case "Applications":
+                case "All Applications":
                     //Check Applications heading is visible
                     var applicationsPage = _driver.NowAt<ApplicationsPage>();
                     Verify.AreEqual(listPage.ToLower(), applicationsPage.Heading.Text.ToLower(),
                         "Incorrect list is displayed to user");
                     break;
 
-                case "Mailboxes":
+                case "All Mailboxes":
                     //Check Mailboxes heading is visible
                     var mailboxesPage = _driver.NowAt<MailboxesPage>();
                     Verify.AreEqual(listPage.ToLower(), mailboxesPage.Heading.Text.ToLower(),

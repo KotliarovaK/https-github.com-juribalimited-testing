@@ -25,7 +25,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatColourSchemeIsDisplayedForReadine
 	And "Data Label" checkbox is not displayed on the Create Widget page
 	When User clicks the "CREATE" Action button
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16069 @Cleanup @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16069 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetValuesLeadsToDeviceListFilteredPage
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Filters button
@@ -147,6 +147,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetsShowsGraphDataWhenSpli
 	| WidgetType | Title             | List            | SplitBy                           | AggregateBy | AggregateFunction | OrderBy   | TableOrientation | MaxValues | ShowLegend | Type | Drilldown | Layout |
 	| Line       | WidgetForDAS17825 | ListForDAS17825 | Windows7Mi: Application Readiness |             | Count             | Count ASC |                  |           |            |      |           |        |
 	Then Widget Preview is displayed to the user
+	And Color Scheme dropdown displayed with "Readiness Colour Scheme" placeholder
+	And Color Scheme dropdown is disabled
 	When User clicks the "CREATE" Action button
 	Then Card "WidgetForDAS17825" Widget is displayed to the user
 	And Line chart displayed in "WidgetForDAS17825" widget
@@ -154,6 +156,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetsShowsGraphDataWhenSpli
 	And User clicks "Edit" item from Ellipsis menu on Dashboards page
 	And User selects "Application Compliance" as Widget Split By
 	Then Widget Preview is displayed to the user
+	And Color Scheme dropdown displayed with "Compliance Colour Scheme" placeholder 
+	And Color Scheme dropdown is disabled
 	When User clicks the "UPDATE" Action button
 	Then Card "WidgetForDAS17825" Widget is displayed to the user
 	And Line chart displayed in "WidgetForDAS17825" widget

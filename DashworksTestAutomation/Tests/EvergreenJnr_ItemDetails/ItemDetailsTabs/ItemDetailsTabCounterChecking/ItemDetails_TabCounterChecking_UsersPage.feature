@@ -8,7 +8,7 @@ Background: Pre-Conditions
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16378 @DAS16418 @DAS16415 @DAS15583 @DAS15348 @DAS17141 @DAS16830
 Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForUsersPageInEvergreenMode
 	When User clicks "Users" on the left-hand menu
-	Then "Users" list should be displayed to the user
+	Then "All Users" list should be displayed to the user
 	When User perform search by "0072B088173449E3A93"
 	And User click content from "Username" column
 	Then Details page for "0072B088173449E3A93" item is displayed to the user
@@ -93,7 +93,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayed
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15583 @DAS16884
 Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForUsersPageInProjectMode
 	When User clicks "Users" on the left-hand menu
-	Then "Users" list should be displayed to the user
+	Then "All Users" list should be displayed to the user
 	When User perform search by "0072B088173449E3A93"
 	And User click content from "Username" column
 	Then Details page for "0072B088173449E3A93" item is displayed to the user
@@ -177,7 +177,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayed
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16830
 Scenario: EvergreenJnr_UsersList_ChecksThatTheNumberOfCountersInTheTabIsEqualToTheNumberOfFieldsInTheTable
 	When User clicks "Users" on the left-hand menu
-	Then "Users" list should be displayed to the user
+	Then "All Users" list should be displayed to the user
 	When User perform search by "ACG370114"
 	And User click content from "Username" column
 	Then Details page for "ACG370114" item is displayed to the user
@@ -237,7 +237,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatTheNumberOfCountersInTheTabIsEqualToT
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17769
 Scenario: EvergreenJnr_UsersList_CheckThatCollectionsSubMenuCounterMatchTheNumberOfCollectionsForThisUser
 	When User clicks "Users" on the left-hand menu
-	Then "Users" list should be displayed to the user
+	Then "All Users" list should be displayed to the user
 	When User perform search by "allanj"
 	And User click content from "Username" column
 	Then Details page for "allanj (Jo Allan)" item is displayed to the user

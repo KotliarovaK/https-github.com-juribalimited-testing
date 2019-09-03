@@ -1240,6 +1240,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 var projectTabs = _driver.NowAt<ProjectsPage>();
                 projectTabs.ClickToTabByNameProjectScopeChanges(tabName);
                 _driver.WaitForDataLoading();
+                projectElement = _driver.NowAt<BaseGridPage>();
+                _driver.WaitForElementToBeDisplayed(projectElement.PlusButton);
                 projectElement.PlusButton.Click();
                 foreach (var row in table.Rows)
                 {
@@ -1954,6 +1956,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.AreEqual(expectedList, actualList, "Menu options are different");
         }
 
+        //TODO move to the BaseGrid
         [Then(@"""(.*)"" column content is displayed in the following order:")]
         public void ThenColumnContentIsDisplayedInTheFollowingOrder(string columnName, Table table)
         {
@@ -1961,7 +1964,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var actualList = action.GetColumnContent(columnName);
-            Utils.Verify.AreEqual(expectedList, actualList, "Column content is different");
+            Verify.AreEqual(expectedList, actualList, "Column content is different");
         }
 
         [Then(@"""(.*)"" dropdown is not displayed")]

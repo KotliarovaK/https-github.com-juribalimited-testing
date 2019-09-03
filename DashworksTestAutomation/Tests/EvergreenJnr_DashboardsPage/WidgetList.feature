@@ -8,7 +8,7 @@ Background: Pre-Conditions
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15432 @Cleanup @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorsAreDisplayedWhenCreateListWidgetWithStaticList
 	When User clicks "Users" on the left-hand menu
-	Then "Users" list should be displayed to the user
+	Then "All Users" list should be displayed to the user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
@@ -26,7 +26,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorsAreDisplayedWhenCreateLis
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15413 @Cleanup @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatDataFromTheWidgetMatchesTheOriginalDynamicLists
 	When User clicks "Applications" on the left-hand menu
-	Then "Applications" list should be displayed to the user
+	Then "All Applications" list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
@@ -63,6 +63,6 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThahtArchivedObjectsShouldNotBeLinked
 	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
 	| WidgetType | Title             | List      | MaxRows | MaxColumns |
-	| List       | WidgetForDAS17814 | List17814 | 100     | 10         |
+	| List       | WidgetForDAS17814 | List17814 | 10      | 10         |
 	Then "WidgetForDAS17814" Widget is displayed to the user
 	And There are no links placed in "WidgetForDAS17814" Widget

@@ -55,7 +55,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedApplicationsAreDisplayedCapac
 	| Name  | Description | IsDefault | Project         |
 	| 1Test | DAS13156    | true      | Email Migration |
 	When User clicks "Applications" on the left-hand menu
-	Then "Applications" list should be displayed to the user
+	Then "All Applications" list should be displayed to the user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Application" rows in the grid

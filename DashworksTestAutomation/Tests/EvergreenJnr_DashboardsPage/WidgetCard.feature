@@ -176,11 +176,11 @@ Scenario: EvergreenJnr_DashboardsPage_CheckComplianceFirstCellIconsForCardWidget
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When User removes "Application" column by Column panel
-	Then "Applications" list should be displayed to the user
+	Then "All Applications" list should be displayed to the user
 	When User removes "Vendor" column by Column panel
-	Then "Applications" list should be displayed to the user
+	Then "All Applications" list should be displayed to the user
 	When User removes "Version" column by Column panel
-	Then "Applications" list should be displayed to the user
+	Then "All Applications" list should be displayed to the user
 	When User create dynamic list with "DAS15355_Applications_List" name on "Applications" page
 	Then "DAS15355_Applications_List" list is displayed to user
 	When Dashboard with "Dashboard_DAS15355" name created via API and opened
@@ -291,9 +291,9 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhe
 	| ColumnName                             |
 	| 1803: Pre-Migration \ Ready to Migrate |
 	And User move '1803: Pre-Migration \ Ready to Migrate' column to 'Hostname' column
-	Then "Devices" list should be displayed to the user
+	Then "All Devices" list should be displayed to the user
 	When User move 'Hostname' column to 'Device Type' column
-	Then "Devices" list should be displayed to the user
+	Then "All Devices" list should be displayed to the user
 	When User create dynamic list with "DeviceListFor15914" name on "Devices" page
 	Then "DeviceListFor15914" list is displayed to user
 	When Dashboard with "Dashboard for DAS15914" name created via API and opened
@@ -343,9 +343,9 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhe
 	| ColumnName                           |
 	| 1803: Pre-Migration \ Scheduled Date |
 	And User move '1803: Pre-Migration \ Scheduled Date' column to 'Hostname' column
-	Then "Devices" list should be displayed to the user
+	Then "All Devices" list should be displayed to the user
 	When User move 'Hostname' column to 'Operating System' column
-	Then "Devices" list should be displayed to the user
+	Then "All Devices" list should be displayed to the user
 	When User create dynamic list with "DeviceListFor15765" name on "Devices" page
 	Then "DeviceListFor15765" list is displayed to user
 	When Dashboard with "Dashboard for DAS15765" name created via API and opened
@@ -361,7 +361,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhe
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16336 @Cleanup @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorsInConsoleAfterAddingApplicationReadinessFirstCellWidget
 	When User clicks "Applications" on the left-hand menu
-	Then "Applications" list should be displayed to the user
+	Then "All Applications" list should be displayed to the user
 	When User clicks the Columns button
 	And ColumnName is entered into the search box and the selection is clicked
 	| ColumnName                        |

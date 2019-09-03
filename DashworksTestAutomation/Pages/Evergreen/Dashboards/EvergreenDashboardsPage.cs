@@ -63,6 +63,13 @@ namespace DashworksTestAutomation.Pages
 
         [FindsBy(How = How.XPath, Using = ".//li[text()='Set default']")]
         public IWebElement MakeDefaultContextMenuItem { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//li[text()='Duplicate']")]
+        public IWebElement DuplicateContextMenuItem { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='inline-success ng-star-inserted']")]
+        public IWebElement SuccessMessage { get; set; }
+
         #endregion
 
 

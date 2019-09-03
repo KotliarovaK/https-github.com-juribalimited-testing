@@ -35,7 +35,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingI
 	Then "UPDATE" button is displayed without tooltip on Update form
 	When User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The capacity slot details have been updated" text
-	And "NewSlotName" text is displayed in the table content
+	And "NewSlotName" content is displayed in the "Capacity Slot" column
 	When User click on 'Capacity Slot' column header
 	Then data in table is sorted by "Capacity Slot" column in ascending order on the Admin page
 	When User click on 'Capacity Slot' column header

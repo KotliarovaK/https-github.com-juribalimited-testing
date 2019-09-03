@@ -114,6 +114,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
+        [When(@"User duplicates dashboard with ""(.*)"" name via context menu")]
+        public void WhenUserDuplicatesDashboardViaContextMenu(string dashboardName)
+        {
+            var dashboardElement = _driver.NowAt<EvergreenDashboardsPage>();
+
+            dashboardElement.ClickSettingsButtonByDashboardName(dashboardName);
+            _driver.WaitForElementToBeDisplayed(dashboardElement.DuplicateContextMenuItem);
+            dashboardElement.DuplicateContextMenuItem.Click();
+            _driver.WaitForDataLoading();
+            _driver.WaitForElementToBeDisplayed(dashboardElement.SuccessMessage);
+
+            _dashboard.Value.dashboardId = DatabaseHelper.GetDashboardId(dashboardName + "2");
+        }
+
         [Then(@"Dashboard with name ""(.*)"" marked as favorite")]
         public void ThenUserSeesDashboardsMarkedAsFavorite(string dashboardName)
         {

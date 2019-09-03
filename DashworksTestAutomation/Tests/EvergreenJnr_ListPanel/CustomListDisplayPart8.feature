@@ -113,7 +113,7 @@ Examples:
 @Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS12524 @Cleanup
 Scenario: EvergreenJnr_AllLists_CheckThatActionsPanelIsHiddenAfterCancellingProcessOfSavingList
 	When User clicks "Applications" on the left-hand menu
-	Then "Applications" list should be displayed to the user
+	Then "All Applications" list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked

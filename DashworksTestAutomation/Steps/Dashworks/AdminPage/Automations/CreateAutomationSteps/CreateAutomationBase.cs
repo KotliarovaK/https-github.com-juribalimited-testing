@@ -25,7 +25,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations.CreateAu
             _client = client;
         }
 
-        protected string CreateAutomationViaApi(Table table)
+        protected string CreateAutomationViaApi(Table table, bool updated = false)
         {
             var automations = table.CreateSet<AutomationsDto>();
 
@@ -46,7 +46,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations.CreateAu
 
                 request.AddJsonBody(automation);
 
-                var response = _client.Value.Post(request);
+                var response = updated ? _client.Value.Put(request) : _client.Value.Post(request);
 
                 if (response.StatusCode != HttpStatusCode.OK)
                 {

@@ -91,7 +91,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedCheckboxIsSelectedAfterSwitchi
 	Then following items are still selected
 	And "Devices to add (1 of 17279 selected)" is displayed to the user in the Project Scope Changes section
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12387 @DAS12757 @DAS12999 @DAS13199 @Cleanup @Project_Creation_and_Scope @Projects @TEST
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12387 @DAS12757 @DAS12999 @DAS13199 @Cleanup @Project_Creation_and_Scope @Projects @Do_Not_Run_With_Projects @TEST
 Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedProjects
 	When Project created via API and opened
 	| ProjectName   | Scope       | ProjectTemplate | Mode               |
@@ -122,18 +122,18 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedP
 	When User enters "NewProject15" text in the Search field for "Project" column
 	Then Rows counter contains "1" found row of all rows
 	When User clicks Reset Filters button on the Admin page
-	When User clicks String Filter button for "Active" column on the Admin page
-	When User clicks "True" checkbox from boolean filter on the Admin page
+	And User clicks String Filter button for "Active" column on the Admin page
+	And User clicks "True" checkbox from boolean filter on the Admin page
 	Then Rows counter contains "0" found row of all rows
 	When User clicks Reset Filters button on the Admin page
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Device scoped" checkbox from String Filter on the Admin page
-	Then Rows counter contains "14" found row of all rows
+	And User clicks String Filter button for "Type" column on the Admin page
+	And User selects "Device scoped" checkbox from String Filter on the Admin page
+	Then "NewProject15" content is displayed in the "Project" column
 	When User clicks Reset Filters button on the Admin page 
-	When User enters "DDPP" text in the Search field for "Short Name" column
+	And User enters "DDPP" text in the Search field for "Short Name" column
 	Then Rows counter contains "1" found row of all rows
 	When User clicks Reset Filters button on the Admin page 
-	When User have opened Column Settings for "Project" column
+	And User have opened Column Settings for "Project" column
 	And User clicks Column button on the Column Settings panel
 	Then Column Settings was opened
 	When User select "Project ID" checkbox on the Column Settings panel

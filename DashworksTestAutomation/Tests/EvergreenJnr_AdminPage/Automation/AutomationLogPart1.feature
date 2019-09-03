@@ -181,7 +181,7 @@ Scenario: EvergreenJnr_AdminPage_CheckBrokenListValidationWhenRunningAnAutomatio
 	When User clicks the "CREATE" Action button
 	Then Create Action page is displayed to the User
 	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
+	Then "All Devices" list should be displayed to the user
 	When User navigates to the "17011_List" list
 	Then "17011_List" list is displayed to user
 	When User clicks the Filters button

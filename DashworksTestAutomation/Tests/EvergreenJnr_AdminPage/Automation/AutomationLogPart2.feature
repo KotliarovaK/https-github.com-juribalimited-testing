@@ -427,3 +427,17 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedA
 	| UseMeForAu: Stage A \ Radiobutton Readiness Date Task No CS (Date) |
 	Then "FAILED" content is displayed in "UseMeForAu: Stage A \ Radiobutton Readiness Date Task No CS" column
 	Then "" content is displayed in "UseMeForAu: Stage A \ Radiobutton Readiness Date Task No CS (Date)" column
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15945 @Cleanup @Not_Ready
+Scenario: EvergreenJnr_AdminPage_CheckThatClickingOnTheObjectsCountOpensTheCorrectFilteredList
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Automations" link on the Admin page
+	Then "Automations" page should be displayed to the user
+	When User selects "Automation Log" tab on the Project details page
+	And User enters "X-Proj Path Reset" text in the Search field for "Automation" column
+	And User enters "2" text in the Search field for "Objects" column
+	Then "2" content is displayed for "Objects" column
+	When User clicks content from "Objects" column
+	And User clicks the Filters button
+	Then "X-Proj Path Reset is 12/08/2019 18:07:05" is displayed in added filter info
