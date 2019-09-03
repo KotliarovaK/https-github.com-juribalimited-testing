@@ -235,7 +235,7 @@
     <Compile Include="Pages\Evergreen\ItemDetails\AggridHeaderCounterPage.cs" />
     <Compile Include="Pages\Evergreen\ItemDetails\CustomFields\CustomFieldPopup.cs" />
     <Compile Include="Pages\Evergreen\ItemDetails\ItemDetails_TopBarPage.cs" />
-    <Compile Include="Pages\Evergreen\ItemDetails\NavigationPage.cs" />
+    <Compile Include="Pages\Evergreen\ItemDetails\NavigationElements.cs" />
     <Compile Include="Pages\Evergreen\ItemDetails\TabContent.cs" />
     <Compile Include="Pages\Evergreen\LeavePageWarning.cs" />
     <Compile Include="Pages\Evergreen\Dashboards\AddWidgetPage.cs" />

@@ -830,7 +830,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS17373")]
-        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatLoadingIndicatorAppearsInTheSamePlace()
         {
             System.Exception lastException = null;
@@ -864,8 +863,7 @@ this.FeatureBackground();
                         "Applications",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS17373",
-                        "Not_Ready"});
+                        "DAS17373"});
 #line 173
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
