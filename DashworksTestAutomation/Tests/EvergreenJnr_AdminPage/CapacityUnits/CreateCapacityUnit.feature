@@ -21,7 +21,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCreatedCorrectly
 	And There are no errors in the browser console
 	And "NotDefaultCapacityUnit13720" content is displayed in the "Capacity Unit" column
 	When User enters "NotDefaultCapacityUnit13720" text in the Search field for "Capacity Unit" column
-	Then "FALSE" value is displayed for Default column
+	Then "FALSE" content is displayed in the "Default" column
 	And "" content is displayed in "Devices" column
 	And "" content is displayed in "Users" column
 	And "" content is displayed in "Mailboxes" column
