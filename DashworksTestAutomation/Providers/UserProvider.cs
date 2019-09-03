@@ -40,6 +40,10 @@ namespace DashworksTestAutomation.Providers
 
         public static UserDto GetFreeUserAccount()
         {
+            //For local run to use random user to not overlap between other sessions
+            if (Browser.RemoteDriver.Equals("local"))
+                return _accounts[new Random().Next(0, _accounts.Count)];
+
             _mut.WaitOne(1000);
             try
             {
