@@ -470,10 +470,14 @@ Examples:
 	| DAS12974DUPLICATED |
 	| DAS12974duplicated |
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17592
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17592 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckDashboardTranslationsWork1
+	When User clicks Show Dashboards panel icon on Dashboards page
+	And User duplicates dashboard with "Executive Summary" name via context menu
+	Then Dashboard with "Executive Summary2" title displayed in All Dashboards
 	When User language is changed to "Deutsch" via API
-	And Dashboard with "Executive Summary" name is opened via API
+	And Dashboard with "Executive Summary2" name is opened via API
+	And User clicks Edit mode trigger on Dashboards page
 	Then User sees "Dieses Widget bezieht sich auf eine nicht verfügbare Liste." text in "2" warning messages on Dashboards page
 	When User clicks Dashboards Details icon on Dashboards page
 	And User expands the list of shared lists

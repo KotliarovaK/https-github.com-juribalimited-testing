@@ -367,7 +367,7 @@ this.FeatureBackground();
                         "List",
                         "WidgetForDAS17814",
                         "List17814",
-                        "100",
+                        "10",
                         "10"});
 #line 64
  testRunner.And("User creates new Widget", ((string)(null)), table7, "And ");
