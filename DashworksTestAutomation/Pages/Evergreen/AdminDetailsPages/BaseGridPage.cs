@@ -640,6 +640,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElement(By.XPath(".//div[@id='messageAdmin']")).GetCssValue("width");
         }
 
+        //TODO should be removed and replaced by generic method
         public bool GetDefaultColumnValue(string defaultValue)
         {
             return Driver.IsElementDisplayed(By.XPath($".//span[contains(@class, 'boolean')][text()='{defaultValue}']"));

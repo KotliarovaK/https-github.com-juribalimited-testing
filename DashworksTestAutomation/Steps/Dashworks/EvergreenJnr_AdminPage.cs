@@ -2084,6 +2084,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.BodyContainer.Click();
         }
 
+        //TODO delete this
         [Then(@"""(.*)"" value is displayed for Default column")]
         public void ThenValueIsDisplayedForDefaultColumn(string defaultValue)
         {
