@@ -83,7 +83,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRedErrorMessageOnScopeChangesIfBrokenListI
 	| 17122_Project | 17122_List | None            | Standalone Project |
 	Then Project "17122_Project" is displayed to user
 	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
+	Then "All Devices" list should be displayed to the user
 	When User navigates to the "17122_List" list
 	Then "17122_List" list is displayed to user
 	When User clicks the Filters button

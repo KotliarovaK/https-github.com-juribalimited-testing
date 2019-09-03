@@ -16,7 +16,7 @@ Scenario: EvergreenJnr_DevicesList_CheckCustomFieldDeleting
 	| ObjectType | ObjectId | FieldName    | Value           |
 	| device     | 17152    | CfDAS16489_1 | ValueDAS16489_1 |
 	And User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
+	Then "All Devices" list should be displayed to the user
 	When User perform search by "WIN-KTJC6PMV2P5"
 	And User click content from "Hostname" column
 	Then Details page for "WIN-KTJC6PMV2P5" item is displayed to the user
@@ -48,7 +48,7 @@ Scenario: EvergreenJnr_MailboxesList_DeleteGroupedCustomFields
 	| mailbox    | 48731    | CfDAS17695_1 | ValueDAS17695_1A |
 	| mailbox    | 48731    | CfDAS17695_1 | ValueDAS17695_1B |
 	And User clicks "Mailboxes" on the left-hand menu
-	Then "Mailboxes" list should be displayed to the user
+	Then "All Mailboxes" list should be displayed to the user
 	When User perform search by "gregoja@bclabs.local"
 	And User click content from "Email Address" column
 	Then Details page for "gregoja@bclabs.local" item is displayed to the user

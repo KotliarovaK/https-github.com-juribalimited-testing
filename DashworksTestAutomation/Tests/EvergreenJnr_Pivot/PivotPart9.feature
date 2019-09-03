@@ -8,7 +8,7 @@ Background: Pre-Conditions
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13862 @DAS14373
 Scenario: EvergreenJnr_DevicesList_CheckThatOperatingSystemAndServicePackOrBuildColumnDisplayInTheCorrectOrder
 	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
+	Then "All Devices" list should be displayed to the user
 	When User navigates to Pivot
 	And User selects the following Row Groups on Pivot:
 	| RowGroups              |
@@ -27,7 +27,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOperatingSystemAndServicePackOrBuild
 @Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS13786 @DAS13868
 Scenario: EvergreenJnr_UsersList_CheckThatNumericValueHasTheCorrectOrder
 	When User clicks "Users" on the left-hand menu
-	Then "Users" list should be displayed to the user
+	Then "All Users" list should be displayed to the user
 	When User navigates to Pivot
 	And User selects the following Row Groups on Pivot:
 	| RowGroups  |
@@ -45,7 +45,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatNumericValueHasTheCorrectOrder
 @Evergreen @Mailboxes @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14374
 Scenario: EvergreenJnr_MailboxesList_CheckSortedOrderForPivotProjectStatusAsRowGroup
 	When User clicks "Mailboxes" on the left-hand menu
-	Then "Mailboxes" list should be displayed to the user
+	Then "All Mailboxes" list should be displayed to the user
 	When User navigates to Pivot
 	And User selects the following Row Groups on Pivot:
 	| RowGroups          |
@@ -69,7 +69,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckSortedOrderForPivotProjectStatusAsRowG
 @Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14374 @DAS15376
 Scenario: EvergreenJnr_UsersList_CheckSortedOrderForPivotProjectStatusAsRowGroup
 	When User clicks "Users" on the left-hand menu
-	Then "Users" list should be displayed to the user
+	Then "All Users" list should be displayed to the user
 	When User navigates to Pivot
 	And User selects the following Row Groups on Pivot:
 	| RowGroups          |
@@ -100,7 +100,7 @@ Scenario: EvergreenJnr_UsersList_CheckSortedOrderForPivotProjectStatusAsRowGroup
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14374
 Scenario: EvergreenJnr_DevicesList_CheckSortedOrderForPivotProjectStatusAsRowGroup
 	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
+	Then "All Devices" list should be displayed to the user
 	When User navigates to Pivot
 	And User selects the following Row Groups on Pivot:
 	| RowGroups          |
@@ -124,7 +124,7 @@ Scenario: EvergreenJnr_DevicesList_CheckSortedOrderForPivotProjectStatusAsRowGro
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14375
 Scenario: EvergreenJnr_DevicesList_CheckSortedOrderForPivotProjectStatusAsColumn
 	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
+	Then "All Devices" list should be displayed to the user
 	When User navigates to Pivot
 	And User selects the following Row Groups on Pivot:
 	| RowGroups |

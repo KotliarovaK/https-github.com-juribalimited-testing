@@ -15,7 +15,7 @@ Scenario: EvergreenJnr_DevicesList_CheckAddCustomFieldPopupUiAndTooltips
 	| CfDAS16487_1c | FlDAS16487_1c | true                | true    | false    |
 	And User navigate to Evergreen URL
 	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
+	Then "All Devices" list should be displayed to the user
 	When User perform search by "QFI94WAUX17N4I"
 	And User click content from "Hostname" column
 	Then Details page for "QFI94WAUX17N4I" item is displayed to the user
@@ -40,7 +40,7 @@ Scenario: EvergreenJnr_MailboxesList_CreateCustomFieldWithEmptyValue
 	| CfDAS16487_1 | FlDAS16487_1 | true                | true    | true    | true     | true | true        |
 	And User navigate to Evergreen URL
 	And User clicks "Mailboxes" on the left-hand menu
-	Then "Mailboxes" list should be displayed to the user
+	Then "All Mailboxes" list should be displayed to the user
 	When User perform search by "03F0CCD0F3384DE5A9F@bclabs.local"
 	And User click content from "Email Address" column
 	Then Details page for "03F0CCD0F3384DE5A9F@bclabs.local" item is displayed to the user
@@ -59,7 +59,7 @@ Scenario: EvergreenJnr_UsersList_CreateCustomField
 	| CfDAS16487_2 | FlDAS16487_2 | true                | true    | true |
 	And User navigate to Evergreen URL
 	And User clicks "Users" on the left-hand menu
-	Then "Users" list should be displayed to the user
+	Then "All Users" list should be displayed to the user
 	When User perform search by "BrissonTa"
 	And User click content from "Username" column
 	Then Details page for "BrissonTa (Ta Brisson)" item is displayed to the user
@@ -79,7 +79,7 @@ Scenario: EvergreenJnr_UsersList_CancelCustomFieldCreation
 	| CfDAS16487_3 | FlDAS16487_3 | true                | true    | true |
 	And User navigate to Evergreen URL
 	And User clicks "Users" on the left-hand menu
-	Then "Users" list should be displayed to the user
+	Then "All Users" list should be displayed to the user
 	When User perform search by "VriezeGi"
 	And User click content from "Username" column
 	Then Details page for "VriezeGi (Ginette Vrieze)" item is displayed to the user
@@ -98,7 +98,7 @@ Scenario: EvergreenJnr_UsersList_CreateCustomFieldWithSameData
 	| CfDAS17614_4 | FlDAS17614_4 | true                | true    | true |
 	And User navigate to Evergreen URL
 	And User clicks "Users" on the left-hand menu
-	Then "Users" list should be displayed to the user
+	Then "All Users" list should be displayed to the user
 	When User perform search by "OBM473400"
 	And User click content from "Username" column
 	Then Details page for "OBM473400 (Jeannie L. Moreno)" item is displayed to the user
@@ -137,7 +137,7 @@ Scenario: EvergreenJnr_UsersList_CheckGroupByResetAfterCreatingNewCustomField
 	| user       | 3532     | CfDAS17695_2 | ValueDAS17695_2A |
 	| user       | 3532     | CfDAS17695_2 | ValueDAS17695_2B |
 	And User clicks "Users" on the left-hand menu
-	Then "Users" list should be displayed to the user
+	Then "All Users" list should be displayed to the user
 	When User perform search by "TAI6096068"
 	And User click content from "Username" column
 	And User navigates to the "Custom Fields" sub-menu on the Details page

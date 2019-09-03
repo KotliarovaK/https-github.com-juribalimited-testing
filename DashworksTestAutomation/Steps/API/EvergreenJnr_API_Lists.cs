@@ -79,7 +79,7 @@ namespace DashworksTestAutomation.Steps.API
                 _driver.WaitForDataLoading();
                 list.GetListElementByName(listName).Click();
                 _driver.WaitForDataLoading();
-                Utils.Verify.IsTrue(list.ActiveCustomList.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
+                Verify.IsTrue(list.ActiveCustomList.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
             }
         }
 
