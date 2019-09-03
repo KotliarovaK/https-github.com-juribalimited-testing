@@ -1505,16 +1505,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var createProjectElement = _driver.NowAt<ProjectsPage>();
             createProjectElement.ScopeProjectField.Click();
             createProjectElement.ScopeProjectField.SendKeys("All");
-            var sectionName = createProjectElement.ScopeDropdownSection.Select(x => x.Text).ToList();
-            var listName = createProjectElement.ScopeDropdownSectionList.Select(x => x.Text).ToList();
-            foreach (var row in table.Rows)
-            {
-                for (var i = 0; i < createProjectElement.ScopeDropdownSection.Count; i++)
-                    if (sectionName[i].Equals(row["Section"]))
-                    {
-                        Utils.Verify.AreEqual(listName[i], row["ListName"], "PLEASE ADD EXCEPTION MESSAGE");
-                    }
-            }
+            //var sectionName = createProjectElement.ScopeDropdownSection.Select(x => x.Text).ToList();
+            var listNames = createProjectElement.ScopeDropdownSectionList.Select(x => x.Text).ToList();
+            var expectedlistName = table.Rows.SelectMany(row => row.Values).ToList();
+            Utils.Verify.AreEqual(listNames, expectedlistName, "Main lists are not displayed correctly");
+
+
+            //Comment by Kate 3.09.19
+            //foreach (var row in table.Rows)
+            //{
+            //    for (var i = 0; i < createProjectElement.ScopeDropdownSection.Count; i++)
+            //        if (sectionName[i].Equals(row["Section"]))
+            //        {
+            //            Utils.Verify.AreEqual(listName[i], row["ListName"], "PLEASE ADD EXCEPTION MESSAGE");
+            //        }
+            //}
         }
 
         [Then(@"following lists are displayed in the Scope dropdown:")]
