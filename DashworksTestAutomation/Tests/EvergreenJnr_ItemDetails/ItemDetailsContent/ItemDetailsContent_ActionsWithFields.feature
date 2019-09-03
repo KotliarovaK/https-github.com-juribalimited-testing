@@ -329,8 +329,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCommonNameFieldIsDisplayedInTheCompu
 	| Description                     |
 	Then "00OMQQXWA1DRI6" content is displayed in "Common Name" field on Item Details page
 
-	#Ann.Ilchenko 8/15/19: will be ready on 'quasar'
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16859 @DAS17645 @DAS17785 @DAS17809 @Not_Ready
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16859 @DAS17645 @DAS17785 @DAS17809
 Scenario: EvergreenJnr_DevicesList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForDeviceObjects
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
@@ -355,8 +354,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatProjectDetailsDefaultViewIsDisplayed
 	| Self Service URL |
 	| Tags             |
 
-	#Ann.Ilchenko 8/15/19: will be ready on 'quasar'
-@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16858 @DAS17160 @DAS17325 @DAS17645 @DAS17809 @Not_Ready
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16858 @DAS17160 @DAS17325 @DAS17645 @DAS17809
 Scenario: EvergreenJnr_UsersList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForUserObjects
 	When User clicks "Users" on the left-hand menu
 	Then "All Users" list should be displayed to the user
@@ -381,8 +379,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatProjectDetailsDefaultViewIsDisplayedCo
 	| Language         |
 	| Tags             |
 
-	#Ann.Ilchenko 8/15/19: will be ready on 'quasar'
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16861 @DAS17158 @DAS17239 @DAS17645 @DAS17809 @Not_Ready
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16861 @DAS17158 @DAS17239 @DAS17645 @DAS17809
 Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForApplicationObjects
 	When User clicks "Applications" on the left-hand menu
 	Then "All Applications" list should be displayed to the user
@@ -407,8 +404,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectDetailsDefaultViewIsDisp
 	| Category            |
 	| Tags                |
 
-	#Ann.Ilchenko 8/15/19: will be ready on 'quasar'
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16957 @DAS17645 @DAS17785 @DAS17809 @Not_Ready
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16957 @DAS17645 @DAS17785 @DAS17809
 Scenario: EvergreenJnr_MailboxesList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForMailboxObjects
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "All Mailboxes" list should be displayed to the user

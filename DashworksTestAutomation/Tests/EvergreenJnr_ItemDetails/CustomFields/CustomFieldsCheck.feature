@@ -31,8 +31,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatContextMenuCopyRowForTheRowActionsIs
 	And User selects 'Copy row' option in context menu
 	Then Next data 'ComputerCustomField      0.665371384' is copied
 
-	#Ann.Ilchenko 8/27/19: ready on 'quasar';
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @CustomFields @DAS17909 @Not_Ready
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @CustomFields @DAS17909
 Scenario Outline: EvergreenJnr_AllLists_CheckThatContextMenuCopyRowForTheRowActionsIsDisplayedAndWorkedCorrectlyForCustomFields
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<OpenPageName>" list should be displayed to the user
@@ -59,8 +58,7 @@ Examples:
 	| Applications | All Applications | Adobe Download Manager 2.0 | Application   |
 	| Mailboxes    | All Mailboxes    | 000F977AC8824FE39B8        | Email Address |
 
-	#Ann.Ilchenko 8/29/19: ready on 'quasar';
-@Evergreen @Devices @EvergreenJnr_ItemDetails @CustomFields @DAS17908 @Not_Ready
+@Evergreen @Devices @EvergreenJnr_ItemDetails @CustomFields @DAS17908
 Scenario: EvergreenJnr_DevicesList_CheckThatColumnSettingsOnCustomFieldsAreTranslatedAccordingToAccountLanguage
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user

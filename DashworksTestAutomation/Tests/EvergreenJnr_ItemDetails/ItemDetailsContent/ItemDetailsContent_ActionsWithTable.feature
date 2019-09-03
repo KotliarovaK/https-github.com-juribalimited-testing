@@ -354,18 +354,6 @@ Examples:
 	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | MSI          | File Name      |
 	| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users        | Username       |
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11628
-Scenario: EvergreenJnr_DevicesList_CheckThatTheFilterDropddownIsDisplayedFullyWhenTheFilterResultNotContainsValues
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
-	When User click content from "Hostname" column
-	And User navigates to the "Applications" main-menu on the Details page
-	And User have opened Column Settings for "Installed" column in the Details Page table
-	And User clicks Filter button on the Column Settings panel
-	Then Filter panel has standard size
-	Then User select "False" checkbox from filter on the Details Page
-	Then Filter panel has standard size
-
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11647
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatAutosizeOptionWorksCorrectlyForSiteColumn
 	When User clicks "Devices" on the left-hand menu

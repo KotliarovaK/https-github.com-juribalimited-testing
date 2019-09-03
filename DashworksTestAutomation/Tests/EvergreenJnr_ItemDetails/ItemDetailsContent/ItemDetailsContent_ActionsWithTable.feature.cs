@@ -1530,7 +1530,6 @@ this.FeatureBackground();
 
         
         [NUnit.Framework.TestAttribute()]
- testRunner.Then("\"All Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatAutosizeOptionWorksCorrectlyForSiteColumn")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]

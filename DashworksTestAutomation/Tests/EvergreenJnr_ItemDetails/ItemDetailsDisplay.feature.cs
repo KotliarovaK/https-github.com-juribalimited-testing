@@ -830,7 +830,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS17373")]
-        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatLoadingIndicatorAppearsInTheSamePlace()
         {
             System.Exception lastException = null;
@@ -864,8 +863,7 @@ this.FeatureBackground();
                         "Applications",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS17373",
-                        "Not_Ready"});
+                        "DAS17373"});
 #line 173
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -901,7 +899,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS17813")]
-        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_UsersList_CheckThatToolTipForMailboxPermissionOnMailboxPermissionsTabOnUserObjectPageIsDisplayedCorrectly()
         {
             System.Exception lastException = null;
@@ -936,33 +933,32 @@ this.FeatureBackground();
                         "Users",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS17813",
-                        "Not_Ready"});
-#line 185
+                        "DAS17813"});
+#line 184
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 5
 this.FeatureBackground();
+#line 185
+ testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 186
  testRunner.Then("\"All Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 187
- testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 188
  testRunner.When("User perform search by \"0072B088173449E3A93\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 189
+#line 188
  testRunner.And("User click content from \"Username\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 190
+#line 189
  testRunner.Then("Details page for \"0072B088173449E3A93\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 191
+#line 190
  testRunner.When("User navigates to the \"Mailboxes\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 192
+#line 191
  testRunner.When("User navigates to the \"Mailbox Permissions\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 193
+#line 192
  testRunner.When("User enters \"Exchange 2007\" text in the Search field for \"Mailbox Platform\" colum" +
                     "n", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 194
+#line 193
  testRunner.Then("\"FullAccess\" content is displayed in \"Permission\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 195
+#line 194
  testRunner.And("\"FullAccess\" tooltip displayed in \"Permission\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();

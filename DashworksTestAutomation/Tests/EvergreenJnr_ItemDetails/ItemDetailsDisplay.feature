@@ -169,7 +169,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatUserDetailsIsSimilarOnGridAndDetail
 	| Display Name       | Nicole P. Braun                        |
 	| Distinguished Name | QLL295118.Users.Jersey City.US-E.local |
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17373 @Not_Ready
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17373
 Scenario: EvergreenJnr_ApplicationsList_CheckThatLoadingIndicatorAppearsInTheSamePlace
 	When User clicks "Applications" on the left-hand menu
 	Then "All Applications" list should be displayed to the user
@@ -180,8 +180,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatLoadingIndicatorAppearsInTheSam
 	And User navigates to the "Details" main-menu on the Details page
 	Then Loading indicator appears in the same place when switching between main-menu
 
-	#Ann.Ilchenko 8/30/19: ready on 'quasar';
-@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17813 @Not_Ready
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17813
 Scenario: EvergreenJnr_UsersList_CheckThatToolTipForMailboxPermissionOnMailboxPermissionsTabOnUserObjectPageIsDisplayedCorrectly
 	When User clicks "Users" on the left-hand menu
 	Then "All Users" list should be displayed to the user
