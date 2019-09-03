@@ -771,6 +771,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(byControl);
         }
 
+        //TODO delete this. Do not use!
         public string CheckColumnContent(string columnContent)
         {
             var byControl =

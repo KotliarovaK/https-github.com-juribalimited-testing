@@ -60,7 +60,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreated
 	And User clicks Delete button
 	Then Warning message with "You cannot delete the default unit" text is displayed on the Admin page
 	When User close message on the Admin page
-	Then "Unassigned" text is displayed in the table content
+	Then "Unassigned" content is displayed in the "Capacity Unit" column
 	When User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
 	And User type "CapacityUnit12672" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "12672" Name in the "Description" field on the Project details page
