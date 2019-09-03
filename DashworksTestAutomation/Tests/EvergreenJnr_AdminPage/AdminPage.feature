@@ -106,8 +106,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	Then following Items are displayed in the Queue table
 	| Items          |
 	| 0TTSZRQ1ZTIXWM |
-	#Not sure that Unassigned should be in breackets in Buckets column
-	Then "[Unassigned]" content is displayed in the "Bucket" column
+	Then "Unassigned" content is displayed in the "Bucket" column
 	Then "Unassigned" content is displayed in the "Capacity Unit" column
 	Then "Unassigned" content is displayed in the "Ring" column
 	When User click on Back button
