@@ -208,3 +208,82 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateOwnerForUpdateValueInDevicesScopedAu
 	And "1 Sep 2019" content is displayed in "zDeviceAut: Stage B \ Combination Task App (Date)" column
 	And "Maryna Kyslyak" content is displayed in "zDeviceAut: Stage B \ Combination Task App (Owner)" column
 	And "Admin IT" content is displayed in "zDeviceAut: Stage B \ Combination Task App (Team)" column
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17846 @Cleanup @Not_Ready
+Scenario: EvergreenJnr_AdminPage_CheckUpdateDateForUpdateValueInDevicesScopedAutomationWithCapacitySlot
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User creates new Automation via API and open it
+	| AutomationName   | Description | Active | StopOnFailedAction | Scope              | Run    |
+	| 17846_Automation | 17846       | true   | false              | New York - Devices | Manual |
+	Then Edit Automation page is displayed to the User
+	When User clicks "Actions" tab
+	#Create Action
+	When User clicks the "CREATE ACTION" Action button
+	And User enters '17846_Action' text to 'Action Name' textbox
+	And User selects "Update task value" in the "Action Type" dropdown
+	When User selects 'zDevice Sch for Automations Feature' option from 'Project' autocomplete
+	And User selects 'Stage C' option from 'Stage' autocomplete
+	And User selects 'Date Only with Capacity' option from 'Task' autocomplete
+	And User selects "Update" in the "Update Date" dropdown
+	And User enters '5 Sep 2019' text to 'Date' textbox
+	And User selects "DAS-17846 Slot Device" in the "Capacity Slot" dropdown
+	And User clicks the "CREATE" Action button
+	#Create Action
+	When User clicks "Automations" navigation link on the Admin page
+	And User enters "17846_Automation" text in the Search field for "Automation" column
+	And User clicks "Run now" option in Cog-menu for "17846_Automation" item on Admin page
+	And User selects "Automation Log" tab on the Project details page
+	And User enters "17846_Automation" text in the Search field for "Automation" column
+	Then "SUCCESS" content is displayed for "Outcome" column
+	When User clicks String Filter button for "Type" column on the Admin page
+	And User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	And User clicks content from "Objects" column
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                                           |
+	| zDeviceAut: Stage C \ Date Only with Capacity        |
+	| zDeviceAut: Stage C \ Date Only with Capacity (Slot) |
+	Then "5 Sep 2019" content is displayed in "zDeviceAut: Stage C \ Date Only with Capacity" column
+	And "DAS-17846 Slot Device" content is displayed in "zDeviceAut: Stage C \ Date Only with Capacity (Slot)" column
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17846 @Cleanup @Not_Ready
+Scenario: EvergreenJnr_AdminPage_CheckUpdateDateForUpdateValueInUsersScopedAutomationWithoutCapacitySlot
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User creates new Automation via API and open it
+	| AutomationName      | Description | Active | StopOnFailedAction | Scope                   | Run    |
+	| DAS17846_Automation | 17846       | true   | false              | Users with Device Count | Manual |
+	Then Edit Automation page is displayed to the User
+	When User clicks "Actions" tab
+	#Create Action
+	When User clicks the "CREATE ACTION" Action button
+	And User enters 'DAS17846_Action' text to 'Action Name' textbox
+	And User selects "Update task value" in the "Action Type" dropdown
+	When User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
+	And User selects 'Stage 3' option from 'Stage' autocomplete
+	And User selects 'Date Only with Capacity User' option from 'Task' autocomplete
+	And User selects "Update" in the "Update Date" dropdown
+	And User enters '13 Aug 2019' text to 'Date' textbox
+	And User selects "None" in the "Capacity Slot" dropdown
+	And User clicks the "CREATE" Action button
+	#Create Action
+	When User clicks "Automations" navigation link on the Admin page
+	And User enters "DAS17846_Automation" text in the Search field for "Automation" column
+	And User clicks "Run now" option in Cog-menu for "DAS17846_Automation" item on Admin page
+	And User selects "Automation Log" tab on the Project details page
+	When User clicks refresh button in the browser
+	And User enters "DAS17846_Automation" text in the Search field for "Automation" column
+	Then "SUCCESS" content is displayed for "Outcome" column
+	When User clicks String Filter button for "Type" column on the Admin page
+	And User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	And User clicks content from "Objects" column
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                                                |
+	| zUserAutom: Stage 3 \ Date Only with Capacity User        |
+	| zUserAutom: Stage 3 \ Date Only with Capacity User (Slot) |
+	Then "13 Aug 2019" content is displayed in "zUserAutom: Stage 3 \ Date Only with Capacity User" column
+	And "" content is displayed in "zUserAutom: Stage 3 \ Date Only with Capacity User (Slot)" column
