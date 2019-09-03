@@ -99,15 +99,15 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
 	And User enters "Microsoft Office PowerPoint 2002 (XP)" text in the Search field for "Application" column on the Details Page
 	Then "GREEN" content is displayed in the "Compliance" column
-	And Content is displayed in the "Advertisement" column
+	And Content in the 'Advertisement' column is equal to
 	| Content           |
 	| Advert - A0123BFF |
 	| Advert - A0123BFF |
-	And Content is displayed in the "Collection" column
+	And Content in the 'Collection' column is equal to
 	| Content             |
 	| Collection A011618A |
 	| Collection A011618A |
-	And Content is displayed in the "Program" column
+	And Content in the 'Program' column is equal to
 	| Content |
 	| Install |
 	| Install |

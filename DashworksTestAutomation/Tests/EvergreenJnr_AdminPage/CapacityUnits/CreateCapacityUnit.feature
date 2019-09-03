@@ -64,7 +64,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitsCreatedCorrectly
 	And User clicks Delete button
 	Then Warning message with "You cannot delete the default unit" text is displayed on the Admin page
 	When User close message on the Admin page
-	Then "DefaultCapacityUnit13720" text is displayed in the table content
+	Then "DefaultCapacityUnit13720" content is displayed in the "Capacity Unit" column
 	When User clicks content from "Capacity Unit" column
 	Then "Default Unit" checkbox is checked and cannot be unchecked
 
