@@ -8574,56 +8574,56 @@ this.FeatureBackground();
                         "FiltersDisplay",
                         "DAS17727",
                         "Not_Ready"});
-#line 1924
+#line 1973
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 1925
+#line 1974
  testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1926
+#line 1975
  testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1927
+#line 1976
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1928
+#line 1977
  testRunner.And("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 1929
+#line 1978
  testRunner.And("User closes \"Suggested\" filter category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 1930
+#line 1979
  testRunner.And("User expands \"Device Hardware\" filter category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table135 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table138 = new TechTalk.SpecFlow.Table(new string[] {
                         "Subcategories"});
-            table135.AddRow(new string[] {
+            table138.AddRow(new string[] {
                         "Device CPU Architecture"});
-            table135.AddRow(new string[] {
+            table138.AddRow(new string[] {
                         "Device CPU Speed (GHz)"});
-            table135.AddRow(new string[] {
+            table138.AddRow(new string[] {
                         "Device Format"});
-            table135.AddRow(new string[] {
+            table138.AddRow(new string[] {
                         "Device HDD Total Size (GB)"});
-            table135.AddRow(new string[] {
+            table138.AddRow(new string[] {
                         "Device IP Address"});
-            table135.AddRow(new string[] {
+            table138.AddRow(new string[] {
                         "Device IP v6 Address"});
-            table135.AddRow(new string[] {
+            table138.AddRow(new string[] {
                         "Device Manufacturer"});
-            table135.AddRow(new string[] {
+            table138.AddRow(new string[] {
                         "Device Memory (GB)"});
-            table135.AddRow(new string[] {
+            table138.AddRow(new string[] {
                         "Device Model"});
-            table135.AddRow(new string[] {
+            table138.AddRow(new string[] {
                         "Device Target Drive Free Space (GB)"});
-            table135.AddRow(new string[] {
+            table138.AddRow(new string[] {
                         "Device TPM Enabled"});
-            table135.AddRow(new string[] {
+            table138.AddRow(new string[] {
                         "Device TPM Version"});
-            table135.AddRow(new string[] {
+            table138.AddRow(new string[] {
                         "Device Type"});
-            table135.AddRow(new string[] {
+            table138.AddRow(new string[] {
                         "Device Virtual Machine Host"});
-#line 1931
- testRunner.Then("the following Filters subcategories are displayed for open category:", ((string)(null)), table135, "Then ");
+#line 1980
+ testRunner.Then("the following Filters subcategories are displayed for open category:", ((string)(null)), table138, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

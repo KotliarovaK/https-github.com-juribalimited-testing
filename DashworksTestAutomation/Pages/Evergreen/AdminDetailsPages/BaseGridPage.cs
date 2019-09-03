@@ -682,7 +682,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public IWebElement GetDropdownValueByName(string dropdownName)
         {
             var text = dropdownName.Split('\'').Aggregate(string.Empty, (current, s) => current + $"[contains(text(),'{s}')]");
-            var selector = By.XPath($".//mat-option/span{text}");
+            var selector = By.XPath($".//mat-option//span{text}");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }

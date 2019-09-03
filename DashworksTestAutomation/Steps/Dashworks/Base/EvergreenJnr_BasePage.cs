@@ -101,6 +101,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var page = _driver.NowAt<BaseDashboardPage>();
             page.GetNamedTextbox(placeholder).Clear();
             page.GetNamedTextbox(placeholder).SendKeys(text);
+            page.BodyContainer.Click();
 
             if (placeholder.Equals("Action Name"))
                 _automationActions.Value.Add(text);

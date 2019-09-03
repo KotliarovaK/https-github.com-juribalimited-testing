@@ -78,7 +78,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogMessageForDeletedTaskInAction
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
 	Then "TASK DOES NOT EXIST" content is displayed for "Outcome" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17681 @Cleanup @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17681 @DAS17430 @DAS17518 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedUpdateValueDateOwnerCombination
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -141,13 +141,9 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedU
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedUpdateValueDateOwnerCombinationWithNoChange
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
-	When User creates new Automation via API
+	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope                   | Run    |
 	| 17681_Automation | 17681       | true   | false              | Users with Device Count | Manual |
-	When User clicks "Automations" link on the Admin page
-	Then "Automations" page should be displayed to the user
-	When User enters "17681_Automation" text in the Search field for "Automation" column
-	And User clicks content from "Automation" column
 	Then Edit Automation page is displayed to the User
 	When User clicks "Actions" tab
 	When User clicks the "CREATE ACTION" Action button
@@ -163,3 +159,52 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedU
 	Then "SAVE AND CREATE ANOTHER" Action button is disabled
 	Then "CREATE" Action button have tooltip with "Select at least one value to change" text
 	Then "SAVE AND CREATE ANOTHER" Action button have tooltip with "Select at least one value to change" text
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17830 @Cleanup @Not_Ready
+Scenario: EvergreenJnr_AdminPage_CheckUpdateOwnerForUpdateValueInDevicesScopedAutomation
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User creates new Automation via API and open it
+	| AutomationName   | Description | Active | StopOnFailedAction | Scope              | Run    |
+	| 17830_Automation | 17830       | true   | false              | Apps with a Vendor | Manual |
+	Then Edit Automation page is displayed to the User
+	When User clicks "Actions" tab
+	#Create Action
+	When User clicks the "CREATE ACTION" Action button
+	And User enters '17830_Action' text to 'Action Name' textbox
+	And User selects "Update task value" in the "Action Type" dropdown
+	When User selects 'zDevice Sch for Automations Feature' option from 'Project' autocomplete
+	And User selects 'Stage B' option from 'Stage' autocomplete
+	And User selects 'Combination Task App' option from 'Task' autocomplete
+	And User selects "No change" in the "Update Value" dropdown
+	And User selects "No change" in the "Update Date" dropdown
+	And User selects "Update" in the "Update Owner" dropdown
+	And User selects 'Admin IT' option from 'Team' autocomplete
+	And User selects 'Maryna Kyslyak' option from 'Owner' autocomplete
+	And User clicks the "CREATE" Action button
+	#Create Action
+	When User clicks "Automations" navigation link on the Admin page
+	And User enters "17830_Automation" text in the Search field for "Automation" column
+	And User clicks "Run now" option in Cog-menu for "17830_Automation" item on Admin page
+	And User selects "Automation Log" tab on the Project details page
+	And User enters "17830_Automation" text in the Search field for "Automation" column
+	Then "SUCCESS" content is displayed for "Outcome" column
+	When User clicks String Filter button for "Type" column on the Admin page
+	And User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	And User clicks content from "Objects" column
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                                         |
+	| zDeviceAut: Stage B \ Combination Task App         |
+	| zDeviceAut: Stage B \ Combination Task App (Date)  |
+	| zDeviceAut: Stage B \ Combination Task App (Owner) |
+	| zDeviceAut: Stage B \ Combination Task App (Team)  |
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User removes "Application" column by Column panel
+	When User clicks the Columns button
+	Then "FAILED" content is displayed in "zDeviceAut: Stage B \ Combination Task App" column
+	And "1 Sep 2019" content is displayed in "zDeviceAut: Stage B \ Combination Task App (Date)" column
+	And "Maryna Kyslyak" content is displayed in "zDeviceAut: Stage B \ Combination Task App (Owner)" column
+	And "Admin IT" content is displayed in "zDeviceAut: Stage B \ Combination Task App (Team)" column
