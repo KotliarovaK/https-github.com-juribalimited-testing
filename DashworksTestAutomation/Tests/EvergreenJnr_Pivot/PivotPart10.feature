@@ -64,7 +64,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckSortedOrderForPivotProjectStatusAsColu
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS15758 @DAS15328 @DAS14246
 Scenario Outline: EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_StingValues
 	When User clicks "<List>" on the left-hand menu
-	Then "<List>" list should be displayed to the user
+	Then "<ListLabel>" list should be displayed to the user
 	When User navigates to Pivot
 	And User selects the following Row Groups on Pivot:
 	| RowGroups               |
@@ -81,16 +81,16 @@ Scenario Outline: EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCap
 	Then "General information field 1" is displayed at the top left corner on Pivot
 
 Examples:
-	| List         | AddValues   | CountAggregateFunctions |
-	| Devices      | Owner City  | Count(Owner City)       |
-	| Users        | Building    | Count(Building)         |
-	| Applications | Application | Count(Application)      |
-	| Mailboxes    | Building    | Count(Building)         |
+	| List         | ListLabel        | AddValues   | CountAggregateFunctions |
+	| Devices      | All Devices      | Owner City  | Count(Owner City)       |
+	| Users        | All Users        | Building    | Count(Building)         |
+	| Applications | All Applications | Application | Count(Application)      |
+	| Mailboxes    | All Mailboxes    | Building    | Count(Building)         |
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS15758 @DAS15328
 Scenario Outline: EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_DateValues
 	When User clicks "<List>" on the left-hand menu
-	Then "<List>" list should be displayed to the user
+	Then "<ListLabel>" list should be displayed to the user
 	When User navigates to Pivot
 	And User selects the following Row Groups on Pivot:
 	| RowGroups               |
@@ -112,11 +112,11 @@ Scenario Outline: EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCap
 	Then "<LastAggregateFunctions>" is displayed in the columns for aggregate functions
 
 Examples:
-	| List         | AddValues                                                    | CountAggregateFunctions                                             | FirstAggregateFunctions                                             | LastAggregateFunctions                                             |
-	| Devices      | Build Date                                                   | Count(Build Date)                                                   | First(Build Date)                                                   | Last(Build Date)                                                   |
-	| Users        | Last Logon Date                                              | Count(Last Logon Date)                                              | First(Last Logon Date)                                              | Last(Last Logon Date)                                              |
-	| Applications | Windows7Mi: Application Information \ Technical Task3 (Date) | Count(Windows7Mi: Application Information \ Technical Task3 (Date)) | First(Windows7Mi: Application Information \ Technical Task3 (Date)) | Last(Windows7Mi: Application Information \ Technical Task3 (Date)) |
-	| Mailboxes    | Created Date                                                 | Count(Created Date)                                                 | First(Created Date)                                                 | Last(Created Date)                                                 |
+	| List         | ListLabel        | AddValues                                                    | CountAggregateFunctions                                             | FirstAggregateFunctions                                             | LastAggregateFunctions                                             |
+	| Devices      | All Devices      | Build Date                                                   | Count(Build Date)                                                   | First(Build Date)                                                   | Last(Build Date)                                                   |
+	| Users        | All Users        | Last Logon Date                                              | Count(Last Logon Date)                                              | First(Last Logon Date)                                              | Last(Last Logon Date)                                              |
+	| Applications | All Applications | Windows7Mi: Application Information \ Technical Task3 (Date) | Count(Windows7Mi: Application Information \ Technical Task3 (Date)) | First(Windows7Mi: Application Information \ Technical Task3 (Date)) | Last(Windows7Mi: Application Information \ Technical Task3 (Date)) |
+	| Mailboxes    | All Mailboxes    | Created Date                                                 | Count(Created Date)                                                 | First(Created Date)                                                 | Last(Created Date)                                                 |
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS15758 @DAS15328
 Scenario Outline: EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_NumericValues
