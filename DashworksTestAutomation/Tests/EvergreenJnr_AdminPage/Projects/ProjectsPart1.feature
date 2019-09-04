@@ -75,7 +75,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatExistingProjectNameCantBeRemoved
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12189 @DAS12523 @DAS12521 @DAS12744 @DAS12162 @DAS12532 @Cleanup @Project_Creation_and_Scope @Projects @TEST
 Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorsAreDisplayedInTheProjectScopeChangesSectionAfterUsingSavedDevicesList
 	When User clicks "Applications" on the left-hand menu
-	Then "Applications" list should be displayed to the user
+	Then "All Applications" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Vendor" filter where type is "Equals" with added column and following value:
@@ -84,7 +84,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorsAreDisplayedInTheProjectScopeC
 	Then "Vendor" filter is added to the list
 	When User create dynamic list with "Vendor is adobe" name on "Applications" page
 	And User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
+	Then "All Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
@@ -111,7 +111,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorsAreDisplayedInTheProjectScopeC
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS17664 @DAS17601 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatInformationMessageDisplayedForCreateProjectFormWhenArchivedItemsIncluded
 	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
+	Then "All Devices" list should be displayed to the user
 	When User sets includes archived devices in "true"
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
@@ -126,7 +126,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatInformationMessageDisplayedForCreatePr
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS17601 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatInformationMessageDisplayedForScopeDetailsFormWhenArchivedItemsIncluded
 	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
+	Then "All Devices" list should be displayed to the user
 	When User sets includes archived devices in "true"
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user

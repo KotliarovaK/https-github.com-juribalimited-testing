@@ -406,7 +406,12 @@ namespace DashworksTestAutomation.Helpers
 
         public static string GetAutomationActionId(string actionName, string automationId)
         {
-            return DatabaseHelper.ExecuteReader($" select [ActionId] from [PM].[dbo].[AutomationActions] where [AutomationId] = {automationId} and [ActionName] = '{actionName}'", 0)[0];
+            return DatabaseHelper.ExecuteReader($"select [ActionId] from [PM].[dbo].[AutomationActions] where [AutomationId] = {automationId} and [ActionName] = '{actionName}'", 0)[0];
+        }
+
+        public static bool IsAutomationRunFinishedSuccess(string automationId)
+        {
+            return Convert.ToInt32(DatabaseHelper.ExecuteReader($"select count(*) from [PM].[dbo].[AutomationLog] as al join[PM].[dbo].[AutomationLogOutcomes] as alo on al.OutcomeId = alo.OutcomeId join[PM].[dbo].[AutomationLogTypes] as alt on al.LogTypeId = alt.LogTypeId where alo.Outcome = 'Success' and alt.LogType = 'Action Finish' and al.AutomationId = {automationId}", 0)[0])>0;
         }
 
         #endregion

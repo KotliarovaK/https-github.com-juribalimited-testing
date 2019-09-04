@@ -300,11 +300,16 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             Driver.WaitForDataLoading();
             Driver.WaitForElementToBeDisplayed(allHeadersSelector);
             var allHeaders = Driver.FindElements(allHeadersSelector);
-            if (!allHeaders.Any())
+            List<string> allHeadersWithText =
+                allHeaders.Where(x => x.FindElements(By.XPath(".//span[@class='ag-header-cell-text']")).Count > 0).Select(x => x.Text).ToList();
+            if (!allHeadersWithText.Any())
                 throw new Exception("Table does not contains any columns");
+
+            if (!allHeadersWithText.Contains(columnName))
+                throw new Exception($"Table doesn't have '{columnName}' column");
+
             var columnNumber =
-                allHeaders.IndexOf(allHeaders.First(x =>
-                    x.FindElement(By.XPath(".//span[@class='ag-header-cell-text']")).Text.Equals(columnName))) + 1;
+                allHeadersWithText.IndexOf(allHeadersWithText.First(x => x.Equals(columnName))) + 1;
 
             return columnNumber;
         }
@@ -324,6 +329,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return columnNumber;
         }
 
+        //TODO should be replaced by GetColumnContentByColumnName
         public string GetColumnContentByColumnNameForCapacity(string columnName)
         {
             var by = By.XPath(
@@ -635,11 +641,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElement(By.XPath(".//div[@id='messageAdmin']")).GetCssValue("width");
         }
 
-        public bool GetDefaultColumnValue(string defaultValue)
-        {
-            return Driver.IsElementDisplayed(By.XPath($".//span[contains(@class, 'boolean')][text()='{defaultValue}']"));
-        }
-
         public IWebElement GetTextInSearchFieldByColumnName(string columnName)
         {
             var selector =
@@ -839,7 +840,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public IList<IWebElement> GetColumnContentByColumnName(string columnName)
         {
-            var selector = By.XPath($".//div[@class='ag-center-cols-clipper']//div[contains(@class, 'ag-row')]/div[{GetColumnNumberByName(columnName)}]//span");
+            var selector = By.XPath($".//div[@class='ag-center-cols-clipper']//div[contains(@class, 'ag-row')]/div[{GetColumnNumberByName(columnName)}]//*[not(*)]");
             Driver.WaitForDataLoading();
             return Driver.FindElements(selector).ToList();
         }

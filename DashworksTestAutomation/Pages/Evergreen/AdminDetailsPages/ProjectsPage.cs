@@ -211,8 +211,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public void ClickToTabByNameProjectScopeChanges(string tabName)
         {
-            var tab = Driver.FindElement(
-                By.XPath($".//div[@class='detail-label ng-star-inserted']/span[contains(text(), '{tabName}')]"));
+            var selector =
+                By.XPath($".//div[@class='detail-label ng-star-inserted']/span[contains(text(), '{tabName}')]");
+            if (!Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Long))
+                throw new Exception($"'{tabName}' Project Scope tab was not displayed");
+            var tab = Driver.FindElement(selector);
             tab.Click();
         }
 

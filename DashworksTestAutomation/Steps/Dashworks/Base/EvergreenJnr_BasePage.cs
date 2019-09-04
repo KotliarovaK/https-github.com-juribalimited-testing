@@ -38,15 +38,29 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 $"'{option}' option should be in the bottom of the '{placeholder}' autocomplete");
         }
 
-        [Then(@"'(.*)' autocomplete does NOT have option")]
-        public void ThenAutocompleteDoesNotHaveOption(string placeholder, Table table)
+        [Then(@"'(.*)' autocomplete does NOT have options")]
+        public void ThenAutocompleteDoesNotHaveOptions(string placeholder, Table table)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             var options = page.GetAllAutocompleteOptions(placeholder);
 
             foreach (TableRow tableRow in table.Rows)
             {
-                Verify.IsFalse(options.Contains(tableRow["Option"]), $"'{placeholder}' autocomplete have '{tableRow["Option"]}' option");
+                Verify.IsFalse(options.Contains(tableRow["Options"]), $"'{placeholder}' autocomplete have '{tableRow["Options"]}' option");
+            }
+        }
+
+        [Then(@"only below options are displayed in the '(.*)' autocomplete")]
+        public void ThenOnlyBelowOptionsAreDisplayedInTheAutocomplete(string placeholder, Table table)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var options = page.GetAllAutocompleteOptions(placeholder);
+
+            Verify.AreEqual(options.Count, table.Rows.Count, "Incorrect options count in the autocomplete");
+
+            foreach (TableRow tableRow in table.Rows)
+            {
+                Verify.IsTrue(options.Contains(tableRow["Options"]), $"Autocomplete doesn't have '{tableRow["Options"]}' option");
             }
         }
 

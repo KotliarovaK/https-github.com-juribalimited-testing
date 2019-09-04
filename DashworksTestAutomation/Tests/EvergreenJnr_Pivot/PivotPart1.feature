@@ -8,7 +8,7 @@ Background: Pre-Conditions
 @Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS14224
 Scenario Outline: EvergreenJnr_AllLists_ChecksThatPivotsAreNotShownInTheListToSelectAsAnAdvancedFilter
 	When User clicks "<PageNameForPivot>" on the left-hand menu
-	Then "<PageNameForPivot>" list should be displayed to the user
+	Then "<PageLabelForPivot>" list should be displayed to the user
 	When User navigates to Pivot
 	And User selects the following Row Groups on Pivot:
 	| RowGroups   |
@@ -24,7 +24,7 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatPivotsAreNotShownInTheListToSe
 	When User creates Pivot list with "<PivotName>" name
 	Then "<PivotName>" list is displayed to user
 	When User clicks "<PageNameForFilter>" on the left-hand menu
-	Then "<PageNameForFilter>" list should be displayed to the user
+	Then "<PageLabelForFilter>" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User clicks Add New button on the Filter panel
@@ -33,9 +33,9 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatPivotsAreNotShownInTheListToSe
 	And User remove list with "<PivotName>" name on "<PageNameForPivot>" page
 
 Examples:
-	| PageNameForPivot | RowGroups  | Columns         | Values               | PivotName                     | PageNameForFilter | FilterName               |
-	| Applications     | Compliance | Application Key | Vendor               | Pivot_Applications_List_14224 | Devices           | Application (Saved List) |
-	| Users            | Enabled    | Cost Centre     | Department Full Path | Pivot_User_List_14224         | Applications      | User (Saved List)        |
+	| PageNameForPivot | PageLabelForPivot | RowGroups  | Columns         | Values               | PivotName                     | PageNameForFilter | PageLabelForFilter | FilterName               |
+	| Applications     | All Applications  | Compliance | Application Key | Vendor               | Pivot_Applications_List_14224 | Devices           | All Devices        | Application (Saved List) |
+	| Users            | All Users         | Enabled    | Cost Centre     | Department Full Path | Pivot_User_List_14224         | Applications      | All Applications   | User (Saved List)        |
 
 @Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS14325
 Scenario Outline: EvergreenJnr_AllLists_ChecksThatGroupsColumnsAndValuesContainEvergreenCatagoryWithCorrectSubcategories

@@ -130,7 +130,7 @@ this.FeatureBackground();
 #line 10
  testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 11
- testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"All Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 12
  testRunner.When("User navigates to Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -243,7 +243,7 @@ this.FeatureBackground();
 #line 41
  testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 42
- testRunner.Then("\"Mailboxes\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"All Mailboxes\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 43
  testRunner.When("User navigates to Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -303,18 +303,18 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS15758")]
         [NUnit.Framework.CategoryAttribute("DAS15328")]
         [NUnit.Framework.CategoryAttribute("DAS14246")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Owner City", "Count(Owner City)", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", "Building", "Count(Building)", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Count(Application)", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Building", "Count(Building)", null)]
-        public virtual void EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_StingValues(string list, string addValues, string countAggregateFunctions, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("Devices", "All Devices", "Owner City", "Count(Owner City)", null)]
+        [NUnit.Framework.TestCaseAttribute("Users", "All Users", "Building", "Count(Building)", null)]
+        [NUnit.Framework.TestCaseAttribute("Applications", "All Applications", "Application", "Count(Application)", null)]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "All Mailboxes", "Building", "Count(Building)", null)]
+        public virtual void EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_StingValues(string list, string listLabel, string addValues, string countAggregateFunctions, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_StingValuesInternal(list,addValues,countAggregateFunctions,exampleTags);
+                    this.EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_StingValuesInternal(list,listLabel,addValues,countAggregateFunctions,exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -333,7 +333,7 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_StingValuesInternal(string list, string addValues, string countAggregateFunctions, string[] exampleTags)
+        private void EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_StingValuesInternal(string list, string listLabel, string addValues, string countAggregateFunctions, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -357,7 +357,7 @@ this.FeatureBackground();
 #line 66
  testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", list), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 67
- testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", list), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", listLabel), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 68
  testRunner.When("User navigates to Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -403,18 +403,18 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Pivot")]
         [NUnit.Framework.CategoryAttribute("DAS15758")]
         [NUnit.Framework.CategoryAttribute("DAS15328")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Build Date", "Count(Build Date)", "First(Build Date)", "Last(Build Date)", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", "Last Logon Date", "Count(Last Logon Date)", "First(Last Logon Date)", "Last(Last Logon Date)", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", "Windows7Mi: Application Information \\ Technical Task3 (Date)", "Count(Windows7Mi: Application Information \\ Technical Task3 (Date))", "First(Windows7Mi: Application Information \\ Technical Task3 (Date))", "Last(Windows7Mi: Application Information \\ Technical Task3 (Date))", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Created Date", "Count(Created Date)", "First(Created Date)", "Last(Created Date)", null)]
-        public virtual void EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_DateValues(string list, string addValues, string countAggregateFunctions, string firstAggregateFunctions, string lastAggregateFunctions, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("Devices", "All Devices", "Build Date", "Count(Build Date)", "First(Build Date)", "Last(Build Date)", null)]
+        [NUnit.Framework.TestCaseAttribute("Users", "All Users", "Last Logon Date", "Count(Last Logon Date)", "First(Last Logon Date)", "Last(Last Logon Date)", null)]
+        [NUnit.Framework.TestCaseAttribute("Applications", "All Applications", "Windows7Mi: Application Information \\ Technical Task3 (Date)", "Count(Windows7Mi: Application Information \\ Technical Task3 (Date))", "First(Windows7Mi: Application Information \\ Technical Task3 (Date))", "Last(Windows7Mi: Application Information \\ Technical Task3 (Date))", null)]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "All Mailboxes", "Created Date", "Count(Created Date)", "First(Created Date)", "Last(Created Date)", null)]
+        public virtual void EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_DateValues(string list, string listLabel, string addValues, string countAggregateFunctions, string firstAggregateFunctions, string lastAggregateFunctions, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_DateValuesInternal(list,addValues,countAggregateFunctions,firstAggregateFunctions,lastAggregateFunctions,exampleTags);
+                    this.EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_DateValuesInternal(list,listLabel,addValues,countAggregateFunctions,firstAggregateFunctions,lastAggregateFunctions,exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -433,7 +433,7 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_DateValuesInternal(string list, string addValues, string countAggregateFunctions, string firstAggregateFunctions, string lastAggregateFunctions, string[] exampleTags)
+        private void EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_DateValuesInternal(string list, string listLabel, string addValues, string countAggregateFunctions, string firstAggregateFunctions, string lastAggregateFunctions, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -456,7 +456,7 @@ this.FeatureBackground();
 #line 92
  testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", list), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 93
- testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", list), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", listLabel), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 94
  testRunner.When("User navigates to Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -512,18 +512,18 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Pivot")]
         [NUnit.Framework.CategoryAttribute("DAS15758")]
         [NUnit.Framework.CategoryAttribute("DAS15328")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "HDD Count", "Count(HDD Count)", "Sum(HDD Count)", "Min(HDD Count)", "Max(HDD Count)", "Avg(HDD Count)", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", "Device Count", "Count(Device Count)", "Sum(Device Count)", "Min(Device Count)", "Max(Device Count)", "Avg(Device Count)", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", "1803: Current User Count", "Count(1803: Current User Count)", "Sum(1803: Current User Count)", "Min(1803: Current User Count)", "Max(1803: Current User Count)", "Avg(1803: Current User Count)", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Associated Item Count", "Count(Associated Item Count)", "Sum(Associated Item Count)", "Min(Associated Item Count)", "Max(Associated Item Count)", "Avg(Associated Item Count)", null)]
-        public virtual void EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_NumericValues(string list, string addValues, string countAggregateFunctions, string sumAggregateFunctions, string minAggregateFunctions, string maxAggregateFunctions, string avgAggregateFunctions, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("Devices", "All Devices", "HDD Count", "Count(HDD Count)", "Sum(HDD Count)", "Min(HDD Count)", "Max(HDD Count)", "Avg(HDD Count)", null)]
+        [NUnit.Framework.TestCaseAttribute("Users", "All Users", "Device Count", "Count(Device Count)", "Sum(Device Count)", "Min(Device Count)", "Max(Device Count)", "Avg(Device Count)", null)]
+        [NUnit.Framework.TestCaseAttribute("Applications", "All Applications", "1803: Current User Count", "Count(1803: Current User Count)", "Sum(1803: Current User Count)", "Min(1803: Current User Count)", "Max(1803: Current User Count)", "Avg(1803: Current User Count)", null)]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "All Mailboxes", "Associated Item Count", "Count(Associated Item Count)", "Sum(Associated Item Count)", "Min(Associated Item Count)", "Max(Associated Item Count)", "Avg(Associated Item Count)", null)]
+        public virtual void EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_NumericValues(string list, string listLabel, string addValues, string countAggregateFunctions, string sumAggregateFunctions, string minAggregateFunctions, string maxAggregateFunctions, string avgAggregateFunctions, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_NumericValuesInternal(list,addValues,countAggregateFunctions,sumAggregateFunctions,minAggregateFunctions,maxAggregateFunctions,avgAggregateFunctions,exampleTags);
+                    this.EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_NumericValuesInternal(list,listLabel,addValues,countAggregateFunctions,sumAggregateFunctions,minAggregateFunctions,maxAggregateFunctions,avgAggregateFunctions,exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -542,7 +542,7 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_NumericValuesInternal(string list, string addValues, string countAggregateFunctions, string sumAggregateFunctions, string minAggregateFunctions, string maxAggregateFunctions, string avgAggregateFunctions, string[] exampleTags)
+        private void EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_NumericValuesInternal(string list, string listLabel, string addValues, string countAggregateFunctions, string sumAggregateFunctions, string minAggregateFunctions, string maxAggregateFunctions, string avgAggregateFunctions, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -565,7 +565,7 @@ this.FeatureBackground();
 #line 123
  testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", list), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 124
- testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", list), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", listLabel), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 125
  testRunner.When("User navigates to Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden

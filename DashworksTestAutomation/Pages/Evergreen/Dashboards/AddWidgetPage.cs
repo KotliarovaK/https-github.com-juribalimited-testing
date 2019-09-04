@@ -167,7 +167,7 @@ namespace DashworksTestAutomation.Pages
 
         public IList<IWebElement> GetDropdownOptions()
         {
-            return Driver.FindElements(By.XPath(".//mat-option"));
+            return Driver.FindElements(By.XPath(".//mat-option/span"));
         }
 
         public void ClickColorSchemeByIndex(int index)

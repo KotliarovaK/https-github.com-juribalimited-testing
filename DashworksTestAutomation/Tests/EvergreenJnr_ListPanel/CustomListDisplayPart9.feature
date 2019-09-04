@@ -13,7 +13,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNoErrorsAreDisplayedAfterDuplicating
 	| 001PSUMZYOW581 |
 	Then "1111111111111111111111111111111111111111" list is displayed to user
 	When User navigates to the "All Devices" list
-	Then "Devices" list should be displayed to the user
+	Then "All Devices" list should be displayed to the user
 	When User duplicates list with "1111111111111111111111111111111111111111" name
 	Then "111111111111111111111111111111111111112" list is displayed to user
 	Then There are no errors in the browser console
@@ -60,7 +60,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatStaticListIsDisplayedInTheBottomOfTheL
 @Evergreen @Devices @CustomListDisplay @EvergreenJnr_ListPanel @DAS12917
 Scenario: EvergreenJnr_DevicesList_CheckThatFilterNameIsNotChangedAfterRenameWhileUpdateValuesOfFilter
 	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
+	Then "All Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Application Compliance" filter where type is "Equals" with added column and following checkboxes:

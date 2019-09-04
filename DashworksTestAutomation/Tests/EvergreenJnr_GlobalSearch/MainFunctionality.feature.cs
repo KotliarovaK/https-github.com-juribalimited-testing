@@ -206,8 +206,8 @@ this.FeatureBackground();
  testRunner.Then("\"Search results for \"\"WPF/E\" (codename) Community Technology Preview (Feb 2007)\"\"" +
                     " is displayed below Global Search field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 41
- testRunner.Then("\"\"WPF/E\" (codename) Community Technology Preview (Feb 2007) (0.8.5.0)\" text is di" +
-                    "splayed in the table content", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("\"\"WPF/E\" (codename) Community Technology Preview (Feb 2007) (0.8.5.0)\" content is" +
+                    " displayed in the \"Name\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 42
  testRunner.When("User type \"Escaping Test User |\\\\/\\,\\<\\>#\\;+\\\"\\=- |\\\\/\\,\\<\\>#\\;+\\\"\\=-.Users.corp." +
                     "juriba.com\" in Global Search Field and presses Enter key", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -215,8 +215,8 @@ this.FeatureBackground();
  testRunner.Then("\"Search results for \"Escaping Test User |\\\\/\\,\\<\\>#\\;+\\\"\\=- |\\\\/\\,\\<\\>#\\;+\\\"\\=-.U" +
                     "sers.corp.juriba.com\"\" is displayed below Global Search field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 44
- testRunner.Then("message \"No results found for the current search\" is displayed to the user below " +
-                    "Search results", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("message \"No results found for the current search\" is displayed to the user below " +
+                    "Search results", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 45
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -273,7 +273,7 @@ this.FeatureBackground();
 #line 49
  testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 50
- testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"All Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 51
  testRunner.When("User type \"CheckTheResetButton\" in Global Search Field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 52
@@ -406,7 +406,7 @@ this.FeatureBackground();
 #line 72
  testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 73
- testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"All Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 74
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden

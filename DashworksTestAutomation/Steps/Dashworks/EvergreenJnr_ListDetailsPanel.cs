@@ -34,7 +34,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserChangesListNameTo(string listName)
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
-            listDetailsElement.ListNameField.Clear();
+            _driver.ClearByJavascript(listDetailsElement.ListNameField);
             listDetailsElement.ListNameField.SendkeysWithDelay(listName);
             Thread.Sleep(3000);//Wait for autosave action, no indicators available
             _driver.WaitForDataLoading();

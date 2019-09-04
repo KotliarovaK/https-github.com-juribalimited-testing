@@ -10,7 +10,7 @@ using SeleniumExtras.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
 {
-    internal class NavigationPage : SeleniumBasePage
+    internal class NavigationElements : SeleniumBasePage
     {
         public const string MainTabsOnDetailsPage = "//div[contains(@class, 'das-mat-tree-node')]/a";
 

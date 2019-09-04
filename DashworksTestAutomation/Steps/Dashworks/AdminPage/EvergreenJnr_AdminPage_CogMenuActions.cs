@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
@@ -68,6 +69,22 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             Thread.Sleep(500);
             //TODO decrease to standard wait time after DAS-17940 fix
             _driver.WaitForDataLoading(60);
+        }
+
+        
+        [When(@"User clicks ""(.*)"" option in Cog-menu for ""(.*)"" item on Admin page and wait for processing")]
+        public void WhenUserClicksOptionInCog_MenuForItemOnAdminPageAndWaitsProcessing(string option, string itemName)
+        {
+            WhenUserClicksOptionInCog_MenuForItemOnAdminPage(option, itemName);
+
+            for (int i = 0; i < 3; i++)
+            {
+                if (DatabaseHelper.IsAutomationRunFinishedSuccess(DatabaseHelper.GetAutomationId(itemName)))
+                {
+                    break;
+                }
+                Thread.Sleep(5000);
+            }
         }
 
         [When(@"User move ""(.*)"" item to ""(.*)"" position on Admin page")]

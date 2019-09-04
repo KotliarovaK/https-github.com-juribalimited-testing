@@ -14,7 +14,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOneRingAddeddAfterMulticlickingCreateB
 	And User type "OneRing" Name in the "Ring name" field on the Project details page
 	And User doubleclicks Create button on Create Ring page
 	Then Success message is displayed and contains "The ring has been created" text
-	And  "OneRing" text is displayed in the table content
+	And "OneRing" content is displayed in the "Ring" column
 	When User enters "OneRing" text in the Search field for "Ring" column
 	Then Rows counter contains "1" found row of all rows
 	And There are no errors in the browser console

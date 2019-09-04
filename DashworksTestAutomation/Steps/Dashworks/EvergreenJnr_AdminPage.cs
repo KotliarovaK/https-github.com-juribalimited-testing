@@ -1240,6 +1240,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 var projectTabs = _driver.NowAt<ProjectsPage>();
                 projectTabs.ClickToTabByNameProjectScopeChanges(tabName);
                 _driver.WaitForDataLoading();
+                projectElement = _driver.NowAt<BaseGridPage>();
+                _driver.WaitForElementToBeDisplayed(projectElement.PlusButton);
                 projectElement.PlusButton.Click();
                 foreach (var row in table.Rows)
                 {
@@ -1954,6 +1956,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.AreEqual(expectedList, actualList, "Menu options are different");
         }
 
+        //TODO move to the BaseGrid
         [Then(@"""(.*)"" column content is displayed in the following order:")]
         public void ThenColumnContentIsDisplayedInTheFollowingOrder(string columnName, Table table)
         {
@@ -1961,7 +1964,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var actualList = action.GetColumnContent(columnName);
-            Utils.Verify.AreEqual(expectedList, actualList, "Column content is different");
+            Verify.AreEqual(expectedList, actualList, "Column content is different");
         }
 
         [Then(@"""(.*)"" dropdown is not displayed")]
@@ -2068,7 +2071,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseGridPage>();
             var list = page.TeamListInFilterDropdown.Select(x => x.Text).ToList();
-            Utils.Verify.AreEqual(list.OrderBy(s => s, StringComparer.Ordinal), list, "Teams are not in alphabetical order");
+            Verify.AreEqual(list.OrderBy(s => s, StringComparer.Ordinal), list, "Teams are not in alphabetical order");
             page.BodyContainer.Click();
         }
 
@@ -2077,23 +2080,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseGridPage>();
             var list = page.ProjectsTypeListInFilterDropdown.Select(x => x.Text).ToList();
-            Utils.Verify.AreEqual(list.OrderBy(s => s), list, "Projects Type are not in alphabetical order");
+            Verify.AreEqual(list.OrderBy(s => s), list, "Projects Type are not in alphabetical order");
             page.BodyContainer.Click();
-        }
-
-        [Then(@"""(.*)"" value is displayed for Default column")]
-        public void ThenValueIsDisplayedForDefaultColumn(string defaultValue)
-        {
-            var column = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsTrue(column.GetDefaultColumnValue(defaultValue),
-                "Incorrect value is displayed for Default column");
         }
 
         [Then(@"Search fields for ""(.*)"" column contain correctly value")]
         public void ThenSearchFieldsForColumnContainCorrectlyValue(string columnName)
         {
             var searchField = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsTrue(searchField.GetSearchFieldTextByColumnName(columnName).Displayed(),
+            Verify.IsTrue(searchField.GetSearchFieldTextByColumnName(columnName).Displayed(),
                 "Incorrect contain value for search field");
         }
 

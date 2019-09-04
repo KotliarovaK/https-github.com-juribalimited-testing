@@ -10,7 +10,7 @@ Background: Pre-Conditions
 @Evergreen @Devices @EvergreenJnr_ItemDetails @CustomFields @DAS17323 @Not_Ready
 Scenario: EvergreenJnr_DevicesList_CheckThatContextMenuCopyСellForTheRowActionsIsDisplayedAndWorkedCorrectlyForCustomFields
 	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
+	Then "All Devices" list should be displayed to the user
 	When User perform search by "001BAQXT6JWFPI"
 	And User click content from "Hostname" column
 	When User navigates to the "Custom Fields" sub-menu on the Details page
@@ -23,7 +23,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatContextMenuCopyСellForTheRowActions
 @Evergreen @Devices @EvergreenJnr_ItemDetails @CustomFields @DAS17323 @Not_Ready
 Scenario: EvergreenJnr_DevicesList_CheckThatContextMenuCopyRowForTheRowActionsIsDisplayedAndWorkedCorrectlyForCustomFields
 	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
+	Then "All Devices" list should be displayed to the user
 	When User perform search by "001BAQXT6JWFPI"
 	And User click content from "Hostname" column
 	When User navigates to the "Custom Fields" sub-menu on the Details page
@@ -31,8 +31,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatContextMenuCopyRowForTheRowActionsIs
 	And User selects 'Copy row' option in context menu
 	Then Next data 'ComputerCustomField      0.665371384' is copied
 
-	#Ann.Ilchenko 8/27/19: ready on 'quasar';
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @CustomFields @DAS17909 @Not_Ready
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @CustomFields @DAS17909
 Scenario Outline: EvergreenJnr_AllLists_CheckThatContextMenuCopyRowForTheRowActionsIsDisplayedAndWorkedCorrectlyForCustomFields
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<OpenPageName>" list should be displayed to the user
@@ -59,8 +58,7 @@ Examples:
 	| Applications | All Applications | Adobe Download Manager 2.0 | Application   |
 	| Mailboxes    | All Mailboxes    | 000F977AC8824FE39B8        | Email Address |
 
-	#Ann.Ilchenko 8/29/19: ready on 'quasar';
-@Evergreen @Devices @EvergreenJnr_ItemDetails @CustomFields @DAS17908 @Not_Ready
+@Evergreen @Devices @EvergreenJnr_ItemDetails @CustomFields @DAS17908
 Scenario: EvergreenJnr_DevicesList_CheckThatColumnSettingsOnCustomFieldsAreTranslatedAccordingToAccountLanguage
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
@@ -81,3 +79,19 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnSettingsOnCustomFieldsAreTrans
 	| Aufsteigend sortieren                     |
 	| Absteigend sortieren                      |
 	| Nicht sortieren                           |
+	
+@Evergreen @Devices @EvergreenJnr_ItemDetails @CustomFields @DAS17907
+Scenario: EvergreenJnr_DevicesList_CheckThatCustomFieldsTheGroupByElementContainOnlyVisibleColumns
+	When User clicks "Devices" on the left-hand menu
+	Then "All Devices" list should be displayed to the user
+	When User perform search by "001BAQXT6JWFPI"
+	And User click content from "Hostname" column
+	When User navigates to the "Custom Fields" sub-menu on the Details page
+	And User have opened Column Settings for "Custom Field" column in the Details Page table
+	And User clicks Column button on the Column Settings panel
+	And User select "Value" checkbox on the Column Settings panel
+	And User clicks Column button on the Column Settings panel
+	When User clicks Group By button on grid action bar
+	Then following Group By values ​​are displayed for User on grid action bar
+	| Values       |
+	| Custom Field |

@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Linq;
 using System.Threading;
-using System.Threading.Tasks;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Utils;
-using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
@@ -60,8 +55,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             }
         }
 
-        [Then(@"Content is displayed in the ""(.*)"" column")]
-        public void ThenContentIsDisplayedInTheColumn(string columnName, Table table)
+        [Then(@"Content in the '(.*)' column is equal to")]
+        public void ThenContentInTheColumnIsEqualTo(string columnName, Table table)
         {
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitForDataLoading();
@@ -72,12 +67,19 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 $"Expected content is not present in the '{columnName}' column");
         }
 
-        [Then(@"""(.*)"" text is displayed in the ""(.*)"" column")]
-        public void ThenTextIsDisplayedInTheColumn(string text, string columnName)
+        [Then(@"'(.*)' column contains following content")]
+        public void ThenColumnContainsFollowingContent(string columnName, Table table)
         {
             var page = _driver.NowAt<BaseGridPage>();
-            var originalList = page.GetColumnContentByColumnNameForCapacity(columnName);
-            Verify.AreEqual(text, originalList, "Content is not displayed correctly");
+            _driver.WaitForDataLoading();
+            var column = page.GetColumnContentByColumnName(columnName).ToList();
+            var columnContent = column.Select(x => x.Text).ToList();
+            var expectedList = table.Rows.Select(x => x["Content"]).ToList();
+            foreach (string content in expectedList)
+            {
+                Verify.IsTrue(columnContent.Contains(content),
+                    $"'{content}' content is not displayed in the '{columnName}' column");
+            }
         }
 
         [When(@"User doubleclicks on '(.*)' cell from '(.*)' column")]

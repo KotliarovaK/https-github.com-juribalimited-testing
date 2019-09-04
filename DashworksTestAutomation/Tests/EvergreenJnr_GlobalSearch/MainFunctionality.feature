@@ -38,16 +38,16 @@ Scenario: EvergreenJnr_GlobalSearch_CheckThatErrorMessageIsNotDisplayedAfterTypi
 	And "1" rows are displayed on the Global Search
 	When User type ""WPF/E" (codename) Community Technology Preview (Feb 2007)" in Global Search Field and presses Enter key
 	Then "Search results for ""WPF/E" (codename) Community Technology Preview (Feb 2007)"" is displayed below Global Search field
-	Then ""WPF/E" (codename) Community Technology Preview (Feb 2007) (0.8.5.0)" text is displayed in the table content
+	And ""WPF/E" (codename) Community Technology Preview (Feb 2007) (0.8.5.0)" content is displayed in the "Name" column
 	When User type "Escaping Test User |\\/\,\<\>#\;+\"\=- |\\/\,\<\>#\;+\"\=-.Users.corp.juriba.com" in Global Search Field and presses Enter key
 	Then "Search results for "Escaping Test User |\\/\,\<\>#\;+\"\=- |\\/\,\<\>#\;+\"\=-.Users.corp.juriba.com"" is displayed below Global Search field
-	Then message "No results found for the current search" is displayed to the user below Search results
+	And message "No results found for the current search" is displayed to the user below Search results
 	And There are no errors in the browser console
 
 @Evergreen @GlobalSearch @EvergreenJnr_GlobalSearch @MainFunctionality @DAS11350
 Scenario: EvergreenJnr_DevicesList_Search_CheckThatGlobalSearchFieldHaveAResetButton
 	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
+	Then "All Devices" list should be displayed to the user
 	When User type "CheckTheResetButton" in Global Search Field
 	Then reset button in Global Search field is displayed
 
@@ -70,7 +70,7 @@ Scenario: EvergreenJnr_Search_CheckThatAnyTabCanBeOpenedAfterSearchHasBeenPerfor
 	When User type "jet" in Global Search Field and presses Enter key
 	Then list of results is displayed to the user
 	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
+	Then "All Devices" list should be displayed to the user
 	And There are no errors in the browser console
 
 @Evergreen @GlobalSearch @EvergreenJnr_GlobalSearch @MainFunctionality @DAS17633

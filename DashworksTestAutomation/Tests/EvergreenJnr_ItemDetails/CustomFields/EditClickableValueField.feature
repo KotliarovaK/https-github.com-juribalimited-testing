@@ -16,7 +16,7 @@ Scenario: EvergreenJnr_DevicesList_CheckEditableFieldDisplayAndToolTips
 	| ObjectType | ObjectId | FieldName    | Value                |
 	| device     | 6648     | CfDAS15473_1 | ValueDAS15473_#$‡!_1 |
 	And User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
+	Then "All Devices" list should be displayed to the user
 	When User perform search by "00YWR8TJU4ZF8V"
 	And User click content from "Hostname" column
 	Then Details page for "00YWR8TJU4ZF8V" item is displayed to the user
@@ -34,7 +34,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckDataIsUpdatedInClickableValue
 	| ObjectType  | ObjectId | FieldName    | Value           |
 	| application | 507      | CfDAS15473_2 | ValueDAS15473_2 |
 	And User clicks "Applications" on the left-hand menu
-	Then "Applications" list should be displayed to the user
+	Then "All Applications" list should be displayed to the user
 	When User perform search by "ACDSee 8"
 	And User click content from "Application" column
 	Then Details page for "ACDSee 8" item is displayed to the user
@@ -59,7 +59,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckDataIsUpdatedUsingCogMenu
 	| ObjectType  | ObjectId | FieldName    | Value        |
 	| application | 750      | CfDAS17584_1 | Value17584_1 |
 	And User clicks "Applications" on the left-hand menu
-	Then "Applications" list should be displayed to the user
+	Then "All Applications" list should be displayed to the user
 	When User perform search by "PCFriendly"
 	And User click content from "Application" column
 	Then Details page for "PCFriendly" item is displayed to the user
@@ -85,7 +85,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckClickableValueSavedOnFocusLost
 	| ObjectType | ObjectId | FieldName    | Value           |
 	| mailbox    | 46384    | CfDAS15473_3 | ValueDAS15473_3 |
 	And User clicks "Mailboxes" on the left-hand menu
-	Then "Mailboxes" list should be displayed to the user
+	Then "All Mailboxes" list should be displayed to the user
 	When User perform search by "0072B088173449E3A93@bclabs.local"
 	And User click content from "Email Address" column
 	Then Details page for "0072B088173449E3A93@bclabs.local" item is displayed to the user

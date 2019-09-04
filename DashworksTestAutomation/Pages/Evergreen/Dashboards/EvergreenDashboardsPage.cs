@@ -63,6 +63,13 @@ namespace DashworksTestAutomation.Pages
 
         [FindsBy(How = How.XPath, Using = ".//li[text()='Set default']")]
         public IWebElement MakeDefaultContextMenuItem { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//li[text()='Duplicate']")]
+        public IWebElement DuplicateContextMenuItem { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='inline-success ng-star-inserted']")]
+        public IWebElement SuccessMessage { get; set; }
+
         #endregion
 
 
@@ -175,7 +182,7 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//table//tr[1]/td")]
         public IList<IWebElement> DetailsPanelSharedListsTableHeaders { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//mat-dialog-container/permission-popup//h1[text()='Review Widget List Permissions']")]
+        [FindsBy(How = How.XPath, Using = ".//div[text()='Review Widget List Permissions']")]
         public IWebElement ReviewWidgetListPermissionsPopUp { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//span[@class='mat-option-text']")]

@@ -26,7 +26,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNotificationMessageIsDisplayedAfterUpd
 	When User clicks "Evergreen" link on the Admin page
 	Then "Buckets" page should be displayed to the user
 	When User enters "Unassigned" text in the Search field for "Bucket" column
-	Then "FALSE" value is displayed for Default column
+	Then "FALSE" content is displayed in the "Default" column
 	When User clicks content from "Bucket" column
 	And User updates the "Default Bucket" checkbox state
 	And User clicks Update Bucket button on the Buckets page
