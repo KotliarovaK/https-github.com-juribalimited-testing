@@ -8,7 +8,7 @@ Background: Pre-Conditions
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13833 @DAS13846 @DAS16994
 Scenario: EvergreenJnr_DevicesList_CheckThatAddingColumnOnPivotIsWorksCorrectlyForFilteredList
 	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
+	Then "All Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Device Key" filter where type is "Equals" with added column and following value:
@@ -26,7 +26,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddingColumnOnPivotIsWorksCorrectlyF
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13119 @DAS13652 @DAS13637 @DAS17421 @DAS13649 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatPivotSubmenuIsDisplayedCorrectlyAfterClosingListsPanel
 	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
+	Then "All Devices" list should be displayed to the user
 	When User navigates to Pivot
 	And User selects the following Row Groups on Pivot:
 	| RowGroups              |
@@ -93,7 +93,7 @@ Examples:
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS11103 @DAS13819 @DAS13818 @DAS13817 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatAggregateFunctionContainsCorrectValues
 	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
+	Then "All Devices" list should be displayed to the user
 	When User navigates to Pivot
 	And User selects the following Values on Pivot:
 	| Values     |
@@ -126,7 +126,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAggregateFunctionContainsCorrectValu
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13862 @DAS14372 @DAS14373
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatOperatingSystemPivotValueIsDisplayInTheCorrectOrder
 	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
+	Then "All Devices" list should be displayed to the user
 	When User navigates to Pivot
 	And User selects the following Row Groups on Pivot:
 	| RowGroups   |
@@ -151,7 +151,7 @@ Examples:
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13862 @DAS14372
 Scenario: EvergreenJnr_DevicesList_CheckThatOperatingSystemAndServicePackOrBuildRowGroupDisplayInTheCorrectOrder
 	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
+	Then "All Devices" list should be displayed to the user
 	When User navigates to Pivot
 	And User selects the following Row Groups on Pivot:
 	| RowGroups             |

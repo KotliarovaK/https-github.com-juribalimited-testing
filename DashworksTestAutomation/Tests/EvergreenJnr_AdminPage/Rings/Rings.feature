@@ -28,7 +28,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatRingsOptionMapsToEvergreenCanBeChanged
 	When User selects "Select All" checkbox from String Filter with item list on the Admin page
 	When User clicks String Filter button for "Project" column on the Admin page
 	When User selects "ProjectForDAS14780" checkbox from String Filter with item list on the Admin page
-	Then "Unassigned" text is displayed in the table content
+	Then Content is displayed in the "Bucket" column
+	| Content    |
+	| Unassigned |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS12452 @DAS14690 @DAS14691 @DAS15370 @DAS14692 @DAS14695 @DAS15415 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckProjectDetailFormAndRingDropdown

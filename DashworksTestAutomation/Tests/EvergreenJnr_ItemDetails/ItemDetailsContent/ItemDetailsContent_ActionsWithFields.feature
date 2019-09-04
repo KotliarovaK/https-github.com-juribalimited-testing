@@ -8,7 +8,7 @@ Background: Pre-Conditions
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS14941 @DAS12963
 Scenario: EvergreenJnr_DevicesList_CheckTheEvergreenRingProjectSetting
 	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
+	Then "All Devices" list should be displayed to the user
 	When User click content from "Hostname" column
 	When User navigates to the "Projects" main-menu on the Details page
 	And User clicks content of Evergreen Ring in Project Summary section on the Details Page
@@ -19,7 +19,7 @@ Scenario: EvergreenJnr_DevicesList_CheckTheEvergreenRingProjectSetting
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12690 @DAS14923
 Scenario: EvergreenJnr_DevicesList_CheckThatLinksInDeviceDetailsAreRedirectedToTheRelevantUserDetailsPage
 	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
+	Then "All Devices" list should be displayed to the user
 	When User perform search by "001PSUMZYOW581"
 	And User click content from "Hostname" column
 	When User navigates to the "Details" main-menu on the Details page
@@ -60,7 +60,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatTextInKeyValueGridsIsSelectableOnGroupD
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12690 @DAS12321 @DAS14923
 Scenario: EvergreenJnr_MailboxesList_CheckThatLinksInMailboxDetailsAreRedirectedToTheRelevantUserDetailsPage
 	When User clicks "Mailboxes" on the left-hand menu
-	Then "Mailboxes" list should be displayed to the user
+	Then "All Mailboxes" list should be displayed to the user
 	When User perform search by "Joel T. Hartman"
 	And User click content from "Email Address" column
 	When User navigates to the "Details" main-menu on the Details page
@@ -71,7 +71,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatLinksInMailboxDetailsAreRedirected
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17180
 Scenario: EvergreenJnr_DevicesList_CheckThatTheLinkCanBeOpenedAndTheLinkHasARightFormatWithAProjectIdAtTheEnd
 	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
+	Then "All Devices" list should be displayed to the user
 	When User perform search by "001BAQXT6JWFPI"
 	And User click content from "Hostname" column
 	And User navigates to the "Details" main-menu on the Details page
@@ -113,7 +113,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	#============================================================================#
 		#go to Devices page
 	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
+	Then "All Devices" list should be displayed to the user
 	When User perform search by "01ERDGD48UDQKE"
 	And User click content from "Hostname" column
 	Then Details object page is displayed to the user
@@ -139,7 +139,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	#============================================================================#
 		#go to Users page
 	When User clicks "Users" on the left-hand menu
-	Then "Users" list should be displayed to the user
+	Then "All Users" list should be displayed to the user
 	When User perform search by "00DBB114BE1B41B0A38"
 	And User click content from "Username" column
 	Then Details object page is displayed to the user
@@ -164,7 +164,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	#============================================================================#
 		#go to Mailboxes page
 	When User clicks "Mailboxes" on the left-hand menu
-	Then "Mailboxes" list should be displayed to the user
+	Then "All Mailboxes" list should be displayed to the user
 	When User perform search by "0845467C65E5438D83E@bclabs.local"
 	And User click content from "Email Address" column
 	Then Details object page is displayed to the user
@@ -196,7 +196,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjec
 	#============================================================================#
 		#go to Devices page
 	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
+	Then "All Devices" list should be displayed to the user
 	When User perform search by "ZZNKKYW97AL4VS"
 	And User click content from "Hostname" column
 	Then Details object page is displayed to the user
@@ -222,7 +222,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjec
 	#============================================================================#
 		#go to Users page
 	When User clicks "Users" on the left-hand menu
-	Then "Users" list should be displayed to the user
+	Then "All Users" list should be displayed to the user
 	When User perform search by "00DBB114BE1B41B0A38"
 	And User click content from "Username" column
 	Then Details object page is displayed to the user
@@ -248,7 +248,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjec
 	#============================================================================#
 		#go to Mailboxes page
 	When User clicks "Mailboxes" on the left-hand menu
-	Then "Mailboxes" list should be displayed to the user
+	Then "All Mailboxes" list should be displayed to the user
 	When User perform search by "0845467C65E5438D83E@bclabs.local"
 	And User click content from "Email Address" column
 	Then Details object page is displayed to the user
@@ -296,7 +296,7 @@ Examples:
 @Evergreen @DevicesLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS14973
 Scenario: EvergreenJnr_DevicesList_CheckDeviceTabUIOnTheDeviceDetails
 	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
+	Then "All Devices" list should be displayed to the user
 	When User click content from "Hostname" column
 	When User navigates to the "Details" main-menu on the Details page
 	Then User verifies data in the fields on details page
@@ -313,7 +313,7 @@ Scenario: EvergreenJnr_DevicesList_CheckDeviceTabUIOnTheDeviceDetails
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15889 @DAS16378
 Scenario: EvergreenJnr_DevicesList_CheckThatCommonNameFieldIsDisplayedInTheComputerAdObjectSection
 	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
+	Then "All Devices" list should be displayed to the user
 	When User perform search by "00OMQQXWA1DRI6"
 	And User click content from "Hostname" column
 	Then Details page for "00OMQQXWA1DRI6" item is displayed to the user
@@ -332,7 +332,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCommonNameFieldIsDisplayedInTheCompu
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16859 @DAS17645 @DAS17785 @DAS17809 @Not_Ready
 Scenario: EvergreenJnr_DevicesList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForDeviceObjects
 	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
+	Then "All Devices" list should be displayed to the user
 	When User perform search by "001BAQXT6JWFPI"
 	And User click content from "Hostname" column
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
@@ -358,7 +358,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatProjectDetailsDefaultViewIsDisplayed
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16858 @DAS17160 @DAS17325 @DAS17645 @DAS17809 @Not_Ready
 Scenario: EvergreenJnr_UsersList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForUserObjects
 	When User clicks "Users" on the left-hand menu
-	Then "Users" list should be displayed to the user
+	Then "All Users" list should be displayed to the user
 	When User perform search by "0072B088173449E3A93"
 	And User click content from "Username" column
 	Then Details page for "0072B088173449E3A93" item is displayed to the user
@@ -384,7 +384,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatProjectDetailsDefaultViewIsDisplayedCo
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16861 @DAS17158 @DAS17239 @DAS17645 @DAS17809 @Not_Ready
 Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForApplicationObjects
 	When User clicks "Applications" on the left-hand menu
-	Then "Applications" list should be displayed to the user
+	Then "All Applications" list should be displayed to the user
 	When User perform search by ""WPF/E" (codename) Community Technology Preview (Feb 2007)"
 	And User click content from "Application" column
 	Then Details page for ""WPF/E" (codename) Community Technology Preview (Feb 2007)" item is displayed to the user
@@ -410,7 +410,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectDetailsDefaultViewIsDisp
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16957 @DAS17645 @DAS17785 @DAS17809 @Not_Ready
 Scenario: EvergreenJnr_MailboxesList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForMailboxObjects
 	When User clicks "Mailboxes" on the left-hand menu
-	Then "Mailboxes" list should be displayed to the user
+	Then "All Mailboxes" list should be displayed to the user
 	When User perform search by "00A5B910A1004CF5AC4@bclabs.local"
 	And User click content from "Email Address" column
 	Then Details page for "00A5B910A1004CF5AC4@bclabs.local" item is displayed to the user
@@ -436,7 +436,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatProjectDetailsDefaultViewIsDisplay
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17007 @DAS17768 @DAS17768
 Scenario: EvergreenJnr_AllLists_CheckThatSelfServiceUrlIsNotDisplayedOnObjectDetailsPageEvenWhenItsDisabledInProjectManagement
 	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
+	Then "All Devices" list should be displayed to the user
 	When User perform search by "001BAQXT6JWFPI"
 	And User click content from "Hostname" column
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
@@ -445,7 +445,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatSelfServiceUrlIsNotDisplayedOnObjectDet
 	And User navigates to the "Project Details" sub-menu on the Details page
 	Then field with "Self Service URL" text is not displayed in expanded tab on the Details Page
 	When User clicks "Users" on the left-hand menu
-	Then "Users" list should be displayed to the user
+	Then "All Users" list should be displayed to the user
 	When User perform search by "0072B088173449E3A93"
 	And User click content from "Username" column
 	Then Details page for "0072B088173449E3A93" item is displayed to the user
@@ -461,7 +461,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatSelfServiceUrlIsNotDisplayedOnObjectDet
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11510
 Scenario: EvergreenJnr_DevicesList_CheckThatLastLogoffDateFieldIsNotDisplayedAtTheDeviceOwnerBlockOfDeviceDetails
 	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
+	Then "All Devices" list should be displayed to the user
 	When User perform search by "001BAQXT6JWFPI"
 	And User click content from "Hostname" column
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
@@ -472,7 +472,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatLastLogoffDateFieldIsNotDisplayedAtT
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17735
 Scenario: EvergreenJnr_DevicesList_CheckThatErrorsANotAppearInConsoleWhenNavigatingToTheMaterialTableOnObjectDetails
 	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
+	Then "All Devices" list should be displayed to the user
 	When User perform search by "001BAQXT6JWFPI"
 	And User click content from "Hostname" column
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user

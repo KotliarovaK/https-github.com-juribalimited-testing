@@ -111,7 +111,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyProjectN
 	When User selects all rows on the grid
 	And User removes selected item
 	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
+	Then "All Devices" list should be displayed to the user
 	When User click on 'Hostname' column header
 	And User create dynamic list with "DynamicList5531" name on "Devices" page
 	Then "DynamicList5531" list is displayed to user

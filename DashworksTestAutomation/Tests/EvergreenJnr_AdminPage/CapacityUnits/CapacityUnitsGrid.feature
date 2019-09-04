@@ -18,7 +18,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnlyEvergreenUnitsAreDisplayedByDefaul
 	When User clicks "Buckets" tab
 	And User clicks "Capacity Units" tab
 	Then Evergreen Icon is displayed to the user
-	And "Unassigned" text is displayed in the table content
+	Then "Unassigned" content is displayed in the "Capacity Unit" column
 	And Evergreen Unit is displayed to the user
 	When User clicks String Filter button for "Project" column on the Admin page
 	Then "Evergreen" checkbox is checked in the filter dropdown

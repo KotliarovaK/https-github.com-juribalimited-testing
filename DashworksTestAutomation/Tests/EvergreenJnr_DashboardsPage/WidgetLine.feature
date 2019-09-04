@@ -25,7 +25,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatColourSchemeIsDisplayedForReadine
 	And "Data Label" checkbox is not displayed on the Create Widget page
 	When User clicks the "CREATE" Action button
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16069 @Cleanup @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16069 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetValuesLeadsToDeviceListFilteredPage
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Filters button

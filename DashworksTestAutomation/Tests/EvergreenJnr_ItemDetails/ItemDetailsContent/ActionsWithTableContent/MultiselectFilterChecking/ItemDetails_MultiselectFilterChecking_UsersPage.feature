@@ -8,7 +8,7 @@ Background: Pre-Conditions
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
 Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForActiveDirectoryTabGroupsOnUsersPage
 	When User clicks "Users" on the left-hand menu
-	Then "Users" list should be displayed to the user
+	Then "All Users" list should be displayed to the user
 	When User perform search by "ZWS705179"
 	And User click content from "Username" column
 	Then Details page for "ZWS705179 (Derick I. Thomas)" item is displayed to the user
@@ -39,7 +39,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplaye
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
 Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForApplicationsTabEvergreenSummaryOnUsersPage
 	When User clicks "Users" on the left-hand menu
-	Then "Users" list should be displayed to the user
+	Then "All Users" list should be displayed to the user
 	When User perform search by "allanj"
 	And User click content from "Username" column
 	Then Details page for "allanj (Jo Allan)" item is displayed to the user
@@ -84,7 +84,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplaye
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
 Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForApplicationsTabEvergreenDetailOnUsersPage
 	When User clicks "Users" on the left-hand menu
-	Then "Users" list should be displayed to the user
+	Then "All Users" list should be displayed to the user
 	When User perform search by "allanj"
 	And User click content from "Username" column
 	Then Details page for "allanj (Jo Allan)" item is displayed to the user
@@ -112,7 +112,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplaye
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
 Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForApplicationsTabAdvertisementsOnUsersPage
 	When User clicks "Users" on the left-hand menu
-	Then "Users" list should be displayed to the user
+	Then "All Users" list should be displayed to the user
 	When User perform search by "allanj"
 	And User click content from "Username" column
 	Then Details page for "allanj (Jo Allan)" item is displayed to the user
@@ -128,7 +128,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplaye
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
 Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForApplicationsTabCollectionsOnUsersPage
 	When User clicks "Users" on the left-hand menu
-	Then "Users" list should be displayed to the user
+	Then "All Users" list should be displayed to the user
 	When User perform search by "allanj"
 	And User click content from "Username" column
 	Then Details page for "allanj (Jo Allan)" item is displayed to the user
@@ -156,7 +156,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplaye
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
 Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForMailboxesTabOnUsersPage
 	When User clicks "Users" on the left-hand menu
-	Then "Users" list should be displayed to the user
+	Then "All Users" list should be displayed to the user
 	When User perform search by "02BE025D56CF4899889"
 	And User click content from "Username" column
 	Then Details page for "02BE025D56CF4899889 (Wegemer, Susan)" item is displayed to the user
@@ -181,7 +181,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplaye
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
 Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForComplianceTabOnUsersPage
 	When User clicks "Users" on the left-hand menu
-	Then "Users" list should be displayed to the user
+	Then "All Users" list should be displayed to the user
 	When User perform search by "ZWS705179"
 	And User click content from "Username" column
 	Then Details page for "ZWS705179 (Derick I. Thomas)" item is displayed to the user

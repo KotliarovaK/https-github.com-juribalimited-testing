@@ -8,7 +8,7 @@ Background: Pre-Conditions
 @Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14375
 Scenario: EvergreenJnr_UsersList_CheckSortedOrderForPivotProjectStatusAsColumn
 	When User clicks "Users" on the left-hand menu
-	Then "Users" list should be displayed to the user
+	Then "All Users" list should be displayed to the user
 	When User navigates to Pivot
 	And User selects the following Row Groups on Pivot:
 	| RowGroups |
@@ -39,7 +39,7 @@ Scenario: EvergreenJnr_UsersList_CheckSortedOrderForPivotProjectStatusAsColumn
 @Evergreen @Mailboxes @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14375
 Scenario: EvergreenJnr_MailboxesList_CheckSortedOrderForPivotProjectStatusAsColumn
 	When User clicks "Mailboxes" on the left-hand menu
-	Then "Mailboxes" list should be displayed to the user
+	Then "All Mailboxes" list should be displayed to the user
 	When User navigates to Pivot
 	And User selects the following Row Groups on Pivot:
 	| RowGroups |

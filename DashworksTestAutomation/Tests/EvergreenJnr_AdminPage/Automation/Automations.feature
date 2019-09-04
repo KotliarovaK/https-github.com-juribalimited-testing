@@ -515,7 +515,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextFor
 	Then Edit Automation page is displayed to the User
 	Then "DAS15423_List" content is displayed in the Scope Automation dropdown
 	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
+	Then "All Devices" list should be displayed to the user
 	When User navigates to the "DAS15423_List" list
 	Then "DAS15423_List" list is displayed to user
 	When User removes custom list with "DAS15423_List" name
