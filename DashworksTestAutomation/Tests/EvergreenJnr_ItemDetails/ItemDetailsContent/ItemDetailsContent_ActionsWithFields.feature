@@ -22,7 +22,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatLinksInDeviceDetailsAreRedirectedToT
 	Then "All Devices" list should be displayed to the user
 	When User perform search by "001PSUMZYOW581"
 	And User click content from "Hostname" column
-	When User navigates to the "Details" main-menu on the Details page
 	When User navigates to the "Device Owner" sub-menu on the Details page
 	And User clicks "Tricia G. Huang" link on the Details Page
 	Then Details page for "LFA418191 (Tricia G. Huang)" item is displayed to the user
@@ -30,7 +29,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatLinksInDeviceDetailsAreRedirectedToT
 @Evergreen @ALlLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13341 @DAS14923
 Scenario Outline: EvergreenJnr_AllLists_CheckThatTextInKeyValueGridsIsSelectableOnDetailsPage
 	When User clicks "<PageName>" on the left-hand menu
-	Then "<PageName>" list should be displayed to the user
+	Then "All <PageName>" list should be displayed to the user
 	When User perform search by "<SearchTerm>"
 	And User click content from "<ColumnName>" column
 	When User navigates to the "<MainTabName>" main-menu on the Details page
@@ -63,7 +62,6 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatLinksInMailboxDetailsAreRedirected
 	Then "All Mailboxes" list should be displayed to the user
 	When User perform search by "Joel T. Hartman"
 	And User click content from "Email Address" column
-	When User navigates to the "Details" main-menu on the Details page
 	When User navigates to the "Mailbox Owner" sub-menu on the Details page
 	And User clicks "hartmajt" link on the Details Page
 	Then Details object page is displayed to the user
@@ -276,7 +274,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjec
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13679 @DAS14216 @DAS14923 @DAS17093 @DAS17093 @DAS17236
 Scenario Outline: EvergreenJnr_AllLists_CheckThatProjectSummarySectionIsDisplayedSuccessfully
 	When User clicks "<ListName>" on the left-hand menu
-	Then "<ListName>" list should be displayed to the user
+	Then "All <ListName>" list should be displayed to the user
 	When User perform search by "<ItemName>"
 	And User clicks content from "<ColumnName>" column
 	Then Details page for "<ItemName>" item is displayed to the user
