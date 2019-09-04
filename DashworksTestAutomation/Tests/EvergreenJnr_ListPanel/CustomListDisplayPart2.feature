@@ -8,27 +8,27 @@ Background: Pre-Conditions
 @Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10998 @DAS10972
 Scenario Outline: EvergreenJnr_AllList_CheckThatSearchDoesNotTriggerNewCustomList
 	When User clicks "<ListName>" on the left-hand menu
-	Then "<ListName>" list should be displayed to the user
+	Then "<ListLabel>" list should be displayed to the user
 	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
 	| <Search>       | <Rows>       |
 	Then Save to New Custom List element is NOT displayed
-	And "<ListName>" list should be displayed to the user
+	And "<ListLabel>" list should be displayed to the user
 	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
 	| Mary           | <NewRows>    |
 	Then Save to New Custom List element is NOT displayed
-	And "<ListName>" list should be displayed to the user
+	And "<ListLabel>" list should be displayed to the user
 	And Clearing the agGrid Search Box
 	And Save to New Custom List element is NOT displayed
-	And "<ListName>" list should be displayed to the user
+	And "<ListLabel>" list should be displayed to the user
 
 	Examples:
-	| ListName     | Search | Rows | NewRows |
-	| Devices      | Henry  | 34   | 18      |
-	| Users        | Henry  | 67   | 142     |
-	| Applications | Hen    | 5    | 1       |
-	| Mailboxes    | Henry  | 22   | 73      |
+	| ListName     | ListLabel        | Search | Rows | NewRows |
+	| Devices      | All Devices      | Henry  | 34   | 18      |
+	| Users        | All Users        | Henry  | 67   | 142     |
+	| Applications | All Applications | Hen    | 5    | 1       |
+	| Mailboxes    | All Mailboxes    | Henry  | 22   | 73      |
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11081 @DAS11951 @DAS12152 @DAS12602 @DAS15032 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatNewListCreatedMessageForStaticListIsDisplayed

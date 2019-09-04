@@ -182,7 +182,7 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//table//tr[1]/td")]
         public IList<IWebElement> DetailsPanelSharedListsTableHeaders { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//mat-dialog-container/permission-popup//h1[text()='Review Widget List Permissions']")]
+        [FindsBy(How = How.XPath, Using = ".//div[text()='Review Widget List Permissions']")]
         public IWebElement ReviewWidgetListPermissionsPopUp { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//span[@class='mat-option-text']")]
