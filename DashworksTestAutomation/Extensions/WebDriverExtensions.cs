@@ -142,9 +142,6 @@ namespace DashworksTestAutomation.Extensions
             var bys = bySelector != null ? new List<By> { bySelector } : page.GetPageIdentitySelectors();
 
             foreach (var by in bys)
-                //((IJavaScriptExecutor)driver).ExecuteScript("arguments[0].style.border='3px solid red'",
-                //	driver.FindElement(@by));
-
                 driver.WaitForElement(by);
 
             page.InitElements();
