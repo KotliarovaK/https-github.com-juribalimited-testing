@@ -41,7 +41,6 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogMessageForDeletedTaskInAction
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
 	When User clicks the "CREATE AUTOMATION" Action button
-	Then Create Automation page is displayed to the User
 	When User enters '17247_Automation' text to 'Automation Name' textbox
 	When User enters '17247' text to 'Description' textbox
 	When User selects "All Devices" in the Scope Automation dropdown
@@ -89,7 +88,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedU
 	Then "Automations" page should be displayed to the user
 	When User enters "DAS17681_Automation" text in the Search field for "Automation" column
 	And User clicks content from "Automation" column
-	Then Edit Automation page is displayed to the User
+	Then Automation page is displayed correctly
 	When User clicks "Actions" tab
 	#Create Action
 	When User clicks the "CREATE ACTION" Action button
@@ -132,7 +131,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedU
 	When User removes "Username" column by Column panel
 	When User removes "Domain" column by Column panel
 	When User clicks the Columns button
-	Then "ON HOLD" content is displayed in "USEMEFORA2: Stage 1 \ Radiobutton Readiness Date Owner Task (User)" column
+	Then "ON HOLD" content is displayed in "USEMEFORA2: StagEdit Automation page is displayed to the Usere 1 \ Radiobutton Readiness Date Owner Task (User)" column
 	Then "1 Aug 2019" content is displayed in "USEMEFORA2: Stage 1 \ Radiobutton Readiness Date Owner Task (User) (Date)" column
 	Then "Akhila Varghese" content is displayed in "USEMEFORA2: Stage 1 \ Radiobutton Readiness Date Owner Task (User) (Owner)" column
 	Then "1803 Team" content is displayed in "USEMEFORA2: Stage 1 \ Radiobutton Readiness Date Owner Task (User) (Team)" column
@@ -144,7 +143,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedU
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope                   | Run    |
 	| 17681_Automation | 17681       | true   | false              | Users with Device Count | Manual |
-	Then Edit Automation page is displayed to the User
+	Then Automation page is displayed correctly
 	When User clicks "Actions" tab
 	When User clicks the "CREATE ACTION" Action button
 	When User enters '17681_Action' text to 'Action Name' textbox
@@ -167,7 +166,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateOwnerForUpdateValueInDevicesScopedAu
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope              | Run    |
 	| 17830_Automation | 17830       | true   | false              | Apps with a Vendor | Manual |
-	Then Edit Automation page is displayed to the User
+	Then Automation page is displayed correctly
 	When User clicks "Actions" tab
 	#Create Action
 	When User clicks the "CREATE ACTION" Action button
@@ -216,7 +215,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateDateForUpdateValueInDevicesScopedAut
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope              | Run    |
 	| 17846_Automation | 17846       | true   | false              | New York - Devices | Manual |
-	Then Edit Automation page is displayed to the User
+	Then Automation page is displayed correctly
 	When User clicks "Actions" tab
 	#Create Action
 	When User clicks the "CREATE ACTION" Action button
@@ -255,7 +254,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateDateForUpdateValueInUsersScopedAutom
 	When User creates new Automation via API and open it
 	| AutomationName      | Description | Active | StopOnFailedAction | Scope                   | Run    |
 	| DAS17846_Automation | 17846       | true   | false              | Users with Device Count | Manual |
-	Then Edit Automation page is displayed to the User
+	Then Automation page is displayed correctly
 	When User clicks "Actions" tab
 	#Create Action
 	When User clicks the "CREATE ACTION" Action button

@@ -25,7 +25,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations
         public void WhenUserMovesActionToAction(string actionFrom, string actionTo)
         {
             var page = _driver.NowAt<ActionsPage>();
-            _driver.WaitForElementToBeNotDisplayed(page.ActionsTableContent);
+            _driver.WaitForElementToBeDisplayed(page.ActionsTableContent);
             var action1 = page.GetMoveButtonByActionName(actionFrom);
             var action2 = page.GetMoveButtonByActionName(actionTo);
             _driver.DragAndDrop(action1, action2);

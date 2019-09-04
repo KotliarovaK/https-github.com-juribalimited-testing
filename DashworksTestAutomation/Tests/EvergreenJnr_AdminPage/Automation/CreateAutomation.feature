@@ -12,7 +12,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionGridInAutomations
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
 	When User clicks the "CREATE AUTOMATION" Action button
-	Then Create Automation page is displayed to the User
+	Then "Create Automation" title is displayed on the Automations page
 	When User enters '15309_laptop' text to 'Automation Name' textbox
 	When User enters '15309' text to 'Description' textbox
 	Then Main lists are displayed correctly in the Scope dropdown
@@ -39,7 +39,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateAutomationFieldsIsNotPopulatedWi
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
 	When User clicks the "CREATE AUTOMATION" Action button
-	Then Create Automation page is displayed to the User
+	Then "Create Automation" title is displayed on the Automations page
 	Then following Values are displayed in "Run" drop-down on the Admin page:
 	| Values                     |
 	| Manual                     |
@@ -69,12 +69,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateAutomationFieldsIsNotPopulatedWi
 	When User enters 'DAS16801_Automation' text to 'Automation Name' textbox
 	Then Filling field error with "An automation with this name already exists" text is displayed
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS16801 @DAS16805 @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS16801 @DAS16805
 Scenario: EvergreenJnr_AdminPage_CheckThatAdminTabIsHighlightedAfterClickingOnAutomation
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
 	When User clicks content from "Automation" column
-	Then Edit Automation page is displayed to the User
+	Then "Edit Automation" title is displayed on the Automations page
 	Then "Admin" left-hand menu is highlighted

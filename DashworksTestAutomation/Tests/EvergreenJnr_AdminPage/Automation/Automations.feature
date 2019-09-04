@@ -52,7 +52,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationsLogGridLoads
 	#Update rows count
 	#Then Counter shows "8 of 10" found rows
 	When User clicks content from "Automation" column
-	Then Edit Automation page is displayed to the User
+	Then Automation page is displayed correctly
+	Then "Edit Automation" title is displayed on the Automations page
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15735 @DAS15805 @DAS16764 @DAS16728 @DAS17222 @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations
@@ -72,7 +73,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations
 	| Actions     |
 	| Description |
 	Then "FALSE" content is displayed in "Running" column
-	When User enters "DELAY (DO NOT DELETE)4" text in the Search field for "Automation" column
+	When User enters "DELAY_2" text in the Search field for "Automation" column
 	Then "TRUE" content is displayed in "Active" column
 	When User selects all rows on the grid
 	Then following items are displayed in the Actions dropdown:
@@ -87,9 +88,9 @@ Scenario: EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations
 	Then Warning message with "Are you sure you wish to run 1 automation?" text is displayed on the Admin page
 	When User clicks "RUN" button in the warning message on Admin page
 	Then Success message is displayed and contains "1 automation started," text
-	When User enters "DELAY (DO NOT DELETE)4" text in the Search field for "Automation" column
+	When User enters "DELAY_2" text in the Search field for "Automation" column
 	Then "TRUE" content is displayed in "Running" column
-	When User clicks Cog-menu for "DELAY (DO NOT DELETE)4" item on Admin page
+	When User clicks Cog-menu for "DELAY_2" item on Admin page
 	Then User sees following cog-menu items on Admin page:
 	| items            |
 	| Edit             |
@@ -98,14 +99,13 @@ Scenario: EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations
 	| Move to bottom   |
 	| Move to position |
 	| Make inactive    |
-	#Check Delay Running Automation
 	When User selects all rows on the grid
 	And User clicks on Actions button
 	And User selects "Delete" in the Actions
 	And User clicks Delete button
 	When User clicks Delete button in the warning message
 	Then Warning message with "Cannot delete a running automation" text is displayed on the Admin page
-	When User moves "QA 1306 devices" automation to "z-test" automation
+	When User moves "Applications_Scope" automation to "DELAY_8" automation
 	When User have opened column settings for "Automation" column
 	And User clicks Column button on the Column Settings panel
 	Then Column Settings was opened
@@ -177,7 +177,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuIsWorkedCorrectly
 	When User enters "15431_Third_Active" text in the Search field for "Automation" column
 	Then "TRUE" content is displayed for "Active" column
 	When User clicks "Edit" option in Cog-menu for "15431_Third_Active" item on Admin page
-	Then Edit Automation page is displayed to the User
+	Then "Edit Automation" title is displayed on the Automations page
 	Then Automation "15431_Third_Active" is displayed to user
 
 #Need to use three Automations: inactive, inactive, active
@@ -440,7 +440,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
 	When User clicks the "CREATE AUTOMATION" Action button
-	Then Create Automation page is displayed to the User
+	Then "Create Automation" title is displayed on the Automations page
 	When User enters '16764_Automation' text to 'Automation Name' textbox
 	When User enters '16764' text to 'Description' textbox
 	When User selects "All Devices" in the Scope Automation dropdown
@@ -451,7 +451,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "click here to view the 16764_Automation automation" link
 	When User clicks newly created object link
-	Then Edit Automation page is displayed to the User
+	Then Automation page is displayed correctly
 	Then "All Devices" content is displayed in the Scope Automation dropdown
 	Then "16764" content is displayed in "Description" field
 	Then "Manual" text value is displayed in the "Run" dropdown
@@ -484,7 +484,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeListIsLoadedWithCor
 	Then "Automations" page should be displayed to the user
 	When User enters "AM 030619 Mailboxes 1" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
-	Then Edit Automation page is displayed to the User
+	Then "Edit Automation" title is displayed on the Automations page
 	Then following lists are displayed in the Scope dropdown:
 	| Lists            |
 	| Users (0)        |
@@ -504,7 +504,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextFor
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
 	When User clicks the "CREATE AUTOMATION" Action button
-	Then Create Automation page is displayed to the User
 	When User enters 'DAS15423_Automation' text to 'Automation Name' textbox
 	When User enters 'DAS15423' text to 'Description' textbox
 	When User selects "DAS15423_List" in the Scope Automation dropdown
@@ -512,7 +511,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextFor
 	When User selects "Active" checkbox on the Automation Page
 	And User clicks the "CREATE" Action button
 	When User clicks newly created object link
-	Then Edit Automation page is displayed to the User
+	Then Automation page is displayed correctly
 	Then "DAS15423_List" content is displayed in the Scope Automation dropdown
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
@@ -524,7 +523,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextFor
 	When User clicks "Automations" link on the Admin page
 	When User enters "DAS15423_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
-	Then Edit Automation page is displayed to the User
+	Then Automation page is displayed correctly
 	Then "[List not found]" content is displayed in the Scope Automation dropdown
 	#Update after DAS-17336 fixed
 	#When User clicks "Actions" tab
@@ -683,7 +682,6 @@ Scenario: EvergreenJnr_AdminPage_ChechAutomationsPermissionsForScopeDropdownList
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
 	When User clicks the "CREATE AUTOMATION" Action button
-	Then Create Automation page is displayed to the User
 	When User selects "17003_List" in the Scope Automation dropdown
 	When User clicks "Projects" on the left-hand menu
 	When User navigate to Manage link

@@ -56,7 +56,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Automations
 
         public IList<string> GetActionContent()
         {
-            var by = By.XPath(".//div[@col-id='actionName' and @role='gridcell']");
+            var by = By.XPath(".//div[@col-id='name' and @role='gridcell']");
             return Driver.FindElements(by).Select(x => x.Text).ToList();
         }
     }

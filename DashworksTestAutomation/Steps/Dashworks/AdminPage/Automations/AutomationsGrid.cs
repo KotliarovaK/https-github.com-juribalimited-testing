@@ -24,7 +24,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations
         [When(@"User selects ""(.*)"" checkbox on the Automation Page")]
         public void WhenUserSelectsCheckboxOnTheAutomationPage(string checkboxName)
         {
-            var checkbox = _driver.NowAt<CreateAutomationsPage>();
+            var checkbox = _driver.NowAt<AutomationsPage>();
             checkbox.SelectCheckboxByName(checkboxName).Click();
         }
 

@@ -151,7 +151,7 @@ this.FeatureBackground();
 #line 12
  testRunner.When("User creates new Automation via API and open it", ((string)(null)), table1, "When ");
 #line 15
- testRunner.Then("Edit Automation page is displayed to the User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Automation page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 16
  testRunner.When("User clicks \"Actions\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 18
@@ -314,7 +314,7 @@ this.FeatureBackground();
 #line 60
  testRunner.When("User creates new Automation via API and open it", ((string)(null)), table3, "When ");
 #line 63
- testRunner.Then("Edit Automation page is displayed to the User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Automation page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 64
  testRunner.When("User clicks \"Actions\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 66
@@ -335,7 +335,7 @@ this.FeatureBackground();
 #line 73
  testRunner.And("User selects \"Not Started\" in the \"Value\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 74
- testRunner.And("User selects \"No Change\" in the \"Update Date\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects \"No change\" in the \"Update Date\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 75
  testRunner.And("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 77
@@ -376,20 +376,12 @@ this.FeatureBackground();
 #line 89
  testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table4, "When ");
 #line 94
- testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 95
- testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 96
- testRunner.When("User removes \"Application\" column by Column panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 97
- testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 98
  testRunner.Then("\"NOT STARTED\" content is displayed in \"zDeviceAut: Stage C \\ Radio Date Slot Devi" +
                     "ce\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 99
+#line 95
  testRunner.Then("\"10 Sep 2019\" content is displayed in \"zDeviceAut: Stage C \\ Radio Date Slot Devi" +
                     "ce (Date)\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 100
+#line 96
  testRunner.Then("\"DAS-17846 Slot Device\" content is displayed in \"zDeviceAut: Stage C \\ Radio Date" +
                     " Slot Device (Slot)\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

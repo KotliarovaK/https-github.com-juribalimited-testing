@@ -216,11 +216,10 @@
     <Compile Include="Helpers\FilterOperatorsConvertor.cs" />
     <Compile Include="Helpers\HttpClientHelper.cs" />
     <Compile Include="Helpers\SortingHelper.cs" />
-    <Compile Include="Pages\Evergreen\AdminDetailsPages\Automations\AutomationsPage.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\Automations\AutomationsGridPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Automations\ActionsPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Automations\EditActionPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Automations\CreateActionsPage.cs" />
-    <Compile Include="Pages\Evergreen\AdminDetailsPages\Automations\EditAutomationPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Automations\CreateAutomationsPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateReadinessPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\RingsPage.cs" />

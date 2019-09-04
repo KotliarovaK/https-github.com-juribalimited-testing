@@ -1915,10 +1915,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User moves ""(.*)"" automation to ""(.*)"" automation")]
         public void WhenUserMovesAutomationToAutomation(string automation, string moveToautomation)
         {
-            var page = _driver.NowAt<AutomationsPage>();
-            var slotFrom = page.GetMoveButtonBySlotName(automation);
-            var slotTo = page.GetMoveButtonBySlotName(moveToautomation);
-            _driver.DragAndDrop(slotFrom, slotTo);
+            var page = _driver.NowAt<AutomationsGridPage>();
+            var automationFrom = page.GetMoveButtonByAutomationName(automation);
+            var automationTo = page.GetMoveButtonByAutomationName(moveToautomation);
+            _driver.DragAndDrop(automationFrom, automationTo);
         }
 
         [Then(@"Alert message is displayed and contains ""(.*)"" text")]

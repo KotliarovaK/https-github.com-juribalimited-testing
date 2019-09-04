@@ -12,7 +12,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInAppsScopedA
 	When User creates new Automation via API and open it
 	| AutomationName      | Description | Active | StopOnFailedAction | Scope              | Run    |
 	| DAS17859_Automation | 17859       | true   | false              | Apps with a Vendor | Manual |
-	Then Edit Automation page is displayed to the User
+	Then Automation page is displayed correctly
 	When User clicks "Actions" tab
 	#Create Action
 	When User clicks the "CREATE ACTION" Action button
@@ -60,7 +60,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueWithNoChangeDateForUpdateTaskVa
 	When User creates new Automation via API and open it
 	| AutomationName    | Description | Active | StopOnFailedAction | Scope              | Run    |
 	| DAS17859_Aut_Test | 17859       | true   | false              | New York - Devices | Manual |
-	Then Edit Automation page is displayed to the User
+	Then Automation page is displayed correctly
 	When User clicks "Actions" tab
 	#Create Action
 	When User clicks the "CREATE ACTION" Action button
@@ -71,7 +71,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueWithNoChangeDateForUpdateTaskVa
 	And User selects 'Radio Date Slot Device' option from 'Task' autocomplete
 	And User selects "Update" in the "Update Value" dropdown
 	And User selects "Not Started" in the "Value" dropdown
-	And User selects "No Change" in the "Update Date" dropdown
+	And User selects "No change" in the "Update Date" dropdown
 	And User clicks the "CREATE" Action button
 	#Create Action
 	When User clicks "Automations" navigation link on the Admin page
@@ -91,10 +91,6 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueWithNoChangeDateForUpdateTaskVa
 	| zDeviceAut: Stage C \ Radio Date Slot Device        |
 	| zDeviceAut: Stage C \ Radio Date Slot Device (Date) |
 	| zDeviceAut: Stage C \ Radio Date Slot Device (Slot) |
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When User removes "Application" column by Column panel
-	When User clicks the Columns button
 	Then "NOT STARTED" content is displayed in "zDeviceAut: Stage C \ Radio Date Slot Device" column
 	Then "10 Sep 2019" content is displayed in "zDeviceAut: Stage C \ Radio Date Slot Device (Date)" column
 	Then "DAS-17846 Slot Device" content is displayed in "zDeviceAut: Stage C \ Radio Date Slot Device (Slot)" column

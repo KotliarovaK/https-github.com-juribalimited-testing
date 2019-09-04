@@ -12,7 +12,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueActionDAS
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope              | Run    |
 	| 17684_Automation | 17684       | true   | false              | Apps with a Vendor | Manual |
-	Then Edit Automation page is displayed to the User
+	Then Automation page is displayed correctly
 	When User clicks "Actions" tab
 	#Create Action
 	When User clicks the "CREATE ACTION" Action button
@@ -61,7 +61,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInDeviceScope
 	Then "Automations" page should be displayed to the user
 	When User enters "17636_Automation" text in the Search field for "Automation" column
 	And User clicks content from "Automation" column
-	Then Edit Automation page is displayed to the User
+	Then Automation page is displayed correctly
 	When User clicks "Actions" tab
 	#Create Action
 	When User clicks the "CREATE ACTION" Action button
@@ -101,7 +101,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInMailboxScop
 	Then "Automations" page should be displayed to the user
 	When User enters "17642_Automation" text in the Search field for "Automation" column
 	And User clicks content from "Automation" column
-	Then Edit Automation page is displayed to the User
+	Then Automation page is displayed correctly
 	When User clicks "Actions" tab
 	#Create Action
 	When User clicks the "CREATE ACTION" Action button
@@ -143,7 +143,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInApplication
 	Then "Automations" page should be displayed to the user
 	When User enters "17643_Automation" text in the Search field for "Automation" column
 	And User clicks content from "Automation" column
-	Then Edit Automation page is displayed to the User
+	Then Automation page is displayed correctly
 	When User clicks "Actions" tab
 	#Create Action
 	When User clicks the "CREATE ACTION" Action button
@@ -184,7 +184,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInDevicesScop
 	Then "Automations" page should be displayed to the user
 	When User enters "17799_Automation" text in the Search field for "Automation" column
 	And User clicks content from "Automation" column
-	Then Edit Automation page is displayed to the User
+	Then Automation page is displayed correctly
 	When User clicks "Actions" tab
 	#Create Action
 	When User clicks the "CREATE ACTION" Action button
@@ -234,7 +234,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedA
 	Then "Automations" page should be displayed to the user
 	When User enters "17678_Automation" text in the Search field for "Automation" column
 	And User clicks content from "Automation" column
-	Then Edit Automation page is displayed to the User
+	Then Automation page is displayed correctly
 	When User clicks "Actions" tab
 	#Create Action
 	When User clicks the "CREATE ACTION" Action button
@@ -286,7 +286,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueAndOwnerInDev
 	Then "Automations" page should be displayed to the user
 	When User enters "17682_Automation" text in the Search field for "Automation" column
 	And User clicks content from "Automation" column
-	Then Edit Automation page is displayed to the User
+	Then Automation page is displayed correctly
 	When User clicks "Actions" tab
 	#Create Action
 	When User clicks the "CREATE ACTION" Action button
@@ -340,7 +340,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForRemoveOwnerAndTeamInDevi
 	Then "Automations" page should be displayed to the user
 	When User enters "17682_Automation_2" text in the Search field for "Automation" column
 	And User clicks content from "Automation" column
-	Then Edit Automation page is displayed to the User
+	Then Automation page is displayed correctly
 	When User clicks "Actions" tab
 	#Create Action
 	And User clicks the "CREATE ACTION" Action button
@@ -394,7 +394,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedA
 	Then "Automations" page should be displayed to the user
 	When User enters "17678_Automation_1" text in the Search field for "Automation" column
 	And User clicks content from "Automation" column
-	Then Edit Automation page is displayed to the User
+	Then Automation page is displayed correctly
 	When User clicks "Actions" tab
 	#Create Action
 	When User clicks the "CREATE ACTION" Action button
