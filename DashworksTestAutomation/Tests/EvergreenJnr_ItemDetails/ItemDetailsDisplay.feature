@@ -154,12 +154,10 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatUserDetailsIsSimilarOnGridAndDetail
 	And User click content from "Hostname" column
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
 	When User navigates to the "Users" main-menu on the Details page
-	Then text is displayed in the table content
-	| Text                                   |
-	| QLL295118                              |
-	| US-E                                   |
-	| Nicole P. Braun                        |
-	| QLL295118.Users.Jersey City.US-E.local |
+	Then "QLL295118" content is displayed in the "Username" column
+	And "US-E" content is displayed in the "Domain" column
+	And "Nicole P. Braun" content is displayed in the "Display Name" column
+	And "QLL295118.Users.Jersey City.US-E.local" content is displayed in the "Distinguished Name" column
 	When User clicks "QLL295118" link on the Details Page
 	Then Details page for "QLL295118 (Nicole P. Braun)" item is displayed to the user
 	And User verifies data in the fields on details page
@@ -169,7 +167,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatUserDetailsIsSimilarOnGridAndDetail
 	| Display Name       | Nicole P. Braun                        |
 	| Distinguished Name | QLL295118.Users.Jersey City.US-E.local |
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17373 @Not_Ready
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17373
 Scenario: EvergreenJnr_ApplicationsList_CheckThatLoadingIndicatorAppearsInTheSamePlace
 	When User clicks "Applications" on the left-hand menu
 	Then "All Applications" list should be displayed to the user

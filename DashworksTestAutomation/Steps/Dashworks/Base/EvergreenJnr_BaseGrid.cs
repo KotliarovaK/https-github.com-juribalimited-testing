@@ -55,8 +55,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             }
         }
 
-        [Then(@"Content is displayed in the ""(.*)"" column")]
-        public void ThenContentIsDisplayedInTheColumn(string columnName, Table table)
+        [Then(@"Content in the '(.*)' column is equal to")]
+        public void ThenContentInTheColumnIsEqualTo(string columnName, Table table)
         {
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitForDataLoading();
@@ -65,6 +65,21 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var expectedList = table.Rows.Select(x => x["Content"]).ToList();
             Verify.IsTrue(columnContent.SequenceEqual(expectedList),
                 $"Expected content is not present in the '{columnName}' column");
+        }
+
+        [Then(@"'(.*)' column contains following content")]
+        public void ThenColumnContainsFollowingContent(string columnName, Table table)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForDataLoading();
+            var column = page.GetColumnContentByColumnName(columnName).ToList();
+            var columnContent = column.Select(x => x.Text).ToList();
+            var expectedList = table.Rows.Select(x => x["Content"]).ToList();
+            foreach (string content in expectedList)
+            {
+                Verify.IsTrue(columnContent.Contains(content),
+                    $"'{content}' content is not displayed in the '{columnName}' column");
+            }
         }
 
         [When(@"User doubleclicks on '(.*)' cell from '(.*)' column")]

@@ -102,7 +102,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingBucketFromUseEvergreenBucketsToCloneEve
 	When User clicks String Filter button for "Project" column on the Admin page
 	When User selects "1MailboxesProject" checkbox from String Filter with item list on the Admin page
 	Then Rows counter contains "1" found row of all rows
-	Then "Unassigned" text is displayed in the table content
+	Then "Unassigned" content is displayed in the "Bucket" column
 	When User clicks "Projects" link on the Admin page
 	When User enters "1MailboxesProject" text in the Search field for "Project" column
 	And User clicks content from "Project" column
@@ -123,7 +123,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingBucketFromUseEvergreenBucketsToCloneEve
 	When User clicks String Filter button for "Project" column on the Admin page
 	When User selects "1MailboxesProject" checkbox from String Filter with item list on the Admin page
 	Then Rows counter contains "1" found row of all rows
-	Then "Unassigned" text is displayed in the table content
+	Then "Unassigned" content is displayed in the "Bucket" column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13530 @Projects @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatNoAdditionalCapacityUnitsAreCreatedWhenChangingCapacityUnitsMode
@@ -134,19 +134,19 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoAdditionalCapacityUnitsAreCreatedWhe
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "13530Project" in the "Project Name" field
-	When User selects "All Devices" in the Scope Project dropdown
+	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks "Evergreen" link on the Admin page
-	When User clicks "Capacity Units" tab
-	When User clicks String Filter button for "Project" column on the Admin page
-	When User selects "Evergreen" checkbox from String Filter with item list on the Admin page
-	When User clicks String Filter button for "Project" column on the Admin page
-	When User selects "13530Project" checkbox from String Filter with item list on the Admin page
+	And User clicks "Capacity Units" tab
+	And User clicks String Filter button for "Project" column on the Admin page
+	And User selects "Evergreen" checkbox from String Filter with item list on the Admin page
+	And User clicks String Filter button for "Project" column on the Admin page
+	And User selects "13530Project" checkbox from String Filter with item list on the Admin page
 	Then Rows counter contains "1" found row of all rows
-	Then "Unassigned" text is displayed in the table content
+	And "Unassigned" content is displayed in the "Capacity Unit" column
 	When User clicks "Projects" link on the Admin page
-	When User enters "13530Project" text in the Search field for "Project" column
+	And User enters "13530Project" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	Then Project "13530Project" is displayed to user
 	When User clicks "Capacity" tab
@@ -154,11 +154,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoAdditionalCapacityUnitsAreCreatedWhe
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The project capacity details have been updated" text
 	When User clicks "Administration" navigation link on the Admin page
-	When User clicks "Evergreen" link on the Admin page
-	When User clicks "Capacity Units" tab
-	When User clicks String Filter button for "Project" column on the Admin page
-	When User selects "Evergreen" checkbox from String Filter with item list on the Admin page
-	When User clicks String Filter button for "Project" column on the Admin page
-	When User selects "13530Project" checkbox from String Filter with item list on the Admin page
+	And User clicks "Evergreen" link on the Admin page
+	And User clicks "Capacity Units" tab
+	And User clicks String Filter button for "Project" column on the Admin page
+	And User selects "Evergreen" checkbox from String Filter with item list on the Admin page
+	And User clicks String Filter button for "Project" column on the Admin page
+	And User selects "13530Project" checkbox from String Filter with item list on the Admin page
 	Then Rows counter contains "1" found row of all rows
-	Then "Unassigned" text is displayed in the table content
+	Then "Unassigned" content is displayed in the "Capacity Unit" column

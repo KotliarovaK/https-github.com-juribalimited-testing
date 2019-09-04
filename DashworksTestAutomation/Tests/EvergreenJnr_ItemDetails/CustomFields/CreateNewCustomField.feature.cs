@@ -632,7 +632,7 @@ this.FeatureBackground();
             table11.AddRow(new string[] {
                         "FlDAS17614_4"});
 #line 118
- testRunner.And("Content is displayed in the \"Custom Field\" column", ((string)(null)), table11, "And ");
+ testRunner.And("Content in the \'Custom Field\' column is equal to", ((string)(null)), table11, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                         "Content"});
@@ -641,7 +641,7 @@ this.FeatureBackground();
             table12.AddRow(new string[] {
                         "Value_17614"});
 #line 122
- testRunner.And("Content is displayed in the \"Value\" column", ((string)(null)), table12, "And ");
+ testRunner.And("Content in the \'Value\' column is equal to", ((string)(null)), table12, "And ");
 #line 126
  testRunner.And("\"Custom Fields\" tab is displayed on left menu on the Details page and contains \'2" +
                     "\' count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -776,7 +776,7 @@ this.FeatureBackground();
             table16.AddRow(new string[] {
                         "FlDAS17695_2"});
 #line 151
- testRunner.And("Content is displayed in the \"Custom Field\" column", ((string)(null)), table16, "And ");
+ testRunner.And("Content in the \'Custom Field\' column is equal to", ((string)(null)), table16, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
                         "Content"});
@@ -787,7 +787,7 @@ this.FeatureBackground();
             table17.AddRow(new string[] {
                         "ValueDAS17695_2C"});
 #line 156
- testRunner.And("Content is displayed in the \"Value\" column", ((string)(null)), table17, "And ");
+ testRunner.And("Content in the \'Value\' column is equal to", ((string)(null)), table17, "And ");
 #line 161
  testRunner.And("Grid is not grouped", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 162

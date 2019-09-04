@@ -428,7 +428,7 @@ this.FeatureBackground();
             table11.AddRow(new string[] {
                         "Advert - A0123BFF"});
 #line 102
- testRunner.And("Content is displayed in the \"Advertisement\" column", ((string)(null)), table11, "And ");
+ testRunner.And("Content in the \'Advertisement\' column is equal to", ((string)(null)), table11, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                         "Content"});
@@ -437,7 +437,7 @@ this.FeatureBackground();
             table12.AddRow(new string[] {
                         "Collection A011618A"});
 #line 106
- testRunner.And("Content is displayed in the \"Collection\" column", ((string)(null)), table12, "And ");
+ testRunner.And("Content in the \'Collection\' column is equal to", ((string)(null)), table12, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                         "Content"});
@@ -446,7 +446,7 @@ this.FeatureBackground();
             table13.AddRow(new string[] {
                         "Install"});
 #line 110
- testRunner.And("Content is displayed in the \"Program\" column", ((string)(null)), table13, "And ");
+ testRunner.And("Content in the \'Program\' column is equal to", ((string)(null)), table13, "And ");
 #line 114
  testRunner.When("User clicks String Filter button for \"Compliance\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
