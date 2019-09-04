@@ -121,7 +121,7 @@ Examples:
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS15758 @DAS15328
 Scenario Outline: EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_NumericValues
 	When User clicks "<List>" on the left-hand menu
-	Then "<List>" list should be displayed to the user
+	Then "<ListLabel>" list should be displayed to the user
 	When User navigates to Pivot
 	And User selects the following Row Groups on Pivot:
 	| RowGroups               |
@@ -149,11 +149,11 @@ Scenario Outline: EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCap
 	Then "<AvgAggregateFunctions>" is displayed in the columns for aggregate functions
 
 Examples:
-	| List         | AddValues                | CountAggregateFunctions         | SumAggregateFunctions         | MinAggregateFunctions         | MaxAggregateFunctions         | AvgAggregateFunctions         |
-	| Devices      | HDD Count                | Count(HDD Count)                | Sum(HDD Count)                | Min(HDD Count)                | Max(HDD Count)                | Avg(HDD Count)                |
-	| Users        | Device Count             | Count(Device Count)             | Sum(Device Count)             | Min(Device Count)             | Max(Device Count)             | Avg(Device Count)             |
-	| Applications | 1803: Current User Count | Count(1803: Current User Count) | Sum(1803: Current User Count) | Min(1803: Current User Count) | Max(1803: Current User Count) | Avg(1803: Current User Count) |
-	| Mailboxes    | Associated Item Count    | Count(Associated Item Count)    | Sum(Associated Item Count)    | Min(Associated Item Count)    | Max(Associated Item Count)    | Avg(Associated Item Count)    |
+	| List         | ListLabel        | AddValues                | CountAggregateFunctions         | SumAggregateFunctions         | MinAggregateFunctions         | MaxAggregateFunctions         | AvgAggregateFunctions         |
+	| Devices      | All Devices      | HDD Count                | Count(HDD Count)                | Sum(HDD Count)                | Min(HDD Count)                | Max(HDD Count)                | Avg(HDD Count)                |
+	| Users        | All Users        | Device Count             | Count(Device Count)             | Sum(Device Count)             | Min(Device Count)             | Max(Device Count)             | Avg(Device Count)             |
+	| Applications | All Applications | 1803: Current User Count | Count(1803: Current User Count) | Sum(1803: Current User Count) | Min(1803: Current User Count) | Max(1803: Current User Count) | Avg(1803: Current User Count) |
+	| Mailboxes    | All Mailboxes    | Associated Item Count    | Count(Associated Item Count)    | Sum(Associated Item Count)    | Min(Associated Item Count)    | Max(Associated Item Count)    | Avg(Associated Item Count)    |
 
 @Evergreen @DevicesLists @EvergreenJnr_Pivot @Pivot @DAS14263 @DAS16403 @DAS16407
 Scenario: EvergreenJnr_DevicesLists_CheckAddTeamsPermissionsOnDetailsPanel
