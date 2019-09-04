@@ -29,7 +29,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.Contains(textContent, columnContent, $"'{textContent}' is not present in the '{columnName}' column");
         }
 
-        [Then(@"""(.*)"" content is not displayed in the ""(.*)"" column")]
+        [Then(@"'(.*)' content is not displayed in the '(.*)' column")]
         public void ThenContentIsNotDisplayedInTheColumn(string textContent, string columnName)
         {
             var page = _driver.NowAt<BaseGridPage>();
