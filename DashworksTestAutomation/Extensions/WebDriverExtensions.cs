@@ -467,6 +467,22 @@ namespace DashworksTestAutomation.Extensions
             return result;
         }
 
+        public static void ScrollGridToTheEnd(this RemoteWebDriver driver)
+        {
+            var gridElement = driver.FindElement(By.CssSelector(".ag-body-viewport"));
+            IJavaScriptExecutor ex = driver;
+
+            var clientHeight = int.Parse(ex.ExecuteScript("return arguments[0].clientHeight", gridElement).ToString());
+            var scrollHeight = int.Parse(ex.ExecuteScript("return arguments[0].scrollHeight", gridElement).ToString());
+
+            for (int i = 0; i < scrollHeight / clientHeight; i++)
+            {
+                ex.ExecuteScript($"arguments[0].scrollTo(0,{clientHeight * i});", gridElement);
+            }
+            //Final scroll to get to the grid bottom
+            ex.ExecuteScript($"arguments[0].scrollTo(0,{scrollHeight});", gridElement);
+        }
+
         #endregion Actions with Javascript
 
         #region JavaSctipt Alert
