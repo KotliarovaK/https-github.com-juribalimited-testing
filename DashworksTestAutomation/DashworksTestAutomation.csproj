@@ -234,8 +234,8 @@
     <Compile Include="Pages\Evergreen\ItemDetails\ActionPanelPage.cs" />
     <Compile Include="Pages\Evergreen\ItemDetails\AggridHeaderCounterElement.cs" />
     <Compile Include="Pages\Evergreen\ItemDetails\CustomFields\CustomFieldPopup.cs" />
-    <Compile Include="Pages\Evergreen\ItemDetails\ItemDetails_OffboardElementsPage.cs" />
-    <Compile Include="Pages\Evergreen\ItemDetails\ItemDetails_TopBarPage.cs" />
+    <Compile Include="Pages\Evergreen\ItemDetails\ItemDetailsOffboardElementsPage.cs" />
+    <Compile Include="Pages\Evergreen\ItemDetails\ItemDetailsTopBarPage.cs" />
     <Compile Include="Pages\Evergreen\ItemDetails\NavigationElements.cs" />
     <Compile Include="Pages\Evergreen\ItemDetails\TabContent.cs" />
     <Compile Include="Pages\Evergreen\LeavePageWarning.cs" />
@@ -400,7 +400,7 @@
     <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_ActionsPanel.cs" />
     <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_AggridHeaderCounter.cs" />
     <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_Navigation.cs" />
-    <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_OffboardElements.cs" />
+    <Compile Include="Steps\Dashworks\ItemDetailsPage\ItemDetailsPageOffboardElements.cs" />
     <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_TabContent.cs" />
     <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_TopBar.cs" />
     <Compile Include="Steps\Dashworks\Login\BaseLoginActions.cs" />
@@ -1073,7 +1073,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ItemDetailsContent_ActionsWithTable.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsTopToolsBar\Offboard.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_ItemDetails\ProjectDetails\Offboard.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Offboard.feature</DependentUpon>
@@ -1113,7 +1113,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ItemDetails_TabsMenu.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsTopToolsBar\Relink.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_ItemDetails\ProjectDetails\Relink.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Relink.feature</DependentUpon>
@@ -1910,7 +1910,7 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ItemDetailsContent_ActionsWithTable.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsTopToolsBar\Offboard.feature">
+    <None Include="Tests\EvergreenJnr_ItemDetails\ProjectDetails\Offboard.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Offboard.feature.cs</LastGenOutput>
     </None>
@@ -1942,7 +1942,7 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ItemDetails_TabsMenu.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsTopToolsBar\Relink.feature">
+    <None Include="Tests\EvergreenJnr_ItemDetails\ProjectDetails\Relink.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Relink.feature.cs</LastGenOutput>
     </None>

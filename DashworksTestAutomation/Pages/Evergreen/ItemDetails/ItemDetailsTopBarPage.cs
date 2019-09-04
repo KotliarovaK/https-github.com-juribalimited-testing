@@ -10,7 +10,7 @@ using SeleniumExtras.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
 {
-    internal class ItemDetails_TopBarPage : SeleniumBasePage
+    internal class ItemDetailsTopBarPage : SeleniumBasePage
     {
         public const string ProjectOnSwitcherPanel = ".//mat-option[@class='mat-option ng-star-inserted']";
 

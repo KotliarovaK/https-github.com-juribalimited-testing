@@ -10,7 +10,7 @@ using SeleniumExtras.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
 {
-    class ItemDetails_OffboardElementsPage : SeleniumBasePage
+    class ItemDetailsOffboardElementsPage : SeleniumBasePage
     {
         [FindsBy(How = How.XPath, Using = ".//mat-dialog-container[contains(@class, 'dialogContainer')]")]
         public IWebElement OffboardPopUp { get; set; }
@@ -23,6 +23,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
             {
                 SelectorFor(this, p => p.OffboardPopUp)
             };
+        }
+
+        public string GetPopupText()
+        {
+            return Driver.FindElement(By.XPath(".//div[@class='mat-dialog-content']")).Text;
         }
     }
 }

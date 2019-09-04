@@ -29,28 +29,28 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         [When(@"User clicks by Project Switcher in the Top bar on Item details page")]
         public void WhenUserClicksByProjectSwitcherInTheTopBarOnItemDetailsPage()
         {
-            var topBar = _driver.NowAt<ItemDetails_TopBarPage>();
+            var topBar = _driver.NowAt<ItemDetailsTopBarPage>();
             topBar.ProjectSwitcherDropdownTopBar.Click();
         }
 
         [Then(@"Project Switcher in the Top bar on Item details page is open")]
         public void ThenProjectSwitcherInTheTopBarOnItemDetailsPageIsOpen()
         {
-            var topBar = _driver.NowAt<ItemDetails_TopBarPage>();
+            var topBar = _driver.NowAt<ItemDetailsTopBarPage>();
             Utils.Verify.IsTrue(topBar.GetProjectSwitcherDisplayedState(), "Project Switcher panel should be displayed for User!");
         }
 
         [Then(@"Project Switcher in the Top bar on Item details page is closed")]
         public void ThenProjectSwitcherInTheTopBarOnItemDetailsPageIsClosed()
         {
-            var topBar = _driver.NowAt<ItemDetails_TopBarPage>();
+            var topBar = _driver.NowAt<ItemDetailsTopBarPage>();
             Utils.Verify.IsFalse(topBar.GetProjectSwitcherDisplayedState(), "Project Switcher panel should not be displayed for User!");
         }
 
         [When(@"User switches to the ""(.*)"" project in the Top bar on Item details page")]
         public void WhenUserSwitchesToTheProjectInTheTopBarOnItemDetailsPage(string projectName)
         {
-            var topBar = _driver.NowAt<ItemDetails_TopBarPage>();
+            var topBar = _driver.NowAt<ItemDetailsTopBarPage>();
             topBar.ProjectSwitcherDropdownTopBar.Click();
 
             var action = _driver.NowAt<BaseDashboardPage>();
@@ -65,14 +65,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         [Then(@"""(.*)"" project is selected in the Top bar on Item details page")]
         public void ThenProjectIsSelectedInTheTopBarOnItemDetailsPage(string projectName)
         {
-            var topBar = _driver.NowAt<ItemDetails_TopBarPage>();
+            var topBar = _driver.NowAt<ItemDetailsTopBarPage>();
             Utils.Verify.IsTrue(topBar.GetSelectedProjectOnTopBarByName(projectName).Displayed(), $"{projectName} project is not displayed in Top Bar");
         }
 
         [Then(@"projects on the Project Switcher panel are displayed in alphabetical order")]
         public void ThenProjectsOnTheProjectSwitcherPanelAreDisplayedInAlphabeticalOrder()
         {
-            var topBar = _driver.NowAt<ItemDetails_TopBarPage>();
+            var topBar = _driver.NowAt<ItemDetailsTopBarPage>();
 
             topBar.ProjectSwitcherDropdownTopBar.Click();
 
@@ -94,7 +94,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         [Then(@"following Compliance items are displayed in Top bar on the Item details page:")]
         public void ThenFollowingComplianceItemsAreDisplayedInTopBarOnTheItemDetailsPage(Table table)
         {
-            var topBar = _driver.NowAt<ItemDetails_TopBarPage>();
+            var topBar = _driver.NowAt<ItemDetailsTopBarPage>();
             _driver.WaitForDataLoadingInTopBarOnItemDetailsPage();
 
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
@@ -105,7 +105,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         [Then(@"following Compliance items with appropriate colors are displayed in Top bar on the Item details page:")]
         public void ThenFollowingComplianceItemsWithAppropriateColorsAreDisplayedInTopBarOnTheItemDetailsPage(Table table)
         {
-            var topBar = _driver.NowAt<ItemDetails_TopBarPage>();
+            var topBar = _driver.NowAt<ItemDetailsTopBarPage>();
 
             foreach (var row in table.Rows)
             {
@@ -117,7 +117,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         [Then(@"No one Compliance items are displayed for the User in Top bar on the Item details page")]
         public void ThenNoOneComplianceItemsAreDisplayedForTheUserInTopBarOnTheItemDetailsPage()
         {
-            var topBar = _driver.NowAt<ItemDetails_TopBarPage>();
+            var topBar = _driver.NowAt<ItemDetailsTopBarPage>();
 
             var actualList = topBar.GetComplianceItemsOnTopBar();
             Utils.Verify.IsEmpty(actualList, "Compliance items in Top bar on the Item details page is incorrect!");
@@ -126,7 +126,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         [Then(@"Top bar on the Item details page is not displayed")]
         public void ThenTopBarOnTheItemDetailsPageIsNotDisplayed()
         {
-            var topBar = _driver.NowAt<ItemDetails_TopBarPage>();
+            var topBar = _driver.NowAt<ItemDetailsTopBarPage>();
 
             Utils.Verify.IsFalse(topBar.TopBarOnItemDetailsPage.Displayed(), "Top bar should not be displayed!");
         }
@@ -134,7 +134,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         [Then(@"Value column of Item Details has no Unknown item")]
         public void ThenValueColumnOfItemDetailsHasNoUnknownItem()
         {
-            var page = _driver.NowAt<ItemDetails_TopBarPage>();
+            var page = _driver.NowAt<ItemDetailsTopBarPage>();
 
             var listOfValues = page.GetValuesColumnDataOfItemDetails().Select(x => x.Text).ToList();
             Utils.Verify.That(listOfValues, Does.Not.Contain("Unknown"), "Unknown item displayed in column");

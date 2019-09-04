@@ -119,6 +119,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             Logger.Write($"{buttonName} button was clicked");
         }
 
+        [When(@"User clicks '(.*)' button in the warning message")]
+        public void WhenUserClicksButtonInTheWarningMessage(string buttonName)
+        {
+            var button = _driver.NowAt<BaseGridPage>();
+            button.GetMessageButtonByName(buttonName).Click();
+            Logger.Write($"{buttonName} button was clicked");
+        }
+
         [When(@"User close message on the Admin page")]
         public void WhenUserCloseMessageOnTheAdminPage()
         {
@@ -162,15 +170,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             _driver.WaitForElementToContainsText(page.ErrorMessage, text);
             Utils.Verify.AreEqual("rgba(242, 88, 49, 1)", page.GetErrorMessageColor(), "Colors do not match!"); //Red color
             Utils.Verify.AreEqual(text, page.ErrorMessage.Text, "Error Message is not displayed");
-        }
-
-        [When(@"User clicks '(.*)' button in the warning message")]
-        public void WhenUserClicksButtonInTheWarningMessage(string buttonName)
-        {
-            var button = _driver.NowAt<BaseGridPage>();
-            _driver.WaitForElementToBeDisplayed(button.WarningMessage);
-            button.GetMessageButtonByName(buttonName).Click();
-            Logger.Write($"{buttonName} button was clicked");
         }
 
         [Then(@"""(.*)"" error in the Scope Changes displayed to the User")]

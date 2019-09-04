@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails.ItemDetailsTopToolsBar
+namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails.ProjectDetails
 {
     using TechTalk.SpecFlow;
     
@@ -402,6 +402,70 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindo" +
+            "w")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("AllLists")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
+        [NUnit.Framework.CategoryAttribute("Offboard")]
+        [NUnit.Framework.CategoryAttribute("DAS17964")]
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
+        [NUnit.Framework.TestCaseAttribute("Devices", "All Devices", "001BAQXT6JWFPI", "Hostname", "USE ME FOR AUTOMATION(DEVICE SCHDLD)", "Offboarding device 001BAQXT6JWFPI. Select any associated users below to offboard " +
+            "at the same time. Offboarding an object deletes all project related information " +
+            "about it.", null)]
+        [NUnit.Framework.TestCaseAttribute("Devices", "All Devices", "001BAQXT6JWFPI", "Hostname", "USE ME FOR AUTOMATION(USR SCHDLD)", "Offboarding device 001BAQXT6JWFPI. Offboarding an object deletes all project rela" +
+            "ted information about it.", null)]
+        [NUnit.Framework.TestCaseAttribute("Users", "All Users", "0088FC8A50DD4344B92", "Username", "USE ME FOR AUTOMATION(USR SCHDLD)", "Offboarding user BCLABS\\0088FC8A50DD4344B92 (Barland, Steinar). Offboarding an ob" +
+            "ject deletes all project related information about it.", null)]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "All Mailboxes", "alex.cristea@juriba.com", "Email Address", "Email Migration", "Offboarding mailbox alex.cristea@juriba.com (Alex Cristea). Offboarding an object" +
+            " deletes all project related information about it.", null)]
+        public virtual void EvergreenJnr_AllLists_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindow(string pageName, string loadedPage, string itemName, string columnName, string projectName, string text, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "AllLists",
+                    "EvergreenJnr_ItemDetails",
+                    "Offboard",
+                    "DAS17964",
+                    "Not_Ready"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindo" +
+                    "w", null, @__tags);
+#line 99
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 100
+ testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 101
+ testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", loadedPage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 102
+ testRunner.When(string.Format("User perform search by \"{0}\"", itemName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 103
+ testRunner.And(string.Format("User click content from \"{0}\" column", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 104
+ testRunner.Then(string.Format("Details page for \"{0}\" item is displayed to the user", itemName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 105
+ testRunner.When(string.Format("User switches to the \"{0}\" project in the Top bar on Item details page", projectName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 106
+ testRunner.And("User navigates to the \"Projects\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 107
+ testRunner.And("User navigates to the \"Project Details\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 108
+ testRunner.And("User clicks the \"OFFBOARD\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 109
+ testRunner.Then("Offboard Pop-up is displayed on the Item Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 110
+ testRunner.Then(string.Format("following text \'{0}\' is displayed in Offboard Pop-up", text), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

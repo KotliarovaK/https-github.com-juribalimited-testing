@@ -353,7 +353,7 @@ this.FeatureBackground();
  testRunner.Then("Warning message with \"Are you sure you wish to run 1 automation?\" text is display" +
                     "ed on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 88
- testRunner.When("User clicks \"RUN\" button in the warning message on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'RUN\' button in the warning message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 89
  testRunner.Then("Success message is displayed and contains \"1 automation started,\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 90
@@ -1867,7 +1867,7 @@ this.FeatureBackground();
  testRunner.Then("Warning message with \"Are you sure you wish to run 2 automations?\" text is displa" +
                     "yed on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 555
- testRunner.When("User clicks \"RUN\" button in the warning message on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'RUN\' button in the warning message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 556
  testRunner.Then("Success message is displayed and contains \"2 automations started,\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 557
@@ -1953,7 +1953,7 @@ this.FeatureBackground();
 #line 573
  testRunner.When("User clicks the \"RUN\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 574
- testRunner.When("User clicks \"RUN\" button in the warning message on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'RUN\' button in the warning message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 575
  testRunner.Then("Success message is displayed and contains \"1 automation started,\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 576
@@ -1967,7 +1967,7 @@ this.FeatureBackground();
 #line 580
  testRunner.When("User clicks the \"RUN\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 581
- testRunner.When("User clicks \"RUN\" button in the warning message on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'RUN\' button in the warning message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 582
  testRunner.Then("Success message is displayed and contains \"1 automation started,\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
