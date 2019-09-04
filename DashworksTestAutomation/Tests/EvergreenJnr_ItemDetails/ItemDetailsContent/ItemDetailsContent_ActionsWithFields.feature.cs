@@ -208,12 +208,10 @@ this.FeatureBackground();
 #line 24
  testRunner.And("User click content from \"Hostname\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 25
- testRunner.When("User navigates to the \"Details\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 26
  testRunner.When("User navigates to the \"Device Owner\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 27
+#line 26
  testRunner.And("User clicks \"Tricia G. Huang\" link on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 28
+#line 27
  testRunner.Then("Details page for \"LFA418191 (Tricia G. Huang)\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -273,30 +271,30 @@ this.FeatureBackground();
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatTextInKeyValueGridsIsSelectableOnDetailsPage", null, @__tags);
-#line 31
+#line 30
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 32
+#line 31
  testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 32
+ testRunner.Then(string.Format("\"All {0}\" list should be displayed to the user", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 33
- testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 34
  testRunner.When(string.Format("User perform search by \"{0}\"", searchTerm), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 35
+#line 34
  testRunner.And(string.Format("User click content from \"{0}\" column", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 36
+#line 35
  testRunner.When(string.Format("User navigates to the \"{0}\" main-menu on the Details page", mainTabName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 37
+#line 36
  testRunner.When(string.Format("User navigates to the \"{0}\" sub-menu on the Details page", subTabName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 38
+#line 37
  testRunner.And(string.Format("User selects \"{0}\" text from key value grid on the Details Page", keyToBeSelected), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 39
+#line 38
  testRunner.Then(string.Format("\"{0}\" text selected from key value grid on the Details Page", keyToBeSelected), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 40
+#line 39
  testRunner.When(string.Format("User selects \"{0}\" text from key value grid on the Details Page", valueToBeSelected), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 41
+#line 40
  testRunner.Then(string.Format("\"{0}\" text selected from key value grid on the Details Page", valueToBeSelected), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -346,22 +344,22 @@ this.FeatureBackground();
                         "ItemDetailsDisplay",
                         "DAS13341",
                         "archived"});
-#line 52
+#line 51
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 53
+#line 52
  testRunner.When("User type \"NL00G001\" in Global Search Field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 54
+#line 53
  testRunner.Then("User clicks on \"NL00G001\" search result", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 55
+#line 54
  testRunner.When("User selects \"Description\" text from key value grid on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 56
+#line 55
  testRunner.Then("\"Description\" text selected from key value grid on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 57
+#line 56
  testRunner.When("User selects \"Unknown\" text from key value grid on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 58
+#line 57
  testRunner.Then("\"Unknown\" text selected from key value grid on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -415,26 +413,24 @@ this.FeatureBackground();
                         "DAS12690",
                         "DAS12321",
                         "DAS14923"});
-#line 61
+#line 60
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 62
+#line 61
  testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 63
+#line 62
  testRunner.Then("\"All Mailboxes\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 64
+#line 63
  testRunner.When("User perform search by \"Joel T. Hartman\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 65
+#line 64
  testRunner.And("User click content from \"Email Address\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 66
- testRunner.When("User navigates to the \"Details\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 67
+#line 65
  testRunner.When("User navigates to the \"Mailbox Owner\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 68
+#line 66
  testRunner.And("User clicks \"hartmajt\" link on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 69
+#line 67
  testRunner.Then("Details object page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -484,65 +480,65 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS17180"});
-#line 72
+#line 70
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 73
+#line 71
  testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 74
+#line 72
  testRunner.Then("\"All Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 75
+#line 73
  testRunner.When("User perform search by \"001BAQXT6JWFPI\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 76
+#line 74
  testRunner.And("User click content from \"Hostname\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 77
+#line 75
  testRunner.And("User navigates to the \"Details\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 78
+#line 76
  testRunner.And("User navigates to the \"Device Owner\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 79
+#line 77
  testRunner.And("User clicks \"QLL295118\" link on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 80
+#line 78
  testRunner.Then("Details page for \"QLL295118 (Nicole P. Braun)\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 81
+#line 79
  testRunner.And("URL contains \"user/23726/details/user\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 82
+#line 80
  testRunner.And("User click back button in the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 83
+#line 81
  testRunner.And("Details page for \"001BAQXT6JWFPI\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 84
+#line 82
  testRunner.When("User switches to the \"Havoc (Big Data)\" project in the Top bar on Item details pa" +
                     "ge", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 85
+#line 83
  testRunner.And("User navigates to the \"Details\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 86
+#line 84
  testRunner.And("User navigates to the \"Device Owner\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 87
+#line 85
  testRunner.And("User clicks \"QLL295118\" link on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 88
+#line 86
  testRunner.Then("Details page for \"QLL295118 (Nicole P. Braun)\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 89
+#line 87
  testRunner.And("\"Havoc (Big Data)\" project is selected in the Top bar on Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 90
+#line 88
  testRunner.And("URL contains \"user/23726/details/user?$projectId=43\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 91
+#line 89
  testRunner.And("User click back button in the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 92
+#line 90
  testRunner.And("Details page for \"001BAQXT6JWFPI\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 93
+#line 91
  testRunner.And("\"Havoc (Big Data)\" project is selected in the Top bar on Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 94
+#line 92
  testRunner.When("User navigates to the \"Applications\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 95
+#line 93
  testRunner.And("User clicks \"Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" +
                     "\" link on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 96
+#line 94
  testRunner.Then("Details page for \"Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Di" +
                     "alogs\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 97
+#line 95
  testRunner.And("\"Havoc (Big Data)\" project is selected in the Top bar on Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 98
+#line 96
  testRunner.And("URL contains \"application/373/details/application?$projectId=43\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -606,168 +602,168 @@ this.FeatureBackground();
                         "DAS16824",
                         "DAS17093",
                         "Cleanup"});
-#line 101
+#line 99
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 102
+#line 100
  testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 103
+#line 101
  testRunner.Then("Admin page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 104
+#line 102
  testRunner.When("User clicks \"Evergreen\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 105
+#line 103
  testRunner.When("User clicks \"Buckets\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 106
+#line 104
  testRunner.Then("\"Buckets\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 107
+#line 105
  testRunner.When("User clicks the \"CREATE EVERGREEN BUCKET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 108
+#line 106
  testRunner.Then("\"Create Evergreen Bucket\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 109
+#line 107
  testRunner.When("User enters \"Bucket12883\" in the \"Bucket Name\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 110
+#line 108
  testRunner.And("User selects \"My Team\" team in the Team dropdown on the Buckets page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 111
+#line 109
  testRunner.And("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 112
+#line 110
  testRunner.Then("Success message is displayed and contains \"The bucket has been created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 115
+#line 113
  testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 116
+#line 114
  testRunner.Then("\"All Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 117
+#line 115
  testRunner.When("User perform search by \"01ERDGD48UDQKE\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 118
+#line 116
  testRunner.And("User click content from \"Hostname\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 117
+ testRunner.Then("Details object page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 118
+ testRunner.When("User navigates to the \"Projects\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 119
- testRunner.Then("Details object page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("User clicks on \"Unassigned\" link for Evergreen Bucket field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 120
- testRunner.When("User navigates to the \"Projects\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("popup changes window opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 121
- testRunner.And("User clicks on \"Unassigned\" link for Evergreen Bucket field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 122
- testRunner.Then("popup changes window opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 123
  testRunner.And("User clicks on \"New Bucket\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 124
+#line 122
  testRunner.When("User select \"Bucket12883\" value on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 125
+#line 123
  testRunner.And("User opens \"Related Users\" section on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 124
+ testRunner.And("User selects all rows on the grid on the Details Page for \"Related Users\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 125
+ testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 126
- testRunner.And("User selects all rows on the grid on the Details Page for \"Related Users\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("\"Bucket12883\" link is displayed on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 127
- testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 128
- testRunner.Then("\"Bucket12883\" link is displayed on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 129
- testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User clicks on \"Bucket12883\" link on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 130
+ testRunner.Then("popup changes window opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 131
- testRunner.When("User clicks on \"Bucket12883\" link on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects all rows on the grid on the Details Page for \"Related Users\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 132
- testRunner.Then("popup changes window opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("User clicks on \"New Bucket\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 133
- testRunner.When("User selects all rows on the grid on the Details Page for \"Related Users\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User select \"[Unassigned]\" value on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 134
- testRunner.Then("User clicks on \"New Bucket\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 135
- testRunner.When("User select \"[Unassigned]\" value on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("\"Unassigned\" link is displayed on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 136
- testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 137
- testRunner.Then("\"Unassigned\" link is displayed on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 138
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 141
+#line 139
  testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 142
+#line 140
  testRunner.Then("\"All Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 143
+#line 141
  testRunner.When("User perform search by \"00DBB114BE1B41B0A38\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 144
+#line 142
  testRunner.And("User click content from \"Username\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 143
+ testRunner.Then("Details object page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 144
+ testRunner.When("User navigates to the \"Projects\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 145
- testRunner.Then("Details object page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("User clicks on \"Unassigned\" link for Evergreen Bucket field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 146
- testRunner.When("User navigates to the \"Projects\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("popup changes window opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 147
- testRunner.And("User clicks on \"Unassigned\" link for Evergreen Bucket field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 148
- testRunner.Then("popup changes window opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 149
  testRunner.When("User opens \"Related Mailboxes\" section on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 148
+ testRunner.And("User selects all rows on the grid on the Details Page for \"Related Mailboxes\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 149
+ testRunner.Then("User clicks on \"New Bucket\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 150
- testRunner.And("User selects all rows on the grid on the Details Page for \"Related Mailboxes\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User select \"Bucket12883\" value on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 151
- testRunner.Then("User clicks on \"New Bucket\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 152
- testRunner.When("User select \"Bucket12883\" value on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("\"Bucket12883\" link is displayed on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 153
- testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 154
- testRunner.Then("\"Bucket12883\" link is displayed on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 155
- testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 157
  testRunner.When("User clicks on \"Bucket12883\" link on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 158
+#line 156
  testRunner.And("User selects all rows on the grid on the Details Page for \"Related Mailboxes\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 157
+ testRunner.Then("User clicks on \"New Bucket\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 158
+ testRunner.When("User select \"[Unassigned]\" value on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 159
- testRunner.Then("User clicks on \"New Bucket\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 160
- testRunner.When("User select \"[Unassigned]\" value on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("\"Unassigned\" link is displayed on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 161
- testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 162
- testRunner.Then("\"Unassigned\" link is displayed on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 163
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 166
+#line 164
  testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 167
+#line 165
  testRunner.Then("\"All Mailboxes\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 168
+#line 166
  testRunner.When("User perform search by \"0845467C65E5438D83E@bclabs.local\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 169
+#line 167
  testRunner.And("User click content from \"Email Address\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 170
+#line 168
  testRunner.Then("Details object page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 171
+#line 169
  testRunner.When("User navigates to the \"Projects\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 172
+#line 170
  testRunner.And("User clicks on \"Unassigned\" link for Evergreen Bucket field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 173
+#line 171
  testRunner.Then("popup changes window opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 174
+#line 172
  testRunner.When("User opens \"Related Users\" section on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 175
+#line 173
  testRunner.And("User selects all rows on the grid on the Details Page for \"Related Users\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 176
+#line 174
  testRunner.Then("User clicks on \"New Bucket\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 177
+#line 175
  testRunner.When("User select \"Bucket12883\" value on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 178
+#line 176
  testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 179
+#line 177
  testRunner.Then("\"Bucket12883\" link is displayed on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 180
+#line 178
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 182
+#line 180
  testRunner.When("User clicks on \"Bucket12883\" link on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 183
+#line 181
  testRunner.Then("popup changes window opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 184
+#line 182
  testRunner.When("User selects all rows on the grid on the Details Page for \"Related Users\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 185
+#line 183
  testRunner.Then("User clicks on \"New Bucket\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 186
+#line 184
  testRunner.When("User select \"[Unassigned]\" value on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 187
+#line 185
  testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 188
+#line 186
  testRunner.Then("\"Unassigned\" link is displayed on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 189
+#line 187
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -829,7 +825,7 @@ this.FeatureBackground();
                         "DAS13892",
                         "Cleanup",
                         "Not_Run"});
-#line 193
+#line 191
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -843,145 +839,145 @@ this.FeatureBackground();
                         "CapacityUnit12883",
                         "Devices",
                         "false"});
-#line 194
+#line 192
  testRunner.When("User creates new Capacity Unit via api", ((string)(null)), table1, "When ");
-#line 199
+#line 197
  testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 200
+#line 198
  testRunner.Then("\"All Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 201
+#line 199
  testRunner.When("User perform search by \"ZZNKKYW97AL4VS\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 202
+#line 200
  testRunner.And("User click content from \"Hostname\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 201
+ testRunner.Then("Details object page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 202
+ testRunner.When("User navigates to the \"Projects\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 203
- testRunner.Then("Details object page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("User clicks on \"Unassigned\" link for Evergreen Capacity Unit field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 204
- testRunner.When("User navigates to the \"Projects\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("popup changes window opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 205
- testRunner.And("User clicks on \"Unassigned\" link for Evergreen Capacity Unit field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User opens \"Related Users\" section on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 206
- testRunner.Then("popup changes window opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("User selects all rows on the grid on the Details Page for \"Related Users\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 207
- testRunner.When("User opens \"Related Users\" section on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("User clicks on \"New Capacity Unit\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 208
- testRunner.And("User selects all rows on the grid on the Details Page for \"Related Users\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User select \"CapacityUnit12883\" value on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 209
- testRunner.Then("User clicks on \"New Capacity Unit\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 210
- testRunner.When("User select \"CapacityUnit12883\" value on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("\"CapacityUnit12883\" link is displayed on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 211
- testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 212
- testRunner.Then("\"CapacityUnit12883\" link is displayed on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 213
- testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User clicks on \"CapacityUnit12883\" link on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 214
+ testRunner.Then("popup changes window opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 215
- testRunner.When("User clicks on \"CapacityUnit12883\" link on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects all rows on the grid on the Details Page for \"Related Users\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 216
- testRunner.Then("popup changes window opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("User clicks on \"New Capacity Unit\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 217
- testRunner.When("User selects all rows on the grid on the Details Page for \"Related Users\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User select \"[Unassigned]\" value on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 218
- testRunner.Then("User clicks on \"New Capacity Unit\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 219
- testRunner.When("User select \"[Unassigned]\" value on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("\"Unassigned\" link is displayed on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 220
- testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 221
- testRunner.Then("\"Unassigned\" link is displayed on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 222
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 225
+#line 223
  testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 226
+#line 224
  testRunner.Then("\"All Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 227
+#line 225
  testRunner.When("User perform search by \"00DBB114BE1B41B0A38\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 228
+#line 226
  testRunner.And("User click content from \"Username\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 227
+ testRunner.Then("Details object page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 228
+ testRunner.When("User navigates to the \"Projects\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 229
- testRunner.Then("Details object page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("User clicks on \"Unassigned\" link for Evergreen Capacity Unit field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 230
- testRunner.When("User navigates to the \"Projects\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("popup changes window opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 231
- testRunner.And("User clicks on \"Unassigned\" link for Evergreen Capacity Unit field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 232
- testRunner.Then("popup changes window opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 233
  testRunner.When("User opens \"Related Mailboxes\" section on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 234
+#line 232
  testRunner.And("User selects all rows on the grid on the Details Page for \"Related Mailboxes\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 233
+ testRunner.Then("User clicks on \"New Capacity Unit\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 234
+ testRunner.When("User select \"CapacityUnit12883\" value on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 235
- testRunner.Then("User clicks on \"New Capacity Unit\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 236
- testRunner.When("User select \"CapacityUnit12883\" value on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("\"CapacityUnit12883\" link is displayed on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 237
- testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 238
- testRunner.Then("\"CapacityUnit12883\" link is displayed on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 239
- testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User clicks on \"CapacityUnit12883\" link on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 240
+ testRunner.Then("popup changes window opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 241
- testRunner.When("User clicks on \"CapacityUnit12883\" link on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 242
- testRunner.Then("popup changes window opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 243
  testRunner.When("User selects all rows on the grid on the Details Page for \"Related Mailboxes\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 242
+ testRunner.Then("User clicks on \"New Capacity Unit\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 243
+ testRunner.When("User select \"[Unassigned]\" value on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 244
- testRunner.Then("User clicks on \"New Capacity Unit\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 245
- testRunner.When("User select \"[Unassigned]\" value on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("\"Unassigned\" link is displayed on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 246
- testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 247
- testRunner.Then("\"Unassigned\" link is displayed on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 248
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 251
+#line 249
  testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 252
+#line 250
  testRunner.Then("\"All Mailboxes\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 253
+#line 251
  testRunner.When("User perform search by \"0845467C65E5438D83E@bclabs.local\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 254
+#line 252
  testRunner.And("User click content from \"Email Address\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 255
+#line 253
  testRunner.Then("Details object page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 256
+#line 254
  testRunner.When("User navigates to the \"Projects\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 257
+#line 255
  testRunner.And("User clicks on \"Unassigned\" link for Evergreen Capacity Unit field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 258
+#line 256
  testRunner.Then("popup changes window opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 259
+#line 257
  testRunner.When("User opens \"Related Users\" section on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 260
+#line 258
  testRunner.And("User selects all rows on the grid on the Details Page for \"Related Users\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 261
+#line 259
  testRunner.Then("User clicks on \"New Capacity Unit\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 262
+#line 260
  testRunner.When("User select \"CapacityUnit12883\" value on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 263
+#line 261
  testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 264
+#line 262
  testRunner.Then("\"CapacityUnit12883\" link is displayed on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 265
+#line 263
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 267
+#line 265
  testRunner.When("User clicks on \"CapacityUnit12883\" link on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 268
+#line 266
  testRunner.Then("popup changes window opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 269
+#line 267
  testRunner.When("User selects all rows on the grid on the Details Page for \"Related Users\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 270
+#line 268
  testRunner.Then("User clicks on \"New Capacity Unit\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 271
+#line 269
  testRunner.When("User select \"[Unassigned]\" value on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 272
+#line 270
  testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 273
+#line 271
  testRunner.Then("\"Unassigned\" link is displayed on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 274
+#line 272
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -1047,37 +1043,37 @@ this.FeatureBackground();
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatProjectSummarySectionIsDisplayedSuccessfully", null, @__tags);
-#line 277
+#line 275
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 278
+#line 276
  testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 279
- testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 280
+#line 277
+ testRunner.Then(string.Format("\"All {0}\" list should be displayed to the user", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 278
  testRunner.When(string.Format("User perform search by \"{0}\"", itemName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 281
+#line 279
  testRunner.And(string.Format("User clicks content from \"{0}\" column", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 282
+#line 280
  testRunner.Then(string.Format("Details page for \"{0}\" item is displayed to the user", itemName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 283
+#line 281
  testRunner.When("User navigates to the \"Projects\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 284
+#line 282
  testRunner.And("User navigates to the \"Evergreen Details\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 285
+#line 283
  testRunner.Then("field with \"Project Count\" text is displayed in expanded tab on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 286
+#line 284
  testRunner.And("field with \"Evergreen Bucket\" text is displayed in expanded tab on the Details Pa" +
                     "ge", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 287
+#line 285
  testRunner.And("field with \"Evergreen Capacity Unit\" text is displayed in expanded tab on the Det" +
                     "ails Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 288
+#line 286
  testRunner.And("field with \"Evergreen Ring\" text is displayed in expanded tab on the Details Page" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 289
+#line 287
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -1125,18 +1121,18 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS14973"});
-#line 298
+#line 296
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 299
+#line 297
  testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 300
+#line 298
  testRunner.Then("\"All Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 301
+#line 299
  testRunner.When("User click content from \"Hostname\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 302
+#line 300
  testRunner.When("User navigates to the \"Details\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1145,7 +1141,7 @@ this.FeatureBackground();
             table2.AddRow(new string[] {
                         "Key",
                         "9141"});
-#line 303
+#line 301
  testRunner.Then("User verifies data in the fields on details page", ((string)(null)), table2, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1163,9 +1159,9 @@ this.FeatureBackground();
             table3.AddRow(new string[] {
                         "Inventory Site",
                         "A01"});
-#line 306
+#line 304
  testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table3, "Then ");
-#line 312
+#line 310
  testRunner.Then("empty value is displayed for \"Dashworks First Seen Date\" field on the Details Pag" +
                     "e", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -1218,22 +1214,22 @@ this.FeatureBackground();
                         "ItemDetailsDisplay",
                         "DAS15889",
                         "DAS16378"});
-#line 315
+#line 313
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 316
+#line 314
  testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 317
+#line 315
  testRunner.Then("\"All Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 318
+#line 316
  testRunner.When("User perform search by \"00OMQQXWA1DRI6\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 319
+#line 317
  testRunner.And("User click content from \"Hostname\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 320
+#line 318
  testRunner.Then("Details page for \"00OMQQXWA1DRI6\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 321
+#line 319
  testRunner.When("User navigates to the \"Active Directory\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1250,9 +1246,9 @@ this.FeatureBackground();
                         "Display Name"});
             table4.AddRow(new string[] {
                         "Description"});
-#line 322
+#line 320
  testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table4, "Then ");
-#line 330
+#line 328
  testRunner.Then("\"00OMQQXWA1DRI6\" content is displayed in \"Common Name\" field on Item Details page" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -1311,30 +1307,30 @@ this.FeatureBackground();
                         "DAS17645",
                         "DAS17785",
                         "DAS17809"});
-#line 333
+#line 331
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 334
+#line 332
  testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 335
+#line 333
  testRunner.Then("\"All Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 336
+#line 334
  testRunner.When("User perform search by \"001BAQXT6JWFPI\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 337
+#line 335
  testRunner.And("User click content from \"Hostname\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 338
+#line 336
  testRunner.Then("Details page for \"001BAQXT6JWFPI\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 339
+#line 337
  testRunner.When("User navigates to the \"Projects\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 340
+#line 338
  testRunner.When("User switches to the \"Windows 7 Migration (Computer Scheduled Project)\" project i" +
                     "n the Top bar on Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 341
+#line 339
  testRunner.Then("\"Windows 7 Migration (Computer Scheduled Project)\" project is selected in the Top" +
                     " bar on Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 342
+#line 340
  testRunner.When("User navigates to the \"Project Details\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1361,7 +1357,7 @@ this.FeatureBackground();
                         "Self Service URL"});
             table5.AddRow(new string[] {
                         "Tags"});
-#line 343
+#line 341
  testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table5, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -1421,27 +1417,27 @@ this.FeatureBackground();
                         "DAS17325",
                         "DAS17645",
                         "DAS17809"});
-#line 358
+#line 356
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 359
+#line 357
  testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 360
+#line 358
  testRunner.Then("\"All Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 361
+#line 359
  testRunner.When("User perform search by \"0072B088173449E3A93\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 362
+#line 360
  testRunner.And("User click content from \"Username\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 363
+#line 361
  testRunner.Then("Details page for \"0072B088173449E3A93\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 364
+#line 362
  testRunner.When("User switches to the \"User Evergreen Capacity Project\" project in the Top bar on " +
                     "Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 365
+#line 363
  testRunner.And("User navigates to the \"Projects\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 366
+#line 364
  testRunner.And("User navigates to the \"Project Details\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1470,7 +1466,7 @@ this.FeatureBackground();
                         "Language"});
             table6.AddRow(new string[] {
                         "Tags"});
-#line 367
+#line 365
  testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table6, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -1530,29 +1526,29 @@ this.FeatureBackground();
                         "DAS17239",
                         "DAS17645",
                         "DAS17809"});
-#line 383
+#line 381
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 384
+#line 382
  testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 385
+#line 383
  testRunner.Then("\"All Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 386
+#line 384
  testRunner.When("User perform search by \"\"WPF/E\" (codename) Community Technology Preview (Feb 2007" +
                     ")\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 387
+#line 385
  testRunner.And("User click content from \"Application\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 388
+#line 386
  testRunner.Then("Details page for \"\"WPF/E\" (codename) Community Technology Preview (Feb 2007)\" ite" +
                     "m is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 389
+#line 387
  testRunner.When("User switches to the \"Devices Evergreen Capacity Project\" project in the Top bar " +
                     "on Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 390
+#line 388
  testRunner.And("User navigates to the \"Projects\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 391
+#line 389
  testRunner.And("User navigates to the \"Project Details\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1581,7 +1577,7 @@ this.FeatureBackground();
                         "Category"});
             table7.AddRow(new string[] {
                         "Tags"});
-#line 392
+#line 390
  testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table7, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -1639,28 +1635,28 @@ this.FeatureBackground();
                         "DAS17645",
                         "DAS17785",
                         "DAS17809"});
-#line 408
+#line 406
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 409
+#line 407
  testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 410
+#line 408
  testRunner.Then("\"All Mailboxes\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 411
+#line 409
  testRunner.When("User perform search by \"00A5B910A1004CF5AC4@bclabs.local\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 412
+#line 410
  testRunner.And("User click content from \"Email Address\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 413
+#line 411
  testRunner.Then("Details page for \"00A5B910A1004CF5AC4@bclabs.local\" item is displayed to the user" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 414
+#line 412
  testRunner.When("User switches to the \"Mailbox Evergreen Capacity Project\" project in the Top bar " +
                     "on Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 415
+#line 413
  testRunner.And("User navigates to the \"Projects\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 416
+#line 414
  testRunner.And("User navigates to the \"Project Details\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1689,7 +1685,7 @@ this.FeatureBackground();
                         "Language"});
             table8.AddRow(new string[] {
                         "Tags"});
-#line 417
+#line 415
  testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table8, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -1743,51 +1739,164 @@ this.FeatureBackground();
                         "DAS17007",
                         "DAS17768",
                         "DAS17768"});
-#line 434
+#line 431
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 435
+#line 432
  testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 436
+#line 433
  testRunner.Then("\"All Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 437
+#line 434
  testRunner.When("User perform search by \"001BAQXT6JWFPI\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 438
+#line 435
  testRunner.And("User click content from \"Hostname\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 439
+#line 436
  testRunner.Then("Details page for \"001BAQXT6JWFPI\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 440
+#line 437
  testRunner.When("User switches to the \"Devices Evergreen Capacity Project\" project in the Top bar " +
                     "on Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 441
+#line 438
  testRunner.And("User navigates to the \"Projects\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 442
+#line 439
  testRunner.And("User navigates to the \"Project Details\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 443
+#line 440
  testRunner.Then("field with \"Self Service URL\" text is not displayed in expanded tab on the Detail" +
                     "s Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 444
+#line 441
  testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 445
+#line 442
  testRunner.Then("\"All Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 446
+#line 443
  testRunner.When("User perform search by \"0072B088173449E3A93\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 447
+#line 444
  testRunner.And("User click content from \"Username\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 448
+#line 445
  testRunner.Then("Details page for \"0072B088173449E3A93\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 449
+#line 446
  testRunner.When("User switches to the \"User Evergreen Capacity Project\" project in the Top bar on " +
                     "Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 450
+#line 447
  testRunner.And("User navigates to the \"Projects\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 451
+#line 448
  testRunner.And("User navigates to the \"Project Details\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 452
+#line 449
  testRunner.Then("field with \"Self Service URL\" text is displayed in expanded tab on the Details Pa" +
                     "ge", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Title",
+                        "Value"});
+            table9.AddRow(new string[] {
+                        "Language",
+                        "English"});
+#line 450
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table9, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatOnTheProjectDetailsTabDisplaysTheLanguageDefi" +
+            "nedInTheAdminPageAsTheDefaultLanguage")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Mailboxes")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
+        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS17768")]
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
+        public virtual void EvergreenJnr_MailboxesList_CheckThatOnTheProjectDetailsTabDisplaysTheLanguageDefinedInTheAdminPageAsTheDefaultLanguage()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_MailboxesList_CheckThatOnTheProjectDetailsTabDisplaysTheLanguageDefinedInTheAdminPageAsTheDefaultLanguageInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_MailboxesList_CheckThatOnTheProjectDetailsTabDisplaysTheLanguageDefinedInTheAdminPageAsTheDefaultLanguageInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_MailboxesList_CheckThatOnTheProjectDetailsTabDisplaysTheLanguageDefi" +
+                    "nedInTheAdminPageAsTheDefaultLanguage", null, new string[] {
+                        "Evergreen",
+                        "Mailboxes",
+                        "EvergreenJnr_ItemDetails",
+                        "ItemDetailsDisplay",
+                        "DAS17768",
+                        "Not_Ready"});
+#line 456
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 457
+ testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 458
+ testRunner.Then("Admin page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 459
+ testRunner.When("User clicks \"Projects\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 460
+ testRunner.Then("\"Projects\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 461
+ testRunner.When("User clicks \"USE ME FOR AUTOMATION(MAIL SCHDLD)\" record in the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 462
+ testRunner.Then("Project \"USE ME FOR AUTOMATION(MAIL SCHDLD)\" is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 463
+ testRunner.When("User clicks \"Details\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 464
+ testRunner.And("User clicks the \"ADD LANGUAGE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 465
+ testRunner.And("User selects \"German\" language on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 466
+ testRunner.And("User opens menu for selected language", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 467
+ testRunner.Then("User selects \"Set as default\" option for selected language", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 468
+ testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 469
+ testRunner.Then("\"All Mailboxes\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 470
+ testRunner.When("User perform search by \"001BAQXT6JWFPI\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 471
+ testRunner.And("User click content from \"Email Address\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 472
+ testRunner.Then("Details page for \"06BB714696274AC895A@bclabs.local\" item is displayed to the user" +
+                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 473
+ testRunner.When("User switches to the \"USE ME FOR AUTOMATION(MAIL SCHDLD)\" project in the Top bar " +
+                    "on Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 474
+ testRunner.And("User navigates to the \"Projects\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 475
+ testRunner.And("User navigates to the \"Project Details\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Title",
+                        "Value"});
+            table10.AddRow(new string[] {
+                        "Language",
+                        "German"});
+#line 476
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table10, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1836,26 +1945,26 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS11510"});
-#line 459
+#line 481
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 460
+#line 482
  testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 461
+#line 483
  testRunner.Then("\"All Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 462
+#line 484
  testRunner.When("User perform search by \"001BAQXT6JWFPI\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 463
+#line 485
  testRunner.And("User click content from \"Hostname\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 464
+#line 486
  testRunner.Then("Details page for \"001BAQXT6JWFPI\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 465
+#line 487
  testRunner.When("User navigates to the \"Details\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 466
+#line 488
  testRunner.And("User navigates to the \"Device Owner\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 467
+#line 489
  testRunner.Then("field with \"Last Logoff Date\" text is not displayed in expanded tab on the Detail" +
                     "s Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -1906,46 +2015,46 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS17735"});
-#line 470
+#line 492
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 471
+#line 493
  testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 472
+#line 494
  testRunner.Then("\"All Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 473
+#line 495
  testRunner.When("User perform search by \"001BAQXT6JWFPI\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 474
+#line 496
  testRunner.And("User click content from \"Hostname\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 475
+#line 497
  testRunner.Then("Details page for \"001BAQXT6JWFPI\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 476
+#line 498
  testRunner.When("User switches to the \"Devices Evergreen Capacity Project\" project in the Top bar " +
                     "on Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 477
+#line 499
  testRunner.And("User navigates to the \"Details\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 478
+#line 500
  testRunner.And("User navigates to the \"Device\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "Fields"});
-            table9.AddRow(new string[] {
+            table11.AddRow(new string[] {
                         "Key"});
-            table9.AddRow(new string[] {
+            table11.AddRow(new string[] {
                         "Hostname"});
-            table9.AddRow(new string[] {
+            table11.AddRow(new string[] {
                         "Source"});
-            table9.AddRow(new string[] {
+            table11.AddRow(new string[] {
                         "Source Type"});
-            table9.AddRow(new string[] {
+            table11.AddRow(new string[] {
                         "Inventory Site"});
-            table9.AddRow(new string[] {
+            table11.AddRow(new string[] {
                         "Dashworks First Seen Date"});
-#line 479
- testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table9, "Then ");
-#line 487
+#line 501
+ testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table11, "Then ");
+#line 509
  testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
