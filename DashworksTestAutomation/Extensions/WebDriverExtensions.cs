@@ -467,9 +467,8 @@ namespace DashworksTestAutomation.Extensions
             return result;
         }
 
-        public static void ScrollGridToTheEnd(this RemoteWebDriver driver)
+        public static void ScrollGridToTheEnd(this RemoteWebDriver driver, IWebElement gridElement)
         {
-            var gridElement = driver.FindElement(By.CssSelector(".ag-body-viewport"));
             IJavaScriptExecutor ex = driver;
 
             var clientHeight = int.Parse(ex.ExecuteScript("return arguments[0].clientHeight", gridElement).ToString());

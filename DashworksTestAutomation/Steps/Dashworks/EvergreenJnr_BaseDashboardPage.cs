@@ -525,8 +525,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"All data is unique in the '(.*)' column")]
         public void ThenAllDataIsUniqueInTheColumn(string columnName)
         {
-            //_driver.ScrollGridToTheEnd();
-
             var grid = _driver.NowAt<BaseDashboardPage>();
             var columnData = grid.GetColumnDataByScrolling(columnName);
 
