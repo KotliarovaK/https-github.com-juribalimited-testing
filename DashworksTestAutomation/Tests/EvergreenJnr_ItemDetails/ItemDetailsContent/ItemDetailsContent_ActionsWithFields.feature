@@ -429,7 +429,6 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatProjectDetailsDefaultViewIsDisplay
 	| Language         |
 	| Tags             |
 
-	#TODO: Remind Illia about language that needs to add for gold data 8/20/19
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17007 @DAS17768 @DAS17768
 Scenario: EvergreenJnr_AllLists_CheckThatSelfServiceUrlIsNotDisplayedOnObjectDetailsPageEvenWhenItsDisabledInProjectManagement
 	When User clicks "Devices" on the left-hand menu
@@ -450,10 +449,35 @@ Scenario: EvergreenJnr_AllLists_CheckThatSelfServiceUrlIsNotDisplayedOnObjectDet
 	And User navigates to the "Projects" main-menu on the Details page
 	And User navigates to the "Project Details" sub-menu on the Details page
 	Then field with "Self Service URL" text is displayed in expanded tab on the Details Page
-		#Ann.Ilchenko 8/16/19: Artem asked to wait with this check.
-	#Then following content is displayed on the Details Page
-	#| Title    | Value   |
-	#| Language | English |
+	Then following content is displayed on the Details Page
+	| Title    | Value   |
+	| Language | English |
+
+	#TODO: Ann.Ilchenko 9/4/19: remove 'not_ready' tag when the gold data arrives at the automation server
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17768 @Not_Ready
+Scenario: EvergreenJnr_MailboxesList_CheckThatOnTheProjectDetailsTabDisplaysTheLanguageDefinedInTheAdminPageAsTheDefaultLanguage
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks "USE ME FOR AUTOMATION(MAIL SCHDLD)" record in the grid
+	Then Project "USE ME FOR AUTOMATION(MAIL SCHDLD)" is displayed to user
+	When User clicks "Details" tab
+	And User clicks the "ADD LANGUAGE" Action button
+	And User selects "German" language on the Project details page
+	And User opens menu for selected language
+	Then User selects "Set as default" option for selected language
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "All Mailboxes" list should be displayed to the user
+	When User perform search by "001BAQXT6JWFPI"
+	And User click content from "Email Address" column
+	Then Details page for "06BB714696274AC895A@bclabs.local" item is displayed to the user
+	When User switches to the "USE ME FOR AUTOMATION(MAIL SCHDLD)" project in the Top bar on Item details page
+	And User navigates to the "Projects" main-menu on the Details page
+	And User navigates to the "Project Details" sub-menu on the Details page
+	Then following content is displayed on the Details Page
+	| Title    | Value  |
+	| Language | German |
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11510
 Scenario: EvergreenJnr_DevicesList_CheckThatLastLogoffDateFieldIsNotDisplayedAtTheDeviceOwnerBlockOfDeviceDetails

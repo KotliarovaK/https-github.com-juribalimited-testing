@@ -1334,7 +1334,6 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatBlanksValueChangedToEmptyValueOnMa
 	| None   |
 	When User closes Checkbox filter for "Status" column
 	
-	#Ann.Ilchenko 8/22/19: make changes for 'DAS17733' when GoldData will be ready
 @Evergreen @Device @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17734 @DAS17733
 Scenario: EvergreenJnr_DeviceList_CheckThatUsersTabIsDisplayedWithCorrectStagesOnDevicesDetailsPageForProjectMode
 	When User clicks "Devices" on the left-hand menu
@@ -1357,6 +1356,7 @@ Scenario: EvergreenJnr_DeviceList_CheckThatUsersTabIsDisplayedWithCorrectStagesO
 	| Stage A               |
 	| Stage C               |
 	| Stage D               |
+	#if “stage without readiness task” Stage is displayed here, please raise a bug.
 	When User enters "AAC860150" text in the Search field for "User" column on the Details Page
 	Then "GREEN" content is displayed for "Stage A" column
 	And "RED" content is displayed for "Stage C" column
