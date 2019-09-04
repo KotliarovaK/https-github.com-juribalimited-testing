@@ -999,7 +999,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatIconsForReadinessDdlOnRelatedTabAreD
 	When User switches to the "Devices Evergreen Capacity Project" project in the Top bar on Item details page
 	When User navigates to the "Related" main-menu on the Details page
 	When User enters "03ME2G7TIR4GBN" text in the Search field for "Device" column on the Details Page
-	Then "31 May 2019" content is displayed in the "Date" column
+	Then '31 May 2019' content is displayed in the 'Date' column
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17182 @DAS17219 @DAS17254 @DAS17255
 Scenario: EvergreenJnr_MailboxesList_CheckThatUsersTabIsDisplayedWithCorrectColumnsOnMailboxesDetailsPageForProjectMode

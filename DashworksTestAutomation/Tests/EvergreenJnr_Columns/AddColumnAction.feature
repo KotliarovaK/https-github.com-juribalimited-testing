@@ -354,7 +354,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatComplinceNoneOptionIsTranslated
 	| <FilterValue>               |
 	And User language is changed to "Deutsch" via API
 	And User clicks refresh button in the browser
-	Then "<TranslatedFilterValue>" content is displayed in the "<TranslatedColumnName>" column
+	Then '<TranslatedFilterValue>' content is displayed in the '<TranslatedColumnName>' column
 
 Examples: 
 	| ListName     | FilterName                    | FilterValue | TranslatedColumnName        | TranslatedFilterValue |

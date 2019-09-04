@@ -206,8 +206,8 @@ this.FeatureBackground();
  testRunner.Then("\"Search results for \"\"WPF/E\" (codename) Community Technology Preview (Feb 2007)\"\"" +
                     " is displayed below Global Search field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 41
- testRunner.And("\"\"WPF/E\" (codename) Community Technology Preview (Feb 2007) (0.8.5.0)\" content is" +
-                    " displayed in the \"Name\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'\"WPF/E\" (codename) Community Technology Preview (Feb 2007) (0.8.5.0)\' content is" +
+                    " displayed in the \'Name\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 42
  testRunner.When("User type \"Escaping Test User |\\\\/\\,\\<\\>#\\;+\\\"\\=- |\\\\/\\,\\<\\>#\\;+\\\"\\=-.Users.corp." +
                     "juriba.com\" in Global Search Field and presses Enter key", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

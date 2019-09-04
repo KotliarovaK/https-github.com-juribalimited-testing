@@ -128,7 +128,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedP
 	When User clicks Reset Filters button on the Admin page
 	And User clicks String Filter button for "Type" column on the Admin page
 	And User selects "Device scoped" checkbox from String Filter on the Admin page
-	Then "NewProject15" content is displayed in the "Project" column
+	Then 'NewProject15' content is displayed in the 'Project' column
 	When User clicks Reset Filters button on the Admin page 
 	And User enters "DDPP" text in the Search field for "Short Name" column
 	Then Rows counter contains "1" found row of all rows

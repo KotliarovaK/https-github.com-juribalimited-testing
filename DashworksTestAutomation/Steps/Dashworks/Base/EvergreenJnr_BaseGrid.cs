@@ -19,7 +19,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             _driver = driver;
         }
 
-        [Then(@"""(.*)"" content is displayed in the ""(.*)"" column")]
+        [Then(@"'(.*)' content is displayed in the '(.*)' column")]
         public void ThenContentIsDisplayedInTheColumn(string textContent, string columnName)
         {
             var page = _driver.NowAt<BaseGridPage>();
