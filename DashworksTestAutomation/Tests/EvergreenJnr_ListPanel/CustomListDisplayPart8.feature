@@ -8,7 +8,7 @@ Background: Pre-Conditions
 @Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10972 @DAS12602 @DAS14183 @Cleanup
 Scenario Outline: EvergreenJnr_AllLists_CheckThatTheEditListFunctionIsHiddenAfterChangingPinnedColumns
 	When User clicks "<ListName>" on the left-hand menu
-	Then "<ListName>" list should be displayed to the user
+	Then "<ListLabel>" list should be displayed to the user
 	When User click on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in ascending order
 	When User create dynamic list with "DynamicList3" name on "<ListName>" page
@@ -43,16 +43,16 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatTheEditListFunctionIsHiddenAfte
 	And Edit List menu is not displayed
 
 Examples:
-	| ListName     | ColumnName       | PinnedColumnName |
-	| Devices      | Device Type      | Hostname         |
-	| Applications | Vendor           | Application      |
-	| Users        | Domain           | Username         |
-	| Mailboxes    | Mailbox Platform | Email Address    |
+	| ListName     | ListLabel        | ColumnName       | PinnedColumnName |
+	| Devices      | All Devices      | Device Type      | Hostname         |
+	| Applications | All Applications | Vendor           | Application      |
+	| Users        | All Users        | Domain           | Username         |
+	| Mailboxes    | All Mailboxes    | Mailbox Platform | Email Address    |
 
 @Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS12515 @Cleanup
 Scenario Outline: EvergreenJnr_AllLists_CheckThatNewCustomListMenuIsHiddenInTheListPanelAfterClickingActionsButton
 	When User clicks "<ListName>" on the left-hand menu
-	Then "<ListName>" list should be displayed to the user
+	Then "<ListLabel>" list should be displayed to the user
 	When User click on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in ascending order
 	Then Save to New Custom List element is displayed
@@ -71,16 +71,16 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatNewCustomListMenuIsHiddenInTheL
 	Then Save to New Custom List element is NOT displayed
 
 Examples:
-	| ListName     | ColumnName         | StaticListName |
-	| Devices      | Owner Display Name | StaticList5548 |
-	| Applications | Version            | StaticList8944 |
-	| Users        | Distinguished Name | StaticList7412 |
-	| Mailboxes    | Owner Display Name | StaticList9512 |
+	| ListName     | ListLabel        | ColumnName         | StaticListName |
+	| Devices      | All Devices      | Owner Display Name | StaticList5548 |
+	| Applications | All Applications | Version            | StaticList8944 |
+	| Users        | All Users        | Distinguished Name | StaticList7412 |
+	| Mailboxes    | All Mailboxes    | Owner Display Name | StaticList9512 |
 
 @Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS12524 @Cleanup
 Scenario Outline: EvergreenJnr_AllLists_CheckThatSaveAndCancelButtonAreHiddenAfterCancellingProcessOfSavingList
 	When User clicks "<ListName>" on the left-hand menu
-	Then "<ListName>" list should be displayed to the user
+	Then "<ListLabel>" list should be displayed to the user
 	When User click on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in ascending order
 	When User clicks Save button on the list panel
@@ -104,11 +104,11 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatSaveAndCancelButtonAreHiddenAft
 	Then Save and Cancel buttons are not displayed on the list panel
 
 Examples:
-	| ListName     | ColumnName    | AddColumn            | DynamicListName |
-	| Devices      | Hostname      | Device Key           | DynamicList1178 |
-	| Applications | Application   | Barry'sUse: Category | DynamicList1125 |
-	| Users        | Username      | GUID                 | DynamicList1195 |
-	| Mailboxes    | Email Address | Region               | DynamicList1121 |
+	| ListName     | ListLabel        | ColumnName    | AddColumn            | DynamicListName |
+	| Devices      | All Devices      | Hostname      | Device Key           | DynamicList1178 |
+	| Applications | All Applications | Application   | Barry'sUse: Category | DynamicList1125 |
+	| Users        | All Users        | Username      | GUID                 | DynamicList1195 |
+	| Mailboxes    | All Mailboxes    | Email Address | Region               | DynamicList1121 |
 
 @Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS12524 @Cleanup
 Scenario: EvergreenJnr_AllLists_CheckThatActionsPanelIsHiddenAfterCancellingProcessOfSavingList

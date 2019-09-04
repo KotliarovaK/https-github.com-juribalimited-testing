@@ -75,7 +75,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatUserIsNotAbleToCreateListsWithLongN
 @Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS11342
 Scenario Outline: EvergreenJnr_AllLists_CheckThatAllListsNamesAreDisplayedCorrectly
 	When User clicks "<ListName>" on the left-hand menu
-	Then "<ListName>" list should be displayed to the user
+	Then "<AllListName>" list should be displayed to the user
 	Then "<AllListName>" list name is displayed correctly
 
 Examples:

@@ -87,18 +87,18 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS10998")]
         [NUnit.Framework.CategoryAttribute("DAS10972")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Henry", "34", "18", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", "Henry", "67", "142", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", "Hen", "5", "1", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Henry", "22", "73", null)]
-        public virtual void EvergreenJnr_AllList_CheckThatSearchDoesNotTriggerNewCustomList(string listName, string search, string rows, string newRows, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("Devices", "All Devices", "Henry", "34", "18", null)]
+        [NUnit.Framework.TestCaseAttribute("Users", "All Users", "Henry", "67", "142", null)]
+        [NUnit.Framework.TestCaseAttribute("Applications", "All Applications", "Hen", "5", "1", null)]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "All Mailboxes", "Henry", "22", "73", null)]
+        public virtual void EvergreenJnr_AllList_CheckThatSearchDoesNotTriggerNewCustomList(string listName, string listLabel, string search, string rows, string newRows, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AllList_CheckThatSearchDoesNotTriggerNewCustomListInternal(listName,search,rows,newRows,exampleTags);
+                    this.EvergreenJnr_AllList_CheckThatSearchDoesNotTriggerNewCustomListInternal(listName,listLabel,search,rows,newRows,exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -117,7 +117,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             }
         }
 
-        private void EvergreenJnr_AllList_CheckThatSearchDoesNotTriggerNewCustomListInternal(string listName, string search, string rows, string newRows, string[] exampleTags)
+        private void EvergreenJnr_AllList_CheckThatSearchDoesNotTriggerNewCustomListInternal(string listName, string listLabel, string search, string rows, string newRows, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -139,7 +139,7 @@ this.FeatureBackground();
 #line 10
  testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 11
- testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", listLabel), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "SearchCriteria",
@@ -153,7 +153,7 @@ this.FeatureBackground();
 #line 15
  testRunner.Then("Save to New Custom List element is NOT displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 16
- testRunner.And(string.Format("\"{0}\" list should be displayed to the user", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("\"{0}\" list should be displayed to the user", listLabel), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "SearchCriteria",
@@ -167,13 +167,13 @@ this.FeatureBackground();
 #line 20
  testRunner.Then("Save to New Custom List element is NOT displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 21
- testRunner.And(string.Format("\"{0}\" list should be displayed to the user", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("\"{0}\" list should be displayed to the user", listLabel), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 22
  testRunner.And("Clearing the agGrid Search Box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 23
  testRunner.And("Save to New Custom List element is NOT displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 24
- testRunner.And(string.Format("\"{0}\" list should be displayed to the user", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("\"{0}\" list should be displayed to the user", listLabel), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
