@@ -101,6 +101,12 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             SaveClickableValue();
         }
 
+        [When(@"User change text in '(.*)' cell from '(.*)' column to '(.*)' text without saving")]
+        public void WhenUserChangeTextInCellFromColumnToTextWithoutSaving(string cellText, string columnName, string newCellText)
+        {
+            ChangeClickableValue(cellText, columnName, newCellText);
+        }
+
         //Change by CogMenu or when already opened for edit
         [When(@"User save '(.*)' text in clickable value")]
         public void WhenUserSaveTextInClickableValue(string newCellText)
@@ -108,12 +114,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             EnterTextInClickableValue(newCellText);
 
             SaveClickableValue();
-        }
-
-        [When(@"User change text in '(.*)' cell from '(.*)' column to '(.*)' text without saving")]
-        public void WhenUserChangeTextInCellFromColumnToTextWithoutSaving(string cellText, string columnName, string newCellText)
-        {
-            ChangeClickableValue(cellText, columnName, newCellText);
         }
 
         private void SaveClickableValue()
