@@ -2076,7 +2076,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseGridPage>();
             var list = page.TeamListInFilterDropdown.Select(x => x.Text).ToList();
-            Utils.Verify.AreEqual(list.OrderBy(s => s, StringComparer.Ordinal), list, "Teams are not in alphabetical order");
+            Verify.AreEqual(list.OrderBy(s => s, StringComparer.Ordinal), list, "Teams are not in alphabetical order");
             page.BodyContainer.Click();
         }
 
@@ -2085,23 +2085,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseGridPage>();
             var list = page.ProjectsTypeListInFilterDropdown.Select(x => x.Text).ToList();
-            Utils.Verify.AreEqual(list.OrderBy(s => s), list, "Projects Type are not in alphabetical order");
+            Verify.AreEqual(list.OrderBy(s => s), list, "Projects Type are not in alphabetical order");
             page.BodyContainer.Click();
-        }
-
-        [Then(@"""(.*)"" value is displayed for Default column")]
-        public void ThenValueIsDisplayedForDefaultColumn(string defaultValue)
-        {
-            var column = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsTrue(column.GetDefaultColumnValue(defaultValue),
-                "Incorrect value is displayed for Default column");
         }
 
         [Then(@"Search fields for ""(.*)"" column contain correctly value")]
         public void ThenSearchFieldsForColumnContainCorrectlyValue(string columnName)
         {
             var searchField = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsTrue(searchField.GetSearchFieldTextByColumnName(columnName).Displayed(),
+            Verify.IsTrue(searchField.GetSearchFieldTextByColumnName(columnName).Displayed(),
                 "Incorrect contain value for search field");
         }
 

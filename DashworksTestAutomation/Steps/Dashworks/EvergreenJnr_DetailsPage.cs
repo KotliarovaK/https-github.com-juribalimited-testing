@@ -457,14 +457,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.IsTrue(tableElement.TableRows.Count > 0, "Table is empty");
         }
 
-        [Then(@"Filter panel has standard size")]
-        public void ThenFilterPanelHasStandardSize()
-        {
-            var filterPanel = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            Utils.Verify.AreEqual("124.734px", filterPanel.GetInstalledFilterPanelHeight(), "Filter panel is not a standard size!");
-            Utils.Verify.AreEqual("152px", filterPanel.GetInstalledFilterPanelWidth(), "Filter panel is not a standard size!");
-        }
-
         [Then(@"Site column has standard size")]
         public void ThenSiteColumnHasStandardSize()
         {

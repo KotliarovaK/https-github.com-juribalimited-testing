@@ -115,11 +115,11 @@ Scenario: EvergreenJnr_UsersList_CreateCustomFieldWithSameData
 	| ObjectType | ObjectId | FieldName    | Value       |
 	| user       | 98968    | FlDAS17614_4 | Value_17614 |
 	Then Success message with "New custom field value added successfully" text is displayed on Action panel
-	And Content is displayed in the "Custom Field" column
+	And Content in the 'Custom Field' column is equal to
 	| Content      |
 	| FlDAS17614_4 |
 	| FlDAS17614_4 |
-	And Content is displayed in the "Value" column
+	And Content in the 'Value' column is equal to
 	| Content     |
 	| Value_17614 |
 	| Value_17614 |
@@ -148,12 +148,12 @@ Scenario: EvergreenJnr_UsersList_CheckGroupByResetAfterCreatingNewCustomField
 	| user       | 3532     | FlDAS17695_2 | ValueDAS17695_2C |
 	Then Success message with "New custom field value added successfully" text is displayed on Action panel
 	And "Custom Fields" tab is displayed on left menu on the Details page and contains '3' count of items
-	And Content is displayed in the "Custom Field" column
+	And Content in the 'Custom Field' column is equal to
 	| Content      |
 	| FlDAS17695_2 |
 	| FlDAS17695_2 |
 	| FlDAS17695_2 |
-	And Content is displayed in the "Value" column
+	And Content in the 'Value' column is equal to
 	| Content          |
 	| ValueDAS17695_2A |
 	| ValueDAS17695_2B |

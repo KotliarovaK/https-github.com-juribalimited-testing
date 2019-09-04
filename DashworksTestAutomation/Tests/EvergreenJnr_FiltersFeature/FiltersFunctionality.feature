@@ -631,12 +631,12 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatEditFilterElementsBlockIsDisplayed
 @Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12636 @DAS12481
 Scenario Outline: EvergreenJnr_AllLists_CheckThatLocationFilterIsEditedCorrectly
 	When User clicks "<ListName>" on the left-hand menu
-	Then "<ListName>" list should be displayed to the user
+	Then "All <ListName>" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Postal Code" filter
-	When User select "Not empty" Operator value
-	When User adds column for the selected filter
+	And User select "Not empty" Operator value
+	And User adds column for the selected filter
 	And User clicks Save filter button
 	Then Content is present in the newly added column
 	| ColumnName  |
@@ -644,7 +644,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatLocationFilterIsEditedCorrectly
 	When User Add And "State/County" filter where type is "Equals" with added column and Lookup option
 	| SelectedValues |
 	| <FilterValue>  |
-	Then "<FilterValue>" text is displayed in the table content
+	Then "<FilterValue>" content is displayed in the "State/County" column
 	When User click Edit button for "State/County" filter
 	And User deletes the selected lookup filter "<FilterValue>" value
 	And User have created "Equals" Lookup filter with column and "Empty" option

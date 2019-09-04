@@ -79,7 +79,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatRelatedBucketsAreUpdatedAfterCreatingO
 	When User selects "Select All" checkbox from String Filter with item list on the Admin page
 	When User clicks String Filter button for "Project" column on the Admin page
 	When User selects "1DevicesProject" checkbox from String Filter with item list on the Admin page
-	Then "Unassigned" text is displayed in the table content
+	Then "Unassigned" content is displayed in the "Bucket" column
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
 	When User enters "1DevicesProject" text in the Search field for "Project" column
