@@ -187,7 +187,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 Verify.IsTrue(dropdown.GetDropdownByValueByName(value, dropdownName).Displayed(), $"{value} is not displayed in the {dropdownName}");
         }
 
-        [Then(@"""(.*)"" dropdown is displayed")]
+        [Then(@"'(.*)' dropdown is displayed")]
         public void ThenDropdownIsDisplayed(string dropdownName)
         {
             var dropdown = _driver.NowAt<BaseDashboardPage>();
