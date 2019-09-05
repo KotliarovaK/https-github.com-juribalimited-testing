@@ -78,7 +78,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.AutocompleteSelect(placeholder, option, true);
         }
 
-        [Then(@"""(.*)"" content is displayed in ""(.*)"" autocomplete")]
+        [Then(@"'(.*)' content is displayed in '(.*)' autocomplete")]
         public void ThenContentIsDisplayedInAutocomplete(string expectedText, string placeholder)
         {
             CheckAutocompletAndTextboxText(placeholder, expectedText);
@@ -148,7 +148,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 $"Incorrect error message color for '{placeholder}' field exclamation icon");
         }
 
-        [When(@"User selects ""(.*)"" in the ""(.*)"" dropdown")]
+        [When(@"User selects '(.*)' in the '(.*)' dropdown")]
         public void WhenUserSelectsInTheDropdown(string value, string dropdownName)
         {
             var dropdown = _driver.NowAt<BaseDashboardPage>();
@@ -156,7 +156,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             dropdown.GetDropdownValueByName(value).Click();
         }
 
-        [Then(@"""(.*)"" content is displayed in ""(.*)"" dropdown")]
+        [Then(@"'(.*)' content is displayed in '(.*)' dropdown")]
         public void ThenContentIsDisplayedInDropdown(string text, string dropdown)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
