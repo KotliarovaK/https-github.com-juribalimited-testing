@@ -6986,7 +6986,7 @@ this.FeatureBackground();
 #line 1618
  testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", page), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1619
- testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", page), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("\"All {0}\" list should be displayed to the user", page), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 1620
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1621

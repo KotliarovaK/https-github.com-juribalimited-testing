@@ -1616,7 +1616,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatFilterPanelDoesHaveAndNotHaveList
 @Evergreen @AllLists @Evergreen_FiltersFeature @FiltersFunctionality @DAS14524
 Scenario Outline: EvergreenJnr_AllLists_CheckRowsCountedForOrganizationalUnitFilterWithSelectedValue
 	When User clicks "<Page>" on the left-hand menu
-	Then "<Page>" list should be displayed to the user
+	Then "All <Page>" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "<FilterName>" filter where type is "<Type>" with added column and following value:
