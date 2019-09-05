@@ -13,6 +13,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
 {
     public class BaseDashboardPage : SeleniumBasePage
     {
+        private string NamedDropdownSelector = ".//mat-select[@aria-label='{0}' or @automation='{0}']";
+
         public const string ColorItem = ".//div[@class='status']";
 
         public const string ImageItem = ".//div[contains(@class, 'ag-body-container')]//img[contains(@src,'png')]";
@@ -483,6 +485,35 @@ namespace DashworksTestAutomation.Pages.Evergreen
             }
         }
 
+        #region Dropdown
+
+        public IWebElement GetDropdownByName(string dropdownName)
+        {
+            var selector = By.XPath(string.Format(NamedDropdownSelector, dropdownName));
+            Driver.WaitForElementToBeDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        //Index starts from 1
+        public IWebElement GetDropdownByName(string dropdownName, int index)
+        {
+            index--;
+            var selector = By.XPath(string.Format(NamedDropdownSelector, dropdownName));
+            Driver.WaitFor(() => Driver.FindElements(selector).Count >= index);
+            Driver.WaitForElementToBeDisplayed(Driver.FindElements(selector)[index]);
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetDropdownValueByName(string dropdownName)
+        {
+            var text = dropdownName.Split('\'').Aggregate(string.Empty, (current, s) => current + $"[contains(text(),'{s}')]");
+            var selector = By.XPath($".//mat-option//span{text}");
+            Driver.WaitForElementToBeDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        #endregion
+
         public IWebElement GetNamedTextbox(string placeholder)
         {
             var by = By.XPath(string.Format(NamedTextboxSelector, placeholder));
@@ -498,10 +529,29 @@ namespace DashworksTestAutomation.Pages.Evergreen
             if (!elementAttributes.Any(x => x.Contains("_ngcontent")))
                 throw new Exception($"'{placeholder}' doesn't have _ngcontent attribute");
             var attribute = elementAttributes.First(x => x.Contains("_ngcontent"));
-            var errorSelector = By.XPath($".//ancestor::*[@{attribute}][position() = 1]//mat-error");
+            //Selector when mat-error inside webElement
+            var errorSelector1 = By.XPath($".//ancestor::*[@{attribute}][position() = 1]//mat-error");
+            //When on the same level
+            var errorSelector2 = By.XPath($".//mat-error[@{attribute}]");
+            if (Driver.IsElementInElementDisplayed(namedTextbox, errorSelector1, WebDriverExtensions.WaitTime.Short))
+                return namedTextbox.FindElement(errorSelector1);
+            else if (Driver.IsElementDisplayed(errorSelector2, WebDriverExtensions.WaitTime.Short))
+                return Driver.FindElement(errorSelector2);
+            else
+                throw new Exception($"Error message was not displayed for '{placeholder}' textbox");
+        }
+
+        public IWebElement GetNamedDropdownErrorMessageElement(string placeholder)
+        {
+            var namedTextbox = GetDropdownByName(placeholder);
+            var elementAttributes = Driver.GetElementAttributes(namedTextbox);
+            if (!elementAttributes.Any(x => x.Contains("_ngcontent")))
+                throw new Exception($"'{placeholder}' doesn't have _ngcontent attribute");
+            var attribute = elementAttributes.First(x => x.Contains("_ngcontent"));
+            var errorSelector = By.XPath($".//mat-error[@{attribute}]");
             if (!Driver.IsElementDisplayed(errorSelector, WebDriverExtensions.WaitTime.Medium))
                 throw new Exception($"Error message was not displayed for '{placeholder}' textbox");
-            return namedTextbox.FindElement(errorSelector);
+            return Driver.FindElement(errorSelector);
         }
 
         public string GetNamedTextboxErrorMessage(string placeholder)
@@ -510,9 +560,21 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return error.Text;
         }
 
+        public string GetNamedDropdownErrorMessage(string placeholder)
+        {
+            var error = GetNamedDropdownErrorMessageElement(placeholder).FindElement(By.XPath("./span[1]"));
+            return error.Text;
+        }
+
         public IWebElement GetNamedTextboxErrorMessageExclamationIcon(string placeholder)
         {
-            var exclamationIcon = GetNamedTextboxErrorMessageElement(placeholder).FindElement(By.XPath("./span[1]"));
+            var exclamationIcon = GetNamedTextboxErrorMessageElement(placeholder).FindElement(By.XPath("./span[2]"));
+            return exclamationIcon;
+        }
+
+        public IWebElement GetNamedDropdownErrorMessageExclamationIcon(string placeholder)
+        {
+            var exclamationIcon = GetNamedDropdownErrorMessageElement(placeholder).FindElement(By.XPath("./span[2]"));
             return exclamationIcon;
         }
 
@@ -980,6 +1042,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(selector);
         }
 
+        //TODO should be replaced by GetDropdownByName
         public IWebElement GetDropdownByFieldName(string name)
         {
             var selector = By.XPath($"//*[text()='{name}']/ancestor::div[@class='mat-form-field-infix']");

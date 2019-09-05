@@ -118,8 +118,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultValuesStayTheSameAfterConverti
 Scenario: EvergreenJnr_AdminPage_ChecksThatConvertToEvergreenButtonIsNotDisplayedForEvergreensProject
 	When User clicks Admin on the left-hand menu
 	When User clicks the "CREATE PROJECT" Action button
-	And User selects " Dependant List Filter - BROKEN LIST" in the Scope Project dropdown
-	Then Filling field error with "This list has errors" text is displayed
+	When User selects 'Dependant List Filter - BROKEN LIST' option from 'Scope' autocomplete
+	Then 'This list has errors' error message is displayed for 'Scope' field
 	When User clicks the "CANCEL" Action button
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user

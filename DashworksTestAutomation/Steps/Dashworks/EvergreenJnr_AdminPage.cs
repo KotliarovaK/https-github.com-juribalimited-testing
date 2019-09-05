@@ -737,11 +737,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             createProjectElement.SelectObjectForTeamCreation(optionName);
         }
 
+        //TODO remove this. Replace by already created generic method
         [Then(@"""(.*)"" content is displayed in ""(.*)"" field")]
         public void ThenContentIsDisplayedInField(string text, string fieldName)
         {
-            var page = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsTrue(page.GetTextInFieldByFieldName(fieldName).GetAttribute("value").Contains(text),
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Utils.Verify.IsTrue(page.GetNamedTextbox(fieldName).GetAttribute("value").Contains(text),
                 $"Text in {fieldName} field is different");
         }
 
@@ -1521,6 +1522,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
+        //TODO should be deleted and replaced by WhenUserSelectsValueForDropdownOnActionPanel
         [When(@"User selects ""(.*)"" in the Scope Project details")]
         public void WhenUserSelectsInTheScopeProjectDetails(string listName)
         {

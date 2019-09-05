@@ -132,10 +132,26 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         #region Dropdown
 
+        [Then(@"'(.*)' error message is displayed for '(.*)' dropdown")]
+        public void ThenErrorMessageIsDisplayedForDropdown(string errorMessage, string placeholder)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.BodyContainer.Click();
+
+            Verify.AreEqual(errorMessage, page.GetNamedDropdownErrorMessage(placeholder),
+                $"Incorrect error message is displayed in the '{placeholder}' field");
+
+            Verify.AreEqual("rgba(242, 88, 49, 1)", page.GetNamedDropdownErrorMessageElement(placeholder).GetCssValue("color"),
+                $"Incorrect error message color for '{placeholder}' field");
+
+            Verify.AreEqual("rgba(242, 88, 49, 1)", page.GetNamedDropdownErrorMessageExclamationIcon(placeholder).GetCssValue("color"),
+                $"Incorrect error message color for '{placeholder}' field exclamation icon");
+        }
+
         [When(@"User selects ""(.*)"" in the ""(.*)"" dropdown")]
         public void WhenUserSelectsInTheDropdown(string value, string dropdownName)
         {
-            var dropdown = _driver.NowAt<BaseGridPage>();
+            var dropdown = _driver.NowAt<BaseDashboardPage>();
             dropdown.GetDropdownByName(dropdownName).Click();
             dropdown.GetDropdownValueByName(value).Click();
         }
@@ -143,8 +159,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         [Then(@"""(.*)"" content is displayed in ""(.*)"" dropdown")]
         public void ThenContentIsDisplayedInDropdown(string text, string dropdown)
         {
-            //TODO why grid page is used
-            var page = _driver.NowAt<BaseGridPage>();
+            var page = _driver.NowAt<BaseDashboardPage>();
             var dropdownContent = page.GetDropdownByName(dropdown).Text;
             Verify.AreEqual(dropdownContent, text, $"Text in '{dropdown}' drop-down is different");
         }
@@ -175,7 +190,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         [Then(@"""(.*)"" dropdown is displayed")]
         public void ThenDropdownIsDisplayed(string dropdownName)
         {
-            var dropdown = _driver.NowAt<BaseGridPage>();
+            var dropdown = _driver.NowAt<BaseDashboardPage>();
             Verify.IsTrue(dropdown.GetDropdownByName(dropdownName).Displayed(), $"{dropdownName} is not displayed");
         }
 

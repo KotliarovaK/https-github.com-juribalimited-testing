@@ -24,8 +24,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public const string FirstColumnTableContent = ".//div[@role='gridcell']//a[@href]";
 
-        private string NamedDropdownSelector = ".//mat-select[@aria-label='{0}' or @automation='{0}']//span";
-
         #region Inline Edit. Appears on double click on cell
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'ag-cell-inline-editing')]//i[contains(@class,'mat-done')]")]
@@ -549,41 +547,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElement(selector);
         }
 
-        public IWebElement GetTextInFieldByFieldName(string fieldName)
-        {
-            var selector = By.XPath($".//input[@placeholder='{fieldName}']");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
         public IWebElement GetFieldByFieldName(string fieldName)
         {
             var selector = By.XPath($".//textarea[@placeholder='{fieldName}']");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
-        public IWebElement GetDropdownByName(string dropdownName)
-        {
-            var selector = By.XPath(string.Format(NamedDropdownSelector, dropdownName));
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
-        //Index starts from 1
-        public IWebElement GetDropdownByName(string dropdownName, int index)
-        {
-            index--;
-            var selector = By.XPath(string.Format(NamedDropdownSelector, dropdownName));
-            Driver.WaitFor(() => Driver.FindElements(selector).Count >= index);
-            Driver.WaitForElementToBeDisplayed(Driver.FindElements(selector)[index]);
-            return Driver.FindElement(selector);
-        }
-
-        public IWebElement GetDropdownValueByName(string dropdownName)
-        {
-            var text = dropdownName.Split('\'').Aggregate(string.Empty, (current, s) => current + $"[contains(text(),'{s}')]");
-            var selector = By.XPath($".//mat-option/span{text}");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }

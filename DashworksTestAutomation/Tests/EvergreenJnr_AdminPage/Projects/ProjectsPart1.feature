@@ -63,8 +63,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatExistingProjectNameCantBeRemoved
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "TestProject14283" is displayed to user
-	When User selects "Dependant List Filter - BROKEN LIST" in the Scope Project details
-	Then Filling field error with "This list has errors" text is displayed
+	When User selects "Dependant List Filter - BROKEN LIST" in the "Scope" dropdown
+	Then 'This list has errors' error message is displayed for 'Scope' dropdown
 	When User clicks "Details" tab
 	And User enters "" in the "Project Name" field
 	And User clicks Admin on the left-hand menu

@@ -933,6 +933,60 @@ namespace DashworksTestAutomation.Extensions
 
         #endregion
 
+        #region Wait for Element to be (not) Displayed in Element
+
+        public static void WaitForElementToBeNotDisplayed(this RemoteWebDriver driver, IWebElement element, By selector, int waitSeconds = WaitTimeoutSeconds)
+        {
+            WaitForElementInElementDisplayCondition(driver, element, selector, false, waitSeconds);
+        }
+
+        public static void WaitForElementInElementToBeDisplayed(this RemoteWebDriver driver, IWebElement element, By selector, int waitSeconds = WaitTimeoutSeconds)
+        {
+            WaitForElementInElementDisplayCondition(driver, element, selector, true, waitSeconds);
+        }
+
+        private static void WaitForElementInElementDisplayCondition(this RemoteWebDriver driver, IWebElement element, By selector, bool condition, int waitSeconds)
+        {
+            try
+            {
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(waitSeconds));
+                wait.Until(ElementInElementIsInDisplayedCondition(element, selector, condition));
+            }
+            catch (WebDriverTimeoutException e)
+            {
+                throw new Exception($"Element was not changed Display condition to '{condition}' after {waitSeconds} seconds", e);
+            }
+        }
+
+        private static Func<IWebDriver, bool> ElementInElementIsInDisplayedCondition(IWebElement element, By selector, bool displayedCondition)
+        {
+            return (driver) =>
+            {
+                try
+                {
+                    return element.FindElement(selector).Displayed().Equals(displayedCondition);
+                }
+                catch (NoSuchElementException)
+                {
+                    // Returns false because the element is not present in DOM.
+                    return false.Equals(displayedCondition);
+                }
+                catch (StaleElementReferenceException)
+                {
+                    // Returns false because stale element reference implies that element
+                    // is no longer visible.
+                    return false.Equals(displayedCondition);
+                }
+                catch (InvalidOperationException)
+                {
+                    // Return false as no elements was located
+                    return false.Equals(displayedCondition);
+                }
+            };
+        }
+
+        #endregion
+
         #region Wait for Element to be (not) Displayed After Refresh
 
         public static void WaitForElementToBeNotDisplayedAfterRefresh(this RemoteWebDriver driver, IWebElement element, bool waitForDataLoading = false, int waitSeconds = WaitTimeoutSeconds)
@@ -1842,6 +1896,20 @@ namespace DashworksTestAutomation.Extensions
             {
                 var time = int.Parse(waitTime.GetValue());
                 driver.WaitForElementToBeDisplayed(selector, time);
+                return driver.FindElement(selector).Displayed;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public static bool IsElementInElementDisplayed(this RemoteWebDriver driver, IWebElement element, By selector, WaitTime waitTime)
+        {
+            try
+            {
+                var time = int.Parse(waitTime.GetValue());
+                driver.WaitForElementInElementToBeDisplayed(element, selector, time);
                 return driver.FindElement(selector).Displayed;
             }
             catch (Exception)
