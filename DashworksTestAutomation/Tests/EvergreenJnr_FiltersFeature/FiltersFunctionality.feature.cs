@@ -2817,7 +2817,7 @@ this.FeatureBackground();
  testRunner.When("User Add And \"State/County\" filter where type is \"Equals\" with added column and L" +
                     "ookup option", ((string)(null)), table50, "When ");
 #line 647
- testRunner.Then(string.Format("\"{0}\" content is displayed in the \"State/County\" column", filterValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("\'{0}\' content is displayed in the \'State/County\' column", filterValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 648
  testRunner.When("User click Edit button for \"State/County\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 649
@@ -6986,7 +6986,7 @@ this.FeatureBackground();
 #line 1618
  testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", page), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1619
- testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", page), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("\"All {0}\" list should be displayed to the user", page), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 1620
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1621

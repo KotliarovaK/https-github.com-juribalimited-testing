@@ -644,7 +644,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatLocationFilterIsEditedCorrectly
 	When User Add And "State/County" filter where type is "Equals" with added column and Lookup option
 	| SelectedValues |
 	| <FilterValue>  |
-	Then "<FilterValue>" content is displayed in the "State/County" column
+	Then '<FilterValue>' content is displayed in the 'State/County' column
 	When User click Edit button for "State/County" filter
 	And User deletes the selected lookup filter "<FilterValue>" value
 	And User have created "Equals" Lookup filter with column and "Empty" option
@@ -1616,7 +1616,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatFilterPanelDoesHaveAndNotHaveList
 @Evergreen @AllLists @Evergreen_FiltersFeature @FiltersFunctionality @DAS14524
 Scenario Outline: EvergreenJnr_AllLists_CheckRowsCountedForOrganizationalUnitFilterWithSelectedValue
 	When User clicks "<Page>" on the left-hand menu
-	Then "<Page>" list should be displayed to the user
+	Then "All <Page>" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "<FilterName>" filter where type is "<Type>" with added column and following value:

@@ -32,7 +32,7 @@ Scenario: EvergreenJnr_AdminPage_CreatingDefaultBucket
 	When User clicks "Evergreen" link on the Admin page
 	Then "Buckets" page should be displayed to the user
 	When User enters "Unassigned" text in the Search field for "Bucket" column
-	Then "TRUE" content is displayed in the "Default" column
+	Then 'TRUE' content is displayed in the 'Default' column
 	When User creates new Bucket via api
 	| Name        | TeamName | IsDefault |
 	| TestBucket5 | Admin IT | true      |
@@ -43,7 +43,7 @@ Scenario: EvergreenJnr_AdminPage_CreatingDefaultBucket
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The NewBucket5 bucket has been updated" text
 	When User enters "Unassigned" text in the Search field for "Bucket" column
-	Then "FALSE" content is displayed in the "Default" column
+	Then 'FALSE' content is displayed in the 'Default' column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11726 @DAS11891 @DAS11747 @DAS13471 @Buckets
 Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyBucketName

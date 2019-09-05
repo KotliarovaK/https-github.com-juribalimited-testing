@@ -49,7 +49,7 @@ Scenario: EvergreenJnr_MailboxesList_CreateCustomFieldWithEmptyValue
 	| ObjectType | ObjectId | FieldName    |
 	| mailbox    | 43801    | FlDAS16487_1 |
 	Then Success message with "New custom field value added successfully" text is displayed on Action panel
-	And "" content is displayed in the "Value" column
+	And '' content is displayed in the 'Value' column
 	And "Custom Fields" tab is displayed on left menu on the Details page and contains '1' count of items
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @CustomFields @DAS16487 @Cleanup
@@ -68,7 +68,7 @@ Scenario: EvergreenJnr_UsersList_CreateCustomField
 	| ObjectType | ObjectId | FieldName    | Value                |
 	| user       | 98968    | FlDAS16487_2 | Value_@#†_DAS16487_2 |
 	Then Success message with "New custom field value added successfully" text is displayed on Action panel
-	And "Value_@#†_DAS16487_2" content is displayed in the "Value" column
+	And 'Value_@#†_DAS16487_2' content is displayed in the 'Value' column
 	And "Custom Fields" tab is displayed on left menu on the Details page and contains '1' count of items
 	#ADD VERIFICATION FOR ROW COUNTER!!!
 
@@ -107,8 +107,8 @@ Scenario: EvergreenJnr_UsersList_CreateCustomFieldWithSameData
 	When User creates Custom Field
 	| ObjectType | ObjectId | FieldName    | Value       |
 	| user       | 17884    | FlDAS17614_4 | Value_17614 |
-	Then "FlDAS17614_4" content is displayed in the "Custom Field" column
-	And "Value_17614" content is displayed in the "Value" column
+	Then 'FlDAS17614_4' content is displayed in the 'Custom Field' column
+	And 'Value_17614' content is displayed in the 'Value' column
 	And "Custom Fields" tab is displayed on left menu on the Details page and contains '1' count of items
 	#ADD VERIFICATION FOR ROW COUNTER!!!
 	When User creates Custom Field

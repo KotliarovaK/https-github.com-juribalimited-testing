@@ -138,7 +138,7 @@ Examples:
 @Evergreen @AllLists @Evergreen_FiltersFeature @NewFilterCheck @DAS10578 @DAS14159
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDashworksFirstSeenFilterIsAddedToTheFilterList
 	When User clicks "<ListName>" on the left-hand menu
-	Then "<ListName>" list should be displayed to the user
+	Then "All <ListName>" list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
@@ -342,7 +342,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatMultiSelectProjectTaskFiltersAreDispla
 	And User Add And "Windows7Mi: User Acceptance Test \ T-60 SMS Message Sent" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| Not Applicable     |
-	Then "4,655" rows are displayed in the agGrid
+	Then "4,641" rows are displayed in the agGrid
 	When User create dynamic list with "Users_ProjectTaskFilters_AND" name on "Users" page
 	Then "Users_ProjectTaskFilters_AND" list is displayed to user
 	When User navigates to the "All Users" list
@@ -367,13 +367,13 @@ Scenario: EvergreenJnr_UsersList_CheckThatMultiSelectProjectTaskFiltersAreDispla
 	| Not Applicable | true  |
 	| Not Sent       | false |
 	| Sent           | true  |
-	Then "4,656" rows are displayed in the agGrid
+	Then "4,642" rows are displayed in the agGrid
 	When User update current custom list
 
 @Evergreen @AllLists @Evergreen_FiltersFeature @NewFilterCheck @DAS11830 @DAS14288
 Scenario Outline: EvergreenJnr_AllLists_CheckThatOptionsIsAvailableForFiltersOfProjectTaskCategories
 	When User clicks "<PageName>" on the left-hand menu
-	Then "<PageName>" list should be displayed to the user
+	Then "All <PageName>" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "<FilterName>" filter

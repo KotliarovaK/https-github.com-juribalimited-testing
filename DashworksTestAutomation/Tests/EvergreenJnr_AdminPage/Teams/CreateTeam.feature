@@ -58,7 +58,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedTeamUsingTh
 	Then Warning message with "You cannot delete the default team" text is displayed on the Admin page
 	When User clicks Reset Filters button on the Admin page
 	When User enters "My Team" text in the Search field for "Team" column
-	Then "FALSE" content is displayed in the "Default" column
+	Then 'FALSE' content is displayed in the 'Default' column
 	When User clicks content from "Team" column
 	And User clicks "Team Settings" tab
 	And User clicks Default Team checkbox
@@ -66,7 +66,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedTeamUsingTh
 	Then Success message is displayed and contains "The team was successfully updated" text
 	When User clicks "Teams" navigation link on the Admin page
 	When User enters "My Team" text in the Search field for "Team" column
-	Then "TRUE" content is displayed in the "Default" column
+	Then 'TRUE' content is displayed in the 'Default' column
 	When User clicks the "CREATE TEAM" Action button
 	Then "Create Team" page should be displayed to the user
 	When User enters " 99770" in the "Team Name" field

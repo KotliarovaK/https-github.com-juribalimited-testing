@@ -136,7 +136,7 @@ Scenario: EvergreenJnr_MailboxesLists_CheckThatTheLowestValueOfUserCountColumnIs
 @Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS12194 @DAS12220
 Scenario Outline: EvergreenJnr_AllLists_CheckThat500ErrorIsNotDisplayedAfterAddingComplianceDataToLists
 	When User clicks "<ListName>" on the left-hand menu
-	Then "<ListName>" list should be displayed to the user
+	Then "All <ListName>" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "<FilterName>" filter where type is "Equals" with added column and following checkboxes:
@@ -164,7 +164,7 @@ Examples:
 @Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS12500 @DAS14923
 Scenario Outline: EvergreenJnr_AllLists_CheckThatObjectKeyColumnsContainCorrectLinks
 	When User clicks "<ListName>" on the left-hand menu
-	Then "<ListName>" list should be displayed to the user
+	Then "All <ListName>" list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
@@ -286,7 +286,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatNewlyAddedColumnIsDisplayedCorrec
 @Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS12481
 Scenario Outline: EvergreenJnr_AllLists_CheckThatStateCountyAndPostalCodeColumnsAreDisplayed
 	When User clicks "<ListName>" on the left-hand menu
-	Then "<ListName>" list should be displayed to the user
+	Then "All <ListName>" list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
@@ -354,7 +354,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatComplinceNoneOptionIsTranslated
 	| <FilterValue>               |
 	And User language is changed to "Deutsch" via API
 	And User clicks refresh button in the browser
-	Then "<TranslatedFilterValue>" content is displayed in the "<TranslatedColumnName>" column
+	Then '<TranslatedFilterValue>' content is displayed in the '<TranslatedColumnName>' column
 
 Examples: 
 	| ListName     | FilterName                    | FilterValue | TranslatedColumnName        | TranslatedFilterValue |

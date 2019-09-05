@@ -144,7 +144,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAfterDeletingFirstColumnTheColu
 @Evergreen @AllLists @EvergreenJnr_Columns @ColumnOrder @DAS12345 @DAS12823 @DAS13668
 Scenario Outline: EvergreenJnr_AllLists_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasReturnedToDefaultPositionWhenActionsPanelWasOpen
 	When User clicks "<PageName>" on the left-hand menu
-	Then "<PageName>" list should be displayed to the user
+	Then "All <PageName>" list should be displayed to the user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User move '<FirstColumnName>' column to '<ToColumnName>' column
@@ -163,7 +163,7 @@ Examples:
 @Evergreen @AllLists @EvergreenJnr_Columns @ColumnOrder @DAS11836
 Scenario Outline: EvergreenJnr_AllLists_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasRemovedAndReturnedToDefaultPosition 
 	When User clicks "<PageName>" on the left-hand menu
-	Then "<PageName>" list should be displayed to the user
+	Then "All <PageName>" list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When User removes "<ColumnName>" column by Column panel
