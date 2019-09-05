@@ -42,12 +42,12 @@ Scenario: EvergreenJnr_ApplicationsList_CheckDataIsUpdatedInClickableValue
 	#Save changes
 	When User change text in 'ValueDAS15473_2' cell from 'Value' column to 'UPDATED_V' text
 	Then Save and Cancel buttons are NOT displayed for clickable value
-	And "UPDATED_V" content is displayed in the "Value" column
+	And 'UPDATED_V' content is displayed in the 'Value' column
 	#Cancel changes
 	When User doubleclicks on 'UPDATED_V' cell from 'Value' column
 	And User clicks Cancel button for clickable value
 	Then Save and Cancel buttons are NOT displayed for clickable value
-	And "UPDATED_V" content is displayed in the "Value" column
+	And 'UPDATED_V' content is displayed in the 'Value' column
 
 @Evergreen @Applications @EvergreenJnr_ItemDetails @CustomFields @DAS17584 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckDataIsUpdatedUsingCogMenu
@@ -68,12 +68,12 @@ Scenario: EvergreenJnr_ApplicationsList_CheckDataIsUpdatedUsingCogMenu
 	When User clicks "Edit" option in Cog-menu for "FlDAS17584_1" item on Admin page
 	And User save 'UPDATED_UPD' text in clickable value
 	Then Save and Cancel buttons are NOT displayed for clickable value
-	And "UPDATED_UPD" content is displayed in the "Value" column
+	And 'UPDATED_UPD' content is displayed in the 'Value' column
 	#Cancel changes
 	When User clicks "Edit" option in Cog-menu for "FlDAS17584_1" item on Admin page
 	And User clicks Cancel button for clickable value
 	Then Save and Cancel buttons are NOT displayed for clickable value
-	And "UPDATED_UPD" content is displayed in the "Value" column
+	And 'UPDATED_UPD' content is displayed in the 'Value' column
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @CustomFields @DAS15473 @Cleanup
 Scenario: EvergreenJnr_MailboxesList_CheckClickableValueSavedOnFocusLost
@@ -94,4 +94,4 @@ Scenario: EvergreenJnr_MailboxesList_CheckClickableValueSavedOnFocusLost
 	When User change text in 'ValueDAS15473_3' cell from 'Value' column to 'UPDATED_Focus_Lost' text without saving
 	When User clicks Body container
 	Then Save and Cancel buttons are NOT displayed for clickable value
-	And "UPDATED_Focus_Lost" content is displayed in the "Value" column
+	And 'UPDATED_Focus_Lost' content is displayed in the 'Value' column

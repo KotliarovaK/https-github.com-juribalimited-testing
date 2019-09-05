@@ -1041,7 +1041,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
             catch (Exception)
             {
-                Thread.Sleep(60000);
+                Thread.Sleep(30000);
                 _driver.Navigate().Refresh();
                 var projectTabs = _driver.NowAt<ProjectsPage>();
                 projectTabs.ClickToTabByNameProjectScopeChanges(tabName);
@@ -1456,7 +1456,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
             catch (Exception)
             {
-                Thread.Sleep(60000);
+                Thread.Sleep(30000);
                 _driver.Navigate().Refresh();
                 _driver.WaitForDataLoading();
                 Utils.Verify.IsTrue(page.GetCreatedProjectName(projectName), $"The {projectName} Project is not found");

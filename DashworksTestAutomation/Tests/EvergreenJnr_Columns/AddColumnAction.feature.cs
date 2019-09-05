@@ -1674,7 +1674,7 @@ this.FeatureBackground();
 #line 356
  testRunner.And("User clicks refresh button in the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 357
- testRunner.Then(string.Format("\"{0}\" content is displayed in the \"{1}\" column", translatedFilterValue, translatedColumnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("\'{0}\' content is displayed in the \'{1}\' column", translatedFilterValue, translatedColumnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

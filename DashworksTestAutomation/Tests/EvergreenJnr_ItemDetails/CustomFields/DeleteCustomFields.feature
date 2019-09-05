@@ -26,14 +26,14 @@ Scenario: EvergreenJnr_DevicesList_CheckCustomFieldDeleting
 	Then Warning message with "The selected custom field will be permanently deleted" text is displayed on the Project Details Page
 	When User clicks Cancel button in the warning message on the Admin page
 	Then Warning message is not displayed on the Admin page
-	And "ValueDAS16489_1" content is displayed in the "Value" column
+	And 'ValueDAS16489_1' content is displayed in the 'Value' column
 	#Delete
 	When User clicks "Delete" option in Cog-menu for "FlDAS16489_1" item on Admin page
 	Then Warning message with "The selected custom field will be permanently deleted" text is displayed on the Project Details Page
 	When User clicks Delete button in the warning message
 	Then Success message with "Custom field value deleted successfully" text is displayed on Action panel
 	And "No custom fields found for this device" message is displayed on the Details Page
-	And "ValueDAS16489_1" content is not displayed in the "Value" column
+	And 'ValueDAS16489_1' content is not displayed in the 'Value' column
 	And "Custom Fields" tab is displayed on left menu on the Details page and contains '0' count of items
 	And There are no errors in the browser console
 
@@ -63,5 +63,5 @@ Scenario: EvergreenJnr_MailboxesList_DeleteGroupedCustomFields
 	And Grid is not grouped
 	And No options are selected in the Group By menu
 	And "Custom Fields" tab is displayed on left menu on the Details page and contains '1' count of items
-	And "ValueDAS17695_1A" content is not displayed in the "Value" column
-	And "ValueDAS17695_1B" content is displayed in the "Value" column
+	And 'ValueDAS17695_1A' content is not displayed in the 'Value' column
+	And 'ValueDAS17695_1B' content is displayed in the 'Value' column

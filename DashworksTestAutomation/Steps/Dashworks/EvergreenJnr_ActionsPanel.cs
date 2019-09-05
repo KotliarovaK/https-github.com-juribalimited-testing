@@ -912,6 +912,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             listElement.ListNameTextBox.SendKeys(listName);
             _driver.WaitForElementToBeDisplayed(listElement.CreateButton);
             listElement.CreateButton.Click();
+            _driver.WaitForDataLoadingInActionsPanel();
 
             //Small wait for message display
             var customListElement = _driver.NowAt<CustomListElement>();

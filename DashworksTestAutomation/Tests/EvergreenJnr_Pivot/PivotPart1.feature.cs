@@ -87,16 +87,16 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Pivot")]
         [NUnit.Framework.CategoryAttribute("Pivot")]
         [NUnit.Framework.CategoryAttribute("DAS14224")]
-        [NUnit.Framework.TestCaseAttribute("Applications", "Compliance", "Application Key", "Vendor", "Pivot_Applications_List_14224", "Devices", "Application (Saved List)", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", "Enabled", "Cost Centre", "Department Full Path", "Pivot_User_List_14224", "Applications", "User (Saved List)", null)]
-        public virtual void EvergreenJnr_AllLists_ChecksThatPivotsAreNotShownInTheListToSelectAsAnAdvancedFilter(string pageNameForPivot, string rowGroups, string columns, string values, string pivotName, string pageNameForFilter, string filterName, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("Applications", "All Applications", "Compliance", "Application Key", "Vendor", "Pivot_Applications_List_14224", "Devices", "All Devices", "Application (Saved List)", null)]
+        [NUnit.Framework.TestCaseAttribute("Users", "All Users", "Enabled", "Cost Centre", "Department Full Path", "Pivot_User_List_14224", "Applications", "All Applications", "User (Saved List)", null)]
+        public virtual void EvergreenJnr_AllLists_ChecksThatPivotsAreNotShownInTheListToSelectAsAnAdvancedFilter(string pageNameForPivot, string pageLabelForPivot, string rowGroups, string columns, string values, string pivotName, string pageNameForFilter, string pageLabelForFilter, string filterName, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AllLists_ChecksThatPivotsAreNotShownInTheListToSelectAsAnAdvancedFilterInternal(pageNameForPivot,rowGroups,columns,values,pivotName,pageNameForFilter,filterName,exampleTags);
+                    this.EvergreenJnr_AllLists_ChecksThatPivotsAreNotShownInTheListToSelectAsAnAdvancedFilterInternal(pageNameForPivot,pageLabelForPivot,rowGroups,columns,values,pivotName,pageNameForFilter,pageLabelForFilter,filterName,exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -115,7 +115,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             }
         }
 
-        private void EvergreenJnr_AllLists_ChecksThatPivotsAreNotShownInTheListToSelectAsAnAdvancedFilterInternal(string pageNameForPivot, string rowGroups, string columns, string values, string pivotName, string pageNameForFilter, string filterName, string[] exampleTags)
+        private void EvergreenJnr_AllLists_ChecksThatPivotsAreNotShownInTheListToSelectAsAnAdvancedFilterInternal(string pageNameForPivot, string pageLabelForPivot, string rowGroups, string columns, string values, string pivotName, string pageNameForFilter, string pageLabelForFilter, string filterName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -137,7 +137,7 @@ this.FeatureBackground();
 #line 10
  testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", pageNameForPivot), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 11
- testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", pageNameForPivot), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", pageLabelForPivot), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 12
  testRunner.When("User navigates to Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -172,7 +172,7 @@ this.FeatureBackground();
 #line 26
  testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", pageNameForFilter), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 27
- testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", pageNameForFilter), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", pageLabelForFilter), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 28
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 29

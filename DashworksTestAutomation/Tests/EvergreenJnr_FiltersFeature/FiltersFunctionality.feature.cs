@@ -2817,7 +2817,7 @@ this.FeatureBackground();
  testRunner.When("User Add And \"State/County\" filter where type is \"Equals\" with added column and L" +
                     "ookup option", ((string)(null)), table50, "When ");
 #line 647
- testRunner.Then(string.Format("\"{0}\" content is displayed in the \"State/County\" column", filterValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("\'{0}\' content is displayed in the \'State/County\' column", filterValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 648
  testRunner.When("User click Edit button for \"State/County\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 649

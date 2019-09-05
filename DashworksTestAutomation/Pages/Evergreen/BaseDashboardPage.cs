@@ -308,9 +308,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'inline-success')]")]
         public IWebElement SuccessMessage { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//div[@id='context-container']//div//div[@class='ps__thumb-y']")]
-        public IWebElement ActionsScrollBar { get; set; }
-
         [FindsBy(How = How.XPath, Using = "//button[contains(@class, 'close')]")]
         public IWebElement CloseButtonInSuccessMessage { get; set; }
 

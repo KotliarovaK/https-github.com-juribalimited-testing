@@ -142,9 +142,6 @@ namespace DashworksTestAutomation.Extensions
             var bys = bySelector != null ? new List<By> { bySelector } : page.GetPageIdentitySelectors();
 
             foreach (var by in bys)
-                //((IJavaScriptExecutor)driver).ExecuteScript("arguments[0].style.border='3px solid red'",
-                //	driver.FindElement(@by));
-
                 driver.WaitForElement(by);
 
             page.InitElements();
@@ -468,6 +465,21 @@ namespace DashworksTestAutomation.Extensions
             IJavaScriptExecutor ex = driver;
             bool result = (bool)ex.ExecuteScript("return arguments[0].scrollHeight > arguments[0].clientHeight", element);
             return result;
+        }
+
+        public static void ScrollGridToTheEnd(this RemoteWebDriver driver, IWebElement gridElement)
+        {
+            IJavaScriptExecutor ex = driver;
+
+            var clientHeight = int.Parse(ex.ExecuteScript("return arguments[0].clientHeight", gridElement).ToString());
+            var scrollHeight = int.Parse(ex.ExecuteScript("return arguments[0].scrollHeight", gridElement).ToString());
+
+            for (int i = 0; i < scrollHeight / clientHeight; i++)
+            {
+                ex.ExecuteScript($"arguments[0].scrollTo(0,{clientHeight * i});", gridElement);
+            }
+            //Final scroll to get to the grid bottom
+            ex.ExecuteScript($"arguments[0].scrollTo(0,{scrollHeight});", gridElement);
         }
 
         #endregion Actions with Javascript
