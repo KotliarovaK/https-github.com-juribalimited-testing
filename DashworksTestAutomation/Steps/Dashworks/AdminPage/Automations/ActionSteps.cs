@@ -21,14 +21,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations
             _driver = driver;
         }
 
-        [When(@"User moves ""(.*)"" action to ""(.*)"" action")]
-        public void WhenUserMovesActionToAction(string actionFrom, string actionTo)
+        [When(@"User moves ""(.*)"" item to ""(.*)"" item")]
+        public void WhenUserMovesItemToItem(string itemFrom, string itemTo)
         {
-            var page = _driver.NowAt<ActionsPage>();
-            _driver.WaitForElementToBeDisplayed(page.ActionsTableContent);
-            var action1 = page.GetMoveButtonByActionName(actionFrom);
-            var action2 = page.GetMoveButtonByActionName(actionTo);
-            _driver.DragAndDrop(action1, action2);
+            var page = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
+            var item1 = page.GetMoveButtonByItemName(itemFrom);
+            var item2 = page.GetMoveButtonByItemName(itemTo);
+            _driver.DragAndDrop(item1, item2);
         }
 
         [When(@"User selects ""(.*)"" in the ""(.*)"" dropdown for Actions")]

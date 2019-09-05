@@ -376,6 +376,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = OptionOnActionsPanel)]
         public IList<IWebElement> OptionListOnActionsPanel { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@role='gridcell']//a")]
+        public IList<string> ColumnForMoved { get; set; }
+
         #region TableColumns
 
         [FindsBy(How = How.XPath, Using = ".//div[@colid='lastLogonDate'][@role='gridcell']")]
@@ -688,6 +691,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             var by = By.XPath($".//div[@col-id='{GetColIdByColumnName(columnName)}' and @role='gridcell']");
             return Driver.FindElements(by).Select(x => x.Text).ToList();
+        }
+
+        public IWebElement GetMoveButtonByItemName(string item)
+        {
+            var indexRow = ColumnForMoved.IndexOf(item);
+            var selector = By.XPath($".//div[@row-index='{indexRow}']/div[@col-id='dragColumn']");
+            return Driver.FindElement(selector);
         }
 
         private string GetColIdByColumnName(string columnName)
