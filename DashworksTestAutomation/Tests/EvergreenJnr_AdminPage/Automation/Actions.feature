@@ -199,7 +199,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
 	When User enters '15428_Action_3' text to 'Action Name' textbox
 	Then Filling field error with "An action with this name already exists for this automation" text is displayed
 	When User clicks the "CANCEL" Action button
-	When User moves "15428_Action_1" action to "15428_Action_3" action
+	When User moves "15428_Action_1" item to "15428_Action_3" item
 	When User have opened column settings for "Action" column
 	And User clicks Column button on the Column Settings panel
 	And User select "Processing order" checkbox on the Column Settings panel
