@@ -59,9 +59,9 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckUpdateTaskValueEditPageLoadsProjec
 	When User clicks content from "Action" column
 	Then "Update Migrated devices to Started" content is displayed in "Action Name" field
 	Then "Update task value" text value is displayed in the "Action Type" dropdown
-	Then "<Project>" value is displayed in the "Project" dropdown for Automation
-	Then "<Stage>" value is displayed in the "Stage" dropdown for Automation
-	Then "<Task>" value is displayed in the "Task" dropdown for Automation
+	Then '<Project>' value is displayed in the 'Project' dropdown
+	Then '<Stage>' value is displayed in the 'Stage' dropdown for Automation
+	Then '<Task>' value is displayed in the 'Task' dropdown for Automation
 	#Remove # after Value dropdown fixed
 	#Then "Started" text value is displayed in the "Value" dropdown
 
@@ -156,11 +156,11 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueAction
 	#Actions content check
 	Then "Update Migrated devices" content is displayed in "Action Name" field
 	Then "Update task value" text value is displayed in the "Action Type" dropdown
-	Then "One" value is displayed in the "Stage" dropdown for Automation
-	Then "Radio Rag Date Owner Comp Req B" value is displayed in the "Task" dropdown for Automation
-	Then "No change" value is displayed in the "Update Value" dropdown
-	Then "No change" value is displayed in the "Update Date" dropdown
-	Then "Update" value is displayed in the "Update Owner" dropdown
+	Then 'One' value is displayed in the 'Stage' dropdown for Automation
+	Then 'Radio Rag Date Owner Comp Req B' value is displayed in the 'Task' dropdown for Automation
+	Then 'No change' value is displayed in the 'Update Value' dropdown
+	Then 'No change' value is displayed in the 'Update Date' dropdown
+	Then 'Update' value is displayed in the 'Update Owner' dropdown
 	Then "1803 Team" content is displayed in "Team" field
 	Then "Akhila Varghese" content is displayed in "Owner" field
 
@@ -196,11 +196,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithRemoveOwnerIsLoaded
 	#Actions content check
 	Then "Update Migrated devices" content is displayed in "Action Name" field
 	Then "Update task value" text value is displayed in the "Action Type" dropdown
-	Then "One" value is displayed in the "Stage" dropdown for Automation
-	Then "Radio Rag Date Owner Comp Req B" value is displayed in the "Task" dropdown for Automation
-	Then "No change" value is displayed in the "Update Value" dropdown
-	Then "No change" value is displayed in the "Update Date" dropdown
-	Then "Remove" value is displayed in the "Update Owner" dropdown
+	Then 'One' value is displayed in the 'Stage' dropdown for Automation
+	Then 'Radio Rag Date Owner Comp Req B' value is displayed in the 'Task' dropdown for Automation
+	Then 'No change' value is displayed in the 'Update Value' dropdown
+	Then 'No change' value is displayed in the 'Update Date' dropdown
+	Then 'Remove' value is displayed in the 'Update Owner' dropdown
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17615 @DAS17617 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithUpdateOwnerIsLoadedCorrectly
@@ -235,10 +235,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithUpdateOwnerIsLoaded
 	#Actions content check
 	Then "Update Migrated devices" content is displayed in "Action Name" field
 	Then "Update task value" text value is displayed in the "Action Type" dropdown
-	Then "One" value is displayed in the "Stage" dropdown for Automation
-	Then "Radio Rag Date Owner Comp Req B" value is displayed in the "Task" dropdown for Automation
-	Then "No change" value is displayed in the "Update Value" dropdown
-	Then "No change" value is displayed in the "Update Date" dropdown
-	Then "Update" value is displayed in the "Update Owner" dropdown
+	Then 'One' value is displayed in the 'Stage' dropdown for Automation
+	Then 'Radio Rag Date Owner Comp Req B' value is displayed in the 'Task' dropdown for Automation
+	Then 'No change' value is displayed in the 'Update Value' dropdown
+	Then 'No change' value is displayed in the 'Update Date' dropdown
+	Then 'Update' value is displayed in the 'Update Owner' dropdown
 	Then "1803 Team" content is displayed in "Team" field
 	Then "Akhila Varghese" content is displayed in "Owner" field

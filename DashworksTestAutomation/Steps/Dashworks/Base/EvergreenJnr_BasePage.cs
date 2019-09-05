@@ -172,7 +172,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.IsTrue(dropdown.GetDropdownByTextValueByName(value, dropdownName).Displayed(), $"{value} is not displayed in the {dropdownName}");
         }
 
-        [Then(@"""(.*)"" value is displayed in the ""(.*)"" dropdown")]
+        [Then(@"'(.*)' value is displayed in the '(.*)' dropdown")]
         public void ThenValueIsDisplayedInTheDropdown(string value, string dropdownName)
         {
             //TODO why Capacity SlotsPage used and BaseGrid

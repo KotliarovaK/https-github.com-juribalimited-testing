@@ -40,8 +40,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForCa
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
 	When User clicks content from "Capacity Slot" column
-	Then "Stage13152 \ Task13152" value is displayed in the "Tasks" dropdown
-	And "Unassigned" value is displayed in the "Capacity Units" dropdown
+	Then 'Stage13152 \ Task13152' value is displayed in the 'Tasks' dropdown
+	And 'Unassigned' value is displayed in the 'Capacity Units' dropdown
 	And "Device" text value is displayed in the "Object Type" dropdown
 	When User selects "Application" in the "Object Type" dropdown
 	And User selects "Unassigned" checkbox in the "Capacity Units" field on the Project details page
@@ -95,11 +95,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTe
 	Then Success message is displayed and contains "Your capacity slot has been created" text
 	#Check data in the slot after creation
 	When User clicks content from "Capacity Slot" column
-	Then "Teams and Paths" value is displayed in the "Capacity Type" dropdown
-	And "Stage13152 \ Task13152" value is displayed in the "Tasks" dropdown
+	Then 'Teams and Paths' value is displayed in the 'Capacity Type' dropdown
+	And 'Stage13152 \ Task13152' value is displayed in the 'Tasks' dropdown
 	And "Device" text value is displayed in the "Object Type" dropdown
-	And "[Default (Computer)]" value is displayed in the "Paths" dropdown
-	And "Admin IT" value is displayed in the "Teams" dropdown
+	And '[Default (Computer)]' value is displayed in the 'Paths' dropdown
+	And 'Admin IT' value is displayed in the 'Teams' dropdown
 	#Change data in the slot
 	When User selects "Application" in the "Object Type" dropdown
 	And User selects "Admin IT" checkbox in the "Teams" field on the Project details page
@@ -111,8 +111,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTe
 	When User clicks content from "Capacity Slot" column
 	Then "Teams and Paths" text value is displayed in the "Capacity Type" dropdown
 	And "Application" text value is displayed in the "Object Type" dropdown
-	And "[Default (Application)]" value is displayed in the "Paths" dropdown
-	And "1803 Team" value is displayed in the "Teams" dropdown
+	And '[Default (Application)]' value is displayed in the 'Paths' dropdown
+	And '1803 Team' value is displayed in the 'Teams' dropdown
 	When User selects "Capacity Units" in the "Capacity Type" dropdown
 	And User clicks the "UPDATE" Action button
 	#Check updated Capacity Type value

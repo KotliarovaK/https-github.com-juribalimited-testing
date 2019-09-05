@@ -320,7 +320,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditActionPage
 	When User clicks content from "Action" column
 	Then Edit Action page is displayed to the User
 	Then "15425_Action" content is displayed in "Action Name" field
-	Then "[Default (User)]" value is displayed in the "Path" dropdown for Automation
+	Then '[Default (User)]' value is displayed in the 'Path' dropdown
 	Then "Update path" text value is displayed in the "Action Type" dropdown
 	Then "UPDATE" Action button is disabled
 	Then "CANCEL" Action button is active
@@ -333,7 +333,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditActionPage
 	Then "UPDATE" Action button is active
 	When User selects 'Migration Project Phase 2 (User Project)' option from 'Project' autocomplete
 	Then "UPDATE" Action button is disabled
-	Then "" value is displayed in the "Path" dropdown for Automation
+	Then '' value is displayed in the 'Path' dropdown
 	Then "UPDATE" Action button have tooltip with "Some values are missing or not valid" text
 	When User clicks the "CANCEL" Action button
 	Then Actions page is displayed to the User
@@ -590,10 +590,10 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateTextValue
 	#Actions content check
 	Then "17602_Action" content is displayed in "Action Name" field
 	Then "Update task value" text value is displayed in the "Action Type" dropdown
-	Then "One" value is displayed in the "Stage" dropdown for Automation
-	Then "Text Computer" value is displayed in the "Task" dropdown for Automation
-	Then "Text Computer" value is displayed in the "Task" dropdown for Automation
-	Then "Update" value is displayed in the "Update Value" dropdown
+	Then 'One' value is displayed in the 'Stage' dropdown
+	Then 'Text Computer' value is displayed in the 'Task' dropdown
+	Then 'Text Computer' value is displayed in the 'Task' dropdown
+	Then 'Update' value is displayed in the 'Update Value' dropdown
 	Then "To be updated" text is displayed in "Value" field
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17602 @DAS17605 @Cleanup @Not_Ready
@@ -626,10 +626,10 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForRemoveTextValue
 	#Actions content check
 	Then "17605_Action" content is displayed in "Action Name" field
 	Then "Update task value" text value is displayed in the "Action Type" dropdown
-	Then "Computer Scheduled Test (Jo)" value is displayed in the "Project" dropdown for Automation
-	Then "One" value is displayed in the "Stage" dropdown for Automation
-	Then "Text Computer" value is displayed in the "Task" dropdown for Automation
-	Then "Remove" value is displayed in the "Update Value" dropdown
+	Then 'Computer Scheduled Test (Jo)' value is displayed in the 'Project' dropdown for Automation
+	Then 'One' value is displayed in the 'Stage' dropdown for Automation
+	Then 'Text Computer' value is displayed in the 'Task' dropdown for Automation
+	Then 'Remove' value is displayed in the 'Update Value' dropdown
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17602 @DAS17606 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateDate
@@ -665,10 +665,10 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateDate
 	#Actions content check
 	Then "17606_Action" content is displayed in "Action Name" field
 	Then "Update task value" text value is displayed in the "Action Type" dropdown
-	Then "Computer Scheduled Test (Jo)" value is displayed in the "Project" dropdown for Automation
-	Then "One" value is displayed in the "Stage" dropdown for Automation
-	Then "Date Computer" value is displayed in the "Task" dropdown for Automation
-	Then "Update" value is displayed in the "Update Date" dropdown
+	Then 'Computer Scheduled Test (Jo)' value is displayed in the 'Project' dropdown for Automation
+	Then 'One' value is displayed in the 'Stage' dropdown for Automation
+	Then 'Date Computer' value is displayed in the 'Task' dropdown for Automation
+	Then 'Update' value is displayed in the 'Update Date' dropdown
 	Then "5 Aug 2019" content is displayed in "Date" field
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17797 @DAS17816 @Not_Ready @Cleanup
