@@ -95,10 +95,37 @@ Examples:
 	| Users     | All Users     | 0088FC8A50DD4344B92     | Username      | I-Computer Scheduled Project | This user will be offboarded, this cannot be undone    |
 	| Mailboxes | All Mailboxes | alex.cristea@juriba.com | Email Address | Email Migration              | This mailbox will be offboarded, this cannot be undone |
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @Offboard @DAS17964 @Not_Ready
-Scenario Outline: EvergreenJnr_AllLists_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindow
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @Offboard @DAS17964 @DAS17990 @DAS17000
+Scenario Outline: EvergreenJnr_AllLists_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindowWithAssotiatedDevices
 	When User clicks "<PageName>" on the left-hand menu
-	Then "<LoadedPage>" list should be displayed to the user
+	Then "All <PageName>" list should be displayed to the user
+	When User perform search by "<ItemName>"
+	And User click content from "<ColumnName>" column
+	Then Details page for "<ItemName>" item is displayed to the user
+	When User switches to the "<ProjectName>" project in the Top bar on Item details page
+	And User navigates to the "Projects" main-menu on the Details page
+	And User navigates to the "Project Details" sub-menu on the Details page
+	And User clicks the "OFFBOARD" Action button
+	Then Offboard Pop-up is displayed on the Item Details page
+	Then following text '<Text>' is displayed in Offboard Pop-up
+	Then 'Offboard all associated users' checkbox is checked in Offboard Pop-up
+	Then following columns are displayed on the Item details page:
+	| ColumnName   |
+	| Username     |
+	| Display Name |
+	| Domain       |
+	| Owner        |
+
+Examples: 
+	| PageName  | ItemName                | ColumnName    | ProjectName                          | Text                                                                                                                                                                       |
+	| Devices   | 03AK1ZP1C9MPFV          | Hostname      | User Evergreen Capacity Project | Offboarding device 03AK1ZP1C9MPFV. Select any associated users below to offboard at the same time. Offboarding an object deletes all project related information about it. |
+	#add check for Project with assotiated users
+	#add check for Project with assotiated users
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @Offboard @DAS17964 @DAS17990 @DAS17000
+Scenario Outline: EvergreenJnr_AllLists_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindowWithNoAssotiatedDevices
+	When User clicks "<PageName>" on the left-hand menu
+	Then "All <PageName>" list should be displayed to the user
 	When User perform search by "<ItemName>"
 	And User click content from "<ColumnName>" column
 	Then Details page for "<ItemName>" item is displayed to the user
@@ -110,10 +137,7 @@ Scenario Outline: EvergreenJnr_AllLists_VerifyThatTheMessageAppearsCorrectlyOnTh
 	Then following text '<Text>' is displayed in Offboard Pop-up
 
 Examples: 
-	| PageName  | LoadedPage    | ItemName                | ColumnName    | ProjectName                          | Text                                                                                                                                                                       |
-	| Devices   | All Devices   | 001BAQXT6JWFPI          | Hostname      | USE ME FOR AUTOMATION(DEVICE SCHDLD) | Offboarding device 001BAQXT6JWFPI. Select any associated users below to offboard at the same time. Offboarding an object deletes all project related information about it. |
-	| Devices   | All Devices   | 001BAQXT6JWFPI          | Hostname      | USE ME FOR AUTOMATION(USR SCHDLD)    | Offboarding device 001BAQXT6JWFPI. Offboarding an object deletes all project related information about it.                                                                 |
-	#add check for Project with assotiated users
-	| Users     | All Users     | 0088FC8A50DD4344B92     | Username      | USE ME FOR AUTOMATION(USR SCHDLD)    | Offboarding user BCLABS\0088FC8A50DD4344B92 (Barland, Steinar). Offboarding an object deletes all project related information about it.                                    |
-	#add check for Project with assotiated users
-	| Mailboxes | All Mailboxes | alex.cristea@juriba.com | Email Address | Email Migration                      | Offboarding mailbox alex.cristea@juriba.com (Alex Cristea). Offboarding an object deletes all project related information about it.                                        |
+	| PageName  | ItemName                | ColumnName    | ProjectName                          | Text                                                                                                                                                                       |
+	| Devices   | 03AK1ZP1C9MPFV          | Hostname      | USE ME FOR AUTOMATION(USR SCHDLD)    | Offboarding device 03AK1ZP1C9MPFV. Offboarding an object deletes all project related information about it.                                                                 |
+	| Users     | 0088FC8A50DD4344B92     | Username      | USE ME FOR AUTOMATION(USR SCHDLD)    | Offboarding user BCLABS\0088FC8A50DD4344B92 (Barland, Steinar). Offboarding an object deletes all project related information about it.                                    |
+	| Mailboxes | alex.cristea@juriba.com | Email Address | Email Migration                      | Offboarding mailbox alex.cristea@juriba.com (Alex Cristea). Offboarding an object deletes all project related information about it.                                        |

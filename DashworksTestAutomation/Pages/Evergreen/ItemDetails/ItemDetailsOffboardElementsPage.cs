@@ -29,5 +29,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         {
             return Driver.FindElement(By.XPath(".//div[@class='mat-dialog-content']")).Text;
         }
+
+        public IWebElement GetOffboardPopUpCheckbox(string checkbox)
+        {
+            var selector = By.XPath($".//*[text()='{checkbox}']/preceding::div[@class='mat-checkbox-inner-container']//input");
+            Driver.WaitForElementToBeDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
     }
 }

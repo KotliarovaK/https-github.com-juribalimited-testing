@@ -35,5 +35,12 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             var actualText = page.GetPopupText().Replace("\r\n", " ");
             Verify.Contains(text, actualText, $"'{text}' in Offboard Pop-up is not displayed");
         }
+
+        [Then(@"'(.*)' checkbox is checked in Offboard Pop-up")]
+        public void ThenCheckboxIsCheckedInOffboardPop_Up(string checkbox)
+        {
+            var filterElement = _driver.NowAt<ItemDetailsOffboardElementsPage>();
+            Verify.IsTrue(filterElement.GetOffboardPopUpCheckbox(checkbox).Selected, $"{checkbox} Checkbox is not checked");
+        }
     }
 }
