@@ -693,13 +693,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElements(by).Select(x => x.Text).ToList();
         }
 
-        public IWebElement GetMoveButtonByItemName(string item)
-        {
-            var indexRow = ColumnForMoved.IndexOf(item);
-            var selector = By.XPath($".//div[@row-index='{indexRow}']/div[@col-id='dragColumn']");
-            return Driver.FindElement(selector);
-        }
-
         private string GetColIdByColumnName(string columnName)
         {
             var by = By.XPath($".//span[text()=\"{columnName}\"]/ancestor::div[@col-id]");
