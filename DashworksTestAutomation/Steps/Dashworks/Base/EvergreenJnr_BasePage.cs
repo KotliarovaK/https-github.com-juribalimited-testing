@@ -106,7 +106,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 _automationActions.Value.Add(text);
         }
 
-        [Then(@"""(.*)"" content is displayed in ""(.*)"" textbox")]
+        [Then(@"'(.*)' content is displayed in '(.*)' textbox")]
         public void ThenContentIsDisplayedInTextbox(string expectedText, string placeholder)
         {
             CheckAutocompletAndTextboxText(placeholder, expectedText);
