@@ -19,7 +19,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             _driver = driver;
         }
 
-        [Then(@"""(.*)"" content is displayed in the ""(.*)"" column")]
+        [Then(@"'(.*)' content is displayed in the '(.*)' column")]
         public void ThenContentIsDisplayedInTheColumn(string textContent, string columnName)
         {
             var page = _driver.NowAt<BaseGridPage>();
@@ -29,7 +29,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.Contains(textContent, columnContent, $"'{textContent}' is not present in the '{columnName}' column");
         }
 
-        [Then(@"""(.*)"" content is not displayed in the ""(.*)"" column")]
+        [Then(@"'(.*)' content is not displayed in the '(.*)' column")]
         public void ThenContentIsNotDisplayedInTheColumn(string textContent, string columnName)
         {
             var page = _driver.NowAt<BaseGridPage>();
@@ -101,6 +101,12 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             SaveClickableValue();
         }
 
+        [When(@"User change text in '(.*)' cell from '(.*)' column to '(.*)' text without saving")]
+        public void WhenUserChangeTextInCellFromColumnToTextWithoutSaving(string cellText, string columnName, string newCellText)
+        {
+            ChangeClickableValue(cellText, columnName, newCellText);
+        }
+
         //Change by CogMenu or when already opened for edit
         [When(@"User save '(.*)' text in clickable value")]
         public void WhenUserSaveTextInClickableValue(string newCellText)
@@ -108,12 +114,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             EnterTextInClickableValue(newCellText);
 
             SaveClickableValue();
-        }
-
-        [When(@"User change text in '(.*)' cell from '(.*)' column to '(.*)' text without saving")]
-        public void WhenUserChangeTextInCellFromColumnToTextWithoutSaving(string cellText, string columnName, string newCellText)
-        {
-            ChangeClickableValue(cellText, columnName, newCellText);
         }
 
         private void SaveClickableValue()

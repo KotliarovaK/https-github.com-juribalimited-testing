@@ -644,7 +644,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatLocationFilterIsEditedCorrectly
 	When User Add And "State/County" filter where type is "Equals" with added column and Lookup option
 	| SelectedValues |
 	| <FilterValue>  |
-	Then "<FilterValue>" content is displayed in the "State/County" column
+	Then '<FilterValue>' content is displayed in the 'State/County' column
 	When User click Edit button for "State/County" filter
 	And User deletes the selected lookup filter "<FilterValue>" value
 	And User have created "Equals" Lookup filter with column and "Empty" option

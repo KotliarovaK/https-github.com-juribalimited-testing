@@ -396,7 +396,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Project_Creation_and_Scope")]
         [NUnit.Framework.CategoryAttribute("Projects")]
-        [NUnit.Framework.CategoryAttribute("TEST")]
         public virtual void EvergreenJnr_AdminPage_CheckThatNoErrorsAreDisplayedInTheProjectScopeChangesSectionAfterUsingSavedDevicesList()
         {
             System.Exception lastException = null;
@@ -439,8 +438,7 @@ this.FeatureBackground();
                         "DAS12532",
                         "Cleanup",
                         "Project_Creation_and_Scope",
-                        "Projects",
-                        "TEST"});
+                        "Projects"});
 #line 76
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

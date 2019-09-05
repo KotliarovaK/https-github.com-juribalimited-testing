@@ -29,7 +29,7 @@ Examples:
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12968
 Scenario Outline: EvergreenJnr_AllLists_CheckThatCopyCellWorksInItemDetails
 	When User clicks "<PageName>" on the left-hand menu
-	Then "<PageName>" list should be displayed to the user
+	Then "All <PageName>" list should be displayed to the user
 	When User perform search by "<SearchTerm>"
 	And User click content from "<ColumnName>" column
 	When User navigates to the "<MainTabName>" main-menu on the Details page
@@ -46,9 +46,9 @@ Examples:
 	| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users            | Users             | Username       | floresau      |
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12968
-Scenario Outline: EvergreenJnr_AllLists_CheckThatCopyRowWorksInItemDetails
+Scenario Outline: EvergreenJnr_AllLists_CheckThatCopyRowWorksInItemDetailsOnSelectedMainTab
 	When User clicks "<PageName>" on the left-hand menu
-	Then "<PageName>" list should be displayed to the user
+	Then "All <PageName>" list should be displayed to the user
 	When User perform search by "<SearchTerm>"
 	And User click content from "<ColumnName>" column
 	When User navigates to the "<MainTabName>" main-menu on the Details page
@@ -58,11 +58,25 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatCopyRowWorksInItemDetails
 	Then Next data '<ExpectedData>' is copied
 	
 Examples:
-	| PageName     | SearchTerm             | ColumnName    | MainTabName      | SubTabName        | TargetCell    | ExpectedData                                                    |
-	| Devices      | 30BGMTLBM9PTW5         | Hostname      | Applications     | Evergreen Summary | Access 95     | Access 95   Microsoft   Unknown   Green   True   Unknown   True |
-	| Users        | ZZZ588323              | Username      | Active Directory | Groups            | GAPP-A012448B | GAPP-A012448B   US-W   Global Security Group   Unknown          |
-	| Applications | ACD Display 3.4        | Application   | Details          | Programs          | Install       | Install   setup.exe /q                                          |
-	| Mailboxes    | Zurong.Wu@bclabs.local | Email Address | Details          | Email Addresses   | SMTP          | SMTP   Zurong.Wu@bclabs.local   True                            |
+	| PageName | SearchTerm          | ColumnName | MainTabName      | SubTabName        | TargetCell   | ExpectedData                                                    |
+	| Devices  | 30BGMTLBM9PTW5      | Hostname   | Applications     | Evergreen Summary | Access 95    | Access 95   Microsoft   Unknown   Green   True   Unknown   True |
+	| Users    | 003F5D8E1A844B1FAA5 | Username   | Active Directory | Groups            | Domain Users | Domain Users   DWLABS   Global Security Group   All domain users|
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12968
+Scenario Outline: EvergreenJnr_AllLists_CheckThatCopyRowWorksInItemDetailsOnSelectedSabTab
+	When User clicks "<PageName>" on the left-hand menu
+	Then "All <PageName>" list should be displayed to the user
+	When User perform search by "<SearchTerm>"
+	And User click content from "<ColumnName>" column
+	When User navigates to the "<SubTabName>" sub-menu on the Details page
+	And User performs right-click on "<TargetCell>" cell in the grid
+	And User selects 'Copy row' option in context menu
+	Then Next data '<ExpectedData>' is copied
+	
+Examples:
+	| PageName     | SearchTerm             | ColumnName    | MainTabName | SubTabName      | TargetCell | ExpectedData                         |
+	| Applications | ACD Display 3.4        | Application   | Details     | Programs        | Install    | Install   setup.exe /q               |
+	| Mailboxes    | Zurong.Wu@bclabs.local | Email Address | Details     | Email Addresses | SMTP       | SMTP   Zurong.Wu@bclabs.local   True |
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15133
 Scenario: EvergreenJnr_DevicesList_CheckThatApplicationsSummaryRowCanBeCopied
@@ -154,10 +168,10 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatUserDetailsIsSimilarOnGridAndDetail
 	And User click content from "Hostname" column
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
 	When User navigates to the "Users" main-menu on the Details page
-	Then "QLL295118" content is displayed in the "Username" column
-	And "US-E" content is displayed in the "Domain" column
-	And "Nicole P. Braun" content is displayed in the "Display Name" column
-	And "QLL295118.Users.Jersey City.US-E.local" content is displayed in the "Distinguished Name" column
+	Then 'QLL295118' content is displayed in the 'Username' column
+	And 'US-E' content is displayed in the 'Domain' column
+	And 'Nicole P. Braun' content is displayed in the 'Display Name' column
+	And 'QLL295118.Users.Jersey City.US-E.local' content is displayed in the 'Distinguished Name' column
 	When User clicks "QLL295118" link on the Details Page
 	Then Details page for "QLL295118 (Nicole P. Braun)" item is displayed to the user
 	And User verifies data in the fields on details page

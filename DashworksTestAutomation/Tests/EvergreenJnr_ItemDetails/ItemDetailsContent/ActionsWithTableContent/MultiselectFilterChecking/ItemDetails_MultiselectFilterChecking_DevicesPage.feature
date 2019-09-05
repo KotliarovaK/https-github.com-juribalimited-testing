@@ -14,13 +14,13 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	Then Details page for "00RUUMAH9OZN9A" item is displayed to the user
 	When User navigates to the "Users" main-menu on the Details page
 	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
-	Then "OUT OF SCOPE" content is displayed in the "Readiness" column
-	Then "TRUE" content is displayed in the "Owner" column
-	Then "NONE" content is displayed in the "Application Readiness" column
-	Then "GREY" content is displayed in the "Pre-Migration" column
-	Then "GREY" content is displayed in the "Migration" column
-	Then "" content is displayed in the "Email Controls" column
-	Then "GREY" content is displayed in the "Communication" column
+	Then 'OUT OF SCOPE' content is displayed in the 'Readiness' column
+	Then 'TRUE' content is displayed in the 'Owner' column
+	Then 'NONE' content is displayed in the 'Application Readiness' column
+	Then 'GREY' content is displayed in the 'Pre-Migration' column
+	Then 'GREY' content is displayed in the 'Migration' column
+	Then '' content is displayed in the 'Email Controls' column
+	Then 'GREY' content is displayed in the 'Communication' column
 	When User clicks String Filter button for "Readiness" column
 	Then following String Values are displayed in the filter on the Details Page
 	| Values       |
@@ -62,10 +62,10 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	And User navigates to the "Evergreen Summary" sub-menu on the Details page
 	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
 	And User enters "Microsoft Office PowerPoint 2002 (XP)" text in the Search field for "Application" column on the Details Page
-	Then "GREEN" content is displayed in the "Compliance" column
-	Then "TRUE" content is displayed in the "Installed" column
-	Then "UNKNOWN" content is displayed in the "Used" column
-	Then "TRUE" content is displayed in the "Entitled" column
+	Then 'GREEN' content is displayed in the 'Compliance' column
+	Then 'TRUE' content is displayed in the 'Installed' column
+	Then 'UNKNOWN' content is displayed in the 'Used' column
+	Then 'TRUE' content is displayed in the 'Entitled' column
 	When User clicks String Filter button for "Compliance" column
 	Then following String Values are displayed in the filter on the Details Page
 	| Values |
@@ -98,7 +98,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	And User navigates to the "Evergreen Detail" sub-menu on the Details page
 	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
 	And User enters "Microsoft Office PowerPoint 2002 (XP)" text in the Search field for "Application" column on the Details Page
-	Then "GREEN" content is displayed in the "Compliance" column
+	Then 'GREEN' content is displayed in the 'Compliance' column
 	And Content in the 'Advertisement' column is equal to
 	| Content           |
 	| Advert - A0123BFF |
@@ -157,7 +157,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	And User navigates to the "Advertisements" sub-menu on the Details page
 	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
 	And User enters "Microsoft Office PowerPoint 2002 (XP)" text in the Search field for "Application" column on the Details Page
-	Then "TierA Site01" content is displayed in the "Site" column
+	Then 'TierA Site01' content is displayed in the 'Site' column
 	When User clicks String Filter button for "Site" column
 	Then following String Values are displayed in the filter on the Details Page
 	| Values       |
@@ -174,9 +174,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	When User navigates to the "Applications" main-menu on the Details page
 	And User navigates to the "Collections" sub-menu on the Details page
 	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
-	Then "SMS/SCCM 2007" content is displayed in the "Source Type" column
-	Then "A01 SMS (Spoof)" content is displayed in the "Source" column
-	Then "TierA Site01" content is displayed in the "Site" column
+	Then 'SMS/SCCM 2007' content is displayed in the 'Source Type' column
+	Then 'A01 SMS (Spoof)' content is displayed in the 'Source' column
+	Then 'TierA Site01' content is displayed in the 'Site' column
 	When User clicks String Filter button for "Source Type" column
 	Then following String Values are displayed in the filter on the Details Page
 	| Values        |
@@ -203,7 +203,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	When User navigates to the "Compliance" main-menu on the Details page
 	And User navigates to the "Hardware Rules" sub-menu on the Details page
 	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
-	Then "AMBER" content is displayed in the "Compliance" column
+	Then 'AMBER' content is displayed in the 'Compliance' column
 	When User clicks String Filter button for "Compliance" column
 	Then following String Values are displayed in the filter on the Details Page
 	| Values |
@@ -221,9 +221,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	And User navigates to the "Application Issues" sub-menu on the Details page
 	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
 	And User enters "Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" text in the Search field for "Application" column on the Details Page
-	Then "TierA Site01" content is displayed in the "Site" column
-	Then "TRUE" content is displayed in the "Installed" column
-	Then "RED" content is displayed in the "Compliance" column
+	Then 'TierA Site01' content is displayed in the 'Site' column
+	Then 'TRUE' content is displayed in the 'Installed' column
+	Then 'RED' content is displayed in the 'Compliance' column
 	When User clicks String Filter button for "Site" column
 	Then following String Values are displayed in the filter on the Details Page
 	| Values       |

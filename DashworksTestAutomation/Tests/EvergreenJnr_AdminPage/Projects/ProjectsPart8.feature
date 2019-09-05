@@ -102,7 +102,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingBucketFromUseEvergreenBucketsToCloneEve
 	When User clicks String Filter button for "Project" column on the Admin page
 	When User selects "1MailboxesProject" checkbox from String Filter with item list on the Admin page
 	Then Rows counter contains "1" found row of all rows
-	Then "Unassigned" content is displayed in the "Bucket" column
+	Then 'Unassigned' content is displayed in the 'Bucket' column
 	When User clicks "Projects" link on the Admin page
 	When User enters "1MailboxesProject" text in the Search field for "Project" column
 	And User clicks content from "Project" column
@@ -123,7 +123,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingBucketFromUseEvergreenBucketsToCloneEve
 	When User clicks String Filter button for "Project" column on the Admin page
 	When User selects "1MailboxesProject" checkbox from String Filter with item list on the Admin page
 	Then Rows counter contains "1" found row of all rows
-	Then "Unassigned" content is displayed in the "Bucket" column
+	Then 'Unassigned' content is displayed in the 'Bucket' column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13530 @Projects @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatNoAdditionalCapacityUnitsAreCreatedWhenChangingCapacityUnitsMode
@@ -144,7 +144,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoAdditionalCapacityUnitsAreCreatedWhe
 	And User clicks String Filter button for "Project" column on the Admin page
 	And User selects "13530Project" checkbox from String Filter with item list on the Admin page
 	Then Rows counter contains "1" found row of all rows
-	And "Unassigned" content is displayed in the "Capacity Unit" column
+	And 'Unassigned' content is displayed in the 'Capacity Unit' column
 	When User clicks "Projects" link on the Admin page
 	And User enters "13530Project" text in the Search field for "Project" column
 	And User clicks content from "Project" column
@@ -161,4 +161,4 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoAdditionalCapacityUnitsAreCreatedWhe
 	And User clicks String Filter button for "Project" column on the Admin page
 	And User selects "13530Project" checkbox from String Filter with item list on the Admin page
 	Then Rows counter contains "1" found row of all rows
-	Then "Unassigned" content is displayed in the "Capacity Unit" column
+	Then 'Unassigned' content is displayed in the 'Capacity Unit' column

@@ -29,7 +29,7 @@ Scenario: EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The team has been created" text
 	When User enters "My Team" text in the Search field for "Team" column
-	Then "TRUE" content is displayed in the "Default" column
+	Then 'TRUE' content is displayed in the 'Default' column
 	When User selects all rows on the grid
 	Then Actions dropdown is displayed correctly
 	When User clicks on Actions button
@@ -48,7 +48,7 @@ Scenario: EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The team has been created" text
 	When User enters "My Team" text in the Search field for "Team" column
-	Then "FALSE" content is displayed in the "Default" column
+	Then 'FALSE' content is displayed in the 'Default' column
 	When User clicks content from "Team" column
 	And User clicks "Team Settings" tab
 	And User clicks Default Team checkbox
