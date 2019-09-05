@@ -454,26 +454,26 @@ this.FeatureBackground();
 #line 101
  testRunner.And("User clicks content from \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 102
- testRunner.Then("\"Use project buckets\" text value is displayed in the \"Buckets\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Use project buckets\' text value is displayed in the \'Buckets\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 103
- testRunner.And("\"Use project rings\" text value is displayed in the \"Rings\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Use project rings\' text value is displayed in the \'Rings\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 104
  testRunner.When("User clicks \"Capacity\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 105
- testRunner.Then("\"Use project capacity units\" text value is displayed in the \"Capacity Units\" drop" +
+ testRunner.Then("\'Use project capacity units\' text value is displayed in the \'Capacity Units\' drop" +
                     "down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 106
  testRunner.When("User clicks \"Details\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 107
  testRunner.And("User converts project to evergreen project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 108
- testRunner.Then("\"Use project buckets\" text value is displayed in the \"Buckets\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Use project buckets\' text value is displayed in the \'Buckets\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 109
- testRunner.And("\"Use project rings\" text value is displayed in the \"Rings\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Use project rings\' text value is displayed in the \'Rings\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 110
  testRunner.When("User clicks \"Capacity\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 111
- testRunner.Then("\"Use project capacity units\" text value is displayed in the \"Capacity Units\" drop" +
+ testRunner.Then("\'Use project capacity units\' text value is displayed in the \'Capacity Units\' drop" +
                     "down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 112
  testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
