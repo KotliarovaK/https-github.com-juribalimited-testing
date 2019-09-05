@@ -491,6 +491,31 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(by);
         }
 
+        public IWebElement GetNamedTextboxErrorMessageElement(string placeholder)
+        {
+            var namedTextbox = GetNamedTextbox(placeholder);
+            var elementAttributes = Driver.GetElementAttributes(namedTextbox);
+            if (!elementAttributes.Any(x => x.Contains("_ngcontent")))
+                throw new Exception($"'{placeholder}' doesn't have _ngcontent attribute");
+            var attribute = elementAttributes.First(x => x.Contains("_ngcontent"));
+            var errorSelector = By.XPath($".//ancestor::*[@{attribute}][position() = 1]//mat-error");
+            if (!Driver.IsElementDisplayed(errorSelector, WebDriverExtensions.WaitTime.Medium))
+                throw new Exception($"Error message was not displayed for '{placeholder}' textbox");
+            return namedTextbox.FindElement(errorSelector);
+        }
+
+        public string GetNamedTextboxErrorMessage(string placeholder)
+        {
+            var error = GetNamedTextboxErrorMessageElement(placeholder).FindElement(By.XPath("./span[1]"));
+            return error.Text;
+        }
+
+        public IWebElement GetNamedTextboxErrorMessageExclamationIcon(string placeholder)
+        {
+            var exclamationIcon = GetNamedTextboxErrorMessageElement(placeholder).FindElement(By.XPath("./span[1]"));
+            return exclamationIcon;
+        }
+
         public void PopulateNamedTextbox(string placeholder, string value, bool clear = true)
         {
             if (clear)

@@ -19,6 +19,28 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             _driver = driver;
         }
 
+        #region Click content in the column
+
+        [When(@"User doubleclicks on '(.*)' cell from '(.*)' column")]
+        public void WhenUserDoubleclicksOnCellFromColumn(string cellText, string columnName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            var cell = page.GetCellFromColumn(columnName, cellText);
+            _driver.DoubleClick(cell);
+        }
+
+        [When(@"User clicks on '(.*)' cell from '(.*)' column")]
+        public void WhenUserClicksOnCellFromColumn(string cellText, string columnName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            var cell = page.GetCellFromColumn(columnName, cellText);
+            cell.Click();
+        }
+
+        #endregion
+
+        #region Check Content in the columns
+
         [Then(@"'(.*)' content is displayed in the '(.*)' column")]
         public void ThenContentIsDisplayedInTheColumn(string textContent, string columnName)
         {
@@ -82,13 +104,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             }
         }
 
-        [When(@"User doubleclicks on '(.*)' cell from '(.*)' column")]
-        public void WhenUserDoubleclicksOnCellFromColumn(string cellText, string columnName)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            var cell = page.GetCellFromColumn(columnName, cellText);
-            _driver.DoubleClick(cell);
-        }
+        #endregion
 
         #region Clicable value
 
@@ -148,13 +164,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
             _driver.MouseHover(page.SaveInlineButton);
             Thread.Sleep(200);
-            var tooltip = _driver.GetTooltipText();
-            Verify.AreEqual("Save", tooltip, "Incorrect tooltip for Save button");
+            var saveTooltip = _driver.GetTooltipText();
+            Verify.AreEqual("Save", saveTooltip, "Incorrect tooltip for Save button");
 
             _driver.MouseHover(page.CancelInlineButton);
             Thread.Sleep(200);
-            var tooltip1 = _driver.GetTooltipText();
-            Verify.AreEqual("Save", tooltip, "Incorrect tooltip for Cancel button");
+            var cancelTooltip = _driver.GetTooltipText();
+            Verify.AreEqual("Cancel", cancelTooltip, "Incorrect tooltip for Cancel button");
         }
 
         [Then(@"Save and Cancel buttons are NOT displayed for clickable value")]

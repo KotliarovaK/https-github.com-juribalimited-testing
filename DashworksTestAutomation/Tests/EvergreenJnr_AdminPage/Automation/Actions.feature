@@ -29,23 +29,23 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptio
 	When User clicks the "SAVE AND CREATE ANOTHER" Action button
 	Then Success message is displayed and contains "The automation action has been created" text
 	When User enters '15427_Action2' text to 'Action Name' textbox
-	When User selects "Update path" in the "Action Type" dropdown
-	When User selects '1803 Rollout' option from 'Project' autocomplete
-	When User selects "Undetermined" in the "Path" dropdown for Actions
-	When User clicks the "CREATE" Action button
+	And User selects "Update path" in the "Action Type" dropdown
+	And User selects '1803 Rollout' option from 'Project' autocomplete
+	And User selects "Undetermined" in the "Path" dropdown for Actions
+	And User clicks the "CREATE" Action button
 	#Action 3
 	When User clicks the "CREATE ACTION" Action button
-	Then "Test_Automation_15427" object name is displayed to the User
+	Then 'Test_Automation_15427' page header is displayed to the User
 	When User enters '15427_Action3' text to 'Action Name' textbox
-	When User selects "Update path" in the "Action Type" dropdown
-	When User selects '1803 Rollout' option from 'Project' autocomplete
-	When User selects "Undetermined" in the "Path" dropdown for Actions
-	When User clicks the "CREATE" Action button
-	When User clicks Group By button on the Admin page and selects "Type" value
+	And User selects "Update path" in the "Action Type" dropdown
+	And User selects '1803 Rollout' option from 'Project' autocomplete
+	And User selects "Undetermined" in the "Path" dropdown for Actions
+	And User clicks the "CREATE" Action button
+	And User clicks Group By button on the Admin page and selects "Type" value
 	Then Cog menu is not displayed on the Admin page
-	Then Grid is grouped
+	And Grid is grouped
 	When User clicks Group By button on the Admin page and selects "Type" value
-	When User clicks Cog-menu for "15427_Action1" item on Admin page
+	And User clicks Cog-menu for "15427_Action1" item on Admin page
 	Then User sees following cog-menu items on Admin page:
 	| items            |
 	| Edit             |
@@ -73,9 +73,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptio
 	| Delete           |
 	When User clicks "Edit" option in Cog-menu for "15427_Action1" item on Admin page
 	Then Edit Action page is displayed to the User
-	Then "UPDATE" Action button is displayed
-	Then "CANCEL" Action button is displayed
-	Then "Test_Automation_15427" object name is displayed to the User
+	And "UPDATE" Action button is displayed
+	And "CANCEL" Action button is displayed
+	And 'Test_Automation_15427' page header is displayed to the User
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15427 @DAS15428 @DAS16728 @DAS16976 @DAS17067 @DAS16890 @DAS17594 @DAS17774 @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectlyForAutomations
@@ -202,7 +202,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
 	#Action 4
 	When User clicks the "CREATE ACTION" Action button
 	When User enters '15428_Action_3' text to 'Action Name' textbox
-	Then Filling field error with "An action with this name already exists for this automation" text is displayed
+	Then 'An action with this name already exists for this automation' error message is displayed for 'Action Name' field
 	When User clicks the "CANCEL" Action button
 	When User clicks "YES" button in the Warning Pop-up message
 	When User moves "DAS15427_Action_1" action to "DAS15427_Action_3" action
@@ -255,7 +255,7 @@ Scenario: EvergreenJnr_AdminPage_CheckParametersToCreateUpdatePathAction
 	Then Create Automation page is displayed to the User
 	When User enters '' text to 'Automation Name' textbox
 	When User enters '' text to 'Description' textbox
-	Then Filling field error with "An automation name must be entered" text is displayed
+	Then 'An automation name must be entered' error message is displayed for 'Automation Name' field
 	When User enters 'Melbourne User' text to 'Automation Name' textbox
 	When User enters 'Melbourne users' text to 'Description' textbox
 	When User selects "Melbourne Users" in the Scope Automation dropdown
@@ -270,7 +270,7 @@ Scenario: EvergreenJnr_AdminPage_CheckParametersToCreateUpdatePathAction
 	Then "SAVE AND CREATE ANOTHER" Action button is disabled
 	Then "CANCEL" Action button is active
 	When User enters '' text to 'Action Name' textbox
-	Then Filling field error with "An action name must be entered" text is displayed
+	Then 'An action name must be entered' error message is displayed for 'Action Name' field
 	When User enters 'Melbourne users' text to 'Action Name' textbox
 	Then "CREATE" Action button is disabled
 	Then "SAVE AND CREATE ANOTHER" Action button is disabled
@@ -325,7 +325,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditActionPage
 	Then "UPDATE" Action button is disabled
 	Then "CANCEL" Action button is active
 	When User enters '' text to 'Action Name' textbox
-	Then Filling field error with "An action name must be entered" text is displayed
+	Then 'An action name must be entered' error message is displayed for 'Action Name' field
 	Then "UPDATE" Action button is disabled
 	When User enters '15425_Action' text to 'Action Name' textbox
 	Then "UPDATE" Action button is disabled

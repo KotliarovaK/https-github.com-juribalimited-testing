@@ -365,21 +365,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<ProjectsPage>();
             _driver.WaitForDataLoading();
-            Utils.Verify.IsTrue(page.ActiveProjectByName(projectName), $"{projectName} is not displayed on the Project page");
-        }
-
-        [When(@"User clicks ""(.*)"" record in the grid")]
-        public void WhenUserClicksRecordInThenGrid(string recordName)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            page.SelectRecordByName(recordName);
+            Verify.IsTrue(page.ActiveProjectByName(projectName), $"{projectName} is not displayed on the Project page");
         }
 
         [Then(@"field for Date column is empty")]
         public void ThenFieldForDateColumnIsEmpty()
         {
             var page = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsEmpty(page.DateSearchField.GetAttribute("value"), "Date Search textbox is not empty");
+            Verify.IsEmpty(page.DateSearchField.GetAttribute("value"), "Date Search textbox is not empty");
         }
 
         [When(@"User selects following date filter on the Projects page")]
