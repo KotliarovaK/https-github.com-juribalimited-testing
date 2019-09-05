@@ -51,7 +51,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogMessageForDeletedTaskInAction
 	When User enters '17247_Action' text to 'Action Name' textbox
 	When User selects "Update task value" in the "Action Type" dropdown
 	When User selects '17247Project' option from 'Project' autocomplete
-	When User selects "Test" in the "Stage" dropdown for Actions
+	When User selects 'Test' option from 'Stage' autocomplete
 	When User selects "DAS17247_Task" in the "Task" dropdown for Actions
 	When User selects "Update" Update Value on Action panel
 	When User selects "Not Applicable" Value on Action panel
@@ -95,7 +95,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedU
 	When User enters 'DAS17681_Action' text to 'Action Name' textbox
 	And User selects "Update task value" in the "Action Type" dropdown
 	When User selects 'USE ME FOR AUTOMATION(USR SCHDLD)' option from 'Project' autocomplete
-	When User selects "Stage 1" in the "Stage" dropdown for Actions
+	When User selects 'Stage 1' option from 'Stage' autocomplete
 	When User selects "Radiobutton Readiness Date Owner Task (User)" in the "Task" dropdown for Actions
 	And User selects "Update" Update Value on Action panel
 	And User selects "On Hold" Value on Action panel
@@ -149,7 +149,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedU
 	When User enters '17681_Action' text to 'Action Name' textbox
 	And User selects "Update task value" in the "Action Type" dropdown
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
-	When User selects "One" in the "Stage" dropdown for Actions
+	When User selects 'One' option from 'Stage' autocomplete
 	When User selects "Radio Date Owner User" in the "Task" dropdown for Actions
 	And User selects "No change" Update Value on Action panel
 	And User selects "No change" Update Date on Action panel
@@ -160,6 +160,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedU
 	Then "SAVE AND CREATE ANOTHER" Action button have tooltip with "Select at least one value to change" text
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17830 @Cleanup @Not_Ready
+#Waiting for "zDevice Sch for Automations Feature" project on automation server from GD
 Scenario: EvergreenJnr_AdminPage_CheckUpdateOwnerForUpdateValueInDevicesScopedAutomation
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -209,6 +210,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateOwnerForUpdateValueInDevicesScopedAu
 	And "Admin IT" content is displayed in "zDeviceAut: Stage B \ Combination Task App (Team)" column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17846 @Cleanup @Not_Ready
+#Waiting for "zDevice Sch for Automations Feature" project on automation server from GD
 Scenario: EvergreenJnr_AdminPage_CheckUpdateDateForUpdateValueInDevicesScopedAutomationWithCapacitySlot
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -248,6 +250,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateDateForUpdateValueInDevicesScopedAut
 	And "DAS-17846 Slot Device" content is displayed in "zDeviceAut: Stage C \ Date Only with Capacity (Slot)" column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17846 @Cleanup @Not_Ready
+#Waiting for "zDevice Sch for Automations Feature" project on automation server from GD
 Scenario: EvergreenJnr_AdminPage_CheckUpdateDateForUpdateValueInUsersScopedAutomationWithoutCapacitySlot
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user

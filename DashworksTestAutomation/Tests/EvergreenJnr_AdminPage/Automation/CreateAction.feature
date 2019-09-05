@@ -49,7 +49,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckUpdateTaskValueEditPageLoadsProjec
 	When User enters 'Update Migrated devices to Started' text to 'Action Name' textbox
 	When User selects "Update task value" in the "Action Type" dropdown
 	When User selects '<Project>' option from 'Project' autocomplete
-	When User selects "<Stage>" in the "Stage" dropdown for Actions
+	When User selects '<Stage>' option from 'Stage' autocomplete
 	When User selects "<Task>" in the "Task" dropdown for Actions
 	Then "CREATE" Action button is disabled
 	When User selects "Started" Value on Action panel
@@ -140,7 +140,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueAction
 	When User enters '17738_Action' text to 'Action Name' textbox
 	And User selects "Update task value" in the "Action Type" dropdown
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
-	When User selects "One" in the "Stage" dropdown for Actions
+	When User selects 'One' option from 'Stage' autocomplete
 	When User selects "Radio Rag Date Comp" in the "Task" dropdown for Actions
 	And User selects "Update" Update Value on Action panel
 	And User selects "Failed" Value on Action panel
@@ -180,7 +180,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithRemoveOwnerIsLoaded
 	When User enters 'Update Migrated devices' text to 'Action Name' textbox
 	And User selects "Update task value" in the "Action Type" dropdown
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
-	When User selects "One" in the "Stage" dropdown for Actions
+	When User selects 'One' option from 'Stage' autocomplete
 	When User selects "Radio Rag Date Owner User Req B" in the "Task" dropdown for Actions
 	And User selects "No change" Update Value on Action panel
 	And User selects "No change" Update Date on Action panel
@@ -217,7 +217,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithUpdateOwnerIsLoaded
 	When User enters 'Update Migrated devices' text to 'Action Name' textbox
 	And User selects "Update task value" in the "Action Type" dropdown
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
-	When User selects "One" in the "Stage" dropdown for Actions
+	When User selects 'One' option from 'Stage' autocomplete
 	When User selects "Radio Rag Date Owner Comp Req B" in the "Task" dropdown for Actions
 	And User selects "No change" Update Value on Action panel
 	And User selects "No change" Update Date on Action panel

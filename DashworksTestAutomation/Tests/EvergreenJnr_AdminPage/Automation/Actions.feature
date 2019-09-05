@@ -199,8 +199,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
 	When User enters '15428_Action_3' text to 'Action Name' textbox
 	Then Filling field error with "An action with this name already exists for this automation" text is displayed
 	When User clicks the "CANCEL" Action button
-	When User moves ' ' item to ' ' item in the ' ' column
-	When User moves "15428_Action_1" item to "15428_Action_3" item
+	When User moves '15428_Action_1' item to '15428_Action_3' item in the 'Action' column
 	When User have opened column settings for "Action" column
 	And User clicks Column button on the Column Settings panel
 	And User select "Processing order" checkbox on the Column Settings panel
@@ -416,7 +415,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActions
 	When User enters 'DAS16992_Action' text to 'Action Name' textbox
 	When User selects "Update task value" in the "Action Type" dropdown
 	When User selects 'Edinburgh Devices Migration' option from 'Project' autocomplete
-	When User selects "Pre-Migration" in the "Stage" dropdown for Actions
+	When User selects 'Pre-Migration' option from 'Stage' autocomplete
 	Then following items are displayed in the "Task" dropdown for Actions:
 	| Values        |
 	| Device Task 1 |
@@ -478,7 +477,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdatingTaskWhichImpactsReadinessOwnerAndD
 	When User enters '17234_Action' text to 'Action Name' textbox
 	When User selects "Update task value" in the "Action Type" dropdown
 	When User selects 'Edinburgh Devices Migration' option from 'Project' autocomplete
-	When User selects "Pre-Migration" in the "Stage" dropdown for Actions
+	When User selects 'Pre-Migration' option from 'Stage' autocomplete
 	When User selects "User Task 1" in the "Task" dropdown for Actions
 	Then following Values are displayed in "Update Value" drop-down on the Admin page:
 	| Options   |
@@ -545,7 +544,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateTaskValueIsDisplayInAutomationsL
 	When User enters 'DAS17542_Action' text to 'Action Name' textbox
 	When User selects "Update task value" in the "Action Type" dropdown
 	When User selects 'USE ME FOR AUTOMATION(DEVICE SCHDLD)' option from 'Project' autocomplete
-	When User selects "Stage A" in the "Stage" dropdown for Actions
+	When User selects 'Stage A' option from 'Stage' autocomplete
 	When User selects "Workflow task" in the "Task" dropdown for Actions
 	And User selects "Started" Value on Action panel
 	When User clicks the "CREATE" Action button
@@ -568,7 +567,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateTextValue
 	When User enters '17602_Action' text to 'Action Name' textbox
 	When User selects "Update task value" in the "Action Type" dropdown
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
-	When User selects "One" in the "Stage" dropdown for Actions
+	When User selects 'One' option from 'Stage' autocomplete
 	When User selects "Text Computer" in the "Task" dropdown for Actions
 	And User selects "Update" Update Value on Action panel
 	When User types "To be updated" Value on Action panel
@@ -605,7 +604,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForRemoveTextValue
 	When User enters '17605_Action' text to 'Action Name' textbox
 	When User selects "Update task value" in the "Action Type" dropdown
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
-	When User selects "One" in the "Stage" dropdown for Actions
+	When User selects 'One' option from 'Stage' autocomplete
 	When User selects "Text Computer" in the "Task" dropdown for Actions
 	When User selects "Remove" in the "Update Value" dropdown for Actions
 	And User clicks the "CREATE" Action button
@@ -640,7 +639,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateDate
 	When User enters '17606_Action' text to 'Action Name' textbox
 	When User selects "Update task value" in the "Action Type" dropdown
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
-	When User selects "One" in the "Stage" dropdown for Actions
+	When User selects 'One' option from 'Stage' autocomplete
 	When User selects "Date Computer" in the "Task" dropdown for Actions
 	And User selects "Update" Update Date on Action panel
 	And User selects "5 Aug 2019" Date on Action panel
@@ -674,7 +673,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThanActionFieldsAreNotPrepopulatedWithOldD
 	And User enters 'DAS17797_Action' text to 'Action Name' textbox
 	And User selects "Update task value" in the "Action Type" dropdown
 	And User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
-	And User selects "One" in the "Stage" dropdown for Actions
+	And User selects 'One' option from 'Stage' autocomplete
 	And User selects "Radio Rag Date Owner" in the "Task" dropdown for Actions
 	And User selects "Update" Update Value on Action panel
 	And User selects "Complete" Value on Action panel
@@ -710,7 +709,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValueDataInTheGridForActions
 	And User enters 'DAS17744_Action' text to 'Action Name' textbox
 	And User selects "Update task value" in the "Action Type" dropdown
 	And User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
-	And User selects "One" in the "Stage" dropdown for Actions
+	And User selects 'One' option from 'Stage' autocomplete
 	And User selects "Radio Rag Date Owner User Req A" in the "Task" dropdown for Actions
 	And User selects "Update" Update Value on Action panel
 	And User selects "Started" Value on Action panel
