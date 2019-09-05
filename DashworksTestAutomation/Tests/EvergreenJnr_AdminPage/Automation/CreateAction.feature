@@ -58,12 +58,12 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckUpdateTaskValueEditPageLoadsProjec
 	When User clicks the "CREATE" Action button
 	When User clicks content from "Action" column
 	Then "Update Migrated devices to Started" content is displayed in "Action Name" field
-	Then "Update task value" text value is displayed in the "Action Type" dropdown
+	Then 'Update task value' text value is displayed in the 'Action Type' dropdown
 	Then '<Project>' value is displayed in the 'Project' dropdown
-	Then '<Stage>' value is displayed in the 'Stage' dropdown for Automation
-	Then '<Task>' value is displayed in the 'Task' dropdown for Automation
+	Then '<Stage>' value is displayed in the 'Stage' dropdown
+	Then '<Task>' value is displayed in the 'Task' dropdown
 	#Remove # after Value dropdown fixed
-	#Then "Started" text value is displayed in the "Value" dropdown
+	#Then 'Started' text value is displayed in the 'Value' dropdown
 
 Examples:
 	| AutomationName                | Scope            | Project                              | Stage   | Task                   |
@@ -155,7 +155,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueAction
 	Then "CREATE" Action button is active
 	#Actions content check
 	Then "Update Migrated devices" content is displayed in "Action Name" field
-	Then "Update task value" text value is displayed in the "Action Type" dropdown
+	Then 'Update task value' text value is displayed in the 'Action Type' dropdown
 	Then 'One' value is displayed in the 'Stage' dropdown for Automation
 	Then 'Radio Rag Date Owner Comp Req B' value is displayed in the 'Task' dropdown for Automation
 	Then 'No change' value is displayed in the 'Update Value' dropdown
@@ -195,7 +195,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithRemoveOwnerIsLoaded
 	When User clicks content from "Action" column
 	#Actions content check
 	Then "Update Migrated devices" content is displayed in "Action Name" field
-	Then "Update task value" text value is displayed in the "Action Type" dropdown
+	Then 'Update task value' text value is displayed in the 'Action Type' dropdown
 	Then 'One' value is displayed in the 'Stage' dropdown for Automation
 	Then 'Radio Rag Date Owner Comp Req B' value is displayed in the 'Task' dropdown for Automation
 	Then 'No change' value is displayed in the 'Update Value' dropdown
@@ -234,7 +234,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithUpdateOwnerIsLoaded
 	When User clicks content from "Action" column
 	#Actions content check
 	Then "Update Migrated devices" content is displayed in "Action Name" field
-	Then "Update task value" text value is displayed in the "Action Type" dropdown
+	Then 'Update task value' text value is displayed in the 'Action Type' dropdown
 	Then 'One' value is displayed in the 'Stage' dropdown for Automation
 	Then 'Radio Rag Date Owner Comp Req B' value is displayed in the 'Task' dropdown for Automation
 	Then 'No change' value is displayed in the 'Update Value' dropdown

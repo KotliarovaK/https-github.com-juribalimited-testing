@@ -164,7 +164,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.AreEqual(dropdownContent, text, $"Text in '{dropdown}' drop-down is different");
         }
 
-        [Then(@"""(.*)"" text value is displayed in the ""(.*)"" dropdown")]
+        [Then(@"'(.*)' text value is displayed in the '(.*)' dropdown")]
         public void ThenTextValueIsDisplayedInTheDropdown(string value, string dropdownName)
         {
             //TODO why grid page is used
