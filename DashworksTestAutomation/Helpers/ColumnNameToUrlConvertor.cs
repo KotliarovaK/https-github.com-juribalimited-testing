@@ -101,6 +101,16 @@ namespace DashworksTestAutomation.Helpers
                             throw new Exception($"'{pageName}' page not found in convertor");
                     }
 
+                case "Barry'sUse: Application Readiness":
+                    switch (pageName)
+                    {
+                        case "Users":
+                            return "project_38_linkedApplicationReadiness";
+                        
+                        default:
+                            throw new Exception($"'{pageName}' page not found in convertor");
+                    }
+
                 case "Babel(Engl: Readiness":
                     return "project_46_ragStatus";
 

@@ -1478,7 +1478,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 Utils.Verify.AreEqual(ColorsConvertor.Convert(row["Color"]), getColor, "Colors are different");
             }
         }
-
+        
         [Then(@"Category Automations displayed before projects categories")]
         public void SpecifiedCategoryDisplayedBeforeProjectsCategories()
         {

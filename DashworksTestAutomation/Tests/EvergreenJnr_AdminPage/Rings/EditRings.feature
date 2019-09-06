@@ -11,7 +11,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatRingsDetailsPageCanBeSeenAfterTypeOfRi
 	| ProjectName        | Scope       | ProjectTemplate | Mode                            |
 	| ProjectForDAS14839 | All Devices | None            | Clone from Evergreen to Project |
 	And User clicks "Details" tab
-	Then "Clone evergreen rings to project rings" text value is displayed in the "Rings" dropdown
+	Then 'Clone evergreen rings to project rings' text value is displayed in the 'Rings' dropdown
 	When User clicks "Rings" tab
 	Then "TRUE" content is displayed in "Default" column
 	When User clicks "Details" tab

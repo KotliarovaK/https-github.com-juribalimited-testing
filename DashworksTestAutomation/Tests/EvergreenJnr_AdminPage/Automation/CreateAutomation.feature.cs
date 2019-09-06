@@ -321,8 +321,8 @@ this.FeatureBackground();
 #line 69
  testRunner.When("User enters \'DAS16801_Automation\' text to \'Automation Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 70
- testRunner.Then("Filling field error with \"An automation with this name already exists\" text is di" +
-                    "splayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'An automation with this name already exists\' error message is displayed for \'Aut" +
+                    "omation Name\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

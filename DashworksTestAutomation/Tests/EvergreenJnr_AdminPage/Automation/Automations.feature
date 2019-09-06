@@ -454,7 +454,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality
 	Then Automation page is displayed correctly
 	Then "All Devices" content is displayed in the Scope Automation dropdown
 	Then "16764" content is displayed in "Description" field
-	Then "Manual" text value is displayed in the "Run" dropdown
+	Then 'Manual' text value is displayed in the 'Run' dropdown
 	Then "Active" checkbox is checked on the Admin page
 	Then "Stop on failed action" checkbox is checked on the Admin page
 	Then "UPDATE" Action button is disabled

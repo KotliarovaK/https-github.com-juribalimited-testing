@@ -26,7 +26,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations
         {
             var page = _driver.NowAt<ActionsPage>();
             page.GetDropdownByName(dropdownName).Click();
-            var dropdown = _driver.NowAt<BaseGridPage>();
+            var dropdown = _driver.NowAt<BaseDashboardPage>();
             dropdown.GetDropdownValueByName(item).Click();
         }
 

@@ -194,7 +194,7 @@ Scenario: EvergreenJnr_AdminPage_CheckBrokenListValidationWhenRunningAnAutomatio
 	Then "Automations" page should be displayed to the user
 	When User enters "17011_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
-	Then Filling field error with "This list has errors" text is displayed
+	Then 'This list has errors' error message is displayed for 'Scope' field
 	Then "UPDATE" Action button have tooltip with "Some values are missing or not valid" text
 	#DAS-17374
 	When User clicks the "CANCEL" Action button

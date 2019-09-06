@@ -35,13 +35,5 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations
             Utils.Verify.IsTrue(page.GetFieldByFieldName(fieldName).GetAttribute("value").Contains(text),
                 $"Text in {fieldName} field is different");
         }
-
-        [Then(@"""(.*)"" value is displayed in the ""(.*)"" dropdown for Automation")]
-        public void ThenValueIsDisplayedInTheDropdownForAutomation(string value, string dropdownName)
-        {
-            var dropdown = _driver.NowAt<BaseGridPage>();
-            var dropdownValue = dropdown.GetDropdownByNameForAutomations(dropdownName).GetAttribute("value");
-            Utils.Verify.AreEqual(dropdownValue, value, $"{value} is not displayed in the {dropdownName}");
-        }
     }
 }

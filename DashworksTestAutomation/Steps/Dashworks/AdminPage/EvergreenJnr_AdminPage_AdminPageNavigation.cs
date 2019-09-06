@@ -198,6 +198,5 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         {
             var page = _driver.NowAt<AdminLeftHandMenu>();
             Utils.Verify.IsFalse(page.Automations.Displayed(), $"{tabName} tab still displayed");
-        }
-    }
+        } }
 }
