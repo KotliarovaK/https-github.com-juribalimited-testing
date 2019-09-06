@@ -74,6 +74,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.GetOptionByName(value).Click();
         }
 
+        //TODO remove and replace by WhenUserSelectsInTheDropdown
         [When(@"User selects ""(.*)"" value for ""(.*)"" dropdown on Action panel")]
         public void WhenUserSelectsValueForDropdownOnActionPanel(string value, string field)
         {

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
+using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
@@ -41,14 +42,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         {
             var page = _driver.NowAtWithoutWait<BaseGridPage>();
             _driver.WaitForDataLoading();
-            Utils.Verify.IsTrue(page.GetEmptyFieldByName(fieldName).Displayed(), $"{fieldName} field is populated");
-        }
-
-        [Then(@"""(.*)"" object name is displayed to the User")]
-        public void ThenObjectNameIsDisplayedToTheUser(string objectName)
-        {
-            var page = _driver.NowAtWithoutWait<BaseGridPage>();
-            Utils.Verify.IsTrue(page.GetObjectTitle(objectName).Displayed(), $"{objectName} is not displayed");
+            Verify.IsTrue(page.GetEmptyFieldByName(fieldName).Displayed(), $"{fieldName} field is populated");
         }
     }
 }

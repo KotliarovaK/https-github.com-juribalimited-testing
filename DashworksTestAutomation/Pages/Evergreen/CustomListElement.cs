@@ -143,6 +143,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(selector);
         }
 
+        public IList<IWebElement> GetFilterForListsItemsFromExpandedList()
+        {
+            var selector = By.XPath($"//div[contains(@class, 'transformPanel ')]//mat-option//span[text()]");
+            Driver.WaitForElementToBeDisplayed(selector);
+            return Driver.FindElements(selector);
+        }
+
         #region ListSettings
 
         [FindsBy(How = How.XPath, Using = ".//li[text()='Manage']")]

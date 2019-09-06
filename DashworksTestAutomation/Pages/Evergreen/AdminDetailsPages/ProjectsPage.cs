@@ -126,9 +126,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[@class='btn-group-sm pull-right ng-star-inserted']")]
         public IWebElement CloseSidePanelCross { get; set; }
 
-        //TODO should be moved to generic page
-        [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'buttonToggleSubmenu')]")]
-        public IWebElement ExpandSidePanelIcon { get; set; }
+        [FindsBy(How = How.XPath, Using = ".//div[@class='top-tools-bubble ng-star-inserted']")]
+        public IWebElement SidePanelIcon { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//mat-tab-header/div[1]")]
         public IWebElement ScopeChangesTabsHeader { get; set; }

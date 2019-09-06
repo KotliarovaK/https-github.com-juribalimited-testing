@@ -93,7 +93,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
 	When User clicks content from "Capacity Slot" column
-	Then "Pre-Migration \ Scheduled date" value is displayed in the "Tasks" dropdown
+	Then 'Pre-Migration \ Scheduled date' value is displayed in the 'Tasks' dropdown
 	When User clicks on "Paths" dropdown on the Capacity Slots page
 	Then following items are displayed in the dropdown:
 	| Items                  |
@@ -122,7 +122,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
 	And User clicks content from "Capacity Slot" column
-	Then "Pre-Migration \ Scheduled Date" value is displayed in the "Tasks" dropdown
+	Then 'Pre-Migration \ Scheduled Date' value is displayed in the 'Tasks' dropdown
 	When User clicks on "Paths" dropdown on the Capacity Slots page
 	Then following items are displayed in the dropdown:
 	| Items                                            |

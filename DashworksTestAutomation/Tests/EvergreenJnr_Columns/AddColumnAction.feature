@@ -362,3 +362,19 @@ Examples:
 	| Users        | Device Application Compliance | Red         | Geräteanwendungskonformität | ROT                   |
 	| Applications | Compliance                    | Green       | Konformität                 | GRÜN                  |
 	| Mailboxes    | Owner Compliance              | Unknown     | Konformität des Inhabers    | UNBEKANNT             |
+
+@Evergreen @Users @EvergreenJnr_Columns @AddColumnAction @DAS17945
+Scenario: EvergreenJnr_UsersList_ChecksThatReadinessColumnIsDisplayedCorrectlyForUsersList
+	When User clicks "Users" on the left-hand menu
+	When User add following columns using URL to the "Users" page:
+	| ColumnName                        |
+	| Barry'sUse: Application Readiness |
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Barry'sUse: In Scope" filter where type is "Equals" without added column and following checkboxes:
+	| SelectedCheckboxes |
+	| TRUE               |
+	Then Content is present in the newly added column
+	| ColumnName                        |
+	| Barry'sUse: Application Readiness |
+	Then Color data displayed with correct color and tooltip for "Barry'sUse: Application Readiness" column

@@ -68,7 +68,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateAutomationFieldsIsNotPopulatedWi
 	And User clicks the "CREATE" Action button
 	When User clicks newly created object link
 	When User enters 'DAS16801_Automation' text to 'Automation Name' textbox
-	Then Filling field error with "An automation with this name already exists" text is displayed
+	Then 'An automation with this name already exists' error message is displayed for 'Automation Name' field
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS16801 @DAS16805 @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckThatAdminTabIsHighlightedAfterClickingOnAutomation
