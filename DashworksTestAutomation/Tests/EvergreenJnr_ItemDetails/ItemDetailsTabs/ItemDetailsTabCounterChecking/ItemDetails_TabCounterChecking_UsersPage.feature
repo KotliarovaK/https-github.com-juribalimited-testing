@@ -32,7 +32,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayed
 	And "Department and Location" tab is displayed on left menu on the Details page and NOT contains count of items
 	And "User" tab is displayed on left menu on the Details page and NOT contains count of items
 	#================ checks sub-menu for main Projects tab ================#
-	And "Projects" main-menu on the Details page contains following sub-menu:
+	When User navigates to the "Projects" main-menu on the Details page
+	Then "Projects" main-menu on the Details page contains following sub-menu:
 	| SubTabName              |
 	| Evergreen Details       |
 	| User Projects           |
@@ -46,7 +47,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayed
 	And "Evergreen Details" tab is displayed on left menu on the Details page and NOT contains count of items
 	And "Project Details" tab is displayed on left menu on the Details page and NOT contains count of items
 	#================ checks sub-menu for main Active Directory tab ================#
-	And "Active Directory" main-menu on the Details page contains following sub-menu:
+	When User navigates to the "Active Directory" main-menu on the Details page
+	Then "Active Directory" main-menu on the Details page contains following sub-menu:
 	| SubTabName       |
 	#| Active Directory |
 	| Groups           |
@@ -56,7 +58,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayed
 	And "Active Directory" tab is displayed on left menu on the Details page and NOT contains count of items
 	And "LDAP" tab is displayed on left menu on the Details page and NOT contains count of items
 	#================ checks sub-menu for main Applications tab ================#
-	And "Applications" main-menu on the Details page contains following sub-menu:
+	When User navigates to the "Applications" main-menu on the Details page
+	Then "Applications" main-menu on the Details page contains following sub-menu:
 	| SubTabName        |
 	| Evergreen Summary |
 	| Evergreen Detail  |
@@ -68,7 +71,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayed
 	And "Advertisements" tab is displayed on left menu on the Details page and contains count of items
 	And "Collections" tab is displayed on left menu on the Details page and contains count of items
 	#================ checks sub-menu for main Mailboxes tab ================#
-	And "Mailboxes" main-menu on the Details page contains following sub-menu:
+	When User navigates to the "Mailboxes" main-menu on the Details page
+	Then "Mailboxes" main-menu on the Details page contains following sub-menu:
 	| SubTabName          |
 	| Mailboxes           |
 	| Mailbox Permissions |
@@ -76,7 +80,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayed
 	And "Mailboxes" tab is displayed on left menu on the Details page and contains count of items
 	And "Mailbox Permissions" tab is displayed on left menu on the Details page and NOT contains count of items
 	#================ checks sub-menu for main Compliance tab ================#
-	And "Compliance" main-menu on the Details page contains following sub-menu:
+	When User navigates to the "Compliance" main-menu on the Details page
+	Then "Compliance" main-menu on the Details page contains following sub-menu:
 	| SubTabName          |
 	| Overview            |
 	| Hardware Summary    |
@@ -118,7 +123,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayed
 	And "Department and Location" tab is displayed on left menu on the Details page and NOT contains count of items
 	And "User" tab is displayed on left menu on the Details page and NOT contains count of items
 	#================ checks sub-menu for main Projects tab ================#
-	And "Projects" main-menu on the Details page contains following sub-menu:
+	When User navigates to the "Projects" main-menu on the Details page
+	Then "Projects" main-menu on the Details page contains following sub-menu:
 	| SubTabName              |
 	| Evergreen Details       |
 	| Project Details         |
@@ -132,7 +138,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayed
 	And "Evergreen Details" tab is displayed on left menu on the Details page and NOT contains count of items
 	And "Project Details" tab is displayed on left menu on the Details page and NOT contains count of items
 	#================ checks sub-menu for main Active Directory tab ================#
-	And "Active Directory" main-menu on the Details page contains following sub-menu:
+	When User navigates to the "Active Directory" main-menu on the Details page
+	Then "Active Directory" main-menu on the Details page contains following sub-menu:
 	| SubTabName       |
 	| Groups           |
 	| LDAP             |
@@ -140,7 +147,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayed
 	And "Groups" tab is displayed on left menu on the Details page and contains count of items
 	And "LDAP" tab is displayed on left menu on the Details page and NOT contains count of items
 	#================ checks sub-menu for main Applications tab ================#
-	And "Applications" main-menu on the Details page contains following sub-menu:
+	When User navigates to the "Applications" main-menu on the Details page
+	Then "Applications" main-menu on the Details page contains following sub-menu:
 	| SubTabName        |
 	| Evergreen Summary |
 	| Evergreen Detail  |
@@ -152,7 +160,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayed
 	And "Advertisements" tab is displayed on left menu on the Details page and contains count of items
 	And "Collections" tab is displayed on left menu on the Details page and contains count of items
 	#================ checks sub-menu for main Mailboxes tab ================#
-	And "Mailboxes" main-menu on the Details page contains following sub-menu:
+	When User navigates to the "Mailboxes" main-menu on the Details page
+	Then "Mailboxes" main-menu on the Details page contains following sub-menu:
 	| SubTabName          |
 	| Mailboxes           |
 	| Mailbox Permissions |
@@ -160,7 +169,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayed
 	And "Mailboxes" tab is displayed on left menu on the Details page and contains count of items
 	And "Mailbox Permissions" tab is displayed on left menu on the Details page and NOT contains count of items
 	#================ checks sub-menu for main Compliance tab ================#
-	And "Compliance" main-menu on the Details page contains following sub-menu:
+	When User navigates to the "Compliance" main-menu on the Details page
+	Then "Compliance" main-menu on the Details page contains following sub-menu:
 	| SubTabName          |
 	| Overview            |
 	| Hardware Summary    |

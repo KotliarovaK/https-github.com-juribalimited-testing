@@ -64,7 +64,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         public void ThenTab_MenuOnTheDetailsPageIsExpanded(string tabMenuName)
         {
             var detailsPage = _driver.NowAt<NavigationElements>();
-            Utils.Verify.IsTrue(detailsPage.GetExpandedTabByName(tabMenuName), $"{tabMenuName} tab-menu is not expanded!");
+            Verify.IsTrue(detailsPage.GetExpandedTabByName(tabMenuName), $"{tabMenuName} tab-menu is not expanded!");
         }
 
         [Then(@"""(.*)"" tab-menu on the Details page is not expanded")]
@@ -152,7 +152,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             var detailsPage = _driver.NowAt<NavigationElements>();
 
             //opens main-menu 
-            _driver.ExecuteAction(() => detailsPage.GetTabMenuByName(tabMenuName).Click());
+            //_driver.ExecuteAction(() => detailsPage.GetTabMenuByName(tabMenuName).Click());
             _driver.WaitForDataLoading();
             foreach (var row in table.Rows)
                 Verify.IsTrue(detailsPage.GetDisplayStatusSubTabByName(row["SubTabName"]), $"'{row["SubTabName"]}' tab is not displayed!");

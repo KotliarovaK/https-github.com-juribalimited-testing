@@ -27,7 +27,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatLinksInDeviceDetailsAreRedirectedToT
 	Then Details page for "LFA418191 (Tricia G. Huang)" item is displayed to the user
 
 @Evergreen @ALlLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13341 @DAS14923
-Scenario Outline: EvergreenJnr_AllLists_CheckThatTextInKeyValueGridsIsSelectableOnDetailsPage
+Scenario Outline: EvergreenJnr_AllLists_CheckThatTextInKeyValueGridsIsSelectableOnDetailsPageOnSelectedMainMenu
 	When User clicks "<PageName>" on the left-hand menu
 	Then "All <PageName>" list should be displayed to the user
 	When User perform search by "<SearchTerm>"
@@ -42,10 +42,25 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatTextInKeyValueGridsIsSelectable
 Examples:
 	| PageName     | SearchTerm                       | ColumnName    | MainTabName   | SubTabName    | KeyToBeSelected | ValueToBeSelected   |
 	| Devices      | 02C80G8RFTPA9E                   | Hostname      | Specification | Specification | Manufacturer    | FES0798481167       |
-	| Devices      | 05PFM2OWVCSCZ1                   | Hostname      | Details       | Device        | Hostname        | 05PFM2OWVCSCZ1      |
-	| Users        | 03714167684E45F7A8F              | Username      | Details       | User          | Username        | 03714167684E45F7A8F |
 	| Applications | Adobe Acrobat Reader 5.0         | Application   | Details       | Application   | Vendor          | Adobe               |
-	| Mailboxes    | 06D7AE4F161F4A3AA7F@bclabs.local | Email Address | Details       | Mailbox       | Alias           | 06D7AE4F161F4A3AA7F |
+
+@Evergreen @ALlLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13341 @DAS14923
+Scenario Outline: EvergreenJnr_AllLists_CheckThatTextInKeyValueGridsIsSelectableOnDetailsPageOnSelectedSubMenu
+	When User clicks "<PageName>" on the left-hand menu
+	Then "All <PageName>" list should be displayed to the user
+	When User perform search by "<SearchTerm>"
+	And User click content from "<ColumnName>" column
+	When User navigates to the "<SubTabName>" sub-menu on the Details page
+	And User selects "<KeyToBeSelected>" text from key value grid on the Details Page
+	Then "<KeyToBeSelected>" text selected from key value grid on the Details Page
+	When User selects "<ValueToBeSelected>" text from key value grid on the Details Page
+	Then "<ValueToBeSelected>" text selected from key value grid on the Details Page
+
+Examples:
+	| PageName  | SearchTerm                       | ColumnName    | SubTabName | KeyToBeSelected | ValueToBeSelected   |
+	| Devices   | 05PFM2OWVCSCZ1                   | Hostname      | Device     | Hostname        | 05PFM2OWVCSCZ1      |
+	| Users     | 03714167684E45F7A8F              | Username      | User       | Username        | 03714167684E45F7A8F |
+	| Mailboxes | 06D7AE4F161F4A3AA7F@bclabs.local | Email Address | Mailbox    | Alias           | 06D7AE4F161F4A3AA7F |
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13341 @archived
 Scenario: EvergreenJnr_AllLists_CheckThatTextInKeyValueGridsIsSelectableOnGroupDetailsPage
@@ -72,7 +87,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheLinkCanBeOpenedAndTheLinkHasARigh
 	Then "All Devices" list should be displayed to the user
 	When User perform search by "001BAQXT6JWFPI"
 	And User click content from "Hostname" column
-	And User navigates to the "Details" main-menu on the Details page
 	And User navigates to the "Device Owner" sub-menu on the Details page
 	And User clicks "QLL295118" link on the Details Page
 	Then Details page for "QLL295118 (Nicole P. Braun)" item is displayed to the user
@@ -484,8 +498,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatLastLogoffDateFieldIsNotDisplayedAtT
 	When User perform search by "001BAQXT6JWFPI"
 	And User click content from "Hostname" column
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
-	When User navigates to the "Details" main-menu on the Details page
-	And User navigates to the "Device Owner" sub-menu on the Details page
+	When User navigates to the "Device Owner" sub-menu on the Details page
 	Then field with "Last Logoff Date" text is not displayed in expanded tab on the Details Page
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17735

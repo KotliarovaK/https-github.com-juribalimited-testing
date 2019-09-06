@@ -290,7 +290,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDataOfColumnsIsDisplayedInTheCustomF
 	Then "All Devices" list should be displayed to the user
 	When User perform search by "Benjamin S. Vaughn"
 	And User click content from "Hostname" column
-	And User navigates to the "Details" main-menu on the Details page
 	And User navigates to the "Custom Fields" sub-menu on the Details page
 	#row counters ready on 'quasar' 
 	#Then "1" rows found label displays on Details Page
@@ -320,16 +319,15 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatRowsInTheTableAreEmptyIfTheData
 	Then "All <PageName>" list should be displayed to the user
 	When User perform search by "<SelectedName>"
 	And User click content from "<ColumnName>" column
-	And User navigates to the "<MainTabName>" main-menu on the Details page
 	And User navigates to the "<SubMenuName>" sub-menu on the Details page
 	Then Empty rows are displayed if the data is unknown
 
 Examples:
-	| PageName  | SelectedName                     | ColumnName    | MainTabName | SubMenuName             |
-	| Devices   | 00K4CEEQ737BA4L                  | Hostname      | Details     | Department and Location |
-	| Users     | $231000-3AC04R8AR431             | Username      | Details     | Department and Location |
-	| Mailboxes | aaron.u.flores@dwlabs.local      | Email Address | Details     | Department and Location |
-	| Mailboxes | 000F977AC8824FE39B8@bclabs.local | Email Address | Details     | Mailbox                 |
+	| PageName  | SelectedName                     | ColumnName    | SubMenuName             |
+	| Devices   | 00K4CEEQ737BA4L                  | Hostname      | Department and Location |
+	| Users     | $231000-3AC04R8AR431             | Username      | Department and Location |
+	| Mailboxes | aaron.u.flores@dwlabs.local      | Email Address | Department and Location |
+	| Mailboxes | 000F977AC8824FE39B8@bclabs.local | Email Address | Mailbox                 |
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11762 @DAS12235 @DAS13813 @DAS14923
 Scenario Outline: EvergreenJnr_AllLists_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteDataFromFilterTextField
