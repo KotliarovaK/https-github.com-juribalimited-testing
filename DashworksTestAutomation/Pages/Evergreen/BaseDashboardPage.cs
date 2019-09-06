@@ -687,6 +687,18 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElements(by).Select(x => x.Text).ToList();
         }
 
+        public List<string> GetColumnTooltips(string columnName)
+        {
+            var by = By.XPath($".//div[@col-id='{GetColIdByColumnName(columnName)}' and @role='gridcell']");
+            return Driver.FindElements(by).Select(x => x.GetAttribute("title")).ToList();
+        }
+
+        public List<string> GetColumnColors(string columnName)
+        {
+            var by = By.XPath($".//div[@col-id='{GetColIdByColumnName(columnName)}' and @role='gridcell']//div[@class='status']");
+            return Driver.FindElements(by).Select(x => x.GetAttribute("style")).ToList();
+        }
+
         private string GetColIdByColumnName(string columnName)
         {
             var by = By.XPath($".//span[text()=\"{columnName}\"]/ancestor::div[@col-id]");

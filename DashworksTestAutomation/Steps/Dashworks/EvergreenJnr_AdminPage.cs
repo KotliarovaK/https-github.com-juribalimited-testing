@@ -2663,26 +2663,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<ProjectsPage>();
             _driver.WaitForDataLoading();
 
-            int zIndexExpend = Convert.ToInt32(page.ExpandSidePanelIcon.GetCssValue("z-index"));
-            int zIndexTabs = Convert.ToInt32(page.ScopeChangesTabsHeader.GetCssValue("z-index"));
+            int zIndexExpend = Convert.ToInt32(page.SidePanelIcon.GetCssValue("z-index"));
 
-            Utils.Verify.That(zIndexExpend, Is.GreaterThan(zIndexTabs),
-                $"Wrong overlapping: zIndex: {zIndexExpend} < zIndex: {zIndexTabs}");
+            Utils.Verify.That(zIndexExpend, Is.GreaterThan(2),
+                $"Wrong overlapping: zIndex: {zIndexExpend} < zIndex: {2}");
         }
-
-        [Then(@"Button toggle zindex is greater than notification zindex")]
-        public void ThenButtonToggleZindexIsGreaterThanNotificationZindex()
-        {
-            var page = _driver.NowAt<ProjectsPage>();
-            _driver.WaitForDataLoading();
-
-            int zIndexExpend = Convert.ToInt32(page.ExpandSidePanelIcon.GetCssValue("z-index"));
-            int zIndexMessage = Convert.ToInt32(page.ScopeChangesNotificationsPane.GetCssValue("z-index"));
-
-            Utils.Verify.That(zIndexExpend, Is.GreaterThan(zIndexMessage),
-                $"Wrong overlapping: zIndex: {zIndexExpend} < zIndex: {zIndexMessage}");
-        }
-
+        
         private string GetProjectId(string projectName)
         {
             var projectId =

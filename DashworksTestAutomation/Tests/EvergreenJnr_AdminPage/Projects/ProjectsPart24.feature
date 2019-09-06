@@ -98,15 +98,13 @@ Scenario: EvergreenJnr_AdminPage_CheckRedErrorMessageOnScopeChangesIfBrokenListI
 	And User clicks content from "Project" column
 	Then "The scope changes could not be loaded, there may be an error with one of the lists referred to in the scope details" error in the Scope Changes displayed to the User
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS17510 @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS17510
 Scenario: EvergreenJnr_AdminPage_CheckHidePanelIconOverlappingInScopeChanges
 	When User navigates to "Mailbox Evergreen Capacity Project" project details
 	And User selects "Scope" tab on the Project details page
 	And User selects "Scope Changes" tab on the Project details page
 	And User hides side panel in project details page
 	Then Button toggle zindex is greater than tab zindex
-	When User navigates to "Migration Project Phase 2 (User Project)" project details
-	Then Button toggle zindex is greater than notification zindex
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS17699
 Scenario Outline: EvergreenJnr_AdminPage_CheckSavingOfChangesOnScopeDetailsPage
@@ -125,7 +123,16 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckSavingOfChangesOnScopeDetailsPage
 	Then Scope List dropdown displayed with "<List2>" value
 
 Examples:
-	| ProjectName                        | tab1         | List1                | tab2              | List2     |
-	| 1803 Rollout                       | User Scope   | Users List (Complex) | Application Scope | 1803 Apps |
-	| Mailbox Evergreen Capacity Project | User Scope   | Users List (Complex) | Application Scope | 1803 Apps |
-	| User Evergreen Capacity Project    | Device Scope | 1803 Rollout         | Application Scope | 1803 Apps |
+	| ProjectName                        | tab1         | List1                             | tab2              | List2     |
+	| 1803 Rollout                       | User Scope   | Users Readiness Columns & Filters | Application Scope | 1803 Apps |
+	| Mailbox Evergreen Capacity Project | User Scope   | Users Readiness Columns & Filters | Application Scope | 1803 Apps |
+	| User Evergreen Capacity Project    | Device Scope | 1803 Rollout                      | Application Scope | 1803 Apps |
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS117967
+Scenario: EvergreenJnr_AdminPage_CheckNoConsoleErrorDisplayedWhenUsingGroupByFilter
+	When User clicks "Admin" on the left-hand menu
+	When User clicks Group By button on the Admin page and selects "Project" value
+	And User selects all rows on the grid
+	Then There are no errors in the browser console
+	When User selects all rows on the grid
+	Then There are no errors in the browser console
