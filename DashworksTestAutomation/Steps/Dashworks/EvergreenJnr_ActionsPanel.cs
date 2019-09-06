@@ -751,8 +751,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var action = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForElementToBeDisplayed(action.SuccessMessage);
             Verify.AreEqual(textMessage, action.SuccessMessage.Text, $"{textMessage} are not equal");
-            Verify.IsTrue(action.CloseButtonInSuccessMessage.Displayed(),
-                "Close button in Success message is not displayed");
+            //Verify.IsTrue(action.CloseButtonInSuccessMessage.Displayed(),
+            //    "Close button in Success message is not displayed");
         }
 
         [Then(@"Success message is hidden after five seconds")]
