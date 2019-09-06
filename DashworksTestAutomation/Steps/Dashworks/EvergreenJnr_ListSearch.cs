@@ -174,6 +174,19 @@ namespace DashworksTestAutomation.Steps.Dashworks
             listsFilter.GetFilterForListsByName(filterListName).Click();
         }
 
+        [Then(@"List filter DDL displays the next options")]
+        public void ThenListFilterDDLDisplaysTheNextOptions(Table table)
+        {
+            var listsFilter = _driver.NowAt<CustomListElement>();
+            listsFilter.DropdownFilterList.Click();
+
+            var expectedItems = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualItems = listsFilter.GetFilterForListsItemsFromExpandedList().Select(x=>x.Text).ToList();
+
+            Utils.Verify.That(expectedItems, Is.EqualTo(actualItems), "Items are different");
+            Logger.Write("Items are the same");
+        }
+
         private void PerformSearch(string searchTerm)
         {
             var listPageElement = _driver.NowAt<BaseDashboardPage>();

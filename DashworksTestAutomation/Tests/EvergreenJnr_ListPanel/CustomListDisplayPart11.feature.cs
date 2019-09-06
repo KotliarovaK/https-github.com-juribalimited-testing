@@ -593,6 +593,101 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatFilterCategoryNamingIsCorrect")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
+        [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS15785")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
+        [NUnit.Framework.TestCaseAttribute("Devices", "All Devices", null)]
+        [NUnit.Framework.TestCaseAttribute("Users", "All Users", null)]
+        [NUnit.Framework.TestCaseAttribute("Applications", "All Applications", null)]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "All Mailboxes", null)]
+        public virtual void EvergreenJnr_DevicesList_CheckThatFilterCategoryNamingIsCorrect(string listType, string listTitle, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckThatFilterCategoryNamingIsCorrectInternal(listType,listTitle,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_CheckThatFilterCategoryNamingIsCorrectInternal(string listType, string listTitle, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "Devices",
+                    "EvergreenJnr_ListPanel",
+                    "CustomListDisplay",
+                    "DAS15785",
+                    "Not_Run"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatFilterCategoryNamingIsCorrect", null, @__tags);
+#line 136
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 137
+ testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", listType), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 138
+ testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", listTitle), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
+                        "filterItem"});
+            table13.AddRow(new string[] {
+                        "All"});
+            table13.AddRow(new string[] {
+                        "Favourite"});
+            table13.AddRow(new string[] {
+                        "Not favourite"});
+            table13.AddRow(new string[] {
+                        "All"});
+            table13.AddRow(new string[] {
+                        "Owned by me"});
+            table13.AddRow(new string[] {
+                        "Shared with me"});
+            table13.AddRow(new string[] {
+                        "All"});
+            table13.AddRow(new string[] {
+                        "Static"});
+            table13.AddRow(new string[] {
+                        "Dynamic"});
+            table13.AddRow(new string[] {
+                        "All"});
+            table13.AddRow(new string[] {
+                        "Standard"});
+            table13.AddRow(new string[] {
+                        "Pivot"});
+#line 139
+ testRunner.And("List filter DDL displays the next options", ((string)(null)), table13, "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore
