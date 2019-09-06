@@ -365,21 +365,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<ProjectsPage>();
             _driver.WaitForDataLoading();
-            Utils.Verify.IsTrue(page.ActiveProjectByName(projectName), $"{projectName} is not displayed on the Project page");
-        }
-
-        [When(@"User clicks ""(.*)"" record in the grid")]
-        public void WhenUserClicksRecordInThenGrid(string recordName)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            page.SelectRecordByName(recordName);
+            Verify.IsTrue(page.ActiveProjectByName(projectName), $"{projectName} is not displayed on the Project page");
         }
 
         [Then(@"field for Date column is empty")]
         public void ThenFieldForDateColumnIsEmpty()
         {
             var page = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsEmpty(page.DateSearchField.GetAttribute("value"), "Date Search textbox is not empty");
+            Verify.IsEmpty(page.DateSearchField.GetAttribute("value"), "Date Search textbox is not empty");
         }
 
         [When(@"User selects following date filter on the Projects page")]
@@ -744,11 +737,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             createProjectElement.SelectObjectForTeamCreation(optionName);
         }
 
+        //TODO remove this. Replace by already created generic method
         [Then(@"""(.*)"" content is displayed in ""(.*)"" field")]
         public void ThenContentIsDisplayedInField(string text, string fieldName)
         {
-            var page = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsTrue(page.GetTextInFieldByFieldName(fieldName).GetAttribute("value").Contains(text),
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Utils.Verify.IsTrue(page.GetNamedTextbox(fieldName).GetAttribute("value").Contains(text),
                 $"Text in {fieldName} field is different");
         }
 
@@ -1528,6 +1522,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
+        //TODO should be deleted and replaced by WhenUserSelectsValueForDropdownOnActionPanel
         [When(@"User selects ""(.*)"" in the Scope Project details")]
         public void WhenUserSelectsInTheScopeProjectDetails(string listName)
         {

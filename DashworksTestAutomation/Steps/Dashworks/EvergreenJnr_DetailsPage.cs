@@ -323,6 +323,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             menu.ColumnButton.Click();
         }
 
+        [When(@"User clicks Select All checkbox on Column Settings panel")]
+        public void WhenUserClicksSelectAllCheckboxOnColumnSettingsPanel()
+        {
+            var menu = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            menu.SelectAllCheckboxOnColumnSettingsPanel.Click();
+        }
+
         [Then(@"Column Settings was opened")]
         public void ThenColumnSettingsWasOpened()
         {

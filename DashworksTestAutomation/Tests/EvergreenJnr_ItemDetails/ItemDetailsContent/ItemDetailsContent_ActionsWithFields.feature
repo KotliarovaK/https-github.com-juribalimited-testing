@@ -458,7 +458,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatOnTheProjectDetailsTabDisplaysTheL
 	Then Admin page should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
-	When User clicks "USE ME FOR AUTOMATION(MAIL SCHDLD)" record in the grid
+	When User clicks on 'USE ME FOR AUTOMATION(MAIL SCHDLD)' cell from 'Project' column
 	Then Project "USE ME FOR AUTOMATION(MAIL SCHDLD)" is displayed to user
 	When User clicks "Details" tab
 	And User clicks the "ADD LANGUAGE" Action button

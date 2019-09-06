@@ -564,13 +564,13 @@ this.FeatureBackground();
 #line 124
  testRunner.Then("Project \"TestProject12777\" is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 125
- testRunner.Then("\"Clone evergreen buckets to project buckets\" content is displayed in \"Buckets\" dr" +
+ testRunner.Then("\'Clone evergreen buckets to project buckets\' content is displayed in \'Buckets\' dr" +
                     "opdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 126
  testRunner.When("User clicks \"Capacity\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 127
- testRunner.Then("\"Clone evergreen capacity units to project capacity units\" content is displayed i" +
-                    "n \"Capacity Units\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Clone evergreen capacity units to project capacity units\' content is displayed i" +
+                    "n \'Capacity Units\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 128
  testRunner.When("User clicks \"Scope\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 129

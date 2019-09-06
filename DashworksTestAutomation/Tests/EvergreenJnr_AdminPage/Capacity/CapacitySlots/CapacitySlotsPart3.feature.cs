@@ -493,7 +493,7 @@ this.FeatureBackground();
 #line 95
  testRunner.When("User clicks content from \"Capacity Slot\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 96
- testRunner.Then("\"Pre-Migration \\ Scheduled date\" value is displayed in the \"Tasks\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Pre-Migration \\ Scheduled date\' value is displayed in the \'Tasks\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 97
  testRunner.When("User clicks on \"Paths\" dropdown on the Capacity Slots page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -555,7 +555,7 @@ this.FeatureBackground();
 #line 124
  testRunner.And("User clicks content from \"Capacity Slot\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 125
- testRunner.Then("\"Pre-Migration \\ Scheduled Date\" value is displayed in the \"Tasks\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Pre-Migration \\ Scheduled Date\' value is displayed in the \'Tasks\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 126
  testRunner.When("User clicks on \"Paths\" dropdown on the Capacity Slots page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden

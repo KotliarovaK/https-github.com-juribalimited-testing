@@ -136,8 +136,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectDetailsIsPopulatedOnTheAdminPag
 	Then "Scope Details" tab is disabled
 	Then "Scope Changes" tab is disabled
 	When User clicks "Capacity" tab
-	Then "Capacity Mode" dropdown is displayed
-	Then "Capacity Units" dropdown is displayed
+	Then 'Capacity Mode' dropdown is displayed
+	Then 'Capacity Units' dropdown is displayed
 	Then "90" content is displayed in "Percentage capacity to reach before showing amber" field
 	Then Menu options are displayed in the following order on the Admin page:
 	| Options          |

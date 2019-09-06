@@ -1857,7 +1857,7 @@ this.FeatureBackground();
 #line 460
  testRunner.Then("\"Projects\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 461
- testRunner.When("User clicks \"USE ME FOR AUTOMATION(MAIL SCHDLD)\" record in the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'USE ME FOR AUTOMATION(MAIL SCHDLD)\' cell from \'Project\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 462
  testRunner.Then("Project \"USE ME FOR AUTOMATION(MAIL SCHDLD)\" is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 463
