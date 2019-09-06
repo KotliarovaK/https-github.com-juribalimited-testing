@@ -72,7 +72,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatActiveListIsRefreshedOnListDeta
 	And User click Accept button in List Details panel
 	Then List details button is disabled
 	And list with "TestListE11493" name is not displayed
-	And "<PageName>" list should be displayed to the user
+	And "All <PageName>" list should be displayed to the user
 
 Examples: 
 	| PageName     | Columnname    |
