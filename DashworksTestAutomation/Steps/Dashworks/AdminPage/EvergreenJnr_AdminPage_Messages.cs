@@ -119,14 +119,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             Logger.Write($"{buttonName} button was clicked");
         }
 
-        [When(@"User clicks '(.*)' button in the warning message")]
-        public void WhenUserClicksButtonInTheWarningMessage(string buttonName)
-        {
-            var button = _driver.NowAt<BaseGridPage>();
-            button.GetMessageButtonByName(buttonName).Click();
-            Logger.Write($"{buttonName} button was clicked");
-        }
-
         [When(@"User close message on the Admin page")]
         public void WhenUserCloseMessageOnTheAdminPage()
         {

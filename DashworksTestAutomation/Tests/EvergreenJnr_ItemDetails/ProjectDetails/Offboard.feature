@@ -6,7 +6,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 	#Ann.Ilchenko 8/27/19: ready on 'quasar';
-@Evergreen @Applications @EvergreenJnr_ItemDetails @Offboard @DAS17919 @Cleanup @Not_Ready
+@Evergreen @Applications @EvergreenJnr_ItemDetails @Offboard @DAS17919 @DAS17990 @DAS17000 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_ApplicationsList_CheckThatOffboardOptionIsWorkedCorrectlyForProjectDetailsPageOnApplicationsPage
 	When Project created via API and opened
 	| ProjectName  | Scope       | ProjectTemplate | Mode               |
@@ -22,7 +22,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatOffboardOptionIsWorkedCorrectly
 	And User navigates to the "Project Details" sub-menu on the Details page
 	And User clicks the "OFFBOARD" Action button
 	Then Warning message with "This application will be offboarded, this cannot be undone" text is displayed on the Project Details Page
-	When User clicks 'OFFBOARD' button in the warning message
+	When User clicks the "OFFBOARD" Action button
 	Then Success message is displayed and contains "The application was successfully queued for offboarding from Project17919" text
 
 	#Ann.Ilchenko 8/28/19: ready on 'quasar';
@@ -38,7 +38,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectly
 	And User navigates to the "Projects" main-menu on the Details page
 	And User navigates to the "Project Details" sub-menu on the Details page
 	And User clicks the "OFFBOARD" Action button
-	Then Offboard Pop-up is displayed on the Item Details page
+	Then Dialog Pop-up is displayed on the Item Details page
 	When User clicks the "OFFBOARD" Action button
 	Then Warning message with "The selected objects will be offboarded, this cannot be undone" text is displayed on the Project Details Page
 	When User clicks the "OFFBOARD" Action button
@@ -73,7 +73,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectly
 	And User navigates to the "Projects" main-menu on the Details page
 	And User navigates to the "Project Details" sub-menu on the Details page
 	And User clicks the "OFFBOARD" Action button
-	Then Offboard Pop-up is displayed on the Item Details page
+	Then Dialog Pop-up is displayed on the Item Details page
 	When User clicks the "OFFBOARD" Action button
 	Then Warning message with "<Message>" text is displayed on the Project Details Page
 	When User clicks the "OFFBOARD" Action button
@@ -95,7 +95,7 @@ Examples:
 	| Users     | All Users     | 0088FC8A50DD4344B92     | Username      | I-Computer Scheduled Project | This user will be offboarded, this cannot be undone    |
 	| Mailboxes | All Mailboxes | alex.cristea@juriba.com | Email Address | Email Migration              | This mailbox will be offboarded, this cannot be undone |
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @Offboard @DAS17964 @DAS17990 @DAS17000
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @Offboard @DAS17964 @DAS17990 @DAS17000 @Cleanup @Not_Ready
 Scenario Outline: EvergreenJnr_AllLists_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindowWithAssotiatedDevices
 	When User clicks "<PageName>" on the left-hand menu
 	Then "All <PageName>" list should be displayed to the user
@@ -106,23 +106,37 @@ Scenario Outline: EvergreenJnr_AllLists_VerifyThatTheMessageAppearsCorrectlyOnTh
 	And User navigates to the "Projects" main-menu on the Details page
 	And User navigates to the "Project Details" sub-menu on the Details page
 	And User clicks the "OFFBOARD" Action button
-	Then Offboard Pop-up is displayed on the Item Details page
-	Then following text '<Text>' is displayed in Offboard Pop-up
-	Then 'Offboard all associated users' checkbox is checked in Offboard Pop-up
+	Then Dialog Pop-up is displayed on the Item Details page
+	Then following text '<Text>' is displayed in Dialog Pop-up
+	Then 'Offboard all associated users' checkbox is checked in Dialog Pop-up
 	Then following columns are displayed on the Item details page:
 	| ColumnName   |
 	| Username     |
 	| Display Name |
 	| Domain       |
 	| Owner        |
+	When User clicks the "OFFBOARD" Action button
+	When User clicks the "OFFBOARD" Action button
+	#going to check the object state
+	And User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User enters "<ProjectName>" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	When User clicks "Scope" tab
+	And User selects "History" tab on the Project details page
+	And User enters "<ItemName>" text in the Search field for "Item" column
+	Then "<ItemName>" content is displayed in "Item" column
+	Then '<ObjectIsDisplayed>' content is displayed in the 'Item' column
 
 Examples: 
-	| PageName  | ItemName                | ColumnName    | ProjectName                          | Text                                                                                                                                                                       |
-	| Devices   | 03AK1ZP1C9MPFV          | Hostname      | User Evergreen Capacity Project | Offboarding device 03AK1ZP1C9MPFV. Select any associated users below to offboard at the same time. Offboarding an object deletes all project related information about it. |
-	#add check for Project with assotiated users
-	#add check for Project with assotiated users
+	| PageName  | ItemName                         | ColumnName    | ProjectName                          | Text                                                                                                                                                                                                         | ObjectIsDisplayed   |
+	| Devices   | 01ONL5I8LY44R3                   | Hostname      | USE ME FOR AUTOMATION(DEVICE SCHDLD) | Offboarding device 01ONL5I8LY44R3. Select any associated users below to offboard at the same time. Offboarding an object deletes all project related information about it.                                   | ABS188911           |
+	| Users     | 01F6D54271D74F1BB8D              | Username      | USE ME FOR AUTOMATION(USR SCHDLD)    | Offboarding user BCLABS\01F6D54271D74F1BB8D (McGinley, Marilyn). Select any associated mailboxes below to offboard at the same time. Offboarding an object deletes all project related information about it. | 02X387UQLFP3ISU     |
+	| Mailboxes | 01DEAC5F18B34084B04@bclabs.local | Email Address | USE ME FOR AUTOMATION(MAIL SCHDLD)   | Offboarding mailbox 01DEAC5F18B34084B04@bclabs.local. Offboarding an object deletes all project related information about it.                                                                                | 01DEAC5F18B34084B04 |
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @Offboard @DAS17964 @DAS17990 @DAS17000
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @Offboard @DAS17964 @DAS17990 @DAS17000 @Cleanup @Not_Ready
 Scenario Outline: EvergreenJnr_AllLists_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindowWithNoAssotiatedDevices
 	When User clicks "<PageName>" on the left-hand menu
 	Then "All <PageName>" list should be displayed to the user
@@ -133,8 +147,50 @@ Scenario Outline: EvergreenJnr_AllLists_VerifyThatTheMessageAppearsCorrectlyOnTh
 	And User navigates to the "Projects" main-menu on the Details page
 	And User navigates to the "Project Details" sub-menu on the Details page
 	And User clicks the "OFFBOARD" Action button
-	Then Offboard Pop-up is displayed on the Item Details page
-	Then following text '<Text>' is displayed in Offboard Pop-up
+	Then Dialog Pop-up is displayed on the Item Details page
+	Then following text '<Text>' is displayed in Dialog Pop-up
+	Then 'Offboard all associated users' checkbox is checked in Dialog Pop-up
+	Then following columns are displayed on the Item details page:
+	| ColumnName   |
+	| Username     |
+	| Display Name |
+	| Domain       |
+	| Owner        |
+	Then User clicks 'Offboard all associated users' checkbox in Dialog Pop-up
+	When User clicks the "OFFBOARD" Action button
+	When User clicks the "OFFBOARD" Action button
+	#going to check the object state
+	And User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User enters "<ProjectName>" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	When User clicks "Scope" tab
+	And User selects "History" tab on the Project details page
+	And User enters "<ItemName>" text in the Search field for "Item" column
+	Then "<ItemName>" content is displayed in "Item" column
+	Then '<ObjectIsNotDisplayed>' content is not displayed in the 'Item' column
+
+Examples: 
+	| PageName  | ItemName                         | ColumnName    | ProjectName                          | Text                                                                                                                                                                                                         | ItemIsNotDisplayed  |
+	| Devices   | 01ONL5I8LY44R3                   | Hostname      | USE ME FOR AUTOMATION(DEVICE SCHDLD) | Offboarding device 01ONL5I8LY44R3. Select any associated users below to offboard at the same time. Offboarding an object deletes all project related information about it.                                   | ABS188911           |
+	| Users     | 01F6D54271D74F1BB8D              | Username      | USE ME FOR AUTOMATION(USR SCHDLD)    | Offboarding user BCLABS\01F6D54271D74F1BB8D (McGinley, Marilyn). Select any associated mailboxes below to offboard at the same time. Offboarding an object deletes all project related information about it. | 02X387UQLFP3ISU     |
+	| Mailboxes | 01DEAC5F18B34084B04@bclabs.local | Email Address | USE ME FOR AUTOMATION(MAIL SCHDLD)   | Offboarding mailbox 01DEAC5F18B34084B04@bclabs.local. Offboarding an object deletes all project related information about it.                                                                                | 01DEAC5F18B34084B04 |
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @Offboard @DAS17964 @DAS17990 @DAS17000
+Scenario Outline: EvergreenJnr_AllLists_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindowWithoutUser
+	When User clicks "<PageName>" on the left-hand menu
+	Then "All <PageName>" list should be displayed to the user
+	When User perform search by "<ItemName>"
+	And User click content from "<ColumnName>" column
+	Then Details page for "<ItemName>" item is displayed to the user
+	When User switches to the "<ProjectName>" project in the Top bar on Item details page
+	And User navigates to the "Projects" main-menu on the Details page
+	And User navigates to the "Project Details" sub-menu on the Details page
+	And User clicks the "OFFBOARD" Action button
+	Then Dialog Pop-up is displayed on the Item Details page
+	Then following text '<Text>' is displayed in Dialog Pop-up
 
 Examples: 
 	| PageName  | ItemName                | ColumnName    | ProjectName                          | Text                                                                                                                                                                       |

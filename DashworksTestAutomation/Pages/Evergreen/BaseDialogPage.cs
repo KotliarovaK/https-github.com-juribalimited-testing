@@ -8,12 +8,12 @@ using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 
-namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
+namespace DashworksTestAutomation.Pages.Evergreen
 {
-    class ItemDetailsOffboardElementsPage : SeleniumBasePage
+    public class BaseDialogPage : SeleniumBasePage
     {
         [FindsBy(How = How.XPath, Using = ".//mat-dialog-container[contains(@class, 'dialogContainer')]")]
-        public IWebElement OffboardPopUp { get; set; }
+        public IWebElement DialogPopUp { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {
@@ -21,7 +21,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
 
             return new List<By>
             {
-                SelectorFor(this, p => p.OffboardPopUp)
+                SelectorFor(this, p => p.DialogPopUp)
             };
         }
 
@@ -30,7 +30,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
             return Driver.FindElement(By.XPath(".//div[@class='mat-dialog-content']")).Text;
         }
 
-        public IWebElement GetOffboardPopUpCheckbox(string checkbox)
+        public IWebElement GetDialogPopUpCheckbox(string checkbox)
         {
             var selector = By.XPath($".//*[text()='{checkbox}']/preceding::div[@class='mat-checkbox-inner-container']//input");
             Driver.WaitForElementToBeDisplayed(selector);
