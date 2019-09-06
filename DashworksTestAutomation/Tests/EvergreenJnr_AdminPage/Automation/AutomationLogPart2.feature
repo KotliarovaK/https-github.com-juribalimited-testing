@@ -21,7 +21,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueActionDAS
 	#Create Action
 	When User clicks the "CREATE ACTION" Action button
 	When User enters '17430_Action' text to 'Action Name' textbox
-	And User selects "Update task value" in the "Action Type" dropdown
+	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'USE ME FOR AUTOMATION(USR SCHDLD)' option from 'Project' autocomplete
 	When User selects "Stage 1" in the "Stage" dropdown for Actions
 	When User selects "Radiobutton Readiness Date Owner Task (User)" in the "Task" dropdown for Actions
@@ -66,7 +66,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInDeviceScope
 	#Create Action
 	When User clicks the "CREATE ACTION" Action button
 	When User enters '17636_Action' text to 'Action Name' textbox
-	And User selects "Update task value" in the "Action Type" dropdown
+	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'Project 00 M Computer Scheduled' option from 'Project' autocomplete
 	When User selects "Planning" in the "Stage" dropdown for Actions
 	When User selects "Get technical information" in the "Task" dropdown for Actions
@@ -106,7 +106,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInMailboxScop
 	#Create Action
 	When User clicks the "CREATE ACTION" Action button
 	When User enters '17642_Action' text to 'Action Name' textbox
-	And User selects "Update task value" in the "Action Type" dropdown
+	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'Email Migration' option from 'Project' autocomplete
 	When User selects "Comms & Exceptions" in the "Stage" dropdown for Actions
 	When User selects "Mailbox Dropdown Non RAG Owner" in the "Task" dropdown for Actions
@@ -148,7 +148,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInApplication
 	#Create Action
 	When User clicks the "CREATE ACTION" Action button
 	When User enters '17643_Action' text to 'Action Name' textbox
-	And User selects "Update task value" in the "Action Type" dropdown
+	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'USE ME FOR AUTOMATION(USR SCHDLD)' option from 'Project' autocomplete
 	When User selects "Stage 1" in the "Stage" dropdown for Actions
 	When User selects "Text Task (App)" in the "Task" dropdown for Actions
@@ -189,7 +189,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInDevicesScop
 	#Create Action
 	When User clicks the "CREATE ACTION" Action button
 	When User enters '17799_Action' text to 'Action Name' textbox
-	And User selects "Update task value" in the "Action Type" dropdown
+	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'zDevice Sch for Automations Feature' option from 'Project' autocomplete
 	When User selects "Stage B" in the "Stage" dropdown for Actions
 	When User selects "Readiness Date Comp Task" in the "Task" dropdown for Actions
@@ -239,7 +239,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedA
 	#Create Action
 	When User clicks the "CREATE ACTION" Action button
 	When User enters '17678_Action' text to 'Action Name' textbox
-	And User selects "Update task value" in the "Action Type" dropdown
+	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'USE ME FOR AUTOMATION(USR SCHDLD)' option from 'Project' autocomplete
 	When User selects "Stage 2" in the "Stage" dropdown for Actions
 	When User selects "Radiobutton Readiness Date Task" in the "Task" dropdown for Actions
@@ -292,7 +292,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueAndOwnerInDev
 	#Create Action
 	When User clicks the "CREATE ACTION" Action button
 	And User enters '17682_Action' text to 'Action Name' textbox
-	And User selects "Update task value" in the "Action Type" dropdown
+	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'zDevice Sch for Automations Feature' option from 'Project' autocomplete
 	When User selects "Stage A" in the "Stage" dropdown for Actions
 	When User selects "Readiness Owner Task" in the "Task" dropdown for Actions
@@ -346,7 +346,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForRemoveOwnerAndTeamInDevi
 	#Create Action
 	And User clicks the "CREATE ACTION" Action button
 	And User enters '17682_Action' text to 'Action Name' textbox
-	And User selects "Update task value" in the "Action Type" dropdown
+	And User selects 'Update task value' in the 'Action Type' dropdown
 	And User selects 'zDevice Sch for Automations Feature' option from 'Project' autocomplete
 	And User selects "Stage C" in the "Stage" dropdown for Actions
 	And User selects "Readiness Owner Date Don't Change" in the "Task" dropdown for Actions
@@ -400,7 +400,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedA
 	#Create Action
 	When User clicks the "CREATE ACTION" Action button
 	When User enters '17678_Action' text to 'Action Name' textbox
-	And User selects "Update task value" in the "Action Type" dropdown
+	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'USE ME FOR AUTOMATION(DEVICE SCHDLD)' option from 'Project' autocomplete
 	When User selects "Stage A" in the "Stage" dropdown for Actions
 	When User selects "Radiobutton Readiness Date Task No CS" in the "Task" dropdown for Actions

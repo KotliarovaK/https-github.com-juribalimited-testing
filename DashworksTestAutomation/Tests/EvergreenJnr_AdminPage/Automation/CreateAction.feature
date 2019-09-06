@@ -20,7 +20,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonForActionsWorksCorrectly
 	#Create Action
 	When User clicks the "CREATE ACTION" Action button
 	When User enters '15427_Action' text to 'Action Name' textbox
-	When User selects "Update path" in the "Action Type" dropdown
+	When User selects 'Update path' in the 'Action Type' dropdown
 	When User selects 'USE ME FOR AUTOMATION(DEVICE SCHDLD)' option from 'Project' autocomplete
 	When User selects "[Default (Computer)]" in the "Path" dropdown for Actions
 	When User clicks the "CREATE" Action button
@@ -46,10 +46,10 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckUpdateTaskValueEditPageLoadsProjec
 	When User enters 'DAS17428' text to 'Description' textbox
 	When User selects "<Scope>" in the Scope Automation dropdown
 	When User selects "Active" checkbox on the Automation Page
-	When User selects "Manual" in the "Run" dropdown
+	When User selects 'Manual' in the 'Run' dropdown
 	When User clicks the "CREATE" Action button
 	When User enters 'Update Migrated devices to Started' text to 'Action Name' textbox
-	When User selects "Update task value" in the "Action Type" dropdown
+	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects '<Project>' option from 'Project' autocomplete
 	When User selects "<Stage>" in the "Stage" dropdown for Actions
 	When User selects "<Task>" in the "Task" dropdown for Actions
@@ -119,7 +119,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatStageWithoutCorrectTasksIsNotDisplayed
 	#Create Action
 	When User clicks the "CREATE ACTION" Action button
 	When User enters '17691_Action' text to 'Action Name' textbox
-	And User selects "Update task value" in the "Action Type" dropdown
+	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'DAS17691_Project' option from 'Project' autocomplete
 	Then "Stage" dropdown is not displayed on the Admin Settings screen
 
@@ -140,7 +140,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueAction
 	#Create Action
 	When User clicks the "CREATE ACTION" Action button
 	When User enters '17738_Action' text to 'Action Name' textbox
-	And User selects "Update task value" in the "Action Type" dropdown
+	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	When User selects "One" in the "Stage" dropdown for Actions
 	When User selects "Radio Rag Date Comp" in the "Task" dropdown for Actions
@@ -180,7 +180,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithRemoveOwnerIsLoaded
 	#Create Action
 	When User clicks the "CREATE ACTION" Action button
 	When User enters 'Update Migrated devices' text to 'Action Name' textbox
-	And User selects "Update task value" in the "Action Type" dropdown
+	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	When User selects "One" in the "Stage" dropdown for Actions
 	When User selects "Radio Rag Date Owner User Req B" in the "Task" dropdown for Actions
@@ -217,7 +217,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithUpdateOwnerIsLoaded
 	#Create Action
 	When User clicks the "CREATE ACTION" Action button
 	When User enters 'Update Migrated devices' text to 'Action Name' textbox
-	And User selects "Update task value" in the "Action Type" dropdown
+	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	When User selects "One" in the "Stage" dropdown for Actions
 	When User selects "Radio Rag Date Owner Comp Req B" in the "Task" dropdown for Actions
