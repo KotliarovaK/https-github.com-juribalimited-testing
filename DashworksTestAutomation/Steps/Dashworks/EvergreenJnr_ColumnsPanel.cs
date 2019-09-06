@@ -224,6 +224,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             var originalPart = Regex.Match(currentUrl, pattern).Value;
             _driver.NavigateToUrl(currentUrl.Replace(originalPart, string.Empty));
+            //TODO: 6Sep2019 Yurii: added refresh since above method just inserts URL but no navigation actually occurs
+            _driver.Navigate().Refresh();
 
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             if (page.StatusCodeLabel.Displayed())
