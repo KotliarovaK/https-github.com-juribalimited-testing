@@ -131,3 +131,29 @@ Scenario: EvergreenJnr_DevicesList_CheckThatGridHeaderIsDisplayedCorrectlyAfterC
 	Then "All Devices" list should be displayed to the user
 	When User closed list panel
 	Then Dashboards sub menu is hidden on Dashboards page
+
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS15785 @Not_Run
+Scenario Outline: EvergreenJnr_DevicesList_CheckThatFilterCategoryNamingIsCorrect
+	When User clicks "<ListType>" on the left-hand menu
+	Then "<ListTitle>" list should be displayed to the user
+	And List filter DDL displays the next options
+	| filterItem     |
+	| All            |
+	| Favourite      |
+	| Not favourite  |
+	| All            |
+	| Owned by me    |
+	| Shared with me |
+	| All            |
+	| Static         |
+	| Dynamic        |
+	| All            |
+	| Standard       |
+	| Pivot          |
+
+Examples:
+	| ListType     | ListTitle        |
+	| Devices      | All Devices      |
+	| Users        | All Users        |
+	| Applications | All Applications |
+	| Mailboxes    | All Mailboxes    |
