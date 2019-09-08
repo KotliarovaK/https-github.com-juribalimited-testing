@@ -24,13 +24,13 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsLogGridForRunningAutomationWith
 	#Action 1
 	When User clicks the "CREATE ACTION" Action button
 	When User enters '16890_Action' text to 'Action Name' textbox
-	When User selects "Update path" in the "Action Type" dropdown
+	When User selects 'Update path' in the 'Action Type' dropdown
 	When User selects '16890Project' option from 'Project' autocomplete
 	When User selects "[Default (Computer)]" in the "Path" dropdown for Actions
 	And User clicks the "CREATE" Action button
 	When User clicks the "CREATE ACTION" Action button
 	When User enters 'New_Action' text to 'Action Name' textbox
-	When User selects "Update path" in the "Action Type" dropdown
+	When User selects 'Update path' in the 'Action Type' dropdown
 	When User selects '1803 Rollout' option from 'Project' autocomplete
 	When User selects "Undetermined" in the "Path" dropdown for Actions
 	And User clicks the "CREATE" Action button
@@ -108,10 +108,10 @@ Scenario: EvergreenJnr_AdminPage_CheckSuccessfulRunInOutcomeColumn
 	When User enters '1745104' text to 'Description' textbox
 	When User selects "All Users" in the Scope Automation dropdown
 	Then "CREATE" Action button is disabled
-	When User selects "Manual" in the "Run" dropdown
+	When User selects 'Manual' in the 'Run' dropdown
 	And User clicks the "CREATE" Action button
 	When User enters 'D16974_Action' text to 'Action Name' textbox
-	When User selects "Update path" in the "Action Type" dropdown
+	When User selects 'Update path' in the 'Action Type' dropdown
 	When User selects 'User Evergreen Capacity Project' option from 'Project' autocomplete
 	When User selects "[Default (User)]" in the "Path" dropdown for Actions
 	And User clicks the "CREATE" Action button
@@ -167,7 +167,7 @@ Scenario: EvergreenJnr_AdminPage_CheckBrokenListValidationWhenRunningAnAutomatio
 	When User enters '17011_Automation' text to 'Automation Name' textbox
 	When User enters '17011' text to 'Description' textbox
 	When User selects "17011_List" in the Scope Automation dropdown
-	When User selects "Manual" in the "Run" dropdown
+	When User selects 'Manual' in the 'Run' dropdown
 	When User selects "Active" checkbox on the Automation Page
 	When User clicks the "CREATE" Action button
 	When User clicks "Automations" navigation link on the Admin page
@@ -176,7 +176,7 @@ Scenario: EvergreenJnr_AdminPage_CheckBrokenListValidationWhenRunningAnAutomatio
 	When User enters '17011_Automation_1' text to 'Automation Name' textbox
 	When User enters '17011_1' text to 'Description' textbox
 	When User selects "All Devices" in the Scope Automation dropdown
-	When User selects "Manual" in the "Run" dropdown
+	When User selects 'Manual' in the 'Run' dropdown
 	When User selects "Active" checkbox on the Automation Page
 	When User clicks the "CREATE" Action button
 	Then Create Action page is displayed to the User
@@ -223,7 +223,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckSuccessfulRunningAutomationWithMai
 	When User enters '<AutomationName>' text to 'Automation Name' textbox
 	When User enters '17212' text to 'Description' textbox
 	When User selects "<Scope>" in the Scope Automation dropdown
-	When User selects "Manual" in the "Run" dropdown
+	When User selects 'Manual' in the 'Run' dropdown
 	When User selects "Active" checkbox on the Automation Page
 	And User clicks the "CREATE" Action button
 	When User clicks "Automations" navigation link on the Admin page

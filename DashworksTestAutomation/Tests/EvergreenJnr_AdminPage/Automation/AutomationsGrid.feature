@@ -72,7 +72,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSortingAutomationsGrid
 	When User click on 'Description' column header
 	Then data in table is sorted by "Description" column in descending order on the Admin page
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17774 @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17774
 Scenario: EvergreenJnr_AdminPage_CheckUnsavedChangesPopUp
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user

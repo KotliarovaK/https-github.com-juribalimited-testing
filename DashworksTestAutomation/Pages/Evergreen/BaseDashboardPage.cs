@@ -263,6 +263,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-body-viewport')]//div[@class='ag-center-cols-container']")]
         public IWebElement TableContent { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//mat-option//div[contains(@class, 'text-container')]//span")]
+        public IList<IWebElement> StringFilterValues { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[@class='ag-center-cols-viewport']//div[@role='row']")]
         public IList<IWebElement> TableRows { get; set; }
 
