@@ -667,7 +667,7 @@ this.FeatureBackground();
 #line 173
  testRunner.When("User clicks String Filter button for \"Outcome\" column on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 174
- testRunner.Then("String filters value are not duplicated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("String filter values are not duplicated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

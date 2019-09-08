@@ -171,4 +171,4 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOutcomeStringFiltersValueAreNotDuplica
 	When User clicks "Automations" link on the Admin page
 	When User selects "Automation Log" tab on the Project details page
 	When User clicks String Filter button for "Outcome" column on the Admin page
-	Then String filters value are not duplicated
+	Then String filter values are not duplicated
