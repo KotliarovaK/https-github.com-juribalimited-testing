@@ -93,7 +93,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedU
 	#Create Action
 	When User clicks the "CREATE ACTION" Action button
 	When User enters 'DAS17681_Action' text to 'Action Name' textbox
-	And User selects "Update task value" in the "Action Type" dropdown
+	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'USE ME FOR AUTOMATION(USR SCHDLD)' option from 'Project' autocomplete
 	When User selects 'Stage 1' option from 'Stage' autocomplete
 	When User selects "Radiobutton Readiness Date Owner Task (User)" in the "Task" dropdown for Actions
@@ -147,7 +147,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedU
 	When User clicks "Actions" tab
 	When User clicks the "CREATE ACTION" Action button
 	When User enters '17681_Action' text to 'Action Name' textbox
-	And User selects "Update task value" in the "Action Type" dropdown
+	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	When User selects 'One' option from 'Stage' autocomplete
 	When User selects "Radio Date Owner User" in the "Task" dropdown for Actions
@@ -172,7 +172,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateOwnerForUpdateValueInDevicesScopedAu
 	#Create Action
 	When User clicks the "CREATE ACTION" Action button
 	And User enters '17830_Action' text to 'Action Name' textbox
-	And User selects "Update task value" in the "Action Type" dropdown
+	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'zDevice Sch for Automations Feature' option from 'Project' autocomplete
 	And User selects 'Stage B' option from 'Stage' autocomplete
 	And User selects 'Combination Task App' option from 'Task' autocomplete
@@ -222,11 +222,11 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateDateForUpdateValueInDevicesScopedAut
 	#Create Action
 	When User clicks the "CREATE ACTION" Action button
 	And User enters '17846_Action' text to 'Action Name' textbox
-	And User selects "Update task value" in the "Action Type" dropdown
+	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'zDevice Sch for Automations Feature' option from 'Project' autocomplete
 	And User selects 'Stage C' option from 'Stage' autocomplete
 	And User selects 'Date Only with Capacity' option from 'Task' autocomplete
-	And User selects "Update" in the "Update Date" dropdown
+	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters '5 Sep 2019' text to 'Date' textbox
 	And User selects "DAS-17846 Slot Device" in the "Capacity Slot" dropdown
 	And User clicks the "CREATE" Action button
@@ -262,13 +262,13 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateDateForUpdateValueInUsersScopedAutom
 	#Create Action
 	When User clicks the "CREATE ACTION" Action button
 	And User enters 'DAS17846_Action' text to 'Action Name' textbox
-	And User selects "Update task value" in the "Action Type" dropdown
+	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
 	And User selects 'Stage 3' option from 'Stage' autocomplete
 	And User selects 'Date Only with Capacity User' option from 'Task' autocomplete
-	And User selects "Update" in the "Update Date" dropdown
+	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters '13 Aug 2019' text to 'Date' textbox
-	And User selects "None" in the "Capacity Slot" dropdown
+	And User selects 'None' in the 'Capacity Slot' dropdown
 	And User clicks the "CREATE" Action button
 	#Create Action
 	When User clicks "Automations" navigation link on the Admin page

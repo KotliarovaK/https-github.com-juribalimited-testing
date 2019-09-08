@@ -17,13 +17,13 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInAppsScopedA
 	#Create Action
 	When User clicks the "CREATE ACTION" Action button
 	And User enters 'DAS17859_Action' text to 'Action Name' textbox
-	And User selects "Update task value" in the "Action Type" dropdown
+	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
 	And User selects 'Stage 2' option from 'Stage' autocomplete
 	And User selects 'Radio Date Slot App' option from 'Task' autocomplete
 	And User selects "Update" in the "Update Value" dropdown
 	And User selects "Complete" in the "Value" dropdown
-	And User selects "Update" in the "Update Date" dropdown
+	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters '9 Sep 2019' text to 'Date' textbox
 	And User selects "None" in the "Capacity Slot" dropdown
 	And User clicks the "CREATE" Action button
@@ -65,7 +65,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueWithNoChangeDateForUpdateTaskVa
 	#Create Action
 	When User clicks the "CREATE ACTION" Action button
 	And User enters 'DAS17859_Action' text to 'Action Name' textbox
-	And User selects "Update task value" in the "Action Type" dropdown
+	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'zDevice Sch for Automations Feature' option from 'Project' autocomplete
 	And User selects 'Stage C' option from 'Stage' autocomplete
 	And User selects 'Radio Date Slot Device' option from 'Task' autocomplete
