@@ -25,7 +25,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatPivotsAreNotShownInTheListToSelectO
 	And Project created via API and opened
 	| ProjectName         | Scope       | ProjectTemplate | Mode               |
 	| Pivot_Project_14224 | All Devices | None            | Standalone Project |
-	And User clicks "Scope" tab
+	And User navigates to the 'Scope' left menu item
 	And User selects "Scope Details" tab on the Project details page
 	And User navigates to the "Device Scope" tab in the Scope section on the Project details page
 	Then following Values are displayed in "Scope" drop-down on the Admin page:

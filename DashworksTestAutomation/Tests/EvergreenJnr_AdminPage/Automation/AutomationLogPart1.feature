@@ -20,7 +20,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsLogGridForRunningAutomationWith
 	Then User checks that file "Dashworks export" was downloaded
 	When User enters "16890_Automation" text in the Search field for "Automation" column
 	When User click content from "Automation" column
-	When User clicks "Actions" tab
+	When User navigates to the 'Actions' left menu item
 	#Action 1
 	When User clicks the "CREATE ACTION" Action button
 	When User enters '16890_Action' text to 'Action Name' textbox
@@ -106,7 +106,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSuccessfulRunInOutcomeColumn
 	Then "Create Automation" title is displayed on the Automations page
 	When User enters 'D16974_Automation' text to 'Automation Name' textbox
 	When User enters '1745104' text to 'Description' textbox
-	When User selects "All Users" in the Scope Automation dropdown
+	When User selects 'All Users' option from 'Scope' autocomplete
 	Then "CREATE" Action button is disabled
 	When User selects 'Manual' in the 'Run' dropdown
 	And User clicks the "CREATE" Action button
@@ -165,7 +165,7 @@ Scenario: EvergreenJnr_AdminPage_CheckBrokenListValidationWhenRunningAnAutomatio
 	When User clicks the "CREATE AUTOMATION" Action button
 	When User enters '17011_Automation' text to 'Automation Name' textbox
 	When User enters '17011' text to 'Description' textbox
-	When User selects "17011_List" in the Scope Automation dropdown
+	When User selects '17011_List' option from 'Scope' autocomplete
 	When User selects 'Manual' in the 'Run' dropdown
 	When User selects "Active" checkbox on the Automation Page
 	When User clicks the "CREATE" Action button
@@ -174,7 +174,7 @@ Scenario: EvergreenJnr_AdminPage_CheckBrokenListValidationWhenRunningAnAutomatio
 	Then "Create Automation" title is displayed on the Automations page
 	When User enters '17011_Automation_1' text to 'Automation Name' textbox
 	When User enters '17011_1' text to 'Description' textbox
-	When User selects "All Devices" in the Scope Automation dropdown
+	When User selects 'All Devices' option from 'Scope' autocomplete
 	When User selects 'Manual' in the 'Run' dropdown
 	When User selects "Active" checkbox on the Automation Page
 	When User clicks the "CREATE" Action button
@@ -220,7 +220,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckSuccessfulRunningAutomationWithMai
 	When User clicks the "CREATE AUTOMATION" Action button
 	When User enters '<AutomationName>' text to 'Automation Name' textbox
 	When User enters '17212' text to 'Description' textbox
-	When User selects "<Scope>" in the Scope Automation dropdown
+	When User selects '<Scope>' option from 'Scope' autocomplete
 	When User selects 'Manual' in the 'Run' dropdown
 	When User selects "Active" checkbox on the Automation Page
 	And User clicks the "CREATE" Action button

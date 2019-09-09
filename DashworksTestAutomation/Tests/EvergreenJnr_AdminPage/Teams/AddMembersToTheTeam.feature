@@ -50,7 +50,7 @@ Scenario: EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam
 	When User enters "My Team" text in the Search field for "Team" column
 	Then 'FALSE' content is displayed in the 'Default' column
 	When User clicks content from "Team" column
-	And User clicks "Team Settings" tab
+	And User navigates to the 'Team Settings' left menu item
 	And User clicks Default Team checkbox
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The team was successfully updated" text
@@ -75,7 +75,7 @@ Scenario: EvergreenJnr_AdminPage_AddingMembersToTheTeam
 	Then "Teams" page should be displayed to the user
 	When User enters "TestTeam7" text in the Search field for "Team" column
 	And User clicks content from "Team" column
-	When User clicks "Team Members" tab
+	When User navigates to the 'Team Members' left menu item
 	When User clicks the "ADD MEMBERS" Action button
 	And User adds following Objects from list
 	| Objects           |
@@ -120,7 +120,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSelectANewTeamDropdownAreWorkingCorre
 	Then "Teams" page should be displayed to the user
 	When User enters "DAS12326" text in the Search field for "Team" column
 	And User clicks content from "Team" column
-	And User clicks "Team Members" tab
+	And User navigates to the 'Team Members' left menu item
 	And User clicks the "ADD MEMBERS" Action button
 	And User adds following Objects from list
 	| Objects           |

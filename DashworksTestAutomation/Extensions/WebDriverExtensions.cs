@@ -2028,5 +2028,23 @@ namespace DashworksTestAutomation.Extensions
                 }
             }
         }
+
+        //For cases when we need return value
+        public static bool ExecuteFunc(this RemoteWebDriver driver, Func<bool> actionToDo)
+        {
+            for (int i = 0; i < 2; i++)
+            {
+                try
+                {
+                    return actionToDo.Invoke();
+                }
+                catch (Exception)
+                {
+                    Thread.Sleep(1000);
+                }
+            }
+
+            return false;
+        }
     }
 }

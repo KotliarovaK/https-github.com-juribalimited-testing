@@ -12,7 +12,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameWhichStartsWithLowerCaseLe
 	| project12949 | All Devices | None            | Standalone Project |
 	When User clicks Admin on the left-hand menu
 	And User clicks "Evergreen" link on the Admin page
-	And User clicks "Buckets" tab
+	And User navigates to the 'Buckets' left menu item
 	Then "Buckets" page should be displayed to the user
 	When User clicks String Filter button for "Project" column on the Admin page
 	Then Projects in filter dropdown are displayed in alphabetical order
@@ -22,7 +22,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameWhichStartsWithLowerCaseLe
 	Then "Projects" page should be displayed to the user
 	When User enters "project12949" text in the Search field for "Project" column
 	And User clicks content from "Project" column
-	And User clicks "Users" tab in the Project Scope Changes section
+	And User navigates to the 'Users' left menu item in the Project Scope Changes section
 	And User expands the object to add
 	And User selects following Objects
 	| Objects                      |
@@ -35,7 +35,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameWhichStartsWithLowerCaseLe
 	Then Warning message with "3 users will be added" text is displayed on the Admin page
 	When User clicks the "UPDATE PROJECT" Action button
 	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
-	When User clicks "Applications" tab in the Project Scope Changes section
+	When User navigates to the 'Applications' left menu item in the Project Scope Changes section
 	When User expands the object to add
 	And User selects following Objects
 	| Objects              |
@@ -46,13 +46,13 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameWhichStartsWithLowerCaseLe
 	Then Warning message with "3 applications will be added" text is displayed on the Admin page
 	When User clicks the "UPDATE PROJECT" Action button
 	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
-	When User clicks "Users" tab in the Project Scope Changes section
+	When User navigates to the 'Users' left menu item in the Project Scope Changes section
 	Then following objects were not found
 	| Objects                      |
 	| ADD135461 (Luke W. Clark)    |
 	| ADO048752 (Elena Z. Le)      |
 	| ADX520696 (Bridgett E. Cobb) |
-	When User clicks "Applications" tab in the Project Scope Changes section
+	When User navigates to the 'Applications' left menu item in the Project Scope Changes section
 	Then following objects were not found
 	| Objects              |
 	| Adobe Reader 5ver2.1 |
@@ -68,11 +68,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatRelatedBucketsAreUpdatedAfterCreatingO
 	| 1DevicesProject | All Devices | None            | Standalone Project |
 	When User clicks Admin on the left-hand menu
 	When User clicks "Evergreen" link on the Admin page
-	When User clicks "Buckets" tab
+	When User navigates to the 'Buckets' left menu item
 	#Remove after Buckets loaded faster
 	When User clicks "Teams" link on the Admin page
 	When User clicks "Evergreen" link on the Admin page
-	When User clicks "Buckets" tab
+	When User navigates to the 'Buckets' left menu item
 	Then "Buckets" page should be displayed to the user
 	When User clicks Reset Filters button on the Admin page
 	When User clicks String Filter button for "Project" column on the Admin page
@@ -86,7 +86,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatRelatedBucketsAreUpdatedAfterCreatingO
 	And User selects all rows on the grid
 	And User removes selected item
 	When User clicks "Evergreen" link on the Admin page
-	When User clicks "Buckets" tab
+	When User navigates to the 'Buckets' left menu item
 	Then "Buckets" page should be displayed to the user
 	When User clicks String Filter button for "Project" column on the Admin page
 	Then "1DevicesProject" is not displayed in the filter dropdown
@@ -102,7 +102,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatColourOfOnboardedAppIsDisplayedCorrec
 	And User navigates to the "Application Scope" tab in the Scope section on the Project details page
 	And User selects "RED" color in the Application Scope tab on the Project details page
 	And User selects "Scope Changes" tab on the Project details page
-	And User clicks "Applications" tab in the Project Scope Changes section
+	And User navigates to the 'Applications' left menu item in the Project Scope Changes section
 	And User expands the object to add 
 	And User selects following Objects
 	| Objects                                                      |
@@ -133,7 +133,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOffboardedObjectsAreListedAfterSelectO
 	Then Project "UsersProject2" is displayed to user
 	When User selects "Scope" tab on the Project details page
 	When User selects "Scope Changes" tab on the Project details page
-	And User clicks "Devices" tab in the Project Scope Changes section
+	And User navigates to the 'Devices' left menu item in the Project Scope Changes section
 	And User expands the object to add
 	And User selects following Objects
 	| Objects         |
