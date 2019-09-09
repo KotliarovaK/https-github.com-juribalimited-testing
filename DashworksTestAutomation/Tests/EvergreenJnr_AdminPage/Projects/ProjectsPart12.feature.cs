@@ -194,8 +194,7 @@ this.FeatureBackground();
 #line 30
  testRunner.And("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 31
- testRunner.When("User navigates to the \'Applications\' left menu item in the Project Scope Changes " +
-                    "section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Applications\' tab on Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 32
  testRunner.Then("\"Applications to add (0 of 0 selected)\" is displayed to the user in the Project S" +
                     "cope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -211,8 +210,7 @@ this.FeatureBackground();
 #line 37
  testRunner.And("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 38
- testRunner.When("User navigates to the \'Applications\' left menu item in the Project Scope Changes " +
-                    "section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Applications\' tab on Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 39
  testRunner.Then(string.Format("\"{0}\" is displayed to the user in the Project Scope Changes section", objectsToAdd1), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 40
@@ -227,8 +225,7 @@ this.FeatureBackground();
 #line 44
  testRunner.And("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 45
- testRunner.When("User navigates to the \'Applications\' left menu item in the Project Scope Changes " +
-                    "section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Applications\' tab on Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 46
  testRunner.Then(string.Format("\"{0}\" is displayed to the user in the Project Scope Changes section", objectsToAdd2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 47
@@ -310,8 +307,7 @@ this.FeatureBackground();
 #line 61
  testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 62
- testRunner.And("User navigates to the \'Users\' left menu item in the Project Scope Changes section" +
-                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User navigates to the \'Users\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 63
  testRunner.Then("\"Users to add (0 of 14747 selected)\" is displayed to the user in the Project Scop" +
                     "e Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -392,8 +388,7 @@ this.FeatureBackground();
 #line 96
  testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 97
- testRunner.And("User navigates to the \'Users\' left menu item in the Project Scope Changes section" +
-                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User navigates to the \'Users\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 98
  testRunner.Then("\"Users to add (0 of 14753 selected)\" is displayed to the user in the Project Scop" +
                     "e Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -668,7 +663,7 @@ this.FeatureBackground();
             table15.AddRow(new string[] {
                         "0E3406ED5D8349D0996@bclabs.local (Mickley, Leslie)"});
 #line 166
- testRunner.And("User selects following Objects", ((string)(null)), table15, "And ");
+ testRunner.And("User selects following Objects to the Project", ((string)(null)), table15, "And ");
 #line 172
  testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 173

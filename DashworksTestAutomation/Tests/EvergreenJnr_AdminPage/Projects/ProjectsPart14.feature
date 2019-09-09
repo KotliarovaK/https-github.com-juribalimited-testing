@@ -22,9 +22,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameWhichStartsWithLowerCaseLe
 	Then "Projects" page should be displayed to the user
 	When User enters "project12949" text in the Search field for "Project" column
 	And User clicks content from "Project" column
-	And User navigates to the 'Users' left menu item in the Project Scope Changes section
+	When User navigates to the 'Users' tab on Scope Changes page
 	And User expands the object to add
-	And User selects following Objects
+	And User selects following Objects to the Project
 	| Objects                      |
 	| ADD135461 (Luke W. Clark)    |
 	| ADO048752 (Elena Z. Le)      |
@@ -35,9 +35,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameWhichStartsWithLowerCaseLe
 	Then Warning message with "3 users will be added" text is displayed on the Admin page
 	When User clicks the "UPDATE PROJECT" Action button
 	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
-	When User navigates to the 'Applications' left menu item in the Project Scope Changes section
+	When User navigates to the 'Applications' tab on Scope Changes page
 	When User expands the object to add
-	And User selects following Objects
+	And User selects following Objects to the Project
 	| Objects              |
 	| Adobe Reader 5ver2.1 |
 	| allCLEAR 6.0 Viewer  |
@@ -46,13 +46,13 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameWhichStartsWithLowerCaseLe
 	Then Warning message with "3 applications will be added" text is displayed on the Admin page
 	When User clicks the "UPDATE PROJECT" Action button
 	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
-	When User navigates to the 'Users' left menu item in the Project Scope Changes section
+	When User navigates to the 'Users' tab on Scope Changes page
 	Then following objects were not found
 	| Objects                      |
 	| ADD135461 (Luke W. Clark)    |
 	| ADO048752 (Elena Z. Le)      |
 	| ADX520696 (Bridgett E. Cobb) |
-	When User navigates to the 'Applications' left menu item in the Project Scope Changes section
+	When User navigates to the 'Applications' tab on Scope Changes page
 	Then following objects were not found
 	| Objects              |
 	| Adobe Reader 5ver2.1 |
@@ -102,7 +102,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatColourOfOnboardedAppIsDisplayedCorrec
 	And User navigates to the "Application Scope" tab in the Scope section on the Project details page
 	And User selects "RED" color in the Application Scope tab on the Project details page
 	And User selects "Scope Changes" tab on the Project details page
-	And User navigates to the 'Applications' left menu item in the Project Scope Changes section
+	And User navigates to the 'Applications' left menu item
 	And User expands the object to add 
 	And User selects following Objects
 	| Objects                                                      |
@@ -133,7 +133,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOffboardedObjectsAreListedAfterSelectO
 	Then Project "UsersProject2" is displayed to user
 	When User selects "Scope" tab on the Project details page
 	When User selects "Scope Changes" tab on the Project details page
-	And User navigates to the 'Devices' left menu item in the Project Scope Changes section
+	And User navigates to the 'Devices' left menu item
 	And User expands the object to add
 	And User selects following Objects
 	| Objects         |

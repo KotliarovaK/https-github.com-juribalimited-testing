@@ -59,8 +59,8 @@ Scenario: EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherListUsingEverg
 	And User selects "All Devices" in the Scope Project details
 	And User selects "Scope Changes" tab on the Project details page
 	Then "Devices to add (0 of 17285 selected)" is displayed to the user in the Project Scope Changes section
-	When User navigates to the 'Users' left menu item in the Project Scope Changes section
-	When User navigates to the 'Applications' left menu item in the Project Scope Changes section
+	When User navigates to the 'Users' tab on Scope Changes page
+	When User navigates to the 'Applications' tab on Scope Changes page
 	Then Bucket dropdown is not displayed on the Project details page
 	And There are no errors in the browser console
 
@@ -121,12 +121,12 @@ Scenario: EvergreenJnr_AdminPage_ChangingUserScopeListToAnotherList
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	And User selects "Scope Changes" tab on the Project details page
-	When User navigates to the 'Users' left menu item in the Project Scope Changes section
+	When User navigates to the 'Users' tab on Scope Changes page
 	Then "Users to add (0 of 14631 selected)" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page
 	When User navigates to the "User Scope" tab in the Scope section on the Project details page
 	And User selects "StaticList6179" in the Scope Project details
 	And User selects "Scope Changes" tab on the Project details page
-	When User navigates to the 'Users' left menu item in the Project Scope Changes section
+	When User navigates to the 'Users' tab on Scope Changes page
 	Then "Users to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
 	Then There are no errors in the browser console

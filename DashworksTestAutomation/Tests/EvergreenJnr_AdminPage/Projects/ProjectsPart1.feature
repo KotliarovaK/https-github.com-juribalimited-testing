@@ -35,7 +35,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAllAssociationsAreSelectedByDefaultInT
 	When User clicks newly created object link
 	Then Project "TestProject7" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
-	When User navigates to the 'Applications' left menu item in the Project Scope Changes section
+	When User navigates to the 'Applications' tab on Scope Changes page
 	Then "Applications to add (0 of 2129 selected)" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page
 	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
@@ -43,7 +43,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAllAssociationsAreSelectedByDefaultInT
 	When User selects "Do not include applications" checkbox on the Project details page
 	Then All Associations are disabled
 	When User selects "Scope Changes" tab on the Project details page
-	When User navigates to the 'Applications' left menu item in the Project Scope Changes section
+	When User navigates to the 'Applications' tab on Scope Changes page
 	Then "Applications to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page
 	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
@@ -103,9 +103,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorsAreDisplayedInTheProjectScopeC
 	When User clicks newly created object link
 	Then Project "TestProject9" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
-	And User navigates to the 'Users' left menu item in the Project Scope Changes section
-	And User navigates to the 'Devices' left menu item in the Project Scope Changes section
-	And User navigates to the 'Applications' left menu item in the Project Scope Changes section
+	And User navigates to the 'Users' left menu item
+	And User navigates to the 'Devices' left menu item
+	And User navigates to the 'Applications' left menu item
 	Then There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS17664 @DAS17601 @Cleanup

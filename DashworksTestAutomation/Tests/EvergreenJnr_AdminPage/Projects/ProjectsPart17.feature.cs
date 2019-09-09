@@ -299,14 +299,12 @@ this.FeatureBackground();
 #line 52
  testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 53
- testRunner.And("User navigates to the \'Applications\' left menu item in the Project Scope Changes " +
-                    "section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 54
  testRunner.Then("\"Applications to add (0 of 2081 selected)\" is displayed to the user in the Projec" +
                     "t Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 55
- testRunner.When("User navigates to the \'Devices\' left menu item in the Project Scope Changes secti" +
-                    "on", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Devices\' tab on Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 56
  testRunner.Then("\"Devices to add (0 of 16819 selected)\" is displayed to the user in the Project Sc" +
                     "ope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -341,14 +339,12 @@ this.FeatureBackground();
 #line 69
  testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 70
- testRunner.And("User navigates to the \'Applications\' left menu item in the Project Scope Changes " +
-                    "section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 71
  testRunner.Then("\"Applications to add (0 of 247 selected)\" is displayed to the user in the Project" +
                     " Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 72
- testRunner.When("User navigates to the \'Devices\' left menu item in the Project Scope Changes secti" +
-                    "on", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Devices\' tab on Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 73
  testRunner.Then("\"Devices to add (0 of 0 selected)\" is displayed to the user in the Project Scope " +
                     "Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -656,8 +652,7 @@ this.FeatureBackground();
 #line 148
  testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 149
- testRunner.And("User navigates to the \'Users\' left menu item in the Project Scope Changes section" +
-                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User navigates to the \'Users\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 150
  testRunner.Then("\"Users to add (0 of 0 selected)\" is displayed to the user in the Project Scope Ch" +
                     "anges section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -678,8 +673,7 @@ this.FeatureBackground();
 #line 157
  testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 158
- testRunner.And("User navigates to the \'Users\' left menu item in the Project Scope Changes section" +
-                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User navigates to the \'Users\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 159
  testRunner.Then("\"Users to add (0 of 14629 selected)\" is displayed to the user in the Project Scop" +
                     "e Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

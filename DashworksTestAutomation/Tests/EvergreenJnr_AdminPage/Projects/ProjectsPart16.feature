@@ -12,10 +12,10 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	| Project13390 | All Devices | None            | Standalone Project |
 	And User selects "Scope" tab on the Project details page
 	And User selects "Scope Changes" tab on the Project details page
-	And User navigates to the 'Devices' left menu item in the Project Scope Changes section
+	And User navigates to the 'Devices' left menu item
 	Then open tab in the Project Scope Changes section is active
 	When User expands the object to add 
-	And User selects following Objects
+	And User selects following Objects to the Project
 	| Objects         |
 	| 001BAQXT6JWFPI  |
 	| 001PSUMZYOW581  |
@@ -46,7 +46,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	Then "UPDATE ALL CHANGES" Action button is disabled
 	When User clicks the "CANCEL" Action button
 	Then "UPDATE ALL CHANGES" Action button is active
-	When User navigates to the 'Users' left menu item in the Project Scope Changes section
+	When User navigates to the 'Users' tab on Scope Changes page
 	And User expands the object to add 
 	And User selects following Objects
 	| Objects                         |
@@ -75,7 +75,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	| ABP977697 (Rocky Y. Stout)      |
 	| ABQ575757 (Salvador K. Waller)  |
 	| ABS188911 (Jesus W. Kirk)       |
-	And User navigates to the 'Applications' left menu item in the Project Scope Changes section
+	And User navigates to the 'Applications' left menu item
 	And User expands the object to add 
 	And User selects following Objects
 	| Objects                                                              |
@@ -112,12 +112,12 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	And following objects were not found
 	| Objects                                                              |
 	| "WPF/E" (codename) Community Technology Preview (Feb 2007) (0.8.5.0) |
-	When User navigates to the 'Users' left menu item in the Project Scope Changes section
+	When User navigates to the 'Users' tab on Scope Changes page
 	Then "Users to add (0 of 14604 selected)" is displayed to the user in the Project Scope Changes section
 	And following objects were not found
 	| Objects                    |
 	| AAC860150 (Kerrie D. Ruiz) |
-	When User navigates to the 'Devices' left menu item in the Project Scope Changes section
+	When User navigates to the 'Devices' tab on Scope Changes page
 	Then "Devices to add (0 of 17254 selected)" is displayed to the user in the Project Scope Changes section
 	And following objects were not found
 	| Objects         |
@@ -154,12 +154,12 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	And following objects were not found
 	| Objects         |
 	| 019BFPQGKK5QT8N |
-	When User navigates to the 'Users' left menu item in the Project Scope Changes section
+	When User navigates to the 'Users' tab on Scope Changes page
 	Then "Users to add (0 of 14604 selected)" is displayed to the user in the Project Scope Changes section
 	And following objects were not found
 	| Objects                    |
 	| AAC860150 (Kerrie D. Ruiz) |
-	When User navigates to the 'Applications' left menu item in the Project Scope Changes section
+	When User navigates to the 'Applications' tab on Scope Changes page
 	Then "Applications to add (0 of 2104 selected)" is displayed to the user in the Project Scope Changes section 
 	And following objects were not found
 	| Objects                                                              |
@@ -171,7 +171,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	| Project13391 | All Devices | None            | Standalone Project |
 	And User selects "Scope" tab on the Project details page
 	And User selects "Scope Changes" tab on the Project details page
-	And User navigates to the 'Devices' left menu item in the Project Scope Changes section
+	And User navigates to the 'Devices' left menu item
 	Then open tab in the Project Scope Changes section is active
 	When User expands the object to add 
 	And User selects following Objects
@@ -179,14 +179,14 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	| 001BAQXT6JWFPI  |
 	| 001PSUMZYOW581  |
 	| 00BDM1JUR8IF419 |
-	When User navigates to the 'Users' left menu item in the Project Scope Changes section
+	When User navigates to the 'Users' tab on Scope Changes page
 	And User expands the object to add 
 	And User selects following Objects
 	| Objects                         |
 	| AAC860150 (Kerrie D. Ruiz)      |
 	| AAD1011948 (Pinabel Cinq-Mars)  |
 	| AAG081456 (Melanie Z. Fowler)   |
-	And User navigates to the 'Applications' left menu item in the Project Scope Changes section
+	And User navigates to the 'Applications' left menu item
 	And User expands the object to add 
 	And User selects following Objects
 	| Objects                                                              |
@@ -227,7 +227,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingSortingOrderOfTheObjectsInTheProjectSco
 	| 002B5DC7D4D34D5C895@bclabs.local (Collor, Christopher) |
 	| 003F5D8E1A844B1FAA5@bclabs.local (Hunter, Melanie)     |
 	Then Objects are displayed in alphabetical order on the Admin page
-	When User navigates to the 'Users' left menu item in the Project Scope Changes section
+	When User navigates to the 'Users' tab on Scope Changes page
 	When User expands the object to add
 	Then Objects are displayed in alphabetical order on the Admin page
 

@@ -179,21 +179,19 @@ this.FeatureBackground();
             table1.AddRow(new string[] {
                         "06T5FX3CUY08AE"});
 #line 26
- testRunner.And("User selects following Objects", ((string)(null)), table1, "And ");
+ testRunner.And("User selects following Objects to the Project", ((string)(null)), table1, "And ");
 #line 33
  testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 34
  testRunner.And("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 35
- testRunner.And("User navigates to the \'Users\' left menu item in the Project Scope Changes section" +
-                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User navigates to the \'Users\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 36
  testRunner.And("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 37
  testRunner.When("User selects all objects to the Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 38
- testRunner.And("User navigates to the \'Applications\' left menu item in the Project Scope Changes " +
-                    "section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 39
  testRunner.And("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -210,7 +208,7 @@ this.FeatureBackground();
             table2.AddRow(new string[] {
                         "0036 - Microsoft Access 97 SR-2 English (8.0)"});
 #line 40
- testRunner.And("User selects following Objects", ((string)(null)), table2, "And ");
+ testRunner.And("User selects following Objects to the Project", ((string)(null)), table2, "And ");
 #line 47
  testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 48
@@ -235,8 +233,7 @@ this.FeatureBackground();
 #line 56
  testRunner.And("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 57
- testRunner.And("User navigates to the \'Users\' left menu item in the Project Scope Changes section" +
-                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User navigates to the \'Users\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 58
  testRunner.When("User waits and expands the \"Users\" panel to remove", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 59

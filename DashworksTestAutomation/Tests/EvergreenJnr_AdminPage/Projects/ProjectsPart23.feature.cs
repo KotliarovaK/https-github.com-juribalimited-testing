@@ -283,8 +283,7 @@ this.FeatureBackground();
 #line 51
  testRunner.And("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 52
- testRunner.And("User navigates to the \'Devices\' left menu item in the Project Scope Changes secti" +
-                    "on", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User navigates to the \'Devices\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
@@ -293,8 +292,7 @@ this.FeatureBackground();
 #line 53
  testRunner.And("User selects following Objects to the Project", ((string)(null)), table3, "And ");
 #line 56
- testRunner.And("User navigates to the \'Users\' left menu item in the Project Scope Changes section" +
-                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User navigates to the \'Users\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
@@ -303,8 +301,7 @@ this.FeatureBackground();
 #line 57
  testRunner.And("User selects following Objects to the Project", ((string)(null)), table4, "And ");
 #line 60
- testRunner.And("User navigates to the \'Applications\' left menu item in the Project Scope Changes " +
-                    "section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});

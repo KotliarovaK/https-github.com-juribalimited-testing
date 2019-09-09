@@ -38,7 +38,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCorrectMessageIsDisplayedForDevicesS
 	Then "All Devices" list should be displayed to the user
 	When User perform search by "06Y8HSNCPVHENV"
 	And User click content from "Hostname" column
-	When User navigates to the 'Users' left menu item
+	When User navigates to the 'Users' tab on Scope Changes page
 	Then "No users found for this device" message is displayed on the Details Page
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12235 @DAS13409 @DAS13657 @DAS14923
@@ -414,7 +414,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAllTextIsDisplayedAfterClearingFilte
 	Then "All Devices" list should be displayed to the user
 	When User perform search by "001PSUMZYOW581"
 	And User click content from "Hostname" column
-	When User navigates to the 'Applications' left menu item
+	When User navigates to the 'Applications' tab on Scope Changes page
 	Then All text is displayed for "Compliance" column in the String Filter
 	When User clicks String Filter button for "Compliance" column
 	And User clicks "Red" checkbox from String Filter on the Details Page
@@ -541,7 +541,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatDataAboutUsersDevicesOnUsersMailboxObje
 	And User click content from "Username" column
 	Then Details page for "AAD1011948" item is displayed to the user
 	When User switches to the "USE ME FOR AUTOMATION(DEVICE SCHDLD)" project in the Top bar on Item details page
-	When User navigates to the 'Devices' left menu item
+	When User navigates to the 'Devices' tab on Scope Changes page
 	Then "001BAQXT6JWFPI" content is displayed in "Hostname" column
 	#=====================================================================================#
 	When User clicks "Mailboxes" on the left-hand menu
@@ -550,7 +550,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatDataAboutUsersDevicesOnUsersMailboxObje
 	And User click content from "Email Address" column
 	Then Details page for "00A5B910A1004CF5AC4@bclabs.local" item is displayed to the user
 	When User switches to the "USE ME FOR AUTOMATION(MAIL SCHDLD)" project in the Top bar on Item details page
-	When User navigates to the 'Users' left menu item
+	When User navigates to the 'Users' tab on Scope Changes page
 	Then "00A5B910A1004CF5AC4" content is displayed in "Username" column
 	
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16860
@@ -740,7 +740,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatMultiselectFilterIsAppliedForDomain
 	When User perform search by "00HA7MKAVVFDAV"
 	And User click content from "Hostname" column
 	Then Details page for "00HA7MKAVVFDAV" item is displayed to the user
-	When User navigates to the 'Users' left menu item
+	When User navigates to the 'Users' tab on Scope Changes page
 	When User clicks String Filter button for "Domain" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 
@@ -763,7 +763,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatMultiselectFilterIsAppliedForDoma
 	When User perform search by "000F977AC8824FE39B8@bclabs.local"
 	And User click content from "Email Address" column
 	Then Details page for "000F977AC8824FE39B8@bclabs.local" item is displayed to the user
-	When User navigates to the 'Users' left menu item
+	When User navigates to the 'Users' tab on Scope Changes page
 	When User clicks String Filter button for "Domain" column
 	And User closes Checkbox filter for "Domain" column
 	When User navigates to the "Groups" sub-menu on the Details page
@@ -1008,7 +1008,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatUsersTabIsDisplayedWithCorrectColu
 	When User perform search by "000F977AC8824FE39B8@bclabs.local"
 	And User click content from "Email Address" column
 	Then Details page for "000F977AC8824FE39B8@bclabs.local" item is displayed to the user
-	When User navigates to the 'Users' left menu item
+	When User navigates to the 'Users' tab on Scope Changes page
 	Then following columns are displayed on the Item details page:
 	| ColumnName         |
 	| Username           |
@@ -1045,7 +1045,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatDevicesTabIsDisplayedWithCorrectColumn
 	When User perform search by "ZZP911429"
 	And User click content from "Username" column
 	Then Details page for "ZZP911429" item is displayed to the user
-	When User navigates to the 'Devices' left menu item
+	When User navigates to the 'Devices' tab on Scope Changes page
 	Then following columns are displayed on the Item details page:
 	| ColumnName         |
 	| Hostname           |
@@ -1131,7 +1131,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatUnknownValuesAreNotDisplayedOnLevelO
 	When User perform search by "001BAQXT6JWFPI"
 	And User click content from "Hostname" column
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
-	When User navigates to the 'Applications' left menu item
+	When User navigates to the 'Applications' tab on Scope Changes page
 	And User navigates to the "Evergreen Summary" sub-menu on the Details page
 	And User clicks Group By button on the Details page and selects "Vendor" value
 	Then "UNKNOWN" content is not displayed in the grid on the Item details page
@@ -1143,7 +1143,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatUsersAreReloadedAfterSelectingAPr
 	When User perform search by "abel.y.hanson@dwlabs.local"
 	And User click content from "Email Address" column
 	Then Details page for "abel.y.hanson@dwlabs.local" item is displayed to the user
-	When User navigates to the 'Users' left menu item
+	When User navigates to the 'Users' tab on Scope Changes page
 	Then "7" rows found label displays on Details Page
 	And "Administrator" content is displayed in "Username" column
 	When User switches to the "Email Migration" project in the Top bar on Item details page
@@ -1337,7 +1337,7 @@ Scenario: EvergreenJnr_DeviceList_CheckThatUsersTabIsDisplayedWithCorrectStagesO
 	When User perform search by "001BAQXT6JWFPI"
 	And User click content from "Hostname" column
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
-	When User navigates to the 'Users' left menu item
+	When User navigates to the 'Users' tab on Scope Changes page
 	When User switches to the "USE ME FOR AUTOMATION(DEVICE SCHDLD)" project in the Top bar on Item details page
 	Then following columns are displayed on the Item details page:
 	| ColumnName            |

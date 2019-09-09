@@ -137,29 +137,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             Using = ".//button[contains(@class, 'button-small mat-raised-button')]/span[text()='DELETE']")]
         public IWebElement DeleteButtonOnPage { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@placeholder='Search']")]
-        public IWebElement SearchTextBox { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "//button/span[contains(text(), 'ADD')]")]
-        public IWebElement AddItemButton { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//button[contains(@title,'Update')]")]
-        public IWebElement UpdateButton { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//div[@class='mat-checkbox-inner-container']")]
         public IWebElement AllItemCheckbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//mat-checkbox[contains(@class, 'mat-checkbox-checked')]")]
-        public IWebElement CheckedAllItemCheckbox { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//mat-pseudo-checkbox[contains(@class, 'checkbox-checked')]")]
-        public IWebElement CheckedSomeItemCheckbox { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-body-viewport')]/div[@ref='eCenterColsClipper']")]
         public IWebElement TableContent { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//button[@aria-label='Toggle panel']")]
-        public IWebElement PlusButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//a[contains(@class,'header-back-link')]")]
         public IWebElement BackToTableButton { get; set; }
@@ -310,6 +292,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             Driver.FindElement(By.XPath(columnSettingsSelector)).Click();
         }
 
+        //TODO should be moved because this is something on Action panel
         public void SelectActions(string actionName)
         {
             //Nothing to do if action selectBox disabled
@@ -320,29 +303,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
                 $"//span[text()='{actionName}']/ancestor::mat-option";
             Driver.WaitForElementToBeDisplayed(By.XPath(selectedActionName));
             Driver.FindElement(By.XPath(selectedActionName)).Click();
-        }
-
-        public void SelectTabByName(string tabName)
-        {
-            var tabNameSelector = $".//mat-nested-tree//a[text()='{tabName}']";
-            Driver.WaitForElementToBeDisplayed(By.XPath(tabNameSelector));
-            Driver.FindElement(By.XPath(tabNameSelector)).Click();
-            Driver.WaitForDataLoading();
-        }
-
-        public void AddItem(string itemName)
-        {
-            SearchTextBox.Clear();
-            SearchTextBox.SendKeys(itemName);
-            var selector = $".//span[contains(text(), '{itemName}')]";
-            Driver.WaitForElementToBeDisplayed(By.XPath(selector));
-            Driver.FindElement(By.XPath(selector)).Click();
-        }
-
-        public void CheckItemDisplay(string itemName)
-        {
-            SearchTextBox.Clear();
-            SearchTextBox.SendKeys(itemName);
         }
 
         public IWebElement QueueOnboardedObjectDisplayed(string objectName)

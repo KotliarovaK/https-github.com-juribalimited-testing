@@ -293,7 +293,7 @@ this.FeatureBackground();
             table2.AddRow(new string[] {
                         "00BDM1JUR8IF419"});
 #line 58
- testRunner.When("User selects following Objects", ((string)(null)), table2, "When ");
+ testRunner.When("User selects following Objects to the Project", ((string)(null)), table2, "When ");
 #line 63
  testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 64
@@ -332,8 +332,7 @@ this.FeatureBackground();
 #line 79
  testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 80
- testRunner.And("User navigates to the \'Applications\' left menu item in the Project Scope Changes " +
-                    "section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 81
  testRunner.And("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -409,8 +408,7 @@ this.FeatureBackground();
 #line 115
  testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 116
- testRunner.And("User navigates to the \'Applications\' left menu item in the Project Scope Changes " +
-                    "section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 117
  testRunner.And("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -462,8 +460,7 @@ this.FeatureBackground();
 #line 139
  testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 140
- testRunner.And("User navigates to the \'Devices\' left menu item in the Project Scope Changes secti" +
-                    "on", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User navigates to the \'Devices\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 141
  testRunner.And("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 142
@@ -657,8 +654,7 @@ this.FeatureBackground();
 #line 202
  testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 203
- testRunner.And("User navigates to the \'Applications\' left menu item in the Project Scope Changes " +
-                    "section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 204
  testRunner.And("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -732,8 +728,7 @@ this.FeatureBackground();
 #line 237
  testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 238
- testRunner.And("User navigates to the \'Applications\' left menu item in the Project Scope Changes " +
-                    "section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 239
  testRunner.And("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -1027,8 +1022,7 @@ this.FeatureBackground();
 #line 349
  testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 350
- testRunner.And("User navigates to the \'Applications\' left menu item in the Project Scope Changes " +
-                    "section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 351
  testRunner.And("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden

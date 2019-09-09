@@ -574,7 +574,7 @@ this.FeatureBackground();
             table3.AddRow(new string[] {
                         "0TTSZRQ1ZTIXWM"});
 #line 100
- testRunner.And("User selects following Objects", ((string)(null)), table3, "And ");
+ testRunner.And("User selects following Objects to the Project", ((string)(null)), table3, "And ");
 #line 103
  testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 104
