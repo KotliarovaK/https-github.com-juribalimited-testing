@@ -25,13 +25,13 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatRedBannerWithOkMessageIsNotDisplaye
 	When User selects following Objects
 	| Objects        |
 	| 1DPQO52HJQZJ0H |
-	And User clicks "Applications" tab in the Project Scope Changes section
+	And User navigates to the 'Applications' left menu item in the Project Scope Changes section
 	And User expands the object to add
 	Then Objects are displayed in alphabetical order on the Admin page
 	When User selects following Objects
 	| Objects                                    |
 	| 0004 - Adobe Acrobat Reader 5.0.5 Francais |
-	And User clicks "Users" tab in the Project Scope Changes section
+	And User navigates to the 'Users' left menu item in the Project Scope Changes section
 	And User expands the object to add
 	Then Objects are displayed in alphabetical order on the Admin page
 	When User selects following Objects
@@ -131,7 +131,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	| TestProject12490 | All Devices | None            | Standalone Project |
 	And User selects "Scope" tab on the Project details page
 	And User selects "Scope Changes" tab on the Project details page
-	And User clicks "Devices" tab in the Project Scope Changes section
+	And User navigates to the 'Devices' left menu item in the Project Scope Changes section
 	Then "[Default (Computer)]" Path is displayed to the user
 	And "[None]" Category is displayed to the user
 	And "Unassigned" is displayed in the Bucket dropdown
@@ -140,7 +140,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	| Objects        |
 	| 0IJB93JZPG72PX |
 	| 04I01QSFL1AWKM |
-	When User clicks "Applications" tab in the Project Scope Changes section
+	When User navigates to the 'Applications' left menu item in the Project Scope Changes section
 	Then "[Default (Application)]" Path is displayed to the user
 	And "[None]" Category is displayed to the user
 	When User expands the object to add
@@ -148,7 +148,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	| Objects                        |
 	| ACDSee 4.0.1 Std Trial Version |
 	| ACDSee 8 (8.0.39)              |
-	When User clicks "Users" tab in the Project Scope Changes section
+	When User navigates to the 'Users' left menu item in the Project Scope Changes section
 	Then "[Default (User)]" Path is displayed to the user
 	And "[None]" Category is displayed to the user
 	And "Unassigned" is displayed in the Bucket dropdown
@@ -275,7 +275,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	Then Rows counter shows "0" of "6" rows
 	When User type "0IJB93JZPG72PX" in Global Search Field
 	Then User clicks on "0IJB93JZPG72PX" search result
-	When User navigates to the "Projects" main-menu on the Details page
+	When User navigates to the 'Projects' left menu item
 	And User navigates to the "Projects Summary" sub-menu on the Details page
 	And User clicks "TestProject12490" link on the Details Page
 	Then "Project Object" page is displayed to the user

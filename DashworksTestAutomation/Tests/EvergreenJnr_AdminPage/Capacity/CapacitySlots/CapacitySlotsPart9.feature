@@ -8,7 +8,7 @@ Background: Pre-Conditions
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS15878 @DAS15291
 Scenario: EvergreenJnr_AdminPage_CheckDragAndDropFunctionalityForSlot
 	When User navigates to "1803 Rollout" project details
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	And User selects "Slots" tab on the Project details page
 	When User moves "Birmingham Morning" slot to "London Depot 15:00 - 17:00" slot
 	Then "Capacity Slot" column content is displayed in the following order:
@@ -44,7 +44,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDragAndDropFunctionalityForSlot
 @Evergreen @Admin @EvergreenJnr_AdminPage @DAS13671
 Scenario: EvergreenJnr_AdminPage_CheckTasksListDisplayingOnCreateAndEditSlotsScreen
 	When User navigates to "I-Computer Scheduled Project" project details
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	And User selects "Slots" tab on the Project details page
 	And User enters "Scheduled/Targeted" text in the Search field for "Capacity Slot" column
 	And User clicks content from "Capacity Slot" column
@@ -57,7 +57,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTasksListDisplayingOnCreateAndEditSlotsScr
 	| i-stage A \ i-Migrated  |
 	| i-stage A \ i-Schedule  |
 	| i-stage A \ i-Targeted  |
-	When User clicks "Capacity" tab
+	When User navigates to the 'Capacity' left menu item
 	When User selects "Slots" tab on the Project details page
 	And User clicks the "CREATE SLOT" Action button
 	And User selects following items in "Paths" dropdown:

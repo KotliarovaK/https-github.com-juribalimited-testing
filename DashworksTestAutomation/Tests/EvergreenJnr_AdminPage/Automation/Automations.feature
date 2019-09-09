@@ -387,7 +387,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridLoadsWithActionsForAnAutoma
 	When User enters "AM 030619 Devices 145" text in the Search field for "Automation" column
 	Then "3" content is displayed in "Actions" column
 	When User clicks content from "Automation" column
-	When User clicks "Actions" tab
+	When User navigates to the 'Actions' left menu item
 	Then Counter shows "3" found rows
 	Then Columns on Admin page is displayed in following order:
 	| ColumnName    |
@@ -527,9 +527,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextFor
 	Then Edit Automation page is displayed to the User
 	Then "[List not found]" content is displayed in the Scope Automation dropdown
 	#Update after DAS-17336 fixed
-	#When User clicks "Actions" tab
+	#When User navigates to the 'Actions' left menu item
 	#Then Edit Action page is displayed to the User
-	#When User clicks "Details" tab
+	#When User navigates to the 'Details' left menu item
 	When User clicks the "CANCEL" Action button
 	When User enters "DAS15423_Automation" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "DAS15423_Automation" item on Admin page
@@ -595,7 +595,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateAndCreateActionsFunctionalityForAuto
 	Then Error message with "This automation is currently running" text is displayed
 	When User enters "DELAY - do not delete" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
-	When User clicks "Actions" tab
+	When User navigates to the 'Actions' left menu item
 	When User clicks the "CREATE ACTION" Action button
 	Then Create Action page is displayed to the User
 	When User enters '17171_Action' text to 'Action Name' textbox
@@ -604,7 +604,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateAndCreateActionsFunctionalityForAuto
 	When User selects "[Default (User)]" in the "Path" dropdown for Actions
 	When User clicks the "CREATE" Action button
 	Then Error message with "This automation is currently running" text is displayed
-	When User clicks "Actions" tab
+	When User navigates to the 'Actions' left menu item
 	When User clicks content from "Action" column
 	When User enters 'NewAction' text to 'Action Name' textbox
 	When User clicks the "UPDATE" Action button
@@ -699,7 +699,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeviceLisFiltertHasAppropriateAutomati
 	And User creates new Automation via API and open it
 	| AutomationName      | Description | Active | StopOnFailedAction | Scope       | Run    |
 	| DAS15949_Automation | DAS15949    | true   | false              | DAS15949_List | Manual |
-	And User clicks "Actions" tab
+	And User navigates to the 'Actions' left menu item
 	And User clicks the "CREATE ACTION" Action button
 	And User enters '15949_Action' text to 'Action Name' textbox
 	And User selects 'Update path' in the 'Action Type' dropdown

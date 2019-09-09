@@ -50,9 +50,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCo
 	Then Project "TestProject5" is displayed to user
 	When User selects "Scope" tab on the Project details page
 	When User selects "Scope Changes" tab on the Project details page
-	And User clicks "Applications" tab in the Project Scope Changes section
+	And User navigates to the 'Applications' left menu item in the Project Scope Changes section
 	Then "Applications to add (0 of 2081 selected)" is displayed to the user in the Project Scope Changes section
-	When User clicks "Devices" tab in the Project Scope Changes section
+	When User navigates to the 'Devices' left menu item in the Project Scope Changes section
 	Then "Devices to add (0 of 16819 selected)" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page
 	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
@@ -67,14 +67,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCo
 	| Installed on a device owned by the user |
 	| Used on an owned device by any user     |
 	When User selects "Scope Changes" tab on the Project details page
-	And User clicks "Applications" tab in the Project Scope Changes section
+	And User navigates to the 'Applications' left menu item in the Project Scope Changes section
 	Then "Applications to add (0 of 247 selected)" is displayed to the user in the Project Scope Changes section
-	When User clicks "Devices" tab in the Project Scope Changes section
+	When User navigates to the 'Devices' left menu item in the Project Scope Changes section
 	Then "Devices to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
-	When User clicks "Details" tab
+	When User navigates to the 'Details' left menu item
 	And User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
 	Then There are no errors in the browser console
-	When User clicks "Scope" tab
+	When User navigates to the 'Scope' left menu item
 	And User selects "Scope Changes" tab on the Project details page
 	Then "Match to Evergreen Bucket" is displayed in the Bucket dropdown
 
@@ -115,7 +115,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	| ProjectName         | Scope       | ProjectTemplate | Mode               |
 	| TestProjectDAS11977 | All Devices | None            | Standalone Project |
 	Then Project "TestProjectDAS11977" is displayed to user
-	When User clicks "Details" tab
+	When User navigates to the 'Details' left menu item
 	And User changes Project Name to "NewProjectName"
 	And User changes Project Short Name to "NewShort4875"
 	And User changes Project Description to "45978DescriptionText"
@@ -146,7 +146,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	| Entitled to the device owner           |
 	| Used by the device owner on any device |
 	When User selects "Scope Changes" tab on the Project details page
-	And User clicks "Users" tab in the Project Scope Changes section 
+	And User navigates to the 'Users' left menu item in the Project Scope Changes section 
 	Then "Users to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page
 	And User navigates to the "User Scope" tab in the Scope section on the Project details page
@@ -155,7 +155,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
 	Then All Associations are available
 	When User selects "Scope Changes" tab on the Project details page
-	And User clicks "Users" tab in the Project Scope Changes section 
+	And User navigates to the 'Users' left menu item in the Project Scope Changes section 
 	Then "Users to add (0 of 14629 selected)" is displayed to the user in the Project Scope Changes section
 	When User click on Back button
 	And User enters "NewProjectName" text in the Search field for "Project" column
@@ -169,7 +169,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "TestProjectDAS11977" is displayed to user
-	When User clicks "Details" tab
+	When User navigates to the 'Details' left menu item
 	And User changes Project Name to "NewProjectName"
 	And User changes Project Short Name to "NewShort4875"
 #"UPDATE" Action button has been removed

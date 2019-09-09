@@ -15,7 +15,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOptionsInTheCogMenuForReadinessAreCorr
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
-	And User clicks "Readiness" tab
+	And User navigates to the 'Readiness' left menu item
 	When User clicks Cog-menu for "Red" item on Admin page
 	Then User sees following cog-menu items on Admin page:
 	| items                         |
@@ -47,7 +47,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAppearWhenDeleteReadine
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
-	And User clicks "Readiness" tab
+	And User navigates to the 'Readiness' left menu item
 	Then Columns on Admin page is displayed in following order:
 	| ColumnName                  |
 	| Readiness                   |
@@ -90,7 +90,7 @@ Scenario: EvergreenJnr_AdminPage_CheckReadinessDialogContainerDisplay
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
-	And User clicks "Readiness" tab
+	And User navigates to the 'Readiness' left menu item
 	Then Columns on Admin page is displayed in following order:
 	| ColumnName |
 	| Readiness  |
@@ -133,7 +133,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultForApplicationsCheckboxWorksOn
 	And User clicks "Projects" link on the Admin page
 	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
-	And User clicks "Readiness" tab
+	And User navigates to the 'Readiness' left menu item
 	And User click content from "Readiness" column
 	And User sets Default for Applications checkbox in "TRUE" on Edit Readiness
 	And User clicks the "UPDATE" Action button
@@ -156,7 +156,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatNewReadinessAddedBeforeNone
 	And User clicks "Projects" link on the Admin page
 	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
-	And User clicks "Readiness" tab
+	And User navigates to the 'Readiness' left menu item
 	And User clicks the "CREATE READINESS" Action button
 	And User updates readiness properties on Edit Readiness
 	| Readiness  | Tooltip              | Ready | DefaultForApplications | ColourTemplate |
@@ -171,7 +171,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksCreateReadinessElements
 	And User clicks "Projects" link on the Admin page
 	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
-	And User clicks "Readiness" tab
+	And User navigates to the 'Readiness' left menu item
 	And User clicks the "CREATE READINESS" Action button
 	And User enters "testreadinesname_testreadinesname_testreadinesname_t" in Readiness input on Edit Readiness
 	Then User sees "testreadinesname_testreadinesname_testreadinesname" in Readiness input on Edit Readiness
@@ -187,7 +187,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDefaultCheckboxCanNotBeUncheckedForRea
 	And User clicks "Projects" link on the Admin page
 	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
-	And User clicks "Readiness" tab
+	And User navigates to the 'Readiness' left menu item
 	When User clicks String Filter button for "Default for Applications" column on the Admin page
 	And User clicks "False" checkbox from boolean filter on the Admin page
 	Then "TRUE" content is displayed in "Default for Applications" column
@@ -197,7 +197,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDefaultCheckboxCanNotBeUncheckedForRea
 	When User clicks Default for Applications checkbox on Edit Readiness
 	Then User sees Default for Applications checkbox disabled on Edit Readiness
 	And User sees Default for Applications checkbox in "TRUE" state on Edit Readiness
-	When User clicks "Readiness" tab
+	When User navigates to the 'Readiness' left menu item
 	And User clicks the "CREATE READINESS" Action button
 	And User updates readiness properties on Edit Readiness
 	| Readiness  | Tooltip              | Ready | DefaultForApplications | ColourTemplate |
@@ -208,7 +208,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDefaultCheckboxCanNotBeUncheckedForRea
 	And User click content from "Readiness" column
 	Then User checks that opened readiness name is the same as stored one
 	And User sees Default for Applications checkbox in "FALSE" state on Edit Readiness
-	When User clicks "Readiness" tab
+	When User navigates to the 'Readiness' left menu item
 	And User clicks String Filter button for "Default for Applications" column on the Admin page
 	And User clicks "False" checkbox from boolean filter on the Admin page
 	And User click content from "Readiness" column
@@ -221,7 +221,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoneReadinessCanBePartiallyEdited
 	And User clicks "Projects" link on the Admin page
 	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
-	And User clicks "Readiness" tab
+	And User navigates to the 'Readiness' left menu item
 	And User enters "None" text in the Search field for "Readiness" column
 	And User click content from "Readiness" column
 	Then Readiness input displayed disabled on Edit Readiness
@@ -244,7 +244,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoChangesAppliedAfterCancelButtonPress
 	And User clicks "Projects" link on the Admin page
 	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
-	And User clicks "Readiness" tab
+	And User navigates to the 'Readiness' left menu item
 	And User enters "None" text in the Search field for "Readiness" column
 	And User click content from "Readiness" column
 	And User enters "tooltip14938_2" in Tooltip input on Edit Readiness
@@ -260,7 +260,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCancelReadinessAffectsNothingOnEditRea
 	And User clicks "Projects" link on the Admin page
 	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
-	And User clicks "Readiness" tab
+	And User navigates to the 'Readiness' left menu item
 	When User clicks String Filter button for "Default for Applications" column on the Admin page
 	And User clicks "False" checkbox from boolean filter on the Admin page
 	When User click content from "Readiness" column
@@ -276,7 +276,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatValuesForReadinessGridAreDisplayedPro
 	Then Admin page should be displayed to the user
 	When User enters "1803 Rollout" text in the Search field for "Project" column
 	When User clicks content from "Project" column
-	When User clicks "Readiness" tab
+	When User navigates to the 'Readiness' left menu item
 	When User enters "Grey" text in the Search field for "Readiness" column
 	Then "FALSE" content is displayed for "Ready" column
 	Then "1" content is displayed for "Task Values Count" column
@@ -332,9 +332,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatNoWarningDisplayedWhenOpenningReadine
 	And User clicks "Projects" link on the Admin page
 	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
-	And User clicks "Details" tab
+	And User navigates to the 'Details' left menu item
 	Then Warning message with "created objects which are not displayed in Evergreen" text is displayed on the Project Details Page
-	When User clicks "Readiness" tab
+	When User navigates to the 'Readiness' left menu item
 	Then No warning message displayed on the Project Details Page
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS15673
@@ -343,7 +343,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatReadinessRightClickMenuCopyOptionsWork
 	And User clicks "Projects" link on the Admin page
 	And User enters "Havoc (Big Data)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
-	And User clicks "Readiness" tab
+	And User navigates to the 'Readiness' left menu item
 	And User performs right-click on "Red" cell in the grid
 	And User selects 'Copy row' option in context menu
 	Then There are no errors in the browser console
@@ -360,7 +360,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatReadinessCanBeSortedByClickingColumnHe
 	And User clicks "Projects" link on the Admin page
 	And User enters "Havoc (Big Data)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
-	And User clicks "Readiness" tab
+	And User navigates to the 'Readiness' left menu item
 	When User have opened Column Settings for "Readiness" column
 	And User clicks Column button on the Column Settings panel
 	Then Column Settings was opened
@@ -377,11 +377,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatReadinessCanBeSortedByClickingColumnHe
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS15898
 Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageAboutUnconfirmedChangesAppears
 	When User navigates to "1803 Rollout" project details
-	And User clicks "Readiness" tab
+	And User navigates to the 'Readiness' left menu item
 	And User enters "GREY" text in the Search field for "Readiness" column
 	And User click content from "Readiness" column
 	And User sets Default for Applications checkbox in "TRUE" on Edit Readiness
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	Then "You have unsaved changes. Are you sure you want to leave the page?" text is displayed in the warning message
 	Then "YES" button is displayed in the warning message
 	Then "NO" button is displayed in the warning message

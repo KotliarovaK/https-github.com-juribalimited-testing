@@ -101,13 +101,13 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultValuesStayTheSameAfterConverti
 	And User clicks content from "Project" column
 	Then 'Use project buckets' text value is displayed in the 'Buckets' dropdown
 	And 'Use project rings' text value is displayed in the 'Rings' dropdown
-	When User clicks "Capacity" tab
+	When User navigates to the 'Capacity' left menu item
 	Then 'Use project capacity units' text value is displayed in the 'Capacity Units' dropdown
-	When User clicks "Details" tab
+	When User navigates to the 'Details' left menu item
 	And User converts project to evergreen project
 	Then 'Use project buckets' text value is displayed in the 'Buckets' dropdown
 	And 'Use project rings' text value is displayed in the 'Rings' dropdown
-	When User clicks "Capacity" tab
+	When User navigates to the 'Capacity' left menu item
 	Then 'Use project capacity units' text value is displayed in the 'Capacity Units' dropdown
 	When User clicks Admin on the left-hand menu
 	And User enters "DAS15262Project" text in the Search field for "Project" column
@@ -128,5 +128,5 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatConvertToEvergreenButtonIsNotDisplaye
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
-	And User clicks "Details" tab
+	And User navigates to the 'Details' left menu item
 	Then Convert to Evergreen button is not displayed

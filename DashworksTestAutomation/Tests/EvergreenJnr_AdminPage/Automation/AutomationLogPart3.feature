@@ -90,7 +90,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedU
 	When User enters "DAS17681_Automation" text in the Search field for "Automation" column
 	And User clicks content from "Automation" column
 	Then Edit Automation page is displayed to the User
-	When User clicks "Actions" tab
+	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks the "CREATE ACTION" Action button
 	When User enters 'DAS17681_Action' text to 'Action Name' textbox
@@ -149,7 +149,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedU
 	When User enters "17681_Automation" text in the Search field for "Automation" column
 	And User clicks content from "Automation" column
 	Then Edit Automation page is displayed to the User
-	When User clicks "Actions" tab
+	When User navigates to the 'Actions' left menu item
 	When User clicks the "CREATE ACTION" Action button
 	When User enters '17681_Action' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown

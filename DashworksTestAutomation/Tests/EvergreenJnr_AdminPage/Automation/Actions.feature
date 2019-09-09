@@ -17,7 +17,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptio
 	When User enters "Test_Automation_15427" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
 	Then Edit Automation page is displayed to the User
-	When User clicks "Actions" tab
+	When User navigates to the 'Actions' left menu item
 	#Action 1
 	When User clicks the "CREATE ACTION" Action button
 	Then Create Action page is displayed to the User
@@ -85,7 +85,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectlyForAutomations
 	Then "Automations" page should be displayed to the user
 	When User enters "Devices_Scope" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
-	When User clicks "Actions" tab
+	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks the "CREATE ACTION" Action button
 	Then Create Action page is displayed to the User
@@ -166,7 +166,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
 	Then "Automations" page should be displayed to the user
 	When User enters "Test_Automation_DAS15938" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
-	When User clicks "Actions" tab
+	When User navigates to the 'Actions' left menu item
 	#Action 1
 	When User clicks the "CREATE ACTION" Action button
 	Then Create Action page is displayed to the User
@@ -315,7 +315,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditActionPage
 	When User enters "15425_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
 	Then "UPDATE" Action button have tooltip with "No changes made" text
-	When User clicks "Actions" tab
+	When User navigates to the 'Actions' left menu item
 	When User enters "15425_Action" text in the Search field for "Action" column
 	When User clicks content from "Action" column
 	Then Edit Action page is displayed to the User
@@ -570,7 +570,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateTextValue
 	Then "Automations" page should be displayed to the user
 	When User enters "17602_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
-	When User clicks "Actions" tab
+	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks the "CREATE ACTION" Action button
 	When User enters '17602_Action' text to 'Action Name' textbox
@@ -584,7 +584,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateTextValue
 	When User clicks "Automations" navigation link on the Admin page
 	When User enters "17602_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
-	When User clicks "Actions" tab
+	When User navigates to the 'Actions' left menu item
 	When User clicks content from "Action" column
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	#Actions content check
@@ -607,7 +607,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForRemoveTextValue
 	Then "Automations" page should be displayed to the user
 	When User enters "17605_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
-	When User clicks "Actions" tab
+	When User navigates to the 'Actions' left menu item
 	#Create Action with
 	When User clicks the "CREATE ACTION" Action button
 	When User enters '17605_Action' text to 'Action Name' textbox
@@ -620,7 +620,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForRemoveTextValue
 	When User clicks "Automations" navigation link on the Admin page
 	When User enters "17605_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
-	When User clicks "Actions" tab
+	When User navigates to the 'Actions' left menu item
 	When User clicks content from "Action" column
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	#Actions content check
@@ -642,7 +642,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateDate
 	Then "Automations" page should be displayed to the user
 	When User enters "17606_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
-	When User clicks "Actions" tab
+	When User navigates to the 'Actions' left menu item
 	#Create Action with
 	When User clicks the "CREATE ACTION" Action button
 	When User enters '17606_Action' text to 'Action Name' textbox
@@ -659,7 +659,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateDate
 	When User clicks "Automations" navigation link on the Admin page
 	When User enters "17606_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
-	When User clicks "Actions" tab
+	When User navigates to the 'Actions' left menu item
 	When User clicks content from "Action" column
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	#Actions content check
@@ -676,7 +676,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThanActionFieldsAreNotPrepopulatedWithOldD
 	When User creates new Automation via API and open it
 	| AutomationName | Description | Active | StopOnFailedAction | Scope       | Run    |
 	| DAS17797       | 17797       | true   | false              | All Devices | Manual |
-	And User clicks "Actions" tab
+	And User navigates to the 'Actions' left menu item
 	#Action
 	And User clicks the "CREATE ACTION" Action button
 	And User enters 'DAS17797_Action' text to 'Action Name' textbox
@@ -712,7 +712,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValueDataInTheGridForActions
 	When User creates new Automation via API and open it
 	| AutomationName | Description | Active | StopOnFailedAction | Scope     | Run    |
 	| DAS17744       | 17744       | true   | false              | All Users | Manual |
-	And User clicks "Actions" tab
+	And User navigates to the 'Actions' left menu item
 	#Action
 	And User clicks the "CREATE ACTION" Action button
 	And User enters 'DAS17744_Action' text to 'Action Name' textbox
@@ -737,7 +737,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionStageSelectboxIsDisplayedForSpec
 	When User creates new Automation via API and open it
 	| AutomationName | Description | Active | StopOnFailedAction | Scope     | Run    |
 	| DAS17772       | 17772       | true   | false              | All Users | Manual |
-	And User clicks "Actions" tab
+	And User navigates to the 'Actions' left menu item
 	#Action
 	And User clicks the "CREATE ACTION" Action button
 	And User enters 'DAS17772_Action' text to 'Action Name' textbox
@@ -758,7 +758,7 @@ Scenario: EvergreenJnr_AdminPage_CheckCapacitySlotDataForActions
 	When User creates new Automation via API and open it
 	| AutomationName | Description | Active | StopOnFailedAction | Scope       | Run    |
 	| DA17778        | 17778       | true   | false              | All Devices | Manual |
-	And User clicks "Actions" tab
+	And User navigates to the 'Actions' left menu item
 	#Action 1
 	And User clicks the "CREATE ACTION" Action button
 	And User enters '17778 None' text to 'Action Name' textbox
@@ -785,8 +785,8 @@ Scenario: EvergreenJnr_AdminPage_CheckCapacitySlotDataForActions
 	When User enters "17778 None" text in the Search field for "Action" column
 	And User clicks content from "Action" column
 	Then 'None' content is displayed in 'Capacity Slot' dropdown
-	When User clicks "Details" tab
-	And User clicks "Actions" tab
+	When User navigates to the 'Details' left menu item
+	And User navigates to the 'Actions' left menu item
 	When User enters "17778 Slot" text in the Search field for "Action" column
 	And User clicks content from "Action" column
 	Then 'Scheduled Slot' content is displayed in 'Capacity Slot' dropdown

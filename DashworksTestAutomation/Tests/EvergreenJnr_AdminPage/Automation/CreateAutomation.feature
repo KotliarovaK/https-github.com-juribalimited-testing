@@ -31,7 +31,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionGridInAutomations
 	Then "CREATE" Action button is disabled
 	When User selects 'Manual' in the 'Run' dropdown
 	And User clicks the "CREATE" Action button
-	When User clicks "Actions" tab
+	When User navigates to the 'Actions' left menu item
 	Then "No actions found" message is displayed on the Admin Page
 	Then "CREATE ACTION" Action button is active
 

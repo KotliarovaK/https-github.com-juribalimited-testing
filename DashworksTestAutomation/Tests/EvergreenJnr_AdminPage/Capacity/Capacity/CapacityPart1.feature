@@ -10,7 +10,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDefaultCapacityUnitRenamedInUnassigned
 	When Project created via API and opened
 	| ProjectName             | Scope     | ProjectTemplate | Mode               |
 	| ProjectForCapacity13720 | All Users | None            | Standalone Project |
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	Then 'Capacity Units' text value is displayed in the 'Capacity Mode' dropdown
 	When User selects "Units" tab on the Project details page
 	And User enters "Unassigned" text in the Search field for "Capacity Unit" column
@@ -36,7 +36,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultColumnsForDevicesProjectCapacityUni
 	When Project created via API and opened
 	| ProjectName         | Scope       | ProjectTemplate | Mode               |
 	| 13431DevicesProject | All Devices | None            | Standalone Project |
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	And User selects "Units" tab on the Project details page
 	Then Columns on Admin page is displayed in following order:
 	| ColumnName    |
@@ -54,7 +54,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultColumnsForMailboxesProjectCapacityU
 	When Project created via API and opened
 	| ProjectName           | Scope         | ProjectTemplate | Mode               |
 	| 13431MailboxesProject | All Mailboxes | None            | Standalone Project |
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	And User selects "Units" tab on the Project details page
 	Then Columns on Admin page is displayed in following order:
 	| ColumnName    |
@@ -72,7 +72,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedValueIsDisplayedForCapacityCo
 	When Project created via API and opened
 	| ProjectName             | Scope       | ProjectTemplate | Mode               |
 	| ProjectForCapacity13723 | All Devices | None            | Standalone Project |
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	And User selects "Override Dates" tab on the Project details page
 	When User clicks the "CREATE OVERRIDE DATE" Action button
 	And User enters '5 Jan 2019' text to 'Override Start Date' datepicker

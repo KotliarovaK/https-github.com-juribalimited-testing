@@ -108,7 +108,7 @@ Scenario: EvergreenJnr_UserProfile_CheckThatNotificationMessageDisappearsAfter5S
 	Then Admin page should be displayed to the user
 	When User enters "1803 Rollout" text in the Search field for "Project" column
 	When User clicks content from "Project" column
-	When User clicks "Readiness" tab
+	When User navigates to the 'Readiness' left menu item
 	Then Cog-menu DDL is displayed in High Contrast mode
 	When User clicks Profile in Account Dropdown
 	When User navigates to the "Preferences" page on Account details

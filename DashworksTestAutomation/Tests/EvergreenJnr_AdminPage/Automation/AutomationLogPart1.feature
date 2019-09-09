@@ -20,7 +20,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsLogGridForRunningAutomationWith
 	Then User checks that file "Dashworks export" was downloaded
 	When User enters "16890_Automation" text in the Search field for "Automation" column
 	When User click content from "Automation" column
-	When User clicks "Actions" tab
+	When User navigates to the 'Actions' left menu item
 	#Action 1
 	When User clicks the "CREATE ACTION" Action button
 	When User enters '16890_Action' text to 'Action Name' textbox

@@ -11,9 +11,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedObjectsAreDisplayedAfterChang
 	| ProjectName   | Scope       | ProjectTemplate | Mode               |
 	| TestProject20 | All Devices | None            | Standalone Project |
 	Then Project "TestProject20" is displayed to user
-	When User clicks "Details" tab
+	When User navigates to the 'Details' left menu item
 	And User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
-	When User clicks "Scope" tab
+	When User navigates to the 'Scope' left menu item
 	And User selects "Scope Changes" tab on the Project details page
 	Then "Match to Evergreen Bucket" is displayed in the Bucket dropdown
 	When User expands the object to add
@@ -31,7 +31,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedObjectsAreDisplayedAfterChang
 	Then "Teams" page should be displayed to the user
 	When User enters "My Team" text in the Search field for "Team" column
 	And User clicks content from "Team" column
-	And User clicks "Buckets" tab
+	And User navigates to the 'Buckets' left menu item
 	And User enters "Unassigned2" text in the Search field for "Bucket" column
 	Then "2" Onboarded objects are displayed
 	When User clicks Admin on the left-hand menu

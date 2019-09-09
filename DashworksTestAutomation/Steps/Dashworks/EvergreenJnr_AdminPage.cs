@@ -908,13 +908,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.IsTrue(teamElement.AppropriateTeamName(teamName), $"{teamName} is not displayed on the Teams page");
         }
 
-        [When(@"User clicks ""(.*)"" tab")]
-        public void ThenUserClicksTab(string tabName)
-        {
-            var page = _driver.NowAt<TeamsPage>();
-            page.SelectTabByName(tabName);
-        }
-
         [Then(@"Create Team button is disabled")]
         public void ThenCreateTeamButtonIsDisabled()
         {
@@ -1900,21 +1893,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<Capacity_SlotsPage>();
             _driver.WaitForElementToBeDisplayed(page.MoveToPositionAlert);
-            Utils.Verify.Contains(text, page.MoveToPositionAlert.Text, "Alert Message is not displayed");
+            Verify.Contains(text, page.MoveToPositionAlert.Text, "Alert Message is not displayed");
         }
 
         [Then(@"Create Override Date is displayed correctly")]
         public void ThenCreateOverrideDateIsDisplayedCorrectly()
         {
             var page = _driver.NowAt<Capacity_OverrideDatesPage>();
-            Utils.Verify.IsTrue(page.CreateOverrideDatePageTitle.Displayed, "Create Override Date title is not displayed");
+            Verify.IsTrue(page.CreateOverrideDatePageTitle.Displayed, "Create Override Date title is not displayed");
         }
 
         [Then(@"""(.*)"" text in search field is displayed correctly for ""(.*)"" column")]
         public void ThenTextInSearchFieldIsDisplayedCorrectlyForColumn(string searchText, string columnName)
         {
             var page = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.AreEqual(page.GetTextInSearchFieldByColumnName(columnName).GetAttribute("value"), searchText,
+            Verify.AreEqual(page.GetTextInSearchFieldByColumnName(columnName).GetAttribute("value"), searchText,
                 "Text in search field is different");
         }
 
@@ -1924,7 +1917,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var action = _driver.NowAt<BaseGridPage>();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var actualList = action.MenuTabOptionListOnAdminPage.Select(value => value.Text).ToList();
-            Utils.Verify.AreEqual(expectedList, actualList, "Menu options are different");
+            Verify.AreEqual(expectedList, actualList, "Menu options are different");
         }
 
         //TODO move to the BaseGrid

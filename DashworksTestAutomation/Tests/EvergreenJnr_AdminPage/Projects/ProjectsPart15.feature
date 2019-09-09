@@ -105,9 +105,9 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectScopeChangesIsLoadedSuc
 	And User selects "ApplicationsStaticList12157" in the Scope Project details
 	And User selects "Scope Changes" tab on the Project details page
 	Then "<ObjectsToAdd1>" is displayed to the user in the Project Scope Changes section
-	When User clicks "<ScopeChanges1>" tab in the Project Scope Changes section
+	When User navigates to the '<ScopeChanges1>' left menu item in the Project Scope Changes section
 	Then "<ObjectsToAdd2>" is displayed to the user in the Project Scope Changes section
-	When User clicks "Applications" tab in the Project Scope Changes section
+	When User navigates to the 'Applications' left menu item in the Project Scope Changes section
 	Then "<ObjectsToAdd3>" is displayed to the user in the Project Scope Changes section
 	Then There are no errors in the browser console
 
@@ -132,9 +132,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatItemsToAddValuesAreNotCachedAfterScope
 	| Used on the device by the device owner |
 	| Used on the device by any user         |
 	And User selects "Scope Changes" tab on the Project details page
-	And User clicks "Applications" tab in the Project Scope Changes section
+	And User navigates to the 'Applications' left menu item in the Project Scope Changes section
 	Then "Applications to add (0 of 212 selected)" is displayed to the user in the Project Scope Changes section
-	When User clicks "Users" tab in the Project Scope Changes section
+	When User navigates to the 'Users' left menu item in the Project Scope Changes section
 	Then "Users to add (0 of 14629 selected)" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page
 	And User navigates to the "Application Scope" tab in the Scope section on the Project details page
@@ -142,9 +142,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatItemsToAddValuesAreNotCachedAfterScope
 	And User navigates to the "User Scope" tab in the Scope section on the Project details page
 	And User selects "Do not include device owners" checkbox on the Project details page
 	And User selects "Scope Changes" tab on the Project details page
-	And User clicks "Applications" tab in the Project Scope Changes section
+	And User navigates to the 'Applications' left menu item in the Project Scope Changes section
 	Then "Applications to add (0 of 1059 selected)" is displayed to the user in the Project Scope Changes section
-	When User clicks "Users" tab in the Project Scope Changes section
+	When User navigates to the 'Users' left menu item in the Project Scope Changes section
 	Then "Users to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS13428 @Cleanup
@@ -155,7 +155,7 @@ Scenario: EvergreenJnr_AdminPage_TheGreenBannerIsNotDisplayedIfBannerWasBeShownO
 	Then Project "Project12965" is displayed to user
 	When User selects "Scope" tab on the Project details page
 	When User selects "Scope Changes" tab on the Project details page
-	And User clicks "Devices" tab in the Project Scope Changes section
+	And User navigates to the 'Devices' left menu item in the Project Scope Changes section
 	And User expands the object to add 
 	And User selects following Objects
 	| Objects         |

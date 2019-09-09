@@ -27,7 +27,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatOnlyValueIncludedInTheColumnIsD
 	When User perform search by "Accessible FormNet Fill 2.2"
 	And User click content from "Application" column
 	Then Details page for "Accessible FormNet Fill 2.2" item is displayed to the user
-	When User navigates to the "MSI" main-menu on the Details page
+	When User navigates to the 'MSI' left menu item
 	When User navigates to the "MSI Files" sub-menu on the Details page
 	And User have opened Column Settings for "File Name" column in the Details Page table
 	And User clicks Column button on the Column Settings panel
@@ -78,7 +78,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatOnlyValueIncludedInTheColumnIsD
 	When User perform search by "Accessible FormNet Fill 2.2"
 	And User click content from "Application" column
 	Then Details page for "Accessible FormNet Fill 2.2" item is displayed to the user
-	When User navigates to the "Distribution" main-menu on the Details page
+	When User navigates to the 'Distribution' left menu item
 	When User navigates to the "Devices" sub-menu on the Details page
 	Then 'TRUE' content is displayed in the 'Installed' column
 	Then 'UNKNOWN' content is displayed in the 'Used' column

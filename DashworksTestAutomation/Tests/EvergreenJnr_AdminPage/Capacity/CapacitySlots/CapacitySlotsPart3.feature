@@ -13,7 +13,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorMessageAppearsWhenCreatingDuplica
 	And User creates new Slot via Api
 	| Project         | SlotName     | DisplayName | SlotAvailableFrom | SlotAvailableTo |
 	| ProjectDAS13779 | SlotDAS13779 | 13779       | 29 Oct 2018       | 29 Oct 2018     |
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	And User selects "Slots" tab on the Project details page
 	And User selects "Override Dates" tab on the Project details page
 	And User clicks the "CREATE OVERRIDE DATE" Action button
@@ -48,7 +48,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorInConsoleAfterSettingSameOverri
 	| Project         | SlotName  | DisplayName |
 	| ProjectDAS13442 | Slot13442 | 13442       |
 	And User navigates to newly created Slot
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	And User selects "Override Dates" tab on the Project details page
 	And User clicks the "CREATE OVERRIDE DATE" Action button
 	And User enters '1 Sep 2018' text to 'Override Start Date' datepicker
@@ -75,7 +75,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorInConsoleAfterSettingSameOverri
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13490
 Scenario: EvergreenJnr_AdminPage_CheckThat0ValuesAreCorrectlyShownOnTheCapacitySlotsScreen
 	When User navigates to "User Scheduled Test (Jo)" project details
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	And User selects "Slots" tab on the Project details page
 	Then "40" content is displayed in "Monday" column
 	When User clicks content from "Capacity Slot" column
@@ -90,7 +90,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThat0ValuesAreCorrectlyShownOnTheCapacityS
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13608 @DAS13472
 Scenario: EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType
 	When User navigates to "Email Migration" project details
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	And User selects "Slots" tab on the Project details page
 	When User clicks content from "Capacity Slot" column
 	Then 'Pre-Migration \ Scheduled date' value is displayed in the 'Tasks' dropdown
@@ -119,7 +119,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType
 	When User clicks "Projects" navigation link on the Admin page
 	And User clicks Yes button in Leave Page Warning
 	When User navigates to "Windows 7 Migration (Computer Scheduled Project)" project details
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	And User selects "Slots" tab on the Project details page
 	And User clicks content from "Capacity Slot" column
 	Then 'Pre-Migration \ Scheduled Date' value is displayed in the 'Tasks' dropdown

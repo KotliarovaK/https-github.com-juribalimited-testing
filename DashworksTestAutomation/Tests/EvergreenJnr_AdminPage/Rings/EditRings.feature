@@ -10,13 +10,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatRingsDetailsPageCanBeSeenAfterTypeOfRi
 	When Project created via API and opened
 	| ProjectName        | Scope       | ProjectTemplate | Mode                            |
 	| ProjectForDAS14839 | All Devices | None            | Clone from Evergreen to Project |
-	And User clicks "Details" tab
+	And User navigates to the 'Details' left menu item
 	Then 'Clone evergreen rings to project rings' text value is displayed in the 'Rings' dropdown
-	When User clicks "Rings" tab
+	When User navigates to the 'Rings' left menu item
 	Then "TRUE" content is displayed in "Default" column
-	When User clicks "Details" tab
+	When User navigates to the 'Details' left menu item
 	And User selects 'Use project rings' in the 'Rings' dropdown
-	And User clicks "Rings" tab
+	And User navigates to the 'Rings' left menu item
 	And User clicks content from "Ring" column
 	And User type "OneRing" Name in the "Ring name" field on the 'ProjectForDAS14839' Project details page
 	And User type "TwoRing" Name in the "Description" field on the 'ProjectForDAS14839' Project details page
