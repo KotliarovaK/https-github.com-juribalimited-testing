@@ -65,7 +65,7 @@ Scenario: EvergreenJnr_AdminPage_CheckProjectDetailFormAndRingDropdown
 	Then "Device scoped project" is displayed in the disabled Project Type field
 	When User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
 	Then 'Use project rings' text value is displayed in the 'Rings' dropdown
-	When User selects "Clone evergreen rings to project rings" in the "Rings" dropdown
+	When User selects 'Clone evergreen rings to project rings' in the 'Rings' dropdown
 	When User clicks "Projects" navigation link on the Admin page
 	When User enters "New_14690_Project" text in the Search field for "Project" column
 	And User clicks content from "Project" column

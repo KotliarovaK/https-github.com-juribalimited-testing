@@ -15,7 +15,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatRingsDetailsPageCanBeSeenAfterTypeOfRi
 	When User clicks "Rings" tab
 	Then "TRUE" content is displayed in "Default" column
 	When User clicks "Details" tab
-	And User selects "Use project rings" in the "Rings" dropdown
+	And User selects 'Use project rings' in the 'Rings' dropdown
 	And User clicks "Rings" tab
 	And User clicks content from "Ring" column
 	And User type "OneRing" Name in the "Ring name" field on the 'ProjectForDAS14839' Project details page
