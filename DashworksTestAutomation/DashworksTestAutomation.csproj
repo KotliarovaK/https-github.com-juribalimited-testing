@@ -333,7 +333,7 @@
     <Compile Include="Pages\Projects\CreatingProjects\TeamPropertiesPage.cs" />
     <Compile Include="Pages\Projects\CreatingProjects\TeamsPage.cs" />
     <Compile Include="Pages\Projects\BulkUpdatePage.cs" />
-    <Compile Include="Pages\Projects\ProjectsBaseElements.cs" />
+    <Compile Include="Pages\Senior\SeniorProjectsBaseElements.cs" />
     <Compile Include="Pages\Projects\Projects_Dashboards\Projects_DashboardsGroupsPage.cs" />
     <Compile Include="Pages\Projects\Projects_Dashboards\Projects_DashboardsPage.cs" />
     <Compile Include="Pages\Projects\Projects_PMObjectPage.cs" />

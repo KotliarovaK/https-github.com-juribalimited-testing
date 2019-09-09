@@ -291,17 +291,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             Driver.FindElement(byControl).SendKeys(date);
         }
 
-        public void GetObjectField(string text)
-        {
-            var byControl =
-                By.XPath(".//div[@class='mat-form-field-infix']/input");
-            Driver.WaitForDataLoading();
-            Driver.WaitForElementToBeDisplayed(byControl);
-            Driver.FindElement(byControl).Click();
-            Driver.FindElement(byControl).Clear();
-            Driver.FindElement(byControl).SendKeys(text);
-        }
-
         public IWebElement GetSearchFieldTextByColumnName(string columnName)
         {
             var selector =

@@ -1377,19 +1377,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         #endregion
 
-        [When(@"User enters ""(.*)"" text in the Object Search field")]
-        public void WhenUserEntersTextInTheObjectSearchField(string text)
-        {
-            var searchElement = _driver.NowAt<BaseGridPage>();
-            searchElement.GetObjectField(text);
-        }
-
         [Then(@"following items are still selected")]
         public void ThenFollowingItemsAreStillSelected()
         {
             var projectElement = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsTrue(projectElement.PlusButton.Displayed(), "Items are not selected");
-            Utils.Verify.IsTrue(projectElement.CheckedSomeItemCheckbox.Displayed(), "Item checkbox is not checked");
+            Verify.IsTrue(projectElement.PlusButton.Displayed(), "Items are not selected");
+            Verify.IsTrue(projectElement.CheckedSomeItemCheckbox.Displayed(), "Item checkbox is not checked");
         }
 
         [Then(@"no items are selected")]
@@ -2654,7 +2647,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.That(zIndexExpend, Is.GreaterThan(2),
                 $"Wrong overlapping: zIndex: {zIndexExpend} < zIndex: {2}");
         }
-        
+
         private string GetProjectId(string projectName)
         {
             var projectId =

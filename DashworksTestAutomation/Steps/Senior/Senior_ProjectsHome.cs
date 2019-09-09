@@ -2,6 +2,7 @@
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Projects;
 using DashworksTestAutomation.Pages.Projects.CreatingProjects;
+using DashworksTestAutomation.Pages.Senior;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
@@ -23,7 +24,7 @@ namespace DashworksTestAutomation.Steps.Projects
         [When(@"User navigates to the ""(.*)"" page on Dashboards tab")]
         public void WhenUserNavigatesToThePageOnDashboardsTab(string pageName)
         {
-            var page = _driver.NowAt<ProjectsBaseElements>();
+            var page = _driver.NowAt<SeniorProjectsBaseElements>();
             _driver.MouseHover(page.DashboardsTab);
             _driver.MouseHover(page.GetSubTabByName(pageName));
             page.GetSubTabByName(pageName).Click();
@@ -32,7 +33,7 @@ namespace DashworksTestAutomation.Steps.Projects
         [Then(@"User navigate to created Project")]
         public void ThenUserNavigateToProject()
         {
-            var menu = _driver.NowAt<ProjectsBaseElements>();
+            var menu = _driver.NowAt<SeniorProjectsBaseElements>();
             _driver.WaitForDataLoadingOnProjects();
             _driver.MouseHover(menu.AdministrationTab);
             var project = _driver.NowAt<MainElementsOfProjectCreation>();
@@ -45,7 +46,7 @@ namespace DashworksTestAutomation.Steps.Projects
         [When(@"User navigate to ""(.*)"" Project")]
         public void WhenUserNavigateToProject(string projectName)
         {
-            var menu = _driver.NowAt<ProjectsBaseElements>();
+            var menu = _driver.NowAt<SeniorProjectsBaseElements>();
             _driver.WaitForDataLoadingOnProjects();
             _driver.MouseHover(menu.AdministrationTab);
             var project = _driver.NowAt<MainElementsOfProjectCreation>();
