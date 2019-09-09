@@ -29,7 +29,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenActionsPanelIsDisplayedToTheUser()
         {
             var columnElement = _driver.NowAt<ActionsElement>();
-            Utils.Verify.IsTrue(columnElement.ActionsPanel.Displayed(), "Actions panel was not displayed");
+            Verify.IsTrue(columnElement.ActionsPanel.Displayed(), "Actions panel was not displayed");
             Logger.Write("Actions panel is visible");
         }
 

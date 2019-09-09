@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
+using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
@@ -23,11 +24,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User clicks the Actions button")]
         public void WhenUserClicksTheActionsButton()
         {
+            var page = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForElementToBeDisplayed(page.TableBody);
             var menu = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitForElementToBeDisplayed(menu.TableBody);
+            //TODO move Action to separate component
             _driver.WaitForElementToBeDisplayed(menu.ActionsButton);
             menu.ActionsButton.Click();
-            Logger.Write("Actions button was clicked");
         }
 
         [When(@"User clicks the List Details button")]
