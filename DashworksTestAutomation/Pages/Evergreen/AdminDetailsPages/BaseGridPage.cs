@@ -275,22 +275,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return allFilters[GetColumnNumberByName(columnName) - 1];
         }
 
-        public void AddDateByFieldName(string fieldName, string date)
-        {
-            var byControl =
-                By.XPath(
-                    $"//input[@aria-label='Date'][@placeholder='{fieldName}']");
-            Driver.WaitForDataLoading();
-            Driver.WaitForElementToBeDisplayed(byControl);
-
-            //TODO: clear() method doesn't work for now. Remove code below and use clear() when it works again
-            Driver.FindElement(byControl).Click();
-            Driver.FindElement(byControl).SendKeys(OpenQA.Selenium.Keys.Control + "a");
-            Driver.FindElement(byControl).SendKeys(OpenQA.Selenium.Keys.Delete);
-            //Driver.FindElement(byControl).Clear();
-            Driver.FindElement(byControl).SendKeys(date);
-        }
-
         public IWebElement GetSearchFieldTextByColumnName(string columnName)
         {
             var selector =

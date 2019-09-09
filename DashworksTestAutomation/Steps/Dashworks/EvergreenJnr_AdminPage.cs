@@ -1903,14 +1903,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.Contains(text, page.MoveToPositionAlert.Text, "Alert Message is not displayed");
         }
 
-        [When(@"User enters ""(.*)"" date in the ""(.*)"" field")]
-        public void WhenUserEntersDateInTheField(string date, string fieldName)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            page.AddDateByFieldName(fieldName, date);
-            page.BodyContainer.Click();
-        }
-
         [Then(@"Create Override Date is displayed correctly")]
         public void ThenCreateOverrideDateIsDisplayedCorrectly()
         {

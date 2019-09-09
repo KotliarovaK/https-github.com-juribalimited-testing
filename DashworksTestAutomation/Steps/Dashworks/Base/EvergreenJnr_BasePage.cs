@@ -202,8 +202,12 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void WhenUserEntersTextToDatepicker(string text, string placeholder)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            page.GetNamedTextbox(placeholder).Clear();
-            page.GetNamedTextbox(placeholder).SendKeys(text);
+            var datepicker = page.GetNamedTextbox(placeholder);
+            //Just clear is not working for some reason
+            datepicker.Click();
+            datepicker.SendKeys(OpenQA.Selenium.Keys.Control + "a");
+            datepicker.SendKeys(OpenQA.Selenium.Keys.Delete);
+            datepicker.SendKeys(text);
 
             page.BodyContainer.Click();
         }

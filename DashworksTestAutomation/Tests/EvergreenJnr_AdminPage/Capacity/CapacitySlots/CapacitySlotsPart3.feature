@@ -20,18 +20,18 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorMessageAppearsWhenCreatingDuplica
 	Then Create Override Date is displayed correctly
 	Then "CREATE" Action button have tooltip with "Some settings are not valid" text
 	And "CREATE" Action button is disabled
-	When User enters "29 Oct 2018" date in the "Override Start Date" field
+	When User enters '29 Oct 2018' text to 'Override Start Date' datepicker
 	Then "CREATE" Action button have tooltip with "Some settings are not valid" text
 	Then "CREATE" Action button is disabled
 	Then "CREATE" Action button have tooltip with "Some settings are not valid" text
-	When User enters "29 Oct 2018" date in the "Override End Date" field
+	When User enters '29 Oct 2018' text to 'Override End Date' datepicker
 	Then "CREATE" Action button is active
 	When User selects 'SlotDAS13779' in the 'Slot' dropdown
 	And User enters "0" value in the "Capacity" field
 	And User clicks the "CREATE" Action button
 	And User clicks the "CREATE OVERRIDE DATE" Action button
-	And User enters "29 Oct 2018" date in the "Override Start Date" field
-	And User enters "29 Oct 2018" date in the "Override End Date" field
+	And User enters '29 Oct 2018' text to 'Override Start Date' datepicker
+	And User enters '29 Oct 2018' text to 'Override End Date' datepicker
 	And User selects 'SlotDAS13779' in the 'Slot' dropdown
 	And User enters "0" value in the "Capacity" field
 	And User clicks the "CREATE" Action button
@@ -51,14 +51,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorInConsoleAfterSettingSameOverri
 	And User clicks "Capacity" tab
 	And User selects "Override Dates" tab on the Project details page
 	And User clicks the "CREATE OVERRIDE DATE" Action button
-	And User enters "1 Sep 2018" date in the "Override Start Date" field
-	And User enters "7 Sep 2018" date in the "Override End Date" field
+	And User enters '1 Sep 2018' text to 'Override Start Date' datepicker
+	And User enters '7 Sep 2018' text to 'Override End Date' datepicker
 	And User selects 'Slot13442' in the 'Slot' dropdown
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "Your override date has been created" text
 	When User clicks the "CREATE OVERRIDE DATE" Action button
-	And User enters "5 Sep 2018" date in the "Override Start Date" field
-	And User enters "10 Sep 2018" date in the "Override End Date" field
+	And User enters '5 Sep 2018' text to 'Override Start Date' datepicker
+	And User enters '10 Sep 2018' text to 'Override End Date' datepicker
 	And User selects 'Slot13442' in the 'Slot' dropdown
 	And User clicks the "CREATE" Action button
 	Then Error message with "An override already exists for this date" text is displayed
