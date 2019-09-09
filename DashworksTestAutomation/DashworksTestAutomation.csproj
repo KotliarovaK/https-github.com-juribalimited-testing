@@ -216,12 +216,11 @@
     <Compile Include="Helpers\FilterOperatorsConvertor.cs" />
     <Compile Include="Helpers\HttpClientHelper.cs" />
     <Compile Include="Helpers\SortingHelper.cs" />
-    <Compile Include="Pages\Evergreen\AdminDetailsPages\Automations\AutomationsPage.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\Automations\AutomationsGridPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Automations\ActionsPage.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\Automations\CreateAutomationsPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Automations\EditActionPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Automations\CreateActionsPage.cs" />
-    <Compile Include="Pages\Evergreen\AdminDetailsPages\Automations\EditAutomationPage.cs" />
-    <Compile Include="Pages\Evergreen\AdminDetailsPages\Automations\CreateAutomationsPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\BaseHeaderPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateReadinessPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\RingsPage.cs" />
@@ -546,6 +545,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AutomationsGrid.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Automation\AutomationLogPart4.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AutomationLogPart4.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_AdminPage\Buckets\CreateBucket.feature.cs">
       <AutoGen>True</AutoGen>
@@ -1478,6 +1482,10 @@
     <None Include="Tests\EvergreenJnr_AdminPage\Automation\AutomationsGrid.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AutomationsGrid.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Automation\AutomationLogPart4.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AutomationLogPart4.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_AdminPage\Buckets\CreateBucket.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

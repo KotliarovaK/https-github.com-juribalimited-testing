@@ -30,13 +30,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Automations
             };
         }
 
-        public IWebElement GetMoveButtonByActionName(string action)
-        {
-            var indexRow = GetActionContent().IndexOf(action);
-            var selector = By.XPath($".//div[@row-index='{indexRow}']/div[@col-id='dragColumn']");
-            return Driver.FindElement(selector);
-        }
-
         //TODO PLEASE REMOVE THIS METHOD
         public IWebElement GetDropdownByName(string dropdown)
         {
@@ -52,12 +45,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Automations
             var selector = By.XPath($".//mat-option//span[text()='{dropdown}']");
             Driver.WaitForElementToBeDisplayed(selector);
             Driver.FindElement(selector).Click();
-        }
-
-        public IList<string> GetActionContent()
-        {
-            var by = By.XPath(".//div[@col-id='actionName' and @role='gridcell']");
-            return Driver.FindElements(by).Select(x => x.Text).ToList();
         }
     }
 }

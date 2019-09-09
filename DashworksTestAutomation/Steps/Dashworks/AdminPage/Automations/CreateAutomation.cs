@@ -24,12 +24,20 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations
             _automation = automation;
         }
 
-        [Then(@"Create Automation page is displayed to the User")]
-        public void ThenCreateAutomationPageIsDisplayedToTheUser()
+        [Then(@"""(.*)"" title is displayed on the Automations page")]
+        public void ThenTitleIsDisplayedOnTheAutomationsPage(string title)
         {
-            var page = _driver.NowAt<CreateAutomationsPage>();
-            Utils.Verify.IsTrue(page.CreateAutomationsTitle.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
-            Utils.Verify.IsTrue(page.AutomationNameField.Displayed(), "Create Automation page is not displayed");
+            var page = _driver.NowAt<AutomationsPage>();
+            Utils.Verify.AreEqual(page.AutomationTitle.Text, title, "Title is incorrect");
+        }
+
+        [Then(@"Automation page is displayed correctly")]
+        public void ThenAutomationPageIsDisplayedCorrectly()
+        {
+            var page = _driver.NowAt<AutomationsPage>();
+            Utils.Verify.IsTrue(page.AutomationNameField.Displayed(), "Automation page is not displayed correctly");
+            var autocompleteElement = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForElementToNotContainsTextInAttribute(autocompleteElement.GetNamedTextbox("Scope"), "Scope", "value");
         }
     }
 }
