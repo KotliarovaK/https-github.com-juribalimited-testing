@@ -1349,7 +1349,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             foreach (var row in table.Rows)
             {
                 projectElement.CheckItemDisplay(row["Objects"]);
-                Utils.Verify.IsTrue(projectElement.CheckedAllItemCheckbox.Displayed(), "Some object is present");
+                Verify.IsTrue(projectElement.CheckedAllItemCheckbox.Displayed(), "Some object is present");
                 projectElement.SearchTextBox.ClearWithHomeButton(_driver);
             }
         }

@@ -47,6 +47,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameWhichStartsWithLowerCaseLe
 	When User clicks the "UPDATE PROJECT" Action button
 	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
 	When User navigates to the 'Users' left menu item
+	When User navigates to the 'Users' tab on Scope Changes page
 	Then following objects were not found
 	| Objects                      |
 	| ADD135461 (Luke W. Clark)    |
