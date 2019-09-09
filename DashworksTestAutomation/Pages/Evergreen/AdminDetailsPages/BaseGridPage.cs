@@ -167,6 +167,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = "//span[contains(@class, 'mat-select-value-text')]//span[text()='Capacity Units']")]
         public IWebElement DefaultCapacityMode { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-body-viewport')]")]
+        public IWebElement GridScrollableElement { get; set; }
+
         [FindsBy(How = How.XPath, Using = ProjectInFilterDropdown)]
         public IList<IWebElement> ProjectListInFilterDropdown { get; set; }
 
