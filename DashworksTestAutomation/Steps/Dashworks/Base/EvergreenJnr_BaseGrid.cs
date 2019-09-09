@@ -226,5 +226,16 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         }
 
         #endregion
+
+        #region ScrollGrid
+
+        [When(@"User scrolls grid to the bottom")]
+        public void WhenUserScrollsGridToTheBottom()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            _driver.ScrollGridToTheEnd(page.GridScrollableElement);
+        }
+
+        #endregion
     }
 }
