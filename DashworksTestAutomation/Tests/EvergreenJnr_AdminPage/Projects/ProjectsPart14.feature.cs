@@ -92,7 +92,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects
         [NUnit.Framework.CategoryAttribute("DAS12108")]
         [NUnit.Framework.CategoryAttribute("DAS12756")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("TEST")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatProjectNameWhichStartsWithLowerCaseLetterIsDisplayedInAlphabeticalOrder()
         {
             System.Exception lastException = null;
@@ -132,8 +131,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects
                         "DAS12609",
                         "DAS12108",
                         "DAS12756",
-                        "Cleanup",
-                        "TEST"});
+                        "Cleanup"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -276,7 +274,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12763")]
         [NUnit.Framework.CategoryAttribute("DAS14604")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("TEST")]
         public virtual void EvergreenJnr_AdminPage_CheckThatRelatedBucketsAreUpdatedAfterCreatingOrDeletingProject()
         {
             System.Exception lastException = null;
@@ -315,8 +312,7 @@ this.FeatureBackground();
                         "DAS12755",
                         "DAS12763",
                         "DAS14604",
-                        "Cleanup",
-                        "TEST"});
+                        "Cleanup"});
 #line 65
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -541,7 +537,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12485")]
         [NUnit.Framework.CategoryAttribute("DAS12108")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("TEST")]
         public virtual void EvergreenJnr_AdminPage_CheckThatOffboardedObjectsAreListedAfterSelectObjectToRemove()
         {
             System.Exception lastException = null;
@@ -580,8 +575,7 @@ this.FeatureBackground();
                         "DAS12496",
                         "DAS12485",
                         "DAS12108",
-                        "Cleanup",
-                        "TEST"});
+                        "Cleanup"});
 #line 129
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
