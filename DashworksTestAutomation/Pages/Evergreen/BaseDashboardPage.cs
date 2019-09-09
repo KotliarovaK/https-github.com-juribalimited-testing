@@ -378,9 +378,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = OptionOnActionsPanel)]
         public IList<IWebElement> OptionListOnActionsPanel { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@role='gridcell']//a")]
-        public IList<string> ColumnForMoved { get; set; }
-
         #region TableColumns
 
         [FindsBy(How = How.XPath, Using = ".//div[@colid='lastLogonDate'][@role='gridcell']")]

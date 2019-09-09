@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DashworksTestAutomation.DTO.Evergreen.Admin.Automations;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
@@ -20,11 +21,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
     {
         private readonly RemoteWebDriver _driver;
         private readonly AutomationActions _automationActions;
+        private readonly Automations _automations;
 
-        public EvergreenJnr_BasePage(RemoteWebDriver driver, AutomationActions automationActions)
+        public EvergreenJnr_BasePage(RemoteWebDriver driver, AutomationActions automationActions, Automations automations)
         {
             _driver = driver;
             _automationActions = automationActions;
+            _automations = automations;
         }
 
         #region Named Autocomplete
@@ -105,6 +108,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
             if (placeholder.Equals("Action Name"))
                 _automationActions.Value.Add(text);
+
+            if (placeholder.Equals("Automation Name"))
+                _automations.Value.Add(new AutomationsDto() { automationName = text });
         }
 
         [Then(@"'(.*)' content is displayed in '(.*)' textbox")]
