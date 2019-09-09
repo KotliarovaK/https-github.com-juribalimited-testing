@@ -665,6 +665,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Projects\Scope\History\ActionsWithGrid.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ActionsWithGrid.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart24.feature.cs">
       <DependentUpon>ProjectsPart24.feature</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -1572,6 +1577,10 @@
     <None Include="Tests\EvergreenJnr_AdminPage\Capacity\Capacity\CapacityPart2.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CapacityPart2.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Projects\Scope\History\ActionsWithGrid.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ActionsWithGrid.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart24.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
