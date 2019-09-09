@@ -44,7 +44,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckUpdateTaskValueEditPageLoadsProjec
 	Then Create Automation page is displayed to the User
 	When User enters '<AutomationName>' text to 'Automation Name' textbox
 	When User enters 'DAS17428' text to 'Description' textbox
-	When User selects "<Scope>" in the Scope Automation dropdown
+	When User selects '<Scope>' option from 'Scope' autocomplete
 	When User selects "Active" checkbox on the Automation Page
 	When User selects 'Manual' in the 'Run' dropdown
 	When User clicks the "CREATE" Action button

@@ -443,7 +443,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality
 	Then Create Automation page is displayed to the User
 	When User enters '16764_Automation' text to 'Automation Name' textbox
 	When User enters '16764' text to 'Description' textbox
-	When User selects "All Devices" in the Scope Automation dropdown
+	When User selects 'All Devices' option from 'Scope' autocomplete
 	When User selects "Active" checkbox on the Automation Page
 	When User selects "Stop on failed action" checkbox on the Automation Page
 	Then "CREATE" Action button is disabled
@@ -507,7 +507,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextFor
 	Then Create Automation page is displayed to the User
 	When User enters 'DAS15423_Automation' text to 'Automation Name' textbox
 	When User enters 'DAS15423' text to 'Description' textbox
-	When User selects "DAS15423_List" in the Scope Automation dropdown
+	When User selects 'DAS15423_List' option from 'Scope' autocomplete
 	When User selects 'Manual' in the 'Run' dropdown
 	When User selects "Active" checkbox on the Automation Page
 	And User clicks the "CREATE" Action button
@@ -684,7 +684,7 @@ Scenario: EvergreenJnr_AdminPage_ChechAutomationsPermissionsForScopeDropdownList
 	Then "Automations" page should be displayed to the user
 	When User clicks the "CREATE AUTOMATION" Action button
 	Then Create Automation page is displayed to the User
-	When User selects "17003_List" in the Scope Automation dropdown
+	When User selects '17003_List' option from 'Scope' autocomplete
 	When User clicks "Projects" on the left-hand menu
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console

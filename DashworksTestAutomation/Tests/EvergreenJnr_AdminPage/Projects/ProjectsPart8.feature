@@ -59,7 +59,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckOnboardingObjectUsingUpdateAppropr
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "TestProject9753" in the "Project Name" field
-	And User selects "<AllListName>" in the Scope Project dropdown
+	And User selects '<AllListName>' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
@@ -91,7 +91,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingBucketFromUseEvergreenBucketsToCloneEve
 	Then "Create Project" page should be displayed to the user
 	When User enters "1MailboxesProject" in the "Project Name" field
 	#And User selects "Evergreen" in the Mode Project dropdown
-	When User selects "All Mailboxes" in the Scope Project dropdown
+	When User selects 'All Mailboxes' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks "Evergreen" link on the Admin page
@@ -134,7 +134,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoAdditionalCapacityUnitsAreCreatedWhe
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "13530Project" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
+	And User selects 'All Devices' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks "Evergreen" link on the Admin page

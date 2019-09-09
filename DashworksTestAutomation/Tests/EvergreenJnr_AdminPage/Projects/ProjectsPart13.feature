@@ -37,7 +37,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameEditedInSeniorIsUpdatedInA
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "Project13096" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
+	And User selects 'All Devices' option from 'Scope' autocomplete
 	When User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link

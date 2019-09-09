@@ -1446,14 +1446,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             try
             {
                 _driver.WaitForDataLoading();
-                Utils.Verify.IsTrue(page.GetCreatedProjectName(projectName), $"The {projectName} Project is not found");
+                Verify.IsTrue(page.GetCreatedProjectName(projectName), $"The {projectName} Project is not found");
             }
             catch (Exception)
             {
                 Thread.Sleep(30000);
                 _driver.Navigate().Refresh();
                 _driver.WaitForDataLoading();
-                Utils.Verify.IsTrue(page.GetCreatedProjectName(projectName), $"The {projectName} Project is not found");
+                Verify.IsTrue(page.GetCreatedProjectName(projectName), $"The {projectName} Project is not found");
             }
         }
 
@@ -1461,26 +1461,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenImportProjectButtonIsNotDisplayed()
         {
             var button = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsFalse(button.ImportProjectButton.Displayed(), "Import Project button is displayed");
-        }
-
-        [When(@"User selects ""(.*)"" in the Scope Project dropdown")]
-        [When(@"User selects ""(.*)"" in the Scope Automation dropdown")]
-        public void ThenUserSelectsInTheScopeProjectDropdown(string objectName)
-        {
-            var createProjectElement = _driver.NowAt<ProjectsPage>();
-            createProjectElement.ScopeProjectField.Click();
-            createProjectElement.SelectObjectForProjectCreation(objectName);
+            Verify.IsFalse(button.ImportProjectButton.Displayed(), "Import Project button is displayed");
         }
 
         [Then(@"User sees blue message ""(.*)"" on Create Project page")]
         public void ThenUserSeesMessageInformingAboutArchivedDevicesInList(string message)
         {
             var createProjectElement = _driver.NowAt<ProjectsPage>();
-            Utils.Verify.That(createProjectElement.ArchivedDevicesMessage.Text, Is.EqualTo(message), "Archived message text is not displayed");
+            Verify.That(createProjectElement.ArchivedDevicesMessage.Text, Is.EqualTo(message), "Archived message text is not displayed");
 
             var bgColor = createProjectElement.ArchivedDevicesMessage.GetCssValue("color");
-            Utils.Verify.That(bgColor, Is.EqualTo("rgba(49, 122, 193, 1)"), "Archived message text is in different color");
+            Verify.That(bgColor, Is.EqualTo("rgba(49, 122, 193, 1)"), "Archived message text is in different color");
         }
 
         [Then(@"""(.*)"" content is displayed in the Scope Automation dropdown")]

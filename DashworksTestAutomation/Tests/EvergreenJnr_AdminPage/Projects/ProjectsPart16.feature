@@ -276,7 +276,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatTheEditListFunctionIsHiddenAft
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "TestProject7894" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
+	And User selects 'All Devices' option from 'Scope' autocomplete
 	When User clicks the "CANCEL" Action button
 	Then "Projects" page should be displayed to the user
 

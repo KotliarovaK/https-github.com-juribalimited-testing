@@ -11,7 +11,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOptionsInTheCogMenuForReadinessAreCorr
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "Project for DAS15665" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
+	And User selects 'All Devices' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
@@ -43,7 +43,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAppearWhenDeleteReadine
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "DAS15884_Project" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
+	And User selects 'All Devices' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
@@ -86,7 +86,7 @@ Scenario: EvergreenJnr_AdminPage_CheckReadinessDialogContainerDisplay
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "DAS16131_Project" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
+	And User selects 'All Devices' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link

@@ -117,7 +117,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatBannerDisplaysOnScopeDetailsPage
 	And User clicks "Projects" link on the Admin page
 	And User clicks the "CREATE PROJECT" Action button
 	And User enters "TestName13205" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
+	And User selects 'All Devices' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
 	And User clicks newly created object link
 	Then User sees banner at the top of work area

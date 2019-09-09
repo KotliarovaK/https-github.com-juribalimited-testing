@@ -272,7 +272,7 @@ this.FeatureBackground();
 #line 46
  testRunner.When("User enters \'DAS17428\' text to \'Description\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 47
- testRunner.When(string.Format("User selects \"{0}\" in the Scope Automation dropdown", scope), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("User selects \'{0}\' option from \'Scope\' autocomplete", scope), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 48
  testRunner.When("User selects \"Active\" checkbox on the Automation Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 49

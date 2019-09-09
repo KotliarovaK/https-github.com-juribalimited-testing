@@ -24,7 +24,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedWhenDeleti
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "TestProject6" in the "Project Name" field
-	And User selects "TestList0A78U9" in the Scope Project dropdown
+	And User selects 'TestList0A78U9' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
 	Then "Projects" page should be displayed to the user
 	Then Success message is displayed and contains "The project has been created" text
@@ -164,7 +164,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "TestProjectDAS11977" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
+	And User selects 'All Devices' option from 'Scope' autocomplete
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link

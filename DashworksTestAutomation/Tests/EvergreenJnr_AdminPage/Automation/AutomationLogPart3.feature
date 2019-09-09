@@ -44,7 +44,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogMessageForDeletedTaskInAction
 	Then Create Automation page is displayed to the User
 	When User enters '17247_Automation' text to 'Automation Name' textbox
 	When User enters '17247' text to 'Description' textbox
-	When User selects "All Devices" in the Scope Automation dropdown
+	When User selects 'All Devices' option from 'Scope' autocomplete
 	When User selects 'Manual' in the 'Run' dropdown
 	When User selects "Active" checkbox on the Automation Page
 	And User clicks the "CREATE" Action button

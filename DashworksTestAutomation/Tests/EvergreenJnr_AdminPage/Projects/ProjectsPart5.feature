@@ -14,7 +14,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEmptyGreenAlertLineIsNotDisplayedOnPro
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "TestName11881" in the "Project Name" field
-	And User selects "All Users" in the Scope Project dropdown
+	And User selects 'All Users' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
 	Then created Project with "TestName11881" name is displayed correctly
 	Then Success message is displayed and contains "The project has been created" text
@@ -109,7 +109,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorIsNotDisplayedWhenCreatingProject
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "TestProject22" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
+	And User selects 'All Devices' option from 'Scope' autocomplete
 	When User selects "Clone from Evergreen to Project" in the Mode Project dropdown
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text

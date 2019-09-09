@@ -14,7 +14,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIdColumnIsAddedAndDisplay
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "TestProject11700" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
+	And User selects 'All Devices' option from 'Scope' autocomplete
 	When User clicks the "CREATE" Action button
 	When User have opened Column Settings for "Project" column
 	And User clicks Column button on the Column Settings panel
@@ -37,7 +37,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectNameIsDisplayedCorrectlyWhen
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "<TestProject11985>" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
+	And User selects 'All Devices' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
 	Then created Project with "<TestProject11985>" name is displayed correctly
 
@@ -50,7 +50,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "TestProject12364" in the "Project Name" field
-	And User selects "All Users" in the Scope Project dropdown
+	And User selects 'All Users' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
 	Then created Project with "TestProject12364" name is displayed correctly
 	Then Success message is displayed and contains "The project has been created" text
@@ -122,7 +122,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedIfTryToRemove
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "TestName11729" in the "Project Name" field
-	And User selects "TestDynamicList11729" in the Scope Project dropdown
+	And User selects 'TestDynamicList11729' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
 	Then created Project with "TestName11729" name is displayed correctly
 	When User clicks "Devices" on the left-hand menu

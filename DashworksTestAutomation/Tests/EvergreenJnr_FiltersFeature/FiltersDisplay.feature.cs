@@ -5371,7 +5371,7 @@ this.FeatureBackground();
 #line 1197
  testRunner.And("User enters \"13201\" in the \"Project Name\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1198
- testRunner.And("User selects \"All Mailboxes\" in the Scope Project dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects \'All Mailboxes\' option from \'Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1199
  testRunner.When("User selects \"Evergreen\" in the \"Mode\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1200

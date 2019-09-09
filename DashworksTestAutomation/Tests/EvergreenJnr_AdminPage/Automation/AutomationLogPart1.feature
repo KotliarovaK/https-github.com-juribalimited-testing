@@ -106,7 +106,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSuccessfulRunInOutcomeColumn
 	Then Create Automation page is displayed to the User
 	When User enters 'D16974_Automation' text to 'Automation Name' textbox
 	When User enters '1745104' text to 'Description' textbox
-	When User selects "All Users" in the Scope Automation dropdown
+	When User selects 'All Users' option from 'Scope' autocomplete
 	Then "CREATE" Action button is disabled
 	When User selects 'Manual' in the 'Run' dropdown
 	And User clicks the "CREATE" Action button
@@ -166,7 +166,7 @@ Scenario: EvergreenJnr_AdminPage_CheckBrokenListValidationWhenRunningAnAutomatio
 	Then Create Automation page is displayed to the User
 	When User enters '17011_Automation' text to 'Automation Name' textbox
 	When User enters '17011' text to 'Description' textbox
-	When User selects "17011_List" in the Scope Automation dropdown
+	When User selects '17011_List' option from 'Scope' autocomplete
 	When User selects 'Manual' in the 'Run' dropdown
 	When User selects "Active" checkbox on the Automation Page
 	When User clicks the "CREATE" Action button
@@ -175,7 +175,7 @@ Scenario: EvergreenJnr_AdminPage_CheckBrokenListValidationWhenRunningAnAutomatio
 	Then Create Automation page is displayed to the User
 	When User enters '17011_Automation_1' text to 'Automation Name' textbox
 	When User enters '17011_1' text to 'Description' textbox
-	When User selects "All Devices" in the Scope Automation dropdown
+	When User selects 'All Devices' option from 'Scope' autocomplete
 	When User selects 'Manual' in the 'Run' dropdown
 	When User selects "Active" checkbox on the Automation Page
 	When User clicks the "CREATE" Action button
@@ -222,7 +222,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckSuccessfulRunningAutomationWithMai
 	Then Create Automation page is displayed to the User
 	When User enters '<AutomationName>' text to 'Automation Name' textbox
 	When User enters '17212' text to 'Description' textbox
-	When User selects "<Scope>" in the Scope Automation dropdown
+	When User selects '<Scope>' option from 'Scope' autocomplete
 	When User selects 'Manual' in the 'Run' dropdown
 	When User selects "Active" checkbox on the Automation Page
 	And User clicks the "CREATE" Action button

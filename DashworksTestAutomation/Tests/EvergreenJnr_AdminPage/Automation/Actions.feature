@@ -258,7 +258,7 @@ Scenario: EvergreenJnr_AdminPage_CheckParametersToCreateUpdatePathAction
 	Then 'An automation name must be entered' error message is displayed for 'Automation Name' field
 	When User enters 'Melbourne User' text to 'Automation Name' textbox
 	When User enters 'Melbourne users' text to 'Description' textbox
-	When User selects "Melbourne Users" in the Scope Automation dropdown
+	When User selects 'Melbourne Users' option from 'Scope' autocomplete
 	When User selects "Stop on failed action" checkbox on the Automation Page
 	Then "CREATE" Action button is disabled
 	When User selects 'Manual' in the 'Run' dropdown
@@ -300,7 +300,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditActionPage
 	Then Create Automation page is displayed to the User
 	When User enters '15425_Automation' text to 'Automation Name' textbox
 	When User enters '15425' text to 'Description' textbox
-	When User selects "All Users" in the Scope Automation dropdown
+	When User selects 'All Users' option from 'Scope' autocomplete
 	When User selects 'Manual' in the 'Run' dropdown
 	When User selects "Active" checkbox on the Automation Page
 	And User clicks the "CREATE" Action button
@@ -409,7 +409,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActions
 	Then Create Automation page is displayed to the User
 	When User enters 'DAS16992_Edinburgh_Automation' text to 'Automation Name' textbox
 	When User enters 'Task value change' text to 'Description' textbox
-	When User selects "Edinburgh Devices" in the Scope Automation dropdown
+	When User selects 'Edinburgh Devices' option from 'Scope' autocomplete
 	When User selects 'Manual' in the 'Run' dropdown
 	When User selects "Active" checkbox on the Automation Page
 	#Create Action
@@ -476,7 +476,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdatingTaskWhichImpactsReadinessOwnerAndD
 	Then Create Automation page is displayed to the User
 	When User enters '17234_Edinburgh_Automation' text to 'Automation Name' textbox
 	When User enters 'Task value change' text to 'Description' textbox
-	When User selects "EdinburghDevices_17234" in the Scope Automation dropdown
+	When User selects 'EdinburghDevices_17234' option from 'Scope' autocomplete
 	When User selects 'Manual' in the 'Run' dropdown
 	When User selects "Active" checkbox on the Automation Page
 	And User clicks the "CREATE" Action button
@@ -516,7 +516,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckListOfProjectsOnTheCreateActionsPa
 	Then Create Automation page is displayed to the User
 	When User enters '<AutomationName>' text to 'Automation Name' textbox
 	When User enters '17544' text to 'Description' textbox
-	When User selects "<Scope>" in the Scope Automation dropdown
+	When User selects '<Scope>' option from 'Scope' autocomplete
 	When User selects 'Manual' in the 'Run' dropdown
 	When User selects "Active" checkbox on the Automation Page
 	And User clicks the "CREATE" Action button
@@ -544,7 +544,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateTaskValueIsDisplayInAutomationsL
 	Then Create Automation page is displayed to the User
 	When User enters 'Test_Automation_17542' text to 'Automation Name' textbox
 	When User enters 'DAS17542' text to 'Description' textbox
-	When User selects "All Devices" in the Scope Automation dropdown
+	When User selects 'All Devices' option from 'Scope' autocomplete
 	When User selects "Active" checkbox on the Automation Page
 	When User selects 'Manual' in the 'Run' dropdown
 	And User clicks the "CREATE" Action button

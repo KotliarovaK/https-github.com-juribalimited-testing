@@ -87,7 +87,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectWithUseEvergreenCapacityUnitsIs
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "13510TestProject" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
+	And User selects 'All Devices' option from 'Scope' autocomplete
 	When User clicks the "CREATE PROJECT" Action button
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link

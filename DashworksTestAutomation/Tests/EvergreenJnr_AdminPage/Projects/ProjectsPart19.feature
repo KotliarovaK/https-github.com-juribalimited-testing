@@ -47,7 +47,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "Project13110Dynamic1" in the "Project Name" field
-	And User selects "Dynamic13110" in the Scope Project dropdown
+	And User selects 'Dynamic13110' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
@@ -107,7 +107,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "Project13110Dynamic2" in the "Project Name" field
-	And User selects "Dynamic13110" in the Scope Project dropdown
+	And User selects 'Dynamic13110' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
@@ -229,7 +229,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "Project13110Static2" in the "Project Name" field
-	And User selects "Static13110" in the Scope Project dropdown
+	And User selects 'Static13110' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
@@ -292,7 +292,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderForQueueAndHistoryTab
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "TestProject55" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
+	And User selects 'All Devices' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
