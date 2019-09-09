@@ -26,13 +26,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorMessageAppearsWhenCreatingDuplica
 	Then "CREATE" Action button have tooltip with "Some settings are not valid" text
 	When User enters "29 Oct 2018" date in the "Override End Date" field
 	Then "CREATE" Action button is active
-	When User selects "SlotDAS13779" in the "Slot" dropdown
+	When User selects 'SlotDAS13779' in the 'Slot' dropdown
 	And User enters "0" value in the "Capacity" field
 	And User clicks the "CREATE" Action button
 	And User clicks the "CREATE OVERRIDE DATE" Action button
 	And User enters "29 Oct 2018" date in the "Override Start Date" field
 	And User enters "29 Oct 2018" date in the "Override End Date" field
-	And User selects "SlotDAS13779" in the "Slot" dropdown
+	And User selects 'SlotDAS13779' in the 'Slot' dropdown
 	And User enters "0" value in the "Capacity" field
 	And User clicks the "CREATE" Action button
 	Then Error message with "An override already exists for this date" text is displayed
@@ -53,13 +53,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorInConsoleAfterSettingSameOverri
 	And User clicks the "CREATE OVERRIDE DATE" Action button
 	And User enters "1 Sep 2018" date in the "Override Start Date" field
 	And User enters "7 Sep 2018" date in the "Override End Date" field
-	And User selects "Slot13442" in the "Slot" dropdown
+	And User selects 'Slot13442' in the 'Slot' dropdown
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "Your override date has been created" text
 	When User clicks the "CREATE OVERRIDE DATE" Action button
 	And User enters "5 Sep 2018" date in the "Override Start Date" field
 	And User enters "10 Sep 2018" date in the "Override End Date" field
-	And User selects "Slot13442" in the "Slot" dropdown
+	And User selects 'Slot13442' in the 'Slot' dropdown
 	And User clicks the "CREATE" Action button
 	Then Error message with "An override already exists for this date" text is displayed
 	And There are no errors in the browser console
@@ -102,14 +102,14 @@ Scenario: EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType
 	| Shared Mailbox         |
 	| Personal Mailbox - VIP |
 	| Personal Mailbox - EA  |
-	When User selects "User" in the "Object Type" dropdown
+	When User selects 'User' in the 'Object Type' dropdown
 	Then "" content is displayed in "Tasks" field
 	When User clicks on "Paths" dropdown on the Capacity Slots page
 	Then following items are displayed in the dropdown:
 	| Items         |
 	| Standard User |
 	| VIP User      |
-	When User selects "Application" in the "Object Type" dropdown
+	When User selects 'Application' in the 'Object Type' dropdown
 	Then "" content is displayed in "Tasks" field
 	When User clicks on "Paths" dropdown on the Capacity Slots page
 	Then following items are displayed in the dropdown:
@@ -131,7 +131,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType
 	| Computer: Workstation Replacement                |
 	| Computer: Laptop Replacement                     |
 	| Computer: Virtual Machine                        |
-	When User selects "User" in the "Object Type" dropdown
+	When User selects 'User' in the 'Object Type' dropdown
 	Then "" content is displayed in "Tasks" field
 	When User clicks on "Paths" dropdown on the Capacity Slots page
 	Then following items are displayed in the dropdown:
@@ -140,7 +140,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType
 	| User: No Agent   |
 	| User: VIP        |
 	| User; Maternity  |
-	When User selects "Application" in the "Object Type" dropdown
+	When User selects 'Application' in the 'Object Type' dropdown
 	Then "" content is displayed in "Tasks" field
 	When User clicks on "Paths" dropdown on the Capacity Slots page
 	Then following items are displayed in the dropdown:

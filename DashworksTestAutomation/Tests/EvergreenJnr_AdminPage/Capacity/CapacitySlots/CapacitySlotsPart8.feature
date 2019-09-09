@@ -43,7 +43,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForCa
 	Then 'Stage13152 \ Task13152' value is displayed in the 'Tasks' dropdown
 	And 'Unassigned' value is displayed in the 'Capacity Units' dropdown
 	And 'Device' text value is displayed in the 'Object Type' dropdown
-	When User selects "Application" in the "Object Type" dropdown
+	When User selects 'Application' in the 'Object Type' dropdown
 	And User selects "Unassigned" checkbox in the "Capacity Units" field on the Project details page
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The capacity slot details have been updated" text
@@ -86,11 +86,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTe
 	And User clicks the "CREATE SLOT" Action button
 	And User type "Slot13152" Name in the "Slot Name" field on the Project details page
 	And User type "13152" Name in the "Display Name" field on the Project details page
-	And User selects "Teams and Paths" in the "Capacity Type" dropdown
+	And User selects 'Teams and Paths' in the 'Capacity Type' dropdown
 	And User selects "Stage13152 \ Task13152" checkbox in the "Tasks" field on the Project details page
 	And User selects "Admin IT" checkbox in the "Teams" field on the Project details page
 	And User selects "[Default (Computer)]" checkbox in the "Paths" field on the Project details page
-	When User selects "Device" in the "Object Type" dropdown
+	When User selects 'Device' in the 'Object Type' dropdown
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "Your capacity slot has been created" text
 	#Check data in the slot after creation
@@ -101,7 +101,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTe
 	And '[Default (Computer)]' value is displayed in the 'Paths' dropdown
 	And 'Admin IT' value is displayed in the 'Teams' dropdown
 	#Change data in the slot
-	When User selects "Application" in the "Object Type" dropdown
+	When User selects 'Application' in the 'Object Type' dropdown
 	And User selects "Admin IT" checkbox in the "Teams" field on the Project details page
 	And User selects "1803 Team" checkbox in the "Teams" field on the Project details page
 	And User selects "[Default (Application)]" checkbox in the "Paths" field on the Project details page
@@ -113,7 +113,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTe
 	And 'Application' text value is displayed in the 'Object Type' dropdown
 	And '[Default (Application)]' value is displayed in the 'Paths' dropdown
 	And '1803 Team' value is displayed in the 'Teams' dropdown
-	When User selects "Capacity Units" in the "Capacity Type" dropdown
+	When User selects 'Capacity Units' in the 'Capacity Type' dropdown
 	And User clicks the "UPDATE" Action button
 	#Check updated Capacity Type value
 	When User clicks content from "Capacity Slot" column
