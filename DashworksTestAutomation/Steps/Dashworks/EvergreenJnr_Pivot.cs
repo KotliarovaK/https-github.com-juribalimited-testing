@@ -214,7 +214,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             _driver.WaitForElementToBeDisplayed(page.SaveButton);
             Utils.Verify.IsTrue(page.SaveButton.Displayed(), "'Save' button is not displayed");
-            
+
+            page.PivotNameTextBox.Clear();
             page.PivotNameTextBox.SendKeys(listName);
             page.SaveButton.Click();
 
