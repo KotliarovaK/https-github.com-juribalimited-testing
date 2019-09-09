@@ -1,4 +1,5 @@
-﻿using DashworksTestAutomation.DTO.RuntimeVariables;
+﻿using System;
+using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity;
 using NUnit.Framework;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
+using DashworksTestAutomation.Utils;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -74,7 +76,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSeeTranslationsLinkOnTheCapacitySlotPageIsNotDisplayed()
         {
             var page = _driver.NowAt<Capacity_SlotsPage>();
-            Utils.Verify.IsFalse(page.LanguageTranslationsLink.Displayed(), "See Translations link is displayed");
+            var isLinkDisplayed = _driver.ExecuteFunc(() => page.GetLanguageLinkByName("See Translations").Displayed());
+            if (isLinkDisplayed)
+                throw new Exception("'See Translations' link is displayed");
         }
 
         [Then(@"""(.*)"" Language is displayed in Translations table on the Capacity Slot page")]

@@ -91,7 +91,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects
         [NUnit.Framework.CategoryAttribute("DAS11978")]
         [NUnit.Framework.CategoryAttribute("DAS12825")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("TEST")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUsers()
         {
             System.Exception lastException = null;
@@ -130,8 +129,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects
                         "DAS12582",
                         "DAS11978",
                         "DAS12825",
-                        "Cleanup",
-                        "TEST"});
+                        "Cleanup"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -583,7 +581,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS12645")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("TEST")]
         public virtual void EvergreenJnr_AdminPage_CheckingSortingOrderOfTheObjectsInTheProjectScopeChanges()
         {
             System.Exception lastException = null;
@@ -619,8 +616,7 @@ this.FeatureBackground();
                         "AdminPage",
                         "Projects",
                         "DAS12645",
-                        "Cleanup",
-                        "TEST"});
+                        "Cleanup"});
 #line 207
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -702,7 +698,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS11758")]
         [NUnit.Framework.CategoryAttribute("DAS14190")]
         [NUnit.Framework.CategoryAttribute("DAS15528")]
-        [NUnit.Framework.CategoryAttribute("TEST")]
         public virtual void EvergreenJnr_AdminPage_CheckThatSelectAllCheckboxIsWorkingCorrectlyOnAdminPage()
         {
             System.Exception lastException = null;
@@ -740,8 +735,7 @@ this.FeatureBackground();
                         "Cleanup",
                         "DAS11758",
                         "DAS14190",
-                        "DAS15528",
-                        "TEST"});
+                        "DAS15528"});
 #line 235
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -836,7 +830,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12999")]
         [NUnit.Framework.CategoryAttribute("DAS13429")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("TEST")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "TestList6589", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "Username", "TestList6588", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "TestList6587", null)]
@@ -877,8 +870,7 @@ this.FeatureBackground();
                     "DAS12578",
                     "DAS12999",
                     "DAS13429",
-                    "Cleanup",
-                    "TEST"};
+                    "Cleanup"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));

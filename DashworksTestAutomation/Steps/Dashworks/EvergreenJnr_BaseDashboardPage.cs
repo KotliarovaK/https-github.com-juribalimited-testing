@@ -536,6 +536,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 "Filter is created incorrectly");
         }
 
+        [Then(@"String filter values are not duplicated")]
+        public void ThenStringFilterValuesAreNotDuplicated()
+        {
+            var grid = _driver.NowAt<BaseDashboardPage>();
+            var filtersValue = grid.StringFilterValues.Select(x => x.Text).ToList();
+            Utils.Verify.AreEqual(filtersValue.Distinct().Count(), filtersValue.Count(), "String filters value are duplicated");
+        }
+
         [Then(@"""(.*)"" Application version is displayed")]
         public void ThenApplicationVersionIsDisplayed(string versionNumber)
         {

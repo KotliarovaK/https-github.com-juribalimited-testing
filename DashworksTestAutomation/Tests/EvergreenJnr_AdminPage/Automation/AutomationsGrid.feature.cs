@@ -327,7 +327,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS17774")]
-        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_CheckUnsavedChangesPopUp()
         {
             System.Exception lastException = null;
@@ -361,8 +360,7 @@ this.FeatureBackground();
                         "Admin",
                         "EvergreenJnr_AdminPage",
                         "Automations",
-                        "DAS17774",
-                        "Not_Ready"});
+                        "DAS17774"});
 #line 76
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

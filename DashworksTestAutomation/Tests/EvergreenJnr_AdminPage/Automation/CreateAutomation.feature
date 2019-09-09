@@ -29,7 +29,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionGridInAutomations
 	When User selects "Active" checkbox on the Automation Page
 	When User selects "Stop on failed action" checkbox on the Automation Page
 	Then "CREATE" Action button is disabled
-	When User selects "Manual" in the "Run" dropdown
+	When User selects 'Manual' in the 'Run' dropdown
 	And User clicks the "CREATE" Action button
 	When User clicks "Actions" tab
 	Then "No actions found" message is displayed on the Admin Page
@@ -51,7 +51,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateAutomationFieldsIsNotPopulatedWi
 	When User enters 'DAS16801_Automation' text to 'Automation Name' textbox
 	When User enters 'DAS16801' text to 'Description' textbox
 	When User selects "1803 Rollout" in the Scope Automation dropdown
-	When User selects "Manual" in the "Run" dropdown
+	When User selects 'Manual' in the 'Run' dropdown
 	When User selects "Active" checkbox on the Automation Page
 	And User clicks the "CREATE" Action button
 	When User clicks "Automations" navigation link on the Admin page
@@ -63,14 +63,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateAutomationFieldsIsNotPopulatedWi
 	When User enters 'DAS16801_Automation_Second' text to 'Automation Name' textbox
 	When User enters 'DAS16801' text to 'Description' textbox
 	When User selects "1803 Rollout" in the Scope Automation dropdown
-	When User selects "Manual" in the "Run" dropdown
+	When User selects 'Manual' in the 'Run' dropdown
 	When User selects "Active" checkbox on the Automation Page
 	And User clicks the "CREATE" Action button
 	When User clicks newly created object link
 	When User enters 'DAS16801_Automation' text to 'Automation Name' textbox
 	Then 'An automation with this name already exists' error message is displayed for 'Automation Name' field
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS16801 @DAS16805 @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS16801 @DAS16805
 Scenario: EvergreenJnr_AdminPage_CheckThatAdminTabIsHighlightedAfterClickingOnAutomation
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
