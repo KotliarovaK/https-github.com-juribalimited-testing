@@ -35,7 +35,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBanner
 	| CapacityUnit13790 | DAS13528    | false     | ProjectForCapacity13790 |
 	| CapacityUnit2     | DAS13528    | false     | ProjectForCapacity13790 |
 	When User selects "Capacity Details" tab on the Project details page
-	And User selects "Clone evergreen capacity units to project capacity units" in the "Capacity Units" dropdown
+	And User selects 'Clone evergreen capacity units to project capacity units' in the 'Capacity Units' dropdown
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed correctly
 	Then Success message is displayed and contains "The project capacity details have been updated" text
