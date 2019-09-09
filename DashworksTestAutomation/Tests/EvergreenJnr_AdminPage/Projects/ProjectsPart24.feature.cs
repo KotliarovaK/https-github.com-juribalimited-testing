@@ -593,7 +593,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("Projects")]
-        [NUnit.Framework.CategoryAttribute("DAS117967")]
+        [NUnit.Framework.CategoryAttribute("DAS17967")]
         public virtual void EvergreenJnr_AdminPage_CheckNoConsoleErrorDisplayedWhenUsingGroupByFilter()
         {
             System.Exception lastException = null;
@@ -628,7 +628,7 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "AdminPage",
                         "Projects",
-                        "DAS117967"});
+                        "DAS17967"});
 #line 132
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

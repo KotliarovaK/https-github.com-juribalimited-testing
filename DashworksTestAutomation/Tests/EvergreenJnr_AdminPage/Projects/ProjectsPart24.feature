@@ -128,7 +128,7 @@ Examples:
 	| Mailbox Evergreen Capacity Project | User Scope   | Users Readiness Columns & Filters | Application Scope | 1803 Apps |
 	| User Evergreen Capacity Project    | Device Scope | 1803 Rollout                      | Application Scope | 1803 Apps |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS117967
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS17967
 Scenario: EvergreenJnr_AdminPage_CheckNoConsoleErrorDisplayedWhenUsingGroupByFilter
 	When User clicks "Admin" on the left-hand menu
 	When User clicks Group By button on the Admin page and selects "Project" value

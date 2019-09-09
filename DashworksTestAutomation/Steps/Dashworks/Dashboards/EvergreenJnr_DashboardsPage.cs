@@ -675,7 +675,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForDataLoading();
-            Utils.Verify.AreEqual(text, page.TextInDeleteAlert.First().Text, "PLEASE ADD EXCEPTION MESSAGE");
+            Utils.Verify.AreEqual(text, page.TextInDeleteAlert.First().Text, "Delete confirmation text is different");
+        }
+
+        [Then(@"Delete widget warning message is displayed on Dashboards page")]
+        public void ThenUserCantSeeWarningMessageOnDashboardsPage()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
+            Utils.Verify.That(page.TextInDeleteAlert.Count, Is.EqualTo(0), "Delete confirmation is still displayed");
         }
 
         [Then(@"User sees ""(.*)"" text in ""(.*)"" warning messages on Dashboards page")]
@@ -873,12 +881,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     page.PermissionUserField.Clear();
                     page.PermissionUserField.SendKeys(row["User"]);
                     page.SelectOptionFromList(row["User"]);
+                    Thread.Sleep(300);
                 }
 
                 if (!string.IsNullOrEmpty(row["Permission"]))
                 {
                     page.PermissionTypeField.Click();
                     page.SelectOptionFromList(row["Permission"]);
+                    Thread.Sleep(300);
                 }
 
                 page.PermissionAddUserButton.Click();
@@ -1006,6 +1016,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             page.GetTopBarActionButton(buttonName).Click();
+        }
+
+        [Then(@"User sees ""(.*)"" tooltip for ""(.*)"" on the Dashboard")]
+        public void ThenUserSeesTooltipForButtons(string tooltip, string buttonName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.MouseHover(page.GetTopBarActionButton(buttonName));
+            var toolTipText = _driver.GetTooltipText();
+            Utils.Verify.AreEqual(tooltip, toolTipText, "Tooltip is incorrect");
         }
 
         [Then(@"Print Preview is displayed to the User")]
