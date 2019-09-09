@@ -168,7 +168,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateOwnerForUpdateValueInDevicesScopedAu
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope              | Run    |
 	| 17830_Automation | 17830       | true   | false              | Apps with a Vendor | Manual |
 	Then Automation page is displayed correctly
-	When User clicks "Actions" tab
+	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks the "CREATE ACTION" Action button
 	And User enters '17830_Action' text to 'Action Name' textbox
@@ -176,9 +176,9 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateOwnerForUpdateValueInDevicesScopedAu
 	When User selects 'zDevice Sch for Automations Feature' option from 'Project' autocomplete
 	And User selects 'Stage B' option from 'Stage' autocomplete
 	And User selects 'Combination Task App' option from 'Task' autocomplete
-	And User selects "No change" in the "Update Value" dropdown
-	And User selects "No change" in the "Update Date" dropdown
-	And User selects "Update" in the "Update Owner" dropdown
+	And User selects 'No change' in the 'Update Value' dropdown
+	And User selects 'No change' in the 'Update Date' dropdown
+	And User selects 'Update' in the 'Update Owner' dropdown
 	And User selects 'Admin IT' option from 'Team' autocomplete
 	And User selects 'Maryna Kyslyak' option from 'Owner' autocomplete
 	And User clicks the "CREATE" Action button
@@ -218,7 +218,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateDateForUpdateValueInDevicesScopedAut
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope              | Run    |
 	| 17846_Automation | 17846       | true   | false              | New York - Devices | Manual |
 	Then Automation page is displayed correctly
-	When User clicks "Actions" tab
+	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks the "CREATE ACTION" Action button
 	And User enters '17846_Action' text to 'Action Name' textbox
@@ -228,7 +228,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateDateForUpdateValueInDevicesScopedAut
 	And User selects 'Date Only with Capacity' option from 'Task' autocomplete
 	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters '5 Sep 2019' text to 'Date' textbox
-	And User selects "DAS-17846 Slot Device" in the "Capacity Slot" dropdown
+	And User selects 'DAS-17846 Slot Device' in the 'Capacity Slot' dropdown
 	And User clicks the "CREATE" Action button
 	#Create Action
 	When User clicks "Automations" navigation link on the Admin page
@@ -258,7 +258,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateDateForUpdateValueInUsersScopedAutom
 	| AutomationName      | Description | Active | StopOnFailedAction | Scope                   | Run    |
 	| DAS17846_Automation | 17846       | true   | false              | Users with Device Count | Manual |
 	Then Automation page is displayed correctly
-	When User clicks "Actions" tab
+	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks the "CREATE ACTION" Action button
 	And User enters 'DAS17846_Action' text to 'Action Name' textbox

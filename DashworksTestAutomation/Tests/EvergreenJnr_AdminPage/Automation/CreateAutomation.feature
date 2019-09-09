@@ -63,7 +63,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateAutomationFieldsIsNotPopulatedWi
 	When User selects 'Manual' in the 'Run' dropdown
 	When User selects "Active" checkbox on the Automation Page
 	And User clicks the "CREATE" Action button
-	When User clicks "Details" tab
+	When User navigates to the 'Details' left menu item
 	When User enters 'LongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptioт' text to 'Description' textbox
 	Then "UPDATE" Action button is active
 	When User enters 'DAS16801_Automation' text to 'Automation Name' textbox

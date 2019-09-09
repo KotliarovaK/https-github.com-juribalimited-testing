@@ -21,12 +21,12 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueActionDAS
 	When User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
 	And User selects 'Stage 1' option from 'Stage' autocomplete
 	And User selects 'Radiobutton Date App Task' option from 'Task' autocomplete
-	And User selects "No change" in the "Update Value" dropdown
-	And User selects "No change" in the "Update Date" dropdown
+	And User selects 'No change' in the 'Update Value' dropdown
+	And User selects 'No change' in the 'Update Date' dropdown
 	Then "CREATE" Action button is disabled
 	And "SAVE AND CREATE ANOTHER" Action button is disabled
-	When User selects "Update" in the "Update Value" dropdown
-	And User selects "Failed" in the "Value" dropdown
+	When User selects 'Update' in the 'Update Value' dropdown
+	And User selects 'Failed' in the 'Value' dropdown
 	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters '13 Aug 2019' text to 'Date' textbox
 	And User clicks the "CREATE" Action button
