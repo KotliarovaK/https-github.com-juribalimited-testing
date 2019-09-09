@@ -47,12 +47,12 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFiltersAndColumnsAreRestoredForSaved
 	Then "Windows7Mi: Portal Self Service \ SS Application List Completed" filter is added to the list
 	When User create dynamic list with "TestList886350" name on "Devices" page
 	Then "TestList886350" list is displayed to user
-	And "5,159" rows are displayed in the agGrid
+	And "5,158" rows are displayed in the agGrid
 	When User navigates to the "All Devices" list
 	Then "All Devices" list should be displayed to the user
 	When User navigates to the "TestList886350" list
 	Then "TestList886350" list is displayed to user
-	And "5,159" rows are displayed in the agGrid
+	And "5,158" rows are displayed in the agGrid
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	And "Windows7Mi: Portal Self Service \ SS Application List Completed is Not Applicable or No" is displayed in added filter info

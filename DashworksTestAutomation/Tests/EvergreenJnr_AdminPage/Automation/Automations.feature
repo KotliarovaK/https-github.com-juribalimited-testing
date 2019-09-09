@@ -422,7 +422,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridLoadsWithActionsForAnAutoma
 	When User clicks the "CREATE ACTION" Action button
 	Then Create Action page is displayed to the User
 	When User enters '15309_Action' text to 'Action Name' textbox
-	When User selects "Update path" in the "Action Type" dropdown
+	When User selects 'Update path' in the 'Action Type' dropdown
 	When User selects '1803 Rollout' option from 'Project' autocomplete
 	When User selects "Undetermined" in the "Path" dropdown for Actions
 	And User clicks the "CREATE" Action button
@@ -447,7 +447,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality
 	When User selects "Active" checkbox on the Automation Page
 	When User selects "Stop on failed action" checkbox on the Automation Page
 	Then "CREATE" Action button is disabled
-	When User selects "Manual" in the "Run" dropdown
+	When User selects 'Manual' in the 'Run' dropdown
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "click here to view the 16764_Automation automation" link
 	When User clicks newly created object link
@@ -507,7 +507,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextFor
 	When User enters 'DAS15423_Automation' text to 'Automation Name' textbox
 	When User enters 'DAS15423' text to 'Description' textbox
 	When User selects "DAS15423_List" in the Scope Automation dropdown
-	When User selects "Manual" in the "Run" dropdown
+	When User selects 'Manual' in the 'Run' dropdown
 	When User selects "Active" checkbox on the Automation Page
 	And User clicks the "CREATE" Action button
 	When User clicks newly created object link
@@ -598,7 +598,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateAndCreateActionsFunctionalityForAuto
 	When User clicks the "CREATE ACTION" Action button
 	Then Create Action page is displayed to the User
 	When User enters '17171_Action' text to 'Action Name' textbox
-	When User selects "Update path" in the "Action Type" dropdown
+	When User selects 'Update path' in the 'Action Type' dropdown
 	When User selects 'Migration Project Phase 2 (User Project)' option from 'Project' autocomplete
 	When User selects "[Default (User)]" in the "Path" dropdown for Actions
 	When User clicks the "CREATE" Action button
@@ -700,7 +700,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeviceLisFiltertHasAppropriateAutomati
 	And User clicks "Actions" tab
 	And User clicks the "CREATE ACTION" Action button
 	And User enters '15949_Action' text to 'Action Name' textbox
-	And User selects "Update path" in the "Action Type" dropdown
+	And User selects 'Update path' in the 'Action Type' dropdown
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
 	And User selects "Computer: Laptop Replacement" in the "Path" dropdown for Actions
 	And User clicks the "CREATE" Action button

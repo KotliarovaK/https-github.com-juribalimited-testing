@@ -26,7 +26,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionGridInAutomations
 	When User selects "Active" checkbox on the Automation Page
 	When User selects "Stop on failed action" checkbox on the Automation Page
 	Then "CREATE" Action button is disabled
-	When User selects "Manual" in the "Run" dropdown
+	When User selects 'Manual' in the 'Run' dropdown
 	And User clicks the "CREATE" Action button
 	When User clicks "Actions" tab
 	Then "No actions found" message is displayed on the Admin Page
@@ -48,7 +48,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateAutomationFieldsIsNotPopulatedWi
 	When User enters 'DAS16801_Automation' text to 'Automation Name' textbox
 	When User enters 'LongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptioт' text to 'Description' textbox
 	When User selects "1803 Rollout" in the Scope Automation dropdown
-	When User selects "Manual" in the "Run" dropdown
+	When User selects 'Manual' in the 'Run' dropdown
 	When User selects "Active" checkbox on the Automation Page
 	And User clicks the "CREATE" Action button
 	When User clicks "Automations" navigation link on the Admin page
@@ -60,7 +60,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateAutomationFieldsIsNotPopulatedWi
 	When User enters 'DAS16801_Automation_Second' text to 'Automation Name' textbox
 	When User enters 'DAS16801' text to 'Description' textbox
 	When User selects "1803 Rollout" in the Scope Automation dropdown
-	When User selects "Manual" in the "Run" dropdown
+	When User selects 'Manual' in the 'Run' dropdown
 	When User selects "Active" checkbox on the Automation Page
 	And User clicks the "CREATE" Action button
 	When User clicks "Details" tab

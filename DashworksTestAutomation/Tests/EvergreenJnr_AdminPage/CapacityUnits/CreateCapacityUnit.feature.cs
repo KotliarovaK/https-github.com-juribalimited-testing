@@ -209,6 +209,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("CapacityUnits")]
         [NUnit.Framework.CategoryAttribute("DAS12632")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_CapacityUnits")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitsCreatedCorrectly()
         {
             System.Exception lastException = null;
@@ -243,7 +244,8 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "CapacityUnits",
                         "DAS12632",
-                        "Cleanup"});
+                        "Cleanup",
+                        "Do_Not_Run_With_CapacityUnits"});
 #line 41
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

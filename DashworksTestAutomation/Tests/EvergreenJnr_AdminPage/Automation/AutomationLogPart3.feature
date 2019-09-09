@@ -44,12 +44,12 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogMessageForDeletedTaskInAction
 	When User enters '17247_Automation' text to 'Automation Name' textbox
 	When User enters '17247' text to 'Description' textbox
 	When User selects "All Devices" in the Scope Automation dropdown
-	When User selects "Manual" in the "Run" dropdown
+	When User selects 'Manual' in the 'Run' dropdown
 	When User selects "Active" checkbox on the Automation Page
 	And User clicks the "CREATE" Action button
 	#Create Action
 	When User enters '17247_Action' text to 'Action Name' textbox
-	When User selects "Update task value" in the "Action Type" dropdown
+	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects '17247Project' option from 'Project' autocomplete
 	When User selects 'Test' option from 'Stage' autocomplete
 	When User selects "DAS17247_Task" in the "Task" dropdown for Actions
@@ -136,7 +136,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedU
 	Then "Akhila Varghese" content is displayed in "USEMEFORA2: Stage 1 \ Radiobutton Readiness Date Owner Task (User) (Owner)" column
 	Then "1803 Team" content is displayed in "USEMEFORA2: Stage 1 \ Radiobutton Readiness Date Owner Task (User) (Team)" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17681 @Cleanup @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17681 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedUpdateValueDateOwnerCombinationWithNoChange
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
