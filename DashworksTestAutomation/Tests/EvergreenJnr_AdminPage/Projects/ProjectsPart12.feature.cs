@@ -310,7 +310,7 @@ this.FeatureBackground();
 #line 61
  testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 62
- testRunner.And("User navigates to the \'Users\' left menu item in the Project Scope Changes section" +
+ testRunner.And("User navigates to the \'Users\' left menu item" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 63
  testRunner.Then("\"Users to add (0 of 14747 selected)\" is displayed to the user in the Project Scop" +
@@ -392,7 +392,7 @@ this.FeatureBackground();
 #line 96
  testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 97
- testRunner.And("User navigates to the \'Users\' left menu item in the Project Scope Changes section" +
+ testRunner.And("User navigates to the \'Users\' left menu item" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 98
  testRunner.Then("\"Users to add (0 of 14753 selected)\" is displayed to the user in the Project Scop" +

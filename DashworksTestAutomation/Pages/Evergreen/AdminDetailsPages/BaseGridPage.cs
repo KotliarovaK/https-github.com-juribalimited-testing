@@ -304,6 +304,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             Driver.FindElement(By.XPath(columnSettingsSelector)).Click();
         }
 
+        //TODO should be moved because this is something on Action panel
         public void SelectActions(string actionName)
         {
             //Nothing to do if action selectBox disabled
@@ -314,14 +315,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
                 $"//span[text()='{actionName}']/ancestor::mat-option";
             Driver.WaitForElementToBeDisplayed(By.XPath(selectedActionName));
             Driver.FindElement(By.XPath(selectedActionName)).Click();
-        }
-
-        public void SelectTabByName(string tabName)
-        {
-            var tabNameSelector = $".//mat-nested-tree//a[text()='{tabName}']";
-            Driver.WaitForElementToBeDisplayed(By.XPath(tabNameSelector));
-            Driver.FindElement(By.XPath(tabNameSelector)).Click();
-            Driver.WaitForDataLoading();
         }
 
         public void AddItem(string itemName)

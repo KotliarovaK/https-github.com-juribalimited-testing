@@ -193,7 +193,7 @@ this.FeatureBackground();
 #line 31
  testRunner.When("User selects following Objects", ((string)(null)), table2, "When ");
 #line 34
- testRunner.And("User navigates to the \'Users\' left menu item in the Project Scope Changes section" +
+ testRunner.And("User navigates to the \'Users\' left menu item" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 35
  testRunner.And("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -632,7 +632,7 @@ this.FeatureBackground();
 #line 147
  testRunner.And("User selects following Objects", ((string)(null)), table10, "And ");
 #line 151
- testRunner.When("User navigates to the \'Users\' left menu item in the Project Scope Changes section" +
+ testRunner.When("User navigates to the \'Users\' left menu item" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 152
  testRunner.Then("\"[Default (User)]\" Path is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

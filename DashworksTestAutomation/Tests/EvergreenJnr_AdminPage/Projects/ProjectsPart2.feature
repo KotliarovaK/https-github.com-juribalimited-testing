@@ -16,7 +16,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedAfterUpdati
 	And User navigates to the "Application Scope" tab in the Scope section on the Project details page
 	And User clicks "Entitled to the device owner" checkbox on the Project details page
 	And User selects "Scope Changes" tab on the Project details page
-	And User navigates to the 'Applications' left menu item in the Project Scope Changes section
+	And User navigates to the 'Applications' left menu item
 	Then "Applications to add (0 of 2129 selected)" is displayed to the user in the Project Scope Changes section
 	When User expands the object to add 
 	Then Objects are displayed in alphabetical order on the Admin page
@@ -71,7 +71,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedCheckboxIsSelectedAfterSwitchi
 	Then Project "TestProject13" is displayed to user
 	When User selects "Scope" tab on the Project details page
 	And User selects "Scope Changes" tab on the Project details page
-	And User navigates to the 'Devices' left menu item in the Project Scope Changes section
+	And User navigates to the 'Devices' left menu item
 	Then Update Project buttons is disabled
 	When User expands the object to add
 	Then Objects are displayed in alphabetical order on the Admin page
@@ -80,13 +80,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedCheckboxIsSelectedAfterSwitchi
 	| 00HA7MKAVVFDAV |
 	Then Update Project button is active
 	And "Devices to add (1 of 17279 selected)" is displayed to the user in the Project Scope Changes section
-	When User navigates to the 'Users' left menu item in the Project Scope Changes section
+	When User navigates to the 'Users' left menu item
 	When User expands the object to add
 	Then Objects are displayed in alphabetical order on the Admin page
 	When User selects following Objects
 	| Objects                   |
 	| AAH0343264 (Luc Gauthier) |
-	And User navigates to the 'Devices' left menu item in the Project Scope Changes section
+	And User navigates to the 'Devices' left menu item
 	When User expands the object to add 
 	Then following items are still selected
 	And "Devices to add (1 of 17279 selected)" is displayed to the user in the Project Scope Changes section
@@ -104,7 +104,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedP
 	| 00I0COBFWHOF27 |
 	When User clicks the "UPDATE PROJECT" Action button
 	Then Success message is displayed and contains "2 objects queued for onboarding, 0 objects offboarded" text
-	When User navigates to the 'Users' left menu item in the Project Scope Changes section
+	When User navigates to the 'Users' left menu item
 	And User adds following Objects to the Project
 	| Objects                       |
 	| AAG081456 (Melanie Z. Fowler) |

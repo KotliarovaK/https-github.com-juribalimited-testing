@@ -407,7 +407,7 @@ this.FeatureBackground();
 #line 79
  testRunner.And("User selects following Objects", ((string)(null)), table5, "And ");
 #line 82
- testRunner.And("User navigates to the \'Users\' left menu item in the Project Scope Changes section" +
+ testRunner.And("User navigates to the \'Users\' left menu item" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 83
  testRunner.And("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -443,7 +443,7 @@ this.FeatureBackground();
 #line 96
  testRunner.Then("Objects to add panel is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 97
- testRunner.When("User navigates to the \'Users\' left menu item in the Project Scope Changes section" +
+ testRunner.When("User navigates to the \'Users\' left menu item" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 98
  testRunner.Then("\"Users to add (0 of 14628 selected)\" is displayed to the user in the Project Scop" +
@@ -609,7 +609,7 @@ this.FeatureBackground();
 #line 142
  testRunner.Then("\"UPDATE ALL CHANGES\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 143
- testRunner.When("User navigates to the \'Users\' left menu item in the Project Scope Changes section" +
+ testRunner.When("User navigates to the \'Users\' left menu item" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 144
  testRunner.Then("\"Users to add (0 of 41337 selected)\" is displayed to the user in the Project Scop" +
@@ -620,7 +620,7 @@ this.FeatureBackground();
 #line 146
  testRunner.Then("Objects to add panel is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 147
- testRunner.When("User navigates to the \'Users\' left menu item in the Project Scope Changes section" +
+ testRunner.When("User navigates to the \'Users\' left menu item" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 148
  testRunner.Then("Objects to add panel is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

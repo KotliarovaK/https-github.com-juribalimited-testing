@@ -300,7 +300,7 @@ this.FeatureBackground();
 #line 60
  testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 61
- testRunner.When("User navigates to the \'Users\' left menu item in the Project Scope Changes section" +
+ testRunner.When("User navigates to the \'Users\' left menu item" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 62
  testRunner.Then("\"Users to add (0 of 0 selected)\" is displayed to the user in the Project Scope Ch" +
@@ -322,7 +322,7 @@ this.FeatureBackground();
 #line 69
  testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 70
- testRunner.When("User navigates to the \'Users\' left menu item in the Project Scope Changes section" +
+ testRunner.When("User navigates to the \'Users\' left menu item" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 71
  testRunner.Then("\"Users to add (0 of 14747 selected)\" is displayed to the user in the Project Scop" +
@@ -533,7 +533,7 @@ this.FeatureBackground();
 #line 110
  testRunner.And("User selects following Objects", ((string)(null)), table6, "And ");
 #line 114
- testRunner.When("User navigates to the \'Users\' left menu item in the Project Scope Changes section" +
+ testRunner.When("User navigates to the \'Users\' left menu item" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 115
  testRunner.Then("\"Users to add (0 of 14747 selected)\" is displayed to the user in the Project Scop" +
@@ -563,7 +563,7 @@ this.FeatureBackground();
  testRunner.Then("\"Mailboxes to add (0 of 14782 selected)\" is displayed to the user in the Project " +
                     "Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 134
- testRunner.When("User navigates to the \'Users\' left menu item in the Project Scope Changes section" +
+ testRunner.When("User navigates to the \'Users\' left menu item" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 135
  testRunner.Then("\"Users to add (0 of 14745 selected)\" is displayed to the user in the Project Scop" +

@@ -49,15 +49,15 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectCountersDisplayedInRingGridFor
 	And User enters "DAS15260Project" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User selects "Scope Changes" tab on the Project details page
-	And User navigates to the 'Devices' left menu item in the Project Scope Changes section
+	And User navigates to the 'Devices' left menu item
 	And User selects following Objects to the Project
 	| Objects         |
 	| 001PSUMZYOW581  |
-	And User navigates to the 'Users' left menu item in the Project Scope Changes section
+	And User navigates to the 'Users' left menu item
 	And User selects following Objects to the Project
 	| Objects                        |
 	| AAD1011948 (Pinabel Cinq-Mars) |
-	And User navigates to the 'Applications' left menu item in the Project Scope Changes section
+	And User navigates to the 'Applications' left menu item
 	And User selects following Objects to the Project
 	| Objects                                            |
 	| 0004 - Adobe Acrobat Reader 5.0.5 Francais (5.0.5) |

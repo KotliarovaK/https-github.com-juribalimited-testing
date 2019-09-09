@@ -513,7 +513,7 @@ this.FeatureBackground();
 #line 105
  testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 106
- testRunner.And("User navigates to the \'Users\' left menu item in the Project Scope Changes section" +
+ testRunner.And("User navigates to the \'Users\' left menu item" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 107
  testRunner.And("User navigates to the \'Devices\' left menu item in the Project Scope Changes secti" +

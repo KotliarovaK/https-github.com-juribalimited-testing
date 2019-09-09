@@ -179,7 +179,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketA
 	And User clicks content from "Project" column
 	Then Project "Project12905" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
-	And User navigates to the 'Devices' left menu item in the Project Scope Changes section
+	And User navigates to the 'Devices' left menu item
 	When User expands the object to add 
 	And User selects following Objects
 	| Objects         |

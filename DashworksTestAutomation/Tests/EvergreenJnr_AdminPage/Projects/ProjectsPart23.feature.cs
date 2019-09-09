@@ -293,7 +293,7 @@ this.FeatureBackground();
 #line 53
  testRunner.And("User selects following Objects to the Project", ((string)(null)), table3, "And ");
 #line 56
- testRunner.And("User navigates to the \'Users\' left menu item in the Project Scope Changes section" +
+ testRunner.And("User navigates to the \'Users\' left menu item" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
