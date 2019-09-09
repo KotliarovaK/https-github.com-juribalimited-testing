@@ -1,5 +1,6 @@
 ﻿using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Projects;
+using DashworksTestAutomation.Pages.Senior;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
@@ -23,10 +24,11 @@ namespace DashworksTestAutomation.Steps.Projects
             Utils.Verify.IsTrue(page.GetObjectOnPMObjectpageByName(objectName).Displayed(), $"Something went wrong. PMObject page for {objectName} object is not displayed!");
         }
 
+        //TODO move this. Action on Senior part
         [When(@"User navigate to ""(.*)"" tab on PMObject page")]
         public void WhenUserNavigateToTabOnPMObjectPage(string tabName)
         {
-            var tab = _driver.NowAt<ProjectsBaseElements>();
+            var tab = _driver.NowAt<SeniorProjectsBaseElements>();
             tab.GoToTabByName(tabName);
         }
 

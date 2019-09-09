@@ -236,7 +236,7 @@
     <Compile Include="Pages\Evergreen\ItemDetails\AggridHeaderCounterElement.cs" />
     <Compile Include="Pages\Evergreen\ItemDetails\CustomFields\CustomFieldPopup.cs" />
     <Compile Include="Pages\Evergreen\ItemDetails\ItemDetails_TopBarPage.cs" />
-    <Compile Include="Pages\Evergreen\ItemDetails\NavigationElements.cs" />
+    <Compile Include="Pages\Evergreen\ItemDetails\BaseNavigationElements.cs" />
     <Compile Include="Pages\Evergreen\ItemDetails\TabContent.cs" />
     <Compile Include="Pages\Evergreen\LeavePageWarning.cs" />
     <Compile Include="Pages\Evergreen\Dashboards\AddWidgetPage.cs" />
@@ -333,7 +333,7 @@
     <Compile Include="Pages\Projects\CreatingProjects\TeamPropertiesPage.cs" />
     <Compile Include="Pages\Projects\CreatingProjects\TeamsPage.cs" />
     <Compile Include="Pages\Projects\BulkUpdatePage.cs" />
-    <Compile Include="Pages\Projects\ProjectsBaseElements.cs" />
+    <Compile Include="Pages\Senior\SeniorProjectsBaseElements.cs" />
     <Compile Include="Pages\Projects\Projects_Dashboards\Projects_DashboardsGroupsPage.cs" />
     <Compile Include="Pages\Projects\Projects_Dashboards\Projects_DashboardsPage.cs" />
     <Compile Include="Pages\Projects\Projects_PMObjectPage.cs" />

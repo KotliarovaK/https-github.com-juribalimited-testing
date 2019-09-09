@@ -17,7 +17,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueActionDAS
 	When User enters "17430_Automation" text in the Search field for "Automation" column
 	And User clicks content from "Automation" column
 	Then Edit Automation page is displayed to the User
-	When User clicks "Actions" tab
+	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks the "CREATE ACTION" Action button
 	When User enters '17430_Action' text to 'Action Name' textbox
@@ -62,7 +62,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInDeviceScope
 	When User enters "17636_Automation" text in the Search field for "Automation" column
 	And User clicks content from "Automation" column
 	Then Edit Automation page is displayed to the User
-	When User clicks "Actions" tab
+	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks the "CREATE ACTION" Action button
 	When User enters '17636_Action' text to 'Action Name' textbox
@@ -102,7 +102,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInMailboxScop
 	When User enters "17642_Automation" text in the Search field for "Automation" column
 	And User clicks content from "Automation" column
 	Then Edit Automation page is displayed to the User
-	When User clicks "Actions" tab
+	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks the "CREATE ACTION" Action button
 	When User enters '17642_Action' text to 'Action Name' textbox
@@ -144,7 +144,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInApplication
 	When User enters "17643_Automation" text in the Search field for "Automation" column
 	And User clicks content from "Automation" column
 	Then Edit Automation page is displayed to the User
-	When User clicks "Actions" tab
+	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks the "CREATE ACTION" Action button
 	When User enters '17643_Action' text to 'Action Name' textbox
@@ -185,7 +185,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInDevicesScop
 	When User enters "17799_Automation" text in the Search field for "Automation" column
 	And User clicks content from "Automation" column
 	Then Edit Automation page is displayed to the User
-	When User clicks "Actions" tab
+	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks the "CREATE ACTION" Action button
 	When User enters '17799_Action' text to 'Action Name' textbox
@@ -235,7 +235,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedA
 	When User enters "17678_Automation" text in the Search field for "Automation" column
 	And User clicks content from "Automation" column
 	Then Edit Automation page is displayed to the User
-	When User clicks "Actions" tab
+	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks the "CREATE ACTION" Action button
 	When User enters '17678_Action' text to 'Action Name' textbox
@@ -288,7 +288,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueAndOwnerInDev
 	When User enters "17682_Automation" text in the Search field for "Automation" column
 	And User clicks content from "Automation" column
 	Then Edit Automation page is displayed to the User
-	When User clicks "Actions" tab
+	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks the "CREATE ACTION" Action button
 	And User enters '17682_Action' text to 'Action Name' textbox
@@ -342,7 +342,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForRemoveOwnerAndTeamInDevi
 	When User enters "17682_Automation_2" text in the Search field for "Automation" column
 	And User clicks content from "Automation" column
 	Then Edit Automation page is displayed to the User
-	When User clicks "Actions" tab
+	When User navigates to the 'Actions' left menu item
 	#Create Action
 	And User clicks the "CREATE ACTION" Action button
 	And User enters '17682_Action' text to 'Action Name' textbox
@@ -396,7 +396,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedA
 	When User enters "17678_Automation_1" text in the Search field for "Automation" column
 	And User clicks content from "Automation" column
 	Then Edit Automation page is displayed to the User
-	When User clicks "Actions" tab
+	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks the "CREATE ACTION" Action button
 	When User enters '17678_Action' text to 'Action Name' textbox

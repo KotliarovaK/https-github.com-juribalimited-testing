@@ -87,12 +87,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectWithUseEvergreenCapacityUnitsIs
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "13510TestProject" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
+	And User selects 'All Devices' option from 'Scope' autocomplete
 	When User clicks the "CREATE PROJECT" Action button
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "13510TestProject" is displayed to user
-	When User clicks "Capacity" tab
+	When User navigates to the 'Capacity' left menu item
 	And User selects "Use project capacity units" in the "Capacity Units" dropdown
 	And User clicks the "UPDATE" Action button
 	Then Success message with "The project capacity details have been updated" text is displayed on the Projects page
@@ -103,7 +103,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectWithUseEvergreenCapacityUnitsIs
 	Then Cog menu is not displayed on the Admin page
 	When User clicks "Administration" navigation link on the Admin page
 	When User clicks "Evergreen" link on the Admin page
-	When User clicks "Capacity Units" tab
+	When User navigates to the 'Capacity Units' left menu item
 	Then "Capacity Units" page should be displayed to the user
 	When User clicks String Filter button for "Project" column
 	Then "13510TestProject" is not displayed in the filter dropdown

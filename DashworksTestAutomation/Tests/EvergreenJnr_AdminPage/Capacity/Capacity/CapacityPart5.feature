@@ -28,7 +28,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitInAProjectMappedTo
 Scenario: EvergreenJnr_AdminPage_CheckingMapsToEvergreenColumnDisplayedForDifferentProjectTypes
 	When User navigates to "User Evergreen Capacity Project" project details
 	Then Project "User Evergreen Capacity Project" is displayed to user
-	When User clicks "Capacity" tab
+	When User navigates to the 'Capacity' left menu item
 	And User selects "Units" tab on the Project details page
 	When User enters "1" text in the Search field for "Capacity Unit" column
 	Then "Evergreen Capacity Unit 1" content is displayed for "Maps to Evergreen" column
@@ -37,7 +37,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingMapsToEvergreenColumnDisplayedForDiffer
 	When User enters "3" text in the Search field for "Capacity Unit" column
 	Then "Evergreen Capacity Unit 3" content is displayed for "Maps to Evergreen" column
 	When User navigates to "Devices Evergreen Capacity Project" project details
-	When User clicks "Capacity" tab
+	When User navigates to the 'Capacity' left menu item
 	And User selects "Units" tab on the Project details page
 	When User have opened Column Settings for "Capacity Unit" column
 	And User clicks Column button on the Column Settings panel
@@ -73,7 +73,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedApplicationsAreDisplayedCapac
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Evergreen" link on the Admin page
-	When User clicks "Capacity Units" tab
+	When User navigates to the 'Capacity Units' left menu item
 	Then "Capacity Units" page should be displayed to the user
 	When User clicks String Filter button for "Project" column
 	When User selects "Evergreen" checkbox from String Filter with item list on the Admin page
@@ -84,7 +84,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedApplicationsAreDisplayedCapac
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS14967 @Not_Run
 Scenario Outline: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCountersOfDeviceProjectLeadToCorrectFilteredLists
 	When User navigates to "Windows 7 Migration (Computer Scheduled Project)" project details
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	And User selects "Units" tab on the Project details page
 	And User enters "Unassigned" text in the Search field for "Capacity Unit" column
 	And User remembers value in "<ListName>" column

@@ -44,7 +44,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogMessageForDeletedTaskInAction
 	Then Create Automation page is displayed to the User
 	When User enters '17247_Automation' text to 'Automation Name' textbox
 	When User enters '17247' text to 'Description' textbox
-	When User selects "All Devices" in the Scope Automation dropdown
+	When User selects 'All Devices' option from 'Scope' autocomplete
 	When User selects 'Manual' in the 'Run' dropdown
 	When User selects "Active" checkbox on the Automation Page
 	And User clicks the "CREATE" Action button
@@ -90,7 +90,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedU
 	When User enters "DAS17681_Automation" text in the Search field for "Automation" column
 	And User clicks content from "Automation" column
 	Then Edit Automation page is displayed to the User
-	When User clicks "Actions" tab
+	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks the "CREATE ACTION" Action button
 	When User enters 'DAS17681_Action' text to 'Action Name' textbox
@@ -149,7 +149,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedU
 	When User enters "17681_Automation" text in the Search field for "Automation" column
 	And User clicks content from "Automation" column
 	Then Edit Automation page is displayed to the User
-	When User clicks "Actions" tab
+	When User navigates to the 'Actions' left menu item
 	When User clicks the "CREATE ACTION" Action button
 	When User enters '17681_Action' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown

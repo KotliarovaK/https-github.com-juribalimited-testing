@@ -14,7 +14,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedAfterAddin
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "TestName12336" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
+	And User selects 'All Devices' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
 	Then created Project with "TestName12336" name is displayed correctly
 	Then Success message is displayed and contains "The project has been created" text
@@ -23,18 +23,18 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedAfterAddin
 	When User selects "Scope Changes" tab on the Project details page
 	And User expands the object to add
 	And User selects all objects to the Project
-	Then "Devices to add (17225 of 17225 selected)" is displayed to the user in the Project Scope Changes section
+	Then "Devices to add (17279 of 17279 selected)" is displayed to the user in the Project Scope Changes section
 	When User cancels the selection objects in the Project
-	Then "Devices to add (0 of 17225 selected)" is displayed to the user in the Project Scope Changes section
-	When User enters "111" text in the Object Search field
+	Then "Devices to add (0 of 17279 selected)" is displayed to the user in the Project Scope Changes section
+	When User enters '111' text to 'Search' textbox
 	And User selects all objects to the Project
-	Then "Devices to add (5 of 17225 selected)" is displayed to the user in the Project Scope Changes section
+	Then "Devices to add (5 of 17279 selected)" is displayed to the user in the Project Scope Changes section
 	When User cancels the selection objects in the Project
 	And User selects following Objects
 	| Objects         |
 	| 07RJRCQQJNBJIJQ |
 	| 0CFHJY5A8WLUB0J |
-	Then "Devices to add (2 of 17225 selected)" is displayed to the user in the Project Scope Changes section
+	Then "Devices to add (2 of 17279 selected)" is displayed to the user in the Project Scope Changes section
 	When User clicks the "UPDATE ALL CHANGES" Action button
 	And User clicks the "UPDATE PROJECT" Action button
 	Then Success message is displayed and contains "2 objects queued for onboarding, 0 objects offboarded" text
@@ -50,7 +50,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCancelButtonIsDisplayedWithCorrectColo
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "TestName12891" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
+	And User selects 'All Devices' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
 	Then created Project with "TestName12891" name is displayed correctly
 	Then Success message is displayed and contains "The project has been created" text
@@ -73,14 +73,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTheFilterSearchIsNotCaseSensitive
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "TESTNAME_capital letters" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
+	And User selects 'All Devices' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
 	Then created Project with "TESTNAME_capital letters" name is displayed correctly
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "testname_small letters" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
+	And User selects 'All Devices' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
 	Then created Project with "testname_small letters" name is displayed correctly
 	Then Success message is displayed and contains "The project has been created" text
@@ -107,7 +107,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDevicesToAddAndRemoveAreChangingApprop
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "DevicesProject" in the "Project Name" field
-	And User selects "StaticList6527" in the Scope Project dropdown
+	And User selects 'StaticList6527' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link

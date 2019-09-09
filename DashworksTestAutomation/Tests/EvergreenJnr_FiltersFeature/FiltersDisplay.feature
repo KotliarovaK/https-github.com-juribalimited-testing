@@ -1195,7 +1195,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatParticularProjectCapacityUnitFilterShow
 	When User clicks Admin on the left-hand menu
 	And User clicks the "CREATE PROJECT" Action button
 	And User enters "13201" in the "Project Name" field
-	And User selects "All Mailboxes" in the Scope Project dropdown
+	And User selects 'All Mailboxes' option from 'Scope' autocomplete
 	When User selects "Evergreen" in the "Mode" dropdown
 	When User clicks Create button on the Create Project page
 	And User clicks "Devices" on the left-hand menu
@@ -1238,7 +1238,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatParticularProjectCapacityUnitFilterShow
 Scenario: EvergreenJnr_AllLists_CheckThatDeletedBucketIsNotAvailableInEvergreenBucketFilter
 	When User clicks Admin on the left-hand menu
 	When User clicks "Evergreen" link on the Admin page
-	When User clicks "Buckets" tab
+	When User navigates to the 'Buckets' left menu item
 	And User clicks the "CREATE EVERGREEN BUCKET" Action button
 	And User enters "Bucket_DAS12940_to_be_deleted" in the "Bucket Name" field
 	And User selects "Admin IT" team in the Team dropdown on the Buckets page
@@ -1273,7 +1273,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatDeletedCapacityUnitIsNotAvailableInEver
 	| Capacity_Unit_DAS13201_to_be_deleted | 13201       | false     |
 	And User clicks Admin on the left-hand menu
 	And User clicks "Evergreen" link on the Admin page
-	And User clicks "Capacity Units" tab
+	And User navigates to the 'Capacity Units' left menu item
 	And User select "Capacity Unit" rows in the grid
 	| SelectedRowsName                     |
 	| Capacity_Unit_DAS13201_to_be_deleted |

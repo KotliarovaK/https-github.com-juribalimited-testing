@@ -25,7 +25,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToDeleteParticularCapacitySl
 	| Project                               | SlotName          | DisplayName |
 	| *Project K-Computer Scheduled Project | CapacitySlot13866 | DAS13866    |
 	When User navigates to "*Project K-Computer Scheduled Project" project details
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	And User selects "Slots" tab on the Project details page
 	When User select "Capacity Slot" rows in the grid
 	| SelectedRowsName  |
@@ -40,7 +40,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToDeleteParticularCapacitySl
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS12921
 Scenario: EvergreenJnr_AdminPage_ChecksThatSpellingIsCorrectInCapacitySlotsDeletionMessages
 	When User navigates to "User Evergreen Capacity Project" project details
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	And User selects "Slots" tab on the Project details page
 	When User select "Capacity Slot" rows in the grid
 	| SelectedRowsName |
@@ -72,8 +72,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsLinkFromUnitGridLeadsToCorrectFil
 	| TestName13835 | Slot3    | Slot 3      | Capacity Unit 2 |                 |
 	| TestName13835 | Slot4    | Slot 4      |                 | Teams and Paths |
 	#act1
-	And User clicks "Capacity" tab
-	And User clicks "Units" tab
+	And User navigates to the 'Capacity' left menu item
+	And User navigates to the 'Units' left menu item
 	And User enters "Unassigned" text in the Search field for "Capacity Unit" column
 	Then "1" content is displayed in "Slots" column
 	When User clicks content from "Slots" column
@@ -83,8 +83,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsLinkFromUnitGridLeadsToCorrectFil
 	| slots |
 	| Slot1 |
 	#act2
-	When User clicks "Capacity" tab
-	And User clicks "Units" tab
+	When User navigates to the 'Capacity' left menu item
+	And User navigates to the 'Units' left menu item
 	And User enters "Capacity Unit 1" text in the Search field for "Capacity Unit" column
 	Then "2" content is displayed in "Slots" column
 	When User clicks content from "Slots" column
@@ -95,8 +95,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsLinkFromUnitGridLeadsToCorrectFil
 	| Slot1 |
 	| Slot2 |
 	#act3
-	When User clicks "Capacity" tab
-	And User clicks "Units" tab
+	When User navigates to the 'Capacity' left menu item
+	And User navigates to the 'Units' left menu item
 	And User enters "Capacity Unit 2" text in the Search field for "Capacity Unit" column
 	Then "2" content is displayed in "Slots" column
 	When User clicks content from "Slots" column

@@ -25,13 +25,13 @@ Scenario: EvergreenJnr_AdminPage_CheckActionGridInAutomations
 	| All Users        |
 	| All Applications |
 	| All Mailboxes    |
-	When User selects "All Devices" in the Scope Automation dropdown
+	When User selects 'All Devices' option from 'Scope' autocomplete
 	When User selects "Active" checkbox on the Automation Page
 	When User selects "Stop on failed action" checkbox on the Automation Page
 	Then "CREATE" Action button is disabled
 	When User selects 'Manual' in the 'Run' dropdown
 	And User clicks the "CREATE" Action button
-	When User clicks "Actions" tab
+	When User navigates to the 'Actions' left menu item
 	Then "No actions found" message is displayed on the Admin Page
 	Then "CREATE ACTION" Action button is active
 
@@ -50,7 +50,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateAutomationFieldsIsNotPopulatedWi
 	| Scheduled: Dashworks Daily |
 	When User enters 'DAS16801_Automation' text to 'Automation Name' textbox
 	When User enters 'DAS16801' text to 'Description' textbox
-	When User selects "1803 Rollout" in the Scope Automation dropdown
+	When User selects '1803 Rollout' option from 'Scope' autocomplete
 	When User selects 'Manual' in the 'Run' dropdown
 	When User selects "Active" checkbox on the Automation Page
 	And User clicks the "CREATE" Action button
@@ -62,7 +62,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateAutomationFieldsIsNotPopulatedWi
 	Then "Active" checkbox is unchecked on the Admin page
 	When User enters 'DAS16801_Automation_Second' text to 'Automation Name' textbox
 	When User enters 'DAS16801' text to 'Description' textbox
-	When User selects "1803 Rollout" in the Scope Automation dropdown
+	When User selects '1803 Rollout' option from 'Scope' autocomplete
 	When User selects 'Manual' in the 'Run' dropdown
 	When User selects "Active" checkbox on the Automation Page
 	And User clicks the "CREATE" Action button

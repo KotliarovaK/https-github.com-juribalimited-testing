@@ -5,6 +5,7 @@ using DashworksTestAutomation.Pages.Projects;
 using DashworksTestAutomation.Pages.Projects.CreatingProjects;
 using DashworksTestAutomation.Pages.Projects.CreatingProjects.Capacity;
 using DashworksTestAutomation.Pages.Projects.CreatingProjects.SelfService;
+using DashworksTestAutomation.Pages.Senior;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
@@ -58,10 +59,11 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
             page.SelectTheTypeOfDateByName(checkboxName);
         }
 
+        //TODO move this. Action on Senior part
         [When(@"User selects ""(.*)"" Task")]
         public void WhenUserSelectsTask(string checkboxName)
         {
-            var page = _driver.NowAt<ProjectsBaseElements>();
+            var page = _driver.NowAt<SeniorProjectsBaseElements>();
             page.SelectCheckboxByName(checkboxName);
         }
 
