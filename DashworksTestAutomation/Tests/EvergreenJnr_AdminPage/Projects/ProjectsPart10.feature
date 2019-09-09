@@ -28,19 +28,19 @@ Scenario Outline: EvergreenJnr_ChangingApplicationsScopeListToAnotherList
 	| DevicesProject4 | All Devices | None            | Standalone Project |
 	And User selects "Scope" tab on the Project details page
 	And User selects "Scope Changes" tab on the Project details page
-	When User navigates to the 'Applications' left menu item
+	When User navigates to the 'Applications' tab on Scope Changes page
 	Then "Applications to add (0 of 2129 selected)" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page
 	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
 	And User selects "<ChangingToList1>" in the Scope Project details
 	And User selects "Scope Changes" tab on the Project details page
-	When User navigates to the 'Applications' left menu item
+	When User navigates to the 'Applications' tab on Scope Changes page
 	Then "<ApplicationsToAdd1>" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page
 	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
 	And User selects "<ChangingToList2>" in the Scope Project details
 	And User selects "Scope Changes" tab on the Project details page
-	When User navigates to the 'Applications' left menu item
+	When User navigates to the 'Applications' tab on Scope Changes page
 	Then "<ApplicationsToAdd2>" is displayed to the user in the Project Scope Changes section
 	#Then There are no errors in the browser console
 
@@ -149,19 +149,19 @@ Scenario Outline: EvergreenJnr_ChangingApplicationScopeListToAnotherListForUserP
 	| DevicesProject9 | All Users | None            | Standalone Project |
 	And User selects "Scope" tab on the Project details page
 	And User selects "Scope Changes" tab on the Project details page
-	When User navigates to the 'Applications' left menu item
+	When User navigates to the 'Applications' tab on Scope Changes page
 	Then "Applications to add (0 of 2081 selected)" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page
 	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
 	And User selects "<ChangingToList1>" in the Scope Project details
 	And User selects "Scope Changes" tab on the Project details page
-	When User navigates to the 'Applications' left menu item
+	When User navigates to the 'Applications' tab on Scope Changes page
 	Then "<ObjectsToAdd1>" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page
 	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
 	And User selects "<ChangingToList2>" in the Scope Project details
 	And User selects "Scope Changes" tab on the Project details page
-	When User navigates to the 'Applications' left menu item
+	When User navigates to the 'Applications' tab on Scope Changes page
 	Then "<ObjectsToAdd2>" is displayed to the user in the Project Scope Changes section
 	Then There are no errors in the browser console
 

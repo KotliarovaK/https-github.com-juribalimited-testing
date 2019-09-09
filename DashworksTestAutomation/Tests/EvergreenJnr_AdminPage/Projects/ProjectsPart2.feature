@@ -20,7 +20,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedAfterUpdati
 	Then "Applications to add (0 of 2129 selected)" is displayed to the user in the Project Scope Changes section
 	When User expands the object to add 
 	Then Objects are displayed in alphabetical order on the Admin page
-	When User selects following Objects
+	When User selects following Objects to the Project
 	| Objects                     |
 	| 20040610sqlserverck (1.0.0) |
 	| 7zip                        |
@@ -80,7 +80,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedCheckboxIsSelectedAfterSwitchi
 	| 00HA7MKAVVFDAV |
 	Then Update Project button is active
 	And "Devices to add (1 of 17279 selected)" is displayed to the user in the Project Scope Changes section
-	When User navigates to the 'Users' left menu item
+	When User navigates to the 'Users' tab on Scope Changes page
 	When User expands the object to add
 	Then Objects are displayed in alphabetical order on the Admin page
 	When User selects following Objects
@@ -104,7 +104,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedP
 	| 00I0COBFWHOF27 |
 	When User clicks the "UPDATE PROJECT" Action button
 	Then Success message is displayed and contains "2 objects queued for onboarding, 0 objects offboarded" text
-	When User navigates to the 'Users' left menu item
+	When User navigates to the 'Users' tab on Scope Changes page
 	And User adds following Objects to the Project
 	| Objects                       |
 	| AAG081456 (Melanie Z. Fowler) |

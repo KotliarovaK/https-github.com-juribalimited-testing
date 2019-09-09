@@ -30,7 +30,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedAfterAddin
 	And User selects all objects to the Project
 	Then "Devices to add (5 of 17279 selected)" is displayed to the user in the Project Scope Changes section
 	When User cancels the selection objects in the Project
-	And User selects following Objects
+	And User selects following Objects to the Project
 	| Objects         |
 	| 07RJRCQQJNBJIJQ |
 	| 0CFHJY5A8WLUB0J |

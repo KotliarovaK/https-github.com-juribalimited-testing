@@ -52,7 +52,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCo
 	When User selects "Scope Changes" tab on the Project details page
 	And User navigates to the 'Applications' left menu item
 	Then "Applications to add (0 of 2081 selected)" is displayed to the user in the Project Scope Changes section
-	When User navigates to the 'Devices' left menu item
+	When User navigates to the 'Devices' tab on Scope Changes page
 	Then "Devices to add (0 of 16819 selected)" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page
 	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
@@ -69,7 +69,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCo
 	When User selects "Scope Changes" tab on the Project details page
 	And User navigates to the 'Applications' left menu item
 	Then "Applications to add (0 of 247 selected)" is displayed to the user in the Project Scope Changes section
-	When User navigates to the 'Devices' left menu item
+	When User navigates to the 'Devices' tab on Scope Changes page
 	Then "Devices to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
 	When User navigates to the 'Details' left menu item
 	And User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown

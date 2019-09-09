@@ -104,6 +104,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
             if (placeholder.Equals("Action Name"))
                 _automationActions.Value.Add(text);
+
+            _driver.WaitForDataLoading();
         }
 
         [Then(@"'(.*)' content is displayed in '(.*)' textbox")]

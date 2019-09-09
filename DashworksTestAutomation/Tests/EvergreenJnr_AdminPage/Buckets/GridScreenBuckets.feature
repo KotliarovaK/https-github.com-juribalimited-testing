@@ -64,7 +64,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSelectedRowsCountDisplayingOnBucketsGrids
 	And User clicks content from "Bucket" column
 	And User selects all rows on the grid
 	Then User sees "16937" of "16937" rows selected label
-	When User navigates to the 'Users' left menu item
+	When User navigates to the 'Users' tab on Scope Changes page
 	And User selects all rows on the grid
 	Then User sees "41339" of "41339" rows selected label
 	When User navigates to the 'Mailboxes' left menu item

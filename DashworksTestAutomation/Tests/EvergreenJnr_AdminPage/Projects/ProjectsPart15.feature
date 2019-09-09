@@ -32,7 +32,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedBucketsIsDisplayedForOnboarded
 	Then Project "UsersProject3" is displayed to user
 	When user selects "UsersProject3Group" in the Bucket dropdown
 	And User expands the object to add 
-	And User selects following Objects
+	And User selects following Objects to the Project
 	| Objects                               |
 	| 003F5D8E1A844B1FAA5 (Hunter, Melanie) |
 	And User clicks the "UPDATE ALL CHANGES" Action button
@@ -107,7 +107,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectScopeChangesIsLoadedSuc
 	Then "<ObjectsToAdd1>" is displayed to the user in the Project Scope Changes section
 	When User navigates to the '<ScopeChanges1>' left menu item
 	Then "<ObjectsToAdd2>" is displayed to the user in the Project Scope Changes section
-	When User navigates to the 'Applications' left menu item
+	When User navigates to the 'Applications' tab on Scope Changes page
 	Then "<ObjectsToAdd3>" is displayed to the user in the Project Scope Changes section
 	Then There are no errors in the browser console
 
@@ -134,7 +134,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatItemsToAddValuesAreNotCachedAfterScope
 	And User selects "Scope Changes" tab on the Project details page
 	And User navigates to the 'Applications' left menu item
 	Then "Applications to add (0 of 212 selected)" is displayed to the user in the Project Scope Changes section
-	When User navigates to the 'Users' left menu item
+	When User navigates to the 'Users' tab on Scope Changes page
 	Then "Users to add (0 of 14629 selected)" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page
 	And User navigates to the "Application Scope" tab in the Scope section on the Project details page
@@ -144,7 +144,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatItemsToAddValuesAreNotCachedAfterScope
 	And User selects "Scope Changes" tab on the Project details page
 	And User navigates to the 'Applications' left menu item
 	Then "Applications to add (0 of 1059 selected)" is displayed to the user in the Project Scope Changes section
-	When User navigates to the 'Users' left menu item
+	When User navigates to the 'Users' tab on Scope Changes page
 	Then "Users to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS13428 @Cleanup

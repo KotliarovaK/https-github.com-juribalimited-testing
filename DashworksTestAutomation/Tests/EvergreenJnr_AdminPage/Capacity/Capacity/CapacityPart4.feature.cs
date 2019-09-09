@@ -130,7 +130,7 @@ this.FeatureBackground();
             table2.AddRow(new string[] {
                         "1A701E05916148A6A3F (Fairlchild, Sara)"});
 #line 16
- testRunner.And("User selects following Objects", ((string)(null)), table2, "And ");
+ testRunner.And("User selects following Objects to the Project", ((string)(null)), table2, "And ");
 #line 19
  testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 20

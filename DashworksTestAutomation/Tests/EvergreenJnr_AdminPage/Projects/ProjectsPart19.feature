@@ -55,7 +55,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	When User selects "Scope Changes" tab on the Project details page
 	And User expands the object to add
 	Then Objects are displayed in alphabetical order on the Admin page
-	When User selects following Objects
+	When User selects following Objects to the Project
 	| Objects         |
 	| 00HA7MKAVVFDAV  |
 	| 001PSUMZYOW581  |

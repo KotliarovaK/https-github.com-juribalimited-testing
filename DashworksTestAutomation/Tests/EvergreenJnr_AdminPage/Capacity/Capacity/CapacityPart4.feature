@@ -13,7 +13,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlMessageAppearsWhenDefaultLang
 	And User navigates to the 'Scope' left menu item
 	And User selects "Scope Changes" tab on the Project details page
 	And User expands the object to add
-	And User selects following Objects
+	And User selects following Objects to the Project
 	| Objects                                |
 	| 1A701E05916148A6A3F (Fairlchild, Sara) |
 	And User clicks the "UPDATE ALL CHANGES" Action button

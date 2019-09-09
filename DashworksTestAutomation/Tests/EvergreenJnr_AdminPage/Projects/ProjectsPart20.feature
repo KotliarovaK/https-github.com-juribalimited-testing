@@ -23,7 +23,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatBlueBannerIsDisplayedWithCorrectlyTex
 	When User selects "Scope Changes" tab on the Project details page
 	Then open tab in the Project Scope Changes section is active
 	When User expands the object to add 
-	And User selects following Objects
+	And User selects following Objects to the Project
 	| Objects         |
 	| 00K4CEEQ737BA4L |
 	| 00YWR8TJU4ZF8V  |
@@ -37,7 +37,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatBlueBannerIsDisplayedWithCorrectlyTex
 	When User selects all objects to the Project
 	And User navigates to the 'Applications' left menu item
 	And User expands the object to add 
-	And User selects following Objects
+	And User selects following Objects to the Project
 	| Objects                                                                       |
 	| "WPF/E" (codename) Community Technology Preview (Feb 2007) (0.8.5.0)          |
 	| %SQL_PRODUCT_SHORT_NAME% Data Tools - BI for Visual Studio 2013 (12.0.2430.0) |

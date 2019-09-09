@@ -27,7 +27,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEmptyGreenAlertLineIsNotDisplayedOnPro
 	Then All Associations are disabled
 	When User selects "Scope Changes" tab on the Project details page
 	Then Warning message is not displayed on the Admin page
-	When User navigates to the 'Applications' left menu item
+	When User navigates to the 'Applications' tab on Scope Changes page
 	Then "Applications to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page
 	And User navigates to the "Application Scope" tab in the Scope section on the Project details page
@@ -35,7 +35,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEmptyGreenAlertLineIsNotDisplayedOnPro
 	Then All Associations are selected by default
 	Then Scope List dropdown is active
 	When User selects "Scope Changes" tab on the Project details page
-	When User navigates to the 'Applications' left menu item
+	When User navigates to the 'Applications' tab on Scope Changes page
 	Then "Applications to add (0 of 2081 selected)" is displayed to the user in the Project Scope Changes section
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12155 @Cleanup @Project_Creation_and_Scope @Projects
@@ -87,7 +87,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThat500ISEInvalidColumnNameIsNotDisplayedW
 	When User selects "Scope" tab on the Project details page
 	And User selects "Scope Changes" tab on the Project details page
 	And User expands the object to add 
-	And User selects following Objects
+	And User selects following Objects to the Project
 	| Objects         |
 	| 0QLZFK7RHMWJLQM |
 	| 0RGBQGA7XOOPJSW |

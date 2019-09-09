@@ -33,7 +33,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUsersToAddAndRemoveAreChangingAppropri
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Users to add (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
 	When User expands the object to add 
-	And User selects following Objects
+	And User selects following Objects to the Project
 	| Objects                                   |
 	| 000F977AC8824FE39B8 (Spruill, Shea)       |
 	| 002B5DC7D4D34D5C895 (Collor, Christopher) |
