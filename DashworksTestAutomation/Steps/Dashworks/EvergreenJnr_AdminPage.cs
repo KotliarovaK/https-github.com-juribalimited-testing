@@ -1299,16 +1299,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var createProjectElement = _driver.NowAt<ProjectsPage>();
             createProjectElement.ScopeProjectField.Click();
             createProjectElement.ScopeProjectField.SendKeys("All");
-            var sectionName = createProjectElement.ScopeDropdownSection.Select(x => x.Text).ToList();
-            var listName = createProjectElement.ScopeDropdownSectionList.Select(x => x.Text).ToList();
-            foreach (var row in table.Rows)
-            {
-                for (var i = 0; i < createProjectElement.ScopeDropdownSection.Count; i++)
-                    if (sectionName[i].Equals(row["Section"]))
-                    {
-                        Utils.Verify.AreEqual(listName[i], row["ListName"], "PLEASE ADD EXCEPTION MESSAGE");
-                    }
-            }
+            //var sectionName = createProjectElement.ScopeDropdownSection.Select(x => x.Text).ToList();
+            var listNames = createProjectElement.ScopeDropdownSectionList.Select(x => x.Text).ToList();
+            var expectedlistName = table.Rows.SelectMany(row => row.Values).ToList();
+            Utils.Verify.AreEqual(listNames, expectedlistName, "Main lists are not displayed correctly");
         }
 
         [Then(@"following lists are displayed in the Scope dropdown:")]
@@ -1705,10 +1699,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User moves ""(.*)"" automation to ""(.*)"" automation")]
         public void WhenUserMovesAutomationToAutomation(string automation, string moveToautomation)
         {
-            var page = _driver.NowAt<AutomationsPage>();
-            var slotFrom = page.GetMoveButtonBySlotName(automation);
-            var slotTo = page.GetMoveButtonBySlotName(moveToautomation);
-            _driver.DragAndDrop(slotFrom, slotTo);
+            var page = _driver.NowAt<AutomationsGridPage>();
+            var automationFrom = page.GetMoveButtonByAutomationName(automation);
+            var automationTo = page.GetMoveButtonByAutomationName(moveToautomation);
+            _driver.DragAndDrop(automationFrom, automationTo);
         }
 
         [Then(@"Alert message is displayed and contains ""(.*)"" text")]
