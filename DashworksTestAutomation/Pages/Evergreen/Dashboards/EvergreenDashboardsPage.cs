@@ -455,7 +455,7 @@ namespace DashworksTestAutomation.Pages
 
         public IWebElement GetTopBarActionButton(string buttonName)
         {
-            var cardWidget = By.XPath($".//div[@class='action-container']/button//i[text()='{buttonName}']");
+            var cardWidget = By.XPath($".//div[@class='action-container']/button//i[text()='{buttonName.ToLower()}']");
             Driver.WaitForDataLoading();
             return Driver.FindElement(cardWidget);
         }

@@ -5,8 +5,10 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15200
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15200 @DAS17754
 Scenario: EvergreenJnr_DashboardsPage_CheckPrintStylesOnTheDashboardsPage
+	Then User sees "Print" tooltip for "Print" on the Dashboard
+	And User sees "Refresh" tooltip for "Refresh" on the Dashboard
 	When User clicks "print"  button on the Dashboards page
 	Then Print Preview is displayed to the User
 	When User selects "A4" option in the "Paper Size" dropdown for Print Preview Settings
@@ -482,3 +484,17 @@ Scenario: EvergreenJnr_DashboardsPage_CheckDashboardTranslationsWork1
 	When User clicks Dashboards Details icon on Dashboards page
 	And User expands the list of shared lists
 	Then User sees table headers as "Widget" and "Liste"
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17985 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatItsNotPossibleToDeleteWidgetWhenEditModeIsOff
+	When Dashboard with "Dashboard for DAS17985" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User creates new Widget
+	| WidgetType | Title             | List             | SplitBy | AggregateFunction | AggregateBy | OrderBy   | TableOrientation | MaxValues | ShowLegend |
+	| Pie        | WidgetForDAS17985 | All Applications | Vendor  | Count             |             | Count ASC |                  | 10        | true       |
+	And User clicks Ellipsis menu for "WidgetForDAS17985" Widget on Dashboards page
+	And User clicks "Delete" item from Ellipsis menu on Dashboards page
+	Then User sees "WidgetForDAS17985 will be permanently deleted" text in warning message on Dashboards page
+	When User clicks Edit mode trigger on Dashboards page
+	Then Delete widget warning message is displayed on Dashboards page

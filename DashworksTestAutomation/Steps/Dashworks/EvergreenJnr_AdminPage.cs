@@ -365,21 +365,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<ProjectsPage>();
             _driver.WaitForDataLoading();
-            Utils.Verify.IsTrue(page.ActiveProjectByName(projectName), $"{projectName} is not displayed on the Project page");
-        }
-
-        [When(@"User clicks ""(.*)"" record in the grid")]
-        public void WhenUserClicksRecordInThenGrid(string recordName)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            page.SelectRecordByName(recordName);
+            Verify.IsTrue(page.ActiveProjectByName(projectName), $"{projectName} is not displayed on the Project page");
         }
 
         [Then(@"field for Date column is empty")]
         public void ThenFieldForDateColumnIsEmpty()
         {
             var page = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsEmpty(page.DateSearchField.GetAttribute("value"), "Date Search textbox is not empty");
+            Verify.IsEmpty(page.DateSearchField.GetAttribute("value"), "Date Search textbox is not empty");
         }
 
         [When(@"User selects following date filter on the Projects page")]
@@ -744,11 +737,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             createProjectElement.SelectObjectForTeamCreation(optionName);
         }
 
+        //TODO remove this. Replace by already created generic method
         [Then(@"""(.*)"" content is displayed in ""(.*)"" field")]
         public void ThenContentIsDisplayedInField(string text, string fieldName)
         {
-            var page = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsTrue(page.GetTextInFieldByFieldName(fieldName).GetAttribute("value").Contains(text),
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Utils.Verify.IsTrue(page.GetNamedTextbox(fieldName).GetAttribute("value").Contains(text),
                 $"Text in {fieldName} field is different");
         }
 
@@ -912,13 +906,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var teamElement = _driver.NowAt<TeamsPage>();
             Utils.Verify.IsTrue(teamElement.AppropriateTeamName(teamName), $"{teamName} is not displayed on the Teams page");
-        }
-
-        [When(@"User clicks ""(.*)"" tab")]
-        public void ThenUserClicksTab(string tabName)
-        {
-            var page = _driver.NowAt<TeamsPage>();
-            page.SelectTabByName(tabName);
         }
 
         [Then(@"Create Team button is disabled")]
@@ -1383,19 +1370,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         #endregion
 
-        [When(@"User enters ""(.*)"" text in the Object Search field")]
-        public void WhenUserEntersTextInTheObjectSearchField(string text)
-        {
-            var searchElement = _driver.NowAt<BaseGridPage>();
-            searchElement.GetObjectField(text);
-        }
-
         [Then(@"following items are still selected")]
         public void ThenFollowingItemsAreStillSelected()
         {
             var projectElement = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsTrue(projectElement.PlusButton.Displayed(), "Items are not selected");
-            Utils.Verify.IsTrue(projectElement.CheckedSomeItemCheckbox.Displayed(), "Item checkbox is not checked");
+            Verify.IsTrue(projectElement.PlusButton.Displayed(), "Items are not selected");
+            Verify.IsTrue(projectElement.CheckedSomeItemCheckbox.Displayed(), "Item checkbox is not checked");
         }
 
         [Then(@"no items are selected")]
@@ -1452,14 +1432,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             try
             {
                 _driver.WaitForDataLoading();
-                Utils.Verify.IsTrue(page.GetCreatedProjectName(projectName), $"The {projectName} Project is not found");
+                Verify.IsTrue(page.GetCreatedProjectName(projectName), $"The {projectName} Project is not found");
             }
             catch (Exception)
             {
                 Thread.Sleep(30000);
                 _driver.Navigate().Refresh();
                 _driver.WaitForDataLoading();
-                Utils.Verify.IsTrue(page.GetCreatedProjectName(projectName), $"The {projectName} Project is not found");
+                Verify.IsTrue(page.GetCreatedProjectName(projectName), $"The {projectName} Project is not found");
             }
         }
 
@@ -1467,26 +1447,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenImportProjectButtonIsNotDisplayed()
         {
             var button = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsFalse(button.ImportProjectButton.Displayed(), "Import Project button is displayed");
-        }
-
-        [When(@"User selects ""(.*)"" in the Scope Project dropdown")]
-        [When(@"User selects ""(.*)"" in the Scope Automation dropdown")]
-        public void ThenUserSelectsInTheScopeProjectDropdown(string objectName)
-        {
-            var createProjectElement = _driver.NowAt<ProjectsPage>();
-            createProjectElement.ScopeProjectField.Click();
-            createProjectElement.SelectObjectForProjectCreation(objectName);
+            Verify.IsFalse(button.ImportProjectButton.Displayed(), "Import Project button is displayed");
         }
 
         [Then(@"User sees blue message ""(.*)"" on Create Project page")]
         public void ThenUserSeesMessageInformingAboutArchivedDevicesInList(string message)
         {
             var createProjectElement = _driver.NowAt<ProjectsPage>();
-            Utils.Verify.That(createProjectElement.ArchivedDevicesMessage.Text, Is.EqualTo(message), "Archived message text is not displayed");
+            Verify.That(createProjectElement.ArchivedDevicesMessage.Text, Is.EqualTo(message), "Archived message text is not displayed");
 
             var bgColor = createProjectElement.ArchivedDevicesMessage.GetCssValue("color");
-            Utils.Verify.That(bgColor, Is.EqualTo("rgba(49, 122, 193, 1)"), "Archived message text is in different color");
+            Verify.That(bgColor, Is.EqualTo("rgba(49, 122, 193, 1)"), "Archived message text is in different color");
         }
 
         [Then(@"""(.*)"" content is displayed in the Scope Automation dropdown")]
@@ -1528,6 +1499,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
+        //TODO should be deleted and replaced by WhenUserSelectsValueForDropdownOnActionPanel
         [When(@"User selects ""(.*)"" in the Scope Project details")]
         public void WhenUserSelectsInTheScopeProjectDetails(string listName)
         {
@@ -1921,29 +1893,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<Capacity_SlotsPage>();
             _driver.WaitForElementToBeDisplayed(page.MoveToPositionAlert);
-            Utils.Verify.Contains(text, page.MoveToPositionAlert.Text, "Alert Message is not displayed");
-        }
-
-        [When(@"User enters ""(.*)"" date in the ""(.*)"" field")]
-        public void WhenUserEntersDateInTheField(string date, string fieldName)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            page.AddDateByFieldName(fieldName, date);
-            page.BodyContainer.Click();
+            Verify.Contains(text, page.MoveToPositionAlert.Text, "Alert Message is not displayed");
         }
 
         [Then(@"Create Override Date is displayed correctly")]
         public void ThenCreateOverrideDateIsDisplayedCorrectly()
         {
             var page = _driver.NowAt<Capacity_OverrideDatesPage>();
-            Utils.Verify.IsTrue(page.CreateOverrideDatePageTitle.Displayed, "Create Override Date title is not displayed");
+            Verify.IsTrue(page.CreateOverrideDatePageTitle.Displayed, "Create Override Date title is not displayed");
         }
 
         [Then(@"""(.*)"" text in search field is displayed correctly for ""(.*)"" column")]
         public void ThenTextInSearchFieldIsDisplayedCorrectlyForColumn(string searchText, string columnName)
         {
             var page = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.AreEqual(page.GetTextInSearchFieldByColumnName(columnName).GetAttribute("value"), searchText,
+            Verify.AreEqual(page.GetTextInSearchFieldByColumnName(columnName).GetAttribute("value"), searchText,
                 "Text in search field is different");
         }
 
@@ -1953,7 +1917,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var action = _driver.NowAt<BaseGridPage>();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var actualList = action.MenuTabOptionListOnAdminPage.Select(value => value.Text).ToList();
-            Utils.Verify.AreEqual(expectedList, actualList, "Menu options are different");
+            Verify.AreEqual(expectedList, actualList, "Menu options are different");
         }
 
         //TODO move to the BaseGrid
@@ -2663,24 +2627,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<ProjectsPage>();
             _driver.WaitForDataLoading();
 
-            int zIndexExpend = Convert.ToInt32(page.ExpandSidePanelIcon.GetCssValue("z-index"));
-            int zIndexTabs = Convert.ToInt32(page.ScopeChangesTabsHeader.GetCssValue("z-index"));
+            int zIndexExpend = Convert.ToInt32(page.SidePanelIcon.GetCssValue("z-index"));
 
-            Utils.Verify.That(zIndexExpend, Is.GreaterThan(zIndexTabs),
-                $"Wrong overlapping: zIndex: {zIndexExpend} < zIndex: {zIndexTabs}");
-        }
-
-        [Then(@"Button toggle zindex is greater than notification zindex")]
-        public void ThenButtonToggleZindexIsGreaterThanNotificationZindex()
-        {
-            var page = _driver.NowAt<ProjectsPage>();
-            _driver.WaitForDataLoading();
-
-            int zIndexExpend = Convert.ToInt32(page.ExpandSidePanelIcon.GetCssValue("z-index"));
-            int zIndexMessage = Convert.ToInt32(page.ScopeChangesNotificationsPane.GetCssValue("z-index"));
-
-            Utils.Verify.That(zIndexExpend, Is.GreaterThan(zIndexMessage),
-                $"Wrong overlapping: zIndex: {zIndexExpend} < zIndex: {zIndexMessage}");
+            Utils.Verify.That(zIndexExpend, Is.GreaterThan(2),
+                $"Wrong overlapping: zIndex: {zIndexExpend} < zIndex: {2}");
         }
 
         private string GetProjectId(string projectName)

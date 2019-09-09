@@ -12,41 +12,41 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	When User perform search by "00RUUMAH9OZN9A"
 	And User click content from "Hostname" column
 	Then Details page for "00RUUMAH9OZN9A" item is displayed to the user
-	When User navigates to the "Users" main-menu on the Details page
-	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
-	Then 'OUT OF SCOPE' content is displayed in the 'Readiness' column
-	Then 'TRUE' content is displayed in the 'Owner' column
-	Then 'NONE' content is displayed in the 'Application Readiness' column
-	Then 'GREY' content is displayed in the 'Pre-Migration' column
-	Then 'GREY' content is displayed in the 'Migration' column
-	Then '' content is displayed in the 'Email Controls' column
-	Then 'GREY' content is displayed in the 'Communication' column
-	When User clicks String Filter button for "Readiness" column
+	When User navigates to the 'Users' left menu item
+	And User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
+	Then 'OUT OF SCOPE' content is displayed in the 'Stage for User Tasks' column
+	And 'TRUE' content is displayed in the 'Owner' column
+	And 'NONE' content is displayed in the 'Application Readiness' column
+	And 'GREY' content is displayed in the 'Pre-Migration' column
+	And 'GREY' content is displayed in the 'Migration' column
+	And '' content is displayed in the 'Email Controls' column
+	And 'GREY' content is displayed in the 'Communication' column
+	When User clicks String Filter button for "Stage for User Tasks" column
 	Then following String Values are displayed in the filter on the Details Page
 	| Values       |
 	| OUT OF SCOPE |
-	When User closes Checkbox filter for "Readiness" column
-	When User clicks String Filter button for "Owner" column
+	When User closes Checkbox filter for "Stage for User Tasks" column
+	And User clicks String Filter button for "Owner" column
 	Then following Boolean Values are displayed in the filter on the Details Page
 	| Values |
 	| True   |
 	When User closes Checkbox filter for "Owner" column
-	When User clicks String Filter button for "Application Readiness" column
+	And User clicks String Filter button for "Application Readiness" column
 	Then following String Values are displayed in the filter on the Details Page
 	| Values |
 	| NONE   |
 	When User closes Checkbox filter for "Application Readiness" column
-	When User clicks String Filter button for "Pre-Migration" column
+	And User clicks String Filter button for "Pre-Migration" column
 	Then following String Values are displayed in the filter on the Details Page
 	| Values |
 	| GREY   |
 	When User closes Checkbox filter for "Pre-Migration" column
-	When User clicks String Filter button for "Migration" column
+	And User clicks String Filter button for "Migration" column
 	Then following String Values are displayed in the filter on the Details Page
 	| Values |
 	| GREY   |
 	When User closes Checkbox filter for "Migration" column
-	When User clicks String Filter button for "Communication" column
+	And User clicks String Filter button for "Communication" column
 	Then following String Values are displayed in the filter on the Details Page
 	| Values |
 	| GREY   |
@@ -58,7 +58,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	When User perform search by "00RUUMAH9OZN9A"
 	And User click content from "Hostname" column
 	Then Details page for "00RUUMAH9OZN9A" item is displayed to the user
-	When User navigates to the "Applications" main-menu on the Details page
+	When User navigates to the 'Applications' left menu item
 	And User navigates to the "Evergreen Summary" sub-menu on the Details page
 	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
 	And User enters "Microsoft Office PowerPoint 2002 (XP)" text in the Search field for "Application" column on the Details Page
@@ -94,7 +94,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	When User perform search by "00RUUMAH9OZN9A"
 	And User click content from "Hostname" column
 	Then Details page for "00RUUMAH9OZN9A" item is displayed to the user
-	When User navigates to the "Applications" main-menu on the Details page
+	When User navigates to the 'Applications' left menu item
 	And User navigates to the "Evergreen Detail" sub-menu on the Details page
 	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
 	And User enters "Microsoft Office PowerPoint 2002 (XP)" text in the Search field for "Application" column on the Details Page
@@ -153,7 +153,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	When User perform search by "00RUUMAH9OZN9A"
 	And User click content from "Hostname" column
 	Then Details page for "00RUUMAH9OZN9A" item is displayed to the user
-	When User navigates to the "Applications" main-menu on the Details page
+	When User navigates to the 'Applications' left menu item
 	And User navigates to the "Advertisements" sub-menu on the Details page
 	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
 	And User enters "Microsoft Office PowerPoint 2002 (XP)" text in the Search field for "Application" column on the Details Page
@@ -171,7 +171,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	When User perform search by "00RUUMAH9OZN9A"
 	And User click content from "Hostname" column
 	Then Details page for "00RUUMAH9OZN9A" item is displayed to the user
-	When User navigates to the "Applications" main-menu on the Details page
+	When User navigates to the 'Applications' left menu item
 	And User navigates to the "Collections" sub-menu on the Details page
 	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
 	Then 'SMS/SCCM 2007' content is displayed in the 'Source Type' column
@@ -200,7 +200,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	When User perform search by "00RUUMAH9OZN9A"
 	And User click content from "Hostname" column
 	Then Details page for "00RUUMAH9OZN9A" item is displayed to the user
-	When User navigates to the "Compliance" main-menu on the Details page
+	When User navigates to the 'Compliance' left menu item
 	And User navigates to the "Hardware Rules" sub-menu on the Details page
 	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
 	Then 'AMBER' content is displayed in the 'Compliance' column
@@ -217,7 +217,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	When User perform search by "001BAQXT6JWFPI"
 	And User click content from "Hostname" column
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
-	When User navigates to the "Compliance" main-menu on the Details page
+	When User navigates to the 'Compliance' left menu item
 	And User navigates to the "Application Issues" sub-menu on the Details page
 	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
 	And User enters "Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" text in the Search field for "Application" column on the Details Page

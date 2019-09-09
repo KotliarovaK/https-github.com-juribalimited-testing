@@ -29,13 +29,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAllAssociationsAreSelectedByDefaultInT
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "TestProject7" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
+	And User selects 'All Devices' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "TestProject7" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
-	When User clicks "Applications" tab in the Project Scope Changes section
+	When User navigates to the 'Applications' left menu item in the Project Scope Changes section
 	Then "Applications to add (0 of 2129 selected)" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page
 	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
@@ -43,7 +43,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAllAssociationsAreSelectedByDefaultInT
 	When User selects "Do not include applications" checkbox on the Project details page
 	Then All Associations are disabled
 	When User selects "Scope Changes" tab on the Project details page
-	When User clicks "Applications" tab in the Project Scope Changes section
+	When User navigates to the 'Applications' left menu item in the Project Scope Changes section
 	Then "Applications to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page
 	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
@@ -58,14 +58,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatExistingProjectNameCantBeRemoved
 	Then "Projects" page should be displayed to the user
 	When User clicks the "CREATE PROJECT" Action button
 	And User enters "TestProject14283" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
+	And User selects 'All Devices' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "TestProject14283" is displayed to user
-	When User selects "Dependant List Filter - BROKEN LIST" in the Scope Project details
-	Then Filling field error with "This list has errors" text is displayed
-	When User clicks "Details" tab
+	When User selects 'Dependant List Filter - BROKEN LIST' in the 'Scope' dropdown
+	Then 'This list has errors' error message is displayed for 'Scope' dropdown
+	When User navigates to the 'Details' left menu item
 	And User enters "" in the "Project Name" field
 	And User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -103,9 +103,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorsAreDisplayedInTheProjectScopeC
 	When User clicks newly created object link
 	Then Project "TestProject9" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
-	And User clicks "Users" tab in the Project Scope Changes section
-	And User clicks "Devices" tab in the Project Scope Changes section
-	And User clicks "Applications" tab in the Project Scope Changes section
+	And User navigates to the 'Users' left menu item in the Project Scope Changes section
+	And User navigates to the 'Devices' left menu item in the Project Scope Changes section
+	And User navigates to the 'Applications' left menu item in the Project Scope Changes section
 	Then There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS17664 @DAS17601 @Cleanup
@@ -134,7 +134,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatInformationMessageDisplayedForScopeDet
 	And User create dynamic list with "ListForProject17601" name on "Devices" page
 	Then "ListForProject17601" list is displayed to user
 	When User navigates to "1803 Rollout" project details
-	And User clicks "Scope" tab
+	And User navigates to the 'Scope' left menu item
 	And User selects "Scope Details" tab on the Project details page
 	When User selects "ListForProject17601" in the Scope Project details
 	Then User sees blue message "This list may contain archived devices which will not be onboarded" on Create Project page

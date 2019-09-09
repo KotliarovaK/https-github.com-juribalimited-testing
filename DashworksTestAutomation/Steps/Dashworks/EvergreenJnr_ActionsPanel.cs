@@ -74,6 +74,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.GetOptionByName(value).Click();
         }
 
+        //TODO remove and replace by WhenUserSelectsInTheDropdown
         [When(@"User selects ""(.*)"" value for ""(.*)"" dropdown on Action panel")]
         public void WhenUserSelectsValueForDropdownOnActionPanel(string value, string field)
         {
@@ -912,6 +913,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             listElement.ListNameTextBox.SendKeys(listName);
             _driver.WaitForElementToBeDisplayed(listElement.CreateButton);
             listElement.CreateButton.Click();
+            _driver.WaitForDataLoadingInActionsPanel();
 
             //Small wait for message display
             var customListElement = _driver.NowAt<CustomListElement>();

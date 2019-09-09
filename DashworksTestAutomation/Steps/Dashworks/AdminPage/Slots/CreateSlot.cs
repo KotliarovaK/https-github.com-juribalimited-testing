@@ -51,8 +51,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Slots
                 projectElement.SendKeysToTheNamedTextbox(slot.SlotStartTime, "Slot Start Time");
                 projectElement.SendKeysToTheNamedTextbox(slot.SlotEndTime, "Slot End Time");
 
-                var dropdown = _driver.NowAt<BaseGridPage>();
-                dropdown.GetDropdownByName("Capacity Type").Click();
+                action.GetDropdownByName("Capacity Type").Click();
                 action.GetOptionByName(slot.CapacityType).Click();
 
                 #region Assertion. Just comment with comment if some bugs appears
@@ -60,13 +59,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Slots
                 switch (slot.CapacityType)
                 {
                     case "Capacity Units":
-                        Utils.Verify.IsTrue(dropdown.GetTextInFieldByFieldName("Capacity Units").GetAttribute("value").Contains("All Capacity Units"),
+                        Utils.Verify.IsTrue(action.GetNamedTextbox("Capacity Units").GetAttribute("value").Contains("All Capacity Units"),
                             $"Default text in Capacity Units field is incorrect");
                         break;
                     case "Teams and Paths":
-                        Utils.Verify.IsTrue(dropdown.GetTextInFieldByFieldName("Teams").GetAttribute("value").Contains("All Teams"),
+                        Utils.Verify.IsTrue(action.GetNamedTextbox("Teams").GetAttribute("value").Contains("All Teams"),
                             $"Default text in Teams field is incorrect");
-                        Utils.Verify.IsTrue(dropdown.GetTextInFieldByFieldName("Paths").GetAttribute("value").Contains("All Paths"),
+                        Utils.Verify.IsTrue(action.GetNamedTextbox("Paths").GetAttribute("value").Contains("All Paths"),
                             $"Default text in Paths field is incorrect");
                         break;
                     default:
@@ -75,7 +74,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Slots
 
                 #endregion
 
-                dropdown.GetDropdownByName("Object Type").Click();
+                action.GetDropdownByName("Object Type").Click();
                 action.GetOptionByName(slot.ObjectType).Click();
 
                 var page = _driver.NowAt<Capacity_SlotsPage>();

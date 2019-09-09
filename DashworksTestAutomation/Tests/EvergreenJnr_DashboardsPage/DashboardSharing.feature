@@ -498,3 +498,32 @@ Scenario: EvergreenJnr_DashboardsPage_CheckUserCanEditWidgetFromSharedDashboard
 	| WidgetType | Title                    | List | SplitBy | AggregateBy | AggregateFunction | OrderBy | TableOrientation | MaxValues | ShowLegend |
 	|            | WidgetForDAS15550_Edited |      | Version | Application |                   |         |                  |           |            |
 	Then User sees widget with the next name "WidgetForDAS15550_Edited" on Dashboards page
+
+@Evergreen @EvergreenJnr_DashboardsPage @DAS14915 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatUserWithEditRightsCanChangeDashboardName
+	#create dashboard and share it
+	When Dashboard with "Dashboard for DAS14915" name created via API and opened
+	And User clicks Show Dashboards panel icon on Dashboards page
+	And User clicks Settings button for "Dashboard for DAS14915" dashboard
+	And User clicks Manage in the list panel
+	Then Permission panel is displayed to the user
+	When User changes sharing type from "Private" to "Specific users"
+	And User adds user to list of shared person
+	| User                | Permission |
+	| Automation Admin 10 | Admin      |
+	Then User "automation_admin10" was added to shared list with "Admin" permission
+	#login as user2
+	When User clicks the Logout button
+	Then User is logged out
+	When User clicks the Switch to Evergreen link
+	And User clicks on the Login link
+	And User login with following credentials:
+	| Username           | Password  |
+	| automation_admin10 | m!gration |
+	And User clicks the Switch to Evergreen link
+	And User clicks Show Dashboards panel icon on Dashboards page
+	And User clicks Settings button for "Dashboard for DAS14915" dashboard
+	And User clicks Manage in the list panel
+	Then Permission panel is displayed to the user
+	When User changes dashboard name to "DashboardUpdated"
+	Then Dashboard with "DashboardUpdated" title displayed in All Dashboards

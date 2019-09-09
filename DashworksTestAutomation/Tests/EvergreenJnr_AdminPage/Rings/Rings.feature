@@ -11,9 +11,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatRingsOptionMapsToEvergreenCanBeChanged
 	| ProjectName        | Scope       | ProjectTemplate | Mode                            |
 	| ProjectForDAS14780 | All Devices | None            | Clone from Evergreen to Project |
 	Then Project "ProjectForDAS14780" is displayed to user
-	When User clicks "Details" tab
-	Then "Clone evergreen rings to project rings" text value is displayed in the "Rings" dropdown
-	When User clicks "Rings" tab
+	When User navigates to the 'Details' left menu item
+	Then 'Clone evergreen rings to project rings' text value is displayed in the 'Rings' dropdown
+	When User navigates to the 'Rings' left menu item
 	And User enters "Unassigned" text in the Search field for "Ring" column
 	And User clicks content from "Ring" column
 	Then Ring settings Maps to evergreen ring is displayed as "Unassigned"
@@ -22,7 +22,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatRingsOptionMapsToEvergreenCanBeChanged
 	When User clicks "Administration" navigation link on the Admin page
 	And User clicks Yes button in Leave Page Warning
 	And User clicks "Evergreen" link on the Admin page
-	And User clicks "Buckets" tab
+	And User navigates to the 'Buckets' left menu item
 	And User clicks Reset Filters button on the Admin page
 	And User clicks String Filter button for "Project" column on the Admin page
 	And User selects "Select All" checkbox from String Filter with item list on the Admin page
@@ -37,7 +37,7 @@ Scenario: EvergreenJnr_AdminPage_CheckProjectDetailFormAndRingDropdown
 	When Project created via API and opened
 	| ProjectName   | Scope       | ProjectTemplate | Mode               |
 	| 14690_Project | All Devices | None            | Standalone Project |
-	When User clicks "Rings" tab
+	When User navigates to the 'Rings' left menu item
 	When User clicks content from "Ring" column
 	Then "Unassigned" content is displayed in "Ring name" field
 	Then "Unassigned" content is displayed in "Description" field
@@ -55,7 +55,7 @@ Scenario: EvergreenJnr_AdminPage_CheckProjectDetailFormAndRingDropdown
 	Then Content is empty in the column
 	| ColumnName        |
 	| Maps to Evergreen |
-	When User clicks "Details" tab
+	When User navigates to the 'Details' left menu item
 	And User changes Project Name to "New_14690_Project"
 	Then "14690_Pro" content is displayed in "Project Short Name" field
 	When User changes Project Short Name to "New_Short"
@@ -64,15 +64,15 @@ Scenario: EvergreenJnr_AdminPage_CheckProjectDetailFormAndRingDropdown
 	When User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
 	Then "Device scoped project" is displayed in the disabled Project Type field
 	When User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
-	Then "Use project rings" text value is displayed in the "Rings" dropdown
-	When User selects "Clone evergreen rings to project rings" in the "Rings" dropdown
+	Then 'Use project rings' text value is displayed in the 'Rings' dropdown
+	When User selects 'Clone evergreen rings to project rings' in the 'Rings' dropdown
 	When User clicks "Projects" navigation link on the Admin page
 	When User enters "New_14690_Project" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	Then Project "New_14690_Project" is displayed to user
-	When User clicks "Details" tab
-	Then "Clone evergreen buckets to project buckets" text value is displayed in the "Buckets" dropdown
-	Then "Clone evergreen rings to project rings" text value is displayed in the "Rings" dropdown
+	When User navigates to the 'Details' left menu item
+	Then 'Clone evergreen buckets to project buckets' text value is displayed in the 'Buckets' dropdown
+	Then 'Clone evergreen rings to project rings' text value is displayed in the 'Rings' dropdown
 	Then "New_Short" content is displayed in "Project Short Name" field
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS15906
@@ -80,7 +80,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCogIconIsNotDisplayedOnLevelOfGroupedR
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Evergreen" link on the Admin page
-	And User clicks "Rings" tab
+	And User navigates to the 'Rings' left menu item
 	Then "Rings" page should be displayed to the user
 	When User clicks Group By button on the Admin page and selects "Ring" value
 	Then Cog menu is not displayed on the Admin page

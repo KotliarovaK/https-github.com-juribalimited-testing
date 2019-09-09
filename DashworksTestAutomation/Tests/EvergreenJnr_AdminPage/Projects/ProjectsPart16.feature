@@ -5,14 +5,14 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS13390 @DAS12582 @DAS11978 @DAS12825 @Cleanup @TEST
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS13390 @DAS12582 @DAS11978 @DAS12825 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUsers
 	When Project created via API and opened
 	| ProjectName  | Scope       | ProjectTemplate | Mode               |
 	| Project13390 | All Devices | None            | Standalone Project |
 	And User selects "Scope" tab on the Project details page
 	And User selects "Scope Changes" tab on the Project details page
-	And User clicks "Devices" tab in the Project Scope Changes section
+	And User navigates to the 'Devices' left menu item in the Project Scope Changes section
 	Then open tab in the Project Scope Changes section is active
 	When User expands the object to add 
 	And User selects following Objects
@@ -46,7 +46,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	Then "UPDATE ALL CHANGES" Action button is disabled
 	When User clicks the "CANCEL" Action button
 	Then "UPDATE ALL CHANGES" Action button is active
-	When User clicks "Users" tab in the Project Scope Changes section
+	When User navigates to the 'Users' left menu item in the Project Scope Changes section
 	And User expands the object to add 
 	And User selects following Objects
 	| Objects                         |
@@ -75,7 +75,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	| ABP977697 (Rocky Y. Stout)      |
 	| ABQ575757 (Salvador K. Waller)  |
 	| ABS188911 (Jesus W. Kirk)       |
-	And User clicks "Applications" tab in the Project Scope Changes section
+	And User navigates to the 'Applications' left menu item in the Project Scope Changes section
 	And User expands the object to add 
 	And User selects following Objects
 	| Objects                                                              |
@@ -112,12 +112,12 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	And following objects were not found
 	| Objects                                                              |
 	| "WPF/E" (codename) Community Technology Preview (Feb 2007) (0.8.5.0) |
-	When User clicks "Users" tab in the Project Scope Changes section
+	When User navigates to the 'Users' left menu item in the Project Scope Changes section
 	Then "Users to add (0 of 14604 selected)" is displayed to the user in the Project Scope Changes section
 	And following objects were not found
 	| Objects                    |
 	| AAC860150 (Kerrie D. Ruiz) |
-	When User clicks "Devices" tab in the Project Scope Changes section
+	When User navigates to the 'Devices' left menu item in the Project Scope Changes section
 	Then "Devices to add (0 of 17254 selected)" is displayed to the user in the Project Scope Changes section
 	And following objects were not found
 	| Objects         |
@@ -154,12 +154,12 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	And following objects were not found
 	| Objects         |
 	| 019BFPQGKK5QT8N |
-	When User clicks "Users" tab in the Project Scope Changes section
+	When User navigates to the 'Users' left menu item in the Project Scope Changes section
 	Then "Users to add (0 of 14604 selected)" is displayed to the user in the Project Scope Changes section
 	And following objects were not found
 	| Objects                    |
 	| AAC860150 (Kerrie D. Ruiz) |
-	When User clicks "Applications" tab in the Project Scope Changes section
+	When User navigates to the 'Applications' left menu item in the Project Scope Changes section
 	Then "Applications to add (0 of 2104 selected)" is displayed to the user in the Project Scope Changes section 
 	And following objects were not found
 	| Objects                                                              |
@@ -171,7 +171,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	| Project13391 | All Devices | None            | Standalone Project |
 	And User selects "Scope" tab on the Project details page
 	And User selects "Scope Changes" tab on the Project details page
-	And User clicks "Devices" tab in the Project Scope Changes section
+	And User navigates to the 'Devices' left menu item in the Project Scope Changes section
 	Then open tab in the Project Scope Changes section is active
 	When User expands the object to add 
 	And User selects following Objects
@@ -179,14 +179,14 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	| 001BAQXT6JWFPI  |
 	| 001PSUMZYOW581  |
 	| 00BDM1JUR8IF419 |
-	When User clicks "Users" tab in the Project Scope Changes section
+	When User navigates to the 'Users' left menu item in the Project Scope Changes section
 	And User expands the object to add 
 	And User selects following Objects
 	| Objects                         |
 	| AAC860150 (Kerrie D. Ruiz)      |
 	| AAD1011948 (Pinabel Cinq-Mars)  |
 	| AAG081456 (Melanie Z. Fowler)   |
-	And User clicks "Applications" tab in the Project Scope Changes section
+	And User navigates to the 'Applications' left menu item in the Project Scope Changes section
 	And User expands the object to add 
 	And User selects following Objects
 	| Objects                                                              |
@@ -203,7 +203,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	And User select "Manage Users" option in Management Console
 	And User removes "DAS13390" User
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12645 @Cleanup @TEST
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12645 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckingSortingOrderOfTheObjectsInTheProjectScopeChanges
 	When Project created via API and opened
 	| ProjectName      | Scope         | ProjectTemplate | Mode               |
@@ -227,11 +227,11 @@ Scenario: EvergreenJnr_AdminPage_CheckingSortingOrderOfTheObjectsInTheProjectSco
 	| 002B5DC7D4D34D5C895@bclabs.local (Collor, Christopher) |
 	| 003F5D8E1A844B1FAA5@bclabs.local (Hunter, Melanie)     |
 	Then Objects are displayed in alphabetical order on the Admin page
-	When User clicks "Users" tab in the Project Scope Changes section
+	When User navigates to the 'Users' left menu item in the Project Scope Changes section
 	When User expands the object to add
 	Then Objects are displayed in alphabetical order on the Admin page
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @Cleanup @DAS11758 @DAS14190 @DAS15528 @TEST
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @Cleanup @DAS11758 @DAS14190 @DAS15528
 Scenario: EvergreenJnr_AdminPage_CheckThatSelectAllCheckboxIsWorkingCorrectlyOnAdminPage
 	When Project created via API and opened
 	| ProjectName    | Scope     | ProjectTemplate | Mode               |
@@ -259,7 +259,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectAllCheckboxIsWorkingCorrectlyOnA
 	When User selects all rows on the grid
 	And User removes selected item
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12578 @DAS12999 @DAS13429 @Cleanup @TEST
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12578 @DAS12999 @DAS13429 @Cleanup
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatTheEditListFunctionIsHiddenAfterCancelingCreatingProjectFromTheMainLists
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -276,7 +276,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatTheEditListFunctionIsHiddenAft
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "TestProject7894" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
+	And User selects 'All Devices' option from 'Scope' autocomplete
 	When User clicks the "CANCEL" Action button
 	Then "Projects" page should be displayed to the user
 

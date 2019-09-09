@@ -283,6 +283,27 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.IsTrue(listPageMenu.DescendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
         }
 
+        [Then(@"Color data displayed with correct color and tooltip for ""(.*)"" column")]
+        public void ThenColorDataDisplayedWithCorrectColorAndTooltip(string column)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+
+            var ColumnValues = page.GetColumnContent(column).Where(x => !x.Equals("")).ToList();
+            var ColumnColors = page.GetColumnColors(column).Where(x => !x.Equals("")).ToList();
+            var ColumnToolTips = page.GetColumnTooltips(column).Where(x => !x.Equals("")).ToList();
+
+            for (int i = 0; i < ColumnValues.Count; i++)
+            {
+                Utils.Verify.That(ColumnColors[i], Does.Contain(ColorsConvertor.Convert(ColumnValues[i])), 
+                    $"Wrong color {ColumnColors[i]} for label {ColumnValues[i]}");
+            }
+
+            ColumnValues = ColumnValues.ConvertAll(d => d.ToLower());
+            ColumnToolTips = ColumnToolTips.ConvertAll(d => d.ToLower());
+
+            Utils.Verify.That(ColumnValues, Is.EqualTo(ColumnToolTips));
+        }
+
         [Then(@"boolean data is sorted by '(.*)' column in ascending order")]
         public void ThenBooleanDataIsSortedByColumnInAscendingOrder(string columnName)
         {
@@ -513,6 +534,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.AreEqual(text.Replace("{LIST_ID}", _listDetails.GetListIdByName(listName)),
                 page.FilterContainer.Text.TrimStart(' ').TrimEnd(' '),
                 "Filter is created incorrectly");
+        }
+
+        [Then(@"String filter values are not duplicated")]
+        public void ThenStringFilterValuesAreNotDuplicated()
+        {
+            var grid = _driver.NowAt<BaseDashboardPage>();
+            var filtersValue = grid.StringFilterValues.Select(x => x.Text).ToList();
+            Utils.Verify.AreEqual(filtersValue.Distinct().Count(), filtersValue.Count(), "String filters value are duplicated");
         }
 
         [Then(@"""(.*)"" Application version is displayed")]

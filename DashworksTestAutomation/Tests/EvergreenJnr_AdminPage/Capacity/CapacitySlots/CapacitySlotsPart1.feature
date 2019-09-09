@@ -10,7 +10,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingI
 	When Project created via API and opened
 	| ProjectName             | Scope       | ProjectTemplate | Mode               |
 	| ProjectForCapacity13171 | All Devices | None            | Standalone Project |
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	And User selects "Slots" tab on the Project details page
 	And User clicks the "CREATE SLOT" Action button
 	And User clicks on the Unlimited field on the Capacity Slots page
@@ -58,24 +58,24 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsUnableToCreateMoreThanOneOverrid
 	| Project         | SlotName       | DisplayName | SlotAvailableFrom | SlotAvailableTo |
 	| ProjectDAS13780 | SlotDAS13780_1 | 13780_1     | 17 Oct 2018       | 18 Oct 2018     |
 	| ProjectDAS13780 | SlotDAS13780_2 | 13780_2     | 17 Oct 2018       | 18 Oct 2018     |
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	And User selects "Slots" tab on the Project details page
 	And User selects "Override Dates" tab on the Project details page
 	And User clicks the "CREATE OVERRIDE DATE" Action button
-	And User enters "17 Oct 2018" date in the "Override Start Date" field
-	And User enters "17 Oct 2018" date in the "Override End Date" field
+	And User enters '17 Oct 2018' text to 'Override Start Date' datepicker
+	And User enters '17 Oct 2018' text to 'Override End Date' datepicker
 	And User selects "SlotDAS13780_1" in the "Slot" dropdown
 	And User enters "0" value in the "Capacity" field
 	And User clicks the "CREATE" Action button
 	And User clicks the "CREATE OVERRIDE DATE" Action button
-	And User enters "17 Oct 2018" date in the "Override Start Date" field
-	And User enters "17 Oct 2018" date in the "Override End Date" field
+	And User enters '17 Oct 2018' text to 'Override Start Date' datepicker
+	And User enters '17 Oct 2018' text to 'Override End Date' datepicker
 	And User selects "SlotDAS13780_2" in the "Slot" dropdown
 	And User enters "0" value in the "Capacity" field
 	And User clicks the "CREATE" Action button
 	And User clicks the "CREATE OVERRIDE DATE" Action button
-	And User enters "17 Oct 2018" date in the "Override Start Date" field
-	And User enters "17 Oct 2018" date in the "Override End Date" field
+	And User enters '17 Oct 2018' text to 'Override Start Date' datepicker
+	And User enters '17 Oct 2018' text to 'Override End Date' datepicker
 	And User selects "All" in the "Slot" dropdown
 	And User clicks the "CREATE" Action button
 	Then Error message with "An override already exists for this date" text is displayed

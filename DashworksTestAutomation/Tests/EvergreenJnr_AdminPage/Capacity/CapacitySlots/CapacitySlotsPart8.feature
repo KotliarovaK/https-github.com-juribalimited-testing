@@ -37,20 +37,20 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForCa
 	And User creates new Slot via Api
 	| Project            | SlotName  | DisplayName | CapacityType   | Tasks                  | CapacityUnits |
 	| ProjectForDAS13152 | Slot13152 | 13152       | Capacity Units | Stage13152 \ Task13152 | Unassigned    |
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	And User selects "Slots" tab on the Project details page
 	When User clicks content from "Capacity Slot" column
-	Then "Stage13152 \ Task13152" value is displayed in the "Tasks" dropdown
-	And "Unassigned" value is displayed in the "Capacity Units" dropdown
-	And "Device" text value is displayed in the "Object Type" dropdown
-	When User selects "Application" in the "Object Type" dropdown
+	Then 'Stage13152 \ Task13152' value is displayed in the 'Tasks' dropdown
+	And 'Unassigned' value is displayed in the 'Capacity Units' dropdown
+	And 'Device' text value is displayed in the 'Object Type' dropdown
+	When User selects 'Application' in the 'Object Type' dropdown
 	And User selects "Unassigned" checkbox in the "Capacity Units" field on the Project details page
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The capacity slot details have been updated" text
 	When User clicks content from "Capacity Slot" column
 	Then "" content is displayed in "Tasks" field
 	Then "All Capacity Units" content is displayed in "Capacity Units" field
-	And "Application" text value is displayed in the "Object Type" dropdown
+	And 'Application' text value is displayed in the 'Object Type' dropdown
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Senior_Projects @DAS13152 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTeamsAndRequestTypes
@@ -81,27 +81,27 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTe
 	And User navigate to Evergreen link
 	And User clicks "Admin" on the left-hand menu
 	And User navigates to "ProjectForDAS13152" project details
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	And User selects "Slots" tab on the Project details page
 	And User clicks the "CREATE SLOT" Action button
 	And User type "Slot13152" Name in the "Slot Name" field on the Project details page
 	And User type "13152" Name in the "Display Name" field on the Project details page
-	And User selects "Teams and Paths" in the "Capacity Type" dropdown
+	And User selects 'Teams and Paths' in the 'Capacity Type' dropdown
 	And User selects "Stage13152 \ Task13152" checkbox in the "Tasks" field on the Project details page
 	And User selects "Admin IT" checkbox in the "Teams" field on the Project details page
 	And User selects "[Default (Computer)]" checkbox in the "Paths" field on the Project details page
-	When User selects "Device" in the "Object Type" dropdown
+	When User selects 'Device' in the 'Object Type' dropdown
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "Your capacity slot has been created" text
 	#Check data in the slot after creation
 	When User clicks content from "Capacity Slot" column
-	Then "Teams and Paths" value is displayed in the "Capacity Type" dropdown
-	And "Stage13152 \ Task13152" value is displayed in the "Tasks" dropdown
-	And "Device" text value is displayed in the "Object Type" dropdown
-	And "[Default (Computer)]" value is displayed in the "Paths" dropdown
-	And "Admin IT" value is displayed in the "Teams" dropdown
+	Then 'Teams and Paths' value is displayed in the 'Capacity Type' dropdown
+	And 'Stage13152 \ Task13152' value is displayed in the 'Tasks' dropdown
+	And 'Device' text value is displayed in the 'Object Type' dropdown
+	And '[Default (Computer)]' value is displayed in the 'Paths' dropdown
+	And 'Admin IT' value is displayed in the 'Teams' dropdown
 	#Change data in the slot
-	When User selects "Application" in the "Object Type" dropdown
+	When User selects 'Application' in the 'Object Type' dropdown
 	And User selects "Admin IT" checkbox in the "Teams" field on the Project details page
 	And User selects "1803 Team" checkbox in the "Teams" field on the Project details page
 	And User selects "[Default (Application)]" checkbox in the "Paths" field on the Project details page
@@ -109,21 +109,21 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTe
 	Then Success message is displayed and contains "The capacity slot details have been updated" text
 	#Check updated data in the slot and change Capacity Type
 	When User clicks content from "Capacity Slot" column
-	Then "Teams and Paths" text value is displayed in the "Capacity Type" dropdown
-	And "Application" text value is displayed in the "Object Type" dropdown
-	And "[Default (Application)]" value is displayed in the "Paths" dropdown
-	And "1803 Team" value is displayed in the "Teams" dropdown
-	When User selects "Capacity Units" in the "Capacity Type" dropdown
+	Then 'Teams and Paths' text value is displayed in the 'Capacity Type' dropdown
+	And 'Application' text value is displayed in the 'Object Type' dropdown
+	And '[Default (Application)]' value is displayed in the 'Paths' dropdown
+	And '1803 Team' value is displayed in the 'Teams' dropdown
+	When User selects 'Capacity Units' in the 'Capacity Type' dropdown
 	And User clicks the "UPDATE" Action button
 	#Check updated Capacity Type value
 	When User clicks content from "Capacity Slot" column
-	Then "Capacity Units" text value is displayed in the "Capacity Type" dropdown
+	Then 'Capacity Units' text value is displayed in the 'Capacity Type' dropdown
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS14967 @DAS15291
 Scenario Outline: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCountersOfUserProjectLeadToCorrectFilteredLists
 	When User navigates to "User Evergreen Capacity Project" project details
-	And User clicks "Capacity" tab
-	And User clicks "Slots" tab
+	And User navigates to the 'Capacity' left menu item
+	And User navigates to the 'Slots' left menu item
 	Then "Capacity Slot" column content is displayed in the following order:
 	| Items              |
 	| User Slot 1        |
@@ -159,8 +159,8 @@ Examples:
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS14967 @DAS15291
 Scenario Outline: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCountersOfMailProjectLeadToCorrectFilteredLists
 	When User navigates to "Mailbox Evergreen Capacity Project" project details
-	And User clicks "Capacity" tab
-	And User clicks "Slots" tab
+	And User navigates to the 'Capacity' left menu item
+	And User navigates to the 'Slots' left menu item
 	Then "Capacity Slot" column content is displayed in the following order:
 	| Items                                              |
 	| CA -Mailbox-Nov 1, 2018-Nov 10, 2018               |

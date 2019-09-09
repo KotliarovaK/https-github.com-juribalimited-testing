@@ -14,7 +14,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatMatchToEvergreenBucketDisplaye
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "12768Project" in the "Project Name" field
-	And User selects "<ScopeList>" in the Scope Project dropdown
+	And User selects '<ScopeList>' option from 'Scope' autocomplete
 	When User selects "Clone from Evergreen to Project" in the Mode Project dropdown
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
@@ -99,16 +99,16 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultValuesStayTheSameAfterConverti
 	When User clicks "Projects" link on the Admin page
 	And User enters "DAS15262Project" text in the Search field for "Project" column
 	And User clicks content from "Project" column
-	Then "Use project buckets" text value is displayed in the "Buckets" dropdown
-	And "Use project rings" text value is displayed in the "Rings" dropdown
-	When User clicks "Capacity" tab
-	Then "Use project capacity units" text value is displayed in the "Capacity Units" dropdown
-	When User clicks "Details" tab
+	Then 'Use project buckets' text value is displayed in the 'Buckets' dropdown
+	And 'Use project rings' text value is displayed in the 'Rings' dropdown
+	When User navigates to the 'Capacity' left menu item
+	Then 'Use project capacity units' text value is displayed in the 'Capacity Units' dropdown
+	When User navigates to the 'Details' left menu item
 	And User converts project to evergreen project
-	Then "Use project buckets" text value is displayed in the "Buckets" dropdown
-	And "Use project rings" text value is displayed in the "Rings" dropdown
-	When User clicks "Capacity" tab
-	Then "Use project capacity units" text value is displayed in the "Capacity Units" dropdown
+	Then 'Use project buckets' text value is displayed in the 'Buckets' dropdown
+	And 'Use project rings' text value is displayed in the 'Rings' dropdown
+	When User navigates to the 'Capacity' left menu item
+	Then 'Use project capacity units' text value is displayed in the 'Capacity Units' dropdown
 	When User clicks Admin on the left-hand menu
 	And User enters "DAS15262Project" text in the Search field for "Project" column
 	And User selects all rows on the grid
@@ -118,15 +118,15 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultValuesStayTheSameAfterConverti
 Scenario: EvergreenJnr_AdminPage_ChecksThatConvertToEvergreenButtonIsNotDisplayedForEvergreensProject
 	When User clicks Admin on the left-hand menu
 	When User clicks the "CREATE PROJECT" Action button
-	And User selects " Dependant List Filter - BROKEN LIST" in the Scope Project dropdown
-	Then Filling field error with "This list has errors" text is displayed
+	When User selects 'Dependant List Filter - BROKEN LIST' option from 'Scope' autocomplete
+	Then 'This list has errors' error message is displayed for 'Scope' field
 	When User clicks the "CANCEL" Action button
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "TestNegativeProject15262" in the "Project Name" field
-	When User selects "All Devices" in the Scope Project dropdown
+	When User selects 'All Devices' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
-	And User clicks "Details" tab
+	And User navigates to the 'Details' left menu item
 	Then Convert to Evergreen button is not displayed

@@ -10,7 +10,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlMessageAppearsWhenDefaultLang
 	When Project created via API and opened
 	| ProjectName                | Scope     | ProjectTemplate | Mode               |
 	| ChecksDefaultLanguage13928 | All Users | None            | Standalone Project |
-	And User clicks "Scope" tab
+	And User navigates to the 'Scope' left menu item
 	And User selects "Scope Changes" tab on the Project details page
 	And User expands the object to add
 	And User selects following Objects
@@ -19,13 +19,13 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlMessageAppearsWhenDefaultLang
 	And User clicks the "UPDATE ALL CHANGES" Action button
 	And User clicks the "UPDATE PROJECT" Action button
 	Then Success message is displayed and contains "1 object queued for onboarding, 0 objects offboarded" text
-	When User clicks "Details" tab
+	When User navigates to the 'Details' left menu item
 	And User clicks the "ADD LANGUAGE" Action button
 	And User selects "Brazilian" language on the Project details page
 	And User opens menu for selected language
 	Then User selects "Set as default" option for selected language
 	And Error message with "You cannot update the default language to Brazilian because there are items in the project which have not been translated into this language." text is displayed
-	When User clicks "Scope" tab
+	When User navigates to the 'Scope' left menu item
 	And User selects "Queue" tab on the Project details page
 	Then Counter shows "1" found rows
 	#When User selects "History" tab on the Project details page
@@ -38,7 +38,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingPercentageCapacityToReachBeforeShowingA
 	When Project created via API and opened
 	| ProjectName        | Scope        | ProjectTemplate | Mode               |
 	| ProjectForDAS13422 | 1803 Rollout | None            | Standalone Project |
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	And User changes Percentage to reach before showing amber to "101"
 	Then "UPDATE" Action button is disabled
 	When User changes Percentage to reach before showing amber to "100"
@@ -50,7 +50,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProj
 	When Project created via API and opened
 	| ProjectName        | Scope      | ProjectTemplate | Mode               |
 	| ProjectForDAS14103 | All Device | None            | Standalone Project |
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	When User selects "Teams and Paths" in the "Capacity Mode" dropdown
 	And User selects "Clone evergreen capacity units to project capacity units" in the "Capacity Units" dropdown
 	And User clicks the "UPDATE" Action button
@@ -87,19 +87,19 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProj
 	And User enters "ProjectForDAS14103" text in the Search field for "Project" column
 	And User click content from "Project" column
 	And User selects "Scope Changes" tab on the Project details page
-	And User clicks "Devices" tab in the Project Scope Changes section
+	And User navigates to the 'Devices' left menu item in the Project Scope Changes section
 	Then open tab in the Project Scope Changes section is active
 	When User expands the object to add 
 	And User selects following Objects
 	| Objects        |
 	| 001BAQXT6JWFPI |
-	And User clicks "Users" tab in the Project Scope Changes section
+	And User navigates to the 'Users' left menu item in the Project Scope Changes section
 	Then open tab in the Project Scope Changes section is active
 	When User expands the object to add 
 	And User selects following Objects
 	| Objects                    |
 	| AAC860150 (Kerrie D. Ruiz) |
-	And User clicks "Applications" tab in the Project Scope Changes section
+	And User navigates to the 'Applications' left menu item in the Project Scope Changes section
 	Then open tab in the Project Scope Changes section is active
 	When User expands the object to add 
 	And User selects following Objects
@@ -131,7 +131,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProj
 	Then "Capacity Unit For DAS14103" content is displayed in "Capacity Unit" column
 	When User enters "0004 - Adobe Acrobat Reader 5.0.5 Francais" text in the Search field for "Item" column
 	Then "Capacity Unit For DAS14103" content is displayed in "Capacity Unit" column
-	When User clicks "Capacity" tab
+	When User navigates to the 'Capacity' left menu item
 	And User selects "Units" tab on the Project details page
 	And User enters "Capacity Unit For DAS14103" text in the Search field for "Capacity Unit" column
 	Then "1" content is displayed in "Devices" column
@@ -139,7 +139,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProj
 	And "1" content is displayed in "Applications" column
 	When User clicks "Administration" navigation link on the Admin page
 	When User clicks "Evergreen" link on the Admin page
-	When User clicks "Capacity Units" tab
+	When User navigates to the 'Capacity Units' left menu item
 	And User select "Capacity Unit" rows in the grid
 	| SelectedRowsName           |
 	| Capacity Unit For DAS14103 |
@@ -153,9 +153,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOriginalCapacityUnitStoredAndDisplaye
 	When Project created via API and opened
 	| ProjectName        | Scope       | ProjectTemplate | Mode               |
 	| ProjectForDAS13961 | All Devices | None            | Standalone Project |
-	And User clicks "Scope" tab
+	And User navigates to the 'Scope' left menu item
 	And User selects "Scope Changes" tab on the Project details page
-	And User clicks "Devices" tab in the Project Scope Changes section
+	And User navigates to the 'Devices' left menu item in the Project Scope Changes section
 	Then open tab in the Project Scope Changes section is active
 	When User expands the object to add 
 	And User selects following Objects
@@ -169,11 +169,11 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOriginalCapacityUnitStoredAndDisplaye
 	| 001BAQXT6JWFPI |
 	When User enters "001BAQXT6JWFPI" text in the Search field for "Item" column
 	Then "Unassigned" content is displayed in "Capacity Unit" column
-	When User clicks "Capacity" tab
+	When User navigates to the 'Capacity' left menu item
 	When User creates new Capacity Unit via api
 	| Name              | Description | IsDefault | Project            |
 	| CapacityUnit13961 |             | true      | ProjectForDAS13961 |
-	And User clicks "Scope" tab
+	And User navigates to the 'Scope' left menu item
 	And User selects "History" tab on the Project details page
 	And User enters "001BAQXT6JWFPI" text in the Search field for "Item" column
 	Then "Unassigned" content is displayed in "Capacity Unit" column

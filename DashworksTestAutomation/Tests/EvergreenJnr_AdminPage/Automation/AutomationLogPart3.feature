@@ -44,13 +44,13 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogMessageForDeletedTaskInAction
 	Then Create Automation page is displayed to the User
 	When User enters '17247_Automation' text to 'Automation Name' textbox
 	When User enters '17247' text to 'Description' textbox
-	When User selects "All Devices" in the Scope Automation dropdown
-	When User selects "Manual" in the "Run" dropdown
+	When User selects 'All Devices' option from 'Scope' autocomplete
+	When User selects 'Manual' in the 'Run' dropdown
 	When User selects "Active" checkbox on the Automation Page
 	And User clicks the "CREATE" Action button
 	#Create Action
 	When User enters '17247_Action' text to 'Action Name' textbox
-	When User selects "Update task value" in the "Action Type" dropdown
+	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects '17247Project' option from 'Project' autocomplete
 	When User selects "Test" in the "Stage" dropdown for Actions
 	When User selects "DAS17247_Task" in the "Task" dropdown for Actions
@@ -90,11 +90,11 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedU
 	When User enters "DAS17681_Automation" text in the Search field for "Automation" column
 	And User clicks content from "Automation" column
 	Then Edit Automation page is displayed to the User
-	When User clicks "Actions" tab
+	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks the "CREATE ACTION" Action button
 	When User enters 'DAS17681_Action' text to 'Action Name' textbox
-	And User selects "Update task value" in the "Action Type" dropdown
+	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'USE ME FOR AUTOMATION(USR SCHDLD)' option from 'Project' autocomplete
 	When User selects "Stage 1" in the "Stage" dropdown for Actions
 	When User selects "Radiobutton Readiness Date Owner Task (User)" in the "Task" dropdown for Actions
@@ -137,7 +137,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedU
 	Then "Akhila Varghese" content is displayed in "USEMEFORA2: Stage 1 \ Radiobutton Readiness Date Owner Task (User) (Owner)" column
 	Then "1803 Team" content is displayed in "USEMEFORA2: Stage 1 \ Radiobutton Readiness Date Owner Task (User) (Team)" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17681 @Cleanup @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17681 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedUpdateValueDateOwnerCombinationWithNoChange
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -149,10 +149,10 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedU
 	When User enters "17681_Automation" text in the Search field for "Automation" column
 	And User clicks content from "Automation" column
 	Then Edit Automation page is displayed to the User
-	When User clicks "Actions" tab
+	When User navigates to the 'Actions' left menu item
 	When User clicks the "CREATE ACTION" Action button
 	When User enters '17681_Action' text to 'Action Name' textbox
-	And User selects "Update task value" in the "Action Type" dropdown
+	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	When User selects "One" in the "Stage" dropdown for Actions
 	When User selects "Radio Date Owner User" in the "Task" dropdown for Actions
@@ -163,3 +163,12 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedU
 	Then "SAVE AND CREATE ANOTHER" Action button is disabled
 	Then "CREATE" Action button have tooltip with "Select at least one value to change" text
 	Then "SAVE AND CREATE ANOTHER" Action button have tooltip with "Select at least one value to change" text
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17923
+Scenario: EvergreenJnr_AdminPage_CheckThatOutcomeStringFiltersValueAreNotDuplicated
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Automations" link on the Admin page
+	When User selects "Automation Log" tab on the Project details page
+	When User clicks String Filter button for "Outcome" column on the Admin page
+	Then String filter values are not duplicated

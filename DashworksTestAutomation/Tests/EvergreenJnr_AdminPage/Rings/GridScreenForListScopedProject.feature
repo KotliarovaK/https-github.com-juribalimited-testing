@@ -10,7 +10,7 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForDeviceScopedProject
 	When Project created via API and opened
 	| ProjectName   | Scope       | ProjectTemplate | Mode               |
 	| 14695_Project | All Devices | None            | Standalone Project |
-	When User clicks "Rings" tab
+	When User navigates to the 'Rings' left menu item
 	Then "" content is displayed in "Devices" column
 	Then table with Setting menu column on Admin page is displayed in following order:
 	| ColumnName |
@@ -82,7 +82,7 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForMailboxScopedProject
 	When User enters "Email Migration" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	Then Project "Email Migration" is displayed to user
-	When User clicks "Rings" tab
+	When User navigates to the 'Rings' left menu item
 	Then "729" content is displayed in "Mailboxes" column
 	Then Columns on Admin page is displayed in following order:
 	| ColumnName |

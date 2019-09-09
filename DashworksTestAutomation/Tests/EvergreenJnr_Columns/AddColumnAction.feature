@@ -136,7 +136,7 @@ Scenario: EvergreenJnr_MailboxesLists_CheckThatTheLowestValueOfUserCountColumnIs
 @Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS12194 @DAS12220
 Scenario Outline: EvergreenJnr_AllLists_CheckThat500ErrorIsNotDisplayedAfterAddingComplianceDataToLists
 	When User clicks "<ListName>" on the left-hand menu
-	Then "<ListName>" list should be displayed to the user
+	Then "All <ListName>" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "<FilterName>" filter where type is "Equals" with added column and following checkboxes:
@@ -164,7 +164,7 @@ Examples:
 @Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS12500 @DAS14923
 Scenario Outline: EvergreenJnr_AllLists_CheckThatObjectKeyColumnsContainCorrectLinks
 	When User clicks "<ListName>" on the left-hand menu
-	Then "<ListName>" list should be displayed to the user
+	Then "All <ListName>" list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
@@ -286,7 +286,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatNewlyAddedColumnIsDisplayedCorrec
 @Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS12481
 Scenario Outline: EvergreenJnr_AllLists_CheckThatStateCountyAndPostalCodeColumnsAreDisplayed
 	When User clicks "<ListName>" on the left-hand menu
-	Then "<ListName>" list should be displayed to the user
+	Then "All <ListName>" list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
@@ -362,3 +362,19 @@ Examples:
 	| Users        | Device Application Compliance | Red         | Geräteanwendungskonformität | ROT                   |
 	| Applications | Compliance                    | Green       | Konformität                 | GRÜN                  |
 	| Mailboxes    | Owner Compliance              | Unknown     | Konformität des Inhabers    | UNBEKANNT             |
+
+@Evergreen @Users @EvergreenJnr_Columns @AddColumnAction @DAS17945
+Scenario: EvergreenJnr_UsersList_ChecksThatReadinessColumnIsDisplayedCorrectlyForUsersList
+	When User clicks "Users" on the left-hand menu
+	When User add following columns using URL to the "Users" page:
+	| ColumnName                        |
+	| Barry'sUse: Application Readiness |
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Barry'sUse: In Scope" filter where type is "Equals" without added column and following checkboxes:
+	| SelectedCheckboxes |
+	| TRUE               |
+	Then Content is present in the newly added column
+	| ColumnName                        |
+	| Barry'sUse: Application Readiness |
+	Then Color data displayed with correct color and tooltip for "Barry'sUse: Application Readiness" column

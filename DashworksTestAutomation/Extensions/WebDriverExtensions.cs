@@ -482,6 +482,14 @@ namespace DashworksTestAutomation.Extensions
             ex.ExecuteScript($"arguments[0].scrollTo(0,{scrollHeight});", gridElement);
         }
 
+        public static List<string> GetElementAttributes(this RemoteWebDriver driver, IWebElement element)
+        {
+            IJavaScriptExecutor ex = driver;
+            var attributesAndValues = (Dictionary<string, object>)ex.ExecuteScript("var items = { }; for (index = 0; index < arguments[0].attributes.length; ++index) { items[arguments[0].attributes[index].name] = arguments[0].attributes[index].value }; return items;", element);
+            var attributes = attributesAndValues.Keys.ToList();
+            return attributes;
+        }
+
         #endregion Actions with Javascript
 
         #region JavaSctipt Alert
@@ -903,6 +911,60 @@ namespace DashworksTestAutomation.Extensions
                 try
                 {
                     return element.Displayed().Equals(displayedCondition);
+                }
+                catch (NoSuchElementException)
+                {
+                    // Returns false because the element is not present in DOM.
+                    return false.Equals(displayedCondition);
+                }
+                catch (StaleElementReferenceException)
+                {
+                    // Returns false because stale element reference implies that element
+                    // is no longer visible.
+                    return false.Equals(displayedCondition);
+                }
+                catch (InvalidOperationException)
+                {
+                    // Return false as no elements was located
+                    return false.Equals(displayedCondition);
+                }
+            };
+        }
+
+        #endregion
+
+        #region Wait for Element to be (not) Displayed in Element
+
+        public static void WaitForElementToBeNotDisplayed(this RemoteWebDriver driver, IWebElement element, By selector, int waitSeconds = WaitTimeoutSeconds)
+        {
+            WaitForElementInElementDisplayCondition(driver, element, selector, false, waitSeconds);
+        }
+
+        public static void WaitForElementInElementToBeDisplayed(this RemoteWebDriver driver, IWebElement element, By selector, int waitSeconds = WaitTimeoutSeconds)
+        {
+            WaitForElementInElementDisplayCondition(driver, element, selector, true, waitSeconds);
+        }
+
+        private static void WaitForElementInElementDisplayCondition(this RemoteWebDriver driver, IWebElement element, By selector, bool condition, int waitSeconds)
+        {
+            try
+            {
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(waitSeconds));
+                wait.Until(ElementInElementIsInDisplayedCondition(element, selector, condition));
+            }
+            catch (WebDriverTimeoutException e)
+            {
+                throw new Exception($"Element was not changed Display condition to '{condition}' after {waitSeconds} seconds", e);
+            }
+        }
+
+        private static Func<IWebDriver, bool> ElementInElementIsInDisplayedCondition(IWebElement element, By selector, bool displayedCondition)
+        {
+            return (driver) =>
+            {
+                try
+                {
+                    return element.FindElement(selector).Displayed().Equals(displayedCondition);
                 }
                 catch (NoSuchElementException)
                 {
@@ -1842,6 +1904,20 @@ namespace DashworksTestAutomation.Extensions
             }
         }
 
+        public static bool IsElementInElementDisplayed(this RemoteWebDriver driver, IWebElement element, By selector, WaitTime waitTime)
+        {
+            try
+            {
+                var time = int.Parse(waitTime.GetValue());
+                driver.WaitForElementInElementToBeDisplayed(element, selector, time);
+                return driver.FindElement(selector).Displayed;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         public enum WaitTime
         {
             [System.ComponentModel.Description("6")]
@@ -1951,6 +2027,24 @@ namespace DashworksTestAutomation.Extensions
                     Thread.Sleep(1000);
                 }
             }
+        }
+
+        //For cases when we need return value
+        public static bool ExecuteFunc(this RemoteWebDriver driver, Func<bool> actionToDo)
+        {
+            for (int i = 0; i < 2; i++)
+            {
+                try
+                {
+                    return actionToDo.Invoke();
+                }
+                catch (Exception)
+                {
+                    Thread.Sleep(1000);
+                }
+            }
+
+            return false;
         }
     }
 }
