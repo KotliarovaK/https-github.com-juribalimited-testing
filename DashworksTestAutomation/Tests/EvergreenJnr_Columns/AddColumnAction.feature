@@ -364,7 +364,7 @@ Examples:
 	| Mailboxes    | Owner Compliance              | Unknown     | Konformität des Inhabers    | UNBEKANNT             |
 
 @Evergreen @Users @EvergreenJnr_Columns @AddColumnAction @DAS17945
-Scenario: EvergreenJnr_UsersList_ChecksThatReadinessColumnIsDisplayedCorrectlyForUsersList
+Scenario: EvergreenJnr_UsersList_ChecksThatApplicationReadinessColumnIsDisplayedCorrectlyForUsersList
 	When User clicks "Users" on the left-hand menu
 	When User add following columns using URL to the "Users" page:
 	| ColumnName                        |

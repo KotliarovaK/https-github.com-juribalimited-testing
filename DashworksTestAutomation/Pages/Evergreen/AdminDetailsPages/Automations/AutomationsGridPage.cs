@@ -7,7 +7,7 @@ using SeleniumExtras.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Automations
 {
-    internal class AutomationsPage : SeleniumBasePage
+    internal class AutomationsGridPage : SeleniumBasePage
     {
         [FindsBy(How = How.XPath, Using = ".//h1[contains(text(), 'Automation')]")]
         public IWebElement AutomationsTitle { get; set; }
@@ -33,9 +33,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Automations
             return Driver.FindElements(by).Select(x => x.Text).ToList();
         }
 
-        public IWebElement GetMoveButtonBySlotName(string slot)
+        public IWebElement GetMoveButtonByAutomationName(string automation)
         {
-            var indexRow = GetAutomationsContent().IndexOf(slot);
+            var indexRow = GetAutomationsContent().IndexOf(automation);
             var selector = By.XPath($".//div[@row-index='{indexRow}']/div[@col-id='dragColumn']");
             return Driver.FindElement(selector);
         }
