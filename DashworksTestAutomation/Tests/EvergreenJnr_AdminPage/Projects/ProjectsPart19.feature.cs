@@ -345,9 +345,9 @@ this.FeatureBackground();
             table5.AddRow(new string[] {
                         "0036 - Microsoft Access 97 SR-2 English (8.0)"});
 #line 82
- testRunner.And("User selects following Objects", ((string)(null)), table5, "And ");
+ testRunner.And("User adds following Objects to the Project", ((string)(null)), table5, "And ");
 #line 87
- testRunner.When("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 88
  testRunner.And("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 89
@@ -421,7 +421,7 @@ this.FeatureBackground();
             table8.AddRow(new string[] {
                         "0036 - Microsoft Access 97 SR-2 English (8.0)"});
 #line 118
- testRunner.And("User selects following Objects", ((string)(null)), table8, "And ");
+ testRunner.And("User adds following Objects to the Project", ((string)(null)), table8, "And ");
 #line 123
  testRunner.When("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 124
@@ -475,7 +475,7 @@ this.FeatureBackground();
             table11.AddRow(new string[] {
                         "00BDM1JUR8IF419"});
 #line 143
- testRunner.When("User selects following Objects", ((string)(null)), table11, "When ");
+ testRunner.When("User selects following Objects to the Project", ((string)(null)), table11, "When ");
 #line 148
  testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 149
@@ -615,7 +615,7 @@ this.FeatureBackground();
             table16.AddRow(new string[] {
                         "00BDM1JUR8IF419"});
 #line 181
- testRunner.When("User selects following Objects", ((string)(null)), table16, "When ");
+ testRunner.When("User selects following Objects to the Project", ((string)(null)), table16, "When ");
 #line 186
  testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 187
@@ -667,7 +667,7 @@ this.FeatureBackground();
             table19.AddRow(new string[] {
                         "Adobe Acrobat Reader 5.0 (1.0)"});
 #line 205
- testRunner.And("User selects following Objects", ((string)(null)), table19, "And ");
+ testRunner.When("User selects following Objects to the Project", ((string)(null)), table19, "When ");
 #line 210
  testRunner.When("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 211
@@ -741,7 +741,7 @@ this.FeatureBackground();
             table22.AddRow(new string[] {
                         "Adobe Acrobat Reader 5.0 (1.0)"});
 #line 240
- testRunner.And("User selects following Objects", ((string)(null)), table22, "And ");
+ testRunner.When("User selects following Objects to the Project", ((string)(null)), table22, "When ");
 #line 245
  testRunner.When("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 246
@@ -793,7 +793,7 @@ this.FeatureBackground();
             table25.AddRow(new string[] {
                         "00BDM1JUR8IF419"});
 #line 264
- testRunner.When("User selects following Objects", ((string)(null)), table25, "When ");
+ testRunner.When("User selects following Objects to the Project", ((string)(null)), table25, "When ");
 #line 269
  testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 270
@@ -945,7 +945,7 @@ this.FeatureBackground();
             table28.AddRow(new string[] {
                         "DK1LF3X47N7PWX7"});
 #line 304
- testRunner.And("User selects following Objects", ((string)(null)), table28, "And ");
+ testRunner.When("User selects following Objects to the Project", ((string)(null)), table28, "When ");
 #line 316
  testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 317
@@ -1039,7 +1039,7 @@ this.FeatureBackground();
             table31.AddRow(new string[] {
                         "NJStar Chinese Word Processor"});
 #line 352
- testRunner.And("User selects following Objects", ((string)(null)), table31, "And ");
+ testRunner.When("User selects following Objects to the Project", ((string)(null)), table31, "When ");
 #line 359
  testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 360

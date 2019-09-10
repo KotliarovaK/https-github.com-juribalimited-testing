@@ -48,7 +48,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	Then "UPDATE ALL CHANGES" Action button is active
 	When User navigates to the 'Users' tab on Scope Changes page
 	And User expands the object to add 
-	And User selects following Objects
+	And User adds following Objects to the Project
 	| Objects                         |
 	| AAC860150 (Kerrie D. Ruiz)      |
 	| AAD1011948 (Pinabel Cinq-Mars)  |
@@ -77,7 +77,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	| ABS188911 (Jesus W. Kirk)       |
 	And User navigates to the 'Applications' left menu item
 	And User expands the object to add 
-	And User selects following Objects
+	And User adds following Objects to the Project
 	| Objects                                                              |
 	| "WPF/E" (codename) Community Technology Preview (Feb 2007) (0.8.5.0) |
 	| 0004 - Adobe Acrobat Reader 5.0.5 Francais (5.0.5)                   |
@@ -174,21 +174,21 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	And User navigates to the 'Devices' left menu item
 	Then open tab in the Project Scope Changes section is active
 	When User expands the object to add 
-	And User selects following Objects
+	And User adds following Objects to the Project
 	| Objects         |
 	| 001BAQXT6JWFPI  |
 	| 001PSUMZYOW581  |
 	| 00BDM1JUR8IF419 |
 	When User navigates to the 'Users' tab on Scope Changes page
 	And User expands the object to add 
-	And User selects following Objects
+	And User adds following Objects to the Project
 	| Objects                         |
 	| AAC860150 (Kerrie D. Ruiz)      |
 	| AAD1011948 (Pinabel Cinq-Mars)  |
 	| AAG081456 (Melanie Z. Fowler)   |
 	And User navigates to the 'Applications' left menu item
 	And User expands the object to add 
-	And User selects following Objects
+	And User adds following Objects to the Project
 	| Objects                                                              |
 	| "WPF/E" (codename) Community Technology Preview (Feb 2007) (0.8.5.0) |
 	| 0004 - Adobe Acrobat Reader 5.0.5 Francais (5.0.5)                   |
@@ -213,7 +213,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingSortingOrderOfTheObjectsInTheProjectSco
 	When User selects "Scope Changes" tab on the Project details page
 	When User expands the object to add
 	Then Objects are displayed in alphabetical order on the Admin page
-	When User selects following Objects
+	When User adds following Objects to the Project
 	| Objects                                                |
 	| 000F977AC8824FE39B8@bclabs.local (Spruill, Shea)       |
 	| 002B5DC7D4D34D5C895@bclabs.local (Collor, Christopher) |

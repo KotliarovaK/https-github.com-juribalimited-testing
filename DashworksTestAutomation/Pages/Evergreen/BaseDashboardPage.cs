@@ -754,6 +754,14 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElements(selector).First(x => x.Displayed());
         }
 
+        public void ClickButtonByName(string buttonName)
+        {
+            var button = GetActionsButtonByName(buttonName);
+            Driver.WaitForElementToBeEnabled(button);
+            button.Click();
+            Driver.WaitForDataLoading(50);
+        }
+
         public IWebElement GetButtonOnMessageBoxByNameOnActionPanel(string button)
         {
             var selector = By.XPath($"//div[contains(@class, 'notification')]//span[text()='{button}']/ancestor::button");

@@ -133,8 +133,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Scope
                 basePage.AddItem(row["Objects"]);
                 search.ClearWithHomeButton(_driver);
             }
-
-            projectElement.UpdateButton.Click();
         }
 
         [When(@"User adds following Objects to the Project on ""(.*)"" tab")]

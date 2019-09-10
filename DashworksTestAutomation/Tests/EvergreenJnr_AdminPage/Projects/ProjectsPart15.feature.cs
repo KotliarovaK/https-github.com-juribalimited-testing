@@ -642,7 +642,7 @@ this.FeatureBackground();
             table16.AddRow(new string[] {
                         "0623U41CZ73RV2Q"});
 #line 160
- testRunner.And("User selects following Objects", ((string)(null)), table16, "And ");
+ testRunner.And("User adds following Objects to the Project", ((string)(null)), table16, "And ");
 #line 163
  testRunner.When("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 164

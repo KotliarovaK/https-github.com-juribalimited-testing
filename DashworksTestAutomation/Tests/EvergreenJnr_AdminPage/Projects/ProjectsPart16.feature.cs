@@ -279,7 +279,7 @@ this.FeatureBackground();
             table3.AddRow(new string[] {
                         "ABS188911 (Jesus W. Kirk)"});
 #line 51
- testRunner.And("User selects following Objects", ((string)(null)), table3, "And ");
+ testRunner.And("User adds following Objects to the Project", ((string)(null)), table3, "And ");
 #line 78
  testRunner.And("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 79
@@ -338,7 +338,7 @@ this.FeatureBackground();
             table4.AddRow(new string[] {
                         "Brava! Reader 2.5 (2.5)"});
 #line 80
- testRunner.And("User selects following Objects", ((string)(null)), table4, "And ");
+ testRunner.And("User adds following Objects to the Project", ((string)(null)), table4, "And ");
 #line 107
  testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 108
@@ -518,7 +518,7 @@ this.FeatureBackground();
             table14.AddRow(new string[] {
                         "00BDM1JUR8IF419"});
 #line 177
- testRunner.And("User selects following Objects", ((string)(null)), table14, "And ");
+ testRunner.And("User adds following Objects to the Project", ((string)(null)), table14, "And ");
 #line 182
  testRunner.When("User navigates to the \'Users\' tab on Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 183
@@ -533,7 +533,7 @@ this.FeatureBackground();
             table15.AddRow(new string[] {
                         "AAG081456 (Melanie Z. Fowler)"});
 #line 184
- testRunner.And("User selects following Objects", ((string)(null)), table15, "And ");
+ testRunner.And("User adds following Objects to the Project", ((string)(null)), table15, "And ");
 #line 189
  testRunner.And("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 190
@@ -548,7 +548,7 @@ this.FeatureBackground();
             table16.AddRow(new string[] {
                         "0036 - Microsoft Access 97 SR-2 English (8.0)"});
 #line 191
- testRunner.And("User selects following Objects", ((string)(null)), table16, "And ");
+ testRunner.And("User adds following Objects to the Project", ((string)(null)), table16, "And ");
 #line 196
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 197
@@ -655,7 +655,7 @@ this.FeatureBackground();
             table18.AddRow(new string[] {
                         "003F5D8E1A844B1FAA5@bclabs.local (Hunter, Melanie)"});
 #line 216
- testRunner.When("User selects following Objects", ((string)(null)), table18, "When ");
+ testRunner.When("User adds following Objects to the Project", ((string)(null)), table18, "When ");
 #line 221
  testRunner.When("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 222

@@ -98,13 +98,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	Then "Users to add (0 of 14628 selected)" is displayed to the user in the Project Scope Changes section
 	Then Objects to add panel is active
 	When User expands the object to add 
-	And User selects following Objects
+	And User adds following Objects to the Project
 	| Objects                    |
 	| AAK881049 (Miguel W. Owen) |
 	Then "UPDATE ALL CHANGES" Action button is active
 	When User navigates to the 'Devices' tab on Scope Changes page
 	And User expands the object to add 
-	And User selects following Objects
+	And User adds following Objects to the Project
 	| Objects        |
 	| 00SH8162NAS524 |
 	Then "UPDATE ALL CHANGES" Action button is active
@@ -128,7 +128,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	When User navigates to the 'Scope' left menu item
 	When User selects "Scope Changes" tab on the Project details page
 	And User expands the object to add 
-	And User selects following Objects
+	And User adds following Objects to the Project
 	| Objects                                |
 	| 00BDBAEA57334C7C8F4 (Basa, Rogelio)    |
 	| 00CFE13AAE104724AF5 (Hardieway, Linda) |
@@ -147,7 +147,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	When User navigates to the 'Users' tab on Scope Changes page
 	Then Objects to add panel is active
 	When User expands the object to add 
-	And User selects following Objects
+	And User adds following Objects to the Project
 	| Objects                             |
 	| 000F977AC8824FE39B8 (Spruill, Shea) |
 	Then "UPDATE ALL CHANGES" Action button is active

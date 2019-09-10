@@ -157,7 +157,7 @@ Scenario: EvergreenJnr_AdminPage_TheGreenBannerIsNotDisplayedIfBannerWasBeShownO
 	When User selects "Scope Changes" tab on the Project details page
 	And User navigates to the 'Devices' left menu item
 	And User expands the object to add 
-	And User selects following Objects
+	And User adds following Objects to the Project
 	| Objects         |
 	| 0623U41CZ73RV2Q |
 	When User clicks the "UPDATE ALL CHANGES" Action button
