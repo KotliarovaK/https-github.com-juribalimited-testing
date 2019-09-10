@@ -343,6 +343,7 @@
     <Compile Include="Steps\Dashworks\AdminPage\Automations\AfterScenario\RemoveAutomationActionAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\AfterScenario\RemoveAutomationAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\ActionSteps.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\Automations\AfterScenario\SetActionDisplayOrder.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\AutomationsGrid.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\CreateAutomationSteps\CreateAutomationViaApiAndOpen.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\CreateAutomationSteps\CreateAutomationViaApi.cs" />
