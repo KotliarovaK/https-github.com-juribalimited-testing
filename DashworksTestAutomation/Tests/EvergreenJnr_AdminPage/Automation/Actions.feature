@@ -75,6 +75,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptio
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15427 @DAS15428 @DAS16728 @DAS16976 @DAS17067 @DAS16890 @DAS17594 @DAS17774 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectlyForAutomations
+	Given Display order for 'Devices_Scope' automation 'First_Action' action is '2'
+	And Display order for 'Devices_Scope' automation 'Secont_Action' action is '1'
+	And Display order for 'Devices_Scope' automation 'Third_Action' action is '3'
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Automations" link on the Admin page

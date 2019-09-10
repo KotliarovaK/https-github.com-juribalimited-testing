@@ -5,6 +5,7 @@ using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Automations;
 using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
+using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
@@ -45,7 +46,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations
             var element = _driver.NowAt<BaseDashboardPage>();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var actualList = element.OptionListOnActionsPanel.Select(value => value.Text).ToList();
-            Utils.Verify.AreEqual(expectedList, actualList, $"Value for {dropDownName} are different");
+            Verify.AreEqual(expectedList, actualList, $"Value for {dropDownName} are different");
         }
 
         [Then(@"Actions page is displayed to the User")]
@@ -53,7 +54,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations
         {
             var page = _driver.NowAt<ActionsPage>();
             _driver.WaitForElementToBeDisplayed(page.CreateActionButton);
-            Utils.Verify.IsTrue(page.CreateActionButton.Displayed(), "Actions page is not displayed");
+            Verify.IsTrue(page.CreateActionButton.Displayed(), "Actions page is not displayed");
         }
     }
 }
