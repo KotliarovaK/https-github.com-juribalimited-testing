@@ -948,6 +948,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.GetCardWidgetContent(widgetTitle).Click();
         }
 
+        [Then(@"Value '(.*)' is displayed in the card '(.*)' widget")]
+        public void ValueIsDisplayedInCardWidget(string value, string widgetName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+
+            Utils.Verify.That(page.GetCardWidgetContent(widgetName).Text, Is.EqualTo(value), "Card value is different.");
+        }
+        
         [When(@"User clicks first Dashboard in dashboards list")]
         public void WhenUserClickFirstDashboardInDashboardsList()
         {
@@ -1034,6 +1042,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.IsTrue(page.PrintPreviewSettingsPopUp.Displayed(), "Print Preview is not Displayed");
             Utils.Verify.IsTrue(page.DashWorksPrintLogo.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
             Utils.Verify.IsTrue(page.PrintPreviewWidgets.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
+        }
+        
+        [Then(@"There is no breadcrumbs displayed on Dashboard page")]
+        public void ThereIsNoBreadcrumbsDisplayedOnDashboardPage()
+        {
+            var page = _driver.NowAt<PrintDashboardsPage>();
+            Utils.Verify.That(page.PrintBreadcrumbs.Displayed(), Is.False, "Print Preview displayed with breadcrumbs");
         }
 
         [When(@"User selects ""(.*)"" option in the ""(.*)"" dropdown for Print Preview Settings")]

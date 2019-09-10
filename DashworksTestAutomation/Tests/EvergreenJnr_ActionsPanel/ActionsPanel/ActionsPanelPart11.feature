@@ -77,3 +77,23 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSortOrderForEvergreenCapacityUnitsIn
 	And User selects "Update capacity unit" Bulk Update Type on Action panel
 	And User selects "Evergreen" Project or Evergreen on Action panel
 	Then options for "Capacity Unit" field are displayed in alphabetical order on Action panel
+
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS16844
+Scenario: EvergreenJnr_DevicesList_CheckThatBulkUpdateOfArchivedItemsWorks
+	When User clicks "Devices" on the left-hand menu
+	Then "All Devices" list should be displayed to the user
+	When User sets includes archived devices in "true"
+	And User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| Empty            |
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update capacity unit" Bulk Update Type on Action panel
+	And User selects "Evergreen" Project or Evergreen on Action panel
+	And User selects "Evergreen Capacity Unit 1" Capacity Unit on Action panel
+	And User clicks the "UPDATE" Action button
+	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
+	And User clicks "UPDATE" button on message box
+	And There are no errors in the browser console
+	And Success message with "1 update has been queued" text is displayed on Action panel
