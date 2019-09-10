@@ -92,7 +92,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects
         [NUnit.Framework.CategoryAttribute("DAS12108")]
         [NUnit.Framework.CategoryAttribute("DAS12756")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("TEST")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatProjectNameWhichStartsWithLowerCaseLetterIsDisplayedInAlphabeticalOrder()
         {
             System.Exception lastException = null;
@@ -132,8 +131,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects
                         "DAS12609",
                         "DAS12108",
                         "DAS12756",
-                        "Cleanup",
-                        "TEST"});
+                        "Cleanup"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -276,7 +274,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12763")]
         [NUnit.Framework.CategoryAttribute("DAS14604")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("TEST")]
         public virtual void EvergreenJnr_AdminPage_CheckThatRelatedBucketsAreUpdatedAfterCreatingOrDeletingProject()
         {
             System.Exception lastException = null;
@@ -315,8 +312,7 @@ this.FeatureBackground();
                         "DAS12755",
                         "DAS12763",
                         "DAS14604",
-                        "Cleanup",
-                        "TEST"});
+                        "Cleanup"});
 #line 65
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -485,7 +481,7 @@ this.FeatureBackground();
             table8.AddRow(new string[] {
                         "ALS - Designing a Microsoft Windows 2000 Dir. Services eBook"});
 #line 107
- testRunner.And("User selects following Objects", ((string)(null)), table8, "And ");
+ testRunner.And("User adds following Objects to the Project", ((string)(null)), table8, "And ");
 #line 110
  testRunner.When("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 111
@@ -541,7 +537,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12485")]
         [NUnit.Framework.CategoryAttribute("DAS12108")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("TEST")]
         public virtual void EvergreenJnr_AdminPage_CheckThatOffboardedObjectsAreListedAfterSelectObjectToRemove()
         {
             System.Exception lastException = null;
@@ -580,8 +575,7 @@ this.FeatureBackground();
                         "DAS12496",
                         "DAS12485",
                         "DAS12108",
-                        "Cleanup",
-                        "TEST"});
+                        "Cleanup"});
 #line 129
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -626,7 +620,7 @@ this.FeatureBackground();
             table12.AddRow(new string[] {
                         "2QP6MWKI0BM87U"});
 #line 138
- testRunner.And("User selects following Objects", ((string)(null)), table12, "And ");
+ testRunner.And("User adds following Objects to the Project", ((string)(null)), table12, "And ");
 #line 146
  testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 147

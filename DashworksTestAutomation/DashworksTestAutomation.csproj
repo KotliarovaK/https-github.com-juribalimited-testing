@@ -343,6 +343,7 @@
     <Compile Include="Steps\Dashworks\AdminPage\Automations\AfterScenario\RemoveAutomationActionAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\AfterScenario\RemoveAutomationAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\ActionSteps.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\Automations\AfterScenario\SetActionDisplayOrder.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\AutomationsGrid.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\CreateAutomationSteps\CreateAutomationViaApiAndOpen.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\CreateAutomationSteps\CreateAutomationViaApi.cs" />
@@ -444,7 +445,7 @@
     <Compile Include="Steps\Dashworks\EvergreenJnr_ListSearch.cs" />
     <Compile Include="Steps\Dashworks\Login\EvergreenJnr_Login.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_Logout.cs" />
-    <Compile Include="Steps\Dashworks\EvergreenJnr_MenuNavigation.cs" />
+    <Compile Include="Steps\Dashworks\EvergreenJnr_LeftMenuNavigation.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_NewCustomList.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_QueryStrings.cs" />
     <Compile Include="Steps\Logout.cs" />

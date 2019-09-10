@@ -437,7 +437,7 @@ this.FeatureBackground();
 #line 99
  testRunner.And("User clicks the \"CREATE SLOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 100
- testRunner.And("User selects \"Device\" in the \"Object Type\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects \'Device\' in the \'Object Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 101
  testRunner.And("User clicks on \"Tasks\" dropdown on the Capacity Slots page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -448,9 +448,9 @@ this.FeatureBackground();
             table12.AddRow(new string[] {
                         "4Task13593"});
 #line 102
- testRunner.Then("following items are displayed in the dropdown:", ((string)(null)), table12, "Then ");
+ testRunner.Then("following checkbox items are displayed in the dropdown:", ((string)(null)), table12, "Then ");
 #line 106
- testRunner.When("User selects \"User\" in the \"Object Type\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'User\' in the \'Object Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 107
  testRunner.And("User clicks on \"Tasks\" dropdown on the Capacity Slots page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -461,9 +461,9 @@ this.FeatureBackground();
             table13.AddRow(new string[] {
                         "5Task13593"});
 #line 108
- testRunner.Then("following items are displayed in the dropdown:", ((string)(null)), table13, "Then ");
+ testRunner.Then("following checkbox items are displayed in the dropdown:", ((string)(null)), table13, "Then ");
 #line 112
- testRunner.When("User selects \"Application\" in the \"Object Type\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Application\' in the \'Object Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 113
  testRunner.And("User clicks on \"Tasks\" dropdown on the Capacity Slots page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -474,7 +474,7 @@ this.FeatureBackground();
             table14.AddRow(new string[] {
                         "6Task13593"});
 #line 114
- testRunner.Then("following items are displayed in the dropdown:", ((string)(null)), table14, "Then ");
+ testRunner.Then("following checkbox items are displayed in the dropdown:", ((string)(null)), table14, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -983,7 +983,7 @@ this.FeatureBackground();
 #line 251
  testRunner.And("User type \"Slot 2\" Name in the \"Display Name\" field on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 252
- testRunner.And("User selects \"Capacity Units\" in the \"Capacity Type\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects \'Capacity Units\' in the \'Capacity Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
                         "Value"});

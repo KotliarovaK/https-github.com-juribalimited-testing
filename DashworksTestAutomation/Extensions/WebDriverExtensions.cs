@@ -326,17 +326,25 @@ namespace DashworksTestAutomation.Extensions
             return allRequests;
         }
 
+        private static string _toolTipSelector = ".//mat-tooltip-component";
+
+        public static bool IsTooltipDisplayed(this RemoteWebDriver driver)
+        {
+            var toolTips = driver.FindElements(By.XPath(_toolTipSelector));
+
+            return toolTips.Count > 0;
+        }
+
         public static string GetTooltipText(this RemoteWebDriver driver)
         {
-            string selector = ".//mat-tooltip-component";
-            driver.WhatForElementToBeExists(By.XPath(selector));
-            var toolTips = driver.FindElements(By.XPath(selector));
+            driver.WhatForElementToBeExists(By.XPath(_toolTipSelector));
+            var toolTips = driver.FindElements(By.XPath(_toolTipSelector));
             if (!toolTips.Any())
                 throw new Exception("Tool tip was not displayed");
             var toolTipText = toolTips.First().FindElement(By.XPath("./div")).Text;
             if (String.IsNullOrEmpty(toolTipText))
             {
-                driver.WaitForElementToBeDisplayed(By.XPath(selector + "/div"));
+                driver.WaitForElementToBeDisplayed(By.XPath(_toolTipSelector + "/div"));
                 toolTipText = toolTips.First().FindElement(By.XPath("./div")).Text;
             }
             return toolTipText;

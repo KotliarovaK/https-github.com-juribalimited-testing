@@ -76,7 +76,8 @@ Scenario: EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations
 	When User enters "DELAY_2" text in the Search field for "Automation" column
 	Then "TRUE" content is displayed in "Active" column
 	When User selects all rows on the grid
-	Then following items are displayed in the Actions dropdown:
+	When User clicks Actions button on the Item Details page
+	Then only following items are displayed in the dropdown:
 	| Items         |
 	| Run now       |
 	| Make active   |

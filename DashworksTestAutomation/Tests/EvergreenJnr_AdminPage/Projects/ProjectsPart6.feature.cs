@@ -531,7 +531,7 @@ this.FeatureBackground();
             table4.AddRow(new string[] {
                         "011PLA470S0B9DJ"});
 #line 118
- testRunner.And("User selects following Objects", ((string)(null)), table4, "And ");
+ testRunner.When("User adds following Objects to the Project", ((string)(null)), table4, "When ");
 #line 122
  testRunner.Then("\"Devices to add (2 of 2 selected)\" is displayed to the user in the Project Scope " +
                     "Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

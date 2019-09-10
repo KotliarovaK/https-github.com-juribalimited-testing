@@ -115,7 +115,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDevicesToAddAndRemoveAreChangingApprop
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Devices to add (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
 	When User expands the object to add 
-	And User selects following Objects
+	When User adds following Objects to the Project
 	| Objects         |
 	| 00BDM1JUR8IF419 |
 	| 011PLA470S0B9DJ |

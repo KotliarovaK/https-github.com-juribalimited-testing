@@ -111,8 +111,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
             if (placeholder.Equals("Automation Name"))
                 _automations.Value.Add(new AutomationsDto() { automationName = text });
-                
-               _driver.WaitForDataLoading();
+
+            _driver.WaitForDataLoading();
         }
 
         [Then(@"'(.*)' content is displayed in '(.*)' textbox")]
@@ -201,6 +201,16 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var dropdown = _driver.NowAt<BaseDashboardPage>();
             Verify.IsTrue(dropdown.GetDropdownByName(dropdownName).Displayed(), $"{dropdownName} is not displayed");
+        }
+
+        [Then(@"only following items are displayed in the dropdown:")]
+        public void ThenOnlyFollowingItemsAreDisplayedInTheDropdown(Table table)
+        {
+            var basePage = _driver.NowAt<BaseDashboardPage>();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = basePage.GetDropdownValues();
+            Verify.AreEqual(expectedList, actualList, "Dropdown values are different");
+            basePage.BodyContainer.Click();
         }
 
         #endregion

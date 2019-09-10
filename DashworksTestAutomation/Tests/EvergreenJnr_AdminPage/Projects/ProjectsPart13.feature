@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12892 @Cleanup @Cleanup @Projects @TEST
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12892 @Cleanup @Cleanup @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThatOnlyFilteredListObjectsAreUsedAsAScopeOfProject
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
@@ -62,7 +62,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameEditedInSeniorIsUpdatedInA
 	And User selects all rows on the grid
 	And User removes selected item
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12776 @Cleanup @TEST
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12776 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterClickUpdateForDynamicList
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
@@ -98,19 +98,19 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	Then "Users to add (0 of 14628 selected)" is displayed to the user in the Project Scope Changes section
 	Then Objects to add panel is active
 	When User expands the object to add 
-	And User selects following Objects
+	And User adds following Objects to the Project
 	| Objects                    |
 	| AAK881049 (Miguel W. Owen) |
 	Then "UPDATE ALL CHANGES" Action button is active
 	When User navigates to the 'Devices' tab on Scope Changes page
 	And User expands the object to add 
-	And User selects following Objects
+	And User adds following Objects to the Project
 	| Objects        |
 	| 00SH8162NAS524 |
 	Then "UPDATE ALL CHANGES" Action button is active
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12776 @DAS13973 @Cleanup @TEST
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12776 @DAS13973 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterClickUpdateForStaticList
 	When User create static list with "StaticList12776" name on "Users" page with following items
 	| ItemName            |
@@ -128,7 +128,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	When User navigates to the 'Scope' left menu item
 	When User selects "Scope Changes" tab on the Project details page
 	And User expands the object to add 
-	And User selects following Objects
+	And User adds following Objects to the Project
 	| Objects                                |
 	| 00BDBAEA57334C7C8F4 (Basa, Rogelio)    |
 	| 00CFE13AAE104724AF5 (Hardieway, Linda) |
@@ -147,7 +147,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	When User navigates to the 'Users' tab on Scope Changes page
 	Then Objects to add panel is active
 	When User expands the object to add 
-	And User selects following Objects
+	And User adds following Objects to the Project
 	| Objects                             |
 	| 000F977AC8824FE39B8 (Spruill, Shea) |
 	Then "UPDATE ALL CHANGES" Action button is active

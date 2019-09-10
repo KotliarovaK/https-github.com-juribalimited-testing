@@ -89,7 +89,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Projects")]
-        [NUnit.Framework.CategoryAttribute("TEST")]
         public virtual void EvergreenJnr_AdminPage_CheckThatOnlyFilteredListObjectsAreUsedAsAScopeOfProject()
         {
             System.Exception lastException = null;
@@ -126,8 +125,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects
                         "DAS12892",
                         "Cleanup",
                         "Cleanup",
-                        "Projects",
-                        "TEST"});
+                        "Projects"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -324,7 +322,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS12776")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("TEST")]
         public virtual void EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterClickUpdateForDynamicList()
         {
             System.Exception lastException = null;
@@ -361,8 +358,7 @@ this.FeatureBackground();
                         "AdminPage",
                         "Projects",
                         "DAS12776",
-                        "Cleanup",
-                        "TEST"});
+                        "Cleanup"});
 #line 66
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -455,7 +451,7 @@ this.FeatureBackground();
             table7.AddRow(new string[] {
                         "AAK881049 (Miguel W. Owen)"});
 #line 101
- testRunner.And("User selects following Objects", ((string)(null)), table7, "And ");
+ testRunner.And("User adds following Objects to the Project", ((string)(null)), table7, "And ");
 #line 104
  testRunner.Then("\"UPDATE ALL CHANGES\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 105
@@ -468,7 +464,7 @@ this.FeatureBackground();
             table8.AddRow(new string[] {
                         "00SH8162NAS524"});
 #line 107
- testRunner.And("User selects following Objects", ((string)(null)), table8, "And ");
+ testRunner.And("User adds following Objects to the Project", ((string)(null)), table8, "And ");
 #line 110
  testRunner.Then("\"UPDATE ALL CHANGES\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 111
@@ -489,7 +485,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12776")]
         [NUnit.Framework.CategoryAttribute("DAS13973")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("TEST")]
         public virtual void EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterClickUpdateForStaticList()
         {
             System.Exception lastException = null;
@@ -527,8 +522,7 @@ this.FeatureBackground();
                         "Projects",
                         "DAS12776",
                         "DAS13973",
-                        "Cleanup",
-                        "TEST"});
+                        "Cleanup"});
 #line 114
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -585,7 +579,7 @@ this.FeatureBackground();
             table11.AddRow(new string[] {
                         "00CFE13AAE104724AF5 (Hardieway, Linda)"});
 #line 131
- testRunner.And("User selects following Objects", ((string)(null)), table11, "And ");
+ testRunner.And("User adds following Objects to the Project", ((string)(null)), table11, "And ");
 #line 135
  testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 136
@@ -624,7 +618,7 @@ this.FeatureBackground();
             table12.AddRow(new string[] {
                         "000F977AC8824FE39B8 (Spruill, Shea)"});
 #line 150
- testRunner.And("User selects following Objects", ((string)(null)), table12, "And ");
+ testRunner.And("User adds following Objects to the Project", ((string)(null)), table12, "And ");
 #line 153
  testRunner.Then("\"UPDATE ALL CHANGES\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 154

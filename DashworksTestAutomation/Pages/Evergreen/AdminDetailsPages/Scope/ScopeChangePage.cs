@@ -26,14 +26,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Scope
         [FindsBy(How = How.XPath, Using = ".//button[@aria-label='Toggle panel']")]
         public IWebElement PlusButton { get; set; }
 
-        //TODO looks like should be deleted
-        [FindsBy(How = How.XPath, Using = "//button/span[contains(text(), 'ADD')]")]
-        public IWebElement AddItemButton { get; set; }
-
-        //TODO looks like should be deleted
-        [FindsBy(How = How.XPath, Using = ".//button[contains(@title,'Update')]")]
-        public IWebElement UpdateButton { get; set; }
-
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -49,13 +41,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Scope
             if (!Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Short))
                 throw new Exception($"'{tabName}' tab was not displayed on Scope Page");
             return Driver.FindElement(selector);
-        }
-
-        public void AddItem(string itemName)
-        {
-            var selector = $".//span[contains(text(), '{itemName}')]";
-            Driver.WaitForElementToBeDisplayed(By.XPath(selector));
-            Driver.FindElement(By.XPath(selector)).Click();
         }
     }
 }

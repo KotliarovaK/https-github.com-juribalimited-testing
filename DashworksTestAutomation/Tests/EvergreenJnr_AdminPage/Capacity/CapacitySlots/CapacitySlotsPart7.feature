@@ -97,21 +97,21 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnlyDateTasksCanBeAvailableForSelectio
 	And User navigates to the 'Capacity' left menu item
 	And User selects "Slots" tab on the Project details page
 	And User clicks the "CREATE SLOT" Action button
-	And User selects "Device" in the "Object Type" dropdown
+	And User selects 'Device' in the 'Object Type' dropdown
 	And User clicks on "Tasks" dropdown on the Capacity Slots page
-	Then following items are displayed in the dropdown:
+	Then following checkbox items are displayed in the dropdown:
 	| Items      |
 	| 1Task13593 |
 	| 4Task13593 |
-	When User selects "User" in the "Object Type" dropdown
+	When User selects 'User' in the 'Object Type' dropdown
 	And User clicks on "Tasks" dropdown on the Capacity Slots page
-	Then following items are displayed in the dropdown:
+	Then following checkbox items are displayed in the dropdown:
 	| Items      |
 	| 3Task13593 |
 	| 5Task13593 |
-	When User selects "Application" in the "Object Type" dropdown
+	When User selects 'Application' in the 'Object Type' dropdown
 	And User clicks on "Tasks" dropdown on the Capacity Slots page
-	Then following items are displayed in the dropdown:
+	Then following checkbox items are displayed in the dropdown:
 	| Items      |
 	| 2Task13593 |
 	| 6Task13593 |
@@ -249,7 +249,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreDeletedAfterBeingAssociatedTo
 	And User clicks the "CREATE SLOT" Action button
 	And User type "Slot 2" Name in the "Slot Name" field on the Project details page
 	And User type "Slot 2" Name in the "Display Name" field on the Project details page
-	And User selects "Capacity Units" in the "Capacity Type" dropdown
+	And User selects 'Capacity Units' in the 'Capacity Type' dropdown
 	Then Next checkboxes in the "Tasks" dropdown are not available to select:
 	| Value                                                        |
 	| Computer Information ---- Text fill; Text fill; \ 1Task13500 |

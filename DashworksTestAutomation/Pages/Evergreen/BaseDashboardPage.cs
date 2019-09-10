@@ -19,11 +19,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public const string ImageItem = ".//div[contains(@class, 'ag-body-container')]//img[contains(@src,'png')]";
 
-        public const string TableTextContent = ".//div[@role='row']/div/span";
-
         public const string GridCell = ".//div[@role='gridcell']";
-
-        public const string FullTable = ".//div[contains(@class, 'ag-body-viewport')]/div";
 
         public const string OptionsDllOnActionsPanel = "//mat-option[@role='option']//span";
 
@@ -58,6 +54,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'active')]//i[contains(@class, 'static-list')]")]
         public IWebElement ActiveActionsButton { get; set; }
 
+        //TODO move this to separate component
         #region Action Panel
 
         [FindsBy(How = How.XPath, Using = "//i[contains(@class, 'static-list')]/ancestor::button")]
@@ -256,9 +253,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-selection-checkbox']")]
         public IWebElement Checkbox { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-body-viewport')]")]
-        public IWebElement TableBody { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-body-viewport')]//div[@class='ag-center-cols-container']")]
         public IWebElement TableContent { get; set; }
@@ -507,12 +501,24 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(selector);
         }
 
+        //Get all span with text
+        private string _dropdownOptions = ".//mat-option//span[string-length(text())>0]";
+
         public IWebElement GetDropdownValueByName(string dropdownName)
         {
             var text = dropdownName.Split('\'').Aggregate(string.Empty, (current, s) => current + $"[contains(text(),'{s}')]");
-            var selector = By.XPath($".//mat-option//span{text}");
+            var selector = By.XPath($"{_dropdownOptions}{text}");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
+        }
+
+        public List<string> GetDropdownValues()
+        {
+            var optionsList = Driver.FindElements(By.XPath(_dropdownOptions));
+            if(!optionsList.Any())
+                throw new Exception($"Unable to get dropdown values");
+            var values = optionsList.Select(x => x.Text).ToList();
+            return values;
         }
 
         #endregion
@@ -747,6 +753,14 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Driver.WaitForDataLoading();
             Driver.WaitForElementsToBeDisplayed(selector, 30, false);
             return Driver.FindElements(selector).First(x => x.Displayed());
+        }
+
+        public void ClickButtonByName(string buttonName)
+        {
+            var button = GetActionsButtonByName(buttonName);
+            Driver.WaitForElementToBeEnabled(button);
+            button.Click();
+            Driver.WaitForDataLoading(50);
         }
 
         public IWebElement GetButtonOnMessageBoxByNameOnActionPanel(string button)
@@ -1111,6 +1125,14 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             var selector = By.XPath($".//div[@col-id='application' and @role='gridcell']//a[contains(text(), '{itemName}')]");
             return Driver.FindElements(selector).First();
+        }
+
+        //For adding Project Scope items and Buckets
+        public void AddItem(string itemName)
+        {
+            var selector = $".//span[contains(text(), '{itemName}')]";
+            Driver.WaitForElementToBeDisplayed(By.XPath(selector));
+            Driver.FindElement(By.XPath(selector)).Click();
         }
     }
 }

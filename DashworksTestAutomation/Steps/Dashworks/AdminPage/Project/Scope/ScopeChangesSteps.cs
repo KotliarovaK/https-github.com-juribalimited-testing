@@ -61,6 +61,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Scope
         {
             var projectElement = _driver.NowAt<ScopeChangePage>();
             _driver.WaitForElementToBeDisplayed(projectElement.PlusButton);
+            _driver.WaitForElementToBeEnabled(projectElement.PlusButton);
             projectElement.PlusButton.Click();
         }
 
@@ -102,10 +103,10 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Scope
             }
         }
 
+        //TODO Should be moved to buckets
         [When(@"User adds following Objects from list")]
         public void ThenUserAddFollowingObjectsFromList(Table table)
         {
-            var bucketElement = _driver.NowAt<ScopeChangePage>();
             var basePage = _driver.NowAt<BaseDashboardPage>();
             foreach (var row in table.Rows)
             {
@@ -113,13 +114,12 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Scope
                 var search = basePage.GetNamedTextbox("Search");
                 search.Clear();
                 search.SendKeys(text);
-                bucketElement.AddItem(text);
+                basePage.AddItem(text);
                 search.ClearWithHomeButton(_driver);
                 //Save added objects to remove it from the bucket
                 _addedObjects.Value.Add(text, _lastUsedBucket.Value);
             }
-
-            bucketElement.AddItemButton.Click();
+            basePage.GetActionsButtonByName("ADD BUCKETS").Click();
         }
 
         [When(@"User adds following Objects to the Project")]
@@ -131,11 +131,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Scope
             foreach (var row in table.Rows)
             {
                 var search = basePage.GetNamedTextbox("Search");
-                projectElement.AddItem(row["Objects"]);
+                basePage.AddItem(row["Objects"]);
                 search.ClearWithHomeButton(_driver);
             }
-
-            projectElement.UpdateButton.Click();
         }
 
         [When(@"User adds following Objects to the Project on ""(.*)"" tab")]
@@ -151,7 +149,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Scope
                 foreach (var row in table.Rows)
                 {
                     var search = basePage.GetNamedTextbox("Search");
-                    projectElement.AddItem(row["Objects"]);
+                    basePage.AddItem(row["Objects"]);
                     search.ClearWithHomeButton(_driver);
                 }
             }
@@ -169,12 +167,12 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Scope
                 foreach (var row in table.Rows)
                 {
                     var search = basePage.GetNamedTextbox("Search");
-                    projectElement.AddItem(row["Objects"]);
+                    basePage.AddItem(row["Objects"]);
                     search.ClearWithHomeButton(_driver);
                 }
             }
 
-            projectElement.UpdateButton.Click();
+            basePage.ClickButtonByName("UPDATE ALL CHANGES");
         }
 
         [When(@"User selects following Objects to the Project")]
@@ -188,7 +186,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Scope
                 var search = basePage.GetNamedTextbox("Search");
                 search.Clear();
                 search.SendKeys(row["Objects"]);
-                projectElement.AddItem(row["Objects"]);
+                basePage.AddItem(row["Objects"]);
                 search.ClearWithHomeButton(_driver);
             }
         }

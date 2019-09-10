@@ -424,7 +424,7 @@ this.FeatureBackground();
             table6.AddRow(new string[] {
                         "00HA7MKAVVFDAV"});
 #line 78
- testRunner.When("User selects following Objects", ((string)(null)), table6, "When ");
+ testRunner.When("User adds following Objects to the Project", ((string)(null)), table6, "When ");
 #line 81
  testRunner.Then("Update Project button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 82
@@ -442,7 +442,7 @@ this.FeatureBackground();
             table7.AddRow(new string[] {
                         "AAH0343264 (Luc Gauthier)"});
 #line 86
- testRunner.When("User selects following Objects", ((string)(null)), table7, "When ");
+ testRunner.When("User adds following Objects to the Project", ((string)(null)), table7, "When ");
 #line 89
  testRunner.And("User navigates to the \'Devices\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 90

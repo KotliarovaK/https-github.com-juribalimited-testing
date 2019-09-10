@@ -24,6 +24,7 @@ using DashworksTestAutomation.DTO.RuntimeVariables.Buckets;
 using DashworksTestAutomation.DTO.RuntimeVariables.CapacityUnits;
 using DashworksTestAutomation.DTO.RuntimeVariables.Rings;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Automations;
+using DashworksTestAutomation.Pages.Evergreen.ItemDetails;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework.Internal;
 using TechTalk.SpecFlow;
@@ -196,15 +197,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
+        //TODO should be moved to EvergreenJnr_BasePage
         [Then(@"following Values are displayed in ""(.*)"" drop-down on the Admin page:")]
         public void ThenFollowingValuesAreDisplayedInDrop_DownOnTheAdminPage(string dropDownName, Table table)
         {
-            var page = _driver.NowAt<ProjectsPage>();
-            page.GetDropDownByName(dropDownName).Click();
+            var dropdown = _driver.NowAt<BaseDashboardPage>();
+            dropdown.GetDropdownByName(dropDownName).Click();
             var element = _driver.NowAt<BaseDashboardPage>();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var actualList = element.OptionListOnActionsPanel.Select(value => value.Text).ToList();
-            Utils.Verify.AreEqual(expectedList, actualList, $"Value for {dropDownName} are different");
+            Verify.AreEqual(expectedList, actualList, $"Value for {dropDownName} are different");
             var body = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             body.BodyContainer.Click();
         }
@@ -801,8 +803,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User removes selected members")]
         public void WhenUserRemovesSelectedMembers()
         {
+            var action = _driver.NowAt<ActionPanelPage>();
+            action.ActionsDropDown.Click();
+            action.GetActionButtonByName("Delete").Click();
+
             var teamElement = _driver.NowAt<TeamsPage>();
-            teamElement.ActionsButton.Click();
             _driver.WaitForElementToBeDisplayed(teamElement.RemoveButtonInActions);
             teamElement.RemoveButtonInActions.Click();
             _driver.WaitForElementToBeDisplayed(teamElement.RemoveButtonOnPage);
@@ -915,21 +920,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 "Create Team button is active");
         }
 
+        //TODO should be moved to ActionPanel
         [When(@"User clicks Delete button")]
         public void WhenUserClicksDeleteButton()
         {
-            var button = _driver.NowAt<BaseGridPage>();
+            var button = _driver.NowAt<ActionPanelPage>();
             _driver.WaitForElementToBeDisplayed(button.DeleteButtonOnPage);
             button.DeleteButtonOnPage.Click();
-            Logger.Write("Delete button was clicked");
         }
 
+        //TODO should be moved to ActionPanel
         [When(@"User clicks Delete button in Actions")]
         public void WhenUserClicksDeleteButtonInActions()
         {
-            var button = _driver.NowAt<BaseGridPage>();
-            button.ClickDeleteButtonInActions();
-            Logger.Write("Delete button was clicked");
+            var button = _driver.NowAt<ActionPanelPage>();
+            button.GetActionButtonByName("Delete").Click();
         }
 
         [Then(@"Reassign Objects is displayed on the Teams page")]
@@ -944,43 +949,32 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenIsDisplayedOnTheAdminPage(string name)
         {
             var page = _driver.NowAt<Capacity_CapacityUnitsPage>();
-            Utils.Verify.IsTrue(page.GetMovingElementByName(name).Displayed(), $"{name} Page is not displayed to the user");
+            Verify.IsTrue(page.GetMovingElementByName(name).Displayed(), $"{name} Page is not displayed to the user");
         }
 
+        //TODO should be moved to ActionPanel
         [Then(@"Actions dropdown is displayed correctly")]
         public void ThenActionsDropdownIsDisplayedCorrectly()
         {
-            var button = _driver.NowAt<BaseGridPage>();
-            _driver.WaitForElementToBeDisplayed(button.ActionsButton);
-            Utils.Verify.IsTrue(button.ActionsButton.Displayed(), "Actions dropdown is not displayed correctly");
+            var button = _driver.NowAt<ActionPanelPage>();
+            _driver.WaitForElementToBeDisplayed(button.ActionsDropDown);
+            Verify.IsTrue(button.ActionsDropDown.Displayed(), "Actions dropdown is not displayed correctly");
         }
 
         [Then(@"Actions dropdown is disabled")]
         public void ThenActionsDropdownIsDisabled()
         {
             var button = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsTrue(button.ActionsSelectBox.GetAttribute("class").Contains("disabled"), "Actions dropdown is active");
+            Verify.IsTrue(button.ActionsSelectBox.GetAttribute("class").Contains("disabled"), "Actions dropdown is active");
         }
 
+        //TODO should be moved to ActionPanel
         [When(@"User clicks on Actions button")]
         public void ThenUserClicksOnActionsButton()
         {
-            var button = _driver.NowAt<BaseGridPage>();
-            _driver.WaitForElementToBeDisplayed(button.ActionsButton);
-            button.ActionsButton.Click();
-            Logger.Write("Actions button was clicked");
-        }
-
-        [Then(@"following items are displayed in the Actions dropdown:")]
-        public void ThenFollowingItemsAreDisplayedInTheActionsDropdown(Table table)
-        {
-            var button = _driver.NowAt<BaseGridPage>();
-            _driver.WaitForElementToBeDisplayed(button.ActionsButton);
-            button.ActionsButton.Click();
-            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            var actualList = button.ActionsInDropdownList.Select(value => value.Text).ToList();
-            Utils.Verify.AreEqual(expectedList, actualList, "Actions items are different");
-            button.BodyContainer.Click();
+            var button = _driver.NowAt<ActionPanelPage>();
+            _driver.WaitForElementToBeDisplayed(button.ActionsDropDown);
+            button.ActionsDropDown.Click();
         }
 
         [When(@"User selects ""(.*)"" in the Actions")]
@@ -1634,13 +1628,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.EnterValueByDayName(value, columnName);
         }
 
-        [Then(@"following items are displayed in the dropdown:")]
-        public void ThenFollowingItemsAreDisplayedInTheDropdown(Table items)
+        //TODO move this to BasePage
+        [Then(@"following checkbox items are displayed in the dropdown:")]
+        public void ThenFollowingCheckboxItemsAreDisplayedInTheDropdown(Table items)
         {
             var page = _driver.NowAt<BaseGridPage>();
             foreach (var row in items.Rows)
             {
-                Utils.Verify.IsTrue(page.DropdownItemDisplayed(row["Items"]).Displayed,
+                Verify.IsTrue(page.DropdownItemDisplayed(row["Items"]).Displayed,
                     $"{row["Items"]} is not displayed in the dropdown");
             }
         }
@@ -1935,25 +1930,28 @@ namespace DashworksTestAutomation.Steps.Dashworks
             projectElement.OnboardedObjectNumber(objectsNumber);
         }
 
+        //TODO should be moved to ActionPanel
         [When(@"User clicks Actions button on the Projects page")]
         public void WhenUserClicksActionsButtonOnTheProjectsPage()
         {
-            var projectElement = _driver.NowAt<ProjectsPage>();
-            projectElement.ActionsButton.Click();
+            var projectElement = _driver.NowAt<ActionPanelPage>();
+            projectElement.ActionsDropDown.Click();
         }
 
+        //TODO should be moved to ActionPanel
         [Then(@"Actions button on the Projects page is active")]
         public void ThenActionsButtonOnTheProjectsPageIsActive()
         {
-            var projectElement = _driver.NowAt<ProjectsPage>();
-            Utils.Verify.Contains("false", projectElement.ActionsButton.GetAttribute("aria-disabled"), "Actions button is inactive");
+            var projectElement = _driver.NowAt<ActionPanelPage>();
+            Verify.Contains("false", projectElement.ActionsDropDown.GetAttribute("aria-disabled"), "Actions button is inactive");
         }
 
+        //TODO should be moved to ActionPanel
         [Then(@"Actions button on the Projects page is not active")]
         public void ThenActionsButtonOnTheProjectsPageIsNotActive()
         {
-            var projectElement = _driver.NowAt<ProjectsPage>();
-            Utils.Verify.Contains("true", projectElement.ActionsButton.GetAttribute("aria-disabled"), "Actions button is inactive");
+            var projectElement = _driver.NowAt<ActionPanelPage>();
+            Verify.Contains("true", projectElement.ActionsDropDown.GetAttribute("aria-disabled"), "Actions button is inactive");
         }
 
         [When(@"User clicks Delete Project button")]
@@ -1966,10 +1964,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User removes selected item")]
         public void WhenUserRemovesSelectedItem()
         {
+            var action = _driver.NowAt<ActionPanelPage>();
+            action.ActionsDropDown.Click();
+            action.GetActionButtonByName("Delete").Click();
+            action.DeleteButtonOnPage.Click();
             var projectElement = _driver.NowAt<BaseGridPage>();
-            projectElement.ActionsButton.Click();
-            projectElement.ClickDeleteButtonInActions();
-            projectElement.DeleteButtonOnPage.Click();
             _driver.WaitForElementToBeDisplayed(projectElement.WarningMessage);
             _driver.WaitForDataLoading();
             projectElement.DeleteButtonInWarningMessage.Click();
@@ -1989,20 +1988,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
             checkbox.SelectAllCheckBox.Click();
         }
 
+        //TODO should be moved to ActionPanel
         [Then(@"Delete button is displayed to the User on the Projects page")]
         public void ThenDeleteButtonIsDisplayedToTheUserOnTheProjectsPage()
         {
-            var projectElement = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsTrue(projectElement.DeleteValueInActions.Displayed(), "Delete Project Value is not displayed");
-            Utils.Verify.IsTrue(projectElement.DeleteButtonOnPage.Displayed(), "Delete button is not displayed");
+            var projectElement = _driver.NowAt<ActionPanelPage>();
+            Verify.IsTrue(projectElement.GetActionButtonByName("Delete").Displayed(), "Delete Project Value is not displayed");
+            Verify.IsTrue(projectElement.DeleteButtonOnPage.Displayed(), "Delete button is not displayed");
         }
 
+        //TODO should be moved to ActionPanel
         [Then(@"Delete button is not displayed to the User on the Projects page")]
         public void ThenDeleteButtonIsNotDisplayedToTheUserOnTheProjectsPage()
         {
-            var projectElement = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsTrue(projectElement.ActionsInDropdown.Displayed(), "Actions is not displayed in the dropdown");
-            Utils.Verify.IsFalse(projectElement.DeleteButtonOnPage.Displayed(), "Delete button is displayed");
+            var projectElement = _driver.NowAt<ActionPanelPage>();
+            Verify.IsTrue(projectElement.ActionsDropDown.Displayed(), "Actions is not displayed in the dropdown");
+            Verify.IsFalse(projectElement.DeleteButtonOnPage.Displayed(), "Delete button is displayed");
         }
 
         [Then(@"Counter shows ""(.*)"" found rows")]

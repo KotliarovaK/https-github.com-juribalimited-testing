@@ -28,37 +28,37 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.CapacityUnits.AfterS
             _automations = automations;
         }
 
-        //[AfterScenario("Cleanup", Order = 10)]
-        //public void DeleteNewlyCreatedAutomationAction()
-        //{
-        //    if (!_automationActions.Value.Any())
-        //        return;
+        [AfterScenario("Cleanup", Order = 10)]
+        public void DeleteNewlyCreatedAutomationAction()
+        {
+            if (!_automationActions.Value.Any())
+                return;
 
-        //    if (_automations.Value == null || !_automations.Value.Any())
-        //    {
-        //        Logger.Write("WARNING: there are no Automations from which we try to remove Actions");
-        //        return;
-        //    }
+            //Try to delete all tasks for all projects as we do not know relationship between them
+            foreach (string action in _automationActions.Value)
+            {
+                try
+                {
+                    //Get all Actions IDs for this name
+                    var allActionIds = DatabaseHelper.GetAutomationActions(action);
 
-        //    //Try to delete all tasks for all projects as we do not know relationship between them
-        //    foreach (string action in _automationActions.Value)
-        //    {
-        //        foreach (AutomationsDto automationsDto in _automations.Value)
-        //        {
-        //            try
-        //            {
-        //                var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/automation/{automationsDto.Id}/actionDeleteCommand";
-        //                var request = requestUri.GenerateRequest();
-        //                request.AddParameter("selectedObjectsList", DatabaseHelper.GetAutomationActionId(action, automationsDto.Id));
+                    foreach (string actionId in allActionIds)
+                    {
+                        //Get automation for this action
+                        var automationId = DatabaseHelper.GetAutomationIdByActionId(actionId);
 
-        //                _client.Value.Put(request);
-        //            }
-        //            catch (Exception e)
-        //            {
-        //                Logger.Write($"Unable to delete Action for Automation via API: {e}");
-        //            }
-        //        }
-        //    }
-        //}
+                        var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/automation/{automationId}/actionDeleteCommand";
+                        var request = requestUri.GenerateRequest();
+                        request.AddParameter("selectedObjectsList", actionId);
+
+                        var resp = _client.Value.Put(request);
+                    }
+                }
+                catch (Exception e)
+                {
+                    Logger.Write($"Unable to delete Action for Automation via API: {e}");
+                }
+            }
+        }
     }
 }

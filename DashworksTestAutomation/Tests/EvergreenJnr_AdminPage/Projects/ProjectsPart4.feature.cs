@@ -409,7 +409,7 @@ this.FeatureBackground();
             table4.AddRow(new string[] {
                         "174HB6RFAHA5CT"});
 #line 80
- testRunner.When("User selects following Objects", ((string)(null)), table4, "When ");
+ testRunner.When("User adds following Objects to the Project", ((string)(null)), table4, "When ");
 #line 86
  testRunner.When("User navigates to the \'Applications\' tab on Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 87
@@ -435,7 +435,7 @@ this.FeatureBackground();
             table5.AddRow(new string[] {
                         "Backburner (2.1.2.0)"});
 #line 94
- testRunner.When("User selects following Objects", ((string)(null)), table5, "When ");
+ testRunner.When("User adds following Objects to the Project", ((string)(null)), table5, "When ");
 #line 98
  testRunner.When("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 99

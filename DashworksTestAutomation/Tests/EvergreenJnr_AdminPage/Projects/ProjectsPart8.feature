@@ -150,7 +150,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoAdditionalCapacityUnitsAreCreatedWhe
 	And User clicks content from "Project" column
 	Then Project "13530Project" is displayed to user
 	When User navigates to the 'Capacity' left menu item
-	And User selects "Clone evergreen capacity units to project capacity units" in the "Capacity Units" dropdown
+	And User selects 'Clone evergreen capacity units to project capacity units' in the 'Capacity Units' dropdown
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The project capacity details have been updated" text
 	When User clicks "Administration" navigation link on the Admin page
