@@ -95,7 +95,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType
 	When User clicks content from "Capacity Slot" column
 	Then 'Pre-Migration \ Scheduled date' value is displayed in the 'Tasks' dropdown
 	When User clicks on "Paths" dropdown on the Capacity Slots page
-	Then following items are displayed in the dropdown:
+	Then following checkbox items are displayed in the dropdown:
 	| Items                  |
 	| Personal Mailbox       |
 	| Public Folder          |
@@ -105,14 +105,14 @@ Scenario: EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType
 	When User selects 'User' in the 'Object Type' dropdown
 	Then "" content is displayed in "Tasks" field
 	When User clicks on "Paths" dropdown on the Capacity Slots page
-	Then following items are displayed in the dropdown:
+	Then following checkbox items are displayed in the dropdown:
 	| Items         |
 	| Standard User |
 	| VIP User      |
 	When User selects 'Application' in the 'Object Type' dropdown
 	Then "" content is displayed in "Tasks" field
 	When User clicks on "Paths" dropdown on the Capacity Slots page
-	Then following items are displayed in the dropdown:
+	Then following checkbox items are displayed in the dropdown:
 	| Items                  |
 	| Public Folder          |
 	| Sharepoint Application |
@@ -124,7 +124,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType
 	And User clicks content from "Capacity Slot" column
 	Then 'Pre-Migration \ Scheduled Date' value is displayed in the 'Tasks' dropdown
 	When User clicks on "Paths" dropdown on the Capacity Slots page
-	Then following items are displayed in the dropdown:
+	Then following checkbox items are displayed in the dropdown:
 	| Items                                            |
 	| [This is the Default Request Type for Computer)] |
 	| Computer: PC Rebuild                             |
@@ -134,7 +134,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType
 	When User selects 'User' in the 'Object Type' dropdown
 	Then "" content is displayed in "Tasks" field
 	When User clicks on "Paths" dropdown on the Capacity Slots page
-	Then following items are displayed in the dropdown:
+	Then following checkbox items are displayed in the dropdown:
 	| Items            |
 	| [Default (User)] |
 	| User: No Agent   |
@@ -143,7 +143,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType
 	When User selects 'Application' in the 'Object Type' dropdown
 	Then "" content is displayed in "Tasks" field
 	When User clicks on "Paths" dropdown on the Capacity Slots page
-	Then following items are displayed in the dropdown:
+	Then following checkbox items are displayed in the dropdown:
 	| Items                       |
 	| [Default (Application)]     |
 	| Application: Request Type A |

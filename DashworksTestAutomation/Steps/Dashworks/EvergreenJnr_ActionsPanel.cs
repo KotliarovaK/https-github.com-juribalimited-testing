@@ -5,6 +5,7 @@ using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
+using DashworksTestAutomation.Pages.Evergreen.ItemDetails;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -621,10 +622,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             var button = action.GetActionsButtonByName(buttonName);
-            var form = _driver.NowAt<BaseGridPage>();
 
             _driver.MouseHover(button);
-            Verify.IsFalse(form.IsTooltipDisplayed(), "Tooltip for Update button displayed");
+            Verify.IsFalse(_driver.IsTooltipDisplayed(), "Tooltip for Update button displayed");
         }
 
 
@@ -698,18 +698,19 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Verify.IsFalse(action.GetButtonByName(buttonName), $"{buttonName} is displayed");
         }
 
+        //TODO move this this actionPanel
         [Then(@"Actions menu is not displayed to the user")]
         public void ThenActionsMenuIsNotDisplayedToTheUser()
         {
-            var action = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsFalse(action.ActionsButton.Displayed(), "Actions menu is displayed");
+            var action = _driver.NowAt<ActionPanelPage>();
+            Verify.IsFalse(action.ActionsDropDown.Displayed(), "Actions menu is displayed");
         }
 
         [Then(@"Objects to add panel is disabled")]
         public void ThenObjectsToAddPanelIsDisabled()
         {
             var component = _driver.NowAt<BaseDashboardPage>();
-            Utils.Verify.IsTrue(component.DisabledObjectsToAddPanel.Displayed(), "Objects to add panel is active");
+            Verify.IsTrue(component.DisabledObjectsToAddPanel.Displayed(), "Objects to add panel is active");
         }
 
         [Then(@"Objects to add panel is active")]

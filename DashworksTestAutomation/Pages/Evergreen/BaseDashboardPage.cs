@@ -19,11 +19,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public const string ImageItem = ".//div[contains(@class, 'ag-body-container')]//img[contains(@src,'png')]";
 
-        public const string TableTextContent = ".//div[@role='row']/div/span";
-
         public const string GridCell = ".//div[@role='gridcell']";
-
-        public const string FullTable = ".//div[contains(@class, 'ag-body-viewport')]/div";
 
         public const string OptionsDllOnActionsPanel = "//mat-option[@role='option']//span";
 
@@ -505,12 +501,23 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(selector);
         }
 
+        private string _dropdownOptions = ".//mat-option//span[@class='mat-option-text']/span";
+
         public IWebElement GetDropdownValueByName(string dropdownName)
         {
             var text = dropdownName.Split('\'').Aggregate(string.Empty, (current, s) => current + $"[contains(text(),'{s}')]");
-            var selector = By.XPath($".//mat-option//span{text}");
+            var selector = By.XPath($"{_dropdownOptions}{text}");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
+        }
+
+        public List<string> GetDropdownValues()
+        {
+            var optionsList = Driver.FindElements(By.XPath(_dropdownOptions));
+            if(!optionsList.Any())
+                throw new Exception($"Unable to get dropdown values");
+            var values = optionsList.Select(x => x.Text).ToList();
+            return values;
         }
 
         #endregion
@@ -1109,6 +1116,14 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             var selector = By.XPath($".//div[@col-id='application' and @role='gridcell']//a[contains(text(), '{itemName}')]");
             return Driver.FindElements(selector).First();
+        }
+
+        //For adding Project Scope items and Buckets
+        public void AddItem(string itemName)
+        {
+            var selector = $".//span[contains(text(), '{itemName}')]";
+            Driver.WaitForElementToBeDisplayed(By.XPath(selector));
+            Driver.FindElement(By.XPath(selector)).Click();
         }
     }
 }

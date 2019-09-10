@@ -203,6 +203,16 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.IsTrue(dropdown.GetDropdownByName(dropdownName).Displayed(), $"{dropdownName} is not displayed");
         }
 
+        [Then(@"only following items are displayed in the dropdown:")]
+        public void ThenOnlyFollowingItemsAreDisplayedInTheDropdown(Table table)
+        {
+            var basePage = _driver.NowAt<BaseDashboardPage>();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = basePage.GetDropdownValues();
+            Verify.AreEqual(expectedList, actualList, "Dropdown values are different");
+            basePage.BodyContainer.Click();
+        }
+
         #endregion
 
         #region Datepicker

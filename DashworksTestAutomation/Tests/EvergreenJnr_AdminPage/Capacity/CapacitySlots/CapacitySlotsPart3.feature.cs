@@ -510,7 +510,7 @@ this.FeatureBackground();
             table6.AddRow(new string[] {
                         "Personal Mailbox - EA"});
 #line 98
- testRunner.Then("following items are displayed in the dropdown:", ((string)(null)), table6, "Then ");
+ testRunner.Then("following checkbox items are displayed in the dropdown:", ((string)(null)), table6, "Then ");
 #line 105
  testRunner.When("User selects \'User\' in the \'Object Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 106
@@ -525,7 +525,7 @@ this.FeatureBackground();
             table7.AddRow(new string[] {
                         "VIP User"});
 #line 108
- testRunner.Then("following items are displayed in the dropdown:", ((string)(null)), table7, "Then ");
+ testRunner.Then("following checkbox items are displayed in the dropdown:", ((string)(null)), table7, "Then ");
 #line 112
  testRunner.When("User selects \'Application\' in the \'Object Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 113
@@ -540,7 +540,7 @@ this.FeatureBackground();
             table8.AddRow(new string[] {
                         "Sharepoint Application"});
 #line 115
- testRunner.Then("following items are displayed in the dropdown:", ((string)(null)), table8, "Then ");
+ testRunner.Then("following checkbox items are displayed in the dropdown:", ((string)(null)), table8, "Then ");
 #line 119
  testRunner.When("User clicks \"Projects\" navigation link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 120
@@ -572,7 +572,7 @@ this.FeatureBackground();
             table9.AddRow(new string[] {
                         "Computer: Virtual Machine"});
 #line 127
- testRunner.Then("following items are displayed in the dropdown:", ((string)(null)), table9, "Then ");
+ testRunner.Then("following checkbox items are displayed in the dropdown:", ((string)(null)), table9, "Then ");
 #line 134
  testRunner.When("User selects \'User\' in the \'Object Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 135
@@ -591,7 +591,7 @@ this.FeatureBackground();
             table10.AddRow(new string[] {
                         "User; Maternity"});
 #line 137
- testRunner.Then("following items are displayed in the dropdown:", ((string)(null)), table10, "Then ");
+ testRunner.Then("following checkbox items are displayed in the dropdown:", ((string)(null)), table10, "Then ");
 #line 143
  testRunner.When("User selects \'Application\' in the \'Object Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 144
@@ -608,7 +608,7 @@ this.FeatureBackground();
             table11.AddRow(new string[] {
                         "Application: Request Type B"});
 #line 146
- testRunner.Then("following items are displayed in the dropdown:", ((string)(null)), table11, "Then ");
+ testRunner.Then("following checkbox items are displayed in the dropdown:", ((string)(null)), table11, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

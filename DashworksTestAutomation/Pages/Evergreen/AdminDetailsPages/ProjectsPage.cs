@@ -408,20 +408,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElement(selector);
         }
 
-        public IWebElement GetDropDownByName(string name)
-        {
-            var selector = By.XPath($".//span[@class='mat-form-field-label-wrapper']//label[text()='{name}']/ancestor::div/mat-select");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
-        public IWebElement GetDropdownContentByName(string name)
-        {
-            var selector = By.XPath($".//span[@class='mat-form-field-label-wrapper']//label[text()='{name}']/ancestor::div/mat-select//span/span");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
         public IWebElement GetLanguageMenuOptionByName(string option)
         {
             var selector = By.XPath($".//div[@class='menu']//li[text()='{option}']");

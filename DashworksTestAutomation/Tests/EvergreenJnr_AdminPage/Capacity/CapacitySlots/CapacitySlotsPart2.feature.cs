@@ -158,7 +158,7 @@ this.FeatureBackground();
 #line 14
  testRunner.Then("User sees following tiles selected in the \"Tasks\" field:", ((string)(null)), table2, "Then ");
 #line 18
- testRunner.When("User selects \"User\" in the \"Object Type\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'User\' in the \'Object Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Items"});

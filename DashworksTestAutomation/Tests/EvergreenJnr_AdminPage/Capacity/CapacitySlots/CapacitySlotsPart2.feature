@@ -15,7 +15,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCapacitySlotClearedWhenObjectTypeIsCha
 	| Items                                      |
 	| Stage 1 \ DDL Task for a Computer          |
 	| Stage 1 \ Date Task for a Computer Italian |
-	When User selects "User" in the "Object Type" dropdown
+	When User selects 'User' in the 'Object Type' dropdown
 	Then User sees following tiles selected in the "Tasks" field:
 	| Items                            |
 

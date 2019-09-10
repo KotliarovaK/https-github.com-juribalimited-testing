@@ -118,9 +118,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Date']")]
         public IWebElement DateSearchField { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[contains(text(), 'Delete')]")]
-        public IWebElement DeleteValueInActions { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//span[contains(@class, 'mat-select-placeholder')]")]
         public IWebElement ActionsInDropdown { get; set; }
 
@@ -129,13 +126,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = ObjectsToAdd)]
         public IList<IWebElement> ObjectsList { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[@class='mat-select-value']/span[text()='Actions']/ancestor::mat-select")]
-        public IWebElement ActionsButton { get; set; }
-
-        [FindsBy(How = How.XPath,
-            Using = ".//button[contains(@class, 'button-small mat-raised-button')]/span[text()='DELETE']")]
-        public IWebElement DeleteButtonOnPage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='mat-checkbox-inner-container']")]
         public IWebElement AllItemCheckbox { get; set; }
@@ -184,6 +174,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-error')]")]
         public IWebElement ErrorMessage { get; set; }
 
+        //TODO all baners should be moved to separate element
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-tip')]")]
         public IWebElement WarningMessage { get; set; }
 
@@ -639,34 +630,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
                 return allData.First(x => x.Text.Contains(cellText));
             else
                 throw new Exception($"There is no cell with '{cellText}' text in the '{columnName}' column");
-        }
-
-        public void ClickDeleteButtonInActions()
-        {
-            By selector = By.XPath(".//span[@class='mat-option-text']/span[contains(text(), 'Delete')]");
-            int attemtps = 3;
-            for (int i = 0; i < attemtps; i++)
-            {
-                try
-                {
-                    Driver.WaitForElementToBeDisplayed(selector);
-                    Driver.FindElement(selector).Click();
-                    return;
-                }
-                catch (InvalidCastException)
-                {
-                    //Ignore
-                }
-            }
-            throw new Exception($"Delete button in actions was not clicked in {attemtps} attempts");
-        }
-
-        public bool IsTooltipDisplayed()
-        {
-            string selector = ".//mat-tooltip-component";
-            var toolTips = Driver.FindElements(By.XPath(selector));
-
-            return toolTips.Count > 0;
         }
     }
 }
