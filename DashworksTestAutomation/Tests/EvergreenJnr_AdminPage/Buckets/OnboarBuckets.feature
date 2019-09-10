@@ -16,8 +16,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedObjectsAreDisplayedAfterChang
 	When User navigates to the 'Scope' left menu item
 	And User selects "Scope Changes" tab on the Project details page
 	Then "Match to Evergreen Bucket" is displayed in the Bucket dropdown
-	When User expands the object to add
-	And User selects following Objects to the Project
+	When User selects following Objects to the Project
 	| Objects         |
 	| 0281Z793OLLLDU6 |
 	| 03U75EKEMUQMUS  |

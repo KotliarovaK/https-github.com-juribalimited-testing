@@ -61,6 +61,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Scope
         {
             var projectElement = _driver.NowAt<ScopeChangePage>();
             _driver.WaitForElementToBeDisplayed(projectElement.PlusButton);
+            _driver.WaitForElementToBeEnabled(projectElement.PlusButton);
             projectElement.PlusButton.Click();
         }
 
