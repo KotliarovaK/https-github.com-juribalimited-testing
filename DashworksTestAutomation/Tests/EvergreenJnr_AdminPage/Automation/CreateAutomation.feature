@@ -79,3 +79,20 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAdminTabIsHighlightedAfterClickingOnAu
 	When User clicks content from "Automation" column
 	Then Edit Automation page is displayed to the User
 	Then "Admin" left-hand menu is highlighted
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS16844 @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCanBeCreatedWithListHavingArchivedItems
+	When User clicks "Devices" on the left-hand menu
+	And User sets includes archived devices in "true"
+	And User create dynamic list with "List16844" name on "Devices" page
+	And User clicks Admin on the left-hand menu
+	And User clicks "Automations" link on the Admin page
+	And User clicks the "CREATE AUTOMATION" Action button
+	Then Create Automation page is displayed to the User
+	When User enters 'DAS16844_Automation' text to 'Automation Name' textbox
+	And User enters 'DAS16844' text to 'Description' textbox
+	And User selects "List16844" in the Scope Automation dropdown
+	And User selects 'Manual' in the 'Run' dropdown
+	And User selects "Active" checkbox on the Automation Page
+	And User clicks the "CREATE" Action button
+	Then Success message is displayed and contains "The automation has been created" text

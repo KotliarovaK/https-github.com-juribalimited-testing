@@ -107,7 +107,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatArchivedEmptyNameCantBeClicked
 	When User clicks content from first row of Device Key column
 	Then "All Devices" list should be displayed to the user
 
-@Evergreen@EvergreenJnr_DashboardsPage @Widgets @DAS17651 @Cleanup
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS17651 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatArchivedItemStillRemainsInStaticList
 	When User clicks "Devices" on the left-hand menu
 	And User sets includes archived devices in "true"
@@ -128,3 +128,18 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatArchivedItemStillRemainsInStaticL
 	When User navigates to the "StaticList17651" list
 	Then "StaticList17651" list is displayed to user
 	And "2" rows are displayed in the agGrid
+
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS17552
+Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatCustomFieldFiltersAndColumnsAreMultiValue
+	When User clicks "<ListName>" on the left-hand menu
+	And User clicks the Filters button
+	And User add "<CustomColumn>" filter where type is "<Operator>" with added column and following value:
+	| Values        |
+	| <CustomValue> |
+	Then '<ColumnData>' content is displayed in the '<CustomColumn>' column
+
+Examples: 
+	| ListName     | CustomValue | Operator | ColumnData                                | CustomColumn        |
+	| Devices      | aaa         | Equals   | 0.665371384, 1kk, 2kk, 3kk, aaa, bbb, ccc | ComputerCustomField |
+	| Mailboxes    | aaa         | Equals   | 1kk, 2kk, 3kk, aaa, bbb, ccc              | Mailbox Filter 1    |
+	| Applications | aaa         | Equals   | 1kk, 2 kk, 3kk, abdc, aaa, bbb            | App field 1         |

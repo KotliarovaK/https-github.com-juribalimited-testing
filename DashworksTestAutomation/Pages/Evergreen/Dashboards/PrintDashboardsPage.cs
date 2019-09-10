@@ -13,6 +13,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.Dashboards
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'print-preview')]//h2[text()='Print Preview Settings']")]
         public IWebElement PrintPreviewSettingsPopUp { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='title-container']//a")]
+        public IWebElement PrintBreadcrumbs { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//body[contains(@class,'dashboardPrintPreview')]//img[@alt='DashWorks']")]
         public IWebElement DashWorksPrintLogo { get; set; }
 

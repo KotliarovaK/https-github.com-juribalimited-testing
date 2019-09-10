@@ -133,6 +133,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     _driver.WaitForDataLoadingOnProjects();
                 }
 
+                if (createWidgetElement.Type.Displayed() && !string.IsNullOrEmpty(row["Type"]))
+                {
+                    createWidgetElement.Type.Click();
+                    createWidgetElement.SelectListForWidgetCreation(row["Type"]);
+                    _driver.WaitForDataLoadingOnProjects();
+                }
+
                 if (createWidgetElement.SplitBy.Displayed() && !string.IsNullOrEmpty(row["SplitBy"]))
                 {
                     createWidgetElement.SelectSplitByItem(row["SplitBy"]);
