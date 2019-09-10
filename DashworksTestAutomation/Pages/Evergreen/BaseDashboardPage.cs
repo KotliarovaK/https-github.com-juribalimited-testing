@@ -501,7 +501,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(selector);
         }
 
-        private string _dropdownOptions = ".//mat-option//span[@class='mat-option-text']/span";
+        //Get all span with text
+        private string _dropdownOptions = ".//mat-option//span[string-length(text())>0]";
 
         public IWebElement GetDropdownValueByName(string dropdownName)
         {

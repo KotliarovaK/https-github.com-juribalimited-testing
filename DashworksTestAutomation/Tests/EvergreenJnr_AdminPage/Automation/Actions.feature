@@ -73,7 +73,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptio
 	And "CANCEL" Action button is displayed
 	And 'Test_Automation_15427' page header is displayed to the User
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15427 @DAS15428 @DAS16728 @DAS16976 @DAS17067 @DAS16890 @DAS17594 @DAS17774
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15427 @DAS15428 @DAS16728 @DAS16976 @DAS17067 @DAS16890 @DAS17594 @DAS17774 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectlyForAutomations
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -142,13 +142,6 @@ Scenario: EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectlyForAutomations
 	And User select "Processing order" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
 	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
-	When User clicks "Delete" option in Cog-menu for "DAS15427_Action" item on Admin page
-	Then Warning message with "This action will be permanently deleted" text is displayed on the Admin page
-	When User clicks Cancel button in the warning message on the Admin page
-	Then Warning message is not displayed on the Admin page
-	When User clicks "Delete" option in Cog-menu for "DAS15427_Action" item on Admin page
-	When User clicks Delete button in the warning message
-	Then Success message is displayed and contains "The selected action has been deleted" text
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15428 @DAS15938 @DAS17186 @DAS17057 @DAS17253 @DAS17625 @DAS17625 @Cleanup @Not_Ready
 #Change value after gold data complete added
