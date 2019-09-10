@@ -732,7 +732,8 @@ Scenario: EvergreenJnr_AdminPage_CheckValueDataInTheGridForActions
 	When User enters "DAS17744_Action" text in the Search field for "Action" column
 	Then "Started, 2019-09-05, 1803 Team, Lisa Bailey" content is displayed in "Value" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17772 @Not_Ready @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17772 @DAS17948 @Not_Ready @Cleanup
+#Waiting for 'zUser Sch for Automations Feature' Project on the GD
 Scenario: EvergreenJnr_AdminPage_CheckThatActionStageSelectboxIsDisplayedForSpecificData
 	When User creates new Automation via API and open it
 	| AutomationName | Description | Active | StopOnFailedAction | Scope     | Run    |
@@ -743,7 +744,25 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionStageSelectboxIsDisplayedForSpec
 	And User enters 'DAS17772_Action' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	And User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
-	Then '' content is displayed in 'Stage' autocomplete
+	Then 'Stage' autocomplete does NOT have options
+	| Options         |
+	| Read only tasks |
+	Then only below options are displayed in the 'Stage' autocomplete
+	| Options |
+	| Stage 1 |
+	| Stage 2 |
+	| Stage 3 |
+	When User clicks "Users" on the left-hand menu
+	When User clicks "YES" button in the Warning Pop-up message
+	Then "All Users" list should be displayed to the user
+	When User clicks the Actions button
+	When User select "Username" rows in the grid
+	| SelectedRowsName    |
+	| 002B5DC7D4D34D5C895 |
+	| 00A5B910A1004CF5AC4 |
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update task value" Bulk Update Type on Action panel
+	And User selects "zUser Sch for Automations Feature" Project on Action panel
 	Then 'Stage' autocomplete does NOT have options
 	| Options         |
 	| Read only tasks |
