@@ -21,7 +21,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateAndRemoveTaskValueForUpdateValueInUs
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope                               | Run    |
 	| 17683_Automation | 17683       | true   | false              | Mailbox Readiness Columns & Filters | Manual |
-	Then Edit Automation page is displayed to the User
+	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks the "CREATE ACTION" Action button
@@ -53,6 +53,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateAndRemoveTaskValueForUpdateValueInUs
 	| zMailboxAu: Stage 3 \ Radio Date Task (Date) |
 	Then "NOT STARTED" content is displayed in "zMailboxAu: Stage 3 \ Radio Date Task" column
 	Then "3 Apr 2019" content is displayed in "zMailboxAu: Stage 3 \ Radio Date Task (Date)" column
+	#Update Action
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Automations" link on the Admin page

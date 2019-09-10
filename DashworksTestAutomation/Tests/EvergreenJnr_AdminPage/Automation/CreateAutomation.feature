@@ -78,7 +78,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAdminTabIsHighlightedAfterClickingOnAu
 	When User clicks content from "Automation" column
 	Then "Edit Automation" title is displayed on the Automations page
 	Then "Admin" left-hand menu is highlighted
-	Then Edit Automation page is displayed to the User
+	Then Automation page is displayed correctly
 	Then "Admin" left-hand menu is highlighted
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS16844 @Cleanup
