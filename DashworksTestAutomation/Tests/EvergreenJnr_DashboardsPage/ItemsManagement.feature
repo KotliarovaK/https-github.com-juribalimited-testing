@@ -5,12 +5,13 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15200 @DAS17754
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15200 @DAS17754 @DAS16563
 Scenario: EvergreenJnr_DashboardsPage_CheckPrintStylesOnTheDashboardsPage
 	Then User sees "Print" tooltip for "Print" on the Dashboard
 	And User sees "Refresh" tooltip for "Refresh" on the Dashboard
 	When User clicks "print"  button on the Dashboards page
 	Then Print Preview is displayed to the User
+	And There is no breadcrumbs displayed on Dashboard page
 	When User selects "A4" option in the "Paper Size" dropdown for Print Preview Settings
 	Then Print Preview is displayed in A4 format view
 	When User selects "Letter" option in the "Paper Size" dropdown for Print Preview Settings

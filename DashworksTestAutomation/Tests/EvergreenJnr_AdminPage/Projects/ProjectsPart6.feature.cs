@@ -192,7 +192,7 @@ this.FeatureBackground();
             table1.AddRow(new string[] {
                         "0CFHJY5A8WLUB0J"});
 #line 33
- testRunner.And("User selects following Objects", ((string)(null)), table1, "And ");
+ testRunner.And("User selects following Objects to the Project", ((string)(null)), table1, "And ");
 #line 37
  testRunner.Then("\"Devices to add (2 of 17279 selected)\" is displayed to the user in the Project Sc" +
                     "ope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

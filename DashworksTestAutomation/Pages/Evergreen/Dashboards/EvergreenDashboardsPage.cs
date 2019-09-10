@@ -448,7 +448,8 @@ namespace DashworksTestAutomation.Pages
 
         public IWebElement GetCardWidgetContent(string widgetTitle)
         {
-            var cardWidget = By.XPath($".//*[text()='{widgetTitle}']/ancestor :: div[@class='widget-top']/following-sibling::div//div[@class='card-widget-value value-link ng-star-inserted']");
+            //var cardWidget = By.XPath($".//*[text()='{widgetTitle}']/ancestor :: div[@class='widget-top']/following-sibling::div//div[@class='card-widget-value value-link ng-star-inserted']");
+            var cardWidget = By.XPath($".//*[text()='{widgetTitle}']/ancestor :: div[@class='widget-whole']//div[contains(@class, 'card-widget-value')]");
             Driver.WaitForDataLoading();
             return Driver.FindElement(cardWidget);
         }

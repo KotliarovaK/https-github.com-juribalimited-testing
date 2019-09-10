@@ -39,7 +39,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         private readonly DTO.RuntimeVariables.Projects _projects;
         private readonly Buckets _buckets;
         private readonly LastUsedBucket _lastUsedBucket;
-        private readonly AddedObjects _addedObjects;
         private readonly Rings _rings;
         private readonly CapacityUnits _capacityUnits;
         private readonly Tasks _tasks;
@@ -47,7 +46,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         private readonly ReadinessData _readinessData;
 
         public EvergreenJnr_AdminPage(RemoteWebDriver driver, Teams teams, DTO.RuntimeVariables.Projects projects,
-            Buckets buckets, LastUsedBucket lastUsedBucket, AddedObjects addedObjects, Rings rings, CapacityUnits capacityUnits,
+            Buckets buckets, LastUsedBucket lastUsedBucket, Rings rings, CapacityUnits capacityUnits,
             Tasks tasks, ElementCoordinates elementCoordinates, ReadinessData readinessData)
         {
             _driver = driver;
@@ -55,7 +54,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _projects = projects;
             _buckets = buckets;
             _lastUsedBucket = lastUsedBucket;
-            _addedObjects = addedObjects;
             _rings = rings;
             _capacityUnits = capacityUnits;
             _tasks = tasks;
@@ -992,60 +990,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.SelectActions(actionName);
         }
 
-        [When(@"User expands the object to add")]
-        public void WhenUserExpandsTheObjectToAdd()
-        {
-            var projectElement = _driver.NowAt<BaseGridPage>();
-            projectElement.PlusButton.Click();
-        }
-
-        [When(@"User expands the object to remove on ""(.*)"" tab")]
-        public void WhenUserExpandsTheObjectToRemoveOnTab(string tabName)
-        {
-            var projectElement = _driver.NowAt<BaseGridPage>();
-            try
-            {
-                projectElement.PlusButton.Click();
-            }
-            catch (Exception)
-            {
-                Thread.Sleep(5000);
-                _driver.Navigate().Refresh();
-                var projectTabs = _driver.NowAt<ProjectsPage>();
-                projectTabs.ClickToTabByNameProjectScopeChanges(tabName);
-                _driver.WaitForDataLoading();
-                projectElement.PlusButton.Click();
-            }
-        }
-
-        [When(@"User waits and expands the ""(.*)"" panel to remove")]
-        public void WhenUserWaitsAndExpandsThePanelToRemove(string tabName)
-        {
-            var projectElement = _driver.NowAt<BaseGridPage>();
-            try
-            {
-                projectElement.PlusButton.Click();
-            }
-            catch (Exception)
-            {
-                Thread.Sleep(30000);
-                _driver.Navigate().Refresh();
-                var projectTabs = _driver.NowAt<ProjectsPage>();
-                projectTabs.ClickToTabByNameProjectScopeChanges(tabName);
-                _driver.WaitForDataLoading();
-                projectElement.PlusButton.Click();
-            }
-        }
-
-        [When(@"User enters ""(.*)"" in the Search Object field")]
-        public void WhenUserEntersInTheSearchObjectField(string text)
-        {
-            var projectElement = _driver.NowAt<BaseGridPage>();
-            projectElement.SearchTextBox.Clear();
-            projectElement.SearchTextBox.SendKeys(text);
-            _driver.WaitForDataLoading();
-        }
-
         [When(@"User selects all objects to the Project")]
         [When(@"User cancels the selection objects in the Project")]
         public void WhenUserSelectsAllObjects()
@@ -1056,23 +1000,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         #region Adding Objects
-
-        [When(@"User adds following Objects from list")]
-        public void ThenUserAddFollowingObjectsFromList(Table table)
-        {
-            var bucketElement = _driver.NowAt<BaseGridPage>();
-
-            foreach (var row in table.Rows)
-            {
-                var text = row["Objects"];
-                bucketElement.AddItem(text);
-                bucketElement.SearchTextBox.ClearWithHomeButton(_driver);
-                //Save added objects to remove it from the bucket
-                _addedObjects.Value.Add(text, _lastUsedBucket.Value);
-            }
-
-            bucketElement.AddItemButton.Click();
-        }
 
         [Then(@"following Objects are displayed in ""(.*)"" tab on the Capacity Units page:")]
         public void ThenFollowingObjectsAreDisplayedInTabOnTheCapacityUnitsPage(string tabName, Table table)
@@ -1190,80 +1117,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             SortingHelper.IsListSorted(originalList);
         }
 
-        [When(@"User adds following Objects to the Project")]
-        public void WhenUserAddsFollowingObjectsToTheProject(Table table)
-        {
-            var projectElement = _driver.NowAt<BaseGridPage>();
-            projectElement.PlusButton.Click();
-            foreach (var row in table.Rows)
-            {
-                projectElement.AddItem(row["Objects"]);
-                projectElement.SearchTextBox.ClearWithHomeButton(_driver);
-            }
-
-            projectElement.UpdateButton.Click();
-        }
-
-        [When(@"User adds following Objects to the Project on ""(.*)"" tab")]
-        public void WhenUserAddsFollowingObjectsToTheProjectOnTab(string tabName, Table table)
-        {
-            var projectElement = _driver.NowAt<BaseGridPage>();
-            try
-            {
-                var projectTabs = _driver.NowAt<ProjectsPage>();
-                projectTabs.ClickToTabByNameProjectScopeChanges(tabName);
-                projectElement.PlusButton.Click();
-                foreach (var row in table.Rows)
-                {
-                    projectElement.AddItem(row["Objects"]);
-                    projectElement.SearchTextBox.ClearWithHomeButton(_driver);
-                }
-            }
-            catch (Exception)
-            {
-                Thread.Sleep(30000);
-                _driver.Navigate().Refresh();
-                _driver.WaitForDataLoading();
-                var projectTabs = _driver.NowAt<ProjectsPage>();
-                projectTabs.ClickToTabByNameProjectScopeChanges(tabName);
-                _driver.WaitForDataLoading();
-                projectElement = _driver.NowAt<BaseGridPage>();
-                _driver.WaitForElementToBeDisplayed(projectElement.PlusButton);
-                projectElement.PlusButton.Click();
-                foreach (var row in table.Rows)
-                {
-                    projectElement.AddItem(row["Objects"]);
-                    projectElement.SearchTextBox.ClearWithHomeButton(_driver);
-                }
-            }
-
-            projectElement.UpdateButton.Click();
-        }
-
-        [When(@"User selects following Objects to the Project")]
-        public void WhenUserSelectsFollowingObjectsToTheProject(Table table)
-        {
-            var projectElement = _driver.NowAt<BaseGridPage>();
-            projectElement.PlusButton.Click();
-            foreach (var row in table.Rows)
-            {
-                projectElement.AddItem(row["Objects"]);
-                projectElement.SearchTextBox.ClearWithHomeButton(_driver);
-            }
-        }
-
-        [When(@"User selects following Objects")]
-        public void WhenUserSelectsFollowingObjects(Table table)
-        {
-            var projectElement = _driver.NowAt<BaseGridPage>();
-            _driver.WaitForDataLoading();
-            foreach (var row in table.Rows)
-            {
-                projectElement.AddItem(row["Objects"]);
-                projectElement.SearchTextBox.ClearWithHomeButton(_driver);
-            }
-        }
-
         [Then(@"following Items are displayed in the History table")]
         [Then(@"additional onboarded Items are displayed in the History table")]
         public void ThenFollowingItemsAreDisplayedInTheHistoryTable(Table table)
@@ -1305,8 +1158,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var refresh_icon = ".//i[@class='material-icons' and contains(text(),'refresh')]";
             var filter_label = ".//div[@class='top-tools-inner']//span[contains(text(),'row')]";
 
-            var projectElement = _driver.NowAt<BaseGridPage>();
-
             for (int i = 0; i < 30; i++)
             {
                 if (i == 29)
@@ -1341,19 +1192,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
-        [Then(@"following objects were not found")]
-        public void ThenFollowingObjectsWereNotFound(Table table)
-        {
-            var projectElement = _driver.NowAt<BaseGridPage>();
-            projectElement.PlusButton.Click();
-            foreach (var row in table.Rows)
-            {
-                projectElement.CheckItemDisplay(row["Objects"]);
-                Utils.Verify.IsTrue(projectElement.CheckedAllItemCheckbox.Displayed(), "Some object is present");
-                projectElement.SearchTextBox.ClearWithHomeButton(_driver);
-            }
-        }
-
         [Then(@"onboarded objects are displayed in the dropdown")]
         public void ThenOnboardedObjectsAreDisplayedInTheDropdown()
         {
@@ -1369,21 +1207,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         #endregion
-
-        [Then(@"following items are still selected")]
-        public void ThenFollowingItemsAreStillSelected()
-        {
-            var projectElement = _driver.NowAt<BaseGridPage>();
-            Verify.IsTrue(projectElement.PlusButton.Displayed(), "Items are not selected");
-            Verify.IsTrue(projectElement.CheckedSomeItemCheckbox.Displayed(), "Item checkbox is not checked");
-        }
-
-        [Then(@"no items are selected")]
-        public void ThenNoItemsAreSelected()
-        {
-            var projectElement = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsFalse(projectElement.CheckedAllItemCheckbox.Displayed(), "Some Item is selected");
-        }
 
         [When(@"User clicks Create button on the Create Project page")]
         public void WhenUserClicksCreateButtonOnTheCreateProjectPage()
@@ -1476,16 +1299,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var createProjectElement = _driver.NowAt<ProjectsPage>();
             createProjectElement.ScopeProjectField.Click();
             createProjectElement.ScopeProjectField.SendKeys("All");
-            var sectionName = createProjectElement.ScopeDropdownSection.Select(x => x.Text).ToList();
-            var listName = createProjectElement.ScopeDropdownSectionList.Select(x => x.Text).ToList();
-            foreach (var row in table.Rows)
-            {
-                for (var i = 0; i < createProjectElement.ScopeDropdownSection.Count; i++)
-                    if (sectionName[i].Equals(row["Section"]))
-                    {
-                        Utils.Verify.AreEqual(listName[i], row["ListName"], "PLEASE ADD EXCEPTION MESSAGE");
-                    }
-            }
+            //var sectionName = createProjectElement.ScopeDropdownSection.Select(x => x.Text).ToList();
+            var listNames = createProjectElement.ScopeDropdownSectionList.Select(x => x.Text).ToList();
+            var expectedlistName = table.Rows.SelectMany(row => row.Values).ToList();
+            Utils.Verify.AreEqual(listNames, expectedlistName, "Main lists are not displayed correctly");
         }
 
         [Then(@"following lists are displayed in the Scope dropdown:")]
@@ -1882,10 +1699,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User moves ""(.*)"" automation to ""(.*)"" automation")]
         public void WhenUserMovesAutomationToAutomation(string automation, string moveToautomation)
         {
-            var page = _driver.NowAt<AutomationsPage>();
-            var slotFrom = page.GetMoveButtonBySlotName(automation);
-            var slotTo = page.GetMoveButtonBySlotName(moveToautomation);
-            _driver.DragAndDrop(slotFrom, slotTo);
+            var page = _driver.NowAt<AutomationsGridPage>();
+            var automationFrom = page.GetMoveButtonByAutomationName(automation);
+            var automationTo = page.GetMoveButtonByAutomationName(moveToautomation);
+            _driver.DragAndDrop(automationFrom, automationTo);
         }
 
         [Then(@"Alert message is displayed and contains ""(.*)"" text")]

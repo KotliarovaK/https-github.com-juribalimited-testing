@@ -21,16 +21,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations
             _driver = driver;
         }
 
-        [When(@"User moves ""(.*)"" action to ""(.*)"" action")]
-        public void WhenUserMovesActionToAction(string actionFrom, string actionTo)
-        {
-            var page = _driver.NowAt<ActionsPage>();
-            _driver.WaitForElementToBeNotDisplayed(page.ActionsTableContent);
-            var action1 = page.GetMoveButtonByActionName(actionFrom);
-            var action2 = page.GetMoveButtonByActionName(actionTo);
-            _driver.DragAndDrop(action1, action2);
-        }
-
         [When(@"User selects ""(.*)"" in the ""(.*)"" dropdown for Actions")]
         public void WhenUserSelectsInTheDropdownForActions(string item, string dropdownName)
         {

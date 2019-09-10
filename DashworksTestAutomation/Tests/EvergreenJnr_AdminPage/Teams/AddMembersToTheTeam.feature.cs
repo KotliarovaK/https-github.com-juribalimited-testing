@@ -173,7 +173,7 @@ this.FeatureBackground();
             table1.AddRow(new string[] {
                         "Retail Team"});
 #line 25
- testRunner.When("User selects following Objects", ((string)(null)), table1, "When ");
+ testRunner.When("User selects following Objects to the Project", ((string)(null)), table1, "When ");
 #line 29
  testRunner.And("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 30

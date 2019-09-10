@@ -66,9 +66,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             cogMenu.GetCogMenuByItem(itemName).Click();
             _driver.WaitForElementToBeDisplayed(cogMenu.CogMenuDropdown);
             cogMenu.GetCogmenuOptionByName(option).Click();
-            Thread.Sleep(500);
+            //Thread.Sleep(500);
             //TODO decrease to standard wait time after DAS-17940 fix
-            _driver.WaitForDataLoading(60);
+            _driver.WaitForDataLoading();
         }
 
         

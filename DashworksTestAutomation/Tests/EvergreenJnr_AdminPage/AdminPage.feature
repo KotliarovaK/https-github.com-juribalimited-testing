@@ -97,7 +97,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	And User clicks content from "Project" column
 	And User selects "Scope Changes" tab on the Project details page
 	And User expands the object to add 
-	And User selects following Objects
+	And User selects following Objects to the Project
 	| Objects        |
 	| 0TTSZRQ1ZTIXWM |
 	And User clicks the "UPDATE ALL CHANGES" Action button

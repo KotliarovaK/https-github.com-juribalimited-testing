@@ -22,7 +22,7 @@ Scenario: EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam
 	And User enters "test" in the Team Description field
 	When User selects "Add members from another team" in the Add Members dropdown
 	Then There are no errors in the browser console
-	When User selects following Objects
+	When User selects following Objects to the Project
 	| Objects                |
 	| Migration Phase 3 Team |
 	| Retail Team            |

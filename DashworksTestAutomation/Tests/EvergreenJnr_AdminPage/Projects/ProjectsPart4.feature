@@ -61,21 +61,21 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 	Then "Users to add (0 of 41339 selected)" is displayed to the user in the Project Scope Changes section
 	When User expands the object to add
 	Then Objects are displayed in alphabetical order on the Admin page
-	When User enters "child" in the Search Object field
+	When User enters 'child' text to 'Search' textbox
 	Then Objects are displayed in alphabetical order on the Admin page
-	When User enters "" in the Search Object field
+	When User enters '' text to 'Search' textbox
 	Then Objects are displayed in alphabetical order on the Admin page
-	When User selects following Objects
+	When User selects following Objects to the Project
 	| Objects                               |
 	| 003F5D8E1A844B1FAA5 (Hunter, Melanie) |
 	| 01FF97A1FFAC48A1803 (Aultman, Chanel) |
-	When User navigates to the 'Devices' left menu item in the Project Scope Changes section
+	When User navigates to the 'Devices' tab on Scope Changes page
 	Then "Devices to add (0 of 16765 selected)" is displayed to the user in the Project Scope Changes section
 	When User expands the object to add 
 	Then Objects are displayed in alphabetical order on the Admin page
-	When User enters "wpq" in the Search Object field
+	When User enters 'wpq' text to 'Search' textbox
 	Then Objects are displayed in alphabetical order on the Admin page
-	When User enters "" in the Search Object field
+	When User enters '' text to 'Search' textbox
 	Then Objects are displayed in alphabetical order on the Admin page
 	When User selects following Objects
 	| Objects        |
@@ -83,13 +83,13 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 	| 30LA8G32UF7HQC |
 	| 174HB6RFAHA5CT |
 	| 174HB6RFAHA5CT |
-	When User navigates to the 'Applications' left menu item in the Project Scope Changes section
+	When User navigates to the 'Applications' tab on Scope Changes page
 	Then "Applications to add (0 of 2081 selected)" is displayed to the user in the Project Scope Changes section
 	When User expands the object to add 
 	Then Objects are displayed in alphabetical order on the Admin page
-	When User enters "office 1" in the Search Object field
+	When User enters 'office 1' text to 'Search' textbox
 	Then Objects are displayed in alphabetical order on the Admin page
-	When User enters "" in the Search Object field
+	When User enters '' text to 'Search' textbox
 	Then Objects are displayed in alphabetical order on the Admin page
 	When User selects following Objects
 	| Objects                                          |
@@ -99,13 +99,13 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 	And User clicks the "UPDATE PROJECT" Action button
 	Then Success message is displayed and contains "6 objects queued for onboarding, 0 objects offboarded" text
 	Then "Applications to add (0 of 2079 selected)" is displayed to the user in the Project Scope Changes section
-	When User navigates to the 'Devices' left menu item in the Project Scope Changes section
+	When User navigates to the 'Devices' tab on Scope Changes page
 	Then "Devices to add (0 of 16763 selected)" is displayed to the user in the Project Scope Changes section
-	When User navigates to the 'Users' left menu item in the Project Scope Changes section
+	When User navigates to the 'Users' tab on Scope Changes page
 	Then "Users to add (0 of 41337 selected)" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page
 	When User selects "Scope Changes" tab on the Project details page
-	When User navigates to the 'Applications' left menu item in the Project Scope Changes section
+	When User navigates to the 'Applications' tab on Scope Changes page
 	Then There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11729 @DAS13199 @Cleanup @Cleanup @Projects

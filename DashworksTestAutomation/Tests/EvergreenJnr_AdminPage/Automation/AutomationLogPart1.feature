@@ -103,7 +103,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSuccessfulRunInOutcomeColumn
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
 	When User clicks the "CREATE AUTOMATION" Action button
-	Then Create Automation page is displayed to the User
+	Then "Create Automation" title is displayed on the Automations page
 	When User enters 'D16974_Automation' text to 'Automation Name' textbox
 	When User enters '1745104' text to 'Description' textbox
 	When User selects 'All Users' option from 'Scope' autocomplete
@@ -163,7 +163,6 @@ Scenario: EvergreenJnr_AdminPage_CheckBrokenListValidationWhenRunningAnAutomatio
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
 	When User clicks the "CREATE AUTOMATION" Action button
-	Then Create Automation page is displayed to the User
 	When User enters '17011_Automation' text to 'Automation Name' textbox
 	When User enters '17011' text to 'Description' textbox
 	When User selects '17011_List' option from 'Scope' autocomplete
@@ -172,7 +171,7 @@ Scenario: EvergreenJnr_AdminPage_CheckBrokenListValidationWhenRunningAnAutomatio
 	When User clicks the "CREATE" Action button
 	When User clicks "Automations" navigation link on the Admin page
 	When User clicks the "CREATE AUTOMATION" Action button
-	Then Create Automation page is displayed to the User
+	Then "Create Automation" title is displayed on the Automations page
 	When User enters '17011_Automation_1' text to 'Automation Name' textbox
 	When User enters '17011_1' text to 'Description' textbox
 	When User selects 'All Devices' option from 'Scope' autocomplete
@@ -219,7 +218,6 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckSuccessfulRunningAutomationWithMai
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
 	When User clicks the "CREATE AUTOMATION" Action button
-	Then Create Automation page is displayed to the User
 	When User enters '<AutomationName>' text to 'Automation Name' textbox
 	When User enters '17212' text to 'Description' textbox
 	When User selects '<Scope>' option from 'Scope' autocomplete

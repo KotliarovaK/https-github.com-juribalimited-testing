@@ -185,7 +185,7 @@ this.FeatureBackground();
             table2.AddRow(new string[] {
                         "03U75EKEMUQMUS"});
 #line 20
- testRunner.And("User selects following Objects", ((string)(null)), table2, "And ");
+ testRunner.And("User selects following Objects to the Project", ((string)(null)), table2, "And ");
 #line 24
  testRunner.Then("\"Devices 2/0\" is displayed in the tab header on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 25

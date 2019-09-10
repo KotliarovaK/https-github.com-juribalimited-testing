@@ -482,3 +482,42 @@ Examples:
 	| AggFunc |
 	| First   |
 	| Last    |
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16844 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatArchivedItemsIncludedInCountWhenReferencingDynamicListContainsArchivedItems
+	When User clicks "Devices" on the left-hand menu
+	And User sets includes archived devices in "true"
+	And User create dynamic list with "List16844" name on "Devices" page
+	And Dashboard with "Dashboard for DAS16844" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User creates new Widget
+	| WidgetType | Title             | List      | Type      | AggregateFunction |
+	| Card       | WidgetForDAS16844 | List16844 | Aggregate | Count             |
+	Then "WidgetForDAS16844" Widget is displayed to the user
+	And Value '17,427' is displayed in the card 'WidgetForDAS16844' widget
+	When User clicks data in card "WidgetForDAS16844" widget
+	Then Save as a new list option is available
+	And "17,427" rows are displayed in the agGrid
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16844 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatArchivedItemsIncludedInCountWhenReferencingStaticListContainsArchivedItems
+	When User clicks "Devices" on the left-hand menu
+	And User sets includes archived devices in "true"
+	And User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| Empty            |
+	And User selects "Create static list" in the Actions dropdown
+	And User create static list with "StaticList16844" name
+	And Dashboard with "Dashboard for DAS16844" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User creates new Widget
+	| WidgetType | Title             | List            | Type      | AggregateFunction |
+	| Card       | WidgetForDAS16844 | StaticList16844 | Aggregate | Count             |
+	Then "WidgetForDAS16844" Widget is displayed to the user
+	And Value '1' is displayed in the card 'WidgetForDAS16844' widget
+	When User clicks data in card "WidgetForDAS16844" widget
+	Then "1" rows are displayed in the agGrid
