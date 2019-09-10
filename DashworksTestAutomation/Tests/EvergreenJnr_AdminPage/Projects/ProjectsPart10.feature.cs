@@ -88,7 +88,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects
         [NUnit.Framework.CategoryAttribute("DAS12999")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Projects")]
-        [NUnit.Framework.CategoryAttribute("TEST")]
         [NUnit.Framework.TestCaseAttribute("All Applications", "DynamicList57", "Applications to add (0 of 2129 selected)", "Applications to add (0 of 39 selected)", null)]
         [NUnit.Framework.TestCaseAttribute("StaticList6379", "All Applications", "Applications to add (0 of 2 selected)", "Applications to add (0 of 2129 selected)", null)]
         public virtual void EvergreenJnr_ChangingApplicationsScopeListToAnotherList(string changingToList1, string changingToList2, string applicationsToAdd1, string applicationsToAdd2, string[] exampleTags)
@@ -126,8 +125,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects
                     "AdminPage",
                     "DAS12999",
                     "Cleanup",
-                    "Projects",
-                    "TEST"};
+                    "Projects"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -237,7 +235,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS13973")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Projects")]
-        [NUnit.Framework.CategoryAttribute("TEST")]
         [NUnit.Framework.TestCaseAttribute("All Users", "StaticList6329", "Clone from Evergreen to Project", "Users to add (0 of 41339 selected)", "Users to add (0 of 2 selected)", null)]
         [NUnit.Framework.TestCaseAttribute("StaticList6329", "DynamicList37", "Standalone Project", "Users to add (0 of 2 selected)", "Users to add (0 of 92 selected)", null)]
         public virtual void EvergreenJnr_ChangingUsersScopeListToAnotherListForUserProject(string changingToList1, string changingToList2, string mode, string objectsToAdd1, string objectsToAdd2, string[] exampleTags)
@@ -276,8 +273,7 @@ this.FeatureBackground();
                     "DAS12999",
                     "DAS13973",
                     "Cleanup",
-                    "Projects",
-                    "TEST"};
+                    "Projects"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -376,7 +372,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12999")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Projects")]
-        [NUnit.Framework.CategoryAttribute("TEST")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Operating System", "Windows 8", "28", "All Users", "All Devices", "Devices", "Device Scope", "Devices to add (0 of 16819 selected)", "StaticList6429", "Devices to add (0 of 24 selected)", "Devices to add (0 of 16819 selected)", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "Domain", "CA", "850", "All Mailboxes", "All Users", "Users", "User Scope", "Users to add (0 of 14747 selected)", "DynamicList17", "Users to add (0 of 0 selected)", "Users to add (0 of 14747 selected)", null)]
         public virtual void EvergreenJnr_AdminPage_ChangingDynamicListToAllListForUserAndMailboxProjects(string listName, string filterName, string filterValue, string rows, string projectList, string allList, string scopeChanges, string scopeDetails, string objectsToAdd, string changingToList, string objectsToAdd1, string objectsToAdd2, string[] exampleTags)
@@ -414,8 +409,7 @@ this.FeatureBackground();
                     "AdminPage",
                     "DAS12999",
                     "Cleanup",
-                    "Projects",
-                    "TEST"};
+                    "Projects"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -509,7 +503,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS13297")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Projects")]
-        [NUnit.Framework.CategoryAttribute("TEST")]
         [NUnit.Framework.TestCaseAttribute("All Applications", "StaticList6429", "Applications to add (0 of 2081 selected)", "Applications to add (0 of 2 selected)", null)]
         [NUnit.Framework.TestCaseAttribute("StaticList6429", "DynamicList17", "Applications to add (0 of 2 selected)", "Applications to add (0 of 1612 selected)", null)]
         public virtual void EvergreenJnr_ChangingApplicationScopeListToAnotherListForUserProject(string changingToList1, string changingToList2, string objectsToAdd1, string objectsToAdd2, string[] exampleTags)
@@ -548,8 +541,7 @@ this.FeatureBackground();
                     "DAS12999",
                     "DAS13297",
                     "Cleanup",
-                    "Projects",
-                    "TEST"};
+                    "Projects"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
