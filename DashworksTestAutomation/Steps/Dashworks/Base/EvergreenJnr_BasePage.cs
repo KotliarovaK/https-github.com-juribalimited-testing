@@ -111,8 +111,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
             if (placeholder.Equals("Automation Name"))
                 _automations.Value.Add(new AutomationsDto() { automationName = text });
-                
-               _driver.WaitForDataLoading();
+
+            _driver.WaitForDataLoading();
         }
 
         [Then(@"'(.*)' content is displayed in '(.*)' textbox")]
