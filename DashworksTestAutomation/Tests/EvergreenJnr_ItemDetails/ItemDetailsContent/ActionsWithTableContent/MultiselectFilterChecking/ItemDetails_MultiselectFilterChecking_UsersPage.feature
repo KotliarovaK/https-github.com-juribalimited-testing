@@ -12,7 +12,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplaye
 	When User perform search by "ZWS705179"
 	And User click content from "Username" column
 	Then Details page for "ZWS705179 (Derick I. Thomas)" item is displayed to the user
-	When User navigates to the "Active Directory" main-menu on the Details page
+	When User navigates to the 'Active Directory' left menu item
 	Then 'US-W' content is displayed in the 'Domain' column
 	Then 'Global Security Group' content is displayed in the 'Type' column
 	When User navigates to the "Groups" sub-menu on the Details page
@@ -43,7 +43,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplaye
 	When User perform search by "allanj"
 	And User click content from "Username" column
 	Then Details page for "allanj (Jo Allan)" item is displayed to the user
-	When User navigates to the "Applications" main-menu on the Details page
+	When User navigates to the 'Applications' tab on Scope Changes page
 	And User navigates to the "Evergreen Summary" sub-menu on the Details page
 	Then 'JuribaDEV50' content is displayed in the 'Site' column
 	And 'UNKNOWN' content is displayed in the 'Installed' column
@@ -88,7 +88,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplaye
 	When User perform search by "allanj"
 	And User click content from "Username" column
 	Then Details page for "allanj (Jo Allan)" item is displayed to the user
-	When User navigates to the "Applications" main-menu on the Details page
+	When User navigates to the 'Applications' tab on Scope Changes page
 	And User navigates to the "Evergreen Detail" sub-menu on the Details page
 	Then 'UNKNOWN' content is displayed in the 'Compliance' column
 	And 'JuribaDEV50' content is displayed in the 'Site' column
@@ -116,7 +116,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplaye
 	When User perform search by "allanj"
 	And User click content from "Username" column
 	Then Details page for "allanj (Jo Allan)" item is displayed to the user
-	When User navigates to the "Applications" main-menu on the Details page
+	When User navigates to the 'Applications' tab on Scope Changes page
 	And User navigates to the "Advertisements" sub-menu on the Details page
 	Then 'JuribaDEV50' content is displayed in the 'Site' column
 	When User clicks String Filter button for "Site" column
@@ -132,7 +132,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplaye
 	When User perform search by "allanj"
 	And User click content from "Username" column
 	Then Details page for "allanj (Jo Allan)" item is displayed to the user
-	When User navigates to the "Applications" main-menu on the Details page
+	When User navigates to the 'Applications' tab on Scope Changes page
 	And User navigates to the "Collections" sub-menu on the Details page
 	Then 'SMS/SCCM 2007' content is displayed in the 'Source Type' column
 	And 'DC1 SMS (DEV50)' content is displayed in the 'Source' column
@@ -160,7 +160,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplaye
 	When User perform search by "02BE025D56CF4899889"
 	And User click content from "Username" column
 	Then Details page for "02BE025D56CF4899889 (Wegemer, Susan)" item is displayed to the user
-	When User navigates to the "Mailboxes" main-menu on the Details page
+	When User navigates to the 'Mailboxes' left menu item
 	And User navigates to the "Mailboxes" sub-menu on the Details page
 	When User switches to the "USE ME FOR AUTOMATION(MAIL SCHDLD)" project in the Top bar on Item details page
 	Then 'TRUE' content is displayed in the 'Owner' column
@@ -185,7 +185,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplaye
 	When User perform search by "ZWS705179"
 	And User click content from "Username" column
 	Then Details page for "ZWS705179 (Derick I. Thomas)" item is displayed to the user
-	When User navigates to the "Compliance" main-menu on the Details page
+	When User navigates to the 'Compliance' left menu item
 	And User navigates to the "Hardware Rules" sub-menu on the Details page
 	Then 'AMBER' content is displayed in the 'Compliance' column
 	When User clicks String Filter button for "Compliance" column

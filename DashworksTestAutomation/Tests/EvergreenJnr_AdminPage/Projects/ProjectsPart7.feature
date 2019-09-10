@@ -24,7 +24,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUsersToAddAndRemoveAreChangingAppropri
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "UsersProject" in the "Project Name" field
-	And User selects "StaticList6529" in the Scope Project dropdown
+	And User selects 'StaticList6529' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
 	Then Success message with "The project has been created" text is displayed on the Projects page
 	When User clicks newly created object link
@@ -33,7 +33,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUsersToAddAndRemoveAreChangingAppropri
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Users to add (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
 	When User expands the object to add 
-	And User selects following Objects
+	And User selects following Objects to the Project
 	| Objects                                   |
 	| 000F977AC8824FE39B8 (Spruill, Shea)       |
 	| 002B5DC7D4D34D5C895 (Collor, Christopher) |
@@ -104,7 +104,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMailboxProjectCreationWithCloneEvergreenBu
 	Then "Create Project" page should be displayed to the user
 	When User enters "MailboxesProject25" in the "Project Name" field
 	When User selects "Standalone Project" in the Mode Project dropdown
-	And User selects "All Mailboxes" in the Scope Project dropdown
+	And User selects 'All Mailboxes' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks "Projects" link on the Admin page
@@ -125,7 +125,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMailboxProjectCreationWithCloneEvergreenBu
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "MailboxesProject26" in the "Project Name" field
-	And User selects "StaticList5846" in the Scope Project dropdown
+	And User selects 'StaticList5846' option from 'Scope' autocomplete
 	When User selects "Standalone Project" in the Mode Project dropdown
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
@@ -144,7 +144,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMailboxProjectCreationWithCloneEvergreenBu
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "MailboxesProject27" in the "Project Name" field
-	And User selects "DynamicList9513" in the Scope Project dropdown
+	And User selects 'DynamicList9513' option from 'Scope' autocomplete
 	When User selects "Standalone Project" in the Mode Project dropdown
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text

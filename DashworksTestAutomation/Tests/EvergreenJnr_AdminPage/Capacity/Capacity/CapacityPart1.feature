@@ -10,7 +10,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDefaultCapacityUnitRenamedInUnassigned
 	When Project created via API and opened
 	| ProjectName             | Scope     | ProjectTemplate | Mode               |
 	| ProjectForCapacity13720 | All Users | None            | Standalone Project |
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	Then 'Capacity Units' text value is displayed in the 'Capacity Mode' dropdown
 	When User selects "Units" tab on the Project details page
 	And User enters "Unassigned" text in the Search field for "Capacity Unit" column
@@ -36,7 +36,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultColumnsForDevicesProjectCapacityUni
 	When Project created via API and opened
 	| ProjectName         | Scope       | ProjectTemplate | Mode               |
 	| 13431DevicesProject | All Devices | None            | Standalone Project |
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	And User selects "Units" tab on the Project details page
 	Then Columns on Admin page is displayed in following order:
 	| ColumnName    |
@@ -54,7 +54,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultColumnsForMailboxesProjectCapacityU
 	When Project created via API and opened
 	| ProjectName           | Scope         | ProjectTemplate | Mode               |
 	| 13431MailboxesProject | All Mailboxes | None            | Standalone Project |
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	And User selects "Units" tab on the Project details page
 	Then Columns on Admin page is displayed in following order:
 	| ColumnName    |
@@ -72,29 +72,29 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedValueIsDisplayedForCapacityCo
 	When Project created via API and opened
 	| ProjectName             | Scope       | ProjectTemplate | Mode               |
 	| ProjectForCapacity13723 | All Devices | None            | Standalone Project |
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	And User selects "Override Dates" tab on the Project details page
 	When User clicks the "CREATE OVERRIDE DATE" Action button
-	And User enters "5 Jan 2019" date in the "Override Start Date" field
-	And User enters "" date in the "Override End Date" field
+	And User enters '5 Jan 2019' text to 'Override Start Date' datepicker
+	And User enters '' text to 'Override End Date' datepicker
 	Then 'An override end date must be entered' error message is displayed for 'Override End Date' field
-	When User enters "4 Oct 2018" date in the "Override End Date" field
+	When User enters '4 Oct 2018' text to 'Override End Date' datepicker
 	Then "CREATE" Action button is disabled
 	Then "CREATE" Action button have tooltip with "Some settings are not valid" text
-	When User enters "" date in the "Override Start Date" field
+	When User enters '' text to 'Override Start Date' datepicker
 	Then 'An override start date must be entered' error message is displayed for 'Override Start Date' field
-	When User enters "4 Oct 2018" date in the "Override Start Date" field
-	And User enters "7 Oct 2018" date in the "Override End Date" field
+	When User enters '4 Oct 2018' text to 'Override Start Date' datepicker
+	And User enters '7 Oct 2018' text to 'Override End Date' datepicker
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "Your override date has been created" text
 	And "Unlimited" content is displayed in "Capacity" column
 	When User enters ">1" text in the Search field for "Capacity" column
 	Then Rows counter shows "1" of "1" rows
 	When User clicks content from "Start Date" column
-	And User enters "3 Oct 2018" date in the "Override End Date" field
+	And User enters '3 Oct 2018' text to 'Override End Date' datepicker
 	Then "UPDATE" Action button is disabled
 	Then "UPDATE" Action button have tooltip with "No changes made" text
-	When User enters "" date in the "Override Start Date" field
-	And User enters "" date in the "Override End Date" field
+	When User enters '' text to 'Override Start Date' datepicker
+	And User enters '' text to 'Override End Date' datepicker
 	Then 'An override end date must be entered' error message is displayed for 'Override End Date' field
 	And 'An override start date must be entered' error message is displayed for 'Override Start Date' field

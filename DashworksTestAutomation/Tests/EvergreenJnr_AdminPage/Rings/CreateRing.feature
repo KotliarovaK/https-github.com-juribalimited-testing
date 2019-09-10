@@ -9,7 +9,7 @@ Background: Pre-Conditions
 Scenario: EvergreenJnr_AdminPage_CheckThatOneRingAddeddAfterMulticlickingCreateButton
 	When User clicks Admin on the left-hand menu
 	When User clicks "Evergreen" link on the Admin page
-	When User clicks "Rings" tab
+	When User navigates to the 'Rings' left menu item
 	And User clicks the "CREATE EVERGREEN RING" Action button
 	And User type "OneRing" Name in the "Ring name" field on the Project details page
 	And User doubleclicks Create button on Create Ring page
@@ -31,7 +31,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorDisplayedWhenCreatingRin
 	When Project created via API and opened
 	| ProjectName     | Scope     | ProjectTemplate | Mode               |
 	| NewProject15397 | All Users | None            | Standalone Project |
-	And User clicks "Rings" tab
+	And User navigates to the 'Rings' left menu item
 	And User clicks the "CREATE PROJECT RING" Action button
 	Then "Create Project Ring" page should be displayed to the user
 	When User type "TestRing15397_1" Name in the "Ring name" field on the 'NewProject15397' Project details page
@@ -41,7 +41,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorDisplayedWhenCreatingRin
 	And User clicks "Projects" link on the Admin page
 	And User enters "NewProject15397" text in the Search field for "Project" column
 	And User clicks content from "Project" column
-	And User clicks "Rings" tab
+	And User navigates to the 'Rings' left menu item
 	And User clicks the "CREATE PROJECT RING" Action button
 	Then "Create Project Ring" page should be displayed to the user
 	When User type "TestRing15397_2" Name in the "Ring name" field on the 'NewProject15397' Project details page

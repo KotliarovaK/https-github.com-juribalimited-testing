@@ -12,7 +12,7 @@ Scenario: EvergreenJnr_AdminPage_CheckNavigationToDevicesListFromProjectsRingsLi
 	Then "Projects" page should be displayed to the user
 	When User enters "1803 Rollout" text in the Search field for "Project" column
 	And User clicks content from "Project" column
-	And User clicks "Rings" tab
+	And User navigates to the 'Rings' left menu item
 	Then "1" content is displayed in "Devices" column
 	When User clicks content from "Devices" column
 	Then "All Devices" list should be displayed to the user
@@ -34,7 +34,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectPageDisplayedWhenOpeningNotExis
 	And User clicks "Projects" link on the Admin page
 	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
-	And User clicks "Rings" tab
+	And User navigates to the 'Rings' left menu item
 	And User enters "Unassigned" text in the Search field for "Ring" column
 	And User clicks content from "Ring" column
 	Then "Default Ring" checkbox is checked and cannot be unchecked

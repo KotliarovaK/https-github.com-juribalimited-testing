@@ -47,7 +47,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "Project13110Dynamic1" in the "Project Name" field
-	And User selects "Dynamic13110" in the Scope Project dropdown
+	And User selects 'Dynamic13110' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
@@ -55,7 +55,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	When User selects "Scope Changes" tab on the Project details page
 	And User expands the object to add
 	Then Objects are displayed in alphabetical order on the Admin page
-	When User selects following Objects
+	When User selects following Objects to the Project
 	| Objects         |
 	| 00HA7MKAVVFDAV  |
 	| 001PSUMZYOW581  |
@@ -77,7 +77,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	| 00BDM1JUR8IF419 |
 	And There are no errors in the browser console
 	When User selects "Scope Changes" tab on the Project details page
-	And User clicks "Applications" tab in the Project Scope Changes section
+	And User navigates to the 'Applications' left menu item
 	And User expands the object to add 
 	And User selects following Objects
 	| Objects                                                              |
@@ -107,13 +107,13 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "Project13110Dynamic2" in the "Project Name" field
-	And User selects "Dynamic13110" in the Scope Project dropdown
+	And User selects 'Dynamic13110' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "Project13110Dynamic2" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
-	And User clicks "Applications" tab in the Project Scope Changes section
+	And User navigates to the 'Applications' left menu item
 	And User expands the object to add 
 	And User selects following Objects
 	| Objects                                                              |
@@ -137,7 +137,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	| 0036 - Microsoft Access 97 SR-2 English                    |
 	And There are no errors in the browser console
 	When User selects "Scope Changes" tab on the Project details page
-	And User clicks "Devices" tab in the Project Scope Changes section
+	And User navigates to the 'Devices' left menu item
 	And User expands the object to add
 	Then Objects are displayed in alphabetical order on the Admin page
 	When User selects following Objects
@@ -200,7 +200,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	| 00BDM1JUR8IF419 |
 	And There are no errors in the browser console
 	When User selects "Scope Changes" tab on the Project details page
-	And User clicks "Applications" tab in the Project Scope Changes section
+	And User navigates to the 'Applications' left menu item
 	And User expands the object to add 
 	And User selects following Objects
 	| Objects                        |
@@ -229,13 +229,13 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "Project13110Static2" in the "Project Name" field
-	And User selects "Static13110" in the Scope Project dropdown
+	And User selects 'Static13110' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "Project13110Static2" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
-	And User clicks "Applications" tab in the Project Scope Changes section
+	And User navigates to the 'Applications' left menu item
 	And User expands the object to add 
 	And User selects following Objects
 	| Objects                        |
@@ -292,7 +292,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderForQueueAndHistoryTab
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "TestProject55" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
+	And User selects 'All Devices' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
@@ -347,7 +347,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderForQueueAndHistoryTab
 	Then data in table is sorted by "Item" column in ascending order by default on the Admin page
 	Then data in table is sorted by "Date" column in descending order by default on the Admin page
 	When User selects "Scope Changes" tab on the Project details page
-	And User clicks "Applications" tab in the Project Scope Changes section
+	And User navigates to the 'Applications' left menu item
 	And User expands the object to add 
 	And User selects following Objects
 	| Objects                                                       |

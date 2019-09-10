@@ -12,9 +12,9 @@ Scenario: EvergreenJnr_AdminPage_AddingDevicesFromBuckets
 	| TestBucket6 | Admin IT | false     |
 	And User navigates to newly created Bucket
 	Then "TestBucket6" bucket details is displayed to the user
-	When User clicks "Devices" tab
+	When User navigates to the 'Devices' tab on Scope Changes page
 	And User clicks the "ADD DEVICE" Action button
-	And User clicks "Add from buckets" tab on the Buckets page
+	And User navigates to the 'Add from buckets' left menu item on the Buckets page
 	And User adds "Unassigned" objects to bucket
 	And User clicks the "ADD DEVICES" Action button
 	Then Success message is displayed and contains "The selected devices have been added to the selected bucket" text
@@ -65,9 +65,9 @@ Scenario: EvergreenJnr_AdminPage_AddingMailboxesFromBuckets
 	| TestBucket8 | Admin IT | false     |
 	And User navigates to newly created Bucket
 	Then "TestBucket8" bucket details is displayed to the user
-	When User clicks "Mailboxes" tab
+	When User navigates to the 'Mailboxes' left menu item
 	And User clicks the "ADD MAILBOX" Action button
-	And User clicks "Add from buckets" tab on the Buckets page
+	And User navigates to the 'Add from buckets' left menu item on the Buckets page
 	And User adds "Unassigned" objects to bucket
 	And User clicks the "ADD MAILBOXES" Action button
 	Then Success message is displayed and contains "The selected mailboxes have been added to the selected bucket" text
@@ -179,9 +179,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketA
 	And User clicks content from "Project" column
 	Then Project "Project12905" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
-	And User clicks "Devices" tab in the Project Scope Changes section
+	And User navigates to the 'Devices' left menu item
 	When User expands the object to add 
-	And User selects following Objects
+	And User selects following Objects to the Project
 	| Objects         |
 	| 001BAQXT6JWFPI  |
 	| 001PSUMZYOW581  |

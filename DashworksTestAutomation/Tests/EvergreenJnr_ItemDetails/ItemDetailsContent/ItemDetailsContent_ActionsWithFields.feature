@@ -10,7 +10,7 @@ Scenario: EvergreenJnr_DevicesList_CheckTheEvergreenRingProjectSetting
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	When User click content from "Hostname" column
-	When User navigates to the "Projects" main-menu on the Details page
+	When User navigates to the 'Projects' left menu item
 	And User clicks content of Evergreen Ring in Project Summary section on the Details Page
 	And User clicks New Ring ddl in popup of Project Summary section on the Details Page
 	Then Rings ddl contains data on Project Summary section of the Details Page
@@ -32,7 +32,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatTextInKeyValueGridsIsSelectable
 	Then "All <PageName>" list should be displayed to the user
 	When User perform search by "<SearchTerm>"
 	And User click content from "<ColumnName>" column
-	When User navigates to the "<MainTabName>" main-menu on the Details page
+	When User navigates to the '<MainTabName>' left menu item
 	When User navigates to the "<SubTabName>" sub-menu on the Details page
 	And User selects "<KeyToBeSelected>" text from key value grid on the Details Page
 	Then "<KeyToBeSelected>" text selected from key value grid on the Details Page
@@ -72,7 +72,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheLinkCanBeOpenedAndTheLinkHasARigh
 	Then "All Devices" list should be displayed to the user
 	When User perform search by "001BAQXT6JWFPI"
 	And User click content from "Hostname" column
-	And User navigates to the "Details" main-menu on the Details page
+	And User navigates to the 'Details' left menu item
 	And User navigates to the "Device Owner" sub-menu on the Details page
 	And User clicks "QLL295118" link on the Details Page
 	Then Details page for "QLL295118 (Nicole P. Braun)" item is displayed to the user
@@ -80,7 +80,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheLinkCanBeOpenedAndTheLinkHasARigh
 	And User click back button in the browser
 	And Details page for "001BAQXT6JWFPI" item is displayed to the user
 	When User switches to the "Havoc (Big Data)" project in the Top bar on Item details page
-	And User navigates to the "Details" main-menu on the Details page
+	And User navigates to the 'Details' left menu item
 	And User navigates to the "Device Owner" sub-menu on the Details page
 	And User clicks "QLL295118" link on the Details Page
 	Then Details page for "QLL295118 (Nicole P. Braun)" item is displayed to the user
@@ -89,7 +89,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheLinkCanBeOpenedAndTheLinkHasARigh
 	And User click back button in the browser
 	And Details page for "001BAQXT6JWFPI" item is displayed to the user
 	And "Havoc (Big Data)" project is selected in the Top bar on Item details page
-	When User navigates to the "Applications" main-menu on the Details page
+	When User navigates to the 'Applications' tab on Scope Changes page
 	And User clicks "Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" link on the Details Page
 	Then Details page for "Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" item is displayed to the user
 	And "Havoc (Big Data)" project is selected in the Top bar on Item details page
@@ -100,7 +100,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Evergreen" link on the Admin page
-	When User clicks "Buckets" tab
+	When User navigates to the 'Buckets' left menu item
 	Then "Buckets" page should be displayed to the user
 	When User clicks the "CREATE EVERGREEN BUCKET" Action button
 	Then "Create Evergreen Bucket" page should be displayed to the user
@@ -115,7 +115,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	When User perform search by "01ERDGD48UDQKE"
 	And User click content from "Hostname" column
 	Then Details object page is displayed to the user
-	When User navigates to the "Projects" main-menu on the Details page
+	When User navigates to the 'Projects' left menu item
 	And User clicks on "Unassigned" link for Evergreen Bucket field
 	Then popup changes window opened
 	And User clicks on "New Bucket" dropdown
@@ -141,7 +141,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	When User perform search by "00DBB114BE1B41B0A38"
 	And User click content from "Username" column
 	Then Details object page is displayed to the user
-	When User navigates to the "Projects" main-menu on the Details page
+	When User navigates to the 'Projects' left menu item
 	And User clicks on "Unassigned" link for Evergreen Bucket field
 	Then popup changes window opened
 	When User opens "Related Mailboxes" section on the Details Page
@@ -166,7 +166,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	When User perform search by "0845467C65E5438D83E@bclabs.local"
 	And User click content from "Email Address" column
 	Then Details object page is displayed to the user
-	When User navigates to the "Projects" main-menu on the Details page
+	When User navigates to the 'Projects' left menu item
 	And User clicks on "Unassigned" link for Evergreen Bucket field
 	Then popup changes window opened
 	When User opens "Related Users" section on the Details Page
@@ -199,7 +199,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjec
 	When User perform search by "ZZNKKYW97AL4VS"
 	And User click content from "Hostname" column
 	Then Details object page is displayed to the user
-	When User navigates to the "Projects" main-menu on the Details page
+	When User navigates to the 'Projects' left menu item
 	And User clicks on "Unassigned" link for Evergreen Capacity Unit field
 	Then popup changes window opened
 	When User opens "Related Users" section on the Details Page
@@ -225,7 +225,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjec
 	When User perform search by "00DBB114BE1B41B0A38"
 	And User click content from "Username" column
 	Then Details object page is displayed to the user
-	When User navigates to the "Projects" main-menu on the Details page
+	When User navigates to the 'Projects' left menu item
 	And User clicks on "Unassigned" link for Evergreen Capacity Unit field
 	Then popup changes window opened
 	When User opens "Related Mailboxes" section on the Details Page
@@ -251,7 +251,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjec
 	When User perform search by "0845467C65E5438D83E@bclabs.local"
 	And User click content from "Email Address" column
 	Then Details object page is displayed to the user
-	When User navigates to the "Projects" main-menu on the Details page
+	When User navigates to the 'Projects' left menu item
 	And User clicks on "Unassigned" link for Evergreen Capacity Unit field
 	Then popup changes window opened
 	When User opens "Related Users" section on the Details Page
@@ -278,7 +278,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatProjectSummarySectionIsDisplaye
 	When User perform search by "<ItemName>"
 	And User clicks content from "<ColumnName>" column
 	Then Details page for "<ItemName>" item is displayed to the user
-	When User navigates to the "Projects" main-menu on the Details page
+	When User navigates to the 'Projects' left menu item
 	And User navigates to the "Evergreen Details" sub-menu on the Details page
 	Then field with "Project Count" text is displayed in expanded tab on the Details Page
 	And field with "Evergreen Bucket" text is displayed in expanded tab on the Details Page
@@ -297,7 +297,7 @@ Scenario: EvergreenJnr_DevicesList_CheckDeviceTabUIOnTheDeviceDetails
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	When User click content from "Hostname" column
-	When User navigates to the "Details" main-menu on the Details page
+	When User navigates to the 'Details' left menu item
 	Then User verifies data in the fields on details page
 	| Field | Data |
 	| Key   | 9141 |
@@ -316,7 +316,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCommonNameFieldIsDisplayedInTheCompu
 	When User perform search by "00OMQQXWA1DRI6"
 	And User click content from "Hostname" column
 	Then Details page for "00OMQQXWA1DRI6" item is displayed to the user
-	When User navigates to the "Active Directory" main-menu on the Details page
+	When User navigates to the 'Active Directory' left menu item
 	Then following fields are displayed in the open section:
 	| Fields                          |
 	| Directory Type                  |
@@ -334,7 +334,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatProjectDetailsDefaultViewIsDisplayed
 	When User perform search by "001BAQXT6JWFPI"
 	And User click content from "Hostname" column
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
-	When User navigates to the "Projects" main-menu on the Details page
+	When User navigates to the 'Projects' left menu item
 	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
 	Then "Windows 7 Migration (Computer Scheduled Project)" project is selected in the Top bar on Item details page
 	When User navigates to the "Project Details" sub-menu on the Details page
@@ -360,7 +360,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatProjectDetailsDefaultViewIsDisplayedCo
 	And User click content from "Username" column
 	Then Details page for "0072B088173449E3A93" item is displayed to the user
 	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
-	And User navigates to the "Projects" main-menu on the Details page
+	And User navigates to the 'Projects' left menu item
 	And User navigates to the "Project Details" sub-menu on the Details page
 	Then following fields are displayed in the open section:
 	| Fields           |
@@ -385,7 +385,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectDetailsDefaultViewIsDisp
 	And User click content from "Application" column
 	Then Details page for ""WPF/E" (codename) Community Technology Preview (Feb 2007)" item is displayed to the user
 	When User switches to the "Devices Evergreen Capacity Project" project in the Top bar on Item details page
-	And User navigates to the "Projects" main-menu on the Details page
+	And User navigates to the 'Projects' left menu item
 	And User navigates to the "Project Details" sub-menu on the Details page
 	Then following fields are displayed in the open section:
 	| Fields              |
@@ -410,7 +410,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatProjectDetailsDefaultViewIsDisplay
 	And User click content from "Email Address" column
 	Then Details page for "00A5B910A1004CF5AC4@bclabs.local" item is displayed to the user
 	When User switches to the "Mailbox Evergreen Capacity Project" project in the Top bar on Item details page
-	And User navigates to the "Projects" main-menu on the Details page
+	And User navigates to the 'Projects' left menu item
 	And User navigates to the "Project Details" sub-menu on the Details page
 	Then following fields are displayed in the open section:
 	| Fields           |
@@ -435,7 +435,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatSelfServiceUrlIsNotDisplayedOnObjectDet
 	And User click content from "Hostname" column
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
 	When User switches to the "Devices Evergreen Capacity Project" project in the Top bar on Item details page
-	And User navigates to the "Projects" main-menu on the Details page
+	And User navigates to the 'Projects' left menu item
 	And User navigates to the "Project Details" sub-menu on the Details page
 	Then field with "Self Service URL" text is not displayed in expanded tab on the Details Page
 	When User clicks "Users" on the left-hand menu
@@ -444,7 +444,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatSelfServiceUrlIsNotDisplayedOnObjectDet
 	And User click content from "Username" column
 	Then Details page for "0072B088173449E3A93" item is displayed to the user
 	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
-	And User navigates to the "Projects" main-menu on the Details page
+	And User navigates to the 'Projects' left menu item
 	And User navigates to the "Project Details" sub-menu on the Details page
 	Then field with "Self Service URL" text is displayed in expanded tab on the Details Page
 	Then following content is displayed on the Details Page
@@ -460,7 +460,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatOnTheProjectDetailsTabDisplaysTheL
 	Then "Projects" page should be displayed to the user
 	When User clicks on 'USE ME FOR AUTOMATION(MAIL SCHDLD)' cell from 'Project' column
 	Then Project "USE ME FOR AUTOMATION(MAIL SCHDLD)" is displayed to user
-	When User clicks "Details" tab
+	When User navigates to the 'Details' left menu item
 	And User clicks the "ADD LANGUAGE" Action button
 	And User selects "German" language on the Project details page
 	And User opens menu for selected language
@@ -471,7 +471,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatOnTheProjectDetailsTabDisplaysTheL
 	And User click content from "Email Address" column
 	Then Details page for "06BB714696274AC895A@bclabs.local" item is displayed to the user
 	When User switches to the "USE ME FOR AUTOMATION(MAIL SCHDLD)" project in the Top bar on Item details page
-	And User navigates to the "Projects" main-menu on the Details page
+	And User navigates to the 'Projects' left menu item
 	And User navigates to the "Project Details" sub-menu on the Details page
 	Then following content is displayed on the Details Page
 	| Title    | Value  |
@@ -484,7 +484,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatLastLogoffDateFieldIsNotDisplayedAtT
 	When User perform search by "001BAQXT6JWFPI"
 	And User click content from "Hostname" column
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
-	When User navigates to the "Details" main-menu on the Details page
+	When User navigates to the 'Details' left menu item
 	And User navigates to the "Device Owner" sub-menu on the Details page
 	Then field with "Last Logoff Date" text is not displayed in expanded tab on the Details Page
 
@@ -496,7 +496,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatErrorsANotAppearInConsoleWhenNavigat
 	And User click content from "Hostname" column
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
 	When User switches to the "Devices Evergreen Capacity Project" project in the Top bar on Item details page
-	And User navigates to the "Details" main-menu on the Details page
+	And User navigates to the 'Details' left menu item
 	And User navigates to the "Device" sub-menu on the Details page
 	Then following fields are displayed in the open section:
 	| Fields                    |

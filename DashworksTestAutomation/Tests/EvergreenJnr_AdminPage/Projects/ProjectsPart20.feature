@@ -15,7 +15,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatBlueBannerIsDisplayedWithCorrectlyTex
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "Project13347" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
+	And User selects 'All Devices' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
@@ -23,7 +23,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatBlueBannerIsDisplayedWithCorrectlyTex
 	When User selects "Scope Changes" tab on the Project details page
 	Then open tab in the Project Scope Changes section is active
 	When User expands the object to add 
-	And User selects following Objects
+	And User selects following Objects to the Project
 	| Objects         |
 	| 00K4CEEQ737BA4L |
 	| 00YWR8TJU4ZF8V  |
@@ -32,12 +32,12 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatBlueBannerIsDisplayedWithCorrectlyTex
 	| 06T5FX3CUY08AE  |
 	And User clicks the "UPDATE ALL CHANGES" Action button
 	And User clicks the "UPDATE PROJECT" Action button
-	And User clicks "Users" tab in the Project Scope Changes section
+	And User navigates to the 'Users' left menu item
 	And User expands the object to add 
 	When User selects all objects to the Project
-	And User clicks "Applications" tab in the Project Scope Changes section
+	And User navigates to the 'Applications' left menu item
 	And User expands the object to add 
-	And User selects following Objects
+	And User selects following Objects to the Project
 	| Objects                                                                       |
 	| "WPF/E" (codename) Community Technology Preview (Feb 2007) (0.8.5.0)          |
 	| %SQL_PRODUCT_SHORT_NAME% Data Tools - BI for Visual Studio 2013 (12.0.2430.0) |
@@ -54,7 +54,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatBlueBannerIsDisplayedWithCorrectlyTex
 	And User navigates to the "Application Scope" tab in the Scope section on the Project details page
 	When User selects "Do not include applications" checkbox on the Project details page
 	And User selects "Scope Changes" tab on the Project details page
-	And User clicks "Users" tab in the Project Scope Changes section
+	And User navigates to the 'Users' left menu item
 	When User waits and expands the "Users" panel to remove
 	When User selects all objects to the Project
 	And User clicks the "UPDATE ALL CHANGES" Action button
@@ -70,19 +70,19 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectTypesInTheFilterAlphabetised
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "DeviceProject56" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
+	And User selects 'All Devices' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "UserProject56" in the "Project Name" field
-	And User selects "All Users" in the Scope Project dropdown
+	And User selects 'All Users' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "MailboxProject56" in the "Project Name" field
-	And User selects "All Mailboxes" in the Scope Project dropdown
+	And User selects 'All Mailboxes' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks String Filter button for "Type" column on the Admin page
@@ -97,7 +97,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAllCheckboxesOnScopeDetailsTabAreWork
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "Project12183" in the "Project Name" field
-	And User selects "All Mailboxes" in the Scope Project dropdown
+	And User selects 'All Mailboxes' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
@@ -132,10 +132,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectDetailsIsPopulatedOnTheAdminPag
 	Then "Windows 7 Migration (Computer Scheduled Project)" content is displayed in "Project Name" field
 	Then "Windows7Mi" content is displayed in "Project Short Name" field
 	Then "Windows 7 Migration Phase 1Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill;" content is displayed in "Project Description" field
-	When User clicks "Scope" tab
+	When User navigates to the 'Scope' left menu item
 	Then "Scope Details" tab is disabled
 	Then "Scope Changes" tab is disabled
-	When User clicks "Capacity" tab
+	When User navigates to the 'Capacity' left menu item
 	Then 'Capacity Mode' dropdown is displayed
 	Then 'Capacity Units' dropdown is displayed
 	Then "90" content is displayed in "Percentage capacity to reach before showing amber" field

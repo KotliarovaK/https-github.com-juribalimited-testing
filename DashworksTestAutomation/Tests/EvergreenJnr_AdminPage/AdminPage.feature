@@ -31,7 +31,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPa
 	Then Rows counter contains "1" found row of all rows
 	When User clicks Admin on the left-hand menu
 	When User clicks "Evergreen" link on the Admin page
-	When User clicks "Buckets" tab
+	And User navigates to the 'Buckets' left menu item
 	When User clicks Reset Filters button on the Admin page
 	And User enters "barry's" text in the Search field for "Bucket" column
 	Then Rows counter contains "2" found row of all rows
@@ -70,7 +70,7 @@ Examples:
 Scenario: EvergreenJnr_AdminPage_CheckPositionOfContextMenuInGridForBuckets
 	When User clicks Admin on the left-hand menu
 	When User clicks "Evergreen" link on the Admin page
-	When User clicks "Buckets" tab
+	When User navigates to the 'Buckets' left menu item
 	And User performs right-click on "Evergreen" cell in the grid
 	Then User sees context menu placed near "Evergreen" cell in the grid
 
@@ -78,7 +78,7 @@ Scenario: EvergreenJnr_AdminPage_CheckPositionOfContextMenuInGridForBuckets
 Scenario: EvergreenJnr_AdminPage_CheckPositionOfContextMenuInGridForCapacityUnits
 	When User clicks Admin on the left-hand menu
 	When User clicks "Evergreen" link on the Admin page
-	When User clicks "Capacity Units" tab
+	When User navigates to the 'Capacity Units' left menu item
 	And User performs right-click on "True" cell in the grid
 	Then User sees context menu placed near "True" cell in the grid
 
@@ -97,7 +97,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	And User clicks content from "Project" column
 	And User selects "Scope Changes" tab on the Project details page
 	And User expands the object to add 
-	And User selects following Objects
+	And User selects following Objects to the Project
 	| Objects        |
 	| 0TTSZRQ1ZTIXWM |
 	And User clicks the "UPDATE ALL CHANGES" Action button
@@ -111,7 +111,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	Then 'Unassigned' content is displayed in the 'Ring' column
 	When User click on Back button
 	When User clicks "Evergreen" link on the Admin page
-	When User clicks "Buckets" tab
+	When User navigates to the 'Buckets' left menu item
 	Then "Buckets" page should be displayed to the user
 	When User enters "Unassigned" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
@@ -124,10 +124,10 @@ Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	Then "Projects" page should be displayed to the user
 	When User enters "Project12948" text in the Search field for "Project" column
 	And User clicks content from "Project" column
-	And User clicks "Details" tab
+	And User navigates to the 'Details' left menu item
 	And user selects "Clone evergreen buckets to project buckets" in the Bucket dropdown
 	Then There are no errors in the browser console
-	When User clicks "Scope" tab
+	When User navigates to the 'Scope' left menu item
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Match to Evergreen Bucket" is displayed in the Bucket dropdown
 
@@ -144,7 +144,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckThatExtraUnknownReadinessIsNotCrea
 	When User clicks Import Project button on the Import Project page
 	When User clicks newly created object link
 	Then Project "DAS15989_TestProject" is displayed to user
-	When User clicks "Readiness" tab
+	When User navigates to the 'Readiness' left menu item
 	Then "UNKNOWN" content is not displayed in the grid on the Project details page
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS16089 @Cleanup
@@ -165,19 +165,19 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckFormattingForIntegerValues
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Evergreen" link on the Admin page
-	When User clicks "Buckets" tab
+	When User navigates to the 'Buckets' left menu item
 	And User enters "Unassigned" text in the Search field for "Bucket" column
 	Then "16933" content is displayed in "Devices" column
 	Then "41050" content is displayed in "Users" column
 	Then "14538" content is displayed in "Mailboxes" column
 	When User clicks "Evergreen" link on the Admin page
-	When User clicks "Capacity Units" tab
+	When User navigates to the 'Capacity Units' left menu item
 	And User enters "Unassigned" text in the Search field for "Capacity Unit" column
 	Then "9420" content is displayed in "Devices" column
 	Then "27140" content is displayed in "Users" column
 	Then "5288" content is displayed in "Mailboxes" column
 	When User clicks "Evergreen" link on the Admin page
-	When User clicks "Rings" tab
+	When User navigates to the 'Rings' left menu item
 	And User enters "Unassigned" text in the Search field for "Ring" column
 	Then "15802" content is displayed in "Devices" column
 	Then "38677" content is displayed in "Users" column
@@ -219,7 +219,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromC
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Evergreen" link on the Admin page
-	And User clicks "Capacity Units" tab
+	And User navigates to the 'Capacity Units' left menu item
 	Then "Capacity Units" page should be displayed to the user
 	When User clicks content from "Devices" column
 	Then "All Devices" list should be displayed to the user
@@ -229,7 +229,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromC
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Evergreen" link on the Admin page
-	And User clicks "Capacity Units" tab
+	And User navigates to the 'Capacity Units' left menu item
 	When User clicks content from "Users" column
 	Then "All Users" list should be displayed to the user
 	Then ColumnName is added to the list
@@ -238,7 +238,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromC
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Evergreen" link on the Admin page
-	And User clicks "Capacity Units" tab
+	And User navigates to the 'Capacity Units' left menu item
 	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
 	When User clicks content from "Mailboxes" column
 	Then "All Mailboxes" list should be displayed to the user
@@ -261,7 +261,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromR
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Evergreen" link on the Admin page
-	And User clicks "Rings" tab
+	And User navigates to the 'Rings' left menu item
 	Then "Rings" page should be displayed to the user
 	When User clicks content from "Devices" column
 	Then "All Devices" list should be displayed to the user
@@ -271,7 +271,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromR
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Evergreen" link on the Admin page
-	And User clicks "Rings" tab
+	And User navigates to the 'Rings' left menu item
 	When User clicks content from "Users" column
 	Then "All Users" list should be displayed to the user
 	Then ColumnName is added to the list
@@ -280,7 +280,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromR
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Evergreen" link on the Admin page
-	And User clicks "Rings" tab
+	And User navigates to the 'Rings' left menu item
 	When User clicks content from "Mailboxes" column
 	Then "All Mailboxes" list should be displayed to the user
 	Then ColumnName is added to the list

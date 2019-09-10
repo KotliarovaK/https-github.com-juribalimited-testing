@@ -14,7 +14,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatRedBannerWithOkMessageIsNotDisplaye
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "TestProject12332" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
+	And User selects 'All Devices' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
@@ -22,19 +22,19 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatRedBannerWithOkMessageIsNotDisplaye
 	When User selects "Scope Changes" tab on the Project details page
 	When User expands the object to add
 	Then Objects are displayed in alphabetical order on the Admin page
-	When User selects following Objects
+	When User selects following Objects to the Project
 	| Objects        |
 	| 1DPQO52HJQZJ0H |
-	And User clicks "Applications" tab in the Project Scope Changes section
+	And User navigates to the 'Applications' left menu item
 	And User expands the object to add
 	Then Objects are displayed in alphabetical order on the Admin page
-	When User selects following Objects
+	When User selects following Objects to the Project
 	| Objects                                    |
 	| 0004 - Adobe Acrobat Reader 5.0.5 Francais |
-	And User clicks "Users" tab in the Project Scope Changes section
+	And User navigates to the 'Users' left menu item
 	And User expands the object to add
 	Then Objects are displayed in alphabetical order on the Admin page
-	When User selects following Objects
+	When User selects following Objects to the Project
 	| Objects                    |
 	| AAC860150 (Kerrie D. Ruiz) |
 	And User clicks the "UPDATE ALL CHANGES" Action button
@@ -92,7 +92,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatObjectsIsOnboardedToTheProjectWithClon
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "TestProject19" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
+	And User selects 'All Devices' option from 'Scope' autocomplete
 	When User selects "Clone from Evergreen to Project" in the Mode Project dropdown
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
@@ -101,7 +101,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatObjectsIsOnboardedToTheProjectWithClon
 	Then Project "TestProject19" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
 	When User expands the object to add 
-	And User selects following Objects
+	And User selects following Objects to the Project
 	| Objects         |
 	| 01BQIYGGUW5PRP6 |
 	And User clicks the "UPDATE ALL CHANGES" Action button
@@ -131,29 +131,29 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	| TestProject12490 | All Devices | None            | Standalone Project |
 	And User selects "Scope" tab on the Project details page
 	And User selects "Scope Changes" tab on the Project details page
-	And User clicks "Devices" tab in the Project Scope Changes section
+	And User navigates to the 'Devices' left menu item
 	Then "[Default (Computer)]" Path is displayed to the user
 	And "[None]" Category is displayed to the user
 	And "Unassigned" is displayed in the Bucket dropdown
 	When User expands the object to add
-	And User selects following Objects
+	And User selects following Objects to the Project
 	| Objects        |
 	| 0IJB93JZPG72PX |
 	| 04I01QSFL1AWKM |
-	When User clicks "Applications" tab in the Project Scope Changes section
+	When User navigates to the 'Applications' tab on Scope Changes page
 	Then "[Default (Application)]" Path is displayed to the user
 	And "[None]" Category is displayed to the user
 	When User expands the object to add
-	And User selects following Objects
+	And User selects following Objects to the Project
 	| Objects                        |
 	| ACDSee 4.0.1 Std Trial Version |
 	| ACDSee 8 (8.0.39)              |
-	When User clicks "Users" tab in the Project Scope Changes section
+	When User navigates to the 'Users' tab on Scope Changes page
 	Then "[Default (User)]" Path is displayed to the user
 	And "[None]" Category is displayed to the user
 	And "Unassigned" is displayed in the Bucket dropdown
 	When User expands the object to add
-	And User selects following Objects
+	And User selects following Objects to the Project
 	| Objects                        |
 	| ABQ575757 (Salvador K. Waller) |
 	| ADG685492 (Eugene N. Stanton)  |
@@ -275,7 +275,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	Then Rows counter shows "0" of "6" rows
 	When User type "0IJB93JZPG72PX" in Global Search Field
 	Then User clicks on "0IJB93JZPG72PX" search result
-	When User navigates to the "Projects" main-menu on the Details page
+	When User navigates to the 'Projects' left menu item
 	And User navigates to the "Projects Summary" sub-menu on the Details page
 	And User clicks "TestProject12490" link on the Details Page
 	Then "Project Object" page is displayed to the user

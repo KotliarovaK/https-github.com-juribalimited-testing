@@ -10,7 +10,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBanner
 	When Project created via API and opened
 	| ProjectName             | Scope       | ProjectTemplate | Mode               |
 	| ProjectForCapacity13790 | All Devices | None            | Standalone Project |
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	And User selects "Units" tab on the Project details page
 	When User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
 	And User type "CapacityUnit13790" Name in the "Capacity Unit Name" field on the Project details page
@@ -46,7 +46,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreated
 	When Project created via API and opened
 	| ProjectName           | Scope         | ProjectTemplate | Mode               |
 	| ProjectForCapacity12672 | All Devices | None            | Standalone Project |
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	And User selects "Units" tab on the Project details page
 	Then User sees next Units on the Capacity Units page:
 	| units             |
@@ -74,7 +74,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreated
 	#DAS-13151
 	And "UPDATE" Action button is disabled
 	And "CANCEL" Action button is enabled
-	When User clicks "Capacity" tab
+	When User navigates to the 'Capacity' left menu item
 	And User selects "Units" tab on the Project details page
 	And User enters "CapacityUnit12672" text in the Search field for "Capacity Unit" column
 	Then "TRUE" content is displayed in "Default" column
@@ -95,7 +95,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCapacityUnitsGridUpdatedAfterUnitUpdat
 	| Name              | Description | IsDefault | Project         |
 	| CapacityUnit14240 | 14240       | false     | Email Migration |
 	And User navigates to "Email Migration" project details
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	And User selects "Units" tab on the Project details page
 	And User clicks content from "Capacity Unit" column
 	When User clicks "Projects" navigation link on the Admin page
@@ -103,7 +103,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCapacityUnitsGridUpdatedAfterUnitUpdat
 	Then "Projects" page should be displayed to the user
 	When User enters "Email Migration" text in the Search field for "Project" column
 	And User clicks content from "Project" column
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	And User selects "Units" tab on the Project details page
 	And User clicks content from "Capacity Unit" column
 	When User clicks "Administration" navigation link on the Admin page
@@ -111,7 +111,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCapacityUnitsGridUpdatedAfterUnitUpdat
 	Then "Projects" page should be displayed to the user
 	When User enters "Email Migration" text in the Search field for "Project" column
 	And User clicks content from "Project" column
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	And User selects "Units" tab on the Project details page
 	Then User sees next Units on the Capacity Units page:
 	| units             |
@@ -141,7 +141,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitWithEmptyNam
 	When Project created via API and opened
 	| ProjectName        | Scope       | ProjectTemplate | Mode               |
 	| ProjectForDAS13945 | All Devices | None            | Standalone Project |
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	And User selects "Units" tab on the Project details page
 	And User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
 	And User type " " Name in the "Capacity Unit Name" field on the Project details page

@@ -11,7 +11,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSelectedRowsCountDisplayingOnProjectsGrid
 	And User clicks "Projects" link on the Admin page
 	And User clicks the "CREATE PROJECT" Action button
 	And User enters "TestProjectDAS11944" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
+	And User selects 'All Devices' option from 'Scope' autocomplete
 	And User clicks the "CREATE" Action button
 	When User enters "Barry's User Project" text in the Search field for "Project" column
 	And User selects all rows on the grid
@@ -42,7 +42,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectsAreDeletedSuccessfully
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "<ProjectName>" in the "Project Name" field
-	And User selects "<StaticList>" in the Scope Project dropdown
+	And User selects '<StaticList>' option from 'Scope' autocomplete
 	When User selects "Standalone Project" in the Mode Project dropdown
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The project has been created" text
@@ -61,7 +61,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectsAreDeletedSuccessfully
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "<ProjectName>" in the "Project Name" field
-	And User selects "<DynamicList>" in the Scope Project dropdown
+	And User selects '<DynamicList>' option from 'Scope' autocomplete
 	When User selects "Standalone Project" in the Mode Project dropdown
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The project has been created" text
@@ -81,14 +81,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyProjectN
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters " " in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
+	And User selects 'All Devices' option from 'Scope' autocomplete
 	Then Create Project button is disabled
 	When User enters "AllDevices Project" in the "Project Name" field
 	And User clicks Create button on the Create Project page
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters " alldevices project" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
+	And User selects 'All Devices' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
 	Then Error message with "A project already exists with this name" text is displayed
 	When User create static list with "StaticList4581" name on "Devices" page with following items
@@ -103,7 +103,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyProjectN
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "TestProject84" in the "Project Name" field
-	And User selects "StaticList4581" in the Scope Project dropdown
+	And User selects 'StaticList4581' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User enters "TestProject84" text in the Search field for "Project" column
@@ -122,7 +122,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyProjectN
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "AllDevices Project1258" in the "Project Name" field
-	And User selects "DynamicList5531" in the Scope Project dropdown
+	And User selects 'DynamicList5531' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
 	And User enters "AllDevices Project" text in the Search field for "Project" column
 	And User selects all rows on the grid

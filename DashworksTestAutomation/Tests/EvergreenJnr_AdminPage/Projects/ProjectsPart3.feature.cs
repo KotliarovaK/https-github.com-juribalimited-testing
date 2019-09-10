@@ -156,7 +156,7 @@ this.FeatureBackground();
 #line 16
  testRunner.When("User enters \"TestProject12332\" in the \"Project Name\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 17
- testRunner.And("User selects \"All Devices\" in the Scope Project dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects \'All Devices\' option from \'Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 18
  testRunner.And("User clicks Create button on the Create Project page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 19
@@ -177,9 +177,9 @@ this.FeatureBackground();
             table1.AddRow(new string[] {
                         "1DPQO52HJQZJ0H"});
 #line 25
- testRunner.When("User selects following Objects", ((string)(null)), table1, "When ");
+ testRunner.When("User selects following Objects to the Project", ((string)(null)), table1, "When ");
 #line 28
- testRunner.And("User clicks \"Applications\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 29
  testRunner.And("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 30
@@ -190,9 +190,9 @@ this.FeatureBackground();
             table2.AddRow(new string[] {
                         "0004 - Adobe Acrobat Reader 5.0.5 Francais"});
 #line 31
- testRunner.When("User selects following Objects", ((string)(null)), table2, "When ");
+ testRunner.When("User selects following Objects to the Project", ((string)(null)), table2, "When ");
 #line 34
- testRunner.And("User clicks \"Users\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User navigates to the \'Users\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 35
  testRunner.And("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 36
@@ -203,7 +203,7 @@ this.FeatureBackground();
             table3.AddRow(new string[] {
                         "AAC860150 (Kerrie D. Ruiz)"});
 #line 37
- testRunner.When("User selects following Objects", ((string)(null)), table3, "When ");
+ testRunner.When("User selects following Objects to the Project", ((string)(null)), table3, "When ");
 #line 40
  testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 41
@@ -436,7 +436,7 @@ this.FeatureBackground();
 #line 94
  testRunner.When("User enters \"TestProject19\" in the \"Project Name\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 95
- testRunner.And("User selects \"All Devices\" in the Scope Project dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects \'All Devices\' option from \'Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 96
  testRunner.When("User selects \"Clone from Evergreen to Project\" in the Mode Project dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 97
@@ -459,7 +459,7 @@ this.FeatureBackground();
             table5.AddRow(new string[] {
                         "01BQIYGGUW5PRP6"});
 #line 104
- testRunner.And("User selects following Objects", ((string)(null)), table5, "And ");
+ testRunner.And("User selects following Objects to the Project", ((string)(null)), table5, "And ");
 #line 107
  testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 108
@@ -592,7 +592,7 @@ this.FeatureBackground();
 #line 133
  testRunner.And("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 134
- testRunner.And("User clicks \"Devices\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User navigates to the \'Devices\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 135
  testRunner.Then("\"[Default (Computer)]\" Path is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 136
@@ -609,9 +609,9 @@ this.FeatureBackground();
             table9.AddRow(new string[] {
                         "04I01QSFL1AWKM"});
 #line 139
- testRunner.And("User selects following Objects", ((string)(null)), table9, "And ");
+ testRunner.And("User selects following Objects to the Project", ((string)(null)), table9, "And ");
 #line 143
- testRunner.When("User clicks \"Applications\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Applications\' tab on Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 144
  testRunner.Then("\"[Default (Application)]\" Path is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 145
@@ -626,9 +626,9 @@ this.FeatureBackground();
             table10.AddRow(new string[] {
                         "ACDSee 8 (8.0.39)"});
 #line 147
- testRunner.And("User selects following Objects", ((string)(null)), table10, "And ");
+ testRunner.And("User selects following Objects to the Project", ((string)(null)), table10, "And ");
 #line 151
- testRunner.When("User clicks \"Users\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Users\' tab on Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 152
  testRunner.Then("\"[Default (User)]\" Path is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 153
@@ -645,7 +645,7 @@ this.FeatureBackground();
             table11.AddRow(new string[] {
                         "ADG685492 (Eugene N. Stanton)"});
 #line 156
- testRunner.And("User selects following Objects", ((string)(null)), table11, "And ");
+ testRunner.And("User selects following Objects to the Project", ((string)(null)), table11, "And ");
 #line 160
  testRunner.Then("\"Devices 2/0\" is displayed in the tab header on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 161
@@ -895,7 +895,7 @@ this.FeatureBackground();
 #line 277
  testRunner.Then("User clicks on \"0IJB93JZPG72PX\" search result", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 278
- testRunner.When("User navigates to the \"Projects\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 279
  testRunner.And("User navigates to the \"Projects Summary\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 280

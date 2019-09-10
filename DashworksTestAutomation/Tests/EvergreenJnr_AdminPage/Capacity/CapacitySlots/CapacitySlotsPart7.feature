@@ -94,7 +94,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnlyDateTasksCanBeAvailableForSelectio
 	When User navigate to Evergreen link
 	And User clicks "Admin" on the left-hand menu
 	And User navigates to "ProjectDAS13593" project details
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	And User selects "Slots" tab on the Project details page
 	And User clicks the "CREATE SLOT" Action button
 	And User selects "Device" in the "Object Type" dropdown
@@ -123,7 +123,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreUnpublishedAfterBeingAssociat
 	| Project                                          | SlotName | DisplayName | Tasks                                                                                                                                              |
 	| Windows 7 Migration (Computer Scheduled Project) | Slot 1   | Slot 1      | Pre-Migration \ Scheduled Date‡Pre-Migration \ Forecast Date‡Computer Information ---- Text fill; Text fill; \ Group Computer Rag Radio Date Owner |
 	And User clicks content from "Project" column
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	And User selects "Slots" tab on the Project details page
 	#TODO Remove commented steps. I have saved them just to save data during NotRun removing
 	#And User clicks the "CREATE NEW SLOT" Action button
@@ -238,7 +238,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreDeletedAfterBeingAssociatedTo
 	And User navigate to Evergreen link
 	And User clicks "Admin" on the left-hand menu
 	And User navigates to "Windows 7 Migration (Computer Scheduled Project)" project details
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	And User selects "Slots" tab on the Project details page
 	And User enters "Slot 1" text in the Search field for "Capacity Slot" column
 	And User clicks content from "Capacity Slot" column

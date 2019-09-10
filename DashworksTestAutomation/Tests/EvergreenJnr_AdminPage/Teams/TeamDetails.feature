@@ -15,7 +15,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSelectedRowsCountDisplayingOnTeamsGrids
 	And User clicks content from "Team" column
 	And User selects all rows on the grid
 	Then User sees "8" of "8" rows selected label
-	When User clicks "Buckets" tab
+	When User navigates to the 'Buckets' left menu item
 	And User selects all rows on the grid
 	Then User sees "7" of "7" rows selected label
 

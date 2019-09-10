@@ -13,25 +13,25 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorMessageAppearsWhenCreatingDuplica
 	And User creates new Slot via Api
 	| Project         | SlotName     | DisplayName | SlotAvailableFrom | SlotAvailableTo |
 	| ProjectDAS13779 | SlotDAS13779 | 13779       | 29 Oct 2018       | 29 Oct 2018     |
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	And User selects "Slots" tab on the Project details page
 	And User selects "Override Dates" tab on the Project details page
 	And User clicks the "CREATE OVERRIDE DATE" Action button
 	Then Create Override Date is displayed correctly
 	Then "CREATE" Action button have tooltip with "Some settings are not valid" text
 	And "CREATE" Action button is disabled
-	When User enters "29 Oct 2018" date in the "Override Start Date" field
+	When User enters '29 Oct 2018' text to 'Override Start Date' datepicker
 	Then "CREATE" Action button have tooltip with "Some settings are not valid" text
 	Then "CREATE" Action button is disabled
 	Then "CREATE" Action button have tooltip with "Some settings are not valid" text
-	When User enters "29 Oct 2018" date in the "Override End Date" field
+	When User enters '29 Oct 2018' text to 'Override End Date' datepicker
 	Then "CREATE" Action button is active
 	When User selects 'SlotDAS13779' in the 'Slot' dropdown
 	And User enters "0" value in the "Capacity" field
 	And User clicks the "CREATE" Action button
 	And User clicks the "CREATE OVERRIDE DATE" Action button
-	And User enters "29 Oct 2018" date in the "Override Start Date" field
-	And User enters "29 Oct 2018" date in the "Override End Date" field
+	And User enters '29 Oct 2018' text to 'Override Start Date' datepicker
+	And User enters '29 Oct 2018' text to 'Override End Date' datepicker
 	And User selects 'SlotDAS13779' in the 'Slot' dropdown
 	And User enters "0" value in the "Capacity" field
 	And User clicks the "CREATE" Action button
@@ -48,17 +48,17 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorInConsoleAfterSettingSameOverri
 	| Project         | SlotName  | DisplayName |
 	| ProjectDAS13442 | Slot13442 | 13442       |
 	And User navigates to newly created Slot
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	And User selects "Override Dates" tab on the Project details page
 	And User clicks the "CREATE OVERRIDE DATE" Action button
-	And User enters "1 Sep 2018" date in the "Override Start Date" field
-	And User enters "7 Sep 2018" date in the "Override End Date" field
+	And User enters '1 Sep 2018' text to 'Override Start Date' datepicker
+	And User enters '7 Sep 2018' text to 'Override End Date' datepicker
 	And User selects 'Slot13442' in the 'Slot' dropdown
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "Your override date has been created" text
 	When User clicks the "CREATE OVERRIDE DATE" Action button
-	And User enters "5 Sep 2018" date in the "Override Start Date" field
-	And User enters "10 Sep 2018" date in the "Override End Date" field
+	And User enters '5 Sep 2018' text to 'Override Start Date' datepicker
+	And User enters '10 Sep 2018' text to 'Override End Date' datepicker
 	And User selects 'Slot13442' in the 'Slot' dropdown
 	And User clicks the "CREATE" Action button
 	Then Error message with "An override already exists for this date" text is displayed
@@ -75,7 +75,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorInConsoleAfterSettingSameOverri
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13490
 Scenario: EvergreenJnr_AdminPage_CheckThat0ValuesAreCorrectlyShownOnTheCapacitySlotsScreen
 	When User navigates to "User Scheduled Test (Jo)" project details
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	And User selects "Slots" tab on the Project details page
 	Then "40" content is displayed in "Monday" column
 	When User clicks content from "Capacity Slot" column
@@ -90,7 +90,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThat0ValuesAreCorrectlyShownOnTheCapacityS
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13608 @DAS13472
 Scenario: EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType
 	When User navigates to "Email Migration" project details
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	And User selects "Slots" tab on the Project details page
 	When User clicks content from "Capacity Slot" column
 	Then 'Pre-Migration \ Scheduled date' value is displayed in the 'Tasks' dropdown
@@ -119,7 +119,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType
 	When User clicks "Projects" navigation link on the Admin page
 	And User clicks Yes button in Leave Page Warning
 	When User navigates to "Windows 7 Migration (Computer Scheduled Project)" project details
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	And User selects "Slots" tab on the Project details page
 	And User clicks content from "Capacity Slot" column
 	Then 'Pre-Migration \ Scheduled Date' value is displayed in the 'Tasks' dropdown

@@ -14,16 +14,16 @@ Scenario Outline: EvergreenJnr_AdminPage_ChangingBucketFromCloneEvergreenBuckets
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "<ProjectName>" in the "Project Name" field
-	And User selects "<ScopeValue>" in the Scope Project dropdown
+	And User selects '<ScopeValue>' option from 'Scope' autocomplete
 	When User selects "Clone from Evergreen to Project" in the Mode Project dropdown
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
-	And User clicks "Details" tab
+	And User navigates to the 'Details' left menu item
 	#Then 'Clone evergreen buckets to project buckets' content is displayed in 'Buckets' dropdown
 	When User selects "Use project buckets" in the Buckets Project dropdown
 	Then There are no errors in the browser console
-	When User clicks "Scope" tab
+	When User navigates to the 'Scope' left menu item
 	And User selects "Scope Changes" tab on the Project details page
 	Then "Unassigned" is displayed in the Bucket dropdown
 	And There are no errors in the browser console
@@ -59,8 +59,8 @@ Scenario: EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherListUsingEverg
 	And User selects "All Devices" in the Scope Project details
 	And User selects "Scope Changes" tab on the Project details page
 	Then "Devices to add (0 of 17285 selected)" is displayed to the user in the Project Scope Changes section
-	When User clicks "Users" tab in the Project Scope Changes section
-	When User clicks "Applications" tab in the Project Scope Changes section
+	When User navigates to the 'Users' tab on Scope Changes page
+	When User navigates to the 'Applications' tab on Scope Changes page
 	Then Bucket dropdown is not displayed on the Project details page
 	And There are no errors in the browser console
 
@@ -87,7 +87,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherListForDevices
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "DevicesProject2" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
+	And User selects 'All Devices' option from 'Scope' autocomplete
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
@@ -116,17 +116,17 @@ Scenario: EvergreenJnr_AdminPage_ChangingUserScopeListToAnotherList
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "DevicesProject6" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
+	And User selects 'All Devices' option from 'Scope' autocomplete
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	And User selects "Scope Changes" tab on the Project details page
-	When User clicks "Users" tab in the Project Scope Changes section
+	When User navigates to the 'Users' tab on Scope Changes page
 	Then "Users to add (0 of 14631 selected)" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page
 	When User navigates to the "User Scope" tab in the Scope section on the Project details page
 	And User selects "StaticList6179" in the Scope Project details
 	And User selects "Scope Changes" tab on the Project details page
-	When User clicks "Users" tab in the Project Scope Changes section
+	When User navigates to the 'Users' tab on Scope Changes page
 	Then "Users to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
 	Then There are no errors in the browser console

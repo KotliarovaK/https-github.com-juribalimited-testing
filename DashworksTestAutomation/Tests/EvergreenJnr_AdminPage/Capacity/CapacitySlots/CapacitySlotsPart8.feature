@@ -37,7 +37,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForCa
 	And User creates new Slot via Api
 	| Project            | SlotName  | DisplayName | CapacityType   | Tasks                  | CapacityUnits |
 	| ProjectForDAS13152 | Slot13152 | 13152       | Capacity Units | Stage13152 \ Task13152 | Unassigned    |
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	And User selects "Slots" tab on the Project details page
 	When User clicks content from "Capacity Slot" column
 	Then 'Stage13152 \ Task13152' value is displayed in the 'Tasks' dropdown
@@ -81,7 +81,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTe
 	And User navigate to Evergreen link
 	And User clicks "Admin" on the left-hand menu
 	And User navigates to "ProjectForDAS13152" project details
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	And User selects "Slots" tab on the Project details page
 	And User clicks the "CREATE SLOT" Action button
 	And User type "Slot13152" Name in the "Slot Name" field on the Project details page
@@ -122,8 +122,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTe
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS14967 @DAS15291
 Scenario Outline: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCountersOfUserProjectLeadToCorrectFilteredLists
 	When User navigates to "User Evergreen Capacity Project" project details
-	And User clicks "Capacity" tab
-	And User clicks "Slots" tab
+	And User navigates to the 'Capacity' left menu item
+	And User navigates to the 'Slots' left menu item
 	Then "Capacity Slot" column content is displayed in the following order:
 	| Items              |
 	| User Slot 1        |
@@ -159,8 +159,8 @@ Examples:
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS14967 @DAS15291
 Scenario Outline: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCountersOfMailProjectLeadToCorrectFilteredLists
 	When User navigates to "Mailbox Evergreen Capacity Project" project details
-	And User clicks "Capacity" tab
-	And User clicks "Slots" tab
+	And User navigates to the 'Capacity' left menu item
+	And User navigates to the 'Slots' left menu item
 	Then "Capacity Slot" column content is displayed in the following order:
 	| Items                                              |
 	| CA -Mailbox-Nov 1, 2018-Nov 10, 2018               |

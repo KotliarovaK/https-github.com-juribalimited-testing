@@ -11,7 +11,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatDisabledDistributionSectionCan
 	Then "All Applications" list should be displayed to the user
 	When User perform search by "ACD Display 3.4"
 	And User click content from "Application" column
-	When User navigates to the "Distribution" main-menu on the Details page
+	When User navigates to the 'Distribution' left menu item
 	When User navigates to the "Devices" sub-menu on the Details page
 	When User switches to the "Email Migration" project in the Top bar on Item details page
 	Then User click back button in the browser
@@ -30,7 +30,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatVerticalMenuIsUnfoldedCorrectlyOnMen
 	Then "Active Directory" tab-menu on the Details page is not expanded
 	Then "Applications" tab-menu on the Details page is not expanded
 	Then "Compliance" tab-menu on the Details page is not expanded
-	When User navigates to the "Projects" main-menu on the Details page
+	When User navigates to the 'Projects' left menu item
 	When User navigates to the "Projects Summary" sub-menu on the Details page
 	Then "Projects" tab-menu on the Details page is expanded
 	Then "Details" tab-menu on the Details page is not expanded
@@ -38,7 +38,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatVerticalMenuIsUnfoldedCorrectlyOnMen
 	Then "Active Directory" tab-menu on the Details page is not expanded
 	Then "Applications" tab-menu on the Details page is not expanded
 	Then "Compliance" tab-menu on the Details page is not expanded
-	When User navigates to the "Active Directory" main-menu on the Details page
+	When User navigates to the 'Active Directory' left menu item
 	When User navigates to the "Active Directory" sub-menu on the Details page
 	Then "Active Directory" tab-menu on the Details page is expanded
 	Then "Details" tab-menu on the Details page is not expanded
