@@ -342,9 +342,9 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line 78
- testRunner.Given("Display order for \'Devices_Scope\' automation \'First_Action\' action is \'2\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("Display order for \'Devices_Scope\' automation \'First_Action\' action is \'1\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 79
- testRunner.And("Display order for \'Devices_Scope\' automation \'Secont_Action\' action is \'1\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Display order for \'Devices_Scope\' automation \'Secont_Action\' action is \'2\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 80
  testRunner.And("Display order for \'Devices_Scope\' automation \'Third_Action\' action is \'3\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 81
