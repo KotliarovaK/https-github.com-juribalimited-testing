@@ -172,7 +172,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Scope
                 }
             }
 
-            projectElement.UpdateButton.Click();
+            basePage.ClickButtonByName("UPDATE ALL CHANGES");
         }
 
         [When(@"User selects following Objects to the Project")]
