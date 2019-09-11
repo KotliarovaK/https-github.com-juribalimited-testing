@@ -522,7 +522,7 @@ Examples:
 	| 17544_Automation_2 | All Applications | User Scheduled Test (Jo) | 1803 Rollout                       | Email Migration                    |
 	| 17544_Automation-3 | All Mailboxes    | Email Migration          | Mailbox Evergreen Capacity Project | USE ME FOR AUTOMATION(MAIL SCHDLD) |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17542 @Cleanup @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17542 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatUpdateTaskValueIsDisplayInAutomationsLog
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user

@@ -797,11 +797,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var action = _driver.NowAt<ActionPanelPage>();
             action.ActionsDropDown.Click();
-            action.GetActionButtonByName("Delete").Click();
+            action.GetActionButtonByName("Remove Members").Click();
 
             var teamElement = _driver.NowAt<TeamsPage>();
-            _driver.WaitForElementToBeDisplayed(teamElement.RemoveButtonInActions);
-            teamElement.RemoveButtonInActions.Click();
             _driver.WaitForElementToBeDisplayed(teamElement.RemoveButtonOnPage);
             teamElement.RemoveButtonOnPage.Click();
             _driver.WaitForElementToBeDisplayed(teamElement.WarningMessage);

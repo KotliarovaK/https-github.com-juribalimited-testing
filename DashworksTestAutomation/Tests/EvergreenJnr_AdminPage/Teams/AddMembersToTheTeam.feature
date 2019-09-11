@@ -83,6 +83,7 @@ Scenario: EvergreenJnr_AdminPage_AddingMembersToTheTeam
 	| automation_admin2 |
 	| automation_admin3 |
 	| eugene            |
+	When User clicks the "ADD USERS" Action button
 	Then Success message is displayed and contains "The selected users have been added" text
 	When User click on "Username" column header on the Admin page
 	Then data in table is sorted by "Username" column in ascending order on the Admin page
@@ -127,6 +128,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSelectANewTeamDropdownAreWorkingCorre
 	| automation_admin1 |
 	| automation_admin2 |
 	| automation_admin3 |
+	When User clicks the "ADD USERS" Action button
 	Then Success message is displayed and contains "The selected users have been added" text
 	When User enters "admin1" text in the Search field for "Username" column
 	And User selects all rows on the grid
