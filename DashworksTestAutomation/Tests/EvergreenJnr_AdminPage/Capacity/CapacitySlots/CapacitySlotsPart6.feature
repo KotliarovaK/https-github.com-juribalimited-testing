@@ -17,19 +17,19 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSortingWorkCorrectlyForRequestTypeTea
 	| ProjectForDAS13792 | Slot 3   | Slot 3      |               |                 |
 	And User navigates to the 'Capacity' left menu item
 	And User selects "Slots" tab on the Project details page
-	When User click on 'Capacity Units' column header
+	When User clicks on 'Capacity Units' column header
 	Then data in table is sorted by "Capacity Units" column in ascending order on the Admin page
-	When User click on 'Capacity Units' column header
+	When User clicks on 'Capacity Units' column header
 	Then data in table is sorted by "Capacity Units" column in descending order on the Admin page
 	And There are no errors in the browser console
-	When User click on 'Teams' column header
+	When User clicks on 'Teams' column header
 	Then data in table is sorted by "Teams" column in ascending order on the Admin page
-	When User click on 'Teams' column header
+	When User clicks on 'Teams' column header
 	Then data in table is sorted by "Teams" column in descending order on the Admin page
 	And There are no errors in the browser console
-	When User click on 'Paths' column header
+	When User clicks on 'Paths' column header
 	Then data in table is sorted by "Paths" column in ascending order on the Admin page
-	When User click on 'Paths' column header
+	When User clicks on 'Paths' column header
 	Then data in table is sorted by "Paths" column in descending order on the Admin page
 	And There are no errors in the browser console
 	When User clicks String Filter button for "Capacity Units" column on the Admin page

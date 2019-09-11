@@ -43,33 +43,33 @@ Scenario: EvergreenJnr_AdminPage_CheckSortingAutomationsGrid
 	Then Admin page should be displayed to the user
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
-	When User click on 'Automation' column header
+	When User clicks on 'Automation' column header
 	Then data in table is sorted by "Automation" column in ascending order on the Admin page
-	When User click on 'Automation' column header
+	When User clicks on 'Automation' column header
 	Then data in table is sorted by "Automation" column in descending order on the Admin page
-	When User click on 'Active' column header
+	When User clicks on 'Active' column header
 	Then Boolean data in table is sorted by "Active" column in ascending order on the Admin page
-	When User click on 'Active' column header
+	When User clicks on 'Active' column header
 	Then Boolean data in table is sorted by "Active" column in descending order on the Admin page
-	When User click on 'Running' column header
+	When User clicks on 'Running' column header
 	Then Boolean data in table is sorted by "Running" column in ascending order on the Admin page
-	When User click on 'Running' column header
+	When User clicks on 'Running' column header
 	Then Boolean data in table is sorted by "Running" column in descending order on the Admin page
-	When User click on 'Scope' column header
+	When User clicks on 'Scope' column header
 	Then data in table is sorted by "Scope" column in ascending order on the Admin page
-	When User click on 'Scope' column header
+	When User clicks on 'Scope' column header
 	Then data in table is sorted by "Scope" column in descending order on the Admin page
-	When User click on 'Run' column header
+	When User clicks on 'Run' column header
 	Then data in table is sorted by "Run" column in ascending order on the Admin page
-	When User click on 'Run' column header
+	When User clicks on 'Run' column header
 	Then data in table is sorted by "Run" column in descending order on the Admin page
-	When User click on 'Actions' column header
+	When User clicks on 'Actions' column header
 	Then numeric data in table is sorted by "Actions" column in descending order on the Admin page
-	When User click on 'Actions' column header
+	When User clicks on 'Actions' column header
 	Then numeric data in table is sorted by "Actions" column in ascending order on the Admin page
-	When User click on 'Description' column header
+	When User clicks on 'Description' column header
 	Then data in table is sorted by "Description" column in ascending order on the Admin page
-	When User click on 'Description' column header
+	When User clicks on 'Description' column header
 	Then data in table is sorted by "Description" column in descending order on the Admin page
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17774

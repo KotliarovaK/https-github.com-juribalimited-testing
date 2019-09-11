@@ -20,8 +20,8 @@ Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersP
 	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName       |
 	| Windows7Mi: Path |
-	And User click on 'Windows7Mi: Path' column header
-	And User click on 'Windows7Mi: Path' column header
+	And User clicks on 'Windows7Mi: Path' column header
+	And User clicks on 'Windows7Mi: Path' column header
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User searches and selects following rows in the grid on Details page:

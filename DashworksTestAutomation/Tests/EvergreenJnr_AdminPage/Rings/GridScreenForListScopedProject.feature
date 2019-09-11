@@ -51,9 +51,9 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForDeviceScopedProject
     | Unassigned |
     | 14695_Ring |
     | Ring_Test  |
-	When User click on 'Ring' column header
+	When User clicks on 'Ring' column header
 	Then data in table is sorted by "Ring" column in ascending order on the Admin page
-	When User click on 'Ring' column header
+	When User clicks on 'Ring' column header
 	Then data in table is sorted by "Ring" column in descending order on the Admin page
 	When User clicks Cog-menu on the Admin page
 	Then User sees following cog-menu items on Admin page:
@@ -108,7 +108,7 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForMailboxScopedProject
 	Then "Create Project Ring" page should be displayed to the user
 	When User type "Ring_Test" Name in the "Ring name" field on the 'Email Migration' Project details page
 	And User clicks Create button on the Create Ring page
-	When User click on 'Ring' column header
+	When User clicks on 'Ring' column header
 	Then data in table is sorted by "Ring" column in ascending order on the Admin page
 	When User clicks Cog-menu on the Admin page
 	Then User sees following cog-menu items on Admin page:
@@ -120,7 +120,7 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForMailboxScopedProject
 	| Move to position |
 	| Set default      |
 	| Delete           |
-	When User click on 'Ring' column header
+	When User clicks on 'Ring' column header
 	Then data in table is sorted by "Ring" column in descending order on the Admin page
 	When User select "Ring" rows in the grid
 	| SelectedRowsName |

@@ -27,7 +27,7 @@ Scenario: EvergreenJnr_ApplicationsLists_CheckThatTheSaveButtonIsNotDisplayedOnT
 Scenario: EvergreenJnr_ApplicationsLists_CheckThatListOwnerOfDynamicListIsDisplayedCorrectly
 	When User clicks "Applications" on the left-hand menu
 	Then "All Applications" list should be displayed to the user
-	When User click on 'Application' column header
+	When User clicks on 'Application' column header
 	When User create dynamic list with "DynamicListFirst" name on "Applications" page
 	Then "DynamicListFirst" list is displayed to user
 	When User clicks the List Details button
@@ -35,7 +35,7 @@ Scenario: EvergreenJnr_ApplicationsLists_CheckThatListOwnerOfDynamicListIsDispla
 	Then current user is selected as a owner of a list
 	When User navigates to the "All Applications" list
 	Then "All Applications" list should be displayed to the user
-	When User click on 'Vendor' column header
+	When User clicks on 'Vendor' column header
 	When User create dynamic list with "DynamicListSecond" name on "Applications" page
 	Then "DynamicListSecond" list is displayed to user
 	When User clicks the List Details button
@@ -62,7 +62,7 @@ Scenario: EvergreenJnr_ApplicationsLists_CheckThatListOwnerOfDynamicListIsDispla
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatListDetailsIsLoadedCorrectlyAfterSwitchingBetweenTabsWhileAddUserFormIsOpen
 	When User clicks "Applications" on the left-hand menu
 	Then "All Applications" list should be displayed to the user
-	When User click on 'Application' column header
+	When User clicks on 'Application' column header
 	And User create dynamic list with "DynamicList13066" name on "Applications" page
 	Then "DynamicList13066" list is displayed to user
 	When User clicks the List Details button
@@ -101,7 +101,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatListDetailsIsLoadedCorrectlyAf
 Scenario: EvergreenJnr_DevicesList_ChecksThatOwnersIsDisplayedInAlphabeticalOrderOnListDetailsPage
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
-	When User click on 'Hostname' column header
+	When User clicks on 'Hostname' column header
 	And User create dynamic list with "List13029" name on "Devices" page
 	Then "List13029" list is displayed to user
 	When User clicks the List Details button

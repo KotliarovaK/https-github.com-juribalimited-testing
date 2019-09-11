@@ -207,7 +207,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
 	| 15428_Action_2 |
 	| 15428_Action_1 |
 	| 15428_Action_3 |
-	When User click on 'Task or Field' column header
+	When User clicks on 'Task or Field' column header
 	Then There are no errors in the browser console
 
 #Remove Pre-requisites after adding it to Gold data

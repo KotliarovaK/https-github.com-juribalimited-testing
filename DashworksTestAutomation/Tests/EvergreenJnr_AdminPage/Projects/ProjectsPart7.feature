@@ -78,7 +78,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationFromListPageWithUse
 	And User removes selected item
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
-	When User click on '<ColumnName>' column header
+	When User clicks on '<ColumnName>' column header
 	And User create dynamic list with "<DynamicList>" name on "<ListName>" page
 	Then "<DynamicList>" list is displayed to user
 	When User clicks Create Project from the main list
@@ -134,7 +134,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMailboxProjectCreationWithCloneEvergreenBu
 	And User removes selected item
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "All Mailboxes" list should be displayed to the user
-	When User click on 'Email Address' column header
+	When User clicks on 'Email Address' column header
 	And User create dynamic list with "DynamicList9513" name on "Mailboxes" page
 	Then "DynamicList9513" list is displayed to user
 	When User clicks Admin on the left-hand menu
@@ -184,7 +184,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationWithCloneEvergreenB
 	And User removes selected item
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
-	When User click on '<ColumnName>' column header
+	When User clicks on '<ColumnName>' column header
 	And User create dynamic list with "<DynamicList>" name on "<PageName>" page
 	Then "<DynamicList>" list is displayed to user
 	When User clicks Create Project from the main list
