@@ -104,7 +104,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatColourOfOnboardedAppIsDisplayedCorrec
 	And User selects "Scope Changes" tab on the Project details page
 	And User navigates to the 'Applications' left menu item
 	And User expands the object to add 
-	And User selects following Objects
+	And User adds following Objects to the Project
 	| Objects                                                      |
 	| ALS - Designing a Microsoft Windows 2000 Dir. Services eBook |
 	When User clicks the "UPDATE ALL CHANGES" Action button
@@ -135,7 +135,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOffboardedObjectsAreListedAfterSelectO
 	When User selects "Scope Changes" tab on the Project details page
 	And User navigates to the 'Devices' left menu item
 	And User expands the object to add
-	And User selects following Objects
+	And User adds following Objects to the Project
 	| Objects         |
 	| 01HMZTRG6OQAOF  |
 	| 02C80G8RFTPA9E  |

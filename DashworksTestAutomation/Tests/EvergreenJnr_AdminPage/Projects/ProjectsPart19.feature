@@ -79,12 +79,12 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	When User selects "Scope Changes" tab on the Project details page
 	And User navigates to the 'Applications' left menu item
 	And User expands the object to add 
-	And User selects following Objects
+	And User adds following Objects to the Project
 	| Objects                                                              |
 	| "WPF/E" (codename) Community Technology Preview (Feb 2007) (0.8.5.0) |
 	| 0004 - Adobe Acrobat Reader 5.0.5 Francais (5.0.5)                   |
 	| 0036 - Microsoft Access 97 SR-2 English (8.0)                        |
-	When User clicks the "UPDATE ALL CHANGES" Action button
+	And User clicks the "UPDATE ALL CHANGES" Action button
 	And User clicks the "UPDATE PROJECT" Action button
 	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
 	When User selects "Queue" tab on the Project details page
@@ -115,7 +115,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	When User selects "Scope Changes" tab on the Project details page
 	And User navigates to the 'Applications' left menu item
 	And User expands the object to add 
-	And User selects following Objects
+	And User adds following Objects to the Project
 	| Objects                                                              |
 	| "WPF/E" (codename) Community Technology Preview (Feb 2007) (0.8.5.0) |
 	| 0004 - Adobe Acrobat Reader 5.0.5 Francais (5.0.5)                   |
@@ -140,7 +140,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	And User navigates to the 'Devices' left menu item
 	And User expands the object to add
 	Then Objects are displayed in alphabetical order on the Admin page
-	When User selects following Objects
+	When User selects following Objects to the Project
 	| Objects         |
 	| 00HA7MKAVVFDAV  |
 	| 001PSUMZYOW581  |
@@ -178,7 +178,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	When User selects "Scope Changes" tab on the Project details page
 	And User expands the object to add
 	Then Objects are displayed in alphabetical order on the Admin page
-	When User selects following Objects
+	When User selects following Objects to the Project
 	| Objects         |
 	| 001BAQXT6JWFPI  |
 	| 001PSUMZYOW581  |
@@ -202,7 +202,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	When User selects "Scope Changes" tab on the Project details page
 	And User navigates to the 'Applications' left menu item
 	And User expands the object to add 
-	And User selects following Objects
+	When User selects following Objects to the Project
 	| Objects                        |
 	| 20040610sqlserverck (1.0.0)    |
 	| AddressGrabber Standard (3.1)  |
@@ -237,7 +237,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	When User selects "Scope Changes" tab on the Project details page
 	And User navigates to the 'Applications' left menu item
 	And User expands the object to add 
-	And User selects following Objects
+	When User selects following Objects to the Project
 	| Objects                        |
 	| 20040610sqlserverck (1.0.0)    |
 	| AddressGrabber Standard (3.1)  |
@@ -261,7 +261,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	When User selects "Scope Changes" tab on the Project details page
 	And User expands the object to add
 	Then Objects are displayed in alphabetical order on the Admin page
-	When User selects following Objects
+	When User selects following Objects to the Project
 	| Objects         |
 	| 001BAQXT6JWFPI  |
 	| 001PSUMZYOW581  |
@@ -301,7 +301,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderForQueueAndHistoryTab
 	When User selects "Scope Changes" tab on the Project details page
 	Then open tab in the Project Scope Changes section is active
 	When User expands the object to add 
-	And User selects following Objects
+	When User selects following Objects to the Project
 	| Objects         |
 	| 00K4CEEQ737BA4L |
 	| 00YWR8TJU4ZF8V  |
@@ -349,7 +349,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderForQueueAndHistoryTab
 	When User selects "Scope Changes" tab on the Project details page
 	And User navigates to the 'Applications' left menu item
 	And User expands the object to add 
-	And User selects following Objects
+	When User selects following Objects to the Project
 	| Objects                                                       |
 	| Advantage Data Architect                                      |
 	| Hilfe zu Blockdiagrammen                                      |

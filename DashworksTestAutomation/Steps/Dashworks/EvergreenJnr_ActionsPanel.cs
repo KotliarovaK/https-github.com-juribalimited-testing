@@ -611,10 +611,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksTheActionButton(string buttonName)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
-            var button = action.GetActionsButtonByName(buttonName);
-            _driver.WaitForElementToBeEnabled(button);
-            button.Click();
-            _driver.WaitForDataLoading(50);
+            action.ClickButtonByName(buttonName);
         }
 
         [Then(@"""(.*)"" button is displayed without tooltip on Update form")]

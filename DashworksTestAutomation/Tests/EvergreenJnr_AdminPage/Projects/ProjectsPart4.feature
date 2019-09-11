@@ -77,7 +77,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 	Then Objects are displayed in alphabetical order on the Admin page
 	When User enters '' text to 'Search' textbox
 	Then Objects are displayed in alphabetical order on the Admin page
-	When User selects following Objects
+	When User adds following Objects to the Project
 	| Objects        |
 	| 0SH2BQ3EPXTEWN |
 	| 30LA8G32UF7HQC |
@@ -91,7 +91,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 	Then Objects are displayed in alphabetical order on the Admin page
 	When User enters '' text to 'Search' textbox
 	Then Objects are displayed in alphabetical order on the Admin page
-	When User selects following Objects
+	When User adds following Objects to the Project
 	| Objects                                          |
 	| ACDSee 4.0.2 PowerPack Trial Version (4.00.0002) |
 	| Backburner (2.1.2.0)                             |

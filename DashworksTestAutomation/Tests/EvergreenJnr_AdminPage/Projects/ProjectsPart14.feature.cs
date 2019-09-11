@@ -481,7 +481,7 @@ this.FeatureBackground();
             table8.AddRow(new string[] {
                         "ALS - Designing a Microsoft Windows 2000 Dir. Services eBook"});
 #line 107
- testRunner.And("User selects following Objects", ((string)(null)), table8, "And ");
+ testRunner.And("User adds following Objects to the Project", ((string)(null)), table8, "And ");
 #line 110
  testRunner.When("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 111
@@ -620,7 +620,7 @@ this.FeatureBackground();
             table12.AddRow(new string[] {
                         "2QP6MWKI0BM87U"});
 #line 138
- testRunner.And("User selects following Objects", ((string)(null)), table12, "And ");
+ testRunner.And("User adds following Objects to the Project", ((string)(null)), table12, "And ");
 #line 146
  testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 147

@@ -75,7 +75,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedCheckboxIsSelectedAfterSwitchi
 	Then Update Project buttons is disabled
 	When User expands the object to add
 	Then Objects are displayed in alphabetical order on the Admin page
-	When User selects following Objects
+	When User adds following Objects to the Project
 	| Objects        |
 	| 00HA7MKAVVFDAV |
 	Then Update Project button is active
@@ -83,7 +83,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedCheckboxIsSelectedAfterSwitchi
 	When User navigates to the 'Users' tab on Scope Changes page
 	When User expands the object to add
 	Then Objects are displayed in alphabetical order on the Admin page
-	When User selects following Objects
+	When User adds following Objects to the Project
 	| Objects                   |
 	| AAH0343264 (Luc Gauthier) |
 	And User navigates to the 'Devices' left menu item

@@ -124,9 +124,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Scope
             basePage.GetExpandableMultiselect("").Click();
             var itemsToAdd = table.Rows.Select(x => x["Objects"]).ToList();
             basePage.AddItemsToMultiSelect(itemsToAdd);
-
             var projectElement = _driver.NowAt<ScopeChangePage>();
-            projectElement.UpdateButton.Click();
         }
 
         //TODO looks like should be removed
@@ -165,7 +163,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Scope
                 }
             }
 
-            projectElement.UpdateButton.Click();
+            basePage.ClickButtonByName("UPDATE ALL CHANGES");
         }
 
         [When(@"User selects following Objects to the Project")]

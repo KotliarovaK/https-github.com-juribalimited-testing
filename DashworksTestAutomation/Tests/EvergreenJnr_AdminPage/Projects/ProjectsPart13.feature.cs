@@ -451,7 +451,7 @@ this.FeatureBackground();
             table7.AddRow(new string[] {
                         "AAK881049 (Miguel W. Owen)"});
 #line 101
- testRunner.And("User selects following Objects", ((string)(null)), table7, "And ");
+ testRunner.And("User adds following Objects to the Project", ((string)(null)), table7, "And ");
 #line 104
  testRunner.Then("\"UPDATE ALL CHANGES\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 105
@@ -464,7 +464,7 @@ this.FeatureBackground();
             table8.AddRow(new string[] {
                         "00SH8162NAS524"});
 #line 107
- testRunner.And("User selects following Objects", ((string)(null)), table8, "And ");
+ testRunner.And("User adds following Objects to the Project", ((string)(null)), table8, "And ");
 #line 110
  testRunner.Then("\"UPDATE ALL CHANGES\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 111
@@ -579,7 +579,7 @@ this.FeatureBackground();
             table11.AddRow(new string[] {
                         "00CFE13AAE104724AF5 (Hardieway, Linda)"});
 #line 131
- testRunner.And("User selects following Objects", ((string)(null)), table11, "And ");
+ testRunner.And("User adds following Objects to the Project", ((string)(null)), table11, "And ");
 #line 135
  testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 136
@@ -618,7 +618,7 @@ this.FeatureBackground();
             table12.AddRow(new string[] {
                         "000F977AC8824FE39B8 (Spruill, Shea)"});
 #line 150
- testRunner.And("User selects following Objects", ((string)(null)), table12, "And ");
+ testRunner.And("User adds following Objects to the Project", ((string)(null)), table12, "And ");
 #line 153
  testRunner.Then("\"UPDATE ALL CHANGES\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 154
