@@ -20,14 +20,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptio
 	When User enters '15427_Action1' text to 'Action Name' textbox
 	When User selects 'Update path' in the 'Action Type' dropdown
 	When User selects '1803 Rollout' option from 'Project' autocomplete
-	When User selects "Undetermined" in the "Path" dropdown for Actions
+	When User selects 'Undetermined' option from 'Path' autocomplete
 	#Action 2
 	When User clicks the "SAVE AND CREATE ANOTHER" Action button
 	Then Success message is displayed and contains "The automation action has been created" text
 	When User enters '15427_Action2' text to 'Action Name' textbox
 	And User selects 'Update path' in the 'Action Type' dropdown
 	And User selects '1803 Rollout' option from 'Project' autocomplete
-	And User selects "Undetermined" in the "Path" dropdown for Actions
+	And User selects 'Undetermined' option from 'Path' autocomplete
 	And User clicks the "CREATE" Action button
 	#Action 3
 	When User clicks the "CREATE ACTION" Action button
@@ -35,7 +35,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptio
 	When User enters '15427_Action3' text to 'Action Name' textbox
 	And User selects 'Update path' in the 'Action Type' dropdown
 	And User selects '1803 Rollout' option from 'Project' autocomplete
-	And User selects "Undetermined" in the "Path" dropdown for Actions
+	And User selects 'Undetermined' option from 'Path' autocomplete
 	And User clicks the "CREATE" Action button
 	And User clicks Group By button on the Admin page and selects "Type" value
 	Then Cog menu is not displayed on the Admin page
@@ -92,13 +92,14 @@ Scenario: EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectlyForAutomations
 	When User enters 'DAS15427_Action' text to 'Action Name' textbox
 	When User selects 'Update path' in the 'Action Type' dropdown
 	When User selects '1803 Rollout' option from 'Project' autocomplete
-	When User selects "Undetermined" in the "Path" dropdown for Actions
+	When User selects 'Undetermined' option from 'Path' autocomplete
 	Then "Undetermined" content is displayed in the Path Automation dropdown
 	When User clicks the "CREATE" Action button
 	Then There are no errors in the browser console
 	Then Success message is displayed and contains "The automation action has been created" text
-	When User clicks Export button on the Admin page
-	Then User checks that file "Dashworks export" was downloaded
+	#Investigate downloading file on Remote
+	#When User clicks Export button on the Admin page
+	#Then User checks that file "Dashworks export" was downloaded
 	#Create Action
 	When User clicks "Move to top" option in Cog-menu for "Secont_Action" item on Admin page
 	Then "Action" column content is displayed in the following order:
@@ -168,7 +169,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
 	When User enters '15428_Action_1' text to 'Action Name' textbox
 	When User selects 'Update path' in the 'Action Type' dropdown
 	When User selects '1803 Rollout' option from 'Project' autocomplete
-	When User selects "Undetermined" in the "Path" dropdown for Actions
+	When User selects 'Undetermined' option from 'Path' autocomplete
 	And User clicks the "CREATE" Action button
 	#Action 2
 	When User clicks the "CREATE ACTION" Action button
@@ -176,7 +177,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
 	When User enters '15428_Action_2' text to 'Action Name' textbox
 	When User selects 'Update path' in the 'Action Type' dropdown
 	When User selects '1803 Rollout' option from 'Project' autocomplete
-	When User selects "Undetermined" in the "Path" dropdown for Actions
+	When User selects 'Undetermined' option from 'Path' autocomplete
 	Then "Undetermined" content is displayed in the Path Automation dropdown
 	When User clicks the "CREATE" Action button
 	Then There are no errors in the browser console
@@ -186,7 +187,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
 	When User enters '15428_Action_3' text to 'Action Name' textbox
 	When User selects 'Update path' in the 'Action Type' dropdown
 	When User selects '1803 Rollout' option from 'Project' autocomplete
-	When User selects "Undetermined" in the "Path" dropdown for Actions
+	When User selects 'Undetermined' option from 'Path' autocomplete
 	Then "Undetermined" content is displayed in the Path Automation dropdown
 	When User clicks the "CREATE" Action button
 	Then There are no errors in the browser console
@@ -206,7 +207,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
 	| 15428_Action_2 |
 	| 15428_Action_1 |
 	| 15428_Action_3 |
-	When User click on 'Task or Field' column header
+	When User clicks on 'Task or Field' column header
 	Then There are no errors in the browser console
 
 #Remove Pre-requisites after adding it to Gold data
@@ -273,7 +274,7 @@ Scenario: EvergreenJnr_AdminPage_CheckParametersToCreateUpdatePathAction
 	Then "CREATE" Action button is disabled
 	Then "SAVE AND CREATE ANOTHER" Action button is disabled
 	Then "CANCEL" Action button is active
-	When User selects "User Migration" in the "Path" dropdown for Actions
+	When User selects 'User Migration' option from 'Path' autocomplete
 	Then "SAVE AND CREATE ANOTHER" Action button is active
 	Then "CANCEL" Action button is active
 	When User clicks the "CREATE" Action button
@@ -298,7 +299,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditActionPage
 	When User enters '15425_Action' text to 'Action Name' textbox
 	When User selects 'Update path' in the 'Action Type' dropdown
 	When User selects 'User Evergreen Capacity Project' option from 'Project' autocomplete
-	When User selects "[Default (User)]" in the "Path" dropdown for Actions
+	When User selects '[Default (User)]' option from 'Path' autocomplete
 	And User clicks the "CREATE" Action button
 	When User clicks "Automations" navigation link on the Admin page
 	Then There are no errors in the browser console
@@ -415,7 +416,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActions
 	Then following items are displayed in the "Task" dropdown for Actions:
 	| Values        |
 	| Device Task 1 |
-	When User selects "Device Task 1" in the "Task" dropdown for Actions
+	When User selects 'Device Task 1' option from 'Task' autocomplete
 	When User selects "Unknown" Value for Actions
 	Then "CREATE" Action button is active
 	When User clicks the "SAVE AND CREATE ANOTHER" Action button
@@ -474,7 +475,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdatingTaskWhichImpactsReadinessOwnerAndD
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'Edinburgh Devices Migration' option from 'Project' autocomplete
 	When User selects 'Pre-Migration' option from 'Stage' autocomplete
-	When User selects "User Task 1" in the "Task" dropdown for Actions
+	When User selects 'User Task 1' option from 'Task' autocomplete
 	Then following Values are displayed in "Update Value" drop-down on the Admin page:
 	| Options   |
 	| Update    |
@@ -541,7 +542,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateTaskValueIsDisplayInAutomationsL
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'USE ME FOR AUTOMATION(DEVICE SCHDLD)' option from 'Project' autocomplete
 	When User selects 'Stage A' option from 'Stage' autocomplete
-	When User selects "Workflow task" in the "Task" dropdown for Actions
+	When User selects 'Workflow task' option from 'Task' autocomplete
 	And User selects "Started" Value on Action panel
 	When User clicks the "CREATE" Action button
 	Then "Workflow task" content is displayed for "Task or Field" column
@@ -550,13 +551,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateTaskValueIsDisplayInAutomationsL
 Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateTextValue
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
-	When User creates new Automation via API
+	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
 	| 17602_Automation | 17602       | true   | false              | All Devices | Manual |
-	When User clicks "Automations" link on the Admin page
-	Then "Automations" page should be displayed to the user
-	When User enters "17602_Automation" text in the Search field for "Automation" column
-	When User clicks content from "Automation" column
+	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks the "CREATE ACTION" Action button
@@ -564,10 +562,11 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateTextValue
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	When User selects 'One' option from 'Stage' autocomplete
-	When User selects "Text Computer" in the "Task" dropdown for Actions
+	When User selects 'Text Computer' option from 'Task' autocomplete
 	And User selects "Update" Update Value on Action panel
 	When User types "To be updated" Value on Action panel
 	And User clicks the "CREATE" Action button
+	#Create Action
 	When User clicks "Automations" navigation link on the Admin page
 	When User enters "17602_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
@@ -577,11 +576,10 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateTextValue
 	#Actions content check
 	Then "17602_Action" content is displayed in "Action Name" field
 	Then 'Update task value' text value is displayed in the 'Action Type' dropdown
-	Then 'One' value is displayed in the 'Stage' dropdown
-	Then 'Text Computer' value is displayed in the 'Task' dropdown
-	Then 'Text Computer' value is displayed in the 'Task' dropdown
+	Then 'One' content is displayed in 'Stage' textbox
+	Then 'Text Computer' content is displayed in 'Task' textbox
 	Then 'Update' value is displayed in the 'Update Value' dropdown
-	Then "To be updated" text is displayed in "Value" field
+	Then 'To be updated' content is displayed in 'Value' textbox
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17602 @DAS17605 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForRemoveTextValue
@@ -601,7 +599,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForRemoveTextValue
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	When User selects 'One' option from 'Stage' autocomplete
-	When User selects "Text Computer" in the "Task" dropdown for Actions
+	When User selects 'Text Computer' option from 'Task' autocomplete
 	When User selects "Remove" in the "Update Value" dropdown for Actions
 	And User clicks the "CREATE" Action button
 	When User clicks "Automations" navigation link on the Admin page
@@ -636,7 +634,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateDate
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	When User selects 'One' option from 'Stage' autocomplete
-	When User selects "Date Computer" in the "Task" dropdown for Actions
+	When User selects 'Date Computer' option from 'Task' autocomplete
 	And User selects "Update" Update Date on Action panel
 	And User selects "5 Aug 2019" Date on Action panel
 	#Delete After clarifications
@@ -670,7 +668,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThanActionFieldsAreNotPrepopulatedWithOldD
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	And User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	And User selects 'One' option from 'Stage' autocomplete
-	And User selects "Radio Rag Date Owner" in the "Task" dropdown for Actions
+	And User selects 'Radio Rag Date Owner' option from 'Task' autocomplete
 	And User selects "Update" Update Value on Action panel
 	And User selects "Complete" Value on Action panel
 	And User selects "Update" Update Date on Action panel
@@ -687,9 +685,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThanActionFieldsAreNotPrepopulatedWithOldD
 	Then "CANCEL" Action button is active
 	Then "UPDATE" Action button have tooltip with "No changes made" text
 	#DAS-17816 <=
-	When User selects "Radio Rag only Comp" in the "Task" dropdown for Actions
+	When User selects 'Radio Rag only Comp' option from 'Task' autocomplete
 	And User clicks Body container
-	And User selects "Radio Rag Date Owner" in the "Task" dropdown for Actions
+	And User selects 'Radio Rag Date Owner' option from 'Task' autocomplete
 	Then 'Update Value' content is displayed in 'Update Value' dropdown
 	And 'Update Date' content is displayed in 'Update Date' dropdown
 	And 'Update Owner' content is displayed in 'Update Owner' dropdown
@@ -706,7 +704,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValueDataInTheGridForActions
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	And User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	And User selects 'One' option from 'Stage' autocomplete
-	And User selects "Radio Rag Date Owner User Req A" in the "Task" dropdown for Actions
+	And User selects 'Radio Rag Date Owner User Req A' option from 'Task' autocomplete
 	And User selects "Update" Update Value on Action panel
 	And User selects "Started" Value on Action panel
 	And User selects "Update" Update Date on Action panel
@@ -719,7 +717,8 @@ Scenario: EvergreenJnr_AdminPage_CheckValueDataInTheGridForActions
 	When User enters "DAS17744_Action" text in the Search field for "Action" column
 	Then "Started, 2019-09-05, 1803 Team, Lisa Bailey" content is displayed in "Value" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17772 @Not_Ready @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17772 @DAS17948 @Not_Ready @Cleanup
+#Waiting for 'zUser Sch for Automations Feature' Project on the GD
 Scenario: EvergreenJnr_AdminPage_CheckThatActionStageSelectboxIsDisplayedForSpecificData
 	When User creates new Automation via API and open it
 	| AutomationName | Description | Active | StopOnFailedAction | Scope     | Run    |
@@ -730,7 +729,25 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionStageSelectboxIsDisplayedForSpec
 	And User enters 'DAS17772_Action' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	And User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
-	Then '' content is displayed in 'Stage' autocomplete
+	Then 'Stage' autocomplete does NOT have options
+	| Options         |
+	| Read only tasks |
+	Then only below options are displayed in the 'Stage' autocomplete
+	| Options |
+	| Stage 1 |
+	| Stage 2 |
+	| Stage 3 |
+	When User clicks "Users" on the left-hand menu
+	When User clicks "YES" button in the Warning Pop-up message
+	Then "All Users" list should be displayed to the user
+	When User clicks the Actions button
+	When User select "Username" rows in the grid
+	| SelectedRowsName    |
+	| 002B5DC7D4D34D5C895 |
+	| 00A5B910A1004CF5AC4 |
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update task value" Bulk Update Type on Action panel
+	And User selects "zUser Sch for Automations Feature" Project on Action panel
 	Then 'Stage' autocomplete does NOT have options
 	| Options         |
 	| Read only tasks |

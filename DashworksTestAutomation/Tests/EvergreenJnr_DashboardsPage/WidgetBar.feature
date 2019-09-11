@@ -12,7 +12,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWid
 	| Secure Boot Enabled |
 	| Manufacturer        |
 	| Compliance          |
-	And User click on 'Manufacturer' column header
+	And User clicks on 'Manufacturer' column header
 	Then data in table is sorted by 'Manufacturer' column in ascending order
 	When User create dynamic list with "List15356" name on "Devices" page
 	And User clicks "Dashboards" on the left-hand menu

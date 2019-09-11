@@ -82,7 +82,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCo
 Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeletingUsedForProjectLists 
 	When User clicks "Users" on the left-hand menu
 	Then "All Users" list should be displayed to the user
-	When User click on 'Username' column header
+	When User clicks on 'Username' column header
 	And User create dynamic list with "ListForProject" name on "Users" page
 	When Project created via API and opened
 	| ProjectName  | Scope          | ProjectTemplate | Mode               |

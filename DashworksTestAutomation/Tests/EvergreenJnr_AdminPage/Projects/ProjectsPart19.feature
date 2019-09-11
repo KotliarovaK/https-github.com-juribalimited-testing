@@ -37,7 +37,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckSelectExistingProjectDropdownValue
 Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUsesDynamicListAsAScope
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
-	When User click on 'Hostname' column header
+	When User clicks on 'Hostname' column header
 	And User create dynamic list with "Dynamic13110" name on "Devices" page
 	Then "Dynamic13110" list is displayed to user
 	When User clicks Admin on the left-hand menu
@@ -53,9 +53,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	When User clicks newly created object link
 	Then Project "Project13110Dynamic1" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
-	And User expands the object to add
+	And User expands multiselect to add objects
 	Then Objects are displayed in alphabetical order on the Admin page
-	When User selects following Objects to the Project
+	When User expands multiselect and selects following Objects
 	| Objects         |
 	| 00HA7MKAVVFDAV  |
 	| 001PSUMZYOW581  |
@@ -78,7 +78,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	And There are no errors in the browser console
 	When User selects "Scope Changes" tab on the Project details page
 	And User navigates to the 'Applications' tab on Project Scope Changes page
-	And User expands the object to add 
+	And User expands multiselect to add objects 
 	And User selects following Objects from the expandable multiselect
 	| Objects                                                              |
 	| "WPF/E" (codename) Community Technology Preview (Feb 2007) (0.8.5.0) |
@@ -114,7 +114,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	Then Project "Project13110Dynamic2" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
 	And User navigates to the 'Applications' tab on Project Scope Changes page
-	And User expands the object to add 
+	And User expands multiselect to add objects 
 	And User selects following Objects from the expandable multiselect
 	| Objects                                                              |
 	| "WPF/E" (codename) Community Technology Preview (Feb 2007) (0.8.5.0) |
@@ -138,9 +138,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	And There are no errors in the browser console
 	When User selects "Scope Changes" tab on the Project details page
 	And User navigates to the 'Devices' tab on Project Scope Changes page
-	And User expands the object to add
+	And User expands multiselect to add objects
 	Then Objects are displayed in alphabetical order on the Admin page
-	When User selects following Objects to the Project
+	When User expands multiselect and selects following Objects
 	| Objects         |
 	| 00HA7MKAVVFDAV  |
 	| 001PSUMZYOW581  |
@@ -176,9 +176,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	Then Project "Project13110Static1" is displayed to user
 	When User selects "Scope" tab on the Project details page
 	When User selects "Scope Changes" tab on the Project details page
-	And User expands the object to add
+	And User expands multiselect to add objects
 	Then Objects are displayed in alphabetical order on the Admin page
-	When User selects following Objects to the Project
+	When User expands multiselect and selects following Objects
 	| Objects         |
 	| 001BAQXT6JWFPI  |
 	| 001PSUMZYOW581  |
@@ -201,8 +201,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	And There are no errors in the browser console
 	When User selects "Scope Changes" tab on the Project details page
 	And User navigates to the 'Applications' tab on Project Scope Changes page
-	And User expands the object to add 
-	When User selects following Objects to the Project
+	And User expands multiselect to add objects 
+	When User expands multiselect and selects following Objects
 	| Objects                        |
 	| 20040610sqlserverck (1.0.0)    |
 	| AddressGrabber Standard (3.1)  |
@@ -236,8 +236,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	Then Project "Project13110Static2" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
 	And User navigates to the 'Applications' tab on Project Scope Changes page
-	And User expands the object to add 
-	When User selects following Objects to the Project
+	And User expands multiselect to add objects 
+	When User expands multiselect and selects following Objects
 	| Objects                        |
 	| 20040610sqlserverck (1.0.0)    |
 	| AddressGrabber Standard (3.1)  |
@@ -259,9 +259,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	| Adobe Acrobat Reader 5.0 | 
 	And There are no errors in the browser console
 	When User selects "Scope Changes" tab on the Project details page
-	And User expands the object to add
+	And User expands multiselect to add objects
 	Then Objects are displayed in alphabetical order on the Admin page
-	When User selects following Objects to the Project
+	When User expands multiselect and selects following Objects
 	| Objects         |
 	| 001BAQXT6JWFPI  |
 	| 001PSUMZYOW581  |
@@ -300,8 +300,8 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderForQueueAndHistoryTab
 	Then "Show Original Application Column On Application Dashboards" checkbox is not displayed on the Admin page
 	When User selects "Scope Changes" tab on the Project details page
 	Then open tab in the Project Scope Changes section is active
-	When User expands the object to add 
-	When User selects following Objects to the Project
+	When User expands multiselect to add objects 
+	When User expands multiselect and selects following Objects
 	| Objects         |
 	| 00K4CEEQ737BA4L |
 	| 00YWR8TJU4ZF8V  |
@@ -348,8 +348,8 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderForQueueAndHistoryTab
 	Then data in table is sorted by "Date" column in descending order by default on the Admin page
 	When User selects "Scope Changes" tab on the Project details page
 	And User navigates to the 'Applications' tab on Project Scope Changes page
-	And User expands the object to add 
-	When User selects following Objects to the Project
+	And User expands multiselect to add objects 
+	When User expands multiselect and selects following Objects
 	| Objects                                                       |
 	| Advantage Data Architect                                      |
 	| Hilfe zu Blockdiagrammen                                      |

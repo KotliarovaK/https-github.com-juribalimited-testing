@@ -792,6 +792,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
+        //TODO move to class
         [When(@"User removes selected members")]
         public void WhenUserRemovesSelectedMembers()
         {

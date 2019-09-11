@@ -96,8 +96,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	When User enters "Project12948" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User selects "Scope Changes" tab on the Project details page
-	And User expands the object to add 
-	And User selects following Objects to the Project
+	And User expands multiselect and selects following Objects
 	| Objects        |
 	| 0TTSZRQ1ZTIXWM |
 	And User clicks the "UPDATE ALL CHANGES" Action button
@@ -115,7 +114,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	Then "Buckets" page should be displayed to the user
 	When User enters "Unassigned" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
-	Then "[Unassigned]" bucket details is displayed to the user
+	Then "Unassigned" bucket details is displayed to the user
 	When User updates the "Default Bucket" checkbox state
 	And User clicks Update Bucket button on the Buckets page
 	Then Success message The "Unassigned" bucket has been updated is displayed on the Buckets page

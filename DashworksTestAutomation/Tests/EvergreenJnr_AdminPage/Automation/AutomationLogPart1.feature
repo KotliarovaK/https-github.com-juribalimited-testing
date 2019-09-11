@@ -26,13 +26,13 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsLogGridForRunningAutomationWith
 	When User enters '16890_Action' text to 'Action Name' textbox
 	When User selects 'Update path' in the 'Action Type' dropdown
 	When User selects '16890Project' option from 'Project' autocomplete
-	When User selects "[Default (Computer)]" in the "Path" dropdown for Actions
+	When User selects '[Default (Computer)]' option from 'Path' autocomplete
 	And User clicks the "CREATE" Action button
 	When User clicks the "CREATE ACTION" Action button
 	When User enters 'New_Action' text to 'Action Name' textbox
 	When User selects 'Update path' in the 'Action Type' dropdown
 	When User selects '1803 Rollout' option from 'Project' autocomplete
-	When User selects "Undetermined" in the "Path" dropdown for Actions
+	When User selects 'Undetermined' option from 'Path' autocomplete
 	And User clicks the "CREATE" Action button
 	When User clicks "Automations" navigation link on the Admin page
 	When User clicks "Projects" link on the Admin page
@@ -113,7 +113,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSuccessfulRunInOutcomeColumn
 	When User enters 'D16974_Action' text to 'Action Name' textbox
 	When User selects 'Update path' in the 'Action Type' dropdown
 	When User selects 'User Evergreen Capacity Project' option from 'Project' autocomplete
-	When User selects "[Default (User)]" in the "Path" dropdown for Actions
+	When User selects '[Default (User)]' option from 'Path' autocomplete
 	And User clicks the "CREATE" Action button
 	When User clicks "Automations" navigation link on the Admin page
 	When User enters "D16974_Automation" text in the Search field for "Automation" column
@@ -211,7 +211,7 @@ Scenario: EvergreenJnr_AdminPage_CheckBrokenListValidationWhenRunningAnAutomatio
 	When User enters "17011_Automation" text in the Search field for "Automation" column
 	Then "LIST HAS ERRORS" content is displayed for "Outcome" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AutomationLog @Automations @DAS17212 @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @AutomationLog @Automations @DAS17212 @Cleanup @Not_Ready
 Scenario Outline: EvergreenJnr_AdminPage_CheckSuccessfulRunningAutomationWithMainListsInTheScope
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -251,39 +251,39 @@ Scenario: EvergreenJnr_AdminPage_CheckSortingAutomationsLogGrid
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
 	When User selects "Automation Log" tab on the Project details page
-	When User click on 'Date' column header
+	When User clicks on 'Date' column header
 	Then date in table is sorted by "Date" column in descending order on the Admin page
-	When User click on 'Date' column header
+	When User clicks on 'Date' column header
 	Then date in table is sorted by "Date" column in ascending order on the Admin page
-	When User click on 'Type' column header
+	When User clicks on 'Type' column header
 	Then data in table is sorted by "Type" column in ascending order on the Admin page
-	When User click on 'Type' column header
+	When User clicks on 'Type' column header
 	Then data in table is sorted by "Type" column in descending order on the Admin page
-	When User click on 'Automation' column header
+	When User clicks on 'Automation' column header
 	Then data in table is sorted by "Automation" column in ascending order on the Admin page
-	When User click on 'Automation' column header
+	When User clicks on 'Automation' column header
 	Then data in table is sorted by "Automation" column in descending order on the Admin page
-	When User click on 'Action' column header
+	When User clicks on 'Action' column header
 	Then data in table is sorted by "Action" column in ascending order on the Admin page
-	When User click on 'Action' column header
+	When User clicks on 'Action' column header
 	Then data in table is sorted by "Action" column in descending order on the Admin page
-	When User click on 'Run' column header
+	When User clicks on 'Run' column header
 	Then data in table is sorted by "Run" column in ascending order on the Admin page
-	When User click on 'Run' column header
+	When User clicks on 'Run' column header
 	Then data in table is sorted by "Run" column in descending order on the Admin page
-	When User click on 'Objects' column header
+	When User clicks on 'Objects' column header
 	Then numeric data in table is sorted by "Objects" column in descending order on the Admin page
-	When User click on 'Objects' column header
+	When User clicks on 'Objects' column header
 	Then numeric data in table is sorted by "Objects" column in ascending order on the Admin page
-	When User click on 'Duration (hh:mm:ss)' column header
+	When User clicks on 'Duration (hh:mm:ss)' column header
 	Then data in table is sorted by "Duration (hh:mm:ss)" column in ascending order on the Admin page
-	When User click on 'Duration (hh:mm:ss)' column header
+	When User clicks on 'Duration (hh:mm:ss)' column header
 	Then data in table is sorted by "Duration (hh:mm:ss)" column in descending order on the Admin page
-	When User click on 'User' column header
+	When User clicks on 'User' column header
 	Then data in table is sorted by "User" column in ascending order on the Admin page
-	When User click on 'User' column header
+	When User clicks on 'User' column header
 	Then data in table is sorted by "User" column in descending order on the Admin page
-	When User click on 'Outcome' column header
+	When User clicks on 'Outcome' column header
 	Then Boolean data in table is sorted by "Outcome" column in ascending order on the Admin page
-	When User click on 'Outcome' column header
+	When User clicks on 'Outcome' column header
 	Then Boolean data in table is sorted by "Outcome" column in descending order on the Admin page

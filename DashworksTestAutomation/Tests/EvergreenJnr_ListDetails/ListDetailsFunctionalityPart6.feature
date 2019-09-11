@@ -9,12 +9,12 @@ Background: Pre-Conditions
 Scenario: EvergreenJnr_Users_CheckThatListDeletionWarningMessageIsNotDisplayedAfterDeletingAnotherListForDynamicLists
 	When User clicks "Users" on the left-hand menu
 	Then "All Users" list should be displayed to the user
-	When User click on 'Username' column header
+	When User clicks on 'Username' column header
 	Then data in table is sorted by 'Username' column in ascending order
 	When User create dynamic list with "DynamicList4587" name on "Users" page
 	Then "DynamicList4587" list is displayed to user
 	When User navigates to the "All Users" list
-	And User click on 'Domain' column header
+	And User clicks on 'Domain' column header
 	Then data in table is sorted by 'Domain' column in ascending order
 	When User create dynamic list with "DynamicList4781" name on "Users" page
 	Then "DynamicList4781" list is displayed to user
@@ -50,7 +50,7 @@ Examples:
 Scenario: EvergreenJnr_MailboxesList_CheckThatListDetailsPanelIsDisplayedAfterSelectingManageFromListPanelMenu
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "All Mailboxes" list should be displayed to the user
-	When User click on 'Email Address' column header
+	When User clicks on 'Email Address' column header
 	When User create dynamic list with "DynamicList4557" name on "Mailboxes" page
 	Then "DynamicList4557" list is displayed to user
 	When User create static list with "StaticList2845" name on "Mailboxes" page with following items

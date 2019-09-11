@@ -12,7 +12,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlMessageAppearsWhenDefaultLang
 	| ChecksDefaultLanguage13928 | All Users | None            | Standalone Project |
 	And User navigates to the 'Scope' left menu item
 	And User selects "Scope Changes" tab on the Project details page
-	And User selects following Objects to the Project
+	And User expands multiselect and selects following Objects
 	| Objects                                |
 	| 1A701E05916148A6A3F (Fairlchild, Sara) |
 	And User clicks the "UPDATE ALL CHANGES" Action button
@@ -88,19 +88,19 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProj
 	And User selects "Scope Changes" tab on the Project details page
 	And User navigates to the 'Devices' tab on Project Scope Changes page
 	Then open tab in the Project Scope Changes section is active
-	When User expands the object to add 
+	When User expands multiselect to add objects 
 	And User selects following Objects
 	| Objects        |
 	| 001BAQXT6JWFPI |
 	And User navigates to the 'Users' tab on Project Scope Changes page
 	Then open tab in the Project Scope Changes section is active
-	When User expands the object to add 
+	When User expands multiselect to add objects 
 	And User selects following Objects
 	| Objects                    |
 	| AAC860150 (Kerrie D. Ruiz) |
 	And User navigates to the 'Applications' tab on Project Scope Changes page
 	Then open tab in the Project Scope Changes section is active
-	When User expands the object to add 
+	When User expands multiselect to add objects 
 	And User selects following Objects
 	| Objects                                    |
 	| 0004 - Adobe Acrobat Reader 5.0.5 Francais |
@@ -156,7 +156,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOriginalCapacityUnitStoredAndDisplaye
 	And User selects "Scope Changes" tab on the Project details page
 	And User navigates to the 'Devices' tab on Project Scope Changes page
 	Then open tab in the Project Scope Changes section is active
-	When User expands the object to add 
+	When User expands multiselect to add objects 
 	And User selects following Objects
 	| Objects        |
 	| 001BAQXT6JWFPI |

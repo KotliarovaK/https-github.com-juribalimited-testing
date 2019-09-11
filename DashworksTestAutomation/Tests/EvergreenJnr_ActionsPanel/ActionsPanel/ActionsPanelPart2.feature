@@ -9,7 +9,7 @@ Background: Pre-Conditions
 Scenario Outline: EvergreenJnr_AllLists_ChecksThatRemoveFromStaticListOptionIsNotShownInTheActionsPanelWhenAStaticListDoesNotExist
 	When User clicks "<PageName>" on the left-hand menu
 	Then "All <PageName>" list should be displayed to the user
-	When User click on '<ColumnHeader>' column header
+	When User clicks on '<ColumnHeader>' column header
 	When User create dynamic list with "DynamicList12946" name on "<PageName>" page
 	Then "DynamicList12946" list is displayed to user
 	When User clicks the Actions button

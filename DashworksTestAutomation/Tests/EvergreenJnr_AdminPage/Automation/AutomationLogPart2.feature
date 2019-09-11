@@ -69,7 +69,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInDeviceScope
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'Project 00 M Computer Scheduled' option from 'Project' autocomplete
 	When User selects 'Planning' option from 'Stage' autocomplete
-	When User selects "Get technical information" in the "Task" dropdown for Actions
+	When User selects 'Get technical information' option from 'Task' autocomplete
 	And User selects "Started" Value on Action panel
 	And User clicks the "CREATE" Action button
 	#Create Action
@@ -109,7 +109,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInMailboxScop
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'Email Migration' option from 'Project' autocomplete
 	When User selects 'Comms & Exceptions' option from 'Stage' autocomplete
-	When User selects "Mailbox Dropdown Non RAG Owner" in the "Task" dropdown for Actions
+	When User selects 'Mailbox Dropdown Non RAG Owner' option from 'Task' autocomplete
 	And User selects "Update" Update Value on Action panel
 	And User selects "Maybe" Value on Action panel
 	And User selects "No change" Update Owner on Action panel
@@ -151,7 +151,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInApplication
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'USE ME FOR AUTOMATION(USR SCHDLD)' option from 'Project' autocomplete
 	When User selects 'Stage 1' option from 'Stage' autocomplete
-	When User selects "Text Task (App)" in the "Task" dropdown for Actions
+	When User selects 'Text Task (App)' option from 'Task' autocomplete
 	And User selects "Update" Update Value on Action panel
 	When User types "New Text value" Value on Action panel
 	And User clicks the "CREATE" Action button
@@ -192,7 +192,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInDevicesScop
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'zDevice Sch for Automations Feature' option from 'Project' autocomplete
 	When User selects 'Stage B' option from 'Stage' autocomplete
-	When User selects "Readiness Date Comp Task" in the "Task" dropdown for Actions
+	When User selects 'Readiness Date Comp Task' option from 'Task' autocomplete
 	And User selects "Update" Update Value on Action panel
 	And User selects "Started" Value on Action panel
 	And User selects "No change" Update Date on Action panel
@@ -223,7 +223,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInDevicesScop
 	Then "1 Aug 2019" content is displayed in "zDeviceAut: Stage B \ Readiness Date Comp Task (Date)" column
 	Then "STARTED" content is displayed in "zDeviceAut: Stage B \ Readiness Date Comp Task" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17678 @DAS17859 @Cleanup @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17678 @DAS17859 @DAS17974 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedAutomation
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -242,7 +242,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedA
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'zMailbox Sch for Automations Feature' option from 'Project' autocomplete
 	When User selects 'Stage 2' option from 'Stage' autocomplete
-	When User selects "Radio Date Slot Mail" in the "Task" dropdown for Actions
+	When User selects 'Radio Date Slot Mail' option from 'Task' autocomplete
 	And User selects "Update" Update Value on Action panel
 	And User selects "Started" Value on Action panel
 	And User selects "Update" Update Date on Action panel
@@ -274,6 +274,41 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedA
 	Then "STARTED" content is displayed in "zMailboxAu: Stage 2 \ Radio Date Slot Mail" column
 	Then "3 Oct 2019" content is displayed in "zMailboxAu: Stage 2 \ Radio Date Slot Mail (Date)" column
 	Then "Radio Slot" content is displayed in "zMailboxAu: Stage 2 \ Radio Date Slot Mail (Slot)" column
+	#Update Action
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Automations" link on the Admin page
+	When User enters "17678_Automation" text in the Search field for "Automation" column
+	And User clicks content from "Automation" column
+	When User navigates to the 'Actions' left menu item
+	And User clicks content from "Action" column
+	And User selects 'Remove' in the 'Update Date' dropdown
+	And User clicks the "UPDATE" Action button
+	#Check updated Automation
+	When User clicks "Automations" navigation link on the Admin page
+	When User enters "17678_Automation" text in the Search field for "Automation" column
+	When User clicks "Run now" option in Cog-menu for "17678_Automation" item on Admin page
+	When User selects "Automation Log" tab on the Project details page
+	When User clicks refresh button in the browser
+	When User enters "17678_Automation" text in the Search field for "Automation" column
+	Then "SUCCESS" content is displayed for "Outcome" column
+	When User clicks String Filter button for "Type" column on the Admin page
+	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	And User clicks content from "Objects" column
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                                        |
+	| zMailboxAu: Stage 2 \ Radio Date Slot Mail        |
+	| zMailboxAu: Stage 2 \ Radio Date Slot Mail (Date) |
+	| zMailboxAu: Stage 2 \ Radio Date Slot Mail (Slot) |
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User removes "Email Address" column by Column panel
+	When User clicks the Columns button
+	Then "STARTED" content is displayed in "zMailboxAu: Stage 2 \ Radio Date Slot Mail" column
+	Then "" content is displayed in "zMailboxAu: Stage 2 \ Radio Date Slot Mail (Date)" column
+	Then "" content is displayed in "zMailboxAu: Stage 2 \ Radio Date Slot Mail (Slot)" column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17682 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueAndOwnerInDevicesScopedAutomation
@@ -294,7 +329,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueAndOwnerInDev
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'zDevice Sch for Automations Feature' option from 'Project' autocomplete
 	When User selects 'Stage A' option from 'Stage' autocomplete
-	When User selects "Readiness Owner Task" in the "Task" dropdown for Actions
+	When User selects 'Readiness Owner Task' option from 'Task' autocomplete
 	And User selects "Update" Update Value on Action panel
 	When User selects "Tested" Value on Action panel
 	And User selects "Tested" Value on Action panel
@@ -348,7 +383,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForRemoveOwnerAndTeamInDevi
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	And User selects 'zDevice Sch for Automations Feature' option from 'Project' autocomplete
 	And User selects 'Stage C' option from 'Stage' autocomplete
-	And User selects "Readiness Owner Date Don't Change" in the "Task" dropdown for Actions
+	And User selects 'Readiness Owner Date Don't Change' option from 'Task' autocomplete
 	And User selects "No change" Update Value on Action panel
 	And User selects "No change" Update Date on Action panel
 	And User selects "Remove owner and team" Update Owner on Action panel
@@ -402,7 +437,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedA
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'USE ME FOR AUTOMATION(DEVICE SCHDLD)' option from 'Project' autocomplete
 	When User selects 'Stage A' option from 'Stage' autocomplete
-	When User selects "Radiobutton Readiness Date Task No CS" in the "Task" dropdown for Actions
+	When User selects 'Radiobutton Readiness Date Task No CS' option from 'Task' autocomplete
 	And User selects "Update" Update Value on Action panel
 	And User selects "Failed" Value on Action panel
 	And User selects "Remove" Update Date on Action panel
@@ -440,3 +475,45 @@ Scenario: EvergreenJnr_AdminPage_CheckThatClickingOnTheObjectsCountOpensTheCorre
 	When User clicks content from "Objects" column
 	And User clicks the Filters button
 	Then "X-Proj Path Reset is 12/08/2019 18:07:05" is displayed in added filter info
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17430 @DAS17518 @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueActionDAS17430
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User creates new Automation via API and open it
+	| AutomationName   | Description | Active | StopOnFailedAction | Scope     | Run    |
+	| 17430_Automation | 17430       | true   | false              | All Users | Manual |
+	Then Automation page is displayed correctly
+	When User navigates to the 'Actions' left menu item
+	#Create Action
+	When User clicks the "CREATE ACTION" Action button
+	When User enters '17430_Action' text to 'Action Name' textbox
+	And User selects 'Update task value' in the 'Action Type' dropdown
+	When User selects 'USE ME FOR AUTOMATION(USR SCHDLD)' option from 'Project' autocomplete
+	When User selects "Stage 1" in the "Stage" dropdown for Actions
+	When User selects 'Radiobutton Readiness Date Owner Task (User)' option from 'Task' autocomplete
+	And User selects "Update" Update Value on Action panel
+	And User selects "Started" Value on Action panel
+	And User selects "Update" Update Date on Action panel
+	And User selects "19 Nov 2019" Date on Action panel
+	And User selects "Update" Update Owner on Action panel
+	And User selects "Admin IT" Team on Action panel
+	When User selects "Akhila Varghese" Owner on Action panel
+	And User clicks the "CREATE" Action button
+	#Create Action
+	When User clicks "Automations" navigation link on the Admin page
+	When User enters "17430_Automation" text in the Search field for "Automation" column
+	When User clicks "Run now" option in Cog-menu for "17430_Automation" item on Admin page
+	When User selects "Automation Log" tab on the Project details page
+	When User clicks refresh button in the browser
+	When User enters "17430_Automation" text in the Search field for "Automation" column
+	Then "SUCCESS" content is displayed for "Outcome" column
+	When User clicks String Filter button for "Type" column on the Admin page
+	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	And User clicks content from "Objects" column
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                                                         |
+	| USEMEFORA2: Stage 1 \ Radiobutton Readiness Date Owner Task (User) |
+	Then "STARTED" content is displayed in "USEMEFORA2: Stage 1 \ Radiobutton Readiness Date Owner Task (User)" column

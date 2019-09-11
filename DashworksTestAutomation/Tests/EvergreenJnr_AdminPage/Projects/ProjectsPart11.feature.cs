@@ -508,7 +508,7 @@ this.FeatureBackground();
  testRunner.Then("\"Mailboxes to add (0 of 14784 selected)\" is displayed to the user in the Project " +
                     "Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 109
- testRunner.When("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User expands multiselect to add objects", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
@@ -517,14 +517,14 @@ this.FeatureBackground();
             table6.AddRow(new string[] {
                         "00DB4000EDD84951993@bclabs.local (CSC, SS)"});
 #line 110
- testRunner.And("User selects following Objects to the Project", ((string)(null)), table6, "And ");
+ testRunner.And("User expands multiselect and selects following Objects", ((string)(null)), table6, "And ");
 #line 114
  testRunner.When("User navigates to the \'Users\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 115
  testRunner.Then("\"Users to add (0 of 14747 selected)\" is displayed to the user in the Project Scop" +
                     "e Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 116
- testRunner.When("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User expands multiselect to add objects", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
@@ -533,7 +533,7 @@ this.FeatureBackground();
             table7.AddRow(new string[] {
                         "037AF4CF47C1452D8A4 (Vanetti, Joe)"});
 #line 117
- testRunner.And("User selects following Objects to the Project", ((string)(null)), table7, "And ");
+ testRunner.And("User expands multiselect and selects following Objects", ((string)(null)), table7, "And ");
 #line 128
  testRunner.When("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 129

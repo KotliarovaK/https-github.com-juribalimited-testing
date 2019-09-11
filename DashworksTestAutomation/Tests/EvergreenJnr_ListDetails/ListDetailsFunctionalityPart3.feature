@@ -27,11 +27,11 @@ Examples:
 Scenario Outline: EvergreenJnr_AllLists_CheckThatNoAbilityToCreateTheSameNamedListsUsingTheSpaceCharacterForDynamicList
 	When User clicks "<PageName>" on the left-hand menu
 	Then "All <PageName>" list should be displayed to the user
-	When User click on '<ColumnName>' column header
+	When User clicks on '<ColumnName>' column header
 	And User create custom list with "2" name
 	Then "2" list is displayed to user
 	When User navigates to the "<ListToNavigate>" list
-	And User click on '<ColumnName>' column header
+	And User clicks on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in ascending order
 	When User create custom list with " 2" name
 	Then Warning message with "List Name should be unique" is displayed

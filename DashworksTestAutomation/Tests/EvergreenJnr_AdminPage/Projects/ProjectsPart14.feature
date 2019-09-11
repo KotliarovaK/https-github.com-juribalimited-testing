@@ -23,8 +23,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameWhichStartsWithLowerCaseLe
 	When User enters "project12949" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	When User navigates to the 'Users' tab on Project Scope Changes page
-	And User expands the object to add
-	And User selects following Objects to the Project
+	And User expands multiselect to add objects
+	And User expands multiselect and selects following Objects
 	| Objects                      |
 	| ADD135461 (Luke W. Clark)    |
 	| ADO048752 (Elena Z. Le)      |
@@ -36,8 +36,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameWhichStartsWithLowerCaseLe
 	When User clicks the "UPDATE PROJECT" Action button
 	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
 	When User navigates to the 'Applications' tab on Project Scope Changes page
-	When User expands the object to add
-	And User selects following Objects to the Project
+	When User expands multiselect to add objects
+	And User expands multiselect and selects following Objects
 	| Objects              |
 	| Adobe Reader 5ver2.1 |
 	| allCLEAR 6.0 Viewer  |
@@ -103,7 +103,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatColourOfOnboardedAppIsDisplayedCorrec
 	And User selects "RED" color in the Application Scope tab on the Project details page
 	And User selects "Scope Changes" tab on the Project details page
 	And User navigates to the 'Applications' tab on Project Scope Changes page
-	And User expands the object to add 
+	And User expands multiselect to add objects 
 	And User selects following Objects from the expandable multiselect
 	| Objects                                                      |
 	| ALS - Designing a Microsoft Windows 2000 Dir. Services eBook |
@@ -134,7 +134,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOffboardedObjectsAreListedAfterSelectO
 	When User selects "Scope" tab on the Project details page
 	When User selects "Scope Changes" tab on the Project details page
 	And User navigates to the 'Devices' tab on Project Scope Changes page
-	And User expands the object to add
+	And User expands multiselect to add objects
 	And User selects following Objects from the expandable multiselect
 	| Objects         |
 	| 01HMZTRG6OQAOF  |

@@ -162,8 +162,8 @@ Scenario: EvergreenJnr_AdminPage_AddingRequestTypesAndCategories
 	Then "Mailboxes to add (0 of 14784 selected)" is displayed to the user in the Project Scope Changes section
 	And "Mailboxes to remove (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
 	And "Mailboxes 0/0" is displayed in the tab header on the Admin page
-	When User expands the object to add
-	And User selects following Objects to the Project
+	When User expands multiselect to add objects
+	And User expands multiselect and selects following Objects
 	| Objects                                            |
 	| 003F5D8E1A844B1FAA5@bclabs.local (Hunter, Melanie) |
 	| 00DB4000EDD84951993@bclabs.local (CSC, SS)         |
@@ -178,5 +178,5 @@ Scenario: EvergreenJnr_AdminPage_AddingRequestTypesAndCategories
 	And "[Default (Mailbox)]" Path is displayed to the user
 	And "[None]" Category is displayed to the user
 	And Add Objects panel is collapsed
-	When User expands the object to add
+	When User expands multiselect to add objects
 	Then no items are selected

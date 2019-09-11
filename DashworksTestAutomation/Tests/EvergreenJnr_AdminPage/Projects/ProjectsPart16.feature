@@ -14,8 +14,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	And User selects "Scope Changes" tab on the Project details page
 	And User navigates to the 'Devices' tab on Project Scope Changes page
 	Then open tab in the Project Scope Changes section is active
-	When User expands the object to add 
-	And User selects following Objects to the Project
+	When User expands multiselect to add objects 
+	And User expands multiselect and selects following Objects
 	| Objects         |
 	| 001BAQXT6JWFPI  |
 	| 001PSUMZYOW581  |
@@ -47,7 +47,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	When User clicks the "CANCEL" Action button
 	Then "UPDATE ALL CHANGES" Action button is active
 	When User navigates to the 'Users' tab on Project Scope Changes page
-	And User expands the object to add 
+	And User expands multiselect to add objects 
 	And User selects following Objects from the expandable multiselect
 	| Objects                         |
 	| AAC860150 (Kerrie D. Ruiz)      |
@@ -76,7 +76,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	| ABQ575757 (Salvador K. Waller)  |
 	| ABS188911 (Jesus W. Kirk)       |
 	And User navigates to the 'Applications' tab on Project Scope Changes page
-	And User expands the object to add 
+	And User expands multiselect to add objects 
 	And User selects following Objects from the expandable multiselect
 	| Objects                                                              |
 	| "WPF/E" (codename) Community Technology Preview (Feb 2007) (0.8.5.0) |
@@ -173,21 +173,21 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	And User selects "Scope Changes" tab on the Project details page
 	And User navigates to the 'Devices' tab on Project Scope Changes page
 	Then open tab in the Project Scope Changes section is active
-	When User expands the object to add 
+	When User expands multiselect to add objects 
 	And User selects following Objects from the expandable multiselect
 	| Objects         |
 	| 001BAQXT6JWFPI  |
 	| 001PSUMZYOW581  |
 	| 00BDM1JUR8IF419 |
 	When User navigates to the 'Users' tab on Project Scope Changes page
-	And User expands the object to add 
+	And User expands multiselect to add objects 
 	And User selects following Objects from the expandable multiselect
 	| Objects                         |
 	| AAC860150 (Kerrie D. Ruiz)      |
 	| AAD1011948 (Pinabel Cinq-Mars)  |
 	| AAG081456 (Melanie Z. Fowler)   |
 	And User navigates to the 'Applications' tab on Project Scope Changes page
-	And User expands the object to add 
+	And User expands multiselect to add objects 
 	And User selects following Objects from the expandable multiselect
 	| Objects                                                              |
 	| "WPF/E" (codename) Community Technology Preview (Feb 2007) (0.8.5.0) |
@@ -211,7 +211,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingSortingOrderOfTheObjectsInTheProjectSco
 	Then Project "TestProject12645" is displayed to user
 	When User selects "Scope" tab on the Project details page
 	When User selects "Scope Changes" tab on the Project details page
-	When User expands the object to add
+	When User expands multiselect to add objects
 	Then Objects are displayed in alphabetical order on the Admin page
 	When User selects following Objects from the expandable multiselect
 	| Objects                                                |
@@ -228,7 +228,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingSortingOrderOfTheObjectsInTheProjectSco
 	| 003F5D8E1A844B1FAA5@bclabs.local (Hunter, Melanie)     |
 	Then Objects are displayed in alphabetical order on the Admin page
 	When User navigates to the 'Users' tab on Project Scope Changes page
-	When User expands the object to add
+	When User expands multiselect to add objects
 	Then Objects are displayed in alphabetical order on the Admin page
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @Cleanup @DAS11758 @DAS14190 @DAS15528
@@ -263,7 +263,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectAllCheckboxIsWorkingCorrectlyOnA
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatTheEditListFunctionIsHiddenAfterCancelingCreatingProjectFromTheMainLists
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
-	When User click on '<ColumnName>' column header
+	When User clicks on '<ColumnName>' column header
 	And User create dynamic list with "<DynamicListName>" name on "<ListName>" page
 	Then "<DynamicListName>" list is displayed to user
 	When User clicks Create Project from the main list

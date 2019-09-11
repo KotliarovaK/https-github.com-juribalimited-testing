@@ -177,7 +177,7 @@ Scenario: EvergreenJnr_DevicesList_Search_CheckThatMultiSelectFilterSearchFieldH
 Scenario: EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtListPanel 
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
-	When User click on 'Hostname' column header
+	When User clicks on 'Hostname' column header
 	Then data in table is sorted by 'Hostname' column in ascending order
 	When User create dynamic list with "TestListDED759" name on "Devices" page
 	When User enters "CheckTheResetButton" text in Search field at List Panel
@@ -389,7 +389,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRingsInRingsColumnShownAccordingToDi
 	| Ring 2             |
 	| Unassigned         |
 	| Ring 1             |
-	And User click on 'Windows7Mi: Ring' column header
+	And User clicks on 'Windows7Mi: Ring' column header
 	Then Data in table is sorted by "Windows7Mi: Ring" column in the next way
 	| values     |
 	| Ring 2     |
