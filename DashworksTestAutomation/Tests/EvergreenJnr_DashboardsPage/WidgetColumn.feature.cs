@@ -86,7 +86,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS16278")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckStatusDisplayOrderForColumnWidget()
         {
             System.Exception lastException = null;
@@ -120,7 +119,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "EvergreenJnr_DashboardsPage",
                         "Widgets",
                         "DAS16278",
-                        "Cleanup",
                         "Cleanup"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
@@ -172,9 +170,7 @@ this.FeatureBackground();
                         "AggregateFunction",
                         "OrderBy",
                         "MaxValues",
-                        "ShowLegend",
-                        "TableOrientation",
-                        "Layout"});
+                        "ShowLegend"});
             table3.AddRow(new string[] {
                         "Column",
                         "DAS16278_Widget",
@@ -184,9 +180,7 @@ this.FeatureBackground();
                         "Sum",
                         "Windows7Mi: Status ASC",
                         "10",
-                        "true",
-                        "",
-                        ""});
+                        "true"});
 #line 26
  testRunner.And("User adds new Widget", ((string)(null)), table3, "And ");
 #line 29
@@ -260,7 +254,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
         [NUnit.Framework.CategoryAttribute("DAS15780")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatReadinessWidgetHasCorrectseverityOrdering()
         {
             System.Exception lastException = null;
@@ -293,7 +286,6 @@ this.FeatureBackground();
                         "Evergreen",
                         "EvergreenJnr_DashboardsPage",
                         "DAS15780",
-                        "Cleanup",
                         "Cleanup"});
 #line 59
 this.ScenarioInitialize(scenarioInfo);
@@ -330,30 +322,18 @@ this.FeatureBackground();
                         "WidgetType",
                         "Title",
                         "List",
-                        "Type",
-                        "AggregateBy",
                         "AggregateFunction",
                         "SplitBy",
                         "OrderBy",
-                        "MaxValues",
-                        "ShowLegend",
-                        "TableOrientation",
-                        "Drilldown",
-                        "Layout"});
+                        "Drilldown"});
             table7.AddRow(new string[] {
                         "Column",
                         "SortOrderCheckForDas15780",
                         "ListForDas15780",
-                        "",
-                        "",
                         "Count",
                         "Babel(Engl: Readiness",
                         "Babel(Engl: Readiness ASC",
-                        "",
-                        "",
-                        "",
-                        "Yes",
-                        ""});
+                        "Yes"});
 #line 72
  testRunner.And("User adds new Widget", ((string)(null)), table7, "And ");
 #line 75

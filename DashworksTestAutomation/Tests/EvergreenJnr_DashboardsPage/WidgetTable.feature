@@ -11,12 +11,12 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorAppearsWhenCreating
 	And User clicks Edit mode trigger on Dashboards page
 	When User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
-	| WidgetType | Title             | List             | SplitBy     | AggregateBy | AggregateFunction | OrderBy         | TableOrientation | MaxValues | ShowLegend |
-	| Table      | WidgetForDAS14685 | All Applications | Application | Application | Count distinct    | Application ASC |                  | 10        |            |
+	| WidgetType | Title             | List             | SplitBy     | AggregateBy | AggregateFunction | OrderBy         | MaxValues |
+	| Table      | WidgetForDAS14685 | All Applications | Application | Application | Count distinct    | Application ASC | 10        |
 	Then There are no errors in the browser console
 	And User sees widget with the next name "WidgetForDAS14685" on Dashboards page
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14920 @Cleanup @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14920 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccursWhenCreatingDashboardWidgetThatUsesBooleanField
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName           |
@@ -27,8 +27,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccursWhenCreatingDashb
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
-	| WidgetType | Title       | List       | SplitBy             | AggregateBy | AggregateFunction | OrderBy   | TableOrientation | MaxValues | ShowLegend | Drilldown | Layout |
-	| Table      | DAS-14920_1 | 14920_List | Secure Boot Enabled |             | Count             | Count ASC |                  | 10        |            |           |        |
+	| WidgetType | Title       | List       | SplitBy             | AggregateFunction | OrderBy   | MaxValues |
+	| Table      | DAS-14920_1 | 14920_List | Secure Boot Enabled | Count             | Count ASC | 10        |
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
 	When User clicks the "CREATE" Action button
@@ -40,8 +40,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccursWhenCreatingDashb
 	#Second Widget creation
 	When User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
-	| WidgetType | Title       | List       | SplitBy              | AggregateBy | AggregateFunction | OrderBy   | TableOrientation | MaxValues | ShowLegend |
-	| Table      | DAS-14920_2 | 14920_List | Windows7Mi: In Scope |             | Count             | Count ASC |                  | 10        |            |
+	| WidgetType | Title       | List       | SplitBy              | AggregateFunction | OrderBy   | MaxValues |
+	| Table      | DAS-14920_2 | 14920_List | Windows7Mi: In Scope | Count             | Count ASC | 10        |
 	Then There are no errors in the browser console
 	And "DAS-14920_2" Widget is displayed to the user
 	Then "12,100" count is displayed for "False" in the table Widget
@@ -67,8 +67,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetValuesLeadsToApplicati
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
-	| WidgetType | Title               | List             | SplitBy | AggregateFunction | OrderBy    | TableOrientation | MaxValues |
-	| Table      | WidgetForDAS16069_1 | All Applications | Vendor  | Count             | Count DESC |                  | 500       |
+	| WidgetType | Title               | List             | SplitBy | AggregateFunction | OrderBy    | MaxValues |
+	| Table      | WidgetForDAS16069_1 | All Applications | Vendor  | Count             | Count DESC | 500       |
 	Then "WidgetForDAS16069_1" Widget is displayed to the user
 	And "918" count is displayed for "Microsoft Corporation" in the table Widget
 	When User clicks "918" value for "Microsoft Corporation" column
@@ -85,13 +85,13 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetDisplayedFullyInPrevie
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
-	| WidgetType | Title     | List        | SplitBy     | AggregateBy | AggregateFunction | OrderBy         | TableOrientation | MaxValues | ShowLegend | Drilldown | Layout |
-	| Table      | DAS-15208 | All Devices | Device Type | Device Type | Count distinct    | Device Type ASC | Horizontal       |           |            |           |        |
+	| WidgetType | Title     | List        | SplitBy     | AggregateBy | AggregateFunction | OrderBy         | TableOrientation |
+	| Table      | DAS-15208 | All Devices | Device Type | Device Type | Count distinct    | Device Type ASC | Horizontal       |
 	Then Widget Preview is displayed to the user
 	And Table widget displayed inside preview pane correctly
 	And There are no errors in the browser console
 
-@Evergreen @EvergreenJnr_DashboardsPage @DAS16275 @Cleanup @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @DAS16275 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckCapacitySlotsDisplayOrderInDashboards
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName                                        |
@@ -101,8 +101,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckCapacitySlotsDisplayOrderInDashboards
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
-	| WidgetType | Title           | List                  | SplitBy                                           | AggregateFunction | AggregateBy | OrderBy   | MaxValues | TableOrientation | ShowLegend | Layout |
-	| Table      | DAS16275_Widget | Devices_List_DAS16275 | Windows7Mi: Pre-Migration \ Scheduled Date (Slot) | Count             |             | Count ASC |           | Vertical         |            |        |
+	| WidgetType | Title           | List                  | SplitBy                                           | AggregateFunction | OrderBy   | TableOrientation |
+	| Table      | DAS16275_Widget | Devices_List_DAS16275 | Windows7Mi: Pre-Migration \ Scheduled Date (Slot) | Count             | Count ASC | Vertical         |
 	Then Widget Preview is displayed to the user
 	When User clicks the "CREATE" Action button
 	Then "DAS16275_Widget" Widget is displayed to the user
@@ -121,7 +121,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckCapacitySlotsDisplayOrderInDashboards
 	| Slot 2018-11-01 - 2020-12-26  |
 	| Slot 2018-10-01 to 2018-12-31 |
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15826 @Cleanup @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15826 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckRingsDisplayOrderInAWidgetOnDashboard
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName                   |
@@ -131,8 +131,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckRingsDisplayOrderInAWidgetOnDashboard
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
-	| WidgetType | Title           | List                  | SplitBy                      | AggregateFunction | OrderBy                          | TableOrientation | MaxValues |
-	| Table      | DAS15826_Widget | DeviceListForDAS15826 | UserEvergr: Ring (All Users) | Count             | UserEvergr: Ring (All Users) ASC | Vertical         |           |
+	| WidgetType | Title           | List                  | SplitBy                      | AggregateFunction | OrderBy                          | TableOrientation |
+	| Table      | DAS15826_Widget | DeviceListForDAS15826 | UserEvergr: Ring (All Users) | Count             | UserEvergr: Ring (All Users) ASC | Vertical         |
 	Then Card "DAS15826_Widget" Widget is displayed to the user
 	And content in the Widget is displayed in following order:
 	| TableValue       |
@@ -168,7 +168,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingAggregateFunctionWhereTh
 	And User selects "Sum" as Widget Aggregate Function
 	Then User sees "There are no fields available for this aggregate function" warning text below Lists field
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Cleanup @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenFirstAggregateFunctionIsSelected
 	When User add following columns using URL to the "Users" page:
 	| ColumnName                   |
@@ -190,7 +190,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenFirstAgg
 	| Last Logon Date First ASC  |
 	| Last Logon Date First DESC |
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Cleanup @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenLastAggregateFunctionIsSelected
 	When User add following columns using URL to the "Users" page:
 	| ColumnName                   |
@@ -221,8 +221,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckClickthoughNumbersBasedArchivedItemsR
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
-	| WidgetType | Title             | List      | SplitBy  | AggregateFunction | OrderBy      | TableOrientation | MaxValues |
-	| Table      | WidgetForDAS17599 | List17599 | Hostname | Count             | Hostname ASC |                  |           |
+	| WidgetType | Title             | List      | SplitBy  | AggregateFunction | OrderBy      |
+	| Table      | WidgetForDAS17599 | List17599 | Hostname | Count             | Hostname ASC |
 	Then "WidgetForDAS17599" Widget is displayed to the user
 	And "82" count is displayed for "Empty" in the table Widget
 	When User clicks "82" value for "Empty" column

@@ -31,8 +31,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIsCreatedWhenListIsAnOb
 	When User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
-	| WidgetType | Title             | List        | Type      | AggregateBy | AggregateFunction | SplitBy | OrderBy | MaxValues | ShowLegend | TableOrientation | Drilldown | Layout |
-	| Card       | WidgetForDAS15207 | All Devices | Aggregate | Hostname    | Count distinct    |         |         |           |            |                  |           |        |
+	| WidgetType | Title             | List        | Type      | AggregateBy | AggregateFunction |
+	| Card       | WidgetForDAS15207 | All Devices | Aggregate | Hostname    | Count distinct    |
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
 	When User clicks the "CREATE" Action button
@@ -44,8 +44,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValueLeadsToCorrectFilt
 	When User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
-	| WidgetType | Title             | List         | Type      | AggregateBy                          | AggregateFunction | SplitBy | OrderBy | MaxValues | ShowLegend | TableOrientation | Drilldown | Layout |
-	| Card       | WidgetForDAS16138 | 1803 Rollout | Aggregate | 1803: Pre-Migration \ Scheduled Date | First             |         |         |           |            |                  | Yes       |        |
+	| WidgetType | Title             | List         | Type      | AggregateBy                          | AggregateFunction | Drilldown |
+	| Card       | WidgetForDAS16138 | 1803 Rollout | Aggregate | 1803: Pre-Migration \ Scheduled Date | First             | Yes       |
 	Then Widget Preview is displayed to the user
 	When User clicks the "CREATE" Action button
 	Then Card "WidgetForDAS16138" Widget is displayed to the user
@@ -58,7 +58,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValueLeadsToCorrectFilt
 	Then "1803: Pre-Migration \ Scheduled Date is 5 Nov 2018" is displayed in added filter info
 	And "Any Device in list 1803 Rollout" is displayed in added filter info
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16069 @DAS15134 @DAS15355 @Cleanup @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16069 @DAS15134 @DAS15355 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValuesLeadsToApplicationsListFilteredPage
 	When User clicks "Applications" on the left-hand menu
 	And User clicks the Filters button
@@ -113,8 +113,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValuesLeadsToApplicatio
 	And Icon Only is displayed for Card widget
 	When User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
-	| WidgetType | Title               | List                | Type      | AggregateBy | AggregateFunction | SplitBy | OrderBy | MaxValues | ShowLegend | TableOrientation | Drilldown | Layout |
-	| Card       | WidgetForDAS16069_2 | 1803 App Compliance | Aggregate |             | Count             |         |         |           |            |                  | Yes       |        |
+	| WidgetType | Title               | List                | Type      | AggregateFunction | Drilldown |
+	| Card       | WidgetForDAS16069_2 | 1803 App Compliance | Aggregate | Count             | Yes       |
 	Then Widget Preview is displayed to the user
 	When User clicks the "CREATE" Action button
 	Then Card "WidgetForDAS16069_2" Widget is displayed to the user
@@ -143,7 +143,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIncludeSelectionOfEverg
 	When User clicks the "UPDATE" Action button
 	Then "Amber" color is displayed for widget
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15722 @Cleanup @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15722 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetHavingDateColumnsDisplayedCorrectlyOnDashboard
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName                 |
@@ -155,8 +155,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetHavingDateColumnsDispla
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
-	| WidgetType | Title             | List            | Type      | AggregateBy | AggregateFunction | SplitBy | OrderBy | MaxValues | ShowLegend | TableOrientation | Drilldown | Layout |
-	| Card       | WidgetForDAS15722 | ListForDas15722 | Aggregate | Build Date  | First             |         |         |           |            |                  | Yes       |        |
+	| WidgetType | Title             | List            | Type      | AggregateBy | AggregateFunction | Drilldown |
+	| Card       | WidgetForDAS15722 | ListForDas15722 | Aggregate | Build Date  | First             | Yes       |
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
 	When User clicks the "CREATE" Action button
@@ -166,7 +166,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetHavingDateColumnsDispla
 	And User clicks data in card "WidgetForDAS15722" widget
 	Then "1" rows are displayed in the agGrid
 
-@Evergreen@EvergreenJnr_DashboardsPage @Widgets @DAS15355 @Cleanup @Cleanup
+@Evergreen@EvergreenJnr_DashboardsPage @Widgets @DAS15355 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckComplianceFirstCellIconsForCardWidget
 	When User clicks "Applications" on the left-hand menu
 	And User clicks the Columns button
@@ -187,8 +187,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckComplianceFirstCellIconsForCardWidget
 	And User clicks Edit mode trigger on Dashboards page
 	When User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
-	| WidgetType | Title             | List                       | Type       | AggregateBy | AggregateFunction | SplitBy | OrderBy | MaxValues | ShowLegend | TableOrientation | Drilldown | Layout    |
-	| Card       | WidgetForDAS15355 | DAS15355_Applications_List | First Cell |             |                   |         |         |           |            |                  |           | Text Only |
+	| WidgetType | Title             | List                       | Type       | Layout    |
+	| Card       | WidgetForDAS15355 | DAS15355_Applications_List | First Cell | Text Only |
 	Then Widget Preview is displayed to the user
 	And Text Only is displayed for Card widget
 	And "Amber" color is displayed for Card Widget
@@ -209,7 +209,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckComplianceFirstCellIconsForCardWidget
 	When User clicks the "UPDATE" Action button
 	Then Icon Only is displayed for Card widget
 	
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15355 @DAS15662 @Cleanup @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15355 @DAS15662 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckReadinessFirstCellIconsForCardWidget
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Columns button
@@ -255,7 +255,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckReadinessFirstCellIconsForCardWidget
 	Then "Grey" color is displayed for Card Widget
 	Then Icon Only is displayed for Card widget
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16266 @Cleanup @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16266 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIsDisplayedCorrectlyWithBlankFirstCell
 	When User clicks "Devices" on the left-hand menu
 	When User click on 'Owner Display Name' column header
@@ -276,7 +276,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIsDisplayedCorrectlyWit
 	When User clicks the "CREATE" Action button
 	Then Widget Preview shows "Empty" as First Cell value
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15914 @Cleanup @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15914 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhenFirstCellSelected
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Filters button
@@ -300,12 +300,12 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhe
 	And User clicks Edit mode trigger on Dashboards page
 	When User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
-	| WidgetType | Title             | List               | Type       | AggregateBy | AggregateFunction | SplitBy | OrderBy | MaxValues | ShowLegend | TableOrientation | Drilldown | Layout |
-	| Card       | WidgetForDAS15914 | DeviceListFor15914 | First Cell |             |                   |         |         |           |            |                  |           |        |
+	| WidgetType | Title             | List               | Type       |
+	| Card       | WidgetForDAS15914 | DeviceListFor15914 | First Cell |
 	Then Widget Preview is displayed to the user
 	Then Widget Preview shows "READY" as First Cell value
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16127 @Cleanup @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16127 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhenListHasReadinessColumnFirst
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Filters button
@@ -324,13 +324,13 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhe
 	And User clicks Edit mode trigger on Dashboards page
 	When User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
-	| WidgetType | Title             | List               | Type       | AggregateBy | AggregateFunction | SplitBy | OrderBy | MaxValues | ShowLegend | TableOrientation | Drilldown | Layout |
-	| Card       | WidgetForDAS16127 | DeviceListFor16127 | First Cell |             |                   |         |         |           |            |                  |           |        |
+	| WidgetType | Title             | List               | Type       |
+	| Card       | WidgetForDAS16127 | DeviceListFor16127 | First Cell |
 	Then Widget Preview is displayed to the user
 	And Widget Preview shows "GREEN" as First Cell value
 	And There are no errors in the browser console
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15765 @Cleanup @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15765 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhenFirstCellIsEmpty
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Filters button
@@ -352,13 +352,13 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhe
 	And User clicks Edit mode trigger on Dashboards page
 	When User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
-	| WidgetType | Title             | List               | Type       | AggregateBy | AggregateFunction | SplitBy | OrderBy | MaxValues | ShowLegend | TableOrientation | Drilldown | Layout |
-	| Card       | WidgetForDAS15765 | DeviceListFor15765 | First Cell |             |                   |         |         |           |            |                  |           |        |
+	| WidgetType | Title             | List               | Type       |
+	| Card       | WidgetForDAS15765 | DeviceListFor15765 | First Cell |
 	Then Widget Preview is displayed to the user
 	And Widget Preview shows "Empty" as First Cell value
 	And There are no errors in the browser console
 	
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16336 @Cleanup @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16336 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorsInConsoleAfterAddingApplicationReadinessFirstCellWidget
 	When User clicks "Applications" on the left-hand menu
 	Then "All Applications" list should be displayed to the user
@@ -407,7 +407,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorsInConsoleAfterAddingAppli
 	Then "Really Extremely Orange" color is displayed for Card Widget
 	Then Icon and Text is displayed for Card widget
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16325 @DAS15145 @Cleanup @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16325 @DAS15145 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhenFirstCellIsSortedBool
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Columns button
@@ -423,13 +423,13 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhe
 	And User clicks Edit mode trigger on Dashboards page
 	When User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
-	| WidgetType | Title             | List               | Type       | AggregateBy | AggregateFunction | SplitBy | OrderBy | MaxValues | ShowLegend | TableOrientation | Drilldown | Layout |
-	| Card       | WidgetForDAS16325 | DeviceListFor16325 | First Cell |             |                   |         |         |           |            |                  |           |        |
+	| WidgetType | Title             | List               | Type       |
+	| Card       | WidgetForDAS16325 | DeviceListFor16325 | First Cell |
 	Then Widget Preview is displayed to the user
 	And Widget Preview shows "TRUE" as First Cell value
 	And There are no errors in the browser console
 
-@Evergreen@EvergreenJnr_DashboardsPage @Widgets @DAS16347 @Cleanup @Cleanup
+@Evergreen@EvergreenJnr_DashboardsPage @Widgets @DAS16347 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckWidgetCreatingFromListHavingSortedRingColumn
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Columns button
@@ -449,12 +449,12 @@ Scenario: EvergreenJnr_DashboardsPage_CheckWidgetCreatingFromListHavingSortedRin
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
-	| WidgetType | Title             | List      | Type       | AggregateBy | AggregateFunction | SplitBy | OrderBy | MaxValues | ShowLegend | TableOrientation | Drilldown | Layout |
-	| Card       | WidgetForDAS16347 | List16347 | First Cell |             |                   |         |         |           |            |                  |           |        |
+	| WidgetType | Title             | List      | Type       |
+	| Card       | WidgetForDAS16347 | List16347 | First Cell |
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15514 @Cleanup @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15514 @Cleanup
 Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatCardSelectingAggregateFunctionShowsFieldsWithCorrectDatatypeInAggregateByDropdown
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName                           |
@@ -521,3 +521,25 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatArchivedItemsIncludedInCountWhenR
 	And Value '1' is displayed in the card 'WidgetForDAS16844' widget
 	When User clicks data in card "WidgetForDAS16844" widget
 	Then "1" rows are displayed in the agGrid
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16167 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnCardWidgetsIfTheSourceListHasNoRows
+	When User clicks "Devices" on the left-hand menu
+	And User clicks the Filters button
+	And User add "Owner Display Name" filter where type is "Equals" with added column and following value:
+	| Values |
+	| ZZZZ   |
+	And User clicks Save button on the list panel
+	And User create dynamic list with "ListForDAS16167" name on "Devices" page
+	Then "ListForDAS16167" list is displayed to user
+	When Dashboard with "DAS16167_Dashboard" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User adds new Widget
+	| WidgetType | Title             | List            | Type       |
+	| Card       | WidgetForDAS16167 | ListForDAS16167 | First Cell |
+	Then Widget Preview is displayed to the user
+	And 'This list does not contain any rows' message is displayed in Preview
+	When User clicks the "CREATE" Action button
+	Then "WidgetForDAS16167" Widget is displayed to the user
+	And 'This list does not contain any rows' message is displayed in 'WidgetForDAS16167' widget

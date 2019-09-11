@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16278 @Cleanup @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16278 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckStatusDisplayOrderForColumnWidget
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Columns button
@@ -24,8 +24,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckStatusDisplayOrderForColumnWidget
 	And User clicks Edit mode trigger on Dashboards page
 	When User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
-	| WidgetType | Title           | List            | SplitBy            | AggregateBy         | AggregateFunction | OrderBy                | MaxValues | ShowLegend | TableOrientation | Layout |
-	| Column     | DAS16278_Widget | ListForDAS16278 | Windows7Mi: Status | HDD Total Size (GB) | Sum               | Windows7Mi: Status ASC | 10        | true       |                  |        |
+	| WidgetType | Title           | List            | SplitBy            | AggregateBy         | AggregateFunction | OrderBy                | MaxValues | ShowLegend |
+	| Column     | DAS16278_Widget | ListForDAS16278 | Windows7Mi: Status | HDD Total Size (GB) | Sum               | Windows7Mi: Status ASC | 10        | true       |
 	Then Widget Preview is displayed to the user
 	When User clicks the "CREATE" Action button
 	Then Card "DAS16278_Widget" Widget is displayed to the user
@@ -55,7 +55,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckStatusDisplayOrderForColumnWidget
 	| Onboarded     |
 	| Not Onboarded |
 
-@Evergreen @EvergreenJnr_DashboardsPage @DAS15780 @Cleanup @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @DAS15780 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatReadinessWidgetHasCorrectseverityOrdering
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Columns button
@@ -70,8 +70,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatReadinessWidgetHasCorrectseverity
 	And User clicks Edit mode trigger on Dashboards page
 	When User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
-	| WidgetType | Title                     | List            | Type | AggregateBy | AggregateFunction | SplitBy               | OrderBy                   | MaxValues | ShowLegend | TableOrientation | Drilldown | Layout |
-	| Column     | SortOrderCheckForDas15780 | ListForDas15780 |      |             | Count             | Babel(Engl: Readiness | Babel(Engl: Readiness ASC |           |            |                  | Yes       |        |
+	| WidgetType | Title                     | List            | AggregateFunction | SplitBy               | OrderBy                   | Drilldown |
+	| Column     | SortOrderCheckForDas15780 | ListForDas15780 | Count             | Babel(Engl: Readiness | Babel(Engl: Readiness ASC | Yes       |
 	Then Widget Preview is displayed to the user
 	When User clicks the "CREATE" Action button
 	Then Card "SortOrderCheckForDas15780" Widget is displayed to the user

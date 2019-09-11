@@ -454,6 +454,13 @@ namespace DashworksTestAutomation.Pages
             return Driver.FindElement(cardWidget);
         }
 
+        public IWebElement GetWidgetEmptyMessageByName(string widgetTitle)
+        {
+            var cardWidget = By.XPath($".//*[text()='{widgetTitle}']/ancestor :: div[@class='widget-whole']//div[contains(@class,'empty-message')]");
+            Driver.WaitForDataLoading();
+            return Driver.FindElement(cardWidget);
+        }
+
         public IWebElement GetTopBarActionButton(string buttonName)
         {
             var cardWidget = By.XPath($".//div[@class='action-container']/button//i[text()='{buttonName.ToLower()}']");

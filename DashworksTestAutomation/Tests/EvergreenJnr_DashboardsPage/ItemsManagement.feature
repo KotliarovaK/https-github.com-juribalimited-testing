@@ -60,16 +60,16 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatParticularWidgetCanBeDuplicatedIn
 	And User clicks the "ADD SECTION" Action button
 	And User clicks "ADD WIDGET" button for "1" Section on Dashboards page
 	And User creates new Widget
-	| WidgetType | Title                        | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | TableOrientation | MaxValues | ShowLegend |
-	| Pie        | Section1_WidgetForDAS12989_1 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC |                  | 10        | true       |
+	| WidgetType | Title                        | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
+	| Pie        | Section1_WidgetForDAS12989_1 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC | 10        | true       |
 	And User clicks "ADD WIDGET" button for "2" Section on Dashboards page
 	And User creates new Widget
-	| WidgetType | Title                        | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | TableOrientation | MaxValues | ShowLegend |
-	| Bar        | Section2_WidgetForDAS12989_1 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC |                  | 10        | true       |
+	| WidgetType | Title                        | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
+	| Bar        | Section2_WidgetForDAS12989_1 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC | 10        | true       |
 	And User clicks "ADD WIDGET" button for "2" Section on Dashboards page
 	And User creates new Widget
-	| WidgetType | Title                        | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | TableOrientation | MaxValues | ShowLegend |
-	| Pie        | Section2_WidgetForDAS12989_2 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC |                  | 10        | true       |
+	| WidgetType | Title                        | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
+	| Pie        | Section2_WidgetForDAS12989_2 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC | 10        | true       |
 	And User remembers number of Sections and Widgets on Dashboards page
 	And User clicks Ellipsis menu for "Section1_WidgetForDAS12989_1" Widget on Dashboards page
 	And User clicks "Duplicate" item from Ellipsis menu on Dashboards page
@@ -89,8 +89,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatParticularSectionWithWidgetsCanBe
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
-	| WidgetType | Title             | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | TableOrientation | MaxValues | ShowLegend |
-	| Pie        | WidgetForDAS14358 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC |                  | 10        | true       |
+	| WidgetType | Title             | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
+	| Pie        | WidgetForDAS14358 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC | 10        | true       |
 	And User remembers number of Sections and Widgets on Dashboards page
 	And User clicks Ellipsis menu for Section having "WidgetForDAS14358" Widget on Dashboards page
 	And User clicks "Duplicate" item from Ellipsis menu on Dashboards page
@@ -103,8 +103,8 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatDuplicatingWorksForWidget
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
-	| WidgetType | Title   | List   | SplitBy   | AggregateBy   | AggregateFunction  | OrderBy   | TableOrientation | MaxValues | ShowLegend   |
-	| <Type>     | <Title> | <List> | <SplitBy> | <AggregateBy> | <AggregateFunctio> | <OrderBy> |                  | 10        | <ShowLegend> |
+	| WidgetType | Title   | List   | SplitBy   | AggregateBy   | AggregateFunction  | OrderBy   | MaxValues | ShowLegend   |
+	| <Type>     | <Title> | <List> | <SplitBy> | <AggregateBy> | <AggregateFunctio> | <OrderBy> | 10        | <ShowLegend> |
 	And User remembers number of Sections and Widgets on Dashboards page
 	And User clicks Ellipsis menu for "<Title>" Widget on Dashboards page
 	And User clicks "Duplicate" item from Ellipsis menu on Dashboards page
@@ -125,8 +125,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetLegendCopiedWhenDuplicating
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
-	| WidgetType | Title             | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | TableOrientation | MaxValues | ShowLegend |
-	| Pie        | WidgetForDAS14728 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC |                  | 10        | true       |
+	| WidgetType | Title             | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
+	| Pie        | WidgetForDAS14728 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC | 10        | true       |
 	And User remembers number of Widgets with Legend on Dashboards page
 	And User clicks Ellipsis menu for Section having "WidgetForDAS14728" Widget on Dashboards page
 	And User clicks "Duplicate" item from Ellipsis menu on Dashboards page
@@ -146,8 +146,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheEditMode
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
-	| WidgetType | Title             | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | TableOrientation | MaxValues | ShowLegend |
-	| Pie        | WidgetForDAS12978 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC |                  | 10        | true       |
+	| WidgetType | Title             | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
+	| Pie        | WidgetForDAS12978 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC | 10        | true       |
 	And User clicks refresh button in the browser
 	And User clicks Show Dashboards panel icon on Dashboards page
 	And User navigates to the "Dashboard for DAS12978" list
@@ -162,13 +162,13 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheEditMode
 	And User sees Ellipsis icon enabled for "WidgetForDAS12978" Widget on Dashboards page
 	When User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
-	| WidgetType | Title               | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | TableOrientation | MaxValues | ShowLegend |
-	| Bar        | WidgetForDAS12978_2 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC |                  | 10        | true       |
+	| WidgetType | Title               | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
+	| Bar        | WidgetForDAS12978_2 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC | 10        | true       |
     And User clicks Ellipsis menu for "WidgetForDAS12978_2" Widget on Dashboards page
 	And User clicks "Edit" item from Ellipsis menu on Dashboards page
 	And User updates Widget with following info:
-	| WidgetType | Title                      | List | SplitBy | AggregateBy | AggregateFunction | OrderBy | TableOrientation | MaxValues | ShowLegend |
-	|            | WidgetForDAS12978_2_Edited |      | Version | Application |                   |         |                  |           |            |
+	| WidgetType | Title                      | List | SplitBy | AggregateBy |
+	|            | WidgetForDAS12978_2_Edited |      | Version | Application |
 	Then User sees following Widgets on Dashboards page:
 	| WidgetTitles               |
 	| WidgetForDAS12978          |
@@ -184,8 +184,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheReadOnlyMode
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
-	| WidgetType | Title             | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | TableOrientation | MaxValues | ShowLegend |
-	| Pie        | WidgetForDAS12977 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC |                  | 10        | true       |
+	| WidgetType | Title             | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
+	| Pie        | WidgetForDAS12977 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC | 10        | true       |
 	And User clicks refresh button in the browser
 	Then Dashboards sub menu is hidden on Dashboards page
 	When User clicks Show Dashboards panel icon on Dashboards page
@@ -209,23 +209,23 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetStaysOnTopPositionAfterEdit
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
-	| WidgetType | Title               | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | TableOrientation | MaxValues | ShowLegend |
-	| Pie        | WidgetForDAS14583_1 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC |                  | 10        | true       |
+	| WidgetType | Title               | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
+	| Pie        | WidgetForDAS14583_1 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC | 10        | true       |
 	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
-	| WidgetType | Title               | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | TableOrientation | MaxValues | ShowLegend |
-	| Bar        | WidgetForDAS14583_2 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC |                  | 10        | true       |
+	| WidgetType | Title               | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
+	| Bar        | WidgetForDAS14583_2 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC | 10        | true       |
 	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
-	| WidgetType | Title               | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | TableOrientation | MaxValues | ShowLegend |
-	| Pie        | WidgetForDAS14583_3 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC |                  | 10        | false      |
+	| WidgetType | Title               | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
+	| Pie        | WidgetForDAS14583_3 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC | 10        | false      |
 	And User clicks Ellipsis menu for "WidgetForDAS14583_3" Widget on Dashboards page
 	And User clicks "Move to start" item from Ellipsis menu on Dashboards page
 	And User clicks Ellipsis menu for "WidgetForDAS14583_3" Widget on Dashboards page
 	And User clicks "Edit" item from Ellipsis menu on Dashboards page
 	And User updates Widget with following info:
-	| WidgetType | Title | List | SplitBy | AggregateBy | AggregateFunction | OrderBy | TableOrientation | MaxValues | ShowLegend |
-	|            |       |      |         | Vendor      |                   |         |                  |           |            |
+	| WidgetType | Title | List | SplitBy | AggregateBy |
+	|            |       |      |         | Vendor      |
 	Then User sees following Widgets on Dashboards page:
 	| WidgetTitles        |
 	| WidgetForDAS14583_3 |
@@ -238,8 +238,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckWarningMessageDisplayingWhenDeletingW
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
-	| WidgetType | Title             | List             | SplitBy | AggregateFunction | AggregateBy | OrderBy   | TableOrientation | MaxValues | ShowLegend |
-	| Pie        | WidgetForDAS14855 | All Applications | Vendor  | Count             |             | Count ASC |                  | 10        | true       |
+	| WidgetType | Title             | List             | SplitBy | AggregateFunction | OrderBy   | MaxValues | ShowLegend |
+	| Pie        | WidgetForDAS14855 | All Applications | Vendor  | Count             | Count ASC | 10        | true       |
 	And User clicks Ellipsis menu for "WidgetForDAS14855" Widget on Dashboards page
 	And User clicks "Delete" item from Ellipsis menu on Dashboards page
 	Then User sees "WidgetForDAS14855 will be permanently deleted" text in warning message on Dashboards page
@@ -444,13 +444,13 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSectionCanBeDeleted
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
-	| WidgetType | Title            | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | TableOrientation | MaxValues | ShowLegend |
-	| Pie        | DAS12974SECTION1 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC |                  | 10        | true       |
+	| WidgetType | Title            | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
+	| Pie        | DAS12974SECTION1 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC | 10        | true       |
 	And User clicks the "ADD SECTION" Action button
 	And User clicks "ADD WIDGET" button for "2" Section on Dashboards page
 	And User creates new Widget
-	| WidgetType | Title            | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | TableOrientation | MaxValues | ShowLegend |
-	| Pie        | DAS12974SECTION2 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC |                  | 10        | true       |
+	| WidgetType | Title            | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
+	| Pie        | DAS12974SECTION2 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC | 10        | true       |
 	And User remembers number of Sections and Widgets on Dashboards page
 	And User clicks Ellipsis menu for Section having "DAS12974SECTION1" Widget on Dashboards page
 	And User clicks "Delete" item from Ellipsis menu on Dashboards page
@@ -492,10 +492,12 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatItsNotPossibleToDeleteWidgetWhenE
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
-	| WidgetType | Title             | List             | SplitBy | AggregateFunction | AggregateBy | OrderBy   | TableOrientation | MaxValues | ShowLegend |
-	| Pie        | WidgetForDAS17985 | All Applications | Vendor  | Count             |             | Count ASC |                  | 10        | true       |
+	| WidgetType | Title             | List             | SplitBy | AggregateFunction | OrderBy   | MaxValues | ShowLegend |
+	| Pie        | WidgetForDAS17985 | All Applications | Vendor  | Count             | Count ASC | 10        | true       |
 	And User clicks Ellipsis menu for "WidgetForDAS17985" Widget on Dashboards page
 	And User clicks "Delete" item from Ellipsis menu on Dashboards page
 	Then User sees "WidgetForDAS17985 will be permanently deleted" text in warning message on Dashboards page
 	When User clicks Edit mode trigger on Dashboards page
 	Then Delete widget warning message is displayed on Dashboards page
+
+

@@ -172,7 +172,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksShowDashboardsPanelOnDashboardsPage()
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-
+            _driver.WaitForElementToBeDisplayed(page.DashboardsPanelIcon);
             page.DashboardsPanelIcon.Click();
         }
 
@@ -955,7 +955,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             Utils.Verify.That(page.GetCardWidgetContent(widgetName).Text, Is.EqualTo(value), "Card value is different.");
         }
-        
+
+        [Then(@"'(.*)' message is displayed in '(.*)' widget")]
+        public void ThenEmptyMessageTextDisplayedForWidget(string message, string widgetName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            Utils.Verify.That(page.GetWidgetEmptyMessageByName(widgetName).Text, Is.EqualTo(message), "Widget message is different.");
+        }
+
+        [Then(@"'(.*)' message is displayed in Preview")]
+        public void ThenEmptyMessageTextDisplayedInPreview(string message)
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            Utils.Verify.That(page.PreviewPaneMessageText.Text, Is.EqualTo(message), "Preview message is different.");
+        }
+
         [When(@"User clicks first Dashboard in dashboards list")]
         public void WhenUserClickFirstDashboardInDashboardsList()
         {

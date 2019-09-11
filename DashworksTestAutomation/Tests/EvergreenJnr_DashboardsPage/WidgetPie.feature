@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14668 @Cleanup @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14668 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetsCanBeCreatedWhenUsingSplitByAndAggregateByDateColumn
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Columns button
@@ -24,16 +24,16 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetsCanBeCreatedWhenUsingSplit
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
-	| WidgetType | Title                  | List              | SplitBy                      | AggregateBy | AggregateFunction | OrderBy   | TableOrientation | MaxValues | ShowLegend |
-	| Pie        | Test_Widget_DAS14668_1 | TestList_DAS14668 | ICSP: i-stage A \ i-Schedule |             | Count             | Count ASC |                  | 5         |            |
+	| WidgetType | Title                  | List              | SplitBy                      | AggregateFunction | OrderBy   | MaxValues |
+	| Pie        | Test_Widget_DAS14668_1 | TestList_DAS14668 | ICSP: i-stage A \ i-Schedule | Count             | Count ASC | 5         |
 	Then User sees widget with the next name "Test_Widget_DAS14668_1" on Dashboards page
 	When User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
-	| WidgetType | Title                  | List              | SplitBy                      | AggregateBy                  | AggregateFunction | OrderBy                           | TableOrientation | MaxValues | ShowLegend |
-	| Pie        | Test_Widget_DAS14668_2 | TestList_DAS14668 | ICSP: i-stage A \ i-Schedule | ICSP: i-stage A \ i-Schedule | Count distinct    | ICSP: i-stage A \ i-Schedule DESC |                  | 20        |            |
+	| WidgetType | Title                  | List              | SplitBy                      | AggregateBy                  | AggregateFunction | OrderBy                           | MaxValues |
+	| Pie        | Test_Widget_DAS14668_2 | TestList_DAS14668 | ICSP: i-stage A \ i-Schedule | ICSP: i-stage A \ i-Schedule | Count distinct    | ICSP: i-stage A \ i-Schedule DESC | 20        |
 	Then User sees widget with the next name "Test_Widget_DAS14668_2" on Dashboards page
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15372 @DAS15317 @Cleanup @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15372 @DAS15317 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWidgetThatUsesCpuArchitField
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName          |
@@ -43,15 +43,15 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWid
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
-	| WidgetType | Title             | List      | SplitBy          | AggregateBy | AggregateFunction | OrderBy              | TableOrientation | MaxValues | ShowLegend | Type | Drilldown | Layout |
-	| Pie        | WidgetForDAS15372 | List15372 | CPU Architecture | Hostname    | Count distinct    | CPU Architecture ASC |                  | 10        | false      |      |           |        |
+	| WidgetType | Title             | List      | SplitBy          | AggregateBy | AggregateFunction | OrderBy              | MaxValues | ShowLegend |
+	| Pie        | WidgetForDAS15372 | List15372 | CPU Architecture | Hostname    | Count distinct    | CPU Architecture ASC | 10        | false      |
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
 	When User clicks the "CREATE" Action button
 	Then "WidgetForDAS15372" Widget is displayed to the user
 	And There are no errors in the browser console
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15365 @DAS15352 @Cleanup @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15365 @DAS15352 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingPieWidgetUsedSavedList
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName |
@@ -61,8 +61,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingPie
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
-	| WidgetType | Title             | List      | SplitBy | AggregateBy | AggregateFunction | OrderBy   | TableOrientation | MaxValues | ShowLegend | Type | Drilldown | Layout |
-	| Pie        | WidgetForDAS15365 | List15365 | Model   | Model       | Count distinct    | Model ASC |                  | 10        | true       |      |           |        |
+	| WidgetType | Title             | List      | SplitBy | AggregateBy | AggregateFunction | OrderBy   | MaxValues | ShowLegend |
+	| Pie        | WidgetForDAS15365 | List15365 | Model   | Model       | Count distinct    | Model ASC | 10        | true       |
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
 	When User selects "Bar" in the "Widget Type" Widget dropdown
@@ -92,8 +92,8 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckDataLabelsOnTheWidget
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
-	| WidgetType   | Title             | List        | SplitBy  | AggregateBy | AggregateFunction | OrderBy   | TableOrientation | MaxValues | ShowLegend | Type | Drilldown | Layout |
-	| <WidgetType> | WidgetForDAS15662 | All Devices | Hostname |             | Count             | Count ASC |                  |           |            |      |           |        |
+	| WidgetType   | Title             | List        | SplitBy  | AggregateFunction | OrderBy   |
+	| <WidgetType> | WidgetForDAS15662 | All Devices | Hostname | Count             | Count ASC |
 	And User selects "Show data labels" checkbox on the Create Widget page
 	Then Data Labels are displayed on the Dashboards page
 	And "<DataLabel>" data label is displayed on the Dashboards page
@@ -120,8 +120,8 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatWhenEditingPieWidgetAggre
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
-	| WidgetType | Title           | List        | SplitBy  | AggregateBy | AggregateFunction | OrderBy      | TableOrientation | MaxValues | ShowLegend |
-	| Pie        | Widget_DAS15500 | All Devices | Hostname |             | Count             | Hostname ASC |                  | 5         |            |
+	| WidgetType | Title           | List        | SplitBy  | AggregateFunction | OrderBy      | MaxValues |
+	| Pie        | Widget_DAS15500 | All Devices | Hostname | Count             | Hostname ASC | 5         |
 	Then User sees widget with the next name "Widget_DAS15500" on Dashboards page
 	When User clicks Ellipsis menu for "Widget_DAS15500" Widget on Dashboards page
 	And User clicks "Edit" item from Ellipsis menu on Dashboards page
@@ -136,7 +136,7 @@ Examples:
 	| Donut      |
 	| Half donut |
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15508 @Cleanup @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15508 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountAsAggregateFunctionShowsFieldsWithCorrectDatatypeInAggregateByDropdown
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName                           |
@@ -157,7 +157,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountAsAggregateFunction
 	And User selects "Count" as Widget Aggregate Function
 	Then Aggregate By dropdown is disabled
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15509 @Cleanup @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15509 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountDistinctAsAggregateFunctionShowsFieldsWithCorrectDatatypeInAggregateByDropdown
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName                           |
@@ -190,7 +190,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountDistinctAsAggregate
 	| Windows7Mi: Communication \ DateTime |
 
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15510 @DAS15511 @DAS15512 @Cleanup @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15510 @DAS15511 @DAS15512 @Cleanup
 Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatSelectingAggregateFunctionShowsFieldsWithCorrectDatatypeInAggregateByDropdown	
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName                           |
@@ -220,7 +220,7 @@ Examples:
 	| Max     |
 	| Average |
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15524 @Cleanup @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15524 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountAsAggregateFunctionShowsFieldsWithCorrectValuesInOrderByDropDown
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName                           |
@@ -282,7 +282,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenCountDis
 	| Hostname Count distinct ASC  |
 	| Hostname Count distinct DESC |
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Cleanup @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenSumAggregateFunctionIsSelected
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName          |
@@ -304,7 +304,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenSumAggre
 	| HDD Total Size (GB) Sum ASC  |
 	| HDD Total Size (GB) Sum DESC |
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Cleanup @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenMinAggregateFunctionIsSelected
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName          |
@@ -326,7 +326,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenMinAggre
 	| HDD Total Size (GB) Minimum ASC  |
 	| HDD Total Size (GB) Minimum DESC |
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Cleanup @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenMaxAggregateFunctionIsSelected
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName          |
@@ -348,7 +348,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenMaxAggre
 	| HDD Total Size (GB) Maximum ASC  |
 	| HDD Total Size (GB) Maximum DESC |
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Cleanup @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenAvgAggregateFunctionIsSelected
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName          |
@@ -389,8 +389,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckNameAndLabelAndColorSchemeForEmptyOwn
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
-	| WidgetType | Title             | List            | SplitBy          | AggregateBy | AggregateFunction | OrderBy              | TableOrientation | MaxValues | ShowLegend | Type | Drilldown | Layout |
-	| Pie        | WidgetForDAS17467 | ListForDAS17467 | Owner Compliance |             | Count             | Owner Compliance ASC |                  |           | true       |      |           |        |
+	| WidgetType | Title             | List            | SplitBy          | AggregateFunction | OrderBy              | ShowLegend |
+	| Pie        | WidgetForDAS17467 | ListForDAS17467 | Owner Compliance | Count             | Owner Compliance ASC | true       |
 	And User selects "Show data labels" checkbox on the Create Widget page
 	Then Widget Preview is displayed to the user
 	And Color Scheme dropdown displayed with "Compliance Colour Scheme" placeholder 
@@ -420,8 +420,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckColorSchemePlaceholderForReadiness
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
-	| WidgetType | Title               | List              | SplitBy         | AggregateBy | AggregateFunction | OrderBy             | TableOrientation | MaxValues | ShowLegend | Type | Drilldown | Layout |
-	| Pie        | WidgetForDAS17467_1 | ListForDAS17467_1 | 1803: Readiness |             | Count             | 1803: Readiness ASC |                  |           | true       |      |           |        |
+	| WidgetType | Title               | List              | SplitBy         | AggregateFunction | OrderBy             | ShowLegend |
+	| Pie        | WidgetForDAS17467_1 | ListForDAS17467_1 | 1803: Readiness | Count             | 1803: Readiness ASC | true       |
 	And User selects "Show data labels" checkbox on the Create Widget page
 	Then Widget Preview is displayed to the user
 	And Color Scheme dropdown displayed with "Readiness Colour Scheme" placeholder 
@@ -447,8 +447,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCorrectColorSchemeisUsedWhenWidge
 	And User clicks Edit mode trigger on Dashboards page
 	When User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
-	| WidgetType | Title             | List            | SplitBy                           | AggregateBy | AggregateFunction | OrderBy                               | TableOrientation | MaxValues | ShowLegend | Type | Drilldown | Layout |
-	| Pie        | WidgetForDAS17515 | ListForDAS17515 | Windows7Mi: Application Readiness |             | Count             | Windows7Mi: Application Readiness ASC |                  | 10        | true       |      |           |        |
+	| WidgetType | Title             | List            | SplitBy                           | AggregateFunction | OrderBy                               | MaxValues | ShowLegend |
+	| Pie        | WidgetForDAS17515 | ListForDAS17515 | Windows7Mi: Application Readiness | Count             | Windows7Mi: Application Readiness ASC | 10        | true       |
 	Then Widget Preview is displayed to the user
 	And Color Scheme dropdown displayed with "Readiness Colour Scheme" placeholder
 	And Color Scheme dropdown is disabled

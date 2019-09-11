@@ -88,7 +88,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
         [NUnit.Framework.CategoryAttribute("DAS15737")]
         [NUnit.Framework.CategoryAttribute("DAS15662")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatColourSchemeIsDisplayedForReadinessSplitByInDropdown()
         {
             System.Exception lastException = null;
@@ -124,7 +123,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "Widgets",
                         "DAS15737",
                         "DAS15662",
-                        "Cleanup",
                         "Cleanup"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
@@ -259,30 +257,20 @@ this.FeatureBackground();
                         "WidgetType",
                         "Title",
                         "List",
-                        "Type",
                         "AggregateBy",
                         "AggregateFunction",
                         "SplitBy",
                         "OrderBy",
-                        "MaxValues",
-                        "ShowLegend",
-                        "TableOrientation",
-                        "Drilldown",
-                        "Layout"});
+                        "Drilldown"});
             table3.AddRow(new string[] {
                         "Line",
                         "Project ScheduleDAS16069",
                         "1803 ScheduleDAS16069",
-                        "",
                         "Hostname",
                         "Count distinct",
                         "1803: Pre-Migration \\ Scheduled Date",
                         "1803: Pre-Migration \\ Scheduled Date ASC",
-                        "",
-                        "",
-                        "",
-                        "Yes",
-                        ""});
+                        "Yes"});
 #line 47
  testRunner.And("User adds new Widget", ((string)(null)), table3, "And ");
 #line 50
@@ -346,7 +334,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS15920")]
         [NUnit.Framework.CategoryAttribute("DAS15662")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatLineWidgetHavingComplianceColumnsDisplayedCorrectlyOnDashboard()
         {
             System.Exception lastException = null;
@@ -382,7 +369,6 @@ this.FeatureBackground();
                         "Widgets",
                         "DAS15920",
                         "DAS15662",
-                        "Cleanup",
                         "Cleanup"});
 #line 71
 this.ScenarioInitialize(scenarioInfo);
@@ -411,30 +397,18 @@ this.FeatureBackground();
                         "WidgetType",
                         "Title",
                         "List",
-                        "Type",
-                        "AggregateBy",
                         "AggregateFunction",
                         "SplitBy",
                         "OrderBy",
-                        "MaxValues",
-                        "ShowLegend",
-                        "TableOrientation",
-                        "Drilldown",
-                        "Layout"});
+                        "Drilldown"});
             table8.AddRow(new string[] {
                         "Line",
                         "LineWidgetForDas15920",
                         "ListForDas15920",
-                        "",
-                        "",
                         "Count",
                         "Device Application Compliance",
                         "Device Application Compliance ASC",
-                        "",
-                        "",
-                        "",
-                        "Yes",
-                        ""});
+                        "Yes"});
 #line 80
  testRunner.And("User adds new Widget", ((string)(null)), table8, "And ");
 #line 83
@@ -457,7 +431,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
         [NUnit.Framework.CategoryAttribute("DAS15544")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatLineWidgetHasCorrectChronologicalOrder()
         {
@@ -491,7 +464,6 @@ this.FeatureBackground();
                         "Evergreen",
                         "EvergreenJnr_DashboardsPage",
                         "DAS15544",
-                        "Cleanup",
                         "Cleanup"});
 #line 90
 this.ScenarioInitialize(scenarioInfo);
@@ -518,30 +490,18 @@ this.FeatureBackground();
                         "WidgetType",
                         "Title",
                         "List",
-                        "Type",
-                        "AggregateBy",
                         "AggregateFunction",
                         "SplitBy",
                         "OrderBy",
-                        "MaxValues",
-                        "ShowLegend",
-                        "TableOrientation",
-                        "Drilldown",
-                        "Layout"});
+                        "Drilldown"});
             table10.AddRow(new string[] {
                         "Line",
                         "SortOrderCheckForDas15544",
                         "ListForDas15544",
-                        "",
-                        "",
                         "Count",
                         "Service Pack or Build",
                         "Service Pack or Build ASC",
-                        "",
-                        "",
-                        "",
-                        "Yes",
-                        ""});
+                        "Yes"});
 #line 98
  testRunner.And("User adds new Widget", ((string)(null)), table10, "And ");
 #line 101
@@ -636,30 +596,18 @@ this.FeatureBackground();
                         "WidgetType",
                         "Title",
                         "List",
-                        "Type",
                         "AggregateBy",
                         "AggregateFunction",
                         "SplitBy",
-                        "OrderBy",
-                        "MaxValues",
-                        "ShowLegend",
-                        "TableOrientation",
-                        "Drilldown",
-                        "Layout"});
+                        "OrderBy"});
             table12.AddRow(new string[] {
                         "Line",
                         "Project AllDevicesDAS15462",
                         "All Devices",
-                        "",
                         "Hostname",
                         "Count distinct",
                         "Operating System",
-                        "Operating System ASC",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""});
+                        "Operating System ASC"});
 #line 122
  testRunner.And("User adds new Widget", ((string)(null)), table12, "And ");
 #line 125
@@ -763,29 +711,15 @@ this.FeatureBackground();
                         "Title",
                         "List",
                         "SplitBy",
-                        "AggregateBy",
                         "AggregateFunction",
-                        "OrderBy",
-                        "TableOrientation",
-                        "MaxValues",
-                        "ShowLegend",
-                        "Type",
-                        "Drilldown",
-                        "Layout"});
+                        "OrderBy"});
             table15.AddRow(new string[] {
                         "Line",
                         "WidgetForDAS17825",
                         "ListForDAS17825",
                         "Windows7Mi: Application Readiness",
-                        "",
                         "Count",
-                        "Count ASC",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""});
+                        "Count ASC"});
 #line 146
  testRunner.And("User adds new Widget", ((string)(null)), table15, "And ");
 #line 149

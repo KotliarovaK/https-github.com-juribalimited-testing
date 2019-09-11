@@ -11,13 +11,13 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatValidationMessageAppearsWhenSavin
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
-	| WidgetType | Title | List        | SplitBy     | AggregateBy | AggregateFunction | OrderBy         | TableOrientation | MaxValues | ShowLegend |
-	| Pie        |       | All Devices | Device Type | Hostname    | Count distinct    | Device Type ASC |                  | 10        |            |
+	| WidgetType | Title | List        | SplitBy     | AggregateBy | AggregateFunction | OrderBy         | MaxValues |
+	| Pie        |       | All Devices | Device Type | Hostname    | Count distinct    | Device Type ASC | 10        |
 	Then Error message with "Widget Title should not be empty" text is displayed on Widget page
 	And There are no errors in the browser console
 	When User creates new Widget
-	| WidgetType | Title                  | List | SplitBy | AggregateBy | AggregateFunction | OrderBy | TableOrientation | MaxValues | ShowLegend |
-	|            | Dashboard for DAS14587 |      |         |             |                   |         |                  |           |            |
+	| WidgetType | Title                  |
+	|            | Dashboard for DAS14587 |
 	Then User sees widget with the next name "Dashboard for DAS14587" on Dashboards page
 	
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14578 @DAS14584 @Cleanup
@@ -26,8 +26,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckWidgetTitleIsLimitedToOneHundredChars
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
-	| WidgetType | Title                                                                                                       | List             | SplitBy     | AggregateBy | AggregateFunction | OrderBy         | TableOrientation | MaxValues | ShowLegend |
-	| Table      | Line with one hundred and seven chars Line with one hundred and seven chars Line with one hundred and seven | All Applications | Application | Application | Count distinct    | Application ASC | Horizontal       | 10        |            |
+	| WidgetType | Title                                                                                                       | List             | SplitBy     | AggregateBy | AggregateFunction | OrderBy         | TableOrientation | MaxValues |
+	| Table      | Line with one hundred and seven chars Line with one hundred and seven chars Line with one hundred and seven | All Applications | Application | Application | Count distinct    | Application ASC | Horizontal       | 10        |
 	Then User sees widget with the next name "Line with one hundred and seven chars Line with one hundred and seven chars Line with one hundred an" on Dashboards page
 	And Widget name "Line with one hundred and seven chars Line with one hundred and seven chars Line with one hundred an" has word break style on Dashboards page
 
@@ -37,13 +37,13 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWarningMessageAppearsOnceWhenSwit
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
-	| WidgetType | Title             | List             | SplitBy | AggregateFunction | AggregateBy | OrderBy   | TableOrientation | MaxValues | ShowLegend |
-	| Pie        | WidgetForDAS15900 | All Applications | Vendor  | Count             |             | Count ASC |                  | 10        | true       |
+	| WidgetType | Title             | List             | SplitBy | AggregateFunction | OrderBy   | MaxValues | ShowLegend |
+	| Pie        | WidgetForDAS15900 | All Applications | Vendor  | Count             | Count ASC | 10        | true       |
 	And User clicks Ellipsis menu for "WidgetForDAS15900" Widget on Dashboards page
 	And User clicks "Edit" item from Ellipsis menu on Dashboards page
 	And User adds new Widget
-	| WidgetType | Title                    | List        | SplitBy  | AggregateBy | AggregateFunction | OrderBy   | TableOrientation | MaxValues | ShowLegend | Type | Drilldown | Layout |
-	| Pie        | WidgetForDAS15900_Edited | All Devices | Hostname |             | Count             | Count ASC |                  | 11        | true       |      |           |        | 
+	| WidgetType | Title                    | List        | SplitBy  | AggregateFunction | OrderBy   | MaxValues | ShowLegend |
+	| Pie        | WidgetForDAS15900_Edited | All Devices | Hostname | Count             | Count ASC | 11        | true       |
 	When User clicks Show Dashboards panel icon on Dashboards page
 	And User clicks first Dashboard in dashboards list
 	Then User sees "You have unsaved changes. Are you sure you want to leave the page?" text in alert on Edit Widget page
@@ -78,7 +78,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatAggregateFunctionOrAggregateByDro
 	Then "Aggregate Function" dropdown is missing
 	And "Aggregate By" dropdown is missing
 
-@Evergreen @EvergreenJnr_DashboardsPage @DAS16958 @Cleanup @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @DAS16958 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatEditWidgetPageCanBeOpenedForWidgetHavingDeletedList
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName          |
@@ -88,8 +88,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatEditWidgetPageCanBeOpenedForWidge
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
-	| WidgetType | Title             | List      | SplitBy             | AggregateBy | AggregateFunction | OrderBy                 | TableOrientation | MaxValues | ShowLegend | Type | Drilldown | Layout |
-	| Bar        | WidgetForDAS16958 | List16958 | Secure Boot Enabled | Device Type | Count distinct    | Secure Boot Enabled ASC |                  | 10        | true       |      |           |        |
+	| WidgetType | Title             | List      | SplitBy             | AggregateBy | AggregateFunction | OrderBy                 | MaxValues | ShowLegend |
+	| Bar        | WidgetForDAS16958 | List16958 | Secure Boot Enabled | Device Type | Count distinct    | Secure Boot Enabled ASC | 10        | true       |
 	And User clicks the "CREATE" Action button
 	And Dashboard page loaded
 	And User lists were removed by API
@@ -107,8 +107,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckCheckboxLabelDisplaying
 	Then "Show legend" checkbox has a correct label
 	And "Show data labels" checkbox has a correct label
 	When User creates new Widget
-	| WidgetType | Title             | List        | SplitBy  | AggregateFunction | AggregateBy | OrderBy   | TableOrientation | MaxValues | ShowLegend |
-	| Pie        | WidgetForDAS16853 | All Devices | Hostname | Count             |             | Count ASC |                  | 10        | true       |
+	| WidgetType | Title             | List        | SplitBy  | AggregateFunction | OrderBy   | MaxValues | ShowLegend |
+	| Pie        | WidgetForDAS16853 | All Devices | Hostname | Count             | Count ASC | 10        | true       |
 	When User clicks Ellipsis menu for "WidgetForDAS16853" Widget on Dashboards page
 	And User clicks "Edit" item from Ellipsis menu on Dashboards page
 	Then "Show legend" checkbox has a correct label
