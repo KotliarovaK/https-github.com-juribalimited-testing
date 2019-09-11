@@ -628,12 +628,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenUserRememberedValueEqualsToGridCounter()
         {
             var foundRowsCounter = _driver.NowAt<BaseGridPage>();
+            //We need this wait for grid to be updated
+            //TODO replace my something more smart
+            Thread.Sleep(1000);
             _driver.WaitForDataLoading();
             _driver.WaitForElementToBeDisplayed(foundRowsCounter.ListRowsCounter);
 
             string rememberedNumber = _columnValue.Value;
 
-            Utils.Verify.AreEqualIgnoringCase(rememberedNumber == "1" ? $"{rememberedNumber} row" : $"{rememberedNumber} rows",
+            Verify.AreEqualIgnoringCase(rememberedNumber == "1" ? $"{rememberedNumber} row" : $"{rememberedNumber} rows",
                 foundRowsCounter.ListRowsCounter.Text.Replace(",", ""), "Incorrect rows count");
         }
 
