@@ -52,22 +52,22 @@ Scenario: EvergreenJnr_AdminPage_ChangingUserScopePermissionsForMailboxProject
 	Then Project "TestName11881" is displayed to user
 	When User selects "Scope" tab on the Project details page
 	When User selects "Scope Details" tab on the Project details page
-	And User navigates to the "User Scope" tab in the Scope section on the Project details page
+	And User navigates to the 'User Scope' tab on Project Scope Changes page
 	And User selects "Do not include users" checkbox on the Project details page
 	Then Scope List dropdown is disabled
 	Then User Scope checkboxes are disabled
 	Then Application Scope tab is hidden
 	When User selects "Scope Changes" tab on the Project details page
-	When User navigates to the 'Users' tab on Scope Changes page
+	When User navigates to the 'Users' tab on Project Scope Changes page
 	Then "Users to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page
-	And User navigates to the "User Scope" tab in the Scope section on the Project details page
+	And User navigates to the 'User Scope' tab on Project Scope Changes page
 	And User selects "Include users associated to mailboxes" checkbox on the Project details page
 	Then Scope List dropdown is active
 	Then User Scope checkboxes are active
 	Then Application Scope tab is displayed
 	When User selects "Scope Changes" tab on the Project details page
-	When User navigates to the 'Users' tab on Scope Changes page
+	When User navigates to the 'Users' tab on Project Scope Changes page
 	Then "Users to add (0 of 14747 selected)" is displayed to the user in the Project Scope Changes section
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Cleanup @Projects
@@ -78,7 +78,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingApplicationScopePermissionsForMailboxPr
 	Then Project "TestName12881" is displayed to user
 	When User selects "Scope" tab on the Project details page
 	And User selects "Scope Details" tab on the Project details page
-	And User navigates to the "Application Scope" tab in the Scope section on the Project details page
+	And User navigates to the 'Application Scope' tab on Project Scope Changes page
 	And User selects "Include applications" checkbox on the Project details page
 	Then Scope List dropdown is active
 	Then Application Scope checkboxes are active
@@ -86,7 +86,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingApplicationScopePermissionsForMailboxPr
 	Then Scope List dropdown is disabled
 	Then Application Scope checkboxes are disabled
 	When User selects "Scope Changes" tab on the Project details page
-	When User navigates to the 'Applications' tab on Scope Changes page
+	When User navigates to the 'Applications' tab on Project Scope Changes page
 	Then "Applications to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @Cleanup @Project_Creation_and_Scope @Projects
@@ -106,21 +106,21 @@ Scenario: EvergreenJnr_AdminPage_OnboardingMailboxesUsersApplicationsObjectsUsin
 	Then Project "TestProject65" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Mailboxes to add (0 of 14784 selected)" is displayed to the user in the Project Scope Changes section
-	When User expands the object to add
-	And User selects following Objects to the Project
+	When User expands multiselect to add objects
+	And User expands multiselect and selects following Objects
 	| Objects                                            |
 	| 003F5D8E1A844B1FAA5@bclabs.local (Hunter, Melanie) |
 	| 00DB4000EDD84951993@bclabs.local (CSC, SS)         |
-	When User navigates to the 'Users' tab on Scope Changes page
+	When User navigates to the 'Users' tab on Project Scope Changes page
 	Then "Users to add (0 of 14747 selected)" is displayed to the user in the Project Scope Changes section
-	When User expands the object to add 
-	And User selects following Objects to the Project
+	When User expands multiselect to add objects 
+	And User expands multiselect and selects following Objects
 	| Objects                            |
 	| 02E0346DF7804F25835 (Gill, Donna)  |
 	| 037AF4CF47C1452D8A4 (Vanetti, Joe) |
-	#When User navigates to the 'Applications' tab on Scope Changes page
+	#When User navigates to the 'Applications' tab on Project Scope Changes page
 	#Then "Applications to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
-	#When User expands the object to add 
+	#When User expands multiselect to add objects 
 	#And User selects following Objects
 	#| Objects                                          |
 	#| ACDSee 4.0.2 PowerPack Trial Version (4.00.0002) |
@@ -131,5 +131,5 @@ Scenario: EvergreenJnr_AdminPage_OnboardingMailboxesUsersApplicationsObjectsUsin
 	#Then "Applications to add (0 of 2079 selected)" is displayed to the user in the Project Scope Changes section
 	When User navigates to the 'Mailboxes' left menu item
 	Then "Mailboxes to add (0 of 14782 selected)" is displayed to the user in the Project Scope Changes section
-	When User navigates to the 'Users' tab on Scope Changes page
+	When User navigates to the 'Users' tab on Project Scope Changes page
 	Then "Users to add (0 of 14745 selected)" is displayed to the user in the Project Scope Changes section

@@ -280,7 +280,6 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyWhereS
 	Then "Computer: Workstation Replacement" content is displayed for "Windows7Mi: Path" column
 	When User perform search by "018UQ6KL9TF4YF"
 	Then "Computer: Workstation Replacement" content is displayed for "Windows7Mi: Path" column
-	When User moves "Birmingham Morning" slot to "Birmingham Afternoon" slot
 	When User closes Tools panel
 	And User clicks Close panel button
 	When User refreshes agGrid

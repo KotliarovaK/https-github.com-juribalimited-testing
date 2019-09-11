@@ -22,8 +22,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatBlueBannerIsDisplayedWithCorrectlyTex
 	Then Project "Project13347" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
 	Then open tab in the Project Scope Changes section is active
-	When User expands the object to add 
-	And User selects following Objects to the Project
+	When User expands multiselect to add objects 
+	And User expands multiselect and selects following Objects
 	| Objects         |
 	| 00K4CEEQ737BA4L |
 	| 00YWR8TJU4ZF8V  |
@@ -32,12 +32,12 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatBlueBannerIsDisplayedWithCorrectlyTex
 	| 06T5FX3CUY08AE  |
 	And User clicks the "UPDATE ALL CHANGES" Action button
 	And User clicks the "UPDATE PROJECT" Action button
-	And User navigates to the 'Users' left menu item
-	And User expands the object to add 
+	And User navigates to the 'Users' tab on Project Scope Changes page
+	And User expands multiselect to add objects 
 	When User selects all objects to the Project
-	And User navigates to the 'Applications' left menu item
-	And User expands the object to add 
-	And User selects following Objects to the Project
+	And User navigates to the 'Applications' tab on Project Scope Changes page
+	And User expands multiselect to add objects 
+	And User expands multiselect and selects following Objects
 	| Objects                                                                       |
 	| "WPF/E" (codename) Community Technology Preview (Feb 2007) (0.8.5.0)          |
 	| %SQL_PRODUCT_SHORT_NAME% Data Tools - BI for Visual Studio 2013 (12.0.2430.0) |
@@ -49,12 +49,12 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatBlueBannerIsDisplayedWithCorrectlyTex
 	Then Blue banner with "Object updates being queued, please wait" text is displayed
 	Then Success message is displayed and contains "14636 objects queued for onboarding, 0 objects offboarded" text
 	When User selects "Scope Details" tab on the Project details page
-	And User navigates to the "User Scope" tab in the Scope section on the Project details page
+	And User navigates to the 'User Scope' tab on Project Scope Changes page
 	When User selects "Do not include device owners" checkbox on the Project details page
-	And User navigates to the "Application Scope" tab in the Scope section on the Project details page
+	And User navigates to the 'Application Scope' tab on Project Scope Changes page
 	When User selects "Do not include applications" checkbox on the Project details page
 	And User selects "Scope Changes" tab on the Project details page
-	And User navigates to the 'Users' left menu item
+	And User navigates to the 'Users' tab on Project Scope Changes page
 	When User waits and expands the "Users" panel to remove
 	When User selects all objects to the Project
 	And User clicks the "UPDATE ALL CHANGES" Action button
@@ -102,7 +102,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAllCheckboxesOnScopeDetailsTabAreWork
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	And User selects "Scope Details" tab on the Project details page
-	And User navigates to the "User Scope" tab in the Scope section on the Project details page
+	And User navigates to the 'User Scope' tab on Project Scope Changes page
 	And User selects "Include users associated to mailboxes" checkbox on the Project details page
 	And User clicks "Owned mailboxes" associated checkbox on the Project details page
 	And User clicks "Delegated mailboxes" associated checkbox on the Project details page

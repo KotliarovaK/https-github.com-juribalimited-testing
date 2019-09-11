@@ -356,15 +356,17 @@ this.FeatureBackground();
  testRunner.When("User clicks content from \"Slots\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 65
  testRunner.Then("URL contains \"/capacity/slots/:Birmingham\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 66
+ testRunner.When("User click on \'Capacity Slot\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Items"});
             table2.AddRow(new string[] {
-                        "Birmingham Morning"});
-            table2.AddRow(new string[] {
                         "Birmingham Afternoon"});
-#line 66
- testRunner.And("\"Capacity Slot\" column content is displayed in the following order:", ((string)(null)), table2, "And ");
+            table2.AddRow(new string[] {
+                        "Birmingham Morning"});
+#line 67
+ testRunner.Then("\"Capacity Slot\" column content is displayed in the following order:", ((string)(null)), table2, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

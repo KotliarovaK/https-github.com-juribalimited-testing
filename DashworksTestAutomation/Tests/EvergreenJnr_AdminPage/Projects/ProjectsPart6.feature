@@ -21,7 +21,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedAfterAddin
 	When User clicks newly created object link
 	Then Project "TestName12336" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
-	And User expands the object to add
+	And User expands multiselect to add objects
 	And User selects all objects to the Project
 	Then "Devices to add (17279 of 17279 selected)" is displayed to the user in the Project Scope Changes section
 	When User cancels the selection objects in the Project
@@ -30,7 +30,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedAfterAddin
 	And User selects all objects to the Project
 	Then "Devices to add (5 of 17279 selected)" is displayed to the user in the Project Scope Changes section
 	When User cancels the selection objects in the Project
-	And User selects following Objects to the Project
+	And User expands multiselect and selects following Objects
 	| Objects         |
 	| 07RJRCQQJNBJIJQ |
 	| 0CFHJY5A8WLUB0J |
@@ -114,8 +114,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDevicesToAddAndRemoveAreChangingApprop
 	Then Project "DevicesProject" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Devices to add (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
-	When User expands the object to add 
-	When User adds following Objects to the Project
+	When User expands multiselect to add objects 
+	When User selects following Objects from the expandable multiselect
 	| Objects         |
 	| 00BDM1JUR8IF419 |
 	| 011PLA470S0B9DJ |

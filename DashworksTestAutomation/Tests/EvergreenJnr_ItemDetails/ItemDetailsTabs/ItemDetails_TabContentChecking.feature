@@ -10,7 +10,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOpenedSectionIsDisplayedCorrectlyOnT
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	When User click content from "Hostname" column
-	And User navigates to the 'Applications' left menu item
+	And User navigates to the 'Applications' tab on Project Scope Changes page
 	And User navigates to the "Evergreen Detail" sub-menu on the Details page
 	Then "Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" content is displayed in "Application" column
 	And "Advert - A0129C4E" content is displayed in "Advertisement" column

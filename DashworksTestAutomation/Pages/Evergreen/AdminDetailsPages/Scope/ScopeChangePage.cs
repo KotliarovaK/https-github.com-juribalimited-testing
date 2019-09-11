@@ -23,9 +23,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Scope
         [FindsBy(How = How.XPath, Using = ".//mat-pseudo-checkbox[contains(@class, 'checkbox-checked')]")]
         public IWebElement CheckedSomeItemCheckbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@aria-label='Toggle panel']")]
-        public IWebElement PlusButton { get; set; }
-
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();

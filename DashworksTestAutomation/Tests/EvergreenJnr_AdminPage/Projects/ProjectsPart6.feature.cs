@@ -164,7 +164,7 @@ this.FeatureBackground();
 #line 23
  testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 24
- testRunner.And("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User expands multiselect to add objects", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 25
  testRunner.And("User selects all objects to the Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 26
@@ -192,7 +192,7 @@ this.FeatureBackground();
             table1.AddRow(new string[] {
                         "0CFHJY5A8WLUB0J"});
 #line 33
- testRunner.And("User selects following Objects to the Project", ((string)(null)), table1, "And ");
+ testRunner.And("User expands multiselect and selects following Objects", ((string)(null)), table1, "And ");
 #line 37
  testRunner.Then("\"Devices to add (2 of 17279 selected)\" is displayed to the user in the Project Sc" +
                     "ope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -522,7 +522,7 @@ this.FeatureBackground();
  testRunner.Then("\"Devices to add (0 of 2 selected)\" is displayed to the user in the Project Scope " +
                     "Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 117
- testRunner.When("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User expands multiselect to add objects", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
@@ -531,7 +531,7 @@ this.FeatureBackground();
             table4.AddRow(new string[] {
                         "011PLA470S0B9DJ"});
 #line 118
- testRunner.When("User adds following Objects to the Project", ((string)(null)), table4, "When ");
+ testRunner.When("User selects following Objects from the expandable multiselect", ((string)(null)), table4, "When ");
 #line 122
  testRunner.Then("\"Devices to add (2 of 2 selected)\" is displayed to the user in the Project Scope " +
                     "Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

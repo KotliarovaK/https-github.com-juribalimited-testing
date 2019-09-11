@@ -13,14 +13,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedAfterUpdati
 	Then Project "TestProject5" is displayed to user
 	When User selects "Scope" tab on the Project details page
 	And User selects "Scope Details" tab on the Project details page
-	And User navigates to the "Application Scope" tab in the Scope section on the Project details page
+	And User navigates to the 'Application Scope' tab on Project Scope Changes page
 	And User clicks "Entitled to the device owner" checkbox on the Project details page
 	And User selects "Scope Changes" tab on the Project details page
-	And User navigates to the 'Applications' left menu item
+	And User navigates to the 'Applications' tab on Project Scope Changes page
 	Then "Applications to add (0 of 2129 selected)" is displayed to the user in the Project Scope Changes section
-	When User expands the object to add 
+	When User expands multiselect to add objects 
 	Then Objects are displayed in alphabetical order on the Admin page
-	When User selects following Objects to the Project
+	When User expands multiselect and selects following Objects
 	| Objects                     |
 	| 20040610sqlserverck (1.0.0) |
 	| 7zip                        |
@@ -59,7 +59,7 @@ Scenario: EvergreenJnr_ChecksThatDeviceScopeDDLIsDisabledWhenDoNotIncludeOwnedDe
 	When User clicks newly created object link
 	Then Project "Rainbow" is displayed to user
 	When User selects "Scope Details" tab on the Project details page
-	And User navigates to the "User Scope" tab in the Scope section on the Project details page
+	And User navigates to the 'User Scope' tab on Project Scope Changes page
 	When User selects "Do not include device owners" checkbox on the Project details page
 	Then Scope List dropdown is disabled
 
@@ -71,23 +71,23 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedCheckboxIsSelectedAfterSwitchi
 	Then Project "TestProject13" is displayed to user
 	When User selects "Scope" tab on the Project details page
 	And User selects "Scope Changes" tab on the Project details page
-	And User navigates to the 'Devices' left menu item
+	And User navigates to the 'Devices' tab on Project Scope Changes page
 	Then Update Project buttons is disabled
-	When User expands the object to add
+	When User expands multiselect to add objects
 	Then Objects are displayed in alphabetical order on the Admin page
-	When User adds following Objects to the Project
+	When User selects following Objects from the expandable multiselect
 	| Objects        |
 	| 00HA7MKAVVFDAV |
 	Then Update Project button is active
 	And "Devices to add (1 of 17279 selected)" is displayed to the user in the Project Scope Changes section
-	When User navigates to the 'Users' tab on Scope Changes page
-	When User expands the object to add
+	When User navigates to the 'Users' tab on Project Scope Changes page
+	When User expands multiselect to add objects
 	Then Objects are displayed in alphabetical order on the Admin page
-	When User adds following Objects to the Project
+	When User selects following Objects from the expandable multiselect
 	| Objects                   |
 	| AAH0343264 (Luc Gauthier) |
-	And User navigates to the 'Devices' left menu item
-	When User expands the object to add 
+	And User navigates to the 'Devices' tab on Project Scope Changes page
+	When User expands multiselect to add objects 
 	Then following items are still selected
 	And "Devices to add (1 of 17279 selected)" is displayed to the user in the Project Scope Changes section
 
@@ -98,14 +98,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedP
 	| DDPPProject14 | All Devices | None            | Standalone Project |
 	And User selects "Scope" tab on the Project details page
 	And User selects "Scope Changes" tab on the Project details page
-	When User adds following Objects to the Project
+	When User selects following Objects from the expandable multiselect
 	| Objects        |
 	| 0317IPQGQBVAQV |
 	| 00I0COBFWHOF27 |
 	When User clicks the "UPDATE PROJECT" Action button
 	Then Success message is displayed and contains "2 objects queued for onboarding, 0 objects offboarded" text
-	When User navigates to the 'Users' tab on Scope Changes page
-	And User adds following Objects to the Project
+	When User navigates to the 'Users' tab on Project Scope Changes page
+	And User selects following Objects from the expandable multiselect
 	| Objects                       |
 	| AAG081456 (Melanie Z. Fowler) |
 	| AAH0343264 (Luc Gauthier)     |
