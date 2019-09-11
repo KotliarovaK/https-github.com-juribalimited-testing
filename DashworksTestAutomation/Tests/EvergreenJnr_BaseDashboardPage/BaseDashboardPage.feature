@@ -57,21 +57,21 @@ Examples:
 Scenario Outline: EvergreenJnr_AllLists_CheckThatSaveListFunctionIsAvailableAfterSortingColumns
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
-	When User click on '<ColumnName>' column header
+	When User clicks on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in ascending order
 	And Save to New Custom List element is displayed
-	When User click on '<AddSortOrders>' column header
+	When User clicks on '<AddSortOrders>' column header
 	Then data in table is sorted by '<AddSortOrders>' column in ascending order
 	And Save to New Custom List element is displayed
-	When User click on '<AddSortOrders>' column header
+	When User clicks on '<AddSortOrders>' column header
 	Then data in table is sorted by '<AddSortOrders>' column in descending order
 	And Save to New Custom List element is displayed
-	When User click on '<ColumnName>' column header
+	When User clicks on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in ascending order
 	And Save to New Custom List element is displayed
-	When User click on '<ColumnName>' column header
+	When User clicks on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in descending order
-	When User click on '<ColumnName>' column header
+	When User clicks on '<ColumnName>' column header
 	Then Save to New Custom List element is NOT displayed
 
 Examples:
@@ -117,7 +117,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatURLsAreUpdatedAfterAddingSortingAndC
 	Then "Cost Centre" column is added to URL on "Devices" page
 	And "ComputerSc: In Scope" column is added to URL on "Devices" page
 	And "Windows7Mi: Object ID" column is added to URL on "Devices" page
-	When User click on 'Owner Cost Centre' column header
+	When User clicks on 'Owner Cost Centre' column header
 	Then data in table is sorted by 'Owner Cost Centre' column in ascending order
 	And Ascending order sorted on "Owner Cost Centre" column is displayed in URL
 	When User navigates to the "All Devices" list
@@ -164,42 +164,42 @@ Scenario Outline: EvergreenJnr_AllList_CheckThatEditListFunctionIsAvailableAfter
 	| ColumnName  |
 	| <AddColumn> |
 	And User create dynamic list with "DynamicList1" name on "<ListName>" page
-	And User click on '<ColumnName>' column header
+	And User clicks on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in ascending order
 	And Edit List menu is displayed
-	When User click on '<AddSortOrders>' column header
+	When User clicks on '<AddSortOrders>' column header
 	Then data in table is sorted by '<AddSortOrders>' column in ascending order
 	And Edit List menu is displayed
-	When User click on '<AddSortOrders>' column header
+	When User clicks on '<AddSortOrders>' column header
 	Then data in table is sorted by '<AddSortOrders>' column in descending order
 	And Edit List menu is displayed
-	When User click on '<ColumnName>' column header
+	When User clicks on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in ascending order
 	And Edit List menu is displayed
-	When User click on '<ColumnName>' column header
+	When User clicks on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in descending order
-	When User click on '<ColumnName>' column header
+	When User clicks on '<ColumnName>' column header
 	Then Edit List menu is not displayed
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
 	And User selects "Create static list" in the Actions dropdown
 	And User create static list with "StaticList1" name
-	And User click on '<ColumnName>' column header
+	And User clicks on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in ascending order
 	And Edit List menu is displayed
-	When User click on '<AddSortOrders>' column header
+	When User clicks on '<AddSortOrders>' column header
 	Then data in table is sorted by '<AddSortOrders>' column in ascending order
 	And Edit List menu is displayed
-	When User click on '<AddSortOrders>' column header
+	When User clicks on '<AddSortOrders>' column header
 	Then data in table is sorted by '<AddSortOrders>' column in descending order
 	And Edit List menu is displayed
-	When User click on '<ColumnName>' column header
+	When User clicks on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in ascending order
 	And Edit List menu is displayed
-	When User click on '<ColumnName>' column header
+	When User clicks on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in descending order
-	When User click on '<ColumnName>' column header
+	When User clicks on '<ColumnName>' column header
 
 Examples:
 	| ListName     | ColumnName    | AddSortOrders    | AddColumn                |
@@ -213,7 +213,7 @@ Examples:
 Scenario: EvergreenJnr_DevicesList_CheckThatToolTipIsDisplayedWithCreateProjectButtonFromAnUnsavedList
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
-	When User click on 'Hostname' column header
+	When User clicks on 'Hostname' column header
 	Then data in table is sorted by 'Hostname' column in ascending order
 	When User clicks Create button on the Base Dashboard Page
 	Then tooltip is displayed with "This list must be saved before using it to create a project" text for Create Project button
@@ -258,7 +258,7 @@ Examples:
 Scenario: EvergreenJnr_DevicesList_CheckThatCorrectMessageIsDisplayedBeforeDeletingListWhichHasDependencies
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
-	When User click on 'Hostname' column header
+	When User clicks on 'Hostname' column header
 	When User create dynamic list with "DynamicList15444" name on "Devices" page
 	Then "DynamicList15444" list is displayed to user
 	When User clicks Create Project from the main list

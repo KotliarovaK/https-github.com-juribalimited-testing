@@ -27,7 +27,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatPivotsAreNotShownInTheListToSelectO
 	| Pivot_Project_14224 | All Devices | None            | Standalone Project |
 	And User navigates to the 'Scope' left menu item
 	And User selects "Scope Details" tab on the Project details page
-	And User navigates to the "Device Scope" tab in the Scope section on the Project details page
+	And User navigates to the 'Device Scope' tab on Project Scope Changes page
 	Then following Values are displayed in "Scope" drop-down on the Admin page:
 	| Values                                |
 	| All Devices                           |
@@ -41,7 +41,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatPivotsAreNotShownInTheListToSelectO
 	| Migration Type Capacity               |
 	| New York - Devices                    |
 	| Using App Saved List Readiness Filter |
-	When User navigates to the "User Scope" tab in the Scope section on the Project details page
+	When User navigates to the 'User Scope' tab on Project Scope Changes page
 	Then following Values are displayed in "User Scope" drop-down on the Admin page:
 	| Values                             |
 	| All Users                          |
@@ -49,7 +49,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatPivotsAreNotShownInTheListToSelectO
 	| Users List (Complex) - BROKEN LIST |
 	| Users Readiness Columns & Filters  |
 	| Users with Device Count            |
-	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
+	When User navigates to the 'Application Scope' tab on Project Scope Changes page
 	Then following Values are displayed in "Application Scope" drop-down on the Admin page:
 	| Values                                   |
 	| All Applications                         |
@@ -110,7 +110,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatUserCanCreateOneMorePivotOnSelectedPa
 Scenario: EvergreenJnr_UsersList_ChecksThatUserCanCreateOneMorePivotOnCreatedList
 	When User clicks "Users" on the left-hand menu
 	Then "All Users" list should be displayed to the user
-	When User click on 'Username' column header
+	When User clicks on 'Username' column header
 	Then data in table is sorted by 'Username' column in ascending order
 	When User create dynamic list with "Dynamic_List_DAS14206" name on "Users" page
 	Then "Dynamic_List_DAS14206" list is displayed to user

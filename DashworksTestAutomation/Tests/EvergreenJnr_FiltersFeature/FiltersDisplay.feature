@@ -1012,7 +1012,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatChildrenOfTreeBasedFiltersAreIncludedI
 Scenario: EvergreenJnr_AllLists_CheckThatFilterTextDisplaysActualListName 
 	When User clicks "Applications" on the left-hand menu
 	Then "All Applications" list should be displayed to the user
-	When User click on 'Application' column header
+	When User clicks on 'Application' column header
 	And User create dynamic list with "ApplicationList" name on "Applications" page
 	And User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
@@ -1046,11 +1046,11 @@ Scenario: EvergreenJnr_AllLists_CheckThatFilterTextDisplaysActualListName
 Scenario: EvergreenJnr_AllLists_CheckThatTextInTheFilterPanelDisplaysTheCurrentListName
 	When User clicks "Applications" on the left-hand menu
 	Then "All Applications" list should be displayed to the user
-	When User click on 'Application' column header
+	When User clicks on 'Application' column header
 	And User create dynamic list with "ApplicationList1" name on "Applications" page
 	And User navigates to the "All Applications" list
 	Then "All Applications" list should be displayed to the user
-	When User click on 'Vendor' column header
+	When User clicks on 'Vendor' column header
 	And User create dynamic list with "ApplicationList2" name on "Applications" page
 	And User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user

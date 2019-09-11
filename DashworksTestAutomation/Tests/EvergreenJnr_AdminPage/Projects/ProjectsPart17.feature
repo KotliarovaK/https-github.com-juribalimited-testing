@@ -50,26 +50,26 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCo
 	Then Project "TestProject5" is displayed to user
 	When User selects "Scope" tab on the Project details page
 	When User selects "Scope Changes" tab on the Project details page
-	And User navigates to the 'Applications' left menu item
+	And User navigates to the 'Applications' tab on Project Scope Changes page
 	Then "Applications to add (0 of 2081 selected)" is displayed to the user in the Project Scope Changes section
-	When User navigates to the 'Devices' tab on Scope Changes page
+	When User navigates to the 'Devices' tab on Project Scope Changes page
 	Then "Devices to add (0 of 16819 selected)" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page
-	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
+	When User navigates to the 'Application Scope' tab on Project Scope Changes page
 	Then All Associations are selected by default
-	When User navigates to the "Device Scope" tab in the Scope section on the Project details page
+	When User navigates to the 'Device Scope' tab on Project Scope Changes page
 	And User selects "Do not include owned devices" checkbox on the Project details page
 	Then Scope List dropdown is disabled
-	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
+	When User navigates to the 'Application Scope' tab on Project Scope Changes page
 	Then following associations are disabled:
 	| AssociationName                         |
 	| Entitled to a device owned by the user  |
 	| Installed on a device owned by the user |
 	| Used on an owned device by any user     |
 	When User selects "Scope Changes" tab on the Project details page
-	And User navigates to the 'Applications' left menu item
+	And User navigates to the 'Applications' tab on Project Scope Changes page
 	Then "Applications to add (0 of 247 selected)" is displayed to the user in the Project Scope Changes section
-	When User navigates to the 'Devices' tab on Scope Changes page
+	When User navigates to the 'Devices' tab on Project Scope Changes page
 	Then "Devices to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
 	When User navigates to the 'Details' left menu item
 	And User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
@@ -82,7 +82,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCo
 Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeletingUsedForProjectLists 
 	When User clicks "Users" on the left-hand menu
 	Then "All Users" list should be displayed to the user
-	When User click on 'Username' column header
+	When User clicks on 'Username' column header
 	And User create dynamic list with "ListForProject" name on "Users" page
 	When Project created via API and opened
 	| ProjectName  | Scope          | ProjectTemplate | Mode               |
@@ -137,25 +137,25 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	When User enters "NewProjectName" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	When User selects "Scope Details" tab on the Project details page
-	And User navigates to the "User Scope" tab in the Scope section on the Project details page
+	And User navigates to the 'User Scope' tab on Project Scope Changes page
 	When User selects "Do not include device owners" checkbox on the Project details page
 	Then Scope List dropdown is disabled
-	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
+	When User navigates to the 'Application Scope' tab on Project Scope Changes page
 	Then following associations are disabled:
 	| AssociationName                        |
 	| Entitled to the device owner           |
 	| Used by the device owner on any device |
 	When User selects "Scope Changes" tab on the Project details page
-	And User navigates to the 'Users' left menu item 
+	And User navigates to the 'Users' tab on Project Scope Changes page 
 	Then "Users to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page
-	And User navigates to the "User Scope" tab in the Scope section on the Project details page
+	And User navigates to the 'User Scope' tab on Project Scope Changes page
 	When User selects "Include device owners" checkbox on the Project details page
 	Then Scope List dropdown is active
-	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
+	When User navigates to the 'Application Scope' tab on Project Scope Changes page
 	Then All Associations are available
 	When User selects "Scope Changes" tab on the Project details page
-	And User navigates to the 'Users' left menu item 
+	And User navigates to the 'Users' tab on Project Scope Changes page 
 	Then "Users to add (0 of 14629 selected)" is displayed to the user in the Project Scope Changes section
 	When User click on Back button
 	And User enters "NewProjectName" text in the Search field for "Project" column

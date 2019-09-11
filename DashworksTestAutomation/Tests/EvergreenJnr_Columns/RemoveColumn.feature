@@ -20,7 +20,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	Then ColumnName is added to the list
 	| ColumnName   |
 	| Boot Up Date |
-	When User click on 'Device Key' column header
+	When User clicks on 'Device Key' column header
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When User removes "Device Key" column by Column panel
@@ -28,7 +28,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	Then ColumnName is removed from the list
 	| ColumnName |
 	| Device Key |
-	When User click on 'Boot Up Date' column header
+	When User clicks on 'Boot Up Date' column header
 	When User remove sorted column on "Devices" page by URL
 	| ColumnName   |
 	| Boot Up Date |
@@ -89,7 +89,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	| SelectedCheckboxes  |
 	| Generic             |
 	Then "Directory Type" filter is added to the list
-	When User click on 'Windows7Mi: Category' column header
+	When User clicks on 'Windows7Mi: Category' column header
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	Then User is expand "Selected Columns" columns category
@@ -101,7 +101,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	Then "Windows7Mi: Category" filter is added to the list
-	When User click on 'Directory Type' column header
+	When User clicks on 'Directory Type' column header
 	When User remove sorted column on "Devices" page by URL
 	| ColumnName     |
 	| Directory Type |
@@ -120,14 +120,14 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	| ColumnName                                                                     |
 	| Boot Up Date                                                                   |
 	| Windows7Mi: Computer Information ---- Text fill; Text fill; \ Date & Time Task |
-	When User click on 'Boot Up Date' column header
+	When User clicks on 'Boot Up Date' column header
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When User removes "Boot Up Date" column by Column panel
 	Then ColumnName is removed from the list
 	| ColumnName   |
 	| Boot Up Date |
-	When User click on 'Windows7Mi: Computer Information ---- Text fill; Text fill; \ Date & Time Task' column header
+	When User clicks on 'Windows7Mi: Computer Information ---- Text fill; Text fill; \ Date & Time Task' column header
 	When User remove sorted column on "Devices" page by URL
 	| ColumnName                                                                     |
 	| Windows7Mi: Computer Information ---- Text fill; Text fill; \ Date & Time Task |
@@ -179,7 +179,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	| SelectedCheckboxes  |
 	| Generic             |
 	Then "Directory Type" filter is added to the list
-	When User click on 'Windows7Mi: Category' column header
+	When User clicks on 'Windows7Mi: Category' column header
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	Then User is expand "Selected Columns" columns category
@@ -191,7 +191,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	Then "Windows7Mi: Category" filter is added to the list
-	When User click on 'Directory Type' column header
+	When User clicks on 'Directory Type' column header
 	When User remove sorted column on "Devices" page by URL
 	| ColumnName     |
 	| Directory Type |
@@ -213,7 +213,7 @@ Scenario: EvergreenJnr_UsersList_CheckThat500ErrorPageIsNotDisplayedAfterRemovin
 	| Home Drive      |
 	Then "Last Logon Date" column is added to URL on "Users" page
 	And "Home Drive" column is added to URL on "Users" page
-	When User click on 'Last Logon Date' column header
+	When User clicks on 'Last Logon Date' column header
 	And User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When User removes "Last Logon Date" column by Column panel
@@ -229,7 +229,7 @@ Scenario: EvergreenJnr_UsersList_CheckThat500ErrorPageIsNotDisplayedAfterRemovin
 Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnsFromUrlIsWorksCorrectly
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
-	When User click on 'Hostname' column header
+	When User clicks on 'Hostname' column header
 	Then data in table is sorted by 'Hostname' column in ascending order
 	When User create dynamic list with "TestListC6636D" name on "Devices" page
 	Then "TestListC6636D" list is displayed to user
@@ -255,7 +255,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnsFromUrlIsWorksCorrect
 Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterFromUrlWorksCorrectly
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
-	When User click on 'Hostname' column header
+	When User clicks on 'Hostname' column header
 	Then data in table is sorted by 'Hostname' column in ascending order
 	When User create dynamic list with "TestList0E8A84" name on "Devices" page
 	When User clicks the Columns button
@@ -289,7 +289,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterFromUrlWorksC
 Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterAndCustomListFromUrlWorksCorrectly
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
-	When User click on 'Hostname' column header
+	When User clicks on 'Hostname' column header
 	Then data in table is sorted by 'Hostname' column in ascending order
 	When User create dynamic list with "TestList3C5E3C" name on "Devices" page
 	Then "TestList3C5E3C" list is displayed to user

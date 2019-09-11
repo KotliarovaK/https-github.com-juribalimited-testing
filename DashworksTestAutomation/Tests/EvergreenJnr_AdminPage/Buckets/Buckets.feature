@@ -12,7 +12,7 @@ Scenario: EvergreenJnr_AdminPage_AddingDevicesFromBuckets
 	| TestBucket6 | Admin IT | false     |
 	And User navigates to newly created Bucket
 	Then "TestBucket6" bucket details is displayed to the user
-	When User navigates to the 'Devices' tab on Scope Changes page
+	When User navigates to the 'Devices' tab on Project Scope Changes page
 	And User clicks the "ADD DEVICE" Action button
 	And User navigates to the 'Add from buckets' left menu item on the Buckets page
 	And User adds "Unassigned" objects to bucket
@@ -179,9 +179,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketA
 	And User clicks content from "Project" column
 	Then Project "Project12905" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
-	And User navigates to the 'Devices' left menu item
-	When User expands the object to add 
-	And User selects following Objects to the Project
+	And User navigates to the 'Devices' tab on Project Scope Changes page
+	When User expands multiselect to add objects 
+	And User expands multiselect and selects following Objects
 	| Objects         |
 	| 001BAQXT6JWFPI  |
 	| 001PSUMZYOW581  |

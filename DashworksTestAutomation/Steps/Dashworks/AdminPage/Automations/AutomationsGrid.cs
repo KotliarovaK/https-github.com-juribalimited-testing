@@ -27,13 +27,5 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations
             var checkbox = _driver.NowAt<AutomationsPage>();
             checkbox.SelectCheckboxByName(checkboxName).Click();
         }
-
-        [Then(@"""(.*)"" text is displayed in ""(.*)"" field")]
-        public void ThenTextIsDisplayedInField(string text, string fieldName)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsTrue(page.GetFieldByFieldName(fieldName).GetAttribute("value").Contains(text),
-                $"Text in {fieldName} field is different");
-        }
     }
 }

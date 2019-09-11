@@ -56,7 +56,7 @@ Scenario: EvergreenJnr_DevicesList_CheckTheSortOrderIsSavedForExistingListAndNot
 	Then Filters panel is displayed to the user
 	When User add "City" filter where type is "Equals" with added column and "London" Lookup option
 	Then "City" filter is added to the list
-	When User click on 'Owner Display Name' column header
+	When User clicks on 'Owner Display Name' column header
 	Then data in table is sorted by 'Owner Display Name' column in ascending order
 	When User create dynamic list with "Custom List TestName" name on "Devices" page
 	Then "Custom List TestName" list is displayed to user
@@ -71,7 +71,7 @@ Scenario: EvergreenJnr_DevicesList_CheckTheSortOrderIsSavedForExistingListAndNot
 	And User selects "Create static list" in the Actions dropdown
 	And User create static list with "Static List TestName" name
 	Then "Static List TestName" list is displayed to user
-	When User click on 'Owner Display Name' column header
+	When User clicks on 'Owner Display Name' column header
 	Then data in table is sorted by 'Owner Display Name' column in ascending order
 	When User update current custom list
 	When User navigates to the "All Devices" list
@@ -106,7 +106,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewlySavedListIsCreatedWithTheCorrec
 	Then ColumnName is added to the list
 	| ColumnName |
 	| Compliance |
-	When User click on 'Owner Display Name' column header
+	When User clicks on 'Owner Display Name' column header
 	Then data in table is sorted by 'Owner Display Name' column in ascending order
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user

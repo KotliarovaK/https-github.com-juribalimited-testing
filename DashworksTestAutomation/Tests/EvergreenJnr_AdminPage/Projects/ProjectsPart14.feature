@@ -22,9 +22,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameWhichStartsWithLowerCaseLe
 	Then "Projects" page should be displayed to the user
 	When User enters "project12949" text in the Search field for "Project" column
 	And User clicks content from "Project" column
-	When User navigates to the 'Users' tab on Scope Changes page
-	And User expands the object to add
-	And User selects following Objects to the Project
+	When User navigates to the 'Users' tab on Project Scope Changes page
+	And User expands multiselect to add objects
+	And User expands multiselect and selects following Objects
 	| Objects                      |
 	| ADD135461 (Luke W. Clark)    |
 	| ADO048752 (Elena Z. Le)      |
@@ -35,9 +35,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameWhichStartsWithLowerCaseLe
 	Then Warning message with "3 users will be added" text is displayed on the Admin page
 	When User clicks the "UPDATE PROJECT" Action button
 	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
-	When User navigates to the 'Applications' tab on Scope Changes page
-	When User expands the object to add
-	And User selects following Objects to the Project
+	When User navigates to the 'Applications' tab on Project Scope Changes page
+	When User expands multiselect to add objects
+	And User expands multiselect and selects following Objects
 	| Objects              |
 	| Adobe Reader 5ver2.1 |
 	| allCLEAR 6.0 Viewer  |
@@ -46,13 +46,13 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameWhichStartsWithLowerCaseLe
 	Then Warning message with "3 applications will be added" text is displayed on the Admin page
 	When User clicks the "UPDATE PROJECT" Action button
 	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
-	When User navigates to the 'Users' tab on Scope Changes page
+	When User navigates to the 'Users' tab on Project Scope Changes page
 	Then following objects were not found
 	| Objects                      |
 	| ADD135461 (Luke W. Clark)    |
 	| ADO048752 (Elena Z. Le)      |
 	| ADX520696 (Bridgett E. Cobb) |
-	When User navigates to the 'Applications' tab on Scope Changes page
+	When User navigates to the 'Applications' tab on Project Scope Changes page
 	Then following objects were not found
 	| Objects              |
 	| Adobe Reader 5ver2.1 |
@@ -99,12 +99,12 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatColourOfOnboardedAppIsDisplayedCorrec
 	Then Project "Project12965" is displayed to user
 	When User selects "Scope" tab on the Project details page
 	When User selects "Scope Details" tab on the Project details page
-	And User navigates to the "Application Scope" tab in the Scope section on the Project details page
+	And User navigates to the 'Application Scope' tab on Project Scope Changes page
 	And User selects "RED" color in the Application Scope tab on the Project details page
 	And User selects "Scope Changes" tab on the Project details page
-	And User navigates to the 'Applications' left menu item
-	And User expands the object to add 
-	And User adds following Objects to the Project
+	And User navigates to the 'Applications' tab on Project Scope Changes page
+	And User expands multiselect to add objects 
+	And User selects following Objects from the expandable multiselect
 	| Objects                                                      |
 	| ALS - Designing a Microsoft Windows 2000 Dir. Services eBook |
 	When User clicks the "UPDATE ALL CHANGES" Action button
@@ -133,9 +133,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOffboardedObjectsAreListedAfterSelectO
 	Then Project "UsersProject2" is displayed to user
 	When User selects "Scope" tab on the Project details page
 	When User selects "Scope Changes" tab on the Project details page
-	And User navigates to the 'Devices' left menu item
-	And User expands the object to add
-	And User adds following Objects to the Project
+	And User navigates to the 'Devices' tab on Project Scope Changes page
+	And User expands multiselect to add objects
+	And User selects following Objects from the expandable multiselect
 	| Objects         |
 	| 01HMZTRG6OQAOF  |
 	| 02C80G8RFTPA9E  |
@@ -148,12 +148,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOffboardedObjectsAreListedAfterSelectO
 	When User clicks the "UPDATE PROJECT" Action button
 	Then Success message is displayed and contains "4 objects queued for onboarding, 0 objects offboarded" text
 	When User selects "Scope Details" tab on the Project details page
-	And User navigates to the "Device Scope" tab in the Scope section on the Project details page
+	And User navigates to the 'Device Scope' tab on Project Scope Changes page
 	When User selects "Do not include owned devices" checkbox on the Project details page
-	And User navigates to the "Application Scope" tab in the Scope section on the Project details page
+	And User navigates to the 'Application Scope' tab on Project Scope Changes page
 	When User selects "Do not include applications" checkbox on the Project details page
 	When User selects "Scope Changes" tab on the Project details page
-	When User adds following Objects to the Project on "Devices" tab
+	When User selects following Objects from the expandable multiselect on "Devices" tab
 	| Objects         |
 	| 01HMZTRG6OQAOF  |
 	| 02C80G8RFTPA9E  |

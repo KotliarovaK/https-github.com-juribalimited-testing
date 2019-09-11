@@ -49,7 +49,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckWarningMessageUsingPrivateListForPubl
 	| Build Date |
 	And User create dynamic list with "First_List_DAS16380" name on "Devices" page
 	And User navigates to the "All Devices" list
-	And User click on 'Hostname' column header
+	And User clicks on 'Hostname' column header
 	And User create dynamic list with "Second_List_DAS16380" name on "Devices" page
 	Then "Second_List_DAS16380" list is displayed to user
 	When Dashboard with "Dashboard for DAS16380" name created via API and opened
@@ -272,7 +272,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCantBeChangedForRea
 	Then Evergreen Dashboards page should be displayed to the user
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
-	When User click on 'Hostname' column header
+	When User clicks on 'Hostname' column header
 	And User create custom list with "DeviceListFor14841_Read" name
 	Then "DeviceListFor14841_Read" list is displayed to user
 	When User clicks the List Details button
@@ -321,7 +321,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForEdit
 	Then Evergreen Dashboards page should be displayed to the user
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
-	When User click on 'Hostname' column header
+	When User clicks on 'Hostname' column header
 	And User create custom list with "DeviceListFor14841_Edit" name
 	Then "DeviceListFor14841_Edit" list is displayed to user
 	When User clicks the List Details button
@@ -372,7 +372,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdmi
 	
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
-	When User click on 'Hostname' column header
+	When User clicks on 'Hostname' column header
 	And User create custom list with "DeviceListFor14841_Admin" name
 	Then "DeviceListFor14841_Admin" list is displayed to user
 	

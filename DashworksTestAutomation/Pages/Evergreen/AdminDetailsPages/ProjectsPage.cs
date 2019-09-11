@@ -201,13 +201,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElement(button);
         }
 
-        public void NavigateToProjectTabInScopeSectionByName(string tabName)
-        {
-            var tab = Driver.FindElement(
-                By.XPath($".//div[@class='detail-label ng-star-inserted']//span[text()='{tabName}']"));
-            tab.Click();
-        }
-
         public void ClickToTabByNameProjectScopeChanges(string tabName)
         {
             var selector =

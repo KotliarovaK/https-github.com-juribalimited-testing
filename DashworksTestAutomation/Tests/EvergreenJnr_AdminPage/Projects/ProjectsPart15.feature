@@ -31,8 +31,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedBucketsIsDisplayedForOnboarded
 	And User clicks content from "Project" column
 	Then Project "UsersProject3" is displayed to user
 	When user selects "UsersProject3Group" in the Bucket dropdown
-	And User expands the object to add 
-	And User selects following Objects to the Project
+	And User expands multiselect to add objects 
+	And User expands multiselect and selects following Objects
 	| Objects                               |
 	| 003F5D8E1A844B1FAA5 (Hunter, Melanie) |
 	And User clicks the "UPDATE ALL CHANGES" Action button
@@ -98,16 +98,16 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectScopeChangesIsLoadedSuc
 	Then Project "<TestName>" is displayed to user
 	When User selects "Scope" tab on the Project details page
 	When User selects "<ListToScope1>" in the Scope Project details
-	And User navigates to the "<ScopeTab1>" tab in the Scope section on the Project details page
+	And User navigates to the '<ScopeTab1>' tab on Project Scope Changes page
 	And User selects "<ListToScope2>" in the Scope Project details
-	And User navigates to the "Application Scope" tab in the Scope section on the Project details page
+	And User navigates to the 'Application Scope' tab on Project Scope Changes page
 	When  User selects "Include applications" checkbox on the Project details page
 	And User selects "ApplicationsStaticList12157" in the Scope Project details
 	And User selects "Scope Changes" tab on the Project details page
 	Then "<ObjectsToAdd1>" is displayed to the user in the Project Scope Changes section
 	When User navigates to the '<ScopeChanges1>' left menu item
 	Then "<ObjectsToAdd2>" is displayed to the user in the Project Scope Changes section
-	When User navigates to the 'Applications' tab on Scope Changes page
+	When User navigates to the 'Applications' tab on Project Scope Changes page
 	Then "<ObjectsToAdd3>" is displayed to the user in the Project Scope Changes section
 	Then There are no errors in the browser console
 
@@ -123,7 +123,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatItemsToAddValuesAreNotCachedAfterScope
 	| ProjectName | Scope       | ProjectTemplate | Mode               |
 	| DAS11981    | All Devices | None            | Standalone Project |
 	When User selects "Scope" tab on the Project details page
-	And User navigates to the "Application Scope" tab in the Scope section on the Project details page
+	And User navigates to the 'Application Scope' tab on Project Scope Changes page
 	And User clicks following checkboxes on the Project details page:
 	| CheckboxesToBeClicked                  |
 	| Entitled to the device                 |
@@ -132,19 +132,19 @@ Scenario: EvergreenJnr_AdminPage_CheckThatItemsToAddValuesAreNotCachedAfterScope
 	| Used on the device by the device owner |
 	| Used on the device by any user         |
 	And User selects "Scope Changes" tab on the Project details page
-	And User navigates to the 'Applications' left menu item
+	And User navigates to the 'Applications' tab on Project Scope Changes page
 	Then "Applications to add (0 of 212 selected)" is displayed to the user in the Project Scope Changes section
-	When User navigates to the 'Users' tab on Scope Changes page
+	When User navigates to the 'Users' tab on Project Scope Changes page
 	Then "Users to add (0 of 14629 selected)" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page
-	And User navigates to the "Application Scope" tab in the Scope section on the Project details page
+	And User navigates to the 'Application Scope' tab on Project Scope Changes page
 	And User clicks "Entitled to the device" checkbox on the Project details page
-	And User navigates to the "User Scope" tab in the Scope section on the Project details page
+	And User navigates to the 'User Scope' tab on Project Scope Changes page
 	And User selects "Do not include device owners" checkbox on the Project details page
 	And User selects "Scope Changes" tab on the Project details page
-	And User navigates to the 'Applications' left menu item
+	And User navigates to the 'Applications' tab on Project Scope Changes page
 	Then "Applications to add (0 of 1059 selected)" is displayed to the user in the Project Scope Changes section
-	When User navigates to the 'Users' tab on Scope Changes page
+	When User navigates to the 'Users' tab on Project Scope Changes page
 	Then "Users to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS13428 @Cleanup
@@ -155,9 +155,9 @@ Scenario: EvergreenJnr_AdminPage_TheGreenBannerIsNotDisplayedIfBannerWasBeShownO
 	Then Project "Project12965" is displayed to user
 	When User selects "Scope" tab on the Project details page
 	When User selects "Scope Changes" tab on the Project details page
-	And User navigates to the 'Devices' left menu item
-	And User expands the object to add 
-	And User adds following Objects to the Project
+	And User navigates to the 'Devices' tab on Project Scope Changes page
+	And User expands multiselect to add objects 
+	And User selects following Objects from the expandable multiselect
 	| Objects         |
 	| 0623U41CZ73RV2Q |
 	When User clicks the "UPDATE ALL CHANGES" Action button

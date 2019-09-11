@@ -52,7 +52,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogMessageForDeletedTaskInAction
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects '17247Project' option from 'Project' autocomplete
 	When User selects 'Test' option from 'Stage' autocomplete
-	When User selects "DAS17247_Task" in the "Task" dropdown for Actions
+	When User selects 'DAS17247_Task' option from 'Task' autocomplete
 	When User selects "Update" Update Value on Action panel
 	When User selects "Not Applicable" Value on Action panel
 	And User selects "Update" Update Date on Action panel
@@ -96,7 +96,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedU
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'USE ME FOR AUTOMATION(USR SCHDLD)' option from 'Project' autocomplete
 	When User selects 'Stage 1' option from 'Stage' autocomplete
-	When User selects "Radiobutton Readiness Date Owner Task (User)" in the "Task" dropdown for Actions
+	When User selects 'Radiobutton Readiness Date Owner Task (User)' option from 'Task' autocomplete
 	And User selects "Update" Update Value on Action panel
 	And User selects "On Hold" Value on Action panel
 	And User selects "Update" Update Date on Action panel
@@ -150,7 +150,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedU
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	When User selects 'One' option from 'Stage' autocomplete
-	When User selects "Radio Date Owner User" in the "Task" dropdown for Actions
+	When User selects 'Radio Date Owner User' option from 'Task' autocomplete
 	And User selects "No change" Update Value on Action panel
 	And User selects "No change" Update Date on Action panel
 	And User selects "No change" Update Owner on Action panel
@@ -209,7 +209,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateOwnerForUpdateValueInDevicesScopedAu
 	And "Maryna Kyslyak" content is displayed in "zDeviceAut: Stage B \ Combination Task App (Owner)" column
 	And "Admin IT" content is displayed in "zDeviceAut: Stage B \ Combination Task App (Team)" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17846 @Cleanup @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17846 @DAS17974 @Cleanup @Not_Ready
 #Waiting for "zDevice Sch for Automations Feature" project on automation server from GD
 Scenario: EvergreenJnr_AdminPage_CheckUpdateDateForUpdateValueInDevicesScopedAutomationWithCapacitySlot
 	When User clicks Admin on the left-hand menu
@@ -235,6 +235,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateDateForUpdateValueInDevicesScopedAut
 	And User enters "17846_Automation" text in the Search field for "Automation" column
 	And User clicks "Run now" option in Cog-menu for "17846_Automation" item on Admin page
 	And User selects "Automation Log" tab on the Project details page
+	When User clicks refresh button in the browser
 	And User enters "17846_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
 	When User clicks String Filter button for "Type" column on the Admin page
@@ -248,6 +249,35 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateDateForUpdateValueInDevicesScopedAut
 	| zDeviceAut: Stage C \ Date Only with Capacity (Slot) |
 	Then "5 Sep 2019" content is displayed in "zDeviceAut: Stage C \ Date Only with Capacity" column
 	And "DAS-17846 Slot Device" content is displayed in "zDeviceAut: Stage C \ Date Only with Capacity (Slot)" column
+	#Update Action
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Automations" link on the Admin page
+	When User enters "17846_Automation" text in the Search field for "Automation" column
+	And User clicks content from "Automation" column
+	When User navigates to the 'Actions' left menu item
+	And User clicks content from "Action" column
+	And User selects 'Remove' in the 'Update Date' dropdown
+	And User clicks the "UPDATE" Action button
+	#Check updated Automation
+	When User clicks "Automations" navigation link on the Admin page
+	When User enters "17846_Automation" text in the Search field for "Automation" column
+	When User clicks "Run now" option in Cog-menu for "17846_Automation" item on Admin page
+	When User selects "Automation Log" tab on the Project details page
+	When User clicks refresh button in the browser
+	When User enters "17846_Automation" text in the Search field for "Automation" column
+	Then "SUCCESS" content is displayed for "Outcome" column
+	When User clicks String Filter button for "Type" column on the Admin page
+	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	And User clicks content from "Objects" column
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                                           |
+	| zDeviceAut: Stage C \ Date Only with Capacity        |
+	| zDeviceAut: Stage C \ Date Only with Capacity (Slot) |
+	Then "" content is displayed in "zDeviceAut: Stage C \ Date Only with Capacity" column
+	And "" content is displayed in "zDeviceAut: Stage C \ Date Only with Capacity (Slot)" column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17846 @Cleanup @Not_Ready
 #Waiting for "zDevice Sch for Automations Feature" project on automation server from GD

@@ -19,7 +19,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThat500ErrorIsNotDisplayedAfterSorting
 	When User add following columns using URL to the "Mailboxes" page:
 	| ColumnName                 |
 	| Owner Department Full Path |
-	When User click on 'Owner Department Full Path' column header
+	When User clicks on 'Owner Department Full Path' column header
 	Then data in table is sorted by 'Owner Department Full Path' column in ascending order
 	And "All Mailboxes" list should be displayed to the user
 
@@ -79,11 +79,11 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatConsoleErrorsAreNotDisplayedAft
 	When User add following columns using URL to the "<ListName>" page:
 	| ColumnName               |
 	| UserSchedu: Readiness ID |
-	When User click on 'UserSchedu: Readiness ID' column header
+	When User clicks on 'UserSchedu: Readiness ID' column header
 	Then Content is present in the newly added column
 	| ColumnName               |
 	| UserSchedu: Readiness ID |
-	When User click on 'UserSchedu: Readiness ID' column header
+	When User clicks on 'UserSchedu: Readiness ID' column header
 	Then numeric data in table is sorted by 'UserSchedu: Readiness ID' column in descending order
 	Then full list content is displayed to the user
 	Then There are no errors in the browser console
@@ -108,8 +108,8 @@ Scenario: EvergreenJnr_ApplicationsLists_CheckThatNoDataIsDisplayedInTheApplicat
 	| SelectedCheckboxes |
 	| FALSE              |
 	Then "Windows7Mi: In Scope" filter is added to the list
-	When User click on 'Windows7Mi: In Scope' column header
-	And User click on 'Windows7Mi: In Scope' column header
+	When User clicks on 'Windows7Mi: In Scope' column header
+	And User clicks on 'Windows7Mi: In Scope' column header
 	When User clicks the Filters button
 	Then data in table is sorted by 'Windows7Mi: In Scope' column in ascending order
 	Then Content is empty in the column
@@ -128,8 +128,8 @@ Scenario: EvergreenJnr_MailboxesLists_CheckThatTheLowestValueOfUserCountColumnIs
 	Then ColumnName is added to the list
 	| ColumnName |
 	| User Count |
-	When User click on 'User Count' column header
-	When User click on 'User Count' column header
+	When User clicks on 'User Count' column header
+	When User clicks on 'User Count' column header
 	Then numeric data in table is sorted by 'User Count' column in ascending order
 	Then Lowest value of "User Count" column is null
 
@@ -148,9 +148,9 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThat500ErrorIsNotDisplayedAfterAddi
 	| None               |
 	Then "<FilterName>" filter is added to the list
 	When User clicks the Filters button
-	And User click on '<ColumnHeader>' column header
+	And User clicks on '<ColumnHeader>' column header
 	Then color data is sorted by '<ColumnHeader>' column in ascending order
-	When User click on '<ColumnHeader>' column header
+	When User clicks on '<ColumnHeader>' column header
 	Then color data is sorted by '<ColumnHeader>' column in descending order
 
 Examples:
@@ -297,13 +297,13 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatStateCountyAndPostalCodeColumns
 	| ColumnName   |
 	| State/County |
 	| Postal Code  |
-	When User click on 'State/County' column header
+	When User clicks on 'State/County' column header
 	Then data in table is sorted by 'State/County' column in ascending order
-	When User click on 'State/County' column header
+	When User clicks on 'State/County' column header
 	Then data in table is sorted by 'State/County' column in descending order
-	When User click on 'Postal Code' column header
+	When User clicks on 'Postal Code' column header
 	Then data in table is sorted by 'Postal Code' column in ascending order
-	When User click on 'Postal Code' column header
+	When User clicks on 'Postal Code' column header
 	Then data in table is sorted by 'Postal Code' column in descending order
 
 Examples:
@@ -322,8 +322,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatLanguageColumnIsDisplayedOnTheUserList
 	Then ColumnName is added to the list
 	| ColumnName           |
 	| Windows7Mi: Language |
-	When User click on 'Windows7Mi: Language' column header
-	When User click on 'Windows7Mi: Language' column header
+	When User clicks on 'Windows7Mi: Language' column header
+	When User clicks on 'Windows7Mi: Language' column header
 	Then "English" content is displayed in "Windows7Mi: Language" column
 
 @Evergreen @Mailboxes @Users @EvergreenJnr_Columns @AddColumnAction @DAS16716
@@ -333,9 +333,9 @@ Scenario Outline: EvergreenJnr_AllList_CheckThatSortingByEvergreenRingColumnWork
 	And ColumnName is entered into the search box and the selection is clicked
 	| ColumnName     |
 	| Evergreen Ring |
-	And User click on 'Evergreen Ring' column header
+	And User clicks on 'Evergreen Ring' column header
 	Then data in table is sorted by 'Evergreen Ring' column in ascending order
-	When User click on 'Evergreen Ring' column header
+	When User clicks on 'Evergreen Ring' column header
 	Then data in table is sorted by 'Evergreen Ring' column in descending order
 
 	Examples:

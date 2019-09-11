@@ -15,7 +15,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatLayoutFilterForCreatedListsIsWorkedC
 	| 001PSUMZYOW581 |
 	Then "StaticFilterList_2" list is displayed to user
 	When User navigates to the "All Devices" list
-	When User click on 'Hostname' column header
+	When User clicks on 'Hostname' column header
 	When User create dynamic list with "DynamicFilterList_2" name on "Devices" page
 	Then "DynamicFilterList_2" list is displayed to user
 	When User navigates to Pivot
@@ -101,7 +101,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDashworkWorksAfterChangingPivotSetti
 	| 001PSUMZYOW581 |
 	Then "StaticFilterList_1" list is displayed to user
 	When User navigates to the "All Devices" list
-	When User click on 'Hostname' column header
+	When User clicks on 'Hostname' column header
 	When User create dynamic list with "DynamicFilterList_1" name on "Devices" page
 	Then "DynamicFilterList_1" list is displayed to user
 	When User navigates to Pivot

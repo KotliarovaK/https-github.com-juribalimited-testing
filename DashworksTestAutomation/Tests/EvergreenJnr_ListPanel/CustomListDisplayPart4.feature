@@ -30,7 +30,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSortingWillBeWorkForExistingSavedSta
 	| Compliance |
 	| Import     |
 	When User update current custom list
-	When User click on 'Owner Display Name' column header
+	When User clicks on 'Owner Display Name' column header
 	Then data in table is sorted by 'Owner Display Name' column in ascending order
 	And Edit List menu is displayed
 
@@ -48,7 +48,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSortingWillBeWorkForExistingSavedDyn
 	Then "City" filter is added to the list
 	When User create dynamic list with "Dynamic List TestName qq2r" name on "Devices" page
 	Then "Dynamic List TestName qq2r" list is displayed to user
-	When User click on 'Compliance' column header
+	When User clicks on 'Compliance' column header
 	Then color data is sorted by 'Compliance' column in ascending order
 	And Edit List menu is displayed
 
@@ -63,7 +63,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForActiveLis
 	| Green              |
 	| Amber              |
 	Then "Compliance" filter is added to the list
-	When User click on 'Compliance' column header
+	When User clicks on 'Compliance' column header
 	Then data in table is sorted by 'Compliance' column in ascending order
 	When User create dynamic list with "Dynamic List TestName" name on "Devices" page
 	Then "Dynamic List TestName" list is displayed to user
@@ -90,7 +90,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForActiveLis
 	| ColumnName      |
 	| Build Date      |
 	| First Seen Date |
-	When User click on 'Owner Display Name' column header
+	When User clicks on 'Owner Display Name' column header
 	Then data in table is sorted by 'Owner Display Name' column in ascending order
 	When User update current custom list
 	Then "Static List TestName" list is displayed to user
@@ -144,7 +144,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForDifferent
 	Then "Secure Boot List TestName" list is displayed to user
 	When User clicks "Applications" on the left-hand menu
 	Then "All Applications" list should be displayed to the user
-	When User click on 'Application' column header
+	When User clicks on 'Application' column header
 	Then data in table is sorted by 'Application' column in ascending order
 	When User create dynamic list with "TestList569889" name on "Applications" page
 	When User clicks "Devices" on the left-hand menu

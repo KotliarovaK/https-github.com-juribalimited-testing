@@ -2530,7 +2530,7 @@ this.FeatureBackground();
  testRunner.When("User add \"Windows7Mi: Category\" filter where type is \"Does not equal\" without add" +
                     "ed column and following checkboxes:", ((string)(null)), table42, "When ");
 #line 585
- testRunner.When("User click on \'Windows7Mi: Category\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'Windows7Mi: Category\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table43 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
@@ -2995,7 +2995,7 @@ this.FeatureBackground();
  testRunner.When("User add \"Application\" filter where type is \"Equals\" with added column and follow" +
                     "ing value:", ((string)(null)), table55, "When ");
 #line 689
- testRunner.When("User click on \'Device Count (Entitled)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'Device Count (Entitled)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 690
  testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 691
@@ -6361,7 +6361,7 @@ this.FeatureBackground();
 #line 1457
  testRunner.Then("Content is empty in the column", ((string)(null)), table118, "Then ");
 #line 1463
- testRunner.When("User click on \'Owner title\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'Owner title\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table119 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
@@ -7587,8 +7587,8 @@ this.FeatureBackground();
  testRunner.When("User Add And \"Domain\" filter where type is \"Equals\" with added column and Lookup " +
                     "option", ((string)(null)), table133, "When ");
 #line 1740
- testRunner.When("User click on \'UserEvergr: Stage 2 \\ Dropdown Non RAG Date (User) (Slot)\' column " +
-                    "header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'UserEvergr: Stage 2 \\ Dropdown Non RAG Date (User) (Slot)\' column" +
+                    " header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table134 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
@@ -7610,8 +7610,8 @@ this.FeatureBackground();
  testRunner.Then("following content is displayed in the \"UserEvergr: Stage 2 \\ Dropdown Non RAG Dat" +
                     "e (User) (Slot)\" column", ((string)(null)), table134, "Then ");
 #line 1750
- testRunner.When("User click on \'UserEvergr: Stage 2 \\ Dropdown Non RAG Date (User) (Slot)\' column " +
-                    "header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'UserEvergr: Stage 2 \\ Dropdown Non RAG Date (User) (Slot)\' column" +
+                    " header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table135 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
@@ -7708,7 +7708,7 @@ this.FeatureBackground();
  testRunner.When("User Add And \"Device Type\" filter where type is \"Equals\" with added column and Lo" +
                     "okup option", ((string)(null)), table137, "When ");
 #line 1773
- testRunner.When("User click on \'1803: Pre-Migration \\ Scheduled Date (Slot)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'1803: Pre-Migration \\ Scheduled Date (Slot)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table138 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
@@ -7736,7 +7736,7 @@ this.FeatureBackground();
  testRunner.Then("following content is displayed in the \"1803: Pre-Migration \\ Scheduled Date (Slot" +
                     ")\" column", ((string)(null)), table138, "Then ");
 #line 1786
- testRunner.When("User click on \'1803: Pre-Migration \\ Scheduled Date (Slot)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'1803: Pre-Migration \\ Scheduled Date (Slot)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table139 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
@@ -7832,8 +7832,8 @@ this.FeatureBackground();
                     "lot)\" filter where type is \"Does not equal\" with added column and following chec" +
                     "kboxes:", ((string)(null)), table140, "When ");
 #line 1809
- testRunner.When("User click on \'UserEvergr: Stage 3 \\ Radiobutton Readiness Date Owner (Applicatio" +
-                    "n) (Slot)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'UserEvergr: Stage 3 \\ Radiobutton Readiness Date Owner (Applicati" +
+                    "on) (Slot)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table141 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
@@ -7851,8 +7851,8 @@ this.FeatureBackground();
  testRunner.Then("following content is displayed in the \"UserEvergr: Stage 3 \\ Radiobutton Readines" +
                     "s Date Owner (Application) (Slot)\" column", ((string)(null)), table141, "Then ");
 #line 1817
- testRunner.When("User click on \'UserEvergr: Stage 3 \\ Radiobutton Readiness Date Owner (Applicatio" +
-                    "n) (Slot)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'UserEvergr: Stage 3 \\ Radiobutton Readiness Date Owner (Applicati" +
+                    "on) (Slot)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table142 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
@@ -7949,7 +7949,7 @@ this.FeatureBackground();
  testRunner.When("User Add And \"Owner Display Name\" filter where type is \"Equals\" with added column" +
                     " and following value:", ((string)(null)), table144, "When ");
 #line 1840
- testRunner.When("User click on \'MailboxEve: 1 \\ Scheduled - mailbox (Slot)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'MailboxEve: 1 \\ Scheduled - mailbox (Slot)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table145 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
@@ -7963,7 +7963,7 @@ this.FeatureBackground();
  testRunner.Then("following content is displayed in the \"MailboxEve: 1 \\ Scheduled - mailbox (Slot)" +
                     "\" column", ((string)(null)), table145, "Then ");
 #line 1846
- testRunner.When("User click on \'MailboxEve: 1 \\ Scheduled - mailbox (Slot)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'MailboxEve: 1 \\ Scheduled - mailbox (Slot)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table146 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});

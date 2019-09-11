@@ -191,10 +191,10 @@ Scenario: EvergreenJnr_UsersList_ChecksThatTheNumberOfCountersInTheTabIsEqualToT
 	When User navigates to the "Device Project Summary" sub-menu on the Details page
 	Then "Device Project Summary" tab is displayed on left menu on the Details page and contains '15' count of items
 	And "15" rows found label displays on Details Page
-	When User navigates to the 'Devices' tab on Scope Changes page
+	When User navigates to the 'Devices' left menu item
 	Then "Devices" tab is displayed on left menu on the Details page and contains '2' count of items
 	And "2" rows found label displays on Details Page
-	When User navigates to the 'Applications' tab on Scope Changes page
+	When User navigates to the 'Applications' left menu item
 	And User navigates to the "Evergreen Summary" sub-menu on the Details page
 	Then "Evergreen Summary" tab is displayed on left menu on the Details page and contains '7' count of items
 	And "7" rows found label displays on Details Page
@@ -226,7 +226,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatTheNumberOfCountersInTheTabIsEqualToT
 	When User type "allanj" in Global Search Field
 	Then User clicks on "allanj (Jo Allan)" search result
 	And Details page for "allanj (Jo Allan)" item is displayed to the user
-	When User navigates to the 'Applications' tab on Scope Changes page
+	When User navigates to the 'Applications' left menu item
 	And User navigates to the "Advertisements" sub-menu on the Details page
 	Then "Advertisements" tab is displayed on left menu on the Details page and contains '5' count of items
 	And "5" rows found label displays on Details Page
@@ -241,7 +241,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatCollectionsSubMenuCounterMatchTheNumbe
 	When User perform search by "allanj"
 	And User click content from "Username" column
 	Then Details page for "allanj (Jo Allan)" item is displayed to the user
-	When User navigates to the 'Applications' tab on Scope Changes page
+	When User navigates to the 'Applications' left menu item
 	And User navigates to the "Collections" sub-menu on the Details page
 	Then "9" rows found label displays on Details Page
 	And "Collections" tab is displayed on left menu on the Details page and contains '9' count of items
