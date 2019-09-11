@@ -89,7 +89,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheLinkCanBeOpenedAndTheLinkHasARigh
 	And User click back button in the browser
 	And Details page for "001BAQXT6JWFPI" item is displayed to the user
 	And "Havoc (Big Data)" project is selected in the Top bar on Item details page
-	When User navigates to the 'Applications' tab on Project Scope Changes page
+	When User navigates to the 'Applications' left menu item
 	And User clicks "Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" link on the Details Page
 	Then Details page for "Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" item is displayed to the user
 	And "Havoc (Big Data)" project is selected in the Top bar on Item details page
@@ -484,8 +484,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatLastLogoffDateFieldIsNotDisplayedAtT
 	When User perform search by "001BAQXT6JWFPI"
 	And User click content from "Hostname" column
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
-	When User navigates to the 'Details' left menu item
-	And User navigates to the "Device Owner" sub-menu on the Details page
+	When User navigates to the "Device Owner" sub-menu on the Details page
 	Then field with "Last Logoff Date" text is not displayed in expanded tab on the Details Page
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17735
