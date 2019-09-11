@@ -799,6 +799,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Projects\Scope\History\CheckHistoryContainOnlyOnboardAction.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CheckHistoryContainOnlyOnboardAction.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr_AdminPage\Readiness.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1695,6 +1700,10 @@
     <None Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart2.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ProjectsPart2.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Projects\Scope\History\CheckHistoryContainOnlyOnboardAction.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CheckHistoryContainOnlyOnboardAction.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_AdminPage\Readiness.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
