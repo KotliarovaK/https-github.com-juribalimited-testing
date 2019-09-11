@@ -5,7 +5,8 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Mailboxes @EvergreenJnr_ActionsPanel @BulkUpdate @DAS17878
+@Evergreen @Mailboxes @EvergreenJnr_ActionsPanel @BulkUpdate @DAS17878 @Not_Ready
+#Waiting for "Update custom field" on the automation
 Scenario Outline: EvergreenJnr_AllLists_Check
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
