@@ -247,7 +247,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12999")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Projects")]
-        [NUnit.Framework.CategoryAttribute("TEST")]
         public virtual void EvergreenJnr_ChecksThatDeviceScopeDDLIsDisabledWhenDoNotIncludeOwnedDevicesIsSelected()
         {
             System.Exception lastException = null;
@@ -285,8 +284,7 @@ this.FeatureBackground();
                         "DAS12333",
                         "DAS12999",
                         "Cleanup",
-                        "Projects",
-                        "TEST"});
+                        "Projects"});
 #line 50
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -339,7 +337,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Project_Creation_and_Scope")]
         [NUnit.Framework.CategoryAttribute("Projects")]
-        [NUnit.Framework.CategoryAttribute("TEST")]
         public virtual void EvergreenJnr_AdminPage_CheckThatSelectedCheckboxIsSelectedAfterSwitchingBetweenTabs()
         {
             System.Exception lastException = null;
@@ -380,8 +377,7 @@ this.FeatureBackground();
                         "DAS12645",
                         "Cleanup",
                         "Project_Creation_and_Scope",
-                        "Projects",
-                        "TEST"});
+                        "Projects"});
 #line 67
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -467,7 +463,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Project_Creation_and_Scope")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Projects")]
-        [NUnit.Framework.CategoryAttribute("TEST")]
         public virtual void EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedProjects()
         {
             System.Exception lastException = null;
@@ -508,8 +503,7 @@ this.FeatureBackground();
                         "Cleanup",
                         "Project_Creation_and_Scope",
                         "Projects",
-                        "Do_Not_Run_With_Projects",
-                        "TEST"});
+                        "Do_Not_Run_With_Projects"});
 #line 95
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
