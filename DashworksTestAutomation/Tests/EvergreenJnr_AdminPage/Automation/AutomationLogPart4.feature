@@ -29,7 +29,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateAndRemoveTaskValueForUpdateValueInUs
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'zMailbox Sch for Automations Feature' option from 'Project' autocomplete
 	When User selects 'Stage 3' option from 'Stage' autocomplete
-	When User selects "Radio Date Task" in the "Task" dropdown for Actions
+	When User selects 'Radio Date Task' option from 'Task' autocomplete
 	And User selects "No change" Update Value on Action panel
 	And User selects "Update" Update Date on Action panel
 	And User selects "3 Apr 2019" Date on Action panel

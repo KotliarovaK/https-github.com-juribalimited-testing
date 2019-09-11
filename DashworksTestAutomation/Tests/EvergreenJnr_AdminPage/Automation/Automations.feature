@@ -425,7 +425,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridLoadsWithActionsForAnAutoma
 	When User enters '15309_Action' text to 'Action Name' textbox
 	When User selects 'Update path' in the 'Action Type' dropdown
 	When User selects '1803 Rollout' option from 'Project' autocomplete
-	When User selects "Undetermined" in the "Path" dropdown for Actions
+	When User selects 'Undetermined' option from 'Path' autocomplete
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "click here to view the 15309_Action action" link
 	When User have opened column settings for "Action" column
@@ -601,7 +601,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateAndCreateActionsFunctionalityForAuto
 	When User enters '17171_Action' text to 'Action Name' textbox
 	When User selects 'Update path' in the 'Action Type' dropdown
 	When User selects 'Migration Project Phase 2 (User Project)' option from 'Project' autocomplete
-	When User selects "[Default (User)]" in the "Path" dropdown for Actions
+	When User selects '[Default (User)]' option from 'Path' autocomplete
 	When User clicks the "CREATE" Action button
 	Then Error message with "This automation is currently running" text is displayed
 	When User navigates to the 'Actions' left menu item
@@ -703,7 +703,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeviceLisFiltertHasAppropriateAutomati
 	And User enters '15949_Action' text to 'Action Name' textbox
 	And User selects 'Update path' in the 'Action Type' dropdown
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
-	And User selects "Computer: Laptop Replacement" in the "Path" dropdown for Actions
+	And User selects 'Computer: Laptop Replacement' option from 'Path' autocomplete
 	And User clicks the "CREATE" Action button
 	And User clicks "Automations" link on the Admin page
 	And User clicks "Run now" option in Cog-menu for "DAS15949_Automation" item on Admin page and wait for processing

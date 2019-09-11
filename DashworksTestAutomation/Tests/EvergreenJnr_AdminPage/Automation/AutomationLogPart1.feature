@@ -26,13 +26,13 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsLogGridForRunningAutomationWith
 	When User enters '16890_Action' text to 'Action Name' textbox
 	When User selects 'Update path' in the 'Action Type' dropdown
 	When User selects '16890Project' option from 'Project' autocomplete
-	When User selects "[Default (Computer)]" in the "Path" dropdown for Actions
+	When User selects '[Default (Computer)]' option from 'Path' autocomplete
 	And User clicks the "CREATE" Action button
 	When User clicks the "CREATE ACTION" Action button
 	When User enters 'New_Action' text to 'Action Name' textbox
 	When User selects 'Update path' in the 'Action Type' dropdown
 	When User selects '1803 Rollout' option from 'Project' autocomplete
-	When User selects "Undetermined" in the "Path" dropdown for Actions
+	When User selects 'Undetermined' option from 'Path' autocomplete
 	And User clicks the "CREATE" Action button
 	When User clicks "Automations" navigation link on the Admin page
 	When User clicks "Projects" link on the Admin page
@@ -113,7 +113,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSuccessfulRunInOutcomeColumn
 	When User enters 'D16974_Action' text to 'Action Name' textbox
 	When User selects 'Update path' in the 'Action Type' dropdown
 	When User selects 'User Evergreen Capacity Project' option from 'Project' autocomplete
-	When User selects "[Default (User)]" in the "Path" dropdown for Actions
+	When User selects '[Default (User)]' option from 'Path' autocomplete
 	And User clicks the "CREATE" Action button
 	When User clicks "Automations" navigation link on the Admin page
 	When User enters "D16974_Automation" text in the Search field for "Automation" column
@@ -211,7 +211,7 @@ Scenario: EvergreenJnr_AdminPage_CheckBrokenListValidationWhenRunningAnAutomatio
 	When User enters "17011_Automation" text in the Search field for "Automation" column
 	Then "LIST HAS ERRORS" content is displayed for "Outcome" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AutomationLog @Automations @DAS17212 @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @AutomationLog @Automations @DAS17212 @Cleanup @Not_Ready
 Scenario Outline: EvergreenJnr_AdminPage_CheckSuccessfulRunningAutomationWithMainListsInTheScope
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user

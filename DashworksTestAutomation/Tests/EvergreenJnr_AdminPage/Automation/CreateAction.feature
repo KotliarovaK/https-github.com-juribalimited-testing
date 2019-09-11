@@ -20,7 +20,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonForActionsWorksCorrectly
 	When User enters '15427_Action' text to 'Action Name' textbox
 	When User selects 'Update path' in the 'Action Type' dropdown
 	When User selects 'USE ME FOR AUTOMATION(DEVICE SCHDLD)' option from 'Project' autocomplete
-	When User selects "[Default (Computer)]" in the "Path" dropdown for Actions
+	When User selects '[Default (Computer)]' option from 'Path' autocomplete
 	When User clicks the "CREATE" Action button
 	When User selects "Details" tab on the Project details page
 	Then Automation page is displayed correctly
@@ -28,7 +28,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonForActionsWorksCorrectly
 	When User clicks content from "Action" column
 	When User enters '15427_NewName' text to 'Action Name' textbox
 	When User selects 'USE ME FOR AUTOMATION(DEVICE SCHDLD)' option from 'Project' autocomplete
-	When User selects "[Default (Computer)]" in the "Path" dropdown for Actions
+	When User selects '[Default (Computer)]' option from 'Path' autocomplete
 	And User clicks the "UPDATE" Action button
 	When User clicks content from "Action" column
 	Then "15427_NewName" content is displayed in "Action Name" field
@@ -50,18 +50,17 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckUpdateTaskValueEditPageLoadsProjec
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects '<Project>' option from 'Project' autocomplete
 	When User selects '<Stage>' option from 'Stage' autocomplete
-	When User selects "<Task>" in the "Task" dropdown for Actions
+	When User selects '<Task>' option from 'Task' autocomplete
 	Then "CREATE" Action button is disabled
 	When User selects "Started" Value on Action panel
 	When User clicks the "CREATE" Action button
 	When User clicks content from "Action" column
 	Then "Update Migrated devices to Started" content is displayed in "Action Name" field
-	Then 'Update task value' text value is displayed in the 'Action Type' dropdown
-	Then '<Project>' value is displayed in the 'Project' dropdown
-	Then '<Stage>' value is displayed in the 'Stage' dropdown
-	Then '<Task>' value is displayed in the 'Task' dropdown
-	#Remove # after Value dropdown fixed
-	#Then 'Started' text value is displayed in the 'Value' dropdown
+	And 'Update task value' text value is displayed in the 'Action Type' dropdown
+	And "<Project>" text is displayed in "Project" field
+	And "<Stage>" text is displayed in "Stage" field
+	And "<Task>" text is displayed in "Task" field
+	Then 'Started' text value is displayed in the 'Value' dropdown
 
 Examples:
 	| AutomationName                | Scope            | Project                              | Stage   | Task                   |
@@ -141,7 +140,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueAction
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	When User selects 'One' option from 'Stage' autocomplete
-	When User selects "Radio Rag Date Comp" in the "Task" dropdown for Actions
+	When User selects 'Radio Rag Date Comp' option from 'Task' autocomplete
 	And User selects "Update" Update Value on Action panel
 	And User selects "Failed" Value on Action panel
 	And User selects "No change" Update Date on Action panel
@@ -154,8 +153,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueAction
 	#Actions content check
 	Then "Update Migrated devices" content is displayed in "Action Name" field
 	Then 'Update task value' text value is displayed in the 'Action Type' dropdown
-	Then 'One' value is displayed in the 'Stage' dropdown for Automation
-	Then 'Radio Rag Date Owner Comp Req B' value is displayed in the 'Task' dropdown for Automation
+	And "One" text is displayed in "Stage" field
+	And "Radio Rag Date Owner Comp Req B" text is displayed in "Task" field
 	Then 'No change' value is displayed in the 'Update Value' dropdown
 	Then 'No change' value is displayed in the 'Update Date' dropdown
 	Then 'Update' value is displayed in the 'Update Owner' dropdown
@@ -181,7 +180,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithRemoveOwnerIsLoaded
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	When User selects 'One' option from 'Stage' autocomplete
-	When User selects "Radio Rag Date Owner User Req B" in the "Task" dropdown for Actions
+	When User selects 'Radio Rag Date Owner User Req B' option from 'Task' autocomplete
 	And User selects "No change" Update Value on Action panel
 	And User selects "No change" Update Date on Action panel
 	And User selects "Remove" Update Owner on Action panel
@@ -194,8 +193,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithRemoveOwnerIsLoaded
 	#Actions content check
 	Then "Update Migrated devices" content is displayed in "Action Name" field
 	Then 'Update task value' text value is displayed in the 'Action Type' dropdown
-	Then 'One' value is displayed in the 'Stage' dropdown for Automation
-	Then 'Radio Rag Date Owner Comp Req B' value is displayed in the 'Task' dropdown for Automation
+	And "One" text is displayed in "Stage" field
+	And "Radio Rag Date Owner Comp Req B" text is displayed in "Task" field
 	Then 'No change' value is displayed in the 'Update Value' dropdown
 	Then 'No change' value is displayed in the 'Update Date' dropdown
 	Then 'Remove' value is displayed in the 'Update Owner' dropdown
@@ -218,7 +217,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithUpdateOwnerIsLoaded
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	When User selects 'One' option from 'Stage' autocomplete
-	When User selects "Radio Rag Date Owner Comp Req B" in the "Task" dropdown for Actions
+	When User selects 'Radio Rag Date Owner Comp Req B' option from 'Task' autocomplete
 	And User selects "No change" Update Value on Action panel
 	And User selects "No change" Update Date on Action panel
 	And User selects "Update" Update Owner on Action panel
@@ -233,8 +232,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithUpdateOwnerIsLoaded
 	#Actions content check
 	Then "Update Migrated devices" content is displayed in "Action Name" field
 	Then 'Update task value' text value is displayed in the 'Action Type' dropdown
-	Then 'One' value is displayed in the 'Stage' dropdown for Automation
-	Then 'Radio Rag Date Owner Comp Req B' value is displayed in the 'Task' dropdown for Automation
+	And "One" text is displayed in "Stage" field
+	And "Radio Rag Date Owner Comp Req B" text is displayed in "Task" field
 	Then 'No change' value is displayed in the 'Update Value' dropdown
 	Then 'No change' value is displayed in the 'Update Date' dropdown
 	Then 'Update' value is displayed in the 'Update Owner' dropdown

@@ -165,6 +165,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             dropdown.GetDropdownValueByName(value).Click();
         }
 
+        [Then(@"""(.*)"" text is displayed in ""(.*)"" field")]
+        public void ThenTextIsDisplayedInField(string text, string fieldName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Utils.Verify.IsTrue(page.GetFieldByFieldName(fieldName).GetAttribute("value").Contains(text),
+                $"Text in {fieldName} field is different");
+        }
+
         [Then(@"'(.*)' content is displayed in '(.*)' dropdown")]
         public void ThenContentIsDisplayedInDropdown(string text, string dropdown)
         {

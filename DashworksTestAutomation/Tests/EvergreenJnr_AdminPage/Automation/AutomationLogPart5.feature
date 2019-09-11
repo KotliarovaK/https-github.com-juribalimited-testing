@@ -21,7 +21,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateAndRemoveTaskValueForUpdateValueInUs
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
 	When User selects 'Stage 3' option from 'Stage' autocomplete
-	When User selects "DDL Slot Task" in the "Task" dropdown for Actions
+	When User selects 'DDL Slot Task' option from 'Task' autocomplete
 	And User selects "No change" Update Value on Action panel
 	And User selects "Remove" Update Date on Action panel
 	And User clicks the "CREATE" Action button
@@ -67,7 +67,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForRemoveOwnerInMailboxScop
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'zMailbox Sch for Automations Feature' option from 'Project' autocomplete
 	When User selects 'Stage 3' option from 'Stage' autocomplete
-	When User selects "Radio Date Owner" in the "Task" dropdown for Actions
+	When User selects 'Radio Date Owner' option from 'Task' autocomplete
 	And User selects "No change" Update Value on Action panel
 	And User selects "No change" Update Date on Action panel
 	And User selects "Remove owner" Update Owner on Action panel
