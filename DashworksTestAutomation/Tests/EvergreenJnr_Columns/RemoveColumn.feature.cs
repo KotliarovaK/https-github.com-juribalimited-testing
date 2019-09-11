@@ -164,7 +164,7 @@ this.FeatureBackground();
 #line 20
  testRunner.Then("ColumnName is added to the list", ((string)(null)), table3, "Then ");
 #line 23
- testRunner.When("User click on \'Device Key\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'Device Key\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 24
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 25
@@ -181,7 +181,7 @@ this.FeatureBackground();
 #line 28
  testRunner.Then("ColumnName is removed from the list", ((string)(null)), table4, "Then ");
 #line 31
- testRunner.When("User click on \'Boot Up Date\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'Boot Up Date\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
@@ -422,7 +422,7 @@ this.FeatureBackground();
 #line 91
  testRunner.Then("\"Directory Type\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 92
- testRunner.When("User click on \'Windows7Mi: Category\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'Windows7Mi: Category\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 93
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 94
@@ -447,7 +447,7 @@ this.FeatureBackground();
 #line 103
  testRunner.Then("\"Windows7Mi: Category\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 104
- testRunner.When("User click on \'Directory Type\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'Directory Type\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
@@ -537,7 +537,7 @@ this.FeatureBackground();
 #line 119
  testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table19, "When ");
 #line 123
- testRunner.When("User click on \'Boot Up Date\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'Boot Up Date\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 124
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 125
@@ -552,8 +552,8 @@ this.FeatureBackground();
 #line 127
  testRunner.Then("ColumnName is removed from the list", ((string)(null)), table20, "Then ");
 #line 130
- testRunner.When("User click on \'Windows7Mi: Computer Information ---- Text fill; Text fill; \\ Date" +
-                    " & Time Task\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'Windows7Mi: Computer Information ---- Text fill; Text fill; \\ Dat" +
+                    "e & Time Task\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
@@ -769,7 +769,7 @@ this.FeatureBackground();
 #line 181
  testRunner.Then("\"Directory Type\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 182
- testRunner.When("User click on \'Windows7Mi: Category\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'Windows7Mi: Category\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 183
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 184
@@ -794,7 +794,7 @@ this.FeatureBackground();
 #line 193
  testRunner.Then("\"Windows7Mi: Category\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 194
- testRunner.When("User click on \'Directory Type\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'Directory Type\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
@@ -888,7 +888,7 @@ this.FeatureBackground();
 #line 215
  testRunner.And("\"Home Drive\" column is added to URL on \"Users\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 216
- testRunner.When("User click on \'Last Logon Date\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'Last Logon Date\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 217
  testRunner.And("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 218
@@ -970,7 +970,7 @@ this.FeatureBackground();
 #line 231
  testRunner.Then("\"All Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 232
- testRunner.When("User click on \'Hostname\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'Hostname\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 233
  testRunner.Then("data in table is sorted by \'Hostname\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 234
@@ -1074,7 +1074,7 @@ this.FeatureBackground();
 #line 257
  testRunner.Then("\"All Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 258
- testRunner.When("User click on \'Hostname\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'Hostname\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 259
  testRunner.Then("data in table is sorted by \'Hostname\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 260
@@ -1196,7 +1196,7 @@ this.FeatureBackground();
 #line 291
  testRunner.Then("\"All Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 292
- testRunner.When("User click on \'Hostname\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'Hostname\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 293
  testRunner.Then("data in table is sorted by \'Hostname\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 294

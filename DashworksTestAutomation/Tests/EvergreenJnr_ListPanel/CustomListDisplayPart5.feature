@@ -13,7 +13,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDatabaseErrorOccurringOccurringWhenA
 	Then Filters panel is displayed to the user
 	When User add "Babel(Engl: Readiness" filter where type is "Equals" with added column and "Amber" Lookup option
 	Then "Babel(Engl: Readiness" filter is added to the list
-	When User click on 'Hostname' column header
+	When User clicks on 'Hostname' column header
 	Then data in table is sorted by 'Hostname' column in ascending order
 	When User create dynamic list with "TestName QQRT" name on "Devices" page
 	Then "TestName QQRT" list is displayed to user
@@ -142,7 +142,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedL
 Scenario: EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedListWithSortingWithoutErrors
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
-	When User click on 'Hostname' column header
+	When User clicks on 'Hostname' column header
 	Then data in table is sorted by 'Hostname' column in ascending order
 	When User create dynamic list with "TestList9A0AE8" name on "Devices" page
 	Then "TestList9A0AE8" list is displayed to user
@@ -162,7 +162,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedL
 	Then "All Devices" list should be displayed to the user
 	When User navigates to the "TestList9A0AE8" list
 	Then "TestList9A0AE8" list is displayed to user
-	When User click on 'Owner Display Name' column header
+	When User clicks on 'Owner Display Name' column header
 	Then data in table is sorted by 'Owner Display Name' column in ascending order
 	When User update current custom list
 	And User clicks the Logout button

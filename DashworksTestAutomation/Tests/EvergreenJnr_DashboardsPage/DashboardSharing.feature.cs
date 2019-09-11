@@ -267,7 +267,7 @@ this.FeatureBackground();
 #line 51
  testRunner.And("User navigates to the \"All Devices\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 52
- testRunner.And("User click on \'Hostname\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks on \'Hostname\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 53
  testRunner.And("User create dynamic list with \"Second_List_DAS16380\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 54
@@ -996,7 +996,7 @@ this.FeatureBackground();
 #line 274
  testRunner.Then("\"All Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 275
- testRunner.When("User click on \'Hostname\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'Hostname\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 276
  testRunner.And("User create custom list with \"DeviceListFor14841_Read\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 277
@@ -1164,7 +1164,7 @@ this.FeatureBackground();
 #line 323
  testRunner.Then("\"All Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 324
- testRunner.When("User click on \'Hostname\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'Hostname\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 325
  testRunner.And("User create custom list with \"DeviceListFor14841_Edit\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 326
@@ -1336,7 +1336,7 @@ this.FeatureBackground();
 #line 374
  testRunner.Then("\"All Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 375
- testRunner.When("User click on \'Hostname\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'Hostname\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 376
  testRunner.And("User create custom list with \"DeviceListFor14841_Admin\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 377

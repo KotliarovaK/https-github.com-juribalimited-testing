@@ -261,7 +261,7 @@ this.FeatureBackground();
 #line 44
  testRunner.Then("\"All Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 45
- testRunner.When("User click on \'Hostname\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'Hostname\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 46
  testRunner.And("User create dynamic list with \"VERYLONGLOOOOOOOOOOOOOOOOOOOOOOOOONGNAME\" name on " +
                     "\"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

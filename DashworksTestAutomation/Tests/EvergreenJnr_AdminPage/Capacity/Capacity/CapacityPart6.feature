@@ -63,7 +63,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatWhenValueIsZeroThenBlankShouldBeDispl
 	And "2" tooltip displayed in "Slots" column
 	When User clicks content from "Slots" column
 	Then URL contains "/capacity/slots/:Birmingham"
-	When User click on 'Capacity Slot' column header
+	When User clicks on 'Capacity Slot' column header
 	Then "Capacity Slot" column content is displayed in the following order:
 	| Items                |
 	| Birmingham Afternoon |

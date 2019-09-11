@@ -277,8 +277,8 @@ Examples:
 Scenario: EvergreenJnr_MailboxesList_CheckThatNoConsoleErrorsWhenViewingMailboxDetails
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "All Mailboxes" list should be displayed to the user
-	When User click on 'Email Address' column header
-	And User click on 'Email Address' column header
+	When User clicks on 'Email Address' column header
+	And User clicks on 'Email Address' column header
 	And User click content from "Email Address" column
 	Then User sees loaded tab "Mailbox" on the Details page
 	Then Item content is displayed to the User
@@ -972,9 +972,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatReadinessValuesInDdlOnProjectsTabAre
 	And User select "Project Type" checkbox on the Column Settings panel
 	And User select "Path" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
-	When User click on 'Readiness' column header
+	When User clicks on 'Readiness' column header
 	Then color data is sorted by 'Readiness' column in descending order
-	When User click on 'Readiness' column header
+	When User clicks on 'Readiness' column header
 	Then color data is sorted by 'Readiness' column in ascending order
 	Then All text is not displayed for "Readiness" column in the String Filter
 
@@ -1161,9 +1161,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAgGridActionsWorksCorrectlyForDetail
 	When User navigates to the 'Details' left menu item
 	And User navigates to the "Custom Fields" sub-menu on the Details page
 		#cannot be checked because there is only one item in the table (need to wait for new data in GD?)
-	#When User click on 'Custom Field' column header
+	#When User clicks on 'Custom Field' column header
 	#Then date in table is sorted by 'Custom Field' column in ascending order
-	#When User click on 'Custom Field' column header
+	#When User clicks on 'Custom Field' column header
 	#Then date in table is sorted by 'Custom Field' column in descending order
 	Then ColumnName is displayed in following order on the Details page:
 	| ColumnName   |

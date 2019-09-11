@@ -99,7 +99,7 @@ Scenario: EvergreenJnr_DevicesList_CheckTheColumnCategoriesUpdatesAfterAddingCol
 Scenario: EvergreenJnr_UsersList_CheckTheColumnCategoriesUpdatesAfterAddingColumnForDynamicLists
 	When User clicks "Users" on the left-hand menu
 	Then "All Users" list should be displayed to the user
-	When User click on 'Domain' column header
+	When User clicks on 'Domain' column header
 	Then data in table is sorted by 'Domain' column in ascending order
 	When User create dynamic list with "DynamicList" name on "Users" page
 	Then "DynamicList" list is displayed to user
@@ -155,7 +155,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckTheColumnCategoriesUpdatesAfterAddi
 Scenario: EvergreenJnr_MailboxesList_CheckTheColumnCategoriesUpdatesAfterAddingColumnForDynamicLists
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "All Mailboxes" list should be displayed to the user
-	When User click on 'Email Address' column header
+	When User clicks on 'Email Address' column header
 	Then data in table is sorted by 'Email Address' column in ascending order
 	When User create dynamic list with "DynamicList" name on "Mailboxes" page
 	Then "DynamicList" list is displayed to user
@@ -813,8 +813,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatPrimaryDeviceColumnIsAvailableInTheCol
 	Then Columns panel is displayed to the user
 	When User is expand "User" columns category
 	When User add "Primary Device" Column from expanded category
-	When User click on 'Primary Device' column header
-	When User click on 'Primary Device' column header
+	When User clicks on 'Primary Device' column header
+	When User clicks on 'Primary Device' column header
 	When  User click content from "Primary Device" column
 	Then Details object page is displayed to the user
 

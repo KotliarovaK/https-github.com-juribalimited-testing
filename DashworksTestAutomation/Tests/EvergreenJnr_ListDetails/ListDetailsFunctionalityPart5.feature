@@ -88,7 +88,7 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDepe
 Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForTwoDependenciesLists
 	When User clicks "Applications" on the left-hand menu
 	Then "All Applications" list should be displayed to the user
-	When User click on 'Application' column header
+	When User clicks on 'Application' column header
 	And User create dynamic list with "Application4" name on "Applications" page
 	And User add following columns using URL to the "Applications" page:
 	| ColumnName |
@@ -123,7 +123,7 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForTwoD
 Scenario: EvergreenJnr_Users_CheckThatListDeletionWarningMessageIsNotDisplayedAfterDeletingAnotherListForDynamicAndStaticLists
 	When User clicks "Users" on the left-hand menu
 	Then "All Users" list should be displayed to the user
-	When User click on 'Username' column header
+	When User clicks on 'Username' column header
 	Then data in table is sorted by 'Username' column in ascending order
 	When User create dynamic list with "DynamicList2569" name on "Users" page
 	Then "DynamicList2569" list is displayed to user

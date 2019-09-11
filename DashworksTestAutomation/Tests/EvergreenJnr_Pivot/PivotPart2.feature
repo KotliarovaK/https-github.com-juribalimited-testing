@@ -110,7 +110,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatUserCanCreateOneMorePivotOnSelectedPa
 Scenario: EvergreenJnr_UsersList_ChecksThatUserCanCreateOneMorePivotOnCreatedList
 	When User clicks "Users" on the left-hand menu
 	Then "All Users" list should be displayed to the user
-	When User click on 'Username' column header
+	When User clicks on 'Username' column header
 	Then data in table is sorted by 'Username' column in ascending order
 	When User create dynamic list with "Dynamic_List_DAS14206" name on "Users" page
 	Then "Dynamic_List_DAS14206" list is displayed to user

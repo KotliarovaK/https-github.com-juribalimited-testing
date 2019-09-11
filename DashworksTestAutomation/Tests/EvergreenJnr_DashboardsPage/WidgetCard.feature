@@ -78,7 +78,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValuesLeadsToApplicatio
 	And User removes "Vendor" column by Column panel
 	And User removes "Version" column by Column panel
 	And User removes "1803: In Scope" column by Column panel
-	And User click on 'Compliance' column header
+	And User clicks on 'Compliance' column header
 	And User create custom list with "1803 App Compliance" name
 	Then "1803 App Compliance" list is displayed to user
 	When Dashboard with "Dashboard for DAS16069_2" name created via API and opened
@@ -258,7 +258,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckReadinessFirstCellIconsForCardWidget
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16266 @Cleanup @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIsDisplayedCorrectlyWithBlankFirstCell
 	When User clicks "Devices" on the left-hand menu
-	When User click on 'Owner Display Name' column header
+	When User clicks on 'Owner Display Name' column header
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When User removes "Hostname" column by Column panel
@@ -371,7 +371,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorsInConsoleAfterAddingAppli
 	When User removes "Application" column by Column panel
 	And User removes "Vendor" column by Column panel
 	And User removes "Version" column by Column panel
-	And User click on 'MigrationP: Application Readiness' column header
+	And User clicks on 'MigrationP: Application Readiness' column header
 	And User create dynamic list with "DAS16336_Applications_List" name on "Applications" page
 	Then "DAS16336_Applications_List" list is displayed to user
 	When Dashboard with "Dashboard_DAS16336" name created via API and opened
@@ -416,7 +416,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhe
 	| ICSP: In Scope |
 	And User move 'ICSP: In Scope' column to 'Hostname' column
 	And User move 'Hostname' column to 'Operating System' column
-	And User click on 'ICSP: In Scope' column header
+	And User clicks on 'ICSP: In Scope' column header
 	And User create dynamic list with "DeviceListFor16325" name on "Devices" page
 	Then "DeviceListFor16325" list is displayed to user
 	When Dashboard with "Dashboard for DAS16325" name created via API and opened
@@ -440,8 +440,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckWidgetCreatingFromListHavingSortedRin
 	Then Columns panel is displayed to the user
 	When User removes "Operating System" column by Column panel
 	When User removes "Owner Display Name" column by Column panel
-	And User click on 'Barry'sUse: Ring (Primary Device Only)' column header
-	And User click on 'Barry'sUse: Ring (Primary Device Only)' column header
+	And User clicks on 'Barry'sUse: Ring (Primary Device Only)' column header
+	And User clicks on 'Barry'sUse: Ring (Primary Device Only)' column header
 	Then data in table is sorted by 'Barry'sUse: Ring (Primary Device Only)' column in descending order
 	When User clicks Save button on the list panel
 	And User create dynamic list with "List16347" name on "Devices" page

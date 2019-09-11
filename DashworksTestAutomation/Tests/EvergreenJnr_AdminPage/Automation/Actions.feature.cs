@@ -674,7 +674,7 @@ this.FeatureBackground();
 #line 204
  testRunner.Then("\"Action\" column content is displayed in the following order:", ((string)(null)), table12, "Then ");
 #line 209
- testRunner.When("User click on \'Task or Field\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'Task or Field\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 210
  testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

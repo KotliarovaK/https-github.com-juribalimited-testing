@@ -1535,11 +1535,11 @@ this.FeatureBackground();
 #line 369
  testRunner.Then("following columns added to the table:", ((string)(null)), table13, "Then ");
 #line 372
- testRunner.When("User click on \'Readiness\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'Readiness\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 373
  testRunner.Then("numeric data in table is sorted by \'Priority\' column in descending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 374
- testRunner.When("User click on \'Readiness\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'Readiness\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 375
  testRunner.Then("numeric data in table is sorted by \'Priority\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

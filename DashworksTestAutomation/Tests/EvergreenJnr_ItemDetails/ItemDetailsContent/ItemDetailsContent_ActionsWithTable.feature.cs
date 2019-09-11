@@ -1193,9 +1193,9 @@ this.FeatureBackground();
 #line 279
  testRunner.Then("\"All Mailboxes\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 280
- testRunner.When("User click on \'Email Address\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'Email Address\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 281
- testRunner.And("User click on \'Email Address\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks on \'Email Address\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 282
  testRunner.And("User click content from \"Email Address\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 283
@@ -4097,11 +4097,11 @@ this.FeatureBackground();
 #line 974
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 975
- testRunner.When("User click on \'Readiness\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'Readiness\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 976
  testRunner.Then("color data is sorted by \'Readiness\' column in descending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 977
- testRunner.When("User click on \'Readiness\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'Readiness\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 978
  testRunner.Then("color data is sorted by \'Readiness\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 979

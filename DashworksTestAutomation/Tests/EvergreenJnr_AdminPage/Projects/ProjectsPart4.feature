@@ -112,7 +112,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedIfTryToRemoveCreatedListThatUsedInAnyProject
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
-	When User click on 'Hostname' column header
+	When User clicks on 'Hostname' column header
 	And User create dynamic list with "TestDynamicList11729" name on "Devices" page
 	Then "TestDynamicList11729" list is displayed to user
 	When User clicks Admin on the left-hand menu

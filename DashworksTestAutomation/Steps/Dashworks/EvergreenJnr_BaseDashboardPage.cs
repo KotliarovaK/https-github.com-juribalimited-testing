@@ -166,8 +166,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 Is.EqualTo(data.Replace(@"\t", "   ")));
         }
 
-        [When(@"User click on '(.*)' column header")]
-        public void WhenUserClickOnColumnHeader(string columnName)
+        [When(@"User clicks on '(.*)' column header")]
+        public void WhenUserClicksOnColumnHeader(string columnName)
         {
             var listPageMenu = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForDataLoading();

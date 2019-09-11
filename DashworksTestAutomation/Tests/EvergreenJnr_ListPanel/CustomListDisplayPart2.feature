@@ -40,7 +40,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewListCreatedMessageForStaticListIs
 	And User selects "Create static list" in the Actions dropdown
 	And User create static list with "TestList4A22A5" name
 	Then "TestList4A22A5" list is displayed to user
-	When User click on 'Hostname' column header
+	When User clicks on 'Hostname' column header
 	Then data in table is sorted by 'Hostname' column in ascending order
 	And User save changes in list with "UnbelievableTestList" name
 	And "UnbelievableTestList" list is displayed to user

@@ -48,7 +48,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatFilterNameIsNotChangedAfterRenameW
 Scenario: EvergreenJnr_DevicesList_CheckThatCancelButtonIsDisplayedWithCorrectlyColorOnListPanel
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
-	When User click on 'Hostname' column header
+	When User clicks on 'Hostname' column header
 	Then data in table is sorted by 'Hostname' column in ascending order
 	When User create dynamic list with "TestList12891" name on "Devices" page
 	Then "TestList12891" list is displayed to user
@@ -66,7 +66,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatListTypeFilterForCreatedListsIsWorke
 	| 001PSUMZYOW581 |
 	Then "StaticFilterList_1" list is displayed to user
 	When User navigates to the "All Devices" list
-	When User click on 'Hostname' column header
+	When User clicks on 'Hostname' column header
 	When User create dynamic list with "DynamicFilterList_1" name on "Devices" page
 	Then "DynamicFilterList_1" list is displayed to user
 	When User navigates to Pivot

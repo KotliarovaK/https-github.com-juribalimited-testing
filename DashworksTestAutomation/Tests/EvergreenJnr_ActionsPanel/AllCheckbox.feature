@@ -17,7 +17,7 @@ Scenario: EvergreenJnr_UsersList_SelectAllCheckboxStatusCheckAfterSearch
 	| SearchCriteria | NumberOfRows |
 	| alain          | 42           |
 	And Select All selectbox is checked
-	When User click on 'Username' column header
+	When User clicks on 'Username' column header
 	Then data in table is sorted by 'Username' column in ascending order
 	And Select All selectbox is checked
 	And "42" rows are displayed in the agGrid
@@ -78,7 +78,7 @@ Scenario Outline: EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest
 	| SelectedRowsName  |
 	| <SelectedRowName> |
 	Then "<SelectedRowsCountAfterDiselect>" selected rows are displayed in the Actions panel
-	When User click on '<Columnname>' column header
+	When User clicks on '<Columnname>' column header
 	Then data in table is sorted by '<Columnname>' column in ascending order
 	And "<SelectedRowsCountAfterDiselect>" selected rows are displayed in the Actions panel
 

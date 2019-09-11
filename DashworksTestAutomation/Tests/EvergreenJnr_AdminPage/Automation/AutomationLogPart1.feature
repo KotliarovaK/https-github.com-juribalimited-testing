@@ -251,39 +251,39 @@ Scenario: EvergreenJnr_AdminPage_CheckSortingAutomationsLogGrid
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
 	When User selects "Automation Log" tab on the Project details page
-	When User click on 'Date' column header
+	When User clicks on 'Date' column header
 	Then date in table is sorted by "Date" column in descending order on the Admin page
-	When User click on 'Date' column header
+	When User clicks on 'Date' column header
 	Then date in table is sorted by "Date" column in ascending order on the Admin page
-	When User click on 'Type' column header
+	When User clicks on 'Type' column header
 	Then data in table is sorted by "Type" column in ascending order on the Admin page
-	When User click on 'Type' column header
+	When User clicks on 'Type' column header
 	Then data in table is sorted by "Type" column in descending order on the Admin page
-	When User click on 'Automation' column header
+	When User clicks on 'Automation' column header
 	Then data in table is sorted by "Automation" column in ascending order on the Admin page
-	When User click on 'Automation' column header
+	When User clicks on 'Automation' column header
 	Then data in table is sorted by "Automation" column in descending order on the Admin page
-	When User click on 'Action' column header
+	When User clicks on 'Action' column header
 	Then data in table is sorted by "Action" column in ascending order on the Admin page
-	When User click on 'Action' column header
+	When User clicks on 'Action' column header
 	Then data in table is sorted by "Action" column in descending order on the Admin page
-	When User click on 'Run' column header
+	When User clicks on 'Run' column header
 	Then data in table is sorted by "Run" column in ascending order on the Admin page
-	When User click on 'Run' column header
+	When User clicks on 'Run' column header
 	Then data in table is sorted by "Run" column in descending order on the Admin page
-	When User click on 'Objects' column header
+	When User clicks on 'Objects' column header
 	Then numeric data in table is sorted by "Objects" column in descending order on the Admin page
-	When User click on 'Objects' column header
+	When User clicks on 'Objects' column header
 	Then numeric data in table is sorted by "Objects" column in ascending order on the Admin page
-	When User click on 'Duration (hh:mm:ss)' column header
+	When User clicks on 'Duration (hh:mm:ss)' column header
 	Then data in table is sorted by "Duration (hh:mm:ss)" column in ascending order on the Admin page
-	When User click on 'Duration (hh:mm:ss)' column header
+	When User clicks on 'Duration (hh:mm:ss)' column header
 	Then data in table is sorted by "Duration (hh:mm:ss)" column in descending order on the Admin page
-	When User click on 'User' column header
+	When User clicks on 'User' column header
 	Then data in table is sorted by "User" column in ascending order on the Admin page
-	When User click on 'User' column header
+	When User clicks on 'User' column header
 	Then data in table is sorted by "User" column in descending order on the Admin page
-	When User click on 'Outcome' column header
+	When User clicks on 'Outcome' column header
 	Then Boolean data in table is sorted by "Outcome" column in ascending order on the Admin page
-	When User click on 'Outcome' column header
+	When User clicks on 'Outcome' column header
 	Then Boolean data in table is sorted by "Outcome" column in descending order on the Admin page

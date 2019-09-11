@@ -156,12 +156,12 @@ this.FeatureBackground();
 #line 24
  testRunner.Then("\"Capacity Units\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 25
- testRunner.When("User click on \'Default\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'Default\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 26
  testRunner.Then("Boolean data in table is sorted by \"Default\" column in ascending order on the Adm" +
                     "in page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 27
- testRunner.When("User click on \'Default\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'Default\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 28
  testRunner.Then("Boolean data in table is sorted by \"Default\" column in descending order on the Ad" +
                     "min page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

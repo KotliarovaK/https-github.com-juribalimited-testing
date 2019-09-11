@@ -9,7 +9,7 @@ Background: Pre-Conditions
 Scenario Outline: EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyForDynamicLists
 	When User clicks "<PageName>" on the left-hand menu
 	Then "All <PageName>" list should be displayed to the user
-	When User click on '<Columnname>' column header
+	When User clicks on '<Columnname>' column header
 	Then data in table is sorted by '<Columnname>' column in ascending order
 	When User create dynamic list with "TestList12CA0D" name on "<PageName>" page
 	When User clicks the List Details button
@@ -69,7 +69,7 @@ Examples:
 Scenario Outline: EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyForDynamicLists
 	When User clicks "<PageName>" on the left-hand menu
 	Then "All <PageName>" list should be displayed to the user
-	When User click on '<Columnname>' column header
+	When User clicks on '<Columnname>' column header
 	Then data in table is sorted by '<Columnname>' column in ascending order
 	When User create dynamic list with "TestList80EA23" name on "<PageName>" page
 	When User clicks the List Details button
