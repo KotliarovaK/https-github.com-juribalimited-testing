@@ -1,4 +1,4 @@
-﻿Feature: ProjectsPart24
+﻿Feature: ProjectsPart25
 	Runs Projects related tests on Admin page
 
 Background: Pre-Conditions
