@@ -173,7 +173,7 @@ this.FeatureBackground();
             table1.AddRow(new string[] {
                         "Retail Team"});
 #line 25
- testRunner.When("User selects following Objects to the Project", ((string)(null)), table1, "When ");
+ testRunner.When("User selects following Objects from the expandable multiselect", ((string)(null)), table1, "When ");
 #line 29
  testRunner.And("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 30
@@ -213,7 +213,7 @@ this.FeatureBackground();
             table2.AddRow(new string[] {
                         "automation_admin1"});
 #line 45
- testRunner.And("User selects following Objects", ((string)(null)), table2, "And ");
+ testRunner.And("User selects following Objects from the expandable multiselect", ((string)(null)), table2, "And ");
 #line 48
  testRunner.And("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 49
@@ -351,7 +351,7 @@ this.FeatureBackground();
             table4.AddRow(new string[] {
                         "eugene"});
 #line 80
- testRunner.And("User adds following Objects from list", ((string)(null)), table4, "And ");
+ testRunner.And("User selects following Objects from the expandable multiselect", ((string)(null)), table4, "And ");
 #line 86
  testRunner.Then("Success message is displayed and contains \"The selected users have been added\" te" +
                     "xt", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -503,7 +503,7 @@ this.FeatureBackground();
             table6.AddRow(new string[] {
                         "automation_admin3"});
 #line 125
- testRunner.And("User adds following Objects from list", ((string)(null)), table6, "And ");
+ testRunner.And("User selects following Objects from the expandable multiselect", ((string)(null)), table6, "And ");
 #line 130
  testRunner.Then("Success message is displayed and contains \"The selected users have been added\" te" +
                     "xt", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

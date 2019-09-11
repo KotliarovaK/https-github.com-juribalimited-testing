@@ -22,7 +22,7 @@ Scenario: EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam
 	And User enters "test" in the Team Description field
 	When User selects "Add members from another team" in the Add Members dropdown
 	Then There are no errors in the browser console
-	When User selects following Objects to the Project
+	When User selects following Objects from the expandable multiselect
 	| Objects                |
 	| Migration Phase 3 Team |
 	| Retail Team            |
@@ -42,7 +42,7 @@ Scenario: EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam
 	And User enters "test" in the Team Description field
 	And User clicks Default Team checkbox
 	When User selects "Add individual members" in the Add Members dropdown
-	And User selects following Objects
+	And User selects following Objects from the expandable multiselect
 	| Objects           |
 	| automation_admin1 |
 	And User clicks the "CREATE" Action button
@@ -77,7 +77,7 @@ Scenario: EvergreenJnr_AdminPage_AddingMembersToTheTeam
 	And User clicks content from "Team" column
 	When User navigates to the 'Team Members' left menu item
 	When User clicks the "ADD MEMBERS" Action button
-	And User adds following Objects from list
+	And User selects following Objects from the expandable multiselect
 	| Objects           |
 	| automation_admin1 |
 	| automation_admin2 |
@@ -122,7 +122,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSelectANewTeamDropdownAreWorkingCorre
 	And User clicks content from "Team" column
 	And User navigates to the 'Team Members' left menu item
 	And User clicks the "ADD MEMBERS" Action button
-	And User adds following Objects from list
+	And User selects following Objects from the expandable multiselect
 	| Objects           |
 	| automation_admin1 |
 	| automation_admin2 |

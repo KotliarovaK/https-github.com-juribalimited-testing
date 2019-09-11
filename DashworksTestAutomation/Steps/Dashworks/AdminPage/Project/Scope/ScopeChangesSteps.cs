@@ -42,10 +42,10 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Scope
         [Then(@"following objects were not found")]
         public void ThenFollowingObjectsWereNotFound(Table table)
         {
-            var projectElement = _driver.NowAt<ScopeChangePage>();
-            projectElement.PlusButton.Click();
             var basePage = _driver.NowAt<BaseDashboardPage>();
+            basePage.ExpandCollpseMultiselectButton("").Click();
 
+            var projectElement = _driver.NowAt<ScopeChangePage>();
             foreach (var row in table.Rows)
             {
                 var search = basePage.GetNamedTextbox("Search");
@@ -59,19 +59,17 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Scope
         [When(@"User expands the object to add")]
         public void WhenUserExpandsTheObjectToAdd()
         {
-            var projectElement = _driver.NowAt<ScopeChangePage>();
-            _driver.WaitForElementToBeDisplayed(projectElement.PlusButton);
-            _driver.WaitForElementToBeEnabled(projectElement.PlusButton);
-            projectElement.PlusButton.Click();
+            var basePage = _driver.NowAt<BaseDashboardPage>();
+            basePage.ExpandCollpseMultiselectButton("").Click();
         }
 
         [When(@"User expands the object to remove on ""(.*)"" tab")]
         public void WhenUserExpandsTheObjectToRemoveOnTab(string tabName)
         {
-            var projectElement = _driver.NowAt<ScopeChangePage>();
+            var basePage = _driver.NowAt<BaseDashboardPage>();
             try
             {
-                projectElement.PlusButton.Click();
+                basePage.ExpandCollpseMultiselectButton("").Click();
             }
             catch (Exception)
             {
@@ -80,17 +78,17 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Scope
                 var projectTabs = _driver.NowAt<ProjectsPage>();
                 projectTabs.ClickToTabByNameProjectScopeChanges(tabName);
                 _driver.WaitForDataLoading();
-                projectElement.PlusButton.Click();
+                basePage.ExpandCollpseMultiselectButton("").Click();
             }
         }
 
         [When(@"User waits and expands the ""(.*)"" panel to remove")]
         public void WhenUserWaitsAndExpandsThePanelToRemove(string tabName)
         {
-            var projectElement = _driver.NowAt<ScopeChangePage>();
+            var basePage = _driver.NowAt<BaseDashboardPage>();
             try
             {
-                projectElement.PlusButton.Click();
+                basePage.ExpandCollpseMultiselectButton("").Click();
             }
             catch (Exception)
             {
@@ -99,45 +97,39 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Scope
                 var projectTabs = _driver.NowAt<ProjectsPage>();
                 projectTabs.ClickToTabByNameProjectScopeChanges(tabName);
                 _driver.WaitForDataLoading();
-                projectElement.PlusButton.Click();
+                basePage.ExpandCollpseMultiselectButton("").Click();
             }
         }
 
-        //TODO Should be moved to buckets
+        //TODO Should be moved to buckets and text should be updated to something more understandable
         [When(@"User adds following Objects from list")]
         public void ThenUserAddFollowingObjectsFromList(Table table)
         {
+            var itemsToAdd = table.Rows.Select(x => x["Objects"]).ToList();
             var basePage = _driver.NowAt<BaseDashboardPage>();
-            foreach (var row in table.Rows)
+            basePage.AddItemsToMultiSelect(itemsToAdd);
+            //Save added objects to remove it from the bucket
+            foreach (string s in itemsToAdd)
             {
-                var text = row["Objects"];
-                var search = basePage.GetNamedTextbox("Search");
-                search.Clear();
-                search.SendKeys(text);
-                basePage.AddItem(text);
-                search.ClearWithHomeButton(_driver);
-                //Save added objects to remove it from the bucket
-                _addedObjects.Value.Add(text, _lastUsedBucket.Value);
+                _addedObjects.Value.Add(s, _lastUsedBucket.Value);
             }
+
             basePage.GetActionsButtonByName("ADD BUCKETS").Click();
         }
 
         [When(@"User adds following Objects to the Project")]
         public void WhenUserAddsFollowingObjectsToTheProject(Table table)
         {
-            var projectElement = _driver.NowAt<ScopeChangePage>();
-            projectElement.PlusButton.Click();
             var basePage = _driver.NowAt<BaseDashboardPage>();
-            foreach (var row in table.Rows)
-            {
-                var search = basePage.GetNamedTextbox("Search");
-                basePage.AddItem(row["Objects"]);
-                search.ClearWithHomeButton(_driver);
-            }
+            basePage.GetExpandableMultiselect("").Click();
+            var itemsToAdd = table.Rows.Select(x => x["Objects"]).ToList();
+            basePage.AddItemsToMultiSelect(itemsToAdd);
 
+            var projectElement = _driver.NowAt<ScopeChangePage>();
             projectElement.UpdateButton.Click();
         }
 
+        //TODO looks like should be removed
         [When(@"User adds following Objects to the Project on ""(.*)"" tab")]
         public void WhenUserAddsFollowingObjectsToTheProjectOnTab(string tabName, Table table)
         {
@@ -147,7 +139,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Scope
             {
                 var projectTabs = _driver.NowAt<ProjectsPage>();
                 projectTabs.ClickToTabByNameProjectScopeChanges(tabName);
-                projectElement.PlusButton.Click();
+                basePage.GetExpandableMultiselect("").Click();
                 foreach (var row in table.Rows)
                 {
                     var search = basePage.GetNamedTextbox("Search");
@@ -164,8 +156,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Scope
                 projectTabs.ClickToTabByNameProjectScopeChanges(tabName);
                 _driver.WaitForDataLoading();
                 projectElement = _driver.NowAt<ScopeChangePage>();
-                _driver.WaitForElementToBeDisplayed(projectElement.PlusButton);
-                projectElement.PlusButton.Click();
+                basePage.GetExpandableMultiselect("").Click();
                 foreach (var row in table.Rows)
                 {
                     var search = basePage.GetNamedTextbox("Search");
@@ -180,9 +171,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Scope
         [When(@"User selects following Objects to the Project")]
         public void WhenUserSelectsFollowingObjectsToTheProject(Table table)
         {
-            var projectElement = _driver.NowAt<ScopeChangePage>();
-            projectElement.PlusButton.Click();
             var basePage = _driver.NowAt<BaseDashboardPage>();
+            basePage.GetExpandableMultiselect("").Click();
             foreach (var row in table.Rows)
             {
                 var search = basePage.GetNamedTextbox("Search");
@@ -197,7 +187,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Scope
         public void ThenFollowingItemsAreStillSelected()
         {
             var projectElement = _driver.NowAt<ScopeChangePage>();
-            Verify.IsTrue(projectElement.PlusButton.Displayed(), "Items are not selected");
+            var basePage = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsTrue(basePage.ExpandCollpseMultiselectButton("").Disabled(), "Items are not selected");
             Verify.IsTrue(projectElement.CheckedSomeItemCheckbox.Displayed(), "Item checkbox is not checked");
         }
 

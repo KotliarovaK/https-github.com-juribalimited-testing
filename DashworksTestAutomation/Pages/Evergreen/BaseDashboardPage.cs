@@ -515,7 +515,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public List<string> GetDropdownValues()
         {
             var optionsList = Driver.FindElements(By.XPath(_dropdownOptions));
-            if(!optionsList.Any())
+            if (!optionsList.Any())
                 throw new Exception($"Unable to get dropdown values");
             var values = optionsList.Select(x => x.Text).ToList();
             return values;
@@ -1119,12 +1119,48 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElements(selector).First();
         }
 
-        //For adding Project Scope items and Buckets
+        //For adding Project Scope items, Buckets and Create Teams page
         public void AddItem(string itemName)
         {
-            var selector = $".//span[contains(text(), '{itemName}')]";
+            var selector = $".//div[contains(@class,'scrollbar-helper')]//span[contains(text(), '{itemName}')]";
             Driver.WaitForElementToBeDisplayed(By.XPath(selector));
             Driver.FindElement(By.XPath(selector)).Click();
+        }
+
+        //For adding Project Scope items, Buckets and Create Teams page
+        public void AddItemsToMultiSelect(List<string> items)
+        {
+            foreach (string itemText in items)
+            {
+                var search = GetNamedTextbox("Search");
+                search.Clear();
+                search.SendKeys(itemText);
+                AddItem(itemText);
+                search.ClearWithHomeButton(Driver);
+            }
+        }
+
+        public IWebElement GetExpandableMultiselect(string titleText)
+        {
+            var selector =
+                By.XPath($".//div[contains(@class,'panel-expand-inner')]//span[contains(text(),'{titleText}')]/..");
+            if (!Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Medium))
+                throw new Exception($"'{titleText}' multiselect was not found");
+            return Driver.FindElement(selector);
+        }
+
+        public string GetTitleFomExpandableMultiselect(string partOfTitle)
+        {
+            var element = GetExpandableMultiselect(partOfTitle);
+            var text = element.FindElement(By.XPath(".//span[@class='title']")).Text;
+            return text;
+        }
+
+        public IWebElement ExpandCollpseMultiselectButton(string titleText)
+        {
+            var element = GetExpandableMultiselect(titleText);
+            var button = element.FindElement(By.XPath(".//button"));
+            return button;
         }
     }
 }
