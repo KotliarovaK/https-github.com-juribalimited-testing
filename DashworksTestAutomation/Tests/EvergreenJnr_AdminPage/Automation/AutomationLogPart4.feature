@@ -15,6 +15,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOutcomeStringFiltersValueAreNotDuplica
 	Then String filter values are not duplicated
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17683 @Cleanup @Not_Ready
+#Waiting for 'zMailbox Sch for Automations Feature' project from GD
 Scenario: EvergreenJnr_AdminPage_CheckUpdateAndRemoveTaskValueForUpdateValueInUserScopedAutomation
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user

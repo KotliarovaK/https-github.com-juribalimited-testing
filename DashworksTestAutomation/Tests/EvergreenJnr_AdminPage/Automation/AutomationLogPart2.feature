@@ -476,11 +476,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatClickingOnTheObjectsCountOpensTheCorre
 	And User clicks the Filters button
 	Then "X-Proj Path Reset is 12/08/2019 18:07:05" is displayed in added filter info
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17430 @DAS17518 @Cleanup @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17430 @DAS17518 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueActionDAS17430
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
-	When User creates new Automation via API
+	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope     | Run    |
 	| 17430_Automation | 17430       | true   | false              | All Users | Manual |
 	Then Automation page is displayed correctly
@@ -505,6 +505,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueActionDAS
 	When User enters "17430_Automation" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "17430_Automation" item on Admin page
 	When User selects "Automation Log" tab on the Project details page
+	When User clicks refresh button in the browser
 	When User enters "17430_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
 	When User clicks String Filter button for "Type" column on the Admin page
