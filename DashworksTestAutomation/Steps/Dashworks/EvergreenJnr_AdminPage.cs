@@ -189,14 +189,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.IsFalse(Convert.ToBoolean(page.GetFilterByColumnName(columnName).GetAttribute("readonly")), "PLEASE ADD EXCEPTION MESSAGE");
         }
 
-        [When(@"User navigates to the ""(.*)"" tab in the Scope section on the Project details page")]
-        public void WhenUserNavigatesToTheTabInTheScopeSectionOnTheProjectDetailsPage(string tabName)
-        {
-            var projectTabs = _driver.NowAt<ProjectsPage>();
-            projectTabs.NavigateToProjectTabInScopeSectionByName(tabName);
-            _driver.WaitForDataLoading();
-        }
-
         //TODO should be moved to EvergreenJnr_BasePage
         [Then(@"following Values are displayed in ""(.*)"" drop-down on the Admin page:")]
         public void ThenFollowingValuesAreDisplayedInDrop_DownOnTheAdminPage(string dropDownName, Table table)

@@ -69,7 +69,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 	| Objects                               |
 	| 003F5D8E1A844B1FAA5 (Hunter, Melanie) |
 	| 01FF97A1FFAC48A1803 (Aultman, Chanel) |
-	When User navigates to the 'Devices' tab on Scope Changes page
+	When User navigates to the 'Devices' tab on Project Scope Changes page
 	Then "Devices to add (0 of 16765 selected)" is displayed to the user in the Project Scope Changes section
 	When User expands the object to add 
 	Then Objects are displayed in alphabetical order on the Admin page
@@ -77,13 +77,13 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 	Then Objects are displayed in alphabetical order on the Admin page
 	When User enters '' text to 'Search' textbox
 	Then Objects are displayed in alphabetical order on the Admin page
-	When User adds following Objects to the Project
+	When User selects following Objects from the expandable multiselect
 	| Objects        |
 	| 0SH2BQ3EPXTEWN |
 	| 30LA8G32UF7HQC |
 	| 174HB6RFAHA5CT |
 	| 174HB6RFAHA5CT |
-	When User navigates to the 'Applications' tab on Scope Changes page
+	When User navigates to the 'Applications' tab on Project Scope Changes page
 	Then "Applications to add (0 of 2081 selected)" is displayed to the user in the Project Scope Changes section
 	When User expands the object to add 
 	Then Objects are displayed in alphabetical order on the Admin page
@@ -91,7 +91,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 	Then Objects are displayed in alphabetical order on the Admin page
 	When User enters '' text to 'Search' textbox
 	Then Objects are displayed in alphabetical order on the Admin page
-	When User adds following Objects to the Project
+	When User selects following Objects from the expandable multiselect
 	| Objects                                          |
 	| ACDSee 4.0.2 PowerPack Trial Version (4.00.0002) |
 	| Backburner (2.1.2.0)                             |
@@ -99,13 +99,13 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 	And User clicks the "UPDATE PROJECT" Action button
 	Then Success message is displayed and contains "6 objects queued for onboarding, 0 objects offboarded" text
 	Then "Applications to add (0 of 2079 selected)" is displayed to the user in the Project Scope Changes section
-	When User navigates to the 'Devices' tab on Scope Changes page
+	When User navigates to the 'Devices' tab on Project Scope Changes page
 	Then "Devices to add (0 of 16763 selected)" is displayed to the user in the Project Scope Changes section
-	When User navigates to the 'Users' tab on Scope Changes page
+	When User navigates to the 'Users' tab on Project Scope Changes page
 	Then "Users to add (0 of 41337 selected)" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page
 	When User selects "Scope Changes" tab on the Project details page
-	When User navigates to the 'Applications' tab on Scope Changes page
+	When User navigates to the 'Applications' tab on Project Scope Changes page
 	Then There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11729 @DAS13199 @Cleanup @Cleanup @Projects

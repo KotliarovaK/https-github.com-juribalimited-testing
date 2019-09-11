@@ -31,8 +31,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Scope
             _lastUsedBucket = lastUsedBucket;
         }
 
-        [When(@"User navigates to the '(.*)' tab on Scope Changes page")]
-        public void WhenUserNavigatesToTheTabOnScopeChangesPage(string tabName)
+        [When(@"User navigates to the '(.*)' tab on Project Scope Changes page")]
+        public void WhenUserNavigatesToTheTabOnProjectScopeChangesPage(string tabName)
         {
             var page = _driver.NowAt<ScopeChangePage>();
             _driver.ExecuteAction(() => page.GetTabByName(tabName).Click());
@@ -115,16 +115,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Scope
             }
 
             basePage.GetActionsButtonByName("ADD BUCKETS").Click();
-        }
-
-        [When(@"User adds following Objects to the Project")]
-        public void WhenUserAddsFollowingObjectsToTheProject(Table table)
-        {
-            var basePage = _driver.NowAt<BaseDashboardPage>();
-            basePage.GetExpandableMultiselect("").Click();
-            var itemsToAdd = table.Rows.Select(x => x["Objects"]).ToList();
-            basePage.AddItemsToMultiSelect(itemsToAdd);
-            var projectElement = _driver.NowAt<ScopeChangePage>();
         }
 
         //TODO looks like should be removed

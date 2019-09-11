@@ -77,9 +77,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	| 00BDM1JUR8IF419 |
 	And There are no errors in the browser console
 	When User selects "Scope Changes" tab on the Project details page
-	And User navigates to the 'Applications' left menu item
+	And User navigates to the 'Applications' tab on Project Scope Changes page
 	And User expands the object to add 
-	And User adds following Objects to the Project
+	And User selects following Objects from the expandable multiselect
 	| Objects                                                              |
 	| "WPF/E" (codename) Community Technology Preview (Feb 2007) (0.8.5.0) |
 	| 0004 - Adobe Acrobat Reader 5.0.5 Francais (5.0.5)                   |
@@ -113,9 +113,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	When User clicks newly created object link
 	Then Project "Project13110Dynamic2" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
-	And User navigates to the 'Applications' left menu item
+	And User navigates to the 'Applications' tab on Project Scope Changes page
 	And User expands the object to add 
-	And User adds following Objects to the Project
+	And User selects following Objects from the expandable multiselect
 	| Objects                                                              |
 	| "WPF/E" (codename) Community Technology Preview (Feb 2007) (0.8.5.0) |
 	| 0004 - Adobe Acrobat Reader 5.0.5 Francais (5.0.5)                   |
@@ -137,7 +137,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	| 0036 - Microsoft Access 97 SR-2 English                    |
 	And There are no errors in the browser console
 	When User selects "Scope Changes" tab on the Project details page
-	And User navigates to the 'Devices' left menu item
+	And User navigates to the 'Devices' tab on Project Scope Changes page
 	And User expands the object to add
 	Then Objects are displayed in alphabetical order on the Admin page
 	When User selects following Objects to the Project
@@ -200,7 +200,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	| 00BDM1JUR8IF419 |
 	And There are no errors in the browser console
 	When User selects "Scope Changes" tab on the Project details page
-	And User navigates to the 'Applications' left menu item
+	And User navigates to the 'Applications' tab on Project Scope Changes page
 	And User expands the object to add 
 	When User selects following Objects to the Project
 	| Objects                        |
@@ -235,7 +235,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	When User clicks newly created object link
 	Then Project "Project13110Static2" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
-	And User navigates to the 'Applications' left menu item
+	And User navigates to the 'Applications' tab on Project Scope Changes page
 	And User expands the object to add 
 	When User selects following Objects to the Project
 	| Objects                        |
@@ -347,7 +347,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderForQueueAndHistoryTab
 	Then data in table is sorted by "Item" column in ascending order by default on the Admin page
 	Then data in table is sorted by "Date" column in descending order by default on the Admin page
 	When User selects "Scope Changes" tab on the Project details page
-	And User navigates to the 'Applications' left menu item
+	And User navigates to the 'Applications' tab on Project Scope Changes page
 	And User expands the object to add 
 	When User selects following Objects to the Project
 	| Objects                                                       |

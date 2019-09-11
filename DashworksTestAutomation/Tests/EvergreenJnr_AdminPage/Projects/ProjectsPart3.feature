@@ -25,13 +25,13 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatRedBannerWithOkMessageIsNotDisplaye
 	When User selects following Objects to the Project
 	| Objects        |
 	| 1DPQO52HJQZJ0H |
-	And User navigates to the 'Applications' left menu item
+	And User navigates to the 'Applications' tab on Project Scope Changes page
 	And User expands the object to add
 	Then Objects are displayed in alphabetical order on the Admin page
 	When User selects following Objects to the Project
 	| Objects                                    |
 	| 0004 - Adobe Acrobat Reader 5.0.5 Francais |
-	And User navigates to the 'Users' left menu item
+	And User navigates to the 'Users' tab on Project Scope Changes page
 	And User expands the object to add
 	Then Objects are displayed in alphabetical order on the Admin page
 	When User selects following Objects to the Project
@@ -131,7 +131,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	| TestProject12490 | All Devices | None            | Standalone Project |
 	And User selects "Scope" tab on the Project details page
 	And User selects "Scope Changes" tab on the Project details page
-	And User navigates to the 'Devices' left menu item
+	And User navigates to the 'Devices' tab on Project Scope Changes page
 	Then "[Default (Computer)]" Path is displayed to the user
 	And "[None]" Category is displayed to the user
 	And "Unassigned" is displayed in the Bucket dropdown
@@ -140,7 +140,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	| Objects        |
 	| 0IJB93JZPG72PX |
 	| 04I01QSFL1AWKM |
-	When User navigates to the 'Applications' tab on Scope Changes page
+	When User navigates to the 'Applications' tab on Project Scope Changes page
 	Then "[Default (Application)]" Path is displayed to the user
 	And "[None]" Category is displayed to the user
 	When User expands the object to add
@@ -148,7 +148,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	| Objects                        |
 	| ACDSee 4.0.1 Std Trial Version |
 	| ACDSee 8 (8.0.39)              |
-	When User navigates to the 'Users' tab on Scope Changes page
+	When User navigates to the 'Users' tab on Project Scope Changes page
 	Then "[Default (User)]" Path is displayed to the user
 	And "[None]" Category is displayed to the user
 	And "Unassigned" is displayed in the Bucket dropdown

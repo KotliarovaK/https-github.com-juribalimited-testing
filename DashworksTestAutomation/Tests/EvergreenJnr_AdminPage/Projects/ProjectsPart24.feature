@@ -111,15 +111,15 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckSavingOfChangesOnScopeDetailsPage
 	When User navigates to "<ProjectName>" project details
 	And User selects "Scope" tab on the Project details page
 	And User selects "Scope Details" tab on the Project details page
-	And User navigates to the "<tab1>" tab in the Scope section on the Project details page
+	And User navigates to the '<tab1>' tab on Project Scope Changes page
 	And User selects "<List1>" in the Scope Project details
-	And User navigates to the "<tab2>" tab in the Scope section on the Project details page
+	And User navigates to the '<tab2>' tab on Project Scope Changes page
 	And User selects "<List2>" in the Scope Project details
 	And User selects "Scope Changes" tab on the Project details page
 	And User selects "Scope Details" tab on the Project details page
-	When User navigates to the "<tab1>" tab in the Scope section on the Project details page
+	When User navigates to the '<tab1>' tab on Project Scope Changes page
 	Then Scope List dropdown displayed with "<List1>" value
-	When User navigates to the "<tab2>" tab in the Scope section on the Project details page
+	When User navigates to the '<tab2>' tab on Project Scope Changes page
 	Then Scope List dropdown displayed with "<List2>" value
 
 Examples:

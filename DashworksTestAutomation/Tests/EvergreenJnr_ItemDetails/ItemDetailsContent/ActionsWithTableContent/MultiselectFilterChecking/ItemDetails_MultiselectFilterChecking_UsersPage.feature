@@ -43,7 +43,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplaye
 	When User perform search by "allanj"
 	And User click content from "Username" column
 	Then Details page for "allanj (Jo Allan)" item is displayed to the user
-	When User navigates to the 'Applications' tab on Scope Changes page
+	When User navigates to the 'Applications' tab on Project Scope Changes page
 	And User navigates to the "Evergreen Summary" sub-menu on the Details page
 	Then 'JuribaDEV50' content is displayed in the 'Site' column
 	And 'UNKNOWN' content is displayed in the 'Installed' column
@@ -88,7 +88,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplaye
 	When User perform search by "allanj"
 	And User click content from "Username" column
 	Then Details page for "allanj (Jo Allan)" item is displayed to the user
-	When User navigates to the 'Applications' tab on Scope Changes page
+	When User navigates to the 'Applications' tab on Project Scope Changes page
 	And User navigates to the "Evergreen Detail" sub-menu on the Details page
 	Then 'UNKNOWN' content is displayed in the 'Compliance' column
 	And 'JuribaDEV50' content is displayed in the 'Site' column
@@ -116,7 +116,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplaye
 	When User perform search by "allanj"
 	And User click content from "Username" column
 	Then Details page for "allanj (Jo Allan)" item is displayed to the user
-	When User navigates to the 'Applications' tab on Scope Changes page
+	When User navigates to the 'Applications' tab on Project Scope Changes page
 	And User navigates to the "Advertisements" sub-menu on the Details page
 	Then 'JuribaDEV50' content is displayed in the 'Site' column
 	When User clicks String Filter button for "Site" column
@@ -132,7 +132,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplaye
 	When User perform search by "allanj"
 	And User click content from "Username" column
 	Then Details page for "allanj (Jo Allan)" item is displayed to the user
-	When User navigates to the 'Applications' tab on Scope Changes page
+	When User navigates to the 'Applications' tab on Project Scope Changes page
 	And User navigates to the "Collections" sub-menu on the Details page
 	Then 'SMS/SCCM 2007' content is displayed in the 'Source Type' column
 	And 'DC1 SMS (DEV50)' content is displayed in the 'Source' column

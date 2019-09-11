@@ -86,19 +86,19 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProj
 	And User enters "ProjectForDAS14103" text in the Search field for "Project" column
 	And User click content from "Project" column
 	And User selects "Scope Changes" tab on the Project details page
-	And User navigates to the 'Devices' left menu item
+	And User navigates to the 'Devices' tab on Project Scope Changes page
 	Then open tab in the Project Scope Changes section is active
 	When User expands the object to add 
 	And User selects following Objects
 	| Objects        |
 	| 001BAQXT6JWFPI |
-	And User navigates to the 'Users' left menu item
+	And User navigates to the 'Users' tab on Project Scope Changes page
 	Then open tab in the Project Scope Changes section is active
 	When User expands the object to add 
 	And User selects following Objects
 	| Objects                    |
 	| AAC860150 (Kerrie D. Ruiz) |
-	And User navigates to the 'Applications' left menu item
+	And User navigates to the 'Applications' tab on Project Scope Changes page
 	Then open tab in the Project Scope Changes section is active
 	When User expands the object to add 
 	And User selects following Objects
@@ -154,7 +154,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOriginalCapacityUnitStoredAndDisplaye
 	| ProjectForDAS13961 | All Devices | None            | Standalone Project |
 	And User navigates to the 'Scope' left menu item
 	And User selects "Scope Changes" tab on the Project details page
-	And User navigates to the 'Devices' left menu item
+	And User navigates to the 'Devices' tab on Project Scope Changes page
 	Then open tab in the Project Scope Changes section is active
 	When User expands the object to add 
 	And User selects following Objects
