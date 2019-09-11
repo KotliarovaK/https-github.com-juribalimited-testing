@@ -659,7 +659,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenRingDdlContainsOptionsInProjectSummarySectionOnTheDetailsPage()
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            Utils.Verify.That(detailsPage.OperatorOptions.Select(value => value.Text).ToList().All(x => x.Contains("Ring") || x.Contains("[Unassigned]")),
+            Utils.Verify.That(detailsPage.OperatorOptions.Select(value => value.Text).ToList().All(x => x.Contains("Ring") || x.Contains("Unassigned")),
                 "Some options are not available for selected filter");
         }
 

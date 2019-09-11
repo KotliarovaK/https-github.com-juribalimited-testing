@@ -130,7 +130,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	Then popup changes window opened
 	When User selects all rows on the grid on the Details Page for "Related Users"
 	Then User clicks on "New Bucket" dropdown
-	When User select "[Unassigned]" value on the Details Page
+	When User select "Unassigned" value on the Details Page
 	And User clicks the "UPDATE" Action button
 	Then "Unassigned" link is displayed on the Details Page
 	And There are no errors in the browser console
@@ -155,7 +155,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	When User clicks on "Bucket12883" link on the Details Page
 	And User selects all rows on the grid on the Details Page for "Related Mailboxes"
 	Then User clicks on "New Bucket" dropdown
-	When User select "[Unassigned]" value on the Details Page
+	When User select "Unassigned" value on the Details Page
 	And User clicks the "UPDATE" Action button
 	Then "Unassigned" link is displayed on the Details Page
 	And There are no errors in the browser console
@@ -181,7 +181,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	Then popup changes window opened
 	When User selects all rows on the grid on the Details Page for "Related Users"
 	Then User clicks on "New Bucket" dropdown
-	When User select "[Unassigned]" value on the Details Page
+	When User select "Unassigned" value on the Details Page
 	And User clicks the "UPDATE" Action button
 	Then "Unassigned" link is displayed on the Details Page
 	And There are no errors in the browser console
@@ -214,7 +214,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjec
 	Then popup changes window opened
 	When User selects all rows on the grid on the Details Page for "Related Users"
 	Then User clicks on "New Capacity Unit" dropdown
-	When User select "[Unassigned]" value on the Details Page
+	When User select "Unassigned" value on the Details Page
 	And User clicks the "UPDATE" Action button
 	Then "Unassigned" link is displayed on the Details Page
 	And There are no errors in the browser console
@@ -240,7 +240,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjec
 	Then popup changes window opened
 	When User selects all rows on the grid on the Details Page for "Related Mailboxes"
 	Then User clicks on "New Capacity Unit" dropdown
-	When User select "[Unassigned]" value on the Details Page
+	When User select "Unassigned" value on the Details Page
 	And User clicks the "UPDATE" Action button
 	Then "Unassigned" link is displayed on the Details Page
 	And There are no errors in the browser console
@@ -266,7 +266,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjec
 	Then popup changes window opened
 	When User selects all rows on the grid on the Details Page for "Related Users"
 	Then User clicks on "New Capacity Unit" dropdown
-	When User select "[Unassigned]" value on the Details Page
+	When User select "Unassigned" value on the Details Page
 	And User clicks the "UPDATE" Action button
 	Then "Unassigned" link is displayed on the Details Page
 	And There are no errors in the browser console
