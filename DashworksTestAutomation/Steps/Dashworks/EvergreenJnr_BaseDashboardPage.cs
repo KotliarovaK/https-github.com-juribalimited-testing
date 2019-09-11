@@ -419,14 +419,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             foreach (var row in table.Rows)
             {
                 //Sort newly added column to got only value at first places
-                WhenUserClickOnColumnHeader(row["ColumnName"]);
+                WhenUserClicksOnColumnHeader(row["ColumnName"]);
                 var content = page.GetColumnContent(row["ColumnName"]);
 
                 //Check that at least 10 cells has some content
                 Verify.IsTrue(content.Count(x => !string.IsNullOrEmpty(x)) > 10, "Newly added column is empty");
                 //Reset column sorting to default value
-                WhenUserClickOnColumnHeader(row["ColumnName"]);
-                WhenUserClickOnColumnHeader(row["ColumnName"]);
+                WhenUserClicksOnColumnHeader(row["ColumnName"]);
+                WhenUserClicksOnColumnHeader(row["ColumnName"]);
             }
         }
 
