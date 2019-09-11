@@ -106,21 +106,21 @@ Scenario: EvergreenJnr_AdminPage_OnboardingMailboxesUsersApplicationsObjectsUsin
 	Then Project "TestProject65" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Mailboxes to add (0 of 14784 selected)" is displayed to the user in the Project Scope Changes section
-	When User expands the object to add
-	And User selects following Objects to the Project
+	When User expands multiselect to add objects
+	And User expands multiselect and selects following Objects
 	| Objects                                            |
 	| 003F5D8E1A844B1FAA5@bclabs.local (Hunter, Melanie) |
 	| 00DB4000EDD84951993@bclabs.local (CSC, SS)         |
 	When User navigates to the 'Users' tab on Project Scope Changes page
 	Then "Users to add (0 of 14747 selected)" is displayed to the user in the Project Scope Changes section
-	When User expands the object to add 
-	And User selects following Objects to the Project
+	When User expands multiselect to add objects 
+	And User expands multiselect and selects following Objects
 	| Objects                            |
 	| 02E0346DF7804F25835 (Gill, Donna)  |
 	| 037AF4CF47C1452D8A4 (Vanetti, Joe) |
 	#When User navigates to the 'Applications' tab on Project Scope Changes page
 	#Then "Applications to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
-	#When User expands the object to add 
+	#When User expands multiselect to add objects 
 	#And User selects following Objects
 	#| Objects                                          |
 	#| ACDSee 4.0.2 PowerPack Trial Version (4.00.0002) |

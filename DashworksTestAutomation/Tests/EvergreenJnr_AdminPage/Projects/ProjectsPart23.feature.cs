@@ -290,7 +290,7 @@ this.FeatureBackground();
             table3.AddRow(new string[] {
                         "001PSUMZYOW581"});
 #line 53
- testRunner.And("User selects following Objects to the Project", ((string)(null)), table3, "And ");
+ testRunner.And("User expands multiselect and selects following Objects", ((string)(null)), table3, "And ");
 #line 56
  testRunner.And("User navigates to the \'Users\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -299,7 +299,7 @@ this.FeatureBackground();
             table4.AddRow(new string[] {
                         "AAD1011948 (Pinabel Cinq-Mars)"});
 #line 57
- testRunner.And("User selects following Objects to the Project", ((string)(null)), table4, "And ");
+ testRunner.And("User expands multiselect and selects following Objects", ((string)(null)), table4, "And ");
 #line 60
  testRunner.And("User navigates to the \'Applications\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -308,7 +308,7 @@ this.FeatureBackground();
             table5.AddRow(new string[] {
                         "0004 - Adobe Acrobat Reader 5.0.5 Francais (5.0.5)"});
 #line 61
- testRunner.And("User selects following Objects to the Project", ((string)(null)), table5, "And ");
+ testRunner.And("User expands multiselect and selects following Objects", ((string)(null)), table5, "And ");
 #line 64
  testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 65

@@ -193,7 +193,7 @@ this.FeatureBackground();
  testRunner.Then("\"Users to add (0 of 2 selected)\" is displayed to the user in the Project Scope Ch" +
                     "anges section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 35
- testRunner.When("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User expands multiselect to add objects", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
@@ -202,7 +202,7 @@ this.FeatureBackground();
             table3.AddRow(new string[] {
                         "002B5DC7D4D34D5C895 (Collor, Christopher)"});
 #line 36
- testRunner.And("User selects following Objects to the Project", ((string)(null)), table3, "And ");
+ testRunner.And("User expands multiselect and selects following Objects", ((string)(null)), table3, "And ");
 #line 40
  testRunner.Then("\"Users to add (2 of 2 selected)\" is displayed to the user in the Project Scope Ch" +
                     "anges section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

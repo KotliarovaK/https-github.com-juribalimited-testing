@@ -22,8 +22,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatBlueBannerIsDisplayedWithCorrectlyTex
 	Then Project "Project13347" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
 	Then open tab in the Project Scope Changes section is active
-	When User expands the object to add 
-	And User selects following Objects to the Project
+	When User expands multiselect to add objects 
+	And User expands multiselect and selects following Objects
 	| Objects         |
 	| 00K4CEEQ737BA4L |
 	| 00YWR8TJU4ZF8V  |
@@ -33,11 +33,11 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatBlueBannerIsDisplayedWithCorrectlyTex
 	And User clicks the "UPDATE ALL CHANGES" Action button
 	And User clicks the "UPDATE PROJECT" Action button
 	And User navigates to the 'Users' tab on Project Scope Changes page
-	And User expands the object to add 
+	And User expands multiselect to add objects 
 	When User selects all objects to the Project
 	And User navigates to the 'Applications' tab on Project Scope Changes page
-	And User expands the object to add 
-	And User selects following Objects to the Project
+	And User expands multiselect to add objects 
+	And User expands multiselect and selects following Objects
 	| Objects                                                                       |
 	| "WPF/E" (codename) Community Technology Preview (Feb 2007) (0.8.5.0)          |
 	| %SQL_PRODUCT_SHORT_NAME% Data Tools - BI for Visual Studio 2013 (12.0.2430.0) |

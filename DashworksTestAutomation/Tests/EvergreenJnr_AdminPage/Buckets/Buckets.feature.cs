@@ -641,7 +641,7 @@ this.FeatureBackground();
 #line 182
  testRunner.And("User navigates to the \'Devices\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 183
- testRunner.When("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User expands multiselect to add objects", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
@@ -666,7 +666,7 @@ this.FeatureBackground();
             table9.AddRow(new string[] {
                         "00OMQQXWA1DRI6"});
 #line 184
- testRunner.And("User selects following Objects to the Project", ((string)(null)), table9, "And ");
+ testRunner.And("User expands multiselect and selects following Objects", ((string)(null)), table9, "And ");
 #line 196
  testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 197

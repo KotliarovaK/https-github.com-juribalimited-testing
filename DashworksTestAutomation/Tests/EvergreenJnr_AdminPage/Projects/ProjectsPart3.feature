@@ -20,21 +20,21 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatRedBannerWithOkMessageIsNotDisplaye
 	When User clicks newly created object link
 	Then Project "TestProject12332" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
-	When User expands the object to add
+	When User expands multiselect to add objects
 	Then Objects are displayed in alphabetical order on the Admin page
-	When User selects following Objects to the Project
+	When User expands multiselect and selects following Objects
 	| Objects        |
 	| 1DPQO52HJQZJ0H |
 	And User navigates to the 'Applications' tab on Project Scope Changes page
-	And User expands the object to add
+	And User expands multiselect to add objects
 	Then Objects are displayed in alphabetical order on the Admin page
-	When User selects following Objects to the Project
+	When User expands multiselect and selects following Objects
 	| Objects                                    |
 	| 0004 - Adobe Acrobat Reader 5.0.5 Francais |
 	And User navigates to the 'Users' tab on Project Scope Changes page
-	And User expands the object to add
+	And User expands multiselect to add objects
 	Then Objects are displayed in alphabetical order on the Admin page
-	When User selects following Objects to the Project
+	When User expands multiselect and selects following Objects
 	| Objects                    |
 	| AAC860150 (Kerrie D. Ruiz) |
 	And User clicks the "UPDATE ALL CHANGES" Action button
@@ -100,8 +100,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatObjectsIsOnboardedToTheProjectWithClon
 	When User clicks newly created object link
 	Then Project "TestProject19" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
-	When User expands the object to add 
-	And User selects following Objects to the Project
+	When User expands multiselect to add objects 
+	And User expands multiselect and selects following Objects
 	| Objects         |
 	| 01BQIYGGUW5PRP6 |
 	And User clicks the "UPDATE ALL CHANGES" Action button
@@ -135,16 +135,16 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	Then "[Default (Computer)]" Path is displayed to the user
 	And "[None]" Category is displayed to the user
 	And "Unassigned" is displayed in the Bucket dropdown
-	When User expands the object to add
-	And User selects following Objects to the Project
+	When User expands multiselect to add objects
+	And User expands multiselect and selects following Objects
 	| Objects        |
 	| 0IJB93JZPG72PX |
 	| 04I01QSFL1AWKM |
 	When User navigates to the 'Applications' tab on Project Scope Changes page
 	Then "[Default (Application)]" Path is displayed to the user
 	And "[None]" Category is displayed to the user
-	When User expands the object to add
-	And User selects following Objects to the Project
+	When User expands multiselect to add objects
+	And User expands multiselect and selects following Objects
 	| Objects                        |
 	| ACDSee 4.0.1 Std Trial Version |
 	| ACDSee 8 (8.0.39)              |
@@ -152,8 +152,8 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	Then "[Default (User)]" Path is displayed to the user
 	And "[None]" Category is displayed to the user
 	And "Unassigned" is displayed in the Bucket dropdown
-	When User expands the object to add
-	And User selects following Objects to the Project
+	When User expands multiselect to add objects
+	And User expands multiselect and selects following Objects
 	| Objects                        |
 	| ABQ575757 (Salvador K. Waller) |
 	| ADG685492 (Eugene N. Stanton)  |

@@ -18,9 +18,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedAfterUpdati
 	And User selects "Scope Changes" tab on the Project details page
 	And User navigates to the 'Applications' tab on Project Scope Changes page
 	Then "Applications to add (0 of 2129 selected)" is displayed to the user in the Project Scope Changes section
-	When User expands the object to add 
+	When User expands multiselect to add objects 
 	Then Objects are displayed in alphabetical order on the Admin page
-	When User selects following Objects to the Project
+	When User expands multiselect and selects following Objects
 	| Objects                     |
 	| 20040610sqlserverck (1.0.0) |
 	| 7zip                        |
@@ -73,7 +73,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedCheckboxIsSelectedAfterSwitchi
 	And User selects "Scope Changes" tab on the Project details page
 	And User navigates to the 'Devices' tab on Project Scope Changes page
 	Then Update Project buttons is disabled
-	When User expands the object to add
+	When User expands multiselect to add objects
 	Then Objects are displayed in alphabetical order on the Admin page
 	When User selects following Objects from the expandable multiselect
 	| Objects        |
@@ -81,13 +81,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedCheckboxIsSelectedAfterSwitchi
 	Then Update Project button is active
 	And "Devices to add (1 of 17279 selected)" is displayed to the user in the Project Scope Changes section
 	When User navigates to the 'Users' tab on Project Scope Changes page
-	When User expands the object to add
+	When User expands multiselect to add objects
 	Then Objects are displayed in alphabetical order on the Admin page
 	When User selects following Objects from the expandable multiselect
 	| Objects                   |
 	| AAH0343264 (Luc Gauthier) |
 	And User navigates to the 'Devices' tab on Project Scope Changes page
-	When User expands the object to add 
+	When User expands multiselect to add objects 
 	Then following items are still selected
 	And "Devices to add (1 of 17279 selected)" is displayed to the user in the Project Scope Changes section
 

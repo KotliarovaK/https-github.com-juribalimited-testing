@@ -43,7 +43,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Scope
         public void ThenFollowingObjectsWereNotFound(Table table)
         {
             var basePage = _driver.NowAt<BaseDashboardPage>();
-            basePage.ExpandCollpseMultiselectButton("").Click();
+            basePage.ExpandCollapseMultiselectButton("").Click();
 
             var projectElement = _driver.NowAt<ScopeChangePage>();
             foreach (var row in table.Rows)
@@ -56,20 +56,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Scope
             }
         }
 
-        [When(@"User expands the object to add")]
-        public void WhenUserExpandsTheObjectToAdd()
-        {
-            var basePage = _driver.NowAt<BaseDashboardPage>();
-            basePage.ExpandCollpseMultiselectButton("").Click();
-        }
-
         [When(@"User expands the object to remove on ""(.*)"" tab")]
         public void WhenUserExpandsTheObjectToRemoveOnTab(string tabName)
         {
             var basePage = _driver.NowAt<BaseDashboardPage>();
             try
             {
-                basePage.ExpandCollpseMultiselectButton("").Click();
+                basePage.ExpandCollapseMultiselectButton("").Click();
             }
             catch (Exception)
             {
@@ -78,7 +71,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Scope
                 var projectTabs = _driver.NowAt<ProjectsPage>();
                 projectTabs.ClickToTabByNameProjectScopeChanges(tabName);
                 _driver.WaitForDataLoading();
-                basePage.ExpandCollpseMultiselectButton("").Click();
+                basePage.ExpandCollapseMultiselectButton("").Click();
             }
         }
 
@@ -88,7 +81,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Scope
             var basePage = _driver.NowAt<BaseDashboardPage>();
             try
             {
-                basePage.ExpandCollpseMultiselectButton("").Click();
+                basePage.ExpandCollapseMultiselectButton("").Click();
             }
             catch (Exception)
             {
@@ -97,7 +90,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Scope
                 var projectTabs = _driver.NowAt<ProjectsPage>();
                 projectTabs.ClickToTabByNameProjectScopeChanges(tabName);
                 _driver.WaitForDataLoading();
-                basePage.ExpandCollpseMultiselectButton("").Click();
+                basePage.ExpandCollapseMultiselectButton("").Click();
             }
         }
 
@@ -121,7 +114,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Scope
         [When(@"User adds following Objects to the Project on ""(.*)"" tab")]
         public void WhenUserAddsFollowingObjectsToTheProjectOnTab(string tabName, Table table)
         {
-            var projectElement = _driver.NowAt<ScopeChangePage>();
             var basePage = _driver.NowAt<BaseDashboardPage>();
             try
             {
@@ -143,7 +135,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Scope
                 var projectTabs = _driver.NowAt<ProjectsPage>();
                 projectTabs.ClickToTabByNameProjectScopeChanges(tabName);
                 _driver.WaitForDataLoading();
-                projectElement = _driver.NowAt<ScopeChangePage>();
                 basePage.GetExpandableMultiselect("").Click();
                 foreach (var row in table.Rows)
                 {
@@ -156,27 +147,12 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Scope
             basePage.ClickButtonByName("UPDATE ALL CHANGES");
         }
 
-        [When(@"User selects following Objects to the Project")]
-        public void WhenUserSelectsFollowingObjectsToTheProject(Table table)
-        {
-            var basePage = _driver.NowAt<BaseDashboardPage>();
-            basePage.GetExpandableMultiselect("").Click();
-            foreach (var row in table.Rows)
-            {
-                var search = basePage.GetNamedTextbox("Search");
-                search.Clear();
-                search.SendKeys(row["Objects"]);
-                basePage.AddItem(row["Objects"]);
-                search.ClearWithHomeButton(_driver);
-            }
-        }
-
         [Then(@"following items are still selected")]
         public void ThenFollowingItemsAreStillSelected()
         {
             var projectElement = _driver.NowAt<ScopeChangePage>();
             var basePage = _driver.NowAt<BaseDashboardPage>();
-            Verify.IsTrue(basePage.ExpandCollpseMultiselectButton("").Disabled(), "Items are not selected");
+            Verify.IsTrue(basePage.ExpandCollapseMultiselectButton("").Disabled(), "Items are not selected");
             Verify.IsTrue(projectElement.CheckedSomeItemCheckbox.Displayed(), "Item checkbox is not checked");
         }
 

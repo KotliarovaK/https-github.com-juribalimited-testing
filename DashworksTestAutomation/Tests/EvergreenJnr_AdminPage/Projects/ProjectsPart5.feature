@@ -86,8 +86,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThat500ISEInvalidColumnNameIsNotDisplayedW
 	Then Error message is not displayed
 	When User selects "Scope" tab on the Project details page
 	And User selects "Scope Changes" tab on the Project details page
-	And User expands the object to add 
-	And User selects following Objects to the Project
+	And User expands multiselect to add objects 
+	And User expands multiselect and selects following Objects
 	| Objects         |
 	| 0QLZFK7RHMWJLQM |
 	| 0RGBQGA7XOOPJSW |

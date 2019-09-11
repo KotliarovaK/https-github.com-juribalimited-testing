@@ -235,11 +235,27 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         #region Expandable multiselect
 
+        [When(@"User expands multiselect to add objects")]
+        public void WhenUserExpandsMultiselectToAddObjects()
+        {
+            var basePage = _driver.NowAt<BaseDashboardPage>();
+            basePage.ExpandCollapseMultiselectButton("").Click();
+        }
+
         [When(@"User selects following Objects from the expandable multiselect")]
         public void WhenUserSelectsFollowingObjectsFromTheExpandableMultiselect(Table table)
         {
             var itemsToAdd = table.Rows.Select(x => x["Objects"]).ToList();
             var basePage = _driver.NowAt<BaseDashboardPage>();
+            basePage.AddItemsToMultiSelect(itemsToAdd);
+        }
+
+        [When(@"User expands multiselect and selects following Objects")]
+        public void WhenUserExpandsMultiselectAndSelectsFollowingObjects(Table table)
+        {
+            var itemsToAdd = table.Rows.Select(x => x["Objects"]).ToList();
+            var basePage = _driver.NowAt<BaseDashboardPage>();
+            basePage.ExpandCollapseMultiselectButton("").Click();
             basePage.AddItemsToMultiSelect(itemsToAdd);
         }
 

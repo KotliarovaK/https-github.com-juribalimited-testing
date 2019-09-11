@@ -31,8 +31,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedBucketsIsDisplayedForOnboarded
 	And User clicks content from "Project" column
 	Then Project "UsersProject3" is displayed to user
 	When user selects "UsersProject3Group" in the Bucket dropdown
-	And User expands the object to add 
-	And User selects following Objects to the Project
+	And User expands multiselect to add objects 
+	And User expands multiselect and selects following Objects
 	| Objects                               |
 	| 003F5D8E1A844B1FAA5 (Hunter, Melanie) |
 	And User clicks the "UPDATE ALL CHANGES" Action button
@@ -156,7 +156,7 @@ Scenario: EvergreenJnr_AdminPage_TheGreenBannerIsNotDisplayedIfBannerWasBeShownO
 	When User selects "Scope" tab on the Project details page
 	When User selects "Scope Changes" tab on the Project details page
 	And User navigates to the 'Devices' tab on Project Scope Changes page
-	And User expands the object to add 
+	And User expands multiselect to add objects 
 	And User selects following Objects from the expandable multiselect
 	| Objects         |
 	| 0623U41CZ73RV2Q |

@@ -75,12 +75,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	Then Project "TestProject12776" is displayed to user
 	When User selects "Scope" tab on the Project details page
 	And User selects "Scope Changes" tab on the Project details page
-	And User expands the object to add 
+	And User expands multiselect to add objects 
 	And User selects following Objects from the expandable multiselect
 	| Objects        |
 	| SZ46M6IS71DPZ1 |
 	And User navigates to the 'Users' tab on Project Scope Changes page
-	And User expands the object to add 
+	And User expands multiselect to add objects 
 	And User selects following Objects from the expandable multiselect
 	| Objects                          |
 	| ACD252468 (Nicolas O. Mc Millan) |
@@ -97,13 +97,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	When User navigates to the 'Users' tab on Project Scope Changes page
 	Then "Users to add (0 of 14628 selected)" is displayed to the user in the Project Scope Changes section
 	Then Objects to add panel is active
-	When User expands the object to add 
+	When User expands multiselect to add objects 
 	And User selects following Objects from the expandable multiselect
 	| Objects                    |
 	| AAK881049 (Miguel W. Owen) |
 	Then "UPDATE ALL CHANGES" Action button is active
 	When User navigates to the 'Devices' tab on Project Scope Changes page
-	And User expands the object to add 
+	And User expands multiselect to add objects 
 	And User selects following Objects from the expandable multiselect
 	| Objects        |
 	| 00SH8162NAS524 |
@@ -127,7 +127,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	Then 'Clone evergreen capacity units to project capacity units' content is displayed in 'Capacity Units' dropdown
 	When User navigates to the 'Scope' left menu item
 	When User selects "Scope Changes" tab on the Project details page
-	And User expands the object to add 
+	And User expands multiselect to add objects 
 	And User selects following Objects from the expandable multiselect
 	| Objects                                |
 	| 00BDBAEA57334C7C8F4 (Basa, Rogelio)    |
@@ -146,7 +146,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	Then Objects to add panel is active
 	When User navigates to the 'Users' tab on Project Scope Changes page
 	Then Objects to add panel is active
-	When User expands the object to add 
+	When User expands multiselect to add objects 
 	And User selects following Objects from the expandable multiselect
 	| Objects                             |
 	| 000F977AC8824FE39B8 (Spruill, Shea) |

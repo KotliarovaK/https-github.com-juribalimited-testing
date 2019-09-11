@@ -59,19 +59,19 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 	Then Project "TestProject12364" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Users to add (0 of 41339 selected)" is displayed to the user in the Project Scope Changes section
-	When User expands the object to add
+	When User expands multiselect to add objects
 	Then Objects are displayed in alphabetical order on the Admin page
 	When User enters 'child' text to 'Search' textbox
 	Then Objects are displayed in alphabetical order on the Admin page
 	When User enters '' text to 'Search' textbox
 	Then Objects are displayed in alphabetical order on the Admin page
-	When User selects following Objects to the Project
+	When User expands multiselect and selects following Objects
 	| Objects                               |
 	| 003F5D8E1A844B1FAA5 (Hunter, Melanie) |
 	| 01FF97A1FFAC48A1803 (Aultman, Chanel) |
 	When User navigates to the 'Devices' tab on Project Scope Changes page
 	Then "Devices to add (0 of 16765 selected)" is displayed to the user in the Project Scope Changes section
-	When User expands the object to add 
+	When User expands multiselect to add objects 
 	Then Objects are displayed in alphabetical order on the Admin page
 	When User enters 'wpq' text to 'Search' textbox
 	Then Objects are displayed in alphabetical order on the Admin page
@@ -85,7 +85,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 	| 174HB6RFAHA5CT |
 	When User navigates to the 'Applications' tab on Project Scope Changes page
 	Then "Applications to add (0 of 2081 selected)" is displayed to the user in the Project Scope Changes section
-	When User expands the object to add 
+	When User expands multiselect to add objects 
 	Then Objects are displayed in alphabetical order on the Admin page
 	When User enters 'office 1' text to 'Search' textbox
 	Then Objects are displayed in alphabetical order on the Admin page

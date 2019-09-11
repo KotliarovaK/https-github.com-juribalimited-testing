@@ -280,7 +280,7 @@ this.FeatureBackground();
 #line 55
  testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 56
- testRunner.And("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User expands multiselect to add objects", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 57
  testRunner.Then("Objects are displayed in alphabetical order on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -293,7 +293,7 @@ this.FeatureBackground();
             table2.AddRow(new string[] {
                         "00BDM1JUR8IF419"});
 #line 58
- testRunner.When("User selects following Objects to the Project", ((string)(null)), table2, "When ");
+ testRunner.When("User expands multiselect and selects following Objects", ((string)(null)), table2, "When ");
 #line 63
  testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 64
@@ -334,7 +334,7 @@ this.FeatureBackground();
 #line 80
  testRunner.And("User navigates to the \'Applications\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 81
- testRunner.And("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User expands multiselect to add objects", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
@@ -410,7 +410,7 @@ this.FeatureBackground();
 #line 116
  testRunner.And("User navigates to the \'Applications\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 117
- testRunner.And("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User expands multiselect to add objects", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
@@ -462,7 +462,7 @@ this.FeatureBackground();
 #line 140
  testRunner.And("User navigates to the \'Devices\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 141
- testRunner.And("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User expands multiselect to add objects", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 142
  testRunner.Then("Objects are displayed in alphabetical order on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -475,7 +475,7 @@ this.FeatureBackground();
             table11.AddRow(new string[] {
                         "00BDM1JUR8IF419"});
 #line 143
- testRunner.When("User selects following Objects to the Project", ((string)(null)), table11, "When ");
+ testRunner.When("User expands multiselect and selects following Objects", ((string)(null)), table11, "When ");
 #line 148
  testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 149
@@ -602,7 +602,7 @@ this.FeatureBackground();
 #line 178
  testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 179
- testRunner.And("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User expands multiselect to add objects", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 180
  testRunner.Then("Objects are displayed in alphabetical order on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -615,7 +615,7 @@ this.FeatureBackground();
             table16.AddRow(new string[] {
                         "00BDM1JUR8IF419"});
 #line 181
- testRunner.When("User selects following Objects to the Project", ((string)(null)), table16, "When ");
+ testRunner.When("User expands multiselect and selects following Objects", ((string)(null)), table16, "When ");
 #line 186
  testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 187
@@ -656,7 +656,7 @@ this.FeatureBackground();
 #line 203
  testRunner.And("User navigates to the \'Applications\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 204
- testRunner.And("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User expands multiselect to add objects", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
@@ -667,7 +667,7 @@ this.FeatureBackground();
             table19.AddRow(new string[] {
                         "Adobe Acrobat Reader 5.0 (1.0)"});
 #line 205
- testRunner.When("User selects following Objects to the Project", ((string)(null)), table19, "When ");
+ testRunner.When("User expands multiselect and selects following Objects", ((string)(null)), table19, "When ");
 #line 210
  testRunner.When("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 211
@@ -730,7 +730,7 @@ this.FeatureBackground();
 #line 238
  testRunner.And("User navigates to the \'Applications\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 239
- testRunner.And("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User expands multiselect to add objects", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
@@ -741,7 +741,7 @@ this.FeatureBackground();
             table22.AddRow(new string[] {
                         "Adobe Acrobat Reader 5.0 (1.0)"});
 #line 240
- testRunner.When("User selects following Objects to the Project", ((string)(null)), table22, "When ");
+ testRunner.When("User expands multiselect and selects following Objects", ((string)(null)), table22, "When ");
 #line 245
  testRunner.When("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 246
@@ -780,7 +780,7 @@ this.FeatureBackground();
 #line 261
  testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 262
- testRunner.And("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User expands multiselect to add objects", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 263
  testRunner.Then("Objects are displayed in alphabetical order on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -793,7 +793,7 @@ this.FeatureBackground();
             table25.AddRow(new string[] {
                         "00BDM1JUR8IF419"});
 #line 264
- testRunner.When("User selects following Objects to the Project", ((string)(null)), table25, "When ");
+ testRunner.When("User expands multiselect and selects following Objects", ((string)(null)), table25, "When ");
 #line 269
  testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 270
@@ -920,7 +920,7 @@ this.FeatureBackground();
 #line 302
  testRunner.Then("open tab in the Project Scope Changes section is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 303
- testRunner.When("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User expands multiselect to add objects", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
@@ -945,7 +945,7 @@ this.FeatureBackground();
             table28.AddRow(new string[] {
                         "DK1LF3X47N7PWX7"});
 #line 304
- testRunner.When("User selects following Objects to the Project", ((string)(null)), table28, "When ");
+ testRunner.When("User expands multiselect and selects following Objects", ((string)(null)), table28, "When ");
 #line 316
  testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 317
@@ -1024,7 +1024,7 @@ this.FeatureBackground();
 #line 350
  testRunner.And("User navigates to the \'Applications\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 351
- testRunner.And("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User expands multiselect to add objects", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
@@ -1039,7 +1039,7 @@ this.FeatureBackground();
             table31.AddRow(new string[] {
                         "NJStar Chinese Word Processor"});
 #line 352
- testRunner.When("User selects following Objects to the Project", ((string)(null)), table31, "When ");
+ testRunner.When("User expands multiselect and selects following Objects", ((string)(null)), table31, "When ");
 #line 359
  testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 360
