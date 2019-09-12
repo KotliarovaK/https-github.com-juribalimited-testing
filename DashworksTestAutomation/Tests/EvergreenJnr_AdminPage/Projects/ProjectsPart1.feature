@@ -8,11 +8,11 @@ Background: Pre-Conditions
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11697 @DAS12744 @DAS12999 @Projects @TEST
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatCancelButtonOnTheCreateProjectPageRedirectsToTheLastPage
 	When User clicks "<ListName>" on the left-hand menu
-	Then "<ListName>" list should be displayed to the user
+	Then "All <ListName>" list should be displayed to the user
 	When User clicks Create Project from the main list
 	Then "Create Project" page should be displayed to the user
 	When User clicks the "CANCEL" Action button
-	Then "<ListName>" list should be displayed to the user
+	Then "All <ListName>" list should be displayed to the user
 
 Examples:
 	| ListName  |
