@@ -177,6 +177,8 @@ namespace DashworksTestAutomation.Base
         {
             if (bool.Parse(ConfigurationManager.AppSettings["browsersCleanup"]))
                 KillDriverProcesses.Do();
+
+            Logger.Write("ALL TESTS ARE FINISHED");
         }
 
         private string GetTestStatus()

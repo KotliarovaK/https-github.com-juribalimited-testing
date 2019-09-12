@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Automations;
 using DashworksTestAutomation.DTO.RuntimeVariables;
@@ -176,6 +177,19 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         [When(@"User selects '(.*)' in the '(.*)' dropdown")]
         public void WhenUserSelectsInTheDropdown(string value, string dropdownName)
+        {
+            SelectDropdown(value, dropdownName);
+        }
+
+        [When(@"User selects '(.*)' in the '(.*)' dropdown with wait")]
+        public void WhenUserSelectsInTheDropdownWithWait(string value, string dropdownName)
+        {
+            SelectDropdown(value, dropdownName);
+            //Used for Projects Scope to wait for changes to be applied
+            Thread.Sleep(3000);
+        }
+
+        private void SelectDropdown(string value, string dropdownName)
         {
             var dropdown = _driver.NowAt<BaseDashboardPage>();
             dropdown.GetDropdownByName(dropdownName).Click();
