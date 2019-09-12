@@ -43,6 +43,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
             return Driver.FindElement(link);
         }
 
+        //TODO probably should be renamed form Tab menu to left sub-menu
         public IWebElement GetTabMenuByName(string name)
         {
             var selector = By.XPath(string.Format(TabMenuByNameSelector, name));

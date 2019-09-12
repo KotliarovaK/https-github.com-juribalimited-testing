@@ -97,12 +97,12 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectScopeChangesIsLoadedSuc
 	| <TestName>  | <MainList> | None            | Standalone Project |
 	Then Project "<TestName>" is displayed to user
 	When User selects "Scope" tab on the Project details page
-	When User selects "<ListToScope1>" in the Scope Project details
+	When User selects '<ListToScope1>' in the 'Scope' dropdown with wait
 	And User navigates to the '<ScopeTab1>' tab on Project Scope Changes page
-	And User selects "<ListToScope2>" in the Scope Project details
+	And User selects '<ListToScope2>' in the 'Scope' dropdown with wait
 	And User navigates to the 'Application Scope' tab on Project Scope Changes page
 	When  User selects "Include applications" checkbox on the Project details page
-	And User selects "ApplicationsStaticList12157" in the Scope Project details
+	And User selects 'ApplicationsStaticList12157' in the 'Scope' dropdown with wait
 	And User selects "Scope Changes" tab on the Project details page
 	Then "<ObjectsToAdd1>" is displayed to the user in the Project Scope Changes section
 	When User navigates to the '<ScopeChanges1>' left menu item
