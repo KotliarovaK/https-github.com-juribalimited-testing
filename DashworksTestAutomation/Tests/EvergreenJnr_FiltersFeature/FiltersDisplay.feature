@@ -1782,6 +1782,8 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatApplicationReadinessSubCategoryIsM
 	And User closes "Project: MailboxEve" filter category
 	And User closes "Project: TST" filter category
 	And User closes "Project: USEMEFORA1" filter category
+	And User closes "Project: zMailboxAu" filter category
+	And User closes "Project Tasks: zMailboxAu" filter category
 	Then the following Filters subcategories are displayed for open category:
 	| Subcategories         |
 	| EmailMigra: Readiness |
