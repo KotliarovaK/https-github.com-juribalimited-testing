@@ -601,7 +601,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
         [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS15785")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "All Devices", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "All Users", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "All Applications", null)]
@@ -639,8 +638,7 @@ this.FeatureBackground();
                     "Devices",
                     "EvergreenJnr_ListPanel",
                     "CustomListDisplay",
-                    "DAS15785",
-                    "Not_Run"};
+                    "DAS15785"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));

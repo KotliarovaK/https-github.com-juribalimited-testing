@@ -132,30 +132,14 @@ this.FeatureBackground();
                         "WidgetType",
                         "Title",
                         "List",
-                        "Type",
-                        "AggregateBy",
                         "AggregateFunction",
-                        "SplitBy",
-                        "OrderBy",
-                        "MaxValues",
-                        "ShowLegend",
-                        "TableOrientation",
-                        "Drilldown",
-                        "Layout"});
+                        "SplitBy"});
             table1.AddRow(new string[] {
                         "Half donut",
                         "WidgetForDAS15918",
                         "1803 Rollout",
-                        "",
-                        "",
                         "Count",
-                        "1803: Pre-Migration \\ Ready to Migrate",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""});
+                        "1803: Pre-Migration \\ Ready to Migrate"});
 #line 12
  testRunner.And("User adds new Widget", ((string)(null)), table1, "And ");
 #line hidden
@@ -171,6 +155,111 @@ this.FeatureBackground();
                         "Count DESC"});
 #line 15
  testRunner.Then("User sees following options for Order By selector on Create Widget page:", ((string)(null)), table2, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIftheWidgetRes" +
+            "ultsAreAllZero")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
+        [NUnit.Framework.CategoryAttribute("Widgets")]
+        [NUnit.Framework.CategoryAttribute("DAS16167")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.TestCaseAttribute("Pie", null)]
+        [NUnit.Framework.TestCaseAttribute("Donut", null)]
+        [NUnit.Framework.TestCaseAttribute("Half donut", null)]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIftheWidgetResultsAreAllZero(string widgetType, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIftheWidgetResultsAreAllZeroInternal(widgetType,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIftheWidgetResultsAreAllZeroInternal(string widgetType, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "EvergreenJnr_DashboardsPage",
+                    "Widgets",
+                    "DAS16167",
+                    "Cleanup"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIftheWidgetRes" +
+                    "ultsAreAllZero", null, @__tags);
+#line 23
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table3.AddRow(new string[] {
+                        "HDD Total Size (GB)"});
+#line 24
+ testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table3, "When ");
+#line 27
+ testRunner.And("User create dynamic list with \"DAS16167_HddList\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 28
+ testRunner.When("Dashboard with \"DAS16167_HddList\" name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 29
+ testRunner.And("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 30
+ testRunner.And("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                        "WidgetType",
+                        "Title",
+                        "List",
+                        "SplitBy",
+                        "AggregateFunction",
+                        "AggregateBy",
+                        "OrderBy"});
+            table4.AddRow(new string[] {
+                        string.Format("{0}", widgetType),
+                        "HddListDAS16167",
+                        "DAS16167_HddList",
+                        "Operating System",
+                        "Minimum",
+                        "HDD Total Size (GB)",
+                        "HDD Total Size (GB) Minimum ASC"});
+#line 31
+ testRunner.And("User adds new Widget", ((string)(null)), table4, "And ");
+#line 34
+ testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 35
+ testRunner.And("\'All values are 0\' message is displayed in Preview", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 36
+ testRunner.When("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 37
+ testRunner.Then("\"HddListDAS16167\" Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 38
+ testRunner.And("\'All values are 0\' message is displayed in \'HddListDAS16167\' widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

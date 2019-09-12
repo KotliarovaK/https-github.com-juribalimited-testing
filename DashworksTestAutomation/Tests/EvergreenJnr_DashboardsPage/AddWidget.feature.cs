@@ -142,9 +142,7 @@ this.FeatureBackground();
                         "AggregateBy",
                         "AggregateFunction",
                         "OrderBy",
-                        "TableOrientation",
-                        "MaxValues",
-                        "ShowLegend"});
+                        "MaxValues"});
             table1.AddRow(new string[] {
                         "Pie",
                         "",
@@ -153,9 +151,7 @@ this.FeatureBackground();
                         "Hostname",
                         "Count distinct",
                         "Device Type ASC",
-                        "",
-                        "10",
-                        ""});
+                        "10"});
 #line 13
  testRunner.And("User creates new Widget", ((string)(null)), table1, "And ");
 #line 16
@@ -166,26 +162,10 @@ this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "WidgetType",
-                        "Title",
-                        "List",
-                        "SplitBy",
-                        "AggregateBy",
-                        "AggregateFunction",
-                        "OrderBy",
-                        "TableOrientation",
-                        "MaxValues",
-                        "ShowLegend"});
+                        "Title"});
             table2.AddRow(new string[] {
                         "",
-                        "Dashboard for DAS14587",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""});
+                        "Dashboard for DAS14587"});
 #line 18
  testRunner.When("User creates new Widget", ((string)(null)), table2, "When ");
 #line 21
@@ -259,8 +239,7 @@ this.FeatureBackground();
                         "AggregateFunction",
                         "OrderBy",
                         "TableOrientation",
-                        "MaxValues",
-                        "ShowLegend"});
+                        "MaxValues"});
             table3.AddRow(new string[] {
                         "Table",
                         "Line with one hundred and seven chars Line with one hundred and seven chars Line " +
@@ -271,8 +250,7 @@ this.FeatureBackground();
                         "Count distinct",
                         "Application ASC",
                         "Horizontal",
-                        "10",
-                        ""});
+                        "10"});
 #line 28
  testRunner.And("User creates new Widget", ((string)(null)), table3, "And ");
 #line 31
@@ -347,9 +325,7 @@ this.FeatureBackground();
                         "List",
                         "SplitBy",
                         "AggregateFunction",
-                        "AggregateBy",
                         "OrderBy",
-                        "TableOrientation",
                         "MaxValues",
                         "ShowLegend"});
             table4.AddRow(new string[] {
@@ -358,9 +334,7 @@ this.FeatureBackground();
                         "All Applications",
                         "Vendor",
                         "Count",
-                        "",
                         "Count ASC",
-                        "",
                         "10",
                         "true"});
 #line 39
@@ -375,29 +349,19 @@ this.FeatureBackground();
                         "Title",
                         "List",
                         "SplitBy",
-                        "AggregateBy",
                         "AggregateFunction",
                         "OrderBy",
-                        "TableOrientation",
                         "MaxValues",
-                        "ShowLegend",
-                        "Type",
-                        "Drilldown",
-                        "Layout"});
+                        "ShowLegend"});
             table5.AddRow(new string[] {
                         "Pie",
                         "WidgetForDAS15900_Edited",
                         "All Devices",
                         "Hostname",
-                        "",
                         "Count",
                         "Count ASC",
-                        "",
                         "11",
-                        "true",
-                        "",
-                        "",
-                        ""});
+                        "true"});
 #line 44
  testRunner.And("User adds new Widget", ((string)(null)), table5, "And ");
 #line 47
@@ -564,7 +528,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
         [NUnit.Framework.CategoryAttribute("DAS16958")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatEditWidgetPageCanBeOpenedForWidgetHavingDeletedList()
         {
             System.Exception lastException = null;
@@ -598,7 +561,6 @@ this.FeatureBackground();
                         "Evergreen",
                         "EvergreenJnr_DashboardsPage",
                         "DAS16958",
-                        "Cleanup",
                         "Cleanup"});
 #line 82
 this.ScenarioInitialize(scenarioInfo);
@@ -629,12 +591,8 @@ this.FeatureBackground();
                         "AggregateBy",
                         "AggregateFunction",
                         "OrderBy",
-                        "TableOrientation",
                         "MaxValues",
-                        "ShowLegend",
-                        "Type",
-                        "Drilldown",
-                        "Layout"});
+                        "ShowLegend"});
             table7.AddRow(new string[] {
                         "Bar",
                         "WidgetForDAS16958",
@@ -643,12 +601,8 @@ this.FeatureBackground();
                         "Device Type",
                         "Count distinct",
                         "Secure Boot Enabled ASC",
-                        "",
                         "10",
-                        "true",
-                        "",
-                        "",
-                        ""});
+                        "true"});
 #line 90
  testRunner.And("User adds new Widget", ((string)(null)), table7, "And ");
 #line 93
@@ -735,9 +689,7 @@ this.FeatureBackground();
                         "List",
                         "SplitBy",
                         "AggregateFunction",
-                        "AggregateBy",
                         "OrderBy",
-                        "TableOrientation",
                         "MaxValues",
                         "ShowLegend"});
             table8.AddRow(new string[] {
@@ -746,9 +698,7 @@ this.FeatureBackground();
                         "All Devices",
                         "Hostname",
                         "Count",
-                        "",
                         "Count ASC",
-                        "",
                         "10",
                         "true"});
 #line 109

@@ -142,9 +142,7 @@ this.FeatureBackground();
                         "AggregateBy",
                         "AggregateFunction",
                         "OrderBy",
-                        "TableOrientation",
-                        "MaxValues",
-                        "ShowLegend"});
+                        "MaxValues"});
             table1.AddRow(new string[] {
                         "Table",
                         "WidgetForDAS14685",
@@ -153,9 +151,7 @@ this.FeatureBackground();
                         "Application",
                         "Count distinct",
                         "Application ASC",
-                        "",
-                        "10",
-                        ""});
+                        "10"});
 #line 13
  testRunner.And("User creates new Widget", ((string)(null)), table1, "And ");
 #line 16
@@ -174,7 +170,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS14920")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccursWhenCreatingDashboardWidgetThatUsesBooleanField()
         {
@@ -210,7 +205,6 @@ this.FeatureBackground();
                         "EvergreenJnr_DashboardsPage",
                         "Widgets",
                         "DAS14920",
-                        "Cleanup",
                         "Cleanup"});
 #line 20
 this.ScenarioInitialize(scenarioInfo);
@@ -240,27 +234,17 @@ this.FeatureBackground();
                         "Title",
                         "List",
                         "SplitBy",
-                        "AggregateBy",
                         "AggregateFunction",
                         "OrderBy",
-                        "TableOrientation",
-                        "MaxValues",
-                        "ShowLegend",
-                        "Drilldown",
-                        "Layout"});
+                        "MaxValues"});
             table3.AddRow(new string[] {
                         "Table",
                         "DAS-14920_1",
                         "14920_List",
                         "Secure Boot Enabled",
-                        "",
                         "Count",
                         "Count ASC",
-                        "",
-                        "10",
-                        "",
-                        "",
-                        ""});
+                        "10"});
 #line 29
  testRunner.And("User adds new Widget", ((string)(null)), table3, "And ");
 #line 32
@@ -287,23 +271,17 @@ this.FeatureBackground();
                         "Title",
                         "List",
                         "SplitBy",
-                        "AggregateBy",
                         "AggregateFunction",
                         "OrderBy",
-                        "TableOrientation",
-                        "MaxValues",
-                        "ShowLegend"});
+                        "MaxValues"});
             table4.AddRow(new string[] {
                         "Table",
                         "DAS-14920_2",
                         "14920_List",
                         "Windows7Mi: In Scope",
-                        "",
                         "Count",
                         "Count ASC",
-                        "",
-                        "10",
-                        ""});
+                        "10"});
 #line 42
  testRunner.And("User creates new Widget", ((string)(null)), table4, "And ");
 #line 45
@@ -469,7 +447,6 @@ this.FeatureBackground();
                         "SplitBy",
                         "AggregateFunction",
                         "OrderBy",
-                        "TableOrientation",
                         "MaxValues"});
             table6.AddRow(new string[] {
                         "Table",
@@ -478,7 +455,6 @@ this.FeatureBackground();
                         "Vendor",
                         "Count",
                         "Count DESC",
-                        "",
                         "500"});
 #line 69
  testRunner.And("User creates new Widget", ((string)(null)), table6, "And ");
@@ -565,11 +541,7 @@ this.FeatureBackground();
                         "AggregateBy",
                         "AggregateFunction",
                         "OrderBy",
-                        "TableOrientation",
-                        "MaxValues",
-                        "ShowLegend",
-                        "Drilldown",
-                        "Layout"});
+                        "TableOrientation"});
             table8.AddRow(new string[] {
                         "Table",
                         "DAS-15208",
@@ -578,11 +550,7 @@ this.FeatureBackground();
                         "Device Type",
                         "Count distinct",
                         "Device Type ASC",
-                        "Horizontal",
-                        "",
-                        "",
-                        "",
-                        ""});
+                        "Horizontal"});
 #line 87
  testRunner.And("User adds new Widget", ((string)(null)), table8, "And ");
 #line 90
@@ -601,7 +569,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
         [NUnit.Framework.CategoryAttribute("DAS16275")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckCapacitySlotsDisplayOrderInDashboards()
         {
@@ -635,7 +602,6 @@ this.FeatureBackground();
                         "Evergreen",
                         "EvergreenJnr_DashboardsPage",
                         "DAS16275",
-                        "Cleanup",
                         "Cleanup"});
 #line 95
 this.ScenarioInitialize(scenarioInfo);
@@ -664,24 +630,16 @@ this.FeatureBackground();
                         "List",
                         "SplitBy",
                         "AggregateFunction",
-                        "AggregateBy",
                         "OrderBy",
-                        "MaxValues",
-                        "TableOrientation",
-                        "ShowLegend",
-                        "Layout"});
+                        "TableOrientation"});
             table10.AddRow(new string[] {
                         "Table",
                         "DAS16275_Widget",
                         "Devices_List_DAS16275",
                         "Windows7Mi: Pre-Migration \\ Scheduled Date (Slot)",
                         "Count",
-                        "",
                         "Count ASC",
-                        "",
-                        "Vertical",
-                        "",
-                        ""});
+                        "Vertical"});
 #line 103
  testRunner.And("User adds new Widget", ((string)(null)), table10, "And ");
 #line 106
@@ -732,7 +690,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS15826")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckRingsDisplayOrderInAWidgetOnDashboard()
         {
             System.Exception lastException = null;
@@ -766,7 +723,6 @@ this.FeatureBackground();
                         "EvergreenJnr_DashboardsPage",
                         "Widgets",
                         "DAS15826",
-                        "Cleanup",
                         "Cleanup"});
 #line 125
 this.ScenarioInitialize(scenarioInfo);
@@ -796,8 +752,7 @@ this.FeatureBackground();
                         "SplitBy",
                         "AggregateFunction",
                         "OrderBy",
-                        "TableOrientation",
-                        "MaxValues"});
+                        "TableOrientation"});
             table14.AddRow(new string[] {
                         "Table",
                         "DAS15826_Widget",
@@ -805,8 +760,7 @@ this.FeatureBackground();
                         "UserEvergr: Ring (All Users)",
                         "Count",
                         "UserEvergr: Ring (All Users) ASC",
-                        "Vertical",
-                        ""});
+                        "Vertical"});
 #line 133
  testRunner.And("User creates new Widget", ((string)(null)), table14, "And ");
 #line 136
@@ -941,7 +895,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS15362")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenFirstAggregateFunctionIsSelected()
         {
             System.Exception lastException = null;
@@ -976,7 +929,6 @@ this.FeatureBackground();
                         "EvergreenJnr_DashboardsPage",
                         "Widgets",
                         "DAS15362",
-                        "Cleanup",
                         "Cleanup"});
 #line 172
 this.ScenarioInitialize(scenarioInfo);
@@ -1036,7 +988,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS15362")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenLastAggregateFunctionIsSelected()
         {
             System.Exception lastException = null;
@@ -1071,7 +1022,6 @@ this.FeatureBackground();
                         "EvergreenJnr_DashboardsPage",
                         "Widgets",
                         "DAS15362",
-                        "Cleanup",
                         "Cleanup"});
 #line 194
 this.ScenarioInitialize(scenarioInfo);
@@ -1190,18 +1140,14 @@ this.FeatureBackground();
                         "List",
                         "SplitBy",
                         "AggregateFunction",
-                        "OrderBy",
-                        "TableOrientation",
-                        "MaxValues"});
+                        "OrderBy"});
             table21.AddRow(new string[] {
                         "Table",
                         "WidgetForDAS17599",
                         "List17599",
                         "Hostname",
                         "Count",
-                        "Hostname ASC",
-                        "",
-                        ""});
+                        "Hostname ASC"});
 #line 223
  testRunner.And("User creates new Widget", ((string)(null)), table21, "And ");
 #line 226

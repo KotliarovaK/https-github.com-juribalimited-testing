@@ -2300,3 +2300,32 @@ Scenario: EvergreenJnr_ApplicationsList_CheckDeviceOwnerItemsCounterPartVI
 	|        | Entitled to device  |
 	|        | Installed on device |
 	Then "18" rows are displayed in the agGrid
+
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS17557
+Scenario: EvergreenJnr_DevicesList_CheckThatSerialNumberToETLComputerAdded
+	When User clicks "Devices" on the left-hand menu
+	And User clicks the Filters button
+	And User add "Serial Number" filter where type is "Not empty" with added column and following value:
+	| Values        |
+	And User Add And "Serial Number" filter where type is "Does not equal" with added column and following value:
+	| Values        |
+	| CET2826853682 |
+	And User Add And "Serial Number" filter where type is "Contains" with added column and following value:
+	| Values |
+	| 034    |
+	And User Add And "Serial Number" filter where type is "Does not contain" with added column and following value:
+	| Values |
+	| 9889   |
+	And User Add And "Serial Number" filter where type is "Does not begin with" with added column and following value:
+	| Values |
+	| davi   |
+	And User Add And "Serial Number" filter where type is "Ends with" with added column and following value:
+	| Values |
+	| 4      |
+	| 5      |
+	| 8      |
+	| 6      |
+	And User Add And "Serial Number" filter where type is "Does not end with" with added column and following value:
+	| Values |
+	| 436    |
+	Then "54" rows are displayed in the agGrid

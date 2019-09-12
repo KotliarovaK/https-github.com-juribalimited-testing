@@ -132,7 +132,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatGridHeaderIsDisplayedCorrectlyAfterC
 	When User closed list panel
 	Then Dashboards sub menu is hidden on Dashboards page
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS15785 @Not_Run
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS15785
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatFilterCategoryNamingIsCorrect
 	When User clicks "<ListType>" on the left-hand menu
 	Then "<ListTitle>" list should be displayed to the user

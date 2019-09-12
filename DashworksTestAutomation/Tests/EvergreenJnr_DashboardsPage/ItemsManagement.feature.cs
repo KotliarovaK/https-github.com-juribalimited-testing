@@ -383,7 +383,6 @@ this.FeatureBackground();
                         "AggregateBy",
                         "AggregateFunction",
                         "OrderBy",
-                        "TableOrientation",
                         "MaxValues",
                         "ShowLegend"});
             table3.AddRow(new string[] {
@@ -394,7 +393,6 @@ this.FeatureBackground();
                         "Version",
                         "Count distinct",
                         "Vendor ASC",
-                        "",
                         "10",
                         "true"});
 #line 62
@@ -410,7 +408,6 @@ this.FeatureBackground();
                         "AggregateBy",
                         "AggregateFunction",
                         "OrderBy",
-                        "TableOrientation",
                         "MaxValues",
                         "ShowLegend"});
             table4.AddRow(new string[] {
@@ -421,7 +418,6 @@ this.FeatureBackground();
                         "Version",
                         "Count distinct",
                         "Vendor ASC",
-                        "",
                         "10",
                         "true"});
 #line 66
@@ -437,7 +433,6 @@ this.FeatureBackground();
                         "AggregateBy",
                         "AggregateFunction",
                         "OrderBy",
-                        "TableOrientation",
                         "MaxValues",
                         "ShowLegend"});
             table5.AddRow(new string[] {
@@ -448,7 +443,6 @@ this.FeatureBackground();
                         "Version",
                         "Count distinct",
                         "Vendor ASC",
-                        "",
                         "10",
                         "true"});
 #line 70
@@ -546,7 +540,6 @@ this.FeatureBackground();
                         "AggregateBy",
                         "AggregateFunction",
                         "OrderBy",
-                        "TableOrientation",
                         "MaxValues",
                         "ShowLegend"});
             table8.AddRow(new string[] {
@@ -557,7 +550,6 @@ this.FeatureBackground();
                         "Version",
                         "Count distinct",
                         "Vendor ASC",
-                        "",
                         "10",
                         "true"});
 #line 91
@@ -650,7 +642,6 @@ this.FeatureBackground();
                         "AggregateBy",
                         "AggregateFunction",
                         "OrderBy",
-                        "TableOrientation",
                         "MaxValues",
                         "ShowLegend"});
             table9.AddRow(new string[] {
@@ -661,7 +652,6 @@ this.FeatureBackground();
                         string.Format("{0}", aggregateBy),
                         string.Format("{0}", aggregateFunctio),
                         string.Format("{0}", orderBy),
-                        "",
                         "10",
                         string.Format("{0}", showLegend)});
 #line 105
@@ -746,7 +736,6 @@ this.FeatureBackground();
                         "AggregateBy",
                         "AggregateFunction",
                         "OrderBy",
-                        "TableOrientation",
                         "MaxValues",
                         "ShowLegend"});
             table10.AddRow(new string[] {
@@ -757,7 +746,6 @@ this.FeatureBackground();
                         "Version",
                         "Count distinct",
                         "Vendor ASC",
-                        "",
                         "10",
                         "true"});
 #line 127
@@ -853,7 +841,6 @@ this.FeatureBackground();
                         "AggregateBy",
                         "AggregateFunction",
                         "OrderBy",
-                        "TableOrientation",
                         "MaxValues",
                         "ShowLegend"});
             table11.AddRow(new string[] {
@@ -864,7 +851,6 @@ this.FeatureBackground();
                         "Version",
                         "Count distinct",
                         "Vendor ASC",
-                        "",
                         "10",
                         "true"});
 #line 148
@@ -907,7 +893,6 @@ this.FeatureBackground();
                         "AggregateBy",
                         "AggregateFunction",
                         "OrderBy",
-                        "TableOrientation",
                         "MaxValues",
                         "ShowLegend"});
             table12.AddRow(new string[] {
@@ -918,7 +903,6 @@ this.FeatureBackground();
                         "Version",
                         "Count distinct",
                         "Vendor ASC",
-                        "",
                         "10",
                         "true"});
 #line 164
@@ -933,23 +917,13 @@ this.FeatureBackground();
                         "Title",
                         "List",
                         "SplitBy",
-                        "AggregateBy",
-                        "AggregateFunction",
-                        "OrderBy",
-                        "TableOrientation",
-                        "MaxValues",
-                        "ShowLegend"});
+                        "AggregateBy"});
             table13.AddRow(new string[] {
                         "",
                         "WidgetForDAS12978_2_Edited",
                         "",
                         "Version",
-                        "Application",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""});
+                        "Application"});
 #line 169
  testRunner.And("User updates Widget with following info:", ((string)(null)), table13, "And ");
 #line hidden
@@ -1036,7 +1010,6 @@ this.FeatureBackground();
                         "AggregateBy",
                         "AggregateFunction",
                         "OrderBy",
-                        "TableOrientation",
                         "MaxValues",
                         "ShowLegend"});
             table16.AddRow(new string[] {
@@ -1047,7 +1020,6 @@ this.FeatureBackground();
                         "Version",
                         "Count distinct",
                         "Vendor ASC",
-                        "",
                         "10",
                         "true"});
 #line 186
@@ -1153,7 +1125,6 @@ this.FeatureBackground();
                         "AggregateBy",
                         "AggregateFunction",
                         "OrderBy",
-                        "TableOrientation",
                         "MaxValues",
                         "ShowLegend"});
             table17.AddRow(new string[] {
@@ -1164,7 +1135,6 @@ this.FeatureBackground();
                         "Version",
                         "Count distinct",
                         "Vendor ASC",
-                        "",
                         "10",
                         "true"});
 #line 211
@@ -1180,7 +1150,6 @@ this.FeatureBackground();
                         "AggregateBy",
                         "AggregateFunction",
                         "OrderBy",
-                        "TableOrientation",
                         "MaxValues",
                         "ShowLegend"});
             table18.AddRow(new string[] {
@@ -1191,7 +1160,6 @@ this.FeatureBackground();
                         "Version",
                         "Count distinct",
                         "Vendor ASC",
-                        "",
                         "10",
                         "true"});
 #line 215
@@ -1207,7 +1175,6 @@ this.FeatureBackground();
                         "AggregateBy",
                         "AggregateFunction",
                         "OrderBy",
-                        "TableOrientation",
                         "MaxValues",
                         "ShowLegend"});
             table19.AddRow(new string[] {
@@ -1218,7 +1185,6 @@ this.FeatureBackground();
                         "Version",
                         "Count distinct",
                         "Vendor ASC",
-                        "",
                         "10",
                         "false"});
 #line 219
@@ -1237,23 +1203,13 @@ this.FeatureBackground();
                         "Title",
                         "List",
                         "SplitBy",
-                        "AggregateBy",
-                        "AggregateFunction",
-                        "OrderBy",
-                        "TableOrientation",
-                        "MaxValues",
-                        "ShowLegend"});
+                        "AggregateBy"});
             table20.AddRow(new string[] {
                         "",
                         "",
                         "",
                         "",
-                        "Vendor",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""});
+                        "Vendor"});
 #line 226
  testRunner.And("User updates Widget with following info:", ((string)(null)), table20, "And ");
 #line hidden
@@ -1331,9 +1287,7 @@ this.FeatureBackground();
                         "List",
                         "SplitBy",
                         "AggregateFunction",
-                        "AggregateBy",
                         "OrderBy",
-                        "TableOrientation",
                         "MaxValues",
                         "ShowLegend"});
             table22.AddRow(new string[] {
@@ -1342,9 +1296,7 @@ this.FeatureBackground();
                         "All Applications",
                         "Vendor",
                         "Count",
-                        "",
                         "Count ASC",
-                        "",
                         "10",
                         "true"});
 #line 240
@@ -2308,7 +2260,6 @@ this.FeatureBackground();
                         "AggregateBy",
                         "AggregateFunction",
                         "OrderBy",
-                        "TableOrientation",
                         "MaxValues",
                         "ShowLegend"});
             table37.AddRow(new string[] {
@@ -2319,7 +2270,6 @@ this.FeatureBackground();
                         "Version",
                         "Count distinct",
                         "Vendor ASC",
-                        "",
                         "10",
                         "true"});
 #line 446
@@ -2337,7 +2287,6 @@ this.FeatureBackground();
                         "AggregateBy",
                         "AggregateFunction",
                         "OrderBy",
-                        "TableOrientation",
                         "MaxValues",
                         "ShowLegend"});
             table38.AddRow(new string[] {
@@ -2348,7 +2297,6 @@ this.FeatureBackground();
                         "Version",
                         "Count distinct",
                         "Vendor ASC",
-                        "",
                         "10",
                         "true"});
 #line 451
@@ -2576,9 +2524,7 @@ this.FeatureBackground();
                         "List",
                         "SplitBy",
                         "AggregateFunction",
-                        "AggregateBy",
                         "OrderBy",
-                        "TableOrientation",
                         "MaxValues",
                         "ShowLegend"});
             table39.AddRow(new string[] {
@@ -2587,9 +2533,7 @@ this.FeatureBackground();
                         "All Applications",
                         "Vendor",
                         "Count",
-                        "",
                         "Count ASC",
-                        "",
                         "10",
                         "true"});
 #line 494

@@ -440,18 +440,14 @@ this.FeatureBackground();
                         "List",
                         "SplitBy",
                         "AggregateFunction",
-                        "OrderBy",
-                        "TableOrientation",
-                        "MaxValues"});
+                        "OrderBy"});
             table7.AddRow(new string[] {
                         "Table",
                         "WidgetForDAS14841",
                         "DeviceListFor14841",
                         "Hostname",
                         "Count",
-                        "Count DESC",
-                        "",
-                        ""});
+                        "Count DESC"});
 #line 111
  testRunner.And("User creates new Widget", ((string)(null)), table7, "And ");
 #line 115
@@ -589,18 +585,14 @@ this.FeatureBackground();
                         "List",
                         "SplitBy",
                         "AggregateFunction",
-                        "OrderBy",
-                        "TableOrientation",
-                        "MaxValues"});
+                        "OrderBy"});
             table10.AddRow(new string[] {
                         "Table",
                         "WidgetForDAS14841",
                         "DeviceListFor14841_1",
                         "Hostname",
                         "Count",
-                        "Count DESC",
-                        "",
-                        ""});
+                        "Count DESC"});
 #line 158
  testRunner.And("User creates new Widget", ((string)(null)), table10, "And ");
 #line 162
@@ -707,18 +699,14 @@ this.FeatureBackground();
                         "List",
                         "SplitBy",
                         "AggregateFunction",
-                        "OrderBy",
-                        "TableOrientation",
-                        "MaxValues"});
+                        "OrderBy"});
             table12.AddRow(new string[] {
                         "Table",
                         "WidgetForDAS14841",
                         "DeviceListFor14841_2",
                         "Hostname",
                         "Count",
-                        "Count DESC",
-                        "",
-                        ""});
+                        "Count DESC"});
 #line 191
  testRunner.And("User creates new Widget", ((string)(null)), table12, "And ");
 #line 195
@@ -838,18 +826,14 @@ this.FeatureBackground();
                         "List",
                         "SplitBy",
                         "AggregateFunction",
-                        "OrderBy",
-                        "TableOrientation",
-                        "MaxValues"});
+                        "OrderBy"});
             table15.AddRow(new string[] {
                         "Table",
                         "WidgetForDAS14841",
                         "DeviceListFor14841_3",
                         "Hostname",
                         "Count",
-                        "Count DESC",
-                        "",
-                        ""});
+                        "Count DESC"});
 #line 232
  testRunner.And("User creates new Widget", ((string)(null)), table15, "And ");
 #line 236
@@ -861,18 +845,14 @@ this.FeatureBackground();
                         "List",
                         "SplitBy",
                         "AggregateFunction",
-                        "OrderBy",
-                        "TableOrientation",
-                        "MaxValues"});
+                        "OrderBy"});
             table16.AddRow(new string[] {
                         "Table",
                         "WidgetForDAS14841",
                         "DeviceListFor14841_4",
                         "Hostname",
                         "Count",
-                        "Count DESC",
-                        "",
-                        ""});
+                        "Count DESC"});
 #line 237
  testRunner.And("User creates new Widget", ((string)(null)), table16, "And ");
 #line 241
@@ -1047,18 +1027,14 @@ this.FeatureBackground();
                         "List",
                         "SplitBy",
                         "AggregateFunction",
-                        "OrderBy",
-                        "TableOrientation",
-                        "MaxValues"});
+                        "OrderBy"});
             table19.AddRow(new string[] {
                         "Table",
                         "WidgetForDAS14841_Read",
                         "DeviceListFor14841_Read",
                         "Hostname",
                         "Count",
-                        "Count DESC",
-                        "",
-                        ""});
+                        "Count DESC"});
 #line 297
  testRunner.And("User creates new Widget", ((string)(null)), table19, "And ");
 #line 301
@@ -1217,18 +1193,14 @@ this.FeatureBackground();
                         "List",
                         "SplitBy",
                         "AggregateFunction",
-                        "OrderBy",
-                        "TableOrientation",
-                        "MaxValues"});
+                        "OrderBy"});
             table22.AddRow(new string[] {
                         "Table",
                         "WidgetForDAS14841_Edit",
                         "DeviceListFor14841_Edit",
                         "Hostname",
                         "Count",
-                        "Count DESC",
-                        "",
-                        ""});
+                        "Count DESC"});
 #line 347
  testRunner.And("User creates new Widget", ((string)(null)), table22, "And ");
 #line 351
@@ -1387,18 +1359,14 @@ this.FeatureBackground();
                         "List",
                         "SplitBy",
                         "AggregateFunction",
-                        "OrderBy",
-                        "TableOrientation",
-                        "MaxValues"});
+                        "OrderBy"});
             table25.AddRow(new string[] {
                         "Table",
                         "WidgetForDAS14841_Admin",
                         "DeviceListFor14841_Admin",
                         "Hostname",
                         "Count",
-                        "Count DESC",
-                        "",
-                        ""});
+                        "Count DESC"});
 #line 399
  testRunner.And("User creates new Widget", ((string)(null)), table25, "And ");
 #line 403
@@ -1637,9 +1605,7 @@ this.FeatureBackground();
                         "AggregateBy",
                         "AggregateFunction",
                         "OrderBy",
-                        "TableOrientation",
-                        "MaxValues",
-                        "ShowLegend"});
+                        "MaxValues"});
             table29.AddRow(new string[] {
                         "Table",
                         "WidgetForDAS15550",
@@ -1648,9 +1614,7 @@ this.FeatureBackground();
                         "Application",
                         "Count distinct",
                         "Application ASC",
-                        "",
-                        "10",
-                        ""});
+                        "10"});
 #line 469
  testRunner.And("User creates new Widget", ((string)(null)), table29, "And ");
 #line 472
@@ -1711,23 +1675,13 @@ this.FeatureBackground();
                         "Title",
                         "List",
                         "SplitBy",
-                        "AggregateBy",
-                        "AggregateFunction",
-                        "OrderBy",
-                        "TableOrientation",
-                        "MaxValues",
-                        "ShowLegend"});
+                        "AggregateBy"});
             table32.AddRow(new string[] {
                         "",
                         "WidgetForDAS15550_Edited",
                         "",
                         "Version",
-                        "Application",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""});
+                        "Application"});
 #line 497
  testRunner.And("User updates Widget with following info:", ((string)(null)), table32, "And ");
 #line 500
@@ -1836,6 +1790,133 @@ this.FeatureBackground();
  testRunner.When("User changes dashboard name to \"DashboardUpdated\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 529
  testRunner.Then("Dashboard with \"DashboardUpdated\" title displayed in All Dashboards", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatUserWithAdminRightsCanAddUserInSharedSection" +
+            "")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
+        [NUnit.Framework.CategoryAttribute("DAS14915")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatUserWithAdminRightsCanAddUserInSharedSection()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DashboardsPage_CheckThatUserWithAdminRightsCanAddUserInSharedSectionInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DashboardsPage_CheckThatUserWithAdminRightsCanAddUserInSharedSectionInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckThatUserWithAdminRightsCanAddUserInSharedSection" +
+                    "", null, new string[] {
+                        "Evergreen",
+                        "EvergreenJnr_DashboardsPage",
+                        "DAS14915",
+                        "Cleanup"});
+#line 532
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 534
+ testRunner.When("Dashboard with \"Dashboard for Share\" name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 535
+ testRunner.And("User clicks Show Dashboards panel icon on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 536
+ testRunner.And("User clicks Settings button for \"Dashboard for Share\" dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 537
+ testRunner.And("User clicks Manage in the list panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 538
+ testRunner.Then("Permission panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 539
+ testRunner.When("User changes sharing type from \"Private\" to \"Specific users\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table35 = new TechTalk.SpecFlow.Table(new string[] {
+                        "User",
+                        "Permission"});
+            table35.AddRow(new string[] {
+                        "Automation Admin 10",
+                        "Admin"});
+#line 540
+ testRunner.And("User adds user to list of shared person", ((string)(null)), table35, "And ");
+#line 543
+ testRunner.Then("User \"automation_admin10\" was added to shared list with \"Admin\" permission", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 545
+ testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 546
+ testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 547
+ testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 548
+ testRunner.And("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table36 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Username",
+                        "Password"});
+            table36.AddRow(new string[] {
+                        "automation_admin10",
+                        "m!gration"});
+#line 549
+ testRunner.And("User login with following credentials:", ((string)(null)), table36, "And ");
+#line 552
+ testRunner.And("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 553
+ testRunner.And("User clicks Show Dashboards panel icon on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 554
+ testRunner.And("User clicks Settings button for \"Dashboard for Share\" dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 555
+ testRunner.And("User clicks Manage in the list panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 556
+ testRunner.Then("Permission panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table37 = new TechTalk.SpecFlow.Table(new string[] {
+                        "User",
+                        "Permission"});
+            table37.AddRow(new string[] {
+                        "Administrator",
+                        "Edit"});
+#line 557
+ testRunner.When("User adds user to list of shared person", ((string)(null)), table37, "When ");
+#line 560
+ testRunner.Then("User \"Admin\" was added to shared list with \"Edit\" permission", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 561
+ testRunner.When("User clicks Settings button for \"Admin\" shared user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 562
+ testRunner.And("User selects \"Remove\" option from Settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table38 = new TechTalk.SpecFlow.Table(new string[] {
+                        "User",
+                        "Permission"});
+            table38.AddRow(new string[] {
+                        "Administrator",
+                        "Read"});
+#line 563
+ testRunner.And("User adds user to list of shared person", ((string)(null)), table38, "And ");
+#line 566
+ testRunner.Then("User \"Admin\" was added to shared list with \"Read Only\" permission", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
