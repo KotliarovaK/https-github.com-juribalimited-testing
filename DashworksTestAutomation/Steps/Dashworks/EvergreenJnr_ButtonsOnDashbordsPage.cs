@@ -87,7 +87,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForElementToBeDisplayed(menu.CreateProjectButton);
             menu.CreateProjectButton.Click();
 
-            Logger.Write("Create Project Button button was clicked");
+            _driver.WaitForDataLoading();
         }
 
         [Then(@"Create Project button is disabled on the Base Dashboard Page")]
