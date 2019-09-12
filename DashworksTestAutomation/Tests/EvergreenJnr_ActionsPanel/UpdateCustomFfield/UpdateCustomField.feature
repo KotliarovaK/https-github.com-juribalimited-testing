@@ -7,7 +7,7 @@ Background: Pre-Conditions
 
 @Evergreen @Mailboxes @EvergreenJnr_ActionsPanel @BulkUpdate @DAS17878 @Not_Ready
 #Waiting for "Update custom field" on the automation
-Scenario Outline: EvergreenJnr_AllLists_Check
+Scenario Outline: EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveAllValues
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
 	When User clicks the Actions button
@@ -17,10 +17,10 @@ Scenario Outline: EvergreenJnr_AllLists_Check
 	| <Row>            |
 	And User selects "Bulk update" in the Actions dropdown
 	When User selects 'Bulk update' in the 'Action' dropdown
-	And User selects "Update custom field" Bulk Update Type on Action panel
-	And User selects "Project" Project or Evergreen on Action panel
-	And User selects "Mailbox Evergreen Capacity Project" Project on Action panel
-	And User selects "Unassigned" Ring on Action panel
+	When User selects 'Update custom field' in the 'Bulk Update Type' dropdown
+	When User selects 'Phoenix Field' in the 'Custome Field' dropdown
+	When User selects 'Remove all values' in the 'Update Values' dropdown
+
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box

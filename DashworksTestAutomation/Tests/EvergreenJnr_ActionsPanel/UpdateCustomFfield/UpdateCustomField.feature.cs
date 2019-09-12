@@ -80,7 +80,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel.UpdateCustomFf
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_Check")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveAllValues")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Mailboxes")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
@@ -91,14 +91,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel.UpdateCustomFf
         [NUnit.Framework.TestCaseAttribute("Users", "Username", "003F5D8E1A844B1FAA5", "", "Barry\'s User Project", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "7-Zip 16.02 (x64)", "0047 - Microsoft Access 97 SR-2 Francais", "Barry\'s User Project", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "002B5DC7D4D34D5C895@bclabs.local", "", "", null)]
-        public virtual void EvergreenJnr_AllLists_Check(string listName, string columnName, string row, string rowName, string projectName, string[] exampleTags)
+        public virtual void EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveAllValues(string listName, string columnName, string row, string rowName, string projectName, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AllLists_CheckInternal(listName,columnName,row,rowName,projectName,exampleTags);
+                    this.EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveAllValuesInternal(listName,columnName,row,rowName,projectName,exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -117,7 +117,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel.UpdateCustomFf
             }
         }
 
-        private void EvergreenJnr_AllLists_CheckInternal(string listName, string columnName, string row, string rowName, string projectName, string[] exampleTags)
+        private void EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveAllValuesInternal(string listName, string columnName, string row, string rowName, string projectName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -130,7 +130,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel.UpdateCustomFf
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_Check", null, @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveAllValues", null, @__tags);
 #line 10
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -156,13 +156,11 @@ this.FeatureBackground();
 #line 19
  testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 20
- testRunner.And("User selects \"Update custom field\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User selects \'Update custom field\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 21
- testRunner.And("User selects \"Project\" Project or Evergreen on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User selects \'Phoenix Field\' in the \'Custome Field\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 22
- testRunner.And("User selects \"Mailbox Evergreen Capacity Project\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 23
- testRunner.And("User selects \"Unassigned\" Ring on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User selects \'Remove all values\' in the \'Update Values\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 24
  testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 25
