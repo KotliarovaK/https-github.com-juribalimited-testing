@@ -41,17 +41,17 @@ Scenario Outline: EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceAllValue
 	And User selects 'Update custom field' in the 'Bulk Update Type' dropdown
 	And User selects 'Phoenix Field' option from 'Custom Field' autocomplete
 	And User selects 'Replace all values' in the 'Update Values' dropdown
-	When User adds '1' value from 'Value' autocomplete
-	When User adds '2' value from 'Value' autocomplete
-	When User adds '3' value from 'Value' autocomplete
-	When User adds '4' value from 'Value' autocomplete
-	When User adds '5' value from 'Value' autocomplete
-	When User adds '6' value from 'Value' autocomplete
-	When User adds '7' value from 'Value' autocomplete
-	When User adds '8' value from 'Value' autocomplete
-	When User adds '9' value from 'Value' autocomplete
-	When User adds '10' value from 'Value' autocomplete
-	Then 'Value limit has reached' tooltip is displayed for add button from 'Value' autocomplete
+	When User adds '1' value from 'Value' textbox
+	When User adds '2' value from 'Value' textbox
+	When User adds '3' value from 'Value' textbox
+	When User adds '4' value from 'Value' textbox
+	When User adds '5' value from 'Value' textbox
+	When User adds '6' value from 'Value' textbox
+	When User adds '7' value from 'Value' textbox
+	When User adds '8' value from 'Value' textbox
+	When User adds '9' value from 'Value' textbox
+	When User adds '10' value from 'Value' textbox
+	Then 'Value limit has reached' add button tooltip is displayed for 'Value' textbox
 	Then "UPDATE" Action button is active
 
 Examples:
@@ -74,7 +74,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckUpdateCustomFieldForAddToExistingVa
 	And User selects 'Update custom field' in the 'Bulk Update Type' dropdown
 	And User selects 'Phoenix Field' option from 'Custom Field' autocomplete
 	And User selects 'Add to existing values' in the 'Update Values' dropdown
-	When User adds 'test' value from 'Value' autocomplete
+	When User adds 'test' value from 'Value' textbox
 	Then "UPDATE" Action button is active
 
 Examples:
@@ -97,7 +97,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveSpecificV
 	And User selects 'Update custom field' in the 'Bulk Update Type' dropdown
 	And User selects 'Phoenix Field' option from 'Custom Field' autocomplete
 	And User selects 'Remove specific values' in the 'Update Values' dropdown
-	When User adds 'test' value from 'Value' autocomplete
+	When User adds 'test' value from 'Value' textbox
 	Then "UPDATE" Action button is active
 
 Examples:

@@ -531,11 +531,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(by);
         }
 
-        public IWebElement GetAddButtonFromInput(string placeholder)
+        public IWebElement GetInputAddButton(string placeholder)
         {
-            var selector = By.XPath($".//input[@placeholder='{placeholder}']/../ancestor::mat-form-field//button");
+            var selector = GetNamedTextbox(placeholder).FindElement(By.XPath(".//../ancestor::mat-form-field//button"));
             Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
+            return selector;
         }
 
         public IWebElement GetNamedTextboxErrorMessageElement(string placeholder)
@@ -660,10 +660,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public void InputWithAddButton(string placeholder, string option)
         {
-            GetNamedTextbox(placeholder).Click();
-            GetNamedTextbox(placeholder).ClearWithBackspaces();
-            GetNamedTextbox(placeholder).SendKeys(option);
-            GetAddButtonFromInput(placeholder).Click();
+            var button = GetNamedTextbox(placeholder);
+            button.Click();
+            button.ClearWithBackspaces();
+            button.SendKeys(option);
+            GetInputAddButton(placeholder).Click();
         }
 
         public int GetElementTopYCoordinate(IWebElement element)
