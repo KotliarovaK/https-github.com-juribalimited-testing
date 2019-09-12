@@ -166,6 +166,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElement(By.XPath(".//div[@role='listbox']")).GetCssValue("width");
         }
 
+        //TODO should be removed
         public void NavigateToProjectTabByName(string tabName)
         {
             var tab = Driver.FindElement(

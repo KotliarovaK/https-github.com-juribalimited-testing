@@ -33,14 +33,14 @@ Scenario Outline: EvergreenJnr_ChangingApplicationScopeListToAnotherListForMailb
 	When User selects "Scope Details" tab on the Project details page
 	When User navigates to the 'Application Scope' tab on Project Scope Changes page
 	When User selects "Include applications" checkbox on the Project details page
-	And User selects "<ChangingToList1>" in the Scope Project details
+	And User selects '<ChangingToList1>' in the 'Scope' dropdown with wait
 	And User selects "Scope Changes" tab on the Project details page
 	When User navigates to the 'Applications' tab on Project Scope Changes page
 	Then "<ObjectsToAdd1>" is displayed to the user in the Project Scope Changes section
 	Then There are no errors in the browser console
 	When User selects "Scope Details" tab on the Project details page
 	When User navigates to the 'Application Scope' tab on Project Scope Changes page
-	And User selects "<ChangingToList2>" in the Scope Project details
+	And User selects '<ChangingToList2>' in the 'Scope' dropdown with wait
 	And User selects "Scope Changes" tab on the Project details page
 	When User navigates to the 'Applications' tab on Project Scope Changes page
 	Then "<ObjectsToAdd2>" is displayed to the user in the Project Scope Changes section

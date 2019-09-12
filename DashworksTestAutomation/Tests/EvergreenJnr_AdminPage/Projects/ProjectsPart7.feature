@@ -42,7 +42,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUsersToAddAndRemoveAreChangingAppropri
 	And User clicks the "UPDATE PROJECT" Action button
 	Then Success message with "2 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
 	When User selects "Scope Details" tab on the Project details page
-	And User selects "StaticList6530" in the Scope Project details
+	And User selects 'StaticList6530' in the 'Scope' dropdown with wait
 	And User selects "Scope Changes" tab on the Project details page
 	Then "Users to add (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
 	#And "Users to remove (0 of 2 selected)" is displayed to the user in the Project Scope Changes section

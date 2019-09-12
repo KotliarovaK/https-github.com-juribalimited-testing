@@ -52,6 +52,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             Utils.Verify.That(loader.First(), Is.EqualTo(loader.Last()), "Wrong point loading position");
         }
 
+        //TODO rename to something generic
         [When(@"User navigates to the ""(.*)"" sub-menu on the Details page")]
         public void WhenUserNavigatesToTheSub_MenuOnTheDetailsPage(string subMenuName)
         {

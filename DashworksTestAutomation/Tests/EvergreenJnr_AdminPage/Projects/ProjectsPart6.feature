@@ -124,7 +124,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDevicesToAddAndRemoveAreChangingApprop
 	And User clicks the "UPDATE PROJECT" Action button
 	Then Success message with "2 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
 	When User selects "Scope Details" tab on the Project details page
-	When User selects "StaticList6528" in the Scope Project details
+	When User selects 'StaticList6528' in the 'Scope' dropdown with wait
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Devices to add (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
 	#Then "Devices to remove (0 of 2 selected)" is displayed to the user in the Project Scope Changes section

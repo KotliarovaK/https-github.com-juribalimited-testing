@@ -56,7 +56,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherListUsingEverg
 	And User selects "Scope Changes" tab on the Project details page
 	Then "Devices to add (0 of 3808 selected)" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page
-	And User selects "All Devices" in the Scope Project details
+	And User selects 'All Devices' in the 'Scope' dropdown with wait
 	And User selects "Scope Changes" tab on the Project details page
 	Then "Devices to add (0 of 17285 selected)" is displayed to the user in the Project Scope Changes section
 	When User navigates to the 'Users' tab on Project Scope Changes page
@@ -94,11 +94,11 @@ Scenario: EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherListForDevices
 	And User selects "Scope Changes" tab on the Project details page
 	Then "Devices to add (0 of 17285 selected)" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page
-	And User selects "StaticList6579" in the Scope Project details
+	And User selects 'StaticList6579' in the 'Scope' dropdown with wait
 	And User selects "Scope Changes" tab on the Project details page
 	Then "Devices to add (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page
-	And User selects "DynamicList56" in the Scope Project details
+	And User selects 'DynamicList56' in the 'Scope' dropdown with wait
 	And User selects "Scope Changes" tab on the Project details page
 	Then "Devices to add (0 of 1 selected)" is displayed to the user in the Project Scope Changes section
 	Then There are no errors in the browser console
@@ -125,7 +125,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingUserScopeListToAnotherList
 	Then "Users to add (0 of 14631 selected)" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page
 	When User navigates to the 'User Scope' tab on Project Scope Changes page
-	And User selects "StaticList6179" in the Scope Project details
+	And User selects 'StaticList6179' in the 'Scope' dropdown with wait
 	And User selects "Scope Changes" tab on the Project details page
 	When User navigates to the 'Users' tab on Project Scope Changes page
 	Then "Users to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
