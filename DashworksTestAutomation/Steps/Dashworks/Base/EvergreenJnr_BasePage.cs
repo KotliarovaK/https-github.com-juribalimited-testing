@@ -138,6 +138,24 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 $"Incorrect error message color for '{placeholder}' field exclamation icon");
         }
 
+        [When(@"User adds '(.*)' value from '(.*)' textbox")]
+        public void WhenUserAddsValueFromTextbox(string option, string fieldName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.InputWithAddButton(fieldName, option);
+        }
+
+        [Then(@"'(.*)' add button tooltip is displayed for '(.*)' textbox")]
+        public void ThenAddButtonTooltipIsDisplayedForTextbox(string text, string fieldName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var button = page.GetInputAddButton(fieldName);
+            page.BodyContainer.Click();
+            _driver.MouseHover(button);
+            var toolTipText = _driver.GetTooltipText();
+            Utils.Verify.AreEqual(text, toolTipText, $"Incorrect tooltip for Add button in the {fieldName} textbox");
+        }
+
         #endregion
 
         #region Dropdown
