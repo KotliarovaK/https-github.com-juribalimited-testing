@@ -144,11 +144,11 @@ this.FeatureBackground();
 #line 13
  testRunner.And(string.Format("User navigates to the \'{0}\' tab on Project Scope Changes page", tab1), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 14
- testRunner.And(string.Format("User selects \"{0}\" in the Scope Project details", list1), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User selects \'{0}\' in the \'Scope\' dropdown with wait", list1), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 15
  testRunner.And(string.Format("User navigates to the \'{0}\' tab on Project Scope Changes page", tab2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 16
- testRunner.And(string.Format("User selects \"{0}\" in the Scope Project details", list2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User selects \'{0}\' in the \'Scope\' dropdown with wait", list2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 17
  testRunner.And("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 18

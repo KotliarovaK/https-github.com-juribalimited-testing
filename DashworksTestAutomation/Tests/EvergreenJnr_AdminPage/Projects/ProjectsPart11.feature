@@ -30,11 +30,11 @@ Scenario Outline: EvergreenJnr_ChangingMailboxScopeListToAnotherListForMailboxPr
 	And User selects "Scope Changes" tab on the Project details page
 	Then "Mailboxes to add (0 of 14784 selected)" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page
-	And User selects "<ChangingToList1>" in the Scope Project details
+	And User selects '<ChangingToList1>' in the 'Scope' dropdown with wait
 	And User selects "Scope Changes" tab on the Project details page
 	Then "<ObjectsToAdd1>" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page
-	And User selects "<ChangingToList2>" in the Scope Project details
+	And User selects '<ChangingToList2>' in the 'Scope' dropdown with wait
 	And User selects "Scope Changes" tab on the Project details page
 	Then "<ObjectsToAdd2>" is displayed to the user in the Project Scope Changes section
 	#Then There are no errors in the browser console

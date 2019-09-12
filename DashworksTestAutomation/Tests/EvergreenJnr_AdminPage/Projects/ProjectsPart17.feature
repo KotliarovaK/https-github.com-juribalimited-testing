@@ -105,7 +105,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeleting
 	Then Warning message with "The scope for this project refers to a deleted list, this must be updated before proceeding" text is displayed on the Admin page
 	And Update Project buttons is disabled
 	When User selects "Scope Details" tab on the Project details page
-	And User selects "All Users" in the Scope Project details
+	And User selects 'All Users' in the 'Scope' dropdown with wait
 	And User selects "Scope Changes" tab on the Project details page
 	Then Warning message is not displayed on the Admin page
 
