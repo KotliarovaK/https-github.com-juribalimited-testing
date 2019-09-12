@@ -2034,6 +2034,10 @@ namespace DashworksTestAutomation.Extensions
                 {
                     Thread.Sleep(1000);
                 }
+                catch (ElementClickInterceptedException)
+                {
+                    Thread.Sleep(1000);
+                }
             }
         }
 
