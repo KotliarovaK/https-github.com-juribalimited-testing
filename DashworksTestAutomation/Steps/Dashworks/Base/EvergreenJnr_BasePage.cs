@@ -94,6 +94,23 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.AreEqual(expectedText, text, "Incorrect text in the autocomplete");
         }
 
+        [When(@"User adds '(.*)' value from '(.*)' autocomplete")]
+        public void WhenUserAddsValueFromAutocomplete(string option, string fieldName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.InputWithAddButton(fieldName, option);
+        }
+
+        [Then(@"'(.*)' tooltip is displayed for add button from '(.*)' autocomplete")]
+        public void ThenTooltipIsDisplayedForAddButtonFromAutocomplete(string text, string fieldName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var button = page.GetAddButtonFromInput(fieldName);
+            page.BodyContainer.Click();
+            _driver.MouseHover(button);
+            var toolTipText = _driver.GetTooltipText();
+            Utils.Verify.AreEqual(text, toolTipText, "Tooltip is incorrect");
+        }
         #endregion
 
         #region Named Textbox

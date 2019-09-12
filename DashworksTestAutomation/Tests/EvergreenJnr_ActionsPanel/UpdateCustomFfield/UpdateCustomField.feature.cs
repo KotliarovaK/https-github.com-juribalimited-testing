@@ -80,25 +80,25 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel.UpdateCustomFf
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveAllValues")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveAllValuesValidation")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Mailboxes")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
         [NUnit.Framework.CategoryAttribute("BulkUpdate")]
         [NUnit.Framework.CategoryAttribute("DAS17878")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "00HA7MKAVVFDAV", "", "Babel (English, German and French)", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", "Username", "003F5D8E1A844B1FAA5", "", "Barry\'s User Project", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", "Application", "7-Zip 16.02 (x64)", "0047 - Microsoft Access 97 SR-2 Francais", "Barry\'s User Project", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "002B5DC7D4D34D5C895@bclabs.local", "", "", null)]
-        public virtual void EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveAllValues(string listName, string columnName, string row, string rowName, string projectName, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "00HA7MKAVVFDAV", null)]
+        [NUnit.Framework.TestCaseAttribute("Users", "Username", "003F5D8E1A844B1FAA5", null)]
+        [NUnit.Framework.TestCaseAttribute("Applications", "Application", "7-Zip 16.02 (x64)", null)]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "002B5DC7D4D34D5C895@bclabs.local", null)]
+        public virtual void EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveAllValuesValidation(string listName, string columnName, string row, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveAllValuesInternal(listName,columnName,row,rowName,projectName,exampleTags);
+                    this.EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveAllValuesValidationInternal(listName,columnName,row,exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -117,7 +117,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel.UpdateCustomFf
             }
         }
 
-        private void EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveAllValuesInternal(string listName, string columnName, string row, string rowName, string projectName, string[] exampleTags)
+        private void EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveAllValuesValidationInternal(string listName, string columnName, string row, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -130,7 +130,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel.UpdateCustomFf
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveAllValues", null, @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveAllValuesValidation", null, @__tags);
 #line 10
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -139,35 +139,401 @@ this.FeatureBackground();
 #line 11
  testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 12
- testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 13
  testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 14
+#line 13
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table1.AddRow(new string[] {
                         string.Format("{0}", row)});
-#line 15
+#line 14
  testRunner.When(string.Format("User select \"{0}\" rows in the grid", columnName), ((string)(null)), table1, "When ");
-#line 18
- testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 19
+#line 17
  testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 18
+ testRunner.And("User selects \'Update custom field\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 19
+ testRunner.And("User selects \'Phoenix Field\' option from \'Custom Field\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 20
- testRunner.When("User selects \'Update custom field\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("\"UPDATE\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 21
- testRunner.When("User selects \'Phoenix Field\' in the \'Custome Field\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 22
  testRunner.When("User selects \'Remove all values\' in the \'Update Values\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 24
- testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 25
- testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
-                    "undone.\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 26
- testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 22
+ testRunner.Then("\"UPDATE\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceAllValuesValidation")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Mailboxes")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
+        [NUnit.Framework.CategoryAttribute("BulkUpdate")]
+        [NUnit.Framework.CategoryAttribute("DAS17878")]
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "00YTY8U3ZYP2WT", null)]
+        [NUnit.Framework.TestCaseAttribute("Users", "Username", "00A5B910A1004CF5AC4", null)]
+        [NUnit.Framework.TestCaseAttribute("Applications", "Application", "0004 - Adobe Acrobat Reader 5.0.5 Francais", null)]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "00DB4000EDD84951993@bclabs.local", null)]
+        public virtual void EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceAllValuesValidation(string listName, string columnName, string row, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceAllValuesValidationInternal(listName,columnName,row,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceAllValuesValidationInternal(string listName, string columnName, string row, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "Mailboxes",
+                    "EvergreenJnr_ActionsPanel",
+                    "BulkUpdate",
+                    "DAS17878",
+                    "Not_Ready"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceAllValuesValidation", null, @__tags);
+#line 33
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 34
+ testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 35
+ testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 36
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedRowsName"});
+            table2.AddRow(new string[] {
+                        string.Format("{0}", row)});
+#line 37
+ testRunner.When(string.Format("User select \"{0}\" rows in the grid", columnName), ((string)(null)), table2, "When ");
+#line 40
+ testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 41
+ testRunner.And("User selects \'Update custom field\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 42
+ testRunner.And("User selects \'Phoenix Field\' option from \'Custom Field\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 43
+ testRunner.And("User selects \'Replace all values\' in the \'Update Values\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 44
+ testRunner.When("User adds \'1\' value from \'Value\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 45
+ testRunner.When("User adds \'2\' value from \'Value\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 46
+ testRunner.When("User adds \'3\' value from \'Value\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 47
+ testRunner.When("User adds \'4\' value from \'Value\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 48
+ testRunner.When("User adds \'5\' value from \'Value\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 49
+ testRunner.When("User adds \'6\' value from \'Value\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 50
+ testRunner.When("User adds \'7\' value from \'Value\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 51
+ testRunner.When("User adds \'8\' value from \'Value\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 52
+ testRunner.When("User adds \'9\' value from \'Value\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 53
+ testRunner.When("User adds \'10\' value from \'Value\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 54
+ testRunner.Then("\'Value limit has reached\' tooltip is displayed for add button from \'Value\' autoco" +
+                    "mplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 55
+ testRunner.Then("\"UPDATE\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckUpdateCustomFieldForAddToExistingValuesValidation")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Mailboxes")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
+        [NUnit.Framework.CategoryAttribute("BulkUpdate")]
+        [NUnit.Framework.CategoryAttribute("DAS17878")]
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "00YTY8U3ZYP2WT", null)]
+        [NUnit.Framework.TestCaseAttribute("Users", "Username", "00A5B910A1004CF5AC4", null)]
+        [NUnit.Framework.TestCaseAttribute("Applications", "Application", "0004 - Adobe Acrobat Reader 5.0.5 Francais", null)]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "00DB4000EDD84951993@bclabs.local", null)]
+        public virtual void EvergreenJnr_AllLists_CheckUpdateCustomFieldForAddToExistingValuesValidation(string listName, string columnName, string row, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckUpdateCustomFieldForAddToExistingValuesValidationInternal(listName,columnName,row,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckUpdateCustomFieldForAddToExistingValuesValidationInternal(string listName, string columnName, string row, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "Mailboxes",
+                    "EvergreenJnr_ActionsPanel",
+                    "BulkUpdate",
+                    "DAS17878",
+                    "Not_Ready"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckUpdateCustomFieldForAddToExistingValuesValidation", null, @__tags);
+#line 66
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 67
+ testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 68
+ testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 69
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedRowsName"});
+            table3.AddRow(new string[] {
+                        string.Format("{0}", row)});
+#line 70
+ testRunner.When(string.Format("User select \"{0}\" rows in the grid", columnName), ((string)(null)), table3, "When ");
+#line 73
+ testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 74
+ testRunner.And("User selects \'Update custom field\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 75
+ testRunner.And("User selects \'Phoenix Field\' option from \'Custom Field\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 76
+ testRunner.And("User selects \'Add to existing values\' in the \'Update Values\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 77
+ testRunner.When("User adds \'test\' value from \'Value\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 78
+ testRunner.Then("\"UPDATE\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveSpecificValuesValidation")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Mailboxes")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
+        [NUnit.Framework.CategoryAttribute("BulkUpdate")]
+        [NUnit.Framework.CategoryAttribute("DAS17878")]
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "00YTY8U3ZYP2WT", null)]
+        [NUnit.Framework.TestCaseAttribute("Users", "Username", "00A5B910A1004CF5AC4", null)]
+        [NUnit.Framework.TestCaseAttribute("Applications", "Application", "0004 - Adobe Acrobat Reader 5.0.5 Francais", null)]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "00DB4000EDD84951993@bclabs.local", null)]
+        public virtual void EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveSpecificValuesValidation(string listName, string columnName, string row, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveSpecificValuesValidationInternal(listName,columnName,row,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveSpecificValuesValidationInternal(string listName, string columnName, string row, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "Mailboxes",
+                    "EvergreenJnr_ActionsPanel",
+                    "BulkUpdate",
+                    "DAS17878",
+                    "Not_Ready"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveSpecificValuesValidation", null, @__tags);
+#line 89
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 90
+ testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 91
+ testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 92
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedRowsName"});
+            table4.AddRow(new string[] {
+                        string.Format("{0}", row)});
+#line 93
+ testRunner.When(string.Format("User select \"{0}\" rows in the grid", columnName), ((string)(null)), table4, "When ");
+#line 96
+ testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 97
+ testRunner.And("User selects \'Update custom field\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 98
+ testRunner.And("User selects \'Phoenix Field\' option from \'Custom Field\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 99
+ testRunner.And("User selects \'Remove specific values\' in the \'Update Values\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 100
+ testRunner.When("User adds \'test\' value from \'Value\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 101
+ testRunner.Then("\"UPDATE\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceSingleValueValidation")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Mailboxes")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
+        [NUnit.Framework.CategoryAttribute("BulkUpdate")]
+        [NUnit.Framework.CategoryAttribute("DAS17878")]
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "00YTY8U3ZYP2WT", null)]
+        [NUnit.Framework.TestCaseAttribute("Users", "Username", "00A5B910A1004CF5AC4", null)]
+        [NUnit.Framework.TestCaseAttribute("Applications", "Application", "0004 - Adobe Acrobat Reader 5.0.5 Francais", null)]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "00DB4000EDD84951993@bclabs.local", null)]
+        public virtual void EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceSingleValueValidation(string listName, string columnName, string row, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceSingleValueValidationInternal(listName,columnName,row,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceSingleValueValidationInternal(string listName, string columnName, string row, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "Mailboxes",
+                    "EvergreenJnr_ActionsPanel",
+                    "BulkUpdate",
+                    "DAS17878",
+                    "Not_Ready"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceSingleValueValidation", null, @__tags);
+#line 112
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 113
+ testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 114
+ testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 115
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedRowsName"});
+            table5.AddRow(new string[] {
+                        string.Format("{0}", row)});
+#line 116
+ testRunner.When(string.Format("User select \"{0}\" rows in the grid", columnName), ((string)(null)), table5, "When ");
+#line 119
+ testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 120
+ testRunner.And("User selects \'Update custom field\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 121
+ testRunner.And("User selects \'Phoenix Field\' option from \'Custom Field\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 122
+ testRunner.And("User selects \'Replace single value\' in the \'Update Values\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 123
+ testRunner.When("User enters \'tests\' text to \'Find Value\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 124
+ testRunner.Then("\"UPDATE\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 125
+ testRunner.When("User enters \'012\' text to \'Replace Value\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 126
+ testRunner.Then("\"UPDATE\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
