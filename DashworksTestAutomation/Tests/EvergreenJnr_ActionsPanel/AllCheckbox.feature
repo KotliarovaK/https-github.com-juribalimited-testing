@@ -33,7 +33,7 @@ Scenario: EvergreenJnr_UsersList_SelectAllCheckboxStatusCheckAfterSearch
 @Evergreen @AllLists @Evergreen_ActionsPanel @AllCheckbox @DAS10775 @DAS10656 @DAS12602
 Scenario Outline: EvergreenJnr_AllLists_CheckThatSelectAllCheckboxStatusAfterClosingActionPanel
 	When User clicks "<PageName>" on the left-hand menu
-	Then "<PageName>" list should be displayed to the user
+	Then "All <PageName>" list should be displayed to the user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
@@ -65,7 +65,7 @@ Scenario: EvergreenJnr_DevicesList_SearchWithinAllRows
 @Evergreen @AllLists @Evergreen_ActionsPanel @AllCheckbox @DAS10656 @DAS12602
 Scenario Outline: EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest
 	When User clicks "<PageName>" on the left-hand menu
-	Then "<PageName>" list should be displayed to the user
+	Then "All <PageName>" list should be displayed to the user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows

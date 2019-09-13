@@ -90,7 +90,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedWhenSortingOwn
 @Evergreen @AllLists @EvergreenJnr_GridActions @TableSorting @DAS11951
 Scenario Outline: EvergreenJnr_AllList_CheckThatTheDataInTheTablesAreSortedAppropriate
 	When User clicks "<ListName>" on the left-hand menu
-	Then "<ListName>" list should be displayed to the user
+	Then "All <ListName>" list should be displayed to the user
 	When User clicks on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in ascending order
 	When User clicks on '<ColumnName>' column header
@@ -106,7 +106,7 @@ Scenario Outline: EvergreenJnr_AllList_CheckThatTheDataInTheTablesAreSortedAppro
 @Evergreen @AllLists @EvergreenJnr_GridActions @TableSorting @DAS12545 @DAS14287 @Cleanup
 Scenario Outline: EvergreenJnr_AllLists_CheckThatSortingIsSavedForNewSavedList
 	When User clicks "<ListName>" on the left-hand menu
-	Then "<ListName>" list should be displayed to the user
+	Then "All <ListName>" list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked

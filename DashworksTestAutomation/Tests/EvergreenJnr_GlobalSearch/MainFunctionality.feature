@@ -54,9 +54,9 @@ Scenario: EvergreenJnr_DevicesList_Search_CheckThatGlobalSearchFieldHaveAResetBu
 @Evergreen @GlobalSearch @EvergreenJnr_GlobalSearch @MainFunctionality @DAS11495
 Scenario Outline: EvergreenJnr_AllLists_Search_CheckThat500ErrorMessageIsNotDisplayedAfterEnteringTheSpecificCharacters
 	When User clicks "<PageName>" on the left-hand menu
-	Then "<PageName>" list should be displayed to the user
+	Then "All <PageName>" list should be displayed to the user
 	When User type "[^abc]" in Global Search Field
-	Then "<PageName>" list should be displayed to the user
+	Then "All <PageName>" list should be displayed to the user
 
 Examples: 
 	| PageName     |

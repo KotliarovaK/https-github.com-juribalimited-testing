@@ -901,7 +901,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOperatorsForApplicationSavedListFilt
 @Evergreen @AllLists @EvergreenJnr_FilterFeature @FiltersDisplay @DAS11619
 Scenario Outline: EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColumn
 	When User clicks "<ListName>" on the left-hand menu
-	Then "<ListName>" list should be displayed to the user
+	Then "All <ListName>" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "<FilterName>" filter
@@ -947,7 +947,7 @@ Examples:
 @Evergreen @AllLists @EvergreenJnr_FilterFeature @FiltersDisplay @DAS11829
 Scenario Outline: EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisplayedForOrganisationCategoryFilters
 	When User clicks "<ListName>" on the left-hand menu
-	Then "<ListName>" list should be displayed to the user
+	Then "All <ListName>" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "<FilterName>" filter
