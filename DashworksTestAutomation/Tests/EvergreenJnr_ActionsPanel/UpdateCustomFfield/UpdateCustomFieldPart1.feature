@@ -1,4 +1,4 @@
-﻿Feature: UpdateCustomField
+﻿Feature: UpdateCustomFieldPart1
 	Runs Actions Panel related tests
 
 Background: Pre-Conditions
@@ -107,7 +107,7 @@ Examples:
 	| Applications | Application   | 0004 - Adobe Acrobat Reader 5.0.5 Francais |
 	| Mailboxes    | Email Address | 00DB4000EDD84951993@bclabs.local           |
 
-	@Evergreen @Mailboxes @EvergreenJnr_ActionsPanel @BulkUpdate @DAS17878 @Not_Ready
+@Evergreen @Mailboxes @EvergreenJnr_ActionsPanel @BulkUpdate @DAS17878 @Not_Ready
 #Waiting for "Update custom field" on the automation
 Scenario Outline: EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceSingleValueValidation
 	When User clicks "<ListName>" on the left-hand menu

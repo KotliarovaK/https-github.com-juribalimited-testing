@@ -88,6 +88,16 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             CheckAutocompletAndTextboxText(placeholder, expectedText);
         }
 
+        [Then(@"'(.*)' content is not displayed in '(.*)' autocomplete")]
+        public void ThenContentIsNotDisplayedInAutocomplete(string content, string placeholder)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var textbox = page.GetNamedTextbox(placeholder);
+            textbox.Clear();
+            textbox.SendKeys(content);
+            Utils.Verify.IsFalse(page.AutocompleteOptionsDropdown.Displayed(), $"{content} text is displayed in the {placeholder} autocomplete");
+        }
+
         private void CheckAutocompletAndTextboxText(string placeholder, string expectedText)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
