@@ -578,7 +578,7 @@ namespace DashworksTestAutomation.Helpers
                         .SendKeys(row["Values"]);
                     _driver.FindElement(
                             By.XPath(
-                                ".//button[@class='button-small mat-primary mat-raised-button']"))
+                                ".//div[@class='filter-panel']//button[contains(@class,'button-small')]"))
                         .Click();
                 }
             }

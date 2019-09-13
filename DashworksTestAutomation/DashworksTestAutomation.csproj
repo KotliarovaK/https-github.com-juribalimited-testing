@@ -949,13 +949,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ColumnSectionDisplayApi.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr_DashboardsPage\ItemsManagement2.feature.cs">
+      <DependentUpon>ItemsManagement2.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr_DashboardsPage\WidgetBar.feature.cs">
       <DependentUpon>WidgetBar.feature</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_DashboardsPage\ItemsManagement.feature.cs">
-      <DependentUpon>ItemsManagement.feature</DependentUpon>
+    <Compile Include="Tests\EvergreenJnr_DashboardsPage\ItemsManagement1.feature.cs">
+      <DependentUpon>ItemsManagement1.feature</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -1832,13 +1838,18 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ColumnSectionDisplayApi.feature.cs</LastGenOutput>
     </None>
+    <None Include="Tests\EvergreenJnr_DashboardsPage\ItemsManagement2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ItemsManagement2.feature.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Tests\EvergreenJnr_DashboardsPage\WidgetBar.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>WidgetBar.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_DashboardsPage\ItemsManagement.feature">
+    <None Include="Tests\EvergreenJnr_DashboardsPage\ItemsManagement1.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>ItemsManagement.feature.cs</LastGenOutput>
+      <LastGenOutput>ItemsManagement1.feature.cs</LastGenOutput>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Tests\EvergreenJnr_DashboardsPage\DashboardSharing.feature">

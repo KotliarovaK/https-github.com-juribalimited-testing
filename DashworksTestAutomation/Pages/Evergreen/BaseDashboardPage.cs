@@ -531,6 +531,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(by);
         }
 
+        public IWebElement GetInputAddButton(string placeholder)
+        {
+            var selector = GetNamedTextbox(placeholder).FindElement(By.XPath(".//../ancestor::mat-form-field//button"));
+            Driver.WaitForElementToBeDisplayed(selector);
+            return selector;
+        }
+
         public IWebElement GetNamedTextboxErrorMessageElement(string placeholder)
         {
             var namedTextbox = GetNamedTextbox(placeholder);
@@ -649,6 +656,15 @@ namespace DashworksTestAutomation.Pages.Evergreen
             }
             else
                 throw new Exception($"'{option}' was not found in the '{placeholder}' autocomplete");
+        }
+
+        public void InputWithAddButton(string placeholder, string option)
+        {
+            var button = GetNamedTextbox(placeholder);
+            button.Click();
+            button.ClearWithBackspaces();
+            button.SendKeys(option);
+            GetInputAddButton(placeholder).Click();
         }
 
         public int GetElementTopYCoordinate(IWebElement element)
