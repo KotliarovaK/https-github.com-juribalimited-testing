@@ -90,8 +90,7 @@ Scenario: EvergreenJnr_UsersList_CancelCustomFieldCreation
 	And User clicks Cancel button on Add Custom Field popup
 	Then "Custom Fields" tab is displayed on left menu on the Details page and contains '0' count of items
 
-	#Remove Not_Ready for Orbit
-@Evergreen @Users @EvergreenJnr_ItemDetails @CustomFields @DAS16487 @Cleanup @Not_Ready
+@Evergreen @Users @EvergreenJnr_ItemDetails @CustomFields @DAS16487 @Cleanup
 Scenario: EvergreenJnr_UsersList_CreateCustomFieldWithSameData
 	When User creates new Custom Field
 	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | User |

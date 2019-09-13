@@ -20,7 +20,22 @@ namespace DashworksTestAutomation.Utils
 
         private static bool IsTagExistInCurrentSession(string expectedTag)
         {
-            return _testsTags.Any(x => x.Any(y => y.Contains(expectedTag)));
+            var text = string.Empty;
+            foreach (List<string> list in _testsTags)
+            {
+                text += String.Join(", ", list.ToArray()) + "\r\n";
+            }
+
+            var result = _testsTags.Any(x => x.Any(y => y.Contains(expectedTag)));
+
+            if (result)
+            {
+                Logger.Write("=======>");
+                Logger.Write($"TAG '{expectedTag}' is in the list:");
+                Logger.Write(text);
+                Logger.Write("<=======");
+            }
+            return result;
         }
 
         private static List<string> GetDoNotRunWithTags()
@@ -53,6 +68,7 @@ namespace DashworksTestAutomation.Utils
                         while (IsTagExistInCurrentSession(lockTag) && _testsTags.Any())
                         {
                             Thread.Sleep(2000);
+                            Logger.Write("1. Tag exists in the context");
                         }
                     }
                 }
@@ -63,6 +79,7 @@ namespace DashworksTestAutomation.Utils
                     while (GetDoNotRunWithTags().Intersect(categories).Any() && _testsTags.Any())
                     {
                         Thread.Sleep(2000);
+                        Logger.Write("2. Do_Not_Run_With in the context");
                     }
                 }
             }
@@ -115,7 +132,7 @@ namespace DashworksTestAutomation.Utils
             //Remove all tags in case of any errors!
             catch (Exception e)
             {
-                Logger.Write(e);
+                Logger.Write($"ERROR REMOVING TAGS: {e}");
                 //_testsTags = new List<List<string>>();
             }
             finally
