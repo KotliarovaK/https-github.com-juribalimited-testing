@@ -970,6 +970,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.That(page.PreviewPaneMessageText.Text, Is.EqualTo(message), "Preview message is different.");
         }
 
+        [Then(@"'(.*)' alert is displayed in Preview")]
+        public void ThenAlertTestDisplayedInPreview(string message)
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            Utils.Verify.That(page.PreviewPaneAlertText.Text, Is.EqualTo(message), "Preview alert is different.");
+        }
+
         [When(@"User clicks first Dashboard in dashboards list")]
         public void WhenUserClickFirstDashboardInDashboardsList()
         {

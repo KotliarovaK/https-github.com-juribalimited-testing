@@ -34,7 +34,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project
         // table example
         // | ProjectName | Scope | ProjectTemplate | Mode |
         [When(@"Project created via API and opened")]
-        public void WhenUserCreateNewDashboardViaApi(Table table)
+        public void WhenUserCreateNewProjectViaApi(Table table)
         {
             string pName = string.Empty;
             string pScope = string.Empty;
@@ -82,6 +82,12 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project
             var page = _driver.NowAt<ProjectsPage>();
             _driver.WaitForDataLoading();
             Verify.IsTrue(page.ActiveProjectByName(pName), $"{pName} is not displayed on the Project page");
+        }
+
+        [When(@"User projects are removed via API")]
+        public void WhenUserRemovesNewProjectsViaApi()
+        {
+            DeleteNewlyCreatedProject();
         }
 
         [AfterScenario("Cleanup")]

@@ -93,10 +93,11 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//div[text()='This list does not exist or you do not have access to it']")]
         public IWebElement ListDoesntExistMessage { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//div[contains(@class,'empty-message')]")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'empty-message')]")]
         public IWebElement PreviewPaneMessageText { get; set; }
 
-
+        [FindsBy(How = How.XPath, Using = ".//div[@role='alert']/div[last()]")]
+        public IWebElement PreviewPaneAlertText { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {
