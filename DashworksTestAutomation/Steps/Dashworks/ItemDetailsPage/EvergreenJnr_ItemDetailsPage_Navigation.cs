@@ -147,6 +147,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             Utils.Verify.AreEqual(expectedList, actualList, "Tabs for the details page are incorrect");
         }
 
+        //TODO should be moved to Navigation
         [Then(@"""(.*)"" main-menu on the Details page contains following sub-menu:")]
         public void ThenMain_MenuOnTheDetailsPageContainsFollowingSub_Menu(string tabMenuName, Table table)
         {

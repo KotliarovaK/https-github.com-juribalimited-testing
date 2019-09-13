@@ -674,6 +674,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenEmptyRowsAreDisplayedIfTheDataIsUnknown()
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
+            if (!detailsPage.TableRowDetails.Any())
+                throw new Exception($"Details table is not visible");
+
             foreach (var element in detailsPage.TableRowDetails)
                 Utils.Verify.DoesNotContain("Unknown", element.Text,
                     "Unknown text is displayed");
