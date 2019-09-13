@@ -38,11 +38,7 @@ Scenario: EvergreenJnr_MailboxesList_CreateCustomFieldWithEmptyValue
 	When User creates new Custom Field
 	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | Mailbox | Computer | User | Application |
 	| CfDAS16487_1 | FlDAS16487_1 | true                | true    | true    | true     | true | true        |
-	And User navigate to Evergreen URL
-	And User clicks "Mailboxes" on the left-hand menu
-	Then "All Mailboxes" list should be displayed to the user
-	When User perform search by "03F0CCD0F3384DE5A9F@bclabs.local"
-	And User click content from "Email Address" column
+	And User navigates to the 'Mailbox' details page for '03F0CCD0F3384DE5A9F@bclabs.local' item
 	Then Details page for "03F0CCD0F3384DE5A9F@bclabs.local" item is displayed to the user
 	When User navigates to the "Custom Fields" sub-menu on the Details page
 	And User creates Custom Field
@@ -57,11 +53,7 @@ Scenario: EvergreenJnr_UsersList_CreateCustomField
 	When User creates new Custom Field
 	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | User |
 	| CfDAS16487_2 | FlDAS16487_2 | true                | true    | true |
-	And User navigate to Evergreen URL
-	And User clicks "Users" on the left-hand menu
-	Then "All Users" list should be displayed to the user
-	When User perform search by "BrissonTa"
-	And User click content from "Username" column
+	And User navigates to the 'User' details page for 'BrissonTa' item
 	Then Details page for "BrissonTa (Ta Brisson)" item is displayed to the user
 	When User navigates to the "Custom Fields" sub-menu on the Details page
 	And User creates Custom Field
@@ -77,11 +69,7 @@ Scenario: EvergreenJnr_UsersList_CancelCustomFieldCreation
 	When User creates new Custom Field
 	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | User |
 	| CfDAS16487_3 | FlDAS16487_3 | true                | true    | true |
-	And User navigate to Evergreen URL
-	And User clicks "Users" on the left-hand menu
-	Then "All Users" list should be displayed to the user
-	When User perform search by "VriezeGi"
-	And User click content from "Username" column
+	And User navigates to the 'User' details page for 'VriezeGi' item
 	Then Details page for "VriezeGi (Ginette Vrieze)" item is displayed to the user
 	When User navigates to the "Custom Fields" sub-menu on the Details page
 	And User clicks the "ADD CUSTOM FIELD" Action button
@@ -95,11 +83,7 @@ Scenario: EvergreenJnr_UsersList_CreateCustomFieldWithSameData
 	When User creates new Custom Field
 	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | User |
 	| CfDAS17614_4 | FlDAS17614_4 | true                | true    | true |
-	And User navigate to Evergreen URL
-	And User clicks "Users" on the left-hand menu
-	Then "All Users" list should be displayed to the user
-	When User perform search by "OBM473400"
-	And User click content from "Username" column
+	And User navigates to the 'User' details page for 'OBM473400' item
 	Then Details page for "OBM473400 (Jeannie L. Moreno)" item is displayed to the user
 	When User navigates to the "Custom Fields" sub-menu on the Details page
 	Then 'No custom fields found for this user' message is displayed on empty greed
@@ -130,15 +114,11 @@ Scenario: EvergreenJnr_UsersList_CheckGroupByResetAfterCreatingNewCustomField
 	When User creates new Custom Field
 	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | User |
 	| CfDAS17695_2 | FlDAS17695_2 | true                | true    | true |
-	And User navigate to Evergreen URL
 	And User creates Custom Field via API
 	| ObjectType | ObjectId | FieldName    | Value            |
 	| user       | 3532     | CfDAS17695_2 | ValueDAS17695_2A |
 	| user       | 3532     | CfDAS17695_2 | ValueDAS17695_2B |
-	And User clicks "Users" on the left-hand menu
-	Then "All Users" list should be displayed to the user
-	When User perform search by "TAI6096068"
-	And User click content from "Username" column
+	And User navigates to the 'User' details page for 'TAI6096068' item
 	And User navigates to the "Custom Fields" sub-menu on the Details page
 	And User clicks Group By button on the Admin page and selects "Custom Field" value
 	Then Cog menu is not displayed on the Admin page
