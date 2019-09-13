@@ -166,6 +166,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Utils.Verify.AreEqual(text, toolTipText, $"Incorrect tooltip for Add button in the {fieldName} textbox");
         }
 
+        [Then(@"Add button for '(.*)' textbox is disabled")]
+        public void ThenAddButtonForTextboxIsDisabled(string fieldName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Utils.Verify.IsTrue(Convert.ToBoolean(page.GetInputAddButton(fieldName).GetAttribute("disabled")), $"Add button for {fieldName} textbox is active");
+        }
+
         #endregion
 
         #region Dropdown

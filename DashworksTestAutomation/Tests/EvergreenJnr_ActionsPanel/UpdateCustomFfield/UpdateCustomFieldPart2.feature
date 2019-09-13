@@ -65,8 +65,10 @@ Scenario: EvergreenJnr_DevicesList_CheckUpdateCustomFieldUpdatingValuesForRemove
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
 	And Success message with "2 updates have been queued" text is displayed on Action panel
+	When User refreshes agGrid
+	Then "111, 000" content is displayed in "Phoenix Field" column
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18045 @Not_Ready
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18045 @DAS18031 @Not_Ready
 #Waiting for "Update custom field" on the automation
 Scenario: EvergreenJnr_UsersList_CheckUpdateCustomFieldUpdatingValuesForAddToExistingValues
 	When User clicks "Users" on the left-hand menu
@@ -87,6 +89,10 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateCustomFieldUpdatingValuesForAddToExi
 	And User selects 'Update custom field' in the 'Bulk Update Type' dropdown
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
 	When User selects 'Add to existing values' in the 'Update Values' dropdown
+	#DAS18031
+	Then "UPDATE" Action button is disabled
+	Then "UPDATE" Action button have tooltip with "Some values are missing or not valid" text
+	#DAS18031
 	When User adds 'alpha' value from 'Value' textbox
 	When User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
@@ -99,13 +105,17 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateCustomFieldUpdatingValuesForAddToExi
 	And User selects 'Update custom field' in the 'Bulk Update Type' dropdown
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
 	When User selects 'Replace all values' in the 'Update Values' dropdown
+	#DAS18031
+	Then "UPDATE" Action button is disabled
+	Then "UPDATE" Action button have tooltip with "Some values are missing or not valid" text
+	#DAS18031
 	When User adds 'beta' value from 'Value' textbox
 	When User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
 	And Success message with "2 updates have been queued" text is displayed on Action panel
 
-@Evergreen @Applications @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18045 @Not_Ready
+@Evergreen @Applications @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18045 @DAS18031 @Not_Ready
 #Waiting for "Update custom field" on the automation
 Scenario: EvergreenJnr_ApplicationsList_CheckUpdateCustomFieldUpdatingValuesForReplaceSingleValue
 	When User clicks "Applications" on the left-hand menu
@@ -126,6 +136,10 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateCustomFieldUpdatingValuesForR
 	And User selects 'Update custom field' in the 'Bulk Update Type' dropdown
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
 	When User selects 'Replace single value' in the 'Update Values' dropdown
+	#DAS18031
+	Then "UPDATE" Action button is disabled
+	Then "UPDATE" Action button have tooltip with "Some values are missing or not valid" text
+	#DAS18031
 	When User enters 'first value' text to 'Find Value' textbox
 	When User enters 'second' text to 'Replace Value' textbox
 	When User clicks the "UPDATE" Action button
@@ -146,7 +160,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateCustomFieldUpdatingValuesForR
 	And User clicks "UPDATE" button on message box
 	And Success message with "2 updates have been queued" text is displayed on Action panel
 
-@Evergreen @Mailboxes @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18045 @Not_Ready
+@Evergreen @Mailboxes @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18045 @DAS18031 @Not_Ready
 #Waiting for "Update custom field" on the automation
 Scenario: EvergreenJnr_MailboxesList_CheckUpdateCustomFieldUpdatingValuesForReplaceSingleValue
 	When User clicks "Mailboxes" on the left-hand menu
@@ -167,7 +181,15 @@ Scenario: EvergreenJnr_MailboxesList_CheckUpdateCustomFieldUpdatingValuesForRepl
 	And User selects 'Update custom field' in the 'Bulk Update Type' dropdown
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
 	When User selects 'Remove specific values' in the 'Update Values' dropdown
+	#DAS18031
+	Then "UPDATE" Action button is disabled
+	Then "UPDATE" Action button have tooltip with "Some values are missing or not valid" text
+	Then 'Enter a value' add button tooltip is displayed for 'Value' textbox
+	Then Add button for 'Value' textbox is disabled
+	When User enters 'test' text to 'Value' textbox
+	Then 'Add value' add button tooltip is displayed for 'Value' textbox
 	When User adds '01' value from 'Value' textbox
+	#DAS18031
 	When User adds 'three' value from 'Value' textbox
 	When User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
