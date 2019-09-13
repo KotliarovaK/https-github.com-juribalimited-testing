@@ -82,7 +82,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel.UpdateCustomFf
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveAllValuesValidation")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Mailboxes")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
         [NUnit.Framework.CategoryAttribute("BulkUpdate")]
         [NUnit.Framework.CategoryAttribute("DAS17878")]
@@ -121,7 +120,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel.UpdateCustomFf
         {
             string[] @__tags = new string[] {
                     "Evergreen",
-                    "Mailboxes",
                     "EvergreenJnr_ActionsPanel",
                     "BulkUpdate",
                     "DAS17878",
@@ -169,7 +167,6 @@ this.FeatureBackground();
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceAllValuesValidation")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Mailboxes")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
         [NUnit.Framework.CategoryAttribute("BulkUpdate")]
         [NUnit.Framework.CategoryAttribute("DAS17878")]
@@ -208,7 +205,6 @@ this.FeatureBackground();
         {
             string[] @__tags = new string[] {
                     "Evergreen",
-                    "Mailboxes",
                     "EvergreenJnr_ActionsPanel",
                     "BulkUpdate",
                     "DAS17878",
@@ -276,7 +272,6 @@ this.FeatureBackground();
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckUpdateCustomFieldForAddToExistingValuesValidation")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Mailboxes")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
         [NUnit.Framework.CategoryAttribute("BulkUpdate")]
         [NUnit.Framework.CategoryAttribute("DAS17878")]
@@ -315,7 +310,6 @@ this.FeatureBackground();
         {
             string[] @__tags = new string[] {
                     "Evergreen",
-                    "Mailboxes",
                     "EvergreenJnr_ActionsPanel",
                     "BulkUpdate",
                     "DAS17878",
@@ -363,7 +357,6 @@ this.FeatureBackground();
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveSpecificValuesValidation")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Mailboxes")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
         [NUnit.Framework.CategoryAttribute("BulkUpdate")]
         [NUnit.Framework.CategoryAttribute("DAS17878")]
@@ -402,7 +395,6 @@ this.FeatureBackground();
         {
             string[] @__tags = new string[] {
                     "Evergreen",
-                    "Mailboxes",
                     "EvergreenJnr_ActionsPanel",
                     "BulkUpdate",
                     "DAS17878",
@@ -450,7 +442,6 @@ this.FeatureBackground();
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceSingleValueValidation")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Mailboxes")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
         [NUnit.Framework.CategoryAttribute("BulkUpdate")]
         [NUnit.Framework.CategoryAttribute("DAS17878")]
@@ -489,7 +480,6 @@ this.FeatureBackground();
         {
             string[] @__tags = new string[] {
                     "Evergreen",
-                    "Mailboxes",
                     "EvergreenJnr_ActionsPanel",
                     "BulkUpdate",
                     "DAS17878",

@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Mailboxes @EvergreenJnr_ActionsPanel @BulkUpdate @DAS17878 @Not_Ready
+@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS17878 @Not_Ready
 #Waiting for "Update custom field" on the automation
 Scenario Outline: EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveAllValuesValidation
 	When User clicks "<ListName>" on the left-hand menu
@@ -28,7 +28,7 @@ Examples:
 	| Applications | Application   | 7-Zip 16.02 (x64)                |
 	| Mailboxes    | Email Address | 002B5DC7D4D34D5C895@bclabs.local |
 
-@Evergreen @Mailboxes @EvergreenJnr_ActionsPanel @BulkUpdate @DAS17878 @Not_Ready
+@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS17878 @Not_Ready
 #Waiting for "Update custom field" on the automation
 Scenario Outline: EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceAllValuesValidation
 	When User clicks "<ListName>" on the left-hand menu
@@ -61,7 +61,7 @@ Examples:
 	| Applications | Application   | 0004 - Adobe Acrobat Reader 5.0.5 Francais |
 	| Mailboxes    | Email Address | 00DB4000EDD84951993@bclabs.local           |
 
-@Evergreen @Mailboxes @EvergreenJnr_ActionsPanel @BulkUpdate @DAS17878 @Not_Ready
+@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS17878 @Not_Ready
 #Waiting for "Update custom field" on the automation
 Scenario Outline: EvergreenJnr_AllLists_CheckUpdateCustomFieldForAddToExistingValuesValidation
 	When User clicks "<ListName>" on the left-hand menu
@@ -84,7 +84,7 @@ Examples:
 	| Applications | Application   | 0004 - Adobe Acrobat Reader 5.0.5 Francais |
 	| Mailboxes    | Email Address | 00DB4000EDD84951993@bclabs.local           |
 
-@Evergreen @Mailboxes @EvergreenJnr_ActionsPanel @BulkUpdate @DAS17878 @Not_Ready
+@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS17878 @Not_Ready
 #Waiting for "Update custom field" on the automation
 Scenario Outline: EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveSpecificValuesValidation
 	When User clicks "<ListName>" on the left-hand menu
@@ -107,7 +107,7 @@ Examples:
 	| Applications | Application   | 0004 - Adobe Acrobat Reader 5.0.5 Francais |
 	| Mailboxes    | Email Address | 00DB4000EDD84951993@bclabs.local           |
 
-@Evergreen @Mailboxes @EvergreenJnr_ActionsPanel @BulkUpdate @DAS17878 @Not_Ready
+@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS17878 @Not_Ready
 #Waiting for "Update custom field" on the automation
 Scenario Outline: EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceSingleValueValidation
 	When User clicks "<ListName>" on the left-hand menu
