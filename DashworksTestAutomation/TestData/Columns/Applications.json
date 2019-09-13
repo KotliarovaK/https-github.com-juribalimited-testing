@@ -6313,6 +6313,99 @@
     "typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.2.0, Culture=neutral, PublicKeyToken=null"
   },
   {
+    "id": "deviceOSCategory",
+    "label": "Device Operating System",
+    "translatedShortLabel": null,
+    "translatedTextLabel": "Device <span class='normal-font'>whose</span> Operating System",
+    "customTranslatedTextLabel": null,
+    "translatedCategory": "Device Operating System",
+    "translatedNoItems": null,
+    "category": "Device Operating System",
+    "filterType": 11,
+    "type": "associationmultiselect",
+    "operators": [
+      {
+        "key": "Equals",
+        "translatedDropdownValue": "Equals",
+        "translatedTextValue": "is"
+      },
+      {
+        "key": "Does not equal",
+        "translatedDropdownValue": "Does not equal",
+        "translatedTextValue": "is not"
+      },
+      {
+        "key": "Not empty",
+        "translatedDropdownValue": "Not empty",
+        "translatedTextValue": "is not empty"
+      }
+    ],
+    "options": [],
+    "optionsUrl": "/applications/filters/options/deviceoscategory",
+    "getOptionsMethodParams": [ "GetOSCategoryJsonListItems" ],
+    "validate": false,
+    "displayType": null,
+    "displayOrder": 0,
+    "parameterCount": 0,
+    "getAssociationsMethodParams": null,
+    "associations": [
+      {
+        "key": "uod",
+        "translatedCheckboxValue": "Used on device",
+        "translatedTextValue": "used on device",
+        "group": 1,
+        "isPositive": true
+      },
+      {
+        "key": "etd",
+        "translatedCheckboxValue": "Entitled to device",
+        "translatedTextValue": "entitled to device",
+        "group": 2,
+        "isPositive": true
+      },
+      {
+        "key": "iod",
+        "translatedCheckboxValue": "Installed on device",
+        "translatedTextValue": "installed on device",
+        "group": 3,
+        "isPositive": true
+      },
+      {
+        "key": "nuod",
+        "translatedCheckboxValue": "Not used on device",
+        "translatedTextValue": "not used on device",
+        "group": 1,
+        "isPositive": false
+      },
+      {
+        "key": "netd",
+        "translatedCheckboxValue": "Not entitled to device",
+        "translatedTextValue": "not entitled to device",
+        "group": 2,
+        "isPositive": false
+      },
+      {
+        "key": "niod",
+        "translatedCheckboxValue": "Not installed on device",
+        "translatedTextValue": "not installed on device",
+        "group": 3,
+        "isPositive": false
+      }
+    ],
+    "hasCorrespondingColumn": false,
+    "columns": [
+      {
+        "translatedName": "Device Operating System",
+        "name": "deviceOSCategory"
+      }
+    ],
+    "tooltip": null,
+    "includeOperators": null,
+    "savedListFilter": false,
+    "objectTypeId": 0,
+    "typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.2.0, Culture=neutral, PublicKeyToken=null"
+  },
+  {
     "id": "deviceOSArchitecture",
     "label": "Device OS Architecture",
     "translatedShortLabel": null,

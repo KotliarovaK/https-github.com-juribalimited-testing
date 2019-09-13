@@ -841,7 +841,7 @@
   },
   {
     "translatedColumnName": ":/: Target App ID",
-    "columnName": "project_73_targetObjectID",
+    "columnName": "project_73_targetObjectId",
     "translatedCategory": "Project: :/",
     "category": "Project-:/",
     "categoryOrder": 4,
@@ -1513,7 +1513,7 @@
   },
   {
     "translatedColumnName": "1803: Target App ID",
-    "columnName": "project_63_targetObjectID",
+    "columnName": "project_63_targetObjectId",
     "translatedCategory": "Project: 1803",
     "category": "Project-1803",
     "categoryOrder": 4,
@@ -2206,7 +2206,7 @@
   },
   {
     "translatedColumnName": "Automation: Target App ID",
-    "columnName": "project_74_targetObjectID",
+    "columnName": "project_74_targetObjectId",
     "translatedCategory": "Project: Automation",
     "category": "Project-Automation",
     "categoryOrder": 4,
@@ -2752,7 +2752,7 @@
   },
   {
     "translatedColumnName": "Babel(Engl: Target App ID",
-    "columnName": "project_46_targetObjectID",
+    "columnName": "project_46_targetObjectId",
     "translatedCategory": "Project: Babel(Engl",
     "category": "Project-Babel(Engl",
     "categoryOrder": 4,
@@ -3424,7 +3424,7 @@
   },
   {
     "translatedColumnName": "Barry'sUse: Target App ID",
-    "columnName": "project_38_targetObjectID",
+    "columnName": "project_38_targetObjectId",
     "translatedCategory": "Project: Barry'sUse",
     "category": "Project-Barry'sUse",
     "categoryOrder": 4,
@@ -4012,7 +4012,7 @@
   },
   {
     "translatedColumnName": "ComputerSc: Target App ID",
-    "columnName": "project_40_targetObjectID",
+    "columnName": "project_40_targetObjectId",
     "translatedCategory": "Project: ComputerSc",
     "category": "Project-ComputerSc",
     "categoryOrder": 4,
@@ -5818,7 +5818,7 @@
   },
   {
     "translatedColumnName": "DeviceSche: Target App ID",
-    "columnName": "project_55_targetObjectID",
+    "columnName": "project_55_targetObjectId",
     "translatedCategory": "Project: DeviceSche",
     "category": "Project-DeviceSche",
     "categoryOrder": 4,
@@ -6553,7 +6553,7 @@
   },
   {
     "translatedColumnName": "EmailMigra: Target App ID",
-    "columnName": "project_48_targetObjectID",
+    "columnName": "project_48_targetObjectId",
     "translatedCategory": "Project: EmailMigra",
     "category": "Project-EmailMigra",
     "categoryOrder": 4,
@@ -7225,7 +7225,7 @@
   },
   {
     "translatedColumnName": "Havoc(BigD: Target App ID",
-    "columnName": "project_43_targetObjectID",
+    "columnName": "project_43_targetObjectId",
     "translatedCategory": "Project: Havoc(BigD",
     "category": "Project-Havoc(BigD",
     "categoryOrder": 4,
@@ -7897,7 +7897,7 @@
   },
   {
     "translatedColumnName": "ICSP: Target App ID",
-    "columnName": "project_50_targetObjectID",
+    "columnName": "project_50_targetObjectId",
     "translatedCategory": "Project: ICSP",
     "category": "Project-ICSP",
     "categoryOrder": 4,
@@ -8716,7 +8716,7 @@
   },
   {
     "translatedColumnName": "MailboxEve: Target App ID",
-    "columnName": "project_54_targetObjectID",
+    "columnName": "project_54_targetObjectId",
     "translatedCategory": "Project: MailboxEve",
     "category": "Project-MailboxEve",
     "categoryOrder": 4,
@@ -9262,7 +9262,7 @@
   },
   {
     "translatedColumnName": "MigrationP: Target App ID",
-    "columnName": "project_34_targetObjectID",
+    "columnName": "project_34_targetObjectId",
     "translatedCategory": "Project: MigrationP",
     "category": "Project-MigrationP",
     "categoryOrder": 4,
@@ -9892,7 +9892,7 @@
   },
   {
     "translatedColumnName": "Pr00: Target App ID",
-    "columnName": "project_65_targetObjectID",
+    "columnName": "project_65_targetObjectId",
     "translatedCategory": "Project: Pr00",
     "category": "Project-Pr00",
     "categoryOrder": 4,
@@ -10564,7 +10564,7 @@
   },
   {
     "translatedColumnName": "prK: Target App ID",
-    "columnName": "project_49_targetObjectID",
+    "columnName": "project_49_targetObjectId",
     "translatedCategory": "Project: prK",
     "category": "Project-prK",
     "categoryOrder": 4,
@@ -11299,7 +11299,7 @@
   },
   {
     "translatedColumnName": "ProjBroken: Target App ID",
-    "columnName": "project_66_targetObjectID",
+    "columnName": "project_66_targetObjectId",
     "translatedCategory": "Project: ProjBroken",
     "category": "Project-ProjBroken",
     "categoryOrder": 4,
@@ -11971,7 +11971,7 @@
   },
   {
     "translatedColumnName": "ProjWith: Target App ID",
-    "columnName": "project_67_targetObjectID",
+    "columnName": "project_67_targetObjectId",
     "translatedCategory": "Project: ProjWith",
     "category": "Project-ProjWith",
     "categoryOrder": 4,
@@ -12517,7 +12517,7 @@
   },
   {
     "translatedColumnName": "R.testProj: Target App ID",
-    "columnName": "project_78_targetObjectID",
+    "columnName": "project_78_targetObjectId",
     "translatedCategory": "Project: R.testProj",
     "category": "Project-R.testProj",
     "categoryOrder": 4,
@@ -13189,7 +13189,7 @@
   },
   {
     "translatedColumnName": "TST: Target App ID",
-    "columnName": "project_68_targetObjectID",
+    "columnName": "project_68_targetObjectId",
     "translatedCategory": "Project: TST",
     "category": "Project-TST",
     "categoryOrder": 4,
@@ -13735,7 +13735,7 @@
   },
   {
     "translatedColumnName": "TST1: Target App ID",
-    "columnName": "project_69_targetObjectID",
+    "columnName": "project_69_targetObjectId",
     "translatedCategory": "Project: TST1",
     "category": "Project-TST1",
     "categoryOrder": 4,
@@ -14281,7 +14281,7 @@
   },
   {
     "translatedColumnName": "USEMEFORA1: Target App ID",
-    "columnName": "project_71_targetObjectID",
+    "columnName": "project_71_targetObjectId",
     "translatedCategory": "Project: USEMEFORA1",
     "category": "Project-USEMEFORA1",
     "categoryOrder": 4,
@@ -14827,7 +14827,7 @@
   },
   {
     "translatedColumnName": "USEMEFORA2: Target App ID",
-    "columnName": "project_72_targetObjectID",
+    "columnName": "project_72_targetObjectId",
     "translatedCategory": "Project: USEMEFORA2",
     "category": "Project-USEMEFORA2",
     "categoryOrder": 4,
@@ -15604,7 +15604,7 @@
   },
   {
     "translatedColumnName": "UseMeForAu: Target App ID",
-    "columnName": "project_70_targetObjectID",
+    "columnName": "project_70_targetObjectId",
     "translatedCategory": "Project: UseMeForAu",
     "category": "Project-UseMeForAu",
     "categoryOrder": 4,
@@ -16276,7 +16276,7 @@
   },
   {
     "translatedColumnName": "UserEvergr: Target App ID",
-    "columnName": "project_56_targetObjectID",
+    "columnName": "project_56_targetObjectId",
     "translatedCategory": "Project: UserEvergr",
     "category": "Project-UserEvergr",
     "categoryOrder": 4,
@@ -17116,7 +17116,7 @@
   },
   {
     "translatedColumnName": "UserSched2: Target App ID",
-    "columnName": "project_47_targetObjectID",
+    "columnName": "project_47_targetObjectId",
     "translatedCategory": "Project: UserSched2",
     "category": "Project-UserSched2",
     "categoryOrder": 4,
@@ -17662,7 +17662,7 @@
   },
   {
     "translatedColumnName": "UserSchedu: Target App ID",
-    "columnName": "project_41_targetObjectID",
+    "columnName": "project_41_targetObjectId",
     "translatedCategory": "Project: UserSchedu",
     "category": "Project-UserSchedu",
     "categoryOrder": 4,
@@ -19258,7 +19258,7 @@
   },
   {
     "translatedColumnName": "Windows101: Target App ID",
-    "columnName": "project_58_targetObjectID",
+    "columnName": "project_58_targetObjectId",
     "translatedCategory": "Project: Windows101",
     "category": "Project-Windows101",
     "categoryOrder": 4,
@@ -19930,7 +19930,7 @@
   },
   {
     "translatedColumnName": "Windows102: Target App ID",
-    "columnName": "project_60_targetObjectID",
+    "columnName": "project_60_targetObjectId",
     "translatedCategory": "Project: Windows102",
     "category": "Project-Windows102",
     "categoryOrder": 4,
@@ -20602,7 +20602,7 @@
   },
   {
     "translatedColumnName": "Windows10T: Target App ID",
-    "columnName": "project_62_targetObjectID",
+    "columnName": "project_62_targetObjectId",
     "translatedCategory": "Project: Windows10T",
     "category": "Project-Windows10T",
     "categoryOrder": 4,
@@ -21274,7 +21274,7 @@
   },
   {
     "translatedColumnName": "Windows10U: Target App ID",
-    "columnName": "project_59_targetObjectID",
+    "columnName": "project_59_targetObjectId",
     "translatedCategory": "Project: Windows10U",
     "category": "Project-Windows10U",
     "categoryOrder": 4,
@@ -21946,7 +21946,7 @@
   },
   {
     "translatedColumnName": "Windows7Mi: Target App ID",
-    "columnName": "project_1_targetObjectID",
+    "columnName": "project_1_targetObjectId",
     "translatedCategory": "Project: Windows7Mi",
     "category": "Project-Windows7Mi",
     "categoryOrder": 4,
@@ -23143,7 +23143,7 @@
   },
   {
     "translatedColumnName": "zDeviceAut: Target App ID",
-    "columnName": "project_75_targetObjectID",
+    "columnName": "project_75_targetObjectId",
     "translatedCategory": "Project: zDeviceAut",
     "category": "Project-zDeviceAut",
     "categoryOrder": 4,
@@ -23920,7 +23920,7 @@
   },
   {
     "translatedColumnName": "zMailboxAu: Target App ID",
-    "columnName": "project_77_targetObjectID",
+    "columnName": "project_77_targetObjectId",
     "translatedCategory": "Project: zMailboxAu",
     "category": "Project-zMailboxAu",
     "categoryOrder": 4,
@@ -24487,7 +24487,7 @@
   },
   {
     "translatedColumnName": "zUserAutom: Target App ID",
-    "columnName": "project_76_targetObjectID",
+    "columnName": "project_76_targetObjectId",
     "translatedCategory": "Project: zUserAutom",
     "category": "Project-zUserAutom",
     "categoryOrder": 4,
