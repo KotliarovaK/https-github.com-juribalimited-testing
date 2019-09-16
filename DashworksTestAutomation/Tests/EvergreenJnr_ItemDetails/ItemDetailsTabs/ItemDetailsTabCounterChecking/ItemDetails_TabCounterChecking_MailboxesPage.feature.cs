@@ -194,7 +194,7 @@ this.FeatureBackground();
  testRunner.And("\"Department and Location\" tab is displayed on left menu on the Details page and N" +
                     "OT contains count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 40
- testRunner.When("User navigates to the \"Projects\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "SubTabName"});
@@ -222,7 +222,7 @@ this.FeatureBackground();
  testRunner.And("\"Project Details\" tab is displayed on left menu on the Details page and NOT conta" +
                     "ins count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 53
- testRunner.When("User navigates to the \"Users\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Users\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "SubTabName"});
@@ -254,7 +254,7 @@ this.FeatureBackground();
  testRunner.And("\"Folder Permissions\" tab is displayed on left menu on the Details page and NOT co" +
                     "ntains count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 68
- testRunner.When("User navigates to the \"Trend\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Trend\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "SubTabName"});
@@ -406,7 +406,7 @@ this.FeatureBackground();
  testRunner.And("\"Department and Location\" tab is displayed on left menu on the Details page and N" +
                     "OT contains count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 113
- testRunner.When("User navigates to the \"Projects\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "SubTabName"});
@@ -433,7 +433,7 @@ this.FeatureBackground();
  testRunner.And("\"Project Details\" tab is displayed on left menu on the Details page and NOT conta" +
                     "ins count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 126
- testRunner.When("User navigates to the \"Users\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Users\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                         "SubTabName"});
@@ -465,7 +465,7 @@ this.FeatureBackground();
  testRunner.And("\"Folder Permissions\" tab is displayed on left menu on the Details page and NOT co" +
                     "ntains count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 141
- testRunner.When("User navigates to the \"Trend\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Trend\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "SubTabName"});

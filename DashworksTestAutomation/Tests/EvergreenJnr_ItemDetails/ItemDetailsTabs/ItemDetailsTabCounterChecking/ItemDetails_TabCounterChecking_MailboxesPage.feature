@@ -37,7 +37,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDispl
 	And "Mailbox Owner" tab is displayed on left menu on the Details page and NOT contains count of items
 	And "Department and Location" tab is displayed on left menu on the Details page and NOT contains count of items
 	#================ checks sub-menu for main Projects tab ================#
-	When User navigates to the "Projects" main-menu on the Details page
+	When User navigates to the 'Projects' left menu item
 	Then "Projects" main-menu on the Details page contains following sub-menu:
 	| SubTabName            |
 	| Evergreen Details     |
@@ -50,7 +50,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDispl
 	And "Evergreen Details" tab is displayed on left menu on the Details page and NOT contains count of items
 	And "Project Details" tab is displayed on left menu on the Details page and NOT contains count of items
 	#================ checks sub-menu for main Users tab ================#
-	When User navigates to the "Users" main-menu on the Details page
+	When User navigates to the 'Users' left menu item
 	Then "Users" main-menu on the Details page contains following sub-menu:
 	| SubTabName          |
 	| Users               |
@@ -65,7 +65,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDispl
 	And "Mailbox Permissions" tab is displayed on left menu on the Details page and NOT contains count of items
 	And "Folder Permissions" tab is displayed on left menu on the Details page and NOT contains count of items
 	#================ checks sub-menu for main Trend tab ================#
-	When User navigates to the "Trend" main-menu on the Details page
+	When User navigates to the 'Trend' left menu item
 	Then "Trend" main-menu on the Details page contains following sub-menu:
 	| SubTabName             |
 	| Email Count            |
@@ -110,7 +110,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDispl
 	And "Mailbox Owner" tab is displayed on left menu on the Details page and NOT contains count of items
 	And "Department and Location" tab is displayed on left menu on the Details page and NOT contains count of items
 	#================ checks sub-menu for main Projects tab ================#
-	When User navigates to the "Projects" main-menu on the Details page
+	When User navigates to the 'Projects' left menu item
 	Then "Projects" main-menu on the Details page contains following sub-menu:
 	| SubTabName            |
 	| Evergreen Details     |
@@ -123,7 +123,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDispl
 	And "Evergreen Details" tab is displayed on left menu on the Details page and NOT contains count of items
 	And "Project Details" tab is displayed on left menu on the Details page and NOT contains count of items
 	#================ checks sub-menu for main Users tab ================#
-	When User navigates to the "Users" main-menu on the Details page
+	When User navigates to the 'Users' left menu item
 	Then "Users" main-menu on the Details page contains following sub-menu:
 	| SubTabName          |
 	| Users               |
@@ -138,7 +138,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDispl
 	And "Mailbox Permissions" tab is displayed on left menu on the Details page and NOT contains count of items
 	And "Folder Permissions" tab is displayed on left menu on the Details page and NOT contains count of items
 	#================ checks sub-menu for main Trend tab ================#
-	When User navigates to the "Trend" main-menu on the Details page
+	When User navigates to the 'Trend' left menu item
 	Then "Trend" main-menu on the Details page contains following sub-menu:
 	| SubTabName             |
 	| Email Count            |

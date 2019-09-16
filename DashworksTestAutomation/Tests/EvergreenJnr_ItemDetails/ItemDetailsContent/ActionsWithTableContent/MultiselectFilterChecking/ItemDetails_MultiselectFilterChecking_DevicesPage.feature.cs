@@ -139,9 +139,9 @@ this.FeatureBackground();
  testRunner.Then("Details page for \"00RUUMAH9OZN9A\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 15
  testRunner.When("User navigates to the \'Users\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-                    "n the Top bar on Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 16
- testRunner.When("User navigates to the \"Users\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("User switches to the \"Windows 7 Migration (Computer Scheduled Project)\" project i" +
+                    "n the Top bar on Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 17
  testRunner.Then("\'OUT OF SCOPE\' content is displayed in the \'Stage for User Tasks\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 18
@@ -152,8 +152,9 @@ this.FeatureBackground();
  testRunner.And("\'GREY\' content is displayed in the \'Pre-Migration\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 21
  testRunner.And("\'GREY\' content is displayed in the \'Migration\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
- testRunner.And("\"Email Controls\" column is not displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 23
+ testRunner.And("\"Email Controls\" column is not displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 24
  testRunner.And("\'GREY\' content is displayed in the \'Communication\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 25
  testRunner.When("User clicks String Filter button for \"Stage for User Tasks\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -164,7 +165,7 @@ this.FeatureBackground();
                         "OUT OF SCOPE"});
 #line 26
  testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table1, "Then ");
-#line 28
+#line 29
  testRunner.When("User closes Checkbox filter for \"Stage for User Tasks\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 30
  testRunner.And("User clicks String Filter button for \"Owner\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -175,7 +176,7 @@ this.FeatureBackground();
                         "True"});
 #line 31
  testRunner.Then("following Boolean Values are displayed in the filter on the Details Page", ((string)(null)), table2, "Then ");
-#line 33
+#line 34
  testRunner.When("User closes Checkbox filter for \"Owner\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 35
  testRunner.And("User clicks String Filter button for \"Application Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -186,7 +187,7 @@ this.FeatureBackground();
                         "NONE"});
 #line 36
  testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table3, "Then ");
-#line 38
+#line 39
  testRunner.When("User closes Checkbox filter for \"Application Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 40
  testRunner.And("User clicks String Filter button for \"Pre-Migration\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -197,7 +198,7 @@ this.FeatureBackground();
                         "GREY"});
 #line 41
  testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table4, "Then ");
-#line 43
+#line 44
  testRunner.When("User closes Checkbox filter for \"Pre-Migration\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 45
  testRunner.And("User clicks String Filter button for \"Migration\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -208,7 +209,7 @@ this.FeatureBackground();
                         "GREY"});
 #line 46
  testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table5, "Then ");
-#line 48
+#line 49
  testRunner.When("User closes Checkbox filter for \"Migration\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 50
  testRunner.And("User clicks String Filter button for \"Communication\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -272,19 +273,19 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 56
- testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 57
- testRunner.Then("\"All Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 58
- testRunner.When("User perform search by \"00RUUMAH9OZN9A\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("\"All Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 59
- testRunner.And("User click content from \"Hostname\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User perform search by \"00RUUMAH9OZN9A\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 60
- testRunner.Then("Details page for \"00RUUMAH9OZN9A\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("User click content from \"Hostname\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 61
- testRunner.When("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("Details page for \"00RUUMAH9OZN9A\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 62
+ testRunner.When("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 63
  testRunner.And("User navigates to the \"Evergreen Summary\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 64
  testRunner.When("User switches to the \"Windows 7 Migration (Computer Scheduled Project)\" project i" +
@@ -292,13 +293,13 @@ this.FeatureBackground();
 #line 65
  testRunner.And("User enters \"Microsoft Office PowerPoint 2002 (XP)\" text in the Search field for " +
                     "\"Application\" column on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 65
- testRunner.Then("\'GREEN\' content is displayed in the \'Compliance\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 66
- testRunner.Then("\'TRUE\' content is displayed in the \'Installed\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'GREEN\' content is displayed in the \'Compliance\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 67
- testRunner.Then("\'UNKNOWN\' content is displayed in the \'Used\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'TRUE\' content is displayed in the \'Installed\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 68
+ testRunner.Then("\'UNKNOWN\' content is displayed in the \'Used\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 69
  testRunner.Then("\'TRUE\' content is displayed in the \'Entitled\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 70
  testRunner.When("User clicks String Filter button for \"Compliance\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -309,7 +310,7 @@ this.FeatureBackground();
                         "GREEN"});
 #line 71
  testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table7, "Then ");
-#line 73
+#line 74
  testRunner.When("User closes Checkbox filter for \"Compliance\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 75
  testRunner.When("User clicks String Filter button for \"Installed\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -320,7 +321,7 @@ this.FeatureBackground();
                         "True"});
 #line 76
  testRunner.Then("following Boolean Values are displayed in the filter on the Details Page", ((string)(null)), table8, "Then ");
-#line 78
+#line 79
  testRunner.When("User closes Checkbox filter for \"Installed\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 80
  testRunner.When("User clicks String Filter button for \"Used\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -331,7 +332,7 @@ this.FeatureBackground();
                         "Unknown"});
 #line 81
  testRunner.Then("following Boolean Values are displayed in the filter on the Details Page", ((string)(null)), table9, "Then ");
-#line 83
+#line 84
  testRunner.When("User closes Checkbox filter for \"Used\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 85
  testRunner.When("User clicks String Filter button for \"Entitled\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -397,19 +398,19 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 92
- testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 93
- testRunner.Then("\"All Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 94
- testRunner.When("User perform search by \"00RUUMAH9OZN9A\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("\"All Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 95
- testRunner.And("User click content from \"Hostname\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User perform search by \"00RUUMAH9OZN9A\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 96
- testRunner.Then("Details page for \"00RUUMAH9OZN9A\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("User click content from \"Hostname\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 97
- testRunner.When("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("Details page for \"00RUUMAH9OZN9A\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 98
+ testRunner.When("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 99
  testRunner.And("User navigates to the \"Evergreen Detail\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 100
  testRunner.When("User switches to the \"Windows 7 Migration (Computer Scheduled Project)\" project i" +
@@ -455,7 +456,7 @@ this.FeatureBackground();
                         "GREEN"});
 #line 116
  testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table14, "Then ");
-#line 118
+#line 119
  testRunner.When("User closes Checkbox filter for \"Compliance\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 120
  testRunner.When("User clicks String Filter button for \"Association\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -468,7 +469,7 @@ this.FeatureBackground();
                         "Entitled"});
 #line 121
  testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table15, "Then ");
-#line 124
+#line 125
  testRunner.When("User closes Checkbox filter for \"Association\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 126
  testRunner.When("User clicks String Filter button for \"Advertisement\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -487,7 +488,7 @@ this.FeatureBackground();
                         "Advert - A012A5EB"});
 #line 127
  testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table16, "Then ");
-#line 133
+#line 134
  testRunner.When("User closes Checkbox filter for \"Advertisement\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 135
  testRunner.When("User clicks String Filter button for \"Collection\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -506,7 +507,7 @@ this.FeatureBackground();
                         "Collection A011EB46"});
 #line 136
  testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table17, "Then ");
-#line 142
+#line 143
  testRunner.When("User closes Checkbox filter for \"Collection\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 144
  testRunner.When("User clicks String Filter button for \"Program\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -572,19 +573,19 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 151
- testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 152
- testRunner.Then("\"All Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 153
- testRunner.When("User perform search by \"00RUUMAH9OZN9A\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("\"All Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 154
- testRunner.And("User click content from \"Hostname\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User perform search by \"00RUUMAH9OZN9A\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 155
- testRunner.Then("Details page for \"00RUUMAH9OZN9A\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("User click content from \"Hostname\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 156
- testRunner.When("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("Details page for \"00RUUMAH9OZN9A\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 157
+ testRunner.When("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 158
  testRunner.And("User navigates to the \"Advertisements\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 159
  testRunner.When("User switches to the \"Windows 7 Migration (Computer Scheduled Project)\" project i" +
@@ -592,7 +593,7 @@ this.FeatureBackground();
 #line 160
  testRunner.And("User enters \"Microsoft Office PowerPoint 2002 (XP)\" text in the Search field for " +
                     "\"Application\" column on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 160
+#line 161
  testRunner.Then("\'TierA Site01\' content is displayed in the \'Site\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 162
  testRunner.When("User clicks String Filter button for \"Site\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -658,28 +659,28 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 169
- testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 170
- testRunner.Then("\"All Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 171
- testRunner.When("User perform search by \"00RUUMAH9OZN9A\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("\"All Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 172
- testRunner.And("User click content from \"Hostname\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User perform search by \"00RUUMAH9OZN9A\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 173
- testRunner.Then("Details page for \"00RUUMAH9OZN9A\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("User click content from \"Hostname\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 174
- testRunner.When("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("Details page for \"00RUUMAH9OZN9A\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 175
+ testRunner.When("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 176
  testRunner.And("User navigates to the \"Collections\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 177
  testRunner.When("User switches to the \"Windows 7 Migration (Computer Scheduled Project)\" project i" +
                     "n the Top bar on Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 177
- testRunner.Then("\'SMS/SCCM 2007\' content is displayed in the \'Source Type\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 178
- testRunner.Then("\'A01 SMS (Spoof)\' content is displayed in the \'Source\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'SMS/SCCM 2007\' content is displayed in the \'Source Type\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 179
+ testRunner.Then("\'A01 SMS (Spoof)\' content is displayed in the \'Source\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 180
  testRunner.Then("\'TierA Site01\' content is displayed in the \'Site\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 181
  testRunner.When("User clicks String Filter button for \"Source Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -690,7 +691,7 @@ this.FeatureBackground();
                         "SMS/SCCM 2007"});
 #line 182
  testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table20, "Then ");
-#line 184
+#line 185
  testRunner.When("User closes Checkbox filter for \"Source Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 186
  testRunner.When("User clicks String Filter button for \"Source\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -701,7 +702,7 @@ this.FeatureBackground();
                         "A01 SMS (Spoof)"});
 #line 187
  testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table21, "Then ");
-#line 189
+#line 190
  testRunner.When("User closes Checkbox filter for \"Source\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 191
  testRunner.When("User clicks String Filter button for \"Site\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -767,24 +768,24 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 198
- testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 199
- testRunner.Then("\"All Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 200
- testRunner.When("User perform search by \"00RUUMAH9OZN9A\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("\"All Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 201
- testRunner.And("User click content from \"Hostname\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User perform search by \"00RUUMAH9OZN9A\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 202
- testRunner.Then("Details page for \"00RUUMAH9OZN9A\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("User click content from \"Hostname\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 203
- testRunner.When("User navigates to the \'Compliance\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("Details page for \"00RUUMAH9OZN9A\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 204
+ testRunner.When("User navigates to the \'Compliance\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 205
  testRunner.And("User navigates to the \"Hardware Rules\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 206
  testRunner.When("User switches to the \"Windows 7 Migration (Computer Scheduled Project)\" project i" +
                     "n the Top bar on Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 206
+#line 207
  testRunner.Then("\'AMBER\' content is displayed in the \'Compliance\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 208
  testRunner.When("User clicks String Filter button for \"Compliance\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -850,19 +851,19 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 215
- testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 216
- testRunner.Then("\"All Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 217
- testRunner.When("User perform search by \"001BAQXT6JWFPI\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("\"All Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 218
- testRunner.And("User click content from \"Hostname\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User perform search by \"001BAQXT6JWFPI\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 219
- testRunner.Then("Details page for \"001BAQXT6JWFPI\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("User click content from \"Hostname\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 220
- testRunner.When("User navigates to the \'Compliance\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("Details page for \"001BAQXT6JWFPI\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 221
+ testRunner.When("User navigates to the \'Compliance\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 222
  testRunner.And("User navigates to the \"Application Issues\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 223
  testRunner.When("User switches to the \"Windows 7 Migration (Computer Scheduled Project)\" project i" +
@@ -870,11 +871,11 @@ this.FeatureBackground();
 #line 224
  testRunner.And("User enters \"Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" +
                     "\" text in the Search field for \"Application\" column on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 224
- testRunner.Then("\'TierA Site01\' content is displayed in the \'Site\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 225
- testRunner.Then("\'TRUE\' content is displayed in the \'Installed\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'TierA Site01\' content is displayed in the \'Site\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 226
+ testRunner.Then("\'TRUE\' content is displayed in the \'Installed\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 227
  testRunner.Then("\'RED\' content is displayed in the \'Compliance\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 228
  testRunner.When("User clicks String Filter button for \"Site\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -885,7 +886,7 @@ this.FeatureBackground();
                         "TierA Site01"});
 #line 229
  testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table24, "Then ");
-#line 231
+#line 232
  testRunner.When("User closes Checkbox filter for \"Site\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 233
  testRunner.When("User clicks String Filter button for \"Installed\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -896,7 +897,7 @@ this.FeatureBackground();
                         "True"});
 #line 234
  testRunner.Then("following Boolean Values are displayed in the filter on the Details Page", ((string)(null)), table25, "Then ");
-#line 236
+#line 237
  testRunner.When("User closes Checkbox filter for \"Installed\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 238
  testRunner.When("User clicks String Filter button for \"Compliance\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

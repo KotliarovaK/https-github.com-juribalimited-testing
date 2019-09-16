@@ -35,7 +35,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewPatternOfTheVerticalMenuIsDisplay
 	And "Device Owner" tab is displayed on left menu on the Details page and NOT contains count of items
 	And "Department and Location" tab is displayed on left menu on the Details page and NOT contains count of items
 	#================ checks sub-menu for main Projects tab ================#
-	When User navigates to the "Projects" main-menu on the Details page
+	When User navigates to the 'Projects' left menu item
 	Then "Projects" main-menu on the Details page contains following sub-menu:
 	| SubTabName             |
 	| Evergreen Details      |
@@ -48,15 +48,15 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewPatternOfTheVerticalMenuIsDisplay
 	And "Evergreen Details" tab is displayed on left menu on the Details page and NOT contains count of items
 	And "Project Details" tab is displayed on left menu on the Details page and NOT contains count of items
 	#================ checks sub-menu for main Specification tab ================#
-	When User navigates to the "Specification" main-menu on the Details page
+	When User navigates to the 'Specification' left menu item
 	Then "Specification" main-menu on the Details page contains following sub-menu:
 	| SubTabName    |
-	| Specification | 
-	| Network Cards | 
+	| Specification |
+	| Network Cards |
 	| CPUS          |
 	| Video Cards   |
 	| Monitors      |
-	| Sound Cards   | 
+	| Sound Cards   |
 	#================ checks counters ================#
 	And "Network Cards" tab is displayed on left menu on the Details page and contains count of items
 	And "CPUS" tab is displayed on left menu on the Details page and contains count of items
@@ -65,23 +65,23 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewPatternOfTheVerticalMenuIsDisplay
 	And "Sound Cards" tab is displayed on left menu on the Details page and contains count of items
 	And "Specification" tab is displayed on left menu on the Details page and NOT contains count of items
 	#================ checks sub-menu for main Active Directory tab ================#
-	When User navigates to the "Active Directory" main-menu on the Details page
+	When User navigates to the 'Active Directory' left menu item
 	Then "Active Directory" main-menu on the Details page contains following sub-menu:
-	| SubTabName       | 
-	| Active Directory |  
+	| SubTabName       |
+	| Active Directory |
 	| Groups           |
-	| LDAP             | 
+	| LDAP             |
 	#================ checks counters ================#
 	And "Groups" tab is displayed on left menu on the Details page and contains count of items
 	And "Active Directory" tab is displayed on left menu on the Details page and NOT contains count of items
 	And "LDAP" tab is displayed on left menu on the Details page and NOT contains count of items
 	#================ checks sub-menu for main Applications tab ================#
-	When User navigates to the "Applications" main-menu on the Details page
+	When User navigates to the 'Applications' left menu item
 	Then "Applications" main-menu on the Details page contains following sub-menu:
 	| SubTabName        |
-	| Evergreen Summary | 
+	| Evergreen Summary |
 	| Evergreen Detail  |
-	| Advertisements    | 
+	| Advertisements    |
 	| Collections       |
 	#================ checks counters ================#
 	And "Evergreen Summary" tab is displayed on left menu on the Details page and contains count of items
@@ -89,13 +89,13 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewPatternOfTheVerticalMenuIsDisplay
 	And "Advertisements" tab is displayed on left menu on the Details page and contains count of items
 	And "Collections" tab is displayed on left menu on the Details page and contains count of items
 	#================ checks sub-menu for main Compliance tab ================#
-	When User navigates to the "Compliance" main-menu on the Details page
+	When User navigates to the 'Compliance' left menu item
 	Then "Compliance" main-menu on the Details page contains following sub-menu:
-	| SubTabName          | 
-	| Overview            |          
-	| Hardware Summary    |            
-	| Hardware Rules      |           
-	| Application Summary |            
+	| SubTabName          |
+	| Overview            |
+	| Hardware Summary    |
+	| Hardware Rules      |
+	| Application Summary |
 	| Application Issues  |
 	#================ checks counters ================#
 	And "Application Issues" tab is displayed on left menu on the Details page and contains count of items
@@ -136,7 +136,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewPatternOfTheVerticalMenuIsDisplay
 	And "Device Owner" tab is displayed on left menu on the Details page and NOT contains count of items
 	And "Department and Location" tab is displayed on left menu on the Details page and NOT contains count of items
 	#================ checks sub-menu for main Projects tab ================#
-	When User navigates to the "Projects" main-menu on the Details page
+	When User navigates to the 'Projects' left menu item
 	Then "Projects" main-menu on the Details page contains following sub-menu:
 	| SubTabName             |
 	| Evergreen Details      |
@@ -149,15 +149,15 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewPatternOfTheVerticalMenuIsDisplay
 	And "Evergreen Details" tab is displayed on left menu on the Details page and NOT contains count of items
 	And "Project Details" tab is displayed on left menu on the Details page and NOT contains count of items
 	#================ checks sub-menu for main Specification tab ================#
-	When User navigates to the "Specification" main-menu on the Details page
+	When User navigates to the 'Specification' left menu item
 	Then "Specification" main-menu on the Details page contains following sub-menu:
 	| SubTabName    |
-	| Specification | 
-	| Network Cards | 
+	| Specification |
+	| Network Cards |
 	| CPUS          |
 	| Video Cards   |
 	| Monitors      |
-	| Sound Cards   | 
+	| Sound Cards   |
 	#================ checks counters ================#
 	And "Network Cards" tab is displayed on left menu on the Details page and contains count of items
 	And "CPUS" tab is displayed on left menu on the Details page and contains count of items
@@ -166,23 +166,23 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewPatternOfTheVerticalMenuIsDisplay
 	And "Sound Cards" tab is displayed on left menu on the Details page and contains count of items
 	And "Specification" tab is displayed on left menu on the Details page and NOT contains count of items
 	#================ checks sub-menu for main Active Directory tab ================#
-	When User navigates to the "Active Director" main-menu on the Details page
+	When User navigates to the 'Active Directory' left menu item
 	Then "Active Directory" main-menu on the Details page contains following sub-menu:
-	| SubTabName       | 
-	| Active Directory |  
+	| SubTabName       |
+	| Active Directory |
 	| Groups           |
-	| LDAP             | 
+	| LDAP             |
 	#================ checks counters ================#
 	And "Groups" tab is displayed on left menu on the Details page and contains count of items
 	And "Active Directory" tab is displayed on left menu on the Details page and NOT contains count of items
 	And "LDAP" tab is displayed on left menu on the Details page and NOT contains count of items
 	#================ checks sub-menu for main Applications tab ================#
-	When User navigates to the "Applications" main-menu on the Details page
+	When User navigates to the 'Applications' left menu item
 	Then "Applications" main-menu on the Details page contains following sub-menu:
 	| SubTabName        |
-	| Evergreen Summary | 
+	| Evergreen Summary |
 	| Evergreen Detail  |
-	| Advertisements    | 
+	| Advertisements    |
 	| Collections       |
 	#================ checks counters ================#
 	And "Evergreen Summary" tab is displayed on left menu on the Details page and contains count of items
@@ -190,13 +190,13 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewPatternOfTheVerticalMenuIsDisplay
 	And "Advertisements" tab is displayed on left menu on the Details page and contains count of items
 	And "Collections" tab is displayed on left menu on the Details page and contains count of items
 	#================ checks sub-menu for main Compliance tab ================#
-	When User navigates to the "Compliance" main-menu on the Details page
+	When User navigates to the 'Compliance' left menu item
 	Then "Compliance" main-menu on the Details page contains following sub-menu:
-	| SubTabName          | 
-	| Overview            |          
-	| Hardware Summary    |            
-	| Hardware Rules      |           
-	| Application Summary |            
+	| SubTabName          |
+	| Overview            |
+	| Hardware Summary    |
+	| Hardware Rules      |
+	| Application Summary |
 	| Application Issues  |
 	#================ checks counters ================#
 	And "Application Issues" tab is displayed on left menu on the Details page and contains count of items

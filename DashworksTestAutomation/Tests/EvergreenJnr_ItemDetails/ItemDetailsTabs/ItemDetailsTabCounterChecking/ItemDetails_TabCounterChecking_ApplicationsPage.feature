@@ -32,7 +32,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatNewPatternOfTheVerticalMenuIsDi
 	And "Custom Fields" tab is displayed on left menu on the Details page and contains count of items
 	And "Application" tab is displayed on left menu on the Details page and NOT contains count of items
 	#================ checks sub-menu for main Projects tab ================#
-	When User navigates to the "Projects" main-menu on the Details page
+	When User navigates to the 'Projects' left menu item
 	Then "Projects" main-menu on the Details page contains following sub-menu:
 	| SubTabName        |
 	| Evergreen Details |
@@ -43,7 +43,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatNewPatternOfTheVerticalMenuIsDi
 	And "Evergreen Details" tab is displayed on left menu on the Details page and NOT contains count of items
 	And "Project Details" tab is displayed on left menu on the Details page and NOT contains count of items
 	#================ checks sub-menu for main MSI tab ================#
-	When User navigates to the "MSI" main-menu on the Details page
+	When User navigates to the 'MSI' left menu item
 	Then "MSI" main-menu on the Details page contains following sub-menu:
 	| SubTabName |
 	| MSI Files  |
@@ -52,7 +52,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatNewPatternOfTheVerticalMenuIsDi
 	And "MSIFiles" tab is displayed on left menu on the Details page and NOT contains count of items
 	And "AOK" tab is displayed on left menu on the Details page and NOT contains count of items
 	#================ checks sub-menu for main Distribution tab ================#
-	When User navigates to the "Distribution" main-menu on the Details page
+	When User navigates to the 'Distribution' left menu item
 	Then "Distribution" main-menu on the Details page contains following sub-menu:
 	| SubTabName |
 	| Users      |
@@ -94,7 +94,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatNewPatternOfTheVerticalMenuIsDi
 	And "Custom Fields" tab is displayed on left menu on the Details page and contains count of items
 	And "Application" tab is displayed on left menu on the Details page and NOT contains count of items
 	#================ checks sub-menu for main Projects tab ================#
-	When User navigates to the "Projects" main-menu on the Details page
+	When User navigates to the 'Projects' left menu item
 	Then "Projects" main-menu on the Details page contains following sub-menu:
 	| SubTabName        |
 	| Evergreen Details |
@@ -105,7 +105,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatNewPatternOfTheVerticalMenuIsDi
 	And "Evergreen Details" tab is displayed on left menu on the Details page and NOT contains count of items
 	And "Project Details" tab is displayed on left menu on the Details page and NOT contains count of items
 	#================ checks sub-menu for main MSI tab ================#
-	When User navigates to the "MSI" main-menu on the Details page
+	When User navigates to the 'MSI' left menu item
 	Then "MSI" main-menu on the Details page contains following sub-menu:
 	| SubTabName |
 	| MSI Files  |

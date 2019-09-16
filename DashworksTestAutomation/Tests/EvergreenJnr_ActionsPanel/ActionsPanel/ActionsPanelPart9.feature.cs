@@ -171,7 +171,9 @@ this.FeatureBackground();
  testRunner.Then("following values are displayed in \"Also Move Users\" drop-down on Action panel:", ((string)(null)), table2, "Then ");
 #line 27
  testRunner.When("User selects \"Owners only\" option in \"Also Move Users\" drop-down on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 30
+#line 28
+ testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 29
  testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
                     "undone.\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -226,18 +228,18 @@ this.FeatureBackground();
                         "DAS14563",
                         "DAS13960",
                         "DAS14142"});
-#line 33
+#line 32
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 34
+#line 33
  testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 35
+#line 34
  testRunner.Then("\"All Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 36
+#line 35
  testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 37
+#line 36
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -246,15 +248,15 @@ this.FeatureBackground();
                         "0072B088173449E3A93"});
             table3.AddRow(new string[] {
                         "00C8BC63E7424A6E862"});
-#line 38
+#line 37
  testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table3, "When ");
-#line 42
+#line 41
  testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 43
+#line 42
  testRunner.And("User selects \"Update bucket\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 44
+#line 43
  testRunner.And("User selects \"Evergreen\" Project or Evergreen on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 45
+#line 44
  testRunner.And("User selects \"Unassigned\" option in \"Bucket\" field on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -265,9 +267,9 @@ this.FeatureBackground();
                         "Owned devices only"});
             table4.AddRow(new string[] {
                         "All linked devices"});
-#line 46
+#line 45
  testRunner.Then("following values are displayed in \"Also Move Devices\" drop-down on Action panel:", ((string)(null)), table4, "Then ");
-#line 51
+#line 50
  testRunner.When("User selects \"Owned devices only\" option in \"Also Move Devices\" drop-down on Acti" +
                     "on panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -279,13 +281,13 @@ this.FeatureBackground();
                         "Owned mailboxes only"});
             table5.AddRow(new string[] {
                         "All linked mailboxes"});
-#line 52
+#line 51
  testRunner.Then("following values are displayed in \"Also Move Mailboxes\" drop-down on Action panel" +
                     ":", ((string)(null)), table5, "Then ");
-#line 57
+#line 56
  testRunner.When("User selects \"Owned mailboxes only\" option in \"Also Move Mailboxes\" drop-down on " +
                     "Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 58
+#line 57
  testRunner.Then("\"UPDATE\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -339,18 +341,18 @@ this.FeatureBackground();
                         "DAS14563",
                         "DAS13960",
                         "DAS14143"});
-#line 61
+#line 60
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 62
+#line 61
  testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 63
+#line 62
  testRunner.Then("\"All Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 64
+#line 63
  testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 65
+#line 64
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -359,17 +361,17 @@ this.FeatureBackground();
                         "0072B088173449E3A93"});
             table6.AddRow(new string[] {
                         "00C8BC63E7424A6E862"});
-#line 66
+#line 65
  testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table6, "When ");
-#line 70
+#line 69
  testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 71
+#line 70
  testRunner.And("User selects \"Update bucket\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 72
+#line 71
  testRunner.And("User selects \"Project\" Project or Evergreen on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 73
+#line 72
  testRunner.And("User selects \"User Evergreen Capacity Project\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 74
+#line 73
  testRunner.And("User selects \"Unassigned\" option in \"Bucket\" field on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
@@ -380,12 +382,12 @@ this.FeatureBackground();
                         "Owned devices only"});
             table7.AddRow(new string[] {
                         "All linked devices"});
-#line 75
+#line 74
  testRunner.Then("following values are displayed in \"Also Move Devices\" drop-down on Action panel:", ((string)(null)), table7, "Then ");
-#line 80
+#line 79
  testRunner.When("User selects \"Owned devices only\" option in \"Also Move Devices\" drop-down on Acti" +
                     "on panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 81
+#line 80
  testRunner.Then("\"UPDATE\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -439,18 +441,18 @@ this.FeatureBackground();
                         "DAS14563",
                         "DAS13960",
                         "DAS14160"});
-#line 84
+#line 83
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 85
+#line 84
  testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 86
+#line 85
  testRunner.Then("\"All Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 87
+#line 86
  testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 88
+#line 87
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
@@ -459,17 +461,17 @@ this.FeatureBackground();
                         "0072B088173449E3A93"});
             table8.AddRow(new string[] {
                         "00C8BC63E7424A6E862"});
-#line 89
+#line 88
  testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table8, "When ");
-#line 93
+#line 92
  testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 94
+#line 93
  testRunner.And("User selects \"Update bucket\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 95
+#line 94
  testRunner.And("User selects \"Project\" Project or Evergreen on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 96
+#line 95
  testRunner.And("User selects \"Mailbox Evergreen Capacity Project\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 97
+#line 96
  testRunner.And("User selects \"Unassigned\" option in \"Bucket\" field on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
@@ -480,13 +482,13 @@ this.FeatureBackground();
                         "Owners only"});
             table9.AddRow(new string[] {
                         "All linked users"});
-#line 98
+#line 97
  testRunner.Then("following values are displayed in \"Also Move Mailboxes\" drop-down on Action panel" +
                     ":", ((string)(null)), table9, "Then ");
-#line 103
+#line 102
  testRunner.When("User selects \"Owners only\" option in \"Also Move Mailboxes\" drop-down on Action pa" +
                     "nel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 104
+#line 103
  testRunner.Then("\"UPDATE\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

@@ -200,7 +200,7 @@ this.FeatureBackground();
  testRunner.And("\"Department and Location\" tab is displayed on left menu on the Details page and N" +
                     "OT contains count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 38
- testRunner.When("User navigates to the \"Projects\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "SubTabName"});
@@ -228,7 +228,7 @@ this.FeatureBackground();
  testRunner.And("\"Project Details\" tab is displayed on left menu on the Details page and NOT conta" +
                     "ins count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 51
- testRunner.When("User navigates to the \"Specification\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Specification\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "SubTabName"});
@@ -265,7 +265,7 @@ this.FeatureBackground();
  testRunner.And("\"Specification\" tab is displayed on left menu on the Details page and NOT contain" +
                     "s count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 68
- testRunner.When("User navigates to the \"Active Directory\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Active Directory\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "SubTabName"});
@@ -287,7 +287,7 @@ this.FeatureBackground();
  testRunner.And("\"LDAP\" tab is displayed on left menu on the Details page and NOT contains count o" +
                     "f items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 79
- testRunner.When("User navigates to the \"Applications\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "SubTabName"});
@@ -314,7 +314,7 @@ this.FeatureBackground();
  testRunner.And("\"Collections\" tab is displayed on left menu on the Details page and contains coun" +
                     "t of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 92
- testRunner.When("User navigates to the \"Compliance\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Compliance\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "SubTabName"});
@@ -467,7 +467,7 @@ this.FeatureBackground();
  testRunner.And("\"Department and Location\" tab is displayed on left menu on the Details page and N" +
                     "OT contains count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 139
- testRunner.When("User navigates to the \"Projects\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "SubTabName"});
@@ -494,7 +494,7 @@ this.FeatureBackground();
  testRunner.And("\"Project Details\" tab is displayed on left menu on the Details page and NOT conta" +
                     "ins count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 152
- testRunner.When("User navigates to the \"Specification\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Specification\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "SubTabName"});
@@ -531,7 +531,7 @@ this.FeatureBackground();
  testRunner.And("\"Specification\" tab is displayed on left menu on the Details page and NOT contain" +
                     "s count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 169
- testRunner.When("User navigates to the \"Active Director\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Active Directory\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                         "SubTabName"});
@@ -553,7 +553,7 @@ this.FeatureBackground();
  testRunner.And("\"LDAP\" tab is displayed on left menu on the Details page and NOT contains count o" +
                     "f items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 180
- testRunner.When("User navigates to the \"Applications\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                         "SubTabName"});
@@ -580,7 +580,7 @@ this.FeatureBackground();
  testRunner.And("\"Collections\" tab is displayed on left menu on the Details page and contains coun" +
                     "t of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 193
- testRunner.When("User navigates to the \"Compliance\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Compliance\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
                         "SubTabName"});

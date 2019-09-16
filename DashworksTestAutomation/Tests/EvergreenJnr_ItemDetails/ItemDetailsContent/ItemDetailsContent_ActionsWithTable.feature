@@ -477,10 +477,10 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetail
 
 Examples:
 	| PageName | SearchTerm                                      | ColumnName | MainTabName | SubTabName              | CountRows |
-	| Users    | Loya\, Dan.Employees.Birmingham.UK.bclabs.local | Username   | Projects    | Mailbox Project Summary | 1         |
+	| Users    | Loya\, Dan.Employees.Birmingham.UK.bclabs.local | Username   | Projects    | Mailbox Project Summary | 2         |
 	| Devices  | 001BAQXT6JWFPI                                  | Hostname   | Projects    | Projects Summary        | 10        |
 	| Devices  | 001BAQXT6JWFPI                                  | Hostname   | Projects    | Owner Projects Summary  | 7         |
-	| Users    | Loya\, Dan.Employees.Birmingham.UK.bclabs.local | Username   | Projects    | User Projects           | 2         |
+	| Users    | Loya\, Dan.Employees.Birmingham.UK.bclabs.local | Username   | Projects    | User Projects           | 3         |
 	
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738 @DAS12371 @DAS13409
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetailsFiltersAreDisplayedCorrectlyForExpandedSections
@@ -1338,19 +1338,20 @@ Scenario: EvergreenJnr_DeviceList_CheckThatUsersTabIsDisplayedWithCorrectStagesO
 	When User navigates to the 'Users' left menu item
 	When User switches to the "USE ME FOR AUTOMATION(DEVICE SCHDLD)" project in the Top bar on Item details page
 	Then following columns are displayed on the Item details page:
-	| ColumnName            |
-	| User                  |
-	| Readiness             |
-	| Display Name          |
-	| Domain                |
-	| Owner                 |
-	| Path                  |
-	| Category              |
-	| Application Readiness |
-	| Stage A               |
-	| Stage C               |
-	| Stage D               |
-	#if “stage without readiness task” Stage is displayed here, please raise a bug.
+	| ColumnName                  |
+	| User                        |
+	| Readiness                   |
+	| Display Name                |
+	| Domain                      |
+	| Owner                       |
+	| Path                        |
+	| Category                    |
+	| Application Readiness       |
+	| Stage A                     |
+	| Stage C                     |
+	| Stage D                     |
+	| Stage with (readiness) task |
+	#if “stage WITHOUT readiness task” Stage is displayed here, please raise a bug.
 	When User enters "AAC860150" text in the Search field for "User" column on the Details Page
 	Then "GREEN" content is displayed for "Stage A" column
 	And "RED" content is displayed for "Stage C" column
