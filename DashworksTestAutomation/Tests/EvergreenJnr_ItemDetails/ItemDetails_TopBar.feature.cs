@@ -1339,7 +1339,7 @@ this.FeatureBackground();
                         "Title",
                         "Value"});
             table16.AddRow(new string[] {
-                        "Overall Readiness",
+                        "Readiness",
                         "RED"});
             table16.AddRow(new string[] {
                         "App Readiness",
