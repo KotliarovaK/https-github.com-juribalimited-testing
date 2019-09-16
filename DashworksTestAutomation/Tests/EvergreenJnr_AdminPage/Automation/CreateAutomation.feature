@@ -89,10 +89,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCanBeCreatedWithListHavingAr
 	And User clicks Admin on the left-hand menu
 	And User clicks "Automations" link on the Admin page
 	And User clicks the "CREATE AUTOMATION" Action button
-	Then Create Automation page is displayed to the User
+	Then "Create Automation" title is displayed on the Automations page
 	When User enters 'DAS16844_Automation' text to 'Automation Name' textbox
 	And User enters 'DAS16844' text to 'Description' textbox
-	And User selects "List16844" in the Scope Automation dropdown
+	When User selects 'List16844' option from 'Scope' autocomplete
 	And User selects 'Manual' in the 'Run' dropdown
 	And User selects "Active" checkbox on the Automation Page
 	And User clicks the "CREATE" Action button
