@@ -158,17 +158,10 @@ Scenario: EvergreenJnr_AdminPage_CheckBrokenListValidationWhenRunningAnAutomatio
 	And User clicks the Filters button
 	And User add "Country" filter where type is "Equals" with added column and "England" Lookup option
 	And User create dynamic list with "17011_List" name on "Devices" page
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Automations" link on the Admin page
-	Then "Automations" page should be displayed to the user
-	When User clicks the "CREATE AUTOMATION" Action button
-	When User enters '17011_Automation' text to 'Automation Name' textbox
-	When User enters '17011' text to 'Description' textbox
-	When User selects '17011_List' option from 'Scope' autocomplete
-	When User selects 'Manual' in the 'Run' dropdown
-	When User selects "Active" checkbox on the Automation Page
-	When User clicks the "CREATE" Action button
+	When User creates new Automation via API and open it
+	| AutomationName   | Description | Active | StopOnFailedAction | Scope      | Run    |
+	| 17011_Automation | 17011       | true   | false              | 17011_List | Manual |
+	Then Automation page is displayed correctly
 	When User clicks "Automations" navigation link on the Admin page
 	When User clicks the "CREATE AUTOMATION" Action button
 	Then "Create Automation" title is displayed on the Automations page
@@ -204,7 +197,7 @@ Scenario: EvergreenJnr_AdminPage_CheckBrokenListValidationWhenRunningAnAutomatio
 	When User clicks content from "Automation" column
 	Then Filling field error is not displayed
 	When User clicks the "CANCEL" Action button
-	When User enters "17011_Automation" text in the Search field for "Automation" column
+	When User enters "17011_Automation_1" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "17011_Automation" item on Admin page
 	When User selects "Automation Log" tab on the Project details page
 	When User clicks refresh button in the browser

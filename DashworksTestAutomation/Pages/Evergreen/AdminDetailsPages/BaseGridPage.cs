@@ -121,9 +121,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//span[contains(@class, 'mat-select-placeholder')]")]
         public IWebElement ActionsInDropdown { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//mat-option/span[@class='mat-option-text']/span")]
-        public IList<IWebElement> ActionsInDropdownList { get; set; }
-
         [FindsBy(How = How.XPath, Using = ObjectsToAdd)]
         public IList<IWebElement> ObjectsList { get; set; }
 

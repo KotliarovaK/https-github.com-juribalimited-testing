@@ -154,7 +154,7 @@ this.FeatureBackground();
 #line 19
  testRunner.When(string.Format("User selects \'{0}\' option from \'Custom Field\' autocomplete", customFieldValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 20
- testRunner.Then(string.Format("\'{0}\' content is not displayed in \'Custom Field\' autocomplete", missingContent), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("\'{0}\' content is not displayed in \'Custom Field\' autocomplete after search", missingContent), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 21
  testRunner.Then("\"UPDATE\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

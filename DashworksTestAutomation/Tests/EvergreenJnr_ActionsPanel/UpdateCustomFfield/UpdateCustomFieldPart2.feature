@@ -17,7 +17,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckUpdateCustomFieldValues
 	When User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update custom field' in the 'Bulk Update Type' dropdown
 	When User selects '<CustomFieldValue>' option from 'Custom Field' autocomplete
-	Then '<MissingContent>' content is not displayed in 'Custom Field' autocomplete
+	Then '<MissingContent>' content is not displayed in 'Custom Field' autocomplete after search
 	Then "UPDATE" Action button is disabled
 
 Examples:
