@@ -79,7 +79,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCustomFieldsTheGroupByElementContain
 @Evergreen @Devices @EvergreenJnr_ItemDetails @CustomFields @DAS17776
 Scenario: EvergreenJnr_DevicesList_CheckThatItsNotPossibleToUnselectTheLastColumnOnCustomFieldsTab
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
-	And User click content from "Hostname" column
 	When User navigates to the "Custom Fields" sub-menu on the Details page
 	And User have opened Column Settings for "Custom Field" column in the Details Page table
 	And User clicks Column button on the Column Settings panel
