@@ -280,27 +280,24 @@ Scenario: EvergreenJnr_AdminPage_CheckParametersToCreateUpdatePathAction
 	When User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The automation action has been created" text
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15425 @DAS16143 @DAS17336 @DAS17367 @DAS17802 @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15425 @DAS16143 @DAS17336 @DAS17367 @DAS17802 @Cleanup @Not_Ready
 #Change value after gold data complete added
 Scenario: EvergreenJnr_AdminPage_CheckEditActionPage
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
-	When User clicks "Automations" link on the Admin page
-	Then "Automations" page should be displayed to the user
-	When User clicks the "CREATE AUTOMATION" Action button
-	Then "Create Automation" title is displayed on the Automations page
-	When User enters '15425_Automation' text to 'Automation Name' textbox
-	When User enters '15425' text to 'Description' textbox
-	When User selects 'All Users' option from 'Scope' autocomplete
-	When User selects 'Manual' in the 'Run' dropdown
-	When User selects "Active" checkbox on the Automation Page
-	And User clicks the "CREATE" Action button
+	When User creates new Automation via API and open it
+	| AutomationName   | Description | Active | StopOnFailedAction | Scope     | Run    |
+	| 15425_Automation | 15425       | true   | false              | All Users | Manual |
+	Then Automation page is displayed correctly
+	When User navigates to the 'Actions' left menu item
 	#Create Action
+	When User clicks the "CREATE ACTION" Action button
 	When User enters '15425_Action' text to 'Action Name' textbox
 	When User selects 'Update path' in the 'Action Type' dropdown
 	When User selects 'User Evergreen Capacity Project' option from 'Project' autocomplete
 	When User selects '[Default (User)]' option from 'Path' autocomplete
 	And User clicks the "CREATE" Action button
+	#Create Action
 	When User clicks "Automations" navigation link on the Admin page
 	Then There are no errors in the browser console
 	When User enters "15425_Automation" text in the Search field for "Automation" column
