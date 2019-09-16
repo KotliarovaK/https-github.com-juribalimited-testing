@@ -81,13 +81,9 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogMessageForDeletedTaskInAction
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedUpdateValueDateOwnerCombination
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
-	When User creates new Automation via API
+	When User creates new Automation via API and open it
 	| AutomationName      | Description | Active | StopOnFailedAction | Scope                   | Run    |
 	| DAS17681_Automation | DAS17681    | true   | false              | Users with Device Count | Manual |
-	When User clicks "Automations" link on the Admin page
-	Then "Automations" page should be displayed to the user
-	When User enters "DAS17681_Automation" text in the Search field for "Automation" column
-	And User clicks content from "Automation" column
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action

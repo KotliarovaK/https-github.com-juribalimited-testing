@@ -509,10 +509,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ActionsPanelPart1.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_ActionsPanel\UpdateCustomFfield\UpdateCustomField.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_ActionsPanel\UpdateCustomFfield\UpdateCustomFieldPart2.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UpdateCustomField.feature</DependentUpon>
+      <DependentUpon>UpdateCustomFieldPart2.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_ActionsPanel\UpdateCustomFfield\UpdateCustomFieldPart1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UpdateCustomFieldPart1.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_AdminPage\AdminPage.feature.cs">
       <AutoGen>True</AutoGen>
@@ -1491,9 +1496,13 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ActionsPanelPart1.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_ActionsPanel\UpdateCustomFfield\UpdateCustomField.feature">
+    <None Include="Tests\EvergreenJnr_ActionsPanel\UpdateCustomFfield\UpdateCustomFieldPart2.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>UpdateCustomField.feature.cs</LastGenOutput>
+      <LastGenOutput>UpdateCustomFieldPart2.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ActionsPanel\UpdateCustomFfield\UpdateCustomFieldPart1.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UpdateCustomFieldPart1.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_AdminPage\AdminPage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

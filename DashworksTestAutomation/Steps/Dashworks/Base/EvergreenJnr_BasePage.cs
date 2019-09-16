@@ -10,6 +10,7 @@ using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity;
+using DashworksTestAutomation.Pages.Evergreen.ItemDetails.CustomFields;
 using DashworksTestAutomation.Utils;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
@@ -88,6 +89,15 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             CheckAutocompletAndTextboxText(placeholder, expectedText);
         }
 
+        [Then(@"'(.*)' content is not displayed in '(.*)' autocomplete after search")]
+        public void ThenContentIsNotDisplayedInAutocompleteAfterSearch(string content, string placeholder)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.PopulateNamedTextbox(placeholder, content);
+
+            Utils.Verify.IsFalse(page.AutocompleteDropdown.Displayed(), $"{content} text is displayed in the {placeholder} autocomplete");
+        }
+
         private void CheckAutocompletAndTextboxText(string placeholder, string expectedText)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
@@ -154,6 +164,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             _driver.MouseHover(button);
             var toolTipText = _driver.GetTooltipText();
             Utils.Verify.AreEqual(text, toolTipText, $"Incorrect tooltip for Add button in the {fieldName} textbox");
+        }
+
+        [Then(@"Add button for '(.*)' textbox is disabled")]
+        public void ThenAddButtonForTextboxIsDisabled(string fieldName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Utils.Verify.IsTrue(Convert.ToBoolean(page.GetInputAddButton(fieldName).Disabled()), $"Add button for {fieldName} textbox is active");
         }
 
         #endregion
