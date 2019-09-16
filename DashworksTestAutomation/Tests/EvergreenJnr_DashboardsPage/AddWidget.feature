@@ -144,7 +144,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatThereIsNoPossibilityToCreateWidge
 	| 000F977AC8824FE39B8@bclabs.local   |
 	And User selects "Create static list" in the Actions dropdown
 	And User create static list with "TestList_DAS17539" name
-	And User projects are removed via API
+	And Projects created by User are removed via API
 	And Dashboard with "Dashboard for DAS17539" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button

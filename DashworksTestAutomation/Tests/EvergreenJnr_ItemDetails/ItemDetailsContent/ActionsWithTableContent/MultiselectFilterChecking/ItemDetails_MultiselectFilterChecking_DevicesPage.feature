@@ -19,7 +19,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	And 'NONE' content is displayed in the 'Application Readiness' column
 	And 'GREY' content is displayed in the 'Pre-Migration' column
 	And 'GREY' content is displayed in the 'Migration' column
-	And '' content is displayed in the 'Email Controls' column
+	#Column should not be displayed if no content to display
+	And "Email Controls" column is not displayed to the user
 	And 'GREY' content is displayed in the 'Communication' column
 	When User clicks String Filter button for "Stage for User Tasks" column
 	Then following String Values are displayed in the filter on the Details Page

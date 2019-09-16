@@ -110,6 +110,46 @@ namespace DashworksTestAutomation.Helpers
                 }
         }
 
+        #region Item Details - All lists: Devices, Users, Applications, Mailboxes
+
+        public static string GetDeviceDetailsIdByName(string name)
+        {
+            var id =
+                DatabaseHelper.ExecuteReader(
+                    $"SELECT [ComputerKey] FROM [DesktopBI].[dbo].[DimComputer] WHERE [Hostname] = '{name}'",
+                    0).LastOrDefault();
+            return id;
+        }
+
+        public static string GetUserDetailsIdByName(string name)
+        {
+            var id =
+                DatabaseHelper.ExecuteReader(
+                    $"SELECT [ObjectKey] FROM [DesktopBI].[dbo].[DimDirectoryObject] WHERE [Username] = '{name}'",
+                    0).LastOrDefault();
+            return id;
+        }
+
+        public static string GetApplicationDetailsIdByName(string name)
+        {
+            var id =
+                DatabaseHelper.ExecuteReader(
+                    $"SELECT [PackageKey] FROM [DesktopBI].[dbo].[DimPackage] WHERE [PackageName] = '{name}'",
+                    0).LastOrDefault();
+            return id;
+        }
+
+        public static string GetMailboxDetailsIdByName(string name)
+        {
+            var id =
+                DatabaseHelper.ExecuteReader(
+                    $"SELECT [MailboxKey] FROM [DesktopBI].[dbo].[DimMailbox] WHERE [PrincipalEmailAddress] = '{name}'",
+                    0).LastOrDefault();
+            return id;
+        }
+
+        #endregion
+
         #region CapacityUnits
 
         public static CapacityUnitDto GetCapacityUnit(string name)

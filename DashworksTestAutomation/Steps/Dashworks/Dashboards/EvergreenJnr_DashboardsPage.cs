@@ -746,8 +746,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenWidgetIsDisplayedToTheUser(string widgetName)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            _driver.WaitForDataLoading();
-            Utils.Verify.IsTrue(page.GetWidgetByName(widgetName).Displayed(), $"{widgetName} Widget is not displayed");
+            _driver.WaitForElementToBeDisplayed(page.GetWidgetByName(widgetName));
+            //Utils.Verify.IsTrue(page.GetWidgetByName(widgetName).Displayed(), $"{widgetName} Widget is not displayed");
         }
 
         [Then(@"Label ""(.*)"" displayed for ""(.*)"" widget")]

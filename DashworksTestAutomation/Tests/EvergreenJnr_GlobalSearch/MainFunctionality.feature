@@ -82,3 +82,10 @@ Scenario: EvergreenJnr_Search_CheckThatThereIsSameAppearanceOfTheUnknownVersionI
 	Then Version column of Search Results has no Unknown item
 	When User clicks first "ACDSee 4.0 SendPix & Email Update" item in grid
 	Then Value column of Item Details has no Unknown item
+
+@Evergreen @GlobalSearch @EvergreenJnr_GlobalSearch @MainFunctionality @DAS17368
+Scenario: EvergreenJnr_Search_CheckThatPressToSeeAllResultsWorksInGlobalSearch
+	When User type "mail" in Global Search Field
+	Then 'Press Enter to see all 133 results' label is displayed below Global Search field
+	When User presses Enter key in in Global Search Field
+	Then Counter shows "133" found rows

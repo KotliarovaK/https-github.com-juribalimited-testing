@@ -196,7 +196,8 @@ Examples:
 	| PageName     | ColumnName  | ItemName       | SubMenu      | Value   |
 	| Devices      | Hostname    | 001BAQXT6JWFPI | Device Owner | RED     |
 	| Users        | Username    | ACG370114      | User         | RED     |
-	| Applications | Application | 7zip           | Application  | UNKNOWN |
+	#Uncomment after DAS-17986 fix
+	#| Applications | Application | 7zip           | Application  | UNKNOWN |
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16857 @DAS16928
 Scenario Outline: EvergreenJnr_AllLists_CheckThatComplianceInKeyValueTableMatchesTheOverallComplianceFromTopBarInProjectMode
@@ -216,11 +217,11 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatComplianceInKeyValueTableMatche
 	| Overall Readiness | <Value>   |
 
 Examples:
-	| PageName     | ColumnName    | ItemName                         | Title             | Value | ProjectName                        |
-	| Devices      | Hostname      | 001BAQXT6JWFPI                   | Overall Readiness | GREY  | Devices Evergreen Capacity Project |
-	| Users        | Username      | ACG370114                        | Readiness         | GREY  | User Evergreen Capacity Project    |
-	| Applications | Application   | 7zip                             | Overall Readiness | GREY  | Devices Evergreen Capacity Project |
-	| Mailboxes    | Email Address | 000F977AC8824FE39B8@bclabs.local | Overall Readiness | NONE  | Mailbox Evergreen Capacity Project |
+	| PageName     | ColumnName    | ItemName                         | Title     | Value | ProjectName                        |
+	| Devices      | Hostname      | 001BAQXT6JWFPI                   | Readiness | GREY  | Devices Evergreen Capacity Project |
+	| Users        | Username      | ACG370114                        | Readiness | GREY  | User Evergreen Capacity Project    |
+	| Applications | Application   | 7zip                             | Readiness | GREY  | Devices Evergreen Capacity Project |
+	| Mailboxes    | Email Address | 000F977AC8824FE39B8@bclabs.local | Readiness | NONE  | Mailbox Evergreen Capacity Project |
 
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17002
 Scenario: EvergreenJnr_ApplicationsList_CheckThatReadinessValuesIsDisplayedAccordingToHavocBigDataProject

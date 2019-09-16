@@ -224,7 +224,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSetsWidgetTitle(string widgetTitle)
         {
             var createWidgetElement = _driver.NowAt<AddWidgetPage>();
-
+            createWidgetElement.Title.Clear();
             createWidgetElement.Title.SendKeys(widgetTitle);
         }
 
