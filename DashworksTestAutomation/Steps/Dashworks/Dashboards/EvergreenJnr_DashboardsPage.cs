@@ -746,8 +746,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenWidgetIsDisplayedToTheUser(string widgetName)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            _driver.WaitForDataLoading();
-            Utils.Verify.IsTrue(page.GetWidgetByName(widgetName).Displayed(), $"{widgetName} Widget is not displayed");
+            _driver.WaitForElementToBeDisplayed(page.GetWidgetByName(widgetName));
+            //Utils.Verify.IsTrue(page.GetWidgetByName(widgetName).Displayed(), $"{widgetName} Widget is not displayed");
         }
 
         [Then(@"Label ""(.*)"" displayed for ""(.*)"" widget")]
@@ -968,6 +968,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<AddWidgetPage>();
             Utils.Verify.That(page.PreviewPaneMessageText.Text, Is.EqualTo(message), "Preview message is different.");
+        }
+
+        [Then(@"'(.*)' alert is displayed in Preview")]
+        public void ThenAlertTestDisplayedInPreview(string message)
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            Utils.Verify.That(page.PreviewPaneAlertText.Text, Is.EqualTo(message), "Preview alert is different.");
         }
 
         [When(@"User clicks first Dashboard in dashboards list")]

@@ -97,3 +97,61 @@ Scenario: EvergreenJnr_DevicesList_CheckThatBulkUpdateOfArchivedItemsWorks
 	And User clicks "UPDATE" button on message box
 	And There are no errors in the browser console
 	And Success message with "1 update has been queued" text is displayed on Action panel
+
+@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS17639 @Cleanup
+Scenario: EvergreenJnr_DevicesList_CheckThatSlotIsDisplayedInDDLIfSelectDateWithUnlimitedCapacity
+	When User creates new Slot via Api
+	| Project      | SlotName   | DisplayName | CapacityType    | ObjectType | Tuesday | Tasks                     |
+	| 1803 Rollout | Slot 17639 | 17639       | Teams and Paths | Device     | 10      | Migration \ Migrated Date |
+	And User clicks "Devices" on the left-hand menu
+	And User clicks the Actions button
+	And User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00I0COBFWHOF27   |
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update task value" Bulk Update Type on Action panel
+	And User selects "1803 Rollout" Project on Action panel
+	And User selects "Migration" Stage on Action panel
+	And User selects "Migrated Date" Task on Action panel
+	And User selects "Update" Update Date on Action panel
+	And User selects next Tuesday Date on Action panel
+	Then following values are presented in "Capacity Slot" drop-down on Action panel:
+	| Options    |
+	| None       |
+	| Slot 17639 |
+
+@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS17833 @Cleanup
+Scenario: EvergreenJnr_DevicesList_CheckThatFullSlotIsDisplayedWhileRulesShouldHonourTheDateRangeButNotTheTotalCapacity
+	When User creates new Slot via Api
+	| Project      | SlotName    | DisplayName | CapacityType    | ObjectType | Tuesday | Tasks                     |
+	| 1803 Rollout | Slot17833_1 | 17833_1     | Teams and Paths | Device     | 1       | Migration \ Migrated Date |
+	| 1803 Rollout | Slot17833_2 | 17833_2     | Teams and Paths | Device     | 2       | Migration \ Migrated Date |
+	And User clicks "Devices" on the left-hand menu
+	And User clicks the Actions button
+	And User select all rows
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update task value" Bulk Update Type on Action panel
+	And User selects "1803 Rollout" Project on Action panel
+	And User selects "Migration" Stage on Action panel
+	And User selects "Migrated Date" Task on Action panel
+	And User selects "Update" Update Date on Action panel
+	And User selects next Tuesday Date on Action panel
+	And User selects "Slot17833_1" value for "Capacity Slot" dropdown on Action panel
+	And User clicks the "UPDATE" Action button
+	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
+	And User clicks "UPDATE" button on message box
+	When User clicks refresh button in the browser
+	And User clicks the Actions button
+	And User select all rows
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update task value" Bulk Update Type on Action panel
+	And User selects "1803 Rollout" Project on Action panel
+	And User selects "Migration" Stage on Action panel
+	And User selects "Migrated Date" Task on Action panel
+	And User selects "Update" Update Date on Action panel
+	And User selects next Tuesday Date on Action panel
+	Then following values are presented in "Capacity Slot" drop-down on Action panel:
+	| Options    |
+	| None       |
+	| Slot17833_1|
+	| Slot17833_2|

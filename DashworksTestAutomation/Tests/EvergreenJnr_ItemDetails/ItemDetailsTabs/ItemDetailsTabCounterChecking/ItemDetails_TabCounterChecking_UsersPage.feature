@@ -7,10 +7,7 @@ Background: Pre-Conditions
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16378 @DAS16418 @DAS16415 @DAS15583 @DAS15348 @DAS17141 @DAS16830
 Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForUsersPageInEvergreenMode
-	When User clicks "Users" on the left-hand menu
-	Then "All Users" list should be displayed to the user
-	When User perform search by "0072B088173449E3A93"
-	And User click content from "Username" column
+	When User navigates to the 'User' details page for '0072B088173449E3A93' item 
 	Then Details page for "0072B088173449E3A93" item is displayed to the user
 	And User sees following main-tabs on left menu on the Details page:
 	| TabName          |

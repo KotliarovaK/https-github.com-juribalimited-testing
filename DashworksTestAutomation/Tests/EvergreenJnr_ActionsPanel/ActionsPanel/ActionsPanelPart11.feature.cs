@@ -508,6 +508,256 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatSlotIsDisplayedInDDLIfSelectDateWithUnlimitedCa" +
+            "pacity")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("AllLists")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
+        [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
+        [NUnit.Framework.CategoryAttribute("DAS17639")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        public virtual void EvergreenJnr_DevicesList_CheckThatSlotIsDisplayedInDDLIfSelectDateWithUnlimitedCapacity()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckThatSlotIsDisplayedInDDLIfSelectDateWithUnlimitedCapacityInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_CheckThatSlotIsDisplayedInDDLIfSelectDateWithUnlimitedCapacityInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatSlotIsDisplayedInDDLIfSelectDateWithUnlimitedCa" +
+                    "pacity", null, new string[] {
+                        "Evergreen",
+                        "AllLists",
+                        "EvergreenJnr_FilterFeature",
+                        "FilterFunctionality",
+                        "DAS17639",
+                        "Cleanup"});
+#line 102
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Project",
+                        "SlotName",
+                        "DisplayName",
+                        "CapacityType",
+                        "ObjectType",
+                        "Tuesday",
+                        "Tasks"});
+            table8.AddRow(new string[] {
+                        "1803 Rollout",
+                        "Slot 17639",
+                        "17639",
+                        "Teams and Paths",
+                        "Device",
+                        "10",
+                        "Migration \\ Migrated Date"});
+#line 103
+ testRunner.When("User creates new Slot via Api", ((string)(null)), table8, "When ");
+#line 106
+ testRunner.And("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 107
+ testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedRowsName"});
+            table9.AddRow(new string[] {
+                        "00I0COBFWHOF27"});
+#line 108
+ testRunner.And("User select \"Hostname\" rows in the grid", ((string)(null)), table9, "And ");
+#line 111
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 112
+ testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 113
+ testRunner.And("User selects \"1803 Rollout\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 114
+ testRunner.And("User selects \"Migration\" Stage on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 115
+ testRunner.And("User selects \"Migrated Date\" Task on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 116
+ testRunner.And("User selects \"Update\" Update Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 117
+ testRunner.And("User selects next Tuesday Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Options"});
+            table10.AddRow(new string[] {
+                        "None"});
+            table10.AddRow(new string[] {
+                        "Slot 17639"});
+#line 118
+ testRunner.Then("following values are presented in \"Capacity Slot\" drop-down on Action panel:", ((string)(null)), table10, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatFullSlotIsDisplayedWhileRulesShouldHonourTheDat" +
+            "eRangeButNotTheTotalCapacity")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("AllLists")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
+        [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
+        [NUnit.Framework.CategoryAttribute("DAS17833")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        public virtual void EvergreenJnr_DevicesList_CheckThatFullSlotIsDisplayedWhileRulesShouldHonourTheDateRangeButNotTheTotalCapacity()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckThatFullSlotIsDisplayedWhileRulesShouldHonourTheDateRangeButNotTheTotalCapacityInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_CheckThatFullSlotIsDisplayedWhileRulesShouldHonourTheDateRangeButNotTheTotalCapacityInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatFullSlotIsDisplayedWhileRulesShouldHonourTheDat" +
+                    "eRangeButNotTheTotalCapacity", null, new string[] {
+                        "Evergreen",
+                        "AllLists",
+                        "EvergreenJnr_FilterFeature",
+                        "FilterFunctionality",
+                        "DAS17833",
+                        "Cleanup"});
+#line 124
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Project",
+                        "SlotName",
+                        "DisplayName",
+                        "CapacityType",
+                        "ObjectType",
+                        "Tuesday",
+                        "Tasks"});
+            table11.AddRow(new string[] {
+                        "1803 Rollout",
+                        "Slot17833_1",
+                        "17833_1",
+                        "Teams and Paths",
+                        "Device",
+                        "1",
+                        "Migration \\ Migrated Date"});
+            table11.AddRow(new string[] {
+                        "1803 Rollout",
+                        "Slot17833_2",
+                        "17833_2",
+                        "Teams and Paths",
+                        "Device",
+                        "2",
+                        "Migration \\ Migrated Date"});
+#line 125
+ testRunner.When("User creates new Slot via Api", ((string)(null)), table11, "When ");
+#line 129
+ testRunner.And("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 130
+ testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 131
+ testRunner.And("User select all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 132
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 133
+ testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 134
+ testRunner.And("User selects \"1803 Rollout\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 135
+ testRunner.And("User selects \"Migration\" Stage on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 136
+ testRunner.And("User selects \"Migrated Date\" Task on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 137
+ testRunner.And("User selects \"Update\" Update Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 138
+ testRunner.And("User selects next Tuesday Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 139
+ testRunner.And("User selects \"Slot17833_1\" value for \"Capacity Slot\" dropdown on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 140
+ testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 141
+ testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
+                    "undone.\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 142
+ testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 143
+ testRunner.When("User clicks refresh button in the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 144
+ testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 145
+ testRunner.And("User select all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 146
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 147
+ testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 148
+ testRunner.And("User selects \"1803 Rollout\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 149
+ testRunner.And("User selects \"Migration\" Stage on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 150
+ testRunner.And("User selects \"Migrated Date\" Task on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 151
+ testRunner.And("User selects \"Update\" Update Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 152
+ testRunner.And("User selects next Tuesday Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Options"});
+            table12.AddRow(new string[] {
+                        "None"});
+            table12.AddRow(new string[] {
+                        "Slot17833_1"});
+            table12.AddRow(new string[] {
+                        "Slot17833_2"});
+#line 153
+ testRunner.Then("following values are presented in \"Capacity Slot\" drop-down on Action panel:", ((string)(null)), table12, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore

@@ -481,6 +481,66 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_Search_CheckThatPressToSeeAllResultsWorksInGlobalSearch")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("GlobalSearch")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_GlobalSearch")]
+        [NUnit.Framework.CategoryAttribute("MainFunctionality")]
+        [NUnit.Framework.CategoryAttribute("DAS17368")]
+        public virtual void EvergreenJnr_Search_CheckThatPressToSeeAllResultsWorksInGlobalSearch()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_Search_CheckThatPressToSeeAllResultsWorksInGlobalSearchInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_Search_CheckThatPressToSeeAllResultsWorksInGlobalSearchInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_Search_CheckThatPressToSeeAllResultsWorksInGlobalSearch", null, new string[] {
+                        "Evergreen",
+                        "GlobalSearch",
+                        "EvergreenJnr_GlobalSearch",
+                        "MainFunctionality",
+                        "DAS17368"});
+#line 87
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 5
+this.FeatureBackground();
+#line 88
+ testRunner.When("User type \"mail\" in Global Search Field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 89
+ testRunner.Then("\'Press Enter to see all 133 results\' label is displayed below Global Search field" +
+                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 90
+ testRunner.When("User presses Enter key in in Global Search Field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 91
+ testRunner.Then("Counter shows \"133\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore

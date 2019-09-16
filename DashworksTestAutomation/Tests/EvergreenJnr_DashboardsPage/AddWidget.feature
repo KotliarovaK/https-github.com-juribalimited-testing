@@ -113,3 +113,43 @@ Scenario: EvergreenJnr_DashboardsPage_CheckCheckboxLabelDisplaying
 	And User clicks "Edit" item from Ellipsis menu on Dashboards page
 	Then "Show legend" checkbox has a correct label
 	And "Show data labels" checkbox has a correct label
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17539 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatThereIsNoPossibilityToCreateWidgetBasedOnStaticListWithMissedColumn
+	When Project created via API and opened
+	| ProjectName | Scope         | ProjectTemplate | Mode               |
+	| MlbxTst     | All Mailboxes | None            | Standalone Project |
+	And User clicks "Projects" on the left-hand menu
+	Then "Projects Home" page is displayed to the user
+	When User navigate to "MlbxTst" Project
+	Then Project with "MlbxTst" name is displayed correctly
+	And "Manage Project Details" page is displayed to the user
+	When User updates Project Short Name to "17539Snr" on Senior
+	And User clicks "Update" button
+	And User navigate to "Request Types" tab
+	Then "Manage Request Types" page is displayed to the user
+	When User clicks "Create Request Type" button
+	And User create Request Type
+	| Name             | Description | ObjectTypeString |
+	| MailboxPath17539 | DAS17539    | Mailbox          |
+	And User navigate to Evergreen link
+	And User clicks "Mailboxes" on the left-hand menu
+	And User clicks the Filters button
+	And User add "17539Snr: Path" filter where type is "Does not equal" with added column and following checkboxes:
+	| SelectedCheckboxes   |
+	| MailboxPath17539 |
+	And User clicks the Actions button
+	And User select "Email Address" rows in the grid
+	| SelectedRowsName |
+	| 000F977AC8824FE39B8@bclabs.local   |
+	And User selects "Create static list" in the Actions dropdown
+	And User create static list with "TestList_DAS17539" name
+	And Projects created by User are removed via API
+	And Dashboard with "Dashboard for DAS17539" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User adds new Widget
+	| WidgetType | Title                 | List              | SplitBy          | AggregateFunction | OrderBy              |
+	| Table      | DAS-TestList_DAS17539 | TestList_DAS17539 | Mailbox Platform | Count             | Mailbox Platform ASC |
+	Then Widget Preview is displayed to the user
+	And 'This widget refers to a list which has errors' alert is displayed in Preview

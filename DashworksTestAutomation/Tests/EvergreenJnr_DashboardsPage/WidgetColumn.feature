@@ -137,4 +137,4 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatColumnWidgetCanBeEdited
 	And User selects the Colour Scheme by index "3"
 	Then Widget Preview is displayed to the user
 	When User clicks the "UPDATE" Action button
-	Then Card "ColumnWidget#1ColumnWidget#2" Widget is displayed to the user
+	Then Card "ColumnWidget#2" Widget is displayed to the user

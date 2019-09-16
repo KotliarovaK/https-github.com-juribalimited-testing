@@ -8,6 +8,7 @@ namespace DashworksTestAutomation.Utils
         public static void Write(string text)
         {
             TestContext.WriteLine(text);
+            //LoggingExtensions.WriteDebug(text);
         }
 
         public static void Write(Exception exception)

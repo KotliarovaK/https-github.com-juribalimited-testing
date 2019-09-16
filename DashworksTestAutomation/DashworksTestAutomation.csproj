@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\NUnit.3.11.0\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.11.0\build\NUnit.props')" />
+  <Import Project="..\packages\NUnit.3.12.0\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.12.0\build\NUnit.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -50,8 +50,8 @@
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="nunit.framework, Version=3.11.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
-      <HintPath>..\packages\NUnit.3.11.0\lib\net45\nunit.framework.dll</HintPath>
+    <Reference Include="nunit.framework, Version=3.12.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.12.0\lib\net45\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="RestSharp, Version=106.6.9.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
       <HintPath>..\packages\RestSharp.106.6.9\lib\net452\RestSharp.dll</HintPath>
@@ -954,13 +954,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ColumnSectionDisplayApi.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr_DashboardsPage\ItemsManagement2.feature.cs">
+      <DependentUpon>ItemsManagement2.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr_DashboardsPage\WidgetBar.feature.cs">
       <DependentUpon>WidgetBar.feature</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_DashboardsPage\ItemsManagement.feature.cs">
-      <DependentUpon>ItemsManagement.feature</DependentUpon>
+    <Compile Include="Tests\EvergreenJnr_DashboardsPage\ItemsManagement1.feature.cs">
+      <DependentUpon>ItemsManagement1.feature</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -1149,6 +1155,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ItemDetails_TopBar.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_ListDetails\ListDetailsFunctionalityPart9.feature.cs">
+      <DependentUpon>ListDetailsFunctionalityPart9.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_ListDetails\ListDetailsFunctionalityPart8.feature.cs">
       <DependentUpon>ListDetailsFunctionalityPart8.feature</DependentUpon>
@@ -1403,6 +1414,7 @@
     <Compile Include="Utils\KillDriverProcesses.cs" />
     <Compile Include="Utils\LockCategory.cs" />
     <Compile Include="Utils\Logger.cs" />
+    <Compile Include="Utils\LoggingExtensions.cs" />
     <Compile Include="Utils\MsgUtils.cs" />
     <Compile Include="Utils\TestDataGenerator.cs" />
     <Compile Include="Utils\Verify.cs" />
@@ -1840,13 +1852,18 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ColumnSectionDisplayApi.feature.cs</LastGenOutput>
     </None>
+    <None Include="Tests\EvergreenJnr_DashboardsPage\ItemsManagement2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ItemsManagement2.feature.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Tests\EvergreenJnr_DashboardsPage\WidgetBar.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>WidgetBar.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_DashboardsPage\ItemsManagement.feature">
+    <None Include="Tests\EvergreenJnr_DashboardsPage\ItemsManagement1.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>ItemsManagement.feature.cs</LastGenOutput>
+      <LastGenOutput>ItemsManagement1.feature.cs</LastGenOutput>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Tests\EvergreenJnr_DashboardsPage\DashboardSharing.feature">
@@ -1996,6 +2013,10 @@
     <None Include="Tests\EvergreenJnr_ItemDetails\ItemDetails_TopBar.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ItemDetails_TopBar.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ListDetails\ListDetailsFunctionalityPart9.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ListDetailsFunctionalityPart9.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_ListDetails\ListDetailsFunctionalityPart8.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -2229,10 +2250,10 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\NUnit.3.11.0\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.11.0\build\NUnit.props'))" />
     <Error Condition="!Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets'))" />
     <Error Condition="!Exists('..\packages\SpecFlow.2.4.1\build\SpecFlow.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SpecFlow.2.4.1\build\SpecFlow.targets'))" />
     <Error Condition="!Exists('..\packages\Selenium.WebDriver.ChromeDriver.76.0.3809.68\build\Selenium.WebDriver.ChromeDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.ChromeDriver.76.0.3809.68\build\Selenium.WebDriver.ChromeDriver.targets'))" />
+    <Error Condition="!Exists('..\packages\NUnit.3.12.0\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.12.0\build\NUnit.props'))" />
   </Target>
   <Import Project="..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
   <Import Project="..\packages\SpecFlow.2.4.1\build\SpecFlow.targets" Condition="Exists('..\packages\SpecFlow.2.4.1\build\SpecFlow.targets')" />

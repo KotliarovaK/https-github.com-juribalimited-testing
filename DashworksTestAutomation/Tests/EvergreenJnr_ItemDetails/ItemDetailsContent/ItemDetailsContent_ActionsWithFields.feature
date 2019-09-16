@@ -1,4 +1,4 @@
-﻿Feature: ItemDetailsContent_ActionsWithFields
+﻿Feature: ItemDetailsContent_ActionsWithField|
 	Runs Item Details Content Actions With Fields related tests
 
 Background: Pre-Conditions
@@ -33,19 +33,18 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatTextInKeyValueGridsIsSelectable
 	When User perform search by "<SearchTerm>"
 	And User click content from "<ColumnName>" column
 	When User navigates to the '<MainTabName>' left menu item
-	When User navigates to the "<SubTabName>" sub-menu on the Details page
 	And User selects "<KeyToBeSelected>" text from key value grid on the Details Page
 	Then "<KeyToBeSelected>" text selected from key value grid on the Details Page
 	When User selects "<ValueToBeSelected>" text from key value grid on the Details Page
 	Then "<ValueToBeSelected>" text selected from key value grid on the Details Page
 
 Examples:
-	| PageName     | SearchTerm                       | ColumnName    | MainTabName   | SubTabName    | KeyToBeSelected | ValueToBeSelected   |
-	| Devices      | 02C80G8RFTPA9E                   | Hostname      | Specification | Specification | Manufacturer    | FES0798481167       |
-	| Devices      | 05PFM2OWVCSCZ1                   | Hostname      | Details       | Device        | Hostname        | 05PFM2OWVCSCZ1      |
-	| Users        | 03714167684E45F7A8F              | Username      | Details       | User          | Username        | 03714167684E45F7A8F |
-	| Applications | Adobe Acrobat Reader 5.0         | Application   | Details       | Application   | Vendor          | Adobe               |
-	| Mailboxes    | 06D7AE4F161F4A3AA7F@bclabs.local | Email Address | Details       | Mailbox       | Alias           | 06D7AE4F161F4A3AA7F |
+	| PageName     | SearchTerm                       | ColumnName    | MainTabName   | KeyToBeSelected | ValueToBeSelected   |
+	| Devices      | 02C80G8RFTPA9E                   | Hostname      | Specification | Manufacturer    | FES0798481167       |
+	| Devices      | 05PFM2OWVCSCZ1                   | Hostname      | Details       | Hostname        | 05PFM2OWVCSCZ1      |
+	| Users        | 03714167684E45F7A8F              | Username      | Details       | Username        | 03714167684E45F7A8F |
+	| Applications | Adobe Acrobat Reader 5.0         | Application   | Details       | Vendor          | Adobe               |
+	| Mailboxes    | 06D7AE4F161F4A3AA7F@bclabs.local | Email Address | Details       | Alias           | 06D7AE4F161F4A3AA7F |
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13341 @archived
 Scenario: EvergreenJnr_AllLists_CheckThatTextInKeyValueGridsIsSelectableOnGroupDetailsPage
