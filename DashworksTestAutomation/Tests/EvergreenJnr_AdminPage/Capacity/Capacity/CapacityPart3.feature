@@ -10,7 +10,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCapacityUnitCanBeCreatedWithNameAlread
 	When Project created via API and opened
 	| ProjectName        | Scope         | ProjectTemplate | Mode               |
 	| ProjectForDAS13945 | All Mailboxes | None            | Standalone Project |
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	And User selects "Units" tab on the Project details page
 	And User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
 	#next capacity name used in "1803 Rollout" project
@@ -25,7 +25,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitStartedWithS
 	When Project created via API and opened
 	| ProjectName        | Scope       | ProjectTemplate | Mode               |
 	| ProjectForDAS13945 | All Devices | None            | Standalone Project |
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	And User selects "Units" tab on the Project details page
 	And User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
 	And User type " test1" Name in the "Capacity Unit Name" field on the Project details page
@@ -58,7 +58,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingSortOrderForCapacityUnits
 	| NewUnit           |             | false     | 13159ProjectForCapacity |
 	| 13159             |             | false     | 13159ProjectForCapacity |
 	| A13159Unit        |             | false     | 13159ProjectForCapacity |
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	And User selects "Units" tab on the Project details page
 	Then "Capacity Unit" column content is displayed in the following order:
 	| Items             |
@@ -80,12 +80,12 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultValueForCapacityModeFieldEqual
 	And User navigate to Evergreen link
 	And User clicks "Admin" on the left-hand menu
 	And User navigates to "Project14029 Snr" project details
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	And User selects "Capacity Details" tab on the Project details page
 	Then Capacity Units value is displayed for Capacity Mode field
 	When Project created via API and opened
 	| ProjectName  | Scope       | ProjectTemplate | Mode               |
 	| Project14029 | All Devices | None            | Standalone Project |
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	And User selects "Capacity Details" tab on the Project details page
 	Then Capacity Units value is displayed for Capacity Mode field

@@ -110,6 +110,46 @@ namespace DashworksTestAutomation.Helpers
                 }
         }
 
+        #region Item Details - All lists: Devices, Users, Applications, Mailboxes
+
+        public static string GetDeviceDetailsIdByName(string name)
+        {
+            var id =
+                DatabaseHelper.ExecuteReader(
+                    $"SELECT [ComputerKey] FROM [DesktopBI].[dbo].[DimComputer] WHERE [Hostname] = '{name}'",
+                    0).LastOrDefault();
+            return id;
+        }
+
+        public static string GetUserDetailsIdByName(string name)
+        {
+            var id =
+                DatabaseHelper.ExecuteReader(
+                    $"SELECT [ObjectKey] FROM [DesktopBI].[dbo].[DimDirectoryObject] WHERE [Username] = '{name}'",
+                    0).LastOrDefault();
+            return id;
+        }
+
+        public static string GetApplicationDetailsIdByName(string name)
+        {
+            var id =
+                DatabaseHelper.ExecuteReader(
+                    $"SELECT [PackageKey] FROM [DesktopBI].[dbo].[DimPackage] WHERE [PackageName] = '{name}'",
+                    0).LastOrDefault();
+            return id;
+        }
+
+        public static string GetMailboxDetailsIdByName(string name)
+        {
+            var id =
+                DatabaseHelper.ExecuteReader(
+                    $"SELECT [MailboxKey] FROM [DesktopBI].[dbo].[DimMailbox] WHERE [PrincipalEmailAddress] = '{name}'",
+                    0).LastOrDefault();
+            return id;
+        }
+
+        #endregion
+
         #region CapacityUnits
 
         public static CapacityUnitDto GetCapacityUnit(string name)
@@ -409,9 +449,19 @@ namespace DashworksTestAutomation.Helpers
             return DatabaseHelper.ExecuteReader($"select [ActionId] from [PM].[dbo].[AutomationActions] where [AutomationId] = {automationId} and [ActionName] = '{actionName}'", 0)[0];
         }
 
+        public static List<string> GetAutomationActions(string actionName)
+        {
+            return DatabaseHelper.ExecuteReader($"select [ActionId] from [PM].[dbo].[AutomationActions] where [ActionName] = '{actionName}'", 0);
+        }
+
+        public static string GetAutomationIdByActionId(string actionId)
+        {
+            return DatabaseHelper.ExecuteReader($"select [AutomationId] from [PM].[dbo].[AutomationActions] where [ActionId] = '{actionId}'", 0)[0];
+        }
+
         public static bool IsAutomationRunFinishedSuccess(string automationId)
         {
-            return Convert.ToInt32(DatabaseHelper.ExecuteReader($"select count(*) from [PM].[dbo].[AutomationLog] as al join[PM].[dbo].[AutomationLogOutcomes] as alo on al.OutcomeId = alo.OutcomeId join[PM].[dbo].[AutomationLogTypes] as alt on al.LogTypeId = alt.LogTypeId where alo.Outcome = 'Success' and alt.LogType = 'Action Finish' and al.AutomationId = {automationId}", 0)[0])>0;
+            return Convert.ToInt32(DatabaseHelper.ExecuteReader($"select count(*) from [PM].[dbo].[AutomationLog] as al join[PM].[dbo].[AutomationLogOutcomes] as alo on al.OutcomeId = alo.OutcomeId join[PM].[dbo].[AutomationLogTypes] as alt on al.LogTypeId = alt.LogTypeId where alo.Outcome = 'Success' and alt.LogType = 'Action Finish' and al.AutomationId = {automationId}", 0)[0]) > 0;
         }
 
         #endregion

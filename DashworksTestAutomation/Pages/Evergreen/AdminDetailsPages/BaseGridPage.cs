@@ -52,6 +52,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//mat-select[@id='actions']")]
         public IWebElement ActionsSelectBox { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='aggrid-container']//div[@col-id='dragColumn']")]
+        public IList<IWebElement> DragRowElements { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//mat-dialog-container//h1[text()='Warning']")]
         public IWebElement WarningPopUpPanel { get; set; }
 
@@ -115,54 +118,26 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Date']")]
         public IWebElement DateSearchField { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[contains(text(), 'Delete')]")]
-        public IWebElement DeleteValueInActions { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//span[contains(@class, 'mat-select-placeholder')]")]
         public IWebElement ActionsInDropdown { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//mat-option/span[@class='mat-option-text']/span")]
-        public IList<IWebElement> ActionsInDropdownList { get; set; }
 
         [FindsBy(How = How.XPath, Using = ObjectsToAdd)]
         public IList<IWebElement> ObjectsList { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='mat-select-value']/span[text()='Actions']/ancestor::mat-select")]
-        public IWebElement ActionsButton { get; set; }
-
-        [FindsBy(How = How.XPath,
-            Using = ".//button[contains(@class, 'button-small mat-raised-button')]/span[text()='DELETE']")]
-        public IWebElement DeleteButtonOnPage { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//input[@placeholder='Search']")]
-        public IWebElement SearchTextBox { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "//button/span[contains(text(), 'ADD')]")]
-        public IWebElement AddItemButton { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//button[contains(@title,'Update')]")]
-        public IWebElement UpdateButton { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//div[@class='mat-checkbox-inner-container']")]
         public IWebElement AllItemCheckbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//mat-checkbox[contains(@class, 'mat-checkbox-checked')]")]
-        public IWebElement CheckedAllItemCheckbox { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//mat-pseudo-checkbox[contains(@class, 'checkbox-checked')]")]
-        public IWebElement CheckedSomeItemCheckbox { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-body-viewport')]/div[@ref='eCenterColsClipper']")]
         public IWebElement TableContent { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//button[@aria-label='Toggle panel']")]
-        public IWebElement PlusButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//a[contains(@class,'header-back-link')]")]
         public IWebElement BackToTableButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//span[contains(@class, 'mat-select-value-text')]//span[text()='Capacity Units']")]
         public IWebElement DefaultCapacityMode { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-body-viewport')]")]
+        public IWebElement TableBody { get; set; }
 
         [FindsBy(How = How.XPath, Using = ProjectInFilterDropdown)]
         public IList<IWebElement> ProjectListInFilterDropdown { get; set; }
@@ -196,6 +171,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-error')]")]
         public IWebElement ErrorMessage { get; set; }
 
+        //TODO all baners should be moved to separate element
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-tip')]")]
         public IWebElement WarningMessage { get; set; }
 
@@ -275,33 +251,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return allFilters[GetColumnNumberByName(columnName) - 1];
         }
 
-        public void AddDateByFieldName(string fieldName, string date)
-        {
-            var byControl =
-                By.XPath(
-                    $"//input[@aria-label='Date'][@placeholder='{fieldName}']");
-            Driver.WaitForDataLoading();
-            Driver.WaitForElementToBeDisplayed(byControl);
-
-            //TODO: clear() method doesn't work for now. Remove code below and use clear() when it works again
-            Driver.FindElement(byControl).Click();
-            Driver.FindElement(byControl).SendKeys(OpenQA.Selenium.Keys.Control + "a");
-            Driver.FindElement(byControl).SendKeys(OpenQA.Selenium.Keys.Delete);
-            //Driver.FindElement(byControl).Clear();
-            Driver.FindElement(byControl).SendKeys(date);
-        }
-
-        public void GetObjectField(string text)
-        {
-            var byControl =
-                By.XPath(".//div[@class='mat-form-field-infix']/input");
-            Driver.WaitForDataLoading();
-            Driver.WaitForElementToBeDisplayed(byControl);
-            Driver.FindElement(byControl).Click();
-            Driver.FindElement(byControl).Clear();
-            Driver.FindElement(byControl).SendKeys(text);
-        }
-
         public IWebElement GetSearchFieldTextByColumnName(string columnName)
         {
             var selector =
@@ -331,6 +280,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             Driver.FindElement(By.XPath(columnSettingsSelector)).Click();
         }
 
+        //TODO should be moved because this is something on Action panel
         public void SelectActions(string actionName)
         {
             //Nothing to do if action selectBox disabled
@@ -341,29 +291,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
                 $"//span[text()='{actionName}']/ancestor::mat-option";
             Driver.WaitForElementToBeDisplayed(By.XPath(selectedActionName));
             Driver.FindElement(By.XPath(selectedActionName)).Click();
-        }
-
-        public void SelectTabByName(string tabName)
-        {
-            var tabNameSelector = $".//mat-nested-tree//a[text()='{tabName}']";
-            Driver.WaitForElementToBeDisplayed(By.XPath(tabNameSelector));
-            Driver.FindElement(By.XPath(tabNameSelector)).Click();
-            Driver.WaitForDataLoading();
-        }
-
-        public void AddItem(string itemName)
-        {
-            SearchTextBox.Clear();
-            SearchTextBox.SendKeys(itemName);
-            var selector = $".//span[contains(text(), '{itemName}')]";
-            Driver.WaitForElementToBeDisplayed(By.XPath(selector));
-            Driver.FindElement(By.XPath(selector)).Click();
-        }
-
-        public void CheckItemDisplay(string itemName)
-        {
-            SearchTextBox.Clear();
-            SearchTextBox.SendKeys(itemName);
         }
 
         public IWebElement QueueOnboardedObjectDisplayed(string objectName)
@@ -528,28 +455,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElement(By.XPath(".//div[contains(@class,'inline-error')]")).GetCssValue("background-color");
         }
 
-        public string GetMessageHeightOnAdminPage()
-        {
-            return Driver.FindElement(By.XPath(".//div[@id='messageAdmin']")).GetCssValue("Height");
-        }
-
-        public string GetMessageWidthOnAdminPage()
-        {
-            return Driver.FindElement(By.XPath(".//div[@id='messageAdmin']")).GetCssValue("width");
-        }
-
         public IWebElement GetTextInSearchFieldByColumnName(string columnName)
         {
             var selector =
                 By.XPath(
                     $".//div[@role='presentation']/div[2]/div[{GetColumnNumberByName(columnName)}]//div[@class='ag-floating-filter-full-body']//input");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
-        public IWebElement GetFieldByFieldName(string fieldName)
-        {
-            var selector = By.XPath($".//textarea[@placeholder='{fieldName}']");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
@@ -710,34 +620,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
                 return allData.First(x => x.Text.Contains(cellText));
             else
                 throw new Exception($"There is no cell with '{cellText}' text in the '{columnName}' column");
-        }
-
-        public void ClickDeleteButtonInActions()
-        {
-            By selector = By.XPath(".//span[@class='mat-option-text']/span[contains(text(), 'Delete')]");
-            int attemtps = 3;
-            for (int i = 0; i < attemtps; i++)
-            {
-                try
-                {
-                    Driver.WaitForElementToBeDisplayed(selector);
-                    Driver.FindElement(selector).Click();
-                    return;
-                }
-                catch (InvalidCastException)
-                {
-                    //Ignore
-                }
-            }
-            throw new Exception($"Delete button in actions was not clicked in {attemtps} attempts");
-        }
-
-        public bool IsTooltipDisplayed()
-        {
-            string selector = ".//mat-tooltip-component";
-            var toolTips = Driver.FindElements(By.XPath(selector));
-
-            return toolTips.Count > 0;
         }
     }
 }

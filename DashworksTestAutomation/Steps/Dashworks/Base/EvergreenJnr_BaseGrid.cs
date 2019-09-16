@@ -226,5 +226,31 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         }
 
         #endregion
+
+        #region MoveItem
+
+        [When(@"User moves '(.*)' item to '(.*)' item in the '(.*)' column")]
+        public void WhenUserMovesItemToItemInTheColumn(string itemFrom, string itemTo, string columnName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            var itemsList = page.GetColumnContentByColumnName(columnName);
+            var columnContent = itemsList.Select(x => x.Text).ToList();
+            var indexFrom = columnContent.IndexOf(itemFrom);
+            var indexTo = columnContent.IndexOf(itemTo);
+            _driver.DragAndDrop(page.DragRowElements[indexFrom], page.DragRowElements[indexTo]);
+        }
+
+        #endregion
+
+        #region ScrollGrid
+
+        [When(@"User scrolls grid to the bottom")]
+        public void WhenUserScrollsGridToTheBottom()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            _driver.ScrollGridToTheEnd(page.TableBody);
+        }
+
+        #endregion
     }
 }

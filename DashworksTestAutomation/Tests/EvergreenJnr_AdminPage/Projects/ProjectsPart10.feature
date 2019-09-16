@@ -28,19 +28,19 @@ Scenario Outline: EvergreenJnr_ChangingApplicationsScopeListToAnotherList
 	| DevicesProject4 | All Devices | None            | Standalone Project |
 	And User selects "Scope" tab on the Project details page
 	And User selects "Scope Changes" tab on the Project details page
-	When User clicks "Applications" tab in the Project Scope Changes section
+	When User navigates to the 'Applications' tab on Project Scope Changes page
 	Then "Applications to add (0 of 2129 selected)" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page
-	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
-	And User selects "<ChangingToList1>" in the Scope Project details
+	When User navigates to the 'Application Scope' tab on Project Scope Changes page
+	And User selects '<ChangingToList1>' in the 'Application Scope' dropdown with wait
 	And User selects "Scope Changes" tab on the Project details page
-	When User clicks "Applications" tab in the Project Scope Changes section
+	When User navigates to the 'Applications' tab on Project Scope Changes page
 	Then "<ApplicationsToAdd1>" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page
-	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
-	And User selects "<ChangingToList2>" in the Scope Project details
+	When User navigates to the 'Application Scope' tab on Project Scope Changes page
+	And User selects '<ChangingToList2>' in the 'Application Scope' dropdown with wait
 	And User selects "Scope Changes" tab on the Project details page
-	When User clicks "Applications" tab in the Project Scope Changes section
+	When User navigates to the 'Applications' tab on Project Scope Changes page
 	Then "<ApplicationsToAdd2>" is displayed to the user in the Project Scope Changes section
 	#Then There are no errors in the browser console
 
@@ -70,16 +70,17 @@ Scenario Outline: EvergreenJnr_ChangingUsersScopeListToAnotherListForUserProject
 	When Project created via API and opened
 	| ProjectName     | Scope     | ProjectTemplate | Mode   |
 	| DevicesProject5 | All Users | None            | <Mode> |
-	And User selects "Scope" tab on the Project details page
-	And User selects "Scope Changes" tab on the Project details page
+	#And User selects "Scope" tab on the Project details page
+	And User navigates to the 'Scope' left menu item
+	When User navigates to the "Scope Changes" sub-menu on the Details page
 	Then "Users to add (0 of 41339 selected)" is displayed to the user in the Project Scope Changes section
-	When User selects "Scope Details" tab on the Project details page
-	And User selects "<ChangingToList1>" in the Scope Project details
-	And User selects "Scope Changes" tab on the Project details page
+	When User navigates to the "Scope Details" sub-menu on the Details page
+	And User selects '<ChangingToList1>' in the 'Scope' dropdown with wait
+	When User navigates to the "Scope Changes" sub-menu on the Details page
 	Then "<ObjectsToAdd1>" is displayed to the user in the Project Scope Changes section
-	When User selects "Scope Details" tab on the Project details page
-	And User selects "<ChangingToList2>" in the Scope Project details
-	And User selects "Scope Changes" tab on the Project details page
+	When User navigates to the "Scope Details" sub-menu on the Details page
+	And User selects '<ChangingToList2>' in the 'Scope' dropdown with wait
+	When User navigates to the "Scope Changes" sub-menu on the Details page
 	Then "<ObjectsToAdd2>" is displayed to the user in the Project Scope Changes section
 	Then There are no errors in the browser console
 
@@ -105,19 +106,19 @@ Scenario Outline: EvergreenJnr_AdminPage_ChangingDynamicListToAllListForUserAndM
 	| DevicesProject8 | <ProjectList> | None            | Standalone Project |
 	And User selects "Scope" tab on the Project details page
 	And User selects "Scope Changes" tab on the Project details page
-	And User clicks "<ScopeChanges>" tab in the Project Scope Changes section
+	When User navigates to the '<ScopeChanges>' tab on Project Scope Changes page
 	Then "<ObjectsToAdd>" is displayed to the user in the Project Scope Changes section
-	When User selects "Scope Details" tab on the Project details page
-	When User navigates to the "<ScopeDetails>" tab in the Scope section on the Project details page
-	And User selects "DynamicList58" in the Scope Project details
-	And User selects "Scope Changes" tab on the Project details page
-	When User clicks "<ScopeChanges>" tab in the Project Scope Changes section
+	When User navigates to the "Scope Details" sub-menu on the Details page
+	When User navigates to the '<ScopeDetails>' tab on Project Scope Changes page
+	And User selects 'DynamicList58' in the '<ScopeDetails>' dropdown with wait
+	When User navigates to the "Scope Changes" sub-menu on the Details page
+	When User navigates to the '<ScopeChanges>' tab on Project Scope Changes page
 	Then "<ObjectsToAdd1>" is displayed to the user in the Project Scope Changes section
-	When User selects "Scope Details" tab on the Project details page
-	When User navigates to the "<ScopeDetails>" tab in the Scope section on the Project details page
-	And User selects "<AllList>" in the Scope Project details
-	And User selects "Scope Changes" tab on the Project details page
-	When User clicks "<ScopeChanges>" tab in the Project Scope Changes section
+	When User navigates to the "Scope Details" sub-menu on the Details page
+	When User navigates to the '<ScopeDetails>' tab on Project Scope Changes page
+	And User selects '<AllList>' in the '<ScopeDetails>' dropdown with wait
+	When User navigates to the "Scope Changes" sub-menu on the Details page
+	When User navigates to the '<ScopeChanges>' tab on Project Scope Changes page
 	Then "<ObjectsToAdd2>" is displayed to the user in the Project Scope Changes section
 	Then There are no errors in the browser console
 
@@ -147,21 +148,21 @@ Scenario Outline: EvergreenJnr_ChangingApplicationScopeListToAnotherListForUserP
 	When Project created via API and opened
 	| ProjectName     | Scope     | ProjectTemplate | Mode               |
 	| DevicesProject9 | All Users | None            | Standalone Project |
-	And User selects "Scope" tab on the Project details page
-	And User selects "Scope Changes" tab on the Project details page
-	When User clicks "Applications" tab in the Project Scope Changes section
+	And User navigates to the 'Scope' left menu item
+	When User navigates to the "Scope Changes" sub-menu on the Details page
+	When User navigates to the 'Applications' tab on Project Scope Changes page
 	Then "Applications to add (0 of 2081 selected)" is displayed to the user in the Project Scope Changes section
-	When User selects "Scope Details" tab on the Project details page
-	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
-	And User selects "<ChangingToList1>" in the Scope Project details
-	And User selects "Scope Changes" tab on the Project details page
-	When User clicks "Applications" tab in the Project Scope Changes section
+	When User navigates to the "Scope Details" sub-menu on the Details page
+	When User navigates to the 'Application Scope' tab on Project Scope Changes page
+	And User selects '<ChangingToList1>' in the 'Application Scope' dropdown with wait
+	When User navigates to the "Scope Changes" sub-menu on the Details page
+	When User navigates to the 'Applications' tab on Project Scope Changes page
 	Then "<ObjectsToAdd1>" is displayed to the user in the Project Scope Changes section
-	When User selects "Scope Details" tab on the Project details page
-	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
-	And User selects "<ChangingToList2>" in the Scope Project details
-	And User selects "Scope Changes" tab on the Project details page
-	When User clicks "Applications" tab in the Project Scope Changes section
+	When User navigates to the "Scope Details" sub-menu on the Details page
+	When User navigates to the 'Application Scope' tab on Project Scope Changes page
+	And User selects '<ChangingToList2>' in the 'Application Scope' dropdown with wait
+	When User navigates to the "Scope Changes" sub-menu on the Details page
+	When User navigates to the 'Applications' tab on Project Scope Changes page
 	Then "<ObjectsToAdd2>" is displayed to the user in the Project Scope Changes section
 	Then There are no errors in the browser console
 

@@ -20,13 +20,5 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations
         {
             _driver = driver;
         }
-
-        [Then(@"Edit Automation page is displayed to the User")]
-        public void ThenEditAutomationPageIsDisplayedToTheUser()
-        {
-            var page = _driver.NowAt<EditAutomationPage>();
-            _driver.WaitForElementToBeDisplayed(page.EditAutomationTitle);
-            Utils.Verify.IsTrue(page.EditAutomationTitle.Displayed(), "Edit Automation page is not displayed");
-        }
     }
 }

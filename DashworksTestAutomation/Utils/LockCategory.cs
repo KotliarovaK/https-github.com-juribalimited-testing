@@ -20,7 +20,22 @@ namespace DashworksTestAutomation.Utils
 
         private static bool IsTagExistInCurrentSession(string expectedTag)
         {
-            return _testsTags.Any(x => x.Any(y => y.Contains(expectedTag)));
+            var text = string.Empty;
+            foreach (List<string> list in _testsTags)
+            {
+                text += String.Join(", ", list.ToArray()) + "\r\n";
+            }
+
+            var result = _testsTags.Any(x => x.Any(y => y.Contains(expectedTag)));
+
+            if (result)
+            {
+                Logger.Write("=======>");
+                Logger.Write($"TAG '{expectedTag}' is in the list:");
+                Logger.Write(text);
+                Logger.Write("<=======");
+            }
+            return result;
         }
 
         private static List<string> GetDoNotRunWithTags()
@@ -40,27 +55,32 @@ namespace DashworksTestAutomation.Utils
 
         public static void AwaitTags(List<string> categories)
         {
-            //If test contains tag that depends on other tags
-            if (categories.Any(x => x.Contains("Do_Not_Run_With")))
+            if (_testsTags.Any())
             {
-                var lockTag = categories.First(x => x.Contains("Do_Not_Run_With"))
-                    .Replace("Do_Not_Run_With_", string.Empty);
-                //Check that there is no tests with mentioned tag
-                if (IsTagExistInCurrentSession(lockTag))
+                //If test contains tag that depends on other tags
+                if (categories.Any(x => x.Contains("Do_Not_Run_With")))
                 {
-                    while (IsTagExistInCurrentSession(lockTag))
+                    var lockTag = categories.First(x => x.Contains("Do_Not_Run_With"))
+                        .Replace("Do_Not_Run_With_", string.Empty);
+                    //Check that there is no tests with mentioned tag
+                    if (IsTagExistInCurrentSession(lockTag))
                     {
-                        Thread.Sleep(2000);
+                        while (IsTagExistInCurrentSession(lockTag) && _testsTags.Any())
+                        {
+                            Thread.Sleep(2000);
+                            Logger.Write("1. Tag exists in the context");
+                        }
                     }
                 }
-            }
 
-            //If test contains tag with which we can't run
-            if (IsTagExistInCurrentSession("Do_Not_Run_With"))
-            {
-                while (GetDoNotRunWithTags().Intersect(categories).Any())
+                //If test contains tag with which we can't run
+                if (IsTagExistInCurrentSession("Do_Not_Run_With"))
                 {
-                    Thread.Sleep(2000);
+                    while (GetDoNotRunWithTags().Intersect(categories).Any() && _testsTags.Any())
+                    {
+                        Thread.Sleep(2000);
+                        Logger.Write("2. Do_Not_Run_With in the context");
+                    }
                 }
             }
         }
@@ -92,19 +112,28 @@ namespace DashworksTestAutomation.Utils
                 //After adding mutex we can probable should remove lock
                 lock (_testsTags)
                 {
-                    var index = -1;
-                    for (int i = 0; i < _testsTags.Count; i++)
+                    if (_testsTags.Any())
                     {
-                        if (_testsTags[i].SequenceEqual(tags))
+                        var index = -1;
+                        for (int i = 0; i < _testsTags.Count; i++)
                         {
-                            index = i;
-                            break;
+                            if (_testsTags[i].SequenceEqual(tags))
+                            {
+                                index = i;
+                                break;
+                            }
                         }
-                    }
 
-                    if (index >= 0)
-                        _testsTags.RemoveAt(index);
+                        if (index >= 0)
+                            _testsTags.RemoveAt(index);
+                    }
                 }
+            }
+            //Remove all tags in case of any errors!
+            catch (Exception e)
+            {
+                Logger.Write($"ERROR REMOVING TAGS: {e}");
+                //_testsTags = new List<List<string>>();
             }
             finally
             {

@@ -22,7 +22,7 @@ Scenario: EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam
 	And User enters "test" in the Team Description field
 	When User selects "Add members from another team" in the Add Members dropdown
 	Then There are no errors in the browser console
-	When User selects following Objects
+	When User selects following Objects from the expandable multiselect
 	| Objects                |
 	| Migration Phase 3 Team |
 	| Retail Team            |
@@ -42,7 +42,7 @@ Scenario: EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam
 	And User enters "test" in the Team Description field
 	And User clicks Default Team checkbox
 	When User selects "Add individual members" in the Add Members dropdown
-	And User selects following Objects
+	And User selects following Objects from the expandable multiselect
 	| Objects           |
 	| automation_admin1 |
 	And User clicks the "CREATE" Action button
@@ -50,7 +50,7 @@ Scenario: EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam
 	When User enters "My Team" text in the Search field for "Team" column
 	Then 'FALSE' content is displayed in the 'Default' column
 	When User clicks content from "Team" column
-	And User clicks "Team Settings" tab
+	And User navigates to the 'Team Settings' left menu item
 	And User clicks Default Team checkbox
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The team was successfully updated" text
@@ -75,14 +75,15 @@ Scenario: EvergreenJnr_AdminPage_AddingMembersToTheTeam
 	Then "Teams" page should be displayed to the user
 	When User enters "TestTeam7" text in the Search field for "Team" column
 	And User clicks content from "Team" column
-	When User clicks "Team Members" tab
+	When User navigates to the 'Team Members' left menu item
 	When User clicks the "ADD MEMBERS" Action button
-	And User adds following Objects from list
+	And User selects following Objects from the expandable multiselect
 	| Objects           |
 	| automation_admin1 |
 	| automation_admin2 |
 	| automation_admin3 |
 	| eugene            |
+	And User clicks the "ADD USERS" Action button
 	Then Success message is displayed and contains "The selected users have been added" text
 	When User click on "Username" column header on the Admin page
 	Then data in table is sorted by "Username" column in ascending order on the Admin page
@@ -120,13 +121,14 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSelectANewTeamDropdownAreWorkingCorre
 	Then "Teams" page should be displayed to the user
 	When User enters "DAS12326" text in the Search field for "Team" column
 	And User clicks content from "Team" column
-	And User clicks "Team Members" tab
+	And User navigates to the 'Team Members' left menu item
 	And User clicks the "ADD MEMBERS" Action button
-	And User adds following Objects from list
+	And User selects following Objects from the expandable multiselect
 	| Objects           |
 	| automation_admin1 |
 	| automation_admin2 |
 	| automation_admin3 |
+	And User clicks the "ADD USERS" Action button
 	Then Success message is displayed and contains "The selected users have been added" text
 	When User enters "admin1" text in the Search field for "Username" column
 	And User selects all rows on the grid

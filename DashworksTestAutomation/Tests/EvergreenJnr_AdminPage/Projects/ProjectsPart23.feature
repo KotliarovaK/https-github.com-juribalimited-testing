@@ -42,23 +42,23 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectCountersDisplayedInRingGridFor
 	When User clicks "Projects" link on the Admin page
 	And User enters "DAS15260Project" text in the Search field for "Project" column
 	And User clicks content from "Project" column
-	And User clicks "Details" tab
+	And User navigates to the 'Details' left menu item
 	And User converts project to evergreen project
 	And User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
 	And User enters "DAS15260Project" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User selects "Scope Changes" tab on the Project details page
-	And User clicks "Devices" tab in the Project Scope Changes section
-	And User selects following Objects to the Project
+	And User navigates to the 'Devices' tab on Project Scope Changes page
+	And User expands multiselect and selects following Objects
 	| Objects         |
 	| 001PSUMZYOW581  |
-	And User clicks "Users" tab in the Project Scope Changes section
-	And User selects following Objects to the Project
+	And User navigates to the 'Users' tab on Project Scope Changes page
+	And User expands multiselect and selects following Objects
 	| Objects                        |
 	| AAD1011948 (Pinabel Cinq-Mars) |
-	And User clicks "Applications" tab in the Project Scope Changes section
-	And User selects following Objects to the Project
+	And User navigates to the 'Applications' tab on Project Scope Changes page
+	And User expands multiselect and selects following Objects
 	| Objects                                            |
 	| 0004 - Adobe Acrobat Reader 5.0.5 Francais (5.0.5) |
 	And User clicks the "UPDATE ALL CHANGES" Action button
@@ -69,7 +69,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectCountersDisplayedInRingGridFor
 	And User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Evergreen" link on the Admin page
-	When User clicks "Rings" tab
+	When User navigates to the 'Rings' left menu item
 	And User clicks String Filter button for "Project" column on the Admin page
 	And User selects "Evergreen" checkbox from String Filter with item list on the Admin page
 	And User clicks String Filter button for "Project" column on the Admin page

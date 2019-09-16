@@ -1503,7 +1503,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
          
             var getFirstAutomationItem = VisibleLabels.Select((Value, Index) => new { Value, Index })
-                .Single(p => p.Value.StartsWith("Automations"));
+                .Single(p => p.Value.StartsWith("Automation Actions"));
 
             Utils.Verify.That(getFirstAutomationItem.Index, Is.LessThan(getFirstProjectItem.Index), "Looks like projects placed before Automations");
         }

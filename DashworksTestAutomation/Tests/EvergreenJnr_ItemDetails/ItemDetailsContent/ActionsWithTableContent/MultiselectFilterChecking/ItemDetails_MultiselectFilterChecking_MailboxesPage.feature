@@ -33,7 +33,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatOnlyValueIncludedInTheColumnIsDisp
 	When User perform search by "002B5DC7D4D34D5C895"
 	And User click content from "Email Address" column
 	Then Details page for "002B5DC7D4D34D5C895@bclabs.local" item is displayed to the user
-	When User navigates to the "Users" main-menu on the Details page
+	When User navigates to the 'Users' left menu item
 	When User navigates to the "Users" sub-menu on the Details page
 	When User switches to the "USE ME FOR AUTOMATION(MAIL SCHDLD)" project in the Top bar on Item details page
 	Then 'TRUE' content is displayed in the 'Owner' column
@@ -64,11 +64,12 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatOnlyValueIncludedInTheColumnIsDisp
 	| BCLABS |
 	When User closes Checkbox filter for "Domain" column
 	When User clicks String Filter button for "Permission" column
+	#Order of the options in the dropdown is the same as on Senior
 	Then following String Values are displayed in the filter on the Details Page
 	| Values           |
-	| FullAccess       |
 	| ReadPermission   |
+	| FullAccess       |
 	| DeleteItem       |
-	| ChangeOwner      |
 	| ChangePermission |
+	| ChangeOwner      |
 	When User closes Checkbox filter for "Permission" column

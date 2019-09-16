@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
+using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
@@ -23,11 +24,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User clicks the Actions button")]
         public void WhenUserClicksTheActionsButton()
         {
+            var page = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForElementToBeDisplayed(page.TableBody);
             var menu = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitForElementToBeDisplayed(menu.TableBody);
+            //TODO move Action to separate component
             _driver.WaitForElementToBeDisplayed(menu.ActionsButton);
             menu.ActionsButton.Click();
-            Logger.Write("Actions button was clicked");
         }
 
         [When(@"User clicks the List Details button")]
@@ -85,7 +87,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForElementToBeDisplayed(menu.CreateProjectButton);
             menu.CreateProjectButton.Click();
 
-            Logger.Write("Create Project Button button was clicked");
+            _driver.WaitForDataLoading();
         }
 
         [Then(@"Create Project button is disabled on the Base Dashboard Page")]
@@ -232,13 +234,30 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.DoesNotContain("active", menu.ActionsButton.GetAttribute("class"), "Actions button is active");
         }
 
-        [Then(@"Filter Expression icon displayed within correct block")]
+        [Then(@"Filter Expression icon displayed within Filter Panel")]
         public void ThenFilterExpressionIconDisplayedWithinCorrectBlock()
         {
             var filterPane = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForElementToBeDisplayed(filterPane.FilterButton);
 
             Utils.Verify.That(filterPane.FilterExpressionIcon.Displayed, "Filter expression icon placed in wrong block");
+        }
+
+        [When(@"User clicks Filter Expression icon in Filter Panel")]
+        public void UserClicksFilterExpressionIconInFilterPanel()
+        {
+            var filterPane = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForElementToBeDisplayed(filterPane.FilterButton);
+            filterPane.FilterExpressionIcon.Click();
+        }
+
+        [Then(@"Filter Expression displayed within Filter Panel")]
+        public void ThenFilterExpressionDisplayedWithinCorrectBlock()
+        {
+            var filterPane = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForElementToBeDisplayed(filterPane.FilterButton);
+
+            Utils.Verify.That(filterPane.FiltersExpression.Displayed, "Filter expression placed in wrong block");
         }
     }
 }

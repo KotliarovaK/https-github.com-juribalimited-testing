@@ -196,7 +196,7 @@ Examples:
 	| PageName     | ColumnName  | ItemName       | SubMenu      | Value   |
 	| Devices      | Hostname    | 001BAQXT6JWFPI | Device Owner | RED     |
 	| Users        | Username    | ACG370114      | User         | RED     |
-	#Ann.Ilchenko 9/6/19: Bug response expected
+	#Uncomment after DAS-17986 fix
 	#| Applications | Application | 7zip           | Application  | UNKNOWN |
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16857 @DAS16928
@@ -207,7 +207,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatComplianceInKeyValueTableMatche
 	And User click content from "<ColumnName>" column
 	Then Details page for "<ItemName>" item is displayed to the user
 	When User switches to the "<ProjectName>" project in the Top bar on Item details page
-	And User navigates to the "Projects" main-menu on the Details page
+	And User navigates to the 'Projects' left menu item
 	And User navigates to the "Project Details" sub-menu on the Details page
 	Then following content is displayed on the Details Page
 	| Title   | Value   |
@@ -231,12 +231,12 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatReadinessValuesIsDisplayedAccor
 	And User click content from "Application" column
 	Then Details page for "ACD Display 3.4" item is displayed to the user
 	When User switches to the "Havoc (Big Data)" project in the Top bar on Item details page
-	When User navigates to the "Projects" main-menu on the Details page
+	When User navigates to the 'Projects' left menu item
 	And User navigates to the "Project Details" sub-menu on the Details page
 	Then following content is displayed on the Details Page
-	| Title         | Value |
-	| Readiness     | RED   |
-	| App Readiness | RED   |
+	| Title             | Value |
+	| Overall Readiness | RED   |
+	| App Readiness     | RED   |
 	Then following Compliance items with appropriate colors are displayed in Top bar on the Item details page:
 	| ComplianceItems   | ColorName |
 	| Overall Readiness | RED       |

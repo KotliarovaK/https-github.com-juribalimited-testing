@@ -10,7 +10,8 @@ using SeleniumExtras.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
 {
-    internal class NavigationElements : SeleniumBasePage
+    //Left menu
+    internal class BaseNavigationElements : SeleniumBasePage
     {
         public const string MainTabsOnDetailsPage = "//div[contains(@class, 'das-mat-tree-node')]/a";
 
@@ -42,11 +43,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
             return Driver.FindElement(link);
         }
 
+        //TODO probably should be renamed form Tab menu to left menu
         public IWebElement GetTabMenuByName(string name)
         {
             var selector = By.XPath(string.Format(TabMenuByNameSelector, name));
             if (!Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Long))
-                throw new Exception($"'{name}' Tab menu was not displayed");
+                throw new Exception($"'{name}' left menu was not displayed");
             return Driver.FindElement(selector);
         }
 

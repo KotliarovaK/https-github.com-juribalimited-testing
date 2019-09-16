@@ -12,11 +12,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
 {
     class ActionPanelPage : SeleniumBasePage
     {
-        [FindsBy(How = How.XPath, Using = ".//div[@class='top-tools']")]
-        public IWebElement PageIdentitySelectors { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//mat-select[@name='actions']")]
         public IWebElement ActionsDropDown { get; set; }
+
+        //Button for deleting confirmation
+        [FindsBy(How = How.XPath,
+            Using = ".//button[contains(@class, 'button-small mat-raised-button')]/span[text()='DELETE']")]
+        public IWebElement DeleteButtonOnPage { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {
@@ -24,7 +26,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
 
             return new List<By>
             {
-                SelectorFor(this, p => p.PageIdentitySelectors)
+                //SelectorFor(this, p => p.PageIdentitySelectors)
             };
         }
 

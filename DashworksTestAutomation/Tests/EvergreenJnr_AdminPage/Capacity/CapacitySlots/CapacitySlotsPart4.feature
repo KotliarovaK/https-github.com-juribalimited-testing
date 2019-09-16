@@ -15,7 +15,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotIsSuccessfullyCreatedUsingExist
 	| 13382ProjectForCapacity | Slot13147 | Name13147   |
 	| 13382ProjectForCapacity | NewName   | Name1       |
 	| 13382ProjectForCapacity | Name1     | Name1       |
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	And User selects "Slots" tab on the Project details page
 	When User have opened Column Settings for "Capacity Slot" column
 	And User clicks Column button on the Column Settings panel
@@ -34,20 +34,20 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlyLanguageIsDisplayedForSlotsA
 	When Project created via API and opened
 	| ProjectName         | Scope       | ProjectTemplate | Mode               |
 	| ChecksLanguage13955 | All Devices | None            | Standalone Project |
-	And User clicks "Details" tab
+	And User navigates to the 'Details' left menu item
 	And User clicks the "ADD LANGUAGE" Action button
 	And User selects "Dutch" language on the Project details page
 	And User creates new Slot via Api
 	| Project             | SlotName       | DisplayName |
 	| ChecksLanguage13955 | ChecksLanguage | DAS13955    |
-	And User clicks "Capacity" tab
-	And User clicks "Details" tab
+	And User navigates to the 'Capacity' left menu item
+	And User navigates to the 'Details' left menu item
 	And User opens menu for selected language
 	Then User selects "Remove" option for selected language
 	When User clicks "REMOVE" button in the warning message on Admin page
 	And User clicks the "ADD LANGUAGE" Action button
 	And User selects "German" language on the Project details page
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	And User selects "Slots" tab on the Project details page
 	And User enters "ChecksLanguage" text in the Search field for "Capacity Slot" column
 	And User clicks content from "Capacity Slot" column
@@ -59,9 +59,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlyLanguageIsDisplayedForSlotsA
 	And User clicks content from "Capacity Slot" column
 	And User clicks "See Translations" link on the Capacity Slot page
 	Then "CheckName" is displayed in Display Name field for "German" Language in Translations table on the Capacity Slot page
-	When User clicks "Capacity" tab
+	When User navigates to the 'Capacity' left menu item
 	#You have unsaved changes. Are you sure you want to leave the page?
-	And User clicks "Details" tab
+	And User navigates to the 'Details' left menu item
 	And User opens menu for selected language
 	Then User selects "Remove" option for selected language
 	Then Warning message with "Removing German will delete all translations for this language in this project" text is displayed on the Project Details Page
@@ -69,7 +69,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlyLanguageIsDisplayedForSlotsA
 	And User opens menu for selected language
 	Then User selects "Remove" option for selected language
 	When User clicks "REMOVE" button in the warning message on Admin page
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	And User selects "Slots" tab on the Project details page
 	And User creates new Slot via Api
 	| Project             | SlotName         | DisplayName |
@@ -85,7 +85,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCreatedSlotWithSelectedTypeTeamsAndRe
 	And User creates new Slot via Api
 	| Project            | SlotName                        | DisplayName                     | CapacityType    |
 	| ProjectForDAS14103 | capacity type = Teams and Paths | capacity type = Teams and Paths | Teams and Paths |
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	And User selects "Slots" tab on the Project details page
 	Then "" content is displayed in "Capacity Units" column
 
@@ -98,7 +98,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatNoUnitsOptionsWasAddedToCapacityUnits
 	| Project            | SlotName                        | DisplayName                     | CapacityType    |
 	| ProjectForDAS13417 | capacity type = Teams and Paths | capacity type = Teams and Paths | Teams and Paths |
 	| ProjectForDAS13417 | capacity type = Capacity Units  | capacity type = Capacity Units  | Capacity Units  |
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	And User selects "Slots" tab on the Project details page
 	When User clicks String Filter button for "Capacity Units" column on the Admin page
 	And User selects "All Capacity Units" checkbox from String Filter with item list on the Admin page

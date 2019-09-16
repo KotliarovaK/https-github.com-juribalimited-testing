@@ -166,6 +166,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElement(By.XPath(".//div[@role='listbox']")).GetCssValue("width");
         }
 
+        //TODO should be removed
         public void NavigateToProjectTabByName(string tabName)
         {
             var tab = Driver.FindElement(
@@ -199,13 +200,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             var button = By.XPath($".//div[contains(@class, 'menuItems')]//span[text()='{tabName}']");
             Driver.WaitForElementToBeDisplayed(button);
             return Driver.FindElement(button);
-        }
-
-        public void NavigateToProjectTabInScopeSectionByName(string tabName)
-        {
-            var tab = Driver.FindElement(
-                By.XPath($".//div[@class='detail-label ng-star-inserted']//span[text()='{tabName}']"));
-            tab.Click();
         }
 
         public void ClickToTabByNameProjectScopeChanges(string tabName)
@@ -404,20 +398,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public IWebElement GetFieldByName(string name)
         {
             var selector = By.XPath($".//input[@placeholder='{name}']");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
-        public IWebElement GetDropDownByName(string name)
-        {
-            var selector = By.XPath($".//span[@class='mat-form-field-label-wrapper']//label[text()='{name}']/ancestor::div/mat-select");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
-        public IWebElement GetDropdownContentByName(string name)
-        {
-            var selector = By.XPath($".//span[@class='mat-form-field-label-wrapper']//label[text()='{name}']/ancestor::div/mat-select//span/span");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }

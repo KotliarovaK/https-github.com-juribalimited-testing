@@ -87,7 +87,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS14668")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatWidgetsCanBeCreatedWhenUsingSplitByAndAggregateByDateColumn()
         {
             System.Exception lastException = null;
@@ -122,7 +121,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "EvergreenJnr_DashboardsPage",
                         "Widgets",
                         "DAS14668",
-                        "Cleanup",
                         "Cleanup"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
@@ -169,23 +167,17 @@ this.FeatureBackground();
                         "Title",
                         "List",
                         "SplitBy",
-                        "AggregateBy",
                         "AggregateFunction",
                         "OrderBy",
-                        "TableOrientation",
-                        "MaxValues",
-                        "ShowLegend"});
+                        "MaxValues"});
             table3.AddRow(new string[] {
                         "Pie",
                         "Test_Widget_DAS14668_1",
                         "TestList_DAS14668",
                         "ICSP: i-stage A \\ i-Schedule",
-                        "",
                         "Count",
                         "Count ASC",
-                        "",
-                        "5",
-                        ""});
+                        "5"});
 #line 26
  testRunner.And("User creates new Widget", ((string)(null)), table3, "And ");
 #line 29
@@ -201,9 +193,7 @@ this.FeatureBackground();
                         "AggregateBy",
                         "AggregateFunction",
                         "OrderBy",
-                        "TableOrientation",
-                        "MaxValues",
-                        "ShowLegend"});
+                        "MaxValues"});
             table4.AddRow(new string[] {
                         "Pie",
                         "Test_Widget_DAS14668_2",
@@ -212,9 +202,7 @@ this.FeatureBackground();
                         "ICSP: i-stage A \\ i-Schedule",
                         "Count distinct",
                         "ICSP: i-stage A \\ i-Schedule DESC",
-                        "",
-                        "20",
-                        ""});
+                        "20"});
 #line 31
  testRunner.And("User creates new Widget", ((string)(null)), table4, "And ");
 #line 34
@@ -232,7 +220,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS15372")]
         [NUnit.Framework.CategoryAttribute("DAS15317")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWidgetThatUsesCpuArchitField()
         {
@@ -269,7 +256,6 @@ this.FeatureBackground();
                         "Widgets",
                         "DAS15372",
                         "DAS15317",
-                        "Cleanup",
                         "Cleanup"});
 #line 37
 this.ScenarioInitialize(scenarioInfo);
@@ -300,12 +286,8 @@ this.FeatureBackground();
                         "AggregateBy",
                         "AggregateFunction",
                         "OrderBy",
-                        "TableOrientation",
                         "MaxValues",
-                        "ShowLegend",
-                        "Type",
-                        "Drilldown",
-                        "Layout"});
+                        "ShowLegend"});
             table6.AddRow(new string[] {
                         "Pie",
                         "WidgetForDAS15372",
@@ -314,12 +296,8 @@ this.FeatureBackground();
                         "Hostname",
                         "Count distinct",
                         "CPU Architecture ASC",
-                        "",
                         "10",
-                        "false",
-                        "",
-                        "",
-                        ""});
+                        "false"});
 #line 45
  testRunner.And("User adds new Widget", ((string)(null)), table6, "And ");
 #line 48
@@ -345,7 +323,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS15365")]
         [NUnit.Framework.CategoryAttribute("DAS15352")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingPieWidgetUsedSavedList()
         {
@@ -382,7 +359,6 @@ this.FeatureBackground();
                         "Widgets",
                         "DAS15365",
                         "DAS15352",
-                        "Cleanup",
                         "Cleanup"});
 #line 55
 this.ScenarioInitialize(scenarioInfo);
@@ -413,12 +389,8 @@ this.FeatureBackground();
                         "AggregateBy",
                         "AggregateFunction",
                         "OrderBy",
-                        "TableOrientation",
                         "MaxValues",
-                        "ShowLegend",
-                        "Type",
-                        "Drilldown",
-                        "Layout"});
+                        "ShowLegend"});
             table8.AddRow(new string[] {
                         "Pie",
                         "WidgetForDAS15365",
@@ -427,12 +399,8 @@ this.FeatureBackground();
                         "Model",
                         "Count distinct",
                         "Model ASC",
-                        "",
                         "10",
-                        "true",
-                        "",
-                        "",
-                        ""});
+                        "true"});
 #line 63
  testRunner.And("User adds new Widget", ((string)(null)), table8, "And ");
 #line 66
@@ -550,29 +518,15 @@ this.FeatureBackground();
                         "Title",
                         "List",
                         "SplitBy",
-                        "AggregateBy",
                         "AggregateFunction",
-                        "OrderBy",
-                        "TableOrientation",
-                        "MaxValues",
-                        "ShowLegend",
-                        "Type",
-                        "Drilldown",
-                        "Layout"});
+                        "OrderBy"});
             table9.AddRow(new string[] {
                         string.Format("{0}", widgetType),
                         "WidgetForDAS15662",
                         "All Devices",
                         "Hostname",
-                        "",
                         "Count",
-                        "Count ASC",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""});
+                        "Count ASC"});
 #line 94
  testRunner.And("User adds new Widget", ((string)(null)), table9, "And ");
 #line 97
@@ -676,23 +630,17 @@ this.FeatureBackground();
                         "Title",
                         "List",
                         "SplitBy",
-                        "AggregateBy",
                         "AggregateFunction",
                         "OrderBy",
-                        "TableOrientation",
-                        "MaxValues",
-                        "ShowLegend"});
+                        "MaxValues"});
             table10.AddRow(new string[] {
                         "Pie",
                         "Widget_DAS15500",
                         "All Devices",
                         "Hostname",
-                        "",
                         "Count",
                         "Hostname ASC",
-                        "",
-                        "5",
-                        ""});
+                        "5"});
 #line 122
  testRunner.And("User creates new Widget", ((string)(null)), table10, "And ");
 #line 125
@@ -717,7 +665,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS15508")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatSelectingCountAsAggregateFunctionShowsFieldsWithCorrectDatatypeInAggregateByDropdown()
         {
@@ -753,7 +700,6 @@ this.FeatureBackground();
                         "EvergreenJnr_DashboardsPage",
                         "Widgets",
                         "DAS15508",
-                        "Cleanup",
                         "Cleanup"});
 #line 140
 this.ScenarioInitialize(scenarioInfo);
@@ -810,7 +756,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS15509")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatSelectingCountDistinctAsAggregateFunctionShowsFieldsWithCorrectDatatypeInAggregateByDropdown()
         {
             System.Exception lastException = null;
@@ -845,7 +790,6 @@ this.FeatureBackground();
                         "EvergreenJnr_DashboardsPage",
                         "Widgets",
                         "DAS15509",
-                        "Cleanup",
                         "Cleanup"});
 #line 161
 this.ScenarioInitialize(scenarioInfo);
@@ -927,7 +871,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS15511")]
         [NUnit.Framework.CategoryAttribute("DAS15512")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.TestCaseAttribute("Sum", null)]
         [NUnit.Framework.TestCaseAttribute("Min", null)]
         [NUnit.Framework.TestCaseAttribute("Max", null)]
@@ -967,7 +910,6 @@ this.FeatureBackground();
                     "DAS15510",
                     "DAS15511",
                     "DAS15512",
-                    "Cleanup",
                     "Cleanup"};
             if ((exampleTags != null))
             {
@@ -1035,7 +977,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS15524")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatSelectingCountAsAggregateFunctionShowsFieldsWithCorrectValuesInOrderByDropDown()
         {
             System.Exception lastException = null;
@@ -1070,7 +1011,6 @@ this.FeatureBackground();
                         "EvergreenJnr_DashboardsPage",
                         "Widgets",
                         "DAS15524",
-                        "Cleanup",
                         "Cleanup"});
 #line 224
 this.ScenarioInitialize(scenarioInfo);
@@ -1306,7 +1246,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS15362")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenSumAggregateFunctionIsSelected()
         {
             System.Exception lastException = null;
@@ -1341,7 +1280,6 @@ this.FeatureBackground();
                         "EvergreenJnr_DashboardsPage",
                         "Widgets",
                         "DAS15362",
-                        "Cleanup",
                         "Cleanup"});
 #line 286
 this.ScenarioInitialize(scenarioInfo);
@@ -1401,7 +1339,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS15362")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenMinAggregateFunctionIsSelected()
         {
             System.Exception lastException = null;
@@ -1436,7 +1373,6 @@ this.FeatureBackground();
                         "EvergreenJnr_DashboardsPage",
                         "Widgets",
                         "DAS15362",
-                        "Cleanup",
                         "Cleanup"});
 #line 308
 this.ScenarioInitialize(scenarioInfo);
@@ -1496,7 +1432,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS15362")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenMaxAggregateFunctionIsSelected()
         {
             System.Exception lastException = null;
@@ -1531,7 +1466,6 @@ this.FeatureBackground();
                         "EvergreenJnr_DashboardsPage",
                         "Widgets",
                         "DAS15362",
-                        "Cleanup",
                         "Cleanup"});
 #line 330
 this.ScenarioInitialize(scenarioInfo);
@@ -1591,7 +1525,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS15362")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenAvgAggregateFunctionIsSelected()
         {
             System.Exception lastException = null;
@@ -1626,7 +1559,6 @@ this.FeatureBackground();
                         "EvergreenJnr_DashboardsPage",
                         "Widgets",
                         "DAS15362",
-                        "Cleanup",
                         "Cleanup"});
 #line 352
 this.ScenarioInitialize(scenarioInfo);
@@ -1768,29 +1700,17 @@ this.FeatureBackground();
                         "Title",
                         "List",
                         "SplitBy",
-                        "AggregateBy",
                         "AggregateFunction",
                         "OrderBy",
-                        "TableOrientation",
-                        "MaxValues",
-                        "ShowLegend",
-                        "Type",
-                        "Drilldown",
-                        "Layout"});
+                        "ShowLegend"});
             table29.AddRow(new string[] {
                         "Pie",
                         "WidgetForDAS17467",
                         "ListForDAS17467",
                         "Owner Compliance",
-                        "",
                         "Count",
                         "Owner Compliance ASC",
-                        "",
-                        "",
-                        "true",
-                        "",
-                        "",
-                        ""});
+                        "true"});
 #line 391
  testRunner.And("User adds new Widget", ((string)(null)), table29, "And ");
 #line 394
@@ -1904,29 +1824,17 @@ this.FeatureBackground();
                         "Title",
                         "List",
                         "SplitBy",
-                        "AggregateBy",
                         "AggregateFunction",
                         "OrderBy",
-                        "TableOrientation",
-                        "MaxValues",
-                        "ShowLegend",
-                        "Type",
-                        "Drilldown",
-                        "Layout"});
+                        "ShowLegend"});
             table31.AddRow(new string[] {
                         "Pie",
                         "WidgetForDAS17467_1",
                         "ListForDAS17467_1",
                         "1803: Readiness",
-                        "",
                         "Count",
                         "1803: Readiness ASC",
-                        "",
-                        "",
-                        "true",
-                        "",
-                        "",
-                        ""});
+                        "true"});
 #line 422
  testRunner.And("User adds new Widget", ((string)(null)), table31, "And ");
 #line 425
@@ -2033,29 +1941,19 @@ this.FeatureBackground();
                         "Title",
                         "List",
                         "SplitBy",
-                        "AggregateBy",
                         "AggregateFunction",
                         "OrderBy",
-                        "TableOrientation",
                         "MaxValues",
-                        "ShowLegend",
-                        "Type",
-                        "Drilldown",
-                        "Layout"});
+                        "ShowLegend"});
             table34.AddRow(new string[] {
                         "Pie",
                         "WidgetForDAS17515",
                         "ListForDAS17515",
                         "Windows7Mi: Application Readiness",
-                        "",
                         "Count",
                         "Windows7Mi: Application Readiness ASC",
-                        "",
                         "10",
-                        "true",
-                        "",
-                        "",
-                        ""});
+                        "true"});
 #line 449
  testRunner.And("User adds new Widget", ((string)(null)), table34, "And ");
 #line 452

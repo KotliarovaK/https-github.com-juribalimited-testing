@@ -45,11 +45,7 @@ namespace DashworksTestAutomation.Base
         {
             Logger.Write($"TEST STARTED: {GetTestName()}");
 
-            List<string> testTags = TestContext.CurrentContext.Test.Properties["Category"].Select(x => x.ToString()).ToList();
-
-            //If we are not able to get nUnit tags the try to get them from SpecFlow
-            if (!testTags.Any())
-                testTags = _scenarioContext.ScenarioInfo.Tags.ToList();
+            List<string> testTags = GetTags();
 
             LockCategory.AwaitTags(testTags);
             LockCategory.AddTags(testTags);
@@ -69,8 +65,7 @@ namespace DashworksTestAutomation.Base
         {
             try
             {
-                List<string> testTags = TestContext.CurrentContext.Test.Properties["Category"].Select(x => x.ToString())
-                    .ToList();
+                List<string> testTags = GetTags();
 
                 RemoteWebDriver driver = null;
                 if (!testTags.Contains("API"))
@@ -120,8 +115,8 @@ namespace DashworksTestAutomation.Base
         {
             try
             {
-                List<string> testTags = TestContext.CurrentContext.Test.Properties["Category"].Select(x => x.ToString())
-                    .ToList();
+                List<string> testTags = GetTags();
+
                 LockCategory.RemoveTags(testTags);
 
                 //Unleash test only if NOT in local run
@@ -177,6 +172,8 @@ namespace DashworksTestAutomation.Base
         {
             if (bool.Parse(ConfigurationManager.AppSettings["browsersCleanup"]))
                 KillDriverProcesses.Do();
+
+            Logger.Write("ALL TESTS ARE FINISHED");
         }
 
         private string GetTestStatus()
@@ -189,6 +186,24 @@ namespace DashworksTestAutomation.Base
         {
             var testName = _scenarioContext.ScenarioInfo.Title;
             return testName;
+        }
+
+        public List<string> GetTags()
+        {
+            try
+            {
+                List<string> testTags = TestContext.CurrentContext.Test.Properties["Category"].Select(x => x.ToString()).ToList();
+
+                //If we are not able to get nUnit tags the try to get them from SpecFlow
+                if (!testTags.Any())
+                    testTags = _scenarioContext.ScenarioInfo.Tags.ToList();
+
+                return testTags;
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Unable to get Tags from context: {e}");
+            }
         }
     }
 }

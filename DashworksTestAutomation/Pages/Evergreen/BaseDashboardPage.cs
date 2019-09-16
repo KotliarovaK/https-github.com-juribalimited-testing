@@ -19,11 +19,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public const string ImageItem = ".//div[contains(@class, 'ag-body-container')]//img[contains(@src,'png')]";
 
-        public const string TableTextContent = ".//div[@role='row']/div/span";
-
         public const string GridCell = ".//div[@role='gridcell']";
-
-        public const string FullTable = ".//div[contains(@class, 'ag-body-viewport')]/div";
 
         public const string OptionsDllOnActionsPanel = "//mat-option[@role='option']//span";
 
@@ -58,6 +54,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'active')]//i[contains(@class, 'static-list')]")]
         public IWebElement ActiveActionsButton { get; set; }
 
+        //TODO move this to separate component
         #region Action Panel
 
         [FindsBy(How = How.XPath, Using = "//i[contains(@class, 'static-list')]/ancestor::button")]
@@ -147,6 +144,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='device-context-header']//button[@aria-label='filters']")]
         public IWebElement FilterExpressionIcon { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='filter-panel']//div[@class='context-tools-filters ng-star-inserted']")]
+        public IWebElement FiltersExpression { get; set; }
 
         [FindsBy(How = How.XPath,
             Using = ".//button[contains(@class, 'pull-left context-toggle')]//i[@class='material-icons mat-clear']")]
@@ -257,11 +257,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-selection-checkbox']")]
         public IWebElement Checkbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-body-viewport')]")]
-        public IWebElement TableBody { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-body-viewport')]//div[@class='ag-center-cols-container']")]
         public IWebElement TableContent { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//mat-option//div[contains(@class, 'text-container')]//span")]
+        public IList<IWebElement> StringFilterValues { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='ag-center-cols-viewport']//div[@role='row']")]
         public IList<IWebElement> TableRows { get; set; }
@@ -310,7 +310,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'inline-success')]")]
         public IWebElement SuccessMessage { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//button[contains(@class, 'close')]")]
+        [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'messageClose')]")]
         public IWebElement CloseButtonInSuccessMessage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[text()='This list does not exist or you do not have access to it']")]
@@ -504,12 +504,24 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(selector);
         }
 
+        //Get all span with text
+        private string _dropdownOptions = ".//mat-option//span[string-length(text())>0]";
+
         public IWebElement GetDropdownValueByName(string dropdownName)
         {
             var text = dropdownName.Split('\'').Aggregate(string.Empty, (current, s) => current + $"[contains(text(),'{s}')]");
-            var selector = By.XPath($".//mat-option//span{text}");
+            var selector = By.XPath($"{_dropdownOptions}{text}");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
+        }
+
+        public List<string> GetDropdownValues()
+        {
+            var optionsList = Driver.FindElements(By.XPath(_dropdownOptions));
+            if (!optionsList.Any())
+                throw new Exception($"Unable to get dropdown values");
+            var values = optionsList.Select(x => x.Text).ToList();
+            return values;
         }
 
         #endregion
@@ -520,6 +532,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
             if (!Driver.IsElementDisplayed(by, WebDriverExtensions.WaitTime.Medium))
                 throw new Exception($"Textbox with '{placeholder}' placeholder is not displayed");
             return Driver.FindElement(by);
+        }
+
+        public IWebElement GetInputAddButton(string placeholder)
+        {
+            var selector = GetNamedTextbox(placeholder).FindElement(By.XPath(".//../ancestor::mat-form-field//button"));
+            Driver.WaitForElementToBeDisplayed(selector);
+            return selector;
         }
 
         public IWebElement GetNamedTextboxErrorMessageElement(string placeholder)
@@ -642,6 +661,15 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 throw new Exception($"'{option}' was not found in the '{placeholder}' autocomplete");
         }
 
+        public void InputWithAddButton(string placeholder, string option)
+        {
+            var button = GetNamedTextbox(placeholder);
+            button.Click();
+            button.ClearWithBackspaces();
+            button.SendKeys(option);
+            GetInputAddButton(placeholder).Click();
+        }
+
         public int GetElementTopYCoordinate(IWebElement element)
         {
             return element.Location.Y;
@@ -744,6 +772,14 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Driver.WaitForDataLoading();
             Driver.WaitForElementsToBeDisplayed(selector, 30, false);
             return Driver.FindElements(selector).First(x => x.Displayed());
+        }
+
+        public void ClickButtonByName(string buttonName)
+        {
+            var button = GetActionsButtonByName(buttonName);
+            Driver.WaitForElementToBeEnabled(button);
+            button.Click();
+            Driver.WaitForDataLoading(50);
         }
 
         public IWebElement GetButtonOnMessageBoxByNameOnActionPanel(string button)
@@ -1108,6 +1144,50 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             var selector = By.XPath($".//div[@col-id='application' and @role='gridcell']//a[contains(text(), '{itemName}')]");
             return Driver.FindElements(selector).First();
+        }
+
+        //For adding Project Scope items, Buckets and Create Teams page
+        public void AddItem(string itemName)
+        {
+            var selector = $".//div[contains(@class,'scrollbar-helper')]//span[contains(text(), '{itemName}')]";
+            Driver.WaitForElementToBeDisplayed(By.XPath(selector));
+            Driver.FindElement(By.XPath(selector)).Click();
+        }
+
+        //For adding Project Scope items, Buckets and Create Teams page
+        public void AddItemsToMultiSelect(List<string> items)
+        {
+            foreach (string itemText in items)
+            {
+                var search = GetNamedTextbox("Search");
+                search.Clear();
+                search.SendKeys(itemText);
+                AddItem(itemText);
+                search.ClearWithHomeButton(Driver);
+            }
+        }
+
+        public IWebElement GetExpandableMultiselect(string titleText)
+        {
+            var selector =
+                By.XPath($".//div[contains(@class,'panel-expand-inner')]//span[contains(text(),'{titleText}')]/..");
+            if (!Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Medium))
+                throw new Exception($"'{titleText}' multiselect was not found");
+            return Driver.FindElement(selector);
+        }
+
+        public string GetTitleFomExpandableMultiselect(string partOfTitle)
+        {
+            var element = GetExpandableMultiselect(partOfTitle);
+            var text = element.FindElement(By.XPath(".//span[@class='title']")).Text;
+            return text;
+        }
+
+        public IWebElement ExpandCollapseMultiselectButton(string titleText)
+        {
+            var element = GetExpandableMultiselect(titleText);
+            var button = element.FindElement(By.XPath(".//button"));
+            return button;
         }
     }
 }

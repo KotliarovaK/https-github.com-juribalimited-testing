@@ -394,7 +394,7 @@ namespace DashworksTestAutomation.Pages
             var dashboardWidget =
                 By.XPath($".//div[@class='widget']//span[text()='{widgetName}']//ancestor::div/div[@class='widget']");
 
-            Driver.WaitForDataLoading();
+            Driver.WaitForElementToBeDisplayed(dashboardWidget);
             return Driver.FindElement(dashboardWidget);
         }
 
@@ -448,14 +448,22 @@ namespace DashworksTestAutomation.Pages
 
         public IWebElement GetCardWidgetContent(string widgetTitle)
         {
-            var cardWidget = By.XPath($".//*[text()='{widgetTitle}']/ancestor :: div[@class='widget-top']/following-sibling::div//div[@class='card-widget-value value-link ng-star-inserted']");
+            //var cardWidget = By.XPath($".//*[text()='{widgetTitle}']/ancestor :: div[@class='widget-top']/following-sibling::div//div[@class='card-widget-value value-link ng-star-inserted']");
+            var cardWidget = By.XPath($".//*[text()='{widgetTitle}']/ancestor :: div[@class='widget-whole']//div[contains(@class, 'card-widget-value')]//span");
+            Driver.WaitForElementToBeDisplayed(cardWidget);
+            return Driver.FindElement(cardWidget);
+        }
+
+        public IWebElement GetWidgetEmptyMessageByName(string widgetTitle)
+        {
+            var cardWidget = By.XPath($".//*[text()='{widgetTitle}']/ancestor :: div[@class='widget-whole']//div[contains(@class,'empty-message')]");
             Driver.WaitForDataLoading();
             return Driver.FindElement(cardWidget);
         }
 
         public IWebElement GetTopBarActionButton(string buttonName)
         {
-            var cardWidget = By.XPath($".//div[@class='action-container']/button//i[text()='{buttonName}']");
+            var cardWidget = By.XPath($".//div[@class='action-container']/button//i[text()='{buttonName.ToLower()}']");
             Driver.WaitForDataLoading();
             return Driver.FindElement(cardWidget);
         }

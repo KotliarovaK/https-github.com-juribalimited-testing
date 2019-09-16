@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using DashworksTestAutomation.DTO.Evergreen.Admin.Automations;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity;
+using DashworksTestAutomation.Pages.Evergreen.ItemDetails.CustomFields;
 using DashworksTestAutomation.Utils;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
@@ -20,11 +23,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
     {
         private readonly RemoteWebDriver _driver;
         private readonly AutomationActions _automationActions;
+        private readonly Automations _automations;
 
-        public EvergreenJnr_BasePage(RemoteWebDriver driver, AutomationActions automationActions)
+        public EvergreenJnr_BasePage(RemoteWebDriver driver, AutomationActions automationActions, Automations automations)
         {
             _driver = driver;
             _automationActions = automationActions;
+            _automations = automations;
         }
 
         #region Named Autocomplete
@@ -84,6 +89,15 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             CheckAutocompletAndTextboxText(placeholder, expectedText);
         }
 
+        [Then(@"'(.*)' content is not displayed in '(.*)' autocomplete after search")]
+        public void ThenContentIsNotDisplayedInAutocompleteAfterSearch(string content, string placeholder)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.PopulateNamedTextbox(placeholder, content);
+
+            Utils.Verify.IsFalse(page.AutocompleteDropdown.Displayed(), $"{content} text is displayed in the {placeholder} autocomplete");
+        }
+
         private void CheckAutocompletAndTextboxText(string placeholder, string expectedText)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
@@ -101,9 +115,15 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var page = _driver.NowAt<BaseDashboardPage>();
             page.GetNamedTextbox(placeholder).Clear();
             page.GetNamedTextbox(placeholder).SendKeys(text);
+            page.BodyContainer.Click();
 
             if (placeholder.Equals("Action Name"))
                 _automationActions.Value.Add(text);
+
+            if (placeholder.Equals("Automation Name"))
+                _automations.Value.Add(new AutomationsDto() { automationName = text });
+
+            _driver.WaitForDataLoading();
         }
 
         [Then(@"'(.*)' content is displayed in '(.*)' textbox")]
@@ -128,6 +148,31 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 $"Incorrect error message color for '{placeholder}' field exclamation icon");
         }
 
+        [When(@"User adds '(.*)' value from '(.*)' textbox")]
+        public void WhenUserAddsValueFromTextbox(string option, string fieldName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.InputWithAddButton(fieldName, option);
+        }
+
+        [Then(@"'(.*)' add button tooltip is displayed for '(.*)' textbox")]
+        public void ThenAddButtonTooltipIsDisplayedForTextbox(string text, string fieldName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var button = page.GetInputAddButton(fieldName);
+            page.BodyContainer.Click();
+            _driver.MouseHover(button);
+            var toolTipText = _driver.GetTooltipText();
+            Utils.Verify.AreEqual(text, toolTipText, $"Incorrect tooltip for Add button in the {fieldName} textbox");
+        }
+
+        [Then(@"Add button for '(.*)' textbox is disabled")]
+        public void ThenAddButtonForTextboxIsDisabled(string fieldName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Utils.Verify.IsTrue(Convert.ToBoolean(page.GetInputAddButton(fieldName).Disabled()), $"Add button for {fieldName} textbox is active");
+        }
+
         #endregion
 
         #region Dropdown
@@ -150,6 +195,19 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         [When(@"User selects '(.*)' in the '(.*)' dropdown")]
         public void WhenUserSelectsInTheDropdown(string value, string dropdownName)
+        {
+            SelectDropdown(value, dropdownName);
+        }
+
+        [When(@"User selects '(.*)' in the '(.*)' dropdown with wait")]
+        public void WhenUserSelectsInTheDropdownWithWait(string value, string dropdownName)
+        {
+            SelectDropdown(value, dropdownName);
+            //Used for Projects Scope to wait for changes to be applied
+            Thread.Sleep(3000);
+        }
+
+        private void SelectDropdown(string value, string dropdownName)
         {
             var dropdown = _driver.NowAt<BaseDashboardPage>();
             dropdown.GetDropdownByName(dropdownName).Click();
@@ -194,6 +252,16 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.IsTrue(dropdown.GetDropdownByName(dropdownName).Displayed(), $"{dropdownName} is not displayed");
         }
 
+        [Then(@"only following items are displayed in the dropdown:")]
+        public void ThenOnlyFollowingItemsAreDisplayedInTheDropdown(Table table)
+        {
+            var basePage = _driver.NowAt<BaseDashboardPage>();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = basePage.GetDropdownValues();
+            Verify.AreEqual(expectedList, actualList, "Dropdown values are different");
+            basePage.BodyContainer.Click();
+        }
+
         #endregion
 
         #region Datepicker
@@ -202,10 +270,42 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void WhenUserEntersTextToDatepicker(string text, string placeholder)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            page.GetNamedTextbox(placeholder).Clear();
-            page.GetNamedTextbox(placeholder).SendKeys(text);
+            var datepicker = page.GetNamedTextbox(placeholder);
+            //Just clear is not working for some reason
+            datepicker.Click();
+            datepicker.SendKeys(OpenQA.Selenium.Keys.Control + "a");
+            datepicker.SendKeys(OpenQA.Selenium.Keys.Delete);
+            datepicker.SendKeys(text);
 
             page.BodyContainer.Click();
+        }
+
+        #endregion
+
+        #region Expandable multiselect
+
+        [When(@"User expands multiselect to add objects")]
+        public void WhenUserExpandsMultiselectToAddObjects()
+        {
+            var basePage = _driver.NowAt<BaseDashboardPage>();
+            basePage.ExpandCollapseMultiselectButton("").Click();
+        }
+
+        [When(@"User selects following Objects from the expandable multiselect")]
+        public void WhenUserSelectsFollowingObjectsFromTheExpandableMultiselect(Table table)
+        {
+            var itemsToAdd = table.Rows.Select(x => x["Objects"]).ToList();
+            var basePage = _driver.NowAt<BaseDashboardPage>();
+            basePage.AddItemsToMultiSelect(itemsToAdd);
+        }
+
+        [When(@"User expands multiselect and selects following Objects")]
+        public void WhenUserExpandsMultiselectAndSelectsFollowingObjects(Table table)
+        {
+            var itemsToAdd = table.Rows.Select(x => x["Objects"]).ToList();
+            var basePage = _driver.NowAt<BaseDashboardPage>();
+            basePage.ExpandCollapseMultiselectButton("").Click();
+            basePage.AddItemsToMultiSelect(itemsToAdd);
         }
 
         #endregion

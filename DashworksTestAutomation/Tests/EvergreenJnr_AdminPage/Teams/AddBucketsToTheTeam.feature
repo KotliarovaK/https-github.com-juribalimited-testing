@@ -22,7 +22,7 @@ Scenario: EvergreenJnr_AdminPage_AddingBucketsToTheTeam
 	Then "Teams" page should be displayed to the user
 	When User enters "TestTeam5" text in the Search field for "Team" column
 	And User clicks content from "Team" column
-	And User clicks "Buckets" tab
+	And User navigates to the 'Buckets' left menu item
 	And User clicks the "ADD BUCKETS" Action button 
 	Then Add Buckets page is displayed to the user
 	When User expands "Evergreen" project to add bucket
@@ -51,7 +51,7 @@ Scenario: EvergreenJnr_AdminPage_CheckBucketsSortingAndFiltersForTeams
 	Then "Teams" page should be displayed to the user
 	When User enters "1803 Team" text in the Search field for "Team" column
 	And User clicks content from "Team" column
-	And User clicks "Buckets" tab
+	And User navigates to the 'Buckets' left menu item
 	When User click on "Bucket" column header on the Admin page
 	Then data in table is sorted by "Bucket" column in ascending order on the Admin page
 	When User click on "Bucket" column header on the Admin page

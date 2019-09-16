@@ -25,12 +25,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = "//span[text()='Default Team']")]
         public IWebElement DefaultTeamCheckbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//mat-checkbox[contains(@class, 'mat-checkbox-checked')]")]
-        public IWebElement InactiveDefaultTeamCheckbox { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "//mat-option/span/span[text()='Remove Members']")]
-        public IWebElement RemoveButtonInActions { get; set; }
-
+        //TODO this is button in grid action header. Should be moved to generic place
         [FindsBy(How = How.XPath, Using = "//button/span[text()='REMOVE']")]
         public IWebElement RemoveButtonOnPage { get; set; }
 

@@ -38,6 +38,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             searchElement.SearchEverythingField.SendKeys(OpenQA.Selenium.Keys.Enter);
         }
 
+        [When(@"User presses Enter key in in Global Search Field")]
+        public void WhenUserPressesEnterInGlobalSearchField()
+        {
+            var searchElement = _driver.NowAt<GlobalSearchElement>();
+            searchElement.SearchEverythingField.SendKeys(OpenQA.Selenium.Keys.Enter);
+        }
+
         [Then(@"""(.*)"" is displayed below Global Search field")]
         public void ThenIsDisplayedBelowGlobalSearchField(string searchText)
         {
@@ -88,6 +95,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var searchElement = _driver.NowAt<GlobalSearchElement>();
             _driver.WaitForElementToBeDisplayed(searchElement.NoResultFound);
             Utils.Verify.AreEqual(text, searchElement.NoResultFound.Text, $"{text} is not displayed");
+        }
+
+        [Then(@"'(.*)' label is displayed below Global Search field")]
+        public void ThenSeeAllResultsLabelIsDisplayedBelowGlobalSearchField(string label)
+        {
+            var searchElement = _driver.NowAt<GlobalSearchElement>();
+            _driver.WaitForElementToBeDisplayed(searchElement.ShowAllResultsLabel);
+
+            Utils.Verify.AreEqual(label, searchElement.ShowAllResultsLabel.Text, $"{label} is not displayed");
         }
 
         [Then(@"""(.*)"" message is not displayed below Global Search field")]

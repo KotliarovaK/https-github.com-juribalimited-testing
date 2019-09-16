@@ -60,7 +60,7 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//input[@placeholder='Max Values']")]
         public IWebElement MaxValues { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//*[@aria-label='ColorScheme']")]
+        [FindsBy(How = How.XPath, Using = ".//*[@aria-label='Colour Scheme']")]
         public IWebElement ColorScheme { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//*[@formcontrolname='colourSchemeId']")]
@@ -93,7 +93,11 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//div[text()='This list does not exist or you do not have access to it']")]
         public IWebElement ListDoesntExistMessage { get; set; }
 
-        
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'empty-message')]")]
+        public IWebElement PreviewPaneMessageText { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@role='alert']/div[last()]")]
+        public IWebElement PreviewPaneAlertText { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {
@@ -125,21 +129,24 @@ namespace DashworksTestAutomation.Pages
 
         public void SelectSplitByItem(string item)
         {
-            var splitBy = ".//*[@aria-label='SplitBy']";
+            var splitByDdl = ".//*[@aria-label='SplitBy']";
             var expandedItems = $".//span[@class='mat-option-text']";
-            var listNameSelector = $".//mat-option//span[contains(text(), '{item}')]";
+            var itemToBeSelected = $".//mat-option//span[contains(text(), '{item}')]";
 
             for (int i = 0; i < 3; i++)
             {
                 if (Driver.FindElements(By.XPath(expandedItems)).Count > 0)
                 {
-                    Driver.FindElement(By.XPath(listNameSelector)).Click();
+                    //click item in expanded ddl
+                    Driver.FindElement(By.XPath(itemToBeSelected)).Click();
+                    System.Threading.Thread.Sleep(500);
                     break;
                 }
                 else
                 {
-                    Driver.FindElement(By.XPath(splitBy)).Click();
-                    System.Threading.Thread.Sleep(1000);
+                    //expand ddl
+                    Driver.FindElement(By.XPath(splitByDdl)).Click();
+                    System.Threading.Thread.Sleep(500);
                 }
             }
         }

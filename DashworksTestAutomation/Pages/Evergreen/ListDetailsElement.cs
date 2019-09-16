@@ -23,7 +23,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = ".//i[contains(@class,'material-icons pull-left list-star-icon')]")]
         public IWebElement FavoriteButton { get; set; }
-
+        
         [FindsBy(How = How.XPath,
             Using = ".//i[contains(@class,'material-icons pull-left list-star-icon star-filled')]")]
         public IWebElement UnFavoriteButton { get; set; }
@@ -34,7 +34,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'remove mat-icon-button')]")]
         public IWebElement RemoveListButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@class='btn mat-button']")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'list-notification ng-star-inserted')]//button[contains(@class,'btn mat-button')]")]
         public IWebElement DeleteButtonInTheWarningMessage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='permissions action-panel-ddl']")]
@@ -151,6 +151,20 @@ namespace DashworksTestAutomation.Pages.Evergreen
             var selector = By.XPath($".//tr[contains(@class, 'menu-show-on-hover')]//td[text()='{userName}']");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetListDetailsLabelByText(string text)
+        {
+            var selector = By.XPath($".//div[@class='listPanel']//span[contains(text(),'{text}')]");
+
+            try
+            {
+                return Driver.FindElement(selector);
+            }
+            catch (NoSuchElementException)
+            {
+                return null;
+            }
         }
     }
 }

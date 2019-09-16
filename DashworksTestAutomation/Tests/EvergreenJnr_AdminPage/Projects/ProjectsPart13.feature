@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12892 @Cleanup @Cleanup @Projects @TEST
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12892 @Cleanup @Cleanup @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThatOnlyFilteredListObjectsAreUsedAsAScopeOfProject
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
@@ -37,7 +37,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameEditedInSeniorIsUpdatedInA
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "Project13096" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
+	And User selects 'All Devices' option from 'Scope' autocomplete
 	When User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
@@ -62,11 +62,11 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameEditedInSeniorIsUpdatedInA
 	And User selects all rows on the grid
 	And User removes selected item
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12776 @Cleanup @TEST
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12776 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterClickUpdateForDynamicList
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
-	When User click on 'Hostname' column header
+	When User clicks on 'Hostname' column header
 	And User create dynamic list with "DynamicList5588" name on "Devices" page
 	Then "DynamicList5588" list is displayed to user
 	When Project created via API and opened
@@ -75,42 +75,42 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	Then Project "TestProject12776" is displayed to user
 	When User selects "Scope" tab on the Project details page
 	And User selects "Scope Changes" tab on the Project details page
-	And User expands the object to add 
-	And User selects following Objects
+	And User expands multiselect to add objects 
+	And User selects following Objects from the expandable multiselect
 	| Objects        |
 	| SZ46M6IS71DPZ1 |
-	And User clicks "Users" tab in the Project Scope Changes section
-	And User expands the object to add 
-	And User selects following Objects
+	And User navigates to the 'Users' tab on Project Scope Changes page
+	And User expands multiselect to add objects 
+	And User selects following Objects from the expandable multiselect
 	| Objects                          |
 	| ACD252468 (Nicolas O. Mc Millan) |
 	And User clicks the "UPDATE ALL CHANGES" Action button
 	Then Warning message with "1 device will be added, 1 user will be added" text is displayed on the Admin page
 	And Objects to add panel is disabled
-	When User clicks "Devices" tab in the Project Scope Changes section
+	When User navigates to the 'Devices' tab on Project Scope Changes page
 	Then Objects to add panel is disabled
 	When User clicks the "UPDATE PROJECT" Action button
 	Then Success message is displayed and contains "2 objects queued for onboarding, 0 objects offboarded" text
 	Then "UPDATE ALL CHANGES" Action button is disabled
 	And "Devices to add (0 of 17278 selected)" is displayed to the user in the Project Scope Changes section
 	Then Objects to add panel is active
-	When User clicks "Users" tab in the Project Scope Changes section
+	When User navigates to the 'Users' tab on Project Scope Changes page
 	Then "Users to add (0 of 14628 selected)" is displayed to the user in the Project Scope Changes section
 	Then Objects to add panel is active
-	When User expands the object to add 
-	And User selects following Objects
+	When User expands multiselect to add objects 
+	And User selects following Objects from the expandable multiselect
 	| Objects                    |
 	| AAK881049 (Miguel W. Owen) |
 	Then "UPDATE ALL CHANGES" Action button is active
-	When User clicks "Devices" tab in the Project Scope Changes section
-	And User expands the object to add 
-	And User selects following Objects
+	When User navigates to the 'Devices' tab on Project Scope Changes page
+	And User expands multiselect to add objects 
+	And User selects following Objects from the expandable multiselect
 	| Objects        |
 	| 00SH8162NAS524 |
 	Then "UPDATE ALL CHANGES" Action button is active
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12776 @DAS13973 @Cleanup @TEST
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12776 @DAS13973 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterClickUpdateForStaticList
 	When User create static list with "StaticList12776" name on "Users" page with following items
 	| ItemName            |
@@ -123,31 +123,31 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	| TestProject12777 | All Users | None            | Clone from Evergreen to Project |
 	Then Project "TestProject12777" is displayed to user
 	Then 'Clone evergreen buckets to project buckets' content is displayed in 'Buckets' dropdown
-	When User clicks "Capacity" tab
+	When User navigates to the 'Capacity' left menu item
 	Then 'Clone evergreen capacity units to project capacity units' content is displayed in 'Capacity Units' dropdown
-	When User clicks "Scope" tab
+	When User navigates to the 'Scope' left menu item
 	When User selects "Scope Changes" tab on the Project details page
-	And User expands the object to add 
-	And User selects following Objects
+	And User expands multiselect to add objects 
+	And User selects following Objects from the expandable multiselect
 	| Objects                                |
 	| 00BDBAEA57334C7C8F4 (Basa, Rogelio)    |
 	| 00CFE13AAE104724AF5 (Hardieway, Linda) |
 	And User clicks the "UPDATE ALL CHANGES" Action button
 	Then Warning message with "2 users will be added" text is displayed on the Admin page
 	Then Objects to add panel is disabled
-	When User clicks "Devices" tab in the Project Scope Changes section
+	When User navigates to the 'Devices' tab on Project Scope Changes page
 	Then Objects to add panel is disabled
 	When User clicks the "UPDATE PROJECT" Action button
 	Then Success message is displayed and contains "2 objects queued for onboarding, 0 objects offboarded" text
 	Then "UPDATE ALL CHANGES" Action button is disabled
-	When User clicks "Users" tab in the Project Scope Changes section
+	When User navigates to the 'Users' tab on Project Scope Changes page
 	Then "Users to add (0 of 41337 selected)" is displayed to the user in the Project Scope Changes section
-	When User clicks "Devices" tab in the Project Scope Changes section
+	When User navigates to the 'Devices' tab on Project Scope Changes page
 	Then Objects to add panel is active
-	When User clicks "Users" tab in the Project Scope Changes section
+	When User navigates to the 'Users' tab on Project Scope Changes page
 	Then Objects to add panel is active
-	When User expands the object to add 
-	And User selects following Objects
+	When User expands multiselect to add objects 
+	And User selects following Objects from the expandable multiselect
 	| Objects                             |
 	| 000F977AC8824FE39B8 (Spruill, Shea) |
 	Then "UPDATE ALL CHANGES" Action button is active

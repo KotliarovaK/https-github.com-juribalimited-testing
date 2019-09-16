@@ -172,7 +172,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksShowDashboardsPanelOnDashboardsPage()
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-
+            _driver.WaitForElementToBeDisplayed(page.DashboardsPanelIcon);
             page.DashboardsPanelIcon.Click();
         }
 
@@ -675,7 +675,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForDataLoading();
-            Utils.Verify.AreEqual(text, page.TextInDeleteAlert.First().Text, "PLEASE ADD EXCEPTION MESSAGE");
+            Utils.Verify.AreEqual(text, page.TextInDeleteAlert.First().Text, "Delete confirmation text is different");
+        }
+
+        [Then(@"Delete widget warning message is displayed on Dashboards page")]
+        public void ThenUserCantSeeWarningMessageOnDashboardsPage()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
+            Utils.Verify.That(page.TextInDeleteAlert.Count, Is.EqualTo(0), "Delete confirmation is still displayed");
         }
 
         [Then(@"User sees ""(.*)"" text in ""(.*)"" warning messages on Dashboards page")]
@@ -738,8 +746,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenWidgetIsDisplayedToTheUser(string widgetName)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            _driver.WaitForDataLoading();
-            Utils.Verify.IsTrue(page.GetWidgetByName(widgetName).Displayed(), $"{widgetName} Widget is not displayed");
+            _driver.WaitForElementToBeDisplayed(page.GetWidgetByName(widgetName));
+            //Utils.Verify.IsTrue(page.GetWidgetByName(widgetName).Displayed(), $"{widgetName} Widget is not displayed");
         }
 
         [Then(@"Label ""(.*)"" displayed for ""(.*)"" widget")]
@@ -873,12 +881,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     page.PermissionUserField.Clear();
                     page.PermissionUserField.SendKeys(row["User"]);
                     page.SelectOptionFromList(row["User"]);
+                    Thread.Sleep(300);
                 }
 
                 if (!string.IsNullOrEmpty(row["Permission"]))
                 {
                     page.PermissionTypeField.Click();
                     page.SelectOptionFromList(row["Permission"]);
+                    Thread.Sleep(300);
                 }
 
                 page.PermissionAddUserButton.Click();
@@ -936,6 +946,35 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             page.GetCardWidgetContent(widgetTitle).Click();
+        }
+
+        [Then(@"Value '(.*)' is displayed in the card '(.*)' widget")]
+        public void ValueIsDisplayedInCardWidget(string value, string widgetName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+
+            Utils.Verify.That(page.GetCardWidgetContent(widgetName).Text, Is.EqualTo(value), "Card value is different.");
+        }
+
+        [Then(@"'(.*)' message is displayed in '(.*)' widget")]
+        public void ThenEmptyMessageTextDisplayedForWidget(string message, string widgetName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            Utils.Verify.That(page.GetWidgetEmptyMessageByName(widgetName).Text, Is.EqualTo(message), "Widget message is different.");
+        }
+
+        [Then(@"'(.*)' message is displayed in Preview")]
+        public void ThenEmptyMessageTextDisplayedInPreview(string message)
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            Utils.Verify.That(page.PreviewPaneMessageText.Text, Is.EqualTo(message), "Preview message is different.");
+        }
+
+        [Then(@"'(.*)' alert is displayed in Preview")]
+        public void ThenAlertTestDisplayedInPreview(string message)
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            Utils.Verify.That(page.PreviewPaneAlertText.Text, Is.EqualTo(message), "Preview alert is different.");
         }
 
         [When(@"User clicks first Dashboard in dashboards list")]
@@ -1008,6 +1047,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.GetTopBarActionButton(buttonName).Click();
         }
 
+        [Then(@"User sees ""(.*)"" tooltip for ""(.*)"" on the Dashboard")]
+        public void ThenUserSeesTooltipForButtons(string tooltip, string buttonName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.MouseHover(page.GetTopBarActionButton(buttonName));
+            var toolTipText = _driver.GetTooltipText();
+            Utils.Verify.AreEqual(tooltip, toolTipText, "Tooltip is incorrect");
+        }
+
         [Then(@"Print Preview is displayed to the User")]
         public void ThenPrintPreviewIsDisplayedToTheUser()
         {
@@ -1015,6 +1063,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.IsTrue(page.PrintPreviewSettingsPopUp.Displayed(), "Print Preview is not Displayed");
             Utils.Verify.IsTrue(page.DashWorksPrintLogo.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
             Utils.Verify.IsTrue(page.PrintPreviewWidgets.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
+        }
+        
+        [Then(@"There is no breadcrumbs displayed on Dashboard page")]
+        public void ThereIsNoBreadcrumbsDisplayedOnDashboardPage()
+        {
+            var page = _driver.NowAt<PrintDashboardsPage>();
+            Utils.Verify.That(page.PrintBreadcrumbs.Displayed(), Is.False, "Print Preview displayed with breadcrumbs");
         }
 
         [When(@"User selects ""(.*)"" option in the ""(.*)"" dropdown for Print Preview Settings")]

@@ -13,7 +13,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotAppearsAfterDuplicateActionWith
 	And User creates new Slot via Api
 	| Project            | SlotName   | DisplayName | Tasks | CapacityType    | Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday |
 	| ProjectForDAS13979 | Slot 13979 | 13979       |       | Teams and Paths | 0      | 1       | 2         | 3        | 4      | 5        | 6      |
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	And User selects "Slots" tab on the Project details page
 	And User opens settings for "Slot 13979" row
 	And User selects "Duplicate" option from settings menu
@@ -70,7 +70,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCopySuffixDisplayingForNames
 	And User creates new Slot via Api
 	| Project            | SlotName   | DisplayName | CapacityType    |
 	| ProjectForDAS14478 | Slot 14478 | 14478       | Teams and Paths |
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	And User selects "Slots" tab on the Project details page
 	When User opens settings for "Slot 14478" row
 	And User selects "Duplicate" option from settings menu
@@ -82,7 +82,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCopySuffixDisplayingForNames
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13980 @DAS13981 @DAS17458
 Scenario: EvergreenJnr_AdminPage_CheckThatMessageDisplayedAndMoveBtnDisabledWhenInvalidValueEnteredInSlotMoveToPositionDialog
 	When User navigates to "Windows 7 Migration (Computer Scheduled Project)" project details
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	And User selects "Slots" tab on the Project details page
 	And User clicks String Filter button for "Paths" column on the Admin page
 	When User selects "No Paths" checkbox from String Filter on the Admin page
@@ -106,7 +106,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotIsMovedToLastPositionIfValueEntere
 	| ProjectForDAS13791 | Slot 10001 | 10001       | Teams and Paths |
 	| ProjectForDAS13791 | Slot 10002 | 10002       | Teams and Paths |
 	| ProjectForDAS13791 | Slot 10003 | 10003       | Teams and Paths |
-	And User clicks "Capacity" tab
+	And User navigates to the 'Capacity' left menu item
 	And User selects "Slots" tab on the Project details page
 	Then User sees next Slots on the Capacity Slots page:
 	| slots      |
