@@ -414,7 +414,7 @@ namespace DashworksTestAutomation.Pages
         {
             var dashboardWidget =
                 By.XPath($".//div[@class='widget']//h5/span[text()='{widgetName}']//ancestor::div/div[@class='widget']");
-            Driver.WaitForDataLoading();
+            Driver.WaitForElementToBeDisplayed(dashboardWidget);
             return Driver.FindElement(dashboardWidget);
         }
 

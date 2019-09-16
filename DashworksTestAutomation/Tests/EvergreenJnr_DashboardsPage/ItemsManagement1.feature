@@ -119,7 +119,7 @@ Examples:
 	| Dashboard for DAS14586_applications | Bar    | All Applications Widget For DAS_14586 | All Applications | Application   |              | Count            | Count DESC                     | All Applications Widget For DAS_145862 | true       |
 	| Dashboard for DAS14586_mailboxes    | Column | All Mailboxes Widget For DAS_14586    | All Mailboxes    | Email Address | Mail Server  | Count distinct   | Mail Server Count distinct ASC | All Mailboxes Widget For DAS_145862    | true       |
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14728 @DAS14263 @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14728 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetLegendCopiedWhenDuplicatingSection
 	When Dashboard with "Dashboard for DAS14728" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
@@ -127,18 +127,10 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetLegendCopiedWhenDuplicating
 	And User creates new Widget
 	| WidgetType | Title             | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
 	| Pie        | WidgetForDAS14728 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC | 10        | true       |
-	And User remembers number of Widgets with Legend on Dashboards page
-	And User clicks Ellipsis menu for Section having "WidgetForDAS14728" Widget on Dashboards page
+	Then User sees '1' Widgets with Legend on Dashboards page
+	When User clicks Ellipsis menu for Section having "WidgetForDAS14728" Widget on Dashboards page
 	And User clicks "Duplicate" item from Ellipsis menu on Dashboards page
-	Then User sees number of Widgets with Legend increased by "1" on Dashboards page
-	When User clicks Dashboards Details icon on Dashboards page
-	Then Permission panel is displayed to the user
-	When User changes sharing type from "Private" to "Specific users / teams"
-	When User clicks the "ADD TEAM" Action button
-	When User selects the "Team 1061" team for sharing
-	And User select "Admin" in Select Access dropdown
-	When User clicks the "CANCEL" button on Dashboard Details
-	Then Team/User section in not displayed on Dashboard Details
+	Then User sees '2' Widgets with Legend on Dashboards page
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS12978 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheEditMode

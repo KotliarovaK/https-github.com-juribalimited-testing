@@ -564,3 +564,14 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserWithAdminRightsCanAddUserInSh
 	| User          | Permission |
 	| Administrator | Read       |
 	Then User "Admin" was added to shared list with "Read Only" permission
+
+
+	#Sergiy: DAS14263 create test and recomment issue
+	#When User clicks Dashboards Details icon on Dashboards page
+	#Then Permission panel is displayed to the user
+	#When User changes sharing type from "Private" to "Specific users / teams"
+	#When User clicks the "ADD TEAM" Action button
+	#When User selects the "Team 1061" team for sharing
+	#And User select "Admin" in Select Access dropdown
+	#When User clicks the "CANCEL" button on Dashboard Details
+	#Then Team/User section in not displayed on Dashboard Details
