@@ -84,7 +84,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project
             Verify.IsTrue(page.ActiveProjectByName(pName), $"{pName} is not displayed on the Project page");
         }
 
-        [When(@"User projects are removed via API")]
+        [When(@"Projects created by User are removed via API")]
         public void WhenUserRemovesNewProjectsViaApi()
         {
             DeleteNewlyCreatedProject();

@@ -1151,6 +1151,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ItemDetails_TopBar.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr_ListDetails\ListDetailsFunctionalityPart9.feature.cs">
+      <DependentUpon>ListDetailsFunctionalityPart9.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr_ListDetails\ListDetailsFunctionalityPart8.feature.cs">
       <DependentUpon>ListDetailsFunctionalityPart8.feature</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -1999,6 +2004,10 @@
     <None Include="Tests\EvergreenJnr_ItemDetails\ItemDetails_TopBar.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ItemDetails_TopBar.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ListDetails\ListDetailsFunctionalityPart9.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ListDetailsFunctionalityPart9.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_ListDetails\ListDetailsFunctionalityPart8.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

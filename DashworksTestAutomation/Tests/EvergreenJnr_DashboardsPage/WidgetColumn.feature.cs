@@ -556,7 +556,7 @@ this.FeatureBackground();
 #line 139
  testRunner.When("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 140
- testRunner.Then("Card \"ColumnWidget#1ColumnWidget#2\" Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Card \"ColumnWidget#2\" Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

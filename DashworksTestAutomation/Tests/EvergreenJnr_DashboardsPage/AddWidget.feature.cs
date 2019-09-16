@@ -836,7 +836,7 @@ this.FeatureBackground();
 #line 146
  testRunner.And("User create static list with \"TestList_DAS17539\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 147
- testRunner.And("User projects are removed via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Projects created by User are removed via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 148
  testRunner.And("Dashboard with \"Dashboard for DAS17539\" name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 149

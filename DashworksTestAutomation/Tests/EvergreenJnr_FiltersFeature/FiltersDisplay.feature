@@ -1807,13 +1807,11 @@ Scenario: EvergreenJnr_DevicesList_CheckThatStatusFilterAvailableOptionsList
 	| Complete      |
 	| Offboarded    |
 
-	#Remove NotReady after Pulsar release
-@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS17579 @DAS16485 @Not_Ready
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS17579
 Scenario: EvergreenJnr_ApplicationsList_CheckUserPostalCodeOptionsDisplaying
 	When User clicks "Applications" on the left-hand menu
 	And User clicks the Filters button
-	Then Filter Expression icon displayed within correct block
-	When user select "User Postal Code" filter
+	And user select "User Postal Code" filter
 	Then following operator options available:
 	| operator            |
 	| Equals              |
@@ -1826,6 +1824,16 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUserPostalCodeOptionsDisplaying
 	| Does not end with   |
 	| Empty               |
 	| Not empty           |
+
+@Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS17252 @DAS16485
+Scenario: EvergreenJnr_MailboxesList_CheckThatFilterExpressionSectionIsMovedToFilterPanel
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "All Mailboxes" list should be displayed to the user
+	When User clicks "Mailbox Pivot (Complex)" list name in left panel
+	And User clicks the Filters button
+	Then Filter Expression icon displayed within Filter Panel
+	When User clicks Filter Expression icon in Filter Panel
+	Then Filter Expression displayed within Filter Panel
 
 @Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS15194 @DAS17743
 Scenario: EvergreenJnr_ApplicationsList_CheckThatDeviceOwnerFilterCategoryHasCorrectSubcategories
