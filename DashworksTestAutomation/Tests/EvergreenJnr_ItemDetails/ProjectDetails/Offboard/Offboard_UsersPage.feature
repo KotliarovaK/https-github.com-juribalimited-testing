@@ -7,13 +7,14 @@ Background: Pre-Conditions
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @Offboard @DAS17964 @DAS17990 @DAS17000 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindowWithNoAssotiatedDevicesOnUsersPage
-	When User clicks "Users" on the left-hand menu
-	Then "All Users" list should be displayed to the user
-	When User perform search by "01F6D54271D74F1BB8D"
-	And User click content from "Username" column
+	When User navigates to the 'User' details page for '01F6D54271D74F1BB8D' item
+	#When User clicks "Users" on the left-hand menu
+	#Then "All Users" list should be displayed to the user
+	#When User perform search by "01F6D54271D74F1BB8D"
+	#And User click content from "Username" column
 	Then Details page for "01F6D54271D74F1BB8D" item is displayed to the user
 	When User switches to the "USE ME FOR AUTOMATION(USR SCHDLD)" project in the Top bar on Item details page
-	And User navigates to the "Projects" main-menu on the Details page
+	When User navigates to the 'Projects' left menu item
 	And User navigates to the "Project Details" sub-menu on the Details page
 	And User clicks the "OFFBOARD" Action button
 	Then Dialog Pop-up is displayed on the Item Details page
@@ -27,6 +28,7 @@ Scenario: EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboa
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 02X387UQLFP3ISU  |
+	Then "02X387UQLFP3ISU" chip have tooltip with "02X387UQLFP3ISU" text
 	When User clicks the "OFFBOARD" Action button
 	When User clicks the "OFFBOARD" Action button
 	#going to check the object state
@@ -36,7 +38,7 @@ Scenario: EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboa
 	Then "Projects" page should be displayed to the user
 	When User enters "USE ME FOR AUTOMATION(USR SCHDLD)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
-	When User clicks "Scope" tab
+	When User navigates to the 'Scope' left menu item
 	And User selects "History" tab on the Project details page
 	Then "01F6D54271D74F1BB8D" content is displayed in "Item" column
 	Then "02X387UQLFP3ISU" content is displayed in "Item" column
@@ -50,7 +52,7 @@ Scenario: EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboa
 	And User click content from "Username" column
 	Then Details page for "01F6D54271D74F1BB8D" item is displayed to the user
 	When User switches to the "USE ME FOR AUTOMATION(USR SCHDLD)" project in the Top bar on Item details page
-	And User navigates to the "Projects" main-menu on the Details page
+	When User navigates to the 'Projects' left menu item
 	And User navigates to the "Project Details" sub-menu on the Details page
 	And User clicks the "OFFBOARD" Action button
 	Then Dialog Pop-up is displayed on the Item Details page
@@ -69,7 +71,7 @@ Scenario: EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboa
 	Then "Projects" page should be displayed to the user
 	When User enters "USE ME FOR AUTOMATION(USR SCHDLD)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
-	When User clicks "Scope" tab
+	When User navigates to the 'Scope' left menu item
 	And User selects "History" tab on the Project details page
 	Then '01F6D54271D74F1BB8D' content is displayed in the 'Item' column
 	Then '02X387UQLFP3ISU' content is displayed in the 'Item' column
@@ -82,7 +84,7 @@ Scenario: EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboa
 	And User click content from "Username" column
 	Then Details page for "0088FC8A50DD4344B92" item is displayed to the user
 	When User switches to the "USE ME FOR AUTOMATION(USR SCHDLD)" project in the Top bar on Item details page
-	And User navigates to the "Projects" main-menu on the Details page
+	When User navigates to the 'Projects' left menu item
 	And User navigates to the "Project Details" sub-menu on the Details page
 	And User clicks the "OFFBOARD" Action button
 	Then Dialog Pop-up is displayed on the Item Details page

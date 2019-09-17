@@ -1178,15 +1178,30 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Offboard_UsersPage.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_ItemDetails\ProjectDetails\Relink.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Relink.feature</DependentUpon>
-    </Compile>
     <Compile Include="Tests\EvergreenJnr_ItemDetails\ItemDetails_TopBar.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ItemDetails_TopBar.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_ItemDetails\ProjectDetails\Relink\Relink_ApplicationsPage.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Relink_ApplicationsPage.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_ItemDetails\ProjectDetails\Relink\Relink_DevicesPage.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Relink_DevicesPage.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_ItemDetails\ProjectDetails\Relink\Relink_MailboxesPage.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Relink_MailboxesPage.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_ItemDetails\ProjectDetails\Relink\Relink_UsersPage.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Relink_UsersPage.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_ListDetails\ListDetailsFunctionalityPart9.feature.cs">
       <DependentUpon>ListDetailsFunctionalityPart9.feature</DependentUpon>
@@ -2062,13 +2077,25 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Offboard_UsersPage.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_ItemDetails\ProjectDetails\Relink.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Relink.feature.cs</LastGenOutput>
-    </None>
     <None Include="Tests\EvergreenJnr_ItemDetails\ItemDetails_TopBar.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ItemDetails_TopBar.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ItemDetails\ProjectDetails\Relink\Relink_ApplicationsPage.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Relink_ApplicationsPage.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ItemDetails\ProjectDetails\Relink\Relink_DevicesPage.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Relink_DevicesPage.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ItemDetails\ProjectDetails\Relink\Relink_MailboxesPage.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Relink_MailboxesPage.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ItemDetails\ProjectDetails\Relink\Relink_UsersPage.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Relink_UsersPage.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_ListDetails\ListDetailsFunctionalityPart9.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

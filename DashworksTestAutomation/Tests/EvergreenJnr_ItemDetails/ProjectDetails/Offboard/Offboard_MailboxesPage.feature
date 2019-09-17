@@ -7,13 +7,14 @@ Background: Pre-Conditions
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @Offboard @DAS17964 @DAS17990 @DAS17000 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindowWithNoAssotiatedDevicesOnMailboxesPage
-	When User clicks "Mailboxes" on the left-hand menu
-	Then "All Mailboxes" list should be displayed to the user
-	When User perform search by "01DEAC5F18B34084B04@bclabs.local"
-	And User click content from "Email Address" column
+	When User navigates to the 'Mailbox' details page for '01DEAC5F18B34084B04@bclabs.local' item
+	#When User clicks "Mailboxes" on the left-hand menu
+	#Then "All Mailboxes" list should be displayed to the user
+	#When User perform search by "01DEAC5F18B34084B04@bclabs.local"
+	#And User click content from "Email Address" column
 	Then Details page for "01DEAC5F18B34084B04@bclabs.local" item is displayed to the user
 	When User switches to the "USE ME FOR AUTOMATION(MAIL SCHDLD)" project in the Top bar on Item details page
-	And User navigates to the "Projects" main-menu on the Details page
+	When User navigates to the 'Projects' left menu item
 	And User navigates to the "Project Details" sub-menu on the Details page
 	And User clicks the "OFFBOARD" Action button
 	Then Dialog Pop-up is displayed on the Item Details page
@@ -29,6 +30,7 @@ Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOf
 	When User select "Username" rows in the grid
 	| SelectedRowsName    |
 	| 01DEAC5F18B34084B04 |
+	Then "BCLABS\01DEAC5F18B34084B04 (Owner)" chip have tooltip with "BCLABS\01DEAC5F18B34084B04 (Owner)" text
 	When User clicks the "OFFBOARD" Action button
 	When User clicks the "OFFBOARD" Action button
 	#going to check the object state
@@ -38,7 +40,7 @@ Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOf
 	Then "Projects" page should be displayed to the user
 	When User enters "USE ME FOR AUTOMATION(MAIL SCHDLD)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
-	When User clicks "Scope" tab
+	When User navigates to the 'Scope' left menu item
 	And User selects "History" tab on the Project details page
 	Then '01DEAC5F18B34084B04@bclabs.local' content is displayed in the 'Item' column
 	Then '01DEAC5F18B34084B04' content is displayed in the 'Item' column
@@ -52,7 +54,7 @@ Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOf
 	And User click content from "Email Address" column
 	Then Details page for "01DEAC5F18B34084B04@bclabs.local" item is displayed to the user
 	When User switches to the "USE ME FOR AUTOMATION(MAIL SCHDLD)" project in the Top bar on Item details page
-	And User navigates to the "Projects" main-menu on the Details page
+	When User navigates to the 'Projects' left menu item
 	And User navigates to the "Project Details" sub-menu on the Details page
 	And User clicks the "OFFBOARD" Action button
 	Then Dialog Pop-up is displayed on the Item Details page
@@ -73,7 +75,7 @@ Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOf
 	Then "Projects" page should be displayed to the user
 	When User enters "USE ME FOR AUTOMATION(MAIL SCHDLD)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
-	When User clicks "Scope" tab
+	When User navigates to the 'Scope' left menu item
 	And User selects "History" tab on the Project details page
 	Then '01DEAC5F18B34084B04@bclabs.local' content is displayed in the 'Item' column
 	Then '01DEAC5F18B34084B04' content is displayed in the 'Item' column
@@ -86,7 +88,7 @@ Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOf
 	And User click content from "Email Address" column
 	Then Details page for "alex.cristea@juriba.com" item is displayed to the user
 	When User switches to the "Email Migration" project in the Top bar on Item details page
-	And User navigates to the "Projects" main-menu on the Details page
+	When User navigates to the 'Projects' left menu item
 	And User navigates to the "Project Details" sub-menu on the Details page
 	And User clicks the "OFFBOARD" Action button
 	Then Dialog Pop-up is displayed on the Item Details page
