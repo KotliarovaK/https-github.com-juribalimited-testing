@@ -24,7 +24,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUsersToAddAndRemoveAreChangingAppropri
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "UsersProject" in the "Project Name" field
-	And User selects "StaticList6529" in the Scope Project dropdown
+	And User selects 'StaticList6529' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
 	Then Success message with "The project has been created" text is displayed on the Projects page
 	When User clicks newly created object link
@@ -32,8 +32,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUsersToAddAndRemoveAreChangingAppropri
 	Then Info message is displayed and contains "There are no objects in this project, use Scope Changes to add objects to your project" text
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Users to add (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
-	When User expands the object to add 
-	And User selects following Objects
+	When User expands multiselect to add objects 
+	And User expands multiselect and selects following Objects
 	| Objects                                   |
 	| 000F977AC8824FE39B8 (Spruill, Shea)       |
 	| 002B5DC7D4D34D5C895 (Collor, Christopher) |
@@ -42,7 +42,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUsersToAddAndRemoveAreChangingAppropri
 	And User clicks the "UPDATE PROJECT" Action button
 	Then Success message with "2 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
 	When User selects "Scope Details" tab on the Project details page
-	And User selects "StaticList6530" in the Scope Project details
+	And User selects 'StaticList6530' in the 'Scope' dropdown with wait
 	And User selects "Scope Changes" tab on the Project details page
 	Then "Users to add (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
 	#And "Users to remove (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
@@ -78,7 +78,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationFromListPageWithUse
 	And User removes selected item
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
-	When User click on '<ColumnName>' column header
+	When User clicks on '<ColumnName>' column header
 	And User create dynamic list with "<DynamicList>" name on "<ListName>" page
 	Then "<DynamicList>" list is displayed to user
 	When User clicks Create Project from the main list
@@ -104,7 +104,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMailboxProjectCreationWithCloneEvergreenBu
 	Then "Create Project" page should be displayed to the user
 	When User enters "MailboxesProject25" in the "Project Name" field
 	When User selects "Standalone Project" in the Mode Project dropdown
-	And User selects "All Mailboxes" in the Scope Project dropdown
+	And User selects 'All Mailboxes' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks "Projects" link on the Admin page
@@ -125,7 +125,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMailboxProjectCreationWithCloneEvergreenBu
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "MailboxesProject26" in the "Project Name" field
-	And User selects "StaticList5846" in the Scope Project dropdown
+	And User selects 'StaticList5846' option from 'Scope' autocomplete
 	When User selects "Standalone Project" in the Mode Project dropdown
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
@@ -134,7 +134,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMailboxProjectCreationWithCloneEvergreenBu
 	And User removes selected item
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "All Mailboxes" list should be displayed to the user
-	When User click on 'Email Address' column header
+	When User clicks on 'Email Address' column header
 	And User create dynamic list with "DynamicList9513" name on "Mailboxes" page
 	Then "DynamicList9513" list is displayed to user
 	When User clicks Admin on the left-hand menu
@@ -144,7 +144,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMailboxProjectCreationWithCloneEvergreenBu
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "MailboxesProject27" in the "Project Name" field
-	And User selects "DynamicList9513" in the Scope Project dropdown
+	And User selects 'DynamicList9513' option from 'Scope' autocomplete
 	When User selects "Standalone Project" in the Mode Project dropdown
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
@@ -184,7 +184,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationWithCloneEvergreenB
 	And User removes selected item
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
-	When User click on '<ColumnName>' column header
+	When User clicks on '<ColumnName>' column header
 	And User create dynamic list with "<DynamicList>" name on "<PageName>" page
 	Then "<DynamicList>" list is displayed to user
 	When User clicks Create Project from the main list

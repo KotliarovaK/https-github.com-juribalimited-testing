@@ -585,7 +585,7 @@ this.FeatureBackground();
 #line 110
  testRunner.When("User clicks content from \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 111
- testRunner.When("User clicks \"Readiness\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Readiness\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 112
  testRunner.Then("Cog-menu DDL is displayed in High Contrast mode", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 113

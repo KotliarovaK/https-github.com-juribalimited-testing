@@ -231,7 +231,7 @@ this.FeatureBackground();
  testRunner.Then("Details page for \"002B5DC7D4D34D5C895@bclabs.local\" item is displayed to the user" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 36
- testRunner.When("User navigates to the \"Users\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Users\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 37
  testRunner.When("User navigates to the \"Users\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 38
@@ -301,18 +301,18 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table7.AddRow(new string[] {
-                        "FullAccess"});
-            table7.AddRow(new string[] {
                         "ReadPermission"});
+            table7.AddRow(new string[] {
+                        "FullAccess"});
             table7.AddRow(new string[] {
                         "DeleteItem"});
             table7.AddRow(new string[] {
-                        "ChangeOwner"});
-            table7.AddRow(new string[] {
                         "ChangePermission"});
-#line 67
+            table7.AddRow(new string[] {
+                        "ChangeOwner"});
+#line 68
  testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table7, "Then ");
-#line 74
+#line 75
  testRunner.When("User closes Checkbox filter for \"Permission\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             this.ScenarioCleanup();

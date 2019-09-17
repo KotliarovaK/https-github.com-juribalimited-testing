@@ -17,7 +17,7 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTargetAppFilterIsAddedT
 	When User have created "Equals" Lookup filter with column and "<FilterOption>" option
 	Then "<Text>" is displayed in added filter info
 	Then "<RowsCount>" rows are displayed in the agGrid
-	When User click on '<ColumnName>' column header
+	When User clicks on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in ascending order 
 
 Examples:
@@ -48,7 +48,7 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTargetAppKeyFilterIsAdd
 	| <FilterOption> |
 	Then "<Text>" is displayed in added filter info
 	Then "<RowsCount>" rows are displayed in the agGrid
-	When User click on '<ColumnName>' column header
+	When User clicks on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in ascending order 
 
 Examples:
@@ -77,7 +77,7 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTargetAppReadinessFilte
 	When User have created "Equals" Lookup filter with column and "<FilterOption>" option
 	Then "<Text>" is displayed in added filter info
 	Then "<RowsCount>" rows are displayed in the agGrid
-	When User click on '<ColumnName>' column header
+	When User clicks on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in descending order 
 
 Examples:
@@ -151,7 +151,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDashworksFirstSeenFilterIsAdded
 	When User have created "Empty" Date filter with column and "" option
 	Then "Dashworks First Seen is empty" is displayed in added filter info
 	Then "<RowsCount>" rows are displayed in the agGrid
-	When User click on 'Dashworks First Seen' column header
+	When User clicks on 'Dashworks First Seen' column header
 	Then data in table is sorted by 'Dashworks First Seen' column in descending order 
 
 Examples:
@@ -177,7 +177,7 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatApplicationReadinessFil
 	When User have created "Equals" Lookup filter with column and "<FilterOption>" option
 	Then "<Text>" is displayed in added filter info
 	Then "<RowsCount>" rows are displayed in the agGrid
-	When User click on '<ColumnName>' column header
+	When User clicks on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in descending order 
 
 Examples:
@@ -208,7 +208,7 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisat
 	| <FilterOption>     |
 	Then "<Text>" is displayed in added filter info
 	Then "<RowsCount>" rows are displayed in the agGrid
-	When User click on '<ColumnName>' column header
+	When User clicks on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in ascending order 
 
 Examples: 
@@ -239,7 +239,7 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatCoreApplicationFilterIs
 	| <FilterOption>     |
 	Then "<Text>" is displayed in added filter info
 	Then "<RowsCount>" rows are displayed in the agGrid
-	When User click on '<ColumnName>' column header
+	When User clicks on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in descending order 
 
 Examples: 
@@ -270,7 +270,7 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatHideFromEndUsersFilterI
 	| <FilterOption>     |
 	Then "<Text>" is displayed in added filter info
 	Then "<RowsCount>" rows are displayed in the agGrid
-	When User click on '<ColumnName>' column header
+	When User clicks on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in descending order 
 
 Examples: 

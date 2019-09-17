@@ -87,7 +87,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredAfterGoingBackT
 @Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11042
 Scenario Outline: EvergreenJnr_AllLists_CheckThatPrimaryColumnIsDisplayedAfterAddingAFilterWithColumn
 	When User clicks "<ListName>" on the left-hand menu
-	Then "<ListName>" list should be displayed to the user
+	Then "All <ListName>" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "<FilterName>" filter where type is "Contains" with added column and following value:
@@ -190,7 +190,7 @@ Examples:
 @Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS10977 @DAS12351
 Scenario Outline: EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowserBackButtonForLookupFilters
 	When User clicks "<ListName>" on the left-hand menu
-	Then "<ListName>" list should be displayed to the user
+	Then "All <ListName>" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "<FilterName>" filter
@@ -367,7 +367,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheSaveButtonIsNotAvailableWhenEnter
 Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWhichReturnsCorrectItems
 	When User clicks Admin on the left-hand menu
 	When User clicks "Evergreen" link on the Admin page
-	When User clicks "Capacity Units" tab
+	When User navigates to the 'Capacity Units' left menu item
 	And User clicks the "CREATE EVERGREEN CAPACITY UNIT" Action button
 	And User type "CapacityUnit13201" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "13201" Name in the "Description" field on the Project details page
@@ -460,7 +460,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	And "2" rows are displayed in the agGrid
 	When User clicks Admin on the left-hand menu
 	When User clicks "Evergreen" link on the Admin page
-	When User clicks "Capacity Units" tab
+	When User navigates to the 'Capacity Units' left menu item
 	And User select "Capacity Unit" rows in the grid
 	| SelectedRowsName  |
 	| CapacityUnit13201 |
@@ -582,7 +582,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnIsEmptyWhenEqualNoneAndContain
 	When User add "Windows7Mi: Category" filter where type is "Does not equal" without added column and following checkboxes:
 	| SelectedCheckboxes |
 	| None               |
-	When User click on 'Windows7Mi: Category' column header
+	When User clicks on 'Windows7Mi: Category' column header
 	Then Content is present in the newly added column
 	| ColumnName           |
 	| Windows7Mi: Category |
@@ -590,7 +590,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnIsEmptyWhenEqualNoneAndContain
 @Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12537 @DAS12579
 Scenario Outline: EvergreenJnr_AllLists_CheckThatContentIsDisplayedInTheAddedColumnAfterApplyingIsNotNoneOperator
 	When User clicks "<ListName>" on the left-hand menu
-	Then "<ListName>" list should be displayed to the user
+	Then "All <ListName>" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "<FilterName>" filter where type is "Does not equal" with added column and following checkboxes:
@@ -686,7 +686,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatCorrectDeviceDataIsReturnedAfte
 	When User add "Application" filter where type is "Equals" with added column and following value:
 	| Values                                     |
 	| Exemples de conception de bases de données |
-	When User click on 'Device Count (Entitled)' column header
+	When User clicks on 'Device Count (Entitled)' column header
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
@@ -1080,7 +1080,7 @@ Examples:
 @Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12351
 Scenario Outline: EvergreenJnr_DevicesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseDepartmentFilter
 	When User clicks "<PageName>" on the left-hand menu
-	Then "<PageName>" list should be displayed to the user
+	Then "All <PageName>" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Department" filter where type is "Equals" with added column and "<SelectedCheckboxes>" Tree List option
@@ -1277,7 +1277,7 @@ Examples:
 @Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS13145
 Scenario Outline: EvergreenJnr_AllLists_ChecksThatApplicationFilterIsNotExcludedApplicationsWhichAreNotLinkedToAnyDevices
 	When User clicks "<PageName>" on the left-hand menu
-	Then "<PageName>" list should be displayed to the user
+	Then "All <PageName>" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Application" filter
@@ -1340,7 +1340,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatApplicationNameIsDisplayedAfte
 @Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS13381 @DAS14603
 Scenario Outline: EvergreenJnr_AllLists_ChecksThatFilterInfoIsDisplayedCorrectlyAfterSelectingObjectAndThenReturningBackToSerachResult
 	When User clicks "<PageName>" on the left-hand menu
-	Then "<PageName>" list should be displayed to the user
+	Then "All <PageName>" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "<FilterName>" filter where type is "Equals" with added column and following checkboxes:
@@ -1460,7 +1460,7 @@ Scenario: EvergreenJnr_DevicesList_CheckDeviceOwnerLDAPColumnsAndFilters
 	| Owner usncreated |
 	| Owner lastlogon  |
 	| Owner admincount |
-	When User click on 'Owner title' column header
+	When User clicks on 'Owner title' column header
 	Then Content is empty in the column
 	| ColumnName       |
 	| Owner title      |
@@ -1737,7 +1737,7 @@ Scenario: EvergreenJnr_UsersList_CheckSlotsSortOrderForUsersList
 	When User Add And "Domain" filter where type is "Equals" with added column and Lookup option
 	| SelectedValues |
 	| BCLABS         |
-	When User click on 'UserEvergr: Stage 2 \ Dropdown Non RAG Date (User) (Slot)' column header
+	When User clicks on 'UserEvergr: Stage 2 \ Dropdown Non RAG Date (User) (Slot)' column header
 	Then following content is displayed in the "UserEvergr: Stage 2 \ Dropdown Non RAG Date (User) (Slot)" column
 	| Values      |
 	| User Slot 1 |
@@ -1747,7 +1747,7 @@ Scenario: EvergreenJnr_UsersList_CheckSlotsSortOrderForUsersList
 	| User Slot 1 |
 	| User Slot 2 |
 	| User Slot 2 |
-	When User click on 'UserEvergr: Stage 2 \ Dropdown Non RAG Date (User) (Slot)' column header
+	When User clicks on 'UserEvergr: Stage 2 \ Dropdown Non RAG Date (User) (Slot)' column header
 	Then following content is displayed in the "UserEvergr: Stage 2 \ Dropdown Non RAG Date (User) (Slot)" column
 	| Values      |
 	| User Slot 2 |
@@ -1770,7 +1770,7 @@ Scenario: EvergreenJnr_DevicesList_CheckSlotsSortOrderForDevicesList
 	When User Add And "Device Type" filter where type is "Equals" with added column and Lookup option
 	| SelectedValues |
 	| Laptop         |
-	When User click on '1803: Pre-Migration \ Scheduled Date (Slot)' column header
+	When User clicks on '1803: Pre-Migration \ Scheduled Date (Slot)' column header
 	Then following content is displayed in the "1803: Pre-Migration \ Scheduled Date (Slot)" column
 	| Values                     |
 	| Birmingham Morning         |
@@ -1783,7 +1783,7 @@ Scenario: EvergreenJnr_DevicesList_CheckSlotsSortOrderForDevicesList
 	| London Depot 09:00 - 11:00 |
 	| London Depot 09:00 - 11:00 |
 	| London Depot 09:00 - 11:00 |
-	When User click on '1803: Pre-Migration \ Scheduled Date (Slot)' column header
+	When User clicks on '1803: Pre-Migration \ Scheduled Date (Slot)' column header
 	Then following content is displayed in the "1803: Pre-Migration \ Scheduled Date (Slot)" column
 	| Values                     |
 	| London Depot 09:00 - 11:00 |
@@ -1806,7 +1806,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckSlotsSortOrderForApplicationsList
 	When User add "UserEvergr: Stage 3 \ Radiobutton Readiness Date Owner (Application) (Slot)" filter where type is "Does not equal" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| Empty              |
-	When User click on 'UserEvergr: Stage 3 \ Radiobutton Readiness Date Owner (Application) (Slot)' column header
+	When User clicks on 'UserEvergr: Stage 3 \ Radiobutton Readiness Date Owner (Application) (Slot)' column header
 	Then following content is displayed in the "UserEvergr: Stage 3 \ Radiobutton Readiness Date Owner (Application) (Slot)" column
 	| Values             |
 	| Application Slot 1 |
@@ -1814,7 +1814,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckSlotsSortOrderForApplicationsList
 	| Application Slot 1 |
 	| Application Slot 1 |
 	| Application Slot 2 |
-	When User click on 'UserEvergr: Stage 3 \ Radiobutton Readiness Date Owner (Application) (Slot)' column header
+	When User clicks on 'UserEvergr: Stage 3 \ Radiobutton Readiness Date Owner (Application) (Slot)' column header
 	Then following content is displayed in the "UserEvergr: Stage 3 \ Radiobutton Readiness Date Owner (Application) (Slot)" column
 	| Values             |
 	| Application Slot 2 |
@@ -1837,13 +1837,13 @@ Scenario: EvergreenJnr_MailboxesList_CheckSlotsSortOrderForMailboxes
 	| Spruill, Shea             |
 	| Bandyopadhyay, Sudipta    |
 	| Balanceactiv, Info        |
-	When User click on 'MailboxEve: 1 \ Scheduled - mailbox (Slot)' column header
+	When User clicks on 'MailboxEve: 1 \ Scheduled - mailbox (Slot)' column header
 	Then following content is displayed in the "MailboxEve: 1 \ Scheduled - mailbox (Slot)" column
 	| Values                                             |
 	| CA -Mailbox-Nov 1, 2018-Nov 10, 2018               |
 	| CA -Mailbox-Nov 11, 2018-Nov 30, 2018              |
 	| TRT-Mailbox-Nov 11, 2018-Nov 24, 2018\RT=A\T=Admin |
-	When User click on 'MailboxEve: 1 \ Scheduled - mailbox (Slot)' column header
+	When User clicks on 'MailboxEve: 1 \ Scheduled - mailbox (Slot)' column header
 	Then following content is displayed in the "MailboxEve: 1 \ Scheduled - mailbox (Slot)" column
 	| Values                                             |
 	| TRT-Mailbox-Nov 11, 2018-Nov 24, 2018\RT=A\T=Admin |
@@ -2300,3 +2300,32 @@ Scenario: EvergreenJnr_ApplicationsList_CheckDeviceOwnerItemsCounterPartVI
 	|        | Entitled to device  |
 	|        | Installed on device |
 	Then "18" rows are displayed in the agGrid
+
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS17557
+Scenario: EvergreenJnr_DevicesList_CheckThatSerialNumberToETLComputerAdded
+	When User clicks "Devices" on the left-hand menu
+	And User clicks the Filters button
+	And User add "Serial Number" filter where type is "Not empty" with added column and following value:
+	| Values        |
+	And User Add And "Serial Number" filter where type is "Does not equal" with added column and following value:
+	| Values        |
+	| CET2826853682 |
+	And User Add And "Serial Number" filter where type is "Contains" with added column and following value:
+	| Values |
+	| 034    |
+	And User Add And "Serial Number" filter where type is "Does not contain" with added column and following value:
+	| Values |
+	| 9889   |
+	And User Add And "Serial Number" filter where type is "Does not begin with" with added column and following value:
+	| Values |
+	| davi   |
+	And User Add And "Serial Number" filter where type is "Ends with" with added column and following value:
+	| Values |
+	| 4      |
+	| 5      |
+	| 8      |
+	| 6      |
+	And User Add And "Serial Number" filter where type is "Does not end with" with added column and following value:
+	| Values |
+	| 436    |
+	Then "54" rows are displayed in the agGrid

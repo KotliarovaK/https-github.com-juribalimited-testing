@@ -308,7 +308,7 @@ namespace DashworksTestAutomation.Helpers
         public override void Do()
         {
             var addedOptionSelector =
-                ".//span[@class='chips-item-text ng-star-inserted']";
+                ".//span[@class='chips-item-text ng-star-inserted' and contains(text(), '{0}')]";
             var allAddedOptionsSelector =
                 ".//div[@class='filterAddPanel ng-star-inserted']/div[contains(@class,'form-container')]//div[@class='form-group ng-star-inserted']//li/span";
             var filterValueSelector = By.XPath(
@@ -578,7 +578,7 @@ namespace DashworksTestAutomation.Helpers
                         .SendKeys(row["Values"]);
                     _driver.FindElement(
                             By.XPath(
-                                ".//button[@class='button-small mat-primary mat-raised-button']"))
+                                ".//div[@class='filter-panel']//button[contains(@class,'button-small')]"))
                         .Click();
                 }
             }

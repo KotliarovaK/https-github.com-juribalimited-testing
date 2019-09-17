@@ -142,9 +142,7 @@ this.FeatureBackground();
                         "AggregateBy",
                         "AggregateFunction",
                         "OrderBy",
-                        "TableOrientation",
-                        "MaxValues",
-                        "ShowLegend"});
+                        "MaxValues"});
             table1.AddRow(new string[] {
                         "Pie",
                         "",
@@ -153,9 +151,7 @@ this.FeatureBackground();
                         "Hostname",
                         "Count distinct",
                         "Device Type ASC",
-                        "",
-                        "10",
-                        ""});
+                        "10"});
 #line 13
  testRunner.And("User creates new Widget", ((string)(null)), table1, "And ");
 #line 16
@@ -167,25 +163,11 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "WidgetType",
                         "Title",
-                        "List",
-                        "SplitBy",
-                        "AggregateBy",
-                        "AggregateFunction",
-                        "OrderBy",
-                        "TableOrientation",
-                        "MaxValues",
-                        "ShowLegend"});
+                        "List"});
             table2.AddRow(new string[] {
                         "",
                         "Dashboard for DAS14587",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""});
+                        "All Devices"});
 #line 18
  testRunner.When("User creates new Widget", ((string)(null)), table2, "When ");
 #line 21
@@ -259,8 +241,7 @@ this.FeatureBackground();
                         "AggregateFunction",
                         "OrderBy",
                         "TableOrientation",
-                        "MaxValues",
-                        "ShowLegend"});
+                        "MaxValues"});
             table3.AddRow(new string[] {
                         "Table",
                         "Line with one hundred and seven chars Line with one hundred and seven chars Line " +
@@ -271,8 +252,7 @@ this.FeatureBackground();
                         "Count distinct",
                         "Application ASC",
                         "Horizontal",
-                        "10",
-                        ""});
+                        "10"});
 #line 28
  testRunner.And("User creates new Widget", ((string)(null)), table3, "And ");
 #line 31
@@ -347,9 +327,7 @@ this.FeatureBackground();
                         "List",
                         "SplitBy",
                         "AggregateFunction",
-                        "AggregateBy",
                         "OrderBy",
-                        "TableOrientation",
                         "MaxValues",
                         "ShowLegend"});
             table4.AddRow(new string[] {
@@ -358,9 +336,7 @@ this.FeatureBackground();
                         "All Applications",
                         "Vendor",
                         "Count",
-                        "",
                         "Count ASC",
-                        "",
                         "10",
                         "true"});
 #line 39
@@ -375,29 +351,19 @@ this.FeatureBackground();
                         "Title",
                         "List",
                         "SplitBy",
-                        "AggregateBy",
                         "AggregateFunction",
                         "OrderBy",
-                        "TableOrientation",
                         "MaxValues",
-                        "ShowLegend",
-                        "Type",
-                        "Drilldown",
-                        "Layout"});
+                        "ShowLegend"});
             table5.AddRow(new string[] {
                         "Pie",
                         "WidgetForDAS15900_Edited",
                         "All Devices",
                         "Hostname",
-                        "",
                         "Count",
                         "Count ASC",
-                        "",
                         "11",
-                        "true",
-                        "",
-                        "",
-                        ""});
+                        "true"});
 #line 44
  testRunner.And("User adds new Widget", ((string)(null)), table5, "And ");
 #line 47
@@ -564,7 +530,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
         [NUnit.Framework.CategoryAttribute("DAS16958")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatEditWidgetPageCanBeOpenedForWidgetHavingDeletedList()
         {
             System.Exception lastException = null;
@@ -598,7 +563,6 @@ this.FeatureBackground();
                         "Evergreen",
                         "EvergreenJnr_DashboardsPage",
                         "DAS16958",
-                        "Cleanup",
                         "Cleanup"});
 #line 82
 this.ScenarioInitialize(scenarioInfo);
@@ -629,12 +593,8 @@ this.FeatureBackground();
                         "AggregateBy",
                         "AggregateFunction",
                         "OrderBy",
-                        "TableOrientation",
                         "MaxValues",
-                        "ShowLegend",
-                        "Type",
-                        "Drilldown",
-                        "Layout"});
+                        "ShowLegend"});
             table7.AddRow(new string[] {
                         "Bar",
                         "WidgetForDAS16958",
@@ -643,12 +603,8 @@ this.FeatureBackground();
                         "Device Type",
                         "Count distinct",
                         "Secure Boot Enabled ASC",
-                        "",
                         "10",
-                        "true",
-                        "",
-                        "",
-                        ""});
+                        "true"});
 #line 90
  testRunner.And("User adds new Widget", ((string)(null)), table7, "And ");
 #line 93
@@ -735,9 +691,7 @@ this.FeatureBackground();
                         "List",
                         "SplitBy",
                         "AggregateFunction",
-                        "AggregateBy",
                         "OrderBy",
-                        "TableOrientation",
                         "MaxValues",
                         "ShowLegend"});
             table8.AddRow(new string[] {
@@ -746,9 +700,7 @@ this.FeatureBackground();
                         "All Devices",
                         "Hostname",
                         "Count",
-                        "",
                         "Count ASC",
-                        "",
                         "10",
                         "true"});
 #line 109
@@ -761,6 +713,159 @@ this.FeatureBackground();
  testRunner.Then("\"Show legend\" checkbox has a correct label", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 115
  testRunner.And("\"Show data labels\" checkbox has a correct label", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatThereIsNoPossibilityToCreateWidgetBasedOnSta" +
+            "ticListWithMissedColumn")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
+        [NUnit.Framework.CategoryAttribute("Widgets")]
+        [NUnit.Framework.CategoryAttribute("DAS17539")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatThereIsNoPossibilityToCreateWidgetBasedOnStaticListWithMissedColumn()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DashboardsPage_CheckThatThereIsNoPossibilityToCreateWidgetBasedOnStaticListWithMissedColumnInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DashboardsPage_CheckThatThereIsNoPossibilityToCreateWidgetBasedOnStaticListWithMissedColumnInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckThatThereIsNoPossibilityToCreateWidgetBasedOnSta" +
+                    "ticListWithMissedColumn", null, new string[] {
+                        "Evergreen",
+                        "EvergreenJnr_DashboardsPage",
+                        "Widgets",
+                        "DAS17539",
+                        "Cleanup"});
+#line 118
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ProjectName",
+                        "Scope",
+                        "ProjectTemplate",
+                        "Mode"});
+            table9.AddRow(new string[] {
+                        "MlbxTst",
+                        "All Mailboxes",
+                        "None",
+                        "Standalone Project"});
+#line 119
+ testRunner.When("Project created via API and opened", ((string)(null)), table9, "When ");
+#line 122
+ testRunner.And("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 123
+ testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 124
+ testRunner.When("User navigate to \"MlbxTst\" Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 125
+ testRunner.Then("Project with \"MlbxTst\" name is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 126
+ testRunner.And("\"Manage Project Details\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 127
+ testRunner.When("User updates Project Short Name to \"17539Snr\" on Senior", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 128
+ testRunner.And("User clicks \"Update\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 129
+ testRunner.And("User navigate to \"Request Types\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 130
+ testRunner.Then("\"Manage Request Types\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 131
+ testRunner.When("User clicks \"Create Request Type\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "Description",
+                        "ObjectTypeString"});
+            table10.AddRow(new string[] {
+                        "MailboxPath17539",
+                        "DAS17539",
+                        "Mailbox"});
+#line 132
+ testRunner.And("User create Request Type", ((string)(null)), table10, "And ");
+#line 135
+ testRunner.And("User navigate to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 136
+ testRunner.And("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 137
+ testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedCheckboxes"});
+            table11.AddRow(new string[] {
+                        "MailboxPath17539"});
+#line 138
+ testRunner.And("User add \"17539Snr: Path\" filter where type is \"Does not equal\" with added column" +
+                    " and following checkboxes:", ((string)(null)), table11, "And ");
+#line 141
+ testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedRowsName"});
+            table12.AddRow(new string[] {
+                        "000F977AC8824FE39B8@bclabs.local"});
+#line 142
+ testRunner.And("User select \"Email Address\" rows in the grid", ((string)(null)), table12, "And ");
+#line 145
+ testRunner.And("User selects \"Create static list\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 146
+ testRunner.And("User create static list with \"TestList_DAS17539\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 147
+ testRunner.And("Projects created by User are removed via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 148
+ testRunner.And("Dashboard with \"Dashboard for DAS17539\" name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 149
+ testRunner.And("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 150
+ testRunner.And("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
+                        "WidgetType",
+                        "Title",
+                        "List",
+                        "SplitBy",
+                        "AggregateFunction",
+                        "OrderBy"});
+            table13.AddRow(new string[] {
+                        "Table",
+                        "DAS-TestList_DAS17539",
+                        "TestList_DAS17539",
+                        "Mailbox Platform",
+                        "Count",
+                        "Mailbox Platform ASC"});
+#line 151
+ testRunner.And("User adds new Widget", ((string)(null)), table13, "And ");
+#line 154
+ testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 155
+ testRunner.And("\'This widget refers to a list which has errors\' alert is displayed in Preview", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

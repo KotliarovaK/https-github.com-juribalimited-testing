@@ -9,7 +9,7 @@ Background: Pre-Conditions
 Scenario: EvergreenJnr_AllLists_CheckThatTwoDependencyAreDisplayedInTheDependentsBlock
 	When User clicks "Applications" on the left-hand menu
 	Then "All Applications" list should be displayed to the user
-	When User click on 'Application' column header
+	When User clicks on 'Application' column header
 	When User create dynamic list with "Application1" name on "Applications" page
 	Then "Application1" list is displayed to user
 	When User clicks "Devices" on the left-hand menu
@@ -92,7 +92,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatListDoesNotExistErrorWhenViewingDepende
 Scenario: EvergreenJnr_AllLists_CheckThatListPanelDoesNotExistErrorWhenViewingDependentList
 	When User clicks "Applications" on the left-hand menu
 	Then "All Applications" list should be displayed to the user
-	When User click on 'Application' column header
+	When User clicks on 'Application' column header
 	When User create dynamic list with "A1" name on "Applications" page
 	Then "A1" list is displayed to user
 	When User clicks "Devices" on the left-hand menu
@@ -123,7 +123,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatListPanelDoesNotExistErrorWhenViewingDe
 Scenario Outline: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDependenciesDynamicLists
 	When User clicks "Applications" on the left-hand menu
 	Then "All Applications" list should be displayed to the user
-	When User click on 'Application' column header
+	When User clicks on 'Application' column header
 	And User create dynamic list with "<ListName1>" name on "Applications" page
 	And User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user

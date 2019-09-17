@@ -64,10 +64,10 @@ Scenario: EvergreenJnr_AdminPage_CheckSelectedRowsCountDisplayingOnBucketsGrids
 	And User clicks content from "Bucket" column
 	And User selects all rows on the grid
 	Then User sees "16937" of "16937" rows selected label
-	When User clicks "Users" tab
+	When User navigates to the 'Users' tab on Project Scope Changes page
 	And User selects all rows on the grid
 	Then User sees "41339" of "41339" rows selected label
-	When User clicks "Mailboxes" tab
+	When User navigates to the 'Mailboxes' left menu item
 	And User selects all rows on the grid
 	Then User sees "14538" of "14538" rows selected label
 

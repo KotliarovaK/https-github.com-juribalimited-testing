@@ -18,9 +18,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
         [FindsBy(How = How.XPath, Using = ".//div[@role='row']/div[@col-id='slotName']")]
         public IList<IWebElement> GridSlotsNames { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//div[@class='form-item']//a[contains(text(), 'See Translations')]")]
-        public IWebElement LanguageTranslationsLink { get; set; }
-
         [FindsBy(How = How.XPath, Using = "//span[contains(@class, 'chips-item-text')][text()='1 more']/ancestor::button")]
         public IWebElement ExpandItemsButton { get; set; }
 
@@ -88,7 +85,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
         public IWebElement GetLanguageLinkByName(string link)
         {
             var selector = By.XPath($"//div[@class='form-item']//a[contains(text(), '{link}')]");
-            Driver.WaitForElementToBeDisplayed(selector);
+            if (!Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Short))
+                throw new Exception($"'{link}' link is not displayed");
             return Driver.FindElement(selector);
         }
 

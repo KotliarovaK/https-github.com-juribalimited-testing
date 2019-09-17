@@ -9,7 +9,7 @@ Background: Pre-Conditions
 Scenario: EvergreenJnr_DevicesLists_CheckThatUserIsNotAbleToCreateListsWithSameName
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
-	When User click on 'Hostname' column header
+	When User clicks on 'Hostname' column header
 	Then data in table is sorted by 'Hostname' column in ascending order
 	When User create dynamic list with "TestList993785" name on "Devices" page
 	Then "TestList993785" list is displayed to user
@@ -55,7 +55,7 @@ Examples:
 Scenario: EvergreenJnr_DevicesLists_CheckThatUserIsNotAbleToCreateListsWithLongNames
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
-	When User click on 'Hostname' column header
+	When User clicks on 'Hostname' column header
 	Then data in table is sorted by 'Hostname' column in ascending order
 	When User create dynamic list with "1234567890123456789012345678901234567890" name on "Devices" page
 	Then "1234567890123456789012345678901234567890" list is displayed to user

@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15432 @Cleanup @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15432 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorsAreDisplayedWhenCreateListWidgetWithStaticList
 	When User clicks "Users" on the left-hand menu
 	Then "All Users" list should be displayed to the user
@@ -23,7 +23,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorsAreDisplayedWhenCreateLis
 	Then "Widget_For_DAS15432" Widget is displayed to the user
 	And There are no errors in the browser console
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15413 @Cleanup @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15413 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatDataFromTheWidgetMatchesTheOriginalDynamicLists
 	When User clicks "Applications" on the left-hand menu
 	Then "All Applications" list should be displayed to the user
@@ -66,3 +66,25 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThahtArchivedObjectsShouldNotBeLinked
 	| List       | WidgetForDAS17814 | List17814 | 10      | 10         |
 	Then "WidgetForDAS17814" Widget is displayed to the user
 	And There are no links placed in "WidgetForDAS17814" Widget
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16167 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnListWidgetsIfTheSourceListHasNoRows
+	When User clicks "Devices" on the left-hand menu
+	And User clicks the Filters button
+	And User add "Owner Display Name" filter where type is "Equals" with added column and following value:
+	| Values |
+	| ZZZZ   |
+	And User clicks Save button on the list panel
+	And User create dynamic list with "ListForDAS16167" name on "Devices" page
+	Then "ListForDAS16167" list is displayed to user
+	When Dashboard with "DAS16167_Dashboard" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User adds new Widget
+	| WidgetType | Title             | List            |
+	| List       | WidgetForDAS16167 | ListForDAS16167 |
+	Then Widget Preview is displayed to the user
+	And 'This list does not contain any rows' message is displayed in Preview
+	When User clicks the "CREATE" Action button
+	Then "WidgetForDAS16167" Widget is displayed to the user
+	And 'This list does not contain any rows' message is displayed in 'WidgetForDAS16167' widget

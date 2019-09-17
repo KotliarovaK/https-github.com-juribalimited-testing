@@ -200,7 +200,7 @@ this.FeatureBackground();
 #line 19
  testRunner.When("User add following columns using URL to the \"Mailboxes\" page:", ((string)(null)), table3, "When ");
 #line 22
- testRunner.When("User click on \'Owner Department Full Path\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'Owner Department Full Path\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 23
  testRunner.Then("data in table is sorted by \'Owner Department Full Path\' column in ascending order" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -517,7 +517,7 @@ this.FeatureBackground();
 #line 79
  testRunner.When(string.Format("User add following columns using URL to the \"{0}\" page:", listName), ((string)(null)), table9, "When ");
 #line 82
- testRunner.When("User click on \'UserSchedu: Readiness ID\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'UserSchedu: Readiness ID\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
@@ -526,7 +526,7 @@ this.FeatureBackground();
 #line 83
  testRunner.Then("Content is present in the newly added column", ((string)(null)), table10, "Then ");
 #line 86
- testRunner.When("User click on \'UserSchedu: Readiness ID\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'UserSchedu: Readiness ID\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 87
  testRunner.Then("numeric data in table is sorted by \'UserSchedu: Readiness ID\' column in descendin" +
                     "g order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -618,9 +618,9 @@ this.FeatureBackground();
 #line 110
  testRunner.Then("\"Windows7Mi: In Scope\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 111
- testRunner.When("User click on \'Windows7Mi: In Scope\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'Windows7Mi: In Scope\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 112
- testRunner.And("User click on \'Windows7Mi: In Scope\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks on \'Windows7Mi: In Scope\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 113
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 114
@@ -706,9 +706,9 @@ this.FeatureBackground();
 #line 128
  testRunner.Then("ColumnName is added to the list", ((string)(null)), table15, "Then ");
 #line 131
- testRunner.When("User click on \'User Count\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'User Count\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 132
- testRunner.When("User click on \'User Count\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'User Count\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 133
  testRunner.Then("numeric data in table is sorted by \'User Count\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 134
@@ -807,11 +807,11 @@ this.FeatureBackground();
 #line 150
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 151
- testRunner.And(string.Format("User click on \'{0}\' column header", columnHeader), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User clicks on \'{0}\' column header", columnHeader), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 152
  testRunner.Then(string.Format("color data is sorted by \'{0}\' column in ascending order", columnHeader), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 153
- testRunner.When(string.Format("User click on \'{0}\' column header", columnHeader), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("User clicks on \'{0}\' column header", columnHeader), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 154
  testRunner.Then(string.Format("color data is sorted by \'{0}\' column in descending order", columnHeader), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -1423,19 +1423,19 @@ this.FeatureBackground();
 #line 296
  testRunner.Then("ColumnName is added to the list", ((string)(null)), table31, "Then ");
 #line 300
- testRunner.When("User click on \'State/County\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'State/County\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 301
  testRunner.Then("data in table is sorted by \'State/County\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 302
- testRunner.When("User click on \'State/County\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'State/County\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 303
  testRunner.Then("data in table is sorted by \'State/County\' column in descending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 304
- testRunner.When("User click on \'Postal Code\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'Postal Code\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 305
  testRunner.Then("data in table is sorted by \'Postal Code\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 306
- testRunner.When("User click on \'Postal Code\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'Postal Code\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 307
  testRunner.Then("data in table is sorted by \'Postal Code\' column in descending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -1508,9 +1508,9 @@ this.FeatureBackground();
 #line 322
  testRunner.Then("ColumnName is added to the list", ((string)(null)), table33, "Then ");
 #line 325
- testRunner.When("User click on \'Windows7Mi: Language\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'Windows7Mi: Language\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 326
- testRunner.When("User click on \'Windows7Mi: Language\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'Windows7Mi: Language\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 327
  testRunner.Then("\"English\" content is displayed in \"Windows7Mi: Language\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -1585,11 +1585,11 @@ this.FeatureBackground();
 #line 333
  testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table34, "And ");
 #line 336
- testRunner.And("User click on \'Evergreen Ring\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks on \'Evergreen Ring\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 337
  testRunner.Then("data in table is sorted by \'Evergreen Ring\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 338
- testRunner.When("User click on \'Evergreen Ring\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'Evergreen Ring\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 339
  testRunner.Then("data in table is sorted by \'Evergreen Ring\' column in descending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -1681,20 +1681,21 @@ this.FeatureBackground();
 
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_ChecksThatReadinessColumnIsDisplayedCorrectlyForUsersList")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_ChecksThatApplicationReadinessColumnIsDisplayedCorrectlyFo" +
+            "rUsersList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Users")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("AddColumnAction")]
         [NUnit.Framework.CategoryAttribute("DAS17945")]
-        public virtual void EvergreenJnr_UsersList_ChecksThatReadinessColumnIsDisplayedCorrectlyForUsersList()
+        public virtual void EvergreenJnr_UsersList_ChecksThatApplicationReadinessColumnIsDisplayedCorrectlyForUsersList()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_UsersList_ChecksThatReadinessColumnIsDisplayedCorrectlyForUsersListInternal();
+                    this.EvergreenJnr_UsersList_ChecksThatApplicationReadinessColumnIsDisplayedCorrectlyForUsersListInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -1713,9 +1714,10 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_UsersList_ChecksThatReadinessColumnIsDisplayedCorrectlyForUsersListInternal()
+        private void EvergreenJnr_UsersList_ChecksThatApplicationReadinessColumnIsDisplayedCorrectlyForUsersListInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_ChecksThatReadinessColumnIsDisplayedCorrectlyForUsersList", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_ChecksThatApplicationReadinessColumnIsDisplayedCorrectlyFo" +
+                    "rUsersList", null, new string[] {
                         "Evergreen",
                         "Users",
                         "EvergreenJnr_Columns",

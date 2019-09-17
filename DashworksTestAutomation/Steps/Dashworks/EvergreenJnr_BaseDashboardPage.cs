@@ -166,8 +166,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 Is.EqualTo(data.Replace(@"\t", "   ")));
         }
 
-        [When(@"User click on '(.*)' column header")]
-        public void WhenUserClickOnColumnHeader(string columnName)
+        [When(@"User clicks on '(.*)' column header")]
+        public void WhenUserClicksOnColumnHeader(string columnName)
         {
             var listPageMenu = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForDataLoading();
@@ -419,14 +419,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             foreach (var row in table.Rows)
             {
                 //Sort newly added column to got only value at first places
-                WhenUserClickOnColumnHeader(row["ColumnName"]);
+                WhenUserClicksOnColumnHeader(row["ColumnName"]);
                 var content = page.GetColumnContent(row["ColumnName"]);
 
                 //Check that at least 10 cells has some content
                 Verify.IsTrue(content.Count(x => !string.IsNullOrEmpty(x)) > 10, "Newly added column is empty");
                 //Reset column sorting to default value
-                WhenUserClickOnColumnHeader(row["ColumnName"]);
-                WhenUserClickOnColumnHeader(row["ColumnName"]);
+                WhenUserClicksOnColumnHeader(row["ColumnName"]);
+                WhenUserClicksOnColumnHeader(row["ColumnName"]);
             }
         }
 
@@ -536,6 +536,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 "Filter is created incorrectly");
         }
 
+        [Then(@"String filter values are not duplicated")]
+        public void ThenStringFilterValuesAreNotDuplicated()
+        {
+            var grid = _driver.NowAt<BaseDashboardPage>();
+            var filtersValue = grid.StringFilterValues.Select(x => x.Text).ToList();
+            Utils.Verify.AreEqual(filtersValue.Distinct().Count(), filtersValue.Count(), "String filters value are duplicated");
+        }
+
         [Then(@"""(.*)"" Application version is displayed")]
         public void ThenApplicationVersionIsDisplayed(string versionNumber)
         {
@@ -620,12 +628,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenUserRememberedValueEqualsToGridCounter()
         {
             var foundRowsCounter = _driver.NowAt<BaseGridPage>();
+            //We need this wait for grid to be updated
+            //TODO replace my something more smart
+            Thread.Sleep(1000);
             _driver.WaitForDataLoading();
             _driver.WaitForElementToBeDisplayed(foundRowsCounter.ListRowsCounter);
 
             string rememberedNumber = _columnValue.Value;
 
-            Utils.Verify.AreEqualIgnoringCase(rememberedNumber == "1" ? $"{rememberedNumber} row" : $"{rememberedNumber} rows",
+            Verify.AreEqualIgnoringCase(rememberedNumber == "1" ? $"{rememberedNumber} row" : $"{rememberedNumber} rows",
                 foundRowsCounter.ListRowsCounter.Text.Replace(",", ""), "Incorrect rows count");
         }
 

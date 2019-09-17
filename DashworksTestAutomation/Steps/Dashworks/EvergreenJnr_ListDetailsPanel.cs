@@ -133,6 +133,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.IsTrue(listDetailsElement.ListDetailsPanel.Displayed(), "List Details panel is not displayed");
             Logger.Write("List Details panel is visible");
         }
+        
+        [Then(@"'(.*)' label is displayed in List Details")]
+        public void ThenLabelIsDisplayedInListDetailsPanel(string text)
+        {
+            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            Utils.Verify.IsTrue(listDetailsElement.GetListDetailsLabelByText(text).Displayed(), $"List Details panel doesn't have {text} label");
+            Logger.Write("List Details has label");
+        }
+
+        [Then(@"'(.*)' label is not displayed in List Details")]
+        public void ThenLabelIsNotDisplayedInListDetailsPanel(string text)
+        {
+            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            Utils.Verify.IsFalse(listDetailsElement.GetListDetailsLabelByText(text).Displayed(), $"List Details panel has {text} label");
+            Logger.Write("List Details does not have label");
+        }
 
         [Then(@"User open the Dependents component")]
         public void ThenUserOpenTheDependentsComponent()

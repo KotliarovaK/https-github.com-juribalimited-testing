@@ -35,7 +35,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationWithProjectBucketsF
 	And User removes selected item
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
-	When User click on '<ColumnName>' column header
+	When User clicks on '<ColumnName>' column header
 	And User create dynamic list with "<DynamicList>" name on "<PageName>" page
 	Then "<DynamicList>" list is displayed to user
 	When User clicks Create Project from the main list
@@ -59,16 +59,16 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckOnboardingObjectUsingUpdateAppropr
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "TestProject9753" in the "Project Name" field
-	And User selects "<AllListName>" in the Scope Project dropdown
+	And User selects '<AllListName>' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "TestProject9753" is displayed to user
 	Then Info message is displayed and contains "There are no objects in this project, use Scope Changes to add objects to your project" text
 	When User selects "Scope Changes" tab on the Project details page
-	And User clicks "<TabName>" tab in the Project Scope Changes section
-	And User expands the object to add 
-	And User selects following Objects
+	And User navigates to the '<TabName>' left menu item
+	And User expands multiselect to add objects 
+	And User expands multiselect and selects following Objects
 	| Objects        |
 	| <ObjectsToAdd> |
 	And User clicks the "UPDATE ALL CHANGES" Action button
@@ -91,11 +91,11 @@ Scenario: EvergreenJnr_AdminPage_ChangingBucketFromUseEvergreenBucketsToCloneEve
 	Then "Create Project" page should be displayed to the user
 	When User enters "1MailboxesProject" in the "Project Name" field
 	#And User selects "Evergreen" in the Mode Project dropdown
-	When User selects "All Mailboxes" in the Scope Project dropdown
+	When User selects 'All Mailboxes' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks "Evergreen" link on the Admin page
-	When User clicks "Buckets" tab
+	When User navigates to the 'Buckets' left menu item
 	When User clicks Reset Filters button on the Admin page
 	When User clicks String Filter button for "Project" column on the Admin page
 	When User selects "Select All" checkbox from String Filter with item list on the Admin page
@@ -107,16 +107,16 @@ Scenario: EvergreenJnr_AdminPage_ChangingBucketFromUseEvergreenBucketsToCloneEve
 	When User enters "1MailboxesProject" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	Then Project "1MailboxesProject" is displayed to user
-	When User clicks "Details" tab
+	When User navigates to the 'Details' left menu item
 	Then "Mailbox scoped project" is displayed in the disabled Project Type field
 	When User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
 	Then There are no errors in the browser console
-	When User clicks "Scope" tab
+	When User navigates to the 'Scope' left menu item
 	And User selects "Scope Changes" tab on the Project details page
 	Then "Match to Evergreen Bucket" is displayed in the Bucket dropdown
 	When User clicks "Administration" navigation link on the Admin page
 	When User clicks "Evergreen" link on the Admin page
-	When User clicks "Buckets" tab
+	When User navigates to the 'Buckets' left menu item
 	When User clicks Reset Filters button on the Admin page
 	When User clicks String Filter button for "Project" column on the Admin page
 	When User selects "Select All" checkbox from String Filter with item list on the Admin page
@@ -134,11 +134,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoAdditionalCapacityUnitsAreCreatedWhe
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "13530Project" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
+	And User selects 'All Devices' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks "Evergreen" link on the Admin page
-	And User clicks "Capacity Units" tab
+	And User navigates to the 'Capacity Units' left menu item
 	And User clicks String Filter button for "Project" column on the Admin page
 	And User selects "Evergreen" checkbox from String Filter with item list on the Admin page
 	And User clicks String Filter button for "Project" column on the Admin page
@@ -149,13 +149,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoAdditionalCapacityUnitsAreCreatedWhe
 	And User enters "13530Project" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	Then Project "13530Project" is displayed to user
-	When User clicks "Capacity" tab
-	And User selects "Clone evergreen capacity units to project capacity units" in the "Capacity Units" dropdown
+	When User navigates to the 'Capacity' left menu item
+	And User selects 'Clone evergreen capacity units to project capacity units' in the 'Capacity Units' dropdown
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The project capacity details have been updated" text
 	When User clicks "Administration" navigation link on the Admin page
 	And User clicks "Evergreen" link on the Admin page
-	And User clicks "Capacity Units" tab
+	And User navigates to the 'Capacity Units' left menu item
 	And User clicks String Filter button for "Project" column on the Admin page
 	And User selects "Evergreen" checkbox from String Filter with item list on the Admin page
 	And User clicks String Filter button for "Project" column on the Admin page

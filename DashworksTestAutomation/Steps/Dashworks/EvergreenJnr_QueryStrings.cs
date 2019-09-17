@@ -3,6 +3,7 @@ using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages;
 using DashworksTestAutomation.Pages.Evergreen;
+using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
@@ -127,15 +128,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
             if (!dashboardPage.ResultsOnPageCount.Displayed())
             {
-                Utils.Verify.IsTrue(dashboardPage.NoResultsFoundMessage.Displayed(),
+                Verify.IsTrue(dashboardPage.NoResultsFoundMessage.Displayed(),
                     "'No Results Found' message is not displayed");
                 Logger.Write(
                     $"Evergreen agGrid Search returned '{dashboardPage.NoResultsFoundMessage.Text}' message");
             }
             else
             {
-                Utils.Verify.IsTrue(dashboardPage.ResultsOnPageCount.Displayed(), "Results count is not displayed");
-                Utils.Verify.IsTrue(dashboardPage.TableBody.Displayed(), "Table is not displayed");
+                Verify.IsTrue(dashboardPage.ResultsOnPageCount.Displayed(), "Results count is not displayed");
+                var page = _driver.NowAt<BaseGridPage>();
+                Verify.IsTrue(page.TableBody.Displayed(), "Table is not displayed");
                 Logger.Write("Main agGrid dataset is displayed");
             }
         }

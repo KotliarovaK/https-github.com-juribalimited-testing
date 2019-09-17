@@ -9,7 +9,7 @@ Background: Pre-Conditions
 Scenario Outline: EvergreenJnr_AllLists_CheckThatTheEditListFunctionIsHiddenAfterChangingPinnedColumns
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListLabel>" list should be displayed to the user
-	When User click on '<ColumnName>' column header
+	When User clicks on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in ascending order
 	When User create dynamic list with "DynamicList3" name on "<ListName>" page
 	When User have opened column settings for "<PinnedColumnName>" column
@@ -53,7 +53,7 @@ Examples:
 Scenario Outline: EvergreenJnr_AllLists_CheckThatNewCustomListMenuIsHiddenInTheListPanelAfterClickingActionsButton
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListLabel>" list should be displayed to the user
-	When User click on '<ColumnName>' column header
+	When User clicks on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in ascending order
 	Then Save to New Custom List element is displayed
 	When User clicks the Actions button
@@ -63,7 +63,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatNewCustomListMenuIsHiddenInTheL
 	| ItemName |
 	|          |
 	Then "<StaticListName>" list is displayed to user
-	When User click on '<ColumnName>' column header
+	When User clicks on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in ascending order
 	Then Save to New Custom List element is displayed
 	When User clicks the Actions button
@@ -81,7 +81,7 @@ Examples:
 Scenario Outline: EvergreenJnr_AllLists_CheckThatSaveAndCancelButtonAreHiddenAfterCancellingProcessOfSavingList
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListLabel>" list should be displayed to the user
-	When User click on '<ColumnName>' column header
+	When User clicks on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in ascending order
 	When User clicks Save button on the list panel
 	And User selects Save as new list option

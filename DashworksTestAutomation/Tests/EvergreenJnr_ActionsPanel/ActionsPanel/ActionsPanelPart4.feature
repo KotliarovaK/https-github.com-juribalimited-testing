@@ -63,6 +63,8 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatProjectNamesAreDisplayedCorrectlyIn
 	| Windows 10 Updates - Migration                   |
 	| Windows 10 Updates - New York                    |
 	| Windows 7 Migration (Computer Scheduled Project) |
+	| zDevice Sch for Automations Feature              |
+	| zUser Sch for Automations Feature                |
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	And User closed "Selected Columns" columns category

@@ -103,29 +103,29 @@ Scenario Outline: EvergreenJnr_QueryString_AdvancedFilterRowCountCheckForDeviceL
 	| <FilterName> | <QueryString>  | <Rows>   |
 
 Examples:
-	| FilterName                                      | QueryString                                                                                                                                                                                                           | Rows   |
-	| App Count (Entitled)                            | evergreen/#/devices?$filter=(entitledApplications%20%3C%3E%2012)&$select=hostname,chassisCategory,oSCategory,ownerDisplayName,entitledApplications&$orderby=entitledApplications%20desc                               | 17,217 |
-	| App Count (Installed)                           | evergreen/#/devices?$filter=(installedApplications%20%3E%2012)&$select=hostname,chassisCategory,oSCategory,ownerDisplayName,installedApplications                                                                     | 94     |
-	| App Count (Used)                                | evergreen/#/devices?$filter=(usedApplications%20%3C%2011)&$select=hostname,chassisCategory,oSCategory,ownerDisplayName,installedApplications,usedApplications                                                         | 17,185 |
-	| Application                                     | evergreen/#/devices?$filter=(application%20NOT%20EQUALS%20('882'%2C'839'%2C'778')%20WHERE%20(netdo%2Cnubdo%2Cnetd%2Cnuod%2Cniod))                                                                                     | 17,279 |
-	| Application                                     | evergreen/#/devices?$filter=(application%20EQUALS%20('882')%20WHERE%20(nuod))                                                                                                                                         | 17,279 |
-	| Application Compliance                          | evergreen/#/devices?$filter=(applicationMigrationRAG%20EQUALS%20('Red')%20WHERE%20(netdo%2Cnubdo%2Cniod%2Cnetd%2Cnuod))                                                                                               | 17,279 |
-	| Application Name                                | evergreen/#/devices?$filter=(applicationName%20EQUALS%20('%25SQL_PRODUCT_SHORT_NAME%25%20Data%20Tools%20-%20BI%20for%20Visual%20Studio%202013')%20WHERE%20(uod%2Cetd%2Cubdo%2Ciod%2Cetdo))                            | 2      |
-	| Application Name                                | evergreen/#/devices?$filter=(applicationName%20NOT%20EQUALS%20('%25SQL_PRODUCT_SHORT_NAME%25%20Data%20Tools%20-%20BI%20for%20Visual%20Studio%202013')%20WHERE%20(netdo%2Cnubdo%2Cniod%2Cnetd%2Cnuod))                 | 17,279 |
-	| Application Name                                | evergreen/#/devices?$filter=(applicationName%20CONTAINS%20('7zip')%20WHERE%20(nuod))                                                                                                                                  | 17,279 |
-	| Application Name                                | evergreen/#/devices?$filter=(applicationName%20BEGINS%20WITH%20('7zip')%20WHERE%20(ubdo%2Cetd))                                                                                                                       | 11     |
-	| Application Name                                | evergreen/#/devices?$filter=(applicationName%20DOES%20NOT%20BEGIN%20WITH%20('7zip')%20WHERE%20(nubdo%2Cnetdo))                                                                                                        | 17,150 |
-	| Application Vendor                              | evergreen/#/devices?$filter=(applicationManufacturer%20EQUALS%20('Aaronbock%20Development')%20WHERE%20(etdo))                                                                                                         | 98     |
-	| Application Vendor                              | evergreen/#/devices?$filter=(applicationManufacturer%20NOT%20EQUALS%20('Aaronbock%20Development')%20WHERE%20(netdo))                                                                                                  | 12,202 |
-	| Application Owner (App Custom Fields)           | evergreen/#/devices?$filter=(applicationCustomField_80%20EQUALS%20('App%20Discovery')%20WHERE%20(uod%2Cetd%2Ciod%2Cubdo%2Cetdo))                                                                                      | 1,003  |
-	| Application Owner (App Custom Fields)           | evergreen/#/devices?$filter=(applicationCustomField_80%20NOT%20EQUALS%20('App%20Discovery')%20WHERE%20(netdo%2Cnubdo%2Cniod%2Cnetd%2Cnuod))                                                                           | 17,279 |
-	| Application Owner (App Custom Fields)           | evergreen/#/devices?$filter=(applicationCustomField_80%20NOT%20EQUALS%20('App%20Discovery')%20WHERE%20(iod))                                                                                                          | 12,076 |
-	| General information field 5 (App Custom Fields) | evergreen/#/devices?$filter=(applicationCustomField_79%20DOES%20NOT%20BEGIN%20WITH%20('General%205')%20WHERE%20(nubdo%2Cniod))&$select=hostname,chassisCategory,oSCategory,ownerDisplayName,deviceOwnerCustomField_79 | 17,279 |
-	| General information field 5 (App Custom Fields) | evergreen/#/devices?$filter=(applicationCustomField_79%20ENDS%20WITH%20('0.5')%20WHERE%20(nubdo%2Cnetdo%2Cnuod%2Cnetd%2Cniod))&$select=hostname,chassisCategory,oSCategory,ownerDisplayName,deviceOwnerCustomField_79 | 17,279 |
-	| Application Name                                | evergreen/#/devices?$filter=(applicationName%20DOES%20NOT%20END%20WITH%20('1.1')%20WHERE%20(uod%2Cetd%2Ciod%2Cubdo%2Cetdo))                                                                                           | 17,248 |
-	| Application Import                              | evergreen/#/devices?$filter=(applicationImport%20NOT%20EQUALS%20('SCCM%202012%20PS1'%2C'A01%20SMS%20(Spoof%C2%A7'%2C'DC1%20SMS%20(DEV50%C2%A7'%2C'SCCM%202012'%2C'SCCM%202012%20Named%20Instance')%20WHERE%20(uod%2Cetd%2Ciod%2Cubdo%2Cetdo)) | 5,203    |
-	| Application Name                                | evergreen/#/devices?$filter=(applicationName%20IS%20NOT%20EMPTY%20()%20WHERE%20(niod))                                                                                                                                                        | 5,195    |
-	| Application Owner (App Custom Fields)           | evergreen/#/devices?$filter=(applicationCustomField_80%20IS%20NOT%20EMPTY%20()%20WHERE%20(niod))&$select=hostname,chassisCategory,oSCategory,ownerDisplayName,deviceOwnerCustomField_79                                                       | 16,276   |
+	| FilterName                                      | QueryString                                                                                                                                                                                                                                   | Rows   |
+	| App Count (Entitled)                            | evergreen/#/devices?$filter=(entitledApplications%20%3C%3E%2012)&$select=hostname,chassisCategory,oSCategory,ownerDisplayName,entitledApplications&$orderby=entitledApplications%20desc                                                       | 17,217 |
+	| App Count (Installed)                           | evergreen/#/devices?$filter=(installedApplications%20%3E%2012)&$select=hostname,chassisCategory,oSCategory,ownerDisplayName,installedApplications                                                                                             | 94     |
+	| App Count (Used)                                | evergreen/#/devices?$filter=(usedApplications%20%3C%2011)&$select=hostname,chassisCategory,oSCategory,ownerDisplayName,installedApplications,usedApplications                                                                                 | 17,185 |
+	| Application                                     | evergreen/#/devices?$filter=(application%20NOT%20EQUALS%20('882'%2C'839'%2C'778')%20WHERE%20(netdo%2Cnubdo%2Cnetd%2Cnuod%2Cniod))                                                                                                             | 17,279 |
+	| Application                                     | evergreen/#/devices?$filter=(application%20EQUALS%20('882')%20WHERE%20(nuod))                                                                                                                                                                 | 17,279 |
+	| Application Compliance                          | evergreen/#/devices?$filter=(applicationMigrationRAG%20EQUALS%20('Red')%20WHERE%20(netdo%2Cnubdo%2Cniod%2Cnetd%2Cnuod))                                                                                                                       | 17,279 |
+	| Application Name                                | evergreen/#/devices?$filter=(applicationName%20EQUALS%20('%25SQL_PRODUCT_SHORT_NAME%25%20Data%20Tools%20-%20BI%20for%20Visual%20Studio%202013')%20WHERE%20(uod%2Cetd%2Cubdo%2Ciod%2Cetdo))                                                    | 2      |
+	| Application Name                                | evergreen/#/devices?$filter=(applicationName%20NOT%20EQUALS%20('%25SQL_PRODUCT_SHORT_NAME%25%20Data%20Tools%20-%20BI%20for%20Visual%20Studio%202013')%20WHERE%20(netdo%2Cnubdo%2Cniod%2Cnetd%2Cnuod))                                         | 17,279 |
+	| Application Name                                | evergreen/#/devices?$filter=(applicationName%20CONTAINS%20('7zip')%20WHERE%20(nuod))                                                                                                                                                          | 17,279 |
+	| Application Name                                | evergreen/#/devices?$filter=(applicationName%20BEGINS%20WITH%20('7zip')%20WHERE%20(ubdo%2Cetd))                                                                                                                                               | 11     |
+	| Application Name                                | evergreen/#/devices?$filter=(applicationName%20DOES%20NOT%20BEGIN%20WITH%20('7zip')%20WHERE%20(nubdo%2Cnetdo))                                                                                                                                | 17,150 |
+	| Application Vendor                              | evergreen/#/devices?$filter=(applicationManufacturer%20EQUALS%20('Aaronbock%20Development')%20WHERE%20(etdo))                                                                                                                                 | 98     |
+	| Application Vendor                              | evergreen/#/devices?$filter=(applicationManufacturer%20NOT%20EQUALS%20('Aaronbock%20Development')%20WHERE%20(netdo))                                                                                                                          | 12,202 |
+	| Application Owner (App Custom Fields)           | evergreen/#/devices?$filter=(applicationCustomField_80%20EQUALS%20('App%20Discovery')%20WHERE%20(uod%2Cetd%2Ciod%2Cubdo%2Cetdo))                                                                                                              | 1,003  |
+	| Application Owner (App Custom Fields)           | evergreen/#/devices?$filter=(applicationCustomField_80%20NOT%20EQUALS%20('App%20Discovery')%20WHERE%20(netdo%2Cnubdo%2Cniod%2Cnetd%2Cnuod))                                                                                                   | 17,279 |
+	| Application Owner (App Custom Fields)           | evergreen/#/devices?$filter=(applicationCustomField_80%20NOT%20EQUALS%20('App%20Discovery')%20WHERE%20(iod))                                                                                                                                  | 12,076 |
+	| General information field 5 (App Custom Fields) | evergreen/#/devices?$filter=(applicationCustomField_79%20DOES%20NOT%20BEGIN%20WITH%20('General%205')%20WHERE%20(nubdo%2Cniod))&$select=hostname,chassisCategory,oSCategory,ownerDisplayName,deviceOwnerCustomField_79                         | 17,279 |
+	| General information field 5 (App Custom Fields) | evergreen/#/devices?$filter=(applicationCustomField_79%20ENDS%20WITH%20('0.5')%20WHERE%20(nubdo%2Cnetdo%2Cnuod%2Cnetd%2Cniod))&$select=hostname,chassisCategory,oSCategory,ownerDisplayName,deviceOwnerCustomField_79                         | 17,279 |
+	| Application Name                                | evergreen/#/devices?$filter=(applicationName%20DOES%20NOT%20END%20WITH%20('1.1')%20WHERE%20(uod%2Cetd%2Ciod%2Cubdo%2Cetdo))                                                                                                                   | 17,248 |
+	| Application Import                              | evergreen/#/devices?$filter=(applicationImport%20NOT%20EQUALS%20('SCCM%202012%20PS1'%2C'A01%20SMS%20(Spoof%C2%A7'%2C'DC1%20SMS%20(DEV50%C2%A7'%2C'SCCM%202012'%2C'SCCM%202012%20Named%20Instance')%20WHERE%20(uod%2Cetd%2Ciod%2Cubdo%2Cetdo)) | 5,203  |
+	| Application Name                                | evergreen/#/devices?$filter=(applicationName%20IS%20NOT%20EMPTY%20()%20WHERE%20(niod))                                                                                                                                                        | 5,195  |
+	| Application Owner (App Custom Fields)           | evergreen/#/devices?$filter=(applicationCustomField_80%20IS%20NOT%20EMPTY%20()%20WHERE%20(niod))&$select=hostname,chassisCategory,oSCategory,ownerDisplayName,deviceOwnerCustomField_79                                                       | 16,228 |
 
 @Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS13179 @Cleanup
 Scenario Outline: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDeviceList
@@ -174,19 +174,19 @@ Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDe
 	And User clicks Save filter button
 	When User create custom list with "DynamicList13179" name
 	Then "DynamicList13179" list is displayed to user
-	And "17,256" rows are displayed in the agGrid
+	And "17,248" rows are displayed in the agGrid
 	When User navigates to the "All Devices" list
 	And User navigates to the "DynamicList13179" list
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
-	And "17,256" rows are displayed in the agGrid
+	And "17,248" rows are displayed in the agGrid
 	And "Any Application in list StaticList13179 used on device; entitled to device; installed on device; used by device's owner; or entitled to device's owner" is displayed in added filter info
 
 @Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS13179 @DAS17398 @Cleanup
 Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDeviceDynamicList
 	When User clicks "Applications" on the left-hand menu
 	Then "All Applications" list should be displayed to the user
-	When User click on 'Vendor' column header
+	When User clicks on 'Vendor' column header
 	And User create dynamic list with "Dynamic13179" name on "Applications" page
 	Then "Dynamic13179" list is displayed to user
 	When Evergreen QueryStringURL is entered for Simple QueryType
@@ -199,12 +199,12 @@ Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDe
 	And User clicks Save filter button
 	When User create custom list with "List13179" name
 	Then "List13179" list is displayed to user
-	And "17,285" rows are displayed in the agGrid
+	And "17,279" rows are displayed in the agGrid
 	When User navigates to the "All Devices" list
 	And User navigates to the "List13179" list
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
-	And "17,285" rows are displayed in the agGrid
+	And "17,279" rows are displayed in the agGrid
 	And "Any Application in list Dynamic13179 not entitled to device's owner; not used by device's owner; not installed on device; not entitled to device; or not used on device" is displayed in added filter info
 
 @Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS13179 @DAS17398 @Cleanup
@@ -228,12 +228,12 @@ Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForSt
 	And User clicks Save filter button
 	When User create custom list with "List11179" name
 	Then "List11179" list is displayed to user
-	And "7,425" rows are displayed in the agGrid
+	And "7,419" rows are displayed in the agGrid
 	When User navigates to the "All Devices" list
 	And User navigates to the "List11179" list
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
-	And "7,425" rows are displayed in the agGrid
+	And "7,419" rows are displayed in the agGrid
 	And "Any Application in list StaticList12911 not installed on device" is displayed in added filter info
 
 @Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS13179 @DAS17398 @Cleanup
@@ -253,13 +253,13 @@ Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForSt
 	And User clicks Save filter button
 	When User create custom list with "List41179" name
 	Then "List41179" list is displayed to user
-	And "99" rows are displayed in the agGrid
+	And "94" rows are displayed in the agGrid
 	When User navigates to the "All Devices" list
 	And User navigates to the "List41179" list
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
-	And "99" rows are displayed in the agGrid
-	And "Any Application in list Dynamic13579 used on device" is displayed in added filter info
+	And "94" rows are displayed in the agGrid
+	And "Any Application in list 1803 Apps or Dynamic13579 used on device" is displayed in added filter info
 
 @Evergreen @Users @EvergreenJnr_QueryStrings @Query @DAS13179
 Scenario Outline: EvergreenJnr_QueryString_AdvancedFilterRowCountCheckForUserList

@@ -8,6 +8,7 @@ using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
 using DashworksTestAutomation.Pages.Projects;
 using DashworksTestAutomation.Pages.Projects.CreatingProjects;
 using DashworksTestAutomation.Pages.Projects.CreatingProjects.Tasks;
+using DashworksTestAutomation.Pages.Senior;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -68,7 +69,7 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
         [When(@"User clicks create Project button")]
         public void WhenUserClicksCreateProjectButton()
         {
-            var menu = _driver.NowAt<ProjectsBaseElements>();
+            var menu = _driver.NowAt<SeniorProjectsBaseElements>();
             _driver.MouseHover(menu.AdministrationTab);
             var project = _driver.NowAt<MainElementsOfProjectCreation>();
             _driver.WaitForElementToBeDisplayed(project.CreatedProject);

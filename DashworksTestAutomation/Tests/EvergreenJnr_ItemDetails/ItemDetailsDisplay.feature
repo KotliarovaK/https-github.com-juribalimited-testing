@@ -32,7 +32,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatCopyCellWorksInItemDetails
 	Then "All <PageName>" list should be displayed to the user
 	When User perform search by "<SearchTerm>"
 	And User click content from "<ColumnName>" column
-	When User navigates to the "<MainTabName>" main-menu on the Details page
+	When User navigates to the '<MainTabName>' left menu item
 	When User navigates to the "<SubTabName>" sub-menu on the Details page
 	And User performs right-click on "<TargetCell>" cell in the grid
 	And User selects 'Copy cell' option in context menu
@@ -51,7 +51,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatCopyRowWorksInItemDetailsOnSele
 	Then "All <PageName>" list should be displayed to the user
 	When User perform search by "<SearchTerm>"
 	And User click content from "<ColumnName>" column
-	When User navigates to the "<MainTabName>" main-menu on the Details page
+	When User navigates to the '<MainTabName>' left menu item
 	When User navigates to the "<SubTabName>" sub-menu on the Details page
 	And User performs right-click on "<TargetCell>" cell in the grid
 	And User selects 'Copy row' option in context menu
@@ -84,7 +84,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatApplicationsSummaryRowCanBeCopied
 	Then "All Devices" list should be displayed to the user
 	When User perform search by "00BDM1JUR8IF419"
 	And User click content from "Hostname" column
-	When User navigates to the "Applications" main-menu on the Details page
+	When User navigates to the 'Applications' left menu item
 	When User performs right-click on "egcs-objc" cell in the grid
 	And User selects 'Copy row' option in context menu
 	Then Next data 'egcs-objc   Red Hat   1.1.2   Red   Unknown   True   False' is copied
@@ -94,7 +94,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatApplicationsInTheApplicationColumnAr
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	When User click content from "Hostname" column
-	When User navigates to the "Applications" main-menu on the Details page
+	When User navigates to the 'Applications' left menu item
 	When User navigates to the "Advertisements" sub-menu on the Details page
 	Then table content is present
 	When User clicks "Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" link on the Details Page
@@ -108,7 +108,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatActionPanelImplementedForItemDetails
 	When User perform search by "001BAQXT6JWFPI"
 	When User click content from "Hostname" column
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
-	When User navigates to the "Users" main-menu on the Details page
+	When User navigates to the 'Users' left menu item
 	Then "ADD USERS" Action button is displayed
 	Then Actions drop-down is displayed on the Item Details page
 	When User clicks Actions button on the Item Details page
@@ -153,7 +153,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatUserDetailsIsOpenedCorrectlyWithSam
 	When User perform search by "001BAQXT6JWFPI"
 	And User click content from "Hostname" column
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
-	When User navigates to the "Users" main-menu on the Details page
+	When User navigates to the 'Users' left menu item
 	And User clicks "Nicole P. Braun" link on the Details Page
 	Then Details page for "QLL295118 (Nicole P. Braun)" item is displayed to the user
 	And User verifies data in the fields on details page
@@ -167,7 +167,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatUserDetailsIsSimilarOnGridAndDetail
 	When User perform search by "001BAQXT6JWFPI"
 	And User click content from "Hostname" column
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
-	When User navigates to the "Users" main-menu on the Details page
+	When User navigates to the 'Users' left menu item
 	Then 'QLL295118' content is displayed in the 'Username' column
 	And 'US-E' content is displayed in the 'Domain' column
 	And 'Nicole P. Braun' content is displayed in the 'Display Name' column
@@ -189,7 +189,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatLoadingIndicatorAppearsInTheSam
 	And User click content from "Application" column
 	Then Details page for "Adobe Acrobat Update" item is displayed to the user
 	When User switches to the "Devices Evergreen Capacity Project" project in the Top bar on Item details page
-	And User navigates to the "Details" main-menu on the Details page
+	And User navigates to the 'Details' left menu item
 	Then Loading indicator appears in the same place when switching between main-menu
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17813
@@ -199,7 +199,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatToolTipForMailboxPermissionOnMailboxPe
 	When User perform search by "0072B088173449E3A93"
 	And User click content from "Username" column
 	Then Details page for "0072B088173449E3A93" item is displayed to the user
-	When User navigates to the "Mailboxes" main-menu on the Details page
+	When User navigates to the 'Mailboxes' left menu item
 	When User navigates to the "Mailbox Permissions" sub-menu on the Details page
 	When User enters "Exchange 2007" text in the Search field for "Mailbox Platform" column
 	Then "FullAccess" content is displayed in "Permission" column

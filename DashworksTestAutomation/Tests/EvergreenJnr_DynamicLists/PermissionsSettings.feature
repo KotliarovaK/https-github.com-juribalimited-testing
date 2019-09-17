@@ -10,7 +10,7 @@ Background: Pre-Conditions
 Scenario: EvergreenJnr_UsersList_CheckThatNotOwnerUsersDontHavePermissionsToUpdateDynamicList
 	When User clicks "Users" on the left-hand menu
 	Then "All Users" list should be displayed to the user
-	When User click on 'Username' column header
+	When User clicks on 'Username' column header
 	Then data in table is sorted by 'Username' column in ascending order
 	When User create dynamic list with "TestList83C1C0" name on "Users" page
 	When User clicks the List Details button
@@ -30,7 +30,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatNotOwnerUsersDontHavePermissionsToUpda
 Scenario: EvergreenJnr_UsersList_CheckThatAdminUserButNotOwnerIsNotAbleToDeleteList
 	When User clicks "Users" on the left-hand menu
 	Then "All Users" list should be displayed to the user
-	When User click on 'Username' column header
+	When User clicks on 'Username' column header
 	Then data in table is sorted by 'Username' column in ascending order
 	When User create dynamic list with "TestList9507DA" name on "Users" page
 	And User clicks the List Details button
@@ -82,7 +82,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSharedItemIsNotDuplicatedWhenUserSha
 	Then Evergreen Dashboards page should be displayed to the user
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
-	When User click on 'Hostname' column header
+	When User clicks on 'Hostname' column header
 	When User create custom list with "List_DAS16228" name
 	Then "List_DAS16228" list is displayed to user
 	When User clicks the List Details button

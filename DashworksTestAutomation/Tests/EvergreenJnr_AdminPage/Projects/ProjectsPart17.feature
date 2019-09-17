@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12154 @DAS12742 @DAS12872 @Cleanup @Project_Creation_and_Scope @TEST
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12154 @DAS12742 @DAS12872 @Cleanup @Project_Creation_and_Scope
 Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedWhenDeletingListUsingInTheProjectThatWasDeleted
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
@@ -24,7 +24,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedWhenDeleti
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "TestProject6" in the "Project Name" field
-	And User selects "TestList0A78U9" in the Scope Project dropdown
+	And User selects 'TestList0A78U9' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
 	Then "Projects" page should be displayed to the user
 	Then Success message is displayed and contains "The project has been created" text
@@ -42,7 +42,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedWhenDeleti
 	And User clicks Delete button on the warning message in the lists panel
 	And no Warning message is displayed in the lists panel
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12182 @DAS12999 @DAS13199 @DAS13297 @DAS12485 @DAS13803 @DAS13930 @Cleanup @Project_Creation_and_Scope @TEST
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12182 @DAS12999 @DAS13199 @DAS13297 @DAS12485 @DAS13803 @DAS13930 @Cleanup @Project_Creation_and_Scope
 Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCorrectlyUpdated
 	When Project created via API and opened
 	| ProjectName  | Scope     | ProjectTemplate | Mode               |
@@ -50,39 +50,39 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCo
 	Then Project "TestProject5" is displayed to user
 	When User selects "Scope" tab on the Project details page
 	When User selects "Scope Changes" tab on the Project details page
-	And User clicks "Applications" tab in the Project Scope Changes section
+	And User navigates to the 'Applications' tab on Project Scope Changes page
 	Then "Applications to add (0 of 2081 selected)" is displayed to the user in the Project Scope Changes section
-	When User clicks "Devices" tab in the Project Scope Changes section
+	When User navigates to the 'Devices' tab on Project Scope Changes page
 	Then "Devices to add (0 of 16819 selected)" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page
-	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
+	When User navigates to the 'Application Scope' tab on Project Scope Changes page
 	Then All Associations are selected by default
-	When User navigates to the "Device Scope" tab in the Scope section on the Project details page
+	When User navigates to the 'Device Scope' tab on Project Scope Changes page
 	And User selects "Do not include owned devices" checkbox on the Project details page
 	Then Scope List dropdown is disabled
-	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
+	When User navigates to the 'Application Scope' tab on Project Scope Changes page
 	Then following associations are disabled:
 	| AssociationName                         |
 	| Entitled to a device owned by the user  |
 	| Installed on a device owned by the user |
 	| Used on an owned device by any user     |
 	When User selects "Scope Changes" tab on the Project details page
-	And User clicks "Applications" tab in the Project Scope Changes section
+	And User navigates to the 'Applications' tab on Project Scope Changes page
 	Then "Applications to add (0 of 247 selected)" is displayed to the user in the Project Scope Changes section
-	When User clicks "Devices" tab in the Project Scope Changes section
+	When User navigates to the 'Devices' tab on Project Scope Changes page
 	Then "Devices to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
-	When User clicks "Details" tab
+	When User navigates to the 'Details' left menu item
 	And User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
 	Then There are no errors in the browser console
-	When User clicks "Scope" tab
+	When User navigates to the 'Scope' left menu item
 	And User selects "Scope Changes" tab on the Project details page
 	Then "Match to Evergreen Bucket" is displayed in the Bucket dropdown
 
-@Evergreen @AllLists @EvergreenJnr_AdminPage @AdminPage @Projects @DAS11886 @DAS12613 @DAS13199 @Cleanup @Project_Creation_and_Scope @TEST
+@Evergreen @AllLists @EvergreenJnr_AdminPage @AdminPage @Projects @DAS11886 @DAS12613 @DAS13199 @Cleanup @Project_Creation_and_Scope
 Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeletingUsedForProjectLists 
 	When User clicks "Users" on the left-hand menu
 	Then "All Users" list should be displayed to the user
-	When User click on 'Username' column header
+	When User clicks on 'Username' column header
 	And User create dynamic list with "ListForProject" name on "Users" page
 	When Project created via API and opened
 	| ProjectName  | Scope          | ProjectTemplate | Mode               |
@@ -105,17 +105,17 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeleting
 	Then Warning message with "The scope for this project refers to a deleted list, this must be updated before proceeding" text is displayed on the Admin page
 	And Update Project buttons is disabled
 	When User selects "Scope Details" tab on the Project details page
-	And User selects "All Users" in the Scope Project details
+	And User selects 'All Users' in the 'Scope' dropdown with wait
 	And User selects "Scope Changes" tab on the Project details page
 	Then Warning message is not displayed on the Admin page
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11977 @DAS11959 @DAS12553 @DAS11744 @DAS12742 @DAS12999 @DAS13199 @DAS13254 @DAS13323 @DAS13393 @DAS13803 @DAS13973 @Cleanup @Project_Creation_and_Scope @Projects @TEST
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11977 @DAS11959 @DAS12553 @DAS11744 @DAS12742 @DAS12999 @DAS13199 @DAS13254 @DAS13323 @DAS13393 @DAS13803 @DAS13973 @Cleanup @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersListHas0ItemsInTheUsersTab
 	When Project created via API and opened
 	| ProjectName         | Scope       | ProjectTemplate | Mode               |
 	| TestProjectDAS11977 | All Devices | None            | Standalone Project |
 	Then Project "TestProjectDAS11977" is displayed to user
-	When User clicks "Details" tab
+	When User navigates to the 'Details' left menu item
 	And User changes Project Name to "NewProjectName"
 	And User changes Project Short Name to "NewShort4875"
 	And User changes Project Description to "45978DescriptionText"
@@ -137,25 +137,25 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	When User enters "NewProjectName" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	When User selects "Scope Details" tab on the Project details page
-	And User navigates to the "User Scope" tab in the Scope section on the Project details page
+	And User navigates to the 'User Scope' tab on Project Scope Changes page
 	When User selects "Do not include device owners" checkbox on the Project details page
 	Then Scope List dropdown is disabled
-	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
+	When User navigates to the 'Application Scope' tab on Project Scope Changes page
 	Then following associations are disabled:
 	| AssociationName                        |
 	| Entitled to the device owner           |
 	| Used by the device owner on any device |
 	When User selects "Scope Changes" tab on the Project details page
-	And User clicks "Users" tab in the Project Scope Changes section 
+	And User navigates to the 'Users' tab on Project Scope Changes page 
 	Then "Users to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page
-	And User navigates to the "User Scope" tab in the Scope section on the Project details page
+	And User navigates to the 'User Scope' tab on Project Scope Changes page
 	When User selects "Include device owners" checkbox on the Project details page
 	Then Scope List dropdown is active
-	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
+	When User navigates to the 'Application Scope' tab on Project Scope Changes page
 	Then All Associations are available
 	When User selects "Scope Changes" tab on the Project details page
-	And User clicks "Users" tab in the Project Scope Changes section 
+	And User navigates to the 'Users' tab on Project Scope Changes page 
 	Then "Users to add (0 of 14629 selected)" is displayed to the user in the Project Scope Changes section
 	When User click on Back button
 	And User enters "NewProjectName" text in the Search field for "Project" column
@@ -164,12 +164,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "TestProjectDAS11977" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
+	And User selects 'All Devices' option from 'Scope' autocomplete
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "TestProjectDAS11977" is displayed to user
-	When User clicks "Details" tab
+	When User navigates to the 'Details' left menu item
 	And User changes Project Name to "NewProjectName"
 	And User changes Project Short Name to "NewShort4875"
 #"UPDATE" Action button has been removed

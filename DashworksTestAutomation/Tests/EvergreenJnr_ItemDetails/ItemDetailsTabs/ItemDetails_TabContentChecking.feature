@@ -10,7 +10,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOpenedSectionIsDisplayedCorrectlyOnT
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	When User click content from "Hostname" column
-	And User navigates to the "Applications" main-menu on the Details page
+	When User navigates to the 'Applications' left menu item
 	And User navigates to the "Evergreen Detail" sub-menu on the Details page
 	Then "Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" content is displayed in "Application" column
 	And "Advert - A0129C4E" content is displayed in "Advertisement" column
@@ -36,12 +36,12 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatListLoadedCorrectlyAndNoConsoleErr
 	Then "All Mailboxes" list should be displayed to the user
 	When User perform search by "julia.bell@juriba.com"
 	And User click content from "Email Address" column
-	When User navigates to the "Trend" main-menu on the Details page
+	When User navigates to the 'Trend' left menu item
 	Then Highcharts graphic is displayed on the Details Page
 	And There are no errors in the browser console
-	When User navigates to the "Details" main-menu on the Details page
+	When User navigates to the 'Details' left menu item
 	Then There are no errors in the browser console
-	When User navigates to the "Trend" main-menu on the Details page
+	When User navigates to the 'Trend' left menu item
 	Then There are no errors in the browser console
 	When User clicks "Users" on the left-hand menu
 	Then "All Users" list should be displayed to the user

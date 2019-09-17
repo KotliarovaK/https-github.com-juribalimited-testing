@@ -613,7 +613,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThat500ErrorIsNotDisplayedForFilter
 	And "(Application = DirectX SDK (Version 8.1) (3663.0)) OR (Application = "WPF/E" (codename) Community Technology Preview (Feb 2007))" text is displayed in filter container
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11054 @DAS11578
-Scenario: EvergreenJnr_DevicesList_CheckThatSpaceAfterCommasInTheFiltersContainerIsDisplayed
+Scenario: EvergreenJnr_DevicesList_CheckThatSpaceAfterCommasInTheComplianceAndImportFiltersContainerIsDisplayed
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -627,6 +627,14 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSpaceAfterCommasInTheFiltersContaine
 	Then "Compliance" filter is added to the list
 	When User add "Import" filter where type is "Does not equal" with added column and "A01 SMS (Spoof)" Lookup option
 	Then "Import" filter is added to the list
+	Then "(Compliance = Unknown, Red, Amber or Green) OR (Import != A01 SMS (Spoof))" text is displayed in filter container
+
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11054 @DAS11578
+Scenario: EvergreenJnr_DevicesList_CheckThatSpaceAfterCommasInTheDepartmentCodeFilterContainerIsDisplayed
+	When User clicks "Devices" on the left-hand menu
+	Then "All Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
 	When User add "Department Code" filter where type is "Contains" with added column and following value:
 	| Values |
 	| ABC    |
@@ -651,7 +659,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSpaceAfterCommasInTheFiltersContaine
 	| Values |
 	|        |
 	Then "Department Code" filter is added to the list
-	Then "(Compliance = Unknown, Red, Amber or Green) OR (Import != A01 SMS (Spoof)) OR (Department Code ~ ABC) OR (Department Code !~ ACV) OR (Department Code BEGINS WITH AXZ) OR (Department Code ENDS WITH YQA) OR (Department Code = EMPTY) OR (Department Code != EMPTY)" text is displayed in filter container
+	Then "(Department Code ~ ABC) OR (Department Code !~ ACV) OR (Department Code BEGINS WITH AXZ) OR (Department Code ENDS WITH YQA) OR (Department Code = EMPTY) OR (Department Code != EMPTY)" text is displayed in filter container
 
 	@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11054 @DAS11578
 Scenario: EvergreenJnr_DevicesList_CheckThatSpaceAfterCommasInTheBootUpDateAndCpuCountFiltersContainerIsDisplayed
@@ -893,7 +901,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOperatorsForApplicationSavedListFilt
 @Evergreen @AllLists @EvergreenJnr_FilterFeature @FiltersDisplay @DAS11619
 Scenario Outline: EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColumn
 	When User clicks "<ListName>" on the left-hand menu
-	Then "<ListName>" list should be displayed to the user
+	Then "All <ListName>" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "<FilterName>" filter
@@ -939,7 +947,7 @@ Examples:
 @Evergreen @AllLists @EvergreenJnr_FilterFeature @FiltersDisplay @DAS11829
 Scenario Outline: EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisplayedForOrganisationCategoryFilters
 	When User clicks "<ListName>" on the left-hand menu
-	Then "<ListName>" list should be displayed to the user
+	Then "All <ListName>" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "<FilterName>" filter
@@ -1004,7 +1012,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatChildrenOfTreeBasedFiltersAreIncludedI
 Scenario: EvergreenJnr_AllLists_CheckThatFilterTextDisplaysActualListName 
 	When User clicks "Applications" on the left-hand menu
 	Then "All Applications" list should be displayed to the user
-	When User click on 'Application' column header
+	When User clicks on 'Application' column header
 	And User create dynamic list with "ApplicationList" name on "Applications" page
 	And User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
@@ -1038,11 +1046,11 @@ Scenario: EvergreenJnr_AllLists_CheckThatFilterTextDisplaysActualListName
 Scenario: EvergreenJnr_AllLists_CheckThatTextInTheFilterPanelDisplaysTheCurrentListName
 	When User clicks "Applications" on the left-hand menu
 	Then "All Applications" list should be displayed to the user
-	When User click on 'Application' column header
+	When User clicks on 'Application' column header
 	And User create dynamic list with "ApplicationList1" name on "Applications" page
 	And User navigates to the "All Applications" list
 	Then "All Applications" list should be displayed to the user
-	When User click on 'Vendor' column header
+	When User clicks on 'Vendor' column header
 	And User create dynamic list with "ApplicationList2" name on "Applications" page
 	And User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
@@ -1195,7 +1203,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatParticularProjectCapacityUnitFilterShow
 	When User clicks Admin on the left-hand menu
 	And User clicks the "CREATE PROJECT" Action button
 	And User enters "13201" in the "Project Name" field
-	And User selects "All Mailboxes" in the Scope Project dropdown
+	And User selects 'All Mailboxes' option from 'Scope' autocomplete
 	When User selects "Evergreen" in the "Mode" dropdown
 	When User clicks Create button on the Create Project page
 	And User clicks "Devices" on the left-hand menu
@@ -1238,7 +1246,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatParticularProjectCapacityUnitFilterShow
 Scenario: EvergreenJnr_AllLists_CheckThatDeletedBucketIsNotAvailableInEvergreenBucketFilter
 	When User clicks Admin on the left-hand menu
 	When User clicks "Evergreen" link on the Admin page
-	When User clicks "Buckets" tab
+	When User navigates to the 'Buckets' left menu item
 	And User clicks the "CREATE EVERGREEN BUCKET" Action button
 	And User enters "Bucket_DAS12940_to_be_deleted" in the "Bucket Name" field
 	And User selects "Admin IT" team in the Team dropdown on the Buckets page
@@ -1273,7 +1281,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatDeletedCapacityUnitIsNotAvailableInEver
 	| Capacity_Unit_DAS13201_to_be_deleted | 13201       | false     |
 	And User clicks Admin on the left-hand menu
 	And User clicks "Evergreen" link on the Admin page
-	And User clicks "Capacity Units" tab
+	And User navigates to the 'Capacity Units' left menu item
 	And User select "Capacity Unit" rows in the grid
 	| SelectedRowsName                     |
 	| Capacity_Unit_DAS13201_to_be_deleted |
@@ -1774,6 +1782,8 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatApplicationReadinessSubCategoryIsM
 	And User closes "Project: MailboxEve" filter category
 	And User closes "Project: TST" filter category
 	And User closes "Project: USEMEFORA1" filter category
+	And User closes "Project: zMailboxAu" filter category
+	And User closes "Project Tasks: zMailboxAu" filter category
 	Then the following Filters subcategories are displayed for open category:
 	| Subcategories         |
 	| EmailMigra: Readiness |
@@ -1797,13 +1807,11 @@ Scenario: EvergreenJnr_DevicesList_CheckThatStatusFilterAvailableOptionsList
 	| Complete      |
 	| Offboarded    |
 
-	#Remove NotReady after Pulsar release
-@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS17579 @DAS16485 @Not_Ready
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS17579
 Scenario: EvergreenJnr_ApplicationsList_CheckUserPostalCodeOptionsDisplaying
 	When User clicks "Applications" on the left-hand menu
 	And User clicks the Filters button
-	Then Filter Expression icon displayed within correct block
-	When user select "User Postal Code" filter
+	And user select "User Postal Code" filter
 	Then following operator options available:
 	| operator            |
 	| Equals              |
@@ -1816,6 +1824,16 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUserPostalCodeOptionsDisplaying
 	| Does not end with   |
 	| Empty               |
 	| Not empty           |
+
+@Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS17252 @DAS16485
+Scenario: EvergreenJnr_MailboxesList_CheckThatFilterExpressionSectionIsMovedToFilterPanel
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "All Mailboxes" list should be displayed to the user
+	When User clicks "Mailbox Pivot (Complex)" list name in left panel
+	And User clicks the Filters button
+	Then Filter Expression icon displayed within Filter Panel
+	When User clicks Filter Expression icon in Filter Panel
+	Then Filter Expression displayed within Filter Panel
 
 @Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS15194 @DAS17743
 Scenario: EvergreenJnr_ApplicationsList_CheckThatDeviceOwnerFilterCategoryHasCorrectSubcategories

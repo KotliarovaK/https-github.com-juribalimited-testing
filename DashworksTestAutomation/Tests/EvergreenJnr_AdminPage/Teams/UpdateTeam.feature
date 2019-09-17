@@ -16,7 +16,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterUpdatingTeamDesc
 	Then "Teams" page should be displayed to the user
 	When User enters "TestTeam9" text in the Search field for "Team" column
 	And User clicks content from "Team" column
-	And User clicks "Team Settings" tab
+	And User navigates to the 'Team Settings' left menu item
 	And User enters "" in the Team Description field
 	Then Update Team button is disabled
 	When User enters " " in the Team Description field

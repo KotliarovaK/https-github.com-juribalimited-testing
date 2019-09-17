@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15737 @DAS15662 @Cleanup @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15737 @DAS15662 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatColourSchemeIsDisplayedForReadinessSplitByInDropdown
 	When User add following columns using URL to the "Users" page:
 	| ColumnName                 |
@@ -45,8 +45,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetValuesLeadsToDeviceList
 	And User clicks Edit mode trigger on Dashboards page
 	When User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
-	| WidgetType | Title                    | List                  | Type | AggregateBy | AggregateFunction | SplitBy                              | OrderBy                                  | MaxValues | ShowLegend | TableOrientation | Drilldown | Layout |
-	| Line       | Project ScheduleDAS16069 | 1803 ScheduleDAS16069 |      | Hostname    | Count distinct    | 1803: Pre-Migration \ Scheduled Date | 1803: Pre-Migration \ Scheduled Date ASC |           |            |                  | Yes       |        |
+	| WidgetType | Title                    | List                  | AggregateBy | AggregateFunction | SplitBy                              | OrderBy                                  | Drilldown |
+	| Line       | Project ScheduleDAS16069 | 1803 ScheduleDAS16069 | Hostname    | Count distinct    | 1803: Pre-Migration \ Scheduled Date | 1803: Pre-Migration \ Scheduled Date ASC | Yes       |
 	Then Widget Preview is displayed to the user
 	When User clicks the "CREATE" Action button
 	Then Card "Project ScheduleDAS16069" Widget is displayed to the user
@@ -67,7 +67,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetValuesLeadsToDeviceList
 	| Owner Display Name                   |
 	| 1803: Pre-Migration \ Scheduled Date |	
 	
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15920 @DAS15662 @Cleanup @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15920 @DAS15662 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetHavingComplianceColumnsDisplayedCorrectlyOnDashboard
 	When User add following columns using URL to the "Users" page:
 	| ColumnName          |
@@ -78,15 +78,15 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetHavingComplianceColumns
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
-	| WidgetType | Title                 | List            | Type | AggregateBy | AggregateFunction | SplitBy                       | OrderBy                           | MaxValues | ShowLegend | TableOrientation | Drilldown | Layout |
-	| Line       | LineWidgetForDas15920 | ListForDas15920 |      |             | Count             | Device Application Compliance | Device Application Compliance ASC |           |            |                  | Yes       |        |
+	| WidgetType | Title                 | List            | AggregateFunction | SplitBy                       | OrderBy                           | Drilldown |
+	| Line       | LineWidgetForDas15920 | ListForDas15920 | Count             | Device Application Compliance | Device Application Compliance ASC | Yes       |
 	Then Widget Preview is displayed to the user
 	Then "Data Label" checkbox is not displayed on the Create Widget page
 	When User clicks the "CREATE" Action button
 	Then Card "LineWidgetForDas15920" Widget is displayed to the user
 	And Line chart displayed in "LineWidgetForDas15920" widget
 
-@Evergreen @EvergreenJnr_DashboardsPage @DAS15544 @Cleanup @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @DAS15544 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetHasCorrectChronologicalOrder
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName          |
@@ -96,8 +96,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetHasCorrectChronological
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
-	| WidgetType | Title                     | List            | Type | AggregateBy | AggregateFunction | SplitBy               | OrderBy                   | MaxValues | ShowLegend | TableOrientation | Drilldown | Layout |
-	| Line       | SortOrderCheckForDas15544 | ListForDas15544 |      |             | Count             | Service Pack or Build | Service Pack or Build ASC |           |            |                  | Yes       |        |
+	| WidgetType | Title                     | List            | AggregateFunction | SplitBy               | OrderBy                   | Drilldown |
+	| Line       | SortOrderCheckForDas15544 | ListForDas15544 | Count             | Service Pack or Build | Service Pack or Build ASC | Yes       |
 	Then Widget Preview is displayed to the user
 	When User clicks the "CREATE" Action button
 	Then Card "SortOrderCheckForDas15544" Widget is displayed to the user
@@ -120,8 +120,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetTooltipsShowsNameAndCou
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
-	| WidgetType | Title                      | List        | Type | AggregateBy | AggregateFunction | SplitBy          | OrderBy              | MaxValues | ShowLegend | TableOrientation | Drilldown | Layout |
-	| Line       | Project AllDevicesDAS15462 | All Devices |      | Hostname    | Count distinct    | Operating System | Operating System ASC |           |            |                  |           |        |
+	| WidgetType | Title                      | List        | AggregateBy | AggregateFunction | SplitBy          | OrderBy              |
+	| Line       | Project AllDevicesDAS15462 | All Devices | Hostname    | Count distinct    | Operating System | Operating System ASC |
 	Then Widget Preview is displayed to the user
 	When User clicks the "CREATE" Action button
 	Then Card "Project AllDevicesDAS15462" Widget is displayed to the user
@@ -144,8 +144,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetsShowsGraphDataWhenSpli
 	And User clicks Edit mode trigger on Dashboards page
 	When User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
-	| WidgetType | Title             | List            | SplitBy                           | AggregateBy | AggregateFunction | OrderBy   | TableOrientation | MaxValues | ShowLegend | Type | Drilldown | Layout |
-	| Line       | WidgetForDAS17825 | ListForDAS17825 | Windows7Mi: Application Readiness |             | Count             | Count ASC |                  |           |            |      |           |        |
+	| WidgetType | Title             | List            | SplitBy                           | AggregateFunction | OrderBy   |
+	| Line       | WidgetForDAS17825 | ListForDAS17825 | Windows7Mi: Application Readiness | Count             | Count ASC |
 	Then Widget Preview is displayed to the user
 	And Color Scheme dropdown displayed with "Readiness Colour Scheme" placeholder
 	And Color Scheme dropdown is disabled

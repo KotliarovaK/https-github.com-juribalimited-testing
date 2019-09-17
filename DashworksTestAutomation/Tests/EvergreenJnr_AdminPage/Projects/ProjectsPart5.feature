@@ -14,35 +14,35 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEmptyGreenAlertLineIsNotDisplayedOnPro
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "TestName11881" in the "Project Name" field
-	And User selects "All Users" in the Scope Project dropdown
+	And User selects 'All Users' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
 	Then created Project with "TestName11881" name is displayed correctly
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "TestName11881" is displayed to user
 	When User selects "Scope Details" tab on the Project details page
-	And User navigates to the "Application Scope" tab in the Scope section on the Project details page
+	And User navigates to the 'Application Scope' tab on Project Scope Changes page
 	And User selects "Do not include applications" checkbox on the Project details page
 	Then Scope List dropdown is disabled
 	Then All Associations are disabled
 	When User selects "Scope Changes" tab on the Project details page
 	Then Warning message is not displayed on the Admin page
-	When User clicks "Applications" tab in the Project Scope Changes section
+	When User navigates to the 'Applications' tab on Project Scope Changes page
 	Then "Applications to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page
-	And User navigates to the "Application Scope" tab in the Scope section on the Project details page
+	And User navigates to the 'Application Scope' tab on Project Scope Changes page
 	And User selects "Include applications" checkbox on the Project details page
 	Then All Associations are selected by default
 	Then Scope List dropdown is active
 	When User selects "Scope Changes" tab on the Project details page
-	When User clicks "Applications" tab in the Project Scope Changes section
+	When User navigates to the 'Applications' tab on Project Scope Changes page
 	Then "Applications to add (0 of 2081 selected)" is displayed to the user in the Project Scope Changes section
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12155 @Cleanup @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThatScopePanelHaveCorrectlySizeWhenUsedListWithLongName
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
-	When User click on 'Hostname' column header
+	When User clicks on 'Hostname' column header
 	And User create dynamic list with "VERYLONGLOOOOOOOOOOOOOOOOOOOOOOOOONGNAME" name on "Devices" page
 	Then "VERYLONGLOOOOOOOOOOOOOOOOOOOOOOOOONGNAME" list is displayed to user
 	When User clicks Admin on the left-hand menu
@@ -86,8 +86,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThat500ISEInvalidColumnNameIsNotDisplayedW
 	Then Error message is not displayed
 	When User selects "Scope" tab on the Project details page
 	And User selects "Scope Changes" tab on the Project details page
-	And User expands the object to add 
-	And User selects following Objects
+	And User expands multiselect to add objects 
+	And User expands multiselect and selects following Objects
 	| Objects         |
 	| 0QLZFK7RHMWJLQM |
 	| 0RGBQGA7XOOPJSW |
@@ -109,13 +109,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorIsNotDisplayedWhenCreatingProject
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "TestProject22" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
+	And User selects 'All Devices' option from 'Scope' autocomplete
 	When User selects "Clone from Evergreen to Project" in the Mode Project dropdown
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	And There are no errors in the browser console
 	When User clicks "Evergreen" link on the Admin page
-	When User clicks "Buckets" tab
+	When User navigates to the 'Buckets' left menu item
 	When User clicks String Filter button for "Project" column on the Admin page
 	When User selects "Evergreen" checkbox from String Filter with item list on the Admin page
 	When User clicks String Filter button for "Project" column on the Admin page
@@ -126,7 +126,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorIsNotDisplayedWhenCreatingProject
 	And User clicks Column button on the Column Settings panel
 	Then "Unassigned" content is displayed in "Maps to Evergreen" column
 	When User clicks "Evergreen" link on the Admin page
-	When User clicks "Capacity Units" tab
+	When User navigates to the 'Capacity Units' left menu item
 	When User clicks String Filter button for "Project" column on the Admin page
 	When User selects "Evergreen" checkbox from String Filter with item list on the Admin page
 	When User clicks String Filter button for "Project" column on the Admin page

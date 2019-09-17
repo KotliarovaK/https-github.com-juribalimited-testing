@@ -40,14 +40,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedTeamUsingTh
 	When User enters "99770" text in the Search field for "Team" column
 	And User clicks content from "Team" column
 	Then "99770" team details is displayed to the user
-	When User clicks "Team Settings" tab
+	When User navigates to the 'Team Settings' left menu item
 	And User clicks Default Team checkbox
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The team was successfully updated" text
 	When User clicks "Teams" navigation link on the Admin page
 	When User enters "99770" text in the Search field for "Team" column
 	When User clicks content from "Team" column
-	When User clicks "Team Settings" tab
+	When User navigates to the 'Team Settings' left menu item
 	Then Default Team checkbox is not active
 	When User clicks "Teams" navigation link on the Admin page
 	When User enters "99770" text in the Search field for "Team" column
@@ -60,7 +60,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedTeamUsingTh
 	When User enters "My Team" text in the Search field for "Team" column
 	Then 'FALSE' content is displayed in the 'Default' column
 	When User clicks content from "Team" column
-	And User clicks "Team Settings" tab
+	And User navigates to the 'Team Settings' left menu item
 	And User clicks Default Team checkbox
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The team was successfully updated" text

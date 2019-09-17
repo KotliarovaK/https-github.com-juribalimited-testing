@@ -2,6 +2,7 @@
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.BulkUpdatePage;
 using DashworksTestAutomation.Pages.Projects;
+using DashworksTestAutomation.Pages.Senior;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
@@ -21,7 +22,7 @@ namespace DashworksTestAutomation
         [When(@"User navigates to ""(.*)"" page on Senior")]
         public void WhenUserNavigateToBulkUpdate(string subMenu)
         {
-            var menu = _driver.NowAt<ProjectsBaseElements>();
+            var menu = _driver.NowAt<SeniorProjectsBaseElements>();
             _driver.MouseHover(menu.ActionsTab);
             _driver.MouseHover(menu.GetSubTabByName(subMenu));
             menu.GetSubTabByName(subMenu).Click();

@@ -19,7 +19,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFillingFieldErrorIsNotDisplayed
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "DAS16816_Project_Users" in the "Project Name" field
-	And User selects "DAS16816_List" in the Scope Project dropdown
+	And User selects 'DAS16816_List' option from 'Scope' autocomplete
 	Then Filling field error is not displayed
 	When User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
@@ -35,7 +35,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFillingFieldErrorIsNotDisplayed
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "DAS16816_Project_Mailboxes" in the "Project Name" field
-	And User selects "DAS16816_MailboxesList" in the Scope Project dropdown
+	And User selects 'DAS16816_MailboxesList' option from 'Scope' autocomplete
 	Then Filling field error is not displayed
 	When User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
@@ -51,7 +51,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFillingFieldErrorIsNotDisplayed
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "DAS16816_Project_Devices" in the "Project Name" field
-	And User selects "DAS16816_DevicesList" in the Scope Project dropdown
+	And User selects 'DAS16816_DevicesList' option from 'Scope' autocomplete
 	Then Filling field error is not displayed
 	When User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
@@ -65,7 +65,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTrueValueDisplayedInGridForEvergreenPr
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "15666Project" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
+	And User selects 'All Devices' option from 'Scope' autocomplete
 	When User selects "Clone from Evergreen to Project" in the Mode Project dropdown
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
@@ -105,34 +105,3 @@ Scenario: EvergreenJnr_AdminPage_CheckHidePanelIconOverlappingInScopeChanges
 	And User selects "Scope Changes" tab on the Project details page
 	And User hides side panel in project details page
 	Then Button toggle zindex is greater than tab zindex
-
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS17699
-Scenario Outline: EvergreenJnr_AdminPage_CheckSavingOfChangesOnScopeDetailsPage
-	When User navigates to "<ProjectName>" project details
-	And User selects "Scope" tab on the Project details page
-	And User selects "Scope Details" tab on the Project details page
-	And User navigates to the "<tab1>" tab in the Scope section on the Project details page
-	And User selects "<List1>" in the Scope Project details
-	And User navigates to the "<tab2>" tab in the Scope section on the Project details page
-	And User selects "<List2>" in the Scope Project details
-	And User selects "Scope Changes" tab on the Project details page
-	And User selects "Scope Details" tab on the Project details page
-	When User navigates to the "<tab1>" tab in the Scope section on the Project details page
-	Then Scope List dropdown displayed with "<List1>" value
-	When User navigates to the "<tab2>" tab in the Scope section on the Project details page
-	Then Scope List dropdown displayed with "<List2>" value
-
-Examples:
-	| ProjectName                        | tab1         | List1                             | tab2              | List2     |
-	| 1803 Rollout                       | User Scope   | Users Readiness Columns & Filters | Application Scope | 1803 Apps |
-	| Mailbox Evergreen Capacity Project | User Scope   | Users Readiness Columns & Filters | Application Scope | 1803 Apps |
-	| User Evergreen Capacity Project    | Device Scope | 1803 Rollout                      | Application Scope | 1803 Apps |
-
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS117967
-Scenario: EvergreenJnr_AdminPage_CheckNoConsoleErrorDisplayedWhenUsingGroupByFilter
-	When User clicks "Admin" on the left-hand menu
-	When User clicks Group By button on the Admin page and selects "Project" value
-	And User selects all rows on the grid
-	Then There are no errors in the browser console
-	When User selects all rows on the grid
-	Then There are no errors in the browser console

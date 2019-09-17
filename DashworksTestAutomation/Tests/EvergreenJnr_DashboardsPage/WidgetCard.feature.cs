@@ -226,28 +226,14 @@ this.FeatureBackground();
                         "List",
                         "Type",
                         "AggregateBy",
-                        "AggregateFunction",
-                        "SplitBy",
-                        "OrderBy",
-                        "MaxValues",
-                        "ShowLegend",
-                        "TableOrientation",
-                        "Drilldown",
-                        "Layout"});
+                        "AggregateFunction"});
             table2.AddRow(new string[] {
                         "Card",
                         "WidgetForDAS15207",
                         "All Devices",
                         "Aggregate",
                         "Hostname",
-                        "Count distinct",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""});
+                        "Count distinct"});
 #line 33
  testRunner.And("User adds new Widget", ((string)(null)), table2, "And ");
 #line 36
@@ -321,13 +307,7 @@ this.FeatureBackground();
                         "Type",
                         "AggregateBy",
                         "AggregateFunction",
-                        "SplitBy",
-                        "OrderBy",
-                        "MaxValues",
-                        "ShowLegend",
-                        "TableOrientation",
-                        "Drilldown",
-                        "Layout"});
+                        "Drilldown"});
             table3.AddRow(new string[] {
                         "Card",
                         "WidgetForDAS16138",
@@ -335,13 +315,7 @@ this.FeatureBackground();
                         "Aggregate",
                         "1803: Pre-Migration \\ Scheduled Date",
                         "First",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "Yes",
-                        ""});
+                        "Yes"});
 #line 46
  testRunner.And("User adds new Widget", ((string)(null)), table3, "And ");
 #line 49
@@ -382,7 +356,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS15134")]
         [NUnit.Framework.CategoryAttribute("DAS15355")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatCardWidgetValuesLeadsToApplicationsListFilteredPage()
         {
             System.Exception lastException = null;
@@ -419,7 +392,6 @@ this.FeatureBackground();
                         "DAS16069",
                         "DAS15134",
                         "DAS15355",
-                        "Cleanup",
                         "Cleanup"});
 #line 62
 this.ScenarioInitialize(scenarioInfo);
@@ -468,7 +440,7 @@ this.FeatureBackground();
 #line 80
  testRunner.And("User removes \"1803: In Scope\" column by Column panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 81
- testRunner.And("User click on \'Compliance\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks on \'Compliance\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 82
  testRunner.And("User create custom list with \"1803 App Compliance\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 83
@@ -541,29 +513,15 @@ this.FeatureBackground();
                         "Title",
                         "List",
                         "Type",
-                        "AggregateBy",
                         "AggregateFunction",
-                        "SplitBy",
-                        "OrderBy",
-                        "MaxValues",
-                        "ShowLegend",
-                        "TableOrientation",
-                        "Drilldown",
-                        "Layout"});
+                        "Drilldown"});
             table7.AddRow(new string[] {
                         "Card",
                         "WidgetForDAS16069_2",
                         "1803 App Compliance",
                         "Aggregate",
-                        "",
                         "Count",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "Yes",
-                        ""});
+                        "Yes"});
 #line 115
  testRunner.And("User adds new Widget", ((string)(null)), table7, "And ");
 #line 118
@@ -682,7 +640,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS15722")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatCardWidgetHavingDateColumnsDisplayedCorrectlyOnDashboard()
         {
             System.Exception lastException = null;
@@ -717,7 +674,6 @@ this.FeatureBackground();
                         "EvergreenJnr_DashboardsPage",
                         "Widgets",
                         "DAS15722",
-                        "Cleanup",
                         "Cleanup"});
 #line 147
 this.ScenarioInitialize(scenarioInfo);
@@ -751,13 +707,7 @@ this.FeatureBackground();
                         "Type",
                         "AggregateBy",
                         "AggregateFunction",
-                        "SplitBy",
-                        "OrderBy",
-                        "MaxValues",
-                        "ShowLegend",
-                        "TableOrientation",
-                        "Drilldown",
-                        "Layout"});
+                        "Drilldown"});
             table9.AddRow(new string[] {
                         "Card",
                         "WidgetForDAS15722",
@@ -765,13 +715,7 @@ this.FeatureBackground();
                         "Aggregate",
                         "Build Date",
                         "First",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "Yes",
-                        ""});
+                        "Yes"});
 #line 157
  testRunner.And("User adds new Widget", ((string)(null)), table9, "And ");
 #line 160
@@ -784,10 +728,8 @@ this.FeatureBackground();
  testRunner.Then("Card \"WidgetForDAS15722\" Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 164
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 165
- testRunner.When("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 166
- testRunner.And("User clicks data in card \"WidgetForDAS15722\" widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User clicks data in card \"WidgetForDAS15722\" widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 167
  testRunner.Then("\"1\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -800,7 +742,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Evergreen@EvergreenJnr_DashboardsPage")]
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS15355")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckComplianceFirstCellIconsForCardWidget()
         {
@@ -834,7 +775,6 @@ this.FeatureBackground();
                         "Evergreen@EvergreenJnr_DashboardsPage",
                         "Widgets",
                         "DAS15355",
-                        "Cleanup",
                         "Cleanup"});
 #line 170
 this.ScenarioInitialize(scenarioInfo);
@@ -885,28 +825,12 @@ this.FeatureBackground();
                         "Title",
                         "List",
                         "Type",
-                        "AggregateBy",
-                        "AggregateFunction",
-                        "SplitBy",
-                        "OrderBy",
-                        "MaxValues",
-                        "ShowLegend",
-                        "TableOrientation",
-                        "Drilldown",
                         "Layout"});
             table11.AddRow(new string[] {
                         "Card",
                         "WidgetForDAS15355",
                         "DAS15355_Applications_List",
                         "First Cell",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
                         "Text Only"});
 #line 189
  testRunner.And("User adds new Widget", ((string)(null)), table11, "And ");
@@ -961,7 +885,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS15355")]
         [NUnit.Framework.CategoryAttribute("DAS15662")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckReadinessFirstCellIconsForCardWidget()
         {
             System.Exception lastException = null;
@@ -996,7 +919,6 @@ this.FeatureBackground();
                         "Widgets",
                         "DAS15355",
                         "DAS15662",
-                        "Cleanup",
                         "Cleanup"});
 #line 213
 this.ScenarioInitialize(scenarioInfo);
@@ -1103,7 +1025,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS16266")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatCardWidgetIsDisplayedCorrectlyWithBlankFirstCell()
         {
             System.Exception lastException = null;
@@ -1138,7 +1059,6 @@ this.FeatureBackground();
                         "EvergreenJnr_DashboardsPage",
                         "Widgets",
                         "DAS16266",
-                        "Cleanup",
                         "Cleanup"});
 #line 259
 this.ScenarioInitialize(scenarioInfo);
@@ -1148,7 +1068,7 @@ this.FeatureBackground();
 #line 260
  testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 261
- testRunner.When("User click on \'Owner Display Name\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'Owner Display Name\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 262
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 263
@@ -1194,7 +1114,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS15914")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhenFirstCellSelected()
         {
             System.Exception lastException = null;
@@ -1229,7 +1148,6 @@ this.FeatureBackground();
                         "EvergreenJnr_DashboardsPage",
                         "Widgets",
                         "DAS15914",
-                        "Cleanup",
                         "Cleanup"});
 #line 280
 this.ScenarioInitialize(scenarioInfo);
@@ -1288,30 +1206,12 @@ this.FeatureBackground();
                         "WidgetType",
                         "Title",
                         "List",
-                        "Type",
-                        "AggregateBy",
-                        "AggregateFunction",
-                        "SplitBy",
-                        "OrderBy",
-                        "MaxValues",
-                        "ShowLegend",
-                        "TableOrientation",
-                        "Drilldown",
-                        "Layout"});
+                        "Type"});
             table16.AddRow(new string[] {
                         "Card",
                         "WidgetForDAS15914",
                         "DeviceListFor15914",
-                        "First Cell",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""});
+                        "First Cell"});
 #line 302
  testRunner.And("User adds new Widget", ((string)(null)), table16, "And ");
 #line 305
@@ -1330,7 +1230,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS16127")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhenListHasReadinessColumnFirst()
         {
@@ -1366,7 +1265,6 @@ this.FeatureBackground();
                         "EvergreenJnr_DashboardsPage",
                         "Widgets",
                         "DAS16127",
-                        "Cleanup",
                         "Cleanup"});
 #line 309
 this.ScenarioInitialize(scenarioInfo);
@@ -1413,30 +1311,12 @@ this.FeatureBackground();
                         "WidgetType",
                         "Title",
                         "List",
-                        "Type",
-                        "AggregateBy",
-                        "AggregateFunction",
-                        "SplitBy",
-                        "OrderBy",
-                        "MaxValues",
-                        "ShowLegend",
-                        "TableOrientation",
-                        "Drilldown",
-                        "Layout"});
+                        "Type"});
             table19.AddRow(new string[] {
                         "Card",
                         "WidgetForDAS16127",
                         "DeviceListFor16127",
-                        "First Cell",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""});
+                        "First Cell"});
 #line 326
  testRunner.And("User adds new Widget", ((string)(null)), table19, "And ");
 #line 329
@@ -1457,7 +1337,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS15765")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhenFirstCellIsEmpty()
         {
@@ -1493,7 +1372,6 @@ this.FeatureBackground();
                         "EvergreenJnr_DashboardsPage",
                         "Widgets",
                         "DAS15765",
-                        "Cleanup",
                         "Cleanup"});
 #line 334
 this.ScenarioInitialize(scenarioInfo);
@@ -1546,30 +1424,12 @@ this.FeatureBackground();
                         "WidgetType",
                         "Title",
                         "List",
-                        "Type",
-                        "AggregateBy",
-                        "AggregateFunction",
-                        "SplitBy",
-                        "OrderBy",
-                        "MaxValues",
-                        "ShowLegend",
-                        "TableOrientation",
-                        "Drilldown",
-                        "Layout"});
+                        "Type"});
             table22.AddRow(new string[] {
                         "Card",
                         "WidgetForDAS15765",
                         "DeviceListFor15765",
-                        "First Cell",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""});
+                        "First Cell"});
 #line 354
  testRunner.And("User adds new Widget", ((string)(null)), table22, "And ");
 #line 357
@@ -1590,7 +1450,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS16336")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatNoErrorsInConsoleAfterAddingApplicationReadinessFirstCellWidget()
         {
@@ -1626,7 +1485,6 @@ this.FeatureBackground();
                         "EvergreenJnr_DashboardsPage",
                         "Widgets",
                         "DAS16336",
-                        "Cleanup",
                         "Cleanup"});
 #line 362
 this.ScenarioInitialize(scenarioInfo);
@@ -1657,7 +1515,7 @@ this.FeatureBackground();
 #line 373
  testRunner.And("User removes \"Version\" column by Column panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 374
- testRunner.And("User click on \'MigrationP: Application Readiness\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks on \'MigrationP: Application Readiness\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 375
  testRunner.And("User create dynamic list with \"DAS16336_Applications_List\" name on \"Applications\"" +
                     " page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1741,7 +1599,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS16325")]
         [NUnit.Framework.CategoryAttribute("DAS15145")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhenFirstCellIsSortedBool()
         {
             System.Exception lastException = null;
@@ -1777,7 +1634,6 @@ this.FeatureBackground();
                         "Widgets",
                         "DAS16325",
                         "DAS15145",
-                        "Cleanup",
                         "Cleanup"});
 #line 411
 this.ScenarioInitialize(scenarioInfo);
@@ -1800,7 +1656,7 @@ this.FeatureBackground();
 #line 418
  testRunner.And("User move \'Hostname\' column to \'Operating System\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 419
- testRunner.And("User click on \'ICSP: In Scope\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks on \'ICSP: In Scope\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 420
  testRunner.And("User create dynamic list with \"DeviceListFor16325\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 421
@@ -1816,30 +1672,12 @@ this.FeatureBackground();
                         "WidgetType",
                         "Title",
                         "List",
-                        "Type",
-                        "AggregateBy",
-                        "AggregateFunction",
-                        "SplitBy",
-                        "OrderBy",
-                        "MaxValues",
-                        "ShowLegend",
-                        "TableOrientation",
-                        "Drilldown",
-                        "Layout"});
+                        "Type"});
             table25.AddRow(new string[] {
                         "Card",
                         "WidgetForDAS16325",
                         "DeviceListFor16325",
-                        "First Cell",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""});
+                        "First Cell"});
 #line 425
  testRunner.And("User adds new Widget", ((string)(null)), table25, "And ");
 #line 428
@@ -1858,7 +1696,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Evergreen@EvergreenJnr_DashboardsPage")]
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS16347")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckWidgetCreatingFromListHavingSortedRingColumn()
         {
@@ -1892,7 +1729,6 @@ this.FeatureBackground();
                         "Evergreen@EvergreenJnr_DashboardsPage",
                         "Widgets",
                         "DAS16347",
-                        "Cleanup",
                         "Cleanup"});
 #line 433
 this.ScenarioInitialize(scenarioInfo);
@@ -1919,9 +1755,9 @@ this.FeatureBackground();
 #line 442
  testRunner.When("User removes \"Owner Display Name\" column by Column panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 443
- testRunner.And("User click on \'Barry\'sUse: Ring (Primary Device Only)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks on \'Barry\'sUse: Ring (Primary Device Only)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 444
- testRunner.And("User click on \'Barry\'sUse: Ring (Primary Device Only)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks on \'Barry\'sUse: Ring (Primary Device Only)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 445
  testRunner.Then("data in table is sorted by \'Barry\'sUse: Ring (Primary Device Only)\' column in des" +
                     "cending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1940,30 +1776,12 @@ this.FeatureBackground();
                         "WidgetType",
                         "Title",
                         "List",
-                        "Type",
-                        "AggregateBy",
-                        "AggregateFunction",
-                        "SplitBy",
-                        "OrderBy",
-                        "MaxValues",
-                        "ShowLegend",
-                        "TableOrientation",
-                        "Drilldown",
-                        "Layout"});
+                        "Type"});
             table27.AddRow(new string[] {
                         "Card",
                         "WidgetForDAS16347",
                         "List16347",
-                        "First Cell",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""});
+                        "First Cell"});
 #line 451
  testRunner.And("User adds new Widget", ((string)(null)), table27, "And ");
 #line 454
@@ -1982,7 +1800,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS15514")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.TestCaseAttribute("First", null)]
         [NUnit.Framework.TestCaseAttribute("Last", null)]
@@ -2019,7 +1836,6 @@ this.FeatureBackground();
                     "EvergreenJnr_DashboardsPage",
                     "Widgets",
                     "DAS15514",
-                    "Cleanup",
                     "Cleanup"};
             if ((exampleTags != null))
             {
@@ -2076,6 +1892,298 @@ this.FeatureBackground();
                         "Windows7Mi: Communication \\ DateTime"});
 #line 476
  testRunner.Then("User sees following options for Aggregate By selector on Create Widget page:", ((string)(null)), table29, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatArchivedItemsIncludedInCountWhenReferencingD" +
+            "ynamicListContainsArchivedItems")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
+        [NUnit.Framework.CategoryAttribute("Widgets")]
+        [NUnit.Framework.CategoryAttribute("DAS16844")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatArchivedItemsIncludedInCountWhenReferencingDynamicListContainsArchivedItems()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DashboardsPage_CheckThatArchivedItemsIncludedInCountWhenReferencingDynamicListContainsArchivedItemsInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DashboardsPage_CheckThatArchivedItemsIncludedInCountWhenReferencingDynamicListContainsArchivedItemsInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckThatArchivedItemsIncludedInCountWhenReferencingD" +
+                    "ynamicListContainsArchivedItems", null, new string[] {
+                        "Evergreen",
+                        "EvergreenJnr_DashboardsPage",
+                        "Widgets",
+                        "DAS16844",
+                        "Cleanup"});
+#line 487
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 488
+ testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 489
+ testRunner.And("User sets includes archived devices in \"true\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 490
+ testRunner.And("User create dynamic list with \"List16844\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 491
+ testRunner.And("Dashboard with \"Dashboard for DAS16844\" name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 492
+ testRunner.And("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 493
+ testRunner.And("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
+                        "WidgetType",
+                        "Title",
+                        "List",
+                        "Type",
+                        "AggregateFunction"});
+            table30.AddRow(new string[] {
+                        "Card",
+                        "WidgetForDAS16844",
+                        "List16844",
+                        "Aggregate",
+                        "Count"});
+#line 494
+ testRunner.And("User creates new Widget", ((string)(null)), table30, "And ");
+#line 497
+ testRunner.Then("\"WidgetForDAS16844\" Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 498
+ testRunner.And("Value \'17,427\' is displayed in the card \'WidgetForDAS16844\' widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 499
+ testRunner.When("User clicks data in card \"WidgetForDAS16844\" widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 500
+ testRunner.Then("Save as a new list option is available", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 501
+ testRunner.And("\"17,427\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatArchivedItemsIncludedInCountWhenReferencingS" +
+            "taticListContainsArchivedItems")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
+        [NUnit.Framework.CategoryAttribute("Widgets")]
+        [NUnit.Framework.CategoryAttribute("DAS16844")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatArchivedItemsIncludedInCountWhenReferencingStaticListContainsArchivedItems()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DashboardsPage_CheckThatArchivedItemsIncludedInCountWhenReferencingStaticListContainsArchivedItemsInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DashboardsPage_CheckThatArchivedItemsIncludedInCountWhenReferencingStaticListContainsArchivedItemsInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckThatArchivedItemsIncludedInCountWhenReferencingS" +
+                    "taticListContainsArchivedItems", null, new string[] {
+                        "Evergreen",
+                        "EvergreenJnr_DashboardsPage",
+                        "Widgets",
+                        "DAS16844",
+                        "Cleanup"});
+#line 504
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 505
+ testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 506
+ testRunner.And("User sets includes archived devices in \"true\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 507
+ testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 508
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedRowsName"});
+            table31.AddRow(new string[] {
+                        "Empty"});
+#line 509
+ testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table31, "When ");
+#line 512
+ testRunner.And("User selects \"Create static list\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 513
+ testRunner.And("User create static list with \"StaticList16844\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 514
+ testRunner.And("Dashboard with \"Dashboard for DAS16844\" name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 515
+ testRunner.And("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 516
+ testRunner.And("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
+                        "WidgetType",
+                        "Title",
+                        "List",
+                        "Type",
+                        "AggregateFunction"});
+            table32.AddRow(new string[] {
+                        "Card",
+                        "WidgetForDAS16844",
+                        "StaticList16844",
+                        "Aggregate",
+                        "Count"});
+#line 517
+ testRunner.And("User creates new Widget", ((string)(null)), table32, "And ");
+#line 520
+ testRunner.Then("\"WidgetForDAS16844\" Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 521
+ testRunner.And("Value \'1\' is displayed in the card \'WidgetForDAS16844\' widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 522
+ testRunner.When("User clicks data in card \"WidgetForDAS16844\" widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 523
+ testRunner.Then("\"1\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnCardWidgetsIfTheSourc" +
+            "eListHasNoRows")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
+        [NUnit.Framework.CategoryAttribute("Widgets")]
+        [NUnit.Framework.CategoryAttribute("DAS16167")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnCardWidgetsIfTheSourceListHasNoRows()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnCardWidgetsIfTheSourceListHasNoRowsInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnCardWidgetsIfTheSourceListHasNoRowsInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnCardWidgetsIfTheSourc" +
+                    "eListHasNoRows", null, new string[] {
+                        "Evergreen",
+                        "EvergreenJnr_DashboardsPage",
+                        "Widgets",
+                        "DAS16167",
+                        "Cleanup"});
+#line 526
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 527
+ testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 528
+ testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table33.AddRow(new string[] {
+                        "ZZZZ"});
+#line 529
+ testRunner.And("User add \"Owner Display Name\" filter where type is \"Equals\" with added column and" +
+                    " following value:", ((string)(null)), table33, "And ");
+#line 532
+ testRunner.And("User clicks Save button on the list panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 533
+ testRunner.And("User create dynamic list with \"ListForDAS16167\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 534
+ testRunner.Then("\"ListForDAS16167\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 535
+ testRunner.When("Dashboard with \"DAS16167_Dashboard\" name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 536
+ testRunner.And("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 537
+ testRunner.And("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
+                        "WidgetType",
+                        "Title",
+                        "List",
+                        "Type"});
+            table34.AddRow(new string[] {
+                        "Card",
+                        "WidgetForDAS16167",
+                        "ListForDAS16167",
+                        "First Cell"});
+#line 538
+ testRunner.And("User adds new Widget", ((string)(null)), table34, "And ");
+#line 541
+ testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 542
+ testRunner.And("\'This list does not contain any rows\' message is displayed in Preview", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 543
+ testRunner.When("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 544
+ testRunner.Then("\"WidgetForDAS16167\" Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 545
+ testRunner.And("\'This list does not contain any rows\' message is displayed in \'WidgetForDAS16167\'" +
+                    " widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -5,8 +5,10 @@ using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Threading;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.ItemDetails;
+using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -25,17 +27,47 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             _driver = driver;
         }
 
+        [When(@"User navigates to the '(.*)' details page for '(.*)' item")]
+        public void WhenUserNavigatesToTheDetailsPageForItem(string listName, string itemName)
+        {
+            listName = listName.ToLower();
+            var id = string.Empty;
+
+            switch (listName)
+            {
+                case "device":
+                    id = DatabaseHelper.GetDeviceDetailsIdByName(itemName);
+                    break;
+                case "user":
+                    id = DatabaseHelper.GetUserDetailsIdByName(itemName);
+                    break;
+                case "application":
+                    id = DatabaseHelper.GetApplicationDetailsIdByName(itemName);
+                    break;
+                case "mailbox":
+                    id = DatabaseHelper.GetMailboxDetailsIdByName(itemName);
+                    break;
+                default:
+                    throw new Exception($"Unknown list type: {listName}");
+            }
+
+            var url = $"{UrlProvider.EvergreenUrl}#/{listName}/{id}/details/{listName}";
+            
+            _driver.NavigateToUrl(url);
+            _driver.WaitForDataLoading();
+        }
+
         [When(@"User clicks on ""(.*)"" navigation link")]
         public void WhenUserClicksOnNavigationLink(string linkName)
         {
-            var detailsPage = _driver.NowAt<NavigationElements>();
+            var detailsPage = _driver.NowAt<BaseNavigationElements>();
             _driver.ExecuteAction(() => detailsPage.GetNavigationLinkByName(linkName).Click());
         }
 
-        [When(@"User navigates to the ""(.*)"" main-menu on the Details page")]
-        public void WhenUserNavigatesToTheMain_MenuOnTheDetailsPage(string tabMenuName)
+        [When(@"User navigates to the '(.*)' left menu item")]
+        public void WhenUserNavigatesToTheLeftMenuItem(string tabMenuName)
         {
-            var detailsPage = _driver.NowAt<NavigationElements>();
+            var detailsPage = _driver.NowAt<BaseNavigationElements>();
             _driver.ExecuteAction(() => detailsPage.GetTabMenuByName(tabMenuName).Click());
         }
 
@@ -44,7 +76,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         {
             List<Point> loader = new List<Point>();
 
-            var detailsPage = _driver.NowAt<NavigationElements>();
+            var detailsPage = _driver.NowAt<BaseNavigationElements>();
             _driver.WaitForDataLoading();
 
             loader = detailsPage.LoadingIndicatorCoordinates();
@@ -52,10 +84,11 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             Utils.Verify.That(loader.First(), Is.EqualTo(loader.Last()), "Wrong point loading position");
         }
 
+        //TODO rename to something generic
         [When(@"User navigates to the ""(.*)"" sub-menu on the Details page")]
         public void WhenUserNavigatesToTheSub_MenuOnTheDetailsPage(string subMenuName)
         {
-            var detailsPage = _driver.NowAt<NavigationElements>();
+            var detailsPage = _driver.NowAt<BaseNavigationElements>();
             _driver.ExecuteAction(() => detailsPage.GetSubMenuByName(subMenuName).Click());
         }
 
@@ -63,49 +96,49 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         [Then(@"""(.*)"" tab-menu on the Details page is expanded")]
         public void ThenTab_MenuOnTheDetailsPageIsExpanded(string tabMenuName)
         {
-            var detailsPage = _driver.NowAt<NavigationElements>();
-            Utils.Verify.IsTrue(detailsPage.GetExpandedTabByName(tabMenuName), $"{tabMenuName} tab-menu is not expanded!");
+            var detailsPage = _driver.NowAt<BaseNavigationElements>();
+            Verify.IsTrue(detailsPage.GetExpandedTabByName(tabMenuName), $"{tabMenuName} tab-menu is not expanded!");
         }
 
         [Then(@"""(.*)"" tab-menu on the Details page is not expanded")]
         public void ThenTab_MenuOnTheDetailsPageIsNotExpanded(string tabMenuName)
         {
-            var detailsPage = _driver.NowAt<NavigationElements>();
+            var detailsPage = _driver.NowAt<BaseNavigationElements>();
             Utils.Verify.IsFalse(detailsPage.GetExpandedTabByName(tabMenuName), $"{tabMenuName} tab-menu is expanded!");
         }
 
         [Then(@"""(.*)"" tab is displayed on left menu on the Details page")]
         public void ThenTabIsDisplayedOnLeftMenuOnTheDetailsPage(string tabName)
         {
-            var detailsPage = _driver.NowAt<NavigationElements>();
+            var detailsPage = _driver.NowAt<BaseNavigationElements>();
             Utils.Verify.IsTrue(detailsPage.GetTabByName(tabName), $"{tabName} tab is not displayed!");
         }
 
         [Then(@"""(.*)"" tab is not displayed on left menu on the Details page")]
         public void ThenTabIsNotDisplayedOnLeftMenuOnTheDetailsPage(string tabName)
         {
-            var detailsPage = _driver.NowAt<NavigationElements>();
+            var detailsPage = _driver.NowAt<BaseNavigationElements>();
             Utils.Verify.IsFalse(detailsPage.GetTabByName(tabName), $"{tabName} tab is displayed!");
         }
 
         [Then(@"""(.*)"" tab is displayed on left menu on the Details page with ""(.*)"" count of items")]
         public void ThenTabIsDisplayedOnLeftMenuOnTheDetailsPageWithCountOfItems(string tabName, string countOfItems)
         {
-            var detailsPage = _driver.NowAt<NavigationElements>();
+            var detailsPage = _driver.NowAt<BaseNavigationElements>();
             Verify.IsTrue(detailsPage.GetDisplayStatusOfTabWithCountOfItemsByName(tabName, countOfItems), $"{tabName} tab is displayed incorrectly!");
         }
 
         [Then(@"""(.*)"" tab is displayed on left menu on the Details page and contains count of items")]
         public void ThenTabIsDisplayedOnLeftMenuOnTheDetailsPageAndContainsCountOfItems(string tabName)
         {
-            var detailsPage = _driver.NowAt<NavigationElements>();
+            var detailsPage = _driver.NowAt<BaseNavigationElements>();
             Verify.IsTrue(detailsPage.GetCountOfItemsDisplayStatusByTabName(tabName), $"Tab {tabName} must contain the number of elements!");
         }
 
         [Then(@"""(.*)"" tab is displayed on left menu on the Details page and contains '(.*)' count of items")]
         public void ThenTabIsDisplayedOnLeftMenuOnTheDetailsPageAndContainsCountOfItems(string tabName, int count)
         {
-            var detailsPage = _driver.NowAt<NavigationElements>();
+            var detailsPage = _driver.NowAt<BaseNavigationElements>();
             //Try to check content several times because it is updating not immediately
             if (count != detailsPage.GetCountOfItemsByTabName(tabName))
                 //JS update count every 3 seconds
@@ -116,7 +149,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         [Then(@"""(.*)"" tab is displayed on left menu on the Details page and NOT contains count of items")]
         public void ThenTabIsDisplayedOnLeftMenuOnTheDetailsPageAndNotContainsCountOfItems(string tabName)
         {
-            var detailsPage = _driver.NowAt<NavigationElements>();
+            var detailsPage = _driver.NowAt<BaseNavigationElements>();
             Verify.IsFalse(detailsPage.GetCountOfItemsDisplayStatusByTabName(tabName), $"Tab {tabName} must contain the number of elements!");
         }
 
@@ -124,7 +157,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         public void ThenSub_TabIsDisplayedWithDisabledStateOnLeftMenuOnTheDetailsPage(string tabName)
         {
             _driver.WaitForDataLoading();
-            var detailsPage = _driver.NowAt<NavigationElements>();
+            var detailsPage = _driver.NowAt<BaseNavigationElements>();
             Utils.Verify.IsTrue(detailsPage.GetDisplayStatusForDisabledSubTabByName(tabName), $"{tabName} Tab must be disabled!");
         }
 
@@ -132,27 +165,28 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         public void ThenMain_TabIsDisplayedWithDisabledStateOnLeftMenuOnTheDetailsPage(string tabName)
         {
             _driver.WaitForDataLoading();
-            var detailsPage = _driver.NowAt<NavigationElements>();
+            var detailsPage = _driver.NowAt<BaseNavigationElements>();
             Utils.Verify.IsTrue(detailsPage.GetDisplayStatusForDisabledMainTabByName(tabName), $"{tabName} Tab must be disabled!");
         }
 
         [Then(@"User sees following main-tabs on left menu on the Details page:")]
         public void ThenUserSeesFollowingMain_TabsOnLeftMenuOnTheDetailsPage(Table table)
         {
-            var detailsPage = _driver.NowAt<NavigationElements>();
+            var detailsPage = _driver.NowAt<BaseNavigationElements>();
 
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var actualList = detailsPage.MainTabsOnDetailsPageList.Select(value => value.Text).ToList();
             Utils.Verify.AreEqual(expectedList, actualList, "Tabs for the details page are incorrect");
         }
 
+        //TODO should be moved to Navigation
         [Then(@"""(.*)"" main-menu on the Details page contains following sub-menu:")]
         public void ThenMain_MenuOnTheDetailsPageContainsFollowingSub_Menu(string tabMenuName, Table table)
         {
-            var detailsPage = _driver.NowAt<NavigationElements>();
+            var detailsPage = _driver.NowAt<BaseNavigationElements>();
 
             //opens main-menu 
-            _driver.ExecuteAction(() => detailsPage.GetTabMenuByName(tabMenuName).Click());
+            //_driver.ExecuteAction(() => detailsPage.GetTabMenuByName(tabMenuName).Click());
             _driver.WaitForDataLoading();
             foreach (var row in table.Rows)
                 Verify.IsTrue(detailsPage.GetDisplayStatusSubTabByName(row["SubTabName"]), $"'{row["SubTabName"]}' tab is not displayed!");
@@ -161,7 +195,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         [Then(@"""(.*)"" main-menu on the Details page contains following sub-menu with count of items:")]
         public void ThenMain_MenuOnTheDetailsPageContainsFollowingSub_MenuWithCountOfItems(string tabMenuName, Table table)
         {
-            var detailsPage = _driver.NowAt<NavigationElements>();
+            var detailsPage = _driver.NowAt<BaseNavigationElements>();
 
             _driver.ExecuteAction(() => detailsPage.GetTabMenuByName(tabMenuName).Click());
             foreach (var row in table.Rows)

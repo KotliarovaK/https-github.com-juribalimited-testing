@@ -163,6 +163,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             _driver.WaitForDataLoading();
         }
 
+        //TODO should be removed
         [When(@"User selects ""(.*)"" tab on the Project details page")]
         public void WhenUserSelectTabOnTheProjectDetailsPage(string tabName)
         {

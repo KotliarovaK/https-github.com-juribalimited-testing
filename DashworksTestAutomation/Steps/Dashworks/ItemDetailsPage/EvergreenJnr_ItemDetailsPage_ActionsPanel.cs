@@ -30,6 +30,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             Utils.Verify.IsTrue(actionPanel.ActionsDropDown.Displayed, "Actions drop-down is not displayed!");
         }
 
+        //TODO move to ActionPanel
         [When(@"User clicks Actions button on the Item Details page")]
         public void WhenUserClicksActionsButtonOnTheItemDetailsPage()
         {

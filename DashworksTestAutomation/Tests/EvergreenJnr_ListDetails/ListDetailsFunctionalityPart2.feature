@@ -22,7 +22,7 @@ Examples:
 Scenario Outline: EvergreenJnr_AllLists_CheckDefaultOptionsInListDetailsForDynamicLists
 	When User clicks "<PageName>" on the left-hand menu
 	Then "All <PageName>" list should be displayed to the user
-	When User click on '<Columnname>' column header
+	When User clicks on '<Columnname>' column header
 	Then data in table is sorted by '<Columnname>' column in ascending order
 	When User create dynamic list with "TestListCED2D6" name on "<PageName>" page
 	When User clicks the List Details button
@@ -62,7 +62,7 @@ Examples:
 Scenario Outline: EvergreenJnr_AllLists_CheckThatActiveListIsRefreshedOnListDetailsPanel
 	When User clicks "<PageName>" on the left-hand menu
 	Then "All <PageName>" list should be displayed to the user
-	When User click on '<Columnname>' column header
+	When User clicks on '<Columnname>' column header
 	Then data in table is sorted by '<Columnname>' column in ascending order
 	When User create custom list with "TestListE11493" name
 	Then "TestListE11493" list is displayed to user
@@ -72,7 +72,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatActiveListIsRefreshedOnListDeta
 	And User click Accept button in List Details panel
 	Then List details button is disabled
 	And list with "TestListE11493" name is not displayed
-	And "<PageName>" list should be displayed to the user
+	And "All <PageName>" list should be displayed to the user
 
 Examples: 
 	| PageName     | Columnname    |
