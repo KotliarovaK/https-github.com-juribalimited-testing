@@ -106,7 +106,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckMovingWidgetsBetweenSections
 	When User clicks "MOVE" button on the Move to Section Pop up
 	Then "Device Profile" Widget is displayed to the user
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16326 @Cleanup @Not_Run
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16326 @DAS17150 @Cleanup @Not_Run
 Scenario: EvergreenJnr_DashboardsPage_CheckErrorTextAndLinkOnTheWarningMessage
 	When Dashboard with "Dashboard_DAS16326" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
@@ -118,7 +118,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckErrorTextAndLinkOnTheWarningMessage
 	Then "Device List (Complex) - BROKEN LIST" link is displayed in warning message on Dashboards page
 	And There are no errors in the browser console
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17551 @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17551 @DAS17150 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckErrorTextDisplakyingWhenListRefersToBrokenList
 	When Dashboard with "Dashboard_DAS16326" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page

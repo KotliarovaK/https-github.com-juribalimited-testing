@@ -49,7 +49,7 @@ Scenario: EvergreenJnr_DevicesList_CheckUpdateCustomFieldUpdatingValuesForRemove
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
 	When User selects 'Remove all values' in the 'Update Values' dropdown
 	When User clicks the "UPDATE" Action button
-	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
+	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
 	And Success message with "2 updates have been queued" text is displayed on Action panel
 	When User refreshes agGrid
@@ -95,7 +95,7 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateCustomFieldUpdatingValuesForAddToExi
 	#DAS18031
 	When User adds 'alpha' value from 'Value' textbox
 	When User clicks the "UPDATE" Action button
-	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
+	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
 	And Success message with "2 updates have been queued" text is displayed on Action panel
 	When User refreshes agGrid
@@ -111,7 +111,7 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateCustomFieldUpdatingValuesForAddToExi
 	#DAS18031
 	When User adds 'beta' value from 'Value' textbox
 	When User clicks the "UPDATE" Action button
-	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
+	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
 	And Success message with "2 updates have been queued" text is displayed on Action panel
 
@@ -143,7 +143,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateCustomFieldUpdatingValuesForR
 	When User enters 'first value' text to 'Find Value' textbox
 	When User enters 'second' text to 'Replace Value' textbox
 	When User clicks the "UPDATE" Action button
-	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
+	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
 	And Success message with "2 updates have been queued" text is displayed on Action panel
 	When User refreshes agGrid
@@ -156,7 +156,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateCustomFieldUpdatingValuesForR
 	When User enters 'second' text to 'Find Value' textbox
 	When User enters 'first value' text to 'Replace Value' textbox
 	When User clicks the "UPDATE" Action button
-	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
+	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
 	And Success message with "2 updates have been queued" text is displayed on Action panel
 
@@ -192,7 +192,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckUpdateCustomFieldUpdatingValuesForRepl
 	#DAS18031
 	When User adds 'three' value from 'Value' textbox
 	When User clicks the "UPDATE" Action button
-	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
+	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
 	And Success message with "2 updates have been queued" text is displayed on Action panel
 	When User refreshes agGrid
@@ -205,6 +205,6 @@ Scenario: EvergreenJnr_MailboxesList_CheckUpdateCustomFieldUpdatingValuesForRepl
 	When User adds '01' value from 'Value' textbox
 	When User adds 'three' value from 'Value' textbox
 	When User clicks the "UPDATE" Action button
-	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
+	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
 	And Success message with "2 updates have been queued" text is displayed on Action panel

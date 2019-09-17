@@ -451,6 +451,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS16326")]
+        [NUnit.Framework.CategoryAttribute("DAS17150")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DashboardsPage_CheckErrorTextAndLinkOnTheWarningMessage()
@@ -486,6 +487,7 @@ this.FeatureBackground();
                         "EvergreenJnr_DashboardsPage",
                         "Widgets",
                         "DAS16326",
+                        "DAS17150",
                         "Cleanup",
                         "Not_Run"});
 #line 110
@@ -533,6 +535,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS17551")]
+        [NUnit.Framework.CategoryAttribute("DAS17150")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckErrorTextDisplakyingWhenListRefersToBrokenList()
         {
@@ -567,6 +570,7 @@ this.FeatureBackground();
                         "EvergreenJnr_DashboardsPage",
                         "Widgets",
                         "DAS17551",
+                        "DAS17150",
                         "Cleanup"});
 #line 122
 this.ScenarioInitialize(scenarioInfo);
