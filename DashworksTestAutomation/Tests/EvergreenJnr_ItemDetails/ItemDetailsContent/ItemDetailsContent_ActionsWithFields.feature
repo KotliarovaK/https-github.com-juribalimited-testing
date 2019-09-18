@@ -357,6 +357,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatProjectDetailsDefaultViewIsDisplayed
 	Then following fields are displayed in the open section:
 	| Fields           |
 	| Object ID        |
+	#remove hash for 'radiant'
+	#| Object Name      |
 	| Device Owner     |
 	| Readiness        |
 	| Path             |
@@ -381,6 +383,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatProjectDetailsDefaultViewIsDisplayedCo
 	Then following fields are displayed in the open section:
 	| Fields           |
 	| Object ID        |
+	#remove hash for 'radiant'
+	#| Object Name      |
 	| Primary Device   |
 	| Readiness        |
 	| Path             |
@@ -406,6 +410,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectDetailsDefaultViewIsDisp
 	Then following fields are displayed in the open section:
 	| Fields              |
 	| Object ID           |
+	#remove hash for 'radiant'
+	#| Object Name      |
 	| Readiness           |
 	| App Readiness       |
 	| App Rationalisation |
@@ -431,6 +437,8 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatProjectDetailsDefaultViewIsDisplay
 	Then following fields are displayed in the open section:
 	| Fields           |
 	| Object ID        |
+	#remove hash for 'radiant'
+	#| Object Name      |
 	| Mailbox Owner    |
 	| Readiness        |
 	| Path             |
