@@ -29,12 +29,5 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             return Driver.FindElement(By.XPath(".//div[@class='mat-dialog-content']")).Text;
         }
-
-        public IWebElement GetDialogPopUpCheckbox(string checkbox)
-        {
-            var selector = By.XPath($".//*[text()='{checkbox}']/preceding::div[@class='mat-checkbox-inner-container']//input");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
     }
 }

@@ -5,19 +5,17 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
+	#TODO create API ONBOARDING step;
+	#tag 'not_rady' added because need to create Cleanup (DAS-18070)
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @Offboard @DAS17964 @DAS17990 @DAS17000 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindowWithNoAssotiatedDevicesOnMailboxesPage
 	When User navigates to the 'Mailbox' details page for '01DEAC5F18B34084B04@bclabs.local' item
-	#When User clicks "Mailboxes" on the left-hand menu
-	#Then "All Mailboxes" list should be displayed to the user
-	#When User perform search by "01DEAC5F18B34084B04@bclabs.local"
-	#And User click content from "Email Address" column
 	Then Details page for "01DEAC5F18B34084B04@bclabs.local" item is displayed to the user
 	When User switches to the "USE ME FOR AUTOMATION(MAIL SCHDLD)" project in the Top bar on Item details page
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the "Project Details" sub-menu on the Details page
 	And User clicks the "OFFBOARD" Action button
-	Then Dialog Pop-up is displayed on the Item Details page
+	Then Dialog Pop-up is displayed for User
 	Then following text 'Offboarding mailbox 01DEAC5F18B34084B04@bclabs.local. Offboarding an object deletes all project related information about it.' is displayed in Dialog Pop-up
 	Then 'Offboard all associated users' checkbox is checked in Dialog Pop-up
 	Then following columns are displayed on the Item details page:
@@ -46,18 +44,17 @@ Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOf
 	Then '01DEAC5F18B34084B04' content is displayed in the 'Item' column
 	Then 'svc_dashworks' content is not displayed in the 'Item' column
 
+	#TODO create API ONBOARDING step;
+	#tag 'not_rady' added because need to create Cleanup (DAS-18070)
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @Offboard @DAS17964 @DAS17990 @DAS17000 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindowWithAssotiatedDevicesOnPageMailboxes
-	When User clicks "Mailboxes" on the left-hand menu
-	Then "All Mailboxes" list should be displayed to the user
-	When User perform search by "01DEAC5F18B34084B04@bclabs.local"
-	And User click content from "Email Address" column
+	When User navigates to the 'Mailbox' details page for '01DEAC5F18B34084B04@bclabs.local' item
 	Then Details page for "01DEAC5F18B34084B04@bclabs.local" item is displayed to the user
 	When User switches to the "USE ME FOR AUTOMATION(MAIL SCHDLD)" project in the Top bar on Item details page
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the "Project Details" sub-menu on the Details page
 	And User clicks the "OFFBOARD" Action button
-	Then Dialog Pop-up is displayed on the Item Details page
+	Then Dialog Pop-up is displayed for User
 	Then following text 'Offboarding mailbox 01DEAC5F18B34084B04@bclabs.local. Offboarding an object deletes all project related information about it.' is displayed in Dialog Pop-up
 	Then 'Offboard all associated users' checkbox is checked in Dialog Pop-up
 	Then following columns are displayed on the Item details page:
@@ -91,5 +88,5 @@ Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOf
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the "Project Details" sub-menu on the Details page
 	And User clicks the "OFFBOARD" Action button
-	Then Dialog Pop-up is displayed on the Item Details page
+	Then Dialog Pop-up is displayed for User
 	Then following text 'Offboarding mailbox alex.cristea@juriba.com (Alex Cristea). Offboarding an object deletes all project related information about it.' is displayed in Dialog Pop-up

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Utils;
@@ -22,8 +23,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             _driver = driver;
         }
 
-        [Then(@"Dialog Pop-up is displayed on the Item Details page")]
-        public void ThenDialogPop_UpIsDisplayedOnTheItemDetailsPage()
+        [Then(@"Dialog Pop-up is displayed for User")]
+        public void ThenDialogPop_UpIsDisplayedForUser()
         {
             var dialogContainer = _driver.NowAt<BaseDialogPage>();
             Verify.IsTrue(dialogContainer.DialogPopUp.Displayed(), "Dialog Pop-up is not displayed");
@@ -36,20 +37,19 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var dialogContainer = _driver.NowAt<BaseDialogPage>();
             var actualText = dialogContainer.GetPopupText().Replace("\r\n", " ");
             Verify.Contains(text, actualText, $"'{text}' in Dialog Pop-up is not displayed correctly!");
-            Logger.Write("Text in Dialog Pop-up is displayed correctly");
         }
 
         [Then(@"'(.*)' checkbox is checked in Dialog Pop-up")]
         public void ThenCheckboxIsCheckedInDialogPop_Up(string checkbox)
         {
-            var dialogContainer = _driver.NowAt<BaseDialogPage>();
+            var dialogContainer = _driver.NowAt<BasePage>();
             Verify.IsTrue(dialogContainer.GetDialogPopUpCheckbox(checkbox).Selected, $"{checkbox} Checkbox is not checked");
         }
 
         [Then(@"User clicks '(.*)' checkbox in Dialog Pop-up")]
         public void ThenUserClicksCheckboxInDialogPop_Up(string checkbox)
         {
-            var dialogContainer = _driver.NowAt<BaseDialogPage>();
+            var dialogContainer = _driver.NowAt<BasePage>();
             dialogContainer.GetDialogPopUpCheckbox(checkbox).Click();
             Logger.Write("Checkbox successfully pressed");
         }

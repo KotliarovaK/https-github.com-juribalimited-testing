@@ -17,5 +17,12 @@ namespace DashworksTestAutomation.Base
 
             return new List<By> { };
         }
+
+        public IWebElement GetDialogPopUpCheckbox(string checkbox)
+        {
+            var selector = By.XPath($".//*[text()='{checkbox}']/preceding::div[@class='mat-checkbox-inner-container']//input");
+            Driver.WaitForElementToBeDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
     }
 }

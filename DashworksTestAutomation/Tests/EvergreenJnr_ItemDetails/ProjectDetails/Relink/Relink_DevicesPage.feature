@@ -5,8 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-	#TODO This test is in progress. Update the test when there will be more details.
-	#Ann.Ilchenko 8/29/19: ready on 'quasar';
+	#Ready on the 'radiant' server
 @Evergreen @Devices @EvergreenJnr_ItemDetails @Relink @DAS17655 @DAS17831 @DAS18002 @DAS18112 @Not_Ready
 Scenario: EvergreenJnr_DevicesList_CheckThatRelinkOptionIsWorkedCorrectlyForProjectDetailsOnDevicesPage
 	When User navigates to the 'Device' details page for '063X2ZOB8V3GUY' item
@@ -15,7 +14,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRelinkOptionIsWorkedCorrectlyForProj
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the "Project Details" sub-menu on the Details page
 	When User clicks the "RELINK" Action button
-	Then Dialog Pop-up is displayed on the Item Details page
+	Then Dialog Pop-up is displayed for User
 	Then 'Resync owner' checkbox is checked in Dialog Pop-up
 	Then 'Resync apps' checkbox is checked in Dialog Pop-up
 	Then 'Resync name' checkbox is checked in Dialog Pop-up

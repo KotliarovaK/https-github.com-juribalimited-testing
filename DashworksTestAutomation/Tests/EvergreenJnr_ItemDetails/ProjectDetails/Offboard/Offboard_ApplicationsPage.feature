@@ -6,6 +6,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 	#TODO create API ONBOARDING step;
+	#tag 'not_rady' added because need to create Cleanup (DAS-18070)
 @Evergreen @Applications @EvergreenJnr_ItemDetails @Offboard @DAS17919 @DAS17990 @DAS17000 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_ApplicationsList_CheckThatOffboardOptionIsWorkedCorrectlyForProjectDetailsPageOnApplicationsPage
 	When Project created via API and opened

@@ -622,15 +622,5 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             else
                 throw new Exception($"There is no cell with '{cellText}' text in the '{columnName}' column");
         }
-
-        public IWebElement GetMessageButtonByName(string name)
-        {
-            var selector =
-                By.XPath(
-                    $".//div[contains(@class,'list-notification')]//span[@class='inline-buttons']//span[text()='{name}']/ancestor::button");
-            if (!Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Long))
-                throw new Exception($"Unable to find '{name}' button in the Message");
-            return Driver.FindElement(selector);
-        }
     }
 }
