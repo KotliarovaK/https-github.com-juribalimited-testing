@@ -511,6 +511,13 @@ Scenario: EvergreenJnr_DevicesList_CheckThatLastLogoffDateFieldIsNotDisplayedAtT
 	When User navigates to the "Device Owner" sub-menu on the Details page
 	Then field with "Last Logoff Date" text is not displayed in expanded tab on the Details Page
 
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17775
+Scenario: EvergreenJnr_MailboxesList_CheckThatLastLogoffDateFieldIsNotDisplayedAtTheMailboxOwnerBlockOfDeviceDetails
+	When User navigates to the 'Mailbox' details page for '000F977AC8824FE39B8@bclabs.loca' item
+	Then Details page for "000F977AC8824FE39B8@bclabs.loca" item is displayed to the user
+	When User navigates to the "Mailbox Owner" sub-menu on the Details page
+	Then field with "Last Logoff Date" text is not displayed in expanded tab on the Details Page
+
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17735
 Scenario: EvergreenJnr_DevicesList_CheckThatErrorsANotAppearInConsoleWhenNavigatingToTheMaterialTableOnObjectDetails
 	When User clicks "Devices" on the left-hand menu
