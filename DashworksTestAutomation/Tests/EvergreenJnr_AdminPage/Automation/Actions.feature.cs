@@ -1526,7 +1526,7 @@ this.FeatureBackground();
             table26.AddRow(new string[] {
                         "No change"});
 #line 476
- testRunner.Then("following Values are displayed in \"Update Value\" drop-down on the Admin page:", ((string)(null)), table26, "Then ");
+ testRunner.Then("following Values are displayed in the \'Update Value\' dropdown:", ((string)(null)), table26, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
                         "Options"});
@@ -1537,7 +1537,7 @@ this.FeatureBackground();
             table27.AddRow(new string[] {
                         "No change"});
 #line 480
- testRunner.Then("following Values are displayed in \"Update Date\" drop-down on the Admin page:", ((string)(null)), table27, "Then ");
+ testRunner.Then("following Values are displayed in the \'Update Date\' dropdown:", ((string)(null)), table27, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
                         "Options"});
@@ -1550,7 +1550,7 @@ this.FeatureBackground();
             table28.AddRow(new string[] {
                         "No change"});
 #line 485
- testRunner.Then("following Values are displayed in \"Update Owner\" drop-down on the Admin page:", ((string)(null)), table28, "Then ");
+ testRunner.Then("following Values are displayed in the \'Update Owner\' dropdown:", ((string)(null)), table28, "Then ");
 #line 491
  testRunner.When("User selects \"Unknown\" Value for Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 492

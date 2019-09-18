@@ -271,7 +271,7 @@ this.FeatureBackground();
             table2.AddRow(new string[] {
                         "Scheduled: Dashworks Daily"});
 #line 43
- testRunner.Then("following Values are displayed in \"Run\" drop-down on the Admin page:", ((string)(null)), table2, "Then ");
+ testRunner.Then("following Values are displayed in the \'Run\' dropdown:", ((string)(null)), table2, "Then ");
 #line 48
  testRunner.When("User enters \'DAS16801_Automation\' text to \'Automation Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 49

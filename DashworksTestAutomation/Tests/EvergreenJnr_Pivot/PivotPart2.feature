@@ -28,7 +28,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatPivotsAreNotShownInTheListToSelectO
 	And User navigates to the 'Scope' left menu item
 	And User selects "Scope Details" tab on the Project details page
 	And User navigates to the 'Device Scope' tab on Project Scope Changes page
-	Then following Values are displayed in "Scope" drop-down on the Admin page:
+	Then following Values are displayed in the 'Scope' dropdown:
 	| Values                                |
 	| All Devices                           |
 	| 1803 Rollout                          |
@@ -42,7 +42,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatPivotsAreNotShownInTheListToSelectO
 	| New York - Devices                    |
 	| Using App Saved List Readiness Filter |
 	When User navigates to the 'User Scope' tab on Project Scope Changes page
-	Then following Values are displayed in "User Scope" drop-down on the Admin page:
+	Then following Values are displayed in the 'User Scope' dropdown:
 	| Values                             |
 	| All Users                          |
 	| Users List (Complex)               |
@@ -50,7 +50,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatPivotsAreNotShownInTheListToSelectO
 	| Users Readiness Columns & Filters  |
 	| Users with Device Count            |
 	When User navigates to the 'Application Scope' tab on Project Scope Changes page
-	Then following Values are displayed in "Application Scope" drop-down on the Admin page:
+	Then following Values are displayed in the 'Application Scope' dropdown:
 	| Values                                   |
 	| All Applications                         |
 	| 1803 Apps                                |
@@ -74,7 +74,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatPivotTableDisplayedCorrectlyAfterRe
 	| Description |
 	And User selects the following Values on Pivot:
 	| Values            |
-	| Owner Cost Centre |
+	| Owner Cost Centre 
 	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
 	When User clicks the List Details button
