@@ -643,7 +643,7 @@ Scenario: EvergreenJnr_AdminPage_ChechAutomationsPermissions
 	And User select "Manage Users" option in Management Console
 	And User removes "17003User" User
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17003 @Cleanup @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17003 @DAS17789 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_ChechAutomationsPermissionsForScopeDropdownLists
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
