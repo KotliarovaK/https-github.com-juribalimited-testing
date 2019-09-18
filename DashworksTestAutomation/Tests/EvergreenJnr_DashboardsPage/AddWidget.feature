@@ -16,8 +16,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatValidationMessageAppearsWhenSavin
 	Then Error message with "Widget Title should not be empty" text is displayed on Widget page
 	And There are no errors in the browser console
 	When User creates new Widget
-	| WidgetType | Title                  |
-	|            | Dashboard for DAS14587 |
+	| WidgetType | Title                  |List        |
+	|            | Dashboard for DAS14587 |All Devices |
 	Then User sees widget with the next name "Dashboard for DAS14587" on Dashboards page
 	
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14578 @DAS14584 @Cleanup

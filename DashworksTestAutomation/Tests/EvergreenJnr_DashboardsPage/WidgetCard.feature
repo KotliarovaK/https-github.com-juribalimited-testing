@@ -162,8 +162,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetHavingDateColumnsDispla
 	When User clicks the "CREATE" Action button
 	Then Card "WidgetForDAS15722" Widget is displayed to the user
 	And There are no errors in the browser console
-	When User clicks Edit mode trigger on Dashboards page
-	And User clicks data in card "WidgetForDAS15722" widget
+	#When User clicks Edit mode trigger on Dashboards page
+	When User clicks data in card "WidgetForDAS15722" widget
 	Then "1" rows are displayed in the agGrid
 
 @Evergreen@EvergreenJnr_DashboardsPage @Widgets @DAS15355 @Cleanup

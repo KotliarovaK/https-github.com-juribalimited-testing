@@ -162,10 +162,12 @@ this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "WidgetType",
-                        "Title"});
+                        "Title",
+                        "List"});
             table2.AddRow(new string[] {
                         "",
-                        "Dashboard for DAS14587"});
+                        "Dashboard for DAS14587",
+                        "All Devices"});
 #line 18
  testRunner.When("User creates new Widget", ((string)(null)), table2, "When ");
 #line 21
