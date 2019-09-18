@@ -311,7 +311,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS14923")]
         [NUnit.Framework.TestCaseAttribute("Devices", "05PFM2OWVCSCZ1", "Hostname", "Device", "Hostname", "05PFM2OWVCSCZ1", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "03714167684E45F7A8F", "Username", "User", "Username", "03714167684E45F7A8F", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "06D7AE4F161F4A3AA7F@bclabs.local", "Email Address", "Mailbox", "Alias", "06D7AE4F161F4A", null)]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "06D7AE4F161F4A3AA7F@bclabs.local", "Email Address", "Mailbox", "Alias", "06D7AE4F161F4A3AA7F", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatTextInKeyValueGridsIsSelectableOnDetailsPageOnSelectedSubMenu(string pageName, string searchTerm, string columnName, string subTabName, string keyToBeSelected, string valueToBeSelected, string[] exampleTags)
         {
             System.Exception lastException = null;
@@ -574,9 +574,9 @@ this.FeatureBackground();
 #line 90
  testRunner.And("User click content from \"Hostname\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 91
- testRunner.And("User navigates to the \'Details\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("Details page for \"001BAQXT6JWFPI\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 92
- testRunner.And("User navigates to the \"Device Owner\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User navigates to the \"Device Owner\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 93
  testRunner.And("User clicks \"QLL295118\" link on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 94
