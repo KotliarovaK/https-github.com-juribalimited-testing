@@ -18,6 +18,7 @@ namespace DashworksTestAutomation.Base
             return new List<By> { };
         }
 
+        //TODO Need need to be removed or updated later?
         public IWebElement GetDialogPopUpCheckbox(string checkbox)
         {
             var selector = By.XPath($".//*[text()='{checkbox}']/preceding::div[@class='mat-checkbox-inner-container']//input");

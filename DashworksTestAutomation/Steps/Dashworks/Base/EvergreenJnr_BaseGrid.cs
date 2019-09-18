@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using System.Threading;
+using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Utils;
@@ -249,6 +250,25 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseGridPage>();
             _driver.ScrollGridToTheEnd(page.TableBody);
+        }
+
+        #endregion
+
+        #region Dialog popup
+
+        [Then(@"'(.*)' checkbox is checked in Dialog Pop-up")]
+        public void ThenCheckboxIsCheckedInDialogPop_Up(string checkbox)
+        {
+            var dialogContainer = _driver.NowAt<BasePage>();
+            Verify.IsTrue(dialogContainer.GetDialogPopUpCheckbox(checkbox).Selected, $"{checkbox} Checkbox is not checked");
+        }
+
+        [Then(@"User clicks '(.*)' checkbox in Dialog Pop-up")]
+        public void ThenUserClicksCheckboxInDialogPop_Up(string checkbox)
+        {
+            var dialogContainer = _driver.NowAt<BasePage>();
+            dialogContainer.GetDialogPopUpCheckbox(checkbox).Click();
+            Logger.Write("Checkbox successfully pressed");
         }
 
         #endregion

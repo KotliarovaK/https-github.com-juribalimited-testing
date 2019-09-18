@@ -38,20 +38,5 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var actualText = dialogContainer.GetPopupText().Replace("\r\n", " ");
             Verify.Contains(text, actualText, $"'{text}' in Dialog Pop-up is not displayed correctly!");
         }
-
-        [Then(@"'(.*)' checkbox is checked in Dialog Pop-up")]
-        public void ThenCheckboxIsCheckedInDialogPop_Up(string checkbox)
-        {
-            var dialogContainer = _driver.NowAt<BasePage>();
-            Verify.IsTrue(dialogContainer.GetDialogPopUpCheckbox(checkbox).Selected, $"{checkbox} Checkbox is not checked");
-        }
-
-        [Then(@"User clicks '(.*)' checkbox in Dialog Pop-up")]
-        public void ThenUserClicksCheckboxInDialogPop_Up(string checkbox)
-        {
-            var dialogContainer = _driver.NowAt<BasePage>();
-            dialogContainer.GetDialogPopUpCheckbox(checkbox).Click();
-            Logger.Write("Checkbox successfully pressed");
-        }
     }
 }
