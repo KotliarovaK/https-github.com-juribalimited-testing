@@ -93,7 +93,7 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'section-edit-block')]")]
         public IList<IWebElement> AllSections { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//app-dialog/h1[text()='Move to Section']")]
+        [FindsBy(How = How.XPath, Using = ".//app-dialog//span[text()='Select Section']")]
         public IWebElement MoveToSectionPopUp { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//mat-select//span[text()='Select Section']")]
@@ -209,7 +209,7 @@ namespace DashworksTestAutomation.Pages
 
         public void ClickMoveToSectionPopUpButton(string buttonName)
         {
-            var listNameSelector = $".//div[@class='mat-dialog-actions']/button/span[text()='{buttonName}']";
+            var listNameSelector = $".//app-dialog//button/span[text()='{buttonName}']";
             Driver.FindElement(By.XPath(listNameSelector)).Click();
         }
 
@@ -448,8 +448,8 @@ namespace DashworksTestAutomation.Pages
 
         public IWebElement GetCardWidgetContent(string widgetTitle)
         {
-            //var cardWidget = By.XPath($".//*[text()='{widgetTitle}']/ancestor :: div[@class='widget-top']/following-sibling::div//div[@class='card-widget-value value-link ng-star-inserted']");
-            var cardWidget = By.XPath($".//*[text()='{widgetTitle}']/ancestor :: div[@class='widget-whole']//div[contains(@class, 'card-widget-value')]//span");
+            var cardWidget = By.XPath($".//*[text()='{widgetTitle}']/ancestor :: div[@class='widget-top']/following-sibling::div//div[@class='card-widget-value value-link ng-star-inserted']");
+            //var cardWidget = By.XPath($".//*[text()='{widgetTitle}']/ancestor :: div[@class='widget-whole']//div[contains(@class, 'card-widget-value')]//span");
             Driver.WaitForElementToBeDisplayed(cardWidget);
             return Driver.FindElement(cardWidget);
         }
