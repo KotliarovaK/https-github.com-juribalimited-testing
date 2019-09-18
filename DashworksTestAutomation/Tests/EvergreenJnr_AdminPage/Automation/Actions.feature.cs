@@ -589,7 +589,7 @@ this.FeatureBackground();
             table11.AddRow(new string[] {
                         "Update task value"});
 #line 165
- testRunner.Then("following Values are displayed in \"Action Type\" drop-down on the Admin page:", ((string)(null)), table11, "Then ");
+ testRunner.Then("following Values are displayed in the \' \' dropdown:", ((string)(null)), table11, "Then ");
 #line 169
  testRunner.When("User enters \'15428_Action_1\' text to \'Action Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 170

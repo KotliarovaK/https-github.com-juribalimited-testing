@@ -262,6 +262,17 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             basePage.BodyContainer.Click();
         }
 
+        [Then(@"following Values are displayed in the '(.*)' dropdown:")]
+        public void ThenFollowingValuesAreDisplayedInTheDropdown(string dropDownName, Table table)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.GetDropdownByName(dropDownName).Click();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = page.OptionListOnActionsPanel.Select(value => value.Text).ToList();
+            Verify.AreEqual(expectedList, actualList, $"Value for {dropDownName} are different");
+            page.BodyContainer.Click();
+        }
+
         #endregion
 
         #region Datepicker

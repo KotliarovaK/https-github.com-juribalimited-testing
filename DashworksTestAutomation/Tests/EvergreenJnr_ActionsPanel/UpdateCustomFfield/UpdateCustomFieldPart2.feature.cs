@@ -169,6 +169,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
         [NUnit.Framework.CategoryAttribute("BulkUpdate")]
         [NUnit.Framework.CategoryAttribute("DAS18045")]
+        [NUnit.Framework.CategoryAttribute("DAS18027")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_DevicesList_CheckUpdateCustomFieldUpdatingValuesForRemoveAllValues()
         {
@@ -204,6 +205,7 @@ this.FeatureBackground();
                         "EvergreenJnr_ActionsPanel",
                         "BulkUpdate",
                         "DAS18045",
+                        "DAS18027",
                         "Not_Ready"});
 #line 32
 this.ScenarioInitialize(scenarioInfo);
@@ -303,6 +305,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("BulkUpdate")]
         [NUnit.Framework.CategoryAttribute("DAS18045")]
         [NUnit.Framework.CategoryAttribute("DAS18031")]
+        [NUnit.Framework.CategoryAttribute("DAS18027")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_UsersList_CheckUpdateCustomFieldUpdatingValuesForAddToExistingValues()
         {
@@ -340,6 +343,7 @@ this.FeatureBackground();
                         "BulkUpdate",
                         "DAS18045",
                         "DAS18031",
+                        "DAS18027",
                         "Not_Ready"});
 #line 73
 this.ScenarioInitialize(scenarioInfo);
@@ -445,6 +449,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("BulkUpdate")]
         [NUnit.Framework.CategoryAttribute("DAS18045")]
         [NUnit.Framework.CategoryAttribute("DAS18031")]
+        [NUnit.Framework.CategoryAttribute("DAS18027")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_ApplicationsList_CheckUpdateCustomFieldUpdatingValuesForReplaceSingleValue()
         {
@@ -482,6 +487,7 @@ this.FeatureBackground();
                         "BulkUpdate",
                         "DAS18045",
                         "DAS18031",
+                        "DAS18027",
                         "Not_Ready"});
 #line 120
 this.ScenarioInitialize(scenarioInfo);
@@ -586,6 +592,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("BulkUpdate")]
         [NUnit.Framework.CategoryAttribute("DAS18045")]
         [NUnit.Framework.CategoryAttribute("DAS18031")]
+        [NUnit.Framework.CategoryAttribute("DAS18027")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_MailboxesList_CheckUpdateCustomFieldUpdatingValuesForReplaceSingleValue()
         {
@@ -623,6 +630,7 @@ this.FeatureBackground();
                         "BulkUpdate",
                         "DAS18045",
                         "DAS18031",
+                        "DAS18027",
                         "Not_Ready"});
 #line 165
 this.ScenarioInitialize(scenarioInfo);

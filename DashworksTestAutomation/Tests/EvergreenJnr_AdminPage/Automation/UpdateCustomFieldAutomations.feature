@@ -59,7 +59,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldAddToExistingV
 	Then "SAVE AND CREATE ANOTHER" Action button is active
 	#Create Action
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17881 @Cleanup @Not_Ready
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17881 @DAS17289 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldRemoveAllValues
 	When User creates new Automation via API and open it
 	| AutomationName     | Description | Active | StopOnFailedAction | Scope     | Run    |
@@ -71,14 +71,22 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldRemoveAllValue
 	And User enters '17881_Action' text to 'Action Name' textbox
 	And User selects 'Update custom field' in the 'Action Type' dropdown
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
-	And User selects 'Remove all values' in the 'Update Values' dropdown
+	Then following Values are displayed in the 'Update Values' dropdown:
+	| Values                 |
+	| Replace all values     |
+	| Add to existing values |
+	| Replace single value   |
+	| Remove all values      |
+	| Remove specific values |
+	When User selects 'Remove all values' in the 'Update Values' dropdown
 	When User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The automation action has been created" text
 	#Create Action
 	When User clicks content from "Action" column
 	Then Edit Action page is displayed to the User
 	Then "UPDATE" Action button is disabled
-	Then "UPDATE" Action button have tooltip with "Some values are missing or not valid" text
+	Then "UPDATE" Action button have tooltip with "No changes made" text
+	Then 'Remove all values' content is displayed in 'Update Values' dropdown
 	When User enters 'New_Action' text to 'Action Name' textbox
 	Then "UPDATE" Action button is active
 
