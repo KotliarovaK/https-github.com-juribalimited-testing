@@ -13,7 +13,8 @@ Scenario: EvergreenJnr_DevicesList_CheckCustomFieldDeleting
 	| CfDAS16489_1 | FlDAS16489_1 | true                | true    | true     |
 	And User creates Custom Field via API
 	| ObjectType | ObjectId | FieldName    | Value           |
-	| device     | 17152    | CfDAS16489_1 | ValueDAS16489_1 |
+	| device     | 17266    | CfDAS16489_1 | ValueDAS16489_1 |
+	# 17152_-------->| original ObjId 17152
 	And User navigates to the 'Device' details page for 'WIN-KTJC6PMV2P5' item
 	Then Details page for "WIN-KTJC6PMV2P5" item is displayed to the user
 	When User navigates to the "Custom Fields" sub-menu on the Details page

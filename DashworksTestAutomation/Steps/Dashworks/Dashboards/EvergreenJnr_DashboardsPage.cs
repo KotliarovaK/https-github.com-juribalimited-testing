@@ -352,17 +352,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [When(@"User clicks ""(.*)"" item from Ellipsis menu on Dashboards page")]
-        public void WhenUserClicksitemFromEllipsisMenuOnDashboardsPage(string itemName)
+        public void WhenUserClicksItemFromEllipsisMenuOnDashboardsPage(string itemName)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
 
             try
             {
                 page.EllipsisMenuItems.Select(x => x).Where(c => c.Text.Equals(itemName)).FirstOrDefault().Click();
+                _driver.WaitForDataLoading();
             }
             catch (Exception e)
             {
-                throw new Exception($"'{itemName}' menu item is not valid ", e);
+                throw new Exception($"'{itemName}' menu item is not valid", e);
             }
         }
 
@@ -383,24 +384,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _sectionsAndWidgets.WidgetsCount = page.AllWidgetsTitles.Count;
         }
 
-        [When(@"User remembers number of Widgets with Legend on Dashboards page")]
-        public void WhenUserRemembersNumberOfWidgetsWithLegendOnDashboardsPage()
+        [Then(@"User sees '(.*)' Widgets with Legend on Dashboards page")]
+        public void WhenUserRemembersNumberOfWidgetsWithLegendOnDashboardsPage(string expected)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
 
-            page.Storage.SessionStorage.SetItem("numberOfWidgetsWithLegend",
-                page.NumberOfWidgetLegends.Count.ToString());
-        }
-
-        [Then(@"User sees number of Widgets with Legend increased by ""(.*)"" on Dashboards page")]
-        public void WhenUserSeesNumberOfWidgetsWithLegendIncreasedByOnDashboardsPage(int increasedBy)
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            _driver.WaitForDataLoading();
-
-            int expectedCount = Int32.Parse(page.Storage.SessionStorage.GetItem("numberOfWidgetsWithLegend")) +
-                                increasedBy;
-            Utils.Verify.That(page.NumberOfWidgetLegends.Count, Is.EqualTo(expectedCount),
+            Utils.Verify.That(page.NumberOfWidgetLegends.Count.ToString(), Is.EqualTo(expected),
                 "Number of Widgets with Legend is different");
         }
 

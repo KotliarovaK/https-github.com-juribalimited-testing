@@ -310,7 +310,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'inline-success')]")]
         public IWebElement SuccessMessage { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'messageClose')]")]
+        [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'btn-close')]")]
         public IWebElement CloseButtonInSuccessMessage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[text()='This list does not exist or you do not have access to it']")]

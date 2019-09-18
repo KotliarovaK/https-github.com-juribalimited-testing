@@ -18,20 +18,20 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.4.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("DashboardSharing")]
-    public partial class DashboardSharingFeature
+    [NUnit.Framework.DescriptionAttribute("DashboardSharing1")]
+    public partial class DashboardSharing1Feature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "DashboardSharing.feature"
+#line 1 "DashboardSharing1.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "DashboardSharing", "\tRuns Dashboard sharing tests", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "DashboardSharing1", "\tRuns Dashboard sharing tests", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -264,19 +264,19 @@ this.FeatureBackground();
  testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table4, "When ");
 #line 50
  testRunner.And("User create dynamic list with \"First_List_DAS16380\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 52
+#line 51
  testRunner.And("User navigates to the \"All Devices\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 53
+#line 52
  testRunner.And("User clicks on \'Hostname\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 54
+#line 53
  testRunner.And("User create dynamic list with \"Second_List_DAS16380\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 55
+#line 54
  testRunner.Then("\"Second_List_DAS16380\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 57
+#line 55
  testRunner.When("Dashboard with \"Dashboard for DAS16380\" name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 58
+#line 56
  testRunner.And("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 59
+#line 57
  testRunner.And("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
@@ -291,78 +291,78 @@ this.FeatureBackground();
                         "First_List_DAS16380",
                         "10",
                         "10"});
-#line 60
+#line 58
  testRunner.And("User creates new Widget", ((string)(null)), table5, "And ");
-#line 63
+#line 61
  testRunner.Then("\"Widget_For_DAS16380\" Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 65
+#line 63
  testRunner.When("User clicks Dashboards Details icon on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 66
+#line 64
  testRunner.Then("User sees Dashboards context menu on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 67
+#line 65
  testRunner.When("User select \"Everyone can see\" sharing option on the Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 68
+#line 66
  testRunner.Then("Review Widget List Permissions is displayed to the User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 69
+#line 67
  testRunner.When("User selects \"Everyone can see\" permission for \"First_List_DAS16380\" list on Perm" +
                     "issions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 70
+#line 68
  testRunner.And("User clicks the \"UPDATE & SHARE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 69
+ testRunner.And("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 70
+ testRunner.When("User selects \"List\" in the \"Widget Type\" Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 71
- testRunner.And("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 72
- testRunner.When("User selects \"List\" in the \"Widget Type\" Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 73
  testRunner.And("User enters \"Widget_For_DAS16380_1\" as Widget Title", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 74
+#line 72
  testRunner.And("User selects \"Second_List_DAS16380\" as Widget List", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 73
+ testRunner.Then("User sees \"You have chosen a restricted list for a shared dashboard, some users m" +
+                    "ay not be able to see this widget\" warning text below Lists field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 75
- testRunner.Then("User sees \"You have chosen a restricted list for a shared dashboard, some users m" +
-                    "ay not be able to see this widget\" warning text below Lists field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 76
+ testRunner.When("User clicks Dashboards Details icon on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 77
- testRunner.When("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 78
- testRunner.When("User clicks Dashboards Details icon on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 79
  testRunner.Then("User sees Dashboards context menu on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 80
+#line 78
  testRunner.When("User select \"Everyone can edit\" sharing option on the Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 81
+#line 79
  testRunner.Then("Review Widget List Permissions is displayed to the User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 82
+#line 80
  testRunner.When("User clicks the \"IGNORE & SHARE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 83
+#line 81
  testRunner.And("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 84
+#line 82
  testRunner.When("User selects \"List\" in the \"Widget Type\" Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 85
+#line 83
  testRunner.And("User enters \"Widget_For_DAS16380_2\" as Widget Title", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 86
+#line 84
  testRunner.And("User selects \"Second_List_DAS16380\" as Widget List", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 87
+#line 85
  testRunner.Then("User sees \"You have chosen a restricted list for a shared dashboard, some users m" +
                     "ay not be able to see this widget\" warning text below Lists field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 89
+#line 87
  testRunner.When("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 90
+#line 88
  testRunner.When("User clicks Dashboards Details icon on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 91
+#line 89
  testRunner.Then("User sees Dashboards context menu on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 92
+#line 90
  testRunner.When("User select \"Specific users / teams\" sharing option on the Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 93
+#line 91
  testRunner.Then("Review Widget List Permissions is displayed to the User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 94
+#line 92
  testRunner.When("User clicks the \"IGNORE & SHARE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 95
+#line 93
  testRunner.And("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 96
+#line 94
  testRunner.When("User selects \"List\" in the \"Widget Type\" Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 97
+#line 95
  testRunner.And("User enters \"Widget_For_DAS16380_3\" as Widget Title", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 98
+#line 96
  testRunner.And("User selects \"Second_List_DAS16380\" as Widget List", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 99
+#line 97
  testRunner.Then("User sees \"You have chosen a restricted list for a shared dashboard, some users m" +
                     "ay not be able to see this widget\" warning text below Lists field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -413,7 +413,7 @@ this.FeatureBackground();
                         "Widgets",
                         "DAS14841",
                         "Cleanup"});
-#line 102
+#line 100
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -423,15 +423,15 @@ this.FeatureBackground();
                         "ColumnName"});
             table6.AddRow(new string[] {
                         "Service Pack or Build"});
-#line 104
+#line 102
  testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table6, "When ");
-#line 107
+#line 105
  testRunner.And("User create dynamic list with \"DeviceListFor14841\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 109
+#line 107
  testRunner.When("Dashboard with \"Dashboard for DAS14841\" name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 110
+#line 108
  testRunner.And("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 112
+#line 110
  testRunner.When("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
@@ -448,25 +448,25 @@ this.FeatureBackground();
                         "Hostname",
                         "Count",
                         "Count DESC"});
-#line 113
+#line 111
  testRunner.And("User creates new Widget", ((string)(null)), table7, "And ");
-#line 117
+#line 115
  testRunner.When("User clicks Dashboards Details icon on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 118
+#line 116
  testRunner.Then("User sees Dashboards context menu on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 119
+#line 117
  testRunner.When("User select \"Everyone can see\" sharing option on the Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 120
+#line 118
  testRunner.Then("Review Widget List Permissions is displayed to the User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 122
+#line 120
  testRunner.And("Widget \"WidgetForDAS14841\" displayed for \"DeviceListFor14841\" list on Permissions" +
                     " Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 123
+#line 121
  testRunner.And("Current user displayed for \"DeviceListFor14841\" list on Permissions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 124
+#line 122
  testRunner.And("Current permission \"Private\" displayed for \"DeviceListFor14841\" list on Permissio" +
                     "ns Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 125
+#line 123
  testRunner.And("New Permission \"Do not change\" displayed for \"DeviceListFor14841\" list on Permiss" +
                     "ions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -478,37 +478,37 @@ this.FeatureBackground();
                         "Everyone can see"});
             table8.AddRow(new string[] {
                         "Everyone can edit"});
-#line 127
+#line 125
  testRunner.Then("User sees next options of New Permission field for \"DeviceListFor14841\" list on P" +
                     "ermissions Pop-up", ((string)(null)), table8, "Then ");
-#line 133
+#line 131
  testRunner.Then("Button \"UPDATE & SHARE\" has enabled property \"false\" on Permissions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 134
+#line 132
  testRunner.And("Button \"IGNORE & SHARE\" has enabled property \"true\" on Permissions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 135
+#line 133
  testRunner.And("Button \"CANCEL\" has enabled property \"true\" on Permissions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 137
+#line 135
  testRunner.And("Button \"UPDATE & SHARE\" has \"Amend widget permissions above\" tooltip on Permissio" +
                     "ns Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 138
+#line 136
  testRunner.And("Button \"IGNORE & SHARE\" has \"Do not change widget list permissions and share dash" +
                     "board\" tooltip on Permissions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 139
+#line 137
  testRunner.And("Button \"CANCEL\" has \"Do not change widget list permissions and do not share dashb" +
                     "oard\" tooltip on Permissions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 141
+#line 139
  testRunner.When("User selects \"Everyone can see\" permission for \"DeviceListFor14841\" list on Permi" +
                     "ssions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 142
+#line 140
  testRunner.Then("Button \"UPDATE & SHARE\" has enabled property \"true\" on Permissions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 143
+#line 141
  testRunner.And("Button \"UPDATE & SHARE\" has \"Change widget list permissions and share dashboard\" " +
                     "tooltip on Permissions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 144
+#line 142
  testRunner.When("User clicks the \"CANCEL\" button on Permissions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 145
+#line 143
  testRunner.Then("Review Widget List Permissions is not displayed to the User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 146
+#line 144
  testRunner.And("Permission \"Private\" displayed in Dashboard Details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -558,7 +558,7 @@ this.FeatureBackground();
                         "Widgets",
                         "DAS14841",
                         "Cleanup"});
-#line 149
+#line 147
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -568,15 +568,15 @@ this.FeatureBackground();
                         "ColumnName"});
             table9.AddRow(new string[] {
                         "Service Pack or Build"});
-#line 151
+#line 149
  testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table9, "When ");
-#line 154
+#line 152
  testRunner.And("User create dynamic list with \"DeviceListFor14841_1\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 156
+#line 154
  testRunner.When("Dashboard with \"Dashboard for DAS14841_1\" name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 157
+#line 155
  testRunner.And("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 159
+#line 157
  testRunner.When("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
@@ -593,36 +593,36 @@ this.FeatureBackground();
                         "Hostname",
                         "Count",
                         "Count DESC"});
-#line 160
+#line 158
  testRunner.And("User creates new Widget", ((string)(null)), table10, "And ");
-#line 164
+#line 162
  testRunner.When("User clicks Dashboards Details icon on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 165
+#line 163
  testRunner.Then("User sees Dashboards context menu on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 166
+#line 164
  testRunner.When("User select \"Everyone can see\" sharing option on the Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 167
+#line 165
  testRunner.Then("Review Widget List Permissions is displayed to the User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 169
+#line 167
  testRunner.When("User selects \"Everyone can see\" permission for \"DeviceListFor14841_1\" list on Per" +
                     "missions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 170
+#line 168
  testRunner.And("User clicks the \"IGNORE & SHARE\" button on Permissions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 171
+#line 169
  testRunner.Then("Review Widget List Permissions is not displayed to the User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 172
+#line 170
  testRunner.And("Permission \"Everyone can see\" displayed in Dashboard Details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 174
+#line 172
  testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 175
+#line 173
  testRunner.Then("\"All Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 176
+#line 174
  testRunner.When("User clicks Settings button for \"DeviceListFor14841_1\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 177
+#line 175
  testRunner.And("User clicks Manage in the list panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 178
+#line 176
  testRunner.Then("List details panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 179
+#line 177
  testRunner.And("\"Private\" sharing option is selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -672,7 +672,7 @@ this.FeatureBackground();
                         "Widgets",
                         "DAS14841",
                         "Cleanup"});
-#line 182
+#line 180
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -682,15 +682,15 @@ this.FeatureBackground();
                         "ColumnName"});
             table11.AddRow(new string[] {
                         "Service Pack or Build"});
-#line 184
+#line 182
  testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table11, "When ");
-#line 187
+#line 185
  testRunner.And("User create dynamic list with \"DeviceListFor14841_2\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 189
+#line 187
  testRunner.When("Dashboard with \"Dashboard for DAS14841_2\" name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 190
+#line 188
  testRunner.And("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 192
+#line 190
  testRunner.When("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
@@ -707,36 +707,36 @@ this.FeatureBackground();
                         "Hostname",
                         "Count",
                         "Count DESC"});
-#line 193
+#line 191
  testRunner.And("User creates new Widget", ((string)(null)), table12, "And ");
-#line 197
+#line 195
  testRunner.When("User clicks Dashboards Details icon on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 198
+#line 196
  testRunner.Then("User sees Dashboards context menu on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 199
+#line 197
  testRunner.When("User select \"Everyone can see\" sharing option on the Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 200
+#line 198
  testRunner.Then("Review Widget List Permissions is displayed to the User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 202
+#line 200
  testRunner.When("User selects \"Everyone can see\" permission for \"DeviceListFor14841_2\" list on Per" +
                     "missions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 203
+#line 201
  testRunner.And("User clicks the \"UPDATE & SHARE\" button on Permissions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 204
+#line 202
  testRunner.Then("Review Widget List Permissions is not displayed to the User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 205
+#line 203
  testRunner.And("Permission \"Everyone can see\" displayed in Dashboard Details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 207
+#line 205
  testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 208
+#line 206
  testRunner.Then("\"All Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 209
+#line 207
  testRunner.When("User clicks Settings button for \"DeviceListFor14841_2\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 210
+#line 208
  testRunner.And("User clicks Manage in the list panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 211
+#line 209
  testRunner.Then("List details panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 212
+#line 210
  testRunner.And("\"Everyone can see\" sharing option is selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -784,7 +784,7 @@ this.FeatureBackground();
                         "Widgets",
                         "DAS14841",
                         "Cleanup"});
-#line 215
+#line 213
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -794,30 +794,30 @@ this.FeatureBackground();
                         "ColumnName"});
             table13.AddRow(new string[] {
                         "Service Pack or Build"});
-#line 217
+#line 215
  testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table13, "When ");
-#line 220
+#line 218
  testRunner.And("User create dynamic list with \"DeviceListFor14841_3\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 222
+#line 220
  testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 223
+#line 221
  testRunner.And("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table14.AddRow(new string[] {
                         "OS Architecture"});
-#line 224
+#line 222
  testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table14, "And ");
-#line 227
+#line 225
  testRunner.And("User create dynamic list with \"DeviceListFor14841_4\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 228
+#line 226
  testRunner.Then("\"DeviceListFor14841_4\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 230
+#line 228
  testRunner.When("Dashboard with \"Dashboard for DAS14841_3\" name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 231
+#line 229
  testRunner.And("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 233
+#line 231
  testRunner.When("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
@@ -834,9 +834,9 @@ this.FeatureBackground();
                         "Hostname",
                         "Count",
                         "Count DESC"});
-#line 234
+#line 232
  testRunner.And("User creates new Widget", ((string)(null)), table15, "And ");
-#line 238
+#line 236
  testRunner.When("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
@@ -853,49 +853,49 @@ this.FeatureBackground();
                         "Hostname",
                         "Count",
                         "Count DESC"});
-#line 239
+#line 237
  testRunner.And("User creates new Widget", ((string)(null)), table16, "And ");
-#line 243
+#line 241
  testRunner.When("User clicks Dashboards Details icon on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 244
+#line 242
  testRunner.Then("User sees Dashboards context menu on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 245
+#line 243
  testRunner.When("User select \"Everyone can see\" sharing option on the Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 246
+#line 244
  testRunner.Then("Review Widget List Permissions is displayed to the User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 248
+#line 246
  testRunner.When("User selects \"Everyone can edit\" permission for \"DeviceListFor14841_3\" list on Pe" +
                     "rmissions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 249
+#line 247
  testRunner.Then("Button \"UPDATE & SHARE\" has enabled property \"true\" on Permissions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 250
+#line 248
  testRunner.And("Button \"UPDATE & SHARE\" has \"Change widget list permissions and share dashboard\" " +
                     "tooltip on Permissions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 251
+#line 249
  testRunner.When("User clicks the \"UPDATE & SHARE\" button on Permissions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 252
+#line 250
  testRunner.Then("Review Widget List Permissions is not displayed to the User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 253
+#line 251
  testRunner.And("Permission \"Everyone can see\" displayed in Dashboard Details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 254
+#line 252
  testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 255
+#line 253
  testRunner.Then("\"All Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 256
+#line 254
  testRunner.When("User clicks Settings button for \"DeviceListFor14841_3\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 255
+ testRunner.And("User clicks Manage in the list panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 256
+ testRunner.Then("List details panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 257
- testRunner.And("User clicks Manage in the list panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 258
- testRunner.Then("List details panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 259
  testRunner.And("\"Everyone can edit\" sharing option is selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 260
+#line 258
  testRunner.When("User clicks Settings button for \"DeviceListFor14841_4\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 261
+#line 259
  testRunner.And("User clicks Manage in the list panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 262
+#line 260
  testRunner.Then("List details panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 263
+#line 261
  testRunner.And("\"Private\" sharing option is selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -947,16 +947,16 @@ this.FeatureBackground();
                         "DAS14841",
                         "DAS14393",
                         "Cleanup"});
-#line 266
+#line 264
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 267
+#line 265
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 268
+#line 266
  testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 269
+#line 267
  testRunner.And("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
@@ -965,43 +965,43 @@ this.FeatureBackground();
             table17.AddRow(new string[] {
                         "automation_admin1",
                         "m!gration"});
-#line 270
+#line 268
  testRunner.And("User login with following credentials:", ((string)(null)), table17, "And ");
-#line 273
+#line 271
  testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 274
+#line 272
  testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 275
+#line 273
  testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 276
+#line 274
  testRunner.Then("\"All Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 277
+#line 275
  testRunner.When("User clicks on \'Hostname\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 278
+#line 276
  testRunner.And("User create custom list with \"DeviceListFor14841_Read\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 279
+#line 277
  testRunner.Then("\"DeviceListFor14841_Read\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 280
+#line 278
  testRunner.When("User clicks the List Details button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 281
+#line 279
  testRunner.And("User select \"Specific users / teams\" sharing option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 282
+#line 280
  testRunner.And("User clicks the \"ADD USER\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 283
+#line 281
  testRunner.And("User selects the \"Automation Admin 10\" user for sharing", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 284
+#line 282
  testRunner.And("User select \"Read\" in Select Access dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 283
+ testRunner.And("User clicks the \"ADD USER\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 284
+ testRunner.And("User clicks the \"ADD USER\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 285
- testRunner.And("User clicks the \"ADD USER\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 286
- testRunner.And("User clicks the \"ADD USER\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 287
  testRunner.And("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 288
+#line 286
  testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 289
+#line 287
  testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 290
+#line 288
  testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1010,15 +1010,15 @@ this.FeatureBackground();
             table18.AddRow(new string[] {
                         "automation_admin10",
                         "m!gration"});
-#line 291
+#line 289
  testRunner.And("User login with following credentials:", ((string)(null)), table18, "And ");
-#line 294
+#line 292
  testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 296
+#line 294
  testRunner.When("Dashboard with \"Dashboard for DAS14841_Read\" name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 297
+#line 295
  testRunner.And("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 298
+#line 296
  testRunner.And("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1035,888 +1035,34 @@ this.FeatureBackground();
                         "Hostname",
                         "Count",
                         "Count DESC"});
-#line 299
+#line 297
  testRunner.And("User creates new Widget", ((string)(null)), table19, "And ");
-#line 303
+#line 301
  testRunner.When("User clicks Dashboards Details icon on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 304
+#line 302
  testRunner.Then("User sees Dashboards context menu on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 305
+#line 303
  testRunner.When("User select \"Everyone can edit\" sharing option on the Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 306
+#line 304
  testRunner.Then("Review Widget List Permissions is displayed to the User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 307
+#line 305
  testRunner.And("Widget \"WidgetForDAS14841_Read\" displayed for \"DeviceListFor14841_Read\" list on P" +
                     "ermissions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 308
+#line 306
  testRunner.And("User \"Automation Admin 1\" displayed for \"DeviceListFor14841_Read\" list on Permiss" +
                     "ions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 309
+#line 307
  testRunner.And("Current permission \"Specific users / teams\" displayed for \"DeviceListFor14841_Rea" +
                     "d\" list on Permissions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 310
+#line 308
  testRunner.And("New Permission \"Do not change\" displayed for \"DeviceListFor14841_Read\" list on Pe" +
                     "rmissions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 311
+#line 309
  testRunner.And("New Permission dropdown has disabled property \"true\" for \"DeviceListFor14841_Read" +
                     "\" list on Permissions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 312
+#line 310
  testRunner.And("New Permission dropdown has \"You cannot change the permission for this list\" tool" +
                     "tip for \"DeviceListFor14841_Read\" list on Permissions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForEditSharedList")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS14841")]
-        [NUnit.Framework.CategoryAttribute("DAS14282")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        public virtual void EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForEditSharedList()
-        {
-            System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
-            {
-                try
-                {
-                    this.EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForEditSharedListInternal();
-                    return;
-                }
-                catch (System.Exception exc)
-                {
-                    lastException = exc;
-                }
-                if (((i + 1)
-                     <= 1))
-                {
-                    testRunner.OnScenarioEnd();
-                }
-            }
-            if ((lastException != null))
-            {
-                throw lastException;
-            }
-        }
-
-        private void EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForEditSharedListInternal()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForEditSharedList", null, new string[] {
-                        "Evergreen",
-                        "EvergreenJnr_DashboardsPage",
-                        "Widgets",
-                        "DAS14841",
-                        "DAS14282",
-                        "Cleanup"});
-#line 315
-this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 4
-this.FeatureBackground();
-#line 316
- testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 317
- testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 318
- testRunner.And("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Username",
-                        "Password"});
-            table20.AddRow(new string[] {
-                        "automation_admin1",
-                        "m!gration"});
-#line 319
- testRunner.And("User login with following credentials:", ((string)(null)), table20, "And ");
-#line 322
- testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 323
- testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 324
- testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 325
- testRunner.Then("\"All Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 326
- testRunner.When("User clicks on \'Hostname\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 327
- testRunner.And("User create custom list with \"DeviceListFor14841_Edit\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 328
- testRunner.Then("\"DeviceListFor14841_Edit\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 329
- testRunner.When("User clicks the List Details button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 330
- testRunner.And("User select \"Specific users / teams\" sharing option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 331
- testRunner.And("User clicks the \"ADD USER\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 332
- testRunner.And("User selects the \"Automation Admin 10\" user for sharing", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 333
- testRunner.And("User select \"Edit\" in Select Access dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 334
- testRunner.And("User clicks the \"ADD USER\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 335
- testRunner.And("User clicks the \"ADD USER\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 336
- testRunner.And("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 337
- testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 338
- testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 339
- testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Username",
-                        "Password"});
-            table21.AddRow(new string[] {
-                        "automation_admin10",
-                        "m!gration"});
-#line 340
- testRunner.And("User login with following credentials:", ((string)(null)), table21, "And ");
-#line 343
- testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 344
- testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 346
- testRunner.When("Dashboard with \"Dashboard for DAS14841_Edit\" name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 347
- testRunner.And("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 348
- testRunner.And("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
-                        "WidgetType",
-                        "Title",
-                        "List",
-                        "SplitBy",
-                        "AggregateFunction",
-                        "OrderBy"});
-            table22.AddRow(new string[] {
-                        "Table",
-                        "WidgetForDAS14841_Edit",
-                        "DeviceListFor14841_Edit",
-                        "Hostname",
-                        "Count",
-                        "Count DESC"});
-#line 349
- testRunner.And("User creates new Widget", ((string)(null)), table22, "And ");
-#line 353
- testRunner.When("User clicks Dashboards Details icon on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 354
- testRunner.Then("User sees Dashboards context menu on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 355
- testRunner.When("User select \"Everyone can edit\" sharing option on the Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 356
- testRunner.Then("Review Widget List Permissions is displayed to the User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 357
- testRunner.And("Widget \"WidgetForDAS14841_Edit\" displayed for \"DeviceListFor14841_Edit\" list on P" +
-                    "ermissions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 358
- testRunner.And("User \"Automation Admin 1\" displayed for \"DeviceListFor14841_Edit\" list on Permiss" +
-                    "ions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 359
- testRunner.And("Current permission \"Specific users / teams\" displayed for \"DeviceListFor14841_Edi" +
-                    "t\" list on Permissions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 360
- testRunner.And("New Permission \"Do not change\" displayed for \"DeviceListFor14841_Edit\" list on Pe" +
-                    "rmissions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 361
- testRunner.And("New Permission dropdown has disabled property \"true\" for \"DeviceListFor14841_Edit" +
-                    "\" list on Permissions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 362
- testRunner.And("New Permission dropdown has \"You cannot change the permission for this list\" tool" +
-                    "tip for \"DeviceListFor14841_Edit\" list on Permissions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdminSharedList" +
-            "")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS14841")]
-        [NUnit.Framework.CategoryAttribute("DAS11120")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        public virtual void EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdminSharedList()
-        {
-            System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
-            {
-                try
-                {
-                    this.EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdminSharedListInternal();
-                    return;
-                }
-                catch (System.Exception exc)
-                {
-                    lastException = exc;
-                }
-                if (((i + 1)
-                     <= 1))
-                {
-                    testRunner.OnScenarioEnd();
-                }
-            }
-            if ((lastException != null))
-            {
-                throw lastException;
-            }
-        }
-
-        private void EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdminSharedListInternal()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdminSharedList" +
-                    "", null, new string[] {
-                        "Evergreen",
-                        "EvergreenJnr_DashboardsPage",
-                        "Widgets",
-                        "DAS14841",
-                        "DAS11120",
-                        "Cleanup"});
-#line 365
-this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 4
-this.FeatureBackground();
-#line 366
- testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 367
- testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 368
- testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 369
- testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Username",
-                        "Password"});
-            table23.AddRow(new string[] {
-                        "automation_admin1",
-                        "m!gration"});
-#line 370
- testRunner.And("User login with following credentials:", ((string)(null)), table23, "And ");
-#line 373
- testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 375
- testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 376
- testRunner.Then("\"All Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 377
- testRunner.When("User clicks on \'Hostname\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 378
- testRunner.And("User create custom list with \"DeviceListFor14841_Admin\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 379
- testRunner.Then("\"DeviceListFor14841_Admin\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 381
- testRunner.When("User clicks the List Details button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 382
- testRunner.And("User select \"Specific users / teams\" sharing option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 383
- testRunner.And("User clicks the \"ADD USER\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 384
- testRunner.And("User selects the \"Automation Admin 10\" user for sharing", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 385
- testRunner.And("User select \"Admin\" in Select Access dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 386
- testRunner.And("User clicks the \"ADD USER\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 387
- testRunner.And("User clicks the \"ADD USER\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 389
- testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 390
- testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 391
- testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 392
- testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Username",
-                        "Password"});
-            table24.AddRow(new string[] {
-                        "automation_admin10",
-                        "m!gration"});
-#line 393
- testRunner.And("User login with following credentials:", ((string)(null)), table24, "And ");
-#line 396
- testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 398
- testRunner.When("Dashboard with \"Dashboard for DAS14841_Admin\" name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 399
- testRunner.And("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 400
- testRunner.And("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
-                        "WidgetType",
-                        "Title",
-                        "List",
-                        "SplitBy",
-                        "AggregateFunction",
-                        "OrderBy"});
-            table25.AddRow(new string[] {
-                        "Table",
-                        "WidgetForDAS14841_Admin",
-                        "DeviceListFor14841_Admin",
-                        "Hostname",
-                        "Count",
-                        "Count DESC"});
-#line 401
- testRunner.And("User creates new Widget", ((string)(null)), table25, "And ");
-#line 405
- testRunner.When("User clicks Dashboards Details icon on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 406
- testRunner.Then("User sees Dashboards context menu on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 407
- testRunner.When("User select \"Everyone can see\" sharing option on the Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 408
- testRunner.Then("Review Widget List Permissions is displayed to the User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 409
- testRunner.And("Widget \"WidgetForDAS14841_Admin\" displayed for \"DeviceListFor14841_Admin\" list on" +
-                    " Permissions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 410
- testRunner.And("User \"Automation Admin 1\" displayed for \"DeviceListFor14841_Admin\" list on Permis" +
-                    "sions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 411
- testRunner.And("Current permission \"Specific users / teams\" displayed for \"DeviceListFor14841_Adm" +
-                    "in\" list on Permissions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 412
- testRunner.And("New Permission \"Do not change\" displayed for \"DeviceListFor14841_Admin\" list on P" +
-                    "ermissions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 413
- testRunner.When("User selects \"Everyone can see\" permission for \"DeviceListFor14841_Admin\" list on" +
-                    " Permissions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 414
- testRunner.And("User clicks the \"UPDATE & SHARE\" button on Permissions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 415
- testRunner.Then("Review Widget List Permissions is not displayed to the User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 416
- testRunner.And("Permission \"Everyone can see\" displayed in Dashboard Details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 418
- testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 419
- testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 420
- testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 421
- testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Username",
-                        "Password"});
-            table26.AddRow(new string[] {
-                        "automation_admin1",
-                        "m!gration"});
-#line 422
- testRunner.And("User login with following credentials:", ((string)(null)), table26, "And ");
-#line 425
- testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 426
- testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 427
- testRunner.Then("\"All Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 428
- testRunner.When("User clicks Settings button for \"DeviceListFor14841_Admin\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 429
- testRunner.And("User clicks Manage in the list panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 430
- testRunner.Then("List details panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 431
- testRunner.And("\"Everyone can see\" sharing option is selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckUserCanRemoveYourselfFromSharedDashboard")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS15876")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        public virtual void EvergreenJnr_DashboardsPage_CheckUserCanRemoveYourselfFromSharedDashboard()
-        {
-            System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
-            {
-                try
-                {
-                    this.EvergreenJnr_DashboardsPage_CheckUserCanRemoveYourselfFromSharedDashboardInternal();
-                    return;
-                }
-                catch (System.Exception exc)
-                {
-                    lastException = exc;
-                }
-                if (((i + 1)
-                     <= 1))
-                {
-                    testRunner.OnScenarioEnd();
-                }
-            }
-            if ((lastException != null))
-            {
-                throw lastException;
-            }
-        }
-
-        private void EvergreenJnr_DashboardsPage_CheckUserCanRemoveYourselfFromSharedDashboardInternal()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckUserCanRemoveYourselfFromSharedDashboard", null, new string[] {
-                        "Evergreen",
-                        "EvergreenJnr_DashboardsPage",
-                        "Widgets",
-                        "DAS15876",
-                        "Cleanup"});
-#line 434
-this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 4
-this.FeatureBackground();
-#line 436
- testRunner.When("Dashboard with \"Dashboard for DAS15876\" name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 437
- testRunner.And("User clicks Show Dashboards panel icon on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 438
- testRunner.And("User clicks Settings button for \"Dashboard for DAS15876\" dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 439
- testRunner.And("User clicks Manage in the list panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 440
- testRunner.Then("Permission panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 441
- testRunner.When("User changes sharing type from \"Private\" to \"Specific users\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
-                        "User",
-                        "Permission"});
-            table27.AddRow(new string[] {
-                        "Automation Admin 10",
-                        "Admin"});
-#line 442
- testRunner.And("User adds user to list of shared person", ((string)(null)), table27, "And ");
-#line 445
- testRunner.Then("User \"automation_admin10\" was added to shared list with \"Admin\" permission", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 447
- testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 448
- testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 449
- testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 450
- testRunner.And("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Username",
-                        "Password"});
-            table28.AddRow(new string[] {
-                        "automation_admin10",
-                        "m!gration"});
-#line 451
- testRunner.And("User login with following credentials:", ((string)(null)), table28, "And ");
-#line 454
- testRunner.And("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 456
- testRunner.And("User clicks Show Dashboards panel icon on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 457
- testRunner.And("User clicks Settings button for \"Dashboard for DAS15876\" dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 458
- testRunner.And("User clicks Manage in the list panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 459
- testRunner.Then("Permission panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 460
- testRunner.When("User clicks Settings button for \"automation_admin10\" shared user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 461
- testRunner.And("User selects \"Remove\" option from Settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 462
- testRunner.Then("There is no user in shared list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 463
- testRunner.And("User sees \"This dashboard does not exist or you do not have access to it\" text in" +
-                    " warning message on Dashboards submenu pane", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckUserCanEditWidgetFromSharedDashboard")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS15550")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        public virtual void EvergreenJnr_DashboardsPage_CheckUserCanEditWidgetFromSharedDashboard()
-        {
-            System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
-            {
-                try
-                {
-                    this.EvergreenJnr_DashboardsPage_CheckUserCanEditWidgetFromSharedDashboardInternal();
-                    return;
-                }
-                catch (System.Exception exc)
-                {
-                    lastException = exc;
-                }
-                if (((i + 1)
-                     <= 1))
-                {
-                    testRunner.OnScenarioEnd();
-                }
-            }
-            if ((lastException != null))
-            {
-                throw lastException;
-            }
-        }
-
-        private void EvergreenJnr_DashboardsPage_CheckUserCanEditWidgetFromSharedDashboardInternal()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckUserCanEditWidgetFromSharedDashboard", null, new string[] {
-                        "Evergreen",
-                        "EvergreenJnr_DashboardsPage",
-                        "Widgets",
-                        "DAS15550",
-                        "Cleanup"});
-#line 466
-this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 4
-this.FeatureBackground();
-#line 468
- testRunner.When("Dashboard with \"Dashboard for DAS15550\" name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 469
- testRunner.And("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 470
- testRunner.And("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
-                        "WidgetType",
-                        "Title",
-                        "List",
-                        "SplitBy",
-                        "AggregateBy",
-                        "AggregateFunction",
-                        "OrderBy",
-                        "MaxValues"});
-            table29.AddRow(new string[] {
-                        "Table",
-                        "WidgetForDAS15550",
-                        "All Applications",
-                        "Application",
-                        "Application",
-                        "Count distinct",
-                        "Application ASC",
-                        "10"});
-#line 471
- testRunner.And("User creates new Widget", ((string)(null)), table29, "And ");
-#line 474
- testRunner.And("User clicks Show Dashboards panel icon on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 475
- testRunner.And("User clicks Settings button for \"Dashboard for DAS15550\" dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 476
- testRunner.And("User clicks Manage in the list panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 477
- testRunner.Then("Permission panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 478
- testRunner.When("User changes sharing type from \"Private\" to \"Specific users\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
-                        "User",
-                        "Permission"});
-            table30.AddRow(new string[] {
-                        "Automation Admin 10",
-                        "Edit"});
-#line 479
- testRunner.And("User adds user to list of shared person", ((string)(null)), table30, "And ");
-#line 482
- testRunner.Then("User \"automation_admin10\" was added to shared list with \"Edit\" permission", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 484
- testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 485
- testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 486
- testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 487
- testRunner.And("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Username",
-                        "Password"});
-            table31.AddRow(new string[] {
-                        "automation_admin10",
-                        "m!gration"});
-#line 488
- testRunner.And("User login with following credentials:", ((string)(null)), table31, "And ");
-#line 491
- testRunner.And("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 493
- testRunner.And("User clicks Show Dashboards panel icon on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 494
- testRunner.And("User clicks Settings button for \"Dashboard for DAS15550\" dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 495
- testRunner.And("User clicks Manage in the list panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 496
- testRunner.And("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 497
- testRunner.And("User clicks Ellipsis menu for \"WidgetForDAS15550\" Widget on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 498
- testRunner.And("User clicks \"Edit\" item from Ellipsis menu on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
-                        "WidgetType",
-                        "Title",
-                        "List",
-                        "SplitBy",
-                        "AggregateBy"});
-            table32.AddRow(new string[] {
-                        "",
-                        "WidgetForDAS15550_Edited",
-                        "",
-                        "Version",
-                        "Application"});
-#line 499
- testRunner.And("User updates Widget with following info:", ((string)(null)), table32, "And ");
-#line 502
- testRunner.Then("User sees widget with the next name \"WidgetForDAS15550_Edited\" on Dashboards page" +
-                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatUserWithEditRightsCanChangeDashboardName")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("DAS14915")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        public virtual void EvergreenJnr_DashboardsPage_CheckThatUserWithEditRightsCanChangeDashboardName()
-        {
-            System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
-            {
-                try
-                {
-                    this.EvergreenJnr_DashboardsPage_CheckThatUserWithEditRightsCanChangeDashboardNameInternal();
-                    return;
-                }
-                catch (System.Exception exc)
-                {
-                    lastException = exc;
-                }
-                if (((i + 1)
-                     <= 1))
-                {
-                    testRunner.OnScenarioEnd();
-                }
-            }
-            if ((lastException != null))
-            {
-                throw lastException;
-            }
-        }
-
-        private void EvergreenJnr_DashboardsPage_CheckThatUserWithEditRightsCanChangeDashboardNameInternal()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckThatUserWithEditRightsCanChangeDashboardName", null, new string[] {
-                        "Evergreen",
-                        "EvergreenJnr_DashboardsPage",
-                        "DAS14915",
-                        "Cleanup"});
-#line 505
-this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 4
-this.FeatureBackground();
-#line 507
- testRunner.When("Dashboard with \"Dashboard for DAS14915\" name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 508
- testRunner.And("User clicks Show Dashboards panel icon on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 509
- testRunner.And("User clicks Settings button for \"Dashboard for DAS14915\" dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 510
- testRunner.And("User clicks Manage in the list panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 511
- testRunner.Then("Permission panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 512
- testRunner.When("User changes sharing type from \"Private\" to \"Specific users\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
-                        "User",
-                        "Permission"});
-            table33.AddRow(new string[] {
-                        "Automation Admin 10",
-                        "Admin"});
-#line 513
- testRunner.And("User adds user to list of shared person", ((string)(null)), table33, "And ");
-#line 516
- testRunner.Then("User \"automation_admin10\" was added to shared list with \"Admin\" permission", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 518
- testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 519
- testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 520
- testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 521
- testRunner.And("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Username",
-                        "Password"});
-            table34.AddRow(new string[] {
-                        "automation_admin10",
-                        "m!gration"});
-#line 522
- testRunner.And("User login with following credentials:", ((string)(null)), table34, "And ");
-#line 525
- testRunner.And("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 526
- testRunner.And("User clicks Show Dashboards panel icon on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 527
- testRunner.And("User clicks Settings button for \"Dashboard for DAS14915\" dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 528
- testRunner.And("User clicks Manage in the list panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 529
- testRunner.Then("Permission panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 530
- testRunner.When("User changes dashboard name to \"DashboardUpdated\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 531
- testRunner.Then("Dashboard with \"DashboardUpdated\" title displayed in All Dashboards", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatUserWithAdminRightsCanAddUserInSharedSection" +
-            "")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("DAS14915")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        public virtual void EvergreenJnr_DashboardsPage_CheckThatUserWithAdminRightsCanAddUserInSharedSection()
-        {
-            System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
-            {
-                try
-                {
-                    this.EvergreenJnr_DashboardsPage_CheckThatUserWithAdminRightsCanAddUserInSharedSectionInternal();
-                    return;
-                }
-                catch (System.Exception exc)
-                {
-                    lastException = exc;
-                }
-                if (((i + 1)
-                     <= 1))
-                {
-                    testRunner.OnScenarioEnd();
-                }
-            }
-            if ((lastException != null))
-            {
-                throw lastException;
-            }
-        }
-
-        private void EvergreenJnr_DashboardsPage_CheckThatUserWithAdminRightsCanAddUserInSharedSectionInternal()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckThatUserWithAdminRightsCanAddUserInSharedSection" +
-                    "", null, new string[] {
-                        "Evergreen",
-                        "EvergreenJnr_DashboardsPage",
-                        "DAS14915",
-                        "Cleanup"});
-#line 534
-this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 4
-this.FeatureBackground();
-#line 536
- testRunner.When("Dashboard with \"Dashboard for Share\" name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 537
- testRunner.And("User clicks Show Dashboards panel icon on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 538
- testRunner.And("User clicks Settings button for \"Dashboard for Share\" dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 539
- testRunner.And("User clicks Manage in the list panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 540
- testRunner.Then("Permission panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 541
- testRunner.When("User changes sharing type from \"Private\" to \"Specific users\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table35 = new TechTalk.SpecFlow.Table(new string[] {
-                        "User",
-                        "Permission"});
-            table35.AddRow(new string[] {
-                        "Automation Admin 10",
-                        "Admin"});
-#line 542
- testRunner.And("User adds user to list of shared person", ((string)(null)), table35, "And ");
-#line 545
- testRunner.Then("User \"automation_admin10\" was added to shared list with \"Admin\" permission", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 547
- testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 548
- testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 549
- testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 550
- testRunner.And("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table36 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Username",
-                        "Password"});
-            table36.AddRow(new string[] {
-                        "automation_admin10",
-                        "m!gration"});
-#line 551
- testRunner.And("User login with following credentials:", ((string)(null)), table36, "And ");
-#line 554
- testRunner.And("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 555
- testRunner.And("User clicks Show Dashboards panel icon on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 556
- testRunner.And("User clicks Settings button for \"Dashboard for Share\" dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 557
- testRunner.And("User clicks Manage in the list panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 558
- testRunner.Then("Permission panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            TechTalk.SpecFlow.Table table37 = new TechTalk.SpecFlow.Table(new string[] {
-                        "User",
-                        "Permission"});
-            table37.AddRow(new string[] {
-                        "Administrator",
-                        "Edit"});
-#line 559
- testRunner.When("User adds user to list of shared person", ((string)(null)), table37, "When ");
-#line 562
- testRunner.Then("User \"Admin\" was added to shared list with \"Edit\" permission", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 563
- testRunner.When("User clicks Settings button for \"Admin\" shared user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 564
- testRunner.And("User selects \"Remove\" option from Settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table38 = new TechTalk.SpecFlow.Table(new string[] {
-                        "User",
-                        "Permission"});
-            table38.AddRow(new string[] {
-                        "Administrator",
-                        "Read"});
-#line 565
- testRunner.And("User adds user to list of shared person", ((string)(null)), table38, "And ");
-#line 568
- testRunner.Then("User \"Admin\" was added to shared list with \"Read Only\" permission", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

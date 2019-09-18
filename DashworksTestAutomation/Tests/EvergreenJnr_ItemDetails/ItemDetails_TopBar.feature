@@ -234,9 +234,9 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatReadinessValuesIsDisplayedAccor
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the "Project Details" sub-menu on the Details page
 	Then following content is displayed on the Details Page
-	| Title             | Value |
-	| Overall Readiness | RED   |
-	| App Readiness     | RED   |
+	| Title         | Value |
+	| Readiness     | RED   |
+	| App Readiness | RED   |
 	Then following Compliance items with appropriate colors are displayed in Top bar on the Item details page:
 	| ComplianceItems   | ColorName |
 	| Overall Readiness | RED       |

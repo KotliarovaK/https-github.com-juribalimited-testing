@@ -157,22 +157,27 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatAnyDashboardCanBeMarkedFavorite
 	And User clicks the "CREATE DASHBOARD" Action button
 	And User creates new Dashboard with "Dashboard_DAS12974" name
 	Then Dashboard with "Dashboard_DAS12974" title displayed in All Dashboards
+	
 	When User opens manage pane for dashboard with "Dashboard_DAS12974" name
 	And User changes dashboard name to "Dashboard_DAS12974Updated"
 	Then Dashboard with "Dashboard_DAS12974Updated" title displayed in All Dashboards
+	
 	When User sets "true" as favorite state in dashboard details for "Dashboard_DAS12974Updated" dashboard
 	Then Dashboard with name "Dashboard_DAS12974Updated" marked as favorite
+	
 	When User sets "false" as favorite state in dashboard details for "Dashboard_DAS12974Updated" dashboard
 	Then Dashboard with name "Dashboard_DAS12974Updated" not marked as favorite
 
 	When User opens manage pane for dashboard with "Project Status" name
 	When User sets "true" as favorite state in dashboard details for "Project Status" dashboard
 	Then Dashboard with name "Project Status" marked as favorite
+	
 	When User sets "false" as favorite state in dashboard details for "Project Status" dashboard
 	Then Dashboard with name "Project Status" not marked as favorite
 
 	When User makes dashboard with "Project Summary" name favorite via context menu
 	Then Dashboard with name "Project Summary" marked as favorite
+	
 	When User unfavorites "Project Summary" dashboard via context menu
 	Then Dashboard with name "Project Summary" not marked as favorite
 

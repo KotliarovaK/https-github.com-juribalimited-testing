@@ -508,17 +508,15 @@ this.FeatureBackground();
 #line 81
  testRunner.When("User navigates to the \'Device\' details page for \'001BAQXT6JWFPI\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 82
- testRunner.And("User click content from \"Hostname\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User navigates to the \"Custom Fields\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 83
- testRunner.When("User navigates to the \"Custom Fields\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 84
  testRunner.And("User have opened Column Settings for \"Custom Field\" column in the Details Page ta" +
                     "ble", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 85
+#line 84
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 85
+ testRunner.And("User clicks Select All checkbox on Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 86
- testRunner.When("User clicks Select All checkbox on Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 87
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -527,7 +525,7 @@ this.FeatureBackground();
                         "Custom Field"});
             table4.AddRow(new string[] {
                         ""});
-#line 88
+#line 87
  testRunner.Then("ColumnName is displayed in following order on the Details page:", ((string)(null)), table4, "Then ");
 #line hidden
             this.ScenarioCleanup();
