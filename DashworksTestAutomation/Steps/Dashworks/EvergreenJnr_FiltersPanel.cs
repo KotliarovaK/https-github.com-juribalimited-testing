@@ -1478,13 +1478,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 Utils.Verify.AreEqual(ColorsConvertor.Convert(row["Color"]), getColor, "Colors are different");
             }
         }
-        
+
         [Then(@"Category Automations displayed before projects categories")]
         public void SpecifiedCategoryDisplayedBeforeProjectsCategories()
         {
             var page = _driver.NowAt<FiltersElement>();
 
-            var VisibleLabels = page.FilterCategoryLabels.Select(x=>x.Text).ToList();
+            var VisibleLabels = page.FilterCategoryLabels.Select(x => x.Text).ToList();
 
             var getFirstProjectItem = VisibleLabels.Select((Value, Index) => new { Value, Index })
                .FirstOrDefault(p => p.Value.StartsWith("Project"));
@@ -1501,7 +1501,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     Index = 2000,
                 };
             }
-         
+
             var getFirstAutomationItem = VisibleLabels.Select((Value, Index) => new { Value, Index })
                 .Single(p => p.Value.StartsWith("Automation Actions"));
 
@@ -1514,6 +1514,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filterElement = _driver.NowAt<FiltersElement>();
             filterElement.FilterCheckboxOptions.First().Click();
+        }
+
+        [Then(@"Filter Searchfield placeholder is ""(.*)""")]
+        public void ThenFilterSearchfieldPlaceholderIs(string p0)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            filterElement.SearchTextBox.IsAttributePresent(p0);
         }
     }
 }
