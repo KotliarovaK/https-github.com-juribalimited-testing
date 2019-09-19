@@ -39,6 +39,8 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldReplaceAllValu
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS17881 @Cleanup @Not_Ready
 #Waiting 'Update custom field' in the 'Action Type' dropdown for automation
 Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldAddToExistingValues
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
 	When User creates new Automation via API and open it
 	| AutomationName     | Description | Active | StopOnFailedAction | Scope         | Run    |
 	| 17881_Automation_2 | 17881       | true   | false              | All Mailboxes | Manual |
@@ -64,6 +66,8 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldAddToExistingV
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS17881 @DAS17289 @Cleanup @Not_Ready
 #Waiting 'Update custom field' in the 'Action Type' dropdown for automation
 Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldRemoveAllValues
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
 	When User creates new Automation via API and open it
 	| AutomationName     | Description | Active | StopOnFailedAction | Scope     | Run    |
 	| 17881_Automation_3 | 17881       | true   | false              | All Users | Manual |
@@ -90,12 +94,16 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldRemoveAllValue
 	Then "UPDATE" Action button is disabled
 	Then "UPDATE" Action button have tooltip with "No changes made" text
 	Then 'Remove all values' content is displayed in 'Update Values' dropdown
+	Then "17881_Action" content is displayed in "Action Name" field
+
 	When User enters 'New_Action' text to 'Action Name' textbox
 	Then "UPDATE" Action button is active
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS17881 @Cleanup @Not_Ready
 #Waiting 'Update custom field' in the 'Action Type' dropdown for automation
 Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldRemoveSpecificValues
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
 	When User creates new Automation via API and open it
 	| AutomationName     | Description | Active | StopOnFailedAction | Scope            | Run    |
 	| 17881_Automation_4 | 17881       | true   | false              | All Applications | Manual |
@@ -121,6 +129,8 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldRemoveSpecific
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS17881 @Cleanup @Not_Ready
 #Waiting 'Update custom field' in the 'Action Type' dropdown for automation
 Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldReplaceSingleValue
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
 	When User creates new Automation via API and open it
 	| AutomationName     | Description | Active | StopOnFailedAction | Scope       | Run    |
 	| 17881_Automation_4 | 17881       | true   | false              | All Devices | Manual |
