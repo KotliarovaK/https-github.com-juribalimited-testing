@@ -61,7 +61,7 @@ Examples:
 	| PageName  | SearchTerm                       | ColumnName    | SubTabName | KeyToBeSelected | ValueToBeSelected   |
 	| Devices   | 05PFM2OWVCSCZ1                   | Hostname      | Device     | Hostname        | 05PFM2OWVCSCZ1      |
 	| Users     | 03714167684E45F7A8F              | Username      | User       | Username        | 03714167684E45F7A8F |
-	| Mailboxes | 06D7AE4F161F4A3AA7F@bclabs.local | Email Address | Mailbox    | Alias           | 06D7AE4F161F4A      |
+	| Mailboxes | 06D7AE4F161F4A3AA7F@bclabs.local | Email Address | Mailbox    | Alias           | 06D7AE4F161F4A3AA7F |
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13341 @archived
 Scenario: EvergreenJnr_AllLists_CheckThatTextInKeyValueGridsIsSelectableOnGroupDetailsPage
@@ -88,8 +88,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheLinkCanBeOpenedAndTheLinkHasARigh
 	Then "All Devices" list should be displayed to the user
 	When User perform search by "001BAQXT6JWFPI"
 	And User click content from "Hostname" column
-	And User navigates to the 'Details' left menu item
-	And User navigates to the "Device Owner" sub-menu on the Details page
+	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	When User navigates to the "Device Owner" sub-menu on the Details page
 	And User clicks "QLL295118" link on the Details Page
 	Then Details page for "QLL295118 (Nicole P. Braun)" item is displayed to the user
 	And URL contains "user/23726/details/user"
@@ -357,6 +357,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatProjectDetailsDefaultViewIsDisplayed
 	Then following fields are displayed in the open section:
 	| Fields           |
 	| Object ID        |
+	#remove hash for 'radiant'
+	#| Object Name      |
 	| Device Owner     |
 	| Readiness        |
 	| Path             |
@@ -381,6 +383,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatProjectDetailsDefaultViewIsDisplayedCo
 	Then following fields are displayed in the open section:
 	| Fields           |
 	| Object ID        |
+	#remove hash for 'radiant'
+	#| Object Name      |
 	| Primary Device   |
 	| Readiness        |
 	| Path             |
@@ -406,6 +410,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectDetailsDefaultViewIsDisp
 	Then following fields are displayed in the open section:
 	| Fields              |
 	| Object ID           |
+	#remove hash for 'radiant'
+	#| Object Name      |
 	| Readiness           |
 	| App Readiness       |
 	| App Rationalisation |
@@ -431,6 +437,8 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatProjectDetailsDefaultViewIsDisplay
 	Then following fields are displayed in the open section:
 	| Fields           |
 	| Object ID        |
+	#remove hash for 'radiant'
+	#| Object Name      |
 	| Mailbox Owner    |
 	| Readiness        |
 	| Path             |
@@ -501,6 +509,13 @@ Scenario: EvergreenJnr_DevicesList_CheckThatLastLogoffDateFieldIsNotDisplayedAtT
 	And User click content from "Hostname" column
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
 	When User navigates to the "Device Owner" sub-menu on the Details page
+	Then field with "Last Logoff Date" text is not displayed in expanded tab on the Details Page
+
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17775
+Scenario: EvergreenJnr_MailboxesList_CheckThatLastLogoffDateFieldIsNotDisplayedAtTheMailboxOwnerBlockOfDeviceDetails
+	When User navigates to the 'Mailbox' details page for '000F977AC8824FE39B8@bclabs.loca' item
+	Then Details page for "000F977AC8824FE39B8@bclabs.loca" item is displayed to the user
+	When User navigates to the "Mailbox Owner" sub-menu on the Details page
 	Then field with "Last Logoff Date" text is not displayed in expanded tab on the Details Page
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17735

@@ -64,7 +64,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSortOrderForEvergreenBucketsInBulkUp
 	And User selects "Evergreen" Project or Evergreen on Action panel
 	Then options for "Bucket" field are displayed in alphabetical order on Action panel
 
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS16822
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS16822 @Do_Not_Run_With_Capacity @Do_Not_Run_With_CapacityUnits
 Scenario: EvergreenJnr_DevicesList_CheckThatSortOrderForEvergreenCapacityUnitsInBulkUpdateIsCorrect
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user

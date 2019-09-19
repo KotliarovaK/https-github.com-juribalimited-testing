@@ -381,14 +381,13 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatColumnIsDisplayedInColumnsPanel
 	Then Filters panel is displayed to the user
 	When User add "Windows7Mi: Application Information \ Technical Test" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
-	| Not Started        |
 	| Started            |
 	Then "Windows7Mi: Application Information \ Technical Test" filter is added to the list
-	And "7" rows are displayed in the agGrid
+	And "4" rows are displayed in the agGrid
 	When User remove column on "Applications" page by URL
 	| ColumnName                                           |
 	| Windows7Mi: Application Information \ Technical Test |
-	Then "7" rows are displayed in the agGrid
+	Then "4" rows are displayed in the agGrid
 	And "All Applications" list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
