@@ -56,7 +56,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         {
             var selector = By.XPath(string.Format(SubMenuByNameSelector, name));
             if (!Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Long))
-                throw new Exception($"'{name}' Sub menu was not displayed");
+                throw new Exception($"'{name}' Sub menu was not displayed. Displayed condition is '{Driver.IsElementDisplayed(selector)}'");
             return Driver.FindElement(selector);
         }
 

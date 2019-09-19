@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Cleanup @Cleanup @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Cleanup @Cleanup @Projects @TEST
 Scenario Outline: EvergreenJnr_ChangingApplicationScopeListToAnotherListForMailboxProject
 	When User clicks "Applications" on the left-hand menu
 	Then "All Applications" list should be displayed to the user
@@ -33,14 +33,14 @@ Scenario Outline: EvergreenJnr_ChangingApplicationScopeListToAnotherListForMailb
 	When User selects "Scope Details" tab on the Project details page
 	When User navigates to the 'Application Scope' tab on Project Scope Changes page
 	When User selects "Include applications" checkbox on the Project details page
-	And User selects '<ChangingToList1>' in the 'Scope' dropdown with wait
+	And User selects '<ChangingToList1>' in the 'Application Scope' dropdown with wait
 	And User selects "Scope Changes" tab on the Project details page
 	When User navigates to the 'Applications' tab on Project Scope Changes page
 	Then "<ObjectsToAdd1>" is displayed to the user in the Project Scope Changes section
 	Then There are no errors in the browser console
 	When User selects "Scope Details" tab on the Project details page
 	When User navigates to the 'Application Scope' tab on Project Scope Changes page
-	And User selects '<ChangingToList2>' in the 'Scope' dropdown with wait
+	And User selects '<ChangingToList2>' in the 'Application Scope' dropdown with wait
 	And User selects "Scope Changes" tab on the Project details page
 	When User navigates to the 'Applications' tab on Project Scope Changes page
 	Then "<ObjectsToAdd2>" is displayed to the user in the Project Scope Changes section
@@ -51,7 +51,7 @@ Examples:
 	| All Applications | StaticList1529  | Applications to add (0 of 0 selected) | Applications to add (0 of 0 selected) |
 	| StaticList1529   | DynamicList87   | Applications to add (0 of 0 selected) | Applications to add (0 of 0 selected) |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Cleanup @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Cleanup @Projects @TEST
 Scenario: EvergreenJnr_AdminPage_AddingAndDeletingPermissionsForMailboxProject
 	When Project created via API and opened
 	| ProjectName   | Scope         | ProjectTemplate | Mode               |
@@ -111,7 +111,7 @@ Scenario: EvergreenJnr_AdminPage_AddingAndDeletingPermissionsForMailboxProject
 	| AvailabilityOnly |
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13205 @Cleanup @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13205 @Cleanup @Projects @TEST
 Scenario: EvergreenJnr_AdminPage_CheckThatBannerDisplaysOnScopeDetailsPage
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
@@ -122,7 +122,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatBannerDisplaysOnScopeDetailsPage
 	And User clicks newly created object link
 	Then User sees banner at the top of work area
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS12680 @DAS12108 @Cleanup @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS12680 @DAS12108 @Cleanup @Projects @TEST
 Scenario: EvergreenJnr_AdminPage_AddingRequestTypesAndCategories
 	When Project created via API and opened
 	| ProjectName | Scope         | ProjectTemplate | Mode               |
@@ -162,8 +162,7 @@ Scenario: EvergreenJnr_AdminPage_AddingRequestTypesAndCategories
 	Then "Mailboxes to add (0 of 14784 selected)" is displayed to the user in the Project Scope Changes section
 	And "Mailboxes to remove (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
 	And "Mailboxes 0/0" is displayed in the tab header on the Admin page
-	When User expands multiselect to add objects
-	And User expands multiselect and selects following Objects
+	When User expands multiselect and selects following Objects
 	| Objects                                            |
 	| 003F5D8E1A844B1FAA5@bclabs.local (Hunter, Melanie) |
 	| 00DB4000EDD84951993@bclabs.local (CSC, SS)         |

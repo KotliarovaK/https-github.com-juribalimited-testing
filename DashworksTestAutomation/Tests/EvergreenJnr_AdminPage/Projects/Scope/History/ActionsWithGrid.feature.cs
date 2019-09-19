@@ -88,6 +88,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects.Scope.Hi
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS17973")]
         [NUnit.Framework.CategoryAttribute("Projects")]
+        [NUnit.Framework.CategoryAttribute("TEST")]
         public virtual void EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAndDataIsntMissingFromTheProjectScopeHistory()
         {
             System.Exception lastException = null;
@@ -123,7 +124,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects.Scope.Hi
                         "EvergreenJnr_AdminPage",
                         "AdminPage",
                         "DAS17973",
-                        "Projects"});
+                        "Projects",
+                        "TEST"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

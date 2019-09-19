@@ -85,28 +85,33 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoMoreSectionsCanBeAddedAfter10Wi
 	| Delete           |
 	Then "Duplicate" Ellipsis menu item is disabled on Dashboards page
 	
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14618
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14618 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckMovingWidgetsBetweenSections
-	When User clicks Edit mode trigger on Dashboards page
+	When Dashboard with "Dashboard_DAS14618" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User creates new Widget
+	| WidgetType | Title             | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    |
+	| Pie        | WidgetForDAS14618 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC |
 	And User clicks the "ADD SECTION" Action button
-	And User clicks Ellipsis menu for "Device Profile" Widget on Dashboards page
+	And User clicks Ellipsis menu for "WidgetForDAS14618" Widget on Dashboards page
 	And User clicks "Move to section" item from Ellipsis menu on Dashboards page
 	Then Move to Section pop up is displayed to the User
 	When User clicks "CANCEL" button on the Move to Section Pop up
 	Then Move to Section pop up is not displayed to the User
-	When User clicks Ellipsis menu for "Device Profile" Widget on Dashboards page
+	When User clicks Ellipsis menu for "WidgetForDAS14618" Widget on Dashboards page
 	And User clicks "Move to section" item from Ellipsis menu on Dashboards page
 	When User selects "2" section on the Move to Section pop up
 	When User clicks "MOVE" button on the Move to Section Pop up
 	When User expands all sections on Dashboards page
-	Then "Device Profile" Widget is displayed to the user
-	When User clicks Ellipsis menu for "Device Profile" Widget on Dashboards page
+	Then "WidgetForDAS14618" Widget is displayed to the user
+	When User clicks Ellipsis menu for "WidgetForDAS14618" Widget on Dashboards page
 	And User clicks "Move to section" item from Ellipsis menu on Dashboards page
 	When User selects "1" section on the Move to Section pop up
 	When User clicks "MOVE" button on the Move to Section Pop up
-	Then "Device Profile" Widget is displayed to the user
+	Then "WidgetForDAS14618" Widget is displayed to the user
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16326 @Cleanup @Not_Run
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16326 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckErrorTextAndLinkOnTheWarningMessage
 	When Dashboard with "Dashboard_DAS16326" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
@@ -119,7 +124,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckErrorTextAndLinkOnTheWarningMessage
 	And There are no errors in the browser console
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17551 @Cleanup
-Scenario: EvergreenJnr_DashboardsPage_CheckErrorTextDisplakyingWhenListRefersToBrokenList
+Scenario: EvergreenJnr_DashboardsPage_CheckErrorTextDisplayingWhenListRefersToBrokenList
 	When Dashboard with "Dashboard_DAS16326" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button

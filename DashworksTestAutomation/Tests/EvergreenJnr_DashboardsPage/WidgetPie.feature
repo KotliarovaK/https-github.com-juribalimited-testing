@@ -80,7 +80,9 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingPie
 	When User selects "Half donut" in the "Widget Type" Widget dropdown
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
-	When User selects "Table" in the "Widget Type" Widget dropdown
+	When User adds new Widget
+	| WidgetType | Title             | List      | SplitBy | AggregateBy | AggregateFunction | OrderBy   |
+	| Table      | WidgetForDAS15365 | List15365 | Model   | Model       | Count distinct    | Model ASC |
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
 	When User clicks the "CREATE" Action button

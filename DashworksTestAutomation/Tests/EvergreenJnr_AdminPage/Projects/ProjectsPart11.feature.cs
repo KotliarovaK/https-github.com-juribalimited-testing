@@ -88,6 +88,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects
         [NUnit.Framework.CategoryAttribute("DAS12999")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Projects")]
+        [NUnit.Framework.CategoryAttribute("TEST")]
         [NUnit.Framework.TestCaseAttribute("All Mailboxes", "StaticList1429", "Mailboxes to add (0 of 14784 selected)", "Mailboxes to add (0 of 2 selected)", null)]
         [NUnit.Framework.TestCaseAttribute("StaticList1429", "DynamicList77", "Mailboxes to add (0 of 2 selected)", "Mailboxes to add (0 of 6 selected)", null)]
         public virtual void EvergreenJnr_ChangingMailboxScopeListToAnotherListForMailboxProject(string changingToList1, string changingToList2, string objectsToAdd1, string objectsToAdd2, string[] exampleTags)
@@ -125,7 +126,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects
                     "AdminPage",
                     "DAS12999",
                     "Cleanup",
-                    "Projects"};
+                    "Projects",
+                    "TEST"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -222,6 +224,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12999")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Projects")]
+        [NUnit.Framework.CategoryAttribute("TEST")]
         public virtual void EvergreenJnr_AdminPage_ChangingUserScopePermissionsForMailboxProject()
         {
             System.Exception lastException = null;
@@ -257,7 +260,8 @@ this.FeatureBackground();
                         "AdminPage",
                         "DAS12999",
                         "Cleanup",
-                        "Projects"});
+                        "Projects",
+                        "TEST"});
 #line 48
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -333,6 +337,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12999")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Projects")]
+        [NUnit.Framework.CategoryAttribute("TEST")]
         public virtual void EvergreenJnr_AdminPage_ChangingApplicationScopePermissionsForMailboxProject()
         {
             System.Exception lastException = null;
@@ -368,7 +373,8 @@ this.FeatureBackground();
                         "AdminPage",
                         "DAS12999",
                         "Cleanup",
-                        "Projects"});
+                        "Projects",
+                        "TEST"});
 #line 74
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -431,6 +437,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Project_Creation_and_Scope")]
         [NUnit.Framework.CategoryAttribute("Projects")]
+        [NUnit.Framework.CategoryAttribute("TEST")]
         public virtual void EvergreenJnr_AdminPage_OnboardingMailboxesUsersApplicationsObjectsUsingUpdateAllChangesButton()
         {
             System.Exception lastException = null;
@@ -469,7 +476,8 @@ this.FeatureBackground();
                         "DAS13199",
                         "Cleanup",
                         "Project_Creation_and_Scope",
-                        "Projects"});
+                        "Projects",
+                        "TEST"});
 #line 93
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -490,7 +498,7 @@ this.FeatureBackground();
 #line 100
  testRunner.When("User enters \"TestProject65\" in the \"Project Name\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 101
- testRunner.And("User selects \' All Mailboxes\' option from \'Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects \'All Mailboxes\' option from \'Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 102
  testRunner.And("User clicks Create button on the Create Project page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 103
@@ -507,8 +515,6 @@ this.FeatureBackground();
 #line 108
  testRunner.Then("\"Mailboxes to add (0 of 14784 selected)\" is displayed to the user in the Project " +
                     "Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 109
- testRunner.When("User expands multiselect to add objects", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
@@ -516,15 +522,13 @@ this.FeatureBackground();
                         "003F5D8E1A844B1FAA5@bclabs.local (Hunter, Melanie)"});
             table6.AddRow(new string[] {
                         "00DB4000EDD84951993@bclabs.local (CSC, SS)"});
-#line 110
- testRunner.And("User expands multiselect and selects following Objects", ((string)(null)), table6, "And ");
-#line 114
+#line 109
+ testRunner.When("User expands multiselect and selects following Objects", ((string)(null)), table6, "When ");
+#line 113
  testRunner.When("User navigates to the \'Users\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 115
+#line 114
  testRunner.Then("\"Users to add (0 of 14747 selected)\" is displayed to the user in the Project Scop" +
                     "e Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 116
- testRunner.When("User expands multiselect to add objects", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
@@ -532,23 +536,23 @@ this.FeatureBackground();
                         "02E0346DF7804F25835 (Gill, Donna)"});
             table7.AddRow(new string[] {
                         "037AF4CF47C1452D8A4 (Vanetti, Joe)"});
-#line 117
- testRunner.And("User expands multiselect and selects following Objects", ((string)(null)), table7, "And ");
-#line 128
+#line 115
+ testRunner.When("User expands multiselect and selects following Objects", ((string)(null)), table7, "When ");
+#line 126
  testRunner.When("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 129
+#line 127
  testRunner.And("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 130
+#line 128
  testRunner.Then("Success message is displayed and contains \"4 objects queued for onboarding, 0 obj" +
                     "ects offboarded\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 132
- testRunner.When("User navigates to the \'Mailboxes\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 133
+#line 130
+ testRunner.When("User navigates to the \'Mailboxes\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 131
  testRunner.Then("\"Mailboxes to add (0 of 14782 selected)\" is displayed to the user in the Project " +
                     "Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 134
+#line 132
  testRunner.When("User navigates to the \'Users\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 135
+#line 133
  testRunner.Then("\"Users to add (0 of 14745 selected)\" is displayed to the user in the Project Scop" +
                     "e Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
