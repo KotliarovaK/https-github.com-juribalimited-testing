@@ -74,7 +74,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatPivotTableDisplayedCorrectlyAfterRe
 	| Description |
 	And User selects the following Values on Pivot:
 	| Values            |
-	| Owner Cost Centre 
+	| Owner Cost Centre |
 	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
 	When User clicks the List Details button

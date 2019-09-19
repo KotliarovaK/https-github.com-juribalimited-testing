@@ -137,3 +137,4 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldReplaceSingleV
 	Then Success message is displayed and contains "The automation action has been created" text
 	#Create Action
 	Then Create Action page is displayed to the User
+	When User presses Enter key in in Global Search Field

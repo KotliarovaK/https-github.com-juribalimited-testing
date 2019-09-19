@@ -252,16 +252,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.IsTrue(dropdown.GetDropdownByName(dropdownName).Displayed(), $"{dropdownName} is not displayed");
         }
 
-        [Then(@"only following items are displayed in the dropdown:")]
-        public void ThenOnlyFollowingItemsAreDisplayedInTheDropdown(Table table)
-        {
-            var basePage = _driver.NowAt<BaseDashboardPage>();
-            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            var actualList = basePage.GetDropdownValues();
-            Verify.AreEqual(expectedList, actualList, "Dropdown values are different");
-            basePage.BodyContainer.Click();
-        }
-
         [Then(@"following Values are displayed in the '(.*)' dropdown:")]
         public void ThenFollowingValuesAreDisplayedInTheDropdown(string dropDownName, Table table)
         {
@@ -269,8 +259,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.GetDropdownByName(dropDownName).Click();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var actualList = page.OptionListOnActionsPanel.Select(value => value.Text).ToList();
-            Verify.AreEqual(expectedList, actualList, $"Value for {dropDownName} are different");
             page.BodyContainer.Click();
+            Verify.AreEqual(expectedList, actualList, $"Value for {dropDownName} are different");
         }
 
         #endregion
