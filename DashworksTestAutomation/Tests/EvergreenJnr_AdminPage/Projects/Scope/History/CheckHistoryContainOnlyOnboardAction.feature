@@ -13,11 +13,11 @@ Scenario: EvergreenJnr_AdminPage_CheckHistoryContainOnlyOnboardActionIn1803Rollo
 	Then Counter shows "409" found rows
 	When User clicks String Filter button for "Action" column on the Admin page
 	Then following String Values are displayed in the filter on the Details Page
-		| Values                     |
-		| Offboard Device Object     |
-		| Onboard Application Object |
-		| Onboard Device Object      |
-		| Onboard User Object        |
+	| Values                     |
+	| Offboard Device Object     |
+	| Onboard Application Object |
+	| Onboard Device Object      |
+	| Onboard User Object        |
 	When User selects "Onboard Application Object" checkbox from String Filter with item list on the Admin page
 	When User clicks String Filter button for "Action" column on the Admin page
 	When User selects "Onboard User Object" checkbox from String Filter with item list on the Admin page
@@ -31,12 +31,12 @@ Scenario: EvergreenJnr_AdminPage_CheckHistoryContainOnlyOnboardActionInEmailMigr
 	Then Counter shows "1,499" found rows
 	When User clicks String Filter button for "Action" column on the Admin page
 	Then following String Values are displayed in the filter on the Details Page
-		| Values                     |
-		| Onboard Application Object |
-		| Onboard Mailbox Object     |
-		| Onboard User Object        |
+	| Values                     |
+	| Onboard Application Object |
+	| Onboard Mailbox Object     |
+	| Onboard User Object        |
 	When User selects "Onboard User Object" checkbox from String Filter with item list on the Admin page
-	Then Rows counter shows "779" of "1499" rows
+	Then Rows counter shows "779" of "1527" rows
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13959 @Projects @TEST
 Scenario: EvergreenJnr_AdminPage_CheckHistoryContainOnlyOnboardActionInUserEvergreenCapacityProject
@@ -46,11 +46,11 @@ Scenario: EvergreenJnr_AdminPage_CheckHistoryContainOnlyOnboardActionInUserEverg
 	Then Counter shows "60,371" found rows
 	When User clicks String Filter button for "Action" column on the Admin page
 	Then following String Values are displayed in the filter on the Details Page
-		| Values                     |
-		| Offboard Device Object     |
-		| Onboard Application Object |
-		| Onboard Device Object      |
-		| Onboard User Object        |
+	| Values                     |
+	| Offboard Device Object     |
+	| Onboard Application Object |
+	| Onboard Device Object      |
+	| Onboard User Object        |
 	When User selects "Onboard Application Object" checkbox from String Filter with item list on the Admin page
 	When User clicks String Filter button for "Action" column on the Admin page
 	When User selects "Onboard Device Object" checkbox from String Filter with item list on the Admin page

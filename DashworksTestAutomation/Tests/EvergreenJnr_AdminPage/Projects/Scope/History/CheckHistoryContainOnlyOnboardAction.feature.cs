@@ -242,7 +242,7 @@ this.FeatureBackground();
  testRunner.When("User selects \"Onboard User Object\" checkbox from String Filter with item list on " +
                     "the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 39
- testRunner.Then("Rows counter shows \"779\" of \"1499\" rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Rows counter shows \"779\" of \"1527\" rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

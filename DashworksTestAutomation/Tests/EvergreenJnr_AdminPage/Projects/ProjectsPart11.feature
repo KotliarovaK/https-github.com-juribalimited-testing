@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Cleanup @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Cleanup @Projects @TEST
 Scenario Outline: EvergreenJnr_ChangingMailboxScopeListToAnotherListForMailboxProject
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "All Mailboxes" list should be displayed to the user
@@ -44,7 +44,7 @@ Examples:
 	| All Mailboxes   | StaticList1429  | Mailboxes to add (0 of 14784 selected) | Mailboxes to add (0 of 2 selected) |
 	| StaticList1429  | DynamicList77   | Mailboxes to add (0 of 2 selected)     | Mailboxes to add (0 of 6 selected) |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Cleanup @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Cleanup @Projects @TEST
 Scenario: EvergreenJnr_AdminPage_ChangingUserScopePermissionsForMailboxProject
 	When Project created via API and opened
 	| ProjectName   | Scope         | ProjectTemplate | Mode               |
@@ -70,7 +70,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingUserScopePermissionsForMailboxProject
 	When User navigates to the 'Users' tab on Project Scope Changes page
 	Then "Users to add (0 of 14747 selected)" is displayed to the user in the Project Scope Changes section
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Cleanup @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Cleanup @Projects @TEST
 Scenario: EvergreenJnr_AdminPage_ChangingApplicationScopePermissionsForMailboxProject
 	When Project created via API and opened
 	| ProjectName   | Scope         | ProjectTemplate | Mode               |
@@ -89,7 +89,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingApplicationScopePermissionsForMailboxPr
 	When User navigates to the 'Applications' tab on Project Scope Changes page
 	Then "Applications to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @Cleanup @Project_Creation_and_Scope @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @Cleanup @Project_Creation_and_Scope @Projects @TEST
 Scenario: EvergreenJnr_AdminPage_OnboardingMailboxesUsersApplicationsObjectsUsingUpdateAllChangesButton
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -98,7 +98,7 @@ Scenario: EvergreenJnr_AdminPage_OnboardingMailboxesUsersApplicationsObjectsUsin
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "TestProject65" in the "Project Name" field
-	And User selects ' All Mailboxes' option from 'Scope' autocomplete
+	And User selects 'All Mailboxes' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
@@ -106,15 +106,13 @@ Scenario: EvergreenJnr_AdminPage_OnboardingMailboxesUsersApplicationsObjectsUsin
 	Then Project "TestProject65" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Mailboxes to add (0 of 14784 selected)" is displayed to the user in the Project Scope Changes section
-	When User expands multiselect to add objects
-	And User expands multiselect and selects following Objects
+	When User expands multiselect and selects following Objects
 	| Objects                                            |
 	| 003F5D8E1A844B1FAA5@bclabs.local (Hunter, Melanie) |
 	| 00DB4000EDD84951993@bclabs.local (CSC, SS)         |
 	When User navigates to the 'Users' tab on Project Scope Changes page
 	Then "Users to add (0 of 14747 selected)" is displayed to the user in the Project Scope Changes section
-	When User expands multiselect to add objects 
-	And User expands multiselect and selects following Objects
+	When User expands multiselect and selects following Objects
 	| Objects                            |
 	| 02E0346DF7804F25835 (Gill, Donna)  |
 	| 037AF4CF47C1452D8A4 (Vanetti, Joe) |
@@ -129,7 +127,7 @@ Scenario: EvergreenJnr_AdminPage_OnboardingMailboxesUsersApplicationsObjectsUsin
 	And User clicks the "UPDATE PROJECT" Action button
 	Then Success message is displayed and contains "4 objects queued for onboarding, 0 objects offboarded" text
 	#Then "Applications to add (0 of 2079 selected)" is displayed to the user in the Project Scope Changes section
-	When User navigates to the 'Mailboxes' left menu item
+	When User navigates to the 'Mailboxes' tab on Project Scope Changes page
 	Then "Mailboxes to add (0 of 14782 selected)" is displayed to the user in the Project Scope Changes section
 	When User navigates to the 'Users' tab on Project Scope Changes page
 	Then "Users to add (0 of 14745 selected)" is displayed to the user in the Project Scope Changes section
