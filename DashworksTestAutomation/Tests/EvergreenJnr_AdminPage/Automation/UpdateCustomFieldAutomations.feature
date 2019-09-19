@@ -63,7 +63,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldAddToExistingV
 	Then "SAVE AND CREATE ANOTHER" Action button is active
 	#Create Action
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17881 @DAS17289 @Cleanup @Not_Ready
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17881 @DAS17289 @DAS17751 @Cleanup @Not_Ready
 #Waiting 'Update custom field' in the 'Action Type' dropdown for automation
 Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldRemoveAllValues
 	When User clicks Admin on the left-hand menu
@@ -95,7 +95,8 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldRemoveAllValue
 	Then "UPDATE" Action button have tooltip with "No changes made" text
 	Then 'Remove all values' content is displayed in 'Update Values' dropdown
 	Then "17881_Action" content is displayed in "Action Name" field
-
+	Then 'Update custom field' text value is displayed in the 'Action Type' dropdown
+	Then 'Phoenix Field' content is displayed in 'Custom Field' textbox
 	When User enters 'New_Action' text to 'Action Name' textbox
 	Then "UPDATE" Action button is active
 
@@ -126,7 +127,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldRemoveSpecific
 	Then "SAVE AND CREATE ANOTHER" Action button is active
 	#Create Action
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17881 @Cleanup @Not_Ready
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17881 @DAS17751 @Cleanup @Not_Ready
 #Waiting 'Update custom field' in the 'Action Type' dropdown for automation
 Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldReplaceSingleValue
 	When User clicks Admin on the left-hand menu
@@ -142,9 +143,20 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldReplaceSingleV
 	And User selects 'Update custom field' in the 'Action Type' dropdown
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
 	And User selects 'Replace single value' in the 'Update Values' dropdown
-	When User adds '1' value from 'Value' textbox
+	When User enters 'first value' text to 'Find Value' textbox
+	When User enters 'second' text to 'Replace Value' textbox
 	When User clicks the "SAVE AND CREATE ANOTHER" Action button
 	Then Success message is displayed and contains "The automation action has been created" text
 	#Create Action
 	Then Create Action page is displayed to the User
-	When User presses Enter key in in Global Search Field
+	When User clicks the "CANCEL" Action button
+	When User clicks content from "Action" column
+	Then Edit Action page is displayed to the User
+	Then "UPDATE" Action button is disabled
+	Then "UPDATE" Action button have tooltip with "No changes made" text
+	Then 'Replace single value' content is displayed in 'Update Values' dropdown
+	Then "17881_Action" content is displayed in "Action Name" field
+	Then 'Update custom field' text value is displayed in the 'Action Type' dropdown
+	Then 'Phoenix Field' content is displayed in 'Custom Field' textbox
+	Then 'first value' content is displayed in 'Find Value' textbox
+	Then 'second' content is displayed in 'Replace Value' textbox

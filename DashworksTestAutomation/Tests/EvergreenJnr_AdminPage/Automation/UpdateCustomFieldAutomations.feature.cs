@@ -310,6 +310,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS17881")]
         [NUnit.Framework.CategoryAttribute("DAS17289")]
+        [NUnit.Framework.CategoryAttribute("DAS17751")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldRemoveAllValues()
@@ -346,6 +347,7 @@ this.FeatureBackground();
                         "Automations",
                         "DAS17881",
                         "DAS17289",
+                        "DAS17751",
                         "Cleanup",
                         "Not_Ready"});
 #line 68
@@ -420,9 +422,13 @@ this.FeatureBackground();
  testRunner.Then("\'Remove all values\' content is displayed in \'Update Values\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 97
  testRunner.Then("\"17881_Action\" content is displayed in \"Action Name\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 98
+ testRunner.Then("\'Update custom field\' text value is displayed in the \'Action Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 99
- testRunner.When("User enters \'New_Action\' text to \'Action Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("\'Phoenix Field\' content is displayed in \'Custom Field\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 100
+ testRunner.When("User enters \'New_Action\' text to \'Action Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 101
  testRunner.Then("\"UPDATE\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -472,14 +478,14 @@ this.FeatureBackground();
                         "DAS17881",
                         "Cleanup",
                         "Not_Ready"});
-#line 104
+#line 105
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 105
- testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 106
+ testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 107
  testRunner.Then("Admin page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
@@ -496,41 +502,41 @@ this.FeatureBackground();
                         "false",
                         "All Applications",
                         "Manual"});
-#line 107
+#line 108
  testRunner.When("User creates new Automation via API and open it", ((string)(null)), table5, "When ");
-#line 110
- testRunner.Then("Automation page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 111
+ testRunner.Then("Automation page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 112
  testRunner.When("User navigates to the \'Actions\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 113
- testRunner.When("User clicks the \"CREATE ACTION\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 114
- testRunner.And("User enters \'17881_Action\' text to \'Action Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User clicks the \"CREATE ACTION\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 115
- testRunner.And("User selects \'Update custom field\' in the \'Action Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User enters \'17881_Action\' text to \'Action Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 116
- testRunner.When("User selects \'Phoenix Field\' option from \'Custom Field\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("User selects \'Update custom field\' in the \'Action Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 117
- testRunner.And("User selects \'Remove specific values\' in the \'Update Values\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User selects \'Phoenix Field\' option from \'Custom Field\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 118
- testRunner.Then("\"CREATE\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("User selects \'Remove specific values\' in the \'Update Values\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 119
- testRunner.Then("\"SAVE AND CREATE ANOTHER\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"CREATE\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 120
+ testRunner.Then("\"SAVE AND CREATE ANOTHER\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 121
  testRunner.Then("\"CREATE\" Action button have tooltip with \"Some values are missing or not valid\" t" +
                     "ext", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 121
+#line 122
  testRunner.Then("\"SAVE AND CREATE ANOTHER\" Action button have tooltip with \"Some values are missin" +
                     "g or not valid\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 122
- testRunner.When("User adds \'1\' value from \'Value\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 123
- testRunner.Then("\"CREATE\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User adds \'1\' value from \'Value\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 124
- testRunner.Then("\"SAVE AND CREATE ANOTHER\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"CREATE\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 125
- testRunner.Then("\"CANCEL\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"SAVE AND CREATE ANOTHER\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 126
+ testRunner.Then("\"CANCEL\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 127
  testRunner.Then("\"SAVE AND CREATE ANOTHER\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -543,6 +549,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS17881")]
+        [NUnit.Framework.CategoryAttribute("DAS17751")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldReplaceSingleValue()
@@ -578,16 +585,17 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "Automations",
                         "DAS17881",
+                        "DAS17751",
                         "Cleanup",
                         "Not_Ready"});
-#line 131
+#line 132
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 132
- testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 133
+ testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 134
  testRunner.Then("Admin page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -604,33 +612,55 @@ this.FeatureBackground();
                         "false",
                         "All Devices",
                         "Manual"});
-#line 134
+#line 135
  testRunner.When("User creates new Automation via API and open it", ((string)(null)), table6, "When ");
-#line 137
- testRunner.Then("Automation page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 138
+ testRunner.Then("Automation page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 139
  testRunner.When("User navigates to the \'Actions\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 140
- testRunner.When("User clicks the \"CREATE ACTION\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 141
- testRunner.And("User enters \'17881_Action\' text to \'Action Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User clicks the \"CREATE ACTION\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 142
- testRunner.And("User selects \'Update custom field\' in the \'Action Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User enters \'17881_Action\' text to \'Action Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 143
- testRunner.When("User selects \'Phoenix Field\' option from \'Custom Field\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("User selects \'Update custom field\' in the \'Action Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 144
- testRunner.And("User selects \'Replace single value\' in the \'Update Values\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User selects \'Phoenix Field\' option from \'Custom Field\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 145
- testRunner.When("User adds \'1\' value from \'Value\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("User selects \'Replace single value\' in the \'Update Values\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 146
- testRunner.When("User clicks the \"SAVE AND CREATE ANOTHER\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User enters \'first value\' text to \'Find Value\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 147
+ testRunner.When("User enters \'second\' text to \'Replace Value\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 148
+ testRunner.When("User clicks the \"SAVE AND CREATE ANOTHER\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 149
  testRunner.Then("Success message is displayed and contains \"The automation action has been created" +
                     "\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 149
+#line 151
  testRunner.Then("Create Action page is displayed to the User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 150
- testRunner.When("User presses Enter key in in Global Search Field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 152
+ testRunner.When("User clicks the \"CANCEL\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 153
+ testRunner.When("User clicks content from \"Action\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 154
+ testRunner.Then("Edit Action page is displayed to the User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 155
+ testRunner.Then("\"UPDATE\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 156
+ testRunner.Then("\"UPDATE\" Action button have tooltip with \"No changes made\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 157
+ testRunner.Then("\'Replace single value\' content is displayed in \'Update Values\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 158
+ testRunner.Then("\"17881_Action\" content is displayed in \"Action Name\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 159
+ testRunner.Then("\'Update custom field\' text value is displayed in the \'Action Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 160
+ testRunner.Then("\'Phoenix Field\' content is displayed in \'Custom Field\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 161
+ testRunner.Then("\'first value\' content is displayed in \'Find Value\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 162
+ testRunner.Then("\'second\' content is displayed in \'Replace Value\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
