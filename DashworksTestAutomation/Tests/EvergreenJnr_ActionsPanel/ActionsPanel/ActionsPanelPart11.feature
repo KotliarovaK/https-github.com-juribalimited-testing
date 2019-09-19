@@ -120,7 +120,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSlotIsDisplayedInDDLIfSelectDateWith
 	| None       |
 	| Slot 17639 |
 
-@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS17833 @Cleanup
+@Evergreen @AllLists @EvergreenJnr_FilterFeature @BulkUpdate @Capacity @Slots @DAS17833 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatFullSlotIsDisplayedWhileRulesShouldHonourTheDateRangeButNotTheTotalCapacity
 	When User creates new Slot via Api
 	| Project      | SlotName    | DisplayName | CapacityType    | ObjectType | Tuesday | Tasks                     |
