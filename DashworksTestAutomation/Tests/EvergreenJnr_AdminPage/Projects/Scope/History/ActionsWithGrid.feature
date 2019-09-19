@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS17973 @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS17973 @Projects @TEST
 Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAndDataIsntMissingFromTheProjectScopeHistory
 	When User navigates to "Email Migration" project details
 	And User selects "Scope" tab on the Project details page

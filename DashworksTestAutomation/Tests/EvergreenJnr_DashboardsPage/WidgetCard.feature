@@ -39,9 +39,10 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIsCreatedWhenListIsAnOb
 	Then Card "WidgetForDAS15207" Widget is displayed to the user
 	And There are no errors in the browser console
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16138
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16138 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValueLeadsToCorrectFilteredPage
-	When User clicks Edit mode trigger on Dashboards page
+	When Dashboard with "Dashboard for DAS16138" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
 	| WidgetType | Title             | List         | Type      | AggregateBy                          | AggregateFunction | Drilldown |
@@ -148,8 +149,6 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetHavingDateColumnsDispla
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName                 |
 	| Build Date |
-	And User have opened column settings for "Build Date" column
-	And User have select "Pin Left" option from column settings
 	And User create dynamic list with "ListForDas15722" name on "Devices" page
 	And Dashboard with "DashboardForDas15722" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
@@ -162,7 +161,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetHavingDateColumnsDispla
 	When User clicks the "CREATE" Action button
 	Then Card "WidgetForDAS15722" Widget is displayed to the user
 	And There are no errors in the browser console
-	#When User clicks Edit mode trigger on Dashboards page
+	When User clicks Edit mode trigger on Dashboards page
 	When User clicks data in card "WidgetForDAS15722" widget
 	Then "1" rows are displayed in the agGrid
 
@@ -222,6 +221,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckReadinessFirstCellIconsForCardWidget
 	When User removes "Device Type" column by Column panel
 	When User removes "Operating System" column by Column panel
 	When User removes "Owner Display Name" column by Column panel
+	When User clicks on '1803: Readiness' column header
 	And User create dynamic list with "DAS15355_List" name on "Devices" page
 	Then "DAS15355_List" list is displayed to user
 	When Dashboard with "Dashboard_DAS15355_1" name created via API and opened
