@@ -28,15 +28,17 @@ Scenario: EvergreenJnr_AdminPage_CheckHistoryContainOnlyOnboardActionInEmailMigr
 	When User navigates to "Email Migration" project details
 	And User selects "Scope" tab on the Project details page
 	And User selects "History" tab on the Project details page
-	Then Counter shows "1,499" found rows
+	Then Counter shows "1,527" found rows
 	When User clicks String Filter button for "Action" column on the Admin page
 	Then following String Values are displayed in the filter on the Details Page
-		| Values                     |
-		| Onboard Application Object |
-		| Onboard Mailbox Object     |
-		| Onboard User Object        |
+		| Values						|
+		| Onboard Application Object	|
+		| Onboard Mailbox Object		|
+		| Onboard User Object			|
+		| Re-Onboard Mailbox Object		|
+		| Re-Onboard User Object        |
 	When User selects "Onboard User Object" checkbox from String Filter with item list on the Admin page
-	Then Rows counter shows "779" of "1499" rows
+	Then Rows counter shows "807" of "1527" rows
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13959 @Projects @TEST
 Scenario: EvergreenJnr_AdminPage_CheckHistoryContainOnlyOnboardActionInUserEvergreenCapacityProject
