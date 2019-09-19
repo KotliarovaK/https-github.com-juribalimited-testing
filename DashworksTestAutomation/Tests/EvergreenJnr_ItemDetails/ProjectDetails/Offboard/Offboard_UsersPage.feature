@@ -17,12 +17,12 @@ Scenario: EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboa
 	And User clicks the "OFFBOARD" Action button
 	Then Dialog Pop-up is displayed for User
 	Then following text 'Offboarding user BCLABS\01F6D54271D74F1BB8D (McGinley, Marilyn). Select any associated mailboxes below to offboard at the same time. Offboarding an object deletes all project related information about it.' is displayed in Dialog Pop-up
-	Then 'Offboard all associated users' checkbox is checked in Dialog Pop-up
+	Then 'Offboard all associated users' checkbox is checked
 	Then following columns are displayed on the Item details page:
 	| ColumnName   |
 	| Hostname     |
 	| Owner        |
-	Then User clicks 'Offboard all associated users' checkbox in Dialog Pop-up
+	Then User clicks 'Offboard all associated users' checkbox
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 02X387UQLFP3ISU  |
@@ -54,7 +54,7 @@ Scenario: EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboa
 	And User clicks the "OFFBOARD" Action button
 	Then Dialog Pop-up is displayed for User
 	Then following text 'Offboarding user BCLABS\01F6D54271D74F1BB8D (McGinley, Marilyn). Select any associated mailboxes below to offboard at the same time. Offboarding an object deletes all project related information about it.' is displayed in Dialog Pop-up
-	Then 'Offboard all associated users' checkbox is checked in Dialog Pop-up
+	Then 'Offboard all associated users' checkbox is checked
 	Then following columns are displayed on the Item details page:
 	| ColumnName   |
 	| Hostname     |

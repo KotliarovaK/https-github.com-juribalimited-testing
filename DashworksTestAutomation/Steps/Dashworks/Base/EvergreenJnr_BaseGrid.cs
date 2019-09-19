@@ -253,24 +253,5 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         }
 
         #endregion
-
-        #region Dialog popup
-
-        [Then(@"'(.*)' checkbox is checked in Dialog Pop-up")]
-        public void ThenCheckboxIsCheckedInDialogPop_Up(string checkbox)
-        {
-            var dialogContainer = _driver.NowAt<BasePage>();
-            Verify.IsTrue(dialogContainer.GetDialogPopUpCheckbox(checkbox).Selected, $"{checkbox} Checkbox is not checked");
-        }
-
-        [Then(@"User clicks '(.*)' checkbox in Dialog Pop-up")]
-        public void ThenUserClicksCheckboxInDialogPop_Up(string checkbox)
-        {
-            var dialogContainer = _driver.NowAt<BasePage>();
-            dialogContainer.GetDialogPopUpCheckbox(checkbox).Click();
-            Logger.Write("Checkbox successfully pressed");
-        }
-
-        #endregion
     }
 }

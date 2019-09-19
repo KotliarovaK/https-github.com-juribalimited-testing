@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using DashworksTestAutomation.Base;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Automations;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
@@ -306,6 +307,25 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var basePage = _driver.NowAt<BaseDashboardPage>();
             basePage.ExpandCollapseMultiselectButton("").Click();
             basePage.AddItemsToMultiSelect(itemsToAdd);
+        }
+
+        #endregion
+
+        #region Checkbox
+
+        [Then(@"'(.*)' checkbox is checked")]
+        public void ThenCheckboxIsChecked(string checkbox)
+        {
+            var dialogContainer = _driver.NowAt<BasePage>();
+            Verify.IsTrue(dialogContainer.GetCheckboxByText(checkbox).Selected, $"{checkbox} Checkbox is not checked");
+        }
+
+        [Then(@"User clicks '(.*)' checkbox")]
+        public void ThenUserClicksCheckbox(string checkbox)
+        {
+            var dialogContainer = _driver.NowAt<BasePage>();
+            dialogContainer.GetCheckboxByText(checkbox).Click();
+            Logger.Write("Checkbox successfully pressed");
         }
 
         #endregion

@@ -15,7 +15,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyFo
 	And User navigates to the "Project Details" sub-menu on the Details page
 	When User clicks the "RELINK" Action button
 	Then Dialog Pop-up is displayed for User
-	Then 'Resync name' checkbox is checked in Dialog Pop-up
+	Then 'Resync name' checkbox is checked
 	When User clicks the "RELINK" Action button
 	Then Warning message with "This object will be relinked to the selected Evergreen object in this project" text is displayed on the Project Details Page
 	When User clicks the "RELINK" Action button

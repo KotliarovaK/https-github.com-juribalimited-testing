@@ -155,7 +155,7 @@ this.FeatureBackground();
                     "low to offboard at the same time. Offboarding an object deletes all project rela" +
                     "ted information about it.\' is displayed in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 20
- testRunner.And("\'Offboard all associated users\' checkbox is checked in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Offboard all associated users\' checkbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
@@ -170,7 +170,7 @@ this.FeatureBackground();
 #line 21
  testRunner.And("following columns are displayed on the Item details page:", ((string)(null)), table1, "And ");
 #line 27
- testRunner.And("User clicks \'Offboard all associated users\' checkbox in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks \'Offboard all associated users\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
@@ -287,7 +287,7 @@ this.FeatureBackground();
                     "low to offboard at the same time. Offboarding an object deletes all project rela" +
                     "ted information about it.\' is displayed in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 59
- testRunner.Then("\'Offboard all associated users\' checkbox is checked in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Offboard all associated users\' checkbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});

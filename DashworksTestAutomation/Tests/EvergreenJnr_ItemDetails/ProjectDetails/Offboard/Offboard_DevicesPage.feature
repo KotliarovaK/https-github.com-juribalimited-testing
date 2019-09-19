@@ -17,14 +17,14 @@ Scenario: EvergreenJnr_DevicesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffb
 	And User clicks the "OFFBOARD" Action button
 	Then Dialog Pop-up is displayed for User
 	And following text 'Offboarding device 01ONL5I8LY44R3. Select any associated users below to offboard at the same time. Offboarding an object deletes all project related information about it.' is displayed in Dialog Pop-up
-	And 'Offboard all associated users' checkbox is checked in Dialog Pop-up
+	And 'Offboard all associated users' checkbox is checked
 	And following columns are displayed on the Item details page:
 	| ColumnName   |
 	| Username     |
 	| Display Name |
 	| Domain       |
 	| Owner        |
-	And User clicks 'Offboard all associated users' checkbox in Dialog Pop-up
+	And User clicks 'Offboard all associated users' checkbox
 	When User select "Username" rows in the grid
 	| SelectedRowsName |
 	| ABQ575757        |
@@ -56,7 +56,7 @@ Scenario: EvergreenJnr_DevicesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffb
 	And User clicks the "OFFBOARD" Action button
 	Then Dialog Pop-up is displayed for User
 	Then following text 'Offboarding device 01ONL5I8LY44R3. Select any associated users below to offboard at the same time. Offboarding an object deletes all project related information about it.' is displayed in Dialog Pop-up
-	Then 'Offboard all associated users' checkbox is checked in Dialog Pop-up
+	Then 'Offboard all associated users' checkbox is checked
 	Then following columns are displayed on the Item details page:
 	| ColumnName   |
 	| Username     |

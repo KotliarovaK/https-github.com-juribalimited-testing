@@ -157,7 +157,7 @@ this.FeatureBackground();
                     " an object deletes all project related information about it.\' is displayed in Di" +
                     "alog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 20
- testRunner.Then("\'Offboard all associated users\' checkbox is checked in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Offboard all associated users\' checkbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
@@ -172,7 +172,7 @@ this.FeatureBackground();
 #line 21
  testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table1, "Then ");
 #line 27
- testRunner.Then("User clicks \'Offboard all associated users\' checkbox in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("User clicks \'Offboard all associated users\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
@@ -293,7 +293,7 @@ this.FeatureBackground();
                     " an object deletes all project related information about it.\' is displayed in Di" +
                     "alog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 59
- testRunner.Then("\'Offboard all associated users\' checkbox is checked in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Offboard all associated users\' checkbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});

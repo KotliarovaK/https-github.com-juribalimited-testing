@@ -17,14 +17,14 @@ Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOf
 	And User clicks the "OFFBOARD" Action button
 	Then Dialog Pop-up is displayed for User
 	Then following text 'Offboarding mailbox 01DEAC5F18B34084B04@bclabs.local. Offboarding an object deletes all project related information about it.' is displayed in Dialog Pop-up
-	Then 'Offboard all associated users' checkbox is checked in Dialog Pop-up
+	Then 'Offboard all associated users' checkbox is checked
 	Then following columns are displayed on the Item details page:
 	| ColumnName   |
 	| Username     |
 	| Display Name |
 	| Domain       |
 	| Owner        |
-	Then User clicks 'Offboard all associated users' checkbox in Dialog Pop-up
+	Then User clicks 'Offboard all associated users' checkbox
 	When User select "Username" rows in the grid
 	| SelectedRowsName    |
 	| 01DEAC5F18B34084B04 |
@@ -56,7 +56,7 @@ Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOf
 	And User clicks the "OFFBOARD" Action button
 	Then Dialog Pop-up is displayed for User
 	Then following text 'Offboarding mailbox 01DEAC5F18B34084B04@bclabs.local. Offboarding an object deletes all project related information about it.' is displayed in Dialog Pop-up
-	Then 'Offboard all associated users' checkbox is checked in Dialog Pop-up
+	Then 'Offboard all associated users' checkbox is checked
 	Then following columns are displayed on the Item details page:
 	| ColumnName   |
 	| Username     |
