@@ -511,9 +511,14 @@ Scenario: EvergreenJnr_DevicesList_CheckThatLastLogoffDateFieldIsNotDisplayedAtT
 	When User navigates to the "Device Owner" sub-menu on the Details page
 	Then field with "Last Logoff Date" text is not displayed in expanded tab on the Details Page
 
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17775
+#Ann.Ilchenko 9/20/19: remove 'not_ready' tag when 'radiant' will be ready
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17775 @Not_Ready
 Scenario: EvergreenJnr_MailboxesList_CheckThatLastLogoffDateFieldIsNotDisplayedAtTheMailboxOwnerBlockOfDeviceDetails
-	When User navigates to the 'Mailbox' details page for '000F977AC8824FE39B8@bclabs.loca' item
+	#When User navigates to the 'Mailbox' details page for '000F977AC8824FE39B8@bclabs.loca' item
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "All Mailboxes" list should be displayed to the user
+	When User perform search by "000F977AC8824FE39B8@bclabs.loca"
+	And User click content from "Email Address" column
 	Then Details page for "000F977AC8824FE39B8@bclabs.loca" item is displayed to the user
 	When User navigates to the "Mailbox Owner" sub-menu on the Details page
 	Then field with "Last Logoff Date" text is not displayed in expanded tab on the Details Page

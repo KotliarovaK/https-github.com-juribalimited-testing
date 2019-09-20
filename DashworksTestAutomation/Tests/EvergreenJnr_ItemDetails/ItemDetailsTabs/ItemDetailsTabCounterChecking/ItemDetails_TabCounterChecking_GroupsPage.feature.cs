@@ -88,7 +88,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails.ItemDetailsTabs
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS16833")]
         [NUnit.Framework.CategoryAttribute("DAS17415")]
-        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_GroupsList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForGroupsPage()
         {
             System.Exception lastException = null;
@@ -124,18 +123,17 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails.ItemDetailsTabs
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS16833",
-                        "DAS17415",
-                        "Not_Ready"});
-#line 10
+                        "DAS17415"});
+#line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 11
+#line 10
  testRunner.When("User type \"Allowed RODC Password Replication Group\" in Global Search Field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 12
+#line 11
  testRunner.Then("User clicks on \"Allowed RODC Password Replication Group\" search result", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 13
+#line 12
  testRunner.And("Details page for \"Allowed RODC Password Replication Group\" item is displayed to t" +
                     "he user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -145,14 +143,16 @@ this.FeatureBackground();
                         "Applications"});
             table1.AddRow(new string[] {
                         "Members"});
-#line 14
+#line 13
  testRunner.And("User sees following main-tabs on left menu on the Details page:", ((string)(null)), table1, "And ");
-#line 18
+#line 17
  testRunner.And("\"Group\" tab is displayed on left menu on the Details page and NOT contains count " +
                     "of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 19
+#line 18
  testRunner.And("\"LDAP\" tab is displayed on left menu on the Details page and NOT contains count o" +
                     "f items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 20
+ testRunner.When("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "SubTabName"});
@@ -161,13 +161,15 @@ this.FeatureBackground();
             table2.AddRow(new string[] {
                         "Collections"});
 #line 21
- testRunner.And("\"Applications\" main-menu on the Details page contains following sub-menu:", ((string)(null)), table2, "And ");
+ testRunner.Then("\"Applications\" main-menu on the Details page contains following sub-menu:", ((string)(null)), table2, "Then ");
 #line 26
  testRunner.And("\"Applications\" tab is displayed on left menu on the Details page and contains cou" +
                     "nt of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 27
  testRunner.And("\"Collections\" tab is displayed on left menu on the Details page and contains coun" +
                     "t of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 29
+ testRunner.When("User navigates to the \'Members\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "SubTabName"});
@@ -177,15 +179,15 @@ this.FeatureBackground();
                         "Device Members"});
             table3.AddRow(new string[] {
                         "Member Of"});
-#line 29
+#line 30
  testRunner.Then("\"Members\" main-menu on the Details page contains following sub-menu:", ((string)(null)), table3, "Then ");
-#line 35
+#line 36
  testRunner.And("\"User Members\" tab is displayed on left menu on the Details page and contains cou" +
                     "nt of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 36
+#line 37
  testRunner.And("\"Device Members\" tab is displayed on left menu on the Details page and contains c" +
                     "ount of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 37
+#line 38
  testRunner.And("\"Member Of\" tab is displayed on left menu on the Details page and contains count " +
                     "of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
