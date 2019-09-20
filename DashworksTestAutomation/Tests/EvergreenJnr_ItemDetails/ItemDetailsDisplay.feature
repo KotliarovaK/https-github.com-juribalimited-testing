@@ -58,9 +58,9 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatCopyRowWorksInItemDetailsOnSele
 	Then Next data '<ExpectedData>' is copied
 	
 Examples:
-	| PageName | SearchTerm          | ColumnName | MainTabName      | SubTabName        | TargetCell   | ExpectedData                                                    |
-	| Devices  | 30BGMTLBM9PTW5      | Hostname   | Applications     | Evergreen Summary | Access 95    | Access 95   Microsoft   Unknown   Green   True   Unknown   True |
-	| Users    | 003F5D8E1A844B1FAA5 | Username   | Active Directory | Groups            | Domain Users | Domain Users   DWLABS   Global Security Group   All domain users|
+	| PageName | SearchTerm          | ColumnName | MainTabName      | SubTabName        | TargetCell   | ExpectedData                                                     |
+	| Devices  | 30BGMTLBM9PTW5      | Hostname   | Applications     | Evergreen Summary | Access 95    | Access 95   Microsoft      Green   True   Unknown   True         |
+	| Users    | 003F5D8E1A844B1FAA5 | Username   | Active Directory | Groups            | Domain Users | Domain Users   DWLABS   Global Security Group   All domain users |
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12968
 Scenario Outline: EvergreenJnr_AllLists_CheckThatCopyRowWorksInItemDetailsOnSelectedSabTab
@@ -100,7 +100,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatApplicationsInTheApplicationColumnAr
 	When User clicks "Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" link on the Details Page
 	Then Details page for "Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" item is displayed correctly
 
-	#upd Ann.Ilchenko 7.11.19: ready for 'pulsar'(?)
+	#upd Ann.Ilchenko 7.11.19: ready for 'radiant'(?)
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16322 @Not_Ready
 Scenario: EvergreenJnr_DevicesList_CheckThatActionPanelImplementedForItemDetailsPage
 	When User clicks "Devices" on the left-hand menu

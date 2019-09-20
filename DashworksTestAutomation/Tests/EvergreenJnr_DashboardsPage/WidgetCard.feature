@@ -518,7 +518,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatArchivedItemsIncludedInCountWhenR
 	| WidgetType | Title             | List            | Type      | AggregateFunction |
 	| Card       | WidgetForDAS16844 | StaticList16844 | Aggregate | Count             |
 	Then "WidgetForDAS16844" Widget is displayed to the user
-	And Value '1' is displayed in the card 'WidgetForDAS16844' widget
+	When User clicks Edit mode trigger on Dashboards page
+	Then Value '1' is displayed in the card 'WidgetForDAS16844' widget
 	When User clicks data in card "WidgetForDAS16844" widget
 	Then "1" rows are displayed in the agGrid
 

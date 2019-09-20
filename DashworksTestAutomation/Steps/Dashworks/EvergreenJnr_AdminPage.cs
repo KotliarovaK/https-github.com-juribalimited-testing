@@ -189,20 +189,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.IsFalse(Convert.ToBoolean(page.GetFilterByColumnName(columnName).GetAttribute("readonly")), "PLEASE ADD EXCEPTION MESSAGE");
         }
 
-        //TODO should be moved to EvergreenJnr_BasePage
-        [Then(@"following Values are displayed in ""(.*)"" drop-down on the Admin page:")]
-        public void ThenFollowingValuesAreDisplayedInDrop_DownOnTheAdminPage(string dropDownName, Table table)
-        {
-            var dropdown = _driver.NowAt<BaseDashboardPage>();
-            dropdown.GetDropdownByName(dropDownName).Click();
-            var element = _driver.NowAt<BaseDashboardPage>();
-            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            var actualList = element.OptionListOnActionsPanel.Select(value => value.Text).ToList();
-            Verify.AreEqual(expectedList, actualList, $"Value for {dropDownName} are different");
-            var body = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            body.BodyContainer.Click();
-        }
-
         [When(@"User selects ""(.*)"" color in the Application Scope tab on the Project details page")]
         public void WhenUserSelectsColorInTheApplicationScopeTabOnTheProjectDetailsPage(string colorName)
         {

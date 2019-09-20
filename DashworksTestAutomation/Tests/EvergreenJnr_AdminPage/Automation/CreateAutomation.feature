@@ -40,7 +40,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateAutomationFieldsIsNotPopulatedWi
 	Then "Automations" page should be displayed to the user
 	When User clicks the "CREATE AUTOMATION" Action button
 	Then "Create Automation" title is displayed on the Automations page
-	Then following Values are displayed in "Run" drop-down on the Admin page:
+	Then following Values are displayed in the 'Run' dropdown:
 	| Values                     |
 	| Manual                     |
 	| After Transform            |
