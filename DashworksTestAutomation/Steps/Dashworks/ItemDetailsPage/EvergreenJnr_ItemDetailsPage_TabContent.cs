@@ -53,7 +53,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         public void ThenFieldWithTextIsNotDisplayedInExpandedTabOnTheDetailsPage(string text)
         {
             var content = _driver.NowAt<TabContent>();
-            Utils.Verify.IsFalse(content.GetTheDisplayStateOfContentOnOpenTab(text), $"{text} content is not found in opened tab!");
+            Utils.Verify.IsFalse(content.GetTheDisplayStateOfContentOnOpenTab(text), $"'{text}' content should not be displayed!");
         }
 
         [Then(@"element table is displayed on the Details page")]

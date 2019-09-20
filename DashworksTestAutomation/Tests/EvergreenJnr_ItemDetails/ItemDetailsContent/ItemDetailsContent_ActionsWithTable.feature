@@ -1065,8 +1065,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatDevicesTabIsDisplayedWithCorrectColumn
 	| Application Readiness |
 	| Stage 1               |
 
-	#Ann.Ilchenko upd 7/11/19: ready for "pulsar" release
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15039 @Not_Ready
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15039
 Scenario: EvergreenJnr_DevicesList_CheckThatTheRelatedTabIsDisplayedCorrectlyWithTheCorrectElementsAndColumns
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
@@ -1077,7 +1076,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheRelatedTabIsDisplayedCorrectlyWit
 	When User navigates to the 'Related' left menu item
 	Then following columns are displayed on the Item details page:
 	| ColumnName            |
-	| Devices               |
+	| Device                |
 	| Owner                 |
 	| Owner Display Name    |
 	| Linked By             |
@@ -1086,21 +1085,15 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheRelatedTabIsDisplayedCorrectlyWit
 	| Status                |
 	| Date                  |
 	| Application Readiness |
-	| Pre Migration         |
-	| Post Migration        |
-	| Migration             |
-	| Email Controls        |
-	| Communications        |
-	And Links from "Device" column is displayed to the user on the Details Page
+	| Stage 1               |
+	| Stage 2               |
+	When User enters "03ME2G7TIR4GBN" text in the Search field for "Device" column on the Details Page
+	Then Links from "Device" column is displayed to the user on the Details Page
 	And Links from "Owner" column is displayed to the user on the Details Page
 	And Links from "Owner Display Name" column is displayed to the user on the Details Page
-	And Links from "Linked By" column is displayed to the user on the Details Page
-	And Links from "Path" column is NOT displayed to the user on the Details Page
-	And Links from "Category" column is NOT displayed to the user on the Details Page
-	And Links from "Status" column is NOT displayed to the user on the Details Page
-	And Links from "Date" column is NOT displayed to the user on the Details Page
-	When User enters "03ME2G7TIR4GBN" text in the Search field for "Device" column on the Details Page
-	And User clicks "03ME2G7TIR4GBN" link on the Details Page
+	#link function is not ready yet
+	#And Links from "Linked By" column is displayed to the user on the Details Page
+	When User clicks "03ME2G7TIR4GBN" link on the Details Page
 	Then Details page for "03ME2G7TIR4GBN" item is displayed correctly
 	And User click back button in the browser
 	And Details page for "001BAQXT6JWFPI" item is displayed to the user
@@ -1117,7 +1110,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheRelatedTabIsDisplayedCorrectlyWit
 	And User click back button in the browser
 	And Details page for "001BAQXT6JWFPI" item is displayed to the user
 	When User navigates to the 'Related' left menu item
-	#Not ready for 'nova'
+	#link function is not ready yet
 	#When User enters "ACG370114" text in the Search field for "Linked By" column on the Details Page
 	#When User clicks "ACG370114" link on the Details Page
 	#Then Details page for "ACG370114" item is displayed correctly
