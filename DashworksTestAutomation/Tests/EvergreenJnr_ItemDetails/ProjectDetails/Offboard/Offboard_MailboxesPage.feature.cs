@@ -172,7 +172,7 @@ this.FeatureBackground();
 #line 21
  testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table1, "Then ");
 #line 27
- testRunner.Then("User clicks \'Offboard all associated users\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("User selects state \'true\' for \'Offboard all associated users\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});

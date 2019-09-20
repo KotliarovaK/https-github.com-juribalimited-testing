@@ -24,7 +24,7 @@ Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOf
 	| Display Name |
 	| Domain       |
 	| Owner        |
-	Then User clicks 'Offboard all associated users' checkbox
+	And User selects state 'true' for 'Offboard all associated users' checkbox
 	When User select "Username" rows in the grid
 	| SelectedRowsName    |
 	| 01DEAC5F18B34084B04 |

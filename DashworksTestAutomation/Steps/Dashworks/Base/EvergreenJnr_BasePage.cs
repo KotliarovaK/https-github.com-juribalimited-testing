@@ -318,14 +318,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenCheckboxIsChecked(string checkbox)
         {
             var dialogContainer = _driver.NowAt<BasePage>();
-            Verify.IsTrue(dialogContainer.GetCheckboxByText(checkbox).Selected, $"{checkbox} Checkbox is not checked");
+            Verify.IsTrue(dialogContainer.GetCheckboxStateByName(checkbox).Selected, $"'{checkbox}' checkbox is not checked");
         }
 
-        [Then(@"User clicks '(.*)' checkbox")]
-        public void ThenUserClicksCheckbox(string checkbox)
+        [Then(@"User selects state '(.*)' for '(.*)' checkbox")]
+        public void ThenUserSelectsStateForCheckbox(bool checkboxState, string checkboxName)
         {
             var dialogContainer = _driver.NowAt<BasePage>();
-            dialogContainer.GetCheckboxByText(checkbox).Click();
+            dialogContainer.GetCheckboxByName(checkboxName).SetCheckboxState(checkboxState);
             Logger.Write("Checkbox successfully pressed");
         }
 

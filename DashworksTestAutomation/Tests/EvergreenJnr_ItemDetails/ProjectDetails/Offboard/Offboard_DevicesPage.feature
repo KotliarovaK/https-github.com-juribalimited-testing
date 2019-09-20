@@ -24,7 +24,7 @@ Scenario: EvergreenJnr_DevicesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffb
 	| Display Name |
 	| Domain       |
 	| Owner        |
-	And User clicks 'Offboard all associated users' checkbox
+	And User selects state 'true' for 'Offboard all associated users' checkbox
 	When User select "Username" rows in the grid
 	| SelectedRowsName |
 	| ABQ575757        |
