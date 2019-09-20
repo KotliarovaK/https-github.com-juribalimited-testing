@@ -258,7 +258,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var page = _driver.NowAt<BaseDashboardPage>();
             page.GetDropdownByName(dropDownName).Click();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            var actualList = page.OptionListOnActionsPanel.Select(value => value.Text).ToList();
+            var actualList = page.GetDropdownValues();
             page.BodyContainer.Click();
             Verify.AreEqual(expectedList, actualList, $"Value for {dropDownName} are different");
         }
