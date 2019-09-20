@@ -2444,6 +2444,5 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     $"SELECT [CapacityEnabled] FROM [PM].[dbo].[ProjectTasks] where [TaskID] = '{taskId}'", 0).LastOrDefault();
             return flagState;
         }
-
     }
 }
