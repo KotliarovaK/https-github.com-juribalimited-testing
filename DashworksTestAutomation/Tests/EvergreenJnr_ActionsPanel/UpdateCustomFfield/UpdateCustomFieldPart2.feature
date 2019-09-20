@@ -27,15 +27,15 @@ Examples:
 	| Applications | Application   | 7-Zip 16.02 (x64)                | Application Owner | Mailbox Filter 1    |
 	| Mailboxes    | Email Address | 002B5DC7D4D34D5C895@bclabs.local | Mailbox Filter 2  | Friendly Model Name |
 
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18045 @Not_Ready
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18045 @DAS18027 @Not_Ready
 #Waiting for "Update custom field" on the automation
 Scenario: EvergreenJnr_DevicesList_CheckUpdateCustomFieldUpdatingValuesForRemoveAllValues
 	When User clicks "Devices" on the left-hand menu
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Hostname" filter where type is "Begins with" with added column and following value:
-	      | Values |
-	      | 001    |
+	| Values |
+	| 001    |
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
@@ -49,7 +49,7 @@ Scenario: EvergreenJnr_DevicesList_CheckUpdateCustomFieldUpdatingValuesForRemove
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
 	When User selects 'Remove all values' in the 'Update Values' dropdown
 	When User clicks the "UPDATE" Action button
-	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
+	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
 	And Success message with "2 updates have been queued" text is displayed on Action panel
 	When User refreshes agGrid
@@ -68,7 +68,7 @@ Scenario: EvergreenJnr_DevicesList_CheckUpdateCustomFieldUpdatingValuesForRemove
 	When User refreshes agGrid
 	Then "111, 000" content is displayed in "Phoenix Field" column
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18045 @DAS18031 @Not_Ready
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18045 @DAS18031 @DAS18027 @Not_Ready
 #Waiting for "Update custom field" on the automation
 Scenario: EvergreenJnr_UsersList_CheckUpdateCustomFieldUpdatingValuesForAddToExistingValues
 	When User clicks "Users" on the left-hand menu
@@ -95,7 +95,7 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateCustomFieldUpdatingValuesForAddToExi
 	#DAS18031
 	When User adds 'alpha' value from 'Value' textbox
 	When User clicks the "UPDATE" Action button
-	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
+	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
 	And Success message with "2 updates have been queued" text is displayed on Action panel
 	When User refreshes agGrid
@@ -111,11 +111,11 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateCustomFieldUpdatingValuesForAddToExi
 	#DAS18031
 	When User adds 'beta' value from 'Value' textbox
 	When User clicks the "UPDATE" Action button
-	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
+	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
 	And Success message with "2 updates have been queued" text is displayed on Action panel
 
-@Evergreen @Applications @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18045 @DAS18031 @Not_Ready
+@Evergreen @Applications @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18045 @DAS18031 @DAS18027 @Not_Ready
 #Waiting for "Update custom field" on the automation
 Scenario: EvergreenJnr_ApplicationsList_CheckUpdateCustomFieldUpdatingValuesForReplaceSingleValue
 	When User clicks "Applications" on the left-hand menu
@@ -143,7 +143,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateCustomFieldUpdatingValuesForR
 	When User enters 'first value' text to 'Find Value' textbox
 	When User enters 'second' text to 'Replace Value' textbox
 	When User clicks the "UPDATE" Action button
-	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
+	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
 	And Success message with "2 updates have been queued" text is displayed on Action panel
 	When User refreshes agGrid
@@ -156,11 +156,11 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateCustomFieldUpdatingValuesForR
 	When User enters 'second' text to 'Find Value' textbox
 	When User enters 'first value' text to 'Replace Value' textbox
 	When User clicks the "UPDATE" Action button
-	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
+	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
 	And Success message with "2 updates have been queued" text is displayed on Action panel
 
-@Evergreen @Mailboxes @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18045 @DAS18031 @Not_Ready
+@Evergreen @Mailboxes @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18045 @DAS18031 @DAS18027 @Not_Ready
 #Waiting for "Update custom field" on the automation
 Scenario: EvergreenJnr_MailboxesList_CheckUpdateCustomFieldUpdatingValuesForReplaceSingleValue
 	When User clicks "Mailboxes" on the left-hand menu
@@ -192,7 +192,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckUpdateCustomFieldUpdatingValuesForRepl
 	#DAS18031
 	When User adds 'three' value from 'Value' textbox
 	When User clicks the "UPDATE" Action button
-	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
+	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
 	And Success message with "2 updates have been queued" text is displayed on Action panel
 	When User refreshes agGrid
@@ -205,6 +205,6 @@ Scenario: EvergreenJnr_MailboxesList_CheckUpdateCustomFieldUpdatingValuesForRepl
 	When User adds '01' value from 'Value' textbox
 	When User adds 'three' value from 'Value' textbox
 	When User clicks the "UPDATE" Action button
-	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
+	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
 	And Success message with "2 updates have been queued" text is displayed on Action panel

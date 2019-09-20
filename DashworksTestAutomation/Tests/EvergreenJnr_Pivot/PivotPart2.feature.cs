@@ -209,7 +209,7 @@ this.FeatureBackground();
             table5.AddRow(new string[] {
                         "Using App Saved List Readiness Filter"});
 #line 31
- testRunner.Then("following Values are displayed in \"Scope\" drop-down on the Admin page:", ((string)(null)), table5, "Then ");
+ testRunner.Then("following Values are displayed in the \'Scope\' dropdown:", ((string)(null)), table5, "Then ");
 #line 44
  testRunner.When("User navigates to the \'User Scope\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -226,7 +226,7 @@ this.FeatureBackground();
             table6.AddRow(new string[] {
                         "Users with Device Count"});
 #line 45
- testRunner.Then("following Values are displayed in \"User Scope\" drop-down on the Admin page:", ((string)(null)), table6, "Then ");
+ testRunner.Then("following Values are displayed in the \'User Scope\' dropdown:", ((string)(null)), table6, "Then ");
 #line 52
  testRunner.When("User navigates to the \'Application Scope\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -245,8 +245,7 @@ this.FeatureBackground();
             table7.AddRow(new string[] {
                         "Apps with a Vendor"});
 #line 53
- testRunner.Then("following Values are displayed in \"Application Scope\" drop-down on the Admin page" +
-                    ":", ((string)(null)), table7, "Then ");
+ testRunner.Then("following Values are displayed in the \'Application Scope\' dropdown:", ((string)(null)), table7, "Then ");
 #line 61
  testRunner.And("User remove list with \"Pivot_DAS_14224\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden

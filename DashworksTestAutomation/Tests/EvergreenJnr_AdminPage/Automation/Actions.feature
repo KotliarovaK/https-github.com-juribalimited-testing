@@ -162,7 +162,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
 	#Action 1
 	When User clicks the "CREATE ACTION" Action button
 	Then Create Action page is displayed to the User
-	Then following Values are displayed in "Action Type" drop-down on the Admin page:
+	Then following Values are displayed in the ' ' dropdown:
 	| Values            |
 	| Update path       |
 	| Update task value |
@@ -473,16 +473,16 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdatingTaskWhichImpactsReadinessOwnerAndD
 	When User selects 'Edinburgh Devices Migration' option from 'Project' autocomplete
 	When User selects 'Pre-Migration' option from 'Stage' autocomplete
 	When User selects 'User Task 1' option from 'Task' autocomplete
-	Then following Values are displayed in "Update Value" drop-down on the Admin page:
+	Then following Values are displayed in the 'Update Value' dropdown:
 	| Options   |
 	| Update    |
 	| No change |
-	Then following Values are displayed in "Update Date" drop-down on the Admin page:
+	Then following Values are displayed in the 'Update Date' dropdown:
 	| Options   |
 	| Update    |
 	| Remove    |
 	| No change |
-	Then following Values are displayed in "Update Owner" drop-down on the Admin page:
+	Then following Values are displayed in the 'Update Owner' dropdown:
 	| Options               |
 	| Update                |
 	| Remove owner          |

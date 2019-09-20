@@ -52,7 +52,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckUpdateTaskValueEditPageLoadsProjec
 	When User selects '<Stage>' option from 'Stage' autocomplete
 	When User selects '<Task>' option from 'Task' autocomplete
 	Then "CREATE" Action button is disabled
-	When User selects "Started" Value on Action panel
+	When User selects 'Not Started' in the 'Value' dropdown
 	When User clicks the "CREATE" Action button
 	When User clicks content from "Action" column
 	Then "Update Migrated devices to Started" content is displayed in "Action Name" field
@@ -60,7 +60,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckUpdateTaskValueEditPageLoadsProjec
 	And '<Project>' content is displayed in 'Project' textbox
 	And '<Stage>' content is displayed in 'Stage' textbox
 	And '<Task>' content is displayed in 'Task' textbox
-	Then 'Started' text value is displayed in the 'Value' dropdown
+	Then 'Not Started' text value is displayed in the 'Value' dropdown
 
 Examples:
 	| AutomationName                | Scope            | Project                              | Stage   | Task                   |
