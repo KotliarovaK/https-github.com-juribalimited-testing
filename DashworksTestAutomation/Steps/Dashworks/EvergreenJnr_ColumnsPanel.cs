@@ -467,11 +467,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     $"Check {row["Category"]} category");
         }
 
-        [Then(@"Columns Searchfield placeholder is ""(.*)""")]
-        public void ThenColumnsSearchfieldPlaceholderIs(string p0)
+        [Then(@"Columns Searchfield placeholder is '(.*)'")]
+        public void ThenColumnsSearchfieldPlaceholderIs(string expectedPlaceholderName)
         {
             var columnsElement = _driver.NowAt<ColumnsElement>();
-            columnsElement.SearchTextBox.IsAttributePresent(p0);
+            var actualPlaceholderName = columnsElement.SearchTextBox.GetAttribute("placeholder");
+            Verify.IsTrue(actualPlaceholderName == expectedPlaceholderName, $"Columns searchfield placeholders is: '{actualPlaceholderName}', but it should be: '{expectedPlaceholderName}");
         }
     }
 }

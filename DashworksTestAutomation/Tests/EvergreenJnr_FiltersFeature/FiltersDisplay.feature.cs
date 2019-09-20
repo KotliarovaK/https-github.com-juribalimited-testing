@@ -6297,11 +6297,11 @@ this.FeatureBackground();
 #line 2020
  testRunner.And("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 2021
- testRunner.Then("Filter Searchfield placeholder is \"Search filters\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Filter Searchfield placeholder is \'Search filters\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 2022
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 2023
- testRunner.Then("Columns Searchfield placeholder is \"Search columns\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Columns Searchfield placeholder is \'Search columns\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

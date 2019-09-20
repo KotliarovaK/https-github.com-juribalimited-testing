@@ -1516,11 +1516,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.FilterCheckboxOptions.First().Click();
         }
 
-        [Then(@"Filter Searchfield placeholder is ""(.*)""")]
-        public void ThenFilterSearchfieldPlaceholderIs(string p0)
+        [Then(@"Filter Searchfield placeholder is '(.*)'")]
+        public void ThenFilterSearchfieldPlaceholderIs(string expectedPlaceholderName)
         {
-            var filterElement = _driver.NowAt<FiltersElement>();
-            filterElement.SearchTextBox.IsAttributePresent(p0);
+            var filtersElement = _driver.NowAt<FiltersElement>();
+            var actualPlaceholderName = filtersElement.SearchTextBox.GetAttribute("placeholder");
+            Verify.IsTrue(actualPlaceholderName == expectedPlaceholderName, $"Filters searchfield placeholders is: '{actualPlaceholderName}', but it should be: '{expectedPlaceholderName}'");
         }
     }
 }
