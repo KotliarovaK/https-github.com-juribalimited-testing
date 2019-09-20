@@ -30,10 +30,7 @@ Scenario: EvergreenJnr_AdminPage_CheckNavigationToDevicesListFromProjectsRingsLi
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS14903 @DAS15180
 Scenario: EvergreenJnr_AdminPage_CheckThatCorrectPageDisplayedWhenOpeningNotExistingRingDetails
-	When User clicks Admin on the left-hand menu
-	And User clicks "Projects" link on the Admin page
-	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
-	And User clicks content from "Project" column
+	When User navigates to "Windows 7 Migration (Computer Scheduled Project)" project details
 	And User navigates to the 'Rings' left menu item
 	And User enters "Unassigned" text in the Search field for "Ring" column
 	And User clicks content from "Ring" column

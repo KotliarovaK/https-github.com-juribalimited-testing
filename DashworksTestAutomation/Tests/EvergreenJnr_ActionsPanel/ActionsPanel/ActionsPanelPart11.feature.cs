@@ -627,7 +627,9 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("AllLists")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
-        [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
+        [NUnit.Framework.CategoryAttribute("BulkUpdate")]
+        [NUnit.Framework.CategoryAttribute("Capacity")]
+        [NUnit.Framework.CategoryAttribute("Slots")]
         [NUnit.Framework.CategoryAttribute("DAS17833")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesList_CheckThatFullSlotIsDisplayedWhileRulesShouldHonourTheDateRangeButNotTheTotalCapacity()
@@ -663,7 +665,9 @@ this.FeatureBackground();
                         "Evergreen",
                         "AllLists",
                         "EvergreenJnr_FilterFeature",
-                        "FilterFunctionality",
+                        "BulkUpdate",
+                        "Capacity",
+                        "Slots",
                         "DAS17833",
                         "Cleanup"});
 #line 124
