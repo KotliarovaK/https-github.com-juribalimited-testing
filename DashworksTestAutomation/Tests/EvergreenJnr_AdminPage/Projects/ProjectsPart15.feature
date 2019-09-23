@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12787 @DAS13529 @DAS16128 @DAS15201 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12787 @DAS13529 @DAS16128 @DAS15201 @Cleanup @TEST
 Scenario: EvergreenJnr_AdminPage_CheckThatSelectedBucketsIsDisplayedForOnboardedObjectsInQueueAndHistory
 	When Project created via API and opened
 	| ProjectName   | Scope     | ProjectTemplate | Mode               |
@@ -31,7 +31,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedBucketsIsDisplayedForOnboarded
 	And User clicks content from "Project" column
 	Then Project "UsersProject3" is displayed to user
 	When user selects "UsersProject3Group" in the Bucket dropdown
-	And User expands multiselect to add objects 
 	And User expands multiselect and selects following Objects
 	| Objects                               |
 	| 003F5D8E1A844B1FAA5 (Hunter, Melanie) |
@@ -74,7 +73,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedBucketsIsDisplayedForOnboarded
 	When User enters "Units" text in the Search field for "Capacity Unit" column
 	Then Rows counter shows "0" of "1" rows
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12157 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12157 @Cleanup @TEST
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectScopeChangesIsLoadedSuccessfullyAfterChangingProjectScopeToACustomList
 	When User create static list with "DevicesList12157" name on "Devices" page with following items
 	| ItemName       |
@@ -99,23 +98,23 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectScopeChangesIsLoadedSuc
 	When User selects "Scope" tab on the Project details page
 	When User selects '<ListToScope1>' in the 'Scope' dropdown with wait
 	And User navigates to the '<ScopeTab1>' tab on Project Scope Changes page
-	And User selects '<ListToScope2>' in the 'Scope' dropdown with wait
+	And User selects '<ListToScope2>' in the '<ScopeSelectbox>' dropdown with wait
 	And User navigates to the 'Application Scope' tab on Project Scope Changes page
 	When  User selects "Include applications" checkbox on the Project details page
-	And User selects 'ApplicationsStaticList12157' in the 'Scope' dropdown with wait
+	And User selects 'ApplicationsStaticList12157' in the 'Application Scope' dropdown with wait
 	And User selects "Scope Changes" tab on the Project details page
 	Then "<ObjectsToAdd1>" is displayed to the user in the Project Scope Changes section
-	When User navigates to the '<ScopeChanges1>' left menu item
+	When User navigates to the '<ScopeChanges1>' tab on Project Scope Changes page
 	Then "<ObjectsToAdd2>" is displayed to the user in the Project Scope Changes section
 	When User navigates to the 'Applications' tab on Project Scope Changes page
 	Then "<ObjectsToAdd3>" is displayed to the user in the Project Scope Changes section
 	Then There are no errors in the browser console
 
 Examples:
-	| MainList      | TestName  | ObjectsToAdd1                      | ListToScope1       | ScopeTab1    | ListToScope2     | ScopeChanges1 | ObjectsToAdd2                    | ObjectsToAdd3                         |
-	| All Devices   | DAS12157A | Devices to add (0 of 1 selected)   | DevicesList12157   | User Scope   | UsersList12157   | Users         | Users to add (0 of 1 selected)   | Applications to add (0 of 1 selected) |
-	| All Users     | DAS12157B | Users to add (0 of 1 selected)     | UsersList12157     | Device Scope | DevicesList12157 | Devices       | Devices to add (0 of 1 selected) | Applications to add (0 of 1 selected) |
-	| All Mailboxes | DAS12157C | Mailboxes to add (0 of 1 selected) | MailboxesList12157 | User Scope   | UsersList12157   | Users         | Users to add (0 of 0 selected)   | Applications to add (0 of 0 selected) |
+	| MainList      | TestName  | ObjectsToAdd1                      | ListToScope1       | ScopeTab1    | ScopeSelectbox | ListToScope2     | ScopeChanges1 | ObjectsToAdd2                    | ObjectsToAdd3                         |
+	| All Devices   | DAS12157A | Devices to add (0 of 1 selected)   | DevicesList12157   | User Scope   | User Scope     | UsersList12157   | Users         | Users to add (0 of 1 selected)   | Applications to add (0 of 1 selected) |
+	| All Users     | DAS12157B | Users to add (0 of 1 selected)     | UsersList12157     | Device Scope | Device Scope   | DevicesList12157 | Devices       | Devices to add (0 of 1 selected) | Applications to add (0 of 1 selected) |
+	| All Mailboxes | DAS12157C | Mailboxes to add (0 of 1 selected) | MailboxesList12157 | User Scope   | User Scope     | UsersList12157   | Users         | Users to add (0 of 0 selected)   | Applications to add (0 of 0 selected) |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11981 @Projects @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatItemsToAddValuesAreNotCachedAfterScopeOptionsChangeOnProjectDetailsPage
