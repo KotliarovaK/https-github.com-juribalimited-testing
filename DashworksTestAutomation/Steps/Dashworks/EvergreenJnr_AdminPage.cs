@@ -2033,7 +2033,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
             foreach (var row in items.Rows)
             {
-                Utils.Verify.IsTrue(page.GetTilesByDropdownName(row["Items"]).Displayed,
+                Verify.IsTrue(page.GetTilesByDropdownName(row["Items"]).Displayed,
                     $"{row["Items"]} is not displayed in {dropdownName} dropdown");
             }
         }
