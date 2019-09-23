@@ -472,7 +472,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var columnsElement = _driver.NowAt<ColumnsElement>();
             var actualPlaceholderName = columnsElement.SearchTextBox.GetAttribute("placeholder");
-            Verify.IsTrue(actualPlaceholderName == expectedPlaceholderName, $"Columns searchfield placeholders is: '{actualPlaceholderName}', but it should be: '{expectedPlaceholderName}");
+            Verify.AreEqual(expectedPlaceholderName, actualPlaceholderName, "Incorrect Placeholder in the search field");
         }
     }
 }
