@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Rings;
 using DashworksTestAutomation.DTO.ItemDetails;
+using DashworksTestAutomation.DTO.ManagementConsole;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Providers;
@@ -24,31 +25,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage.CustomFields.A
         {
             _customFields = customFields;
             _client = client;
-        }
-
-        [When(@"User removes newly created Custom Fields")]
-        public void WhenUserRemovesNewlyCreatedCustomFields()
-        {
-            if (!_customFields.Value.Any())
-                return;
-
-            foreach (CustomFieldDto customField in _customFields.Value)
-            {
-                try
-                {
-                    var requestUri = $"{UrlProvider.RestClientBaseUrl}{customField.ObjectType}/{customField.ObjectId}/deleteCustomField";
-
-                    var request = requestUri.GenerateRequest();
-                    request.AddParameter("fieldName", customField.FieldName);
-                    request.AddParameter("fieldIndex", customField.FieldIndex);
-
-                    var response = _client.Value.Delete(request);
-                }
-                catch (Exception e)
-                {
-                    Logger.Write($"Unable to delete Custom Field via API: {e}");
-                }
-            }
         }
 
         [AfterScenario("Cleanup")]

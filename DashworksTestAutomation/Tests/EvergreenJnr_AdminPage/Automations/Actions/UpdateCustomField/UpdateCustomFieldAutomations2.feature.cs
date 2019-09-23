@@ -138,25 +138,12 @@ this.FeatureBackground();
                         "Computer"});
             table1.AddRow(new string[] {
                         "DAS17847",
-                        "DAS17847",
+                        "17847",
                         "true",
                         "true",
                         "true"});
 #line 12
  testRunner.When("User creates new Custom Field", ((string)(null)), table1, "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
-                        "ObjectType",
-                        "ObjectId",
-                        "FieldName",
-                        "Value"});
-            table2.AddRow(new string[] {
-                        "device",
-                        "5850",
-                        "DAS17847",
-                        "ValueDAS17847"});
-#line 15
- testRunner.When("User creates Custom Field via API", ((string)(null)), table2, "When ");
 #line 18
  testRunner.And("User navigate to Evergreen URL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 19
@@ -164,14 +151,14 @@ this.FeatureBackground();
 #line 20
  testRunner.Then("Admin page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "AutomationName",
                         "Description",
                         "Active",
                         "StopOnFailedAction",
                         "Scope",
                         "Run"});
-            table3.AddRow(new string[] {
+            table2.AddRow(new string[] {
                         "17847_Automation",
                         "17847",
                         "true",
@@ -179,7 +166,7 @@ this.FeatureBackground();
                         "All Devices",
                         "Manual"});
 #line 21
- testRunner.When("User creates new Automation via API and open it", ((string)(null)), table3, "When ");
+ testRunner.When("User creates new Automation via API and open it", ((string)(null)), table2, "When ");
 #line 24
  testRunner.Then("Automation page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 25
@@ -200,7 +187,7 @@ this.FeatureBackground();
 #line 32
  testRunner.When("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 33
- testRunner.When("User removes newly created Custom Fields", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User removes Custom Field with \'DAS17847\' label", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 34
  testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 35
@@ -235,7 +222,8 @@ this.FeatureBackground();
  testRunner.Then("\'Long test value Long test value Long test value Long test value Long test value\'" +
                     " content is displayed in \'Value\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 50
- testRunner.Then("\'This list has errors\' error message is displayed for \'Custom Field\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'The selected custom field has not been found\' error message is displayed for \'Cu" +
+                    "stom Field\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 51
  testRunner.Then("\'[Custom field not found]\' value is displayed in the \'Custom Field\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

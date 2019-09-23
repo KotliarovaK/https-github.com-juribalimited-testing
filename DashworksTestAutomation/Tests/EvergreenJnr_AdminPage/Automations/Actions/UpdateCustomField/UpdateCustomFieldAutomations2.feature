@@ -11,10 +11,10 @@ Background: Pre-Conditions
 Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldValidations
 	When User creates new Custom Field
 	| FieldName | FieldLabel | AllowExternalUpdate | Enabled | Computer |
-	| DAS17847  | DAS17847   | true                | true    | true     |
-	When User creates Custom Field via API
-	| ObjectType | ObjectId | FieldName | Value         |
-	| device     | 5850     | DAS17847  | ValueDAS17847 |
+	| DAS17847  | 17847      | true                | true    | true     |
+	#When User creates Custom Field via API
+	#| ObjectType | ObjectId | FieldName | Value         |
+	#| device     | 5850     | DAS17847  | ValueDAS17847 |
 	And User navigate to Evergreen URL
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -30,7 +30,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldValidations
 	And User selects 'Replace all values' in the 'Update Values' dropdown
 	When User adds 'Long test value Long test value Long test value Long test value Long test value' value from 'Value' textbox
 	When User clicks the "CREATE" Action button
-	When User removes newly created Custom Fields
+	When User removes Custom Field with 'DAS17847' label
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Automations" link on the Admin page
@@ -47,5 +47,5 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldValidations
 	Then 'Update custom field' text value is displayed in the 'Action Type' dropdown
 	Then '17847' content is displayed in 'Custom Field' textbox
 	Then 'Long test value Long test value Long test value Long test value Long test value' content is displayed in 'Value' textbox
-	Then 'This list has errors' error message is displayed for 'Custom Field' field
+	Then 'The selected custom field has not been found' error message is displayed for 'Custom Field' field
 	Then '[Custom field not found]' value is displayed in the 'Custom Field' dropdown

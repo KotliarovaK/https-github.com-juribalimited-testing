@@ -414,10 +414,10 @@
     <Compile Include="Steps\ManagementConsole\Users\Api\CreateUserViaApi.cs" />
     <Compile Include="Steps\ManagementConsole\Users\UserUiSteps.cs" />
     <Compile Include="Steps\Senior\Senior_BulkUpdate.cs" />
-    <Compile Include="Steps\Senior\Senior_CreatingProject\CustomFields\AfterScenario\RemoveCustomFieldAfterScenario.cs" />
+    <Compile Include="Steps\Senior\CustomeFields\AfterScenario\RemoveCustomFieldAfterScenario.cs" />
     <Compile Include="Steps\Senior\Senior_CreatingProject\Projects_Capacity.cs" />
     <Compile Include="Steps\Senior\Senior_CreatingProject\Projects_CreateProject.cs" />
-    <Compile Include="Steps\Senior\Senior_CreatingProject\CustomFields\Projects_CustomFields.cs" />
+    <Compile Include="Steps\Senior\CustomeFields\Projects_CustomFields.cs" />
     <Compile Include="Steps\Senior\Senior_Dashboards.cs" />
     <Compile Include="Steps\Senior\Senior_Preferences.cs" />
     <Compile Include="Steps\Senior\Senior_Login.cs" />
