@@ -1223,18 +1223,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenCreatedProjectWithNameIsDisplayedCorrectly(string projectName)
         {
             var page = _driver.NowAt<BaseGridPage>();
-            try
-            {
-                _driver.WaitForDataLoading();
-                Verify.IsTrue(page.GetCreatedProjectName(projectName), $"The {projectName} Project is not found");
-            }
-            catch (Exception)
-            {
-                Thread.Sleep(30000);
-                _driver.Navigate().Refresh();
-                _driver.WaitForDataLoading();
-                Verify.IsTrue(page.GetCreatedProjectName(projectName), $"The {projectName} Project is not found");
-            }
+            _driver.WaitForDataLoading();
+            Verify.IsTrue(page.GetCreatedProjectName(projectName, true), $"The {projectName} Project is not found");
         }
 
         [Then(@"Import Project button is not displayed")]

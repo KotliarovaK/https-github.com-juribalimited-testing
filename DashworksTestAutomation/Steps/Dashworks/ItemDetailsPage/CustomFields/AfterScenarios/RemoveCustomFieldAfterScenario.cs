@@ -26,7 +26,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage.CustomFields.A
             _client = client;
         }
 
-        [AfterScenario("Cleanup")]
+        [AfterScenario("Cleanup", Order = 10)]
         public void DeleteNewlyCreatedCustomField()
         {
             if (!_customFields.Value.Any())

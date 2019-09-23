@@ -7,7 +7,7 @@ using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
 
-namespace DashworksTestAutomation.Steps.Senior.Senior_CreatingProject.CustomFields
+namespace DashworksTestAutomation.Steps.Senior.Manage.CustomFields
 {
     [Binding]
     public class Projects_CustomFields : SpecFlowContext

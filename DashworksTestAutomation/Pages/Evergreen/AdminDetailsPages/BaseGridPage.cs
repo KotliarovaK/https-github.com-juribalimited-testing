@@ -5,6 +5,7 @@ using System.Threading;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Utils;
+using NUnit.Framework.Constraints;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 
@@ -425,9 +426,15 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElement(selector);
         }
 
-        public bool GetCreatedProjectName(string projectName)
+        //TODO probably should be removed
+        private static string ProjectSelector = ".//div[@col-id='projectName']//a[text()='{0}']";
+
+        public bool GetCreatedProjectName(string projectName, bool wait = false)
         {
-            return Driver.IsElementDisplayed(By.XPath($".//div[@col-id='projectName']//a[text()='{projectName}']"));
+            var by = By.XPath(string.Format(ProjectSelector, projectName));
+            if (wait)
+                Driver.WaitForElementToBeDisplayedAfterRefresh(by);
+            return Driver.IsElementDisplayed(by);
         }
 
         public bool GetButtonByName(string buttonName)
