@@ -367,7 +367,7 @@ namespace DashworksTestAutomation.Pages
         public IWebElement GetSettingsMenuOfSharedUser(string username)
         {
             var dashboardSettingsSelector =
-                By.XPath($".//div[@class='permissions-container']//td[contains(text(),'{username}')]/following-sibling::td/div[starts-with(@class, 'cog-menu')]");
+                By.XPath($".//div[@class='permissions-container']//td[contains(text(),'{username}')]/following-sibling::td/div[starts-with(@class, 'cog-menu')]//i");
             Driver.MouseHover(dashboardSettingsSelector);
             Driver.WaitForDataLoading();
             Driver.WaitForElementToBeDisplayed(dashboardSettingsSelector);

@@ -1992,19 +1992,12 @@ namespace DashworksTestAutomation.Extensions
 
         public static void WaitFor(this RemoteWebDriver driver, Func<bool> flag)
         {
-            bool result;
-
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 60; i++)
             {
                 if (flag())
-                {
-                    result = flag();
-                    break;
-                }
-                else
-                    result = flag();
+                       break;
 
-                Thread.Sleep(500);
+                Thread.Sleep(1000);
             }
         }
 

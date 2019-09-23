@@ -137,11 +137,18 @@ Scenario: EvergreenJnr_DashboardsPage_CheckErrorTextDisplayingWhenListRefersToBr
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16623
 Scenario: EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorAppearsAndCorrectTextDisplayedForWidgetHavingBrokenLists
-	When User tries to open same page with "625" item id
+	When User clicks the Logout button
+	And User clicks the Switch to Evergreen link
+	And User clicks on the Login link
+	And User login with following credentials:
+	| Username | Password  |
+	| admin    | m!gration |
+	When User clicks the Switch to Evergreen link
+	Then Evergreen Dashboards page should be displayed to the user
+	When User tries to open same page with "109" item id
+	Then User sees "This widget refers to list Device List (Complex) - BROKEN LIST which has errors" text in "1" warning messages on Dashboards page
+	And User sees "This widget refers to list Application List (Complex) - BROKEN LIST which has errors" text in "2" warning messages on Dashboards page
 	Then There are no errors in the browser console
-	And User sees "This widget refers to list Users List (Complex) - BROKEN LIST which has errors" text in "1" warning messages on Dashboards page
-	And User sees "This widget refers to list Users List (Complex) - BROKEN LIST which has errors" text in "2" warning messages on Dashboards page
-	And User sees "This widget refers to list Application List (Complex) - BROKEN LIST which has errors" text in "3" warning messages on Dashboards page
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS15877 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatSettingsDisplayedForDashboard
