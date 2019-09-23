@@ -828,6 +828,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(by).GetAttribute("col-id");
         }
 
+        public string GetColumnWidthByName(string columnName)
+        {
+            var by = By.XPath($".//div[@col-id='{GetColIdByColumnName(columnName)}' and @role='gridcell']");
+            return Driver.FindElement(by).GetCssValue("width");
+        }
+
         public string GetColumnContentByColumnName(string columnName)
         {
             var by = By.XPath($".//div[@col-id='{GetColIdByColumnName(columnName)}' and @role='gridcell']");

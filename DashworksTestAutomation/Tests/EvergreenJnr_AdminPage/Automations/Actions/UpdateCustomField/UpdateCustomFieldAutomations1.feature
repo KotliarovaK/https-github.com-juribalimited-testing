@@ -1,4 +1,4 @@
-﻿Feature: UpdateCustomFieldAutomations
+﻿Feature: UpdateCustomFieldAutomations1
 	Runs Update Custom field Actions type related tests
 
 Background: Pre-Conditions
