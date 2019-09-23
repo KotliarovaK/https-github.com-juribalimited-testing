@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using System.Threading;
+using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Utils;

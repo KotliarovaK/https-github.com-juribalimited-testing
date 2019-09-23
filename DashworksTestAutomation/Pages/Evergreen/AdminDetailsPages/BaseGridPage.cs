@@ -445,6 +445,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             Driver.FindElement(byControl).Click();
         }
 
+        //TODO this hsould be removed
         public string GetMessageColor()
         {
             return Driver.FindElement(By.XPath(".//div[@id='messageAdmin']")).GetCssValue("background-color");
