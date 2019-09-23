@@ -1051,8 +1051,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<PrintDashboardsPage>();
             Utils.Verify.IsTrue(page.PrintPreviewSettingsPopUp.Displayed(), "Print Preview is not Displayed");
-            Utils.Verify.IsTrue(page.DashWorksPrintLogo.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
-            Utils.Verify.IsTrue(page.PrintPreviewWidgets.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
+            Utils.Verify.IsTrue(page.DashWorksPrintLogo.Displayed(), "Dashworks logo isn't displayed");
+            Utils.Verify.IsTrue(page.PrintPreviewWidgets.Displayed, "Print preview widgets aren't displayed");
         }
         
         [Then(@"There is no breadcrumbs displayed on Dashboard page")]
@@ -1378,6 +1378,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
-        #endregion
-    }
+        [Then(@"User clicks on Dashworks logo")]
+        public void ThenUserClicksOnDashworksLogo()
+        {
+            var page = _driver.NowAt<PrintDashboardsPage>();
+            try
+            {
+                page.DashWorksPrintLogo.Click();
+            } catch (System.Reflection.TargetInvocationException)
+            {
+                return;
+            }
+            throw new Exception("Dashworks Logo on Print Preview page is clickable");
+        }
+
+    #endregion
+}
 }
