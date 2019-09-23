@@ -453,7 +453,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<ColumnsElement>();
 
             foreach (var row in table.Rows)
-                Utils.Verify.That(page.GetSubcategoriesCountByCategoryName(row["Category"]).ToString(),Is.EqualTo(row["Number"]),
+                Utils.Verify.That(page.GetSubcategoriesCountByCategoryName(row["Category"]).ToString(), Is.EqualTo(row["Number"]),
                     $"Check {row["Category"]} category");
         }
 
@@ -465,6 +465,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             foreach (var row in table.Rows)
                 Utils.Verify.That(page.CategoryIsDisplayed(row["Category"]), Is.False,
                     $"Check {row["Category"]} category");
+        }
+
+        [Then(@"Columns Searchfield placeholder is '(.*)'")]
+        public void ThenColumnsSearchfieldPlaceholderIs(string expectedPlaceholderName)
+        {
+            var columnsElement = _driver.NowAt<ColumnsElement>();
+            var actualPlaceholderName = columnsElement.SearchTextBox.GetAttribute("placeholder");
+            Verify.AreEqual(expectedPlaceholderName, actualPlaceholderName, "Incorrect Placeholder in the search field");
         }
     }
 }
