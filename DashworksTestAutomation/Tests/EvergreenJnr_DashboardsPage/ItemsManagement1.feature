@@ -245,10 +245,3 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCorrectMessageAppearsWhenOpenning
 	When User tries to open same page with "9898998" item id
 	Then User sees "This dashboard does not exist or you do not have access to it" text in warning message on Dashboards submenu pane
 	And There are no errors in the browser console
-
-@Evergreen @Devices @EvergreenJnr_BaseDashboardPage @DAS18080
-Scenario: EvergreenJnr_Dashboard_CheckThatThereIsNoPossibilityGoBackGromThePrintPreviewModeAfterClickingTheDashworksLogo
-	When User clicks "print"  button on the Dashboards page
-    Then Print Preview is displayed to the User
-    And User clicks on Dashworks logo
-    Then Print Preview is displayed to the User

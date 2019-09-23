@@ -267,3 +267,10 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatItsNotPossibleToDeleteWidgetWhenE
 	Then User sees "WidgetForDAS17985 will be permanently deleted" text in warning message on Dashboards page
 	When User clicks Edit mode trigger on Dashboards page
 	Then Delete widget warning message is displayed on Dashboards page
+
+@Evergreen @Devices @EvergreenJnr_BaseDashboardPage @DAS18080
+Scenario: EvergreenJnr_Dashboard_CheckThatThereIsNoPossibilityGoBackGromThePrintPreviewModeAfterClickingTheDashworksLogo
+	When User clicks "print"  button on the Dashboards page
+	Then Print Preview is displayed to the User
+	And User clicks on Dashworks logo
+	Then Print Preview is displayed to the User
