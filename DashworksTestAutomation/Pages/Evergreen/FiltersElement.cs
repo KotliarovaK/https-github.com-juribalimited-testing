@@ -29,12 +29,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='filter-panel']")]
         public IWebElement FiltersPanel { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='mat-input-6']")]
-        public IWebElement FilterSearchField { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//span[@class='filter-label-name']")]
-        public IWebElement FilterNameInTheFilterPanel { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'filter-add-group')]")]
         public IWebElement AddNewFilterButton { get; set; }
 
@@ -107,7 +101,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[text()='B Star Packages']")]
         public IWebElement BStarPackagesCheckbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='form-group actions']//span[text()='SAVE']/ancestor::button")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='form-group actions']//span[text()='UPDATE']/ancestor::button")]
         public IWebElement SaveButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='form-group actions']//button[contains(@class,'mat-primary')]")]

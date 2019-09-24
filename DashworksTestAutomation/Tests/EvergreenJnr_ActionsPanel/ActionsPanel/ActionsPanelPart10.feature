@@ -93,7 +93,7 @@ Scenario: EvergreenJnr_DevicesList_CheckSortOrderForBulkUpdateCapacitySlot
 	| London - Southbank Morning   |
 	| London - Southbank Afternoon |
 
-@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS17103
+@Evergreen @AllLists @EvergreenJnr_ActionsPanel @DAS17103
 Scenario: EvergreenJnr_DevicesList_CheckTooltipDisplayingInDatePickerOfBulkUpdate
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Actions button
@@ -126,7 +126,7 @@ Scenario: EvergreenJnr_DevicesList_CheckTooltipDisplayingInDatePickerOfBulkUpdat
 	| Options            |
 	| Manchester Morning |
 
-@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS17580 @Cleanup
+@Evergreen @AllLists @EvergreenJnr_ActionsPanel @DAS17580 @Cleanup
 Scenario: EvergreenJnr_UsersList_CheckDateColorDisplayingInBulkUpdateDatePicker
 	When User creates new Slot via Api
 	| Project                         | SlotName | DisplayName | CapacityType   | ObjectType | Sunday | Tasks                   |

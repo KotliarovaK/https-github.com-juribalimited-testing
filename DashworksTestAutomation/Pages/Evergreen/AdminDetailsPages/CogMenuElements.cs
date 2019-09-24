@@ -40,6 +40,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public string GetCogMenuDropdownColor()
         {
+            Driver.WaitForElementToBeDisplayed(CogMenuDropdown);
             return CogMenuDropdown.GetCssValue("background-color");
         }
 

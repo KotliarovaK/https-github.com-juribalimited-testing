@@ -133,7 +133,7 @@ Scenario: EvergreenJnr_DevicesList_Search_CheckThatTableSearchFieldHaveAResetBut
 @Evergreen @ALlLists @EvergreenJnr_Search @Search @DAS12491
 Scenario Outline: EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnActionsToolbar
 	When User clicks "<PageName>" on the left-hand menu
-	Then "<PageName>" list should be displayed to the user
+	Then "All <PageName>" list should be displayed to the user
 	When User perform search by "<SearchTerm>"
 	Then "1" rows are displayed in the agGrid
 

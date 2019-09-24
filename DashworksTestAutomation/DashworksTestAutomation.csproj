@@ -415,10 +415,10 @@
     <Compile Include="Steps\ManagementConsole\Users\Api\CreateUserViaApi.cs" />
     <Compile Include="Steps\ManagementConsole\Users\UserUiSteps.cs" />
     <Compile Include="Steps\Senior\Senior_BulkUpdate.cs" />
-    <Compile Include="Steps\Senior\Manage\CustomFields\AfterScenario\RemoveCustomFieldAfterScenario.cs" />
+    <Compile Include="Steps\Senior\CustomeFields\AfterScenario\RemoveCustomFieldAfterScenario.cs" />
     <Compile Include="Steps\Senior\Senior_CreatingProject\Projects_Capacity.cs" />
     <Compile Include="Steps\Senior\Senior_CreatingProject\Projects_CreateProject.cs" />
-    <Compile Include="Steps\Senior\Manage\CustomFields\Projects_CustomFields.cs" />
+    <Compile Include="Steps\Senior\CustomeFields\Projects_CustomFields.cs" />
     <Compile Include="Steps\Senior\Senior_Dashboards.cs" />
     <Compile Include="Steps\Senior\Senior_Preferences.cs" />
     <Compile Include="Steps\Senior\Senior_Login.cs" />
@@ -527,55 +527,65 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AdminPage.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_AdminPage\Automation\CreateAutomation.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\UpdateCustomField\UpdateCustomFieldAutomations3.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UpdateCustomFieldAutomations3.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\UpdateCustomField\UpdateCustomFieldAutomations2.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UpdateCustomFieldAutomations2.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Automations\CreateAutomation.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CreateAutomation.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_AdminPage\Automation\CreateAction.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\CreateAction.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CreateAction.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_AdminPage\Automation\Actions.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\Actions.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Actions.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_AdminPage\Automation\AutomationLogPart1.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Automations\AutomationLogPart1.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AutomationLogPart1.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_AdminPage\Automation\AutomationLogPart2.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Automations\AutomationLogPart2.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AutomationLogPart2.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_AdminPage\Automation\AutomationLogPart3.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Automations\AutomationLogPart3.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AutomationLogPart3.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_AdminPage\Automation\AutomationsGrid.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Automations\AutomationsGrid.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AutomationsGrid.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_AdminPage\Automation\AutomationLogPart4.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Automations\AutomationLogPart4.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AutomationLogPart4.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_AdminPage\Automation\AutomationLogPart5.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Automations\AutomationLogPart5.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AutomationLogPart5.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_AdminPage\Automation\UpdateCustomFieldAutomations.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\UpdateCustomField\UpdateCustomFieldAutomations1.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UpdateCustomFieldAutomations.feature</DependentUpon>
+      <DependentUpon>UpdateCustomFieldAutomations1.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_AdminPage\Buckets\CreateBucket.feature.cs">
       <AutoGen>True</AutoGen>
@@ -867,7 +877,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ProjectsPart1.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_AdminPage\Automation\Automations.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Automations\Automations.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Automations.feature</DependentUpon>
@@ -1566,45 +1576,53 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AdminPage.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_AdminPage\Automation\CreateAutomation.feature">
+    <None Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\UpdateCustomField\UpdateCustomFieldAutomations3.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UpdateCustomFieldAutomations3.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\UpdateCustomField\UpdateCustomFieldAutomations2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UpdateCustomFieldAutomations2.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Automations\CreateAutomation.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CreateAutomation.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_AdminPage\Automation\CreateAction.feature">
+    <None Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\CreateAction.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CreateAction.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_AdminPage\Automation\Actions.feature">
+    <None Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\Actions.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Actions.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_AdminPage\Automation\AutomationLogPart1.feature">
+    <None Include="Tests\EvergreenJnr_AdminPage\Automations\AutomationLogPart1.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AutomationLogPart1.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_AdminPage\Automation\AutomationLogPart2.feature">
+    <None Include="Tests\EvergreenJnr_AdminPage\Automations\AutomationLogPart2.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AutomationLogPart2.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_AdminPage\Automation\AutomationLogPart3.feature">
+    <None Include="Tests\EvergreenJnr_AdminPage\Automations\AutomationLogPart3.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AutomationLogPart3.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_AdminPage\Automation\AutomationsGrid.feature">
+    <None Include="Tests\EvergreenJnr_AdminPage\Automations\AutomationsGrid.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AutomationsGrid.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_AdminPage\Automation\AutomationLogPart4.feature">
+    <None Include="Tests\EvergreenJnr_AdminPage\Automations\AutomationLogPart4.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AutomationLogPart4.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_AdminPage\Automation\AutomationLogPart5.feature">
+    <None Include="Tests\EvergreenJnr_AdminPage\Automations\AutomationLogPart5.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AutomationLogPart5.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_AdminPage\Automation\UpdateCustomFieldAutomations.feature">
+    <None Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\UpdateCustomField\UpdateCustomFieldAutomations1.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>UpdateCustomFieldAutomations.feature.cs</LastGenOutput>
+      <LastGenOutput>UpdateCustomFieldAutomations1.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_AdminPage\Buckets\CreateBucket.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -1838,7 +1856,7 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ProjectsPart1.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_AdminPage\Automation\Automations.feature">
+    <None Include="Tests\EvergreenJnr_AdminPage\Automations\Automations.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Automations.feature.cs</LastGenOutput>
     </None>

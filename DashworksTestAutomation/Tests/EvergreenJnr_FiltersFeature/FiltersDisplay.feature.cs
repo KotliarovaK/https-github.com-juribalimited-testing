@@ -2345,10 +2345,11 @@ this.FeatureBackground();
             table53.AddRow(new string[] {
                         "22 Nov 2012"});
 #line 545
- testRunner.When("User add \"Windows7Mi: Date & Time Task\" filter where type is \"Equals\" with added " +
-                    "column and following value:", ((string)(null)), table53, "When ");
+ testRunner.When("User add \"Windows7Mi: Computer Information ---- Text fill; Text fill; \\ Date & Ti" +
+                    "me Task\" filter where type is \"Equals\" with added column and following value:", ((string)(null)), table53, "When ");
 #line 548
- testRunner.Then("\"Windows7Mi: Date & Time Task\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"Windows7Mi: Computer Information ---- Text fill; Text fill; \\ Date & Time Task\" " +
+                    "filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 549
  testRunner.Then("\"16\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -2367,7 +2368,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS11090")]
         [NUnit.Framework.CategoryAttribute("DAS12114")]
         [NUnit.Framework.CategoryAttribute("DAS12698")]
-        [NUnit.Framework.TestCaseAttribute("Windows7Mi: Date & Time Task", "22 Nov 2012", "17,209", null)]
+        [NUnit.Framework.TestCaseAttribute("Windows7Mi: Computer Information ---- Text fill; Text fill; \\ Date & Time Task", "22 Nov 2012", "17,263", null)]
         [NUnit.Framework.TestCaseAttribute("Build Date", "6 Nov 2004", "17,278", null)]
         public virtual void EvergreenJnr_DevicesList_CheckThatDateAndTimeFiltersWithDoesNotEqualValuesAreWorkingCorrectly(string filterName, string value, string rowCount, string[] exampleTags)
         {
@@ -4013,7 +4014,7 @@ this.FeatureBackground();
             "n")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
+        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
         [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS11619")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", null)]
@@ -4063,7 +4064,7 @@ this.FeatureBackground();
             string[] @__tags = new string[] {
                     "Evergreen",
                     "AllLists",
-                    "EvergreenJnr_FilterFeature",
+                    "Evergreen_FiltersFeature",
                     "FiltersDisplay",
                     "DAS11619"};
             if ((exampleTags != null))
@@ -4173,7 +4174,7 @@ this.FeatureBackground();
             "yFilters")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
+        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
         [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS11829")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Department Name", "Add Department Name column", null)]
@@ -4215,7 +4216,7 @@ this.FeatureBackground();
             string[] @__tags = new string[] {
                     "Evergreen",
                     "AllLists",
-                    "EvergreenJnr_FilterFeature",
+                    "Evergreen_FiltersFeature",
                     "FiltersDisplay",
                     "DAS11829"};
             if ((exampleTags != null))
@@ -7928,7 +7929,7 @@ this.FeatureBackground();
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatStatusFilterAvailableOptionsList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
+        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS16071")]
         public virtual void EvergreenJnr_DevicesList_CheckThatStatusFilterAvailableOptionsList()
@@ -7962,7 +7963,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatStatusFilterAvailableOptionsList", null, new string[] {
                         "Evergreen",
                         "Devices",
-                        "EvergreenJnr_FilterFeature",
+                        "Evergreen_FiltersFeature",
                         "FilterFunctionality",
                         "DAS16071"});
 #line 1792

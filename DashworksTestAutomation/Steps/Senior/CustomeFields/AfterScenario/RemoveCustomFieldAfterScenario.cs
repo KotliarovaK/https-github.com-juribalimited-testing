@@ -1,12 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using DashworksTestAutomation.DTO.ManagementConsole;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Utils;
 using TechTalk.SpecFlow;
 
-namespace DashworksTestAutomation.Steps.Senior.Manage.CustomFields.AfterScenario
+namespace DashworksTestAutomation.Steps.Senior.CustomFields.AfterScenario
 {
     [Binding]
     class RemoveCustomFieldAfterScenario : SpecFlowContext
@@ -18,8 +21,7 @@ namespace DashworksTestAutomation.Steps.Senior.Manage.CustomFields.AfterScenario
             _customFields = customFields;
         }
 
-        //Order 20 because we delete CF on Evergreen first
-        [AfterScenario("Cleanup", Order = 20)]
+        [AfterScenario("Cleanup", Order = 10)]
         public void DeleteNewlyCreatedCustomField()
         {
             if (_customFields.Value.Any())

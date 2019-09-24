@@ -169,7 +169,6 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckFormattingForIntegerValues
 	Then "16933" content is displayed in "Devices" column
 	Then "41050" content is displayed in "Users" column
 	Then "14538" content is displayed in "Mailboxes" column
-	When User clicks "Evergreen" link on the Admin page
 	When User navigates to the 'Capacity Units' left menu item
 	And User enters "Unassigned" text in the Search field for "Capacity Unit" column
 	Then "9420" content is displayed in "Devices" column

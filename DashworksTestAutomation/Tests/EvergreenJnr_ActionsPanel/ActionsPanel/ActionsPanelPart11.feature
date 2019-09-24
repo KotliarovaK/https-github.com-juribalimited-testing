@@ -98,7 +98,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatBulkUpdateOfArchivedItemsWorks
 	And There are no errors in the browser console
 	And Success message with "1 update has been queued" text is displayed on Action panel
 
-@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS17639 @Cleanup
+@Evergreen @AllLists @EvergreenJnr_ActionsPanel @DAS17639 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatSlotIsDisplayedInDDLIfSelectDateWithUnlimitedCapacity
 	When User creates new Slot via Api
 	| Project      | SlotName   | DisplayName | CapacityType    | ObjectType | Tuesday | Tasks                     |
@@ -120,7 +120,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSlotIsDisplayedInDDLIfSelectDateWith
 	| None       |
 	| Slot 17639 |
 
-@Evergreen @AllLists @EvergreenJnr_FilterFeature @BulkUpdate @Capacity @Slots @DAS17833 @Cleanup
+@Evergreen @AllLists @EvergreenJnr_ActionsPanel @BulkUpdate @Capacity @Slots @DAS17833 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatFullSlotIsDisplayedWhileRulesShouldHonourTheDateRangeButNotTheTotalCapacity
 	When User creates new Slot via Api
 	| Project      | SlotName    | DisplayName | CapacityType    | ObjectType | Tuesday | Tasks                     |
