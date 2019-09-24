@@ -77,6 +77,8 @@ namespace DashworksTestAutomation.Steps.Projects
             _driver.WaitForDataLoadingOnProjects();
             page.ProjectName.Clear();
             page.ProjectName.SendKeys(projectName);
+
+            _projects.Value.Add(projectName);
         }
 
         [When(@"User updates Project Short Name to ""(.*)"" on Senior")]

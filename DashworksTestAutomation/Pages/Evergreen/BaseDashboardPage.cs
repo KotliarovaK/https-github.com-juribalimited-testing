@@ -1185,8 +1185,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IWebElement ExpandCollapseMultiselectButton(string titleText)
         {
+            var buttonSelector = By.XPath(".//button");
+
             var element = GetExpandableMultiselect(titleText);
-            var button = element.FindElement(By.XPath(".//button"));
+
+            var button = element.FindElement(buttonSelector);
             return button;
         }
     }
