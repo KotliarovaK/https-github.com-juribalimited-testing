@@ -2,12 +2,13 @@
 using DashworksTestAutomation.DTO.ManagementConsole;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.ManagementConsole.CustomFields;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
 
-namespace DashworksTestAutomation.Steps.Senior.Manage.CustomFields
+namespace DashworksTestAutomation.Steps.Senior.Senior_CreatingProject.CustomFields
 {
     [Binding]
     public class Projects_CustomFields : SpecFlowContext
@@ -47,6 +48,12 @@ namespace DashworksTestAutomation.Steps.Senior.Manage.CustomFields
 
                 page.CreateButton.Click();
             }
+        }
+
+        [When(@"User removes Custom Field with '(.*)' label")]
+        public void WhenUserRemovesCustomFieldWithLabel(string cfLabel)
+        {
+            DatabaseHelper.DeleteCustomField(new SeniorCustomFieldDto() { FieldLabel = cfLabel }.Id);
         }
     }
 }

@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Automation
+namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Automations.Actions
 {
     using TechTalk.SpecFlow;
     

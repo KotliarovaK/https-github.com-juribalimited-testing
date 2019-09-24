@@ -454,11 +454,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
+        [Then(@"width of the '(.*)' column is '(.*)' pixels")]
+        public void ThenWidthOfTheColumnIsPixels(string columnName, string columnWidth)
+        {
+            var dashboardPage = _driver.NowAt<BaseDashboardPage>();
+            Utils.Verify.AreEqual(columnWidth, dashboardPage.GetColumnWidthByName(columnName), $"width '{columnName}' column is not '{columnWidth}'");
+        }
+
         [Then(@"Appropriate header font weight is displayed")]
         public void ThenAppropriateHeaderFontWeightIsDisplayed()
         {
             var dashboardPage = _driver.NowAt<BaseDashboardPage>();
-            Utils.Verify.AreEqual("400", dashboardPage.GetHeaderFontWeight(), "PLEASE ADD EXCEPTION MESSAGE");
+            Utils.Verify.AreEqual("400", dashboardPage.GetHeaderFontWeight(), "Header font weight is incorrect");
         }
 
         [Then(@"Column is displayed in following order:")]
