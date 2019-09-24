@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Rings;
 using DashworksTestAutomation.DTO.ItemDetails;
+using DashworksTestAutomation.DTO.ManagementConsole;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Providers;
