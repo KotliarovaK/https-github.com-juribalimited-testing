@@ -137,11 +137,18 @@ Scenario: EvergreenJnr_DashboardsPage_CheckErrorTextDisplayingWhenListRefersToBr
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16623
 Scenario: EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorAppearsAndCorrectTextDisplayedForWidgetHavingBrokenLists
-	When User tries to open same page with "625" item id
+	When User clicks the Logout button
+	And User clicks the Switch to Evergreen link
+	And User clicks on the Login link
+	And User login with following credentials:
+	| Username | Password  |
+	| admin    | m!gration |
+	When User clicks the Switch to Evergreen link
+	Then Evergreen Dashboards page should be displayed to the user
+	When User tries to open same page with "109" item id
+	Then User sees "This widget refers to list Device List (Complex) - BROKEN LIST which has errors" text in "1" warning messages on Dashboards page
+	And User sees "This widget refers to list Application List (Complex) - BROKEN LIST which has errors" text in "2" warning messages on Dashboards page
 	Then There are no errors in the browser console
-	And User sees "This widget refers to list Users List (Complex) - BROKEN LIST which has errors" text in "1" warning messages on Dashboards page
-	And User sees "This widget refers to list Users List (Complex) - BROKEN LIST which has errors" text in "2" warning messages on Dashboards page
-	And User sees "This widget refers to list Application List (Complex) - BROKEN LIST which has errors" text in "3" warning messages on Dashboards page
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS15877 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatSettingsDisplayedForDashboard
@@ -260,3 +267,27 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatItsNotPossibleToDeleteWidgetWhenE
 	Then User sees "WidgetForDAS17985 will be permanently deleted" text in warning message on Dashboards page
 	When User clicks Edit mode trigger on Dashboards page
 	Then Delete widget warning message is displayed on Dashboards page
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18152 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatDuplicateOptionWorksAfterMovingWidget
+	When Dashboard with "Dashboard for DAS18152" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User creates new Widget
+	| WidgetType | Title    | List        | MaxRows | MaxColumns |
+	| List       | 1_Widget | All Devices | 5       | 5          |
+	Then "1_Widget" Widget is displayed to the user
+	When User clicks the "ADD WIDGET" Action button
+	And User creates new Widget
+	| WidgetType | Title    | List        | MaxRows | MaxColumns |
+	| List       | 2_Widget | All Devices | 5       | 5          |
+	Then "2_Widget" Widget is displayed to the user
+	When User clicks Ellipsis menu for "1_Widget" Widget on Dashboards page
+	And User clicks "Move to end" item from Ellipsis menu on Dashboards page
+	And User clicks Ellipsis menu for "1_Widget" Widget on Dashboards page
+	And User clicks "Duplicate" item from Ellipsis menu on Dashboards page
+	Then User sees following Widgets in one Section on Dashboards page:
+	| WidgetNames |
+	| 2_Widget    |
+	| 1_Widget    |
+	| 1_Widget2   |

@@ -1,19 +1,16 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Reflection;
-using System.Threading;
-using DashworksTestAutomation.Base;
+﻿using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Utils;
-using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.PageObjects;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Threading;
 using ExpectedConditions = SeleniumExtras.WaitHelpers.ExpectedConditions;
 
 namespace DashworksTestAutomation.Extensions
@@ -1008,6 +1005,11 @@ namespace DashworksTestAutomation.Extensions
             WaitForElementDisplayConditionAfterRefresh(driver, element, true, waitSeconds, waitForDataLoading);
         }
 
+        public static void WaitForElementToBeDisplayedAfterRefresh(this RemoteWebDriver driver, IWebElement element, By by, bool waitForDataLoading = false, int waitSeconds = WaitTimeoutSeconds)
+        {
+            WaitForElementDisplayConditionAfterRefresh(driver, element, by, true, waitSeconds, waitForDataLoading);
+        }
+
         public static void WaitForElementToBeDisplayedAfterRefresh(this RemoteWebDriver driver, By locator, bool waitForDataLoading = false, int waitSeconds = WaitTimeoutSeconds)
         {
             WaitForElementDisplayConditionAfterRefresh(driver, locator, true, waitSeconds, waitForDataLoading);
@@ -1037,6 +1039,19 @@ namespace DashworksTestAutomation.Extensions
             {
                 WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(waitSeconds));
                 wait.Until(ElementIsInDisplayedConditionAfterRefresh(element, condition, waitForDataLoading));
+            }
+            catch (WebDriverTimeoutException e)
+            {
+                throw new Exception($"Element was not changed Display condition to '{condition}' after {waitSeconds} seconds", e);
+            }
+        }
+
+        private static void WaitForElementDisplayConditionAfterRefresh(this RemoteWebDriver driver, IWebElement element, By by, bool condition, int waitSeconds, bool waitForDataLoading)
+        {
+            try
+            {
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(waitSeconds));
+                wait.Until(ElementIsInDisplayedConditionAfterRefresh(element, by, condition, waitForDataLoading));
             }
             catch (WebDriverTimeoutException e)
             {
@@ -1089,6 +1104,38 @@ namespace DashworksTestAutomation.Extensions
                         WaitForDataLoading((RemoteWebDriver)driver);
 
                     return IsElementDisplayed((RemoteWebDriver)driver, element, WaitTime.Short).Equals(displayedCondition);
+                }
+                catch (NoSuchElementException)
+                {
+                    // Returns false because the element is not present in DOM.
+                    return false.Equals(displayedCondition);
+                }
+                catch (StaleElementReferenceException)
+                {
+                    // Returns false because stale element reference implies that element
+                    // is no longer visible.
+                    return false.Equals(displayedCondition);
+                }
+                catch (InvalidOperationException)
+                {
+                    // Return false as no elements was located
+                    return false.Equals(displayedCondition);
+                }
+            };
+        }
+
+        private static Func<IWebDriver, bool> ElementIsInDisplayedConditionAfterRefresh(IWebElement element, By by, bool displayedCondition, bool waitForDataLoading)
+        {
+            return (driver) =>
+            {
+                try
+                {
+                    driver.Navigate().Refresh();
+
+                    if (waitForDataLoading)
+                        WaitForDataLoading((RemoteWebDriver)driver);
+
+                    return IsElementInElementDisplayed((RemoteWebDriver)driver, element, by, WaitTime.Short).Equals(displayedCondition);
                 }
                 catch (NoSuchElementException)
                 {
@@ -1992,19 +2039,12 @@ namespace DashworksTestAutomation.Extensions
 
         public static void WaitFor(this RemoteWebDriver driver, Func<bool> flag)
         {
-            bool result;
-
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 60; i++)
             {
                 if (flag())
-                {
-                    result = flag();
                     break;
-                }
-                else
-                    result = flag();
 
-                Thread.Sleep(500);
+                Thread.Sleep(1000);
             }
         }
 

@@ -791,7 +791,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFollowingContentIsDisplayedInTheColumnForWidget(string columnName, Table table)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            var originalList = page.GetWidgwtRowContentByColumnName(columnName);
+            var originalList = page.GetWidgetRowContentByColumnName(columnName);
             var tableContent = table.Rows.SelectMany(row => row.Values).First();
             foreach (var content in originalList)
             {
@@ -837,9 +837,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             page.GetCountForTableWidget(column, value).Click();
         }
+        
+        [Then(@"There is no '(.*)' column for '(.*)' widget")]
+        public void ThenThereIsNoSpecifiedColumnForWidget(string column, string widget)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            var headers = page.GetTableWidgetHeaders(widget);
 
-
-
+            Utils.Verify.That(headers.Select(x=>x.Text).ToList().FindAll(x => x.ToLower().Contains(column.ToLower())).Count(), Is.EqualTo(0), $"Table contains {column} header");
+        }
 
         [Then(@"Permission panel is displayed to the user")]
         public void ThenPermissionPanelIsDisplayedToTheUser()
@@ -860,27 +866,31 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForElementToBeDisplayed(page.PermissionAddUserButton);
+
+            Thread.Sleep(300);
             page.PermissionAddUserButton.Click();
 
             foreach (var row in table.Rows)
             {
                 if (!string.IsNullOrEmpty(row["User"]))
                 {
+                    Thread.Sleep(300);
                     page.PermissionUserField.Click();
                     page.PermissionUserField.Clear();
                     page.PermissionUserField.SendKeys(row["User"]);
                     page.SelectOptionFromList(row["User"]);
-                    Thread.Sleep(300);
                 }
 
                 if (!string.IsNullOrEmpty(row["Permission"]))
                 {
+                    Thread.Sleep(300);
                     page.PermissionTypeField.Click();
                     page.SelectOptionFromList(row["Permission"]);
-                    Thread.Sleep(300);
                 }
 
+                Thread.Sleep(300);
                 page.PermissionAddUserButton.Click();
+
                 Thread.Sleep(2000);
             }
         }
