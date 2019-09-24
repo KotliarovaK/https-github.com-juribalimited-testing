@@ -12,9 +12,6 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldValidations
 	When User creates new Custom Field
 	| FieldName | FieldLabel | AllowExternalUpdate | Enabled | Computer |
 	| DAS17847  | 17847      | true                | true    | true     |
-	#When User creates Custom Field via API
-	#| ObjectType | ObjectId | FieldName | Value         |
-	#| device     | 5850     | DAS17847  | ValueDAS17847 |
 	And User navigate to Evergreen URL
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -23,12 +20,14 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldValidations
 	| 17847_Automation | 17847       | true   | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
+	#Create Action
 	When User clicks the "CREATE ACTION" Action button
 	And User enters '17881_Action' text to 'Action Name' textbox
 	And User selects 'Update custom field' in the 'Action Type' dropdown
 	When User selects 'DAS17847' option from 'Custom Field' autocomplete
 	And User selects 'Replace all values' in the 'Update Values' dropdown
 	When User adds 'Long test value Long test value Long test value Long test value Long test value' value from 'Value' textbox
+	#Create Action
 	When User clicks the "CREATE" Action button
 	When User removes Custom Field with 'DAS17847' label
 	When User clicks Admin on the left-hand menu
