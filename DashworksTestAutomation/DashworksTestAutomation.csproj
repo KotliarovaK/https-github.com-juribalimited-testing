@@ -339,6 +339,7 @@
     <Compile Include="Pages\Projects\Projects_Dashboards\Projects_DashboardsPage.cs" />
     <Compile Include="Pages\Projects\Projects_PMObjectPage.cs" />
     <Compile Include="Providers\BambooProvider.cs" />
+    <Compile Include="Providers\JuribaAutomationApiProvider.cs" />
     <Compile Include="Steps\API\EvergreenJnr_API_CheckAllFiltersAndColumns.cs" />
     <Compile Include="Steps\API\EvergreenJnr_API_DashboardPage.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\AfterScenario\RemoveAutomationActionAfterScenario.cs" />
