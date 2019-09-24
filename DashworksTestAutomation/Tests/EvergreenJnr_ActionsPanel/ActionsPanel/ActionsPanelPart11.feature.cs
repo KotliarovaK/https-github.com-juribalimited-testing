@@ -518,8 +518,7 @@ this.FeatureBackground();
             "pacity")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
-        [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
         [NUnit.Framework.CategoryAttribute("DAS17639")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesList_CheckThatSlotIsDisplayedInDDLIfSelectDateWithUnlimitedCapacity()
@@ -554,8 +553,7 @@ this.FeatureBackground();
                     "pacity", null, new string[] {
                         "Evergreen",
                         "AllLists",
-                        "EvergreenJnr_FilterFeature",
-                        "FilterFunctionality",
+                        "EvergreenJnr_ActionsPanel",
                         "DAS17639",
                         "Cleanup"});
 #line 102
@@ -626,7 +624,7 @@ this.FeatureBackground();
             "eRangeButNotTheTotalCapacity")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
         [NUnit.Framework.CategoryAttribute("BulkUpdate")]
         [NUnit.Framework.CategoryAttribute("Capacity")]
         [NUnit.Framework.CategoryAttribute("Slots")]
@@ -664,7 +662,7 @@ this.FeatureBackground();
                     "eRangeButNotTheTotalCapacity", null, new string[] {
                         "Evergreen",
                         "AllLists",
-                        "EvergreenJnr_FilterFeature",
+                        "EvergreenJnr_ActionsPanel",
                         "BulkUpdate",
                         "Capacity",
                         "Slots",

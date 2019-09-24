@@ -141,7 +141,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksInSearchFieldForSelectedAssociationFilter()
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            filterElement.FilterSearchField.Click();
+            filterElement.FilterSearchInputs[0].Click();
         }
 
         [When(@"User clicks in search field in the Filter block")]

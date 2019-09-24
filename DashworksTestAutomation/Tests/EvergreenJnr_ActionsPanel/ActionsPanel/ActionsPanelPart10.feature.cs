@@ -466,8 +466,7 @@ this.FeatureBackground();
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckTooltipDisplayingInDatePickerOfBulkUpdate")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
-        [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
         [NUnit.Framework.CategoryAttribute("DAS17103")]
         public virtual void EvergreenJnr_DevicesList_CheckTooltipDisplayingInDatePickerOfBulkUpdate()
         {
@@ -500,8 +499,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckTooltipDisplayingInDatePickerOfBulkUpdate", null, new string[] {
                         "Evergreen",
                         "AllLists",
-                        "EvergreenJnr_FilterFeature",
-                        "FilterFunctionality",
+                        "EvergreenJnr_ActionsPanel",
                         "DAS17103"});
 #line 97
 this.ScenarioInitialize(scenarioInfo);
@@ -580,8 +578,7 @@ this.FeatureBackground();
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckDateColorDisplayingInBulkUpdateDatePicker")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
-        [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
         [NUnit.Framework.CategoryAttribute("DAS17580")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_UsersList_CheckDateColorDisplayingInBulkUpdateDatePicker()
@@ -615,8 +612,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckDateColorDisplayingInBulkUpdateDatePicker", null, new string[] {
                         "Evergreen",
                         "AllLists",
-                        "EvergreenJnr_FilterFeature",
-                        "FilterFunctionality",
+                        "EvergreenJnr_ActionsPanel",
                         "DAS17580",
                         "Cleanup"});
 #line 130

@@ -439,6 +439,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         private void CheckColumnDisplayedState(Table table, bool displayedState)
         {
             var listPageMenu = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForElementToBeDisplayed(listPageMenu.RefreshTableButton);
             listPageMenu.RefreshTableButton.Click();
             _driver.WaitForDataLoading();
             Thread.Sleep(1000);

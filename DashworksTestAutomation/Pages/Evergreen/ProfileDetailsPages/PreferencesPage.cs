@@ -21,7 +21,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
         [FindsBy(How = How.XPath, Using = "//button[contains(@class, 'mat-raised-button')]")]
         public IWebElement UpdateButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//mat-sidenav//a//div[text()='Preferences']")]
+        [FindsBy(How = How.XPath, Using = ".//a[text()='Preferences']/parent::li")]
         public IWebElement PreferencesLink { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//mat-option/span[text()='Normal']")]
@@ -36,7 +36,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
         [FindsBy(How = How.XPath, Using = "//a/span[text()='Boîtes aux lettres']")]
         public IWebElement LeftHandMenuOnFrench { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='form-item']/div[text()='Préférences']")]
+        [FindsBy(How = How.XPath, Using = ".//a[text()='Préférences']")]
         public IWebElement CaptionOnFrench { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
@@ -65,12 +65,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
 
         public string GetUpdateButtonColor()
         {
-            return UpdateButton.GetCssValue("background");
+            return UpdateButton.GetCssValue("background-color");
         }
 
         public string GetLinkMenuColor()
         {
-            return PreferencesLink.GetCssValue("background");
+            return PreferencesLink.GetCssValue("background-color");
         }
     }
 }

@@ -282,7 +282,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         [Then(@"following values are presented in ""(.*)"" drop-down on Action panel:")]
         public void ThenFollowingValuesArePresentedInDrop_DownOnActionPanel(string fieldName, Table table)
-        {
+         {
             var field = _driver.NowAt<ActionsElement>();
             field.GetDropdownOnActionPanelByName(fieldName).Click();
             var action = _driver.NowAt<BaseDashboardPage>();

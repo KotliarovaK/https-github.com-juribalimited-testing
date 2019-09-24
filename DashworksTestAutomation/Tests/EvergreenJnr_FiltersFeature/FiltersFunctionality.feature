@@ -84,7 +84,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredAfterGoingBackT
 	Then Filters panel is displayed to the user
 	And "Application is Microsoft Office 97, Professional Edition, Microsoft Office 97, Developer Edition Tools or Microsoft Office 97, Standard Edition" is displayed in added filter info
 
-@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11042
+@Evergreen @AllLists @Evergreen_FiltersFeature @FilterFunctionality @DAS11042
 Scenario Outline: EvergreenJnr_AllLists_CheckThatPrimaryColumnIsDisplayedAfterAddingAFilterWithColumn
 	When User clicks "<ListName>" on the left-hand menu
 	Then "All <ListName>" list should be displayed to the user
@@ -105,7 +105,7 @@ Examples:
 	| Users        | Username                | aa          | Username      |
 	| Mailboxes    | Email Address (Primary) | ale         | Email Address |
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11042 @Cleanup
+@Evergreen @Devices @Evergreen_FiltersFeature @FilterFunctionality @DAS11042 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatAddColumnCheckboxIsCheckedAfterSavingFilterInANewList
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
@@ -127,7 +127,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddColumnCheckboxIsCheckedAfterSavin
 	Then "Add column" checkbox is checked
 	And "Add Column" checkbox is disabled
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11042
+@Evergreen @Devices @Evergreen_FiltersFeature @FilterFunctionality @DAS11042
 Scenario: EvergreenJnr_DevicesList_CheckThatAddColumnCheckboxIsCheckedAfterSavingAFilter
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
@@ -141,7 +141,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddColumnCheckboxIsCheckedAfterSavin
 	Then "Add column" checkbox is checked
 	And "Add Column" checkbox is disabled
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11042
+@Evergreen @Devices @Evergreen_FiltersFeature @FilterFunctionality @DAS11042
 Scenario: EvergreenJnr_DevicesList_CheckThatAddColumnCheckboxIsUncheckedAfterSavingAFilterAndRemovingAColumn
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
@@ -160,7 +160,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddColumnCheckboxIsUncheckedAfterSav
 	Then "Add column" checkbox is unchecked
 	And "Add column" checkbox is not disabled
 
-@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS10977 @DAS11507 @DAS12221 @DAS12351 @archived
+@Evergreen @AllLists @Evergreen_FiltersFeature @FilterFunctionality @DAS10977 @DAS11507 @DAS12221 @DAS12351 @archived
 Scenario Outline: EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowserBackButtonForCheckboxesFilters
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -187,7 +187,7 @@ Examples:
 	| Applications | MigrationP: Core Application    | FALSE          | 220       | Application   | Quartus II Programmer 4.0                 | MigrationP: Core Application is false      |
 	| Mailboxes    | EmailMigra: Device Type         | Not Identified | 729       | Email Address | alex.cristea@juriba.com                   | EmailMigra: Device Type is Not Identified  |
 
-@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS10977 @DAS12351
+@Evergreen @AllLists @Evergreen_FiltersFeature @FilterFunctionality @DAS10977 @DAS12351
 Scenario Outline: EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowserBackButtonForLookupFilters
 	When User clicks "<ListName>" on the left-hand menu
 	Then "All <ListName>" list should be displayed to the user
@@ -205,11 +205,11 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterL
 	Then "<Text>" is displayed in added filter info
 
 Examples: 
-	| ListName     | FilterName                       | FilterValue            | RowsCount | ColumnName    | ObjectName              | Text                                             |
-	| Applications | Barry'sUse: Target App           | Python 2.2a4 (SMS_GEN) | 1         | Application   | Python 2.2a4            | Barry'sUse: Target App is Python 2.2a4 (SMS_GEN) |
-	| Mailboxes    | EmailMigra: BT/QMM Switch Status | Not Started            | 729       | Email Address | alex.cristea@juriba.com | EmailMigra: BT/QMM Switch Status is Not Started  |
+	| ListName     | FilterName                                   | FilterValue            | RowsCount | ColumnName    | ObjectName              | Text                                                        |
+	| Applications | Barry'sUse: Target App                       | Python 2.2a4 (SMS_GEN) | 1         | Application   | Python 2.2a4            | Barry'sUse: Target App is Python 2.2a4 (SMS_GEN)            |
+	| Mailboxes    | EmailMigra: Migration \ BT/QMM Switch Status | Not Started            | 729       | Email Address | alex.cristea@juriba.com | EmailMigra: Migration \ BT/QMM Switch Status is Not Started |
 
-@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS10977 @DAS12954
+@Evergreen @Applications @Evergreen_FiltersFeature @FilterFunctionality @DAS10977 @DAS12954
 Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowserbackButtonForValuesFilters
 	When User clicks "Applications" on the left-hand menu
 	Then "All Applications" list should be displayed to the user
@@ -230,7 +230,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredCorrectlyAfterL
 	When User clicks the Filters button
 	Then "Application is Microsoft Office 97, Professional Edition" is displayed in added filter info
 
-@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS10977 @DAS13376 @Cleanup
+@Evergreen @Applications @Evergreen_FiltersFeature @FilterFunctionality @DAS10977 @DAS13376 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowseBackButtonForListFilters
 	When User add following columns using URL to the "Applications" page:
 	| ColumnName      |
@@ -253,7 +253,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredCorrectlyAfterL
 	When User clicks the Filters button
 	Then "Any Application in list TestListD75CD3 not used on device" is displayed in added filter info
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11560
+@Evergreen @Devices @Evergreen_FiltersFeature @FilterFunctionality @DAS11560
 Scenario: EvergreenJnr_DevicesList_CheckNumericFilter
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
@@ -265,7 +265,7 @@ Scenario: EvergreenJnr_DevicesList_CheckNumericFilter
 	Then "App Count (Installed) is less than 1" is displayed in added filter info
 	Then "5,195" rows are displayed in the agGrid
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11469
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11469
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatAssociationSearchInFiltersPanelIsWorkingCorrectly
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
@@ -288,7 +288,7 @@ Examples:
 	#| Application Name           |
 	
 
-@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11560
+@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11560
 Scenario: EvergreenJnr_ApplicationsList_CheckThat500ErrorInNotDisplayedWhenUserApplyASelectedNumericFilter 
 	When User clicks "Applications" on the left-hand menu
 	Then "All Applications" list should be displayed to the user
@@ -301,7 +301,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThat500ErrorInNotDisplayedWhenUserA
 	Then "1,269" rows are displayed in the agGrid
 	Then "(Device Count (Installed) < 10)" text is displayed in filter container
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11551 @DAS11550 @DAS11749
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11551 @DAS11550 @DAS11749
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatEmptyNotEmptyOperatorsIsWorkedCorrectly
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
@@ -316,7 +316,7 @@ Examples:
 	| Empty          |
 	| Not Empty      |
 
-@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11577
+@Evergreen @Users @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11577
 Scenario Outline: EvergreenJnr_UsersList_CheckThatLDAPFilterCategoryHaveAddColumnCheckboxes
 	When User clicks "Users" on the left-hand menu
 	Then "All Users" list should be displayed to the user
@@ -339,7 +339,7 @@ Examples:
 	| department             | Ends with        | LongName01234567890123456789012345678901234567890123456789 | Add Department column             |
 	| iscriticalsystemobject | Not empty        |                                                            | Add iscriticalsystemobject column |
 
-@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11738 @DAS12194 @DAS12199 @DAS12220
+@Evergreen @Users @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11738 @DAS12194 @DAS12199 @DAS12220
 Scenario: EvergreenJnr_UsersList_CheckThatToolTipShownWithEditFilterTextWhenEditingAFilterDisplayed 
 	When User clicks "Users" on the left-hand menu
 	Then "All Users" list should be displayed to the user
@@ -352,7 +352,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatToolTipShownWithEditFilterTextWhenEdit
 	When User navigate to Edit button for "Compliance" filter
 	Then tooltip is displayed with "Edit Filter" text for edit filter button
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11678
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11678
 Scenario: EvergreenJnr_DevicesList_CheckThatTheSaveButtonIsNotAvailableWhenEnteringInvalidData
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
@@ -363,7 +363,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheSaveButtonIsNotAvailableWhenEnter
 	| 1      |
 	Then Save button is not available on the Filter panel
 
-@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS13201 @DAS14757
+@Evergreen @AllLists @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS13201 @DAS14757
 Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWhichReturnsCorrectItems
 	When User clicks Admin on the left-hand menu
 	When User clicks "Evergreen" link on the Admin page
@@ -469,7 +469,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	And User clicks Delete button
 	And User clicks Delete button in the warning message
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11559
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11559
 Scenario: EvergreenJnr_DevicesList_CheckThatErrorsDoNotAppearWhenAddingAdvancedAndStandardFilters
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
@@ -483,7 +483,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatErrorsDoNotAppearWhenAddingAdvancedA
 	| 07 Dec 2017 |
 	Then There are no errors in the browser console
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11741 @DAS13001
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11741 @DAS13001
 Scenario: EvergreenJnr_DevicesList_CheckThatErrorsDoNotAppearAndFullDataIsDisplayedWhenAddingDifferentFilters
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
@@ -508,7 +508,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatErrorsDoNotAppearAndFullDataIsDispla
 	Then full list content is displayed to the user
 	And There are no errors in the browser console
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11760 @Cleanup
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11760 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatTheSaveButtonIsNotAvailableWithoutTheFilterValue
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
@@ -516,6 +516,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheSaveButtonIsNotAvailableWithoutTh
 	Then Filters panel is displayed to the user
 	When user select "Application Name" filter
 	And User enters "testText" text in Search field at selected Filter
+	And User clicks Add button for input filter value
 	And User select "Not entitled to device" Association for Application filter with Lookup value
 	When User clicks the "UPDATE" Action button
 	Then "Application whose Name is testText not entitled to device" is displayed in added filter info
@@ -526,7 +527,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheSaveButtonIsNotAvailableWithoutTh
 	When User click Edit button for "Application " filter
 	Then Search field in selected Filter is empty
 
-@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11838 @DAS13001
+@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11838 @DAS13001
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTheColourOfTheTargetAppReadinessItemIsMatchingTheCaption
 	When User clicks "Applications" on the left-hand menu
 	Then "All Applications" list should be displayed to the user
@@ -549,7 +550,7 @@ Examples:
 	| Green                   | GREEN                   |
 	| Grey                    | GREY                    |
 
-@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11838
+@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11838
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTheColourOfTheApplicationRationalisationItemIsMatchingTheCaption
 	When User clicks "Applications" on the left-hand menu
 	Then "All Applications" list should be displayed to the user
@@ -567,7 +568,7 @@ Examples:
 	| RETIRE           | RETIRE        |
 	| UNCATEGORISED    | UNCATEGORISED |
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12076 @DAS12351
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS12076 @DAS12351
 Scenario: EvergreenJnr_DevicesList_CheckThatColumnIsEmptyWhenEqualNoneAndContainsContentWhenDoesnotequalNoneForWindows7MiCategoryFilter
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
@@ -587,7 +588,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnIsEmptyWhenEqualNoneAndContain
 	| ColumnName           |
 	| Windows7Mi: Category |
 
-@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12537 @DAS12579
+@Evergreen @AllLists @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS12537 @DAS12579
 Scenario Outline: EvergreenJnr_AllLists_CheckThatContentIsDisplayedInTheAddedColumnAfterApplyingIsNotNoneOperator
 	When User clicks "<ListName>" on the left-hand menu
 	Then "All <ListName>" list should be displayed to the user
@@ -605,7 +606,7 @@ Examples:
 	| Mailboxes | EmailMigra: Category | EmailMigra: Category |
 	| Devices   | Windows7Mi: Category | Windows7Mi: Category |
 
-@Evergreen @Mailboxes @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12543 @DAS13001 @Cleanup
+@Evergreen @Mailboxes @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS12543 @DAS13001 @Cleanup
 Scenario: EvergreenJnr_MailboxesList_CheckThatEditFilterElementsBlockIsDisplayedCorrectlyOnTheFiltersPanel
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "All Mailboxes" list should be displayed to the user
@@ -628,7 +629,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatEditFilterElementsBlockIsDisplayed
 	Then "Add column" checkbox is checked
 	And "EmailMigra: Readiness" filter is displayed in the Filters panel
 
-@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12636 @DAS12481
+@Evergreen @AllLists @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS12636 @DAS12481
 Scenario Outline: EvergreenJnr_AllLists_CheckThatLocationFilterIsEditedCorrectly
 	When User clicks "<ListName>" on the left-hand menu
 	Then "All <ListName>" list should be displayed to the user
@@ -659,7 +660,7 @@ Examples:
 	| Users     | NY          |
 	| Mailboxes | VIC         |
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11824
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11824
 Scenario: EvergreenJnr_DevicesList_CheckingThatError500IsNotDisplayedAfterUsingSpecialCharactersIntoTheApplicationNameFilterAndRefreshingThePage
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
@@ -671,9 +672,12 @@ Scenario: EvergreenJnr_DevicesList_CheckingThatError500IsNotDisplayedAfterUsingS
 	Then "Application whose Name" filter is added to the list
 	When User clicks refresh button in the browser
 	Then "All Devices" list should be displayed to the user
-	And "(Application Name = __ ASSOCIATION = (entitled to device))" text is displayed in filter container
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User clicks Filter Expression icon in Filter Panel
+	Then "(Application Name = __ ASSOCIATION = (entitled to device))" text is displayed in filter container
 
-@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12202 @Cleanup
+@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS12202 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatCorrectDeviceDataIsReturnedAfterApplyingAStaticListWithApplicationSavedListFilter
 	When User add following columns using URL to the "Applications" page:
 	| ColumnName              |
@@ -701,7 +705,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatCorrectDeviceDataIsReturnedAfte
 	| StaticList6581 | Entitled to device |
 	Then "38" rows are displayed in the agGrid
 
-@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12202 @Cleanup
+@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS12202 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatCorrectDeviceDataIsReturnedWhenUsingAStaticListAsTheFilteredApplicationSavedList
 	When User add following columns using URL to the "Applications" page:
 	| ColumnName               |
@@ -732,7 +736,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatCorrectDeviceDataIsReturnedWhen
 	| StaticList6778 | Entitled to device |
 	Then "123" rows are displayed in the agGrid
 
-@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12202 @Cleanup
+@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS12202 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatCorrectDeviceDataIsReturnedWhenUsingADynamicListAsTheFilteredApplicationSavedList
 	When User add following columns using URL to the "Applications" page:
 	| ColumnName               |
@@ -760,7 +764,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatCorrectDeviceDataIsReturnedWhen
 	| DynamicList4116 | Entitled to device |
 	Then "123" rows are displayed in the agGrid
 
-@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12875
+@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS12875
 Scenario: EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorIsDisplayedAfterEditingUserSurnameFilter
 	When User clicks "Applications" on the left-hand menu
 	Then "All Applications" list should be displayed to the user
@@ -773,7 +777,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorIsDisplayedAfterE
 	When User click Edit button for "User " filter
 	Then There are no errors in the browser console
 
-@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12167 @DAS12056 @Cleanup
+@Evergreen @Users @EvergreenJnr_FiltersFeature @FiltersFunctionality @DAS12167 @DAS12056 @Cleanup
 Scenario: EvergreenJnr_UsersList_CheckThatNoConsoleErrorIsDisplayedAfterAddingUserSavedListFilter
 	When User clicks "Users" on the left-hand menu
 	Then "All Users" list should be displayed to the user
@@ -797,7 +801,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatNoConsoleErrorIsDisplayedAfterAddingUs
 	And Filter value is shown in bold in the added filter info
 	And There are no errors in the browser console
 
-@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12181 @Cleanup
+@Evergreen @Users @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS12181 @Cleanup
 Scenario: EvergreenJnr_UsersList_CheckThatNoErrorIsDisplayedAfterAddingAdvancedFilterForUsernameAndApplicationSavedList
 	When User clicks "Users" on the left-hand menu
 	Then "All Users" list should be displayed to the user
@@ -828,7 +832,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatNoErrorIsDisplayedAfterAddingAdvancedF
 	Then "5" rows are displayed in the agGrid
 	Then There are no errors in the browser console
 
-@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12181 @Cleanup
+@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS12181 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatNoErrorIsDisplayedAfterAddingFewAdvancedFilters
 	When User clicks "Applications" on the left-hand menu
 	Then "All Applications" list should be displayed to the user
@@ -846,7 +850,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatNoErrorIsDisplayedAfterAddingFe
 	Then "247" rows are displayed in the agGrid
 	And There are no errors in the browser console
 
-@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12181 @DAS11561 @Cleanup
+@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS12181 @DAS11561 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatNoErrorIsDisplayedAfterAddingFewAdvancedFiltersAndFewStandardFilters
 	When User clicks "Applications" on the left-hand menu
 	Then "All Applications" list should be displayed to the user
@@ -870,7 +874,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatNoErrorIsDisplayedAfterAddingFe
 	Then "1,514" rows are displayed in the agGrid
 	And There are no errors in the browser console
 
-@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12827 @DAS12812
+@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS12827 @DAS12812
 Scenario: EvergreenJnr_ApplicationsList_CheckThatUserLastLogonDateFilterWorksCorrectly
 	When User clicks "Applications" on the left-hand menu
 	Then "All Applications" list should be displayed to the user
@@ -884,7 +888,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUserLastLogonDateFilterWorksCor
 	And Filter value is shown in bold in the added filter info
 	And There are no errors in the browser console
 
-@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12058 @Cleanup
+@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS12058 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectGroupCurrentStateFiltersInTheApplicationListWorksCorrectly
 	When User add following columns using URL to the "Applications" page:
 	| ColumnName                              |
@@ -920,7 +924,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectGroupCurrentStateFilters
 	| UNCATEGORISED      |
 	Then "21" rows are displayed in the agGrid
 
-@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12058 @Cleanup
+@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS12058 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectGroupTargetStateFiltersInTheApplicationListWorksCorrectly
 	When User add following columns using URL to the "Applications" page:
 	| ColumnName                              |
@@ -956,7 +960,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectGroupTargetStateFiltersI
 	| FORWARD PATH		 |
 	Then message 'No applications found' is displayed to the user
 
-@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12200
+@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS12200
 Scenario: EvergreenJnr_ApplicationsList_CheckThatAdvancedUserFilterReturnsCorrectResults
 	When User clicks "Applications" on the left-hand menu
 	Then "All Applications" list should be displayed to the user
@@ -972,7 +976,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAdvancedUserFilterReturnsCorrec
 	And User clicks Save filter button
 	Then "2,222" rows are displayed in the agGrid
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12351
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS12351
 Scenario Outline: EvergreenJnr_DevicesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnDevicesPage
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
@@ -986,17 +990,17 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckThat500ISEInvalidColumnNameError
 	Then "<Rows>" rows are displayed in the agGrid
 
 Examples: 
-	| FilterName                                | SelectedCheckboxes   | Rows   |
-	| Windows7Mi: Category                      | None                 | 17,194 |
-	| Windows7Mi: Values but no RAG             | Three                | 1      |
-	| Windows7Mi: SS Application List Completed | Not Applicable       | 5,161  |
-	| MigrationP: Category                      | None                 | 17,194 |
-	| Babel(Engl: Path                          | Machines             | 62     |
-	| ComputerSc: Path                          | Request Type A       | 132    |
-	| MigrationP: Path                          | [Default (Computer)] | 43     |
-	| UserSchedu: Path                          | Request Type A       | 60     |
+	| FilterName                                                      | SelectedCheckboxes   | Rows   |
+	| Windows7Mi: Category                                            | None                 | 17,274 |
+	| Windows7Mi: Migration \ Values but no RAG                       | Three                | 1      |
+	| Windows7Mi: Portal Self Service \ SS Application List Completed | Not Applicable       | 5,159  |
+	| MigrationP: Category                                            | None                 | 17,248 |
+	| Babel(Engl: Path                                                | Machines             | 62     |
+	| ComputerSc: Path                                                | Request Type A       | 132    |
+	| MigrationP: Path                                                | [Default (Computer)] | 41     |
+	| UserSchedu: Path                                                | Request Type A       | 60     |
 	
-@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12351
+@Evergreen @Users @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS12351
 Scenario Outline: EvergreenJnr_UsersList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnUsersPage
 	When User clicks "Users" on the left-hand menu
 	Then "All Users" list should be displayed to the user
@@ -1010,15 +1014,15 @@ Scenario Outline: EvergreenJnr_UsersList_CheckThat500ISEInvalidColumnNameErrorIs
 	Then "<Rows>" rows are displayed in the agGrid
 
 Examples: 
-	| FilterName                                                        | SelectedCheckboxes | Rows   |
-	| Windows7Mi: Category                                              | Terminated         | 1      |
-	| WWindows7Mi: Stage for User Tasks \ Read Only on Bulk Update Page | Not Applicable     | 4,642  |
-	| Barry'sUse: Category                                              | None               | 41,339 |
-	| Havoc(BigD: Path                                                  | [Default (User)]   | 7,578  |
-	| UserSchedu: Group Stage \ Group User Default Request Type         | Not Applicable     | 679    |
-	| ComputerSc: Group Stage \ Group User Default Request Type         | Not Applicable     | 1,809  |
+	| FilterName                                                       | SelectedCheckboxes | Rows   |
+	| Windows7Mi: Category                                             | Terminated         | 1      |
+	| Windows7Mi: Stage for User Tasks \ Read Only on Bulk Update Page | Not Applicable     | 4,642  |
+	| Barry'sUse: Category                                             | None               | 41,339 |
+	| Havoc(BigD: Path                                                 | [Default (User)]   | 7,578  |
+	| UserSchedu: Group Stage \ Group User Default Request Type        | Not Applicable     | 679    |
+	| ComputerSc: Group Stage \ Group User Default Request Type        | Not Applicable     | 1,809  |
 
-@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12351
+@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS12351
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnApplicationsPage
 	When User clicks "Applications" on the left-hand menu
 	Then "All Applications" list should be displayed to the user
@@ -1032,14 +1036,14 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThat500ISEInvalidColumnName
 	Then "<Rows>" rows are displayed in the agGrid
 	
 Examples:
-	| FilterName                 | SelectedCheckboxes | Rows  |
-	| Windows7Mi: Category       | A Star Packages    | 3     |
-	| Windows7Mi: Technical Test | Started            | 4     |
-	| EmailMigra: Category       | None               | 2,223 |
-	| UserSchedu: Category       | None               | 2,223 |
-	| Babel(Engl: Path           | Tools              | 302   |
-	| EmailMigra: Path           | Public Folder      | 49    |
-	| UserSchedu: Path           | Request Type A     | 47    |
+	| FilterName                                           | SelectedCheckboxes | Rows  |
+	| Windows7Mi: Category                                 | A Star Packages    | 3     |
+	| Windows7Mi: Application Information \ Technical Test | Started            | 4     |
+	| EmailMigra: Category                                 | None               | 2,223 |
+	| UserSchedu: Category                                 | None               | 2,223 |
+	| Babel(Engl: Path                                     | Tools              | 302   |
+	| EmailMigra: Path                                     | Public Folder      | 49    |
+	| UserSchedu: Path                                     | Request Type A     | 47    |
 
 @Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS13392
 Scenario Outline: EvergreenJnr_AllLists_CheckThatSearchBySharpOrAmpersandSymbolWorksInTextFilter
@@ -1059,7 +1063,7 @@ Examples:
 	| Applications | Application | No applications found |
 	| Mailboxes    | Mail Server | No mailboxes found    |
 
-@Evergreen @Mailboxes @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12351
+@Evergreen @Mailboxes @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS12351
 Scenario Outline: EvergreenJnr_MailboxesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnMailboxesPage
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "All Mailboxes" list should be displayed to the user
@@ -1077,7 +1081,7 @@ Examples:
 	| EmailMigra: Category | Mailbox Category A     | 6    |
 	| EmailMigra: Path     | Personal Mailbox - VIP | 6    |
 
-@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12351
+@Evergreen @AllLists @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS12351
 Scenario Outline: EvergreenJnr_DevicesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseDepartmentFilter
 	When User clicks "<PageName>" on the left-hand menu
 	Then "All <PageName>" list should be displayed to the user
@@ -1093,7 +1097,7 @@ Examples:
 	| Users     | Application Development | 1,858 |
 	| Mailboxes | Application Development | 1,118 |
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12522
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS12522
 Scenario Outline: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedAfterApplyingGBFilters
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
@@ -1111,7 +1115,7 @@ Examples:
 	| HDD Total Size (GB)          | 152.77 | 2         |
 	| Target Drive Free Space (GB) | 995.54 | 1         |
 
-@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12855
+@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS12855
 Scenario: EvergreenJnr_ApplicationsList_CheckThatDataIsDisplayedCorrectlyForAdvancedUserFilter
 	When User clicks "Applications" on the left-hand menu
 	Then "All Applications" list should be displayed to the user
@@ -1123,7 +1127,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatDataIsDisplayedCorrectlyForAdva
 	Then "100" rows are displayed in the agGrid
 	Then table content is present
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12807
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS12807
 Scenario: EvergreenJnr_DevicesList_CheckThatApplicationFilterWorksCorrectlyForDifferentAssociationTypes
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
@@ -1147,9 +1151,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatApplicationFilterWorksCorrectlyForDi
 	And User is deselect "Used on device" Association for Application filter with Lookup value
 	And User select "Not used on device" Association for Application filter with Lookup value
 	And User clicks Save filter button
-	Then "17,225" rows are displayed in the agGrid
+	Then "17,279" rows are displayed in the agGrid
 
-@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12804 @Cleanup
+@Evergreen @Users @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS12804 @Cleanup
 Scenario: EvergreenJnr_UsersList_CheckThatSavedStaticListIsNotShownInEditMode
 	When User clicks "Users" on the left-hand menu
 	Then "All Users" list should be displayed to the user
@@ -1172,7 +1176,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatSavedStaticListIsNotShownInEditMode
 	And Edit List menu is not displayed
 	And URL contains "evergreen/#/users?$listid="
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS13104 @Cleanup
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS13104 @Cleanup
 Scenario: EvergreenJnr_DevicesList_ChecksThatAddAndButtonIsDisplayedWhenAddingTwoOrMoreFiltersUsingTheSameFieldAndClearingOneOfTheFilters
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
@@ -1194,7 +1198,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatAddAndButtonIsDisplayedWhenAddingTw
 	When User have removed "Compliance" filter
 	Then Add And button is displayed on the Filter panel
 
-@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS13414 @Cleanup
+@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS13414 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatApplicationListWhichIncludeADateBasedAdvancedFilterAreSavedAndNotOpenedInEditMode
 	When User clicks "Applications" on the left-hand menu
 	Then "All Applications" list should be displayed to the user
@@ -1213,7 +1217,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatApplicationListWhichIncludeADa
 	Then URL contains "evergreen/#/applications?$listid="
 	And Edit List menu is not displayed
 
-@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS13384 @Cleanup
+@Evergreen @Users @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS13384 @Cleanup
 Scenario: EvergreenJnr_UsersList_ChecksThatEditButtonIsDisplayedOnFiltersSectionIfEditFormOpenWhenYouSaveList
 	When User clicks "Users" on the left-hand menu
 	Then "All Users" list should be displayed to the user
@@ -1232,7 +1236,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatEditButtonIsDisplayedOnFiltersSection
 	Then Filters panel is displayed to the user
 	And Edit button is displayed correctly for "MigrationP: Readiness" filter
 
-@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS13588
+@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS13588
 Scenario: EvergreenJnr_ApplicationsList_CheckThatUsingUserLDAPFilterDoesNotProduceServerError
 	When User clicks "Applications" on the left-hand menu
 	And User clicks the Filters button
@@ -1244,7 +1248,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUsingUserLDAPFilterDoesNotProdu
 	And "All Applications" list should be displayed to the user
 	And message 'No applications found' is displayed to the user 
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS13331
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS13331
 Scenario: EvergreenJnr_DevicesList_ChecksThatUsedByDevicesOwnerApplicationToDeviceAssociationReturnCorrectData
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
@@ -1257,7 +1261,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatUsedByDevicesOwnerApplicationToDevi
 	And "Application whose Key is 86 used by device's owner" is displayed in added filter info
 	And "154" rows are displayed in the agGrid
 
-@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS9820 @DAS13296
+@Evergreen @Users @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS9820 @DAS13296
 Scenario Outline: EvergreenJnr_UsersList_ChecksThatDeviceAndGroupAndMailboxFiltersCanBeUsedOnUsersPage
 	When User clicks "Users" on the left-hand menu
 	And User clicks the Filters button
@@ -1274,7 +1278,7 @@ Examples:
 	| Mailbox Count (Access) | 3      | 6                |
 	#| Mailbox Count (Owned)  | 4      | to_be_determined |
 
-@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS13145
+@Evergreen @AllLists @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS13145
 Scenario Outline: EvergreenJnr_AllLists_ChecksThatApplicationFilterIsNotExcludedApplicationsWhichAreNotLinkedToAnyDevices
 	When User clicks "<PageName>" on the left-hand menu
 	Then "All <PageName>" list should be displayed to the user
@@ -1297,7 +1301,7 @@ Examples:
 	| Devices  |
 	#| Users    |
 
-@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS13473 @Cleanup
+@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS13473 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatIfListWithAnAdvancedUserDescriptionIsEmptyFilterIsSavedAndOpenedNotInEditMode
 	When User clicks "Applications" on the left-hand menu
 	Then "All Applications" list should be displayed to the user
@@ -1320,7 +1324,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatIfListWithAnAdvancedUserDescri
 	Then URL contains "evergreen/#/applications?$listid="
 	And Edit List menu is not displayed
 
-@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS13377
+@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS13377
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatApplicationNameIsDisplayedAfterUsingTargetAppFilter
 	When User clicks "Applications" on the left-hand menu
 	Then "All Applications" list should be displayed to the user
@@ -1337,7 +1341,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatApplicationNameIsDisplayedAfte
 	Then Filters panel is displayed to the user
 	And "Barry'sUse: Target App is Python 2.2a4 (SMS_GEN)" is displayed in added filter info
 
-@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS13381 @DAS14603
+@Evergreen @AllLists @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS13381 @DAS14603
 Scenario Outline: EvergreenJnr_AllLists_ChecksThatFilterInfoIsDisplayedCorrectlyAfterSelectingObjectAndThenReturningBackToSerachResult
 	When User clicks "<PageName>" on the left-hand menu
 	Then "All <PageName>" list should be displayed to the user
@@ -1356,15 +1360,15 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatFilterInfoIsDisplayedCorrectly
 	And "<FilterInfo>" is displayed in added filter info
 
 Examples: 
-	| PageName     | ColumnName    | FilterName                      | FilterValue    | Search                                     | FilterInfo                                 |
-	| Devices      | Hostname      | Babel(Engl: Category            | None           | 00KLL9S8NRF0X6                             | Babel(Engl: Category is None               |
-	| Devices      | Hostname      | Babel(Engl: In Scope            | FALSE          | 00I0COBFWHOF27                             | Babel(Engl: In Scope is False              |
-	| Devices      | Hostname      | ComputerSc: Path                | Request Type A | 47NK3ATE5DM2HD                             | ComputerSc: Request Type is Request Type A |
-	| Applications | Application   | Havoc(BigD: Hide from End Users | UNKNOWN        | Adobe Flash Player 10 ActiveX (10.0.12.36) | Havoc(BigD: Hide from End Users is Unknown |
-	| Applications | Application   | MigrationP: Core Application    | FALSE          | Adobe Download Manager 2.0 (Remove Only)   | MigrationP: Core Application is False      |
-	| Mailboxes    | Email Address | EmailMigra: Device Type         | Not Identified | 238BAE24882E48BFA9F@bclabs.local           | EmailMigra: Device Type is Not Identified  |
+	| PageName     | ColumnName    | FilterName                               | FilterValue    | Search                                     | FilterInfo                                                 |
+	| Devices      | Hostname      | Babel(Engl: Category                     | None           | 00KLL9S8NRF0X6                             | Babel(Engl: Category is None                               |
+	| Devices      | Hostname      | Babel(Engl: In Scope                     | FALSE          | 00I0COBFWHOF27                             | Babel(Engl: In Scope is False                              |
+	| Devices      | Hostname      | ComputerSc: Path                         | Request Type A | 47NK3ATE5DM2HD                             | ComputerSc: Path is Request Type A                         |
+	| Applications | Application   | Havoc(BigD: Hide from End Users          | UNKNOWN        | Adobe Flash Player 10 ActiveX (10.0.12.36) | Havoc(BigD: Hide from End Users is Unknown                 |
+	| Applications | Application   | MigrationP: Core Application             | FALSE          | Adobe Download Manager 2.0 (Remove Only)   | MigrationP: Core Application is False                      |
+	| Mailboxes    | Email Address | EmailMigra: Mobile Devices \ Device Type | Not Identified | 238BAE24882E48BFA9F@bclabs.local           | EmailMigra: Mobile Devices \ Device Type is Not Identified |
 
-@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12214
+@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS12214
 Scenario: EvergreenJnr_ApplicationsList_CheckThatFiltersWorksProperlyWithPositiveAndNegativeAssociation
 	When User clicks "Applications" on the left-hand menu
 	Then "All Applications" list should be displayed to the user
@@ -1406,7 +1410,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFiltersWorksProperlyWithPositiv
 	And User select "Not used on device" in Association
 	Then only negative Associations is displayed
 
-@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12211
+@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS12211
 Scenario: EvergreenJnr_ApplicationsList_CheckThatResultsAreDifferentWhenApplyingEqualAndDoesntEqualValues
 	When User clicks "Applications" on the left-hand menu
 	Then "All Applications" list should be displayed to the user
@@ -1420,7 +1424,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatResultsAreDifferentWhenApplying
 	Then User changes filter type to "Equals"
 	Then message 'No applications found' is displayed to the user 
 
-@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12216 @DAS12212
+@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS12216 @DAS12212
 Scenario: EvergreenJnr_ApplicationsList_CheckThatResultsAreDifferentWhenApplyingEqualAndDoesntEqualValuesForUserDescription
 	When User clicks "Applications" on the left-hand menu
 	Then "All Applications" list should be displayed to the user
@@ -1440,7 +1444,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatResultsAreDifferentWhenApplying
 	Then User changes filter type to "Equals"
 	And "19" rows are displayed in the agGrid
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS10020
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS10020
 Scenario: EvergreenJnr_DevicesList_CheckDeviceOwnerLDAPColumnsAndFilters
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName       |
@@ -1468,7 +1472,7 @@ Scenario: EvergreenJnr_DevicesList_CheckDeviceOwnerLDAPColumnsAndFilters
 	| Owner lastlogon  |
 	| Owner admincount |
 
-@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS14629 @DAS14664 @DAS14669
+@Evergreen @Users @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS14629 @DAS14664 @DAS14669
 Scenario: EvergreenJnr_UsersList_PrimaryDeviceChipsCanBeRemoved
 	When User clicks "Users" on the left-hand menu
 	Then "All Users" list should be displayed to the user
@@ -1532,7 +1536,7 @@ Scenario: EvergreenJnr_UsersList_PrimaryDeviceChipsCanBeRemoved
 	When User closes "Text" Chip item in the Filter panel
 	Then Chip box is not displayed in the Filter panel
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS14969 @archived
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS14969 @archived
 Scenario: EvergreenJnr_DevicesList_ChecksThatFilterPanelDoesHaveAndNotHaveListedCategories
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Filters button
@@ -1553,7 +1557,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatFilterPanelDoesHaveAndNotHaveListed
 	| Project Tasks: EmailMigra  |
 	| Project Stages: EmailMigra |
 
-@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS14969 @archived
+@Evergreen @Users @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS14969 @archived
 Scenario: EvergreenJnr_UsersList_ChecksThatFilterPanelDoesHaveAndNotHaveListedCategories
 	When User clicks "Users" on the left-hand menu
 	And User clicks the Filters button
@@ -1570,7 +1574,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatFilterPanelDoesHaveAndNotHaveListedCa
 	| Project Tasks: EmailMigra  | 9      |
 	| Project Stages: EmailMigra | 3      |
 
-@Evergreen @Applicatios @EvergreenJnr_FilterFeature @FilterFunctionality @DAS14969 @archived
+@Evergreen @Applicatios @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS14969 @archived
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatFilterPanelDoesHaveAndNotHaveListedCategories
 	When User clicks "Applications" on the left-hand menu
 	And User clicks the Filters button
@@ -1592,7 +1596,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatFilterPanelDoesHaveAndNotHaveL
 	| Project Tasks: EmailMigra  | 5      |
 	| Project Stages: EmailMigra | 1      |
 
-@Evergreen @Mailboxes @EvergreenJnr_FilterFeature @FilterFunctionality @DAS14969 @archived
+@Evergreen @Mailboxes @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS14969 @archived
 Scenario: EvergreenJnr_MailboxesList_ChecksThatFilterPanelDoesHaveAndNotHaveListedCategories
 	When User clicks "Mailboxes" on the left-hand menu
 	And User clicks the Filters button
@@ -1648,7 +1652,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckRowsCountedForOwnerOrganizationalUn
 	Then "User whose Organizational Unit" filter is added to the list
 	And "215" rows are displayed in the agGrid
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS15140
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS15140
 Scenario: EvergreenJnr_DevicesList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAreAvailableInPanel
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Filters button
@@ -1850,7 +1854,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckSlotsSortOrderForMailboxes
 	| CA -Mailbox-Nov 11, 2018-Nov 30, 2018              |
 	| CA -Mailbox-Nov 1, 2018-Nov 10, 2018               |
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS16394 @Cleanup
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS16394 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatCreateButtonIsNotEnabledAfterClickingEditFilterForTheListBasedOnSavedListWithErrors
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
@@ -1867,7 +1871,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCreateButtonIsNotEnabledAfterClickin
 	When User click Edit button for " Device" filter
 	Then Create button is disabled on the Base Dashboard Page
 
-@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS15807
+@Evergreen @Users @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS15807
 Scenario: EvergreenJnr_UsersList_CheckThatLanguageFilterIsDisplayedOnTheUserList
 	When User clicks "Users" on the left-hand menu
 	Then "All Users" list should be displayed to the user
@@ -1877,7 +1881,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatLanguageFilterIsDisplayedOnTheUserList
 	| SelectedValues  |
 	| English         |
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS16071
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS16071
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatNotAndOffBoarderValuesIncludedToStatusFilter
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
@@ -1895,7 +1899,7 @@ Examples:
 	| Windows7Mi: Status | Not Onboarded      | 12,100 |
 	| Windows7Mi: Status | Offboarded         | 20     |
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS17411 @Cleanup
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS17411 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatProjectNameCategoryAppearsForList
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Columns button
@@ -1920,7 +1924,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatProjectNameCategoryAppearsForList
     | 2      |
 	Then "4" rows are displayed in the agGrid
 
-@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS17411
+@Evergreen @AllLists @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS17411
 Scenario Outline: EvergreenJnr_Lists_CheckThatProjectNameIsNotDisplayedForNotDevicesList
 	When User clicks "<ListName>" on the left-hand menu
 	And User clicks the Columns button
@@ -1940,7 +1944,7 @@ Examples:
 	| Mailboxes		| 
 	| Users			|
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS16178
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS16178
 Scenario: EvergreenJnr_DevicesList_CheckProjectOwnerItemsCounter
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Filters button
@@ -1958,7 +1962,7 @@ Scenario: EvergreenJnr_DevicesList_CheckProjectOwnerItemsCounter
     | 9      |
 	Then "2,471" rows are displayed in the agGrid
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS17004
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS17004
 Scenario: EvergreenJnr_DevicesList_CheckDepartmentLevelFilterItems
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Filters button
@@ -1977,7 +1981,7 @@ Scenario: EvergreenJnr_DevicesList_CheckDepartmentLevelFilterItems
 	| Helpdesk           |
 	Then "1,699" rows are displayed in the agGrid
 
-@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS17004
+@Evergreen @Users @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS17004
 Scenario: EvergreenJnr_UsersList_CheckDepartmentLevelFilterItems
 	When User clicks "Users" on the left-hand menu
 	And User clicks the Filters button
@@ -1995,7 +1999,7 @@ Scenario: EvergreenJnr_UsersList_CheckDepartmentLevelFilterItems
 	| Helpdesk           |
 	Then "1,800" rows are displayed in the agGrid
 
-@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS17004
+@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS17004
 Scenario: EvergreenJnr_ApplicationsList_CheckDepartmentLevelFilterItems
 	When User clicks "Applications" on the left-hand menu
 	And User clicks the Filters button
@@ -2006,7 +2010,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckDepartmentLevelFilterItems
 	| Technology         | Installed on device |
 	Then "854" rows are displayed in the agGrid
 
-@Evergreen @Mailboxes @EvergreenJnr_FilterFeature @FilterFunctionality @DAS17004
+@Evergreen @Mailboxes @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS17004
 Scenario: EvergreenJnr_MailboxesList_CheckDepartmentLevelFilterItems
 	When User clicks "Mailboxes" on the left-hand menu
 	And User clicks the Filters button
@@ -2016,7 +2020,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckDepartmentLevelFilterItems
 	| Technology         |
 	Then "6,707" rows are displayed in the agGrid
 
-@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS16912
+@Evergreen @AllLists @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS16912
 Scenario Outline: EvergreenJnr_AllLists_CheckThatComplinceNoneOptionIsTranslatedInFilter
 	When User clicks "<ListName>" on the left-hand menu
 	And User language is changed to "Deutsch" via API
@@ -2038,7 +2042,7 @@ Examples:
 	| Applications | Konformität                 |
 	| Mailboxes    | Konformität des Inhabers    |
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS15082
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS15082
 Scenario: EvergreenJnr_ApplicationsList_CheckDeviceHardwareItemsCounterPartI
 	When User clicks "Applications" on the left-hand menu
 	And User clicks the Filters button
@@ -2064,7 +2068,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckDeviceHardwareItemsCounterPartI
 	|        | Installed on device |
 	Then "2,128" rows are displayed in the agGrid
 	
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS15082 @DAS17717
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS15082 @DAS17717
 Scenario: EvergreenJnr_ApplicationsList_CheckDeviceHardwareItemsCounterPartII
 	When User clicks "Applications" on the left-hand menu
 	And User clicks the Filters button
@@ -2096,7 +2100,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckDeviceHardwareItemsCounterPartII
 	Then "1,032" rows are displayed in the agGrid
 	And There are no errors in the browser console
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS15082
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS15082
 Scenario: EvergreenJnr_ApplicationsList_CheckDeviceHardwareItemsCounterPartIII
 	When User clicks "Applications" on the left-hand menu
 	And User clicks the Filters button
@@ -2125,7 +2129,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckDeviceHardwareItemsCounterPartIII
 	| Virtual        |                     |
 	Then "361" rows are displayed in the agGrid
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS15082
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS15082
 Scenario: EvergreenJnr_ApplicationsList_CheckDeviceDeviceOperatingSystemItemsCounterI
 	When User clicks "Applications" on the left-hand menu
 	And User clicks the Filters button
@@ -2148,7 +2152,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckDeviceDeviceOperatingSystemItemsCou
 	| Android 5.1    |                     |
 	Then "4" rows are displayed in the agGrid
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS15082
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS15082
 Scenario: EvergreenJnr_ApplicationsList_CheckDeviceDeviceOperatingSystemItemsCounterII
 	When User clicks "Applications" on the left-hand menu
 	And User clicks the Filters button
@@ -2174,14 +2178,14 @@ Scenario: EvergreenJnr_ApplicationsList_CheckDeviceDeviceOperatingSystemItemsCou
 	Then "170" rows are displayed in the agGrid
 
 #broken link on pulsar
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS15082
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS15082
 Scenario: EvergreenJnr_ApplicationsList_CheckDeviceCustomFieldsItemsCounter
 	When User clicks "Applications" on the left-hand menu
 	And User clicks the Filters button
 	# url https://pulsar.corp.juriba.com/evergreen/#/applications?$filter=(applicationComputerCustomField_100%20EQUALS%20('0.665371384')%20WHERE%20(uod%2Cetd%2Ciod))
 	#Then "7" rows are displayed in the agGrid
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS15194
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS15194
 Scenario: EvergreenJnr_ApplicationsList_CheckDeviceOwnerItemsCounterPartI
 	When User clicks "Applications" on the left-hand menu
 	And User clicks the Filters button
@@ -2207,7 +2211,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckDeviceOwnerItemsCounterPartI
 	|                | Not used on device      |
 	Then "846" rows are displayed in the agGrid
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS15194
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS15194
 Scenario: EvergreenJnr_ApplicationsList_CheckDeviceOwnerItemsCounterPartII
 	When User clicks "Applications" on the left-hand menu
 	And User clicks the Filters button
@@ -2222,7 +2226,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckDeviceOwnerItemsCounterPartII
 	| pro       | Not installed on device     |
 	Then "854" rows are displayed in the agGrid
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS15194
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS15194
 Scenario: EvergreenJnr_ApplicationsList_CheckDeviceOwnerItemsCounterPartIII
 	When User clicks "Applications" on the left-hand menu
 	And User clicks the Filters button
@@ -2244,7 +2248,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckDeviceOwnerItemsCounterPartIII
 	|                    | Installed on device |
 	Then "23" rows are displayed in the agGrid
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS15194
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS15194
 Scenario: EvergreenJnr_ApplicationsList_CheckDeviceOwnerItemsCounterPartIV
 	When User clicks "Applications" on the left-hand menu
 	And User clicks the Filters button
@@ -2258,7 +2262,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckDeviceOwnerItemsCounterPartIV
 	|        | Installed on device |
 	Then "1,139" rows are displayed in the agGrid
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS15194
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS15194
 Scenario: EvergreenJnr_ApplicationsList_CheckDeviceOwnerItemsCounterPartV
 	When User clicks "Applications" on the left-hand menu
 	And User clicks the Filters button
@@ -2285,7 +2289,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckDeviceOwnerItemsCounterPartV
 	| US-E           |                    |
 	Then "213" rows are displayed in the agGrid
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS15194
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS15194
 Scenario: EvergreenJnr_ApplicationsList_CheckDeviceOwnerItemsCounterPartVI
 	When User clicks "Applications" on the left-hand menu
 	And User clicks the Filters button
@@ -2301,7 +2305,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckDeviceOwnerItemsCounterPartVI
 	|        | Installed on device |
 	Then "18" rows are displayed in the agGrid
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS17557
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS17557
 Scenario: EvergreenJnr_DevicesList_CheckThatSerialNumberToETLComputerAdded
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Filters button

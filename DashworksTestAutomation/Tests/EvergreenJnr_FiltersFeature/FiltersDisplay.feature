@@ -542,10 +542,10 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDateAndTimeFiltersWithEqualsValuesAr
 	Then "All Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Windows7Mi: Date & Time Task" filter where type is "Equals" with added column and following value:
+	When User add "Windows7Mi: Computer Information ---- Text fill; Text fill; \ Date & Time Task" filter where type is "Equals" with added column and following value:
     | Values      |
     | 22 Nov 2012 |
-	Then "Windows7Mi: Date & Time Task" filter is added to the list
+	Then "Windows7Mi: Computer Information ---- Text fill; Text fill; \ Date & Time Task" filter is added to the list
 	Then "16" rows are displayed in the agGrid
 
 @Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11087 @DAS11090 @DAS12114 @DAS12698
@@ -561,9 +561,9 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckThatDateAndTimeFiltersWithDoesNo
 	And "<RowCount>" rows are displayed in the agGrid
 
 	Examples:
-    | FilterName                   | Value       | RowCount |
-    | Windows7Mi: Date & Time Task | 22 Nov 2012 | 17,209   |
-    | Build Date                   | 6 Nov 2004  | 17,278   |
+    | FilterName                                                                     | Value       | RowCount |
+    | Windows7Mi: Computer Information ---- Text fill; Text fill; \ Date & Time Task | 22 Nov 2012 | 17,263   |
+    | Build Date                                                                     | 6 Nov 2004  | 17,278   |
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11187 @DAS13376
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatCustomFiltersAreContainsAllExpectedAssociations
@@ -898,7 +898,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOperatorsForApplicationSavedListFilt
 	When user select "Application (Saved List)" filter
 	Then "In list, Not in list" option is available for this filter
 
-@Evergreen @AllLists @EvergreenJnr_FilterFeature @FiltersDisplay @DAS11619
+@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS11619
 Scenario Outline: EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColumn
 	When User clicks "<ListName>" on the left-hand menu
 	Then "All <ListName>" list should be displayed to the user
@@ -944,7 +944,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatConsoleErrorsAreNotDisplayedFor
     | Applications | UserSchedu: Three \ Date App Req A                                             |
     | Mailboxes    | Created Date                                                                   |
 
-@Evergreen @AllLists @EvergreenJnr_FilterFeature @FiltersDisplay @DAS11829
+@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS11829
 Scenario Outline: EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisplayedForOrganisationCategoryFilters
 	When User clicks "<ListName>" on the left-hand menu
 	Then "All <ListName>" list should be displayed to the user
@@ -1788,7 +1788,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatApplicationReadinessSubCategoryIsM
     | Subcategories         |
     | EmailMigra: Readiness |
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS16071
+@Evergreen @Devices @Evergreen_FiltersFeature @FilterFunctionality @DAS16071
 Scenario: EvergreenJnr_DevicesList_CheckThatStatusFilterAvailableOptionsList
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
