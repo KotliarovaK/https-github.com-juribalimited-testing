@@ -1495,100 +1495,95 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 363
- testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 364
- testRunner.Then("\"All Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 365
- testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table23.AddRow(new string[] {
                         "MigrationP: Application Readiness"});
+#line 363
+ testRunner.When("User add following columns using URL to the \"Applications\" page:", ((string)(null)), table23, "When ");
 #line 366
- testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table23, "And ");
-#line 369
- testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 370
- testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 371
- testRunner.When("User removes \"Application\" column by Column panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 372
- testRunner.And("User removes \"Vendor\" column by Column panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 373
- testRunner.And("User removes \"Version\" column by Column panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 374
+ testRunner.And("User move \'MigrationP: Application Readiness\' column to \'Application\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 367
+ testRunner.And("User move \'Application\' column to \'Vendor\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 368
  testRunner.And("User clicks on \'MigrationP: Application Readiness\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 375
+#line 369
  testRunner.And("User create dynamic list with \"DAS16336_Applications_List\" name on \"Applications\"" +
                     " page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 376
+#line 370
  testRunner.Then("\"DAS16336_Applications_List\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 377
+#line 372
  testRunner.When("Dashboard with \"Dashboard_DAS16336\" name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 378
+#line 373
  testRunner.And("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 379
+#line 374
  testRunner.When("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
+                        "WidgetType",
+                        "Title",
+                        "List",
+                        "Type",
+                        "Layout"});
+            table24.AddRow(new string[] {
+                        "Card",
+                        "WidgetForDAS16336",
+                        "DAS16336_Applications_List",
+                        "First Cell",
+                        "Text Only"});
+#line 375
+ testRunner.And("User adds new Widget", ((string)(null)), table24, "And ");
+#line 379
+ testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 380
- testRunner.When("User selects \"Card\" in the \"Widget Type\" Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("Text Only is displayed for Card widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 381
- testRunner.And("User enters \"WidgetForDAS16336\" as Widget Title", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 382
- testRunner.And("User selects \"DAS16336_Applications_List\" as Widget List", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\"Really Extremely Orange\" color is displayed for Card Widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 383
- testRunner.When("User selects \"First Cell\" in the \"Type\" Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 384
- testRunner.And("User selects \"Text Only\" in the \"Layout\" Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 385
  testRunner.Then("Text Only is displayed for Card widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 386
  testRunner.And("\"Really Extremely Orange\" color is displayed for Card Widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 387
- testRunner.When("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 388
- testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User clicks Ellipsis menu for \"WidgetForDAS16336\" Widget on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 389
- testRunner.Then("Text Only is displayed for Card widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("User clicks \"Edit\" item from Ellipsis menu on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 390
- testRunner.And("\"Really Extremely Orange\" color is displayed for Card Widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects \"Icon Only\" in the \"Layout\" Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 391
- testRunner.When("User clicks Ellipsis menu for \"WidgetForDAS16336\" Widget on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("Icon Only is displayed for Card widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 392
- testRunner.And("User clicks \"Edit\" item from Ellipsis menu on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 393
- testRunner.When("User selects \"Icon Only\" in the \"Layout\" Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("\"Really Extremely Orange\" color is displayed for Card Widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 394
- testRunner.Then("Icon Only is displayed for Card widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 395
- testRunner.Then("\"Really Extremely Orange\" color is displayed for Card Widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 396
  testRunner.When("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 397
+#line 395
  testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 398
- testRunner.Then("Icon Only is displayed for Card widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 396
+ testRunner.And("Icon Only is displayed for Card widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 397
+ testRunner.And("\"Really Extremely Orange\" color is displayed for Card Widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 399
- testRunner.Then("\"Really Extremely Orange\" color is displayed for Card Widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 400
  testRunner.When("User clicks Ellipsis menu for \"WidgetForDAS16336\" Widget on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 401
+#line 400
  testRunner.And("User clicks \"Edit\" item from Ellipsis menu on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 401
+ testRunner.And("User selects \"Icon and Text\" in the \"Layout\" Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 402
- testRunner.When("User selects \"Icon and Text\" in the \"Layout\" Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 403
  testRunner.Then("Icon and Text is displayed for Card widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 404
- testRunner.Then("\"Really Extremely Orange\" color is displayed for Card Widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 403
+ testRunner.And("\"Really Extremely Orange\" color is displayed for Card Widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 405
  testRunner.When("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 406
  testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 407
- testRunner.Then("\"Really Extremely Orange\" color is displayed for Card Widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("\"Really Extremely Orange\" color is displayed for Card Widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 408
- testRunner.Then("Icon and Text is displayed for Card widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("Icon and Text is displayed for Card widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1649,12 +1644,12 @@ this.FeatureBackground();
 #line 413
  testRunner.And("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table24.AddRow(new string[] {
+            table25.AddRow(new string[] {
                         "ICSP: In Scope"});
 #line 414
- testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table24, "And ");
+ testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table25, "And ");
 #line 417
  testRunner.And("User move \'ICSP: In Scope\' column to \'Hostname\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 418
@@ -1672,18 +1667,18 @@ this.FeatureBackground();
 #line 424
  testRunner.When("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
                         "WidgetType",
                         "Title",
                         "List",
                         "Type"});
-            table25.AddRow(new string[] {
+            table26.AddRow(new string[] {
                         "Card",
                         "WidgetForDAS16325",
                         "DeviceListFor16325",
                         "First Cell"});
 #line 425
- testRunner.And("User adds new Widget", ((string)(null)), table25, "And ");
+ testRunner.And("User adds new Widget", ((string)(null)), table26, "And ");
 #line 428
  testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 429
@@ -1744,12 +1739,12 @@ this.FeatureBackground();
 #line 435
  testRunner.And("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table26.AddRow(new string[] {
+            table27.AddRow(new string[] {
                         "Barry\'sUse: Ring (Primary Device Only)"});
 #line 436
- testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table26, "And ");
+ testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table27, "And ");
 #line 439
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 440
@@ -1776,18 +1771,18 @@ this.FeatureBackground();
 #line 450
  testRunner.And("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
                         "WidgetType",
                         "Title",
                         "List",
                         "Type"});
-            table27.AddRow(new string[] {
+            table28.AddRow(new string[] {
                         "Card",
                         "WidgetForDAS16347",
                         "List16347",
                         "First Cell"});
 #line 451
- testRunner.And("User adds new Widget", ((string)(null)), table27, "And ");
+ testRunner.And("User adds new Widget", ((string)(null)), table28, "And ");
 #line 454
  testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 455
@@ -1853,22 +1848,22 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-            TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table28.AddRow(new string[] {
+            table29.AddRow(new string[] {
                         "Device Key"});
-            table28.AddRow(new string[] {
+            table29.AddRow(new string[] {
                         "1803: In Scope"});
-            table28.AddRow(new string[] {
+            table29.AddRow(new string[] {
                         "HDD Total Size (GB)"});
-            table28.AddRow(new string[] {
+            table29.AddRow(new string[] {
                         "First Seen Date"});
-            table28.AddRow(new string[] {
+            table29.AddRow(new string[] {
                         "Windows7Mi: Communication \\ DateTime"});
-            table28.AddRow(new string[] {
+            table29.AddRow(new string[] {
                         "Compliance"});
 #line 459
- testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table28, "When ");
+ testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table29, "When ");
 #line 467
  testRunner.And("User create dynamic list with \"ListWithAllDatatypes\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 468
@@ -1888,14 +1883,14 @@ this.FeatureBackground();
 #line 475
  testRunner.And(string.Format("User selects \"{0}\" as Widget Aggregate Function", aggFunc), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
                         "items"});
-            table29.AddRow(new string[] {
+            table30.AddRow(new string[] {
                         "First Seen Date"});
-            table29.AddRow(new string[] {
+            table30.AddRow(new string[] {
                         "Windows7Mi: Communication \\ DateTime"});
 #line 476
- testRunner.Then("User sees following options for Aggregate By selector on Create Widget page:", ((string)(null)), table29, "Then ");
+ testRunner.Then("User sees following options for Aggregate By selector on Create Widget page:", ((string)(null)), table30, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1962,20 +1957,20 @@ this.FeatureBackground();
 #line 493
  testRunner.And("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
                         "WidgetType",
                         "Title",
                         "List",
                         "Type",
                         "AggregateFunction"});
-            table30.AddRow(new string[] {
+            table31.AddRow(new string[] {
                         "Card",
                         "WidgetForDAS16844",
                         "List16844",
                         "Aggregate",
                         "Count"});
 #line 494
- testRunner.And("User creates new Widget", ((string)(null)), table30, "And ");
+ testRunner.And("User creates new Widget", ((string)(null)), table31, "And ");
 #line 497
  testRunner.Then("\"WidgetForDAS16844\" Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 498
@@ -2048,12 +2043,12 @@ this.FeatureBackground();
 #line 508
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-            TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
-            table31.AddRow(new string[] {
+            table32.AddRow(new string[] {
                         "Empty"});
 #line 509
- testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table31, "When ");
+ testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table32, "When ");
 #line 512
  testRunner.And("User selects \"Create static list\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 513
@@ -2065,20 +2060,20 @@ this.FeatureBackground();
 #line 516
  testRunner.And("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
                         "WidgetType",
                         "Title",
                         "List",
                         "Type",
                         "AggregateFunction"});
-            table32.AddRow(new string[] {
+            table33.AddRow(new string[] {
                         "Card",
                         "WidgetForDAS16844",
                         "StaticList16844",
                         "Aggregate",
                         "Count"});
 #line 517
- testRunner.And("User creates new Widget", ((string)(null)), table32, "And ");
+ testRunner.And("User creates new Widget", ((string)(null)), table33, "And ");
 #line 520
  testRunner.Then("\"WidgetForDAS16844\" Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 521
@@ -2147,13 +2142,13 @@ this.FeatureBackground();
 #line 529
  testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
-            table33.AddRow(new string[] {
+            table34.AddRow(new string[] {
                         "ZZZZ"});
 #line 530
  testRunner.And("User add \"Owner Display Name\" filter where type is \"Equals\" with added column and" +
-                    " following value:", ((string)(null)), table33, "And ");
+                    " following value:", ((string)(null)), table34, "And ");
 #line 533
  testRunner.And("User clicks Save button on the list panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 534
@@ -2167,18 +2162,18 @@ this.FeatureBackground();
 #line 538
  testRunner.And("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table35 = new TechTalk.SpecFlow.Table(new string[] {
                         "WidgetType",
                         "Title",
                         "List",
                         "Type"});
-            table34.AddRow(new string[] {
+            table35.AddRow(new string[] {
                         "Card",
                         "WidgetForDAS16167",
                         "ListForDAS16167",
                         "First Cell"});
 #line 539
- testRunner.And("User adds new Widget", ((string)(null)), table34, "And ");
+ testRunner.And("User adds new Widget", ((string)(null)), table35, "And ");
 #line 542
  testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 543

@@ -360,52 +360,52 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhe
 	
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16336 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorsInConsoleAfterAddingApplicationReadinessFirstCellWidget
-	When User clicks "Applications" on the left-hand menu
-	Then "All Applications" list should be displayed to the user
-	When User clicks the Columns button
-	And ColumnName is entered into the search box and the selection is clicked
+	When User add following columns using URL to the "Applications" page:
 	| ColumnName                        |
 	| MigrationP: Application Readiness |
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When User removes "Application" column by Column panel
-	And User removes "Vendor" column by Column panel
-	And User removes "Version" column by Column panel
+	And User move 'MigrationP: Application Readiness' column to 'Application' column
+	And User move 'Application' column to 'Vendor' column
 	And User clicks on 'MigrationP: Application Readiness' column header
 	And User create dynamic list with "DAS16336_Applications_List" name on "Applications" page
 	Then "DAS16336_Applications_List" list is displayed to user
+	
 	When Dashboard with "Dashboard_DAS16336" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	When User clicks the "ADD WIDGET" Action button
-	When User selects "Card" in the "Widget Type" Widget dropdown
-	And User enters "WidgetForDAS16336" as Widget Title
-	And User selects "DAS16336_Applications_List" as Widget List
-	When User selects "First Cell" in the "Type" Widget dropdown
-	And User selects "Text Only" in the "Layout" Widget dropdown
-	Then Text Only is displayed for Card widget
+	And User adds new Widget
+	| WidgetType | Title             | List                       | Type       | Layout    |
+	| Card       | WidgetForDAS16336 | DAS16336_Applications_List | First Cell | Text Only |
+	
+	Then Widget Preview is displayed to the user
+	And Text Only is displayed for Card widget
 	And "Really Extremely Orange" color is displayed for Card Widget
+	
 	When User clicks the "CREATE" Action button
 	Then There are no errors in the browser console
 	Then Text Only is displayed for Card widget
 	And "Really Extremely Orange" color is displayed for Card Widget
+
 	When User clicks Ellipsis menu for "WidgetForDAS16336" Widget on Dashboards page
 	And User clicks "Edit" item from Ellipsis menu on Dashboards page
-	When User selects "Icon Only" in the "Layout" Widget dropdown
+	And User selects "Icon Only" in the "Layout" Widget dropdown
 	Then Icon Only is displayed for Card widget
-	Then "Really Extremely Orange" color is displayed for Card Widget
+	And "Really Extremely Orange" color is displayed for Card Widget
+	
 	When User clicks the "UPDATE" Action button
 	Then There are no errors in the browser console
-	Then Icon Only is displayed for Card widget
-	Then "Really Extremely Orange" color is displayed for Card Widget
+	And Icon Only is displayed for Card widget
+	And "Really Extremely Orange" color is displayed for Card Widget
+	
 	When User clicks Ellipsis menu for "WidgetForDAS16336" Widget on Dashboards page
 	And User clicks "Edit" item from Ellipsis menu on Dashboards page
-	When User selects "Icon and Text" in the "Layout" Widget dropdown
+	And User selects "Icon and Text" in the "Layout" Widget dropdown
 	Then Icon and Text is displayed for Card widget
-	Then "Really Extremely Orange" color is displayed for Card Widget
+	And "Really Extremely Orange" color is displayed for Card Widget
+	
 	When User clicks the "UPDATE" Action button
 	Then There are no errors in the browser console
-	Then "Really Extremely Orange" color is displayed for Card Widget
-	Then Icon and Text is displayed for Card widget
+	And "Really Extremely Orange" color is displayed for Card Widget
+	And Icon and Text is displayed for Card widget
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16325 @DAS15145 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhenFirstCellIsSortedBool

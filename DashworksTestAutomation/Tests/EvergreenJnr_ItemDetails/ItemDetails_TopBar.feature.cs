@@ -1089,6 +1089,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS16857")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "001BAQXT6JWFPI", "Device Owner", "RED", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "Username", "ACG370114", "User", "RED", null)]
+        [NUnit.Framework.TestCaseAttribute("Applications", "Application", "7zip", "Application", "UNKNOWN", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatComplianceInKeyValueTableMatchesTheOverallComplianceFromTopBarInEvergreenMode(string pageName, string columnName, string itemName, string subMenu, string value, string[] exampleTags)
         {
             System.Exception lastException = null;
@@ -1224,26 +1225,26 @@ this.FeatureBackground();
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatComplianceInKeyValueTableMatchesTheOverallComplian" +
                     "ceFromTopBarInProjectMode", null, @__tags);
-#line 203
+#line 202
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 204
+#line 203
  testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 205
+#line 204
  testRunner.Then(string.Format("\"All {0}\" list should be displayed to the user", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 206
+#line 205
  testRunner.When(string.Format("User perform search by \"{0}\"", itemName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 207
+#line 206
  testRunner.And(string.Format("User click content from \"{0}\" column", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 208
+#line 207
  testRunner.Then(string.Format("Details page for \"{0}\" item is displayed to the user", itemName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 209
+#line 208
  testRunner.When(string.Format("User switches to the \"{0}\" project in the Top bar on Item details page", projectName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 210
+#line 209
  testRunner.And("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 211
+#line 210
  testRunner.And("User navigates to the \"Project Details\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1252,7 +1253,7 @@ this.FeatureBackground();
             table14.AddRow(new string[] {
                         string.Format("{0}", title),
                         string.Format("{0}", value)});
-#line 212
+#line 211
  testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table14, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1261,7 +1262,7 @@ this.FeatureBackground();
             table15.AddRow(new string[] {
                         "Overall Readiness",
                         string.Format("{0}", value)});
-#line 215
+#line 214
  testRunner.Then("following Compliance items with appropriate colors are displayed in Top bar on th" +
                     "e Item details page:", ((string)(null)), table15, "Then ");
 #line hidden
@@ -1312,27 +1313,27 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS17002"});
-#line 227
+#line 226
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 228
+#line 227
  testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 229
+#line 228
  testRunner.Then("\"All Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 230
+#line 229
  testRunner.When("User perform search by \"ACD Display 3.4\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 231
+#line 230
  testRunner.And("User click content from \"Application\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 232
+#line 231
  testRunner.Then("Details page for \"ACD Display 3.4\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 233
+#line 232
  testRunner.When("User switches to the \"Havoc (Big Data)\" project in the Top bar on Item details pa" +
                     "ge", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 234
+#line 233
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 235
+#line 234
  testRunner.And("User navigates to the \"Project Details\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1344,7 +1345,7 @@ this.FeatureBackground();
             table16.AddRow(new string[] {
                         "App Readiness",
                         "RED"});
-#line 236
+#line 235
  testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table16, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1356,7 +1357,7 @@ this.FeatureBackground();
             table17.AddRow(new string[] {
                         "App Readiness",
                         "RED"});
-#line 240
+#line 239
  testRunner.Then("following Compliance items with appropriate colors are displayed in Top bar on th" +
                     "e Item details page:", ((string)(null)), table17, "Then ");
 #line hidden
@@ -1409,22 +1410,22 @@ this.FeatureBackground();
                         "ItemDetailsDisplay",
                         "DAS17355",
                         "DAS17075"});
-#line 246
+#line 245
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 247
+#line 246
  testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 248
+#line 247
  testRunner.Then("\"All Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 249
+#line 248
  testRunner.When("User perform search by \"AAC860150\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 250
+#line 249
  testRunner.And("User click content from \"Username\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 251
+#line 250
  testRunner.Then("Details page for \"AAC860150\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 252
+#line 251
  testRunner.When("User switches to the \"USE ME FOR AUTOMATION(DEVICE SCHDLD)\" project in the Top ba" +
                     "r on Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -1436,7 +1437,7 @@ this.FeatureBackground();
                         "App Readiness"});
             table18.AddRow(new string[] {
                         "Task Readiness"});
-#line 253
+#line 252
  testRunner.Then("following Compliance items are displayed in Top bar on the Item details page:", ((string)(null)), table18, "Then ");
 #line hidden
             this.ScenarioCleanup();
