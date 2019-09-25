@@ -197,7 +197,7 @@ Scenario: EvergreenJnr_AdminPage_CheckBrokenListValidationWhenRunningAnAutomatio
 	When User clicks content from "Automation" column
 	Then Filling field error is not displayed
 	When User clicks the "CANCEL" Action button
-	When User enters "17011_Automation_1" text in the Search field for "Automation" column
+	When User enters "17011_Automation" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "17011_Automation" item on Admin page
 	When User selects "Automation Log" tab on the Project details page
 	When User clicks refresh button in the browser
