@@ -465,5 +465,33 @@ namespace DashworksTestAutomation.Helpers
         }
 
         #endregion
+
+        #region Readiness
+
+        public static string GetReadinessId(string readinessName, int projectId)
+        {
+            try
+            {
+                return DatabaseHelper.ExecuteReader($"select [RAGStatusId] from [PM].[dbo].[RAGStatus] where [ProjectId]=projectId and [RAGStatus]='{readinessName}'", 0)[0];
+            }
+            catch (Exception e)
+            {
+                throw new Exception("GetReadinessId returned no results" + e);
+            }
+        }
+
+        public static List<string> GetProjectReadinessesIds(int projectId)
+        {
+            try
+            {
+                return DatabaseHelper.ExecuteReader($"select [RAGStatusId] from [PM].[dbo].[RAGStatus] where [ProjectId]={projectId}", 0);
+            }
+            catch (Exception e)
+            {
+                throw new Exception("GetProjectReadinessesIds returned no results" + e);
+            }
+        }
+
+        #endregion
     }
 }

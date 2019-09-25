@@ -119,6 +119,7 @@
     <Compile Include="DTO\Evergreen\Admin\Bucket\BucketDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\CapacityUnits\CapacityDetailsDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\CapacityUnits\CapacityUnitDto.cs" />
+    <Compile Include="DTO\Evergreen\Admin\Readiness\ReadinessDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\Rings\RingDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\Slots\SlotDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\Teams\TeamDto.cs" />
@@ -167,7 +168,7 @@
     <Compile Include="DTO\RuntimeVariables\ColumnValue.cs" />
     <Compile Include="DTO\RuntimeVariables\CustomFields.cs" />
     <Compile Include="DTO\RuntimeVariables\ElementCoordinates.cs" />
-    <Compile Include="DTO\RuntimeVariables\ReadinessData.cs" />
+    <Compile Include="DTO\RuntimeVariables\Readiness\Readiness.cs" />
     <Compile Include="DTO\RuntimeVariables\Rings\Rings.cs" />
     <Compile Include="DTO\RuntimeVariables\Rings\RingUnassignedId.cs" />
     <Compile Include="DTO\RuntimeVariables\SectionsAndWidgetsCount.cs" />
@@ -370,6 +371,8 @@
     <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_Messages.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_PageActions.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_TableSorting.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\Project\Readiness\ReadinessSteps.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\Project\Readiness\AfterScenario\RemoveReadinessAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Project\Scope\ScopeChangesSteps.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Rings\RingsApi.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Rings\AfterScenario\RemoveRingsAfterScenario.cs" />
