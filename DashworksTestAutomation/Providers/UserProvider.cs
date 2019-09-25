@@ -4,14 +4,17 @@ using System.Configuration;
 using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.DTO;
+using RestSharp;
 
 namespace DashworksTestAutomation.Providers
 {
     internal class UserProvider
     {
+        static readonly RestClient client = new RestClient(JuribaAutomationApiProvider.Uri);
+
         private static readonly Mutex _mut = new Mutex();
 
-        private static int _iter;
+        //private static int _iter;
 
         public static string Password = ConfigurationManager.AppSettings["user.password"];
 
@@ -40,26 +43,42 @@ namespace DashworksTestAutomation.Providers
 
         public static UserDto GetFreeUserAccount()
         {
-            //For local run to use random user to not overlap between other sessions
-            if (Browser.RemoteDriver.Equals("local"))
-                return _accounts[new Random().Next(0, _accounts.Count)];
-
+            var iterator = GetUserIterator();
             _mut.WaitOne(1000);
             try
             {
-                var account = _accounts[_iter];
-                _iter++;
+                var account = _accounts[iterator];
+                iterator++;
                 return account;
             }
-            catch (ArgumentOutOfRangeException)
+            catch (Exception e)
             {
-                _iter = 0;
-                return _accounts.FirstOrDefault();
+                throw new Exception($"Unable to get user with '{iterator}' iterator: {e}");
             }
             finally
             {
                 _mut.ReleaseMutex();
             }
+        }
+
+        private static int GetUserIterator()
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                try
+                {
+                    var request = new RestRequest("users", Method.GET);
+                    IRestResponse response = client.Execute(request);
+                    var iterator = int.Parse(response.Content);
+                    return iterator;
+                }
+                catch
+                {
+                    Thread.Sleep(2000);
+                }
+            }
+
+            throw new Exception("Unable to get user iterator from API");
         }
     }
 }

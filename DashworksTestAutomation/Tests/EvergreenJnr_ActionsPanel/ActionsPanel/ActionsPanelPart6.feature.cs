@@ -697,6 +697,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS13289")]
         [NUnit.Framework.CategoryAttribute("DAS13287")]
         [NUnit.Framework.CategoryAttribute("DAS14127")]
+        [NUnit.Framework.CategoryAttribute("DAS18267")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.TestCaseAttribute("DAS1321", "CQV0623434", "Complete", "Admin IT", "Started", "Administrative Team", null)]
         [NUnit.Framework.TestCaseAttribute("DAS1322", "BBZ877343", "Failed", "Admin IT", "Not Applicable", "Retail Team", null)]
@@ -741,6 +742,7 @@ this.FeatureBackground();
                     "DAS13289",
                     "DAS13287",
                     "DAS14127",
+                    "DAS18267",
                     "Cleanup"};
             if ((exampleTags != null))
             {

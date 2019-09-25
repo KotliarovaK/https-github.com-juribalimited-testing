@@ -92,7 +92,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects
         [NUnit.Framework.CategoryAttribute("DAS16128")]
         [NUnit.Framework.CategoryAttribute("DAS15201")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("TEST")]
         public virtual void EvergreenJnr_AdminPage_CheckThatSelectedBucketsIsDisplayedForOnboardedObjectsInQueueAndHistory()
         {
             System.Exception lastException = null;
@@ -132,8 +131,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects
                         "DAS13529",
                         "DAS16128",
                         "DAS15201",
-                        "Cleanup",
-                        "TEST"});
+                        "Cleanup"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -298,7 +296,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS12157")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("TEST")]
         [NUnit.Framework.TestCaseAttribute("All Devices", "DAS12157A", "Devices to add (0 of 1 selected)", "DevicesList12157", "User Scope", "User Scope", "UsersList12157", "Users", "Users to add (0 of 1 selected)", "Applications to add (0 of 1 selected)", null)]
         [NUnit.Framework.TestCaseAttribute("All Users", "DAS12157B", "Users to add (0 of 1 selected)", "UsersList12157", "Device Scope", "Device Scope", "DevicesList12157", "Devices", "Devices to add (0 of 1 selected)", "Applications to add (0 of 1 selected)", null)]
         [NUnit.Framework.TestCaseAttribute("All Mailboxes", "DAS12157C", "Mailboxes to add (0 of 1 selected)", "MailboxesList12157", "User Scope", "User Scope", "UsersList12157", "Users", "Users to add (0 of 0 selected)", "Applications to add (0 of 0 selected)", null)]
@@ -337,8 +334,7 @@ this.FeatureBackground();
                     "AdminPage",
                     "Projects",
                     "DAS12157",
-                    "Cleanup",
-                    "TEST"};
+                    "Cleanup"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));

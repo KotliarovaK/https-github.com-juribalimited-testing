@@ -44,6 +44,9 @@ namespace DashworksTestAutomation.Pages
 
         [FindsBy(How = How.XPath, Using = ".//*[@aria-label='OrderBy']")]
         public IWebElement OrderBy { get; set; }
+    
+        [FindsBy(How = How.XPath, Using = ".//*[@formcontrolname='layout']")]
+        public IWebElement Layout { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//*[@aria-label='TableOrientation']")]
         public IWebElement TableOrientation { get; set; }
@@ -98,6 +101,19 @@ namespace DashworksTestAutomation.Pages
 
         [FindsBy(How = How.XPath, Using = ".//div[@role='alert']/div[last()]")]
         public IWebElement PreviewPaneAlertText { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'only-icon')]")]
+        public IWebElement IconOnlyCardWidget { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'icon-and-text')]")]
+        public IWebElement IconAndTextCardWidget { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'only-text')]")]
+        public IWebElement TextOnlyCardWidget { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='widget-preview']")]  ////div[@class='widget-preview']//div[@dir='ltr'] old locator
+        public IWebElement WidgetPreview { get; set; }
+
 
         public override List<By> GetPageIdentitySelectors()
         {
@@ -226,6 +242,13 @@ namespace DashworksTestAutomation.Pages
             return Convert.ToBoolean(ColorSchemeDropdown.GetAttribute("aria-disabled"));
         }
 
-
+        public IWebElement GetCardWidgetPreviewText()
+        {
+            var nested = By.XPath(".//div[@class='card-widget-data']//*");
+            if (Driver.FindElements(nested).Count > 0)
+            { return Driver.FindElement(By.XPath(".//div[@class='card-widget-data']//span[contains(@class, 'text')]")); }
+            else
+            { return Driver.FindElement(By.XPath(".//div[@class='card-widget-data']")); }
+        }
     }
 }
