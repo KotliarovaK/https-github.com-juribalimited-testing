@@ -196,8 +196,7 @@ Examples:
 	| PageName     | ColumnName  | ItemName       | SubMenu      | Value   |
 	| Devices      | Hostname    | 001BAQXT6JWFPI | Device Owner | RED     |
 	| Users        | Username    | ACG370114      | User         | RED     |
-	#Uncomment after DAS-17986 fix
-	#| Applications | Application | 7zip           | Application  | UNKNOWN |
+	| Applications | Application | 7zip           | Application  | UNKNOWN |
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16857 @DAS16928
 Scenario Outline: EvergreenJnr_AllLists_CheckThatComplianceInKeyValueTableMatchesTheOverallComplianceFromTopBarInProjectMode

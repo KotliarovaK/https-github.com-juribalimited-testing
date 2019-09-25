@@ -19,6 +19,9 @@ namespace DashworksTestAutomation.Pages
             Using = ".//input[@class='form-control search-input ng-untouched ng-pristine ng-valid']")]
         public IWebElement SearchTextbox { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//span[text()='CREATE DASHBOARD']")]
+        public IWebElement CreateDashboardBtn { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//mat-slide-toggle")]
         public IWebElement EditModeOnOffTrigger { get; set; }
 
@@ -120,8 +123,7 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//div[@id='submenuBlock']//*[starts-with(@class, 'inline-tip')]")]
         public IWebElement SubmenuAlertMessage { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='widget-preview']")]  ////div[@class='widget-preview']//div[@dir='ltr'] old locator
-        public IWebElement WidgetPreview { get; set; }
+
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'only-icon')]")]
         public IWebElement IconOnlyCardWidget { get; set; }
@@ -196,7 +198,7 @@ namespace DashworksTestAutomation.Pages
             Driver.WaitForDataLoading();
             return new List<By>
             {
-                SelectorFor(this, p => p.SearchTextbox)
+                SelectorFor(this, p => p.CreateDashboardBtn)
             };
         }
 

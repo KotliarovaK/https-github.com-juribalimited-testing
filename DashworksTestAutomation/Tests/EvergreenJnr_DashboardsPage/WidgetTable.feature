@@ -245,7 +245,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoEndlessSpinnerInPreviewIfCreate
 	When User clicks the "CREATE" Action button
 	Then There are no errors in the browser console
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18091 @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18091 @DAS18090 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckTheEmptyItemIsNotDisplayedOnTheDashboardPageForTheListWithoutArchivedItem
 	When Dashboard with "Dashboard for DAS18091" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
@@ -255,3 +255,9 @@ Scenario: EvergreenJnr_DashboardsPage_CheckTheEmptyItemIsNotDisplayedOnTheDashbo
 	| Table      | WidgetForDAS18091 | 1803 Rollout | Operating System | Severity          | 1803: Pre-Migration \ Ready to Migrate | Operating System ASC |
 	Then "WidgetForDAS18091" Widget is displayed to the user
 	And There is no 'Empty' column for 'WidgetForDAS18091' widget
+	#DAS18090 
+	When User clicks "NOT READY" value for "Windows 7" column
+	And User clicks the Filters button
+	Then Filters panel is displayed to the user
+	And "Any Device in list 1803 Rollout" is displayed in added filter info
+	And "1803: Pre-Migration \ Ready to Migrate is Not Ready" is displayed in added filter info
