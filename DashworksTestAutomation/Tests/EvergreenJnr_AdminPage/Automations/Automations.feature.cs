@@ -1772,7 +1772,7 @@ this.FeatureBackground();
 #line 527
  testRunner.Then("\'[List not found]\' content is displayed in \'Scope\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 528
- testRunner.Then("warning text \'The selected list cannot be found\' displayed below the field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("warning text \'The selected list cannot be found\' is displayed below the field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 533
  testRunner.When("User clicks the \"CANCEL\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 534
