@@ -310,6 +310,15 @@ namespace DashworksTestAutomation.Helpers
                             throw new Exception($"'{pageName}' page not found in convertor");
                     }
 
+                case "MigrationP: Application Readiness":
+                    switch (pageName)
+                    {
+                        case "Applications":
+                            return "project_34_applicationReadiness";
+                        default:
+                            throw new Exception($"'{pageName}' page not found in convertor");
+                    }
+
 
                 default:
                     throw new Exception($"{columnName} column not found in convertor");

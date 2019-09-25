@@ -1265,6 +1265,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS18091")]
+        [NUnit.Framework.CategoryAttribute("DAS18090")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckTheEmptyItemIsNotDisplayedOnTheDashboardPageForTheListWithoutArchivedItem()
         {
@@ -1300,6 +1301,7 @@ this.FeatureBackground();
                         "EvergreenJnr_DashboardsPage",
                         "Widgets",
                         "DAS18091",
+                        "DAS18090",
                         "Cleanup"});
 #line 249
 this.ScenarioInitialize(scenarioInfo);
@@ -1335,6 +1337,17 @@ this.FeatureBackground();
  testRunner.Then("\"WidgetForDAS18091\" Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 257
  testRunner.And("There is no \'Empty\' column for \'WidgetForDAS18091\' widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 259
+ testRunner.When("User clicks \"NOT READY\" value for \"Windows 7\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 260
+ testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 261
+ testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 262
+ testRunner.And("\"Any Device in list 1803 Rollout\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 263
+ testRunner.And("\"1803: Pre-Migration \\ Ready to Migrate is Not Ready\" is displayed in added filte" +
+                    "r info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

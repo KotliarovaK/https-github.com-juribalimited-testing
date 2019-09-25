@@ -44,6 +44,9 @@ namespace DashworksTestAutomation.Pages
 
         [FindsBy(How = How.XPath, Using = ".//*[@aria-label='OrderBy']")]
         public IWebElement OrderBy { get; set; }
+    
+        [FindsBy(How = How.XPath, Using = ".//*[@formcontrolname='layout']")]
+        public IWebElement Layout { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//*[@aria-label='TableOrientation']")]
         public IWebElement TableOrientation { get; set; }
