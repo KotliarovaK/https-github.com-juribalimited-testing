@@ -292,6 +292,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             Utils.Verify.IsFalse(message.SuccessMessage.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
         }
 
+        [Then(@"warning text '(.*)' displayed below the field")]
+        public void ThenWarningTextDisplayedBelowTheField(string text)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Utils.Verify.IsTrue(page.UnderFieldWarningIcon.Displayed(), "Error item is not displayed");
+            Utils.Verify.AreEqual(text, page.FieldWarningMessage.Text, $"Warning text '{text}' is not displayed");
+        }
+
         [Then(@"Filling field error is not displayed")]
         public void ThenFillingFieldErrorIsNotDisplayed()
         {

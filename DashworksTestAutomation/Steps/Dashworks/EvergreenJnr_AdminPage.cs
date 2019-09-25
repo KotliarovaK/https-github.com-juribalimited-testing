@@ -1244,7 +1244,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Verify.That(bgColor, Is.EqualTo("rgba(49, 122, 193, 1)"), "Archived message text is in different color");
         }
 
-        [Then(@"""(.*)"" content is displayed in the Scope Automation dropdown")]
         [Then(@"""(.*)"" content is displayed in the Path Automation dropdown")]
         public void ThenContentIsDisplayedInTheScopeAutomationDropdown(string dropdownValue)
         {
