@@ -87,7 +87,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects.Scope.Hi
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS13959")]
         [NUnit.Framework.CategoryAttribute("Projects")]
-        [NUnit.Framework.CategoryAttribute("TEST")]
         public virtual void EvergreenJnr_AdminPage_CheckHistoryContainOnlyOnboardActionIn1803Rollout()
         {
             System.Exception lastException = null;
@@ -122,8 +121,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects.Scope.Hi
                         "EvergreenJnr_AdminPage",
                         "AdminPage",
                         "DAS13959",
-                        "Projects",
-                        "TEST"});
+                        "Projects"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -175,7 +173,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS13959")]
         [NUnit.Framework.CategoryAttribute("Projects")]
-        [NUnit.Framework.CategoryAttribute("TEST")]
         public virtual void EvergreenJnr_AdminPage_CheckHistoryContainOnlyOnboardActionInEmailMigration()
         {
             System.Exception lastException = null;
@@ -210,8 +207,7 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "AdminPage",
                         "DAS13959",
-                        "Projects",
-                        "TEST"});
+                        "Projects"});
 #line 27
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -237,9 +233,9 @@ this.FeatureBackground();
             table2.AddRow(new string[] {
                         "Onboard User Object"});
             table2.AddRow(new string[] {
-                        "Re-Onboard Mailbox Object"});
+                        "Re-onboard Mailbox Object"});
             table2.AddRow(new string[] {
-                        "Re-Onboard User Object"});
+                        "Re-onboard User Object"});
 #line 33
  testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table2, "Then ");
 #line 40
@@ -261,7 +257,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS13959")]
         [NUnit.Framework.CategoryAttribute("Projects")]
-        [NUnit.Framework.CategoryAttribute("TEST")]
         public virtual void EvergreenJnr_AdminPage_CheckHistoryContainOnlyOnboardActionInUserEvergreenCapacityProject()
         {
             System.Exception lastException = null;
@@ -297,8 +292,7 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "AdminPage",
                         "DAS13959",
-                        "Projects",
-                        "TEST"});
+                        "Projects"});
 #line 44
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

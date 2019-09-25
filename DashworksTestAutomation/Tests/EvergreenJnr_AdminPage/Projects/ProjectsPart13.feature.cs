@@ -89,7 +89,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Projects")]
-        [NUnit.Framework.CategoryAttribute("TEST")]
         public virtual void EvergreenJnr_AdminPage_CheckThatOnlyFilteredListObjectsAreUsedAsAScopeOfProject()
         {
             System.Exception lastException = null;
@@ -126,8 +125,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects
                         "DAS12892",
                         "Cleanup",
                         "Cleanup",
-                        "Projects",
-                        "TEST"});
+                        "Projects"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -201,7 +199,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS15994")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Projects")]
-        [NUnit.Framework.CategoryAttribute("TEST")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatProjectNameEditedInSeniorIsUpdatedInAdminTab()
         {
             System.Exception lastException = null;
@@ -239,8 +236,7 @@ this.FeatureBackground();
                         "DAS13096",
                         "DAS15994",
                         "Cleanup",
-                        "Projects",
-                        "TEST"});
+                        "Projects"});
 #line 32
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -326,7 +322,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS12776")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("TEST")]
         public virtual void EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterClickUpdateForDynamicList()
         {
             System.Exception lastException = null;
@@ -363,8 +358,7 @@ this.FeatureBackground();
                         "AdminPage",
                         "Projects",
                         "DAS12776",
-                        "Cleanup",
-                        "TEST"});
+                        "Cleanup"});
 #line 67
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -491,7 +485,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12776")]
         [NUnit.Framework.CategoryAttribute("DAS13973")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("TEST")]
         public virtual void EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterClickUpdateForStaticList()
         {
             System.Exception lastException = null;
@@ -529,8 +522,7 @@ this.FeatureBackground();
                         "Projects",
                         "DAS12776",
                         "DAS13973",
-                        "Cleanup",
-                        "TEST"});
+                        "Cleanup"});
 #line 115
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

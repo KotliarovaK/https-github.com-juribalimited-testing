@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12787 @DAS13529 @DAS16128 @DAS15201 @Cleanup @TEST
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12787 @DAS13529 @DAS16128 @DAS15201 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatSelectedBucketsIsDisplayedForOnboardedObjectsInQueueAndHistory
 	When Project created via API and opened
 	| ProjectName   | Scope     | ProjectTemplate | Mode               |
@@ -73,7 +73,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedBucketsIsDisplayedForOnboarded
 	When User enters "Units" text in the Search field for "Capacity Unit" column
 	Then Rows counter shows "0" of "1" rows
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12157 @Cleanup @TEST
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12157 @Cleanup
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectScopeChangesIsLoadedSuccessfullyAfterChangingProjectScopeToACustomList
 	When User create static list with "DevicesList12157" name on "Devices" page with following items
 	| ItemName       |
