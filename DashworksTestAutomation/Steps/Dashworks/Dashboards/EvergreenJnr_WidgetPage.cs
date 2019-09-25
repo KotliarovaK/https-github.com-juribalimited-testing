@@ -369,7 +369,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"Table widget displayed inside preview pane correctly")]
         public void ThenTableWidgetDisplayedInsidePreviewPane()
         {
-            var preview = _driver.NowAt<EvergreenDashboardsPage>();
+            var preview = _driver.NowAt<AddWidgetPage>();
             int prevWidth = preview.WidgetPreview.Size.Width;
 
             var widget = _driver.NowAt<AddWidgetPage>();
