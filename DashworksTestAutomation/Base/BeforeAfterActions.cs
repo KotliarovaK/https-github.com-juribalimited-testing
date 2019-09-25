@@ -43,12 +43,14 @@ namespace DashworksTestAutomation.Base
         [BeforeScenario]
         public void OnStartUp()
         {
-            Logger.Write($"TEST STARTED: {GetTestName()}");
+            var testName = GetTestName();
+
+            Logger.Write($"TEST STARTED: {testName}");
 
             List<string> testTags = GetTags();
 
             LockCategory.AwaitTags(testTags);
-            LockCategory.AddTags(testTags);
+            LockCategory.AddTags(testName, testTags);
 
             //Create browser if not API test
             if (!testTags.Contains("API"))
@@ -117,7 +119,7 @@ namespace DashworksTestAutomation.Base
             {
                 List<string> testTags = GetTags();
 
-                LockCategory.RemoveTags(testTags);
+                LockCategory.RemoveTestTags(GetTestName());
 
                 //Unleash test only if NOT in local run
                 if (!Browser.RemoteDriver.Equals("local"))

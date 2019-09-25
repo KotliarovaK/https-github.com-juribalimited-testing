@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12892 @Cleanup @Cleanup @Projects @TEST
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12892 @Cleanup @Cleanup @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThatOnlyFilteredListObjectsAreUsedAsAScopeOfProject
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
@@ -28,7 +28,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnlyFilteredListObjectsAreUsedAsAScope
 	Then "Devices to add (0 of 222 selected)" is displayed to the user in the Project Scope Changes section
 	Then There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @UpdatingName @DAS13096 @DAS15994 @Cleanup @Projects @TEST
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @UpdatingName @DAS13096 @DAS15994 @Cleanup @Projects
 Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameEditedInSeniorIsUpdatedInAdminTab
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -63,7 +63,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameEditedInSeniorIsUpdatedInA
 	And User removes selected item
 	Then There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12776 @Cleanup @TEST
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12776 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterClickUpdateForDynamicList
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
@@ -111,7 +111,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	Then "UPDATE ALL CHANGES" Action button is active
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12776 @DAS13973 @Cleanup @TEST
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12776 @DAS13973 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterClickUpdateForStaticList
 	When User create static list with "StaticList12776" name on "Users" page with following items
 	| ItemName            |

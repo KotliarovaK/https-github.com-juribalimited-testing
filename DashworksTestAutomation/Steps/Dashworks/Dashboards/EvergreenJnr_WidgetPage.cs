@@ -101,6 +101,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
                 if (row.ContainsKey("Layout") && !string.IsNullOrEmpty(row["Layout"]))
                 {
+                    _driver.WaitForElementToBeDisplayed(createWidgetElement.Layout);
                     _driver.ClickByJavascript(createWidgetElement.GetDropdownForWidgetByName("Layout"));
                     createWidgetElement.SelectObjectForWidgetCreation(row["Layout"]);
                 }
@@ -368,7 +369,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"Table widget displayed inside preview pane correctly")]
         public void ThenTableWidgetDisplayedInsidePreviewPane()
         {
-            var preview = _driver.NowAt<EvergreenDashboardsPage>();
+            var preview = _driver.NowAt<AddWidgetPage>();
             int prevWidth = preview.WidgetPreview.Size.Width;
 
             var widget = _driver.NowAt<AddWidgetPage>();
