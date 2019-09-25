@@ -6,6 +6,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS17429 @DAS17275 @Cleanup @Not_Ready
+#Waiting for updated Validation messages on the automation
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueAutomationValidationsForDeletedProject
 	When Project created via API and opened
 	| ProjectName  | Scope       | ProjectTemplate | Mode               |
@@ -65,6 +66,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueAutomationValidationsForDel
 	Then warning text 'The selected project cannot be found' displayed below the field
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS17429 @Cleanup @Not_Ready
+#Waiting for updated Validation messages on the automation
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueAutomationValidationsForDeletedStage
 	When Project created via API and opened
 	| ProjectName   | Scope       | ProjectTemplate | Mode               |
@@ -131,6 +133,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueAutomationValidationsForDel
 	Then warning text 'The selected stage cannot be found' displayed below the field
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS17429 @Cleanup @Not_Ready
+#Waiting for updated Validation messages on the automation
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueAutomationValidationsForDeletedTask
 	When Project created via API and opened
 	| ProjectName   | Scope       | ProjectTemplate | Mode               |
