@@ -537,6 +537,14 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(by);
         }
 
+        public IWebElement GetAutocompleteDropdownByText(string text)
+        {
+            var selector = By.XPath($"//*[contains(text(), '{text}')]/ancestor::mat-option");
+            Driver.WaitForDataLoading();
+            Driver.WaitForElementToBeDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
         public IWebElement GetInputAddButton(string placeholder)
         {
             var selector = GetNamedTextbox(placeholder).FindElement(By.XPath(".//../ancestor::mat-form-field//button"));

@@ -155,6 +155,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetsShowsGraphDataWhenSpli
 	When User clicks Ellipsis menu for "WidgetForDAS17825" Widget on Dashboards page
 	And User clicks "Edit" item from Ellipsis menu on Dashboards page
 	And User selects "Application Compliance" as Widget Split By
+	And User selects "Application Compliance ASC" as Widget OrderBy 
 	Then Widget Preview is displayed to the user
 	And Color Scheme dropdown displayed with "Compliance Colour Scheme" placeholder 
 	And Color Scheme dropdown is disabled

@@ -6,6 +6,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 	#TODO create API ONBOARDING step;
+	#tag 'not_rady' added because need to create Cleanup (DAS-18070)
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @Offboard @DAS17843 @DAS17926 @Cleanup @Not_Ready
 Scenario Outline: EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectlyForProjectDetailsPageWhichHasAssociatedObjects
 	When User clicks "<PageName>" on the left-hand menu
@@ -40,6 +41,7 @@ Examples:
 	| Mailboxes | All Mailboxes | 06A573B6200A4A10BC2@bclabs.local | Email Address | Mailbox Evergreen Capacity Project |
 
 	#TODO create API ONBOARDING step;
+	#tag 'not_rady' added because need to create Cleanup (DAS-18070)
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @Offboard @DAS17843 @DAS17926 @Cleanup @Not_Ready
 Scenario Outline: EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectlyForProjectDetailsPageWhichHasNoAssociatedObjects
 	When User clicks "<PageName>" on the left-hand menu
