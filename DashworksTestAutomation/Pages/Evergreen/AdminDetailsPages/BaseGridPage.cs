@@ -196,7 +196,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//mat-error/span/i[@class='material-icons mat-warning']")]
         public IWebElement UnderFieldWarningIcon { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//mat-error[@role='alert']")]
+        [FindsBy(How = How.XPath, Using = ".//mat-error[@role='alert']//span")]
         public IWebElement FieldWarningMessage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'message-error')]")]

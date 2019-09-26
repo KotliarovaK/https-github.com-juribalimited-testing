@@ -452,7 +452,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality
 	Then Success message is displayed and contains "click here to view the 16764_Automation automation" link
 	When User clicks newly created object link
 	Then Automation page is displayed correctly
-	Then "All Devices" content is displayed in the Scope Automation dropdown
+	Then 'All Devices' content is displayed in 'Scope' textbox
 	Then "16764" content is displayed in "Description" field
 	Then 'Manual' text value is displayed in the 'Run' dropdown
 	Then "Active" checkbox is checked on the Admin page
@@ -493,7 +493,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeListIsLoadedWithCor
 	| All Devices      |
 	| 1803 Rollout     |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15886 @DAS15423 @DAS16317 @DAS16316 @DAS17223 @DAS17336 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15886 @DAS15423 @DAS16317 @DAS16316 @DAS17223 @DAS17336 @DAS17275 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextForDeletedList
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Filters button
@@ -512,7 +512,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextFor
 	And User clicks the "CREATE" Action button
 	When User clicks newly created object link
 	Then Automation page is displayed correctly
-	Then "DAS15423_List" content is displayed in the Scope Automation dropdown
+	Then 'DAS15423_List' content is displayed in 'Scope' textbox
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	When User navigates to the "DAS15423_List" list
@@ -524,7 +524,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextFor
 	When User enters "DAS15423_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
 	Then Automation page is displayed correctly
-	Then "[List not found]" content is displayed in the Scope Automation dropdown
+	Then '[List not found]' content is displayed in 'Scope' textbox
+	#Waiting for 'The selected list cannot be found' error message is displayed for 'Scope' field on the automation
+	#DAS17275
+	#Then 'The selected list cannot be found' error message is displayed for 'Scope' field
+	#DAS17275
 	#Update after DAS-17336 fixed
 	#When User navigates to the 'Actions' left menu item
 	#Then Edit Action page is displayed to the User

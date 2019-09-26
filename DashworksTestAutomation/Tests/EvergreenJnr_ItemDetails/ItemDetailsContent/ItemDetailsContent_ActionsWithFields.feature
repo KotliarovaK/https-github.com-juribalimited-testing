@@ -540,7 +540,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatErrorsANotAppearInConsoleWhenNavigat
 	Then There are no errors in the browser console
 
 	#Ann.Ilchenko 9/24/19: will be ready after completion Zion Sprint 34
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18162 @Not_Ready
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18162 @DAS17394 @Not_Ready
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDomainFieldIsDisplayedOnSelectedPages
 	When User navigates to the '<PageName>' details page for '<ItemName>' item
 	Then Details page for "<ItemName>" item is displayed to the user
@@ -568,7 +568,8 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDomainFieldIsDisplayedOnSelecte
 	| Email Address             |
 
 Examples: 
-	| PageName | ItemName                | SubTabName    |
-	| Device   | 00YTY8U3ZYP2WT          | Device Owner  |
-	| User     | 013DA2178AB4444CAF2     | User          |
-	| Mailbox  | ZGF0027767@bclabs.local | Mailbox Owner |
+	| PageName    | ItemName                | SubTabName        |
+	| Device      | 00YTY8U3ZYP2WT          | Device Owner      |
+	| User        | 013DA2178AB4444CAF2     | User              |
+	| Application | Acrobat Reader 6.0.1    | Application Owner |
+	| Mailbox     | ZGF0027767@bclabs.local | Mailbox Owner     |

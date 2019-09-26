@@ -2211,9 +2211,11 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS18162")]
+        [NUnit.Framework.CategoryAttribute("DAS17394")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
         [NUnit.Framework.TestCaseAttribute("Device", "00YTY8U3ZYP2WT", "Device Owner", null)]
         [NUnit.Framework.TestCaseAttribute("User", "013DA2178AB4444CAF2", "User", null)]
+        [NUnit.Framework.TestCaseAttribute("Application", "Acrobat Reader 6.0.1", "Application Owner", null)]
         [NUnit.Framework.TestCaseAttribute("Mailbox", "ZGF0027767@bclabs.local", "Mailbox Owner", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatDomainFieldIsDisplayedOnSelectedPages(string pageName, string itemName, string subTabName, string[] exampleTags)
         {
@@ -2249,6 +2251,7 @@ this.FeatureBackground();
                     "EvergreenJnr_ItemDetails",
                     "ItemDetailsDisplay",
                     "DAS18162",
+                    "DAS17394",
                     "Not_Ready"};
             if ((exampleTags != null))
             {

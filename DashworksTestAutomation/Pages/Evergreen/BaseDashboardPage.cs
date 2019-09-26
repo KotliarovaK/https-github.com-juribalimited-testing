@@ -48,6 +48,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = "//p[@class='topnav-item-menu-toggle']//button[@mattooltip='Toggle Menu']")]
         public IWebElement ToggleMenu { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//div[@id='content']//i[@class='material-icons mat-menu']")]
+        public IWebElement ExpandSideNavPanelIcon { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//button[@id='_listDtlBtn'][@disabled]")]
         public IWebElement DisabledListDetailsButton { get; set; }
 

@@ -540,6 +540,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UpdateCustomFieldAutomations2.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\UpdateTaskValue\UpdateTaskValueAutomations.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UpdateTaskValueAutomations.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr_AdminPage\Automations\CreateAutomation.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1586,6 +1591,10 @@
     <None Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\UpdateCustomField\UpdateCustomFieldAutomations2.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>UpdateCustomFieldAutomations2.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\UpdateTaskValue\UpdateTaskValueAutomations.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UpdateTaskValueAutomations.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_AdminPage\Automations\CreateAutomation.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
