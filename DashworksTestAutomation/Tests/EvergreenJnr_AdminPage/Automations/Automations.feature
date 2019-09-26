@@ -525,7 +525,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextFor
 	When User clicks content from "Automation" column
 	Then Automation page is displayed correctly
 	Then '[List not found]' content is displayed in 'Scope' textbox
-	Then 'The selected list cannot be found' error message is displayed for 'Scope' field
+	#Waiting for 'The selected list cannot be found' error message is displayed for 'Scope' field on the automation
+	#DAS17275
+	#Then 'The selected list cannot be found' error message is displayed for 'Scope' field
+	#DAS17275
 	#Then warning text 'The selected list cannot be found' is displayed below the field
 	#Update after DAS-17336 fixed
 	#When User navigates to the 'Actions' left menu item
