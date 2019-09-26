@@ -97,8 +97,8 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckDataLabelsOnTheWidget
 	| WidgetType   | Title             | List        | SplitBy  | AggregateFunction | OrderBy   |
 	| <WidgetType> | WidgetForDAS15662 | All Devices | Hostname | Count             | Count ASC |
 	And User selects "Show data labels" checkbox on the Create Widget page
-	Then Data Labels are displayed on the Dashboards page
-	And "<DataLabel>" data label is displayed on the Dashboards page
+	Then Data Labels are displayed on the Preview page
+	And "<DataLabel>" data label is displayed on the Preview page
 	When User clicks the "CREATE" Action button
 	Then Data Labels are displayed on the Dashboards page
 	And "<DataLabel>" data label is displayed on the Dashboards page
@@ -107,8 +107,8 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckDataLabelsOnTheWidget
 	And User clicks Ellipsis menu for "WidgetForDAS156622" Widget on Dashboards page
 	And User clicks "Edit" item from Ellipsis menu on Dashboards page
 	Then "Show data labels" checkbox is checked on the Create Widget page
-	And Data Labels are displayed on the Dashboards page
-	And "<DataLabel>" data label is displayed on the Dashboards page
+	And Data Labels are displayed on the Preview page
+	And "<DataLabel>" data label is displayed on the Preview page
 
 Examples:
 	| WidgetType | DataLabel      |

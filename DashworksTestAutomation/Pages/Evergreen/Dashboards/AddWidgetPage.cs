@@ -114,6 +114,9 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//div[@class='widget-preview']")]  ////div[@class='widget-preview']//div[@dir='ltr'] old locator
         public IWebElement WidgetPreview { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='chartContainer ng-star-inserted']//*[@style='font-weight:bold']")]
+        public IWebElement DataLabels { get; set; }
+
 
         public override List<By> GetPageIdentitySelectors()
         {

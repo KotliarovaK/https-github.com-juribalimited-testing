@@ -686,13 +686,15 @@ this.FeatureBackground();
                         "Title",
                         "List",
                         "SplitBy",
-                        "AggregateBy"});
+                        "AggregateBy",
+                        "OrderBy"});
             table13.AddRow(new string[] {
                         "",
                         "WidgetForDAS15550_Edited",
                         "",
                         "Version",
-                        "Application"});
+                        "Application",
+                        "Version ASC"});
 #line 193
  testRunner.And("User updates Widget with following info:", ((string)(null)), table13, "And ");
 #line 196

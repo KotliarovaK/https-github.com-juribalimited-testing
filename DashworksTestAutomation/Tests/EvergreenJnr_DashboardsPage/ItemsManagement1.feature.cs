@@ -899,13 +899,15 @@ this.FeatureBackground();
                         "Title",
                         "List",
                         "SplitBy",
-                        "AggregateBy"});
+                        "AggregateBy",
+                        "OrderBy"});
             table13.AddRow(new string[] {
                         "",
                         "WidgetForDAS12978_2_Edited",
                         "",
                         "Version",
-                        "Application"});
+                        "Application",
+                        "Version ASC"});
 #line 161
  testRunner.And("User updates Widget with following info:", ((string)(null)), table13, "And ");
 #line hidden

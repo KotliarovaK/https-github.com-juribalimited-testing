@@ -159,8 +159,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheEditMode
     And User clicks Ellipsis menu for "WidgetForDAS12978_2" Widget on Dashboards page
 	And User clicks "Edit" item from Ellipsis menu on Dashboards page
 	And User updates Widget with following info:
-	| WidgetType | Title                      | List | SplitBy | AggregateBy |
-	|            | WidgetForDAS12978_2_Edited |      | Version | Application |
+	| WidgetType | Title                      | List | SplitBy | AggregateBy | OrderBy     |
+	|            | WidgetForDAS12978_2_Edited |      | Version | Application | Version ASC |
 	Then User sees following Widgets on Dashboards page:
 	| WidgetTitles               |
 	| WidgetForDAS12978          |
