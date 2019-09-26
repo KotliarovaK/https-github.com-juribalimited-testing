@@ -7,7 +7,7 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12552 @DAS13011 @Do_Not_Run_With_Teams
 Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPages
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Teams" link on the Admin page
 	Then "Teams" page should be displayed to the user
@@ -29,7 +29,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPa
 	When User resets Search fields for columns
 	When User enters "=35" text in the Search field for "Devices" column
 	Then Rows counter contains "1" found row of all rows
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	When User clicks "Evergreen" link on the Admin page
 	And User navigates to the 'Buckets' left menu item
 	When User clicks Reset Filters button on the Admin page
@@ -41,7 +41,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPa
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12370 @DAS12369 @DAS14212
 Scenario: EvergreenJnr_ImportProjectPage_CheckThatImportProjectButtonEnabledAfterWarningOnImportProjectPage
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	And "Projects" page should be displayed to the user
 	When User clicks the "IMPORT PROJECT" Action button
@@ -56,7 +56,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckThatImportProjectButtonEnabledAfte
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13766 @DAS14153
 Scenario Outline: EvergreenJnr_AdminPage_CheckPositionOfContextMenuInGrid
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	And User clicks "<PageName>" link on the Admin page
 	And User performs right-click on "<CellText>" cell in the grid
 	Then User sees context menu placed near "<CellText>" cell in the grid
@@ -68,7 +68,7 @@ Examples:
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13766 @DAS14153
 Scenario: EvergreenJnr_AdminPage_CheckPositionOfContextMenuInGridForBuckets
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	When User clicks "Evergreen" link on the Admin page
 	When User navigates to the 'Buckets' left menu item
 	And User performs right-click on "Evergreen" cell in the grid
@@ -76,7 +76,7 @@ Scenario: EvergreenJnr_AdminPage_CheckPositionOfContextMenuInGridForBuckets
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13766 @DAS14153
 Scenario: EvergreenJnr_AdminPage_CheckPositionOfContextMenuInGridForCapacityUnits
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	When User clicks "Evergreen" link on the Admin page
 	When User navigates to the 'Capacity Units' left menu item
 	And User performs right-click on "True" cell in the grid
@@ -91,7 +91,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	And User creates new Bucket via api
 	| Name        | TeamName | IsDefault |
 	| Bucket12948 | Admin IT | true      |
-	And User clicks Admin on the left-hand menu
+	And User clicks 'Admin' on the left-hand menu
 	Then "Projects" page should be displayed to the user
 	When User enters "Project12948" text in the Search field for "Project" column
 	And User clicks content from "Project" column
@@ -132,7 +132,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS15989 @Cleanup
 Scenario: EvergreenJnr_ImportProjectPage_CheckThatExtraUnknownReadinessIsNotCreatedWhileImportingToANewProject
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	And "Projects" page should be displayed to the user
 	When User clicks the "IMPORT PROJECT" Action button
@@ -148,7 +148,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckThatExtraUnknownReadinessIsNotCrea
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS16089 @Cleanup
 Scenario: EvergreenJnr_ImportProjectPage_CheckBannerMessageAfterImportProjectWithoutReadiness 
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	And "Projects" page should be displayed to the user
 	When User clicks the "IMPORT PROJECT" Action button
@@ -161,7 +161,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckBannerMessageAfterImportProjectWit
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS16417
 Scenario: EvergreenJnr_ImportProjectPage_CheckFormattingForIntegerValues
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Evergreen" link on the Admin page
 	When User navigates to the 'Buckets' left menu item
@@ -183,7 +183,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckFormattingForIntegerValues
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS16384
 Scenario: EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromBuckets
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Evergreen" link on the Admin page
 	Then "Buckets" page should be displayed to the user
@@ -193,7 +193,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromB
 	Then ColumnName is added to the list
 	| ColumnName       |
 	| Evergreen Bucket |
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Evergreen" link on the Admin page
 	When User enters "Manchester" text in the Search field for "Bucket" column
@@ -202,7 +202,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromB
 	Then ColumnName is added to the list
 	| ColumnName       |
 	| Evergreen Bucket |
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Evergreen" link on the Admin page
 	When User enters "Unassigned" text in the Search field for "Bucket" column
@@ -214,7 +214,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromB
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS16384
 Scenario: EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromCapacityUnits
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Evergreen" link on the Admin page
 	And User navigates to the 'Capacity Units' left menu item
@@ -224,7 +224,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromC
 	Then ColumnName is added to the list
 	| ColumnName              |
 	| Evergreen Capacity Unit |
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Evergreen" link on the Admin page
 	And User navigates to the 'Capacity Units' left menu item
@@ -233,7 +233,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromC
 	Then ColumnName is added to the list
 	| ColumnName              |
 	| Evergreen Capacity Unit |
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Evergreen" link on the Admin page
 	And User navigates to the 'Capacity Units' left menu item
@@ -243,7 +243,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromC
 	Then ColumnName is added to the list
 	| ColumnName              |
 	| Evergreen Capacity Unit |
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	When User enters "1803 Rollout" text in the Search field for "Project" column
 	When User clicks content from "Project" column
 	When User selects "Capacity" tab on the Project details page
@@ -256,7 +256,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromC
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS16384
 Scenario: EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromRings
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Evergreen" link on the Admin page
 	And User navigates to the 'Rings' left menu item
@@ -266,7 +266,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromR
 	Then ColumnName is added to the list
 	| ColumnName     |
 	| Evergreen Ring |
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Evergreen" link on the Admin page
 	And User navigates to the 'Rings' left menu item
@@ -275,7 +275,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromR
 	Then ColumnName is added to the list
 	| ColumnName     |
 	| Evergreen Ring |
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Evergreen" link on the Admin page
 	And User navigates to the 'Rings' left menu item
@@ -284,7 +284,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromR
 	Then ColumnName is added to the list
 	| ColumnName     |
 	| Evergreen Ring |
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	When User enters "Barry's User Project" text in the Search field for "Project" column
 	When User clicks content from "Project" column
 	When User selects "Rings" tab on the Project details page
@@ -296,7 +296,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromR
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS16675 @DAS16676
 Scenario: EvergreenJnr_AdminPage_CheckThatAppropriatePageIsDisplayedAfterClickingCrumbTrailOnAdminPage
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Evergreen" link on the Admin page
 	When User selects "Buckets" tab on the Project details page

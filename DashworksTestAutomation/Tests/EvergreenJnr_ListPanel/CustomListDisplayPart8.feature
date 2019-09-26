@@ -7,7 +7,7 @@ Background: Pre-Conditions
 
 @Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10972 @DAS12602 @DAS14183 @Cleanup
 Scenario Outline: EvergreenJnr_AllLists_CheckThatTheEditListFunctionIsHiddenAfterChangingPinnedColumns
-	When User clicks "<ListName>" on the left-hand menu
+	When User clicks '<ListName>' on the left-hand menu
 	Then "<ListLabel>" list should be displayed to the user
 	When User clicks on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in ascending order
@@ -51,7 +51,7 @@ Examples:
 
 @Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS12515 @Cleanup
 Scenario Outline: EvergreenJnr_AllLists_CheckThatNewCustomListMenuIsHiddenInTheListPanelAfterClickingActionsButton
-	When User clicks "<ListName>" on the left-hand menu
+	When User clicks '<ListName>' on the left-hand menu
 	Then "<ListLabel>" list should be displayed to the user
 	When User clicks on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in ascending order
@@ -79,7 +79,7 @@ Examples:
 
 @Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS12524 @Cleanup
 Scenario Outline: EvergreenJnr_AllLists_CheckThatSaveAndCancelButtonAreHiddenAfterCancellingProcessOfSavingList
-	When User clicks "<ListName>" on the left-hand menu
+	When User clicks '<ListName>' on the left-hand menu
 	Then "<ListLabel>" list should be displayed to the user
 	When User clicks on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in ascending order
@@ -112,7 +112,7 @@ Examples:
 
 @Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS12524 @Cleanup
 Scenario: EvergreenJnr_AllLists_CheckThatActionsPanelIsHiddenAfterCancellingProcessOfSavingList
-	When User clicks "Applications" on the left-hand menu
+	When User clicks 'Applications' on the left-hand menu
 	Then "All Applications" list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user

@@ -10,7 +10,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameWhichStartsWithLowerCaseLe
 	When Project created via API and opened
 	| ProjectName  | Scope       | ProjectTemplate | Mode               |
 	| project12949 | All Devices | None            | Standalone Project |
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	And User clicks "Evergreen" link on the Admin page
 	And User navigates to the 'Buckets' left menu item
 	Then "Buckets" page should be displayed to the user
@@ -64,7 +64,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatRelatedBucketsAreUpdatedAfterCreatingO
 	When Project created via API and opened
 	| ProjectName     | Scope       | ProjectTemplate | Mode               |
 	| 1DevicesProject | All Devices | None            | Standalone Project |
-	And User clicks Admin on the left-hand menu
+	And User clicks 'Admin' on the left-hand menu
 	And User clicks "Evergreen" link on the Admin page
 	And User navigates to the 'Buckets' left menu item
 	#Remove after Buckets loaded faster

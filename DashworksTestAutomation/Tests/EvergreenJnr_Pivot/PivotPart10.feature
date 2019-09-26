@@ -7,7 +7,7 @@ Background: Pre-Conditions
 
 @Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14375
 Scenario: EvergreenJnr_UsersList_CheckSortedOrderForPivotProjectStatusAsColumn
-	When User clicks "Users" on the left-hand menu
+	When User clicks 'Users' on the left-hand menu
 	Then "All Users" list should be displayed to the user
 	When User navigates to Pivot
 	And User selects the following Row Groups on Pivot:
@@ -38,7 +38,7 @@ Scenario: EvergreenJnr_UsersList_CheckSortedOrderForPivotProjectStatusAsColumn
 
 @Evergreen @Mailboxes @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14375
 Scenario: EvergreenJnr_MailboxesList_CheckSortedOrderForPivotProjectStatusAsColumn
-	When User clicks "Mailboxes" on the left-hand menu
+	When User clicks 'Mailboxes' on the left-hand menu
 	Then "All Mailboxes" list should be displayed to the user
 	When User navigates to Pivot
 	And User selects the following Row Groups on Pivot:
@@ -63,7 +63,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckSortedOrderForPivotProjectStatusAsColu
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS15758 @DAS15328 @DAS14246
 Scenario Outline: EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_StingValues
-	When User clicks "<List>" on the left-hand menu
+	When User clicks '<List>' on the left-hand menu
 	Then "<ListLabel>" list should be displayed to the user
 	When User navigates to Pivot
 	And User selects the following Row Groups on Pivot:
@@ -89,7 +89,7 @@ Examples:
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS15758 @DAS15328
 Scenario Outline: EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_DateValues
-	When User clicks "<List>" on the left-hand menu
+	When User clicks '<List>' on the left-hand menu
 	Then "<ListLabel>" list should be displayed to the user
 	When User navigates to Pivot
 	And User selects the following Row Groups on Pivot:
@@ -120,7 +120,7 @@ Examples:
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS15758 @DAS15328
 Scenario Outline: EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_NumericValues
-	When User clicks "<List>" on the left-hand menu
+	When User clicks '<List>' on the left-hand menu
 	Then "<ListLabel>" list should be displayed to the user
 	When User navigates to Pivot
 	And User selects the following Row Groups on Pivot:
@@ -157,7 +157,7 @@ Examples:
 
 @Evergreen @DevicesLists @EvergreenJnr_Pivot @Pivot @DAS14263 @DAS16403 @DAS16407
 Scenario: EvergreenJnr_DevicesLists_CheckAddTeamsPermissionsOnDetailsPanel
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	And User navigates to Pivot
 	And User selects the following Row Groups on Pivot:
 	| RowGroups  |
@@ -200,7 +200,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckAddTeamsPermissionsOnDetailsPanel
 
 @Evergreen @DevicesLists @EvergreenJnr_Pivot @Pivot @DAS16815 @Cleanup
 Scenario: EvergreenJnr_DevicesLists_CheckArchivedItemIncludingInPivot
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	And User sets includes archived devices in "true"
 	And User clicks the Filters button
 	And User add "1803: In Scope" filter where type is "Equals" with added column and following checkboxes:

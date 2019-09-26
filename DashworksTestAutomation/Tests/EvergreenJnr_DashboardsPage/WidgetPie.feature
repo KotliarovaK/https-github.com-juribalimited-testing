@@ -7,7 +7,7 @@ Background: Pre-Conditions
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14668 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetsCanBeCreatedWhenUsingSplitByAndAggregateByDateColumn
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	And User clicks the Columns button
 	And ColumnName is entered into the search box and the selection is clicked
 	| ColumnName                   |
@@ -39,7 +39,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWid
 	| ColumnName          |
 	| CPU Architecture |
 	And User create dynamic list with "List15372" name on "Devices" page
-	And User clicks "Dashboards" on the left-hand menu
+	And User clicks 'Dashboards' on the left-hand menu
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
@@ -57,7 +57,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingPie
 	| ColumnName |
 	| Model      |
 	And User create dynamic list with "List15365" name on "Devices" page
-	And User clicks "Dashboards" on the left-hand menu
+	And User clicks 'Dashboards' on the left-hand menu
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
@@ -374,7 +374,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenAvgAggre
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17467 @DAS17515 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckNameAndLabelAndColorSchemeForEmptyOwnerCompliance
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Owner Compliance" filter where type is "Does not equal" with added column and following checkboxes:
@@ -405,7 +405,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckNameAndLabelAndColorSchemeForEmptyOwn
 	
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17467 @DAS17515 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckColorSchemePlaceholderForReadiness
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "1803: Readiness" filter where type is "Does not equal" with added column and following checkboxes:
@@ -432,7 +432,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckColorSchemePlaceholderForReadiness
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17515 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCorrectColorSchemeisUsedWhenWidgetIsSplitByReadinessAndComplianceFields	
-    When User clicks "Devices" on the left-hand menu
+    When User clicks 'Devices' on the left-hand menu
 	And User clicks the Columns button
 	And ColumnName is entered into the search box and the selection is clicked
 	| ColumnName                        |

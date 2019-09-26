@@ -20,52 +20,23 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver = driver;
         }
 
-        [When(@"User clicks ""(.*)"" on the left-hand menu")]
+        [When(@"User clicks '(.*)' on the left-hand menu")]
         public void WhenUserClicksOnTheLeft_HandMenu(string listPage)
         {
-            var menu = _driver.NowAt<LeftHandMenuElement>();
-
-            switch (listPage)
-            {
-                case "Dashboards":
-                    menu.Dashboards.Click();
-                    break;
-
-                case "Devices":
-                    menu.Devices.Click();
-                    break;
-
-                case "Users":
-                    menu.Users.Click();
-                    break;
-
-                case "Applications":
-                    menu.Applications.Click();
-                    break;
-
-                case "Mailboxes":
-                    menu.Mailboxes.Click();
-                    break;
-
-                case "Projects":
-                    menu.Projects.Click();
-                    break;
-
-                case "Admin":
-                    menu.Admin.Click();
-                    break;
-
-                default:
-                    throw new Exception($"'{listPage}' menu name is not valid menu item and can not be opened");
-            }
-
-            Logger.Write($"{listPage} left-hand menu was clicked");
+            NavigateToLeftHandMenu(listPage, true);
         }
 
-        [When(@"User quickly navigate to ""(.*)"" on the left-hand menu")]
+        [When(@"User quickly navigate to '(.*)' on the left-hand menu")]
         public void WhenUserQuicklyNavigateToOnTheLeft_HandMenu(string listPage)
         {
-            var menu = _driver.NowAtWithoutWait<LeftHandMenuElement>();
+            NavigateToLeftHandMenu(listPage, false);
+        }
+
+        private void NavigateToLeftHandMenu(string listPage, bool waitForDataLoading)
+        {
+            var menu = waitForDataLoading ?
+                _driver.NowAt<LeftHandMenuElement>() :
+                _driver.NowAtWithoutWait<LeftHandMenuElement>();
 
             switch (listPage)
             {
@@ -92,8 +63,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 default:
                     throw new Exception($"'{listPage}' menu name is not valid menu item and can not be opened");
             }
-
-            Logger.Write($"{listPage} left-hand menu was clicked");
         }
 
         [Then(@"""(.*)"" list should be displayed to the user")]
@@ -141,13 +110,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
 
             Logger.Write($"'{listPage}' list is visible");
-        }
-
-        [When(@"User clicks Admin on the left-hand menu")]
-        public void WhenUserClicksAdminOnTheLeft_HandMenu()
-        {
-            var menu = _driver.NowAt<LeftHandMenuElement>();
-            menu.Admin.Click();
         }
 
         [Then(@"Admin page should be displayed to the user")]

@@ -11,7 +11,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogMessageForDeletedTaskInAction
 	When Project created via API and opened
 	| ProjectName  | Scope       | ProjectTemplate | Mode               |
 	| 17247Project | All Devices | None            | Standalone Project |
-	When User clicks "Projects" on the left-hand menu
+	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "17247Project" Project
 	Then "Manage Project Details" page is displayed to the user
@@ -36,7 +36,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogMessageForDeletedTaskInAction
 	Then selected task was published
 	When User navigate to Evergreen link
 	#Pre-requisites:
-	And User clicks "Admin" on the left-hand menu
+	And User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
@@ -59,14 +59,14 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogMessageForDeletedTaskInAction
 	And User selects "7 Aug 2019" Date on Action panel
 	And User clicks the "CREATE" Action button
 	#Delete Task
-	When User clicks "Projects" on the left-hand menu
+	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "17247Project" Project
 	When User navigate to "Tasks" tab
 	And User removes "DAS17247_Task" Task
 	#Run Automation
 	When User navigate to Evergreen link
-	And User clicks "Admin" on the left-hand menu
+	And User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Automations" link on the Admin page
 	When User enters "17247_Automation" text in the Search field for "Automation" column
@@ -79,7 +79,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogMessageForDeletedTaskInAction
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17681 @DAS17430 @DAS17518 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedUpdateValueDateOwnerCombination
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User creates new Automation via API and open it
 	| AutomationName      | Description | Active | StopOnFailedAction | Scope                   | Run    |
@@ -134,7 +134,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedU
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17681 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedUpdateValueDateOwnerCombinationWithNoChange
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope                   | Run    |
@@ -158,7 +158,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedU
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17830 @Cleanup @Not_Ready
 #Waiting for "zDevice Sch for Automations Feature" project on automation server from GD
 Scenario: EvergreenJnr_AdminPage_CheckUpdateOwnerForUpdateValueInDevicesScopedAutomation
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope              | Run    |
@@ -208,7 +208,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateOwnerForUpdateValueInDevicesScopedAu
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17846 @DAS17974 @Cleanup @Not_Ready
 #Waiting for "zDevice Sch for Automations Feature" project on automation server from GD
 Scenario: EvergreenJnr_AdminPage_CheckUpdateDateForUpdateValueInDevicesScopedAutomationWithCapacitySlot
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope              | Run    |
@@ -246,7 +246,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateDateForUpdateValueInDevicesScopedAut
 	Then "5 Sep 2019" content is displayed in "zDeviceAut: Stage C \ Date Only with Capacity" column
 	And "DAS-17846 Slot Device" content is displayed in "zDeviceAut: Stage C \ Date Only with Capacity (Slot)" column
 	#Update Action
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Automations" link on the Admin page
 	When User enters "17846_Automation" text in the Search field for "Automation" column
@@ -278,7 +278,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateDateForUpdateValueInDevicesScopedAut
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17846 @Cleanup @Not_Ready
 #Waiting for "zDevice Sch for Automations Feature" project on automation server from GD
 Scenario: EvergreenJnr_AdminPage_CheckUpdateDateForUpdateValueInUsersScopedAutomationWithoutCapacitySlot
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User creates new Automation via API and open it
 	| AutomationName      | Description | Active | StopOnFailedAction | Scope                   | Run    |

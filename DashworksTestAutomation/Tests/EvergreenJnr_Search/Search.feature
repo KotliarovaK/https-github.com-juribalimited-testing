@@ -21,7 +21,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatQuickSearchResetWhenMovingBetweenLis
 
 @Evergreen @Devices @EvergreenJnr_Search @Search @DAS10704
 Scenario: EvergreenJnr_DevicesList_CheckThatQuickSearchDoesntTriggersNewListMenu
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
@@ -30,34 +30,34 @@ Scenario: EvergreenJnr_DevicesList_CheckThatQuickSearchDoesntTriggersNewListMenu
 
 @Evergreen @Devices @Applications @Users @Mailboxes @EvergreenJnr_Search @Search @DAS10580 @DAS10667 @DAS10624
 Scenario: EvergreenJnr_AllLists_CheckSearchFilterAndTableContentDuringNavigationBetweenPages
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	And "17,279" rows are displayed in the agGrid
 	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
 	| Smith          | 11           |
-	When User clicks "Users" on the left-hand menu
+	When User clicks 'Users' on the left-hand menu
 	Then "All Users" list should be displayed to the user
 	And "41,339" rows are displayed in the agGrid
 	And Search field is empty
 	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
 	| Smith          | 59           |
-	When User clicks "Applications" on the left-hand menu
+	When User clicks 'Applications' on the left-hand menu
 	Then "All Applications" list should be displayed to the user
 	And "2,223" rows are displayed in the agGrid
 	And Search field is empty
 	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
 	| Python         | 7            |
-	When User clicks "Mailboxes" on the left-hand menu
+	When User clicks 'Mailboxes' on the left-hand menu
 	Then "All Mailboxes" list should be displayed to the user
 	And "14,784" rows are displayed in the agGrid
 	And Search field is empty
 	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
 	| Smith          | 44           |
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	And "17,279" rows are displayed in the agGrid
 	And Search field is empty
@@ -82,7 +82,7 @@ Scenario: EvergreenJnr_DevicesList_SearchTests
 
 @Evergreen @Devices @EvergreenJnr_Search @Search @DAS11012 @DAS12206
 Scenario: EvergreenJnr_DevicesList_ClearingSearchReturnsTheFullDataSet
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
@@ -94,7 +94,7 @@ Scenario: EvergreenJnr_DevicesList_ClearingSearchReturnsTheFullDataSet
 
 @Evergreen @Users @EvergreenJnr_Search @Search @DAS11012 @DAS12206
 Scenario: EvergreenJnr_UsersList_ClearingSearchReturnsTheFullDataSet
-	When User clicks "Users" on the left-hand menu
+	When User clicks 'Users' on the left-hand menu
 	Then "All Users" list should be displayed to the user
 	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
@@ -125,14 +125,14 @@ Scenario: EvergreenJnr_DevicesList_Search_NoDevicesFound
 
 @Evergreen @Devices @EvergreenJnr_Search @Search @DAS11350
 Scenario: EvergreenJnr_DevicesList_Search_CheckThatTableSearchFieldHaveAResetButton
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	When User perform search by "CheckTheResetButton"
 	Then reset button in Table Search field is displayed
 
 @Evergreen @ALlLists @EvergreenJnr_Search @Search @DAS12491
 Scenario Outline: EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnActionsToolbar
-	When User clicks "<PageName>" on the left-hand menu
+	When User clicks '<PageName>' on the left-hand menu
 	Then "All <PageName>" list should be displayed to the user
 	When User perform search by "<SearchTerm>"
 	Then "1" rows are displayed in the agGrid
@@ -146,7 +146,7 @@ Examples:
 
 @Evergreen @Devices @EvergreenJnr_Search @Search @DAS11350
 Scenario: EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtFilterPanel
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
@@ -156,7 +156,7 @@ Scenario: EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtF
 
 @Evergreen @Devices @EvergreenJnr_Search @Search @DAS11350
 Scenario: EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtColumnPanel
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
@@ -165,7 +165,7 @@ Scenario: EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtC
 	 
 @Evergreen @Devices @EvergreenJnr_Search @Search @DAS11350
 Scenario: EvergreenJnr_DevicesList_Search_CheckThatMultiSelectFilterSearchFieldHaveResetButton 
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
@@ -175,7 +175,7 @@ Scenario: EvergreenJnr_DevicesList_Search_CheckThatMultiSelectFilterSearchFieldH
 
 @Evergreen @Devices @EvergreenJnr_Search @Search @DAS11350 @DAS11951 @Cleanup
 Scenario: EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtListPanel 
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	When User clicks on 'Hostname' column header
 	Then data in table is sorted by 'Hostname' column in ascending order
@@ -202,7 +202,7 @@ Examples:
 
 @Evergreen @Applications @EvergreenJnr_Search @Search @DAS11511
 Scenario: EvergreenJnr_ApplicationsLists_Search_CheckThatTableSearchIsWorkingCorrectlyForApplicationColumn
-	When User clicks "Applications" on the left-hand menu
+	When User clicks 'Applications' on the left-hand menu
 	Then "All Applications" list should be displayed to the user
 	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
@@ -210,7 +210,7 @@ Scenario: EvergreenJnr_ApplicationsLists_Search_CheckThatTableSearchIsWorkingCor
 
 @Evergreen @Devices @EvergreenJnr_Search @Search @DAS11664
 Scenario: EvergreenJnr_DevicesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerDisplayNameColumn
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
@@ -253,7 +253,7 @@ Scenario: EvergreenJnr_DevicesLists_Search_CheckThatTableSearchWorksCorrectlyFor
 
 @Evergreen @Users @EvergreenJnr_Search @Search @DAS11664
 Scenario: EvergreenJnr_UsersLists_Search_CheckThatTableSearchWorksCorrectlyForDisplayNameColumn
-	When User clicks "Users" on the left-hand menu
+	When User clicks 'Users' on the left-hand menu
 	Then "All Users" list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
@@ -273,7 +273,7 @@ Scenario: EvergreenJnr_UsersLists_Search_CheckThatTableSearchWorksCorrectlyForDi
 
 @Evergreen @Mailboxes @EvergreenJnr_Search @Search @DAS11664
 Scenario: EvergreenJnr_MailboxesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerDisplayNameColumn
-	When User clicks "Mailboxes" on the left-hand menu
+	When User clicks 'Mailboxes' on the left-hand menu
 	Then "All Mailboxes" list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
@@ -320,7 +320,7 @@ Scenario: EvergreenJnr_MailboxesLists_Search_CheckThatTableSearchWorksCorrectlyF
 
 @Evergreen @Devices @EvergreenJnr_Search @Search @DAS11663
 Scenario: EvergreenJnr_DevicesList_Search_CheckThatRowCountIsNotDisplayedWhenNoObjectsAreFoundAfterUsingAgGrid
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
@@ -328,7 +328,7 @@ Scenario: EvergreenJnr_DevicesList_Search_CheckThatRowCountIsNotDisplayedWhenNoO
 
 @Evergreen @Devices @EvergreenJnr_Search @Search @DAS11706
 Scenario: EvergreenJnr_DevicesLists_Search_CheckThatValidationForSpecialCharactersInSearchEverythingAndSearchTableFieldsIsPresented
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	When User type "%%%" in Global Search Field
 	Then "No results found" message is displayed below Global Search field
@@ -338,7 +338,7 @@ Scenario: EvergreenJnr_DevicesLists_Search_CheckThatValidationForSpecialCharacte
 
 @Evergreen @Devices @EvergreenJnr_Search @Search @DAS13342
 Scenario: EvergreenJnr_DevicesList_Search_ChecksThatRowCountIsResetBackToTheFullRowCountAfterClickingTheSearchCrossButton
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	And "17,279" rows are displayed in the agGrid
 	When User perform search by "00K"
@@ -348,7 +348,7 @@ Scenario: EvergreenJnr_DevicesList_Search_ChecksThatRowCountIsResetBackToTheFull
 
 @Evergreen @Applications @EvergreenJnr_Search @Search @DAS13342 @DAS13366
 Scenario: EvergreenJnr_ApplicationsList_Search_ChecksThatRowCountIsResetBackToTheFullRowCountAfterClickingTheFilterButtonAfterRunningASearch
-	When User clicks "Applications" on the left-hand menu
+	When User clicks 'Applications' on the left-hand menu
 	Then "All Applications" list should be displayed to the user
 	Then "2,223" rows are displayed in the agGrid
 	When User clicks the Filters button
@@ -368,7 +368,7 @@ Scenario: EvergreenJnr_ApplicationsList_Search_ChecksThatRowCountIsResetBackToTh
 
 @Evergreen @Users @EvergreenJnr_Search @Search @DAS16375
 Scenario: EvergreenJnr_UsersList_CheckThatRingsInRingsColumnShownAccordingToDisplayOrderOfRing
-	When User clicks "Users" on the left-hand menu
+	When User clicks 'Users' on the left-hand menu
 	And User clicks the Columns button
 	And ColumnName is entered into the search box and the selection is clicked
 	| ColumnName                          |
@@ -378,7 +378,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatRingsInRingsColumnShownAccordingToDisp
 
 @Evergreen @Devices @EvergreenJnr_Search @Search @DAS16375
 Scenario: EvergreenJnr_DevicesList_CheckThatRingsInRingsColumnShownAccordingToDisplayOrderOfRing
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	And User clicks the Columns button
 	And ColumnName is entered into the search box and the selection is clicked
 	| ColumnName       |
@@ -398,7 +398,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRingsInRingsColumnShownAccordingToDi
 	
 @Evergreen @Devices @EvergreenJnr_Search @Search @DAS17633
 Scenario: EvergreenJnr_Search_CheckThatThereIsSameAppearanceOfTheUnknownVersionInTestLanguageOnList
-	When User clicks "Applications" on the left-hand menu
+	When User clicks 'Applications' on the left-hand menu
 	Then "All Applications" list should be displayed to the user
 	When User language is changed to "Test Language" via API
 	And User perform search by "acd"

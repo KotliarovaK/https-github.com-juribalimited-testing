@@ -8,7 +8,7 @@ Background: Pre-Conditions
 
 @Evergreen @Devices @EvergreenJnr_StaticLists @FiltersDisplay @Evergreen_FiltersFeature @DAS10993 @DAS12152 @DAS12351 @DAS13389 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatDynamicFiltersAreClearedForStaticListsWhenOpenedAfterDynamicLists
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
@@ -36,7 +36,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDynamicFiltersAreClearedForStaticLis
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @Evergreen_FiltersFeature @DAS10978 @DAS12034 @DAS12221 @DAS12232 @DAS12351 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatFiltersAndColumnsAreRestoredForSavedList
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
@@ -59,7 +59,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFiltersAndColumnsAreRestoredForSaved
 
 @Evergreen @Devices @EvergreenJnr_StaticLists @FiltersDisplay @Evergreen_FiltersFeature @DAS10695 @DAS12152 @DAS12966 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedWhenAddingExistingObjectToStaticList
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user

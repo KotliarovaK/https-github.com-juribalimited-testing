@@ -7,7 +7,7 @@ Background: Pre-Conditions
 
 @Senior @Dashworks @Senior_Projects @DAS12651
 Scenario Outline: Senior_CheckThatDataInGroupWithApostrophesOnDashboardsPageIsDisplayedCorectly
-	When User clicks "Projects" on the left-hand menu
+	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigates to the "<PageName>" page on Dashboards tab
 	Then "<PageName>" page is displayed to the user
@@ -22,7 +22,7 @@ Examples:
 
 @Senior @Dashworks @Projects_Dashworks @Senior_Teams @DAS13000
 Scenario: Senior_ChecksThatUserCantRemoveDefaultTeamOnSeniorPage
-	When User clicks "Projects" on the left-hand menu
+	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "Computer Scheduled Test (Jo)" Project
 	And User navigate to "Teams" tab
@@ -47,7 +47,7 @@ Scenario: Senior_ChecksThatUserCantRemoveDefaultTeamOnSeniorPage
 
 @Senior @Dashworks @Projects_Dashworks @Senior_Projects @Senior_Tasks @DAS14322 @Cleanup
 Scenario: Senior_ChecksThatAnyTabsCanBeOpenedAfterAddingNewValuesToTask
-	When User clicks "Projects" on the left-hand menu
+	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User clicks create Project button
 	Then "Create Project" page is displayed to the user
@@ -82,7 +82,7 @@ Scenario: Senior_ChecksThatAnyTabsCanBeOpenedAfterAddingNewValuesToTask
 
 @Senior @Projects_Dashboards @Senior_Projects @DAS14171 
 Scenario: Senior_Projects_ChecksThatSeniorProjectHavingCapacitySlotCanBeDeletedWithoutError
-	When User clicks "Projects" on the left-hand menu
+	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "User Scheduled Test (Jo)" Project
 	And User removes the Project
@@ -91,7 +91,7 @@ Scenario: Senior_Projects_ChecksThatSeniorProjectHavingCapacitySlotCanBeDeletedW
 
 @Senior @Projects_Dashboards @Senior_Tasks @DAS13887
 Scenario: Senior_TasksPage_ChecksThatTasksObjectTypeDropBoxValuesNotDuplicatedAfterRechosingValueType
-	When User clicks "Projects" on the left-hand menu
+	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "Windows 7 Migration (Computer Scheduled Project)" Project
 	Then Project with "Windows 7 Migration (Computer Scheduled Project)" name is displayed correctly

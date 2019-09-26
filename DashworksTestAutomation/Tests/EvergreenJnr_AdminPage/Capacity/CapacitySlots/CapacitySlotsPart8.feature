@@ -7,7 +7,7 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Senior_Projects @DAS13152 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForCapacityUnitsType
-	When User clicks "Projects" on the left-hand menu
+	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User clicks create Project button
 	Then "Create Project" page is displayed to the user
@@ -32,7 +32,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForCa
 	Then selected task was published
 	When User clicks "Cancel" button
 	And User navigate to Evergreen link
-	And User clicks "Admin" on the left-hand menu
+	And User clicks 'Admin' on the left-hand menu
 	And User navigates to "ProjectForDAS13152" project details
 	And User creates new Slot via Api
 	| Project            | SlotName  | DisplayName | CapacityType   | Tasks                  | CapacityUnits |
@@ -54,7 +54,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForCa
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Senior_Projects @DAS13152 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTeamsAndRequestTypes
-	When User clicks "Projects" on the left-hand menu
+	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User clicks create Project button
 	Then "Create Project" page is displayed to the user
@@ -79,7 +79,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTe
 	Then selected task was published
 	When User clicks "Cancel" button
 	And User navigate to Evergreen link
-	And User clicks "Admin" on the left-hand menu
+	And User clicks 'Admin' on the left-hand menu
 	And User navigates to "ProjectForDAS13152" project details
 	And User navigates to the 'Capacity' left menu item
 	And User selects "Slots" tab on the Project details page
