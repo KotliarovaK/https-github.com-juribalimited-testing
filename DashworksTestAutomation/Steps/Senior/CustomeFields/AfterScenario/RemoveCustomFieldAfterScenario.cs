@@ -9,7 +9,7 @@ using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Utils;
 using TechTalk.SpecFlow;
 
-namespace DashworksTestAutomation.Steps.Senior.Senior_CreatingProject.CustomFields.AfterScenario
+namespace DashworksTestAutomation.Steps.Senior.CustomFields.AfterScenario
 {
     [Binding]
     class RemoveCustomFieldAfterScenario : SpecFlowContext

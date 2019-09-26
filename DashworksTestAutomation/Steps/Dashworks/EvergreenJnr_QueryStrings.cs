@@ -96,7 +96,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 var combinedURL = _url.Value + row["QueryStringURL"];
                 _driver.NavigateToUrl(combinedURL);
 
-                var page = _driver.NowAt<EvergreenDashboardsPage>();
+                var page = _driver.NowAt<BaseDashboardPage>();
 
                 if (page.StatusCodeLabel.Displayed())
                     throw new Exception($"500 error was returned for: {row["QueryType"]} query");
@@ -151,7 +151,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 var combinedURL = _url.Value + row["QueryStringURL"];
                 _driver.NavigateToUrl(combinedURL);
 
-                var page = _driver.NowAt<EvergreenDashboardsPage>();
+                var page = _driver.NowAt<BaseDashboardPage>();
 
                 if (page.StatusCodeLabel.Displayed())
                     throw new Exception($"500 error was returned for: {row["QueryType"]} query");

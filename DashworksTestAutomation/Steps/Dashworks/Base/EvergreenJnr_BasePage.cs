@@ -310,6 +310,15 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             basePage.AddItemsToMultiSelect(itemsToAdd);
         }
 
+        [When(@"User expands '(.*)' multiselect and selects following Objects")]
+        public void WhenUserExpandsMultiselectAndSelectsFollowingObjects(string multiselectTitle, Table table)
+        {
+            var itemsToAdd = table.Rows.Select(x => x["Objects"]).ToList();
+            var basePage = _driver.NowAt<BaseDashboardPage>();
+            basePage.ExpandCollapseMultiselectButton(multiselectTitle).Click();
+            basePage.AddItemsToMultiSelect(itemsToAdd);
+        }
+
         #endregion
 
         #region Checkbox

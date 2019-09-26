@@ -227,3 +227,37 @@ Scenario: EvergreenJnr_DashboardsPage_CheckClickthoughNumbersBasedArchivedItemsR
 	And "82" count is displayed for "Empty" in the table Widget
 	When User clicks "82" value for "Empty" column
 	Then "82" rows are displayed in the agGrid
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18145 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatNoEndlessSpinnerInPreviewIfCreateWidgetUsingSeverityAggregateFunction
+	When User add following columns using URL to the "Devices" page:
+	| ColumnName                           |
+	| Compliance                           |
+	And User create dynamic list with "ListFor18145" name on "Devices" page
+	And Dashboard with "DashboardForDAS18145" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User adds new Widget
+	| WidgetType | Title     | List         | SplitBy          | AggregateBy | AggregateFunction | OrderBy              |
+	| Table      | DAS-18145 | ListFor18145 | Operating System | Compliance  | Severity          | Operating System ASC |
+	Then Widget Preview is displayed to the user
+	And There are no errors in the browser console
+	When User clicks the "CREATE" Action button
+	Then There are no errors in the browser console
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18091 @DAS18090 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckTheEmptyItemIsNotDisplayedOnTheDashboardPageForTheListWithoutArchivedItem
+	When Dashboard with "Dashboard for DAS18091" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User creates new Widget
+	| WidgetType | Title             | List         | SplitBy          | AggregateFunction | AggregateBy                            | OrderBy              |
+	| Table      | WidgetForDAS18091 | 1803 Rollout | Operating System | Severity          | 1803: Pre-Migration \ Ready to Migrate | Operating System ASC |
+	Then "WidgetForDAS18091" Widget is displayed to the user
+	And There is no 'Empty' column for 'WidgetForDAS18091' widget
+	#DAS18090 
+	When User clicks "NOT READY" value for "Windows 7" column
+	And User clicks the Filters button
+	Then Filters panel is displayed to the user
+	And "Any Device in list 1803 Rollout" is displayed in added filter info
+	And "1803: Pre-Migration \ Ready to Migrate is Not Ready" is displayed in added filter info

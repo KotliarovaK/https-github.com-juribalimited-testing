@@ -659,6 +659,30 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.IsTrue(page.IconOnlyCardWidget.Displayed(), "Icon Only is not displayed for Card widget");
         }
 
+        [Then(@"Text Only is displayed for Card widget on Preview")]
+        public void ThenTextOnlyIsDisplayedForCardWidgetOnPreview()
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            _driver.WaitForDataLoading();
+            Utils.Verify.IsTrue(page.TextOnlyCardWidget.Displayed(), "Text Only is not displayed for Card widget");
+        }
+
+        [Then(@"Icon and Text is displayed for Card widget on Preview")]
+        public void ThenIconAndTextIsDisplayedForCardWidgetOnPreview()
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            _driver.WaitForDataLoading();
+            Utils.Verify.IsTrue(page.IconAndTextCardWidget.Displayed(), "Icon and Text is not displayed for Card widget");
+        }
+
+        [Then(@"Icon Only is displayed for Card widget on Preview")]
+        public void ThenIconOnlyIsDisplayedForCardWidgetOnPreview()
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            _driver.WaitForDataLoading();
+            Utils.Verify.IsTrue(page.IconOnlyCardWidget.Displayed(), "Icon Only is not displayed for Card widget");
+        }
+
         [Then(@"User sees ""(.*)"" text in warning message on Dashboards page")]
         public void ThenUserSeesTextInWarningMessageOnDashboardsPage(string text)
         {
@@ -699,14 +723,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"Widget Preview is displayed to the user")]
         public void ThenWidgetPreviewIsDisplayedToTheUser()
         {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            var page = _driver.NowAt<AddWidgetPage>();
+            _driver.WaitForDataLoading();
             Utils.Verify.IsTrue(page.WidgetPreview.Displayed(), "Widget Preview is not displayed");
         }
 
         [Then(@"Card widget displayed inside preview pane")]
         public void ThenCardWidgetDisplayedInsidePreviewPane()
         {
-            var preview = _driver.NowAt<EvergreenDashboardsPage>();
+            var preview = _driver.NowAt<AddWidgetPage>();
             int prevWidth = preview.WidgetPreview.Size.Width;
             int prevX = preview.WidgetPreview.Location.X;
             int prevY = preview.WidgetPreview.Location.Y;
@@ -791,7 +816,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFollowingContentIsDisplayedInTheColumnForWidget(string columnName, Table table)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            var originalList = page.GetWidgwtRowContentByColumnName(columnName);
+            var originalList = page.GetWidgetRowContentByColumnName(columnName);
             var tableContent = table.Rows.SelectMany(row => row.Values).First();
             foreach (var content in originalList)
             {
@@ -824,6 +849,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.AreEqual(ColorWidgetConvertor.ConvertComplianceColorWidget(color), getColor, $"{color} color is displayed for widget");
         }
 
+        [Then(@"""(.*)"" color is displayed for Card Widget on Preview")]
+        public void ThenColorIsDisplayedForCardWidgetOnPreview(string color)
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            _driver.WaitForDataLoading();
+            var getColor = page.GetCardWidgetPreviewText().GetCssValue("color");
+            Utils.Verify.AreEqual(ColorWidgetConvertor.ConvertComplianceColorWidget(color), getColor, $"{color} color is displayed for widget");
+        }
+
         [Then(@"""(.*)"" count is displayed for ""(.*)"" in the table Widget")]
         public void ThenCountIsDisplayedForInTheTableWidget(string boolean, string count)
         {
@@ -836,6 +870,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             page.GetCountForTableWidget(column, value).Click();
+        }
+        
+        [Then(@"There is no '(.*)' column for '(.*)' widget")]
+        public void ThenThereIsNoSpecifiedColumnForWidget(string column, string widget)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            var headers = page.GetTableWidgetHeaders(widget);
+
+            Utils.Verify.That(headers.Select(x=>x.Text).ToList().FindAll(x => x.ToLower().Contains(column.ToLower())).Count(), Is.EqualTo(0), $"Table contains {column} header");
         }
 
         [Then(@"Permission panel is displayed to the user")]
@@ -1162,7 +1205,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"Widget Preview shows ""(.*)"" as First Cell value")]
         public void ThenWidgetPreviewShowsAsFirstCellValue(string option)
         {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            var page = _driver.NowAt<AddWidgetPage>();
             Utils.Verify.That(page.GetCardWidgetPreviewText().Text, Is.EqualTo(option), "Widget Preview shown different value");
         }
 

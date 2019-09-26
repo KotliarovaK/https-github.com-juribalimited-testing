@@ -26,7 +26,6 @@ using DashworksTestAutomation.DTO.RuntimeVariables.Rings;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Automations;
 using DashworksTestAutomation.Pages.Evergreen.ItemDetails;
 using DashworksTestAutomation.Utils;
-using NUnit.Framework.Internal;
 using TechTalk.SpecFlow;
 using Logger = DashworksTestAutomation.Utils.Logger;
 
@@ -44,11 +43,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         private readonly CapacityUnits _capacityUnits;
         private readonly Tasks _tasks;
         private readonly ElementCoordinates _elementCoordinates;
-        private readonly ReadinessData _readinessData;
 
         public EvergreenJnr_AdminPage(RemoteWebDriver driver, Teams teams, DTO.RuntimeVariables.Projects projects,
             Buckets buckets, LastUsedBucket lastUsedBucket, Rings rings, CapacityUnits capacityUnits,
-            Tasks tasks, ElementCoordinates elementCoordinates, ReadinessData readinessData)
+            Tasks tasks, ElementCoordinates elementCoordinates)
         {
             _driver = driver;
             _teams = teams;
@@ -59,7 +57,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _capacityUnits = capacityUnits;
             _tasks = tasks;
             _elementCoordinates = elementCoordinates;
-            _readinessData = readinessData;
         }
 
         #region Check button state
@@ -151,6 +148,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.GetFieldByName(fieldName).Clear();
             page.GetFieldByName(fieldName).SendKeys(name);
             page.BodyContainer.Click();
+        }
+
+        [When(@"User enters '(.*)' in the '(.*)' autocomplete field")]
+        public void WhenUserEntersInTheAutocompleteField(string text, string fieldName)
+        {
+            var textBox = _driver.NowAt<BaseDashboardPage>();
+            textBox.GetNamedTextbox(fieldName).Clear();
+            textBox.GetNamedTextbox(fieldName).SendKeys(text);
+            textBox.GetAutocompleteDropdownByText(text).Click();
         }
 
         [Then(@"Scope field is automatically populated")]
@@ -1223,18 +1229,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenCreatedProjectWithNameIsDisplayedCorrectly(string projectName)
         {
             var page = _driver.NowAt<BaseGridPage>();
-            try
-            {
-                _driver.WaitForDataLoading();
-                Verify.IsTrue(page.GetCreatedProjectName(projectName), $"The {projectName} Project is not found");
-            }
-            catch (Exception)
-            {
-                Thread.Sleep(30000);
-                _driver.Navigate().Refresh();
-                _driver.WaitForDataLoading();
-                Verify.IsTrue(page.GetCreatedProjectName(projectName), $"The {projectName} Project is not found");
-            }
+            _driver.WaitForDataLoading();
+            Verify.IsTrue(page.GetCreatedProjectName(projectName, true), $"The {projectName} Project is not found");
         }
 
         [Then(@"Import Project button is not displayed")]
@@ -2043,7 +2039,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
             foreach (var row in items.Rows)
             {
-                Utils.Verify.IsTrue(page.GetTilesByDropdownName(row["Items"]).Displayed,
+                Verify.IsTrue(page.GetTilesByDropdownName(row["Items"]).Displayed,
                     $"{row["Items"]} is not displayed in {dropdownName} dropdown");
             }
         }
@@ -2083,307 +2079,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             DatabaseHelper.ExecuteQuery($"delete from[PM].[dbo].[Projects] where[ProjectID] = '{projectId}'");
         }
 
-        [When(@"User updates readiness properties on Edit Readiness")]
-        public void WhenUpdatesReadinessPropertiesOnEditPage(Table table)
+        [Then(@"""(.*)"" text is displayed in the warning message")]
+        public void ThenTextIsDisplayedInTheWarningMessageOnProjectPage(string text)
         {
-            var createReadiness = _driver.NowAt<CreateReadinessPage>();
+            var page = _driver.NowAt<ProjectsPage>();
 
-            foreach (var row in table.Rows)
-            {
-                if (!string.IsNullOrEmpty(row["Readiness"]))
-                {
-                    createReadiness.ReadinessField.Clear();
-                    createReadiness.ReadinessField.SendKeys(row["Readiness"]);
-                }
-
-                if (!string.IsNullOrEmpty(row["Tooltip"]))
-                {
-                    createReadiness.TooltipField.Clear();
-                    createReadiness.TooltipField.SendKeys(row["Tooltip"]);
-                }
-
-                if (!string.IsNullOrEmpty(row["Ready"]))
-                {
-                    if (row["Ready"].ToLower().Equals("true"))
-                    {
-                        if (!createReadiness.ReadyCheckboxState.Selected)
-                            createReadiness.ReadyCheckbox.Click();
-                    }
-                    if (row["Ready"].ToLower().Equals("false"))
-                    {
-                        if (createReadiness.ReadyCheckboxState.Selected)
-                            createReadiness.ReadyCheckbox.Click();
-                    }
-                }
-
-                if (!string.IsNullOrEmpty(row["DefaultForApplications"]))
-                {
-                    if (row["DefaultForApplications"].ToLower().Equals("true"))
-                    {
-                        if (!createReadiness.DefaultCheckBoxState.Selected)
-                            createReadiness.DefaultForAppCheckBox.Click();
-                    }
-                    if (row["DefaultForApplications"].ToLower().Equals("false"))
-                    {
-                        if (createReadiness.DefaultCheckBoxState.Selected)
-                            createReadiness.DefaultForAppCheckBox.Click();
-                    }
-                }
-
-                if (!string.IsNullOrEmpty(row["ColourTemplate"]))
-                {
-                    createReadiness.ColourDropbox.Click();
-                    createReadiness.SelectObjectForReadinessCreation(row["ColourTemplate"]);
-                }
-            }
-        }
-
-
-        [When(@"User enters ""(.*)"" in Readiness input on Edit Readiness")]
-        public void WhenUpdatesReadinessNameFieldOnEditPage(string text)
-        {
-            var createReadiness = _driver.NowAt<CreateReadinessPage>();
-
-            if (!string.IsNullOrEmpty(text))
-            {
-                createReadiness.ReadinessField.Clear();
-                createReadiness.ReadinessField.SendKeys(text);
-            }
-        }
-
-        [Then(@"User sees ""(.*)"" in Readiness input on Edit Readiness")]
-        public void ThenUserSeesReadinessNameOnEditPage(string text)
-        {
-            var createReadiness = _driver.NowAt<CreateReadinessPage>();
-            Utils.Verify.That(createReadiness.ReadinessField.GetAttribute("value"), Is.EqualTo(text));
-        }
-
-        [Then(@"Readiness input displayed disabled on Edit Readiness")]
-        public void ThenUserSeesReadinessInputDisabledInEditPage()
-        {
-            var createReadiness = _driver.NowAt<CreateReadinessPage>();
-
-            Utils.Verify.That(createReadiness.ReadinessField.Enabled,
-                Is.EqualTo(false), "Readiness input is in different state");
-        }
-
-
-        [When(@"User enters ""(.*)"" in Tooltip input on Edit Readiness")]
-        public void WhenUpdatesTooltipNameOnEditPage(string text)
-        {
-            var createReadiness = _driver.NowAt<CreateReadinessPage>();
-
-            if (!string.IsNullOrEmpty(text))
-            {
-                createReadiness.TooltipField.Clear();
-                createReadiness.TooltipField.SendKeys(text);
-            }
-        }
-
-        [Then(@"User sees ""(.*)"" in Tooltip input on Edit Readiness")]
-        public void ThenUserSeesTooltipNameOnEditPage(string text)
-        {
-            var createReadiness = _driver.NowAt<CreateReadinessPage>();
-            Utils.Verify.That(createReadiness.TooltipField.GetAttribute("value"), Is.EqualTo(text));
-        }
-
-        [Then(@"User sees Tooltip field not equal to ""(.*)"" on Edit Readiness")]
-        public void ThenUserSeesTooltipNameNotEqualToOnEditPage(string text)
-        {
-            var createReadiness = _driver.NowAt<CreateReadinessPage>();
-            Utils.Verify.That(createReadiness.TooltipField.GetAttribute("value"), Is.Not.EqualTo(text));
-        }
-
-
-        [When(@"User sets Ready checkbox in ""(.*)"" on Edit Readiness")]
-        public void WhenUpdatesReadinessReadyPropertiesOnEditPage(string state)
-        {
-            var createReadiness = _driver.NowAt<CreateReadinessPage>();
-
-            if (state.ToLower().Equals("true"))
-            {
-                if (!createReadiness.ReadyCheckboxState.Selected)
-                    createReadiness.ReadyCheckbox.Click();
-            }
-            if (state.ToLower().Equals("false"))
-            {
-                if (createReadiness.ReadyCheckboxState.Selected)
-                    createReadiness.ReadyCheckbox.Click();
-            }
-        }
-
-        [Then(@"User sees Ready checkbox in ""(.*)"" state on Edit Readiness")]
-        public void ThenUserSeesReadinessReadyCheckboxInEditPage(string state)
-        {
-            var createReadiness = _driver.NowAt<CreateReadinessPage>();
-
-            Utils.Verify.That(createReadiness.ReadyCheckboxState.Selected.ToString().ToLower(),
-                Is.EqualTo(state.ToLower()), "Readiness ready state is different");
-        }
-
-
-        [When(@"User sets Default for Applications checkbox in ""(.*)"" on Edit Readiness")]
-        public void WhenUpdatesReadinessDefaultForPropertiesOnEditPage(string state)
-        {
-            var createReadiness = _driver.NowAt<CreateReadinessPage>();
-
-            if (state.ToLower().Equals("true"))
-            {
-                if (!createReadiness.DefaultCheckBoxState.Selected)
-                    createReadiness.DefaultForAppCheckBox.Click();
-            }
-            if (state.ToLower().Equals("false"))
-            {
-                if (createReadiness.DefaultCheckBoxState.Selected)
-                    createReadiness.DefaultForAppCheckBox.Click();
-            }
-        }
-
-        [When(@"User clicks Default for Applications checkbox on Edit Readiness")]
-        public void WhenUpdatesReadinessDefaultPropertiesOnEditPage()
-        {
-            var createReadiness = _driver.NowAt<CreateReadinessPage>();
-            createReadiness.DefaultForAppCheckBox.Click();
-        }
-
-        [Then(@"User sees Default for Applications checkbox in ""(.*)"" state on Edit Readiness")]
-        public void ThenUserSeesReadinessDefaultStateInEditPage(string state)
-        {
-            var createReadiness = _driver.NowAt<CreateReadinessPage>();
-
-            Utils.Verify.That(createReadiness.DefaultCheckBoxState.Selected.ToString().ToLower(),
-                Is.EqualTo(state.ToLower()), "Readiness default state is different");
-        }
-
-        [Then(@"User sees Default for Applications checkbox disabled on Edit Readiness")]
-        public void ThenUserSeesReadinessDefaultStateDisabledInEditPage()
-        {
-            var createReadiness = _driver.NowAt<CreateReadinessPage>();
-
-            Utils.Verify.That(createReadiness.DefaultCheckBoxState.Enabled, Is.EqualTo(false), "Readiness default state is enabled");
-        }
-
-
-        [When(@"User clicks Colour Template field on Edit Readiness")]
-        public void WhenClicksColourTemplateFieldOnEditPage()
-        {
-            var createReadiness = _driver.NowAt<CreateReadinessPage>();
-            createReadiness.ColourDropbox.Click();
-        }
-
-        [Then(@"User sees following options for Colour Template selector on Create Readiness page:")]
-        public void WhenUserSeesFollowingOptionsForColourTemplateSelectorOnCreateReadinessPage(Table items)
-        {
-            var createReadiness = _driver.NowAt<CreateReadinessPage>();
-
-            Utils.Verify.AreEqual(items.Rows.SelectMany(row => row.Values).ToList(),
-                createReadiness.ColourPicker.Select(x => x.Text).ToList(), "Incorrect options in lists dropdown");
-        }
-
-        [Then(@"List of available colours displayed to user on Edit Readiness")]
-        public void ThenUserSeesDropListExpandedOnEditPage()
-        {
-            var createReadiness = _driver.NowAt<CreateReadinessPage>();
-
-            Utils.Verify.That(createReadiness.GetColourStatusNumber(), Is.GreaterThan(0));
-            Utils.Verify.That(createReadiness.GetColourStatusTextNumber(), Is.GreaterThan(0));
-            Utils.Verify.That(createReadiness.GetColourStatusTextNumber(), Is.EqualTo(createReadiness.GetColourStatusTextNumber()));
-        }
-
-        [Then(@"List of available colours is not displayed to user on Edit Readiness")]
-        public void ThenUserCantSeeDropListExpandedOnEditPage()
-        {
-            var createReadiness = _driver.NowAt<CreateReadinessPage>();
-
-            Utils.Verify.That(createReadiness.GetColourStatusTextNumber(), Is.EqualTo(0));
-        }
-
-        [When(@"User remembers opened Readiness data on Edit Readiness")]
-        public void WhenUserRemembersReadinessName()
-        {
-            var page = _driver.NowAt<CreateReadinessPage>();
-            _readinessData.Name = page.ReadinessField.GetAttribute("value");
-            _readinessData.ToolTip = page.TooltipField.GetAttribute("value");
-            _readinessData.Ready = page.ReadyCheckboxState.Selected.ToString().ToLower();
-            _readinessData.Default = page.DefaultCheckBoxState.Selected.ToString().ToLower();
-        }
-
-        [When(@"User enters stored readiness name in Search field for ""(.*)"" column")]
-        public void WhenUserEntersStoredTextInTheSearchFieldForColumn(string columnName)
-        {
-            var searchElement = _driver.NowAt<BaseGridPage>();
-            searchElement.GetSearchFieldByColumnName(columnName, _readinessData.Name);
-        }
-
-        [Then(@"User checks that opened readiness name is the same as stored one")]
-        public void ThenUserChecksThatReadinessNameIsDifferent()
-        {
-            var page = _driver.NowAt<CreateReadinessPage>();
-            Utils.Verify.That(_readinessData.Name, Is.EqualTo(page.ReadinessField.GetAttribute("value")), "Name is different from stored one");
-        }
-
-        [Then(@"Filtered readiness item equals to stored one")]
-        public void ThenUserChecksThatStoredReadinessEqualsToDisplayedOne()
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitForDataLoading();
-
-            var tooltip = page.GetRowContentByColumnName("Tooltip");
-            var defaultFor = page.GetRowContentByColumnName("Default for Applications");
-
-            Utils.Verify.That(_readinessData.ToolTip, Is.EqualTo(tooltip), "Tooltip is different from stored one");
-            Utils.Verify.That(_readinessData.Default, Is.EqualTo(defaultFor.ToLower()), "Default For state different from stored one");
-        }
-
-        [Then(@"Readiness ""(.*)"" displayed before None")]
-        public void ThenUserSeesJustCreatedReadinessBeforeNoneItem(string title)
-        {
-            var readiness = _driver.NowAt<ReadinessPage>();
-            List<string> labels = readiness.GetListOfReadinessLabel();
-
-            Utils.Verify.That(labels.FindIndex(x => x.Equals(title)) + 1, Is.EqualTo(labels.FindIndex(x => x.Equals("NONE"))));
-        }
-
-        [When(@"User clicks ""(.*)"" button in the Readiness dialog screen")]
-        public void WhenUserClicksButtonInTheReadinessDialogScreen(string buttonName)
-        {
-            var button = _driver.NowAt<ReadinessPage>();
-            button.GetReadinessDialogContainerButtonByName(buttonName).Click();
-        }
-
-        [Then(@"""(.*)"" text is displayed in the Readiness Dialog Container")]
-        public void ThenTextIsDisplayedInTheReadinessDialogContainer(string text)
-        {
-            var page = _driver.NowAt<ReadinessPage>();
-            Utils.Verify.IsTrue(page.GetReadinessDialogContainerText(text).Displayed(), $"{text} title is not displayed in the Readiness Dialog Container");
+            Utils.Verify.IsTrue(page.WarningMessageText(text).Displayed(), $"{text} text is not displayed in the Warning message");
         }
 
         [Then(@"""(.*)"" button is displayed in the warning message")]
         public void ThenButtonIsDisplayedInTheWarningMessageOnProjectPage(string text)
         {
             var page = _driver.NowAt<ProjectsPage>();
+
             Utils.Verify.IsTrue(page.GetButtonOnWarningContainerByName(text).Displayed(), $"{text} button is not displayed in the Warning message");
-        }
-
-        [Then(@"""(.*)"" text is displayed in the warning message")]
-        public void ThenTextIsDisplayedInTheWarningMessageOnProjectPage(string text)
-        {
-            var page = _driver.NowAt<ProjectsPage>();
-            Utils.Verify.IsTrue(page.WarningMessageText(text).Displayed(), $"{text} text is not displayed in the Warning message");
-        }
-
-        [Then(@"""(.*)"" title is displayed in the Readiness Dialog Container")]
-        public void ThenTitleIsDisplayedInTheReadinessDialogContainer(string text)
-        {
-            var page = _driver.NowAt<ReadinessPage>();
-            Utils.Verify.IsTrue(page.GetReadinessDialogContainerTitle(text).Displayed(), $"{text} title is not displayed in the Readiness Dialog Container");
-        }
-
-        [Then(@"Readiness Dialog Container is displayed to the User")]
-        public void ThenReadinessDialogContainerIsDisplayedToTheUser()
-        {
-            var page = _driver.NowAt<ReadinessPage>();
-            Utils.Verify.IsTrue(page.ReadinessDialogContainer.Displayed(), "Readiness Dialog Container is displayed");
         }
 
         [Then(@"User sees following Display order on the Automation page")]

@@ -492,6 +492,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12932")]
         [NUnit.Framework.CategoryAttribute("DAS13261")]
         [NUnit.Framework.CategoryAttribute("DAS16826")]
+        [NUnit.Framework.CategoryAttribute("DAS18267")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatUserWithoutJustTheProjectBulkUpdaterRoleCanStillBulkUpdateObjects()
         {
@@ -531,6 +532,7 @@ this.FeatureBackground();
                         "DAS12932",
                         "DAS13261",
                         "DAS16826",
+                        "DAS18267",
                         "Cleanup"});
 #line 119
 this.ScenarioInitialize(scenarioInfo);

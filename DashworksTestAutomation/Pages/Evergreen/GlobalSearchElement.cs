@@ -59,7 +59,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement SearchResultName(string searchText)
         {
             return Driver.FindElement(
-                By.XPath($".//div[@id='pagetitle-text']/pagetitle-text/h1[text()='{searchText}']"));
+                By.XPath($".//div[@id='pagetitle-text']//h1[text()='{searchText}']"));
         }
 
         public IList<IWebElement> GetVersionColumnDataOfSearchResult()

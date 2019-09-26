@@ -56,6 +56,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Scope
             }
         }
 
+        //TODO MB replace by WhenUserExpandsMultiselectToTheTabOnProjectScopeChangesPageAndSelectsFollowingObjects
         [When(@"User expands the object to remove on ""(.*)"" tab")]
         public void WhenUserExpandsTheObjectToRemoveOnTab(string tabName)
         {
@@ -161,6 +162,31 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Scope
         {
             var projectElement = _driver.NowAt<ScopeChangePage>();
             Verify.IsFalse(projectElement.CheckedAllItemCheckbox.Displayed(), "Some Item is selected");
+        }
+
+        [When(@"User expands '(.*)' multiselect to the '(.*)' tab on Project Scope Changes page and selects following Objects")]
+        public void WhenUserExpandsMultiselectToTheTabOnProjectScopeChangesPageAndSelectsFollowingObjects(string multiselectTitle, string tabName, Table table)
+        {
+            var itemsToAdd = table.Rows.Select(x => x["Objects"]).ToList();
+            var basePage = _driver.NowAt<BaseDashboardPage>();
+
+            for (int i = 0; i < 15; i++)
+            {
+                try
+                {
+                    basePage.ExpandCollapseMultiselectButton(multiselectTitle).Click();
+                    break;
+                }
+                catch
+                {
+                    Thread.Sleep(2000);
+                   _driver.Navigate().Refresh();
+                   _driver.WaitForDataLoading();
+                   WhenUserNavigatesToTheTabOnProjectScopeChangesPage(tabName);
+                }
+            }
+
+            basePage.AddItemsToMultiSelect(itemsToAdd);
         }
     }
 }

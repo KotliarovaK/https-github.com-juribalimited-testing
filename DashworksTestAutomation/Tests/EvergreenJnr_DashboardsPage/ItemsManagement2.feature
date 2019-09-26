@@ -268,7 +268,31 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatItsNotPossibleToDeleteWidgetWhenE
 	When User clicks Edit mode trigger on Dashboards page
 	Then Delete widget warning message is displayed on Dashboards page
 
-@Evergreen @Devices @EvergreenJnr_BaseDashboardPage @DAS18080
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18152 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatDuplicateOptionWorksAfterMovingWidget
+	When Dashboard with "Dashboard for DAS18152" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User creates new Widget
+	| WidgetType | Title    | List        | MaxRows | MaxColumns |
+	| List       | 1_Widget | All Devices | 5       | 5          |
+	Then "1_Widget" Widget is displayed to the user
+	When User clicks the "ADD WIDGET" Action button
+	And User creates new Widget
+	| WidgetType | Title    | List        | MaxRows | MaxColumns |
+	| List       | 2_Widget | All Devices | 5       | 5          |
+	Then "2_Widget" Widget is displayed to the user
+	When User clicks Ellipsis menu for "1_Widget" Widget on Dashboards page
+	And User clicks "Move to end" item from Ellipsis menu on Dashboards page
+	And User clicks Ellipsis menu for "1_Widget" Widget on Dashboards page
+	And User clicks "Duplicate" item from Ellipsis menu on Dashboards page
+	Then User sees following Widgets in one Section on Dashboards page:
+	| WidgetNames |
+	| 2_Widget    |
+	| 1_Widget    |
+	| 1_Widget2   |
+
+	@Evergreen @Devices @EvergreenJnr_BaseDashboardPage @DAS18080
 Scenario: EvergreenJnr_Dashboard_CheckThatThereIsNoPossibilityGoBackGromThePrintPreviewModeAfterClickingTheDashworksLogo
 	When User clicks "print"  button on the Dashboards page
 	Then Print Preview is displayed to the User

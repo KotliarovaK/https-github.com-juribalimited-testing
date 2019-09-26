@@ -1601,7 +1601,7 @@ this.FeatureBackground();
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatComplinceNoneOptionIsTranslated")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS16912")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Application Compliance", "None", "Anwendungskonformität", "KEINE", null)]
@@ -1639,7 +1639,7 @@ this.FeatureBackground();
             string[] @__tags = new string[] {
                     "Evergreen",
                     "AllLists",
-                    "EvergreenJnr_FilterFeature",
+                    "EvergreenJnr_Columns",
                     "FilterFunctionality",
                     "DAS16912"};
             if ((exampleTags != null))

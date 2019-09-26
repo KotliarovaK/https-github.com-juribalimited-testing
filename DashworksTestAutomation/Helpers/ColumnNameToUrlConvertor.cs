@@ -39,7 +39,7 @@ namespace DashworksTestAutomation.Helpers
                 case "IP Address":
                     return "networkCardIPAddress";
 
-                case "EmailMigra: Scheduled date":
+                case "EmailMigra: Pre-Migration \\ Scheduled date":
                     return "project_task_48_13127_2_Task";
 
                 case "Device Key":
@@ -168,10 +168,10 @@ namespace DashworksTestAutomation.Helpers
                 case "Owner Compliance":
                     return "ownerMigrationRAG";
 
-                case "MigrationP: Migrated Date":
+                case "MigrationP: Important Dates \\ Migrated Date":
                     return "project_task_34_10290_2_Task";
 
-                case "Barry'sUse: Package Delivery Date":
+                case "Barry'sUse: Audit & Configuration \\ Package Delivery Date":
                     return "project_task_38_10484_2_Task";
 
                 case "Email Count":
@@ -306,6 +306,15 @@ namespace DashworksTestAutomation.Helpers
                     {
                         case "Devices":
                             return "applicationCompliance";
+                        default:
+                            throw new Exception($"'{pageName}' page not found in convertor");
+                    }
+
+                case "MigrationP: Application Readiness":
+                    switch (pageName)
+                    {
+                        case "Applications":
+                            return "project_34_applicationReadiness";
                         default:
                             throw new Exception($"'{pageName}' page not found in convertor");
                     }

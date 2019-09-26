@@ -217,7 +217,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             var pageBase = _driver.NowAt<BaseGridPage>();
             _driver.WaitForElementToBeDisplayed(pageBase.SuccessMessage);
             var pageBuckets = _driver.NowAt<BucketsPage>();
-            Utils.Verify.IsTrue(pageBuckets.SuccessUpdatedMessageBucketsPage(bucketName),
+            Verify.IsTrue(pageBuckets.SuccessUpdatedMessageBucketsPage(bucketName),
                 $"Success Message is not displayed for {bucketName}");
         }
 
@@ -243,7 +243,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
 
             _driver.WaitForElementToBeDisplayed(projectElement.SuccessMessage);
             Thread.Sleep(10000);
-            Utils.Verify.IsTrue(projectElement.TextMessage(textMessage),
+            Verify.IsTrue(projectElement.TextMessage(textMessage),
                 $"{textMessage} is not displayed on the Project page");
         }
 
@@ -290,6 +290,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
                 Thread.Sleep(3000);
             }
             Utils.Verify.IsFalse(message.SuccessMessage.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
+        }
+
+        [Then(@"Success message is not displayed")]
+        public void ThenSuccessMessageIsNotDisplayed()
+        {
+            var message = _driver.NowAt<BaseGridPage>();
+            Verify.IsFalse(message.SuccessMessage.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"Filling field error is not displayed")]

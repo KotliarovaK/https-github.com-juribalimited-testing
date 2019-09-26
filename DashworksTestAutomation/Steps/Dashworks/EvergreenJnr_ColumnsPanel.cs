@@ -158,7 +158,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                         string.Empty);
                 _driver.NavigateToUrl(currentUrl.Replace(originalPart, changedPart));
 
-                var page = _driver.NowAt<EvergreenDashboardsPage>();
+                var page = _driver.NowAt<BaseDashboardPage>();
                 if (page.StatusCodeLabel.Displayed())
                     throw new Exception($"500 error was returned for: {row["ColumnName"]} column");
             }
@@ -196,7 +196,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                         string.Empty);
                 _driver.NavigateToUrl(currentUrl.Replace(originalPart, changedPart));
 
-                var page = _driver.NowAt<EvergreenDashboardsPage>();
+                var page = _driver.NowAt<BaseDashboardPage>();
                 if (page.StatusCodeLabel.Displayed())
                     throw new Exception($"500 error was returned for: {row["ColumnName"]} column");
             }
@@ -211,7 +211,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var originalPart = Regex.Match(currentUrl, pattern).Groups[1].Value;
             _driver.NavigateToUrl(currentUrl.Replace(originalPart, string.Empty));
 
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            var page = _driver.NowAt<BaseDashboardPage>();
             if (page.StatusCodeLabel.Displayed())
                 throw new Exception("500 error was returned after removing all columns from URL");
         }
@@ -227,7 +227,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             //TODO: 6Sep2019 Yurii: added refresh since above method just inserts URL but no navigation actually occurs
             _driver.Navigate().Refresh();
 
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            var page = _driver.NowAt<BaseDashboardPage>();
             if (page.StatusCodeLabel.Displayed())
                 throw new Exception("500 error was returned after removing all columns from URL");
         }
@@ -241,7 +241,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var originalPart = Regex.Match(currentUrl, pattern).Value;
             _driver.NavigateToUrl(currentUrl.Replace(originalPart, string.Empty));
 
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            var page = _driver.NowAt<BaseDashboardPage>();
             if (page.StatusCodeLabel.Displayed())
                 throw new Exception("500 error was returned after removing all columns from URL");
         }
@@ -439,6 +439,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         private void CheckColumnDisplayedState(Table table, bool displayedState)
         {
             var listPageMenu = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForElementToBeDisplayed(listPageMenu.RefreshTableButton);
             listPageMenu.RefreshTableButton.Click();
             _driver.WaitForDataLoading();
             Thread.Sleep(1000);
@@ -453,7 +454,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<ColumnsElement>();
 
             foreach (var row in table.Rows)
-                Utils.Verify.That(page.GetSubcategoriesCountByCategoryName(row["Category"]).ToString(),Is.EqualTo(row["Number"]),
+                Utils.Verify.That(page.GetSubcategoriesCountByCategoryName(row["Category"]).ToString(), Is.EqualTo(row["Number"]),
                     $"Check {row["Category"]} category");
         }
 
@@ -465,6 +466,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             foreach (var row in table.Rows)
                 Utils.Verify.That(page.CategoryIsDisplayed(row["Category"]), Is.False,
                     $"Check {row["Category"]} category");
+        }
+
+        [Then(@"Columns Searchfield placeholder is '(.*)'")]
+        public void ThenColumnsSearchfieldPlaceholderIs(string expectedPlaceholderName)
+        {
+            var columnsElement = _driver.NowAt<ColumnsElement>();
+            var actualPlaceholderName = columnsElement.SearchTextBox.GetAttribute("placeholder");
+            Verify.AreEqual(expectedPlaceholderName, actualPlaceholderName, "Incorrect Placeholder in the search field");
         }
     }
 }

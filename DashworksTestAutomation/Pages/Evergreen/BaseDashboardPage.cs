@@ -42,6 +42,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//h1")]
         public IWebElement Heading { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='status-code']")]
+        public IWebElement StatusCodeLabel { get; set; }
+
         [FindsBy(How = How.XPath, Using = "//p[@class='topnav-item-menu-toggle']//button[@mattooltip='Toggle Menu']")]
         public IWebElement ToggleMenu { get; set; }
 
@@ -534,6 +537,14 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(by);
         }
 
+        public IWebElement GetAutocompleteDropdownByText(string text)
+        {
+            var selector = By.XPath($"//*[contains(text(), '{text}')]/ancestor::mat-option");
+            Driver.WaitForDataLoading();
+            Driver.WaitForElementToBeDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
         public IWebElement GetInputAddButton(string placeholder)
         {
             var selector = GetNamedTextbox(placeholder).FindElement(By.XPath(".//../ancestor::mat-form-field//button"));
@@ -826,6 +837,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             var by = By.XPath($".//span[text()=\"{columnName}\"]/ancestor::div[@col-id]");
             return Driver.FindElement(by).GetAttribute("col-id");
+        }
+
+        public string GetColumnWidthByName(string columnName)
+        {
+            var by = By.XPath($".//div[@col-id='{GetColIdByColumnName(columnName)}' and @role='gridcell']");
+            return Driver.FindElement(by).GetCssValue("width");
         }
 
         public string GetColumnContentByColumnName(string columnName)
@@ -1185,8 +1202,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IWebElement ExpandCollapseMultiselectButton(string titleText)
         {
+            var buttonSelector = By.XPath(".//button");
+
             var element = GetExpandableMultiselect(titleText);
-            var button = element.FindElement(By.XPath(".//button"));
+
+            var button = element.FindElement(buttonSelector);
             return button;
         }
     }

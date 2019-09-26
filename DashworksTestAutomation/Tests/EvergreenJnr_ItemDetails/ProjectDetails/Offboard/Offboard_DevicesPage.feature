@@ -90,3 +90,18 @@ Scenario: EvergreenJnr_DevicesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffb
 	And User clicks the "OFFBOARD" Action button
 	Then Dialog Pop-up is displayed for User
 	And following text 'Offboarding device 03AK1ZP1C9MPFV. Offboarding an object deletes all project related information about it.' is displayed in Dialog Pop-up
+
+#tag 'not_rady' added because need to create Cleanup (DAS-18070)
+@Evergreen @Devices @EvergreenJnr_ItemDetails @Offboard @DAS17912 @Cleanup @Not_Ready
+Scenario: EvergreenJnr_DevicesList_CheckThatGreenBannerIsNotVisibleOnTheOtherPagesAfterTheObjectWasSuccessfullyQueuedForTheOffboarding
+	When User navigates to the 'Device' details page for '03AK1ZP1C9MPFV' item
+	Then Details page for "03AK1ZP1C9MPFV" item is displayed to the user
+	When User switches to the "USE ME FOR AUTOMATION(USR SCHDLD)" project in the Top bar on Item details page
+	When User navigates to the 'Projects' left menu item
+	And User navigates to the "Project Details" sub-menu on the Details page
+	And User clicks the "OFFBOARD" Action button
+	And User clicks the "OFFBOARD" Action button
+	And User clicks the "OFFBOARD" Action button
+	Then Success message is displayed and contains "The device was successfully queued for offboarding from USE ME FOR AUTOMATION(DEVICE SCHDLD)" text
+	When User navigates to the "Project Details" sub-menu on the Details page
+	Then Success message is not displayed

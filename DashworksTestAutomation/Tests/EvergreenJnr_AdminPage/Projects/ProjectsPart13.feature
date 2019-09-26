@@ -28,7 +28,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnlyFilteredListObjectsAreUsedAsAScope
 	Then "Devices to add (0 of 222 selected)" is displayed to the user in the Project Scope Changes section
 	Then There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @UpdatingName @DAS13096 @DAS15994 @Cleanup @Projects @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @UpdatingName @DAS13096 @DAS15994 @Cleanup @Projects
 Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameEditedInSeniorIsUpdatedInAdminTab
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -36,20 +36,20 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameEditedInSeniorIsUpdatedInA
 	Then "Projects" page should be displayed to the user
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
-	When User enters "Project13096" in the "Project Name" field
+	When User enters "10_Project13096" in the "Project Name" field
 	And User selects 'All Devices' option from 'Scope' autocomplete
 	When User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
-	Then Project "Project13096" is displayed to user
+	Then Project "10_Project13096" is displayed to user
 	When User click on Back button
-	Then created Project with "Project13096" name is displayed correctly
+	Then created Project with "10_Project13096" name is displayed correctly
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
-	When User navigate to "Project13096" Project
-	Then Project with "Project13096" name is displayed correctly
+	When User navigate to "10_Project13096" Project
+	Then Project with "10_Project13096" name is displayed correctly
 	And "Manage Project Details" page is displayed to the user
-	When User updates Project Name to "Project13096 upd on Senior" on Senior
+	When User updates Project Name to "1_Project13096 upd on Senior" on Senior
 	When User clicks "Update" button
 	Then Success message is displayed with "Project was successfully updated" text
 	When User navigate to Evergreen link
@@ -57,10 +57,11 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameEditedInSeniorIsUpdatedInA
 	Then Admin page should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
-	And created Project with "Project13096 upd on Senior" name is displayed correctly
-	When User enters "Project13096 upd on Senior" text in the Search field for "Project" column
+	And created Project with "1_Project13096 upd on Senior" name is displayed correctly
+	When User enters "1_Project13096 upd on Senior" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
+	Then There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12776 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterClickUpdateForDynamicList
