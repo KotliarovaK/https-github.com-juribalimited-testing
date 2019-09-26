@@ -4225,10 +4225,10 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FiltersFeature")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS12351")]
-        [NUnit.Framework.TestCaseAttribute("Windows7Mi: Category", "None", "17,274", null)]
+        [NUnit.Framework.TestCaseAttribute("Windows7Mi: Category", "None", "17,248", null)]
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Migration \\ Values but no RAG", "Three", "1", null)]
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Portal Self Service \\ SS Application List Completed", "Not Applicable", "5,159", null)]
-        [NUnit.Framework.TestCaseAttribute("MigrationP: Category", "None", "17,248", null)]
+        [NUnit.Framework.TestCaseAttribute("MigrationP: Category", "None", "17,274", null)]
         [NUnit.Framework.TestCaseAttribute("Babel(Engl: Path", "Machines", "62", null)]
         [NUnit.Framework.TestCaseAttribute("ComputerSc: Path", "Request Type A", "132", null)]
         [NUnit.Framework.TestCaseAttribute("MigrationP: Path", "[Default (Computer)]", "41", null)]
@@ -7168,40 +7168,40 @@ this.FeatureBackground();
                         "Evergreen",
                         "1"});
             table128.AddRow(new string[] {
-                        "Project: 1803",
+                        "Project Rings: 1803",
                         "1"});
             table128.AddRow(new string[] {
-                        "Project: Babel(Engl",
+                        "Project Rings: Babel(Engl",
                         "1"});
             table128.AddRow(new string[] {
-                        "Project: ComputerSc",
+                        "Project Rings: ComputerSc",
                         "1"});
             table128.AddRow(new string[] {
-                        "Project: DeviceSche",
+                        "Project Rings: DeviceSche",
                         "1"});
             table128.AddRow(new string[] {
-                        "Project: Havoc(BigD",
+                        "Project Rings: Havoc(BigD",
                         "1"});
             table128.AddRow(new string[] {
-                        "Project: ICSP",
+                        "Project Rings: ICSP",
                         "1"});
             table128.AddRow(new string[] {
-                        "Project: prK",
+                        "Project Rings: prK",
                         "1"});
             table128.AddRow(new string[] {
-                        "Project: Windows101",
+                        "Project Rings: Windows101",
                         "1"});
             table128.AddRow(new string[] {
-                        "Project: Windows102",
+                        "Project Rings: Windows102",
                         "1"});
             table128.AddRow(new string[] {
-                        "Project: Windows10T",
+                        "Project Rings: Windows10T",
                         "1"});
             table128.AddRow(new string[] {
-                        "Project: Windows10U",
+                        "Project Rings: Windows10U",
                         "1"});
             table128.AddRow(new string[] {
-                        "Project: Windows7Mi",
+                        "Project Rings: Windows7Mi",
                         "1"});
 #line 1661
  testRunner.Then("Category with counter is displayed on Filter panel", ((string)(null)), table128, "Then ");

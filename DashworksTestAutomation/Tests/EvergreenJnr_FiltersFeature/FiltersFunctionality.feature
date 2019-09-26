@@ -991,10 +991,10 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckThat500ISEInvalidColumnNameError
 
 Examples: 
 	| FilterName                                                      | SelectedCheckboxes   | Rows   |
-	| Windows7Mi: Category                                            | None                 | 17,274 |
+	| Windows7Mi: Category                                            | None                 | 17,248 |
 	| Windows7Mi: Migration \ Values but no RAG                       | Three                | 1      |
 	| Windows7Mi: Portal Self Service \ SS Application List Completed | Not Applicable       | 5,159  |
-	| MigrationP: Category                                            | None                 | 17,248 |
+	| MigrationP: Category                                            | None                 | 17,274 |
 	| Babel(Engl: Path                                                | Machines             | 62     |
 	| ComputerSc: Path                                                | Request Type A       | 132    |
 	| MigrationP: Path                                                | [Default (Computer)] | 41     |
@@ -1659,20 +1659,20 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatOnlyRingsCategoryOfSameTypeProjectA
 	And User clicks Add New button on the Filter panel
 	And User enters "ring" text in Search field at Filters Panel
 	Then Category with counter is displayed on Filter panel
-	| Category            | Number |
-	| Evergreen           | 1      |
-	| Project: 1803       | 1      |
-	| Project: Babel(Engl | 1      |
-	| Project: ComputerSc | 1      |
-	| Project: DeviceSche | 1      |
-	| Project: Havoc(BigD | 1      |
-	| Project: ICSP       | 1      |
-	| Project: prK        | 1      |
-	| Project: Windows101 | 1      |
-	| Project: Windows102 | 1      |
-	| Project: Windows10T | 1      |
-	| Project: Windows10U | 1      |
-	| Project: Windows7Mi | 1      |
+	| Category                  | Number |
+	| Evergreen                 | 1      |
+	| Project Rings: 1803       | 1      |
+	| Project Rings: Babel(Engl | 1      |
+	| Project Rings: ComputerSc | 1      |
+	| Project Rings: DeviceSche | 1      |
+	| Project Rings: Havoc(BigD | 1      |
+	| Project Rings: ICSP       | 1      |
+	| Project Rings: prK        | 1      |
+	| Project Rings: Windows101 | 1      |
+	| Project Rings: Windows102 | 1      |
+	| Project Rings: Windows10T | 1      |
+	| Project Rings: Windows10U | 1      |
+	| Project Rings: Windows7Mi | 1      |
 
 @Evergreen @Users @Evergreen_FiltersFeature @FilterFunctionality @DAS15140
 Scenario: EvergreenJnr_UsersList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAreAvailableInPanel
