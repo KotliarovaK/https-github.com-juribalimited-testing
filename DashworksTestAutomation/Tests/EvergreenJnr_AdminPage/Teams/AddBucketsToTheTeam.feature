@@ -10,8 +10,6 @@ Scenario: EvergreenJnr_AdminPage_AddingBucketsToTheTeam
 	When User creates new Team via api
 	| TeamName  | Description | IsDefault |
 	| TestTeam5 | test        | false     |
-	When User clicks 'Admin' on the left-hand menu
-	Then 'Admin' list should be displayed to the user
 	When User creates new Bucket via api
 	| Name        | TeamName  | IsDefault |
 	| TestBucket6 | Team 1045 | false     |
