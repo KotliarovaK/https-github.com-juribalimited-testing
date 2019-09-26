@@ -292,7 +292,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDuplicateOptionWorksAfterMovingWi
 	| 1_Widget    |
 	| 1_Widget2   |
 
-	@Evergreen @Devices @EvergreenJnr_BaseDashboardPage @DAS18080
+@Evergreen @Devices @EvergreenJnr_BaseDashboardPage @DAS18080
 Scenario: EvergreenJnr_Dashboard_CheckThatThereIsNoPossibilityGoBackGromThePrintPreviewModeAfterClickingTheDashworksLogo
 	When User clicks "print"  button on the Dashboards page
 	Then Print Preview is displayed to the User
