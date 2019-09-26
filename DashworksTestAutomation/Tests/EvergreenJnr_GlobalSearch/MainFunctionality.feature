@@ -46,14 +46,14 @@ Scenario: EvergreenJnr_GlobalSearch_CheckThatErrorMessageIsNotDisplayedAfterTypi
 
 @Evergreen @GlobalSearch @EvergreenJnr_GlobalSearch @MainFunctionality @DAS11350
 Scenario: EvergreenJnr_DevicesList_Search_CheckThatGlobalSearchFieldHaveAResetButton
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	When User type "CheckTheResetButton" in Global Search Field
 	Then reset button in Global Search field is displayed
 
 @Evergreen @GlobalSearch @EvergreenJnr_GlobalSearch @MainFunctionality @DAS11495
 Scenario Outline: EvergreenJnr_AllLists_Search_CheckThat500ErrorMessageIsNotDisplayedAfterEnteringTheSpecificCharacters
-	When User clicks "<PageName>" on the left-hand menu
+	When User clicks '<PageName>' on the left-hand menu
 	Then "All <PageName>" list should be displayed to the user
 	When User type "[^abc]" in Global Search Field
 	Then "All <PageName>" list should be displayed to the user
@@ -69,7 +69,7 @@ Examples:
 Scenario: EvergreenJnr_Search_CheckThatAnyTabCanBeOpenedAfterSearchHasBeenPerformed
 	When User type "jet" in Global Search Field and presses Enter key
 	Then list of results is displayed to the user
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	And There are no errors in the browser console
 

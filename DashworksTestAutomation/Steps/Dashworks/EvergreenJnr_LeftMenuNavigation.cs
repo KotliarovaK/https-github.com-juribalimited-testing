@@ -20,7 +20,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver = driver;
         }
 
-        [When(@"User clicks ""(.*)"" on the left-hand menu")]
+        [When(@"User clicks '(.*)' on the left-hand menu")]
         public void WhenUserClicksOnTheLeft_HandMenu(string listPage)
         {
             NavigateToLeftHandMenu(listPage, true);

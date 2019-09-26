@@ -214,7 +214,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15938 @DAS17076 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckParametersToCreateUpdatePathAction
 #Pre-requisites:
-	When User clicks "Users" on the left-hand menu
+	When User clicks 'Users' on the left-hand menu
 	And User clicks the Filters button
 	And User add "City" filter where type is "Equals" with added column and "Melbourne" Lookup option
 	And User create dynamic list with "Melbourne Users" name on "Users" page
@@ -225,7 +225,7 @@ Scenario: EvergreenJnr_AdminPage_CheckParametersToCreateUpdatePathAction
 	Then Create Project button is enabled
 	When User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
-	When User clicks "Projects" on the left-hand menu
+	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "Melbourne User Migration" Project
 	Then Project with "Melbourne User Migration" name is displayed correctly
@@ -330,7 +330,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditActionPage
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActions
 	#Add Pre-requisites to Gold Data
 	#Pre-requisites:
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	And User clicks the Filters button
 	And User add "City" filter where type is "Equals" with added column and "Edinburgh" Lookup option
 	And User create dynamic list with "Edinburgh Devices" name on "Devices" page
@@ -340,7 +340,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActions
 	When User enters "Edinburgh Devices Migration" in the "Project Name" field
 	When User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
-	When User clicks "Projects" on the left-hand menu
+	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "Edinburgh Devices Migration" Project
 	Then "Manage Project Details" page is displayed to the user
@@ -389,7 +389,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActions
 	Then selected task was published
 	When User navigate to Evergreen link
 	#Pre-requisites:
-	And User clicks "Admin" on the left-hand menu
+	And User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
@@ -424,14 +424,14 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActions
 Scenario: EvergreenJnr_AdminPage_CheckUpdatingTaskWhichImpactsReadinessOwnerAndDueDate
 	#Add Pre-requisites to Gold Data
 	#Pre-requisites:
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	And User clicks the Filters button
 	And User add "City" filter where type is "Equals" with added column and "Edinburgh" Lookup option
 	And User create dynamic list with "EdinburghDevices_17234" name on "Devices" page
 	When Project created via API and opened
 	| ProjectName                 | Scope                  | ProjectTemplate | Mode               |
 	| Edinburgh Devices Migration | EdinburghDevices_17234 | None            | Standalone Project |
-	When User clicks "Projects" on the left-hand menu
+	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "Edinburgh Devices Migration" Project
 	Then "Manage Project Details" page is displayed to the user
@@ -456,7 +456,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdatingTaskWhichImpactsReadinessOwnerAndD
 	Then selected task was published
 	When User navigate to Evergreen link
 	#Pre-requisites:
-	And User clicks "Admin" on the left-hand menu
+	And User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
@@ -734,7 +734,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionStageSelectboxIsDisplayedForSpec
 	| Stage 1 |
 	| Stage 2 |
 	| Stage 3 |
-	When User clicks "Users" on the left-hand menu
+	When User clicks 'Users' on the left-hand menu
 	When User clicks "YES" button in the Warning Pop-up message
 	Then "All Users" list should be displayed to the user
 	When User clicks the Actions button

@@ -7,7 +7,7 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Projects @Senior_Projects @DAS13498 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatChangingTheProjectNameOrShortNameInSeniorIsReflectedInEvergreen
-	When User clicks "Projects" on the left-hand menu
+	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User clicks create Project button
 	Then "Create Project" page is displayed to the user
@@ -23,7 +23,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatChangingTheProjectNameOrShortNameInSen
 	And User clicks content from "Project" column
 	Then "SnrProject13498" content is displayed in "Project Name" field
 	And "13498Pr" content is displayed in "Project Short Name" field
-	When User clicks "Projects" on the left-hand menu
+	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "SnrProject13498" Project
 	Then Project with "SnrProject13498" name is displayed correctly
@@ -47,7 +47,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatChangingTheProjectNameOrShortNameInSen
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Projects @UpdatingName @Senior_Projects @DAS13501 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatNameForProjectThatCreatedInSeniorWasUpdatedCorrectlyInAdminPage
-	When User clicks "Projects" on the left-hand menu
+	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User clicks create Project button
 	Then "Create Project" page is displayed to the user
@@ -69,7 +69,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatNameForProjectThatCreatedInSeniorWasU
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Projects @DAS13424
 Scenario: EvergreenJnr_AdminPage_CheckTheCapacitySlotsLinkRedirectsToTheCorrectScreen
-	When User clicks "Projects" on the left-hand menu
+	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "Windows 7 Migration (Computer Scheduled Project)" Project
 	Then Project with "Windows 7 Migration (Computer Scheduled Project)" name is displayed correctly

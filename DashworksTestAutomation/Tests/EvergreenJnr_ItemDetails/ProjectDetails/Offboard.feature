@@ -8,7 +8,7 @@ Background: Pre-Conditions
 	#TODO create API ONBOARDING step;
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @Offboard @DAS17843 @DAS17926 @Cleanup @Not_Ready
 Scenario Outline: EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectlyForProjectDetailsPageWhichHasAssociatedObjects
-	When User clicks "<PageName>" on the left-hand menu
+	When User clicks '<PageName>' on the left-hand menu
 	Then "<LoadedPage>" list should be displayed to the user
 	When User perform search by "<ItemName>"
 	And User click content from "<ColumnName>" column
@@ -42,7 +42,7 @@ Examples:
 	#TODO create API ONBOARDING step;
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @Offboard @DAS17843 @DAS17926 @Cleanup @Not_Ready
 Scenario Outline: EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectlyForProjectDetailsPageWhichHasNoAssociatedObjects
-	When User clicks "<PageName>" on the left-hand menu
+	When User clicks '<PageName>' on the left-hand menu
 	Then "<LoadedPage>" list should be displayed to the user
 	When User perform search by "<ItemName>"
 	And User click content from "<ColumnName>" column

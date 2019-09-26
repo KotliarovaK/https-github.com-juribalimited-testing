@@ -7,7 +7,7 @@ Background: Pre-Conditions
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS10988 @DAS11951 @Cleanup
 Scenario: EvergreenJnr_DevicesLists_CheckThatUserIsNotAbleToCreateListsWithSameName
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	When User clicks on 'Hostname' column header
 	Then data in table is sorted by 'Hostname' column in ascending order
@@ -24,7 +24,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatUserIsNotAbleToCreateListsWithSameN
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11655 @DAS11666 @DAS12156 @Cleanup
 Scenario Outline: EvergreenJnr_DevicesLists_CheckThatTheSavedListWithOwnerDisplayNameFilterIsDisplayed
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
@@ -53,7 +53,7 @@ Examples:
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11015 @DAS11951 @Cleanup
 Scenario: EvergreenJnr_DevicesLists_CheckThatUserIsNotAbleToCreateListsWithLongNames
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	When User clicks on 'Hostname' column header
 	Then data in table is sorted by 'Hostname' column in ascending order
@@ -74,7 +74,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatUserIsNotAbleToCreateListsWithLongN
 
 @Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS11342
 Scenario Outline: EvergreenJnr_AllLists_CheckThatAllListsNamesAreDisplayedCorrectly
-	When User clicks "<ListName>" on the left-hand menu
+	When User clicks '<ListName>' on the left-hand menu
 	Then "<AllListName>" list should be displayed to the user
 	Then "<AllListName>" list name is displayed correctly
 

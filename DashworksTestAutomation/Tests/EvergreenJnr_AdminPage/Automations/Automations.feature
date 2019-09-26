@@ -495,7 +495,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeListIsLoadedWithCor
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15886 @DAS15423 @DAS16317 @DAS16316 @DAS17223 @DAS17336 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextForDeletedList
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	And User clicks the Filters button
 	And User add "City" filter where type is "Equals" with added column and "Belfast" Lookup option
 	And User create dynamic list with "DAS15423_List" name on "Devices" page
@@ -513,7 +513,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextFor
 	When User clicks newly created object link
 	Then Automation page is displayed correctly
 	Then "DAS15423_List" content is displayed in the Scope Automation dropdown
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	When User navigates to the "DAS15423_List" list
 	Then "DAS15423_List" list is displayed to user
@@ -611,7 +611,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateAndCreateActionsFunctionalityForAuto
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17003 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_ChechAutomationsPermissions
-	When User clicks "Projects" on the left-hand menu
+	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console
@@ -644,7 +644,7 @@ Scenario: EvergreenJnr_AdminPage_ChechAutomationsPermissions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17003 @DAS17789 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_ChechAutomationsPermissionsForScopeDropdownLists
-	When User clicks "Projects" on the left-hand menu
+	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console
@@ -662,7 +662,7 @@ Scenario: EvergreenJnr_AdminPage_ChechAutomationsPermissionsForScopeDropdownList
 	Then Dashworks homepage is displayed to the user in a logged in state
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	And User clicks the Filters button
 	And User add "City" filter where type is "Equals" with added column and "Belfast" Lookup option
 	When User clicks Save button on the list panel
@@ -683,14 +683,14 @@ Scenario: EvergreenJnr_AdminPage_ChechAutomationsPermissionsForScopeDropdownList
 	Then "Automations" page should be displayed to the user
 	When User clicks the "CREATE AUTOMATION" Action button
 	When User selects '17003_List' option from 'Scope' autocomplete
-	When User clicks "Projects" on the left-hand menu
+	When User clicks 'Projects' on the left-hand menu
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console
 	And User removes "DAS_17003" User
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15949 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatDeviceLisFiltertHasAppropriateAutomation
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	And User clicks the Filters button
 	And User add "Device Type" filter where type is "Equals" with added column and "Virtual" Lookup option
 	And User create dynamic list with "DAS15949_List" name on "Devices" page
@@ -717,7 +717,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeviceLisFiltertHasAppropriateAutomati
 	And User clicks "Automations" link on the Admin page
 	And User clicks "Run now" option in Cog-menu for "DAS15949_Automation" item on Admin page and wait for processing
 	#cjheck filters
-	And User clicks "Devices" on the left-hand menu
+	And User clicks 'Devices' on the left-hand menu
 	And User clicks the Filters button
 	And User clicks Add New button on the Filter panel
 	And User enters "DAS15949_Automation" text in Search field at Filters Panel

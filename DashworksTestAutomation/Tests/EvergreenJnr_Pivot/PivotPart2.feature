@@ -7,7 +7,7 @@ Background: Pre-Conditions
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14224 @DAS14413 @Cleanup
 Scenario: EvergreenJnr_DevicesList_ChecksThatPivotsAreNotShownInTheListToSelectOnScopeChangesPage
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	When User navigates to Pivot
 	And User selects the following Row Groups on Pivot:
@@ -62,7 +62,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatPivotsAreNotShownInTheListToSelectO
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13765 @DAS13833 @DAS13855
 Scenario: EvergreenJnr_DevicesList_ChecksThatPivotTableDisplayedCorrectlyAfterRemovingColumn
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	When User navigates to Pivot
 	And User selects the following Row Groups on Pivot:
@@ -84,7 +84,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatPivotTableDisplayedCorrectlyAfterRe
 
 @Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS14206 @DAS14413 @DAS14748 @DAS13786 @DAS13869
 Scenario: EvergreenJnr_UsersList_ChecksThatUserCanCreateOneMorePivotOnSelectedPage
-	When User clicks "Users" on the left-hand menu
+	When User clicks 'Users' on the left-hand menu
 	Then "All Users" list should be displayed to the user
 	When User navigates to Pivot
 	And User selects the following Row Groups on Pivot:
@@ -108,7 +108,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatUserCanCreateOneMorePivotOnSelectedPa
 
 @Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS14206 @Cleanup
 Scenario: EvergreenJnr_UsersList_ChecksThatUserCanCreateOneMorePivotOnCreatedList
-	When User clicks "Users" on the left-hand menu
+	When User clicks 'Users' on the left-hand menu
 	Then "All Users" list should be displayed to the user
 	When User clicks on 'Username' column header
 	Then data in table is sorted by 'Username' column in ascending order
@@ -148,7 +148,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatUserCanCreateOneMorePivotOnCreatedLis
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14413
 Scenario: EvergreenJnr_DevicesList_CheckThatPivotPanelIsDisplayedCorrectlyAfterClicksOnResetButton
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	When User navigates to Pivot
 	And User selects the following Row Groups on Pivot:
@@ -177,7 +177,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatPivotPanelIsDisplayedCorrectlyAfterC
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14379 @DAS11291 @DAS14745 @DAS16399
 Scenario: EvergreenJnr_DevicesList_ChecksTooltipsOnPivot
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	When User navigates to Pivot
 	And User clicks the "ADD ROW GROUP" Action button

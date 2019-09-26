@@ -94,7 +94,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayed
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15583 @DAS16884
 Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForUsersPageInProjectMode
-	When User clicks "Users" on the left-hand menu
+	When User clicks 'Users' on the left-hand menu
 	Then "All Users" list should be displayed to the user
 	When User perform search by "0072B088173449E3A93"
 	And User click content from "Username" column
@@ -183,7 +183,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayed
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16830
 Scenario: EvergreenJnr_UsersList_ChecksThatTheNumberOfCountersInTheTabIsEqualToTheNumberOfFieldsInTheTable
-	When User clicks "Users" on the left-hand menu
+	When User clicks 'Users' on the left-hand menu
 	Then "All Users" list should be displayed to the user
 	When User perform search by "ACG370114"
 	And User click content from "Username" column
@@ -243,7 +243,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatTheNumberOfCountersInTheTabIsEqualToT
 	
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17769
 Scenario: EvergreenJnr_UsersList_CheckThatCollectionsSubMenuCounterMatchTheNumberOfCollectionsForThisUser
-	When User clicks "Users" on the left-hand menu
+	When User clicks 'Users' on the left-hand menu
 	Then "All Users" list should be displayed to the user
 	When User perform search by "allanj"
 	And User click content from "Username" column

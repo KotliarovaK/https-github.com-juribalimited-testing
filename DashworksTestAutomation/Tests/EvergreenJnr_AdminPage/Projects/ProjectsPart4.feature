@@ -110,7 +110,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11729 @DAS13199 @Cleanup @Cleanup @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedIfTryToRemoveCreatedListThatUsedInAnyProject
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	When User clicks on 'Hostname' column header
 	And User create dynamic list with "TestDynamicList11729" name on "Devices" page
@@ -125,7 +125,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedIfTryToRemove
 	And User selects 'TestDynamicList11729' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
 	Then created Project with "TestName11729" name is displayed correctly
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	When User clicks Settings button for "TestDynamicList11729" list
 	And User clicks Delete button for custom list

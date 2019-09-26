@@ -54,7 +54,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedApplicationsAreDisplayedCapac
 	When User creates new Capacity Unit via api
 	| Name  | Description | IsDefault | Project         |
 	| 1Test | DAS13156    | true      | Email Migration |
-	When User clicks "Applications" on the left-hand menu
+	When User clicks 'Applications' on the left-hand menu
 	Then "All Applications" list should be displayed to the user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user

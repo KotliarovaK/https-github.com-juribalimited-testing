@@ -8,7 +8,7 @@ Background: Pre-Conditions
 
 @Evergreen @AllLists @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS11656
 Scenario Outline: EvergreenJnr_AllList_CheckThatColumnHeaderFontWidthConformsToDesign
-	When User clicks "<ListName>" on the left-hand menu
+	When User clicks '<ListName>' on the left-hand menu
 	Then "All <ListName>" list should be displayed to the user
 	And Appropriate header font weight is displayed
 	Then "v5.4.2.0" Application version is displayed
@@ -22,7 +22,7 @@ Examples:
 
 @Evergreen @AllLists @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS11618
 Scenario Outline: EvergreenJnr_AllList_CheckDefaultSortOrderOnTheLists
-	When User clicks "<ListName>" on the left-hand menu
+	When User clicks '<ListName>' on the left-hand menu
 	Then "All <ListName>" list should be displayed to the user
 	And The first cell of the table matches to default sorting "<ListName>" list
 	And data in the table is sorted by "<ColumnName>" column in ascending order by default
@@ -36,7 +36,7 @@ Examples:
 
 @Evergreen @AllLists @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS14700
 Scenario Outline: EvergreenJnr_AllList_CheckDefaultColumnsDisplayingWhenUsingAllLink
-	When User clicks "<ListName>" on the left-hand menu
+	When User clicks '<ListName>' on the left-hand menu
 	And User navigates to the "<AllItems>" list
 	Then Column is displayed in following order:
 	| ColumnName |
@@ -55,7 +55,7 @@ Examples:
 
 @Evergreen @AllLists @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS11988 @DAS10972
 Scenario Outline: EvergreenJnr_AllLists_CheckThatSaveListFunctionIsAvailableAfterSortingColumns
-	When User clicks "<ListName>" on the left-hand menu
+	When User clicks '<ListName>' on the left-hand menu
 	Then "All <ListName>" list should be displayed to the user
 	When User clicks on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in ascending order
@@ -92,7 +92,7 @@ Scenario: EvergreenJnr_AllList_CheckThatNoConsoleErrorsAreDisplayedAfterQuicklyN
 
 @Evergreen @AllLists @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS13766 @DAS14183
 Scenario Outline: EvergreenJnr_AllList_CheckPositionOfContextMenuInGrid
-	When User clicks "<ListName>" on the left-hand menu
+	When User clicks '<ListName>' on the left-hand menu
 	And User performs right-click on "<CellText>" cell in the grid
 	Then User sees context menu placed near "<CellText>" cell in the grid
 
@@ -105,7 +105,7 @@ Examples:
 
 @Evergreen @Devices @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS12174
 Scenario: EvergreenJnr_DevicesList_CheckThatURLsAreUpdatedAfterAddingSortingAndColumns
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
@@ -125,7 +125,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatURLsAreUpdatedAfterAddingSortingAndC
 
 @Evergreen @Users @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS12174 @DAS13001 @DAS16300 @Not_Run
 Scenario: EvergreenJnr_UsersList_CheckThatURLsAreUpdatedAfterAddingFilters
-	When User clicks "Users" on the left-hand menu
+	When User clicks 'Users' on the left-hand menu
 	Then "All Users" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
@@ -148,7 +148,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatURLsAreUpdatedAfterAddingFilters
 
 @Evergreen @Devices @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS11641
 Scenario: EvergreenJnr_DevicesList_CheckThatActionsDetailsColumnsFiltersButtonsAreNotClickableWhenOpenedNotificationsAndUserProfilesDropdownBlocks
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	When User clicks Account Profile dropdown
 	Then Account Profile menu is displayed correctly
@@ -157,7 +157,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatActionsDetailsColumnsFiltersButtonsA
 
 @Evergreen @AllLists @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS10972 @DAS12602 @Cleanup
 Scenario Outline: EvergreenJnr_AllList_CheckThatEditListFunctionIsAvailableAfterSortingColumns
-	When User clicks "<ListName>" on the left-hand menu
+	When User clicks '<ListName>' on the left-hand menu
 	Then "All <ListName>" list should be displayed to the user
 	When User clicks the Columns button
 	And User adds columns to the list
@@ -211,7 +211,7 @@ Examples:
 #'not_run' was added until 'DAS16961' bug is fixed
 @Evergreen @Devices @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS11693 @DAS12867 @DAS12999 @DAS14189 @DAS16961 @Projects @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatToolTipIsDisplayedWithCreateProjectButtonFromAnUnsavedList
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	When User clicks on 'Hostname' column header
 	Then data in table is sorted by 'Hostname' column in ascending order
@@ -221,7 +221,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatToolTipIsDisplayedWithCreateProjectB
 
 @Evergreen @AllLists @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS14189 @Projects
 Scenario Outline: EvergreenJnr_AllLists_CheckThatTheCorrectCreateMenuOptionsAreDisplayedForEachObjectListType
-	When User clicks "<ListName>" on the left-hand menu
+	When User clicks '<ListName>' on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
 	Then Create button is displayed
 	When User clicks Create button on the Base Dashboard Page
@@ -236,7 +236,7 @@ Examples:
 
 @Evergreen @Applications @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS14189 @Projects
 Scenario: EvergreenJnr_ApplicationList_CheckThatTheCorrectCreateMenuOptionsAreDisplayedForApplicationPage
-	When User clicks "Applications" on the left-hand menu
+	When User clicks 'Applications' on the left-hand menu
 	Then "All Applications" list should be displayed to the user
 	And Create button is displayed
 	When User clicks Create button on the Base Dashboard Page
@@ -244,7 +244,7 @@ Scenario: EvergreenJnr_ApplicationList_CheckThatTheCorrectCreateMenuOptionsAreDi
 
 @Evergreen @AllLists @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS12337
 Scenario Outline: EvergreenJnr_AllLists_CheckThatEmptyLinkIsDisplayedIfThereAreNoData
-	When User clicks "<ListName>" on the left-hand menu
+	When User clicks '<ListName>' on the left-hand menu
 	Then "All <ListName>" list should be displayed to the user
 	And Empty link is displayed for first row in the "<ColumnName>" column
 
@@ -256,7 +256,7 @@ Examples:
 
 @Evergreen @Devices @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @Widgets @DAS15444 @Cleanup @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatCorrectMessageIsDisplayedBeforeDeletingListWhichHasDependencies
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	When User clicks on 'Hostname' column header
 	When User create dynamic list with "DynamicList15444" name on "Devices" page
@@ -266,11 +266,11 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCorrectMessageIsDisplayedBeforeDelet
 	When User selects "Standalone Project" in the Mode Project dropdown
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	When User click Delete button for custom list with "DynamicList15444" name
 	Then ""DynamicList15444" list is used by 1 project, do you wish to proceed?" message is displayed in the lists panel
-	When User clicks "Dashboards" on the left-hand menu
+	When User clicks 'Dashboards' on the left-hand menu
 	When User clicks the "CREATE DASHBOARD" Action button
 	And User creates new Dashboard with "Dashboard for DAS15444" name
 	And User clicks the "ADD WIDGET" Action button
@@ -278,14 +278,14 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCorrectMessageIsDisplayedBeforeDelet
 	| WidgetType | Title                | List             | MaxRows | MaxColumns |
 	| List       | Widget_For_ DAS15444 | DynamicList15444 | 10      | 10         |
 	Then "Widget_For_ DAS15444" Widget is displayed to the user
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	When User click Delete button for custom list with "DynamicList15444" name
 	Then ""DynamicList15444" list is used by 1 project and 1 dashboard, do you wish to proceed?" message is displayed in the lists panel
 
 @Evergreen @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS16558
 Scenario: EvergreenJnr_UsersList_CheckThatFullPpageWith403ErrorIsDisplayedCorrectly
-	When User clicks "Projects" on the left-hand menu
+	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console
@@ -318,7 +318,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatFullPpageWith403ErrorIsDisplayedCorrec
 
 @Evergreen @Devices @EvergreenJnr_BaseDashboardPage @DAS17140 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatRequestHasSpecificParameterWhenNavigatingIntoList
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	When User clicks "Migration Type Capacity" list name in left panel
 	Then Columnmetadata request contains ArchivedItem parameter

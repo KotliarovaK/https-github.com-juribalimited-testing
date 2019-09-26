@@ -154,7 +154,7 @@ Scenario: EvergreenJnr_AdminPage_CheckOutcomeValueForAnAutomationThatIsAlreadyRu
 
 @Evergreen @EvergreenJnr_AdminPage @AutomationLog @Automations @DAS17011 @DAS17374 @DAS17370 @DAS17367 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckBrokenListValidationWhenRunningAnAutomation
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	And User clicks the Filters button
 	And User add "Country" filter where type is "Equals" with added column and "England" Lookup option
 	And User create dynamic list with "17011_List" name on "Devices" page
@@ -172,7 +172,7 @@ Scenario: EvergreenJnr_AdminPage_CheckBrokenListValidationWhenRunningAnAutomatio
 	When User selects "Active" checkbox on the Automation Page
 	When User clicks the "CREATE" Action button
 	Then Create Action page is displayed to the User
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	When User navigates to the "17011_List" list
 	Then "17011_List" list is displayed to user

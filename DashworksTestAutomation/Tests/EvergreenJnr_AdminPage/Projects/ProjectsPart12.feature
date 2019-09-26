@@ -7,7 +7,7 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Cleanup @Cleanup @Projects
 Scenario Outline: EvergreenJnr_ChangingApplicationScopeListToAnotherListForMailboxProject
-	When User clicks "Applications" on the left-hand menu
+	When User clicks 'Applications' on the left-hand menu
 	Then "All Applications" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
@@ -127,7 +127,7 @@ Scenario: EvergreenJnr_AdminPage_AddingRequestTypesAndCategories
 	When Project created via API and opened
 	| ProjectName | Scope         | ProjectTemplate | Mode               |
 	| TestName18  | All Mailboxes | None            | Standalone Project |
-	When User clicks "Projects" on the left-hand menu
+	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "TestName18" Project
 	Then Project with "TestName18" name is displayed correctly

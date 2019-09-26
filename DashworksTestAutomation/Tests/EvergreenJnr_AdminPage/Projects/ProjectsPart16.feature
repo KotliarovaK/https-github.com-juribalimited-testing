@@ -123,7 +123,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	| Objects         |
 	| 019BFPQGKK5QT8N |
 	#go to create new user
-	When User clicks "Projects" on the left-hand menu
+	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console
@@ -261,7 +261,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectAllCheckboxIsWorkingCorrectlyOnA
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12578 @DAS12999 @DAS13429 @Cleanup
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatTheEditListFunctionIsHiddenAfterCancelingCreatingProjectFromTheMainLists
-	When User clicks "<ListName>" on the left-hand menu
+	When User clicks '<ListName>' on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
 	When User clicks on '<ColumnName>' column header
 	And User create dynamic list with "<DynamicListName>" name on "<ListName>" page

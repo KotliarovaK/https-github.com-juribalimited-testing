@@ -7,7 +7,7 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11697 @DAS12744 @DAS12999 @Projects
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatCancelButtonOnTheCreateProjectPageRedirectsToTheLastPage
-	When User clicks "<ListName>" on the left-hand menu
+	When User clicks '<ListName>' on the left-hand menu
 	Then "All <ListName>" list should be displayed to the user
 	When User clicks Create Project from the main list
 	Then "Create Project" page should be displayed to the user
@@ -74,7 +74,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatExistingProjectNameCantBeRemoved
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12189 @DAS12523 @DAS12521 @DAS12744 @DAS12162 @DAS12532 @Cleanup @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorsAreDisplayedInTheProjectScopeChangesSectionAfterUsingSavedDevicesList
-	When User clicks "Applications" on the left-hand menu
+	When User clicks 'Applications' on the left-hand menu
 	Then "All Applications" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
@@ -83,7 +83,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorsAreDisplayedInTheProjectScopeC
 	| Adobe  |
 	Then "Vendor" filter is added to the list
 	When User create dynamic list with "Vendor is adobe" name on "Applications" page
-	And User clicks "Devices" on the left-hand menu
+	And User clicks 'Devices' on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user

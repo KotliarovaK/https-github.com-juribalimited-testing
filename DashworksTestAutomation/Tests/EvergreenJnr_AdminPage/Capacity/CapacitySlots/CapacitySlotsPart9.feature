@@ -75,7 +75,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTasksListDisplayingOnCreateAndEditSlotsScr
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @DAS13671 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckTasksWithoutRequestTypeAlwaysAvailableForSelection
-	When User clicks "Projects" on the left-hand menu
+	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "Devices Evergreen Capacity Project" Project
 	Then Project with "Devices Evergreen Capacity Project" name is displayed correctly

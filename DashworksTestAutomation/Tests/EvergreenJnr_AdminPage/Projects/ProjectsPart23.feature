@@ -7,7 +7,7 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Projects @Senior_Projects @DAS14819 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatConvertButtonDisappearsAfterProjectConverting
-	When User clicks "Projects" on the left-hand menu
+	When User clicks 'Projects' on the left-hand menu
 	When User clicks create Project button
 	When User creates new Project on Senior
 	| ProjectName     | ShortName | Description | Type |
@@ -31,7 +31,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatConvertButtonDisappearsAfterProjectCo
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Projects @Senior_Projects @DAS15260 @DAS15794 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectCountersDisplayedInRingGridForDeviceScopedProject
-	When User clicks "Projects" on the left-hand menu
+	When User clicks 'Projects' on the left-hand menu
 	And User clicks create Project button
 	And User creates new Project on Senior
 	| ProjectName     | ShortName | Description | Type |
@@ -92,7 +92,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectPageDisplayedWhenOpeningNotExis
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Projects @Senior_Projects @DAS16137 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThat403FullPageErrorAppearsAfterUserWithoutPermissionsNavigatesToAdminPages
-	When User clicks "Projects" on the left-hand menu
+	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console

@@ -27,7 +27,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatColourSchemeIsDisplayedForReadine
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16069 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetValuesLeadsToDeviceListFilteredPage
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	And User clicks the Filters button
 	And User clicks Add New button on the Filter panel
 	And user select "Device Type" filter
@@ -116,7 +116,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetHasCorrectChronological
 	
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15462
 Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetTooltipsShowsNameAndCount
-	When User clicks "Dashboards" on the left-hand menu
+	When User clicks 'Dashboards' on the left-hand menu
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
@@ -132,7 +132,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetTooltipsShowsNameAndCou
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17825 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetsShowsGraphDataWhenSplitByReadinessOrComplianceFields
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	And User clicks the Columns button
 	And ColumnName is entered into the search box and the selection is clicked
 	| ColumnName                        |

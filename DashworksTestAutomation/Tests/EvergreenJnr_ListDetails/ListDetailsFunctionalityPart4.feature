@@ -7,12 +7,12 @@ Background: Pre-Conditions
 
 @Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10713 @DAS12190 @DAS12204 @DAS13207 @DAS14963 @Cleanup
 Scenario: EvergreenJnr_AllLists_CheckThatTwoDependencyAreDisplayedInTheDependentsBlock
-	When User clicks "Applications" on the left-hand menu
+	When User clicks 'Applications' on the left-hand menu
 	Then "All Applications" list should be displayed to the user
 	When User clicks on 'Application' column header
 	When User create dynamic list with "Application1" name on "Applications" page
 	Then "Application1" list is displayed to user
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
@@ -32,7 +32,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatTwoDependencyAreDisplayedInTheDependent
 	| Build Date |
 	And User save changes in list with "NewDevice" name
 	And "NewDevice" list is displayed to user
-	When User clicks "Applications" on the left-hand menu
+	When User clicks 'Applications' on the left-hand menu
 	Then "All Applications" list should be displayed to the user
 	When User navigates to the "Application1" list
 	Then "Application1" list is displayed to user
@@ -47,7 +47,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatTwoDependencyAreDisplayedInTheDependent
 
 @Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10713 @DAS12169 @DAS12286 @DAS12192 @DAS12623 @DAS12687 @DAS14963 @Cleanup
 Scenario: EvergreenJnr_AllLists_CheckThatListDoesNotExistErrorWhenViewingDependentList
-	When User clicks "Applications" on the left-hand menu
+	When User clicks 'Applications' on the left-hand menu
 	Then "All Applications" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
@@ -63,7 +63,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatListDoesNotExistErrorWhenViewingDepende
 	Then List details panel is displayed to the user
 	When User closes Permissions section in the list panel
 	Then tooltip is displayed with "Open" text for Permissions section
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
@@ -73,7 +73,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatListDoesNotExistErrorWhenViewingDepende
 	Then "Any Application" filter is added to the list
 	When User create dynamic list with "Devices with Adobe" name on "Devices" page
 	Then "Devices with Adobe" list is displayed to user
-	When User clicks "Applications" on the left-hand menu
+	When User clicks 'Applications' on the left-hand menu
 	Then "All Applications" list should be displayed to the user
 	When User navigates to the "Adobe Apps" list
 	Then "Adobe Apps" list is displayed to user
@@ -90,12 +90,12 @@ Scenario: EvergreenJnr_AllLists_CheckThatListDoesNotExistErrorWhenViewingDepende
 
 @Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10713 @DAS12192 @DAS14963 @Cleanup
 Scenario: EvergreenJnr_AllLists_CheckThatListPanelDoesNotExistErrorWhenViewingDependentList
-	When User clicks "Applications" on the left-hand menu
+	When User clicks 'Applications' on the left-hand menu
 	Then "All Applications" list should be displayed to the user
 	When User clicks on 'Application' column header
 	When User create dynamic list with "A1" name on "Applications" page
 	Then "A1" list is displayed to user
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
@@ -105,7 +105,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatListPanelDoesNotExistErrorWhenViewingDe
 	Then "Any Application" filter is added to the list
 	When User create dynamic list with "D1" name on "Devices" page
 	Then "D1" list is displayed to user
-	When User clicks "Applications" on the left-hand menu
+	When User clicks 'Applications' on the left-hand menu
 	Then "All Applications" list should be displayed to the user
 	When User navigates to the "A1" list
 	Then "A1" list is displayed to user
@@ -121,11 +121,11 @@ Scenario: EvergreenJnr_AllLists_CheckThatListPanelDoesNotExistErrorWhenViewingDe
 
 @Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12075 @DAS12874 @DAS14222 @DAS15551 @Cleanup
 Scenario Outline: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDependenciesDynamicLists
-	When User clicks "Applications" on the left-hand menu
+	When User clicks 'Applications' on the left-hand menu
 	Then "All Applications" list should be displayed to the user
 	When User clicks on 'Application' column header
 	And User create dynamic list with "<ListName1>" name on "Applications" page
-	And User clicks "Devices" on the left-hand menu
+	And User clicks 'Devices' on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
@@ -133,7 +133,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessag
 	| SelectedList | Association   |
 	| <ListName1>  | <Association> |
 	When User create dynamic list with "<ListName2>" name on "Devices" page
-	And User clicks "Applications" on the left-hand menu
+	And User clicks 'Applications' on the left-hand menu
 	Then "All Applications" list should be displayed to the user
 	When User navigates to the "<ListName1>" list
 	Then "<ListName1>" list is displayed to user
@@ -149,7 +149,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessag
 	When User clicks Delete in the list panel
 	Then "<ListName1>" list "list is used by 1 list, do you wish to proceed?" message is displayed in the list panel
 	When User removes custom list with "<ListName1>" name
-	And User clicks "Devices" on the left-hand menu
+	And User clicks 'Devices' on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	When User navigates to the "<ListName2>" list
 	And User clicks the Filters button

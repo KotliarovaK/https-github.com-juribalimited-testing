@@ -7,7 +7,7 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS16816 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatFillingFieldErrorIsNotDisplayed
-	When User clicks "Users" on the left-hand menu
+	When User clicks 'Users' on the left-hand menu
 	When Evergreen QueryStringURL is entered for Simple QueryType
 	| QueryType | QueryStringURL                                                                                                                                  |
 	| Username  | evergreen/#/users?$filter=(username%20EQUALS%20('AOG7951336'%2C'AOJ5740774'%2C'AOO9780350'%2C'AOS4843193'%2C'APA3392254%20%20'%2C'APB5713645')) |
@@ -74,7 +74,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTrueValueDisplayedInGridForEvergreenPr
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS17122 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckRedErrorMessageOnScopeChangesIfBrokenListIsSetInProjectScope
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	And User clicks the Filters button
 	And User add "Country" filter where type is "Equals" with added column and "England" Lookup option
 	And User create dynamic list with "17122_List" name on "Devices" page
@@ -82,7 +82,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRedErrorMessageOnScopeChangesIfBrokenListI
 	| ProjectName   | Scope      | ProjectTemplate | Mode               |
 	| 17122_Project | 17122_List | None            | Standalone Project |
 	Then Project "17122_Project" is displayed to user
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	When User navigates to the "17122_List" list
 	Then "17122_List" list is displayed to user

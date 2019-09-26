@@ -35,7 +35,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckSelectExistingProjectDropdownValue
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13110 @Cleanup @Projects
 Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUsesDynamicListAsAScope
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	When User clicks on 'Hostname' column header
 	And User create dynamic list with "Dynamic13110" name on "Devices" page

@@ -25,7 +25,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThat500ErrorIsNotDisplayedAfterSorting
 
 @Evergreen @Mailboxes @EvergreenJnr_Columns @AddColumnAction @DAS11576
 Scenario Outline: EvergreenJnr_MailboxesList_CheckThatMaxReceiveSizeAndMaxSendSizeColumnIsDisplayedAfterSelectingOnFilterPanel 
-	When User clicks "Mailboxes" on the left-hand menu
+	When User clicks 'Mailboxes' on the left-hand menu
 	Then "All Mailboxes" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
@@ -96,7 +96,7 @@ Examples:
 
 @Evergreen @Applications @EvergreenJnr_Columns @AddColumnAction @DAS11649 @DAS12199
 Scenario: EvergreenJnr_ApplicationsLists_CheckThatNoDataIsDisplayedInTheApplicationRationalisationColumn
-	When User clicks "Applications" on the left-hand menu
+	When User clicks 'Applications' on the left-hand menu
 	Then "All Applications" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
@@ -118,7 +118,7 @@ Scenario: EvergreenJnr_ApplicationsLists_CheckThatNoDataIsDisplayedInTheApplicat
 
 @Evergreen @Mailboxes @EvergreenJnr_Columns @AddColumnAction @DAS11839
 Scenario: EvergreenJnr_MailboxesLists_CheckThatTheLowestValueOfUserCountColumnIsNull
-	When User clicks "Mailboxes" on the left-hand menu
+	When User clicks 'Mailboxes' on the left-hand menu
 	Then "All Mailboxes" list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
@@ -135,7 +135,7 @@ Scenario: EvergreenJnr_MailboxesLists_CheckThatTheLowestValueOfUserCountColumnIs
 
 @Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS12194 @DAS12220
 Scenario Outline: EvergreenJnr_AllLists_CheckThat500ErrorIsNotDisplayedAfterAddingComplianceDataToLists
-	When User clicks "<ListName>" on the left-hand menu
+	When User clicks '<ListName>' on the left-hand menu
 	Then "All <ListName>" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
@@ -163,7 +163,7 @@ Examples:
 
 @Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS12500 @DAS14923
 Scenario Outline: EvergreenJnr_AllLists_CheckThatObjectKeyColumnsContainCorrectLinks
-	When User clicks "<ListName>" on the left-hand menu
+	When User clicks '<ListName>' on the left-hand menu
 	Then "All <ListName>" list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
@@ -186,7 +186,7 @@ Examples:
 
 @Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS12940
 Scenario Outline: EvergreenJnr_AllLists_CheckThatEvergreenBucketColumnCanBeAddedToTheGrid
-	When User clicks "<ListName>" on the left-hand menu
+	When User clicks '<ListName>' on the left-hand menu
 	And User clicks the Columns button
 	And ColumnName is entered into the search box and the selection is clicked
 	| ColumnName       |
@@ -203,7 +203,7 @@ Examples:
 
 @Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS13201
 Scenario Outline: EvergreenJnr_AllLists_CheckThatEvergreenCapacityUnitColumnCanBeAddedToTheGrid
-	When User clicks "<ListName>" on the left-hand menu
+	When User clicks '<ListName>' on the left-hand menu
 	And User clicks the Columns button
 	And ColumnName is entered into the search box and the selection is clicked
 	| ColumnName              |
@@ -221,7 +221,7 @@ Examples:
 
 @Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS9820 @DAS13296
 Scenario: EvergreenJnr_UsersList_ChecksThatDeviceAndGroupAndMailboxColumnsCanBeUsedOnUsersPage
-	When User clicks "Users" on the left-hand menu
+	When User clicks 'Users' on the left-hand menu
 	And User clicks the Columns button
 	And ColumnName is entered into the search box and the selection is clicked
 	| ColumnName              |
@@ -238,7 +238,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDeviceAndGroupAndMailboxColumnsCanBeU
 
 @Evergreen @Devices @EvergreenJnr_Columns @AddColumnAction @DAS13024
 Scenario: EvergreenJnr_DevicesList_ChecksThatGridIsDisplayedCorrectlyAfterAddingDeviceOwnerLdapAndComputerAdObjectLdapAttributeColumnToTheDevicesList
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
@@ -257,7 +257,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatGridIsDisplayedCorrectlyAfterAdding
 
 @Evergreen @Mailboxes @EvergreenJnr_Columns @RemoveColumn @AddColumnAction @DAS12910
 Scenario: EvergreenJnr_MailboxesList_ChecksThatNewlyAddedColumnIsDisplayedCorrectlyAfterAddingEmailMigraReadinessFilter
-	When User clicks "Mailboxes" on the left-hand menu
+	When User clicks 'Mailboxes' on the left-hand menu
 	Then "All Mailboxes" list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
@@ -285,7 +285,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatNewlyAddedColumnIsDisplayedCorrec
 
 @Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS12481
 Scenario Outline: EvergreenJnr_AllLists_CheckThatStateCountyAndPostalCodeColumnsAreDisplayed
-	When User clicks "<ListName>" on the left-hand menu
+	When User clicks '<ListName>' on the left-hand menu
 	Then "All <ListName>" list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
@@ -314,7 +314,7 @@ Examples:
 
 @Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS15807
 Scenario: EvergreenJnr_UsersList_CheckThatLanguageColumnIsDisplayedOnTheUserList
-	When User clicks "Users" on the left-hand menu
+	When User clicks 'Users' on the left-hand menu
 	And User clicks the Columns button
 	And ColumnName is entered into the search box and the selection is clicked
 	| ColumnName           |
@@ -328,7 +328,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatLanguageColumnIsDisplayedOnTheUserList
 
 @Evergreen @Mailboxes @Users @EvergreenJnr_Columns @AddColumnAction @DAS16716
 Scenario Outline: EvergreenJnr_AllList_CheckThatSortingByEvergreenRingColumnWorks
-	When User clicks "<ListName>" on the left-hand menu
+	When User clicks '<ListName>' on the left-hand menu
 	And User clicks the Columns button
 	And ColumnName is entered into the search box and the selection is clicked
 	| ColumnName     |
@@ -365,7 +365,7 @@ Examples:
 
 @Evergreen @Users @EvergreenJnr_Columns @AddColumnAction @DAS17945
 Scenario: EvergreenJnr_UsersList_ChecksThatApplicationReadinessColumnIsDisplayedCorrectlyForUsersList
-	When User clicks "Users" on the left-hand menu
+	When User clicks 'Users' on the left-hand menu
 	When User add following columns using URL to the "Users" page:
 	| ColumnName                        |
 	| Barry'sUse: Application Readiness |

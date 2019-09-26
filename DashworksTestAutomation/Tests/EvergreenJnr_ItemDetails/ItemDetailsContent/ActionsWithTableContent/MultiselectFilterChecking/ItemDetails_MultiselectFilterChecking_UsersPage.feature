@@ -7,7 +7,7 @@ Background: Pre-Conditions
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
 Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForActiveDirectoryTabGroupsOnUsersPage
-	When User clicks "Users" on the left-hand menu
+	When User clicks 'Users' on the left-hand menu
 	Then "All Users" list should be displayed to the user
 	When User perform search by "ZWS705179"
 	And User click content from "Username" column
@@ -38,7 +38,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplaye
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
 Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForApplicationsTabEvergreenSummaryOnUsersPage
-	When User clicks "Users" on the left-hand menu
+	When User clicks 'Users' on the left-hand menu
 	Then "All Users" list should be displayed to the user
 	When User perform search by "allanj"
 	And User click content from "Username" column
@@ -83,7 +83,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplaye
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
 Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForApplicationsTabEvergreenDetailOnUsersPage
-	When User clicks "Users" on the left-hand menu
+	When User clicks 'Users' on the left-hand menu
 	Then "All Users" list should be displayed to the user
 	When User perform search by "allanj"
 	And User click content from "Username" column
@@ -111,7 +111,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplaye
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
 Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForApplicationsTabAdvertisementsOnUsersPage
-	When User clicks "Users" on the left-hand menu
+	When User clicks 'Users' on the left-hand menu
 	Then "All Users" list should be displayed to the user
 	When User perform search by "allanj"
 	And User click content from "Username" column
@@ -127,7 +127,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplaye
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
 Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForApplicationsTabCollectionsOnUsersPage
-	When User clicks "Users" on the left-hand menu
+	When User clicks 'Users' on the left-hand menu
 	Then "All Users" list should be displayed to the user
 	When User perform search by "allanj"
 	And User click content from "Username" column
@@ -155,7 +155,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplaye
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
 Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForMailboxesTabOnUsersPage
-	When User clicks "Users" on the left-hand menu
+	When User clicks 'Users' on the left-hand menu
 	Then "All Users" list should be displayed to the user
 	When User perform search by "02BE025D56CF4899889"
 	And User click content from "Username" column
@@ -180,7 +180,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplaye
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
 Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForComplianceTabOnUsersPage
-	When User clicks "Users" on the left-hand menu
+	When User clicks 'Users' on the left-hand menu
 	Then "All Users" list should be displayed to the user
 	When User perform search by "ZWS705179"
 	And User click content from "Username" column

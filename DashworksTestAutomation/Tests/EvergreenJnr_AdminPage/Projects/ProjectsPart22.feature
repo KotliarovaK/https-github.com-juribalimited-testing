@@ -30,7 +30,7 @@ Examples:
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Projects @UpdatingName @Senior_Projects @DAS13499 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatTasksRequestTypesAndCategoriesAreNotDeletedAfterChangingProjectName
-	When User clicks "Projects" on the left-hand menu
+	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User clicks create Project button
 	Then "Create Project" page is displayed to the user
@@ -72,7 +72,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksRequestTypesAndCategoriesAreNotD
 	When User enters "DAS13499Project" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	When User enters "New_DAS13499_Project_Name" in the "Project Name" field
-	When User clicks "Projects" on the left-hand menu
+	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	#Update bottom step to "New_DAS13499_Project_Name" after Project renamed faster
 	When User navigate to "DAS13499Project" Project
@@ -88,7 +88,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksRequestTypesAndCategoriesAreNotD
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Projects @Senior_Projects @DAS15262 @DAS13973 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultValuesStayTheSameAfterConvertingProjectToEvergreen
-	When User clicks "Projects" on the left-hand menu
+	When User clicks 'Projects' on the left-hand menu
 	When User clicks create Project button
 	When User creates new Project on Senior
 	| ProjectName     | ShortName | Description | Type |

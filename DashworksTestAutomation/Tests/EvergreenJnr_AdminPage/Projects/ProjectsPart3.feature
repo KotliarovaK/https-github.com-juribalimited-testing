@@ -45,7 +45,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatRedBannerWithOkMessageIsNotDisplaye
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12796 @DAS12872 @DAS13401 @DAS-14877 @Cleanup @Cleanup @Project_Creation_and_Scope @Projects
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatNumberOfObjectIsUpdatedInTheScopeChangesOfProjectAfterTheChangeCustomList
-	When User clicks "<ListName>" on the left-hand menu
+	When User clicks '<ListName>' on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
 	When User clicks on '<ColumnName>' column header
 	And User create dynamic list with "<DynamicListName>" name on "<ListName>" page
@@ -60,7 +60,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatNumberOfObjectIsUpdatedInTheSc
 	Then Project "<ProjectName>" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
 	Then "<ObjectsCount>" is displayed to the user in the Project Scope Changes section
-	When User clicks "<ListName>" on the left-hand menu
+	When User clicks '<ListName>' on the left-hand menu
 	And User navigates to the "<DynamicListName>" list
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user

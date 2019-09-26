@@ -79,7 +79,7 @@ Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOf
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @Offboard @DAS17964 @DAS17990 @DAS17000
 Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindowWithoutUserOnMailboxesPage
-	When User clicks "Mailboxes" on the left-hand menu
+	When User clicks 'Mailboxes' on the left-hand menu
 	Then "All Mailboxes" list should be displayed to the user
 	When User perform search by "alex.cristea@juriba.com"
 	And User click content from "Email Address" column

@@ -7,7 +7,7 @@ Background: Pre-Conditions
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16378 @DAS15583 @DAS16905 @DAS16832 @DAS17143 @DAS17521
 Scenario: EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForMailboxesPageInEvergreenMode
-	When User clicks "Mailboxes" on the left-hand menu
+	When User clicks 'Mailboxes' on the left-hand menu
 	Then "All Mailboxes" list should be displayed to the user
 	When User perform search by "00B5CCB89AD0404B965@bclabs.local"
 	And User click content from "Email Address" column
@@ -81,7 +81,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDispl
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15583 @DAS16906 @DAS16832 @DAS17143 @DAS17521
 Scenario: EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForMailboxesPageInProjectMode
-	When User clicks "Mailboxes" on the left-hand menu
+	When User clicks 'Mailboxes' on the left-hand menu
 	Then "All Mailboxes" list should be displayed to the user
 	When User perform search by "00B5CCB89AD0404B965@bclabs.local"
 	And User click content from "Email Address" column

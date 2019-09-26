@@ -74,7 +74,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatStageWithoutCorrectTasksIsNotDisplayed
 	When Project created via API and opened
 	| ProjectName      | Scope     | ProjectTemplate | Mode               |
 	| DAS17691_Project | All Users | None            | Standalone Project |
-	When User clicks "Projects" on the left-hand menu
+	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "DAS17691_Project" Project
 	Then "Manage Project Details" page is displayed to the user

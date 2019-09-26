@@ -11,7 +11,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedBucketsIsDisplayedForOnboarded
 	| ProjectName   | Scope     | ProjectTemplate | Mode               |
 	| UsersProject3 | All Users | None            | Standalone Project |
 	When User clicks Admin on the left-hand menu
-	When User clicks "Projects" on the left-hand menu
+	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "UsersProject3" Project
 	Then Project with "UsersProject3" name is displayed correctly

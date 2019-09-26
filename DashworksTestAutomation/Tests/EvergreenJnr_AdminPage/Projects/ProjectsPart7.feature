@@ -50,7 +50,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUsersToAddAndRemoveAreChangingAppropri
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS12903 @DAS13973 @Cleanup @Cleanup @Projects
 Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationFromListPageWithUseEvergreenBucket
-	When User clicks "<ListName>" on the left-hand menu
+	When User clicks '<ListName>' on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
 	When User clicks Create Project from the main list
 	Then "Create Project" page should be displayed to the user
@@ -76,7 +76,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationFromListPageWithUse
 	When User enters "<ProjectName>" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
-	When User clicks "<ListName>" on the left-hand menu
+	When User clicks '<ListName>' on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
 	When User clicks on '<ColumnName>' column header
 	And User create dynamic list with "<DynamicList>" name on "<ListName>" page
@@ -132,7 +132,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMailboxProjectCreationWithCloneEvergreenBu
 	When User enters "MailboxesProject26" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
-	When User clicks "Mailboxes" on the left-hand menu
+	When User clicks 'Mailboxes' on the left-hand menu
 	Then "All Mailboxes" list should be displayed to the user
 	When User clicks on 'Email Address' column header
 	And User create dynamic list with "DynamicList9513" name on "Mailboxes" page
@@ -154,7 +154,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMailboxProjectCreationWithCloneEvergreenBu
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13973 @Cleanup @Cleanup @Projects
 Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationWithCloneEvergreenBucketsFromListPage
-	When User clicks "<PageName>" on the left-hand menu
+	When User clicks '<PageName>' on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
 	When User clicks Create Project from the main list
 	Then "Create Project" page should be displayed to the user
@@ -182,7 +182,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationWithCloneEvergreenB
 	When User enters "<ProjectName>" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
-	When User clicks "<PageName>" on the left-hand menu
+	When User clicks '<PageName>' on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
 	When User clicks on '<ColumnName>' column header
 	And User create dynamic list with "<DynamicList>" name on "<PageName>" page

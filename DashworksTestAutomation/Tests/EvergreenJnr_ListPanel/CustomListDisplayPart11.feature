@@ -7,7 +7,7 @@ Background: Pre-Conditions
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS13637 @DAS13640 @DAS13643 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatLayoutFilterForCreatedListsIsWorkedCorrectly
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	When User create static list with "StaticFilterList_2" name on "Devices" page with following items
 	| ItemName       |
@@ -71,7 +71,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatLayoutFilterForCreatedListsIsWorkedC
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS13637 @DAS13643
 Scenario: EvergreenJnr_DevicesList_CheckThatFavouriteFilterForListsIsWorkedCorrectly
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	When User apply "Not favourite" filter to lists panel
 	Then "1803 Rollout" list is displayed in the bottom section of the List Panel
@@ -82,7 +82,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFavouriteFilterForListsIsWorkedCorre
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS13637 @DAS13643
 Scenario: EvergreenJnr_DevicesList_CheckThatSharingiteFilterForListsIsWorkedCorrectly
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	When User apply "Shared with me " filter to lists panel
 	Then "1803 Rollout" list is displayed in the bottom section of the List Panel
@@ -93,7 +93,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSharingiteFilterForListsIsWorkedCorr
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS17627 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatDashworkWorksAfterChangingPivotSettings
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	When User create static list with "StaticFilterList_1" name on "Devices" page with following items
 	| ItemName       |
@@ -122,19 +122,19 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDashworkWorksAfterChangingPivotSetti
 	When User clicks the "RUN PIVOT" Action button
 	Then There are no errors in the browser console
 	#Just to check that application is still responding
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS17421
 Scenario: EvergreenJnr_DevicesList_CheckThatGridHeaderIsDisplayedCorrectlyAfterClosingListsPanel
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	When User closed list panel
 	Then Dashboards sub menu is hidden on Dashboards page
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS15785
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatFilterCategoryNamingIsCorrect
-	When User clicks "<ListType>" on the left-hand menu
+	When User clicks '<ListType>' on the left-hand menu
 	Then "<ListTitle>" list should be displayed to the user
 	And List filter DDL displays the next options
 	| filterItem     |

@@ -74,7 +74,7 @@ Scenario: EvergreenJnr_UserProfile_ChecksListPageSizeAPI
 	And User changes List Page Size to "2500"
 	And User clicks the "UPDATE" Action button
 	Then Success message with "User preferences have been changed" text is displayed on the Advanced page
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	And page Size is "2500" on "Devices" page
 	When User clicks Profile in Account Dropdown

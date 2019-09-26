@@ -49,7 +49,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectsAreDeletedSuccessfully
 	When User enters "<ProjectName>" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
-	When User clicks "<PageName>" on the left-hand menu
+	When User clicks '<PageName>' on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
 	When User clicks on '<ColumnName>' column header
 	And User create dynamic list with "<DynamicList>" name on "<PageName>" page
@@ -110,7 +110,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyProjectN
 	Then "TestProject84" text in search field is displayed correctly for "Project" column
 	When User selects all rows on the grid
 	And User removes selected item
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	When User clicks on 'Hostname' column header
 	And User create dynamic list with "DynamicList5531" name on "Devices" page
