@@ -150,6 +150,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.BodyContainer.Click();
         }
 
+        [When(@"User enters '(.*)' in the '(.*)' autocomplete field")]
+        public void WhenUserEntersInTheAutocompleteField(string text, string fieldName)
+        {
+            var textBox = _driver.NowAt<BaseDashboardPage>();
+            textBox.GetNamedTextbox(fieldName).Clear();
+            textBox.GetNamedTextbox(fieldName).SendKeys(text);
+            textBox.GetAutocompleteDropdownByText(text).Click();
+        }
+
         [Then(@"Scope field is automatically populated")]
         public void ThenScopeFieldIsAutomaticallyPopulated()
         {
