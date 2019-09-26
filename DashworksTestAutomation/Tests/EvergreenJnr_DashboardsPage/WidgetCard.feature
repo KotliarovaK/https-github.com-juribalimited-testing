@@ -31,7 +31,6 @@ When User add following columns using URL to the "Devices" page:
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIsCreatedWhenListIsAnObjectList
 	When Dashboard with "Dashboard for DAS15207" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
-	When User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
 	| WidgetType | Title             | List        | Type      | AggregateBy | AggregateFunction |
@@ -155,6 +154,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatComplianceLayoutCorrectlyDisplaye
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIncludeSelectionOfEvergreenColours
 	When Dashboard with "Dashboard for DAS15134" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
 	| WidgetType | Title             | List        | Type       |
 	| Card       | WidgetForDAS15134 | All Devices | First Cell |
@@ -287,14 +287,10 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIsDisplayedCorrectlyWit
 	Then "All Devices" list should be displayed to the user
 	When User create dynamic list with "DAS16266_List" name on "Devices" page
 	Then "DAS16266_List" list is displayed to user
-
 	When Dashboard with "DAS16266_Dashboard" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
-	And User selects "Card" in the "Widget Type" Widget dropdown
-	And User enters "WidgetForDAS16266" as Widget Title
-	And User selects "DAS16266_List" as Widget List
-	And User selects "First Cell" in the "Type" Widget dropdown
+	And User adds new Widget
 	| WidgetType | Title             | List          | Type       |
 	| Card       | WidgetForDAS16266 | DAS16266_List | First Cell |
 	And User clicks the "CREATE" Action button
@@ -368,8 +364,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhe
 	| ColumnName                           |
 	| 1803: Pre-Migration \ Scheduled Date |
 	And User move '1803: Pre-Migration \ Scheduled Date' column to 'Hostname' column
-	Then "All Devices" list should be displayed to the user
-	When User move 'Hostname' column to 'Operating System' column
+	And User move 'Hostname' column to 'Operating System' column
 	Then "All Devices" list should be displayed to the user
 	When User create dynamic list with "DeviceListFor15765" name on "Devices" page
 	Then "DeviceListFor15765" list is displayed to user
@@ -394,14 +389,12 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorsInConsoleAfterAddingAppli
 	Then "All Applications" list should be displayed to the user
 	When User create dynamic list with "DAS16336_Applications_List" name on "Applications" page
 	Then "DAS16336_Applications_List" list is displayed to user
-	
 	When Dashboard with "Dashboard_DAS16336" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	When User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
 	| WidgetType | Title             | List                       | Type       | Layout    |
 	| Card       | WidgetForDAS16336 | DAS16336_Applications_List | First Cell | Text Only |
-	
 	Then Widget Preview is displayed to the user
 	And Text Only is displayed for Card widget on Preview
 	And "Really Extremely Orange" color is displayed for Card Widget on Preview
@@ -496,11 +489,9 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatCardSelectingAggregateFun
 	And Dashboard with "All Data Types for DAS15514" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
-	And User selects "Card" in the "Widget Type" Widget dropdown
-	And User enters "Widget Name" as Widget Title
-	And User selects "ListWithAllDatatypes" as Widget List
-	And User selects "Aggregate" as Widget Type
-	And User selects "<AggFunc>" as Widget Aggregate Function
+	And User adds new Widget
+	| WidgetType | Title       | List                 | Type      | AggregateFunction |
+	| Card       | Widget Name | ListWithAllDatatypes | Aggregate | <AggFunc>         |
 	Then User sees following options for Aggregate By selector on Create Widget page:
 	| items                                |
 	| First Seen Date                      |
@@ -524,7 +515,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatArchivedItemsIncludedInCountWhenR
 	| WidgetType | Title             | List      | Type      | AggregateFunction |
 	| Card       | WidgetForDAS16844 | List16844 | Aggregate | Count             |
 	Then "WidgetForDAS16844" Widget is displayed to the user
-	And Value '17,427' is displayed in the card 'WidgetForDAS16844' widget
+	When User clicks Edit mode trigger on Dashboards page
+	Then Value '17,427' is displayed in the card 'WidgetForDAS16844' widget
 	When User clicks data in card "WidgetForDAS16844" widget
 	Then Save as a new list option is available
 	And "17,427" rows are displayed in the agGrid

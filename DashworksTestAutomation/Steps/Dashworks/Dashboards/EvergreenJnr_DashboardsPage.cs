@@ -724,6 +724,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenWidgetPreviewIsDisplayedToTheUser()
         {
             var page = _driver.NowAt<AddWidgetPage>();
+            _driver.WaitForDataLoading();
             Utils.Verify.IsTrue(page.WidgetPreview.Displayed(), "Widget Preview is not displayed");
         }
 
@@ -1204,7 +1205,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"Widget Preview shows ""(.*)"" as First Cell value")]
         public void ThenWidgetPreviewShowsAsFirstCellValue(string option)
         {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            var page = _driver.NowAt<AddWidgetPage>();
             Utils.Verify.That(page.GetCardWidgetPreviewText().Text, Is.EqualTo(option), "Widget Preview shown different value");
         }
 
