@@ -227,7 +227,6 @@
     <Compile Include="Pages\Evergreen\AdminDetailsPages\RingsPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\CogMenuElements.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Scope\ScopeChangePage.cs" />
-    <Compile Include="Pages\Evergreen\AdminDetailsPages\UpdateReadinessPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\ReadinessPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateRingPage.cs" />
     <Compile Include="Pages\Evergreen\BaseDetailsPage.cs" />

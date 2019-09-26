@@ -32,37 +32,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             NavigateToLeftHandMenu(listPage, false);
         }
 
-        private void NavigateToLeftHandMenu(string listPage, bool waitForDataLoading)
+        private void NavigateToLeftHandMenu(string menuItemName, bool waitForDataLoading)
         {
             var menu = waitForDataLoading ?
                 _driver.NowAt<LeftHandMenuElement>() :
                 _driver.NowAtWithoutWait<LeftHandMenuElement>();
 
-            switch (listPage)
-            {
-                case "Devices":
-                    menu.Devices.Click();
-                    break;
-
-                case "Users":
-                    menu.Users.Click();
-                    break;
-
-                case "Applications":
-                    menu.Applications.Click();
-                    break;
-
-                case "Mailboxes":
-                    menu.Mailboxes.Click();
-                    break;
-
-                case "Admin":
-                    menu.Admin.Click();
-                    break;
-
-                default:
-                    throw new Exception($"'{listPage}' menu name is not valid menu item and can not be opened");
-            }
+            menu.GetMenuElementByName(menuItemName).Click();
         }
 
         [Then(@"'(.*)' list should be displayed to the user")]
@@ -71,96 +47,51 @@ namespace DashworksTestAutomation.Steps.Dashworks
             switch (listPage)
             {
                 case "All Devices":
-                    //Check Devices heading is visible
-                    var devicesPage = _driver.NowAt<DevicesPage>();
-                    Verify.AreEqual(listPage.ToLower(), devicesPage.Heading.Text.ToLower(),
-                        "Incorrect list is displayed to user");
-                    break;
-
                 case "All Users":
-                    //Check Users heading is visible
-                    var usersPage = _driver.NowAt<UsersPage>();
-                    Verify.AreEqual(listPage.ToLower(), usersPage.Heading.Text.ToLower(),
-                        "Incorrect list is displayed to user");
-                    break;
-
                 case "All Applications":
-                    //Check Applications heading is visible
-                    var applicationsPage = _driver.NowAt<ApplicationsPage>();
-                    Verify.AreEqual(listPage.ToLower(), applicationsPage.Heading.Text.ToLower(),
-                        "Incorrect list is displayed to user");
-                    break;
-
                 case "All Mailboxes":
-                    //Check Mailboxes heading is visible
-                    var mailboxesPage = _driver.NowAt<MailboxesPage>();
-                    Verify.AreEqual(listPage.ToLower(), mailboxesPage.Heading.Text.ToLower(),
+                    var list = _driver.NowAt<BaseDashboardPage>();
+                    _driver.WaitForElementToBeDisplayed(list.Header);
+                    Verify.AreEqual(listPage.ToLower(), list.Header.Text.ToLower(),
                         "Incorrect list is displayed to user");
                     break;
 
                 case "Admin":
-                    //Check Admin heading is visible
-                    var adminPage = _driver.NowAt<Pages.Evergreen.AdminPage>();
-                    Verify.AreEqual(listPage.ToLower(), adminPage.Heading.Text.ToLower(),
-                        "Incorrect list is displayed to user");
-                    var page = _driver.NowAt<AdminLeftHandMenu>();
-                    Verify.IsTrue(_driver.IsElementExists(page.AdminSubMenu), "Admin page was not displayed");
+                    var adminPage = _driver.NowAt<BaseDashboardPage>();
+                    _driver.WaitForElementToBeDisplayed(adminPage.Header);
+                    Verify.AreEqual("projects", adminPage.Header.Text.ToLower(),
+                        "Incorrect page is displayed to user");
                     break;
 
                 default:
                     throw new Exception($"'{listPage}' menu item is not valid ");
             }
-
-            Logger.Write($"'{listPage}' list is visible");
         }
 
-        [Then(@"Update Readiness is displayed to the User")]
-        public void ThenUpdateReadinessIsDisplayedToTheUser()
+        [Then(@"'(.*)' left-hand menu is highlighted")]
+        public void ThenLeft_HandMenuIsHighlighted(string menuName)
         {
-            var page = _driver.NowAt<UpdateReadinessPage>();
-            Verify.IsTrue(page.UpdateReadinessTitle.Displayed(), "Update Readiness page was not displayed");
-            Logger.Write("Update Readiness page is visible");
+            var menu = _driver.NowAtWithoutWait<LeftHandMenuElement>();
+            Verify.AreEqual(menu.GetMenuElementByName(menuName).GetCssValue("color"),
+                "rgba(242, 88, 49, 1)", $"Incorrect color for highlighted '{menuName}' left menu");
         }
 
+        //TODO Looks like needs to be removed as not relevant anymore
         [Then(@"Admin menu item is hidden")]
         public void ThenAdminMenuItemIsHidden()
         {
-            var menu = _driver.NowAtWithoutWait<LeftHandMenuElement>();
-            Verify.IsFalse(menu.Admin.Displayed(), "Admin menu item is displayed");
+            throw new Exception("Yurii please check TODO. Refer Vitalii");
+            //var menu = _driver.NowAtWithoutWait<LeftHandMenuElement>();
+            //Verify.IsFalse(menu.Admin.Displayed(), "Admin menu item is displayed");
         }
 
-        [When(@"User navigates to ""(.*)"" Object on PMObject page")]
-        public void WhenUserNavigatesToObjectOnPMObjectPage(int objectId)
-        {
-            _driver.NavigateToUrl($"{UrlProvider.Url}PMObject.aspx?ObjectId={objectId}");
-            Logger.Write("PMObject page was loaded");
-        }
-
-        [When(@"User closes Toggle Menu")]
-        [When(@"User closes left-hand menu")]
-        [When(@"User opens Toggle Menu")]
-        [When(@"User opens left-hand menu")]
-        public void WhenUserClosesLeft_HandMenu()
-        {
-            var menu = _driver.NowAtWithoutWait<BaseDashboardPage>();
-            menu.ToggleMenu.Click();
-            Logger.Write("Toggle Menu button was clicked");
-        }
-
+        //TODO Looks like needs to be removed as not relevant anymore
         [When(@"User clicks ""(.*)"" hidden left-hand menu")]
         public void WhenUserClicksHiddenLeft_HandMenu(string menuName)
         {
-            var menu = _driver.NowAtWithoutWait<BaseDashboardPage>();
-            menu.SelectHiddenLeftHandMenu(menuName).Click();
-        }
-
-        [Then(@"""(.*)"" left-hand menu is highlighted")]
-        public void ThenLeft_HandMenuIsHighlighted(string menuName)
-        {
-            var menu = _driver.NowAtWithoutWait<BaseDashboardPage>();
-            Utils.Verify.AreEqual(menu.GetHighlightedLeftMenuByName(menuName).GetCssValue("color"),
-                "rgba(242, 88, 49, 1)", "PLEASE ADD EXCEPTION MESSAGE");
-            Utils.Verify.IsTrue(menu.GetHighlightedLeftMenuByName(menuName).Displayed(), $"");
+            throw new Exception("Yurii please check TODO. Refer Vitalii");
+            //var menu = _driver.NowAtWithoutWait<BaseDashboardPage>();
+            //menu.SelectHiddenLeftHandMenu(menuName).Click();
         }
     }
 }

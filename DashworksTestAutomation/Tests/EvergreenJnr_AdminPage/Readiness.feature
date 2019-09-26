@@ -270,7 +270,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatValuesForReadinessGridAreDisplayedPro
 	Then Success message is displayed and contains "click here to view the Grey readiness" link
 	Then Green banner contains following text "changes might not take effect immediately"
 	When User clicks newly created object link
-	Then Update Readiness is displayed to the User
+	Then 'Update Readiness' page subheader is displayed to user
 	When User clicks the "CANCEL" Action button
 	When User enters "Grey" text in the Search field for "Readiness" column
 	Then "TRUE" content is displayed for "Ready" column
@@ -284,7 +284,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatValuesForReadinessGridAreDisplayedPro
 	Then Success message is displayed and contains "click here to view the Green readiness" link
 	Then Green banner contains following text "changes might not take effect immediately"
 	When User clicks newly created object link
-	Then Update Readiness is displayed to the User
+	Then 'Update Readiness' page subheader is displayed to user
 	When User clicks the "CANCEL" Action button
 	When User clicks "Change to ready" option in Cog-menu for "Green" item on Admin page
 	When User clicks "Make default for applications" option in Cog-menu for "Apps In Initiation" item on Admin page
@@ -292,7 +292,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatValuesForReadinessGridAreDisplayedPro
 	Then Success message is displayed and contains "click here to view the Light Blue readiness" link
 	Then Green banner contains following text "changes might not take effect immediately"
 	When User clicks newly created object link
-	Then Update Readiness is displayed to the User
+	Then 'Update Readiness' page subheader is displayed to user
 	When User clicks the "CANCEL" Action button
 	When User clicks "Make default for applications" option in Cog-menu for "Red" item on Admin page
 	When User have opened column settings for "Readiness" column

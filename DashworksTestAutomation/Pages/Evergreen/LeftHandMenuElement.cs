@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
@@ -39,6 +40,30 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 SelectorFor(this, p => p.Applications),
                 SelectorFor(this, p => p.Mailboxes),
             };
+        }
+
+        public IWebElement GetMenuElementByName(string name)
+        {
+            switch (name)
+            {
+                case "Devices":
+                    return Devices;
+
+                case "Users":
+                    return Users;
+
+                case "Applications":
+                    return Applications;
+
+                case "Mailboxes":
+                    return Mailboxes;
+
+                case "Admin":
+                    return Admin;
+
+                default:
+                    throw new Exception($"'{name}' menu name is not valid menu item and can not be opened");
+            }
         }
     }
 }
