@@ -93,7 +93,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectlyForAutomations
 	When User selects 'Update path' in the 'Action Type' dropdown
 	When User selects '1803 Rollout' option from 'Project' autocomplete
 	When User selects 'Undetermined' option from 'Path' autocomplete
-	Then "Undetermined" content is displayed in the Path Automation dropdown
+	Then 'Undetermined' content is displayed in 'Path' textbox
 	When User clicks the "CREATE" Action button
 	Then There are no errors in the browser console
 	Then Success message is displayed and contains "The automation action has been created" text
@@ -178,7 +178,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
 	When User selects 'Update path' in the 'Action Type' dropdown
 	When User selects '1803 Rollout' option from 'Project' autocomplete
 	When User selects 'Undetermined' option from 'Path' autocomplete
-	Then "Undetermined" content is displayed in the Path Automation dropdown
+	Then 'Undetermined' content is displayed in 'Path' textbox
 	When User clicks the "CREATE" Action button
 	Then There are no errors in the browser console
 	#Action 3
@@ -188,7 +188,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
 	When User selects 'Update path' in the 'Action Type' dropdown
 	When User selects '1803 Rollout' option from 'Project' autocomplete
 	When User selects 'Undetermined' option from 'Path' autocomplete
-	Then "Undetermined" content is displayed in the Path Automation dropdown
+	Then 'Undetermined' content is displayed in 'Path' textbox
 	When User clicks the "CREATE" Action button
 	Then There are no errors in the browser console
 	#Action 4
