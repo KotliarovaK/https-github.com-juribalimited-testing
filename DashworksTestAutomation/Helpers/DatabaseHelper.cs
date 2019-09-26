@@ -472,11 +472,11 @@ namespace DashworksTestAutomation.Helpers
         {
             try
             {
-                return DatabaseHelper.ExecuteReader($"select [RAGStatusId] from [PM].[dbo].[RAGStatus] where [ProjectId]=projectId and [RAGStatus]='{readinessName}'", 0)[0];
+                return DatabaseHelper.ExecuteReader($"select [RAGStatusId] from [PM].[dbo].[RAGStatus] where [ProjectId] = projectId and [RAGStatus] = '{readinessName}'", 0)[0];
             }
             catch (Exception e)
             {
-                throw new Exception("GetReadinessId returned no results" + e);
+                throw new Exception("GetReadinessId returned no results", e);
             }
         }
 
@@ -484,11 +484,11 @@ namespace DashworksTestAutomation.Helpers
         {
             try
             {
-                return DatabaseHelper.ExecuteReader($"select [RAGStatusId] from [PM].[dbo].[RAGStatus] where [ProjectId]={projectId}", 0);
+                return DatabaseHelper.ExecuteReader($"select [RAGStatusId] from [PM].[dbo].[RAGStatus] where [ProjectId] = {projectId}", 0);
             }
             catch (Exception e)
             {
-                throw new Exception("GetProjectReadinessesIds returned no results" + e);
+                throw new Exception("GetProjectReadinessesIds returned no results", e);
             }
         }
 
