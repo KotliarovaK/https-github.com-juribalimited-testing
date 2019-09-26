@@ -8,7 +8,7 @@ Background: Pre-Conditions
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17230
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatDisabledDistributionSectionCantBeEnteredByUsingTheBackButtonInTheBrowser
 	When User clicks 'Applications' on the left-hand menu
-	Then "All Applications" list should be displayed to the user
+	Then 'All Applications' list should be displayed to the user
 	When User perform search by "ACD Display 3.4"
 	And User click content from "Application" column
 	When User navigates to the 'Distribution' left menu item
@@ -21,7 +21,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatDisabledDistributionSectionCan
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16366 @DAS16246
 Scenario: EvergreenJnr_DevicesList_CheckThatVerticalMenuIsUnfoldedCorrectlyOnMenuSubItems
 	When User clicks 'Devices' on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user
 	When User click content from "Hostname" column
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
 	Then "Details" tab-menu on the Details page is expanded

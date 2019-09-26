@@ -11,7 +11,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDevicesAreAddedCorrectly
 	| Name                     | Description | IsDefault |
 	| CapacityUnit12141Devices | Devices     | false     |
 	And User clicks 'Devices' on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Hostname" rows in the grid
@@ -29,7 +29,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDevicesAreAddedCorrectly
 	Then User clicks "UPDATE" button on message box
 	And Success message with "5 updates have been queued" text is displayed on Action panel
 	When User clicks 'Admin' on the left-hand menu
-	Then "Admin" list should be displayed to the user
+	Then 'Admin' list should be displayed to the user
 	When User clicks "Evergreen" link on the Admin page
 	And User navigates to the 'Capacity Units' left menu item
 	Then "Capacity Units" page should be displayed to the user
@@ -42,7 +42,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatUsersAreAddedCorrectly
 	| Name                   | Description | IsDefault |
 	| CapacityUnit12141Users | Users       | false     |
 	And User clicks 'Users' on the left-hand menu
-	Then "All Users" list should be displayed to the user
+	Then 'All Users' list should be displayed to the user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Username" rows in the grid
@@ -60,7 +60,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatUsersAreAddedCorrectly
 	Then User clicks "UPDATE" button on message box
 	And Success message with "5 updates have been queued" text is displayed on Action panel
 	When User clicks 'Admin' on the left-hand menu
-	Then "Admin" list should be displayed to the user
+	Then 'Admin' list should be displayed to the user
 	When User clicks "Evergreen" link on the Admin page
 	And User navigates to the 'Capacity Units' left menu item
 	Then "Capacity Units" page should be displayed to the user
@@ -73,7 +73,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatApplicationsAreAddedCorrectly
 	| Name                          | Description  | IsDefault |
 	| CapacityUnit12141Applications | Applications | false     |
 	And User clicks 'Applications' on the left-hand menu
-	Then "All Applications" list should be displayed to the user
+	Then 'All Applications' list should be displayed to the user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Application" rows in the grid
@@ -91,7 +91,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatApplicationsAreAddedCorrectly
 	Then User clicks "UPDATE" button on message box
 	And Success message with "5 updates have been queued" text is displayed on Action panel
 	When User clicks 'Admin' on the left-hand menu
-	Then "Admin" list should be displayed to the user
+	Then 'Admin' list should be displayed to the user
 	When User clicks "Evergreen" link on the Admin page
 	And User navigates to the 'Capacity Units' left menu item
 	Then "Capacity Units" page should be displayed to the user
@@ -104,7 +104,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatMailboxesAreAddedCorrectly
 	| Name                       | Description | IsDefault |
 	| CapacityUnit12141Mailboxes | Mailboxes   | false     |
 	And User clicks 'Mailboxes' on the left-hand menu
-	Then "All Mailboxes" list should be displayed to the user
+	Then 'All Mailboxes' list should be displayed to the user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Email Address" rows in the grid
@@ -122,7 +122,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatMailboxesAreAddedCorrectly
 	Then User clicks "UPDATE" button on message box
 	And Success message with "5 updates have been queued" text is displayed on Action panel
 	When User clicks 'Admin' on the left-hand menu
-	Then "Admin" list should be displayed to the user
+	Then 'Admin' list should be displayed to the user
 	When User clicks "Evergreen" link on the Admin page
 	And User navigates to the 'Capacity Units' left menu item
 	Then "Capacity Units" page should be displayed to the user

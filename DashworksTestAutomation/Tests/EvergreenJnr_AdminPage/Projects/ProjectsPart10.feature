@@ -8,7 +8,7 @@ Background: Pre-Conditions
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Cleanup @Projects
 Scenario Outline: EvergreenJnr_ChangingApplicationsScopeListToAnotherList
 	When User clicks 'Applications' on the left-hand menu
-	Then "All Applications" list should be displayed to the user
+	Then 'All Applications' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Vendor" filter where type is "Equals" with added column and following value:
@@ -52,7 +52,7 @@ Examples:
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13973 @Cleanup @Projects
 Scenario Outline: EvergreenJnr_ChangingUsersScopeListToAnotherListForUserProject
 	When User clicks 'Users' on the left-hand menu
-	Then "All Users" list should be displayed to the user
+	Then 'All Users' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Domain" filter where type is "Equals" with added column and Lookup option
@@ -92,7 +92,7 @@ Examples:
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Cleanup @Projects
 Scenario Outline: EvergreenJnr_AdminPage_ChangingDynamicListToAllListForUserAndMailboxProjects
 	When User clicks '<ListName>' on the left-hand menu
-	Then "All <ListName>" list should be displayed to the user
+	Then 'All <ListName>' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "<FilterName>" filter where type is "Equals" with added column and Lookup option
@@ -130,7 +130,7 @@ Examples:
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13297 @Cleanup @Projects
 Scenario Outline: EvergreenJnr_ChangingApplicationScopeListToAnotherListForUserProject
 	When User clicks 'Applications' on the left-hand menu
-	Then "All Applications" list should be displayed to the user
+	Then 'All Applications' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Version" filter where type is "Does not contain" with added column and following value:

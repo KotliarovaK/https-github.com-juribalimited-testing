@@ -16,7 +16,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatChangingTheProjectNameOrShortNameInSen
 	| SnrProject13498 | 13498Pr   |             |      |
 	And User navigate to Evergreen link
 	When User clicks 'Admin' on the left-hand menu
-	Then "Admin" list should be displayed to the user
+	Then 'Admin' list should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
 	When User enters "SnrProject13498" text in the Search field for "Project" column
@@ -33,7 +33,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatChangingTheProjectNameOrShortNameInSen
 	When User clicks "Update" button
 	And User navigate to Evergreen link
 	When User clicks 'Admin' on the left-hand menu
-	Then "Admin" list should be displayed to the user
+	Then 'Admin' list should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
 	When User enters "13498NewProjectName" text in the Search field for "Project" column
@@ -56,7 +56,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatNameForProjectThatCreatedInSeniorWasU
 	| ProjectDAS13501 | 13501     |             |      |
 	And User navigate to Evergreen link
 	And User clicks 'Admin' on the left-hand menu
-	Then "Admin" list should be displayed to the user
+	Then 'Admin' list should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
 	When User enters "ProjectDAS13501" text in the Search field for "Project" column
@@ -81,7 +81,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTheCapacitySlotsLinkRedirectsToTheCorrectS
 @Evergreen @Admin @EvergreenJnr_AdminPage @Projects @DAS13510 @DAS13511 @Project_Creation_and_Scope @Projects @Cleanup @archived
 Scenario: EvergreenJnr_AdminPage_CheckThatProjectWithUseEvergreenCapacityUnitsIsNotDisplayedOnTheCapacityUnitsTab
 	When User clicks 'Admin' on the left-hand menu
-	Then "Admin" list should be displayed to the user
+	Then 'Admin' list should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
 	When User clicks the "CREATE PROJECT" Action button

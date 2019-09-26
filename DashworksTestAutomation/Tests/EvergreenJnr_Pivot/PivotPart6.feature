@@ -8,7 +8,7 @@ Background: Pre-Conditions
 @Evergreen @Mailboxes @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14426
 Scenario: EvergreenJnr_MailboxesLists_CheckThatProjectStageColumnsDisplayInTheCorrectOrderForMailboxes
 	When User clicks 'Mailboxes' on the left-hand menu
-	Then "All Mailboxes" list should be displayed to the user
+	Then 'All Mailboxes' list should be displayed to the user
 	When User navigates to Pivot
 	And User selects the following Row Groups on Pivot:
 	| RowGroups |
@@ -27,7 +27,7 @@ Scenario: EvergreenJnr_MailboxesLists_CheckThatProjectStageColumnsDisplayInTheCo
 @Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14426
 Scenario: EvergreenJnr_UsersLists_CheckThatProjectStageColumnsDisplayInTheCorrectOrderForUsers
 	When User clicks 'Users' on the left-hand menu
-	Then "All Users" list should be displayed to the user
+	Then 'All Users' list should be displayed to the user
 	When User navigates to Pivot
 	And User selects the following Row Groups on Pivot:
 	| RowGroups |
@@ -46,7 +46,7 @@ Scenario: EvergreenJnr_UsersLists_CheckThatProjectStageColumnsDisplayInTheCorrec
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14426
 Scenario: EvergreenJnr_DevicesLists_CheckThatProjectStageColumnsDisplayInTheCorrectOrderForDevices
 	When User clicks 'Devices' on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user
 	When User navigates to Pivot
 	And User selects the following Row Groups on Pivot:
 	| RowGroups |
@@ -65,7 +65,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatProjectStageColumnsDisplayInTheCorr
 @Evergreen @Applications @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14427
 Scenario: EvergreenJnr_ApplicationsList_CheckThatApplicationTargetAppReadinessColumnsDisplayInTheCorrectOrder
 	When User clicks 'Applications' on the left-hand menu
-	Then "All Applications" list should be displayed to the user
+	Then 'All Applications' list should be displayed to the user
 	When User navigates to Pivot
 	And User selects the following Row Groups on Pivot:
 	| RowGroups |
@@ -84,7 +84,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatApplicationTargetAppReadinessCo
 @Evergreen @Mailboxes @EvergreenJnr_Pivot @Pivot @DAS14428 @DAS13865
 Scenario: EvergreenJnr_MailboxesList_CheckThatMailboxOwnerComplianceColumnsDisplayInTheCorrectOrder
 	When User clicks 'Mailboxes' on the left-hand menu
-	Then "All Mailboxes" list should be displayed to the user
+	Then 'All Mailboxes' list should be displayed to the user
 	When User navigates to Pivot
 	And User selects the following Row Groups on Pivot:
 	| RowGroups |
@@ -107,7 +107,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatMailboxOwnerComplianceColumnsDispl
 @Evergreen @Applications @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14429
 Scenario: EvergreenJnr_ApplicationsLists_CheckThatComplianceColumnsDisplayInTheCorrectOrderForApplications
 	When User clicks 'Applications' on the left-hand menu
-	Then "All Applications" list should be displayed to the user
+	Then 'All Applications' list should be displayed to the user
 	When User navigates to Pivot
 	And User selects the following Row Groups on Pivot:
 	| RowGroups |

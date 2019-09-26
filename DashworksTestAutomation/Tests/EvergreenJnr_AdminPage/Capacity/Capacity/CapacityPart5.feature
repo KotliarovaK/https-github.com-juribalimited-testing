@@ -8,7 +8,7 @@ Background: Pre-Conditions
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @DAS13956 @DAS14068 @DAS14218 @Cleanup @Do_Not_Run_With_Capacity @Do_Not_Run_With_CapacityUnits @Set_Default_Capacity_Unit
 Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitInAProjectMappedToEvergreenDefaultCapacityUnit
 	When User clicks 'Admin' on the left-hand menu
-	Then "Admin" list should be displayed to the user
+	Then 'Admin' list should be displayed to the user
 	When User updates Capacity Units via api
 	| OldName    | Name     | Description | IsDefault |
 	| Unassigned | New Name |             |           |
@@ -55,7 +55,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedApplicationsAreDisplayedCapac
 	| Name  | Description | IsDefault | Project         |
 	| 1Test | DAS13156    | true      | Email Migration |
 	When User clicks 'Applications' on the left-hand menu
-	Then "All Applications" list should be displayed to the user
+	Then 'All Applications' list should be displayed to the user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Application" rows in the grid
@@ -71,7 +71,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedApplicationsAreDisplayedCapac
 	Then User clicks "UPDATE" button on message box
 	And Success message with "2 of 2 objects were in the selected project and have been queued" text is displayed on Action panel
 	When User clicks 'Admin' on the left-hand menu
-	Then "Admin" list should be displayed to the user
+	Then 'Admin' list should be displayed to the user
 	When User clicks "Evergreen" link on the Admin page
 	When User navigates to the 'Capacity Units' left menu item
 	Then "Capacity Units" page should be displayed to the user
@@ -89,7 +89,7 @@ Scenario Outline: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCountersOfDevice
 	And User enters "Unassigned" text in the Search field for "Capacity Unit" column
 	And User remembers value in "<ListName>" column
 	And User clicks content from "<ListName>" column
-	Then "<ListName>" list should be displayed to the user
+	Then '<ListName>' list should be displayed to the user
 	And Rows counter number equals to remembered value
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user

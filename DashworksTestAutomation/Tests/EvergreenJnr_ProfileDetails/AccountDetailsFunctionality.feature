@@ -75,7 +75,7 @@ Scenario: EvergreenJnr_UserProfile_ChecksListPageSizeAPI
 	And User clicks the "UPDATE" Action button
 	Then Success message with "User preferences have been changed" text is displayed on the Advanced page
 	When User clicks 'Devices' on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user
 	And page Size is "2500" on "Devices" page
 	When User clicks Profile in Account Dropdown
 	Then Profile page is displayed to user
@@ -105,7 +105,7 @@ Scenario: EvergreenJnr_UserProfile_CheckThatNotificationMessageDisappearsAfter5S
 	And User clicks Update button on Preferences page
 	Then Display Mode is changed to High Contrast
 	When User clicks 'Admin' on the left-hand menu
-	Then "Admin" list should be displayed to the user
+	Then 'Admin' list should be displayed to the user
 	When User enters "1803 Rollout" text in the Search field for "Project" column
 	When User clicks content from "Project" column
 	When User navigates to the 'Readiness' left menu item

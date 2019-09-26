@@ -11,7 +11,7 @@ Background: Pre-Conditions
 Scenario: EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindowWithNoAssotiatedDevicesOnUsersPage
 	#When User navigates to the 'User' details page for '01F6D54271D74F1BB8D' item
 	When User clicks 'Users' on the left-hand menu
-	Then "All Users" list should be displayed to the user
+	Then 'All Users' list should be displayed to the user
 	When User perform search by "01F6D54271D74F1BB8D"
 	And User click content from "Username" column
 	Then Details page for "01F6D54271D74F1BB8D" item is displayed to the user
@@ -35,7 +35,7 @@ Scenario: EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboa
 	When User clicks the "OFFBOARD" Action button
 	#going to check the object state
 	And User clicks 'Admin' on the left-hand menu
-	Then "Admin" list should be displayed to the user
+	Then 'Admin' list should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
 	When User enters "USE ME FOR AUTOMATION(USR SCHDLD)" text in the Search field for "Project" column
@@ -67,7 +67,7 @@ Scenario: EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboa
 	When User clicks the "OFFBOARD" Action button
 	#going to check the object state
 	And User clicks 'Admin' on the left-hand menu
-	Then "Admin" list should be displayed to the user
+	Then 'Admin' list should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
 	When User enters "USE ME FOR AUTOMATION(USR SCHDLD)" text in the Search field for "Project" column
@@ -80,7 +80,7 @@ Scenario: EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboa
 @Evergreen @Users @EvergreenJnr_ItemDetails @Offboard @DAS17964 @DAS17990 @DAS17000
 Scenario: EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindowWithoutUserOnUsersPage
 	When User clicks 'Users' on the left-hand menu
-	Then "All Users" list should be displayed to the user
+	Then 'All Users' list should be displayed to the user
 	When User perform search by "0088FC8A50DD4344B92"
 	And User click content from "Username" column
 	Then Details page for "0088FC8A50DD4344B92" item is displayed to the user

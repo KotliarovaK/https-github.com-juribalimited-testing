@@ -8,7 +8,7 @@ Background: Pre-Conditions
 @Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS14224
 Scenario Outline: EvergreenJnr_AllLists_ChecksThatPivotsAreNotShownInTheListToSelectAsAnAdvancedFilter
 	When User clicks '<PageNameForPivot>' on the left-hand menu
-	Then "<PageLabelForPivot>" list should be displayed to the user
+	Then '<PageLabelForPivot>' list should be displayed to the user
 	When User navigates to Pivot
 	And User selects the following Row Groups on Pivot:
 	| RowGroups   |
@@ -24,7 +24,7 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatPivotsAreNotShownInTheListToSe
 	When User creates Pivot list with "<PivotName>" name
 	Then "<PivotName>" list is displayed to user
 	When User clicks '<PageNameForFilter>' on the left-hand menu
-	Then "<PageLabelForFilter>" list should be displayed to the user
+	Then '<PageLabelForFilter>' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User clicks Add New button on the Filter panel

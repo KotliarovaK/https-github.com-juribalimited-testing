@@ -136,7 +136,7 @@ Scenario Outline: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCountersOfUserPr
 	And User enters "Evergreen Capacity Unit 3" text in the Search field for "Capacity Unit" column
 	And User remembers value in "<ListName>" column
 	And User clicks content from "<ListName>" column
-	Then "All <ListName>" list should be displayed to the user
+	Then 'All <ListName>' list should be displayed to the user
 	And Rows counter number equals to remembered value
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
@@ -172,7 +172,7 @@ Scenario Outline: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCountersOfMailPr
 	And User enters "Unassigned" text in the Search field for "Capacity Unit" column
 	And User remembers value in "<ListName>" column
 	And User clicks content from "<ListName>" column
-	Then "All <ListName>" list should be displayed to the user
+	Then 'All <ListName>' list should be displayed to the user
 	And Rows counter number equals to remembered value
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user

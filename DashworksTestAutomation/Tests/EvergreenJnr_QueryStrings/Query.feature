@@ -185,7 +185,7 @@ Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDe
 @Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS13179 @DAS17398 @Cleanup
 Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDeviceDynamicList
 	When User clicks 'Applications' on the left-hand menu
-	Then "All Applications" list should be displayed to the user
+	Then 'All Applications' list should be displayed to the user
 	When User clicks on 'Vendor' column header
 	And User create dynamic list with "Dynamic13179" name on "Applications" page
 	Then "Dynamic13179" list is displayed to user

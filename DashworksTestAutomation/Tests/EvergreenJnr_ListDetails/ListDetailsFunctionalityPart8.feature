@@ -103,6 +103,6 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatArchivedEmptyNameCantBeClicked
 	| Device Key |
 	And User sets includes archived devices in "true"
 	And User clicks content from first row of Hostname column
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user
 	When User clicks content from first row of Device Key column
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user

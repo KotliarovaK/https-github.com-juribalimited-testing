@@ -65,7 +65,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
-        [Then(@"""(.*)"" list should be displayed to the user")]
+        [Then(@"'(.*)' list should be displayed to the user")]
         public void ThenListShouldBeDisplayedToTheUser(string listPage)
         {
             switch (listPage)

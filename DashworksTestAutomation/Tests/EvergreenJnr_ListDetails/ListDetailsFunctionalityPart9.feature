@@ -45,7 +45,7 @@ Examples:
 @Evergreen @Devices @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18089
 Scenario: EvergreenJnr_DashboardsPage_CheckThatArchivedItemsCheckboxDisplayedInListDetails
 	When User clicks 'Devices' on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user
 	When User clicks "1803 Rollout" list name in left panel
 	And User clicks the List Details button
 	Then List details panel is displayed to the user
@@ -54,7 +54,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatArchivedItemsCheckboxDisplayedInL
 @Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18089
 Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatArchivedItemsCheckboxINotDisplayedInListDetails
 	When User clicks '<PageName>' on the left-hand menu
-	Then "<ListToNavigate>" list should be displayed to the user
+	Then '<ListToNavigate>' list should be displayed to the user
 	When User clicks "<List>" list name in left panel
 	And User clicks the List Details button
 	Then List details panel is displayed to the user

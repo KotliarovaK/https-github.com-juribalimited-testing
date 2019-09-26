@@ -14,7 +14,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatGroupIconsAreDisplayedForGroupDetailsPa
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15552 @DAS16921 @DAS16743
 Scenario: EvergreenJnr_DevicesList_CheckThatTopBarInEvergreenModeIsDisplayedCorrectlyOnDevicesPage
 	When User clicks 'Devices' on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user
 	When User perform search by "001BAQXT6JWFPI"
 	And User click content from "Hostname" column
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
@@ -27,7 +27,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTopBarInEvergreenModeIsDisplayedCorr
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15552 @DAS16921 @DAS16743
 Scenario: EvergreenJnr_UsersList_CheckThatTopBarInEvergreenModeIsDisplayedCorrectlyOnUsersPage
 	When User clicks 'Users' on the left-hand menu
-	Then "All Users" list should be displayed to the user
+	Then 'All Users' list should be displayed to the user
 	When User perform search by "0072B088173449E3A93"
 	And User click content from "Username" column
 	Then Details page for "0072B088173449E3A93" item is displayed to the user
@@ -41,7 +41,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatTopBarInEvergreenModeIsDisplayedCorrec
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15552 @DAS16921 @DAS16743
 Scenario: EvergreenJnr_ApplicationsList_CheckThatTopBarInEvergreenModeIsDisplayedCorrectlyOnApplicationsPage
 	When User clicks 'Applications' on the left-hand menu
-	Then "All Applications" list should be displayed to the user
+	Then 'All Applications' list should be displayed to the user
 	When User perform search by "ABBYY FineReader 8.0 Professional Edition"
 	And User click content from "Application" column
 	Then Details page for "ABBYY FineReader 8.0 Professional Edition" item is displayed to the user
@@ -52,7 +52,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatTopBarInEvergreenModeIsDisplaye
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15552 @DAS16921 @DAS16743
 Scenario: EvergreenJnr_MailboxesList_CheckThatTopBarInEvergreenModeIsDisplayedCorrectlyOnMailboxesPage
 	When User clicks 'Mailboxes' on the left-hand menu
-	Then "All Mailboxes" list should be displayed to the user
+	Then 'All Mailboxes' list should be displayed to the user
 	When User perform search by "00B5CCB89AD0404B965@bclabs.local"
 	And User click content from "Email Address" column
 	Then Details page for "00B5CCB89AD0404B965@bclabs.local" item is displayed to the user
@@ -68,7 +68,7 @@ Scenario: EvergreenJnr_GroupsList_CheckThatTopBarInEvergreenModeIsDisplayedCorre
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS14975 @DAS15333 @DAS16762 @DAS17166 @DAS17075
 Scenario: EvergreenJnr_DevicesList_CheckThatTopBarInProjectModeIsDisplayedCorrectlyOnDevicesPage
 	When User clicks 'Devices' on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user
 	When User perform search by "001BAQXT6JWFPI"
 	And User click content from "Hostname" column
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
@@ -89,7 +89,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTopBarInProjectModeIsDisplayedCorrec
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS14975 @DAS15333 @DAS16762 @DAS17166 @DAS17075
 Scenario: EvergreenJnr_UsersList_CheckThatTopBarInProjectModeIsDisplayedCorrectlyOnUsersPage
 	When User clicks 'Users' on the left-hand menu
-	Then "All Users" list should be displayed to the user
+	Then 'All Users' list should be displayed to the user
 	When User perform search by "0072B088173449E3A93"
 	And User click content from "Username" column
 	Then Details page for "0072B088173449E3A93" item is displayed to the user
@@ -110,7 +110,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatTopBarInProjectModeIsDisplayedCorrectl
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS14975 @DAS15333 @DAS16762 @DAS17166 @DAS17075 @DAS17355
 Scenario: EvergreenJnr_ApplicationsList_CheckThatTopBarInProjectModeIsDisplayedCorrectlyOnApplicationsPage
 	When User clicks 'Applications' on the left-hand menu
-	Then "All Applications" list should be displayed to the user
+	Then 'All Applications' list should be displayed to the user
 	When User perform search by "ABBYY FineReader 8.0 Professional Edition"
 	And User click content from "Application" column
 	Then Details page for "ABBYY FineReader 8.0 Professional Edition" item is displayed to the user
@@ -131,7 +131,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatTopBarInProjectModeIsDisplayedC
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS14975 @DAS15333 @DAS16762 @DAS17166 @DAS17075 @DAS17355
 Scenario: EvergreenJnr_MailboxesList_CheckThatTopBarInProjectModeIsDisplayedCorrectlyOnMailboxesPage
 	When User clicks 'Mailboxes' on the left-hand menu
-	Then "All Mailboxes" list should be displayed to the user
+	Then 'All Mailboxes' list should be displayed to the user
 	When User perform search by "00B5CCB89AD0404B965@bclabs.local"
 	And User click content from "Email Address" column
 	Then Details page for "00B5CCB89AD0404B965@bclabs.local" item is displayed to the user
@@ -145,7 +145,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatTopBarInProjectModeIsDisplayedCorr
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17166 @DAS17355
 Scenario: EvergreenJnr_DevicesList_CheckThatValueForUseMeForAutomationProjectIsDisplayedCorrectly
 	When User clicks 'Devices' on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user
 	When User perform search by "001BAQXT6JWFPI"
 	And User click content from "Hostname" column
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
@@ -160,7 +160,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatValueForUseMeForAutomationProjectIsD
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16698 @DAS17005 @DAS15347 @DAS16668 @DAS16903 @DAS16907 @DAS16857 @DAS17005
 Scenario Outline: EvergreenJnr_AllLists_CheckThatProjectsInTheTopBarOnItemDetailsPageAreDisplayedInAlphabeticalOrder
 	When User clicks '<PageName>' on the left-hand menu
-	Then "All <PageName>" list should be displayed to the user
+	Then 'All <PageName>' list should be displayed to the user
 	When User perform search by "<ItemName>"
 	And User click content from "<ColumnName>" column
 	Then Details page for "<ItemName>" item is displayed to the user
@@ -180,7 +180,7 @@ Examples:
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16857 
 Scenario Outline: EvergreenJnr_AllLists_CheckThatComplianceInKeyValueTableMatchesTheOverallComplianceFromTopBarInEvergreenMode
 	When User clicks '<PageName>' on the left-hand menu
-	Then "All <PageName>" list should be displayed to the user
+	Then 'All <PageName>' list should be displayed to the user
 	When User perform search by "<ItemName>"
 	And User click content from "<ColumnName>" column
 	Then Details page for "<ItemName>" item is displayed to the user
@@ -201,7 +201,7 @@ Examples:
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16857 @DAS16928
 Scenario Outline: EvergreenJnr_AllLists_CheckThatComplianceInKeyValueTableMatchesTheOverallComplianceFromTopBarInProjectMode
 	When User clicks '<PageName>' on the left-hand menu
-	Then "All <PageName>" list should be displayed to the user
+	Then 'All <PageName>' list should be displayed to the user
 	When User perform search by "<ItemName>"
 	And User click content from "<ColumnName>" column
 	Then Details page for "<ItemName>" item is displayed to the user
@@ -225,7 +225,7 @@ Examples:
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17002
 Scenario: EvergreenJnr_ApplicationsList_CheckThatReadinessValuesIsDisplayedAccordingToHavocBigDataProject
 	When User clicks 'Applications' on the left-hand menu
-	Then "All Applications" list should be displayed to the user
+	Then 'All Applications' list should be displayed to the user
 	When User perform search by "ACD Display 3.4"
 	And User click content from "Application" column
 	Then Details page for "ACD Display 3.4" item is displayed to the user
@@ -244,7 +244,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatReadinessValuesIsDisplayedAccor
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17355 @DAS17075
 Scenario: EvergreenJnr_UsersList_CheckThaWorkflowTextAndValueArentDisplayedAtAllOnUsersPage
 	When User clicks 'Users' on the left-hand menu
-	Then "All Users" list should be displayed to the user
+	Then 'All Users' list should be displayed to the user
 	When User perform search by "AAC860150"
 	And User click content from "Username" column
 	Then Details page for "AAC860150" item is displayed to the user

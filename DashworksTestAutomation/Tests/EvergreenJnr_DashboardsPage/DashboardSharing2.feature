@@ -16,7 +16,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForEdit
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
 	When User clicks 'Devices' on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user
 	When User clicks on 'Hostname' column header
 	And User create custom list with "DeviceListFor14841_Edit" name
 	Then "DeviceListFor14841_Edit" list is displayed to user
@@ -67,7 +67,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdmi
 	When User clicks the Switch to Evergreen link
 	
 	When User clicks 'Devices' on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user
 	When User clicks on 'Hostname' column header
 	And User create custom list with "DeviceListFor14841_Admin" name
 	Then "DeviceListFor14841_Admin" list is displayed to user
@@ -118,7 +118,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdmi
 	| automation_admin1 | m!gration |
 	When User clicks the Switch to Evergreen link
 	When User clicks 'Devices' on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user
 	When User clicks Settings button for "DeviceListFor14841_Admin" list
 	And User clicks Manage in the list panel
 	Then List details panel is displayed to the user

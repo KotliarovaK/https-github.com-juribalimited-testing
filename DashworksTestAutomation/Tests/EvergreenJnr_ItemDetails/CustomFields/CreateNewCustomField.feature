@@ -15,7 +15,7 @@ Scenario: EvergreenJnr_DevicesList_CheckAddCustomFieldPopupUiAndTooltips
 	| CfDAS16487_1c | FlDAS16487_1c | true                | true    | false    |
 	And User navigate to Evergreen URL
 	When User clicks 'Devices' on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user
 	When User perform search by "QFI94WAUX17N4I"
 	And User click content from "Hostname" column
 	Then Details page for "QFI94WAUX17N4I" item is displayed to the user

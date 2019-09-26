@@ -12,7 +12,7 @@ When User add following columns using URL to the "Devices" page:
 	| CPU Virtualisation Capable |
 	And User move 'CPU Virtualisation Capable' column to 'Hostname' column
 	And User move 'Hostname' column to 'Operating System' column
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user
 	When User create dynamic list with "List15364" name on "Devices" page
 	Then "List15364" list is displayed to user
 	When Dashboard with "Dashboard for DAS15364" name created via API and opened
@@ -174,7 +174,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetHavingDateColumnsDispla
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName |
 	| Build Date |
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user
 	When User create dynamic list with "ListForDas15722" name on "Devices" page
 	And Dashboard with "DashboardForDas15722" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
@@ -202,7 +202,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckComplianceFirstCellIconsForCardWidget
 	And User add "Compliance" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| Amber              |
-	Then "All Applications" list should be displayed to the user
+	Then 'All Applications' list should be displayed to the user
 	When User create dynamic list with "DAS15355_Applications_List" name on "Applications" page
 	Then "DAS15355_Applications_List" list is displayed to user
 	When Dashboard with "Dashboard_DAS15355" name created via API and opened
@@ -243,7 +243,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckReadinessFirstCellIconsForCardWidget
 	And User move '1803: Readiness' column to 'Hostname' column
 	And User move 'Hostname' column to 'Operating System' column
 	And User clicks on '1803: Readiness' column header
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user
 	When User create dynamic list with "DAS15355_List" name on "Devices" page
 	Then "DAS15355_List" list is displayed to user
 
@@ -284,7 +284,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIsDisplayedCorrectlyWit
 	And User clicks on 'Owner Display Name' column header
 	And User move 'Owner Display Name' column to 'Hostname' column
 	And User move 'Hostname' column to 'Operating System' column
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user
 	When User create dynamic list with "DAS16266_List" name on "Devices" page
 	Then "DAS16266_List" list is displayed to user
 	When Dashboard with "DAS16266_Dashboard" name created via API and opened
@@ -311,9 +311,9 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhe
 	| ColumnName                             |
 	| 1803: Pre-Migration \ Ready to Migrate |
 	And User move '1803: Pre-Migration \ Ready to Migrate' column to 'Hostname' column
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user
 	When User move 'Hostname' column to 'Device Type' column
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user
 	When User create dynamic list with "DeviceListFor15914" name on "Devices" page
 	Then "DeviceListFor15914" list is displayed to user
 	When Dashboard with "Dashboard for DAS15914" name created via API and opened
@@ -338,7 +338,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhe
 	| 1803: Readiness |
 	And User move '1803: Readiness' column to 'Hostname' column
 	And User move 'Hostname' column to 'Operating System' column
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user
 	When User create dynamic list with "DeviceListFor16127" name on "Devices" page
 	Then "DeviceListFor16127" list is displayed to user
 	When Dashboard with "Dashboard for DAS16127" name created via API and opened
@@ -365,7 +365,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhe
 	| 1803: Pre-Migration \ Scheduled Date |
 	And User move '1803: Pre-Migration \ Scheduled Date' column to 'Hostname' column
 	And User move 'Hostname' column to 'Operating System' column
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user
 	When User create dynamic list with "DeviceListFor15765" name on "Devices" page
 	Then "DeviceListFor15765" list is displayed to user
 	When Dashboard with "Dashboard for DAS15765" name created via API and opened
@@ -386,7 +386,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorsInConsoleAfterAddingAppli
 	And User move 'MigrationP: Application Readiness' column to 'Application' column
 	And User move 'Application' column to 'Vendor' column
 	And User clicks on 'MigrationP: Application Readiness' column header
-	Then "All Applications" list should be displayed to the user
+	Then 'All Applications' list should be displayed to the user
 	When User create dynamic list with "DAS16336_Applications_List" name on "Applications" page
 	Then "DAS16336_Applications_List" list is displayed to user
 	When Dashboard with "Dashboard_DAS16336" name created via API and opened
@@ -436,7 +436,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhe
 	And User move 'ICSP: In Scope' column to 'Hostname' column
 	And User move 'Hostname' column to 'Operating System' column
 	And User clicks on 'ICSP: In Scope' column header
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user
 	When User create dynamic list with "DeviceListFor16325" name on "Devices" page
 	Then "DeviceListFor16325" list is displayed to user
 	When Dashboard with "Dashboard for DAS16325" name created via API and opened
@@ -484,7 +484,7 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatCardSelectingAggregateFun
 	| First Seen Date                      |
 	| Windows7Mi: Communication \ DateTime |
 	| Compliance                           |
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user
 	When User create dynamic list with "ListWithAllDatatypes" name on "Devices" page
 	And Dashboard with "All Data Types for DAS15514" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
@@ -506,7 +506,7 @@ Examples:
 Scenario: EvergreenJnr_DashboardsPage_CheckThatArchivedItemsIncludedInCountWhenReferencingDynamicListContainsArchivedItems
 	When User clicks 'Devices' on the left-hand menu
 	And User sets includes archived devices in "true"
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user
 	When User create dynamic list with "List16844" name on "Devices" page
 	And Dashboard with "Dashboard for DAS16844" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
@@ -552,7 +552,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnCardWidget
 	| Values |
 	| ZZZZ   |
 	And User clicks Save button on the list panel
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user
 	When User create dynamic list with "ListForDAS16167" name on "Devices" page
 	Then "ListForDAS16167" list is displayed to user
 	When Dashboard with "DAS16167_Dashboard" name created via API and opened

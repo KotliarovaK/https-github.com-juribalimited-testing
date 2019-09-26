@@ -8,7 +8,7 @@ Background: Pre-Conditions
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Cleanup @Cleanup @Projects
 Scenario Outline: EvergreenJnr_ChangingApplicationScopeListToAnotherListForMailboxProject
 	When User clicks 'Applications' on the left-hand menu
-	Then "All Applications" list should be displayed to the user
+	Then 'All Applications' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Vendor" filter where type is "Equals" with added column and following value:
@@ -147,7 +147,7 @@ Scenario: EvergreenJnr_AdminPage_AddingRequestTypesAndCategories
 	Then Success message is displayed with "Category successfully created." text
 	When User navigate to Evergreen link
 	And User clicks 'Admin' on the left-hand menu
-	Then "Admin" list should be displayed to the user
+	Then 'Admin' list should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
 	When User enters "TestName18" text in the Search field for "Project" column

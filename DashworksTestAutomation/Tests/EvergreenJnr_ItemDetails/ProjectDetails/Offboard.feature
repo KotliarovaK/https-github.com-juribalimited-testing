@@ -10,7 +10,7 @@ Background: Pre-Conditions
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @Offboard @DAS17843 @DAS17926 @Cleanup @Not_Ready
 Scenario Outline: EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectlyForProjectDetailsPageWhichHasAssociatedObjects
 	When User clicks '<PageName>' on the left-hand menu
-	Then "<LoadedPage>" list should be displayed to the user
+	Then '<LoadedPage>' list should be displayed to the user
 	When User perform search by "<ItemName>"
 	And User click content from "<ColumnName>" column
 	Then Details page for "<ItemName>" item is displayed to the user
@@ -24,7 +24,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectly
 	When User clicks the "OFFBOARD" Action button
 	#going to check the object state
 	When User clicks 'Admin' on the left-hand menu
-	Then "Admin" list should be displayed to the user
+	Then 'Admin' list should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
 	When User enters "<ProjectName>" text in the Search field for "Project" column
@@ -45,7 +45,7 @@ Examples:
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @Offboard @DAS17843 @DAS17926 @Cleanup @Not_Ready
 Scenario Outline: EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectlyForProjectDetailsPageWhichHasNoAssociatedObjects
 	When User clicks '<PageName>' on the left-hand menu
-	Then "<LoadedPage>" list should be displayed to the user
+	Then '<LoadedPage>' list should be displayed to the user
 	When User perform search by "<ItemName>"
 	And User click content from "<ColumnName>" column
 	Then Details page for "<ItemName>" item is displayed to the user
@@ -59,7 +59,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectly
 	When User clicks the "OFFBOARD" Action button
 	#going to check the object state
 	And User clicks 'Admin' on the left-hand menu
-	Then "Admin" list should be displayed to the user
+	Then 'Admin' list should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
 	When User enters "<ProjectName>" text in the Search field for "Project" column

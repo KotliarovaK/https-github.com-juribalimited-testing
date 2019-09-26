@@ -9,7 +9,7 @@ Background: Pre-Conditions
 @Evergreen @Devices @EvergreenJnr_StaticLists @FiltersDisplay @Evergreen_FiltersFeature @DAS10993 @DAS12152 @DAS12351 @DAS13389 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatDynamicFiltersAreClearedForStaticListsWhenOpenedAfterDynamicLists
 	When User clicks 'Devices' on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Windows7Mi: Category" filter where type is "Equals" with added column and following checkboxes:
@@ -20,7 +20,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDynamicFiltersAreClearedForStaticLis
 	Then "TestListE5FC4A" list is displayed to user
 	And "17,248" rows are displayed in the agGrid
 	When User navigates to the "All Devices" list
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user
 	When User create static list with "Static List TestName14" name on "Devices" page with following items
 	| ItemName       |
 	| 0281Z79JGPVPH4 |
@@ -37,7 +37,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDynamicFiltersAreClearedForStaticLis
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @Evergreen_FiltersFeature @DAS10978 @DAS12034 @DAS12221 @DAS12232 @DAS12351 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatFiltersAndColumnsAreRestoredForSavedList
 	When User clicks 'Devices' on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Windows7Mi: Portal Self Service \ SS Application List Completed" filter where type is "Equals" with added column and following checkboxes:
@@ -49,7 +49,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFiltersAndColumnsAreRestoredForSaved
 	Then "TestList886350" list is displayed to user
 	And "5,159" rows are displayed in the agGrid
 	When User navigates to the "All Devices" list
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user
 	When User navigates to the "TestList886350" list
 	Then "TestList886350" list is displayed to user
 	And "5,159" rows are displayed in the agGrid
@@ -60,7 +60,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFiltersAndColumnsAreRestoredForSaved
 @Evergreen @Devices @EvergreenJnr_StaticLists @FiltersDisplay @Evergreen_FiltersFeature @DAS10695 @DAS12152 @DAS12966 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedWhenAddingExistingObjectToStaticList
 	When User clicks 'Devices' on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Hostname" rows in the grid
@@ -73,10 +73,10 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedWhenAddingExis
 	And User create static list with "TopFour TestName" name
 	Then "TopFour TestName" list is displayed to user
 	When User navigates to the "All Devices" list
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 00BDM1JUR8IF419  |
