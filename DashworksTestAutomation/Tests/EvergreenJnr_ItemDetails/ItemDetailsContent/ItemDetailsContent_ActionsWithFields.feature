@@ -538,3 +538,37 @@ Scenario: EvergreenJnr_DevicesList_CheckThatErrorsANotAppearInConsoleWhenNavigat
 	| Inventory Site            |
 	| Dashworks First Seen Date |
 	Then There are no errors in the browser console
+
+	#Ann.Ilchenko 9/24/19: will be ready after completion Zion Sprint 34
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18162 @Not_Ready
+Scenario Outline: EvergreenJnr_AllLists_CheckThatDomainFieldIsDisplayedOnSelectedPages
+	When User navigates to the '<PageName>' details page for '<ItemName>' item
+	Then Details page for "<ItemName>" item is displayed to the user
+	When User navigates to the "<SubTabName>" sub-menu on the Details page
+	Then following fields are displayed in the open section:
+	| Fields                    |
+	| Key                       |
+	| Directory Type            |
+	| Domain                    |
+	| Username                  |
+	| Common Name               |
+	| Distinguished Name        |
+	| Display Name              |
+	| SID                       |
+	| GUID                      |
+	| Last Logon Date           |
+	| Compliance                |
+	| Enabled                   |
+	| Parent Distinguished Name |
+	| Given Name                |
+	| Surname                   |
+	| Description               |
+	| Home Drive                |
+	| Home Directory            |
+	| Email Address             |
+
+Examples: 
+	| PageName | ItemName                | SubTabName    |
+	| Device   | 00YTY8U3ZYP2WT          | Device Owner  |
+	| User     | 013DA2178AB4444CAF2     | User          |
+	| Mailbox  | ZGF0027767@bclabs.local | Mailbox Owner |
