@@ -250,5 +250,12 @@ namespace DashworksTestAutomation.Pages
             else
             { return Driver.FindElement(By.XPath(".//div[@class='card-widget-data']")); }
         }
+
+        public IWebElement GetFirstDashboardFromList()
+        {
+            var widg = By.XPath($".//ul[@class='submenu-actions-dashboards']/li[@mattooltipposition]");
+            Driver.WaitForDataLoading();
+            return Driver.FindElements(widg).First();
+        }
     }
 }

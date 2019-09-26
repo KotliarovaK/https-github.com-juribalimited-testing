@@ -171,9 +171,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User clicks Show Dashboards panel icon on Dashboards page")]
         public void WhenUserClicksShowDashboardsPanelOnDashboardsPage()
         {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            _driver.WaitForElementToBeDisplayed(page.DashboardsPanelIcon);
-            page.DashboardsPanelIcon.Click();
+            var page = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForElementToBeDisplayed(page.ExpandSideNavPanelIcon);
+            page.ExpandSideNavPanelIcon.Click();
         }
 
         [When(@"User clicks Edit mode trigger on Dashboards page")]
@@ -1013,7 +1013,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User clicks first Dashboard in dashboards list")]
         public void WhenUserClickFirstDashboardInDashboardsList()
         {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            var page = _driver.NowAt<AddWidgetPage>();
             page.GetFirstDashboardFromList().Click();
         }
         
