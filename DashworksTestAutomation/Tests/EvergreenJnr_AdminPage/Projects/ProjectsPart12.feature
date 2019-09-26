@@ -147,7 +147,7 @@ Scenario: EvergreenJnr_AdminPage_AddingRequestTypesAndCategories
 	Then Success message is displayed with "Category successfully created." text
 	When User navigate to Evergreen link
 	And User clicks 'Admin' on the left-hand menu
-	Then Admin page should be displayed to the user
+	Then "Admin" list should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
 	When User enters "TestName18" text in the Search field for "Project" column

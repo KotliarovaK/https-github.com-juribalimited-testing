@@ -103,6 +103,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     var adminPage = _driver.NowAt<Pages.Evergreen.AdminPage>();
                     Verify.AreEqual(listPage.ToLower(), adminPage.Heading.Text.ToLower(),
                         "Incorrect list is displayed to user");
+                    var page = _driver.NowAt<AdminLeftHandMenu>();
+                    Verify.IsTrue(_driver.IsElementExists(page.AdminSubMenu), "Admin page was not displayed");
                     break;
 
                 default:
@@ -110,15 +112,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
 
             Logger.Write($"'{listPage}' list is visible");
-        }
-
-        [Then(@"Admin page should be displayed to the user")]
-        public void ThenAdminPageShouldBeDisplayedToTheUser()
-        {
-            var page = _driver.NowAt<AdminLeftHandMenu>();
-            Verify.IsTrue(_driver.IsElementExists(page.AdminSubMenu), "Admin page was not displayed");
-            if (!page.AdminSubMenu.Displayed())
-                page.ExpandSidePanelIcon.Click();
         }
 
         [Then(@"Update Readiness is displayed to the User")]

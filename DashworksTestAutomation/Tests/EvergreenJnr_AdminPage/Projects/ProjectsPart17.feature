@@ -18,7 +18,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedWhenDeleti
 	When User create dynamic list with "TestList0A78U9" name on "Devices" page
 	Then "TestList0A78U9" list is displayed to user
 	When User clicks 'Admin' on the left-hand menu
-	Then Admin page should be displayed to the user
+	Then "Admin" list should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
 	When User clicks the "CREATE PROJECT" Action button
@@ -97,7 +97,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeleting
 	Then "list is used by 1 project, do you wish to proceed?" message is displayed in the lists panel
 	And User clicks Delete button on the warning message in the lists panel
 	When User clicks 'Admin' on the left-hand menu
-	Then Admin page should be displayed to the user
+	Then "Admin" list should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
 	When User clicks on 'TestProject1' cell from 'Project' column

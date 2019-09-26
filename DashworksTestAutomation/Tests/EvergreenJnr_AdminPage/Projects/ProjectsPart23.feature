@@ -14,7 +14,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatConvertButtonDisappearsAfterProjectCo
 	| DAS14819Project | 14819     |             |      |
 	And User clicks the Switch to Evergreen link
 	And User clicks 'Admin' on the left-hand menu
-	Then Admin page should be displayed to the user
+	Then "Admin" list should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	When User enters "DAS14819Project" text in the Search field for "Project" column
 	And User clicks content from "Project" column
@@ -38,7 +38,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectCountersDisplayedInRingGridFor
 	| DAS15260Project | 15260     |             |      |
 	And User clicks the Switch to Evergreen link
 	And User clicks 'Admin' on the left-hand menu
-	Then Admin page should be displayed to the user
+	Then "Admin" list should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	And User enters "DAS15260Project" text in the Search field for "Project" column
 	And User clicks content from "Project" column
@@ -67,7 +67,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectCountersDisplayedInRingGridFor
 	And User selects "Queue" tab on the Project details page
 	And User waits until Queue disappears
 	And User clicks 'Admin' on the left-hand menu
-	Then Admin page should be displayed to the user
+	Then "Admin" list should be displayed to the user
 	When User clicks "Evergreen" link on the Admin page
 	When User navigates to the 'Rings' left menu item
 	And User clicks String Filter button for "Project" column on the Admin page

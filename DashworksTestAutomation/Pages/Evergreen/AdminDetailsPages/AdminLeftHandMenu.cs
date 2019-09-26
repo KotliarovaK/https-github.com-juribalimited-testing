@@ -11,6 +11,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[@class='title-container']")]
         public IWebElement AdminTitle { get; set; }
 
+        //TODO remove this. Used like an indicator that we have opened Admin page but this is just breadcrumbs
         [FindsBy(How = How.XPath, Using = ".//mat-sidenav[@role='navigation']")]
         public IWebElement AdminSubMenu { get; set; }
 
@@ -60,13 +61,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
-            return new List<By>
-            {
-                //Below element are not visible in expanded menu
-                //SelectorFor(this, p => p.AdminTitle),
-                //SelectorFor(this, p => p.Projects),
-                //SelectorFor(this, p => p.Teams),
-            };
+            return new List<By> { };
         }
     }
 }

@@ -53,6 +53,7 @@ namespace DashworksTestAutomation.Steps.API
             if (gridPageSize.Equals(string.Empty) ||
                 gridPageCache.Equals(string.Empty))
             {
+                //Steps naming is changed. Please update appropriately From AdminLeftHandMenu class 
                 When($"User clicks \"{"Devices"}\" on the left-hand menu");
                 Then($"\"{"Devices"}\" list should be displayed to the user");
                 Then($"page Size is \"{1000}\" on \"{"Devices"}\" page");

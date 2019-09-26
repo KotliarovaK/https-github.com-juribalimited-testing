@@ -8,7 +8,7 @@ Background: Pre-Conditions
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17774 @Do_Not_Run_With_Automations @Do_Not_Run_With_Actions @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckFiltersForAutomationsGrid
 	When User clicks 'Admin' on the left-hand menu
-	Then Admin page should be displayed to the user
+	Then "Admin" list should be displayed to the user
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
 	When User clicks String Filter button for "Active" column on the Admin page
@@ -40,7 +40,7 @@ Scenario: EvergreenJnr_AdminPage_CheckFiltersForAutomationsGrid
 #Run steps after fixing Boolean sorting
 Scenario: EvergreenJnr_AdminPage_CheckSortingAutomationsGrid
 	When User clicks 'Admin' on the left-hand menu
-	Then Admin page should be displayed to the user
+	Then "Admin" list should be displayed to the user
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
 	When User clicks on 'Automation' column header
@@ -75,7 +75,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSortingAutomationsGrid
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17774
 Scenario: EvergreenJnr_AdminPage_CheckUnsavedChangesPopUp
 	When User clicks 'Admin' on the left-hand menu
-	Then Admin page should be displayed to the user
+	Then "Admin" list should be displayed to the user
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
 	When User click content from "Automation" column

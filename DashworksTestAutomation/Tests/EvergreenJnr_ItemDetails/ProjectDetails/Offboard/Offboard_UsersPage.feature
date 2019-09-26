@@ -35,7 +35,7 @@ Scenario: EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboa
 	When User clicks the "OFFBOARD" Action button
 	#going to check the object state
 	And User clicks 'Admin' on the left-hand menu
-	Then Admin page should be displayed to the user
+	Then "Admin" list should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
 	When User enters "USE ME FOR AUTOMATION(USR SCHDLD)" text in the Search field for "Project" column
@@ -67,7 +67,7 @@ Scenario: EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboa
 	When User clicks the "OFFBOARD" Action button
 	#going to check the object state
 	And User clicks 'Admin' on the left-hand menu
-	Then Admin page should be displayed to the user
+	Then "Admin" list should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
 	When User enters "USE ME FOR AUTOMATION(USR SCHDLD)" text in the Search field for "Project" column
