@@ -77,7 +77,7 @@ Scenario: EvergreenJnr_AdminPage_CheckProjectDetailFormAndRingDropdown
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS15906
 Scenario: EvergreenJnr_AdminPage_CheckThatCogIconIsNotDisplayedOnLevelOfGroupedRows
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Evergreen" link on the Admin page
 	And User navigates to the 'Rings' left menu item

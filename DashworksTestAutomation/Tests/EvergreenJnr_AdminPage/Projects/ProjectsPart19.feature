@@ -7,7 +7,7 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13783 @Projects @Do_Not_Run_With_Projects @Do_Not_Run_With_AdminPage
 Scenario: EvergreenJnr_ImportProjectPage_CheckSelectExistingProjectDropdownValuesOnImportProjectPage
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks the "IMPORT PROJECT" Action button
 	And User selects "Import to existing project" option in the "Import" dropdown on the Import Project Page
@@ -40,7 +40,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	When User clicks on 'Hostname' column header
 	And User create dynamic list with "Dynamic13110" name on "Devices" page
 	Then "Dynamic13110" list is displayed to user
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
@@ -285,7 +285,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12955 @DAS12820 @DAS11978 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderForQueueAndHistoryTab
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user

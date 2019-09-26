@@ -7,7 +7,7 @@ Background: Pre-Conditions
 
 	@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17923
 Scenario: EvergreenJnr_AdminPage_CheckThatOutcomeStringFiltersValueAreNotDuplicated
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Automations" link on the Admin page
 	When User selects "Automation Log" tab on the Project details page
@@ -17,7 +17,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOutcomeStringFiltersValueAreNotDuplica
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17683 @Cleanup @Not_Ready
 #Waiting for 'zMailbox Sch for Automations Feature' project from GD
 Scenario: EvergreenJnr_AdminPage_CheckUpdateAndRemoveTaskValueForUpdateValueInUserScopedAutomation
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope                               | Run    |
@@ -55,7 +55,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateAndRemoveTaskValueForUpdateValueInUs
 	Then "NOT STARTED" content is displayed in "zMailboxAu: Stage 3 \ Radio Date Task" column
 	Then "3 Apr 2019" content is displayed in "zMailboxAu: Stage 3 \ Radio Date Task (Date)" column
 	#Update Action
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Automations" link on the Admin page
 	When User enters "17683_Automation" text in the Search field for "Automation" column
@@ -86,7 +86,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateAndRemoveTaskValueForUpdateValueInUs
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17859 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInAppsScopedAutomation
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User creates new Automation via API and open it
 	| AutomationName      | Description | Active | StopOnFailedAction | Scope              | Run    |
@@ -134,7 +134,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInAppsScopedA
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17859 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckUpdateValueWithNoChangeDateForUpdateTaskValueInDevocesScopedAutomation
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User creates new Automation via API and open it
 	| AutomationName    | Description | Active | StopOnFailedAction | Scope              | Run    |

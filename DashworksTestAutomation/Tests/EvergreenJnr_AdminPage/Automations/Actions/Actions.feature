@@ -7,7 +7,7 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @Actions @DAS15427 @DAS15832 @DAS15833 @DAS17276 @DAS17625 @DAS17774 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptions
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User creates new Automation via API and open it
 	| AutomationName        | Description | Active | StopOnFailedAction | Scope       | Run    |
@@ -78,7 +78,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectlyForAutomations
 	Given Display order for 'Devices_Scope' automation 'First_Action' action is '1'
 	And Display order for 'Devices_Scope' automation 'Secont_Action' action is '2'
 	And Display order for 'Devices_Scope' automation 'Third_Action' action is '3'
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
@@ -151,7 +151,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectlyForAutomations
 #Change value after gold data complete added
 #Selected automation should have at least three actions
 Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User creates new Automation via API and open it
 	| AutomationName           | Description | Active | StopOnFailedAction | Scope       | Run    |
@@ -238,7 +238,7 @@ Scenario: EvergreenJnr_AdminPage_CheckParametersToCreateUpdatePathAction
 	| User Migration | DAS15938    | User             |
 	When User navigate to Evergreen link
 #Pre-requisites:
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
@@ -283,7 +283,7 @@ Scenario: EvergreenJnr_AdminPage_CheckParametersToCreateUpdatePathAction
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15425 @DAS16143 @DAS17336 @DAS17367 @DAS17802 @Cleanup @Not_Ready
 #Change value after gold data complete added
 Scenario: EvergreenJnr_AdminPage_CheckEditActionPage
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope     | Run    |
@@ -495,7 +495,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdatingTaskWhichImpactsReadinessOwnerAndD
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17544 @Cleanup @Not_Ready
 Scenario Outline: EvergreenJnr_AdminPage_CheckListOfProjectsOnTheCreateActionsPage
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
@@ -522,7 +522,7 @@ Examples:
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17542 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatUpdateTaskValueIsDisplayInAutomationsLog
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
@@ -546,7 +546,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateTaskValueIsDisplayInAutomationsL
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17602 @DAS17604 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateTextValue
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
@@ -580,7 +580,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateTextValue
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17602 @DAS17605 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForRemoveTextValue
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User creates new Automation via API
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
@@ -615,7 +615,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForRemoveTextValue
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17602 @DAS17606 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateDate
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User creates new Automation via API
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |

@@ -104,7 +104,7 @@ Scenario: EvergreenJnr_UserProfile_CheckThatNotificationMessageDisappearsAfter5S
 	When User changes Display Mode to "High Contrast"
 	And User clicks Update button on Preferences page
 	Then Display Mode is changed to High Contrast
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User enters "1803 Rollout" text in the Search field for "Project" column
 	When User clicks content from "Project" column

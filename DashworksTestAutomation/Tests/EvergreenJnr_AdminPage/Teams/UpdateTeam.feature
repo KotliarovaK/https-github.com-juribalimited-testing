@@ -10,7 +10,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterUpdatingTeamDesc
 	When User creates new Team via api
 	| TeamName  | Description | IsDefault |
 	| TestTeam9 | test        | false     |
-	And User clicks Admin on the left-hand menu
+	And User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Teams" link on the Admin page
 	Then "Teams" page should be displayed to the user

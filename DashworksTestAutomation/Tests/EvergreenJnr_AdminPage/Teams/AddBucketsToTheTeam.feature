@@ -10,13 +10,13 @@ Scenario: EvergreenJnr_AdminPage_AddingBucketsToTheTeam
 	When User creates new Team via api
 	| TeamName  | Description | IsDefault |
 	| TestTeam5 | test        | false     |
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User creates new Bucket via api
 	| Name        | TeamName  | IsDefault |
 	| TestBucket6 | Team 1045 | false     |
 	| TestBucket7 | Team 1045 | false     |
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Teams" link on the Admin page
 	Then "Teams" page should be displayed to the user
@@ -45,7 +45,7 @@ Scenario: EvergreenJnr_AdminPage_AddingBucketsToTheTeam
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13421 @DAS12788 @Teams
 Scenario: EvergreenJnr_AdminPage_CheckBucketsSortingAndFiltersForTeams
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Teams" link on the Admin page
 	Then "Teams" page should be displayed to the user

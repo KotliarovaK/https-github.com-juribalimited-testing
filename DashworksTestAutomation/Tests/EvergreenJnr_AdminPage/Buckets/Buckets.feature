@@ -129,7 +129,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketA
 	| 1Bucket12905 | K-Team   | false     |
 	| 2Bucket12905 | K-Team   | false     |
 	And User navigates to newly created Bucket
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Evergreen" link on the Admin page
 	Then "Buckets" page should be displayed to the user

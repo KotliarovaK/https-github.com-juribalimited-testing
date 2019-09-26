@@ -28,7 +28,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDevicesAreAddedCorrectly
 	And User clicks the "UPDATE" Action button
 	Then User clicks "UPDATE" button on message box
 	And Success message with "5 updates have been queued" text is displayed on Action panel
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Evergreen" link on the Admin page
 	And User navigates to the 'Capacity Units' left menu item
@@ -59,7 +59,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatUsersAreAddedCorrectly
 	And User clicks the "UPDATE" Action button
 	Then User clicks "UPDATE" button on message box
 	And Success message with "5 updates have been queued" text is displayed on Action panel
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Evergreen" link on the Admin page
 	And User navigates to the 'Capacity Units' left menu item
@@ -90,7 +90,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatApplicationsAreAddedCorrectly
 	And User clicks the "UPDATE" Action button
 	Then User clicks "UPDATE" button on message box
 	And Success message with "5 updates have been queued" text is displayed on Action panel
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Evergreen" link on the Admin page
 	And User navigates to the 'Capacity Units' left menu item
@@ -121,7 +121,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatMailboxesAreAddedCorrectly
 	And User clicks the "UPDATE" Action button
 	Then User clicks "UPDATE" button on message box
 	And Success message with "5 updates have been queued" text is displayed on Action panel
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Evergreen" link on the Admin page
 	And User navigates to the 'Capacity Units' left menu item

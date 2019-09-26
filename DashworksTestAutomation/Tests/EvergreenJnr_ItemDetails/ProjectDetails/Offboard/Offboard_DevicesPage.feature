@@ -32,7 +32,7 @@ Scenario: EvergreenJnr_DevicesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffb
 	When User clicks the "OFFBOARD" Action button
 	And User clicks the "OFFBOARD" Action button
 	#going to check the object state
-	And User clicks Admin on the left-hand menu
+	And User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
@@ -66,7 +66,7 @@ Scenario: EvergreenJnr_DevicesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffb
 	When User clicks the "OFFBOARD" Action button
 	When User clicks the "OFFBOARD" Action button
 	#going to check the object state
-	And User clicks Admin on the left-hand menu
+	And User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user

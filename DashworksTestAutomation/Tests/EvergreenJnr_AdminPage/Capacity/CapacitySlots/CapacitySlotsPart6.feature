@@ -165,7 +165,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheE
 	And User navigate to "Tasks" tab
 	And User removes "2Task13812" Task
 	And User navigate to Evergreen link
-	And User clicks Admin on the left-hand menu
+	And User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User navigates to "ProjectForDAS13812" project details
 	Then Project "ProjectForDAS13812" is displayed to user

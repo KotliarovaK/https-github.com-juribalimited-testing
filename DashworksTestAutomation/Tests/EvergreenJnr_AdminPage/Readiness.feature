@@ -7,7 +7,7 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS15665 @DAS14994 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatOptionsInTheCogMenuForReadinessAreCorrect
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "Project for DAS15665" in the "Project Name" field
@@ -39,7 +39,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOptionsInTheCogMenuForReadinessAreCorr
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS15884 @DAS15789 @DAS16131 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAppearWhenDeleteReadiness
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "DAS15884_Project" in the "Project Name" field
@@ -82,7 +82,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAppearWhenDeleteReadine
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS16131 @DAS16226 @DAS16163 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckReadinessDialogContainerDisplay
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "DAS16131_Project" in the "Project Name" field
@@ -122,14 +122,14 @@ Scenario: EvergreenJnr_AdminPage_CheckReadinessDialogContainerDisplay
 	Then Delete button in the pop up is colored amber
 	When User clicks "DELETE" button in the Readiness dialog screen
 	Then Success message is displayed and contains "The selected readinesses have been deleted, changes might not take effect immediately" text
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	And User enters "DAS16131_Project" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14937 @DAS16649
 Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultForApplicationsCheckboxWorksOnEditReadinessPage
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	And User clicks "Projects" link on the Admin page
 	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
@@ -152,7 +152,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultForApplicationsCheckboxWorksOn
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14937 @DAS15669
 Scenario: EvergreenJnr_AdminPage_ChecksThatNewReadinessAddedBeforeNone
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	And User clicks "Projects" link on the Admin page
 	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
@@ -167,7 +167,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatNewReadinessAddedBeforeNone
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14937
 Scenario: EvergreenJnr_AdminPage_ChecksCreateReadinessElements
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	And User clicks "Projects" link on the Admin page
 	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
@@ -183,7 +183,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksCreateReadinessElements
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14938
 Scenario: EvergreenJnr_AdminPage_CheckThatDefaultCheckboxCanNotBeUncheckedForReadiness
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	And User clicks "Projects" link on the Admin page
 	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
@@ -217,7 +217,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDefaultCheckboxCanNotBeUncheckedForRea
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14938
 Scenario: EvergreenJnr_AdminPage_CheckThatNoneReadinessCanBePartiallyEdited
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	And User clicks "Projects" link on the Admin page
 	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
@@ -240,7 +240,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoneReadinessCanBePartiallyEdited
 	
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14938
 Scenario: EvergreenJnr_AdminPage_CheckThatNoChangesAppliedAfterCancelButtonPressedOnEditReadiness
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	And User clicks "Projects" link on the Admin page
 	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
@@ -256,7 +256,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoChangesAppliedAfterCancelButtonPress
 	
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14938
 Scenario: EvergreenJnr_AdminPage_CheckThatCancelReadinessAffectsNothingOnEditReadiness
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	And User clicks "Projects" link on the Admin page
 	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
@@ -272,7 +272,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCancelReadinessAffectsNothingOnEditRea
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS16148 @DAS16226 @DAS16163
 Scenario: EvergreenJnr_AdminPage_ChecksThatValuesForReadinessGridAreDisplayedProperlyAfterUsingCogMenuOptions
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User enters "1803 Rollout" text in the Search field for "Project" column
 	When User clicks content from "Project" column
@@ -328,7 +328,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatValuesForReadinessGridAreDisplayedPro
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS15769
 Scenario: EvergreenJnr_AdminPage_ChecksThatNoWarningDisplayedWhenOpenningReadinessPage
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	And User clicks "Projects" link on the Admin page
 	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
@@ -339,7 +339,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatNoWarningDisplayedWhenOpenningReadine
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS15673
 Scenario: EvergreenJnr_AdminPage_CheckThatReadinessRightClickMenuCopyOptionsWorks
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	And User clicks "Projects" link on the Admin page
 	And User enters "Havoc (Big Data)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
@@ -356,7 +356,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatReadinessRightClickMenuCopyOptionsWork
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS15720 @DAS15720 @DAS16653 @DAS16617
 Scenario: EvergreenJnr_AdminPage_CheckThatReadinessCanBeSortedByClickingColumnHeader
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	And User clicks "Projects" link on the Admin page
 	And User enters "Havoc (Big Data)" text in the Search field for "Project" column
 	And User clicks content from "Project" column

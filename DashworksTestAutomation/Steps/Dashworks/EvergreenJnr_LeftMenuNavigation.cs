@@ -112,13 +112,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write($"'{listPage}' list is visible");
         }
 
-        [When(@"User clicks Admin on the left-hand menu")]
-        public void WhenUserClicksAdminOnTheLeft_HandMenu()
-        {
-            var menu = _driver.NowAt<LeftHandMenuElement>();
-            menu.Admin.Click();
-        }
-
         [Then(@"Admin page should be displayed to the user")]
         public void ThenAdminPageShouldBeDisplayedToTheUser()
         {

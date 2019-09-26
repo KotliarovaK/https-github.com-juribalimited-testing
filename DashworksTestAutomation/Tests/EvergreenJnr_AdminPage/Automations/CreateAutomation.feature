@@ -7,7 +7,7 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15309 @DAS15626 @DAS16880 @DAS16931 @DAS17102 @DAS17630 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckActionGridInAutomations
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
@@ -34,7 +34,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionGridInAutomations
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS16801 @DAS15764 @DAS15423 @DAS17134 @DAS17771 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatCreateAutomationFieldsIsNotPopulatedWithPreviouslyCreatedAutomation
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
@@ -71,7 +71,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateAutomationFieldsIsNotPopulatedWi
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS16801 @DAS16805
 Scenario: EvergreenJnr_AdminPage_CheckThatAdminTabIsHighlightedAfterClickingOnAutomation
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
@@ -86,7 +86,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCanBeCreatedWithListHavingAr
 	When User clicks 'Devices' on the left-hand menu
 	And User sets includes archived devices in "true"
 	And User create dynamic list with "List16844" name on "Devices" page
-	And User clicks Admin on the left-hand menu
+	And User clicks 'Admin' on the left-hand menu
 	And User clicks "Automations" link on the Admin page
 	And User clicks the "CREATE AUTOMATION" Action button
 	Then "Create Automation" title is displayed on the Automations page

@@ -7,7 +7,7 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS12452 @DAS14698
 Scenario: EvergreenJnr_AdminPage_CheckNavigationToDevicesListFromProjectsRingsList
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	And User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
 	When User enters "1803 Rollout" text in the Search field for "Project" column

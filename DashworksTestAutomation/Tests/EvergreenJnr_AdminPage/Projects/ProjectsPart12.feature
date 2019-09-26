@@ -113,7 +113,7 @@ Scenario: EvergreenJnr_AdminPage_AddingAndDeletingPermissionsForMailboxProject
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13205 @Cleanup @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThatBannerDisplaysOnScopeDetailsPage
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	And User clicks "Projects" link on the Admin page
 	And User clicks the "CREATE PROJECT" Action button
 	And User enters "TestName13205" in the "Project Name" field
@@ -146,7 +146,7 @@ Scenario: EvergreenJnr_AdminPage_AddingRequestTypesAndCategories
 	| 18MailboxCategory | UserScheduledProject | Mailbox          |
 	Then Success message is displayed with "Category successfully created." text
 	When User navigate to Evergreen link
-	And User clicks Admin on the left-hand menu
+	And User clicks 'Admin' on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
