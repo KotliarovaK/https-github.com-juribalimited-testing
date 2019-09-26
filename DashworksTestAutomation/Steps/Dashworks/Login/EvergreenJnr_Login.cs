@@ -4,6 +4,7 @@ using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages;
+using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
@@ -141,7 +142,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Login
         [Then(@"Evergreen Dashboards page should be displayed to the user")]
         public void ThenEvergreenDashboardsPageShouldBeDisplayedToTheUser()
         {
-            var dashboardsPage = _driver.NowAt<EvergreenDashboardsPage>();
+            var dashboardsPage = _driver.NowAt<BaseDashboardPage>();
 
             if (_driver.IsElementExists(dashboardsPage.StatusCodeLabel))
                 throw new Exception("500 error was displayed");

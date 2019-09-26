@@ -158,7 +158,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                         string.Empty);
                 _driver.NavigateToUrl(currentUrl.Replace(originalPart, changedPart));
 
-                var page = _driver.NowAt<EvergreenDashboardsPage>();
+                var page = _driver.NowAt<BaseDashboardPage>();
                 if (page.StatusCodeLabel.Displayed())
                     throw new Exception($"500 error was returned for: {row["ColumnName"]} column");
             }
@@ -196,7 +196,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                         string.Empty);
                 _driver.NavigateToUrl(currentUrl.Replace(originalPart, changedPart));
 
-                var page = _driver.NowAt<EvergreenDashboardsPage>();
+                var page = _driver.NowAt<BaseDashboardPage>();
                 if (page.StatusCodeLabel.Displayed())
                     throw new Exception($"500 error was returned for: {row["ColumnName"]} column");
             }
@@ -211,7 +211,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var originalPart = Regex.Match(currentUrl, pattern).Groups[1].Value;
             _driver.NavigateToUrl(currentUrl.Replace(originalPart, string.Empty));
 
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            var page = _driver.NowAt<BaseDashboardPage>();
             if (page.StatusCodeLabel.Displayed())
                 throw new Exception("500 error was returned after removing all columns from URL");
         }
@@ -227,7 +227,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             //TODO: 6Sep2019 Yurii: added refresh since above method just inserts URL but no navigation actually occurs
             _driver.Navigate().Refresh();
 
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            var page = _driver.NowAt<BaseDashboardPage>();
             if (page.StatusCodeLabel.Displayed())
                 throw new Exception("500 error was returned after removing all columns from URL");
         }
@@ -241,7 +241,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var originalPart = Regex.Match(currentUrl, pattern).Value;
             _driver.NavigateToUrl(currentUrl.Replace(originalPart, string.Empty));
 
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            var page = _driver.NowAt<BaseDashboardPage>();
             if (page.StatusCodeLabel.Displayed())
                 throw new Exception("500 error was returned after removing all columns from URL");
         }

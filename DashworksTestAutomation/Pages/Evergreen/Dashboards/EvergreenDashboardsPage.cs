@@ -11,14 +11,6 @@ namespace DashworksTestAutomation.Pages
 {
     internal class EvergreenDashboardsPage : SeleniumBasePage
     {
-
-        [FindsBy(How = How.XPath, Using = ".//div[@class='status-code']")]
-        public IWebElement StatusCodeLabel { get; set; }
-
-        [FindsBy(How = How.XPath,
-            Using = ".//input[@class='form-control search-input ng-untouched ng-pristine ng-valid']")]
-        public IWebElement SearchTextbox { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//span[text()='CREATE DASHBOARD']")]
         public IWebElement CreateDashboardBtn { get; set; }
 

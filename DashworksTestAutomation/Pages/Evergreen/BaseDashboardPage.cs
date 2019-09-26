@@ -42,6 +42,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//h1")]
         public IWebElement Heading { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='status-code']")]
+        public IWebElement StatusCodeLabel { get; set; }
+
         [FindsBy(How = How.XPath, Using = "//p[@class='topnav-item-menu-toggle']//button[@mattooltip='Toggle Menu']")]
         public IWebElement ToggleMenu { get; set; }
 

@@ -1118,7 +1118,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var urlToNavigate = currentUrl.Replace(originalPart, string.Empty);
             _driver.NavigateToUrl(urlToNavigate);
 
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            var page = _driver.NowAt<BaseDashboardPage>();
             if (page.StatusCodeLabel.Displayed()) throw new Exception("500 error was returned");
         }
 
@@ -1132,7 +1132,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var urlToNavigate = currentUrl.Replace(originalPart, string.Empty);
             _driver.NavigateToUrl(urlToNavigate);
 
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            var page = _driver.NowAt<BaseDashboardPage>();
             if (page.StatusCodeLabel.Displayed()) throw new Exception("500 error was returned");
         }
 
