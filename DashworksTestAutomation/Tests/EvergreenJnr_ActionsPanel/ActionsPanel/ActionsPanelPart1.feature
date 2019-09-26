@@ -83,6 +83,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatUserWithoutJustTheProjectAdministrat
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
 	When User clicks "Devices" on the left-hand menu
+	And User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
