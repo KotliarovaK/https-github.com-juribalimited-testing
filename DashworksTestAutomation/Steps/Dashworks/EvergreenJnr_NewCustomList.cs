@@ -575,6 +575,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             listElement.CloseButton.Click();
         }
 
+        [Then(@"Lists panel is hidden")]
+        public void ThenListsPanelIsHidden()
+        {
+            var page = _driver.NowAt<CustomListElement>();
+
+            Utils.Verify.That(page.ListsPanel.Displayed(), Is.False);
+        }
+
         [When(@"User lists were removed by API")]
         public void WhenUserListsRemovedByApi()
         {
