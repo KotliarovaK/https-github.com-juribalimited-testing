@@ -63,7 +63,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueAutomationValidationsForDel
 	Then "17429_Action" content is displayed in "Action Name" field
 	Then 'Update task value' text value is displayed in the 'Action Type' dropdown
 	Then '[Project not found]' content is displayed in 'Project' textbox
-	Then warning text 'The selected project cannot be found' is displayed below the field
+	Then 'The selected project cannot be found' error message is displayed for 'Scope' field
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS17429 @Cleanup @Not_Ready
 #Waiting for updated Validation messages on the automation
@@ -130,7 +130,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueAutomationValidationsForDel
 	Then 'Update task value' text value is displayed in the 'Action Type' dropdown
 	Then '17429Project1' content is displayed in 'Project' textbox
 	Then '[Stage not found]' content is displayed in 'Stage' textbox
-	Then warning text 'The selected stage cannot be found' is displayed below the field
+	Then 'The selected stage cannot be found' error message is displayed for 'Stage' field
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS17429 @Cleanup @Not_Ready
 #Waiting for updated Validation messages on the automation
@@ -195,5 +195,5 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueAutomationValidationsForDel
 	Then '17429Project2' content is displayed in 'Project' textbox
 	Then '17429_Stage2' content is displayed in 'Stage' textbox
 	Then '[Task not found]' content is displayed in 'Task' textbox
-	Then warning text 'The selected task cannot be found' is displayed below the field
+	Then 'The selected task cannot be found' error message is displayed for 'Task' field
 	Then Success message is not displayed on the Admin page

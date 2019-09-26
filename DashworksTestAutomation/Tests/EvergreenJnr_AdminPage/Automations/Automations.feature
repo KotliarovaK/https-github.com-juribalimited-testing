@@ -529,7 +529,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextFor
 	#DAS17275
 	#Then 'The selected list cannot be found' error message is displayed for 'Scope' field
 	#DAS17275
-	#Then warning text 'The selected list cannot be found' is displayed below the field
 	#Update after DAS-17336 fixed
 	#When User navigates to the 'Actions' left menu item
 	#Then Edit Action page is displayed to the User
