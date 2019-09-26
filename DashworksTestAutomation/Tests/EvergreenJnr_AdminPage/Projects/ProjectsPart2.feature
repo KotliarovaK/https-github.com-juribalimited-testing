@@ -98,20 +98,20 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedP
 	| DDPPProject14 | All Devices | None            | Standalone Project |
 	And User selects "Scope" tab on the Project details page
 	And User selects "Scope Changes" tab on the Project details page
-	When User selects following Objects from the expandable multiselect
+	When User expands multiselect and selects following Objects
 	| Objects        |
 	| 0317IPQGQBVAQV |
 	| 00I0COBFWHOF27 |
 	When User clicks the "UPDATE PROJECT" Action button
 	Then Success message is displayed and contains "2 objects queued for onboarding, 0 objects offboarded" text
 	When User navigates to the 'Users' tab on Project Scope Changes page
-	And User selects following Objects from the expandable multiselect
+	And User expands multiselect and selects following Objects
 	| Objects                       |
 	| AAG081456 (Melanie Z. Fowler) |
 	| AAH0343264 (Luc Gauthier)     |
 	When User clicks the "UPDATE PROJECT" Action button
 	Then Success message is displayed and contains "2 objects queued for onboarding, 0 objects offboarded" text
-	When User click on Back button	
+	When User click on Back button
 	And Project created via API and opened
 	| ProjectName  | Scope     | ProjectTemplate | Mode               |
 	| NewProject15 | All Users | None            | Standalone Project |

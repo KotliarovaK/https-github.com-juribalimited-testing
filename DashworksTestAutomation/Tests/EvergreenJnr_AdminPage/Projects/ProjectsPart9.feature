@@ -42,7 +42,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherListUsingEverg
 	When User add "Device Type" filter where type is "Equals" with added column and Lookup option
 	| SelectedValues |
 	| Laptop         |
-	Then "3,808" rows are displayed in the agGrid
+	Then "3,806" rows are displayed in the agGrid
 	When User create dynamic list with "DynamicList54" name on "Devices" page
 	Then "DynamicList54" list is displayed to user
 	When User clicks Create Project from the main list
@@ -54,11 +54,11 @@ Scenario: EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherListUsingEverg
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	And User selects "Scope Changes" tab on the Project details page
-	Then "Devices to add (0 of 3808 selected)" is displayed to the user in the Project Scope Changes section
+	Then "Devices to add (0 of 3806 selected)" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page
 	And User selects 'All Devices' in the 'Scope' dropdown with wait
 	And User selects "Scope Changes" tab on the Project details page
-	Then "Devices to add (0 of 17285 selected)" is displayed to the user in the Project Scope Changes section
+	Then "Devices to add (0 of 17279 selected)" is displayed to the user in the Project Scope Changes section
 	When User navigates to the 'Users' tab on Project Scope Changes page
 	When User navigates to the 'Applications' tab on Project Scope Changes page
 	Then Bucket dropdown is not displayed on the Project details page
@@ -111,21 +111,16 @@ Scenario: EvergreenJnr_AdminPage_ChangingUserScopeListToAnotherList
 	| clarkc   |
 	Then "StaticList6179" list is displayed to user
 	Then "2" rows are displayed in the agGrid
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "DevicesProject6" in the "Project Name" field
-	And User selects 'All Devices' option from 'Scope' autocomplete
-	And User clicks the "CREATE" Action button
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks newly created object link
+	When Project created via API and opened
+	| ProjectName     | Scope       | ProjectTemplate | Mode               |
+	| DevicesProject6 | All Devices | None            | Standalone Project |
+	And User selects "Scope" tab on the Project details page
 	And User selects "Scope Changes" tab on the Project details page
 	When User navigates to the 'Users' tab on Project Scope Changes page
-	Then "Users to add (0 of 14631 selected)" is displayed to the user in the Project Scope Changes section
+	Then "Users to add (0 of 14629 selected)" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page
 	When User navigates to the 'User Scope' tab on Project Scope Changes page
-	And User selects 'StaticList6179' in the 'Scope' dropdown with wait
+	And User selects 'StaticList6179' in the 'User Scope' dropdown with wait
 	And User selects "Scope Changes" tab on the Project details page
 	When User navigates to the 'Users' tab on Project Scope Changes page
 	Then "Users to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section

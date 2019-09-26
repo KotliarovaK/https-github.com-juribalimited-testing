@@ -7,18 +7,11 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12332 @DAS13199 @DAS12485 @DAS12645 @DAS11877 @Cleanup @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_CheckingThatRedBannerWithOkMessageIsNotDisplayedAfterAddingItemsToCreatedProject
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "TestProject12332" in the "Project Name" field
-	And User selects 'All Devices' option from 'Scope' autocomplete
-	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks newly created object link
+	When Project created via API and opened
+	| ProjectName      | Scope       | ProjectTemplate | Mode               |
+	| TestProject12332 | All Devices | None            | Standalone Project |
 	Then Project "TestProject12332" is displayed to user
+	When User selects "Scope" tab on the Project details page
 	When User selects "Scope Changes" tab on the Project details page
 	When User expands multiselect to add objects
 	Then Objects are displayed in alphabetical order on the Admin page
@@ -46,7 +39,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatRedBannerWithOkMessageIsNotDisplaye
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12796 @DAS12872 @DAS13401 @DAS-14877 @Cleanup @Cleanup @Project_Creation_and_Scope @Projects
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatNumberOfObjectIsUpdatedInTheScopeChangesOfProjectAfterTheChangeCustomList
 	When User clicks "<ListName>" on the left-hand menu
-	Then "<ListName>" list should be displayed to the user
+	Then "All <ListName>" list should be displayed to the user
 	When User clicks on '<ColumnName>' column header
 	And User create dynamic list with "<DynamicListName>" name on "<ListName>" page
 	Then "<DynamicListName>" list is displayed to user
@@ -79,7 +72,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatNumberOfObjectIsUpdatedInTheSc
 
 Examples:
 	| ListName  | ColumnName    | DynamicListName | RowsCount | ProjectName     | ObjectsCount | FilterName  | Checkbox | NewRowsCount | NewCount | DeleteProject   |
-	| Devices   | Hostname      | ProjectList4587 | 17,285    | TestProject4511 | 17285        | Device Type | Desktop  | 8,103        | 8103     | TestProject4511 |
+	| Devices   | Hostname      | ProjectList4587 | 17,279    | TestProject4511 | 17279        | Device Type | Desktop  | 8,100        | 8100     | TestProject4511 |
 	| Users     | Username      | ProjectList4511 | 41,339    | TestProject4512 | 41339        | Domain      | CORP     | 103          | 103      | TestProject4512 |
 	| Mailboxes | Email Address | ProjectList4548 | 14,784    | TestProject4513 | 14784        | Owner City  | London   | 3,294        | 3294     | TestProject4513 |
 
@@ -100,7 +93,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatObjectsIsOnboardedToTheProjectWithClon
 	When User clicks newly created object link
 	Then Project "TestProject19" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
-	When User expands multiselect to add objects 
 	And User expands multiselect and selects following Objects
 	| Objects         |
 	| 01BQIYGGUW5PRP6 |
@@ -135,16 +127,14 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	Then "[Default (Computer)]" Path is displayed to the user
 	And "[None]" Category is displayed to the user
 	And "Unassigned" is displayed in the Bucket dropdown
-	When User expands multiselect to add objects
-	And User expands multiselect and selects following Objects
+	When User expands multiselect and selects following Objects
 	| Objects        |
 	| 0IJB93JZPG72PX |
 	| 04I01QSFL1AWKM |
 	When User navigates to the 'Applications' tab on Project Scope Changes page
 	Then "[Default (Application)]" Path is displayed to the user
 	And "[None]" Category is displayed to the user
-	When User expands multiselect to add objects
-	And User expands multiselect and selects following Objects
+	When User expands multiselect and selects following Objects
 	| Objects                        |
 	| ACDSee 4.0.1 Std Trial Version |
 	| ACDSee 8 (8.0.39)              |
@@ -152,8 +142,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	Then "[Default (User)]" Path is displayed to the user
 	And "[None]" Category is displayed to the user
 	And "Unassigned" is displayed in the Bucket dropdown
-	When User expands multiselect to add objects
-	And User expands multiselect and selects following Objects
+	When User expands multiselect and selects following Objects
 	| Objects                        |
 	| ABQ575757 (Salvador K. Waller) |
 	| ADG685492 (Eugene N. Stanton)  |

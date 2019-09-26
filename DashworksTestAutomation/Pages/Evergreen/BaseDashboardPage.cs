@@ -1209,5 +1209,37 @@ namespace DashworksTestAutomation.Pages.Evergreen
             var button = element.FindElement(buttonSelector);
             return button;
         }
+
+        public IWebElement ExpandMultiselectButton(string titleText)
+        {
+            var buttonSelector = By.XPath(".//button//i[contains(@class,'add')]");
+
+            var element = GetExpandableMultiselect(titleText);
+
+            try
+            {
+                return element.FindElement(buttonSelector);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        public IWebElement CollapseMultiselectButton(string titleText)
+        {
+            var buttonSelector = By.XPath(".//button//i[contains(@class,'clear')]");
+
+            var element = GetExpandableMultiselect(titleText);
+
+            try
+            {
+                return element.FindElement(buttonSelector);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
     }
 }

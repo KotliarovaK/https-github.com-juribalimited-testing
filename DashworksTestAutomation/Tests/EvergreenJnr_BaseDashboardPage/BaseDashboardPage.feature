@@ -222,7 +222,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatToolTipIsDisplayedWithCreateProjectB
 @Evergreen @AllLists @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS14189 @Projects
 Scenario Outline: EvergreenJnr_AllLists_CheckThatTheCorrectCreateMenuOptionsAreDisplayedForEachObjectListType
 	When User clicks "<ListName>" on the left-hand menu
-	Then "<ListName>" list should be displayed to the user
+	Then "All <ListName>" list should be displayed to the user
 	Then Create button is displayed
 	When User clicks Create button on the Base Dashboard Page
 	Then "Project" button is displayed on the Base Dashboard Page

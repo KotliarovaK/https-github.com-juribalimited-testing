@@ -75,8 +75,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectCountersDisplayedInRingGridFor
 	And User clicks String Filter button for "Project" column on the Admin page
 	And User selects "DAS15260Project" checkbox from String Filter with item list on the Admin page
 	Then "1" content is displayed in "Devices" column
-	And "0" content is displayed in "Users" column
-	And "0" content is displayed in "Mailboxes" column
+	And "" content is displayed in "Users" column
+	And "" content is displayed in "Mailboxes" column
 	When User clicks Admin on the left-hand menu
 	And User enters "DAS15260Project" text in the Search field for "Project" column
 	And User selects all rows on the grid
@@ -98,8 +98,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThat403FullPageErrorAppearsAfterUserWithou
 	And User select "Manage Users" option in Management Console
 	And User create new User
 	| Username      | FullName  | Password | ConfirmPassword | Roles                     |
-	| DAS16137_user | Test_User | 1234qwer | 1234qwer        | Dashworks Evergreen Users |
-	|               |           |          |                 | Analysis Editor           |
+	| DAS16137_user | Test_User | 1234qwer | 1234qwer        | Analysis Editor           |
 	Then Success message is displayed
 	When User cliks Logout link
 	Then User is logged out

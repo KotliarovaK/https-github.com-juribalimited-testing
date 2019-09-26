@@ -306,7 +306,10 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var itemsToAdd = table.Rows.Select(x => x["Objects"]).ToList();
             var basePage = _driver.NowAt<BaseDashboardPage>();
-            basePage.ExpandCollapseMultiselectButton("").Click();
+            if (basePage.ExpandMultiselectButton("") != null && basePage.ExpandMultiselectButton("").Displayed())
+            {
+                basePage.ExpandCollapseMultiselectButton("").Click();
+            }
             basePage.AddItemsToMultiSelect(itemsToAdd);
         }
 
