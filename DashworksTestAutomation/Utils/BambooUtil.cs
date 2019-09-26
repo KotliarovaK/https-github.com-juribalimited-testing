@@ -29,7 +29,8 @@ namespace DashworksTestAutomation.Utils
             {
                 RestClient client = GetClient();
 
-                #region Get all quarantined Tests 
+                #region Get all quarantined Tests
+
                 var url = $"/browse/{BambooProvider.ProjAndBuild}-{BambooProvider.BuildNumber - 1}/test";
                 var request = new RestRequest(Method.GET) { Resource = url };
                 request.AddHeader("Accept", "application/json");
@@ -55,7 +56,9 @@ namespace DashworksTestAutomation.Utils
                 foreach (HtmlNode node in quarantinedTests)
                 {
                     var id = node.GetAttributeValue("href", null).Split('/').Last();
-                    var name = node.InnerText;
+                    //Exclude text from parentheses from text name. Relevant only for Scenario Outline
+                    var name = node.InnerText.Contains("(") ?
+                        node.InnerText.Split('(').First() : node.InnerText;
                     Logger.Write($"ADDED new test: {id}: {name}");
                     testIdsWithNames.Add(new KeyValuePair<string, string>(id, name));
                 }
@@ -99,7 +102,10 @@ namespace DashworksTestAutomation.Utils
                     var response = client.Execute(request);
                 }
             }
-            catch { }
+            catch (Exception e)
+            {
+                Logger.Write($"Error during unleashing test: {e}");
+            }
         }
     }
 }
