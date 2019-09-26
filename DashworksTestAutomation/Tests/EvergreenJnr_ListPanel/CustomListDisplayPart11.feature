@@ -130,7 +130,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatGridHeaderIsDisplayedCorrectlyAfterC
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	When User closed list panel
-	Then Dashboards sub menu is hidden on Dashboards page
+	Then Lists panel is hidden
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS15785
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatFilterCategoryNamingIsCorrect

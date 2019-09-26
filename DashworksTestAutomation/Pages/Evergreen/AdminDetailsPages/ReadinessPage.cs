@@ -11,12 +11,15 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//mat-dialog-container[@role='dialog']//label[text()='Replacement Readiness']")]
         public IWebElement ReadinessDialogContainer { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'header') and @col-id='readiness']")]
+        public IWebElement ReadinessColumnHeader { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
             return new List<By>
             {
-                SelectorFor(this, p => p.ReadinessDialogContainer)
+                SelectorFor(this, p => p.ReadinessColumnHeader)
             };
         }
 

@@ -42,6 +42,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//h1")]
         public IWebElement Heading { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='status-code']")]
+        public IWebElement StatusCodeLabel { get; set; }
+
         [FindsBy(How = How.XPath, Using = "//p[@class='topnav-item-menu-toggle']//button[@mattooltip='Toggle Menu']")]
         public IWebElement ToggleMenu { get; set; }
 
@@ -532,6 +535,14 @@ namespace DashworksTestAutomation.Pages.Evergreen
             if (!Driver.IsElementDisplayed(by, WebDriverExtensions.WaitTime.Medium))
                 throw new Exception($"Textbox with '{placeholder}' placeholder is not displayed");
             return Driver.FindElement(by);
+        }
+
+        public IWebElement GetAutocompleteDropdownByText(string text)
+        {
+            var selector = By.XPath($"//*[contains(text(), '{text}')]/ancestor::mat-option");
+            Driver.WaitForDataLoading();
+            Driver.WaitForElementToBeDisplayed(selector);
+            return Driver.FindElement(selector);
         }
 
         public IWebElement GetInputAddButton(string placeholder)

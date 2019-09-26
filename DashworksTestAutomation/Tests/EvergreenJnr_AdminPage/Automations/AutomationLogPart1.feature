@@ -163,15 +163,9 @@ Scenario: EvergreenJnr_AdminPage_CheckBrokenListValidationWhenRunningAnAutomatio
 	| 17011_Automation | 17011       | true   | false              | 17011_List | Manual |
 	Then Automation page is displayed correctly
 	When User clicks "Automations" navigation link on the Admin page
-	When User clicks the "CREATE AUTOMATION" Action button
-	Then "Create Automation" title is displayed on the Automations page
-	When User enters '17011_Automation_1' text to 'Automation Name' textbox
-	When User enters '17011_1' text to 'Description' textbox
-	When User selects 'All Devices' option from 'Scope' autocomplete
-	When User selects 'Manual' in the 'Run' dropdown
-	When User selects "Active" checkbox on the Automation Page
-	When User clicks the "CREATE" Action button
-	Then Create Action page is displayed to the User
+	When User creates new Automation via API and open it
+	| AutomationName    | Description | Active | StopOnFailedAction | Scope       | Run    |
+	| Second_Automation | 17011_1     | true   | false              | All Devices | Manual |
 	When User clicks "Devices" on the left-hand menu
 	Then "All Devices" list should be displayed to the user
 	When User navigates to the "17011_List" list
@@ -193,15 +187,22 @@ Scenario: EvergreenJnr_AdminPage_CheckBrokenListValidationWhenRunningAnAutomatio
 	When User clicks the "CANCEL" Action button
 	When User clicks "Projects" link on the Admin page
 	When User clicks "Automations" link on the Admin page
-	When User enters "17011_Automation" text in the Search field for "Automation" column
+	When User enters "Second_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
+	Then Automation page is displayed correctly
 	Then Filling field error is not displayed
 	When User clicks the "CANCEL" Action button
 	When User enters "17011_Automation" text in the Search field for "Automation" column
-	When User clicks "Run now" option in Cog-menu for "17011_Automation" item on Admin page
+	When User selects all rows on the grid
+	When User clicks on Actions button
+	And User selects "Run now" in the Actions
+	When User clicks the "RUN" Action button
+	When User clicks "RUN" button in the warning message on Admin page
 	When User selects "Automation Log" tab on the Project details page
 	When User clicks refresh button in the browser
 	When User enters "17011_Automation" text in the Search field for "Automation" column
+	When User clicks String Filter button for "Type" column
+	When User selects "Automation Start" checkbox from String Filter on the Admin page
 	Then "LIST HAS ERRORS" content is displayed for "Outcome" column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AutomationLog @Automations @DAS17212 @Cleanup @Not_Ready
