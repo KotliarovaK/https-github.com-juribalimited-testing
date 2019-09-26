@@ -102,7 +102,10 @@ namespace DashworksTestAutomation.Utils
                     var response = client.Execute(request);
                 }
             }
-            catch { }
+            catch (Exception e)
+            {
+                Logger.Write($"Error during unleashing test: {e}");
+            }
         }
     }
 }
