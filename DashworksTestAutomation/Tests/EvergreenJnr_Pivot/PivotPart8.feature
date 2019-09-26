@@ -42,7 +42,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatPivotSubmenuIsDisplayedCorrectlyAfte
 	When User creates Pivot list with "PivotList_DAS13652" name
 	Then "PivotList_DAS13652" list is displayed to user
 	When User closed list panel
-	Then Dashboards sub menu is hidden on Dashboards page
+	Then Lists panel is hidden
 	And "PivotList_DAS13652" list name is displayed correctly on top tools panel
 	And "RUN PIVOT" Action button is displayed
 	And Export button is displayed
