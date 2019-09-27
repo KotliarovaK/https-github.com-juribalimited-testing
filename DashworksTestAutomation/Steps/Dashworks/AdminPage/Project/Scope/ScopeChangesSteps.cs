@@ -153,7 +153,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Scope
         {
             var projectElement = _driver.NowAt<ScopeChangePage>();
             var basePage = _driver.NowAt<BaseDashboardPage>();
-            Verify.IsTrue(basePage.ExpandCollapseMultiselectButton("").Disabled(), "Items are not selected");
+            Verify.IsTrue(basePage.CollapseMultiselectButton("").Displayed(), "Items are not selected");
             Verify.IsTrue(projectElement.CheckedSomeItemCheckbox.Displayed(), "Item checkbox is not checked");
         }
 

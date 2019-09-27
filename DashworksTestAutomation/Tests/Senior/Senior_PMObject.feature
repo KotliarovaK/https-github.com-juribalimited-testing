@@ -7,7 +7,7 @@ Background: Pre-Conditions
 
 @ProjectsOnSenior @PMObject @Applications_tab @DAS12695 @DAS14003 @DAS14912
 Scenario: Projects_CheckThatErrorIsNotDisplayedWhenUsedDDLForApplicationsTabOnPMObjectPage
-	When User navigates to "61085" Object on PMObject page
+	When User navigates to '61085' Object on PMObject page
 	Then "Project Object" page is displayed to the user
 	And "Change Capacity Unit" button is displayed
 	When User navigate to "Applications" tab on PMObject page

@@ -11,7 +11,7 @@ namespace DashworksTestAutomation.Pages
 {
     internal class EvergreenDashboardsPage : SeleniumBasePage
     {
-        [FindsBy(How = How.XPath, Using = ".//span[text()='CREATE DASHBOARD']")]
+        [FindsBy(How = How.XPath, Using = ".//span[text()='CREATE DASHBOARD' or text()='DASHBOARD ERSTELLEN']")]
         public IWebElement CreateDashboardBtn { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//mat-slide-toggle")]
@@ -25,9 +25,6 @@ namespace DashworksTestAutomation.Pages
 
         [FindsBy(How = How.XPath, Using = ".//div[@id='submenu']")]
         public IWebElement DashboardsSubmenu { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "//div[@id='content']//i[@class='material-icons mat-menu']")]
-        public IWebElement DashboardsPanelIcon { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@id='context']/app-dashboards-details/div[@class='context-container']")]
         public IWebElement DashboardsContextMenu { get; set; }
@@ -407,12 +404,6 @@ namespace DashworksTestAutomation.Pages
             return Driver.FindElement(page);
         }
 
-        public IWebElement GetFirstDashboardFromList()
-        {
-            var widg = By.XPath($".//ul[@class='submenu-actions-dashboards']/li[@mattooltipposition]");
-            Driver.WaitForDataLoading();
-            return Driver.FindElements(widg).First();
-        }
 
         public IList <IWebElement> GetWidgetLabels(string widgetName)
         {

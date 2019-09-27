@@ -114,6 +114,9 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//div[@class='widget-preview']")]  ////div[@class='widget-preview']//div[@dir='ltr'] old locator
         public IWebElement WidgetPreview { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='chartContainer ng-star-inserted']//*[@style='font-weight:bold']")]
+        public IWebElement DataLabels { get; set; }
+
 
         public override List<By> GetPageIdentitySelectors()
         {
@@ -249,6 +252,13 @@ namespace DashworksTestAutomation.Pages
             { return Driver.FindElement(By.XPath(".//div[@class='card-widget-data']//span[contains(@class, 'text')]")); }
             else
             { return Driver.FindElement(By.XPath(".//div[@class='card-widget-data']")); }
+        }
+
+        public IWebElement GetFirstDashboardFromList()
+        {
+            var widg = By.XPath($".//ul[@class='submenu-actions-dashboards']/li[@mattooltipposition]");
+            Driver.WaitForDataLoading();
+            return Driver.FindElements(widg).First();
         }
     }
 }

@@ -169,8 +169,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatIgnoreAndShareWorksProperlyInWarn
 	Then Review Widget List Permissions is not displayed to the User
 	And Permission "Everyone can see" displayed in Dashboard Details
 	#teardown
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User clicks Settings button for "DeviceListFor14841_1" list
 	And User clicks Manage in the list panel
 	Then List details panel is displayed to the user
@@ -202,8 +202,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksProperlyInWarn
 	Then Review Widget List Permissions is not displayed to the User
 	And Permission "Everyone can see" displayed in Dashboard Details
 	#teardown
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User clicks Settings button for "DeviceListFor14841_2" list
 	And User clicks Manage in the list panel
 	Then List details panel is displayed to the user
@@ -217,7 +217,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksOnlyForParticu
 	| Service Pack or Build |
 	And User create dynamic list with "DeviceListFor14841_3" name on "Devices" page
 	#create private list#2
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	And User clicks the Columns button
 	And ColumnName is entered into the search box and the selection is clicked
 	| ColumnName      |
@@ -249,8 +249,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksOnlyForParticu
 	When User clicks the "UPDATE & SHARE" button on Permissions Pop-up
 	Then Review Widget List Permissions is not displayed to the User
 	And Permission "Everyone can see" displayed in Dashboard Details
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User clicks Settings button for "DeviceListFor14841_3" list
 	And User clicks Manage in the list panel
 	Then List details panel is displayed to the user
@@ -270,8 +270,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCantBeChangedForRea
 	| automation_admin1 | m!gration |
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User clicks on 'Hostname' column header
 	And User create custom list with "DeviceListFor14841_Read" name
 	Then "DeviceListFor14841_Read" list is displayed to user

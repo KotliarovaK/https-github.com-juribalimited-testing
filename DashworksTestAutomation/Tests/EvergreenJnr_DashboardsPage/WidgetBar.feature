@@ -15,7 +15,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWid
 	And User clicks on 'Manufacturer' column header
 	Then data in table is sorted by 'Manufacturer' column in ascending order
 	When User create dynamic list with "List15356" name on "Devices" page
-	And User clicks "Dashboards" on the left-hand menu
+	And User clicks 'Dashboards' on the left-hand menu
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
@@ -28,7 +28,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWid
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16167 @Cleanup
 Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIfTheSourceListHasNoRows
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	And User clicks the Filters button
 	And User add "Owner Display Name" filter where type is "Equals" with added column and following value:
 	| Values |

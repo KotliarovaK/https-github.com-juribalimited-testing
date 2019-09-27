@@ -119,7 +119,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatThereIsNoPossibilityToCreateWidge
 	When Project created via API and opened
 	| ProjectName | Scope         | ProjectTemplate | Mode               |
 	| MlbxTst     | All Mailboxes | None            | Standalone Project |
-	And User clicks "Projects" on the left-hand menu
+	And User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "MlbxTst" Project
 	Then Project with "MlbxTst" name is displayed correctly
@@ -133,7 +133,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatThereIsNoPossibilityToCreateWidge
 	| Name             | Description | ObjectTypeString |
 	| MailboxPath17539 | DAS17539    | Mailbox          |
 	And User navigate to Evergreen link
-	And User clicks "Mailboxes" on the left-hand menu
+	And User clicks 'Mailboxes' on the left-hand menu
 	And User clicks the Filters button
 	And User add "17539Snr: Path" filter where type is "Does not equal" with added column and following checkboxes:
 	| SelectedCheckboxes   |

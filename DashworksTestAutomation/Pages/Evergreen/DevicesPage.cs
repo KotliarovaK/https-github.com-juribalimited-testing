@@ -11,7 +11,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Driver.WaitForDataLoading();
             return new List<By>
             {
-                SelectorFor(this, p => p.Heading),
+                SelectorFor(this, p => p.Header),
                 //SelectorFor(this, p => p.List)
             };
         }

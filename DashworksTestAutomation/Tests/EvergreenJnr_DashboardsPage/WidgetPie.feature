@@ -7,7 +7,7 @@ Background: Pre-Conditions
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14668 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetsCanBeCreatedWhenUsingSplitByAndAggregateByDateColumn
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	And User clicks the Columns button
 	And ColumnName is entered into the search box and the selection is clicked
 	| ColumnName                   |
@@ -39,7 +39,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWid
 	| ColumnName          |
 	| CPU Architecture |
 	And User create dynamic list with "List15372" name on "Devices" page
-	And User clicks "Dashboards" on the left-hand menu
+	And User clicks 'Dashboards' on the left-hand menu
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
@@ -57,7 +57,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingPie
 	| ColumnName |
 	| Model      |
 	And User create dynamic list with "List15365" name on "Devices" page
-	And User clicks "Dashboards" on the left-hand menu
+	And User clicks 'Dashboards' on the left-hand menu
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
@@ -97,8 +97,8 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckDataLabelsOnTheWidget
 	| WidgetType   | Title             | List        | SplitBy  | AggregateFunction | OrderBy   |
 	| <WidgetType> | WidgetForDAS15662 | All Devices | Hostname | Count             | Count ASC |
 	And User selects "Show data labels" checkbox on the Create Widget page
-	Then Data Labels are displayed on the Dashboards page
-	And "<DataLabel>" data label is displayed on the Dashboards page
+	Then Data Labels are displayed on the Preview page
+	And "<DataLabel>" data label is displayed on the Preview page
 	When User clicks the "CREATE" Action button
 	Then Data Labels are displayed on the Dashboards page
 	And "<DataLabel>" data label is displayed on the Dashboards page
@@ -107,8 +107,8 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckDataLabelsOnTheWidget
 	And User clicks Ellipsis menu for "WidgetForDAS156622" Widget on Dashboards page
 	And User clicks "Edit" item from Ellipsis menu on Dashboards page
 	Then "Show data labels" checkbox is checked on the Create Widget page
-	And Data Labels are displayed on the Dashboards page
-	And "<DataLabel>" data label is displayed on the Dashboards page
+	And Data Labels are displayed on the Preview page
+	And "<DataLabel>" data label is displayed on the Preview page
 
 Examples:
 	| WidgetType | DataLabel      |
@@ -374,7 +374,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenAvgAggre
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17467 @DAS17515 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckNameAndLabelAndColorSchemeForEmptyOwnerCompliance
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Owner Compliance" filter where type is "Does not equal" with added column and following checkboxes:
@@ -405,7 +405,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckNameAndLabelAndColorSchemeForEmptyOwn
 	
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17467 @DAS17515 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckColorSchemePlaceholderForReadiness
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "1803: Readiness" filter where type is "Does not equal" with added column and following checkboxes:
@@ -432,7 +432,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckColorSchemePlaceholderForReadiness
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17515 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCorrectColorSchemeisUsedWhenWidgetIsSplitByReadinessAndComplianceFields	
-    When User clicks "Devices" on the left-hand menu
+    When User clicks 'Devices' on the left-hand menu
 	And User clicks the Columns button
 	And ColumnName is entered into the search box and the selection is clicked
 	| ColumnName                        |

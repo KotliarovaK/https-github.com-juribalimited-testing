@@ -15,8 +15,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForEdit
 	| automation_admin1 | m!gration |
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User clicks on 'Hostname' column header
 	And User create custom list with "DeviceListFor14841_Edit" name
 	Then "DeviceListFor14841_Edit" list is displayed to user
@@ -66,8 +66,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdmi
 	| automation_admin1 | m!gration |
 	When User clicks the Switch to Evergreen link
 	
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User clicks on 'Hostname' column header
 	And User create custom list with "DeviceListFor14841_Admin" name
 	Then "DeviceListFor14841_Admin" list is displayed to user
@@ -117,8 +117,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdmi
 	| Username          | Password  |
 	| automation_admin1 | m!gration |
 	When User clicks the Switch to Evergreen link
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User clicks Settings button for "DeviceListFor14841_Admin" list
 	And User clicks Manage in the list panel
 	Then List details panel is displayed to the user
@@ -191,8 +191,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckUserCanEditWidgetFromSharedDashboard
 	And User clicks Ellipsis menu for "WidgetForDAS15550" Widget on Dashboards page
 	And User clicks "Edit" item from Ellipsis menu on Dashboards page
 	And User updates Widget with following info:
-	| WidgetType | Title                    | List | SplitBy | AggregateBy |
-	|            | WidgetForDAS15550_Edited |      | Version | Application |
+	| WidgetType | Title                    | List | SplitBy | AggregateBy | OrderBy     |
+	|            | WidgetForDAS15550_Edited |      | Version | Application | Version ASC |
 	Then User sees widget with the next name "WidgetForDAS15550_Edited" on Dashboards page
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS14915 @Cleanup

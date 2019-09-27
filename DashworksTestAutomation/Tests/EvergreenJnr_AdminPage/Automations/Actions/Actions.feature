@@ -7,8 +7,8 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @Actions @DAS15427 @DAS15832 @DAS15833 @DAS17276 @DAS17625 @DAS17774 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptions
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API and open it
 	| AutomationName        | Description | Active | StopOnFailedAction | Scope       | Run    |
 	| Test_Automation_15427 | 15427       | true   | false              | All Devices | Manual |
@@ -78,8 +78,8 @@ Scenario: EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectlyForAutomations
 	Given Display order for 'Devices_Scope' automation 'First_Action' action is '1'
 	And Display order for 'Devices_Scope' automation 'Secont_Action' action is '2'
 	And Display order for 'Devices_Scope' automation 'Third_Action' action is '3'
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
 	When User enters "Devices_Scope" text in the Search field for "Automation" column
@@ -93,7 +93,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectlyForAutomations
 	When User selects 'Update path' in the 'Action Type' dropdown
 	When User selects '1803 Rollout' option from 'Project' autocomplete
 	When User selects 'Undetermined' option from 'Path' autocomplete
-	Then "Undetermined" content is displayed in the Path Automation dropdown
+	Then 'Undetermined' content is displayed in 'Path' textbox
 	When User clicks the "CREATE" Action button
 	Then There are no errors in the browser console
 	Then Success message is displayed and contains "The automation action has been created" text
@@ -151,8 +151,8 @@ Scenario: EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectlyForAutomations
 #Change value after gold data complete added
 #Selected automation should have at least three actions
 Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API and open it
 	| AutomationName           | Description | Active | StopOnFailedAction | Scope       | Run    |
 	| Test_Automation_DAS15938 | DAS15938    | true   | false              | All Devices | Manual |
@@ -178,7 +178,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
 	When User selects 'Update path' in the 'Action Type' dropdown
 	When User selects '1803 Rollout' option from 'Project' autocomplete
 	When User selects 'Undetermined' option from 'Path' autocomplete
-	Then "Undetermined" content is displayed in the Path Automation dropdown
+	Then 'Undetermined' content is displayed in 'Path' textbox
 	When User clicks the "CREATE" Action button
 	Then There are no errors in the browser console
 	#Action 3
@@ -188,7 +188,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
 	When User selects 'Update path' in the 'Action Type' dropdown
 	When User selects '1803 Rollout' option from 'Project' autocomplete
 	When User selects 'Undetermined' option from 'Path' autocomplete
-	Then "Undetermined" content is displayed in the Path Automation dropdown
+	Then 'Undetermined' content is displayed in 'Path' textbox
 	When User clicks the "CREATE" Action button
 	Then There are no errors in the browser console
 	#Action 4
@@ -214,7 +214,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15938 @DAS17076 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckParametersToCreateUpdatePathAction
 #Pre-requisites:
-	When User clicks "Users" on the left-hand menu
+	When User clicks 'Users' on the left-hand menu
 	And User clicks the Filters button
 	And User add "City" filter where type is "Equals" with added column and "Melbourne" Lookup option
 	And User create dynamic list with "Melbourne Users" name on "Users" page
@@ -225,7 +225,7 @@ Scenario: EvergreenJnr_AdminPage_CheckParametersToCreateUpdatePathAction
 	Then Create Project button is enabled
 	When User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
-	When User clicks "Projects" on the left-hand menu
+	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "Melbourne User Migration" Project
 	Then Project with "Melbourne User Migration" name is displayed correctly
@@ -238,8 +238,8 @@ Scenario: EvergreenJnr_AdminPage_CheckParametersToCreateUpdatePathAction
 	| User Migration | DAS15938    | User             |
 	When User navigate to Evergreen link
 #Pre-requisites:
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
 	When User clicks the "CREATE AUTOMATION" Action button
@@ -283,8 +283,8 @@ Scenario: EvergreenJnr_AdminPage_CheckParametersToCreateUpdatePathAction
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15425 @DAS16143 @DAS17336 @DAS17367 @DAS17802 @Cleanup @Not_Ready
 #Change value after gold data complete added
 Scenario: EvergreenJnr_AdminPage_CheckEditActionPage
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope     | Run    |
 	| 15425_Automation | 15425       | true   | false              | All Users | Manual |
@@ -330,7 +330,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditActionPage
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActions
 	#Add Pre-requisites to Gold Data
 	#Pre-requisites:
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	And User clicks the Filters button
 	And User add "City" filter where type is "Equals" with added column and "Edinburgh" Lookup option
 	And User create dynamic list with "Edinburgh Devices" name on "Devices" page
@@ -340,7 +340,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActions
 	When User enters "Edinburgh Devices Migration" in the "Project Name" field
 	When User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
-	When User clicks "Projects" on the left-hand menu
+	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "Edinburgh Devices Migration" Project
 	Then "Manage Project Details" page is displayed to the user
@@ -389,8 +389,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActions
 	Then selected task was published
 	When User navigate to Evergreen link
 	#Pre-requisites:
-	And User clicks "Admin" on the left-hand menu
-	Then Admin page should be displayed to the user
+	And User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
 	When User clicks the "CREATE AUTOMATION" Action button
@@ -424,14 +424,14 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActions
 Scenario: EvergreenJnr_AdminPage_CheckUpdatingTaskWhichImpactsReadinessOwnerAndDueDate
 	#Add Pre-requisites to Gold Data
 	#Pre-requisites:
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	And User clicks the Filters button
 	And User add "City" filter where type is "Equals" with added column and "Edinburgh" Lookup option
 	And User create dynamic list with "EdinburghDevices_17234" name on "Devices" page
 	When Project created via API and opened
 	| ProjectName                 | Scope                  | ProjectTemplate | Mode               |
 	| Edinburgh Devices Migration | EdinburghDevices_17234 | None            | Standalone Project |
-	When User clicks "Projects" on the left-hand menu
+	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "Edinburgh Devices Migration" Project
 	Then "Manage Project Details" page is displayed to the user
@@ -456,8 +456,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdatingTaskWhichImpactsReadinessOwnerAndD
 	Then selected task was published
 	When User navigate to Evergreen link
 	#Pre-requisites:
-	And User clicks "Admin" on the left-hand menu
-	Then Admin page should be displayed to the user
+	And User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
 	When User clicks the "CREATE AUTOMATION" Action button
@@ -495,8 +495,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdatingTaskWhichImpactsReadinessOwnerAndD
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17544 @Cleanup @Not_Ready
 Scenario Outline: EvergreenJnr_AdminPage_CheckListOfProjectsOnTheCreateActionsPage
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
 	When User clicks the "CREATE AUTOMATION" Action button
@@ -522,8 +522,8 @@ Examples:
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17542 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatUpdateTaskValueIsDisplayInAutomationsLog
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
 	When User clicks the "CREATE AUTOMATION" Action button
@@ -546,8 +546,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateTaskValueIsDisplayInAutomationsL
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17602 @DAS17604 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateTextValue
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
 	| 17602_Automation | 17602       | true   | false              | All Devices | Manual |
@@ -580,8 +580,8 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateTextValue
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17602 @DAS17605 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForRemoveTextValue
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
 	| 17605_Automation | 17605       | true   | false              | All Devices | Manual |
@@ -615,8 +615,8 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForRemoveTextValue
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17602 @DAS17606 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateDate
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
 	| 17606_Automation | 17606       | true   | false              | All Devices | Manual |
@@ -734,9 +734,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionStageSelectboxIsDisplayedForSpec
 	| Stage 1 |
 	| Stage 2 |
 	| Stage 3 |
-	When User clicks "Users" on the left-hand menu
+	When User clicks 'Users' on the left-hand menu
 	When User clicks "YES" button in the Warning Pop-up message
-	Then "All Users" list should be displayed to the user
+	Then 'All Users' list should be displayed to the user
 	When User clicks the Actions button
 	When User select "Username" rows in the grid
 	| SelectedRowsName    |

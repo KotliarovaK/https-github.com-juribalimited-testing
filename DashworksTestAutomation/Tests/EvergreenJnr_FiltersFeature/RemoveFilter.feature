@@ -8,8 +8,8 @@ Background: Pre-Conditions
 
 @Evergreen @Devices @Evergreen_FiltersFeature @RemoveFilter @DAS11009
 Scenario: EvergreenJnr_DevicesList_CheckThatResetIsUpdatingRowCount
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Compliance" filter where type is "Equals" with added column and following checkboxes:
@@ -29,8 +29,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatResetIsUpdatingRowCount
 
 @Evergreen @Devices @Evergreen_FiltersFeature @RemoveFilter @DAS11506
 Scenario: EvergreenJnr_DevicesList_CheckThatDeleteByUrlIsUpdatingRowCount
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Compliance" filter where type is "Equals" with added column and following checkboxes:
@@ -52,8 +52,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDeleteByUrlIsUpdatingRowCount
 
 @Evergreen @Users @Evergreen_FiltersFeature @RemoveFilter @DAS11009 @DAS11044 @DAS12199 @DAS14603
 Scenario: EvergreenJnr_UsersList_CheckThatDeletePartOfFilterFromUrlIsUpdatingRowCount
-	When User clicks "Users" on the left-hand menu
-	Then "All Users" list should be displayed to the user
+	When User clicks 'Users' on the left-hand menu
+	Then 'All Users' list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
@@ -83,8 +83,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatDeletePartOfFilterFromUrlIsUpdatingRow
 
 @Evergreen @Mailboxes @Evergreen_FiltersFeature @RemoveFilter @DAS10996 @DAS12207
 Scenario: EvergreenJnr_MailboxesList_CheckThatFiltersIsResetAndDataOnTheGridUpdatedBackToTheFullDataSet
-	When User clicks "Mailboxes" on the left-hand menu
-	Then "All Mailboxes" list should be displayed to the user
+	When User clicks 'Mailboxes' on the left-hand menu
+	Then 'All Mailboxes' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "City" filter where type is "Equals" with added column and following checkboxes:
@@ -99,20 +99,20 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatFiltersIsResetAndDataOnTheGridUpda
 
 @Evergreen @AllLists @Evergreen_FiltersFeature @RemoveFilter @DAS12635 @Cleanup
 Scenario: EvergreenJnr_AllLists_CheckThatCancelingUnsavedFilterDoesNotReloadList
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Windows7Mi: In Scope" filter
 	When User deletes filter and agGrid does not reload
-	When User clicks "Mailboxes" on the left-hand menu
-	Then "All Mailboxes" list should be displayed to the user
+	When User clicks 'Mailboxes' on the left-hand menu
+	Then 'All Mailboxes' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Owner Enabled" filter
 	When User cancels filter and agGrid does not reload
-	When User clicks "Users" on the left-hand menu
-	Then "All Users" list should be displayed to the user
+	When User clicks 'Users' on the left-hand menu
+	Then 'All Users' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "App Count (Entitled to Owned Device)" filter where type is "Equals" without added column and following value:
@@ -125,8 +125,8 @@ Scenario: EvergreenJnr_AllLists_CheckThatCancelingUnsavedFilterDoesNotReloadList
 	When User clicks Add And button on the Filter panel
 	When user select "Device Count" filter
 	When User deletes filter and agGrid does not reload
-	When User clicks "Applications" on the left-hand menu
-	Then "All Applications" list should be displayed to the user
+	When User clicks 'Applications' on the left-hand menu
+	Then 'All Applications' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "User Count (Entitled)" filter where type is "Equals" without added column and following value:
@@ -142,7 +142,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatCancelingUnsavedFilterDoesNotReloadList
 
 @Evergreen @AllLists @Evergreen_FiltersFeature @RemoveFilter @DAS17436
 Scenario: EvergreenJnr_DevicesLists_CheckBrokenListDisplayingAfterFilterRemoving
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	And User navigates to the "Device List (Complex) - BROKEN LIST" list
 	Then "Device List (Complex) - BROKEN LIST" list is displayed to user
 	And "This list has errors" message is displayed on the Admin Page

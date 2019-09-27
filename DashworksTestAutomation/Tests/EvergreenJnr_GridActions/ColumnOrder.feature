@@ -8,8 +8,8 @@ Background: Pre-Conditions
 
 @Evergreen @Devices @EvergreenJnr_GridActions @ColumnOrder @DAS10836 @DAS11666 @DAS12325
 Scenario: EvergreenJnr_DevicesList_CheckThatColumnsOrderSavedAfterSearch
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User have opened column settings for "Owner Display Name" column
 	When User have select "Pin Left" option from column settings
 	Then "Owner Display Name" column is "Left" Pinned
@@ -20,8 +20,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnsOrderSavedAfterSearch
 
 @Evergreen @Users @EvergreenJnr_GridActions @ColumnOrder @DAS10836 @DAS11664 @DAS12325 @DAS14183
 Scenario: EvergreenJnr_UsersList_CheckThatColumnsOrderSavedAfterSearch
-	When User clicks "Users" on the left-hand menu
-	Then "All Users" list should be displayed to the user
+	When User clicks 'Users' on the left-hand menu
+	Then 'All Users' list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
@@ -37,8 +37,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatColumnsOrderSavedAfterSearch
 
 @Evergreen @Devices @EvergreenJnr_GridActions @ColumnOrder @DAS10621 @DAS11666 @DAS12156 @DAS12351
 Scenario: EvergreenJnr_DevicesList_CheckThatColumnsOrderSavedAfterAddingAFilter
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
@@ -127,12 +127,12 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatColumnsOrderSavedAfterUsingTheAgGr
 
 @Evergreen @Applications @EvergreenJnr_Columns @RemoveColumn @DAS11625
 Scenario: EvergreenJnr_ApplicationsList_CheckThatAfterDeletingFirstColumnTheColumnsOrderIsDisplayedCorrectly 
-	When User clicks "Applications" on the left-hand menu
-	Then "All Applications" list should be displayed to the user
+	When User clicks 'Applications' on the left-hand menu
+	Then 'All Applications' list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When User removes "Application" column by Column panel
-	Then "All Applications" list should be displayed to the user
+	Then 'All Applications' list should be displayed to the user
 	And ColumnName is removed from the list
 	| ColumnName  |
 	| Application |
@@ -143,8 +143,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAfterDeletingFirstColumnTheColu
 
 @Evergreen @AllLists @EvergreenJnr_Columns @ColumnOrder @DAS12345 @DAS12823 @DAS13668
 Scenario Outline: EvergreenJnr_AllLists_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasReturnedToDefaultPositionWhenActionsPanelWasOpen
-	When User clicks "<PageName>" on the left-hand menu
-	Then "All <PageName>" list should be displayed to the user
+	When User clicks '<PageName>' on the left-hand menu
+	Then 'All <PageName>' list should be displayed to the user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User move '<FirstColumnName>' column to '<ToColumnName>' column
@@ -162,8 +162,8 @@ Examples:
 
 @Evergreen @AllLists @EvergreenJnr_Columns @ColumnOrder @DAS11836
 Scenario Outline: EvergreenJnr_AllLists_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasRemovedAndReturnedToDefaultPosition 
-	When User clicks "<PageName>" on the left-hand menu
-	Then "All <PageName>" list should be displayed to the user
+	When User clicks '<PageName>' on the left-hand menu
+	Then 'All <PageName>' list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When User removes "<ColumnName>" column by Column panel

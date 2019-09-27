@@ -93,7 +93,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatInSlotsColumnOnCapacityUnitsPageTheCo
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Senior_Projects @DAS13812 @DAS13676 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheEditCapacitySlotScreenIfAnAllocatedTaskHasSinceBeenChanged
-	When User clicks "Projects" on the left-hand menu
+	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User clicks create Project button
 	Then "Create Project" page is displayed to the user
@@ -133,21 +133,21 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheE
 	When User publishes the task
 	Then selected task was published
 	When User navigate to Evergreen link
-	And User clicks "Admin" on the left-hand menu
+	And User clicks 'Admin' on the left-hand menu
 	When User navigates to "ProjectForDAS13812" project details
 	And User creates new Slot via Api
 	| Project            | SlotName | DisplayName | Tasks                                                                   |
 	| ProjectForDAS13812 | Slot 1   | Slot 1      | Stage13812 \ 1Task13812‡Stage13812 \ 2Task13812‡Stage13812 \ 3Task13812 |
 	And User navigates to the 'Capacity' left menu item
 	And User selects "Slots" tab on the Project details page
-	And User clicks "Projects" on the left-hand menu
+	And User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "ProjectForDAS13812" Project
 	And User navigate to "Tasks" tab
 	And User navigate to "1Task13812" Task
 	And User unpublishes the task
 	And User navigate to Evergreen link
-	And User clicks "Admin" on the left-hand menu
+	And User clicks 'Admin' on the left-hand menu
 	And User navigates to "ProjectForDAS13812" project details
 	And User navigates to the 'Capacity' left menu item
 	And User selects "Slots" tab on the Project details page
@@ -159,14 +159,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheE
 	And User creates new Slot
 	| SlotName | DisplayName | Tasks                                           |
 	| Slot 2   | Slot 2      | Stage13812 \ 2Task13812‡Stage13812 \ 3Task13812 |
-	And User clicks "Projects" on the left-hand menu
+	And User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "ProjectForDAS13812" Project
 	And User navigate to "Tasks" tab
 	And User removes "2Task13812" Task
 	And User navigate to Evergreen link
-	And User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	And User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
 	When User navigates to "ProjectForDAS13812" project details
 	Then Project "ProjectForDAS13812" is displayed to user
 	When User navigates to the 'Capacity' left menu item

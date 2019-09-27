@@ -13,8 +13,8 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldValidations
 	| FieldName | FieldLabel | AllowExternalUpdate | Enabled | Computer |
 	| DAS17847  | 17847      | true                | true    | true     |
 	And User navigate to Evergreen URL
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
 	| 17847_Automation | 17847       | true   | false              | All Devices | Manual |
@@ -30,8 +30,8 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldValidations
 	#Create Action
 	When User clicks the "CREATE" Action button
 	When User removes Custom Field with 'DAS17847' label
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
 	When User enters "17847_Automation" text in the Search field for "Automation" column

@@ -38,7 +38,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifie
 	| 700ZHPQ6661CV1N |
 	Then "OwnerPrivate" list is displayed to user
 	When User navigates to the "All Devices" list
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user
 	When User create static list with "NotOwnerSpecifiedAdmin" name on "Devices" page with following items
 	| ItemName       |
 	| ZZHYOLP1V7STML |
@@ -56,7 +56,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifie
 	And User select "Automation Admin 1" as a Owner of a list
 	And User click Accept button in List Details panel
 	When User navigates to the "All Devices" list
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user
 	When User create static list with "NotOwnerSpecifiedEdit" name on "Devices" page with following items
 	| ItemName       |
 	| 07PZNEOU91VWVH |
@@ -74,7 +74,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifie
 	And User select "Automation Admin 1" as a Owner of a list
 	And User click Accept button in List Details panel
 	When User navigates to the "All Devices" list
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user
 	When User create static list with "NotOwnerSpecifiedRead" name on "Devices" page with following items
 	| ItemName       |
 	| VMI480Z5UKTLLK |
@@ -92,7 +92,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifie
 	And User select "Automation Admin 1" as a Owner of a list
 	And User click Accept button in List Details panel
 	When User navigates to the "All Devices" list
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user
 	When User create static list with "NotOwnerEveryoneCanEdit" name on "Devices" page with following items
 	| ItemName        |
 	| TVGU1Y24UU9QBQ  |
@@ -106,7 +106,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifie
 	And User select "Automation Admin 1" as a Owner of a list
 	And User click Accept button in List Details panel
 	When User navigates to the "All Devices" list
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user
 	When User create static list with "NotOwnerEveryoneCanSee" name on "Devices" page with following items
 	| ItemName       |
 	| 9K9Y2LGOD3Z1KW |
@@ -120,7 +120,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifie
 	And User select "Automation Admin 1" as a Owner of a list
 	And User click Accept button in List Details panel
 	When User navigates to the "All Devices" list
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
