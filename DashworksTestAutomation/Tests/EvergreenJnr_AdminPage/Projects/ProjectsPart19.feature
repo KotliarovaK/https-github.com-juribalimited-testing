@@ -15,9 +15,6 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckSelectExistingProjectDropdownValue
 	| OptionLabel                                       |
 	| *Project K-Computer Scheduled Project             |
 	| :/                                                |
-	| 000 ComputerScheduledProjectbf8434                |
-	| 000 MailboxScheduledProject0bcc95                 |
-	| 000 UserScheduledProjected41c8                    |
 	| 1803 Rollout                                      |
 	| Babel (English, German and French)                |
 	| Barry's User Project                              |
@@ -199,28 +196,21 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	| 00BDM1JUR8IF419 |
 	And There are no errors in the browser console
 	When User selects "Scope Changes" tab on the Project details page
-	And User navigates to the 'Applications' tab on Project Scope Changes page
-	And User expands multiselect to add objects 
+	And User navigates to the 'Applications' tab on Project Scope Changes page 
 	When User expands multiselect and selects following Objects
-	| Objects                        |
-	| 20040610sqlserverck (1.0.0)    |
-	| AddressGrabber Standard (3.1)  |
-	| Adobe Acrobat Reader 5.0 (1.0) |
+	| Objects                                                      |
+	| NI LabVIEW PID Control Toolset 6.0 (for LabVIEW 7.1) (7.1.0) |
 	When User clicks the "UPDATE ALL CHANGES" Action button
 	And User clicks the "UPDATE PROJECT" Action button
-	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
+	Then Success message is displayed and contains "1 object queued for onboarding, 0 objects offboarded" text
 	When User selects "Queue" tab on the Project details page
 	Then following Items are displayed in the Queue table
-	| Items                    |
-	| 20040610sqlserverck      |
-	| AddressGrabber Standard  |
-	| Adobe Acrobat Reader 5.0 |
+	| Items                                                |
+	| NI LabVIEW PID Control Toolset 6.0 (for LabVIEW 7.1) |
 	When User selects "History" tab on the Project details page
 	Then additional onboarded Items are displayed in the History table
-	| Items                    |
-	| 20040610sqlserverck      |
-	| AddressGrabber Standard  |
-	| Adobe Acrobat Reader 5.0 |
+	| Items                                                |
+	| NI LabVIEW PID Control Toolset 6.0 (for LabVIEW 7.1) |
 	And There are no errors in the browser console
 	When Project created via API and opened
 	| ProjectName         | Scope       | ProjectTemplate | Mode               |
@@ -229,7 +219,6 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	When User selects "Scope" tab on the Project details page
 	When User selects "Scope Changes" tab on the Project details page
 	And User navigates to the 'Applications' tab on Project Scope Changes page
-	And User expands multiselect to add objects 
 	When User expands multiselect and selects following Objects
 	| Objects                        |
 	| 20040610sqlserverck (1.0.0)    |
@@ -335,7 +324,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderForQueueAndHistoryTab
 	And User navigates to the 'Applications' tab on Project Scope Changes page
 	When User expands multiselect and selects following Objects
 	| Objects                                                       |
-	| Advantage Data Architect                                      |
+	| ACD Display 3.4                                               |
 	| Hilfe zu Blockdiagrammen                                      |
 	| Intel(R) Processor Graphics (20.19.15.4568)                   |
 	| Microsoft Exchange Client Language Pack - Hindi (15.0.1178.4) |
@@ -346,14 +335,14 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderForQueueAndHistoryTab
 	When User selects "Queue" tab on the Project details page
 	Then following Items are displayed in the Queue table
 	| Items                                           |
-	| Advantage Data Architect                        |
+	| ACD Display 3.4                                 |
 	| Hilfe zu Blockdiagrammen                        |
 	| Intel(R) Processor Graphics                     |
 	| Microsoft Exchange Client Language Pack - Hindi |
 	| NJStar Chinese Word Processor                   |
 	Then following Items are displayed at the top of the list
 	| Items                                           |
-	| Advantage Data Architect                        |
+	| ACD Display 3.4                                 |
 	| Hilfe zu Blockdiagrammen                        |
 	| Intel(R) Processor Graphics                     |
 	| Microsoft Exchange Client Language Pack - Hindi |
@@ -363,7 +352,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderForQueueAndHistoryTab
 	When User selects "History" tab on the Project details page
 	Then additional onboarded Items are displayed in the History table
 	| Items                                           |
-	| Advantage Data Architect                        |
+	| ACD Display 3.4                                 |
 	| Hilfe zu Blockdiagrammen                        |
 	| Intel(R) Processor Graphics                     |
 	| Microsoft Exchange Client Language Pack - Hindi |
