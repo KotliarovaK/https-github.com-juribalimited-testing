@@ -10,8 +10,8 @@ Background: Pre-Conditions
 
 @Evergreen @AllLists @EvergreenJnr_GridActions @BaseDashboardPage @DAS10871
 Scenario Outline: EvergreenJnr_AllLists_CheckDataIsNotDuplicatedInTableDuringScrolling
-	When User clicks "<ListName>" on the left-hand menu
-	Then "All <ListName>" list should be displayed to the user
+	When User clicks '<ListName>' on the left-hand menu
+	Then 'All <ListName>' list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When '<ColumnName>' Column Name is entered into the search box and the selection is clicked

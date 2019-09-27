@@ -81,7 +81,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetValuesLeadsToApplicati
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15208
 Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetDisplayedFullyInPreviewPane
-	When User clicks "Dashboards" on the left-hand menu
+	When User clicks 'Dashboards' on the left-hand menu
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
@@ -214,7 +214,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenLastAggr
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17599 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckClickthoughNumbersBasedArchivedItemsRedirectsToFilteredListWithEnabledArchivedItems
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	And User sets includes archived devices in "true"
 	And User create dynamic list with "List17599" name on "Devices" page
 	When Dashboard with "Dashboard for DAS17599" name created via API and opened

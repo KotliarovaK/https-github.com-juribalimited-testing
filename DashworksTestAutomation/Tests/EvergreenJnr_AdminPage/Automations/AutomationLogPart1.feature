@@ -10,7 +10,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsLogGridForRunningAutomationWith
 	When Project created via API and opened
 	| ProjectName  | Scope       | ProjectTemplate | Mode               |
 	| 16890Project | All Devices | None            | Standalone Project |
-	And User clicks Admin on the left-hand menu
+	And User clicks 'Admin' on the left-hand menu
 	When User creates new Automation via API
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
 	| 16890_Automation | 16890       | true   | false              | All Devices | Manual |
@@ -67,8 +67,8 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsLogGridForRunningAutomationWith
 @Evergreen @EvergreenJnr_AdminPage @AutomationLog @Automations @DAS17104 @DAS17110 @DAS17169 @DAS17774 @Cleanup @Not_Ready
 #Use Inactive automation
 Scenario: EvergreenJnr_AdminPage_CheckThatInactiveAutomationShouldBeLoggedButNotRun
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope     | Run    |
 	| 17104_Automation | 17104       | false  | false              | All Users | Manual |
@@ -98,8 +98,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatInactiveAutomationShouldBeLoggedButNot
 @Evergreen @EvergreenJnr_AdminPage @AutomationLog @Automations @DAS17104 @DAS16974 @DAS16316 @DAS17263 @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckSuccessfulRunInOutcomeColumn
 #Use correct, active Automation
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
 	When User clicks the "CREATE AUTOMATION" Action button
@@ -141,8 +141,8 @@ Scenario: EvergreenJnr_AdminPage_CheckSuccessfulRunInOutcomeColumn
 
 @Evergreen @EvergreenJnr_AdminPage @AutomationLog @Automations @DAS16316 @DAS16319 @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckOutcomeValueForAnAutomationThatIsAlreadyRunning
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
 	When User clicks "Run now" option in Cog-menu for "DELAY - do not delete2" item on Admin page
@@ -154,7 +154,7 @@ Scenario: EvergreenJnr_AdminPage_CheckOutcomeValueForAnAutomationThatIsAlreadyRu
 
 @Evergreen @EvergreenJnr_AdminPage @AutomationLog @Automations @DAS17011 @DAS17374 @DAS17370 @DAS17367 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckBrokenListValidationWhenRunningAnAutomation
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	And User clicks the Filters button
 	And User add "Country" filter where type is "Equals" with added column and "England" Lookup option
 	And User create dynamic list with "17011_List" name on "Devices" page
@@ -163,17 +163,11 @@ Scenario: EvergreenJnr_AdminPage_CheckBrokenListValidationWhenRunningAnAutomatio
 	| 17011_Automation | 17011       | true   | false              | 17011_List | Manual |
 	Then Automation page is displayed correctly
 	When User clicks "Automations" navigation link on the Admin page
-	When User clicks the "CREATE AUTOMATION" Action button
-	Then "Create Automation" title is displayed on the Automations page
-	When User enters '17011_Automation_1' text to 'Automation Name' textbox
-	When User enters '17011_1' text to 'Description' textbox
-	When User selects 'All Devices' option from 'Scope' autocomplete
-	When User selects 'Manual' in the 'Run' dropdown
-	When User selects "Active" checkbox on the Automation Page
-	When User clicks the "CREATE" Action button
-	Then Create Action page is displayed to the User
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User creates new Automation via API and open it
+	| AutomationName    | Description | Active | StopOnFailedAction | Scope       | Run    |
+	| Second_Automation | 17011_1     | true   | false              | All Devices | Manual |
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User navigates to the "17011_List" list
 	Then "17011_List" list is displayed to user
 	When User clicks the Filters button
@@ -182,7 +176,7 @@ Scenario: EvergreenJnr_AdminPage_CheckBrokenListValidationWhenRunningAnAutomatio
 	| SelectedList                             | Association        |
 	| Application List (Complex) - BROKEN LIST | Entitled to device |
 	When User update current custom list
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
 	When User enters "17011_Automation" text in the Search field for "Automation" column
@@ -193,21 +187,28 @@ Scenario: EvergreenJnr_AdminPage_CheckBrokenListValidationWhenRunningAnAutomatio
 	When User clicks the "CANCEL" Action button
 	When User clicks "Projects" link on the Admin page
 	When User clicks "Automations" link on the Admin page
-	When User enters "17011_Automation" text in the Search field for "Automation" column
+	When User enters "Second_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
+	Then Automation page is displayed correctly
 	Then Filling field error is not displayed
 	When User clicks the "CANCEL" Action button
 	When User enters "17011_Automation" text in the Search field for "Automation" column
-	When User clicks "Run now" option in Cog-menu for "17011_Automation" item on Admin page
+	When User selects all rows on the grid
+	When User clicks on Actions button
+	And User selects "Run now" in the Actions
+	When User clicks the "RUN" Action button
+	When User clicks "RUN" button in the warning message on Admin page
 	When User selects "Automation Log" tab on the Project details page
 	When User clicks refresh button in the browser
 	When User enters "17011_Automation" text in the Search field for "Automation" column
+	When User clicks String Filter button for "Type" column
+	When User selects "Automation Start" checkbox from String Filter on the Admin page
 	Then "LIST HAS ERRORS" content is displayed for "Outcome" column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AutomationLog @Automations @DAS17212 @Cleanup @Not_Ready
 Scenario Outline: EvergreenJnr_AdminPage_CheckSuccessfulRunningAutomationWithMainListsInTheScope
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
 	When User clicks the "CREATE AUTOMATION" Action button
@@ -239,8 +240,8 @@ Examples:
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17774 @Not_Ready
 #Run steps after fixing Boolean sorting
 Scenario: EvergreenJnr_AdminPage_CheckSortingAutomationsLogGrid
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
 	When User selects "Automation Log" tab on the Project details page

@@ -7,8 +7,8 @@ Background: Pre-Conditions
 
 @Evergreen @Users @Evergreen_ActionsPanel @AllCheckbox @DAS10769 @DAS10656 @DAS12206
 Scenario: EvergreenJnr_UsersList_SelectAllCheckboxStatusCheckAfterSearch
-	When User clicks "Users" on the left-hand menu
-	Then "All Users" list should be displayed to the user
+	When User clicks 'Users' on the left-hand menu
+	Then 'All Users' list should be displayed to the user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
@@ -32,8 +32,8 @@ Scenario: EvergreenJnr_UsersList_SelectAllCheckboxStatusCheckAfterSearch
 
 @Evergreen @AllLists @Evergreen_ActionsPanel @AllCheckbox @DAS10775 @DAS10656 @DAS12602
 Scenario Outline: EvergreenJnr_AllLists_CheckThatSelectAllCheckboxStatusAfterClosingActionPanel
-	When User clicks "<PageName>" on the left-hand menu
-	Then "All <PageName>" list should be displayed to the user
+	When User clicks '<PageName>' on the left-hand menu
+	Then 'All <PageName>' list should be displayed to the user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
@@ -49,8 +49,8 @@ Examples:
 
 @Evergreen @Devices @Evergreen_ActionsPanel @AllCheckbox @DAS10772 @DAS10656 @DAS11664 @DAS12602
 Scenario: EvergreenJnr_DevicesList_SearchWithinAllRows
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
@@ -64,8 +64,8 @@ Scenario: EvergreenJnr_DevicesList_SearchWithinAllRows
 
 @Evergreen @AllLists @Evergreen_ActionsPanel @AllCheckbox @DAS10656 @DAS12602
 Scenario Outline: EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest
-	When User clicks "<PageName>" on the left-hand menu
-	Then "All <PageName>" list should be displayed to the user
+	When User clicks '<PageName>' on the left-hand menu
+	Then 'All <PageName>' list should be displayed to the user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
@@ -111,8 +111,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatSelectAllWorksCorrectlyForFilteredList
 
 @Evergreen @Mailboxes @Evergreen_ActionsPanel @AllCheckbox @DAS11894 @DAS12602
 Scenario: EvergreenJnr_MailboxesList_CheckThatAllCheckboxesAreCheckedAfterAFirstClick
-	When User clicks "Mailboxes" on the left-hand menu
-	Then "All Mailboxes" list should be displayed to the user
+	When User clicks 'Mailboxes' on the left-hand menu
+	Then 'All Mailboxes' list should be displayed to the user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows

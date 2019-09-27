@@ -8,8 +8,8 @@ Background: Pre-Conditions
 #That test have 'not run' tag, because blue banner closes too fast.
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS13347 @DAS11978 @DAS16887 @Cleanup @Not_Run
 Scenario: EvergreenJnr_AdminPage_ChecksThatBlueBannerIsDisplayedWithCorrectlyText
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
 	When User clicks the "CREATE PROJECT" Action button
@@ -63,8 +63,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatBlueBannerIsDisplayedWithCorrectlyTex
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12756 @DAS13586 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatProjectTypesInTheFilterAlphabetised
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
 	When User clicks the "CREATE PROJECT" Action button
@@ -90,8 +90,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectTypesInTheFilterAlphabetised
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12183 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatAllCheckboxesOnScopeDetailsTabAreWorkedCorrectly
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
 	When User clicks the "CREATE PROJECT" Action button
@@ -121,8 +121,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAllCheckboxesOnScopeDetailsTabAreWork
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Projects @DAS13606 @DAS13162
 Scenario: EvergreenJnr_AdminPage_CheckThatProjectDetailsIsPopulatedOnTheAdminPage
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
 	When User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column

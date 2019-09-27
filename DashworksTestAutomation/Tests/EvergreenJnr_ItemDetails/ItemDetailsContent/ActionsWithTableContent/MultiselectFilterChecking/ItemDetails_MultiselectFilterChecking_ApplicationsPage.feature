@@ -7,8 +7,8 @@ Background: Pre-Conditions
 
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
 Scenario: EvergreenJnr_ApplicationsList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForDetailsTabAdvertisementsOnApplicationsPage
-	When User clicks "Applications" on the left-hand menu
-	Then "All Applications" list should be displayed to the user
+	When User clicks 'Applications' on the left-hand menu
+	Then 'All Applications' list should be displayed to the user
 	When User perform search by "Accessible FormNet Fill 2.2"
 	And User click content from "Application" column
 	Then Details page for "Accessible FormNet Fill 2.2" item is displayed to the user
@@ -22,8 +22,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatOnlyValueIncludedInTheColumnIsD
 
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
 Scenario: EvergreenJnr_ApplicationsList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForMsiTabOnApplicationsPage
-	When User clicks "Applications" on the left-hand menu
-	Then "All Applications" list should be displayed to the user
+	When User clicks 'Applications' on the left-hand menu
+	Then 'All Applications' list should be displayed to the user
 	When User perform search by "Accessible FormNet Fill 2.2"
 	And User click content from "Application" column
 	Then Details page for "Accessible FormNet Fill 2.2" item is displayed to the user
@@ -73,8 +73,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatOnlyValueIncludedInTheColumnIsD
 
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
 Scenario: EvergreenJnr_ApplicationsList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForDistributionTabOnApplicationsPage
-	When User clicks "Applications" on the left-hand menu
-	Then "All Applications" list should be displayed to the user
+	When User clicks 'Applications' on the left-hand menu
+	Then 'All Applications' list should be displayed to the user
 	When User perform search by "Accessible FormNet Fill 2.2"
 	And User click content from "Application" column
 	Then Details page for "Accessible FormNet Fill 2.2" item is displayed to the user

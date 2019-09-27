@@ -7,8 +7,8 @@ Background: Pre-Conditions
 
 @Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12863 @DAS13266 @DAS13284
 Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersPage
-	When User clicks "Users" on the left-hand menu
-	Then "All Users" list should be displayed to the user
+	When User clicks 'Users' on the left-hand menu
+	Then 'All Users' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Windows7Mi: In Scope" filter where type is "Equals" with added column and following checkboxes:
@@ -94,8 +94,8 @@ Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersP
 
 @Evergreen @Applications @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12863 @DAS13266 @DAS13284 @DAS16826
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatRequestTypeIsUpdatedCorrectlyOnApplicationsPage
-	When User clicks "Applications" on the left-hand menu
-	Then "All Applications" list should be displayed to the user
+	When User clicks 'Applications' on the left-hand menu
+	Then 'All Applications' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Windows7Mi: In Scope" filter where type is "Equals" with added column and following checkboxes:
@@ -161,8 +161,8 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatRequestTypeIsUpdatedCorrectlyO
 
 @Evergreen @Mailboxes @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12863 @DAS13266 @DAS13284 @DAS13708
 Scenario: EvergreenJnr_MailboxesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnMailboxesPage
-	When User clicks "Mailboxes" on the left-hand menu
-	Then "All Mailboxes" list should be displayed to the user
+	When User clicks 'Mailboxes' on the left-hand menu
+	Then 'All Mailboxes' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "EmailMigra: In Scope" filter where type is "Equals" with added column and following checkboxes:
@@ -245,8 +245,8 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnMa
 
 @Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS12863 @DAS13266 @DAS13284
 Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyWhereSomeObjectsAreValidAndSomeAreInvalidForTheSelectedProject
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked

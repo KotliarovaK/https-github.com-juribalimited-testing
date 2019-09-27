@@ -7,8 +7,8 @@ Background: Pre-Conditions
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS10647 @DAS13001 @DAS13838 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatDatabaseErrorOccurringOccurringWhenAttemptingToSaveListsInEvergreenAreNotDisplayed 
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Babel(Engl: Readiness" filter where type is "Equals" with added column and "Amber" Lookup option
@@ -39,8 +39,8 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedL
 	Then Dashworks homepage is displayed to the user in a logged in state
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User navigates to the "TestListAA0888" list
 	Then "TestListAA0888" list is displayed to user
 	When User clicks the Columns button
@@ -64,8 +64,8 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedL
 	Then Dashworks homepage is displayed to the user in a logged in state
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User navigates to the "TestListAA0888" list
 	Then "TestListAA0888" list is displayed to user
 	And ColumnName is added to the list
@@ -77,14 +77,14 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedL
 	Then Columns panel is displayed to the user
 	And "Import" subcategory is selected in Column panel
 	When User navigates to the "All Devices" list
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user
 	When User navigates to the "TestListAA0888" list
 	Then Edit List menu is not displayed
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11465 @Cleanup
 Scenario: EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedListWithSelectedFiltersWithoutErrors
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Compliance" filter where type is "Equals" with added column and following checkboxes:
@@ -106,8 +106,8 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedL
 	Then Dashworks homepage is displayed to the user in a logged in state
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User navigates to the "TestList0A788F" list
 	Then "TestList0A788F" list is displayed to user
 	When User clicks the Filters button
@@ -124,8 +124,8 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedL
 	Then Dashworks homepage is displayed to the user in a logged in state
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User navigates to the "TestList0A788F" list
 	Then "TestList0A788F" list is displayed to user
 	When User clicks the Filters button
@@ -134,14 +134,14 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedL
 	And "Compliance is Red or Amber" is displayed in added filter info
 	And "City is London" is displayed in added filter info
 	When User navigates to the "All Devices" list
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user
 	When User navigates to the "TestList0A788F" list
 	Then Edit List menu is not displayed
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11465 @DAS11951 @Cleanup
 Scenario: EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedListWithSortingWithoutErrors
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User clicks on 'Hostname' column header
 	Then data in table is sorted by 'Hostname' column in ascending order
 	When User create dynamic list with "TestList9A0AE8" name on "Devices" page
@@ -158,8 +158,8 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedL
 	Then Dashworks homepage is displayed to the user in a logged in state
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User navigates to the "TestList9A0AE8" list
 	Then "TestList9A0AE8" list is displayed to user
 	When User clicks on 'Owner Display Name' column header
@@ -173,12 +173,12 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedL
 	Then Dashworks homepage is displayed to the user in a logged in state
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User navigates to the "TestList9A0AE8" list
 	Then "TestList9A0AE8" list is displayed to user
 	And data in table is sorted by 'Owner Display Name' column in ascending order
 	When User navigates to the "All Devices" list
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user
 	When User navigates to the "TestList9A0AE8" list
 	Then Edit List menu is not displayed

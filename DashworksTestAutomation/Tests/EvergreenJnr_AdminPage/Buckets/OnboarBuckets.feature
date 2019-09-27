@@ -33,4 +33,4 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedObjectsAreDisplayedAfterChang
 	And User navigates to the 'Buckets' left menu item
 	And User enters "Unassigned2" text in the Search field for "Bucket" column
 	Then "2" Onboarded objects are displayed
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu

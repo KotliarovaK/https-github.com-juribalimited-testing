@@ -7,7 +7,7 @@ Background: Pre-Conditions
 
 @Senior @Dashworks @Projects_Dashworks @Senior_Profile @DAS17586
 Scenario: Senior_ChecksThatUserCanUpdateUserPasswordOnSenior
-	When User clicks "Projects" on the left-hand menu
+	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to Preferences page
 	Then "User Profile" page is displayed to the user

@@ -165,7 +165,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSettingsDisplayedForDashboard
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS12974 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatAnyDashboardCanBeMarkedFavorite
-	When User clicks "Dashboards" on the left-hand menu
+	When User clicks 'Dashboards' on the left-hand menu
 	And User clicks the "CREATE DASHBOARD" Action button
 	And User creates new Dashboard with "Dashboard_DAS12974" name
 	Then Dashboard with "Dashboard_DAS12974" title displayed in All Dashboards
@@ -229,7 +229,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSectionCanBeDeleted
 @Evergreen @EvergreenJnr_DashboardsPage @DAS12974 @Cleanup
 Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatErrorMessageDisplayedWhenDashboardNameExists
 	When Dashboard with "DAS12974DUPLICATED" name created via API and opened
-	When User clicks "Dashboards" on the left-hand menu
+	When User clicks 'Dashboards' on the left-hand menu
 	And User clicks the "CREATE DASHBOARD" Action button
 	And User types "<DashboardName>" as dashboard title
 	Then Red Dashboard should be unique error displayed to user
@@ -292,7 +292,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDuplicateOptionWorksAfterMovingWi
 	| 1_Widget    |
 	| 1_Widget2   |
 
-	@Evergreen @Devices @EvergreenJnr_BaseDashboardPage @DAS18080
+@Evergreen @Devices @EvergreenJnr_BaseDashboardPage @DAS18080
 Scenario: EvergreenJnr_Dashboard_CheckThatThereIsNoPossibilityGoBackGromThePrintPreviewModeAfterClickingTheDashworksLogo
 	When User clicks "print"  button on the Dashboards page
 	Then Print Preview is displayed to the User

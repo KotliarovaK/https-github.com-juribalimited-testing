@@ -114,7 +114,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 var combinedURL = _url.Value + row["QueryStringURL"];
                 _driver.NavigateToUrl(combinedURL);
 
-                var page = _driver.NowAt<EvergreenDashboardsPage>();
+                var page = _driver.NowAt<BaseDashboardPage>();
 
                 Logger.Write($"Evergreen agGrid Main Object List is returned with data for: {row["QueryType"]} query");
             }

@@ -7,8 +7,8 @@ Background: Pre-Conditions
 	
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @DAS13254 @DAS13172 @Cleanup @Teams @Do_Not_Run_With_Teams
 Scenario: EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
 	When User clicks "Teams" link on the Admin page
 	Then "Teams" page should be displayed to the user
 	#Then Counter shows "2,794" found rows
@@ -69,8 +69,8 @@ Scenario: EvergreenJnr_AdminPage_AddingMembersToTheTeam
 	When User creates new Team via api
 	| TeamName  | Description | IsDefault |
 	| TestTeam7 | test        | false     |
-	And User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	And User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
 	When User clicks "Teams" link on the Admin page
 	Then "Teams" page should be displayed to the user
 	When User enters "TestTeam7" text in the Search field for "Team" column
@@ -115,8 +115,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSelectANewTeamDropdownAreWorkingCorre
 	When User creates new Team via api
 	| TeamName | Description | IsDefault |
 	| DAS12326 | 12326       | false     |
-	And User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	And User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
 	When User clicks "Teams" link on the Admin page
 	Then "Teams" page should be displayed to the user
 	When User enters "DAS12326" text in the Search field for "Team" column

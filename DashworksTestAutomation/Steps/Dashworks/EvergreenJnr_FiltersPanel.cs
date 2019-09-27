@@ -1179,7 +1179,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 var filterValue = filter.FindElement(By.XPath(FiltersElement.FilterValuesSelector)).Text;
                 var filterOption = filter.FindElement(By.XPath(FiltersElement.FilterOptionsSelector)).Text;
                 var urlPartToCheck = filtersValuesInUrl[i];
-                Utils.Verify.Contains(ColumnNameToUrlConvertor.Convert(basePage.Heading.Text, filterName),
+                Utils.Verify.Contains(ColumnNameToUrlConvertor.Convert(basePage.Header.Text, filterName),
                     urlPartToCheck, "PLEASE ADD EXCEPTION MESSAGE");
                 Utils.Verify.Contains(FilterOperatorsConvertor.Convert(filterOption), urlPartToCheck, "PLEASE ADD EXCEPTION MESSAGE");
                 Utils.Verify.Contains(filterValue, urlPartToCheck, "PLEASE ADD EXCEPTION MESSAGE");

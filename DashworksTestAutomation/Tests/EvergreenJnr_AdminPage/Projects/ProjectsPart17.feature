@@ -7,8 +7,8 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12154 @DAS12742 @DAS12872 @Cleanup @Project_Creation_and_Scope
 Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedWhenDeletingListUsingInTheProjectThatWasDeleted
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Compliance" filter where type is "Equals" with added column and following checkboxes:
@@ -17,8 +17,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedWhenDeleti
 	Then "Compliance" filter is added to the list
 	When User create dynamic list with "TestList0A78U9" name on "Devices" page
 	Then "TestList0A78U9" list is displayed to user
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
 	When User clicks the "CREATE PROJECT" Action button
@@ -32,8 +32,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedWhenDeleti
 	When User enters "TestProject6" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
-	And User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	And User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User navigates to the "TestList0A78U9" list
 	And User clicks Settings button in the list panel
 	Then Settings panel is displayed to the user
@@ -80,15 +80,15 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCo
 
 @Evergreen @AllLists @EvergreenJnr_AdminPage @AdminPage @Projects @DAS11886 @DAS12613 @DAS13199 @Cleanup @Project_Creation_and_Scope
 Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeletingUsedForProjectLists 
-	When User clicks "Users" on the left-hand menu
-	Then "All Users" list should be displayed to the user
+	When User clicks 'Users' on the left-hand menu
+	Then 'All Users' list should be displayed to the user
 	When User clicks on 'Username' column header
 	And User create dynamic list with "ListForProject" name on "Users" page
 	When Project created via API and opened
 	| ProjectName  | Scope          | ProjectTemplate | Mode               |
 	| TestProject1 | ListForProject | None            | Standalone Project |
-	And User clicks "Users" on the left-hand menu
-	Then "All Users" list should be displayed to the user
+	And User clicks 'Users' on the left-hand menu
+	Then 'All Users' list should be displayed to the user
 	When User navigates to the "ListForProject" list
 	Then "ListForProject" list is displayed to user
 	When User clicks Settings button in the list panel
@@ -96,8 +96,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeleting
 	When User clicks Delete in the list panel
 	Then "list is used by 1 project, do you wish to proceed?" message is displayed in the lists panel
 	And User clicks Delete button on the warning message in the lists panel
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
 	When User clicks on 'TestProject1' cell from 'Project' column

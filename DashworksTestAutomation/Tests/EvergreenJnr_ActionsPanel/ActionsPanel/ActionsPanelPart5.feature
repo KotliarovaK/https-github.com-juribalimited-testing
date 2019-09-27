@@ -7,8 +7,8 @@ Background: Pre-Conditions
 
 @Evergreen @Applications @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13142 @DAS12864 @DAS13270
 Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectFieldIsDisplayedCorrectlyAfterClearingOnApplicationsPage
-	When User clicks "Applications" on the left-hand menu
-	Then "All Applications" list should be displayed to the user
+	When User clicks 'Applications' on the left-hand menu
+	Then 'All Applications' list should be displayed to the user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Application" rows in the grid
@@ -25,8 +25,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectFieldIsDisplayedCorrectl
 
 @Evergreen @Mailboxes @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13142 @DAS16826
 Scenario: EvergreenJnr_MailboxesList_CheckThatProjectFieldIsDisplayedCorrectlyAfterClearingOnMailboxesPage
-	When User clicks "Mailboxes" on the left-hand menu
-	Then "All Mailboxes" list should be displayed to the user
+	When User clicks 'Mailboxes' on the left-hand menu
+	Then 'All Mailboxes' list should be displayed to the user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Email Address" rows in the grid
@@ -49,8 +49,8 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatProjectFieldIsDisplayedCorrectlyAf
 
 @Evergreen @AllLists @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13355 @DAS13260 @DAS13281
 Scenario Outline: EvergreenJnr_AllLists_ChecksThatTextValueHaveOptionToRemoveExistingTextValue
-	When User clicks "<PageName>" on the left-hand menu
-	Then "All <PageName>" list should be displayed to the user
+	When User clicks '<PageName>' on the left-hand menu
+	Then 'All <PageName>' list should be displayed to the user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "<ColumnName>" rows in the grid
@@ -74,7 +74,7 @@ Examples:
 
 @Evergreen @AllLists @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13264 @DAS13265 @DAS13278 @DAS14448 @Cleanup
 Scenario Outline: EvergreenJnr_AllLists_CheckThatUpdateAndCancelButtonsAreEnabledWhenUserLoggedWithProjectBulkUpdaterRole
-	When User clicks "Projects" on the left-hand menu
+	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console
@@ -92,8 +92,8 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatUpdateAndCancelButtonsAreEnable
 	Then Dashworks homepage is displayed to the user in a logged in state
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
-	When User clicks "<PageName>" on the left-hand menu
-	Then "All <PageName>" list should be displayed to the user
+	When User clicks '<PageName>' on the left-hand menu
+	Then 'All <PageName>' list should be displayed to the user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "<ColumnName>" rows in the grid

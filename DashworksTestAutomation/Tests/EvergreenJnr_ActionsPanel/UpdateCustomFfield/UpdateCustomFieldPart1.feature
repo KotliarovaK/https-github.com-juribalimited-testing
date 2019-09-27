@@ -8,7 +8,7 @@ Background: Pre-Conditions
 @Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS17878 @Not_Ready
 #Waiting for "Update custom field" on the automation
 Scenario Outline: EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveAllValuesValidation
-	When User clicks "<ListName>" on the left-hand menu
+	When User clicks '<ListName>' on the left-hand menu
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "<ColumnName>" rows in the grid
@@ -31,7 +31,7 @@ Examples:
 @Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS17878 @DAS18031 @Not_Ready
 #Waiting for "Update custom field" on the automation
 Scenario Outline: EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceAllValuesValidation
-	When User clicks "<ListName>" on the left-hand menu
+	When User clicks '<ListName>' on the left-hand menu
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "<ColumnName>" rows in the grid
@@ -65,7 +65,7 @@ Examples:
 @Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS17878 @Not_Ready
 #Waiting for "Update custom field" on the automation
 Scenario Outline: EvergreenJnr_AllLists_CheckUpdateCustomFieldForAddToExistingValuesValidation
-	When User clicks "<ListName>" on the left-hand menu
+	When User clicks '<ListName>' on the left-hand menu
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "<ColumnName>" rows in the grid
@@ -88,7 +88,7 @@ Examples:
 @Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS17878 @Not_Ready
 #Waiting for "Update custom field" on the automation
 Scenario Outline: EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveSpecificValuesValidation
-	When User clicks "<ListName>" on the left-hand menu
+	When User clicks '<ListName>' on the left-hand menu
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "<ColumnName>" rows in the grid
@@ -111,7 +111,7 @@ Examples:
 @Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS17878 @Not_Ready
 #Waiting for "Update custom field" on the automation
 Scenario Outline: EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceSingleValueValidation
-	When User clicks "<ListName>" on the left-hand menu
+	When User clicks '<ListName>' on the left-hand menu
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "<ColumnName>" rows in the grid

@@ -1,6 +1,7 @@
 ﻿using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Projects;
 using DashworksTestAutomation.Pages.Senior;
+using DashworksTestAutomation.Providers;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
@@ -15,6 +16,12 @@ namespace DashworksTestAutomation.Steps.Projects
         public Projects_PMObject(RemoteWebDriver driver)
         {
             _driver = driver;
+        }
+
+        [When(@"User navigates to '(.*)' Object on PMObject page")]
+        public void WhenUserNavigatesToObjectOnPMObjectPage(int objectId)
+        {
+            _driver.NavigateToUrl($"{UrlProvider.Url}PMObject.aspx?ObjectId={objectId}");
         }
 
         [Then(@"PMObject page for ""(.*)"" object is displayed to the user")]

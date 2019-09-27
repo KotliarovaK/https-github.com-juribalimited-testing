@@ -1250,16 +1250,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Verify.That(bgColor, Is.EqualTo("rgba(49, 122, 193, 1)"), "Archived message text is in different color");
         }
 
-        [Then(@"""(.*)"" content is displayed in the Scope Automation dropdown")]
-        [Then(@"""(.*)"" content is displayed in the Path Automation dropdown")]
-        public void ThenContentIsDisplayedInTheScopeAutomationDropdown(string dropdownValue)
-        {
-            var createProjectElement = _driver.NowAt<ProjectsPage>();
-            _driver.WaitForDataLoading();
-            _driver.WaitForElementToBeDisplayed(createProjectElement.ScopeProjectField);
-            Utils.Verify.Contains(dropdownValue, createProjectElement.ScopeProjectField.GetAttribute("value"), $"{dropdownValue} is not displayed in the Scope Automation dropdown");
-        }
-
         [Then(@"Main lists are displayed correctly in the Scope dropdown")]
         public void ThenMainListsAreDisplayedCorrectlyInTheScopeDropdown(Table table)
         {

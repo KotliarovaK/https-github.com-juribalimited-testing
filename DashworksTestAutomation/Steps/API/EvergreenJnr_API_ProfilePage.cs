@@ -53,17 +53,18 @@ namespace DashworksTestAutomation.Steps.API
             if (gridPageSize.Equals(string.Empty) ||
                 gridPageCache.Equals(string.Empty))
             {
-                When($"User clicks \"{"Devices"}\" on the left-hand menu");
-                Then($"\"{"Devices"}\" list should be displayed to the user");
+                //Steps naming is changed. Please update appropriately From AdminLeftHandMenu class 
+                When($"User clicks '{"Devices"}' on the left-hand menu");
+                Then($"'{"Devices"}' list should be displayed to the user");
                 Then($"page Size is \"{1000}\" on \"{"Devices"}\" page");
-                When($"User clicks \"{"Users"}\" on the left-hand menu");
-                Then($"\"{"Users"}\" list should be displayed to the user");
+                When($"User clicks '{"Users"}' on the left-hand menu");
+                Then($"'{"Users"}' list should be displayed to the user");
                 Then($"page Size is \"{1000}\" on \"{"Users"}\" page");
-                When($"User clicks \"{"Applications"}\" on the left-hand menu");
-                Then($"\"{"Applications"}\" list should be displayed to the user");
+                When($"User clicks '{"Applications"}' on the left-hand menu");
+                Then($"'{"Applications"}' list should be displayed to the user");
                 Then($"page Size is \"{1000}\" on \"{"Applications"}\" page");
-                When($"User clicks \"{"Mailboxes"}\" on the left-hand menu");
-                Then($"\"{"Mailboxes"}\" list should be displayed to the user");
+                When($"User clicks '{"Mailboxes"}' on the left-hand menu");
+                Then($"'{"Mailboxes"}' list should be displayed to the user");
                 Then($"page Size is \"{1000}\" on \"{"Mailboxes"}\" page");
             }
             else

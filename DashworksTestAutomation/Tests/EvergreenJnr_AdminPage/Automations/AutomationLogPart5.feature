@@ -8,8 +8,8 @@ Background: Pre-Conditions
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17974 @Cleanup @Not_Ready
 #Waiting for 'zUser Sch for Automations Feature' project
 Scenario: EvergreenJnr_AdminPage_CheckUpdateAndRemoveTaskValueForUpdateValueInUserScopedAutomationDAS17974
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope                             | Run    |
 	| 17974_Automation | 17974       | true   | false              | Users Readiness Columns & Filters | Manual |
@@ -50,8 +50,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateAndRemoveTaskValueForUpdateValueInUs
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17829 @Cleanup @Not_Ready
 #Waiting for 'zMailbox Sch for Automations Feature' project
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForRemoveOwnerInMailboxScopedAutomation
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope                               | Run    |
 	| 17829_Automation | 17829       | true   | false              | Mailbox Readiness Columns & Filters | Manual |

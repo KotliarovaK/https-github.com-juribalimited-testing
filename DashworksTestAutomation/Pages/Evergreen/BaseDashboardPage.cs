@@ -40,13 +40,16 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public const string ImageSelector = ".//i";
 
         [FindsBy(How = How.XPath, Using = ".//h1")]
-        public IWebElement Heading { get; set; }
+        public IWebElement Header { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//h2")]
+        public IWebElement SubHeader { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='status-code']")]
         public IWebElement StatusCodeLabel { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//p[@class='topnav-item-menu-toggle']//button[@mattooltip='Toggle Menu']")]
-        public IWebElement ToggleMenu { get; set; }
+        [FindsBy(How = How.XPath, Using = "//div[@id='content']//i[@class='material-icons mat-menu']")]
+        public IWebElement ExpandSideNavPanelIcon { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[@id='_listDtlBtn'][@disabled]")]
         public IWebElement DisabledListDetailsButton { get; set; }
@@ -202,6 +205,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'edit-action')]//span[text()='UPDATE']/ancestor::button")]
         public IWebElement UpdateButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//span[contains(text(),'UPDATE')]")]
+        public IWebElement UpdateAssociationButton { get; set; }
 
         [FindsBy(How = How.XPath,
             Using = "//div[contains(@class, 'notification')]//button[contains(@class, 'transparent')]//span[text()='CANCEL']/ancestor::button")]
@@ -404,7 +410,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
             return new List<By>
             {
-                SelectorFor(this, p => p.Heading),
+                SelectorFor(this, p => p.Header),
             };
         }
 
@@ -872,6 +878,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(selector);
         }
 
+        //TODO Not sure that it is relevant anymore. Probably should be deleted
         public IWebElement SelectHiddenLeftHandMenu(string menuName)
         {
             var selector = By.XPath($".//div[@class='nav-toggled']//a[contains(@href, '{menuName}')]");
@@ -1115,13 +1122,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(selector);
         }
 
-        public IWebElement GetHighlightedLeftMenuByName(string columnName)
-        {
-            var selector = By.XPath($".//div[@class='responsive-desktop-menu']//p[contains(@class, 'selected')]//span[text()='{columnName}']");
-            Driver.WaitForDataLoading();
-            return Driver.FindElement(selector);
-        }
-
         public IList<IWebElement> GetTooltipForDay(string dayNumber)
         {
             var selector = By.XPath($".//td[@role='gridcell']//div[text() = '{dayNumber}']/span/span");
@@ -1208,6 +1208,38 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
             var button = element.FindElement(buttonSelector);
             return button;
+        }
+
+        public IWebElement ExpandMultiselectButton(string titleText)
+        {
+            var buttonSelector = By.XPath(".//button//i[contains(@class,'add')]");
+
+            var element = GetExpandableMultiselect(titleText);
+
+            try
+            {
+                return element.FindElement(buttonSelector);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        public IWebElement CollapseMultiselectButton(string titleText)
+        {
+            var buttonSelector = By.XPath(".//button//i[contains(@class,'clear')]");
+
+            var element = GetExpandableMultiselect(titleText);
+
+            try
+            {
+                return element.FindElement(buttonSelector);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
     }
 }

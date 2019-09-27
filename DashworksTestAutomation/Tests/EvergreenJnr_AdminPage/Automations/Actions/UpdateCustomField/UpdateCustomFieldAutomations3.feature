@@ -8,8 +8,8 @@ Background: Pre-Conditions
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18187 @Cleanup @Not_Ready
 #Waiting 'Update custom field' in the 'Action Type' dropdown for automation
 Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomFieldAddToExistingValues
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope              | Run    |
 	| 18187_Automation | 18187       | true   | false              | New York - Devices | Manual |
@@ -42,8 +42,8 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	| Phoenix Field |
 	Then "zero, ccc, xxx" content is displayed in "Phoenix Field" column
 		#Revert 'Update custom field' changes to default
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
 	When User clicks "Automations" navigation link on the Admin page
 	When User enters "18187_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
@@ -72,8 +72,8 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18187 @Cleanup @Not_Ready
 #Waiting 'Update custom field' in the 'Action Type' dropdown for automation
 Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomFieldReplaceSingleValue
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API and open it
 	| AutomationName     | Description | Active | StopOnFailedAction | Scope                             | Run    |
 	| 18187_Automation_1 | 18187       | true   | false              | Users Readiness Columns & Filters | Manual |
@@ -106,8 +106,8 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	| Phoenix Field |
 	Then "new value" content is displayed in "Phoenix Field" column
 		#Revert 'Update custom field' changes to default
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
 	When User clicks "Automations" navigation link on the Admin page
 	When User enters "18187_Automation_1" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
@@ -135,8 +135,8 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18187 @Cleanup @Not_Ready
 #Waiting 'Update custom field' in the 'Action Type' dropdown for automation
 Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomFieldRemoveAllValues
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API and open it
 	| AutomationName     | Description | Active | StopOnFailedAction | Scope     | Run    |
 	| 18187_Automation_2 | 18187       | true   | false              | 1803 Apps | Manual |
@@ -167,8 +167,8 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	| Phoenix Field |
 	Then "" content is displayed in "Phoenix Field" column
 		#Revert 'Update custom field' changes to default
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
 	When User clicks "Automations" navigation link on the Admin page
 	When User enters "18187_Automation_2" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
@@ -196,8 +196,8 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18187 @Cleanup @Not_Ready
 #Waiting 'Update custom field' in the 'Action Type' dropdown for automation
 Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomFieldReplaceAllValues
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API and open it
 	| AutomationName     | Description | Active | StopOnFailedAction | Scope                               | Run    |
 	| 18187_Automation_3 | 18187       | true   | false              | Mailbox Readiness Columns & Filters | Manual |
@@ -230,8 +230,8 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	| Phoenix Field |
 	Then "one, two" content is displayed in "Phoenix Field" column
 		#Revert 'Update custom field' changes to default
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
 	When User clicks "Automations" navigation link on the Admin page
 	When User enters "18187_Automation_3" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column

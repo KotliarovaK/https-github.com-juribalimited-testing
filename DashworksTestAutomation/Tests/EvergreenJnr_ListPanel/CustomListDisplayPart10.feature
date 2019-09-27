@@ -7,8 +7,8 @@ Background: Pre-Conditions
 
 @Evergreen @Applications @CustomListDisplay @EvergreenJnr_ListPanel @DAS12917 
 Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterNameIsNotChangedAfterRenameWhileUpdateValuesOfFilter
-	When User clicks "Applications" on the left-hand menu
-	Then "All Applications" list should be displayed to the user
+	When User clicks 'Applications' on the left-hand menu
+	Then 'All Applications' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Compliance" filter where type is "Equals" without added column and following checkboxes:
@@ -28,8 +28,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterNameIsNotChangedAfterRena
 
 @Evergreen @Mailboxes @CustomListDisplay @EvergreenJnr_ListPanel @DAS12917 @Cleanup
 Scenario: EvergreenJnr_MailboxesList_CheckThatFilterNameIsNotChangedAfterRenameWhileUpdateValuesOfFilter
-	When User clicks "Mailboxes" on the left-hand menu
-	Then "All Mailboxes" list should be displayed to the user
+	When User clicks 'Mailboxes' on the left-hand menu
+	Then 'All Mailboxes' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Created Date" filter where type is "Before" with added column and following value:
@@ -46,8 +46,8 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatFilterNameIsNotChangedAfterRenameW
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS12891 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatCancelButtonIsDisplayedWithCorrectlyColorOnListPanel
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User clicks on 'Hostname' column header
 	Then data in table is sorted by 'Hostname' column in ascending order
 	When User create dynamic list with "TestList12891" name on "Devices" page
@@ -58,8 +58,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCancelButtonIsDisplayedWithCorrectly
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS13637 @DAS13639 @DAS13643 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatListTypeFilterForCreatedListsIsWorkedCorrectly
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User create static list with "StaticFilterList_1" name on "Devices" page with following items
 	| ItemName       |
 	| 001BAQXT6JWFPI |

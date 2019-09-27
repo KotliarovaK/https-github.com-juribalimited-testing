@@ -7,8 +7,8 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Projects @DAS12768 @Cleanup @Project_Creation_and_Scope
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatMatchToEvergreenBucketDisplayedInTheBucketDropdown
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
 	When User clicks the "CREATE PROJECT" Action button
@@ -30,7 +30,7 @@ Examples:
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Projects @UpdatingName @Senior_Projects @DAS13499 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatTasksRequestTypesAndCategoriesAreNotDeletedAfterChangingProjectName
-	When User clicks "Projects" on the left-hand menu
+	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User clicks create Project button
 	Then "Create Project" page is displayed to the user
@@ -65,14 +65,14 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksRequestTypesAndCategoriesAreNotD
 	| Name             | Description     | ObjectTypeString |
 	| 13499RequestType | DAS13499Project | Computer         |
 	And User navigate to Evergreen link
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
 	When User enters "DAS13499Project" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	When User enters "New_DAS13499_Project_Name" in the "Project Name" field
-	When User clicks "Projects" on the left-hand menu
+	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	#Update bottom step to "New_DAS13499_Project_Name" after Project renamed faster
 	When User navigate to "DAS13499Project" Project
@@ -88,14 +88,14 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksRequestTypesAndCategoriesAreNotD
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Projects @Senior_Projects @DAS15262 @DAS13973 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultValuesStayTheSameAfterConvertingProjectToEvergreen
-	When User clicks "Projects" on the left-hand menu
+	When User clicks 'Projects' on the left-hand menu
 	When User clicks create Project button
 	When User creates new Project on Senior
 	| ProjectName     | ShortName | Description | Type |
 	| DAS15262Project | 15262     |             |      |
 	And User clicks the Switch to Evergreen link
-	And User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	And User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	And User enters "DAS15262Project" text in the Search field for "Project" column
 	And User clicks content from "Project" column
@@ -109,14 +109,14 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultValuesStayTheSameAfterConverti
 	And 'Use project rings' text value is displayed in the 'Rings' dropdown
 	When User navigates to the 'Capacity' left menu item
 	Then 'Use project capacity units' text value is displayed in the 'Capacity Units' dropdown
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	And User enters "DAS15262Project" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Projects @Senior_Projects @DAS15262 @DAS16361 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatConvertToEvergreenButtonIsNotDisplayedForEvergreensProject
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	When User clicks the "CREATE PROJECT" Action button
 	When User selects 'Dependant List Filter - BROKEN LIST' option from 'Scope' autocomplete
 	Then 'This list has errors' error message is displayed for 'Scope' field

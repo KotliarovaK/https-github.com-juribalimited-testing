@@ -7,8 +7,8 @@ Background: Pre-Conditions
 
 @Evergreen @Users @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12536 @Cleanup
 Scenario: EvergreenJnr_Users_CheckThatListDeletionWarningMessageIsNotDisplayedAfterDeletingAnotherListForDynamicLists
-	When User clicks "Users" on the left-hand menu
-	Then "All Users" list should be displayed to the user
+	When User clicks 'Users' on the left-hand menu
+	Then 'All Users' list should be displayed to the user
 	When User clicks on 'Username' column header
 	Then data in table is sorted by 'Username' column in ascending order
 	When User create dynamic list with "DynamicList4587" name on "Users" page
@@ -27,7 +27,7 @@ Scenario: EvergreenJnr_Users_CheckThatListDeletionWarningMessageIsNotDisplayedAf
 
 @Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS11498 @Cleanup
 Scenario Outline: EvergreenJnr_AllLists_CheckThatListDetailsPanelDisplaysIfItWasOpenedFromManageMenu
-	When User clicks "<PageName>" on the left-hand menu
+	When User clicks '<PageName>' on the left-hand menu
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
@@ -48,8 +48,8 @@ Examples:
 
 @Evergreen @Users @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12535 @DAS12791 @DAS12952 @Cleanup
 Scenario: EvergreenJnr_MailboxesList_CheckThatListDetailsPanelIsDisplayedAfterSelectingManageFromListPanelMenu
-	When User clicks "Mailboxes" on the left-hand menu
-	Then "All Mailboxes" list should be displayed to the user
+	When User clicks 'Mailboxes' on the left-hand menu
+	Then 'All Mailboxes' list should be displayed to the user
 	When User clicks on 'Email Address' column header
 	When User create dynamic list with "DynamicList4557" name on "Mailboxes" page
 	Then "DynamicList4557" list is displayed to user
@@ -75,8 +75,8 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatListDetailsPanelIsDisplayedAfterSe
 
 @Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12967
 Scenario Outline: EvergreenJnr_AllLists_CheckThatAllRowsDisplayedOnGridWhenCreatingStaticListAfterSearch
-	When User clicks "<PageName>" on the left-hand menu
-	Then "All <PageName>" list should be displayed to the user
+	When User clicks '<PageName>' on the left-hand menu
+	Then 'All <PageName>' list should be displayed to the user
 	When User perform search by "<SearchTerm>"
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user

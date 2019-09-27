@@ -291,9 +291,9 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line 51
- testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 52
- testRunner.Then("Admin page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Admin\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 53
  testRunner.When("User clicks the \"CREATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 54
@@ -534,7 +534,7 @@ this.FeatureBackground();
             table9.AddRow(new string[] {
                         "00I0COBFWHOF27"});
 #line 101
- testRunner.When("User selects following Objects from the expandable multiselect", ((string)(null)), table9, "When ");
+ testRunner.When("User expands multiselect and selects following Objects", ((string)(null)), table9, "When ");
 #line 105
  testRunner.When("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 106
@@ -550,7 +550,7 @@ this.FeatureBackground();
             table10.AddRow(new string[] {
                         "AAH0343264 (Luc Gauthier)"});
 #line 108
- testRunner.And("User selects following Objects from the expandable multiselect", ((string)(null)), table10, "And ");
+ testRunner.And("User expands multiselect and selects following Objects", ((string)(null)), table10, "And ");
 #line 112
  testRunner.When("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 113

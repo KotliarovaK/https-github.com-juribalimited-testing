@@ -829,7 +829,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line 168
- testRunner.When("User clicks \"Dashboards\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Dashboards\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 169
  testRunner.And("User clicks the \"CREATE DASHBOARD\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 170
@@ -1120,7 +1120,7 @@ this.FeatureBackground();
 #line 231
  testRunner.When("Dashboard with \"DAS12974DUPLICATED\" name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 232
- testRunner.When("User clicks \"Dashboards\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Dashboards\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 233
  testRunner.And("User clicks the \"CREATE DASHBOARD\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 234
@@ -1406,6 +1406,65 @@ this.FeatureBackground();
                         "1_Widget2"});
 #line 289
  testRunner.Then("User sees following Widgets in one Section on Dashboards page:", ((string)(null)), table22, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_Dashboard_CheckThatThereIsNoPossibilityGoBackGromThePrintPreviewMode" +
+            "AfterClickingTheDashworksLogo")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_BaseDashboardPage")]
+        [NUnit.Framework.CategoryAttribute("DAS18080")]
+        public virtual void EvergreenJnr_Dashboard_CheckThatThereIsNoPossibilityGoBackGromThePrintPreviewModeAfterClickingTheDashworksLogo()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_Dashboard_CheckThatThereIsNoPossibilityGoBackGromThePrintPreviewModeAfterClickingTheDashworksLogoInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_Dashboard_CheckThatThereIsNoPossibilityGoBackGromThePrintPreviewModeAfterClickingTheDashworksLogoInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_Dashboard_CheckThatThereIsNoPossibilityGoBackGromThePrintPreviewMode" +
+                    "AfterClickingTheDashworksLogo", null, new string[] {
+                        "Evergreen",
+                        "Devices",
+                        "EvergreenJnr_BaseDashboardPage",
+                        "DAS18080"});
+#line 296
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 297
+ testRunner.When("User clicks \"print\"  button on the Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 298
+ testRunner.Then("Print Preview is displayed to the User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 299
+ testRunner.And("User clicks on Dashworks logo", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 300
+ testRunner.Then("Print Preview is displayed to the User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -7,7 +7,7 @@ Background: Pre-Conditions
 
 @Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12968
 Scenario Outline: EvergreenJnr_AllLists_CheckThatRightClickMenuCopyCellOptionWorks
-	When User clicks "<PageName>" on the left-hand menu
+	When User clicks '<PageName>' on the left-hand menu
 	And User performs right-click on "<TargetCell>" cell in the grid
 	Then User sees context menu with next options
 	| OptionsName        |
@@ -44,7 +44,7 @@ Examples:
 
 @Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12968
 Scenario Outline: EvergreenJnr_AllLists_CheckThatRightClickMenuCopyRowOptionWorks
-	When User clicks "<PageName>" on the left-hand menu
+	When User clicks '<PageName>' on the left-hand menu
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "<Columnname>" rows in the grid
@@ -64,7 +64,7 @@ Examples:
 
 @Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12968
 Scenario Outline: EvergreenJnr_AllLists_CheckThatRightClickMenuCopySelectedRowOptionWorks
-	When User clicks "<PageName>" on the left-hand menu
+	When User clicks '<PageName>' on the left-hand menu
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "<Columnname>" rows in the grid
@@ -84,7 +84,7 @@ Examples:
 
 @Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS16332 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatListNameUpdatesImmediatelyWhileTypingInDetailsPane
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	And User clicks the Filters button
 	And User add "1803: In Scope" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
@@ -97,12 +97,12 @@ Scenario: EvergreenJnr_DevicesList_CheckThatListNameUpdatesImmediatelyWhileTypin
 
 @Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS17632
 Scenario: EvergreenJnr_DevicesLists_CheckThatArchivedEmptyNameCantBeClicked
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName |
 	| Device Key |
 	And User sets includes archived devices in "true"
 	And User clicks content from first row of Hostname column
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user
 	When User clicks content from first row of Device Key column
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user
