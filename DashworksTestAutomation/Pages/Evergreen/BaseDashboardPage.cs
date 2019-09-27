@@ -203,6 +203,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'edit-action')]//span[text()='UPDATE']/ancestor::button")]
         public IWebElement UpdateButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//span[contains(text(),'UPDATE')]")]
+        public IWebElement UpdateAssociationButton { get; set; }
+
         [FindsBy(How = How.XPath,
             Using = "//div[contains(@class, 'notification')]//button[contains(@class, 'transparent')]//span[text()='CANCEL']/ancestor::button")]
         public IWebElement CancelButtonOnAmberMessage { get; set; }
