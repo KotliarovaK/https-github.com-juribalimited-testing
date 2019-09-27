@@ -122,8 +122,8 @@ namespace DashworksTestAutomation.Steps.API
                 var results = responseData["results"] as JArray;
                 var resultsCount = results.Count;
 
-                Utils.Verify.IsTrue(metadataCount > 0, "Metadata count is zero");
-                Utils.Verify.IsTrue(resultsCount > 0, "Results Count is zero");
+                Verify.IsTrue(metadataCount > 0, "Metadata count is zero");
+                Verify.IsTrue(resultsCount > 0, "Results Count is zero");
             }
         }
     }
