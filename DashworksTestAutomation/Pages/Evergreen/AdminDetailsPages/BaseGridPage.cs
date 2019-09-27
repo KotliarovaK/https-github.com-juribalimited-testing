@@ -438,6 +438,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.IsElementDisplayed(by);
         }
 
+        //TODO should be deleted
         public bool GetButtonByName(string buttonName)
         {
             return Driver.IsElementDisplayed(By.XPath($".//button//span[text()='{buttonName}']"));

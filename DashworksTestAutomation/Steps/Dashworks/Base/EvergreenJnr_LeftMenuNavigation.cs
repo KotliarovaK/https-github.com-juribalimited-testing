@@ -33,6 +33,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         #endregion
 
+        #region Display
+
         [Then(@"'(.*)' page should be displayed to the user")]
         public void ThenPageShouldBeDisplayedToTheUser(string pageTitle)
         {
@@ -40,5 +42,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.IsTrue(_driver.IsElementDisplayed(page.Header, WebDriverExtensions.WaitTime.Short), $"'{pageTitle}' page was not opened");
             Verify.AreEqual(pageTitle, page.Header.Text, "Incorrect page header");
         }
+
+        #endregion
     }
 }

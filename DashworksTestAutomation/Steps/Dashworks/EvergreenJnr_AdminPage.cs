@@ -1572,6 +1572,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var searchElement = _driver.NowAt<BaseGridPage>();
             searchElement.GetSearchFieldByColumnName(columnName, text);
+            //TODO why we store bucket that was used just for search?
             //Store bucket name for further usage
             if (columnName.Equals("Bucket"))
                 _lastUsedBucket.Value = text;
