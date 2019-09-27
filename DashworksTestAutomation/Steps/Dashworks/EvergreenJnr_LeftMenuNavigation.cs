@@ -20,6 +20,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver = driver;
         }
 
+        #region Navigation
+
         [When(@"User clicks '(.*)' on the left-hand menu")]
         public void WhenUserClicksOnTheLeft_HandMenu(string listPage)
         {
@@ -40,6 +42,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             menu.GetMenuElementByName(menuItemName).Click();
         }
+
+        #endregion
+
+        #region Menu Item display
 
         [Then(@"'(.*)' list should be displayed to the user")]
         public void ThenListShouldBeDisplayedToTheUser(string listPage)
@@ -68,6 +74,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
+        #endregion
+
+        #region Highlight
+
         [Then(@"'(.*)' left-hand menu is highlighted")]
         public void ThenLeft_HandMenuIsHighlighted(string menuName)
         {
@@ -76,22 +86,26 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 "rgba(242, 88, 49, 1)", $"Incorrect color for highlighted '{menuName}' left menu");
         }
 
-        //TODO Looks like needs to be removed as not relevant anymore
-        [Then(@"Admin menu item is hidden")]
-        public void ThenAdminMenuItemIsHidden()
+        #endregion
+
+        #region Hidded menu
+
+        [Then(@"'(.*)' left-hand menu item is hidden")]
+        public void ThenLeft_HandMenuItemIsHidden(string menuItem)
         {
-            throw new Exception("Yurii please check TODO. Refer Vitalii");
-            //var menu = _driver.NowAtWithoutWait<LeftHandMenuElement>();
-            //Verify.IsFalse(menu.Admin.Displayed(), "Admin menu item is displayed");
+            var menu = _driver.NowAtWithoutWait<LeftHandMenuElement>();
+            Verify.IsFalse(menu.IsMenuExpanded(), "Left-hand menu is expanded");
+            Verify.IsFalse(menu.GetMenuElementByName(menuItem).Displayed(),
+                $"'{menuItem}' left-hand menu item is displayed");
         }
 
-        //TODO Looks like needs to be removed as not relevant anymore
-        [When(@"User clicks ""(.*)"" hidden left-hand menu")]
-        public void WhenUserClicksHiddenLeft_HandMenu(string menuName)
+        [When(@"User clicks '(.*)' hidden left-hand menu")]
+        public void WhenUserClicksHiddenLeft_HandMenu(string menuItem)
         {
-            throw new Exception("Yurii please check TODO. Refer Vitalii");
-            //var menu = _driver.NowAtWithoutWait<BaseDashboardPage>();
-            //menu.SelectHiddenLeftHandMenu(menuName).Click();
+            var menu = _driver.NowAtWithoutWait<LeftHandMenuElement>();
+            _driver.ClickByJavascript(menu.GetMenuElementByName(menuItem));
         }
+
+        #endregion
     }
 }
