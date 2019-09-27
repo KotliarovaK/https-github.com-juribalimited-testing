@@ -132,7 +132,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketA
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Evergreen' left menu item
-	Then 'Buckets' page should be displayed to the user
+	Then Page with 'Buckets' header is displayed to user
 	When User enters "1Bucket12905" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
 	Then "1Bucket12905" bucket details is displayed to the user
@@ -174,7 +174,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketA
 	| 00OMQQXWA1DRI6  |
 	When User click on Back button
 	When User navigates to the 'Projects' left menu item
-	Then 'Projects' page should be displayed to the user
+	Then Page with 'Projects' header is displayed to user
 	When User enters "Project12905" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	Then Project "Project12905" is displayed to user
@@ -198,7 +198,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketA
 	Then Success message is displayed and contains "10 objects queued for onboarding, 0 objects offboarded" text
 	When User click on Back button
 	When User navigates to the 'Evergreen' left menu item
-	Then 'Buckets' page should be displayed to the user
+	Then Page with 'Buckets' header is displayed to user
 	When User clicks refresh button in the browser
 	When User clicks String Filter button for "Project" column on the Admin page
 	When User selects "Evergreen" checkbox from String Filter with item list on the Admin page
@@ -231,7 +231,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketA
 	When User enters "Unassigned" text in the Search field for "Bucket" column
 	Then "10" content is displayed in "Devices" column
 	When User navigates to the 'Projects' left menu item
-	Then 'Projects' page should be displayed to the user
+	Then Page with 'Projects' header is displayed to user
 	When User enters "Project12905" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	Then Project "Project12905" is displayed to user

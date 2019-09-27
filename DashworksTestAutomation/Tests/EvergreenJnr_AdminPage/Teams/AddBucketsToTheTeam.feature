@@ -17,12 +17,12 @@ Scenario: EvergreenJnr_AdminPage_AddingBucketsToTheTeam
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Teams' left menu item
-	Then 'Teams' page should be displayed to the user
+	Then Page with 'Teams' header is displayed to user
 	When User enters "TestTeam5" text in the Search field for "Team" column
 	And User clicks content from "Team" column
 	And User navigates to the 'Buckets' left menu item
 	And User clicks 'ADD BUCKETS' button 
-	Then Add Buckets page is displayed to the user
+	Then Page with 'Add Buckets' subheader is displayed to user
 	When User expands "Evergreen" project to add bucket
 	And User adds following Objects from list
 	| Objects     |
@@ -46,7 +46,7 @@ Scenario: EvergreenJnr_AdminPage_CheckBucketsSortingAndFiltersForTeams
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Teams' left menu item
-	Then 'Teams' page should be displayed to the user
+	Then Page with 'Teams' header is displayed to user
 	When User enters "1803 Team" text in the Search field for "Team" column
 	And User clicks content from "Team" column
 	And User navigates to the 'Buckets' left menu item

@@ -51,7 +51,7 @@ Scenario: EvergreenJnr_ChecksThatDeviceScopeDDLIsDisabledWhenDoNotIncludeOwnedDe
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User clicks 'CREATE PROJECT' button 
-	Then 'Create Project' page should be displayed to the user
+	Then Page with 'Create Project' header is displayed to user
 	When User enters "Rainbow" in the "Project Name" field
 	And User selects 'All Devices' option from 'Scope' autocomplete
 	When User clicks Create button on the Create Project page

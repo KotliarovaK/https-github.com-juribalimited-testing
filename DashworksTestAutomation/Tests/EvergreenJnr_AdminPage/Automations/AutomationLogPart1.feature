@@ -15,7 +15,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsLogGridForRunningAutomationWith
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
 	| 16890_Automation | 16890       | true   | false              | All Devices | Manual |
 	When User navigates to the 'Automations' left menu item
-	Then 'Automations' page should be displayed to the user
+	Then Page with 'Automations' header is displayed to user
 	When User clicks Export button on the Admin page
 	Then User checks that file "Dashworks export" was downloaded
 	When User enters "16890_Automation" text in the Search field for "Automation" column
@@ -73,7 +73,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatInactiveAutomationShouldBeLoggedButNot
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope     | Run    |
 	| 17104_Automation | 17104       | false  | false              | All Users | Manual |
 	When User navigates to the 'Automations' left menu item
-	Then 'Automations' page should be displayed to the user
+	Then Page with 'Automations' header is displayed to user
 	When User enters "17104_Automation" text in the Search field for "Automation" column
 	When User selects all rows on the grid
 	When User clicks on Actions button
@@ -101,7 +101,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSuccessfulRunInOutcomeColumn
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Automations' left menu item
-	Then 'Automations' page should be displayed to the user
+	Then Page with 'Automations' header is displayed to user
 	When User clicks 'CREATE AUTOMATION' button 
 	Then "Create Automation" title is displayed on the Automations page
 	When User enters 'D16974_Automation' text to 'Automation Name' textbox
@@ -144,7 +144,7 @@ Scenario: EvergreenJnr_AdminPage_CheckOutcomeValueForAnAutomationThatIsAlreadyRu
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Automations' left menu item
-	Then 'Automations' page should be displayed to the user
+	Then Page with 'Automations' header is displayed to user
 	When User clicks "Run now" option in Cog-menu for "DELAY - do not delete2" item on Admin page
 	When User clicks refresh button in the browser
 	When User clicks "Run now" option in Cog-menu for "DELAY - do not delete2" item on Admin page
@@ -178,7 +178,7 @@ Scenario: EvergreenJnr_AdminPage_CheckBrokenListValidationWhenRunningAnAutomatio
 	When User update current custom list
 	When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Automations' left menu item
-	Then 'Automations' page should be displayed to the user
+	Then Page with 'Automations' header is displayed to user
 	When User enters "17011_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
 	Then 'This list has errors' error message is displayed for 'Scope' field
@@ -210,7 +210,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckSuccessfulRunningAutomationWithMai
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Automations' left menu item
-	Then 'Automations' page should be displayed to the user
+	Then Page with 'Automations' header is displayed to user
 	When User clicks 'CREATE AUTOMATION' button 
 	When User enters '<AutomationName>' text to 'Automation Name' textbox
 	When User enters '17212' text to 'Description' textbox
@@ -243,7 +243,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSortingAutomationsLogGrid
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Automations' left menu item
-	Then 'Automations' page should be displayed to the user
+	Then Page with 'Automations' header is displayed to user
 	When User selects "Automation Log" tab on the Project details page
 	When User clicks on 'Date' column header
 	Then date in table is sorted by "Date" column in descending order on the Admin page

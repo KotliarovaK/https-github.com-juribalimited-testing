@@ -74,7 +74,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedApplicationsAreDisplayedCapac
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Evergreen' left menu item
 	When User navigates to the 'Capacity Units' left menu item
-	Then 'Capacity Units' page should be displayed to the user
+	Then Page with 'Capacity Units' header is displayed to user
 	When User clicks String Filter button for "Project" column
 	When User selects "Evergreen" checkbox from String Filter with item list on the Admin page
 	When User clicks String Filter button for "Project" column

@@ -10,7 +10,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeletin
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Teams' left menu item
-	Then 'Teams' page should be displayed to the user
+	Then Page with 'Teams' header is displayed to user
 	When User have opened Column Settings for "Members" column
 	And User clicks Filter button on the Column Settings panel
 	When User clicks the  filter type dropdown on the Column Settings panel

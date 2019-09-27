@@ -10,7 +10,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPa
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Teams' left menu item
-	Then 'Teams' page should be displayed to the user
+	Then Page with 'Teams' header is displayed to user
 	When User enters "Migration phase 3 team" text in the Search field for "Team" column
 	Then Rows counter contains "1" found row of all rows
 	When User resets Search fields for columns
@@ -43,9 +43,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPa
 Scenario: EvergreenJnr_ImportProjectPage_CheckThatImportProjectButtonEnabledAfterWarningOnImportProjectPage
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	And 'Projects' page should be displayed to the user
+	And Page with 'Projects' header is displayed to user
 	When User clicks 'IMPORT PROJECT' button 
-	Then 'Import Project' page should be displayed to the user
+	Then Page with 'Import Project' header is displayed to user
 	When User selects "IncorrectFile.zip" file to upload on Import Project page
 	And User selects "Import to new project" option in the "Import" dropdown on the Import Project Page
 	And User enters "TestProjectNameDAS12370" in the Project Name field on Import Project page
@@ -92,7 +92,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	| Name        | TeamName | IsDefault |
 	| Bucket12948 | Admin IT | true      |
 	And User clicks 'Admin' on the left-hand menu
-	Then 'Projects' page should be displayed to the user
+	Then Page with 'Projects' header is displayed to user
 	When User enters "Project12948" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User selects "Scope Changes" tab on the Project details page
@@ -111,7 +111,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	When User click on Back button
 	When User navigates to the 'Evergreen' left menu item
 	When User navigates to the 'Buckets' left menu item
-	Then 'Buckets' page should be displayed to the user
+	Then Page with 'Buckets' header is displayed to user
 	When User enters "Unassigned" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
 	Then "Unassigned" bucket details is displayed to the user
@@ -120,7 +120,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	Then Success message The "Unassigned" bucket has been updated is displayed on the Buckets page
 	And Delete "Bucket12948" Bucket in the Administration
 	When User navigates to the 'Projects' left menu item
-	Then 'Projects' page should be displayed to the user
+	Then Page with 'Projects' header is displayed to user
 	When User enters "Project12948" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Details' left menu item
@@ -134,9 +134,9 @@ Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 Scenario: EvergreenJnr_ImportProjectPage_CheckThatExtraUnknownReadinessIsNotCreatedWhileImportingToANewProject
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	And 'Projects' page should be displayed to the user
+	And Page with 'Projects' header is displayed to user
 	When User clicks 'IMPORT PROJECT' button 
-	Then 'Import Project' page should be displayed to the user
+	Then Page with 'Import Project' header is displayed to user
 	When User selects "1803_Rollout.xml" file to upload on Import Project page
 	And User selects "Import to new project" option in the "Import" dropdown on the Import Project Page
 	And User enters "DAS15989_TestProject" in the Project Name field on Import Project page
@@ -150,9 +150,9 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckThatExtraUnknownReadinessIsNotCrea
 Scenario: EvergreenJnr_ImportProjectPage_CheckBannerMessageAfterImportProjectWithoutReadiness 
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	And 'Projects' page should be displayed to the user
+	And Page with 'Projects' header is displayed to user
 	When User clicks 'IMPORT PROJECT' button 
-	Then 'Import Project' page should be displayed to the user
+	Then Page with 'Import Project' header is displayed to user
 	When User selects "Windows_7_Migration_(Computer_Scheduled_Project) (jet 5.3.3).xml" file to upload on Import Project page
 	And User selects "Import to new project" option in the "Import" dropdown on the Import Project Page
 	And User enters "DAS16089_TestProject" in the Project Name field on Import Project page
@@ -186,7 +186,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromB
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Evergreen' left menu item
-	Then 'Buckets' page should be displayed to the user
+	Then Page with 'Buckets' header is displayed to user
 	When User enters "Birmingham" text in the Search field for "Bucket" column
 	When User clicks content from "Devices" column
 	Then 'All Devices' list should be displayed to the user
@@ -218,7 +218,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromC
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Evergreen' left menu item
 	And User navigates to the 'Capacity Units' left menu item
-	Then 'Capacity Units' page should be displayed to the user
+	Then Page with 'Capacity Units' header is displayed to user
 	When User clicks content from "Devices" column
 	Then 'All Devices' list should be displayed to the user
 	Then ColumnName is added to the list
@@ -260,7 +260,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromR
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Evergreen' left menu item
 	And User navigates to the 'Rings' left menu item
-	Then 'Rings' page should be displayed to the user
+	Then Page with 'Rings' header is displayed to user
 	When User clicks content from "Devices" column
 	Then 'All Devices' list should be displayed to the user
 	Then ColumnName is added to the list
@@ -300,25 +300,25 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAppropriatePageIsDisplayedAfterClickin
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Evergreen' left menu item
 	When User selects "Buckets" tab on the Project details page
-	Then 'Buckets' page should be displayed to the user
+	Then Page with 'Buckets' header is displayed to user
 	When User clicks content from "Bucket" column
 	When User clicks on "Buckets" navigation link
-	Then 'Buckets' page should be displayed to the user
+	Then Page with 'Buckets' header is displayed to user
 	When User selects "Capacity Units" tab on the Project details page
-	Then 'Capacity Units' page should be displayed to the user
+	Then Page with 'Capacity Units' header is displayed to user
 	When User clicks content from "Capacity Unit" column
 	When User clicks on "Capacity Units" navigation link
-	Then 'Capacity Units' page should be displayed to the user
+	Then Page with 'Capacity Units' header is displayed to user
 	When User selects "Rings" tab on the Project details page
-	Then 'Rings' page should be displayed to the user
+	Then Page with 'Rings' header is displayed to user
 	When User clicks content from "Ring" column
 	When User clicks on "Rings" navigation link
-	Then 'Rings' page should be displayed to the user
+	Then Page with 'Rings' header is displayed to user
 	#ready on 'Nova'
 	#When User navigates to the 'Automations' left menu item
 	#When User selects "Automations" tab on the Project details page
-	#Then 'Automations' page should be displayed to the user
+	#Then Page with 'Automations' header is displayed to user
 	#When User clicks content from "Automation" column
 	#When User clicks on "Automations" navigation link
-	#Then 'Automations' page should be displayed to the user
+	#Then Page with 'Automations' header is displayed to user
 	#Then "Automations" tab-menu on the Admin page is expanded

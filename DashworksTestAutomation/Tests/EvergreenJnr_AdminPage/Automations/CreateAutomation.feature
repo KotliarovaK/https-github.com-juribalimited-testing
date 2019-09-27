@@ -10,7 +10,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionGridInAutomations
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Automations' left menu item
-	Then 'Automations' page should be displayed to the user
+	Then Page with 'Automations' header is displayed to user
 	When User clicks 'CREATE AUTOMATION' button 
 	Then "Create Automation" title is displayed on the Automations page
 	When User enters '15309_laptop' text to 'Automation Name' textbox
@@ -37,7 +37,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateAutomationFieldsIsNotPopulatedWi
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Automations' left menu item
-	Then 'Automations' page should be displayed to the user
+	Then Page with 'Automations' header is displayed to user
 	When User clicks 'CREATE AUTOMATION' button 
 	Then "Create Automation" title is displayed on the Automations page
 	Then following Values are displayed in the 'Run' dropdown:
@@ -74,7 +74,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAdminTabIsHighlightedAfterClickingOnAu
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Automations' left menu item
-	Then 'Automations' page should be displayed to the user
+	Then Page with 'Automations' header is displayed to user
 	When User clicks content from "Automation" column
 	Then "Edit Automation" title is displayed on the Automations page
 	Then 'Admin' left-hand menu is highlighted

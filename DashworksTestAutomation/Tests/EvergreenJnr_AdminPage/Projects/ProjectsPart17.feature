@@ -20,13 +20,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedWhenDeleti
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
-	Then 'Projects' page should be displayed to the user
+	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
-	Then 'Create Project' page should be displayed to the user
+	Then Page with 'Create Project' header is displayed to user
 	When User enters "TestProject6" in the "Project Name" field
 	And User selects 'TestList0A78U9' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
-	Then 'Projects' page should be displayed to the user
+	Then Page with 'Projects' header is displayed to user
 	Then Success message is displayed and contains "The project has been created" text
 	And There are no errors in the browser console
 	When User enters "TestProject6" text in the Search field for "Project" column
@@ -99,7 +99,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeleting
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
-	Then 'Projects' page should be displayed to the user
+	Then Page with 'Projects' header is displayed to user
 	When User clicks on 'TestProject1' cell from 'Project' column
 	Then Project "TestProject1" is displayed to user
 	Then Warning message with "The scope for this project refers to a deleted list, this must be updated before proceeding" text is displayed on the Admin page
@@ -162,7 +162,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	And User selects all rows on the grid
 	And User removes selected item
 	When User clicks 'CREATE PROJECT' button 
-	Then 'Create Project' page should be displayed to the user
+	Then Page with 'Create Project' header is displayed to user
 	When User enters "TestProjectDAS11977" in the "Project Name" field
 	And User selects 'All Devices' option from 'Scope' autocomplete
 	And User clicks 'CREATE' button 

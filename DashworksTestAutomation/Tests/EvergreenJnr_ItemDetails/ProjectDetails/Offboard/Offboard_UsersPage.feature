@@ -37,7 +37,7 @@ Scenario: EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboa
 	And User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
-	Then 'Projects' page should be displayed to the user
+	Then Page with 'Projects' header is displayed to user
 	When User enters "USE ME FOR AUTOMATION(USR SCHDLD)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	When User navigates to the 'Scope' left menu item
@@ -69,7 +69,7 @@ Scenario: EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboa
 	And User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
-	Then 'Projects' page should be displayed to the user
+	Then Page with 'Projects' header is displayed to user
 	When User enters "USE ME FOR AUTOMATION(USR SCHDLD)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	When User navigates to the 'Scope' left menu item

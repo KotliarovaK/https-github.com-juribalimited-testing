@@ -45,7 +45,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatNumberOfObjectIsUpdatedInTheSc
 	Then "<DynamicListName>" list is displayed to user
 	And "<RowsCount>" rows are displayed in the agGrid
 	When User clicks Create Project from the main list
-	Then 'Create Project' page should be displayed to the user
+	Then Page with 'Create Project' header is displayed to user
 	When User enters "<ProjectName>" in the "Project Name" field
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
@@ -81,9 +81,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatObjectsIsOnboardedToTheProjectWithClon
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
-	Then 'Projects' page should be displayed to the user
+	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
-	Then 'Create Project' page should be displayed to the user
+	Then Page with 'Create Project' header is displayed to user
 	When User enters "TestProject19" in the "Project Name" field
 	And User selects 'All Devices' option from 'Scope' autocomplete
 	When User selects "Clone from Evergreen to Project" in the Mode Project dropdown

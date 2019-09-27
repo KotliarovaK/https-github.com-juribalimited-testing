@@ -13,7 +13,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMessageThatDisplayedWhenDeletingBucket
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Evergreen' left menu item
-	Then 'Buckets' page should be displayed to the user
+	Then Page with 'Buckets' header is displayed to user
 	When User clicks Reset Filters button on the Admin page
 	And User enters "Amsterdam" text in the Search field for "Bucket" column
 	Then Actions dropdown is displayed correctly
@@ -48,7 +48,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSpellingIsCorrectInBucketDeletionMess
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Evergreen' left menu item
-	Then 'Buckets' page should be displayed to the user
+	Then Page with 'Buckets' header is displayed to user
 	When User select "Bucket" rows in the grid
 	| SelectedRowsName   |
 	| Evergreen Bucket 3 |
@@ -67,13 +67,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSpecificWarningMessageIsNotDisplayedAf
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Evergreen' left menu item
-	Then 'Buckets' page should be displayed to the user
+	Then Page with 'Buckets' header is displayed to user
 	When User clicks Reset Filters button on the Admin page
 	When User enters "Administration" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
 	Then Default Bucket checkbox is selected
 	When User navigates to the 'Evergreen' left menu item
-	Then 'Buckets' page should be displayed to the user
+	Then Page with 'Buckets' header is displayed to user
 	When User clicks Reset Filters button on the Admin page
 	And User enters "Chicago" text in the Search field for "Bucket" column
 	And User selects all rows on the grid
@@ -93,7 +93,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatWarningNotificationIsDisappearedAfter
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Evergreen' left menu item
-	Then 'Buckets' page should be displayed to the user
+	Then Page with 'Buckets' header is displayed to user
 	When User select "Bucket" rows in the grid
 	| SelectedRowsName |
 	| 1Bucket12331     |

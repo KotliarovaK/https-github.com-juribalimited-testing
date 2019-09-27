@@ -11,7 +11,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCreatedCorrectly
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Evergreen' left menu item
 	And User navigates to the 'Capacity Units' left menu item
-	Then 'Capacity Units' page should be displayed to the user
+	Then Page with 'Capacity Units' header is displayed to user
 	When User clicks 'CREATE EVERGREEN CAPACITY UNIT' button 
 	And User type "NotDefaultCapacityUnit13720" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "13720" Name in the "Description" field on the Project details page

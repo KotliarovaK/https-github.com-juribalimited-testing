@@ -81,7 +81,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectlyForAutomations
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Automations' left menu item
-	Then 'Automations' page should be displayed to the user
+	Then Page with 'Automations' header is displayed to user
 	When User enters "Devices_Scope" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
 	Then Automation page is displayed correctly
@@ -219,7 +219,7 @@ Scenario: EvergreenJnr_AdminPage_CheckParametersToCreateUpdatePathAction
 	And User add "City" filter where type is "Equals" with added column and "Melbourne" Lookup option
 	And User create dynamic list with "Melbourne Users" name on "Users" page
 	And User clicks Create Project from the main list
-	Then 'Create Project' page should be displayed to the user
+	Then Page with 'Create Project' header is displayed to user
 	Then Create Project button is disabled
 	When User enters "Melbourne User Migration" in the "Project Name" field
 	Then Create Project button is enabled
@@ -241,7 +241,7 @@ Scenario: EvergreenJnr_AdminPage_CheckParametersToCreateUpdatePathAction
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Automations' left menu item
-	Then 'Automations' page should be displayed to the user
+	Then Page with 'Automations' header is displayed to user
 	When User clicks 'CREATE AUTOMATION' button 
 	Then "Create Automation" title is displayed on the Automations page
 	When User enters '' text to 'Automation Name' textbox
@@ -335,7 +335,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActions
 	And User add "City" filter where type is "Equals" with added column and "Edinburgh" Lookup option
 	And User create dynamic list with "Edinburgh Devices" name on "Devices" page
 	And User clicks Create Project from the main list
-	Then 'Create Project' page should be displayed to the user
+	Then Page with 'Create Project' header is displayed to user
 	Then Create Project button is disabled
 	When User enters "Edinburgh Devices Migration" in the "Project Name" field
 	When User clicks Create button on the Create Project page
@@ -392,7 +392,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActions
 	And User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Automations' left menu item
-	Then 'Automations' page should be displayed to the user
+	Then Page with 'Automations' header is displayed to user
 	When User clicks 'CREATE AUTOMATION' button 
 	Then "Create Automation" title is displayed on the Automations page
 	When User enters 'DAS16992_Edinburgh_Automation' text to 'Automation Name' textbox
@@ -459,7 +459,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdatingTaskWhichImpactsReadinessOwnerAndD
 	And User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Automations' left menu item
-	Then 'Automations' page should be displayed to the user
+	Then Page with 'Automations' header is displayed to user
 	When User clicks 'CREATE AUTOMATION' button 
 	When User enters '17234_Edinburgh_Automation' text to 'Automation Name' textbox
 	When User enters 'Task value change' text to 'Description' textbox
@@ -498,7 +498,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckListOfProjectsOnTheCreateActionsPa
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Automations' left menu item
-	Then 'Automations' page should be displayed to the user
+	Then Page with 'Automations' header is displayed to user
 	When User clicks 'CREATE AUTOMATION' button 
 	When User enters '<AutomationName>' text to 'Automation Name' textbox
 	When User enters '17544' text to 'Description' textbox
@@ -525,7 +525,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateTaskValueIsDisplayInAutomationsL
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Automations' left menu item
-	Then 'Automations' page should be displayed to the user
+	Then Page with 'Automations' header is displayed to user
 	When User clicks 'CREATE AUTOMATION' button 
 	When User enters 'Test_Automation_17542' text to 'Automation Name' textbox
 	When User enters 'DAS17542' text to 'Description' textbox
@@ -586,7 +586,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForRemoveTextValue
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
 	| 17605_Automation | 17605       | true   | false              | All Devices | Manual |
 	When User navigates to the 'Automations' left menu item
-	Then 'Automations' page should be displayed to the user
+	Then Page with 'Automations' header is displayed to user
 	When User enters "17605_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
 	When User navigates to the 'Actions' left menu item
@@ -621,7 +621,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateDate
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
 	| 17606_Automation | 17606       | true   | false              | All Devices | Manual |
 	When User navigates to the 'Automations' left menu item
-	Then 'Automations' page should be displayed to the user
+	Then Page with 'Automations' header is displayed to user
 	When User enters "17606_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
 	When User navigates to the 'Actions' left menu item

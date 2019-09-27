@@ -10,9 +10,9 @@ Scenario Outline: EvergreenJnr_AdminPage_ChangingBucketFromCloneEvergreenBuckets
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
-	Then 'Projects' page should be displayed to the user
+	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
-	Then 'Create Project' page should be displayed to the user
+	Then Page with 'Create Project' header is displayed to user
 	When User enters "<ProjectName>" in the "Project Name" field
 	And User selects '<ScopeValue>' option from 'Scope' autocomplete
 	When User selects "Clone from Evergreen to Project" in the Mode Project dropdown
@@ -46,7 +46,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherListUsingEverg
 	When User create dynamic list with "DynamicList54" name on "Devices" page
 	Then "DynamicList54" list is displayed to user
 	When User clicks Create Project from the main list
-	Then 'Create Project' page should be displayed to the user
+	Then Page with 'Create Project' header is displayed to user
 	When User enters "DevicesProject34" in the "Project Name" field
 	Then Scope field is automatically populated
 	When User selects "Standalone Project" in the Mode Project dropdown
@@ -85,7 +85,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherListForDevices
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User clicks 'CREATE PROJECT' button 
-	Then 'Create Project' page should be displayed to the user
+	Then Page with 'Create Project' header is displayed to user
 	When User enters "DevicesProject2" in the "Project Name" field
 	And User selects 'All Devices' option from 'Scope' autocomplete
 	And User clicks 'CREATE' button 

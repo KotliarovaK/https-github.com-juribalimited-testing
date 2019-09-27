@@ -14,7 +14,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTheUpdateCapacityUnitSettingsIsWorking
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Evergreen' left menu item
 	And User navigates to the 'Capacity Units' left menu item
-	Then 'Capacity Units' page should be displayed to the user
+	Then Page with 'Capacity Units' header is displayed to user
 	When User enters "Capacity Unit Settings" text in the Search field for "Capacity Unit" column
 	And User clicks content from "Capacity Unit" column
 	And User type "Capacity Unit Settings upd" Name in the "Capacity Unit Name" field on the Project details page

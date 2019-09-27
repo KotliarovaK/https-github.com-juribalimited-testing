@@ -13,7 +13,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterUpdatingTeamDesc
 	And User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Teams' left menu item
-	Then 'Teams' page should be displayed to the user
+	Then Page with 'Teams' header is displayed to user
 	When User enters "TestTeam9" text in the Search field for "Team" column
 	And User clicks content from "Team" column
 	And User navigates to the 'Team Settings' left menu item

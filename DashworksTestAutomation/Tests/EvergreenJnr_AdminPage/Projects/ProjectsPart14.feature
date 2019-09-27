@@ -13,13 +13,13 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameWhichStartsWithLowerCaseLe
 	When User clicks 'Admin' on the left-hand menu
 	And User navigates to the 'Evergreen' left menu item
 	And User navigates to the 'Buckets' left menu item
-	Then 'Buckets' page should be displayed to the user
+	Then Page with 'Buckets' header is displayed to user
 	When User clicks String Filter button for "Project" column on the Admin page
 	Then Projects in filter dropdown are displayed in alphabetical order
 	When User clicks String Filter button for "Owned By Team" column on the Admin page
 	Then Teams in filter dropdown are displayed in alphabetical order
 	When User navigates to the 'Projects' left menu item
-	Then 'Projects' page should be displayed to the user
+	Then Page with 'Projects' header is displayed to user
 	When User enters "project12949" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	When User navigates to the 'Users' tab on Project Scope Changes page
@@ -71,7 +71,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatRelatedBucketsAreUpdatedAfterCreatingO
 	And User navigates to the 'Teams' left menu item
 	And User navigates to the 'Evergreen' left menu item
 	And User navigates to the 'Buckets' left menu item
-	Then 'Buckets' page should be displayed to the user
+	Then Page with 'Buckets' header is displayed to user
 	When User clicks Reset Filters button on the Admin page
 	And User clicks String Filter button for "Project" column on the Admin page
 	And User selects "Select All" checkbox from String Filter with item list on the Admin page
@@ -79,13 +79,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatRelatedBucketsAreUpdatedAfterCreatingO
 	And User selects "1DevicesProject" checkbox from String Filter with item list on the Admin page
 	Then 'Unassigned' content is displayed in the 'Bucket' column
 	When User navigates to the 'Projects' left menu item
-	Then 'Projects' page should be displayed to the user
+	Then Page with 'Projects' header is displayed to user
 	When User enters "1DevicesProject" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
 	And User navigates to the 'Evergreen' left menu item
 	And User navigates to the 'Buckets' left menu item
-	Then 'Buckets' page should be displayed to the user
+	Then Page with 'Buckets' header is displayed to user
 	When User clicks String Filter button for "Project" column on the Admin page
 	Then "1DevicesProject" is not displayed in the filter dropdown
 

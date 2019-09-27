@@ -20,9 +20,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUsersToAddAndRemoveAreChangingAppropri
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
-	Then 'Projects' page should be displayed to the user
+	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
-	Then 'Create Project' page should be displayed to the user
+	Then Page with 'Create Project' header is displayed to user
 	When User enters "UsersProject" in the "Project Name" field
 	And User selects 'StaticList6529' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
@@ -52,7 +52,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationFromListPageWithUse
 	When User clicks '<ListName>' on the left-hand menu
 	Then 'All <ListName>' list should be displayed to the user
 	When User clicks Create Project from the main list
-	Then 'Create Project' page should be displayed to the user
+	Then Page with 'Create Project' header is displayed to user
 	When User enters "<ProjectName>" in the "Project Name" field
 	Then Scope field is automatically populated
 	When User selects "Standalone Project" in the Mode Project dropdown
@@ -66,7 +66,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationFromListPageWithUse
 	| <Item>   |
 	Then "<StaticList>" list is displayed to user
 	When User clicks Create Project from the main list
-	Then 'Create Project' page should be displayed to the user
+	Then Page with 'Create Project' header is displayed to user
 	When User enters "<ProjectName>" in the "Project Name" field
 	Then Scope field is automatically populated
 	When User selects "Standalone Project" in the Mode Project dropdown
@@ -81,7 +81,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationFromListPageWithUse
 	And User create dynamic list with "<DynamicList>" name on "<ListName>" page
 	Then "<DynamicList>" list is displayed to user
 	When User clicks Create Project from the main list
-	Then 'Create Project' page should be displayed to the user
+	Then Page with 'Create Project' header is displayed to user
 	When User enters "<ProjectName>" in the "Project Name" field
 	Then Scope field is automatically populated
 	When User selects "Standalone Project" in the Mode Project dropdown
@@ -98,16 +98,16 @@ Scenario: EvergreenJnr_AdminPage_CheckMailboxProjectCreationWithCloneEvergreenBu
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
-	Then 'Projects' page should be displayed to the user
+	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
-	Then 'Create Project' page should be displayed to the user
+	Then Page with 'Create Project' header is displayed to user
 	When User enters "MailboxesProject25" in the "Project Name" field
 	When User selects "Standalone Project" in the Mode Project dropdown
 	And User selects 'All Mailboxes' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User navigates to the 'Projects' left menu item
-	Then 'Projects' page should be displayed to the user
+	Then Page with 'Projects' header is displayed to user
 	When User enters "MailboxesProject25" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
@@ -120,9 +120,9 @@ Scenario: EvergreenJnr_AdminPage_CheckMailboxProjectCreationWithCloneEvergreenBu
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
-	Then 'Projects' page should be displayed to the user
+	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
-	Then 'Create Project' page should be displayed to the user
+	Then Page with 'Create Project' header is displayed to user
 	When User enters "MailboxesProject26" in the "Project Name" field
 	And User selects 'StaticList5846' option from 'Scope' autocomplete
 	When User selects "Standalone Project" in the Mode Project dropdown
@@ -139,9 +139,9 @@ Scenario: EvergreenJnr_AdminPage_CheckMailboxProjectCreationWithCloneEvergreenBu
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
-	Then 'Projects' page should be displayed to the user
+	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
-	Then 'Create Project' page should be displayed to the user
+	Then Page with 'Create Project' header is displayed to user
 	When User enters "MailboxesProject27" in the "Project Name" field
 	And User selects 'DynamicList9513' option from 'Scope' autocomplete
 	When User selects "Standalone Project" in the Mode Project dropdown
@@ -156,14 +156,14 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationWithCloneEvergreenB
 	When User clicks '<PageName>' on the left-hand menu
 	Then 'All <PageName>' list should be displayed to the user
 	When User clicks Create Project from the main list
-	Then 'Create Project' page should be displayed to the user
+	Then Page with 'Create Project' header is displayed to user
 	When User enters "<ProjectName>" in the "Project Name" field
 	Then Scope field is automatically populated
 	When User selects "Standalone Project" in the Mode Project dropdown
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User navigates to the 'Projects' left menu item
-	Then 'Projects' page should be displayed to the user
+	Then Page with 'Projects' header is displayed to user
 	When User enters "<ProjectName>" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
@@ -172,7 +172,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationWithCloneEvergreenB
 	| <Item>   |
 	Then "<StaticList>" list is displayed to user
 	When User clicks Create Project from the main list
-	Then 'Create Project' page should be displayed to the user
+	Then Page with 'Create Project' header is displayed to user
 	When User enters "<ProjectName>" in the "Project Name" field
 	Then Scope field is automatically populated
 	When User selects "Standalone Project" in the Mode Project dropdown
@@ -187,7 +187,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationWithCloneEvergreenB
 	And User create dynamic list with "<DynamicList>" name on "<PageName>" page
 	Then "<DynamicList>" list is displayed to user
 	When User clicks Create Project from the main list
-	Then 'Create Project' page should be displayed to the user
+	Then Page with 'Create Project' header is displayed to user
 	When User enters "<ProjectName>" in the "Project Name" field
 	Then Scope field is automatically populated
 	When User selects "Standalone Project" in the Mode Project dropdown

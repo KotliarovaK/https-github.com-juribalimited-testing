@@ -6,17 +6,14 @@ using SeleniumExtras.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 {
+    //TODO delete this page
     internal class AddBucketToTeamPage : SeleniumBasePage
     {
-        [FindsBy(How = How.XPath, Using = "//h2[text()='Add Buckets']")]
-        public IWebElement PageTitle { get; set; }
-
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
             return new List<By>
             {
-                SelectorFor(this, p => p.PageTitle)
             };
         }
 

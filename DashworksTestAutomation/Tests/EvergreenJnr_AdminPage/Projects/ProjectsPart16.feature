@@ -144,7 +144,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
-	Then 'Projects' page should be displayed to the user
+	Then Page with 'Projects' header is displayed to user
 	When User enters "Project13390" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User selects "Scope Changes" tab on the Project details page
@@ -266,18 +266,18 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatTheEditListFunctionIsHiddenAft
 	And User create dynamic list with "<DynamicListName>" name on "<ListName>" page
 	Then "<DynamicListName>" list is displayed to user
 	When User clicks Create Project from the main list
-	Then 'Create Project' page should be displayed to the user
+	Then Page with 'Create Project' header is displayed to user
 	When User clicks 'CANCEL' button 
 	Then "<DynamicListName>" list is displayed to user
 	And Edit List menu is not displayed
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User clicks 'CREATE PROJECT' button 
-	Then 'Create Project' page should be displayed to the user
+	Then Page with 'Create Project' header is displayed to user
 	When User enters "TestProject7894" in the "Project Name" field
 	And User selects 'All Devices' option from 'Scope' autocomplete
 	When User clicks 'CANCEL' button 
-	Then 'Projects' page should be displayed to the user
+	Then Page with 'Projects' header is displayed to user
 
 Examples:
 	| ListName  | ColumnName    | DynamicListName |

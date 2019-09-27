@@ -607,8 +607,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         //TODO looks like this section should be moved to BaseDashboard
         #region Action button
 
-
-
         [Then(@"""(.*)"" button is displayed without tooltip on Update form")]
         public void ThenUpdateButtonIsDisplayedWithoutTooltipOnUpdateForm(string buttonName)
         {
@@ -667,7 +665,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var button = _driver.NowAt<BaseDashboardPage>();
             var buttonState = button.GetButtonByName(buttonName).GetAttribute("disabled");
-            Utils.Verify.AreNotEqual(buttonState, "true", $"{buttonName} Button state is incorrect");
+            Verify.AreNotEqual(buttonState, "true", $"{buttonName} Button state is incorrect");
         }
 
         [Then(@"""(.*)"" Action button have tooltip with ""(.*)"" text")]

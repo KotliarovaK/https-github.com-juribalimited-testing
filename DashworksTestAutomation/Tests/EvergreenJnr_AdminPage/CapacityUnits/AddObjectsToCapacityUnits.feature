@@ -32,7 +32,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDevicesAreAddedCorrectly
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Evergreen' left menu item
 	And User navigates to the 'Capacity Units' left menu item
-	Then 'Capacity Units' page should be displayed to the user
+	Then Page with 'Capacity Units' header is displayed to user
 	When User enters "CapacityUnit12141Devices" text in the Search field for "Capacity Unit" column
 	Then "5" content is displayed in "Devices" column
 
@@ -63,7 +63,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatUsersAreAddedCorrectly
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Evergreen' left menu item
 	And User navigates to the 'Capacity Units' left menu item
-	Then 'Capacity Units' page should be displayed to the user
+	Then Page with 'Capacity Units' header is displayed to user
 	When User enters "CapacityUnit12141Users" text in the Search field for "Capacity Unit" column
 	Then "5" content is displayed in "Users" column
 
@@ -94,7 +94,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatApplicationsAreAddedCorrectly
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Evergreen' left menu item
 	And User navigates to the 'Capacity Units' left menu item
-	Then 'Capacity Units' page should be displayed to the user
+	Then Page with 'Capacity Units' header is displayed to user
 	When User enters "CapacityUnit12141Applications" text in the Search field for "Capacity Unit" column
 	Then "5" content is displayed in "Applications" column
 
@@ -125,6 +125,6 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatMailboxesAreAddedCorrectly
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Evergreen' left menu item
 	And User navigates to the 'Capacity Units' left menu item
-	Then 'Capacity Units' page should be displayed to the user
+	Then Page with 'Capacity Units' header is displayed to user
 	When User enters "CapacityUnit12141Mailboxes" text in the Search field for "Capacity Unit" column
 	Then "5" content is displayed in "Mailboxes" column
