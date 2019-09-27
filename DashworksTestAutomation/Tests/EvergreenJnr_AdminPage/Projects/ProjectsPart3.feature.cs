@@ -512,6 +512,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12485")]
         [NUnit.Framework.CategoryAttribute("DAS13949")]
         [NUnit.Framework.CategoryAttribute("DAS14180")]
+        [NUnit.Framework.CategoryAttribute("DAS18337")]
         [NUnit.Framework.CategoryAttribute("Project_Creation_and_Scope")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Projects")]
@@ -557,6 +558,7 @@ this.FeatureBackground();
                         "DAS12485",
                         "DAS13949",
                         "DAS14180",
+                        "DAS18337",
                         "Project_Creation_and_Scope",
                         "Cleanup",
                         "Projects"});

@@ -811,8 +811,8 @@ this.FeatureBackground();
 #line 172
  testRunner.And("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 173
- testRunner.And("User enters \"Windows 7 Migration (Computer Scheduled Project)\" text in the Search" +
-                    " field for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User enters \"Project 00 M Computer Scheduled\" text in the Search field for \"Proje" +
+                    "ct\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 174
  testRunner.And("User clicks content from \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 175
@@ -854,7 +854,7 @@ this.FeatureBackground();
                         "TRUE",
                         "TRUE",
                         "RED",
-                        "Windows 7 Migration (Computer Scheduled Project)"});
+                        "Project 00 M Computer Scheduled"});
 #line 187
  testRunner.And("User updates readiness properties on Edit Readiness", ((string)(null)), table14, "And ");
 #line 190
@@ -1256,13 +1256,13 @@ this.FeatureBackground();
 #line 289
  testRunner.When("User clicks \"Change to ready\" option in Cog-menu for \"Green\" item on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 290
- testRunner.When("User clicks \"Make default for applications\" option in Cog-menu for \"Apps In Initi" +
-                    "ation\" item on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \"Make default for applications\" option in Cog-menu for \"Amber\" item o" +
+                    "n Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 291
  testRunner.Then("Success message is displayed and contains \"The readiness has been updated\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 292
- testRunner.Then("Success message is displayed and contains \"click here to view the Light Blue read" +
-                    "iness\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Success message is displayed and contains \"click here to view the Amber readiness" +
+                    "\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 293
  testRunner.Then("Green banner contains following text \"changes might not take effect immediately\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 294
@@ -1272,8 +1272,8 @@ this.FeatureBackground();
 #line 296
  testRunner.When("User clicks the \"CANCEL\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 297
- testRunner.When("User clicks \"Make default for applications\" option in Cog-menu for \"Red\" item on " +
-                    "Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \"Make default for applications\" option in Cog-menu for \"Blocked\" item" +
+                    " on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 298
  testRunner.When("User have opened column settings for \"Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 299

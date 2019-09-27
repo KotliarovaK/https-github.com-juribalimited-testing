@@ -2336,15 +2336,16 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSerialNumberToETLComputerAdded
 
 @Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS17557
 Scenario: EvergreenJnr_DevicesList_CheckThatNo500ErrorOnApplicationPageAfterUpdatingTheAdvancedFilterWithTheEmptyValueOfTheEqualsDoesNotEqualsField
-
- 	When User clicks "Applications" on the left-hand menu
+	When User clicks 'Applications' on the left-hand menu
 	And User clicks the Filters button
 	And User add "Device Virtual Machine Host" filter where type is "Equals" with following Lookup Value and Association:
 	| SelectedValues | Association         |
 	|                | Used on device      |
 	|                | Entitled to device  |
 	|                | Installed on device |
-	Then User try to click the "UPDATE" Action button
+	Then "UPDATE" Action button is disabled
+
+	
 	
 
 

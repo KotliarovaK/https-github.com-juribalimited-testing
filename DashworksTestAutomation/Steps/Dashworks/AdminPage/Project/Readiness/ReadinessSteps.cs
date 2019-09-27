@@ -275,7 +275,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Readiness
             var defaultFor = page.GetRowContentByColumnName("Default for Applications");
 
             Utils.Verify.That(readinessDto.Tooltip, Is.EqualTo(tooltip), "Tooltip is different from stored one");
-            Utils.Verify.That(readinessDto.DefaultForApplications, Is.EqualTo(defaultFor.ToLower()), "Default For state different from stored one");
+            Utils.Verify.That(readinessDto.DefaultForApplications.ToString(), Is.EqualTo(defaultFor).IgnoreCase, "Default For state different from stored one");
         }
 
         [Then(@"Readiness ""(.*)"" displayed before None")]

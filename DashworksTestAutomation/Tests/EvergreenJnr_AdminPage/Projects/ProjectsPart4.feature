@@ -43,20 +43,13 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectNameIsDisplayedCorrectlyWhen
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12364 @DAS12999 @DAS13199 @DAS13297 @DAS12485 @DAS12108 @DAS12645 @Cleanup @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
-	When User clicks 'Admin' on the left-hand menu
-	Then 'Admin' list should be displayed to the user
+	When Project created via API and opened
+	| ProjectName      | Scope     | ProjectTemplate | Mode               |
+	| TestProject12364 | All Users | None            | Standalone Project |
 	When User navigates to the 'Projects' left menu item
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "TestProject12364" in the "Project Name" field
-	And User selects 'All Users' option from 'Scope' autocomplete
-	And User clicks Create button on the Create Project page
-	Then created Project with "TestProject12364" name is displayed correctly
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks newly created object link
-	Then Info message is displayed and contains "There are no objects in this project, use Scope Changes to add objects to your project" text
 	Then Project "TestProject12364" is displayed to user
+	When User selects "Scope" tab on the Project details page
+	Then Info message is displayed and contains "There are no objects in this project, use Scope Changes to add objects to your project" text	
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Users to add (0 of 41339 selected)" is displayed to the user in the Project Scope Changes section
 	When User expands multiselect to add objects
@@ -70,7 +63,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 	| 003F5D8E1A844B1FAA5 (Hunter, Melanie) |
 	| 01FF97A1FFAC48A1803 (Aultman, Chanel) |
 	When User navigates to the 'Devices' tab on Project Scope Changes page
-	Then "Devices to add (0 of 16765 selected)" is displayed to the user in the Project Scope Changes section
+	Then "Devices to add (0 of 16819 selected)" is displayed to the user in the Project Scope Changes section
 	When User expands multiselect to add objects 
 	Then Objects are displayed in alphabetical order on the Admin page
 	When User enters 'wpq' text to 'Search' textbox
@@ -100,7 +93,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 	Then Success message is displayed and contains "6 objects queued for onboarding, 0 objects offboarded" text
 	Then "Applications to add (0 of 2079 selected)" is displayed to the user in the Project Scope Changes section
 	When User navigates to the 'Devices' tab on Project Scope Changes page
-	Then "Devices to add (0 of 16763 selected)" is displayed to the user in the Project Scope Changes section
+	Then "Devices to add (0 of 16817 selected)" is displayed to the user in the Project Scope Changes section
 	When User navigates to the 'Users' tab on Project Scope Changes page
 	Then "Users to add (0 of 41337 selected)" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page

@@ -92,7 +92,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherListForDevices
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	And User selects "Scope Changes" tab on the Project details page
-	Then "Devices to add (0 of 17285 selected)" is displayed to the user in the Project Scope Changes section
+	Then "Devices to add (0 of 17279 selected)" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page
 	And User selects 'StaticList6579' in the 'Scope' dropdown with wait
 	And User selects "Scope Changes" tab on the Project details page
@@ -105,10 +105,13 @@ Scenario: EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherListForDevices
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Cleanup @Cleanup @Projects
 Scenario: EvergreenJnr_AdminPage_ChangingUserScopeListToAnotherList
+	#Adding one user having devices and one that doesn't have devices so in Project having
+	#'All Devices' scope when selecting custom list for Users tab we should see only one
+	#user having devices
 	When User create static list with "StaticList6179" name on "Users" page with following items
-	| ItemName |
-	| barbosaj |
-	| clarkc   |
+	| ItemName   |
+	| barbosaj   |
+	| AAH0343264 |
 	Then "StaticList6179" list is displayed to user
 	Then "2" rows are displayed in the agGrid
 	When Project created via API and opened
@@ -123,5 +126,6 @@ Scenario: EvergreenJnr_AdminPage_ChangingUserScopeListToAnotherList
 	And User selects 'StaticList6179' in the 'User Scope' dropdown with wait
 	And User selects "Scope Changes" tab on the Project details page
 	When User navigates to the 'Users' tab on Project Scope Changes page
-	Then "Users to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
+	#here we should see only users that have devices
+	Then "Users to add (0 of 1 selected)" is displayed to the user in the Project Scope Changes section
 	Then There are no errors in the browser console

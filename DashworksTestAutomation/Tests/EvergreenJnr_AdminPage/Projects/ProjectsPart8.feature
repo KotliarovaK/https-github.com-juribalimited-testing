@@ -66,8 +66,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckOnboardingObjectUsingUpdateAppropr
 	Then Project "TestProject9753" is displayed to user
 	Then Info message is displayed and contains "There are no objects in this project, use Scope Changes to add objects to your project" text
 	When User selects "Scope Changes" tab on the Project details page
-	And User navigates to the '<TabName>' left menu item
-	And User expands multiselect to add objects 
+	And User navigates to the '<TabName>' tab on Project Scope Changes page
 	And User expands multiselect and selects following Objects
 	| Objects        |
 	| <ObjectsToAdd> |
