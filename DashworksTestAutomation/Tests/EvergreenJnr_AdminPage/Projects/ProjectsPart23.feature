@@ -113,5 +113,5 @@ Scenario: EvergreenJnr_AdminPage_CheckThat403FullPageErrorAppearsAfterUserWithou
 	When Evergreen QueryStringURL is entered for Simple QueryType with expecting error
 	| QueryType | QueryStringURL                                  |
 	| Devices   | evergreen/#/admin/project/63/scope/scopeChanges |
-	Then Admin menu item is hidden
-	Then Error is displayed to the User
+	Then 'Admin' left-hand menu item is hidden
+	And Error is displayed to the User

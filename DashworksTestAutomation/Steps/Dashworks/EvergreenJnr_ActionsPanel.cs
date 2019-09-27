@@ -614,6 +614,19 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.ClickButtonByName(buttonName);
         }
 
+        [Then(@"User try to click the ""(.*)"" Action button")]
+        public void ThenUserTryToClickTheActionButton(string buttonName)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.CheckElementDisabledState(action.UpdateAssociationButton, false, "Update button isn't disabled");
+
+
+
+
+        }
+
+
+
         [Then(@"""(.*)"" button is displayed without tooltip on Update form")]
         public void ThenUpdateButtonIsDisplayedWithoutTooltipOnUpdateForm(string buttonName)
         {

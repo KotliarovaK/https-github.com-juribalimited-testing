@@ -11,7 +11,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
     {
         [FindsBy(How = How.XPath, Using = ".//span[text()='Dashboards']")]
         public IWebElement Dashboards { get; set; }
-        
+
+        [FindsBy(How = How.XPath, Using = ".//p[@class='topnav-item-menu-toggle']/button[contains(@class,'topnav-toggle')]")]
+        public IWebElement ExpandCollapseMenuButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@id='wrapper']")]
+        public IWebElement MenuToggleIndicator { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//a[@href='#/devices']")]
         public IWebElement Devices { get; set; }
 
@@ -61,9 +67,20 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 case "Admin":
                     return Admin;
 
+                case "Projects":
+                    return Projects;
+
+                case "Dashboards":
+                    return Dashboards;
+
                 default:
                     throw new Exception($"'{name}' menu name is not valid menu item and can not be opened");
             }
+        }
+
+        public bool IsMenuExpanded()
+        {
+            return MenuToggleIndicator.GetAttribute("class").Equals(string.Empty);
         }
     }
 }

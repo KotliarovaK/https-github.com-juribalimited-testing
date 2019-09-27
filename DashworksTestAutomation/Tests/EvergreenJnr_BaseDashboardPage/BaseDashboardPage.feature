@@ -283,7 +283,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCorrectMessageIsDisplayedBeforeDelet
 	When User click Delete button for custom list with "DynamicList15444" name
 	Then ""DynamicList15444" list is used by 1 project and 1 dashboard, do you wish to proceed?" message is displayed in the lists panel
 
-@Evergreen @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS16558
+@Evergreen @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS16558 @Cleanup
 Scenario: EvergreenJnr_UsersList_CheckThatFullPpageWith403ErrorIsDisplayedCorrectly
 	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -303,9 +303,9 @@ Scenario: EvergreenJnr_UsersList_CheckThatFullPpageWith403ErrorIsDisplayedCorrec
 	Then Dashworks homepage is displayed to the user in a logged in state
 	When User clicks the Switch to Evergreen link
 	Then Error page is displayed correctly
-	When User clicks "admin" hidden left-hand menu
+	When User clicks 'Admin' hidden left-hand menu
 	Then Error page is displayed correctly
-	When User clicks "devices" hidden left-hand menu
+	When User clicks 'Devices' hidden left-hand menu
 	When User clicks the Logout button
 	Then User is logged out
 	When User clicks on the Login link

@@ -10307,6 +10307,81 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatNo500ErrorOnApplicationPageAfterUpdatingTheAdva" +
+            "ncedFilterWithTheEmptyValueOfTheEqualsDoesNotEqualsField")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_FiltersFeature")]
+        [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
+        [NUnit.Framework.CategoryAttribute("DAS17557")]
+        public virtual void EvergreenJnr_DevicesList_CheckThatNo500ErrorOnApplicationPageAfterUpdatingTheAdvancedFilterWithTheEmptyValueOfTheEqualsDoesNotEqualsField()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckThatNo500ErrorOnApplicationPageAfterUpdatingTheAdvancedFilterWithTheEmptyValueOfTheEqualsDoesNotEqualsFieldInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_CheckThatNo500ErrorOnApplicationPageAfterUpdatingTheAdvancedFilterWithTheEmptyValueOfTheEqualsDoesNotEqualsFieldInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatNo500ErrorOnApplicationPageAfterUpdatingTheAdva" +
+                    "ncedFilterWithTheEmptyValueOfTheEqualsDoesNotEqualsField", null, new string[] {
+                        "Evergreen",
+                        "Devices",
+                        "EvergreenJnr_FiltersFeature",
+                        "FilterFunctionality",
+                        "DAS17557"});
+#line 2338
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 2339
+ testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2340
+ testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table217 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedValues",
+                        "Association"});
+            table217.AddRow(new string[] {
+                        "",
+                        "Used on device"});
+            table217.AddRow(new string[] {
+                        "",
+                        "Entitled to device"});
+            table217.AddRow(new string[] {
+                        "",
+                        "Installed on device"});
+#line 2341
+ testRunner.And("User add \"Device Virtual Machine Host\" filter where type is \"Equals\" with followi" +
+                    "ng Lookup Value and Association:", ((string)(null)), table217, "And ");
+#line 2346
+ testRunner.Then("\"UPDATE\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore
