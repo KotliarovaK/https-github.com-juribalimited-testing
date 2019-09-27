@@ -27,7 +27,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedObjectsAreDisplayedAfterChang
 	Then "Devices 0/0" is displayed in the tab header on the Admin page
 	When User click on Back button
 	And User navigates to the 'Teams' left menu item
-	Then "Teams" page should be displayed to the user
+	Then 'Teams' page should be displayed to the user
 	When User enters "My Team" text in the Search field for "Team" column
 	And User clicks content from "Team" column
 	And User navigates to the 'Buckets' left menu item

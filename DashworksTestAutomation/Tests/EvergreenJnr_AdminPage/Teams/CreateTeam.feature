@@ -10,9 +10,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyTeamName
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Teams' left menu item
-	Then "Teams" page should be displayed to the user
+	Then 'Teams' page should be displayed to the user
 	When User clicks the "CREATE TEAM" Action button
-	Then "Create Team" page should be displayed to the user
+	Then 'Create Team' page should be displayed to the user
 	When User enters " " in the "Team Name" field
 	And User enters "test" in the Team Description field
 	Then Create Team button is disabled
@@ -21,7 +21,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyTeamName
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The team has been created" text
 	When User clicks the "CREATE TEAM" Action button
-	Then "Create Team" page should be displayed to the user
+	Then 'Create Team' page should be displayed to the user
 	When User enters "TestTeam" in the "Team Name" field
 	And User enters "test" in the Team Description field
 	And User clicks the "CREATE" Action button
@@ -36,7 +36,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedTeamUsingTh
 	And User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Teams' left menu item
-	Then "Teams" page should be displayed to the user
+	Then 'Teams' page should be displayed to the user
 	When User enters "99770" text in the Search field for "Team" column
 	And User clicks content from "Team" column
 	Then "99770" team details is displayed to the user
@@ -68,7 +68,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedTeamUsingTh
 	When User enters "My Team" text in the Search field for "Team" column
 	Then 'TRUE' content is displayed in the 'Default' column
 	When User clicks the "CREATE TEAM" Action button
-	Then "Create Team" page should be displayed to the user
+	Then 'Create Team' page should be displayed to the user
 	When User enters " 99770" in the "Team Name" field
 	And User enters "test" in the Team Description field
 	And User clicks the "CREATE" Action button

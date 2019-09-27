@@ -14,7 +14,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatUserCantRemoveDefaultTeamOnAdminPage
 	And User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Teams' left menu item
-	Then "Teams" page should be displayed to the user
+	Then 'Teams' page should be displayed to the user
 	When User enters "DASTeam13000" text in the Search field for "Team" column
 	And User selects all rows on the grid
 	And User clicks on Actions button

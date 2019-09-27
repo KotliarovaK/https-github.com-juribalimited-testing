@@ -81,6 +81,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCogIconIsNotDisplayedOnLevelOfGroupedR
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Evergreen' left menu item
 	And User navigates to the 'Rings' left menu item
-	Then "Rings" page should be displayed to the user
+	Then 'Rings' page should be displayed to the user
 	When User clicks Group By button on the Admin page and selects "Ring" value
 	Then Cog menu is not displayed on the Admin page

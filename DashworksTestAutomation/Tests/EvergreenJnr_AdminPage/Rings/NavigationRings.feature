@@ -9,7 +9,7 @@ Background: Pre-Conditions
 Scenario: EvergreenJnr_AdminPage_CheckNavigationToDevicesListFromProjectsRingsList
 	When User clicks 'Admin' on the left-hand menu
 	And User navigates to the 'Projects' left menu item
-	Then "Projects" page should be displayed to the user
+	Then 'Projects' page should be displayed to the user
 	When User enters "1803 Rollout" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Rings' left menu item

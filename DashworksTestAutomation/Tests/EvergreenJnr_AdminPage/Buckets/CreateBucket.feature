@@ -10,15 +10,15 @@ Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedBucketUsing
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Evergreen' left menu item
-	Then "Buckets" page should be displayed to the user
+	Then 'Buckets' page should be displayed to the user
 	When User clicks the "CREATE EVERGREEN BUCKET" Action button
-	Then "Create Evergreen Bucket" page should be displayed to the user
+	Then 'Create Evergreen Bucket' page should be displayed to the user
 	When User enters "11770" in the "Bucket Name" field
 	And User selects "Admin IT" team in the Team dropdown on the Buckets page
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The bucket has been created" text
 	When User clicks the "CREATE EVERGREEN BUCKET" Action button
-	Then "Create Evergreen Bucket" page should be displayed to the user
+	Then 'Create Evergreen Bucket' page should be displayed to the user
 	When User enters " 11770" in the "Bucket Name" field
 	And User selects "Admin IT" team in the Team dropdown on the Buckets page
 	And User clicks the "CREATE" Action button
@@ -30,7 +30,7 @@ Scenario: EvergreenJnr_AdminPage_CreatingDefaultBucket
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Evergreen' left menu item
-	Then "Buckets" page should be displayed to the user
+	Then 'Buckets' page should be displayed to the user
 	When User enters "Unassigned" text in the Search field for "Bucket" column
 	Then 'TRUE' content is displayed in the 'Default' column
 	When User creates new Bucket via api
@@ -50,12 +50,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyBucketNa
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Evergreen' left menu item
-	Then "Buckets" page should be displayed to the user
+	Then 'Buckets' page should be displayed to the user
 	Then Search fields for "Devices" column contain correctly value
 	Then Search fields for "Users" column contain correctly value
 	Then Search fields for "Mailboxes" column contain correctly value
 	When User clicks the "CREATE EVERGREEN BUCKET" Action button
-	Then "Create Evergreen Bucket" page should be displayed to the user
+	Then 'Create Evergreen Bucket' page should be displayed to the user
 	When User enters " " in the "Bucket Name" field
 	And User selects "Admin IT" team in the Team dropdown on the Buckets page
 	Then "CREATE" Action button is disabled

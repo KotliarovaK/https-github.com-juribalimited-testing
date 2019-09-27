@@ -10,7 +10,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Evergreen' left menu item
-	Then "Buckets" page should be displayed to the user
+	Then 'Buckets' page should be displayed to the user
 	When User clicks Reset Filters button on the Admin page
 	#Then Counter shows "558" found rows
 	When User have opened Column Settings for "Bucket" column
@@ -75,7 +75,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSelectedRowsCountDisplayingOnBucketsGrids
 Scenario: EvergreenJnr_AdminPage_CheckThatSingularFoundItemLabelDisplaysOnActionsToolbarforBucketsList
 	When User clicks 'Admin' on the left-hand menu
 	And User navigates to the 'Evergreen' left menu item
-	Then "Buckets" page should be displayed to the user
+	Then 'Buckets' page should be displayed to the user
 	When User clicks Reset Filters button on the Admin page
 	And User enters "birmingham" text in the Search field for "Bucket" column
 	Then Rows counter contains "3" found row of all rows

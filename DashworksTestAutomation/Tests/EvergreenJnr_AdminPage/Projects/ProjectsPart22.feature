@@ -10,9 +10,9 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatMatchToEvergreenBucketDisplaye
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
-	Then "Projects" page should be displayed to the user
+	Then 'Projects' page should be displayed to the user
 	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
+	Then 'Create Project' page should be displayed to the user
 	When User enters "12768Project" in the "Project Name" field
 	And User selects '<ScopeList>' option from 'Scope' autocomplete
 	When User selects "Clone from Evergreen to Project" in the Mode Project dropdown
@@ -68,7 +68,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksRequestTypesAndCategoriesAreNotD
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
-	Then "Projects" page should be displayed to the user
+	Then 'Projects' page should be displayed to the user
 	When User enters "DAS13499Project" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	When User enters "New_DAS13499_Project_Name" in the "Project Name" field
@@ -122,7 +122,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatConvertToEvergreenButtonIsNotDisplaye
 	Then 'This list has errors' error message is displayed for 'Scope' field
 	When User clicks the "CANCEL" Action button
 	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
+	Then 'Create Project' page should be displayed to the user
 	When User enters "TestNegativeProject15262" in the "Project Name" field
 	When User selects 'All Devices' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page

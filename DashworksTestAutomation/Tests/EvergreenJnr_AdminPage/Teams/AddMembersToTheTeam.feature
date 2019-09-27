@@ -10,14 +10,14 @@ Scenario: EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Teams' left menu item
-	Then "Teams" page should be displayed to the user
+	Then 'Teams' page should be displayed to the user
 	#Then Counter shows "2,794" found rows
 	When User clicks the "CREATE TEAM" Action button
-	Then "Create Team" page should be displayed to the user
+	Then 'Create Team' page should be displayed to the user
 	When User clicks the "CANCEL" Action button
-	Then "Teams" page should be displayed to the user
+	Then 'Teams' page should be displayed to the user
 	When User clicks the "CREATE TEAM" Action button
-	Then "Create Team" page should be displayed to the user
+	Then 'Create Team' page should be displayed to the user
 	When User enters "TestTeam8" in the "Team Name" field
 	And User enters "test" in the Team Description field
 	When User selects "Add members from another team" in the Add Members dropdown
@@ -37,7 +37,7 @@ Scenario: EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam
 	And User clicks Delete button 
 	Then Warning message with "You cannot delete the default team" text is displayed on the Admin page
 	When User clicks the "CREATE TEAM" Action button
-	Then "Create Team" page should be displayed to the user
+	Then 'Create Team' page should be displayed to the user
 	When User enters "TestTeam88" in the "Team Name" field
 	And User enters "test" in the Team Description field
 	And User clicks Default Team checkbox
@@ -72,7 +72,7 @@ Scenario: EvergreenJnr_AdminPage_AddingMembersToTheTeam
 	And User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Teams' left menu item
-	Then "Teams" page should be displayed to the user
+	Then 'Teams' page should be displayed to the user
 	When User enters "TestTeam7" text in the Search field for "Team" column
 	And User clicks content from "Team" column
 	When User navigates to the 'Team Members' left menu item
@@ -118,7 +118,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSelectANewTeamDropdownAreWorkingCorre
 	And User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Teams' left menu item
-	Then "Teams" page should be displayed to the user
+	Then 'Teams' page should be displayed to the user
 	When User enters "DAS12326" text in the Search field for "Team" column
 	And User clicks content from "Team" column
 	And User navigates to the 'Team Members' left menu item

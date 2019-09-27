@@ -26,7 +26,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedBucketsIsDisplayedForOnboarded
 	And User navigate to Evergreen link
 	And User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	And "Projects" page should be displayed to the user
+	And 'Projects' page should be displayed to the user
 	When User enters "UsersProject3" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	Then Project "UsersProject3" is displayed to user

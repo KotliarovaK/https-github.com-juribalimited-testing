@@ -27,12 +27,12 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForDeviceScopedProject
 	| Move to bottom   |
 	| Move to position |
 	When User clicks the "CREATE PROJECT RING" Action button
-	Then "Create Project Ring" page should be displayed to the user
+	Then 'Create Project Ring' page should be displayed to the user
 	When User type "14695_Ring" Name in the "Ring name" field on the Project details page
 	And User clicks Create button on the Create Ring page
 	Then Success message is displayed and contains "The ring has been created" text
 	When User clicks the "CREATE PROJECT RING" Action button
-	Then "Create Project Ring" page should be displayed to the user
+	Then 'Create Project Ring' page should be displayed to the user
 	When User type "Ring_Test" Name in the "Ring name" field on the Project details page
 	When User clicks Default Ring checkbox
 	And User clicks Create button on the Create Ring page
@@ -78,7 +78,7 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForDeviceScopedProject
 Scenario: EvergreenJnr_AdminPage_CheckGridScreenForMailboxScopedProject
 	When User clicks Admin on the left-hand menu
 	And User navigates to the 'Projects' left menu item
-	Then "Projects" page should be displayed to the user
+	Then 'Projects' page should be displayed to the user
 	When User enters "Email Migration" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	Then Project "Email Migration" is displayed to user
@@ -100,12 +100,12 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForMailboxScopedProject
 	| Move to bottom   |
 	| Move to position |
 	When User clicks the "CREATE PROJECT RING" Action button
-	Then "Create Project Ring" page should be displayed to the user
+	Then 'Create Project Ring' page should be displayed to the user
 	When User type "14705_Ring" Name in the "Ring name" field on the 'Email Migration' Project details page
 	And User clicks Create button on the Create Ring page
 	Then Success message is displayed and contains "The ring has been created" text
 	When User clicks the "CREATE PROJECT RING" Action button
-	Then "Create Project Ring" page should be displayed to the user
+	Then 'Create Project Ring' page should be displayed to the user
 	When User type "Ring_Test" Name in the "Ring name" field on the 'Email Migration' Project details page
 	And User clicks Create button on the Create Ring page
 	When User clicks on 'Ring' column header

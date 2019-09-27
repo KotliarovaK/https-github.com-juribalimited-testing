@@ -4,7 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.ItemDetails;
+using DashworksTestAutomation.Utils;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
@@ -30,5 +32,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         }
 
         #endregion
+
+        [Then(@"'(.*)' page should be displayed to the user")]
+        public void ThenPageShouldBeDisplayedToTheUser(string pageTitle)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsTrue(_driver.IsElementDisplayed(page.Header, WebDriverExtensions.WaitTime.Short), $"'{pageTitle}' page was not opened");
+            Verify.AreEqual(pageTitle, page.Header.Text, "Incorrect page header");
+        }
     }
 }

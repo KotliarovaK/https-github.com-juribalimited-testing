@@ -38,7 +38,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckUpdateTaskValueEditPageLoadsProjec
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Automations' left menu item
-	Then "Automations" page should be displayed to the user
+	Then 'Automations' page should be displayed to the user
 	When User clicks the "CREATE AUTOMATION" Action button
 	When User enters '<AutomationName>' text to 'Automation Name' textbox
 	When User enters 'DAS17428' text to 'Description' textbox
@@ -109,7 +109,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatStageWithoutCorrectTasksIsNotDisplayed
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope     | Run    |
 	| 17691_Automation | DAS17691    | true   | false              | All Users | Manual |
 	When User navigates to the 'Automations' left menu item
-	Then "Automations" page should be displayed to the user
+	Then 'Automations' page should be displayed to the user
 	When User enters "17691_Automation" text in the Search field for "Automation" column
 	And User clicks content from "Automation" column
 	And User navigates to the 'Actions' left menu item
@@ -155,7 +155,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithRemoveOwnerIsLoaded
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope     | Run    |
 	| 17619_Automation | 17619       | true   | false              | All Users | Manual |
 	When User navigates to the 'Automations' left menu item
-	Then "Automations" page should be displayed to the user
+	Then 'Automations' page should be displayed to the user
 	When User enters "17619_Automation" text in the Search field for "Automation" column
 	And User clicks content from "Automation" column
 	Then Automation page is displayed correctly
@@ -193,7 +193,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithUpdateOwnerIsLoaded
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
 	| 17617_Automation | 17617       | true   | false              | All Devices | Manual |
 	When User navigates to the 'Automations' left menu item
-	Then "Automations" page should be displayed to the user
+	Then 'Automations' page should be displayed to the user
 	When User enters "17617_Automation" text in the Search field for "Automation" column
 	And User clicks content from "Automation" column
 	And User navigates to the 'Actions' left menu item

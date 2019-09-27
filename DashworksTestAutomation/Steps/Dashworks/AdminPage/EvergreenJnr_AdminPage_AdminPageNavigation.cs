@@ -17,105 +17,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
     {
         private readonly RemoteWebDriver _driver;
 
-        public EvergreenJnr_AdminPage_AdminPageNavigation (RemoteWebDriver driver)
+        public EvergreenJnr_AdminPage_AdminPageNavigation(RemoteWebDriver driver)
         {
             _driver = driver;
-        }
-
-        [Then(@"""(.*)"" page should be displayed to the user")]
-        public void ThenPageShouldBeDisplayedToTheUser(string pageTitle)
-        {
-            switch (pageTitle)
-            {
-                case "Projects":
-                    var projectsPage = _driver.NowAt<AdminLeftHandMenu>();
-                    Verify.Contains(projectsPage.ProjectsPage.Text.ToLower(), pageTitle.ToLower(),
-                        "Incorrect page is displayed to user");
-                    break;
-
-                case "Teams":
-                    var teamsPage = _driver.NowAt<AdminLeftHandMenu>();
-                    Verify.Contains(teamsPage.TeamsPage.Text.ToLower(), pageTitle.ToLower(),
-                        "Incorrect page is displayed to user");
-                    break;
-
-                case "Buckets":
-                    var bucketsPage = _driver.NowAt<AdminLeftHandMenu>();
-                    Verify.Contains(bucketsPage.BucketsPage.Text.ToLower(), pageTitle.ToLower(),
-                        "Incorrect page is displayed to user");
-                    break;
-
-                case "Automations":
-                    var automationsPage = _driver.NowAt<AdminLeftHandMenu>();
-                    Verify.Contains(automationsPage.Automations.Text.ToLower(), pageTitle.ToLower(),
-                        "Incorrect page is displayed to user");
-                    break;
-
-                case "Capacity Units":
-                    var capacityUnitsPage = _driver.NowAt<AdminLeftHandMenu>();
-                    Verify.Contains(capacityUnitsPage.CapacityUnitsPage.Text.ToLower(), pageTitle.ToLower(),
-                        "Incorrect page is displayed to user");
-                    break;
-
-                case "Rings":
-                    var ringsPage = _driver.NowAt<AdminLeftHandMenu>();
-                    Verify.Contains(ringsPage.RingsPage.Text.ToLower(), pageTitle.ToLower(),
-                        "Incorrect page is displayed to user");
-                    break;
-
-                case "Create Project":
-                    var createProjectPage = _driver.NowAt<CreateProjectPage>();
-                    Verify.Contains(createProjectPage.CreateProjectFormTitle.Text.ToLower(), pageTitle.ToLower(),
-                        "Incorrect page is displayed to user");
-                    break;
-
-                case "Create Team":
-                    var createTeamPage = _driver.NowAt<CreateTeamPage>();
-                    Verify.Contains(createTeamPage.CreateTeamFormTitle.Text.ToLower(), pageTitle.ToLower(),
-                        "Incorrect page is displayed to user");
-                    break;
-
-                case "Create Evergreen Bucket":
-                    var createBucketPage = _driver.NowAt<CreateBucketPage>();
-                    Verify.Contains(createBucketPage.CreateBucketFormTitle.Text.ToLower(), pageTitle.ToLower(),
-                        "Incorrect page is displayed to user");
-                    break;
-
-                case "Create Project Capacity Unit":
-                    var createProjectCapacityUnitPage = _driver.NowAt<CreateCapacityUnitPage>();
-                    Verify.Contains(createProjectCapacityUnitPage.CreateCapacityUnitTitle.Text.ToLower(), pageTitle.ToLower(),
-                        "Incorrect page is displayed to user");
-                    break;
-
-                case "Create Evergreen Capacity Unit":
-                    var createEvergreenCapacityUnitPage = _driver.NowAt<CreateCapacityUnitPage>();
-                    Verify.Contains(createEvergreenCapacityUnitPage.CreateCapacityUnitTitle.Text.ToLower(), pageTitle.ToLower(),
-                        "Incorrect page is displayed to user");
-                    break;
-
-                case "Create Ring":
-                    var createRingPage = _driver.NowAt<CreateRingPage>();
-                    Verify.Contains(createRingPage.CreateRingFormTitle.Text.ToLower(), pageTitle.ToLower(),
-                        "Incorrect page is displayed to user");
-                    break;
-
-                case "Create Project Ring":
-                    var createProjectRingPage = _driver.NowAt<CreateRingPage>();
-                    Verify.Contains(createProjectRingPage.CreateRingFormTitle.Text.ToLower(), pageTitle.ToLower(),
-                        "Incorrect page is displayed to user");
-                    break;
-
-                case "Import Project":
-                    var importProjectPage = _driver.NowAt<ImportProjectPage>();
-                    Verify.Contains(importProjectPage.ImportProjectFormTitle.Text.ToLower(), pageTitle.ToLower(),
-                        "Incorrect page is displayed to user");
-                    break;
-
-                default:
-                    throw new Exception($"'{pageTitle}' menu item is not valid ");
-            }
-
-            Logger.Write($"'{pageTitle}' page is visible");
         }
 
         [When(@"User clicks ""(.*)"" navigation link on the Admin page")]
@@ -169,5 +73,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         {
             var page = _driver.NowAt<AdminLeftHandMenu>();
             Utils.Verify.IsFalse(page.Automations.Displayed(), $"{tabName} tab still displayed");
-        } }
+        }
+    }
 }

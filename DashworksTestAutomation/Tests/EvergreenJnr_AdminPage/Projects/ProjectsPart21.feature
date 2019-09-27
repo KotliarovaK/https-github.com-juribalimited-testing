@@ -18,7 +18,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatChangingTheProjectNameOrShortNameInSen
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
-	Then "Projects" page should be displayed to the user
+	Then 'Projects' page should be displayed to the user
 	When User enters "SnrProject13498" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	Then "SnrProject13498" content is displayed in "Project Name" field
@@ -35,7 +35,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatChangingTheProjectNameOrShortNameInSen
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
-	Then "Projects" page should be displayed to the user
+	Then 'Projects' page should be displayed to the user
 	When User enters "13498NewProjectName" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	Then "13498NewProjectName" content is displayed in "Project Name" field
@@ -58,7 +58,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatNameForProjectThatCreatedInSeniorWasU
 	And User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
-	Then "Projects" page should be displayed to the user
+	Then 'Projects' page should be displayed to the user
 	When User enters "ProjectDAS13501" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User enters "ProjectDAS13501 upd" in the "Project Name" field
@@ -83,9 +83,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectWithUseEvergreenCapacityUnitsIs
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
-	Then "Projects" page should be displayed to the user
+	Then 'Projects' page should be displayed to the user
 	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
+	Then 'Create Project' page should be displayed to the user
 	When User enters "13510TestProject" in the "Project Name" field
 	And User selects 'All Devices' option from 'Scope' autocomplete
 	When User clicks the "CREATE PROJECT" Action button
@@ -104,6 +104,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectWithUseEvergreenCapacityUnitsIs
 	When User clicks "Administration" navigation link on the Admin page
 	When User navigates to the 'Evergreen' left menu item
 	When User navigates to the 'Capacity Units' left menu item
-	Then "Capacity Units" page should be displayed to the user
+	Then 'Capacity Units' page should be displayed to the user
 	When User clicks String Filter button for "Project" column
 	Then "13510TestProject" is not displayed in the filter dropdown

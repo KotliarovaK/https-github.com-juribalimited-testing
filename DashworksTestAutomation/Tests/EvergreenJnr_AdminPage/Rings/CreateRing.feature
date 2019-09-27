@@ -33,7 +33,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorDisplayedWhenCreatingRin
 	| NewProject15397 | All Users | None            | Standalone Project |
 	And User navigates to the 'Rings' left menu item
 	And User clicks the "CREATE PROJECT RING" Action button
-	Then "Create Project Ring" page should be displayed to the user
+	Then 'Create Project Ring' page should be displayed to the user
 	When User type "TestRing15397_1" Name in the "Ring name" field on the 'NewProject15397' Project details page
 	And User clicks Create button on the Create Ring page
 	Then Success message is displayed and contains "The ring has been created" text
@@ -43,7 +43,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorDisplayedWhenCreatingRin
 	And User clicks content from "Project" column
 	And User navigates to the 'Rings' left menu item
 	And User clicks the "CREATE PROJECT RING" Action button
-	Then "Create Project Ring" page should be displayed to the user
+	Then 'Create Project Ring' page should be displayed to the user
 	When User type "TestRing15397_2" Name in the "Ring name" field on the 'NewProject15397' Project details page
 	And User clicks Create button on the Create Ring page
 	Then There are no errors in the browser console

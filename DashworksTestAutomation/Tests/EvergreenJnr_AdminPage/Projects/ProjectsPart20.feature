@@ -11,9 +11,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatBlueBannerIsDisplayedWithCorrectlyTex
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
-	Then "Projects" page should be displayed to the user
+	Then 'Projects' page should be displayed to the user
 	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
+	Then 'Create Project' page should be displayed to the user
 	When User enters "Project13347" in the "Project Name" field
 	And User selects 'All Devices' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
@@ -66,21 +66,21 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectTypesInTheFilterAlphabetised
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
-	Then "Projects" page should be displayed to the user
+	Then 'Projects' page should be displayed to the user
 	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
+	Then 'Create Project' page should be displayed to the user
 	When User enters "DeviceProject56" in the "Project Name" field
 	And User selects 'All Devices' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
+	Then 'Create Project' page should be displayed to the user
 	When User enters "UserProject56" in the "Project Name" field
 	And User selects 'All Users' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
+	Then 'Create Project' page should be displayed to the user
 	When User enters "MailboxProject56" in the "Project Name" field
 	And User selects 'All Mailboxes' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
@@ -93,9 +93,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAllCheckboxesOnScopeDetailsTabAreWork
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
-	Then "Projects" page should be displayed to the user
+	Then 'Projects' page should be displayed to the user
 	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
+	Then 'Create Project' page should be displayed to the user
 	When User enters "Project12183" in the "Project Name" field
 	And User selects 'All Mailboxes' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
@@ -124,7 +124,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectDetailsIsPopulatedOnTheAdminPag
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
-	Then "Projects" page should be displayed to the user
+	Then 'Projects' page should be displayed to the user
 	When User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
 	When User clicks content from "Project" column
 	Then "Capacity Mode" dropdown is not displayed

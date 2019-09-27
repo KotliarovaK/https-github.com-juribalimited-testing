@@ -58,7 +58,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInDeviceScope
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope              | Run    |
 	| 17636_Automation | 17636       | true   | false              | New York - Devices | Manual |
 	When User navigates to the 'Automations' left menu item
-	Then "Automations" page should be displayed to the user
+	Then 'Automations' page should be displayed to the user
 	When User enters "17636_Automation" text in the Search field for "Automation" column
 	And User clicks content from "Automation" column
 	Then Automation page is displayed correctly
@@ -98,7 +98,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInMailboxScop
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope                  | Run    |
 	| 17642_Automation | 17642       | true   | false              | Mailbox List (Complex) | Manual |
 	When User navigates to the 'Automations' left menu item
-	Then "Automations" page should be displayed to the user
+	Then 'Automations' page should be displayed to the user
 	When User enters "17642_Automation" text in the Search field for "Automation" column
 	And User clicks content from "Automation" column
 	Then Automation page is displayed correctly
@@ -140,7 +140,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInApplication
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope              | Run    |
 	| 17643_Automation | 17643       | true   | false              | Apps with a Vendor | Manual |
 	When User navigates to the 'Automations' left menu item
-	Then "Automations" page should be displayed to the user
+	Then 'Automations' page should be displayed to the user
 	When User enters "17643_Automation" text in the Search field for "Automation" column
 	And User clicks content from "Automation" column
 	Then Automation page is displayed correctly
@@ -181,7 +181,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInDevicesScop
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope              | Run    |
 	| 17799_Automation | 17799       | true   | false              | New York - Devices | Manual |
 	When User navigates to the 'Automations' left menu item
-	Then "Automations" page should be displayed to the user
+	Then 'Automations' page should be displayed to the user
 	When User enters "17799_Automation" text in the Search field for "Automation" column
 	And User clicks content from "Automation" column
 	Then Automation page is displayed correctly
@@ -231,7 +231,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedA
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope                               | Run    |
 	| 17678_Automation | 17643       | true   | false              | Mailbox Readiness Columns & Filters | Manual |
 	When User navigates to the 'Automations' left menu item
-	Then "Automations" page should be displayed to the user
+	Then 'Automations' page should be displayed to the user
 	When User enters "17678_Automation" text in the Search field for "Automation" column
 	And User clicks content from "Automation" column
 	Then Automation page is displayed correctly
@@ -318,7 +318,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueAndOwnerInDev
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope              | Run    |
 	| 17682_Automation | 17682       | true   | false              | New York - Devices | Manual |
 	When User navigates to the 'Automations' left menu item
-	Then "Automations" page should be displayed to the user
+	Then 'Automations' page should be displayed to the user
 	When User enters "17682_Automation" text in the Search field for "Automation" column
 	And User clicks content from "Automation" column
 	Then Automation page is displayed correctly
@@ -372,7 +372,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForRemoveOwnerAndTeamInDevi
 	| AutomationName     | Description | Active | StopOnFailedAction | Scope              | Run    |
 	| 17682_Automation_2 | 17682       | true   | false              | New York - Devices | Manual |
 	When User navigates to the 'Automations' left menu item
-	Then "Automations" page should be displayed to the user
+	Then 'Automations' page should be displayed to the user
 	When User enters "17682_Automation_2" text in the Search field for "Automation" column
 	And User clicks content from "Automation" column
 	Then Automation page is displayed correctly
@@ -426,7 +426,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedA
 	| AutomationName     | Description | Active | StopOnFailedAction | Scope                   | Run    |
 	| 17678_Automation_1 | 17643_1     | true   | false              | Users with Device Count | Manual |
 	When User navigates to the 'Automations' left menu item
-	Then "Automations" page should be displayed to the user
+	Then 'Automations' page should be displayed to the user
 	When User enters "17678_Automation_1" text in the Search field for "Automation" column
 	And User clicks content from "Automation" column
 	Then Automation page is displayed correctly
@@ -467,7 +467,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatClickingOnTheObjectsCountOpensTheCorre
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Automations' left menu item
-	Then "Automations" page should be displayed to the user
+	Then 'Automations' page should be displayed to the user
 	When User selects "Automation Log" tab on the Project details page
 	And User enters "X-Proj Path Reset" text in the Search field for "Automation" column
 	And User enters "2" text in the Search field for "Objects" column

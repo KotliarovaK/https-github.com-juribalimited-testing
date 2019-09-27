@@ -117,9 +117,9 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Evergreen' left menu item
 	When User navigates to the 'Buckets' left menu item
-	Then "Buckets" page should be displayed to the user
+	Then 'Buckets' page should be displayed to the user
 	When User clicks the "CREATE EVERGREEN BUCKET" Action button
-	Then "Create Evergreen Bucket" page should be displayed to the user
+	Then 'Create Evergreen Bucket' page should be displayed to the user
 	When User enters "Bucket12883" in the "Bucket Name" field
 	And User selects "My Team" team in the Team dropdown on the Buckets page
 	And User clicks the "CREATE" Action button
@@ -481,7 +481,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatOnTheProjectDetailsTabDisplaysTheL
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
-	Then "Projects" page should be displayed to the user
+	Then 'Projects' page should be displayed to the user
 	When User clicks on 'USE ME FOR AUTOMATION(MAIL SCHDLD)' cell from 'Project' column
 	Then Project "USE ME FOR AUTOMATION(MAIL SCHDLD)" is displayed to user
 	When User navigates to the 'Details' left menu item

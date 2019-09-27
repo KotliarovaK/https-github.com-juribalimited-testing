@@ -149,7 +149,7 @@ Scenario: EvergreenJnr_AdminPage_AddingRequestTypesAndCategories
 	And User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
-	Then "Projects" page should be displayed to the user
+	Then 'Projects' page should be displayed to the user
 	When User enters "TestName18" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	Then Project "TestName18" is displayed to user

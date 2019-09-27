@@ -100,7 +100,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCapacityUnitsGridUpdatedAfterUnitUpdat
 	And User clicks content from "Capacity Unit" column
 	When User clicks "Projects" navigation link on the Admin page
 	Then Warning Pop-up is not displayed
-	Then "Projects" page should be displayed to the user
+	Then 'Projects' page should be displayed to the user
 	When User enters "Email Migration" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Capacity' left menu item
@@ -108,7 +108,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCapacityUnitsGridUpdatedAfterUnitUpdat
 	And User clicks content from "Capacity Unit" column
 	When User clicks "Administration" navigation link on the Admin page
 	Then Warning Pop-up is not displayed
-	Then "Projects" page should be displayed to the user
+	Then 'Projects' page should be displayed to the user
 	When User enters "Email Migration" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Capacity' left menu item

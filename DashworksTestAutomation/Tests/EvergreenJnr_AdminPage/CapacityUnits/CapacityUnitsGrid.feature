@@ -11,7 +11,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnlyEvergreenUnitsAreDisplayedByDefaul
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Evergreen' left menu item
 	And User navigates to the 'Capacity Units' left menu item
-	Then "Capacity Units" page should be displayed to the user
+	Then 'Capacity Units' page should be displayed to the user
 	Then data in the table is sorted by "Capacity Unit" column in ascending order by default
 	When User clicks Reset Filters button on the Admin page
 	Then data in the table is sorted by "Capacity Unit" column in ascending order by default
@@ -29,7 +29,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSpellingIsCorrectInCapacityUnitsDelet
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Evergreen' left menu item
 	And User navigates to the 'Capacity Units' left menu item
-	Then "Capacity Units" page should be displayed to the user
+	Then 'Capacity Units' page should be displayed to the user
 	When User select "Capacity Unit" rows in the grid
 	| SelectedRowsName          |
 	| Evergreen Capacity Unit 1 |
@@ -49,5 +49,5 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSumOfObjectsInApplicationsListIsCorre
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Evergreen' left menu item
 	And User navigates to the 'Capacity Units' left menu item
-	Then "Capacity Units" page should be displayed to the user
+	Then 'Capacity Units' page should be displayed to the user
 	Then sum of objects in "Applications" list is "2223" on the Admin page

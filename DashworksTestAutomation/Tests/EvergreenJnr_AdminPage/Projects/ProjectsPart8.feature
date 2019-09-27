@@ -10,13 +10,13 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationWithProjectBucketsF
 	When User clicks '<PageName>' on the left-hand menu
 	Then 'All <PageName>' list should be displayed to the user
 	When User clicks Create Project from the main list
-	Then "Create Project" page should be displayed to the user
+	Then 'Create Project' page should be displayed to the user
 	When User enters "<ProjectName>" in the "Project Name" field
 	Then Scope field is automatically populated
 	When User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User navigates to the 'Projects' left menu item
-	Then "Projects" page should be displayed to the user
+	Then 'Projects' page should be displayed to the user
 	When User enters "<ProjectName>" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
@@ -25,7 +25,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationWithProjectBucketsF
 	| <Item>   |
 	Then "<StaticList>" list is displayed to user
 	When User clicks Create Project from the main list
-	Then "Create Project" page should be displayed to the user
+	Then 'Create Project' page should be displayed to the user
 	When User enters "<ProjectName>" in the "Project Name" field
 	Then Scope field is automatically populated
 	When User clicks Create button on the Create Project page
@@ -39,7 +39,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationWithProjectBucketsF
 	And User create dynamic list with "<DynamicList>" name on "<PageName>" page
 	Then "<DynamicList>" list is displayed to user
 	When User clicks Create Project from the main list
-	Then "Create Project" page should be displayed to the user
+	Then 'Create Project' page should be displayed to the user
 	When User enters "<ProjectName>" in the "Project Name" field
 	Then Scope field is automatically populated
 	When User clicks Create button on the Create Project page
@@ -55,9 +55,9 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckOnboardingObjectUsingUpdateAppropr
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
-	Then "Projects" page should be displayed to the user
+	Then 'Projects' page should be displayed to the user
 	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
+	Then 'Create Project' page should be displayed to the user
 	When User enters "TestProject9753" in the "Project Name" field
 	And User selects '<AllListName>' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
@@ -85,9 +85,9 @@ Scenario: EvergreenJnr_AdminPage_ChangingBucketFromUseEvergreenBucketsToCloneEve
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
-	Then "Projects" page should be displayed to the user
+	Then 'Projects' page should be displayed to the user
 	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
+	Then 'Create Project' page should be displayed to the user
 	When User enters "1MailboxesProject" in the "Project Name" field
 	#And User selects "Evergreen" in the Mode Project dropdown
 	When User selects 'All Mailboxes' option from 'Scope' autocomplete
@@ -129,9 +129,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoAdditionalCapacityUnitsAreCreatedWhe
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
-	Then "Projects" page should be displayed to the user
+	Then 'Projects' page should be displayed to the user
 	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
+	Then 'Create Project' page should be displayed to the user
 	When User enters "13530Project" in the "Project Name" field
 	And User selects 'All Devices' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
