@@ -1334,7 +1334,7 @@ this.FeatureBackground();
  testRunner.When("User selects And \"EmailMigra: Readiness\" filter where type is \"Equals\" with added" +
                     " column and Lookup option:", ((string)(null)), table29, "When ");
 #line 283
- testRunner.And("User clicks the \"CANCEL\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks \'CANCEL\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 284
  testRunner.Then("Add And button is displayed on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
