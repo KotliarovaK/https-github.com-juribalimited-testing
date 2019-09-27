@@ -1231,6 +1231,26 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Relink_UsersPage.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr_ItemDetails\ProjectDetails\Resync\Resync_ApplicationsPage.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resync_ApplicationsPage.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_ItemDetails\ProjectDetails\Resync\Resync_DevicesPage.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resync_DevicesPage.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_ItemDetails\ProjectDetails\Resync\Resync_MailboxesPage.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resync_MailboxesPage.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_ItemDetails\ProjectDetails\Resync\Resync_UsersPage.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resync_UsersPage.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr_ListDetails\ListDetailsFunctionalityPart9.feature.cs">
       <DependentUpon>ListDetailsFunctionalityPart9.feature</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -2144,6 +2164,22 @@
     <None Include="Tests\EvergreenJnr_ItemDetails\ProjectDetails\Relink\Relink_UsersPage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Relink_UsersPage.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ItemDetails\ProjectDetails\Resync\Resync_ApplicationsPage.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Resync_ApplicationsPage.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ItemDetails\ProjectDetails\Resync\Resync_DevicesPage.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Resync_DevicesPage.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ItemDetails\ProjectDetails\Resync\Resync_MailboxesPage.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Resync_MailboxesPage.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ItemDetails\ProjectDetails\Resync\Resync_UsersPage.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Resync_UsersPage.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_ListDetails\ListDetailsFunctionalityPart9.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
