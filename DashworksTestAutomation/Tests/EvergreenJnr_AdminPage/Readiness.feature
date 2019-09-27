@@ -115,7 +115,7 @@ Scenario: EvergreenJnr_AdminPage_CheckReadinessDialogContainerDisplay
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14937 @DAS16649 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultForApplicationsCheckboxWorksOnEditReadinessPage
 	When User clicks 'Admin' on the left-hand menu
-	And User clicks "Projects" link on the Admin page
+	And User navigates to the 'Projects' left menu item
 	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Readiness' left menu item
@@ -138,7 +138,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultForApplicationsCheckboxWorksOn
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14937 @DAS15669 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatNewReadinessAddedBeforeNone
 	When User clicks 'Admin' on the left-hand menu
-	And User clicks "Projects" link on the Admin page
+	And User navigates to the 'Projects' left menu item
 	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Readiness' left menu item
@@ -153,7 +153,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatNewReadinessAddedBeforeNone
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14937
 Scenario: EvergreenJnr_AdminPage_ChecksCreateReadinessElements
 	When User clicks 'Admin' on the left-hand menu
-	And User clicks "Projects" link on the Admin page
+	And User navigates to the 'Projects' left menu item
 	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Readiness' left menu item
@@ -169,7 +169,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksCreateReadinessElements
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14938 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatDefaultCheckboxCanNotBeUncheckedForReadiness
 	When User clicks 'Admin' on the left-hand menu
-	And User clicks "Projects" link on the Admin page
+	And User navigates to the 'Projects' left menu item
 	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Readiness' left menu item
@@ -203,7 +203,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDefaultCheckboxCanNotBeUncheckedForRea
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14938
 Scenario: EvergreenJnr_AdminPage_CheckThatNoneReadinessCanBePartiallyEdited
 	When User clicks 'Admin' on the left-hand menu
-	And User clicks "Projects" link on the Admin page
+	And User navigates to the 'Projects' left menu item
 	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Readiness' left menu item
@@ -226,7 +226,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoneReadinessCanBePartiallyEdited
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14938
 Scenario: EvergreenJnr_AdminPage_CheckThatNoChangesAppliedAfterCancelButtonPressedOnEditReadiness
 	When User clicks 'Admin' on the left-hand menu
-	And User clicks "Projects" link on the Admin page
+	And User navigates to the 'Projects' left menu item
 	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Readiness' left menu item
@@ -242,7 +242,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoChangesAppliedAfterCancelButtonPress
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14938
 Scenario: EvergreenJnr_AdminPage_CheckThatCancelReadinessAffectsNothingOnEditReadiness
 	When User clicks 'Admin' on the left-hand menu
-	And User clicks "Projects" link on the Admin page
+	And User navigates to the 'Projects' left menu item
 	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Readiness' left menu item
@@ -314,7 +314,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatValuesForReadinessGridAreDisplayedPro
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS15769
 Scenario: EvergreenJnr_AdminPage_ChecksThatNoWarningDisplayedWhenOpenningReadinessPage
 	When User clicks 'Admin' on the left-hand menu
-	And User clicks "Projects" link on the Admin page
+	And User navigates to the 'Projects' left menu item
 	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Details' left menu item
@@ -325,7 +325,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatNoWarningDisplayedWhenOpenningReadine
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS15673
 Scenario: EvergreenJnr_AdminPage_CheckThatReadinessRightClickMenuCopyOptionsWorks
 	When User clicks 'Admin' on the left-hand menu
-	And User clicks "Projects" link on the Admin page
+	And User navigates to the 'Projects' left menu item
 	And User enters "Havoc (Big Data)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Readiness' left menu item
@@ -342,7 +342,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatReadinessRightClickMenuCopyOptionsWork
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS15720 @DAS15720 @DAS16653 @DAS16617
 Scenario: EvergreenJnr_AdminPage_CheckThatReadinessCanBeSortedByClickingColumnHeader
 	When User clicks 'Admin' on the left-hand menu
-	And User clicks "Projects" link on the Admin page
+	And User navigates to the 'Projects' left menu item
 	And User enters "Havoc (Big Data)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Readiness' left menu item

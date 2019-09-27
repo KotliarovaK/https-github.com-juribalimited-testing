@@ -137,7 +137,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProj
 	And "1" content is displayed in "Users" column
 	And "1" content is displayed in "Applications" column
 	When User clicks "Administration" navigation link on the Admin page
-	When User clicks "Evergreen" link on the Admin page
+	When User navigates to the 'Evergreen' left menu item
 	When User navigates to the 'Capacity Units' left menu item
 	And User select "Capacity Unit" rows in the grid
 	| SelectedRowsName           |

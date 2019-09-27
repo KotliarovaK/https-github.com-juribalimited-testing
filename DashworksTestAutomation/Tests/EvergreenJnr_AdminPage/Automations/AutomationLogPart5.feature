@@ -55,7 +55,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForRemoveOwnerInMailboxScop
 	When User creates new Automation via API
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope                               | Run    |
 	| 17829_Automation | 17829       | true   | false              | Mailbox Readiness Columns & Filters | Manual |
-	When User clicks "Automations" link on the Admin page
+	When User navigates to the 'Automations' left menu item
 	Then "Automations" page should be displayed to the user
 	When User enters "17829_Automation" text in the Search field for "Automation" column
 	And User clicks content from "Automation" column

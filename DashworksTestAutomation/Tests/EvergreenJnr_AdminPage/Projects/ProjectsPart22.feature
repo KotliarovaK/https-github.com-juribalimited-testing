@@ -9,7 +9,7 @@ Background: Pre-Conditions
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatMatchToEvergreenBucketDisplayedInTheBucketDropdown
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Projects" link on the Admin page
+	When User navigates to the 'Projects' left menu item
 	Then "Projects" page should be displayed to the user
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
@@ -67,7 +67,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksRequestTypesAndCategoriesAreNotD
 	And User navigate to Evergreen link
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Projects" link on the Admin page
+	When User navigates to the 'Projects' left menu item
 	Then "Projects" page should be displayed to the user
 	When User enters "DAS13499Project" text in the Search field for "Project" column
 	And User clicks content from "Project" column
@@ -96,7 +96,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultValuesStayTheSameAfterConverti
 	And User clicks the Switch to Evergreen link
 	And User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Projects" link on the Admin page
+	When User navigates to the 'Projects' left menu item
 	And User enters "DAS15262Project" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	Then 'Use project buckets' text value is displayed in the 'Buckets' dropdown

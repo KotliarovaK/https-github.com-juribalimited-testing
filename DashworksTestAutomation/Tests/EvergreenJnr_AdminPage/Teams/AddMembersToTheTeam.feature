@@ -9,7 +9,7 @@ Background: Pre-Conditions
 Scenario: EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Teams" link on the Admin page
+	When User navigates to the 'Teams' left menu item
 	Then "Teams" page should be displayed to the user
 	#Then Counter shows "2,794" found rows
 	When User clicks the "CREATE TEAM" Action button
@@ -71,7 +71,7 @@ Scenario: EvergreenJnr_AdminPage_AddingMembersToTheTeam
 	| TestTeam7 | test        | false     |
 	And User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Teams" link on the Admin page
+	When User navigates to the 'Teams' left menu item
 	Then "Teams" page should be displayed to the user
 	When User enters "TestTeam7" text in the Search field for "Team" column
 	And User clicks content from "Team" column
@@ -117,7 +117,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSelectANewTeamDropdownAreWorkingCorre
 	| DAS12326 | 12326       | false     |
 	And User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Teams" link on the Admin page
+	When User navigates to the 'Teams' left menu item
 	Then "Teams" page should be displayed to the user
 	When User enters "DAS12326" text in the Search field for "Team" column
 	And User clicks content from "Team" column

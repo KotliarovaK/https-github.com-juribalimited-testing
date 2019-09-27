@@ -72,7 +72,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedApplicationsAreDisplayedCapac
 	And Success message with "2 of 2 objects were in the selected project and have been queued" text is displayed on Action panel
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Evergreen" link on the Admin page
+	When User navigates to the 'Evergreen' left menu item
 	When User navigates to the 'Capacity Units' left menu item
 	Then "Capacity Units" page should be displayed to the user
 	When User clicks String Filter button for "Project" column

@@ -80,7 +80,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectlyForAutomations
 	And Display order for 'Devices_Scope' automation 'Third_Action' action is '3'
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Automations" link on the Admin page
+	When User navigates to the 'Automations' left menu item
 	Then "Automations" page should be displayed to the user
 	When User enters "Devices_Scope" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
@@ -240,7 +240,7 @@ Scenario: EvergreenJnr_AdminPage_CheckParametersToCreateUpdatePathAction
 #Pre-requisites:
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Automations" link on the Admin page
+	When User navigates to the 'Automations' left menu item
 	Then "Automations" page should be displayed to the user
 	When User clicks the "CREATE AUTOMATION" Action button
 	Then "Create Automation" title is displayed on the Automations page
@@ -391,7 +391,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActions
 	#Pre-requisites:
 	And User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Automations" link on the Admin page
+	When User navigates to the 'Automations' left menu item
 	Then "Automations" page should be displayed to the user
 	When User clicks the "CREATE AUTOMATION" Action button
 	Then "Create Automation" title is displayed on the Automations page
@@ -458,7 +458,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdatingTaskWhichImpactsReadinessOwnerAndD
 	#Pre-requisites:
 	And User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Automations" link on the Admin page
+	When User navigates to the 'Automations' left menu item
 	Then "Automations" page should be displayed to the user
 	When User clicks the "CREATE AUTOMATION" Action button
 	When User enters '17234_Edinburgh_Automation' text to 'Automation Name' textbox
@@ -497,7 +497,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdatingTaskWhichImpactsReadinessOwnerAndD
 Scenario Outline: EvergreenJnr_AdminPage_CheckListOfProjectsOnTheCreateActionsPage
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Automations" link on the Admin page
+	When User navigates to the 'Automations' left menu item
 	Then "Automations" page should be displayed to the user
 	When User clicks the "CREATE AUTOMATION" Action button
 	When User enters '<AutomationName>' text to 'Automation Name' textbox
@@ -524,7 +524,7 @@ Examples:
 Scenario: EvergreenJnr_AdminPage_CheckThatUpdateTaskValueIsDisplayInAutomationsLog
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Automations" link on the Admin page
+	When User navigates to the 'Automations' left menu item
 	Then "Automations" page should be displayed to the user
 	When User clicks the "CREATE AUTOMATION" Action button
 	When User enters 'Test_Automation_17542' text to 'Automation Name' textbox
@@ -585,7 +585,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForRemoveTextValue
 	When User creates new Automation via API
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
 	| 17605_Automation | 17605       | true   | false              | All Devices | Manual |
-	When User clicks "Automations" link on the Admin page
+	When User navigates to the 'Automations' left menu item
 	Then "Automations" page should be displayed to the user
 	When User enters "17605_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
@@ -620,7 +620,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateDate
 	When User creates new Automation via API
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
 	| 17606_Automation | 17606       | true   | false              | All Devices | Manual |
-	When User clicks "Automations" link on the Admin page
+	When User navigates to the 'Automations' left menu item
 	Then "Automations" page should be displayed to the user
 	When User enters "17606_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column

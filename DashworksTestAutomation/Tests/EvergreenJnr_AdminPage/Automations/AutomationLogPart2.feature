@@ -57,7 +57,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInDeviceScope
 	When User creates new Automation via API
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope              | Run    |
 	| 17636_Automation | 17636       | true   | false              | New York - Devices | Manual |
-	When User clicks "Automations" link on the Admin page
+	When User navigates to the 'Automations' left menu item
 	Then "Automations" page should be displayed to the user
 	When User enters "17636_Automation" text in the Search field for "Automation" column
 	And User clicks content from "Automation" column
@@ -97,7 +97,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInMailboxScop
 	When User creates new Automation via API
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope                  | Run    |
 	| 17642_Automation | 17642       | true   | false              | Mailbox List (Complex) | Manual |
-	When User clicks "Automations" link on the Admin page
+	When User navigates to the 'Automations' left menu item
 	Then "Automations" page should be displayed to the user
 	When User enters "17642_Automation" text in the Search field for "Automation" column
 	And User clicks content from "Automation" column
@@ -139,7 +139,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInApplication
 	When User creates new Automation via API
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope              | Run    |
 	| 17643_Automation | 17643       | true   | false              | Apps with a Vendor | Manual |
-	When User clicks "Automations" link on the Admin page
+	When User navigates to the 'Automations' left menu item
 	Then "Automations" page should be displayed to the user
 	When User enters "17643_Automation" text in the Search field for "Automation" column
 	And User clicks content from "Automation" column
@@ -180,7 +180,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInDevicesScop
 	When User creates new Automation via API
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope              | Run    |
 	| 17799_Automation | 17799       | true   | false              | New York - Devices | Manual |
-	When User clicks "Automations" link on the Admin page
+	When User navigates to the 'Automations' left menu item
 	Then "Automations" page should be displayed to the user
 	When User enters "17799_Automation" text in the Search field for "Automation" column
 	And User clicks content from "Automation" column
@@ -230,7 +230,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedA
 	When User creates new Automation via API
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope                               | Run    |
 	| 17678_Automation | 17643       | true   | false              | Mailbox Readiness Columns & Filters | Manual |
-	When User clicks "Automations" link on the Admin page
+	When User navigates to the 'Automations' left menu item
 	Then "Automations" page should be displayed to the user
 	When User enters "17678_Automation" text in the Search field for "Automation" column
 	And User clicks content from "Automation" column
@@ -277,7 +277,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedA
 	#Update Action
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Automations" link on the Admin page
+	When User navigates to the 'Automations' left menu item
 	When User enters "17678_Automation" text in the Search field for "Automation" column
 	And User clicks content from "Automation" column
 	When User navigates to the 'Actions' left menu item
@@ -317,7 +317,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueAndOwnerInDev
 	When User creates new Automation via API
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope              | Run    |
 	| 17682_Automation | 17682       | true   | false              | New York - Devices | Manual |
-	When User clicks "Automations" link on the Admin page
+	When User navigates to the 'Automations' left menu item
 	Then "Automations" page should be displayed to the user
 	When User enters "17682_Automation" text in the Search field for "Automation" column
 	And User clicks content from "Automation" column
@@ -371,7 +371,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForRemoveOwnerAndTeamInDevi
 	When User creates new Automation via API
 	| AutomationName     | Description | Active | StopOnFailedAction | Scope              | Run    |
 	| 17682_Automation_2 | 17682       | true   | false              | New York - Devices | Manual |
-	When User clicks "Automations" link on the Admin page
+	When User navigates to the 'Automations' left menu item
 	Then "Automations" page should be displayed to the user
 	When User enters "17682_Automation_2" text in the Search field for "Automation" column
 	And User clicks content from "Automation" column
@@ -425,7 +425,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedA
 	When User creates new Automation via API
 	| AutomationName     | Description | Active | StopOnFailedAction | Scope                   | Run    |
 	| 17678_Automation_1 | 17643_1     | true   | false              | Users with Device Count | Manual |
-	When User clicks "Automations" link on the Admin page
+	When User navigates to the 'Automations' left menu item
 	Then "Automations" page should be displayed to the user
 	When User enters "17678_Automation_1" text in the Search field for "Automation" column
 	And User clicks content from "Automation" column
@@ -466,7 +466,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedA
 Scenario: EvergreenJnr_AdminPage_CheckThatClickingOnTheObjectsCountOpensTheCorrectFilteredList
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Automations" link on the Admin page
+	When User navigates to the 'Automations' left menu item
 	Then "Automations" page should be displayed to the user
 	When User selects "Automation Log" tab on the Project details page
 	And User enters "X-Proj Path Reset" text in the Search field for "Automation" column

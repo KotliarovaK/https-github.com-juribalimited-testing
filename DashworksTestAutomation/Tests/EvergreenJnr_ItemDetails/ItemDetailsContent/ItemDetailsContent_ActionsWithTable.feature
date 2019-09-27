@@ -815,7 +815,7 @@ Scenario: EvergreenJnr_DevicesList_CheckingThatInRangeOperatorWorkingCorrectly
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13335 @DAS14923 @DAS12963 @DAS16233 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckUpdatingDeviceBucketViaRelatedUserProjectSummaryWhenMailboxesSectionIsExpanded
 	When User clicks 'Admin' on the left-hand menu
-	When User clicks "Evergreen" link on the Admin page
+	When User navigates to the 'Evergreen' left menu item
 	When User navigates to the 'Buckets' left menu item
 	And User clicks the "CREATE EVERGREEN BUCKET" Action button
 	And User enters "AutoTestBucket_DAS_13335" in the "Bucket Name" field

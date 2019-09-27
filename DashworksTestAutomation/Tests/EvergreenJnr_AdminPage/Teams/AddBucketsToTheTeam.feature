@@ -16,7 +16,7 @@ Scenario: EvergreenJnr_AdminPage_AddingBucketsToTheTeam
 	| TestBucket7 | Team 1045 | false     |
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Teams" link on the Admin page
+	When User navigates to the 'Teams' left menu item
 	Then "Teams" page should be displayed to the user
 	When User enters "TestTeam5" text in the Search field for "Team" column
 	And User clicks content from "Team" column
@@ -45,7 +45,7 @@ Scenario: EvergreenJnr_AdminPage_AddingBucketsToTheTeam
 Scenario: EvergreenJnr_AdminPage_CheckBucketsSortingAndFiltersForTeams
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Teams" link on the Admin page
+	When User navigates to the 'Teams' left menu item
 	Then "Teams" page should be displayed to the user
 	When User enters "1803 Team" text in the Search field for "Team" column
 	And User clicks content from "Team" column

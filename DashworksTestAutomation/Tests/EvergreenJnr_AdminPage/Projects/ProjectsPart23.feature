@@ -15,7 +15,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatConvertButtonDisappearsAfterProjectCo
 	And User clicks the Switch to Evergreen link
 	And User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Projects" link on the Admin page
+	When User navigates to the 'Projects' left menu item
 	When User enters "DAS14819Project" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User clicks Converts to Evergreen button
@@ -39,13 +39,13 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectCountersDisplayedInRingGridFor
 	And User clicks the Switch to Evergreen link
 	And User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Projects" link on the Admin page
+	When User navigates to the 'Projects' left menu item
 	And User enters "DAS15260Project" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Details' left menu item
 	And User converts project to evergreen project
 	And User clicks 'Admin' on the left-hand menu
-	And User clicks "Projects" link on the Admin page
+	And User navigates to the 'Projects' left menu item
 	And User enters "DAS15260Project" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User selects "Scope Changes" tab on the Project details page
@@ -68,7 +68,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectCountersDisplayedInRingGridFor
 	And User waits until Queue disappears
 	And User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Evergreen" link on the Admin page
+	When User navigates to the 'Evergreen' left menu item
 	When User navigates to the 'Rings' left menu item
 	And User clicks String Filter button for "Project" column on the Admin page
 	And User selects "Evergreen" checkbox from String Filter with item list on the Admin page
@@ -85,7 +85,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectCountersDisplayedInRingGridFor
 @Evergreen @Admin @EvergreenJnr_AdminPage @Projects @DAS12389 @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatCorrectPageDisplayedWhenOpeningNotExistingProjectPage
 	When User clicks 'Admin' on the left-hand menu
-	And User clicks "Projects" link on the Admin page
+	And User navigates to the 'Projects' left menu item
 	And User tries to open not existing page
 	Then Page not found displayed for the user
 	And There are only 'Page not found' errors in console

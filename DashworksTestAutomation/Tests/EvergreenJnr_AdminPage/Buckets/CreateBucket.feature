@@ -9,7 +9,7 @@ Background: Pre-Conditions
 Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedBucketUsingTheSpaceAsAFirstSymbol
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Evergreen" link on the Admin page
+	When User navigates to the 'Evergreen' left menu item
 	Then "Buckets" page should be displayed to the user
 	When User clicks the "CREATE EVERGREEN BUCKET" Action button
 	Then "Create Evergreen Bucket" page should be displayed to the user
@@ -29,7 +29,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedBucketUsing
 Scenario: EvergreenJnr_AdminPage_CreatingDefaultBucket
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Evergreen" link on the Admin page
+	When User navigates to the 'Evergreen' left menu item
 	Then "Buckets" page should be displayed to the user
 	When User enters "Unassigned" text in the Search field for "Bucket" column
 	Then 'TRUE' content is displayed in the 'Default' column
@@ -49,7 +49,7 @@ Scenario: EvergreenJnr_AdminPage_CreatingDefaultBucket
 Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyBucketName
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Evergreen" link on the Admin page
+	When User navigates to the 'Evergreen' left menu item
 	Then "Buckets" page should be displayed to the user
 	Then Search fields for "Devices" column contain correctly value
 	Then Search fields for "Users" column contain correctly value

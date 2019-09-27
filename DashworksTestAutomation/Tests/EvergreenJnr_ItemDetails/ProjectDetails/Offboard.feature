@@ -25,7 +25,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectly
 	#going to check the object state
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Projects" link on the Admin page
+	When User navigates to the 'Projects' left menu item
 	Then "Projects" page should be displayed to the user
 	When User enters "<ProjectName>" text in the Search field for "Project" column
 	And User clicks content from "Project" column
@@ -60,7 +60,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectly
 	#going to check the object state
 	And User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Projects" link on the Admin page
+	When User navigates to the 'Projects' left menu item
 	Then "Projects" page should be displayed to the user
 	When User enters "<ProjectName>" text in the Search field for "Project" column
 	And User clicks content from "Project" column

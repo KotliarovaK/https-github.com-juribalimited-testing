@@ -114,7 +114,7 @@ Scenario: EvergreenJnr_AdminPage_AddingAndDeletingPermissionsForMailboxProject
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13205 @Cleanup @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThatBannerDisplaysOnScopeDetailsPage
 	When User clicks 'Admin' on the left-hand menu
-	And User clicks "Projects" link on the Admin page
+	And User navigates to the 'Projects' left menu item
 	And User clicks the "CREATE PROJECT" Action button
 	And User enters "TestName13205" in the "Project Name" field
 	And User selects 'All Devices' option from 'Scope' autocomplete
@@ -148,7 +148,7 @@ Scenario: EvergreenJnr_AdminPage_AddingRequestTypesAndCategories
 	When User navigate to Evergreen link
 	And User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Projects" link on the Admin page
+	When User navigates to the 'Projects' left menu item
 	Then "Projects" page should be displayed to the user
 	When User enters "TestName18" text in the Search field for "Project" column
 	And User clicks content from "Project" column

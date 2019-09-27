@@ -12,7 +12,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMessageThatDisplayedWhenDeletingBucket
 	| TestBucket4 | Team 1045 | false     |
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Evergreen" link on the Admin page
+	When User navigates to the 'Evergreen' left menu item
 	Then "Buckets" page should be displayed to the user
 	When User clicks Reset Filters button on the Admin page
 	And User enters "Amsterdam" text in the Search field for "Bucket" column
@@ -47,7 +47,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMessageThatDisplayedWhenDeletingBucket
 Scenario: EvergreenJnr_AdminPage_ChecksThatSpellingIsCorrectInBucketDeletionMessages
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Evergreen" link on the Admin page
+	When User navigates to the 'Evergreen' left menu item
 	Then "Buckets" page should be displayed to the user
 	When User select "Bucket" rows in the grid
 	| SelectedRowsName   |
@@ -66,13 +66,13 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSpellingIsCorrectInBucketDeletionMess
 Scenario: EvergreenJnr_AdminPage_CheckThatSpecificWarningMessageIsNotDisplayedAfterTryingToDeleteNonDefaultBucket
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Evergreen" link on the Admin page
+	When User navigates to the 'Evergreen' left menu item
 	Then "Buckets" page should be displayed to the user
 	When User clicks Reset Filters button on the Admin page
 	When User enters "Administration" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
 	Then Default Bucket checkbox is selected
-	When User clicks "Evergreen" link on the Admin page
+	When User navigates to the 'Evergreen' left menu item
 	Then "Buckets" page should be displayed to the user
 	When User clicks Reset Filters button on the Admin page
 	And User enters "Chicago" text in the Search field for "Bucket" column
@@ -92,7 +92,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatWarningNotificationIsDisappearedAfter
 	| 2Bucket12331 | K-Team   | false     |
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Evergreen" link on the Admin page
+	When User navigates to the 'Evergreen' left menu item
 	Then "Buckets" page should be displayed to the user
 	When User select "Bucket" rows in the grid
 	| SelectedRowsName |

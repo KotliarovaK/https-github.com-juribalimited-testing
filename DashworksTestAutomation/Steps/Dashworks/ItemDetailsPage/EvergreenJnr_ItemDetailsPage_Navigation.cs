@@ -64,13 +64,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             _driver.ExecuteAction(() => detailsPage.GetNavigationLinkByName(linkName).Click());
         }
 
-        [When(@"User navigates to the '(.*)' left menu item")]
-        public void WhenUserNavigatesToTheLeftMenuItem(string tabMenuName)
-        {
-            var detailsPage = _driver.NowAt<BaseNavigationElements>();
-            _driver.ExecuteAction(() => detailsPage.GetTabMenuByName(tabMenuName).Click());
-        }
-
         [Then(@"Loading indicator appears in the same place when switching between main-menu")]
         public void LoadingIndicatorAppearsInTheSamePlaceWhenSwitchingBetweenMainMenu()
         {
@@ -186,7 +179,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             var detailsPage = _driver.NowAt<BaseNavigationElements>();
 
             //opens main-menu 
-            //_driver.ExecuteAction(() => detailsPage.GetTabMenuByName(tabMenuName).Click());
+            //_driver.ExecuteAction(() => detailsPage.GetLeftMenuByName(tabMenuName).Click());
             _driver.WaitForDataLoading();
             foreach (var row in table.Rows)
                 Verify.IsTrue(detailsPage.GetDisplayStatusSubTabByName(row["SubTabName"]), $"'{row["SubTabName"]}' tab is not displayed!");
@@ -197,7 +190,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         {
             var detailsPage = _driver.NowAt<BaseNavigationElements>();
 
-            _driver.ExecuteAction(() => detailsPage.GetTabMenuByName(tabMenuName).Click());
+            _driver.ExecuteAction(() => detailsPage.GetLeftMenuByName(tabMenuName).Click());
             foreach (var row in table.Rows)
             {
                 if (!string.IsNullOrEmpty(row["CountOfItems"]))

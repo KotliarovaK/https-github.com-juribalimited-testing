@@ -8,7 +8,7 @@ Background: Pre-Conditions
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11944 @Teams
 Scenario: EvergreenJnr_AdminPage_CheckSelectedRowsCountDisplayingOnTeamsGrids
 	When User clicks 'Admin' on the left-hand menu
-	And User clicks "Teams" link on the Admin page
+	And User navigates to the 'Teams' left menu item
 	And User selects all rows on the grid
 	Then Rows counter shows more than "2794" found rows of all rows
 	When User enters "IB Team" text in the Search field for "Team" column
@@ -23,7 +23,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSelectedRowsCountDisplayingOnTeamsGrids
 Scenario: EvergreenJnr_AdminPage_CheckThatPanelOfAvailableMemberslIsExpandedByDefault
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Teams" link on the Admin page
+	When User navigates to the 'Teams' left menu item
 	Then "Teams" page should be displayed to the user
 	When User enters "K-Team" text in the Search field for "Team" column
 	And User clicks content from "Team" column

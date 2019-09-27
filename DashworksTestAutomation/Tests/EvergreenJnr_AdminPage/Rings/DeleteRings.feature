@@ -8,7 +8,7 @@ Background: Pre-Conditions
 @Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS14867 @DAS15417 @DAS16694 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorDisplayedWhenDeletingRing
 	When User clicks 'Admin' on the left-hand menu
-	And User clicks "Projects" link on the Admin page
+	And User navigates to the 'Projects' left menu item
 	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Rings' left menu item

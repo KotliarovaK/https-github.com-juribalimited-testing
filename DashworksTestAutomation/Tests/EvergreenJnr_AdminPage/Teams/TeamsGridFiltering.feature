@@ -8,7 +8,7 @@ Background: Pre-Conditions
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12491 @Teams
 Scenario: EvergreenJnr_AdminPage_CheckThatSingularFoundItemLabelDisplaysOnActionsToolbarforTeamsList
 	When User clicks 'Admin' on the left-hand menu
-	And User clicks "Teams" link on the Admin page
+	And User navigates to the 'Teams' left menu item
 	And User enters "K-Team" text in the Search field for "Team" column
 	Then Rows counter contains "2" found row of all rows
 
@@ -16,7 +16,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSingularFoundItemLabelDisplaysOnAction
 Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteDataFromFilterTextFieldForTeams
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Teams" link on the Admin page
+	When User navigates to the 'Teams' left menu item
 	Then "Teams" page should be displayed to the user
 	When User have opened Column Settings for "Team" column
 	And User clicks Filter button in the Column Settings panel on the Teams Page

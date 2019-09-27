@@ -49,11 +49,11 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueAutomationValidationsForDel
 	And User clicks the "CREATE" Action button
 	#Create Action
 	When User clicks "Automations" navigation link on the Admin page
-	When User clicks "Projects" link on the Admin page
+	When User navigates to the 'Projects' left menu item
 	And User enters "17429Project" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
-	When User clicks "Automations" link on the Admin page
+	When User navigates to the 'Automations' left menu item
 	When User enters "17429_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
 	Then Automation page is displayed correctly
@@ -119,7 +119,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueAutomationValidationsForDel
 	And Success message is displayed with "Stage successfully deleted." text
 	When User navigate to Evergreen link
 	And User clicks Admin on the left-hand menu
-	When User clicks "Automations" link on the Admin page
+	When User navigates to the 'Automations' left menu item
 	When User enters "17429_Automation1" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
 	Then Automation page is displayed correctly
@@ -183,7 +183,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueAutomationValidationsForDel
 	When User removes "17429_Task2" Task
 	When User navigate to Evergreen link
 	And User clicks Admin on the left-hand menu
-	When User clicks "Automations" link on the Admin page
+	When User navigates to the 'Automations' left menu item
 	When User enters "17429_Automation2" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
 	Then Automation page is displayed correctly

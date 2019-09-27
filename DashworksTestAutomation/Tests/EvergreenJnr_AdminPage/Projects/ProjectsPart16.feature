@@ -143,7 +143,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	Then Evergreen Dashboards page should be displayed to the user
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Projects" link on the Admin page
+	When User navigates to the 'Projects' left menu item
 	Then "Projects" page should be displayed to the user
 	When User enters "Project13390" text in the Search field for "Project" column
 	And User clicks content from "Project" column
@@ -243,7 +243,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectAllCheckboxIsWorkingCorrectlyOnA
 	| 3Checkbox11758 | All Users | None            | Standalone Project |
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Projects" link on the Admin page
+	When User navigates to the 'Projects' left menu item
 	Then created Project with "1Checkbox11758" name is displayed correctly
 	And created Project with "2Checkbox11758" name is displayed correctly
 	And created Project with "3Checkbox11758" name is displayed correctly

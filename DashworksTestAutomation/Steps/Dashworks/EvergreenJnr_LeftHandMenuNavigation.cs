@@ -11,11 +11,11 @@ using TechTalk.SpecFlow;
 namespace DashworksTestAutomation.Steps.Dashworks
 {
     [Binding]
-    internal class EvergreenJnr_LeftMenuNavigation : SpecFlowContext
+    internal class EvergreenJnr_LeftHandMenuNavigation : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
 
-        public EvergreenJnr_LeftMenuNavigation(RemoteWebDriver driver)
+        public EvergreenJnr_LeftHandMenuNavigation(RemoteWebDriver driver)
         {
             _driver = driver;
         }

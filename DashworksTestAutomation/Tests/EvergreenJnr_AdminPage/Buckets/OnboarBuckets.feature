@@ -26,7 +26,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedObjectsAreDisplayedAfterChang
 	Then Success message is displayed and contains "2 objects queued for onboarding, 0 objects offboarded" text
 	Then "Devices 0/0" is displayed in the tab header on the Admin page
 	When User click on Back button
-	And User clicks "Teams" link on the Admin page
+	And User navigates to the 'Teams' left menu item
 	Then "Teams" page should be displayed to the user
 	When User enters "My Team" text in the Search field for "Team" column
 	And User clicks content from "Team" column

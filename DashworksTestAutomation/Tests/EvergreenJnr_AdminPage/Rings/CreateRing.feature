@@ -8,7 +8,7 @@ Background: Pre-Conditions
 @Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS14901 @DAS16803 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatOneRingAddeddAfterMulticlickingCreateButton
 	When User clicks 'Admin' on the left-hand menu
-	When User clicks "Evergreen" link on the Admin page
+	When User navigates to the 'Evergreen' left menu item
 	When User navigates to the 'Rings' left menu item
 	And User clicks the "CREATE EVERGREEN RING" Action button
 	And User type "OneRing" Name in the "Ring name" field on the Project details page
@@ -38,7 +38,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorDisplayedWhenCreatingRin
 	And User clicks Create button on the Create Ring page
 	Then Success message is displayed and contains "The ring has been created" text
 	When User clicks 'Admin' on the left-hand menu
-	And User clicks "Projects" link on the Admin page
+	And User navigates to the 'Projects' left menu item
 	And User enters "NewProject15397" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Rings' left menu item

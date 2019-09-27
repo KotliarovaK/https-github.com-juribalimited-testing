@@ -10,7 +10,7 @@ Background: Pre-Conditions
 Scenario: EvergreenJnr_AdminPage_CheckThatAutomationsLogGridLoads
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Automations" link on the Admin page
+	When User navigates to the 'Automations' left menu item
 	Then "Automations" page should be displayed to the user
 	When User selects "Automation Log" tab on the Project details page
 	Then "Automations" sub-menu section is expanded
@@ -59,7 +59,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationsLogGridLoads
 Scenario: EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Automations" link on the Admin page
+	When User navigates to the 'Automations' left menu item
 	Then "Automations" page should be displayed to the user
 	Then Columns on Admin page is displayed in following order:
 	| ColumnName  |
@@ -122,7 +122,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuIsWorkedCorrectly
 	| 15431_First_Inactive  | DAS15431    | false  | false              | All Users | Manual |
 	| 15431_Second_Inactive | DAS15431    | false  | false              | All Users | Manual |
 	| 15431_Third_Active    | DAS15431    | true   | false              | All Users | Manual |
-	When User clicks "Automations" link on the Admin page
+	When User navigates to the 'Automations' left menu item
 	Then "Automations" page should be displayed to the user
 	#First inactive automation
 	When User clicks Cog-menu for "15431_First_Inactive" item on Admin page
@@ -185,7 +185,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuIsWorkedCorrectly
 Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToTopOptionWorksCorrectly
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Automations" link on the Admin page
+	When User navigates to the 'Automations' left menu item
 	Then "Automations" page should be displayed to the user
 	When User have opened column settings for "Automation" column
 	And User clicks Column button on the Column Settings panel
@@ -216,7 +216,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToTopOptionWorksC
 	| AM 150419 II |
 	| Add data     |
 	When User clicks "Administration" navigation link on the Admin page
-	When User clicks "Automations" link on the Admin page
+	When User navigates to the 'Automations' left menu item
 	Then "Automations" page should be displayed to the user
 	When User have opened column settings for "Automation" column
 	And User clicks Column button on the Column Settings panel
@@ -233,7 +233,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToTopOptionWorksC
 Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToBottomOptionWorksCorrectly
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Automations" link on the Admin page
+	When User navigates to the 'Automations' left menu item
 	Then "Automations" page should be displayed to the user
 	When User have opened column settings for "Automation" column
 	And User clicks Column button on the Column Settings panel
@@ -275,7 +275,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToBottomOptionWor
 	| AM Test 1     |
 	| AM 150419 II  |
 	When User clicks "Administration" navigation link on the Admin page
-	When User clicks "Automations" link on the Admin page
+	When User navigates to the 'Automations' left menu item
 	Then "Automations" page should be displayed to the user
 	When User have opened column settings for "Automation" column
 	And User clicks Column button on the Column Settings panel
@@ -294,7 +294,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToBottomOptionWor
 Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToPositionOptionWorksCorrectly
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Automations" link on the Admin page
+	When User navigates to the 'Automations' left menu item
 	Then "Automations" page should be displayed to the user
 	When User have opened column settings for "Automation" column
 	And User clicks Column button on the Column Settings panel
@@ -343,7 +343,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeleteOptionForAutomationsCogmenuWorks
 #Use specific Automation (Delay) that run longer
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Automations" link on the Admin page
+	When User navigates to the 'Automations' left menu item
 	Then "Automations" page should be displayed to the user
 #change item name when state status will be fixed
 	When User clicks "Run now" option in Cog-menu for "DELAY - do not delete3" item on Admin page
@@ -358,7 +358,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeleteOptionForAutomationsCogmenuWorks
 	Then Evergreen Dashboards page should be displayed to the user
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Automations" link on the Admin page
+	When User navigates to the 'Automations' left menu item
 	Then "Automations" page should be displayed to the user
 	When User enters "DELAY - do not delete3" text in the Search field for "Automation" column
 	When User selects all rows on the grid
@@ -382,7 +382,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeleteOptionForAutomationsCogmenuWorks
 Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridLoadsWithActionsForAnAutomation
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Automations" link on the Admin page
+	When User navigates to the 'Automations' left menu item
 	Then "Automations" page should be displayed to the user
 	When User enters "AM 030619 Devices 145" text in the Search field for "Automation" column
 	Then "3" content is displayed in "Actions" column
@@ -437,7 +437,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridLoadsWithActionsForAnAutoma
 Scenario: EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Automations" link on the Admin page
+	When User navigates to the 'Automations' left menu item
 	Then "Automations" page should be displayed to the user
 	When User clicks the "CREATE AUTOMATION" Action button
 	Then "Create Automation" title is displayed on the Automations page
@@ -480,7 +480,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality
 Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeListIsLoadedWithCorrectLists
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Automations" link on the Admin page
+	When User navigates to the 'Automations' left menu item
 	Then "Automations" page should be displayed to the user
 	When User enters "AM 030619 Mailboxes 1" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
@@ -501,7 +501,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextFor
 	And User create dynamic list with "DAS15423_List" name on "Devices" page
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Automations" link on the Admin page
+	When User navigates to the 'Automations' left menu item
 	Then "Automations" page should be displayed to the user
 	When User clicks the "CREATE AUTOMATION" Action button
 	When User enters 'DAS15423_Automation' text to 'Automation Name' textbox
@@ -520,7 +520,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextFor
 	When User removes custom list with "DAS15423_List" name
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Automations" link on the Admin page
+	When User navigates to the 'Automations' left menu item
 	When User enters "DAS15423_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
 	Then Automation page is displayed correctly
@@ -547,7 +547,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextFor
 Scenario: EvergreenJnr_AdminPage_CheckRunNowFunctionalityToRunMoreThanOneAutomation
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Automations" link on the Admin page
+	When User navigates to the 'Automations' left menu item
 	Then "Automations" page should be displayed to the user
 	When User enters "Test_Automation" text in the Search field for "Automation" column
 	When User selects all rows on the grid
@@ -567,7 +567,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRunNowFunctionalityToRunMoreThanOneAutomat
 Scenario: EvergreenJnr_AdminPage_CheckRunNowfunctionalityInBulkActions
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Automations" link on the Admin page
+	When User navigates to the 'Automations' left menu item
 	Then "Automations" page should be displayed to the user
 	When User enters "DAS-15949 - all users scope" text in the Search field for "Automation" column
 	When User selects all rows on the grid
@@ -589,7 +589,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRunNowfunctionalityInBulkActions
 Scenario: EvergreenJnr_AdminPage_CheckUpdateAndCreateActionsFunctionalityForAutomationThatIsRunning
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Automations" link on the Admin page
+	When User navigates to the 'Automations' left menu item
 	Then "Automations" page should be displayed to the user
 	When User enters "Delay" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "DELAY - do not delete" item on Admin page
@@ -683,7 +683,7 @@ Scenario: EvergreenJnr_AdminPage_ChechAutomationsPermissionsForScopeDropdownList
 	Then Evergreen Dashboards page should be displayed to the user
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Automations" link on the Admin page
+	When User navigates to the 'Automations' left menu item
 	Then "Automations" page should be displayed to the user
 	When User clicks the "CREATE AUTOMATION" Action button
 	When User selects '17003_List' option from 'Scope' autocomplete
@@ -718,7 +718,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeviceLisFiltertHasAppropriateAutomati
 	And User selects 'Desktop Replacement' option from 'Path' autocomplete
 	And User clicks the "CREATE" Action button
 	#run automation
-	And User clicks "Automations" link on the Admin page
+	And User navigates to the 'Automations' left menu item
 	And User clicks "Run now" option in Cog-menu for "DAS15949_Automation" item on Admin page and wait for processing
 	#cjheck filters
 	And User clicks 'Devices' on the left-hand menu
@@ -737,7 +737,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeviceLisFiltertHasAppropriateAutomati
 	Then "5,179" rows are displayed in the agGrid
 	#check log
 	When User clicks 'Admin' on the left-hand menu
-	And User clicks "Automations" link on the Admin page
+	And User navigates to the 'Automations' left menu item
 	And User selects "Automation Log" tab on the Project details page
 	And User enters "DAS15949_Automation" text in the Search field for "Automation" column
 	And User clicks String Filter button for "Action" column on the Admin page

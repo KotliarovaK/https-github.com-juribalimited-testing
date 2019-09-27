@@ -30,7 +30,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDevicesAreAddedCorrectly
 	And Success message with "5 updates have been queued" text is displayed on Action panel
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Evergreen" link on the Admin page
+	When User navigates to the 'Evergreen' left menu item
 	And User navigates to the 'Capacity Units' left menu item
 	Then "Capacity Units" page should be displayed to the user
 	When User enters "CapacityUnit12141Devices" text in the Search field for "Capacity Unit" column
@@ -61,7 +61,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatUsersAreAddedCorrectly
 	And Success message with "5 updates have been queued" text is displayed on Action panel
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Evergreen" link on the Admin page
+	When User navigates to the 'Evergreen' left menu item
 	And User navigates to the 'Capacity Units' left menu item
 	Then "Capacity Units" page should be displayed to the user
 	When User enters "CapacityUnit12141Users" text in the Search field for "Capacity Unit" column
@@ -92,7 +92,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatApplicationsAreAddedCorrectly
 	And Success message with "5 updates have been queued" text is displayed on Action panel
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Evergreen" link on the Admin page
+	When User navigates to the 'Evergreen' left menu item
 	And User navigates to the 'Capacity Units' left menu item
 	Then "Capacity Units" page should be displayed to the user
 	When User enters "CapacityUnit12141Applications" text in the Search field for "Capacity Unit" column
@@ -123,7 +123,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatMailboxesAreAddedCorrectly
 	And Success message with "5 updates have been queued" text is displayed on Action panel
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Evergreen" link on the Admin page
+	When User navigates to the 'Evergreen' left menu item
 	And User navigates to the 'Capacity Units' left menu item
 	Then "Capacity Units" page should be displayed to the user
 	When User enters "CapacityUnit12141Mailboxes" text in the Search field for "Capacity Unit" column

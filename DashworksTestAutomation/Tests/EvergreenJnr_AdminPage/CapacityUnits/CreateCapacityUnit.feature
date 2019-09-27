@@ -9,7 +9,7 @@ Background: Pre-Conditions
 Scenario: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCreatedCorrectly
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Evergreen" link on the Admin page
+	When User navigates to the 'Evergreen' left menu item
 	And User navigates to the 'Capacity Units' left menu item
 	Then "Capacity Units" page should be displayed to the user
 	When User clicks the "CREATE EVERGREEN CAPACITY UNIT" Action button
@@ -44,7 +44,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitsCreatedCorrectly
 	When User creates new Capacity Unit via api
 	| Name                     | Description | IsDefault |
 	| DefaultCapacityUnit13720 | 13720       | true      |
-	And User clicks "Evergreen" link on the Admin page
+	And User navigates to the 'Evergreen' left menu item
 	And User navigates to the 'Capacity Units' left menu item
 	Then 'DefaultCapacityUnit13720' content is displayed in the 'Capacity Unit' column
 	When User enters "DefaultCapacityUnit13720" text in the Search field for "Capacity Unit" column
@@ -74,7 +74,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatMessageAppearsWhenUserCreatesUnitWith
 	And User creates new Capacity Unit via api
 	| Name                  | Description           | IsDefault |
 	| SameNameCaseSensative | SameNameCaseSensative | false     |
-	And User clicks "Evergreen" link on the Admin page
+	And User navigates to the 'Evergreen' left menu item
 	And User navigates to the 'Capacity Units' left menu item
 	When User clicks the "CREATE EVERGREEN CAPACITY UNIT" Action button
 	And User type "samenamecaseSensative" Name in the "Capacity Unit Name" field on the Project details page

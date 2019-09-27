@@ -14,7 +14,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFillingFieldErrorIsNotDisplayed
 	And User create dynamic list with "DAS16816_List" name on "Users" page
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Projects" link on the Admin page
+	When User navigates to the 'Projects' left menu item
 	Then "Projects" page should be displayed to the user
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
@@ -30,7 +30,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFillingFieldErrorIsNotDisplayed
 	And User create dynamic list with "DAS16816_MailboxesList" name on "Mailboxes" page
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Projects" link on the Admin page
+	When User navigates to the 'Projects' left menu item
 	Then "Projects" page should be displayed to the user
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
@@ -46,7 +46,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFillingFieldErrorIsNotDisplayed
 	And User create dynamic list with "DAS16816_DevicesList" name on "Devices" page
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Projects" link on the Admin page
+	When User navigates to the 'Projects' left menu item
 	Then "Projects" page should be displayed to the user
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
@@ -60,7 +60,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFillingFieldErrorIsNotDisplayed
 Scenario: EvergreenJnr_AdminPage_CheckThatTrueValueDisplayedInGridForEvergreenProject
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Projects" link on the Admin page
+	When User navigates to the 'Projects' left menu item
 	Then "Projects" page should be displayed to the user
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
@@ -93,7 +93,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRedErrorMessageOnScopeChangesIfBrokenListI
 	| Application List (Complex) - BROKEN LIST | Entitled to device |
 	When User update current custom list
 	When User clicks 'Admin' on the left-hand menu
-	When User clicks "Projects" link on the Admin page
+	When User navigates to the 'Projects' left menu item
 	When User enters "17122_Project" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	Then "The scope changes could not be loaded, there may be an error with one of the lists referred to in the scope details" error in the Scope Changes displayed to the User

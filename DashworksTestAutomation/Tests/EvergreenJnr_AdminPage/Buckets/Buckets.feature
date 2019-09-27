@@ -131,7 +131,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketA
 	And User navigates to newly created Bucket
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Evergreen" link on the Admin page
+	When User navigates to the 'Evergreen' left menu item
 	Then "Buckets" page should be displayed to the user
 	When User enters "1Bucket12905" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
@@ -173,7 +173,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketA
 	| 00KWQ4J3WKQM0G  |
 	| 00OMQQXWA1DRI6  |
 	When User click on Back button
-	When User clicks "Projects" link on the Admin page
+	When User navigates to the 'Projects' left menu item
 	Then "Projects" page should be displayed to the user
 	When User enters "Project12905" text in the Search field for "Project" column
 	And User clicks content from "Project" column
@@ -197,7 +197,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketA
 	And User clicks the "UPDATE PROJECT" Action button
 	Then Success message is displayed and contains "10 objects queued for onboarding, 0 objects offboarded" text
 	When User click on Back button
-	When User clicks "Evergreen" link on the Admin page
+	When User navigates to the 'Evergreen' left menu item
 	Then "Buckets" page should be displayed to the user
 	When User clicks refresh button in the browser
 	When User clicks String Filter button for "Project" column on the Admin page
@@ -230,7 +230,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketA
 	When User selects "Project12905" checkbox from String Filter on the Admin page
 	When User enters "Unassigned" text in the Search field for "Bucket" column
 	Then "10" content is displayed in "Devices" column
-	When User clicks "Projects" link on the Admin page
+	When User navigates to the 'Projects' left menu item
 	Then "Projects" page should be displayed to the user
 	When User enters "Project12905" text in the Search field for "Project" column
 	And User clicks content from "Project" column

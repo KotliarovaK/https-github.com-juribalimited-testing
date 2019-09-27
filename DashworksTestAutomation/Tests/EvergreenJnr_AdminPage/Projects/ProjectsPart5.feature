@@ -9,7 +9,7 @@ Background: Pre-Conditions
 Scenario: EvergreenJnr_AdminPage_CheckThatEmptyGreenAlertLineIsNotDisplayedOnProjectScopeChangesPageAfterMakingSomeChangesOnScopePage
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Projects" link on the Admin page
+	When User navigates to the 'Projects' left menu item
 	Then "Projects" page should be displayed to the user
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
@@ -47,7 +47,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopePanelHaveCorrectlySizeWhenUsedLis
 	Then "VERYLONGLOOOOOOOOOOOOOOOOOOOOOOOOONGNAME" list is displayed to user
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Projects" link on the Admin page
+	When User navigates to the 'Projects' left menu item
 	Then "Projects" page should be displayed to the user
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
@@ -104,7 +104,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThat500ISEInvalidColumnNameIsNotDisplayedW
 Scenario: EvergreenJnr_AdminPage_CheckThatErrorIsNotDisplayedWhenCreatingProjectWithCloneEvergreenBucketsToProjectBuckets
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Projects" link on the Admin page
+	When User navigates to the 'Projects' left menu item
 	Then "Projects" page should be displayed to the user
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
@@ -114,7 +114,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorIsNotDisplayedWhenCreatingProject
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	And There are no errors in the browser console
-	When User clicks "Evergreen" link on the Admin page
+	When User navigates to the 'Evergreen' left menu item
 	When User navigates to the 'Buckets' left menu item
 	When User clicks String Filter button for "Project" column on the Admin page
 	When User selects "Evergreen" checkbox from String Filter with item list on the Admin page
@@ -125,7 +125,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorIsNotDisplayedWhenCreatingProject
 	And User select "Maps to Evergreen" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
 	Then "Unassigned" content is displayed in "Maps to Evergreen" column
-	When User clicks "Evergreen" link on the Admin page
+	When User navigates to the 'Evergreen' left menu item
 	When User navigates to the 'Capacity Units' left menu item
 	When User clicks String Filter button for "Project" column on the Admin page
 	When User selects "Evergreen" checkbox from String Filter with item list on the Admin page
@@ -136,7 +136,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorIsNotDisplayedWhenCreatingProject
 	And User select "Maps to Evergreen" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
 	Then "Unassigned" content is displayed in "Maps to Evergreen" column
-	When User clicks "Projects" link on the Admin page
+	When User navigates to the 'Projects' left menu item
 	When User enters "TestProject22" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item

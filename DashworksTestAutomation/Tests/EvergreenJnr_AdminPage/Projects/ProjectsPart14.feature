@@ -11,14 +11,14 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameWhichStartsWithLowerCaseLe
 	| ProjectName  | Scope       | ProjectTemplate | Mode               |
 	| project12949 | All Devices | None            | Standalone Project |
 	When User clicks 'Admin' on the left-hand menu
-	And User clicks "Evergreen" link on the Admin page
+	And User navigates to the 'Evergreen' left menu item
 	And User navigates to the 'Buckets' left menu item
 	Then "Buckets" page should be displayed to the user
 	When User clicks String Filter button for "Project" column on the Admin page
 	Then Projects in filter dropdown are displayed in alphabetical order
 	When User clicks String Filter button for "Owned By Team" column on the Admin page
 	Then Teams in filter dropdown are displayed in alphabetical order
-	When User clicks "Projects" link on the Admin page
+	When User navigates to the 'Projects' left menu item
 	Then "Projects" page should be displayed to the user
 	When User enters "project12949" text in the Search field for "Project" column
 	And User clicks content from "Project" column
@@ -65,11 +65,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatRelatedBucketsAreUpdatedAfterCreatingO
 	| ProjectName     | Scope       | ProjectTemplate | Mode               |
 	| 1DevicesProject | All Devices | None            | Standalone Project |
 	And User clicks 'Admin' on the left-hand menu
-	And User clicks "Evergreen" link on the Admin page
+	And User navigates to the 'Evergreen' left menu item
 	And User navigates to the 'Buckets' left menu item
 	#Remove after Buckets loaded faster
-	And User clicks "Teams" link on the Admin page
-	And User clicks "Evergreen" link on the Admin page
+	And User navigates to the 'Teams' left menu item
+	And User navigates to the 'Evergreen' left menu item
 	And User navigates to the 'Buckets' left menu item
 	Then "Buckets" page should be displayed to the user
 	When User clicks Reset Filters button on the Admin page
@@ -78,12 +78,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatRelatedBucketsAreUpdatedAfterCreatingO
 	And User clicks String Filter button for "Project" column on the Admin page
 	And User selects "1DevicesProject" checkbox from String Filter with item list on the Admin page
 	Then 'Unassigned' content is displayed in the 'Bucket' column
-	When User clicks "Projects" link on the Admin page
+	When User navigates to the 'Projects' left menu item
 	Then "Projects" page should be displayed to the user
 	When User enters "1DevicesProject" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
-	And User clicks "Evergreen" link on the Admin page
+	And User navigates to the 'Evergreen' left menu item
 	And User navigates to the 'Buckets' left menu item
 	Then "Buckets" page should be displayed to the user
 	When User clicks String Filter button for "Project" column on the Admin page
