@@ -159,7 +159,7 @@ this.FeatureBackground();
 #line 16
  testRunner.And("User navigates to the \'Capacity Units\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 17
- testRunner.Then("\'Capacity Units\' page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Page with \'Capacity Units\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 18
  testRunner.When("User enters \"Capacity Unit Settings\" text in the Search field for \"Capacity Unit\"" +
                     " column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

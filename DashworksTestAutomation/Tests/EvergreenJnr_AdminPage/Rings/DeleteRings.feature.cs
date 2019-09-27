@@ -145,7 +145,7 @@ this.FeatureBackground();
 #line 15
  testRunner.And("User clicks \'CREATE PROJECT RING\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 16
- testRunner.Then("\'Create Project Ring\' page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Page with \'Create Project Ring\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 17
  testRunner.When("User type \"TestRing\" Name in the \"Ring name\" field on the \'Windows 7 Migration (C" +
                     "omputer Scheduled Project)\' Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

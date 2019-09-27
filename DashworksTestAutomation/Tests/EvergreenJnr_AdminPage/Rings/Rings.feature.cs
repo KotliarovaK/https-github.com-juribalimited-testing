@@ -406,7 +406,7 @@ this.FeatureBackground();
 #line 83
  testRunner.And("User navigates to the \'Rings\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 84
- testRunner.Then("\'Rings\' page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Page with \'Rings\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 85
  testRunner.When("User clicks Group By button on the Admin page and selects \"Ring\" value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 86
