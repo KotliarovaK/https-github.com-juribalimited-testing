@@ -19,7 +19,7 @@ Scenario: EvergreenJnr_UsersLists_CheckThatComplianceColumnsDisplayInTheCorrectO
 	And User selects the following Values on Pivot:
 	| Values                |
 	| UserEvergr: Readiness |
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	And data in the table is sorted by "Domain" column in ascending order by default for the Pivot
 	Then Pivot column headers is displayed in following order:
@@ -44,7 +44,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatComplianceColumnsDisplayInTheCorrec
 	And User selects the following Values on Pivot:
 	| Values          |
 	| 1803: Readiness |
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	And data in the table is sorted by "Inventory Site" column in ascending order by default for the Pivot
 	Then Pivot column headers is displayed in following order:
@@ -68,7 +68,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDeviceOwnerComplianceColumnsDisplayI
 	And User selects the following Values on Pivot:
 	| Values     |
 	| Owner City |
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	And data in the table is sorted by "Hostname" column in ascending order by default for the Pivot
 	Then Pivot column headers is displayed in following order:
@@ -120,7 +120,7 @@ Scenario: EvergreenJnr_DevicesList_CheckResetButtonOnPivot
 	And User selects the following Values on Pivot:
 	| Values     |
 	| Owner City |
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	When User creates Pivot list with "PivotList_DAS_13844" name
 	Then "PivotList_DAS_13844" list is displayed to user
@@ -167,7 +167,7 @@ Scenario: EvergreenJnr_DevicesList_CheckResetButtonOnPivot
 	#aggregate function?
 	Then "RUN PIVOT" Action button is active
 	And "SAVE" Action button is disabled
-	When User clicks the "RUN PIVOT" Action button
+	When User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	And "SAVE" Action button is active
 	When User clicks reset button on main panel
@@ -185,7 +185,7 @@ Scenario: EvergreenJnr_DevicesList_CheckResetButtonOnPivot
 	And User selects the following Values on Pivot:
 	| Values                            |
 	| Owner General information field 1 |
-	When User clicks the "RUN PIVOT" Action button
+	When User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	When User creates Pivot list with "PivotList_DAS_13844_1" name
 	Then "PivotList_DAS_13844_1" list is displayed to user
@@ -214,7 +214,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatPivotPanelIsDisplayedCorrectlyAfterC
 	And User selects the following Values on Pivot:
 	| Values               |
 	| App Count (Entitled) |
-	When User clicks the "RUN PIVOT" Action button
+	When User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	When User creates Pivot list with "PivotList_DAS13842" name
 	Then "PivotList_DAS13842" list is displayed to user

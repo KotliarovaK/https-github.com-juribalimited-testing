@@ -30,9 +30,9 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatRedBannerWithOkMessageIsNotDisplaye
 	When User expands multiselect and selects following Objects
 	| Objects                    |
 	| AAC860150 (Kerrie D. Ruiz) |
-	And User clicks the "UPDATE ALL CHANGES" Action button
+	And User clicks 'UPDATE ALL CHANGES' button 
 	Then Warning message with "1 device will be added, 1 user will be added, 1 application will be added" text is displayed on the Admin page
-	When User clicks the "UPDATE PROJECT" Action button
+	When User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
 	And There are no errors in the browser console
 
@@ -82,7 +82,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatObjectsIsOnboardedToTheProjectWithClon
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
 	Then 'Projects' page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks 'CREATE PROJECT' button 
 	Then 'Create Project' page should be displayed to the user
 	When User enters "TestProject19" in the "Project Name" field
 	And User selects 'All Devices' option from 'Scope' autocomplete
@@ -96,8 +96,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatObjectsIsOnboardedToTheProjectWithClon
 	And User expands multiselect and selects following Objects
 	| Objects         |
 	| 01BQIYGGUW5PRP6 |
-	And User clicks the "UPDATE ALL CHANGES" Action button
-	And User clicks the "UPDATE PROJECT" Action button
+	And User clicks 'UPDATE ALL CHANGES' button 
+	And User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "1 object queued for onboarding, 0 objects offboarded" text
 	When User selects "Queue" tab on the Project details page
 	Then There are no errors in the browser console
@@ -149,8 +149,8 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	Then "Devices 2/0" is displayed in the tab header on the Admin page
 	And "Users 2/0" is displayed in the tab header on the Admin page
 	And "Applications 2/0" is displayed in the tab header on the Admin page
-	When User clicks the "UPDATE ALL CHANGES" Action button
-	And User clicks the "UPDATE PROJECT" Action button
+	When User clicks 'UPDATE ALL CHANGES' button 
+	And User clicks 'UPDATE PROJECT' button 
 	Then "Devices 0/0" is displayed in the tab header on the Admin page
 	And "Users 0/0" is displayed in the tab header on the Admin page
 	And "Applications 0/0" is displayed in the tab header on the Admin page

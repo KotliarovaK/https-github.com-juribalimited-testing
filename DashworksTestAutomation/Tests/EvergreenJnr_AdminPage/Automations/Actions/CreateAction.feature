@@ -16,12 +16,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonForActionsWorksCorrectly
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
-	When User clicks the "CREATE ACTION" Action button
+	When User clicks 'CREATE ACTION' button 
 	When User enters '15427_Action' text to 'Action Name' textbox
 	When User selects 'Update path' in the 'Action Type' dropdown
 	When User selects 'USE ME FOR AUTOMATION(DEVICE SCHDLD)' option from 'Project' autocomplete
 	When User selects '[Default (Computer)]' option from 'Path' autocomplete
-	When User clicks the "CREATE" Action button
+	When User clicks 'CREATE' button 
 	When User selects "Details" tab on the Project details page
 	Then Automation page is displayed correctly
 	When User selects "Actions" tab on the Project details page
@@ -29,7 +29,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonForActionsWorksCorrectly
 	When User enters '15427_NewName' text to 'Action Name' textbox
 	When User selects 'USE ME FOR AUTOMATION(DEVICE SCHDLD)' option from 'Project' autocomplete
 	When User selects '[Default (Computer)]' option from 'Path' autocomplete
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	When User clicks content from "Action" column
 	Then "15427_NewName" content is displayed in "Action Name" field
 
@@ -39,13 +39,13 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckUpdateTaskValueEditPageLoadsProjec
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Automations' left menu item
 	Then 'Automations' page should be displayed to the user
-	When User clicks the "CREATE AUTOMATION" Action button
+	When User clicks 'CREATE AUTOMATION' button 
 	When User enters '<AutomationName>' text to 'Automation Name' textbox
 	When User enters 'DAS17428' text to 'Description' textbox
 	When User selects '<Scope>' option from 'Scope' autocomplete
 	When User selects "Active" checkbox on the Automation Page
 	When User selects 'Manual' in the 'Run' dropdown
-	When User clicks the "CREATE" Action button
+	When User clicks 'CREATE' button 
 	When User enters 'Update Migrated devices to Started' text to 'Action Name' textbox
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects '<Project>' option from 'Project' autocomplete
@@ -53,7 +53,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckUpdateTaskValueEditPageLoadsProjec
 	When User selects '<Task>' option from 'Task' autocomplete
 	Then "CREATE" Action button is disabled
 	When User selects 'Not Started' in the 'Value' dropdown
-	When User clicks the "CREATE" Action button
+	When User clicks 'CREATE' button 
 	When User clicks content from "Action" column
 	Then "Update Migrated devices to Started" content is displayed in "Action Name" field
 	And 'Update task value' text value is displayed in the 'Action Type' dropdown
@@ -114,7 +114,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatStageWithoutCorrectTasksIsNotDisplayed
 	And User clicks content from "Automation" column
 	And User navigates to the 'Actions' left menu item
 	#Create Action
-	When User clicks the "CREATE ACTION" Action button
+	When User clicks 'CREATE ACTION' button 
 	When User enters '17691_Action' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'DAS17691_Project' option from 'Project' autocomplete
@@ -131,7 +131,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueAction
 	Then 'All Devices' content is displayed in 'Scope' textbox
 	When User navigates to the 'Actions' left menu item
 	#Create Action
-	When User clicks the "CREATE ACTION" Action button
+	When User clicks 'CREATE ACTION' button 
 	When User enters '17738_Action' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
@@ -161,7 +161,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithRemoveOwnerIsLoaded
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
-	When User clicks the "CREATE ACTION" Action button
+	When User clicks 'CREATE ACTION' button 
 	When User enters 'Update Migrated devices' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
@@ -170,7 +170,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithRemoveOwnerIsLoaded
 	And User selects "No change" Update Value on Action panel
 	And User selects "No change" Update Date on Action panel
 	And User selects "Remove" Update Owner on Action panel
-	And User clicks the "CREATE" Action button
+	And User clicks 'CREATE' button 
 	When User clicks "Automations" navigation link on the Admin page
 	When User enters "17619_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
@@ -198,7 +198,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithUpdateOwnerIsLoaded
 	And User clicks content from "Automation" column
 	And User navigates to the 'Actions' left menu item
 	#Create Action
-	When User clicks the "CREATE ACTION" Action button
+	When User clicks 'CREATE ACTION' button 
 	When User enters 'Update Migrated devices' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
@@ -209,7 +209,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithUpdateOwnerIsLoaded
 	And User selects "Update" Update Owner on Action panel
 	And User selects "1803 Team" Team on Action panel
 	And User selects "Akhila Varghese" Owner on Action panel
-	And User clicks the "CREATE" Action button
+	And User clicks 'CREATE' button 
 	When User clicks "Automations" navigation link on the Admin page
 	When User enters "17617_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column

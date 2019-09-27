@@ -16,7 +16,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorsAreDisplayedWhenCreateLis
 	And User create static list with "Static_List_15432" name
 	And Dashboard with "Dashboard for DAS15432" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
-	And User clicks the "ADD WIDGET" Action button
+	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title               | List              | MaxRows | MaxColumns |
 	| List       | Widget_For_DAS15432 | Static_List_15432 | 500     | 10         |
@@ -44,7 +44,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDataFromTheWidgetMatchesTheOrigin
 	Then "TestList_DAS15413" list is displayed to user
 	When Dashboard with "Dashboard for DAS15413" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
-	And User clicks the "ADD WIDGET" Action button
+	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title               | List              | MaxRows | MaxColumns |
 	| List       | Widget_For_DAS15413 | TestList_DAS15413 | 500     | 10         |
@@ -60,7 +60,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThahtArchivedObjectsShouldNotBeLinked
 	And User create dynamic list with "List17814" name on "Devices" page
 	When Dashboard with "Dashboard for DAS17814" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
-	And User clicks the "ADD WIDGET" Action button
+	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title             | List      | MaxRows | MaxColumns |
 	| List       | WidgetForDAS17814 | List17814 | 10      | 10         |
@@ -79,12 +79,12 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnListWidget
 	Then "ListForDAS16167" list is displayed to user
 	When Dashboard with "DAS16167_Dashboard" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
-	And User clicks the "ADD WIDGET" Action button
+	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title             | List            |
 	| List       | WidgetForDAS16167 | ListForDAS16167 |
 	Then Widget Preview is displayed to the user
 	And 'This list does not contain any rows' message is displayed in Preview
-	When User clicks the "CREATE" Action button
+	When User clicks 'CREATE' button 
 	Then "WidgetForDAS16167" Widget is displayed to the user
 	And 'This list does not contain any rows' message is displayed in 'WidgetForDAS16167' widget

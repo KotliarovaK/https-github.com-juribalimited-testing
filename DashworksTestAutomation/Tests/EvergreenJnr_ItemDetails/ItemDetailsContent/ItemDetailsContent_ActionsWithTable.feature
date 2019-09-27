@@ -817,10 +817,10 @@ Scenario: EvergreenJnr_DevicesList_CheckUpdatingDeviceBucketViaRelatedUserProjec
 	When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Evergreen' left menu item
 	When User navigates to the 'Buckets' left menu item
-	And User clicks the "CREATE EVERGREEN BUCKET" Action button
+	And User clicks 'CREATE EVERGREEN BUCKET' button 
 	And User enters "AutoTestBucket_DAS_13335" in the "Bucket Name" field
 	And User selects "Admin IT" team in the Team dropdown on the Buckets page
-	And User clicks the "CREATE" Action button
+	And User clicks 'CREATE' button 
 	And User clicks 'Users' on the left-hand menu
 	And User perform search by "AAG081456"
 	And User click content from "Username" column
@@ -830,7 +830,7 @@ Scenario: EvergreenJnr_DevicesList_CheckUpdatingDeviceBucketViaRelatedUserProjec
 	And User select "AutoTestBucket_DAS_13335" value on the Details Page
 	When User selects all rows on the grid on the Details Page for "Related Devices"
 	And User opens "Related Mailboxes" section on the Details Page
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	And User clicks 'Devices' on the left-hand menu
 	And User perform search by "I55HL8MSBYK0VG"
 	And User click content from "Hostname" column

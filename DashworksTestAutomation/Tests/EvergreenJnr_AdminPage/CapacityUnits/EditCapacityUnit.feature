@@ -20,7 +20,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTheUpdateCapacityUnitSettingsIsWorking
 	And User type "Capacity Unit Settings upd" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "upd" Name in the "Description" field on the Project details page
 	And User updates the "Default Unit" checkbox state
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then Success message is displayed and contains "The capacity unit details have been updated" text
 	Then 'Capacity Unit Settings upd' content is displayed in the 'Capacity Unit' column
 	When User enters "Capacity Unit Settings upd" text in the Search field for "Capacity Unit" column
@@ -28,7 +28,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTheUpdateCapacityUnitSettingsIsWorking
 	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
 	And User clicks content from "Capacity Unit" column
 	And User updates the "Default Unit" checkbox state
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then Success message is displayed and contains "The capacity unit details have been updated" text
 	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
 	Then 'TRUE' content is displayed in the 'Default' column

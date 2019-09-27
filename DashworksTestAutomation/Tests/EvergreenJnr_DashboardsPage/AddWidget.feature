@@ -9,7 +9,7 @@ Background: Pre-Conditions
 Scenario: EvergreenJnr_DashboardsPage_CheckThatValidationMessageAppearsWhenSavingWidgetHavingInvalidName
 	When Dashboard with "Dashboard for DAS14587" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
-	And User clicks the "ADD WIDGET" Action button
+	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title | List        | SplitBy     | AggregateBy | AggregateFunction | OrderBy         | MaxValues |
 	| Pie        |       | All Devices | Device Type | Hostname    | Count distinct    | Device Type ASC | 10        |
@@ -24,7 +24,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatValidationMessageAppearsWhenSavin
 Scenario: EvergreenJnr_DashboardsPage_CheckWidgetTitleIsLimitedToOneHundredChars
 	When Dashboard with "Dashboard for DAS14578" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
-	And User clicks the "ADD WIDGET" Action button
+	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title                                                                                                       | List             | SplitBy     | AggregateBy | AggregateFunction | OrderBy         | TableOrientation | MaxValues |
 	| Table      | Line with one hundred and seven chars Line with one hundred and seven chars Line with one hundred and seven | All Applications | Application | Application | Count distinct    | Application ASC | Horizontal       | 10        |
@@ -35,7 +35,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckWidgetTitleIsLimitedToOneHundredChars
 Scenario: EvergreenJnr_DashboardsPage_CheckThatWarningMessageAppearsOnceWhenSwitchingToDashboardWithoutSavingWidgetChanges
 	When Dashboard with "Dashboard for DAS15900" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
-	And User clicks the "ADD WIDGET" Action button
+	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title             | List             | SplitBy | AggregateFunction | OrderBy   | MaxValues | ShowLegend |
 	| Pie        | WidgetForDAS15900 | All Applications | Vendor  | Count             | Count ASC | 10        | true       |
@@ -54,7 +54,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWarningMessageAppearsOnceWhenSwit
 Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatAggregateFunctionSelectionIsBeforeTheAggregateBySelection
 	When Dashboard with "Dashboard for DAS15437" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
-	And User clicks the "ADD WIDGET" Action button
+	And User clicks 'ADD WIDGET' button 
 	And User selects "<WidgetType>" in the "Widget Type" Widget dropdown
 	Then Aggregate Function dropdown is placed above the Aggregate By dropdown
 
@@ -73,7 +73,7 @@ Examples:
 Scenario: EvergreenJnr_DashboardsPage_CheckThatAggregateFunctionOrAggregateByDropdownAreMissingForListWidget
 	When Dashboard with "Dashboard for DAS15437" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
-	And User clicks the "ADD WIDGET" Action button
+	And User clicks 'ADD WIDGET' button 
 	And User selects "List" in the "Widget Type" Widget dropdown
 	Then "Aggregate Function" dropdown is missing
 	And "Aggregate By" dropdown is missing
@@ -86,11 +86,11 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatEditWidgetPageCanBeOpenedForWidge
 	And User create dynamic list with "List16958" name on "Devices" page
 	And Dashboard with "Dashboard for DAS16958" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
-	And User clicks the "ADD WIDGET" Action button
+	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title             | List      | SplitBy             | AggregateBy | AggregateFunction | OrderBy                 | MaxValues | ShowLegend |
 	| Bar        | WidgetForDAS16958 | List16958 | Secure Boot Enabled | Device Type | Count distinct    | Secure Boot Enabled ASC | 10        | true       |
-	And User clicks the "CREATE" Action button
+	And User clicks 'CREATE' button 
 	And Dashboard page loaded
 	And User lists were removed by API
 	And User clicks refresh button in the browser
@@ -103,7 +103,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatEditWidgetPageCanBeOpenedForWidge
 Scenario: EvergreenJnr_DashboardsPage_CheckCheckboxLabelDisplaying
 	When Dashboard with "DAS16853_Dashboard" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
-	And User clicks the "ADD WIDGET" Action button
+	And User clicks 'ADD WIDGET' button 
 	Then "Show legend" checkbox has a correct label
 	And "Show data labels" checkbox has a correct label
 	When User creates new Widget
@@ -147,7 +147,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatThereIsNoPossibilityToCreateWidge
 	And Projects created by User are removed via API
 	And Dashboard with "Dashboard for DAS17539" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
-	And User clicks the "ADD WIDGET" Action button
+	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title                 | List              | SplitBy          | AggregateFunction | OrderBy              |
 	| Table      | DAS-TestList_DAS17539 | TestList_DAS17539 | Mailbox Platform | Count             | Mailbox Platform ASC |

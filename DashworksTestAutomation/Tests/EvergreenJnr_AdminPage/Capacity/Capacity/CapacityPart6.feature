@@ -33,7 +33,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEnableCapacityCheckboxIsDisplayedOnThe
 	When User clicks "Enable Capacity" checkbox on the Project details page
 	When User clicks "Enforce capacity on project object page" checkbox on the Project details page
 	When User clicks "Enforce capacity on self service pages" checkbox on the Project details page
-	When User clicks the "UPDATE" Action button
+	When User clicks 'UPDATE' button 
 	Then Success message is displayed and contains "The project capacity details have been updated" text
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @DAS15585

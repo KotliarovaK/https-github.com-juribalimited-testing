@@ -27,7 +27,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelWorkedCorrectlyAfterCic
 	When User selects "Update path" Bulk Update Type on Action panel
 	And User selects "Babel (English, German and French)" Project on Action panel
 	And User selects "Machines" Path on Action panel
-	And User clicks the "CANCEL" Action button
+	And User clicks 'CANCEL' button 
 	Then Actions panel is not displayed to the user
 	And Checkboxes are not displayed
 

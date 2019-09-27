@@ -28,7 +28,7 @@ Scenario: EvergreenJnr_AllLists_CheckCancelButtonFunctionalityOnCreateListFromCS
 	Then 'All Devices' list should be displayed to the user
 	When User selects "List from CSV" from the Create actions
 	Then "Devices from CSV" Import page is displayed to the User
-	When User clicks the "CANCEL" Action button
+	When User clicks 'CANCEL' button 
 	Then 'All Devices' list should be displayed to the user
 	When User selects "List from CSV" from the Create actions
 	When User selects "CSV-Upload-Devices - Hostname no header.csv" file to upload on Import Lists from CSV page
@@ -36,10 +36,10 @@ Scenario: EvergreenJnr_AllLists_CheckCancelButtonFunctionalityOnCreateListFromCS
 	Then "Include archived applications" checkbox is unchecked on the Base Dashboard Page
 	When User selects "Hostname" in the "File Contains" dropdown
 	Then "NEXT" Action button is active
-	When User clicks the "CANCEL" Action button
+	When User clicks 'CANCEL' button 
 	Then Warning Pop-up is displayed to the User
 	When User clicks "NO" button in the Warning Pop-up message
-	When User clicks the "CANCEL" Action button
+	When User clicks 'CANCEL' button 
 	Then Warning Pop-up is displayed to the User
 	When User clicks "YES" button in the Warning Pop-up message
 	Then 'All Devices' list should be displayed to the user

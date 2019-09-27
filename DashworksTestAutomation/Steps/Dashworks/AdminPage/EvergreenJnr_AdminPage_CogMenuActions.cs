@@ -100,7 +100,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             cogMenu.MoveToPositionField.Clear();
             cogMenu.MoveToPositionField.SendKeys(position);
             var action = _driver.NowAt<BaseDashboardPage>();
-            action.GetActionsButtonByName("MOVE").Click();
+            action.GetButtonByName("MOVE").Click();
         }
 
         [Then(@"Cog-menu DDL is displayed in High Contrast mode")]

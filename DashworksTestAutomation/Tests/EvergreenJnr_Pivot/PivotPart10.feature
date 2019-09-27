@@ -19,7 +19,7 @@ Scenario: EvergreenJnr_UsersList_CheckSortedOrderForPivotProjectStatusAsColumn
 	And User selects the following Values on Pivot:
 	| Values |
 	| Region |
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	When User closes the Pivot panel
 	Then Empty value is displayed on the first place for the Pivot
 	Then Empty value is displayed on the first place for the Pivot column header
@@ -50,7 +50,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckSortedOrderForPivotProjectStatusAsColu
 	And User selects the following Values on Pivot:
 	| Values |
 	| Region |
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then Empty value is displayed on the first place for the Pivot
 	And Pivot column headers is displayed in following order:
 	| ColumnName    |
@@ -76,7 +76,7 @@ Scenario Outline: EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCap
 	| Values      |
 	| <AddValues> |
 	When User selects aggregate function "Count" on Pivot
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then "<CountAggregateFunctions>" is displayed in the columns for aggregate functions
 	Then "General information field 1" is displayed at the top left corner on Pivot
 
@@ -102,13 +102,13 @@ Scenario Outline: EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCap
 	| Values      |
 	| <AddValues> |
 	When User selects aggregate function "Count" on Pivot
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then "<CountAggregateFunctions>" is displayed in the columns for aggregate functions
 	When User selects aggregate function "First" on Pivot
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then "<FirstAggregateFunctions>" is displayed in the columns for aggregate functions
 	When User selects aggregate function "Last" on Pivot
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then "<LastAggregateFunctions>" is displayed in the columns for aggregate functions
 
 Examples:
@@ -133,19 +133,19 @@ Scenario Outline: EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCap
 	| Values      |
 	| <AddValues> |
 	When User selects aggregate function "Count" on Pivot
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then "<CountAggregateFunctions>" is displayed in the columns for aggregate functions
 	When User selects aggregate function "Sum" on Pivot
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then "<SumAggregateFunctions>" is displayed in the columns for aggregate functions
 	When User selects aggregate function "Min" on Pivot
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then "<MinAggregateFunctions>" is displayed in the columns for aggregate functions
 	When User selects aggregate function "Max" on Pivot
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then "<MaxAggregateFunctions>" is displayed in the columns for aggregate functions
 	When User selects aggregate function "Avg" on Pivot
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then "<AvgAggregateFunctions>" is displayed in the columns for aggregate functions
 
 Examples:
@@ -168,33 +168,33 @@ Scenario: EvergreenJnr_DevicesLists_CheckAddTeamsPermissionsOnDetailsPanel
 	And User selects the following Values on Pivot:
 	| Values      |
 	| Cost Centre |
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	When User creates Pivot list with "DAS14263_Pivot" name
 	Then "DAS14263_Pivot" list is displayed to user
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User select "Specific users / teams" sharing option
-	When User clicks the "ADD USER" Action button
+	When User clicks 'ADD USER' button 
 	When User selects the "Administrator" user for sharing
-	When User clicks the "CANCEL" Action button
-	When User clicks the "ADD USER" Action button
+	When User clicks 'CANCEL' button 
+	When User clicks 'ADD USER' button 
 	When User selects the "Administrator" user for sharing
-	When User clicks the "CANCEL" Action button
-	When User clicks the "ADD TEAM" Action button
+	When User clicks 'CANCEL' button 
+	When User clicks 'ADD TEAM' button 
 	When User selects the "Team 1062" team for sharing
 	Then "ADD TEAM" Action button is disabled
 	When User select "Edit" in Select Access dropdown
 	Then "ADD TEAM" Action button is active
-	When User clicks the "CANCEL" Action button
-	When User clicks the "ADD TEAM" Action button
+	When User clicks 'CANCEL' button 
+	When User clicks 'ADD TEAM' button 
 	When User selects the "Team 1062" team for sharing
 	When User select "Admin" in Select Access dropdown
-	When User clicks the "CANCEL" Action button
-	When User clicks the "ADD TEAM" Action button
+	When User clicks 'CANCEL' button 
+	When User clicks 'ADD TEAM' button 
 	When User selects the "Team 1062" team for sharing
 	When User select "Read" in Select Access dropdown
-	When User clicks the "CANCEL" Action button
+	When User clicks 'CANCEL' button 
 	When User navigates to the "DAS14263_Pivot" list
 	Then User remove list with "DAS14263_Pivot" name on "Devices" page
 
@@ -213,17 +213,17 @@ Scenario: EvergreenJnr_DevicesLists_CheckArchivedItemIncludingInPivot
 	And User selects the following Values on Pivot:
 	| Values      |
 	| Device Type |
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	When User creates Pivot list with "DAS16815_Pivot" name
 	Then "DAS16815_Pivot" list is displayed to user
 	When User sets includes archived devices in "false"
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	When User updates existing pivot
 	Then "DAS16815_Pivot" list is displayed to user
 	When User sets includes archived devices in "true"
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	When User creates Pivot list with "DAS16815_Pivot_Updated" name
 	Then "DAS16815_Pivot_Updated" list is displayed to user

@@ -96,7 +96,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnlyDateTasksCanBeAvailableForSelectio
 	And User navigates to "ProjectDAS13593" project details
 	And User navigates to the 'Capacity' left menu item
 	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE SLOT" Action button
+	And User clicks 'CREATE SLOT' button 
 	And User selects 'Device' in the 'Object Type' dropdown
 	And User clicks on "Tasks" dropdown on the Capacity Slots page
 	Then following checkbox items are displayed in the dropdown:
@@ -126,13 +126,13 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreUnpublishedAfterBeingAssociat
 	And User navigates to the 'Capacity' left menu item
 	And User selects "Slots" tab on the Project details page
 	#TODO Remove commented steps. I have saved them just to save data during NotRun removing
-	#And User clicks the "CREATE NEW SLOT" Action button
+	#And User clicks 'CREATE NEW SLOT' button 
 	#And User type "Slot 1" Name in the "Slot Name" field on the Project details page
 	#And User type "Slot 1" Name in the "Display Name" field on the Project details page
 	#And User selects "Pre-Migration \ Scheduled Date" checkbox in the "Tasks" field on the Project details page
 	#And User selects "Pre-Migration \ Forecast Date" checkbox in the "Tasks" field on the Project details page
 	#And User selects "Computer Information ---- Text fill; Text fill; \ Group Computer Rag Radio Date Owner" checkbox in the "Tasks" field on the Project details page
-	#And User clicks the "CREATE" Action button
+	#And User clicks 'CREATE' button 
 	And User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "Windows 7 Migration (Computer Scheduled Project)" Project
@@ -154,8 +154,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreUnpublishedAfterBeingAssociat
 	| Pre-Migration \ Forecast Date                                                         |
 	| Computer Information ---- Text fill; Text fill; \ Group Computer Rag Radio Date Owner |
 	| Pre-Migration \ Scheduled Date                                                        |
-	When User clicks the "CANCEL" Action button
-	And User clicks the "CREATE NEW SLOT" Action button
+	When User clicks 'CANCEL' button 
+	And User clicks 'CREATE NEW SLOT' button 
 	And User type "Slot 2" Name in the "Slot Name" field on the Project details page
 	And User type "Slot 2" Name in the "Display Name" field on the Project details page
 	Then Next checkboxes in the "Tasks" dropdown are not available to select:
@@ -163,7 +163,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreUnpublishedAfterBeingAssociat
 	| Pre-Migration \ Forecast Date                                                         |
 	| Computer Information ---- Text fill; Text fill; \ Group Computer Rag Radio Date Owner |
 	And "Pre-Migration \ Scheduled Date" checkbox in the "Tasks" field are available to select
-	When User clicks the "CANCEL" Action button
+	When User clicks 'CANCEL' button 
 	And User select "Capacity Slot" rows in the grid
 	| SelectedRowsName |
 	| Slot 1           |
@@ -198,7 +198,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCapacityEnabledFlagUpdatesAfterAdding
 	And User navigates to newly created Slot
 	Then CapacityEnabled flag is equal to "True"
 	When User removes "Computer Information ---- Text fill; Text fill; \ Task13502" on the Project details page
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then CapacityEnabled flag is equal to "False"
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13500 @Do_Not_Run_With_Capacity @Do_Not_Run_With_Slots @Do_Not_Run_With_Senior @Cleanup
@@ -245,8 +245,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreDeletedAfterBeingAssociatedTo
 	Then Next values are selected for the "Tasks" field:
 	| Value                          |
 	| Pre-Migration \ Scheduled Date |
-	When User clicks the "CANCEL" Action button
-	And User clicks the "CREATE SLOT" Action button
+	When User clicks 'CANCEL' button 
+	And User clicks 'CREATE SLOT' button 
 	And User type "Slot 2" Name in the "Slot Name" field on the Project details page
 	And User type "Slot 2" Name in the "Display Name" field on the Project details page
 	And User selects 'Capacity Units' in the 'Capacity Type' dropdown

@@ -19,7 +19,7 @@ Scenario: EvergreenJnr_UsersLists_CheckThatProjectReadinessTaskColumnsDisplayInC
 	And User selects the following Values on Pivot:
 	| Values     |
 	| Compliance |
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	And data in the table is sorted by "City" column in ascending order by default for the Pivot
 	Then Empty value is displayed on the first place for the Pivot
@@ -41,7 +41,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatProjectReadinessTaskColumnsDisplayI
 	And User selects the following Values on Pivot:
 	| Values     |
 	| Compliance |
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	And data in the table is sorted by "Import" column in ascending order by default for the Pivot
 	Then Empty value is not displayed on the first place for the Pivot
@@ -66,7 +66,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatProjectApplicationReadinessTaskColu
 	And User selects the following Values on Pivot:
 	| Values     |
 	| Compliance |
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	And data in the table is sorted by "Organizational Unit" column in ascending order by default for the Pivot
 	Then Empty value is displayed on the first place for the Pivot
@@ -86,7 +86,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatProjectApplicationReadinessTaskColu
 	And User selects the following Values on Pivot:
 	| Values     |
 	| Compliance |
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	And data in the table is sorted by "Import" column in ascending order by default for the Pivot
 	Then Empty value is not displayed on the first place for the Pivot
@@ -107,7 +107,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatProjectDeviceOwnerReadinessTaskColum
 	And User selects the following Values on Pivot:
 	| Values                      |
 	| 1803: Application Readiness |
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	And data in the table is sorted by "Import" column in ascending order by default for the Pivot
 	Then Empty value is displayed on the first place for the Pivot
@@ -130,7 +130,7 @@ Scenario: EvergreenJnr_ApplicationsLists_CheckThatProjectStageColumnsDisplayInTh
 	And User selects the following Values on Pivot:
 	| Values                |
 	| DeviceSche: Readiness |
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	Then data in the table is sorted by "Import" column in ascending order by default for the Pivot
 	Then color data in the column headers is sorted in correct order for the Pivot

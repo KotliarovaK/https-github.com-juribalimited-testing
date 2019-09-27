@@ -19,7 +19,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatPivotsAreNotShownInTheListToSelectO
 	And User selects the following Values on Pivot:
 	| Values      |
 	| Cost Centre |
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	When User creates Pivot list with "Pivot_DAS_14224" name
 	And Project created via API and opened
@@ -75,7 +75,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatPivotTableDisplayedCorrectlyAfterRe
 	And User selects the following Values on Pivot:
 	| Values            |
 	| Owner Cost Centre |
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	When User clicks the List Details button
 	When User removes "Description" Column for Pivot
@@ -94,7 +94,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatUserCanCreateOneMorePivotOnSelectedPa
 	When User selects the following Values on Pivot:
 	| Values   |
 	| Building |
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	Then data in the table is sorted by "Common Name" column in ascending order by default for the Pivot
 	When User creates Pivot list with "Pivot_DAS_14206" name
@@ -122,7 +122,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatUserCanCreateOneMorePivotOnCreatedLis
 	And User selects the following Values on Pivot:
 	| Values   |
 	| Building |
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	When User creates Pivot list with "PivotList_DAS_14206" name
 	Then "PivotList_DAS_14206" list is displayed to user
@@ -138,9 +138,9 @@ Scenario: EvergreenJnr_UsersList_ChecksThatUserCanCreateOneMorePivotOnCreatedLis
 	And User selects the following Values on Pivot:
 	| Values   |
 	| Building |
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
-	When User clicks the "SAVE" Action button
+	When User clicks 'SAVE' button 
 	And User selects 'Save as new pilot' option
 	Then Pivot Name field is empty
 	And User remove list with "Dynamic_List_DAS14206" name on "Users" page
@@ -164,7 +164,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatPivotPanelIsDisplayedCorrectlyAfterC
 	| Values            |
 	| Owner Cost Centre |
 	Then reset button on main panel is displayed
-	When User clicks the "RUN PIVOT" Action button
+	When User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	When User removes "City" Column for Pivot
 	And User adds the following "Columns" on Pivot: 
@@ -180,18 +180,18 @@ Scenario: EvergreenJnr_DevicesList_ChecksTooltipsOnPivot
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User navigates to Pivot
-	And User clicks the "ADD ROW GROUP" Action button
+	And User clicks 'ADD ROW GROUP' button 
 	When "Compliance" value is entered into the search box and the selection is clicked on Pivot
 	Then "DONE" Action button have tooltip with "Confirm changes" text
 	Then back button on Pivot panel have tooltip with "Close" text
-	When User clicks the "DONE" Action button
+	When User clicks 'DONE' button 
 	And User selects the following Columns on Pivot:
 	| Columns     |
 	| City        |
 	And User selects the following Values on Pivot:
 	| Values            |
 	| Owner Cost Centre |
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	Then "Row Groups" plus button have tooltip with "Add row group" text
 	And "Columns" plus button have tooltip with "Add column" text

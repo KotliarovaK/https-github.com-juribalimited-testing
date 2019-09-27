@@ -51,9 +51,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = "//div[@id='content']//i[@class='material-icons mat-menu']")]
         public IWebElement ExpandSideNavPanelIcon { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@id='_listDtlBtn'][@disabled]")]
-        public IWebElement DisabledListDetailsButton { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//admin-header//span[@class='ng-star-inserted']")]
         public IWebElement FoundRowsLabel { get; set; }
 
@@ -157,10 +154,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath,
             Using = ".//button[contains(@class, 'pull-left context-toggle')]//i[@class='material-icons mat-clear']")]
         public IWebElement ClosePanelButton { get; set; }
-
-        [FindsBy(How = How.XPath,
-            Using = ".//div[@role='presentation']//div[@class='ag-header-cell']//header-cell//input")]
-        public IWebElement SelectAllRowsAction { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-selection-checkbox']/span[contains(@class,'checkbox-unchecked')]/../*[not(contains(@class,'ag-hidden'))][1]")]
         public IList<IWebElement> SelectRowsCheckboxes { get; set; }
@@ -782,7 +775,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(selector);
         }
 
-        public IWebElement GetActionsButtonByName(string button)
+        public IWebElement GetButtonByName(string button)
         {
             var selector = By.XPath(
                 $".//span[text()='{button}']/ancestor::button");
@@ -793,7 +786,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public void ClickButtonByName(string buttonName)
         {
-            var button = GetActionsButtonByName(buttonName);
+            var button = GetButtonByName(buttonName);
             Driver.WaitForElementToBeEnabled(button);
             button.Click();
             Driver.WaitForDataLoading(50);

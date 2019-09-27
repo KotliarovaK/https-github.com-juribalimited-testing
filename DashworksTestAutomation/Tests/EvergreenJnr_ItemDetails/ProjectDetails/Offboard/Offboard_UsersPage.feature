@@ -18,7 +18,7 @@ Scenario: EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboa
 	When User switches to the "USE ME FOR AUTOMATION(USR SCHDLD)" project in the Top bar on Item details page
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the "Project Details" sub-menu on the Details page
-	And User clicks the "OFFBOARD" Action button
+	And User clicks 'OFFBOARD' button 
 	Then Dialog Pop-up is displayed for User
 	Then following text 'Offboarding user BCLABS\01F6D54271D74F1BB8D (McGinley, Marilyn). Select any associated devices below to offboard at the same time. Offboarding an object deletes all project related information about it.' is displayed in Dialog Pop-up
 	Then 'Offboard all associated devices' checkbox is checked
@@ -31,8 +31,8 @@ Scenario: EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboa
 	| SelectedRowsName |
 	| 02X387UQLFP3ISU  |
 	Then "02X387UQLFP3ISU" chip have tooltip with "02X387UQLFP3ISU" text
-	When User clicks the "OFFBOARD" Action button
-	When User clicks the "OFFBOARD" Action button
+	When User clicks 'OFFBOARD' button 
+	When User clicks 'OFFBOARD' button 
 	#going to check the object state
 	And User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -55,7 +55,7 @@ Scenario: EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboa
 	When User switches to the "USE ME FOR AUTOMATION(USR SCHDLD)" project in the Top bar on Item details page
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the "Project Details" sub-menu on the Details page
-	And User clicks the "OFFBOARD" Action button
+	And User clicks 'OFFBOARD' button 
 	Then Dialog Pop-up is displayed for User
 	Then following text 'Offboarding user BCLABS\01F6D54271D74F1BB8D (McGinley, Marilyn). Select any associated mailboxes below to offboard at the same time. Offboarding an object deletes all project related information about it.' is displayed in Dialog Pop-up
 	Then 'Offboard all associated devices' checkbox is checked
@@ -63,8 +63,8 @@ Scenario: EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboa
 	| ColumnName   |
 	| Hostname     |
 	| Owned        |
-	When User clicks the "OFFBOARD" Action button
-	When User clicks the "OFFBOARD" Action button
+	When User clicks 'OFFBOARD' button 
+	When User clicks 'OFFBOARD' button 
 	#going to check the object state
 	And User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -87,6 +87,6 @@ Scenario: EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboa
 	When User switches to the "USE ME FOR AUTOMATION(USR SCHDLD)" project in the Top bar on Item details page
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the "Project Details" sub-menu on the Details page
-	And User clicks the "OFFBOARD" Action button
+	And User clicks 'OFFBOARD' button 
 	Then Dialog Pop-up is displayed for User
 	And following text 'Offboarding user BCLABS\0088FC8A50DD4344B92 (Barland, Steinar). Offboarding an object deletes all project related information about it.' is displayed in Dialog Pop-up

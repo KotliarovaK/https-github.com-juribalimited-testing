@@ -39,14 +39,14 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueAutomationValidationsForDel
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
-	When User clicks the "CREATE ACTION" Action button
+	When User clicks 'CREATE ACTION' button 
 	When User enters '17429_Action' text to 'Action Name' textbox
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects '17429Project' option from 'Project' autocomplete
 	When User selects '17429_Stage' option from 'Stage' autocomplete
 	When User selects '17429_Task' option from 'Task' autocomplete
 	When User selects "Started" Value on Action panel
-	And User clicks the "CREATE" Action button
+	And User clicks 'CREATE' button 
 	#Create Action
 	When User clicks "Automations" navigation link on the Admin page
 	When User navigates to the 'Projects' left menu item
@@ -99,14 +99,14 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueAutomationValidationsForDel
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
-	When User clicks the "CREATE ACTION" Action button
+	When User clicks 'CREATE ACTION' button 
 	When User enters '17429_Action1' text to 'Action Name' textbox
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects '17429Project1' option from 'Project' autocomplete
 	When User selects '17429_Stage1' option from 'Stage' autocomplete
 	When User selects '17429_Task1' option from 'Task' autocomplete
 	When User selects "Started" Value on Action panel
-	And User clicks the "CREATE" Action button
+	And User clicks 'CREATE' button 
 	#Delete Stage
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -166,14 +166,14 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueAutomationValidationsForDel
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
-	When User clicks the "CREATE ACTION" Action button
+	When User clicks 'CREATE ACTION' button 
 	When User enters '17429_Action2' text to 'Action Name' textbox
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects '17429Project2' option from 'Project' autocomplete
 	When User selects '17429_Stage2' option from 'Stage' autocomplete
 	When User selects '17429_Task2' option from 'Task' autocomplete
 	When User selects "Started" Value on Action panel
-	And User clicks the "CREATE" Action button
+	And User clicks 'CREATE' button 
 	#Delete Stage
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user

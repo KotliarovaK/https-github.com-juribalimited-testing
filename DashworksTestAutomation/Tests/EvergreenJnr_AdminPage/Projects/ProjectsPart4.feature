@@ -11,11 +11,11 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIdColumnIsAddedAndDisplay
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
 	Then 'Projects' page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks 'CREATE PROJECT' button 
 	Then 'Create Project' page should be displayed to the user
 	When User enters "TestProject11700" in the "Project Name" field
 	And User selects 'All Devices' option from 'Scope' autocomplete
-	When User clicks the "CREATE" Action button
+	When User clicks 'CREATE' button 
 	When User have opened Column Settings for "Project" column
 	And User clicks Column button on the Column Settings panel
 	Then Column Settings was opened
@@ -34,7 +34,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectNameIsDisplayedCorrectlyWhen
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
 	Then 'Projects' page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks 'CREATE PROJECT' button 
 	Then 'Create Project' page should be displayed to the user
 	When User enters "<TestProject11985>" in the "Project Name" field
 	And User selects 'All Devices' option from 'Scope' autocomplete
@@ -88,8 +88,8 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 	| Objects                                          |
 	| ACDSee 4.0.2 PowerPack Trial Version (4.00.0002) |
 	| Backburner (2.1.2.0)                             |
-	When User clicks the "UPDATE ALL CHANGES" Action button
-	And User clicks the "UPDATE PROJECT" Action button
+	When User clicks 'UPDATE ALL CHANGES' button 
+	And User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "6 objects queued for onboarding, 0 objects offboarded" text
 	Then "Applications to add (0 of 2079 selected)" is displayed to the user in the Project Scope Changes section
 	When User navigates to the 'Devices' tab on Project Scope Changes page
@@ -112,7 +112,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedIfTryToRemove
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
 	Then 'Projects' page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks 'CREATE PROJECT' button 
 	Then 'Create Project' page should be displayed to the user
 	When User enters "TestName11729" in the "Project Name" field
 	And User selects 'TestDynamicList11729' option from 'Scope' autocomplete

@@ -21,7 +21,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedWhenDeleti
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
 	Then 'Projects' page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks 'CREATE PROJECT' button 
 	Then 'Create Project' page should be displayed to the user
 	When User enters "TestProject6" in the "Project Name" field
 	And User selects 'TestList0A78U9' option from 'Scope' autocomplete
@@ -119,7 +119,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	And User changes Project Name to "NewProjectName"
 	And User changes Project Short Name to "NewShort4875"
 	And User changes Project Description to "45978DescriptionText"
-	And User clicks the "ADD LANGUAGE" Action button
+	And User clicks 'ADD LANGUAGE' button 
 	And User selects "Dutch" language on the Project details page
 	And User opens menu for selected language
 	Then User selects "Set as default" option for selected language
@@ -161,11 +161,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	And User enters "NewProjectName" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks 'CREATE PROJECT' button 
 	Then 'Create Project' page should be displayed to the user
 	When User enters "TestProjectDAS11977" in the "Project Name" field
 	And User selects 'All Devices' option from 'Scope' autocomplete
-	And User clicks the "CREATE" Action button
+	And User clicks 'CREATE' button 
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "TestProjectDAS11977" is displayed to user
@@ -173,7 +173,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	And User changes Project Name to "NewProjectName"
 	And User changes Project Short Name to "NewShort4875"
 #"UPDATE" Action button has been removed
-	#And User clicks the "UPDATE" Action button
+	#And User clicks 'UPDATE' button 
 	#Then Success message is displayed and contains "The project details have been updated" text
 	When User click on Back button
 	And User enters "NewProjectName" text in the Search field for "Project" column

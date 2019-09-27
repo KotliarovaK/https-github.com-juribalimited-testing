@@ -118,11 +118,11 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	When User navigates to the 'Evergreen' left menu item
 	When User navigates to the 'Buckets' left menu item
 	Then 'Buckets' page should be displayed to the user
-	When User clicks the "CREATE EVERGREEN BUCKET" Action button
+	When User clicks 'CREATE EVERGREEN BUCKET' button 
 	Then 'Create Evergreen Bucket' page should be displayed to the user
 	When User enters "Bucket12883" in the "Bucket Name" field
 	And User selects "My Team" team in the Team dropdown on the Buckets page
-	And User clicks the "CREATE" Action button
+	And User clicks 'CREATE' button 
 	Then Success message is displayed and contains "The bucket has been created" text
 	#============================================================================#
 		#go to Devices page
@@ -138,7 +138,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	When User select "Bucket12883" value on the Details Page
 	And User opens "Related Users" section on the Details Page
 	And User selects all rows on the grid on the Details Page for "Related Users"
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then "Bucket12883" link is displayed on the Details Page
 	And There are no errors in the browser console
 		#backs the Evergreen Bucket and Capacity Unit to default value
@@ -147,7 +147,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	When User selects all rows on the grid on the Details Page for "Related Users"
 	Then User clicks on "New Bucket" dropdown
 	When User select "Unassigned" value on the Details Page
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then "Unassigned" link is displayed on the Details Page
 	And There are no errors in the browser console
 	#============================================================================#
@@ -164,7 +164,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	And User selects all rows on the grid on the Details Page for "Related Mailboxes"
 	Then User clicks on "New Bucket" dropdown
 	When User select "Bucket12883" value on the Details Page
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then "Bucket12883" link is displayed on the Details Page
 	And There are no errors in the browser console
 		#backs the Evergreen Bucket and Capacity Unit to default value
@@ -172,7 +172,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	And User selects all rows on the grid on the Details Page for "Related Mailboxes"
 	Then User clicks on "New Bucket" dropdown
 	When User select "Unassigned" value on the Details Page
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then "Unassigned" link is displayed on the Details Page
 	And There are no errors in the browser console
 	#============================================================================#
@@ -189,7 +189,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	And User selects all rows on the grid on the Details Page for "Related Users"
 	Then User clicks on "New Bucket" dropdown
 	When User select "Bucket12883" value on the Details Page
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then "Bucket12883" link is displayed on the Details Page
 	And There are no errors in the browser console
 		#backs the Evergreen Bucket and Capacity Unit to default value
@@ -198,7 +198,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	When User selects all rows on the grid on the Details Page for "Related Users"
 	Then User clicks on "New Bucket" dropdown
 	When User select "Unassigned" value on the Details Page
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then "Unassigned" link is displayed on the Details Page
 	And There are no errors in the browser console
 	
@@ -222,7 +222,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjec
 	And User selects all rows on the grid on the Details Page for "Related Users"
 	Then User clicks on "New Capacity Unit" dropdown
 	When User select "CapacityUnit12883" value on the Details Page
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then "CapacityUnit12883" link is displayed on the Details Page
 	And There are no errors in the browser console
 		#backs the Evergreen Bucket and Capacity Unit to default value
@@ -231,7 +231,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjec
 	When User selects all rows on the grid on the Details Page for "Related Users"
 	Then User clicks on "New Capacity Unit" dropdown
 	When User select "Unassigned" value on the Details Page
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then "Unassigned" link is displayed on the Details Page
 	And There are no errors in the browser console
 	#============================================================================#
@@ -248,7 +248,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjec
 	And User selects all rows on the grid on the Details Page for "Related Mailboxes"
 	Then User clicks on "New Capacity Unit" dropdown
 	When User select "CapacityUnit12883" value on the Details Page
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then "CapacityUnit12883" link is displayed on the Details Page
 	And There are no errors in the browser console
 		#backs the Evergreen Bucket and Capacity Unit to default value
@@ -257,7 +257,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjec
 	When User selects all rows on the grid on the Details Page for "Related Mailboxes"
 	Then User clicks on "New Capacity Unit" dropdown
 	When User select "Unassigned" value on the Details Page
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then "Unassigned" link is displayed on the Details Page
 	And There are no errors in the browser console
 	#============================================================================#
@@ -274,7 +274,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjec
 	And User selects all rows on the grid on the Details Page for "Related Users"
 	Then User clicks on "New Capacity Unit" dropdown
 	When User select "CapacityUnit12883" value on the Details Page
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then "CapacityUnit12883" link is displayed on the Details Page
 	And There are no errors in the browser console
 		#backs the Evergreen Bucket and Capacity Unit to default value
@@ -283,7 +283,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjec
 	When User selects all rows on the grid on the Details Page for "Related Users"
 	Then User clicks on "New Capacity Unit" dropdown
 	When User select "Unassigned" value on the Details Page
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then "Unassigned" link is displayed on the Details Page
 	And There are no errors in the browser console
 
@@ -485,7 +485,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatOnTheProjectDetailsTabDisplaysTheL
 	When User clicks on 'USE ME FOR AUTOMATION(MAIL SCHDLD)' cell from 'Project' column
 	Then Project "USE ME FOR AUTOMATION(MAIL SCHDLD)" is displayed to user
 	When User navigates to the 'Details' left menu item
-	And User clicks the "ADD LANGUAGE" Action button
+	And User clicks 'ADD LANGUAGE' button 
 	And User selects "German" language on the Project details page
 	And User opens menu for selected language
 	Then User selects "Set as default" option for selected language

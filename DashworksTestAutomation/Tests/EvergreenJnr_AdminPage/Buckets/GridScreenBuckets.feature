@@ -96,7 +96,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderOfBucketsAfterCreateOrUpda
 	When User enters "1ba" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
 	And User enters "a1ba" in the "Bucket Name" field
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then data in table is sorted by "Bucket" column in ascending order by default on the Admin page
 	When User deletes "aab" Bucket in the Administration
 	And User clicks refresh button in the browser

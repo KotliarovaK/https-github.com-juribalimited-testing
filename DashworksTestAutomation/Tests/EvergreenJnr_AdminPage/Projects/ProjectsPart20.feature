@@ -12,7 +12,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatBlueBannerIsDisplayedWithCorrectlyTex
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
 	Then 'Projects' page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks 'CREATE PROJECT' button 
 	Then 'Create Project' page should be displayed to the user
 	When User enters "Project13347" in the "Project Name" field
 	And User selects 'All Devices' option from 'Scope' autocomplete
@@ -30,8 +30,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatBlueBannerIsDisplayedWithCorrectlyTex
 	| 019BFPQGKK5QT8N |
 	| 02C80G8RFTPA9E  |
 	| 06T5FX3CUY08AE  |
-	And User clicks the "UPDATE ALL CHANGES" Action button
-	And User clicks the "UPDATE PROJECT" Action button
+	And User clicks 'UPDATE ALL CHANGES' button 
+	And User clicks 'UPDATE PROJECT' button 
 	And User navigates to the 'Users' tab on Project Scope Changes page
 	And User expands multiselect to add objects 
 	When User selects all objects to the Project
@@ -44,8 +44,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatBlueBannerIsDisplayedWithCorrectlyTex
 	| %SQL_PRODUCT_SHORT_NAME% SSIS 64Bit For SSDTBI (12.0.2430.0)                  |
 	| 0004 - Adobe Acrobat Reader 5.0.5 Francais (5.0.5)                            |
 	| 0036 - Microsoft Access 97 SR-2 English (8.0)                                 |
-	And User clicks the "UPDATE ALL CHANGES" Action button
-	And User clicks the "UPDATE PROJECT" Action button
+	And User clicks 'UPDATE ALL CHANGES' button 
+	And User clicks 'UPDATE PROJECT' button 
 	Then Blue banner with "Object updates being queued, please wait" text is displayed
 	Then Success message is displayed and contains "14636 objects queued for onboarding, 0 objects offboarded" text
 	When User selects "Scope Details" tab on the Project details page
@@ -57,8 +57,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatBlueBannerIsDisplayedWithCorrectlyTex
 	And User navigates to the 'Users' tab on Project Scope Changes page
 	When User waits and expands the "Users" panel to remove
 	When User selects all objects to the Project
-	And User clicks the "UPDATE ALL CHANGES" Action button
-	And User clicks the "UPDATE PROJECT" Action button
+	And User clicks 'UPDATE ALL CHANGES' button 
+	And User clicks 'UPDATE PROJECT' button 
 	Then Blue banner with "Object updates being queued, please wait" text is displayed
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12756 @DAS13586 @Cleanup
@@ -67,19 +67,19 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectTypesInTheFilterAlphabetised
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
 	Then 'Projects' page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks 'CREATE PROJECT' button 
 	Then 'Create Project' page should be displayed to the user
 	When User enters "DeviceProject56" in the "Project Name" field
 	And User selects 'All Devices' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks 'CREATE PROJECT' button 
 	Then 'Create Project' page should be displayed to the user
 	When User enters "UserProject56" in the "Project Name" field
 	And User selects 'All Users' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks 'CREATE PROJECT' button 
 	Then 'Create Project' page should be displayed to the user
 	When User enters "MailboxProject56" in the "Project Name" field
 	And User selects 'All Mailboxes' option from 'Scope' autocomplete
@@ -94,7 +94,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAllCheckboxesOnScopeDetailsTabAreWork
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
 	Then 'Projects' page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks 'CREATE PROJECT' button 
 	Then 'Create Project' page should be displayed to the user
 	When User enters "Project12183" in the "Project Name" field
 	And User selects 'All Mailboxes' option from 'Scope' autocomplete

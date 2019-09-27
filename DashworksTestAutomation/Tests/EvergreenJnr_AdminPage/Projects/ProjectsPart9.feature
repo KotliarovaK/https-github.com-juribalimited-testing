@@ -11,7 +11,7 @@ Scenario Outline: EvergreenJnr_AdminPage_ChangingBucketFromCloneEvergreenBuckets
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
 	Then 'Projects' page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks 'CREATE PROJECT' button 
 	Then 'Create Project' page should be displayed to the user
 	When User enters "<ProjectName>" in the "Project Name" field
 	And User selects '<ScopeValue>' option from 'Scope' autocomplete
@@ -50,7 +50,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherListUsingEverg
 	When User enters "DevicesProject34" in the "Project Name" field
 	Then Scope field is automatically populated
 	When User selects "Standalone Project" in the Mode Project dropdown
-	And User clicks the "CREATE" Action button
+	And User clicks 'CREATE' button 
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	And User selects "Scope Changes" tab on the Project details page
@@ -84,11 +84,11 @@ Scenario: EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherListForDevices
 	Then "2" rows are displayed in the agGrid
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks 'CREATE PROJECT' button 
 	Then 'Create Project' page should be displayed to the user
 	When User enters "DevicesProject2" in the "Project Name" field
 	And User selects 'All Devices' option from 'Scope' autocomplete
-	And User clicks the "CREATE" Action button
+	And User clicks 'CREATE' button 
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	And User selects "Scope Changes" tab on the Project details page

@@ -21,7 +21,7 @@ Scenario: EvergreenJnr_AdminPage_AddingBucketsToTheTeam
 	When User enters "TestTeam5" text in the Search field for "Team" column
 	And User clicks content from "Team" column
 	And User navigates to the 'Buckets' left menu item
-	And User clicks the "ADD BUCKETS" Action button 
+	And User clicks 'ADD BUCKETS' button 
 	Then Add Buckets page is displayed to the user
 	When User expands "Evergreen" project to add bucket
 	And User adds following Objects from list
@@ -33,10 +33,10 @@ Scenario: EvergreenJnr_AdminPage_AddingBucketsToTheTeam
 	And User selects all rows on the grid
 	And User clicks on Actions button
 	And User selects "Change Team" in the Actions
-	And User clicks the "CONTINUE" Action button
+	And User clicks 'CONTINUE' button 
 	Then Change Team page is displayed to the user
 	When User selects "Team 10" in the Team dropdown
-	And User clicks the "CHANGE" Action button
+	And User clicks 'CHANGE' button 
 	Then Success message is displayed and contains "The selected buckets have been reassigned to the selected team" text
 	Then There are no errors in the browser console
 	When User click on Back button

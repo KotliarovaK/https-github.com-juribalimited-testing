@@ -115,7 +115,7 @@ Scenario: EvergreenJnr_AdminPage_AddingAndDeletingPermissionsForMailboxProject
 Scenario: EvergreenJnr_AdminPage_CheckThatBannerDisplaysOnScopeDetailsPage
 	When User clicks 'Admin' on the left-hand menu
 	And User navigates to the 'Projects' left menu item
-	And User clicks the "CREATE PROJECT" Action button
+	And User clicks 'CREATE PROJECT' button 
 	And User enters "TestName13205" in the "Project Name" field
 	And User selects 'All Devices' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
@@ -168,10 +168,10 @@ Scenario: EvergreenJnr_AdminPage_AddingRequestTypesAndCategories
 	| 00DB4000EDD84951993@bclabs.local (CSC, SS)         |
 	| 0E3406ED5D8349D0996@bclabs.local (Mickley, Leslie) |
 	| 0E3406ED5D8349D0996@bclabs.local (Mickley, Leslie) |
-	And User clicks the "UPDATE ALL CHANGES" Action button
+	And User clicks 'UPDATE ALL CHANGES' button 
 	Then Warning message with "2 mailboxes will be added" text is displayed on the Admin page
 	And "Mailboxes 2/0" is displayed in the tab header on the Admin page
-	When User clicks the "UPDATE PROJECT" Action button
+	When User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "2 objects queued for onboarding, 0 objects offboarded" text
 	And "Mailboxes to add (0 of 14782 selected)" is displayed to the user in the Project Scope Changes section
 	And "[Default (Mailbox)]" Path is displayed to the user

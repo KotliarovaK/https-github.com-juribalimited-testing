@@ -107,7 +107,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatUpdateAndCancelButtonsAreEnable
 	And User selects "<UpdateDate>" Update Date on Action panel
 	Then "UPDATE" Action button is active
 	And "CANCEL" Action button is active
-	When User clicks the "UPDATE" Action button
+	When User clicks 'UPDATE' button 
 	Then the amber message is displayed correctly
 	And User clicks "CANCEL" button on message box
 	And the amber message is not displayed

@@ -21,8 +21,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedObjectsAreDisplayedAfterChang
 	| 0281Z793OLLLDU6 |
 	| 03U75EKEMUQMUS  |
 	Then "Devices 2/0" is displayed in the tab header on the Admin page
-	When User clicks the "UPDATE ALL CHANGES" Action button
-	And User clicks the "UPDATE PROJECT" Action button
+	When User clicks 'UPDATE ALL CHANGES' button 
+	And User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "2 objects queued for onboarding, 0 objects offboarded" text
 	Then "Devices 0/0" is displayed in the tab header on the Admin page
 	When User click on Back button

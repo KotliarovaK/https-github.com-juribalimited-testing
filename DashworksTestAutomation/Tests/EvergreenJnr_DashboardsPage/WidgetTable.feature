@@ -9,7 +9,7 @@ Background: Pre-Conditions
 Scenario: EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorAppearsWhenCreatingTableWidget
 	When Dashboard with "Dashboard for DAS14685" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
-	When User clicks the "ADD WIDGET" Action button
+	When User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title             | List             | SplitBy     | AggregateBy | AggregateFunction | OrderBy         | MaxValues |
 	| Table      | WidgetForDAS14685 | All Applications | Application | Application | Count distinct    | Application ASC | 10        |
@@ -25,20 +25,20 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccursWhenCreatingDashb
 	And User create dynamic list with "14920_List" name on "Devices" page
 	And Dashboard with "Dashboard for DAS14920" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
-	And User clicks the "ADD WIDGET" Action button
+	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title       | List       | SplitBy             | AggregateFunction | OrderBy   | MaxValues |
 	| Table      | DAS-14920_1 | 14920_List | Secure Boot Enabled | Count             | Count ASC | 10        |
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
-	When User clicks the "CREATE" Action button
+	When User clicks 'CREATE' button 
 	Then There are no errors in the browser console
 	And "DAS-14920_1" Widget is displayed to the user
 	And "2,189" count is displayed for "False" in the table Widget
 	And "2,192" count is displayed for "True" in the table Widget
 	And "12,898" count is displayed for "Unknown" in the table Widget
 	#Second Widget creation
-	When User clicks the "ADD WIDGET" Action button
+	When User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title       | List       | SplitBy              | AggregateFunction | OrderBy   | MaxValues |
 	| Table      | DAS-14920_2 | 14920_List | Windows7Mi: In Scope | Count             | Count ASC | 10        |
@@ -51,7 +51,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccursWhenCreatingDashb
 Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetIsDisplayedCorrectly
 	When Dashboard with "Dashboard for DAS16073" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
-	When User clicks the "ADD WIDGET" Action button
+	When User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title             | List        | SplitBy  | AggregateFunction | OrderBy    | TableOrientation | MaxValues |
 	| Table      | WidgetForDAS16073 | All Devices | Hostname | Count             | Count DESC | Vertical         | 10        |
@@ -65,7 +65,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetIsDisplayedCorrectly
 Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetValuesLeadsToApplicationsListFilteredPage
 	When Dashboard with "Dashboard for DAS16069_1" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
-	And User clicks the "ADD WIDGET" Action button
+	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title               | List             | SplitBy | AggregateFunction | OrderBy    | MaxValues |
 	| Table      | WidgetForDAS16069_1 | All Applications | Vendor  | Count             | Count DESC | 500       |
@@ -83,7 +83,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetValuesLeadsToApplicati
 Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetDisplayedFullyInPreviewPane
 	When User clicks 'Dashboards' on the left-hand menu
 	And User clicks Edit mode trigger on Dashboards page
-	And User clicks the "ADD WIDGET" Action button
+	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title     | List        | SplitBy     | AggregateBy | AggregateFunction | OrderBy         | TableOrientation |
 	| Table      | DAS-15208 | All Devices | Device Type | Device Type | Count distinct    | Device Type ASC | Horizontal       |
@@ -99,12 +99,12 @@ Scenario: EvergreenJnr_DashboardsPage_CheckCapacitySlotsDisplayOrderInDashboards
 	And User create dynamic list with "Devices_List_DAS16275" name on "Devices" page
 	And Dashboard with "DAS16275_Dashboard" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
-	And User clicks the "ADD WIDGET" Action button
+	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title           | List                  | SplitBy                                           | AggregateFunction | OrderBy   | TableOrientation |
 	| Table      | DAS16275_Widget | Devices_List_DAS16275 | Windows7Mi: Pre-Migration \ Scheduled Date (Slot) | Count             | Count ASC | Vertical         |
 	Then Widget Preview is displayed to the user
-	When User clicks the "CREATE" Action button
+	When User clicks 'CREATE' button 
 	Then "DAS16275_Widget" Widget is displayed to the user
 	And content in the Widget is displayed in following order:
 	| TableValue                    |
@@ -114,7 +114,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckCapacitySlotsDisplayOrderInDashboards
 	When User clicks Ellipsis menu for "DAS16275_Widget" Widget on Dashboards page
 	And User clicks "Edit" item from Ellipsis menu on Dashboards page
 	And User selects "Count DESC" in the "Order By" Widget dropdown
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then content in the Widget is displayed in following order:
 	| TableValue                    |
 	| Empty                         |
@@ -129,7 +129,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckRingsDisplayOrderInAWidgetOnDashboard
 	And User create dynamic list with "DeviceListForDAS15826" name on "Devices" page
 	And Dashboard with "DAS15826_Dashboard" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
-	And User clicks the "ADD WIDGET" Action button
+	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title           | List                  | SplitBy                      | AggregateFunction | OrderBy                          | TableOrientation |
 	| Table      | DAS15826_Widget | DeviceListForDAS15826 | UserEvergr: Ring (All Users) | Count             | UserEvergr: Ring (All Users) ASC | Vertical         |
@@ -145,7 +145,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckRingsDisplayOrderInAWidgetOnDashboard
 	When User clicks Ellipsis menu for "DAS15826_Widget" Widget on Dashboards page
 	And User clicks "Edit" item from Ellipsis menu on Dashboards page
 	And User selects "UserEvergr: Ring (All Users) DESC" in the "Order By" Widget dropdown
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then Card "DAS15826_Widget" Widget is displayed to the user
 	And content in the Widget is displayed in following order:
 	| TableValue       |
@@ -160,7 +160,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckRingsDisplayOrderInAWidgetOnDashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingAggregateFunctionWhereThereAreNoColumnsAvailableShowsWarning
 	When Dashboard with "Dashboard for DAS15582" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
-	When User clicks the "ADD WIDGET" Action button
+	When User clicks 'ADD WIDGET' button 
 	And User selects "Table" in the "Widget Type" Widget dropdown
 	And User enters "Widget Name" as Widget Title
 	And User selects "All Devices" as Widget List
@@ -176,7 +176,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenFirstAgg
 	And User create dynamic list with "LastLogout" name on "Users" page
 	And Dashboard with "TestDashboardForDAS15362" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
-	And User clicks the "ADD WIDGET" Action button
+	And User clicks 'ADD WIDGET' button 
 	And User selects "Table" in the "Widget Type" Widget dropdown
 	And User enters "Widget Name" as Widget Title
 	And User selects "LastLogout" as Widget List
@@ -198,7 +198,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenLastAggr
 	And User create dynamic list with "LastLogout" name on "Users" page
 	And Dashboard with "TestDashboardForDAS15362" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
-	And User clicks the "ADD WIDGET" Action button
+	And User clicks 'ADD WIDGET' button 
 	And User selects "Table" in the "Widget Type" Widget dropdown
 	And User enters "Widget Name" as Widget Title
 	And User selects "LastLogout" as Widget List
@@ -219,7 +219,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckClickthoughNumbersBasedArchivedItemsR
 	And User create dynamic list with "List17599" name on "Devices" page
 	When Dashboard with "Dashboard for DAS17599" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
-	And User clicks the "ADD WIDGET" Action button
+	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title             | List      | SplitBy  | AggregateFunction | OrderBy      |
 	| Table      | WidgetForDAS17599 | List17599 | Hostname | Count             | Hostname ASC |
@@ -236,20 +236,20 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoEndlessSpinnerInPreviewIfCreate
 	And User create dynamic list with "ListFor18145" name on "Devices" page
 	And Dashboard with "DashboardForDAS18145" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
-	And User clicks the "ADD WIDGET" Action button
+	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title     | List         | SplitBy          | AggregateBy | AggregateFunction | OrderBy              |
 	| Table      | DAS-18145 | ListFor18145 | Operating System | Compliance  | Severity          | Operating System ASC |
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
-	When User clicks the "CREATE" Action button
+	When User clicks 'CREATE' button 
 	Then There are no errors in the browser console
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18091 @DAS18090 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckTheEmptyItemIsNotDisplayedOnTheDashboardPageForTheListWithoutArchivedItem
 	When Dashboard with "Dashboard for DAS18091" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
-	And User clicks the "ADD WIDGET" Action button
+	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title             | List         | SplitBy          | AggregateFunction | AggregateBy                            | OrderBy              |
 	| Table      | WidgetForDAS18091 | 1803 Rollout | Operating System | Severity          | 1803: Pre-Migration \ Ready to Migrate | Operating System ASC |

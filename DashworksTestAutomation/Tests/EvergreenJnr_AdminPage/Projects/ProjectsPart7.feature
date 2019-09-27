@@ -21,7 +21,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUsersToAddAndRemoveAreChangingAppropri
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
 	Then 'Projects' page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks 'CREATE PROJECT' button 
 	Then 'Create Project' page should be displayed to the user
 	When User enters "UsersProject" in the "Project Name" field
 	And User selects 'StaticList6529' option from 'Scope' autocomplete
@@ -37,8 +37,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUsersToAddAndRemoveAreChangingAppropri
 	| 000F977AC8824FE39B8 (Spruill, Shea)       |
 	| 002B5DC7D4D34D5C895 (Collor, Christopher) |
 	Then "Users to add (2 of 2 selected)" is displayed to the user in the Project Scope Changes section
-	When User clicks the "UPDATE ALL CHANGES" Action button
-	And User clicks the "UPDATE PROJECT" Action button
+	When User clicks 'UPDATE ALL CHANGES' button 
+	And User clicks 'UPDATE PROJECT' button 
 	Then Success message with "2 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
 	When User selects "Scope Details" tab on the Project details page
 	And User selects 'StaticList6530' in the 'Scope' dropdown with wait
@@ -99,7 +99,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMailboxProjectCreationWithCloneEvergreenBu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
 	Then 'Projects' page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks 'CREATE PROJECT' button 
 	Then 'Create Project' page should be displayed to the user
 	When User enters "MailboxesProject25" in the "Project Name" field
 	When User selects "Standalone Project" in the Mode Project dropdown
@@ -121,7 +121,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMailboxProjectCreationWithCloneEvergreenBu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
 	Then 'Projects' page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks 'CREATE PROJECT' button 
 	Then 'Create Project' page should be displayed to the user
 	When User enters "MailboxesProject26" in the "Project Name" field
 	And User selects 'StaticList5846' option from 'Scope' autocomplete
@@ -140,7 +140,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMailboxProjectCreationWithCloneEvergreenBu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
 	Then 'Projects' page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks 'CREATE PROJECT' button 
 	Then 'Create Project' page should be displayed to the user
 	When User enters "MailboxesProject27" in the "Project Name" field
 	And User selects 'DynamicList9513' option from 'Scope' autocomplete

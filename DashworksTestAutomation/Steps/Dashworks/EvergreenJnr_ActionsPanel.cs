@@ -607,23 +607,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
         //TODO looks like this section should be moved to BaseDashboard
         #region Action button
 
-        [When(@"User clicks the ""(.*)"" Action button")]
-        public void WhenUserClicksTheActionButton(string buttonName)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            action.ClickButtonByName(buttonName);
-        }
+
 
         [Then(@"""(.*)"" button is displayed without tooltip on Update form")]
         public void ThenUpdateButtonIsDisplayedWithoutTooltipOnUpdateForm(string buttonName)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
-            var button = action.GetActionsButtonByName(buttonName);
+            var button = action.GetButtonByName(buttonName);
 
             _driver.MouseHover(button);
             Verify.IsFalse(_driver.IsTooltipDisplayed(), "Tooltip for Update button displayed");
         }
-
 
         [When(@"User selects 'Save as new pilot' option")]
         public void WhenUserSelectsSaveAsNewPilotOption()
@@ -636,14 +630,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenActionButtonIsDisplayed(string buttonName)
         {
             var button = _driver.NowAt<BaseDashboardPage>();
-            Utils.Verify.IsTrue(button.GetActionsButtonByName(buttonName).Displayed(), $"{buttonName} Action button is not displayed");
+            Verify.IsTrue(button.GetButtonByName(buttonName).Displayed(), $"{buttonName} Action button is not displayed");
         }
 
         [Then(@"""(.*)"" Action button is not displayed")]
         public void ThenActionButtonIsNotDisplayed(string buttonName)
         {
             var button = _driver.NowAt<BaseDashboardPage>();
-            Utils.Verify.IsFalse(button.GetActionsButtonByName(buttonName).Displayed(), $"{buttonName} Action button is displayed");
+            Verify.IsFalse(button.GetButtonByName(buttonName).Displayed(), $"{buttonName} Action button is displayed");
         }
 
         [Then(@"""(.*)"" Action button is disabled")]
@@ -661,7 +655,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         private bool IsButtonDisabled(string buttonName)
         {
             var button = _driver.NowAt<BaseDashboardPage>();
-            var buttonState = button.GetActionsButtonByName(buttonName).GetAttribute("disabled");
+            var buttonState = button.GetButtonByName(buttonName).GetAttribute("disabled");
             if (buttonState == null)
                 return false;
             else
@@ -672,7 +666,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenActionButtonIsActive(string buttonName)
         {
             var button = _driver.NowAt<BaseDashboardPage>();
-            var buttonState = button.GetActionsButtonByName(buttonName).GetAttribute("disabled");
+            var buttonState = button.GetButtonByName(buttonName).GetAttribute("disabled");
             Utils.Verify.AreNotEqual(buttonState, "true", $"{buttonName} Button state is incorrect");
         }
 
@@ -680,7 +674,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenActionButtonHaveTooltipWithText(string buttonName, string text)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            var button = page.GetActionsButtonByName(buttonName);
+            var button = page.GetButtonByName(buttonName);
             _driver.MouseHover(button);
             var toolTipText = _driver.GetTooltipText();
             Utils.Verify.AreEqual(text, toolTipText, "Tooltip is incorrect");

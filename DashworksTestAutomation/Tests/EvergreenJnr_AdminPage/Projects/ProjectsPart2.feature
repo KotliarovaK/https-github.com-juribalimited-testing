@@ -25,9 +25,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedAfterUpdati
 	| 20040610sqlserverck (1.0.0) |
 	| 7zip                        |
 	| ACDSee 4.0 (4.0.0)          |
-	And User clicks the "UPDATE ALL CHANGES" Action button
+	And User clicks 'UPDATE ALL CHANGES' button 
 	Then Warning message with "3 applications will be added" text is displayed on the Admin page
-	When User clicks the "UPDATE PROJECT" Action button
+	When User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
 	And "Applications to add (0 of 2126 selected)" is displayed to the user in the Project Scope Changes section
 	When User selects "Queue" tab on the Project details page
@@ -50,7 +50,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedAfterUpdati
 Scenario: EvergreenJnr_ChecksThatDeviceScopeDDLIsDisabledWhenDoNotIncludeOwnedDevicesIsSelected
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks 'CREATE PROJECT' button 
 	Then 'Create Project' page should be displayed to the user
 	When User enters "Rainbow" in the "Project Name" field
 	And User selects 'All Devices' option from 'Scope' autocomplete
@@ -102,16 +102,16 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedP
 	| Objects        |
 	| 0317IPQGQBVAQV |
 	| 00I0COBFWHOF27 |
-	When User clicks the "UPDATE ALL CHANGES" Action button
-	And User clicks the "UPDATE PROJECT" Action button
+	When User clicks 'UPDATE ALL CHANGES' button 
+	And User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "2 objects queued for onboarding, 0 objects offboarded" text
 	When User navigates to the 'Users' tab on Project Scope Changes page
 	And User expands multiselect and selects following Objects
 	| Objects                       |
 	| AAG081456 (Melanie Z. Fowler) |
 	| AAH0343264 (Luc Gauthier)     |
-	When User clicks the "UPDATE ALL CHANGES" Action button
-	And User clicks the "UPDATE PROJECT" Action button
+	When User clicks 'UPDATE ALL CHANGES' button 
+	And User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "2 objects queued for onboarding, 0 objects offboarded" text
 	When User click on Back button
 	And Project created via API and opened

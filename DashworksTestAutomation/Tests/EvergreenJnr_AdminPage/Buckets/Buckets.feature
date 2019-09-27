@@ -13,10 +13,10 @@ Scenario: EvergreenJnr_AdminPage_AddingDevicesFromBuckets
 	And User navigates to newly created Bucket
 	Then "TestBucket6" bucket details is displayed to the user
 	When User navigates to the 'Devices' tab on Project Scope Changes page
-	And User clicks the "ADD DEVICE" Action button
+	And User clicks 'ADD DEVICE' button 
 	And User navigates to the 'Add from buckets' left menu item on the Buckets page
 	And User adds "Unassigned" objects to bucket
-	And User clicks the "ADD DEVICES" Action button
+	And User clicks 'ADD DEVICES' button 
 	Then Success message is displayed and contains "The selected devices have been added to the selected bucket" text
 	And There are no errors in the browser console
 	Then data in table is sorted by "Hostname" column in ascending order by default on the Admin page
@@ -53,7 +53,7 @@ Scenario: EvergreenJnr_AdminPage_AddingDevicesFromBuckets
 	And User selects all rows on the grid
 	And User clicks on Actions button
 	And User selects "Move To Another Bucket" in the Actions
-	And User clicks the "CONTINUE" Action button
+	And User clicks 'CONTINUE' button 
 	Then Move To Another Bucket Page is displayed to the user
 	When User moves selected objects to "Unassigned" bucket
 	Then Success message is displayed and contains "The selected devices have been added to the selected bucket" text
@@ -66,10 +66,10 @@ Scenario: EvergreenJnr_AdminPage_AddingMailboxesFromBuckets
 	And User navigates to newly created Bucket
 	Then "TestBucket8" bucket details is displayed to the user
 	When User navigates to the 'Mailboxes' left menu item
-	And User clicks the "ADD MAILBOX" Action button
+	And User clicks 'ADD MAILBOX' button 
 	And User navigates to the 'Add from buckets' left menu item on the Buckets page
 	And User adds "Unassigned" objects to bucket
-	And User clicks the "ADD MAILBOXES" Action button
+	And User clicks 'ADD MAILBOXES' button 
 	Then Success message is displayed and contains "The selected mailboxes have been added to the selected bucket" text
 	And data in table is sorted by "Email Address (Primary)" column in ascending order by default on the Admin page
 	And Counter shows "14,784" found rows
@@ -112,7 +112,7 @@ Scenario: EvergreenJnr_AdminPage_AddingMailboxesFromBuckets
 	And User selects all rows on the grid
 	And User clicks on Actions button
 	And User selects "Move To Another Bucket" in the Actions
-	And User clicks the "CONTINUE" Action button
+	And User clicks 'CONTINUE' button 
 	Then Move To Another Bucket Page is displayed to the user
 	When User moves selected objects to "Unassigned" bucket
 	Then Success message is displayed and contains "The selected mailboxes have been added to the selected bucket" text
@@ -136,7 +136,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketA
 	When User enters "1Bucket12905" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
 	Then "1Bucket12905" bucket details is displayed to the user
-	When User clicks the "ADD DEVICE" Action button
+	When User clicks 'ADD DEVICE' button 
 	When User adds following Objects from list
 	| Objects         |
 	| 001BAQXT6JWFPI  |
@@ -156,7 +156,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketA
 	When User enters "2Bucket12905" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
 	Then "2Bucket12905" bucket details is displayed to the user
-	When User clicks the "ADD DEVICE" Action button
+	When User clicks 'ADD DEVICE' button 
 	When User adds following Objects from list
 	| Objects         |
 	| 00I0COBFWHOF27  |
@@ -193,8 +193,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketA
 	| 00KLL9S8NRF0X6  |
 	| 00KWQ4J3WKQM0G  |
 	| 00OMQQXWA1DRI6  |
-	And User clicks the "UPDATE ALL CHANGES" Action button
-	And User clicks the "UPDATE PROJECT" Action button
+	And User clicks 'UPDATE ALL CHANGES' button 
+	And User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "10 objects queued for onboarding, 0 objects offboarded" text
 	When User click on Back button
 	When User navigates to the 'Evergreen' left menu item

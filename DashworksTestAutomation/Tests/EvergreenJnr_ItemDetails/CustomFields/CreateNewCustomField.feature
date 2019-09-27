@@ -20,7 +20,7 @@ Scenario: EvergreenJnr_DevicesList_CheckAddCustomFieldPopupUiAndTooltips
 	And User click content from "Hostname" column
 	Then Details page for "QFI94WAUX17N4I" item is displayed to the user
 	When User navigates to the "Custom Fields" sub-menu on the Details page
-	And User clicks the "ADD CUSTOM FIELD" Action button
+	And User clicks 'ADD CUSTOM FIELD' button 
 	Then "ADD" Action button is disabled
 	And "ADD" Action button have tooltip with "Some values are missing or invalid" text
 	Then "CANCEL" Action button is enabled
@@ -72,7 +72,7 @@ Scenario: EvergreenJnr_UsersList_CancelCustomFieldCreation
 	And User navigates to the 'User' details page for 'VriezeGi' item
 	Then Details page for "VriezeGi (Ginette Vrieze)" item is displayed to the user
 	When User navigates to the "Custom Fields" sub-menu on the Details page
-	And User clicks the "ADD CUSTOM FIELD" Action button
+	And User clicks 'ADD CUSTOM FIELD' button 
 	When User selects 'FlDAS16487_3' option from 'Custom Field' autocomplete
 	And User enters 'Somve_Value' text to 'Value' textbox
 	And User clicks Cancel button on Add Custom Field popup

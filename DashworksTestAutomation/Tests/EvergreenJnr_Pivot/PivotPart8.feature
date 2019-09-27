@@ -16,7 +16,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddingColumnOnPivotIsWorksCorrectlyF
 	| 4553   |
 	Then "Device Key" filter is added to the list
 	When User navigates to Pivot
-	And User clicks the "ADD COLUMN" Action button
+	And User clicks 'ADD COLUMN' button 
 	Then "5" subcategories is displayed for "Suggested" category
 	And "Device Key" subcategory is selected in Column panel
 	When User adds the "Device Key" category on Pivot
@@ -37,7 +37,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatPivotSubmenuIsDisplayedCorrectlyAfte
 	And User selects the following Values on Pivot:
 	| Values               |
 	| App Count (Entitled) |
-	When User clicks the "RUN PIVOT" Action button
+	When User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	When User creates Pivot list with "PivotList_DAS13652" name
 	Then "PivotList_DAS13652" list is displayed to user
@@ -69,7 +69,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatRemovingValueThroughTheChipsWor
 	And User selects the following Values on Pivot:
 	| Values  |
 	| <Value> |
-	When User clicks the "RUN PIVOT" Action button
+	When User clicks 'RUN PIVOT' button 
 	And User adds the following "Values" on Pivot: 
 	| Value             |
 	| <AdditionalValue> |
@@ -137,7 +137,7 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckThatOperatingSystemPivotValueIsD
 	And User selects the following Values on Pivot:
 	| Values     |
 	| Owner City |
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	And data in the table is sorted by "<RowGroups>" column in ascending order by default for the Pivot
 
@@ -163,6 +163,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOperatingSystemAndServicePackOrBuild
 	And User selects the following Values on Pivot:
 	| Values     |
 	| Owner City |
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	And data in the table is sorted by "Operating System" column in ascending order by default for the Pivot

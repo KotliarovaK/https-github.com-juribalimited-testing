@@ -28,7 +28,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatLayoutFilterForCreatedListsIsWorkedC
 	And User selects the following Values on Pivot:
 	| Values               |
 	| App Count (Entitled) |
-	When User clicks the "RUN PIVOT" Action button
+	When User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	When User creates Pivot list with "PivotDynamicFilterList_2" name
 	Then "PivotDynamicFilterList_2" list is displayed to user
@@ -43,7 +43,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatLayoutFilterForCreatedListsIsWorkedC
 	And User selects the following Values on Pivot:
 	| Values                            |
 	| Owner General information field 1 |
-	When User clicks the "RUN PIVOT" Action button
+	When User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	When User creates Pivot list with "PivotFilterList_2" name
 	Then "PivotFilterList_2" list is displayed to user
@@ -114,12 +114,12 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDashworkWorksAfterChangingPivotSetti
 	And User selects the following Values on Pivot:
 	| Values   |
 	| Hostname |
-	When User clicks the "RUN PIVOT" Action button
+	When User clicks 'RUN PIVOT' button 
 	And User removes "Hostname" Column for Pivot
 	And User selects the following Row Groups on Pivot:
 	| RowGroups |
 	| Floor     |
-	When User clicks the "RUN PIVOT" Action button
+	When User clicks 'RUN PIVOT' button 
 	Then There are no errors in the browser console
 	#Just to check that application is still responding
 	When User clicks 'Devices' on the left-hand menu

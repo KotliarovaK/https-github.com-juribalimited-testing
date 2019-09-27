@@ -25,7 +25,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDevicesAreAddedCorrectly
 	And User selects "Update capacity unit" Bulk Update Type on Action panel
 	And User selects "Evergreen" Project or Evergreen on Action panel
 	And User selects "CapacityUnit12141Devices" value for "Capacity Unit" dropdown with search on Action panel
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then User clicks "UPDATE" button on message box
 	And Success message with "5 updates have been queued" text is displayed on Action panel
 	When User clicks 'Admin' on the left-hand menu
@@ -56,7 +56,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatUsersAreAddedCorrectly
 	And User selects "Update capacity unit" Bulk Update Type on Action panel
 	And User selects "Evergreen" Project or Evergreen on Action panel
 	And User selects "CapacityUnit12141Users" value for "Capacity Unit" dropdown with search on Action panel
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then User clicks "UPDATE" button on message box
 	And Success message with "5 updates have been queued" text is displayed on Action panel
 	When User clicks 'Admin' on the left-hand menu
@@ -87,7 +87,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatApplicationsAreAddedCorrectly
 	And User selects "Update capacity unit" Bulk Update Type on Action panel
 	And User selects "Evergreen" Project or Evergreen on Action panel
 	And User selects "CapacityUnit12141Applications" value for "Capacity Unit" dropdown with search on Action panel
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then User clicks "UPDATE" button on message box
 	And Success message with "5 updates have been queued" text is displayed on Action panel
 	When User clicks 'Admin' on the left-hand menu
@@ -118,7 +118,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatMailboxesAreAddedCorrectly
 	And User selects "Update capacity unit" Bulk Update Type on Action panel
 	And User selects "Evergreen" Project or Evergreen on Action panel
 	And User selects "CapacityUnit12141Mailboxes" value for "Capacity Unit" dropdown with search on Action panel
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then User clicks "UPDATE" button on message box
 	And Success message with "5 updates have been queued" text is displayed on Action panel
 	When User clicks 'Admin' on the left-hand menu

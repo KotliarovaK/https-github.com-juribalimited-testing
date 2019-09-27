@@ -16,7 +16,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFillingFieldErrorIsNotDisplayed
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
 	Then 'Projects' page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks 'CREATE PROJECT' button 
 	Then 'Create Project' page should be displayed to the user
 	When User enters "DAS16816_Project_Users" in the "Project Name" field
 	And User selects 'DAS16816_List' option from 'Scope' autocomplete
@@ -32,7 +32,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFillingFieldErrorIsNotDisplayed
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
 	Then 'Projects' page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks 'CREATE PROJECT' button 
 	Then 'Create Project' page should be displayed to the user
 	When User enters "DAS16816_Project_Mailboxes" in the "Project Name" field
 	And User selects 'DAS16816_MailboxesList' option from 'Scope' autocomplete
@@ -48,7 +48,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFillingFieldErrorIsNotDisplayed
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
 	Then 'Projects' page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks 'CREATE PROJECT' button 
 	Then 'Create Project' page should be displayed to the user
 	When User enters "DAS16816_Project_Devices" in the "Project Name" field
 	And User selects 'DAS16816_DevicesList' option from 'Scope' autocomplete
@@ -62,7 +62,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTrueValueDisplayedInGridForEvergreenPr
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
 	Then 'Projects' page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks 'CREATE PROJECT' button 
 	Then 'Create Project' page should be displayed to the user
 	When User enters "15666Project" in the "Project Name" field
 	And User selects 'All Devices' option from 'Scope' autocomplete

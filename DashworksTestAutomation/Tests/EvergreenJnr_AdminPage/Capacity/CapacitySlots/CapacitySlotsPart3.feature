@@ -16,7 +16,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorMessageAppearsWhenCreatingDuplica
 	And User navigates to the 'Capacity' left menu item
 	And User selects "Slots" tab on the Project details page
 	And User selects "Override Dates" tab on the Project details page
-	And User clicks the "CREATE OVERRIDE DATE" Action button
+	And User clicks 'CREATE OVERRIDE DATE' button 
 	Then Create Override Date is displayed correctly
 	Then "CREATE" Action button have tooltip with "Some settings are not valid" text
 	And "CREATE" Action button is disabled
@@ -28,13 +28,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorMessageAppearsWhenCreatingDuplica
 	Then "CREATE" Action button is active
 	When User selects 'SlotDAS13779' in the 'Slot' dropdown
 	And User enters "0" value in the "Capacity" field
-	And User clicks the "CREATE" Action button
-	And User clicks the "CREATE OVERRIDE DATE" Action button
+	And User clicks 'CREATE' button 
+	And User clicks 'CREATE OVERRIDE DATE' button 
 	And User enters '29 Oct 2018' text to 'Override Start Date' datepicker
 	And User enters '29 Oct 2018' text to 'Override End Date' datepicker
 	And User selects 'SlotDAS13779' in the 'Slot' dropdown
 	And User enters "0" value in the "Capacity" field
-	And User clicks the "CREATE" Action button
+	And User clicks 'CREATE' button 
 	Then Error message with "An override already exists for this date" text is displayed
 	And "1" rows label displays in Action panel
 	And There are no errors in the browser console
@@ -50,17 +50,17 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorInConsoleAfterSettingSameOverri
 	And User navigates to newly created Slot
 	And User navigates to the 'Capacity' left menu item
 	And User selects "Override Dates" tab on the Project details page
-	And User clicks the "CREATE OVERRIDE DATE" Action button
+	And User clicks 'CREATE OVERRIDE DATE' button 
 	And User enters '1 Sep 2018' text to 'Override Start Date' datepicker
 	And User enters '7 Sep 2018' text to 'Override End Date' datepicker
 	And User selects 'Slot13442' in the 'Slot' dropdown
-	And User clicks the "CREATE" Action button
+	And User clicks 'CREATE' button 
 	Then Success message is displayed and contains "Your override date has been created" text
-	When User clicks the "CREATE OVERRIDE DATE" Action button
+	When User clicks 'CREATE OVERRIDE DATE' button 
 	And User enters '5 Sep 2018' text to 'Override Start Date' datepicker
 	And User enters '10 Sep 2018' text to 'Override End Date' datepicker
 	And User selects 'Slot13442' in the 'Slot' dropdown
-	And User clicks the "CREATE" Action button
+	And User clicks 'CREATE' button 
 	Then Error message with "An override already exists for this date" text is displayed
 	And There are no errors in the browser console
 	When User selects "Slots" tab on the Project details page
@@ -80,12 +80,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThat0ValuesAreCorrectlyShownOnTheCapacityS
 	Then "40" content is displayed in "Monday" column
 	When User clicks content from "Capacity Slot" column
 	And User changes value to "0" for "Monday" column
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then Success message is displayed and contains "The capacity slot details have been updated" text
 	And "0" content is displayed in "Monday" column
 	When User clicks content from "Capacity Slot" column
 	And User changes value to "40" for "Monday" column
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13608 @DAS13472
 Scenario: EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType

@@ -79,7 +79,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatListTypeFilterForCreatedListsIsWorke
 	And User selects the following Values on Pivot:
 	| Values               |
 	| App Count (Entitled) |
-	When User clicks the "RUN PIVOT" Action button
+	When User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	When User creates Pivot list with "PivotDynamicFilterList_1" name
 	Then "PivotDynamicFilterList_1" list is displayed to user
@@ -94,7 +94,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatListTypeFilterForCreatedListsIsWorke
 	And User selects the following Values on Pivot:
 	| Values                            |
 	| Owner General information field 1 |
-	When User clicks the "RUN PIVOT" Action button
+	When User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	When User creates Pivot list with "PivotFilterList_1" name
 	Then "PivotFilterList_1" list is displayed to user

@@ -19,7 +19,7 @@ Scenario: EvergreenJnr_MailboxesLists_CheckThatProjectStageColumnsDisplayInTheCo
 	And User selects the following Values on Pivot:
 	| Values                |
 	| EmailMigra: Readiness |
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	Then data in the table is sorted by "Language" column in ascending order by default for the Pivot
 	Then color data in the column headers is sorted in correct order for the Pivot
@@ -38,7 +38,7 @@ Scenario: EvergreenJnr_UsersLists_CheckThatProjectStageColumnsDisplayInTheCorrec
 	And User selects the following Values on Pivot:
 	| Values     |
 	| Compliance |
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	Then data in the table is sorted by "Region" column in ascending order by default for the Pivot
 	Then color data in the column headers is sorted in correct order for the Pivot
@@ -57,7 +57,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatProjectStageColumnsDisplayInTheCorr
 	And User selects the following Values on Pivot:
 	| Values    |
 	| CPU Count |
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	Then data in the table is sorted by "Region" column in ascending order by default for the Pivot
 	Then color data in the column headers is sorted in correct order for the Pivot
@@ -76,7 +76,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatApplicationTargetAppReadinessCo
 	And User selects the following Values on Pivot:
 	| Values     |
 	| Compliance |
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	Then data in the table is sorted by "Import" column in ascending order by default for the Pivot
 	Then color data in the column headers is sorted in correct order for the Pivot
@@ -95,7 +95,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatMailboxOwnerComplianceColumnsDispl
 	And User selects the following Values on Pivot:
 	| Values                |
 	| EmailMigra: Readiness |
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	And data in the table is sorted by "City" column in ascending order by default for the Pivot
 	Then Pivot column headers is displayed in following order:
@@ -118,7 +118,7 @@ Scenario: EvergreenJnr_ApplicationsLists_CheckThatComplianceColumnsDisplayInTheC
 	And User selects the following Values on Pivot:
 	| Values |
 	| Import |
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	And data in the table is sorted by "<SortedColumn>" column in ascending order by default for the Pivot
 	Then Pivot column headers is displayed in following order:

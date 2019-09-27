@@ -55,7 +55,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAppearWhenDeleteReadine
 	| RED              |
 	When User clicks on Actions button
 	When User clicks Delete button in Actions
-	When User clicks the "DELETE" Action button
+	When User clicks 'DELETE' button 
 	Then Readiness Dialog Container is displayed to the User
 	When User clicks "DELETE" button in the Readiness dialog screen
 	Then Success message is displayed and contains "The selected readiness has been deleted" text
@@ -65,7 +65,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAppearWhenDeleteReadine
 	| AMBER            |
 	When User clicks on Actions button
 	When User clicks Delete button in Actions
-	When User clicks the "DELETE" Action button
+	When User clicks 'DELETE' button 
 	Then Readiness Dialog Container is displayed to the User
 	When User clicks "DELETE" button in the Readiness dialog screen
 	Then There are no errors in the browser console
@@ -93,14 +93,14 @@ Scenario: EvergreenJnr_AdminPage_CheckReadinessDialogContainerDisplay
 	| RED              |
 	When User clicks on Actions button
 	And User clicks Delete button in Actions
-	And User clicks the "DELETE" Action button
+	And User clicks 'DELETE' button 
 	Then Readiness Dialog Container is displayed to the User
 	And "Delete Readiness" title is displayed in the Readiness Dialog Container
 	When User clicks "CANCEL" button in the Readiness dialog screen
 	And User select "Readiness" rows in the grid
 	| SelectedRowsName |
 	| GREEN            |
-	And User clicks the "DELETE" Action button
+	And User clicks 'DELETE' button 
 	Then Readiness Dialog Container is displayed to the User
 	Then "Delete Readinesses" title is displayed in the Readiness Dialog Container
 	Then Cancel button in the pop up is colored gray
@@ -121,16 +121,16 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultForApplicationsCheckboxWorksOn
 	And User navigates to the 'Readiness' left menu item
 	And User click content from "Readiness" column
 	And User sets Default for Applications checkbox in "TRUE" on Edit Readiness
-	And User clicks the "UPDATE" Action button
-	And User clicks the "CREATE READINESS" Action button
+	And User clicks 'UPDATE' button 
+	And User clicks 'CREATE READINESS' button 
 	And User updates readiness properties on Edit Readiness
 	| Readiness | Tooltip            | Ready | DefaultForApplications | ColourTemplate | ProjectName                                      |
 	| DAS14937  | tooltipForDas14937 | TRUE  | TRUE                   | RED            | Windows 7 Migration (Computer Scheduled Project) |
-	And User clicks the "CREATE" Action button
+	And User clicks 'CREATE' button 
 	And User enters "BLUE" text in the Search field for "Readiness" column
 	And User click content from "Readiness" column
 	When User sets Default for Applications checkbox in "FALSE" on Edit Readiness
-	And User clicks the "CANCEL" Action button
+	And User clicks 'CANCEL' button 
 	And User enters "DAS14937" text in the Search field for "Readiness" column
 	And User click content from "Readiness" column
 	Then User sees Default for Applications checkbox in "TRUE" state on Edit Readiness
@@ -142,11 +142,11 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatNewReadinessAddedBeforeNone
 	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Readiness' left menu item
-	And User clicks the "CREATE READINESS" Action button
+	And User clicks 'CREATE READINESS' button 
 	And User updates readiness properties on Edit Readiness
 	| Readiness  | Tooltip              | Ready | DefaultForApplications | ColourTemplate | ProjectName                                      |
 	| DAS14937_1 | tooltipForDas14937_1 | TRUE  | TRUE                   | RED            | Windows 7 Migration (Computer Scheduled Project) |
-	And User clicks the "CREATE" Action button
+	And User clicks 'CREATE' button 
 	Then Success message is displayed and contains "The readiness has been created" text
 	And Readiness "DAS14937_1" displayed before None
 
@@ -157,7 +157,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksCreateReadinessElements
 	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Readiness' left menu item
-	And User clicks the "CREATE READINESS" Action button
+	And User clicks 'CREATE READINESS' button 
 	And User enters "testreadinesname_testreadinesname_testreadinesname_t" in Readiness input on Edit Readiness
 	Then User sees "testreadinesname_testreadinesname_testreadinesname" in Readiness input on Edit Readiness
 	And User sees "testreadinesname_testreadinesname_testreadinesname" in Tooltip input on Edit Readiness
@@ -183,11 +183,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDefaultCheckboxCanNotBeUncheckedForRea
 	Then User sees Default for Applications checkbox disabled on Edit Readiness
 	And User sees Default for Applications checkbox in "TRUE" state on Edit Readiness
 	When User navigates to the 'Readiness' left menu item
-	And User clicks the "CREATE READINESS" Action button
+	And User clicks 'CREATE READINESS' button 
 	And User updates readiness properties on Edit Readiness
 	| Readiness  | Tooltip              | Ready | DefaultForApplications | ColourTemplate | ProjectName                     |
 	| DAS14938_1 | tooltipForDas14938_1 | TRUE  | TRUE                   | RED            | Project 00 M Computer Scheduled |
-	And User clicks the "CREATE" Action button
+	And User clicks 'CREATE' button 
 	Then Success message is displayed and contains "The readiness has been created" text
 	When User enters stored readiness name in Search field for "Readiness" column
 	And User click content from "Readiness" column
@@ -215,7 +215,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoneReadinessCanBePartiallyEdited
 	And User sets Default for Applications checkbox in "TRUE" on Edit Readiness
 	And User clicks Colour Template field on Edit Readiness
 	Then List of available colours is not displayed to user on Edit Readiness
-	When User clicks the "UPDATE" Action button
+	When User clicks 'UPDATE' button 
 	And User enters "None" text in the Search field for "Readiness" column
 	And User click content from "Readiness" column
 	Then User sees "None" in Readiness input on Edit Readiness
@@ -233,7 +233,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoChangesAppliedAfterCancelButtonPress
 	And User enters "None" text in the Search field for "Readiness" column
 	And User click content from "Readiness" column
 	And User enters "tooltip14938_2" in Tooltip input on Edit Readiness
-	And User clicks the "CANCEL" Action button
+	And User clicks 'CANCEL' button 
 	And User enters "None" text in the Search field for "Readiness" column
 	And User click content from "Readiness" column
 	Then User sees "None" in Readiness input on Edit Readiness
@@ -250,7 +250,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCancelReadinessAffectsNothingOnEditRea
 	And User clicks "False" checkbox from boolean filter on the Admin page
 	When User click content from "Readiness" column
 	And User remembers opened Readiness data on Edit Readiness
-	When User clicks the "CANCEL" Action button
+	When User clicks 'CANCEL' button 
 	And User clicks String Filter button for "Default for Applications" column on the Admin page
 	And User clicks "False" checkbox from boolean filter on the Admin page
 	Then Filtered readiness item equals to stored one
@@ -271,7 +271,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatValuesForReadinessGridAreDisplayedPro
 	Then Green banner contains following text "changes might not take effect immediately"
 	When User clicks newly created object link
 	Then 'Update Readiness' page subheader is displayed to user
-	When User clicks the "CANCEL" Action button
+	When User clicks 'CANCEL' button 
 	When User enters "Grey" text in the Search field for "Readiness" column
 	Then "TRUE" content is displayed for "Ready" column
 	Then "1" content is displayed for "Task Values Count" column
@@ -285,7 +285,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatValuesForReadinessGridAreDisplayedPro
 	Then Green banner contains following text "changes might not take effect immediately"
 	When User clicks newly created object link
 	Then 'Update Readiness' page subheader is displayed to user
-	When User clicks the "CANCEL" Action button
+	When User clicks 'CANCEL' button 
 	When User clicks "Change to ready" option in Cog-menu for "Green" item on Admin page
 	When User clicks "Make default for applications" option in Cog-menu for "Amber" item on Admin page
 	Then Success message is displayed and contains "The readiness has been updated" text
@@ -293,7 +293,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatValuesForReadinessGridAreDisplayedPro
 	Then Green banner contains following text "changes might not take effect immediately"
 	When User clicks newly created object link
 	Then 'Update Readiness' page subheader is displayed to user
-	When User clicks the "CANCEL" Action button
+	When User clicks 'CANCEL' button 
 	When User clicks "Make default for applications" option in Cog-menu for "Blocked" item on Admin page
 	When User have opened column settings for "Readiness" column
 	And User clicks Column button on the Column Settings panel

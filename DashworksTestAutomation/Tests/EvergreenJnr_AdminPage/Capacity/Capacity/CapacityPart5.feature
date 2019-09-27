@@ -17,7 +17,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitInAProjectMappedTo
 	| ProjectForDAS13956 | All Devices | None            | Standalone Project |
 	And User selects "Capacity" tab on the Project details page	
 	And User selects 'Clone evergreen capacity units to project capacity units' in the 'Capacity Units' dropdown
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then Success message is displayed and contains "The project capacity details have been updated" text
 	When User navigates to the "Units" sub-menu on the Details page
 	Then Counter shows "1" found rows
@@ -67,7 +67,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedApplicationsAreDisplayedCapac
 	And User selects "Project" Project or Evergreen on Action panel
 	And User selects "Email Migration" Project on Action panel
 	And User selects "1Test" value for "Capacity Unit" dropdown with search on Action panel
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then User clicks "UPDATE" button on message box
 	And Success message with "2 of 2 objects were in the selected project and have been queued" text is displayed on Action panel
 	When User clicks 'Admin' on the left-hand menu

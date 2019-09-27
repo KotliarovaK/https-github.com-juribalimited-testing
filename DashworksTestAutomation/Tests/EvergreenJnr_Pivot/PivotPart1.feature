@@ -19,7 +19,7 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatPivotsAreNotShownInTheListToSe
 	And User selects the following Values on Pivot:
 	| Values   |
 	| <Values> |
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	When User creates Pivot list with "<PivotName>" name
 	Then "<PivotName>" list is displayed to user
@@ -124,7 +124,7 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatColumnsCanBeAddedAfterRunningP
 	And User selects the following Values on Pivot:
 	| Values  |
 	| <Value> |
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	Then Plus button is not displayed in the left-pinned column
 	When User clicks "<Link>" link in Lists panel
@@ -156,7 +156,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatAddColumnCheckBoxRemovedFromFil
 	And User selects the following Values on Pivot:
 	| Values  |
 	| <Value> |
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	When User clicks the Filters button
 	And User selects "<FilterName>" filter from "<CategoryName>" category
@@ -182,7 +182,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatAddColumnCheckBoxRemovedFromFil
 	And User selects the following Values on Pivot:
 	| Values  |
 	| <Value> |
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	When User creates Pivot list with "<PivotName>" name
 	And User clicks '<ListName>' on the left-hand menu

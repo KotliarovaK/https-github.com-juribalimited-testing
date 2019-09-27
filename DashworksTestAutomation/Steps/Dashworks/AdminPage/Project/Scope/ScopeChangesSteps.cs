@@ -108,7 +108,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Scope
                 _addedObjects.Value.Add(s, _lastUsedBucket.Value);
             }
 
-            basePage.GetActionsButtonByName("ADD BUCKETS").Click();
+            basePage.GetButtonByName("ADD BUCKETS").Click();
         }
 
         //TODO looks like should be removed

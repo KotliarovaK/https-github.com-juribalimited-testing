@@ -28,7 +28,7 @@ Scenario: EvergreenJnr_ApplicationsLists_CheckThatSeverityAggregateFunctionAvail
 	When User clicks Save filter button
 	When User clicks the Pivot button
 	When User selects aggregate function "Severity" on Pivot
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	When User expanded "Altera" left-pinned value on Pivot
 	Then following values are displayed for "SMS_GEN" column on Pivot
@@ -55,7 +55,7 @@ Scenario: EvergreenJnr_MailboxesLists_CheckThatSeverityAggregateFunctionAvailabl
 	| Values           |
 	| Owner Compliance |
 	When User selects aggregate function "Severity" on Pivot
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	When User expanded "BCLABS-2007" left-pinned value on Pivot
 	Then following values are displayed for "Empty" column on Pivot
@@ -93,7 +93,7 @@ Scenario: EvergreenJnr_UsersLists_CheckThatSeverityAggregateFunctionAvailableFor
 	When User clicks Save filter button
 	When User clicks the Pivot button
 	When User selects aggregate function "Severity" on Pivot
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	When User expanded "Exchange Tower" left-pinned value on Pivot
 	Then following values are displayed for "Scotland" column on Pivot
@@ -119,7 +119,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatSeverityAggregateFunctionAvailableF
 	| Values     |
 	| Compliance |
 	When User selects aggregate function "Severity" on Pivot
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	When User expanded "Empty" left-pinned value on Pivot
 	Then following values are displayed for "A01 SMS (Spoof)" column on Pivot
@@ -141,7 +141,7 @@ Scenario: EvergreenJnr_ApplicationsLists_CheckThatProjectReadinessTaskColumnsDis
 	And User selects the following Values on Pivot:
 	| Values     |
 	| Compliance |
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	And data in the table is sorted by "Vendor" column in ascending order by default for the Pivot
 	Then Empty value is displayed on the first place for the Pivot
@@ -164,7 +164,7 @@ Scenario: EvergreenJnr_MailboxesLists_CheckThatProjectReadinessTaskColumnsDispla
 	And User selects the following Values on Pivot:
 	| Values           |
 	| Owner Compliance |
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	And data in the table is sorted by "Evergreen Bucket" column in ascending order by default for the Pivot
 	Then Empty value is not displayed on the first place for the Pivot

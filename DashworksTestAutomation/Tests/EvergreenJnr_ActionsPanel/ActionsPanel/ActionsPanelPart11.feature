@@ -24,7 +24,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatNoErrorDisplayedWhenBulkUpdateMai
 	And User selects "Project" Project or Evergreen on Action panel
 	And User selects "Mailbox Evergreen Capacity Project" Project on Action panel
 	And User selects "Unassigned" Ring on Action panel
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
 	And There are no errors in the browser console
@@ -92,7 +92,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatBulkUpdateOfArchivedItemsWorks
 	And User selects "Update capacity unit" Bulk Update Type on Action panel
 	And User selects "Evergreen" Project or Evergreen on Action panel
 	And User selects "Evergreen Capacity Unit 1" Capacity Unit on Action panel
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
 	And There are no errors in the browser console
@@ -137,7 +137,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFullSlotIsDisplayedWhileRulesShouldH
 	And User selects "Update" Update Date on Action panel
 	And User selects next Tuesday Date on Action panel
 	And User selects "Slot17833_1" value for "Capacity Slot" dropdown on Action panel
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
 	When User clicks refresh button in the browser

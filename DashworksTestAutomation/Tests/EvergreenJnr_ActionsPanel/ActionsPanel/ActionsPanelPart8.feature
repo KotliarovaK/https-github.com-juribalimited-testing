@@ -29,7 +29,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatBulkUpdateOfThousandsOfRowsUpdateToSuc
 	And User selects "Stage 0" Stage on Action panel
 	And User selects "Task 0" Task on Action panel
 	And User selects "Started" Value on Action panel
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then the amber message is displayed correctly
 	And User clicks "UPDATE" button on message box
 	And Success message with "7578 of 7578 objects were in the selected project and have been queued" text is displayed on Action panel

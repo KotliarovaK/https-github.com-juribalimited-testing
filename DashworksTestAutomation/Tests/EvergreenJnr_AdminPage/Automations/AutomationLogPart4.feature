@@ -25,7 +25,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateAndRemoveTaskValueForUpdateValueInUs
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
-	When User clicks the "CREATE ACTION" Action button
+	When User clicks 'CREATE ACTION' button 
 	When User enters '17683_Action' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'zMailbox Sch for Automations Feature' option from 'Project' autocomplete
@@ -34,7 +34,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateAndRemoveTaskValueForUpdateValueInUs
 	And User selects "No change" Update Value on Action panel
 	And User selects "Update" Update Date on Action panel
 	And User selects "3 Apr 2019" Date on Action panel
-	And User clicks the "CREATE" Action button
+	And User clicks 'CREATE' button 
 	#Create Action
 	When User clicks "Automations" navigation link on the Admin page
 	When User enters "17683_Automation" text in the Search field for "Automation" column
@@ -63,7 +63,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateAndRemoveTaskValueForUpdateValueInUs
 	When User navigates to the 'Actions' left menu item
 	And User clicks content from "Action" column
 	And User selects 'Remove' in the 'Update Date' dropdown
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	#Check updated Automation
 	When User clicks "Automations" navigation link on the Admin page
 	When User enters "17683_Automation" text in the Search field for "Automation" column
@@ -94,7 +94,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInAppsScopedA
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
-	When User clicks the "CREATE ACTION" Action button
+	When User clicks 'CREATE ACTION' button 
 	And User enters 'DAS17859_Action' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
@@ -105,7 +105,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInAppsScopedA
 	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters '9 Sep 2019' text to 'Date' textbox
 	And User selects 'None' in the 'Capacity Slot' dropdown
-	And User clicks the "CREATE" Action button
+	And User clicks 'CREATE' button 
 	#Create Action
 	When User clicks "Automations" navigation link on the Admin page
 	And User enters "DAS17859_Automation" text in the Search field for "Automation" column
@@ -142,7 +142,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueWithNoChangeDateForUpdateTaskVa
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
-	When User clicks the "CREATE ACTION" Action button
+	When User clicks 'CREATE ACTION' button 
 	And User enters 'DAS17859_Action' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'zDevice Sch for Automations Feature' option from 'Project' autocomplete
@@ -151,7 +151,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueWithNoChangeDateForUpdateTaskVa
 	And User selects 'Update' in the 'Update Value' dropdown
 	And User selects 'Not Started' in the 'Value' dropdown
 	And User selects 'No change' in the 'Update Date' dropdown
-	And User clicks the "CREATE" Action button
+	And User clicks 'CREATE' button 
 	#Create Action
 	When User clicks "Automations" navigation link on the Admin page
 	And User enters "DAS17859_Aut_Test" text in the Search field for "Automation" column

@@ -34,11 +34,11 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameEditedInSeniorIsUpdatedInA
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
 	Then 'Projects' page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks 'CREATE PROJECT' button 
 	Then 'Create Project' page should be displayed to the user
 	When User enters "10_Project13096" in the "Project Name" field
 	And User selects 'All Devices' option from 'Scope' autocomplete
-	When User clicks the "CREATE" Action button
+	When User clicks 'CREATE' button 
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "10_Project13096" is displayed to user
@@ -85,12 +85,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	And User selects following Objects from the expandable multiselect
 	| Objects                          |
 	| ACD252468 (Nicolas O. Mc Millan) |
-	And User clicks the "UPDATE ALL CHANGES" Action button
+	And User clicks 'UPDATE ALL CHANGES' button 
 	Then Warning message with "1 device will be added, 1 user will be added" text is displayed on the Admin page
 	And Objects to add panel is disabled
 	When User navigates to the 'Devices' tab on Project Scope Changes page
 	Then Objects to add panel is disabled
-	When User clicks the "UPDATE PROJECT" Action button
+	When User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "2 objects queued for onboarding, 0 objects offboarded" text
 	Then "UPDATE ALL CHANGES" Action button is disabled
 	And "Devices to add (0 of 17278 selected)" is displayed to the user in the Project Scope Changes section
@@ -133,12 +133,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	| Objects                                |
 	| 00BDBAEA57334C7C8F4 (Basa, Rogelio)    |
 	| 00CFE13AAE104724AF5 (Hardieway, Linda) |
-	And User clicks the "UPDATE ALL CHANGES" Action button
+	And User clicks 'UPDATE ALL CHANGES' button 
 	Then Warning message with "2 users will be added" text is displayed on the Admin page
 	Then Objects to add panel is disabled
 	When User navigates to the 'Devices' tab on Project Scope Changes page
 	Then Objects to add panel is disabled
-	When User clicks the "UPDATE PROJECT" Action button
+	When User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "2 objects queued for onboarding, 0 objects offboarded" text
 	Then "UPDATE ALL CHANGES" Action button is disabled
 	When User navigates to the 'Users' tab on Project Scope Changes page

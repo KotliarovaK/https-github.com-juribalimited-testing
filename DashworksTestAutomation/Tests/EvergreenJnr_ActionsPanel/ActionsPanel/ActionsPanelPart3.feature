@@ -34,7 +34,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersP
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	Then "UPDATE" Action button is disabled
 	When User selects "User; Maternity" Path on Action panel
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
 	And Success message with "3 of 3 objects were in the selected project and have been queued" text is displayed on Action panel
@@ -59,7 +59,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersP
 	And User selects "Update path" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "User: VIP" Path on Action panel
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
@@ -73,7 +73,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersP
 	And User selects "Update path" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "User: No Agent" Path on Action panel
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
@@ -87,7 +87,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersP
 	And User selects "Update path" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "[Default (User)]" Path on Action panel
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
@@ -118,7 +118,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatRequestTypeIsUpdatedCorrectlyO
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	Then "UPDATE" Action button is disabled
 	When User selects "Application: Request Type B" Path on Action panel
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
 	And Success message with "2 of 2 objects were in the selected project and have been queued" text is displayed on Action panel
@@ -140,7 +140,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatRequestTypeIsUpdatedCorrectlyO
 	And User selects "Update path" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "[Default (Application)]" Path on Action panel
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
@@ -154,7 +154,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatRequestTypeIsUpdatedCorrectlyO
 	And User selects "Update path" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "Application: Request Type A" Path on Action panel
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
@@ -186,7 +186,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnMa
 	And User selects "Email Migration" Project on Action panel
 	Then "UPDATE" Action button is disabled
 	When User selects "Personal Mailbox - VIP" Path on Action panel
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
 	And Success message with "3 of 3 objects were in the selected project and have been queued" text is displayed on Action panel
@@ -210,7 +210,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnMa
 	And User selects "Update path" Bulk Update Type on Action panel
 	And User selects "Email Migration" Project on Action panel
 	And User selects "Shared Mailbox" Path on Action panel
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
@@ -224,7 +224,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnMa
 	And User selects "Update path" Bulk Update Type on Action panel
 	And User selects "Email Migration" Project on Action panel
 	And User selects "Personal Mailbox - EA" Path on Action panel
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
@@ -238,7 +238,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnMa
 	And User selects "Update path" Bulk Update Type on Action panel
 	And User selects "Email Migration" Project on Action panel
 	And User selects "Personal Mailbox" Path on Action panel
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
@@ -265,7 +265,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyWhereS
 	And User selects "Update path" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "Computer: Workstation Replacement" Path on Action panel
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
 	And Success message with "5 of 5 objects were in the selected project and have been queued" text is displayed on Action panel
@@ -295,7 +295,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyWhereS
 	And User selects "Update path" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "[This is the Default Request Type for Computer)] " Path on Action panel
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
 	And Success message with "3 of 3 objects were in the selected project and have been queued" text is displayed on Action panel
@@ -309,7 +309,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyWhereS
 	And User selects "Update path" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "Computer: Virtual Machine" Path on Action panel
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
@@ -323,7 +323,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyWhereS
 	And User selects "Update path" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "Computer: Laptop Replacement" Path on Action panel
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel

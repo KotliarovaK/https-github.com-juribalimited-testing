@@ -59,7 +59,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTasksListDisplayingOnCreateAndEditSlotsScr
 	| i-stage A \ i-Targeted  |
 	When User navigates to the 'Capacity' left menu item
 	When User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE SLOT" Action button
+	And User clicks 'CREATE SLOT' button 
 	And User selects following items in "Paths" dropdown:
 	| items                             |
 	| req type comp              |
@@ -89,13 +89,13 @@ Scenario: EvergreenJnr_AdminPage_CheckTasksWithoutRequestTypeAlwaysAvailableForS
 	When User navigates to "Devices Evergreen Capacity Project" project details
 	And User navigates to the 'Capacity' left menu item
 	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE SLOT" Action button
+	And User clicks 'CREATE SLOT' button 
 	And User type "Slot13671" Name in the "Slot Name" field on the Project details page
 	And User type "13671" Name in the "Display Name" field on the Project details page
 	And User selects 'Teams and Paths' in the 'Capacity Type' dropdown
 	And User selects "[Default (Computer)]" checkbox in the "Paths" field on the Project details page
 	And User selects "Stage 1 \ WO Task13671" checkbox in the "Tasks" field on the Project details page
-	And User clicks the "CREATE" Action button
+	And User clicks 'CREATE' button 
 	Then Success message is displayed and contains "Your capacity slot has been created" text
 	When User clicks newly created object link
 	Then 'Stage 1 \ WO Task13671' value is displayed in the 'Tasks' dropdown

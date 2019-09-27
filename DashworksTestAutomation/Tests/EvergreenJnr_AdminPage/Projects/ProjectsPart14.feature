@@ -30,9 +30,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameWhichStartsWithLowerCaseLe
 	| ADX520696 (Bridgett E. Cobb) |
 	| CKB423934 (Tracie N. Bright) |
 	| CKB423934 (Tracie N. Bright) |
-	And User clicks the "UPDATE ALL CHANGES" Action button
+	And User clicks 'UPDATE ALL CHANGES' button 
 	Then Warning message with "3 users will be added" text is displayed on the Admin page
-	When User clicks the "UPDATE PROJECT" Action button
+	When User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
 	When User navigates to the 'Applications' tab on Project Scope Changes page
 	And User expands multiselect and selects following Objects
@@ -40,9 +40,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameWhichStartsWithLowerCaseLe
 	| Adobe Reader 5ver2.1 |
 	| allCLEAR 6.0 Viewer  |
 	| AnalogX TrackSeek    |
-	And User clicks the "UPDATE ALL CHANGES" Action button
+	And User clicks 'UPDATE ALL CHANGES' button 
 	Then Warning message with "3 applications will be added" text is displayed on the Admin page
-	When User clicks the "UPDATE PROJECT" Action button
+	When User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
 	When User navigates to the 'Users' tab on Project Scope Changes page
 	Then following objects were not found
@@ -105,8 +105,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatColourOfOnboardedAppIsDisplayedCorrec
 	And User selects following Objects from the expandable multiselect
 	| Objects                                                      |
 	| ALS - Designing a Microsoft Windows 2000 Dir. Services eBook |
-	When User clicks the "UPDATE ALL CHANGES" Action button
-	And User clicks the "UPDATE PROJECT" Action button
+	When User clicks 'UPDATE ALL CHANGES' button 
+	And User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "1 object queued for onboarding, 0 objects offboarded" text
 	When User selects "Queue" tab on the Project details page
 	Then following Items are displayed in the Queue table
@@ -141,9 +141,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOffboardedObjectsAreListedAfterSelectO
 	| 05LG3HCJLEDEMTR |
 	| 2QP6MWKI0BM87U  |
 	| 2QP6MWKI0BM87U  |
-	And User clicks the "UPDATE ALL CHANGES" Action button
+	And User clicks 'UPDATE ALL CHANGES' button 
 	Then Warning message with "4 devices will be added" text is displayed on the Admin page
-	When User clicks the "UPDATE PROJECT" Action button
+	When User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "4 objects queued for onboarding, 0 objects offboarded" text
 	When User selects "Scope Details" tab on the Project details page
 	And User navigates to the 'Device Scope' tab on Project Scope Changes page
@@ -156,9 +156,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOffboardedObjectsAreListedAfterSelectO
 	| Objects         |
 	| 01HMZTRG6OQAOF  |
 	| 02C80G8RFTPA9E  |
-	And User clicks the "UPDATE ALL CHANGES" Action button
+	And User clicks 'UPDATE ALL CHANGES' button 
 	Then Warning message with "2 devices will be removed" text is displayed on the Admin page
-	When User clicks the "UPDATE PROJECT" Action button
+	When User clicks 'UPDATE PROJECT' button 
 	Then Success message with "0 objects queued for onboarding, 2 objects offboarded" text is displayed on the Projects page
 	When User selects "History" tab on the Project details page
 	And User clicks String Filter button for "Action" column on the Admin page

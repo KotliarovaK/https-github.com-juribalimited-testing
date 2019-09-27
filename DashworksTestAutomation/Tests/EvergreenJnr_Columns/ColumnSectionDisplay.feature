@@ -307,7 +307,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromThe
 	And User selects "Add to static list" in the Actions dropdown
 	Then "ADD" Action button is disabled
 	And User selects "StaticListFromTheAllList" List in Saved List dropdown
-	When User clicks the "ADD" Action button
+	When User clicks 'ADD' button 
 	Then "4" rows are displayed in the agGrid
 	And Column is displayed in following order:
 	| ColumnName         |

@@ -26,12 +26,12 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForDeviceScopedProject
 	| Move to top      |
 	| Move to bottom   |
 	| Move to position |
-	When User clicks the "CREATE PROJECT RING" Action button
+	When User clicks 'CREATE PROJECT RING' button 
 	Then 'Create Project Ring' page should be displayed to the user
 	When User type "14695_Ring" Name in the "Ring name" field on the Project details page
 	And User clicks Create button on the Create Ring page
 	Then Success message is displayed and contains "The ring has been created" text
-	When User clicks the "CREATE PROJECT RING" Action button
+	When User clicks 'CREATE PROJECT RING' button 
 	Then 'Create Project Ring' page should be displayed to the user
 	When User type "Ring_Test" Name in the "Ring name" field on the Project details page
 	When User clicks Default Ring checkbox
@@ -99,12 +99,12 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForMailboxScopedProject
 	| Move to top      |
 	| Move to bottom   |
 	| Move to position |
-	When User clicks the "CREATE PROJECT RING" Action button
+	When User clicks 'CREATE PROJECT RING' button 
 	Then 'Create Project Ring' page should be displayed to the user
 	When User type "14705_Ring" Name in the "Ring name" field on the 'Email Migration' Project details page
 	And User clicks Create button on the Create Ring page
 	Then Success message is displayed and contains "The ring has been created" text
-	When User clicks the "CREATE PROJECT RING" Action button
+	When User clicks 'CREATE PROJECT RING' button 
 	Then 'Create Project Ring' page should be displayed to the user
 	When User type "Ring_Test" Name in the "Ring name" field on the 'Email Migration' Project details page
 	And User clicks Create button on the Create Ring page

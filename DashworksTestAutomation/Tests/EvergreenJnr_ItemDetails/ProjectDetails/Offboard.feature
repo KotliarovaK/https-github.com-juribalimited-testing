@@ -17,11 +17,11 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectly
 	When User switches to the "<ProjectName>" project in the Top bar on Item details page
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the "Project Details" sub-menu on the Details page
-	And User clicks the "OFFBOARD" Action button
+	And User clicks 'OFFBOARD' button 
 	Then Dialog Pop-up is displayed for User
-	When User clicks the "OFFBOARD" Action button
+	When User clicks 'OFFBOARD' button 
 	Then Warning message with "The selected objects will be offboarded, this cannot be undone" text is displayed on the Project Details Page
-	When User clicks the "OFFBOARD" Action button
+	When User clicks 'OFFBOARD' button 
 	#going to check the object state
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -52,11 +52,11 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectly
 	When User switches to the "<ProjectName>" project in the Top bar on Item details page
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the "Project Details" sub-menu on the Details page
-	And User clicks the "OFFBOARD" Action button
+	And User clicks 'OFFBOARD' button 
 	Then Dialog Pop-up is displayed for User
-	When User clicks the "OFFBOARD" Action button
+	When User clicks 'OFFBOARD' button 
 	Then Warning message with "<Message>" text is displayed on the Project Details Page
-	When User clicks the "OFFBOARD" Action button
+	When User clicks 'OFFBOARD' button 
 	#going to check the object state
 	And User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user

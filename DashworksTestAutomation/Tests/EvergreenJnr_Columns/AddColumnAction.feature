@@ -280,7 +280,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatNewlyAddedColumnIsDisplayedCorrec
 	When User selects And "EmailMigra: Readiness" filter where type is "Equals" with added column and Lookup option:
 	| SelectedValues |
 	| Out Of Scope   |
-	And User clicks the "CANCEL" Action button
+	And User clicks 'CANCEL' button 
 	Then Add And button is displayed on the Filter panel
 
 @Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS12481

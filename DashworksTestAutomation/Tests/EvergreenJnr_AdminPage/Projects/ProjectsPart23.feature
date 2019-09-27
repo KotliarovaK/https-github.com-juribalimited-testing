@@ -61,9 +61,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectCountersDisplayedInRingGridFor
 	And User expands multiselect and selects following Objects
 	| Objects                                            |
 	| 0004 - Adobe Acrobat Reader 5.0.5 Francais (5.0.5) |
-	And User clicks the "UPDATE ALL CHANGES" Action button
+	And User clicks 'UPDATE ALL CHANGES' button 
 	Then Warning message with "1 device will be added, 1 user will be added, 1 application will be added" text is displayed on the Admin page
-	When User clicks the "UPDATE PROJECT" Action button
+	When User clicks 'UPDATE PROJECT' button 
 	And User selects "Queue" tab on the Project details page
 	And User waits until Queue disappears
 	And User clicks 'Admin' on the left-hand menu

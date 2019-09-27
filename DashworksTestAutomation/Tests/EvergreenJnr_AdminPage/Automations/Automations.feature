@@ -84,7 +84,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations
 	| Delete        |
 	When User clicks on Actions button
 	And User selects "Run now" in the Actions
-	When User clicks the "RUN" Action button
+	When User clicks 'RUN' button 
 	Then Warning message with "Are you sure you wish to run 1 automation?" text is displayed on the Admin page
 	When User clicks "RUN" button in the warning message on Admin page
 	Then Success message is displayed and contains "1 automation started," text
@@ -419,13 +419,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridLoadsWithActionsForAnAutoma
 	| Task or Field    |
 	| Value            |
 	#Check that grid has at least three actions
-	When User clicks the "CREATE ACTION" Action button
+	When User clicks 'CREATE ACTION' button 
 	Then Create Action page is displayed to the User
 	When User enters '15309_Action' text to 'Action Name' textbox
 	When User selects 'Update path' in the 'Action Type' dropdown
 	When User selects '1803 Rollout' option from 'Project' autocomplete
 	When User selects 'Undetermined' option from 'Path' autocomplete
-	And User clicks the "CREATE" Action button
+	And User clicks 'CREATE' button 
 	Then Success message is displayed and contains "click here to view the 15309_Action action" link
 	When User have opened column settings for "Action" column
 	And User clicks Column button on the Column Settings panel
@@ -439,7 +439,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Automations' left menu item
 	Then 'Automations' page should be displayed to the user
-	When User clicks the "CREATE AUTOMATION" Action button
+	When User clicks 'CREATE AUTOMATION' button 
 	Then "Create Automation" title is displayed on the Automations page
 	When User enters '16764_Automation' text to 'Automation Name' textbox
 	When User enters '16764' text to 'Description' textbox
@@ -448,7 +448,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality
 	When User selects "Stop on failed action" checkbox on the Automation Page
 	Then "CREATE" Action button is disabled
 	When User selects 'Manual' in the 'Run' dropdown
-	And User clicks the "CREATE" Action button
+	And User clicks 'CREATE' button 
 	Then Success message is displayed and contains "click here to view the 16764_Automation automation" link
 	When User clicks newly created object link
 	Then Automation page is displayed correctly
@@ -503,13 +503,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextFor
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Automations' left menu item
 	Then 'Automations' page should be displayed to the user
-	When User clicks the "CREATE AUTOMATION" Action button
+	When User clicks 'CREATE AUTOMATION' button 
 	When User enters 'DAS15423_Automation' text to 'Automation Name' textbox
 	When User enters 'DAS15423' text to 'Description' textbox
 	When User selects 'DAS15423_List' option from 'Scope' autocomplete
 	When User selects 'Manual' in the 'Run' dropdown
 	When User selects "Active" checkbox on the Automation Page
-	And User clicks the "CREATE" Action button
+	And User clicks 'CREATE' button 
 	When User clicks newly created object link
 	Then Automation page is displayed correctly
 	Then 'DAS15423_List' content is displayed in 'Scope' textbox
@@ -533,7 +533,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextFor
 	#When User navigates to the 'Actions' left menu item
 	#Then Edit Action page is displayed to the User
 	#When User navigates to the 'Details' left menu item
-	When User clicks the "CANCEL" Action button
+	When User clicks 'CANCEL' button 
 	When User enters "DAS15423_Automation" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "DAS15423_Automation" item on Admin page
 	When User selects "Automation Log" tab on the Project details page
@@ -553,7 +553,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRunNowFunctionalityToRunMoreThanOneAutomat
 	When User selects all rows on the grid
 	When User clicks on Actions button
 	And User selects "Run now" in the Actions
-	When User clicks the "RUN" Action button
+	When User clicks 'RUN' button 
 	Then Warning message with "Are you sure you wish to run 2 automations?" text is displayed on the Admin page
 	When User clicks "RUN" button in the warning message on Admin page
 	Then Success message is displayed and contains "2 automations started," text
@@ -573,14 +573,14 @@ Scenario: EvergreenJnr_AdminPage_CheckRunNowfunctionalityInBulkActions
 	When User selects all rows on the grid
 	When User clicks on Actions button
 	And User selects "Run now" in the Actions
-	When User clicks the "RUN" Action button
+	When User clicks 'RUN' button 
 	When User clicks "RUN" button in the warning message on Admin page
 	Then Success message is displayed and contains "1 automation started," text
 	When User enters "Devices_Scope" text in the Search field for "Automation" column
 	When User selects all rows on the grid
 	When User clicks on Actions button
 	And User selects "Run now" in the Actions
-	When User clicks the "RUN" Action button
+	When User clicks 'RUN' button 
 	When User clicks "RUN" button in the warning message on Admin page
 	Then Success message is displayed and contains "1 automation started," text
 
@@ -599,18 +599,18 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateAndCreateActionsFunctionalityForAuto
 	When User enters "DELAY - do not delete" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
 	When User navigates to the 'Actions' left menu item
-	When User clicks the "CREATE ACTION" Action button
+	When User clicks 'CREATE ACTION' button 
 	Then Create Action page is displayed to the User
 	When User enters '17171_Action' text to 'Action Name' textbox
 	When User selects 'Update path' in the 'Action Type' dropdown
 	When User selects 'Migration Project Phase 2 (User Project)' option from 'Project' autocomplete
 	When User selects '[Default (User)]' option from 'Path' autocomplete
-	When User clicks the "CREATE" Action button
+	When User clicks 'CREATE' button 
 	Then Error message with "This automation is currently running" text is displayed
 	When User navigates to the 'Actions' left menu item
 	When User clicks content from "Action" column
 	When User enters 'NewAction' text to 'Action Name' textbox
-	When User clicks the "UPDATE" Action button
+	When User clicks 'UPDATE' button 
 	Then Error message with "This automation is currently running" text is displayed
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17003 @Cleanup @Not_Ready
@@ -685,7 +685,7 @@ Scenario: EvergreenJnr_AdminPage_ChechAutomationsPermissionsForScopeDropdownList
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Automations' left menu item
 	Then 'Automations' page should be displayed to the user
-	When User clicks the "CREATE AUTOMATION" Action button
+	When User clicks 'CREATE AUTOMATION' button 
 	When User selects '17003_List' option from 'Scope' autocomplete
 	When User clicks 'Projects' on the left-hand menu
 	When User navigate to Manage link
@@ -704,19 +704,19 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeviceLisFiltertHasAppropriateAutomati
 	| DAS15949_Automation | DAS15949    | true   | false              | DAS15949_List | Manual |
 	And User navigates to the 'Actions' left menu item
 	#create action #1
-	And User clicks the "CREATE ACTION" Action button
+	And User clicks 'CREATE ACTION' button 
 	And User enters '15949_Action_1' text to 'Action Name' textbox
 	And User selects 'Update path' in the 'Action Type' dropdown
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
 	And User selects 'Computer: Laptop Replacement' option from 'Path' autocomplete
-	And User clicks the "CREATE" Action button
+	And User clicks 'CREATE' button 
 	#create action #2
-	And User clicks the "CREATE ACTION" Action button
+	And User clicks 'CREATE ACTION' button 
 	And User enters '15949_Action_2' text to 'Action Name' textbox
 	And User selects 'Update path' in the 'Action Type' dropdown
 	And User selects 'Barry's User Project' option from 'Project' autocomplete
 	And User selects 'Desktop Replacement' option from 'Path' autocomplete
-	And User clicks the "CREATE" Action button
+	And User clicks 'CREATE' button 
 	#run automation
 	And User navigates to the 'Automations' left menu item
 	And User clicks "Run now" option in Cog-menu for "DAS15949_Automation" item on Admin page and wait for processing

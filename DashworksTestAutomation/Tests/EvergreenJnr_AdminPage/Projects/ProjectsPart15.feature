@@ -34,8 +34,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedBucketsIsDisplayedForOnboarded
 	And User expands multiselect and selects following Objects
 	| Objects                               |
 	| 003F5D8E1A844B1FAA5 (Hunter, Melanie) |
-	And User clicks the "UPDATE ALL CHANGES" Action button
-	And User clicks the "UPDATE PROJECT" Action button
+	And User clicks 'UPDATE ALL CHANGES' button 
+	And User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "1 object queued for onboarding, 0 objects offboarded" text
 	When User selects "Queue" tab on the Project details page
 	Then following Items are displayed in the Queue table
@@ -159,8 +159,8 @@ Scenario: EvergreenJnr_AdminPage_TheGreenBannerIsNotDisplayedIfBannerWasBeShownO
 	And User selects following Objects from the expandable multiselect
 	| Objects         |
 	| 0623U41CZ73RV2Q |
-	When User clicks the "UPDATE ALL CHANGES" Action button
-	And User clicks the "UPDATE PROJECT" Action button
+	When User clicks 'UPDATE ALL CHANGES' button 
+	And User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "1 object queued for onboarding, 0 objects offboarded" text
 	When User selects "Queue" tab on the Project details page
 	Then following Items are displayed in the Queue table

@@ -271,9 +271,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCorrectMessageIsDisplayedBeforeDelet
 	When User click Delete button for custom list with "DynamicList15444" name
 	Then ""DynamicList15444" list is used by 1 project, do you wish to proceed?" message is displayed in the lists panel
 	When User clicks 'Dashboards' on the left-hand menu
-	When User clicks the "CREATE DASHBOARD" Action button
+	When User clicks 'CREATE DASHBOARD' button 
 	And User creates new Dashboard with "Dashboard for DAS15444" name
-	And User clicks the "ADD WIDGET" Action button
+	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title                | List             | MaxRows | MaxColumns |
 	| List       | Widget_For_ DAS15444 | DynamicList15444 | 10      | 10         |

@@ -11,7 +11,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatCancelButtonOnTheCreateProject
 	Then 'All <ListName>' list should be displayed to the user
 	When User clicks Create Project from the main list
 	Then 'Create Project' page should be displayed to the user
-	When User clicks the "CANCEL" Action button
+	When User clicks 'CANCEL' button 
 	Then 'All <ListName>' list should be displayed to the user
 
 Examples:
@@ -26,7 +26,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAllAssociationsAreSelectedByDefaultInT
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
 	Then 'Projects' page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks 'CREATE PROJECT' button 
 	Then 'Create Project' page should be displayed to the user
 	When User enters "TestProject7" in the "Project Name" field
 	And User selects 'All Devices' option from 'Scope' autocomplete
@@ -56,7 +56,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatExistingProjectNameCantBeRemoved
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
 	Then 'Projects' page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks 'CREATE PROJECT' button 
 	And User enters "TestProject14283" in the "Project Name" field
 	And User selects 'All Devices' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page

@@ -44,7 +44,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckThatImportProjectButtonEnabledAfte
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	And 'Projects' page should be displayed to the user
-	When User clicks the "IMPORT PROJECT" Action button
+	When User clicks 'IMPORT PROJECT' button 
 	Then 'Import Project' page should be displayed to the user
 	When User selects "IncorrectFile.zip" file to upload on Import Project page
 	And User selects "Import to new project" option in the "Import" dropdown on the Import Project Page
@@ -99,8 +99,8 @@ Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	And User expands multiselect and selects following Objects
 	| Objects        |
 	| 0TTSZRQ1ZTIXWM |
-	And User clicks the "UPDATE ALL CHANGES" Action button
-	And User clicks the "UPDATE PROJECT" Action button
+	And User clicks 'UPDATE ALL CHANGES' button 
+	And User clicks 'UPDATE PROJECT' button 
 	And User selects "Queue" tab on the Project details page
 	Then following Items are displayed in the Queue table
 	| Items          |
@@ -135,7 +135,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckThatExtraUnknownReadinessIsNotCrea
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	And 'Projects' page should be displayed to the user
-	When User clicks the "IMPORT PROJECT" Action button
+	When User clicks 'IMPORT PROJECT' button 
 	Then 'Import Project' page should be displayed to the user
 	When User selects "1803_Rollout.xml" file to upload on Import Project page
 	And User selects "Import to new project" option in the "Import" dropdown on the Import Project Page
@@ -151,7 +151,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckBannerMessageAfterImportProjectWit
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	And 'Projects' page should be displayed to the user
-	When User clicks the "IMPORT PROJECT" Action button
+	When User clicks 'IMPORT PROJECT' button 
 	Then 'Import Project' page should be displayed to the user
 	When User selects "Windows_7_Migration_(Computer_Scheduled_Project) (jet 5.3.3).xml" file to upload on Import Project page
 	And User selects "Import to new project" option in the "Import" dropdown on the Import Project Page

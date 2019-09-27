@@ -41,9 +41,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	| 02X387UDGZJPQY  |
 	| 03063X2ZUCDN0A1 |
 	| 03U75EKEMUQMUS  |
-	And User clicks the "UPDATE ALL CHANGES" Action button
+	And User clicks 'UPDATE ALL CHANGES' button 
 	Then "UPDATE ALL CHANGES" Action button is disabled
-	When User clicks the "CANCEL" Action button
+	When User clicks 'CANCEL' button 
 	Then "UPDATE ALL CHANGES" Action button is active
 	When User navigates to the 'Users' tab on Project Scope Changes page
 	And User expands multiselect to add objects 
@@ -103,9 +103,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	| Axosoft OnTime 2005 Enterprise Server (5.3.0)                        |
 	| BDE 5.01 Upgrade                                                     |
 	| Brava! Reader 2.5 (2.5)                                              |
-	And User clicks the "UPDATE ALL CHANGES" Action button
+	And User clicks 'UPDATE ALL CHANGES' button 
 	Then Warning message with "25 devices will be added, 25 users will be added, 25 applications will be added" text is displayed on the Admin page
-	When User clicks the "UPDATE PROJECT" Action button
+	When User clicks 'UPDATE PROJECT' button 
 	Then Success message with "75 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
 	And "Applications to add (0 of 2104 selected)" is displayed to the user in the Project Scope Changes section
 	And following objects were not found
@@ -217,8 +217,8 @@ Scenario: EvergreenJnr_AdminPage_CheckingSortingOrderOfTheObjectsInTheProjectSco
 	| 000F977AC8824FE39B8@bclabs.local (Spruill, Shea)       |
 	| 002B5DC7D4D34D5C895@bclabs.local (Collor, Christopher) |
 	| 003F5D8E1A844B1FAA5@bclabs.local (Hunter, Melanie)     |
-	When User clicks the "UPDATE ALL CHANGES" Action button
-	And User clicks the "UPDATE PROJECT" Action button
+	When User clicks 'UPDATE ALL CHANGES' button 
+	And User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
 	Then following objects were not found
 	| Objects                                                |
@@ -267,16 +267,16 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatTheEditListFunctionIsHiddenAft
 	Then "<DynamicListName>" list is displayed to user
 	When User clicks Create Project from the main list
 	Then 'Create Project' page should be displayed to the user
-	When User clicks the "CANCEL" Action button
+	When User clicks 'CANCEL' button 
 	Then "<DynamicListName>" list is displayed to user
 	And Edit List menu is not displayed
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks 'CREATE PROJECT' button 
 	Then 'Create Project' page should be displayed to the user
 	When User enters "TestProject7894" in the "Project Name" field
 	And User selects 'All Devices' option from 'Scope' autocomplete
-	When User clicks the "CANCEL" Action button
+	When User clicks 'CANCEL' button 
 	Then 'Projects' page should be displayed to the user
 
 Examples:

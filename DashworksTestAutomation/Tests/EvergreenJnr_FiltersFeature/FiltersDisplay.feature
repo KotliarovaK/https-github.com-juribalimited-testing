@@ -1201,7 +1201,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatCapacityUnitSubcategoryPlacedIn
 @Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @Projects @Cleanup @DAS13201 @archived
 Scenario: EvergreenJnr_AllLists_CheckThatParticularProjectCapacityUnitFilterShowsProperItems
 	When User clicks 'Admin' on the left-hand menu
-	And User clicks the "CREATE PROJECT" Action button
+	And User clicks 'CREATE PROJECT' button 
 	And User enters "13201" in the "Project Name" field
 	And User selects 'All Mailboxes' option from 'Scope' autocomplete
 	When User selects "Evergreen" in the "Mode" dropdown
@@ -1247,10 +1247,10 @@ Scenario: EvergreenJnr_AllLists_CheckThatDeletedBucketIsNotAvailableInEvergreenB
 	When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Evergreen' left menu item
 	When User navigates to the 'Buckets' left menu item
-	And User clicks the "CREATE EVERGREEN BUCKET" Action button
+	And User clicks 'CREATE EVERGREEN BUCKET' button 
 	And User enters "Bucket_DAS12940_to_be_deleted" in the "Bucket Name" field
 	And User selects "Admin IT" team in the Team dropdown on the Buckets page
-	And User clicks the "CREATE" Action button
+	And User clicks 'CREATE' button 
 	And User select "Bucket" rows in the grid
     | SelectedRowsName              |
     | Bucket_DAS12940_to_be_deleted |
@@ -1559,7 +1559,7 @@ Scenario Outline: EvergreenJnr_UsersList_CheckThatPrimaryDeviceOperatorsShowText
 	When user select "Primary Device" filter
 	When User select "<OperatorValue>" Operator value
 	Then User Description field is not displayed
-	When User clicks the "CANCEL" Action button
+	When User clicks 'CANCEL' button 
 	When user select "Primary Device" filter
 	When User select "<OperatorValue>" Operator value
 	Then User Description field is not displayed

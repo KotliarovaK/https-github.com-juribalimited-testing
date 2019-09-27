@@ -20,7 +20,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOperatingSystemAndServicePackOrBuild
 	And User selects the following Values on Pivot:
 	| Values     |
 	| Owner City |
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	And data in the table is sorted by "Application Compliance" column in ascending order by default for the Pivot
 
@@ -38,7 +38,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatNumericValueHasTheCorrectOrder
 	And User selects the following Values on Pivot:
 	| Values       |
 	| Device Count |
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	And numeric data in table is sorted by "Compliance" column in descending order for the Pivot
 
@@ -56,7 +56,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckSortedOrderForPivotProjectStatusAsRowG
 	And User selects the following Values on Pivot:
 	| Values |
 	| City   |
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then Pivot left-pinned column content is displayed in following order:
 	| ColumnName    |
 	| Not Onboarded |
@@ -80,7 +80,7 @@ Scenario: EvergreenJnr_UsersList_CheckSortedOrderForPivotProjectStatusAsRowGroup
 	And User selects the following Values on Pivot:
 	| Values |
 	| City   |
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then Pivot left-pinned column content is displayed in following order:
 	| ColumnName    |
 	| Not Onboarded |
@@ -111,7 +111,7 @@ Scenario: EvergreenJnr_DevicesList_CheckSortedOrderForPivotProjectStatusAsRowGro
 	And User selects the following Values on Pivot:
 	| Values |
 	| City   |
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then Pivot left-pinned column content is displayed in following order:
 	| ColumnName    |
 	| Not Onboarded |
@@ -135,7 +135,7 @@ Scenario: EvergreenJnr_DevicesList_CheckSortedOrderForPivotProjectStatusAsColumn
 	And User selects the following Values on Pivot:
 	| Values |
 	| Region |
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then Empty value is displayed on the first place for the Pivot
 	Then Pivot column headers is displayed in following order:
 	| ColumnName    |

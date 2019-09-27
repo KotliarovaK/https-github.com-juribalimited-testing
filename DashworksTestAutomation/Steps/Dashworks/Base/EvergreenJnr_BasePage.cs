@@ -354,5 +354,16 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         }
 
         #endregion
+
+        #region Button
+
+        [When(@"User clicks '(.*)' button")]
+        public void WhenUserClicksButton(string buttonName)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.ClickButtonByName(buttonName);
+        }
+
+        #endregion
     }
 }

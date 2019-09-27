@@ -14,7 +14,7 @@ Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOf
 	When User switches to the "USE ME FOR AUTOMATION(MAIL SCHDLD)" project in the Top bar on Item details page
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the "Project Details" sub-menu on the Details page
-	And User clicks the "OFFBOARD" Action button
+	And User clicks 'OFFBOARD' button 
 	Then Dialog Pop-up is displayed for User
 	Then following text 'Offboarding mailbox 01DEAC5F18B34084B04@bclabs.local. Offboarding an object deletes all project related information about it.' is displayed in Dialog Pop-up
 	Then 'Offboard all associated users' checkbox is checked
@@ -29,8 +29,8 @@ Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOf
 	| SelectedRowsName    |
 	| 01DEAC5F18B34084B04 |
 	Then "BCLABS\01DEAC5F18B34084B04 (Owner)" chip have tooltip with "BCLABS\01DEAC5F18B34084B04 (Owner)" text
-	When User clicks the "OFFBOARD" Action button
-	When User clicks the "OFFBOARD" Action button
+	When User clicks 'OFFBOARD' button 
+	When User clicks 'OFFBOARD' button 
 	#going to check the object state
 	And User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -53,7 +53,7 @@ Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOf
 	When User switches to the "USE ME FOR AUTOMATION(MAIL SCHDLD)" project in the Top bar on Item details page
 	And User navigates to the 'Projects' left menu item
 	And User navigates to the "Project Details" sub-menu on the Details page
-	And User clicks the "OFFBOARD" Action button
+	And User clicks 'OFFBOARD' button 
 	Then Dialog Pop-up is displayed for User
 	And following text 'Offboarding mailbox 01DEAC5F18B34084B04@bclabs.local. Offboarding an object deletes all project related information about it.' is displayed in Dialog Pop-up
 	And 'Offboard all associated users' checkbox is checked
@@ -63,8 +63,8 @@ Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOf
 	| Display Name |
 	| Domain       |
 	| Owner        |
-	When User clicks the "OFFBOARD" Action button
-	And User clicks the "OFFBOARD" Action button
+	When User clicks 'OFFBOARD' button 
+	And User clicks 'OFFBOARD' button 
 	Then Success message is displayed and contains "The selected objects were successfully queued for offboarding from USE ME FOR AUTOMATION(MAIL SCHDLD)" text
 	#going to check the object state
 	And User clicks 'Admin' on the left-hand menu
@@ -88,6 +88,6 @@ Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOf
 	When User switches to the "Email Migration" project in the Top bar on Item details page
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the "Project Details" sub-menu on the Details page
-	And User clicks the "OFFBOARD" Action button
+	And User clicks 'OFFBOARD' button 
 	Then Dialog Pop-up is displayed for User
 	Then following text 'Offboarding mailbox alex.cristea@juriba.com (Alex Cristea). Offboarding an object deletes all project related information about it.' is displayed in Dialog Pop-up

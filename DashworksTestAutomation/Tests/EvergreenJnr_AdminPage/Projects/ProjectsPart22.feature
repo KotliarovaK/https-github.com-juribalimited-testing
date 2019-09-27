@@ -11,7 +11,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatMatchToEvergreenBucketDisplaye
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
 	Then 'Projects' page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks 'CREATE PROJECT' button 
 	Then 'Create Project' page should be displayed to the user
 	When User enters "12768Project" in the "Project Name" field
 	And User selects '<ScopeList>' option from 'Scope' autocomplete
@@ -117,11 +117,11 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultValuesStayTheSameAfterConverti
 @Evergreen @Admin @EvergreenJnr_AdminPage @Projects @Senior_Projects @DAS15262 @DAS16361 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatConvertToEvergreenButtonIsNotDisplayedForEvergreensProject
 	When User clicks 'Admin' on the left-hand menu
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks 'CREATE PROJECT' button 
 	When User selects 'Dependant List Filter - BROKEN LIST' option from 'Scope' autocomplete
 	Then 'This list has errors' error message is displayed for 'Scope' field
-	When User clicks the "CANCEL" Action button
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks 'CANCEL' button 
+	When User clicks 'CREATE PROJECT' button 
 	Then 'Create Project' page should be displayed to the user
 	When User enters "TestNegativeProject15262" in the "Project Name" field
 	When User selects 'All Devices' option from 'Scope' autocomplete

@@ -36,11 +36,11 @@ Scenario: EvergreenJnr_UsersList_CheckThatAdminUserButNotOwnerIsNotAbleToDeleteL
 	And User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User select "Specific users / teams" sharing option
-	When User clicks the "ADD TEAM" Action button
+	When User clicks 'ADD TEAM' button 
 	Then form container is displayed to the user
 	When User selects the "Team 1054" team for sharing
 	And User select "Admin" in Select Access dropdown
-	When User clicks the "CANCEL" Action button
+	When User clicks 'CANCEL' button 
 	When User select "Specific users" sharing option
 	And User click Add User button
 	And User select current user in Select User dropdown
@@ -88,10 +88,10 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSharedItemIsNotDuplicatedWhenUserSha
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User select "Specific users / teams" sharing option
-	When User clicks the "ADD TEAM" Action button
+	When User clicks 'ADD TEAM' button 
 	When User selects the "Team 1" team for sharing
 	And User select "Admin" in Permission dropdown
-	When User clicks the "CANCEL" Action button
+	When User clicks 'CANCEL' button 
 	When User navigates to the "All Devices" list
 	Then All lists are unique on the Lists panel
 

@@ -69,22 +69,22 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatListDetailsIsLoadedCorrectlyAf
 	Then List details panel is displayed to the user
 	When User select "Specific users / teams" sharing option
 	Then "Specific users / teams" sharing option is selected
-	When User clicks the "ADD TEAM" Action button
+	When User clicks 'ADD TEAM' button 
 	When User selects the "1803 Team" team for sharing
 	Then "ADD TEAM" Action button is disabled
-	When User clicks the "CANCEL" Action button
-	When User clicks the "ADD TEAM" Action button
+	When User clicks 'CANCEL' button 
+	When User clicks 'ADD TEAM' button 
 	When User selects the "1803 Team" team for sharing
-	When User clicks the "CANCEL" Action button
-	When User clicks the "ADD USER" Action button
+	When User clicks 'CANCEL' button 
+	When User clicks 'ADD USER' button 
 	Then form container is displayed to the user
 	When User selects the "Administrator" user for sharing
-	When User clicks the "CANCEL" Action button
-	And User clicks the "ADD USER" Action button
+	When User clicks 'CANCEL' button 
+	And User clicks 'ADD USER' button 
 	When User selects the "Administrator" user for sharing
 	When User select "Edit" in Select Access dropdown
-	And User clicks the "ADD USER" Action button
-	And User clicks the "ADD USER" Action button
+	And User clicks 'ADD USER' button 
+	And User clicks 'ADD USER' button 
 	And User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When User clicks the List Details button
@@ -92,8 +92,8 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatListDetailsIsLoadedCorrectlyAf
 	And There are no errors in the browser console
 	And "Admin" Sharing user is displayed correctly
 	And form container is not displayed to the user
-	When User clicks the "ADD USER" Action button
-	And User clicks the "CANCEL" Action button
+	When User clicks 'ADD USER' button 
+	And User clicks 'CANCEL' button 
 	Then User list for sharing is not displayed
 	And There are no errors in the browser console
 

@@ -368,10 +368,10 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Evergreen' left menu item
 	When User navigates to the 'Capacity Units' left menu item
-	And User clicks the "CREATE EVERGREEN CAPACITY UNIT" Action button
+	And User clicks 'CREATE EVERGREEN CAPACITY UNIT' button 
 	And User type "CapacityUnit13201" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "13201" Name in the "Description" field on the Project details page
-	And User clicks the "CREATE" Action button
+	And User clicks 'CREATE' button 
 	And User clicks 'Devices' on the left-hand menu
 	And User clicks the Actions button
 	And User select "Hostname" rows in the grid
@@ -383,7 +383,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	And User selects "Update capacity unit" Bulk Update Type on Action panel
 	And User selects "Evergreen" option in "Project or Evergreen" drop-down on Action panel
 	And User selects "CapacityUnit13201" value for "Capacity Unit" dropdown with search on Action panel
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then User clicks "UPDATE" button on message box
 	When User clicks the Filters button
 	And User add "Evergreen Capacity Unit" filter where type is "Equals" with added column and Lookup option
@@ -404,7 +404,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	And User selects "Update capacity unit" Bulk Update Type on Action panel
 	And User selects "Evergreen" option in "Project or Evergreen" drop-down on Action panel
 	And User selects "CapacityUnit13201" value for "Capacity Unit" dropdown with search on Action panel
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then User clicks "UPDATE" button on message box
 	When User clicks the Filters button
 	And User add "Evergreen Capacity Unit" filter where type is "Equals" with added column and Lookup option
@@ -426,7 +426,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	And User selects "Update capacity unit" Bulk Update Type on Action panel
 	And User selects "Evergreen" option in "Project or Evergreen" drop-down on Action panel
 	And User selects "CapacityUnit13201" value for "Capacity Unit" dropdown with search on Action panel
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then User clicks "UPDATE" button on message box
 	When User clicks the Filters button
 	And User add "Evergreen Capacity Unit" filter where type is "Equals" with added column and Lookup option
@@ -447,7 +447,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	And User selects "Update capacity unit" Bulk Update Type on Action panel
 	And User selects "Evergreen" option in "Project or Evergreen" drop-down on Action panel
 	And User selects "CapacityUnit13201" value for "Capacity Unit" dropdown with search on Action panel
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then User clicks "UPDATE" button on message box
 	When User clicks the Filters button
 	And User add "Evergreen Capacity Unit" filter where type is "Equals" with added column and Lookup option
@@ -518,7 +518,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheSaveButtonIsNotAvailableWithoutTh
 	And User enters "testText" text in Search field at selected Filter
 	And User clicks Add button for input filter value
 	And User select "Not entitled to device" Association for Application filter with Lookup value
-	When User clicks the "UPDATE" Action button
+	When User clicks 'UPDATE' button 
 	Then "Application whose Name is testText not entitled to device" is displayed in added filter info
 	When User create dynamic list with "TestListF58LY5" name on "Devices" page
 	Then Edit List menu is not displayed

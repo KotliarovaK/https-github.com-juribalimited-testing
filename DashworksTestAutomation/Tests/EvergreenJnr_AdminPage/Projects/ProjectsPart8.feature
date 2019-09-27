@@ -56,7 +56,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckOnboardingObjectUsingUpdateAppropr
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
 	Then 'Projects' page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks 'CREATE PROJECT' button 
 	Then 'Create Project' page should be displayed to the user
 	When User enters "TestProject9753" in the "Project Name" field
 	And User selects '<AllListName>' option from 'Scope' autocomplete
@@ -70,9 +70,9 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckOnboardingObjectUsingUpdateAppropr
 	And User expands multiselect and selects following Objects
 	| Objects        |
 	| <ObjectsToAdd> |
-	And User clicks the "UPDATE ALL CHANGES" Action button
+	And User clicks 'UPDATE ALL CHANGES' button 
 	Then Warning message with "<WarningMessageText>" text is displayed on the Admin page
-	When User clicks the "UPDATE PROJECT" Action button
+	When User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "<SuccessMessageText>" text
 
 Examples:
@@ -86,7 +86,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingBucketFromUseEvergreenBucketsToCloneEve
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
 	Then 'Projects' page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks 'CREATE PROJECT' button 
 	Then 'Create Project' page should be displayed to the user
 	When User enters "1MailboxesProject" in the "Project Name" field
 	#And User selects "Evergreen" in the Mode Project dropdown
@@ -130,7 +130,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoAdditionalCapacityUnitsAreCreatedWhe
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
 	Then 'Projects' page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks 'CREATE PROJECT' button 
 	Then 'Create Project' page should be displayed to the user
 	When User enters "13530Project" in the "Project Name" field
 	And User selects 'All Devices' option from 'Scope' autocomplete
@@ -150,7 +150,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoAdditionalCapacityUnitsAreCreatedWhe
 	Then Project "13530Project" is displayed to user
 	When User navigates to the 'Capacity' left menu item
 	And User selects 'Clone evergreen capacity units to project capacity units' in the 'Capacity Units' dropdown
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then Success message is displayed and contains "The project capacity details have been updated" text
 	When User clicks "Administration" navigation link on the Admin page
 	And User navigates to the 'Evergreen' left menu item
