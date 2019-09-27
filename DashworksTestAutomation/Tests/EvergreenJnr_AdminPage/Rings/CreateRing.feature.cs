@@ -241,7 +241,7 @@ this.FeatureBackground();
 #line 35
  testRunner.And("User clicks the \"CREATE PROJECT RING\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 36
- testRunner.Then("\"Create Project Ring\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Create Project Ring\' page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 37
  testRunner.When("User type \"TestRing15397_1\" Name in the \"Ring name\" field on the \'NewProject15397" +
                     "\' Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -262,7 +262,7 @@ this.FeatureBackground();
 #line 45
  testRunner.And("User clicks the \"CREATE PROJECT RING\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 46
- testRunner.Then("\"Create Project Ring\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Create Project Ring\' page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 47
  testRunner.When("User type \"TestRing15397_2\" Name in the \"Ring name\" field on the \'NewProject15397" +
                     "\' Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

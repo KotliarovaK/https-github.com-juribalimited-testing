@@ -144,7 +144,7 @@ this.FeatureBackground();
 #line 12
  testRunner.When("User navigates to the \'Teams\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 13
- testRunner.Then("\"Teams\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Teams\' page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 14
  testRunner.When("User have opened Column Settings for \"Members\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 15
