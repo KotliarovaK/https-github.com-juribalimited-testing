@@ -1345,6 +1345,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_BaseDashboardPage")]
         [NUnit.Framework.CategoryAttribute("BaseDashboardPage")]
         [NUnit.Framework.CategoryAttribute("DAS16558")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_UsersList_CheckThatFullPpageWith403ErrorIsDisplayedCorrectly()
         {
             System.Exception lastException = null;
@@ -1377,7 +1378,8 @@ this.FeatureBackground();
                         "Evergreen",
                         "EvergreenJnr_BaseDashboardPage",
                         "BaseDashboardPage",
-                        "DAS16558"});
+                        "DAS16558",
+                        "Cleanup"});
 #line 287
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1432,11 +1434,11 @@ this.FeatureBackground();
 #line 305
  testRunner.Then("Error page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 306
- testRunner.When("User clicks \"admin\" hidden left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Admin\' hidden left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 307
  testRunner.Then("Error page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 308
- testRunner.When("User clicks \"devices\" hidden left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Devices\' hidden left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 309
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 310
