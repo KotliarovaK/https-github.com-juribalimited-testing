@@ -116,7 +116,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatObjectsIsOnboardedToTheProjectWithClon
 	And User selects all rows on the grid
 	And User removes selected item
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12490 @DAS13007 @DAS12999 @DAS13199 @DAS12680 @DAS12485 @DAS13949 @DAS14180 @Project_Creation_and_Scope @Cleanup @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12490 @DAS13007 @DAS12999 @DAS13199 @DAS12680 @DAS12485 @DAS13949 @DAS14180 @DAS18337 @Project_Creation_and_Scope @Cleanup @Projects
 Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIsDisplayedCorrectly
 	When Project created via API and opened
 	| ProjectName      | Scope       | ProjectTemplate | Mode               |

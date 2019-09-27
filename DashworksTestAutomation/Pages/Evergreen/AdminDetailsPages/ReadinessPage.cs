@@ -33,7 +33,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public IWebElement GetReadinessDialogContainerTitle(string text)
         {
             var selector = By.XPath(
-                $".//mat-dialog-container[@role='dialog']//h1[text()='{text}']");
+                $".//mat-dialog-container[@role='dialog']//div[text()='{text}']");
             return Driver.FindElement(selector);
         }
 

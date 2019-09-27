@@ -358,8 +358,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public bool GetTabHeaderInTheScopeChangesSection(string text)
         {
-            return Driver.IsElementDisplayed(
-                By.XPath($".//div[@class='detail-label ng-star-inserted']//span[text()='{text}']"));
+            By locator = By.XPath($".//div[@class='detail-label ng-star-inserted']//span[text()='{text}']");
+            Driver.WaitForElementToBeDisplayed(locator);
+            return Driver.IsElementDisplayed(locator);
         }
 
         public IWebElement GetColumnHeaderByName(string columnName)

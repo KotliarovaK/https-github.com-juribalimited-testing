@@ -7,19 +7,11 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11881 @DAS12999 @DAS13297 @Cleanup @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThatEmptyGreenAlertLineIsNotDisplayedOnProjectScopeChangesPageAfterMakingSomeChangesOnScopePage
-	When User clicks 'Admin' on the left-hand menu
-	Then 'Admin' list should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "TestName11881" in the "Project Name" field
-	And User selects 'All Users' option from 'Scope' autocomplete
-	And User clicks Create button on the Create Project page
-	Then created Project with "TestName11881" name is displayed correctly
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks newly created object link
+	When Project created via API and opened
+	| ProjectName   | Scope     | ProjectTemplate | Mode               |
+	| TestName11881 | All Users | None            | Standalone Project |
 	Then Project "TestName11881" is displayed to user
+	When User selects "Scope" tab on the Project details page
 	When User selects "Scope Details" tab on the Project details page
 	And User navigates to the 'Application Scope' tab on Project Scope Changes page
 	And User selects "Do not include applications" checkbox on the Project details page
@@ -52,9 +44,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopePanelHaveCorrectlySizeWhenUsedLis
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User clicks in the Scope field on the Admin page
-	Then Scope DDL have the "658" Width
+	Then Scope DDL have the "508" Width
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12349 @DAS12364 @DAS13199 @DAS15685 @Cleanup @Cleanup @Project_Creation_and_Scope @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12349 @DAS12364 @DAS13199 @DAS15685 @Cleanup @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThat500ISEInvalidColumnNameIsNotDisplayedWhenUsedAppSavedListForFilteringDeviceList
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
@@ -100,7 +92,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThat500ISEInvalidColumnNameIsNotDisplayedW
 	Then There are no errors in the browser console
 	Then Error message is not displayed
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12777 @DAS13973 @DAS13530 @Project_Creation_and_Scope @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12777 @DAS13973 @DAS13530 @Project_Creation_and_Scope @Projects @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatErrorIsNotDisplayedWhenCreatingProjectWithCloneEvergreenBucketsToProjectBuckets
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -125,7 +117,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorIsNotDisplayedWhenCreatingProject
 	And User select "Maps to Evergreen" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
 	Then "Unassigned" content is displayed in "Maps to Evergreen" column
-	When User clicks "Evergreen" link on the Admin page
 	When User navigates to the 'Capacity Units' left menu item
 	When User clicks String Filter button for "Project" column on the Admin page
 	When User selects "Evergreen" checkbox from String Filter with item list on the Admin page

@@ -170,7 +170,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksCreateReadinessElements
 Scenario: EvergreenJnr_AdminPage_CheckThatDefaultCheckboxCanNotBeUncheckedForReadiness
 	When User clicks 'Admin' on the left-hand menu
 	And User clicks "Projects" link on the Admin page
-	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
+	And User enters "Project 00 M Computer Scheduled" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Readiness' left menu item
 	When User clicks String Filter button for "Default for Applications" column on the Admin page
@@ -185,8 +185,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDefaultCheckboxCanNotBeUncheckedForRea
 	When User navigates to the 'Readiness' left menu item
 	And User clicks the "CREATE READINESS" Action button
 	And User updates readiness properties on Edit Readiness
-	| Readiness  | Tooltip              | Ready | DefaultForApplications | ColourTemplate | ProjectName                                      |
-	| DAS14938_1 | tooltipForDas14938_1 | TRUE  | TRUE                   | RED            | Windows 7 Migration (Computer Scheduled Project) |
+	| Readiness  | Tooltip              | Ready | DefaultForApplications | ColourTemplate | ProjectName                     |
+	| DAS14938_1 | tooltipForDas14938_1 | TRUE  | TRUE                   | RED            | Project 00 M Computer Scheduled |
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The readiness has been created" text
 	When User enters stored readiness name in Search field for "Readiness" column
@@ -287,14 +287,14 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatValuesForReadinessGridAreDisplayedPro
 	Then 'Update Readiness' page subheader is displayed to user
 	When User clicks the "CANCEL" Action button
 	When User clicks "Change to ready" option in Cog-menu for "Green" item on Admin page
-	When User clicks "Make default for applications" option in Cog-menu for "Apps In Initiation" item on Admin page
+	When User clicks "Make default for applications" option in Cog-menu for "Amber" item on Admin page
 	Then Success message is displayed and contains "The readiness has been updated" text
-	Then Success message is displayed and contains "click here to view the Light Blue readiness" link
+	Then Success message is displayed and contains "click here to view the Amber readiness" link
 	Then Green banner contains following text "changes might not take effect immediately"
 	When User clicks newly created object link
 	Then 'Update Readiness' page subheader is displayed to user
 	When User clicks the "CANCEL" Action button
-	When User clicks "Make default for applications" option in Cog-menu for "Red" item on Admin page
+	When User clicks "Make default for applications" option in Cog-menu for "Blocked" item on Admin page
 	When User have opened column settings for "Readiness" column
 	And User clicks Column button on the Column Settings panel
 	And User select "Ready" checkbox on the Column Settings panel
