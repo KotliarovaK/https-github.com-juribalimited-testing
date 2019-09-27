@@ -10356,9 +10356,9 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
+#line 2339
+ testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 2340
-  testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 2341
  testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table217 = new TechTalk.SpecFlow.Table(new string[] {
@@ -10373,11 +10373,11 @@ this.FeatureBackground();
             table217.AddRow(new string[] {
                         "",
                         "Installed on device"});
-#line 2342
+#line 2341
  testRunner.And("User add \"Device Virtual Machine Host\" filter where type is \"Equals\" with followi" +
                     "ng Lookup Value and Association:", ((string)(null)), table217, "And ");
-#line 2347
- testRunner.Then("User try to click the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 2346
+ testRunner.Then("\"UPDATE\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
