@@ -878,14 +878,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(selector);
         }
 
-        //TODO Not sure that it is relevant anymore. Probably should be deleted
-        public IWebElement SelectHiddenLeftHandMenu(string menuName)
-        {
-            var selector = By.XPath($".//div[@class='nav-toggled']//a[contains(@href, '{menuName}')]");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
         public string ActiveCustomListName()
         {
             var by = By.XPath(
