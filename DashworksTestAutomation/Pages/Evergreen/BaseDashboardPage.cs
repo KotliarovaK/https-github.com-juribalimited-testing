@@ -43,6 +43,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//h2")]
         public IWebElement SubHeader { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//mat-dialog-container")]
+        public IWebElement PopupElement { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[@class='status-code']")]
         public IWebElement StatusCodeLabel { get; set; }
 
@@ -773,10 +776,10 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(selector);
         }
 
-        public IWebElement GetButtonByName(string button)
+        public IWebElement GetButtonByName(string button, string parentElementSelector = "")
         {
             var selector = By.XPath(
-                $".//span[text()='{button}']/ancestor::button");
+                $"{parentElementSelector}//span[text()='{button}']/ancestor::button");
             Driver.WaitForDataLoading();
             Driver.WaitForElementsToBeDisplayed(selector, 30, false);
             return Driver.FindElements(selector).First(x => x.Displayed());
