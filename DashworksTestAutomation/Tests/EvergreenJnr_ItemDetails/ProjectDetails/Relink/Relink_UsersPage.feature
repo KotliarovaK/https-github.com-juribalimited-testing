@@ -19,7 +19,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatRelinkOptionIsWorkedCorrectlyForProjec
 	Then 'Resync name' checkbox is checked
 	#TODO update search data
 	When User enters 'dsf' in the 'User' autocomplete field and selects 'FR\DSF4350513 (717) - Ormazd Therrien' value
-	When User clicks 'RELINK' button 
+	When User clicks 'RELINK' button in Dialog Pop-up
 	Then Warning message with "This object will be relinked to the selected Evergreen object in this project" text is displayed on the Project Details Page
-	When User clicks 'RELINK' button 
+	When User clicks 'RELINK' button in Dialog Pop-up
 	Then Success message is displayed and contains "ZZR457072 successfully relinked" text

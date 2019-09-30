@@ -296,7 +296,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         public void ThenSuccessMessageIsNotDisplayed()
         {
             var message = _driver.NowAt<BaseGridPage>();
-            Verify.IsFalse(message.SuccessMessage.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.IsFalse(message.SuccessMessage.Displayed(), "Success message is displayed!");
         }
 
 
