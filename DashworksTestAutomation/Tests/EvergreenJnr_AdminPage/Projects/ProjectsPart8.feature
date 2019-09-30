@@ -10,7 +10,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationWithProjectBucketsF
 	When User clicks '<PageName>' on the left-hand menu
 	Then 'All <PageName>' list should be displayed to the user
 	When User clicks Create Project from the main list
-	Then Page with 'Create Project' header is displayed to user
+	Then Page with 'Create Project' subheader is displayed to user
 	When User enters "<ProjectName>" in the "Project Name" field
 	Then Scope field is automatically populated
 	When User clicks Create button on the Create Project page
@@ -25,7 +25,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationWithProjectBucketsF
 	| <Item>   |
 	Then "<StaticList>" list is displayed to user
 	When User clicks Create Project from the main list
-	Then Page with 'Create Project' header is displayed to user
+	Then Page with 'Create Project' subheader is displayed to user
 	When User enters "<ProjectName>" in the "Project Name" field
 	Then Scope field is automatically populated
 	When User clicks Create button on the Create Project page
@@ -39,7 +39,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationWithProjectBucketsF
 	And User create dynamic list with "<DynamicList>" name on "<PageName>" page
 	Then "<DynamicList>" list is displayed to user
 	When User clicks Create Project from the main list
-	Then Page with 'Create Project' header is displayed to user
+	Then Page with 'Create Project' subheader is displayed to user
 	When User enters "<ProjectName>" in the "Project Name" field
 	Then Scope field is automatically populated
 	When User clicks Create button on the Create Project page
@@ -57,7 +57,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckOnboardingObjectUsingUpdateAppropr
 	When User navigates to the 'Projects' left menu item
 	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
-	Then Page with 'Create Project' header is displayed to user
+	Then Page with 'Create Project' subheader is displayed to user
 	When User enters "TestProject9753" in the "Project Name" field
 	And User selects '<AllListName>' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
@@ -87,7 +87,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingBucketFromUseEvergreenBucketsToCloneEve
 	When User navigates to the 'Projects' left menu item
 	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
-	Then Page with 'Create Project' header is displayed to user
+	Then Page with 'Create Project' subheader is displayed to user
 	When User enters "1MailboxesProject" in the "Project Name" field
 	#And User selects "Evergreen" in the Mode Project dropdown
 	When User selects 'All Mailboxes' option from 'Scope' autocomplete
@@ -131,7 +131,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoAdditionalCapacityUnitsAreCreatedWhe
 	When User navigates to the 'Projects' left menu item
 	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
-	Then Page with 'Create Project' header is displayed to user
+	Then Page with 'Create Project' subheader is displayed to user
 	When User enters "13530Project" in the "Project Name" field
 	And User selects 'All Devices' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page

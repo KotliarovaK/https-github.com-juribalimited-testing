@@ -219,7 +219,7 @@ Scenario: EvergreenJnr_AdminPage_CheckParametersToCreateUpdatePathAction
 	And User add "City" filter where type is "Equals" with added column and "Melbourne" Lookup option
 	And User create dynamic list with "Melbourne Users" name on "Users" page
 	And User clicks Create Project from the main list
-	Then Page with 'Create Project' header is displayed to user
+	Then Page with 'Create Project' subheader is displayed to user
 	Then Create Project button is disabled
 	When User enters "Melbourne User Migration" in the "Project Name" field
 	Then Create Project button is enabled
@@ -335,7 +335,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActions
 	And User add "City" filter where type is "Equals" with added column and "Edinburgh" Lookup option
 	And User create dynamic list with "Edinburgh Devices" name on "Devices" page
 	And User clicks Create Project from the main list
-	Then Page with 'Create Project' header is displayed to user
+	Then Page with 'Create Project' subheader is displayed to user
 	Then Create Project button is disabled
 	When User enters "Edinburgh Devices Migration" in the "Project Name" field
 	When User clicks Create button on the Create Project page

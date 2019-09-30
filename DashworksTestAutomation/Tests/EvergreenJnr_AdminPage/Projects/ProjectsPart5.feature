@@ -43,7 +43,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopePanelHaveCorrectlySizeWhenUsedLis
 	When User navigates to the 'Projects' left menu item
 	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
-	Then Page with 'Create Project' header is displayed to user
+	Then Page with 'Create Project' subheader is displayed to user
 	When User clicks in the Scope field on the Admin page
 	Then Scope DDL have the "508" Width
 
@@ -100,7 +100,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorIsNotDisplayedWhenCreatingProject
 	When User navigates to the 'Projects' left menu item
 	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
-	Then Page with 'Create Project' header is displayed to user
+	Then Page with 'Create Project' subheader is displayed to user
 	When User enters "TestProject22" in the "Project Name" field
 	And User selects 'All Devices' option from 'Scope' autocomplete
 	When User selects "Clone from Evergreen to Project" in the Mode Project dropdown

@@ -40,7 +40,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectsAreDeletedSuccessfully
 	When User navigates to the 'Projects' left menu item
 	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
-	Then Page with 'Create Project' header is displayed to user
+	Then Page with 'Create Project' subheader is displayed to user
 	When User enters "<ProjectName>" in the "Project Name" field
 	And User selects '<StaticList>' option from 'Scope' autocomplete
 	When User selects "Standalone Project" in the Mode Project dropdown
@@ -59,7 +59,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectsAreDeletedSuccessfully
 	When User navigates to the 'Projects' left menu item
 	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
-	Then Page with 'Create Project' header is displayed to user
+	Then Page with 'Create Project' subheader is displayed to user
 	When User enters "<ProjectName>" in the "Project Name" field
 	And User selects '<DynamicList>' option from 'Scope' autocomplete
 	When User selects "Standalone Project" in the Mode Project dropdown
@@ -79,14 +79,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyProjectN
 	When User navigates to the 'Projects' left menu item
 	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
-	Then Page with 'Create Project' header is displayed to user
+	Then Page with 'Create Project' subheader is displayed to user
 	When User enters " " in the "Project Name" field
 	And User selects 'All Devices' option from 'Scope' autocomplete
 	Then Create Project button is disabled
 	When User enters "AllDevices Project" in the "Project Name" field
 	And User clicks Create button on the Create Project page
 	When User clicks 'CREATE PROJECT' button 
-	Then Page with 'Create Project' header is displayed to user
+	Then Page with 'Create Project' subheader is displayed to user
 	When User enters " alldevices project" in the "Project Name" field
 	And User selects 'All Devices' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
@@ -101,7 +101,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyProjectN
 	When User navigates to the 'Projects' left menu item
 	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
-	Then Page with 'Create Project' header is displayed to user
+	Then Page with 'Create Project' subheader is displayed to user
 	When User enters "TestProject84" in the "Project Name" field
 	And User selects 'StaticList4581' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
@@ -120,7 +120,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyProjectN
 	When User navigates to the 'Projects' left menu item
 	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
-	Then Page with 'Create Project' header is displayed to user
+	Then Page with 'Create Project' subheader is displayed to user
 	When User enters "AllDevices Project1258" in the "Project Name" field
 	And User selects 'DynamicList5531' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page

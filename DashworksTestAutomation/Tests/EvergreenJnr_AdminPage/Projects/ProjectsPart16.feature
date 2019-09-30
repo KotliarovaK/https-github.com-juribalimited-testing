@@ -266,14 +266,14 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatTheEditListFunctionIsHiddenAft
 	And User create dynamic list with "<DynamicListName>" name on "<ListName>" page
 	Then "<DynamicListName>" list is displayed to user
 	When User clicks Create Project from the main list
-	Then Page with 'Create Project' header is displayed to user
+	Then Page with 'Create Project' subheader is displayed to user
 	When User clicks 'CANCEL' button 
 	Then "<DynamicListName>" list is displayed to user
 	And Edit List menu is not displayed
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User clicks 'CREATE PROJECT' button 
-	Then Page with 'Create Project' header is displayed to user
+	Then Page with 'Create Project' subheader is displayed to user
 	When User enters "TestProject7894" in the "Project Name" field
 	And User selects 'All Devices' option from 'Scope' autocomplete
 	When User clicks 'CANCEL' button 
