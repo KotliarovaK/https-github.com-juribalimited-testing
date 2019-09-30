@@ -69,6 +69,13 @@ namespace DashworksTestAutomation.Base
             return ByFactory.From(attribute);
         }
 
+        //Usage By selector = page.GetByFor(() => page.LoginButton);
+        public string GetStringByFor<TProperty>(Expression<Func<TProperty>> expression)
+        {
+            var attribute = ReflectionExtensions.ResolveMember(expression).GetFirstDecoration<FindsByAttribute>();
+            return ByFactory.From(attribute).ToString().Split(": ").Last();
+        }
+
         //Usage By selector = page.Click(() => page.LoginButton);
         //For cases when element can be Staled
         public void Click<TProperty>(Expression<Func<TProperty>> expression)

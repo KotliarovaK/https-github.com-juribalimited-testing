@@ -776,6 +776,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(selector);
         }
 
+        public IWebElement GetButtonByNameOnPopup(string button)
+        {
+            return GetButtonByName(button, this.GetStringByFor(() => this.PopupElement));
+        }
+
         public IWebElement GetButtonByName(string button, string parentElementSelector = "")
         {
             var selector = By.XPath(
