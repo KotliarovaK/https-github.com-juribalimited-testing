@@ -2177,14 +2177,6 @@ Scenario: EvergreenJnr_ApplicationsList_CheckDeviceDeviceOperatingSystemItemsCou
 	| Service Pack 3  |                     |
 	Then "170" rows are displayed in the agGrid
 
-#broken link on pulsar
-@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS15082
-Scenario: EvergreenJnr_ApplicationsList_CheckDeviceCustomFieldsItemsCounter
-	When User clicks 'Applications' on the left-hand menu
-	And User clicks the Filters button
-	# url https://pulsar.corp.juriba.com/evergreen/#/applications?$filter=(applicationComputerCustomField_100%20EQUALS%20('0.665371384')%20WHERE%20(uod%2Cetd%2Ciod))
-	#Then "7" rows are displayed in the agGrid
-
 @Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS15194
 Scenario: EvergreenJnr_ApplicationsList_CheckDeviceOwnerItemsCounterPartI
 	When User clicks 'Applications' on the left-hand menu
@@ -2345,9 +2337,91 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNo500ErrorOnApplicationPageAfterUpda
 	|                | Installed on device |
 	Then "UPDATE" Action button is disabled
 
-	
-	
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS17715 @Cleanup
+Scenario: EvergreenJnr_DevicedList_CheckCustomFieldsUsingInFilterAndProjectCreation
+	When User clicks 'Devices' on the left-hand menu
+	And User clicks the Filters button
+	And User add "ComputerCustomField" filter where type is "Equals" with added column and following value:
+	| Values      |
+	| 0.606355351 |
+	Then "1" rows are displayed in the agGrid
+	And There are no errors in the browser console
+	When User create dynamic list with "TestList_DAS17715" name on "Devices" page
+	Then "TestList_DAS17715" list is displayed to user
+	When User clicks Create Project from the main list
+	Then Page with 'Projects' header is displayed to user
+	When User enters "TestProjectFor17715" in the "Project Name" field
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "The project has been created" text
+	And There are no errors in the browser console
 
+@Evergreen @Users @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS17715 @Cleanup
+Scenario: EvergreenJnr_UsersList_CheckCustomFieldsUsingInFilterAndPivotsCreation
+	When User clicks 'Users' on the left-hand menu
+	And User clicks the Filters button
+	And User add "Application Owner" filter where type is "Not empty" with following Value and Association:
+	| Values | Association                        |
+	|        | Entitled to a device owned by user |
+	#counter can be updated
+	Then "918" rows are displayed in the agGrid
+	And There are no errors in the browser console
+	When User create dynamic list with "TestList_DAS17715" name on "Users" page
+	Then "TestList_DAS17715" list is displayed to user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups    |
+	| Display Name |
+	And User selects the following Values on Pivot:
+	| Values   |
+	| Zip Code |
+	And User clicks 'RUN PIVOT' button 
+	Then Pivot run was completed
+	When User creates Pivot list with "DAS17715_Pivot" name
+	Then There are no errors in the browser console
 
+@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS17715 @Cleanup
+Scenario: EvergreenJnr_ApplicationsList_CheckCustomFieldsUsingInFilterAndWidgetCreation
+	When User clicks 'Applications' on the left-hand menu
+	And User clicks the Filters button
+	And User add "Device ComputerCustomField" filter where type is "Not empty" with following Value and Association:
+	| Values | Association        |
+	|        | Entitled to device |
+	#counter can be updated
+	Then "842" rows are displayed in the agGrid
+	And There are no errors in the browser console
+	When User create dynamic list with "TestList_DAS17715" name on "Applications" page
+	Then "TestList_DAS17715" list is displayed to user
+	When Dashboard with "Dashboard for DAS17715" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks 'ADD WIDGET' button 
+	And User adds new Widget
+	| WidgetType | Title             | List              | Type       |
+	| Card       | WidgetForDAS17715 | TestList_DAS17715 | First Cell |
+	Then Widget Preview is displayed to the user
+	And There are no errors in the browser console
+	When User clicks 'CREATE' button 
+	Then There are no errors in the browser console
 
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS18082
+Scenario: EvergreenJnr_ApplicationsList_CheckDeviceOperatingSystemFilterWork
+	When User clicks 'Applications' on the left-hand menu
+	And User clicks the Filters button
+	And User add "Device Operating System" filter where type is "Equals" with following Lookup Value and Association:
+	| SelectedValues | Association        |
+	| Other          | Entitled to device |
+	Then "4" rows are displayed in the agGrid
 
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS17757
+Scenario: EvergreenJnr_DevicesList_CheckThatOffboardedItemsDontShowAnyOtherProjectProperties
+	When User clicks 'Devices' on the left-hand menu
+	And User clicks the Filters button
+	And User Add And "1803: Status" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues |
+	| Offboarded     |
+	Then "4" rows are displayed in the agGrid
+	And following content is displayed in the "1803: Status" column
+	| Values     |
+	| Offboarded |
+	| Offboarded |
+	| Offboarded |
+	| Offboarded |

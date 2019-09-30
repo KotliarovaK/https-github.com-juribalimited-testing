@@ -430,7 +430,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckColorSchemePlaceholderForReadiness
 	And Color Scheme dropdown is disabled
 	And There are no errors in the browser console
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17515 @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17515 @DAS17987 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCorrectColorSchemeisUsedWhenWidgetIsSplitByReadinessAndComplianceFields	
     When User clicks 'Devices' on the left-hand menu
 	And User clicks the Columns button
@@ -452,6 +452,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCorrectColorSchemeisUsedWhenWidge
 	| WidgetType | Title             | List            | SplitBy                           | AggregateFunction | OrderBy                               | MaxValues | ShowLegend |
 	| Pie        | WidgetForDAS17515 | ListForDAS17515 | Windows7Mi: Application Readiness | Count             | Windows7Mi: Application Readiness ASC | 10        | true       |
 	Then Widget Preview is displayed to the user
+	And There are no errors in the browser console
 	And Color Scheme dropdown displayed with "Readiness Colour Scheme" placeholder
 	And Color Scheme dropdown is disabled
 	When User clicks 'CREATE' button 

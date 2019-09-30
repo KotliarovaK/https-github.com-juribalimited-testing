@@ -736,7 +736,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             int prevX = preview.WidgetPreview.Location.X;
             int prevY = preview.WidgetPreview.Location.Y;
 
-            var widget = _driver.NowAt<EvergreenDashboardsPage>();
+            var widget = _driver.NowAt<AddWidgetPage>();
             int widgetWidth = widget.GetCardWidgetPreviewText().Size.Width;
             int widgetX = widget.GetCardWidgetPreviewText().Location.X;
             int widgetY = widget.GetCardWidgetPreviewText().Location.Y;
