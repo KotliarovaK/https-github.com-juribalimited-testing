@@ -12,13 +12,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedBucketUsing
 	When User navigates to the 'Evergreen' left menu item
 	Then Page with 'Buckets' header is displayed to user
 	When User clicks 'CREATE EVERGREEN BUCKET' button 
-	Then Page with 'Create Evergreen Bucket' header is displayed to user
+	Then Page with 'Create Evergreen Bucket' subheader is displayed to user
 	When User enters "11770" in the "Bucket Name" field
 	And User selects "Admin IT" team in the Team dropdown on the Buckets page
 	And User clicks 'CREATE' button 
 	Then Success message is displayed and contains "The bucket has been created" text
 	When User clicks 'CREATE EVERGREEN BUCKET' button 
-	Then Page with 'Create Evergreen Bucket' header is displayed to user
+	Then Page with 'Create Evergreen Bucket' subheader is displayed to user
 	When User enters " 11770" in the "Bucket Name" field
 	And User selects "Admin IT" team in the Team dropdown on the Buckets page
 	And User clicks 'CREATE' button 
@@ -55,7 +55,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyBucketNa
 	Then Search fields for "Users" column contain correctly value
 	Then Search fields for "Mailboxes" column contain correctly value
 	When User clicks 'CREATE EVERGREEN BUCKET' button 
-	Then Page with 'Create Evergreen Bucket' header is displayed to user
+	Then Page with 'Create Evergreen Bucket' subheader is displayed to user
 	When User enters " " in the "Bucket Name" field
 	And User selects "Admin IT" team in the Team dropdown on the Buckets page
 	Then "CREATE" Action button is disabled
