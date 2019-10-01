@@ -13,10 +13,10 @@ Scenario: EvergreenJnr_AdminPage_AddingDevicesFromBuckets
 	And User navigates to newly created Bucket
 	Then "TestBucket6" bucket details is displayed to the user
 	When User navigates to the 'Devices' tab on Project Scope Changes page
-	And User clicks the "ADD DEVICE" Action button
+	And User clicks 'ADD DEVICE' button 
 	And User navigates to the 'Add from buckets' left menu item on the Buckets page
 	And User adds "Unassigned" objects to bucket
-	And User clicks the "ADD DEVICES" Action button
+	And User clicks 'ADD DEVICES' button 
 	Then Success message is displayed and contains "The selected devices have been added to the selected bucket" text
 	And There are no errors in the browser console
 	Then data in table is sorted by "Hostname" column in ascending order by default on the Admin page
@@ -53,7 +53,7 @@ Scenario: EvergreenJnr_AdminPage_AddingDevicesFromBuckets
 	And User selects all rows on the grid
 	And User clicks on Actions button
 	And User selects "Move To Another Bucket" in the Actions
-	And User clicks the "CONTINUE" Action button
+	And User clicks 'CONTINUE' button 
 	Then Move To Another Bucket Page is displayed to the user
 	When User moves selected objects to "Unassigned" bucket
 	Then Success message is displayed and contains "The selected devices have been added to the selected bucket" text
@@ -66,10 +66,10 @@ Scenario: EvergreenJnr_AdminPage_AddingMailboxesFromBuckets
 	And User navigates to newly created Bucket
 	Then "TestBucket8" bucket details is displayed to the user
 	When User navigates to the 'Mailboxes' left menu item
-	And User clicks the "ADD MAILBOX" Action button
+	And User clicks 'ADD MAILBOX' button 
 	And User navigates to the 'Add from buckets' left menu item on the Buckets page
 	And User adds "Unassigned" objects to bucket
-	And User clicks the "ADD MAILBOXES" Action button
+	And User clicks 'ADD MAILBOXES' button 
 	Then Success message is displayed and contains "The selected mailboxes have been added to the selected bucket" text
 	And data in table is sorted by "Email Address (Primary)" column in ascending order by default on the Admin page
 	And Counter shows "14,784" found rows
@@ -112,7 +112,7 @@ Scenario: EvergreenJnr_AdminPage_AddingMailboxesFromBuckets
 	And User selects all rows on the grid
 	And User clicks on Actions button
 	And User selects "Move To Another Bucket" in the Actions
-	And User clicks the "CONTINUE" Action button
+	And User clicks 'CONTINUE' button 
 	Then Move To Another Bucket Page is displayed to the user
 	When User moves selected objects to "Unassigned" bucket
 	Then Success message is displayed and contains "The selected mailboxes have been added to the selected bucket" text
@@ -129,14 +129,14 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketA
 	| 1Bucket12905 | K-Team   | false     |
 	| 2Bucket12905 | K-Team   | false     |
 	And User navigates to newly created Bucket
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Evergreen" link on the Admin page
-	Then "Buckets" page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Evergreen' left menu item
+	Then Page with 'Buckets' header is displayed to user
 	When User enters "1Bucket12905" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
 	Then "1Bucket12905" bucket details is displayed to the user
-	When User clicks the "ADD DEVICE" Action button
+	When User clicks 'ADD DEVICE' button 
 	When User adds following Objects from list
 	| Objects         |
 	| 001BAQXT6JWFPI  |
@@ -156,7 +156,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketA
 	When User enters "2Bucket12905" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
 	Then "2Bucket12905" bucket details is displayed to the user
-	When User clicks the "ADD DEVICE" Action button
+	When User clicks 'ADD DEVICE' button 
 	When User adds following Objects from list
 	| Objects         |
 	| 00I0COBFWHOF27  |
@@ -173,8 +173,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketA
 	| 00KWQ4J3WKQM0G  |
 	| 00OMQQXWA1DRI6  |
 	When User click on Back button
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
+	When User navigates to the 'Projects' left menu item
+	Then Page with 'Projects' header is displayed to user
 	When User enters "Project12905" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	Then Project "Project12905" is displayed to user
@@ -193,12 +193,12 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketA
 	| 00KLL9S8NRF0X6  |
 	| 00KWQ4J3WKQM0G  |
 	| 00OMQQXWA1DRI6  |
-	And User clicks the "UPDATE ALL CHANGES" Action button
-	And User clicks the "UPDATE PROJECT" Action button
+	And User clicks 'UPDATE ALL CHANGES' button 
+	And User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "10 objects queued for onboarding, 0 objects offboarded" text
 	When User click on Back button
-	When User clicks "Evergreen" link on the Admin page
-	Then "Buckets" page should be displayed to the user
+	When User navigates to the 'Evergreen' left menu item
+	Then Page with 'Buckets' header is displayed to user
 	When User clicks refresh button in the browser
 	When User clicks String Filter button for "Project" column on the Admin page
 	When User selects "Evergreen" checkbox from String Filter with item list on the Admin page
@@ -230,8 +230,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketA
 	When User selects "Project12905" checkbox from String Filter on the Admin page
 	When User enters "Unassigned" text in the Search field for "Bucket" column
 	Then "10" content is displayed in "Devices" column
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
+	When User navigates to the 'Projects' left menu item
+	Then Page with 'Projects' header is displayed to user
 	When User enters "Project12905" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	Then Project "Project12905" is displayed to user

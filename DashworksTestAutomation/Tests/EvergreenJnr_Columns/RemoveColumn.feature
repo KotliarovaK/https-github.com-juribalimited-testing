@@ -24,7 +24,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When User removes "Device Key" column by Column panel
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user
 	Then ColumnName is removed from the list
 	| ColumnName |
 	| Device Key |
@@ -58,7 +58,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When User removes "Build Date" column by Column panel
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user
 	Then ColumnName is removed from the list
 	| ColumnName |
 	| Build Date |
@@ -73,8 +73,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 
 @Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS10966 @DAS10973 @DAS11951 @DAS12351 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnInCustomListThrowFilters
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Windows7Mi: Category" filter where type is "Equals" with added column and following checkboxes:
@@ -94,7 +94,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	Then Columns panel is displayed to the user
 	Then User is expand "Selected Columns" columns category
 	When User removes "Windows7Mi: Category" column by Column panel
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user
 	Then ColumnName is removed from the list
 	| ColumnName           |
 	| Windows7Mi: Category |
@@ -131,7 +131,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	When User remove sorted column on "Devices" page by URL
 	| ColumnName                                                                     |
 	| Windows7Mi: Computer Information ---- Text fill; Text fill; \ Date & Time Task |
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user
 	Then ColumnName is removed from the list
 	| ColumnName                                                                     |
 	| Windows7Mi: Computer Information ---- Text fill; Text fill; \ Date & Time Task |
@@ -151,7 +151,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	| Windows7Mi: Computer Information ---- Text fill; Text fill; \ Date & Time Task |
 	| Build Date                                                                     |
 	When User removes "Boot Up Date" column by Column panel
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user
 	Then ColumnName is removed from the list
 	| ColumnName   |
 	| Boot Up Date |
@@ -159,7 +159,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	When User remove sorted column on "Devices" page by URL
 	| ColumnName                                                                     |
 	| Windows7Mi: Computer Information ---- Text fill; Text fill; \ Date & Time Task |
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user
 	Then ColumnName is removed from the list
 	| ColumnName                                                                     |
 	| Windows7Mi: Computer Information ---- Text fill; Text fill; \ Date & Time Task |
@@ -167,8 +167,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 
 @Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS10966 @DAS10973 @DAS12351
 Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnInDefaultListThrowFilters
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Windows7Mi: Category" filter where type is "Equals" with added column and following checkboxes:
@@ -184,7 +184,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	Then Columns panel is displayed to the user
 	Then User is expand "Selected Columns" columns category
 	When User removes "Windows7Mi: Category" column by Column panel
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user
 	Then ColumnName is removed from the list
 	| ColumnName           |
 	| Windows7Mi: Category |
@@ -195,7 +195,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	When User remove sorted column on "Devices" page by URL
 	| ColumnName     |
 	| Directory Type |
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	Then ColumnName is removed from the list
@@ -219,7 +219,7 @@ Scenario: EvergreenJnr_UsersList_CheckThat500ErrorPageIsNotDisplayedAfterRemovin
 	When User removes "Last Logon Date" column by Column panel
 	Then "Home Drive" column is added to URL on "Users" page
 	When User removes "Home Drive" column by Column panel
-	Then "All Users" list should be displayed to the user
+	Then 'All Users' list should be displayed to the user
 	And ColumnName is removed from the list
 	| ColumnName      |
 	| Last Logon Date |
@@ -227,8 +227,8 @@ Scenario: EvergreenJnr_UsersList_CheckThat500ErrorPageIsNotDisplayedAfterRemovin
 
 @Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS11044 @DAS11951 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnsFromUrlIsWorksCorrectly
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User clicks on 'Hostname' column header
 	Then data in table is sorted by 'Hostname' column in ascending order
 	When User create dynamic list with "TestListC6636D" name on "Devices" page
@@ -253,8 +253,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnsFromUrlIsWorksCorrect
 
 @Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS11044 @DAS11951 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterFromUrlWorksCorrectly
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User clicks on 'Hostname' column header
 	Then data in table is sorted by 'Hostname' column in ascending order
 	When User create dynamic list with "TestList0E8A84" name on "Devices" page
@@ -287,8 +287,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterFromUrlWorksC
 
 @Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS1044 @DAS11506 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterAndCustomListFromUrlWorksCorrectly
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User clicks on 'Hostname' column header
 	Then data in table is sorted by 'Hostname' column in ascending order
 	When User create dynamic list with "TestList3C5E3C" name on "Devices" page
@@ -322,8 +322,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterAndCustomList
 
 @Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS11515
 Scenario: EvergreenJnr_DevicesList_CheckThatColumnIsDisplayedInColumnsPanelAfterRemovingOneColumnFromTheURL
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
@@ -339,7 +339,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnIsDisplayedInColumnsPanelAfter
 	When User remove column on "Devices" page by URL 
 	| ColumnName        |
 	| Owner Common Name |
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	And ColumnName is removed from the list
@@ -374,7 +374,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatColumnIsDisplayedInColumnsPanel
 	| ColumnName                                           |
 	| Application Key                                      |
 	| Windows7Mi: Application Information \ Technical Test |
-	Then "All Applications" list should be displayed to the user
+	Then 'All Applications' list should be displayed to the user
 	And "Application Key" column is added to URL on "Applications" page
 	And "Windows7Mi: Application Information \ Technical Test" column is added to URL on "Applications" page
 	When User clicks the Filters button
@@ -388,7 +388,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatColumnIsDisplayedInColumnsPanel
 	| ColumnName                                           |
 	| Windows7Mi: Application Information \ Technical Test |
 	Then "4" rows are displayed in the agGrid
-	And "All Applications" list should be displayed to the user
+	And 'All Applications' list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	And ColumnName is removed from the list
@@ -398,12 +398,12 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatColumnIsDisplayedInColumnsPanel
 
 @Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS11037
 Scenario Outline: EvergreenJnr_DevicesList_CheckThat500ErrorNotDisplayedAfterRemovingUsernameOrHostnameColumn 
-	When User clicks "<PageName>" on the left-hand menu
-	Then "All <PageName>" list should be displayed to the user
+	When User clicks '<PageName>' on the left-hand menu
+	Then 'All <PageName>' list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When User removes "<ColumnName>" column by Column panel
-	Then "All <PageName>" list should be displayed to the user
+	Then 'All <PageName>' list should be displayed to the user
 	And ColumnName is removed from the list
 	| ColumnName   |
 	| <ColumnName> |
@@ -415,8 +415,8 @@ Examples:
 
 @Evergreen @Mailboxes @EvergreenJnr_Columns @RemoveColumn @DAS12513
 Scenario: EvergreenJnr_MailboxesList_CheckThatNoErrorsAreDisplayedAfterAddingAndRemovingOwnerEnabledColumnForMailboxes
-	When User clicks "Mailboxes" on the left-hand menu
-	Then "All Mailboxes" list should be displayed to the user
+	When User clicks 'Mailboxes' on the left-hand menu
+	Then 'All Mailboxes' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Owner Enabled" filter where type is "Equals" with added column and following checkboxes:
@@ -430,12 +430,12 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatNoErrorsAreDisplayedAfterAddingAnd
 	When User removes "Mail Server" column by Column panel
 	When User removes "Mailbox Type" column by Column panel
 	When User removes "Owner Display Name" column by Column panel
-	Then "All Mailboxes" list should be displayed to the user
+	Then 'All Mailboxes' list should be displayed to the user
 
 @Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS12513
 Scenario: EvergreenJnr_DevicesList_CheckThatNoErrorsAreDisplayedAfterAddingAndRemovingOwnerEnabledColumnForDevices
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Owner Enabled" filter where type is "Equals" with added column and following checkboxes:
@@ -448,4 +448,4 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNoErrorsAreDisplayedAfterAddingAndRe
 	Then Columns panel is displayed to the user
 	When User removes "Operating System" column by Column panel
 	When User removes "Owner Display Name" column by Column panel
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user

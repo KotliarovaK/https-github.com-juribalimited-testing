@@ -7,10 +7,10 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17774 @Do_Not_Run_With_Automations @Do_Not_Run_With_Actions @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckFiltersForAutomationsGrid
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Automations" link on the Admin page
-	Then "Automations" page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Automations' left menu item
+	Then Page with 'Automations' header is displayed to user
 	When User clicks String Filter button for "Active" column on the Admin page
 	When User selects "True" checkbox from String Filter on the Admin page
 	Then "Inactive_Automation" content is displayed for "Automation" column
@@ -39,10 +39,10 @@ Scenario: EvergreenJnr_AdminPage_CheckFiltersForAutomationsGrid
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17774 @Not_Ready
 #Run steps after fixing Boolean sorting
 Scenario: EvergreenJnr_AdminPage_CheckSortingAutomationsGrid
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Automations" link on the Admin page
-	Then "Automations" page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Automations' left menu item
+	Then Page with 'Automations' header is displayed to user
 	When User clicks on 'Automation' column header
 	Then data in table is sorted by "Automation" column in ascending order on the Admin page
 	When User clicks on 'Automation' column header
@@ -74,10 +74,10 @@ Scenario: EvergreenJnr_AdminPage_CheckSortingAutomationsGrid
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17774
 Scenario: EvergreenJnr_AdminPage_CheckUnsavedChangesPopUp
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Automations" link on the Admin page
-	Then "Automations" page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Automations' left menu item
+	Then Page with 'Automations' header is displayed to user
 	When User click content from "Automation" column
 	When User enters 'NewName' text to 'Automation Name' textbox
 	When User clicks "Automations" navigation link on the Admin page

@@ -7,8 +7,8 @@ Background: Pre-Conditions
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13833 @DAS13846 @DAS16994
 Scenario: EvergreenJnr_DevicesList_CheckThatAddingColumnOnPivotIsWorksCorrectlyForFilteredList
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Device Key" filter where type is "Equals" with added column and following value:
@@ -16,7 +16,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddingColumnOnPivotIsWorksCorrectlyF
 	| 4553   |
 	Then "Device Key" filter is added to the list
 	When User navigates to Pivot
-	And User clicks the "ADD COLUMN" Action button
+	And User clicks 'ADD COLUMN' button 
 	Then "5" subcategories is displayed for "Suggested" category
 	And "Device Key" subcategory is selected in Column panel
 	When User adds the "Device Key" category on Pivot
@@ -25,8 +25,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddingColumnOnPivotIsWorksCorrectlyF
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13119 @DAS13652 @DAS13637 @DAS17421 @DAS13649 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatPivotSubmenuIsDisplayedCorrectlyAfterClosingListsPanel
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User navigates to Pivot
 	And User selects the following Row Groups on Pivot:
 	| RowGroups              |
@@ -37,20 +37,20 @@ Scenario: EvergreenJnr_DevicesList_CheckThatPivotSubmenuIsDisplayedCorrectlyAfte
 	And User selects the following Values on Pivot:
 	| Values               |
 	| App Count (Entitled) |
-	When User clicks the "RUN PIVOT" Action button
+	When User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	When User creates Pivot list with "PivotList_DAS13652" name
 	Then "PivotList_DAS13652" list is displayed to user
 	When User closed list panel
-	Then Dashboards sub menu is hidden on Dashboards page
+	Then Lists panel is hidden
 	And "PivotList_DAS13652" list name is displayed correctly on top tools panel
 	And "RUN PIVOT" Action button is displayed
 	And Export button is displayed
 
 @Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS11103 @DAS11264 @DAS11360 @Cleanup
 Scenario Outline: EvergreenJnr_AllLists_CheckThatRemovingValueThroughTheChipsWorksCorrectly
-	When User clicks "<PageName>" on the left-hand menu
-	Then "<PageLabel>" list should be displayed to the user
+	When User clicks '<PageName>' on the left-hand menu
+	Then '<PageLabel>' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "<FilterName>" filter where type is "Equals" with added column and following checkboxes:
@@ -69,7 +69,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatRemovingValueThroughTheChipsWor
 	And User selects the following Values on Pivot:
 	| Values  |
 	| <Value> |
-	When User clicks the "RUN PIVOT" Action button
+	When User clicks 'RUN PIVOT' button 
 	And User adds the following "Values" on Pivot: 
 	| Value             |
 	| <AdditionalValue> |
@@ -92,8 +92,8 @@ Examples:
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS11103 @DAS13819 @DAS13818 @DAS13817 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatAggregateFunctionContainsCorrectValues
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User navigates to Pivot
 	And User selects the following Values on Pivot:
 	| Values     |
@@ -125,8 +125,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAggregateFunctionContainsCorrectValu
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13862 @DAS14372 @DAS14373
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatOperatingSystemPivotValueIsDisplayInTheCorrectOrder
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User navigates to Pivot
 	And User selects the following Row Groups on Pivot:
 	| RowGroups   |
@@ -137,7 +137,7 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckThatOperatingSystemPivotValueIsD
 	And User selects the following Values on Pivot:
 	| Values     |
 	| Owner City |
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	And data in the table is sorted by "<RowGroups>" column in ascending order by default for the Pivot
 
@@ -150,8 +150,8 @@ Examples:
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13862 @DAS14372
 Scenario: EvergreenJnr_DevicesList_CheckThatOperatingSystemAndServicePackOrBuildRowGroupDisplayInTheCorrectOrder
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User navigates to Pivot
 	And User selects the following Row Groups on Pivot:
 	| RowGroups             |
@@ -163,6 +163,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOperatingSystemAndServicePackOrBuild
 	And User selects the following Values on Pivot:
 	| Values     |
 	| Owner City |
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	And data in the table is sorted by "Operating System" column in ascending order by default for the Pivot

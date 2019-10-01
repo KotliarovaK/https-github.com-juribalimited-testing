@@ -7,10 +7,10 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS14901 @DAS16803 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatOneRingAddeddAfterMulticlickingCreateButton
-	When User clicks Admin on the left-hand menu
-	When User clicks "Evergreen" link on the Admin page
+	When User clicks 'Admin' on the left-hand menu
+	When User navigates to the 'Evergreen' left menu item
 	When User navigates to the 'Rings' left menu item
-	And User clicks the "CREATE EVERGREEN RING" Action button
+	And User clicks 'CREATE EVERGREEN RING' button 
 	And User type "OneRing" Name in the "Ring name" field on the Project details page
 	And User doubleclicks Create button on Create Ring page
 	Then Success message is displayed and contains "The ring has been created" text
@@ -26,24 +26,24 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOneRingAddeddAfterMulticlickingCreateB
 	And User clicks Delete button
 	And User clicks Delete button in the warning message
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS15397 @Cleanup @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS15397 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorDisplayedWhenCreatingRingsConsistently
 	When Project created via API and opened
 	| ProjectName     | Scope     | ProjectTemplate | Mode               |
 	| NewProject15397 | All Users | None            | Standalone Project |
 	And User navigates to the 'Rings' left menu item
-	And User clicks the "CREATE PROJECT RING" Action button
-	Then "Create Project Ring" page should be displayed to the user
+	And User clicks 'CREATE PROJECT RING' button 
+	Then Page with 'Create Project Ring' subheader is displayed to user
 	When User type "TestRing15397_1" Name in the "Ring name" field on the 'NewProject15397' Project details page
 	And User clicks Create button on the Create Ring page
 	Then Success message is displayed and contains "The ring has been created" text
-	When User clicks Admin on the left-hand menu
-	And User clicks "Projects" link on the Admin page
+	When User clicks 'Admin' on the left-hand menu
+	And User navigates to the 'Projects' left menu item
 	And User enters "NewProject15397" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Rings' left menu item
-	And User clicks the "CREATE PROJECT RING" Action button
-	Then "Create Project Ring" page should be displayed to the user
+	And User clicks 'CREATE PROJECT RING' button 
+	Then Page with 'Create Project Ring' subheader is displayed to user
 	When User type "TestRing15397_2" Name in the "Ring name" field on the 'NewProject15397' Project details page
 	And User clicks Create button on the Create Ring page
 	Then There are no errors in the browser console

@@ -25,7 +25,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckPrintStylesOnTheDashboardsPage
 @Evergreen @EvergreenJnr_DashboardsPage @Sections @DAS14358 @DAS14618
 Scenario: EvergreenJnr_DashboardsPage_CheckEllipsisMenuContentForWidget
 	When User clicks Edit mode trigger on Dashboards page
-	And User clicks the "ADD SECTION" Action button
+	And User clicks 'ADD SECTION' button 
 	And User clicks Ellipsis menu for "Top 10 App Vendors" Widget on Dashboards page
 	Then User sees following Ellipsis menu items on Dashboards page:
 	| items            |
@@ -40,7 +40,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckEllipsisMenuContentForWidget
 @Evergreen @EvergreenJnr_DashboardsPage @Sections @DAS14358
 Scenario: EvergreenJnr_DashboardsPage_CheckEllipsisMenuContentForSection
 	When User clicks Edit mode trigger on Dashboards page
-	And User clicks the "ADD SECTION" Action button
+	And User clicks 'ADD SECTION' button 
 	And User clicks Ellipsis menu for Section having "Operating System" Widget on Dashboards page
 	Then User sees following Ellipsis menu items on Dashboards page:
 	| items            |
@@ -57,7 +57,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckEllipsisMenuContentForSection
 Scenario: EvergreenJnr_DashboardsPage_CheckThatParticularWidgetCanBeDuplicatedIntoSameSection
 	When Dashboard with "Dashboard for DAS12989" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
-	And User clicks the "ADD SECTION" Action button
+	And User clicks 'ADD SECTION' button 
 	And User clicks "ADD WIDGET" button for "1" Section on Dashboards page
 	And User creates new Widget
 	| WidgetType | Title                        | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
@@ -87,7 +87,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatParticularWidgetCanBeDuplicatedIn
 Scenario: EvergreenJnr_DashboardsPage_CheckThatParticularSectionWithWidgetsCanBeDuplicated
 	When Dashboard with "Dashboard for DAS14358" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
-	And User clicks the "ADD WIDGET" Action button
+	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title             | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
 	| Pie        | WidgetForDAS14358 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC | 10        | true       |
@@ -101,7 +101,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatParticularSectionWithWidgetsCanBe
 Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatDuplicatingWorksForWidgetsCreatedForAllLists
 	When Dashboard with "<DashboardName>" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
-	And User clicks the "ADD WIDGET" Action button
+	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title   | List   | SplitBy   | AggregateBy   | AggregateFunction  | OrderBy   | MaxValues | ShowLegend   |
 	| <Type>     | <Title> | <List> | <SplitBy> | <AggregateBy> | <AggregateFunctio> | <OrderBy> | 10        | <ShowLegend> |
@@ -123,7 +123,7 @@ Examples:
 Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetLegendCopiedWhenDuplicatingSection
 	When Dashboard with "Dashboard for DAS14728" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
-	And User clicks the "ADD WIDGET" Action button
+	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title             | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
 	| Pie        | WidgetForDAS14728 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC | 10        | true       |
@@ -136,7 +136,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetLegendCopiedWhenDuplicating
 Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheEditMode
 	When Dashboard with "Dashboard for DAS12978" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
-	And User clicks the "ADD WIDGET" Action button
+	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title             | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
 	| Pie        | WidgetForDAS12978 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC | 10        | true       |
@@ -152,15 +152,15 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheEditMode
 	And User sees Collapse/Expand icon enabled for Section having "WidgetForDAS12978" Widget on Dashboards page
 	And User sees Ellipsis icon enabled for Section having "WidgetForDAS12978" Widget on Dashboards page
 	And User sees Ellipsis icon enabled for "WidgetForDAS12978" Widget on Dashboards page
-	When User clicks the "ADD WIDGET" Action button
+	When User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title               | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
 	| Bar        | WidgetForDAS12978_2 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC | 10        | true       |
     And User clicks Ellipsis menu for "WidgetForDAS12978_2" Widget on Dashboards page
 	And User clicks "Edit" item from Ellipsis menu on Dashboards page
 	And User updates Widget with following info:
-	| WidgetType | Title                      | List | SplitBy | AggregateBy |
-	|            | WidgetForDAS12978_2_Edited |      | Version | Application |
+	| WidgetType | Title                      | List | SplitBy | AggregateBy | OrderBy     |
+	|            | WidgetForDAS12978_2_Edited |      | Version | Application | Version ASC |
 	Then User sees following Widgets on Dashboards page:
 	| WidgetTitles               |
 	| WidgetForDAS12978          |
@@ -174,7 +174,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheEditMode
 Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheReadOnlyMode
 	When Dashboard with "Dashboard for DAS12977" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
-	And User clicks the "ADD WIDGET" Action button
+	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title             | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
 	| Pie        | WidgetForDAS12977 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC | 10        | true       |
@@ -199,15 +199,15 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheReadOnlyMode
 Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetStaysOnTopPositionAfterEditing
 	When Dashboard with "Dashboard for DAS14583" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
-	And User clicks the "ADD WIDGET" Action button
+	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title               | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
 	| Pie        | WidgetForDAS14583_1 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC | 10        | true       |
-	And User clicks the "ADD WIDGET" Action button
+	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title               | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
 	| Bar        | WidgetForDAS14583_2 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC | 10        | true       |
-	And User clicks the "ADD WIDGET" Action button
+	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title               | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
 	| Pie        | WidgetForDAS14583_3 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC | 10        | false      |
@@ -228,7 +228,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetStaysOnTopPositionAfterEdit
 Scenario: EvergreenJnr_DashboardsPage_CheckWarningMessageDisplayingWhenDeletingWidget
 	When Dashboard with "Dashboard for DAS14855" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
-	And User clicks the "ADD WIDGET" Action button
+	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title             | List             | SplitBy | AggregateFunction | OrderBy   | MaxValues | ShowLegend |
 	| Pie        | WidgetForDAS14855 | All Applications | Vendor  | Count             | Count ASC | 10        | true       |

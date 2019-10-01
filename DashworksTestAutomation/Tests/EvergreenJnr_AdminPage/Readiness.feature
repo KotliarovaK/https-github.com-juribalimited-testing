@@ -7,16 +7,11 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS15665 @DAS14994 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatOptionsInTheCogMenuForReadinessAreCorrect
-	When User clicks Admin on the left-hand menu
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "Project for DAS15665" in the "Project Name" field
-	And User selects 'All Devices' option from 'Scope' autocomplete
-	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks newly created object link
+	When Project created via API and opened
+	| ProjectName          | Scope       | ProjectTemplate | Mode               |
+	| Project for DAS15665 | All Devices | None            | Standalone Project |
 	And User navigates to the 'Readiness' left menu item
-	When User clicks Cog-menu for "Red" item on Admin page
+	When User clicks Cog-menu for "RED" item on Admin page
 	Then User sees following cog-menu items on Admin page:
 	| items                         |
 	| Edit                          |
@@ -26,7 +21,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOptionsInTheCogMenuForReadinessAreCorr
 	| Change to ready               |
 	| Make default for applications |
 	| Delete                        |
-	When User clicks Cog-menu for "Green" item on Admin page
+	When User clicks Cog-menu for "GREEN" item on Admin page
 	Then User sees following cog-menu items on Admin page:
 	| items                         |
 	| Edit                          |
@@ -39,14 +34,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOptionsInTheCogMenuForReadinessAreCorr
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS15884 @DAS15789 @DAS16131 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAppearWhenDeleteReadiness
-	When User clicks Admin on the left-hand menu
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "DAS15884_Project" in the "Project Name" field
-	And User selects 'All Devices' option from 'Scope' autocomplete
-	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks newly created object link
+	When Project created via API and opened
+	| ProjectName      | Scope       | ProjectTemplate | Mode               |
+	| DAS15884_Project | All Devices | None            | Standalone Project |
 	And User navigates to the 'Readiness' left menu item
 	Then Columns on Admin page is displayed in following order:
 	| ColumnName                  |
@@ -65,7 +55,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAppearWhenDeleteReadine
 	| RED              |
 	When User clicks on Actions button
 	When User clicks Delete button in Actions
-	When User clicks the "DELETE" Action button
+	When User clicks 'DELETE' button 
 	Then Readiness Dialog Container is displayed to the User
 	When User clicks "DELETE" button in the Readiness dialog screen
 	Then Success message is displayed and contains "The selected readiness has been deleted" text
@@ -75,21 +65,16 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAppearWhenDeleteReadine
 	| AMBER            |
 	When User clicks on Actions button
 	When User clicks Delete button in Actions
-	When User clicks the "DELETE" Action button
+	When User clicks 'DELETE' button 
 	Then Readiness Dialog Container is displayed to the User
 	When User clicks "DELETE" button in the Readiness dialog screen
 	Then There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS16131 @DAS16226 @DAS16163 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckReadinessDialogContainerDisplay
-	When User clicks Admin on the left-hand menu
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "DAS16131_Project" in the "Project Name" field
-	And User selects 'All Devices' option from 'Scope' autocomplete
-	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks newly created object link
+	When Project created via API and opened
+	| ProjectName      | Scope       | ProjectTemplate | Mode               |
+	| DAS16131_Project | All Devices | None            | Standalone Project |
 	And User navigates to the 'Readiness' left menu item
 	Then Columns on Admin page is displayed in following order:
 	| ColumnName |
@@ -108,71 +93,71 @@ Scenario: EvergreenJnr_AdminPage_CheckReadinessDialogContainerDisplay
 	| RED              |
 	When User clicks on Actions button
 	And User clicks Delete button in Actions
-	And User clicks the "DELETE" Action button
+	And User clicks 'DELETE' button 
 	Then Readiness Dialog Container is displayed to the User
 	And "Delete Readiness" title is displayed in the Readiness Dialog Container
 	When User clicks "CANCEL" button in the Readiness dialog screen
 	And User select "Readiness" rows in the grid
 	| SelectedRowsName |
 	| GREEN            |
-	And User clicks the "DELETE" Action button
+	And User clicks 'DELETE' button 
 	Then Readiness Dialog Container is displayed to the User
 	Then "Delete Readinesses" title is displayed in the Readiness Dialog Container
 	Then Cancel button in the pop up is colored gray
 	Then Delete button in the pop up is colored amber
 	When User clicks "DELETE" button in the Readiness dialog screen
 	Then Success message is displayed and contains "The selected readinesses have been deleted, changes might not take effect immediately" text
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	And User enters "DAS16131_Project" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14937 @DAS16649
+@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14937 @DAS16649 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultForApplicationsCheckboxWorksOnEditReadinessPage
-	When User clicks Admin on the left-hand menu
-	And User clicks "Projects" link on the Admin page
+	When User clicks 'Admin' on the left-hand menu
+	And User navigates to the 'Projects' left menu item
 	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Readiness' left menu item
 	And User click content from "Readiness" column
 	And User sets Default for Applications checkbox in "TRUE" on Edit Readiness
-	And User clicks the "UPDATE" Action button
-	And User clicks the "CREATE READINESS" Action button
+	And User clicks 'UPDATE' button 
+	And User clicks 'CREATE READINESS' button 
 	And User updates readiness properties on Edit Readiness
-	| Readiness | Tooltip            | Ready | DefaultForApplications | ColourTemplate |
-	| DAS14937  | tooltipForDas14937 | TRUE  | TRUE                   | RED            |
-	And User clicks the "CREATE" Action button
+	| Readiness | Tooltip            | Ready | DefaultForApplications | ColourTemplate | ProjectName                                      |
+	| DAS14937  | tooltipForDas14937 | TRUE  | TRUE                   | RED            | Windows 7 Migration (Computer Scheduled Project) |
+	And User clicks 'CREATE' button 
 	And User enters "BLUE" text in the Search field for "Readiness" column
 	And User click content from "Readiness" column
 	When User sets Default for Applications checkbox in "FALSE" on Edit Readiness
-	And User clicks the "CANCEL" Action button
+	And User clicks 'CANCEL' button 
 	And User enters "DAS14937" text in the Search field for "Readiness" column
 	And User click content from "Readiness" column
 	Then User sees Default for Applications checkbox in "TRUE" state on Edit Readiness
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14937 @DAS15669
+@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14937 @DAS15669 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatNewReadinessAddedBeforeNone
-	When User clicks Admin on the left-hand menu
-	And User clicks "Projects" link on the Admin page
+	When User clicks 'Admin' on the left-hand menu
+	And User navigates to the 'Projects' left menu item
 	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Readiness' left menu item
-	And User clicks the "CREATE READINESS" Action button
+	And User clicks 'CREATE READINESS' button 
 	And User updates readiness properties on Edit Readiness
-	| Readiness  | Tooltip              | Ready | DefaultForApplications | ColourTemplate |
-	| DAS14937_1 | tooltipForDas14937_1 | TRUE  | TRUE                   | RED            |
-	And User clicks the "CREATE" Action button
+	| Readiness  | Tooltip              | Ready | DefaultForApplications | ColourTemplate | ProjectName                                      |
+	| DAS14937_1 | tooltipForDas14937_1 | TRUE  | TRUE                   | RED            | Windows 7 Migration (Computer Scheduled Project) |
+	And User clicks 'CREATE' button 
 	Then Success message is displayed and contains "The readiness has been created" text
 	And Readiness "DAS14937_1" displayed before None
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14937
 Scenario: EvergreenJnr_AdminPage_ChecksCreateReadinessElements
-	When User clicks Admin on the left-hand menu
-	And User clicks "Projects" link on the Admin page
+	When User clicks 'Admin' on the left-hand menu
+	And User navigates to the 'Projects' left menu item
 	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Readiness' left menu item
-	And User clicks the "CREATE READINESS" Action button
+	And User clicks 'CREATE READINESS' button 
 	And User enters "testreadinesname_testreadinesname_testreadinesname_t" in Readiness input on Edit Readiness
 	Then User sees "testreadinesname_testreadinesname_testreadinesname" in Readiness input on Edit Readiness
 	And User sees "testreadinesname_testreadinesname_testreadinesname" in Tooltip input on Edit Readiness
@@ -181,11 +166,11 @@ Scenario: EvergreenJnr_AdminPage_ChecksCreateReadinessElements
 	When User clicks Colour Template field on Edit Readiness
 	Then List of available colours displayed to user on Edit Readiness
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14938
+@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14938 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatDefaultCheckboxCanNotBeUncheckedForReadiness
-	When User clicks Admin on the left-hand menu
-	And User clicks "Projects" link on the Admin page
-	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
+	When User clicks 'Admin' on the left-hand menu
+	And User navigates to the 'Projects' left menu item
+	And User enters "Project 00 M Computer Scheduled" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Readiness' left menu item
 	When User clicks String Filter button for "Default for Applications" column on the Admin page
@@ -198,11 +183,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDefaultCheckboxCanNotBeUncheckedForRea
 	Then User sees Default for Applications checkbox disabled on Edit Readiness
 	And User sees Default for Applications checkbox in "TRUE" state on Edit Readiness
 	When User navigates to the 'Readiness' left menu item
-	And User clicks the "CREATE READINESS" Action button
+	And User clicks 'CREATE READINESS' button 
 	And User updates readiness properties on Edit Readiness
-	| Readiness  | Tooltip              | Ready | DefaultForApplications | ColourTemplate |
-	| DAS14938_1 | tooltipForDas14938_1 | TRUE  | TRUE                   | RED            |
-	And User clicks the "CREATE" Action button
+	| Readiness  | Tooltip              | Ready | DefaultForApplications | ColourTemplate | ProjectName                     |
+	| DAS14938_1 | tooltipForDas14938_1 | TRUE  | TRUE                   | RED            | Project 00 M Computer Scheduled |
+	And User clicks 'CREATE' button 
 	Then Success message is displayed and contains "The readiness has been created" text
 	When User enters stored readiness name in Search field for "Readiness" column
 	And User click content from "Readiness" column
@@ -217,8 +202,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDefaultCheckboxCanNotBeUncheckedForRea
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14938
 Scenario: EvergreenJnr_AdminPage_CheckThatNoneReadinessCanBePartiallyEdited
-	When User clicks Admin on the left-hand menu
-	And User clicks "Projects" link on the Admin page
+	When User clicks 'Admin' on the left-hand menu
+	And User navigates to the 'Projects' left menu item
 	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Readiness' left menu item
@@ -230,7 +215,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoneReadinessCanBePartiallyEdited
 	And User sets Default for Applications checkbox in "TRUE" on Edit Readiness
 	And User clicks Colour Template field on Edit Readiness
 	Then List of available colours is not displayed to user on Edit Readiness
-	When User clicks the "UPDATE" Action button
+	When User clicks 'UPDATE' button 
 	And User enters "None" text in the Search field for "Readiness" column
 	And User click content from "Readiness" column
 	Then User sees "None" in Readiness input on Edit Readiness
@@ -240,15 +225,15 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoneReadinessCanBePartiallyEdited
 	
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14938
 Scenario: EvergreenJnr_AdminPage_CheckThatNoChangesAppliedAfterCancelButtonPressedOnEditReadiness
-	When User clicks Admin on the left-hand menu
-	And User clicks "Projects" link on the Admin page
+	When User clicks 'Admin' on the left-hand menu
+	And User navigates to the 'Projects' left menu item
 	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Readiness' left menu item
 	And User enters "None" text in the Search field for "Readiness" column
 	And User click content from "Readiness" column
 	And User enters "tooltip14938_2" in Tooltip input on Edit Readiness
-	And User clicks the "CANCEL" Action button
+	And User clicks 'CANCEL' button 
 	And User enters "None" text in the Search field for "Readiness" column
 	And User click content from "Readiness" column
 	Then User sees "None" in Readiness input on Edit Readiness
@@ -256,8 +241,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoChangesAppliedAfterCancelButtonPress
 	
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14938
 Scenario: EvergreenJnr_AdminPage_CheckThatCancelReadinessAffectsNothingOnEditReadiness
-	When User clicks Admin on the left-hand menu
-	And User clicks "Projects" link on the Admin page
+	When User clicks 'Admin' on the left-hand menu
+	And User navigates to the 'Projects' left menu item
 	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Readiness' left menu item
@@ -265,51 +250,51 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCancelReadinessAffectsNothingOnEditRea
 	And User clicks "False" checkbox from boolean filter on the Admin page
 	When User click content from "Readiness" column
 	And User remembers opened Readiness data on Edit Readiness
-	When User clicks the "CANCEL" Action button
+	When User clicks 'CANCEL' button 
 	And User clicks String Filter button for "Default for Applications" column on the Admin page
 	And User clicks "False" checkbox from boolean filter on the Admin page
 	Then Filtered readiness item equals to stored one
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS16148 @DAS16226 @DAS16163
 Scenario: EvergreenJnr_AdminPage_ChecksThatValuesForReadinessGridAreDisplayedProperlyAfterUsingCogMenuOptions
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
 	When User enters "1803 Rollout" text in the Search field for "Project" column
 	When User clicks content from "Project" column
 	When User navigates to the 'Readiness' left menu item
 	When User enters "Grey" text in the Search field for "Readiness" column
 	Then "FALSE" content is displayed for "Ready" column
 	Then "1" content is displayed for "Task Values Count" column
-	When User clicks "Change to ready" option in Cog-menu for "Grey" item on Admin page
+	When User clicks "Change to ready" option in Cog-menu for "GREY" item on Admin page
 	Then Success message is displayed and contains "The readiness has been updated" text
 	Then Success message is displayed and contains "click here to view the Grey readiness" link
 	Then Green banner contains following text "changes might not take effect immediately"
 	When User clicks newly created object link
-	Then Update Readiness is displayed to the User
-	When User clicks the "CANCEL" Action button
+	Then 'Update Readiness' page subheader is displayed to user
+	When User clicks 'CANCEL' button 
 	When User enters "Grey" text in the Search field for "Readiness" column
 	Then "TRUE" content is displayed for "Ready" column
 	Then "1" content is displayed for "Task Values Count" column
-	When User clicks "Change to not ready" option in Cog-menu for "Grey" item on Admin page
+	When User clicks "Change to not ready" option in Cog-menu for "GREY" item on Admin page
 	Then "FALSE" content is displayed for "Ready" column
 	Then "1" content is displayed for "Task Values Count" column
 	When User clicks Reset Filters button on the Admin page
-	When User clicks "Change to not ready" option in Cog-menu for "Green" item on Admin page
+	When User clicks "Change to not ready" option in Cog-menu for "GREEN" item on Admin page
 	Then Success message is displayed and contains "The readiness has been updated" text
 	Then Success message is displayed and contains "click here to view the Green readiness" link
 	Then Green banner contains following text "changes might not take effect immediately"
 	When User clicks newly created object link
-	Then Update Readiness is displayed to the User
-	When User clicks the "CANCEL" Action button
-	When User clicks "Change to ready" option in Cog-menu for "Green" item on Admin page
-	When User clicks "Make default for applications" option in Cog-menu for "Apps In Initiation" item on Admin page
+	Then 'Update Readiness' page subheader is displayed to user
+	When User clicks 'CANCEL' button 
+	When User clicks "Change to ready" option in Cog-menu for "GREEN" item on Admin page
+	When User clicks "Make default for applications" option in Cog-menu for "AMBER" item on Admin page
 	Then Success message is displayed and contains "The readiness has been updated" text
-	Then Success message is displayed and contains "click here to view the Light Blue readiness" link
+	Then Success message is displayed and contains "click here to view the Amber readiness" link
 	Then Green banner contains following text "changes might not take effect immediately"
 	When User clicks newly created object link
-	Then Update Readiness is displayed to the User
-	When User clicks the "CANCEL" Action button
-	When User clicks "Make default for applications" option in Cog-menu for "Red" item on Admin page
+	Then 'Update Readiness' page subheader is displayed to user
+	When User clicks 'CANCEL' button 
+	When User clicks "Make default for applications" option in Cog-menu for "BLOCKED" item on Admin page
 	When User have opened column settings for "Readiness" column
 	And User clicks Column button on the Column Settings panel
 	And User select "Ready" checkbox on the Column Settings panel
@@ -328,8 +313,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatValuesForReadinessGridAreDisplayedPro
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS15769
 Scenario: EvergreenJnr_AdminPage_ChecksThatNoWarningDisplayedWhenOpenningReadinessPage
-	When User clicks Admin on the left-hand menu
-	And User clicks "Projects" link on the Admin page
+	When User clicks 'Admin' on the left-hand menu
+	And User navigates to the 'Projects' left menu item
 	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Details' left menu item
@@ -339,15 +324,15 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatNoWarningDisplayedWhenOpenningReadine
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS15673
 Scenario: EvergreenJnr_AdminPage_CheckThatReadinessRightClickMenuCopyOptionsWorks
-	When User clicks Admin on the left-hand menu
-	And User clicks "Projects" link on the Admin page
+	When User clicks 'Admin' on the left-hand menu
+	And User navigates to the 'Projects' left menu item
 	And User enters "Havoc (Big Data)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Readiness' left menu item
 	And User performs right-click on "Red" cell in the grid
 	And User selects 'Copy row' option in context menu
 	Then There are no errors in the browser console
-	And Next data '\t\tRed\t\tRed\tFalse\t50\t0\t0\t0\t4' is copied
+	And Next data '\tRed\t\tRed\tFalse\tFalse\t50\t1\t0\t0\t4' is copied
 	When User clicks refresh button in the browser
 	And User performs right-click on "Amber" cell in the grid
 	And User selects 'Copy cell' option in context menu
@@ -356,8 +341,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatReadinessRightClickMenuCopyOptionsWork
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS15720 @DAS15720 @DAS16653 @DAS16617
 Scenario: EvergreenJnr_AdminPage_CheckThatReadinessCanBeSortedByClickingColumnHeader
-	When User clicks Admin on the left-hand menu
-	And User clicks "Projects" link on the Admin page
+	When User clicks 'Admin' on the left-hand menu
+	And User navigates to the 'Projects' left menu item
 	And User enters "Havoc (Big Data)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Readiness' left menu item

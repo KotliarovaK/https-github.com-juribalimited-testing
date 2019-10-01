@@ -7,11 +7,11 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS13169 @DAS13168 @DAS12632 @DAS13012
 Scenario: EvergreenJnr_AdminPage_CheckThatOnlyEvergreenUnitsAreDisplayedByDefault
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Evergreen" link on the Admin page
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Evergreen' left menu item
 	And User navigates to the 'Capacity Units' left menu item
-	Then "Capacity Units" page should be displayed to the user
+	Then Page with 'Capacity Units' header is displayed to user
 	Then data in the table is sorted by "Capacity Unit" column in ascending order by default
 	When User clicks Reset Filters button on the Admin page
 	Then data in the table is sorted by "Capacity Unit" column in ascending order by default
@@ -25,11 +25,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnlyEvergreenUnitsAreDisplayedByDefaul
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12921
 Scenario: EvergreenJnr_AdminPage_ChecksThatSpellingIsCorrectInCapacityUnitsDeletionMessages
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Evergreen" link on the Admin page
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Evergreen' left menu item
 	And User navigates to the 'Capacity Units' left menu item
-	Then "Capacity Units" page should be displayed to the user
+	Then Page with 'Capacity Units' header is displayed to user
 	When User select "Capacity Unit" rows in the grid
 	| SelectedRowsName          |
 	| Evergreen Capacity Unit 1 |
@@ -45,9 +45,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSpellingIsCorrectInCapacityUnitsDelet
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS14070
 Scenario: EvergreenJnr_AdminPage_ChecksThatSumOfObjectsInApplicationsListIsCorrect
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Evergreen" link on the Admin page
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Evergreen' left menu item
 	And User navigates to the 'Capacity Units' left menu item
-	Then "Capacity Units" page should be displayed to the user
+	Then Page with 'Capacity Units' header is displayed to user
 	Then sum of objects in "Applications" list is "2223" on the Admin page

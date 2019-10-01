@@ -7,7 +7,7 @@ Background: Pre-Conditions
 
 @Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS17651 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatArchivedItemStillRemainsInStaticList
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	And User sets includes archived devices in "true"
 	And User clicks the Actions button
 	And User select "Hostname" rows in the grid
@@ -29,7 +29,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatArchivedItemStillRemainsInStaticL
 
 @Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS17552
 Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatCustomFieldFiltersAndColumnsAreMultiValue
-	When User clicks "<ListName>" on the left-hand menu
+	When User clicks '<ListName>' on the left-hand menu
 	And User clicks the Filters button
 	And User add "<CustomColumn>" filter where type is "<Operator>" with added column and following value:
 	| Values        |
@@ -44,8 +44,8 @@ Examples:
 
 @Evergreen @Devices @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18089
 Scenario: EvergreenJnr_DashboardsPage_CheckThatArchivedItemsCheckboxDisplayedInListDetails
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User clicks "1803 Rollout" list name in left panel
 	And User clicks the List Details button
 	Then List details panel is displayed to the user
@@ -53,8 +53,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatArchivedItemsCheckboxDisplayedInL
 
 @Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18089
 Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatArchivedItemsCheckboxINotDisplayedInListDetails
-	When User clicks "<PageName>" on the left-hand menu
-	Then "<ListToNavigate>" list should be displayed to the user
+	When User clicks '<PageName>' on the left-hand menu
+	Then '<ListToNavigate>' list should be displayed to the user
 	When User clicks "<List>" list name in left panel
 	And User clicks the List Details button
 	Then List details panel is displayed to the user

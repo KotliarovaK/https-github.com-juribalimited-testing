@@ -21,16 +21,16 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedObjectsAreDisplayedAfterChang
 	| 0281Z793OLLLDU6 |
 	| 03U75EKEMUQMUS  |
 	Then "Devices 2/0" is displayed in the tab header on the Admin page
-	When User clicks the "UPDATE ALL CHANGES" Action button
-	And User clicks the "UPDATE PROJECT" Action button
+	When User clicks 'UPDATE ALL CHANGES' button 
+	And User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "2 objects queued for onboarding, 0 objects offboarded" text
 	Then "Devices 0/0" is displayed in the tab header on the Admin page
 	When User click on Back button
-	And User clicks "Teams" link on the Admin page
-	Then "Teams" page should be displayed to the user
+	And User navigates to the 'Teams' left menu item
+	Then Page with 'Teams' header is displayed to user
 	When User enters "My Team" text in the Search field for "Team" column
 	And User clicks content from "Team" column
 	And User navigates to the 'Buckets' left menu item
 	And User enters "Unassigned2" text in the Search field for "Bucket" column
 	Then "2" Onboarded objects are displayed
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu

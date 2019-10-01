@@ -7,12 +7,12 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11944 @Projects @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckSelectedRowsCountDisplayingOnProjectsGrid
-	When User clicks Admin on the left-hand menu
-	And User clicks "Projects" link on the Admin page
-	And User clicks the "CREATE PROJECT" Action button
+	When User clicks 'Admin' on the left-hand menu
+	And User navigates to the 'Projects' left menu item
+	And User clicks 'CREATE PROJECT' button 
 	And User enters "TestProjectDAS11944" in the "Project Name" field
 	And User selects 'All Devices' option from 'Scope' autocomplete
-	And User clicks the "CREATE" Action button
+	And User clicks 'CREATE' button 
 	When User enters "Barry's User Project" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	Then Rows counter contains "1" found row of all rows
@@ -22,9 +22,9 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectsAreDeletedSuccessfully
 	When Project created via API and opened
 	| ProjectName   | Scope       | ProjectTemplate | Mode               |
 	| <ProjectName> | <ScopeList> | None            | Standalone Project |
-	When User clicks Admin on the left-hand menu
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	When User navigates to the 'Projects' left menu item
+	Then Page with 'Projects' header is displayed to user
 	When User enters "<ProjectName>" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
@@ -35,35 +35,35 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectsAreDeletedSuccessfully
 	| ItemName |
 	| <Item>   |
 	Then "<StaticList>" list is displayed to user
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Projects' left menu item
+	Then Page with 'Projects' header is displayed to user
+	When User clicks 'CREATE PROJECT' button 
+	Then Page with 'Create Project' subheader is displayed to user
 	When User enters "<ProjectName>" in the "Project Name" field
 	And User selects '<StaticList>' option from 'Scope' autocomplete
 	When User selects "Standalone Project" in the Mode Project dropdown
-	And User clicks the "CREATE" Action button
+	And User clicks 'CREATE' button 
 	Then Success message is displayed and contains "The project has been created" text
 	When User enters "<ProjectName>" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
-	When User clicks "<PageName>" on the left-hand menu
-	Then "<PageName>" list should be displayed to the user
+	When User clicks '<PageName>' on the left-hand menu
+	Then 'All <PageName>' list should be displayed to the user
 	When User clicks on '<ColumnName>' column header
 	And User create dynamic list with "<DynamicList>" name on "<PageName>" page
 	Then "<DynamicList>" list is displayed to user
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Projects' left menu item
+	Then Page with 'Projects' header is displayed to user
+	When User clicks 'CREATE PROJECT' button 
+	Then Page with 'Create Project' subheader is displayed to user
 	When User enters "<ProjectName>" in the "Project Name" field
 	And User selects '<DynamicList>' option from 'Scope' autocomplete
 	When User selects "Standalone Project" in the Mode Project dropdown
-	And User clicks the "CREATE" Action button
+	And User clicks 'CREATE' button 
 	Then Success message is displayed and contains "The project has been created" text
 
 Examples:
@@ -74,19 +74,19 @@ Examples:
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS11726 @DAS12761 @DAS11770 @DAS12999 @DAS11892 @Project_Creation_and_Scope @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyProjectName
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Projects' left menu item
+	Then Page with 'Projects' header is displayed to user
+	When User clicks 'CREATE PROJECT' button 
+	Then Page with 'Create Project' subheader is displayed to user
 	When User enters " " in the "Project Name" field
 	And User selects 'All Devices' option from 'Scope' autocomplete
 	Then Create Project button is disabled
 	When User enters "AllDevices Project" in the "Project Name" field
 	And User clicks Create button on the Create Project page
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
+	When User clicks 'CREATE PROJECT' button 
+	Then Page with 'Create Project' subheader is displayed to user
 	When User enters " alldevices project" in the "Project Name" field
 	And User selects 'All Devices' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
@@ -96,12 +96,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyProjectN
 	| 0AN6PG99INA7R2 |
 	| 0B4UHHUZQBRXKE |
 	Then "StaticList4581" list is displayed to user
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Projects' left menu item
+	Then Page with 'Projects' header is displayed to user
+	When User clicks 'CREATE PROJECT' button 
+	Then Page with 'Create Project' subheader is displayed to user
 	When User enters "TestProject84" in the "Project Name" field
 	And User selects 'StaticList4581' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
@@ -110,17 +110,17 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyProjectN
 	Then "TestProject84" text in search field is displayed correctly for "Project" column
 	When User selects all rows on the grid
 	And User removes selected item
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User clicks on 'Hostname' column header
 	And User create dynamic list with "DynamicList5531" name on "Devices" page
 	Then "DynamicList5531" list is displayed to user
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Projects' left menu item
+	Then Page with 'Projects' header is displayed to user
+	When User clicks 'CREATE PROJECT' button 
+	Then Page with 'Create Project' subheader is displayed to user
 	When User enters "AllDevices Project1258" in the "Project Name" field
 	And User selects 'DynamicList5531' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
@@ -130,17 +130,17 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyProjectN
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13733 @DAS14682 @DAS11565 @Projects
 Scenario: EvergreenJnr_ImportProjectPage_CheckThatImportIsSuccessAfterDuplicatesInProjectTasksError
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks the "IMPORT PROJECT" Action button
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User clicks 'IMPORT PROJECT' button 
 	#DAS11565
 	Then "Import Task to Request Type relationships" checkbox is displayed on the Admin page
 	Then "Import Mail Templates" checkbox is displayed on the Admin page
 	Then "Import Mail Template to Task Relationships" checkbox is displayed on the Admin page
 	When User clicks "Import Request Types" checkbox on the Project details page
 	Then "Import Mail Template to Task Relationships" checkbox is disabled on the Admin page
-	When User clicks the "CANCEL" Action button
-	When User clicks the "IMPORT PROJECT" Action button
+	When User clicks 'CANCEL' button 
+	When User clicks 'IMPORT PROJECT' button 
 	#DAS11565
 	When User selects "DAS_13733_Duplicates_in_project_tasks.xml" file to upload on Import Project page
 	And User selects "Import to new project" option in the "Import" dropdown on the Import Project Page
@@ -151,8 +151,8 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckThatImportIsSuccessAfterDuplicates
 	And User clicks Import Project button on the Import Project page
 	Then Error message with "This XML file contains duplicates in project tasks" text is displayed
 	When User selects "DAS_13733_Valid_file.xml" file to upload on Import Project page
-	And User clicks the "IMPORT PROJECT" Action button
-	Then "Projects" page should be displayed to the user
+	And User clicks 'IMPORT PROJECT' button 
+	Then Page with 'Projects' header is displayed to user
 	And Success message is displayed and contains "The project has been imported, click here to view the TestProjectDAS13733 project" text
 	When User enters "TestProjectDAS13733" text in the Search field for "Project" column
 	And User selects all rows on the grid

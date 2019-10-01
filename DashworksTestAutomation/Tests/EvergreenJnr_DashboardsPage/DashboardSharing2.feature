@@ -15,18 +15,18 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForEdit
 	| automation_admin1 | m!gration |
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User clicks on 'Hostname' column header
 	And User create custom list with "DeviceListFor14841_Edit" name
 	Then "DeviceListFor14841_Edit" list is displayed to user
 	When User clicks the List Details button
 	And User select "Specific users / teams" sharing option
-	And User clicks the "ADD USER" Action button
+	And User clicks 'ADD USER' button 
 	And User selects the "Automation Admin 10" user for sharing
 	And User select "Edit" in Select Access dropdown
-	And User clicks the "ADD USER" Action button
-	And User clicks the "ADD USER" Action button
+	And User clicks 'ADD USER' button 
+	And User clicks 'ADD USER' button 
 	And User clicks the Logout button
 	Then User is logged out
 	When User clicks the Switch to Evergreen link
@@ -39,7 +39,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForEdit
 	#create dashboard
 	When Dashboard with "Dashboard for DAS14841_Edit" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
-	And User clicks the "ADD WIDGET" Action button
+	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title                  | List                    | SplitBy  | AggregateFunction | OrderBy    |
 	| Table      | WidgetForDAS14841_Edit | DeviceListFor14841_Edit | Hostname | Count             | Count DESC |
@@ -66,19 +66,19 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdmi
 	| automation_admin1 | m!gration |
 	When User clicks the Switch to Evergreen link
 	
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User clicks on 'Hostname' column header
 	And User create custom list with "DeviceListFor14841_Admin" name
 	Then "DeviceListFor14841_Admin" list is displayed to user
 	
 	When User clicks the List Details button
 	And User select "Specific users / teams" sharing option
-	And User clicks the "ADD USER" Action button
+	And User clicks 'ADD USER' button 
 	And User selects the "Automation Admin 10" user for sharing
 	And User select "Admin" in Select Access dropdown
-	And User clicks the "ADD USER" Action button
-	And User clicks the "ADD USER" Action button
+	And User clicks 'ADD USER' button 
+	And User clicks 'ADD USER' button 
 	
 	When User clicks the Logout button
 	Then User is logged out
@@ -91,7 +91,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdmi
 	#create dashboard
 	When Dashboard with "Dashboard for DAS14841_Admin" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
-	And User clicks the "ADD WIDGET" Action button
+	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title                   | List                     | SplitBy  | AggregateFunction | OrderBy    |
 	| Table      | WidgetForDAS14841_Admin | DeviceListFor14841_Admin | Hostname | Count             | Count DESC |
@@ -117,8 +117,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdmi
 	| Username          | Password  |
 	| automation_admin1 | m!gration |
 	When User clicks the Switch to Evergreen link
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User clicks Settings button for "DeviceListFor14841_Admin" list
 	And User clicks Manage in the list panel
 	Then List details panel is displayed to the user
@@ -161,7 +161,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckUserCanEditWidgetFromSharedDashboard
 	#create dashboard and share it
 	When Dashboard with "Dashboard for DAS15550" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
-	And User clicks the "ADD WIDGET" Action button
+	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title             | List             | SplitBy     | AggregateBy | AggregateFunction | OrderBy         | MaxValues |
 	| Table      | WidgetForDAS15550 | All Applications | Application | Application | Count distinct    | Application ASC | 10        |
@@ -191,8 +191,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckUserCanEditWidgetFromSharedDashboard
 	And User clicks Ellipsis menu for "WidgetForDAS15550" Widget on Dashboards page
 	And User clicks "Edit" item from Ellipsis menu on Dashboards page
 	And User updates Widget with following info:
-	| WidgetType | Title                    | List | SplitBy | AggregateBy |
-	|            | WidgetForDAS15550_Edited |      | Version | Application |
+	| WidgetType | Title                    | List | SplitBy | AggregateBy | OrderBy     |
+	|            | WidgetForDAS15550_Edited |      | Version | Application | Version ASC |
 	Then User sees widget with the next name "WidgetForDAS15550_Edited" on Dashboards page
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS14915 @Cleanup
@@ -266,7 +266,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserWithAdminRightsCanAddUserInSh
 	#When User clicks Dashboards Details icon on Dashboards page
 	#Then Permission panel is displayed to the user
 	#When User changes sharing type from "Private" to "Specific users / teams"
-	#When User clicks the "ADD TEAM" Action button
+	#When User clicks 'ADD TEAM' button 
 	#When User selects the "Team 1061" team for sharing
 	#And User select "Admin" in Select Access dropdown
 	#When User clicks the "CANCEL" button on Dashboard Details

@@ -12,11 +12,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingI
 	| ProjectForCapacity13171 | All Devices | None            | Standalone Project |
 	And User navigates to the 'Capacity' left menu item
 	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE SLOT" Action button
+	And User clicks 'CREATE SLOT' button 
 	And User clicks on the Unlimited field on the Capacity Slots page
 	Then Unlimited text disappears from column
 	Then "All Capacity Units" content is displayed in "Capacity Units" field
-	When User clicks the "CANCEL" Action button
+	When User clicks 'CANCEL' button 
 	And User creates new Slot
 	| SlotName      | DisplayName | CapacityType   |
 	| CapacitySlot1 | DAS13432    | Capacity Units |
@@ -33,7 +33,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingI
 	And User type "NewSlotName" Name in the "Slot Name" field on the Project details page
 	And User type "NewDisplayName" Name in the "Display Name" field on the Project details page
 	Then "UPDATE" button is displayed without tooltip on Update form
-	When User clicks the "UPDATE" Action button
+	When User clicks 'UPDATE' button 
 	Then Success message is displayed and contains "The capacity slot details have been updated" text
 	And 'NewSlotName' content is displayed in the 'Capacity Slot' column
 	When User clicks on 'Capacity Slot' column header
@@ -61,23 +61,23 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsUnableToCreateMoreThanOneOverrid
 	And User navigates to the 'Capacity' left menu item
 	And User selects "Slots" tab on the Project details page
 	And User selects "Override Dates" tab on the Project details page
-	And User clicks the "CREATE OVERRIDE DATE" Action button
+	And User clicks 'CREATE OVERRIDE DATE' button 
 	And User enters '17 Oct 2018' text to 'Override Start Date' datepicker
 	And User enters '17 Oct 2018' text to 'Override End Date' datepicker
 	And User selects 'SlotDAS13780_1' in the 'Slot' dropdown
 	And User enters "0" value in the "Capacity" field
-	And User clicks the "CREATE" Action button
-	And User clicks the "CREATE OVERRIDE DATE" Action button
+	And User clicks 'CREATE' button 
+	And User clicks 'CREATE OVERRIDE DATE' button 
 	And User enters '17 Oct 2018' text to 'Override Start Date' datepicker
 	And User enters '17 Oct 2018' text to 'Override End Date' datepicker
 	And User selects 'SlotDAS13780_2' in the 'Slot' dropdown
 	And User enters "0" value in the "Capacity" field
-	And User clicks the "CREATE" Action button
-	And User clicks the "CREATE OVERRIDE DATE" Action button
+	And User clicks 'CREATE' button 
+	And User clicks 'CREATE OVERRIDE DATE' button 
 	And User enters '17 Oct 2018' text to 'Override Start Date' datepicker
 	And User enters '17 Oct 2018' text to 'Override End Date' datepicker
 	And User selects 'All' in the 'Slot' dropdown
-	And User clicks the "CREATE" Action button
+	And User clicks 'CREATE' button 
 	Then Error message with "An override already exists for this date" text is displayed
 	And "2" rows label displays in Action panel
 	And There are no errors in the browser console
@@ -93,17 +93,17 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToUpdateCapacityUnitOrSlotUs
 	And User navigates to newly created Slot
 	And User type "CAPACITYSLOTdas13789" Name in the "Slot Name" field on the Project details page
 	And User type "das13779SLOT" Name in the "Display Name" field on the Project details page
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then Error message is not displayed on the Capacity Slots page
 	And Success message is displayed and contains "The capacity slot details have been updated" text
 	When User selects "Units" tab on the Project details page
-	And User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
+	And User clicks 'CREATE PROJECT CAPACITY UNIT' button 
 	And User type "capacityunitDAS13789" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "13789" Name in the "Description" field on the Project details page
-	And User clicks the "CREATE" Action button
+	And User clicks 'CREATE' button 
 	And User clicks newly created object link
 	And User type "CAPACITYUINTdas13789" Name in the "Capacity Unit Name" field on the Project details page
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then Error message is not displayed on the Capacity Slots page
 	And Success message is displayed and contains "The capacity unit details have been updated" text
 	
@@ -118,7 +118,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotAvailableFromAndSlotAvailableToCan
 	And User navigates to newly created Slot
 	And User enters "" value to "Slot Available From" date field on Capacity Slot form page
 	And User enters "" value to "Slot Available To" date field on Capacity Slot form page
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	And User clicks content from "Capacity Slot" column
 	Then User sees "" value in the "Slot Available From" date field on Capacity Slot form page
 	And User sees "" value in the "Slot Available To" date field on Capacity Slot form page

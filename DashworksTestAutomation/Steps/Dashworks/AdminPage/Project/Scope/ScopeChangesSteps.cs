@@ -108,7 +108,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Scope
                 _addedObjects.Value.Add(s, _lastUsedBucket.Value);
             }
 
-            basePage.GetActionsButtonByName("ADD BUCKETS").Click();
+            basePage.GetButtonByName("ADD BUCKETS").Click();
         }
 
         //TODO looks like should be removed
@@ -153,7 +153,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Scope
         {
             var projectElement = _driver.NowAt<ScopeChangePage>();
             var basePage = _driver.NowAt<BaseDashboardPage>();
-            Verify.IsTrue(basePage.ExpandCollapseMultiselectButton("").Disabled(), "Items are not selected");
+            Verify.IsTrue(basePage.CollapseMultiselectButton("").Displayed(), "Items are not selected");
             Verify.IsTrue(projectElement.CheckedSomeItemCheckbox.Displayed(), "Item checkbox is not checked");
         }
 

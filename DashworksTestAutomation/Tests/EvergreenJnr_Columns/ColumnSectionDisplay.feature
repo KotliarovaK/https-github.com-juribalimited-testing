@@ -7,8 +7,8 @@ Background: Pre-Conditions
 
 @Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS10584
 Scenario: EvergreenJnr_DevicesList_CheckCategoryHeadingWhenAllColumnsFromCategoryAreAdded
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When User add all Columns from specific category
@@ -18,8 +18,8 @@ Scenario: EvergreenJnr_DevicesList_CheckCategoryHeadingWhenAllColumnsFromCategor
 
 @Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11539
 Scenario: EvergreenJnr_DevicesList_CheckThatColumnCategoriesAreClosedAfterClearingAColumnSearchValue
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When User enters "date" text in Search field at Columns Panel
@@ -44,8 +44,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnIsNotRemovedAfterApplyFilterFo
 
 @Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11480
 Scenario: EvergreenJnr_DevicesList_CheckThatAppropriateIconsAreDisplayedForMaximizedAndMinimizeGroups
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	Then Maximize buttons are displayed for all category in Columns panel
@@ -66,8 +66,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAllColumnsAreVisibleInTheirRelevantC
 
 @Evergreen @Mailboxes @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11548 @DAS13423
 Scenario: EvergreenJnr_MailboxesList_CheckThatCategoryRemainsOpenAfterAddingColumns
-	When User clicks "Mailboxes" on the left-hand menu
-	Then "All Mailboxes" list should be displayed to the user
+	When User clicks 'Mailboxes' on the left-hand menu
+	Then 'All Mailboxes' list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	Then User is expand "Mailbox" columns category
@@ -85,7 +85,7 @@ Scenario: EvergreenJnr_DevicesList_CheckTheColumnCategoriesUpdatesAfterAddingCol
 	| ColumnName |
 	| Build Date |
 	When User navigates to the "All Devices" list
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
@@ -97,8 +97,8 @@ Scenario: EvergreenJnr_DevicesList_CheckTheColumnCategoriesUpdatesAfterAddingCol
 
 @Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11768 @DAS11951 @Cleanup
 Scenario: EvergreenJnr_UsersList_CheckTheColumnCategoriesUpdatesAfterAddingColumnForDynamicLists
-	When User clicks "Users" on the left-hand menu
-	Then "All Users" list should be displayed to the user
+	When User clicks 'Users' on the left-hand menu
+	Then 'All Users' list should be displayed to the user
 	When User clicks on 'Domain' column header
 	Then data in table is sorted by 'Domain' column in ascending order
 	When User create dynamic list with "DynamicList" name on "Users" page
@@ -112,7 +112,7 @@ Scenario: EvergreenJnr_UsersList_CheckTheColumnCategoriesUpdatesAfterAddingColum
 	| ColumnName |
 	| Zip Code   |
 	When User navigates to the "All Users" list
-	Then "All Users" list should be displayed to the user
+	Then 'All Users' list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
@@ -124,8 +124,8 @@ Scenario: EvergreenJnr_UsersList_CheckTheColumnCategoriesUpdatesAfterAddingColum
 
 @Evergreen @Applications @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11768 @DAS12152 @DAS12553 @DAS12602 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckTheColumnCategoriesUpdatesAfterAddingColumnForStaticLists
-	When User clicks "Applications" on the left-hand menu
-	Then "All Applications" list should be displayed to the user
+	When User clicks 'Applications' on the left-hand menu
+	Then 'All Applications' list should be displayed to the user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
@@ -141,7 +141,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckTheColumnCategoriesUpdatesAfterAddi
 	| ColumnName           |
 	| Windows7Mi: In Scope |
 	When User navigates to the "All Applications" list
-	Then "All Applications" list should be displayed to the user
+	Then 'All Applications' list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
@@ -153,8 +153,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckTheColumnCategoriesUpdatesAfterAddi
 
 @Evergreen @Mailboxes @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11768 @DAS11951 @Cleanup
 Scenario: EvergreenJnr_MailboxesList_CheckTheColumnCategoriesUpdatesAfterAddingColumnForDynamicLists
-	When User clicks "Mailboxes" on the left-hand menu
-	Then "All Mailboxes" list should be displayed to the user
+	When User clicks 'Mailboxes' on the left-hand menu
+	Then 'All Mailboxes' list should be displayed to the user
 	When User clicks on 'Email Address' column header
 	Then data in table is sorted by 'Email Address' column in ascending order
 	When User create dynamic list with "DynamicList" name on "Mailboxes" page
@@ -168,7 +168,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckTheColumnCategoriesUpdatesAfterAddingC
 	| ColumnName                                 |
 	| EmailMigra: Pre-Migration \ Scheduled date |
 	When User navigates to the "All Mailboxes" list
-	Then "All Mailboxes" list should be displayed to the user
+	Then 'All Mailboxes' list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
@@ -180,8 +180,8 @@ Scenario: EvergreenJnr_MailboxesList_CheckTheColumnCategoriesUpdatesAfterAddingC
 
 @Evergreen @AllLists @EvergreenJnr_GridActions @ColumnOrder @DAS11463
 Scenario: EvergreenJnr_AllLists_CheckThatColumnsIsNotRemovedAfterDraggingThemOutsideTheAgGrid
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User moves "Hostname" column beyond the Grid
 	When User moves "Device Type" column beyond the Grid
 	When User moves "Operating System" column beyond the Grid
@@ -200,8 +200,8 @@ Scenario: EvergreenJnr_AllLists_CheckThatColumnsIsNotRemovedAfterDraggingThemOut
 	| Device Type        |
 	| Operating System   |
 	| Owner Display Name |
-	When User clicks "Users" on the left-hand menu
-	Then "All Users" list should be displayed to the user
+	When User clicks 'Users' on the left-hand menu
+	Then 'All Users' list should be displayed to the user
 	When User moves "Username" column beyond the Grid
 	When User moves "Domain" column beyond the Grid
 	When User moves "Display Name" column beyond the Grid
@@ -220,8 +220,8 @@ Scenario: EvergreenJnr_AllLists_CheckThatColumnsIsNotRemovedAfterDraggingThemOut
 	| Domain             |
 	| Display Name       |
 	| Distinguished Name |
-	When User clicks "Applications" on the left-hand menu
-	Then "All Applications" list should be displayed to the user
+	When User clicks 'Applications' on the left-hand menu
+	Then 'All Applications' list should be displayed to the user
 	When User moves "Vendor" column beyond the Grid
 	When User moves "Version" column beyond the Grid
 	Then Column is displayed in following order:
@@ -236,8 +236,8 @@ Scenario: EvergreenJnr_AllLists_CheckThatColumnsIsNotRemovedAfterDraggingThemOut
 	| Application |
 	| Vendor      |
 	| Version     |
-	When User clicks "Mailboxes" on the left-hand menu
-	Then "All Mailboxes" list should be displayed to the user
+	When User clicks 'Mailboxes' on the left-hand menu
+	Then 'All Mailboxes' list should be displayed to the user
 	When User moves "Email Address" column beyond the Grid
 	When User moves "Mailbox Platform" column beyond the Grid
 	When User moves "Mail Server" column beyond the Grid
@@ -262,8 +262,8 @@ Scenario: EvergreenJnr_AllLists_CheckThatColumnsIsNotRemovedAfterDraggingThemOut
 
 @Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13181 @DAS13376
 Scenario: EvergreenJnr_UsersList_ChecksThatColumnsPanelIsDisplayedCorrectlyAfterApplyAnyFilterFromApplicationCustomFieldsCategory
-	When User clicks "Users" on the left-hand menu
-	Then "All Users" list should be displayed to the user
+	When User clicks 'Users' on the left-hand menu
+	Then 'All Users' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Application Owner" filter where type is "Equals" with following Value and Association:
@@ -276,8 +276,8 @@ Scenario: EvergreenJnr_UsersList_ChecksThatColumnsPanelIsDisplayedCorrectlyAfter
 
 @Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13059 @Cleanup
 Scenario: EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromTheAllListTheColumnsIsDisplayedCorrectlyOnDevicesPage
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
@@ -307,7 +307,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromThe
 	And User selects "Add to static list" in the Actions dropdown
 	Then "ADD" Action button is disabled
 	And User selects "StaticListFromTheAllList" List in Saved List dropdown
-	When User clicks the "ADD" Action button
+	When User clicks 'ADD' button 
 	Then "4" rows are displayed in the agGrid
 	And Column is displayed in following order:
 	| ColumnName         |
@@ -320,8 +320,8 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromThe
 
 @Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13059 @Cleanup
 Scenario: EvergreenJnr_UsersList_ChecksThatAfterAddingRowsToAStaticListFromTheAllListTheColumnsIsDisplayedCorrectlyOnUsersPage
-	When User clicks "Users" on the left-hand menu
-	Then "All Users" list should be displayed to the user
+	When User clicks 'Users' on the left-hand menu
+	Then 'All Users' list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
@@ -361,8 +361,8 @@ Scenario: EvergreenJnr_UsersList_ChecksThatAfterAddingRowsToAStaticListFromTheAl
 
 @Evergreen @Applications @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13059 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatAfterAddingRowsToAStaticListFromTheAllListTheColumnsIsDisplayedCorrectlyOnApplicationsPage
-	When User clicks "Applications" on the left-hand menu
-	Then "All Applications" list should be displayed to the user
+	When User clicks 'Applications' on the left-hand menu
+	Then 'All Applications' list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
@@ -401,8 +401,8 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatAfterAddingRowsToAStaticListFr
 
 @Evergreen @Mailboxes @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13059 @Cleanup
 Scenario: EvergreenJnr_MailboxesList_ChecksThatAfterAddingRowsToAStaticListFromTheAllListTheColumnsIsDisplayedCorrectlyOnMailboxesPage
-	When User clicks "Mailboxes" on the left-hand menu
-	Then "All Mailboxes" list should be displayed to the user
+	When User clicks 'Mailboxes' on the left-hand menu
+	Then 'All Mailboxes' list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
@@ -443,8 +443,8 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatAfterAddingRowsToAStaticListFromT
 
 @Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13059 @Cleanup
 Scenario: EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromADynamicListTheColumnsIsDisplayedCorrectlyOnDevicesPage
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
@@ -489,8 +489,8 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromADy
 
 @Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13059 @Cleanup
 Scenario: EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromAStaticListTheColumnsIsDisplayedCorrectlyOnDevicesPage
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
@@ -542,8 +542,8 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromASt
 
 @Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13245 @DAS15566
 Scenario: EvergreenJnr_DevicesList_TheSelectedColumnsCategoryIsDisplayedAfterUsingTheFilterSearch
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User clicks Add New button on the Filter panel
@@ -564,8 +564,8 @@ Scenario: EvergreenJnr_DevicesList_TheSelectedColumnsCategoryIsDisplayedAfterUsi
 
 @Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13245
 Scenario: EvergreenJnr_DevicesList_TheSelectedColumnsCategoryIsDisplayedAfterAddingAFilter
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User clicks Add New button on the Filter panel
@@ -590,8 +590,8 @@ Scenario: EvergreenJnr_DevicesList_TheSelectedColumnsCategoryIsDisplayedAfterAdd
 
 @Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionOrder @ColumnSectionDisplay @DAS12861
 Scenario: EvergreenJnr_DevicesList_ChecksThatSubcategoriesOnFiltersPanelAreDisplayedInAlphabeticalOrder
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
@@ -620,7 +620,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatSubcategoriesOnFiltersPanelAreDispl
 
 @Evergreen @AllLists @EvergreenJnr_Columns @ColumnSectionOrder @ColumnSectionDisplay @DAS12940 @DAS13201 @DAS14325
 Scenario Outline: EvergreenJnr_AllLists_CheckThatBucketAndCapacityUnitSubcategoriesPlacedInEvergreenCategoryInColumnsPanel
-	When User clicks "<ListName>" on the left-hand menu
+	When User clicks '<ListName>' on the left-hand menu
 	And User clicks the Columns button
 	Then "Evergreen" section is displayed in the Columns panel
 	When User closed "Selected Columns" columns category
@@ -639,7 +639,7 @@ Examples:
 
 @Evergreen @Applications @EvergreenJnr_Columns @ColumnSectionOrder @ColumnSectionDisplay @DAS12940 @DAS13201 @DAS14325
 Scenario: EvergreenJnr_ApplicationsList_CheckThatCapacityUnitSubcategoryPlacedInEvergreenCategoryInColumnsPanel
-	When User clicks "Applications" on the left-hand menu
+	When User clicks 'Applications' on the left-hand menu
 	And User clicks the Columns button
 	Then "Evergreen" section is displayed in the Columns panel
 	When User closed "Selected Columns" columns category
@@ -650,8 +650,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatCapacityUnitSubcategoryPlacedIn
 
 @Evergreen @Applications @EvergreenJnr_Columns @ColumnSectionOrder @ColumnSectionDisplay @DAS12861 @DAS13299
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatSubcategoriesOnColumnsPanelAreDisplayedInAlphabeticalOrderAfterAddingFilters
-	When User clicks "Applications" on the left-hand menu
-	Then "All Applications" list should be displayed to the user
+	When User clicks 'Applications' on the left-hand menu
+	Then 'All Applications' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Application Key" filter where type is "Equals" with added column and following value:
@@ -681,8 +681,8 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatSubcategoriesOnColumnsPanelAre
 
 @Evergreen @Users @EvergreenJnr_Columns @ColumnSectionOrder @ColumnSectionDisplay @DAS12861
 Scenario: EvergreenJnr_UsersList_ChecksThatSubcategoriesOnColumnsPanelAreDisplayedInAlphabeticalOrderAfterAddingDepartmentFilters
-	When User clicks "Users" on the left-hand menu
-	Then "All Users" list should be displayed to the user
+	When User clicks 'Users' on the left-hand menu
+	Then 'All Users' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Department" filter where type is "Equals" with added column and "Finance" Tree List option
@@ -751,8 +751,8 @@ Scenario: EvergreenJnr_UsersList_ChecksThatSubcategoriesOnColumnsPanelAreDisplay
 
 @Evergreen @AllLists @EvergreenJnr_Columns @ColumnSectionDisplay @DAS12922
 Scenario: EvergreenJnr_AllLists_LocationAndUserFiltersEqualsOnUsersAndApplicationsTabs
-	When User clicks "Users" on the left-hand menu
-	Then "All Users" list should be displayed to the user
+	When User clicks 'Users' on the left-hand menu
+	Then 'All Users' list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
@@ -769,8 +769,8 @@ Scenario: EvergreenJnr_AllLists_LocationAndUserFiltersEqualsOnUsersAndApplicatio
 	When User clicks Add New button on the Filter panel
 	Then "User" with "30" category is displayed on Filters panel
 	And "Location" with "8" category is displayed on Filters panel
-	When User clicks "Applications" on the left-hand menu
-	Then "All Applications" list should be displayed to the user
+	When User clicks 'Applications' on the left-hand menu
+	Then 'All Applications' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User clicks Add New button on the Filter panel
@@ -779,8 +779,8 @@ Scenario: EvergreenJnr_AllLists_LocationAndUserFiltersEqualsOnUsersAndApplicatio
 
 @Evergreen @Mailboxes @EvergreenJnr_Columns @ColumnSectionDisplay @DAS12910
 Scenario: EvergreenJnr_MailboxesList_ChecksThatSubcategoriesOnColumnsPanelIsDisplayedCorrectlyAfterAddingObjectIdFilter
-	When User clicks "Mailboxes" on the left-hand menu
-	Then "All Mailboxes" list should be displayed to the user
+	When User clicks 'Mailboxes' on the left-hand menu
+	Then 'All Mailboxes' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "EmailMigra: Object ID" filter where type is "Equals" with added column and following value:
@@ -807,8 +807,8 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatSubcategoriesOnColumnsPanelIsDisp
 
 @Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS14629 @DAS14660 @DAS15167
 Scenario: EvergreenJnr_UsersList_CheckThatPrimaryDeviceColumnIsAvailableInTheColumnsPanelForUsersList
-	When User clicks "Users" on the left-hand menu
-	Then "All Users" list should be displayed to the user
+	When User clicks 'Users' on the left-hand menu
+	Then 'All Users' list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When User is expand "User" columns category
@@ -820,7 +820,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatPrimaryDeviceColumnIsAvailableInTheCol
 
 @Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS14969 @archived
 Scenario: EvergreenJnr_DevicesList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedCategories
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	And User clicks the Columns button
 	Then Category with counter is displayed on Columns panel
 	| Category                   | Number |
@@ -840,7 +840,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatColumnsPanelDoesHaveAndNotHaveListe
 
 @Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS14969 @archived
 Scenario: EvergreenJnr_UsersList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedCategories
-	When User clicks "Users" on the left-hand menu
+	When User clicks 'Users' on the left-hand menu
 	And User clicks the Columns button
 	Then Category with counter is displayed on Columns panel
 	| Category                   | Number |
@@ -856,7 +856,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedC
 
 @Evergreen @Applications @EvergreenJnr_Columns @ColumnSectionDisplay @DAS14969 @archived
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedCategories
-	When User clicks "Applications" on the left-hand menu
+	When User clicks 'Applications' on the left-hand menu
 	And User clicks the Columns button
 	Then Category with counter is displayed on Columns panel
 	| Category                   | Number |
@@ -872,7 +872,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatColumnsPanelDoesHaveAndNotHave
 	
 @Evergreen @Mailboxes @EvergreenJnr_Columns @ColumnSectionDisplay @DAS14969 @archived
 Scenario: EvergreenJnr_MailboxesList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedCategories
-	When User clicks "Mailboxes" on the left-hand menu
+	When User clicks 'Mailboxes' on the left-hand menu
 	And User clicks the Columns button
 	Then Category with counter is displayed on Columns panel
 	| Category                   | Number |
@@ -892,7 +892,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatColumnsPanelDoesHaveAndNotHaveLis
 
 @Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS15140 @Do_Not_Run_With_Projects
 Scenario: EvergreenJnr_DevicesList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAreAvailableInPanel
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	And User clicks the Columns button
 	And User enters "ring" text in Search field at Columns Panel
 	Then Category with counter is displayed on Columns panel
@@ -913,7 +913,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatOnlyRingsCategoryOfSameTypeProjectA
 
 @Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS15140 @Do_Not_Run_With_Projects
 Scenario: EvergreenJnr_UsersList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAreAvailableInPanel
-	When User clicks "Users" on the left-hand menu
+	When User clicks 'Users' on the left-hand menu
 	And User clicks the Columns button
 	And User enters "ring" text in Search field at Columns Panel
 	Then Category with counter is displayed on Columns panel
@@ -927,7 +927,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAre
 
 @Evergreen @Mailboxes @EvergreenJnr_Columns @ColumnSectionDisplay @DAS15140 @Do_Not_Run_With_Projects
 Scenario: EvergreenJnr_MailboxesList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAreAvailableInPanel
-	When User clicks "Mailboxes" on the left-hand menu
+	When User clicks 'Mailboxes' on the left-hand menu
 	And User clicks the Columns button
 	And User enters "ring" text in Search field at Columns Panel
 	Then Category with counter is displayed on Columns panel
@@ -938,7 +938,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatOnlyRingsCategoryOfSameTypeProjec
 
 @Evergreen @Applications @EvergreenJnr_Columns @ColumnSectionDisplay @DAS15140 @Do_Not_Run_With_Projects
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAreAvailableInPanel
-	When User clicks "Applications" on the left-hand menu
+	When User clicks 'Applications' on the left-hand menu
 	And User clicks the Columns button
 	And User enters "ring" text in Search field at Columns Panel
 	Then Category with counter is displayed on Columns panel
@@ -946,8 +946,8 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatOnlyRingsCategoryOfSameTypePro
 
 @Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionOrder @ColumnSectionDisplay @DAS15899
 Scenario: EvergreenJnr_DevicesList_CheckStageNameInTheFiltestForDevicesLists
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User clicks the Columns button
 	When User closed "Selected Columns" columns category
 	And User is expand "Project Tasks: DeviceSche" columns category
@@ -972,8 +972,8 @@ Scenario: EvergreenJnr_DevicesList_CheckStageNameInTheFiltestForDevicesLists
 
 @Evergreen @Users @EvergreenJnr_Columns @ColumnSectionOrder @ColumnSectionDisplay @DAS15899
 Scenario: EvergreenJnr_UsersList_CheckStageNameInTheFiltestForUsersLists
-	When User clicks "Users" on the left-hand menu
-	Then "All Users" list should be displayed to the user
+	When User clicks 'Users' on the left-hand menu
+	Then 'All Users' list should be displayed to the user
 	When User clicks the Columns button
 	When User closed "Selected Columns" columns category
 	And User is expand "Project Tasks: DeviceSche" columns category
@@ -985,8 +985,8 @@ Scenario: EvergreenJnr_UsersList_CheckStageNameInTheFiltestForUsersLists
 
 @Evergreen @Mailboxes @EvergreenJnr_Columns @ColumnSectionOrder @ColumnSectionDisplay @DAS15899
 Scenario: EvergreenJnr_MailboxesList_CheckStageNameInTheFiltestForMailboxesLists
-	When User clicks "Mailboxes" on the left-hand menu
-	Then "All Mailboxes" list should be displayed to the user
+	When User clicks 'Mailboxes' on the left-hand menu
+	Then 'All Mailboxes' list should be displayed to the user
 	When User clicks the Columns button
 	When User closed "Selected Columns" columns category
 	And User is expand "Project Tasks: MailboxEve" columns category
@@ -1005,8 +1005,8 @@ Scenario: EvergreenJnr_MailboxesList_CheckStageNameInTheFiltestForMailboxesLists
 
 @Evergreen @Applications @EvergreenJnr_Columns @ColumnSectionOrder @ColumnSectionDisplay @DAS15899
 Scenario: EvergreenJnr_ApplicationsList_CheckStageNameInTheFiltestForApplicationsLists
-	When User clicks "Applications" on the left-hand menu
-	Then "All Applications" list should be displayed to the user
+	When User clicks 'Applications' on the left-hand menu
+	Then 'All Applications' list should be displayed to the user
 	When User clicks the Columns button
 	When User closed "Selected Columns" columns category
 	And User is expand "Project Tasks: DeviceSche" columns category

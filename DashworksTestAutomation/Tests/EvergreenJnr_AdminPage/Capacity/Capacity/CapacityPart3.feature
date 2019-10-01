@@ -12,11 +12,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCapacityUnitCanBeCreatedWithNameAlread
 	| ProjectForDAS13945 | All Mailboxes | None            | Standalone Project |
 	And User navigates to the 'Capacity' left menu item
 	And User selects "Units" tab on the Project details page
-	And User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
+	And User clicks 'CREATE PROJECT CAPACITY UNIT' button 
 	#next capacity name used in "1803 Rollout" project
 	And User type "Manchester" Name in the "Capacity Unit Name" field on the Project details page 
 	And User type "Manchester Operations" Name in the "Description" field on the Project details page
-	And User clicks the "CREATE" Action button
+	And User clicks 'CREATE' button 
 	Then Success message is displayed and contains "The capacity unit has been created" text
 	And Counter shows "2" found rows
 	
@@ -27,20 +27,20 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitStartedWithS
 	| ProjectForDAS13945 | All Devices | None            | Standalone Project |
 	And User navigates to the 'Capacity' left menu item
 	And User selects "Units" tab on the Project details page
-	And User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
+	And User clicks 'CREATE PROJECT CAPACITY UNIT' button 
 	And User type " test1" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "13945" Name in the "Description" field on the Project details page
-	And User clicks the "CREATE" Action button
+	And User clicks 'CREATE' button 
 	Then Error message is not displayed on the Capacity Units page
 	And User sees next Units on the Capacity Units page:
 	| units      |
 	| Unassigned |
 	| test1      |
 	When User selects "Units" tab on the Project details page
-	And User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
+	And User clicks 'CREATE PROJECT CAPACITY UNIT' button 
 	And User type " test1" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "13945_2" Name in the "Description" field on the Project details page
-	And User clicks the "CREATE" Action button
+	And User clicks 'CREATE' button 
 	Then Error message with "A capacity unit already exists with this name" text is displayed
 	And User sees next Units on the Capacity Units page:
 	| units      |
@@ -70,7 +70,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingSortOrderForCapacityUnits
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Capacity @Senior_Projects @DAS14029 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultValueForCapacityModeFieldEqualsCapacityUnits
-	When User clicks "Projects" on the left-hand menu
+	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User clicks create Project button
 	Then "Create Project" page is displayed to the user
@@ -78,7 +78,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultValueForCapacityModeFieldEqual
 	| ProjectName      | ShortName | Description | Type |
 	| Project14029 Snr | 13498     |             |      |
 	And User navigate to Evergreen link
-	And User clicks "Admin" on the left-hand menu
+	And User clicks 'Admin' on the left-hand menu
 	And User navigates to "Project14029 Snr" project details
 	And User navigates to the 'Capacity' left menu item
 	And User selects "Capacity Details" tab on the Project details page

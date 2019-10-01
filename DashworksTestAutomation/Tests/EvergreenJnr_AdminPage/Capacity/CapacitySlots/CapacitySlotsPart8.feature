@@ -7,7 +7,7 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Senior_Projects @DAS13152 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForCapacityUnitsType
-	When User clicks "Projects" on the left-hand menu
+	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User clicks create Project button
 	Then "Create Project" page is displayed to the user
@@ -32,7 +32,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForCa
 	Then selected task was published
 	When User clicks "Cancel" button
 	And User navigate to Evergreen link
-	And User clicks "Admin" on the left-hand menu
+	And User clicks 'Admin' on the left-hand menu
 	And User navigates to "ProjectForDAS13152" project details
 	And User creates new Slot via Api
 	| Project            | SlotName  | DisplayName | CapacityType   | Tasks                  | CapacityUnits |
@@ -45,7 +45,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForCa
 	And 'Device' text value is displayed in the 'Object Type' dropdown
 	When User selects 'Application' in the 'Object Type' dropdown
 	And User selects "Unassigned" checkbox in the "Capacity Units" field on the Project details page
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then Success message is displayed and contains "The capacity slot details have been updated" text
 	When User clicks content from "Capacity Slot" column
 	Then "" content is displayed in "Tasks" field
@@ -54,7 +54,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForCa
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Senior_Projects @DAS13152 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTeamsAndRequestTypes
-	When User clicks "Projects" on the left-hand menu
+	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User clicks create Project button
 	Then "Create Project" page is displayed to the user
@@ -79,11 +79,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTe
 	Then selected task was published
 	When User clicks "Cancel" button
 	And User navigate to Evergreen link
-	And User clicks "Admin" on the left-hand menu
+	And User clicks 'Admin' on the left-hand menu
 	And User navigates to "ProjectForDAS13152" project details
 	And User navigates to the 'Capacity' left menu item
 	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE SLOT" Action button
+	And User clicks 'CREATE SLOT' button 
 	And User type "Slot13152" Name in the "Slot Name" field on the Project details page
 	And User type "13152" Name in the "Display Name" field on the Project details page
 	And User selects 'Teams and Paths' in the 'Capacity Type' dropdown
@@ -91,7 +91,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTe
 	And User selects "Admin IT" checkbox in the "Teams" field on the Project details page
 	And User selects "[Default (Computer)]" checkbox in the "Paths" field on the Project details page
 	When User selects 'Device' in the 'Object Type' dropdown
-	And User clicks the "CREATE" Action button
+	And User clicks 'CREATE' button 
 	Then Success message is displayed and contains "Your capacity slot has been created" text
 	#Check data in the slot after creation
 	When User clicks content from "Capacity Slot" column
@@ -105,7 +105,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTe
 	And User selects "Admin IT" checkbox in the "Teams" field on the Project details page
 	And User selects "1803 Team" checkbox in the "Teams" field on the Project details page
 	And User selects "[Default (Application)]" checkbox in the "Paths" field on the Project details page
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then Success message is displayed and contains "The capacity slot details have been updated" text
 	#Check updated data in the slot and change Capacity Type
 	When User clicks content from "Capacity Slot" column
@@ -114,7 +114,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTe
 	And '[Default (Application)]' value is displayed in the 'Paths' dropdown
 	And '1803 Team' value is displayed in the 'Teams' dropdown
 	When User selects 'Capacity Units' in the 'Capacity Type' dropdown
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	#Check updated Capacity Type value
 	When User clicks content from "Capacity Slot" column
 	Then 'Capacity Units' text value is displayed in the 'Capacity Type' dropdown
@@ -136,7 +136,7 @@ Scenario Outline: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCountersOfUserPr
 	And User enters "Evergreen Capacity Unit 3" text in the Search field for "Capacity Unit" column
 	And User remembers value in "<ListName>" column
 	And User clicks content from "<ListName>" column
-	Then "All <ListName>" list should be displayed to the user
+	Then 'All <ListName>' list should be displayed to the user
 	And Rows counter number equals to remembered value
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
@@ -172,7 +172,7 @@ Scenario Outline: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCountersOfMailPr
 	And User enters "Unassigned" text in the Search field for "Capacity Unit" column
 	And User remembers value in "<ListName>" column
 	And User clicks content from "<ListName>" column
-	Then "All <ListName>" list should be displayed to the user
+	Then 'All <ListName>' list should be displayed to the user
 	And Rows counter number equals to remembered value
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user

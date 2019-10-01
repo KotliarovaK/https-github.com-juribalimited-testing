@@ -12,10 +12,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBanner
 	| ProjectForCapacity13790 | All Devices | None            | Standalone Project |
 	And User navigates to the 'Capacity' left menu item
 	And User selects "Units" tab on the Project details page
-	When User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
+	When User clicks 'CREATE PROJECT CAPACITY UNIT' button 
 	And User type "CapacityUnit13790" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "13720" Name in the "Description" field on the Project details page
-	And User clicks the "CREATE" Action button
+	And User clicks 'CREATE' button 
 	Then Success message is displayed and contains "The capacity unit has been created" text
 	And Success message is displayed and contains "Click here to view the CapacityUnit13790 capacity unit" link
 	When User enters "13720" text in the Search field for "Description" column
@@ -23,20 +23,20 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBanner
 	When User clicks newly created object link
 	Then URL contains "evergreen/#/admin/project/"
 	When User updates the "Default Unit" checkbox state
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then Success message is displayed and contains "The capacity unit details have been updated" text
 	Then Success message is displayed correctly
 	When User enters "13720" text in the Search field for "Description" column
 	And User click content from "Capacity Unit" column
 	Then "Default Unit" checkbox is checked and cannot be unchecked
-	When User clicks the "CANCEL" Action button
+	When User clicks 'CANCEL' button 
 	And User creates new Capacity Unit via api
 	| Name              | Description | IsDefault | Project                 |
 	| CapacityUnit13790 | DAS13528    | false     | ProjectForCapacity13790 |
 	| CapacityUnit2     | DAS13528    | false     | ProjectForCapacity13790 |
 	When User selects "Capacity Details" tab on the Project details page
 	And User selects 'Clone evergreen capacity units to project capacity units' in the 'Capacity Units' dropdown
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then Success message is displayed correctly
 	Then Success message is displayed and contains "The project capacity details have been updated" text
 	Then There are no errors in the browser console
@@ -61,11 +61,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreated
 	Then Warning message with "You cannot delete the default unit" text is displayed on the Admin page
 	When User close message on the Admin page
 	Then 'Unassigned' content is displayed in the 'Capacity Unit' column
-	When User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
+	When User clicks 'CREATE PROJECT CAPACITY UNIT' button 
 	And User type "CapacityUnit12672" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "12672" Name in the "Description" field on the Project details page
 	And User updates the "Default Unit" checkbox state
-	And User clicks the "CREATE" Action button
+	And User clicks 'CREATE' button 
 	Then Success message is displayed and contains "The capacity unit has been created" text
 	And Success message is displayed and contains "Click here to view the CapacityUnit12672 capacity unit" link
 	When User clicks newly created object link
@@ -82,7 +82,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreated
 	Then "FALSE" content is displayed in "Default" column
 	When User clicks content from "Capacity Unit" column
 	And User updates the "Default Unit" checkbox state
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	And User selects "Units" tab on the Project details page
 	And User enters "CapacityUnit12672" text in the Search field for "Capacity Unit" column
 	Then "FALSE" content is displayed in "Default" column
@@ -100,7 +100,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCapacityUnitsGridUpdatedAfterUnitUpdat
 	And User clicks content from "Capacity Unit" column
 	When User clicks "Projects" navigation link on the Admin page
 	Then Warning Pop-up is not displayed
-	Then "Projects" page should be displayed to the user
+	Then Page with 'Projects' header is displayed to user
 	When User enters "Email Migration" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Capacity' left menu item
@@ -108,7 +108,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCapacityUnitsGridUpdatedAfterUnitUpdat
 	And User clicks content from "Capacity Unit" column
 	When User clicks "Administration" navigation link on the Admin page
 	Then Warning Pop-up is not displayed
-	Then "Projects" page should be displayed to the user
+	Then Page with 'Projects' header is displayed to user
 	When User enters "Email Migration" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Capacity' left menu item
@@ -120,7 +120,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCapacityUnitsGridUpdatedAfterUnitUpdat
 	When User enters "CapacityUnit14240" text in the Search field for "Capacity Unit" column
 	And User click content from "Capacity Unit" column
 	And User type "CapacityUnit14240NameUpdated" Name in the "Capacity Unit Name" field on the 'Email Migration' Project details page
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then Success message is displayed and contains "The capacity unit details have been updated" text
 	And User sees next Units on the Capacity Units page:
 	| units                        |
@@ -143,7 +143,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitWithEmptyNam
 	| ProjectForDAS13945 | All Devices | None            | Standalone Project |
 	And User navigates to the 'Capacity' left menu item
 	And User selects "Units" tab on the Project details page
-	And User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
+	And User clicks 'CREATE PROJECT CAPACITY UNIT' button 
 	And User type " " Name in the "Capacity Unit Name" field on the Project details page
 	And User type "13945" Name in the "Description" field on the Project details page
 	Then "CREATE" Action button is disabled

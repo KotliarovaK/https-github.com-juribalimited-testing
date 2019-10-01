@@ -10,10 +10,10 @@ Scenario: EvergreenJnr_AdminPage_CheckMessageThatDisplayedWhenDeletingBucket
 	When User creates new Bucket via api
 	| Name        | TeamName  | IsDefault |
 	| TestBucket4 | Team 1045 | false     |
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Evergreen" link on the Admin page
-	Then "Buckets" page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Evergreen' left menu item
+	Then Page with 'Buckets' header is displayed to user
 	When User clicks Reset Filters button on the Admin page
 	And User enters "Amsterdam" text in the Search field for "Bucket" column
 	Then Actions dropdown is displayed correctly
@@ -45,10 +45,10 @@ Scenario: EvergreenJnr_AdminPage_CheckMessageThatDisplayedWhenDeletingBucket
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12921 @Buckets
 Scenario: EvergreenJnr_AdminPage_ChecksThatSpellingIsCorrectInBucketDeletionMessages
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Evergreen" link on the Admin page
-	Then "Buckets" page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Evergreen' left menu item
+	Then Page with 'Buckets' header is displayed to user
 	When User select "Bucket" rows in the grid
 	| SelectedRowsName   |
 	| Evergreen Bucket 3 |
@@ -64,16 +64,16 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSpellingIsCorrectInBucketDeletionMess
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11879 @DAS12742 @DAS12752 @Buckets
 Scenario: EvergreenJnr_AdminPage_CheckThatSpecificWarningMessageIsNotDisplayedAfterTryingToDeleteNonDefaultBucket
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Evergreen" link on the Admin page
-	Then "Buckets" page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Evergreen' left menu item
+	Then Page with 'Buckets' header is displayed to user
 	When User clicks Reset Filters button on the Admin page
 	When User enters "Administration" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
 	Then Default Bucket checkbox is selected
-	When User clicks "Evergreen" link on the Admin page
-	Then "Buckets" page should be displayed to the user
+	When User navigates to the 'Evergreen' left menu item
+	Then Page with 'Buckets' header is displayed to user
 	When User clicks Reset Filters button on the Admin page
 	And User enters "Chicago" text in the Search field for "Bucket" column
 	And User selects all rows on the grid
@@ -90,10 +90,10 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatWarningNotificationIsDisappearedAfter
 	| Name         | TeamName | IsDefault |
 	| 1Bucket12331 | K-Team   | false     |
 	| 2Bucket12331 | K-Team   | false     |
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Evergreen" link on the Admin page
-	Then "Buckets" page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Evergreen' left menu item
+	Then Page with 'Buckets' header is displayed to user
 	When User select "Bucket" rows in the grid
 	| SelectedRowsName |
 	| 1Bucket12331     |

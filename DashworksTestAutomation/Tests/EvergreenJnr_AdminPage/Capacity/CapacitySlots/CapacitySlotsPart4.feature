@@ -35,7 +35,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlyLanguageIsDisplayedForSlotsA
 	| ProjectName         | Scope       | ProjectTemplate | Mode               |
 	| ChecksLanguage13955 | All Devices | None            | Standalone Project |
 	And User navigates to the 'Details' left menu item
-	And User clicks the "ADD LANGUAGE" Action button
+	And User clicks 'ADD LANGUAGE' button 
 	And User selects "Dutch" language on the Project details page
 	And User creates new Slot via Api
 	| Project             | SlotName       | DisplayName |
@@ -45,7 +45,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlyLanguageIsDisplayedForSlotsA
 	And User opens menu for selected language
 	Then User selects "Remove" option for selected language
 	When User clicks "REMOVE" button in the warning message on Admin page
-	And User clicks the "ADD LANGUAGE" Action button
+	And User clicks 'ADD LANGUAGE' button 
 	And User selects "German" language on the Project details page
 	And User navigates to the 'Capacity' left menu item
 	And User selects "Slots" tab on the Project details page
@@ -54,7 +54,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlyLanguageIsDisplayedForSlotsA
 	And User clicks "See Translations" link on the Capacity Slot page
 	Then "German" Language is displayed in Translations table on the Capacity Slot page
 	When User types "CheckName" in Display Name field for "German" Language in Translations table on the Capacity Slot page
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	And User enters "ChecksLanguage" text in the Search field for "Capacity Slot" column
 	And User clicks content from "Capacity Slot" column
 	And User clicks "See Translations" link on the Capacity Slot page

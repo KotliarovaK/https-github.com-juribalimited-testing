@@ -7,12 +7,14 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13783 @Projects @Do_Not_Run_With_Projects @Do_Not_Run_With_AdminPage
 Scenario: EvergreenJnr_ImportProjectPage_CheckSelectExistingProjectDropdownValuesOnImportProjectPage
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks the "IMPORT PROJECT" Action button
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User clicks 'IMPORT PROJECT' button 
 	And User selects "Import to existing project" option in the "Import" dropdown on the Import Project Page
 	Then User sees that "Select Existing Project" dropdown contains following options on Import Projects page:
 	| OptionLabel                                       |
+	| *Project K-Computer Scheduled Project             |
+	| :/                                                |
 	| 1803 Rollout                                      |
 	| Babel (English, German and French)                |
 	| Barry's User Project                              |
@@ -23,7 +25,12 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckSelectExistingProjectDropdownValue
 	| I-Computer Scheduled Project                      |
 	| Mailbox Evergreen Capacity Project                |
 	| Migration Project Phase 2 (User Project)          |
-	| Project K-Computer Scheduled Project              |
+	| Project 00 M Computer Scheduled                   |
+	| Project using broken list as scope                |
+	| Project with associated broken list               |
+	| USE ME FOR AUTOMATION(DEVICE SCHDLD)              |
+	| USE ME FOR AUTOMATION(MAIL SCHDLD)                |
+	| USE ME FOR AUTOMATION(USR SCHDLD)                 |
 	| User Evergreen Capacity Project                   |
 	| User Scheduled Project in Italian & Japanese (Jo) |
 	| User Scheduled Test (Jo)                          |
@@ -32,26 +39,22 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckSelectExistingProjectDropdownValue
 	| Windows 10 Updates - Migration                    |
 	| Windows 10 Updates - New York                     |
 	| Windows 7 Migration (Computer Scheduled Project)  |
+	| zDevice Sch for Automations Feature               |
+	| zMailbox Sch for Automations Feature              |
+	| zUser Sch for Automations Feature                 |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13110 @Cleanup @Projects
 Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUsesDynamicListAsAScope
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User clicks on 'Hostname' column header
 	And User create dynamic list with "Dynamic13110" name on "Devices" page
 	Then "Dynamic13110" list is displayed to user
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "Project13110Dynamic1" in the "Project Name" field
-	And User selects 'Dynamic13110' option from 'Scope' autocomplete
-	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks newly created object link
+	When Project created via API and opened
+	| ProjectName          | Scope        | ProjectTemplate | Mode               |
+	| Project13110Dynamic1 | Dynamic13110 | None            | Standalone Project |
 	Then Project "Project13110Dynamic1" is displayed to user
+	When User selects "Scope" tab on the Project details page
 	When User selects "Scope Changes" tab on the Project details page
 	And User expands multiselect to add objects
 	Then Objects are displayed in alphabetical order on the Admin page
@@ -60,8 +63,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	| 00HA7MKAVVFDAV  |
 	| 001PSUMZYOW581  |
 	| 00BDM1JUR8IF419 |
-	And User clicks the "UPDATE ALL CHANGES" Action button
-	And User clicks the "UPDATE PROJECT" Action button
+	And User clicks 'UPDATE ALL CHANGES' button 
+	And User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
 	When User selects "Queue" tab on the Project details page
 	Then following Items are displayed in the Queue table
@@ -84,8 +87,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	| "WPF/E" (codename) Community Technology Preview (Feb 2007) (0.8.5.0) |
 	| 0004 - Adobe Acrobat Reader 5.0.5 Francais (5.0.5)                   |
 	| 0036 - Microsoft Access 97 SR-2 English (8.0)                        |
-	And User clicks the "UPDATE ALL CHANGES" Action button
-	And User clicks the "UPDATE PROJECT" Action button
+	And User clicks 'UPDATE ALL CHANGES' button 
+	And User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
 	When User selects "Queue" tab on the Project details page
 	Then following Items are displayed in the Queue table
@@ -100,18 +103,11 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	| 0004 - Adobe Acrobat Reader 5.0.5 Francais                 |
 	| 0036 - Microsoft Access 97 SR-2 English                    |
 	And There are no errors in the browser console
-	When User click on Back button
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "Project13110Dynamic2" in the "Project Name" field
-	And User selects 'Dynamic13110' option from 'Scope' autocomplete
-	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks newly created object link
+	When Project created via API and opened
+	| ProjectName          | Scope        | ProjectTemplate | Mode               |
+	| Project13110Dynamic2 | Dynamic13110 | None            | Standalone Project |
 	Then Project "Project13110Dynamic2" is displayed to user
+	When User selects "Scope" tab on the Project details page
 	When User selects "Scope Changes" tab on the Project details page
 	And User navigates to the 'Applications' tab on Project Scope Changes page
 	And User expands multiselect to add objects 
@@ -120,8 +116,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	| "WPF/E" (codename) Community Technology Preview (Feb 2007) (0.8.5.0) |
 	| 0004 - Adobe Acrobat Reader 5.0.5 Francais (5.0.5)                   |
 	| 0036 - Microsoft Access 97 SR-2 English (8.0)                        |
-	When User clicks the "UPDATE ALL CHANGES" Action button
-	And User clicks the "UPDATE PROJECT" Action button
+	When User clicks 'UPDATE ALL CHANGES' button 
+	And User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
 	When User selects "Queue" tab on the Project details page
 	Then following Items are displayed in the Queue table
@@ -145,8 +141,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	| 00HA7MKAVVFDAV  |
 	| 001PSUMZYOW581  |
 	| 00BDM1JUR8IF419 |
-	And User clicks the "UPDATE ALL CHANGES" Action button
-	And User clicks the "UPDATE PROJECT" Action button
+	And User clicks 'UPDATE ALL CHANGES' button 
+	And User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
 	When User selects "Queue" tab on the Project details page
 	Then following Items are displayed in the Queue table
@@ -183,8 +179,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	| 001BAQXT6JWFPI  |
 	| 001PSUMZYOW581  |
 	| 00BDM1JUR8IF419 |
-	And User clicks the "UPDATE ALL CHANGES" Action button
-	And User clicks the "UPDATE PROJECT" Action button
+	And User clicks 'UPDATE ALL CHANGES' button 
+	And User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
 	When User selects "Queue" tab on the Project details page
 	Then following Items are displayed in the Queue table
@@ -200,50 +196,36 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	| 00BDM1JUR8IF419 |
 	And There are no errors in the browser console
 	When User selects "Scope Changes" tab on the Project details page
-	And User navigates to the 'Applications' tab on Project Scope Changes page
-	And User expands multiselect to add objects 
+	And User navigates to the 'Applications' tab on Project Scope Changes page 
 	When User expands multiselect and selects following Objects
-	| Objects                        |
-	| 20040610sqlserverck (1.0.0)    |
-	| AddressGrabber Standard (3.1)  |
-	| Adobe Acrobat Reader 5.0 (1.0) |
-	When User clicks the "UPDATE ALL CHANGES" Action button
-	And User clicks the "UPDATE PROJECT" Action button
-	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
+	| Objects                                                      |
+	| NI LabVIEW PID Control Toolset 6.0 (for LabVIEW 7.1) (7.1.0) |
+	When User clicks 'UPDATE ALL CHANGES' button 
+	And User clicks 'UPDATE PROJECT' button 
+	Then Success message is displayed and contains "1 object queued for onboarding, 0 objects offboarded" text
 	When User selects "Queue" tab on the Project details page
 	Then following Items are displayed in the Queue table
-	| Items                    |
-	| 20040610sqlserverck      |
-	| AddressGrabber Standard  |
-	| Adobe Acrobat Reader 5.0 |
+	| Items                                                |
+	| NI LabVIEW PID Control Toolset 6.0 (for LabVIEW 7.1) |
 	When User selects "History" tab on the Project details page
 	Then additional onboarded Items are displayed in the History table
-	| Items                    |
-	| 20040610sqlserverck      |
-	| AddressGrabber Standard  |
-	| Adobe Acrobat Reader 5.0 |
+	| Items                                                |
+	| NI LabVIEW PID Control Toolset 6.0 (for LabVIEW 7.1) |
 	And There are no errors in the browser console
-	When User click on Back button
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "Project13110Static2" in the "Project Name" field
-	And User selects 'Static13110' option from 'Scope' autocomplete
-	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks newly created object link
+	When Project created via API and opened
+	| ProjectName         | Scope       | ProjectTemplate | Mode               |
+	| Project13110Static2 | Static13110 | None            | Standalone Project |
 	Then Project "Project13110Static2" is displayed to user
+	When User selects "Scope" tab on the Project details page
 	When User selects "Scope Changes" tab on the Project details page
 	And User navigates to the 'Applications' tab on Project Scope Changes page
-	And User expands multiselect to add objects 
 	When User expands multiselect and selects following Objects
 	| Objects                        |
 	| 20040610sqlserverck (1.0.0)    |
 	| AddressGrabber Standard (3.1)  |
 	| Adobe Acrobat Reader 5.0 (1.0) |
-	When User clicks the "UPDATE ALL CHANGES" Action button
-	And User clicks the "UPDATE PROJECT" Action button
+	When User clicks 'UPDATE ALL CHANGES' button 
+	And User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
 	When User selects "Queue" tab on the Project details page
 	Then following Items are displayed in the Queue table
@@ -266,8 +248,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	| 001BAQXT6JWFPI  |
 	| 001PSUMZYOW581  |
 	| 00BDM1JUR8IF419 |
-	And User clicks the "UPDATE ALL CHANGES" Action button
-	And User clicks the "UPDATE PROJECT" Action button
+	And User clicks 'UPDATE ALL CHANGES' button 
+	And User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
 	When User selects "Queue" tab on the Project details page
 	Then following Items are displayed in the Queue table
@@ -285,22 +267,14 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12955 @DAS12820 @DAS11978 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderForQueueAndHistoryTab
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "TestProject55" in the "Project Name" field
-	And User selects 'All Devices' option from 'Scope' autocomplete
-	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks newly created object link
-	Then Project "TestProject55" is displayed to user
+	When Project created via API and opened
+	| ProjectName   | Scope       | ProjectTemplate | Mode               |
+	| TestProject55 | All Devices | None            | Standalone Project |
+	Then Project "TestProject55" is displayed to user	
 	Then "Show Original Application Column On Application Dashboards" checkbox is not displayed on the Admin page
+	When User selects "Scope" tab on the Project details page
 	When User selects "Scope Changes" tab on the Project details page
 	Then open tab in the Project Scope Changes section is active
-	When User expands multiselect to add objects 
 	When User expands multiselect and selects following Objects
 	| Objects         |
 	| 00K4CEEQ737BA4L |
@@ -313,8 +287,8 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderForQueueAndHistoryTab
 	| 0E402TL1EG79GIT |
 	| 0GLO1UYQ5AKCZEA |
 	| DK1LF3X47N7PWX7 |
-	And User clicks the "UPDATE ALL CHANGES" Action button
-	And User clicks the "UPDATE PROJECT" Action button
+	And User clicks 'UPDATE ALL CHANGES' button 
+	And User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "10 objects queued for onboarding, 0 objects offboarded" text
 	When User selects "Queue" tab on the Project details page
 	Then following Items are displayed in the Queue table
@@ -348,28 +322,27 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderForQueueAndHistoryTab
 	Then data in table is sorted by "Date" column in descending order by default on the Admin page
 	When User selects "Scope Changes" tab on the Project details page
 	And User navigates to the 'Applications' tab on Project Scope Changes page
-	And User expands multiselect to add objects 
 	When User expands multiselect and selects following Objects
 	| Objects                                                       |
-	| Advantage Data Architect                                      |
+	| ACD Display 3.4                                               |
 	| Hilfe zu Blockdiagrammen                                      |
 	| Intel(R) Processor Graphics (20.19.15.4568)                   |
 	| Microsoft Exchange Client Language Pack - Hindi (15.0.1178.4) |
 	| NJStar Chinese Word Processor                                 |
-	And User clicks the "UPDATE ALL CHANGES" Action button
-	And User clicks the "UPDATE PROJECT" Action button
+	And User clicks 'UPDATE ALL CHANGES' button 
+	And User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "5 objects queued for onboarding, 0 objects offboarded" text
 	When User selects "Queue" tab on the Project details page
 	Then following Items are displayed in the Queue table
 	| Items                                           |
-	| Advantage Data Architect                        |
+	| ACD Display 3.4                                 |
 	| Hilfe zu Blockdiagrammen                        |
 	| Intel(R) Processor Graphics                     |
 	| Microsoft Exchange Client Language Pack - Hindi |
 	| NJStar Chinese Word Processor                   |
 	Then following Items are displayed at the top of the list
 	| Items                                           |
-	| Advantage Data Architect                        |
+	| ACD Display 3.4                                 |
 	| Hilfe zu Blockdiagrammen                        |
 	| Intel(R) Processor Graphics                     |
 	| Microsoft Exchange Client Language Pack - Hindi |
@@ -379,7 +352,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderForQueueAndHistoryTab
 	When User selects "History" tab on the Project details page
 	Then additional onboarded Items are displayed in the History table
 	| Items                                           |
-	| Advantage Data Architect                        |
+	| ACD Display 3.4                                 |
 	| Hilfe zu Blockdiagrammen                        |
 	| Intel(R) Processor Graphics                     |
 	| Microsoft Exchange Client Language Pack - Hindi |

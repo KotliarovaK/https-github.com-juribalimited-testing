@@ -10,17 +10,17 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTheUpdateCapacityUnitSettingsIsWorking
 	When User creates new Capacity Unit via api
 	| Name                   | Description | IsDefault |
 	| Capacity Unit Settings |             |           |
-	And User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Evergreen" link on the Admin page
+	And User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Evergreen' left menu item
 	And User navigates to the 'Capacity Units' left menu item
-	Then "Capacity Units" page should be displayed to the user
+	Then Page with 'Capacity Units' header is displayed to user
 	When User enters "Capacity Unit Settings" text in the Search field for "Capacity Unit" column
 	And User clicks content from "Capacity Unit" column
 	And User type "Capacity Unit Settings upd" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "upd" Name in the "Description" field on the Project details page
 	And User updates the "Default Unit" checkbox state
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then Success message is displayed and contains "The capacity unit details have been updated" text
 	Then 'Capacity Unit Settings upd' content is displayed in the 'Capacity Unit' column
 	When User enters "Capacity Unit Settings upd" text in the Search field for "Capacity Unit" column
@@ -28,7 +28,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTheUpdateCapacityUnitSettingsIsWorking
 	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
 	And User clicks content from "Capacity Unit" column
 	And User updates the "Default Unit" checkbox state
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then Success message is displayed and contains "The capacity unit details have been updated" text
 	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
 	Then 'TRUE' content is displayed in the 'Default' column

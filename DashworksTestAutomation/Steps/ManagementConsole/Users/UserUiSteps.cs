@@ -35,31 +35,26 @@ namespace DashworksTestAutomation.Steps.ManagementConsole
             _users = users;
         }
 
-        //TODO should be reworked to us UserDto
         [When(@"User creates new clear User")]
         public void WhenUserCreatesNewClearUser(Table table)
         {
-            var page = _driver.NowAt<ManageUserPage>();
-            page.CreateNewUserButton.Click();
-            foreach (var row in table.Rows)
-            {
-                page.Username.SendKeys(row["Username"]);
-                page.FullName.SendKeys(row["FullName"]);
-                page.Password.SendKeys(row["Password"]);
-                page.ConfirmPassword.SendKeys(row["ConfirmPassword"]);
-                if (!string.IsNullOrEmpty(row["Roles"]))
-                    page.Roles.SelectboxSelect(row["Roles"]);
-            }
-            page.AddRoleButton.Click();
-            page.CreateUserButton.Click();
+            var user = table.CreateInstance<UserDto>();
+
+            CreateUser(user);
         }
 
         [When(@"User create new User")]
         public void WhenUserCreateNewUser(Table table)
         {
             var user = table.CreateInstance<UserDto>();
-            
-            user.UserRoles.AddRange(new List<string>() { "Dashworks Users", "Dashworks Evergreen Users" });
+
+            CreateUser(user, new List<string>() { "Dashworks Users", "Dashworks Evergreen Users" });
+        }
+
+        private void CreateUser(UserDto user, List<string> additionalRoles = null)
+        {
+            if (additionalRoles != null && additionalRoles.Any())
+                user.UserRoles.AddRange(additionalRoles);
             var page = _driver.NowAt<ManageUserPage>();
             page.CreateNewUserButton.Click();
             page.Username.SendKeys(user.Username);
@@ -120,7 +115,7 @@ namespace DashworksTestAutomation.Steps.ManagementConsole
             page.SearchButton.Click();
 
             var user = page.GetTheCreatedElementInTableByName(_projectDto.ManageUsers.Last().Username);
-            Utils.Verify.IsTrue(user.Displayed(), "Selected User is not displayed in the table");
+            Verify.IsTrue(user.Displayed(), "Selected User is not displayed in the table");
         }
 
         [When(@"User select user with ""(.*)"" name to add as member")]
@@ -184,7 +179,7 @@ namespace DashworksTestAutomation.Steps.ManagementConsole
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
 
-            Utils.Verify.IsFalse(page.CheckThatCreatedElementIsRemoved(_deletedUserName.Value),
+            Verify.IsFalse(page.CheckThatCreatedElementIsRemoved(_deletedUserName.Value),
                 "Selected User is displayed in the table");
         }
     }

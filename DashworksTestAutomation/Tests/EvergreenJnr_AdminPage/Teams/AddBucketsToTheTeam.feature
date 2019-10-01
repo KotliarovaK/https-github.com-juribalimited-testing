@@ -10,21 +10,19 @@ Scenario: EvergreenJnr_AdminPage_AddingBucketsToTheTeam
 	When User creates new Team via api
 	| TeamName  | Description | IsDefault |
 	| TestTeam5 | test        | false     |
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
 	When User creates new Bucket via api
 	| Name        | TeamName  | IsDefault |
 	| TestBucket6 | Team 1045 | false     |
 	| TestBucket7 | Team 1045 | false     |
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Teams" link on the Admin page
-	Then "Teams" page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Teams' left menu item
+	Then Page with 'Teams' header is displayed to user
 	When User enters "TestTeam5" text in the Search field for "Team" column
 	And User clicks content from "Team" column
 	And User navigates to the 'Buckets' left menu item
-	And User clicks the "ADD BUCKETS" Action button 
-	Then Add Buckets page is displayed to the user
+	And User clicks 'ADD BUCKETS' button 
+	Then Page with 'Add Buckets' subheader is displayed to user
 	When User expands "Evergreen" project to add bucket
 	And User adds following Objects from list
 	| Objects     |
@@ -35,20 +33,20 @@ Scenario: EvergreenJnr_AdminPage_AddingBucketsToTheTeam
 	And User selects all rows on the grid
 	And User clicks on Actions button
 	And User selects "Change Team" in the Actions
-	And User clicks the "CONTINUE" Action button
+	And User clicks 'CONTINUE' button 
 	Then Change Team page is displayed to the user
 	When User selects "Team 10" in the Team dropdown
-	And User clicks the "CHANGE" Action button
+	And User clicks 'CHANGE' button 
 	Then Success message is displayed and contains "The selected buckets have been reassigned to the selected team" text
 	Then There are no errors in the browser console
 	When User click on Back button
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13421 @DAS12788 @Teams
 Scenario: EvergreenJnr_AdminPage_CheckBucketsSortingAndFiltersForTeams
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Teams" link on the Admin page
-	Then "Teams" page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Teams' left menu item
+	Then Page with 'Teams' header is displayed to user
 	When User enters "1803 Team" text in the Search field for "Team" column
 	And User clicks content from "Team" column
 	And User navigates to the 'Buckets' left menu item

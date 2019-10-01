@@ -8,7 +8,7 @@ Background: Pre-Conditions
 @Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS17292 @Not_Ready
 #Waiting for "Update custom field" on the automation
 Scenario Outline: EvergreenJnr_AllLists_CheckUpdateCustomFieldValues
-	When User clicks "<ListName>" on the left-hand menu
+	When User clicks '<ListName>' on the left-hand menu
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "<ColumnName>" rows in the grid
@@ -30,7 +30,7 @@ Examples:
 @Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18045 @DAS18027 @Not_Ready
 #Waiting for "Update custom field" on the automation
 Scenario: EvergreenJnr_DevicesList_CheckUpdateCustomFieldUpdatingValuesForRemoveAllValues
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Hostname" filter where type is "Begins with" with added column and following value:
@@ -48,7 +48,7 @@ Scenario: EvergreenJnr_DevicesList_CheckUpdateCustomFieldUpdatingValuesForRemove
 	And User selects 'Update custom field' in the 'Bulk Update Type' dropdown
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
 	When User selects 'Remove all values' in the 'Update Values' dropdown
-	When User clicks the "UPDATE" Action button
+	When User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
 	And Success message with "2 updates have been queued" text is displayed on Action panel
@@ -61,7 +61,7 @@ Scenario: EvergreenJnr_DevicesList_CheckUpdateCustomFieldUpdatingValuesForRemove
 	When User selects 'Replace all values' in the 'Update Values' dropdown
 	When User adds '111' value from 'Value' textbox
 	When User adds '000' value from 'Value' textbox
-	When User clicks the "UPDATE" Action button
+	When User clicks 'UPDATE' button 
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
 	And Success message with "2 updates have been queued" text is displayed on Action panel
@@ -71,7 +71,7 @@ Scenario: EvergreenJnr_DevicesList_CheckUpdateCustomFieldUpdatingValuesForRemove
 @Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18045 @DAS18031 @DAS18027 @Not_Ready
 #Waiting for "Update custom field" on the automation
 Scenario: EvergreenJnr_UsersList_CheckUpdateCustomFieldUpdatingValuesForAddToExistingValues
-	When User clicks "Users" on the left-hand menu
+	When User clicks 'Users' on the left-hand menu
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Username" filter where type is "Begins with" with added column and following value:
@@ -94,7 +94,7 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateCustomFieldUpdatingValuesForAddToExi
 	Then "UPDATE" Action button have tooltip with "Some values are missing or not valid" text
 	#DAS18031
 	When User adds 'alpha' value from 'Value' textbox
-	When User clicks the "UPDATE" Action button
+	When User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
 	And Success message with "2 updates have been queued" text is displayed on Action panel
@@ -110,7 +110,7 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateCustomFieldUpdatingValuesForAddToExi
 	Then "UPDATE" Action button have tooltip with "Some values are missing or not valid" text
 	#DAS18031
 	When User adds 'beta' value from 'Value' textbox
-	When User clicks the "UPDATE" Action button
+	When User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
 	And Success message with "2 updates have been queued" text is displayed on Action panel
@@ -118,7 +118,7 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateCustomFieldUpdatingValuesForAddToExi
 @Evergreen @Applications @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18045 @DAS18031 @DAS18027 @Not_Ready
 #Waiting for "Update custom field" on the automation
 Scenario: EvergreenJnr_ApplicationsList_CheckUpdateCustomFieldUpdatingValuesForReplaceSingleValue
-	When User clicks "Applications" on the left-hand menu
+	When User clicks 'Applications' on the left-hand menu
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Application" filter where type is "Begins with" with added column and following value:
@@ -142,7 +142,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateCustomFieldUpdatingValuesForR
 	#DAS18031
 	When User enters 'first value' text to 'Find Value' textbox
 	When User enters 'second' text to 'Replace Value' textbox
-	When User clicks the "UPDATE" Action button
+	When User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
 	And Success message with "2 updates have been queued" text is displayed on Action panel
@@ -155,7 +155,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateCustomFieldUpdatingValuesForR
 	When User selects 'Replace single value' in the 'Update Values' dropdown
 	When User enters 'second' text to 'Find Value' textbox
 	When User enters 'first value' text to 'Replace Value' textbox
-	When User clicks the "UPDATE" Action button
+	When User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
 	And Success message with "2 updates have been queued" text is displayed on Action panel
@@ -163,7 +163,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateCustomFieldUpdatingValuesForR
 @Evergreen @Mailboxes @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18045 @DAS18031 @DAS18027 @Not_Ready
 #Waiting for "Update custom field" on the automation
 Scenario: EvergreenJnr_MailboxesList_CheckUpdateCustomFieldUpdatingValuesForReplaceSingleValue
-	When User clicks "Mailboxes" on the left-hand menu
+	When User clicks 'Mailboxes' on the left-hand menu
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Email Address (Primary)" filter where type is "Begins with" with added column and following value:
@@ -191,7 +191,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckUpdateCustomFieldUpdatingValuesForRepl
 	When User adds '01' value from 'Value' textbox
 	#DAS18031
 	When User adds 'three' value from 'Value' textbox
-	When User clicks the "UPDATE" Action button
+	When User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
 	And Success message with "2 updates have been queued" text is displayed on Action panel
@@ -204,7 +204,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckUpdateCustomFieldUpdatingValuesForRepl
 	When User selects 'Add to existing values' in the 'Update Values' dropdown
 	When User adds '01' value from 'Value' textbox
 	When User adds 'three' value from 'Value' textbox
-	When User clicks the "UPDATE" Action button
+	When User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
 	And Success message with "2 updates have been queued" text is displayed on Action panel

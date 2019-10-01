@@ -7,8 +7,8 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17511 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonForActionsWorksCorrectly
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API and open it
 	| AutomationName        | Description | Active | StopOnFailedAction | Scope       | Run    |
 	| Test_Automation_17511 | 17511       | true   | false              | All Devices | Manual |
@@ -16,12 +16,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonForActionsWorksCorrectly
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
-	When User clicks the "CREATE ACTION" Action button
+	When User clicks 'CREATE ACTION' button 
 	When User enters '15427_Action' text to 'Action Name' textbox
 	When User selects 'Update path' in the 'Action Type' dropdown
 	When User selects 'USE ME FOR AUTOMATION(DEVICE SCHDLD)' option from 'Project' autocomplete
 	When User selects '[Default (Computer)]' option from 'Path' autocomplete
-	When User clicks the "CREATE" Action button
+	When User clicks 'CREATE' button 
 	When User selects "Details" tab on the Project details page
 	Then Automation page is displayed correctly
 	When User selects "Actions" tab on the Project details page
@@ -29,23 +29,23 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonForActionsWorksCorrectly
 	When User enters '15427_NewName' text to 'Action Name' textbox
 	When User selects 'USE ME FOR AUTOMATION(DEVICE SCHDLD)' option from 'Project' autocomplete
 	When User selects '[Default (Computer)]' option from 'Path' autocomplete
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	When User clicks content from "Action" column
 	Then "15427_NewName" content is displayed in "Action Name" field
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17428 @DAS17600 @Cleanup @Not_Ready
 Scenario Outline: EvergreenJnr_AdminPage_CheckUpdateTaskValueEditPageLoadsProjectStageTask
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Automations" link on the Admin page
-	Then "Automations" page should be displayed to the user
-	When User clicks the "CREATE AUTOMATION" Action button
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Automations' left menu item
+	Then Page with 'Automations' header is displayed to user
+	When User clicks 'CREATE AUTOMATION' button 
 	When User enters '<AutomationName>' text to 'Automation Name' textbox
 	When User enters 'DAS17428' text to 'Description' textbox
 	When User selects '<Scope>' option from 'Scope' autocomplete
 	When User selects "Active" checkbox on the Automation Page
 	When User selects 'Manual' in the 'Run' dropdown
-	When User clicks the "CREATE" Action button
+	When User clicks 'CREATE' button 
 	When User enters 'Update Migrated devices to Started' text to 'Action Name' textbox
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects '<Project>' option from 'Project' autocomplete
@@ -53,7 +53,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckUpdateTaskValueEditPageLoadsProjec
 	When User selects '<Task>' option from 'Task' autocomplete
 	Then "CREATE" Action button is disabled
 	When User selects 'Not Started' in the 'Value' dropdown
-	When User clicks the "CREATE" Action button
+	When User clicks 'CREATE' button 
 	When User clicks content from "Action" column
 	Then "Update Migrated devices to Started" content is displayed in "Action Name" field
 	And 'Update task value' text value is displayed in the 'Action Type' dropdown
@@ -74,7 +74,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatStageWithoutCorrectTasksIsNotDisplayed
 	When Project created via API and opened
 	| ProjectName      | Scope     | ProjectTemplate | Mode               |
 	| DAS17691_Project | All Users | None            | Standalone Project |
-	When User clicks "Projects" on the left-hand menu
+	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "DAS17691_Project" Project
 	Then "Manage Project Details" page is displayed to the user
@@ -103,39 +103,35 @@ Scenario: EvergreenJnr_AdminPage_CheckThatStageWithoutCorrectTasksIsNotDisplayed
 	When User publishes the task
 	Then selected task was published
 	When User navigate to Evergreen link
-	And User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	And User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope     | Run    |
 	| 17691_Automation | DAS17691    | true   | false              | All Users | Manual |
-	When User clicks "Automations" link on the Admin page
-	Then "Automations" page should be displayed to the user
+	When User navigates to the 'Automations' left menu item
+	Then Page with 'Automations' header is displayed to user
 	When User enters "17691_Automation" text in the Search field for "Automation" column
 	And User clicks content from "Automation" column
 	And User navigates to the 'Actions' left menu item
 	#Create Action
-	When User clicks the "CREATE ACTION" Action button
+	When User clicks 'CREATE ACTION' button 
 	When User enters '17691_Action' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'DAS17691_Project' option from 'Project' autocomplete
 	Then "Stage" dropdown is not displayed on the Admin Settings screen
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17738 @DAS17625 @Cleanup @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17738 @DAS17625 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueAction
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User creates new Automation via API
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
 	| 17738_Automation | 17430       | true   | false              | All Devices | Manual |
-	When User clicks "Automations" link on the Admin page
-	Then "Automations" page should be displayed to the user
-	When User enters "17738_Automation" text in the Search field for "Automation" column
-	And User clicks content from "Automation" column
 	Then Automation page is displayed correctly
-	Then "All Devices" content is displayed in the Scope Automation dropdown
+	Then 'All Devices' content is displayed in 'Scope' textbox
 	When User navigates to the 'Actions' left menu item
 	#Create Action
-	When User clicks the "CREATE ACTION" Action button
+	When User clicks 'CREATE ACTION' button 
 	When User enters '17738_Action' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
@@ -150,32 +146,22 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueAction
 	When User selects "Update" value for "No change" dropdown on Action panel
 	And User selects "Failed" Value on Action panel
 	Then "CREATE" Action button is active
-	#Actions content check
-	Then "Update Migrated devices" content is displayed in "Action Name" field
-	Then 'Update task value' text value is displayed in the 'Action Type' dropdown
-	And 'One' content is displayed in 'Stage' textbox
-	And 'Radio Rag Date Owner Comp Req B' content is displayed in 'Task' textbox
-	Then 'No change' value is displayed in the 'Update Value' dropdown
-	Then 'No change' value is displayed in the 'Update Date' dropdown
-	Then 'Update' value is displayed in the 'Update Owner' dropdown
-	Then "1803 Team" content is displayed in "Team" field
-	Then "Akhila Varghese" content is displayed in "Owner" field
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17615 @DAS17619 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithRemoveOwnerIsLoadedCorrectly
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope     | Run    |
 	| 17619_Automation | 17619       | true   | false              | All Users | Manual |
-	When User clicks "Automations" link on the Admin page
-	Then "Automations" page should be displayed to the user
+	When User navigates to the 'Automations' left menu item
+	Then Page with 'Automations' header is displayed to user
 	When User enters "17619_Automation" text in the Search field for "Automation" column
 	And User clicks content from "Automation" column
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
-	When User clicks the "CREATE ACTION" Action button
+	When User clicks 'CREATE ACTION' button 
 	When User enters 'Update Migrated devices' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
@@ -184,7 +170,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithRemoveOwnerIsLoaded
 	And User selects "No change" Update Value on Action panel
 	And User selects "No change" Update Date on Action panel
 	And User selects "Remove" Update Owner on Action panel
-	And User clicks the "CREATE" Action button
+	And User clicks 'CREATE' button 
 	When User clicks "Automations" navigation link on the Admin page
 	When User enters "17619_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
@@ -201,18 +187,18 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithRemoveOwnerIsLoaded
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17615 @DAS17617 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithUpdateOwnerIsLoadedCorrectly
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
 	| 17617_Automation | 17617       | true   | false              | All Devices | Manual |
-	When User clicks "Automations" link on the Admin page
-	Then "Automations" page should be displayed to the user
+	When User navigates to the 'Automations' left menu item
+	Then Page with 'Automations' header is displayed to user
 	When User enters "17617_Automation" text in the Search field for "Automation" column
 	And User clicks content from "Automation" column
 	And User navigates to the 'Actions' left menu item
 	#Create Action
-	When User clicks the "CREATE ACTION" Action button
+	When User clicks 'CREATE ACTION' button 
 	When User enters 'Update Migrated devices' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
@@ -223,7 +209,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithUpdateOwnerIsLoaded
 	And User selects "Update" Update Owner on Action panel
 	And User selects "1803 Team" Team on Action panel
 	And User selects "Akhila Varghese" Owner on Action panel
-	And User clicks the "CREATE" Action button
+	And User clicks 'CREATE' button 
 	When User clicks "Automations" navigation link on the Admin page
 	When User enters "17617_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column

@@ -7,20 +7,12 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12336 @DAS12745 @DAS13199 @Cleanup @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedAfterAddingObjectsOnTheProjectScopeChangesTab
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "TestName12336" in the "Project Name" field
-	And User selects 'All Devices' option from 'Scope' autocomplete
-	And User clicks Create button on the Create Project page
-	Then created Project with "TestName12336" name is displayed correctly
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks newly created object link
-	Then Project "TestName12336" is displayed to user
-	When User selects "Scope Changes" tab on the Project details page
+	When Project created via API and opened
+	| ProjectName     | Scope       | ProjectTemplate | Mode               |
+	| TestName12336 | All Devices | None            | Standalone Project |
+	When User navigates to the 'Projects' left menu item
+	And User selects "Scope" tab on the Project details page
+	And User selects "Scope Changes" tab on the Project details page
 	And User expands multiselect to add objects
 	And User selects all objects to the Project
 	Then "Devices to add (17279 of 17279 selected)" is displayed to the user in the Project Scope Changes section
@@ -31,29 +23,23 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedAfterAddin
 	Then "Devices to add (5 of 17279 selected)" is displayed to the user in the Project Scope Changes section
 	When User cancels the selection objects in the Project
 	And User expands multiselect and selects following Objects
-	| Objects         |
-	| 07RJRCQQJNBJIJQ |
-	| 0CFHJY5A8WLUB0J |
+	| Objects        |
+	| CWOFD11103CVDP |
+	| 111OPUSGKFG5GT |
 	Then "Devices to add (2 of 17279 selected)" is displayed to the user in the Project Scope Changes section
-	When User clicks the "UPDATE ALL CHANGES" Action button
-	And User clicks the "UPDATE PROJECT" Action button
+	When User clicks 'UPDATE ALL CHANGES' button 
+	And User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "2 objects queued for onboarding, 0 objects offboarded" text
 	When User selects "Scope Details" tab on the Project details page
 	Then Warning message is not displayed on the Admin page
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12891 @DAS12894 @DAS13254 @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12891 @DAS12894 @DAS13254 @Projects @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatCancelButtonIsDisplayedWithCorrectColourOnAdminPage
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "TestName12891" in the "Project Name" field
-	And User selects 'All Devices' option from 'Scope' autocomplete
-	And User clicks Create button on the Create Project page
-	Then created Project with "TestName12891" name is displayed correctly
-	Then Success message is displayed and contains "The project has been created" text
+	When Project created via API and opened
+	| ProjectName   | Scope       | ProjectTemplate | Mode               |
+	| TestName12891 | All Devices | None            | Standalone Project |
+	When User navigates to the 'Projects' left menu item
+	And User click on Back button
 	When User enters "TestName12891" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	Then Actions dropdown is displayed correctly
@@ -66,24 +52,17 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCancelButtonIsDisplayedWithCorrectColo
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11701 @Cleanup @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThatTheFilterSearchIsNotCaseSensitive
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "TESTNAME_capital letters" in the "Project Name" field
-	And User selects 'All Devices' option from 'Scope' autocomplete
-	And User clicks Create button on the Create Project page
+	When Project created via API and opened
+	| ProjectName   | Scope       | ProjectTemplate | Mode               |
+	| TESTNAME_capital letters | All Devices | None            | Standalone Project |
+	When User navigates to the 'Projects' left menu item
+	And User click on Back button
 	Then created Project with "TESTNAME_capital letters" name is displayed correctly
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "testname_small letters" in the "Project Name" field
-	And User selects 'All Devices' option from 'Scope' autocomplete
-	And User clicks Create button on the Create Project page
+	When Project created via API and opened
+	| ProjectName   | Scope       | ProjectTemplate | Mode               |
+	| testname_small letters | All Devices | None            | Standalone Project |
+	And User click on Back button
 	Then created Project with "testname_small letters" name is displayed correctly
-	Then Success message is displayed and contains "The project has been created" text
 	When User enters "TestName" text in the Search field for "Project" column
 	Then created Project with "testname_small letters" name is displayed correctly
 	Then created Project with "TESTNAME_capital letters" name is displayed correctly
@@ -100,12 +79,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDevicesToAddAndRemoveAreChangingApprop
 	| 041V8ZALQ4XPL9 |
 	| 04WJ5P9DN0VEEW |
 	Then "StaticList6528" list is displayed to user
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Projects' left menu item
+	Then Page with 'Projects' header is displayed to user
+	When User clicks 'CREATE PROJECT' button 
+	Then Page with 'Create Project' subheader is displayed to user
 	When User enters "DevicesProject" in the "Project Name" field
 	And User selects 'StaticList6527' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
@@ -120,8 +99,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDevicesToAddAndRemoveAreChangingApprop
 	| 00BDM1JUR8IF419 |
 	| 011PLA470S0B9DJ |
 	Then "Devices to add (2 of 2 selected)" is displayed to the user in the Project Scope Changes section
-	When User clicks the "UPDATE ALL CHANGES" Action button
-	And User clicks the "UPDATE PROJECT" Action button
+	When User clicks 'UPDATE ALL CHANGES' button 
+	And User clicks 'UPDATE PROJECT' button 
 	Then Success message with "2 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
 	When User selects "Scope Details" tab on the Project details page
 	When User selects 'StaticList6528' in the 'Scope' dropdown with wait

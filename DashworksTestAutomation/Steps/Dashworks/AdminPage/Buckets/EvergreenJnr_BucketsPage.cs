@@ -35,13 +35,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.IsFalse(projectPage.BucketDropdown.Displayed(), "Bucket dropdown is displayed");
         }
 
-        [Then(@"Add Buckets page is displayed to the user")]
-        public void ThenAddBucketsPageIsDisplayedToTheUser()
-        {
-            var page = _driver.NowAt<AddBucketToTeamPage>();
-            Utils.Verify.IsTrue(page.PageTitle.Displayed(), "Add Buckets page is not displayed");
-        }
-
         [Then(@"Reassign Buckets page is displayed to the user")]
         public void ThenReassignBucketsPageIsDisplayedToTheUser()
         {

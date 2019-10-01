@@ -8,7 +8,7 @@ Background: Pre-Conditions
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15918
 Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByShowsCorrectOptionsForHalfDonut
 	When User clicks Edit mode trigger on Dashboards page
-	And User clicks the "ADD WIDGET" Action button
+	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title             | List         | AggregateFunction | SplitBy                                |
 	| Half donut | WidgetForDAS15918 | 1803 Rollout | Count             | 1803: Pre-Migration \ Ready to Migrate |
@@ -27,13 +27,13 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWi
 	And User create dynamic list with "DAS16167_HddList" name on "Devices" page
 	When Dashboard with "DAS16167_HddList" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
-	And User clicks the "ADD WIDGET" Action button
+	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType   | Title           | List             | SplitBy          | AggregateFunction | AggregateBy         | OrderBy                         |
 	| <WidgetType> | HddListDAS16167 | DAS16167_HddList | Operating System | Minimum           | HDD Total Size (GB) | HDD Total Size (GB) Minimum ASC |
 	Then Widget Preview is displayed to the user
 	And 'All values are 0' message is displayed in Preview
-	When User clicks the "CREATE" Action button
+	When User clicks 'CREATE' button 
 	Then "HddListDAS16167" Widget is displayed to the user
 	And 'All values are 0' message is displayed in 'HddListDAS16167' widget
 

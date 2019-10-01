@@ -14,8 +14,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	And User selects "Scope Changes" tab on the Project details page
 	And User navigates to the 'Devices' tab on Project Scope Changes page
 	Then open tab in the Project Scope Changes section is active
-	When User expands multiselect to add objects 
-	And User expands multiselect and selects following Objects
+	When User expands multiselect and selects following Objects
 	| Objects         |
 	| 001BAQXT6JWFPI  |
 	| 001PSUMZYOW581  |
@@ -42,9 +41,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	| 02X387UDGZJPQY  |
 	| 03063X2ZUCDN0A1 |
 	| 03U75EKEMUQMUS  |
-	And User clicks the "UPDATE ALL CHANGES" Action button
+	And User clicks 'UPDATE ALL CHANGES' button 
 	Then "UPDATE ALL CHANGES" Action button is disabled
-	When User clicks the "CANCEL" Action button
+	When User clicks 'CANCEL' button 
 	Then "UPDATE ALL CHANGES" Action button is active
 	When User navigates to the 'Users' tab on Project Scope Changes page
 	And User expands multiselect to add objects 
@@ -104,9 +103,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	| Axosoft OnTime 2005 Enterprise Server (5.3.0)                        |
 	| BDE 5.01 Upgrade                                                     |
 	| Brava! Reader 2.5 (2.5)                                              |
-	And User clicks the "UPDATE ALL CHANGES" Action button
+	And User clicks 'UPDATE ALL CHANGES' button 
 	Then Warning message with "25 devices will be added, 25 users will be added, 25 applications will be added" text is displayed on the Admin page
-	When User clicks the "UPDATE PROJECT" Action button
+	When User clicks 'UPDATE PROJECT' button 
 	Then Success message with "75 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
 	And "Applications to add (0 of 2104 selected)" is displayed to the user in the Project Scope Changes section
 	And following objects were not found
@@ -123,7 +122,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	| Objects         |
 	| 019BFPQGKK5QT8N |
 	#go to create new user
-	When User clicks "Projects" on the left-hand menu
+	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console
@@ -142,10 +141,10 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	Then Dashworks homepage is displayed to the user in a logged in state
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Projects' left menu item
+	Then Page with 'Projects' header is displayed to user
 	When User enters "Project13390" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User selects "Scope Changes" tab on the Project details page
@@ -164,8 +163,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	And following objects were not found
 	| Objects                                                              |
 	| "WPF/E" (codename) Community Technology Preview (Feb 2007) (0.8.5.0) |
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
 	When Project created via API and opened
 	| ProjectName  | Scope       | ProjectTemplate | Mode               |
 	| Project13391 | All Devices | None            | Standalone Project |
@@ -218,8 +217,8 @@ Scenario: EvergreenJnr_AdminPage_CheckingSortingOrderOfTheObjectsInTheProjectSco
 	| 000F977AC8824FE39B8@bclabs.local (Spruill, Shea)       |
 	| 002B5DC7D4D34D5C895@bclabs.local (Collor, Christopher) |
 	| 003F5D8E1A844B1FAA5@bclabs.local (Hunter, Melanie)     |
-	When User clicks the "UPDATE ALL CHANGES" Action button
-	And User clicks the "UPDATE PROJECT" Action button
+	When User clicks 'UPDATE ALL CHANGES' button 
+	And User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
 	Then following objects were not found
 	| Objects                                                |
@@ -242,9 +241,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectAllCheckboxIsWorkingCorrectlyOnA
 	And Project created via API and opened
 	| ProjectName    | Scope     | ProjectTemplate | Mode               |
 	| 3Checkbox11758 | All Users | None            | Standalone Project |
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Projects' left menu item
 	Then created Project with "1Checkbox11758" name is displayed correctly
 	And created Project with "2Checkbox11758" name is displayed correctly
 	And created Project with "3Checkbox11758" name is displayed correctly
@@ -261,24 +260,24 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectAllCheckboxIsWorkingCorrectlyOnA
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12578 @DAS12999 @DAS13429 @Cleanup
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatTheEditListFunctionIsHiddenAfterCancelingCreatingProjectFromTheMainLists
-	When User clicks "<ListName>" on the left-hand menu
-	Then "<ListName>" list should be displayed to the user
+	When User clicks '<ListName>' on the left-hand menu
+	Then 'All <ListName>' list should be displayed to the user
 	When User clicks on '<ColumnName>' column header
 	And User create dynamic list with "<DynamicListName>" name on "<ListName>" page
 	Then "<DynamicListName>" list is displayed to user
 	When User clicks Create Project from the main list
-	Then "Create Project" page should be displayed to the user
-	When User clicks the "CANCEL" Action button
+	Then Page with 'Create Project' subheader is displayed to user
+	When User clicks 'CANCEL' button 
 	Then "<DynamicListName>" list is displayed to user
 	And Edit List menu is not displayed
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User clicks 'CREATE PROJECT' button 
+	Then Page with 'Create Project' subheader is displayed to user
 	When User enters "TestProject7894" in the "Project Name" field
 	And User selects 'All Devices' option from 'Scope' autocomplete
-	When User clicks the "CANCEL" Action button
-	Then "Projects" page should be displayed to the user
+	When User clicks 'CANCEL' button 
+	Then Page with 'Projects' header is displayed to user
 
 Examples:
 	| ListName  | ColumnName    | DynamicListName |

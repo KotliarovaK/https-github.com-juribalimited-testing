@@ -33,6 +33,18 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             _automations = automations;
         }
 
+        #region Page Header/SubHeader
+
+        [Then(@"'(.*)' page subheader is displayed to user")]
+        public void ThenPageSubheaderIsDisplayedToUser(string subheader)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForElementToBeDisplayed(page.SubHeader);
+            Verify.AreEqual(subheader, page.SubHeader.Text, "Incorrect page subheader");
+        }
+
+        #endregion
+
         #region Named Autocomplete
 
         [Then(@"'(.*)' autocomplete last option is '(.*)'")]
@@ -306,7 +318,10 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var itemsToAdd = table.Rows.Select(x => x["Objects"]).ToList();
             var basePage = _driver.NowAt<BaseDashboardPage>();
-            basePage.ExpandCollapseMultiselectButton("").Click();
+            if (basePage.ExpandMultiselectButton("") != null && basePage.ExpandMultiselectButton("").Displayed())
+            {
+                basePage.ExpandCollapseMultiselectButton("").Click();
+            }
             basePage.AddItemsToMultiSelect(itemsToAdd);
         }
 
@@ -336,6 +351,17 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var dialogContainer = _driver.NowAt<BasePage>();
             dialogContainer.GetCheckboxByName(checkboxName).SetCheckboxState(checkboxState);
             Logger.Write("Checkbox successfully pressed");
+        }
+
+        #endregion
+
+        #region Button
+
+        [When(@"User clicks '(.*)' button")]
+        public void WhenUserClicksButton(string buttonName)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.ClickButtonByName(buttonName);
         }
 
         #endregion

@@ -7,8 +7,8 @@ Background: Pre-Conditions
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS13637 @DAS13640 @DAS13643 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatLayoutFilterForCreatedListsIsWorkedCorrectly
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User create static list with "StaticFilterList_2" name on "Devices" page with following items
 	| ItemName       |
 	| 001BAQXT6JWFPI |
@@ -28,7 +28,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatLayoutFilterForCreatedListsIsWorkedC
 	And User selects the following Values on Pivot:
 	| Values               |
 	| App Count (Entitled) |
-	When User clicks the "RUN PIVOT" Action button
+	When User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	When User creates Pivot list with "PivotDynamicFilterList_2" name
 	Then "PivotDynamicFilterList_2" list is displayed to user
@@ -43,7 +43,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatLayoutFilterForCreatedListsIsWorkedC
 	And User selects the following Values on Pivot:
 	| Values                            |
 	| Owner General information field 1 |
-	When User clicks the "RUN PIVOT" Action button
+	When User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	When User creates Pivot list with "PivotFilterList_2" name
 	Then "PivotFilterList_2" list is displayed to user
@@ -71,8 +71,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatLayoutFilterForCreatedListsIsWorkedC
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS13637 @DAS13643
 Scenario: EvergreenJnr_DevicesList_CheckThatFavouriteFilterForListsIsWorkedCorrectly
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User apply "Not favourite" filter to lists panel
 	Then "1803 Rollout" list is displayed in the bottom section of the List Panel
 	When User apply "Favourite" filter to lists panel
@@ -82,8 +82,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFavouriteFilterForListsIsWorkedCorre
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS13637 @DAS13643
 Scenario: EvergreenJnr_DevicesList_CheckThatSharingiteFilterForListsIsWorkedCorrectly
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User apply "Shared with me " filter to lists panel
 	Then "1803 Rollout" list is displayed in the bottom section of the List Panel
 	When User apply "Owned by me " filter to lists panel
@@ -93,8 +93,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSharingiteFilterForListsIsWorkedCorr
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS17627 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatDashworkWorksAfterChangingPivotSettings
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User create static list with "StaticFilterList_1" name on "Devices" page with following items
 	| ItemName       |
 	| 001BAQXT6JWFPI |
@@ -114,28 +114,28 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDashworkWorksAfterChangingPivotSetti
 	And User selects the following Values on Pivot:
 	| Values   |
 	| Hostname |
-	When User clicks the "RUN PIVOT" Action button
+	When User clicks 'RUN PIVOT' button 
 	And User removes "Hostname" Column for Pivot
 	And User selects the following Row Groups on Pivot:
 	| RowGroups |
 	| Floor     |
-	When User clicks the "RUN PIVOT" Action button
+	When User clicks 'RUN PIVOT' button 
 	Then There are no errors in the browser console
 	#Just to check that application is still responding
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS17421
 Scenario: EvergreenJnr_DevicesList_CheckThatGridHeaderIsDisplayedCorrectlyAfterClosingListsPanel
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User closed list panel
-	Then Dashboards sub menu is hidden on Dashboards page
+	Then Lists panel is hidden
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS15785
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatFilterCategoryNamingIsCorrect
-	When User clicks "<ListType>" on the left-hand menu
-	Then "<ListTitle>" list should be displayed to the user
+	When User clicks '<ListType>' on the left-hand menu
+	Then '<ListTitle>' list should be displayed to the user
 	And List filter DDL displays the next options
 	| filterItem     |
 	| All            |

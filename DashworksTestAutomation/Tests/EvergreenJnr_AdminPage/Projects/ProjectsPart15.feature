@@ -10,8 +10,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedBucketsIsDisplayedForOnboarded
 	When Project created via API and opened
 	| ProjectName   | Scope     | ProjectTemplate | Mode               |
 	| UsersProject3 | All Users | None            | Standalone Project |
-	When User clicks Admin on the left-hand menu
-	When User clicks "Projects" on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
+	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "UsersProject3" Project
 	Then Project with "UsersProject3" name is displayed correctly
@@ -24,9 +24,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedBucketsIsDisplayedForOnboarded
 	| UsersProject3Group |
 	When User clicks "Create Group" button
 	And User navigate to Evergreen link
-	And User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	And "Projects" page should be displayed to the user
+	And User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	And Page with 'Projects' header is displayed to user
 	When User enters "UsersProject3" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	Then Project "UsersProject3" is displayed to user
@@ -34,8 +34,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedBucketsIsDisplayedForOnboarded
 	And User expands multiselect and selects following Objects
 	| Objects                               |
 	| 003F5D8E1A844B1FAA5 (Hunter, Melanie) |
-	And User clicks the "UPDATE ALL CHANGES" Action button
-	And User clicks the "UPDATE PROJECT" Action button
+	And User clicks 'UPDATE ALL CHANGES' button 
+	And User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "1 object queued for onboarding, 0 objects offboarded" text
 	When User selects "Queue" tab on the Project details page
 	Then following Items are displayed in the Queue table
@@ -159,8 +159,8 @@ Scenario: EvergreenJnr_AdminPage_TheGreenBannerIsNotDisplayedIfBannerWasBeShownO
 	And User selects following Objects from the expandable multiselect
 	| Objects         |
 	| 0623U41CZ73RV2Q |
-	When User clicks the "UPDATE ALL CHANGES" Action button
-	And User clicks the "UPDATE PROJECT" Action button
+	When User clicks 'UPDATE ALL CHANGES' button 
+	And User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "1 object queued for onboarding, 0 objects offboarded" text
 	When User selects "Queue" tab on the Project details page
 	Then following Items are displayed in the Queue table

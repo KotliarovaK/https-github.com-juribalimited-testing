@@ -10,10 +10,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNotificationMessageIsDisplayedAfterUpd
 	When User creates new Bucket via api
 	| Name        | TeamName  | IsDefault |
 	| TestBucket2 | Team 1045 | false     |
-	And User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Evergreen" link on the Admin page
-	Then "Buckets" page should be displayed to the user
+	And User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Evergreen' left menu item
+	Then Page with 'Buckets' header is displayed to user
 	When User enters "TestBucket2" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
 	Then "TestBucket2" bucket details is displayed to the user
@@ -23,8 +23,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNotificationMessageIsDisplayedAfterUpd
 	When User enters "TestBucket2" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
 	Then Default Bucket checkbox is selected
-	When User clicks "Evergreen" link on the Admin page
-	Then "Buckets" page should be displayed to the user
+	When User navigates to the 'Evergreen' left menu item
+	Then Page with 'Buckets' header is displayed to user
 	When User enters "Unassigned" text in the Search field for "Bucket" column
 	Then 'FALSE' content is displayed in the 'Default' column
 	When User clicks content from "Bucket" column

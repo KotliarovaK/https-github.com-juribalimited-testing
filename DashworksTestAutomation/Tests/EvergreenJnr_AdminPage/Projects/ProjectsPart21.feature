@@ -7,7 +7,7 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Projects @Senior_Projects @DAS13498 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatChangingTheProjectNameOrShortNameInSeniorIsReflectedInEvergreen
-	When User clicks "Projects" on the left-hand menu
+	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User clicks create Project button
 	Then "Create Project" page is displayed to the user
@@ -15,15 +15,15 @@ Scenario: EvergreenJnr_AdminPage_CheckThatChangingTheProjectNameOrShortNameInSen
 	| ProjectName     | ShortName | Description | Type |
 	| SnrProject13498 | 13498Pr   |             |      |
 	And User navigate to Evergreen link
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Projects' left menu item
+	Then Page with 'Projects' header is displayed to user
 	When User enters "SnrProject13498" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	Then "SnrProject13498" content is displayed in "Project Name" field
 	And "13498Pr" content is displayed in "Project Short Name" field
-	When User clicks "Projects" on the left-hand menu
+	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "SnrProject13498" Project
 	Then Project with "SnrProject13498" name is displayed correctly
@@ -32,10 +32,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatChangingTheProjectNameOrShortNameInSen
 	And User updates Project Short Name to "13498ShN" on Senior
 	When User clicks "Update" button
 	And User navigate to Evergreen link
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Projects' left menu item
+	Then Page with 'Projects' header is displayed to user
 	When User enters "13498NewProjectName" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	Then "13498NewProjectName" content is displayed in "Project Name" field
@@ -47,7 +47,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatChangingTheProjectNameOrShortNameInSen
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Projects @UpdatingName @Senior_Projects @DAS13501 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatNameForProjectThatCreatedInSeniorWasUpdatedCorrectlyInAdminPage
-	When User clicks "Projects" on the left-hand menu
+	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User clicks create Project button
 	Then "Create Project" page is displayed to the user
@@ -55,10 +55,10 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatNameForProjectThatCreatedInSeniorWasU
 	| ProjectName     | ShortName | Description | Type |
 	| ProjectDAS13501 | 13501     |             |      |
 	And User navigate to Evergreen link
-	And User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
+	And User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Projects' left menu item
+	Then Page with 'Projects' header is displayed to user
 	When User enters "ProjectDAS13501" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User enters "ProjectDAS13501 upd" in the "Project Name" field
@@ -69,7 +69,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatNameForProjectThatCreatedInSeniorWasU
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Projects @DAS13424
 Scenario: EvergreenJnr_AdminPage_CheckTheCapacitySlotsLinkRedirectsToTheCorrectScreen
-	When User clicks "Projects" on the left-hand menu
+	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "Windows 7 Migration (Computer Scheduled Project)" Project
 	Then Project with "Windows 7 Migration (Computer Scheduled Project)" name is displayed correctly
@@ -80,21 +80,21 @@ Scenario: EvergreenJnr_AdminPage_CheckTheCapacitySlotsLinkRedirectsToTheCorrectS
 	#required functionality (Project Mode) was temporarily hidden, 05/29/19
 @Evergreen @Admin @EvergreenJnr_AdminPage @Projects @DAS13510 @DAS13511 @Project_Creation_and_Scope @Projects @Cleanup @archived
 Scenario: EvergreenJnr_AdminPage_CheckThatProjectWithUseEvergreenCapacityUnitsIsNotDisplayedOnTheCapacityUnitsTab
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Projects' left menu item
+	Then Page with 'Projects' header is displayed to user
+	When User clicks 'CREATE PROJECT' button 
+	Then Page with 'Create Project' subheader is displayed to user
 	When User enters "13510TestProject" in the "Project Name" field
 	And User selects 'All Devices' option from 'Scope' autocomplete
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks 'CREATE PROJECT' button 
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "13510TestProject" is displayed to user
 	When User navigates to the 'Capacity' left menu item
 	And User selects 'Use project capacity units' in the 'Capacity Units' dropdown
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then Success message with "The project capacity details have been updated" text is displayed on the Projects page
 	When User selects "Units" tab on the Project details page
 	Then Blue banner with "This project uses evergreen capacity units" text is displayed
@@ -102,8 +102,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectWithUseEvergreenCapacityUnitsIs
 	Then Actions menu is not displayed to the user
 	Then Cog menu is not displayed on the Admin page
 	When User clicks "Administration" navigation link on the Admin page
-	When User clicks "Evergreen" link on the Admin page
+	When User navigates to the 'Evergreen' left menu item
 	When User navigates to the 'Capacity Units' left menu item
-	Then "Capacity Units" page should be displayed to the user
+	Then Page with 'Capacity Units' header is displayed to user
 	When User clicks String Filter button for "Project" column
 	Then "13510TestProject" is not displayed in the filter dropdown

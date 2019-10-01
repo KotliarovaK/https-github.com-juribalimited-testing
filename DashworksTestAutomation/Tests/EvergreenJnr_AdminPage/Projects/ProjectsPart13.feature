@@ -7,8 +7,8 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12892 @Cleanup @Cleanup @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThatOnlyFilteredListObjectsAreUsedAsAScopeOfProject
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Operating System" filter where type is "Equals" with added column and Lookup option
@@ -30,21 +30,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnlyFilteredListObjectsAreUsedAsAScope
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @UpdatingName @DAS13096 @DAS15994 @Cleanup @Projects
 Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameEditedInSeniorIsUpdatedInAdminTab
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "10_Project13096" in the "Project Name" field
-	And User selects 'All Devices' option from 'Scope' autocomplete
-	When User clicks the "CREATE" Action button
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks newly created object link
+	When Project created via API and opened
+	| ProjectName     | Scope       | ProjectTemplate | Mode               |
+	| 10_Project13096 | All Devices | None            | Standalone Project |
 	Then Project "10_Project13096" is displayed to user
 	When User click on Back button
 	Then created Project with "10_Project13096" name is displayed correctly
-	When User clicks "Projects" on the left-hand menu
+	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "10_Project13096" Project
 	Then Project with "10_Project13096" name is displayed correctly
@@ -53,10 +45,10 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameEditedInSeniorIsUpdatedInA
 	When User clicks "Update" button
 	Then Success message is displayed with "Project was successfully updated" text
 	When User navigate to Evergreen link
-	And User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
+	And User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Projects' left menu item
+	Then Page with 'Projects' header is displayed to user
 	And created Project with "1_Project13096 upd on Senior" name is displayed correctly
 	When User enters "1_Project13096 upd on Senior" text in the Search field for "Project" column
 	And User selects all rows on the grid
@@ -65,8 +57,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameEditedInSeniorIsUpdatedInA
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12776 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterClickUpdateForDynamicList
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User clicks on 'Hostname' column header
 	And User create dynamic list with "DynamicList5588" name on "Devices" page
 	Then "DynamicList5588" list is displayed to user
@@ -85,12 +77,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	And User selects following Objects from the expandable multiselect
 	| Objects                          |
 	| ACD252468 (Nicolas O. Mc Millan) |
-	And User clicks the "UPDATE ALL CHANGES" Action button
+	And User clicks 'UPDATE ALL CHANGES' button 
 	Then Warning message with "1 device will be added, 1 user will be added" text is displayed on the Admin page
 	And Objects to add panel is disabled
 	When User navigates to the 'Devices' tab on Project Scope Changes page
 	Then Objects to add panel is disabled
-	When User clicks the "UPDATE PROJECT" Action button
+	When User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "2 objects queued for onboarding, 0 objects offboarded" text
 	Then "UPDATE ALL CHANGES" Action button is disabled
 	And "Devices to add (0 of 17278 selected)" is displayed to the user in the Project Scope Changes section
@@ -133,12 +125,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	| Objects                                |
 	| 00BDBAEA57334C7C8F4 (Basa, Rogelio)    |
 	| 00CFE13AAE104724AF5 (Hardieway, Linda) |
-	And User clicks the "UPDATE ALL CHANGES" Action button
+	And User clicks 'UPDATE ALL CHANGES' button 
 	Then Warning message with "2 users will be added" text is displayed on the Admin page
 	Then Objects to add panel is disabled
 	When User navigates to the 'Devices' tab on Project Scope Changes page
 	Then Objects to add panel is disabled
-	When User clicks the "UPDATE PROJECT" Action button
+	When User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "2 objects queued for onboarding, 0 objects offboarded" text
 	Then "UPDATE ALL CHANGES" Action button is disabled
 	When User navigates to the 'Users' tab on Project Scope Changes page

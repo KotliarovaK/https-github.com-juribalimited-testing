@@ -17,7 +17,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDefaultCapacityUnitRenamedInUnassigned
 	Then Counter shows "1" found rows
 	When User clicks content from "Capacity Unit" column
 	And User changes Name to "Default Capacity Unit" in the "Capacity Unit Name" field on the Project details page 
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then Success message is displayed and contains "The capacity unit details have been updated" text
 	And Columns on Admin page is displayed in following order:
 	| ColumnName    |
@@ -74,7 +74,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedValueIsDisplayedForCapacityCo
 	| ProjectForCapacity13723 | All Devices | None            | Standalone Project |
 	And User navigates to the 'Capacity' left menu item
 	And User selects "Override Dates" tab on the Project details page
-	When User clicks the "CREATE OVERRIDE DATE" Action button
+	When User clicks 'CREATE OVERRIDE DATE' button 
 	And User enters '5 Jan 2019' text to 'Override Start Date' datepicker
 	And User enters '' text to 'Override End Date' datepicker
 	Then 'An override end date must be entered' error message is displayed for 'Override End Date' field
@@ -85,7 +85,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedValueIsDisplayedForCapacityCo
 	Then 'An override start date must be entered' error message is displayed for 'Override Start Date' field
 	When User enters '4 Oct 2018' text to 'Override Start Date' datepicker
 	And User enters '7 Oct 2018' text to 'Override End Date' datepicker
-	And User clicks the "CREATE" Action button
+	And User clicks 'CREATE' button 
 	Then Success message is displayed and contains "Your override date has been created" text
 	And "Unlimited" content is displayed in "Capacity" column
 	When User enters ">1" text in the Search field for "Capacity" column

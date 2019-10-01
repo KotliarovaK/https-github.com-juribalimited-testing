@@ -7,15 +7,15 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS12452 @DAS14698
 Scenario: EvergreenJnr_AdminPage_CheckNavigationToDevicesListFromProjectsRingsList
-	When User clicks Admin on the left-hand menu
-	And User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	And User navigates to the 'Projects' left menu item
+	Then Page with 'Projects' header is displayed to user
 	When User enters "1803 Rollout" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Rings' left menu item
 	Then "1" content is displayed in "Devices" column
 	When User clicks content from "Devices" column
-	Then "All Devices" list should be displayed to the user
+	Then 'All Devices' list should be displayed to the user
 	Then "1" rows are displayed in the agGrid
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user

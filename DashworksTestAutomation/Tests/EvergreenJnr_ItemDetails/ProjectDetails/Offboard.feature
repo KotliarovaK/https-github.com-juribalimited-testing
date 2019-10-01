@@ -6,26 +6,27 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 	#TODO create API ONBOARDING step;
+	#tag 'not_rady' added because need to create Cleanup (DAS-18070)
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @Offboard @DAS17843 @DAS17926 @Cleanup @Not_Ready
 Scenario Outline: EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectlyForProjectDetailsPageWhichHasAssociatedObjects
-	When User clicks "<PageName>" on the left-hand menu
-	Then "<LoadedPage>" list should be displayed to the user
+	When User clicks '<PageName>' on the left-hand menu
+	Then '<LoadedPage>' list should be displayed to the user
 	When User perform search by "<ItemName>"
 	And User click content from "<ColumnName>" column
 	Then Details page for "<ItemName>" item is displayed to the user
 	When User switches to the "<ProjectName>" project in the Top bar on Item details page
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the "Project Details" sub-menu on the Details page
-	And User clicks the "OFFBOARD" Action button
+	And User clicks 'OFFBOARD' button 
 	Then Dialog Pop-up is displayed for User
-	When User clicks the "OFFBOARD" Action button
+	When User clicks 'OFFBOARD' button 
 	Then Warning message with "The selected objects will be offboarded, this cannot be undone" text is displayed on the Project Details Page
-	When User clicks the "OFFBOARD" Action button
+	When User clicks 'OFFBOARD' button 
 	#going to check the object state
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Projects' left menu item
+	Then Page with 'Projects' header is displayed to user
 	When User enters "<ProjectName>" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	When User navigates to the 'Scope' left menu item
@@ -40,26 +41,27 @@ Examples:
 	| Mailboxes | All Mailboxes | 06A573B6200A4A10BC2@bclabs.local | Email Address | Mailbox Evergreen Capacity Project |
 
 	#TODO create API ONBOARDING step;
+	#tag 'not_rady' added because need to create Cleanup (DAS-18070)
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @Offboard @DAS17843 @DAS17926 @Cleanup @Not_Ready
 Scenario Outline: EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectlyForProjectDetailsPageWhichHasNoAssociatedObjects
-	When User clicks "<PageName>" on the left-hand menu
-	Then "<LoadedPage>" list should be displayed to the user
+	When User clicks '<PageName>' on the left-hand menu
+	Then '<LoadedPage>' list should be displayed to the user
 	When User perform search by "<ItemName>"
 	And User click content from "<ColumnName>" column
 	Then Details page for "<ItemName>" item is displayed to the user
 	When User switches to the "<ProjectName>" project in the Top bar on Item details page
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the "Project Details" sub-menu on the Details page
-	And User clicks the "OFFBOARD" Action button
+	And User clicks 'OFFBOARD' button 
 	Then Dialog Pop-up is displayed for User
-	When User clicks the "OFFBOARD" Action button
+	When User clicks 'OFFBOARD' button 
 	Then Warning message with "<Message>" text is displayed on the Project Details Page
-	When User clicks the "OFFBOARD" Action button
+	When User clicks 'OFFBOARD' button 
 	#going to check the object state
-	And User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
+	And User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Projects' left menu item
+	Then Page with 'Projects' header is displayed to user
 	When User enters "<ProjectName>" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	When User navigates to the 'Scope' left menu item

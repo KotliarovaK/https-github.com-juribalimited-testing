@@ -196,7 +196,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//mat-error/span/i[@class='material-icons mat-warning']")]
         public IWebElement UnderFieldWarningIcon { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//mat-error[@role='alert']")]
+        [FindsBy(How = How.XPath, Using = ".//mat-error[@role='alert']//span")]
         public IWebElement FieldWarningMessage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'message-error')]")]
@@ -237,7 +237,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         {
             var byControl =
                 By.XPath(
-                    $".//div[@role='presentation']/div[2]/div[{GetColumnNumberByName(columnName)}]//div[@class='ag-floating-filter-full-body']//input");
+                    $".//div[@role='presentation']//div[@class='ag-header-row'][2]/div[{GetColumnNumberByName(columnName)}]//div[@class='ag-floating-filter-full-body']//input");
             Driver.WaitForDataLoading();
             Driver.WaitForElementToBeDisplayed(byControl);
             Driver.FindElement(byControl).Click();
@@ -256,7 +256,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         {
             var selector =
                 By.XPath(
-                    $".//div[@role='presentation']/div[2]/div[{GetColumnNumberByName(columnName)}]//div[@class='ag-floating-filter-full-body']//input[@placeholder='Search']");
+                    $".//div[@role='presentation']//div[@class='ag-header-row'][2]/div[{GetColumnNumberByName(columnName)}]//div[@class='ag-floating-filter-full-body']//input[@placeholder='Search']");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
@@ -358,8 +358,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public bool GetTabHeaderInTheScopeChangesSection(string text)
         {
-            return Driver.IsElementDisplayed(
-                By.XPath($".//div[@class='detail-label ng-star-inserted']//span[text()='{text}']"));
+            By locator = By.XPath($".//div[@class='detail-label ng-star-inserted']//span[text()='{text}']");
+            Driver.WaitForElementToBeDisplayed(locator);
+            return Driver.IsElementDisplayed(locator);
         }
 
         public IWebElement GetColumnHeaderByName(string columnName)
@@ -437,16 +438,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.IsElementDisplayed(by);
         }
 
-        public bool GetButtonByName(string buttonName)
-        {
-            return Driver.IsElementDisplayed(By.XPath($".//button//span[text()='{buttonName}']"));
-        }
-
         public void GetStringFilterByColumnName(string columnName)
         {
             var byControl =
                 By.XPath(
-                    $".//div[@role='presentation']/div[2]/div[{GetColumnNumberByName(columnName)}][@aria-hidden='true']");
+                    $".//div[@role='presentation']//div[@class='ag-header-row'][2]/div[{GetColumnNumberByName(columnName)}]");
             Driver.WaitForDataLoading();
             Driver.WaitForElementToBeDisplayed(byControl);
             Driver.FindElement(byControl).Click();

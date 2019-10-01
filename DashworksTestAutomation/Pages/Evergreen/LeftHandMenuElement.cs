@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
@@ -10,7 +11,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
     {
         [FindsBy(How = How.XPath, Using = ".//span[text()='Dashboards']")]
         public IWebElement Dashboards { get; set; }
-        
+
+        [FindsBy(How = How.XPath, Using = ".//p[@class='topnav-item-menu-toggle']/button[contains(@class,'topnav-toggle')]")]
+        public IWebElement ExpandCollapseMenuButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@id='wrapper']")]
+        public IWebElement MenuToggleIndicator { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//a[@href='#/devices']")]
         public IWebElement Devices { get; set; }
 
@@ -39,6 +46,41 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 SelectorFor(this, p => p.Applications),
                 SelectorFor(this, p => p.Mailboxes),
             };
+        }
+
+        public IWebElement GetMenuElementByName(string name)
+        {
+            switch (name)
+            {
+                case "Devices":
+                    return Devices;
+
+                case "Users":
+                    return Users;
+
+                case "Applications":
+                    return Applications;
+
+                case "Mailboxes":
+                    return Mailboxes;
+
+                case "Admin":
+                    return Admin;
+
+                case "Projects":
+                    return Projects;
+
+                case "Dashboards":
+                    return Dashboards;
+
+                default:
+                    throw new Exception($"'{name}' menu name is not valid menu item and can not be opened");
+            }
+        }
+
+        public bool IsMenuExpanded()
+        {
+            return MenuToggleIndicator.GetAttribute("class").Equals(string.Empty);
         }
     }
 }

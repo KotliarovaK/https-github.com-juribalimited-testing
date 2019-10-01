@@ -13,10 +13,12 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyFo
 	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the "Project Details" sub-menu on the Details page
-	When User clicks the "RELINK" Action button
+	When User clicks 'RELINK' button 
 	Then Dialog Pop-up is displayed for User
 	Then 'Resync name' checkbox is checked
-	When User clicks the "RELINK" Action button
+	#TODO update search data
+	When User enters '' in the 'Application' autocomplete field and selects '0X0ZK6HNQMDU7EY' value
+	When User clicks 'RELINK' button 
 	Then Warning message with "This object will be relinked to the selected Evergreen object in this project" text is displayed on the Project Details Page
-	When User clicks the "RELINK" Action button
+	When User clicks 'RELINK' button 
 	Then Success message is displayed and contains "Mozilla Firefox (1.0.7) successfully relinked" text

@@ -7,17 +7,17 @@ Background: Pre-Conditions
 	
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @DAS13254 @DAS13172 @Cleanup @Teams @Do_Not_Run_With_Teams
 Scenario: EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Teams" link on the Admin page
-	Then "Teams" page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Teams' left menu item
+	Then Page with 'Teams' header is displayed to user
 	#Then Counter shows "2,794" found rows
-	When User clicks the "CREATE TEAM" Action button
-	Then "Create Team" page should be displayed to the user
-	When User clicks the "CANCEL" Action button
-	Then "Teams" page should be displayed to the user
-	When User clicks the "CREATE TEAM" Action button
-	Then "Create Team" page should be displayed to the user
+	When User clicks 'CREATE TEAM' button 
+	Then Page with 'Create Team' header is displayed to user
+	When User clicks 'CANCEL' button 
+	Then Page with 'Teams' header is displayed to user
+	When User clicks 'CREATE TEAM' button 
+	Then Page with 'Create Team' header is displayed to user
 	When User enters "TestTeam8" in the "Team Name" field
 	And User enters "test" in the Team Description field
 	When User selects "Add members from another team" in the Add Members dropdown
@@ -26,7 +26,7 @@ Scenario: EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam
 	| Objects                |
 	| Migration Phase 3 Team |
 	| Retail Team            |
-	And User clicks the "CREATE" Action button
+	And User clicks 'CREATE' button 
 	Then Success message is displayed and contains "The team has been created" text
 	When User enters "My Team" text in the Search field for "Team" column
 	Then 'TRUE' content is displayed in the 'Default' column
@@ -36,8 +36,8 @@ Scenario: EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam
 	And User selects "Delete" in the Actions
 	And User clicks Delete button 
 	Then Warning message with "You cannot delete the default team" text is displayed on the Admin page
-	When User clicks the "CREATE TEAM" Action button
-	Then "Create Team" page should be displayed to the user
+	When User clicks 'CREATE TEAM' button 
+	Then Page with 'Create Team' header is displayed to user
 	When User enters "TestTeam88" in the "Team Name" field
 	And User enters "test" in the Team Description field
 	And User clicks Default Team checkbox
@@ -45,14 +45,14 @@ Scenario: EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam
 	And User selects following Objects from the expandable multiselect
 	| Objects           |
 	| automation_admin1 |
-	And User clicks the "CREATE" Action button
+	And User clicks 'CREATE' button 
 	Then Success message is displayed and contains "The team has been created" text
 	When User enters "My Team" text in the Search field for "Team" column
 	Then 'FALSE' content is displayed in the 'Default' column
 	When User clicks content from "Team" column
 	And User navigates to the 'Team Settings' left menu item
 	And User clicks Default Team checkbox
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then Success message is displayed and contains "The team was successfully updated" text
 	When User click on Back button
 	When User enters "TestTeam88" text in the Search field for "Team" column
@@ -69,21 +69,21 @@ Scenario: EvergreenJnr_AdminPage_AddingMembersToTheTeam
 	When User creates new Team via api
 	| TeamName  | Description | IsDefault |
 	| TestTeam7 | test        | false     |
-	And User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Teams" link on the Admin page
-	Then "Teams" page should be displayed to the user
+	And User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Teams' left menu item
+	Then Page with 'Teams' header is displayed to user
 	When User enters "TestTeam7" text in the Search field for "Team" column
 	And User clicks content from "Team" column
 	When User navigates to the 'Team Members' left menu item
-	When User clicks the "ADD MEMBERS" Action button
+	When User clicks 'ADD MEMBERS' button 
 	And User selects following Objects from the expandable multiselect
 	| Objects           |
 	| automation_admin1 |
 	| automation_admin2 |
 	| automation_admin3 |
 	| eugene            |
-	And User clicks the "ADD USERS" Action button
+	And User clicks 'ADD USERS' button 
 	Then Success message is displayed and contains "The selected users have been added" text
 	When User click on "Username" column header on the Admin page
 	Then data in table is sorted by "Username" column in ascending order on the Admin page
@@ -105,9 +105,9 @@ Scenario: EvergreenJnr_AdminPage_AddingMembersToTheTeam
 	And User selects all rows on the grid
 	And User clicks on Actions button
 	And User selects "Add to another team" in the Actions
-	And User clicks the "CONTINUE" Action button
+	And User clicks 'CONTINUE' button 
 	And User selects "Team 1" team to add
-	And User clicks the "ADD USERS" Action button
+	And User clicks 'ADD USERS' button 
 	Then Success message is displayed and contains "The selected user was added to team Team 1" text
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12326 @DAS16130 @Teams @Cleanup
@@ -115,26 +115,26 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSelectANewTeamDropdownAreWorkingCorre
 	When User creates new Team via api
 	| TeamName | Description | IsDefault |
 	| DAS12326 | 12326       | false     |
-	And User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Teams" link on the Admin page
-	Then "Teams" page should be displayed to the user
+	And User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Teams' left menu item
+	Then Page with 'Teams' header is displayed to user
 	When User enters "DAS12326" text in the Search field for "Team" column
 	And User clicks content from "Team" column
 	And User navigates to the 'Team Members' left menu item
-	And User clicks the "ADD MEMBERS" Action button
+	And User clicks 'ADD MEMBERS' button 
 	And User selects following Objects from the expandable multiselect
 	| Objects           |
 	| automation_admin1 |
 	| automation_admin2 |
 	| automation_admin3 |
-	And User clicks the "ADD USERS" Action button
+	And User clicks 'ADD USERS' button 
 	Then Success message is displayed and contains "The selected users have been added" text
 	When User enters "admin1" text in the Search field for "Username" column
 	And User selects all rows on the grid
 	And User clicks on Actions button
 	And User selects "Add to another team" in the Actions
-	And User clicks the "CONTINUE" Action button
+	And User clicks 'CONTINUE' button 
 	And User type "M" search criteria in Select a new Team field
 	Then following Team are displayed in Select a new Team drop-down:
 	| Options                |

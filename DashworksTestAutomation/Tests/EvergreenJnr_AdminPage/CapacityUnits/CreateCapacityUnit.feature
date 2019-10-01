@@ -7,15 +7,15 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12632 @DAS13626 @DAS14236 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCreatedCorrectly
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Evergreen" link on the Admin page
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Evergreen' left menu item
 	And User navigates to the 'Capacity Units' left menu item
-	Then "Capacity Units" page should be displayed to the user
-	When User clicks the "CREATE EVERGREEN CAPACITY UNIT" Action button
+	Then Page with 'Capacity Units' header is displayed to user
+	When User clicks 'CREATE EVERGREEN CAPACITY UNIT' button 
 	And User type "NotDefaultCapacityUnit13720" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "13720" Name in the "Description" field on the Project details page
-	And User clicks the "CREATE" Action button
+	And User clicks 'CREATE' button 
 	Then Success message is displayed and contains "The capacity unit has been created" text
 	And Success message is displayed and contains "Click here to view the NotDefaultCapacityUnit13720 capacity unit" link
 	And There are no errors in the browser console
@@ -39,12 +39,12 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCreatedCorrectly
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12632 @Cleanup @Do_Not_Run_With_CapacityUnits
 Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitsCreatedCorrectly
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
 	When User creates new Capacity Unit via api
 	| Name                     | Description | IsDefault |
 	| DefaultCapacityUnit13720 | 13720       | true      |
-	And User clicks "Evergreen" link on the Admin page
+	And User navigates to the 'Evergreen' left menu item
 	And User navigates to the 'Capacity Units' left menu item
 	Then 'DefaultCapacityUnit13720' content is displayed in the 'Capacity Unit' column
 	When User enters "DefaultCapacityUnit13720" text in the Search field for "Capacity Unit" column
@@ -70,15 +70,15 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitsCreatedCorrectly
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS13013 @DAS12926 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatMessageAppearsWhenUserCreatesUnitWithTheSameNameInDifferentCase
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	And User creates new Capacity Unit via api
 	| Name                  | Description           | IsDefault |
 	| SameNameCaseSensative | SameNameCaseSensative | false     |
-	And User clicks "Evergreen" link on the Admin page
+	And User navigates to the 'Evergreen' left menu item
 	And User navigates to the 'Capacity Units' left menu item
-	When User clicks the "CREATE EVERGREEN CAPACITY UNIT" Action button
+	When User clicks 'CREATE EVERGREEN CAPACITY UNIT' button 
 	And User type "samenamecaseSensative" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "SameNameCaseSensative" Name in the "Description" field on the Project details page
-	And User clicks the "CREATE" Action button
+	And User clicks 'CREATE' button 
 	Then Error message with "A capacity unit already exists with this name" text is displayed
 	And There are no errors in the browser console

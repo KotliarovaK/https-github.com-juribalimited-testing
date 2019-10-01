@@ -7,8 +7,8 @@ Background: Pre-Conditions
 
 @Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS14224
 Scenario Outline: EvergreenJnr_AllLists_ChecksThatPivotsAreNotShownInTheListToSelectAsAnAdvancedFilter
-	When User clicks "<PageNameForPivot>" on the left-hand menu
-	Then "<PageLabelForPivot>" list should be displayed to the user
+	When User clicks '<PageNameForPivot>' on the left-hand menu
+	Then '<PageLabelForPivot>' list should be displayed to the user
 	When User navigates to Pivot
 	And User selects the following Row Groups on Pivot:
 	| RowGroups   |
@@ -19,12 +19,12 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatPivotsAreNotShownInTheListToSe
 	And User selects the following Values on Pivot:
 	| Values   |
 	| <Values> |
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	When User creates Pivot list with "<PivotName>" name
 	Then "<PivotName>" list is displayed to user
-	When User clicks "<PageNameForFilter>" on the left-hand menu
-	Then "<PageLabelForFilter>" list should be displayed to the user
+	When User clicks '<PageNameForFilter>' on the left-hand menu
+	Then '<PageLabelForFilter>' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User clicks Add New button on the Filter panel
@@ -39,7 +39,7 @@ Examples:
 
 @Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS14325
 Scenario Outline: EvergreenJnr_AllLists_ChecksThatGroupsColumnsAndValuesContainEvergreenCatagoryWithCorrectSubcategories
-	When User clicks "<ListName>" on the left-hand menu
+	When User clicks '<ListName>' on the left-hand menu
 	And User navigates to Pivot
 	And User clicks "ADD ROW GROUP" button in Pivot panel
 	Then User sees "Evergreen" category in Pivot panel
@@ -82,7 +82,7 @@ Examples:
 
 @Evergreen @Applications @EvergreenJnr_Pivot @Pivot @DAS14325
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatGroupsColumnsAndValuesContainEvergreenCatagoryWithCorrectSubcategories
-	When User clicks "Applications" on the left-hand menu
+	When User clicks 'Applications' on the left-hand menu
 	And User navigates to Pivot
 	And User clicks "ADD ROW GROUP" button in Pivot panel
 	Then User sees "Evergreen" category in Pivot panel
@@ -113,7 +113,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatGroupsColumnsAndValuesContainE
 
 @Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS14188 @DAS14748 @DAS15682
 Scenario Outline: EvergreenJnr_AllLists_ChecksThatColumnsCanBeAddedAfterRunningPivot
-	When User clicks "<ListName>" on the left-hand menu
+	When User clicks '<ListName>' on the left-hand menu
 	And User navigates to Pivot
 	And User selects the following Row Groups on Pivot:
 	| RowGroups  |
@@ -124,7 +124,7 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatColumnsCanBeAddedAfterRunningP
 	And User selects the following Values on Pivot:
 	| Values  |
 	| <Value> |
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	Then Plus button is not displayed in the left-pinned column
 	When User clicks "<Link>" link in Lists panel
@@ -145,7 +145,7 @@ Examples:
 
 @Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS13747
 Scenario Outline: EvergreenJnr_AllLists_CheckThatAddColumnCheckBoxRemovedFromFilterPanelWhenUsingNewPivot
-	When User clicks "<ListName>" on the left-hand menu
+	When User clicks '<ListName>' on the left-hand menu
 	And User navigates to Pivot
 	And User selects the following Row Groups on Pivot:
 	| RowGroups  |
@@ -156,7 +156,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatAddColumnCheckBoxRemovedFromFil
 	And User selects the following Values on Pivot:
 	| Values  |
 	| <Value> |
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	When User clicks the Filters button
 	And User selects "<FilterName>" filter from "<CategoryName>" category
@@ -171,7 +171,7 @@ Examples:
 
 @Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS13747
 Scenario Outline: EvergreenJnr_AllLists_CheckThatAddColumnCheckBoxRemovedFromFilterPanelWhenUsingSavedPivot
-	When User clicks "<ListName>" on the left-hand menu
+	When User clicks '<ListName>' on the left-hand menu
 	And User navigates to Pivot
 	And User selects the following Row Groups on Pivot:
 	| RowGroups  |
@@ -182,10 +182,10 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatAddColumnCheckBoxRemovedFromFil
 	And User selects the following Values on Pivot:
 	| Values  |
 	| <Value> |
-	And User clicks the "RUN PIVOT" Action button
+	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	When User creates Pivot list with "<PivotName>" name
-	And User clicks "<ListName>" on the left-hand menu
+	And User clicks '<ListName>' on the left-hand menu
 	And User navigates to the "<PivotName>" list
 	And User clicks the Filters button
 	And User selects "<FilterName>" filter from "<CategoryName>" category

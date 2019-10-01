@@ -292,6 +292,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             Utils.Verify.IsFalse(message.SuccessMessage.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
         }
 
+        [Then(@"Success message is not displayed")]
+        public void ThenSuccessMessageIsNotDisplayed()
+        {
+            var message = _driver.NowAt<BaseGridPage>();
+            Verify.IsFalse(message.SuccessMessage.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
+        }
+
+
         [Then(@"Filling field error is not displayed")]
         public void ThenFillingFieldErrorIsNotDisplayed()
         {

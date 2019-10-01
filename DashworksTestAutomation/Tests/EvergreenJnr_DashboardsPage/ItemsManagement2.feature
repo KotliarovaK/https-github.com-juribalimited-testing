@@ -9,62 +9,62 @@ Background: Pre-Conditions
 Scenario: EvergreenJnr_DashboardsPage_CheckThatNoMoreSectionsCanBeAddedAfter10WidgetsCreating
 	When Dashboard with "Dashboard for DAS15721" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
-	And User clicks the "ADD SECTION" Action button
-	And User clicks the "ADD WIDGET" Action button
+	And User clicks 'ADD SECTION' button 
+	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title    | List        | MaxRows | MaxColumns |
 	| List       | 1_Widget | All Devices | 5       | 5          |
 	Then "1_Widget" Widget is displayed to the user
 	#==========================================================#
-	When User clicks the "ADD WIDGET" Action button
+	When User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title    | List        | MaxRows | MaxColumns |
 	| List       | 2_Widget | All Devices | 5       | 5          |
 	Then "2_Widget" Widget is displayed to the user
 	#==========================================================#
-	When User clicks the "ADD WIDGET" Action button
+	When User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title    | List        | MaxRows | MaxColumns |
 	| List       | 3_Widget | All Devices | 5       | 5          |
 	Then "3_Widget" Widget is displayed to the user
 	#==========================================================#
-	When User clicks the "ADD WIDGET" Action button
+	When User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title    | List        | MaxRows | MaxColumns |
 	| List       | 4_Widget | All Devices | 5       | 5          |
 	Then "4_Widget" Widget is displayed to the user
 	#==========================================================#
-	When User clicks the "ADD WIDGET" Action button
+	When User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title    | List        | MaxRows | MaxColumns |
 	| List       | 5_Widget | All Devices | 5       | 5          |
 	Then "5_Widget" Widget is displayed to the user
 	#==========================================================#
-	When User clicks the "ADD WIDGET" Action button
+	When User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title    | List        | MaxRows | MaxColumns |
 	| List       | 6_Widget | All Devices | 5       | 5          |
 	Then "6_Widget" Widget is displayed to the user
 	#==========================================================#
-	When User clicks the "ADD WIDGET" Action button
+	When User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title    | List        | MaxRows | MaxColumns |
 	| List       | 7_Widget | All Devices | 5       | 5          |
 	Then "7_Widget" Widget is displayed to the user
 	#==========================================================#
-	When User clicks the "ADD WIDGET" Action button
+	When User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title    | List        | MaxRows | MaxColumns |
 	| List       | 8_Widget | All Devices | 5       | 5          |
 	Then "8_Widget" Widget is displayed to the user
 	#==========================================================#
-	When User clicks the "ADD WIDGET" Action button
+	When User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title    | List        | MaxRows | MaxColumns |
 	| List       | 9_Widget | All Devices | 5       | 5          |
 	Then "9_Widget" Widget is displayed to the user
 	#==========================================================#
-	When User clicks the "ADD WIDGET" Action button
+	When User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title     | List        | MaxRows | MaxColumns |
 	| List       | 10_Widget | All Devices | 5       | 5          |
@@ -89,11 +89,11 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoMoreSectionsCanBeAddedAfter10Wi
 Scenario: EvergreenJnr_DashboardsPage_CheckMovingWidgetsBetweenSections
 	When Dashboard with "Dashboard_DAS14618" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
-	And User clicks the "ADD WIDGET" Action button
+	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title             | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    |
 	| Pie        | WidgetForDAS14618 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC |
-	And User clicks the "ADD SECTION" Action button
+	And User clicks 'ADD SECTION' button 
 	And User clicks Ellipsis menu for "WidgetForDAS14618" Widget on Dashboards page
 	And User clicks "Move to section" item from Ellipsis menu on Dashboards page
 	Then Move to Section pop up is displayed to the User
@@ -115,7 +115,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckMovingWidgetsBetweenSections
 Scenario: EvergreenJnr_DashboardsPage_CheckErrorTextAndLinkOnTheWarningMessage
 	When Dashboard with "Dashboard_DAS16326" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
-	And User clicks the "ADD WIDGET" Action button
+	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title               | List                                | MaxRows | MaxColumns |
 	| List       | Widget_For_DAS16326 | Device List (Complex) - BROKEN LIST | 10      | 10         |
@@ -127,7 +127,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckErrorTextAndLinkOnTheWarningMessage
 Scenario: EvergreenJnr_DashboardsPage_CheckErrorTextDisplayingWhenListRefersToBrokenList
 	When Dashboard with "Dashboard_DAS16326" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
-	And User clicks the "ADD WIDGET" Action button
+	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title               | List                                | MaxRows | MaxColumns |
 	| List       | Widget_For_DAS17551 | Dependant List Filter - BROKEN LIST | 10      | 10         |
@@ -165,8 +165,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSettingsDisplayedForDashboard
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS12974 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatAnyDashboardCanBeMarkedFavorite
-	When User clicks "Dashboards" on the left-hand menu
-	And User clicks the "CREATE DASHBOARD" Action button
+	When User clicks 'Dashboards' on the left-hand menu
+	And User clicks 'CREATE DASHBOARD' button 
 	And User creates new Dashboard with "Dashboard_DAS12974" name
 	Then Dashboard with "Dashboard_DAS12974" title displayed in All Dashboards
 	
@@ -210,11 +210,11 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatAnyDashboardCanBeMarkedAsDefault
 Scenario: EvergreenJnr_DashboardsPage_CheckThatSectionCanBeDeleted
 	When Dashboard with "Dashboard for DAS12974SECTION" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
-	And User clicks the "ADD WIDGET" Action button
+	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title            | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
 	| Pie        | DAS12974SECTION1 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC | 10        | true       |
-	And User clicks the "ADD SECTION" Action button
+	And User clicks 'ADD SECTION' button 
 	And User clicks "ADD WIDGET" button for "2" Section on Dashboards page
 	And User creates new Widget
 	| WidgetType | Title            | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
@@ -229,8 +229,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSectionCanBeDeleted
 @Evergreen @EvergreenJnr_DashboardsPage @DAS12974 @Cleanup
 Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatErrorMessageDisplayedWhenDashboardNameExists
 	When Dashboard with "DAS12974DUPLICATED" name created via API and opened
-	When User clicks "Dashboards" on the left-hand menu
-	And User clicks the "CREATE DASHBOARD" Action button
+	When User clicks 'Dashboards' on the left-hand menu
+	And User clicks 'CREATE DASHBOARD' button 
 	And User types "<DashboardName>" as dashboard title
 	Then Red Dashboard should be unique error displayed to user
 	When User types "extra" as dashboard title
@@ -258,7 +258,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckDashboardTranslationsWork1
 Scenario: EvergreenJnr_DashboardsPage_CheckThatItsNotPossibleToDeleteWidgetWhenEditModeIsOff
 	When Dashboard with "Dashboard for DAS17985" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
-	And User clicks the "ADD WIDGET" Action button
+	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title             | List             | SplitBy | AggregateFunction | OrderBy   | MaxValues | ShowLegend |
 	| Pie        | WidgetForDAS17985 | All Applications | Vendor  | Count             | Count ASC | 10        | true       |
@@ -272,12 +272,12 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatItsNotPossibleToDeleteWidgetWhenE
 Scenario: EvergreenJnr_DashboardsPage_CheckThatDuplicateOptionWorksAfterMovingWidget
 	When Dashboard with "Dashboard for DAS18152" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
-	And User clicks the "ADD WIDGET" Action button
+	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title    | List        | MaxRows | MaxColumns |
 	| List       | 1_Widget | All Devices | 5       | 5          |
 	Then "1_Widget" Widget is displayed to the user
-	When User clicks the "ADD WIDGET" Action button
+	When User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title    | List        | MaxRows | MaxColumns |
 	| List       | 2_Widget | All Devices | 5       | 5          |
@@ -291,3 +291,10 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDuplicateOptionWorksAfterMovingWi
 	| 2_Widget    |
 	| 1_Widget    |
 	| 1_Widget2   |
+
+@Evergreen @Devices @EvergreenJnr_BaseDashboardPage @DAS18080
+Scenario: EvergreenJnr_Dashboard_CheckThatThereIsNoPossibilityGoBackGromThePrintPreviewModeAfterClickingTheDashworksLogo
+	When User clicks "print"  button on the Dashboards page
+	Then Print Preview is displayed to the User
+	And User clicks on Dashworks logo
+	Then Print Preview is displayed to the User

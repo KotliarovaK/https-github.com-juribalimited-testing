@@ -171,9 +171,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User clicks Show Dashboards panel icon on Dashboards page")]
         public void WhenUserClicksShowDashboardsPanelOnDashboardsPage()
         {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            _driver.WaitForElementToBeDisplayed(page.DashboardsPanelIcon);
-            page.DashboardsPanelIcon.Click();
+            var page = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForElementToBeDisplayed(page.ExpandSideNavPanelIcon);
+            page.ExpandSideNavPanelIcon.Click();
         }
 
         [When(@"User clicks Edit mode trigger on Dashboards page")]
@@ -724,6 +724,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenWidgetPreviewIsDisplayedToTheUser()
         {
             var page = _driver.NowAt<AddWidgetPage>();
+            _driver.WaitForDataLoading();
             Utils.Verify.IsTrue(page.WidgetPreview.Displayed(), "Widget Preview is not displayed");
         }
 
@@ -735,7 +736,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             int prevX = preview.WidgetPreview.Location.X;
             int prevY = preview.WidgetPreview.Location.Y;
 
-            var widget = _driver.NowAt<EvergreenDashboardsPage>();
+            var widget = _driver.NowAt<AddWidgetPage>();
             int widgetWidth = widget.GetCardWidgetPreviewText().Size.Width;
             int widgetX = widget.GetCardWidgetPreviewText().Location.X;
             int widgetY = widget.GetCardWidgetPreviewText().Location.Y;
@@ -880,6 +881,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.That(headers.Select(x=>x.Text).ToList().FindAll(x => x.ToLower().Contains(column.ToLower())).Count(), Is.EqualTo(0), $"Table contains {column} header");
         }
 
+        [Then(@"Table columns of '(.*)' widget placed in the next order:")]
+        public void ThenThereIsNoSpecifiedColumnForWidget(string widget, Table table)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
+
+            var headers = page.GetTableWidgetHeaders(widget).Select(column => column.Text).ToList();
+            var expectedTable = table.Rows.SelectMany(row => row.Values);
+
+            Utils.Verify.That(headers, Is.EqualTo(expectedTable), $"Table orders is wrong");
+        }
+        
         [Then(@"Permission panel is displayed to the user")]
         public void ThenPermissionPanelIsDisplayedToTheUser()
         {
@@ -898,16 +911,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserAddsNewPersonToSharingList(Table table)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            _driver.WaitForElementToBeDisplayed(page.PermissionAddUserButton);
 
-            Thread.Sleep(300);
+            _driver.WaitForElementToBeDisplayed(page.PermissionAddUserButton);
+            _driver.WaitForElementToBeEnabled(page.PermissionAddUserButton);
             page.PermissionAddUserButton.Click();
 
             foreach (var row in table.Rows)
             {
                 if (!string.IsNullOrEmpty(row["User"]))
                 {
-                    Thread.Sleep(300);
+                    _driver.WaitForElementToBeEnabled(page.PermissionUserField);
                     page.PermissionUserField.Click();
                     page.PermissionUserField.Clear();
                     page.PermissionUserField.SendKeys(row["User"]);
@@ -916,12 +929,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
                 if (!string.IsNullOrEmpty(row["Permission"]))
                 {
-                    Thread.Sleep(300);
+                    _driver.WaitForElementToBeEnabled(page.PermissionTypeField);
                     page.PermissionTypeField.Click();
                     page.SelectOptionFromList(row["Permission"]);
                 }
 
-                Thread.Sleep(300);
+                _driver.WaitForElementToBeEnabled(page.PermissionAddUserButton);
                 page.PermissionAddUserButton.Click();
 
                 Thread.Sleep(2000);
@@ -1012,7 +1025,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User clicks first Dashboard in dashboards list")]
         public void WhenUserClickFirstDashboardInDashboardsList()
         {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            var page = _driver.NowAt<AddWidgetPage>();
             page.GetFirstDashboardFromList().Click();
         }
         
@@ -1093,8 +1106,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<PrintDashboardsPage>();
             Utils.Verify.IsTrue(page.PrintPreviewSettingsPopUp.Displayed(), "Print Preview is not Displayed");
-            Utils.Verify.IsTrue(page.DashWorksPrintLogo.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
-            Utils.Verify.IsTrue(page.PrintPreviewWidgets.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
+            Utils.Verify.IsTrue(page.DashWorksPrintLogo.Displayed(), "Dashworks logo isn't displayed");
+            Utils.Verify.IsTrue(page.PrintPreviewWidgets.Displayed, "Print preview widgets aren't displayed");
         }
         
         [Then(@"There is no breadcrumbs displayed on Dashboard page")]
@@ -1164,10 +1177,26 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.IsTrue(page.DataLabels.Displayed(), "Data Labels are not displayed");
         }
 
+        [Then(@"Data Labels are displayed on the Preview page")]
+        public void ThenDataLabelsAreDisplayedOnThePreviewPage()
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            _driver.WaitForDataLoading();
+            Utils.Verify.IsTrue(page.DataLabels.Displayed(), "Data Labels are not displayed");
+        }
+
         [Then(@"""(.*)"" data label is displayed on the Dashboards page")]
         public void ThenDataLabelIsDisplayedOnTheDashboardsPage(string text)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
+            Utils.Verify.That(page.DataLabels.Text, Is.EqualTo(text), $"{text} data label is not displayed");
+        }
+
+        [Then(@"""(.*)"" data label is displayed on the Preview page")]
+        public void ThenDataLabelIsDisplayedOnThePreviewPage(string text)
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
             _driver.WaitForDataLoading();
             Utils.Verify.That(page.DataLabels.Text, Is.EqualTo(text), $"{text} data label is not displayed");
         }
@@ -1204,7 +1233,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"Widget Preview shows ""(.*)"" as First Cell value")]
         public void ThenWidgetPreviewShowsAsFirstCellValue(string option)
         {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            var page = _driver.NowAt<AddWidgetPage>();
             Utils.Verify.That(page.GetCardWidgetPreviewText().Text, Is.EqualTo(option), "Widget Preview shown different value");
         }
 
@@ -1217,6 +1246,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.That(page.GetWidgetLinks(widgetName).Count, Is.EqualTo(0), $"Found some links in widget");
         }
 
+        [Then(@"'(.*)' color displayed for '(.*)' value in table '(.*)' widget")]
+        public void ThenNextColorDisplayedForValueInWidget(string color, string value, string widget)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
+
+            Utils.Verify.That(page.GetTableGridValues(widget)
+                .Select(x => x.Text.Equals(value) && x.GetAttribute("style").Contains(ColorsConvertor.ConvertToHex(color))).Count(), Is.GreaterThan(0), $"Wrong color detected");
+        }
+        
         #region Dashboards details
 
         [When(@"User changes dashboard name to ""(.*)""")]
@@ -1420,6 +1459,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
-        #endregion
-    }
+        [Then(@"User clicks on Dashworks logo")]
+        public void ThenUserClicksOnDashworksLogo()
+        {
+            var page = _driver.NowAt<PrintDashboardsPage>();
+            try
+            {
+                page.DashWorksPrintLogo.Click();
+            } catch (System.Reflection.TargetInvocationException)
+            {
+                return;
+            }
+            throw new Exception("Dashworks Logo on Print Preview page is clickable");
+        }
+
+    #endregion
+}
 }

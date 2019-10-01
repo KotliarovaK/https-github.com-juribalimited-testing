@@ -54,7 +54,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckWarningMessageUsingPrivateListForPubl
 	Then "Second_List_DAS16380" list is displayed to user
 	When Dashboard with "Dashboard for DAS16380" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
-	And User clicks the "ADD WIDGET" Action button
+	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title               | List                | MaxRows | MaxColumns |
 	| List       | Widget_For_DAS16380 | First_List_DAS16380 | 10      | 10         |
@@ -65,32 +65,32 @@ Scenario: EvergreenJnr_DashboardsPage_CheckWarningMessageUsingPrivateListForPubl
 	When User select "Everyone can see" sharing option on the Dashboards page
 	Then Review Widget List Permissions is displayed to the User
 	When User selects "Everyone can see" permission for "First_List_DAS16380" list on Permissions Pop-up
-	And User clicks the "UPDATE & SHARE" Action button
-	And User clicks the "ADD WIDGET" Action button
+	And User clicks 'UPDATE & SHARE' button 
+	And User clicks 'ADD WIDGET' button 
 	When User selects "List" in the "Widget Type" Widget dropdown
 	And User enters "Widget_For_DAS16380_1" as Widget Title
 	And User selects "Second_List_DAS16380" as Widget List
 	Then User sees "You have chosen a restricted list for a shared dashboard, some users may not be able to see this widget" warning text below Lists field
 	#change permission to Everyone can edit
-	When User clicks the "CREATE" Action button
+	When User clicks 'CREATE' button 
 	When User clicks Dashboards Details icon on Dashboards page
 	Then User sees Dashboards context menu on Dashboards page
 	When User select "Everyone can edit" sharing option on the Dashboards page
 	Then Review Widget List Permissions is displayed to the User
-	When User clicks the "IGNORE & SHARE" Action button
-	And User clicks the "ADD WIDGET" Action button
+	When User clicks 'IGNORE & SHARE' button 
+	And User clicks 'ADD WIDGET' button 
 	When User selects "List" in the "Widget Type" Widget dropdown
 	And User enters "Widget_For_DAS16380_2" as Widget Title
 	And User selects "Second_List_DAS16380" as Widget List
 	Then User sees "You have chosen a restricted list for a shared dashboard, some users may not be able to see this widget" warning text below Lists field
 	#change permission to Everyone can edit
-	When User clicks the "CREATE" Action button
+	When User clicks 'CREATE' button 
 	When User clicks Dashboards Details icon on Dashboards page
 	Then User sees Dashboards context menu on Dashboards page
 	When User select "Specific users / teams" sharing option on the Dashboards page
 	Then Review Widget List Permissions is displayed to the User
-	When User clicks the "IGNORE & SHARE" Action button
-	And User clicks the "ADD WIDGET" Action button
+	When User clicks 'IGNORE & SHARE' button 
+	And User clicks 'ADD WIDGET' button 
 	When User selects "List" in the "Widget Type" Widget dropdown
 	And User enters "Widget_For_DAS16380_3" as Widget Title
 	And User selects "Second_List_DAS16380" as Widget List
@@ -107,7 +107,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWarningPopUpDisplayedWhenChanging
 	When Dashboard with "Dashboard for DAS14841" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	#add widget
-	When User clicks the "ADD WIDGET" Action button
+	When User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title             | List               | SplitBy  | AggregateFunction | OrderBy    |
 	| Table      | WidgetForDAS14841 | DeviceListFor14841 | Hostname | Count             | Count DESC |
@@ -154,7 +154,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatIgnoreAndShareWorksProperlyInWarn
 	When Dashboard with "Dashboard for DAS14841_1" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	#add widget
-	When User clicks the "ADD WIDGET" Action button
+	When User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title             | List                 | SplitBy  | AggregateFunction | OrderBy    |
 	| Table      | WidgetForDAS14841 | DeviceListFor14841_1 | Hostname | Count             | Count DESC |
@@ -169,8 +169,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatIgnoreAndShareWorksProperlyInWarn
 	Then Review Widget List Permissions is not displayed to the User
 	And Permission "Everyone can see" displayed in Dashboard Details
 	#teardown
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User clicks Settings button for "DeviceListFor14841_1" list
 	And User clicks Manage in the list panel
 	Then List details panel is displayed to the user
@@ -187,7 +187,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksProperlyInWarn
 	When Dashboard with "Dashboard for DAS14841_2" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	#add widget
-	When User clicks the "ADD WIDGET" Action button
+	When User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title             | List                 | SplitBy  | AggregateFunction | OrderBy    |
 	| Table      | WidgetForDAS14841 | DeviceListFor14841_2 | Hostname | Count             | Count DESC |
@@ -202,8 +202,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksProperlyInWarn
 	Then Review Widget List Permissions is not displayed to the User
 	And Permission "Everyone can see" displayed in Dashboard Details
 	#teardown
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User clicks Settings button for "DeviceListFor14841_2" list
 	And User clicks Manage in the list panel
 	Then List details panel is displayed to the user
@@ -217,7 +217,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksOnlyForParticu
 	| Service Pack or Build |
 	And User create dynamic list with "DeviceListFor14841_3" name on "Devices" page
 	#create private list#2
-	When User clicks "Devices" on the left-hand menu
+	When User clicks 'Devices' on the left-hand menu
 	And User clicks the Columns button
 	And ColumnName is entered into the search box and the selection is clicked
 	| ColumnName      |
@@ -228,12 +228,12 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksOnlyForParticu
 	When Dashboard with "Dashboard for DAS14841_3" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	#add widget#1
-	When User clicks the "ADD WIDGET" Action button
+	When User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title             | List                 | SplitBy  | AggregateFunction | OrderBy    |
 	| Table      | WidgetForDAS14841 | DeviceListFor14841_3 | Hostname | Count             | Count DESC |
 	#add widget#2
-	When User clicks the "ADD WIDGET" Action button
+	When User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title             | List                 | SplitBy  | AggregateFunction | OrderBy    |
 	| Table      | WidgetForDAS14841 | DeviceListFor14841_4 | Hostname | Count             | Count DESC |
@@ -249,8 +249,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksOnlyForParticu
 	When User clicks the "UPDATE & SHARE" button on Permissions Pop-up
 	Then Review Widget List Permissions is not displayed to the User
 	And Permission "Everyone can see" displayed in Dashboard Details
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User clicks Settings button for "DeviceListFor14841_3" list
 	And User clicks Manage in the list panel
 	Then List details panel is displayed to the user
@@ -270,18 +270,18 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCantBeChangedForRea
 	| automation_admin1 | m!gration |
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User clicks on 'Hostname' column header
 	And User create custom list with "DeviceListFor14841_Read" name
 	Then "DeviceListFor14841_Read" list is displayed to user
 	When User clicks the List Details button
 	And User select "Specific users / teams" sharing option
-	And User clicks the "ADD USER" Action button
+	And User clicks 'ADD USER' button 
 	And User selects the "Automation Admin 10" user for sharing
 	And User select "Read" in Select Access dropdown
-	And User clicks the "ADD USER" Action button
-	And User clicks the "ADD USER" Action button
+	And User clicks 'ADD USER' button 
+	And User clicks 'ADD USER' button 
 	And User clicks the Logout button
 	Then User is logged out
 	When User clicks the Switch to Evergreen link
@@ -293,7 +293,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCantBeChangedForRea
 	#create dashboard
 	When Dashboard with "Dashboard for DAS14841_Read" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
-	And User clicks the "ADD WIDGET" Action button
+	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title                  | List                    | SplitBy  | AggregateFunction | OrderBy    |
 	| Table      | WidgetForDAS14841_Read | DeviceListFor14841_Read | Hostname | Count             | Count DESC |

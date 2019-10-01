@@ -5,12 +5,12 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11762 @DAS12009 @Buckets
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11762 @DAS12009 @DAS18098 @Buckets
 Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteDataFromFilterTextFieldForBuckets
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Evergreen" link on the Admin page
-	Then "Buckets" page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Evergreen' left menu item
+	Then Page with 'Buckets' header is displayed to user
 	When User clicks Reset Filters button on the Admin page
 	#Then Counter shows "558" found rows
 	When User have opened Column Settings for "Bucket" column
@@ -52,8 +52,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11944 @Buckets @archived
 Scenario: EvergreenJnr_AdminPage_CheckSelectedRowsCountDisplayingOnBucketsGrids
-	When User clicks Admin on the left-hand menu
-	And User clicks "Evergreen" link on the Admin page
+	When User clicks 'Admin' on the left-hand menu
+	And User navigates to the 'Evergreen' left menu item
 	And User selects all rows on the grid
 	And User clicks Reset Filters button on the Admin page
 	Then User sees "11" of "607" rows selected label
@@ -73,9 +73,9 @@ Scenario: EvergreenJnr_AdminPage_CheckSelectedRowsCountDisplayingOnBucketsGrids
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12491 @Buckets
 Scenario: EvergreenJnr_AdminPage_CheckThatSingularFoundItemLabelDisplaysOnActionsToolbarforBucketsList
-	When User clicks Admin on the left-hand menu
-	And User clicks "Evergreen" link on the Admin page
-	Then "Buckets" page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	And User navigates to the 'Evergreen' left menu item
+	Then Page with 'Buckets' header is displayed to user
 	When User clicks Reset Filters button on the Admin page
 	And User enters "birmingham" text in the Search field for "Bucket" column
 	Then Rows counter contains "3" found row of all rows
@@ -90,13 +90,13 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderOfBucketsAfterCreateOrUpda
 	| aab  | I-Team   |
 	| aba  | Admin IT |
 	| waa  | IB Team  |
-	When User clicks Admin on the left-hand menu
-	And User clicks "Evergreen" link on the Admin page
+	When User clicks 'Admin' on the left-hand menu
+	And User navigates to the 'Evergreen' left menu item
 	Then data in table is sorted by "Bucket" column in ascending order by default on the Admin page
 	When User enters "1ba" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
 	And User enters "a1ba" in the "Bucket Name" field
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then data in table is sorted by "Bucket" column in ascending order by default on the Admin page
 	When User deletes "aab" Bucket in the Administration
 	And User clicks refresh button in the browser

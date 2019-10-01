@@ -7,8 +7,8 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Cleanup @Cleanup @Projects
 Scenario Outline: EvergreenJnr_ChangingApplicationScopeListToAnotherListForMailboxProject
-	When User clicks "Applications" on the left-hand menu
-	Then "All Applications" list should be displayed to the user
+	When User clicks 'Applications' on the left-hand menu
+	Then 'All Applications' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Vendor" filter where type is "Equals" with added column and following value:
@@ -113,9 +113,9 @@ Scenario: EvergreenJnr_AdminPage_AddingAndDeletingPermissionsForMailboxProject
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13205 @Cleanup @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThatBannerDisplaysOnScopeDetailsPage
-	When User clicks Admin on the left-hand menu
-	And User clicks "Projects" link on the Admin page
-	And User clicks the "CREATE PROJECT" Action button
+	When User clicks 'Admin' on the left-hand menu
+	And User navigates to the 'Projects' left menu item
+	And User clicks 'CREATE PROJECT' button 
 	And User enters "TestName13205" in the "Project Name" field
 	And User selects 'All Devices' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
@@ -127,7 +127,7 @@ Scenario: EvergreenJnr_AdminPage_AddingRequestTypesAndCategories
 	When Project created via API and opened
 	| ProjectName | Scope         | ProjectTemplate | Mode               |
 	| TestName18  | All Mailboxes | None            | Standalone Project |
-	When User clicks "Projects" on the left-hand menu
+	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "TestName18" Project
 	Then Project with "TestName18" name is displayed correctly
@@ -146,10 +146,10 @@ Scenario: EvergreenJnr_AdminPage_AddingRequestTypesAndCategories
 	| 18MailboxCategory | UserScheduledProject | Mailbox          |
 	Then Success message is displayed with "Category successfully created." text
 	When User navigate to Evergreen link
-	And User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
+	And User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Projects' left menu item
+	Then Page with 'Projects' header is displayed to user
 	When User enters "TestName18" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	Then Project "TestName18" is displayed to user
@@ -168,10 +168,10 @@ Scenario: EvergreenJnr_AdminPage_AddingRequestTypesAndCategories
 	| 00DB4000EDD84951993@bclabs.local (CSC, SS)         |
 	| 0E3406ED5D8349D0996@bclabs.local (Mickley, Leslie) |
 	| 0E3406ED5D8349D0996@bclabs.local (Mickley, Leslie) |
-	And User clicks the "UPDATE ALL CHANGES" Action button
+	And User clicks 'UPDATE ALL CHANGES' button 
 	Then Warning message with "2 mailboxes will be added" text is displayed on the Admin page
 	And "Mailboxes 2/0" is displayed in the tab header on the Admin page
-	When User clicks the "UPDATE PROJECT" Action button
+	When User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "2 objects queued for onboarding, 0 objects offboarded" text
 	And "Mailboxes to add (0 of 14782 selected)" is displayed to the user in the Project Scope Changes section
 	And "[Default (Mailbox)]" Path is displayed to the user

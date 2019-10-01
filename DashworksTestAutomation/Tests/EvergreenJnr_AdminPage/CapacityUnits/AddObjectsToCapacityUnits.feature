@@ -10,8 +10,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDevicesAreAddedCorrectly
 	When User creates new Capacity Unit via api
 	| Name                     | Description | IsDefault |
 	| CapacityUnit12141Devices | Devices     | false     |
-	And User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	And User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Hostname" rows in the grid
@@ -25,14 +25,14 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDevicesAreAddedCorrectly
 	And User selects "Update capacity unit" Bulk Update Type on Action panel
 	And User selects "Evergreen" Project or Evergreen on Action panel
 	And User selects "CapacityUnit12141Devices" value for "Capacity Unit" dropdown with search on Action panel
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then User clicks "UPDATE" button on message box
 	And Success message with "5 updates have been queued" text is displayed on Action panel
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Evergreen" link on the Admin page
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Evergreen' left menu item
 	And User navigates to the 'Capacity Units' left menu item
-	Then "Capacity Units" page should be displayed to the user
+	Then Page with 'Capacity Units' header is displayed to user
 	When User enters "CapacityUnit12141Devices" text in the Search field for "Capacity Unit" column
 	Then "5" content is displayed in "Devices" column
 
@@ -41,8 +41,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatUsersAreAddedCorrectly
 	When User creates new Capacity Unit via api
 	| Name                   | Description | IsDefault |
 	| CapacityUnit12141Users | Users       | false     |
-	And User clicks "Users" on the left-hand menu
-	Then "All Users" list should be displayed to the user
+	And User clicks 'Users' on the left-hand menu
+	Then 'All Users' list should be displayed to the user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Username" rows in the grid
@@ -56,14 +56,14 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatUsersAreAddedCorrectly
 	And User selects "Update capacity unit" Bulk Update Type on Action panel
 	And User selects "Evergreen" Project or Evergreen on Action panel
 	And User selects "CapacityUnit12141Users" value for "Capacity Unit" dropdown with search on Action panel
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then User clicks "UPDATE" button on message box
 	And Success message with "5 updates have been queued" text is displayed on Action panel
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Evergreen" link on the Admin page
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Evergreen' left menu item
 	And User navigates to the 'Capacity Units' left menu item
-	Then "Capacity Units" page should be displayed to the user
+	Then Page with 'Capacity Units' header is displayed to user
 	When User enters "CapacityUnit12141Users" text in the Search field for "Capacity Unit" column
 	Then "5" content is displayed in "Users" column
 
@@ -72,8 +72,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatApplicationsAreAddedCorrectly
 	When User creates new Capacity Unit via api
 	| Name                          | Description  | IsDefault |
 	| CapacityUnit12141Applications | Applications | false     |
-	And User clicks "Applications" on the left-hand menu
-	Then "All Applications" list should be displayed to the user
+	And User clicks 'Applications' on the left-hand menu
+	Then 'All Applications' list should be displayed to the user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Application" rows in the grid
@@ -87,14 +87,14 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatApplicationsAreAddedCorrectly
 	And User selects "Update capacity unit" Bulk Update Type on Action panel
 	And User selects "Evergreen" Project or Evergreen on Action panel
 	And User selects "CapacityUnit12141Applications" value for "Capacity Unit" dropdown with search on Action panel
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then User clicks "UPDATE" button on message box
 	And Success message with "5 updates have been queued" text is displayed on Action panel
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Evergreen" link on the Admin page
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Evergreen' left menu item
 	And User navigates to the 'Capacity Units' left menu item
-	Then "Capacity Units" page should be displayed to the user
+	Then Page with 'Capacity Units' header is displayed to user
 	When User enters "CapacityUnit12141Applications" text in the Search field for "Capacity Unit" column
 	Then "5" content is displayed in "Applications" column
 
@@ -103,8 +103,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatMailboxesAreAddedCorrectly
 	When User creates new Capacity Unit via api
 	| Name                       | Description | IsDefault |
 	| CapacityUnit12141Mailboxes | Mailboxes   | false     |
-	And User clicks "Mailboxes" on the left-hand menu
-	Then "All Mailboxes" list should be displayed to the user
+	And User clicks 'Mailboxes' on the left-hand menu
+	Then 'All Mailboxes' list should be displayed to the user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Email Address" rows in the grid
@@ -118,13 +118,13 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatMailboxesAreAddedCorrectly
 	And User selects "Update capacity unit" Bulk Update Type on Action panel
 	And User selects "Evergreen" Project or Evergreen on Action panel
 	And User selects "CapacityUnit12141Mailboxes" value for "Capacity Unit" dropdown with search on Action panel
-	And User clicks the "UPDATE" Action button
+	And User clicks 'UPDATE' button 
 	Then User clicks "UPDATE" button on message box
 	And Success message with "5 updates have been queued" text is displayed on Action panel
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Evergreen" link on the Admin page
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Evergreen' left menu item
 	And User navigates to the 'Capacity Units' left menu item
-	Then "Capacity Units" page should be displayed to the user
+	Then Page with 'Capacity Units' header is displayed to user
 	When User enters "CapacityUnit12141Mailboxes" text in the Search field for "Capacity Unit" column
 	Then "5" content is displayed in "Mailboxes" column

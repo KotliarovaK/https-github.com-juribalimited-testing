@@ -7,8 +7,8 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12154 @DAS12742 @DAS12872 @Cleanup @Project_Creation_and_Scope
 Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedWhenDeletingListUsingInTheProjectThatWasDeleted
-	When User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Compliance" filter where type is "Equals" with added column and following checkboxes:
@@ -17,23 +17,23 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedWhenDeleti
 	Then "Compliance" filter is added to the list
 	When User create dynamic list with "TestList0A78U9" name on "Devices" page
 	Then "TestList0A78U9" list is displayed to user
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Projects' left menu item
+	Then Page with 'Projects' header is displayed to user
+	When User clicks 'CREATE PROJECT' button 
+	Then Page with 'Create Project' subheader is displayed to user
 	When User enters "TestProject6" in the "Project Name" field
 	And User selects 'TestList0A78U9' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page
-	Then "Projects" page should be displayed to the user
+	Then Page with 'Projects' header is displayed to user
 	Then Success message is displayed and contains "The project has been created" text
 	And There are no errors in the browser console
 	When User enters "TestProject6" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
-	And User clicks "Devices" on the left-hand menu
-	Then "All Devices" list should be displayed to the user
+	And User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User navigates to the "TestList0A78U9" list
 	And User clicks Settings button in the list panel
 	Then Settings panel is displayed to the user
@@ -80,15 +80,15 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCo
 
 @Evergreen @AllLists @EvergreenJnr_AdminPage @AdminPage @Projects @DAS11886 @DAS12613 @DAS13199 @Cleanup @Project_Creation_and_Scope
 Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeletingUsedForProjectLists 
-	When User clicks "Users" on the left-hand menu
-	Then "All Users" list should be displayed to the user
+	When User clicks 'Users' on the left-hand menu
+	Then 'All Users' list should be displayed to the user
 	When User clicks on 'Username' column header
 	And User create dynamic list with "ListForProject" name on "Users" page
 	When Project created via API and opened
 	| ProjectName  | Scope          | ProjectTemplate | Mode               |
 	| TestProject1 | ListForProject | None            | Standalone Project |
-	And User clicks "Users" on the left-hand menu
-	Then "All Users" list should be displayed to the user
+	And User clicks 'Users' on the left-hand menu
+	Then 'All Users' list should be displayed to the user
 	When User navigates to the "ListForProject" list
 	Then "ListForProject" list is displayed to user
 	When User clicks Settings button in the list panel
@@ -96,10 +96,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeleting
 	When User clicks Delete in the list panel
 	Then "list is used by 1 project, do you wish to proceed?" message is displayed in the lists panel
 	And User clicks Delete button on the warning message in the lists panel
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Projects' left menu item
+	Then Page with 'Projects' header is displayed to user
 	When User clicks on 'TestProject1' cell from 'Project' column
 	Then Project "TestProject1" is displayed to user
 	Then Warning message with "The scope for this project refers to a deleted list, this must be updated before proceeding" text is displayed on the Admin page
@@ -119,7 +119,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	And User changes Project Name to "NewProjectName"
 	And User changes Project Short Name to "NewShort4875"
 	And User changes Project Description to "45978DescriptionText"
-	And User clicks the "ADD LANGUAGE" Action button
+	And User clicks 'ADD LANGUAGE' button 
 	And User selects "Dutch" language on the Project details page
 	And User opens menu for selected language
 	Then User selects "Set as default" option for selected language
@@ -161,11 +161,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	And User enters "NewProjectName" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
+	When User clicks 'CREATE PROJECT' button 
+	Then Page with 'Create Project' subheader is displayed to user
 	When User enters "TestProjectDAS11977" in the "Project Name" field
 	And User selects 'All Devices' option from 'Scope' autocomplete
-	And User clicks the "CREATE" Action button
+	And User clicks 'CREATE' button 
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "TestProjectDAS11977" is displayed to user
@@ -173,7 +173,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	And User changes Project Name to "NewProjectName"
 	And User changes Project Short Name to "NewShort4875"
 #"UPDATE" Action button has been removed
-	#And User clicks the "UPDATE" Action button
+	#And User clicks 'UPDATE' button 
 	#Then Success message is displayed and contains "The project details have been updated" text
 	When User click on Back button
 	And User enters "NewProjectName" text in the Search field for "Project" column

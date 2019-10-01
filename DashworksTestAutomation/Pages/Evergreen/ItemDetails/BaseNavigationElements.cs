@@ -21,9 +21,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         [FindsBy(How = How.XPath, Using = MainTabsOnDetailsPage)]
         public IList<IWebElement> MainTabsOnDetailsPageList { get; set; }
 
-        private static string TabCountSelector = ".//a[text()='{0}']//span[@class='ng-star-inserted']";
-        private static string SubMenuByNameSelector = ".//ul[@class='das-mat-tree-submenu']//a[text()='{0}']";
-        private static string TabMenuByNameSelector = ".//li[contains(@class, 'das-mat-tree')]//a[text()='{0}']";
+        //TODO probably should be replaced by LeftMenuSelector
+        private static string MenuSelector = ".//a[text()='{0}']//span[@class='ng-star-inserted']";
+        private static string LeftSubMenuSelector = ".//ul[@class='das-mat-tree-submenu']//a[text()='{0}']";
+        private static string LeftMenuSelector = ".//li[contains(@class, 'das-mat-tree')]//a[text()='{0}']";
 
         public override List<By> GetPageIdentitySelectors()
         {
@@ -35,6 +36,14 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
             };
         }
 
+        public IWebElement GetLeftMenuByName(string name)
+        {
+            var selector = By.XPath(string.Format(LeftMenuSelector, name));
+            if (!Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Long))
+                throw new Exception($"'{name}' left menu was not displayed");
+            return Driver.FindElement(selector);
+        }
+
         public IWebElement GetNavigationLinkByName(string linkName)
         {
             var link = By.XPath($".//div[@class='title-container']//a[text()='{linkName}']");
@@ -43,18 +52,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
             return Driver.FindElement(link);
         }
 
-        //TODO probably should be renamed form Tab menu to left menu
-        public IWebElement GetTabMenuByName(string name)
-        {
-            var selector = By.XPath(string.Format(TabMenuByNameSelector, name));
-            if (!Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Long))
-                throw new Exception($"'{name}' left menu was not displayed");
-            return Driver.FindElement(selector);
-        }
-
         public IWebElement GetSubMenuByName(string name)
         {
-            var selector = By.XPath(string.Format(SubMenuByNameSelector, name));
+            var selector = By.XPath(string.Format(LeftSubMenuSelector, name));
             if (!Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Long))
                 throw new Exception($"'{name}' Sub menu was not displayed. Displayed condition is '{Driver.IsElementDisplayed(selector)}'");
             return Driver.FindElement(selector);
@@ -84,14 +84,14 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
             if (!GetCountOfItemsDisplayStatusByTabName(tabName))
                 throw new Exception($"Count is not displayed for '{tabName}' tab");
 
-            var text = Driver.FindElement(By.XPath(string.Format(string.Format(TabCountSelector, tabName)))).Text;
+            var text = Driver.FindElement(By.XPath(string.Format(string.Format(MenuSelector, tabName)))).Text;
             text = text.TrimStart().TrimStart('(').TrimEnd(')');
             return int.Parse(text);
         }
 
         public bool GetCountOfItemsDisplayStatusByTabName(string tabName)
         {
-            return Driver.IsElementDisplayed(By.XPath(string.Format(TabCountSelector, tabName)), WebDriverExtensions.WaitTime.Short);
+            return Driver.IsElementDisplayed(By.XPath(string.Format(MenuSelector, tabName)), WebDriverExtensions.WaitTime.Short);
         }
 
         public bool GetDisplayStatusForDisabledSubTabByName(string tabName)
