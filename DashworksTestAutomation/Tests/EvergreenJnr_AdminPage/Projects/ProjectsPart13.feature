@@ -30,17 +30,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnlyFilteredListObjectsAreUsedAsAScope
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @UpdatingName @DAS13096 @DAS15994 @Cleanup @Projects
 Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameEditedInSeniorIsUpdatedInAdminTab
-	When User clicks 'Admin' on the left-hand menu
-	Then 'Admin' list should be displayed to the user
-	When User navigates to the 'Projects' left menu item
-	Then Page with 'Projects' header is displayed to user
-	When User clicks 'CREATE PROJECT' button 
-	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "10_Project13096" in the "Project Name" field
-	And User selects 'All Devices' option from 'Scope' autocomplete
-	When User clicks 'CREATE' button 
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks newly created object link
+	When Project created via API and opened
+	| ProjectName     | Scope       | ProjectTemplate | Mode               |
+	| 10_Project13096 | All Devices | None            | Standalone Project |
 	Then Project "10_Project13096" is displayed to user
 	When User click on Back button
 	Then created Project with "10_Project13096" name is displayed correctly
