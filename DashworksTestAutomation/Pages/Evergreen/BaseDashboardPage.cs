@@ -67,7 +67,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'actions-container-row')]")]
         public IWebElement ActionsRowsCount { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-label='Actions']")]
+        [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-label='Action']")]
         public IWebElement ActionsDropdown { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//mat-select[@role='listbox']//span[text()='Bulk Update Type']")]

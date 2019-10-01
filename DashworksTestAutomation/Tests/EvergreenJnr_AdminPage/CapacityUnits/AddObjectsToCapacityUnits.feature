@@ -82,7 +82,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatApplicationsAreAddedCorrectly
 	| %SQL_PRODUCT_SHORT_NAME% Data Tools - BI for Visual Studio 2013 |
 	| %SQL_PRODUCT_SHORT_NAME% SSIS 64Bit For SSDTBI                  |
 	| 0004 - Adobe Acrobat Reader 5.0.5 Francais                      |
-	| ACD FotoCanvas 2.0 Trial                                        |
+	| 0036 - Microsoft Access 97 SR-2 English                         |
 	And User selects "Bulk update" in the Actions dropdown
 	And User selects "Update capacity unit" Bulk Update Type on Action panel
 	And User selects "Evergreen" Project or Evergreen on Action panel
