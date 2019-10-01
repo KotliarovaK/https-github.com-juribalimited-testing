@@ -683,8 +683,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"""(.*)"" button is not displayed")]
         public void ThenButtonIsNotDisplayed(string buttonName)
         {
-            var action = _driver.NowAt<BaseGridPage>();
-            Verify.IsFalse(action.GetButtonByName(buttonName), $"{buttonName} is displayed");
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsFalse(page.GetButtonByName(buttonName).Disabled(), $"{buttonName} is displayed");
         }
 
         //TODO move this this actionPanel

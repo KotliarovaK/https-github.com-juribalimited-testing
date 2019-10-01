@@ -11,7 +11,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOptionsInTheCogMenuForReadinessAreCorr
 	| ProjectName          | Scope       | ProjectTemplate | Mode               |
 	| Project for DAS15665 | All Devices | None            | Standalone Project |
 	And User navigates to the 'Readiness' left menu item
-	When User clicks Cog-menu for "Red" item on Admin page
+	When User clicks Cog-menu for "RED" item on Admin page
 	Then User sees following cog-menu items on Admin page:
 	| items                         |
 	| Edit                          |
@@ -21,7 +21,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOptionsInTheCogMenuForReadinessAreCorr
 	| Change to ready               |
 	| Make default for applications |
 	| Delete                        |
-	When User clicks Cog-menu for "Green" item on Admin page
+	When User clicks Cog-menu for "GREEN" item on Admin page
 	Then User sees following cog-menu items on Admin page:
 	| items                         |
 	| Edit                          |
@@ -265,7 +265,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatValuesForReadinessGridAreDisplayedPro
 	When User enters "Grey" text in the Search field for "Readiness" column
 	Then "FALSE" content is displayed for "Ready" column
 	Then "1" content is displayed for "Task Values Count" column
-	When User clicks "Change to ready" option in Cog-menu for "Grey" item on Admin page
+	When User clicks "Change to ready" option in Cog-menu for "GREY" item on Admin page
 	Then Success message is displayed and contains "The readiness has been updated" text
 	Then Success message is displayed and contains "click here to view the Grey readiness" link
 	Then Green banner contains following text "changes might not take effect immediately"
@@ -275,26 +275,26 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatValuesForReadinessGridAreDisplayedPro
 	When User enters "Grey" text in the Search field for "Readiness" column
 	Then "TRUE" content is displayed for "Ready" column
 	Then "1" content is displayed for "Task Values Count" column
-	When User clicks "Change to not ready" option in Cog-menu for "Grey" item on Admin page
+	When User clicks "Change to not ready" option in Cog-menu for "GREY" item on Admin page
 	Then "FALSE" content is displayed for "Ready" column
 	Then "1" content is displayed for "Task Values Count" column
 	When User clicks Reset Filters button on the Admin page
-	When User clicks "Change to not ready" option in Cog-menu for "Green" item on Admin page
+	When User clicks "Change to not ready" option in Cog-menu for "GREEN" item on Admin page
 	Then Success message is displayed and contains "The readiness has been updated" text
 	Then Success message is displayed and contains "click here to view the Green readiness" link
 	Then Green banner contains following text "changes might not take effect immediately"
 	When User clicks newly created object link
 	Then 'Update Readiness' page subheader is displayed to user
 	When User clicks 'CANCEL' button 
-	When User clicks "Change to ready" option in Cog-menu for "Green" item on Admin page
-	When User clicks "Make default for applications" option in Cog-menu for "Amber" item on Admin page
+	When User clicks "Change to ready" option in Cog-menu for "GREEN" item on Admin page
+	When User clicks "Make default for applications" option in Cog-menu for "AMBER" item on Admin page
 	Then Success message is displayed and contains "The readiness has been updated" text
 	Then Success message is displayed and contains "click here to view the Amber readiness" link
 	Then Green banner contains following text "changes might not take effect immediately"
 	When User clicks newly created object link
 	Then 'Update Readiness' page subheader is displayed to user
 	When User clicks 'CANCEL' button 
-	When User clicks "Make default for applications" option in Cog-menu for "Blocked" item on Admin page
+	When User clicks "Make default for applications" option in Cog-menu for "BLOCKED" item on Admin page
 	When User have opened column settings for "Readiness" column
 	And User clicks Column button on the Column Settings panel
 	And User select "Ready" checkbox on the Column Settings panel

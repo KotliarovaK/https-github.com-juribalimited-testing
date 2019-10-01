@@ -68,5 +68,10 @@ namespace DashworksTestAutomation.Extensions
         {
             return str.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None).ToList();
         }
+
+        public static List<string> Split(this string str, string separator)
+        {
+            return str.Split(new string[] { separator }, StringSplitOptions.None).ToList();
+        }
     }
 }
