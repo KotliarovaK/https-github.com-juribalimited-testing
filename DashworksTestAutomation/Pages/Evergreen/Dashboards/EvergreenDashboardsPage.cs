@@ -558,6 +558,12 @@ namespace DashworksTestAutomation.Pages
             var columnHeaders = By.XPath($".//*[text()='{widgetName}']/ancestor :: div//table//thead//th");
             return Driver.FindElements(columnHeaders);
         }
+
+        public IList<IWebElement> GetTableGridValues(string widgetName)
+        {
+            var columnHeaders = By.XPath($".//*[text()='{widgetName}']/ancestor :: div//table//tbody//td//span");
+            return Driver.FindElements(columnHeaders);
+        }
         #endregion
 
         #region card

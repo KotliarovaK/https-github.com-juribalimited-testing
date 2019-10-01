@@ -2,10 +2,12 @@
 using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using NUnit.Framework;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
@@ -22,6 +24,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         #region Constructors
+
         [When(@"User adds new Widget")]
         public void WhenUserAddsNewWidget(Table table)
         {
@@ -61,6 +64,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
                 if (row.ContainsKey("AggregateFunction") && !string.IsNullOrEmpty(row["AggregateFunction"]))
                 {
+                    _driver.WaitForElementToBeEnabled(createWidgetElement.AggregateFunction);
                     createWidgetElement.AggregateFunction.Click();
                     createWidgetElement.SelectObjectForWidgetCreation(row["AggregateFunction"]);
                     _driver.WaitForDataLoadingOnProjects();
@@ -93,7 +97,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     _driver.WaitForDataLoadingOnProjects();
                 }
 
-                if (row.ContainsKey("ShowLegend") && !string.IsNullOrEmpty(row["ShowLegend"]) 
+                if (row.ContainsKey("ShowLegend") && !string.IsNullOrEmpty(row["ShowLegend"])
                                                   && row["ShowLegend"].Equals("true"))
                 {
                     createWidgetElement.ShowLegend.Click();
@@ -135,7 +139,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     _driver.WaitForDataLoadingOnProjects();
                 }
 
-                if (createWidgetElement.Type.Displayed() && row.ContainsKey("Type") 
+                if (createWidgetElement.Type.Displayed() && row.ContainsKey("Type")
                                                          && !string.IsNullOrEmpty(row["Type"]))
                 {
                     createWidgetElement.Type.Click();
@@ -143,21 +147,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     _driver.WaitForDataLoadingOnProjects();
                 }
 
-                if (createWidgetElement.SplitBy.Displayed() && row.ContainsKey("SplitBy") 
+                if (createWidgetElement.SplitBy.Displayed() && row.ContainsKey("SplitBy")
                                                             && !string.IsNullOrEmpty(row["SplitBy"]))
                 {
                     createWidgetElement.SelectSplitByItem(row["SplitBy"]);
                 }
 
-                if (createWidgetElement.AggregateFunction.Displayed() && row.ContainsKey("AggregateFunction") 
-                                                                      && !string.IsNullOrEmpty(row["AggregateFunction"]))
+                if (createWidgetElement.AggregateFunction.Displayed() && row.ContainsKey("AggregateFunction")
+                                                                      && !string.IsNullOrEmpty(row["AggregateFunction"])
+                )
                 {
                     createWidgetElement.AggregateFunction.Click();
                     createWidgetElement.SelectObjectForWidgetCreation(row["AggregateFunction"]);
                     _driver.WaitForDataLoadingOnProjects();
                 }
 
-                if (createWidgetElement.AggregateBy.Displayed() && row.ContainsKey("AggregateBy") 
+                if (createWidgetElement.AggregateBy.Displayed() && row.ContainsKey("AggregateBy")
                                                                 && !string.IsNullOrEmpty(row["AggregateBy"]))
                 {
                     createWidgetElement.AggregateBy.Click();
@@ -165,7 +170,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     _driver.WaitForDataLoadingOnProjects();
                 }
 
-                if (createWidgetElement.OrderBy.Displayed() && row.ContainsKey("OrderBy") 
+                if (createWidgetElement.OrderBy.Displayed() && row.ContainsKey("OrderBy")
                                                             && !string.IsNullOrEmpty(row["OrderBy"]))
                 {
                     createWidgetElement.OrderBy.Click();
@@ -173,7 +178,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     _driver.WaitForDataLoadingOnProjects();
                 }
 
-                if (createWidgetElement.MaxValues.Displayed() && row.ContainsKey("MaxValues") 
+                if (createWidgetElement.MaxValues.Displayed() && row.ContainsKey("MaxValues")
                                                               && !string.IsNullOrEmpty(row["MaxValues"]))
                 {
                     createWidgetElement.MaxValues.Clear();
@@ -199,7 +204,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     createWidgetElement.MaxColumns.SendKeys(row["MaxColumns"]);
                 }
 
-                if (createWidgetElement.ShowLegend.Displayed() && row.ContainsKey("ShowLegend") 
+                if (createWidgetElement.ShowLegend.Displayed() && row.ContainsKey("ShowLegend")
                                                                && !string.IsNullOrEmpty(row["ShowLegend"]))
                 {
                     createWidgetElement.ShowLegend.Click();
@@ -209,6 +214,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 _driver.WaitForDataLoading();
             }
         }
+
         #endregion
 
 
@@ -274,7 +280,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             createWidgetElement.SelectObjectForWidgetCreation(aggregateFunc);
             _driver.WaitForDataLoadingOnProjects();
         }
-       
+
         [When(@"User selects ""(.*)"" as Widget OrderBy")]
         public void WhenUserSetsWidgetOrderBy(string orderBy)
         {
@@ -319,7 +325,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             if (Convert.ToInt32(index) <= createWidgetElement.GetDropdownOptions().Count)
             {
                 createWidgetElement.ClickColorSchemeByIndex(Convert.ToInt32(index));
-            }           
+            }
         }
 
         [When(@"User selects ""(.*)"" checkbox on the Create Widget page")]
@@ -346,6 +352,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 var innerColour = element.FindElement(By.XPath(AddWidgetPage.ColorSchemeDropdownContent));
                 Utils.Verify.IsTrue(_driver.IsElementExists(innerColour), "Colour item is not found");
             }
+
             var page = _driver.NowAt<BaseGridPage>();
             page.BodyContainer.Click();
         }
@@ -363,7 +370,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<AddWidgetPage>();
             _driver.WaitForDataLoading();
-            Utils.Verify.That(page.ColorSchemePlaceholder.Text, Is.EqualTo(placeholder), "Colour Scheme dropdown is displayed with wrong placeholder");
+            Utils.Verify.That(page.ColorSchemePlaceholder.Text, Is.EqualTo(placeholder),
+                "Colour Scheme dropdown is displayed with wrong placeholder");
         }
 
         [Then(@"Table widget displayed inside preview pane correctly")]
@@ -375,9 +383,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var widget = _driver.NowAt<AddWidgetPage>();
             int widgetWidth = widget.GetTableWidgetPreview().Size.Width;
 
-            Utils.Verify.That(widgetWidth > prevWidth * 0.85 && widgetWidth < prevWidth, Is.True, "Widget preview less than 85 percent preview box");
+            Utils.Verify.That(widgetWidth > prevWidth * 0.85 && widgetWidth < prevWidth, Is.True,
+                "Widget preview less than 85 percent preview box");
         }
-    
+
         [Then(@"Widget title ""(.*)"" is displayed on Widget page")]
         public void ThenWidgetTitleDisplayedOnThePage(string text)
         {
@@ -409,7 +418,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForElementToBeDisplayed(page.UnsavedChangesAlert);
             Utils.Verify.AreEqual(text, page.GetUnsavedChangesAlertText().Text, "PLEASE ADD EXCEPTION MESSAGE");
         }
- 
+
         [Then(@"User sees following options for Order By selector on Create Widget page:")]
         public void WhenUserSeesFollowingOptionsForOrderBySelectorOnCreateWidgetPage(Table items)
         {
@@ -419,6 +428,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             Utils.Verify.AreEqual(items.Rows.SelectMany(row => row.Values).ToList(),
                 page.GetDropdownOptions().Select(p => p.Text), "Incorrect options in lists dropdown");
+            //close expanded list
+            page.OrderBy.SendKeys(OpenQA.Selenium.Keys.Escape);
+
+            //Actions action = new Actions(driver);
+            //action.SendKeys(OpenQA.Selenium.Keys.Escape);
         }
 
         [Then(@"User sees ""(.*)"" option for Order By selector on Create Widget page")]
@@ -450,7 +464,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<AddWidgetPage>();
             Utils.Verify.AreEqual(text, page.WarningTextUnderField.Text, "PLEASE ADD EXCEPTION MESSAGE");
         }
-        
+
         [Then(@"Aggregate Function dropdown is placed above the Aggregate By dropdown")]
         public void ThenUserSeesAggregateFunctionAboveTheAggregateByDropdown()
         {
@@ -464,7 +478,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<AddWidgetPage>();
 
-            Utils.Verify.That(page.Dropdowns.Any(x=>x.Text.Equals(label)), Is.EqualTo(false));
+            Utils.Verify.That(page.Dropdowns.Any(x => x.Text.Equals(label)), Is.EqualTo(false));
         }
 
         [Then(@"Aggregate By dropdown is disabled")]
@@ -480,7 +494,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<AddWidgetPage>();
 
-            Assert.That(page.IsColorSchemeDropdownDisabled, Is.EqualTo(true), "Color Scheme dropdown displayed enabled");
+            Assert.That(page.IsColorSchemeDropdownDisabled, Is.EqualTo(true),
+                "Color Scheme dropdown displayed enabled");
         }
 
         [Then(@"User sees following options for Aggregate By selector on Create Widget page:")]
@@ -512,7 +527,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     Utils.Verify.That(page.ShowLegendLabel.Text, Is.EqualTo("Show legend"), "Show legend label wrong");
                     break;
                 case "Show data labels":
-                    Utils.Verify.That(page.ShowDataLabel.Text, Is.EqualTo("Show data labels"), "Show data labels label wrong");
+                    Utils.Verify.That(page.ShowDataLabel.Text, Is.EqualTo("Show data labels"),
+                        "Show data labels label wrong");
                     break;
 
                 default:
@@ -520,5 +536,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     break;
             }
         }
+      
     }
 }
