@@ -154,8 +154,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatThereIsNoPossibilityToCreateWidge
 	Then Widget Preview is displayed to the user
 	And 'This widget refers to a list which has errors' alert is displayed in Preview
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16853 @Cleanup
-Scenario: EvergreenJnr_DashboardsPage_CheckCheckboxLabelDisplayin
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18151 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatDuplicateWidgetsWillNotbeCreatedIfUserClicksFastOnTheCreateButtonSeveralTimes
 	When Dashboard with "DAS16853_Dashboard" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
