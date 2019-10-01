@@ -29,22 +29,5 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             return Driver.FindElement(By.XPath(".//div[@class='mat-dialog-content']")).Text;
         }
-
-        public IWebElement GetPopupButtonByName(string button)
-        {
-            var selector = By.XPath(
-                $".//mat-dialog-container//span[text()='{button}']/ancestor::button");
-            Driver.WaitForDataLoading();
-            Driver.WaitForElementsToBeDisplayed(selector, 30, false);
-            return Driver.FindElements(selector).First(x => x.Displayed());
-        }
-
-        public void ClickPopupButtonByName(string buttonName)
-        {
-            var button = GetPopupButtonByName(buttonName);
-            Driver.WaitForElementToBeEnabled(button);
-            button.Click();
-            Driver.WaitForDataLoading(50);
-        }
     }
 }

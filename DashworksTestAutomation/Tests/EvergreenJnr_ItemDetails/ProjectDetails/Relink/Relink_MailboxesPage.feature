@@ -22,4 +22,4 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatRelinkOptionIsWorkedCorrectlyForPr
 	When User clicks 'RELINK' button in Dialog Pop-up
 	Then Warning message with "This object will be relinked to the selected Evergreen object in this project" text is displayed on the Project Details Page
 	When User clicks 'RELINK' button in Dialog Pop-up
-	Then Success message is displayed and contains "000F977AC8824FE39B8@bclabs.local successfully relinked" text
+	Then Success message is displayed and contains "Mailbox successfully relinked" text

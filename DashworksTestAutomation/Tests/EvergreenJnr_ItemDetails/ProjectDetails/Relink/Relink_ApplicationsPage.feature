@@ -21,4 +21,4 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyFo
 	When User clicks 'RELINK' button 
 	Then Warning message with "This object will be relinked to the selected Evergreen object in this project" text is displayed on the Project Details Page
 	When User clicks 'RELINK' button 
-	Then Success message is displayed and contains "Mozilla Firefox (1.0.7) successfully relinked" text
+	Then Success message is displayed and contains "Application successfully relinked" text

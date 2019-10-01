@@ -23,7 +23,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRelinkOptionIsWorkedCorrectlyForProj
 	And User clicks 'RELINK' button in Dialog Pop-up
 	Then Warning message with "This object will be relinked to the selected Evergreen object in this project" text is displayed on the Project Details Page
 	When User clicks 'RELINK' button in Dialog Pop-up
-	Then Success message is displayed and contains "02QS1WBYUHCAG8Z successfully relinked" text
+	Then Success message is displayed and contains "Device successfully relinked" text
 	
 	#Ready on the 'radiant' server
 @Evergreen @Devices @EvergreenJnr_ItemDetails @Relink @DAS18043 @Not_Ready
@@ -38,6 +38,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatGreenBannerIsNotVisibleOnTheOtherPag
 	And User clicks 'RELINK' button in Dialog Pop-up
 	Then Warning message with "This object will be relinked to the selected Evergreen object in this project" text is displayed on the Project Details Page
 	When User clicks 'RELINK' button in Dialog Pop-up
-	Then Success message is displayed and contains "FISC5NOXFB8Q7M successfully relinked" text
+	Then Success message is displayed and contains "Device successfully relinked" text
 	When User navigates to the "Projects Summary" sub-menu on the Details page
 	Then Success message is not displayed

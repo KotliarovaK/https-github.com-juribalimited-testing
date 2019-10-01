@@ -42,8 +42,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         [When(@"User clicks '(.*)' button in Dialog Pop-up")]
         public void WhenUserClicksButtonInDialogPopUp(string buttonName)
         {
-            var dialogContainer = _driver.NowAt<BaseDialogPage>();
-            dialogContainer.ClickPopupButtonByName(buttonName);
+            var dialogContainer = _driver.NowAt<BaseDashboardPage>();
+            dialogContainer.GetButtonByNameOnPopup(buttonName).Click();
         }
     }
 }

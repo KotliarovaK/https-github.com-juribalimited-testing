@@ -22,4 +22,4 @@ Scenario: EvergreenJnr_UsersList_CheckThatRelinkOptionIsWorkedCorrectlyForProjec
 	When User clicks 'RELINK' button in Dialog Pop-up
 	Then Warning message with "This object will be relinked to the selected Evergreen object in this project" text is displayed on the Project Details Page
 	When User clicks 'RELINK' button in Dialog Pop-up
-	Then Success message is displayed and contains "ZZR457072 successfully relinked" text
+	Then Success message is displayed and contains "User successfully relinked" text
