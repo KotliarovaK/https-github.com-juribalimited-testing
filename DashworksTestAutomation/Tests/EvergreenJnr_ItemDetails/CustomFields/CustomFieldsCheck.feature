@@ -63,7 +63,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnSettingsOnCustomFieldsAreTrans
 	| Absteigend sortieren                      |
 	| Nicht sortieren                           |
 	
-@Evergreen @Devices @EvergreenJnr_ItemDetails @CustomFields @DAS17907
+@Evergreen @Devices @EvergreenJnr_ItemDetails @CustomFields @DAS17907 @DAS17960
 Scenario: EvergreenJnr_DevicesList_CheckThatCustomFieldsTheGroupByElementContainOnlyVisibleColumns
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	And User navigates to the "Custom Fields" sub-menu on the Details page
@@ -76,7 +76,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCustomFieldsTheGroupByElementContain
 	| Values       |
 	| Custom Field |
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @CustomFields @DAS17776
+@Evergreen @Devices @EvergreenJnr_ItemDetails @CustomFields @DAS17776 @DAS18363
 Scenario: EvergreenJnr_DevicesList_CheckThatItsNotPossibleToUnselectTheLastColumnOnCustomFieldsTab
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	And User navigates to the "Custom Fields" sub-menu on the Details page

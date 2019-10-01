@@ -297,7 +297,7 @@ this.FeatureBackground();
 #line 48
  testRunner.And("\'\' content is displayed in the \'Value\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 49
- testRunner.And("\"Custom Fields\" tab is displayed on left menu on the Details page and contains \'1" +
+ testRunner.And("\'Custom Fields\' tab is displayed on left menu on the Details page and contains \'1" +
                     "\' count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -392,7 +392,7 @@ this.FeatureBackground();
 #line 63
  testRunner.And("\'Value_@#†_DAS16487_2\' content is displayed in the \'Value\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 64
- testRunner.And("\"Custom Fields\" tab is displayed on left menu on the Details page and contains \'1" +
+ testRunner.And("\'Custom Fields\' tab is displayed on left menu on the Details page and contains \'1" +
                     "\' count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -477,7 +477,7 @@ this.FeatureBackground();
 #line 78
  testRunner.And("User clicks Cancel button on Add Custom Field popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 79
- testRunner.Then("\"Custom Fields\" tab is displayed on left menu on the Details page and contains \'0" +
+ testRunner.Then("\'Custom Fields\' tab is displayed on left menu on the Details page and contains \'0" +
                     "\' count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -573,7 +573,7 @@ this.FeatureBackground();
 #line 94
  testRunner.And("\'Value_17614\' content is displayed in the \'Value\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 95
- testRunner.And("\"Custom Fields\" tab is displayed on left menu on the Details page and contains \'1" +
+ testRunner.And("\'Custom Fields\' tab is displayed on left menu on the Details page and contains \'1" +
                     "\' count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
@@ -610,7 +610,7 @@ this.FeatureBackground();
 #line 105
  testRunner.And("Content in the \'Value\' column is equal to", ((string)(null)), table12, "And ");
 #line 109
- testRunner.And("\"Custom Fields\" tab is displayed on left menu on the Details page and contains \'2" +
+ testRunner.And("\'Custom Fields\' tab is displayed on left menu on the Details page and contains \'2" +
                     "\' count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -624,6 +624,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("CustomFields")]
         [NUnit.Framework.CategoryAttribute("DAS17695")]
+        [NUnit.Framework.CategoryAttribute("DAS17960")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_UsersList_CheckGroupByResetAfterCreatingNewCustomField()
         {
@@ -659,6 +660,7 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "CustomFields",
                         "DAS17695",
+                        "DAS17960",
                         "Cleanup"});
 #line 113
 this.ScenarioInitialize(scenarioInfo);
@@ -723,7 +725,7 @@ this.FeatureBackground();
  testRunner.Then("Success message with \"New custom field value added successfully\" text is displaye" +
                     "d on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 129
- testRunner.And("\"Custom Fields\" tab is displayed on left menu on the Details page and contains \'3" +
+ testRunner.And("\'Custom Fields\' tab is displayed on left menu on the Details page and contains \'3" +
                     "\' count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {

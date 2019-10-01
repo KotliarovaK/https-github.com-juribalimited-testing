@@ -15,7 +15,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
     public class BaseHeaderPage : SeleniumBasePage
     {
         [FindsBy(How = How.XPath, Using = ".//div[@class='title-container']//h1")]
-        public IWebElement Header { get; set; }
+        public new IWebElement Header { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {
