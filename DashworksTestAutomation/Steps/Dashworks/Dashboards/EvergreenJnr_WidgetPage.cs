@@ -130,8 +130,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
             foreach (var row in table.Rows)
             {
                 PupualteWidgetData(row);
-                createWidgetElement.CreateUpdateWidgetButton.Click();
-                createWidgetElement.CreateUpdateWidgetButton.Click();
+
+                _driver.DoubleClick(createWidgetElement.CreateUpdateWidgetButton);
+                
                 _driver.WaitForDataLoading();
             }
         }
@@ -233,7 +234,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         #endregion
-
 
         [When(@"User selects ""(.*)"" in the ""(.*)"" Widget dropdown")]
         public void WhenUserSelectsInTheWidgetDropdown(string objectName, string dropdownName)
