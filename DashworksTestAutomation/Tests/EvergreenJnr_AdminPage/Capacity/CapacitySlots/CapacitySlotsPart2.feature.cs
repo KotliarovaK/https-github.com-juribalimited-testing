@@ -487,7 +487,7 @@ this.FeatureBackground();
             table11.AddRow(new string[] {
                         "Slot1"});
 #line 82
- testRunner.And("User sees next Slots on the Capacity Slots page:", ((string)(null)), table11, "And ");
+ testRunner.And("\"Capacity Slot\" column content is displayed in the following order:", ((string)(null)), table11, "And ");
 #line 86
  testRunner.When("User navigates to the \'Capacity\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 87
@@ -512,7 +512,7 @@ this.FeatureBackground();
             table12.AddRow(new string[] {
                         "Slot2"});
 #line 93
- testRunner.And("User sees next Slots on the Capacity Slots page:", ((string)(null)), table12, "And ");
+ testRunner.And("\"Capacity Slot\" column content is displayed in the following order:", ((string)(null)), table12, "And ");
 #line 98
  testRunner.When("User navigates to the \'Capacity\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 99
@@ -537,7 +537,7 @@ this.FeatureBackground();
             table13.AddRow(new string[] {
                         "Slot3"});
 #line 105
- testRunner.And("User sees next Slots on the Capacity Slots page:", ((string)(null)), table13, "And ");
+ testRunner.And("\"Capacity Slot\" column content is displayed in the following order:", ((string)(null)), table13, "And ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -15,9 +15,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
         [FindsBy(How = How.XPath, Using = "//div[@class='title-container']/h1")]
         public IWebElement TitleContainer { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@role='row']/div[@col-id='slotName']")]
-        public IList<IWebElement> GridSlotsNames { get; set; }
-
         [FindsBy(How = How.XPath, Using = "//span[contains(@class, 'chips-item-text')][text()='1 more']/ancestor::button")]
         public IWebElement ExpandItemsButton { get; set; }
 

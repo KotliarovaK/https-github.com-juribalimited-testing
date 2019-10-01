@@ -79,7 +79,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsLinkFromUnitGridLeadsToCorrectFil
 	When User clicks content from "Slots" column
 	Then "All Capacity Units" is displayed in the dropdown filter for "Capacity Units" column
 	And Rows counter contains "1" found row of all rows
-	And User sees next Slots on the Capacity Slots page:
+	And "Capacity Slot" column content is displayed in the following order:
 	| slots |
 	| Slot1 |
 	#act2
@@ -90,7 +90,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsLinkFromUnitGridLeadsToCorrectFil
 	When User clicks content from "Slots" column
 	Then "Capacity Unit 1,All Capacity Units" is displayed in the dropdown filter for "Capacity Units" column
 	And Rows counter contains "2" found row of all rows
-	And User sees next Slots on the Capacity Slots page:
+	And "Capacity Slot" column content is displayed in the following order:
 	| slots |
 	| Slot1 |
 	| Slot2 |
@@ -102,7 +102,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsLinkFromUnitGridLeadsToCorrectFil
 	When User clicks content from "Slots" column
 	Then "Capacity Unit 2,All Capacity Units" is displayed in the dropdown filter for "Capacity Units" column
 	And Rows counter contains "2" found row of all rows
-	And User sees next Slots on the Capacity Slots page:
+	And "Capacity Slot" column content is displayed in the following order:
 	| slots |
 	| Slot1 |
 	| Slot3 |

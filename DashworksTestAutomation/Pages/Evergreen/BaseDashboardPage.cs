@@ -814,6 +814,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return columnNumber;
         }
 
+        //TODO Should be moved to BaseGrid
         public List<string> GetColumnContent(string columnName)
         {
             var by = By.XPath($".//div[@col-id='{GetColIdByColumnName(columnName)}' and @role='gridcell']");
