@@ -346,7 +346,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             menu.FilterButton.Click();
         }
 
-        [When(@"User clicks the  filter type dropdown on the Column Settings panel")]
+        [When(@"User clicks the filter type dropdown on the Column Settings panel")]
         public void WhenUserClicksTheFilterTypeDropdownOnTheColumnSettingsPanel()
         {
             var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();

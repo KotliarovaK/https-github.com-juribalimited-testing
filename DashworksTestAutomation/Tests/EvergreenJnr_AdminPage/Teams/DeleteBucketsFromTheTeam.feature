@@ -13,7 +13,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeletin
 	Then Page with 'Teams' header is displayed to user
 	When User have opened Column Settings for "Members" column
 	And User clicks Filter button on the Column Settings panel
-	When User clicks the  filter type dropdown on the Column Settings panel
+	When User clicks the filter type dropdown on the Column Settings panel
 	Then following Values are displayed in the filter type dropdown
 	| Values                |
 	| Equals                |
