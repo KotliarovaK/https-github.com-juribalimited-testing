@@ -12,7 +12,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyTeamName
 	When User navigates to the 'Teams' left menu item
 	Then Page with 'Teams' header is displayed to user
 	When User clicks 'CREATE TEAM' button 
-	Then Page with 'Create Team' header is displayed to user
+	Then Page with 'Create Team' subheader is displayed to user
 	When User enters " " in the "Team Name" field
 	And User enters "test" in the Team Description field
 	Then Create Team button is disabled
@@ -21,7 +21,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyTeamName
 	And User clicks 'CREATE' button 
 	Then Success message is displayed and contains "The team has been created" text
 	When User clicks 'CREATE TEAM' button 
-	Then Page with 'Create Team' header is displayed to user
+	Then Page with 'Create Team' subheader is displayed to user
 	When User enters "TestTeam" in the "Team Name" field
 	And User enters "test" in the Team Description field
 	And User clicks 'CREATE' button 
@@ -68,7 +68,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedTeamUsingTh
 	When User enters "My Team" text in the Search field for "Team" column
 	Then 'TRUE' content is displayed in the 'Default' column
 	When User clicks 'CREATE TEAM' button 
-	Then Page with 'Create Team' header is displayed to user
+	Then Page with 'Create Team' subheader is displayed to user
 	When User enters " 99770" in the "Team Name" field
 	And User enters "test" in the Team Description field
 	And User clicks 'CREATE' button 
