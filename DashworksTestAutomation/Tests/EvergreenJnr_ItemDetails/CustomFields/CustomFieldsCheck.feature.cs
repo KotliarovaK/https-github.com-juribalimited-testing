@@ -390,6 +390,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("CustomFields")]
         [NUnit.Framework.CategoryAttribute("DAS17907")]
+        [NUnit.Framework.CategoryAttribute("DAS17960")]
         public virtual void EvergreenJnr_DevicesList_CheckThatCustomFieldsTheGroupByElementContainOnlyVisibleColumns()
         {
             System.Exception lastException = null;
@@ -424,7 +425,8 @@ this.FeatureBackground();
                         "Devices",
                         "EvergreenJnr_ItemDetails",
                         "CustomFields",
-                        "DAS17907"});
+                        "DAS17907",
+                        "DAS17960"});
 #line 67
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -465,6 +467,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("CustomFields")]
         [NUnit.Framework.CategoryAttribute("DAS17776")]
+        [NUnit.Framework.CategoryAttribute("DAS18363")]
         public virtual void EvergreenJnr_DevicesList_CheckThatItsNotPossibleToUnselectTheLastColumnOnCustomFieldsTab()
         {
             System.Exception lastException = null;
@@ -499,7 +502,8 @@ this.FeatureBackground();
                         "Devices",
                         "EvergreenJnr_ItemDetails",
                         "CustomFields",
-                        "DAS17776"});
+                        "DAS17776",
+                        "DAS18363"});
 #line 80
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

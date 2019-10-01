@@ -37,12 +37,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public const string ImageSelector = ".//i";
 
-        [FindsBy(How = How.XPath, Using = ".//h1")]
-        public IWebElement Header { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//h2")]
-        public IWebElement SubHeader { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//mat-dialog-container")]
         public IWebElement PopupElement { get; set; }
 

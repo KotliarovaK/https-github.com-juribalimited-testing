@@ -128,14 +128,16 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             Verify.IsTrue(detailsPage.GetCountOfItemsDisplayStatusByTabName(tabName), $"Tab {tabName} must contain the number of elements!");
         }
 
-        [Then(@"""(.*)"" tab is displayed on left menu on the Details page and contains '(.*)' count of items")]
+        [Then(@"'(.*)' tab is displayed on left menu on the Details page and contains '(.*)' count of items")]
         public void ThenTabIsDisplayedOnLeftMenuOnTheDetailsPageAndContainsCountOfItems(string tabName, int count)
         {
             var detailsPage = _driver.NowAt<BaseNavigationElements>();
             //Try to check content several times because it is updating not immediately
             if (count != detailsPage.GetCountOfItemsByTabName(tabName))
+            {
                 //JS update count every 3 seconds
                 Thread.Sleep(3000);
+            }
             Verify.AreEqual(count, detailsPage.GetCountOfItemsByTabName(tabName), $"Incorrect count for '{tabName}' tab");
         }
 

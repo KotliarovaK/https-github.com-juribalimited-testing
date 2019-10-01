@@ -2008,7 +2008,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
             _driver.WaitForElementToBeDisplayed(page.RowsCounter);
             var foundRowsOfAllRowsLabel = page.RowsCounter.Text;
-            var foundRowsInt = Int32.Parse(foundRowsOfAllRowsLabel.Substring(0, foundRowsOfAllRowsLabel.IndexOf("of")));
+            var foundRowsInt = Int32.Parse(foundRowsOfAllRowsLabel.Substring(0, foundRowsOfAllRowsLabel.IndexOf("of")).Replace(",", string.Empty));
             Utils.Verify.That(foundRowsInt, Is.GreaterThanOrEqualTo(foundRows),
                 $"Found rows counter {foundRowsInt} is not greater or equal to expected {foundRows}");
         }

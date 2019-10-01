@@ -14,7 +14,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
 
         public const string FilterCheckboxStringValuesSelector = ".//span[@class='mat-option-text']//div[@class='ng-star-inserted']";
 
-        public const string FilterTypeOnTheColumnPanel = "//div//select[@id='filterType']//option";
+        public const string FilterTypeOnTheColumnPanel = ".//div[@class='ag-filter']//select[not(contains(@class,'hidden'))]//option";
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='ng-star-inserted']/span")]
         public IWebElement CheckboxesStringFilter { get; set; }
@@ -51,7 +51,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
             Using = ".//button[@aria-label='ResetFilters']")]
         public IWebElement ResetFiltersButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//div//select[@id='filterType']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='ag-filter']//select[not(contains(@class,'hidden'))]")]
         public IWebElement FilterTypeDropdownOnTheColumnPanel { get; set; }
 
         [FindsBy(How = How.XPath, Using = FilterTypeOnTheColumnPanel)]

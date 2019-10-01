@@ -30,7 +30,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
 
         public IList<IWebElement> GetColumnSettings()
         {
-            return Driver.FindElements(By.XPath(".//div[contains(@class, 'menu-option')]//span[@id='eName']"));
+            return Driver.FindElements(By.XPath(".//div[contains(@class, 'menu-option')]//span[@ref='eName']"));
         }
 
         public bool GetTheDisplayStateOfContentOnOpenTab(string name)
@@ -41,13 +41,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         public bool CheckThatSelectedTabHasOpened(string name)
         {
             return Driver.IsElementDisplayed(By.XPath($"//*[text()='{name}']"));
-        }
-
-        public IWebElement GetItemDetailsPageByName(string name)
-        {
-            var selector = By.XPath($".//div[@id='pagetitle-text']//h1[contains(text(), '{name}')]");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
         }
 
         public IWebElement GetColorIconsForColorFilters(string color)

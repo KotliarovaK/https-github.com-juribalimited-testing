@@ -20,6 +20,12 @@ namespace DashworksTestAutomation.Base
         [FindsBy(How = How.XPath, Using = ".//body")]
         public IWebElement BodyContainer { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//h1")]
+        public IWebElement Header { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//h2")]
+        public IWebElement SubHeader { get; set; }
+
         public RemoteWebDriver Driver { get; set; }
 
         public Actions Actions { get; set; }

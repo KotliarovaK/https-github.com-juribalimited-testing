@@ -180,7 +180,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Rings")]
         [NUnit.Framework.CategoryAttribute("DAS15397")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckThatNoConsoleErrorDisplayedWhenCreatingRingsConsistently()
         {
             System.Exception lastException = null;
@@ -216,7 +215,6 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "Rings",
                         "DAS15397",
-                        "Cleanup",
                         "Cleanup"});
 #line 30
 this.ScenarioInitialize(scenarioInfo);
@@ -241,7 +239,7 @@ this.FeatureBackground();
 #line 35
  testRunner.And("User clicks \'CREATE PROJECT RING\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 36
- testRunner.Then("Page with \'Create Project Ring\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Page with \'Create Project Ring\' subheader is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 37
  testRunner.When("User type \"TestRing15397_1\" Name in the \"Ring name\" field on the \'NewProject15397" +
                     "\' Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -262,7 +260,7 @@ this.FeatureBackground();
 #line 45
  testRunner.And("User clicks \'CREATE PROJECT RING\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 46
- testRunner.Then("Page with \'Create Project Ring\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Page with \'Create Project Ring\' subheader is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 47
  testRunner.When("User type \"TestRing15397_2\" Name in the \"Ring name\" field on the \'NewProject15397" +
                     "\' Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
