@@ -47,5 +47,17 @@ namespace DashworksTestAutomation.Helpers
                     throw new Exception($"{colorName} color not found in convertor");
             }
         }
+
+        public static string ConvertToHex(string colorName)
+        {
+            switch (colorName.ToLower())
+            {
+               case "green":
+                   return "#7ebd38";
+                
+               default:
+                   throw new Exception($"{colorName} color not found in convertor");
+            }
+        }
     }
 }
