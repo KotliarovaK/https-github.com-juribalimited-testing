@@ -116,99 +116,122 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             foreach (var row in table.Rows)
             {
-                createWidgetElement.WidgetType.Click();
-                createWidgetElement.SelectObjectForWidgetCreation(row["WidgetType"]);
-
-                if (string.IsNullOrEmpty(row["Title"])) createWidgetElement.Title.SendKeys(" ");
-
-                if (createWidgetElement.Title.Displayed() & !string.IsNullOrEmpty(row["Title"]))
-
-                {
-                    createWidgetElement.Title.Clear();
-                    createWidgetElement.Title.SendKeys(row["Title"]);
-                }
-
-                if (createWidgetElement.List.Displayed() && !string.IsNullOrEmpty(row["List"]))
-                {
-                    createWidgetElement.List.Click();
-                    createWidgetElement.SelectListForWidgetCreation(row["List"]);
-                    _driver.WaitForDataLoadingOnProjects();
-                }
-
-                if (createWidgetElement.Type.Displayed() && row.ContainsKey("Type") 
-                                                         && !string.IsNullOrEmpty(row["Type"]))
-                {
-                    createWidgetElement.Type.Click();
-                    createWidgetElement.SelectListForWidgetCreation(row["Type"]);
-                    _driver.WaitForDataLoadingOnProjects();
-                }
-
-                if (createWidgetElement.SplitBy.Displayed() && row.ContainsKey("SplitBy") 
-                                                            && !string.IsNullOrEmpty(row["SplitBy"]))
-                {
-                    createWidgetElement.SelectSplitByItem(row["SplitBy"]);
-                }
-
-                if (createWidgetElement.AggregateFunction.Displayed() && row.ContainsKey("AggregateFunction") 
-                                                                      && !string.IsNullOrEmpty(row["AggregateFunction"]))
-                {
-                    createWidgetElement.AggregateFunction.Click();
-                    createWidgetElement.SelectObjectForWidgetCreation(row["AggregateFunction"]);
-                    _driver.WaitForDataLoadingOnProjects();
-                }
-
-                if (createWidgetElement.AggregateBy.Displayed() && row.ContainsKey("AggregateBy") 
-                                                                && !string.IsNullOrEmpty(row["AggregateBy"]))
-                {
-                    createWidgetElement.AggregateBy.Click();
-                    createWidgetElement.SelectObjectForWidgetCreation(row["AggregateBy"]);
-                    _driver.WaitForDataLoadingOnProjects();
-                }
-
-                if (createWidgetElement.OrderBy.Displayed() && row.ContainsKey("OrderBy") 
-                                                            && !string.IsNullOrEmpty(row["OrderBy"]))
-                {
-                    createWidgetElement.OrderBy.Click();
-                    createWidgetElement.SelectObjectForWidgetCreation(row["OrderBy"]);
-                    _driver.WaitForDataLoadingOnProjects();
-                }
-
-                if (createWidgetElement.MaxValues.Displayed() && row.ContainsKey("MaxValues") 
-                                                              && !string.IsNullOrEmpty(row["MaxValues"]))
-                {
-                    createWidgetElement.MaxValues.Clear();
-                    createWidgetElement.MaxValues.SendKeys(row["MaxValues"]);
-                }
-
-                if (createWidgetElement.TableOrientation.Displayed() && row.ContainsKey("TableOrientation"))
-                {
-                    createWidgetElement.TableOrientation.Click();
-                    createWidgetElement.SelectObjectForWidgetCreation(row["TableOrientation"]);
-                    _driver.WaitForDataLoadingOnProjects();
-                }
-
-                if (createWidgetElement.MaxRows.Displayed() && row.ContainsKey("MaxRows"))
-                {
-                    createWidgetElement.MaxRows.Clear();
-                    createWidgetElement.MaxRows.SendKeys(row["MaxRows"]);
-                }
-
-                if (createWidgetElement.MaxColumns.Displayed() && row.ContainsKey("MaxColumns"))
-                {
-                    createWidgetElement.MaxColumns.Clear();
-                    createWidgetElement.MaxColumns.SendKeys(row["MaxColumns"]);
-                }
-
-                if (createWidgetElement.ShowLegend.Displayed() && row.ContainsKey("ShowLegend") 
-                                                               && !string.IsNullOrEmpty(row["ShowLegend"]))
-                {
-                    createWidgetElement.ShowLegend.Click();
-                }
-
+                PupualteWidgetData(row);
                 createWidgetElement.CreateUpdateWidgetButton.Click();
                 _driver.WaitForDataLoading();
             }
         }
+
+        [When(@"User creates new Widget with double click")]
+        public void WhenUserCreatesNewWidgetWithDubleClick(Table table)
+        {
+            var createWidgetElement = _driver.NowAt<AddWidgetPage>();
+
+            foreach (var row in table.Rows)
+            {
+                PupualteWidgetData(row);
+                createWidgetElement.CreateUpdateWidgetButton.Click();
+                createWidgetElement.CreateUpdateWidgetButton.Click();
+                _driver.WaitForDataLoading();
+            }
+        }
+
+        [When(@"Then User pupualtes Widget Data")]
+        public void PupualteWidgetData(TableRow tableRow)
+        {
+            var createWidgetElement = _driver.NowAt<AddWidgetPage>();
+
+            createWidgetElement.WidgetType.Click();
+            createWidgetElement.SelectObjectForWidgetCreation(tableRow["WidgetType"]);
+
+            if (string.IsNullOrEmpty(tableRow["Title"])) createWidgetElement.Title.SendKeys(" ");
+
+            if (createWidgetElement.Title.Displayed() & !string.IsNullOrEmpty(tableRow["Title"]))
+
+            {
+                createWidgetElement.Title.Clear();
+                createWidgetElement.Title.SendKeys(tableRow["Title"]);
+            }
+
+            if (createWidgetElement.List.Displayed() && !string.IsNullOrEmpty(tableRow["List"]))
+            {
+                createWidgetElement.List.Click();
+                createWidgetElement.SelectListForWidgetCreation(tableRow["List"]);
+                _driver.WaitForDataLoadingOnProjects();
+            }
+
+            if (createWidgetElement.Type.Displayed() && tableRow.ContainsKey("Type")
+                                                     && !string.IsNullOrEmpty(tableRow["Type"]))
+            {
+                createWidgetElement.Type.Click();
+                createWidgetElement.SelectListForWidgetCreation(tableRow["Type"]);
+                _driver.WaitForDataLoadingOnProjects();
+            }
+
+            if (createWidgetElement.SplitBy.Displayed() && tableRow.ContainsKey("SplitBy")
+                                                        && !string.IsNullOrEmpty(tableRow["SplitBy"]))
+            {
+                createWidgetElement.SelectSplitByItem(tableRow["SplitBy"]);
+            }
+
+            if (createWidgetElement.AggregateFunction.Displayed() && tableRow.ContainsKey("AggregateFunction")
+                                                                  && !string.IsNullOrEmpty(tableRow["AggregateFunction"]))
+            {
+                createWidgetElement.AggregateFunction.Click();
+                createWidgetElement.SelectObjectForWidgetCreation(tableRow["AggregateFunction"]);
+                _driver.WaitForDataLoadingOnProjects();
+            }
+
+            if (createWidgetElement.AggregateBy.Displayed() && tableRow.ContainsKey("AggregateBy")
+                                                            && !string.IsNullOrEmpty(tableRow["AggregateBy"]))
+            {
+                createWidgetElement.AggregateBy.Click();
+                createWidgetElement.SelectObjectForWidgetCreation(tableRow["AggregateBy"]);
+                _driver.WaitForDataLoadingOnProjects();
+            }
+
+            if (createWidgetElement.OrderBy.Displayed() && tableRow.ContainsKey("OrderBy")
+                                                        && !string.IsNullOrEmpty(tableRow["OrderBy"]))
+            {
+                createWidgetElement.OrderBy.Click();
+                createWidgetElement.SelectObjectForWidgetCreation(tableRow["OrderBy"]);
+                _driver.WaitForDataLoadingOnProjects();
+            }
+
+            if (createWidgetElement.MaxValues.Displayed() && tableRow.ContainsKey("MaxValues")
+                                                          && !string.IsNullOrEmpty(tableRow["MaxValues"]))
+            {
+                createWidgetElement.MaxValues.Clear();
+                createWidgetElement.MaxValues.SendKeys(tableRow["MaxValues"]);
+            }
+
+            if (createWidgetElement.TableOrientation.Displayed() && tableRow.ContainsKey("TableOrientation"))
+            {
+                createWidgetElement.TableOrientation.Click();
+                createWidgetElement.SelectObjectForWidgetCreation(tableRow["TableOrientation"]);
+                _driver.WaitForDataLoadingOnProjects();
+            }
+
+            if (createWidgetElement.MaxRows.Displayed() && tableRow.ContainsKey("MaxRows"))
+            {
+                createWidgetElement.MaxRows.Clear();
+                createWidgetElement.MaxRows.SendKeys(tableRow["MaxRows"]);
+            }
+
+            if (createWidgetElement.MaxColumns.Displayed() && tableRow.ContainsKey("MaxColumns"))
+            {
+                createWidgetElement.MaxColumns.Clear();
+                createWidgetElement.MaxColumns.SendKeys(tableRow["MaxColumns"]);
+            }
+
+            if (createWidgetElement.ShowLegend.Displayed() && tableRow.ContainsKey("ShowLegend")
+                                                           && !string.IsNullOrEmpty(tableRow["ShowLegend"]))
+            {
+                createWidgetElement.ShowLegend.Click();
+
+            }
+        }
+
         #endregion
 
 
