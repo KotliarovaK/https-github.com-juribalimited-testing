@@ -12,7 +12,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//button//span[text()='CREATE PROJECT RING']")]
         public IWebElement CreateProjectRingButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@role='row']/div[@col-id='displayOrder']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@role='row']/div[@col-id='displayOrder' and @role='gridcell']")]
         public IList<IWebElement> DisplayOrderValues { get; set; }
 
         public override List<By> GetPageIdentitySelectors()

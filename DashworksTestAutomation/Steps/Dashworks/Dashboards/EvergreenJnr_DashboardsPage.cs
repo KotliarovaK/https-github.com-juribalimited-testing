@@ -891,6 +891,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.That(headers.Select(x=>x.Text).ToList().FindAll(x => x.ToLower().Contains(column.ToLower())).Count(), Is.EqualTo(0), $"Table contains {column} header");
         }
 
+        [Then(@"Table columns of '(.*)' widget placed in the next order:")]
+        public void ThenThereIsNoSpecifiedColumnForWidget(string widget, Table table)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
+
+            var headers = page.GetTableWidgetHeaders(widget).Select(column => column.Text).ToList();
+            var expectedTable = table.Rows.SelectMany(row => row.Values);
+
+            Utils.Verify.That(headers, Is.EqualTo(expectedTable), $"Table orders is wrong");
+        }
+        
         [Then(@"Permission panel is displayed to the user")]
         public void ThenPermissionPanelIsDisplayedToTheUser()
         {
@@ -1244,6 +1256,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.That(page.GetWidgetLinks(widgetName).Count, Is.EqualTo(0), $"Found some links in widget");
         }
 
+        [Then(@"'(.*)' color displayed for '(.*)' value in table '(.*)' widget")]
+        public void ThenNextColorDisplayedForValueInWidget(string color, string value, string widget)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
+
+            Utils.Verify.That(page.GetTableGridValues(widget)
+                .Select(x => x.Text.Equals(value) && x.GetAttribute("style").Contains(ColorsConvertor.ConvertToHex(color))).Count(), Is.GreaterThan(0), $"Wrong color detected");
+        }
+        
         #region Dashboards details
 
         [When(@"User changes dashboard name to ""(.*)""")]

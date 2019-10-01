@@ -26,14 +26,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOneRingAddeddAfterMulticlickingCreateB
 	And User clicks Delete button
 	And User clicks Delete button in the warning message
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS15397 @Cleanup @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS15397 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorDisplayedWhenCreatingRingsConsistently
 	When Project created via API and opened
 	| ProjectName     | Scope     | ProjectTemplate | Mode               |
 	| NewProject15397 | All Users | None            | Standalone Project |
 	And User navigates to the 'Rings' left menu item
 	And User clicks 'CREATE PROJECT RING' button 
-	Then Page with 'Create Project Ring' header is displayed to user
+	Then Page with 'Create Project Ring' subheader is displayed to user
 	When User type "TestRing15397_1" Name in the "Ring name" field on the 'NewProject15397' Project details page
 	And User clicks Create button on the Create Ring page
 	Then Success message is displayed and contains "The ring has been created" text
@@ -43,7 +43,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorDisplayedWhenCreatingRin
 	And User clicks content from "Project" column
 	And User navigates to the 'Rings' left menu item
 	And User clicks 'CREATE PROJECT RING' button 
-	Then Page with 'Create Project Ring' header is displayed to user
+	Then Page with 'Create Project Ring' subheader is displayed to user
 	When User type "TestRing15397_2" Name in the "Ring name" field on the 'NewProject15397' Project details page
 	And User clicks Create button on the Create Ring page
 	Then There are no errors in the browser console

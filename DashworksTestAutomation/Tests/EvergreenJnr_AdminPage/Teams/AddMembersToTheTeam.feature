@@ -13,11 +13,11 @@ Scenario: EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam
 	Then Page with 'Teams' header is displayed to user
 	#Then Counter shows "2,794" found rows
 	When User clicks 'CREATE TEAM' button 
-	Then Page with 'Create Team' header is displayed to user
+	Then Page with 'Create Team' subheader is displayed to user
 	When User clicks 'CANCEL' button 
 	Then Page with 'Teams' header is displayed to user
 	When User clicks 'CREATE TEAM' button 
-	Then Page with 'Create Team' header is displayed to user
+	Then Page with 'Create Team' subheader is displayed to user
 	When User enters "TestTeam8" in the "Team Name" field
 	And User enters "test" in the Team Description field
 	When User selects "Add members from another team" in the Add Members dropdown
@@ -37,7 +37,7 @@ Scenario: EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam
 	And User clicks Delete button 
 	Then Warning message with "You cannot delete the default team" text is displayed on the Admin page
 	When User clicks 'CREATE TEAM' button 
-	Then Page with 'Create Team' header is displayed to user
+	Then Page with 'Create Team' subheader is displayed to user
 	When User enters "TestTeam88" in the "Team Name" field
 	And User enters "test" in the Team Description field
 	And User clicks Default Team checkbox
