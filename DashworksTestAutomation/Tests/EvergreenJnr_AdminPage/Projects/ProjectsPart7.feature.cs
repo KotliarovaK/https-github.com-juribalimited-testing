@@ -170,7 +170,7 @@ this.FeatureBackground();
 #line 24
  testRunner.When("User clicks \'CREATE PROJECT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 25
- testRunner.Then("Page with \'Create Project\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Page with \'Create Project\' subheader is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 26
  testRunner.When("User enters \"UsersProject\" in the \"Project Name\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 27
@@ -297,7 +297,7 @@ this.FeatureBackground();
 #line 54
  testRunner.When("User clicks Create Project from the main list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 55
- testRunner.Then("Page with \'Create Project\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Page with \'Create Project\' subheader is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 56
  testRunner.When(string.Format("User enters \"{0}\" in the \"Project Name\" field", projectName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 57
@@ -326,7 +326,7 @@ this.FeatureBackground();
 #line 68
  testRunner.When("User clicks Create Project from the main list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 69
- testRunner.Then("Page with \'Create Project\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Page with \'Create Project\' subheader is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 70
  testRunner.When(string.Format("User enters \"{0}\" in the \"Project Name\" field", projectName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 71
@@ -356,7 +356,7 @@ this.FeatureBackground();
 #line 83
  testRunner.When("User clicks Create Project from the main list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 84
- testRunner.Then("Page with \'Create Project\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Page with \'Create Project\' subheader is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 85
  testRunner.When(string.Format("User enters \"{0}\" in the \"Project Name\" field", projectName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 86
@@ -439,7 +439,7 @@ this.FeatureBackground();
 #line 102
  testRunner.When("User clicks \'CREATE PROJECT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 103
- testRunner.Then("Page with \'Create Project\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Page with \'Create Project\' subheader is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 104
  testRunner.When("User enters \"MailboxesProject25\" in the \"Project Name\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 105
@@ -486,7 +486,7 @@ this.FeatureBackground();
 #line 124
  testRunner.When("User clicks \'CREATE PROJECT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 125
- testRunner.Then("Page with \'Create Project\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Page with \'Create Project\' subheader is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 126
  testRunner.When("User enters \"MailboxesProject26\" in the \"Project Name\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 127
@@ -524,7 +524,7 @@ this.FeatureBackground();
 #line 143
  testRunner.When("User clicks \'CREATE PROJECT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 144
- testRunner.Then("Page with \'Create Project\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Page with \'Create Project\' subheader is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 145
  testRunner.When("User enters \"MailboxesProject27\" in the \"Project Name\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 146
@@ -614,7 +614,7 @@ this.FeatureBackground();
 #line 158
  testRunner.When("User clicks Create Project from the main list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 159
- testRunner.Then("Page with \'Create Project\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Page with \'Create Project\' subheader is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 160
  testRunner.When(string.Format("User enters \"{0}\" in the \"Project Name\" field", projectName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 161
@@ -647,7 +647,7 @@ this.FeatureBackground();
 #line 174
  testRunner.When("User clicks Create Project from the main list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 175
- testRunner.Then("Page with \'Create Project\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Page with \'Create Project\' subheader is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 176
  testRunner.When(string.Format("User enters \"{0}\" in the \"Project Name\" field", projectName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 177
@@ -677,7 +677,7 @@ this.FeatureBackground();
 #line 189
  testRunner.When("User clicks Create Project from the main list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 190
- testRunner.Then("Page with \'Create Project\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Page with \'Create Project\' subheader is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 191
  testRunner.When(string.Format("User enters \"{0}\" in the \"Project Name\" field", projectName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 192
