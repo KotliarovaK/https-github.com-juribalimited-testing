@@ -460,6 +460,11 @@
     <Compile Include="Steps\Senior\Senior_CreatingProject\Projects_Removing.cs" />
     <Compile Include="Steps\Senior\Senior_CreatingProject\Projects_SelfService.cs" />
     <Compile Include="Steps\Senior\Tasks\AfterScenario\RemoveTaskAfterScenario.cs" />
+    <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\ActionsPanelPart12.feature.cs">
+      <DependentUpon>ActionsPanelPart12.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\ActionsPanelPart11.feature.cs">
       <DependentUpon>ActionsPanelPart11.feature</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -1547,6 +1552,10 @@
     </None>
     <None Include="TestData\Filters\Users.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\ActionsPanelPart12.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ActionsPanelPart12.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\ActionsPanelPart11.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

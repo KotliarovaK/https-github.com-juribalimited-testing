@@ -465,3 +465,21 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCorrectColorSchemeisUsedWhenWidge
 	And Color Scheme dropdown is disabled
 	When User clicks 'UPDATE' button 
 	Then There are no errors in the browser console
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18072 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFilterChangedInUiPartAfterSelectingAnotherFilter
+	When Dashboard with "DAS18072_Dashboard" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks 'ADD WIDGET' button 
+	And User adds new Widget
+	| WidgetType | Title       | List        | SplitBy     | AggregateFunction | OrderBy          |
+	| Pie        | Widget18072 | All Devices | Device Type | Count             | Device Type DESC |
+	Then Widget Preview is displayed to the user
+	And There are no errors in the browser console
+	And 'Device Type DESC' option displayed for Widget OrderBy
+	When User selects "Hostname" as Widget Split By
+	Then '' option displayed for Widget OrderBy
+	And Widget Preview is not displayed to the user
+	When User selects "Hostname ASC" as Widget OrderBy
+	Then Widget Preview is displayed to the user
+	And There are no errors in the browser console
