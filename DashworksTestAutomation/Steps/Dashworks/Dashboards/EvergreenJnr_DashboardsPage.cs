@@ -9,6 +9,7 @@ using DashworksTestAutomation.Pages;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.Dashboards;
+using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
@@ -549,8 +550,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForDataLoading();
 
-            Utils.Verify.That(page.IsWidgetExists(widgetName), Is.True, $"Widget with name {widgetName} doesn't exist");
-            Utils.Verify.IsTrue(page.CountNuberOfWidgetsWithTheSameName(widgetName) == numberOfWidgets, $"More than {numberOfWidgets} widgets was displayed.");
+            Verify.IsTrue(page.IsWidgetExists(widgetName), $"Widget with name {widgetName} doesn't exist");
+            Verify.IsTrue(page.WidgetsCount(widgetName).Equals(numberOfWidgets), $"More than {numberOfWidgets} widgets was displayed.");
         }
 
         [When(@"User deletes ""(.*)"" Widget on Dashboards page")]
@@ -669,7 +670,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.IsTrue(page.IconOnlyCardWidget.Displayed(), "Icon Only is not displayed for Card widget");
         }
 
-      
+
 
         [Then(@"User sees ""(.*)"" text in warning message on Dashboards page")]
         public void ThenUserSeesTextInWarningMessageOnDashboardsPage(string text)
@@ -824,14 +825,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             page.GetCountForTableWidget(column, value).Click();
         }
-        
+
         [Then(@"There is no '(.*)' column for '(.*)' widget")]
         public void ThenThereIsNoSpecifiedColumnForWidget(string column, string widget)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             var headers = page.GetTableWidgetHeaders(widget);
 
-            Utils.Verify.That(headers.Select(x=>x.Text).ToList().FindAll(x => x.ToLower().Contains(column.ToLower())).Count(), Is.EqualTo(0), $"Table contains {column} header");
+            Utils.Verify.That(headers.Select(x => x.Text).ToList().FindAll(x => x.ToLower().Contains(column.ToLower())).Count(), Is.EqualTo(0), $"Table contains {column} header");
         }
 
         [Then(@"Table columns of '(.*)' widget placed in the next order:")]
@@ -845,7 +846,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             Utils.Verify.That(headers, Is.EqualTo(expectedTable), $"Table orders is wrong");
         }
-        
+
         [Then(@"Permission panel is displayed to the user")]
         public void ThenPermissionPanelIsDisplayedToTheUser()
         {
@@ -922,7 +923,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForElementsToBeDisplayed(page.DetailsPanelSharedListsTableHeaders);
-            Utils.Verify.That(page.DetailsPanelSharedListsTableHeaders.Select(x=>x.Text).ToList(), Is.EqualTo(new List<string>{a, b}), "Headers are different");
+            Utils.Verify.That(page.DetailsPanelSharedListsTableHeaders.Select(x => x.Text).ToList(), Is.EqualTo(new List<string> { a, b }), "Headers are different");
         }
 
         [When(@"User clicks Settings button for ""(.*)"" shared user")]
@@ -1041,7 +1042,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.IsTrue(page.DashWorksPrintLogo.Displayed(), "Dashworks logo isn't displayed");
             Utils.Verify.IsTrue(page.PrintPreviewWidgets.Displayed, "Print preview widgets aren't displayed");
         }
-        
+
         [Then(@"There is no breadcrumbs displayed on Dashboard page")]
         public void ThereIsNoBreadcrumbsDisplayedOnDashboardPage()
         {
@@ -1116,7 +1117,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
             Utils.Verify.That(page.DataLabels.Text, Is.EqualTo(text), $"{text} data label is not displayed");
         }
-        
+
         [Then(@"Move to Section pop up is displayed to the User")]
         public void ThenMoveToSectionPopUpIsDisplayedToTheUser()
         {
@@ -1163,7 +1164,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.That(page.GetTableGridValues(widget)
                 .Select(x => x.Text.Equals(value) && x.GetAttribute("style").Contains(ColorsConvertor.ConvertToHex(color))).Count(), Is.GreaterThan(0), $"Wrong color detected");
         }
-        
+
         #region Dashboards details
 
         [When(@"User changes dashboard name to ""(.*)""")]
@@ -1374,13 +1375,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             try
             {
                 page.DashWorksPrintLogo.Click();
-            } catch (System.Reflection.TargetInvocationException)
+            }
+            catch (System.Reflection.TargetInvocationException)
             {
                 return;
             }
             throw new Exception("Dashworks Logo on Print Preview page is clickable");
         }
 
-    #endregion
-}
+        #endregion
+    }
 }

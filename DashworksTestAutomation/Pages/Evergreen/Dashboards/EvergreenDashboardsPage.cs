@@ -206,10 +206,10 @@ namespace DashworksTestAutomation.Pages
 
         public bool IsWidgetExists(string widgetName)
         {
-            return CountNuberOfWidgetsWithTheSameName(widgetName) > 0;
+            return WidgetsCount(widgetName) > 0;
         }
 
-        public int CountNuberOfWidgetsWithTheSameName(string widgetName)
+        public int WidgetsCount(string widgetName)
         {
            var numberOfWidgets = Driver.FindElements(By.XPath($".//div[@class='widgets']//span[contains(text(),'{widgetName}')]")).Count;
            return numberOfWidgets;
