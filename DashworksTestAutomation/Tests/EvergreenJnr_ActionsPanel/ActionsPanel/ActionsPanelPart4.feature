@@ -21,6 +21,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelWorkedCorrectlyAfterCic
 	| Options              |
 	| Update bucket        |
 	| Update capacity unit |
+	| Update custom field  |
 	| Update path          |
 	| Update ring          |
 	| Update task value    |
@@ -110,6 +111,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatProjectFieldIsDisplayedCorrectlyAfterC
 	| Options              |
 	| Update bucket        |
 	| Update capacity unit |
+	| Update custom field  |
 	| Update path          |
 	| Update ring          |
 	| Update task value    |
