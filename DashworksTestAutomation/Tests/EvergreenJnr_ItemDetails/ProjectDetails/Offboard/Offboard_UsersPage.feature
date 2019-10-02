@@ -16,7 +16,6 @@ Scenario: EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboa
 	And User navigates to the "Project Details" sub-menu on the Details page
 	And User clicks 'OFFBOARD' button 
 	Then Dialog Pop-up is displayed for User
-	And following text 'Offboarding user BCLABS\01F6D54271D74F1BB8D (McGinley, Marilyn). Select any associated devices below to offboard at the same time. Offboarding an object deletes all project related information about it.' is displayed in Dialog Pop-up
 	And 'Offboard all associated devices' checkbox is checked
 	And following columns are displayed on the Item details page:
 	| ColumnName   |
@@ -53,7 +52,6 @@ Scenario: EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboa
 	And User navigates to the "Project Details" sub-menu on the Details page
 	And User clicks 'OFFBOARD' button 
 	Then Dialog Pop-up is displayed for User
-	And following text 'Offboarding user BCLABS\01F6D54271D74F1BB8D (McGinley, Marilyn). Select any associated mailboxes below to offboard at the same time. Offboarding an object deletes all project related information about it.' is displayed in Dialog Pop-up
 	And 'Offboard all associated devices' checkbox is checked
 	And following columns are displayed on the Item details page:
 	| ColumnName   |
@@ -68,7 +66,7 @@ Scenario: EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboa
 	Then Page with 'Projects' header is displayed to user
 	When User enters "USE ME FOR AUTOMATION(USR SCHDLD)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
-	When User navigates to the 'Scope' left menu item
+	And User navigates to the 'Scope' left menu item
 	And User selects "History" tab on the Project details page
 	Then '01F6D54271D74F1BB8D' content is displayed in the 'Item' column
 	And '02X387UQLFP3ISU' content is displayed in the 'Item' column

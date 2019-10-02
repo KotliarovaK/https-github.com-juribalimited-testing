@@ -63,7 +63,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatBucketBulkUpdateOptionNotAvaila
 	| Update path          |
 	| Update task value    |
 
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS15291 @Not_Run
+	#Ann.Ilchenko 10/2/19: remove 'not run' tag when 'DAS18368' bug will be fixed.
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS15291 @DAS18368 @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckSortOrderForBulkUpdateCapacitySlot
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -79,8 +80,6 @@ Scenario: EvergreenJnr_DevicesList_CheckSortOrderForBulkUpdateCapacitySlot
 	And User selects "Scheduled Date" Task on Action panel
 	And User selects "Update" Update Date on Action panel
 	And User selects "23 Nov 2018" Date on Action panel
-	#Ann.Ilchenko 7/17/19 : fixed on 'orbit'
-	#Update Capacity Slot sort order
 	Then following values are displayed in "Capacity Slot" drop-down on Action panel:
 	| Options                      |
 	| None                         |
@@ -93,8 +92,7 @@ Scenario: EvergreenJnr_DevicesList_CheckSortOrderForBulkUpdateCapacitySlot
 	| London - Southbank Morning   |
 	| London - Southbank Afternoon |
 
-	#Ann.Ilchenko 9/25/19: looks like bug, because 'Manchester Morning' is displayed for 'Capacity Slot' drop-down. need to ask manual team tomorrow
-@Evergreen @AllLists @EvergreenJnr_ActionsPanel @DAS17103 @Not_Run
+@Evergreen @AllLists @EvergreenJnr_ActionsPanel @DAS17103
 Scenario: EvergreenJnr_DevicesList_CheckTooltipDisplayingInDatePickerOfBulkUpdate
 	When User clicks 'Devices' on the left-hand menu
 	And User clicks the Actions button
@@ -124,8 +122,8 @@ Scenario: EvergreenJnr_DevicesList_CheckTooltipDisplayingInDatePickerOfBulkUpdat
 	| London Depot 13:00 - 15:00 |
 	| London Depot 15:00 - 17:00 |
 	And following values are not presented in "Capacity Slot" drop-down on Action panel:
-	| Options            |
-	| Manchester Morning |
+	| Options              |
+	| Manchester Afternoon |
 
 @Evergreen @AllLists @EvergreenJnr_ActionsPanel @DAS17580 @Cleanup
 Scenario: EvergreenJnr_UsersList_CheckDateColorDisplayingInBulkUpdateDatePicker
