@@ -7,6 +7,7 @@ using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages;
 using DashworksTestAutomation.Pages.Evergreen;
+using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
@@ -1179,10 +1180,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 var filterValue = filter.FindElement(By.XPath(FiltersElement.FilterValuesSelector)).Text;
                 var filterOption = filter.FindElement(By.XPath(FiltersElement.FilterOptionsSelector)).Text;
                 var urlPartToCheck = filtersValuesInUrl[i];
-                Utils.Verify.Contains(ColumnNameToUrlConvertor.Convert(basePage.Header.Text, filterName),
-                    urlPartToCheck, "PLEASE ADD EXCEPTION MESSAGE");
-                Utils.Verify.Contains(FilterOperatorsConvertor.Convert(filterOption), urlPartToCheck, "PLEASE ADD EXCEPTION MESSAGE");
-                Utils.Verify.Contains(filterValue, urlPartToCheck, "PLEASE ADD EXCEPTION MESSAGE");
+                var headerElement = _driver.NowAt<BaseHeaderElement>();
+                headerElement.CheckPageHeaderContainsText(filterName);
+                Verify.Contains(FilterOperatorsConvertor.Convert(filterOption), urlPartToCheck, "PLEASE ADD EXCEPTION MESSAGE");
+                Verify.Contains(filterValue, urlPartToCheck, "PLEASE ADD EXCEPTION MESSAGE");
             }
         }
 

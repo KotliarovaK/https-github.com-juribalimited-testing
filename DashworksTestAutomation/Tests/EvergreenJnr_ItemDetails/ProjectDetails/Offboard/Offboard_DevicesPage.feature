@@ -12,11 +12,10 @@ Scenario: EvergreenJnr_DevicesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffb
 	When User navigates to the 'Device' details page for '01ONL5I8LY44R3' item
 	Then Details page for "01ONL5I8LY44R3" item is displayed to the user
 	When User switches to the "USE ME FOR AUTOMATION(DEVICE SCHDLD)" project in the Top bar on Item details page
-	When User navigates to the 'Projects' left menu item
+	And User navigates to the 'Projects' left menu item
 	And User navigates to the "Project Details" sub-menu on the Details page
 	And User clicks 'OFFBOARD' button 
 	Then Dialog Pop-up is displayed for User
-	And following text 'Offboarding device 01ONL5I8LY44R3. Select any associated users below to offboard at the same time. Offboarding an object deletes all project related information about it.' is displayed in Dialog Pop-up
 	And 'Offboard all associated users' checkbox is checked
 	And following columns are displayed on the Item details page:
 	| ColumnName   |
@@ -28,17 +27,17 @@ Scenario: EvergreenJnr_DevicesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffb
 	When User select "Username" rows in the grid
 	| SelectedRowsName |
 	| ABQ575757        |
-	Then "UK\ABQ575757" chip have tooltip with "UK\ABQ575757" text
-	When User clicks 'OFFBOARD' button 
-	And User clicks 'OFFBOARD' button 
+	Then " UK\ABQ575757" chip have tooltip with "UK\ABQ575757" text
+	When User clicks 'OFFBOARD' button in Dialog Pop-up
+	And User clicks 'OFFBOARD' button in Dialog Pop-up
 	#going to check the object state
 	And User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
 	Then Page with 'Projects' header is displayed to user
-	When User enters "<ProjectName>" text in the Search field for "Project" column
+	When User enters "USE ME FOR AUTOMATION(DEVICE SCHDLD)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
-	When User navigates to the 'Scope' left menu item
+	And User navigates to the 'Scope' left menu item
 	And User selects "History" tab on the Project details page
 	Then '01ONL5I8LY44R3' content is displayed in the 'Item' column
 	And 'ABQ575757' content is displayed in the 'Item' column
@@ -51,20 +50,19 @@ Scenario: EvergreenJnr_DevicesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffb
 	When User navigates to the 'Device' details page for '01ONL5I8LY44R3' item
 	Then Details page for "01ONL5I8LY44R3" item is displayed to the user
 	When User switches to the "USE ME FOR AUTOMATION(DEVICE SCHDLD)" project in the Top bar on Item details page
-	When User navigates to the 'Projects' left menu item
+	And User navigates to the 'Projects' left menu item
 	And User navigates to the "Project Details" sub-menu on the Details page
 	And User clicks 'OFFBOARD' button 
 	Then Dialog Pop-up is displayed for User
-	Then following text 'Offboarding device 01ONL5I8LY44R3. Select any associated users below to offboard at the same time. Offboarding an object deletes all project related information about it.' is displayed in Dialog Pop-up
-	Then 'Offboard all associated users' checkbox is checked
-	Then following columns are displayed on the Item details page:
+	And 'Offboard all associated users' checkbox is checked
+	And following columns are displayed on the Item details page:
 	| ColumnName   |
 	| Username     |
 	| Display Name |
 	| Domain       |
 	| Owner        |
 	When User clicks 'OFFBOARD' button in Dialog Pop-up
-	When User clicks 'OFFBOARD' button in Dialog Pop-up 
+	And User clicks 'OFFBOARD' button in Dialog Pop-up 
 	#going to check the object state
 	And User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -72,10 +70,10 @@ Scenario: EvergreenJnr_DevicesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffb
 	Then Page with 'Projects' header is displayed to user
 	When User enters "USE ME FOR AUTOMATION(DEVICE SCHDLD)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
-	When User navigates to the 'Scope' left menu item
+	And User navigates to the 'Scope' left menu item
 	And User selects "History" tab on the Project details page
 	Then '01ONL5I8LY44R3' content is displayed in the 'Item' column
-	Then 'ABS188911' content is displayed in the 'Item' column
+	And 'ABS188911' content is displayed in the 'Item' column
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @Offboard @DAS17964 @DAS17990 @DAS17000
 Scenario: EvergreenJnr_DevicesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindowWithoutUserOnDevicesPage

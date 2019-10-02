@@ -31,7 +31,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptio
 	And User clicks 'CREATE' button 
 	#Action 3
 	When User clicks 'CREATE ACTION' button 
-	Then 'Test_Automation_15427' page header is displayed to the User
+	Then Page with 'Test_Automation_15427' header is displayed to user
 	When User enters '15427_Action3' text to 'Action Name' textbox
 	And User selects 'Update path' in the 'Action Type' dropdown
 	And User selects '1803 Rollout' option from 'Project' autocomplete
@@ -71,7 +71,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptio
 	Then Edit Action page is displayed to the User
 	And "UPDATE" Action button is displayed
 	And "CANCEL" Action button is displayed
-	And 'Test_Automation_15427' page header is displayed to the User
+	And Page with 'Test_Automation_15427' header is displayed to user
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15427 @DAS15428 @DAS16728 @DAS16976 @DAS17067 @DAS16890 @DAS17594 @DAS17774 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectlyForAutomations

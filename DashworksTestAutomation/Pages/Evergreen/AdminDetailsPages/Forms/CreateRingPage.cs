@@ -17,9 +17,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Forms
         [FindsBy(How = How.XPath, Using = ".//button[contains(@class,'mat-primary mat-raised-button')]")]
         public IWebElement CreateRingButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//label[text()='Ring name']/ancestor::div[@class='form-item']//input")]
-        public IWebElement RingNameField { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//input[@id='description']")]
         public IWebElement DescriptionField { get; set; }
 

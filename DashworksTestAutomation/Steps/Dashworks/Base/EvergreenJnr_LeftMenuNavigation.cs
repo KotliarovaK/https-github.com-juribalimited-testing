@@ -33,15 +33,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         #endregion
 
-        #region Display
-
-        [Then(@"Page with '(.*)' header is displayed to user")]
-        public void ThenPageWithHeaderIsDisplayedToUser(string pageTitle)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            Verify.IsTrue(_driver.IsElementDisplayed(page.Header, WebDriverExtensions.WaitTime.Short), $"'{pageTitle}' page was not opened");
-            Verify.AreEqual(pageTitle, page.Header.Text, "Incorrect page header");
-        }
+        //TODO subheader should be moved to separate web element
+        #region Subheader
 
         [Then(@"Page with '(.*)' subheader is displayed to user")]
         public void ThenPageWithSubheaderIsDisplayedToUser(string subHeader)
