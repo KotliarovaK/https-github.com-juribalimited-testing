@@ -222,7 +222,7 @@
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Automations\CreateAutomationsPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Automations\EditActionPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Automations\CreateActionsPage.cs" />
-    <Compile Include="Pages\Evergreen\AdminDetailsPages\BaseHeaderPage.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\BaseHeaderElement.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateReadinessPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\RingsPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\CogMenuElements.cs" />
@@ -266,8 +266,6 @@
     <Compile Include="Pages\Evergreen\AdminDetailsPages\MoveToAnotherBucketPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\TeamsPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\ProjectsPage.cs" />
-    <Compile Include="Pages\Evergreen\AdminPage.cs" />
-    <Compile Include="Pages\Evergreen\ApplicationsPage.cs" />
     <Compile Include="Pages\Evergreen\BaseDashboardPage.cs" />
     <Compile Include="Pages\Evergreen\ColumnsElement.cs" />
     <Compile Include="Pages\Evergreen\CustomListElement.cs" />
@@ -277,19 +275,16 @@
     <Compile Include="Pages\Evergreen\DetailsTabsMenu\BaseTabSectionElements.cs" />
     <Compile Include="Pages\Evergreen\DetailsTabsMenu\DevicesDetailsTabsMenu.cs" />
     <Compile Include="Pages\Evergreen\DetailsTabsMenu\GroupTabMenu.cs" />
-    <Compile Include="Pages\Evergreen\DevicesPage.cs" />
     <Compile Include="Pages\Evergreen\FiltersElement.cs" />
     <Compile Include="Pages\Evergreen\GlobalSearchElement.cs" />
     <Compile Include="Pages\Evergreen\HeaderElement.cs" />
     <Compile Include="Pages\Evergreen\LeftHandMenuElement.cs" />
     <Compile Include="Pages\Evergreen\ListDetailsElement.cs" />
-    <Compile Include="Pages\Evergreen\MailboxesPage.cs" />
     <Compile Include="Pages\Evergreen\PivotElementPage.cs" />
     <Compile Include="Pages\Evergreen\ProfileDetailsPages\AccountDetailsPage.cs" />
     <Compile Include="Pages\Evergreen\ProfileDetailsPages\AdvancedPage.cs" />
     <Compile Include="Pages\Evergreen\ProfileDetailsPages\ChangePasswordPage.cs" />
     <Compile Include="Pages\Evergreen\ProfileDetailsPages\PreferencesPage.cs" />
-    <Compile Include="Pages\Evergreen\UsersPage.cs" />
     <Compile Include="Pages\DashworksHeaderMenuElement.cs" />
     <Compile Include="Pages\LoginPage.cs" />
     <Compile Include="Pages\LoginPanelPage.cs" />

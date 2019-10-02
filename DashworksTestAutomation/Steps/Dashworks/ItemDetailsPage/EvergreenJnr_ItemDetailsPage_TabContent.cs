@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
+using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.ItemDetails;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
@@ -36,8 +37,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         [Then(@"Details page for ""(.*)"" item is displayed to the user")]
         public void ThenDetailsPageForItemIsDisplayedToTheUser(string pageName)
         {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitForElementToContainsText(page.Header, pageName);
+            var page = _driver.NowAt<BaseHeaderElement>();
+            page.CheckPageHeaderContainsText(pageName);
 
             var detailsPage = _driver.NowAt<DetailsPage>();
             Utils.Verify.IsTrue(detailsPage.GroupIcon.Displayed(), "Item details icon is not displayed");

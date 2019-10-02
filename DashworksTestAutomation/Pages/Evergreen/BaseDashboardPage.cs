@@ -37,9 +37,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public const string ImageSelector = ".//i";
 
-        [FindsBy(How = How.XPath, Using = ".//h1")]
-        public IWebElement Header { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//h2")]
         public IWebElement SubHeader { get; set; }
 
@@ -402,10 +399,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             Driver.WaitForDataLoading();
 
-            return new List<By>
-            {
-                SelectorFor(this, p => p.Header),
-            };
+            return new List<By> { };
         }
 
         //Null value can be returned

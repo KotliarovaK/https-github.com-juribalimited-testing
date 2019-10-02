@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Utils;
 using OpenQA.Selenium.Remote;
@@ -11,7 +12,7 @@ using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks.Base
 {
-    //ONLY actions with BaseHeaderPage !!!
+    //ONLY actions with BaseHeaderElement !!!
     [Binding]
     class EvergreenJnr_BaseHeader : SpecFlowContext
     {
@@ -22,12 +23,11 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             _driver = driver;
         }
 
-        [Then(@"'(.*)' page header is displayed to the User")]
-        public void ThenPageHeaderIsDisplayedToTheUser(string expectedHeader)
+        [Then(@"Page with '(.*)' header is displayed to user")]
+        public void ThenPageWithHeaderIsDisplayedToUser(string pageTitle)
         {
-            var headerElement = _driver.NowAtWithoutWait<BaseHeaderPage>();
-            Verify.AreEqual(expectedHeader, headerElement.Header.Text, 
-                $"Header '{expectedHeader}' is not displayed");
+            var header = _driver.NowAt<BaseHeaderElement>();
+            header.CheckPageHeader(pageTitle);
         }
     }
 }

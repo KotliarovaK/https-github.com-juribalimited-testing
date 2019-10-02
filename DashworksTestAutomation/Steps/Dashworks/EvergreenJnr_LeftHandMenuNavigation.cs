@@ -56,17 +56,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 case "All Users":
                 case "All Applications":
                 case "All Mailboxes":
-                    var list = _driver.NowAt<BaseDashboardPage>();
-                    _driver.WaitForElementToBeDisplayed(list.Header);
-                    Verify.AreEqual(listPage.ToLower(), list.Header.Text.ToLower(),
-                        "Incorrect list is displayed to user");
+                    var header = _driver.NowAt<BaseHeaderElement>();
+                    header.CheckPageHeader(listPage.ToLower());
                     break;
 
                 case "Admin":
-                    var adminPage = _driver.NowAt<BaseDashboardPage>();
-                    _driver.WaitForElementToBeDisplayed(adminPage.Header);
-                    Verify.AreEqual("projects", adminPage.Header.Text.ToLower(),
-                        "Incorrect page is displayed to user");
+                    var adminPage = _driver.NowAt<BaseHeaderElement>();
+                    adminPage.CheckPageHeader("projects");
                     break;
 
                 default:
