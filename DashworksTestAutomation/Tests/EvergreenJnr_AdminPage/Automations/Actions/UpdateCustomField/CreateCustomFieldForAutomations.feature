@@ -21,7 +21,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldValidations
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
-	When User clicks the "CREATE ACTION" Action button
+	When User clicks 'CREATE ACTION' button
 	And User enters '17881_Action' text to 'Action Name' textbox
 	And User selects 'Update custom field' in the 'Action Type' dropdown
 	When User selects '17847' option from 'Custom Field' autocomplete
@@ -48,7 +48,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldValidations
 	Then 'The selected custom field cannot found' error message is displayed for 'Custom Field' field
 	Then '[Custom field not found]' value is displayed in the 'Custom Field' dropdown
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18166 @Cleanup @Not_Ready
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18166 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldForDisabledCustomFieldOnCreateActionPage
 	When User creates new Custom Field
 	| FieldName | FieldLabel        | AllowExternalUpdate | Enabled | Computer |
@@ -62,12 +62,13 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldForDisabledCus
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
-	When User clicks the "CREATE ACTION" Action button
+	When User clicks 'CREATE ACTION' button
 	And User enters '17881_Action' text to 'Action Name' textbox
 	And User selects 'Update custom field' in the 'Action Type' dropdown
 	Then 'CustomField_18166' content is not displayed in 'Custom Field' autocomplete after search
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18166 @Cleanup @Not_Ready
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18166 @Cleanup
+#Waiting for 'Phoenix Field' from GD to automation
 Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldForDisabledCustomFieldOnUpdateActionPage
 	When User creates new Custom Field
 	| FieldName | FieldLabel        | AllowExternalUpdate | Enabled | Computer |
@@ -81,7 +82,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldForDisabledCus
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
-	When User clicks the "CREATE ACTION" Action button
+	When User clicks 'CREATE ACTION' button
 	And User enters '17881_Action' text to 'Action Name' textbox
 	And User selects 'Update custom field' in the 'Action Type' dropdown
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete

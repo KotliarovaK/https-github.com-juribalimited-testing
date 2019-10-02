@@ -16,7 +16,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldReplaceAllValu
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
-	When User clicks the "CREATE ACTION" Action button
+	When User clicks 'CREATE ACTION' button
 	And User enters '17881_Action' text to 'Action Name' textbox
 	And User selects 'Update custom field' in the 'Action Type' dropdown
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
@@ -124,7 +124,6 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldRemoveSpecific
 	Then "SAVE AND CREATE ANOTHER" Action button is active
 	Then "CANCEL" Action button is active
 	Then "SAVE AND CREATE ANOTHER" Action button is active
-	#Create Action
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS17881 @DAS17751 @Cleanup @Not_Ready
 #Waiting 'Update custom field' in the 'Action Type' dropdown for automation

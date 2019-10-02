@@ -6,11 +6,11 @@ Background: Pre-Conditions
 	When User navigate to Manage link
 	And User select "Custom Fields" option in Management Console
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18166 @Cleanup @Not_Ready
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18166 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckBulkUpdateCustomFieldActionsForDisabledCustomField
 	When User creates new Custom Field
 	| FieldName | FieldLabel | AllowExternalUpdate | Enabled | User |
-	| DAS18166  | 18166_CF   | true                | true    | true |
+	| DAS18166  | 18166_CF   | true                | false   | true |
 	And User navigate to Evergreen URL
 	When User clicks 'Users' on the left-hand menu
 	And User clicks the Actions button

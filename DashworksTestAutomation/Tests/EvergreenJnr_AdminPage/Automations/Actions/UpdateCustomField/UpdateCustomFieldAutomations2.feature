@@ -70,7 +70,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	Then "zero" content is displayed in "Phoenix Field" column
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18187 @Cleanup @Not_Ready
-#Waiting 'Update custom field' in the 'Action Type' dropdown for automation
+#Waiting for 'Phoenix Field' from GD to automation
 Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomFieldReplaceSingleValue
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -133,7 +133,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	Then "012345" content is displayed in "Phoenix Field" column
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18187 @Cleanup @Not_Ready
-#Waiting 'Update custom field' in the 'Action Type' dropdown for automation
+#Waiting for 'Phoenix Field' from GD to automation
 Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomFieldRemoveAllValues
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -194,7 +194,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	Then "1 value" content is displayed in "Phoenix Field" column
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18187 @Cleanup @Not_Ready
-#Waiting 'Update custom field' in the 'Action Type' dropdown for automation
+#Waiting for 'Phoenix Field' from GD to automation
 Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomFieldReplaceAllValues
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user

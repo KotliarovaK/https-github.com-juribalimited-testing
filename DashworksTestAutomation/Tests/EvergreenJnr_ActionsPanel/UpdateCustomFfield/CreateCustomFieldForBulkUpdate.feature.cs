@@ -88,7 +88,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel.UpdateCustomFf
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS18166")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_CheckBulkUpdateCustomFieldActionsForDisabledCustomField()
         {
             System.Exception lastException = null;
@@ -122,8 +121,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel.UpdateCustomFf
                         "EvergreenJnr_AdminPage",
                         "Automations",
                         "DAS18166",
-                        "Cleanup",
-                        "Not_Ready"});
+                        "Cleanup"});
 #line 10
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -140,7 +138,7 @@ this.FeatureBackground();
                         "DAS18166",
                         "18166_CF",
                         "true",
-                        "true",
+                        "false",
                         "true"});
 #line 11
  testRunner.When("User creates new Custom Field", ((string)(null)), table1, "When ");
