@@ -551,7 +551,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
 
             Verify.IsTrue(page.IsWidgetExists(widgetName), $"Widget with name {widgetName} doesn't exist");
-            Verify.IsTrue(page.WidgetsCount(widgetName).Equals(numberOfWidgets), $"More than {numberOfWidgets} widgets was displayed.");
+            Verify.IsTrue(page.WidgetsCount(widgetName).Equals(numberOfWidgets), $"More than {numberOfWidgets} widgets were displayed.");
         }
 
         [When(@"User deletes ""(.*)"" Widget on Dashboards page")]
