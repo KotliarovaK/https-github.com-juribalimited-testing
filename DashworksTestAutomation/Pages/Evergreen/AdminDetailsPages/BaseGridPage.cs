@@ -237,12 +237,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         {
             var byControl =
                 By.XPath(
-                    $".//div[@role='presentation']//div[@class='ag-header-row'][2]/div[{GetColumnNumberByName(columnName)}]//div[@class='ag-floating-filter-full-body']//input");
+                    $".//div[@role='presentation']//div[@class='ag-header-row'][2]/div[{GetColumnNumberByName(columnName)}]//div[contains(@class, 'ag-floating-filter')]//div[@class='mat-form-field-infix']//input");
             Driver.WaitForDataLoading();
             Driver.WaitForElementToBeDisplayed(byControl);
             Driver.FindElement(byControl).Click();
             Driver.FindElement(byControl).Clear();
             Driver.FindElement(byControl).SendKeys(text);
+            BodyContainer.Click();
         }
 
         public IWebElement GetFilterByColumnName(string columnName)
@@ -264,7 +265,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public IWebElement GetDropdownFilterTextByColumnName(string columnName, string text)
         {
             var selector =
-                By.XPath($".//div[@role='presentation']/div[2]/div[{GetColumnNumberByName(columnName)}]//div[@class='ag-floating-filter-full-body']//mat-placeholder[text()='{text}']");
+                By.XPath($".//div[@role='presentation']//div[@class='ag-header-row'][2]/div[{GetColumnNumberByName(columnName)}]//div[@class='ag-floating-filter-full-body']//mat-placeholder[text()='{text}']");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }

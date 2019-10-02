@@ -280,8 +280,8 @@ this.FeatureBackground();
 #line 64
  testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 65
- testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
-                    "undone.\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Warning message with \"This operation cannot be undone\" text is displayed on Actio" +
+                    "n panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 66
  testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 67

@@ -1107,6 +1107,175 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedAutomation")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Admin")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
+        [NUnit.Framework.CategoryAttribute("Automations")]
+        [NUnit.Framework.CategoryAttribute("DAS17678")]
+        [NUnit.Framework.CategoryAttribute("DAS17859")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
+        public virtual void EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedAutomation()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedAutomationInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedAutomationInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedAutomation", null, new string[] {
+                        "Evergreen",
+                        "Admin",
+                        "EvergreenJnr_AdminPage",
+                        "Automations",
+                        "DAS17678",
+                        "DAS17859",
+                        "Cleanup",
+                        "Not_Ready"});
+#line 320
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 321
+ testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 322
+ testRunner.Then("Admin page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
+                        "AutomationName",
+                        "Description",
+                        "Active",
+                        "StopOnFailedAction",
+                        "Scope",
+                        "Run"});
+            table15.AddRow(new string[] {
+                        "17678_Automation",
+                        "17643",
+                        "true",
+                        "false",
+                        "Mailbox Readiness Columns & Filters",
+                        "Manual"});
+#line 323
+ testRunner.When("User creates new Automation via API", ((string)(null)), table15, "When ");
+#line 326
+ testRunner.When("User clicks \"Automations\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 327
+ testRunner.Then("\"Automations\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 328
+ testRunner.When("User enters \"17678_Automation\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 329
+ testRunner.And("User clicks content from \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 330
+ testRunner.Then("Automation page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 331
+ testRunner.When("User navigates to the \'Actions\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 333
+ testRunner.When("User clicks the \"CREATE ACTION\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 334
+ testRunner.When("User enters \'17678_Action\' text to \'Action Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 335
+ testRunner.And("User selects \'Update task value\' in the \'Action Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 336
+ testRunner.When("User selects \'zMailbox Sch for Automations Feature\' option from \'Project\' autocom" +
+                    "plete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 337
+ testRunner.When("User selects \'Stage 2\' option from \'Stage\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 338
+ testRunner.When("User selects \"Radio Date Slot Mail\" in the \"Task\" dropdown for Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 339
+ testRunner.And("User selects \"Update\" Update Value on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 340
+ testRunner.And("User selects \"Started\" Value on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 341
+ testRunner.And("User selects \"Update\" Update Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 342
+ testRunner.And("User selects \"3 Oct 2019\" Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 343
+ testRunner.And("User selects \"Radio Slot\" value for \"Capacity Slot\" dropdown on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 344
+ testRunner.And("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 346
+ testRunner.When("User clicks \"Automations\" navigation link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 347
+ testRunner.When("User enters \"17678_Automation\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 348
+ testRunner.When("User clicks \"Run now\" option in Cog-menu for \"17678_Automation\" item on Admin pag" +
+                    "e", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 349
+ testRunner.When("User selects \"Automation Log\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 350
+ testRunner.When("User clicks refresh button in the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 351
+ testRunner.When("User enters \"17678_Automation\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 352
+ testRunner.Then("\"SUCCESS\" content is displayed for \"Outcome\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 353
+ testRunner.When("User clicks String Filter button for \"Type\" column on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 354
+ testRunner.When("User selects \"Automation Finish\" checkbox from String Filter with item list on th" +
+                    "e Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 355
+ testRunner.And("User clicks content from \"Objects\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 356
+ testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 357
+ testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table16.AddRow(new string[] {
+                        "zMailboxAu: Stage 2 \\ Radio Date Slot Mail"});
+            table16.AddRow(new string[] {
+                        "zMailboxAu: Stage 2 \\ Radio Date Slot Mail (Date)"});
+            table16.AddRow(new string[] {
+                        "zMailboxAu: Stage 2 \\ Radio Date Slot Mail (Slot)"});
+#line 358
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table16, "When ");
+#line 363
+ testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 364
+ testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 365
+ testRunner.When("User removes \"Email Address\" column by Column panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 366
+ testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 367
+ testRunner.Then("\"STARTED\" content is displayed in \"zMailboxAu: Stage 2 \\ Radio Date Slot Mail\" co" +
+                    "lumn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 368
+ testRunner.Then("\"3 Oct 2019\" content is displayed in \"zMailboxAu: Stage 2 \\ Radio Date Slot Mail " +
+                    "(Date)\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 369
+ testRunner.Then("\"Radio Slot\" content is displayed in \"zMailboxAu: Stage 2 \\ Radio Date Slot Mail " +
+                    "(Slot)\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore

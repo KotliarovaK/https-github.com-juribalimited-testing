@@ -84,3 +84,27 @@ Scenario: EvergreenJnr_AdminPage_CheckUnsavedChangesPopUp
 	Then "You have unsaved changes. Are you sure you want to leave the page?" text is displayed in the warning message
 	Then "YES" button is displayed in the warning message
 	Then "NO" button is displayed in the warning message
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17286
+Scenario: EvergreenJnr_AdminPage_CheckCreatedByAndCreatedDateColumnOnTheAutomationsGrid
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Automations' left menu item
+	Then Page with 'Automations' header is displayed to user
+	When User have opened column settings for "Automation" column
+	And User clicks Column button on the Column Settings panel
+	And User select "Created By" checkbox on the Column Settings panel
+	When User select "Created Date" checkbox on the Column Settings panel
+	When User clicks on 'Created By' column header
+	Then data in table is sorted by 'Created By' column in ascending order
+	When User clicks on 'Created By' column header
+	Then data in table is sorted by 'Created By' column in descending order
+	When User clicks on 'Created Date' column header
+	Then date in table is sorted by 'Created Date' column in descending order
+	When User clicks on 'Created Date' column header
+	Then date in table is sorted by 'Created Date' column in ascending order
+	When User enters "[User not found]" text in the Search field for "Created By" column
+	Then Rows counter contains "7" found row of all rows
+	When User clicks Reset Filters button on the Admin page
+	When User enters "9 Aug 2019" text in the Search field for "Created Date" column
+	Then Rows counter contains "6" found row of all rows
