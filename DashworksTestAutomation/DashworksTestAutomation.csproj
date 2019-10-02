@@ -515,6 +515,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ActionsPanelPart1.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr_ActionsPanel\UpdateCustomFfield\CreateCustomFieldForBulkUpdate.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreateCustomFieldForBulkUpdate.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr_ActionsPanel\UpdateCustomFfield\UpdateCustomFieldPart2.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -530,15 +535,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AdminPage.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\UpdateCustomField\UpdateCustomFieldAutomations3.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UpdateCustomFieldAutomations3.feature</DependentUpon>
-    </Compile>
     <Compile Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\UpdateCustomField\UpdateCustomFieldAutomations2.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>UpdateCustomFieldAutomations2.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\UpdateCustomField\CreateCustomFieldForAutomations.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreateCustomFieldForAutomations.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\UpdateTaskValue\UpdateTaskValueAutomations.feature.cs">
       <AutoGen>True</AutoGen>
@@ -1592,6 +1597,10 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ActionsPanelPart1.feature.cs</LastGenOutput>
     </None>
+    <None Include="Tests\EvergreenJnr_ActionsPanel\UpdateCustomFfield\CreateCustomFieldForBulkUpdate.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CreateCustomFieldForBulkUpdate.feature.cs</LastGenOutput>
+    </None>
     <None Include="Tests\EvergreenJnr_ActionsPanel\UpdateCustomFfield\UpdateCustomFieldPart2.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>UpdateCustomFieldPart2.feature.cs</LastGenOutput>
@@ -1604,13 +1613,13 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AdminPage.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\UpdateCustomField\UpdateCustomFieldAutomations3.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>UpdateCustomFieldAutomations3.feature.cs</LastGenOutput>
-    </None>
     <None Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\UpdateCustomField\UpdateCustomFieldAutomations2.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>UpdateCustomFieldAutomations2.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\UpdateCustomField\CreateCustomFieldForAutomations.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CreateCustomFieldForAutomations.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\UpdateTaskValue\UpdateTaskValueAutomations.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

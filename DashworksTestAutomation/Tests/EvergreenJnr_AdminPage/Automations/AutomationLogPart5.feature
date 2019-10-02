@@ -16,7 +16,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateAndRemoveTaskValueForUpdateValueInUs
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
-	When User clicks 'CREATE ACTION' button 
+	When User clicks 'CREATE ACTION' button
 	When User enters '17974_Action' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
@@ -24,7 +24,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateAndRemoveTaskValueForUpdateValueInUs
 	When User selects 'DDL Slot Task' option from 'Task' autocomplete
 	And User selects "No change" Update Value on Action panel
 	And User selects "Remove" Update Date on Action panel
-	And User clicks 'CREATE' button 
+	And User clicks 'CREATE' button
 	#Create Action
 	When User clicks "Automations" navigation link on the Admin page
 	When User enters "17974_Automation" text in the Search field for "Automation" column
@@ -52,17 +52,13 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateAndRemoveTaskValueForUpdateValueInUs
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForRemoveOwnerInMailboxScopedAutomation
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User creates new Automation via API
+	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope                               | Run    |
 	| 17829_Automation | 17829       | true   | false              | Mailbox Readiness Columns & Filters | Manual |
-	When User navigates to the 'Automations' left menu item
-	Then Page with 'Automations' header is displayed to user
-	When User enters "17829_Automation" text in the Search field for "Automation" column
-	And User clicks content from "Automation" column
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
-	When User clicks 'CREATE ACTION' button 
+	When User clicks 'CREATE ACTION' button
 	When User enters '17829_Action' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'zMailbox Sch for Automations Feature' option from 'Project' autocomplete
@@ -71,7 +67,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForRemoveOwnerInMailboxScop
 	And User selects "No change" Update Value on Action panel
 	And User selects "No change" Update Date on Action panel
 	And User selects "Remove owner" Update Owner on Action panel
-	And User clicks 'CREATE' button 
+	And User clicks 'CREATE' button
 	#Create Action
 	When User clicks "Automations" navigation link on the Admin page
 	When User enters "17829_Automation" text in the Search field for "Automation" column
@@ -101,3 +97,46 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForRemoveOwnerInMailboxScop
 	Then "7 Sep 2019" content is displayed in "zMailboxAu: Stage 3 \ Radio Date Owner (Date)" column
 	Then "Unassigned" content is displayed in "zMailboxAu: Stage 3 \ Radio Date Owner (Owner)" column
 	Then "Admin IT" content is displayed in "zMailboxAu: Stage 3 \ Radio Date Owner (Team)" column
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS18207 @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckActionValueIDInTheAutomationLog
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Automations' left menu item
+	Then Page with 'Automations' header is displayed to user
+	When User enters "Applications_Scope" text in the Search field for "Automation" column
+	When User clicks "Run now" option in Cog-menu for "Applications_Scope" item on Admin page
+	When User selects "Automation Log" tab on the Project details page
+	When User clicks refresh button in the browser
+	When User have opened column settings for "Type" column
+	And User clicks Column button on the Column Settings panel
+	And User select "Action Value ID" checkbox on the Column Settings panel
+	When User enters "527" text in the Search field for "Action Value ID" column
+	Then "Action_3" content is displayed for "Action" column
+	When User enters "562" text in the Search field for "Action Value ID" column
+	Then "Action_2" content is displayed for "Action" column
+	When User enters "562" text in the Search field for "Action Value ID" column
+	Then "Action_2" content is displayed for "Action" column
+	When User enters "498" text in the Search field for "Action Value ID" column
+	Then "Action_1" content is displayed for "Action" column
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17786 @DAS18287 @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckOpIdColumnInTheAutomationLog
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Automations' left menu item
+	Then Page with 'Automations' header is displayed to user
+	When User enters "Mailboxes_Scope" text in the Search field for "Automation" column
+	When User clicks "Run now" option in Cog-menu for "Mailboxes_Scope" item on Admin page
+	When User selects "Automation Log" tab on the Project details page
+	When User clicks refresh button in the browser
+	When User have opened column settings for "Type" column
+	And User clicks Column button on the Column Settings panel
+	And User select "Operation ID" checkbox on the Column Settings panel
+	When User select "Scope" checkbox on the Column Settings panel
+	When User enters "50" text in the Search field for "Objects" column
+	Then content is present in the following newly added columns:
+	      | ColumnName   |
+	      | Operation ID |
+	When User clicks content from "Scope" column
+	Then 'All Mailboxes' list should be displayed to the user
