@@ -213,8 +213,8 @@ this.FeatureBackground();
 #line 45
  testRunner.Then("\'Update custom field\' text value is displayed in the \'Action Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 48
- testRunner.Then("\'The selected custom field cannot found\' error message is displayed for \'Custom F" +
-                    "ield\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'The selected custom field cannot be found\' error message is displayed for \'Custo" +
+                    "m Field\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 49
  testRunner.Then("\'[Custom field not found]\' value is displayed in the \'Custom Field\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

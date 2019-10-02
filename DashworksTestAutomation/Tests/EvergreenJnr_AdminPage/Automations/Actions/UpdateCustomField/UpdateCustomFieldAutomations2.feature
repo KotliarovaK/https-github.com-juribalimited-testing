@@ -8,8 +8,6 @@ Background: Pre-Conditions
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18187 @Cleanup @Not_Ready
 #Waiting 'Update custom field' in the 'Action Type' dropdown for automation
 Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomFieldAddToExistingValues
-	When User clicks 'Admin' on the left-hand menu
-	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope              | Run    |
 	| 18187_Automation | 18187       | true   | false              | New York - Devices | Manual |
@@ -72,8 +70,6 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18187 @Cleanup @Not_Ready
 #Waiting for 'Phoenix Field' from GD to automation
 Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomFieldReplaceSingleValue
-	When User clicks 'Admin' on the left-hand menu
-	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API and open it
 	| AutomationName     | Description | Active | StopOnFailedAction | Scope                             | Run    |
 	| 18187_Automation_1 | 18187       | true   | false              | Users Readiness Columns & Filters | Manual |
@@ -135,8 +131,6 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18187 @Cleanup @Not_Ready
 #Waiting for 'Phoenix Field' from GD to automation
 Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomFieldRemoveAllValues
-	When User clicks 'Admin' on the left-hand menu
-	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API and open it
 	| AutomationName     | Description | Active | StopOnFailedAction | Scope     | Run    |
 	| 18187_Automation_2 | 18187       | true   | false              | 1803 Apps | Manual |
@@ -196,8 +190,6 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18187 @Cleanup @Not_Ready
 #Waiting for 'Phoenix Field' from GD to automation
 Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomFieldReplaceAllValues
-	When User clicks 'Admin' on the left-hand menu
-	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API and open it
 	| AutomationName     | Description | Active | StopOnFailedAction | Scope                               | Run    |
 	| 18187_Automation_3 | 18187       | true   | false              | Mailbox Readiness Columns & Filters | Manual |

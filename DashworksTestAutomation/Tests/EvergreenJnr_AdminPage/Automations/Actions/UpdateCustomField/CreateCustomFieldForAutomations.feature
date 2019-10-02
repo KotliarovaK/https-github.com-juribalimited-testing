@@ -45,7 +45,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldValidations
 	Then 'Update custom field' text value is displayed in the 'Action Type' dropdown
 	#Then '17847' content is displayed in 'Custom Field' textbox
 	#Then 'Long test value Long test value Long test value Long test value Long test value' content is displayed in 'Value' textbox
-	Then 'The selected custom field cannot found' error message is displayed for 'Custom Field' field
+	Then 'The selected custom field cannot be found' error message is displayed for 'Custom Field' field
 	Then '[Custom field not found]' value is displayed in the 'Custom Field' dropdown
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18166 @Cleanup

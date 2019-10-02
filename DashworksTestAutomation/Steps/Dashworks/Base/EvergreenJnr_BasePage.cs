@@ -108,7 +108,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var page = _driver.NowAt<BaseDashboardPage>();
             page.PopulateNamedTextbox(placeholder, content);
             Utils.Verify.IsFalse(page.AutocompleteDropdown.Displayed(), $"{content} text is displayed in the {placeholder} autocomplete");
-            page.GetNamedTextbox(placeholder).Clear();
         }
 
         private void CheckAutocompletAndTextboxText(string placeholder, string expectedText)

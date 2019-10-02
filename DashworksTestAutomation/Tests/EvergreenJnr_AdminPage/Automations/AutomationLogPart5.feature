@@ -136,7 +136,7 @@ Scenario: EvergreenJnr_AdminPage_CheckOpIdColumnInTheAutomationLog
 	When User select "Scope" checkbox on the Column Settings panel
 	When User enters "50" text in the Search field for "Objects" column
 	Then content is present in the following newly added columns:
-	      | ColumnName   |
-	      | Operation ID |
+	| ColumnName   |
+	| Operation ID |
 	When User clicks content from "Scope" column
 	Then 'All Mailboxes' list should be displayed to the user
