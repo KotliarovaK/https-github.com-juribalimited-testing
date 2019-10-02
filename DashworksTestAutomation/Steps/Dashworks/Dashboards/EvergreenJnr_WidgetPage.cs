@@ -4,6 +4,7 @@ using System.Threading;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages;
+using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -97,7 +98,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     _driver.WaitForDataLoadingOnProjects();
                 }
 
-                if (row.ContainsKey("ShowLegend") && !string.IsNullOrEmpty(row["ShowLegend"]) 
+                if (row.ContainsKey("ShowLegend") && !string.IsNullOrEmpty(row["ShowLegend"])
                                                   && row["ShowLegend"].Equals("true"))
                 {
                     createWidgetElement.ShowLegend.Click();
@@ -113,27 +114,35 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [When(@"User updates Widget with following info:")]
+        public void WhenUserUpdateNewWidget(Table table)
+        {
+            CreateUpdateWidget(table, false);
+        }
+
         [When(@"User creates new Widget")]
         public void WhenUserCreatesNewWidget(Table table)
+        {
+            CreateUpdateWidget(table, true);
+        }
+
+        private void CreateUpdateWidget(Table table, bool create)
         {
             var createWidgetElement = _driver.NowAt<AddWidgetPage>();
 
             foreach (var row in table.Rows)
             {
                 WhenUserAddsNewWidget(table);
-                createWidgetElement.CreateUpdateWidgetButton.Click();
+                var page = _driver.NowAt<BaseDashboardPage>();
+                if (create)
+                {
+                    page.ClickButtonByName("CREATE");
+                }
+                else
+                {
+                    page.ClickButtonByName("UPDATE");
+                }
                 _driver.WaitForDataLoading();
             }
-        }
-
-        [When(@"User creates new Widget with double click")]
-        public void WhenUserCreatesNewWidgetWithDubleClick(Table table)
-        {
-            var createWidgetElement = _driver.NowAt<AddWidgetPage>();
-
-            WhenUserAddsNewWidget(table);
-
-            _driver.DoubleClick(createWidgetElement.CreateUpdateWidgetButton);
         }
 
         #endregion
@@ -200,7 +209,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             createWidgetElement.SelectObjectForWidgetCreation(aggregateFunc);
             _driver.WaitForDataLoadingOnProjects();
         }
-       
+
         [When(@"User selects ""(.*)"" as Widget OrderBy")]
         public void WhenUserSetsWidgetOrderBy(string orderBy)
         {
@@ -245,7 +254,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             if (Convert.ToInt32(index) <= createWidgetElement.GetDropdownOptions().Count)
             {
                 createWidgetElement.ClickColorSchemeByIndex(Convert.ToInt32(index));
-            }           
+            }
         }
 
         [When(@"User selects ""(.*)"" checkbox on the Create Widget page")]
@@ -334,7 +343,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForElementToBeDisplayed(page.UnsavedChangesAlert);
             Utils.Verify.AreEqual(text, page.GetUnsavedChangesAlertText().Text, "PLEASE ADD EXCEPTION MESSAGE");
         }
- 
+
         [Then(@"User sees following options for Order By selector on Create Widget page:")]
         public void WhenUserSeesFollowingOptionsForOrderBySelectorOnCreateWidgetPage(Table items)
         {
@@ -380,7 +389,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<AddWidgetPage>();
             Utils.Verify.AreEqual(text, page.WarningTextUnderField.Text, "PLEASE ADD EXCEPTION MESSAGE");
         }
-        
+
         [Then(@"Aggregate Function dropdown is placed above the Aggregate By dropdown")]
         public void ThenUserSeesAggregateFunctionAboveTheAggregateByDropdown()
         {
@@ -450,7 +459,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     break;
             }
         }
-      
+
         [Then(@"Text Only is displayed for Card widget on Preview")]
         public void ThenTextOnlyIsDisplayedForCardWidgetOnPreview()
         {
