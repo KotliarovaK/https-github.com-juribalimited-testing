@@ -239,12 +239,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoChangesAppliedAfterCancelButtonPress
 	Then User sees "None" in Readiness input on Edit Readiness
 	And User sees Tooltip field not equal to "tooltip14938_2" on Edit Readiness
 	
-@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14938
+@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14938 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatCancelReadinessAffectsNothingOnEditReadiness
-	When User clicks 'Admin' on the left-hand menu
-	And User navigates to the 'Projects' left menu item
-	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
-	And User clicks content from "Project" column
+	When Project created via API and opened
+	| ProjectName      | Scope       | ProjectTemplate | Mode               |
+	| DAS14938_Project | All Devices | None            | Standalone Project |
 	And User navigates to the 'Readiness' left menu item
 	When User clicks String Filter button for "Default for Applications" column on the Admin page
 	And User clicks "False" checkbox from boolean filter on the Admin page
