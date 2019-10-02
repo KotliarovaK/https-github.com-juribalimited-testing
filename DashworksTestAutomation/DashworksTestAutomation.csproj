@@ -1112,6 +1112,36 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EditClickableValueField.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsContent\ActionsWithTableContent\CheckingAddingColumns.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CheckingAddingColumns.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsContent\ActionsWithTableContent\CheckingColumnsContent.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CheckingColumnsContent.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsContent\ActionsWithTableContent\CheckingColumnsOrder.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CheckingColumnsOrder.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsContent\ActionsWithTableContent\CheckingExistingColumns.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CheckingExistingColumns.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsContent\ActionsWithTableContent\CheckingFiltersForColumns.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CheckingFiltersForColumns.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsContent\ActionsWithTableContent\MessageChecking.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MessageChecking.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsContent\ActionsWithTableContent\MultiselectFilterChecking\ItemDetails_MultiselectFilterChecking_ApplicationsPage.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2074,6 +2104,30 @@
     <None Include="Tests\EvergreenJnr_ItemDetails\CustomFields\EditClickableValueField.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>EditClickableValueField.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsContent\ActionsWithTableContent\CheckingAddingColumns.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CheckingAddingColumns.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsContent\ActionsWithTableContent\CheckingColumnsContent.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CheckingColumnsContent.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsContent\ActionsWithTableContent\CheckingColumnsOrder.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CheckingColumnsOrder.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsContent\ActionsWithTableContent\CheckingExistingColumns.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CheckingExistingColumns.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsContent\ActionsWithTableContent\CheckingFiltersForColumns.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CheckingFiltersForColumns.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsContent\ActionsWithTableContent\MessageChecking.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>MessageChecking.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsContent\ActionsWithTableContent\MultiselectFilterChecking\ItemDetails_MultiselectFilterChecking_ApplicationsPage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

@@ -240,3 +240,17 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	| Values |
 	| RED    |
 	When User closes Checkbox filter for "Compliance" column
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12253
+Scenario: EvergreenJnr_DevicesList_CheckThePossibilityToRecheckingTheWorkflowColumnBlanksFilterAfterUncheckingIt
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User click content from "Hostname" column
+	When User navigates to the 'Projects' left menu item
+	When User navigates to the "Projects Summary" sub-menu on the Details page
+	And User clicks String Filter button for "Workflow" column
+	When User selects "Empty" checkbox from String Filter on the Details Page
+	And User clicks String Filter button for "Workflow" column
+	When User selects "Empty" checkbox from String Filter on the Details Page
+	And User clicks String Filter button for "Workflow" column
+	Then "Empty" checkbox is checked on the Details Page
