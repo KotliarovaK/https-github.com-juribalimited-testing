@@ -102,7 +102,7 @@ Scenario Outline: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCountersOfDevice
 	| is     |
 
 Examples:
-	| ListName     |
-	| Devices      |
-	| Users        |
-	| Applications |
+	| ListName         |
+	| All Devices      |
+	| All Users        |
+	| All Applications |
