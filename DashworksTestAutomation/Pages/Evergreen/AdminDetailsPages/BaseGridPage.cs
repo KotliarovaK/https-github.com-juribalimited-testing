@@ -341,7 +341,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public string GetTableStringRowNumber(string itemName)
         {
-            return Driver.FindElement(By.XPath($".//div[@ref='eBodyViewport']//div//div[@title='{itemName}']//parent::div")).GetAttribute("row-index");
+            return Driver.FindElement(By.XPath($".//div[@ref='eBodyViewport']//div[@role='gridcell']//span[text()='{itemName}']/ancestor::div[@role='row']"))
+                .GetAttribute("row-index");
         }
 
         public bool OnboardedObjectNumber(string objectsNumber)

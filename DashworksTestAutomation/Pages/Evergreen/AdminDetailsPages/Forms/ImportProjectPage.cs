@@ -43,6 +43,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Forms
         public List<string> GetDropdownOptions(string dropdownName)
         {
             GetDropdownByName(dropdownName).Click();
+            Driver.WaitForElementsToBeDisplayed(DropdownOptions);
 
             return DropdownOptions.Select(x => x.Text).ToList();
         }
