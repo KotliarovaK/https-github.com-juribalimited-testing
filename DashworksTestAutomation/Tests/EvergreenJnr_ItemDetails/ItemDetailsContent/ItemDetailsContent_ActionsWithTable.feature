@@ -1349,3 +1349,12 @@ Scenario: EvergreenJnr_DeviceList_CheckThatUsersTabIsDisplayedWithCorrectStagesO
 	Then "GREEN" content is displayed for "Stage A" column
 	And "RED" content is displayed for "Stage C" column
 	And "AMBER" content is displayed for "Stage D" column
+
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18263
+Scenario: EvergreenJnr_ApplicationsList_CheckThatUnknownValuesAreEmptyOnObjectDetailsInDistributiontab
+	When User navigates to the 'Application' details page for '7zip' item
+	Then Details page for "7zip" item is displayed to the user
+	When User navigates to the 'Distribution' left menu item
+	And User navigates to the "Devices" sub-menu on the Details page
+	Then "" content is displayed for "Owner" column
+	Then "" content is displayed for "Owner Display Name" column
