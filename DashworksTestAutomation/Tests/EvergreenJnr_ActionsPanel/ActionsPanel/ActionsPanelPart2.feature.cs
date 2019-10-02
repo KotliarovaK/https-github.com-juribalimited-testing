@@ -201,8 +201,8 @@ this.FeatureBackground();
 #line 34
  testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 35
- testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
-                    "undone.\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Warning message with \"This operation cannot be undone\" text is displayed on Actio" +
+                    "n panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 36
  testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 37
@@ -540,8 +540,8 @@ this.FeatureBackground();
 #line 135
  testRunner.And("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 136
- testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
-                    "undone.\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Warning message with \"This operation cannot be undone\" text is displayed on Actio" +
+                    "n panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 137
  testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 138
@@ -588,8 +588,8 @@ this.FeatureBackground();
 #line 158
  testRunner.And("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 159
- testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
-                    "undone.\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Warning message with \"This operation cannot be undone\" text is displayed on Actio" +
+                    "n panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 160
  testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 161
@@ -621,8 +621,8 @@ this.FeatureBackground();
 #line 172
  testRunner.And("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 173
- testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
-                    "undone.\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Warning message with \"This operation cannot be undone\" text is displayed on Actio" +
+                    "n panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 174
  testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 175
@@ -653,8 +653,8 @@ this.FeatureBackground();
 #line 186
  testRunner.And("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 187
- testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
-                    "undone.\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Warning message with \"This operation cannot be undone\" text is displayed on Actio" +
+                    "n panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 188
  testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 189
