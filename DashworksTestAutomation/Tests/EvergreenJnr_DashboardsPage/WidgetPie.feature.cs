@@ -2008,6 +2008,100 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatOrderByFilterChangedInUiPartAfterSelectingAn" +
+            "otherFilter")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
+        [NUnit.Framework.CategoryAttribute("Widgets")]
+        [NUnit.Framework.CategoryAttribute("DAS18072")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatOrderByFilterChangedInUiPartAfterSelectingAnotherFilter()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DashboardsPage_CheckThatOrderByFilterChangedInUiPartAfterSelectingAnotherFilterInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DashboardsPage_CheckThatOrderByFilterChangedInUiPartAfterSelectingAnotherFilterInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckThatOrderByFilterChangedInUiPartAfterSelectingAn" +
+                    "otherFilter", null, new string[] {
+                        "Evergreen",
+                        "EvergreenJnr_DashboardsPage",
+                        "Widgets",
+                        "DAS18072",
+                        "Cleanup"});
+#line 470
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 471
+ testRunner.When("Dashboard with \"DAS18072_Dashboard\" name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 472
+ testRunner.And("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 473
+ testRunner.And("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table36 = new TechTalk.SpecFlow.Table(new string[] {
+                        "WidgetType",
+                        "Title",
+                        "List",
+                        "SplitBy",
+                        "AggregateFunction",
+                        "OrderBy"});
+            table36.AddRow(new string[] {
+                        "Pie",
+                        "Widget18072",
+                        "All Devices",
+                        "Device Type",
+                        "Count",
+                        "Device Type DESC"});
+#line 474
+ testRunner.And("User adds new Widget", ((string)(null)), table36, "And ");
+#line 477
+ testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 478
+ testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 479
+ testRunner.And("\'Device Type DESC\' option displayed for Widget OrderBy", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 480
+ testRunner.When("User selects \"Hostname\" as Widget Split By", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 481
+ testRunner.Then("\'\' option displayed for Widget OrderBy", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 482
+ testRunner.And("Widget Preview is not displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 483
+ testRunner.When("User selects \"Hostname ASC\" as Widget OrderBy", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 484
+ testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 485
+ testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore

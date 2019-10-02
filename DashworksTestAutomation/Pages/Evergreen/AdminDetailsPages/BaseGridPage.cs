@@ -265,7 +265,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public IWebElement GetDropdownFilterTextByColumnName(string columnName, string text)
         {
             var selector =
-                By.XPath($".//div[@role='presentation']/div[2]/div[{GetColumnNumberByName(columnName)}]//div[@class='ag-floating-filter-full-body']//mat-placeholder[text()='{text}']");
+                By.XPath($".//div[@role='presentation']//div[@class='ag-header-row'][2]/div[{GetColumnNumberByName(columnName)}]//div[@class='ag-floating-filter-full-body']//mat-placeholder[text()='{text}']");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }

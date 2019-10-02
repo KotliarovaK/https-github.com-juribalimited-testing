@@ -342,7 +342,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.UnsavedChangesAlertButton(buttonTitle).Click();
         }
 
-
         [Then(@"Colour Scheme dropdown is displayed to the user")]
         public void ThenColourSchemeDropdownIsDisplayedToTheUser()
         {
@@ -536,6 +535,121 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     break;
             }
         }
-      
+
+        [Then(@"Text Only is displayed for Card widget on Preview")]
+        public void ThenTextOnlyIsDisplayedForCardWidgetOnPreview()
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            _driver.WaitForDataLoading();
+            Utils.Verify.IsTrue(page.TextOnlyCardWidget.Displayed(), "Text Only is not displayed for Card widget");
+        }
+
+        [Then(@"Icon and Text is displayed for Card widget on Preview")]
+        public void ThenIconAndTextIsDisplayedForCardWidgetOnPreview()
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            _driver.WaitForDataLoading();
+            Utils.Verify.IsTrue(page.IconAndTextCardWidget.Displayed(), "Icon and Text is not displayed for Card widget");
+        }
+
+        [Then(@"Icon Only is displayed for Card widget on Preview")]
+        public void ThenIconOnlyIsDisplayedForCardWidgetOnPreview()
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            _driver.WaitForDataLoading();
+            Utils.Verify.IsTrue(page.IconOnlyCardWidget.Displayed(), "Icon Only is not displayed for Card widget");
+        }
+
+        [Then(@"Widget Preview is displayed to the user")]
+        public void ThenWidgetPreviewIsDisplayedToTheUser()
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            _driver.WaitForDataLoading();
+            Utils.Verify.IsTrue(page.WidgetPreview.Displayed(), "Widget Preview is not displayed");
+        }
+
+        [Then(@"Widget Preview is not displayed to the user")]
+        public void ThenWidgetPreviewIsNotDisplayedToTheUser()
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            Utils.Verify.IsTrue(page.WidgetPreviewEmpty.Displayed(), "Widget Preview displayed not empty");
+        }
+
+        [Then(@"Card widget displayed inside preview pane")]
+        public void ThenCardWidgetDisplayedInsidePreviewPane()
+        {
+            var preview = _driver.NowAt<AddWidgetPage>();
+            int prevWidth = preview.WidgetPreview.Size.Width;
+            int prevX = preview.WidgetPreview.Location.X;
+            int prevY = preview.WidgetPreview.Location.Y;
+
+            var widget = _driver.NowAt<AddWidgetPage>();
+            int widgetWidth = widget.GetCardWidgetPreviewText().Size.Width;
+            int widgetX = widget.GetCardWidgetPreviewText().Location.X;
+            int widgetY = widget.GetCardWidgetPreviewText().Location.Y;
+
+            Utils.Verify.That(prevX < widgetX && prevY < widgetY, Is.True, "Widget XY coordinate displayed outside preview box");
+            Utils.Verify.That(prevWidth > widgetWidth, Is.True, "Widget width displayed outside preview box");
+        }
+
+        [Then(@"""(.*)"" color is displayed for Card Widget on Preview")]
+        public void ThenColorIsDisplayedForCardWidgetOnPreview(string color)
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            _driver.WaitForDataLoading();
+            var getColor = page.GetCardWidgetPreviewText().GetCssValue("color");
+            Utils.Verify.AreEqual(ColorWidgetConvertor.ConvertComplianceColorWidget(color), getColor, $"{color} color is displayed for widget");
+        }
+
+        [Then(@"'(.*)' message is displayed in Preview")]
+        public void ThenEmptyMessageTextDisplayedInPreview(string message)
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            Utils.Verify.That(page.PreviewPaneMessageText.Text, Is.EqualTo(message), "Preview message is different.");
+        }
+
+        [Then(@"'(.*)' alert is displayed in Preview")]
+        public void ThenAlertTestDisplayedInPreview(string message)
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            Utils.Verify.That(page.PreviewPaneAlertText.Text, Is.EqualTo(message), "Preview alert is different.");
+        }
+
+        [When(@"User clicks first Dashboard in dashboards list")]
+        public void WhenUserClickFirstDashboardInDashboardsList()
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            page.GetFirstDashboardFromList().Click();
+        }
+
+        [Then(@"Data Labels are displayed on the Preview page")]
+        public void ThenDataLabelsAreDisplayedOnThePreviewPage()
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            _driver.WaitForDataLoading();
+            Utils.Verify.IsTrue(page.DataLabels.Displayed(), "Data Labels are not displayed");
+        }
+
+        [Then(@"""(.*)"" data label is displayed on the Preview page")]
+        public void ThenDataLabelIsDisplayedOnThePreviewPage(string text)
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            _driver.WaitForDataLoading();
+            Utils.Verify.That(page.DataLabels.Text, Is.EqualTo(text), $"{text} data label is not displayed");
+        }
+
+        [Then(@"Widget Preview shows ""(.*)"" as First Cell value")]
+        public void ThenWidgetPreviewShowsAsFirstCellValue(string option)
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            Utils.Verify.That(page.GetCardWidgetPreviewText().Text, Is.EqualTo(option), "Widget Preview shown different value");
+        }
+
+        [Then(@"'(.*)' option displayed for Widget OrderBy")]
+        public void ThenTheNextOptionDisplayedForWidgetOrderBy(string option)
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            Utils.Verify.That(page.GetOrderBySelectedOption(), Is.EqualTo(option), $"DDL has wrong option selected {page.GetOrderBySelectedOption()}");
+        }
     }
 }

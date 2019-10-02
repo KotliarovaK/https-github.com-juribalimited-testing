@@ -30,9 +30,6 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//*[@aria-label='SplitBy']")]
         public IWebElement SplitBy { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='cdk-overlay-pane']")]
-        public IWebElement DropdownMenu { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//*[@aria-label='Type']")]
         public IWebElement Type { get; set; }
 
@@ -114,6 +111,9 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//div[@class='widget-preview']")]  ////div[@class='widget-preview']//div[@dir='ltr'] old locator
         public IWebElement WidgetPreview { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='widget-preview']//*[text()='No preview available']")]
+        public IWebElement WidgetPreviewEmpty { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[@class='chartContainer ng-star-inserted']//*[@style='font-weight:bold']")]
         public IWebElement DataLabels { get; set; }
 
@@ -165,7 +165,7 @@ namespace DashworksTestAutomation.Pages
                 {
                     //expand ddl
                     Driver.FindElement(By.XPath(splitByDdl)).Click();
-                    System.Threading.Thread.Sleep(500);
+                    System.Threading.Thread.Sleep(1000);
                 }
             }
         }
@@ -211,25 +211,7 @@ namespace DashworksTestAutomation.Pages
             var selector = By.XPath($".//mat-checkbox//span[text()='{checkboxName}']//ancestor::mat-checkbox");
             return Driver.FindElement(selector);
         }
-      
-        public IWebElement GetPreviewFirstCellValue()
-        {
-            var byFirstVer =By.XPath(".//div[@class='widget-preview-inner ng-star-inserted']//span[@class='status-text']");
-            var bySecondVer = By.XPath(".//div[@class='widget-preview-inner ng-star-inserted']//span[@class='text-value']");
-            var byOtherVer = By.XPath(".//div[@class='card-widget-value ng-star-inserted']/div");
 
-            if (Driver.FindElements(byFirstVer).Count > 0)
-                return Driver.FindElement(byFirstVer);
-
-            if (Driver.FindElements(bySecondVer).Count > 0)
-                return Driver.FindElement(bySecondVer);
-
-            else
-            {
-                return Driver.FindElement(byOtherVer);
-            }
-        }
-        
         public IWebElement GetTableWidgetPreview()
         {
             return Driver.FindElement(By.XPath(".//div[@class='table-responsive']"));
@@ -259,6 +241,21 @@ namespace DashworksTestAutomation.Pages
             var widg = By.XPath($".//ul[@class='submenu-actions-dashboards']/li[@mattooltipposition]");
             Driver.WaitForDataLoading();
             return Driver.FindElements(widg).First();
+        }
+
+        public string GetOrderBySelectedOption()
+        {
+            var option = By.XPath($".//mat-select[@aria-label='OrderBy']//span/*");
+            Driver.WaitForDataLoading();
+
+            try
+            {
+                return Driver.FindElement(option).Text;
+            }
+            catch (NoSuchElementException)
+            {
+                return string.Empty;
+            }
         }
     }
 }
