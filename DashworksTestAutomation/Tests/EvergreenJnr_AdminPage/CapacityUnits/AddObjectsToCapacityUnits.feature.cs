@@ -418,7 +418,7 @@ this.FeatureBackground();
             table6.AddRow(new string[] {
                         "0004 - Adobe Acrobat Reader 5.0.5 Francais"});
             table6.AddRow(new string[] {
-                        "ACD FotoCanvas 2.0 Trial"});
+                        "0036 - Microsoft Access 97 SR-2 English"});
 #line 79
  testRunner.When("User select \"Application\" rows in the grid", ((string)(null)), table6, "When ");
 #line 86

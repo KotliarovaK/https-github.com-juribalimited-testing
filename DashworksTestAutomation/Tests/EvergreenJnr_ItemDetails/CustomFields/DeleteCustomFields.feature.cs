@@ -190,7 +190,7 @@ this.FeatureBackground();
 #line 33
  testRunner.And("\'ValueDAS16489_1\' content is not displayed in the \'Value\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 34
- testRunner.And("\"Custom Fields\" tab is displayed on left menu on the Details page and contains \'0" +
+ testRunner.And("\'Custom Fields\' tab is displayed on left menu on the Details page and contains \'0" +
                     "\' count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 35
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -206,6 +206,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("CustomFields")]
         [NUnit.Framework.CategoryAttribute("DAS17695")]
+        [NUnit.Framework.CategoryAttribute("DAS18362")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_MailboxesList_DeleteGroupedCustomFields()
         {
@@ -241,6 +242,7 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "CustomFields",
                         "DAS17695",
+                        "DAS18362",
                         "Cleanup"});
 #line 38
 this.ScenarioInitialize(scenarioInfo);
@@ -307,7 +309,7 @@ this.FeatureBackground();
 #line 57
  testRunner.And("No options are selected in the Group By menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 58
- testRunner.And("\"Custom Fields\" tab is displayed on left menu on the Details page and contains \'1" +
+ testRunner.And("\'Custom Fields\' tab is displayed on left menu on the Details page and contains \'1" +
                     "\' count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 59
  testRunner.And("\'ValueDAS17695_1A\' content is not displayed in the \'Value\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

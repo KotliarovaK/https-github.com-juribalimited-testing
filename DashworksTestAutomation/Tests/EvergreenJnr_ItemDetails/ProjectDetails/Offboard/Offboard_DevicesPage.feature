@@ -63,8 +63,8 @@ Scenario: EvergreenJnr_DevicesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffb
 	| Display Name |
 	| Domain       |
 	| Owner        |
-	When User clicks 'OFFBOARD' button 
-	When User clicks 'OFFBOARD' button 
+	When User clicks 'OFFBOARD' button in Dialog Pop-up
+	When User clicks 'OFFBOARD' button in Dialog Pop-up 
 	#going to check the object state
 	And User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -79,10 +79,7 @@ Scenario: EvergreenJnr_DevicesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffb
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @Offboard @DAS17964 @DAS17990 @DAS17000
 Scenario: EvergreenJnr_DevicesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindowWithoutUserOnDevicesPage
-	When User clicks 'Devices' on the left-hand menu
-	Then 'All Devices' list should be displayed to the user
-	When User perform search by "03AK1ZP1C9MPFV"
-	And User click content from "Hostname" column
+	When User navigates to the 'Device' details page for '03AK1ZP1C9MPFV' item
 	Then Details page for "03AK1ZP1C9MPFV" item is displayed to the user
 	When User switches to the "USE ME FOR AUTOMATION(USR SCHDLD)" project in the Top bar on Item details page
 	When User navigates to the 'Projects' left menu item
@@ -96,12 +93,12 @@ Scenario: EvergreenJnr_DevicesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffb
 Scenario: EvergreenJnr_DevicesList_CheckThatGreenBannerIsNotVisibleOnTheOtherPagesAfterTheObjectWasSuccessfullyQueuedForTheOffboarding
 	When User navigates to the 'Device' details page for '03AK1ZP1C9MPFV' item
 	Then Details page for "03AK1ZP1C9MPFV" item is displayed to the user
-	When User switches to the "USE ME FOR AUTOMATION(USR SCHDLD)" project in the Top bar on Item details page
+	When User switches to the "USE ME FOR AUTOMATION(DEVICE SCHDLD)" project in the Top bar on Item details page
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the "Project Details" sub-menu on the Details page
 	And User clicks 'OFFBOARD' button 
-	And User clicks 'OFFBOARD' button 
-	And User clicks 'OFFBOARD' button 
+	And User clicks 'OFFBOARD' button in Dialog Pop-up 
+	And User clicks 'OFFBOARD' button in Dialog Pop-up 
 	Then Success message is displayed and contains "The device was successfully queued for offboarding from USE ME FOR AUTOMATION(DEVICE SCHDLD)" text
-	When User navigates to the "Project Details" sub-menu on the Details page
+	When User navigates to the "Projects Summary" sub-menu on the Details page
 	Then Success message is not displayed

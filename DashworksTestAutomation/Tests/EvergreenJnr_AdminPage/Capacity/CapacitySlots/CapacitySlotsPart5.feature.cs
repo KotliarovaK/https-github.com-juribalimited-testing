@@ -301,7 +301,7 @@ this.FeatureBackground();
             table5.AddRow(new string[] {
                         "Slot 13979 (copy) (copy)"});
 #line 48
- testRunner.And("User sees next Slots on the Capacity Slots page:", ((string)(null)), table5, "And ");
+ testRunner.And("\"Capacity Slot\" column content is displayed in the following order:", ((string)(null)), table5, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
@@ -620,7 +620,7 @@ this.FeatureBackground();
             table11.AddRow(new string[] {
                         "Slot 10003"});
 #line 111
- testRunner.Then("User sees next Slots on the Capacity Slots page:", ((string)(null)), table11, "Then ");
+ testRunner.Then("\"Capacity Slot\" column content is displayed in the following order:", ((string)(null)), table11, "Then ");
 #line 116
  testRunner.When("User move \"Slot 10001\" item to \"32767\" position on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -633,7 +633,7 @@ this.FeatureBackground();
             table12.AddRow(new string[] {
                         "Slot 10001"});
 #line 117
- testRunner.Then("User sees next Slots on the Capacity Slots page:", ((string)(null)), table12, "Then ");
+ testRunner.Then("\"Capacity Slot\" column content is displayed in the following order:", ((string)(null)), table12, "Then ");
 #line 122
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden

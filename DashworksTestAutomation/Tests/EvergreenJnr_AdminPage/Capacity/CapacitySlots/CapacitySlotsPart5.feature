@@ -45,7 +45,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotAppearsAfterDuplicateActionWith
 	| Paths          | All Paths       | 3              |
 	| Teams          | All Teams       | 3              |
 	| Capacity Units |                 | 3              |
-	And User sees next Slots on the Capacity Slots page:
+	And "Capacity Slot" column content is displayed in the following order:
 	| slots                    |
 	| Slot 13979               |
 	| Slot 13979 (copy)        |
@@ -108,13 +108,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotIsMovedToLastPositionIfValueEntere
 	| ProjectForDAS13791 | Slot 10003 | 10003       | Teams and Paths |
 	And User navigates to the 'Capacity' left menu item
 	And User selects "Slots" tab on the Project details page
-	Then User sees next Slots on the Capacity Slots page:
+	Then "Capacity Slot" column content is displayed in the following order:
 	| slots      |
 	| Slot 10001 |
 	| Slot 10002 |
 	| Slot 10003 |
 	When User move "Slot 10001" item to "32767" position on Admin page
-	Then User sees next Slots on the Capacity Slots page:
+	Then "Capacity Slot" column content is displayed in the following order:
 	| slots      |
 	| Slot 10002 |
 	| Slot 10003 |

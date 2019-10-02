@@ -585,7 +585,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     .Select(g => new { Value = g.Key, Count = g.Count() })
                     .Where(x => x.Count > 1).ToList();
 
-                Utils.Verify.That(
+                Verify.That(
                     duplicates.Where(x => x.Value.Equals(column["duplicatedValue"])).FirstOrDefault().Count.ToString(),
                     Is.EqualTo(column["duplicateCount"]), "Duplicates counts are not equal");
             }
@@ -599,8 +599,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 var cell = grid.GetGridCellByText(column["cellText"]);
 
-                Utils.Verify.That(cell.GetCssValue("text-overflow"), Is.EqualTo("ellipsis"), "Data in cell not truncated");
-                Utils.Verify.That(cell.GetCssValue("overflow"), Is.EqualTo("hidden"), "Data in cell not truncated");
+                Verify.That(cell.GetCssValue("text-overflow"), Is.EqualTo("ellipsis"), "Data in cell not truncated");
+                Verify.That(cell.GetCssValue("overflow"), Is.EqualTo("hidden"), "Data in cell not truncated");
             }
         }
 
@@ -612,7 +612,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             foreach (var row in table.Rows)
             {
                 var content = page.GetColumnContent(row["ColumnName"]);
-                Utils.Verify.IsFalse(content.Count(x => !string.IsNullOrEmpty(x)) > 20, "Column is empty");
+                Verify.IsFalse(content.Count(x => !string.IsNullOrEmpty(x)) > 20, "Column is empty");
             }
         }
 

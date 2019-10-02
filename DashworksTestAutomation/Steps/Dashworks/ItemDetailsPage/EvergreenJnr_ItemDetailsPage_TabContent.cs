@@ -10,6 +10,7 @@ using DashworksTestAutomation.Pages.Evergreen.ItemDetails;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
+using HeaderElement = System.Web.Caching.HeaderElement;
 
 namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
 {
@@ -35,11 +36,11 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         [Then(@"Details page for ""(.*)"" item is displayed to the user")]
         public void ThenDetailsPageForItemIsDisplayedToTheUser(string pageName)
         {
-            var detailsPage = _driver.NowAt<DetailsPage>();
-            Utils.Verify.IsTrue(detailsPage.GroupIcon.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
+            var page = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForElementToContainsText(page.Header, pageName);
 
-            var page = _driver.NowAt<TabContent>();
-            Utils.Verify.IsTrue(page.GetItemDetailsPageByName(pageName).Displayed(), $"{pageName} page is not loaded!");
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            Utils.Verify.IsTrue(detailsPage.GroupIcon.Displayed(), "Item details icon is not displayed");
         }
 
         [Then(@"field with ""(.*)"" text is displayed in expanded tab on the Details Page")]

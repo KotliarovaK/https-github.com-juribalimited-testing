@@ -30,19 +30,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             projectElement.UnlimitedField.Click();
         }
 
-        [Then(@"User sees next Slots on the Capacity Slots page:")]
-        public void ThenUserSeesNextSlotsOnTheCapacitySlotsPage(Table slots)
-        {
-            var page = _driver.NowAt<Capacity_SlotsPage>();
-            //Wait for table content to be fully loaded
-            Thread.Sleep(1400);
-            _driver.WaitForDataLoading();
-
-            for (var i = 0; i < slots.RowCount; i++)
-                Utils.Verify.That(page.GridSlotsNames[i].Text, Is.EqualTo(slots.Rows[i].Values.FirstOrDefault()),
-                    "Slots are not the same");
-        }
-
         [When(@"User clicks on ""(.*)"" dropdown on the Capacity Slots page")]
         public void WhenUserClicksOnDropdownOnTheCapacitySlotsPage(string dropdownName)
         {
