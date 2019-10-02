@@ -371,7 +371,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 toolTipText = String.Empty;
             }
-            Utils.Verify.AreEqual(text, toolTipText, "Tooltip text is not correctly");
+            Verify.AreEqual(text, toolTipText, "Tooltip text is not correctly");
         }
 
         [Then(@"back button on Pivot panel have tooltip with ""(.*)"" text")]

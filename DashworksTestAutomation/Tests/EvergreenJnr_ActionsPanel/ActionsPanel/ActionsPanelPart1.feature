@@ -100,7 +100,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatUserWithoutJustTheProjectAdministrat
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "Computer: Laptop Replacement" Path on Action panel
 	And User clicks 'UPDATE' button 
-	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
+	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	When User refreshes agGrid
@@ -153,7 +153,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUserWithoutJustTheProjectBulkUp
 	And User selects "Email Migration" Project on Action panel
 	And User selects "Sharepoint Application" Path on Action panel
 	And User clicks 'UPDATE' button 
-	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
+	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	When User refreshes agGrid
