@@ -120,7 +120,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             foreach (var row in table.Rows)
             {
-                PupualteWidgetData(row);
+                WhenUserAddsNewWidget(table);
                 createWidgetElement.CreateUpdateWidgetButton.Click();
                 _driver.WaitForDataLoading();
             }
@@ -131,110 +131,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var createWidgetElement = _driver.NowAt<AddWidgetPage>();
 
-            foreach (var row in table.Rows)
-            {
-                PupualteWidgetData(row);
+            WhenUserAddsNewWidget(table);
 
-                _driver.DoubleClick(createWidgetElement.CreateUpdateWidgetButton);
-                
-                _driver.WaitForDataLoading();
-            }
-        }
-
-        [When(@"Then User pupualtes Widget Data")]
-        public void PupualteWidgetData(TableRow tableRow)
-        {
-            var createWidgetElement = _driver.NowAt<AddWidgetPage>();
-
-            createWidgetElement.WidgetType.Click();
-            createWidgetElement.SelectObjectForWidgetCreation(tableRow["WidgetType"]);
-
-            if (string.IsNullOrEmpty(tableRow["Title"])) createWidgetElement.Title.SendKeys(" ");
-
-            if (createWidgetElement.Title.Displayed() & !string.IsNullOrEmpty(tableRow["Title"]))
-
-            {
-                createWidgetElement.Title.Clear();
-                createWidgetElement.Title.SendKeys(tableRow["Title"]);
-            }
-
-            if (createWidgetElement.List.Displayed() && !string.IsNullOrEmpty(tableRow["List"]))
-            {
-                createWidgetElement.List.Click();
-                createWidgetElement.SelectListForWidgetCreation(tableRow["List"]);
-                _driver.WaitForDataLoadingOnProjects();
-            }
-
-            if (createWidgetElement.Type.Displayed() && tableRow.ContainsKey("Type")
-                                                     && !string.IsNullOrEmpty(tableRow["Type"]))
-            {
-                createWidgetElement.Type.Click();
-                createWidgetElement.SelectListForWidgetCreation(tableRow["Type"]);
-                _driver.WaitForDataLoadingOnProjects();
-            }
-
-            if (createWidgetElement.SplitBy.Displayed() && tableRow.ContainsKey("SplitBy")
-                                                        && !string.IsNullOrEmpty(tableRow["SplitBy"]))
-            {
-                createWidgetElement.SelectSplitByItem(tableRow["SplitBy"]);
-            }
-
-            if (createWidgetElement.AggregateFunction.Displayed() && tableRow.ContainsKey("AggregateFunction")
-                                                                  && !string.IsNullOrEmpty(tableRow["AggregateFunction"]))
-            {
-                createWidgetElement.AggregateFunction.Click();
-                createWidgetElement.SelectObjectForWidgetCreation(tableRow["AggregateFunction"]);
-                _driver.WaitForDataLoadingOnProjects();
-            }
-
-            if (createWidgetElement.AggregateBy.Displayed() && tableRow.ContainsKey("AggregateBy")
-                                                            && !string.IsNullOrEmpty(tableRow["AggregateBy"]))
-            {
-                createWidgetElement.AggregateBy.Click();
-                createWidgetElement.SelectObjectForWidgetCreation(tableRow["AggregateBy"]);
-                _driver.WaitForDataLoadingOnProjects();
-            }
-
-            if (createWidgetElement.OrderBy.Displayed() && tableRow.ContainsKey("OrderBy")
-                                                        && !string.IsNullOrEmpty(tableRow["OrderBy"]))
-            {
-                createWidgetElement.OrderBy.Click();
-                createWidgetElement.SelectObjectForWidgetCreation(tableRow["OrderBy"]);
-                _driver.WaitForDataLoadingOnProjects();
-            }
-
-            if (createWidgetElement.MaxValues.Displayed() && tableRow.ContainsKey("MaxValues")
-                                                          && !string.IsNullOrEmpty(tableRow["MaxValues"]))
-            {
-                createWidgetElement.MaxValues.Clear();
-                createWidgetElement.MaxValues.SendKeys(tableRow["MaxValues"]);
-            }
-
-            if (createWidgetElement.TableOrientation.Displayed() && tableRow.ContainsKey("TableOrientation"))
-            {
-                createWidgetElement.TableOrientation.Click();
-                createWidgetElement.SelectObjectForWidgetCreation(tableRow["TableOrientation"]);
-                _driver.WaitForDataLoadingOnProjects();
-            }
-
-            if (createWidgetElement.MaxRows.Displayed() && tableRow.ContainsKey("MaxRows"))
-            {
-                createWidgetElement.MaxRows.Clear();
-                createWidgetElement.MaxRows.SendKeys(tableRow["MaxRows"]);
-            }
-
-            if (createWidgetElement.MaxColumns.Displayed() && tableRow.ContainsKey("MaxColumns"))
-            {
-                createWidgetElement.MaxColumns.Clear();
-                createWidgetElement.MaxColumns.SendKeys(tableRow["MaxColumns"]);
-            }
-
-            if (createWidgetElement.ShowLegend.Displayed() && tableRow.ContainsKey("ShowLegend")
-                                                           && !string.IsNullOrEmpty(tableRow["ShowLegend"]))
-            {
-                createWidgetElement.ShowLegend.Click();
-
-            }
+            _driver.DoubleClick(createWidgetElement.CreateUpdateWidgetButton);
         }
 
         #endregion
@@ -403,7 +302,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             Utils.Verify.That(widgetWidth > prevWidth * 0.85 && widgetWidth < prevWidth, Is.True, "Widget preview less than 85 percent preview box");
         }
-    
+
         [Then(@"Widget title ""(.*)"" is displayed on Widget page")]
         public void ThenWidgetTitleDisplayedOnThePage(string text)
         {
@@ -495,7 +394,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<AddWidgetPage>();
 
-            Utils.Verify.That(page.Dropdowns.Any(x=>x.Text.Equals(label)), Is.EqualTo(false));
+            Utils.Verify.That(page.Dropdowns.Any(x => x.Text.Equals(label)), Is.EqualTo(false));
         }
 
         [Then(@"Aggregate By dropdown is disabled")]

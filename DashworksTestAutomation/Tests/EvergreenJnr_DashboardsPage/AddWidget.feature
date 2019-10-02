@@ -163,7 +163,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDuplicateWidgetsWillNotbeCreatedI
 	And "Show data labels" checkbox has a correct label
 	When User creates new Widget with double click
 	| WidgetType | Title             | List        | SplitBy  | AggregateFunction | OrderBy   | MaxValues | ShowLegend |
-	| Pie        | UniqeWidget | All Devices | Hostname | Count             | Count ASC | 10        | true       |
+	| Pie        | UniqeWidget       | All Devices | Hostname | Count             | Count ASC | 10        | true       |
 	And Dashboard page loaded
 	Then User sees Widget with "UniqeWidget" name on Dashboards page
-	And User sees only one widget with "UniqeWidget" name on Dashboards page
+	And User sees '1' widgets with 'UniqeWidget' name on Dashboards page

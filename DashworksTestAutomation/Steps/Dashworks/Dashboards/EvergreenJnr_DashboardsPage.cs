@@ -543,14 +543,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.That(page.IsWidgetExists(widgetName), Is.True, $"Widget with name {widgetName} doesn't exist");
         }
 
-        [Then(@"User sees only one widget with ""(.*)"" name on Dashboards page")]
-        public void WhenUserSeesOnlyOneWidgetWithNameOnDashboardsPage(string widgetName)
+        [Then(@"User sees '(.*)' widgets with '(.*)' name on Dashboards page")]
+        public void WhenUserSeesOnlyNumberWidgetsWithNameOnDashboardsPage(int numberOfWidgets, string widgetName)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForDataLoading();
 
             Utils.Verify.That(page.IsWidgetExists(widgetName), Is.True, $"Widget with name {widgetName} doesn't exist");
-            Utils.Verify.That(page.CountNuberOfDuplicatedWidgets(widgetName) < 1, Is.False, $"More that one witdget was created");
+            Utils.Verify.IsTrue(page.CountNuberOfWidgetsWithTheSameName(widgetName) == numberOfWidgets, $"More than {numberOfWidgets} widgets was displayed.");
         }
 
         [When(@"User deletes ""(.*)"" Widget on Dashboards page")]
