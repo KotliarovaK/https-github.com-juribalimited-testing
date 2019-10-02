@@ -8,15 +8,13 @@ Background: Pre-Conditions
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS17881 @Cleanup @Not_Ready
 #Waiting 'Update custom field' in the 'Action Type' dropdown for automation
 Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldReplaceAllValues
-	When User clicks 'Admin' on the left-hand menu
-	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
 	| 17881_Automation | 17881       | true   | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
-	When User clicks 'CREATE ACTION' button 
+	When User clicks 'CREATE ACTION' button
 	And User enters '17881_Action' text to 'Action Name' textbox
 	And User selects 'Update custom field' in the 'Action Type' dropdown
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
@@ -39,15 +37,13 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldReplaceAllValu
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS17881 @Cleanup @Not_Ready
 #Waiting 'Update custom field' in the 'Action Type' dropdown for automation
 Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldAddToExistingValues
-	When User clicks 'Admin' on the left-hand menu
-	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API and open it
 	| AutomationName     | Description | Active | StopOnFailedAction | Scope         | Run    |
 	| 17881_Automation_2 | 17881       | true   | false              | All Mailboxes | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
-	When User clicks 'CREATE ACTION' button 
+	When User clicks 'CREATE ACTION' button
 	And User enters '17881_Action' text to 'Action Name' textbox
 	And User selects 'Update custom field' in the 'Action Type' dropdown
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
@@ -61,20 +57,17 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldAddToExistingV
 	Then "SAVE AND CREATE ANOTHER" Action button is active
 	Then "CANCEL" Action button is active
 	Then "SAVE AND CREATE ANOTHER" Action button is active
-	#Create Action
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS17881 @DAS17289 @DAS17751 @Cleanup @Not_Ready
 #Waiting 'Update custom field' in the 'Action Type' dropdown for automation
 Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldRemoveAllValues
-	When User clicks 'Admin' on the left-hand menu
-	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API and open it
 	| AutomationName     | Description | Active | StopOnFailedAction | Scope     | Run    |
 	| 17881_Automation_3 | 17881       | true   | false              | All Users | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
-	When User clicks 'CREATE ACTION' button 
+	When User clicks 'CREATE ACTION' button
 	And User enters '17881_Action' text to 'Action Name' textbox
 	And User selects 'Update custom field' in the 'Action Type' dropdown
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
@@ -86,7 +79,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldRemoveAllValue
 	| Remove all values      |
 	| Remove specific values |
 	When User selects 'Remove all values' in the 'Update Values' dropdown
-	When User clicks 'CREATE' button 
+	When User clicks 'CREATE' button
 	Then Success message is displayed and contains "The automation action has been created" text
 	#Create Action
 	When User clicks content from "Action" column
@@ -103,15 +96,13 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldRemoveAllValue
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS17881 @Cleanup @Not_Ready
 #Waiting 'Update custom field' in the 'Action Type' dropdown for automation
 Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldRemoveSpecificValues
-	When User clicks 'Admin' on the left-hand menu
-	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API and open it
 	| AutomationName     | Description | Active | StopOnFailedAction | Scope            | Run    |
 	| 17881_Automation_4 | 17881       | true   | false              | All Applications | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
-	When User clicks 'CREATE ACTION' button 
+	When User clicks 'CREATE ACTION' button
 	And User enters '17881_Action' text to 'Action Name' textbox
 	And User selects 'Update custom field' in the 'Action Type' dropdown
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
@@ -125,31 +116,28 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldRemoveSpecific
 	Then "SAVE AND CREATE ANOTHER" Action button is active
 	Then "CANCEL" Action button is active
 	Then "SAVE AND CREATE ANOTHER" Action button is active
-	#Create Action
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS17881 @DAS17751 @Cleanup @Not_Ready
 #Waiting 'Update custom field' in the 'Action Type' dropdown for automation
 Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldReplaceSingleValue
-	When User clicks 'Admin' on the left-hand menu
-	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API and open it
 	| AutomationName     | Description | Active | StopOnFailedAction | Scope       | Run    |
 	| 17881_Automation_4 | 17881       | true   | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
-	When User clicks 'CREATE ACTION' button 
+	When User clicks 'CREATE ACTION' button
 	And User enters '17881_Action' text to 'Action Name' textbox
 	And User selects 'Update custom field' in the 'Action Type' dropdown
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
 	And User selects 'Replace single value' in the 'Update Values' dropdown
 	When User enters 'first value' text to 'Find Value' textbox
 	When User enters 'second' text to 'Replace Value' textbox
-	When User clicks 'SAVE AND CREATE ANOTHER' button 
+	When User clicks 'SAVE AND CREATE ANOTHER' button
 	Then Success message is displayed and contains "The automation action has been created" text
 	#Create Action
 	Then Create Action page is displayed to the User
-	When User clicks 'CANCEL' button 
+	When User clicks 'CANCEL' button
 	When User clicks content from "Action" column
 	Then Edit Action page is displayed to the User
 	Then "UPDATE" Action button is disabled

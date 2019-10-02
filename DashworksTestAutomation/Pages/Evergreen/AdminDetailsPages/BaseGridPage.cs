@@ -237,12 +237,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         {
             var byControl =
                 By.XPath(
-                    $".//div[@role='presentation']//div[@class='ag-header-row'][2]/div[{GetColumnNumberByName(columnName)}]//div[@class='ag-floating-filter-full-body']//input");
+                    $".//div[@role='presentation']//div[@class='ag-header-row'][2]/div[{GetColumnNumberByName(columnName)}]//div[contains(@class, 'ag-floating-filter')]//div[@class='mat-form-field-infix']//input");
             Driver.WaitForDataLoading();
             Driver.WaitForElementToBeDisplayed(byControl);
             Driver.FindElement(byControl).Click();
             Driver.FindElement(byControl).Clear();
             Driver.FindElement(byControl).SendKeys(text);
+            BodyContainer.Click();
         }
 
         public IWebElement GetFilterByColumnName(string columnName)

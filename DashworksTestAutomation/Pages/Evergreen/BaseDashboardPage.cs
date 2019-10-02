@@ -631,6 +631,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public void AutocompleteSelect(string placeholder, string option, bool withSearch = false, bool containsOption = false)
         {
+            GetNamedTextbox(placeholder).ClearWithBackspaces();
             GetNamedTextbox(placeholder).Click();
 
             if (withSearch)
