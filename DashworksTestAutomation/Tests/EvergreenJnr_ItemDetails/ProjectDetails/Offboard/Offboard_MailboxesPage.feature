@@ -16,7 +16,7 @@ Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOf
 	And User navigates to the "Project Details" sub-menu on the Details page
 	And User clicks 'OFFBOARD' button 
 	Then Dialog Pop-up is displayed for User
-	Then following text 'Offboarding mailbox 01DEAC5F18B34084B04@bclabs.local. Offboarding an object deletes all project related information about it.' is displayed in Dialog Pop-up
+	Then following text 'Offboarding mailbox 01DEAC5F18B34084B04@bclabs.local (Copado, Maria). Select any associated users below to offboard at the same time. Offboarding an object deletes all project related information about it.' is displayed in Dialog Pop-up
 	Then 'Offboard all associated users' checkbox is checked
 	Then following columns are displayed on the Item details page:
 	| ColumnName   |
@@ -28,7 +28,7 @@ Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOf
 	When User select "Username" rows in the grid
 	| SelectedRowsName    |
 	| 01DEAC5F18B34084B04 |
-	Then "BCLABS\01DEAC5F18B34084B04 (Owner)" chip have tooltip with "BCLABS\01DEAC5F18B34084B04 (Owner)" text
+	Then " BCLABS\01DEAC5F18B34084B04 (Owner)" chip have tooltip with "BCLABS\01DEAC5F18B34084B04 (Owner)" text
 	When User clicks 'OFFBOARD' button in Dialog Pop-up
 	When User clicks 'OFFBOARD' button in Dialog Pop-up
 	#going to check the object state

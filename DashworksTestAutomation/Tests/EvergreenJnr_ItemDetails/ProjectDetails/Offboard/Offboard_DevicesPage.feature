@@ -28,15 +28,15 @@ Scenario: EvergreenJnr_DevicesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffb
 	When User select "Username" rows in the grid
 	| SelectedRowsName |
 	| ABQ575757        |
-	Then "UK\ABQ575757" chip have tooltip with "UK\ABQ575757" text
-	When User clicks 'OFFBOARD' button 
-	And User clicks 'OFFBOARD' button 
+	Then " UK\ABQ575757" chip have tooltip with "UK\ABQ575757" text
+	When User clicks 'OFFBOARD' button in Dialog Pop-up
+	And User clicks 'OFFBOARD' button in Dialog Pop-up
 	#going to check the object state
 	And User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
 	Then Page with 'Projects' header is displayed to user
-	When User enters "<ProjectName>" text in the Search field for "Project" column
+	When User enters "USE ME FOR AUTOMATION(DEVICE SCHDLD)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	When User navigates to the 'Scope' left menu item
 	And User selects "History" tab on the Project details page

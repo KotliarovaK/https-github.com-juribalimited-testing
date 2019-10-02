@@ -153,7 +153,8 @@ this.FeatureBackground();
 #line 18
  testRunner.Then("Dialog Pop-up is displayed for User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 19
- testRunner.Then("following text \'Offboarding mailbox 01DEAC5F18B34084B04@bclabs.local. Offboarding" +
+ testRunner.Then("following text \'Offboarding mailbox 01DEAC5F18B34084B04@bclabs.local (Copado, Mar" +
+                    "ia). Select any associated users below to offboard at the same time. Offboarding" +
                     " an object deletes all project related information about it.\' is displayed in Di" +
                     "alog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 20
@@ -181,8 +182,8 @@ this.FeatureBackground();
 #line 28
  testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table2, "When ");
 #line 31
- testRunner.Then("\"BCLABS\\01DEAC5F18B34084B04 (Owner)\" chip have tooltip with \"BCLABS\\01DEAC5F18B34" +
-                    "084B04 (Owner)\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\" BCLABS\\01DEAC5F18B34084B04 (Owner)\" chip have tooltip with \"BCLABS\\01DEAC5F18B3" +
+                    "4084B04 (Owner)\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 32
  testRunner.When("User clicks \'OFFBOARD\' button in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 33
