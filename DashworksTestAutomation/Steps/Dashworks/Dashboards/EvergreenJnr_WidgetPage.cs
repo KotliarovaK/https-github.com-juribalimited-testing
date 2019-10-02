@@ -29,88 +29,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User adds new Widget")]
         public void WhenUserAddsNewWidget(Table table)
         {
-            var createWidgetElement = _driver.NowAt<AddWidgetPage>();
-
-            foreach (var row in table.Rows)
-            {
-                createWidgetElement.WidgetType.Click();
-                createWidgetElement.SelectObjectForWidgetCreation(row["WidgetType"]);
-
-                if (string.IsNullOrEmpty(row["Title"])) createWidgetElement.Title.SendKeys(" ");
-
-                if (!string.IsNullOrEmpty(row["Title"]))
-                {
-                    createWidgetElement.Title.Clear();
-                    createWidgetElement.Title.SendKeys(row["Title"]);
-                }
-
-                if (row.ContainsKey("List") && !string.IsNullOrEmpty(row["List"]))
-                {
-                    createWidgetElement.List.Click();
-                    createWidgetElement.SelectListForWidgetCreation(row["List"]);
-                    _driver.WaitForDataLoadingOnProjects();
-                }
-
-                if (row.ContainsKey("Type") && !string.IsNullOrEmpty(row["Type"]))
-                {
-                    createWidgetElement.Type.Click();
-                    createWidgetElement.SelectObjectForWidgetCreation(row["Type"]);
-                    _driver.WaitForDataLoadingOnProjects();
-                }
-
-                if (row.ContainsKey("SplitBy") && !string.IsNullOrEmpty(row["SplitBy"]))
-                {
-                    createWidgetElement.SelectSplitByItem(row["SplitBy"]);
-                }
-
-                if (row.ContainsKey("AggregateFunction") && !string.IsNullOrEmpty(row["AggregateFunction"]))
-                {
-                    _driver.WaitForElementToBeEnabled(createWidgetElement.AggregateFunction);
-                    createWidgetElement.AggregateFunction.Click();
-                    createWidgetElement.SelectObjectForWidgetCreation(row["AggregateFunction"]);
-                    _driver.WaitForDataLoadingOnProjects();
-                }
-
-                if (row.ContainsKey("AggregateBy") && !string.IsNullOrEmpty(row["AggregateBy"]))
-                {
-                    createWidgetElement.AggregateBy.Click();
-                    createWidgetElement.SelectObjectForWidgetCreation(row["AggregateBy"]);
-                    _driver.WaitForDataLoadingOnProjects();
-                }
-
-                if (row.ContainsKey("OrderBy") && !string.IsNullOrEmpty(row["OrderBy"]))
-                {
-                    createWidgetElement.OrderBy.Click();
-                    createWidgetElement.SelectObjectForWidgetCreation(row["OrderBy"]);
-                    _driver.WaitForDataLoadingOnProjects();
-                }
-
-                if (row.ContainsKey("MaxValues") && !string.IsNullOrEmpty(row["MaxValues"]))
-                {
-                    createWidgetElement.MaxValues.Clear();
-                    createWidgetElement.MaxValues.SendKeys(row["MaxValues"]);
-                }
-
-                if (row.ContainsKey("TableOrientation") && !string.IsNullOrEmpty(row["TableOrientation"]))
-                {
-                    createWidgetElement.TableOrientation.Click();
-                    createWidgetElement.SelectObjectForWidgetCreation(row["TableOrientation"]);
-                    _driver.WaitForDataLoadingOnProjects();
-                }
-
-                if (row.ContainsKey("ShowLegend") && !string.IsNullOrEmpty(row["ShowLegend"])
-                                                  && row["ShowLegend"].Equals("true"))
-                {
-                    createWidgetElement.ShowLegend.Click();
-                }
-
-                if (row.ContainsKey("Layout") && !string.IsNullOrEmpty(row["Layout"]))
-                {
-                    _driver.WaitForElementToBeDisplayed(createWidgetElement.Layout);
-                    _driver.ClickByJavascript(createWidgetElement.GetDropdownForWidgetByName("Layout"));
-                    createWidgetElement.SelectObjectForWidgetCreation(row["Layout"]);
-                }
-            }
+            //This method is just for one TableRow
+            PopulateWidgetData(table.Rows.First());
         }
 
         [When(@"User updates Widget with following info:")]
@@ -125,22 +45,96 @@ namespace DashworksTestAutomation.Steps.Dashworks
             CreateUpdateWidget(table, true);
         }
 
-        private void CreateUpdateWidget(Table table, bool create)
+        private void PopulateWidgetData(TableRow row)
         {
             var createWidgetElement = _driver.NowAt<AddWidgetPage>();
 
+            createWidgetElement.WidgetType.Click();
+            createWidgetElement.SelectObjectForWidgetCreation(row["WidgetType"]);
+
+            if (string.IsNullOrEmpty(row["Title"])) createWidgetElement.Title.SendKeys(" ");
+
+            if (!string.IsNullOrEmpty(row["Title"]))
+            {
+                createWidgetElement.Title.Clear();
+                createWidgetElement.Title.SendKeys(row["Title"]);
+            }
+
+            if (row.ContainsKey("List") && !string.IsNullOrEmpty(row["List"]))
+            {
+                createWidgetElement.List.Click();
+                createWidgetElement.SelectListForWidgetCreation(row["List"]);
+                _driver.WaitForDataLoadingOnProjects();
+            }
+
+            if (row.ContainsKey("Type") && !string.IsNullOrEmpty(row["Type"]))
+            {
+                createWidgetElement.Type.Click();
+                createWidgetElement.SelectObjectForWidgetCreation(row["Type"]);
+                _driver.WaitForDataLoadingOnProjects();
+            }
+
+            if (row.ContainsKey("SplitBy") && !string.IsNullOrEmpty(row["SplitBy"]))
+            {
+                createWidgetElement.SelectSplitByItem(row["SplitBy"]);
+            }
+
+            if (row.ContainsKey("AggregateFunction") && !string.IsNullOrEmpty(row["AggregateFunction"]))
+            {
+                _driver.WaitForElementToBeEnabled(createWidgetElement.AggregateFunction);
+                createWidgetElement.AggregateFunction.Click();
+                createWidgetElement.SelectObjectForWidgetCreation(row["AggregateFunction"]);
+                _driver.WaitForDataLoadingOnProjects();
+            }
+
+            if (row.ContainsKey("AggregateBy") && !string.IsNullOrEmpty(row["AggregateBy"]))
+            {
+                createWidgetElement.AggregateBy.Click();
+                createWidgetElement.SelectObjectForWidgetCreation(row["AggregateBy"]);
+                _driver.WaitForDataLoadingOnProjects();
+            }
+
+            if (row.ContainsKey("OrderBy") && !string.IsNullOrEmpty(row["OrderBy"]))
+            {
+                createWidgetElement.OrderBy.Click();
+                createWidgetElement.SelectObjectForWidgetCreation(row["OrderBy"]);
+                _driver.WaitForDataLoadingOnProjects();
+            }
+
+            if (row.ContainsKey("MaxValues") && !string.IsNullOrEmpty(row["MaxValues"]))
+            {
+                createWidgetElement.MaxValues.Clear();
+                createWidgetElement.MaxValues.SendKeys(row["MaxValues"]);
+            }
+
+            if (row.ContainsKey("TableOrientation") && !string.IsNullOrEmpty(row["TableOrientation"]))
+            {
+                createWidgetElement.TableOrientation.Click();
+                createWidgetElement.SelectObjectForWidgetCreation(row["TableOrientation"]);
+                _driver.WaitForDataLoadingOnProjects();
+            }
+
+            if (row.ContainsKey("ShowLegend") && !string.IsNullOrEmpty(row["ShowLegend"])
+                                              && row["ShowLegend"].Equals("true"))
+            {
+                createWidgetElement.ShowLegend.Click();
+            }
+
+            if (row.ContainsKey("Layout") && !string.IsNullOrEmpty(row["Layout"]))
+            {
+                _driver.WaitForElementToBeDisplayed(createWidgetElement.Layout);
+                _driver.ClickByJavascript(createWidgetElement.GetDropdownForWidgetByName("Layout"));
+                createWidgetElement.SelectObjectForWidgetCreation(row["Layout"]);
+            }
+        }
+
+        private void CreateUpdateWidget(Table table, bool create)
+        {
             foreach (var row in table.Rows)
             {
-                WhenUserAddsNewWidget(table);
+                PopulateWidgetData(row);
                 var page = _driver.NowAt<BaseDashboardPage>();
-                if (create)
-                {
-                    page.ClickButtonByName("CREATE");
-                }
-                else
-                {
-                    page.ClickButtonByName("UPDATE");
-                }
+                page.ClickButtonByName(create ? "CREATE" : "UPDATE");
                 _driver.WaitForDataLoading();
             }
         }
