@@ -358,7 +358,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatProjectDetailsDefaultViewIsDisplayed
 	| Fields           |
 	| Object ID        |
 	| Name             |
-	#remove hash for 'radiant'
+	#This is not ready on 'automation' server. Ready for 'radiant' (see DAS17810)
 	#| App Owner        |
 	| Device Owner     |
 	| Readiness        |
@@ -385,7 +385,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatProjectDetailsDefaultViewIsDisplayedCo
 	| Fields           |
 	| Object ID        |
 	| Name             |
-	#remove hash for 'radiant'
+	#This is not ready on 'automation' server. Ready for 'radiant' (see DAS17810)
 	#| App Owner        |
 	| Primary Device   |
 	| Readiness        |
@@ -413,7 +413,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectDetailsDefaultViewIsDisp
 	| Fields              |
 	| Object ID           |
 	| Name                |
-	#remove hash for 'radiant'
+	#This is not ready on 'automation' server. Ready for 'radiant' (see DAS17810)
 	#| App Owner           |
 	| Readiness           |
 	| App Readiness       |
@@ -441,7 +441,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatProjectDetailsDefaultViewIsDisplay
 	| Fields           |
 	| Object ID        |
 	| Name             |
-	#remove hash for 'radiant'
+	#This is not ready on 'automation' server. Ready for 'radiant' (see DAS17810)
 	#| App Owner        |
 	| Mailbox Owner    |
 	| Readiness        |
