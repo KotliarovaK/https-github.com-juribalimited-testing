@@ -24,7 +24,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         #region Export
 
-        [Then(@"Export button is displayed")]
+        [Then(@"Export button is displayed in panel")]
         public void ThenExportButtonIsDisplayed()
         {
             var pivot = _driver.NowAt<BaseGridPage>();
@@ -35,7 +35,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         #region Archived Devices
 
-        [When(@"User sets includes archived devices in ""(.*)""")]
+        [When(@"User sets includes archived devices in '(.*)'")]
         public void UserIncludesArchivedDevices(string state)
         {
             var page = _driver.NowAt<BaseGridPage>();
@@ -47,7 +47,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 {
                     page.ArchivedDevicesIcon.Click();
                     _driver.WaitForElementToBeNotDisplayed(page.ArchivedDevicesNotIncludedTooltip);
-                    //_driver.WaitFor(() => _driver.IsElementExists(pivot.ArchivedDevicesIncludedTooltip));
                 }
             }
 
@@ -57,7 +56,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 {
                     page.ArchivedDevicesIcon.Click();
                     _driver.WaitForElementToBeNotDisplayed(page.ArchivedDevicesIncludedTooltip);
-                    //_driver.WaitFor(() => _driver.IsElementExists(page.ArchivedDevicesNotIncludedTooltip));
                 }
             }
 

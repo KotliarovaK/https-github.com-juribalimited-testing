@@ -25,7 +25,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationsLogGridLoads
 	| Duration (hh:mm:ss) |
 	| User                |
 	| Outcome             |
-	Then Export button is displayed
+	Then Export button is displayed in panel
 	Then "SUCCESS" content is displayed in "Outcome" column
 	When User have opened column settings for "Date" column
 	And User clicks Column button on the Column Settings panel
