@@ -37,6 +37,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatProjectFieldIsDisplayedCorrectlyAf
 	| Options              |
 	| Update bucket        |
 	| Update capacity unit |
+	| Update custom field  |
 	| Update path          |
 	| Update ring          |
 	| Update task value    |
