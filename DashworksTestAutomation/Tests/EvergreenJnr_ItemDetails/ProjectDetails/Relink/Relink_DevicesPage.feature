@@ -18,6 +18,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRelinkOptionIsWorkedCorrectlyForProj
 	And 'Resync owner' checkbox is checked
 	And 'Resync apps' checkbox is checked
 	And 'Resync name' checkbox is checked
+	And User selects state 'true' for 'Resync owner' checkbox
+	And User selects state 'true' for 'Resync apps' checkbox
+	And User selects state 'true' for 'Resync name' checkbox
 	#TODO update search data
 	When User enters 'dfg' in the 'Device' autocomplete field and selects '1BTWGCA36JDFG5' value
 	And User clicks 'RELINK' button in Dialog Pop-up
