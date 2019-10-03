@@ -674,37 +674,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Import Project button was clicked");
         }
 
-        [Then(@"User sees following options in ""(.*)"" dropdown on Import Projects page:")]
-        public void ThenUserSeesFollowingOptionsInDropdownOnImportProjectPage(string dropdownName, Table options)
-        {
-            var page = _driver.NowAt<ImportProjectPage>();
-            List<string> actualBucketsOptions = page.GetDropdownOptions(dropdownName);
-
-            for (int i = 0; i < options.RowCount; i++)
-            {
-                Utils.Verify.That(actualBucketsOptions[i], Is.EqualTo(options.Rows[i].Values.FirstOrDefault()), "Options do not match!");
-            }
-        }
-
-        [Then(@"User sees that ""(.*)"" dropdown contains following options on Import Projects page:")]
-        public void ThenUserSeesThatDropdownContainsFollowingOptionsOnImportProjectPage(string dropdownName,
-            Table options)
-        {
-            var page = _driver.NowAt<ImportProjectPage>();
-            List<string> actualBucketsOptions = page.GetDropdownOptions(dropdownName);
-
-            Utils.Verify.That(actualBucketsOptions,
-                Is.SupersetOf(options.Rows.Select(x => x.Values).Select(x => x.FirstOrDefault())),
-                "Some options are missing!");
-        }
-
-        [When(@"User selects ""(.*)"" option in the ""(.*)"" dropdown on the Import Project Page")]
-        public void ThenUserSelectsInTheImportDropdownOnTheImportProjectPage(string optionName, string dropdownName)
-        {
-            var importProjectPage = _driver.NowAt<ImportProjectPage>();
-            importProjectPage.SelectDropdownOption(dropdownName, optionName);
-        }
-
         [When(@"User enters ""(.*)"" in the Team Description field")]
         public void WhenUserEntersInTheTeamDescriptionField(string descriptionText)
         {
@@ -1980,13 +1949,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [Then(@"Rows counter shows ""(.*)"" of ""(.*)"" rows")]
-        public void ThenRowsCounterShowsOfRows(int selectedRows, int ofRows)
+        public void ThenRowsCounterShowsOfRows(string selectedRows, string ofRows)
         {
             var foundRowsCounter = _driver.NowAt<BaseGridPage>();
             _driver.WaitForDataLoading();
             _driver.WaitForElementToBeDisplayed(foundRowsCounter.RowsCounter);
             Utils.Verify.AreEqualIgnoringCase(
-                ofRows == 1 ? $"{selectedRows} of {ofRows} row" : $"{selectedRows} of {ofRows} rows",
+                ofRows.Equals("1") ? $"{selectedRows} of {ofRows} row" : $"{selectedRows} of {ofRows} rows",
                 foundRowsCounter.RowsCounter.Text, "Incorrect rows count");
         }
 

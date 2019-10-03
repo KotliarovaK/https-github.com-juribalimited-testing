@@ -67,7 +67,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldForDisabledCus
 	And User selects 'Update custom field' in the 'Action Type' dropdown
 	Then 'CustomField_18166' content is not displayed in 'Custom Field' autocomplete after search
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18166 @Cleanup
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18166 @Cleanup @Not_Ready
 #Waiting for 'Phoenix Field' from GD to automation
 Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldForDisabledCustomFieldOnUpdateActionPage
 	When User creates new Custom Field

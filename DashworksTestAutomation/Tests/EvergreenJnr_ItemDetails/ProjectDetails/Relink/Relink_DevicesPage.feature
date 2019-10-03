@@ -8,23 +8,44 @@ Background: Pre-Conditions
 	#Ready on the 'radiant' server
 @Evergreen @Devices @EvergreenJnr_ItemDetails @Relink @DAS17655 @DAS17831 @DAS18002 @DAS18112 @Not_Ready
 Scenario: EvergreenJnr_DevicesList_CheckThatRelinkOptionIsWorkedCorrectlyForProjectDetailsOnDevicesPage
-	When User navigates to the 'Device' details page for '02QS1WBYUHCAG8Z' item
-	Then Details page for "02QS1WBYUHCAG8Z" item is displayed to the user
+	When User navigates to the 'Device' details page for '019BFPQGKK5QT8N' item
+	Then Details page for "019BFPQGKK5QT8N" item is displayed to the user
 	When User switches to the "USE ME FOR AUTOMATION(DEVICE SCHDLD)" project in the Top bar on Item details page
 	And User navigates to the 'Projects' left menu item
 	And User navigates to the "Project Details" sub-menu on the Details page
-	And User clicks 'RELINK' button 
+	Then following content is displayed on the Details Page
+	| Title        | Value           |
+	| Name         | 019BFPQGKK5QT8N |
+	| Device Owner |                 |
+	When User clicks 'RELINK' button 
 	Then Dialog Pop-up is displayed for User
 	And 'Resync owner' checkbox is checked
 	And 'Resync apps' checkbox is checked
 	And 'Resync name' checkbox is checked
-	#TODO update search data
-	When User enters 'dfg' in the 'Device' autocomplete field and selects '1BTWGCA36JDFG5' value
-	And User clicks 'RELINK' button in Dialog Pop-up
+	When User enters 'dfg' in the 'Device' autocomplete field and selects '5L3NIDFGJQ2NF5' value
+	Then User selects state 'true' for 'Resync owner' checkbox
+	And User selects state 'true' for 'Resync apps' checkbox
+	And User selects state 'true' for 'Resync name' checkbox
+	When User clicks 'RELINK' button in Dialog Pop-up
 	Then Warning message with "This object will be relinked to the selected Evergreen object in this project" text is displayed on the Project Details Page
 	When User clicks 'RELINK' button in Dialog Pop-up
 	Then Success message is displayed and contains "Device successfully relinked" text
-	
+	Then Details page for "5L3NIDFGJQ2NF5" item is displayed to the user
+	Then following content is displayed on the Details Page
+	| Title        | Value           |
+	| Name         | 019BFPQGKK5QT8N |
+	| Device Owner |                 |
+	When User clicks 'RESYNC' button 
+	When User clicks 'RESYNC' button in Dialog Pop-up
+	Then Success message is displayed and contains "Device successfully resynced" text
+	Then following content is displayed on the Details Page
+	| Title        | Value              |
+	| Name         | 5L3NIDFGJQ2NF5     |
+	| Device Owner | Valerie H. Lambert |
+	When User navigates to the 'Applications' left menu item
+	And User navigates to the "Evergreen Summary" sub-menu on the Details page
+	Then "9" rows found label displays on Details Page 
+
 	#Ready on the 'radiant' server
 @Evergreen @Devices @EvergreenJnr_ItemDetails @Relink @DAS18043 @Not_Ready
 Scenario: EvergreenJnr_DevicesList_CheckThatGreenBannerIsNotVisibleOnTheOtherPagesAfterTheObjectWasSuccessfullyRelinked

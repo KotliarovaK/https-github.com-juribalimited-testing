@@ -203,7 +203,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User clicks String Filter button for ""(.*)"" column")]
         public void WhenUserClicksStringFilterButtonForColumn(string columnName)
         {
-            var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            var filterElement = _driver.NowAt<BaseGridPage>();
             filterElement.BodyContainer.Click();
             filterElement.GetStringFilterByColumnName(columnName);
         }

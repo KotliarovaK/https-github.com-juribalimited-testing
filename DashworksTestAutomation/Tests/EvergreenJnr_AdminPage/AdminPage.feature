@@ -47,7 +47,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckThatImportProjectButtonEnabledAfte
 	When User clicks 'IMPORT PROJECT' button 
 	Then Page with 'Import Project' header is displayed to user
 	When User selects "IncorrectFile.zip" file to upload on Import Project page
-	And User selects "Import to new project" option in the "Import" dropdown on the Import Project Page
+	And User selects 'Import to new project' in the 'Import' dropdown
 	And User enters "TestProjectNameDAS12370" in the Project Name field on Import Project page
 	When User clicks Import Project button on the Import Project page
 	Then Error message with "Selected file is not in a valid format" text is displayed
@@ -138,7 +138,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckThatExtraUnknownReadinessIsNotCrea
 	When User clicks 'IMPORT PROJECT' button 
 	Then Page with 'Import Project' header is displayed to user
 	When User selects "1803_Rollout.xml" file to upload on Import Project page
-	And User selects "Import to new project" option in the "Import" dropdown on the Import Project Page
+	And User selects 'Import to new project' in the 'Import' dropdown
 	And User enters "DAS15989_TestProject" in the Project Name field on Import Project page
 	When User clicks Import Project button on the Import Project page
 	When User clicks newly created object link
@@ -154,7 +154,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckBannerMessageAfterImportProjectWit
 	When User clicks 'IMPORT PROJECT' button 
 	Then Page with 'Import Project' header is displayed to user
 	When User selects "Windows_7_Migration_(Computer_Scheduled_Project) (jet 5.3.3).xml" file to upload on Import Project page
-	And User selects "Import to new project" option in the "Import" dropdown on the Import Project Page
+	And User selects 'Import to new project' in the 'Import' dropdown
 	And User enters "DAS16089_TestProject" in the Project Name field on Import Project page
 	When User clicks Import Project button on the Import Project page
 	Then Error message with "Your file doesn't contain Readiness values" text is displayed

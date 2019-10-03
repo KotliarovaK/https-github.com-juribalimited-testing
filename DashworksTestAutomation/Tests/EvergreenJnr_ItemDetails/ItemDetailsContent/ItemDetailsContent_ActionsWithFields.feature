@@ -343,7 +343,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCommonNameFieldIsDisplayedInTheCompu
 	| Description                     |
 	Then "00OMQQXWA1DRI6" content is displayed in "Common Name" field on Item Details page
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16859 @DAS17645 @DAS17785 @DAS17809
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16859 @DAS17645 @DAS17785 @DAS17809 @DAS18095 @DAS18011 @DAS17810
 Scenario: EvergreenJnr_DevicesList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForDeviceObjects
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -357,8 +357,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatProjectDetailsDefaultViewIsDisplayed
 	Then following fields are displayed in the open section:
 	| Fields           |
 	| Object ID        |
-	#remove hash for 'radiant'
-	#| Object Name      |
+	| Name             |
+	#This is not ready on 'automation' server. Ready for 'radiant' (see DAS17810)
+	#| App Owner        |
 	| Device Owner     |
 	| Readiness        |
 	| Path             |
@@ -370,7 +371,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatProjectDetailsDefaultViewIsDisplayed
 	| Self Service URL |
 	| Tags             |
 
-@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16858 @DAS17160 @DAS17325 @DAS17645 @DAS17809
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16858 @DAS17160 @DAS17325 @DAS17645 @DAS17809 @DAS18095 @DAS18011 @DAS17810
 Scenario: EvergreenJnr_UsersList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForUserObjects
 	When User clicks 'Users' on the left-hand menu
 	Then 'All Users' list should be displayed to the user
@@ -383,8 +384,9 @@ Scenario: EvergreenJnr_UsersList_CheckThatProjectDetailsDefaultViewIsDisplayedCo
 	Then following fields are displayed in the open section:
 	| Fields           |
 	| Object ID        |
-	#remove hash for 'radiant'
-	#| Object Name      |
+	| Name             |
+	#This is not ready on 'automation' server. Ready for 'radiant' (see DAS17810)
+	#| App Owner        |
 	| Primary Device   |
 	| Readiness        |
 	| Path             |
@@ -397,7 +399,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatProjectDetailsDefaultViewIsDisplayedCo
 	| Language         |
 	| Tags             |
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16861 @DAS17158 @DAS17239 @DAS17645 @DAS17809
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16861 @DAS17158 @DAS17239 @DAS17645 @DAS17809 @DAS18095 @DAS18011 @DAS17810
 Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForApplicationObjects
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
@@ -410,8 +412,9 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectDetailsDefaultViewIsDisp
 	Then following fields are displayed in the open section:
 	| Fields              |
 	| Object ID           |
-	#remove hash for 'radiant'
-	#| Object Name      |
+	| Name                |
+	#This is not ready on 'automation' server. Ready for 'radiant' (see DAS17810)
+	#| App Owner           |
 	| Readiness           |
 	| App Readiness       |
 	| App Rationalisation |
@@ -424,7 +427,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectDetailsDefaultViewIsDisp
 	| Category            |
 	| Tags                |
 
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16957 @DAS17645 @DAS17785 @DAS17809
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16957 @DAS17645 @DAS17785 @DAS17809 @DAS18095 @DAS18011 @DAS17810
 Scenario: EvergreenJnr_MailboxesList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForMailboxObjects
 	When User clicks 'Mailboxes' on the left-hand menu
 	Then 'All Mailboxes' list should be displayed to the user
@@ -437,8 +440,9 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatProjectDetailsDefaultViewIsDisplay
 	Then following fields are displayed in the open section:
 	| Fields           |
 	| Object ID        |
-	#remove hash for 'radiant'
-	#| Object Name      |
+	| Name             |
+	#This is not ready on 'automation' server. Ready for 'radiant' (see DAS17810)
+	#| App Owner        |
 	| Mailbox Owner    |
 	| Readiness        |
 	| Path             |
@@ -573,3 +577,19 @@ Examples:
 	| User        | 013DA2178AB4444CAF2     | User              |
 	| Application | Acrobat Reader 6.0.1    | Application Owner |
 	| Mailbox     | ZGF0027767@bclabs.local | Mailbox Owner     |
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11983 @DAS11926 @DAS14923
+Scenario Outline: EvergreenJnr_AllLists_CheckThatRowsInTheTableAreEmptyIfTheDataIsUnknown
+	When User clicks '<PageName>' on the left-hand menu
+	Then 'All <PageName>' list should be displayed to the user
+	When User perform search by "<SelectedName>"
+	And User click content from "<ColumnName>" column
+	And User navigates to the "<SubMenuName>" sub-menu on the Details page
+	Then Empty rows are displayed if the data is unknown
+
+Examples:
+	| PageName  | SelectedName                     | ColumnName    | SubMenuName             |
+	| Devices   | 00K4CEEQ737BA4L                  | Hostname      | Department and Location |
+	| Users     | $231000-3AC04R8AR431             | Username      | Department and Location |
+	| Mailboxes | aaron.u.flores@dwlabs.local      | Email Address | Department and Location |
+	| Mailboxes | 000F977AC8824FE39B8@bclabs.local | Email Address | Mailbox                 |
