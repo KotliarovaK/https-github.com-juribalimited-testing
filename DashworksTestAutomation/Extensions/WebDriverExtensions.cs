@@ -54,6 +54,32 @@ namespace DashworksTestAutomation.Extensions
             return page;
         }
 
+        //Pay attention that there are two different method that work with two different type of tooltips
+        public static string GetTooltipBubbleText(this RemoteWebDriver driver)
+        {
+            var by = By.XPath(".//div[contains(@class,'ag-tooltip')]");
+            if (!driver.IsElementDisplayed(by, WaitTime.Short))
+                return string.Empty;
+
+            return driver.FindElement(by).Text;
+        }
+
+        //Pay attention that there are two different method that work with two different type of tooltips
+        public static string GetTooltipText(this RemoteWebDriver driver)
+        {
+            driver.WhatForElementToBeExists(By.XPath(_toolTipSelector));
+            var toolTips = driver.FindElements(By.XPath(_toolTipSelector));
+            if (!toolTips.Any())
+                throw new Exception("Tool tip was not displayed");
+            var toolTipText = toolTips.First().FindElement(By.XPath("./div")).Text;
+            if (String.IsNullOrEmpty(toolTipText))
+            {
+                driver.WaitForElementToBeDisplayed(By.XPath(_toolTipSelector + "/div"));
+                toolTipText = toolTips.First().FindElement(By.XPath("./div")).Text;
+            }
+            return toolTipText;
+        }
+
         public static string CreateScreenshot(this RemoteWebDriver driver, string fileName)
         {
             try
@@ -330,21 +356,6 @@ namespace DashworksTestAutomation.Extensions
             var toolTips = driver.FindElements(By.XPath(_toolTipSelector));
 
             return toolTips.Count > 0;
-        }
-
-        public static string GetTooltipText(this RemoteWebDriver driver)
-        {
-            driver.WhatForElementToBeExists(By.XPath(_toolTipSelector));
-            var toolTips = driver.FindElements(By.XPath(_toolTipSelector));
-            if (!toolTips.Any())
-                throw new Exception("Tool tip was not displayed");
-            var toolTipText = toolTips.First().FindElement(By.XPath("./div")).Text;
-            if (String.IsNullOrEmpty(toolTipText))
-            {
-                driver.WaitForElementToBeDisplayed(By.XPath(_toolTipSelector + "/div"));
-                toolTipText = toolTips.First().FindElement(By.XPath("./div")).Text;
-            }
-            return toolTipText;
         }
 
         public static void WhatForElementToBeSelected(this RemoteWebDriver driver, IWebElement element, bool selectorState)
