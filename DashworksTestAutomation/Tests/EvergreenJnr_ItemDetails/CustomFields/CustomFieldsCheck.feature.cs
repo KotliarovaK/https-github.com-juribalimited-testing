@@ -283,7 +283,7 @@ this.FeatureBackground();
             table1.AddRow(new string[] {
                         "Autosize this column"});
             table1.AddRow(new string[] {
-                        "Autosize all Columns"});
+                        "Autosize all columns"});
             table1.AddRow(new string[] {
                         "Group by Custom Field"});
             table1.AddRow(new string[] {
