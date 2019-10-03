@@ -363,6 +363,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             action.ClickButtonByName(buttonName);
         }
 
+        [When(@"User double clicks '(.*)' button")]
+        public void WhenUserDoubleClicksButton(string buttonName)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            _driver.DoubleClick(action.GetButtonByName(buttonName));
+        }
+
         #endregion
     }
 }
