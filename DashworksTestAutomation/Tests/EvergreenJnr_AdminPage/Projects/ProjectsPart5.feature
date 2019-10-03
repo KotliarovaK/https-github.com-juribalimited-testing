@@ -10,7 +10,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEmptyGreenAlertLineIsNotDisplayedOnPro
 	When Project created via API and opened
 	| ProjectName   | Scope     | ProjectTemplate | Mode               |
 	| TestName11881 | All Users | None            | Standalone Project |
-	When User navigates to the 'Projects' left menu item
 	Then Project "TestName11881" is displayed to user
 	When User selects "Scope" tab on the Project details page
 	When User selects "Scope Details" tab on the Project details page

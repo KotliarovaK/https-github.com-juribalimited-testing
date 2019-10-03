@@ -29,12 +29,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public void CheckPageHeader(string text)
         {
-            Verify.AreEqual(text, Header.Text, "Incorrect page header");
+            Verify.AreEqual(text.ToLower(), Header.Text.ToLower(), "Incorrect page header");
         }
 
         public void CheckPageHeaderContainsText(string text)
         {
-            Verify.IsTrue(Header.Text.Contains(text), $"Page header do not contains '{text}' text");
+            Verify.IsTrue(Header.Text.ToLower().Contains(text.ToLower()), $"Page header do not contains '{text}' text");
         }
     }
 }
