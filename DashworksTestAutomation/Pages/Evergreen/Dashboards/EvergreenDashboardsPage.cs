@@ -206,7 +206,13 @@ namespace DashworksTestAutomation.Pages
 
         public bool IsWidgetExists(string widgetName)
         {
-            return Driver.FindElements(By.XPath($".//div[@class='widgets']//span[contains(text(),'{widgetName}')]")).Count > 0;
+            return WidgetsCount(widgetName) > 0;
+        }
+
+        public int WidgetsCount(string widgetName)
+        {
+           var numberOfWidgets = Driver.FindElements(By.XPath($".//div[@class='widgets']//span[contains(text(),'{widgetName}')]")).Count;
+           return numberOfWidgets;
         }
 
         public List<List<string>> GetWidgetsNamesInSections()

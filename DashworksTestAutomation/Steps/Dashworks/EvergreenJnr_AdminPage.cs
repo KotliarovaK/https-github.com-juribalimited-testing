@@ -2099,12 +2099,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User navigates to ""(.*)"" project details")]
         public void WhenUserNavigatesToProjectDetails(string projectName)
         {
+            //Just wait for header to be displayed and loading to be finished
+            //In other case GoToUrl sometimes doesn't work
+            _driver.NowAt<BaseHeaderElement>();
+
             var projectId = GetProjectId(projectName);
             _driver.Navigate().GoToUrl($"{UrlProvider.EvergreenUrl}#/admin/project/{projectId}/details");
 
             var page = _driver.NowAt<ProjectsPage>();
             _driver.WaitForDataLoading();
-            Utils.Verify.IsTrue(page.ActiveProjectByName(projectName), $"{projectName} is not displayed on the Project page");
+            Verify.IsTrue(page.ActiveProjectByName(projectName), $"{projectName} is not displayed on the Project page");
         }
 
         [When(@"User hides side panel in project details page")]

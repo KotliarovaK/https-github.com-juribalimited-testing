@@ -8,9 +8,8 @@ Background: Pre-Conditions
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12336 @DAS12745 @DAS13199 @Cleanup @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedAfterAddingObjectsOnTheProjectScopeChangesTab
 	When Project created via API and opened
-	| ProjectName     | Scope       | ProjectTemplate | Mode               |
+	| ProjectName   | Scope       | ProjectTemplate | Mode               |
 	| TestName12336 | All Devices | None            | Standalone Project |
-	When User navigates to the 'Projects' left menu item
 	And User selects "Scope" tab on the Project details page
 	And User selects "Scope Changes" tab on the Project details page
 	And User expands multiselect to add objects
@@ -38,7 +37,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCancelButtonIsDisplayedWithCorrectColo
 	When Project created via API and opened
 	| ProjectName   | Scope       | ProjectTemplate | Mode               |
 	| TestName12891 | All Devices | None            | Standalone Project |
-	When User navigates to the 'Projects' left menu item
 	And User click on Back button
 	When User enters "TestName12891" text in the Search field for "Project" column
 	And User selects all rows on the grid
@@ -53,9 +51,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCancelButtonIsDisplayedWithCorrectColo
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11701 @Cleanup @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThatTheFilterSearchIsNotCaseSensitive
 	When Project created via API and opened
-	| ProjectName   | Scope       | ProjectTemplate | Mode               |
+	| ProjectName              | Scope       | ProjectTemplate | Mode               |
 	| TESTNAME_capital letters | All Devices | None            | Standalone Project |
-	When User navigates to the 'Projects' left menu item
 	And User click on Back button
 	Then created Project with "TESTNAME_capital letters" name is displayed correctly
 	When Project created via API and opened

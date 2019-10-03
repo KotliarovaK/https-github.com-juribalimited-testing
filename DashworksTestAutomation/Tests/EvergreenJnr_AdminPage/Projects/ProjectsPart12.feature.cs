@@ -238,6 +238,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS12999")]
+        [NUnit.Framework.CategoryAttribute("DAS18369")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         public virtual void EvergreenJnr_AdminPage_AddingAndDeletingPermissionsForMailboxProject()
@@ -274,6 +275,7 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "AdminPage",
                         "DAS12999",
+                        "DAS18369",
                         "Cleanup",
                         "Projects"});
 #line 55
