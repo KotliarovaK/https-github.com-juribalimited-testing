@@ -143,7 +143,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckThatImportIsSuccessAfterDuplicates
 	When User clicks 'IMPORT PROJECT' button 
 	#DAS11565
 	When User selects "DAS_13733_Duplicates_in_project_tasks.xml" file to upload on Import Project page
-	And User selects "Import to new project" option in the "Import" dropdown on the Import Project Page
+	And User selects 'Import to new project' in the 'Import' dropdown
 	And User enters "TestProjectDAS13733" in the Project Name field on Import Project page
 	And User clicks following checkboxes on the Project details page:
 	| CheckboxesToBeClicked |

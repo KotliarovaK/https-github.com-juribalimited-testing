@@ -514,6 +514,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public List<string> GetDropdownValues()
         {
+            Driver.WaitForElementsToBeDisplayed(By.XPath(_dropdownOptions));
             var optionsList = Driver.FindElements(By.XPath(_dropdownOptions));
             if (!optionsList.Any())
                 throw new Exception($"Unable to get dropdown values");

@@ -584,8 +584,7 @@ this.FeatureBackground();
  testRunner.When("User selects \"DAS_13733_Duplicates_in_project_tasks.xml\" file to upload on Import" +
                     " Project page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 146
- testRunner.And("User selects \"Import to new project\" option in the \"Import\" dropdown on the Impor" +
-                    "t Project Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects \'Import to new project\' in the \'Import\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 147
  testRunner.And("User enters \"TestProjectDAS13733\" in the Project Name field on Import Project pag" +
                     "e", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

@@ -138,7 +138,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IWebElement GetChipByNameOnPivot(string chipName)
         {
-            var selector = By.XPath($".//span[contains(@class, 'chip')][text()='{chipName}']");
+            var selector = By.XPath($".//span[contains(@class, 'pivot-filter-name')][text()='{chipName}']");
             return Driver.FindElement(selector);
         }
 
