@@ -5,8 +5,8 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18187 @Cleanup @Not_Ready
-#Waiting 'Update custom field' in the 'Action Type' dropdown for automation
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18187 @DAS18374 @Cleanup @Not_Ready
+#Waiting for 'Phoenix Field' from GD to automation
 Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomFieldAddToExistingValues
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope              | Run    |
@@ -32,6 +32,8 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	Then "SUCCESS" content is displayed for "Outcome" column
 	When User clicks String Filter button for "Type" column on the Admin page
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User clicks String Filter button for "Type" column on the Admin page
+	When User selects "Automation Start" checkbox from String Filter with item list on the Admin page
 	And User clicks content from "Objects" column
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
@@ -67,7 +69,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	| Phoenix Field |
 	Then "zero" content is displayed in "Phoenix Field" column
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18187 @Cleanup @Not_Ready
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18187 @DAS18374 @Cleanup @Not_Ready
 #Waiting for 'Phoenix Field' from GD to automation
 Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomFieldReplaceSingleValue
 	When User creates new Automation via API and open it
@@ -128,7 +130,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	| Phoenix Field |
 	Then "012345" content is displayed in "Phoenix Field" column
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18187 @Cleanup @Not_Ready
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18187 @DAS18374 @Cleanup @Not_Ready
 #Waiting for 'Phoenix Field' from GD to automation
 Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomFieldRemoveAllValues
 	When User creates new Automation via API and open it
@@ -187,7 +189,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	| Phoenix Field |
 	Then "1 value" content is displayed in "Phoenix Field" column
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18187 @Cleanup @Not_Ready
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18187 @DAS18374 @Cleanup @Not_Ready
 #Waiting for 'Phoenix Field' from GD to automation
 Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomFieldReplaceAllValues
 	When User creates new Automation via API and open it
