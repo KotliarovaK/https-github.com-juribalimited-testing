@@ -1838,13 +1838,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         //TODO should be changed to generic method. Remove Admin page
-        [Then(@"No options are selected in the Group By menu")]
-        public void NoOptionsAreSelectedInTheGroupByMenu()
+        [Then(@"'(.*)' options are selected in the Group By menu")]
+        public void ThenOptionsAreSelectedInTheGroupByMenu(int expectedCount)
         {
             var page = _driver.NowAt<BaseGridPage>();
             page.GroupByButton.Click();
             var selectedCount = page.GetAllOptionsInGroupByFilter().Select(x => x.Value).Count(x => x.Equals(true));
-            Verify.AreEqual(0, selectedCount, "Some options are selected in the Group By menu");
+            Verify.AreEqual(expectedCount, selectedCount, "Incorrect number of selected values in the Group By menu");
             page.BodyContainer.Click();
         }
 

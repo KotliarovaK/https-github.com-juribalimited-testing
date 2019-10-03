@@ -32,7 +32,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatContextMenuCopyRowForTheRowActi
 	| Pin right             |
 	| No pin                |
 	| Autosize this column  |
-	| Autosize all Columns  |
+	| Autosize all columns  |
 	| Group by Custom Field |
 	| Sort ascending        |
 	| Sort descending       |
