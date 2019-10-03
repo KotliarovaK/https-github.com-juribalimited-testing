@@ -144,26 +144,80 @@ this.FeatureBackground();
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 15
  testRunner.And("User navigates to the \"Project Details\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Title",
+                        "Value"});
+            table1.AddRow(new string[] {
+                        "Name",
+                        "000F977AC8824FE39B8@bclabs.local"});
+            table1.AddRow(new string[] {
+                        "Mailbox Owner",
+                        "Spruill, Shea"});
 #line 16
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table1, "Then ");
+#line 20
  testRunner.When("User clicks \'RELINK\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 17
- testRunner.Then("Dialog Pop-up is displayed for User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 18
- testRunner.Then("\'Resync owner and users\' checkbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 19
- testRunner.Then("\'Resync name\' checkbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 21
+ testRunner.Then("Dialog Pop-up is displayed for User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 22
+ testRunner.Then("\'Resync owner and users\' checkbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 23
+ testRunner.Then("\'Resync name\' checkbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 24
  testRunner.When("User enters \'gdf\' in the \'Mailbox\' autocomplete field and selects \'GDF237451@bcla" +
                     "bs.local\' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 22
+#line 25
+ testRunner.Then("User selects state \'true\' for \'Resync owner and users\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 26
+ testRunner.Then("User selects state \'true\' for \'Resync name\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 27
  testRunner.When("User clicks \'RELINK\' button in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 23
+#line 28
  testRunner.Then("Warning message with \"This object will be relinked to the selected Evergreen obje" +
                     "ct in this project\" text is displayed on the Project Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 24
+#line 29
  testRunner.When("User clicks \'RELINK\' button in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 25
+#line 30
  testRunner.Then("Success message is displayed and contains \"Mailbox successfully relinked\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 31
+ testRunner.Then("Details page for \"GDF237451@bclabs.loca\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Title",
+                        "Value"});
+            table2.AddRow(new string[] {
+                        "Name",
+                        "000F977AC8824FE39B8@bclabs.local"});
+            table2.AddRow(new string[] {
+                        "Mailbox Owner",
+                        "Spruill, Shea"});
+#line 32
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2, "Then ");
+#line 36
+ testRunner.When("User clicks \'RESYNC\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 37
+ testRunner.When("User clicks \'RESYNC\' button in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 38
+ testRunner.Then("Success message is displayed and contains \"Mailbox successfully resynced\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Title",
+                        "Value"});
+            table3.AddRow(new string[] {
+                        "Name",
+                        "GDF237451@bclabs.local"});
+            table3.AddRow(new string[] {
+                        "Device Owner",
+                        ""});
+#line 39
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table3, "Then ");
+#line 43
+ testRunner.When("User navigates to the \'Users\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 44
+ testRunner.And("User navigates to the \"Users\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 45
+ testRunner.Then("\"1\" rows found label displays on Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

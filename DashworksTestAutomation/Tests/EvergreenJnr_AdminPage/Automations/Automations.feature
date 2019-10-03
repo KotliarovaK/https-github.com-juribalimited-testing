@@ -718,9 +718,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeviceLisFiltertHasAppropriateAutomati
 	And User selects 'Desktop Replacement' option from 'Path' autocomplete
 	And User clicks 'CREATE' button 
 	#run automation
-	And User navigates to the 'Automations' left menu item
+	When User clicks "Automations" navigation link on the Admin page
 	And User clicks "Run now" option in Cog-menu for "DAS15949_Automation" item on Admin page and wait for processing
-	#cjheck filters
+	#check filters
 	And User clicks 'Devices' on the left-hand menu
 	And User clicks the Filters button
 	And User clicks Add New button on the Filter panel

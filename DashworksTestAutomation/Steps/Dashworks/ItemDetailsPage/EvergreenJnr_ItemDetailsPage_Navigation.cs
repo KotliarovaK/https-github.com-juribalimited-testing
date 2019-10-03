@@ -7,6 +7,7 @@ using System.Threading;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
+using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.ItemDetails;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
@@ -51,6 +52,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
                     throw new Exception($"Unknown list type: {listName}");
             }
 
+            _driver.NowAt<BaseHeaderElement>();
             var url = $"{UrlProvider.EvergreenUrl}#/{listName}/{id}/details/{listName}";
             
             _driver.NavigateToUrl(url);

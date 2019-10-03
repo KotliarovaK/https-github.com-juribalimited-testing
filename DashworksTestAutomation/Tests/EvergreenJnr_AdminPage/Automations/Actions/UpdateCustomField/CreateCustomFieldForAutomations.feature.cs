@@ -334,6 +334,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS18166")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldForDisabledCustomFieldOnUpdateActionPage()
         {
             System.Exception lastException = null;
@@ -368,7 +369,8 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "Automations",
                         "DAS18166",
-                        "Cleanup"});
+                        "Cleanup",
+                        "Not_Ready"});
 #line 72
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

@@ -332,11 +332,11 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "cellText"});
             table4.AddRow(new string[] {
-                        "Computer: PC Rebuild,Computer: Workstation Replacement"});
+                        "Computer: PC Rebuild, Computer: Workstation Replacement"});
             table4.AddRow(new string[] {
-                        "Admin IT,Administrative Team"});
+                        "Admin IT, Administrative Team"});
             table4.AddRow(new string[] {
-                        "Capacity Unit 1,Capacity Unit 2,Unassigned"});
+                        "Capacity Unit 1, Capacity Unit 2, Unassigned"});
 #line 55
  testRunner.Then("User sees following text in cell truncated with ellipsis:", ((string)(null)), table4, "Then ");
 #line hidden

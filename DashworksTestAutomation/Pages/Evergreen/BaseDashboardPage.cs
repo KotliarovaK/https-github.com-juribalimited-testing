@@ -453,7 +453,17 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IWebElement GetGridCellByText(string cellText)
         {
-            return Driver.FindElements(By.XPath(GridCell)).Where(x => x.GetAttribute("innerHTML").Contains(cellText)).FirstOrDefault();
+            var allCellsWithExpectedText = Driver.FindElements(By.XPath(GridCell))
+                .Where(x => x.GetAttribute("innerHTML").Contains(cellText)).ToList();
+
+            if (allCellsWithExpectedText.Any())
+            {
+                return allCellsWithExpectedText.FirstOrDefault();
+            }
+            else
+            {
+                throw new Exception($"Unable to find cell with '{cellText}' text");
+            }
         }
 
         public void ContextClickOnCell(string cellText)

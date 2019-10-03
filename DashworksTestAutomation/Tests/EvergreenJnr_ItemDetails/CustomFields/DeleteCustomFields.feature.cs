@@ -305,15 +305,17 @@ this.FeatureBackground();
  testRunner.Then("Success message with \"Custom field value deleted successfully\" text is displayed " +
                     "on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 56
- testRunner.And("Grid is not grouped", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Grid is grouped", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 57
- testRunner.And("No options are selected in the Group By menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'1\' options are selected in the Group By menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 58
  testRunner.And("\'Custom Fields\' tab is displayed on left menu on the Details page and contains \'1" +
                     "\' count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 59
- testRunner.And("\'ValueDAS17695_1A\' content is not displayed in the \'Value\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User expands \'ValueDAS17695_1B\' row in the groped grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 60
+ testRunner.Then("\'ValueDAS17695_1A\' content is not displayed in the \'Value\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 61
  testRunner.And("\'ValueDAS17695_1B\' content is displayed in the \'Value\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
