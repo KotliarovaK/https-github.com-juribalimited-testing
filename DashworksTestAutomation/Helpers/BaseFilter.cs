@@ -357,8 +357,12 @@ namespace DashworksTestAutomation.Helpers
             var selectboxes = _driver.FindElements(By.XPath(".//div[@id='context']//input[@placeholder='Search']"));
             selectboxes.First().Click();
             foreach (var row in Table.Rows)
-                _driver.FindElement(By.XPath(
-                    $".//div[@id='perfectScrolBar']//span[text()='{row["SelectedList"]}']")).Click();
+            {
+                var item = _driver.FindElement(By.XPath(
+                        $".//div[@id='perfectScrolBar']//span[text()='{row["SelectedList"]}']"));
+                _driver.MouseHoverByJavascript(item);
+                item.Click();
+            }
 
             selectboxes.Last().Click();
             foreach (var row in Table.Rows)
@@ -400,7 +404,7 @@ namespace DashworksTestAutomation.Helpers
             foreach (var row in Table.Rows)
             {
                 _driver.FindElement(By.XPath(".//div[@id='context']//input[@placeholder='Search']")).Click();
-                
+
                 //if tests will fail then remove next string
                 _driver.FindElement(By.XPath(".//div[@id='context']//input[@placeholder='Search']")).Clear();
 
@@ -413,7 +417,7 @@ namespace DashworksTestAutomation.Helpers
 
             foreach (var row in Table.Rows)
             {
-                if(string.IsNullOrEmpty(row["Association"]))
+                if (string.IsNullOrEmpty(row["Association"]))
                     break;
                 //TODO: try to fix not found element by path below(input[@id='mat-input-7'] sometimes has 76 digit)
                 //_driver.FindElement(By.XPath("//div[contains(@class, 'associationmultiselect')]//input[@id='mat-input-7']")).SendKeys(row["Association"]);
@@ -510,7 +514,7 @@ namespace DashworksTestAutomation.Helpers
             selectboxes.Last().Click();
             foreach (var row in table.Rows)
             {
-                if(string.IsNullOrEmpty(row["Association"]))
+                if (string.IsNullOrEmpty(row["Association"]))
                     break;
                 _driver.FindElement(By.XPath($".//li//span[text()='{row["Association"]}']")).Click();
             }

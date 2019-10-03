@@ -213,6 +213,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("CustomFields")]
         [NUnit.Framework.CategoryAttribute("DAS17909")]
+        [NUnit.Framework.CategoryAttribute("DAS17959")]
         [NUnit.Framework.TestCaseAttribute("Device", "001BAQXT6JWFPI", null)]
         [NUnit.Framework.TestCaseAttribute("User", "ACG370114", null)]
         [NUnit.Framework.TestCaseAttribute("Application", "Adobe Download Manager 2.0 (Remove Only)", null)]
@@ -250,7 +251,8 @@ this.FeatureBackground();
                     "AllLists",
                     "EvergreenJnr_ItemDetails",
                     "CustomFields",
-                    "DAS17909"};
+                    "DAS17909",
+                    "DAS17959"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -273,17 +275,17 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnSettings"});
             table1.AddRow(new string[] {
-                        "Pin Left"});
+                        "Pin left"});
             table1.AddRow(new string[] {
-                        "Pin Right"});
+                        "Pin right"});
             table1.AddRow(new string[] {
-                        "No Pin"});
+                        "No pin"});
             table1.AddRow(new string[] {
-                        "Autosize This column"});
+                        "Autosize this column"});
             table1.AddRow(new string[] {
-                        "Autosize All Columns"});
+                        "Autosize all columns"});
             table1.AddRow(new string[] {
-                        "Group By Custom Field"});
+                        "Group by Custom Field"});
             table1.AddRow(new string[] {
                         "Sort ascending"});
             table1.AddRow(new string[] {

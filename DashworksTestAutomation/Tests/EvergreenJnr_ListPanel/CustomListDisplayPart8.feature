@@ -13,15 +13,15 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatTheEditListFunctionIsHiddenAfte
 	Then data in table is sorted by '<ColumnName>' column in ascending order
 	When User create dynamic list with "DynamicList3" name on "<ListName>" page
 	When User have opened column settings for "<PinnedColumnName>" column
-	When User have select "Pin Left" option from column settings
+	When User have select "Pin left" option from column settings
 	Then "DynamicList3" list is displayed to user
 	Then Edit List menu is not displayed
 	When User have opened column settings for "<PinnedColumnName>" column
-	When User have select "Pin Right" option from column settings
+	When User have select "Pin right" option from column settings
 	Then "DynamicList3" list is displayed to user
 	Then Edit List menu is not displayed
 	When User have opened column settings for "<PinnedColumnName>" column
-	When User have select "No Pin" option from column settings
+	When User have select "No pin" option from column settings
 	Then "DynamicList3" list is displayed to user
 	Then Edit List menu is not displayed
 	When User clicks the Actions button
@@ -30,15 +30,15 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatTheEditListFunctionIsHiddenAfte
 	And User selects "Create static list" in the Actions dropdown
 	And User create static list with "StaticList3" name
 	And User have opened column settings for "<PinnedColumnName>" column
-	And User have select "Pin Left" option from column settings
+	And User have select "Pin left" option from column settings
 	Then "StaticList3" list is displayed to user
 	And Edit List menu is not displayed
 	When User have opened column settings for "<PinnedColumnName>" column
-	And User have select "Pin Right" option from column settings
+	And User have select "Pin right" option from column settings
 	Then "StaticList3" list is displayed to user
 	And Edit List menu is not displayed
 	When User have opened column settings for "<PinnedColumnName>" column
-	And User have select "No Pin" option from column settings
+	And User have select "No pin" option from column settings
 	Then "StaticList3" list is displayed to user
 	And Edit List menu is not displayed
 

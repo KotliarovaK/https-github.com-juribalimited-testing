@@ -77,6 +77,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project
 
             _projects.Value.Add(pName);
 
+            _driver.NowAt<BaseHeaderElement>();
             _driver.Navigate().GoToUrl($"{UrlProvider.EvergreenUrl}#/admin/project/{projectId}/details");
 
             var page = _driver.NowAt<ProjectsPage>();
