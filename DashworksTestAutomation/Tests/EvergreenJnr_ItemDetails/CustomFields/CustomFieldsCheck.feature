@@ -21,19 +21,19 @@ Scenario: EvergreenJnr_DevicesList_CheckThatContextMenuCopyRowForTheRowActionsIs
 	And User selects 'Copy row' option in context menu
 	Then Next data 'ComputerCustomField      0.665371384' is copied
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @CustomFields @DAS17909
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @CustomFields @DAS17909 @DAS17959
 Scenario Outline: EvergreenJnr_AllLists_CheckThatContextMenuCopyRowForTheRowActionsIsDisplayedAndWorkedCorrectlyForCustomFields
 	When User navigates to the '<ItemType>' details page for '<ItemName>' item
 	And User navigates to the "Custom Fields" sub-menu on the Details page
 	And User have opened Column Settings for "Custom Field" column in the Details Page table
 	Then User sees the following Column Settings
 	| ColumnSettings        |
-	| Pin Left              |
-	| Pin Right             |
-	| No Pin                |
-	| Autosize This column  |
-	| Autosize All Columns  |
-	| Group By Custom Field |
+	| Pin left              |
+	| Pin right             |
+	| No pin                |
+	| Autosize this column  |
+	| Autosize all Columns  |
+	| Group by Custom Field |
 	| Sort ascending        |
 	| Sort descending       |
 	| No sort               |

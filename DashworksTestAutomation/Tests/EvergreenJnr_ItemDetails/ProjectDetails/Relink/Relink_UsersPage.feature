@@ -13,13 +13,30 @@ Scenario: EvergreenJnr_UsersList_CheckThatRelinkOptionIsWorkedCorrectlyForProjec
 	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the "Project Details" sub-menu on the Details page
+	Then following content is displayed on the Details Page
+	| Title | Value     |
+	| Name  | ZZR457072 |
 	When User clicks 'RELINK' button 
 	Then Dialog Pop-up is displayed for User
 	Then 'Resync apps' checkbox is checked
 	Then 'Resync name' checkbox is checked
-	#TODO update search data
-	When User enters 'dsf' in the 'User' autocomplete field and selects 'FR\DSF4350513 (717) - Ormazd Therrien' value
+	When User enters 'dsf' in the 'User' autocomplete field and selects 'DSF4350513' value
+	Then User selects state 'true' for 'Resync apps' checkbox
+	And User selects state 'true' for 'Resync name' checkbox
 	When User clicks 'RELINK' button in Dialog Pop-up
 	Then Warning message with "This object will be relinked to the selected Evergreen object in this project" text is displayed on the Project Details Page
 	When User clicks 'RELINK' button in Dialog Pop-up
 	Then Success message is displayed and contains "User successfully relinked" text
+	Then Details page for "DSF4350513" item is displayed to the user
+	Then following content is displayed on the Details Page
+	| Title | Value     |
+	| Name  | ZZR457072 |
+	When User clicks 'RESYNC' button 
+	When User clicks 'RESYNC' button in Dialog Pop-up
+	Then Success message is displayed and contains "User successfully resynced" text
+	Then following content is displayed on the Details Page
+	| Title | Value      |
+	| Name  | DSF4350513 |
+	When User navigates to the 'Applications' left menu item
+	And User navigates to the "Evergreen Summary" sub-menu on the Details page
+	Then "11" rows found label displays on Details Page 

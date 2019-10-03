@@ -573,3 +573,19 @@ Examples:
 	| User        | 013DA2178AB4444CAF2     | User              |
 	| Application | Acrobat Reader 6.0.1    | Application Owner |
 	| Mailbox     | ZGF0027767@bclabs.local | Mailbox Owner     |
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11983 @DAS11926 @DAS14923
+Scenario Outline: EvergreenJnr_AllLists_CheckThatRowsInTheTableAreEmptyIfTheDataIsUnknown
+	When User clicks '<PageName>' on the left-hand menu
+	Then 'All <PageName>' list should be displayed to the user
+	When User perform search by "<SelectedName>"
+	And User click content from "<ColumnName>" column
+	And User navigates to the "<SubMenuName>" sub-menu on the Details page
+	Then Empty rows are displayed if the data is unknown
+
+Examples:
+	| PageName  | SelectedName                     | ColumnName    | SubMenuName             |
+	| Devices   | 00K4CEEQ737BA4L                  | Hostname      | Department and Location |
+	| Users     | $231000-3AC04R8AR431             | Username      | Department and Location |
+	| Mailboxes | aaron.u.flores@dwlabs.local      | Email Address | Department and Location |
+	| Mailboxes | 000F977AC8824FE39B8@bclabs.local | Email Address | Mailbox                 |
