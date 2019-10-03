@@ -203,7 +203,7 @@ this.FeatureBackground();
             table1.AddRow(new string[] {
                         "zUser Sch for Automations Feature"});
 #line 14
- testRunner.Then("User sees that \"Select Existing Project\" dropdown contains following options:", ((string)(null)), table1, "Then ");
+ testRunner.Then("User sees that \'Select Existing Project\' dropdown contains following options:", ((string)(null)), table1, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

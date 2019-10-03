@@ -276,7 +276,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.AreEqual(expectedList, actualList, $"Value for {dropDownName} are different");
         }
 
-        [Then(@"User sees that ""(.*)"" dropdown contains following options:")]
+        [Then(@"User sees that '(.*)' dropdown contains following options:")]
         public void ThenUserSeesThatDropdownContainsFollowingOptions(string dropDownName,
             Table options)
         {
