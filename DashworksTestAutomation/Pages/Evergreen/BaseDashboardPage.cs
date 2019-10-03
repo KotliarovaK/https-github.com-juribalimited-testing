@@ -37,9 +37,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public const string ImageSelector = ".//i";
 
-        [FindsBy(How = How.XPath, Using = ".//h1")]
-        public IWebElement Header { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//h2")]
         public IWebElement SubHeader { get; set; }
 
@@ -402,10 +399,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             Driver.WaitForDataLoading();
 
-            return new List<By>
-            {
-                SelectorFor(this, p => p.Header),
-            };
+            return new List<By> { };
         }
 
         //Null value can be returned
@@ -638,6 +632,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public void AutocompleteSelect(string placeholder, string option, bool withSearch = false, bool containsOption = false)
         {
+            GetNamedTextbox(placeholder).ClearWithBackspaces();
             GetNamedTextbox(placeholder).Click();
 
             if (withSearch)
@@ -863,13 +858,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
             var by = By.XPath(
                 $".//div[@role='gridcell'][{GetColumnNumberByName(columnName)}]");
             return Driver.FindElement(by).Text;
-        }
-
-        public string GetRowTooltipByColumnName(string columnName)
-        {
-            var by = By.XPath(
-                $".//div[@role='gridcell'][{GetColumnNumberByName(columnName)}]");
-            return Driver.FindElement(by).GetAttribute("title");
         }
 
         public IWebElement GetItalicContentByColumnName(string text)

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Utils;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 
@@ -12,9 +13,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 {
     //TODO Rename to Element instead of Page
     //!!!Element with header and breadcrumbs under grid!!!
-    public class BaseHeaderPage : SeleniumBasePage
+    public class BaseHeaderElement : SeleniumBasePage
     {
-        [FindsBy(How = How.XPath, Using = ".//div[@class='title-container']//h1")]
+        [FindsBy(How = How.XPath, Using = ".//h1")]
         public IWebElement Header { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
@@ -24,6 +25,16 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             {
                 SelectorFor(this, p => p.Header)
             };
+        }
+
+        public void CheckPageHeader(string text)
+        {
+            Verify.AreEqual(text.ToLower(), Header.Text.ToLower(), "Incorrect page header");
+        }
+
+        public void CheckPageHeaderContainsText(string text)
+        {
+            Verify.IsTrue(Header.Text.ToLower().Contains(text.ToLower()), $"Page header do not contains '{text}' text");
         }
     }
 }

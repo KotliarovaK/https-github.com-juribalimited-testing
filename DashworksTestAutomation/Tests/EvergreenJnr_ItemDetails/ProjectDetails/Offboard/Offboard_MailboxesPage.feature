@@ -12,13 +12,12 @@ Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOf
 	When User navigates to the 'Mailbox' details page for '01DEAC5F18B34084B04@bclabs.local' item
 	Then Details page for "01DEAC5F18B34084B04@bclabs.local" item is displayed to the user
 	When User switches to the "USE ME FOR AUTOMATION(MAIL SCHDLD)" project in the Top bar on Item details page
-	When User navigates to the 'Projects' left menu item
+	And User navigates to the 'Projects' left menu item
 	And User navigates to the "Project Details" sub-menu on the Details page
 	And User clicks 'OFFBOARD' button 
 	Then Dialog Pop-up is displayed for User
-	Then following text 'Offboarding mailbox 01DEAC5F18B34084B04@bclabs.local. Offboarding an object deletes all project related information about it.' is displayed in Dialog Pop-up
-	Then 'Offboard all associated users' checkbox is checked
-	Then following columns are displayed on the Item details page:
+	And 'Offboard all associated users' checkbox is checked
+	And following columns are displayed on the Item details page:
 	| ColumnName   |
 	| Username     |
 	| Display Name |
@@ -28,9 +27,9 @@ Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOf
 	When User select "Username" rows in the grid
 	| SelectedRowsName    |
 	| 01DEAC5F18B34084B04 |
-	Then "BCLABS\01DEAC5F18B34084B04 (Owner)" chip have tooltip with "BCLABS\01DEAC5F18B34084B04 (Owner)" text
+	Then " BCLABS\01DEAC5F18B34084B04 (Owner)" chip have tooltip with "BCLABS\01DEAC5F18B34084B04 (Owner)" text
 	When User clicks 'OFFBOARD' button in Dialog Pop-up
-	When User clicks 'OFFBOARD' button in Dialog Pop-up
+	And User clicks 'OFFBOARD' button in Dialog Pop-up
 	#going to check the object state
 	And User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -38,11 +37,11 @@ Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOf
 	Then Page with 'Projects' header is displayed to user
 	When User enters "USE ME FOR AUTOMATION(MAIL SCHDLD)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
-	When User navigates to the 'Scope' left menu item
+	And User navigates to the 'Scope' left menu item
 	And User selects "History" tab on the Project details page
 	Then '01DEAC5F18B34084B04@bclabs.local' content is displayed in the 'Item' column
-	Then '01DEAC5F18B34084B04' content is displayed in the 'Item' column
-	Then 'svc_dashworks' content is not displayed in the 'Item' column
+	And '01DEAC5F18B34084B04' content is displayed in the 'Item' column
+	And 'svc_dashworks' content is not displayed in the 'Item' column
 
 	#TODO create API ONBOARDING step;
 	#tag 'not_rady' added because need to create Cleanup (DAS-18070)
@@ -55,7 +54,6 @@ Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOf
 	And User navigates to the "Project Details" sub-menu on the Details page
 	And User clicks 'OFFBOARD' button 
 	Then Dialog Pop-up is displayed for User
-	And following text 'Offboarding mailbox 01DEAC5F18B34084B04@bclabs.local. Offboarding an object deletes all project related information about it.' is displayed in Dialog Pop-up
 	And 'Offboard all associated users' checkbox is checked
 	And following columns are displayed on the Item details page:
 	| ColumnName   |
@@ -80,10 +78,7 @@ Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOf
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @Offboard @DAS17964 @DAS17990 @DAS17000
 Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindowWithoutUserOnMailboxesPage
-	When User clicks 'Mailboxes' on the left-hand menu
-	Then 'All Mailboxes' list should be displayed to the user
-	When User perform search by "alex.cristea@juriba.com"
-	And User click content from "Email Address" column
+	When User navigates to the 'Mailbox' details page for 'alex.cristea@juriba.com' item
 	Then Details page for "alex.cristea@juriba.com" item is displayed to the user
 	When User switches to the "Email Migration" project in the Top bar on Item details page
 	When User navigates to the 'Projects' left menu item

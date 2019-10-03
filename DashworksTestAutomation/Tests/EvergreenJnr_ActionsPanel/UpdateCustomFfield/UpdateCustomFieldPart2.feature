@@ -62,7 +62,7 @@ Scenario: EvergreenJnr_DevicesList_CheckUpdateCustomFieldUpdatingValuesForRemove
 	When User adds '111' value from 'Value' textbox
 	When User adds '000' value from 'Value' textbox
 	When User clicks 'UPDATE' button 
-	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
+	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
 	And Success message with "2 updates have been queued" text is displayed on Action panel
 	When User refreshes agGrid
@@ -75,8 +75,8 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateCustomFieldUpdatingValuesForAddToExi
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Username" filter where type is "Begins with" with added column and following value:
-	       | Values |
-	       | 002    |
+	| Values |
+	| 002    |
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
@@ -122,8 +122,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateCustomFieldUpdatingValuesForR
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Application" filter where type is "Begins with" with added column and following value:
-	       | Values |
-	       | Easy   |
+	| Values |
+	| Easy   |
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
@@ -167,8 +167,8 @@ Scenario: EvergreenJnr_MailboxesList_CheckUpdateCustomFieldUpdatingValuesForRepl
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Email Address (Primary)" filter where type is "Begins with" with added column and following value:
-	       | Values |
-	       | 00b    |
+	| Values |
+	| 00b    |
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked

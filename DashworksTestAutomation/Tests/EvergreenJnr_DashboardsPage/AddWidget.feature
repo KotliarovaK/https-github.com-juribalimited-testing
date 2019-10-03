@@ -153,3 +153,17 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatThereIsNoPossibilityToCreateWidge
 	| Table      | DAS-TestList_DAS17539 | TestList_DAS17539 | Mailbox Platform | Count             | Mailbox Platform ASC |
 	Then Widget Preview is displayed to the user
 	And 'This widget refers to a list which has errors' alert is displayed in Preview
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18151 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatDuplicateWidgetsWillNotbeCreatedIfUserClicksFastOnTheCreateButtonSeveralTimes
+	When Dashboard with "DAS16853_Dashboard" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks 'ADD WIDGET' button 
+	Then "Show legend" checkbox has a correct label
+	And "Show data labels" checkbox has a correct label
+	When User adds new Widget
+	| WidgetType | Title             | List        | SplitBy  | AggregateFunction | OrderBy   | MaxValues | ShowLegend |
+	| Pie        | UniqeWidget       | All Devices | Hostname | Count             | Count ASC | 10        | true       |
+	And User double clicks 'CREATE' button
+	Then User sees Widget with "UniqeWidget" name on Dashboards page
+	And User sees '1' widgets with 'UniqeWidget' name on Dashboards page

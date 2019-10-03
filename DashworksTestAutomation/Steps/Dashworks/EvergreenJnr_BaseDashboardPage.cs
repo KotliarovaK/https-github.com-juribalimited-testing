@@ -373,8 +373,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForDataLoading();
-            var originalList = page.GetRowTooltipByColumnName(columnName);
-            Verify.AreEqual(textTooltip, originalList, "Tooltip is not displayed correctly");
+            var cellElement = page.GetGridCellByText(textTooltip);
+            _driver.MouseHover(cellElement);
+            var tooltip = _driver.GetTooltipBubbleText();
+            Verify.AreEqual(textTooltip, tooltip, "Tooltip is not displayed correctly");
         }
 
         [Then(@"""(.*)"" content is displayed for ""(.*)"" column")]

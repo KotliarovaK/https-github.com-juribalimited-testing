@@ -108,7 +108,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             page.PopulateNamedTextbox(placeholder, content);
-
             Utils.Verify.IsFalse(page.AutocompleteDropdown.Displayed(), $"{content} text is displayed in the {placeholder} autocomplete");
         }
 
@@ -376,6 +375,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             action.ClickButtonByName(buttonName);
+        }
+
+        [When(@"User double clicks '(.*)' button")]
+        public void WhenUserDoubleClicksButton(string buttonName)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            _driver.DoubleClick(action.GetButtonByName(buttonName));
         }
 
         #endregion
