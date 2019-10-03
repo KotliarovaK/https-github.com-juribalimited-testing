@@ -10,8 +10,8 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckSelectExistingProjectDropdownValue
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User clicks 'IMPORT PROJECT' button 
-	And User selects "Import to existing project" option in the "Import" dropdown on the Import Project Page
-	Then User sees that "Select Existing Project" dropdown contains following options on Import Projects page:
+	And User selects 'Import to existing project' in the 'Import' dropdown
+	Then User sees that "Select Existing Project" dropdown contains following options:
 	| OptionLabel                                       |
 	| *Project K-Computer Scheduled Project             |
 	| :/                                                |

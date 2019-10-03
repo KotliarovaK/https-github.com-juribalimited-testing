@@ -140,8 +140,7 @@ this.FeatureBackground();
 #line 12
  testRunner.When("User clicks \'IMPORT PROJECT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 13
- testRunner.And("User selects \"Import to existing project\" option in the \"Import\" dropdown on the " +
-                    "Import Project Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects \'Import to existing project\' in the \'Import\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "OptionLabel"});
@@ -204,8 +203,7 @@ this.FeatureBackground();
             table1.AddRow(new string[] {
                         "zUser Sch for Automations Feature"});
 #line 14
- testRunner.Then("User sees that \"Select Existing Project\" dropdown contains following options on I" +
-                    "mport Projects page:", ((string)(null)), table1, "Then ");
+ testRunner.Then("User sees that \"Select Existing Project\" dropdown contains following options:", ((string)(null)), table1, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
