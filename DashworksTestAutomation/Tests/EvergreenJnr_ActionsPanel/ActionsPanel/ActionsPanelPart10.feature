@@ -60,6 +60,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatBucketBulkUpdateOptionNotAvaila
 	Then following values are displayed in "Bulk Update Type" drop-down on Action panel:
 	| Options              |
 	| Update capacity unit |
+	| Update custom field  |
 	| Update path          |
 	| Update task value    |
 
@@ -91,6 +92,10 @@ Scenario: EvergreenJnr_DevicesList_CheckSortOrderForBulkUpdateCapacitySlot
 	| London - City Afternoon      |
 	| London - Southbank Morning   |
 	| London - Southbank Afternoon |
+	| London Depot 09:00 - 11:00   |
+	| London Depot 11:00 - 13:00   |
+	| London Depot 13:00 - 15:00   |
+	| London Depot 15:00 - 17:00   |
 
 @Evergreen @AllLists @EvergreenJnr_ActionsPanel @DAS17103
 Scenario: EvergreenJnr_DevicesList_CheckTooltipDisplayingInDatePickerOfBulkUpdate
