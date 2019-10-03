@@ -21,13 +21,11 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Scope
     public class ScopeChangesSteps : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
-        private readonly AddedObjects _addedObjects;
         private readonly LastUsedBucket _lastUsedBucket;
 
-        public ScopeChangesSteps(RemoteWebDriver driver, AddedObjects addedObjects, LastUsedBucket lastUsedBucket)
+        public ScopeChangesSteps(RemoteWebDriver driver, LastUsedBucket lastUsedBucket)
         {
             _driver = driver;
-            _addedObjects = addedObjects;
             _lastUsedBucket = lastUsedBucket;
         }
 
@@ -93,59 +91,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Scope
                 _driver.WaitForDataLoading();
                 basePage.ExpandCollapseMultiselectButton("").Click();
             }
-        }
-
-        //TODO Should be moved to buckets and text should be updated to something more understandable
-        [When(@"User adds following Objects from list")]
-        public void ThenUserAddFollowingObjectsFromList(Table table)
-        {
-            var itemsToAdd = table.Rows.Select(x => x["Objects"]).ToList();
-            var basePage = _driver.NowAt<BaseDashboardPage>();
-            basePage.AddItemsToMultiSelect(itemsToAdd);
-            //Save added objects to remove it from the bucket
-            foreach (string s in itemsToAdd)
-            {
-                _addedObjects.Value.Add(s, _lastUsedBucket.Value);
-            }
-
-            basePage.GetButtonByName("ADD BUCKETS").Click();
-        }
-
-        //TODO looks like should be removed
-        [When(@"User adds following Objects to the Project on ""(.*)"" tab")]
-        public void WhenUserAddsFollowingObjectsToTheProjectOnTab(string tabName, Table table)
-        {
-            var basePage = _driver.NowAt<BaseDashboardPage>();
-            try
-            {
-                var projectTabs = _driver.NowAt<ProjectsPage>();
-                projectTabs.ClickToTabByNameProjectScopeChanges(tabName);
-                basePage.GetExpandableMultiselect("").Click();
-                foreach (var row in table.Rows)
-                {
-                    var search = basePage.GetNamedTextbox("Search");
-                    basePage.AddItem(row["Objects"]);
-                    search.ClearWithHomeButton(_driver);
-                }
-            }
-            catch (Exception)
-            {
-                Thread.Sleep(30000);
-                _driver.Navigate().Refresh();
-                _driver.WaitForDataLoading();
-                var projectTabs = _driver.NowAt<ProjectsPage>();
-                projectTabs.ClickToTabByNameProjectScopeChanges(tabName);
-                _driver.WaitForDataLoading();
-                basePage.GetExpandableMultiselect("").Click();
-                foreach (var row in table.Rows)
-                {
-                    var search = basePage.GetNamedTextbox("Search");
-                    basePage.AddItem(row["Objects"]);
-                    search.ClearWithHomeButton(_driver);
-                }
-            }
-
-            basePage.ClickButtonByName("UPDATE ALL CHANGES");
         }
 
         [Then(@"following items are still selected")]
