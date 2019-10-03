@@ -166,16 +166,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
             return Driver.FindElements(by);
         }
 
-        public void GetStringFilterByColumnName(string columnName)
-        {
-            var byControl =
-                By.XPath(
-                    $".//div[@role='presentation']/div[2]/div[{GetColumnNumberByName(columnName)}][@aria-hidden='true']");
-            Driver.WaitForDataLoading();
-            Driver.WaitForElementToBeDisplayed(byControl);
-            Driver.FindElement(byControl).Click();
-        }
-
         public void GetCheckboxStringFilterByName(string filterName)
         {
             var filterSelector = $"//div[@class='ng-star-inserted']/span[(text()='{filterName}')]";

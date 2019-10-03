@@ -166,8 +166,8 @@ Scenario: EvergreenJnr_AdminPage_CheckBrokenListValidationWhenRunningAnAutomatio
 	When User creates new Automation via API and open it
 	| AutomationName    | Description | Active | StopOnFailedAction | Scope       | Run    |
 	| Second_Automation | 17011_1     | true   | false              | All Devices | Manual |
+	Then Automation page is displayed correctly
 	When User clicks 'Devices' on the left-hand menu
-	Then 'All Devices' list should be displayed to the user
 	When User navigates to the "17011_List" list
 	Then "17011_List" list is displayed to user
 	When User clicks the Filters button
