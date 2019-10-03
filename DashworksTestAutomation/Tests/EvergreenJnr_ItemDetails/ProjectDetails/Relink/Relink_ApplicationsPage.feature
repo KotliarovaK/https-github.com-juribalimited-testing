@@ -18,7 +18,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyFo
 	Then 'Resync name' checkbox is checked
 	#TODO update search data
 	When User enters '002' in the 'Application' autocomplete field and selects 'Microsoft Corporation Microsoft Exchange Client Language Pack - Oriya (India) 15.0.1178.4' value
-	When User clicks 'RELINK' button 
+	When User clicks 'RELINK' button in Dialog Pop-up
 	Then Warning message with "This object will be relinked to the selected Evergreen object in this project" text is displayed on the Project Details Page
-	When User clicks 'RELINK' button 
+	When User clicks 'RELINK' button in Dialog Pop-up
 	Then Success message is displayed and contains "Application successfully relinked" text
