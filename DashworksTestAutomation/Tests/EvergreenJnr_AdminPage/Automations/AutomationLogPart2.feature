@@ -476,7 +476,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatClickingOnTheObjectsCountOpensTheCorre
 	And User clicks the Filters button
 	Then "X-Proj Path Reset is 12/08/2019 18:07:05" is displayed in added filter info
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17430 @DAS17518 @DAS @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17430 @DAS17518 @DAS18374 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueActionDAS17430
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope     | Run    |

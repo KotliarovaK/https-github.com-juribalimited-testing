@@ -1664,7 +1664,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS17430")]
         [NUnit.Framework.CategoryAttribute("DAS17518")]
-        [NUnit.Framework.CategoryAttribute("DAS")]
+        [NUnit.Framework.CategoryAttribute("DAS18374")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueActionDAS17430()
         {
@@ -1701,7 +1701,7 @@ this.FeatureBackground();
                         "Automations",
                         "DAS17430",
                         "DAS17518",
-                        "DAS",
+                        "DAS18374",
                         "Cleanup"});
 #line 480
 this.ScenarioInitialize(scenarioInfo);
