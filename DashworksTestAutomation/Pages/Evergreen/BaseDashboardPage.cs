@@ -939,8 +939,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IWebElement GetSettingButtonByName(string settingName)
         {
-            Driver.WaitForElementToBeDisplayed(By.XPath($".//span[@id='eName'][text()='{settingName}']"));
-            return Driver.FindElement(By.XPath($".//span[@id='eName'][text()='{settingName}']"));
+            Driver.WaitForElementToBeDisplayed(By.XPath($".//span[@ref='eName'][text()='{settingName}']"));
+            return Driver.FindElement(By.XPath($".//span[@ref='eName'][text()='{settingName}']"));
         }
 
         public IWebElement GetSettingOptionByName(string optionName)
