@@ -11,7 +11,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatCapacityAffectingNonCapacityEnabled
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "1803: Migration \ Migrated Date" filter where type is "Not empty" with added column and Date options
-    | StartDateInclusive | EndDateInclusive |
+	| StartDateInclusive | EndDateInclusive |
 	Then "7" rows are displayed in the agGrid
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
