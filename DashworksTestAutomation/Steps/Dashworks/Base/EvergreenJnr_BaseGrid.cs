@@ -1,9 +1,11 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Utils;
+using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
@@ -19,6 +21,72 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             _driver = driver;
         }
+
+        #region Export
+
+        [Then(@"Export button is displayed")]
+        public void ThenExportButtonIsDisplayed()
+        {
+            var pivot = _driver.NowAt<BaseGridPage>();
+            Utils.Verify.IsTrue(pivot.ExportListButton.Displayed(), "Export button is not displayed");
+        }
+        
+        #endregion
+
+        #region Archived Devices
+
+        [When(@"User sets includes archived devices in ""(.*)""")]
+        public void UserIncludesArchivedDevices(string state)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForDataLoading();
+
+            if (Convert.ToBoolean(state))
+            {
+                if (_driver.IsElementExists(page.ArchivedDevicesNotIncludedTooltip))
+                {
+                    page.ArchivedDevicesIcon.Click();
+                    _driver.WaitForElementToBeNotDisplayed(page.ArchivedDevicesNotIncludedTooltip);
+                    //_driver.WaitFor(() => _driver.IsElementExists(pivot.ArchivedDevicesIncludedTooltip));
+                }
+            }
+
+            else
+            {
+                if (_driver.IsElementExists(page.ArchivedDevicesIncludedTooltip))
+                {
+                    page.ArchivedDevicesIcon.Click();
+                    _driver.WaitForElementToBeNotDisplayed(page.ArchivedDevicesIncludedTooltip);
+                    //_driver.WaitFor(() => _driver.IsElementExists(page.ArchivedDevicesNotIncludedTooltip));
+                }
+            }
+
+            _driver.WaitForDataLoading();
+        }
+
+        [Then(@"Archived devices icon enabled state is '(.*)' in toolbar")]
+        public void ThenArchivedDevicesIconIsEnabledInToolbar(string state)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+
+            if (Convert.ToBoolean(state))
+            {
+
+                Verify.That(page.ArchivedDevicesIcon.GetCssValue("color"), Is.EqualTo("rgba(49, 122, 193, 1)"),
+                    "Wrong Archived devices icon color");
+                Verify.IsTrue(_driver.IsElementExists(page.ArchivedDevicesIncludedTooltip),
+                    "Archived devices icon is disabled");
+            }
+            else
+            {
+                Verify.That(page.ArchivedDevicesIcon.GetCssValue("color"), Is.EqualTo("rgba(94, 95, 97, 1)"),
+                    "Wrong Archived devices icon color");
+                Verify.IsTrue(_driver.IsElementExists(page.ArchivedDevicesNotIncludedTooltip),
+                    "Archived devices icon is enabled");
+            }
+        }
+
+        #endregion
 
         #region Click content in the column
 

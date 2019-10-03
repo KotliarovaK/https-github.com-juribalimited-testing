@@ -149,6 +149,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.IsFalse(listDetailsElement.GetListDetailsLabelByText(text).Displayed(), $"List Details panel has {text} label");
             Logger.Write("List Details does not have label");
         }
+        
+        [When(@"User clicks '(.*)' checkbox in List Details")]
+        public void ThenUserClicksCheckboxInListDetailsPanel(string text)
+        {
+            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            listDetailsElement.GetListDetailsLabelByText(text).Click();
+            _driver.WaitForDataLoading();
+        }
 
         [Then(@"User open the Dependents component")]
         public void ThenUserOpenTheDependentsComponent()
