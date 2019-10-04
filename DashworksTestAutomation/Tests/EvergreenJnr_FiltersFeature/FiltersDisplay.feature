@@ -38,13 +38,13 @@ Scenario: EvergreenJnr_ApplicationsList_CheckTrueFalseOptionsAndImagesInFilterIn
     | SelectedCheckboxes |
     | TRUE               |
     | FALSE              |
-    | UNKNOWN            |
+    | Empty              |
 	Then "Windows7Mi: Hide from End Users" filter is added to the list
 	Then Values is displayed in added filter info
-    | Values  |
-    | True    |
-    | False   |
-    | Unknown |
+    | Values |
+    | True   |
+    | False  |
+    | Empty  |
 
 @Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS10754 @DAS11142 @Cleanup
 Scenario: EvergreenJnr_UsersList_CheckSpecialCharactersDisplayInFilterInfo
@@ -736,9 +736,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRelevantDataSetBeDisplayedAfterEditi
     | None               |
 	Then message 'No devices found' is displayed to the user
 	When User click Edit button for "Compliance" filter
+	And User closes "None" Chip item in the Filter panel
 	When User change selected checkboxes:
     | Option | State |
-    | None   | false |
     | Green  | true  |
 
 #Then "71" rows are displayed in the agGrid
