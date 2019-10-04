@@ -40,4 +40,5 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyFo
 	When User enters '7zip' in the 'Application' autocomplete field and selects '7zip' value
 	And User clicks 'RELINK' button in Dialog Pop-up
 	And User clicks 'RELINK' button in Dialog Pop-up
+	#Andrew will check the delay time for message
 	#Then Success message is displayed and contains "Application successfully relinked" text
