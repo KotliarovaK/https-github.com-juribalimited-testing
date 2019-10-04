@@ -89,7 +89,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails.ProjectDetails.
         [NUnit.Framework.CategoryAttribute("DAS18002")]
         [NUnit.Framework.CategoryAttribute("DAS18112")]
         [NUnit.Framework.CategoryAttribute("DAS17899")]
-        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyForProjectDetailsOnApplicationsPage()
         {
             System.Exception lastException = null;
@@ -126,93 +125,97 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails.ProjectDetails.
                         "Relink",
                         "DAS18002",
                         "DAS18112",
-                        "DAS17899",
-                        "Not_Ready"});
-#line 10
+                        "DAS17899"});
+#line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 11
+#line 10
  testRunner.When("User navigates to the \'Application\' details page for \'ActiveCGM Browser Netscape " +
                     "Plugin V6P07\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 12
+#line 11
  testRunner.Then("Details page for \"ActiveCGM Browser Netscape Plugin V6P07\" item is displayed to t" +
                     "he user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 12
+ testRunner.When("User switches to the \"Windows 7 Migration (Computer Scheduled Project)\" project i" +
+                    "n the Top bar on Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 13
- testRunner.When("User switches to the \"USE ME FOR AUTOMATION(USR SCHDLD)\" project in the Top bar o" +
-                    "n Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 14
- testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 15
  testRunner.And("User navigates to the \"Project Details\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Title",
-                        "Value"});
+                        "Field",
+                        "Data"});
             table1.AddRow(new string[] {
                         "Name",
                         "ActiveCGM Browser Netscape Plugin V6P07"});
-            table1.AddRow(new string[] {
-                        "App Owner",
-                        ""});
-#line 16
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table1, "Then ");
-#line 20
+#line 15
+ testRunner.Then("User verifies data in the fields on details page", ((string)(null)), table1, "Then ");
+#line 18
  testRunner.When("User clicks \'RELINK\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 21
+#line 19
  testRunner.Then("Dialog Pop-up is displayed for User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 20
+ testRunner.And("\'Resync name\' checkbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 21
+ testRunner.When("User enters \'012\' in the \'Application\' autocomplete field and selects \'Configurat" +
+                    "ion Pack for System Center 2012 Configuration Manager 1.0.0\' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 22
- testRunner.Then("\'Resync name\' checkbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 23
- testRunner.When("User enters \'002\' in the \'Application\' autocomplete field and selects \'Altera Qua" +
-                    "rtus II Programmer 4.0 4.0\' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 24
  testRunner.Then("User selects state \'true\' for \'Resync name\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 25
- testRunner.When("User clicks \'RELINK\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 26
+#line 23
+ testRunner.When("User clicks \'RELINK\' button in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 24
  testRunner.Then("Warning message with \"This object will be relinked to the selected Evergreen obje" +
                     "ct in this project\" text is displayed on the Project Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 27
- testRunner.When("User clicks \'RELINK\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 28
+#line 25
+ testRunner.When("User clicks \'RELINK\' button in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 26
  testRunner.Then("Success message is displayed and contains \"Application successfully relinked\" tex" +
                     "t", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 29
- testRunner.Then("Details page for \"Altera Quartus II Programmer 4.0 4.0\" item is displayed to the " +
-                    "user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 27
+ testRunner.And("Details page for \"Configuration Pack for System Center 2012 Configuration Manager" +
+                    "\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Title",
-                        "Value"});
+                        "Field",
+                        "Data"});
             table2.AddRow(new string[] {
                         "Name",
                         "ActiveCGM Browser Netscape Plugin V6P07"});
-            table2.AddRow(new string[] {
-                        "App Owner",
-                        ""});
-#line 30
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2, "Then ");
-#line 34
- testRunner.When("User clicks \'RESYNC\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 35
- testRunner.When("User clicks \'RESYNC\' button in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 36
+#line 28
+ testRunner.And("User verifies data in the fields on details page", ((string)(null)), table2, "And ");
+#line 31
+ testRunner.When("User clicks \'RESYNC \' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 32
+ testRunner.And("User clicks \'RESYNC\' button in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 33
  testRunner.Then("Success message is displayed and contains \"Application successfully resynced\" tex" +
                     "t", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Title",
-                        "Value"});
+                        "Field",
+                        "Data"});
             table3.AddRow(new string[] {
                         "Name",
-                        "Altera Quartus II Programmer 4.0 4.0"});
-            table3.AddRow(new string[] {
-                        "App Owner",
-                        ""});
+                        "Configuration Pack for System Center 2012 Configuration Manager"});
+#line 34
+ testRunner.And("User verifies data in the fields on details page", ((string)(null)), table3, "And ");
 #line 37
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table3, "Then ");
+ testRunner.When("User clicks \'RELINK\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 38
+ testRunner.Then("Dialog Pop-up is displayed for User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 39
+ testRunner.When("User enters \'V6P07\' in the \'Application\' autocomplete field and selects \'ActiveCG" +
+                    "M Browser Netscape Plugin V6P07\' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 40
+ testRunner.And("User clicks \'RELINK\' button in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 41
+ testRunner.And("User clicks \'RELINK\' button in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 42
+ testRunner.Then("Success message is displayed and contains \"Application successfully relinked\" tex" +
+                    "t", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

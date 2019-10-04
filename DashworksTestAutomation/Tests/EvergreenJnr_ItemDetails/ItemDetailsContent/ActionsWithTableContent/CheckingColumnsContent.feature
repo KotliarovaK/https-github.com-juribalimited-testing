@@ -7,10 +7,8 @@ Background: Pre-Conditions
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11479 @DAS12321
 Scenario: EvergreenJnr_MailboxesList_CheckThatLinksAndImageItemAreDisplayedInTheNameAndDisplayNameColumns
-	When User clicks 'Mailboxes' on the left-hand menu
-	Then 'All Mailboxes' list should be displayed to the user
-	When User perform search by "00C8BC63E7424A6E862@bclabs.local"
-	And User click content from "Email Address" column
+	When User navigates to the 'Mailbox' details page for '00C8BC63E7424A6E862@bclabs.local' item
+	Then Details page for "00C8BC63E7424A6E862@bclabs.local" item is displayed to the user
 	When User navigates to the 'Users' left menu item
 	And User navigates to the "Mailbox Permissions" sub-menu on the Details page
 	Then "100" rows found label displays on Details Page
@@ -20,19 +18,13 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatLinksAndImageItemAreDisplayedInThe
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17094
 Scenario: EvergreenJnr_AllLists_CheckThatDataAboutUsersDevicesOnUsersMailboxObjectsWithSnrMatch
-	When User clicks 'Users' on the left-hand menu
-	Then 'All Users' list should be displayed to the user
-	When User perform search by "AAD1011948"
-	And User click content from "Username" column
+	When User navigates to the 'User' details page for 'AAD1011948' item
 	Then Details page for "AAD1011948" item is displayed to the user
 	When User switches to the "USE ME FOR AUTOMATION(DEVICE SCHDLD)" project in the Top bar on Item details page
 	When User navigates to the 'Devices' left menu item
 	Then "001BAQXT6JWFPI" content is displayed in "Hostname" column
 	#=====================================================================================#
-	When User clicks 'Mailboxes' on the left-hand menu
-	Then 'All Mailboxes' list should be displayed to the user
-	When User perform search by "00A5B910A1004CF5AC4@bclabs.local"
-	And User click content from "Email Address" column
+	When User navigates to the 'Mailbox' details page for '00A5B910A1004CF5AC4@bclabs.local' item
 	Then Details page for "00A5B910A1004CF5AC4@bclabs.local" item is displayed to the user
 	When User switches to the "USE ME FOR AUTOMATION(MAIL SCHDLD)" project in the Top bar on Item details page
 	When User navigates to the 'Users' left menu item
@@ -40,10 +32,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatDataAboutUsersDevicesOnUsersMailboxObje
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16860
 Scenario: EvergreenJnr_DevicesList_ChecksThatLinksFromTheDeviceColumnInDeviceProjectSummaryOnDevicesPageGoingToSenior
-	When User clicks 'Devices' on the left-hand menu
-	Then 'All Devices' list should be displayed to the user
-	When User perform search by "001BAQXT6JWFPI"
-	And User click content from "Hostname" column
+	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the "Projects Summary" sub-menu on the Details page
@@ -83,10 +72,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatLinksFromTheDeviceColumnInDevicePro
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16860
 Scenario: EvergreenJnr_UsersList_ChecksThatLinksFromTheDeviceColumnInDeviceProjectSummaryOnUsersPageGoingToSenior
-	When User clicks 'Users' on the left-hand menu
-	Then 'All Users' list should be displayed to the user
-	When User perform search by "000F977AC8824FE39B8"
-	And User click content from "Username" column
+	When User navigates to the 'User' details page for '000F977AC8824FE39B8' item
 	Then Details page for "000F977AC8824FE39B8" item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the "User Projects" sub-menu on the Details page
@@ -126,10 +112,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatLinksFromTheDeviceColumnInDeviceProje
 	And PMObject page for "Mailbox: 000F977AC8824FE39B8@bclabs.local (Spruill, Shea)" object is displayed to the user
 	And User click back button in the browser
 	#=====================================================================================#
-	When User clicks on "Users" navigation link
-	Then 'All Users' list should be displayed to the user
-	When User perform search by "QLL295118"
-	And User click content from "Username" column
+	When User navigates to the 'User' details page for 'QLL295118' item
 	Then Details page for "QLL295118" item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the "Device Project Summary" sub-menu on the Details page
@@ -151,10 +134,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatLinksFromTheDeviceColumnInDeviceProje
 
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16860
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatLinksFromTheDeviceColumnInDeviceProjectSummaryOnApplicationsPageGoingToSenior
-	When User clicks 'Applications' on the left-hand menu
-	Then 'All Applications' list should be displayed to the user
-	When User perform search by ""WPF/E" (codename) Community Technology Preview (Feb 2007)"
-	And User click content from "Application" column
+	When User navigates to the 'Application' details page for '"WPF/E" (codename) Community Technology Preview (Feb 2007)' item
 	Then Details page for ""WPF/E" (codename) Community Technology Preview (Feb 2007)" item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the "Projects" sub-menu on the Details page
@@ -176,10 +156,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatLinksFromTheDeviceColumnInDevi
 	
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16860
 Scenario: EvergreenJnr_MailboxesList_ChecksThatLinksFromTheDeviceColumnInDeviceProjectSummaryOnMailboxesPageGoingToSenior
-	When User clicks 'Mailboxes' on the left-hand menu
-	Then 'All Mailboxes' list should be displayed to the user
-	When User perform search by "000F977AC8824FE39B8@bclabs.local"
-	And User click content from "Email Address" column
+	When User navigates to the 'Mailbox' details page for '000F977AC8824FE39B8@bclabs.local' item
 	Then Details page for "000F977AC8824FE39B8@bclabs.local" item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the "Mailbox Projects" sub-menu on the Details page
@@ -236,9 +213,8 @@ Scenario: EvergreenJnr_DevicesList_CheckUpdatingDeviceBucketViaRelatedUserProjec
 	And User enters "AutoTestBucket_DAS_13335" in the "Bucket Name" field
 	And User selects "Admin IT" team in the Team dropdown on the Buckets page
 	And User clicks 'CREATE' button 
-	And User clicks 'Users' on the left-hand menu
-	And User perform search by "AAG081456"
-	And User click content from "Username" column
+	When User navigates to the 'User' details page for 'AAG081456' item
+	Then Details page for "AAG081456" item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	When User clicks on "Unassigned" link for Evergreen Bucket field
 	And User clicks on "New Bucket" dropdown
@@ -246,19 +222,15 @@ Scenario: EvergreenJnr_DevicesList_CheckUpdatingDeviceBucketViaRelatedUserProjec
 	When User selects all rows on the grid on the Details Page for "Related Devices"
 	And User opens "Related Mailboxes" section on the Details Page
 	And User clicks 'UPDATE' button 
-	And User clicks 'Devices' on the left-hand menu
-	And User perform search by "I55HL8MSBYK0VG"
-	And User click content from "Hostname" column
+	When User navigates to the 'Device' details page for 'I55HL8MSBYK0VG' item
+	Then Details page for "I55HL8MSBYK0VG" item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	Then User sees "AutoTestBucket_DAS_13335" Evergreen Bucket in Project Summary section on the Details Page
 	And There are no errors in the browser console
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17182 @DAS17219 @DAS17254 @DAS17255
 Scenario: EvergreenJnr_MailboxesList_CheckThatUsersTabIsDisplayedWithCorrectColumnsOnMailboxesDetailsPageForProjectMode
-	When User clicks 'Mailboxes' on the left-hand menu
-	Then 'All Mailboxes' list should be displayed to the user
-	When User perform search by "000F977AC8824FE39B8@bclabs.local"
-	And User click content from "Email Address" column
+	When User navigates to the 'Mailbox' details page for '000F977AC8824FE39B8@bclabs.local' item
 	Then Details page for "000F977AC8824FE39B8@bclabs.local" item is displayed to the user
 	When User navigates to the 'Users' left menu item
 	Then following columns are displayed on the Item details page:
@@ -292,10 +264,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatUsersTabIsDisplayedWithCorrectColu
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15039
 Scenario: EvergreenJnr_DevicesList_CheckThatTheRelatedTabIsDisplayedCorrectlyWithTheCorrectElementsAndColumns
-	When User clicks 'Devices' on the left-hand menu
-	Then 'All Devices' list should be displayed to the user
-	When User perform search by "001BAQXT6JWFPI"
-	And User click content from "Hostname" column
+	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
 	When User switches to the "Devices Evergreen Capacity Project" project in the Top bar on Item details page
 	When User navigates to the 'Related' left menu item
@@ -342,10 +311,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheRelatedTabIsDisplayedCorrectlyWit
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16472 @DAS15039
 Scenario: EvergreenJnr_DevicesList_CheckThatIconsForReadinessDdlOnRelatedTabAreDisplayed
-	When User clicks 'Devices' on the left-hand menu
-	Then 'All Devices' list should be displayed to the user
-	When User perform search by "001BAQXT6JWFPI"
-	When User click content from "Hostname" column
+	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
 	When User switches to the "Devices Evergreen Capacity Project" project in the Top bar on Item details page
 	When User navigates to the 'Related' left menu item
@@ -354,10 +320,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatIconsForReadinessDdlOnRelatedTabAreD
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17087
 Scenario: EvergreenJnr_MailboxesList_ChecksThatUsersAreReloadedAfterSelectingAProjectOnTheMailboxDetailsPage
-	When User clicks 'Mailboxes' on the left-hand menu
-	Then 'All Mailboxes' list should be displayed to the user
-	When User perform search by "abel.y.hanson@dwlabs.local"
-	And User click content from "Email Address" column
+	When User navigates to the 'Mailbox' details page for 'abel.y.hanson@dwlabs.local' item
 	Then Details page for "abel.y.hanson@dwlabs.local" item is displayed to the user
 	When User navigates to the 'Users' left menu item
 	Then "7" rows found label displays on Details Page
@@ -368,10 +331,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatUsersAreReloadedAfterSelectingAPr
 
 @Evergreen @Device @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17734 @DAS17733
 Scenario: EvergreenJnr_DeviceList_CheckThatUsersTabIsDisplayedWithCorrectStagesOnDevicesDetailsPageForProjectMode
-	When User clicks 'Devices' on the left-hand menu
-	Then 'All Devices' list should be displayed to the user
-	When User perform search by "001BAQXT6JWFPI"
-	And User click content from "Hostname" column
+	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
 	When User navigates to the 'Users' left menu item
 	When User switches to the "USE ME FOR AUTOMATION(DEVICE SCHDLD)" project in the Top bar on Item details page
