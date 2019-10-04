@@ -69,7 +69,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
             if (Convert.ToBoolean(state))
             {
-
                 Verify.That(page.ArchivedDevicesIcon.GetCssValue("color"), Is.EqualTo("rgba(49, 122, 193, 1)"),
                     "Wrong Archived devices icon color");
                 Verify.IsTrue(_driver.IsElementExists(page.ArchivedDevicesIncludedTooltip),
