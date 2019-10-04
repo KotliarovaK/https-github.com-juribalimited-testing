@@ -34,6 +34,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRelinkOptionIsWorkedCorrectlyForProj
 	| Field        | Data            |
 	| Name         | 019BFPQGKK5QT8N |
 	| Device Owner | Talon Brochu    |
+	#Andrew will remove space in button name
 	When User clicks 'RESYNC ' button 
 	And User clicks 'RESYNC' button in Dialog Pop-up
 	Then Success message is displayed and contains "Device successfully resynced" text

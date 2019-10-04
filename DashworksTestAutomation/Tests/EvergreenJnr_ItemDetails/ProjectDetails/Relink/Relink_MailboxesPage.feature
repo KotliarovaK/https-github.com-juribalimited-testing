@@ -32,6 +32,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatRelinkOptionIsWorkedCorrectlyForPr
 	| Field         | Data                             |
 	| Name          | 000F977AC8824FE39B8@bclabs.local |
 	| Mailbox Owner | Spruill, Shea                    |
+	#Andrew will remove space in button name
 	When User clicks 'RESYNC ' button 
 	And User clicks 'RESYNC' button in Dialog Pop-up
 	Then Success message is displayed and contains "Mailbox successfully resynced" text

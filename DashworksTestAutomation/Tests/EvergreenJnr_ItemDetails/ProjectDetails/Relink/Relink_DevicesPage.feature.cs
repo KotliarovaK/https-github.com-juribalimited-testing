@@ -198,11 +198,11 @@ this.FeatureBackground();
                         "Talon Brochu"});
 #line 33
  testRunner.And("User verifies data in the fields on details page", ((string)(null)), table2, "And ");
-#line 37
- testRunner.When("User clicks \'RESYNC \' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 38
- testRunner.And("User clicks \'RESYNC\' button in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User clicks \'RESYNC \' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 39
+ testRunner.And("User clicks \'RESYNC\' button in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 40
  testRunner.Then("Success message is displayed and contains \"Device successfully resynced\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -214,29 +214,27 @@ this.FeatureBackground();
             table3.AddRow(new string[] {
                         "Device Owner",
                         "Valerie H. Lambert"});
-#line 40
+#line 41
  testRunner.And("User verifies data in the fields on details page", ((string)(null)), table3, "And ");
-#line 44
- testRunner.When("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 45
- testRunner.And("User navigates to the \"Evergreen Summary\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 46
- testRunner.Then("\"9\" rows found label displays on Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("User navigates to the \"Evergreen Summary\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 47
- testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("\"9\" rows found label displays on Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 48
- testRunner.And("User navigates to the \"Project Details\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 49
- testRunner.And("User clicks \'RELINK\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User navigates to the \"Project Details\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 50
+ testRunner.And("User clicks \'RELINK\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 51
  testRunner.And("User enters \'019BFPQGKK5QT8N\' in the \'Device\' autocomplete field and selects \'019" +
                     "BFPQGKK5QT8N\' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 51
- testRunner.And("User clicks \'RELINK\' button in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 52
  testRunner.And("User clicks \'RELINK\' button in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 53
- testRunner.Then("Success message is displayed and contains \"Device successfully relinked\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("User clicks \'RELINK\' button in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -287,39 +285,39 @@ this.FeatureBackground();
                         "Relink",
                         "DAS18043",
                         "Not_Ready"});
-#line 57
+#line 59
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 58
- testRunner.When("User navigates to the \'Device\' details page for \'FISC5NOXFB8Q7M\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 59
- testRunner.Then("Details page for \"FISC5NOXFB8Q7M\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 60
+ testRunner.When("User navigates to the \'Device\' details page for \'FISC5NOXFB8Q7M\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 61
+ testRunner.Then("Details page for \"FISC5NOXFB8Q7M\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 62
  testRunner.When("User switches to the \"Windows 7 Migration (Computer Scheduled Project)\" project i" +
                     "n the Top bar on Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 61
- testRunner.And("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 62
- testRunner.And("User navigates to the \"Project Details\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 63
- testRunner.When("User clicks \'RELINK\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 64
+ testRunner.And("User navigates to the \"Project Details\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 65
+ testRunner.When("User clicks \'RELINK\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 66
  testRunner.And("User enters \'fds\' in the \'Device\' autocomplete field and selects \'9ZW79DFDSJ7X1V\'" +
                     " value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 65
+#line 67
  testRunner.And("User clicks \'RELINK\' button in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 66
+#line 68
  testRunner.Then("Warning message with \"This object will be relinked to the selected Evergreen obje" +
                     "ct in this project\" text is displayed on the Project Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 67
- testRunner.When("User clicks \'RELINK\' button in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 68
- testRunner.Then("Success message is displayed and contains \"Device successfully relinked\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 69
- testRunner.When("User navigates to the \"Projects Summary\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'RELINK\' button in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 70
+ testRunner.Then("Success message is displayed and contains \"Device successfully relinked\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 71
+ testRunner.When("User navigates to the \"Projects Summary\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 72
  testRunner.Then("Success message is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
