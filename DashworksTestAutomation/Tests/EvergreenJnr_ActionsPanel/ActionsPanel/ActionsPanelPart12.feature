@@ -5,7 +5,8 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS15618
+	#Ann.Ilchenko 3/10/19: fixed on 'radiant'
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS15618 @Not_Run
 Scenario: EvergreenJnr_DevicesList_ChecksThatCapacityAffectingNonCapacityEnabledDateTasks
 	When User clicks 'Devices' on the left-hand menu
 	And User clicks the Filters button
@@ -25,6 +26,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatCapacityAffectingNonCapacityEnabled
 	And User selects "Migrated Date" Task on Action panel
 	And User selects "Update" Update Date on Action panel
 	And User selects next Tuesday Date on Action panel
+	And User selects "None" value for "Capacity Slot" dropdown on Action panel
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	And User clicks "UPDATE" button on message box

@@ -32,10 +32,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOneUnknownFilterValueIsShownInGroupD
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12239
 Scenario: EvergreenJnr_DevicesList_CheckThatAllTextIsDisplayedAfterClearingFilters
-	When User clicks 'Devices' on the left-hand menu
-	Then 'All Devices' list should be displayed to the user
-	When User perform search by "001PSUMZYOW581"
-	And User click content from "Hostname" column
+	When User navigates to the 'Device' details page for '001PSUMZYOW581' item
+	Then Details page for "001PSUMZYOW581" item is displayed to the user
 	When User navigates to the 'Applications' left menu item
 	Then All text is displayed for "Compliance" column in the String Filter
 	When User clicks String Filter button for "Compliance" column
@@ -60,10 +58,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAllTextIsDisplayedAfterClearingFilte
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738 @DAS12371 @DAS13409
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetailsFiltersAreDisplayedCorrectlyForCollapsedSections
-	When User clicks '<PageName>' on the left-hand menu
-	Then 'All <PageName>' list should be displayed to the user
-	When User perform search by "<SearchTerm>"
-	And User click content from "<ColumnName>" column
+	When User navigates to the '<PageName>' details page for '<SearchTerm>' item
+	Then Details page for "<SearchTerm>" item is displayed to the user
 	When User navigates to the '<MainTabName>' left menu item
 	And User navigates to the "<SubTabName>" sub-menu on the Details page
 	Then "<CountRows>" rows found label displays on Details Page
@@ -86,18 +82,16 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetail
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 
 Examples:
-	| PageName | SearchTerm                                      | ColumnName | MainTabName | SubTabName              | CountRows |
-	| Users    | Loya\, Dan.Employees.Birmingham.UK.bclabs.local | Username   | Projects    | Mailbox Project Summary | 2         |
-	| Devices  | 001BAQXT6JWFPI                                  | Hostname   | Projects    | Projects Summary        | 10        |
-	| Devices  | 001BAQXT6JWFPI                                  | Hostname   | Projects    | Owner Projects Summary  | 7         |
-	| Users    | Loya\, Dan.Employees.Birmingham.UK.bclabs.local | Username   | Projects    | User Projects           | 3         |
+	| PageName | SearchTerm                                      | MainTabName | SubTabName              | CountRows |
+	| User     | Loya\, Dan.Employees.Birmingham.UK.bclabs.local | Projects    | Mailbox Project Summary | 2         |
+	| Device   | 001BAQXT6JWFPI                                  | Projects    | Projects Summary        | 10        |
+	| Device   | 001BAQXT6JWFPI                                  | Projects    | Owner Projects Summary  | 7         |
+	| User     | Loya\, Dan.Employees.Birmingham.UK.bclabs.local | Projects    | User Projects           | 3         |
 	
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738 @DAS12371 @DAS13409
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetailsFiltersAreDisplayedCorrectlyForExpandedSections
-	When User clicks '<PageName>' on the left-hand menu
-	Then 'All <PageName>' list should be displayed to the user
-	When User perform search by "<SearchTerm>"
-	And User click content from "<ColumnName>" column
+	When User navigates to the '<PageName>' details page for '<SearchTerm>' item
+	Then Details page for "<SearchTerm>" item is displayed to the user
 	When User navigates to the '<MainTabName>' left menu item
 	And User navigates to the "<SubTabName>" sub-menu on the Details page
 	And User clicks String Filter button for "Project Type" column
@@ -106,17 +100,15 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetail
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 
 Examples:
-	| PageName     | SearchTerm                              | ColumnName    | MainTabName | SubTabName       |
-	| Applications | 0036 - Microsoft Access 97 SR-2 English | Application   | Projects    | Projects         |
-	| Mailboxes    | 040698EE82354C17B60@bclabs.local        | Email Address | Projects    | Mailbox Projects |
+	| PageName    | SearchTerm                              | MainTabName | SubTabName       |
+	| Application | 0036 - Microsoft Access 97 SR-2 English | Projects    | Projects         |
+	| Mailbox     | 040698EE82354C17B60@bclabs.local        | Projects    | Mailbox Projects |
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738 @DAS12371 @DAS12765 @DAS12321 @DAS13409
 Scenario: EvergreenJnr_MailboxesList_CheckThatDropdownListsInTheProjectDetailsFiltersAreDisplayedCorrectly
-	When User clicks 'Mailboxes' on the left-hand menu
-	Then 'All Mailboxes' list should be displayed to the user
-	When User perform search by "040698EE82354C17B60@bclabs.local"
-	And User click content from "Email Address" column
-	And User navigates to the 'Projects' left menu item
+	When User navigates to the 'Mailbox' details page for '040698EE82354C17B60@bclabs.local' item
+	Then Details page for "040698EE82354C17B60@bclabs.local" item is displayed to the user
+	When User navigates to the 'Projects' left menu item
 	And User navigates to the "Mailbox Projects" sub-menu on the Details page
 	Then "Bucket" column is displayed to the user
 	When User navigates to the "Mailbox User Projects" sub-menu on the Details page
@@ -128,33 +120,24 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatDropdownListsInTheProjectDetailsFi
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17113
 Scenario: EvergreenJnr_DevicesList_ChecksThatMultiselectFilterIsAppliedForDomainColumnForDevicesObjectsOnUsersTabInEvergreenMode
-	When User clicks 'Devices' on the left-hand menu
-	Then 'All Devices' list should be displayed to the user
-	When User perform search by "00HA7MKAVVFDAV"
-	And User click content from "Hostname" column
+	When User navigates to the 'Device' details page for '00HA7MKAVVFDAV' item
 	Then Details page for "00HA7MKAVVFDAV" item is displayed to the user
 	When User navigates to the 'Users' left menu item
-	When User clicks String Filter button for "Domain" column
+	And User clicks String Filter button for "Domain" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 
-	@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17113
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17113
 Scenario: EvergreenJnr_UsersList_ChecksThatMultiselectFilterIsAppliedForDomainColumnForUsersObjectsOnUsersTabInEvergreenMode
-	When User clicks 'Users' on the left-hand menu
-	Then 'All Users' list should be displayed to the user
-	When User perform search by "01C44C91EB7E4BE88F6"
-	And User click content from "Username" column
+	When User navigates to the 'User' details page for '01C44C91EB7E4BE88F6' item
 	Then Details page for "01C44C91EB7E4BE88F6" item is displayed to the user
 	When User navigates to the 'Active Directory' left menu item
-	When User navigates to the "Groups" sub-menu on the Details page
-	When User clicks String Filter button for "Domain" column
+	And User navigates to the "Groups" sub-menu on the Details page
+	And User clicks String Filter button for "Domain" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17113
 Scenario: EvergreenJnr_MailboxesList_ChecksThatMultiselectFilterIsAppliedForDomainColumnForMailboxesObjectsOnUsersTabInEvergreenMode
-	When User clicks 'Mailboxes' on the left-hand menu
-	Then 'All Mailboxes' list should be displayed to the user
-	When User perform search by "000F977AC8824FE39B8@bclabs.local"
-	And User click content from "Email Address" column
+	When User navigates to the 'Mailbox' details page for '000F977AC8824FE39B8@bclabs.local' item
 	Then Details page for "000F977AC8824FE39B8@bclabs.local" item is displayed to the user
 	When User navigates to the 'Users' left menu item
 	When User clicks String Filter button for "Domain" column
@@ -168,10 +151,8 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatMultiselectFilterIsAppliedForDoma
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12292
 Scenario: EvergreenJnr_DevicesList_CheckingThatInRangeOperatorWorkingCorrectly
-	When User clicks 'Devices' on the left-hand menu
-	Then 'All Devices' list should be displayed to the user
-	When User type "001PSUMZYOW581" in Global Search Field
-	Then User clicks on "001PSUMZYOW581" search result
+	When User navigates to the 'Device' details page for '001PSUMZYOW581' item
+	Then Details page for "001PSUMZYOW581" item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	When User navigates to the "Projects Summary" sub-menu on the Details page
 	And User have opened Column Settings for "Date" column in the Details Page table
@@ -213,10 +194,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatDevicesUsersUsedQuantityMatchE
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS14431
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatNoConsoleErrorDisplayedAndMenuPositionStaysTheSameWhenSettingDeliveryDate
-	When User clicks 'Applications' on the left-hand menu
-	Then 'All Applications' list should be displayed to the user
-	When User perform search by ""WPF/E" (codename) Community Technology Preview (Feb 2007)"
-	And User click content from "Application" column
+	When User navigates to the 'Application' details page for '"WPF/E" (codename) Community Technology Preview (Feb 2007)' item
 	Then Details page for ""WPF/E" (codename) Community Technology Preview (Feb 2007)" item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	When User navigates to the "Projects" sub-menu on the Details page
@@ -231,10 +209,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatNoConsoleErrorDisplayedAndMenu
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16817 @DAS17726
 Scenario: EvergreenJnr_DevicesList_CheckThatBlanksValueChangedToEmptyValueOnDevicesPage
-	When User clicks 'Devices' on the left-hand menu
-	Then 'All Devices' list should be displayed to the user
-	When User perform search by "001BAQXT6JWFPI"
-	And User click content from "Hostname" column
+	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the "Projects Summary" sub-menu on the Details page
@@ -268,10 +243,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatBlanksValueChangedToEmptyValueOnDevi
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16817 @DAS17726
 Scenario: EvergreenJnr_UsersList_CheckThatBlanksValueChangedToEmptyValueOnUsersPage
-	When User clicks 'Users' on the left-hand menu
-	Then 'All Users' list should be displayed to the user
-	When User perform search by "ZXJ550185"
-	And User click content from "Username" column
+	When User navigates to the 'User' details page for 'ZXJ550185' item
 	Then Details page for "ZXJ550185" item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the "User Projects" sub-menu on the Details page
@@ -319,10 +291,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatBlanksValueChangedToEmptyValueOnUsersP
 
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16817
 Scenario: EvergreenJnr_ApplicationsList_CheckThatBlanksValueChangedToEmptyValueOnApplicationsPage
-	When User clicks 'Applications' on the left-hand menu
-	Then 'All Applications' list should be displayed to the user
-	When User perform search by "ACDSee 5.0.1 PowerPack"
-	And User click content from "Application" column
+	When User navigates to the 'Application' details page for 'ACDSee 5.0.1 PowerPack' item
 	Then Details page for "ACDSee 5.0.1 PowerPack" item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the "Projects" sub-menu on the Details page
@@ -338,10 +307,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatBlanksValueChangedToEmptyValueO
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16817 @DAS17726
 Scenario: EvergreenJnr_MailboxesList_CheckThatBlanksValueChangedToEmptyValueOnMailboxesPage
-	When User clicks 'Mailboxes' on the left-hand menu
-	Then 'All Mailboxes' list should be displayed to the user
-	When User perform search by "06C02CDC00044A7DB59"
-	And User click content from "Email Address" column
+	When User navigates to the 'Mailbox' details page for '06C02CDC00044A7DB59' item
 	Then Details page for "06C02CDC00044A7DB59" item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the "Mailbox Projects" sub-menu on the Details page

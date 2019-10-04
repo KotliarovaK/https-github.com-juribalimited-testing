@@ -26,10 +26,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTopBarInEvergreenModeIsDisplayedCorr
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15552 @DAS16921 @DAS16743
 Scenario: EvergreenJnr_UsersList_CheckThatTopBarInEvergreenModeIsDisplayedCorrectlyOnUsersPage
-	When User clicks 'Users' on the left-hand menu
-	Then 'All Users' list should be displayed to the user
-	When User perform search by "0072B088173449E3A93"
-	And User click content from "Username" column
+	When User navigates to the 'User' details page for '0072B088173449E3A93' item
 	Then Details page for "0072B088173449E3A93" item is displayed to the user
 	And following Compliance items are displayed in Top bar on the Item details page:
 	| ComplianceItems       |
@@ -40,10 +37,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatTopBarInEvergreenModeIsDisplayedCorrec
 
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15552 @DAS16921 @DAS16743
 Scenario: EvergreenJnr_ApplicationsList_CheckThatTopBarInEvergreenModeIsDisplayedCorrectlyOnApplicationsPage
-	When User clicks 'Applications' on the left-hand menu
-	Then 'All Applications' list should be displayed to the user
-	When User perform search by "ABBYY FineReader 8.0 Professional Edition"
-	And User click content from "Application" column
+	When User navigates to the 'Application' details page for 'ABBYY FineReader 8.0 Professional Edition' item
 	Then Details page for "ABBYY FineReader 8.0 Professional Edition" item is displayed to the user
 	And following Compliance items are displayed in Top bar on the Item details page:
 	| ComplianceItems    |
@@ -51,10 +45,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatTopBarInEvergreenModeIsDisplaye
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15552 @DAS16921 @DAS16743
 Scenario: EvergreenJnr_MailboxesList_CheckThatTopBarInEvergreenModeIsDisplayedCorrectlyOnMailboxesPage
-	When User clicks 'Mailboxes' on the left-hand menu
-	Then 'All Mailboxes' list should be displayed to the user
-	When User perform search by "00B5CCB89AD0404B965@bclabs.local"
-	And User click content from "Email Address" column
+	When User navigates to the 'Mailbox' details page for '00B5CCB89AD0404B965@bclabs.local' item
 	Then Details page for "00B5CCB89AD0404B965@bclabs.local" item is displayed to the user
 	And No one Compliance items are displayed for the User in Top bar on the Item details page
 
@@ -88,10 +79,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTopBarInProjectModeIsDisplayedCorrec
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS14975 @DAS15333 @DAS16762 @DAS17166 @DAS17075
 Scenario: EvergreenJnr_UsersList_CheckThatTopBarInProjectModeIsDisplayedCorrectlyOnUsersPage
-	When User clicks 'Users' on the left-hand menu
-	Then 'All Users' list should be displayed to the user
-	When User perform search by "0072B088173449E3A93"
-	And User click content from "Username" column
+	When User navigates to the 'User' details page for '0072B088173449E3A93' item
 	Then Details page for "0072B088173449E3A93" item is displayed to the user
 	When User switches to the "USE ME FOR AUTOMATION(USR SCHDLD)" project in the Top bar on Item details page
 	Then following Compliance items are displayed in Top bar on the Item details page:
@@ -109,10 +97,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatTopBarInProjectModeIsDisplayedCorrectl
 	
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS14975 @DAS15333 @DAS16762 @DAS17166 @DAS17075 @DAS17355
 Scenario: EvergreenJnr_ApplicationsList_CheckThatTopBarInProjectModeIsDisplayedCorrectlyOnApplicationsPage
-	When User clicks 'Applications' on the left-hand menu
-	Then 'All Applications' list should be displayed to the user
-	When User perform search by "ABBYY FineReader 8.0 Professional Edition"
-	And User click content from "Application" column
+	When User navigates to the 'Application' details page for 'ABBYY FineReader 8.0 Professional Edition' item
 	Then Details page for "ABBYY FineReader 8.0 Professional Edition" item is displayed to the user
 	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
 	Then following Compliance items are displayed in Top bar on the Item details page:
@@ -130,10 +115,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatTopBarInProjectModeIsDisplayedC
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS14975 @DAS15333 @DAS16762 @DAS17166 @DAS17075 @DAS17355
 Scenario: EvergreenJnr_MailboxesList_CheckThatTopBarInProjectModeIsDisplayedCorrectlyOnMailboxesPage
-	When User clicks 'Mailboxes' on the left-hand menu
-	Then 'All Mailboxes' list should be displayed to the user
-	When User perform search by "00B5CCB89AD0404B965@bclabs.local"
-	And User click content from "Email Address" column
+	When User navigates to the 'Mailbox' details page for '00B5CCB89AD0404B965@bclabs.local' item
 	Then Details page for "00B5CCB89AD0404B965@bclabs.local" item is displayed to the user
 	When User switches to the "USE ME FOR AUTOMATION(MAIL SCHDLD)" project in the Top bar on Item details page
 	Then following Compliance items are displayed in Top bar on the Item details page:
@@ -159,10 +141,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatValueForUseMeForAutomationProjectIsD
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16698 @DAS17005 @DAS15347 @DAS16668 @DAS16903 @DAS16907 @DAS16857 @DAS17005
 Scenario Outline: EvergreenJnr_AllLists_CheckThatProjectsInTheTopBarOnItemDetailsPageAreDisplayedInAlphabeticalOrder
-	When User clicks '<PageName>' on the left-hand menu
-	Then 'All <PageName>' list should be displayed to the user
-	When User perform search by "<ItemName>"
-	And User click content from "<ColumnName>" column
+	When User navigates to the '<PageName>' details page for '<ItemName>' item
 	Then Details page for "<ItemName>" item is displayed to the user
 	Then Project Switcher in the Top bar on Item details page is closed
 	Then projects on the Project Switcher panel are displayed in alphabetical order
@@ -171,18 +150,15 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatProjectsInTheTopBarOnItemDetail
 	Then projects on the Project Switcher panel are displayed in alphabetical order
 
 Examples:
-	| PageName     | ColumnName    | ItemName                         | ProjectName                        |
-	| Devices      | Hostname      | 001BAQXT6JWFPI                   | Devices Evergreen Capacity Project |
-	| Users        | Username      | ACG370114                        | User Evergreen Capacity Project    |
-	| Applications | Application   | 7zip                             | Computer Scheduled Test (Jo)       |
-	| Mailboxes    | Email Address | 000F977AC8824FE39B8@bclabs.local | Mailbox Evergreen Capacity Project |
+	| PageName    | ItemName                         | ProjectName                        |
+	| Device      | 001BAQXT6JWFPI                   | Devices Evergreen Capacity Project |
+	| User        | ACG370114                        | User Evergreen Capacity Project    |
+	| Application | 7zip                             | Computer Scheduled Test (Jo)       |
+	| Mailbox     | 000F977AC8824FE39B8@bclabs.local | Mailbox Evergreen Capacity Project |
 	
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16857 
 Scenario Outline: EvergreenJnr_AllLists_CheckThatComplianceInKeyValueTableMatchesTheOverallComplianceFromTopBarInEvergreenMode
-	When User clicks '<PageName>' on the left-hand menu
-	Then 'All <PageName>' list should be displayed to the user
-	When User perform search by "<ItemName>"
-	And User click content from "<ColumnName>" column
+	When User navigates to the '<PageName>' details page for '<ItemName>' item
 	Then Details page for "<ItemName>" item is displayed to the user
 	When User navigates to the "<SubMenu>" sub-menu on the Details page
 	Then following content is displayed on the Details Page
@@ -193,17 +169,14 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatComplianceInKeyValueTableMatche
 	| Overall Compliance | <Value>   |
 
 Examples:
-	| PageName     | ColumnName  | ItemName       | SubMenu      | Value   |
-	| Devices      | Hostname    | 001BAQXT6JWFPI | Device Owner | RED     |
-	| Users        | Username    | ACG370114      | User         | RED     |
-	| Applications | Application | 7zip           | Application  | UNKNOWN |
+	| PageName    | ItemName       | SubMenu      | Value   |
+	| Device      | 001BAQXT6JWFPI | Device Owner | RED     |
+	| User        | ACG370114      | User         | RED     |
+	| Application | 7zip           | Application  | UNKNOWN |
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16857 @DAS16928
 Scenario Outline: EvergreenJnr_AllLists_CheckThatComplianceInKeyValueTableMatchesTheOverallComplianceFromTopBarInProjectMode
-	When User clicks '<PageName>' on the left-hand menu
-	Then 'All <PageName>' list should be displayed to the user
-	When User perform search by "<ItemName>"
-	And User click content from "<ColumnName>" column
+	When User navigates to the '<PageName>' details page for '<ItemName>' item
 	Then Details page for "<ItemName>" item is displayed to the user
 	When User switches to the "<ProjectName>" project in the Top bar on Item details page
 	And User navigates to the 'Projects' left menu item
@@ -216,18 +189,15 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatComplianceInKeyValueTableMatche
 	| Overall Readiness | <Value>   |
 
 Examples:
-	| PageName     | ColumnName    | ItemName                         | Title     | Value | ProjectName                        |
-	| Devices      | Hostname      | 001BAQXT6JWFPI                   | Readiness | GREY  | Devices Evergreen Capacity Project |
-	| Users        | Username      | ACG370114                        | Readiness | GREY  | User Evergreen Capacity Project    |
-	| Applications | Application   | 7zip                             | Readiness | GREY  | Devices Evergreen Capacity Project |
-	| Mailboxes    | Email Address | 000F977AC8824FE39B8@bclabs.local | Readiness | NONE  | Mailbox Evergreen Capacity Project |
+	| PageName    | ItemName                         | Title     | Value | ProjectName                        |
+	| Device      | 001BAQXT6JWFPI                   | Readiness | GREY  | Devices Evergreen Capacity Project |
+	| User        | ACG370114                        | Readiness | GREY  | User Evergreen Capacity Project    |
+	| Application | 7zip                             | Readiness | GREY  | Devices Evergreen Capacity Project |
+	| Mailbox     | 000F977AC8824FE39B8@bclabs.local | Readiness | NONE  | Mailbox Evergreen Capacity Project |
 
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17002
 Scenario: EvergreenJnr_ApplicationsList_CheckThatReadinessValuesIsDisplayedAccordingToHavocBigDataProject
-	When User clicks 'Applications' on the left-hand menu
-	Then 'All Applications' list should be displayed to the user
-	When User perform search by "ACD Display 3.4"
-	And User click content from "Application" column
+	When User navigates to the 'Application' details page for 'ACD Display 3.4' item
 	Then Details page for "ACD Display 3.4" item is displayed to the user
 	When User switches to the "Havoc (Big Data)" project in the Top bar on Item details page
 	When User navigates to the 'Projects' left menu item
@@ -243,10 +213,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatReadinessValuesIsDisplayedAccor
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17355 @DAS17075
 Scenario: EvergreenJnr_UsersList_CheckThaWorkflowTextAndValueArentDisplayedAtAllOnUsersPage
-	When User clicks 'Users' on the left-hand menu
-	Then 'All Users' list should be displayed to the user
-	When User perform search by "AAC860150"
-	And User click content from "Username" column
+	When User navigates to the 'User' details page for 'AAC860150' item
 	Then Details page for "AAC860150" item is displayed to the user
 	When User switches to the "USE ME FOR AUTOMATION(DEVICE SCHDLD)" project in the Top bar on Item details page
 	Then following Compliance items are displayed in Top bar on the Item details page:
