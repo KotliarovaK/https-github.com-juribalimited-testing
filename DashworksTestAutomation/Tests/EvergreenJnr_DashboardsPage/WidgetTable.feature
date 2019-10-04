@@ -364,3 +364,25 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatAggregateFuncAreNotAvailableForCo
 	| WidgetType | Title           | List        | Type      | AggregateFunction |
 	| Card       | DAS16275_Widget | All Devices | Aggregate | Severity          |
 	Then User sees "There are no fields available for this aggregate function" warning text below Lists field
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18324 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorsOccurWhenCreatingEditingTableWidgetThatReturnsZeroResults
+	When User clicks 'Devices' on the left-hand menu
+	And User clicks the Filters button
+	And User add "App Count (Entitled)" filter where type is "Equals" with added column and following value:
+    | Values |
+    | 0      |
+	And User Add And "App Count (Used)" filter where type is "Less than" with added column and following value:
+    | Values |
+    | 1      |
+	And User clicks Save button on the list panel
+	And User create dynamic list with "ListForDAS18324" name on "Devices" page
+	Then "ListForDAS18324" list is displayed to user
+	When Dashboard with "Dashboard for DAS18324" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks 'ADD WIDGET' button 
+	And User adds new Widget
+	| WidgetType | Title             | List            | SplitBy          | AggregateFunction | OrderBy          |
+	| Table      | WidgetForDAS18324 | ListForDAS18324 | App Count (Used) | Count             | App Count (Used) |
+	Then Widget Preview is displayed to the user
+	And There are no errors in the browser console

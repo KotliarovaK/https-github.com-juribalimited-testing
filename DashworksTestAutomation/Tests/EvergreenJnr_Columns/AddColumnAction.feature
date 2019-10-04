@@ -378,3 +378,14 @@ Scenario: EvergreenJnr_UsersList_ChecksThatApplicationReadinessColumnIsDisplayed
 	| ColumnName                        |
 	| Barry'sUse: Application Readiness |
 	Then Color data displayed with correct color and tooltip for "Barry'sUse: Application Readiness" column
+
+@Evergreen @Devices @EvergreenJnr_Columns @AddColumnAction @DAS16364
+Scenario: EvergreenJnr_Devices_CheckOrderByStatusColumnSorting
+	When User clicks 'Devices' on the left-hand menu
+	And User add following columns using URL to the "Devices" page:
+	| ColumnName   |
+	| 1803: Status |
+	When User clicks on '1803: Status' column header
+	Then "Not Onboarded" content is displayed in "1803: Status" column
+	When User clicks on '1803: Status' column header
+	Then "Offboarded" content is displayed in "1803: Status" column
