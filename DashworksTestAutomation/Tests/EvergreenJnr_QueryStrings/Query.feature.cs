@@ -1221,7 +1221,7 @@ this.FeatureBackground();
 #line 217
  testRunner.When("User select all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 218
- testRunner.When("User selects \"Create static list\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Create static list\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 219
  testRunner.When("User create static list with \"StaticList12911\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 220
