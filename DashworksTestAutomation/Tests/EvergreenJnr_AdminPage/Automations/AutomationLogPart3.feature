@@ -56,7 +56,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogMessageForDeletedTaskInAction
 	When User selects "Update" Update Value on Action panel
 	When User selects "Not Applicable" Value on Action panel
 	And User selects "Update" Update Date on Action panel
-	And User selects "7 Aug 2019" Date on Action panel
+	And User enters '7 Aug 2019' text to 'Date' datepicker
 	And User clicks 'CREATE' button 
 	#Delete Task
 	When User clicks 'Projects' on the left-hand menu
@@ -96,7 +96,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedU
 	And User selects "Update" Update Value on Action panel
 	And User selects "On Hold" Value on Action panel
 	And User selects "Update" Update Date on Action panel
-	And User selects "1 Aug 2019" Date on Action panel
+	And User enters '1 Aug 2019' text to 'Date' datepicker
 	And User selects "Update" Update Owner on Action panel
 	And User selects "1803 Team" Team on Action panel
 	When User selects "Akhila Varghese" Owner on Action panel

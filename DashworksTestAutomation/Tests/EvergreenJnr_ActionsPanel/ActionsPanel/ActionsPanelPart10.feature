@@ -80,7 +80,7 @@ Scenario: EvergreenJnr_DevicesList_CheckSortOrderForBulkUpdateCapacitySlot
 	And User selects "Pre-Migration" Stage on Action panel
 	And User selects "Scheduled Date" Task on Action panel
 	And User selects "Update" Update Date on Action panel
-	And User selects "23 Nov 2018" Date on Action panel
+	And User enters '23 Nov 2018' text to 'Date' datepicker
 	Then following values are displayed in "Capacity Slot" drop-down on Action panel:
 	| Options                      |
 	| None                         |
@@ -110,13 +110,15 @@ Scenario: EvergreenJnr_DevicesList_CheckTooltipDisplayingInDatePickerOfBulkUpdat
 	And User selects "Pre-Migration" Stage on Action panel
 	And User selects "Scheduled Date" Task on Action panel
 	And User selects "Update" Update Date on Action panel
-	And User selects "6 Nov 2018" Date on Action panel
-	And User clicks datepicker for Action panel
-	And User selects "6" day selection
-	And User clicks datepicker for Action panel
-	Then Day with "5" number displayed green in Datepicker
+	And User enters '6 Nov 2018' text to 'Date' datepicker
+	And User clicks datepicker icon 
+	And User selects '6' day in the Datepicker
+	#Added wait as we need some time fo datepicker to be updated
+	And User waits for three seconds
+	And User clicks datepicker icon 
+	Then '5' day is displayed green in the Datepicker
 	And Datepicker has tooltip with "8" rows for value "5"
-	When User selects "5" day selection
+	When User selects '5' day in the Datepicker
 	Then following values are presented in "Capacity Slot" drop-down on Action panel:
 	| Options                    |
 	| Birmingham Morning         |
@@ -148,5 +150,5 @@ Scenario: EvergreenJnr_UsersList_CheckDateColorDisplayingInBulkUpdateDatePicker
 	And User selects "Stage 2" Stage on Action panel
 	And User selects "Scheduled Date" Task on Action panel
 	And User selects "Update" Update Date on Action panel
-	And User clicks datepicker for Action panel
-	Then Column "Sunday" displayed green in Datepicker
+	And User clicks datepicker icon 
+	Then All 'Sunday' days are green in the Datepicker

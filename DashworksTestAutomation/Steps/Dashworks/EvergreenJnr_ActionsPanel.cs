@@ -422,57 +422,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.GetOptionByName(updateDate).Click();
         }
 
-        [When(@"User selects ""(.*)"" day selection")]
-        public void WhenUserConfirmsDateSelectionOnActionPanel(string day)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitForElementToBeDisplayed(action.DayInDatePicker(day));
-            action.DayInDatePicker(day).Click();
-        }
-
-        [When(@"User clicks datepicker for Action panel")]
-        public void WhenUserClicksDatePicker()
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            action.DatePickerIcon.Click();
-        }
-
         [Then(@"Datepicker has tooltip with ""(.*)"" rows for value ""(.*)""")]
         public void ThenTooltipForSpecificDayHasCorrectRowNumber(string rowNumber, string dayNumber)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForDataLoading();
             Assert.That(action.GetTooltipForDay(dayNumber).Count().Equals(Convert.ToInt32(rowNumber)), Is.True, "Wrong tooltips");
-        }
-
-        [Then(@"Day with ""(.*)"" number displayed green in Datepicker")]
-        public void ThenDayInDatePickerDisplayedGreen(string dayNumber)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitForElementToBeDisplayed(action.DayInDatePicker(dayNumber));
-            Assert.That(action.DayInDatePicker(dayNumber).GetCssValue("background-color"), Is.EqualTo("rgba(126, 189, 56, 1)"), "Day color is wrong");
-        }
-
-        [Then(@"Column ""(.*)"" displayed green in Datepicker")]
-        public void ThenColumnWithSpecifiedDayDisplayedGreenInDatePicker(string dayName)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            string col = action.GetDayColumnNumberByName(dayName);
-
-            Verify.IsTrue(action.GetListOfDaysInDatePicker(col).All(x => x.GetCssValue("background-color").Equals("rgba(126, 189, 56, 1)")), "Wrong cell color");
-        }
-
-        //TODO Remove this step
-        [When(@"User selects ""(.*)"" Date on Action panel")]
-        public void WhenUserSelectsDateOnActionPanel(string dateValue)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            _driver.MoveToElement(action.DateField);
-            action.DateField.Click();
-            action.DateField.Clear();
-            action.DateField.SendKeys(dateValue);
-            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            page.BodyContainer.Click();
         }
 
         [When(@"User selects next Tuesday Date on Action panel")]

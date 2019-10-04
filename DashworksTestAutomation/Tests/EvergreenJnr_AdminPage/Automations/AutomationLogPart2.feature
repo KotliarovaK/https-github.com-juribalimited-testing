@@ -246,7 +246,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedA
 	And User selects "Update" Update Value on Action panel
 	And User selects "Started" Value on Action panel
 	And User selects "Update" Update Date on Action panel
-	And User selects "3 Oct 2019" Date on Action panel
+	And User enters '3 Oct 2019' text to 'Date' datepicker
 	And User selects "Radio Slot" value for "Capacity Slot" dropdown on Action panel
 	And User clicks 'CREATE' button 
 	#Create Action
@@ -493,7 +493,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueActionDAS
 	And User selects "Update" Update Value on Action panel
 	And User selects "Started" Value on Action panel
 	And User selects "Update" Update Date on Action panel
-	And User selects "19 Nov 2019" Date on Action panel
+	And User enters '19 Nov 2019' text to 'Date' datepicker
 	And User selects "Update" Update Owner on Action panel
 	And User selects "Admin IT" Team on Action panel
 	When User selects "Akhila Varghese" Owner on Action panel

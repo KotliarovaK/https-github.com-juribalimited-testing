@@ -33,7 +33,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateAndRemoveTaskValueForUpdateValueInUs
 	When User selects 'Radio Date Task' option from 'Task' autocomplete
 	And User selects "No change" Update Value on Action panel
 	And User selects "Update" Update Date on Action panel
-	And User selects "3 Apr 2019" Date on Action panel
+	And User enters '3 Apr 2019' text to 'Date' datepicker
 	And User clicks 'CREATE' button 
 	#Create Action
 	When User clicks "Automations" navigation link on the Admin page

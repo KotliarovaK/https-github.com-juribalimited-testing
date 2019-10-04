@@ -633,7 +633,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateDate
 	When User selects 'One' option from 'Stage' autocomplete
 	When User selects 'Date Computer' option from 'Task' autocomplete
 	And User selects "Update" Update Date on Action panel
-	And User selects "5 Aug 2019" Date on Action panel
+	And User enters '5 Aug 2019' text to 'Date' datepicker
 	#Delete After clarifications
 	When User selects "None" in the "Capacity Slot" dropdown for Actions
 	#Delete After clarifications
@@ -669,7 +669,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThanActionFieldsAreNotPrepopulatedWithOldD
 	And User selects "Update" Update Value on Action panel
 	And User selects "Complete" Value on Action panel
 	And User selects "Update" Update Date on Action panel
-	And User selects "31 Aug 2019" Date on Action panel
+	And User enters '31 Aug 2019' text to 'Date' datepicker
 	And User selects "Update" Update Owner on Action panel
 	And User selects "1803 Team" Team on Action panel
 	And User selects "Lisa Bailey" Owner on Action panel
@@ -705,7 +705,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValueDataInTheGridForActions
 	And User selects "Update" Update Value on Action panel
 	And User selects "Started" Value on Action panel
 	And User selects "Update" Update Date on Action panel
-	And User selects "5 Sep 2019" Date on Action panel
+	And User enters '5 Sep 2019' text to 'Date' datepicker
 	And User selects "Update" Update Owner on Action panel
 	And User selects "1803 Team" Team on Action panel
 	And User selects "Lisa Bailey" Owner on Action panel

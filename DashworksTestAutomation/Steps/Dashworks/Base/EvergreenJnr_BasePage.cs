@@ -291,7 +291,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         #endregion
 
-        #region Datepicker
+        #region Datepicker textbox
+
+        [When(@"User clicks datepicker icon")]
+        public void WhenUserClicksDatepickerIcon()
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.DatePickerIcon.Click();
+        }
 
         [When(@"User enters '(.*)' text to '(.*)' datepicker")]
         public void WhenUserEntersTextToDatepicker(string text, string placeholder)
@@ -305,6 +312,38 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             datepicker.SendKeys(text);
 
             page.BodyContainer.Click();
+        }
+
+        #endregion
+
+        #region Datepicker
+
+        [Then(@"All '(.*)' days are green in the Datepicker")]
+        public void ThenAllDaysAreGreenInTheDatepicker(string dayOfWeek)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            var allDaysForSpecifiedDayOfWeek = action.GetDaysForWeekDay(dayOfWeek);
+            Verify.IsTrue(allDaysForSpecifiedDayOfWeek.All(x => x.GetCssValue("background-color").
+                    Equals("rgba(126, 189, 56, 1)")),
+                "Some days are not green");
+        }
+
+        [When(@"User selects '(.*)' day in the Datepicker")]
+        public void WhenUserSelectsDayInTheDatepicker(int day)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForElementToBeDisplayed(action.DayInDatePicker(day));
+            action.DayInDatePicker(day).Click();
+        }
+
+        [Then(@"'(.*)' day is displayed green in the Datepicker")]
+        public void ThenDayIsDisplayedGreenInTheDatepicker(int dayNumber)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForElementToBeDisplayed(action.DayInDatePicker(dayNumber));
+            Assert.That(action.DayInDatePicker(dayNumber).GetCssValue("background-color"), 
+                Is.EqualTo("rgba(126, 189, 56, 1)"), 
+                "Day color is wrong");
         }
 
         #endregion
