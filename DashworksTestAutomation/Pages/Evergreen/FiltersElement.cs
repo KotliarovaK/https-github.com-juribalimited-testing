@@ -564,7 +564,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IWebElement GetCloseChipButtonByName(string chipName)
         {
-            var selector = By.XPath($".//li/span[text()='{chipName}']/ancestor::li/button");
+            var selector = By.XPath($".//li//span[text()='{chipName}']/ancestor::li/button");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
