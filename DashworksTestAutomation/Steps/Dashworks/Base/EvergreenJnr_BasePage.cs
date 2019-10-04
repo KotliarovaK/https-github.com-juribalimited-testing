@@ -346,6 +346,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 "Day color is wrong");
         }
 
+        [Then(@"Datepicker has tooltip with '(.*)' rows for '(.*)' day")]
+        public void ThenDatepickerHasTooltipWithRowsForDay(int rowNumber, int dayNumber)
+        {
+            _driver.WaitForDataLoading();
+            Verify.IsTrue(_driver.GetDatepickerTooltipElements(dayNumber).Count().Equals(Convert.ToInt32(rowNumber)),
+                "Wrong number of tooltip lines");
+        }
+
         #endregion
 
         #region Expandable multiselect

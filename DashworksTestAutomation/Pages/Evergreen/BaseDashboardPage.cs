@@ -1117,12 +1117,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(selector);
         }
 
-        public IList<IWebElement> GetTooltipForDay(string dayNumber)
-        {
-            var selector = By.XPath($".//td[@role='gridcell']//div[text() = '{dayNumber}']/span/span");
-            return Driver.FindElements(selector);
-        }
-
         #region Datepicker
 
         public int GetDayColumnNumberByNameFromDatepicker(string dayName)

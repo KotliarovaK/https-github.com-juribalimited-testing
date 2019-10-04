@@ -343,14 +343,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.BodyContainer.Click();
         }
 
-        [Then(@"Datepicker has tooltip with ""(.*)"" rows for value ""(.*)""")]
-        public void ThenTooltipForSpecificDayHasCorrectRowNumber(string rowNumber, string dayNumber)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitForDataLoading();
-            Assert.That(action.GetTooltipForDay(dayNumber).Count().Equals(Convert.ToInt32(rowNumber)), Is.True, "Wrong tooltips");
-        }
-
         [When(@"User selects next Tuesday Date on Action panel")]
         public void WhenUserSelectsNextTuesdayDateOnActionPanel()
         {
