@@ -223,7 +223,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         [Then(@"following values are presented in ""(.*)"" drop-down on Action panel:")]
         public void ThenFollowingValuesArePresentedInDrop_DownOnActionPanel(string fieldName, Table table)
-         {
+        {
             var field = _driver.NowAt<ActionsElement>();
             field.GetDropdownOnActionPanelByName(fieldName).Click();
             var action = _driver.NowAt<BaseDashboardPage>();
@@ -412,27 +412,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var action = _driver.NowAt<BaseDashboardPage>();
             action.TeamField.Click();
             var list = action.OptionListOnActionsPanel.Select(x => x.Text).ToList();
-            Utils.Verify.AreEqual(list.OrderBy(s => s), list, "Teams are not in alphabetical order");
-            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            page.BodyContainer.Click();
-        }
-
-        [Then(@"options for ""(.*)"" field are displayed in alphabetical order on Action panel")]
-        public void ThenOptionsForFieldAreDisplayedInAlphabeticalOrderOnActionPanel(string field)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            if (field.Equals("Bucket") || field.Equals("Capacity Unit") || field.Equals("Ring"))
-            {
-                action.GetDropdownByFieldName(field).Click();
-                var listWithoutUnassigned = action.OptionListOnActionsPanel.Select(x => x.Text).Where(x => !x.Contains("Unassigned")).ToList();
-                Utils.Verify.AreEqual(listWithoutUnassigned.OrderBy(s => s), listWithoutUnassigned, $"{field} are not in alphabetical order");
-            }
-            else
-            {
-                action.GetDropdownByFieldName(field).Click();
-                var list = action.OptionListOnActionsPanel.Select(x => x.Text).ToList();
-                Utils.Verify.AreEqual(list.OrderBy(s => s), list, $"{field} are not in alphabetical order");
-            }
+            Verify.AreEqual(list.OrderBy(s => s), list, "Teams are not in alphabetical order");
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             page.BodyContainer.Click();
         }
@@ -451,14 +431,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenOwnerFieldIsNotDisplayedOnActionPanel()
         {
             var action = _driver.NowAt<BaseDashboardPage>();
-            Utils.Verify.IsFalse(action.OwnerField.Displayed(), "Owner Field is displayed");
+            Verify.IsFalse(action.OwnerField.Displayed(), "Owner Field is displayed");
         }
 
         [Then(@"Owner field is displayed on Action panel")]
         public void ThenOwnerFieldIsDisplayedOnActionPanel()
         {
             var action = _driver.NowAt<BaseDashboardPage>();
-            Utils.Verify.IsTrue(action.OwnerField.Displayed(), "Owner Field is not displayed");
+            Verify.IsTrue(action.OwnerField.Displayed(), "Owner Field is not displayed");
         }
 
         [Then(@"the following Update Value are displayed in opened DLL on Action panel:")]
