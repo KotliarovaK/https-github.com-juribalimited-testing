@@ -23,10 +23,11 @@ Scenario: EvergreenJnr_AdminPage_AddingBucketsToTheTeam
 	And User navigates to the 'Buckets' left menu item
 	And User clicks 'ADD BUCKETS' button 
 	Then Page with 'Add Buckets' subheader is displayed to user
-	When User expands 'Evergreen' multiselect and selects following Buckets
+	When User expands 'Evergreen' multiselect and selects following Objects
 	| Objects     |
 	| TestBucket6 |
 	| TestBucket7 |
+	When User clicks "ADD BUCKETS" button
 	Then Success message is displayed and contains "The selected buckets have been added" text
 	When User enters "TestBucket" text in the Search field for "Bucket" column
 	And User selects all rows on the grid

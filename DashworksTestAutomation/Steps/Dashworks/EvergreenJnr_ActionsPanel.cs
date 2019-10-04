@@ -459,7 +459,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var action = _driver.NowAt<BaseDashboardPage>();
             string col = action.GetDayColumnNumberByName(dayName);
 
-            Utils.Verify.IsTrue(action.GetListOfDaysInDatePicker(col).All(x => x.GetCssValue("background-color").Equals("rgba(126, 189, 56, 1)")), "Wrong cell color");
+            Verify.IsTrue(action.GetListOfDaysInDatePicker(col).All(x => x.GetCssValue("background-color").Equals("rgba(126, 189, 56, 1)")), "Wrong cell color");
         }
 
         //TODO Remove this step
