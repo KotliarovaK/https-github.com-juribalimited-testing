@@ -117,7 +117,7 @@ Scenario: EvergreenJnr_DevicesList_CheckTooltipDisplayingInDatePickerOfBulkUpdat
 	And User waits for three seconds
 	And User clicks datepicker icon 
 	Then '5' day is displayed green in the Datepicker
-	And Datepicker has tooltip with "8" rows for value "5"
+	And Datepicker has tooltip with '8' rows for '5' day
 	When User selects '5' day in the Datepicker
 	Then following values are presented in "Capacity Slot" drop-down on Action panel:
 	| Options                    |
