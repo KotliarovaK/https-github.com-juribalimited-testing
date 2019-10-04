@@ -16,7 +16,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelWorkedCorrectlyAfterCic
 	| 00OMQQXWA1DRI6   |
 	| 00RUUMAH9OZN9A   |
 	| 00SH8162NAS524   |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects 'Bulk update' in the 'Action' dropdown
 	Then following values are displayed in "Bulk Update Type" drop-down on Action panel:
 	| Options              |
 	| Update bucket        |
@@ -25,8 +25,8 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelWorkedCorrectlyAfterCic
 	| Update path          |
 	| Update ring          |
 	| Update task value    |
-	When User selects "Update path" Bulk Update Type on Action panel
-	And User selects "Babel (English, German and French)" Project on Action panel
+	When User selects 'Update path' in the 'Bulk Update Type' dropdown
+	And User selects 'Babel (English, German and French)' option from 'Project' autocomplete
 	And User selects "Machines" Path on Action panel
 	And User clicks 'CANCEL' button 
 	Then Actions panel is not displayed to the user
@@ -41,8 +41,8 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatProjectNamesAreDisplayedCorrectlyIn
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 00OMQQXWA1DRI6   |
-	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update path" Bulk Update Type on Action panel
+	And User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update path' in the 'Bulk Update Type' dropdown
 	Then the following Projects are displayed in opened DLL on Action panel:
 	| Projects                                         |
 	| *Project K-Computer Scheduled Project            |
@@ -89,9 +89,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatProjectFieldIsDisplayedCorrectlyAfte
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 00KLL9S8NRF0X6   |
-	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update path" Bulk Update Type on Action panel
-	And User selects "Barry's User Project" Project on Action panel
+	And User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update path' in the 'Bulk Update Type' dropdown
+	And User selects 'Barry's User Project' option from 'Project' autocomplete
 	And User selects "Desktop Replacement" Path on Action panel
 	When User clears Project field
 	And User clicks on Action drop-down
@@ -106,7 +106,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatProjectFieldIsDisplayedCorrectlyAfterC
 	When User select "Username" rows in the grid
 	| SelectedRowsName    |
 	| 002B5DC7D4D34D5C895 |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects 'Bulk update' in the 'Action' dropdown
 	Then following values are displayed in "Bulk Update Type" drop-down on Action panel:
 	| Options              |
 	| Update bucket        |
@@ -115,8 +115,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatProjectFieldIsDisplayedCorrectlyAfterC
 	| Update path          |
 	| Update ring          |
 	| Update task value    |
-	When User selects "Update path" Bulk Update Type on Action panel
-	And User selects "Havoc (Big Data)" Project on Action panel
+	When User selects 'Update path' in the 'Bulk Update Type' dropdown
+	And User selects 'Havoc (Big Data)' option from 'Project' autocomplete
 	And User selects "User Request Type 2" Path on Action panel
 	When User clears Project field
 	And User clicks on Action drop-down

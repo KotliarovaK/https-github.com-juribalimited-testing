@@ -137,13 +137,14 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketA
 	And User clicks content from "Bucket" column
 	Then "1Bucket12905" bucket details is displayed to the user
 	When User clicks 'ADD DEVICE' button 
-	When User expands 'UPDATE INPUT DATA' multiselect and selects following Buckets
+	When User expands 'UPDATE INPUT DATA' multiselect and selects following Objects
 	| Objects         |
 	| 001BAQXT6JWFPI  |
 	| 001PSUMZYOW581  |
 	| 00BDM1JUR8IF419 |
 	| 00CWZRC4UK6W20  |
 	| 00HA7MKAVVFDAV  |
+	When User clicks "ADD BUCKETS" button
 	Then Success message is displayed and contains "The selected devices have been added to the selected bucket" text
 	Then following Objects are displayed in Buckets table:
 	| Objects         |
@@ -157,13 +158,14 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketA
 	And User clicks content from "Bucket" column
 	Then "2Bucket12905" bucket details is displayed to the user
 	When User clicks 'ADD DEVICE' button 
-	When User expands 'UPDATE INPUT DATA' multiselect and selects following Buckets
+	When User expands 'UPDATE INPUT DATA' multiselect and selects following Objects
 	| Objects         |
 	| 00I0COBFWHOF27  |
 	| 00K4CEEQ737BA4L |
 	| 00KLL9S8NRF0X6  |
 	| 00KWQ4J3WKQM0G  |
 	| 00OMQQXWA1DRI6  |
+	When User clicks "ADD BUCKETS" button
 	Then Success message is displayed and contains "The selected devices have been added to the selected bucket" text
 	Then following Objects are displayed in Buckets table:
 	| Objects         |

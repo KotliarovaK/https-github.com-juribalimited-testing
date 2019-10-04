@@ -215,7 +215,7 @@ Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForSt
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
-	When User selects "Create static list" in the Actions dropdown
+	When User selects 'Create static list' in the 'Action' dropdown
 	When User create static list with "StaticList12911" name
 	Then "StaticList12911" list is displayed to user
 	When Evergreen QueryStringURL is entered for Simple QueryType

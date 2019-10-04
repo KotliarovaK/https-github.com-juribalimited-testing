@@ -37,7 +37,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewListCreatedMessageForStaticListIs
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
-	And User selects "Create static list" in the Actions dropdown
+	And User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "TestList4A22A5" name
 	Then "TestList4A22A5" list is displayed to user
 	When User clicks on 'Hostname' column header
@@ -75,7 +75,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatListsIsDisplayedInAlphabeticalOrder
 	| SelectedRowsName    |
 	| 000F977AC8824FE39B8 |
 	| 002B5DC7D4D34D5C895 |
-	And User selects "Create static list" in the Actions dropdown
+	And User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "KY TestList Static List" name
 	Then "KY TestList Static List" list is displayed to user
 	When User navigates to the "All Users" list
@@ -83,7 +83,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatListsIsDisplayedInAlphabeticalOrder
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
-	And User selects "Create static list" in the Actions dropdown
+	And User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "NINJA TestList Static List" name
 	Then "NINJA TestList Static List" list is displayed to user
 	When User navigates to the "All Users" list
@@ -93,7 +93,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatListsIsDisplayedInAlphabeticalOrder
 	When User select "Username" rows in the grid
 	| SelectedRowsName     |
 	| $231000-3AC04R8AR431 |
-	And User selects "Create static list" in the Actions dropdown
+	And User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "QWER TestList Static List" name
 	Then "QWER TestList Static List" list is displayed to user
 	When User navigates to the "All Users" list

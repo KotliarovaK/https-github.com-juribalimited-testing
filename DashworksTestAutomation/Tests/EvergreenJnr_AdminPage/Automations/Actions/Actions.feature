@@ -632,8 +632,8 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateDate
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	When User selects 'One' option from 'Stage' autocomplete
 	When User selects 'Date Computer' option from 'Task' autocomplete
-	And User selects "Update" Update Date on Action panel
-	And User selects "5 Aug 2019" Date on Action panel
+	And User selects 'Update' in the 'Update Date' dropdown
+	And User enters '5 Aug 2019' text to 'Date' datepicker
 	#Delete After clarifications
 	When User selects "None" in the "Capacity Slot" dropdown for Actions
 	#Delete After clarifications
@@ -668,8 +668,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThanActionFieldsAreNotPrepopulatedWithOldD
 	And User selects 'Radio Rag Date Owner' option from 'Task' autocomplete
 	And User selects "Update" Update Value on Action panel
 	And User selects "Complete" Value on Action panel
-	And User selects "Update" Update Date on Action panel
-	And User selects "31 Aug 2019" Date on Action panel
+	And User selects 'Update' in the 'Update Date' dropdown
+	And User enters '31 Aug 2019' text to 'Date' datepicker
 	And User selects "Update" Update Owner on Action panel
 	And User selects "1803 Team" Team on Action panel
 	And User selects "Lisa Bailey" Owner on Action panel
@@ -704,8 +704,8 @@ Scenario: EvergreenJnr_AdminPage_CheckValueDataInTheGridForActions
 	And User selects 'Radio Rag Date Owner User Req A' option from 'Task' autocomplete
 	And User selects "Update" Update Value on Action panel
 	And User selects "Started" Value on Action panel
-	And User selects "Update" Update Date on Action panel
-	And User selects "5 Sep 2019" Date on Action panel
+	And User selects 'Update' in the 'Update Date' dropdown
+	And User enters '5 Sep 2019' text to 'Date' datepicker
 	And User selects "Update" Update Owner on Action panel
 	And User selects "1803 Team" Team on Action panel
 	And User selects "Lisa Bailey" Owner on Action panel
@@ -742,9 +742,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionStageSelectboxIsDisplayedForSpec
 	| SelectedRowsName    |
 	| 002B5DC7D4D34D5C895 |
 	| 00A5B910A1004CF5AC4 |
-	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update task value" Bulk Update Type on Action panel
-	And User selects "zUser Sch for Automations Feature" Project on Action panel
+	And User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	And User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
 	Then 'Stage' autocomplete does NOT have options
 	| Options         |
 	| Read only tasks |

@@ -535,7 +535,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatArchivedItemsIncludedInCountWhenR
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| Empty            |
-	And User selects "Create static list" in the Actions dropdown
+	And User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "StaticList16844" name
 	And Dashboard with "Dashboard for DAS16844" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page

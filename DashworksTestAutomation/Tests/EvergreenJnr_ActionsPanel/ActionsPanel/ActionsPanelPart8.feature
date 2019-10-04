@@ -23,11 +23,11 @@ Scenario: EvergreenJnr_UsersList_CheckThatBulkUpdateOfThousandsOfRowsUpdateToSuc
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
-	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update task value" Bulk Update Type on Action panel
-	And User selects "Havoc (Big Data)" Project on Action panel
-	And User selects "Stage 0" Stage on Action panel
-	And User selects "Task 0" Task on Action panel
+	And User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	And User selects 'Havoc (Big Data)' option from 'Project' autocomplete
+	And User selects 'Stage 0' option from 'Stage' autocomplete
+	And User selects 'Task 0' option from 'Task' autocomplete
 	And User selects "Started" Value on Action panel
 	And User clicks 'UPDATE' button 
 	Then the amber message is displayed correctly
@@ -46,10 +46,10 @@ Scenario: EvergreenJnr_DevicesList_CheckThatBulkUpdateOfTasksDoesNotIncludeUnpub
 	| SelectedRowsName |
 	| 001BAQXT6JWFPI   |
 	| 001PSUMZYOW581   |
-	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update task value" Bulk Update Type on Action panel
-	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
-	And User selects "Pre-Migration" Stage on Action panel
+	And User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
+	And User selects 'Pre-Migration' option from 'Stage' autocomplete
 	Then following Tasks are displayed in drop-down:
 	| Options                |
 	| Forecast Date          |
@@ -76,15 +76,15 @@ Scenario: EvergreenJnr_UsersList_CheckThatBulkUpdateOfTasksDoesNotIncludeGroupTa
 	| SelectedRowsName    |
 	| 003F5D8E1A844B1FAA5 |
 	| 00A5B910A1004CF5AC4 |
-	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update task value" Bulk Update Type on Action panel
-	And User selects "User Scheduled Test (Jo)" Project on Action panel
+	And User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	And User selects 'User Scheduled Test (Jo)' option from 'Project' autocomplete
 	Then following Stage are displayed in drop-down:
 	| Options |
 	| One     |
 	| Two     |
 	| Three   |
-	When User selects "One" Stage on Action panel
+	When User selects 'One' option from 'Stage' autocomplete
 	Then following Tasks are displayed in drop-down:
 	| Options                            |
 	| Radio Rag only User                |
@@ -107,10 +107,10 @@ Scenario: EvergreenJnr_UsersList_CheckThatBulkUpdateOperationHasCorrectOptionsFo
 	When User select "Username" rows in the grid
 	| SelectedRowsName    |
 	| 00A5B910A1004CF5AC4 |
-	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update capacity unit" Bulk Update Type on Action panel
+	And User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
 	And User selects "Project" Project or Evergreen on Action panel
-	And User selects "Email Migration" Project on Action panel
+	And User selects 'Email Migration' option from 'Project' autocomplete
 	And User selects "Unassigned" Capacity Unit on Action panel
 	Then following Move Mailboxes are displayed in drop-down:
 	| Options              |

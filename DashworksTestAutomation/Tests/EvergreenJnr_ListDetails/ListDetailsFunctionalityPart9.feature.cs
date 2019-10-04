@@ -150,7 +150,7 @@ this.FeatureBackground();
 #line 17
  testRunner.And("User select \"Hostname\" rows in the grid", ((string)(null)), table2, "And ");
 #line 20
- testRunner.And("User selects \"Create static list\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects \'Create static list\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 21
  testRunner.And("User create static list with \"StaticList17651\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 22
