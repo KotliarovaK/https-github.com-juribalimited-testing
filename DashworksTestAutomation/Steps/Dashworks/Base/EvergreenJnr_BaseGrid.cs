@@ -49,7 +49,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                     _driver.WaitForElementToBeNotDisplayed(page.ArchivedDevicesNotIncludedTooltip);
                 }
             }
-
             else
             {
                 if (_driver.IsElementExists(page.ArchivedDevicesIncludedTooltip))
@@ -69,7 +68,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
             if (Convert.ToBoolean(state))
             {
-
                 Verify.That(page.ArchivedDevicesIcon.GetCssValue("color"), Is.EqualTo("rgba(49, 122, 193, 1)"),
                     "Wrong Archived devices icon color");
                 Verify.IsTrue(_driver.IsElementExists(page.ArchivedDevicesIncludedTooltip),
