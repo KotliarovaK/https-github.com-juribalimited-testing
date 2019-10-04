@@ -49,7 +49,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                     _driver.WaitForElementToBeNotDisplayed(page.ArchivedDevicesNotIncludedTooltip);
                 }
             }
-
             else
             {
                 if (_driver.IsElementExists(page.ArchivedDevicesIncludedTooltip))
