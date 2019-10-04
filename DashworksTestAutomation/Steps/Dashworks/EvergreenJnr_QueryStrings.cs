@@ -149,6 +149,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 _url.Value = UrlProvider.Url;
                 var combinedURL = _url.Value + row["QueryStringURL"];
+                _driver.NowAt<BaseHeaderElement>();
                 _driver.NavigateToUrl(combinedURL);
 
                 var page = _driver.NowAt<BaseDashboardPage>();

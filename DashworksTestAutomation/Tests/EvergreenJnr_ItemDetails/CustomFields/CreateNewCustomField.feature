@@ -138,4 +138,4 @@ Scenario: EvergreenJnr_UsersList_CheckGroupByResetAfterCreatingNewCustomField
 	| ValueDAS17695_2B |
 	| ValueDAS17695_2C |
 	And Grid is not grouped
-	And No options are selected in the Group By menu
+	And '0' options are selected in the Group By menu

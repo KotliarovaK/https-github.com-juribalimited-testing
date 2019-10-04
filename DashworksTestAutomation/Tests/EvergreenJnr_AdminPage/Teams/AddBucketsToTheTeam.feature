@@ -10,11 +10,11 @@ Scenario: EvergreenJnr_AdminPage_AddingBucketsToTheTeam
 	When User creates new Team via api
 	| TeamName  | Description | IsDefault |
 	| TestTeam5 | test        | false     |
-	When User creates new Bucket via api
+	And User creates new Bucket via api
 	| Name        | TeamName  | IsDefault |
 	| TestBucket6 | Team 1045 | false     |
 	| TestBucket7 | Team 1045 | false     |
-	When User clicks 'Admin' on the left-hand menu
+	And User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Teams' left menu item
 	Then Page with 'Teams' header is displayed to user
@@ -23,8 +23,7 @@ Scenario: EvergreenJnr_AdminPage_AddingBucketsToTheTeam
 	And User navigates to the 'Buckets' left menu item
 	And User clicks 'ADD BUCKETS' button 
 	Then Page with 'Add Buckets' subheader is displayed to user
-	When User expands "Evergreen" project to add bucket
-	And User adds following Objects from list
+	When User expands 'Evergreen' multiselect and selects following Buckets
 	| Objects     |
 	| TestBucket6 |
 	| TestBucket7 |
@@ -38,7 +37,7 @@ Scenario: EvergreenJnr_AdminPage_AddingBucketsToTheTeam
 	When User selects "Team 10" in the Team dropdown
 	And User clicks 'CHANGE' button 
 	Then Success message is displayed and contains "The selected buckets have been reassigned to the selected team" text
-	Then There are no errors in the browser console
+	And There are no errors in the browser console
 	When User click on Back button
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13421 @DAS12788 @Teams

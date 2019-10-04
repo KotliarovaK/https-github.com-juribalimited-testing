@@ -43,15 +43,15 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatTheSaveListFunctionIsHiddenAfte
 	When User clicks '<ListName>' on the left-hand menu
 	Then '<ListLabel>' list should be displayed to the user
 	When User have opened column settings for "<ColumnName>" column
-	When User have select "Pin Left" option from column settings
+	When User have select "Pin left" option from column settings
 	Then '<ListLabel>' list should be displayed to the user
 	Then Save to New Custom List element is NOT displayed
 	When User have opened column settings for "<ColumnName>" column
-	When User have select "Pin Right" option from column settings
+	When User have select "Pin right" option from column settings
 	Then '<ListLabel>' list should be displayed to the user
 	Then Save to New Custom List element is NOT displayed
 	When User have opened column settings for "<ColumnName>" column
-	When User have select "No Pin" option from column settings
+	When User have select "No pin" option from column settings
 	Then '<ListLabel>' list should be displayed to the user
 	Then Save to New Custom List element is NOT displayed
 

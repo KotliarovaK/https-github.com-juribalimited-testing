@@ -32,14 +32,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenBucketDropdownIsNotDisplayedOnTheProjectDetailsPage()
         {
             var projectPage = _driver.NowAt<ProjectsPage>();
-            Utils.Verify.IsFalse(projectPage.BucketDropdown.Displayed(), "Bucket dropdown is displayed");
+            Verify.IsFalse(projectPage.BucketDropdown.Displayed(), "Bucket dropdown is displayed");
         }
 
         [Then(@"Reassign Buckets page is displayed to the user")]
         public void ThenReassignBucketsPageIsDisplayedToTheUser()
         {
             var page = _driver.NowAt<ReassignBucketsPage>();
-            Utils.Verify.IsTrue(page.PageReassignBucketsTitle.Displayed(), "Reassign Buckets page is not displayed");
+            Verify.IsTrue(page.PageReassignBucketsTitle.Displayed(), "Reassign Buckets page is not displayed");
         }
 
         [When(@"User selects ""(.*)"" in the Select a team dropdown")]
@@ -51,18 +51,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.SelectTeamToReassign(teamName);
         }
 
-        [When(@"User expands ""(.*)"" project to add bucket")]
-        public void WhenUserExpandsProjectToAddBucket(string projectName)
-        {
-            var teamElement = _driver.NowAt<AddBucketToTeamPage>();
-            teamElement.ExpandProjectByName(projectName).Click();
-        }
-
         [Then(@"Default Bucket checkbox is selected")]
         public void ThenDefaultBucketCheckboxIsSelected()
         {
             var page = _driver.NowAt<BucketsPage>();
-            Utils.Verify.IsTrue(page.SelectedDefaultBucketCheckbox.Displayed(), "Default Bucket checkbox is not selected");
+            Verify.IsTrue(page.SelectedDefaultBucketCheckbox.Displayed(), "Default Bucket checkbox is not selected");
         }
 
         [When(@"User clicks ""(.*)"" tab on the Buckets page")]

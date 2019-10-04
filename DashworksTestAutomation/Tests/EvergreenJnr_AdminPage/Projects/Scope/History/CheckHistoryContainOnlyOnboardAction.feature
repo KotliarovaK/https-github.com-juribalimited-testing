@@ -38,7 +38,7 @@ Scenario: EvergreenJnr_AdminPage_CheckHistoryContainOnlyOnboardActionInEmailMigr
 	| Re-onboard Mailbox Object		|
 	| Re-onboard User Object        |
 	When User selects "Onboard User Object" checkbox from String Filter with item list on the Admin page
-	Then Rows counter shows "807" of "1527" rows
+	Then Rows counter shows "807" of "1,527" rows
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13959 @Projects
 Scenario: EvergreenJnr_AdminPage_CheckHistoryContainOnlyOnboardActionInUserEvergreenCapacityProject
@@ -56,4 +56,4 @@ Scenario: EvergreenJnr_AdminPage_CheckHistoryContainOnlyOnboardActionInUserEverg
 	When User selects "Onboard Application Object" checkbox from String Filter with item list on the Admin page
 	When User clicks String Filter button for "Action" column on the Admin page
 	When User selects "Onboard Device Object" checkbox from String Filter with item list on the Admin page
-	Then Rows counter shows "41405" of "60371" rows
+	Then Rows counter shows "41,405" of "60,371" rows

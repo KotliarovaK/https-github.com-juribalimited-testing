@@ -46,10 +46,9 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 	When Project created via API and opened
 	| ProjectName      | Scope     | ProjectTemplate | Mode               |
 	| TestProject12364 | All Users | None            | Standalone Project |
-	When User navigates to the 'Projects' left menu item
 	Then Project "TestProject12364" is displayed to user
 	When User selects "Scope" tab on the Project details page
-	Then Info message is displayed and contains "There are no objects in this project, use Scope Changes to add objects to your project" text	
+	Then Info message is displayed and contains "There are no objects in this project, use Scope Changes to add objects to your project" text
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Users to add (0 of 41339 selected)" is displayed to the user in the Project Scope Changes section
 	When User expands multiselect to add objects

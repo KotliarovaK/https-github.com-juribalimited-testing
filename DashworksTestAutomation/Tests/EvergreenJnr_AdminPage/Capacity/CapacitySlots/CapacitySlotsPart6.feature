@@ -53,10 +53,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatListOfSelectedItemsIsTruncatedForReque
 	And User navigates to the 'Capacity' left menu item
 	And User selects "Slots" tab on the Project details page
 	Then User sees following text in cell truncated with ellipsis:
-	| cellText                                               |
-	| Computer: PC Rebuild,Computer: Workstation Replacement |
-	| Admin IT,Administrative Team                           |
-	| Capacity Unit 1,Capacity Unit 2,Unassigned             |
+	| cellText                                                |
+	| Computer: PC Rebuild, Computer: Workstation Replacement |
+	| Admin IT, Administrative Team                           |
+	| Capacity Unit 1, Capacity Unit 2, Unassigned            |
 	
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13526 @DAS17419 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatInSlotsColumnOnCapacityUnitsPageTheCorrectDataIsDisplayed

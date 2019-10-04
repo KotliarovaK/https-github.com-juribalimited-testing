@@ -13,6 +13,7 @@ using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity;
 using DashworksTestAutomation.Pages.Evergreen.ItemDetails.CustomFields;
 using DashworksTestAutomation.Utils;
+using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
@@ -275,6 +276,19 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.AreEqual(expectedList, actualList, $"Value for {dropDownName} are different");
         }
 
+        [Then(@"User sees that '(.*)' dropdown contains following options:")]
+        public void ThenUserSeesThatDropdownContainsFollowingOptions(string dropDownName,
+            Table options)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.GetDropdownByName(dropDownName).Click();
+            List<string> actualOptions = page.GetDropdownValues();
+            page.BodyContainer.Click();
+            Utils.Verify.That(actualOptions,
+                Is.SupersetOf(options.Rows.Select(x => x.Values).Select(x => x.FirstOrDefault())),
+                "Some options are missing!");
+        }
+
         #endregion
 
         #region Datepicker
@@ -361,6 +375,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             action.ClickButtonByName(buttonName);
+        }
+
+        [When(@"User double clicks '(.*)' button")]
+        public void WhenUserDoubleClicksButton(string buttonName)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            _driver.DoubleClick(action.GetButtonByName(buttonName));
         }
 
         #endregion

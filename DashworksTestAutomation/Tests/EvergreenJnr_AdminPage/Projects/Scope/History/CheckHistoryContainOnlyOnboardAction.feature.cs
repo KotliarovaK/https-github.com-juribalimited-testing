@@ -242,7 +242,7 @@ this.FeatureBackground();
  testRunner.When("User selects \"Onboard User Object\" checkbox from String Filter with item list on " +
                     "the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 41
- testRunner.Then("Rows counter shows \"807\" of \"1527\" rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Rows counter shows \"807\" of \"1,527\" rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -330,7 +330,7 @@ this.FeatureBackground();
  testRunner.When("User selects \"Onboard Device Object\" checkbox from String Filter with item list o" +
                     "n the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 59
- testRunner.Then("Rows counter shows \"41405\" of \"60371\" rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Rows counter shows \"41,405\" of \"60,371\" rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

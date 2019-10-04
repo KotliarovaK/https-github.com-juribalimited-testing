@@ -453,7 +453,17 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IWebElement GetGridCellByText(string cellText)
         {
-            return Driver.FindElements(By.XPath(GridCell)).Where(x => x.GetAttribute("innerHTML").Contains(cellText)).FirstOrDefault();
+            var allCellsWithExpectedText = Driver.FindElements(By.XPath(GridCell))
+                .Where(x => x.GetAttribute("innerHTML").Contains(cellText)).ToList();
+
+            if (allCellsWithExpectedText.Any())
+            {
+                return allCellsWithExpectedText.FirstOrDefault();
+            }
+            else
+            {
+                throw new Exception($"Unable to find cell with '{cellText}' text");
+            }
         }
 
         public void ContextClickOnCell(string cellText)
@@ -514,6 +524,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public List<string> GetDropdownValues()
         {
+            Driver.WaitForElementsToBeDisplayed(By.XPath(_dropdownOptions));
             var optionsList = Driver.FindElements(By.XPath(_dropdownOptions));
             if (!optionsList.Any())
                 throw new Exception($"Unable to get dropdown values");
@@ -938,8 +949,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IWebElement GetSettingButtonByName(string settingName)
         {
-            Driver.WaitForElementToBeDisplayed(By.XPath($".//span[@id='eName'][text()='{settingName}']"));
-            return Driver.FindElement(By.XPath($".//span[@id='eName'][text()='{settingName}']"));
+            Driver.WaitForElementToBeDisplayed(By.XPath($".//span[@ref='eName'][text()='{settingName}']"));
+            return Driver.FindElement(By.XPath($".//span[@ref='eName'][text()='{settingName}']"));
         }
 
         public IWebElement GetSettingOptionByName(string optionName)
@@ -1137,11 +1148,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElements(selector);
         }
 
-        public IWebElement GetFirstGridItemByName(string itemName)
-        {
-            var selector = By.XPath($".//div[@col-id='application' and @role='gridcell']//a[contains(text(), '{itemName}')]");
-            return Driver.FindElements(selector).First();
-        }
+        #region Expandable multiselect
 
         //For adding Project Scope items, Buckets and Create Teams page
         public void AddItem(string itemName)
@@ -1221,5 +1228,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 return null;
             }
         }
+
+        #endregion
     }
 }

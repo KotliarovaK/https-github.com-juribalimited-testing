@@ -10,7 +10,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEmptyGreenAlertLineIsNotDisplayedOnPro
 	When Project created via API and opened
 	| ProjectName   | Scope     | ProjectTemplate | Mode               |
 	| TestName11881 | All Users | None            | Standalone Project |
-	When User navigates to the 'Projects' left menu item
 	Then Project "TestName11881" is displayed to user
 	When User selects "Scope" tab on the Project details page
 	When User selects "Scope Details" tab on the Project details page
@@ -118,7 +117,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorIsNotDisplayedWhenCreatingProject
 	And User select "Maps to Evergreen" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
 	Then "Unassigned" content is displayed in "Maps to Evergreen" column
-	When User navigates to the 'Evergreen' left menu item
 	When User navigates to the 'Capacity Units' left menu item
 	When User clicks String Filter button for "Project" column on the Admin page
 	When User selects "Evergreen" checkbox from String Filter with item list on the Admin page

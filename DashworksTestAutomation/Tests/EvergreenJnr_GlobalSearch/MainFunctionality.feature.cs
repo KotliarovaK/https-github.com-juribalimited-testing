@@ -474,7 +474,7 @@ this.FeatureBackground();
 #line 82
  testRunner.Then("Version column of Search Results has no Unknown item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 83
- testRunner.When("User clicks first \"ACDSee 4.0 SendPix & Email Update\" item in grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'ACDSee 4.0 SendPix & Email Update\' cell from \'[9999999]\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 84
  testRunner.Then("Value column of Item Details has no Unknown item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
