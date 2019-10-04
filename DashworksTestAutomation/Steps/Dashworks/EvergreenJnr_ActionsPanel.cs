@@ -67,23 +67,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.ActionsDropdown.Click();
         }
 
-        [When(@"User selects ""(.*)"" value for ""(.*)"" dropdown with search on Action panel")]
-        public void WhenUserSelectsValueForDropdownWithSearchOnActionPanel(string value, string field)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            action.GetDropdownWithSearchByFieldName(field).Click();
-            action.GetOptionByName(value).Click();
-        }
-
-        //TODO remove and replace by WhenUserSelectsInTheDropdown
-        [When(@"User selects ""(.*)"" value for ""(.*)"" dropdown on Action panel")]
-        public void WhenUserSelectsValueForDropdownOnActionPanel(string value, string field)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            action.GetDropdownByFieldName(field).Click();
-            action.GetOptionByName(value).Click();
-        }
-
         [Then(@"Bulk Update Type dropdown is displayed on Action panel")]
         public void ThenBulkUpdateTypeDropdownIsDisplayedOnActionPanel()
         {

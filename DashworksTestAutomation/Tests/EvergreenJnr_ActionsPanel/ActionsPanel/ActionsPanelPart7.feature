@@ -47,7 +47,7 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User selects "No change" Update Value on Action panel
 	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters 'Nov 29, 2018' text to 'Date' datepicker
-	And User selects "User Slot" value for "Capacity Slot" dropdown on Action panel
+	And User selects 'User Slot' in the 'Capacity Slot' dropdown
 	And User selects "Update" Update Owner on Action panel
 	And User selects "<NewTeam>" Team on Action panel
 	When User navigate to the bottom of the Action panel
@@ -67,7 +67,7 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User selects "No change" Update Value on Action panel
 	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters 'Jan 5, 2019' text to 'Date' datepicker
-	And User selects "User Slot" value for "Capacity Slot" dropdown on Action panel
+	And User selects 'User Slot' in the 'Capacity Slot' dropdown
 	And User selects "Update" Update Owner on Action panel
 	And User selects "<DefaultTeam>" Team on Action panel
 	And User navigate to the bottom of the Action panel
@@ -126,7 +126,7 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User selects "<NewValue>" Value on Action panel
 	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters 'Nov 28, 2018' text to 'Date' datepicker
-	And User selects "User Slot" value for "Capacity Slot" dropdown on Action panel
+	And User selects 'User Slot' in the 'Capacity Slot' dropdown
 	When User navigate to the bottom of the Action panel
 	And User selects "No change" Update Owner on Action panel
 	And User clicks 'UPDATE' button 
@@ -146,7 +146,7 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User selects "<DefaultValue>" Value on Action panel
 	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters 'Jan 9, 2019' text to 'Date' datepicker
-	And User selects "User Slot" value for "Capacity Slot" dropdown on Action panel
+	And User selects 'User Slot' in the 'Capacity Slot' dropdown
 	When User navigate to the bottom of the Action panel
 	And User selects "No change" Update Owner on Action panel
 	And User navigate to the bottom of the Action panel
@@ -225,7 +225,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly
 	And User selects "Failed" Value on Action panel
 	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters 'Nov 23, 2018' text to 'Date' datepicker
-	And User selects "User Slot" value for "Capacity Slot" dropdown on Action panel
+	And User selects 'User Slot' in the 'Capacity Slot' dropdown
 	And User navigate to the bottom of the Action panel
 	And User selects "No change" Update Owner on Action panel
 	And User clicks 'UPDATE' button 
@@ -276,7 +276,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly
 	And User selects "No change" Update Value on Action panel
 	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters 'Nov 21, 2018' text to 'Date' datepicker
-	And User selects "User Slot" value for "Capacity Slot" dropdown on Action panel
+	And User selects 'User Slot' in the 'Capacity Slot' dropdown
 	And User selects "Remove owner and team" Update Owner on Action panel
 	And User clicks 'UPDATE' button 
 	Then the amber message is displayed correctly
@@ -294,7 +294,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly
 	And User selects "No change" Update Value on Action panel
 	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters 'Dec 27, 2018' text to 'Date' datepicker
-	And User selects "User Slot" value for "Capacity Slot" dropdown on Action panel
+	And User selects 'User Slot' in the 'Capacity Slot' dropdown
 	And User selects "No change" Update Owner on Action panel
 	And User clicks 'UPDATE' button 
 	Then the amber message is displayed correctly

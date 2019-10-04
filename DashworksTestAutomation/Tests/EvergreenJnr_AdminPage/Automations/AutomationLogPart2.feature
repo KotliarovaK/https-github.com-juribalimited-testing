@@ -247,7 +247,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedA
 	And User selects "Started" Value on Action panel
 	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters '3 Oct 2019' text to 'Date' datepicker
-	And User selects "Radio Slot" value for "Capacity Slot" dropdown on Action panel
+	And User selects 'Radio Slot' in the 'Capacity Slot' dropdown
 	And User clicks 'CREATE' button 
 	#Create Action
 	When User clicks "Automations" navigation link on the Admin page

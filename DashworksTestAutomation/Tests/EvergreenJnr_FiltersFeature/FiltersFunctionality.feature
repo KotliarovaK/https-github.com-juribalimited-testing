@@ -382,7 +382,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
 	And User selects "Evergreen" option in "Project or Evergreen" drop-down on Action panel
-	And User selects "CapacityUnit13201" value for "Capacity Unit" dropdown with search on Action panel
+	And User selects 'CapacityUnit13201' option from 'Capacity Unit' autocomplete
 	And User clicks 'UPDATE' button 
 	Then User clicks "UPDATE" button on message box
 	When User clicks the Filters button
@@ -403,7 +403,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
 	And User selects "Evergreen" option in "Project or Evergreen" drop-down on Action panel
-	And User selects "CapacityUnit13201" value for "Capacity Unit" dropdown with search on Action panel
+	And User selects 'CapacityUnit13201' option from 'Capacity Unit' autocomplete
 	And User clicks 'UPDATE' button 
 	Then User clicks "UPDATE" button on message box
 	When User clicks the Filters button
@@ -425,7 +425,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
 	And User selects "Evergreen" option in "Project or Evergreen" drop-down on Action panel
-	And User selects "CapacityUnit13201" value for "Capacity Unit" dropdown with search on Action panel
+	And User selects 'CapacityUnit13201' option from 'Capacity Unit' autocomplete
 	And User clicks 'UPDATE' button 
 	Then User clicks "UPDATE" button on message box
 	When User clicks the Filters button
@@ -446,7 +446,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
 	And User selects "Evergreen" option in "Project or Evergreen" drop-down on Action panel
-	And User selects "CapacityUnit13201" value for "Capacity Unit" dropdown with search on Action panel
+	And User selects 'CapacityUnit13201' option from 'Capacity Unit' autocomplete
 	And User clicks 'UPDATE' button 
 	Then User clicks "UPDATE" button on message box
 	When User clicks the Filters button

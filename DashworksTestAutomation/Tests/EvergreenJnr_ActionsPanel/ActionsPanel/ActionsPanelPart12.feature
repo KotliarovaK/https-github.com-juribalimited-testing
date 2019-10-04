@@ -26,7 +26,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatCapacityAffectingNonCapacityEnabled
 	And User selects 'Migrated Date' option from 'Task' autocomplete
 	And User selects 'Update' in the 'Update Date' dropdown
 	And User selects next Tuesday Date on Action panel
-	And User selects "None" value for "Capacity Slot" dropdown on Action panel
+	And User selects 'None' in the 'Capacity Slot' dropdown
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
