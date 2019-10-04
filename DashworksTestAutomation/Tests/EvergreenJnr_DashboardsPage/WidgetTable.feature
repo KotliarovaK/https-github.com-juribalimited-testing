@@ -18,6 +18,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorAppearsWhenCreating
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14920 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccursWhenCreatingDashboardWidgetThatUsesBooleanField
+	When User clicks 'Devices' on the left-hand menu
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName           |
 	| Secure Boot Enabled  |
@@ -93,6 +94,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetDisplayedFullyInPrevie
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS16275 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckCapacitySlotsDisplayOrderInDashboards
+	When User clicks 'Devices' on the left-hand menu
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName                                        |
 	| Windows7Mi: Pre-Migration \ Scheduled Date (Slot) |
@@ -123,6 +125,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckCapacitySlotsDisplayOrderInDashboards
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15826 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckRingsDisplayOrderInAWidgetOnDashboard
+	When User clicks 'Devices' on the left-hand menu
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName                   |
 	| UserEvergr: Ring (All Users) |
@@ -170,6 +173,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingAggregateFunctionWhereTh
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenFirstAggregateFunctionIsSelected
+	When User clicks 'Users' on the left-hand menu
 	When User add following columns using URL to the "Users" page:
 	| ColumnName                   |
 	| Last Logon Date |
@@ -192,6 +196,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenFirstAgg
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenLastAggregateFunctionIsSelected
+	When User clicks 'Users' on the left-hand menu
 	When User add following columns using URL to the "Users" page:
 	| ColumnName                   |
 	| Last Logon Date |
@@ -230,6 +235,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckClickthoughNumbersBasedArchivedItemsR
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18145 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatNoEndlessSpinnerInPreviewIfCreateWidgetUsingSeverityAggregateFunction
+	When User clicks 'Devices' on the left-hand menu
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName                           |
 	| Compliance                           |
