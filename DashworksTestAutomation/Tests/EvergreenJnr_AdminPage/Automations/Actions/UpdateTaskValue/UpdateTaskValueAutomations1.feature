@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18320 @Cleanup @Not_Ready
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18320 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatProjectWithoutTasksForScopeIsNotDisplayedInProjectDropdown
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope            | Run    |
@@ -20,7 +20,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectWithoutTasksForScopeIsNotDispla
 	When User selects '1803 Rollout' option from 'Project' autocomplete
 	When User selects 'Pre-Migration' option from 'Stage' autocomplete
 	When User selects 'App Workflow' option from 'Task' autocomplete
-	#When User types "Not Started" Value on Action panel
 	And User selects 'Not Started' in the 'Value' dropdown
 	And User clicks 'CREATE' button 
 	#Create Action

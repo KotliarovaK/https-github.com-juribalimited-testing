@@ -5,8 +5,8 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18187 @Cleanup @Not_Ready
-#Waiting 'Update custom field' in the 'Action Type' dropdown for automation
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18187 @DAS18289 @Cleanup @Not_Ready
+#Waiting for 'Phoenix Field' from GD to automation
 Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomFieldAddToExistingValues
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope              | Run    |
@@ -32,17 +32,25 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	Then "SUCCESS" content is displayed for "Outcome" column
 	When User clicks String Filter button for "Type" column on the Admin page
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
-	And User clicks content from "Objects" column
+	#DAS18289
+	When User have opened column settings for "Automation" column
+	And User clicks Column button on the Column Settings panel
+	And User select "Action Value" checkbox on the Column Settings panel
+	When User enters "xxx, ccc" text in the Search field for "Action Value" column
+	Then "18187_Action" content is displayed for "Action" column
+	#DAS18289
+	When User enters "933" text in the Search field for "Objects" column
+	When User clicks content from "Objects" column
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName    |
 	| Phoenix Field |
-	Then "zero, ccc, xxx" content is displayed in "Phoenix Field" column
+	Then "zero, xxx, ccc" content is displayed in "Phoenix Field" column
 		#Revert 'Update custom field' changes to default
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User clicks "Automations" navigation link on the Admin page
+	When User navigates to the 'Automations' left menu item
 	When User enters "18187_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
 	When User navigates to the 'Actions' left menu item
@@ -56,10 +64,8 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	When User clicks "Run now" option in Cog-menu for "18187_Automation" item on Admin page
 	When User selects "Automation Log" tab on the Project details page
 	When User clicks refresh button in the browser
-	When User enters "18187_Automation" text in the Search field for "Automation" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
-	And User clicks content from "Objects" column
+	When User enters "933" text in the Search field for "Objects" column
+	When User clicks content from "Objects" column
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
