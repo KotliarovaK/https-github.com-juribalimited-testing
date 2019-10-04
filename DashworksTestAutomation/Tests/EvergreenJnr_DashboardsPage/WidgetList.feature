@@ -56,7 +56,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDataFromTheWidgetMatchesTheOrigin
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17814 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThahtArchivedObjectsShouldNotBeLinkedToObjectDetailsFromListWidgetsClickThrough
 	When User clicks 'Devices' on the left-hand menu
-	And User sets includes archived devices in "true"
+	And User sets includes archived devices in 'true'
 	And User create dynamic list with "List17814" name on "Devices" page
 	When Dashboard with "Dashboard for DAS17814" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page

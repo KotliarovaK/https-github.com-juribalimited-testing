@@ -107,6 +107,22 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'actions-right-button')]/button[@aria-label='reload']")]
         public IWebElement RefreshButton { get; set; }
 
+        #region Lists Action Bar Old version
+
+        [FindsBy(How = How.XPath, Using = "//i[contains(@class, 'icon-export')]/ancestor::button")]
+        public IWebElement ExportListButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//i[contains(@class, 'material-icons restore')]/ancestor::button")]
+        public IWebElement ArchivedDevicesIcon { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//*[contains(text(), 'Archived devices not included')]")]
+        public IWebElement ArchivedDevicesNotIncludedTooltip { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//*[contains(text(), 'Archived devices included')]")]
+        public IWebElement ArchivedDevicesIncludedTooltip { get; set; }
+
+        #endregion
+
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'checkbox-styled')]//mat-checkbox")]
         public IWebElement SelectAllCheckBox { get; set; }
 

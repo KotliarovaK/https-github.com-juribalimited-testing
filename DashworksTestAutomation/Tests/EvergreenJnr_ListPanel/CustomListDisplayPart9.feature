@@ -72,9 +72,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFilterNameIsNotChangedAfterRenameWhi
 	And User changes list name to "EDITED_Device_Filter_DAS_12917"
 	And User clicks the Filters button
 	And User click Edit button for "Application Compliance" filter
-	And User change selected checkboxes:
-	| Option | State |
-	| Red    | false |
+	And User closes "Red" Chip item in the Filter panel
+	And User clicks 'UPDATE' button
 	Then "EDITED_Device_Filter_DAS_12917" edited list is displayed to user
 
 @Evergreen @Devices @CustomListDisplay @EvergreenJnr_ListPanel @DAS17711 @Cleanup

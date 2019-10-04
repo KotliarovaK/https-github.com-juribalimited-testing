@@ -21,9 +21,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterNameIsNotChangedAfterRena
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User click Edit button for "Compliance" filter
-	And User change selected checkboxes:
-	| Option | State |
-	| Amber  | false |
+	And User closes "Amber" Chip item in the Filter panel
+	And User clicks 'UPDATE' button
 	Then "EDITED_Application_Filter_DAS_12917" edited list is displayed to user
 
 @Evergreen @Mailboxes @CustomListDisplay @EvergreenJnr_ListPanel @DAS12917 @Cleanup

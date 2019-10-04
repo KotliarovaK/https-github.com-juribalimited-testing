@@ -84,7 +84,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAdminTabIsHighlightedAfterClickingOnAu
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS16844 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCanBeCreatedWithListHavingArchivedItems
 	When User clicks 'Devices' on the left-hand menu
-	And User sets includes archived devices in "true"
+	And User sets includes archived devices in 'true'
 	And User create dynamic list with "List16844" name on "Devices" page
 	And User clicks 'Admin' on the left-hand menu
 	And User navigates to the 'Automations' left menu item

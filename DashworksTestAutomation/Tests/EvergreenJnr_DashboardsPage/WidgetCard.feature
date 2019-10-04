@@ -7,7 +7,8 @@ Background: Pre-Conditions
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15364 @DAS15316 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingCardWidgetUsedCpuVirtField
-When User add following columns using URL to the "Devices" page:
+	When User clicks 'Devices' on the left-hand menu
+	When User add following columns using URL to the "Devices" page:
 	| ColumnName                 |
 	| CPU Virtualisation Capable |
 	And User move 'CPU Virtualisation Capable' column to 'Hostname' column
@@ -171,6 +172,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIncludeSelectionOfEverg
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15722 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetHavingDateColumnsDisplayedCorrectlyOnDashboard
+	When User clicks 'Devices' on the left-hand menu
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName |
 	| Build Date |
@@ -193,6 +195,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetHavingDateColumnsDispla
 
 @Evergreen@EvergreenJnr_DashboardsPage @Widgets @DAS15355 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckComplianceFirstCellIconsForCardWidget
+	When User clicks 'Applications' on the left-hand menu
 	When User add following columns using URL to the "Applications" page:
 	| ColumnName |
 	| Compliance |
@@ -380,6 +383,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhe
 	
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16336 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorsInConsoleAfterAddingApplicationReadinessFirstCellWidget
+	When User clicks 'Applications' on the left-hand menu
 	When User add following columns using URL to the "Applications" page:
 	| ColumnName                        |
 	| MigrationP: Application Readiness |
@@ -476,6 +480,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckWidgetCreatingFromListHavingSortedRin
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15514 @Cleanup
 Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatCardSelectingAggregateFunctionShowsFieldsWithCorrectDatatypeInAggregateByDropdown
+	When User clicks 'Devices' on the left-hand menu
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName                           |
 	| Device Key                           |
@@ -505,7 +510,7 @@ Examples:
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16844 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatArchivedItemsIncludedInCountWhenReferencingDynamicListContainsArchivedItems
 	When User clicks 'Devices' on the left-hand menu
-	And User sets includes archived devices in "true"
+	And User sets includes archived devices in 'true'
 	Then 'All Devices' list should be displayed to the user
 	When User create dynamic list with "List16844" name on "Devices" page
 	And Dashboard with "Dashboard for DAS16844" name created via API and opened
@@ -524,7 +529,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatArchivedItemsIncludedInCountWhenR
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16844 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatArchivedItemsIncludedInCountWhenReferencingStaticListContainsArchivedItems
 	When User clicks 'Devices' on the left-hand menu
-	And User sets includes archived devices in "true"
+	And User sets includes archived devices in 'true'
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Hostname" rows in the grid

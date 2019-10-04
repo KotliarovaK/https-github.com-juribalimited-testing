@@ -7,10 +7,7 @@ Background: Pre-Conditions
 
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
 Scenario: EvergreenJnr_ApplicationsList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForDetailsTabAdvertisementsOnApplicationsPage
-	When User clicks 'Applications' on the left-hand menu
-	Then 'All Applications' list should be displayed to the user
-	When User perform search by "Accessible FormNet Fill 2.2"
-	And User click content from "Application" column
+	When User navigates to the 'Application' details page for 'Accessible FormNet Fill 2.2' item
 	Then Details page for "Accessible FormNet Fill 2.2" item is displayed to the user
 	When User navigates to the "Advertisements" sub-menu on the Details page
 	Then 'TRUE' content is displayed in the 'Active' column
@@ -22,10 +19,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatOnlyValueIncludedInTheColumnIsD
 
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
 Scenario: EvergreenJnr_ApplicationsList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForMsiTabOnApplicationsPage
-	When User clicks 'Applications' on the left-hand menu
-	Then 'All Applications' list should be displayed to the user
-	When User perform search by "Accessible FormNet Fill 2.2"
-	And User click content from "Application" column
+	When User navigates to the 'Application' details page for 'Accessible FormNet Fill 2.2' item
 	Then Details page for "Accessible FormNet Fill 2.2" item is displayed to the user
 	When User navigates to the 'MSI' left menu item
 	When User navigates to the "MSI Files" sub-menu on the Details page
@@ -73,10 +67,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatOnlyValueIncludedInTheColumnIsD
 
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
 Scenario: EvergreenJnr_ApplicationsList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForDistributionTabOnApplicationsPage
-	When User clicks 'Applications' on the left-hand menu
-	Then 'All Applications' list should be displayed to the user
-	When User perform search by "Accessible FormNet Fill 2.2"
-	And User click content from "Application" column
+	When User navigates to the 'Application' details page for 'Accessible FormNet Fill 2.2' item
 	Then Details page for "Accessible FormNet Fill 2.2" item is displayed to the user
 	When User navigates to the 'Distribution' left menu item
 	When User navigates to the "Devices" sub-menu on the Details page

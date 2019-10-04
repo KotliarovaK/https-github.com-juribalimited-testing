@@ -137,7 +137,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketA
 	And User clicks content from "Bucket" column
 	Then "1Bucket12905" bucket details is displayed to the user
 	When User clicks 'ADD DEVICE' button 
-	When User adds following Objects from list
+	When User expands 'UPDATE INPUT DATA' multiselect and selects following Buckets
 	| Objects         |
 	| 001BAQXT6JWFPI  |
 	| 001PSUMZYOW581  |
@@ -157,7 +157,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketA
 	And User clicks content from "Bucket" column
 	Then "2Bucket12905" bucket details is displayed to the user
 	When User clicks 'ADD DEVICE' button 
-	When User adds following Objects from list
+	When User expands 'UPDATE INPUT DATA' multiselect and selects following Buckets
 	| Objects         |
 	| 00I0COBFWHOF27  |
 	| 00K4CEEQ737BA4L |
@@ -180,7 +180,6 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketA
 	Then Project "Project12905" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
 	And User navigates to the 'Devices' tab on Project Scope Changes page
-	When User expands multiselect to add objects 
 	And User expands multiselect and selects following Objects
 	| Objects         |
 	| 001BAQXT6JWFPI  |

@@ -76,7 +76,7 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForDeviceScopedProject
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS12452 @DAS14705 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckGridScreenForMailboxScopedProject
-	When User clicks Admin on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	And User navigates to the 'Projects' left menu item
 	Then Page with 'Projects' header is displayed to user
 	When User enters "Email Migration" text in the Search field for "Project" column
@@ -100,12 +100,12 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForMailboxScopedProject
 	| Move to bottom   |
 	| Move to position |
 	When User clicks 'CREATE PROJECT RING' button 
-	Then Page with 'Create Project Ring' header is displayed to user
+	Then Page with 'Create Project Ring' subheader is displayed to user
 	When User type "14705_Ring" Name in the "Ring name" field on the 'Email Migration' Project details page
 	And User clicks Create button on the Create Ring page
 	Then Success message is displayed and contains "The ring has been created" text
 	When User clicks 'CREATE PROJECT RING' button 
-	Then Page with 'Create Project Ring' header is displayed to user
+	Then Page with 'Create Project Ring' subheader is displayed to user
 	When User type "Ring_Test" Name in the "Ring name" field on the 'Email Migration' Project details page
 	And User clicks Create button on the Create Ring page
 	When User clicks on 'Ring' column header

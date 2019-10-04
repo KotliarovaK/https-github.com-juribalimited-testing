@@ -18,6 +18,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorAppearsWhenCreating
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14920 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccursWhenCreatingDashboardWidgetThatUsesBooleanField
+	When User clicks 'Devices' on the left-hand menu
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName           |
 	| Secure Boot Enabled  |
@@ -93,6 +94,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetDisplayedFullyInPrevie
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS16275 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckCapacitySlotsDisplayOrderInDashboards
+	When User clicks 'Devices' on the left-hand menu
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName                                        |
 	| Windows7Mi: Pre-Migration \ Scheduled Date (Slot) |
@@ -123,6 +125,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckCapacitySlotsDisplayOrderInDashboards
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15826 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckRingsDisplayOrderInAWidgetOnDashboard
+	When User clicks 'Devices' on the left-hand menu
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName                   |
 	| UserEvergr: Ring (All Users) |
@@ -170,6 +173,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingAggregateFunctionWhereTh
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenFirstAggregateFunctionIsSelected
+	When User clicks 'Users' on the left-hand menu
 	When User add following columns using URL to the "Users" page:
 	| ColumnName                   |
 	| Last Logon Date |
@@ -192,6 +196,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenFirstAgg
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenLastAggregateFunctionIsSelected
+	When User clicks 'Users' on the left-hand menu
 	When User add following columns using URL to the "Users" page:
 	| ColumnName                   |
 	| Last Logon Date |
@@ -215,7 +220,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenLastAggr
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17599 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckClickthoughNumbersBasedArchivedItemsRedirectsToFilteredListWithEnabledArchivedItems
 	When User clicks 'Devices' on the left-hand menu
-	And User sets includes archived devices in "true"
+	And User sets includes archived devices in 'true'
 	And User create dynamic list with "List17599" name on "Devices" page
 	When Dashboard with "Dashboard for DAS17599" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
@@ -230,6 +235,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckClickthoughNumbersBasedArchivedItemsR
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18145 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatNoEndlessSpinnerInPreviewIfCreateWidgetUsingSeverityAggregateFunction
+	When User clicks 'Devices' on the left-hand menu
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName                           |
 	| Compliance                           |
@@ -364,3 +370,25 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatAggregateFuncAreNotAvailableForCo
 	| WidgetType | Title           | List        | Type      | AggregateFunction |
 	| Card       | DAS16275_Widget | All Devices | Aggregate | Severity          |
 	Then User sees "There are no fields available for this aggregate function" warning text below Lists field
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18324 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorsOccurWhenCreatingEditingTableWidgetThatReturnsZeroResults
+	When User clicks 'Devices' on the left-hand menu
+	And User clicks the Filters button
+	And User add "App Count (Entitled)" filter where type is "Equals" with added column and following value:
+    | Values |
+    | 0      |
+	And User Add And "App Count (Used)" filter where type is "Less than" with added column and following value:
+    | Values |
+    | 1      |
+	And User clicks Save button on the list panel
+	And User create dynamic list with "ListForDAS18324" name on "Devices" page
+	Then "ListForDAS18324" list is displayed to user
+	When Dashboard with "Dashboard for DAS18324" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks 'ADD WIDGET' button 
+	And User adds new Widget
+	| WidgetType | Title             | List            | SplitBy          | AggregateFunction | OrderBy          |
+	| Table      | WidgetForDAS18324 | ListForDAS18324 | App Count (Used) | Count             | App Count (Used) |
+	Then Widget Preview is displayed to the user
+	And There are no errors in the browser console

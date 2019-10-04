@@ -161,13 +161,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	And User enters "NewProjectName" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
-	When User clicks 'CREATE PROJECT' button 
-	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "TestProjectDAS11977" in the "Project Name" field
-	And User selects 'All Devices' option from 'Scope' autocomplete
-	And User clicks 'CREATE' button 
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks newly created object link
+	When Project created via API and opened
+	| ProjectName         | Scope       | ProjectTemplate | Mode               |
+	| TestProjectDAS11977 | All Devices | None            | Standalone Project |
 	Then Project "TestProjectDAS11977" is displayed to user
 	When User navigates to the 'Details' left menu item
 	And User changes Project Name to "NewProjectName"

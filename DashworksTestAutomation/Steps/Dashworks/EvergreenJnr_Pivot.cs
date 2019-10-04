@@ -9,6 +9,7 @@ using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
+using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
@@ -595,38 +596,5 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         #endregion
 
-        [Then(@"Export button is displayed")]
-        public void ThenExportButtonIsDisplayed()
-        {
-            var pivot = _driver.NowAt<PivotElementPage>();
-            Utils.Verify.IsTrue(pivot.ExportButton.Displayed(), "Export button is not displayed");
-        }
-
-        [When(@"User sets includes archived devices in ""(.*)""")]
-        public void UserIncludesArchivedDevices(string state)
-        {
-            var pivot = _driver.NowAt<PivotElementPage>();
-            _driver.WaitForDataLoading();
-
-            if (Convert.ToBoolean(state))
-            {
-                if (_driver.IsElementExists(pivot.ArchivedDevicesNotIncludedTooltip))
-                {
-                    pivot.ArchivedDevicesButton.Click();
-                    _driver.WaitFor(()=> _driver.IsElementExists(pivot.ArchivedDevicesIncludedTooltip));
-                }
-            }
-
-            else
-            {
-                if (_driver.IsElementExists(pivot.ArchivedDevicesIncludedTooltip))
-                {
-                    pivot.ArchivedDevicesButton.Click();
-                    _driver.WaitFor(() => _driver.IsElementExists(pivot.ArchivedDevicesNotIncludedTooltip));
-                }
-            }
-
-            _driver.WaitForDataLoading();
-        }
     }
 }

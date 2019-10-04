@@ -1148,11 +1148,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElements(selector);
         }
 
-        public IWebElement GetFirstGridItemByName(string itemName)
-        {
-            var selector = By.XPath($".//div[@col-id='application' and @role='gridcell']//a[contains(text(), '{itemName}')]");
-            return Driver.FindElements(selector).First();
-        }
+        #region Expandable multiselect
 
         //For adding Project Scope items, Buckets and Create Teams page
         public void AddItem(string itemName)
@@ -1232,5 +1228,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 return null;
             }
         }
+
+        #endregion
     }
 }

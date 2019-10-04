@@ -8,7 +8,7 @@ Background: Pre-Conditions
 @Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS17651 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatArchivedItemStillRemainsInStaticList
 	When User clicks 'Devices' on the left-hand menu
-	And User sets includes archived devices in "true"
+	And User sets includes archived devices in 'true'
 	And User clicks the Actions button
 	And User select "Hostname" rows in the grid
 	| SelectedRowsName |
@@ -50,6 +50,21 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatArchivedItemsCheckboxDisplayedInL
 	And User clicks the List Details button
 	Then List details panel is displayed to the user
 	And 'Archived devices included' label is displayed in List Details
+	When User clicks 'Archived devices included' checkbox in List Details
+	Then Archived devices icon enabled state is 'true' in toolbar
+	And Save as a new list option is available
+
+@Evergreen @Devices @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS17440 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckArchivedItemsIconDisplayingAfterDeselectingArchivedItems
+	When User clicks 'Devices' on the left-hand menu
+	And User sets includes archived devices in 'true'
+	And User create dynamic list with "List17440" name on "Devices" page
+	And User clicks "List17440" list name in left panel
+	And User clicks the List Details button
+	Then List details panel is displayed to the user
+	When User clicks 'Archived devices included' checkbox in List Details
+	Then Archived devices icon enabled state is 'false' in toolbar
+	And Save as a new list option is available
 
 @Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18089
 Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatArchivedItemsCheckboxINotDisplayedInListDetails

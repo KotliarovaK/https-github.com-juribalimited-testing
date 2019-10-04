@@ -105,7 +105,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatGreenBannerIsNotVisibleOnTheOtherPag
 Scenario: EvergreenJnr_DevicesList_CheckThatAddingAndRemovingColumnsInPopUpWorksCorrectly
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
-	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
+	When User switches to the "USE ME FOR AUTOMATION(DEVICE SCHDLD)" project in the Top bar on Item details page
 	And User navigates to the 'Projects' left menu item
 	And User navigates to the "Project Details" sub-menu on the Details page
 	And User clicks 'OFFBOARD' button 
@@ -123,7 +123,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddingAndRemovingColumnsInPopUpWorks
 	| Display Name |
 	| Domain       |
 	| Owner        |
-	And User selects state 'false' for 'Offboard all associated users' checkbox
+	And User selects state 'true' for 'Offboard all associated users' checkbox
 	And following columns are displayed on the Item details page:
 	| ColumnName   |
 	| Username     |
@@ -134,23 +134,21 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddingAndRemovingColumnsInPopUpWorks
 	And User clicks Column button on the Column Settings panel
 	And User select "Username" checkbox on the Column Settings panel
 	And User select "Display Name" checkbox on the Column Settings panel
-	And User select "Domain" checkbox on the Column Settings panel
-	And User clicks Column button on the Column Settings panel
-	Then following columns are displayed on the Item details page:
-	| ColumnName   |
-	| Owner        |
-	When User have opened Column Settings for "Owner" column
-	And User clicks Column button on the Column Settings panel
-	And User select "Domain" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
 	Then following columns are displayed on the Item details page:
 	| ColumnName   |
 	| Domain       |
 	| Owner        |
 	When User have opened Column Settings for "Owner" column
-	And User clicks Column button on the Column Settings panel
-	And User select "Username" checkbox on the Column Settings panel
 	And User select "Display Name" checkbox on the Column Settings panel
+	And User clicks Column button on the Column Settings panel
+	Then following columns are displayed on the Item details page:
+	| ColumnName   |
+	| Display Name |
+	| Domain       |
+	| Owner        |
+	When User have opened Column Settings for "Owner" column
+	And User select "Username" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
 	Then following columns are displayed on the Item details page:
 	| ColumnName   |
