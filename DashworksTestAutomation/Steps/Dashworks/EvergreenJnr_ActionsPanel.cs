@@ -84,32 +84,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.GetOptionByName(value).Click();
         }
 
-        [When(@"User selects ""(.*)"" in the Actions dropdown")]
-        public void WhenUserSelectsInTheActionsDropdown(string actionsName)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            //Wait until all rows are selected
-            Thread.Sleep(3000);
-            _driver.WaitForElementToBeDisplayed(action.ActionsDropdown);
-            action.ActionsDropdown.Click();
-            action.GetOptionByName(actionsName).Click();
-        }
-
-        [When(@"User selects ""(.*)"" Bulk Update Type on Action panel")]
-        public void WhenUserSelectsBulkUpdateTypeOnActionPanel(string typeName)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitForDataLoading();
-            action.BulkUpdateTypeDropdown.Click();
-            _driver.WaitForDataLoading();
-            action.GetOptionByName(typeName).Click();
-        }
-
         [Then(@"Bulk Update Type dropdown is displayed on Action panel")]
         public void ThenBulkUpdateTypeDropdownIsDisplayedOnActionPanel()
         {
             var action = _driver.NowAt<BaseDashboardPage>();
-            Utils.Verify.IsTrue(action.BulkUpdateTypeDropdown.Displayed(),
+            Verify.IsTrue(action.BulkUpdateTypeDropdown.Displayed(),
                 "Bulk Update Type dropdown is not displayed on Action panel");
         }
 
@@ -120,16 +99,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.ProjectOrEvergreenField.Click();
             _driver.WaitForElementToBeDisplayed(action.ProjectSection);
             action.ActionsProjectOrEvergreenOptions.Where(x => x.Text.Equals(projectName)).FirstOrDefault().Click();
-        }
-
-        [When(@"User selects ""(.*)"" Project on Action panel")]
-        public void WhenUserSelectsProjectOnActionPanel(string projectName)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            action.ProjectField.Clear();
-            action.ProjectField.SendKeys(projectName);
-            _driver.WaitForElementToBeDisplayed(action.ProjectSection);
-            action.ProjectSection.Click();
         }
 
         [Then(@"Projects are displayed in alphabetical order on Action panel")]
@@ -173,17 +142,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.PathDropdown.Clear();
             action.PathDropdown.SendKeys(requestType);
             action.GetOptionByName(requestType).Click();
-        }
-
-        [When(@"User selects ""(.*)"" Stage on Action panel")]
-        public void WhenUserSelectsStageOnActionPanel(string stageValue)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitForElementToBeDisplayed(action.StageField);
-            action.StageField.Clear();
-            action.StageField.SendKeys(stageValue);
-            action.GetOptionByName(stageValue).Click();
-            _driver.WaitForDataLoading();
         }
 
         //TODO Remove this step
@@ -343,17 +301,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.BodyContainer.Click();
         }
 
-        [When(@"User selects ""(.*)"" Task on Action panel")]
-        public void WhenUserSelectsTaskOnActionPanel(string taskNAme)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            action.TaskField.Click();
-            action.TaskField.Clear();
-            action.TaskField.SendKeys(taskNAme);
-            action.GetOptionByName(taskNAme).Click();
-            _driver.WaitForDataLoading();
-        }
-
         [When(@"User types ""(.*)"" Value on Action panel")]
         public void WhenUserTypesValueOnActionPanel(string value)
         {
@@ -408,18 +355,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.UpdateValueDropdown.Click();
             _driver.WaitForElementsToBeDisplayed(action.OptionListOnActionsPanel);
             var actualList = action.OptionListOnActionsPanel.Select(value => value.Text).ToList();
-            Utils.Verify.AreEqual(expectedList, actualList, "Update Value options are different");
+            Verify.AreEqual(expectedList, actualList, "Update Value options are different");
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             page.BodyContainer.Click();
-        }
-
-        //TODO replace by WhenUserSelectsInTheDropdown
-        [When(@"User selects ""(.*)"" Update Date on Action panel")]
-        public void WhenUserSelectsUpdateDateOnActionPanel(string updateDate)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            action.UpdateDateDropdown.Click();
-            action.GetOptionByName(updateDate).Click();
         }
 
         [Then(@"Datepicker has tooltip with ""(.*)"" rows for value ""(.*)""")]

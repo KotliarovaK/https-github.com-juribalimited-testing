@@ -67,7 +67,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatUserIsNotAbleToCreateListsWithLongN
 	Then list with "1234567890123456789012345678901234567890" name is removed
 	When User clicks the Actions button
 	And User select all rows
-	And User selects "Create static list" in the Actions dropdown
+	And User selects 'Create static list' in the 'Action' dropdown
 	When User create static list with "1234567890123456789012345678901234567890111" name
 	Then list name automatically changed to "1234567890123456789012345678901234567890" name
 	And "1234567890123456789012345678901234567890" list is displayed to user

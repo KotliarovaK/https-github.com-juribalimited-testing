@@ -39,13 +39,13 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	When User select "Username" rows in the grid
 	| SelectedRowsName |
 	| <RowName>        |
-	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update task value" Bulk Update Type on Action panel
-	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
-	And User selects "User Acceptance Test" Stage on Action panel
-	And User selects "Perform User Acceptance Test" Task on Action panel
+	And User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
+	And User selects 'User Acceptance Test' option from 'Stage' autocomplete
+	And User selects 'Perform User Acceptance Test' option from 'Task' autocomplete
 	And User selects "No change" Update Value on Action panel
-	And User selects "Update" Update Date on Action panel
+	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters 'Nov 29, 2018' text to 'Date' datepicker
 	And User selects "User Slot" value for "Capacity Slot" dropdown on Action panel
 	And User selects "Update" Update Owner on Action panel
@@ -59,13 +59,13 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	When User refreshes agGrid
 	Then "<DefaultValue>" content is displayed in "Windows7Mi: User Acceptance Test \ Perform User Acceptance Test" column
 	#returns default object state
-	When User selects "Bulk update" in the Actions dropdown
-	And User selects "Update task value" Bulk Update Type on Action panel
-	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
-	And User selects "User Acceptance Test" Stage on Action panel
-	And User selects "Perform User Acceptance Test" Task on Action panel
+	When User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
+	And User selects 'User Acceptance Test' option from 'Stage' autocomplete
+	And User selects 'Perform User Acceptance Test' option from 'Task' autocomplete
 	And User selects "No change" Update Value on Action panel
-	And User selects "Update" Update Date on Action panel
+	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters 'Jan 5, 2019' text to 'Date' datepicker
 	And User selects "User Slot" value for "Capacity Slot" dropdown on Action panel
 	And User selects "Update" Update Owner on Action panel
@@ -117,14 +117,14 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	When User select "Username" rows in the grid
 	| SelectedRowsName |
 	| <RowName>        |
-	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update task value" Bulk Update Type on Action panel
-	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
-	And User selects "User Acceptance Test" Stage on Action panel
-	And User selects "Perform User Acceptance Test" Task on Action panel
+	And User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
+	And User selects 'User Acceptance Test' option from 'Stage' autocomplete
+	And User selects 'Perform User Acceptance Test' option from 'Task' autocomplete
 	And User selects "Update" Update Value on Action panel
 	And User selects "<NewValue>" Value on Action panel
-	And User selects "Update" Update Date on Action panel
+	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters 'Nov 28, 2018' text to 'Date' datepicker
 	And User selects "User Slot" value for "Capacity Slot" dropdown on Action panel
 	When User navigate to the bottom of the Action panel
@@ -137,14 +137,14 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	When User refreshes agGrid
 	Then "<NewValue>" content is displayed in "Windows7Mi: User Acceptance Test \ Perform User Acceptance Test" column
 	#returns default object state
-	When User selects "Bulk update" in the Actions dropdown
-	And User selects "Update task value" Bulk Update Type on Action panel
-	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
-	And User selects "User Acceptance Test" Stage on Action panel
-	And User selects "Perform User Acceptance Test" Task on Action panel
+	When User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
+	And User selects 'User Acceptance Test' option from 'Stage' autocomplete
+	And User selects 'Perform User Acceptance Test' option from 'Task' autocomplete
 	And User selects "Update" Update Value on Action panel
 	And User selects "<DefaultValue>" Value on Action panel
-	And User selects "Update" Update Date on Action panel
+	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters 'Jan 9, 2019' text to 'Date' datepicker
 	And User selects "User Slot" value for "Capacity Slot" dropdown on Action panel
 	When User navigate to the bottom of the Action panel
@@ -198,14 +198,14 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly
 	When User select "Username" rows in the grid
 	| SelectedRowsName |
 	| LZI970280        |
-	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update task value" Bulk Update Type on Action panel
-	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
-	And User selects "User Acceptance Test" Stage on Action panel
-	And User selects "Perform User Acceptance Test" Task on Action panel
+	And User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
+	And User selects 'User Acceptance Test' option from 'Stage' autocomplete
+	And User selects 'Perform User Acceptance Test' option from 'Task' autocomplete
 	And User selects "Update" Update Value on Action panel
 	And User selects "Complete" Value on Action panel
-	And User selects "Remove" Update Date on Action panel
+	And User selects 'Remove' in the 'Update Date' dropdown
 	And User selects "No change" Update Owner on Action panel
 	And User navigate to the bottom of the Action panel
 	And User clicks 'UPDATE' button 
@@ -216,14 +216,14 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly
 	When User refreshes agGrid
 	Then "Complete" content is displayed in "Windows7Mi: User Acceptance Test \ Perform User Acceptance Test" column
 	#returns default object state
-	When User selects "Bulk update" in the Actions dropdown
-	And User selects "Update task value" Bulk Update Type on Action panel
-	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
-	And User selects "User Acceptance Test" Stage on Action panel
-	And User selects "Perform User Acceptance Test" Task on Action panel
+	When User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
+	And User selects 'User Acceptance Test' option from 'Stage' autocomplete
+	And User selects 'Perform User Acceptance Test' option from 'Task' autocomplete
 	And User selects "Update" Update Value on Action panel
 	And User selects "Failed" Value on Action panel
-	And User selects "Update" Update Date on Action panel
+	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters 'Nov 23, 2018' text to 'Date' datepicker
 	And User selects "User Slot" value for "Capacity Slot" dropdown on Action panel
 	And User navigate to the bottom of the Action panel
@@ -268,13 +268,13 @@ Scenario: EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly
 	When User select "Username" rows in the grid
 	| SelectedRowsName |
 	| LZI970280        |
-	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update task value" Bulk Update Type on Action panel
-	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
-	And User selects "User Acceptance Test" Stage on Action panel
-	And User selects "Perform User Acceptance Test" Task on Action panel
+	And User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
+	And User selects 'User Acceptance Test' option from 'Stage' autocomplete
+	And User selects 'Perform User Acceptance Test' option from 'Task' autocomplete
 	And User selects "No change" Update Value on Action panel
-	And User selects "Update" Update Date on Action panel
+	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters 'Nov 21, 2018' text to 'Date' datepicker
 	And User selects "User Slot" value for "Capacity Slot" dropdown on Action panel
 	And User selects "Remove owner and team" Update Owner on Action panel
@@ -286,13 +286,13 @@ Scenario: EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly
 	When User refreshes agGrid
 	Then "Failed" content is displayed in "Windows7Mi: User Acceptance Test \ Perform User Acceptance Test" column
 #returns default object state
-	When User selects "Bulk update" in the Actions dropdown
-	And User selects "Update task value" Bulk Update Type on Action panel
-	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
-	And User selects "User Acceptance Test" Stage on Action panel
-	And User selects "Perform User Acceptance Test" Task on Action panel
+	When User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
+	And User selects 'User Acceptance Test' option from 'Stage' autocomplete
+	And User selects 'Perform User Acceptance Test' option from 'Task' autocomplete
 	And User selects "No change" Update Value on Action panel
-	And User selects "Update" Update Date on Action panel
+	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters 'Dec 27, 2018' text to 'Date' datepicker
 	And User selects "User Slot" value for "Capacity Slot" dropdown on Action panel
 	And User selects "No change" Update Owner on Action panel

@@ -18,7 +18,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetsCanBeCreatedWhenUsingSplit
 	| 00KLL9S8NRF0X6   |
 	| 00OMQQXWA1DRI6   |
 	| 00SH8162NAS524   |
-	And User selects "Create static list" in the Actions dropdown
+	And User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "TestList_DAS14668" name
 	And Dashboard with "Dashboard for DAS14668" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page

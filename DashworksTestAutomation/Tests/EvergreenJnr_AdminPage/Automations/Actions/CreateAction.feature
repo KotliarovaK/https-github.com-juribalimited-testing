@@ -139,7 +139,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueAction
 	When User selects 'Radio Rag Date Comp' option from 'Task' autocomplete
 	And User selects "Update" Update Value on Action panel
 	And User selects "Failed" Value on Action panel
-	And User selects "No change" Update Date on Action panel
+	And User selects 'No change' in the 'Update Date' dropdown
 	Then "CREATE" Action button is active
 	When User selects "No change" value for "Update" dropdown on Action panel
 	Then "CREATE" Action button is disabled
@@ -168,7 +168,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithRemoveOwnerIsLoaded
 	When User selects 'One' option from 'Stage' autocomplete
 	When User selects 'Radio Rag Date Owner User Req B' option from 'Task' autocomplete
 	And User selects "No change" Update Value on Action panel
-	And User selects "No change" Update Date on Action panel
+	And User selects 'No change' in the 'Update Date' dropdown
 	And User selects "Remove" Update Owner on Action panel
 	And User clicks 'CREATE' button 
 	When User clicks "Automations" navigation link on the Admin page
@@ -205,7 +205,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithUpdateOwnerIsLoaded
 	When User selects 'One' option from 'Stage' autocomplete
 	When User selects 'Radio Rag Date Owner Comp Req B' option from 'Task' autocomplete
 	And User selects "No change" Update Value on Action panel
-	And User selects "No change" Update Date on Action panel
+	And User selects 'No change' in the 'Update Date' dropdown
 	And User selects "Update" Update Owner on Action panel
 	And User selects "1803 Team" Team on Action panel
 	And User selects "Akhila Varghese" Owner on Action panel

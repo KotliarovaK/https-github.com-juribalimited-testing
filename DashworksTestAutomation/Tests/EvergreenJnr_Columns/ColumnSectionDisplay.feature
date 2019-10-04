@@ -129,7 +129,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckTheColumnCategoriesUpdatesAfterAddi
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
-	When User selects "Create static list" in the Actions dropdown
+	When User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "StaticList" name
 	Then "StaticList" list is displayed to user
 	When User clicks the Columns button
@@ -294,7 +294,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromThe
 	| SelectedRowsName |
 	| 00BDM1JUR8IF419  |
 	| 00I0COBFWHOF27   |
-	And User selects "Create static list" in the Actions dropdown
+	And User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "StaticListFromTheAllList" name
 	Then "StaticListFromTheAllList" list is displayed to user
 	When User navigates to the "All Devices" list
@@ -304,7 +304,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromThe
 	| SelectedRowsName |
 	| 00YWR8TJU4ZF8V   |
 	| 00RUUMAH9OZN9A   |
-	And User selects "Add to static list" in the Actions dropdown
+	And User selects 'Add to static list' in the 'Action' dropdown
 	Then "ADD" Action button is disabled
 	And User selects "StaticListFromTheAllList" List in Saved List dropdown
 	When User clicks 'ADD' button 
@@ -338,7 +338,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatAfterAddingRowsToAStaticListFromTheAl
 	| SelectedRowsName    |
 	| 002B5DC7D4D34D5C895 |
 	| 0072B088173449E3A93 |
-	And User selects "Create static list" in the Actions dropdown
+	And User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "StaticListFromTheAllList" name
 	Then "StaticListFromTheAllList" list is displayed to user
 	When User navigates to the "All Users" list
@@ -379,7 +379,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatAfterAddingRowsToAStaticListFr
 	| SelectedRowsName                                                |
 	| 0004 - Adobe Acrobat Reader 5.0.5 Francais                      |
 	| %SQL_PRODUCT_SHORT_NAME% Data Tools - BI for Visual Studio 2013 |
-	And User selects "Create static list" in the Actions dropdown
+	And User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "StaticListFromTheAllList" name
 	Then "StaticListFromTheAllList" list is displayed to user
 	When User navigates to the "All Applications" list
@@ -419,7 +419,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatAfterAddingRowsToAStaticListFromT
 	| SelectedRowsName                 |
 	| 000F977AC8824FE39B8@bclabs.local |
 	| 002B5DC7D4D34D5C895@bclabs.local |
-	And User selects "Create static list" in the Actions dropdown
+	And User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "StaticListFromTheAllList" name
 	Then "StaticListFromTheAllList" list is displayed to user
 	When User navigates to the "All Mailboxes" list
@@ -468,7 +468,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromADy
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 00YTY8U3ZYP2WT   |
-	And User selects "Create static list" in the Actions dropdown
+	And User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "StaticListFromADynamicList" name
 	Then "StaticListFromADynamicList" list is displayed to user
 	When User navigates to the "DynamicList13059" list
@@ -504,7 +504,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromASt
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 00BDM1JUR8IF419  |
-	And User selects "Create static list" in the Actions dropdown
+	And User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "FirstStaticList13059" name
 	Then "FirstStaticList13059" list is displayed to user
 	When User navigates to the "All Devices" list
@@ -521,7 +521,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromASt
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 00YWR8TJU4ZF8V   |
-	And User selects "Create static list" in the Actions dropdown
+	And User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "SecondStaticList13059" name
 	Then "SecondStaticList13059" list is displayed to user
 	When User navigates to the "FirstStaticList13059" list

@@ -41,7 +41,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatSaveButtonIsInactiveInCustomListCreati
 	| 003F5D8E1A844B1FAA5 |
 	| 002B5DC7D4D34D5C895 |
 	| 003F5D8E1A844B1FAA5 |
-	And User selects "Create static list" in the Actions dropdown
+	And User selects 'Create static list' in the 'Action' dropdown
 	Then User type "Test" into Static list name field
 	When User clicks the Actions button
 	And User clicks Save button on the list panel
@@ -68,7 +68,7 @@ Scenario: EvergreenJnr_DevicesList_CheckTheSortOrderIsSavedForExistingListAndNot
 	| SelectedRowsName |
 	| 00BDM1JUR8IF419  |
 	| 00K4CEEQ737BA4L  |
-	And User selects "Create static list" in the Actions dropdown
+	And User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "Static List TestName" name
 	Then "Static List TestName" list is displayed to user
 	When User clicks on 'Owner Display Name' column header

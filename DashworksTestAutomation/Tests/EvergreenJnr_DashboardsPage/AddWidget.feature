@@ -142,7 +142,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatThereIsNoPossibilityToCreateWidge
 	And User select "Email Address" rows in the grid
 	| SelectedRowsName |
 	| 000F977AC8824FE39B8@bclabs.local   |
-	And User selects "Create static list" in the Actions dropdown
+	And User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "TestList_DAS17539" name
 	And Projects created by User are removed via API
 	And Dashboard with "Dashboard for DAS17539" name created via API and opened

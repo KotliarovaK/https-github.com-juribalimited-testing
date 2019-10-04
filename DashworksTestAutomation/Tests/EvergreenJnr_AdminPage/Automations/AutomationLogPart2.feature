@@ -195,7 +195,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInDevicesScop
 	When User selects 'Readiness Date Comp Task' option from 'Task' autocomplete
 	And User selects "Update" Update Value on Action panel
 	And User selects "Started" Value on Action panel
-	And User selects "No change" Update Date on Action panel
+	And User selects 'No change' in the 'Update Date' dropdown
 	And User clicks 'CREATE' button 
 	#Create Action
 	When User clicks "Automations" navigation link on the Admin page
@@ -245,7 +245,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedA
 	When User selects 'Radio Date Slot Mail' option from 'Task' autocomplete
 	And User selects "Update" Update Value on Action panel
 	And User selects "Started" Value on Action panel
-	And User selects "Update" Update Date on Action panel
+	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters '3 Oct 2019' text to 'Date' datepicker
 	And User selects "Radio Slot" value for "Capacity Slot" dropdown on Action panel
 	And User clicks 'CREATE' button 
@@ -385,7 +385,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForRemoveOwnerAndTeamInDevi
 	And User selects 'Stage C' option from 'Stage' autocomplete
 	And User selects 'Readiness Owner Date Don't Change' option from 'Task' autocomplete
 	And User selects "No change" Update Value on Action panel
-	And User selects "No change" Update Date on Action panel
+	And User selects 'No change' in the 'Update Date' dropdown
 	And User selects "Remove owner and team" Update Owner on Action panel
 	And User clicks 'CREATE' button 
 	#Create Action
@@ -440,7 +440,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedA
 	When User selects 'Radiobutton Readiness Date Task No CS' option from 'Task' autocomplete
 	And User selects "Update" Update Value on Action panel
 	And User selects "Failed" Value on Action panel
-	And User selects "Remove" Update Date on Action panel
+	And User selects 'Remove' in the 'Update Date' dropdown
 	And User clicks 'CREATE' button 
 	#Create Action
 	When User clicks "Automations" navigation link on the Admin page
@@ -492,7 +492,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueActionDAS
 	When User selects 'Radiobutton Readiness Date Owner Task (User)' option from 'Task' autocomplete
 	And User selects "Update" Update Value on Action panel
 	And User selects "Started" Value on Action panel
-	And User selects "Update" Update Date on Action panel
+	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters '19 Nov 2019' text to 'Date' datepicker
 	And User selects "Update" Update Owner on Action panel
 	And User selects "Admin IT" Team on Action panel

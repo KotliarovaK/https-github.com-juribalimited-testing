@@ -19,12 +19,12 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatCapacityAffectingNonCapacityEnabled
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| CDQ172G3MZS444   |
-	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update task value" Bulk Update Type on Action panel
-	And User selects "1803 Rollout" Project on Action panel
-	And User selects "Migration" Stage on Action panel
-	And User selects "Migrated Date" Task on Action panel
-	And User selects "Update" Update Date on Action panel
+	And User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	And User selects '1803 Rollout' option from 'Project' autocomplete
+	And User selects 'Migration' option from 'Stage' autocomplete
+	And User selects 'Migrated Date' option from 'Task' autocomplete
+	And User selects 'Update' in the 'Update Date' dropdown
 	And User selects next Tuesday Date on Action panel
 	And User selects "None" value for "Capacity Slot" dropdown on Action panel
 	And User clicks 'UPDATE' button 

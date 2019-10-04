@@ -31,7 +31,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatListDetailsPanelDisplaysIfItWas
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
-	And User selects "Create static list" in the Actions dropdown
+	And User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "<ListName>" name
 	Then "<ListName>" list is displayed to user
 	When User clicks Settings button in the list panel
@@ -81,7 +81,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatAllRowsDisplayedOnGridWhenCreat
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
-	And User selects "Create static list" in the Actions dropdown
+	And User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "<ListName>" name
 	Then "<RowsCount>" rows are displayed in the agGrid
 	And Static list grid has "<RowsCount>" rows
