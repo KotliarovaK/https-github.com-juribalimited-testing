@@ -1899,7 +1899,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var action = _driver.NowAt<ActionPanelPage>();
             action.ActionsDropDown.Click();
-            action.GetActionButtonByName("Delete").Click();
+            WhenUserClicksDeleteProjectButton();
             action.DeleteButtonOnPage.Click();
             var projectElement = _driver.NowAt<BaseGridPage>();
             _driver.WaitForElementToBeDisplayed(projectElement.WarningMessage);
@@ -1926,7 +1926,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenDeleteButtonIsDisplayedToTheUserOnTheProjectsPage()
         {
             var projectElement = _driver.NowAt<ActionPanelPage>();
-            Verify.IsTrue(projectElement.GetActionButtonByName("Delete").Displayed(), "Delete Project Value is not displayed");
+            Verify.IsTrue(projectElement.GetActionButtonByName("DELETE").Displayed(), "Delete Project Value is not displayed");
             Verify.IsTrue(projectElement.DeleteButtonOnPage.Displayed(), "Delete button is not displayed");
         }
 
