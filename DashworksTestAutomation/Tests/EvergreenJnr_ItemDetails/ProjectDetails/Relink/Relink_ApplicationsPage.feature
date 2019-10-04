@@ -24,6 +24,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyFo
 	Then Warning message with "This object will be relinked to the selected Evergreen object in this project" text is displayed on the Project Details Page
 	When User clicks 'RELINK' button in Dialog Pop-up
 	Then Success message is displayed and contains "Application successfully relinked" text
+	When User waits for three seconds
 	Then Details page for "Microsoft SQL Server 2012 (64-bit)" item is displayed to the user
 	And User verifies data in the fields on details page
 	| Field | Data |
@@ -32,6 +33,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyFo
 	When User clicks 'RESYNC ' button 
 	And User clicks 'RESYNC' button in Dialog Pop-up
 	Then Success message is displayed and contains "Application successfully resynced" text
+	When User waits for three seconds
 	Then User verifies data in the fields on details page
 	| Field | Data                               |
 	| Name  | Microsoft SQL Server 2012 (64-bit) |
