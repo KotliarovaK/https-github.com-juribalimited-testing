@@ -7,10 +7,7 @@ Background: Pre-Conditions
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
 Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForActiveDirectoryTabGroupsOnUsersPage
-	When User clicks 'Users' on the left-hand menu
-	Then 'All Users' list should be displayed to the user
-	When User perform search by "ZWS705179"
-	And User click content from "Username" column
+	When User navigates to the 'User' details page for 'ZWS705179' item
 	Then Details page for "ZWS705179 (Derick I. Thomas)" item is displayed to the user
 	When User navigates to the 'Active Directory' left menu item
 	Then 'US-W' content is displayed in the 'Domain' column
@@ -38,10 +35,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplaye
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
 Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForApplicationsTabEvergreenSummaryOnUsersPage
-	When User clicks 'Users' on the left-hand menu
-	Then 'All Users' list should be displayed to the user
-	When User perform search by "allanj"
-	And User click content from "Username" column
+	When User navigates to the 'User' details page for 'allanj' item
 	Then Details page for "allanj (Jo Allan)" item is displayed to the user
 	When User navigates to the 'Applications' left menu item
 	And User navigates to the "Evergreen Summary" sub-menu on the Details page
@@ -83,10 +77,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplaye
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
 Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForApplicationsTabEvergreenDetailOnUsersPage
-	When User clicks 'Users' on the left-hand menu
-	Then 'All Users' list should be displayed to the user
-	When User perform search by "allanj"
-	And User click content from "Username" column
+	When User navigates to the 'User' details page for 'allanj' item
 	Then Details page for "allanj (Jo Allan)" item is displayed to the user
 	When User navigates to the 'Applications' left menu item
 	And User navigates to the "Evergreen Detail" sub-menu on the Details page
@@ -111,10 +102,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplaye
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
 Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForApplicationsTabAdvertisementsOnUsersPage
-	When User clicks 'Users' on the left-hand menu
-	Then 'All Users' list should be displayed to the user
-	When User perform search by "allanj"
-	And User click content from "Username" column
+	When User navigates to the 'User' details page for 'allanj' item
 	Then Details page for "allanj (Jo Allan)" item is displayed to the user
 	When User navigates to the 'Applications' left menu item
 	And User navigates to the "Advertisements" sub-menu on the Details page
@@ -127,10 +115,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplaye
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
 Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForApplicationsTabCollectionsOnUsersPage
-	When User clicks 'Users' on the left-hand menu
-	Then 'All Users' list should be displayed to the user
-	When User perform search by "allanj"
-	And User click content from "Username" column
+	When User navigates to the 'User' details page for 'allanj' item
 	Then Details page for "allanj (Jo Allan)" item is displayed to the user
 	When User navigates to the 'Applications' left menu item
 	And User navigates to the "Collections" sub-menu on the Details page
@@ -155,10 +140,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplaye
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
 Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForMailboxesTabOnUsersPage
-	When User clicks 'Users' on the left-hand menu
-	Then 'All Users' list should be displayed to the user
-	When User perform search by "02BE025D56CF4899889"
-	And User click content from "Username" column
+	When User navigates to the 'User' details page for '02BE025D56CF4899889' item
 	Then Details page for "02BE025D56CF4899889 (Wegemer, Susan)" item is displayed to the user
 	When User navigates to the 'Mailboxes' left menu item
 	And User navigates to the "Mailboxes" sub-menu on the Details page
@@ -180,10 +162,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplaye
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
 Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForComplianceTabOnUsersPage
-	When User clicks 'Users' on the left-hand menu
-	Then 'All Users' list should be displayed to the user
-	When User perform search by "ZWS705179"
-	And User click content from "Username" column
+	When User navigates to the 'User' details page for 'ZWS705179' item
 	Then Details page for "ZWS705179 (Derick I. Thomas)" item is displayed to the user
 	When User navigates to the 'Compliance' left menu item
 	And User navigates to the "Hardware Rules" sub-menu on the Details page
