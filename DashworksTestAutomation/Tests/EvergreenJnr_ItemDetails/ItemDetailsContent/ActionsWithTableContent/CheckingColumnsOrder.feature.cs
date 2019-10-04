@@ -134,16 +134,10 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line 10
- testRunner.When("User clicks \'Users\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'User\' details page for \'ZZP911429\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 11
- testRunner.Then("\'All Users\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 12
- testRunner.When("User perform search by \"ZZP911429\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 13
- testRunner.And("User click content from \"Username\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 14
  testRunner.Then("Details page for \"ZZP911429\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 15
+#line 12
  testRunner.When("User navigates to the \'Devices\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
@@ -158,9 +152,9 @@ this.FeatureBackground();
                         "Operating System"});
             table1.AddRow(new string[] {
                         "Compliance"});
-#line 16
+#line 13
  testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table1, "Then ");
-#line 23
+#line 20
  testRunner.When("User switches to the \"User Evergreen Capacity Project\" project in the Top bar on " +
                     "Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -186,7 +180,7 @@ this.FeatureBackground();
                         "Application Readiness"});
             table2.AddRow(new string[] {
                         "Stage 1"});
-#line 24
+#line 21
  testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table2, "Then ");
 #line hidden
             this.ScenarioCleanup();

@@ -201,7 +201,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckAddTeamsPermissionsOnDetailsPanel
 @Evergreen @DevicesLists @EvergreenJnr_Pivot @Pivot @DAS16815 @Cleanup
 Scenario: EvergreenJnr_DevicesLists_CheckArchivedItemIncludingInPivot
 	When User clicks 'Devices' on the left-hand menu
-	And User sets includes archived devices in "true"
+	And User sets includes archived devices in 'true'
 	And User clicks the Filters button
 	And User add "1803: In Scope" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
@@ -217,12 +217,12 @@ Scenario: EvergreenJnr_DevicesLists_CheckArchivedItemIncludingInPivot
 	Then Pivot run was completed
 	When User creates Pivot list with "DAS16815_Pivot" name
 	Then "DAS16815_Pivot" list is displayed to user
-	When User sets includes archived devices in "false"
+	When User sets includes archived devices in 'false'
 	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	When User updates existing pivot
 	Then "DAS16815_Pivot" list is displayed to user
-	When User sets includes archived devices in "true"
+	When User sets includes archived devices in 'true'
 	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	When User creates Pivot list with "DAS16815_Pivot_Updated" name

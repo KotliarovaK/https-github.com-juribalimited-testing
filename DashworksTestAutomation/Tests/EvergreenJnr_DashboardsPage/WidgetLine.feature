@@ -7,6 +7,7 @@ Background: Pre-Conditions
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15737 @DAS15662 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatColourSchemeIsDisplayedForReadinessSplitByInDropdown
+	When User clicks 'Users' on the left-hand menu
 	When User add following columns using URL to the "Users" page:
 	| ColumnName                 |
 	| prK: Application Readiness |
@@ -69,6 +70,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetValuesLeadsToDeviceList
 	
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15920 @DAS15662 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetHavingComplianceColumnsDisplayedCorrectlyOnDashboard
+	When User clicks 'Users' on the left-hand menu
 	When User add following columns using URL to the "Users" page:
 	| ColumnName          |
 	| Device Application Compliance |
@@ -88,6 +90,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetHavingComplianceColumns
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS15544 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetHasCorrectChronologicalOrder
+	When User clicks 'Devices' on the left-hand menu
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName          |
 	| Service Pack or Build |

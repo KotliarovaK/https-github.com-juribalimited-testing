@@ -7,11 +7,9 @@ Background: Pre-Conditions
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11091 @DAS14923 @DAS16121 @DAS17305
 Scenario Outline: EvergreenJnr_AllLists_CheckRenamedColumnAndStringFilterForSoftwareComplianceIssuesSectionOnTheDetailsPage
-	When User clicks '<PageName>' on the left-hand menu
-	Then 'All <PageName>' list should be displayed to the user
-	When User perform search by "<SelectedName>"
-	And User click content from "<ColumnName>" column
-	And User navigates to the 'Compliance' left menu item
+	When User navigates to the '<PageName>' details page for '<SelectedName>' item
+	Then Details page for "<SelectedName>" item is displayed to the user
+	When User navigates to the 'Compliance' left menu item
 	And User navigates to the "Application Summary" sub-menu on the Details page
 	Then Name of colors are displayed in following order on the Details Page:
 	| ColumnHeader |
@@ -29,9 +27,9 @@ Scenario Outline: EvergreenJnr_AllLists_CheckRenamedColumnAndStringFilterForSoft
 	Then string filter is displayed for "Vendor" column on the Details Page
 
 Examples:
-	| PageName | SelectedName   | ColumnName | CountRows |
-	| Devices  | 001BAQXT6JWFPI | Hostname   | 2         |
-	| Users    | EKS951231      | Username   | 4         |
+	| PageName | SelectedName   | CountRows |
+	| Device   | 001BAQXT6JWFPI | 2         |
+	| User     | EKS951231      | 4         |
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11667 @DAS12321 @DAS11921
 Scenario: EvergreenJnr_MailboxesList_CheckThatNoConsoleErrorsWhenViewingMailboxDetails
@@ -62,11 +60,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDataOfColumnsIsDisplayedInTheCustomF
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11762 @DAS12235 @DAS13813 @DAS14923
 Scenario Outline: EvergreenJnr_AllLists_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteDataFromFilterTextField
-	When User clicks '<PageName>' on the left-hand menu
-	Then 'All <PageName>' list should be displayed to the user
-	When User perform search by "<SearchTerm>"
-	When User click content from "<ColumnName>" column
-	And User navigates to the '<TabName>' left menu item
+	When User navigates to the '<PageName>' details page for '<SearchTerm>' item
+	Then Details page for "<SearchTerm>" item is displayed to the user
+	When User navigates to the '<TabName>' left menu item
 	And User have opened Column Settings for "<SelectedColumn>" column in the Details Page table
 	And User clicks Filter button on the Column Settings panel
 	When  User enters "123455465" text in the Filter field
@@ -74,18 +70,16 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatNoConsoleErrorsAreDisplayedWhen
 	Then There are no errors in the browser console
 
 Examples:
-	| PageName     | SearchTerm                                              | ColumnName    | TabName      | SelectedColumn |
-	| Devices      | 30BGMTLBM9PTW5                                          | Hostname      | Applications | Application    |
-	#| Users        | svc_dashworks                                           | Username      | Groups       | Group          |
-	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | MSI          | File Name      |
-	| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users        | Username       |
+	| PageName    | SearchTerm                                              | TabName      | SelectedColumn |
+	| Device      | 30BGMTLBM9PTW5                                          | Applications | Application    |
+	#| User        | svc_dashworks                                           | Groups       | Group          |
+	| Application | Microsoft Office Visio 2000 Solutions - Custom Patterns | MSI          | File Name      |
+	| Mailbox     | aaron.u.flores@dwlabs.local                             | Users        | Username       |
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11647
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatAutosizeOptionWorksCorrectlyForSiteColumn
-	When User clicks 'Devices' on the left-hand menu
-	Then 'All Devices' list should be displayed to the user
-	When User perform search by "30BGMTLBM9PTW5"
-	And User click content from "Hostname" column
+	When User navigates to the 'Device' details page for '30BGMTLBM9PTW5' item
+	Then Details page for "30BGMTLBM9PTW5" item is displayed to the user
 	When User navigates to the 'Applications' left menu item
 	When User navigates to the "<SubMenuName>" sub-menu on the Details page
 	Then "87" rows found label displays on Details Page
@@ -100,25 +94,21 @@ Examples:
 
 @Evergreen @ALlLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12491 @DAS14923
 Scenario Outline: EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnDetailsPages
-	When User clicks '<PageName>' on the left-hand menu
-	Then 'All <PageName>' list should be displayed to the user
-	When User perform search by "<SearchTerm>"
-	And User click content from "<Column>" column
+	When User navigates to the '<PageName>' details page for '<SearchTerm>' item
+	Then Details page for "<SearchTerm>" item is displayed to the user
 	When User navigates to the '<MainTab>' left menu item
 	And User navigates to the "<SubTab>" sub-menu on the Details page
 	Then "1" rows found label displays on Details Page
 
 Examples:
-	| PageName     | SearchTerm          | Column      | MainTab   | SubTab    |
-	| Applications | IEWatch 2.1         | Application | MSI       | MSI Files |
-	| Users        | 01A921EFD05545818AA | Username    | Mailboxes | Mailboxes |
+	| PageName    | SearchTerm          | MainTab   | SubTab    |
+	| Application | IEWatch 2.1         | MSI       | MSI Files |
+	| User        | 01A921EFD05545818AA | Mailboxes | Mailboxes |
 	
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12805
 Scenario: EvergreenJnr_ApplicationsList_CheckThatUsersAndDevicesDistributionListsDoNotIncludeUnknownValues
-	When User clicks 'Applications' on the left-hand menu
-	Then 'All Applications' list should be displayed to the user
-	When User perform search by "Microsoft DirectX 5 DDK"
-	And User click content from "Application" column
+	When User navigates to the 'Application' details page for 'Microsoft DirectX 5 DDK' item
+	Then Details page for "Microsoft DirectX 5 DDK" item is displayed to the user
 	When User navigates to the 'Distribution' left menu item
 	When User navigates to the "Users" sub-menu on the Details page
 	And User clicks String Filter button for "Used" column
@@ -139,10 +129,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUsersAndDevicesDistributionList
 
 @Evergreen @UsersLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15522
 Scenario: EvergreenJnr_UsersList_ChecksThatNoErrorsAreDisplayedAfterClickingThroughTheProjectNameFromObjectDetails
-	When User clicks 'Users' on the left-hand menu
-	Then 'All Users' list should be displayed to the user
-	When User perform search by "TON2490708"
-	And User click content from "Username" column
+	When User navigates to the 'User' details page for 'TON2490708' item
 	Then Details page for "TON2490708" item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	When User navigates to the "Device Project Summary" sub-menu on the Details page
@@ -205,10 +192,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatReadinessValuesInDdlOnProjectsTabAre
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16719
 Scenario: EvergreenJnr_UsersList_CheckThatDataIsDisplayedInHardwareSummaryTabForUserObjectDetailsPage
-	When User clicks 'Users' on the left-hand menu
-	Then 'All Users' list should be displayed to the user
-	When User perform search by "AAD1011948"
-	When User click content from "Username" column
+	When User navigates to the 'User' details page for 'AAD1011948' item
 	Then Details page for "AAD1011948" item is displayed to the user
 	When User navigates to the 'Compliance' left menu item
 	When User navigates to the "Hardware Summary" sub-menu on the Details page

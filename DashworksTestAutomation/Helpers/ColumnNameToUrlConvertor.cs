@@ -319,6 +319,15 @@ namespace DashworksTestAutomation.Helpers
                             throw new Exception($"'{pageName}' page not found in convertor");
                     }
 
+                case "1803: Status":
+                    switch (pageName)
+                    {
+                        case "Devices":
+                            return "project_63_objectStatus";
+                        default:
+                            throw new Exception($"'{pageName}' page not found in convertor");
+                    }
+
 
                 default:
                     throw new Exception($"{columnName} column not found in convertor");

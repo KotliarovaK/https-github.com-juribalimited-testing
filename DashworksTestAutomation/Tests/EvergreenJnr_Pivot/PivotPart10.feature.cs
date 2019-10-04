@@ -813,7 +813,7 @@ this.FeatureBackground();
 #line 203
  testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 204
- testRunner.And("User sets includes archived devices in \"true\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User sets includes archived devices in \'true\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 205
  testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -849,7 +849,7 @@ this.FeatureBackground();
 #line 219
  testRunner.Then("\"DAS16815_Pivot\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 220
- testRunner.When("User sets includes archived devices in \"false\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User sets includes archived devices in \'false\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 221
  testRunner.And("User clicks \'RUN PIVOT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 222
@@ -859,7 +859,7 @@ this.FeatureBackground();
 #line 224
  testRunner.Then("\"DAS16815_Pivot\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 225
- testRunner.When("User sets includes archived devices in \"true\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User sets includes archived devices in \'true\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 226
  testRunner.And("User clicks \'RUN PIVOT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 227

@@ -80,6 +80,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatAggregateFunctionOrAggregateByDro
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS16958 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatEditWidgetPageCanBeOpenedForWidgetHavingDeletedList
+	When User clicks 'Devices' on the left-hand menu
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName          |
 	| Secure Boot Enabled |

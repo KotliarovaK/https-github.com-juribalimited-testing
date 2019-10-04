@@ -7,6 +7,7 @@ Background: Pre-Conditions
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15356 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWidgetWithSpecificColumns
+	When User clicks 'Devices' on the left-hand menu
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName          |
 	| Secure Boot Enabled |

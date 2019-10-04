@@ -177,7 +177,7 @@ this.FeatureBackground();
 #line 17
  testRunner.Then("Columns on Admin page is displayed in following order:", ((string)(null)), table1, "Then ");
 #line 28
- testRunner.Then("Export button is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Export button is displayed in panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 29
  testRunner.Then("\"SUCCESS\" content is displayed in \"Outcome\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 30

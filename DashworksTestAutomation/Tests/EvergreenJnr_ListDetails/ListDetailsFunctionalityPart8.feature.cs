@@ -441,7 +441,7 @@ this.FeatureBackground();
 #line 101
  testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table7, "When ");
 #line 104
- testRunner.And("User sets includes archived devices in \"true\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User sets includes archived devices in \'true\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 105
  testRunner.And("User clicks content from first row of Hostname column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 106
