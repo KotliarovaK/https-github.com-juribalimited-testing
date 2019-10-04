@@ -35,6 +35,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetsCanBeCreatedWhenUsingSplit
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15372 @DAS15317 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWidgetThatUsesCpuArchitField
+	When User clicks 'Devices' on the left-hand menu
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName          |
 	| CPU Architecture |
@@ -53,6 +54,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWid
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15365 @DAS15352 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingPieWidgetUsedSavedList
+	When User clicks 'Devices' on the left-hand menu
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName |
 	| Model      |
@@ -140,6 +142,7 @@ Examples:
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15508 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountAsAggregateFunctionShowsFieldsWithCorrectDatatypeInAggregateByDropdown
+	When User clicks 'Devices' on the left-hand menu
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName                           |
 	| Device Key                           |
@@ -161,6 +164,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountAsAggregateFunction
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15509 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountDistinctAsAggregateFunctionShowsFieldsWithCorrectDatatypeInAggregateByDropdown
+	When User clicks 'Devices' on the left-hand menu
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName                           |
 	| Device Key                           |
@@ -194,6 +198,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountDistinctAsAggregate
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15510 @DAS15511 @DAS15512 @Cleanup
 Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatSelectingAggregateFunctionShowsFieldsWithCorrectDatatypeInAggregateByDropdown	
+	When User clicks 'Devices' on the left-hand menu
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName                           |
 	| Device Key                           |
@@ -224,6 +229,7 @@ Examples:
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15524 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountAsAggregateFunctionShowsFieldsWithCorrectValuesInOrderByDropDown
+	When User clicks 'Devices' on the left-hand menu
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName                           |
 	| Device Key                           |
@@ -286,6 +292,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenCountDis
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenSumAggregateFunctionIsSelected
+	When User clicks 'Devices' on the left-hand menu
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName          |
 	| HDD Total Size (GB) |
@@ -308,6 +315,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenSumAggre
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenMinAggregateFunctionIsSelected
+	When User clicks 'Devices' on the left-hand menu
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName          |
 	| HDD Total Size (GB) |
@@ -330,6 +338,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenMinAggre
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenMaxAggregateFunctionIsSelected
+	When User clicks 'Devices' on the left-hand menu
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName          |
 	| HDD Total Size (GB) |
@@ -352,6 +361,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenMaxAggre
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenAvgAggregateFunctionIsSelected
+	When User clicks 'Devices' on the left-hand menu
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName          |
 	| HDD Total Size (GB) |
