@@ -549,7 +549,10 @@ namespace DashworksTestAutomation.Extensions
         public static List<IWebElement> GetOptionsFromMatSelectbox(this RemoteWebDriver driver, IWebElement selectbox)
         {
             if (!driver.IsElementDisplayed(matOptionsSelector))
+            {
                 selectbox.Click();
+                driver.WaitForElementsToBeDisplayed(matOptionsSelector);
+            }
             return driver.FindElements(matOptionsSelector).ToList();
         }
 

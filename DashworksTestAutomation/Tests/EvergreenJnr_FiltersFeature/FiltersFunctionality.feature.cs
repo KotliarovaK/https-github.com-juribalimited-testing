@@ -218,7 +218,7 @@ this.FeatureBackground();
             table2.AddRow(new string[] {
                         "FALSE"});
             table2.AddRow(new string[] {
-                        "UNKNOWN"});
+                        "Empty"});
 #line 26
  testRunner.When("User add \"Windows7Mi: Hide from End Users\" filter where type is \"Equals\" without " +
                     "added column and following checkboxes:", ((string)(null)), table2, "When ");
@@ -234,7 +234,7 @@ this.FeatureBackground();
             table3.AddRow(new string[] {
                         "FALSE"});
             table3.AddRow(new string[] {
-                        "UNKNOWN"});
+                        "Empty"});
 #line 34
  testRunner.When("User add \"Windows7Mi: Hide from End Users\" filter where type is \"Equals\" without " +
                     "added column and following checkboxes:", ((string)(null)), table3, "When ");
@@ -250,7 +250,7 @@ this.FeatureBackground();
             table4.AddRow(new string[] {
                         "TRUE"});
             table4.AddRow(new string[] {
-                        "UNKNOWN"});
+                        "Empty"});
 #line 41
  testRunner.When("User add \"Windows7Mi: Hide from End Users\" filter where type is \"Equals\" without " +
                     "added column and following checkboxes:", ((string)(null)), table4, "When ");
