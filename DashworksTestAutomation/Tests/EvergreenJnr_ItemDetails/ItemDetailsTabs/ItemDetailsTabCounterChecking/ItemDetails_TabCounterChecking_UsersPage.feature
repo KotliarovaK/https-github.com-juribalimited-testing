@@ -94,10 +94,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayed
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15583 @DAS16884
 Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForUsersPageInProjectMode
-	When User clicks 'Users' on the left-hand menu
-	Then 'All Users' list should be displayed to the user
-	When User perform search by "0072B088173449E3A93"
-	And User click content from "Username" column
+	When User navigates to the 'User' details page for '0072B088173449E3A93' item
 	Then Details page for "0072B088173449E3A93" item is displayed to the user
 	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
 	Then User sees following main-tabs on left menu on the Details page:
@@ -183,10 +180,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayed
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16830
 Scenario: EvergreenJnr_UsersList_ChecksThatTheNumberOfCountersInTheTabIsEqualToTheNumberOfFieldsInTheTable
-	When User clicks 'Users' on the left-hand menu
-	Then 'All Users' list should be displayed to the user
-	When User perform search by "ACG370114"
-	And User click content from "Username" column
+	When User navigates to the 'User' details page for 'ACG370114' item
 	Then Details page for "ACG370114" item is displayed to the user
 	And 'Custom Fields' tab is displayed on left menu on the Details page and contains '2' count of items
 	#Ann.Ilchenko 8/14/19: Remove the hash when the row counter will be implemented in the top bar.
@@ -243,10 +237,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatTheNumberOfCountersInTheTabIsEqualToT
 	
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17769
 Scenario: EvergreenJnr_UsersList_CheckThatCollectionsSubMenuCounterMatchTheNumberOfCollectionsForThisUser
-	When User clicks 'Users' on the left-hand menu
-	Then 'All Users' list should be displayed to the user
-	When User perform search by "allanj"
-	And User click content from "Username" column
+	When User navigates to the 'User' details page for 'allanj' item
 	Then Details page for "allanj (Jo Allan)" item is displayed to the user
 	When User navigates to the 'Applications' left menu item
 	And User navigates to the "Collections" sub-menu on the Details page

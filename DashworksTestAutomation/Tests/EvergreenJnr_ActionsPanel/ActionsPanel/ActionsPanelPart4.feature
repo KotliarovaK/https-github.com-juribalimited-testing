@@ -43,8 +43,8 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatProjectNamesAreDisplayedCorrectlyIn
 	| 00OMQQXWA1DRI6   |
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update path' in the 'Bulk Update Type' dropdown
-	Then the following Projects are displayed in opened DLL on Action panel:
-	| Projects                                         |
+	Then only below options are displayed in the 'Project' autocomplete
+	| Options                                          |
 	| *Project K-Computer Scheduled Project            |
 	| 1803 Rollout                                     |
 	| Babel (English, German and French)               |
