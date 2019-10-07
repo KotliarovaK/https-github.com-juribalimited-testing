@@ -44,7 +44,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatProjectNamesAreDisplayedCorrectlyIn
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update path' in the 'Bulk Update Type' dropdown
 	Then 'Project' autocomplete contains following options:
-	| Projects                                         |
+	| Options                                          |
 	| *Project K-Computer Scheduled Project            |
 	| 1803 Rollout                                     |
 	| Babel (English, German and French)               |
