@@ -257,7 +257,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Applications")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS12071")]
+        [NUnit.Framework.CategoryAttribute("DAS17856")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatGroupsCountIsCorrectOnEvergreenApplicationDetailsPage()
         {
             System.Exception lastException = null;
@@ -292,7 +292,7 @@ this.FeatureBackground();
                         "Applications",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS12071"});
+                        "DAS17856"});
 #line 46
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

@@ -42,7 +42,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatListLoadedCorrectlyAndNoConsoleErr
 	Then 'All Users' list should be displayed to the user
 	And There are no errors in the browser console
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12071
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17856
 Scenario: EvergreenJnr_ApplicationsList_CheckThatGroupsCountIsCorrectOnEvergreenApplicationDetailsPage
 	When User navigates to the 'Application' details page for 'Folder Size for Windows (2.3)' item
 	When User navigates to the 'Distribution' left menu item
