@@ -132,8 +132,8 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatNoneOptionIsAvailableForFilters
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "<FilterName>" filter where type is "Equals" without added column and following checkboxes:
-    | SelectedCheckboxes |
-    | None               |
+	| SelectedCheckboxes |
+	| None               |
 	Then Save to New Custom List element is displayed
 	When User click Edit button for "<FilterName>" filter
 	Then User changes filter type to "Does not equal"
