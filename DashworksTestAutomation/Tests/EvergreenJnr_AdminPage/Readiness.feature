@@ -107,10 +107,6 @@ Scenario: EvergreenJnr_AdminPage_CheckReadinessDialogContainerDisplay
 	Then Delete button in the pop up is colored amber
 	When User clicks "DELETE" button in the Readiness dialog screen
 	Then Success message is displayed and contains "The selected readinesses have been deleted, changes might not take effect immediately" text
-	When User clicks 'Admin' on the left-hand menu
-	And User enters "DAS16131_Project" text in the Search field for "Project" column
-	And User selects all rows on the grid
-	And User removes selected item
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14937 @DAS16649 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultForApplicationsCheckboxWorksOnEditReadinessPage
