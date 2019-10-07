@@ -232,7 +232,7 @@ this.FeatureBackground();
             table3.AddRow(new string[] {
                         "FALSE"});
             table3.AddRow(new string[] {
-                        "UNKNOWN"});
+                        "Empty"});
 #line 37
  testRunner.When("User have created \"Equals\" filter without column and following options:", ((string)(null)), table3, "When ");
 #line 42
@@ -245,7 +245,7 @@ this.FeatureBackground();
             table4.AddRow(new string[] {
                         "False"});
             table4.AddRow(new string[] {
-                        "Unknown"});
+                        "Empty"});
 #line 43
  testRunner.Then("Values is displayed in added filter info", ((string)(null)), table4, "Then ");
 #line hidden
@@ -3208,17 +3208,16 @@ this.FeatureBackground();
  testRunner.Then("message \'No devices found\' is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 738
  testRunner.When("User click Edit button for \"Compliance\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 739
+ testRunner.And("User closes \"None\" Chip item in the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table71 = new TechTalk.SpecFlow.Table(new string[] {
                         "Option",
                         "State"});
             table71.AddRow(new string[] {
-                        "None",
-                        "false"});
-            table71.AddRow(new string[] {
                         "Green",
                         "true"});
-#line 739
+#line 740
  testRunner.When("User change selected checkboxes:", ((string)(null)), table71, "When ");
 #line hidden
             this.ScenarioCleanup();
@@ -3629,7 +3628,7 @@ this.FeatureBackground();
 #line 817
  testRunner.When("User select all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 818
- testRunner.And("User selects \"Create static list\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects \'Create static list\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 819
  testRunner.And("User create static list with \"StaticListTestName\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 820

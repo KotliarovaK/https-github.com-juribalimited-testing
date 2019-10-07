@@ -69,6 +69,28 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             }
         }
 
+        [Then(@"'(.*)' autocomplete options are sorted in the alphabetical order")]
+        public void ThenAutocompleteOptionsAreSortedInTheAlphabeticalOrder(string field)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            if (field.Equals("Bucket") || field.Equals("Capacity Unit") || field.Equals("Ring"))
+            {
+                page.GetNamedTextbox(field).Click();
+                var listWithoutUnassigned = page.GetAllAutocompleteOptions(field).Where(x => !x.Contains("Unassigned")).ToList();
+                Verify.AreEqual(listWithoutUnassigned.OrderBy(s => s), listWithoutUnassigned,
+                    $"Options in the '{field}' autocomplete are not in alphabetical order");
+            }
+            else
+            {
+                page.GetNamedTextbox(field).Click();
+                var list = page.GetAllAutocompleteOptions(field).ToList();
+                Verify.AreEqual(list.OrderBy(s => s), list,
+                    $"Options in the '{field}' autocomplete are not in alphabetical order");
+            }
+
+            page.BodyContainer.Click();
+        }
+
         [Then(@"only below options are displayed in the '(.*)' autocomplete")]
         public void ThenOnlyBelowOptionsAreDisplayedInTheAutocomplete(string placeholder, Table table)
         {
@@ -291,7 +313,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         #endregion
 
-        #region Datepicker
+        #region Datepicker textbox
+
+        [When(@"User clicks datepicker icon")]
+        public void WhenUserClicksDatepickerIcon()
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.DatePickerIcon.Click();
+        }
 
         [When(@"User enters '(.*)' text to '(.*)' datepicker")]
         public void WhenUserEntersTextToDatepicker(string text, string placeholder)
@@ -305,6 +334,46 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             datepicker.SendKeys(text);
 
             page.BodyContainer.Click();
+        }
+
+        #endregion
+
+        #region Datepicker
+
+        [Then(@"All '(.*)' days are green in the Datepicker")]
+        public void ThenAllDaysAreGreenInTheDatepicker(string dayOfWeek)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            var allDaysForSpecifiedDayOfWeek = action.GetDaysForWeekDay(dayOfWeek);
+            Verify.IsTrue(allDaysForSpecifiedDayOfWeek.All(x => x.GetCssValue("background-color").
+                    Equals("rgba(126, 189, 56, 1)")),
+                "Some days are not green");
+        }
+
+        [When(@"User selects '(.*)' day in the Datepicker")]
+        public void WhenUserSelectsDayInTheDatepicker(int day)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForElementToBeDisplayed(action.DayInDatePicker(day));
+            action.DayInDatePicker(day).Click();
+        }
+
+        [Then(@"'(.*)' day is displayed green in the Datepicker")]
+        public void ThenDayIsDisplayedGreenInTheDatepicker(int dayNumber)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForElementToBeDisplayed(action.DayInDatePicker(dayNumber));
+            Assert.That(action.DayInDatePicker(dayNumber).GetCssValue("background-color"), 
+                Is.EqualTo("rgba(126, 189, 56, 1)"), 
+                "Day color is wrong");
+        }
+
+        [Then(@"Datepicker has tooltip with '(.*)' rows for '(.*)' day")]
+        public void ThenDatepickerHasTooltipWithRowsForDay(int rowNumber, int dayNumber)
+        {
+            _driver.WaitForDataLoading();
+            Verify.IsTrue(_driver.GetDatepickerTooltipElements(dayNumber).Count().Equals(Convert.ToInt32(rowNumber)),
+                "Wrong number of tooltip lines");
         }
 
         #endregion

@@ -67,49 +67,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.ActionsDropdown.Click();
         }
 
-        [When(@"User selects ""(.*)"" value for ""(.*)"" dropdown with search on Action panel")]
-        public void WhenUserSelectsValueForDropdownWithSearchOnActionPanel(string value, string field)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            action.GetDropdownWithSearchByFieldName(field).Click();
-            action.GetOptionByName(value).Click();
-        }
-
-        //TODO remove and replace by WhenUserSelectsInTheDropdown
-        [When(@"User selects ""(.*)"" value for ""(.*)"" dropdown on Action panel")]
-        public void WhenUserSelectsValueForDropdownOnActionPanel(string value, string field)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            action.GetDropdownByFieldName(field).Click();
-            action.GetOptionByName(value).Click();
-        }
-
-        [When(@"User selects ""(.*)"" in the Actions dropdown")]
-        public void WhenUserSelectsInTheActionsDropdown(string actionsName)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            //Wait until all rows are selected
-            Thread.Sleep(3000);
-            _driver.WaitForElementToBeDisplayed(action.ActionsDropdown);
-            action.ActionsDropdown.Click();
-            action.GetOptionByName(actionsName).Click();
-        }
-
-        [When(@"User selects ""(.*)"" Bulk Update Type on Action panel")]
-        public void WhenUserSelectsBulkUpdateTypeOnActionPanel(string typeName)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitForDataLoading();
-            action.BulkUpdateTypeDropdown.Click();
-            _driver.WaitForDataLoading();
-            action.GetOptionByName(typeName).Click();
-        }
-
         [Then(@"Bulk Update Type dropdown is displayed on Action panel")]
         public void ThenBulkUpdateTypeDropdownIsDisplayedOnActionPanel()
         {
             var action = _driver.NowAt<BaseDashboardPage>();
-            Utils.Verify.IsTrue(action.BulkUpdateTypeDropdown.Displayed(),
+            Verify.IsTrue(action.BulkUpdateTypeDropdown.Displayed(),
                 "Bulk Update Type dropdown is not displayed on Action panel");
         }
 
@@ -120,16 +82,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.ProjectOrEvergreenField.Click();
             _driver.WaitForElementToBeDisplayed(action.ProjectSection);
             action.ActionsProjectOrEvergreenOptions.Where(x => x.Text.Equals(projectName)).FirstOrDefault().Click();
-        }
-
-        [When(@"User selects ""(.*)"" Project on Action panel")]
-        public void WhenUserSelectsProjectOnActionPanel(string projectName)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            action.ProjectField.Clear();
-            action.ProjectField.SendKeys(projectName);
-            _driver.WaitForElementToBeDisplayed(action.ProjectSection);
-            action.ProjectSection.Click();
         }
 
         [Then(@"Projects are displayed in alphabetical order on Action panel")]
@@ -173,17 +125,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.PathDropdown.Clear();
             action.PathDropdown.SendKeys(requestType);
             action.GetOptionByName(requestType).Click();
-        }
-
-        [When(@"User selects ""(.*)"" Stage on Action panel")]
-        public void WhenUserSelectsStageOnActionPanel(string stageValue)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitForElementToBeDisplayed(action.StageField);
-            action.StageField.Clear();
-            action.StageField.SendKeys(stageValue);
-            action.GetOptionByName(stageValue).Click();
-            _driver.WaitForDataLoading();
         }
 
         //TODO Remove this step
@@ -282,7 +223,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         [Then(@"following values are presented in ""(.*)"" drop-down on Action panel:")]
         public void ThenFollowingValuesArePresentedInDrop_DownOnActionPanel(string fieldName, Table table)
-         {
+        {
             var field = _driver.NowAt<ActionsElement>();
             field.GetDropdownOnActionPanelByName(fieldName).Click();
             var action = _driver.NowAt<BaseDashboardPage>();
@@ -343,17 +284,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.BodyContainer.Click();
         }
 
-        [When(@"User selects ""(.*)"" Task on Action panel")]
-        public void WhenUserSelectsTaskOnActionPanel(string taskNAme)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            action.TaskField.Click();
-            action.TaskField.Clear();
-            action.TaskField.SendKeys(taskNAme);
-            action.GetOptionByName(taskNAme).Click();
-            _driver.WaitForDataLoading();
-        }
-
         [When(@"User types ""(.*)"" Value on Action panel")]
         public void WhenUserTypesValueOnActionPanel(string value)
         {
@@ -408,69 +338,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.UpdateValueDropdown.Click();
             _driver.WaitForElementsToBeDisplayed(action.OptionListOnActionsPanel);
             var actualList = action.OptionListOnActionsPanel.Select(value => value.Text).ToList();
-            Utils.Verify.AreEqual(expectedList, actualList, "Update Value options are different");
-            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            page.BodyContainer.Click();
-        }
-
-        //TODO replace by WhenUserSelectsInTheDropdown
-        [When(@"User selects ""(.*)"" Update Date on Action panel")]
-        public void WhenUserSelectsUpdateDateOnActionPanel(string updateDate)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            action.UpdateDateDropdown.Click();
-            action.GetOptionByName(updateDate).Click();
-        }
-
-        [When(@"User selects ""(.*)"" day selection")]
-        public void WhenUserConfirmsDateSelectionOnActionPanel(string day)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitForElementToBeDisplayed(action.DayInDatePicker(day));
-            action.DayInDatePicker(day).Click();
-        }
-
-        [When(@"User clicks datepicker for Action panel")]
-        public void WhenUserClicksDatePicker()
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            action.DatePickerIcon.Click();
-        }
-
-        [Then(@"Datepicker has tooltip with ""(.*)"" rows for value ""(.*)""")]
-        public void ThenTooltipForSpecificDayHasCorrectRowNumber(string rowNumber, string dayNumber)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitForDataLoading();
-            Assert.That(action.GetTooltipForDay(dayNumber).Count().Equals(Convert.ToInt32(rowNumber)), Is.True, "Wrong tooltips");
-        }
-
-        [Then(@"Day with ""(.*)"" number displayed green in Datepicker")]
-        public void ThenDayInDatePickerDisplayedGreen(string dayNumber)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitForElementToBeDisplayed(action.DayInDatePicker(dayNumber));
-            Assert.That(action.DayInDatePicker(dayNumber).GetCssValue("background-color"), Is.EqualTo("rgba(126, 189, 56, 1)"), "Day color is wrong");
-        }
-
-        [Then(@"Column ""(.*)"" displayed green in Datepicker")]
-        public void ThenColumnWithSpecifiedDayDisplayedGreenInDatePicker(string dayName)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            string col = action.GetDayColumnNumberByName(dayName);
-
-            Utils.Verify.IsTrue(action.GetListOfDaysInDatePicker(col).All(x => x.GetCssValue("background-color").Equals("rgba(126, 189, 56, 1)")), "Wrong cell color");
-        }
-
-        //TODO Remove this step
-        [When(@"User selects ""(.*)"" Date on Action panel")]
-        public void WhenUserSelectsDateOnActionPanel(string dateValue)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            _driver.MoveToElement(action.DateField);
-            action.DateField.Click();
-            action.DateField.Clear();
-            action.DateField.SendKeys(dateValue);
+            Verify.AreEqual(expectedList, actualList, "Update Value options are different");
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             page.BodyContainer.Click();
         }
@@ -544,27 +412,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var action = _driver.NowAt<BaseDashboardPage>();
             action.TeamField.Click();
             var list = action.OptionListOnActionsPanel.Select(x => x.Text).ToList();
-            Utils.Verify.AreEqual(list.OrderBy(s => s), list, "Teams are not in alphabetical order");
-            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            page.BodyContainer.Click();
-        }
-
-        [Then(@"options for ""(.*)"" field are displayed in alphabetical order on Action panel")]
-        public void ThenOptionsForFieldAreDisplayedInAlphabeticalOrderOnActionPanel(string field)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            if (field.Equals("Bucket") || field.Equals("Capacity Unit") || field.Equals("Ring"))
-            {
-                action.GetDropdownByFieldName(field).Click();
-                var listWithoutUnassigned = action.OptionListOnActionsPanel.Select(x => x.Text).Where(x => !x.Contains("Unassigned")).ToList();
-                Utils.Verify.AreEqual(listWithoutUnassigned.OrderBy(s => s), listWithoutUnassigned, $"{field} are not in alphabetical order");
-            }
-            else
-            {
-                action.GetDropdownByFieldName(field).Click();
-                var list = action.OptionListOnActionsPanel.Select(x => x.Text).ToList();
-                Utils.Verify.AreEqual(list.OrderBy(s => s), list, $"{field} are not in alphabetical order");
-            }
+            Verify.AreEqual(list.OrderBy(s => s), list, "Teams are not in alphabetical order");
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             page.BodyContainer.Click();
         }
@@ -583,14 +431,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenOwnerFieldIsNotDisplayedOnActionPanel()
         {
             var action = _driver.NowAt<BaseDashboardPage>();
-            Utils.Verify.IsFalse(action.OwnerField.Displayed(), "Owner Field is displayed");
+            Verify.IsFalse(action.OwnerField.Displayed(), "Owner Field is displayed");
         }
 
         [Then(@"Owner field is displayed on Action panel")]
         public void ThenOwnerFieldIsDisplayedOnActionPanel()
         {
             var action = _driver.NowAt<BaseDashboardPage>();
-            Utils.Verify.IsTrue(action.OwnerField.Displayed(), "Owner Field is not displayed");
+            Verify.IsTrue(action.OwnerField.Displayed(), "Owner Field is not displayed");
         }
 
         [Then(@"the following Update Value are displayed in opened DLL on Action panel:")]

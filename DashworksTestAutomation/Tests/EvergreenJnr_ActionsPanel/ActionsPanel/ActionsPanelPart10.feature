@@ -15,10 +15,10 @@ Scenario: EvergreenJnr_MailboxesList_CheckBucketBulkUpdateOptionsOnMailboxesList
 	| SelectedRowsName                 |
 	| 00BDBAEA57334C7C8F4@bclabs.local |
 	| 016E1B57C2DD4FCC986@bclabs.local |
-	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update bucket" Bulk Update Type on Action panel
+	And User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update bucket' in the 'Bulk Update Type' dropdown
 	And User selects "Project" Project or Evergreen on Action panel
-	And User selects "Mailbox Evergreen Capacity Project" Project on Action panel
+	And User selects 'Mailbox Evergreen Capacity Project' option from 'Project' autocomplete
 	And User selects "Unassigned" option in "Bucket" field on Action panel
 	Then following values are displayed in "Also Move Users" drop-down on Action panel:
 	| Options          |
@@ -38,8 +38,8 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatOnMailboxesListForBucketBulkUpdate
 	| SelectedRowsName                 |
 	| 00BDBAEA57334C7C8F4@bclabs.local |
 	| 016E1B57C2DD4FCC986@bclabs.local |
-	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update bucket" Bulk Update Type on Action panel
+	And User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update bucket' in the 'Bulk Update Type' dropdown
 	And User selects "Project" Project or Evergreen on Action panel
 	Then following values are displayed in "Project" drop-down with searchfield on Action panel:
 	| Options                            |
@@ -56,7 +56,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatBucketBulkUpdateOptionNotAvaila
 	| SelectedRowsName                                           |
 	| %SQL_PRODUCT_SHORT_NAME% SSIS 64Bit For SSDTBI             |
 	| "WPF/E" (codename) Community Technology Preview (Feb 2007) |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects 'Bulk update' in the 'Action' dropdown
 	Then following values are displayed in "Bulk Update Type" drop-down on Action panel:
 	| Options              |
 	| Update capacity unit |
@@ -74,13 +74,13 @@ Scenario: EvergreenJnr_DevicesList_CheckSortOrderForBulkUpdateCapacitySlot
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 001BAQXT6JWFPI   |
-	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update task value" Bulk Update Type on Action panel
-	And User selects "1803 Rollout" Project on Action panel
-	And User selects "Pre-Migration" Stage on Action panel
-	And User selects "Scheduled Date" Task on Action panel
-	And User selects "Update" Update Date on Action panel
-	And User selects "23 Nov 2018" Date on Action panel
+	And User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	And User selects '1803 Rollout' option from 'Project' autocomplete
+	And User selects 'Pre-Migration' option from 'Stage' autocomplete
+	And User selects 'Scheduled Date' option from 'Task' autocomplete
+	And User selects 'Update' in the 'Update Date' dropdown
+	And User enters '23 Nov 2018' text to 'Date' datepicker
 	Then following values are displayed in "Capacity Slot" drop-down on Action panel:
 	| Options                      |
 	| None                         |
@@ -104,19 +104,21 @@ Scenario: EvergreenJnr_DevicesList_CheckTooltipDisplayingInDatePickerOfBulkUpdat
 	And User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 00I0COBFWHOF27   |
-	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update task value" Bulk Update Type on Action panel
-	And User selects "1803 Rollout" Project on Action panel
-	And User selects "Pre-Migration" Stage on Action panel
-	And User selects "Scheduled Date" Task on Action panel
-	And User selects "Update" Update Date on Action panel
-	And User selects "6 Nov 2018" Date on Action panel
-	And User clicks datepicker for Action panel
-	And User selects "6" day selection
-	And User clicks datepicker for Action panel
-	Then Day with "5" number displayed green in Datepicker
-	And Datepicker has tooltip with "8" rows for value "5"
-	When User selects "5" day selection
+	And User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	And User selects '1803 Rollout' option from 'Project' autocomplete
+	And User selects 'Pre-Migration' option from 'Stage' autocomplete
+	And User selects 'Scheduled Date' option from 'Task' autocomplete
+	And User selects 'Update' in the 'Update Date' dropdown
+	And User enters '6 Nov 2018' text to 'Date' datepicker
+	And User clicks datepicker icon 
+	And User selects '6' day in the Datepicker
+	#Added wait as we need some time fo datepicker to be updated
+	And User waits for three seconds
+	And User clicks datepicker icon 
+	Then '5' day is displayed green in the Datepicker
+	And Datepicker has tooltip with '8' rows for '5' day
+	When User selects '5' day in the Datepicker
 	Then following values are presented in "Capacity Slot" drop-down on Action panel:
 	| Options                    |
 	| Birmingham Morning         |
@@ -142,11 +144,11 @@ Scenario: EvergreenJnr_UsersList_CheckDateColorDisplayingInBulkUpdateDatePicker
 	And User select "Display Name" rows in the grid
 	| SelectedRowsName                   |
 	| Exchange Online-ApplicationAccount |
-	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update task value" Bulk Update Type on Action panel
-	And User selects "User Evergreen Capacity Project" Project on Action panel
-	And User selects "Stage 2" Stage on Action panel
-	And User selects "Scheduled Date" Task on Action panel
-	And User selects "Update" Update Date on Action panel
-	And User clicks datepicker for Action panel
-	Then Column "Sunday" displayed green in Datepicker
+	And User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	And User selects 'User Evergreen Capacity Project' option from 'Project' autocomplete
+	And User selects 'Stage 2' option from 'Stage' autocomplete
+	And User selects 'Scheduled Date' option from 'Task' autocomplete
+	And User selects 'Update' in the 'Update Date' dropdown
+	And User clicks datepicker icon 
+	Then All 'Sunday' days are green in the Datepicker

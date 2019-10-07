@@ -17,7 +17,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatArchivedItemStillRemainsInStaticL
 	And User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 00I0COBFWHOF27   |
-	And User selects "Create static list" in the Actions dropdown
+	And User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "StaticList17651" name
 	Then "StaticList17651" list is displayed to user
 	And "2" rows are displayed in the agGrid

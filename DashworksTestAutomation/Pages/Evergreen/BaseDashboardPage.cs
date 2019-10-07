@@ -13,6 +13,10 @@ namespace DashworksTestAutomation.Pages.Evergreen
 {
     public class BaseDashboardPage : SeleniumBasePage
     {
+        public const string DatepickerSelector = ".//tbody[@class='mat-calendar-body']";
+
+        public const string DatepickerCellSelector = "//td[contains(@class,'cell')]";
+
         private string NamedDropdownSelector = ".//mat-select[@aria-label='{0}' or @automation='{0}']";
 
         public const string ColorItem = ".//div[@class='status']";
@@ -1098,34 +1102,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(selector);
         }
 
-        public IWebElement GetDropdownWithSearchByFieldName(string name)
-        {
-            var selector = By.XPath($"//input[@aria-label='{name}']");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
+        #region Datepicker
 
-        //TODO should be replaced by GetDropdownByName
-        public IWebElement GetDropdownByFieldName(string name)
-        {
-            var selector = By.XPath($"//*[text()='{name}']/ancestor::div[@class='mat-form-field-infix']");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
-        public IList<IWebElement> GetTooltipForDay(string dayNumber)
-        {
-            var selector = By.XPath($".//td[@role='gridcell']//div[text() = '{dayNumber}']/span/span");
-            return Driver.FindElements(selector);
-        }
-
-        public IWebElement DayInDatePicker(string dayNumber)
-        {
-            var selector = By.XPath($".//div[text() = '{dayNumber}']/parent::td[@role='gridcell']");
-            return Driver.FindElement(selector);
-        }
-
-        public string GetDayColumnNumberByName(string dayName)
+        public int GetDayColumnNumberByNameFromDatepicker(string dayName)
         {
             var selector = By.XPath($".//thead[@class='mat-calendar-table-header']//th[@aria-label]");
 
@@ -1135,18 +1114,66 @@ namespace DashworksTestAutomation.Pages.Evergreen
             {
                 if (header.GetAttribute("aria-label").ToLower().Equals(dayName.ToLower()))
                 {
-                    int a = headers.IndexOf(header) + 1;
-                    return a.ToString();
+                    int a = headers.IndexOf(header);
+                    return a;
                 }
             }
-            return "day not found";
+
+            throw new Exception($"'{dayName}' day was not found in the DatePicker");
         }
 
-        public IList<IWebElement> GetListOfDaysInDatePicker(string column)
+        public IList<IWebElement> GetDatepickerRows()
         {
-            var selector = By.XPath($".//tbody/tr[@role='row']/td[{column}]");
-            return Driver.FindElements(selector);
+            return Driver.FindElements(By.XPath($"{DatepickerSelector}//tr[not(@aria-hidden)]"));
         }
+
+        public int DatepickerFirstRowShift()
+        {
+            var shift = Driver.FindElements(By.XPath($"{DatepickerSelector}//td[@colspan]")).Last().GetAttribute("colspan");
+            return int.Parse(shift);
+        }
+
+        public IList<IWebElement> GetDaysForWeekDay(string dayOfWeek)
+        {
+            IList<IWebElement> result = new List<IWebElement>();
+
+            var columnNumber = GetDayColumnNumberByNameFromDatepicker(dayOfWeek);
+            var shiftForFirstLine = DatepickerFirstRowShift();
+            var rows = GetDatepickerRows();
+
+            var cellSelector = By.XPath($".{DatepickerCellSelector}");
+
+            //Exclude last week
+            foreach (IWebElement row in rows.ToList().GetRange(0, rows.Count - 1))
+            {
+                //In this case month starts NOT from Sat
+                if (row.FindElements(cellSelector).Count < 7)
+                {
+                    result.Add(rows.First().FindElements(cellSelector)[columnNumber - shiftForFirstLine]);
+                }
+                else
+                {
+                    result.Add(row.FindElements(cellSelector)[columnNumber]);
+                }
+            }
+
+            //Last week can contains less than 7 days
+            try
+            {
+                result.Add(rows.Last().FindElements(cellSelector)[columnNumber]);
+            }
+            catch (ArgumentOutOfRangeException) { }
+
+            return result;
+        }
+
+        public IWebElement DayInDatePicker(int dayNumber)
+        {
+            var selector = By.XPath($"{DatepickerSelector}{DatepickerCellSelector}/div[text()='{dayNumber}']/..");
+            return Driver.FindElement(selector);
+        }
+
+        #endregion
 
         #region Expandable multiselect
 

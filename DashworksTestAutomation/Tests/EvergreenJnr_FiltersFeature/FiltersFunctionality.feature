@@ -27,21 +27,21 @@ Scenario: EvergreenJnr_ApplicationsList_Check500ErrorIsNotReturnedForBooleanFilt
 	| SelectedCheckboxes |
 	| TRUE               |
 	| FALSE              |
-	| UNKNOWN            |
+	| Empty              |
 	Then "Windows7Mi: Hide from End Users" filter is added to the list
 	And "2,223" rows are displayed in the agGrid
 	When User have removed "Windows7Mi: Hide from End Users" filter
 	When User add "Windows7Mi: Hide from End Users" filter where type is "Equals" without added column and following checkboxes:
 	| SelectedCheckboxes |
 	| FALSE              |
-	| UNKNOWN            |
+	| Empty              |
 	Then "Windows7Mi: Hide from End Users" filter is added to the list
 	And "2,223" rows are displayed in the agGrid
 	When User have removed "Windows7Mi: Hide from End Users" filter
 	When User add "Windows7Mi: Hide from End Users" filter where type is "Equals" without added column and following checkboxes:
 	| SelectedCheckboxes |
 	| TRUE               |
-	| UNKNOWN            |
+	| Empty              |
 	Then "Windows7Mi: Hide from End Users" filter is added to the list
 	And "1,156" rows are displayed in the agGrid
 
@@ -379,10 +379,10 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	| 00I0COBFWHOF27   |
 	| 01P96J2EQ0HZSV   |
 	| 00KLL9S8NRF0X6   |
-	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update capacity unit" Bulk Update Type on Action panel
+	And User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
 	And User selects "Evergreen" option in "Project or Evergreen" drop-down on Action panel
-	And User selects "CapacityUnit13201" value for "Capacity Unit" dropdown with search on Action panel
+	And User selects 'CapacityUnit13201' option from 'Capacity Unit' autocomplete
 	And User clicks 'UPDATE' button 
 	Then User clicks "UPDATE" button on message box
 	When User clicks the Filters button
@@ -400,10 +400,10 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	| SelectedRowsName    |
 	| 0072B088173449E3A93 |
 	| 00DBB114BE1B41B0A38 |
-	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update capacity unit" Bulk Update Type on Action panel
+	And User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
 	And User selects "Evergreen" option in "Project or Evergreen" drop-down on Action panel
-	And User selects "CapacityUnit13201" value for "Capacity Unit" dropdown with search on Action panel
+	And User selects 'CapacityUnit13201' option from 'Capacity Unit' autocomplete
 	And User clicks 'UPDATE' button 
 	Then User clicks "UPDATE" button on message box
 	When User clicks the Filters button
@@ -422,10 +422,10 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	| 0105AF7E8E154E87B1A@bclabs.local |
 	| 0141713E5CF84ADE907@bclabs.local |
 	| 01C4FB7C6D2C4F979BD@bclabs.local |
-	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update capacity unit" Bulk Update Type on Action panel
+	And User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
 	And User selects "Evergreen" option in "Project or Evergreen" drop-down on Action panel
-	And User selects "CapacityUnit13201" value for "Capacity Unit" dropdown with search on Action panel
+	And User selects 'CapacityUnit13201' option from 'Capacity Unit' autocomplete
 	And User clicks 'UPDATE' button 
 	Then User clicks "UPDATE" button on message box
 	When User clicks the Filters button
@@ -443,10 +443,10 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	| SelectedRowsName         |
 	| 20040610sqlserverck      |
 	| 7-Zip 9.20 (x64 edition) |
-	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update capacity unit" Bulk Update Type on Action panel
+	And User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
 	And User selects "Evergreen" option in "Project or Evergreen" drop-down on Action panel
-	And User selects "CapacityUnit13201" value for "Capacity Unit" dropdown with search on Action panel
+	And User selects 'CapacityUnit13201' option from 'Capacity Unit' autocomplete
 	And User clicks 'UPDATE' button 
 	Then User clicks "UPDATE" button on message box
 	When User clicks the Filters button
@@ -694,7 +694,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatCorrectDeviceDataIsReturnedAfte
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
-	And User selects "Create static list" in the Actions dropdown
+	And User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "StaticList6581" name
 	And User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -725,7 +725,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatCorrectDeviceDataIsReturnedWhen
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
-	And User selects "Create static list" in the Actions dropdown
+	And User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "StaticList6778" name
 	And User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -808,7 +808,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatNoErrorIsDisplayedAfterAddingAdvancedF
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
-	And User selects "Create static list" in the Actions dropdown
+	And User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "StaticList8546" name
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
@@ -1170,7 +1170,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatSavedStaticListIsNotShownInEditMode
 	| AAO798996        |
 	| AGC788194        |
 	| AIU705098        |
-	And User selects "Create static list" in the Actions dropdown
+	And User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "StaticList8543" name
 	Then "StaticList8543" list is displayed to user
 	And Edit List menu is not displayed

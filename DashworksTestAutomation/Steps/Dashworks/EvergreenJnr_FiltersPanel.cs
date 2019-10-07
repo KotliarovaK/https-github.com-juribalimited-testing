@@ -1032,9 +1032,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 filterElement.GetBooleanCheckboxImg("TRUE").GetAttribute("src"), "Incorrect image for True value");
             Utils.Verify.AreEqual($"{UrlProvider.Url}evergreen/assets/img/cross.png",
                 filterElement.GetBooleanCheckboxImg("FALSE").GetAttribute("src"), "Incorrect image for False value");
-            Utils.Verify.AreEqual($"{UrlProvider.Url}evergreen/assets/img/unknown.png",
-                filterElement.GetBooleanCheckboxImg("UNKNOWN").GetAttribute("src"),
-                "Incorrect image for Unknown value");
+            //TODO: Yurii 10oct2019 - remove below check per Kristina's answer about UNKNOWN option and img, it was changed to Empty
+            //Utils.Verify.AreEqual($"{UrlProvider.Url}evergreen/assets/img/unknown.png",
+                //filterElement.GetBooleanCheckboxImg("UNKNOWN").GetAttribute("src"),
+                //"Incorrect image for Unknown value");
         }
 
         [Then(@"""(.*)"" option is available for this filter")]

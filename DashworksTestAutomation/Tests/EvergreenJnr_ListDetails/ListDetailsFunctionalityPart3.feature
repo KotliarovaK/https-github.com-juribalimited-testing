@@ -50,14 +50,14 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatNoAbilityToCreateTheSameNamedLi
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
-	And User selects "Create static list" in the Actions dropdown
+	And User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "2" name
 	Then "2" list is displayed to user
 	When User navigates to the "<ListToNavigate>" list
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
-	And User selects "Create static list" in the Actions dropdown
+	And User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with " 2" name
 	Then Warning message with "List Name should be unique" is displayed
 

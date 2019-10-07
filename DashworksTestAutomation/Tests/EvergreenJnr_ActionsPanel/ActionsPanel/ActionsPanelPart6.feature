@@ -32,13 +32,13 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelIsWorkingCorrectlyWhenS
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 018UQ6KL9TF4YF   |
-	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update task value" Bulk Update Type on Action panel
-	And User selects "Barry's User Project" Project on Action panel
+	And User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	And User selects 'Barry's User Project' option from 'Project' autocomplete
 	Then Stages are displayed in alphabetical order on Action panel
-	When User selects "Audit & Configuration" Stage on Action panel
+	When User selects 'Audit & Configuration' option from 'Stage' autocomplete
 	Then Tasks are displayed in alphabetical order on Action panel
-	When User selects "Validate User Device Ownership" Task on Action panel
+	When User selects 'Validate User Device Ownership' option from 'Task' autocomplete
 	Then the Update Value options are displayed in following order:
 	| Options               |
 	| Update                |
@@ -49,7 +49,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelIsWorkingCorrectlyWhenS
 	| Update    |
 	| Remove    |
 	| No change |
-	When User selects "No change" Update Date on Action panel
+	When User selects 'No change' in the 'Update Date' dropdown
 	Then the Update Owner options are displayed in following order:
 	| Options      |
 	| Update       |
@@ -100,13 +100,13 @@ Scenario: EvergreenJnr_DevicesList_CheckThatClearingAValueResetsSubsequentValues
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 018UQ6KL9TF4YF   |
-	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update task value" Bulk Update Type on Action panel
-	And User selects "User Scheduled Test (Jo)" Project on Action panel
-	And User selects "One" Stage on Action panel
-	And User selects "Radio Rag Only Comp" Task on Action panel
+	And User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	And User selects 'User Scheduled Test (Jo)' option from 'Project' autocomplete
+	And User selects 'One' option from 'Stage' autocomplete
+	And User selects 'Radio Rag Only Comp' option from 'Task' autocomplete
 	And User selects "Started" Value on Action panel
-	And User selects "Computer Scheduled Test (Jo)" Project on Action panel
+	And User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	Then Value field is not displayed on Action panel
 	When User clicks the Logout button
 	Then User is logged out
@@ -145,11 +145,11 @@ Scenario Outline: EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorre
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| <RowName>        |
-	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update task value" Bulk Update Type on Action panel
-	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
-	And User selects "Computer Information ---- Text fill; Text fill;" Stage on Action panel
-	And User selects "Computer Read Only Task in Self Service" Task on Action panel
+	And User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
+	And User selects 'Computer Information ---- Text fill; Text fill;' option from 'Stage' autocomplete
+	And User selects 'Computer Read Only Task in Self Service' option from 'Task' autocomplete
 	Then the Update Value options are displayed in following order:
 	| Options               |
 	| Update                |
@@ -165,19 +165,19 @@ Scenario Outline: EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorre
 	| Remove owner          |
 	| Remove owner and team |
 	| No change             |
-	When User selects "Workstation Text Task" Task on Action panel
+	When User selects 'Workstation Text Task' option from 'Task' autocomplete
 	Then the Update Value options are displayed in following order:
 	| Options   |
 	| Update    |
 	| Remove    |
-	When User selects "Computer Read Only Task in Self Service" Task on Action panel
+	When User selects 'Computer Read Only Task in Self Service' option from 'Task' autocomplete
 	Then the Update Value options are displayed in following order:
 	| Options               |
 	| Update                |
 	| No change             |
 	When User selects "Update" Update Value on Action panel
 	And User selects "Started" Value on Action panel
-	And User selects "No change" Update Date on Action panel
+	And User selects 'No change' in the 'Update Date' dropdown
 	And User navigate to the bottom of the Action panel
 	And User selects "No change" Update Owner on Action panel
 	And User clicks 'UPDATE' button 
@@ -237,14 +237,14 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	When User select "Username" rows in the grid
 	| SelectedRowsName |
 	| <RowName>        |
-	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update task value" Bulk Update Type on Action panel
-	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
-	And User selects "User Acceptance Test" Stage on Action panel
-	And User selects "Perform User Acceptance Test" Task on Action panel
+	And User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
+	And User selects 'User Acceptance Test' option from 'Stage' autocomplete
+	And User selects 'Perform User Acceptance Test' option from 'Task' autocomplete
 	And User selects "Update" Update Value on Action panel
 	And User selects "<NewValue>" Value on Action panel
-	And User selects "No change" Update Date on Action panel
+	And User selects 'No change' in the 'Update Date' dropdown
 	And User selects "Update" Update Owner on Action panel
 	And User selects "<NewTeam>" Team on Action panel
 	And User navigate to the bottom of the Action panel
@@ -256,14 +256,14 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	When User refreshes agGrid
 	Then "<NewValue>" content is displayed in "Windows7Mi: User Acceptance Test \ Perform User Acceptance Test" column
 		#returns default object state
-	When User selects "Bulk update" in the Actions dropdown
-	And User selects "Update task value" Bulk Update Type on Action panel
-	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
-	And User selects "User Acceptance Test" Stage on Action panel
-	And User selects "Perform User Acceptance Test" Task on Action panel
+	When User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
+	And User selects 'User Acceptance Test' option from 'Stage' autocomplete
+	And User selects 'Perform User Acceptance Test' option from 'Task' autocomplete
 	And User selects "Update" Update Value on Action panel
 	And User selects "<DefaultValue>" Value on Action panel
-	And User selects "No change" Update Date on Action panel
+	And User selects 'No change' in the 'Update Date' dropdown
 	And User selects "Update" Update Owner on Action panel
 	And User selects "<DefaultTeam>" Team on Action panel
 	And User navigate to the bottom of the Action panel

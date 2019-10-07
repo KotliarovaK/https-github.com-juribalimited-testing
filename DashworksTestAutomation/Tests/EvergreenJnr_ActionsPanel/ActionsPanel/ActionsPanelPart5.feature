@@ -14,10 +14,10 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectFieldIsDisplayedCorrectl
 	When User select "Application" rows in the grid
 	| SelectedRowsName                         |
 	| 0047 - Microsoft Access 97 SR-2 Francais |
-	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update path" Bulk Update Type on Action panel
+	And User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update path' in the 'Bulk Update Type' dropdown
 	Then Projects are displayed in alphabetical order on Action panel
-	When User selects "User Scheduled Test (Jo)" Project on Action panel
+	When User selects 'User Scheduled Test (Jo)' option from 'Project' autocomplete
 	And User selects "Request Type A" Path on Action panel
 	When User clears Project field
 	And User clicks on Action drop-down
@@ -32,7 +32,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatProjectFieldIsDisplayedCorrectlyAf
 	When User select "Email Address" rows in the grid
 	| SelectedRowsName                 |
 	| 00A5B910A1004CF5AC4@bclabs.local |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects 'Bulk update' in the 'Action' dropdown
 	Then following values are displayed in "Bulk Update Type" drop-down on Action panel:
 	| Options              |
 	| Update bucket        |
@@ -41,8 +41,8 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatProjectFieldIsDisplayedCorrectlyAf
 	| Update path          |
 	| Update ring          |
 	| Update task value    |
-	When User selects "Update path" Bulk Update Type on Action panel
-	And User selects "Email Migration" Project on Action panel
+	When User selects 'Update path' in the 'Bulk Update Type' dropdown
+	And User selects 'Email Migration' option from 'Project' autocomplete
 	And User selects "Personal Mailbox - VIP" Path on Action panel
 	When User clears Project field
 	And User clicks on Action drop-down
@@ -57,11 +57,11 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatTextValueHaveOptionToRemoveExi
 	When User select "<ColumnName>" rows in the grid
 	| SelectedRowsName |
 	| <RowName>        |
-	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update task value" Bulk Update Type on Action panel
-	And User selects "Computer Scheduled Test (Jo)" Project on Action panel
-	And User selects "One" Stage on Action panel
-	And User selects "<TaskName>" Task on Action panel
+	And User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	And User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
+	And User selects 'One' option from 'Stage' autocomplete
+	And User selects '<TaskName>' option from 'Task' autocomplete
 	Then the following Update Value are displayed in opened DLL on Action panel:
 	| Value  |
 	| Update |
@@ -100,12 +100,12 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatUpdateAndCancelButtonsAreEnable
 	When User select "<ColumnName>" rows in the grid
 	| SelectedRowsName |
 	| <RowName>        |
-	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update task value" Bulk Update Type on Action panel
-	And User selects "<ProjectName>" Project on Action panel
-	And User selects "<StageName>" Stage on Action panel
-	And User selects "<TaskName>" Task on Action panel
-	And User selects "<UpdateDate>" Update Date on Action panel
+	And User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	And User selects '<ProjectName>' option from 'Project' autocomplete
+	And User selects '<StageName>' option from 'Stage' autocomplete
+	And User selects '<TaskName>' option from 'Task' autocomplete
+	And User selects '<UpdateDate>' in the 'Update Date' dropdown
 	Then "UPDATE" Action button is active
 	And "CANCEL" Action button is active
 	When User clicks 'UPDATE' button 

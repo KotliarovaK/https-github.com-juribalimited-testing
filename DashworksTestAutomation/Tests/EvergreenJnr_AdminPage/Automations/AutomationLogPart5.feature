@@ -21,7 +21,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateAndRemoveTaskValueForUpdateValueInUs
 	When User selects 'Stage 3' option from 'Stage' autocomplete
 	When User selects 'DDL Slot Task' option from 'Task' autocomplete
 	And User selects "No change" Update Value on Action panel
-	And User selects "Remove" Update Date on Action panel
+	And User selects 'Remove' in the 'Update Date' dropdown
 	And User clicks 'CREATE' button
 	#Create Action
 	When User clicks "Automations" navigation link on the Admin page
@@ -61,7 +61,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForRemoveOwnerInMailboxScop
 	When User selects 'Stage 3' option from 'Stage' autocomplete
 	When User selects 'Radio Date Owner' option from 'Task' autocomplete
 	And User selects "No change" Update Value on Action panel
-	And User selects "No change" Update Date on Action panel
+	And User selects 'No change' in the 'Update Date' dropdown
 	And User selects "Remove owner" Update Owner on Action panel
 	And User clicks 'CREATE' button
 	#Create Action

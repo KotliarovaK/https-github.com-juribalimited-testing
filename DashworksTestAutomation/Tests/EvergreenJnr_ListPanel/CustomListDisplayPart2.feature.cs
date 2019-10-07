@@ -246,7 +246,7 @@ this.FeatureBackground();
 #line 39
  testRunner.When("User select all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 40
- testRunner.And("User selects \"Create static list\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects \'Create static list\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 41
  testRunner.And("User create static list with \"TestList4A22A5\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 42
@@ -392,7 +392,7 @@ this.FeatureBackground();
 #line 74
  testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table5, "When ");
 #line 78
- testRunner.And("User selects \"Create static list\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects \'Create static list\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 79
  testRunner.And("User create static list with \"KY TestList Static List\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 80
@@ -408,7 +408,7 @@ this.FeatureBackground();
 #line 85
  testRunner.When("User select all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 86
- testRunner.And("User selects \"Create static list\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects \'Create static list\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 87
  testRunner.And("User create static list with \"NINJA TestList Static List\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 88
@@ -429,7 +429,7 @@ this.FeatureBackground();
 #line 93
  testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table6, "When ");
 #line 96
- testRunner.And("User selects \"Create static list\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects \'Create static list\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 97
  testRunner.And("User create static list with \"QWER TestList Static List\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 98

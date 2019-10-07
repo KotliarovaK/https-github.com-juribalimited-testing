@@ -95,9 +95,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatUserWithoutJustTheProjectAdministrat
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 0DTXL41673EW7O   |
-	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update path" Bulk Update Type on Action panel
-	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
+	And User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update path' in the 'Bulk Update Type' dropdown
+	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
 	And User selects "Computer: Laptop Replacement" Path on Action panel
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
@@ -148,9 +148,9 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUserWithoutJustTheProjectBulkUp
 	When User select "Application" rows in the grid
 	| SelectedRowsName                         |
 	| 0047 - Microsoft Access 97 SR-2 Francais |
-	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update path" Bulk Update Type on Action panel
-	And User selects "Email Migration" Project on Action panel
+	And User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update path' in the 'Bulk Update Type' dropdown
+	And User selects 'Email Migration' option from 'Project' autocomplete
 	And User selects "Sharepoint Application" Path on Action panel
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel

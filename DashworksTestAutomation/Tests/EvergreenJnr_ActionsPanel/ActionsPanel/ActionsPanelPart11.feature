@@ -19,10 +19,10 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatNoErrorDisplayedWhenBulkUpdateMai
 	When User select "Email Address" rows in the grid
 	| SelectedRowsName                 |
 	| 003F5D8E1A844B1FAA5@bclabs.local |
-	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update ring" Bulk Update Type on Action panel
+	And User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update ring' in the 'Bulk Update Type' dropdown
 	And User selects "Project" Project or Evergreen on Action panel
-	And User selects "Mailbox Evergreen Capacity Project" Project on Action panel
+	And User selects 'Mailbox Evergreen Capacity Project' option from 'Project' autocomplete
 	And User selects "Unassigned" Ring on Action panel
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
@@ -39,8 +39,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnUserboxListForRingBulkUpdateOptionsO
 	When User select "Username" rows in the grid
 	| SelectedRowsName     |
 	| $231000-3AC04R8AR431 |
-	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update ring" Bulk Update Type on Action panel
+	And User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update ring' in the 'Bulk Update Type' dropdown
 	And User selects "Project" Project or Evergreen on Action panel
 	Then following values are displayed in "Project" drop-down with searchfield on Action panel:
 	| Options                                  |
@@ -59,10 +59,10 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSortOrderForEvergreenBucketsInBulkUp
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 001BAQXT6JWFPI   |
-	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update bucket" Bulk Update Type on Action panel
+	And User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update bucket' in the 'Bulk Update Type' dropdown
 	And User selects "Evergreen" Project or Evergreen on Action panel
-	Then options for "Bucket" field are displayed in alphabetical order on Action panel
+	Then 'Bucket' autocomplete options are sorted in the alphabetical order
 
 @Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS16822 @Do_Not_Run_With_Capacity @Do_Not_Run_With_CapacityUnits
 Scenario: EvergreenJnr_DevicesList_CheckThatSortOrderForEvergreenCapacityUnitsInBulkUpdateIsCorrect
@@ -73,10 +73,10 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSortOrderForEvergreenCapacityUnitsIn
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 001BAQXT6JWFPI   |
-	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update capacity unit" Bulk Update Type on Action panel
+	And User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
 	And User selects "Evergreen" Project or Evergreen on Action panel
-	Then options for "Capacity Unit" field are displayed in alphabetical order on Action panel
+	Then 'Capacity Unit' autocomplete options are sorted in the alphabetical order
 
 @Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS16844
 Scenario: EvergreenJnr_DevicesList_CheckThatBulkUpdateOfArchivedItemsWorks
@@ -88,8 +88,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatBulkUpdateOfArchivedItemsWorks
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| Empty            |
-	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update capacity unit" Bulk Update Type on Action panel
+	And User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
 	And User selects "Evergreen" Project or Evergreen on Action panel
 	And User selects "Evergreen Capacity Unit 1" Capacity Unit on Action panel
 	And User clicks 'UPDATE' button 
@@ -108,12 +108,12 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSlotIsDisplayedInDDLIfSelectDateWith
 	And User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 00I0COBFWHOF27   |
-	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update task value" Bulk Update Type on Action panel
-	And User selects "1803 Rollout" Project on Action panel
-	And User selects "Migration" Stage on Action panel
-	And User selects "Migrated Date" Task on Action panel
-	And User selects "Update" Update Date on Action panel
+	And User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	And User selects '1803 Rollout' option from 'Project' autocomplete
+	And User selects 'Migration' option from 'Stage' autocomplete
+	And User selects 'Migrated Date' option from 'Task' autocomplete
+	And User selects 'Update' in the 'Update Date' dropdown
 	And User selects next Tuesday Date on Action panel
 	Then following values are presented in "Capacity Slot" drop-down on Action panel:
 	| Options    |
@@ -129,26 +129,26 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFullSlotIsDisplayedWhileRulesShouldH
 	And User clicks 'Devices' on the left-hand menu
 	And User clicks the Actions button
 	And User select all rows
-	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update task value" Bulk Update Type on Action panel
-	And User selects "1803 Rollout" Project on Action panel
-	And User selects "Migration" Stage on Action panel
-	And User selects "Migrated Date" Task on Action panel
-	And User selects "Update" Update Date on Action panel
+	And User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	And User selects '1803 Rollout' option from 'Project' autocomplete
+	And User selects 'Migration' option from 'Stage' autocomplete
+	And User selects 'Migrated Date' option from 'Task' autocomplete
+	And User selects 'Update' in the 'Update Date' dropdown
 	And User selects next Tuesday Date on Action panel
-	And User selects "Slot17833_1" value for "Capacity Slot" dropdown on Action panel
+	And User selects 'Slot17833_1' in the 'Capacity Slot' dropdown
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
 	When User clicks refresh button in the browser
 	And User clicks the Actions button
 	And User select all rows
-	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update task value" Bulk Update Type on Action panel
-	And User selects "1803 Rollout" Project on Action panel
-	And User selects "Migration" Stage on Action panel
-	And User selects "Migrated Date" Task on Action panel
-	And User selects "Update" Update Date on Action panel
+	And User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	And User selects '1803 Rollout' option from 'Project' autocomplete
+	And User selects 'Migration' option from 'Stage' autocomplete
+	And User selects 'Migrated Date' option from 'Task' autocomplete
+	And User selects 'Update' in the 'Update Date' dropdown
 	And User selects next Tuesday Date on Action panel
 	Then following values are presented in "Capacity Slot" drop-down on Action panel:
 	| Options    |

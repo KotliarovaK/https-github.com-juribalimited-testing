@@ -21,10 +21,10 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDevicesAreAddedCorrectly
 	| 00KLL9S8NRF0X6   |
 	| 00KWQ4J3WKQM0G   |
 	| 01ERDGD48UDQKE   |
-	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update capacity unit" Bulk Update Type on Action panel
+	And User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
 	And User selects "Evergreen" Project or Evergreen on Action panel
-	And User selects "CapacityUnit12141Devices" value for "Capacity Unit" dropdown with search on Action panel
+	And User selects 'CapacityUnit12141Devices' option from 'Capacity Unit' autocomplete
 	And User clicks 'UPDATE' button 
 	Then User clicks "UPDATE" button on message box
 	And Success message with "5 updates have been queued" text is displayed on Action panel
@@ -52,10 +52,10 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatUsersAreAddedCorrectly
 	| ___ ___              |
 	| 002B5DC7D4D34D5C895  |
 	| 00BDBAEA57334C7C8F4  |
-	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update capacity unit" Bulk Update Type on Action panel
+	And User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
 	And User selects "Evergreen" Project or Evergreen on Action panel
-	And User selects "CapacityUnit12141Users" value for "Capacity Unit" dropdown with search on Action panel
+	And User selects 'CapacityUnit12141Users' option from 'Capacity Unit' autocomplete
 	And User clicks 'UPDATE' button 
 	Then User clicks "UPDATE" button on message box
 	And Success message with "5 updates have been queued" text is displayed on Action panel
@@ -83,10 +83,10 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatApplicationsAreAddedCorrectly
 	| %SQL_PRODUCT_SHORT_NAME% SSIS 64Bit For SSDTBI                  |
 	| 0004 - Adobe Acrobat Reader 5.0.5 Francais                      |
 	| 0036 - Microsoft Access 97 SR-2 English                         |
-	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update capacity unit" Bulk Update Type on Action panel
+	And User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
 	And User selects "Evergreen" Project or Evergreen on Action panel
-	And User selects "CapacityUnit12141Applications" value for "Capacity Unit" dropdown with search on Action panel
+	And User selects 'CapacityUnit12141Applications' option from 'Capacity Unit' autocomplete
 	And User clicks 'UPDATE' button 
 	Then User clicks "UPDATE" button on message box
 	And Success message with "5 updates have been queued" text is displayed on Action panel
@@ -114,10 +114,10 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatMailboxesAreAddedCorrectly
 	| 003F5D8E1A844B1FAA5@bclabs.local |
 	| 0072B088173449E3A93@bclabs.local |
 	| 00A5B910A1004CF5AC4@bclabs.local |
-	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update capacity unit" Bulk Update Type on Action panel
+	And User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
 	And User selects "Evergreen" Project or Evergreen on Action panel
-	And User selects "CapacityUnit12141Mailboxes" value for "Capacity Unit" dropdown with search on Action panel
+	And User selects 'CapacityUnit12141Mailboxes' option from 'Capacity Unit' autocomplete
 	And User clicks 'UPDATE' button 
 	Then User clicks "UPDATE" button on message box
 	And Success message with "5 updates have been queued" text is displayed on Action panel

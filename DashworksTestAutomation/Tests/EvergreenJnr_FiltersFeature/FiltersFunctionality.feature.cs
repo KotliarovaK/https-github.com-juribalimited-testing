@@ -218,7 +218,7 @@ this.FeatureBackground();
             table2.AddRow(new string[] {
                         "FALSE"});
             table2.AddRow(new string[] {
-                        "UNKNOWN"});
+                        "Empty"});
 #line 26
  testRunner.When("User add \"Windows7Mi: Hide from End Users\" filter where type is \"Equals\" without " +
                     "added column and following checkboxes:", ((string)(null)), table2, "When ");
@@ -234,7 +234,7 @@ this.FeatureBackground();
             table3.AddRow(new string[] {
                         "FALSE"});
             table3.AddRow(new string[] {
-                        "UNKNOWN"});
+                        "Empty"});
 #line 34
  testRunner.When("User add \"Windows7Mi: Hide from End Users\" filter where type is \"Equals\" without " +
                     "added column and following checkboxes:", ((string)(null)), table3, "When ");
@@ -250,7 +250,7 @@ this.FeatureBackground();
             table4.AddRow(new string[] {
                         "TRUE"});
             table4.AddRow(new string[] {
-                        "UNKNOWN"});
+                        "Empty"});
 #line 41
  testRunner.When("User add \"Windows7Mi: Hide from End Users\" filter where type is \"Equals\" without " +
                     "added column and following checkboxes:", ((string)(null)), table4, "When ");
@@ -1804,15 +1804,14 @@ this.FeatureBackground();
 #line 377
  testRunner.And("User select \"Hostname\" rows in the grid", ((string)(null)), table21, "And ");
 #line 382
- testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 383
- testRunner.And("User selects \"Update capacity unit\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects \'Update capacity unit\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 384
  testRunner.And("User selects \"Evergreen\" option in \"Project or Evergreen\" drop-down on Action pan" +
                     "el", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 385
- testRunner.And("User selects \"CapacityUnit13201\" value for \"Capacity Unit\" dropdown with search o" +
-                    "n Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects \'CapacityUnit13201\' option from \'Capacity Unit\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 386
  testRunner.And("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 387
@@ -1852,15 +1851,14 @@ this.FeatureBackground();
 #line 399
  testRunner.And("User select \"Username\" rows in the grid", ((string)(null)), table24, "And ");
 #line 403
- testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 404
- testRunner.And("User selects \"Update capacity unit\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects \'Update capacity unit\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 405
  testRunner.And("User selects \"Evergreen\" option in \"Project or Evergreen\" drop-down on Action pan" +
                     "el", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 406
- testRunner.And("User selects \"CapacityUnit13201\" value for \"Capacity Unit\" dropdown with search o" +
-                    "n Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects \'CapacityUnit13201\' option from \'Capacity Unit\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 407
  testRunner.And("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 408
@@ -1902,15 +1900,14 @@ this.FeatureBackground();
 #line 420
  testRunner.And("User select \"Email Address\" rows in the grid", ((string)(null)), table27, "And ");
 #line 425
- testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 426
- testRunner.And("User selects \"Update capacity unit\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects \'Update capacity unit\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 427
  testRunner.And("User selects \"Evergreen\" option in \"Project or Evergreen\" drop-down on Action pan" +
                     "el", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 428
- testRunner.And("User selects \"CapacityUnit13201\" value for \"Capacity Unit\" dropdown with search o" +
-                    "n Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects \'CapacityUnit13201\' option from \'Capacity Unit\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 429
  testRunner.And("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 430
@@ -1950,15 +1947,14 @@ this.FeatureBackground();
 #line 442
  testRunner.And("User select \"Application\" rows in the grid", ((string)(null)), table30, "And ");
 #line 446
- testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 447
- testRunner.And("User selects \"Update capacity unit\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects \'Update capacity unit\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 448
  testRunner.And("User selects \"Evergreen\" option in \"Project or Evergreen\" drop-down on Action pan" +
                     "el", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 449
- testRunner.And("User selects \"CapacityUnit13201\" value for \"Capacity Unit\" dropdown with search o" +
-                    "n Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects \'CapacityUnit13201\' option from \'Capacity Unit\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 450
  testRunner.And("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 451
@@ -3011,7 +3007,7 @@ this.FeatureBackground();
 #line 696
  testRunner.When("User select all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 697
- testRunner.And("User selects \"Create static list\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects \'Create static list\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 698
  testRunner.And("User create static list with \"StaticList6581\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 699
@@ -3130,7 +3126,7 @@ this.FeatureBackground();
 #line 727
  testRunner.When("User select all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 728
- testRunner.And("User selects \"Create static list\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects \'Create static list\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 729
  testRunner.And("User create static list with \"StaticList6778\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 730
@@ -3516,7 +3512,7 @@ this.FeatureBackground();
 #line 810
  testRunner.When("User select all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 811
- testRunner.And("User selects \"Create static list\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects \'Create static list\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 812
  testRunner.And("User create static list with \"StaticList8546\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 813
@@ -5061,7 +5057,7 @@ this.FeatureBackground();
 #line 1168
  testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table100, "When ");
 #line 1173
- testRunner.And("User selects \"Create static list\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects \'Create static list\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1174
  testRunner.And("User create static list with \"StaticList8543\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1175

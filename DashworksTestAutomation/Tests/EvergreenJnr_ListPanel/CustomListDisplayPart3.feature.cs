@@ -253,7 +253,7 @@ this.FeatureBackground();
 #line 38
  testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table3, "When ");
 #line 44
- testRunner.And("User selects \"Create static list\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects \'Create static list\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 45
  testRunner.Then("User type \"Test\" into Static list name field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 46
@@ -364,7 +364,7 @@ this.FeatureBackground();
 #line 67
  testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table4, "When ");
 #line 71
- testRunner.And("User selects \"Create static list\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects \'Create static list\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 72
  testRunner.And("User create static list with \"Static List TestName\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 73

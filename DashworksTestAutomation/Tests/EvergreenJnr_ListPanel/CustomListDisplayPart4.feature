@@ -16,7 +16,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSortingWillBeWorkForExistingSavedSta
 	| 00BDM1JUR8IF419  |
 	| 00K4CEEQ737BA4L  |
 	| 011PLA470S0B9DJ  |
-	And User selects "Create static list" in the Actions dropdown
+	And User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "Static List TestName" name
 	Then "Static List TestName" list is displayed to user
 	When User clicks the Columns button
@@ -77,7 +77,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForActiveLis
 	| 00K4CEEQ737BA4L  |
 	| 011PLA470S0B9DJ  |
 	| 019BFPQGKK5QT8N  |
-	And User selects "Create static list" in the Actions dropdown
+	And User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "Static List TestName" name
 	Then "Static List TestName" list is displayed to user
 	When User clicks the Columns button

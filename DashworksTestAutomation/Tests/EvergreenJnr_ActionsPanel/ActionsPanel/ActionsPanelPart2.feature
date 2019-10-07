@@ -22,14 +22,14 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatRemoveFromStaticListOptionIsNo
 	| Value              |
 	| Create static list |
 	| Bulk update        |
-	When User selects "Bulk update" in the Actions dropdown
+	When User selects 'Bulk update' in the 'Action' dropdown
 	Then Bulk Update Type dropdown is displayed on Action panel
-	When User selects "Update task value" Bulk Update Type on Action panel
+	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	Then "UPDATE" Action button is disabled
 	And "CANCEL" Action button is active
-	When User selects "<ProjectName>" Project on Action panel
-	And User selects "<StageName>" Stage on Action panel
-	And User selects "<TaskName>" Task on Action panel
+	When User selects '<ProjectName>' option from 'Project' autocomplete
+	And User selects '<StageName>' option from 'Stage' autocomplete
+	And User selects '<TaskName>' option from 'Task' autocomplete
 	And User selects "<Value>" Value on Action panel
 	When User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
@@ -53,7 +53,7 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatAddToStaticListOptionIsNotShow
 	When User select "<ColumnHeader>" rows in the grid
 	| SelectedRowsName |
 	| <RowName>        |
-	And User selects "Create static list" in the Actions dropdown
+	And User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "StaticList12946" name
 	Then "StaticList12946" list is displayed to user
 	When User clicks the Actions button
@@ -88,7 +88,7 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatStaticListsCreatedFromAFilterO
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
-	When User selects "Create static list" in the Actions dropdown
+	When User selects 'Create static list' in the 'Action' dropdown
 	When User create static list with "StaticList12946" name
 	Then "StaticList12946" list is displayed to user
 	And table content is present
@@ -127,9 +127,9 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnDevi
 	| 001PSUMZYOW581   |
 	| 00BDM1JUR8IF419  |
 	| 00RUUMAH9OZN9A   |
-	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update path" Bulk Update Type on Action panel
-	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
+	And User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update path' in the 'Bulk Update Type' dropdown
+	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
 	Then "UPDATE" Action button is disabled
 	When User selects "Computer: PC Rebuild" Path on Action panel
 	And User clicks 'UPDATE' button 
@@ -151,9 +151,9 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnDevi
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 001PSUMZYOW581   |
-	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update path" Bulk Update Type on Action panel
-	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
+	And User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update path' in the 'Bulk Update Type' dropdown
+	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
 	And User selects "Computer: Virtual Machine" Path on Action panel
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
@@ -165,9 +165,9 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnDevi
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 00BDM1JUR8IF419  |
-	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update path" Bulk Update Type on Action panel
-	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
+	And User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update path' in the 'Bulk Update Type' dropdown
+	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
 	And User selects "[This is the Default Request Type for Computer)] " Path on Action panel
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
@@ -179,9 +179,9 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnDevi
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 00RUUMAH9OZN9A   |
-	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update path" Bulk Update Type on Action panel
-	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
+	And User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update path' in the 'Bulk Update Type' dropdown
+	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
 	And User selects "Computer: Laptop Replacement" Path on Action panel
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
