@@ -62,7 +62,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSortOrderForEvergreenBucketsInBulkUp
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update bucket' in the 'Bulk Update Type' dropdown
 	And User selects "Evergreen" Project or Evergreen on Action panel
-	Then options for "Bucket" field are displayed in alphabetical order on Action panel
+	Then 'Bucket' autocomplete options are sorted in the alphabetical order
 
 @Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS16822 @Do_Not_Run_With_Capacity @Do_Not_Run_With_CapacityUnits
 Scenario: EvergreenJnr_DevicesList_CheckThatSortOrderForEvergreenCapacityUnitsInBulkUpdateIsCorrect
@@ -76,7 +76,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSortOrderForEvergreenCapacityUnitsIn
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
 	And User selects "Evergreen" Project or Evergreen on Action panel
-	Then options for "Capacity Unit" field are displayed in alphabetical order on Action panel
+	Then 'Capacity Unit' autocomplete options are sorted in the alphabetical order
 
 @Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS16844
 Scenario: EvergreenJnr_DevicesList_CheckThatBulkUpdateOfArchivedItemsWorks

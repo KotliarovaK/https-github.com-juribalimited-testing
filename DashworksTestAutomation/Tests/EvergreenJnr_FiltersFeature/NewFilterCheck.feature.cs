@@ -258,13 +258,13 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("NewFilterCheck")]
         [NUnit.Framework.CategoryAttribute("DAS10828")]
         [NUnit.Framework.CategoryAttribute("DAS13001")]
-        [NUnit.Framework.TestCaseAttribute("Windows7Mi: Target App Readiness", "Equals, Does not equal", "Red", "Windows7Mi: Target App Readiness is Red", "28", null)]
-        [NUnit.Framework.TestCaseAttribute("Babel(Engl: Target App Readiness", "Equals, Does not equal", "None", "Babel(Engl: Target App Readiness is None", "302", null)]
-        [NUnit.Framework.TestCaseAttribute("Barry\'sUse: Target App Readiness", "Equals, Does not equal", "None", "Barry\'sUse: Target App Readiness is None", "1,045", null)]
-        [NUnit.Framework.TestCaseAttribute("ComputerSc: Target App Readiness", "Equals, Does not equal", "Green", "ComputerSc: Target App Readiness is Green", "913", null)]
-        [NUnit.Framework.TestCaseAttribute("Havoc(BigD: Target App Readiness", "Equals, Does not equal", "None", "Havoc(BigD: Target App Readiness is None", "1,066", null)]
-        [NUnit.Framework.TestCaseAttribute("MigrationP: Target App Readiness", "Equals, Does not equal", "Blue", "MigrationP: Target App Readiness is Blue", "189", null)]
-        [NUnit.Framework.TestCaseAttribute("UserSchedu: Target App Readiness", "Equals, Does not equal", "Grey", "UserSchedu: Target App Readiness is Grey", "981", null)]
+        [NUnit.Framework.TestCaseAttribute("Windows7Mi: Target App Readiness", "Equals, Does not equal, Not empty", "Red", "Windows7Mi: Target App Readiness is Red", "28", null)]
+        [NUnit.Framework.TestCaseAttribute("Babel(Engl: Target App Readiness", "Equals, Does not equal, Not empty", "None", "Babel(Engl: Target App Readiness is None", "302", null)]
+        [NUnit.Framework.TestCaseAttribute("Barry\'sUse: Target App Readiness", "Equals, Does not equal, Not empty", "None", "Barry\'sUse: Target App Readiness is None", "1,045", null)]
+        [NUnit.Framework.TestCaseAttribute("ComputerSc: Target App Readiness", "Equals, Does not equal, Not empty", "Green", "ComputerSc: Target App Readiness is Green", "913", null)]
+        [NUnit.Framework.TestCaseAttribute("Havoc(BigD: Target App Readiness", "Equals, Does not equal, Not empty", "None", "Havoc(BigD: Target App Readiness is None", "1,066", null)]
+        [NUnit.Framework.TestCaseAttribute("MigrationP: Target App Readiness", "Equals, Does not equal, Not empty", "Blue", "MigrationP: Target App Readiness is Blue", "189", null)]
+        [NUnit.Framework.TestCaseAttribute("UserSchedu: Target App Readiness", "Equals, Does not equal, Not empty", "Grey", "UserSchedu: Target App Readiness is Grey", "981", null)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatTargetAppReadinessFilterIsAddedToTheList(string columnName, string operators, string filterOption, string text, string rowsCount, string[] exampleTags)
         {
             System.Exception lastException = null;
@@ -933,13 +933,13 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS11509")]
         [NUnit.Framework.CategoryAttribute("DAS11507")]
         [NUnit.Framework.CategoryAttribute("DAS11509")]
-        [NUnit.Framework.TestCaseAttribute("Windows7Mi: Hide from End Users", "Equals, Does not equal", "FALSE", "Windows7Mi: Hide from End Users is False", "1,067", null)]
-        [NUnit.Framework.TestCaseAttribute("Babel(Engl: Hide from End Users", "Equals, Does not equal", "UNKNOWN", "Babel(Engl: Hide from End Users is Unknown", "1,921", null)]
-        [NUnit.Framework.TestCaseAttribute("Barry\'sUse: Hide from End Users", "Equals, Does not equal", "FALSE", "Barry\'sUse: Hide from End Users is False", "1,077", null)]
-        [NUnit.Framework.TestCaseAttribute("ComputerSc: Hide from End Users", "Equals, Does not equal", "FALSE", "ComputerSc: Hide from End Users is False", "1,043", null)]
-        [NUnit.Framework.TestCaseAttribute("Havoc(BigD: Hide from End Users", "Equals, Does not equal", "UNKNOWN", "Havoc(BigD: Hide from End Users is Unknown", "1,156", null)]
-        [NUnit.Framework.TestCaseAttribute("MigrationP: Hide from End Users", "Equals, Does not equal", "FALSE", "MigrationP: Hide from End Users is False", "220", null)]
-        [NUnit.Framework.TestCaseAttribute("UserSchedu: Hide from End Users", "Equals, Does not equal", "UNKNOWN", "UserSchedu: Hide from End Users is Unknown", "1,242", null)]
+        [NUnit.Framework.TestCaseAttribute("Windows7Mi: Hide from End Users", "Equals, Does not equal, Not empty", "FALSE", "Windows7Mi: Hide from End Users is False", "1,067", null)]
+        [NUnit.Framework.TestCaseAttribute("Babel(Engl: Hide from End Users", "Equals, Does not equal, Not empty", "UNKNOWN", "Babel(Engl: Hide from End Users is Unknown", "1,921", null)]
+        [NUnit.Framework.TestCaseAttribute("Barry\'sUse: Hide from End Users", "Equals, Does not equal, Not empty", "FALSE", "Barry\'sUse: Hide from End Users is False", "1,077", null)]
+        [NUnit.Framework.TestCaseAttribute("ComputerSc: Hide from End Users", "Equals, Does not equal, Not empty", "FALSE", "ComputerSc: Hide from End Users is False", "1,043", null)]
+        [NUnit.Framework.TestCaseAttribute("Havoc(BigD: Hide from End Users", "Equals, Does not equal, Not empty", "UNKNOWN", "Havoc(BigD: Hide from End Users is Unknown", "1,156", null)]
+        [NUnit.Framework.TestCaseAttribute("MigrationP: Hide from End Users", "Equals, Does not equal, Not empty", "FALSE", "MigrationP: Hide from End Users is False", "220", null)]
+        [NUnit.Framework.TestCaseAttribute("UserSchedu: Hide from End Users", "Equals, Does not equal, Not empty", "UNKNOWN", "UserSchedu: Hide from End Users is Unknown", "1,242", null)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatHideFromEndUsersFilterIsAddedToTheList(string columnName, string operators, string filterOption, string text, string rowsCount, string[] exampleTags)
         {
             System.Exception lastException = null;

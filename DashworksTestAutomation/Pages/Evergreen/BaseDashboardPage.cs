@@ -1102,27 +1102,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(selector);
         }
 
-        public IWebElement GetDropdownWithSearchByFieldName(string name)
-        {
-            var selector = By.XPath($"//input[@aria-label='{name}']");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
-        //TODO should be replaced by GetDropdownByName
-        public IWebElement GetDropdownByFieldName(string name)
-        {
-            var selector = By.XPath($"//*[text()='{name}']/ancestor::div[@class='mat-form-field-infix']");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
-        public IList<IWebElement> GetTooltipForDay(string dayNumber)
-        {
-            var selector = By.XPath($".//td[@role='gridcell']//div[text() = '{dayNumber}']/span/span");
-            return Driver.FindElements(selector);
-        }
-
         #region Datepicker
 
         public int GetDayColumnNumberByNameFromDatepicker(string dayName)

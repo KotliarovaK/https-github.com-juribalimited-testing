@@ -81,12 +81,13 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetail
 	And User clicks String Filter button for "Readiness" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 
+	#//TODO: Ann.Ilchenko 4/10/19: find correct name for an object after bugfix (DAS-18354)
 Examples:
 	| PageName | SearchTerm                                      | MainTabName | SubTabName              | CountRows |
-	| User     | Loya\, Dan.Employees.Birmingham.UK.bclabs.local | Projects    | Mailbox Project Summary | 2         |
+	#| User     | Loya\, Dan.Employees.Birmingham.UK.bclabs.local | Projects    | Mailbox Project Summary | 2         |
 	| Device   | 001BAQXT6JWFPI                                  | Projects    | Projects Summary        | 10        |
 	| Device   | 001BAQXT6JWFPI                                  | Projects    | Owner Projects Summary  | 7         |
-	| User     | Loya\, Dan.Employees.Birmingham.UK.bclabs.local | Projects    | User Projects           | 3         |
+	#| User     | Loya\, Dan.Employees.Birmingham.UK.bclabs.local | Projects    | User Projects           | 3         |
 	
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738 @DAS12371 @DAS13409
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetailsFiltersAreDisplayedCorrectlyForExpandedSections
@@ -274,9 +275,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatBlanksValueChangedToEmptyValueOnUsersP
 	| Values |
 	| None   |
 	When User closes Checkbox filter for "Status" column
-	When User type "0137C8E69921432992B" in Global Search Field
-	Then User clicks on "0137C8E69921432992B (Jackson, Veronica)" search result
-	And Details page for "0137C8E69921432992B" item is displayed to the user
+	When User navigates to the 'User' details page for '0137C8E69921432992B' item
+	Then Details page for "0137C8E69921432992B" item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	When User navigates to the "Mailbox Project Summary" sub-menu on the Details page
 	And User clicks String Filter button for "Workflow" column

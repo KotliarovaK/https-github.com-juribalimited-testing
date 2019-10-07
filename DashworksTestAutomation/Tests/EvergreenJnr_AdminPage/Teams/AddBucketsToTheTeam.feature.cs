@@ -187,7 +187,7 @@ this.FeatureBackground();
 #line 26
  testRunner.When("User expands \'Evergreen\' multiselect and selects following Objects", ((string)(null)), table3, "When ");
 #line 30
- testRunner.When("User clicks \"ADD BUCKETS\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'ADD BUCKETS\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 31
  testRunner.Then("Success message is displayed and contains \"The selected buckets have been added\" " +
                     "text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
