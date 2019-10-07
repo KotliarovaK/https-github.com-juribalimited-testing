@@ -45,8 +45,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccursWhenCreatingDashb
 	| Table      | DAS-14920_2 | 14920_List | Windows7Mi: In Scope | Count             | Count ASC | 10        |
 	Then There are no errors in the browser console
 	And "DAS-14920_2" Widget is displayed to the user
-	Then "12,100" count is displayed for "False" in the table Widget
-	And "5,179" count is displayed for "True" in the table Widget
+	Then "12,120" count is displayed for "False" in the table Widget
+	And "5,159" count is displayed for "True" in the table Widget
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16073 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetIsDisplayedCorrectly
@@ -299,8 +299,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNewSeverityOptionDisplayedForWidg
 	When User clicks 'CREATE' button 
 	Then Table columns of 'DAS-15852' widget placed in the next order:
 	| headers   |
-	| Not Ready |
 	| Empty     |
+	| Not Ready |
 	| On Target |
 	| Ready     |
 	| Unknown   |
