@@ -7,10 +7,7 @@ Background: Pre-Conditions
 
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16378 @DAS15583 @DAS15345 @DAS16831 @DAS17142 @DAS17524
 Scenario: EvergreenJnr_ApplicationsList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForApplicationsPageInEvergreenMode
-	When User clicks 'Applications' on the left-hand menu
-	Then 'All Applications' list should be displayed to the user
-	When User perform search by "ABBYY FineReader 8.0 Professional Edition"
-	And User click content from "Application" column
+	When User navigates to the 'Application' details page for 'ABBYY FineReader 8.0 Professional Edition' item
 	Then Details page for "ABBYY FineReader 8.0 Professional Edition" item is displayed to the user
 	And User sees following main-tabs on left menu on the Details page:
 	| TabName      |
@@ -66,10 +63,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatNewPatternOfTheVerticalMenuIsDi
 
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15583 @DAS16885 @DAS17213 @DAS16831 @DAS17142 @DAS17524
 Scenario: EvergreenJnr_ApplicationsList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForApplicationsPageInProjectMode
-	When User clicks 'Applications' on the left-hand menu
-	Then 'All Applications' list should be displayed to the user
-	When User perform search by "ABBYY FineReader 8.0 Professional Edition"
-	And User click content from "Application" column
+	When User navigates to the 'Application' details page for 'ABBYY FineReader 8.0 Professional Edition' item
 	Then Details page for "ABBYY FineReader 8.0 Professional Edition" item is displayed to the user
 	When User switches to the "*Project K-Computer Scheduled Project" project in the Top bar on Item details page
 	Then User sees following main-tabs on left menu on the Details page:

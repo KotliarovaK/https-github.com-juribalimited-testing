@@ -209,7 +209,7 @@ this.FeatureBackground();
  testRunner.And("User selects \'Update path\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Projects"});
+                        "Options"});
             table4.AddRow(new string[] {
                         "*Project K-Computer Scheduled Project"});
             table4.AddRow(new string[] {
