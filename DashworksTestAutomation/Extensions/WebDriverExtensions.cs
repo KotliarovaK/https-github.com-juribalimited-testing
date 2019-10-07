@@ -54,7 +54,13 @@ namespace DashworksTestAutomation.Extensions
             return page;
         }
 
-        //Pay attention that there are two different method that work with two different type of tooltips
+        //For Datepicker tooltip is already on the page. No need to hover
+        public static IList<IWebElement> GetDatepickerTooltipElements(this RemoteWebDriver driver, int dayNumber)
+        {
+            var selector = By.XPath($".//td[@role='gridcell']//div[text()='{dayNumber}']/span/span");
+            return driver.FindElements(selector);
+        }
+
         public static string GetTooltipBubbleText(this RemoteWebDriver driver)
         {
             var by = By.XPath(".//div[contains(@class,'ag-tooltip')]");
@@ -549,7 +555,10 @@ namespace DashworksTestAutomation.Extensions
         public static List<IWebElement> GetOptionsFromMatSelectbox(this RemoteWebDriver driver, IWebElement selectbox)
         {
             if (!driver.IsElementDisplayed(matOptionsSelector))
+            {
                 selectbox.Click();
+                driver.WaitForElementsToBeDisplayed(matOptionsSelector);
+            }
             return driver.FindElements(matOptionsSelector).ToList();
         }
 

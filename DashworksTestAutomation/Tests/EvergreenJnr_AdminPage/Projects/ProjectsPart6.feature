@@ -42,7 +42,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCancelButtonIsDisplayedWithCorrectColo
 	And User selects all rows on the grid
 	Then Actions dropdown is displayed correctly
 	When User clicks Actions button on the Projects page
-	And User clicks Delete button in Actions
+	And User clicks Delete Project button
 	And User clicks Delete button
 	Then User sees Cancel button in banner
 	And Cancel button is displayed with correctly color

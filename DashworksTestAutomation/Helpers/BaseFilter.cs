@@ -286,9 +286,25 @@ namespace DashworksTestAutomation.Helpers
             foreach (var row in Table.Rows)
             {
                 var selector = string.Format(CheckboxSelector, row["Option"]);
-                _driver.WaitForElementToBeDisplayed(By.XPath(selector));
-                var checkbox = _driver.FindElement(By.XPath(selector));
-                if (bool.Parse(row["State"]) != checkbox.GetFilterCheckboxSelectedState()) checkbox.Click();
+                var checkbox = _driver.FindElements(By.XPath(selector));
+
+                if (checkbox.Count > 1)
+                {
+                    if (bool.Parse(row["State"]) != checkbox.FirstOrDefault().GetFilterCheckboxSelectedState())
+                        checkbox.FirstOrDefault().Click();
+                }
+                else
+                {
+                    try
+                    {
+                        _driver.FindElement(By.XPath(".//div[@class='filter-panel']//i[contains(@class,'icon-search')]")).Click();
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e);
+                    }
+                    checkbox.FirstOrDefault().Click();
+                }
             }
 
             SaveFilter();

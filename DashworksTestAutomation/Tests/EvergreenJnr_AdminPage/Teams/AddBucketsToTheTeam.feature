@@ -27,7 +27,7 @@ Scenario: EvergreenJnr_AdminPage_AddingBucketsToTheTeam
 	| Objects     |
 	| TestBucket6 |
 	| TestBucket7 |
-	When User clicks "ADD BUCKETS" button
+	When User clicks 'ADD BUCKETS' button
 	Then Success message is displayed and contains "The selected buckets have been added" text
 	When User enters "TestBucket" text in the Search field for "Bucket" column
 	And User selects all rows on the grid

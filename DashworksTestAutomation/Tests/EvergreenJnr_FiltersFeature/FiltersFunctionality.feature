@@ -27,21 +27,21 @@ Scenario: EvergreenJnr_ApplicationsList_Check500ErrorIsNotReturnedForBooleanFilt
 	| SelectedCheckboxes |
 	| TRUE               |
 	| FALSE              |
-	| UNKNOWN            |
+	| Empty              |
 	Then "Windows7Mi: Hide from End Users" filter is added to the list
 	And "2,223" rows are displayed in the agGrid
 	When User have removed "Windows7Mi: Hide from End Users" filter
 	When User add "Windows7Mi: Hide from End Users" filter where type is "Equals" without added column and following checkboxes:
 	| SelectedCheckboxes |
 	| FALSE              |
-	| UNKNOWN            |
+	| Empty              |
 	Then "Windows7Mi: Hide from End Users" filter is added to the list
 	And "2,223" rows are displayed in the agGrid
 	When User have removed "Windows7Mi: Hide from End Users" filter
 	When User add "Windows7Mi: Hide from End Users" filter where type is "Equals" without added column and following checkboxes:
 	| SelectedCheckboxes |
 	| TRUE               |
-	| UNKNOWN            |
+	| Empty              |
 	Then "Windows7Mi: Hide from End Users" filter is added to the list
 	And "1,156" rows are displayed in the agGrid
 
