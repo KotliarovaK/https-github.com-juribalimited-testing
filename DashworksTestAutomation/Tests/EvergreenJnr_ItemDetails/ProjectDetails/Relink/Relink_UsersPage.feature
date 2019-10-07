@@ -26,6 +26,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatRelinkOptionIsWorkedCorrectlyForProjec
 	Then Warning message with "This object will be relinked to the selected Evergreen object in this project" text is displayed on the Project Details Page
 	When User clicks 'RELINK' button in Dialog Pop-up
 	Then Success message is displayed and contains "User successfully relinked" text
+	#waiting for the RELINK process to be completed
 	When User waits for three seconds
 	Then Details page for "DSF4350513" item is displayed to the user
 	And following content is displayed on the Details Page
@@ -35,6 +36,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatRelinkOptionIsWorkedCorrectlyForProjec
 	#Andrew will remove space in button name
 	And User clicks 'RESYNC' button in Dialog Pop-up
 	Then Success message is displayed and contains "User successfully resynced" text
+	#waiting for the RESYNC process to be completed
 	When User waits for three seconds
 	Then following content is displayed on the Details Page
 	| Title | Value      |

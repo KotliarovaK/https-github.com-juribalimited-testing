@@ -36,6 +36,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatRelinkOptionIsWorkedCorrectlyForPr
 	When User clicks 'RESYNC ' button 
 	And User clicks 'RESYNC' button in Dialog Pop-up
 	Then Success message is displayed and contains "The Evergreen owner of this Mailbox has been queued for onboarding into this project, the change in ownership for this Mailbox will show once this is complete" text
+	#waiting for the RESYNC process to be completed
 	When User waits for three seconds
 	Then User verifies data in the fields on details page
 	| Field         | Data                             |
@@ -47,6 +48,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatRelinkOptionIsWorkedCorrectlyForPr
 	And User clicks 'RELINK' button in Dialog Pop-up
 	#Andrew will check the delay time for message
 	#Then Success message is displayed and contains "Mailbox successfully relinked" text
+	#waiting for the RELINK process to be completed
 	When User waits for three seconds
 	When User navigates to the 'User' details page for '04D158C83A0142F3B79' item
 	When User switches to the "USE ME FOR AUTOMATION(MAIL SCHDLD)" project in the Top bar on Item details page

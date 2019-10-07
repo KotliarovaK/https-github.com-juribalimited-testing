@@ -38,6 +38,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRelinkOptionIsWorkedCorrectlyForProj
 	When User clicks 'RESYNC ' button 
 	And User clicks 'RESYNC' button in Dialog Pop-up
 	Then Success message is displayed and contains "The Evergreen owner of this Device has been queued for onboarding into this project, the change in ownership for this Device will show once this is complete" text
+	#waiting for the RESYNC process to be completed
 	When User waits for three seconds
 	Then User verifies data in the fields on details page
 	| Field        | Data            |
@@ -49,6 +50,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRelinkOptionIsWorkedCorrectlyForProj
 	And User clicks 'RELINK' button in Dialog Pop-up
 	#Andrew will check the delay time for message
 	#Then Success message is displayed and contains "Device successfully relinked" text
+	#waiting for the RELINK process to be completed
 	When User waits for three seconds
 	When User navigates to the 'User' details page for 'ZHC394580' item
 	When User switches to the "Havoc (Big Data)" project in the Top bar on Item details page
