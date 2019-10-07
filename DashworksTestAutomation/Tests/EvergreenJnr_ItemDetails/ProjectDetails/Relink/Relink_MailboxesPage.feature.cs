@@ -88,6 +88,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails.ProjectDetails.
         [NUnit.Framework.CategoryAttribute("Relink")]
         [NUnit.Framework.CategoryAttribute("DAS18002")]
         [NUnit.Framework.CategoryAttribute("DAS18112")]
+        [NUnit.Framework.CategoryAttribute("DAS18284")]
         public virtual void EvergreenJnr_MailboxesList_CheckThatRelinkOptionIsWorkedCorrectlyForProjectDetailsOnMailboxesPage()
         {
             System.Exception lastException = null;
@@ -123,17 +124,18 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails.ProjectDetails.
                         "EvergreenJnr_ItemDetails",
                         "Relink",
                         "DAS18002",
-                        "DAS18112"});
+                        "DAS18112",
+                        "DAS18284"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
 #line 10
- testRunner.When("User navigates to the \'Mailbox\' details page for \'000F977AC8824FE39B8@bclabs.loca" +
+ testRunner.When("User navigates to the \'Mailbox\' details page for \'01A921EFD05545818AA@bclabs.loca" +
                     "l\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 11
- testRunner.Then("Details page for \"000F977AC8824FE39B8@bclabs.local\" item is displayed to the user" +
+ testRunner.Then("Details page for \"01A921EFD05545818AA@bclabs.local\" item is displayed to the user" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 12
  testRunner.When("User switches to the \"USE ME FOR AUTOMATION(MAIL SCHDLD)\" project in the Top bar " +
@@ -148,10 +150,10 @@ this.FeatureBackground();
                         "Data"});
             table1.AddRow(new string[] {
                         "Name",
-                        "000F977AC8824FE39B8@bclabs.local"});
+                        "01A921EFD05545818AA@bclabs.local"});
             table1.AddRow(new string[] {
                         "Mailbox Owner",
-                        "Spruill, Shea"});
+                        "Leon, Nacoma"});
 #line 15
  testRunner.Then("User verifies data in the fields on details page", ((string)(null)), table1, "Then ");
 #line 19
@@ -163,8 +165,8 @@ this.FeatureBackground();
 #line 22
  testRunner.And("\'Resync name\' checkbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 23
- testRunner.When("User enters \'gdf\' in the \'Mailbox\' autocomplete field and selects \'GDF237451@bcla" +
-                    "bs.local\' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User enters \'04D158C83A0142F3B79\' in the \'Mailbox\' autocomplete field and selects" +
+                    " \'04D158C83A0142F3B79@bclabs.local\' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 24
  testRunner.Then("User selects state \'true\' for \'Resync owner and users\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 25
@@ -179,17 +181,18 @@ this.FeatureBackground();
 #line 29
  testRunner.Then("Success message is displayed and contains \"Mailbox successfully relinked\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 30
- testRunner.And("Details page for \"GDF237451@bclabs.loca\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Details page for \"04D158C83A0142F3B79@bclabs.local\" item is displayed to the user" +
+                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Data"});
             table2.AddRow(new string[] {
                         "Name",
-                        "000F977AC8824FE39B8@bclabs.local"});
+                        "01A921EFD05545818AA@bclabs.local"});
             table2.AddRow(new string[] {
                         "Mailbox Owner",
-                        "Spruill, Shea"});
+                        "Leon, Nacoma"});
 #line 31
  testRunner.And("User verifies data in the fields on details page", ((string)(null)), table2, "And ");
 #line 36
@@ -197,38 +200,49 @@ this.FeatureBackground();
 #line 37
  testRunner.And("User clicks \'RESYNC\' button in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 38
- testRunner.Then("Success message is displayed and contains \"Mailbox successfully resynced\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Success message is displayed and contains \"The Evergreen owner of this Mailbox ha" +
+                    "s been queued for onboarding into this project, the change in ownership for this" +
+                    " Mailbox will show once this is complete\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 40
+ testRunner.When("User waits for three seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Data"});
             table3.AddRow(new string[] {
                         "Name",
-                        "GDF237451@bclabs.local"});
+                        "04D158C83A0142F3B79@bclabs.local"});
             table3.AddRow(new string[] {
                         "Mailbox Owner",
-                        "Albert,Martinez"});
-#line 39
- testRunner.And("User verifies data in the fields on details page", ((string)(null)), table3, "And ");
-#line 43
- testRunner.When("User navigates to the \'Users\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 44
- testRunner.And("User navigates to the \"Users\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+                        "Jin, Jh"});
+#line 41
+ testRunner.Then("User verifies data in the fields on details page", ((string)(null)), table3, "Then ");
 #line 45
- testRunner.Then("\"7\" rows found label displays on Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User clicks \'RELINK\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 46
- testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("User enters \'01A921EFD05545818AA\' in the \'Mailbox\' autocomplete field and selects" +
+                    " \'01A921EFD05545818AA@bclabs.local\' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 47
- testRunner.And("User navigates to the \"Project Details\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks \'RELINK\' button in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 48
- testRunner.And("User clicks \'RELINK\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 49
- testRunner.And("User enters \'000F977AC8824FE39B8@bclabs.local\' in the \'Mailbox\' autocomplete fiel" +
-                    "d and selects \'000F977AC8824FE39B8@bclabs.local\' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 50
  testRunner.And("User clicks \'RELINK\' button in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 51
- testRunner.And("User clicks \'RELINK\' button in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 52
+ testRunner.When("User waits for three seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 53
+ testRunner.When("User navigates to the \'User\' details page for \'04D158C83A0142F3B79\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 54
+ testRunner.When("User switches to the \"USE ME FOR AUTOMATION(MAIL SCHDLD)\" project in the Top bar " +
+                    "on Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 55
+ testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 56
+ testRunner.And("User navigates to the \"Project Details\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 57
+ testRunner.And("User clicks \'OFFBOARD\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 58
+ testRunner.When("User clicks \'OFFBOARD\' button in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 59
+ testRunner.And("User clicks \'OFFBOARD\' button in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
