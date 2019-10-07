@@ -235,13 +235,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
             return Driver.FindElement(headerSelector).GetAttribute("col-id");
         }
 
-        public IWebElement GetSettingByNameDetailsPage(string settingName)
-        {
-            Driver.WaitForElementToBeDisplayed(
-                By.XPath($".//span[@class='ag-menu-option-text'][text()='{settingName}']"));
-            return Driver.FindElement(By.XPath($".//span[@id='eName'][text()='{settingName}']"));
-        }
-
         public IWebElement GetFilterByColumnName(string columnName)
         {
             var allFilters =

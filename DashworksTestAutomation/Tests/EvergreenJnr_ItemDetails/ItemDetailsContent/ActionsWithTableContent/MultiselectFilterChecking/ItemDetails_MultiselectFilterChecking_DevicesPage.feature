@@ -56,7 +56,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	When User navigates to the 'Applications' left menu item
 	And User navigates to the "Evergreen Summary" sub-menu on the Details page
 	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
-	And User enters "Microsoft Office PowerPoint 2002 (XP)" text in the Search field for "Application" column on the Details Page
+	And User enters "Microsoft Office PowerPoint 2002 (XP)" text in the Search field for "Application" column
 	Then 'GREEN' content is displayed in the 'Compliance' column
 	Then 'TRUE' content is displayed in the 'Installed' column
 	Then 'UNKNOWN' content is displayed in the 'Used' column
@@ -89,7 +89,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	When User navigates to the 'Applications' left menu item
 	And User navigates to the "Evergreen Detail" sub-menu on the Details page
 	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
-	And User enters "Microsoft Office PowerPoint 2002 (XP)" text in the Search field for "Application" column on the Details Page
+	And User enters "Microsoft Office PowerPoint 2002 (XP)" text in the Search field for "Application" column
 	Then 'GREEN' content is displayed in the 'Compliance' column
 	And Content in the 'Advertisement' column is equal to
 	| Content           |
@@ -145,7 +145,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	When User navigates to the 'Applications' left menu item
 	And User navigates to the "Advertisements" sub-menu on the Details page
 	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
-	And User enters "Microsoft Office PowerPoint 2002 (XP)" text in the Search field for "Application" column on the Details Page
+	And User enters "Microsoft Office PowerPoint 2002 (XP)" text in the Search field for "Application" column
 	Then 'TierA Site01' content is displayed in the 'Site' column
 	When User clicks String Filter button for "Site" column
 	Then following String Values are displayed in the filter on the Details Page
@@ -200,7 +200,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	When User navigates to the 'Compliance' left menu item
 	And User navigates to the "Application Issues" sub-menu on the Details page
 	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
-	And User enters "Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" text in the Search field for "Application" column on the Details Page
+	And User enters "Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" text in the Search field for "Application" column
 	Then 'TierA Site01' content is displayed in the 'Site' column
 	Then 'TRUE' content is displayed in the 'Installed' column
 	Then 'RED' content is displayed in the 'Compliance' column

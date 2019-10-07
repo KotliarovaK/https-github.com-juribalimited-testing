@@ -280,7 +280,7 @@ this.FeatureBackground();
                     "n the Top bar on Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 59
  testRunner.And("User enters \"Microsoft Office PowerPoint 2002 (XP)\" text in the Search field for " +
-                    "\"Application\" column on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+                    "\"Application\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 60
  testRunner.Then("\'GREEN\' content is displayed in the \'Compliance\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 61
@@ -399,7 +399,7 @@ this.FeatureBackground();
                     "n the Top bar on Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 92
  testRunner.And("User enters \"Microsoft Office PowerPoint 2002 (XP)\" text in the Search field for " +
-                    "\"Application\" column on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+                    "\"Application\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 93
  testRunner.Then("\'GREEN\' content is displayed in the \'Compliance\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -568,7 +568,7 @@ this.FeatureBackground();
                     "n the Top bar on Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 148
  testRunner.And("User enters \"Microsoft Office PowerPoint 2002 (XP)\" text in the Search field for " +
-                    "\"Application\" column on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+                    "\"Application\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 149
  testRunner.Then("\'TierA Site01\' content is displayed in the \'Site\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 150
@@ -828,7 +828,7 @@ this.FeatureBackground();
                     "n the Top bar on Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 203
  testRunner.And("User enters \"Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" +
-                    "\" text in the Search field for \"Application\" column on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+                    "\" text in the Search field for \"Application\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 204
  testRunner.Then("\'TierA Site01\' content is displayed in the \'Site\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 205
