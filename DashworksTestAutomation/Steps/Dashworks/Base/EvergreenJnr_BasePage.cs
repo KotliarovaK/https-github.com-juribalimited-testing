@@ -11,6 +11,7 @@ using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity;
+using DashworksTestAutomation.Pages.Evergreen.Base;
 using DashworksTestAutomation.Pages.Evergreen.ItemDetails.CustomFields;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
@@ -257,14 +258,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.AreEqual(dropdownContent, text, $"Text in '{dropdown}' drop-down is different");
         }
 
-        [Then(@"'(.*)' text value is displayed in the '(.*)' dropdown")]
-        public void ThenTextValueIsDisplayedInTheDropdown(string value, string dropdownName)
-        {
-            //TODO why grid page is used
-            var dropdown = _driver.NowAt<BaseGridPage>();
-            Verify.IsTrue(dropdown.GetDropdownByTextValueByName(value, dropdownName).Displayed(), $"{value} is not displayed in the {dropdownName}");
-        }
-
         [Then(@"'(.*)' value is displayed in the '(.*)' dropdown")]
         public void ThenValueIsDisplayedInTheDropdown(string value, string dropdownName)
         {
@@ -287,6 +280,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.IsTrue(dropdown.GetDropdownByName(dropdownName).Displayed(), $"{dropdownName} is not displayed");
         }
 
+        //Exact much
         [Then(@"following Values are displayed in the '(.*)' dropdown:")]
         public void ThenFollowingValuesAreDisplayedInTheDropdown(string dropDownName, Table table)
         {
@@ -298,6 +292,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.AreEqual(expectedList, actualList, $"Value for {dropDownName} are different");
         }
 
+        //Contains
         [Then(@"User sees that '(.*)' dropdown contains following options:")]
         public void ThenUserSeesThatDropdownContainsFollowingOptions(string dropDownName,
             Table options)

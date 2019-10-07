@@ -12,7 +12,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatRingsOptionMapsToEvergreenCanBeChanged
 	| ProjectForDAS14780 | All Devices | None            | Clone from Evergreen to Project |
 	Then Project "ProjectForDAS14780" is displayed to user
 	When User navigates to the 'Details' left menu item
-	Then 'Clone evergreen rings to project rings' text value is displayed in the 'Rings' dropdown
+	Then 'Clone evergreen rings to project rings' content is displayed in 'Rings' dropdown
 	When User navigates to the 'Rings' left menu item
 	And User enters "Unassigned" text in the Search field for "Ring" column
 	And User clicks content from "Ring" column
@@ -64,15 +64,15 @@ Scenario: EvergreenJnr_AdminPage_CheckProjectDetailFormAndRingDropdown
 	When User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
 	Then "Device scoped project" is displayed in the disabled Project Type field
 	When User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
-	Then 'Use project rings' text value is displayed in the 'Rings' dropdown
+	Then 'Use project rings' content is displayed in 'Rings' dropdown
 	When User selects 'Clone evergreen rings to project rings' in the 'Rings' dropdown
 	When User clicks "Projects" navigation link on the Admin page
 	When User enters "New_14690_Project" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	Then Project "New_14690_Project" is displayed to user
 	When User navigates to the 'Details' left menu item
-	Then 'Clone evergreen buckets to project buckets' text value is displayed in the 'Buckets' dropdown
-	Then 'Clone evergreen rings to project rings' text value is displayed in the 'Rings' dropdown
+	Then 'Clone evergreen buckets to project buckets' content is displayed in 'Buckets' dropdown
+	Then 'Clone evergreen rings to project rings' content is displayed in 'Rings' dropdown
 	Then "New_Short" content is displayed in "Project Short Name" field
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS15906

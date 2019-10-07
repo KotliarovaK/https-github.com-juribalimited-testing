@@ -99,16 +99,16 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultValuesStayTheSameAfterConverti
 	When User navigates to the 'Projects' left menu item
 	And User enters "DAS15262Project" text in the Search field for "Project" column
 	And User clicks content from "Project" column
-	Then 'Use project buckets' text value is displayed in the 'Buckets' dropdown
-	And 'Use project rings' text value is displayed in the 'Rings' dropdown
+	Then 'Use project buckets' content is displayed in 'Buckets' dropdown
+	And 'Use project rings' content is displayed in 'Rings' dropdown
 	When User navigates to the 'Capacity' left menu item
-	Then 'Use project capacity units' text value is displayed in the 'Capacity Units' dropdown
+	Then 'Use project capacity units' content is displayed in 'Capacity Units' dropdown
 	When User navigates to the 'Details' left menu item
 	And User converts project to evergreen project
-	Then 'Use project buckets' text value is displayed in the 'Buckets' dropdown
-	And 'Use project rings' text value is displayed in the 'Rings' dropdown
+	Then 'Use project buckets' content is displayed in 'Buckets' dropdown
+	And 'Use project rings' content is displayed in 'Rings' dropdown
 	When User navigates to the 'Capacity' left menu item
-	Then 'Use project capacity units' text value is displayed in the 'Capacity Units' dropdown
+	Then 'Use project capacity units' content is displayed in 'Capacity Units' dropdown
 	When User clicks 'Admin' on the left-hand menu
 	And User enters "DAS15262Project" text in the Search field for "Project" column
 	And User selects all rows on the grid

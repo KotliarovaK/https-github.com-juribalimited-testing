@@ -11,7 +11,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDefaultCapacityUnitRenamedInUnassigned
 	| ProjectName             | Scope     | ProjectTemplate | Mode               |
 	| ProjectForCapacity13720 | All Users | None            | Standalone Project |
 	And User navigates to the 'Capacity' left menu item
-	Then 'Capacity Units' text value is displayed in the 'Capacity Mode' dropdown
+	Then 'Capacity Units' content is displayed in 'Capacity Mode' dropdown
 	When User selects "Units" tab on the Project details page
 	And User enters "Unassigned" text in the Search field for "Capacity Unit" column
 	Then Counter shows "1" found rows
