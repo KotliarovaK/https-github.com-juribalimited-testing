@@ -91,6 +91,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Automations
         [NUnit.Framework.CategoryAttribute("DAS16931")]
         [NUnit.Framework.CategoryAttribute("DAS17102")]
         [NUnit.Framework.CategoryAttribute("DAS17630")]
+        [NUnit.Framework.CategoryAttribute("DAS18328")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckActionGridInAutomations()
         {
@@ -131,6 +132,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Automations
                         "DAS16931",
                         "DAS17102",
                         "DAS17630",
+                        "DAS18328",
                         "Cleanup"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);

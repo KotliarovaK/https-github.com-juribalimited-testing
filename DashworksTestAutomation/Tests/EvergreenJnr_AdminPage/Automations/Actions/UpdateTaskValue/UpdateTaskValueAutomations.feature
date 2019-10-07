@@ -60,7 +60,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueAutomationValidationsForDel
 	When User navigates to the 'Actions' left menu item
 	When User clicks content from "Action" column
 	#Actions content check
-	Then '17429_Action' content is displayed in 'Action Name' textbox
+	Then "17429_Action" content is displayed in "Action Name" field
 	Then 'Update task value' text value is displayed in the 'Action Type' dropdown
 	Then '[Project not found]' content is displayed in 'Project' textbox
 	Then 'The selected project cannot be found' error message is displayed for 'Project' field

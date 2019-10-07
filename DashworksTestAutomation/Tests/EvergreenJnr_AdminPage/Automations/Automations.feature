@@ -474,24 +474,20 @@ Scenario: EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality
 	When User selects "Automations" tab on the Project details page
 	Then Success message is not displayed on the Admin page
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15767 @DAS15423 @Not_Ready
-#Change value after gold data complete added
-#For Mailboxes Automations
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15767 @DAS15423 @DAS18328
 Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeListIsLoadedWithCorrectLists
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
-	When User enters "AM 030619 Mailboxes 1" text in the Search field for "Automation" column
+	When User enters "Mailboxes_Scope" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
 	Then "Edit Automation" title is displayed on the Automations page
 	Then following lists are displayed in the Scope dropdown:
 	| Lists            |
+	| Devices (0)      |
 	| Users (0)        |
 	| Applications (0) |
-	| Mailboxes (0)    |
-	| All Devices      |
-	| 1803 Rollout     |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15886 @DAS15423 @DAS16317 @DAS16316 @DAS17223 @DAS17336 @DAS17275 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextForDeletedList
