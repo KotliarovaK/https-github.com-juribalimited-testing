@@ -1278,6 +1278,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             page.NewPermissionsDropdownForList(listName).Click();
 
+            Thread.Sleep(1000);
             List<string> options = page.ReviewWidgetListPermissionExpandedOptions.Select(x => x.Text).ToList();
 
             foreach (var row in table.Rows)

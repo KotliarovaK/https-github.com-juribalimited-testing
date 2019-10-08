@@ -897,8 +897,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS15512")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.TestCaseAttribute("Sum", null)]
-        [NUnit.Framework.TestCaseAttribute("Min", null)]
-        [NUnit.Framework.TestCaseAttribute("Max", null)]
+        [NUnit.Framework.TestCaseAttribute("Minimum", null)]
+        [NUnit.Framework.TestCaseAttribute("Maximum", null)]
         [NUnit.Framework.TestCaseAttribute("Average", null)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatSelectingAggregateFunctionShowsFieldsWithCorrectDatatypeInAggregateByDropdown(string aggFunc, string[] exampleTags)
         {

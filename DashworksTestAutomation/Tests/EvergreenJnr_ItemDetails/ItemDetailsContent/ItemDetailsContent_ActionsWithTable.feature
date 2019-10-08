@@ -84,7 +84,7 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckThatAutosizeOptionWorksCorrectly
 	When User navigates to the "<SubMenuName>" sub-menu on the Details page
 	Then "87" rows found label displays on Details Page
 	When User have opened Column Settings for "Site" column in the Details Page table
-	And User have select "Autosize This column" option from column settings on the Details Page
+	And User have select "Autosize this column" option from column settings
 	Then Site column has standard size
 
 Examples:
@@ -115,7 +115,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUsersAndDevicesDistributionList
 	And User clicks "False" checkbox from String Filter on the Details Page
 	And User closes Checkbox filter for "Used" column
 	And User have opened Column Settings for "User" column in the Details Page table
-	And User have select "Sort descending" option from column settings on the Details Page
+	And User have select "Sort descending" option from column settings
 	Then Content is present in the table on the Details Page
 	And Rows do not have unknown values
 	When User navigates to the "Devices" sub-menu on the Details page
@@ -123,7 +123,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUsersAndDevicesDistributionList
 	And User clicks "False" checkbox from String Filter on the Details Page
 	And User closes Checkbox filter for "Used" column
 	And User have opened Column Settings for "Device" column in the Details Page table
-	And User have select "Sort descending" option from column settings on the Details Page
+	And User have select "Sort descending" option from column settings
 	Then Content is present in the table on the Details Page
 	And Rows do not have unknown values
 
@@ -133,7 +133,8 @@ Scenario: EvergreenJnr_UsersList_ChecksThatNoErrorsAreDisplayedAfterClickingThro
 	Then Details page for "TON2490708" item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	When User navigates to the "Device Project Summary" sub-menu on the Details page
-	When User clicks content from "Project" column
+	When User enters "K-group" text in the Search field for "Bucket" column
+	And User clicks "00BDM1JUR8IF419" link on the Details Page
 	Then "Project Object" page is displayed to the user
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16009 @DAS15951
@@ -229,7 +230,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAgGridActionsWorksCorrectlyForDetail
 	Then Export button is displayed on the Item Details page
 	Then Group By button is displayed on the Item Details page
 	Then Reset Filters button on the Item Details page is disable
-	When User enters "com" text in the Search field for "Custom Field" column on the Details Page
+	When User enters "com" text in the Search field for "Custom Field" column
 	Then Reset Filters button on the Item Details page is enabled
 	Then Rows counter shows "1" of "1" rows
 	When User clicks Reset Filters button on the Item Details page

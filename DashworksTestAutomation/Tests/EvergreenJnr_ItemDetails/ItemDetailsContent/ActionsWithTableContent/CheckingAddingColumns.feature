@@ -148,7 +148,8 @@ Examples:
 	| Distribution | Devices    | Collection Key    |
 	| Distribution | Devices    | Program Key       |
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11393 @DAS12765 @DAS13657
+	#Ann.Ilchenko 7/10/19: need to update logic for this test
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11393 @DAS12765 @DAS13657 @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatSelectedCheckboxesMatchTheColumnsInTheTableOnTheDetailsPage
 	When User navigates to the 'Device' details page for '01WNOSNMP5QLXC' item
 	Then Details page for "01WNOSNMP5QLXC" item is displayed to the user
