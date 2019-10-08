@@ -416,12 +416,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(By.XPath(imgSelector));
         }
 
-        //public IWebElement GetCurrentDateCheckbox(string )
-        //{
-        //    var dateCheckbox =
-        //        $".//li//span[text()='{booleanValue}']/ancestor::span[@class='boolean-icon text-container ng-star-inserted']/img";
-        //    return Driver.FindElement(By.XPath(imgSelector));
-        //}
+        public IWebElement GetCurrentDateCheckbox()
+        {
+            var dateCheckbox = $".//div[contains(@class, 'filterAddPanel')]//mat-checkbox//span[contains(text(), '{DateTime.Now.Day}')]";
+            return Driver.FindElement(By.XPath(dateCheckbox));
+        }
 
         public IList<IWebElement> GetAssociationsList()
         {

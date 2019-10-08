@@ -259,7 +259,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectsCurrentDateCheckboxFromFilterPanel()
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            filterElement.FilterCheckboxOptions.Last().Click();
+            filterElement.GetCurrentDateCheckbox().Click();
         }
 
         [When(@"User select ""(.*)"" Association for Application filter with Lookup value")]
@@ -1515,21 +1515,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 .Single(p => p.Value.StartsWith("Automation Actions"));
 
             Utils.Verify.That(getFirstAutomationItem.Index, Is.LessThan(getFirstProjectItem.Index), "Looks like projects placed before Automations");
-        }
-
-        //ul[@class='dropdown-select-results-list ng-star-inserted']//span[string-length(text()) and not(@style)]
-        [When(@"User select first checkbox from available options")]
-        public void UserSelectFirstCheckboxFromAvailableOptions()
-        {
-            var filterElement = _driver.NowAt<FiltersElement>();
-            filterElement.FilterCheckboxOptions.First().Click();
-        }
-
-        [When(@"User select last checkbox from available options")]
-        public void WhenUserSelectLastCheckboxFromAvailableOptions()
-        {
-            var filterElement = _driver.NowAt<FiltersElement>();
-            filterElement.FilterCheckboxOptions.Last().Click();
         }
 
         [Then(@"Filter Searchfield placeholder is '(.*)'")]
