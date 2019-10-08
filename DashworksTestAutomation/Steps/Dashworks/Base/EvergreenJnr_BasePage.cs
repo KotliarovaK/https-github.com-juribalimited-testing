@@ -241,20 +241,11 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         #region Dropdown
 
-        [Then(@"'(.*)' error message is displayed for '(.*)' dropdown")]
-        public void ThenErrorMessageIsDisplayedForDropdown(string errorMessage, string placeholder)
+        [When(@"User clicks '(.*)' dropdown")]
+        public void WhenUserClicksDropdown(string dropdownName)
         {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            page.BodyContainer.Click();
-
-            Verify.AreEqual(errorMessage, page.GetNamedDropdownErrorMessage(placeholder),
-                $"Incorrect error message is displayed in the '{placeholder}' field");
-
-            Verify.AreEqual("rgba(242, 88, 49, 1)", page.GetNamedDropdownErrorMessageElement(placeholder).GetCssValue("color"),
-                $"Incorrect error message color for '{placeholder}' field");
-
-            Verify.AreEqual("rgba(242, 88, 49, 1)", page.GetNamedDropdownErrorMessageExclamationIcon(placeholder).GetCssValue("color"),
-                $"Incorrect error message color for '{placeholder}' field exclamation icon");
+            var dropdown = _driver.NowAt<BaseDashboardPage>();
+            dropdown.GetDropdownByName(dropdownName).Click();
         }
 
         [When(@"User selects '(.*)' in the '(.*)' dropdown")]
@@ -332,6 +323,22 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Utils.Verify.That(actualOptions,
                 Is.SupersetOf(options.Rows.Select(x => x.Values).Select(x => x.FirstOrDefault())),
                 "Some options are missing!");
+        }
+
+        [Then(@"'(.*)' error message is displayed for '(.*)' dropdown")]
+        public void ThenErrorMessageIsDisplayedForDropdown(string errorMessage, string placeholder)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.BodyContainer.Click();
+
+            Verify.AreEqual(errorMessage, page.GetNamedDropdownErrorMessage(placeholder),
+                $"Incorrect error message is displayed in the '{placeholder}' field");
+
+            Verify.AreEqual("rgba(242, 88, 49, 1)", page.GetNamedDropdownErrorMessageElement(placeholder).GetCssValue("color"),
+                $"Incorrect error message color for '{placeholder}' field");
+
+            Verify.AreEqual("rgba(242, 88, 49, 1)", page.GetNamedDropdownErrorMessageExclamationIcon(placeholder).GetCssValue("color"),
+                $"Incorrect error message color for '{placeholder}' field exclamation icon");
         }
 
         #endregion

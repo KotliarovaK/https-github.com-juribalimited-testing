@@ -1057,14 +1057,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             }
         }
 
-        //TODO this should be replaced by Dropdown methods
-        public IWebElement GetCreateButtonByName(string button)
-        {
-            var selector = By.XPath($"//span[text()='{button}']/ancestor::mat-option");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
         #region Dropdown
 
         public IWebElement GetDropdownByName(string dropdownName)

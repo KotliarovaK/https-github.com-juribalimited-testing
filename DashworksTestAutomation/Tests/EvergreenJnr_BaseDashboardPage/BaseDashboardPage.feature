@@ -215,7 +215,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatToolTipIsDisplayedWithCreateProjectB
 	Then 'All Devices' list should be displayed to the user
 	When User clicks on 'Hostname' column header
 	Then data in table is sorted by 'Hostname' column in ascending order
-	When User clicks Create button on the Base Dashboard Page
+	When User clicks 'Create' dropdown
 	Then tooltip is displayed with "This list must be saved before using it to create a project" text for Create Project button
 	And Create Project button is disabled on the Base Dashboard Page
 
@@ -223,10 +223,11 @@ Scenario: EvergreenJnr_DevicesList_CheckThatToolTipIsDisplayedWithCreateProjectB
 Scenario Outline: EvergreenJnr_AllLists_CheckThatTheCorrectCreateMenuOptionsAreDisplayedForEachObjectListType
 	When User clicks '<ListName>' on the left-hand menu
 	Then 'All <ListName>' list should be displayed to the user
-	Then Create button is displayed
-	When User clicks Create button on the Base Dashboard Page
-	Then "Project" button is displayed on the Base Dashboard Page
-	And "Pivot" button is displayed on the Base Dashboard Page
+	And Create button is displayed
+	And User sees that 'Create' dropdown contains following options:
+	| Options |
+	| PROJECT |
+	| PIVOT   |
 
 Examples:
 	| ListName     | 
@@ -239,8 +240,9 @@ Scenario: EvergreenJnr_ApplicationList_CheckThatTheCorrectCreateMenuOptionsAreDi
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
 	And Create button is displayed
-	When User clicks Create button on the Base Dashboard Page
-	Then "Pivot" button is displayed on the Base Dashboard Page
+	And User sees that 'Create' dropdown contains following options:
+	| Options |
+	| PIVOT   |
 
 @Evergreen @AllLists @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS12337
 Scenario Outline: EvergreenJnr_AllLists_CheckThatEmptyLinkIsDisplayedIfThereAreNoData

@@ -69,15 +69,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Filters button was clicked");
         }
 
-        [When(@"User clicks Create button on the Base Dashboard Page")]
-        public void WhenUserClicksCreateButtonOnTheBaseDashboardPage()
-        {
-            var menu = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitForElementToBeDisplayed(menu.CreateActionButton);
-            menu.CreateActionButton.Click();
-            Logger.Write("Create Button button was clicked");
-        }
-
         [When(@"User clicks Create Project from the main list")]
         public void WhenUserClicksCreateProjectFromTheMainList()
         {
@@ -123,14 +114,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 "Create button is not displayed on the Base Dashboard Page");
         }
 
-        [Then(@"""(.*)"" button is displayed on the Base Dashboard Page")]
-        public void ThenButtonIsDisplayedOnTheBaseDashboardPage(string buttonName)
-        {
-            var button = _driver.NowAt<BaseDashboardPage>();
-            Verify.IsTrue(button.GetCreateButtonByName(buttonName).Displayed(),
-                $"{buttonName} button is not displayed on the Base Dashboard Page");
-        }
-
         [Then(@"tooltip is displayed with ""(.*)"" text for Create Project button")]
         public void ThenTooltipIsDisplayedWithTextForCreateProjectButton(string text)
         {
@@ -145,7 +128,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var menu = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForElementToBeDisplayed(menu.FilterButton);
-            Utils.Verify.IsTrue(Convert.ToBoolean(menu.FilterButton.GetAttribute("disabled")), "Filter Button is active");
+            Verify.IsTrue(Convert.ToBoolean(menu.FilterButton.GetAttribute("disabled")), "Filter Button is active");
         }
 
         [Then(@"Filter button on AGgrid is disabled")]
