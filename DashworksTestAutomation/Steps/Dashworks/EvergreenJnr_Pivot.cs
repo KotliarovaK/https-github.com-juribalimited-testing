@@ -30,16 +30,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver = driver;
         }
 
-        //[When(@"User navigates to Pivot")]
-        //public void WhenUserNavigatesToPivot()
-        //{
-        //    var page = _driver.NowAt<BaseDashboardPage>();
-        //    _driver.WaitForElementToBeDisplayed(page.CreateActionButton);
-        //    _driver.WaitForDataLoading();
-        //    page.CreateActionButton.Click();
-        //    page.GetCreateButtonByName("Pivot").Click();
-        //}
-
         [When(@"User clicks the Pivot button")]
         public void WhenUserClicksTheFiltersButton()
         {
