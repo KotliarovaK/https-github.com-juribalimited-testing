@@ -597,7 +597,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForRemoveTextValue
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	When User selects 'One' option from 'Stage' autocomplete
 	When User selects 'Text Computer' option from 'Task' autocomplete
-	When User selects "Remove" in the "Update Value" dropdown for Actions
+	When User selects 'Remove' in the 'Update Value' dropdown for Actions
 	And User clicks 'CREATE' button 
 	When User clicks "Automations" navigation link on the Admin page
 	When User enters "17605_Automation" text in the Search field for "Automation" column
@@ -635,7 +635,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateDate
 	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters '5 Aug 2019' text to 'Date' datepicker
 	#Delete After clarifications
-	When User selects "None" in the "Capacity Slot" dropdown for Actions
+	When User selects 'None' in the 'Capacity Slot' dropdown for Actions
 	#Delete After clarifications
 	And User clicks 'CREATE' button 
 	When User clicks "Automations" navigation link on the Admin page

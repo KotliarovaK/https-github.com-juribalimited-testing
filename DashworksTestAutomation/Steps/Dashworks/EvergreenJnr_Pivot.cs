@@ -491,7 +491,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 for (var i = 0; i < columnElement.GetLeftPinnedColumnContentOnPivot().Count; i++)
                     if (leftPinnedContentList[i].Equals(row["Value1"]))
                     {
-                        Utils.Verify.AreEqual(columnContentList[i], row["Value2"], "PLEASE ADD EXCEPTION MESSAGE");
+                        Verify.AreEqual(columnContentList[i], row["Value2"], "PLEASE ADD EXCEPTION MESSAGE");
                     }
             }
         }

@@ -488,7 +488,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueActionDAS
 	When User enters '17430_Action' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'USE ME FOR AUTOMATION(USR SCHDLD)' option from 'Project' autocomplete
-	When User selects "Stage 1" in the "Stage" dropdown for Actions
+	When User selects 'Stage 1' in the 'Stage' dropdown for Actions
 	When User selects 'Radiobutton Readiness Date Owner Task (User)' option from 'Task' autocomplete
 	And User selects "Update" Update Value on Action panel
 	And User selects "Started" Value on Action panel
