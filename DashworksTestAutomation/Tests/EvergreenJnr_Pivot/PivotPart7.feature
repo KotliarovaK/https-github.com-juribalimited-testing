@@ -9,7 +9,7 @@ Background: Pre-Conditions
 Scenario: EvergreenJnr_UsersLists_CheckThatComplianceColumnsDisplayInTheCorrectOrderForUsers
 	When User clicks 'Users' on the left-hand menu
 	Then 'All Users' list should be displayed to the user
-	When User navigates to Pivot
+	When User selects 'Pivot' in the 'Create' dropdown
 	And User selects the following Row Groups on Pivot:
 	| RowGroups |
 	| Domain    |
@@ -34,7 +34,7 @@ Scenario: EvergreenJnr_UsersLists_CheckThatComplianceColumnsDisplayInTheCorrectO
 Scenario: EvergreenJnr_DevicesLists_CheckThatComplianceColumnsDisplayInTheCorrectOrderForDevices
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User navigates to Pivot
+	When User selects 'Pivot' in the 'Create' dropdown
 	And User selects the following Row Groups on Pivot:
 	| RowGroups      |
 	| Inventory Site |
@@ -58,7 +58,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatComplianceColumnsDisplayInTheCorrec
 Scenario: EvergreenJnr_DevicesList_CheckThatDeviceOwnerComplianceColumnsDisplayInTheCorrectOrder
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User navigates to Pivot
+	When User selects 'Pivot' in the 'Create' dropdown
 	And User selects the following Row Groups on Pivot:
 	| RowGroups |
 	| Hostname  |
@@ -91,7 +91,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatThePivotPanelShowNoFiltersAppliedIfT
 	Then "Application Compliance" filter is added to the list
 	When User create dynamic list with "TestListForDAS15139" name on "Devices" page
 	Then "TestListForDAS15139" list is displayed to user
-	When User navigates to Pivot
+	When User selects 'Pivot' in the 'Create' dropdown
 	Then "ADD ROW GROUP" Action button is displayed
 	And "ADD COLUMN" Action button is displayed
 	And "ADD VALUE" Action button is displayed
@@ -99,7 +99,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatThePivotPanelShowNoFiltersAppliedIfT
 	Then Actions panel is not displayed to the user
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User navigates to Pivot
+	When User selects 'Pivot' in the 'Create' dropdown
 	Then "ADD ROW GROUP" Action button is displayed
 	And "ADD COLUMN" Action button is displayed
 	And "ADD VALUE" Action button is displayed
@@ -110,7 +110,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatThePivotPanelShowNoFiltersAppliedIfT
 Scenario: EvergreenJnr_DevicesList_CheckResetButtonOnPivot
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User navigates to Pivot
+	When User selects 'Pivot' in the 'Create' dropdown
 	And User selects the following Row Groups on Pivot:
 	| RowGroups |
 	| Hostname  |
@@ -136,7 +136,7 @@ Scenario: EvergreenJnr_DevicesList_CheckResetButtonOnPivot
 	And "ADD VALUE" Action button is displayed
 	#2
 	When User navigates to the "All Devices" list
-	And User navigates to Pivot
+	And User selects 'Pivot' in the 'Create' dropdown
 	And User selects the following Row Groups on Pivot:
 	| RowGroups |
 	| Hostname  |
@@ -203,7 +203,7 @@ Scenario: EvergreenJnr_DevicesList_CheckResetButtonOnPivot
 Scenario: EvergreenJnr_DevicesList_CheckThatPivotPanelIsDisplayedCorrectlyAfterClicksOnManagerButton
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User navigates to Pivot
+	When User selects 'Pivot' in the 'Create' dropdown
 	Then "Pivot" panel is displayed to the user
 	When User selects the following Row Groups on Pivot:
 	| RowGroups              |

@@ -2367,7 +2367,7 @@ Scenario: EvergreenJnr_UsersList_CheckCustomFieldsUsingInFilterAndPivotsCreation
 	And There are no errors in the browser console
 	When User create dynamic list with "TestList_DAS17715" name on "Users" page
 	Then "TestList_DAS17715" list is displayed to user
-	When User navigates to Pivot
+	When User selects 'Pivot' in the 'Create' dropdown
 	And User selects the following Row Groups on Pivot:
 	| RowGroups    |
 	| Display Name |
