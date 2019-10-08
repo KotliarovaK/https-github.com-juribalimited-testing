@@ -119,17 +119,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenCreateButtonIsDisplayed()
         {
             var button = _driver.NowAt<BaseDashboardPage>();
-            Utils.Verify.IsTrue(button.CreateActionButton.Displayed(),
+            Verify.IsTrue(button.CreateActionButton.Displayed(),
                 "Create button is not displayed on the Base Dashboard Page");
-        }
-
-        [When(@"User selects ""(.*)"" from the Create actions")]
-        public void WhenUserSelectsFromTheCreateActions(string action)
-        {
-            var button = _driver.NowAt<BaseDashboardPage>();
-            button.CreateActionButton.Click();
-            _driver.WaitForDataLoading();
-            button.GetCreateButtonByName(action).Click();
         }
 
         [Then(@"""(.*)"" button is displayed on the Base Dashboard Page")]
@@ -146,7 +137,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var button = _driver.NowAt<BaseDashboardPage>();
             _driver.MouseHover(button.CreateProjectButton);
             var toolTipText = _driver.GetTooltipText();
-            Utils.Verify.AreEqual(text, toolTipText, "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.AreEqual(text, toolTipText, "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"Filters Button is disabled")]
