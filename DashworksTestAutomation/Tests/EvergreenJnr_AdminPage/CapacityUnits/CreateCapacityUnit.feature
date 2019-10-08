@@ -13,8 +13,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCreatedCorrectly
 	And User navigates to the 'Capacity Units' left menu item
 	Then Page with 'Capacity Units' header is displayed to user
 	When User clicks 'CREATE EVERGREEN CAPACITY UNIT' button 
-	And User type "NotDefaultCapacityUnit13720" Name in the "Capacity Unit Name" field on the Project details page
-	And User type "13720" Name in the "Description" field on the Project details page
+	And User enters 'NotDefaultCapacityUnit13720' text to 'Capacity Unit Name' textbox
+	And User enters '13720' text to 'Description' textbox
 	And User clicks 'CREATE' button 
 	Then Success message is displayed and contains "The capacity unit has been created" text
 	And Success message is displayed and contains "Click here to view the NotDefaultCapacityUnit13720 capacity unit" link
@@ -77,8 +77,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatMessageAppearsWhenUserCreatesUnitWith
 	And User navigates to the 'Evergreen' left menu item
 	And User navigates to the 'Capacity Units' left menu item
 	When User clicks 'CREATE EVERGREEN CAPACITY UNIT' button 
-	And User type "samenamecaseSensative" Name in the "Capacity Unit Name" field on the Project details page
-	And User type "SameNameCaseSensative" Name in the "Description" field on the Project details page
+	And User enters 'samenamecaseSensative' text to 'Capacity Unit Name' textbox
+	And User enters 'SameNameCaseSensative' text to 'Description' textbox
 	And User clicks 'CREATE' button 
 	Then Error message with "A capacity unit already exists with this name" text is displayed
 	And There are no errors in the browser console

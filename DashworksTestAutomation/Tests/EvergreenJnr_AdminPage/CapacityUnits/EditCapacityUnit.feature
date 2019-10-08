@@ -17,8 +17,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTheUpdateCapacityUnitSettingsIsWorking
 	Then Page with 'Capacity Units' header is displayed to user
 	When User enters "Capacity Unit Settings" text in the Search field for "Capacity Unit" column
 	And User clicks content from "Capacity Unit" column
-	And User type "Capacity Unit Settings upd" Name in the "Capacity Unit Name" field on the Project details page
-	And User type "upd" Name in the "Description" field on the Project details page
+	And User enters 'Capacity Unit Settings upd' text to 'Capacity Unit Name' textbox
+	And User enters 'upd' text to 'Description' textbox
 	And User updates the "Default Unit" checkbox state
 	And User clicks 'UPDATE' button 
 	Then Success message is displayed and contains "The capacity unit details have been updated" text

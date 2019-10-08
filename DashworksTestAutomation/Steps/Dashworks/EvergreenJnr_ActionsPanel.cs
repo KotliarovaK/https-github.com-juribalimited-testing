@@ -4,6 +4,7 @@ using System.Threading;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
+using DashworksTestAutomation.Pages.Evergreen.Base;
 using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
 using DashworksTestAutomation.Pages.Evergreen.ItemDetails;
 using DashworksTestAutomation.Utils;
@@ -105,16 +106,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             action.ProjectField.Clear();
-        }
-
-        [Then(@"the following Projects are displayed in opened DLL on Action panel:")]
-        public void ThenTheFollowingProjectsAreDisplayedInOpenedDLLOnActionPanel(Table table)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            action.ProjectField.Click();
-            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            var actualList = action.OptionsDll.Select(value => value.Text).ToList();
-            Utils.Verify.AreEqual(expectedList, actualList, "Project lists are different");
         }
 
         [When(@"User selects ""(.*)"" Path on Action panel")]

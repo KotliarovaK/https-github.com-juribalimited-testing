@@ -6,6 +6,7 @@ using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
+using DashworksTestAutomation.Pages.Evergreen.Base;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
 using Newtonsoft.Json;

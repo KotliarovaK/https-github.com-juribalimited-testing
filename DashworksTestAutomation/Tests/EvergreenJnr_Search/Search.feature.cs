@@ -1094,7 +1094,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Search")]
         [NUnit.Framework.CategoryAttribute("DAS11511")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Compliance", "GREEN", "100", null)]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Windows7Mi: Readiness", "OUT OF SCOPE", "5,116", null)]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Windows7Mi: Readiness", "OUT OF SCOPE", "5,113", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "Import Type", "Altiris 6", "31", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "department", "The Last Department With A Really Lond Name", "10", null)]
         public virtual void EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly(string pageName, string columnName, string searchCriteria, string numberOfRows, string[] exampleTags)

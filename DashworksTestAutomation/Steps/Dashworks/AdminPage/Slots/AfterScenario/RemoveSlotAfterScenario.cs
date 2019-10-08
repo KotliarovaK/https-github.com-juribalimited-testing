@@ -37,6 +37,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Slots.AfterScenario
             {
                 try
                 {
+                    if (string.IsNullOrEmpty(slot.Id))
+                        throw new Exception($"Unable to get '{slot.SlotName}' slot ID");
+
                     var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/projects/{DatabaseHelper.GetProjectId(slot.Project)}/deleteCapacitySlots";
 
                     var request = requestUri.GenerateRequest();

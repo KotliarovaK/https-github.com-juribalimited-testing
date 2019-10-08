@@ -247,7 +247,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS12968")]
         [NUnit.Framework.TestCaseAttribute("Device", "30BGMTLBM9PTW5", "Applications", "Evergreen Summary", "Access 95", "Access 95   Microsoft      Green   True   Unknown   True", null)]
-        [NUnit.Framework.TestCaseAttribute("User", "003F5D8E1A844B1FAA5", "Active Directory", "Groups", "Domain Users", "Domain Users   DWLABS   Global Security Group   All domain users", null)]
+        [NUnit.Framework.TestCaseAttribute("User", "003F5D8E1A844B1FAA5", "Active Directory", "Groups", "Domain Users", "Domain Users   BCLABS   Global Security Group   All domain users", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatCopyRowWorksInItemDetailsOnSelectedMainTab(string pageName, string searchTerm, string mainTabName, string subTabName, string targetCell, string expectedData, string[] exampleTags)
         {
             System.Exception lastException = null;

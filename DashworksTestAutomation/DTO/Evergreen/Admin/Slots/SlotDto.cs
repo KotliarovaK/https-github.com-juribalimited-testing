@@ -4,12 +4,39 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DashworksTestAutomation.Helpers;
+using NUnit.Framework.Constraints;
 
 namespace DashworksTestAutomation.DTO.Evergreen.Admin.Slots
 {
     public class SlotDto
     {
-        public string Project { get; set; }
+        private string _project;
+
+        public string Project
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(_project))
+                {
+                    if (string.IsNullOrEmpty(Id))
+                    {
+                        return null;
+                    }
+                    else
+                    {
+                        var projectId = DatabaseHelper.GetSlotProjectId(Id);
+                        _project = DatabaseHelper.GetProjectName(projectId);
+                        return _project;
+                    }
+                }
+                else
+                {
+                    return _project;
+                }
+            }
+            set => _project = value;
+        }
+
         public string SlotName { get; set; }
         public string DisplayName { get; set; }
 
@@ -115,7 +142,10 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.Slots
             get
             {
                 if (string.IsNullOrEmpty(_id))
-                    _id = DatabaseHelper.GetSlotId(this.SlotName, DatabaseHelper.GetProjectId(Project));
+                {
+                    _id = string.IsNullOrEmpty(_project) ? DatabaseHelper.GetSlotId(SlotName) :
+                        DatabaseHelper.GetSlotId(this.SlotName, DatabaseHelper.GetProjectId(_project));
+                }
                 return _id;
             }
         }

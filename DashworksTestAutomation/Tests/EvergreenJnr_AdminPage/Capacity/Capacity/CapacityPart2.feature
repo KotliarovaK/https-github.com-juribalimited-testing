@@ -13,8 +13,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBanner
 	And User navigates to the 'Capacity' left menu item
 	And User selects "Units" tab on the Project details page
 	When User clicks 'CREATE PROJECT CAPACITY UNIT' button 
-	And User type "CapacityUnit13790" Name in the "Capacity Unit Name" field on the Project details page
-	And User type "13720" Name in the "Description" field on the Project details page
+	And User enters 'CapacityUnit13790' text to 'Capacity Unit Name' textbox
+	And User enters '13720' text to 'Description' textbox
 	And User clicks 'CREATE' button 
 	Then Success message is displayed and contains "The capacity unit has been created" text
 	And Success message is displayed and contains "Click here to view the CapacityUnit13790 capacity unit" link
@@ -62,8 +62,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreated
 	When User close message on the Admin page
 	Then 'Unassigned' content is displayed in the 'Capacity Unit' column
 	When User clicks 'CREATE PROJECT CAPACITY UNIT' button 
-	And User type "CapacityUnit12672" Name in the "Capacity Unit Name" field on the Project details page
-	And User type "12672" Name in the "Description" field on the Project details page
+	And User enters 'CapacityUnit12672' text to 'Capacity Unit Name' textbox
+	And User enters '12672' text to 'Description' textbox
 	And User updates the "Default Unit" checkbox state
 	And User clicks 'CREATE' button 
 	Then Success message is displayed and contains "The capacity unit has been created" text
@@ -144,6 +144,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitWithEmptyNam
 	And User navigates to the 'Capacity' left menu item
 	And User selects "Units" tab on the Project details page
 	And User clicks 'CREATE PROJECT CAPACITY UNIT' button 
-	And User type " " Name in the "Capacity Unit Name" field on the Project details page
-	And User type "13945" Name in the "Description" field on the Project details page
+	And User enters ' ' text to 'Capacity Unit Name' textbox
+	And User enters '13945' text to 'Description' textbox
 	Then "CREATE" Action button is disabled

@@ -11,7 +11,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOneRingAddeddAfterMulticlickingCreateB
 	When User navigates to the 'Evergreen' left menu item
 	When User navigates to the 'Rings' left menu item
 	And User clicks 'CREATE EVERGREEN RING' button 
-	And User type "OneRing" Name in the "Ring name" field on the Project details page
+	And User enters 'OneRing' text to 'Ring name' textbox
 	And User doubleclicks Create button on Create Ring page
 	Then Success message is displayed and contains "The ring has been created" text
 	And 'OneRing' content is displayed in the 'Ring' column

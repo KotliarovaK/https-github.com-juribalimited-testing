@@ -18,7 +18,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatLayoutFilterForCreatedListsIsWorkedC
 	When User clicks on 'Hostname' column header
 	When User create dynamic list with "DynamicFilterList_2" name on "Devices" page
 	Then "DynamicFilterList_2" list is displayed to user
-	When User navigates to Pivot
+	When User selects 'Pivot' in the 'Create' dropdown
 	And User selects the following Row Groups on Pivot:
 	| RowGroups              |
 	| Application Compliance |
@@ -33,7 +33,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatLayoutFilterForCreatedListsIsWorkedC
 	When User creates Pivot list with "PivotDynamicFilterList_2" name
 	Then "PivotDynamicFilterList_2" list is displayed to user
 	When User navigates to the "All Devices" list
-	And User navigates to Pivot
+	And User selects 'Pivot' in the 'Create' dropdown
 	And User selects the following Row Groups on Pivot:
 	| RowGroups  |
 	| Build Date |
@@ -104,7 +104,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDashworkWorksAfterChangingPivotSetti
 	When User clicks on 'Hostname' column header
 	When User create dynamic list with "DynamicFilterList_1" name on "Devices" page
 	Then "DynamicFilterList_1" list is displayed to user
-	When User navigates to Pivot
+	When User selects 'Pivot' in the 'Create' dropdown
 	And User selects the following Row Groups on Pivot:
 	| RowGroups |
 	| Hostname  |

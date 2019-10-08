@@ -25,6 +25,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             };
         }
 
+        //TODO why this is method but not webElement?
         public string GetPopupText()
         {
             return Driver.FindElement(By.XPath(".//div[@class='mat-dialog-content']")).Text;

@@ -61,7 +61,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueAutomationValidationsForDel
 	When User clicks content from "Action" column
 	#Actions content check
 	Then '17429_Action' content is displayed in 'Action Name' textbox
-	Then 'Update task value' text value is displayed in the 'Action Type' dropdown
+	Then 'Update task value' content is displayed in 'Action Type' dropdown
 	Then '[Project not found]' content is displayed in 'Project' textbox
 	Then 'The selected project cannot be found' error message is displayed for 'Project' field
 
@@ -127,7 +127,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueAutomationValidationsForDel
 	When User clicks content from "Action" column
 	#Actions content check
 	Then "17429_Action" content is displayed in "Action Name" field
-	Then 'Update task value' text value is displayed in the 'Action Type' dropdown
+	Then 'Update task value' content is displayed in 'Action Type' dropdown
 	Then '17429Project1' content is displayed in 'Project' textbox
 	Then '[Stage not found]' content is displayed in 'Stage' textbox
 	Then 'The selected stage cannot be found' error message is displayed for 'Stage' field
@@ -191,7 +191,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueAutomationValidationsForDel
 	When User clicks content from "Action" column
 	#Actions content check
 	Then "17429_Action2" content is displayed in "Action Name" field
-	Then 'Update task value' text value is displayed in the 'Action Type' dropdown
+	Then 'Update task value' content is displayed in 'Action Type' dropdown
 	Then '17429Project2' content is displayed in 'Project' textbox
 	Then '17429_Stage2' content is displayed in 'Stage' textbox
 	Then '[Task not found]' content is displayed in 'Task' textbox

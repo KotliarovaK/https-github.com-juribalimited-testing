@@ -32,8 +32,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatRelinkOptionIsWorkedCorrectlyForProjec
 	And following content is displayed on the Details Page
 	| Title | Value     |
 	| Name  | ZZR457072 |
-	When User clicks 'RESYNC ' button
-	#Andrew will remove space in button name
+	When User clicks 'RESYNC' button
 	And User clicks 'RESYNC' button in Dialog Pop-up
 	Then Success message is displayed and contains "User successfully resynced" text
 	#waiting for the RESYNC process to be completed

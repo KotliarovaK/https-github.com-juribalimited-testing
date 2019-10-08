@@ -56,11 +56,11 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckUpdateTaskValueEditPageLoadsProjec
 	When User clicks 'CREATE' button 
 	When User clicks content from "Action" column
 	Then "Update Migrated devices to Started" content is displayed in "Action Name" field
-	And 'Update task value' text value is displayed in the 'Action Type' dropdown
+	And 'Update task value' content is displayed in 'Action Type' dropdown
 	And '<Project>' content is displayed in 'Project' textbox
 	And '<Stage>' content is displayed in 'Stage' textbox
 	And '<Task>' content is displayed in 'Task' textbox
-	Then 'Not Started' text value is displayed in the 'Value' dropdown
+	Then 'Not Started' content is displayed in 'Value' dropdown
 
 Examples:
 	| AutomationName                | Scope            | Project                              | Stage   | Task                   |
@@ -178,7 +178,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithRemoveOwnerIsLoaded
 	When User clicks content from "Action" column
 	#Actions content check
 	Then "Update Migrated devices" content is displayed in "Action Name" field
-	Then 'Update task value' text value is displayed in the 'Action Type' dropdown
+	Then 'Update task value' content is displayed in 'Action Type' dropdown
 	And 'One' content is displayed in 'Stage' textbox
 	And 'Radio Rag Date Owner Comp Req B' content is displayed in 'Task' textbox
 	Then 'No change' value is displayed in the 'Update Value' dropdown
@@ -217,7 +217,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithUpdateOwnerIsLoaded
 	When User clicks content from "Action" column
 	#Actions content check
 	Then "Update Migrated devices" content is displayed in "Action Name" field
-	Then 'Update task value' text value is displayed in the 'Action Type' dropdown
+	Then 'Update task value' content is displayed in 'Action Type' dropdown
 	And 'One' content is displayed in 'Stage' textbox
 	And 'Radio Rag Date Owner Comp Req B' content is displayed in 'Task' textbox
 	Then 'No change' value is displayed in the 'Update Value' dropdown

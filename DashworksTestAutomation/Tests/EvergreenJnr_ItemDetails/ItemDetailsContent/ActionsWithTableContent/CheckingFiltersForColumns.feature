@@ -20,17 +20,17 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOneUnknownFilterValueIsShownInGroupD
 	When User clicks "True" checkbox from String Filter on the Details Page
 	Then Content is present in the table on the Details Page
 	When User clicks Reset Filters button on the Item Details page
-	And User enters "wheelern" text in the Search field for "Username" column on the Details Page
+	And User enters "wheelern" text in the Search field for "Username" column
 	Then Rows counter shows "1" of "7" rows
 	When User clicks Reset Filters button on the Item Details page
-	And User enters "Administrator" text in the Search field for "Display Name" column on the Details Page
+	And User enters "Administrator" text in the Search field for "Display Name" column
 	Then Rows counter shows "1" of "7" rows
 	When User clicks Reset Filters button on the Item Details page
 	And User clicks String Filter button for "Domain" column
 	When User selects "DWLABS" checkbox from String Filter on the Details Page
 	Then Rows counter shows "0" of "7" rows
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12239
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12239 
 Scenario: EvergreenJnr_DevicesList_CheckThatAllTextIsDisplayedAfterClearingFilters
 	When User navigates to the 'Device' details page for '001PSUMZYOW581' item
 	Then Details page for "001PSUMZYOW581" item is displayed to the user
@@ -41,10 +41,10 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAllTextIsDisplayedAfterClearingFilte
 	Then All text is not displayed for "Compliance" column in the String Filter
 	When User clicks Reset Filters button on the Item Details page
 	Then All text is displayed for "Compliance" column in the String Filter
-	When User enters "ea" text in the Search field for "Application" column on the Details Page
+	When User enters "ea" text in the Search field for "Application" column
 	Then Rows counter contains "3" found row of all rows
 	When User clicks Reset Filters button on the Item Details page
-	And User enters "3.0.0" text in the Search field for "Version" column on the Details Page
+	And User enters "3.0.0" text in the Search field for "Version" column
 	Then Rows counter contains "1" found row of all rows
 	When User clicks Reset Filters button on the Item Details page
 	And User clicks String Filter button for "Used" column
@@ -307,8 +307,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatBlanksValueChangedToEmptyValueO
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16817 @DAS17726
 Scenario: EvergreenJnr_MailboxesList_CheckThatBlanksValueChangedToEmptyValueOnMailboxesPage
-	When User navigates to the 'Mailbox' details page for '06C02CDC00044A7DB59' item
-	Then Details page for "06C02CDC00044A7DB59" item is displayed to the user
+	When User navigates to the 'Mailbox' details page for '06C02CDC00044A7DB59@bclabs.local' item
+	Then Details page for "06C02CDC00044A7DB59@bclabs.local" item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the "Mailbox Projects" sub-menu on the Details page
 	And User clicks String Filter button for "Workflow" column
