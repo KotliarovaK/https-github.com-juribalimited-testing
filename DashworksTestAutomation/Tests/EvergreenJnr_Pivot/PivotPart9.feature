@@ -9,7 +9,7 @@ Background: Pre-Conditions
 Scenario: EvergreenJnr_DevicesList_CheckThatOperatingSystemAndServicePackOrBuildColumnDisplayInTheCorrectOrder
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User navigates to Pivot
+	When User selects 'Pivot' in the 'Create' dropdown
 	And User selects the following Row Groups on Pivot:
 	| RowGroups              |
 	| Application Compliance |
@@ -28,7 +28,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOperatingSystemAndServicePackOrBuild
 Scenario: EvergreenJnr_UsersList_CheckThatNumericValueHasTheCorrectOrder
 	When User clicks 'Users' on the left-hand menu
 	Then 'All Users' list should be displayed to the user
-	When User navigates to Pivot
+	When User selects 'Pivot' in the 'Create' dropdown
 	And User selects the following Row Groups on Pivot:
 	| RowGroups  |
 	| Compliance |
@@ -46,7 +46,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatNumericValueHasTheCorrectOrder
 Scenario: EvergreenJnr_MailboxesList_CheckSortedOrderForPivotProjectStatusAsRowGroup
 	When User clicks 'Mailboxes' on the left-hand menu
 	Then 'All Mailboxes' list should be displayed to the user
-	When User navigates to Pivot
+	When User selects 'Pivot' in the 'Create' dropdown
 	And User selects the following Row Groups on Pivot:
 	| RowGroups          |
 	| EmailMigra: Status |
@@ -70,7 +70,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckSortedOrderForPivotProjectStatusAsRowG
 Scenario: EvergreenJnr_UsersList_CheckSortedOrderForPivotProjectStatusAsRowGroup
 	When User clicks 'Users' on the left-hand menu
 	Then 'All Users' list should be displayed to the user
-	When User navigates to Pivot
+	When User selects 'Pivot' in the 'Create' dropdown
 	And User selects the following Row Groups on Pivot:
 	| RowGroups          |
 	| MigrationP: Status |
@@ -101,7 +101,7 @@ Scenario: EvergreenJnr_UsersList_CheckSortedOrderForPivotProjectStatusAsRowGroup
 Scenario: EvergreenJnr_DevicesList_CheckSortedOrderForPivotProjectStatusAsRowGroup
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User navigates to Pivot
+	When User selects 'Pivot' in the 'Create' dropdown
 	And User selects the following Row Groups on Pivot:
 	| RowGroups          |
 	| ComputerSc: Status |
@@ -125,7 +125,7 @@ Scenario: EvergreenJnr_DevicesList_CheckSortedOrderForPivotProjectStatusAsRowGro
 Scenario: EvergreenJnr_DevicesList_CheckSortedOrderForPivotProjectStatusAsColumn
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User navigates to Pivot
+	When User selects 'Pivot' in the 'Create' dropdown
 	And User selects the following Row Groups on Pivot:
 	| RowGroups |
 	| Building  |

@@ -15,7 +15,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddingColumnOnPivotIsWorksCorrectlyF
 	| Values |
 	| 4553   |
 	Then "Device Key" filter is added to the list
-	When User navigates to Pivot
+	When User selects 'Pivot' in the 'Create' dropdown
 	And User clicks 'ADD COLUMN' button 
 	Then "5" subcategories is displayed for "Suggested" category
 	And "Device Key" subcategory is selected in Column panel
@@ -27,7 +27,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddingColumnOnPivotIsWorksCorrectlyF
 Scenario: EvergreenJnr_DevicesList_CheckThatPivotSubmenuIsDisplayedCorrectlyAfterClosingListsPanel
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User navigates to Pivot
+	When User selects 'Pivot' in the 'Create' dropdown
 	And User selects the following Row Groups on Pivot:
 	| RowGroups              |
 	| Application Compliance |
@@ -59,7 +59,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatRemovingValueThroughTheChipsWor
 	Then "<FilterName>" filter is added to the list
 	When User create dynamic list with "<ListName>" name on "<PageName>" page
 	Then "<ListName>" list is displayed to user
-	When User navigates to Pivot
+	When User selects 'Pivot' in the 'Create' dropdown
 	And User selects the following Row Groups on Pivot:
 	| RowGroups  |
 	| <RowGroup> |
@@ -94,7 +94,7 @@ Examples:
 Scenario: EvergreenJnr_DevicesList_CheckThatAggregateFunctionContainsCorrectValues
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User navigates to Pivot
+	When User selects 'Pivot' in the 'Create' dropdown
 	And User selects the following Values on Pivot:
 	| Values     |
 	| HDD Count  |
@@ -127,7 +127,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAggregateFunctionContainsCorrectValu
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatOperatingSystemPivotValueIsDisplayInTheCorrectOrder
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User navigates to Pivot
+	When User selects 'Pivot' in the 'Create' dropdown
 	And User selects the following Row Groups on Pivot:
 	| RowGroups   |
 	| <RowGroups> |
@@ -152,7 +152,7 @@ Examples:
 Scenario: EvergreenJnr_DevicesList_CheckThatOperatingSystemAndServicePackOrBuildRowGroupDisplayInTheCorrectOrder
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User navigates to Pivot
+	When User selects 'Pivot' in the 'Create' dropdown
 	And User selects the following Row Groups on Pivot:
 	| RowGroups             |
 	| Operating System      |

@@ -264,7 +264,7 @@
     <Compile Include="Pages\Evergreen\AdminDetailsPages\MoveToAnotherBucketPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\TeamsPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\ProjectsPage.cs" />
-    <Compile Include="Pages\Evergreen\BaseDashboardPage.cs" />
+    <Compile Include="Pages\Evergreen\Base\BaseDashboardPage.cs" />
     <Compile Include="Pages\Evergreen\ColumnsElement.cs" />
     <Compile Include="Pages\Evergreen\CustomListElement.cs" />
     <Compile Include="Pages\Evergreen\DetailsPage.cs" />

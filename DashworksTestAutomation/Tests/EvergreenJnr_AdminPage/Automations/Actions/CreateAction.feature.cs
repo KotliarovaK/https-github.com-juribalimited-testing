@@ -297,7 +297,7 @@ this.FeatureBackground();
 #line 58
  testRunner.Then("\"Update Migrated devices to Started\" content is displayed in \"Action Name\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 59
- testRunner.And("\'Update task value\' text value is displayed in the \'Action Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Update task value\' content is displayed in \'Action Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 60
  testRunner.And(string.Format("\'{0}\' content is displayed in \'Project\' textbox", project), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 61
@@ -305,7 +305,7 @@ this.FeatureBackground();
 #line 62
  testRunner.And(string.Format("\'{0}\' content is displayed in \'Task\' textbox", task), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 63
- testRunner.Then("\'Not Started\' text value is displayed in the \'Value\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Not Started\' content is displayed in \'Value\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -741,7 +741,7 @@ this.FeatureBackground();
 #line 180
  testRunner.Then("\"Update Migrated devices\" content is displayed in \"Action Name\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 181
- testRunner.Then("\'Update task value\' text value is displayed in the \'Action Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Update task value\' content is displayed in \'Action Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 182
  testRunner.And("\'One\' content is displayed in \'Stage\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 183
@@ -877,7 +877,7 @@ this.FeatureBackground();
 #line 219
  testRunner.Then("\"Update Migrated devices\" content is displayed in \"Action Name\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 220
- testRunner.Then("\'Update task value\' text value is displayed in the \'Action Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Update task value\' content is displayed in \'Action Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 221
  testRunner.And("\'One\' content is displayed in \'Stage\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 222

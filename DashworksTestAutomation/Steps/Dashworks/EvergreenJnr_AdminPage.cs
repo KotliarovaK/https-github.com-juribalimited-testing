@@ -24,6 +24,7 @@ using DashworksTestAutomation.DTO.RuntimeVariables.Buckets;
 using DashworksTestAutomation.DTO.RuntimeVariables.CapacityUnits;
 using DashworksTestAutomation.DTO.RuntimeVariables.Rings;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Automations;
+using DashworksTestAutomation.Pages.Evergreen.Base;
 using DashworksTestAutomation.Pages.Evergreen.ItemDetails;
 using DashworksTestAutomation.Utils;
 using TechTalk.SpecFlow;
@@ -1436,19 +1437,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 "Convert to Evergreen button is displayed");
         }
 
-        [When(@"User changes Name to ""(.*)"" in the ""(.*)"" field on the Project details page")]
-        [When(@"User type ""(.*)"" Name in the ""(.*)"" field on the Project details page")]
-        public void WhenUserTypeNameInTheFieldOnTheProjectDetailsPage(string name, string fieldName)
-        {
-            SendKeysToTheNamedTextbox(name, fieldName);
-
-            if (fieldName.Equals("Ring name"))
-                _rings.Value.Add(new RingDto() { Name = name });
-
-            if (fieldName.Equals("Capacity Unit Name"))
-                _capacityUnits.Value.Add(new CapacityUnitDto() { Name = name });
-        }
-
         [When(@"User type ""(.*)"" Name in the ""(.*)"" field on the '(.*)' Project details page")]
         public void WhenUserTypeNameInTheFieldOnTheProjectDetailsPage(string name, string fieldName, string project)
         {
@@ -1461,6 +1449,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 _capacityUnits.Value.Add(new CapacityUnitDto() { Name = name, Project = project });
         }
 
+        //TODO DELETE THIS
         private void SendKeysToTheNamedTextbox(string text, string fieldName)
         {
             var projectElement = _driver.NowAt<ProjectsPage>();

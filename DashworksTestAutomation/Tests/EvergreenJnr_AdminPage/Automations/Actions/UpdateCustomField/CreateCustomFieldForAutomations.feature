@@ -42,7 +42,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldValidations
 	Then "[Custom field not found]" content is displayed for "Task or Field" column
 	When User clicks content from "Action" column
 	Then "17881_Action" content is displayed in "Action Name" field
-	Then 'Update custom field' text value is displayed in the 'Action Type' dropdown
+	Then 'Update custom field' content is displayed in 'Action Type' dropdown
 	#Then '17847' content is displayed in 'Custom Field' textbox
 	#Then 'Long test value Long test value Long test value Long test value Long test value' content is displayed in 'Value' textbox
 	Then 'The selected custom field cannot be found' error message is displayed for 'Custom Field' field

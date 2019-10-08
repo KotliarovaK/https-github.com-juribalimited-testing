@@ -28,12 +28,12 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForDeviceScopedProject
 	| Move to position |
 	When User clicks 'CREATE PROJECT RING' button 
 	Then Page with 'Create Project Ring' subheader is displayed to user
-	When User type "14695_Ring" Name in the "Ring name" field on the Project details page
+	When User enters '14695_Ring' text to 'Ring name' textbox
 	And User clicks Create button on the Create Ring page
 	Then Success message is displayed and contains "The ring has been created" text
 	When User clicks 'CREATE PROJECT RING' button 
 	Then Page with 'Create Project Ring' subheader is displayed to user
-	When User type "Ring_Test" Name in the "Ring name" field on the Project details page
+	When User enters 'Ring_Test' text to 'Ring name' textbox
 	When User clicks Default Ring checkbox
 	And User clicks Create button on the Create Ring page
 	When User have opened Column Settings for "Ring" column

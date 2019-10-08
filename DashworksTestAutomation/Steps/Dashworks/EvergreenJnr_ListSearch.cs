@@ -2,6 +2,7 @@
 using System.Threading;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
+using DashworksTestAutomation.Pages.Evergreen.Base;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;

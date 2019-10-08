@@ -9,7 +9,7 @@ Background: Pre-Conditions
 Scenario: EvergreenJnr_DevicesList_ChecksThatPivotsAreNotShownInTheListToSelectOnScopeChangesPage
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User navigates to Pivot
+	When User selects 'Pivot' in the 'Create' dropdown
 	And User selects the following Row Groups on Pivot:
 	| RowGroups  |
 	| Compliance |
@@ -64,7 +64,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatPivotsAreNotShownInTheListToSelectO
 Scenario: EvergreenJnr_DevicesList_ChecksThatPivotTableDisplayedCorrectlyAfterRemovingColumn
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User navigates to Pivot
+	When User selects 'Pivot' in the 'Create' dropdown
 	And User selects the following Row Groups on Pivot:
 	| RowGroups  |
 	| Compliance |
@@ -86,7 +86,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatPivotTableDisplayedCorrectlyAfterRe
 Scenario: EvergreenJnr_UsersList_ChecksThatUserCanCreateOneMorePivotOnSelectedPage
 	When User clicks 'Users' on the left-hand menu
 	Then 'All Users' list should be displayed to the user
-	When User navigates to Pivot
+	When User selects 'Pivot' in the 'Create' dropdown
 	And User selects the following Row Groups on Pivot:
 	| RowGroups   |
 	| Common Name |
@@ -100,7 +100,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatUserCanCreateOneMorePivotOnSelectedPa
 	When User creates Pivot list with "Pivot_DAS_14206" name
 	Then "Pivot_DAS_14206" list is displayed to user
 	When User navigates to the "All Users" list
-	And User navigates to Pivot
+	And User selects 'Pivot' in the 'Create' dropdown
 	Then "ADD ROW GROUP" Action button is active
 	And "ADD COLUMN" Action button is active
 	And "ADD VALUE" Action button is active
@@ -115,7 +115,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatUserCanCreateOneMorePivotOnCreatedLis
 	When User create dynamic list with "Dynamic_List_DAS14206" name on "Users" page
 	Then "Dynamic_List_DAS14206" list is displayed to user
 	When User navigates to the "All Users" list
-	When User navigates to Pivot
+	When User selects 'Pivot' in the 'Create' dropdown
 	And User selects the following Row Groups on Pivot:
 	| RowGroups   |
 	| Common Name |
@@ -128,7 +128,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatUserCanCreateOneMorePivotOnCreatedLis
 	Then "PivotList_DAS_14206" list is displayed to user
 	When User navigates to the "Dynamic_List_DAS14206" list
 	Then "Dynamic_List_DAS14206" list is displayed to user
-	When User navigates to Pivot
+	When User selects 'Pivot' in the 'Create' dropdown
 	Then "ADD ROW GROUP" Action button is active
 	And "ADD COLUMN" Action button is active
 	And "ADD VALUE" Action button is active
@@ -150,7 +150,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatUserCanCreateOneMorePivotOnCreatedLis
 Scenario: EvergreenJnr_DevicesList_CheckThatPivotPanelIsDisplayedCorrectlyAfterClicksOnResetButton
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User navigates to Pivot
+	When User selects 'Pivot' in the 'Create' dropdown
 	And User selects the following Row Groups on Pivot:
 	| RowGroups  |
 	| Compliance |
@@ -179,7 +179,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatPivotPanelIsDisplayedCorrectlyAfterC
 Scenario: EvergreenJnr_DevicesList_ChecksTooltipsOnPivot
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User navigates to Pivot
+	When User selects 'Pivot' in the 'Create' dropdown
 	And User clicks 'ADD ROW GROUP' button 
 	When "Compliance" value is entered into the search box and the selection is clicked on Pivot
 	Then "DONE" Action button have tooltip with "Confirm changes" text

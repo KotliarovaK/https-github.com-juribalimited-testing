@@ -10,6 +10,7 @@ using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
+using DashworksTestAutomation.Pages.Evergreen.Base;
 using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
@@ -27,16 +28,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public EvergreenJnr_Pivot(RemoteWebDriver driver)
         {
             _driver = driver;
-        }
-
-        [When(@"User navigates to Pivot")]
-        public void WhenUserNavigatesToPivot()
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitForElementToBeDisplayed(page.CreateActionButton);
-            _driver.WaitForDataLoading();
-            page.CreateActionButton.Click();
-            page.GetCreateButtonByName("Pivot").Click();
         }
 
         [When(@"User clicks the Pivot button")]

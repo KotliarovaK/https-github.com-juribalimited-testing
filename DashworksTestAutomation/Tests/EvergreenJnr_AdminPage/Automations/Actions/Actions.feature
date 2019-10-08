@@ -309,7 +309,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditActionPage
 	Then Edit Action page is displayed to the User
 	Then "15425_Action" content is displayed in "Action Name" field
 	Then '[Default (User)]' value is displayed in the 'Path' dropdown
-	Then 'Update path' text value is displayed in the 'Action Type' dropdown
+	Then 'Update path' content is displayed in 'Action Type' dropdown
 	Then "UPDATE" Action button is disabled
 	Then "CANCEL" Action button is active
 	When User enters '' text to 'Action Name' textbox
@@ -572,7 +572,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateTextValue
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	#Actions content check
 	Then "17602_Action" content is displayed in "Action Name" field
-	Then 'Update task value' text value is displayed in the 'Action Type' dropdown
+	Then 'Update task value' content is displayed in 'Action Type' dropdown
 	Then 'One' content is displayed in 'Stage' textbox
 	Then 'Text Computer' content is displayed in 'Task' textbox
 	Then 'Update' value is displayed in the 'Update Value' dropdown
@@ -607,7 +607,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForRemoveTextValue
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	#Actions content check
 	Then "17605_Action" content is displayed in "Action Name" field
-	Then 'Update task value' text value is displayed in the 'Action Type' dropdown
+	Then 'Update task value' content is displayed in 'Action Type' dropdown
 	Then 'Computer Scheduled Test (Jo)' value is displayed in the 'Project' dropdown
 	Then 'One' value is displayed in the 'Stage' dropdown
 	Then 'Text Computer' value is displayed in the 'Task' dropdown
@@ -646,7 +646,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateDate
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	#Actions content check
 	Then "17606_Action" content is displayed in "Action Name" field
-	Then 'Update task value' text value is displayed in the 'Action Type' dropdown
+	Then 'Update task value' content is displayed in 'Action Type' dropdown
 	Then 'Computer Scheduled Test (Jo)' value is displayed in the 'Project' dropdown
 	Then 'One' value is displayed in the 'Stage' dropdown
 	Then 'Date Computer' value is displayed in the 'Task' dropdown
