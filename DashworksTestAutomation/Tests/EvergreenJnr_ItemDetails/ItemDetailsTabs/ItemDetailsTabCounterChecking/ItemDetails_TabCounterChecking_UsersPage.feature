@@ -183,8 +183,8 @@ Scenario: EvergreenJnr_UsersList_ChecksThatTheNumberOfCountersInTheTabIsEqualToT
 	When User navigates to the 'User' details page for 'ACG370114' item
 	Then Details page for "ACG370114" item is displayed to the user
 	And 'Custom Fields' tab is displayed on left menu on the Details page and contains '2' count of items
-	#Ann.Ilchenko 8/14/19: Remove the hash when the row counter will be implemented in the top bar.
-	#Then "2" rows found label displays on Details Page
+	When User navigates to the "Custom Fields" sub-menu on the Details page
+	Then "2" rows found label displays on Details Page
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the "User Projects" sub-menu on the Details page
 	Then 'User Projects' tab is displayed on left menu on the Details page and contains '8' count of items

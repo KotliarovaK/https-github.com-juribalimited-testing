@@ -54,7 +54,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatCopyRowWorksInItemDetailsOnSele
 Examples:
 	| PageName | SearchTerm          | MainTabName      | SubTabName        | TargetCell   | ExpectedData                                                     |
 	| Device   | 30BGMTLBM9PTW5      | Applications     | Evergreen Summary | Access 95    | Access 95   Microsoft      Green   True   Unknown   True         |
-	| User     | 003F5D8E1A844B1FAA5 | Active Directory | Groups            | Domain Users | Domain Users   DWLABS   Global Security Group   All domain users |
+	| User     | 003F5D8E1A844B1FAA5 | Active Directory | Groups            | Domain Users | Domain Users   BCLABS   Global Security Group   All domain users |
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12968
 Scenario Outline: EvergreenJnr_AllLists_CheckThatCopyRowWorksInItemDetailsOnSelectedSabTab
