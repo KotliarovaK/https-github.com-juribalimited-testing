@@ -1017,7 +1017,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.AreEqual(expectedList, labelList, "Label order is incorrect");
         }
 
-
+        //TODO does it make sense to make this step more generic?
         [When(@"User clicks ""(.*)""  button on the Dashboards page")]
         public void WhenUserClicksButtonOnTheDashboardsPage(string buttonName)
         {
@@ -1025,6 +1025,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.GetTopBarActionButton(buttonName).Click();
         }
 
+        //TODO does it make sense to make this step more generic?
         [Then(@"User sees ""(.*)"" tooltip for ""(.*)"" on the Dashboard")]
         public void ThenUserSeesTooltipForButtons(string tooltip, string buttonName)
         {

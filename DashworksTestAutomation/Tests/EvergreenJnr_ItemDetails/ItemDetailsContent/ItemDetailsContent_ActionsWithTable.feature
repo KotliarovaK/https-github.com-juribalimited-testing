@@ -225,11 +225,10 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAgGridActionsWorksCorrectlyForDetail
 	#| ColumnName   |
 	#| Value        |
 	#| Custom Field |
-	Then 'Reset Filters' button is displayed on the Item Details page
-	When User change text in '(.*)' cell from '(.*)' column to 'SOME' text
-	Then 'Refresh' button is displayed on the Item Details page
-	Then 'Export' button is displayed on the Item Details page
-	Then 'Group By' button is displayed on the Item Details page
+	Then Reset Filters button is displayed on the Item Details page
+	Then Refresh button is displayed on the Item Details page
+	Then Export button is displayed on the Item Details page
+	Then Group By button is displayed on the Item Details page
 	Then Reset Filters button on the Item Details page is disable
 	When User enters "com" text in the Search field for "Custom Field" column
 	Then Reset Filters button on the Item Details page is enabled
