@@ -393,10 +393,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         private static string NamedTextboxSelector = "(.//textarea[@placeholder='{0}'] | .//input[@placeholder='{0}'])";
 
-        //When more than 4 items are selected they are collpased to '1 more'
-        public string ExpandNamedTextboxSelector = "(.//textarea[@placeholder='{0}'] | .//input[@placeholder='{0}'])";
+        //For cases when more than 4 items are selected they are collapsed to '1 more'
+        public string ExpandNamedTextboxSelector = "//preceding-sibling::button[contains(@class,'chips-expand')]";
 
-        private static string AutocompleteOptionsSelector = "//preceding-sibling::button[contains(@class,'chips-expand')]";
+        //For cases when more than 4 items are selected they are collapsed to '1 more'
+        public string SelectedValuesForNamedTextboxSelector = "//preceding-sibling::mat-chip/span";
+
+        private static string AutocompleteOptionsSelector = ".//mat-option";
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'mat-autocomplete-panel')]")]
         public IWebElement AutocompleteDropdown { get; set; }
@@ -476,12 +479,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         {
             Driver.WaitForDataLoading();
             Driver.ContextClick(GetGridCellByText(cellText));
-        }
-
-        public void DoubleClickOnCell(string cellText)
-        {
-            Driver.WaitForDataLoading();
-            Driver.DoubleClick(GetGridCellByText(cellText));
         }
 
         public void ClearInput(IWebElement input)
@@ -586,12 +583,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
                 GetNamedTextbox(placeholder).SendKeys(value);
         }
 
-        public void IsAutocompleteOptionsSorted(string placeholder)
-        {
-            var list = GetAllAutocompleteOptions(placeholder).ToList();
-            SortingHelper.IsListSorted(list);
-        }
-
         public List<string> GetAllAutocompleteOptions(string placeholder)
         {
             GetNamedTextbox(placeholder).Click();
@@ -675,14 +666,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         {
             var selector = By.XPath(
                 $".//div[@class='topnav-footer']//span[contains(text(),'{versionNumber}')]");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
-        public IWebElement GetSubcategoryByCategoryName(string categoryName)
-        {
-            var selector = By.XPath(
-                $"//div[text()='{categoryName}']/../following-sibling::div[contains(@class, 'sub-categories')]//div//span");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
@@ -868,22 +851,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             }
         }
 
-        /// <summary>
-        /// Get just data from first row
-        /// </summary>
-        /// <param name="columnName">Column name in the grid</param>
-        /// <returns></returns>
-        public IWebElement GetContentByColumnName(string columnName)
-        {
-            var byControl =
-                By.XPath(
-                    $".//div[contains(@class, 'ag-body-container')]/div[1]/div[{GetColumnNumberByName(columnName)}]");
-
-            Driver.WaitForDataLoading();
-            Driver.WaitForElementToBeDisplayed(byControl);
-            return Driver.FindElement(byControl);
-        }
-
         public IWebElement GetHrefByColumnName(string columnName)
         {
             var byControl =
@@ -932,13 +899,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
                 $".//div[@role='row']//a[text()='{rowName}']//ancestor::div[@role='row']//div[@col-id='settings']"));
             return Driver.FindElement(By.XPath(
                 $".//div[@role='row']//a[text()='{rowName}']//ancestor::div[@role='row']//div[@col-id='settings']"));
-        }
-
-        public IWebElement GetOptionByName(string optionName)
-        {
-            var selector = By.XPath($".//span[text()='{optionName}']/ancestor::mat-option");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
         }
 
         public string GetPinnedColumnName(string pinStatus)
@@ -1055,14 +1015,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
                         $".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//i[contains(@class, 'clear')]"))
                     .Click();
             }
-        }
-
-        //TODO this should be replaced by Dropdown methods
-        public IWebElement GetCreateButtonByName(string button)
-        {
-            var selector = By.XPath($"//span[text()='{button}']/ancestor::mat-option");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
         }
 
         #region Dropdown

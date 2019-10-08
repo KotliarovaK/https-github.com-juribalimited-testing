@@ -115,7 +115,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForElementToBeDisplayed(action.PathDropdown);
             action.PathDropdown.Clear();
             action.PathDropdown.SendKeys(requestType);
-            action.GetOptionByName(requestType).Click();
+            action.GetDropdownValueByName(requestType).Click();
         }
 
         //TODO Remove this step
@@ -126,7 +126,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForElementToBeDisplayed(action.CapacityUnitField);
             action.CapacityUnitField.Clear();
             action.CapacityUnitField.SendKeys(capacityUnit);
-            action.GetOptionByName(capacityUnit).Click();
+            action.GetDropdownValueByName(capacityUnit).Click();
             _driver.WaitForDataLoading();
         }
 
@@ -137,7 +137,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForElementToBeDisplayed(action.RingField);
             action.RingField.Clear();
             action.RingField.SendKeys(ringValue);
-            action.GetOptionByName(ringValue).Click();
+            action.GetDropdownValueByName(ringValue).Click();
             _driver.WaitForDataLoading();
         }
 
@@ -148,7 +148,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             field.GetFieldOnActionPanelByName(fieldName).Clear();
             field.GetFieldOnActionPanelByName(fieldName).SendKeys(option);
             var action = _driver.NowAt<BaseDashboardPage>();
-            action.GetOptionByName(option).Click();
+            action.GetDropdownValueByName(option).Click();
             _driver.WaitForDataLoading();
         }
 
@@ -158,7 +158,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var field = _driver.NowAt<ActionsElement>();
             field.GetDropdownOnActionPanelByName(fieldName).Click();
             var action = _driver.NowAt<BaseDashboardPage>();
-            action.GetOptionByName(option).Click();
+            action.GetDropdownValueByName(option).Click();
             _driver.WaitForDataLoading();
         }
 
@@ -301,14 +301,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             action.ValueDropdown.Click();
-            action.GetOptionByName(value).Click();
+            action.GetDropdownValueByName(value).Click();
         }
 
         [Then(@"Value field is not displayed on Action panel")]
         public void ThenValueFieldIsNotDisplayedOnActionPanel()
         {
             var action = _driver.NowAt<BaseDashboardPage>();
-            Utils.Verify.IsFalse(action.ValueDropdown.Displayed(), "Value field is displayed");
+            Verify.IsFalse(action.ValueDropdown.Displayed(), "Value field is displayed");
         }
 
         //TODO replace by WhenUserSelectsInTheDropdown
@@ -317,7 +317,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             action.UpdateValueDropdown.Click();
-            action.GetOptionByName(value).Click();
+            action.GetDropdownValueByName(value).Click();
         }
 
         [Then(@"the Update Value options are displayed in following order:")]
@@ -370,7 +370,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             action.UpdateOwnerDropdown.Click();
-            action.GetOptionByName(owner).Click();
+            action.GetDropdownValueByName(owner).Click();
         }
 
         [Then(@"the Update Owner options are displayed in following order:")]
@@ -394,7 +394,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.TeamField.Click();
             action.TeamField.Clear();
             action.TeamField.SendKeys(team);
-            action.GetOptionByName(team).Click();
+            action.GetDropdownValueByName(team).Click();
         }
 
         [Then(@"Teams are displayed in alphabetical order on Action panel")]
@@ -415,7 +415,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.OwnerField.Click();
             action.OwnerField.Clear();
             action.OwnerField.SendKeys(owner);
-            action.GetOptionByName(owner).Click();
+            action.GetDropdownValueByName(owner).Click();
         }
 
         [Then(@"Owner field is not displayed on Action panel")]

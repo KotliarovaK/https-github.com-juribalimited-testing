@@ -53,7 +53,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Slots
                 projectElement.SendKeysToTheNamedTextbox(slot.SlotEndTime, "Slot End Time");
 
                 action.GetDropdownByName("Capacity Type").Click();
-                action.GetOptionByName(slot.CapacityType).Click();
+                action.GetDropdownValueByName(slot.CapacityType).Click();
 
                 #region Assertion. Just comment with comment if some bugs appears
 
@@ -76,7 +76,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Slots
                 #endregion
 
                 action.GetDropdownByName("Object Type").Click();
-                action.GetOptionByName(slot.ObjectType).Click();
+                action.GetDropdownValueByName(slot.ObjectType).Click();
 
                 var page = _driver.NowAt<Capacity_SlotsPage>();
                 page.EnterValueByDayName(slot.Monday, "Monday");
