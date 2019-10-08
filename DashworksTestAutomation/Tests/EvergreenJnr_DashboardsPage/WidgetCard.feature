@@ -257,28 +257,28 @@ Scenario: EvergreenJnr_DashboardsPage_CheckReadinessFirstCellIconsForCardWidget
 	| WidgetType | Title               | List          | Type       | Layout    |
 	| Card       | WidgetForDAS15355_1 | DAS15355_List | First Cell | Text Only |
 	Then Text Only is displayed for Card widget on Preview
-	And "Grey" color is displayed for Card Widget on Preview
+	And "Green" color is displayed for Card Widget on Preview
 	And "Data Label" checkbox is not displayed on the Create Widget page
 	When User clicks 'CREATE' button 
 	Then Text Only is displayed for Card widget
-	And "Grey" color is displayed for Card Widget
+	And "Green" color is displayed for Card Widget
 	
 	When User clicks Ellipsis menu for "WidgetForDAS15355_1" Widget on Dashboards page
 	And User clicks "Edit" item from Ellipsis menu on Dashboards page
 	And User selects "Icon and Text" in the "Layout" Widget dropdown
 	Then Icon and Text is displayed for Card widget on Preview
-	And "Grey" color is displayed for Card Widget on Preview
+	And "Green" color is displayed for Card Widget on Preview
 	When User clicks 'UPDATE' button 
-	Then "Grey" color is displayed for Card Widget
+	Then "Green" color is displayed for Card Widget
 	And Icon and Text is displayed for Card widget
 
 	When User clicks Ellipsis menu for "WidgetForDAS15355_1" Widget on Dashboards page
 	And User clicks "Edit" item from Ellipsis menu on Dashboards page
 	And User selects "Icon Only" in the "Layout" Widget dropdown
 	Then Icon Only is displayed for Card widget on Preview
-	And "Grey" color is displayed for Card Widget on Preview
+	And "Green" color is displayed for Card Widget on Preview
 	When User clicks 'UPDATE' button 
-	Then "Grey" color is displayed for Card Widget
+	Then "Green" color is displayed for Card Widget
 	And Icon Only is displayed for Card widget
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16266 @Cleanup

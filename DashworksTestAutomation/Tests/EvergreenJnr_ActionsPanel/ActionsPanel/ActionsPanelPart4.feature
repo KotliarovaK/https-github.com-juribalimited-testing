@@ -43,7 +43,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatProjectNamesAreDisplayedCorrectlyIn
 	| 00OMQQXWA1DRI6   |
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update path' in the 'Bulk Update Type' dropdown
-	Then only below options are displayed in the 'Project' autocomplete
+	Then 'Project' autocomplete contains following options:
 	| Options                                          |
 	| *Project K-Computer Scheduled Project            |
 	| 1803 Rollout                                     |

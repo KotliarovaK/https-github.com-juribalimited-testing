@@ -77,6 +77,8 @@ Scenario: EvergreenJnr_UsersList_ChecksThatLinksFromTheDeviceColumnInDeviceProje
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the "User Projects" sub-menu on the Details page
 	And User clicks "*Project K-Computer Scheduled Project" link on the Details Page
+	#waiting for the switching process to Senior page to be completed
+	When User waits for three seconds
 	Then "Project Object" page is displayed to the user
 	And PMObject page for "User: 000F977AC8824FE39B8 (Spruill, Shea)" object is displayed to the user
 	And User click back button in the browser
@@ -89,6 +91,8 @@ Scenario: EvergreenJnr_UsersList_ChecksThatLinksFromTheDeviceColumnInDeviceProje
 	| ColumnName |
 	| Object ID  |
 	When User clicks "61097" link on the Details Page
+	#waiting for the switching process to Senior page to be completed
+	When User waits for three seconds
 	Then "Project Object" page is displayed to the user
 	And PMObject page for "User: 000F977AC8824FE39B8 (Spruill, Shea)" object is displayed to the user
 	And User click back button in the browser
@@ -96,6 +100,8 @@ Scenario: EvergreenJnr_UsersList_ChecksThatLinksFromTheDeviceColumnInDeviceProje
 	And Details page for "000F977AC8824FE39B8" item is displayed to the user
 	When User navigates to the "Mailbox Project Summary" sub-menu on the Details page
 	And User clicks "Mailbox Evergreen Capacity Project" link on the Details Page
+	#waiting for the switching process to Senior page to be completed
+	When User waits for three seconds
 	Then "Project Object" page is displayed to the user
 	And PMObject page for "Mailbox: 000F977AC8824FE39B8@bclabs.local (Spruill, Shea)" object is displayed to the user
 	And User click back button in the browser
@@ -108,6 +114,8 @@ Scenario: EvergreenJnr_UsersList_ChecksThatLinksFromTheDeviceColumnInDeviceProje
 	| ColumnName |
 	| Object ID  |
 	When User clicks "66461" link on the Details Page
+	#waiting for the switching process to Senior page to be completed
+	When User waits for three seconds
 	Then "Project Object" page is displayed to the user
 	And PMObject page for "Mailbox: 000F977AC8824FE39B8@bclabs.local (Spruill, Shea)" object is displayed to the user
 	And User click back button in the browser
@@ -117,6 +125,8 @@ Scenario: EvergreenJnr_UsersList_ChecksThatLinksFromTheDeviceColumnInDeviceProje
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the "Device Project Summary" sub-menu on the Details page
 	And User clicks "Windows 7 Migration (Computer Scheduled Project)" link on the Details Page
+	#waiting for the switching process to Senior page to be completed
+	When User waits for three seconds
 	Then "Project Object" page is displayed to the user
 	And PMObject page for "Computer: 001BAQXT6JWFPI" object is displayed to the user
 	And User click back button in the browser
@@ -129,6 +139,8 @@ Scenario: EvergreenJnr_UsersList_ChecksThatLinksFromTheDeviceColumnInDeviceProje
 	| ColumnName |
 	| Object ID  |
 	When User clicks "11176" link on the Details Page
+	#waiting for the switching process to Senior page to be completed
+	When User waits for three seconds
 	Then "Project Object" page is displayed to the user
 	And PMObject page for "Computer: 001BAQXT6JWFPI" object is displayed to the user
 
@@ -281,7 +293,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheRelatedTabIsDisplayedCorrectlyWit
 	| Application Readiness |
 	| Stage 1               |
 	| Stage 2               |
-	When User enters "03ME2G7TIR4GBN" text in the Search field for "Device" column on the Details Page
+	When User enters "03ME2G7TIR4GBN" text in the Search field for "Device" column
 	Then Links from "Device" column is displayed to the user on the Details Page
 	And Links from "Owner" column is displayed to the user on the Details Page
 	And Links from "Owner Display Name" column is displayed to the user on the Details Page
@@ -292,20 +304,20 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheRelatedTabIsDisplayedCorrectlyWit
 	And User click back button in the browser
 	And Details page for "001BAQXT6JWFPI" item is displayed to the user
 	When User navigates to the 'Related' left menu item
-	And User enters "ACG370114" text in the Search field for "Owner" column on the Details Page
+	And User enters "ACG370114" text in the Search field for "Owner" column
 	And User clicks "ACG370114" link on the Details Page
 	Then Details page for "ACG370114 (James N. Snow)" item is displayed correctly
 	And User click back button in the browser
 	And Details page for "001BAQXT6JWFPI" item is displayed to the user
 	When User navigates to the 'Related' left menu item
-	And User enters "James N. Snow" text in the Search field for "Owner Display Name" column on the Details Page
+	And User enters "James N. Snow" text in the Search field for "Owner Display Name" column
 	And User clicks "James N. Snow" link on the Details Page
 	Then Details page for "ACG370114 (James N. Snow)" item is displayed correctly
 	And User click back button in the browser
 	And Details page for "001BAQXT6JWFPI" item is displayed to the user
 	When User navigates to the 'Related' left menu item
 	#link function is not ready yet
-	#When User enters "ACG370114" text in the Search field for "Linked By" column on the Details Page
+	#When User enters "ACG370114" text in the Search field for "Linked By" column
 	#When User clicks "ACG370114" link on the Details Page
 	#Then Details page for "ACG370114" item is displayed correctly
 
@@ -315,7 +327,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatIconsForReadinessDdlOnRelatedTabAreD
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
 	When User switches to the "Devices Evergreen Capacity Project" project in the Top bar on Item details page
 	When User navigates to the 'Related' left menu item
-	When User enters "03ME2G7TIR4GBN" text in the Search field for "Device" column on the Details Page
+	When User enters "03ME2G7TIR4GBN" text in the Search field for "Device" column
 	Then '31 May 2019' content is displayed in the 'Date' column
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17087
@@ -350,7 +362,7 @@ Scenario: EvergreenJnr_DeviceList_CheckThatUsersTabIsDisplayedWithCorrectStagesO
 	| Stage D                     |
 	| Stage with (readiness) task |
 	#if “stage WITHOUT readiness task” Stage is displayed here, please raise a bug.
-	When User enters "AAC860150" text in the Search field for "User" column on the Details Page
+	When User enters "AAC860150" text in the Search field for "User" column
 	Then "GREEN" content is displayed for "Stage A" column
 	And "RED" content is displayed for "Stage C" column
 	And "AMBER" content is displayed for "Stage D" column
