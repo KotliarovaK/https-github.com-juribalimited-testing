@@ -25,7 +25,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='object-icon']//i")]
         public IWebElement GroupIcon { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='box-counter ng-star-inserted']//span[@class='ng-star-inserted']")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'box-counter')]//span[@class='ng-star-inserted']")]
         public IWebElement RowsLabel { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='empty-message ng-star-inserted']")]
@@ -184,29 +184,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
                     x.FindElement(By.XPath(".//span[@class='ag-header-cell-text']")).Text.Equals(columnName))) + 1;
 
             return columnNumber;
-        }
-
-        public void GetSearchFieldByColumnName(string columnName, string text)
-        {
-            var byControl =
-                By.XPath(
-                    $".//div[@role='presentation']/div[2]/div[{GetColumnNumberByName(columnName)}]//div[@class='ag-floating-filter-full-body']//input");
-            Driver.WaitForDataLoading();
-            Driver.WaitForElementToBeDisplayed(byControl);
-            Driver.FindElement(byControl).Click();
-            Driver.FindElement(byControl).Clear();
-            Driver.FindElement(byControl).SendKeys(text);
-        }
-
-        public IWebElement GetContentByColumnName(string columnName)
-        {
-            var byControl =
-                By.XPath(
-                    $".//div[contains(@class, 'ag-body-container')]/div[1]/div[{GetColumnNumberByName(columnName)}]");
-
-            Driver.WaitForDataLoading();
-            Driver.WaitForElementToBeDisplayed(byControl);
-            return Driver.FindElement(byControl);
         }
 
         public By GetLinkByNameSelector(string linkName)

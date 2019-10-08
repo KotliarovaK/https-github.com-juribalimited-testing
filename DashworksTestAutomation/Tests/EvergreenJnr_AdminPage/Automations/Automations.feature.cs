@@ -2502,7 +2502,7 @@ this.FeatureBackground();
 #line 734
  testRunner.And("User select \"Equals\" Operator value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 735
- testRunner.And("User select first checkbox from available options", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User select last checkbox from available options", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 736
  testRunner.And("User clicks Save filter button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 737

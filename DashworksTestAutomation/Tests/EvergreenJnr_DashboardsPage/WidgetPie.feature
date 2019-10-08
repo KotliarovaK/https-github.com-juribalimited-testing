@@ -223,8 +223,8 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatSelectingAggregateFunctio
 Examples: 
 	| AggFunc |
 	| Sum     |
-	| Min     |
-	| Max     |
+	| Minimum |
+	| Maximum |
 	| Average |
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15524 @Cleanup

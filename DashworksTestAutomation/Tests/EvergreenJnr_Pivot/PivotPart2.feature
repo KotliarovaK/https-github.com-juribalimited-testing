@@ -28,7 +28,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatPivotsAreNotShownInTheListToSelectO
 	And User navigates to the 'Scope' left menu item
 	And User selects "Scope Details" tab on the Project details page
 	And User navigates to the 'Device Scope' tab on Project Scope Changes page
-	Then following Values are displayed in the 'Scope' dropdown:
+	Then User sees that 'Scope' dropdown contains following options:
 	| Values                                |
 	| All Devices                           |
 	| 1803 Rollout                          |
@@ -42,7 +42,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatPivotsAreNotShownInTheListToSelectO
 	| New York - Devices                    |
 	| Using App Saved List Readiness Filter |
 	When User navigates to the 'User Scope' tab on Project Scope Changes page
-	Then following Values are displayed in the 'User Scope' dropdown:
+	Then User sees that 'User Scope' dropdown contains following options:
 	| Values                             |
 	| All Users                          |
 	| Users List (Complex)               |
@@ -50,7 +50,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatPivotsAreNotShownInTheListToSelectO
 	| Users Readiness Columns & Filters  |
 	| Users with Device Count            |
 	When User navigates to the 'Application Scope' tab on Project Scope Changes page
-	Then following Values are displayed in the 'Application Scope' dropdown:
+	Then User sees that 'Application Scope' dropdown contains following options:
 	| Values                                   |
 	| All Applications                         |
 	| 1803 Apps                                |

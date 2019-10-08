@@ -306,7 +306,7 @@ this.FeatureBackground();
             table4.AddRow(new string[] {
                         "zUser Sch for Automations Feature"});
 #line 46
- testRunner.Then("only below options are displayed in the \'Project\' autocomplete", ((string)(null)), table4, "Then ");
+ testRunner.Then("\'Project\' autocomplete contains following options:", ((string)(null)), table4, "Then ");
 #line 69
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 70

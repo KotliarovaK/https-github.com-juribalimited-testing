@@ -1519,6 +1519,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.FilterCheckboxOptions.First().Click();
         }
 
+        [When(@"User select last checkbox from available options")]
+        public void WhenUserSelectLastCheckboxFromAvailableOptions()
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            filterElement.FilterCheckboxOptions.Last().Click();
+        }
+
         [Then(@"Filter Searchfield placeholder is '(.*)'")]
         public void ThenFilterSearchfieldPlaceholderIs(string expectedPlaceholderName)
         {

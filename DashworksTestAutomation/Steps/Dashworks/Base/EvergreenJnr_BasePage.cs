@@ -108,14 +108,21 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenOnlyBelowOptionsAreDisplayedInTheAutocomplete(string placeholder, Table table)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            var options = page.GetAllAutocompleteOptions(placeholder);
+            var expectedOptions = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualOptions = page.GetAllAutocompleteOptions(placeholder);
+            
+            Verify.AreEqual(expectedOptions, actualOptions, $"Value for {placeholder} are different");
+        }
 
-            Verify.AreEqual(options.Count, table.Rows.Count, "Incorrect options count in the autocomplete");
+        [Then(@"'(.*)' autocomplete contains following options:")]
+        public void ThenAutocompleteContainsFollowingOptions(string placeholder, Table table)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var actualOptions = page.GetAllAutocompleteOptions(placeholder);
 
-            foreach (TableRow tableRow in table.Rows)
-            {
-                Verify.IsTrue(options.Contains(tableRow["Options"]), $"Autocomplete doesn't have '{tableRow["Options"]}' option");
-            }
+            Utils.Verify.That(actualOptions,
+                Is.SupersetOf(table.Rows.Select(x => x.Values).Select(x => x.FirstOrDefault())),
+                "Some options are missing!");
         }
 
         [When(@"User selects '(.*)' option from '(.*)' autocomplete")]

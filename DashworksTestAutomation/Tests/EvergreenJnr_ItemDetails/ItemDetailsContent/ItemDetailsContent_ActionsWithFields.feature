@@ -68,8 +68,8 @@ Scenario: EvergreenJnr_AllLists_CheckThatTextInKeyValueGridsIsSelectableOnGroupD
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12690 @DAS12321 @DAS14923
 Scenario: EvergreenJnr_MailboxesList_CheckThatLinksInMailboxDetailsAreRedirectedToTheRelevantUserDetailsPage
-	When User navigates to the 'Mailbox' details page for 'Joel T. Hartman' item
-	Then Details page for "Joel T. Hartman" item is displayed to the user
+	When User navigates to the 'Mailbox' details page for 'hartmajt@bclabs.local' item
+	Then Details page for "hartmajt@bclabs.local" item is displayed to the user
 	When User navigates to the "Mailbox Owner" sub-menu on the Details page
 	And User clicks "hartmajt" link on the Details Page
 	Then Details object page is displayed to the user
@@ -369,8 +369,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectDetailsDefaultViewIsDisp
 	| Fields              |
 	| Object ID           |
 	| Name                |
-	#This is not ready on 'automation' server. Ready for 'radiant' (see DAS17810)
-	#| App Owner           |
+	| App Owner           |
 	| Readiness           |
 	| App Readiness       |
 	| App Rationalisation |
@@ -416,10 +415,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatSelfServiceUrlIsNotDisplayedOnObjectDet
 	And User navigates to the 'Projects' left menu item
 	And User navigates to the "Project Details" sub-menu on the Details page
 	Then field with "Self Service URL" text is not displayed in expanded tab on the Details Page
-	When User clicks 'Users' on the left-hand menu
-	Then 'All Users' list should be displayed to the user
-	When User perform search by "0072B088173449E3A93"
-	And User click content from "Username" column
+	When User navigates to the 'User' details page for '0072B088173449E3A93' item
 	Then Details page for "0072B088173449E3A93" item is displayed to the user
 	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
 	And User navigates to the 'Projects' left menu item

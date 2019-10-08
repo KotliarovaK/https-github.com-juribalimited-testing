@@ -88,3 +88,12 @@ Scenario: EvergreenJnr_DevicesList_CheckThatItsNotPossibleToUnselectTheLastColum
 	| ColumnName   |
 	| Custom Field |
 	|              |
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @CustomFields @DAS18155
+Scenario: EvergreenJnr_DevicesList_CheckThatAllAgGridHeaderButtonsAreDisplayedForCustomFields
+	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
+	And User navigates to the "Custom Fields" sub-menu on the Details page
+	Then Refresh button is displayed on the Item Details page
+	And Group By button is displayed on the Item Details page
+	And Reset Filters button is displayed on the Item Details page
+	And Reset Filters button on the Item Details page is disable
