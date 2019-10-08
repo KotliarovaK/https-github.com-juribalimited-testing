@@ -9,7 +9,7 @@ Background: Pre-Conditions
 Scenario Outline: EvergreenJnr_AllLists_CheckCreatingStaticListFromCSVFirstPage
 	When User clicks '<ListName>' on the left-hand menu
 	Then '<ListName>' list should be displayed to the user
-	When User selects "List from CSV" from the Create actions
+	When User selects 'List from CSV' in the 'Create' dropdown
 	Then "<ImportPage>" Import page is displayed to the User
 	When User selects "CSV-Upload-Devices - Hostname no header.csv" file to upload on Import Lists from CSV page
 	Then "File has headers" checkbox is unchecked on the Base Dashboard Page
@@ -26,11 +26,12 @@ Examples:
 Scenario: EvergreenJnr_AllLists_CheckCancelButtonFunctionalityOnCreateListFromCSV
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User selects "List from CSV" from the Create actions
+	When User selects 'List from CSV' in the 'Create' dropdown
+	When User selects 'List from CSV' in the 'Create' dropdown
 	Then "Devices from CSV" Import page is displayed to the User
 	When User clicks 'CANCEL' button 
 	Then 'All Devices' list should be displayed to the user
-	When User selects "List from CSV" from the Create actions
+	When User selects 'List from CSV' in the 'Create' dropdown
 	When User selects "CSV-Upload-Devices - Hostname no header.csv" file to upload on Import Lists from CSV page
 	Then "File has headers" checkbox is unchecked on the Base Dashboard Page
 	Then "Include archived applications" checkbox is unchecked on the Base Dashboard Page

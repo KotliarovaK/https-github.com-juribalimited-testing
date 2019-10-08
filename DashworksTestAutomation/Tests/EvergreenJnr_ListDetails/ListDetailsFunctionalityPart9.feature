@@ -26,6 +26,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatArchivedItemStillRemainsInStaticL
 	When User navigates to the "StaticList17651" list
 	Then "StaticList17651" list is displayed to user
 	And "2" rows are displayed in the agGrid
+	And Archived devices icon enabled state is 'true' in toolbar
 
 @Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS17552
 Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatCustomFieldFiltersAndColumnsAreMultiValue
