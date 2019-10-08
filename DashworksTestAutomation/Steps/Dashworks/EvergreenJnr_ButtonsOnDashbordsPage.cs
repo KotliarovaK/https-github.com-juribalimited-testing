@@ -4,6 +4,7 @@ using System.Threading;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
+using DashworksTestAutomation.Pages.Evergreen.Base;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
@@ -135,7 +136,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenButtonIsDisplayedOnTheBaseDashboardPage(string buttonName)
         {
             var button = _driver.NowAt<BaseDashboardPage>();
-            Utils.Verify.IsTrue(button.GetCreateButtonByName(buttonName).Displayed(),
+            Verify.IsTrue(button.GetCreateButtonByName(buttonName).Displayed(),
                 $"{buttonName} button is not displayed on the Base Dashboard Page");
         }
 

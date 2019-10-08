@@ -612,11 +612,12 @@ this.FeatureBackground();
 #line 131
  testRunner.When("User clicks Actions button on the Projects page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 132
- testRunner.And("User clicks Delete Project button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks Delete button in Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 133
  testRunner.And("User clicks Delete button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 134
- testRunner.Then("Delete button is displayed to the User on the Projects page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Delete buttons are displayed to the User in Actions and Banner on the Projects pa" +
+                    "ge", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 135
  testRunner.When("User cancels the selection of all rows on the Projects page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 136

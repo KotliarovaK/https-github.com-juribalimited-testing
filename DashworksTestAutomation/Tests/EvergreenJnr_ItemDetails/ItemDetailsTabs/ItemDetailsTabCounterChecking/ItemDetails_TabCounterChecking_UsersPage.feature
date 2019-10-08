@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16378 @DAS16418 @DAS16415 @DAS15583 @DAS15348 @DAS17141 @DAS16830
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16378 @DAS16418 @DAS16415 @DAS15583 @DAS15348 @DAS17141 @DAS16830 @DAS18198
 Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForUsersPageInEvergreenMode
 	When User navigates to the 'User' details page for '0072B088173449E3A93' item 
 	Then Details page for "0072B088173449E3A93" item is displayed to the user
@@ -60,11 +60,13 @@ Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayed
 	| SubTabName        |
 	| Evergreen Summary |
 	| Evergreen Detail  |
+	| Evergreen Owned   |
 	| Advertisements    |
 	| Collections       |
 	#================ checks counters ================#
 	And "Evergreen Summary" tab is displayed on left menu on the Details page and contains count of items
 	And "Evergreen Detail" tab is displayed on left menu on the Details page and contains count of items
+	And "Evergreen Owned" tab is displayed on left menu on the Details page and contains count of items
 	And "Advertisements" tab is displayed on left menu on the Details page and contains count of items
 	And "Collections" tab is displayed on left menu on the Details page and contains count of items
 	#================ checks sub-menu for main Mailboxes tab ================#
@@ -183,8 +185,8 @@ Scenario: EvergreenJnr_UsersList_ChecksThatTheNumberOfCountersInTheTabIsEqualToT
 	When User navigates to the 'User' details page for 'ACG370114' item
 	Then Details page for "ACG370114" item is displayed to the user
 	And 'Custom Fields' tab is displayed on left menu on the Details page and contains '2' count of items
-	#Ann.Ilchenko 8/14/19: Remove the hash when the row counter will be implemented in the top bar.
-	#Then "2" rows found label displays on Details Page
+	When User navigates to the "Custom Fields" sub-menu on the Details page
+	Then "2" rows found label displays on Details Page
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the "User Projects" sub-menu on the Details page
 	Then 'User Projects' tab is displayed on left menu on the Details page and contains '8' count of items

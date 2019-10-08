@@ -73,28 +73,37 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             page.CheckElementDisabledState(page.ResetFiltersButton, false, "Reset Filters button on the Item Details page is disabled");
         }
 
-        [Then(@"'Reset Filters' button is displayed on the Item Details page")]
+        [Then(@"Reset Filters button is displayed on the Item Details page")]
         public void ThenResetFiltersButtonIsDisplayedOnTheItemDetailsPage()
         {
             var page = _driver.NowAt<AggridHeaderCounterElement>();
             page.CheckElementDisplayedState(page.ResetFiltersButton, true, "'Reset Filters' button is not displayed on the Item Details page!");
         }
 
-        [Then(@"'Refresh' button is displayed on the Item Details page")]
+        [Then(@"Refresh button is displayed on the Item Details page")]
         public void ThenRefreshButtonIsDisplayedOnTheItemDetailsPage()
         {
             var page = _driver.NowAt<AggridHeaderCounterElement>();
             page.CheckElementDisplayedState(page.RefreshButton, true, "'Refresh' button is not displayed on the Item Details page!");
         }
 
-        [Then(@"'Export' button is displayed on the Item Details page")]
+        //TODO Ann.Ilchenko 8/10/19: This is a TEMPORARY step, which will be updated after Andrey adds attributes for automation (and other steps for buttons on AGgrid action bar).
+        [When(@"User clicks Refresh button on grid action bar")]
+        public void WhenUserClicksRefreshButtonOnGridActionBar()
+        {
+            var page = _driver.NowAt<AggridHeaderCounterElement>();
+            _driver.WaitForElementToBeDisplayed(page.RefreshButton);
+            page.RefreshButton.Click();
+        }
+
+        [Then(@"Export button is displayed on the Item Details page")]
         public void ThenExportButtonIsDisplayedOnTheItemDetailsPage()
         {
             var page = _driver.NowAt<AggridHeaderCounterElement>();
             page.CheckElementDisplayedState(page.ExportButton, true, "'Export' button is not displayed on the Item Details page!");
         }
 
-        [Then(@"'Group By' button is displayed on the Item Details page")]
+        [Then(@"Group By button is displayed on the Item Details page")]
         public void ThenGroupByButtonIsDisplayedOnTheItemDetailsPage()
         {
             var page = _driver.NowAt<AggridHeaderCounterElement>();

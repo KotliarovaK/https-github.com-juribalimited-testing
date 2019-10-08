@@ -24,6 +24,7 @@ using DashworksTestAutomation.DTO.RuntimeVariables.Buckets;
 using DashworksTestAutomation.DTO.RuntimeVariables.CapacityUnits;
 using DashworksTestAutomation.DTO.RuntimeVariables.Rings;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Automations;
+using DashworksTestAutomation.Pages.Evergreen.Base;
 using DashworksTestAutomation.Pages.Evergreen.ItemDetails;
 using DashworksTestAutomation.Utils;
 using TechTalk.SpecFlow;
@@ -1436,19 +1437,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 "Convert to Evergreen button is displayed");
         }
 
-        [When(@"User changes Name to ""(.*)"" in the ""(.*)"" field on the Project details page")]
-        [When(@"User type ""(.*)"" Name in the ""(.*)"" field on the Project details page")]
-        public void WhenUserTypeNameInTheFieldOnTheProjectDetailsPage(string name, string fieldName)
-        {
-            SendKeysToTheNamedTextbox(name, fieldName);
-
-            if (fieldName.Equals("Ring name"))
-                _rings.Value.Add(new RingDto() { Name = name });
-
-            if (fieldName.Equals("Capacity Unit Name"))
-                _capacityUnits.Value.Add(new CapacityUnitDto() { Name = name });
-        }
-
         [When(@"User type ""(.*)"" Name in the ""(.*)"" field on the '(.*)' Project details page")]
         public void WhenUserTypeNameInTheFieldOnTheProjectDetailsPage(string name, string fieldName, string project)
         {
@@ -1461,6 +1449,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 _capacityUnits.Value.Add(new CapacityUnitDto() { Name = name, Project = project });
         }
 
+        //TODO DELETE THIS
         private void SendKeysToTheNamedTextbox(string text, string fieldName)
         {
             var projectElement = _driver.NowAt<ProjectsPage>();
@@ -1887,19 +1876,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Verify.Contains("true", projectElement.ActionsDropDown.GetAttribute("aria-disabled"), "Actions button is inactive");
         }
 
-        [When(@"User clicks Delete Project button")]
-        public void WhenUserClicksDeleteProjectButton()
-        {
-            var projectElement = _driver.NowAt<ProjectsPage>();
-            projectElement.DeleteProjectInActions.Click();
-        }
-
         [When(@"User removes selected item")]
         public void WhenUserRemovesSelectedItem()
         {
             var action = _driver.NowAt<ActionPanelPage>();
             action.ActionsDropDown.Click();
-            WhenUserClicksDeleteProjectButton();
+            WhenUserClicksDeleteButtonInActions();
             action.DeleteButtonOnPage.Click();
             var projectElement = _driver.NowAt<BaseGridPage>();
             _driver.WaitForElementToBeDisplayed(projectElement.WarningMessage);
@@ -1922,12 +1904,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         //TODO should be moved to ActionPanel
-        [Then(@"Delete button is displayed to the User on the Projects page")]
-        public void ThenDeleteButtonIsDisplayedToTheUserOnTheProjectsPage()
+        [Then(@"Delete buttons are displayed to the User in Actions and Banner on the Projects page")]
+        public void ThenDeleteButtonsAreDisplayedToTheUserInActionsAndBannerOnTheProjectsPage()
         {
-            var projectElement = _driver.NowAt<ActionPanelPage>();
-            Verify.IsTrue(projectElement.GetActionButtonByName("DELETE").Displayed(), "Delete Project Value is not displayed");
-            Verify.IsTrue(projectElement.DeleteButtonOnPage.Displayed(), "Delete button is not displayed");
+            var actionElement = _driver.NowAt<ActionPanelPage>();
+            Verify.IsTrue(actionElement.DeleteButtonOnPage.Displayed(), "Delete button is not displayed in Actions panel");
+
+            var bannerElement = _driver.NowAt<BaseGridPage>();
+            Verify.IsTrue(bannerElement.DeleteButtonInWarningMessage.Displayed(), "Delete button is not displayed in banner");
         }
 
         //TODO should be moved to ActionPanel

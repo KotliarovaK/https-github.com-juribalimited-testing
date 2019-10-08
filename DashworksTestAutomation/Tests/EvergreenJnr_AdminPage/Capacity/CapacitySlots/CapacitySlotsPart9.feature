@@ -90,8 +90,8 @@ Scenario: EvergreenJnr_AdminPage_CheckTasksWithoutRequestTypeAlwaysAvailableForS
 	And User navigates to the 'Capacity' left menu item
 	And User selects "Slots" tab on the Project details page
 	And User clicks 'CREATE SLOT' button 
-	And User type "Slot13671" Name in the "Slot Name" field on the Project details page
-	And User type "13671" Name in the "Display Name" field on the Project details page
+	And User enters 'Slot13671' text to 'Slot Name' textbox
+	And User enters '13671' text to 'Display Name' textbox
 	And User selects 'Teams and Paths' in the 'Capacity Type' dropdown
 	And User selects "[Default (Computer)]" checkbox in the "Paths" field on the Project details page
 	And User selects "Stage 1 \ WO Task13671" checkbox in the "Tasks" field on the Project details page

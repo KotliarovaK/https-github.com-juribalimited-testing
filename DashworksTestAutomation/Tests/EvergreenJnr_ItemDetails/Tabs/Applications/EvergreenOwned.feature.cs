@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails.ProjectDetails.Resync
+namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails.Tabs.Applications
 {
     using TechTalk.SpecFlow;
     
@@ -18,20 +18,20 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails.ProjectDetails.
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.4.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Resync_ApplicationsPage")]
-    public partial class Resync_ApplicationsPageFeature
+    [NUnit.Framework.DescriptionAttribute("EvergreenOwned")]
+    public partial class EvergreenOwnedFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "Resync_ApplicationsPage.feature"
+#line 1 "EvergreenOwned.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Resync_ApplicationsPage", "\tRuns Resync related tests on Applications Page", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "EvergreenOwned", "\tRuns Evergreen Owned related tests", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -80,22 +80,20 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails.ProjectDetails.
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatResyncOptionIsWorkedCorrectlyForProjectDet" +
-            "ailsOnApplicationsPage")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatEvergreenOwnedSubtabIsDisplayedCorrectly")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Applications")]
+        [NUnit.Framework.CategoryAttribute("Users")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("Resync")]
-        [NUnit.Framework.CategoryAttribute("DAS18035")]
-        [NUnit.Framework.CategoryAttribute("Not_Ready")]
-        public virtual void EvergreenJnr_ApplicationsList_CheckThatResyncOptionIsWorkedCorrectlyForProjectDetailsOnApplicationsPage()
+        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS18198")]
+        public virtual void EvergreenJnr_UsersList_CheckThatEvergreenOwnedSubtabIsDisplayedCorrectly()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_ApplicationsList_CheckThatResyncOptionIsWorkedCorrectlyForProjectDetailsOnApplicationsPageInternal();
+                    this.EvergreenJnr_UsersList_CheckThatEvergreenOwnedSubtabIsDisplayedCorrectlyInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -114,45 +112,29 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails.ProjectDetails.
             }
         }
 
-        private void EvergreenJnr_ApplicationsList_CheckThatResyncOptionIsWorkedCorrectlyForProjectDetailsOnApplicationsPageInternal()
+        private void EvergreenJnr_UsersList_CheckThatEvergreenOwnedSubtabIsDisplayedCorrectlyInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThatResyncOptionIsWorkedCorrectlyForProjectDet" +
-                    "ailsOnApplicationsPage", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckThatEvergreenOwnedSubtabIsDisplayedCorrectly", null, new string[] {
                         "Evergreen",
-                        "Applications",
+                        "Users",
                         "EvergreenJnr_ItemDetails",
-                        "Resync",
-                        "DAS18035",
-                        "Not_Ready"});
-#line 10
+                        "ItemDetailsDisplay",
+                        "DAS18198"});
+#line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
+#line 10
+ testRunner.When("User navigates to the \'User\' details page for \'ZZP911429\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 11
- testRunner.When("User navigates to the \'Application\' details page for \'Borland Together Edition fo" +
-                    "r Microsoft Visual Studio .NET\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("Details page for \"ZZP911429\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 12
- testRunner.Then("Details page for \"Borland Together Edition for Microsoft Visual Studio .NET\" item" +
-                    " is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 13
- testRunner.When("User switches to the \"Windows 7 Migration (Computer Scheduled Project)\" project i" +
-                    "n the Top bar on Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("User navigates to the \"Evergreen Owned\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 14
- testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 15
- testRunner.And("User navigates to the \"Project Details\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 16
- testRunner.When("User clicks \'RESYNC\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 17
- testRunner.Then("Dialog Pop-up is displayed for User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 18
- testRunner.Then("\'Resync name\' checkbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 19
- testRunner.When("User clicks \'RESYNC\' button in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 20
- testRunner.Then("Success message is displayed and contains \"Application successfully resynced\" tex" +
-                    "t", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"No applications owned by this user\" message is displayed on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -6,11 +6,17 @@ using System.Threading;
 using System.Threading.Tasks;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Automations;
+using DashworksTestAutomation.DTO.Evergreen.Admin.CapacityUnits;
+using DashworksTestAutomation.DTO.Evergreen.Admin.Rings;
+using DashworksTestAutomation.DTO.Evergreen.Admin.Slots;
 using DashworksTestAutomation.DTO.RuntimeVariables;
+using DashworksTestAutomation.DTO.RuntimeVariables.CapacityUnits;
+using DashworksTestAutomation.DTO.RuntimeVariables.Rings;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity;
+using DashworksTestAutomation.Pages.Evergreen.Base;
 using DashworksTestAutomation.Pages.Evergreen.ItemDetails.CustomFields;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
@@ -25,13 +31,20 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
     {
         private readonly RemoteWebDriver _driver;
         private readonly AutomationActions _automationActions;
+        private readonly Slots _slots;
+        private readonly Rings _rings;
         private readonly Automations _automations;
+        private readonly CapacityUnits _capacityUnits;
 
-        public EvergreenJnr_BasePage(RemoteWebDriver driver, AutomationActions automationActions, Automations automations)
+        public EvergreenJnr_BasePage(RemoteWebDriver driver, AutomationActions automationActions, Automations automations,
+            Slots slots, Rings rings, CapacityUnits capacityUnits)
         {
             _driver = driver;
             _automationActions = automationActions;
             _automations = automations;
+            _slots = slots;
+            _rings = rings;
+            _capacityUnits = capacityUnits;
         }
 
         #region Page Header/SubHeader
@@ -98,7 +111,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var expectedOptions = table.Rows.SelectMany(row => row.Values).ToList();
             var actualOptions = page.GetAllAutocompleteOptions(placeholder);
             
-            Verify.AreEqual(expectedOptions, actualOptions, $"Value for {placeholder} are different");
+            Verify.AreEqual(expectedOptions, actualOptions, $"Value for '{placeholder}' are different");
         }
 
         [Then(@"'(.*)' autocomplete contains following options:")]
@@ -162,8 +175,17 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             if (placeholder.Equals("Action Name"))
                 _automationActions.Value.Add(text);
 
+            if (placeholder.Equals("Slot Name"))
+                _slots.Value.Add(new SlotDto() { SlotName = text });
+
             if (placeholder.Equals("Automation Name"))
                 _automations.Value.Add(new AutomationsDto() { automationName = text });
+
+            if (placeholder.Equals("Ring name"))
+                _rings.Value.Add(new RingDto() { Name = text });
+
+            if (placeholder.Equals("Capacity Unit Name"))
+                _capacityUnits.Value.Add(new CapacityUnitDto() { Name = text });
 
             _driver.WaitForDataLoading();
         }
@@ -264,14 +286,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.AreEqual(dropdownContent, text, $"Text in '{dropdown}' drop-down is different");
         }
 
-        [Then(@"'(.*)' text value is displayed in the '(.*)' dropdown")]
-        public void ThenTextValueIsDisplayedInTheDropdown(string value, string dropdownName)
-        {
-            //TODO why grid page is used
-            var dropdown = _driver.NowAt<BaseGridPage>();
-            Verify.IsTrue(dropdown.GetDropdownByTextValueByName(value, dropdownName).Displayed(), $"{value} is not displayed in the {dropdownName}");
-        }
-
         [Then(@"'(.*)' value is displayed in the '(.*)' dropdown")]
         public void ThenValueIsDisplayedInTheDropdown(string value, string dropdownName)
         {
@@ -294,6 +308,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.IsTrue(dropdown.GetDropdownByName(dropdownName).Displayed(), $"{dropdownName} is not displayed");
         }
 
+        //Exact much
         [Then(@"following Values are displayed in the '(.*)' dropdown:")]
         public void ThenFollowingValuesAreDisplayedInTheDropdown(string dropDownName, Table table)
         {
@@ -302,9 +317,10 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var actualList = page.GetDropdownValues();
             page.BodyContainer.Click();
-            Verify.AreEqual(expectedList, actualList, $"Value for {dropDownName} are different");
+            Verify.AreEqual(expectedList, actualList, $"Value for '{dropDownName}' are different");
         }
 
+        //Contains
         [Then(@"User sees that '(.*)' dropdown contains following options:")]
         public void ThenUserSeesThatDropdownContainsFollowingOptions(string dropDownName,
             Table options)
@@ -370,8 +386,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForElementToBeDisplayed(action.DayInDatePicker(dayNumber));
-            Assert.That(action.DayInDatePicker(dayNumber).GetCssValue("background-color"), 
-                Is.EqualTo("rgba(126, 189, 56, 1)"), 
+            Assert.That(action.DayInDatePicker(dayNumber).GetCssValue("background-color"),
+                Is.EqualTo("rgba(126, 189, 56, 1)"),
                 "Day color is wrong");
         }
 

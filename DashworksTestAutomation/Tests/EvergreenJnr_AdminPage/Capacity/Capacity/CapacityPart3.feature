@@ -14,8 +14,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCapacityUnitCanBeCreatedWithNameAlread
 	And User selects "Units" tab on the Project details page
 	And User clicks 'CREATE PROJECT CAPACITY UNIT' button 
 	#next capacity name used in "1803 Rollout" project
-	And User type "Manchester" Name in the "Capacity Unit Name" field on the Project details page 
-	And User type "Manchester Operations" Name in the "Description" field on the Project details page
+	And User enters 'Manchester' text to 'Capacity Unit Name' textbox 
+	And User enters 'Manchester Operations' text to 'Description' textbox
 	And User clicks 'CREATE' button 
 	Then Success message is displayed and contains "The capacity unit has been created" text
 	And Counter shows "2" found rows
@@ -28,8 +28,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitStartedWithS
 	And User navigates to the 'Capacity' left menu item
 	And User selects "Units" tab on the Project details page
 	And User clicks 'CREATE PROJECT CAPACITY UNIT' button 
-	And User type " test1" Name in the "Capacity Unit Name" field on the Project details page
-	And User type "13945" Name in the "Description" field on the Project details page
+	And User enters ' test1' text to 'Capacity Unit Name' textbox
+	And User enters '13945' text to 'Description' textbox
 	And User clicks 'CREATE' button 
 	Then Error message is not displayed on the Capacity Units page
 	And User sees next Units on the Capacity Units page:
@@ -38,8 +38,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitStartedWithS
 	| test1      |
 	When User selects "Units" tab on the Project details page
 	And User clicks 'CREATE PROJECT CAPACITY UNIT' button 
-	And User type " test1" Name in the "Capacity Unit Name" field on the Project details page
-	And User type "13945_2" Name in the "Description" field on the Project details page
+	And User enters ' test1' text to 'Capacity Unit Name' textbox
+	And User enters '13945_2' text to 'Description' textbox
 	And User clicks 'CREATE' button 
 	Then Error message with "A capacity unit already exists with this name" text is displayed
 	And User sees next Units on the Capacity Units page:

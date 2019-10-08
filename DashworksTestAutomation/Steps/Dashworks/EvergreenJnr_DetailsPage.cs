@@ -6,6 +6,7 @@ using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
+using DashworksTestAutomation.Pages.Evergreen.Base;
 using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -231,13 +232,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"All text is displayed for {columnName} column");
         }
 
-        [When(@"User enters ""(.*)"" text in the Search field for ""(.*)"" column on the Details Page")]
-        public void WhenUserEntersTextInTheSearchFieldForColumnOnTheDetailsPage(string text, string columnName)
-        {
-            var searchElement = _driver.NowAt<DetailsPage>();
-            searchElement.GetSearchFieldByColumnName(columnName, text);
-        }
-
         [Then(@"Dropdown List is displayed correctly in the Filter on the Details Page")]
         public void ThenDropdownListIsDisplayedCorrectlyInTheFilterOnTheDetailsPage()
         {
@@ -306,13 +300,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             _driver.WaitForDataLoading();
             page.OpenColumnSettingsByName(columnName);
-        }
-
-        [When(@"User have select ""(.*)"" option from column settings on the Details Page")]
-        public void WhenUserHaveSelectOptionFromColumnSettingsOnTheDetailsPage(string settingName)
-        {
-            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            page.GetSettingByNameDetailsPage(settingName).Click();
         }
 
         [When(@"User clicks Column button on the Column Settings panel")]
@@ -504,7 +491,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             page.GetCheckboxByName(checkboxName);
         }
-
+        //TODO change check logic for checkboxes
         [Then(@"Checkboxes are checked on the Column Settings panel for ""(.*)"" Column Settings panel:")]
         public void ThenCheckboxesAreCheckedOnTheColumnSettingsPanelForColumnSettingsPanel(string columnName,
             Table table)
@@ -512,14 +499,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             page.OpenColumnSettingsByName(columnName);
-            Utils.Verify.AreEqual(expectedList, page.GetCheckedElementsText(), "Checkbox is not selected");
-        }
-
-        [Then(@"Checkboxes are checked on the Column Settings panel:")]
-        public void ThenCheckboxesAreCheckedOnTheColumnSettingsPanel(Table table)
-        {
-            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             Utils.Verify.AreEqual(expectedList, page.GetCheckedElementsText(), "Checkbox is not selected");
         }
 

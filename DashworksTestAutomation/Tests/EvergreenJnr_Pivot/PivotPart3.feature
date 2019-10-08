@@ -9,7 +9,7 @@ Background: Pre-Conditions
 Scenario: EvergreenJnr_DevicesList_CheckThatTaskValuesAsRowGroupsAreDisplayedInTheCorrectOrder
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User navigates to Pivot
+	When User selects 'Pivot' in the 'Create' dropdown
 	And User selects the following Row Groups on Pivot:
 	| RowGroups                                              |
 	| MigrationP: Computer Stage \ Computer Owner Idenitfied |
@@ -29,7 +29,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTaskValuesAsRowGroupsAreDisplayedInT
 Scenario: EvergreenJnr_DevicesList_CheckThatTaskValuesAsPivotColumnsAreDisplayedInTheCorrectOrder
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User navigates to Pivot
+	When User selects 'Pivot' in the 'Create' dropdown
 	And User selects the following Row Groups on Pivot:
 	| RowGroups |
 	| Hostname  |
@@ -55,7 +55,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTaskValuesAsPivotColumnsAreDisplayed
 Scenario: EvergreenJnr_MailboxesLists_CheckThatSeverityAggregateFunctionAvailableForReadinessFieldForMailboxes
 	When User clicks 'Mailboxes' on the left-hand menu
 	Then 'All Mailboxes' list should be displayed to the user
-	When User navigates to Pivot
+	When User selects 'Pivot' in the 'Create' dropdown
 	And User selects the following Row Groups on Pivot:
 	| RowGroups             |
 	| MailboxEve: In Scope  |
@@ -87,7 +87,7 @@ Scenario: EvergreenJnr_MailboxesLists_CheckThatSeverityAggregateFunctionAvailabl
 Scenario: EvergreenJnr_ApplicationsLists_CheckThatSeverityAggregateFunctionAvailableForReadinessFieldForApplications
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
-	When User navigates to Pivot
+	When User selects 'Pivot' in the 'Create' dropdown
 	And User selects the following Row Groups on Pivot:
 	| RowGroups   |
 	| Vendor      |
@@ -127,7 +127,7 @@ Scenario: EvergreenJnr_ApplicationsLists_CheckThatSeverityAggregateFunctionAvail
 Scenario: EvergreenJnr_UsersLists_CheckThatSeverityAggregateFunctionAvailableForReadinessFieldForUsers
 	When User clicks 'Users' on the left-hand menu
 	Then 'All Users' list should be displayed to the user
-	When User navigates to Pivot
+	When User selects 'Pivot' in the 'Create' dropdown
 	And User selects the following Row Groups on Pivot:
 	| RowGroups |
 	| Building  |
@@ -160,7 +160,7 @@ Scenario: EvergreenJnr_UsersLists_CheckThatSeverityAggregateFunctionAvailableFor
 Scenario: EvergreenJnr_DevicesLists_CheckThatSeverityAggregateFunctionAvailableForReadinessFieldForDevices
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User navigates to Pivot
+	When User selects 'Pivot' in the 'Create' dropdown
 	And User selects the following Row Groups on Pivot:
 	| RowGroups |
 	| Country   |

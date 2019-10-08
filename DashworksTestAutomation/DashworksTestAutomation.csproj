@@ -264,7 +264,7 @@
     <Compile Include="Pages\Evergreen\AdminDetailsPages\MoveToAnotherBucketPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\TeamsPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\ProjectsPage.cs" />
-    <Compile Include="Pages\Evergreen\BaseDashboardPage.cs" />
+    <Compile Include="Pages\Evergreen\Base\BaseDashboardPage.cs" />
     <Compile Include="Pages\Evergreen\ColumnsElement.cs" />
     <Compile Include="Pages\Evergreen\CustomListElement.cs" />
     <Compile Include="Pages\Evergreen\DetailsPage.cs" />
@@ -1294,6 +1294,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resync_UsersPage.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr_ItemDetails\Tabs\Applications\EvergreenOwned.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EvergreenOwned.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr_ListDetails\ListDetailsFunctionalityPart9.feature.cs">
       <DependentUpon>ListDetailsFunctionalityPart9.feature</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -2263,6 +2268,10 @@
     <None Include="Tests\EvergreenJnr_ItemDetails\ProjectDetails\Resync\Resync_UsersPage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Resync_UsersPage.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ItemDetails\Tabs\Applications\EvergreenOwned.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>EvergreenOwned.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_ListDetails\ListDetailsFunctionalityPart9.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

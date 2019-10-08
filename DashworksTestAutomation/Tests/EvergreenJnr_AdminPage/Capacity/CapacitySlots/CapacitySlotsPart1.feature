@@ -30,8 +30,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingI
 	| Project                 | SlotName       | DisplayName |
 	| ProjectForCapacity13171 | UniqueNameSlot | DAS13432    |
 	And User navigates to newly created Slot
-	And User type "NewSlotName" Name in the "Slot Name" field on the Project details page
-	And User type "NewDisplayName" Name in the "Display Name" field on the Project details page
+	And User enters 'NewSlotName' text to 'Slot Name' textbox
+	And User enters 'NewDisplayName' text to 'Display Name' textbox
 	Then "UPDATE" button is displayed without tooltip on Update form
 	When User clicks 'UPDATE' button 
 	Then Success message is displayed and contains "The capacity slot details have been updated" text
@@ -91,18 +91,18 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToUpdateCapacityUnitOrSlotUs
 	| Project         | SlotName             | DisplayName  | SlotAvailableFrom | SlotAvailableTo |
 	| ProjectDAS13789 | capacityslotDAS13789 | DAS13779slot | 28 Oct 2018       | 29 Oct 2018     |
 	And User navigates to newly created Slot
-	And User type "CAPACITYSLOTdas13789" Name in the "Slot Name" field on the Project details page
-	And User type "das13779SLOT" Name in the "Display Name" field on the Project details page
+	And User enters 'CAPACITYSLOTdas13789' text to 'Slot Name' textbox
+	And User enters 'das13779SLOT' text to 'Display Name' textbox
 	And User clicks 'UPDATE' button 
 	Then Error message is not displayed on the Capacity Slots page
 	And Success message is displayed and contains "The capacity slot details have been updated" text
 	When User selects "Units" tab on the Project details page
 	And User clicks 'CREATE PROJECT CAPACITY UNIT' button 
-	And User type "capacityunitDAS13789" Name in the "Capacity Unit Name" field on the Project details page
-	And User type "13789" Name in the "Description" field on the Project details page
+	And User enters 'capacityunitDAS13789' text to 'Capacity Unit Name' textbox
+	And User enters '13789' text to 'Description' textbox
 	And User clicks 'CREATE' button 
 	And User clicks newly created object link
-	And User type "CAPACITYUINTdas13789" Name in the "Capacity Unit Name" field on the Project details page
+	And User enters 'CAPACITYUINTdas13789' text to 'Capacity Unit Name' textbox
 	And User clicks 'UPDATE' button 
 	Then Error message is not displayed on the Capacity Slots page
 	And Success message is displayed and contains "The capacity unit details have been updated" text
