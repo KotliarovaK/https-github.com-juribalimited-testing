@@ -111,7 +111,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var expectedOptions = table.Rows.SelectMany(row => row.Values).ToList();
             var actualOptions = page.GetAllAutocompleteOptions(placeholder);
             
-            Verify.AreEqual(expectedOptions, actualOptions, $"Value for {placeholder} are different");
+            Verify.AreEqual(expectedOptions, actualOptions, $"Value for '{placeholder}' are different");
         }
 
         [Then(@"'(.*)' autocomplete contains following options:")]
@@ -317,7 +317,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var actualList = page.GetDropdownValues();
             page.BodyContainer.Click();
-            Verify.AreEqual(expectedList, actualList, $"Value for {dropDownName} are different");
+            Verify.AreEqual(expectedList, actualList, $"Value for '{dropDownName}' are different");
         }
 
         //Contains
