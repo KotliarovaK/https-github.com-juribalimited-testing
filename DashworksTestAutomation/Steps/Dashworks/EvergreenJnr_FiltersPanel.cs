@@ -255,6 +255,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.GetAssociationCheckbox(checkboxName);
         }
 
+        [When(@"User selects current date checkbox from Filter panel")]
+        public void WhenUserSelectsCurrentDateCheckboxFromFilterPanel()
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            filterElement.FilterCheckboxOptions.Last().Click();
+        }
+
         [When(@"User select ""(.*)"" Association for Application filter with Lookup value")]
         public void WhenUserSelectAssociationForApplicationFilterWithLookupValue(string checkboxName)
         {

@@ -733,6 +733,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeviceLisFiltertHasAppropriateAutomati
 	And user select "DAS15949_Automation \ 15949_Action_1" filter
 	And User select "Equals" Operator value
 	#And User select first checkbox from available options
+	#When User selects current date checkbox from Filter panel
 	When User select last checkbox from available options
 	And User clicks Save filter button
 	Then "5,179" rows are displayed in the agGrid

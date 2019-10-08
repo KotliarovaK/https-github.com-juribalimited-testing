@@ -73,5 +73,13 @@ namespace DashworksTestAutomation.Extensions
         {
             return str.Split(new string[] { separator }, StringSplitOptions.None).ToList();
         }
+
+        public static string ToDate(this string str, string format = "dd-MM-yyyy")
+        {
+            if (string.IsNullOrEmpty(str))
+                return str;
+
+            return str;
+        }
     }
 }
