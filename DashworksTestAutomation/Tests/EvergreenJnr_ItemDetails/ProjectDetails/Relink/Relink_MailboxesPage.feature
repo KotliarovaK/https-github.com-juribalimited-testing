@@ -32,8 +32,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatRelinkOptionIsWorkedCorrectlyForPr
 	| Field         | Data                             |
 	| Name          | 01A921EFD05545818AA@bclabs.local |
 	| Mailbox Owner | Leon, Nacoma                     |
-	#Andrew will remove space in button name
-	When User clicks 'RESYNC ' button 
+	When User clicks 'RESYNC' button 
 	And User clicks 'RESYNC' button in Dialog Pop-up
 	Then Success message is displayed and contains "The Evergreen owner of this Mailbox has been queued for onboarding into this project, the change in ownership for this Mailbox will show once this is complete" text
 	#waiting for the RESYNC process to be completed

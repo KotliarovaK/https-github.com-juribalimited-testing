@@ -16,5 +16,5 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatResyncOptionIsWorkedCorrectlyFo
 	When User clicks 'RESYNC' button 
 	Then Dialog Pop-up is displayed for User
 	Then 'Resync name' checkbox is checked
-	When User clicks 'RESYNC' button 
+	When User clicks 'RESYNC' button in Dialog Pop-up
 	Then Success message is displayed and contains "Application successfully resynced" text
