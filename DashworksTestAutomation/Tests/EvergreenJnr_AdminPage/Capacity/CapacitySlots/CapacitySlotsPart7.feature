@@ -127,8 +127,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreUnpublishedAfterBeingAssociat
 	And User selects "Slots" tab on the Project details page
 	#TODO Remove commented steps. I have saved them just to save data during NotRun removing
 	#And User clicks 'CREATE NEW SLOT' button 
-	#And User type "Slot 1" Name in the "Slot Name" field on the Project details page
-	#And User type "Slot 1" Name in the "Display Name" field on the Project details page
+	#And User enters 'Slot 1' text to 'Slot Name' textbox
+	#And User enters 'Slot 1' text to 'Display Name' textbox
 	#And User selects "Pre-Migration \ Scheduled Date" checkbox in the "Tasks" field on the Project details page
 	#And User selects "Pre-Migration \ Forecast Date" checkbox in the "Tasks" field on the Project details page
 	#And User selects "Computer Information ---- Text fill; Text fill; \ Group Computer Rag Radio Date Owner" checkbox in the "Tasks" field on the Project details page
@@ -156,8 +156,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreUnpublishedAfterBeingAssociat
 	| Pre-Migration \ Scheduled Date                                                        |
 	When User clicks 'CANCEL' button 
 	And User clicks 'CREATE NEW SLOT' button 
-	And User type "Slot 2" Name in the "Slot Name" field on the Project details page
-	And User type "Slot 2" Name in the "Display Name" field on the Project details page
+	And User enters 'Slot 2' text to 'Slot Name' textbox
+	And User enters 'Slot 2' text to 'Display Name' textbox
 	Then Next checkboxes in the "Tasks" dropdown are not available to select:
 	| Value                                                                                 |
 	| Pre-Migration \ Forecast Date                                                         |
@@ -247,8 +247,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreDeletedAfterBeingAssociatedTo
 	| Pre-Migration \ Scheduled Date |
 	When User clicks 'CANCEL' button 
 	And User clicks 'CREATE SLOT' button 
-	And User type "Slot 2" Name in the "Slot Name" field on the Project details page
-	And User type "Slot 2" Name in the "Display Name" field on the Project details page
+	And User enters 'Slot 2' text to 'Slot Name' textbox
+	And User enters 'Slot 2' text to 'Display Name' textbox
 	And User selects 'Capacity Units' in the 'Capacity Type' dropdown
 	Then Next checkboxes in the "Tasks" dropdown are not available to select:
 	| Value                                                        |

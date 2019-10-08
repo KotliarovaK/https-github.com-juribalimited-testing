@@ -369,8 +369,8 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	When User navigates to the 'Evergreen' left menu item
 	When User navigates to the 'Capacity Units' left menu item
 	And User clicks 'CREATE EVERGREEN CAPACITY UNIT' button 
-	And User type "CapacityUnit13201" Name in the "Capacity Unit Name" field on the Project details page
-	And User type "13201" Name in the "Description" field on the Project details page
+	And User enters 'CapacityUnit13201' text to 'Capacity Unit Name' textbox
+	And User enters '13201' text to 'Description' textbox
 	And User clicks 'CREATE' button 
 	And User clicks 'Devices' on the left-hand menu
 	And User clicks the Actions button

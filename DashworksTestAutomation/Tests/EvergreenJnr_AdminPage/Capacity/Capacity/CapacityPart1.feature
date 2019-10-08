@@ -16,7 +16,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDefaultCapacityUnitRenamedInUnassigned
 	And User enters "Unassigned" text in the Search field for "Capacity Unit" column
 	Then Counter shows "1" found rows
 	When User clicks content from "Capacity Unit" column
-	And User changes Name to "Default Capacity Unit" in the "Capacity Unit Name" field on the Project details page 
+	And User enters 'Default Capacity Unit' text to 'Capacity Unit Name' textbox
 	And User clicks 'UPDATE' button 
 	Then Success message is displayed and contains "The capacity unit details have been updated" text
 	And Columns on Admin page is displayed in following order:

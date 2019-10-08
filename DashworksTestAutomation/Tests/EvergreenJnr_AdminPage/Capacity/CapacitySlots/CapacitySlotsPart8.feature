@@ -84,8 +84,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTe
 	And User navigates to the 'Capacity' left menu item
 	And User selects "Slots" tab on the Project details page
 	And User clicks 'CREATE SLOT' button 
-	And User type "Slot13152" Name in the "Slot Name" field on the Project details page
-	And User type "13152" Name in the "Display Name" field on the Project details page
+	And User enters 'Slot13152' text to 'Slot Name' textbox
+	And User enters '13152' text to 'Display Name' textbox
 	And User selects 'Teams and Paths' in the 'Capacity Type' dropdown
 	And User selects "Stage13152 \ Task13152" checkbox in the "Tasks" field on the Project details page
 	And User selects "Admin IT" checkbox in the "Teams" field on the Project details page

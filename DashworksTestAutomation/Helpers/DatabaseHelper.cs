@@ -329,6 +329,15 @@ namespace DashworksTestAutomation.Helpers
             return projectId;
         }
 
+        public static string GetProjectName(string projectId)
+        {
+            var projectName =
+                DatabaseHelper.ExecuteReader(
+                    $"SELECT [ProjectName] FROM [PM].[dbo].[Projects] where [ProjectID] = {projectId} AND [IsDeleted] = 0",
+                    0).LastOrDefault();
+            return projectName;
+        }
+
         public static string GetProjectListIdScope(string listName)
         {
             //string userId =
@@ -403,6 +412,30 @@ namespace DashworksTestAutomation.Helpers
         {
             var query =
                 $"select [SlotId] from [PM].[dbo].[CapacitySlots] where [SlotName] = '{name}' and [ProjectId] = {projectId}";
+            var userId = DatabaseHelper.ExecuteReader(query, 0)[0];
+            return userId;
+        }
+
+        public static string GetSlotId(string name)
+        {
+            try
+            {
+                var query =
+                    $"select [SlotId] from [PM].[dbo].[CapacitySlots] where [SlotName] = '{name}'";
+                var queryResult = ExecuteReader(query, 0);
+                //Get ID if just one Slot with such name. In other case we need ProjectName to get Slot ID
+                return queryResult.Count == 1 ? queryResult.First() : null;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        public static string GetSlotProjectId(string slotId)
+        {
+            var query =
+                $"select [ProjectId] from [PM].[dbo].[CapacitySlots] where [SlotId] = {slotId}";
             var userId = DatabaseHelper.ExecuteReader(query, 0)[0];
             return userId;
         }
