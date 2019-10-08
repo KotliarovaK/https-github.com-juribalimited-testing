@@ -1349,7 +1349,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var projectPage = _driver.NowAt<ProjectDetailsPage>();
             projectPage.LanguageDropDown.Click();
             var page = _driver.NowAt<BaseDashboardPage>();
-            page.GetOptionByName(language).Click();
+            page.GetDropdownValueByName(language).Click();
             projectPage.CheckLanguageButton.Click();
         }
 
@@ -1677,25 +1677,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var dropdown = _driver.NowAt<BaseGridPage>();
             Verify.IsFalse(dropdown.GetMissingDropdownOnSettingsScreenByName(dropdownName), $"{dropdownName} is displayed");
-        }
-
-        [Then(@"Next values are selected for the ""(.*)"" field:")]
-        public void ThenNextValuesAreSelectedForTheField(string dropdownName, Table table)
-        {
-            var page = _driver.NowAt<Capacity_SlotsPage>();
-            if (page.ExpandItemsButton.Displayed())
-            {
-                page.ExpandItemsButton.Click();
-                var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-                var actualList = page.SelectedValuesList.Select(value => value.Text).ToList();
-                Verify.AreEqual(expectedList, actualList, "The list of task values ​​is different");
-            }
-            else
-            {
-                var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-                var actualList = page.SelectedValuesList.Select(value => value.Text).ToList();
-                Verify.AreEqual(expectedList, actualList, "The list of task values ​​is different");
-            }
         }
 
         [Then(@"""(.*)"" checkbox in the ""(.*)"" field are not available to select")]
