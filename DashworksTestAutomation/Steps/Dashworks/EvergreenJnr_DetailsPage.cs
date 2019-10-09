@@ -562,7 +562,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             //Utils.Verify.That((toolbar - firstHeader - secondHeader) < 50,
             Utils.Verify.That((firstHeader - secondHeader) < 50,
                 Is.True, "Grid headers are too small");
-
         }
 
         [Then(@"Fields with empty information are displayed")]
