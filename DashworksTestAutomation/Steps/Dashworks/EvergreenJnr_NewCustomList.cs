@@ -584,6 +584,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.That(page.ListsPanel.Displayed(), Is.False);
         }
 
+        [Then(@"User sees correct tooltip for Show Lists panel")]
+        public void WhenUserSeesCorrectTooltipForListsPanel()
+        {
+            var page = _driver.NowAt<CustomListElement>();
+            _driver.MouseHover(page.ExpandSideNavPanelIcon);
+
+            var toolTipText = _driver.GetTooltipText();
+            Utils.Verify.That(toolTipText, Is.EqualTo("Open menu"), $"Other tooltip is displayed to user: {toolTipText}");
+        }
+
         [When(@"User lists were removed by API")]
         public void WhenUserListsRemovedByApi()
         {

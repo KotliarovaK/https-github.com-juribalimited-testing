@@ -26,8 +26,8 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatNoErrorDisplayedWhenBulkUpdateMai
 	And User selects "Unassigned" Ring on Action panel
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
-	And User clicks "UPDATE" button on message box
-	And There are no errors in the browser console
+	When User clicks 'UPDATE' button
+	Then There are no errors in the browser console
 	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 
 @Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS16356
@@ -94,8 +94,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatBulkUpdateOfArchivedItemsWorks
 	And User selects "Evergreen Capacity Unit 1" Capacity Unit on Action panel
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
-	And User clicks "UPDATE" button on message box
-	And There are no errors in the browser console
+	When User clicks 'UPDATE' button
+	Then There are no errors in the browser console
 	And Success message with "1 update has been queued" text is displayed on Action panel
 
 @Evergreen @AllLists @EvergreenJnr_ActionsPanel @DAS17639 @Cleanup
@@ -139,8 +139,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFullSlotIsDisplayedWhileRulesShouldH
 	And User selects 'Slot17833_1' in the 'Capacity Slot' dropdown
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
-	And User clicks "UPDATE" button on message box
-	When User clicks refresh button in the browser
+	When User clicks 'UPDATE' button
+	And User clicks refresh button in the browser
 	And User clicks the Actions button
 	And User select all rows
 	And User selects 'Bulk update' in the 'Action' dropdown

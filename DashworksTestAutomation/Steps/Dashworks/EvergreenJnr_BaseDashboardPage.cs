@@ -51,7 +51,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenColumnIsPinned(string columnName, string pinStatus)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            Utils.Verify.AreEqual(columnName, page.GetPinnedColumnName(pinStatus), "Column is pinned incorrectly");
+            Verify.AreEqual(columnName, page.GetPinnedColumnName(pinStatus), "Column is pinned incorrectly");
         }
 
         [When(@"User opens settings for ""(.*)"" row")]
@@ -117,18 +117,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseDashboardPage>();
 
-            var cellTopYCoordinte = page.GetElementTopYCoordinate(page.GetGridCellByText(columnName));
-            var cellBottomYCoordinte = page.GetElementBottomYCoordinate(page.GetGridCellByText(columnName));
-            var cellLeftXCoordinte = page.GetElementLeftXCoordinate(page.GetGridCellByText(columnName));
-            var cellRightXCoordinte = page.GetElementRightXCoordinate(page.GetGridCellByText(columnName));
+            var cellTopYCoordinte = page.GetGridCellByText(columnName).Location.Y;
+            var cellBottomYCoordinte = page.GetGridCellByText(columnName).BottomLocation().Y;
+            var cellLeftXCoordinte = page.GetGridCellByText(columnName).BottomLocation().X;
+            var cellRightXCoordinte = page.GetGridCellByText(columnName).RightTopLocation().X;
 
-            var menuTopYCoordinate = page.GetElementTopYCoordinate(page.AgMenu);
-            var manuLeftXCoordinate = page.GetElementLeftXCoordinate(page.AgMenu);
+            var menuTopYCoordinate = page.AgMenu.Location.Y;
+            var manuLeftXCoordinate = page.AgMenu.Location.X;
 
-            Utils.Verify.That(menuTopYCoordinate, Is.GreaterThan(cellTopYCoordinte));
-            Utils.Verify.That(menuTopYCoordinate, Is.LessThan(cellBottomYCoordinte));
-            Utils.Verify.That(manuLeftXCoordinate, Is.GreaterThan(cellLeftXCoordinte));
-            Utils.Verify.That(manuLeftXCoordinate, Is.LessThan(cellRightXCoordinte));
+            Verify.That(menuTopYCoordinate, Is.GreaterThan(cellTopYCoordinte));
+            Verify.That(menuTopYCoordinate, Is.LessThan(cellBottomYCoordinte));
+            Verify.That(manuLeftXCoordinate, Is.GreaterThan(cellLeftXCoordinte));
+            Verify.That(manuLeftXCoordinate, Is.LessThan(cellRightXCoordinte));
         }
 
         [Then(@"User sees context menu with next options")]
@@ -141,9 +141,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             foreach (var row in table.Rows)
             {
-                Utils.Verify.That(options.FindAll(x => x.Equals(row["OptionsName"])).Count == 1, "PLEASE ADD EXCEPTION MESSAGE");
+                Verify.That(options.FindAll(x => x.Equals(row["OptionsName"])).Count == 1, "PLEASE ADD EXCEPTION MESSAGE");
             }
-            Utils.Verify.That(options.Count, Is.EqualTo(table.Rows.Count));
+            Verify.That(options.Count, Is.EqualTo(table.Rows.Count));
         }
 
         [When(@"User selects '(.*)' option in context menu")]
@@ -295,7 +295,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             for (int i = 0; i < ColumnValues.Count; i++)
             {
-                Utils.Verify.That(ColumnColors[i], Does.Contain(ColorsConvertor.Convert(ColumnValues[i])), 
+                Utils.Verify.That(ColumnColors[i], Does.Contain(ColorsConvertor.Convert(ColumnValues[i])),
                     $"Wrong color {ColumnColors[i]} for label {ColumnValues[i]}");
             }
 
@@ -551,14 +551,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var grid = _driver.NowAt<BaseDashboardPage>();
             var filtersValue = grid.StringFilterValues.Select(x => x.Text).ToList();
-            Utils.Verify.AreEqual(filtersValue.Distinct().Count(), filtersValue.Count(), "String filters value are duplicated");
-        }
-
-        [Then(@"""(.*)"" Application version is displayed")]
-        public void ThenApplicationVersionIsDisplayed(string versionNumber)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            page.GetCorrectApplicationVersion(versionNumber);
+            Verify.AreEqual(filtersValue.Distinct().Count(), filtersValue.Count(), "String filters value are duplicated");
         }
 
         [Then(@"All data is unique in the '(.*)' column")]

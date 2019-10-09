@@ -170,6 +170,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.ClickSectionFromCircleChart(chartName, sectionName);
         }
 
+        [Then (@"User sees correct tooltip for Show Dashboards panel")]
+        public void WhenUserSeesCorrectTooltipForShowDashboardsPanel()
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            _driver.MouseHover(page.ExpandSideNavPanelIcon);
+
+            var toolTipText = _driver.GetTooltipText();
+            Utils.Verify.That(toolTipText, Is.EqualTo("Open menu"), $"Other tooltip is displayed to user: {toolTipText}");
+        }
+
         [When(@"User clicks Show Dashboards panel icon on Dashboards page")]
         public void WhenUserClicksShowDashboardsPanelOnDashboardsPage()
         {

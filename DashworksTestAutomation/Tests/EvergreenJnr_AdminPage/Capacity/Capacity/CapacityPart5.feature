@@ -68,8 +68,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedApplicationsAreDisplayedCapac
 	And User selects 'Email Migration' option from 'Project' autocomplete
 	And User selects '1Test' option from 'Capacity Unit' autocomplete
 	And User clicks 'UPDATE' button 
-	Then User clicks "UPDATE" button on message box
-	And Success message with "2 of 2 objects were in the selected project and have been queued" text is displayed on Action panel
+	When User clicks 'UPDATE' button
+	Then Success message with "2 of 2 objects were in the selected project and have been queued" text is displayed on Action panel
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Evergreen' left menu item

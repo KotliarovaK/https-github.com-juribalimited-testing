@@ -588,25 +588,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSuccessMessageIsHiddenAfterFiveSeconds()
         {
             var action = _driver.NowAt<BaseDashboardPage>();
-            Utils.Verify.IsTrue(action.SuccessMessage.Displayed(), "Success message is not displayed");
+            Verify.IsTrue(action.SuccessMessage.Displayed(), "Success message is not displayed");
             Thread.Sleep(7000);
-            Utils.Verify.IsFalse(action.SuccessMessage.Displayed(), "Success message is displayed for more than 5 seconds");
-        }
-
-        [Then(@"User clicks ""(.*)"" button on message box")]
-        public void ThenUserClicksButtonOnMessageBox(string buttonName)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitForDataLoading();
-            action.GetButtonOnMessageBoxByNameOnActionPanel(buttonName).Click();
+            Verify.IsFalse(action.SuccessMessage.Displayed(), "Success message is displayed for more than 5 seconds");
         }
 
         [Then(@"Checkboxes are not displayed")]
         public void ThenCheckboxesAreNotDisplayed()
         {
             var dashboardPage = _driver.NowAt<BaseDashboardPage>();
-            Utils.Verify.IsFalse(dashboardPage.Checkbox.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
-            Utils.Verify.IsFalse(dashboardPage.SelectAllCheckbox.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.IsFalse(dashboardPage.Checkbox.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.IsFalse(dashboardPage.SelectAllCheckbox.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [When(@"User select ""(.*)"" rows in the grid")]

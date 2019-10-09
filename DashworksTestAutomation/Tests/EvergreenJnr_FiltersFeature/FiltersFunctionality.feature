@@ -384,7 +384,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	And User selects "Evergreen" option in "Project or Evergreen" drop-down on Action panel
 	And User selects 'CapacityUnit13201' option from 'Capacity Unit' autocomplete
 	And User clicks 'UPDATE' button 
-	Then User clicks "UPDATE" button on message box
+	When User clicks 'UPDATE' button
 	When User clicks the Filters button
 	And User add "Evergreen Capacity Unit" filter where type is "Equals" with added column and Lookup option
 	| SelectedValues    |
@@ -405,7 +405,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	And User selects "Evergreen" option in "Project or Evergreen" drop-down on Action panel
 	And User selects 'CapacityUnit13201' option from 'Capacity Unit' autocomplete
 	And User clicks 'UPDATE' button 
-	Then User clicks "UPDATE" button on message box
+	When User clicks 'UPDATE' button
 	When User clicks the Filters button
 	And User add "Evergreen Capacity Unit" filter where type is "Equals" with added column and Lookup option
 	| SelectedValues    |
@@ -427,7 +427,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	And User selects "Evergreen" option in "Project or Evergreen" drop-down on Action panel
 	And User selects 'CapacityUnit13201' option from 'Capacity Unit' autocomplete
 	And User clicks 'UPDATE' button 
-	Then User clicks "UPDATE" button on message box
+	When User clicks 'UPDATE' button
 	When User clicks the Filters button
 	And User add "Evergreen Capacity Unit" filter where type is "Equals" with added column and Lookup option
 	| SelectedValues    |
@@ -448,7 +448,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	And User selects "Evergreen" option in "Project or Evergreen" drop-down on Action panel
 	And User selects 'CapacityUnit13201' option from 'Capacity Unit' autocomplete
 	And User clicks 'UPDATE' button 
-	Then User clicks "UPDATE" button on message box
+	When User clicks 'UPDATE' button
 	When User clicks the Filters button
 	And User add "Evergreen Capacity Unit" filter where type is "Equals" with added column and Lookup option
 	| SelectedValues    |

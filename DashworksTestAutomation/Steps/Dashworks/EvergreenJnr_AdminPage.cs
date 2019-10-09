@@ -151,49 +151,40 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.BodyContainer.Click();
         }
 
-        [When(@"User enters '(.*)' in the '(.*)' autocomplete field and selects '(.*)' value")]
-        public void WhenUserEntersInTheAutocompleteFieldAndSelectsValue(string text, string fieldName, string value)
-        {
-            var textBox = _driver.NowAt<BaseDashboardPage>();
-            textBox.GetNamedTextbox(fieldName).Clear();
-            textBox.GetNamedTextbox(fieldName).SendKeys(text);
-            textBox.GetAutocompleteDropdownByText(value).Click();
-        }
-
         [Then(@"Scope field is automatically populated")]
         public void ThenScopeFieldIsAutomaticallyPopulated()
         {
             var page = _driver.NowAt<ProjectsPage>();
             _driver.WaitForDataLoading();
-            Utils.Verify.IsFalse(page.EmptyScopeField.Displayed(), "Scope field is empty");
+            Verify.IsFalse(page.EmptyScopeField.Displayed(), "Scope field is empty");
         }
 
         [Then(@"""(.*)"" content is not displayed in the grid on the Project details page")]
         public void ThenContentIsNotDisplayedInTheGridOnTheProjectDetailsPage(string text)
         {
             var projectTabs = _driver.NowAt<ProjectsPage>();
-            Utils.Verify.IsFalse(projectTabs.CheckContentDisplay(text), "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.IsFalse(projectTabs.CheckContentDisplay(text), "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"Unlimited text disappears from column")]
         public void ThenUnlimitedTextDisappearsFromColumn()
         {
             var projectElement = _driver.NowAt<CreateCapacitySlotPage>();
-            Utils.Verify.IsTrue(projectElement.EmptyUnlimitedField.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.IsTrue(projectElement.EmptyUnlimitedField.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"Evergreen Unit is displayed to the user")]
         public void ThenEvergreenUnitIsDisplayedToTheUser()
         {
             var page = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsTrue(page.EvergreenUnit.Displayed(), "Evergreen Unit is not displayed");
+            Verify.IsTrue(page.EvergreenUnit.Displayed(), "Evergreen Unit is not displayed");
         }
 
         [Then(@"string filter is displayed for ""(.*)"" column on the Admin Page")]
         public void ThenStringFilterIsDisplayedForColumnOnTheAdminPage(string columnName)
         {
             var page = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsFalse(Convert.ToBoolean(page.GetFilterByColumnName(columnName).GetAttribute("readonly")), "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.IsFalse(Convert.ToBoolean(page.GetFilterByColumnName(columnName).GetAttribute("readonly")), "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [When(@"User selects ""(.*)"" color in the Application Scope tab on the Project details page")]
