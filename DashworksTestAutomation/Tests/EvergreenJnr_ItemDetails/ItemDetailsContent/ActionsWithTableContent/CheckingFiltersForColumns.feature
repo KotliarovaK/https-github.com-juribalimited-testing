@@ -30,8 +30,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOneUnknownFilterValueIsShownInGroupD
 	When User selects "DWLABS" checkbox from String Filter on the Details Page
 	Then Rows counter shows "0" of "7" rows
 
-	#Ann.Ilchenko 8/10/19: Waiting for attribute updates for automation??
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12239 @Not_Run
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12239
 Scenario: EvergreenJnr_DevicesList_CheckThatAllTextIsDisplayedAfterClearingFilters
 	When User navigates to the 'Device' details page for '001PSUMZYOW581' item
 	Then Details page for "001PSUMZYOW581" item is displayed to the user
@@ -151,7 +150,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatMultiselectFilterIsAppliedForDoma
 	When User clicks String Filter button for "Domain" column
 	And User closes Checkbox filter for "Domain" column
 
-	#Ann.Ilchenko 8/10/19: Waiting for attribute updates for automation.
+	#Ann.Ilchenko 8/10/19: Waiting for attribute updates for automation (from Andrey).
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12292 @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckingThatInRangeOperatorWorkingCorrectly
 	When User navigates to the 'Device' details page for '001PSUMZYOW581' item
