@@ -50,8 +50,8 @@ Scenario: EvergreenJnr_DevicesList_CheckUpdateCustomFieldUpdatingValuesForRemove
 	When User selects 'Remove all values' in the 'Update Values' dropdown
 	When User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
-	And User clicks "UPDATE" button on message box
-	And Success message with "2 updates have been queued" text is displayed on Action panel
+	When User clicks 'UPDATE' button
+	Then Success message with "2 updates have been queued" text is displayed on Action panel
 	When User refreshes agGrid
 	Then "" content is displayed in "Phoenix Field" column
 		#Revert 'Update custom field' changes to default
@@ -63,8 +63,8 @@ Scenario: EvergreenJnr_DevicesList_CheckUpdateCustomFieldUpdatingValuesForRemove
 	When User adds '000' value from 'Value' textbox
 	When User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
-	And User clicks "UPDATE" button on message box
-	And Success message with "2 updates have been queued" text is displayed on Action panel
+	When User clicks 'UPDATE' button
+	Then Success message with "2 updates have been queued" text is displayed on Action panel
 	When User refreshes agGrid
 	Then "111, 000" content is displayed in "Phoenix Field" column
 
@@ -90,14 +90,14 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateCustomFieldUpdatingValuesForAddToExi
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
 	When User selects 'Add to existing values' in the 'Update Values' dropdown
 	#DAS18031
-	Then "UPDATE" Action button is disabled
+	When User clicks 'UPDATE' button
 	Then "UPDATE" Action button have tooltip with "Some values are missing or not valid" text
 	#DAS18031
 	When User adds 'alpha' value from 'Value' textbox
 	When User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
-	And User clicks "UPDATE" button on message box
-	And Success message with "2 updates have been queued" text is displayed on Action panel
+	When User clicks 'UPDATE' button
+	Then Success message with "2 updates have been queued" text is displayed on Action panel
 	When User refreshes agGrid
 	Then "beta, alpha" content is displayed in "Phoenix Field" column
 		#Revert 'Update custom field' changes to default
@@ -112,8 +112,8 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateCustomFieldUpdatingValuesForAddToExi
 	When User adds 'beta' value from 'Value' textbox
 	When User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
-	And User clicks "UPDATE" button on message box
-	And Success message with "2 updates have been queued" text is displayed on Action panel
+	When User clicks 'UPDATE' button
+	Then Success message with "2 updates have been queued" text is displayed on Action panel
 
 @Evergreen @Applications @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18045 @DAS18031 @DAS18027 @Not_Ready
 #Waiting for "Update custom field" on the automation
@@ -144,8 +144,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateCustomFieldUpdatingValuesForR
 	When User enters 'second' text to 'Replace Value' textbox
 	When User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
-	And User clicks "UPDATE" button on message box
-	And Success message with "2 updates have been queued" text is displayed on Action panel
+	When User clicks 'UPDATE' button
+	Then Success message with "2 updates have been queued" text is displayed on Action panel
 	When User refreshes agGrid
 	Then "second" content is displayed in "Phoenix Field" column
 		#Revert 'Update custom field' changes to default
@@ -157,8 +157,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateCustomFieldUpdatingValuesForR
 	When User enters 'first value' text to 'Replace Value' textbox
 	When User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
-	And User clicks "UPDATE" button on message box
-	And Success message with "2 updates have been queued" text is displayed on Action panel
+	When User clicks 'UPDATE' button
+	Then Success message with "2 updates have been queued" text is displayed on Action panel
 
 @Evergreen @Mailboxes @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18045 @DAS18031 @DAS18027 @Not_Ready
 #Waiting for "Update custom field" on the automation
@@ -193,8 +193,8 @@ Scenario: EvergreenJnr_MailboxesList_CheckUpdateCustomFieldUpdatingValuesForRepl
 	When User adds 'three' value from 'Value' textbox
 	When User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
-	And User clicks "UPDATE" button on message box
-	And Success message with "2 updates have been queued" text is displayed on Action panel
+	When User clicks 'UPDATE' button
+	Then Success message with "2 updates have been queued" text is displayed on Action panel
 	When User refreshes agGrid
 	Then "02" content is displayed in "Phoenix Field" column
 		#Revert 'Update custom field' changes to default
@@ -206,5 +206,5 @@ Scenario: EvergreenJnr_MailboxesList_CheckUpdateCustomFieldUpdatingValuesForRepl
 	When User adds 'three' value from 'Value' textbox
 	When User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
-	And User clicks "UPDATE" button on message box
-	And Success message with "2 updates have been queued" text is displayed on Action panel
+	When User clicks 'UPDATE' button
+	Then Success message with "2 updates have been queued" text is displayed on Action panel

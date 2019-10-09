@@ -200,9 +200,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'edit-action')]//span[text()='UPDATE']/ancestor::button")]
         public IWebElement UpdateButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//span[contains(text(),'UPDATE')]")]
-        public IWebElement UpdateAssociationButton { get; set; }
-
         [FindsBy(How = How.XPath,
             Using = "//div[contains(@class, 'notification')]//button[contains(@class, 'transparent')]//span[text()='CANCEL']/ancestor::button")]
         public IWebElement CancelButtonOnAmberMessage { get; set; }
@@ -313,9 +310,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'inline-success')]")]
         public IWebElement SuccessMessage { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'btn-close')]")]
-        public IWebElement CloseButtonInSuccessMessage { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//div[text()='This list does not exist or you do not have access to it']")]
         public IWebElement DoesNotExistListMessage { get; set; }
 
@@ -348,9 +342,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = ".//mat-option[@aria-disabled='true']//span[text()='Project']")]
         public IWebElement DisabledCreateProjectButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//div[@class='top-tools-item top-tools-left-side']")]
-        public IWebElement OutsideGridPanel { get; set; }
-
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'sub-categories-item')]")]
         public IList<IWebElement> ColumnSubcategories { get; set; }
 
@@ -379,9 +370,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         public IList<IWebElement> OptionListOnActionsPanel { get; set; }
 
         #region TableColumns
-
-        [FindsBy(How = How.XPath, Using = ".//div[@colid='lastLogonDate'][@role='gridcell']")]
-        public IList<IWebElement> LastLogonColumnData { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@col-id='hostname' and @role='gridcell']//*[contains(text(),'Empty')]")]
         public IList<IWebElement> EmptyColumnDataRows { get; set; }
@@ -481,195 +469,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             Driver.ContextClick(GetGridCellByText(cellText));
         }
 
-        public void ClearInput(IWebElement input)
-        {
-            int attempt = 0;
-
-            Driver.WaitForDataLoading();
-
-            while (!input.GetAttribute("value").Equals(string.Empty) && attempt < 10)
-            {
-                input.Clear();
-                Thread.Sleep(500);
-                attempt++;
-            }
-        }
-
-        public IWebElement GetNamedTextbox(string placeholder)
-        {
-            var by = By.XPath(string.Format(NamedTextboxSelector, placeholder));
-            if (!Driver.IsElementDisplayed(by, WebDriverExtensions.WaitTime.Medium))
-                throw new Exception($"Textbox with '{placeholder}' placeholder is not displayed");
-            return Driver.FindElement(by);
-        }
-
-        public IWebElement GetAutocompleteDropdownByText(string text)
-        {
-            var selector = By.XPath($"//*[contains(text(), '{text}')]/ancestor::mat-option");
-            Driver.WaitForDataLoading();
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
-        public IWebElement GetInputAddButton(string placeholder)
-        {
-            var selector = GetNamedTextbox(placeholder).FindElement(By.XPath(".//../ancestor::mat-form-field//button"));
-            Driver.WaitForElementToBeDisplayed(selector);
-            return selector;
-        }
-
-        public IWebElement GetNamedTextboxErrorMessageElement(string placeholder)
-        {
-            var namedTextbox = GetNamedTextbox(placeholder);
-            var elementAttributes = Driver.GetElementAttributes(namedTextbox);
-            if (!elementAttributes.Any(x => x.Contains("_ngcontent")))
-                throw new Exception($"'{placeholder}' doesn't have _ngcontent attribute");
-            var attribute = elementAttributes.First(x => x.Contains("_ngcontent"));
-            //Selector when mat-error inside webElement
-            var errorSelector1 = By.XPath($".//ancestor::*[@{attribute}][position() = 1]//mat-error");
-            //When on the same level
-            var errorSelector2 = By.XPath($".//mat-error[@{attribute}]");
-            if (Driver.IsElementInElementDisplayed(namedTextbox, errorSelector1, WebDriverExtensions.WaitTime.Short))
-                return namedTextbox.FindElement(errorSelector1);
-            else if (Driver.IsElementDisplayed(errorSelector2, WebDriverExtensions.WaitTime.Short))
-                return Driver.FindElement(errorSelector2);
-            else
-                throw new Exception($"Error message was not displayed for '{placeholder}' textbox");
-        }
-
-        public IWebElement GetNamedDropdownErrorMessageElement(string placeholder)
-        {
-            var namedTextbox = GetDropdownByName(placeholder);
-            var elementAttributes = Driver.GetElementAttributes(namedTextbox);
-            if (!elementAttributes.Any(x => x.Contains("_ngcontent")))
-                throw new Exception($"'{placeholder}' doesn't have _ngcontent attribute");
-            var attribute = elementAttributes.First(x => x.Contains("_ngcontent"));
-            var errorSelector = By.XPath($".//mat-error[@{attribute}]");
-            if (!Driver.IsElementDisplayed(errorSelector, WebDriverExtensions.WaitTime.Medium))
-                throw new Exception($"Error message was not displayed for '{placeholder}' textbox");
-            return Driver.FindElement(errorSelector);
-        }
-
-        public string GetNamedTextboxErrorMessage(string placeholder)
-        {
-            var error = GetNamedTextboxErrorMessageElement(placeholder).FindElement(By.XPath("./span[1]"));
-            return error.Text;
-        }
-
-        public string GetNamedDropdownErrorMessage(string placeholder)
-        {
-            var error = GetNamedDropdownErrorMessageElement(placeholder).FindElement(By.XPath("./span[1]"));
-            return error.Text;
-        }
-
-        public IWebElement GetNamedTextboxErrorMessageExclamationIcon(string placeholder)
-        {
-            var exclamationIcon = GetNamedTextboxErrorMessageElement(placeholder).FindElement(By.XPath("./span[2]"));
-            return exclamationIcon;
-        }
-
-        public IWebElement GetNamedDropdownErrorMessageExclamationIcon(string placeholder)
-        {
-            var exclamationIcon = GetNamedDropdownErrorMessageElement(placeholder).FindElement(By.XPath("./span[2]"));
-            return exclamationIcon;
-        }
-
-        public void PopulateNamedTextbox(string placeholder, string value, bool clear = true)
-        {
-            if (clear)
-                GetNamedTextbox(placeholder).Clear();
-
-            if (!string.IsNullOrEmpty(value))
-                GetNamedTextbox(placeholder).SendKeys(value);
-        }
-
-        public List<string> GetAllAutocompleteOptions(string placeholder)
-        {
-            GetNamedTextbox(placeholder).Click();
-
-            if (!Driver.IsElementDisplayed(By.XPath(AutocompleteOptionsSelector), WebDriverExtensions.WaitTime.Short))
-                throw new Exception($"Options are not displayed for '{placeholder}' autocomplete");
-
-            var foundOptions = AutocompleteDropdown.FindElements(By.XPath(AutocompleteOptionsSelector)).Select(x => x.Text).ToList();
-
-            return foundOptions;
-        }
-
-        public void AutocompleteSelect(string placeholder, string option, bool withSearch = false, bool containsOption = false)
-        {
-            GetNamedTextbox(placeholder).ClearWithBackspaces();
-            GetNamedTextbox(placeholder).Click();
-
-            if (withSearch)
-            {
-                GetNamedTextbox(placeholder).ClearWithBackspaces();
-                GetNamedTextbox(placeholder).SendKeys(option);
-                if (!Driver.IsElementDisplayed(By.XPath(AutocompleteOptionsSelector),
-                    WebDriverExtensions.WaitTime.Short))
-                    throw new Exception($"Options are not displayed for '{placeholder}' autocomplete");
-            }
-
-            var foundOptions = AutocompleteDropdown.FindElements(By.XPath(AutocompleteOptionsSelector));
-            if (foundOptions.Any())
-            {
-                if (containsOption)
-                {
-                    if (foundOptions.Any(x => x.Text.Contains(option)))
-                        foundOptions.First(x => x.Text.Contains(option)).Click();
-                    else
-                        throw new Exception(
-                            $"There are no option that contains '{option}' text in the '{placeholder}' autocomplete");
-                }
-                else
-                {
-                    if (foundOptions.Any(x => x.Text.Equals(option)))
-                        foundOptions.First(x => x.Text.Equals(option)).Click();
-                    else
-                        throw new Exception(
-                            $"There are no option that equals '{option}' text in the '{placeholder}' autocomplete");
-                }
-            }
-            else
-                throw new Exception($"'{option}' was not found in the '{placeholder}' autocomplete");
-        }
-
-        public void InputWithAddButton(string placeholder, string option)
-        {
-            var button = GetNamedTextbox(placeholder);
-            button.Click();
-            button.ClearWithBackspaces();
-            button.SendKeys(option);
-            GetInputAddButton(placeholder).Click();
-        }
-
-        public int GetElementTopYCoordinate(IWebElement element)
-        {
-            return element.Location.Y;
-        }
-
-        public int GetElementBottomYCoordinate(IWebElement element)
-        {
-            return element.Location.Y + element.Size.Height;
-        }
-
-        public int GetElementLeftXCoordinate(IWebElement element)
-        {
-            return element.Location.X;
-        }
-
-        public int GetElementRightXCoordinate(IWebElement element)
-        {
-            return element.Location.X + element.Size.Width;
-        }
-
-        public IWebElement GetCorrectApplicationVersion(string versionNumber)
-        {
-            var selector = By.XPath(
-                $".//div[@class='topnav-footer']//span[contains(text(),'{versionNumber}')]");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
         public List<string> GetColumnDataByScrolling(string columnName)
         {
             var columnData = new List<string>();
@@ -729,35 +528,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return Driver.FindElement(selector);
         }
 
-        public IWebElement GetButtonByNameOnPopup(string button)
-        {
-            return GetButtonByName(button, this.GetStringByFor(() => this.PopupElement));
-        }
-
-        public IWebElement GetButtonByName(string button, string parentElementSelector = "")
-        {
-            var selector = By.XPath(
-                $"{parentElementSelector}//span[text()='{button}']/ancestor::button");
-            Driver.WaitForDataLoading();
-            Driver.WaitForElementsToBeDisplayed(selector, 30, false);
-            return Driver.FindElements(selector).First(x => x.Displayed());
-        }
-
-        public void ClickButtonByName(string buttonName)
-        {
-            var button = GetButtonByName(buttonName);
-            Driver.WaitForElementToBeEnabled(button);
-            button.Click();
-            Driver.WaitForDataLoading(50);
-        }
-
-        public IWebElement GetButtonOnMessageBoxByNameOnActionPanel(string button)
-        {
-            var selector = By.XPath($"//div[contains(@class, 'notification')]//span[text()='{button}']/ancestor::button");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
         public int GetColumnNumberByName(string columnName)
         {
             var allHeadersSelector = By.XPath(".//div[@class='ag-header-container']//div[@col-id]");
@@ -773,7 +543,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return columnNumber;
         }
 
-        //TODO Should be moved to BaseGrid
         public List<string> GetColumnContent(string columnName)
         {
             var by = By.XPath($".//div[@col-id='{GetColIdByColumnName(columnName)}' and @role='gridcell']");
@@ -1017,9 +786,191 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             }
         }
 
+        #region Autocomplete
+
+        public List<string> GetAllAutocompleteOptions(string placeholder)
+        {
+            GetNamedTextbox(placeholder).Click();
+
+            if (!Driver.IsElementDisplayed(By.XPath(AutocompleteOptionsSelector), WebDriverExtensions.WaitTime.Short))
+                throw new Exception($"Options are not displayed for '{placeholder}' autocomplete");
+
+            var foundOptions =
+                AutocompleteDropdown.FindElements(By.XPath(AutocompleteOptionsSelector)).Select(x => x.Text).ToList();
+
+            return foundOptions;
+        }
+
+        public void AutocompleteSelect(string placeholder, string searchText, bool withSearch = false, bool containsOption = false, params string[] optionsToSelect)
+        {
+            GetNamedTextbox(placeholder).ClearWithBackspaces();
+            GetNamedTextbox(placeholder).Click();
+
+            //Options to select
+            //If we do not provide options to select
+            //Then just add option equals to the search text
+            List<string> options = new List<string>();
+            if (optionsToSelect.Any())
+            {
+                options.AddRange(optionsToSelect);
+            }
+            else
+            {
+                options.Add(searchText);
+            }
+
+            if (withSearch)
+            {
+                GetNamedTextbox(placeholder).ClearWithBackspaces();
+                GetNamedTextbox(placeholder).SendKeys(searchText);
+                if (!Driver.IsElementDisplayed(By.XPath(AutocompleteOptionsSelector),
+                    WebDriverExtensions.WaitTime.Short))
+                {
+                    throw new Exception($"Options are not displayed for '{placeholder}' autocomplete");
+                }
+            }
+
+            var foundOptions = AutocompleteDropdown.FindElements(By.XPath(AutocompleteOptionsSelector));
+            if (foundOptions.Any())
+            {
+                if (containsOption)
+                {
+                    if (foundOptions.Any(x => x.Text.Contains(searchText)))
+                    {
+                        foreach (string option in options)
+                        {
+                            foundOptions.First(x => x.Text.Contains(option)).Click();
+                            Driver.WaitForDataLoading();
+                        }
+                    }
+                    else
+                        throw new Exception(
+                            $"There are no option that contains '{searchText}' text in the '{placeholder}' autocomplete");
+                }
+                else
+                {
+                    if (foundOptions.Any(x => x.Text.Equals(searchText)))
+                    {
+                        foreach (string option in options)
+                        {
+                            foundOptions.First(x => x.Text.Equals(option)).Click();
+                            Driver.WaitForDataLoading();
+                        }
+                    }
+                    else
+                        throw new Exception(
+                            $"There are no option that equals '{searchText}' text in the '{placeholder}' autocomplete");
+                }
+            }
+            else
+                throw new Exception($"'{searchText}' was not found in the '{placeholder}' autocomplete");
+        }
+
+        #endregion
+
+        #region Textbox
+
+        public IWebElement GetNamedTextbox(string placeholder)
+        {
+            var by = By.XPath(string.Format(NamedTextboxSelector, placeholder));
+            if (!Driver.IsElementDisplayed(by, WebDriverExtensions.WaitTime.Medium))
+                throw new Exception($"Textbox with '{placeholder}' placeholder is not displayed");
+            return Driver.FindElement(by);
+        }
+
+        public void PopulateTextbox(string placeholder, string value, bool clear = true)
+        {
+            if (clear)
+                GetNamedTextbox(placeholder).Clear();
+
+            if (!string.IsNullOrEmpty(value))
+                GetNamedTextbox(placeholder).SendKeys(value);
+        }
+
+        public void PopulateTextboxWithAddButton(string placeholder, string option)
+        {
+            var button = GetNamedTextbox(placeholder);
+            button.Click();
+            button.ClearWithBackspaces();
+            button.SendKeys(option);
+            GetTextboxAddButton(placeholder).Click();
+        }
+
+        public IWebElement GetTextboxAddButton(string placeholder)
+        {
+            var selector = GetNamedTextbox(placeholder).FindElement(By.XPath(".//../ancestor::mat-form-field//button"));
+            Driver.WaitForElementToBeDisplayed(selector);
+            return selector;
+        }
+
+        public IWebElement GetTextboxErrorMessageElement(string placeholder)
+        {
+            var namedTextbox = GetNamedTextbox(placeholder);
+            var elementAttributes = Driver.GetElementAttributes(namedTextbox);
+            if (!elementAttributes.Any(x => x.Contains("_ngcontent")))
+            {
+                throw new Exception($"'{placeholder}' doesn't have _ngcontent attribute");
+            }
+            var attribute = elementAttributes.First(x => x.Contains("_ngcontent"));
+            //Selector when mat-error inside webElement
+            var errorSelector1 = By.XPath($".//ancestor::*[@{attribute}][position() = 1]//mat-error");
+            //When on the same level
+            var errorSelector2 = By.XPath($".//mat-error[@{attribute}]");
+            if (Driver.IsElementInElementDisplayed(namedTextbox, errorSelector1, WebDriverExtensions.WaitTime.Short))
+            {
+                return namedTextbox.FindElement(errorSelector1);
+            }
+            else if (Driver.IsElementDisplayed(errorSelector2, WebDriverExtensions.WaitTime.Short))
+                return Driver.FindElement(errorSelector2);
+            else
+            {
+                throw new Exception($"Error message was not displayed for '{placeholder}' textbox");
+            }
+        }
+
+        public string GetTextboxErrorMessage(string placeholder)
+        {
+            var error = GetTextboxErrorMessageElement(placeholder).FindElement(By.XPath("./span[1]"));
+            return error.Text;
+        }
+
+        public IWebElement GetTextboxErrorMessageExclamationIcon(string placeholder)
+        {
+            var exclamationIcon = GetTextboxErrorMessageElement(placeholder).FindElement(By.XPath("./span[2]"));
+            return exclamationIcon;
+        }
+
+        #endregion
+
+        #region Button
+
+        public IWebElement GetButtonByNameOnPopup(string button)
+        {
+            return GetButtonByName(button, this.GetStringByFor(() => this.PopupElement));
+        }
+
+        public IWebElement GetButtonByName(string button, string parentElementSelector = "")
+        {
+            var selector = By.XPath(
+                $"{parentElementSelector}//span[text()='{button}']/ancestor::button");
+            Driver.WaitForDataLoading();
+            Driver.WaitForElementsToBeDisplayed(selector, 30, false);
+            return Driver.FindElements(selector).First(x => x.Displayed());
+        }
+
+        public void ClickButtonByName(string buttonName)
+        {
+            var button = GetButtonByName(buttonName);
+            Driver.WaitForElementToBeEnabled(button);
+            button.Click();
+            Driver.WaitForDataLoading(50);
+        }
+
+        #endregion
+
         #region Dropdown
 
-        public IWebElement GetDropdownByName(string dropdownName)
+        public IWebElement GetDropdown(string dropdownName)
         {
             var selector = By.XPath(string.Format(NamedDropdownSelector, dropdownName));
             Driver.WaitForElementToBeDisplayed(selector);
@@ -1027,7 +978,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         }
 
         //Index starts from 1
-        public IWebElement GetDropdownByName(string dropdownName, int index)
+        public IWebElement GetDropdown(string dropdownName, int index)
         {
             index--;
             var selector = By.XPath(string.Format(NamedDropdownSelector, dropdownName));
@@ -1055,6 +1006,31 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
                 throw new Exception($"Unable to get dropdown values");
             var values = optionsList.Select(x => x.Text).ToList();
             return values;
+        }
+
+        public IWebElement GetDropdownErrorMessageElement(string placeholder)
+        {
+            var namedTextbox = GetDropdown(placeholder);
+            var elementAttributes = Driver.GetElementAttributes(namedTextbox);
+            if (!elementAttributes.Any(x => x.Contains("_ngcontent")))
+                throw new Exception($"'{placeholder}' doesn't have _ngcontent attribute");
+            var attribute = elementAttributes.First(x => x.Contains("_ngcontent"));
+            var errorSelector = By.XPath($".//mat-error[@{attribute}]");
+            if (!Driver.IsElementDisplayed(errorSelector, WebDriverExtensions.WaitTime.Medium))
+                throw new Exception($"Error message was not displayed for '{placeholder}' textbox");
+            return Driver.FindElement(errorSelector);
+        }
+
+        public string GetDropdownErrorMessage(string placeholder)
+        {
+            var error = GetDropdownErrorMessageElement(placeholder).FindElement(By.XPath("./span[1]"));
+            return error.Text;
+        }
+
+        public IWebElement GetDropdownErrorMessageExclamationIcon(string placeholder)
+        {
+            var exclamationIcon = GetDropdownErrorMessageElement(placeholder).FindElement(By.XPath("./span[2]"));
+            return exclamationIcon;
         }
 
         #endregion
