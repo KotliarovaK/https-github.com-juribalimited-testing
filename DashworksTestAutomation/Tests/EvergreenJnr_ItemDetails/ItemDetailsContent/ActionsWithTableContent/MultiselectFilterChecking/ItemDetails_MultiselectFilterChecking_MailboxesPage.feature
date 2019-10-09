@@ -61,9 +61,9 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatOnlyValueIncludedInTheColumnIsDisp
 	#Order of the options in the dropdown is the same as on Senior
 	Then following String Values are displayed in the filter on the Details Page
 	| Values           |
-	| ReadPermission   |
 	| FullAccess       |
+	| ReadPermission   |
 	| DeleteItem       |
-	| ChangePermission |
 	| ChangeOwner      |
+	| ChangePermission |
 	When User closes Checkbox filter for "Permission" column

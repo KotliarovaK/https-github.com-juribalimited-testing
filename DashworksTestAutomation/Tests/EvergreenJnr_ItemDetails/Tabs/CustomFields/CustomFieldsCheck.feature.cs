@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails.CustomFields
+namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails.Tabs.CustomFields
 {
     using TechTalk.SpecFlow;
     

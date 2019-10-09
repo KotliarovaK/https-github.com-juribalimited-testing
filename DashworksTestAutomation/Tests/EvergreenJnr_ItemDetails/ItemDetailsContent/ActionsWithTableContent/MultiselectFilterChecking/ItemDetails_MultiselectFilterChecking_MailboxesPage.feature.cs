@@ -291,15 +291,15 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table7.AddRow(new string[] {
-                        "ReadPermission"});
-            table7.AddRow(new string[] {
                         "FullAccess"});
+            table7.AddRow(new string[] {
+                        "ReadPermission"});
             table7.AddRow(new string[] {
                         "DeleteItem"});
             table7.AddRow(new string[] {
-                        "ChangePermission"});
-            table7.AddRow(new string[] {
                         "ChangeOwner"});
+            table7.AddRow(new string[] {
+                        "ChangePermission"});
 #line 62
  testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table7, "Then ");
 #line 69

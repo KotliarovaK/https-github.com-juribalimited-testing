@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails.ProjectDetails.Offboard
+namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails.Tabs.ProjectDetails.Offboard
 {
     using TechTalk.SpecFlow;
     
@@ -18,20 +18,20 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails.ProjectDetails.
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.4.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Offboard_MailboxesPage")]
-    public partial class Offboard_MailboxesPageFeature
+    [NUnit.Framework.DescriptionAttribute("Offboard_UsersPage")]
+    public partial class Offboard_UsersPageFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "Offboard_MailboxesPage.feature"
+#line 1 "Offboard_UsersPage.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Offboard_MailboxesPage", "\tRuns Offboard Mailboxes Page related tests", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Offboard_UsersPage", "\tRuns Offboard Users Page related tests", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -80,10 +80,10 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails.ProjectDetails.
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUp" +
-            "WindowWithNoAssotiatedDevicesOnMailboxesPage")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWind" +
+            "owWithNoAssotiatedDevicesOnUsersPage")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Mailboxes")]
+        [NUnit.Framework.CategoryAttribute("Users")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("Offboard")]
         [NUnit.Framework.CategoryAttribute("DAS17964")]
@@ -91,14 +91,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails.ProjectDetails.
         [NUnit.Framework.CategoryAttribute("DAS17000")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
-        public virtual void EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindowWithNoAssotiatedDevicesOnMailboxesPage()
+        public virtual void EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindowWithNoAssotiatedDevicesOnUsersPage()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindowWithNoAssotiatedDevicesOnMailboxesPageInternal();
+                    this.EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindowWithNoAssotiatedDevicesOnUsersPageInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -117,12 +117,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails.ProjectDetails.
             }
         }
 
-        private void EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindowWithNoAssotiatedDevicesOnMailboxesPageInternal()
+        private void EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindowWithNoAssotiatedDevicesOnUsersPageInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUp" +
-                    "WindowWithNoAssotiatedDevicesOnMailboxesPage", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWind" +
+                    "owWithNoAssotiatedDevicesOnUsersPage", null, new string[] {
                         "Evergreen",
-                        "Mailboxes",
+                        "Users",
                         "EvergreenJnr_ItemDetails",
                         "Offboard",
                         "DAS17964",
@@ -136,14 +136,12 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line 12
- testRunner.When("User navigates to the \'Mailbox\' details page for \'01DEAC5F18B34084B04@bclabs.loca" +
-                    "l\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'User\' details page for \'01F6D54271D74F1BB8D\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 13
- testRunner.Then("Details page for \"01DEAC5F18B34084B04@bclabs.local\" item is displayed to the user" +
-                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Details page for \"01F6D54271D74F1BB8D\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 14
- testRunner.When("User switches to the \"USE ME FOR AUTOMATION(MAIL SCHDLD)\" project in the Top bar " +
-                    "on Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User switches to the \"USE ME FOR AUTOMATION(USR SCHDLD)\" project in the Top bar o" +
+                    "n Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 15
  testRunner.And("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 16
@@ -153,85 +151,79 @@ this.FeatureBackground();
 #line 18
  testRunner.Then("Dialog Pop-up is displayed for User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 19
- testRunner.And("\'Offboard all associated users\' checkbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Offboard all associated devices\' checkbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table1.AddRow(new string[] {
-                        "Username"});
+                        "Hostname"});
             table1.AddRow(new string[] {
-                        "Display Name"});
-            table1.AddRow(new string[] {
-                        "Domain"});
-            table1.AddRow(new string[] {
-                        "Owner"});
+                        "Owned"});
 #line 20
  testRunner.And("following columns are displayed on the Item details page:", ((string)(null)), table1, "And ");
-#line 26
- testRunner.And("User selects state \'true\' for \'Offboard all associated users\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 24
+ testRunner.And("User selects state \'true\' for \'Offboard all associated devices\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table2.AddRow(new string[] {
-                        "01DEAC5F18B34084B04"});
-#line 27
- testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table2, "When ");
-#line 30
- testRunner.Then("\" BCLABS\\01DEAC5F18B34084B04 (Owner)\" chip have tooltip with \"BCLABS\\01DEAC5F18B3" +
-                    "4084B04 (Owner)\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 31
+                        "02X387UQLFP3ISU"});
+#line 25
+ testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table2, "When ");
+#line 28
+ testRunner.Then("\" 02X387UQLFP3ISU\" chip have tooltip with \"02X387UQLFP3ISU\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 29
  testRunner.When("User clicks \'OFFBOARD\' button in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 32
+#line 30
  testRunner.And("User clicks \'OFFBOARD\' button in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 34
+#line 32
  testRunner.And("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 35
+#line 33
  testRunner.Then("\'Admin\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 36
+#line 34
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 37
+#line 35
  testRunner.Then("Page with \'Projects\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 38
- testRunner.When("User enters \"USE ME FOR AUTOMATION(MAIL SCHDLD)\" text in the Search field for \"Pr" +
-                    "oject\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 39
+#line 36
+ testRunner.When("User enters \"USE ME FOR AUTOMATION(USR SCHDLD)\" text in the Search field for \"Pro" +
+                    "ject\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 37
  testRunner.And("User clicks content from \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 40
+#line 38
  testRunner.And("User navigates to the \'Scope\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 41
+#line 39
  testRunner.And("User selects \"History\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 40
+ testRunner.Then("\"01F6D54271D74F1BB8D\" content is displayed in \"Item\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 41
+ testRunner.And("\"02X387UQLFP3ISU\" content is displayed in \"Item\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 42
- testRunner.Then("\'01DEAC5F18B34084B04@bclabs.local\' content is displayed in the \'Item\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 43
- testRunner.And("\'01DEAC5F18B34084B04\' content is displayed in the \'Item\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 44
- testRunner.And("\'svc_dashworks\' content is not displayed in the \'Item\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'03AK1ZP1C9MPFV\' content is not displayed in the \'Item\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
 
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUp" +
-            "WindowWithAssotiatedDevicesOnPageMailboxes")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWind" +
+            "owWithAssotiatedDevicesOnUsersPage")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Mailboxes")]
+        [NUnit.Framework.CategoryAttribute("Users")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("Offboard")]
         [NUnit.Framework.CategoryAttribute("DAS17964")]
         [NUnit.Framework.CategoryAttribute("DAS17990")]
         [NUnit.Framework.CategoryAttribute("DAS17000")]
-        [NUnit.Framework.CategoryAttribute("DAS18067")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
-        public virtual void EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindowWithAssotiatedDevicesOnPageMailboxes()
+        public virtual void EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindowWithAssotiatedDevicesOnUsersPage()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindowWithAssotiatedDevicesOnPageMailboxesInternal();
+                    this.EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindowWithAssotiatedDevicesOnUsersPageInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -250,108 +242,98 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindowWithAssotiatedDevicesOnPageMailboxesInternal()
+        private void EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindowWithAssotiatedDevicesOnUsersPageInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUp" +
-                    "WindowWithAssotiatedDevicesOnPageMailboxes", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWind" +
+                    "owWithAssotiatedDevicesOnUsersPage", null, new string[] {
                         "Evergreen",
-                        "Mailboxes",
+                        "Users",
                         "EvergreenJnr_ItemDetails",
                         "Offboard",
                         "DAS17964",
                         "DAS17990",
                         "DAS17000",
-                        "DAS18067",
                         "Cleanup",
                         "Not_Ready"});
-#line 49
+#line 47
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
+#line 48
+ testRunner.When("User navigates to the \'User\' details page for \'01F6D54271D74F1BB8D\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 49
+ testRunner.Then("Details page for \"01F6D54271D74F1BB8D\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 50
- testRunner.When("User navigates to the \'Mailbox\' details page for \'01DEAC5F18B34084B04@bclabs.loca" +
-                    "l\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User switches to the \"USE ME FOR AUTOMATION(USR SCHDLD)\" project in the Top bar o" +
+                    "n Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 51
- testRunner.Then("Details page for \"01DEAC5F18B34084B04@bclabs.local\" item is displayed to the user" +
-                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 52
- testRunner.When("User switches to the \"USE ME FOR AUTOMATION(MAIL SCHDLD)\" project in the Top bar " +
-                    "on Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 53
  testRunner.And("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 54
+#line 52
  testRunner.And("User navigates to the \"Project Details\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 55
+#line 53
  testRunner.And("User clicks \'OFFBOARD\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 56
+#line 54
  testRunner.Then("Dialog Pop-up is displayed for User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 57
- testRunner.And("\'Offboard all associated users\' checkbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 55
+ testRunner.And("\'Offboard all associated devices\' checkbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table3.AddRow(new string[] {
-                        "Username"});
+                        "Hostname"});
             table3.AddRow(new string[] {
-                        "Display Name"});
-            table3.AddRow(new string[] {
-                        "Domain"});
-            table3.AddRow(new string[] {
-                        "Owner"});
-#line 58
+                        "Owned"});
+#line 56
  testRunner.And("following columns are displayed on the Item details page:", ((string)(null)), table3, "And ");
-#line 64
+#line 60
  testRunner.When("User clicks \'OFFBOARD\' button in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 65
+#line 61
  testRunner.And("User clicks \'OFFBOARD\' button in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 66
- testRunner.Then("Success message is displayed and contains \"The selected objects were successfully" +
-                    " queued for offboarding from USE ME FOR AUTOMATION(MAIL SCHDLD)\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 68
- testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 69
+#line 63
+ testRunner.And("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 64
  testRunner.Then("\'Admin\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 70
+#line 65
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 71
+#line 66
  testRunner.Then("Page with \'Projects\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 72
- testRunner.When("User enters \"USE ME FOR AUTOMATION(MAIL SCHDLD)\" text in the Search field for \"Pr" +
-                    "oject\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 73
+#line 67
+ testRunner.When("User enters \"USE ME FOR AUTOMATION(USR SCHDLD)\" text in the Search field for \"Pro" +
+                    "ject\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 68
  testRunner.And("User clicks content from \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 74
- testRunner.When("User navigates to the \'Scope\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 75
+#line 69
+ testRunner.And("User navigates to the \'Scope\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 70
  testRunner.And("User selects \"History\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 76
- testRunner.Then("\'01DEAC5F18B34084B04@bclabs.local\' content is displayed in the \'Item\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 77
- testRunner.And("\'01DEAC5F18B34084B04\' content is displayed in the \'Item\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 71
+ testRunner.Then("\'01F6D54271D74F1BB8D\' content is displayed in the \'Item\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 72
+ testRunner.And("\'02X387UQLFP3ISU\' content is displayed in the \'Item\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
 
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUp" +
-            "WindowWithoutUserOnMailboxesPage")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWind" +
+            "owWithoutUserOnUsersPage")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Mailboxes")]
+        [NUnit.Framework.CategoryAttribute("Users")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("Offboard")]
         [NUnit.Framework.CategoryAttribute("DAS17964")]
         [NUnit.Framework.CategoryAttribute("DAS17990")]
         [NUnit.Framework.CategoryAttribute("DAS17000")]
-        public virtual void EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindowWithoutUserOnMailboxesPage()
+        public virtual void EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindowWithoutUserOnUsersPage()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindowWithoutUserOnMailboxesPageInternal();
+                    this.EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindowWithoutUserOnUsersPageInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -370,41 +352,41 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindowWithoutUserOnMailboxesPageInternal()
+        private void EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindowWithoutUserOnUsersPageInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUp" +
-                    "WindowWithoutUserOnMailboxesPage", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWind" +
+                    "owWithoutUserOnUsersPage", null, new string[] {
                         "Evergreen",
-                        "Mailboxes",
+                        "Users",
                         "EvergreenJnr_ItemDetails",
                         "Offboard",
                         "DAS17964",
                         "DAS17990",
                         "DAS17000"});
-#line 80
+#line 75
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 81
- testRunner.When("User navigates to the \'Mailbox\' details page for \'alex.cristea@juriba.com\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 82
- testRunner.Then("Details page for \"alex.cristea@juriba.com\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 83
- testRunner.When("User switches to the \"Email Migration\" project in the Top bar on Item details pag" +
-                    "e", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 84
- testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 85
+#line 76
+ testRunner.When("User navigates to the \'User\' details page for \'0088FC8A50DD4344B92\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 77
+ testRunner.Then("Details page for \"0088FC8A50DD4344B92\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 78
+ testRunner.When("User switches to the \"USE ME FOR AUTOMATION(USR SCHDLD)\" project in the Top bar o" +
+                    "n Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 79
+ testRunner.And("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 80
  testRunner.And("User navigates to the \"Project Details\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 86
+#line 81
  testRunner.And("User clicks \'OFFBOARD\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 87
+#line 82
  testRunner.Then("Dialog Pop-up is displayed for User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 88
- testRunner.Then("following text \'Offboarding mailbox alex.cristea@juriba.com (Alex Cristea). Offbo" +
-                    "arding an object deletes all project related information about it.\' is displayed" +
-                    " in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 83
+ testRunner.And("following text \'Offboarding user BCLABS\\0088FC8A50DD4344B92 (Barland, Steinar). O" +
+                    "ffboarding an object deletes all project related information about it.\' is displ" +
+                    "ayed in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
