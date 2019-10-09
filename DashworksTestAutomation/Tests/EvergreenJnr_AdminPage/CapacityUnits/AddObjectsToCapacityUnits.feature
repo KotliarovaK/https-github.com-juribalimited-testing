@@ -26,8 +26,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDevicesAreAddedCorrectly
 	And User selects "Evergreen" Project or Evergreen on Action panel
 	And User selects 'CapacityUnit12141Devices' option from 'Capacity Unit' autocomplete
 	And User clicks 'UPDATE' button 
-	Then User clicks "UPDATE" button on message box
-	And Success message with "5 updates have been queued" text is displayed on Action panel
+	When User clicks 'UPDATE' button
+	Then Success message with "5 updates have been queued" text is displayed on Action panel
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Evergreen' left menu item
@@ -57,8 +57,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatUsersAreAddedCorrectly
 	And User selects "Evergreen" Project or Evergreen on Action panel
 	And User selects 'CapacityUnit12141Users' option from 'Capacity Unit' autocomplete
 	And User clicks 'UPDATE' button 
-	Then User clicks "UPDATE" button on message box
-	And Success message with "5 updates have been queued" text is displayed on Action panel
+	When User clicks 'UPDATE' button
+	Then Success message with "5 updates have been queued" text is displayed on Action panel
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Evergreen' left menu item
@@ -88,8 +88,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatApplicationsAreAddedCorrectly
 	And User selects "Evergreen" Project or Evergreen on Action panel
 	And User selects 'CapacityUnit12141Applications' option from 'Capacity Unit' autocomplete
 	And User clicks 'UPDATE' button 
-	Then User clicks "UPDATE" button on message box
-	And Success message with "5 updates have been queued" text is displayed on Action panel
+	When User clicks 'UPDATE' button
+	Then Success message with "5 updates have been queued" text is displayed on Action panel
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Evergreen' left menu item
@@ -119,8 +119,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatMailboxesAreAddedCorrectly
 	And User selects "Evergreen" Project or Evergreen on Action panel
 	And User selects 'CapacityUnit12141Mailboxes' option from 'Capacity Unit' autocomplete
 	And User clicks 'UPDATE' button 
-	Then User clicks "UPDATE" button on message box
-	And Success message with "5 updates have been queued" text is displayed on Action panel
+	When User clicks 'UPDATE' button
+	Then Success message with "5 updates have been queued" text is displayed on Action panel
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Evergreen' left menu item

@@ -52,7 +52,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage.CustomFields
                 var page = _driver.NowAt<BaseDashboardPage>();
                 page.AutocompleteSelect(CustomFieldPopup.TextBoxes.CustomField.GetValue(), customField.FieldName, true);
 
-                page.PopulateNamedTextbox(CustomFieldPopup.TextBoxes.Value.GetValue(), customField.Value);
+                page.PopulateTextbox(CustomFieldPopup.TextBoxes.Value.GetValue(), customField.Value);
 
                 popup.AddCustomFieldButton.Click();
                 _driver.WaitForElementToBeNotDisplayed(popup.AddCustomFieldButton);

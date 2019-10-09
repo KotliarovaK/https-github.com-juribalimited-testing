@@ -1439,8 +1439,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 var styleColorItem = color.GetAttribute("style");
                 //_driver.WaitForElementToBeDisplayed(page.ColorItem);
                 _driver.WaitForElementToBeDisplayed(colorItem);
-                Utils.Verify.IsTrue(page.GetColorByName(colorName).Displayed(), "Captions color does not match the caption");
-                Utils.Verify.AreEqual(page.GetColorContainer(styleColorItem), colorName,
+                Verify.IsTrue(page.GetColorByName(colorName).Displayed(), "Captions color does not match the caption");
+                Verify.AreEqual(page.GetColorContainer(styleColorItem), colorName,
                     "Items color does not match the caption");
             }
         }

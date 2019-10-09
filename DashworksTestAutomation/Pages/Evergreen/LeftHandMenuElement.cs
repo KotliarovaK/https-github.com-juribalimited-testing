@@ -82,5 +82,14 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             return MenuToggleIndicator.GetAttribute("class").Equals(string.Empty);
         }
+
+        public IWebElement GetApplicationVersionElement(string versionNumber)
+        {
+            var selector = By.XPath(
+                $".//div[@class='topnav-footer']//span[contains(text(),'{versionNumber}')]");
+            if (!Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Medium))
+                throw new Exception($"Unable to get application version element with '{versionNumber}' text");
+            return Driver.FindElement(selector);
+        }
     }
 }

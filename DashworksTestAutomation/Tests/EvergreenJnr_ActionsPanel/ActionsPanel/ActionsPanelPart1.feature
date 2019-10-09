@@ -101,8 +101,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatUserWithoutJustTheProjectAdministrat
 	And User selects "Computer: Laptop Replacement" Path on Action panel
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
-	And User clicks "UPDATE" button on message box
-	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
+	When User clicks 'UPDATE' button
+	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	When User refreshes agGrid
 	Then 'Computer: Laptop Replacement' content is displayed in the 'Windows7Mi: Path' column
 	When User clicks the Logout button
@@ -154,8 +154,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUserWithoutJustTheProjectBulkUp
 	And User selects "Sharepoint Application" Path on Action panel
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
-	And User clicks "UPDATE" button on message box
-	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
+	When User clicks 'UPDATE' button
+	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	When User refreshes agGrid
 	Then "Sharepoint Application" content is displayed for "EmailMigra: Path" column
 	When User clicks the Logout button

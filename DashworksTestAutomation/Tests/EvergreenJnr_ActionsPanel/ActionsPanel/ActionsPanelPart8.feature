@@ -31,8 +31,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatBulkUpdateOfThousandsOfRowsUpdateToSuc
 	And User selects "Started" Value on Action panel
 	And User clicks 'UPDATE' button 
 	Then the amber message is displayed correctly
-	And User clicks "UPDATE" button on message box
-	And Success message with "7578 of 7578 objects were in the selected project and have been queued" text is displayed on Action panel
+	When User clicks 'UPDATE' button
+	Then Success message with "7578 of 7578 objects were in the selected project and have been queued" text is displayed on Action panel
 	When User refreshes agGrid
 	Then "STARTED" content is displayed for "Havoc(BigD: Stage 0 \ Task 0" column
 

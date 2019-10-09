@@ -33,8 +33,8 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatRemoveFromStaticListOptionIsNo
 	And User selects "<Value>" Value on Action panel
 	When User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
-	And User clicks "UPDATE" button on message box
-	And Success message with "0 of 1 object was in the selected project and has been queued" text is displayed on Action panel
+	When User clicks 'UPDATE' button
+	Then Success message with "0 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	Then There are no errors in the browser console
 
 Examples: 
@@ -134,8 +134,8 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnDevi
 	When User selects "Computer: PC Rebuild" Path on Action panel
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
-	And User clicks "UPDATE" button on message box
-	And Success message with "3 of 3 objects were in the selected project and have been queued" text is displayed on Action panel
+	When User clicks 'UPDATE' button
+	Then Success message with "3 of 3 objects were in the selected project and have been queued" text is displayed on Action panel
 	When User refreshes agGrid
 	And User perform search by "001PSUMZYOW581"
 	Then "Computer: PC Rebuild" content is displayed in "Windows7Mi: Path" column
@@ -157,8 +157,8 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnDevi
 	And User selects "Computer: Virtual Machine" Path on Action panel
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
-	And User clicks "UPDATE" button on message box
-	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
+	When User clicks 'UPDATE' button
+	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	When User clicks Close panel button
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
@@ -171,8 +171,8 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnDevi
 	And User selects "[This is the Default Request Type for Computer)] " Path on Action panel
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
-	And User clicks "UPDATE" button on message box
-	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
+	When User clicks 'UPDATE' button
+	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	When User clicks Close panel button
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
@@ -185,5 +185,5 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnDevi
 	And User selects "Computer: Laptop Replacement" Path on Action panel
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
-	And User clicks "UPDATE" button on message box
-	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
+	When User clicks 'UPDATE' button
+	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
