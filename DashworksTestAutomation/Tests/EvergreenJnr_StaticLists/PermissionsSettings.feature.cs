@@ -458,7 +458,7 @@ this.FeatureBackground();
             table10.AddRow(new string[] {
                         "OwnerPrivate"});
 #line 128
- testRunner.Then("Following options are available in lists dropdown:", ((string)(null)), table10, "Then ");
+ testRunner.Then("following Values are displayed in the \'Action\' dropdown:", ((string)(null)), table10, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

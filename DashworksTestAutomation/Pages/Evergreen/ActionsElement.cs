@@ -13,9 +13,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
         private const string RowsSelectedCountSelector = ".//div[@class='actions-container-row-select']";
         private const string ListsDropdownSelector = ".//mat-select[@aria-label='Static Lists']";
 
-        [FindsBy(How = How.XPath, Using = ListsDropdownSelector)]
-        public IWebElement ListsDropdown { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//div[@class='actions-container']")]
         public IWebElement ActionsPanel { get; set; }
 
@@ -58,11 +55,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Driver.FindElement(By.XPath(listNameSelector)).Click();
         }
 
-        public IList<IWebElement> GetDropdownOptions()
-        {
-            return Driver.FindElements(By.XPath(".//mat-option"));
-        }
-
         public string GetSelectedRowsCount()
         {
             Driver.WaitForElementToBeDisplayed(By.XPath(RowsSelectedCountSelector));
@@ -74,20 +66,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
             var dropDown = By.XPath($"//*[contains(text(),'{name}')]/parent::span//preceding-sibling::mat-select");
             Driver.WaitForElementToBeDisplayed(dropDown);
             return Driver.FindElement(dropDown);
-        }
-
-        public IWebElement GetFieldOnActionPanelByName(string name)
-        {
-            var selector = By.XPath($"//div//input[@placeholder='{name}']");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
-        public IWebElement GetSearchDropDownOnActionPanelByName(string name)
-        {
-            var selector = By.XPath($"//*[contains(text(), '{name}')]/ancestor::div[@class='mat-form-field-infix']/textarea");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
         }
     }
 }

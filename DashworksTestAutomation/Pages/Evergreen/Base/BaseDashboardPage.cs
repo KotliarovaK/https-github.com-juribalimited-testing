@@ -792,8 +792,15 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         {
             GetNamedTextbox(placeholder).Click();
 
+            var foundOptions = GetAllOptionsFromOpenedAutocomplete();
+
+            return foundOptions;
+        }
+
+        public List<string> GetAllOptionsFromOpenedAutocomplete()
+        {
             if (!Driver.IsElementDisplayed(By.XPath(AutocompleteOptionsSelector), WebDriverExtensions.WaitTime.Short))
-                throw new Exception($"Options are not displayed for '{placeholder}' autocomplete");
+                throw new Exception($"Options are not displayed for autocomplete");
 
             var foundOptions =
                 AutocompleteDropdown.FindElements(By.XPath(AutocompleteOptionsSelector)).Select(x => x.Text).ToList();
