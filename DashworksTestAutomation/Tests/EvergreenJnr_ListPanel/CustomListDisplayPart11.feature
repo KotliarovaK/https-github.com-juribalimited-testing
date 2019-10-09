@@ -125,12 +125,13 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDashworkWorksAfterChangingPivotSetti
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS17421
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS17421 @DAS17014 @DAS17014
 Scenario: EvergreenJnr_DevicesList_CheckThatGridHeaderIsDisplayedCorrectlyAfterClosingListsPanel
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User closed list panel
 	Then Lists panel is hidden
+	Then User sees correct tooltip for Show Lists panel
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS15785
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatFilterCategoryNamingIsCorrect

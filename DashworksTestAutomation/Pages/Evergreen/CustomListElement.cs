@@ -44,6 +44,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//list-submenu-container//button")]
         public IWebElement CloseButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//div[@id='content']//i[@class='material-icons mat-menu']")]
+        public IWebElement ExpandSideNavPanelIcon { get; set; }
+
         [FindsBy(How = How.XPath,
             Using =
                 ".//i[@class='menu-trigger material-icons mat-settings mat-18 pull-right settings-icon settings-area']")]

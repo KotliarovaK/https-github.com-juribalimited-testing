@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Threading;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Utils;
@@ -161,5 +162,33 @@ namespace DashworksTestAutomation.Extensions
         }
 
         #endregion Checkboxes
+
+        #region Coordinates/Location
+
+        public static Point RightTopLocation(this IWebElement element)
+        {
+            var x = element.Location.X + element.Size.Width;
+            var y = element.Location.Y;
+            Point result = new Point(x, y);
+            return result;
+        }
+
+        public static Point RightBottomLocation(this IWebElement element)
+        {
+            var x = element.Location.X + element.Size.Width;
+            var y = element.Location.Y + element.Size.Height;
+            Point result = new Point(x, y);
+            return result;
+        }
+
+        public static Point BottomLocation(this IWebElement element)
+        {
+            var x = element.Location.X;
+            var y = element.Location.Y + element.Size.Height;
+            Point result = new Point(x, y);
+            return result;
+        }
+
+        #endregion
     }
 }

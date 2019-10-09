@@ -37,8 +37,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         private readonly Automations _automations;
         private readonly CapacityUnits _capacityUnits;
 
-        public EvergreenJnr_BasePage(RemoteWebDriver driver, AutomationActions automationActions, Automations automations,
-            Slots slots, Rings rings, CapacityUnits capacityUnits)
+        public EvergreenJnr_BasePage(RemoteWebDriver driver, AutomationActions automationActions,
+            Automations automations, Slots slots, Rings rings, CapacityUnits capacityUnits)
         {
             _driver = driver;
             _automationActions = automationActions;
@@ -126,31 +126,18 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 "Some options are missing!");
         }
 
-        [When(@"User selects '(.*)' option from '(.*)' autocomplete")]
-        public void WhenUserSelectsOptionFromAutocomplete(string option, string placeholder)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            page.AutocompleteSelect(placeholder, option);
-        }
-
-        [When(@"User selects '(.*)' option after search from '(.*)' autocomplete")]
-        public void WhenUserSelectsOptionAfterSearchFromAutocomplete(string option, string placeholder)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            page.AutocompleteSelect(placeholder, option, true);
-        }
-
         [Then(@"'(.*)' content is displayed in '(.*)' autocomplete")]
         public void ThenContentIsDisplayedInAutocomplete(string expectedText, string placeholder)
         {
             CheckAutocompletAndTextboxText(placeholder, expectedText);
         }
 
+        //TODO this step verify just that some results were found. Rework to verify found results
         [Then(@"'(.*)' content is not displayed in '(.*)' autocomplete after search")]
         public void ThenContentIsNotDisplayedInAutocompleteAfterSearch(string content, string placeholder)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            page.PopulateNamedTextbox(placeholder, content);
+            page.PopulateTextbox(placeholder, content);
             Verify.IsFalse(page.AutocompleteDropdown.Displayed(), $"{content} text is displayed in the {placeholder} autocomplete");
         }
 
@@ -171,6 +158,28 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.AreEqual(table.Rows.Select(x => x.Values).Select(x => x.FirstOrDefault()),
                 selectedOptions.Select(x => x.Text),
                 $"Incorrect values are selected in the '{placeholder}' autocomplete");
+        }
+
+        [When(@"User selects '(.*)' option from '(.*)' autocomplete")]
+        public void WhenUserSelectsOptionFromAutocomplete(string option, string placeholder)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.AutocompleteSelect(placeholder, option);
+        }
+
+        [When(@"User enters '(.*)' in the '(.*)' autocomplete field and selects '(.*)' value")]
+        public void WhenUserEntersInTheAutocompleteFieldAndSelectsValue(string text, string placeholder, string value)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.PopulateTextbox(placeholder, text);
+            page.AutocompleteSelect(placeholder, text, true, true, new[] { value });
+        }
+
+        [When(@"User selects '(.*)' option after search from '(.*)' autocomplete")]
+        public void WhenUserSelectsOptionAfterSearchFromAutocomplete(string option, string placeholder)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.AutocompleteSelect(placeholder, option, true);
         }
 
         private void CheckAutocompletAndTextboxText(string placeholder, string expectedText)
@@ -222,13 +231,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var page = _driver.NowAt<BaseDashboardPage>();
             page.BodyContainer.Click();
 
-            Verify.AreEqual(errorMessage, page.GetNamedTextboxErrorMessage(placeholder),
+            Verify.AreEqual(errorMessage, page.GetTextboxErrorMessage(placeholder),
                 $"Incorrect error message is displayed in the '{placeholder}' field");
 
-            Verify.AreEqual("rgba(242, 88, 49, 1)", page.GetNamedTextboxErrorMessageElement(placeholder).GetCssValue("color"),
+            Verify.AreEqual("rgba(242, 88, 49, 1)", page.GetTextboxErrorMessageElement(placeholder).GetCssValue("color"),
                 $"Incorrect error message color for '{placeholder}' field");
 
-            Verify.AreEqual("rgba(242, 88, 49, 1)", page.GetNamedTextboxErrorMessageExclamationIcon(placeholder).GetCssValue("color"),
+            Verify.AreEqual("rgba(242, 88, 49, 1)", page.GetTextboxErrorMessageExclamationIcon(placeholder).GetCssValue("color"),
                 $"Incorrect error message color for '{placeholder}' field exclamation icon");
         }
 
@@ -236,14 +245,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void WhenUserAddsValueFromTextbox(string option, string fieldName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            page.InputWithAddButton(fieldName, option);
+            page.PopulateTextboxWithAddButton(fieldName, option);
         }
 
         [Then(@"'(.*)' add button tooltip is displayed for '(.*)' textbox")]
         public void ThenAddButtonTooltipIsDisplayedForTextbox(string text, string fieldName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            var button = page.GetInputAddButton(fieldName);
+            var button = page.GetTextboxAddButton(fieldName);
             page.BodyContainer.Click();
             _driver.MouseHover(button);
             var toolTipText = _driver.GetTooltipText();
@@ -254,7 +263,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenAddButtonForTextboxIsDisabled(string fieldName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            Verify.IsTrue(Convert.ToBoolean(page.GetInputAddButton(fieldName).Disabled()), $"Add button for {fieldName} textbox is active");
+            Verify.IsTrue(Convert.ToBoolean(page.GetTextboxAddButton(fieldName).Disabled()), $"Add button for {fieldName} textbox is active");
         }
 
         #endregion
@@ -265,7 +274,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void WhenUserClicksDropdown(string dropdownName)
         {
             var dropdown = _driver.NowAt<BaseDashboardPage>();
-            dropdown.GetDropdownByName(dropdownName).Click();
+            dropdown.GetDropdown(dropdownName).Click();
         }
 
         [When(@"User selects '(.*)' in the '(.*)' dropdown")]
@@ -285,7 +294,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         private void SelectDropdown(string value, string dropdownName)
         {
             var dropdown = _driver.NowAt<BaseDashboardPage>();
-            dropdown.GetDropdownByName(dropdownName).Click();
+            dropdown.GetDropdown(dropdownName).Click();
             dropdown.GetDropdownValueByName(value).Click();
         }
 
@@ -293,7 +302,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenContentIsDisplayedInDropdown(string text, string dropdown)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            var dropdownContent = page.GetDropdownByName(dropdown).Text;
+            var dropdownContent = page.GetDropdown(dropdown).Text;
             Verify.AreEqual(dropdownContent, text, $"Text in '{dropdown}' drop-down is different");
         }
 
@@ -310,7 +319,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenDropdownIsDisplayed(string dropdownName)
         {
             var dropdown = _driver.NowAt<BaseDashboardPage>();
-            Verify.IsTrue(dropdown.GetDropdownByName(dropdownName).Displayed(), $"{dropdownName} is not displayed");
+            Verify.IsTrue(dropdown.GetDropdown(dropdownName).Displayed(), $"{dropdownName} is not displayed");
         }
 
         //Exact much
@@ -318,7 +327,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenFollowingValuesAreDisplayedInTheDropdown(string dropDownName, Table table)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            page.GetDropdownByName(dropDownName).Click();
+            page.GetDropdown(dropDownName).Click();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var actualList = page.GetDropdownValues();
             page.BodyContainer.Click();
@@ -330,7 +339,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenUserSeesThatDropdownContainsFollowingOptions(string dropDownName, Table options)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            page.GetDropdownByName(dropDownName).Click();
+            page.GetDropdown(dropDownName).Click();
             List<string> actualOptions = page.GetDropdownValues();
             page.BodyContainer.Click();
             Verify.That(actualOptions,
@@ -344,13 +353,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var page = _driver.NowAt<BaseDashboardPage>();
             page.BodyContainer.Click();
 
-            Verify.AreEqual(errorMessage, page.GetNamedDropdownErrorMessage(placeholder),
+            Verify.AreEqual(errorMessage, page.GetDropdownErrorMessage(placeholder),
                 $"Incorrect error message is displayed in the '{placeholder}' field");
 
-            Verify.AreEqual("rgba(242, 88, 49, 1)", page.GetNamedDropdownErrorMessageElement(placeholder).GetCssValue("color"),
+            Verify.AreEqual("rgba(242, 88, 49, 1)", page.GetDropdownErrorMessageElement(placeholder).GetCssValue("color"),
                 $"Incorrect error message color for '{placeholder}' field");
 
-            Verify.AreEqual("rgba(242, 88, 49, 1)", page.GetNamedDropdownErrorMessageExclamationIcon(placeholder).GetCssValue("color"),
+            Verify.AreEqual("rgba(242, 88, 49, 1)", page.GetDropdownErrorMessageExclamationIcon(placeholder).GetCssValue("color"),
                 $"Incorrect error message color for '{placeholder}' field exclamation icon");
         }
 

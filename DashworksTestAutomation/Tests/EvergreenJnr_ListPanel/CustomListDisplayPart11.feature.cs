@@ -541,6 +541,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
         [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS17421")]
+        [NUnit.Framework.CategoryAttribute("DAS17014")]
+        [NUnit.Framework.CategoryAttribute("DAS17014")]
         public virtual void EvergreenJnr_DevicesList_CheckThatGridHeaderIsDisplayedCorrectlyAfterClosingListsPanel()
         {
             System.Exception lastException = null;
@@ -575,7 +577,9 @@ this.FeatureBackground();
                         "Devices",
                         "EvergreenJnr_ListPanel",
                         "CustomListDisplay",
-                        "DAS17421"});
+                        "DAS17421",
+                        "DAS17014",
+                        "DAS17014"});
 #line 129
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -589,6 +593,8 @@ this.FeatureBackground();
  testRunner.When("User closed list panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 133
  testRunner.Then("Lists panel is hidden", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 134
+ testRunner.Then("User sees correct tooltip for Show Lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -644,14 +650,14 @@ this.FeatureBackground();
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatFilterCategoryNamingIsCorrect", null, @__tags);
-#line 136
+#line 137
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 137
- testRunner.When(string.Format("User clicks \'{0}\' on the left-hand menu", listType), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 138
+ testRunner.When(string.Format("User clicks \'{0}\' on the left-hand menu", listType), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 139
  testRunner.Then(string.Format("\'{0}\' list should be displayed to the user", listTitle), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
@@ -680,7 +686,7 @@ this.FeatureBackground();
                         "Standard"});
             table13.AddRow(new string[] {
                         "Pivot"});
-#line 139
+#line 140
  testRunner.And("List filter DDL displays the next options", ((string)(null)), table13, "And ");
 #line hidden
             this.ScenarioCleanup();

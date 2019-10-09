@@ -92,6 +92,24 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             filterElement.BodyContainer.Click();
         }
 
+        [Then(@"'(.*)' project is displayed first in Project Switcher")]
+        public void ThenProjectIsDisplayedFirstInProjectSwitcher(string project)
+        {
+            var topBar = _driver.NowAt<ItemDetailsTopBarPage>();
+            var list = topBar.ProjectsOnSwitcherPanel.Select(x => x.Text).ToList();
+
+            Utils.Verify.That(list[0], Is.EqualTo(project), "Wrong first project displayed");
+        }
+
+        [Then(@"'(.*)' project is not displayed in proposal list of in Project Switcher")]
+        public void ThenProjectIsNotDuplicatedInProjectSwitcher(string project)
+        {
+            var topBar = _driver.NowAt<ItemDetailsTopBarPage>();
+            var list = topBar.ProjectsOnSwitcherPanel.Select(x => x.Text).ToList();
+
+            Utils.Verify.That(list.FindAll(x => x.Equals(project)).Count, Is.EqualTo(0), "Project name is duplicated");
+        }
+
         [Then(@"following Compliance items are displayed in Top bar on the Item details page:")]
         public void ThenFollowingComplianceItemsAreDisplayedInTopBarOnTheItemDetailsPage(Table table)
         {

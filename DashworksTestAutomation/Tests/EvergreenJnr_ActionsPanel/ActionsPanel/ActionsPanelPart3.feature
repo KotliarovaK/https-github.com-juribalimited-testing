@@ -36,8 +36,8 @@ Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersP
 	When User selects "User; Maternity" Path on Action panel
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
-	And User clicks "UPDATE" button on message box
-	And Success message with "3 of 3 objects were in the selected project and have been queued" text is displayed on Action panel
+	When User clicks 'UPDATE' button
+	Then Success message with "3 of 3 objects were in the selected project and have been queued" text is displayed on Action panel
 	When User refreshes agGrid
 	When User clicks Search button and opens Search panel for agGrid
 	And User perform search by "FMN5805290"
@@ -61,8 +61,8 @@ Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersP
 	And User selects "User: VIP" Path on Action panel
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
-	And User clicks "UPDATE" button on message box
-	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
+	When User clicks 'UPDATE' button
+	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	When User clicks Close panel button
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
@@ -75,8 +75,8 @@ Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersP
 	And User selects "User: No Agent" Path on Action panel
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
-	And User clicks "UPDATE" button on message box
-	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
+	When User clicks 'UPDATE' button
+	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	When User clicks Close panel button
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
@@ -89,8 +89,8 @@ Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersP
 	And User selects "[Default (User)]" Path on Action panel
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
-	And User clicks "UPDATE" button on message box
-	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
+	When User clicks 'UPDATE' button
+	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 
 @Evergreen @Applications @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12863 @DAS13266 @DAS13284 @DAS16826
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatRequestTypeIsUpdatedCorrectlyOnApplicationsPage
@@ -120,8 +120,8 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatRequestTypeIsUpdatedCorrectlyO
 	When User selects "Application: Request Type B" Path on Action panel
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
-	And User clicks "UPDATE" button on message box
-	And Success message with "2 of 2 objects were in the selected project and have been queued" text is displayed on Action panel
+	When User clicks 'UPDATE' button
+	Then Success message with "2 of 2 objects were in the selected project and have been queued" text is displayed on Action panel
 	When User refreshes agGrid
 	And User perform search by ""WPF/E" (codename) Community Technology Preview (Feb 2007)"
 	Then "Application: Request Type B" content is displayed in "Windows7Mi: Path" column
@@ -142,8 +142,8 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatRequestTypeIsUpdatedCorrectlyO
 	And User selects "[Default (Application)]" Path on Action panel
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
-	And User clicks "UPDATE" button on message box
-	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
+	When User clicks 'UPDATE' button
+	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	When User clicks Close panel button
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
@@ -156,8 +156,8 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatRequestTypeIsUpdatedCorrectlyO
 	And User selects "Application: Request Type A" Path on Action panel
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
-	And User clicks "UPDATE" button on message box
-	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
+	When User clicks 'UPDATE' button
+	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 
 @Evergreen @Mailboxes @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12863 @DAS13266 @DAS13284 @DAS13708
 Scenario: EvergreenJnr_MailboxesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnMailboxesPage
@@ -188,8 +188,8 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnMa
 	When User selects "Personal Mailbox - VIP" Path on Action panel
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
-	And User clicks "UPDATE" button on message box
-	And Success message with "3 of 3 objects were in the selected project and have been queued" text is displayed on Action panel
+	When User clicks 'UPDATE' button
+	Then Success message with "3 of 3 objects were in the selected project and have been queued" text is displayed on Action panel
 	When User refreshes agGrid
 	And User perform search by "0F1ED67386AD4FA7BF4@bclabs.local"
 	Then "Personal Mailbox - VIP" content is displayed in "EmailMigra: Path" column
@@ -212,8 +212,8 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnMa
 	And User selects "Shared Mailbox" Path on Action panel
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
-	And User clicks "UPDATE" button on message box
-	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
+	When User clicks 'UPDATE' button
+	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	When User clicks Close panel button
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
@@ -226,8 +226,8 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnMa
 	And User selects "Personal Mailbox - EA" Path on Action panel
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
-	And User clicks "UPDATE" button on message box
-	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
+	When User clicks 'UPDATE' button
+	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	When User clicks Close panel button
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
@@ -240,8 +240,8 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnMa
 	And User selects "Personal Mailbox" Path on Action panel
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
-	And User clicks "UPDATE" button on message box
-	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
+	When User clicks 'UPDATE' button
+	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 
 @Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS12863 @DAS13266 @DAS13284
 Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyWhereSomeObjectsAreValidAndSomeAreInvalidForTheSelectedProject
@@ -267,8 +267,8 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyWhereS
 	And User selects "Computer: Workstation Replacement" Path on Action panel
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
-	And User clicks "UPDATE" button on message box
-	And Success message with "5 of 5 objects were in the selected project and have been queued" text is displayed on Action panel
+	When User clicks 'UPDATE' button
+	Then Success message with "5 of 5 objects were in the selected project and have been queued" text is displayed on Action panel
 	When User refreshes agGrid
 	And User perform search by "001BAQXT6JWFPI"
 	Then "Computer: Workstation Replacement" content is displayed for "Windows7Mi: Path" column
@@ -297,8 +297,8 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyWhereS
 	And User selects "[This is the Default Request Type for Computer)] " Path on Action panel
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
-	And User clicks "UPDATE" button on message box
-	And Success message with "3 of 3 objects were in the selected project and have been queued" text is displayed on Action panel
+	When User clicks 'UPDATE' button
+	Then Success message with "3 of 3 objects were in the selected project and have been queued" text is displayed on Action panel
 	When User clicks Close panel button
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
@@ -311,8 +311,8 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyWhereS
 	And User selects "Computer: Virtual Machine" Path on Action panel
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
-	And User clicks "UPDATE" button on message box
-	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
+	When User clicks 'UPDATE' button
+	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	When User clicks Close panel button
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
@@ -325,5 +325,5 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyWhereS
 	And User selects "Computer: Laptop Replacement" Path on Action panel
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
-	And User clicks "UPDATE" button on message box
-	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
+	When User clicks 'UPDATE' button
+	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel

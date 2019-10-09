@@ -103,5 +103,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         #endregion
+
+        #region Footer and version
+
+        [Then(@"'(.*)' Application version is displayed in the left-hand menu")]
+        public void ThenApplicationVersionIsDisplayed(string versionNumber)
+        {
+            var page = _driver.NowAt<LeftHandMenuElement>();
+            page.GetApplicationVersionElement(versionNumber);
+        }
+
+        #endregion
     }
 }
