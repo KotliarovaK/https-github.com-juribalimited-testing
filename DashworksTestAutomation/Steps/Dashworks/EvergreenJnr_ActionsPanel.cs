@@ -719,21 +719,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             listElement.ListNameTextBox.SendKeys(listName);
         }
 
-        [When(@"User clicks Cancel button on the Actions panel")]
-        public void WhenUserClicksCancelButtonOnTheActionsPanel()
-        {
-            var listElement = _driver.NowAt<ActionsElement>();
-            listElement.CancelButton.Click();
-        }
-
         [When(@"User create static list with ""(.*)"" name")]
         public void WhenUserCreateStaticListWithName(string listName)
         {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var createButton = page.GetButtonByName("CREATE");
+
             var listElement = _driver.NowAt<ActionsElement>();
-            _driver.WaitForElementToBeDisplayed(listElement.CreateButton);
             listElement.ListNameTextBox.SendKeys(listName);
-            _driver.WaitForElementToBeDisplayed(listElement.CreateButton);
-            listElement.CreateButton.Click();
+            createButton.Click();
             _driver.WaitForDataLoadingInActionsPanel();
 
             //Small wait for message display
@@ -745,8 +739,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"User type ""(.*)"" into Static list name field")]
         public void ThenUserTypeIntoStaticListNameField(string listName)
         {
+            //Just to wait Create button
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.GetButtonByName("CREATE");
+
             var listElement = _driver.NowAt<ActionsElement>();
-            _driver.WaitForElementToBeDisplayed(listElement.CreateButton);
             listElement.ListNameTextBox.SendKeys(listName);
         }
 

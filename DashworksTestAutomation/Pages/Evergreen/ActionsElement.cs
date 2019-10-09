@@ -19,10 +19,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='actions-container']")]
         public IWebElement ActionsPanel { get; set; }
 
-        [FindsBy(How = How.XPath, Using =
-                ".//button[@class='btn btn-default mat-icon-button']/span/i[@class='material-icons mat-static-list']")]
-        public IWebElement InactiveActionsButton { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//div[text()='Select at least one row']")]
         public IWebElement ActionsContainerMessage { get; set; }
 
@@ -31,12 +27,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = ".//input[@placeholder='List Name']")]
         public IWebElement ListNameTextBox { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//span[text()='CREATE']//ancestor::button")]
-        public IWebElement CreateButton { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//button[@mattooltip='Cancel']")]
-        public IWebElement CancelButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='styleSelectDropdown']")]
         public IWebElement DropdownBox { get; set; }
