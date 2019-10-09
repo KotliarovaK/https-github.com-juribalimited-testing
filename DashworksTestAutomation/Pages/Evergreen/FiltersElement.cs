@@ -92,15 +92,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='styleSelectDropdown']")]
         public IWebElement FilterTypeDropdown { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[text()='None']")]
-        public IWebElement NoneCheckbox { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//span[text()='A Star Packages']")]
-        public IWebElement AStarPackagesCheckbox { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//span[text()='B Star Packages']")]
-        public IWebElement BStarPackagesCheckbox { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//div[@class='form-group actions']//span[text()='UPDATE']/ancestor::button")]
         public IWebElement SaveButton { get; set; }
 
@@ -418,7 +409,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IWebElement GetCurrentDateCheckbox()
         {
-            var dateCheckbox = $".//div[contains(@class, 'filterAddPanel')]//mat-checkbox//span[contains(text(), '{DateTime.Now.Day}')]";
+            var dateCheckbox = $".//div[contains(@class, 'filterAddPanel')]//mat-checkbox//span[contains(text(), '{DateTime.Now.ToString("dd/MM/yyyy")}')]";
             return Driver.FindElement(By.XPath(dateCheckbox));
         }
 

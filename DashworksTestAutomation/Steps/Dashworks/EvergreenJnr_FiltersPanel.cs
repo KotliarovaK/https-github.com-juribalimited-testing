@@ -260,7 +260,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectsCurrentDateCheckboxFromFilterPanel()
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            filterElement.GetCurrentDateCheckbox().Click();
+            filterElement.CheckboxNameForFilter(DateTime.Now.ToString("dd/MM/yyyy"));
         }
 
         [When(@"User select ""(.*)"" Association for Application filter with Lookup value")]
