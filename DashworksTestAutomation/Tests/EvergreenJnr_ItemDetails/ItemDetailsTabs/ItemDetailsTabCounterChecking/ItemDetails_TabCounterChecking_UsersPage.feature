@@ -180,7 +180,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayed
 	And "Hardware Summary" tab is displayed on left menu on the Details page and NOT contains count of items
 	And "Application Summary" tab is displayed on left menu on the Details page and NOT contains count of items
 
-@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16830
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16830 @Do_Not_Run_With_Projects
 Scenario: EvergreenJnr_UsersList_ChecksThatTheNumberOfCountersInTheTabIsEqualToTheNumberOfFieldsInTheTable
 	When User navigates to the 'User' details page for 'ACG370114' item
 	Then Details page for "ACG370114" item is displayed to the user
@@ -211,9 +211,8 @@ Scenario: EvergreenJnr_UsersList_ChecksThatTheNumberOfCountersInTheTabIsEqualToT
 	When User navigates to the "Application Issues" sub-menu on the Details page
 	Then 'Application Issues' tab is displayed on left menu on the Details page and contains '2' count of items
 	And "2" rows found label displays on Details Page
-	When User type "0137C8E69921432992B" in Global Search Field
-	Then User clicks on "0137C8E69921432992B (Jackson, Veronica)" search result
-	And Details page for "0137C8E69921432992B" item is displayed to the user
+	When User navigates to the 'User' details page for '0137C8E69921432992B' item
+	Then Details page for "0137C8E69921432992B" item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the "Mailbox Project Summary" sub-menu on the Details page
 	Then 'Mailbox Project Summary' tab is displayed on left menu on the Details page and contains '3' count of items
@@ -226,9 +225,8 @@ Scenario: EvergreenJnr_UsersList_ChecksThatTheNumberOfCountersInTheTabIsEqualToT
 	And User navigates to the "Mailboxes" sub-menu on the Details page
 	Then 'Mailboxes' tab is displayed on left menu on the Details page and contains '1' count of items
 	And "1" rows found label displays on Details Page
-	When User type "allanj" in Global Search Field
-	Then User clicks on "allanj (Jo Allan)" search result
-	And Details page for "allanj (Jo Allan)" item is displayed to the user
+	When User navigates to the 'User' details page for 'allanj' item
+	Then Details page for "allanj (Jo Allan)" item is displayed to the user
 	When User navigates to the 'Applications' left menu item
 	And User navigates to the "Advertisements" sub-menu on the Details page
 	Then 'Advertisements' tab is displayed on left menu on the Details page and contains '5' count of items
