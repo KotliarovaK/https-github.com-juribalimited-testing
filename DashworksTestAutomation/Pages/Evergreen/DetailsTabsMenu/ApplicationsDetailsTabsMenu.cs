@@ -87,7 +87,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-body-viewport')]//div[@class='ag-center-cols-viewport']//div[@role='row']")]
         public IList<IWebElement> TableRows { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@id='filterDateFromPanel']//input[@aria-label='Date']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='ag-filter-body']//input[@aria-label='Date']")]
         public IWebElement DateRegularValueFirst { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@id='filterDateFromConditionPanel']//input[@aria-label='Date']")]
@@ -300,7 +300,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
 
         public void SelectConditionForDateColumn(string filterConditionValue)
         {
-            var selectBox = By.XPath(".//select[@id='filterType']");
+            var selectBox = By.XPath(".//select[@class='ag-filter-select']");
 
             Driver.WaitForElementToBeDisplayed(selectBox);
             Driver.FindElement(selectBox).SelectboxSelect(filterConditionValue);
