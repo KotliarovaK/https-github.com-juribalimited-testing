@@ -149,7 +149,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreUnpublishedAfterBeingAssociat
 	And User selects "Slots" tab on the Project details page
 	And User enters "Slot 1" text in the Search field for "Capacity Slot" column
 	And User clicks content from "Capacity Slot" column
-	Then Next values are selected for the "Tasks" field:
+	Then only below options are selected in the '(.*)' autocomplete
 	| Value                                                                                 |
 	| Pre-Migration \ Forecast Date                                                         |
 	| Computer Information ---- Text fill; Text fill; \ Group Computer Rag Radio Date Owner |
@@ -242,9 +242,12 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreDeletedAfterBeingAssociatedTo
 	And User selects "Slots" tab on the Project details page
 	And User enters "Slot 1" text in the Search field for "Capacity Slot" column
 	And User clicks content from "Capacity Slot" column
-	Then Next values are selected for the "Tasks" field:
-	| Value                          |
+	Then only below options are selected in the 'Tasks' autocomplete
+	| Options                        |
 	| Pre-Migration \ Scheduled Date |
+	#Then Next values are selected for the "Tasks" field:
+	#| Value                          |
+	#| Pre-Migration \ Scheduled Date |
 	When User clicks 'CANCEL' button 
 	And User clicks 'CREATE SLOT' button 
 	And User enters 'Slot 2' text to 'Slot Name' textbox

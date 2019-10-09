@@ -55,7 +55,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             topBar.ProjectSwitcherDropdownTopBar.Click();
 
             var action = _driver.NowAt<BaseDashboardPage>();
-            action.GetOptionByName(projectName).Click();
+            action.GetDropdownValueByName(projectName).Click();
 
             _driver.WaitFor(() => topBar.ProjectsOnSwitcherPanel.Count == 0);
 
