@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails.ProjectDetails.Relink
+namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails.Tabs.ProjectDetails.Relink
 {
     using TechTalk.SpecFlow;
     

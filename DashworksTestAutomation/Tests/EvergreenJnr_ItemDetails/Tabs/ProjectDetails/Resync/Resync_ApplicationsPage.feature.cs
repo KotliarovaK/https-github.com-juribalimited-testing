@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails.ProjectDetails.Resync
+namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails.Tabs.ProjectDetails.Resync
 {
     using TechTalk.SpecFlow;
     

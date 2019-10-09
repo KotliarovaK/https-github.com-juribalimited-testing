@@ -41,7 +41,7 @@ Examples:
 	| User        | 03714167684E45F7A8F      | Details       | Username        | 03714167684E45F7A8F |
 	| Application | Adobe Acrobat Reader 5.0 | Details       | Vendor          | Adobe               |
 
-	@Evergreen @ALlLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13341 @DAS14923
+@Evergreen @ALlLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13341 @DAS14923
 Scenario Outline: EvergreenJnr_AllLists_CheckThatTextInKeyValueGridsIsSelectableOnDetailsPageOnSelectedSubMenu
 	When User navigates to the '<PageName>' details page for '<SearchTerm>' item
 	Then Details page for "<SearchTerm>" item is displayed to the user

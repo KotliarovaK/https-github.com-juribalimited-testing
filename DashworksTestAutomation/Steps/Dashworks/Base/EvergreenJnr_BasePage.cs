@@ -20,6 +20,7 @@ using DashworksTestAutomation.Pages.Evergreen.Base;
 using DashworksTestAutomation.Pages.Evergreen.ItemDetails.CustomFields;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
@@ -110,7 +111,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var page = _driver.NowAt<BaseDashboardPage>();
             var expectedOptions = table.Rows.SelectMany(row => row.Values).ToList();
             var actualOptions = page.GetAllAutocompleteOptions(placeholder);
-            
+
             Verify.AreEqual(expectedOptions, actualOptions, $"Value for '{placeholder}' are different");
         }
 
@@ -120,7 +121,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var page = _driver.NowAt<BaseDashboardPage>();
             var actualOptions = page.GetAllAutocompleteOptions(placeholder);
 
-            Utils.Verify.That(actualOptions,
+            Verify.That(actualOptions,
                 Is.SupersetOf(table.Rows.Select(x => x.Values).Select(x => x.FirstOrDefault())),
                 "Some options are missing!");
         }
@@ -150,7 +151,26 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             page.PopulateNamedTextbox(placeholder, content);
-            Utils.Verify.IsFalse(page.AutocompleteDropdown.Displayed(), $"{content} text is displayed in the {placeholder} autocomplete");
+            Verify.IsFalse(page.AutocompleteDropdown.Displayed(), $"{content} text is displayed in the {placeholder} autocomplete");
+        }
+
+        [Then(@"only below options are selected in the '(.*)' autocomplete")]
+        public void ThenOnlyBelowOptionsAreSelectedInTheAutocomplete(string placeholder, Table table)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var textbox = page.GetNamedTextbox(placeholder);
+            //Expand if more than 3 items are selected
+            if (_driver.IsElementInElementDisplayed(textbox, By.XPath(page.ExpandNamedTextboxSelector),
+                WebDriverExtensions.WaitTime.Short))
+            {
+                textbox.FindElement(By.XPath(page.ExpandNamedTextboxSelector)).Click();
+            }
+
+            var selectedOptions = textbox.FindElements(By.XPath(page.SelectedValuesForNamedTextboxSelector));
+
+            Verify.AreEqual(table.Rows.Select(x => x.Values).Select(x => x.FirstOrDefault()),
+                selectedOptions.Select(x => x.Text),
+                $"Incorrect values are selected in the '{placeholder}' autocomplete");
         }
 
         private void CheckAutocompletAndTextboxText(string placeholder, string expectedText)
@@ -227,34 +247,25 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.BodyContainer.Click();
             _driver.MouseHover(button);
             var toolTipText = _driver.GetTooltipText();
-            Utils.Verify.AreEqual(text, toolTipText, $"Incorrect tooltip for Add button in the {fieldName} textbox");
+            Verify.AreEqual(text, toolTipText, $"Incorrect tooltip for Add button in the {fieldName} textbox");
         }
 
         [Then(@"Add button for '(.*)' textbox is disabled")]
         public void ThenAddButtonForTextboxIsDisabled(string fieldName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            Utils.Verify.IsTrue(Convert.ToBoolean(page.GetInputAddButton(fieldName).Disabled()), $"Add button for {fieldName} textbox is active");
+            Verify.IsTrue(Convert.ToBoolean(page.GetInputAddButton(fieldName).Disabled()), $"Add button for {fieldName} textbox is active");
         }
 
         #endregion
 
         #region Dropdown
 
-        [Then(@"'(.*)' error message is displayed for '(.*)' dropdown")]
-        public void ThenErrorMessageIsDisplayedForDropdown(string errorMessage, string placeholder)
+        [When(@"User clicks '(.*)' dropdown")]
+        public void WhenUserClicksDropdown(string dropdownName)
         {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            page.BodyContainer.Click();
-
-            Verify.AreEqual(errorMessage, page.GetNamedDropdownErrorMessage(placeholder),
-                $"Incorrect error message is displayed in the '{placeholder}' field");
-
-            Verify.AreEqual("rgba(242, 88, 49, 1)", page.GetNamedDropdownErrorMessageElement(placeholder).GetCssValue("color"),
-                $"Incorrect error message color for '{placeholder}' field");
-
-            Verify.AreEqual("rgba(242, 88, 49, 1)", page.GetNamedDropdownErrorMessageExclamationIcon(placeholder).GetCssValue("color"),
-                $"Incorrect error message color for '{placeholder}' field exclamation icon");
+            var dropdown = _driver.NowAt<BaseDashboardPage>();
+            dropdown.GetDropdownByName(dropdownName).Click();
         }
 
         [When(@"User selects '(.*)' in the '(.*)' dropdown")]
@@ -289,16 +300,10 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         [Then(@"'(.*)' value is displayed in the '(.*)' dropdown")]
         public void ThenValueIsDisplayedInTheDropdown(string value, string dropdownName)
         {
-            //TODO why Capacity SlotsPage used and BaseGrid
-            var page = _driver.NowAt<Capacity_SlotsPage>();
             var dropdown = _driver.NowAt<BaseGridPage>();
-            if (page.ExpandItemsButton.Displayed())
-            {
-                page.ExpandItemsButton.Click();
-                Verify.IsTrue(dropdown.GetDropdownByValueByName(value, dropdownName).Displayed(), $"{value} is not displayed in the {dropdownName}");
-            }
-            else
-                Verify.IsTrue(dropdown.GetDropdownByValueByName(value, dropdownName).Displayed(), $"{value} is not displayed in the {dropdownName}");
+
+            Verify.IsTrue(dropdown.GetDropdownByValueByName(value, dropdownName).Displayed(),
+                $"{value} is not displayed in the {dropdownName}");
         }
 
         [Then(@"'(.*)' dropdown is displayed")]
@@ -322,16 +327,31 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         //Contains
         [Then(@"User sees that '(.*)' dropdown contains following options:")]
-        public void ThenUserSeesThatDropdownContainsFollowingOptions(string dropDownName,
-            Table options)
+        public void ThenUserSeesThatDropdownContainsFollowingOptions(string dropDownName, Table options)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             page.GetDropdownByName(dropDownName).Click();
             List<string> actualOptions = page.GetDropdownValues();
             page.BodyContainer.Click();
-            Utils.Verify.That(actualOptions,
+            Verify.That(actualOptions,
                 Is.SupersetOf(options.Rows.Select(x => x.Values).Select(x => x.FirstOrDefault())),
                 "Some options are missing!");
+        }
+
+        [Then(@"'(.*)' error message is displayed for '(.*)' dropdown")]
+        public void ThenErrorMessageIsDisplayedForDropdown(string errorMessage, string placeholder)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.BodyContainer.Click();
+
+            Verify.AreEqual(errorMessage, page.GetNamedDropdownErrorMessage(placeholder),
+                $"Incorrect error message is displayed in the '{placeholder}' field");
+
+            Verify.AreEqual("rgba(242, 88, 49, 1)", page.GetNamedDropdownErrorMessageElement(placeholder).GetCssValue("color"),
+                $"Incorrect error message color for '{placeholder}' field");
+
+            Verify.AreEqual("rgba(242, 88, 49, 1)", page.GetNamedDropdownErrorMessageExclamationIcon(placeholder).GetCssValue("color"),
+                $"Incorrect error message color for '{placeholder}' field exclamation icon");
         }
 
         #endregion
