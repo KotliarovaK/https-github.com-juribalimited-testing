@@ -53,8 +53,8 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	When User navigate to the bottom of the Action panel
 	And User clicks 'UPDATE' button 
 	Then the amber message is displayed correctly
-	And User clicks "UPDATE" button on message box
-	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
+	When User clicks 'UPDATE' button
+	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	And Success message is hidden after five seconds
 	When User refreshes agGrid
 	Then "<DefaultValue>" content is displayed in "Windows7Mi: User Acceptance Test \ Perform User Acceptance Test" column
@@ -73,8 +73,8 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User navigate to the bottom of the Action panel
 	And User clicks 'UPDATE' button 
 	And User navigate to the top of the Action panel
-	Then User clicks "UPDATE" button on message box
-	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
+	When User clicks 'UPDATE' button
+	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 
 Examples: 
 	| Name    | RowName    | NewTeam  | DefaultTeam         | DefaultValue   |
@@ -131,8 +131,8 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User selects "No change" Update Owner on Action panel
 	And User clicks 'UPDATE' button 
 	Then the amber message is displayed correctly
-	And User clicks "UPDATE" button on message box
-	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
+	When User clicks 'UPDATE' button
+	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	And Success message is hidden after five seconds
 	When User refreshes agGrid
 	Then "<NewValue>" content is displayed in "Windows7Mi: User Acceptance Test \ Perform User Acceptance Test" column
@@ -152,8 +152,8 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User navigate to the bottom of the Action panel
 	And User clicks 'UPDATE' button 
 	And User navigate to the top of the Action panel
-	Then User clicks "UPDATE" button on message box
-	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
+	When User clicks 'UPDATE' button
+	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	When User refreshes agGrid
 	Then "<DefaultValue>" content is displayed in "Windows7Mi: User Acceptance Test \ Perform User Acceptance Test" column
 
@@ -210,8 +210,8 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly
 	And User navigate to the bottom of the Action panel
 	And User clicks 'UPDATE' button 
 	Then the amber message is displayed correctly
-	And User clicks "UPDATE" button on message box
-	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
+	When User clicks 'UPDATE' button
+	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	Then Success message is hidden after five seconds
 	When User refreshes agGrid
 	Then "Complete" content is displayed in "Windows7Mi: User Acceptance Test \ Perform User Acceptance Test" column
@@ -230,8 +230,8 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly
 	And User selects "No change" Update Owner on Action panel
 	And User clicks 'UPDATE' button 
 	Then the amber message is displayed correctly
-	And User clicks "UPDATE" button on message box
-	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
+	When User clicks 'UPDATE' button
+	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	When User refreshes agGrid
 	Then "Failed" content is displayed in "Windows7Mi: User Acceptance Test \ Perform User Acceptance Test" column
 
@@ -280,8 +280,8 @@ Scenario: EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly
 	And User selects "Remove owner and team" Update Owner on Action panel
 	And User clicks 'UPDATE' button 
 	Then the amber message is displayed correctly
-	And User clicks "UPDATE" button on message box
-	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
+	When User clicks 'UPDATE' button
+	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	And Success message is hidden after five seconds
 	When User refreshes agGrid
 	Then "Failed" content is displayed in "Windows7Mi: User Acceptance Test \ Perform User Acceptance Test" column
@@ -298,7 +298,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly
 	And User selects "No change" Update Owner on Action panel
 	And User clicks 'UPDATE' button 
 	Then the amber message is displayed correctly
-	And User clicks "UPDATE" button on message box
-	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
+	When User clicks 'UPDATE' button
+	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	When User refreshes agGrid
 	Then "Failed" content is displayed in "Windows7Mi: User Acceptance Test \ Perform User Acceptance Test" column

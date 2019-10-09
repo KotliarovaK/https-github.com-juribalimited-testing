@@ -110,8 +110,8 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatUpdateAndCancelButtonsAreEnable
 	And "CANCEL" Action button is active
 	When User clicks 'UPDATE' button 
 	Then the amber message is displayed correctly
-	And User clicks "CANCEL" button on message box
-	And the amber message is not displayed
+	When User clicks 'CANCEL' button
+	Then the amber message is not displayed
 	And "UPDATE" Action button is active
 	And "CANCEL" Action button is active
 	When User clicks the Logout button
