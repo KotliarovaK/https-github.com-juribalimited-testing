@@ -507,8 +507,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Verify.AreNotEqual(buttonState, "true", $"{buttonName} Button state is incorrect");
         }
 
-        [Then(@"""(.*)"" Action button have tooltip with ""(.*)"" text")]
-        public void ThenActionButtonHaveTooltipWithText(string buttonName, string text)
+        [Then(@"'(.*)' Action button has tooltip with '(.*)' text")]
+        public void ThenActionButtonHasTooltipWithText(string buttonName, string text)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             var button = page.GetButtonByName(buttonName);

@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @AllLists @EvergreenJnr_ListFromCSV @ListsFromCSV @DAS13221 @DAS13222 @DAS13223 @DAS13224 @DAS16585 @Not_Ready
+@Evergreen @AllLists @EvergreenJnr_ListFromCSV @ListsFromCSV @DAS13221 @DAS13222 @DAS13223 @DAS13224 @DAS16585 @DAS18336 @Not_Ready
 #Waiting for 'List from CSV' on the automation
 Scenario Outline: EvergreenJnr_AllLists_CheckCreatingStaticListFromCSVFirstPage
 	When User clicks '<ListName>' on the left-hand menu
@@ -23,7 +23,7 @@ Examples:
 	| Applications | All Applications | Import Applications from CSV | Application key |
 	| Mailboxes    | All Mailboxes    | Import Mailboxes from CSV    | Mailbox key     |
 
-@Evergreen @EvergreenJnr_ListFromCSV @ListsFromCSV @DAS16616 @DAS16585 @Not_Ready
+@Evergreen @EvergreenJnr_ListFromCSV @ListsFromCSV @DAS16616 @DAS16585 @DAS18336 @Not_Ready
 #Waiting for 'List from CSV' on the automation
 Scenario: EvergreenJnr_AllLists_CheckCancelButtonFunctionalityOnCreateListFromCSV
 	When User clicks 'Devices' on the left-hand menu

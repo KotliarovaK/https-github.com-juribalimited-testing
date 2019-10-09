@@ -90,6 +90,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListFromCSV
         [NUnit.Framework.CategoryAttribute("DAS13223")]
         [NUnit.Framework.CategoryAttribute("DAS13224")]
         [NUnit.Framework.CategoryAttribute("DAS16585")]
+        [NUnit.Framework.CategoryAttribute("DAS18336")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
         [NUnit.Framework.TestCaseAttribute("Users", "All Users", "Import Users from CSV", "User key", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "All Applications", "Import Applications from CSV", "Application key", null)]
@@ -132,6 +133,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListFromCSV
                     "DAS13223",
                     "DAS13224",
                     "DAS16585",
+                    "DAS18336",
                     "Not_Ready"};
             if ((exampleTags != null))
             {
@@ -172,6 +174,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("ListsFromCSV")]
         [NUnit.Framework.CategoryAttribute("DAS16616")]
         [NUnit.Framework.CategoryAttribute("DAS16585")]
+        [NUnit.Framework.CategoryAttribute("DAS18336")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AllLists_CheckCancelButtonFunctionalityOnCreateListFromCSV()
         {
@@ -207,6 +210,7 @@ this.FeatureBackground();
                         "ListsFromCSV",
                         "DAS16616",
                         "DAS16585",
+                        "DAS18336",
                         "Not_Ready"});
 #line 28
 this.ScenarioInitialize(scenarioInfo);
