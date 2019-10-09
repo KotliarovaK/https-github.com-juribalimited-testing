@@ -730,7 +730,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeviceLisFiltertHasAppropriateAutomati
 	And User select "Equals" Operator value
 	When User selects current date checkbox from Filter panel
 	And User clicks Save filter button
-	Then "5,180" rows are displayed in the agGrid
+	Then "5,179" rows are displayed in the agGrid
 	#check log
 	When User clicks 'Admin' on the left-hand menu
 	And User navigates to the 'Automations' left menu item
@@ -740,4 +740,4 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeviceLisFiltertHasAppropriateAutomati
 	And User selects "Select All" checkbox from String Filter with item list on the Admin page
 	And User clicks String Filter button for "Action" column on the Admin page
 	And User selects "15949_Action_1" checkbox from String Filter with item list on the Admin page
-	Then "5180" content is displayed in "Objects" column
+	Then "5179" content is displayed in "Objects" column
