@@ -221,3 +221,20 @@ Scenario: EvergreenJnr_UsersList_CheckThaWorkflowTextAndValueArentDisplayedAtAll
 	| Overall Readiness |
 	| App Readiness     |
 	| Task Readiness    |
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @16959
+Scenario: EvergreenJnr_Devices_CheckThatProjectsSwitcherDoesNotDuplicateItem
+	When User navigates to the 'Device' details page for '00BDM1JUR8IF419' item
+	Then Details page for "00BDM1JUR8IF419" item is displayed to the user
+	Then Project Switcher in the Top bar on Item details page is closed
+	
+	When User clicks by Project Switcher in the Top bar on Item details page
+	Then '*Project K-Computer Scheduled Project' project is displayed first in Project Switcher
+	And 'Evergreen' project is not displayed in proposal list of in Project Switcher
+	
+	When User clicks refresh button in the browser
+	And User switches to the "Havoc (Big Data)" project in the Top bar on Item details page
+	Then Project Switcher in the Top bar on Item details page is closed
+	
+	When User clicks by Project Switcher in the Top bar on Item details page
+	Then 'Evergreen' project is displayed first in Project Switcher

@@ -25,9 +25,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='topbar-select']")]
         public IWebElement ProjectSwitcherDropdownTopBar { get; set; }
-
+        
         [FindsBy(How = How.XPath, Using = ProjectOnSwitcherPanel)]
         public IList<IWebElement> ProjectsOnSwitcherPanel { get; set; }
+       
 
         public override List<By> GetPageIdentitySelectors()
         {
