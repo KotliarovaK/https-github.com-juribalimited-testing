@@ -28,15 +28,17 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRelinkOptionIsWorkedCorrectlyForProj
 	When User clicks 'RELINK' button in Dialog Pop-up
 	Then Warning message with "This object will be relinked to the selected Evergreen object in this project" text is displayed on the Project Details Page
 	When User clicks 'RELINK' button in Dialog Pop-up
-	Then Success message is displayed and contains "Device successfully relinked" text
-	And Details page for "QSFCLB19N5524S" item is displayed to the user
+	#Andrew will check the delay time for message
+	#Then Success message is displayed and contains "Device successfully relinked" text
+	Then Details page for "QSFCLB19N5524S" item is displayed to the user
 	And User verifies data in the fields on details page
 	| Field        | Data           |
 	| Name         | 06RIV0KXJMHJ1K |
 	| Device Owner | Tonia T. Mason |
 	When User clicks 'RESYNC' button 
 	And User clicks 'RESYNC' button in Dialog Pop-up
-	Then Success message is displayed and contains "The Evergreen owner of this Device has been queued for onboarding into this project, the change in ownership for this Device will show once this is complete" text
+	#Andrew will check the delay time for message
+	#Then Success message is displayed and contains "The Evergreen owner of this Device has been queued for onboarding into this project, the change in ownership for this Device will show once this is complete" text
 	#waiting for the RESYNC process to be completed
 	When User waits for three seconds
 	Then User verifies data in the fields on details page

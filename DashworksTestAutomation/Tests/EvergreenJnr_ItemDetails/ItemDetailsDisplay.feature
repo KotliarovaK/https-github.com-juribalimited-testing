@@ -38,7 +38,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatCopyCellWorksInItemDetails
 Examples:
 	| PageName    | SearchTerm                                              | MainTabName      | SubTabName        | SelectedColumn | TargetCell    |
 	| Device      | 30BGMTLBM9PTW5                                          | Applications     | Evergreen Summary | Application    | Access 95     |
-	| User        | svc_dashworks                                           | Active Directory | Groups            | Group          | Domain Admins |
+	| User        | svc_dashworks                                           | Active Directory | Groups            | Group          | Domain Users  |
 	| Application | Microsoft Office Visio 2000 Solutions - Custom Patterns | MSI              | MSI Files         | File Name      | setup_x86.msi |
 	| Mailbox     | aaron.u.flores@dwlabs.local                             | Users            | Users             | Username       | floresau      |
 
@@ -151,14 +151,6 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatUserDetailsIsSimilarOnGridAndDetail
 	| Domain             | US-E                                   |
 	| Display Name       | Nicole P. Braun                        |
 	| Distinguished Name | QLL295118.Users.Jersey City.US-E.local |
-
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17373
-Scenario: EvergreenJnr_ApplicationsList_CheckThatLoadingIndicatorAppearsInTheSamePlace
-	When User navigates to the 'Application' details page for 'Adobe Acrobat Update' item
-	Then Details page for "Adobe Acrobat Update" item is displayed to the user
-	When User switches to the "Devices Evergreen Capacity Project" project in the Top bar on Item details page
-	And User navigates to the 'Details' left menu item
-	Then Loading indicator appears in the same place when switching between main-menu
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17813
 Scenario: EvergreenJnr_UsersList_CheckThatToolTipForMailboxPermissionOnMailboxPermissionsTabOnUserObjectPageIsDisplayedCorrectly

@@ -66,19 +66,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             _driver.ExecuteAction(() => detailsPage.GetNavigationLinkByName(linkName).Click());
         }
 
-        [Then(@"Loading indicator appears in the same place when switching between main-menu")]
-        public void LoadingIndicatorAppearsInTheSamePlaceWhenSwitchingBetweenMainMenu()
-        {
-            List<Point> loader = new List<Point>();
-
-            var detailsPage = _driver.NowAt<BaseNavigationElements>();
-            _driver.WaitForDataLoading();
-
-            loader = detailsPage.LoadingIndicatorCoordinates();
-
-            Utils.Verify.That(loader.First(), Is.EqualTo(loader.Last()), "Wrong point loading position");
-        }
-
         //TODO rename to something generic
         [When(@"User navigates to the ""(.*)"" sub-menu on the Details page")]
         public void WhenUserNavigatesToTheSub_MenuOnTheDetailsPage(string subMenuName)
