@@ -21,7 +21,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatNoErrorDisplayedWhenBulkUpdateMai
 	| 003F5D8E1A844B1FAA5@bclabs.local |
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update ring' in the 'Bulk Update Type' dropdown
-	And User selects "Project" Project or Evergreen on Action panel
+	And User selects 'Project' in the 'Project or Evergreen' dropdown
 	And User selects 'Mailbox Evergreen Capacity Project' option from 'Project' autocomplete
 	And User selects "Unassigned" Ring on Action panel
 	And User clicks 'UPDATE' button 
@@ -41,8 +41,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnUserboxListForRingBulkUpdateOptionsO
 	| $231000-3AC04R8AR431 |
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update ring' in the 'Bulk Update Type' dropdown
-	And User selects "Project" Project or Evergreen on Action panel
-	Then following values are displayed in "Project" drop-down with searchfield on Action panel:
+	And User selects 'Project' in the 'Project or Evergreen' dropdown
+	Then 'Project' autocomplete contains following options:
 	| Options                                  |
 	| Barry's User Project                     |
 	| Migration Project Phase 2 (User Project) |
@@ -61,7 +61,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSortOrderForEvergreenBucketsInBulkUp
 	| 001BAQXT6JWFPI   |
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update bucket' in the 'Bulk Update Type' dropdown
-	And User selects "Evergreen" Project or Evergreen on Action panel
+	And User selects 'Evergreen' in the 'Project or Evergreen' dropdown
 	Then 'Bucket' autocomplete options are sorted in the alphabetical order
 
 @Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS16822 @Do_Not_Run_With_Capacity @Do_Not_Run_With_CapacityUnits
@@ -75,7 +75,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSortOrderForEvergreenCapacityUnitsIn
 	| 001BAQXT6JWFPI   |
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
-	And User selects "Evergreen" Project or Evergreen on Action panel
+	And User selects 'Evergreen' in the 'Project or Evergreen' dropdown
 	Then 'Capacity Unit' autocomplete options are sorted in the alphabetical order
 
 @Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS16844
@@ -90,7 +90,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatBulkUpdateOfArchivedItemsWorks
 	| Empty            |
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
-	And User selects "Evergreen" Project or Evergreen on Action panel
+	And User selects 'Evergreen' in the 'Project or Evergreen' dropdown
 	And User selects "Evergreen Capacity Unit 1" Capacity Unit on Action panel
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel

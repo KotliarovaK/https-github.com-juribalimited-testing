@@ -128,7 +128,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatActionsPanelIsHiddenAfterCancellingProc
 	When User select all rows
 	And User selects 'Create static list' in the 'Action' dropdown
 	And User types "StaticList7841" static list name
-	And User clicks Cancel button on the Actions panel
+	When User clicks 'CANCEL' button
 	Then Checkboxes are not displayed
 	And Actions panel is not displayed to the user
 	And Save to New Custom List element is displayed

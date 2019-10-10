@@ -521,8 +521,6 @@ this.FeatureBackground();
  testRunner.And("User selects \"Add to another team\" in the Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 137
  testRunner.And("User clicks \'CONTINUE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 138
- testRunner.And("User type \"M\" search criteria in Select a new Team field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "Options"});
@@ -532,8 +530,9 @@ this.FeatureBackground();
                         "Migration Phase 3 Team"});
             table7.AddRow(new string[] {
                         "My Team"});
-#line 139
- testRunner.Then("following Team are displayed in Select a new Team drop-down:", ((string)(null)), table7, "Then ");
+#line 138
+ testRunner.Then("only below options are displayed in \'Select a new team\' autocomplete after search" +
+                    " by \'M\' text", ((string)(null)), table7, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -13,15 +13,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
         private const string RowsSelectedCountSelector = ".//div[@class='actions-container-row-select']";
         private const string ListsDropdownSelector = ".//mat-select[@aria-label='Static Lists']";
 
-        [FindsBy(How = How.XPath, Using = ListsDropdownSelector)]
-        public IWebElement ListsDropdown { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//div[@class='actions-container']")]
         public IWebElement ActionsPanel { get; set; }
-
-        [FindsBy(How = How.XPath, Using =
-                ".//button[@class='btn btn-default mat-icon-button']/span/i[@class='material-icons mat-static-list']")]
-        public IWebElement InactiveActionsButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[text()='Select at least one row']")]
         public IWebElement ActionsContainerMessage { get; set; }
@@ -31,12 +24,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = ".//input[@placeholder='List Name']")]
         public IWebElement ListNameTextBox { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//span[text()='CREATE']//ancestor::button")]
-        public IWebElement CreateButton { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//button[@mattooltip='Cancel']")]
-        public IWebElement CancelButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='styleSelectDropdown']")]
         public IWebElement DropdownBox { get; set; }
@@ -68,11 +55,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Driver.FindElement(By.XPath(listNameSelector)).Click();
         }
 
-        public IList<IWebElement> GetDropdownOptions()
-        {
-            return Driver.FindElements(By.XPath(".//mat-option"));
-        }
-
         public string GetSelectedRowsCount()
         {
             Driver.WaitForElementToBeDisplayed(By.XPath(RowsSelectedCountSelector));
@@ -84,20 +66,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
             var dropDown = By.XPath($"//*[contains(text(),'{name}')]/parent::span//preceding-sibling::mat-select");
             Driver.WaitForElementToBeDisplayed(dropDown);
             return Driver.FindElement(dropDown);
-        }
-
-        public IWebElement GetFieldOnActionPanelByName(string name)
-        {
-            var selector = By.XPath($"//div//input[@placeholder='{name}']");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
-        public IWebElement GetSearchDropDownOnActionPanelByName(string name)
-        {
-            var selector = By.XPath($"//*[contains(text(), '{name}')]/ancestor::div[@class='mat-form-field-infix']/textarea");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
         }
     }
 }

@@ -768,26 +768,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             teamElement.AddUsersToAnotherTeam(teamName);
         }
 
-        [When(@"User type ""(.*)"" search criteria in Select a new Team field")]
-        public void WhenUserTypeSearchCriteriaInSelectANewTeamField(string text)
-        {
-            var teamPage = _driver.NowAt<AddToAnotherTeamPage>();
-            teamPage.TeamSelectBox.Click();
-            teamPage.TeamSelectBox.Clear();
-            teamPage.TeamSelectBox.SendKeys(text);
-        }
-
-        [Then(@"following Team are displayed in Select a new Team drop-down:")]
-        public void ThenFollowingTeamAreDisplayedInSelectANewTeamDrop_Down(Table table)
-        {
-            var teamPage = _driver.NowAt<BaseDashboardPage>();
-            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            var actualList = teamPage.OptionListOnActionsPanel.Select(value => value.Text).ToList();
-            Utils.Verify.AreEqual(expectedList, actualList, "Teams in Select a new Team drop-down are different");
-            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            page.BodyContainer.Click();
-        }
-
         [Then(@"Change Team page is displayed to the user")]
         public void ThenChangeTeamPageIsDisplayedToTheUser()
         {
