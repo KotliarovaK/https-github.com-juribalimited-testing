@@ -52,9 +52,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedTeamUsingTh
 	When User clicks "Teams" navigation link on the Admin page
 	When User enters "99770" text in the Search field for "Team" column
 	And User selects all rows on the grid
-	When User clicks on Actions button
-	And User selects "Delete" in the Actions
-	And User clicks Delete button 
+	And User selects 'Delete' in the 'Actions' dropdown
+	When User clicks 'DELETE' button
 	Then Warning message with "You cannot delete the default team" text is displayed on the Admin page
 	When User clicks Reset Filters button on the Admin page
 	When User enters "My Team" text in the Search field for "Team" column
@@ -75,6 +74,5 @@ Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedTeamUsingTh
 	Then Error message with "A team already exists with this name" text is displayed
 	When User enters "99770" text in the Search field for "Team" column
 	And User selects all rows on the grid
-	And User clicks on Actions button
-	And User selects "Delete" in the Actions
-	And User clicks Delete button 
+	And User selects 'Delete' in the 'Actions' dropdown
+	When User clicks 'DELETE' button
