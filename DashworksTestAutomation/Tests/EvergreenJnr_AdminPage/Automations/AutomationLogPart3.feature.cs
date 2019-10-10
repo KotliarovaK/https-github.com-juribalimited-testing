@@ -585,11 +585,11 @@ this.FeatureBackground();
 #line 154
  testRunner.Then("\"SAVE AND CREATE ANOTHER\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 155
- testRunner.Then("\"CREATE\" Action button have tooltip with \"Select at least one value to change\" te" +
-                    "xt", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'CREATE\' Action button has tooltip with \'Select at least one value to change\' tex" +
+                    "t", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 156
- testRunner.Then("\"SAVE AND CREATE ANOTHER\" Action button have tooltip with \"Select at least one va" +
-                    "lue to change\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'SAVE AND CREATE ANOTHER\' Action button has tooltip with \'Select at least one val" +
+                    "ue to change\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -29,8 +29,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCreatedCorrectly
 	When User select "Capacity Unit" rows in the grid
 	| SelectedRowsName            |
 	| NotDefaultCapacityUnit13720 |
-	And User clicks on Actions button
-	And User selects "Delete" in the Actions
+	And User selects 'Delete' in the 'Actions' dropdown
 	And User clicks Delete button
 	Then Warning message with "This unit will be permanently deleted and any objects within it reassigned to the default unit" text is displayed on the Admin page
 	And Delete and Cancel buttons are available in the warning message
@@ -59,8 +58,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitsCreatedCorrectly
 	And User select "Capacity Unit" rows in the grid
 	| SelectedRowsName         |
 	| DefaultCapacityUnit13720 |
-	And User clicks on Actions button
-	And User selects "Delete" in the Actions
+	And User selects 'Delete' in the 'Actions' dropdown
 	And User clicks Delete button
 	Then Warning message with "You cannot delete the default unit" text is displayed on the Admin page
 	When User close message on the Admin page

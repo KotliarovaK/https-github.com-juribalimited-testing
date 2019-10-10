@@ -221,7 +221,7 @@
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Automations\CreateAutomationsPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Automations\EditActionPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Automations\CreateActionsPage.cs" />
-    <Compile Include="Pages\Evergreen\AdminDetailsPages\BaseHeaderElement.cs" />
+    <Compile Include="Pages\Evergreen\Base\BaseHeaderElement.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateReadinessPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\RingsPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\CogMenuElements.cs" />
@@ -245,14 +245,12 @@
     <Compile Include="Pages\Evergreen\AdminDetailsPages\AdminLeftHandMenu.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\BaseGridPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\BucketsPage.cs" />
-    <Compile Include="Pages\Evergreen\AdminDetailsPages\AddToAnotherTeamPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Capacity\Capacity_CapacityUnitsPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Capacity\Capacity_DetailsPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Capacity\Capacity_OverrideDatesPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Capacity\Capacity_SlotsPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Capacity\Capacity_UnitsPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Capacity\CreateCapacitySlotPage.cs" />
-    <Compile Include="Pages\Evergreen\AdminDetailsPages\ChangeTeamPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\BaseFormPagePage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateCapacityUnitPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\ProjectDetailsPage.cs" />

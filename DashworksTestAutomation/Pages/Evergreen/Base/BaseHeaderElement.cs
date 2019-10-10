@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Utils;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 
-namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
+namespace DashworksTestAutomation.Pages.Evergreen.Base
 {
-    //TODO Rename to Element instead of Page
     //!!!Element with header and breadcrumbs under grid!!!
     public class BaseHeaderElement : SeleniumBasePage
     {

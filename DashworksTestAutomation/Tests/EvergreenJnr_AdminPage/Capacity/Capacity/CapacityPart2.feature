@@ -55,8 +55,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreated
 	When User select "Capacity Unit" rows in the grid
 	| SelectedRowsName |
 	| Unassigned       |
-	And User clicks on Actions button
-	And User clicks Delete button in Actions
+	And User selects 'Delete' in the 'Actions' dropdown
 	And User clicks Delete button
 	Then Warning message with "You cannot delete the default unit" text is displayed on the Admin page
 	When User close message on the Admin page

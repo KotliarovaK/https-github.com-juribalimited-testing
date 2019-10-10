@@ -28,8 +28,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeletin
 	When User navigates to the 'Buckets' left menu item
 	And User enters "Group IB Team" text in the Search field for "Bucket" column
 	And User selects all rows on the grid
-	And User clicks on Actions button
-	And User selects "Delete" in the Actions
-	And User clicks Delete button 
+	And User selects 'Delete' in the 'Actions' dropdown
+	When User clicks 'DELETE' button
 	Then Warning message with "You cannot delete the default bucket" text is displayed on the Admin page
 	And There are no errors in the browser console
