@@ -135,8 +135,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSelectANewTeamDropdownAreWorkingCorre
 	And User clicks on Actions button
 	And User selects "Add to another team" in the Actions
 	And User clicks 'CONTINUE' button 
-	And User type "M" search criteria in Select a new Team field
-	Then following Team are displayed in Select a new Team drop-down:
+	Then only below options are displayed in 'Select a new team' autocomplete after search by 'M' text
 	| Options                |
 	| Migration Phase 2      |
 	| Migration Phase 3 Team |

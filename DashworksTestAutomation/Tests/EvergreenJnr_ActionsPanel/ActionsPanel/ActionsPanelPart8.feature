@@ -109,7 +109,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatBulkUpdateOperationHasCorrectOptionsFo
 	| 00A5B910A1004CF5AC4 |
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
-	And User selects "Project" Project or Evergreen on Action panel
+	And User selects 'Project' in the 'Project or Evergreen' dropdown
 	And User selects 'Email Migration' option from 'Project' autocomplete
 	And User selects "Unassigned" Capacity Unit on Action panel
 	Then following Move Mailboxes are displayed in drop-down:

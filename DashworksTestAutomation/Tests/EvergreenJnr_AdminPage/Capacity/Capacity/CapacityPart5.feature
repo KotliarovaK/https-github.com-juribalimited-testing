@@ -64,7 +64,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedApplicationsAreDisplayedCapac
 	| 7-Zip 9.20 (x64 edition) |
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
-	And User selects "Project" Project or Evergreen on Action panel
+	And User selects 'Project' in the 'Project or Evergreen' dropdown
 	And User selects 'Email Migration' option from 'Project' autocomplete
 	And User selects '1Test' option from 'Capacity Unit' autocomplete
 	And User clicks 'UPDATE' button 
