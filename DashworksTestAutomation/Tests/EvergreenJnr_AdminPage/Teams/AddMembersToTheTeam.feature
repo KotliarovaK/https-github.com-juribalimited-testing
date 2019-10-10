@@ -32,9 +32,8 @@ Scenario: EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam
 	Then 'TRUE' content is displayed in the 'Default' column
 	When User selects all rows on the grid
 	Then Actions dropdown is displayed correctly
-	When User clicks on Actions button
-	And User selects "Delete" in the Actions
-	And User clicks Delete button 
+	When User selects 'Delete' in the 'Actions' dropdown
+	When User clicks 'DELETE' button
 	Then Warning message with "You cannot delete the default team" text is displayed on the Admin page
 	When User clicks 'CREATE TEAM' button 
 	Then Page with 'Create Team' subheader is displayed to user
@@ -103,10 +102,9 @@ Scenario: EvergreenJnr_AdminPage_AddingMembersToTheTeam
 	Then Success message is displayed and contains "The selected user has been removed" text
 	When User enters "automation_admin2" text in the Search field for "Username" column
 	And User selects all rows on the grid
-	And User clicks on Actions button
-	And User selects "Add to another team" in the Actions
+	And User selects 'Add to another team' in the 'Actions' dropdown
 	And User clicks 'CONTINUE' button 
-	And User selects "Team 1" team to add
+	When User selects 'Team 1' option from 'Select a new team' autocomplete without search
 	And User clicks 'ADD USERS' button 
 	Then Success message is displayed and contains "The selected user was added to team Team 1" text
 
@@ -132,8 +130,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSelectANewTeamDropdownAreWorkingCorre
 	Then Success message is displayed and contains "The selected users have been added" text
 	When User enters "admin1" text in the Search field for "Username" column
 	And User selects all rows on the grid
-	And User clicks on Actions button
-	And User selects "Add to another team" in the Actions
+	And User selects 'Add to another team' in the 'Actions' dropdown
 	And User clicks 'CONTINUE' button 
 	Then only below options are displayed in 'Select a new team' autocomplete after search by 'M' text
 	| Options                |

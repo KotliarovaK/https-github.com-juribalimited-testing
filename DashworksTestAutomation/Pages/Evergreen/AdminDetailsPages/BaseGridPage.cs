@@ -298,19 +298,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             Driver.FindElement(By.XPath(columnSettingsSelector)).Click();
         }
 
-        //TODO should be moved because this is something on Action panel
-        public void SelectActions(string actionName)
-        {
-            //Nothing to do if action selectBox disabled
-            if (ActionsSelectBox.GetAttribute("class").Contains("disabled"))
-                return;
-
-            var selectedActionName =
-                $"//span[text()='{actionName}']/ancestor::mat-option";
-            Driver.WaitForElementToBeDisplayed(By.XPath(selectedActionName));
-            Driver.FindElement(By.XPath(selectedActionName)).Click();
-        }
-
         public IWebElement QueueOnboardedObjectDisplayed(string objectName)
         {
             var selector = By.XPath($"//span[text()='{objectName}']");

@@ -17,9 +17,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatUserCantRemoveDefaultTeamOnAdminPage
 	Then Page with 'Teams' header is displayed to user
 	When User enters "DASTeam13000" text in the Search field for "Team" column
 	And User selects all rows on the grid
-	And User clicks on Actions button
-	And User selects "Delete" in the Actions
-	And User clicks Delete button
+	And User selects 'Delete' in the 'Actions' dropdown
+	When User clicks 'DELETE' button
 	Then Warning message with "You cannot delete the default team" text is displayed on the Admin page
 	When User close message on the Admin page
 	When User creates new Team via api
@@ -28,8 +27,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatUserCantRemoveDefaultTeamOnAdminPage
 	And User clicks Refresh button on the Admin page
 	And User enters "DASTeam13000" text in the Search field for "Team" column
 	And User selects all rows on the grid
-	And User clicks on Actions button
-	And User selects "Delete" in the Actions
-	And User clicks Delete button
+	And User selects 'Delete' in the 'Actions' dropdown
+	When User clicks 'DELETE' button
 	And User clicks Delete button in the warning message
 	Then Success message is displayed and contains "The selected team has been deleted, and their buckets reassigned" text

@@ -33,8 +33,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSpellingIsCorrectInCapacityUnitsDelet
 	When User select "Capacity Unit" rows in the grid
 	| SelectedRowsName          |
 	| Evergreen Capacity Unit 1 |
-	And User clicks on Actions button
-	And User selects "Delete" in the Actions
+	And User selects 'Delete' in the 'Actions' dropdown
 	And User clicks Delete button
 	Then Warning message with "This unit will be permanently deleted and any objects within it reassigned to the default unit" text is displayed on the Admin page
 	When User select "Capacity Unit" rows in the grid

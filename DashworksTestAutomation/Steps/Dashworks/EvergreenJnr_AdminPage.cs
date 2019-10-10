@@ -761,29 +761,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             teamElement.RemoveButtonInWarningMessage.Click();
         }
 
-        [When(@"User selects ""(.*)"" team to add")]
-        public void WhenUserSelectsTeamToAdd(string teamName)
-        {
-            var teamElement = _driver.NowAt<AddToAnotherTeamPage>();
-            teamElement.AddUsersToAnotherTeam(teamName);
-        }
-
-        [Then(@"Change Team page is displayed to the user")]
-        public void ThenChangeTeamPageIsDisplayedToTheUser()
-        {
-            var page = _driver.NowAt<ChangeTeamPage>();
-            Utils.Verify.IsTrue(page.PageTitle.Displayed(), "Change Team page is not displayed");
-        }
-
-        [When(@"User selects ""(.*)"" in the Team dropdown")]
-        public void WhenUserSelectsInTheTeamDropdown(string teamName)
-        {
-            var page = _driver.NowAt<ChangeTeamPage>();
-            page.SelectTeamDropdown.Click();
-            _driver.WaitForDataLoading();
-            page.SelectTeamToChange(teamName);
-        }
-
         #region Column Settings
 
         [When(@"User have opened Column Settings for ""(.*)"" column")]
@@ -899,13 +876,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var button = _driver.NowAt<ActionPanelPage>();
             _driver.WaitForElementToBeDisplayed(button.ActionsDropDown);
             button.ActionsDropDown.Click();
-        }
-
-        [When(@"User selects ""(.*)"" in the Actions")]
-        public void ThenUserSelectInTheActions(string actionName)
-        {
-            var action = _driver.NowAt<BaseGridPage>();
-            action.SelectActions(actionName);
         }
 
         [When(@"User selects all objects to the Project")]
