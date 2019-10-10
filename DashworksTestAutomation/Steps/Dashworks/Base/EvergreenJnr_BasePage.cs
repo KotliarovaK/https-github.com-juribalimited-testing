@@ -141,6 +141,21 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.IsFalse(page.AutocompleteDropdown.Displayed(), $"{content} text is displayed in the {placeholder} autocomplete");
         }
 
+        [Then(@"only below options are displayed in '(.*)' autocomplete after search by '(.*)' text")]
+        public void ThenOnlyBelowOptionsAreDisplayedInAutocompleteAfterSearchByText(string placeholder, string searchText, Table table)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.PopulateTextbox(placeholder, searchText);
+
+            var actualOptions = page.GetAllOptionsFromOpenedAutocomplete();
+
+            Verify.AreEqual(table.Rows.Select(x => x.Values).Select(x => x.FirstOrDefault()),
+                actualOptions,
+                $"Incorrect values are present in the '{placeholder}' autocomplete after search by '{searchText}' text");
+
+            page.BodyContainer.Click();
+        }
+
         [Then(@"only below options are selected in the '(.*)' autocomplete")]
         public void ThenOnlyBelowOptionsAreSelectedInTheAutocomplete(string placeholder, Table table)
         {
@@ -165,6 +180,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             page.AutocompleteSelect(placeholder, option);
+            _driver.WaitForDataLoadingInActionsPanel();
         }
 
         [When(@"User enters '(.*)' in the '(.*)' autocomplete field and selects '(.*)' value")]
