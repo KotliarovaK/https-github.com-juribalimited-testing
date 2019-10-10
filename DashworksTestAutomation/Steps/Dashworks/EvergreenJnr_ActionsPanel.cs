@@ -31,15 +31,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenActionsPanelIsDisplayedToTheUser()
         {
             var columnElement = _driver.NowAt<ActionsElement>();
-            Verify.IsTrue(columnElement.ActionsPanel.Displayed(), "Actions panel was not displayed");
-            Logger.Write("Actions panel is visible");
+            Verify.IsTrue(columnElement.ActionsPanel.Displayed(),
+                "Actions panel was not displayed");
+
+            var button = _driver.NowAt<BaseDashboardPage>();
+            Verify.Contains("active", button.ActionsButton.GetAttribute("class"),
+                "Action button is not active");
         }
 
         [Then(@"Actions panel is not displayed to the user")]
         public void ThenActionsPanelIsNotDisplayedToTheUser()
         {
+            //TODO add assertion that ActionsElement.ActionsPanelis not displayed!
+
             var button = _driver.NowAt<BaseDashboardPage>();
-            Utils.Verify.IsFalse(button.ActiveActionsButton.Displayed(), "Actions panel was displayed");
+            Verify.DoesNotContain("active", button.ActionsButton.GetAttribute("class"),
+                "Action button is active");
         }
 
         [Then(@"Actions message container is displayed to the user")]
