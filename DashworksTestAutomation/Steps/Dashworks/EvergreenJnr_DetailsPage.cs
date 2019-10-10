@@ -552,13 +552,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"Custom fields agGrid columns are displayed fully")]
         public void CustomFieldsAgGridColumnsAreDisplayedFully()
         {
-            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            int totalHeaderWidth = page.GetTotalWidthOfCustomFieldHeaders();
+            var page = _driver.NowAt<BaseDashboardPage>();
+            int totalHeaderWidth = page.GetTotalWidthOfGridHeaders();
 
             var grid = _driver.NowAt<AggridHeaderCounterElement>();
             int toolbar = grid.AgGridToolbar.Size.Width;
 
-            Utils.Verify.That((toolbar - totalHeaderWidth), Is.EqualTo(0), "Check Toolbar VS Grid headers sizes");
+            Utils.Verify.That((toolbar - totalHeaderWidth), Is.EqualTo(0), 
+                $"Check Toolbar: {toolbar} VS Grid headers: {totalHeaderWidth} size");
         }
 
         [Then(@"Fields with empty information are displayed")]

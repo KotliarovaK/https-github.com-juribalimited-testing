@@ -296,20 +296,5 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
             Driver.WaitForElementToBeDisplayed(selectBox);
             Driver.FindElement(selectBox).SelectboxSelect(filterConditionValue);
         }
-
-        public int GetTotalWidthOfCustomFieldHeaders()
-        {
-            var headers = ".//div[@class='ag-header-container']//div[@class='ag-header-cell ag-header-cell-sortable']";
-            int size = 0;
-
-            IList<IWebElement> els = Driver.FindElements(By.XPath(headers));
-
-            foreach (var el in els)
-            {
-                size += el.Size.Width;
-            }
-
-            return size;
-        }
     }
 }

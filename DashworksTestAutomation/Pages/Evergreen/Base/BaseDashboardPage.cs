@@ -411,6 +411,21 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return Driver.FindElement(By.XPath(".//span[@class='ag-header-cell-text']")).GetCssValue("font-weight");
         }
 
+        public int GetTotalWidthOfGridHeaders()
+        {
+            var headers = ".//div[@class='ag-header-container']//div[contains(@class, 'ag-header-cell') and @col-id]";
+            int size = 0;
+
+            IList<IWebElement> els = Driver.FindElements(By.XPath(headers));
+
+            foreach (var el in els)
+            {
+                size += el.Size.Width;
+            }
+
+            return size;
+        }
+
         public bool IsColumnPresent(string columnName)
         {
             Driver.WaitForDataLoading();
