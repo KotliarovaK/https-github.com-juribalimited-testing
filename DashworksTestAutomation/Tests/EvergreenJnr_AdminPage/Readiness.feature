@@ -53,8 +53,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAppearWhenDeleteReadine
 	When User select "Readiness" rows in the grid
 	| SelectedRowsName |
 	| RED              |
-	When User clicks on Actions button
-	When User clicks Delete button in Actions
+	When User selects 'Delete' in the 'Actions' dropdown
 	When User clicks 'DELETE' button 
 	Then Readiness Dialog Container is displayed to the User
 	When User clicks "DELETE" button in the Readiness dialog screen
@@ -63,8 +62,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAppearWhenDeleteReadine
 	When User select "Readiness" rows in the grid
 	| SelectedRowsName |
 	| AMBER            |
-	When User clicks on Actions button
-	When User clicks Delete button in Actions
+	When User selects 'Delete' in the 'Actions' dropdown
 	When User clicks 'DELETE' button 
 	Then Readiness Dialog Container is displayed to the User
 	When User clicks "DELETE" button in the Readiness dialog screen
@@ -91,8 +89,7 @@ Scenario: EvergreenJnr_AdminPage_CheckReadinessDialogContainerDisplay
 	When User select "Readiness" rows in the grid
 	| SelectedRowsName |
 	| RED              |
-	When User clicks on Actions button
-	And User clicks Delete button in Actions
+	When User selects 'Delete' in the 'Actions' dropdown
 	And User clicks 'DELETE' button 
 	Then Readiness Dialog Container is displayed to the User
 	And "Delete Readiness" title is displayed in the Readiness Dialog Container

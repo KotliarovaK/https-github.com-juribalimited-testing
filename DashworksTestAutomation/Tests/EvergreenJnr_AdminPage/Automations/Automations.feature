@@ -82,8 +82,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations
 	| Make active   |
 	| Make inactive |
 	| Delete        |
-	When User clicks on Actions button
-	And User selects "Run now" in the Actions
+	When User selects 'Run now' in the 'Actions' dropdown
 	When User clicks 'RUN' button 
 	Then Warning message with "Are you sure you wish to run 1 automation?" text is displayed on the Admin page
 	When User clicks "RUN" button in the warning message on Admin page
@@ -100,8 +99,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations
 	| Move to position |
 	| Make inactive    |
 	When User selects all rows on the grid
-	And User clicks on Actions button
-	And User selects "Delete" in the Actions
+	And User selects 'Delete' in the 'Actions' dropdown
 	And User clicks Delete button
 	When User clicks Delete button in the warning message
 	Then Warning message with "Cannot delete a running automation" text is displayed on the Admin page
@@ -362,8 +360,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeleteOptionForAutomationsCogmenuWorks
 	Then Page with 'Automations' header is displayed to user
 	When User enters "DELAY - do not delete3" text in the Search field for "Automation" column
 	When User selects all rows on the grid
-	And User clicks on Actions button
-	And User selects "Delete" in the Actions
+	And User selects 'Delete' in the 'Actions' dropdown
 	And User clicks Delete button
 	When User clicks Delete button in the warning message
 	Then Warning message with "Cannot delete a running automation" text is displayed on the Admin page
@@ -547,8 +544,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRunNowFunctionalityToRunMoreThanOneAutomat
 	Then Page with 'Automations' header is displayed to user
 	When User enters "Test_Automation" text in the Search field for "Automation" column
 	When User selects all rows on the grid
-	When User clicks on Actions button
-	And User selects "Run now" in the Actions
+	And User selects 'Run now' in the 'Actions' dropdown
 	When User clicks 'RUN' button 
 	Then Warning message with "Are you sure you wish to run 2 automations?" text is displayed on the Admin page
 	When User clicks "RUN" button in the warning message on Admin page
@@ -567,15 +563,13 @@ Scenario: EvergreenJnr_AdminPage_CheckRunNowfunctionalityInBulkActions
 	Then Page with 'Automations' header is displayed to user
 	When User enters "DAS-15949 - all users scope" text in the Search field for "Automation" column
 	When User selects all rows on the grid
-	When User clicks on Actions button
-	And User selects "Run now" in the Actions
+	And User selects 'Run now' in the 'Actions' dropdown
 	When User clicks 'RUN' button 
 	When User clicks "RUN" button in the warning message on Admin page
 	Then Success message is displayed and contains "1 automation started," text
 	When User enters "Devices_Scope" text in the Search field for "Automation" column
 	When User selects all rows on the grid
-	When User clicks on Actions button
-	And User selects "Run now" in the Actions
+	And User selects 'Run now' in the 'Actions' dropdown
 	When User clicks 'RUN' button 
 	When User clicks "RUN" button in the warning message on Admin page
 	Then Success message is displayed and contains "1 automation started," text

@@ -51,8 +51,7 @@ Scenario: EvergreenJnr_AdminPage_AddingDevicesFromBuckets
 	Then Counter shows "13,417" found rows
 	When User clicks Reset Filters button on the Admin page
 	And User selects all rows on the grid
-	And User clicks on Actions button
-	And User selects "Move To Another Bucket" in the Actions
+	And User selects 'Move To Another Bucket' in the 'Actions' dropdown
 	And User clicks 'CONTINUE' button 
 	Then Move To Another Bucket Page is displayed to the user
 	When User moves selected objects to "Unassigned" bucket
@@ -110,8 +109,7 @@ Scenario: EvergreenJnr_AdminPage_AddingMailboxesFromBuckets
 	Then Counter shows "7,370" found rows
 	When User clicks Reset Filters button on the Admin page
 	And User selects all rows on the grid
-	And User clicks on Actions button
-	And User selects "Move To Another Bucket" in the Actions
+	And User selects 'Move To Another Bucket' in the 'Actions' dropdown
 	And User clicks 'CONTINUE' button 
 	Then Move To Another Bucket Page is displayed to the user
 	When User moves selected objects to "Unassigned" bucket
@@ -207,8 +205,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketA
 	When User selects "Project12905" checkbox from String Filter with item list on the Admin page
 	When User enters "1Bucket12905" text in the Search field for "Bucket" column
 	And User selects all rows on the grid
-	And User clicks on Actions button
-	And User selects "Delete" in the Actions
+	And User selects 'Delete' in the 'Actions' dropdown
 	And User clicks Delete button 
 	When User clicks Delete button in the warning message
 	When User clicks String Filter button for "Project" column on the Admin page
@@ -221,8 +218,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketA
 	Then "5" content is displayed in "Devices" column
 	When User enters "2Bucket12905" text in the Search field for "Bucket" column
 	And User selects all rows on the grid
-	And User clicks on Actions button
-	And User selects "Delete" in the Actions
+	And User selects 'Delete' in the 'Actions' dropdown
 	And User clicks Delete button 
 	When User clicks Delete button in the warning message
 	When User clicks String Filter button for "Project" column on the Admin page
