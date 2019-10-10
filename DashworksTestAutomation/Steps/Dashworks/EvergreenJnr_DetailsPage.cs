@@ -555,13 +555,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             int firstHeader = page.CustomFieldsCustomFieldHeader.Size.Width;
             int secondHeader = page.CustomFieldsValueHeader.Size.Width;
-            //TODO: Clarify what this element is.
-            //int toolbar = page.CustomFieldsAgGridToolbar.Size.Width;
+            int toolbar = page.CustomFieldsAgGridToolbar.Size.Width;
 
             // sum of column headers are little bit less than page toolbar
-            //Utils.Verify.That((toolbar - firstHeader - secondHeader) < 50,
-            Utils.Verify.That((firstHeader - secondHeader) < 50,
-                Is.True, "Grid headers are too small");
+            Utils.Verify.That((toolbar - firstHeader - secondHeader) < 50,
+            Is.True, "Grid headers are too small");
         }
 
         [Then(@"Fields with empty information are displayed")]
