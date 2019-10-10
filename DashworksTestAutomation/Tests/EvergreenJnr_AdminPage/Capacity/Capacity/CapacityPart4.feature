@@ -143,7 +143,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProj
 	| SelectedRowsName           |
 	| Capacity Unit For DAS14103 |
 	And User selects 'Delete' in the 'Actions' dropdown
-	And User clicks Delete button
+	And User clicks 'DELETE' button
 	And User clicks Delete button in the warning message
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13961 @Cleanup

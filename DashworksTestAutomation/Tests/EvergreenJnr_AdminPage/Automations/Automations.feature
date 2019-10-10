@@ -100,7 +100,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations
 	| Make inactive    |
 	When User selects all rows on the grid
 	And User selects 'Delete' in the 'Actions' dropdown
-	And User clicks Delete button
+	And User clicks 'DELETE' button
 	When User clicks Delete button in the warning message
 	Then Warning message with "Cannot delete a running automation" text is displayed on the Admin page
 	When User moves "Applications_Scope" automation to "DELAY_8" automation
@@ -361,7 +361,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeleteOptionForAutomationsCogmenuWorks
 	When User enters "DELAY - do not delete3" text in the Search field for "Automation" column
 	When User selects all rows on the grid
 	And User selects 'Delete' in the 'Actions' dropdown
-	And User clicks Delete button
+	And User clicks 'DELETE' button
 	When User clicks Delete button in the warning message
 	Then Warning message with "Cannot delete a running automation" text is displayed on the Admin page
 	When User clicks Cog-menu for "DELAY - do not delete3" item on Admin page

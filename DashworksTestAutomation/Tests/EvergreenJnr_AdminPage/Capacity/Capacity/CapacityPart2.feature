@@ -56,7 +56,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreated
 	| SelectedRowsName |
 	| Unassigned       |
 	And User selects 'Delete' in the 'Actions' dropdown
-	And User clicks Delete button
+	And User clicks 'DELETE' button
 	Then Warning message with "You cannot delete the default unit" text is displayed on the Admin page
 	When User close message on the Admin page
 	Then 'Unassigned' content is displayed in the 'Capacity Unit' column
@@ -128,9 +128,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCapacityUnitsGridUpdatedAfterUnitUpdat
 	When User select "Capacity Unit" rows in the grid
 	| SelectedRowsName  |
 	| CapacityUnit14240NameUpdated |
-	And User clicks Actions button on the Projects page
-	And User clicks Delete button in Actions
-	And User clicks Delete button
+	When User selects 'Delete' in the 'Actions' dropdown
+	When User clicks 'DELETE' button
 	And User clicks Delete button in the warning message
 	Then Success message is displayed and contains "The selected unit has been deleted" text
 	And There are no errors in the browser console

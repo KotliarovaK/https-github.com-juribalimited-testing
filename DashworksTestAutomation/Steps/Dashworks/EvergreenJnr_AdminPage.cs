@@ -821,23 +821,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 "Create Team button is active");
         }
 
-        //TODO should be moved to ActionPanel
-        [When(@"User clicks Delete button")]
-        public void WhenUserClicksDeleteButton()
-        {
-            var button = _driver.NowAt<ActionPanelPage>();
-            _driver.WaitForElementToBeDisplayed(button.DeleteButtonOnPage);
-            button.DeleteButtonOnPage.Click();
-        }
-
-        //TODO should be moved to ActionPanel
-        [When(@"User clicks Delete button in Actions")]
-        public void WhenUserClicksDeleteButtonInActions()
-        {
-            var button = _driver.NowAt<ActionPanelPage>();
-            button.GetActionButtonByName("Delete").Click();
-        }
-
         [Then(@"Reassign Objects is displayed on the Teams page")]
         public void ThenReassignObjectsIsDisplayedOnTheTeamsPage()
         {
@@ -1775,14 +1758,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         //TODO should be moved to ActionPanel
-        [When(@"User clicks Actions button on the Projects page")]
-        public void WhenUserClicksActionsButtonOnTheProjectsPage()
-        {
-            var projectElement = _driver.NowAt<ActionPanelPage>();
-            projectElement.ActionsDropDown.Click();
-        }
-
-        //TODO should be moved to ActionPanel
         [Then(@"Actions button on the Projects page is active")]
         public void ThenActionsButtonOnTheProjectsPageIsActive()
         {
@@ -1801,10 +1776,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User removes selected item")]
         public void WhenUserRemovesSelectedItem()
         {
-            var action = _driver.NowAt<ActionPanelPage>();
-            action.ActionsDropDown.Click();
-            WhenUserClicksDeleteButtonInActions();
-            action.DeleteButtonOnPage.Click();
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.SelectDropdown("Delete", "Actions");
+            page.ClickButtonByName("DELETE");
+
             var projectElement = _driver.NowAt<BaseGridPage>();
             _driver.WaitForElementToBeDisplayed(projectElement.WarningMessage);
             _driver.WaitForDataLoading();

@@ -994,6 +994,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return Driver.FindElement(selector);
         }
 
+        public void SelectDropdown(string value, string dropdownName)
+        {
+            GetDropdown(dropdownName).Click();
+            GetDropdownValueByName(value).Click();
+        }
+
         //Get all span with text
         private string _dropdownOptions = ".//mat-option//span[string-length(text())>0]";
 

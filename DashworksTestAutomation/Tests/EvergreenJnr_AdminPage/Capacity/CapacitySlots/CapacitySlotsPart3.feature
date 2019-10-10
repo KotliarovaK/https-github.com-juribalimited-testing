@@ -67,9 +67,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorInConsoleAfterSettingSameOverri
 	When User select "Capacity Slot" rows in the grid
 	| SelectedRowsName |
 	| Slot13442        |
-	When User clicks Actions button on the Projects page
-	And User clicks Delete button in Actions
-	And User clicks Delete button
+	When User selects 'Delete' in the 'Actions' dropdown
+	When User clicks 'DELETE' button
 	Then Warning message with "1 slot and 1 related override date will be deleted, do you wish to proceed?" text is displayed on the Admin page
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13490

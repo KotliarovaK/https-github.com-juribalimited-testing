@@ -206,7 +206,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketA
 	When User enters "1Bucket12905" text in the Search field for "Bucket" column
 	And User selects all rows on the grid
 	And User selects 'Delete' in the 'Actions' dropdown
-	And User clicks Delete button 
+	And User clicks 'DELETE' button 
 	When User clicks Delete button in the warning message
 	When User clicks String Filter button for "Project" column on the Admin page
 	When User selects "Evergreen" checkbox from String Filter with item list on the Admin page
@@ -219,7 +219,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketA
 	When User enters "2Bucket12905" text in the Search field for "Bucket" column
 	And User selects all rows on the grid
 	And User selects 'Delete' in the 'Actions' dropdown
-	And User clicks Delete button 
+	And User clicks 'DELETE' button 
 	When User clicks Delete button in the warning message
 	When User clicks String Filter button for "Project" column on the Admin page
 	When User selects "Evergreen" checkbox from String Filter on the Admin page
