@@ -1,7 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Internal;
 using SeleniumExtras.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Evergreen
@@ -10,6 +14,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
     {
         public string SettingButtonSelector =
             ".//li//i[@class='menu-trigger material-icons mat-settings mat-18 pull-right settings-icon settings-area']";
+
+        public string TopSubMenuItemByName = ".//div[@class='submenu-top']//*[text()='{0}']";
+
+        public By AllListNamesInListsPanel = By.XPath(".//span[@class='submenu-actions-list-name']");
+
+        public By ListSubMenusInListsPanel = By.XPath(".//ancestor::submenu-item");
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='listEdit list-edit-wrapper']")]
         public IWebElement CreateCustomListElement { get; set; }
@@ -61,8 +71,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'SelectDropdownActions')]//mat-select")]
         public IWebElement DropdownFilterList { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@id='submenuBlock']//ul//span[@class='submenu-actions-list-name']")]
-        public IList<IWebElement> ListsNames { get; set; }
+        [FindsBy(How = How.XPath, Using = ".//div[@id='submenuBlock']//ul[contains(@class,'submenu-actions-list')]/li")]
+        public IList<IWebElement> ListElementsInListsPanel { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@id='submenu']")]
         public IWebElement ListsPanel { get; set; }
@@ -71,6 +81,35 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             Driver.WaitForDataLoading();
             return new List<By>();
+        }
+
+        public List<string> GetAllListNames()
+        {
+            return ListElementsInListsPanel.Select(x => x.FindElement(AllListNamesInListsPanel))
+                .Select(c => c.Text).ToList();
+        }
+
+        public IWebElement GetListElementByName(string listName)
+        {
+            switch (listName)
+            {
+                case "All Devices":
+                case "All Users":
+                case "All Applications":
+                case "All Device Applications":
+                case "All Mailboxes":
+                    return Driver.FindElementByXPath(string.Format(TopSubMenuItemByName, listName));
+
+                default:
+                    return ListElementsInListsPanel.Select(x => x.FindElement(AllListNamesInListsPanel))
+                        .FirstOrDefault(c => c.Text.Equals(listName));
+            }
+        }
+
+        public IWebElement GetActiveList()
+        {
+            return ListElementsInListsPanel.Select(x => x.FindElement(ListSubMenusInListsPanel))
+                .FirstOrDefault(c => c.GetAttribute("class").Contains("active"));
         }
 
         public bool GetFavoriteStatus(string listName)

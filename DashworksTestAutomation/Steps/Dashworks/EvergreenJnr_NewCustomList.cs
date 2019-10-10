@@ -192,10 +192,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"""(.*)"" list is displayed to user")]
         public void ThenListIsDisplayedToUser(string listName)
         {
-            var page = _driver.NowAt<BaseDashboardPage>();
+            var page = _driver.NowAt<CustomListElement>();
             _driver.WaitForDataLoading(45);
-            _driver.WaitForElementToBeDisplayed(page.ActiveCustomList);
-            Verify.AreEqual(listName, page.ActiveCustomListName(), "PLEASE ADD EXCEPTION MESSAGE");
+            _driver.WaitForElementToBeDisplayed(page.GetActiveList());
+            Verify.AreEqual(listName, page.GetActiveList().Text, "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"""(.*)"" edited list is displayed to user")]
@@ -419,9 +419,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User navigates to the ""(.*)"" list")]
         public void WhenUserNavigatesToTheList(string listName)
         {
-            var page = _driver.NowAt<BaseDashboardPage>();
+            var page = _driver.NowAt<CustomListElement>();
             _driver.WaitForDataLoading();
-            _driver.ExecuteAction(() => page.GetListElementByName(listName).Click());
             _driver.ExecuteAction(() => _driver.ClickByJavascript(page.GetListElementByName(listName)));
             _driver.WaitForDataLoading(45);
         }
@@ -455,7 +454,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenListsAreSortedInAlphabeticalOrder()
         {
             var listElement = _driver.NowAt<CustomListElement>();
-            var list = listElement.ListsNames.Select(x => x.Text).ToList();
+            var list = listElement.GetAllListNames();
             Utils.Verify.AreEqual(list.OrderBy(s => s), list, "Lists names are not in alphabetical order");
         }
 
@@ -463,7 +462,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksListNameInLeftPane(string listName)
         {
             var listElement = _driver.NowAt<CustomListElement>();
-            listElement.ListsNames.First(x => x.Text.Equals(listName)).Click();
+            listElement.GetListElementByName(listName).Click();
         }
 
         [Then(@"Columnmetadata request contains ArchivedItem parameter")]
