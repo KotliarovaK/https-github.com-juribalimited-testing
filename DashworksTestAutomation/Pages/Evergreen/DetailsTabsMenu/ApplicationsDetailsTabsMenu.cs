@@ -104,15 +104,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
 
         public const string SiteColumnSelector = ".//div[@col-id='packageSite']";
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='aggrid-container wrapper-flexbox ng-star-inserted']")]
-        public IWebElement CustomFieldsAgGridToolbar { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//span[contains(text(),'Custom Field')]/ancestor::div[@class='ag-cell-label-container ag-header-cell-sorted-none']")]
-        public IWebElement CustomFieldsCustomFieldHeader { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//span[contains(text(),'Value')]/ancestor::div[@class='ag-cell-label-container ag-header-cell-sorted-none']")]
-        public IWebElement CustomFieldsValueHeader { get; set; }
-
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -306,5 +297,19 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
             Driver.FindElement(selectBox).SelectboxSelect(filterConditionValue);
         }
 
+        public int GetTotalWidthOfCustomFieldHeaders()
+        {
+            var headers = ".//div[@class='ag-header-container']//div[@class='ag-header-cell ag-header-cell-sortable']";
+            int size = 0;
+
+            IList<IWebElement> els = Driver.FindElements(By.XPath(headers));
+
+            foreach (var el in els)
+            {
+                size += el.Size.Width;
+            }
+
+            return size;
+        }
     }
 }

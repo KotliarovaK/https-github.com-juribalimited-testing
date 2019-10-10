@@ -16,6 +16,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         //Commented selector point to the GroupBy button on the grid.
         //But if greed is empty than those controls will not appears
         //[FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'aggrid-container wrapper-flexbox')]")]
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class = 'details-aggrid']//div[@class='top-tools']")]
+        public IWebElement AgGridToolbar { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[@class='aggrid-container']")]
         public IWebElement PageIdentitySelectors { get; set; }
 

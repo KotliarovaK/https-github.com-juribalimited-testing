@@ -8,6 +8,7 @@ using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.Base;
 using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
+using DashworksTestAutomation.Pages.Evergreen.ItemDetails;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
@@ -552,14 +553,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void CustomFieldsAgGridColumnsAreDisplayedFully()
         {
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            int totalHeaderWidth = page.GetTotalWidthOfCustomFieldHeaders();
 
-            int firstHeader = page.CustomFieldsCustomFieldHeader.Size.Width;
-            int secondHeader = page.CustomFieldsValueHeader.Size.Width;
-            int toolbar = page.CustomFieldsAgGridToolbar.Size.Width;
+            var grid = _driver.NowAt<AggridHeaderCounterElement>();
+            int toolbar = grid.AgGridToolbar.Size.Width;
 
-            // sum of column headers are little bit less than page toolbar
-            Utils.Verify.That((toolbar - firstHeader - secondHeader) < 50,
-            Is.True, "Grid headers are too small");
+            Utils.Verify.That((toolbar - totalHeaderWidth), Is.EqualTo(0), "Check Toolbar VS Grid headers sizes");
         }
 
         [Then(@"Fields with empty information are displayed")]
