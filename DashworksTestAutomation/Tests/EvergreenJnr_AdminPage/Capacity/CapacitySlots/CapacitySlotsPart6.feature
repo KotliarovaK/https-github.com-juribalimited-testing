@@ -154,7 +154,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheE
 	And User clicks content from "Capacity Slot" column
 	And User changes value to "1" for "Tuesday" day column
 	Then "UPDATE" Action button is disabled
-	And "UPDATE" Action button have tooltip with "This slot cannot be saved because it is associated to at least 1 unpublished task (Stage13812 \ 1Task13812)" text
+	Then 'UPDATE' Action button has tooltip with 'This slot cannot be saved because it is associated to at least 1 unpublished task (Stage13812 \ 1Task13812)' text
 	When User clicks 'CANCEL' button 
 	And User creates new Slot
 	| SlotName | DisplayName | Tasks                                           |

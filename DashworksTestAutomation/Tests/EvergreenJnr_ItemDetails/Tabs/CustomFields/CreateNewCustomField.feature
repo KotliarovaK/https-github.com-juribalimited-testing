@@ -19,7 +19,7 @@ Scenario: EvergreenJnr_DevicesList_CheckAddCustomFieldPopupUiAndTooltips
 	When User navigates to the "Custom Fields" sub-menu on the Details page
 	And User clicks 'ADD CUSTOM FIELD' button 
 	Then "ADD" Action button is disabled
-	And "ADD" Action button have tooltip with "Some values are missing or invalid" text
+	Then 'ADD' Action button has tooltip with 'Some values are missing or invalid' text
 	Then "CANCEL" Action button is enabled
 	When User clicks Body container
 	Then 'Custom Field' autocomplete last option is 'FlDAS16487_1a'

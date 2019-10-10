@@ -179,7 +179,7 @@ Scenario: EvergreenJnr_AdminPage_CheckBrokenListValidationWhenRunningAnAutomatio
 	When User enters "17011_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
 	Then 'This list has errors' error message is displayed for 'Scope' field
-	Then "UPDATE" Action button have tooltip with "Some values are missing or not valid" text
+	Then 'UPDATE' Action button has tooltip with 'Some values are missing or not valid' text
 	#DAS-17374
 	When User clicks 'CANCEL' button 
 	When User navigates to the 'Projects' left menu item
