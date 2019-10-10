@@ -90,18 +90,19 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListFromCSV
         [NUnit.Framework.CategoryAttribute("DAS13223")]
         [NUnit.Framework.CategoryAttribute("DAS13224")]
         [NUnit.Framework.CategoryAttribute("DAS16585")]
+        [NUnit.Framework.CategoryAttribute("DAS18336")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
-        [NUnit.Framework.TestCaseAttribute("Users", "Users from CSV", "User key", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", "Applications from CSV", "Application key", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Mailboxes from CSV", "Mailbox key", null)]
-        public virtual void EvergreenJnr_AllLists_CheckCreatingStaticListFromCSVFirstPage(string listName, string importPage, string fileContains, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("Users", "All Users", "Import Users from CSV", "User key", null)]
+        [NUnit.Framework.TestCaseAttribute("Applications", "All Applications", "Import Applications from CSV", "Application key", null)]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "All Mailboxes", "Import Mailboxes from CSV", "Mailbox key", null)]
+        public virtual void EvergreenJnr_AllLists_CheckCreatingStaticListFromCSVFirstPage(string listName, string listName1, string importPage, string fileContains, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AllLists_CheckCreatingStaticListFromCSVFirstPageInternal(listName,importPage,fileContains,exampleTags);
+                    this.EvergreenJnr_AllLists_CheckCreatingStaticListFromCSVFirstPageInternal(listName,listName1,importPage,fileContains,exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -120,7 +121,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListFromCSV
             }
         }
 
-        private void EvergreenJnr_AllLists_CheckCreatingStaticListFromCSVFirstPageInternal(string listName, string importPage, string fileContains, string[] exampleTags)
+        private void EvergreenJnr_AllLists_CheckCreatingStaticListFromCSVFirstPageInternal(string listName, string listName1, string importPage, string fileContains, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -132,33 +133,34 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListFromCSV
                     "DAS13223",
                     "DAS13224",
                     "DAS16585",
+                    "DAS18336",
                     "Not_Ready"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckCreatingStaticListFromCSVFirstPage", null, @__tags);
-#line 9
+#line 10
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 10
- testRunner.When(string.Format("User clicks \'{0}\' on the left-hand menu", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 11
- testRunner.Then(string.Format("\'{0}\' list should be displayed to the user", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When(string.Format("User clicks \'{0}\' on the left-hand menu", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 12
- testRunner.When("User selects \'List from CSV\' in the \'Create\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then(string.Format("\'{0}\' list should be displayed to the user", listName1), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 13
- testRunner.Then(string.Format("\"{0}\" Import page is displayed to the User", importPage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User selects \'List from CSV\' in the \'Create\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 14
+ testRunner.Then(string.Format("\"{0}\" Import page is displayed to the User", importPage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 15
  testRunner.When("User selects \"CSV-Upload-Devices - Hostname no header.csv\" file to upload on Impo" +
                     "rt Lists from CSV page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 15
- testRunner.Then("\"File has headers\" checkbox is unchecked on the Base Dashboard Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 16
- testRunner.When(string.Format("User selects \'{0}\' in the \'File Contains\' dropdown", fileContains), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("\"File has headers\" checkbox is unchecked on the Base Dashboard Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 17
+ testRunner.When(string.Format("User selects \'{0}\' in the \'File Contains\' dropdown", fileContains), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 18
  testRunner.Then("\"NEXT\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -172,6 +174,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("ListsFromCSV")]
         [NUnit.Framework.CategoryAttribute("DAS16616")]
         [NUnit.Framework.CategoryAttribute("DAS16585")]
+        [NUnit.Framework.CategoryAttribute("DAS18336")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AllLists_CheckCancelButtonFunctionalityOnCreateListFromCSV()
         {
@@ -207,52 +210,53 @@ this.FeatureBackground();
                         "ListsFromCSV",
                         "DAS16616",
                         "DAS16585",
+                        "DAS18336",
                         "Not_Ready"});
-#line 26
+#line 28
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 27
- testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 28
- testRunner.Then("\'All Devices\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 29
- testRunner.When("User selects \'List from CSV\' in the \'Create\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 30
- testRunner.When("User selects \'List from CSV\' in the \'Create\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 31
- testRunner.Then("\"Devices from CSV\" Import page is displayed to the User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 32
- testRunner.When("User clicks \'CANCEL\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 33
  testRunner.Then("\'All Devices\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 34
+#line 31
  testRunner.When("User selects \'List from CSV\' in the \'Create\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 32
+ testRunner.Then("\"Import Devices from CSV\" Import page is displayed to the User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 33
+ testRunner.When("User clicks \'CANCEL\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 34
+ testRunner.Then("\'All Devices\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 35
+ testRunner.When("User selects \'List from CSV\' in the \'Create\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 36
+ testRunner.When("User selects \"IncorrectFile.zip\" file to upload on Import Lists from CSV page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 38
  testRunner.When("User selects \"CSV-Upload-Devices - Hostname no header.csv\" file to upload on Impo" +
                     "rt Lists from CSV page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 36
- testRunner.Then("\"File has headers\" checkbox is unchecked on the Base Dashboard Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 37
- testRunner.Then("\"Include archived applications\" checkbox is unchecked on the Base Dashboard Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 38
- testRunner.When("User selects \'Hostname\' in the \'File Contains\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 39
- testRunner.Then("\"NEXT\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"File has headers\" checkbox is unchecked on the Base Dashboard Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 40
- testRunner.When("User clicks \'CANCEL\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("\"Include archived applications\" checkbox is unchecked on the Base Dashboard Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 41
- testRunner.Then("Warning Pop-up is displayed to the User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User selects \'Hostname\' in the \'File Contains\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 42
- testRunner.When("User clicks \"NO\" button in the Warning Pop-up message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("\"NEXT\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 43
  testRunner.When("User clicks \'CANCEL\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 44
  testRunner.Then("Warning Pop-up is displayed to the User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 45
- testRunner.When("User clicks \"YES\" button in the Warning Pop-up message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \"NO\" button in the Warning Pop-up message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 46
+ testRunner.When("User clicks \'CANCEL\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 47
+ testRunner.Then("Warning Pop-up is displayed to the User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 48
+ testRunner.When("User clicks \"YES\" button in the Warning Pop-up message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 49
  testRunner.Then("\'All Devices\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

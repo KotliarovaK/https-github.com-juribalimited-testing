@@ -182,7 +182,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksTooltipsOnPivot
 	When User selects 'Pivot' in the 'Create' dropdown
 	And User clicks 'ADD ROW GROUP' button 
 	When "Compliance" value is entered into the search box and the selection is clicked on Pivot
-	Then "DONE" Action button have tooltip with "Confirm changes" text
+	Then 'DONE' Action button has tooltip with 'Confirm changes' text
 	Then back button on Pivot panel have tooltip with "Close" text
 	When User clicks 'DONE' button 
 	And User selects the following Columns on Pivot:

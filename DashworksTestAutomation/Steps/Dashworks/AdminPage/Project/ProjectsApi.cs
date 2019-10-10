@@ -11,6 +11,7 @@ using System;
 using System.Linq;
 using System.Net;
 using DashworksTestAutomation.DTO;
+using DashworksTestAutomation.Pages.Evergreen.Base;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using TechTalk.SpecFlow;
