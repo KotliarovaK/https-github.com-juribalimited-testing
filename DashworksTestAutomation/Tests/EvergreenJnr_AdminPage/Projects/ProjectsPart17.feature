@@ -39,7 +39,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedWhenDeleti
 	Then Settings panel is displayed to the user
 	When User clicks Delete in the list panel
 	Then "TestList0A78U9 list will be permanently deleted" message is displayed in the lists panel
-	And User clicks Delete button on the warning message in the lists panel
+	And User clicks 'DELETE' button on the warning message in the lists panel
 	And no Warning message is displayed in the lists panel
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12182 @DAS12999 @DAS13199 @DAS13297 @DAS12485 @DAS13803 @DAS13930 @Cleanup @Project_Creation_and_Scope
@@ -95,7 +95,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeleting
 	Then Settings panel is displayed to the user
 	When User clicks Delete in the list panel
 	Then "list is used by 1 project, do you wish to proceed?" message is displayed in the lists panel
-	And User clicks Delete button on the warning message in the lists panel
+	And User clicks 'DELETE' button on the warning message in the lists panel
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
@@ -128,9 +128,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	When User click on Back button
 	And User selects all rows on the grid
 	Then Actions dropdown is displayed correctly
-	When User clicks Actions button on the Projects page
-	And User clicks Delete button in Actions
-	And User clicks Delete button
+	When User selects 'Delete' in the 'Actions' dropdown
+	When User clicks 'DELETE' button
 	Then Delete buttons are displayed to the User in Actions and Banner on the Projects page
 	When User cancels the selection of all rows on the Projects page
 	Then Delete button is not displayed to the User on the Projects page

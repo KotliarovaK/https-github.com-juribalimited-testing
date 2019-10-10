@@ -56,7 +56,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[@class='aggrid-container']//div[@col-id='dragColumn']")]
         public IList<IWebElement> DragRowElements { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//mat-dialog-container//h1[text()='Warning']")]
+        [FindsBy(How = How.XPath, Using = ".//mat-dialog-container//div[@class='dialog-warning-title']")]
         public IWebElement WarningPopUpPanel { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='error-box clearfix default ng-star-inserted']//span[text()='403']")]
@@ -296,19 +296,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             Driver.MouseHover(By.XPath(columnHeaderSelector));
             Driver.WaitForElementToBeDisplayed(By.XPath(columnSettingsSelector));
             Driver.FindElement(By.XPath(columnSettingsSelector)).Click();
-        }
-
-        //TODO should be moved because this is something on Action panel
-        public void SelectActions(string actionName)
-        {
-            //Nothing to do if action selectBox disabled
-            if (ActionsSelectBox.GetAttribute("class").Contains("disabled"))
-                return;
-
-            var selectedActionName =
-                $"//span[text()='{actionName}']/ancestor::mat-option";
-            Driver.WaitForElementToBeDisplayed(By.XPath(selectedActionName));
-            Driver.FindElement(By.XPath(selectedActionName)).Click();
         }
 
         public IWebElement QueueOnboardedObjectDisplayed(string objectName)

@@ -54,9 +54,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotAppearsAfterDuplicateActionWith
 	| SelectedRowsName         |
 	| Slot 13979 (copy)        |
 	| Slot 13979 (copy) (copy) |
-	And User clicks Actions button on the Projects page
-	And User clicks Delete button in Actions
-	And User clicks Delete button
+	When User selects 'Delete' in the 'Actions' dropdown
+	When User clicks 'DELETE' button
 	And User clicks Delete button in the warning message
 	Then Success message is displayed and contains "The selected slots have been deleted" text
 	When User clicks refresh button in the browser

@@ -5,41 +5,32 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-#That test have 'not run' tag, because blue banner closes too fast.
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS13347 @DAS11978 @DAS16887 @Cleanup @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS13347 @DAS11978 @DAS16887 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatBlueBannerIsDisplayedWithCorrectlyText
-	When User clicks 'Admin' on the left-hand menu
-	Then 'Admin' list should be displayed to the user
-	When User navigates to the 'Projects' left menu item
-	Then Page with 'Projects' header is displayed to user
-	When User clicks 'CREATE PROJECT' button 
-	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "Project13347" in the "Project Name" field
-	And User selects 'All Devices' option from 'Scope' autocomplete
-	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks newly created object link
+	When Project created via API and opened
+	| ProjectName  | Scope       | ProjectTemplate | Mode               |
+	| Project13347 | All Devices | None            | Standalone Project |
 	Then Project "Project13347" is displayed to user
+	When User selects "Scope" tab on the Project details page
 	When User selects "Scope Changes" tab on the Project details page
-	Then open tab in the Project Scope Changes section is active
-	When User expands multiselect to add objects 
-	And User expands multiselect and selects following Objects
+	And User navigates to the 'Devices' tab on Project Scope Changes page
+	And User expands 'Devices to add' multiselect to the 'Devices' tab on Project Scope Changes page and selects following Objects
 	| Objects         |
 	| 00K4CEEQ737BA4L |
 	| 00YWR8TJU4ZF8V  |
 	| 019BFPQGKK5QT8N |
 	| 02C80G8RFTPA9E  |
 	| 06T5FX3CUY08AE  |
-	And User clicks 'UPDATE ALL CHANGES' button 
-	And User clicks 'UPDATE PROJECT' button 
 	And User navigates to the 'Users' tab on Project Scope Changes page
-	And User expands multiselect to add objects 
-	When User selects all objects to the Project
+	And User expands 'Users to add' multiselect to the 'Users' tab on Project Scope Changes page and selects following Objects
+	| Objects                        |
+	| AAC860150 (Kerrie D. Ruiz)     |
+	| AAD1011948 (Pinabel Cinq-Mars) |
+	| AAM044531 (Dustin R. Alvarez)  |
 	And User navigates to the 'Applications' tab on Project Scope Changes page
-	And User expands multiselect to add objects 
-	And User expands multiselect and selects following Objects
+	And User expands 'Applications to add' multiselect to the 'Applications' tab on Project Scope Changes page and selects following Objects
 	| Objects                                                                       |
-	| "WPF/E" (codename) Community Technology Preview (Feb 2007) (0.8.5.0)          |
+	| ACDSee 4.0.2 PowerPack Trial Version (4.00.0002)                              |
 	| %SQL_PRODUCT_SHORT_NAME% Data Tools - BI for Visual Studio 2013 (12.0.2430.0) |
 	| %SQL_PRODUCT_SHORT_NAME% SSIS 64Bit For SSDTBI (12.0.2430.0)                  |
 	| 0004 - Adobe Acrobat Reader 5.0.5 Francais (5.0.5)                            |
@@ -47,19 +38,27 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatBlueBannerIsDisplayedWithCorrectlyTex
 	And User clicks 'UPDATE ALL CHANGES' button 
 	And User clicks 'UPDATE PROJECT' button 
 	Then Blue banner with "Object updates being queued, please wait" text is displayed
-	Then Success message is displayed and contains "14636 objects queued for onboarding, 0 objects offboarded" text
+	Then Success message is displayed and contains "13 objects queued for onboarding, 0 objects offboarded" text
+	#waiting for the process to be completed
+	When User waits for three seconds
 	When User selects "Scope Details" tab on the Project details page
 	And User navigates to the 'User Scope' tab on Project Scope Changes page
 	When User selects "Do not include device owners" checkbox on the Project details page
 	And User navigates to the 'Application Scope' tab on Project Scope Changes page
 	When User selects "Do not include applications" checkbox on the Project details page
+	#wait until the settings are applied
+	When User waits for three seconds
 	And User selects "Scope Changes" tab on the Project details page
 	And User navigates to the 'Users' tab on Project Scope Changes page
-	When User waits and expands the "Users" panel to remove
-	When User selects all objects to the Project
+	And User expands 'Users to remove' multiselect to the 'Users' tab on Project Scope Changes page and selects following Objects
+	| Objects                        |
+	| AAC860150 (Kerrie D. Ruiz)     |
+	| AAD1011948 (Pinabel Cinq-Mars) |
+	| AAM044531 (Dustin R. Alvarez)  |
 	And User clicks 'UPDATE ALL CHANGES' button 
 	And User clicks 'UPDATE PROJECT' button 
 	Then Blue banner with "Object updates being queued, please wait" text is displayed
+	Then Success message is displayed and contains "0 objects queued for onboarding, 3 objects offboarded" text
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12756 @DAS13586 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatProjectTypesInTheFilterAlphabetised

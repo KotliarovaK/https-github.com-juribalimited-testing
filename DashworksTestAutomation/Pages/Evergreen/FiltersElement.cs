@@ -92,15 +92,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='styleSelectDropdown']")]
         public IWebElement FilterTypeDropdown { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[text()='None']")]
-        public IWebElement NoneCheckbox { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//span[text()='A Star Packages']")]
-        public IWebElement AStarPackagesCheckbox { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//span[text()='B Star Packages']")]
-        public IWebElement BStarPackagesCheckbox { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//div[@class='form-group actions']//span[text()='UPDATE']/ancestor::button")]
         public IWebElement SaveButton { get; set; }
 
@@ -414,6 +405,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
             var imgSelector =
                 $".//li//span[text()='{booleanValue}']/ancestor::span[@class='boolean-icon text-container ng-star-inserted']/img";
             return Driver.FindElement(By.XPath(imgSelector));
+        }
+
+        public IWebElement GetFilterCheckboxByName(string checkboxName)
+        {
+            var checkboxSelector = $".//div[contains(@class, 'filterAddPanel')]//span[contains(text(), '{checkboxName}')]";
+            return Driver.FindElement(By.XPath(checkboxSelector));
         }
 
         public IList<IWebElement> GetAssociationsList()

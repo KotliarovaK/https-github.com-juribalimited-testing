@@ -60,7 +60,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         #endregion
 
-        #region Named Autocomplete
+        #region Autocomplete
 
         [Then(@"'(.*)' autocomplete last option is '(.*)'")]
         public void ThenAutocompleteLastOptionIs(string placeholder, string option)
@@ -178,8 +178,19 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         [When(@"User selects '(.*)' option from '(.*)' autocomplete")]
         public void WhenUserSelectsOptionFromAutocomplete(string option, string placeholder)
         {
+            UserSelectsOptionFromAutocomplete(option, placeholder, true);
+        }
+
+        [When(@"User selects '(.*)' option from '(.*)' autocomplete without search")]
+        public void WhenUserSelectsOptionFromAutocompleteWithoutSearch(string option, string placeholder)
+        {
+            UserSelectsOptionFromAutocomplete(option, placeholder, false);
+        }
+
+        private void UserSelectsOptionFromAutocomplete(string option, string placeholder, bool withSearch)
+        {
             var page = _driver.NowAt<BaseDashboardPage>();
-            page.AutocompleteSelect(placeholder, option);
+            page.AutocompleteSelect(placeholder, option, withSearch);
             _driver.WaitForDataLoadingInActionsPanel();
         }
 
@@ -207,7 +218,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         #endregion
 
-        #region Named Textbox
+        #region Textbox
 
         [When(@"User enters '(.*)' text to '(.*)' textbox")]
         public void WhenUserEntersTextToTextbox(string text, string placeholder)
@@ -296,22 +307,17 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         [When(@"User selects '(.*)' in the '(.*)' dropdown")]
         public void WhenUserSelectsInTheDropdown(string value, string dropdownName)
         {
-            SelectDropdown(value, dropdownName);
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.SelectDropdown(value, dropdownName);
         }
 
         [When(@"User selects '(.*)' in the '(.*)' dropdown with wait")]
         public void WhenUserSelectsInTheDropdownWithWait(string value, string dropdownName)
         {
-            SelectDropdown(value, dropdownName);
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.SelectDropdown(value, dropdownName);
             //Used for Projects Scope to wait for changes to be applied
             Thread.Sleep(3000);
-        }
-
-        private void SelectDropdown(string value, string dropdownName)
-        {
-            var dropdown = _driver.NowAt<BaseDashboardPage>();
-            dropdown.GetDropdown(dropdownName).Click();
-            dropdown.GetDropdownValueByName(value).Click();
         }
 
         [Then(@"'(.*)' content is displayed in '(.*)' dropdown")]

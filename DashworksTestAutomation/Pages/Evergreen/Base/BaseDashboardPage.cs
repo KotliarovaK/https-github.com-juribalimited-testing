@@ -55,9 +55,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = ".//admin-header//span[@class='ng-star-inserted']")]
         public IWebElement FoundRowsLabel { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'active')]//i[contains(@class, 'static-list')]")]
-        public IWebElement ActiveActionsButton { get; set; }
-
         //TODO move this to separate component
         #region Action Panel
 
@@ -982,6 +979,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             Driver.WaitFor(() => Driver.FindElements(selector).Count >= index);
             Driver.WaitForElementToBeDisplayed(Driver.FindElements(selector)[index]);
             return Driver.FindElement(selector);
+        }
+
+        public void SelectDropdown(string value, string dropdownName)
+        {
+            GetDropdown(dropdownName).Click();
+            GetDropdownValueByName(value).Click();
         }
 
         //Get all span with text

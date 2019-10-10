@@ -464,9 +464,8 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	And User select "Capacity Unit" rows in the grid
 	| SelectedRowsName  |
 	| CapacityUnit13201 |
-	And User clicks on Actions button
-	And User clicks Delete button in Actions
-	And User clicks Delete button
+	When User selects 'Delete' in the 'Actions' dropdown
+	When User clicks 'DELETE' button
 	And User clicks Delete button in the warning message
 
 @Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11559

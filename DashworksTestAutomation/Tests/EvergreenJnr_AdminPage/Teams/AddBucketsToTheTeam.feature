@@ -31,11 +31,10 @@ Scenario: EvergreenJnr_AdminPage_AddingBucketsToTheTeam
 	Then Success message is displayed and contains "The selected buckets have been added" text
 	When User enters "TestBucket" text in the Search field for "Bucket" column
 	And User selects all rows on the grid
-	And User clicks on Actions button
-	And User selects "Change Team" in the Actions
+	And User selects 'Change Team' in the 'Actions' dropdown
 	And User clicks 'CONTINUE' button 
-	Then Change Team page is displayed to the user
-	When User selects "Team 10" in the Team dropdown
+	Then 'Change Team' page subheader is displayed to user
+	When User selects 'Team 10' option from 'Team' autocomplete without search
 	And User clicks 'CHANGE' button 
 	Then Success message is displayed and contains "The selected buckets have been reassigned to the selected team" text
 	And There are no errors in the browser console

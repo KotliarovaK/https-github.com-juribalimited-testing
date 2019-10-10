@@ -18,27 +18,24 @@ Scenario: EvergreenJnr_AdminPage_CheckMessageThatDisplayedWhenDeletingBucket
 	And User enters "Amsterdam" text in the Search field for "Bucket" column
 	Then Actions dropdown is displayed correctly
 	When User selects all rows on the grid
-	And User clicks on Actions button
-	And User selects "Delete" in the Actions
-	And User clicks Delete button 
+	And User selects 'Delete' in the 'Actions' dropdown
+	And User clicks 'DELETE' button 
 	Then Warning message with "You cannot delete the default bucket" text is displayed on the Admin page
 	When User clicks Select All checkbox on the grid
 	And User enters "Unassigned" text in the Search field for "Bucket" column
 	And User clicks Select All checkbox on the grid
-	And User clicks on Actions button
-	And User selects "Delete" in the Actions
-	When User clicks Delete button 
+	And User selects 'Delete' in the 'Actions' dropdown
+	When User clicks 'DELETE' button 
 	Then Warning message with "You cannot delete the default bucket" text is displayed on the Admin page
 	When User clicks Select All checkbox on the grid
 	And User enters "TestBucket4" text in the Search field for "Bucket" column
 	And User clicks Select All checkbox on the grid
-	And User clicks on Actions button
-	And User selects "Delete" in the Actions
-	And User clicks Delete button 
+	And User selects 'Delete' in the 'Actions' dropdown
+	And User clicks 'DELETE' button 
 	Then Warning message with "This bucket will be permanently deleted and any objects within it reassigned to the default bucket" text is displayed on the Admin page
 	When User clicks Cancel button in the warning message on the Admin page
 	Then Warning message is not displayed on the Admin page
-	When User clicks Delete button 
+	When User clicks 'DELETE' button 
 	Then Warning message with "This bucket will be permanently deleted and any objects within it reassigned to the default bucket" text is displayed on the Admin page
 	When User clicks Delete button in the warning message
 	Then Success message is displayed and contains "The selected bucket has been deleted" text
@@ -52,14 +49,13 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSpellingIsCorrectInBucketDeletionMess
 	When User select "Bucket" rows in the grid
 	| SelectedRowsName   |
 	| Evergreen Bucket 3 |
-	And User clicks on Actions button
-	And User selects "Delete" in the Actions
-	And User clicks Delete button
+	And User selects 'Delete' in the 'Actions' dropdown
+	And User clicks 'DELETE' button
 	Then Warning message with "This bucket will be permanently deleted and any objects within it reassigned to the default bucket" text is displayed on the Admin page
 	When User select "Bucket" rows in the grid
 	| SelectedRowsName   |
 	| Evergreen Bucket 4 |
-	And User clicks Delete button
+	And User clicks 'DELETE' button
 	Then Warning message with "These buckets will be permanently deleted and any objects within them reassigned to the default bucket" text is displayed on the Admin page
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11879 @DAS12742 @DAS12752 @Buckets
@@ -77,9 +73,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSpecificWarningMessageIsNotDisplayedAf
 	When User clicks Reset Filters button on the Admin page
 	And User enters "Chicago" text in the Search field for "Bucket" column
 	And User selects all rows on the grid
-	And User clicks on Actions button
-	And User selects "Delete" in the Actions
-	When User clicks Delete button
+	And User selects 'Delete' in the 'Actions' dropdown
+	When User clicks 'DELETE' button
 	Then Warning message with "You can not delete the default bucket" text is not displayed on the Admin page
 	Then Warning message with "This bucket will be permanently deleted and any objects within it reassigned to the default bucket" text is displayed on the Admin page
 
@@ -97,9 +92,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatWarningNotificationIsDisappearedAfter
 	When User select "Bucket" rows in the grid
 	| SelectedRowsName |
 	| 1Bucket12331     |
-	And User clicks on Actions button
-	And User selects "Delete" in the Actions
-	And User clicks Delete button
+	And User selects 'Delete' in the 'Actions' dropdown
+	And User clicks 'DELETE' button
 	Then Warning message with "This bucket will be permanently deleted and any objects within it reassigned to the default bucket" text is displayed on the Admin page
 	When User select "Bucket" rows in the grid
 	| SelectedRowsName |
