@@ -35,11 +35,11 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatTextInKeyValueGridsIsSelectable
 	Then "<ValueToBeSelected>" text selected from key value grid on the Details Page
 
 Examples:
-	| PageName    | SearchTerm               | MainTabName   | KeyToBeSelected | ValueToBeSelected   |
-	| Device      | 02C80G8RFTPA9E           | Specification | Manufacturer    | FES0798481167       |
-	| Device      | 05PFM2OWVCSCZ1           | Details       | Hostname        | 05PFM2OWVCSCZ1      |
-	| User        | 03714167684E45F7A8F      | Details       | Username        | 03714167684E45F7A8F |
-	| Application | Adobe Acrobat Reader 5.0 | Details       | Vendor          | Adobe               |
+	| PageName    | SearchTerm               | MainTabName   | KeyToBeSelected | ValueToBeSelected |
+	| Device      | 02C80G8RFTPA9E           | Specification | Manufacturer    | FES0798481167     |
+	| Device      | 05PFM2OWVCSCZ1           | Details       | Hostname        | 05PFM2OWVCSCZ1    |
+	| User        | 03714167684E45F7A8F      | User          | Domain          | BCLABS            |
+	| Application | Adobe Acrobat Reader 5.0 | Details       | Vendor          | Adobe             |
 
 @Evergreen @ALlLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13341 @DAS14923
 Scenario Outline: EvergreenJnr_AllLists_CheckThatTextInKeyValueGridsIsSelectableOnDetailsPageOnSelectedSubMenu
@@ -54,7 +54,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatTextInKeyValueGridsIsSelectable
 Examples:
 	| PageName | SearchTerm                       | SubTabName | KeyToBeSelected | ValueToBeSelected   |
 	| Device   | 05PFM2OWVCSCZ1                   | Device     | Hostname        | 05PFM2OWVCSCZ1      |
-	| User     | 03714167684E45F7A8F              | User       | Username        | 03714167684E45F7A8F |
+	| User     | 03714167684E45F7A8F              | User       | Domain          | BCLABS              |
 	| Mailbox  | 06D7AE4F161F4A3AA7F@bclabs.local | Mailbox    | Alias           | 06D7AE4F161F4A3AA7F |
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13341 @archived

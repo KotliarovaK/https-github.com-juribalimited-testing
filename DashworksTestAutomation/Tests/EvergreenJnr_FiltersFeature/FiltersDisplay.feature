@@ -1254,9 +1254,8 @@ Scenario: EvergreenJnr_AllLists_CheckThatDeletedBucketIsNotAvailableInEvergreenB
 	And User select "Bucket" rows in the grid
     | SelectedRowsName              |
     | Bucket_DAS12940_to_be_deleted |
-	And User clicks on Actions button
-	And User clicks Delete button in Actions
-	And User clicks Delete button
+	When User selects 'Delete' in the 'Actions' dropdown
+	When User clicks 'DELETE' button
 	And User clicks Delete button in the warning message
 	And User clicks 'Devices' on the left-hand menu
 	And User clicks the Filters button
@@ -1285,9 +1284,8 @@ Scenario: EvergreenJnr_AllLists_CheckThatDeletedCapacityUnitIsNotAvailableInEver
 	And User select "Capacity Unit" rows in the grid
     | SelectedRowsName                     |
     | Capacity_Unit_DAS13201_to_be_deleted |
-	And User clicks on Actions button
-	And User clicks Delete button in Actions
-	And User clicks Delete button
+	When User selects 'Delete' in the 'Actions' dropdown
+	When User clicks 'DELETE' button
 	And User clicks Delete button in the warning message
 	And User clicks 'Devices' on the left-hand menu
 	And User clicks the Filters button

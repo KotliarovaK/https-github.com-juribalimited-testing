@@ -21,9 +21,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOneRingAddeddAfterMulticlickingCreateB
 	When User select "Ring" rows in the grid
 	| SelectedRowsName |
 	| OneRing          |
-	And User clicks on Actions button
-	And User selects "Delete" in the Actions
-	And User clicks Delete button
+	And User selects 'Delete' in the 'Actions' dropdown
+	When User clicks 'DELETE' button
 	And User clicks Delete button in the warning message
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS15397 @Cleanup

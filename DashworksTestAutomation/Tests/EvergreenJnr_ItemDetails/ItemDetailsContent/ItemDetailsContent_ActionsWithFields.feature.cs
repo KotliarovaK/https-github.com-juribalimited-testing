@@ -225,7 +225,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS14923")]
         [NUnit.Framework.TestCaseAttribute("Device", "02C80G8RFTPA9E", "Specification", "Manufacturer", "FES0798481167", null)]
         [NUnit.Framework.TestCaseAttribute("Device", "05PFM2OWVCSCZ1", "Details", "Hostname", "05PFM2OWVCSCZ1", null)]
-        [NUnit.Framework.TestCaseAttribute("User", "03714167684E45F7A8F", "Details", "Username", "03714167684E45F7A8F", null)]
+        [NUnit.Framework.TestCaseAttribute("User", "03714167684E45F7A8F", "User", "Domain", "BCLABS", null)]
         [NUnit.Framework.TestCaseAttribute("Application", "Adobe Acrobat Reader 5.0", "Details", "Vendor", "Adobe", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatTextInKeyValueGridsIsSelectableOnDetailsPageOnSelectedMainMenu(string pageName, string searchTerm, string mainTabName, string keyToBeSelected, string valueToBeSelected, string[] exampleTags)
         {
@@ -302,7 +302,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS13341")]
         [NUnit.Framework.CategoryAttribute("DAS14923")]
         [NUnit.Framework.TestCaseAttribute("Device", "05PFM2OWVCSCZ1", "Device", "Hostname", "05PFM2OWVCSCZ1", null)]
-        [NUnit.Framework.TestCaseAttribute("User", "03714167684E45F7A8F", "User", "Username", "03714167684E45F7A8F", null)]
+        [NUnit.Framework.TestCaseAttribute("User", "03714167684E45F7A8F", "User", "Domain", "BCLABS", null)]
         [NUnit.Framework.TestCaseAttribute("Mailbox", "06D7AE4F161F4A3AA7F@bclabs.local", "Mailbox", "Alias", "06D7AE4F161F4A3AA7F", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatTextInKeyValueGridsIsSelectableOnDetailsPageOnSelectedSubMenu(string pageName, string searchTerm, string subTabName, string keyToBeSelected, string valueToBeSelected, string[] exampleTags)
         {
