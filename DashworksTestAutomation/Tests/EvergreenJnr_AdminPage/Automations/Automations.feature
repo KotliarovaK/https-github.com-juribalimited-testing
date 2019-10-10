@@ -712,7 +712,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeviceLisFiltertHasAppropriateAutomati
 	And User selects 'Update path' in the 'Action Type' dropdown
 	And User selects 'Barry's User Project' option from 'Project' autocomplete
 	And User selects 'Desktop Replacement' option from 'Path' autocomplete
-	And User clicks 'CREATE' button 
+	And User clicks 'CREATE' button
 	#run automation
 	When User clicks "Automations" navigation link on the Admin page
 	And User clicks "Run now" option in Cog-menu for "DAS15949_Automation" item on Admin page and wait for processing

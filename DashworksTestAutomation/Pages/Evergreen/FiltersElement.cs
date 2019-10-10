@@ -407,10 +407,10 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(By.XPath(imgSelector));
         }
 
-        public IWebElement GetCurrentDateCheckbox()
+        public IWebElement GetFilterCheckboxByName(string checkboxName)
         {
-            var dateCheckbox = $".//div[contains(@class, 'filterAddPanel')]//mat-checkbox//span[contains(text(), '{DateTime.Now.ToString("dd/MM/yyyy")}')]";
-            return Driver.FindElement(By.XPath(dateCheckbox));
+            var checkboxSelector = $".//div[contains(@class, 'filterAddPanel')]//span[contains(text(), '{checkboxName}')]";
+            return Driver.FindElement(By.XPath(checkboxSelector));
         }
 
         public IList<IWebElement> GetAssociationsList()
