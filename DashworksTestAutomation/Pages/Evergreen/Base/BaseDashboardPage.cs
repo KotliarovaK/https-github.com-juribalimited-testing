@@ -64,47 +64,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'actions-container-row')]")]
         public IWebElement ActionsRowsCount { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-label='Action']")]
-        public IWebElement ActionsDropdown { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "//mat-select[@role='listbox']//span[text()='Bulk Update Type']")]
-        public IWebElement BulkUpdateTypeDropdown { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//textarea[@placeholder='Project']")]
-        public IWebElement ProjectField { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//span[text()='Project or Evergreen']")]
-        public IWebElement ProjectOrEvergreenField { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "//mat-option[@role='option']")]
-        public IList<IWebElement> ActionsProjectOrEvergreenOptions { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "//mat-option[@role='option']")]
-        public IWebElement ProjectSection { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "//textarea[@placeholder='Stage']")]
-        public IWebElement StageField { get; set; }
-
-        //TODO Remove this step
-        [FindsBy(How = How.XPath, Using = "//input[@placeholder='Capacity Unit']")]
-        public IWebElement CapacityUnitField { get; set; }
-
-        //TODO should be replaced by AutocompleteSelect
-        [FindsBy(How = How.XPath, Using = "//input[@placeholder='Ring']")]
-        public IWebElement RingField { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "//*[contains(text(),'Also Move Mailboxes')]/parent::span//preceding-sibling::mat-select")]
-        public IWebElement AlsoMoveMailboxesField { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//textarea[@placeholder='Task']")]
-        public IWebElement TaskField { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-label='Value']")]
-        public IWebElement ValueDropdown { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//textarea[@placeholder='Value']")]
-        public IWebElement ValueField { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//mat-select[contains(@class, 'mat-select')]//span[text()='Update Value']")]
         public IWebElement UpdateValueDropdown { get; set; }
 
@@ -885,6 +844,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             if (!Driver.IsElementDisplayed(by, WebDriverExtensions.WaitTime.Medium))
                 throw new Exception($"Textbox with '{placeholder}' placeholder is not displayed");
             return Driver.FindElement(by);
+        }
+
+        public void ClearTextbox(string placeholder)
+        {
+            GetNamedTextbox(placeholder).Clear();
         }
 
         public void PopulateTextbox(string placeholder, string value, bool clear = true)

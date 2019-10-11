@@ -540,11 +540,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateTaskValueIsDisplayInAutomationsL
 	When User selects 'USE ME FOR AUTOMATION(DEVICE SCHDLD)' option from 'Project' autocomplete
 	When User selects 'Stage A' option from 'Stage' autocomplete
 	When User selects 'Workflow task' option from 'Task' autocomplete
-	And User selects "Started" Value on Action panel
+	And User selects 'Started' in the 'Value' dropdown
 	When User clicks 'CREATE' button 
 	Then "Workflow task" content is displayed for "Task or Field" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17602 @DAS17604 @Cleanup @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17602 @DAS17604 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateTextValue
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -560,8 +560,8 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateTextValue
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	When User selects 'One' option from 'Stage' autocomplete
 	When User selects 'Text Computer' option from 'Task' autocomplete
-	And User selects "Update" Update Value on Action panel
-	When User types "To be updated" Value on Action panel
+	And User selects 'Update' in the 'Update Value' dropdown
+	When User selects 'To be updated' option from 'Value' autocomplete
 	And User clicks 'CREATE' button 
 	#Create Action
 	When User clicks "Automations" navigation link on the Admin page
@@ -597,7 +597,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForRemoveTextValue
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	When User selects 'One' option from 'Stage' autocomplete
 	When User selects 'Text Computer' option from 'Task' autocomplete
-	When User selects 'Remove' in the 'Update Value' dropdown for Actions
+	When User selects 'Remove' in the 'Update Value' dropdown
 	And User clicks 'CREATE' button 
 	When User clicks "Automations" navigation link on the Admin page
 	When User enters "17605_Automation" text in the Search field for "Automation" column
@@ -635,7 +635,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateDate
 	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters '5 Aug 2019' text to 'Date' datepicker
 	#Delete After clarifications
-	When User selects 'None' in the 'Capacity Slot' dropdown for Actions
+	When User selects 'None' in the 'Capacity Slot' dropdown
 	#Delete After clarifications
 	And User clicks 'CREATE' button 
 	When User clicks "Automations" navigation link on the Admin page
@@ -666,8 +666,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThanActionFieldsAreNotPrepopulatedWithOldD
 	And User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	And User selects 'One' option from 'Stage' autocomplete
 	And User selects 'Radio Rag Date Owner' option from 'Task' autocomplete
-	And User selects "Update" Update Value on Action panel
-	And User selects "Complete" Value on Action panel
+	And User selects 'Update' in the 'Update Value' dropdown
+	And User selects 'Complete' in the 'Value' dropdown
 	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters '31 Aug 2019' text to 'Date' datepicker
 	And User selects "Update" Update Owner on Action panel
@@ -702,8 +702,8 @@ Scenario: EvergreenJnr_AdminPage_CheckValueDataInTheGridForActions
 	And User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	And User selects 'One' option from 'Stage' autocomplete
 	And User selects 'Radio Rag Date Owner User Req A' option from 'Task' autocomplete
-	And User selects "Update" Update Value on Action panel
-	And User selects "Started" Value on Action panel
+	And User selects 'Update' in the 'Update Value' dropdown
+	And User selects 'Started' in the 'Value' dropdown
 	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters '5 Sep 2019' text to 'Date' datepicker
 	And User selects "Update" Update Owner on Action panel

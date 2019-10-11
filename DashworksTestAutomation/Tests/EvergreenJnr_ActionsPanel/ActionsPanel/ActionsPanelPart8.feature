@@ -28,7 +28,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatBulkUpdateOfThousandsOfRowsUpdateToSuc
 	And User selects 'Havoc (Big Data)' option from 'Project' autocomplete
 	And User selects 'Stage 0' option from 'Stage' autocomplete
 	And User selects 'Task 0' option from 'Task' autocomplete
-	And User selects "Started" Value on Action panel
+	And User selects 'Started' in the 'Value' dropdown
 	And User clicks 'UPDATE' button 
 	Then the amber message is displayed correctly
 	When User clicks 'UPDATE' button
@@ -50,7 +50,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatBulkUpdateOfTasksDoesNotIncludeUnpub
 	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
 	And User selects 'Pre-Migration' option from 'Stage' autocomplete
-	Then following Tasks are displayed in drop-down:
+	Then only below options are displayed in the 'Task' autocomplete
 	| Options                |
 	| Forecast Date          |
 	| Forecast Code          |
@@ -79,13 +79,13 @@ Scenario: EvergreenJnr_UsersList_CheckThatBulkUpdateOfTasksDoesNotIncludeGroupTa
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	And User selects 'User Scheduled Test (Jo)' option from 'Project' autocomplete
-	Then following Stage are displayed in drop-down:
+	Then only below options are displayed in the 'Stage' autocomplete
 	| Options |
 	| One     |
 	| Two     |
 	| Three   |
 	When User selects 'One' option from 'Stage' autocomplete
-	Then following Tasks are displayed in drop-down:
+	Then only below options are displayed in the 'Task' autocomplete
 	| Options                            |
 	| Radio Rag only User                |
 	| Radio Rag Date User                |
@@ -111,8 +111,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatBulkUpdateOperationHasCorrectOptionsFo
 	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
 	And User selects 'Project' in the 'Project or Evergreen' dropdown
 	And User selects 'Email Migration' option from 'Project' autocomplete
-	And User selects "Unassigned" Capacity Unit on Action panel
-	Then following Move Mailboxes are displayed in drop-down:
+	When User selects 'Unassigned' option from 'Capacity Unit' autocomplete
+	Then following Values are displayed in the 'Also Move Users' dropdown:
 	| Options              |
 	| None                 |
 	| Owned mailboxes only |
