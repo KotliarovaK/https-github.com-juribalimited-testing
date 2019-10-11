@@ -7,6 +7,7 @@ using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.Base;
 using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
 using DashworksTestAutomation.Pages.Evergreen.ItemDetails;
+using DashworksTestAutomation.Pages.Evergreen.RightSideActionPanels;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -30,11 +31,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"Actions panel is displayed to the user")]
         public void ThenActionsPanelIsDisplayedToTheUser()
         {
-            var columnElement = _driver.NowAt<ActionsElement>();
-            Verify.IsTrue(columnElement.ActionsPanel.Displayed(),
+            var panel = _driver.NowAt<ActionsPanelElement>();
+            Verify.IsTrue(panel.ActionsPanel.Displayed(),
                 "Actions panel was not displayed");
 
-            var button = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsTrue(panel.IsPanelOpened("Actions"),
+                "Action panel is not opened");
+
+            var button = _driver.NowAt<BaseHeaderElement>();
             Verify.IsTrue(button.ActionsButton.IsElementActive(),
                 "Action button is not active");
         }
@@ -42,18 +46,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"Actions panel is not displayed to the user")]
         public void ThenActionsPanelIsNotDisplayedToTheUser()
         {
-            //TODO add assertion that ActionsElement.ActionsPanelis not displayed!
-
-            var button = _driver.NowAt<BaseDashboardPage>();
+            var button = _driver.NowAt<BaseHeaderElement>();
             Verify.IsFalse(button.ActionsButton.IsElementActive(),
                 "Action button is active");
+
+            var panel = _driver.NowAt<BaseRightSideActionsPanel>();
+            Verify.IsFalse(panel.IsPanelOpened("Actions"),
+                "Action panel is opened");
         }
 
         [Then(@"Actions message container is displayed to the user")]
         public void ThenActionsMessageContainerIsDisplayedToTheUser()
         {
             var columnElement = _driver.NowAt<ActionsElement>();
-            Utils.Verify.IsTrue(columnElement.ActionsContainerMessage.Displayed(),
+            Verify.IsTrue(columnElement.ActionsContainerMessage.Displayed(),
                 "Actions message container was not displayed");
             Logger.Write("Actions message container is visible");
         }
@@ -66,16 +72,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             dashboardPage.SelectAllCheckbox.Click();
             _driver.WaitForDataLoading();
             _driver.WaitForDataLoadingInActionsPanel();
-        }
-
-        [When(@"User selects ""(.*)"" Path on Action panel")]
-        public void WhenUserSelectsPathOnActionPanel(string requestType)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitForElementToBeDisplayed(action.PathDropdown);
-            action.PathDropdown.Clear();
-            action.PathDropdown.SendKeys(requestType);
-            action.GetDropdownValueByName(requestType).Click();
         }
 
         [When(@"User selects ""(.*)"" option in ""(.*)"" drop-down on Action panel")]
@@ -133,23 +129,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 Assert.That(actualList, Does.Not.Contain(expectedIem), $"Values in {fieldName} drop-down is displayed");
             }
 
-            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            page.BodyContainer.Click();
-        }
-
-        [When(@"User selects next Tuesday Date on Action panel")]
-        public void WhenUserSelectsNextTuesdayDateOnActionPanel()
-        {
-            DateTime today = DateTime.Today;
-            int daysUntilTuesday = ((int)DayOfWeek.Tuesday - (int)today.DayOfWeek + 7) % 7;
-            DateTime nextTuesday = today.AddDays(daysUntilTuesday);
-
-            string dateValue = nextTuesday.ToString("dd MMM yyyy");
-
-            var action = _driver.NowAt<BaseDashboardPage>();
-            action.DateField.Click();
-            action.DateField.Clear();
-            action.DateField.SendKeys(dateValue);
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             page.BodyContainer.Click();
         }

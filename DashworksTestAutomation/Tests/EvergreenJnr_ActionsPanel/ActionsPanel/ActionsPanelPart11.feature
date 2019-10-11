@@ -114,7 +114,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSlotIsDisplayedInDDLIfSelectDateWith
 	And User selects 'Migration' option from 'Stage' autocomplete
 	And User selects 'Migrated Date' option from 'Task' autocomplete
 	And User selects 'Update' in the 'Update Date' dropdown
-	And User selects next Tuesday Date on Action panel
+	When User enters next 'Tuesday' day to 'Date' textbox
 	Then following values are presented in "Capacity Slot" drop-down on Action panel:
 	| Options    |
 	| None       |
@@ -135,7 +135,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFullSlotIsDisplayedWhileRulesShouldH
 	And User selects 'Migration' option from 'Stage' autocomplete
 	And User selects 'Migrated Date' option from 'Task' autocomplete
 	And User selects 'Update' in the 'Update Date' dropdown
-	And User selects next Tuesday Date on Action panel
+	When User enters next 'Tuesday' day to 'Date' textbox
 	And User selects 'Slot17833_1' in the 'Capacity Slot' dropdown
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
@@ -149,7 +149,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFullSlotIsDisplayedWhileRulesShouldH
 	And User selects 'Migration' option from 'Stage' autocomplete
 	And User selects 'Migrated Date' option from 'Task' autocomplete
 	And User selects 'Update' in the 'Update Date' dropdown
-	And User selects next Tuesday Date on Action panel
+	When User enters next 'Tuesday' day to 'Date' textbox
 	Then following values are presented in "Capacity Slot" drop-down on Action panel:
 	| Options    |
 	| None       |

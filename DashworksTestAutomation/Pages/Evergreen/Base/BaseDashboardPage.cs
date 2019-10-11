@@ -52,33 +52,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = "//div[@id='content']//i[@class='material-icons mat-menu']")]
         public IWebElement ExpandSideNavPanelIcon { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//admin-header//span[@class='ng-star-inserted']")]
-        public IWebElement FoundRowsLabel { get; set; }
-
-        //TODO move this to separate component
-        #region Action Panel
-
-        [FindsBy(How = How.XPath, Using = "//i[contains(@class, 'static-list')]/ancestor::button")]
-        public IWebElement ActionsButton { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'actions-container-row')]")]
-        public IWebElement ActionsRowsCount { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//button[@aria-label='Open calendar']")]
         public IWebElement DatePickerIcon { get; set; }
 
-        //TODO Remove this step
-        [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Date']")]
-        public IWebElement DateField { get; set; }
-
-        //TODO should be replaced by AutocompleteSelect
-        [FindsBy(How = How.XPath, Using = ".//input[@placeholder='Path']")]
-        public IWebElement PathDropdown { get; set; }
-
-        #endregion
-
-        [FindsBy(How = How.XPath, Using = ".//button[contains(@id, 'listDtlBtn')]")]
-        public IWebElement ListDetailsButton { get; set; }
+        //TODO revisit this 
+        [FindsBy(How = How.XPath, Using = ".//admin-header//span[@class='ng-star-inserted']")]
+        public IWebElement FoundRowsLabel { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[contains(@id, 'clmnBtn')]")]
         public IWebElement ColumnButton { get; set; }

@@ -253,6 +253,16 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             _driver.WaitForDataLoading();
         }
 
+        [When(@"User enters next '(.*)' day to '(.*)' textbox")]
+        public void WhenUserEntersNextDayToTextbox(string dayOfWeek, string placeholder)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.GetTextbox(placeholder).Clear();
+            page.GetTextbox(placeholder).
+                SendKeys(dayOfWeek.GetNextWeekday().ToString("dd MMM yyyy"));
+            page.BodyContainer.Click();
+        }
+
         [When(@"User adds '(.*)' value from '(.*)' textbox")]
         public void WhenUserAddsValueFromTextbox(string option, string fieldName)
         {
