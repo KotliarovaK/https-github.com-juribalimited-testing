@@ -540,7 +540,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateTaskValueIsDisplayInAutomationsL
 	When User selects 'USE ME FOR AUTOMATION(DEVICE SCHDLD)' option from 'Project' autocomplete
 	When User selects 'Stage A' option from 'Stage' autocomplete
 	When User selects 'Workflow task' option from 'Task' autocomplete
-	And User selects "Started" Value on Action panel
+	And User selects 'Started' in the 'Value' dropdown
 	When User clicks 'CREATE' button 
 	Then "Workflow task" content is displayed for "Task or Field" column
 
@@ -667,7 +667,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThanActionFieldsAreNotPrepopulatedWithOldD
 	And User selects 'One' option from 'Stage' autocomplete
 	And User selects 'Radio Rag Date Owner' option from 'Task' autocomplete
 	And User selects "Update" Update Value on Action panel
-	And User selects "Complete" Value on Action panel
+	And User selects 'Complete' in the 'Value' dropdown
 	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters '31 Aug 2019' text to 'Date' datepicker
 	And User selects "Update" Update Owner on Action panel
@@ -703,7 +703,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValueDataInTheGridForActions
 	And User selects 'One' option from 'Stage' autocomplete
 	And User selects 'Radio Rag Date Owner User Req A' option from 'Task' autocomplete
 	And User selects "Update" Update Value on Action panel
-	And User selects "Started" Value on Action panel
+	And User selects 'Started' in the 'Value' dropdown
 	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters '5 Sep 2019' text to 'Date' datepicker
 	And User selects "Update" Update Owner on Action panel

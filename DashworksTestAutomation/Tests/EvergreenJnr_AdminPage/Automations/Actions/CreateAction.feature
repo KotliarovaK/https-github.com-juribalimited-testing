@@ -138,13 +138,13 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueAction
 	When User selects 'One' option from 'Stage' autocomplete
 	When User selects 'Radio Rag Date Comp' option from 'Task' autocomplete
 	And User selects "Update" Update Value on Action panel
-	And User selects "Failed" Value on Action panel
+	And User selects 'Failed' in the 'Value' dropdown
 	And User selects 'No change' in the 'Update Date' dropdown
 	Then "CREATE" Action button is active
 	When User selects "No change" value for "Update" dropdown on Action panel
 	Then "CREATE" Action button is disabled
 	When User selects "Update" value for "No change" dropdown on Action panel
-	And User selects "Failed" Value on Action panel
+	And User selects 'Failed' in the 'Value' dropdown
 	Then "CREATE" Action button is active
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17615 @DAS17619 @Cleanup @Not_Ready

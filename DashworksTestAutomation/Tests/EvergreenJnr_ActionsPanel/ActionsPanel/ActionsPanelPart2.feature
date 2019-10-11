@@ -22,14 +22,13 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatRemoveFromStaticListOptionIsNo
 	| Create static list |
 	| Bulk update        |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	Then Bulk Update Type dropdown is displayed on Action panel
 	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	Then "UPDATE" Action button is disabled
 	And "CANCEL" Action button is active
 	When User selects '<ProjectName>' option from 'Project' autocomplete
 	And User selects '<StageName>' option from 'Stage' autocomplete
 	And User selects '<TaskName>' option from 'Task' autocomplete
-	And User selects "<Value>" Value on Action panel
+	And User selects '<Value>' in the 'Value' dropdown
 	When User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	When User clicks 'UPDATE' button

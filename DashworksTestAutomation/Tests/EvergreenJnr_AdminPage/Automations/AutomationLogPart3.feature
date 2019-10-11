@@ -54,7 +54,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogMessageForDeletedTaskInAction
 	When User selects 'Test' option from 'Stage' autocomplete
 	When User selects 'DAS17247_Task' option from 'Task' autocomplete
 	When User selects "Update" Update Value on Action panel
-	When User selects "Not Applicable" Value on Action panel
+	When User selects 'Not Applicable' in the 'Value' dropdown
 	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters '7 Aug 2019' text to 'Date' datepicker
 	And User clicks 'CREATE' button 
@@ -94,7 +94,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedU
 	When User selects 'Stage 1' option from 'Stage' autocomplete
 	When User selects 'Radiobutton Readiness Date Owner Task (User)' option from 'Task' autocomplete
 	And User selects "Update" Update Value on Action panel
-	And User selects "On Hold" Value on Action panel
+	And User selects 'On Hold' in the 'Value' dropdown
 	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters '1 Aug 2019' text to 'Date' datepicker
 	And User selects "Update" Update Owner on Action panel

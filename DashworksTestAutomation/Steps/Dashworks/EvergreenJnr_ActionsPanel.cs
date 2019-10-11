@@ -68,46 +68,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoadingInActionsPanel();
         }
 
-        [Then(@"Bulk Update Type dropdown is displayed on Action panel")]
-        public void ThenBulkUpdateTypeDropdownIsDisplayedOnActionPanel()
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            Verify.IsTrue(action.BulkUpdateTypeDropdown.Displayed(),
-                "Bulk Update Type dropdown is not displayed on Action panel");
-        }
-
-        [When(@"User selects ""(.*)"" Project or Evergreen on Action panel")]
-        public void WhenUserSelectsProjectOrEvergreenOnActionPanel(string projectName)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            action.ProjectOrEvergreenField.Click();
-            _driver.WaitForElementToBeDisplayed(action.ProjectSection);
-            action.ActionsProjectOrEvergreenOptions.Where(x => x.Text.Equals(projectName)).FirstOrDefault().Click();
-        }
-
-        [Then(@"Projects are displayed in alphabetical order on Action panel")]
-        public void ThenProjectsAreDisplayedInAlphabeticalOrderOnActionPanel()
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            action.ProjectField.Click();
-            var list = action.OptionListOnActionsPanel.Select(x => x.Text).ToList();
-            Utils.Verify.AreEqual(list.OrderBy(s => s), list, "Projects are not in alphabetical order");
-        }
-
-        [Then(@"""(.*)"" Project is displayed on Action panel")]
-        public void ThenProjectIsDisplayedOnActionPanel(string projectName)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            Verify.AreEqual(projectName, action.ProjectField.GetAttribute("value"), "Project is not displayed");
-        }
-
-        [When(@"User clears Project field")]
-        public void WhenUserClearsProjectField()
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            action.ProjectField.Clear();
-        }
-
         [When(@"User selects ""(.*)"" Path on Action panel")]
         public void WhenUserSelectsPathOnActionPanel(string requestType)
         {
@@ -118,29 +78,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.GetDropdownValueByName(requestType).Click();
         }
 
-        //TODO Remove this step
-        [When(@"User selects ""(.*)"" Capacity Unit on Action panel")]
-        public void WhenUserSelectsCapacityUnitOnActionPanel(string capacityUnit)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitForElementToBeDisplayed(action.CapacityUnitField);
-            action.CapacityUnitField.Clear();
-            action.CapacityUnitField.SendKeys(capacityUnit);
-            action.GetDropdownValueByName(capacityUnit).Click();
-            _driver.WaitForDataLoading();
-        }
-
-        [When(@"User selects ""(.*)"" Ring on Action panel")]
-        public void WhenUserSelectsRingOnActionPanel(string ringValue)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitForElementToBeDisplayed(action.RingField);
-            action.RingField.Clear();
-            action.RingField.SendKeys(ringValue);
-            action.GetDropdownValueByName(ringValue).Click();
-            _driver.WaitForDataLoading();
-        }
-
         [When(@"User selects ""(.*)"" option in ""(.*)"" drop-down on Action panel")]
         public void WhenUserSelectsOptionInDrop_DownOnActionPanel(string option, string fieldName)
         {
@@ -149,43 +86,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var action = _driver.NowAt<BaseDashboardPage>();
             action.GetDropdownValueByName(option).Click();
             _driver.WaitForDataLoading();
-        }
-
-        [Then(@"following Move Mailboxes are displayed in drop-down:")]
-        public void ThenFollowingMoveMailboxesAreDisplayedInDrop_Down(Table table)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            action.AlsoMoveMailboxesField.Click();
-            _driver.WaitForElementsToBeDisplayed(action.OptionListOnActionsPanel);
-            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            var actualList = action.OptionListOnActionsPanel.Select(value => value.Text).ToList();
-            Utils.Verify.AreEqual(expectedList, actualList, "Move Mailboxes lists are different");
-            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            page.BodyContainer.Click();
-        }
-
-        [Then(@"following Stage are displayed in drop-down:")]
-        public void ThenFollowingStageAreDisplayedInDrop_Down(Table table)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            action.StageField.Click();
-            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            var actualList = action.OptionListOnActionsPanel.Select(value => value.Text).ToList();
-            Utils.Verify.AreEqual(expectedList, actualList, "Stage lists are different");
-            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            page.BodyContainer.Click();
-        }
-
-        [Then(@"following Tasks are displayed in drop-down:")]
-        public void ThenFollowingTasksAreDisplayedInDrop_Down(Table table)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            action.TaskField.Click();
-            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            var actualList = action.OptionListOnActionsPanel.Select(value => value.Text).ToList();
-            Utils.Verify.AreEqual(expectedList, actualList, "Tasks value are different");
-            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            page.BodyContainer.Click();
         }
 
         [Then(@"following values are displayed in ""(.*)"" drop-down on Action panel:")]
@@ -237,17 +137,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.BodyContainer.Click();
         }
 
-        [Then(@"Stages are displayed in alphabetical order on Action panel")]
-        public void ThenStagesAreDisplayedInAlphabeticalOrderOnActionPanel()
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            action.StageField.Click();
-            var list = action.OptionListOnActionsPanel.Select(x => x.Text).ToList();
-            Utils.Verify.AreEqual(list.OrderBy(s => s), list, "Stages are not in alphabetical order");
-            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            page.BodyContainer.Click();
-        }
-
         [When(@"User types ""(.*)"" Value on Action panel")]
         public void WhenUserTypesValueOnActionPanel(string value)
         {
@@ -256,32 +145,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.ValueField.SendKeys(value);
             action.BodyContainer.Click();
             _driver.WaitForDataLoading();
-        }
-
-        [Then(@"Tasks are displayed in alphabetical order on Action panel")]
-        public void ThenTasksAreDisplayedInAlphabeticalOrderOnActionPanel()
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            action.TaskField.Click();
-            var list = action.OptionListOnActionsPanel.Select(x => x.Text).ToList();
-            Utils.Verify.AreEqual(list.OrderBy(s => s), list, "Tasks are not in alphabetical order");
-            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            page.BodyContainer.Click();
-        }
-
-        [When(@"User selects ""(.*)"" Value on Action panel")]
-        public void WhenUserSelectsValueOnActionPanel(string value)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            action.ValueDropdown.Click();
-            action.GetDropdownValueByName(value).Click();
-        }
-
-        [Then(@"Value field is not displayed on Action panel")]
-        public void ThenValueFieldIsNotDisplayedOnActionPanel()
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            Verify.IsFalse(action.ValueDropdown.Displayed(), "Value field is displayed");
         }
 
         //TODO replace by WhenUserSelectsInTheDropdown

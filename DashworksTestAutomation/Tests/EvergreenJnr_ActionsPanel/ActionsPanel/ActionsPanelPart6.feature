@@ -35,9 +35,9 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelIsWorkingCorrectlyWhenS
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	And User selects 'Barry's User Project' option from 'Project' autocomplete
-	Then Stages are displayed in alphabetical order on Action panel
+	Then 'Stage' autocomplete options are sorted in the alphabetical order
 	When User selects 'Audit & Configuration' option from 'Stage' autocomplete
-	Then Tasks are displayed in alphabetical order on Action panel
+	Then 'Task' autocomplete options are sorted in the alphabetical order
 	When User selects 'Validate User Device Ownership' option from 'Task' autocomplete
 	Then the Update Value options are displayed in following order:
 	| Options               |
@@ -105,9 +105,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatClearingAValueResetsSubsequentValues
 	And User selects 'User Scheduled Test (Jo)' option from 'Project' autocomplete
 	And User selects 'One' option from 'Stage' autocomplete
 	And User selects 'Radio Rag Only Comp' option from 'Task' autocomplete
-	And User selects "Started" Value on Action panel
+	When User selects 'Started' in the 'Value' dropdown
 	And User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
-	Then Value field is not displayed on Action panel
+	Then 'Value' dropdown is not displayed
 	When User clicks the Logout button
 	Then User is logged out
 	When User clicks on the Login link
@@ -176,7 +176,7 @@ Scenario Outline: EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorre
 	| Update                |
 	| No change             |
 	When User selects "Update" Update Value on Action panel
-	And User selects "Started" Value on Action panel
+	And User selects 'Started' in the 'Value' dropdown
 	And User selects 'No change' in the 'Update Date' dropdown
 	And User navigate to the bottom of the Action panel
 	And User selects "No change" Update Owner on Action panel
@@ -243,7 +243,7 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User selects 'User Acceptance Test' option from 'Stage' autocomplete
 	And User selects 'Perform User Acceptance Test' option from 'Task' autocomplete
 	And User selects "Update" Update Value on Action panel
-	And User selects "<NewValue>" Value on Action panel
+	And User selects '<NewValue>' in the 'Value' dropdown
 	And User selects 'No change' in the 'Update Date' dropdown
 	And User selects "Update" Update Owner on Action panel
 	And User selects "<NewTeam>" Team on Action panel
@@ -262,7 +262,7 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User selects 'User Acceptance Test' option from 'Stage' autocomplete
 	And User selects 'Perform User Acceptance Test' option from 'Task' autocomplete
 	And User selects "Update" Update Value on Action panel
-	And User selects "<DefaultValue>" Value on Action panel
+	And User selects '<DefaultValue>' in the 'Value' dropdown
 	And User selects 'No change' in the 'Update Date' dropdown
 	And User selects "Update" Update Owner on Action panel
 	And User selects "<DefaultTeam>" Team on Action panel

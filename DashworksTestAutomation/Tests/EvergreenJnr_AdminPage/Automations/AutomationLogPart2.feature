@@ -70,7 +70,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInDeviceScope
 	When User selects 'Project 00 M Computer Scheduled' option from 'Project' autocomplete
 	When User selects 'Planning' option from 'Stage' autocomplete
 	When User selects 'Get technical information' option from 'Task' autocomplete
-	And User selects "Started" Value on Action panel
+	And User selects 'Started' in the 'Value' dropdown
 	And User clicks 'CREATE' button 
 	#Create Action
 	When User clicks "Automations" navigation link on the Admin page
@@ -111,7 +111,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInMailboxScop
 	When User selects 'Comms & Exceptions' option from 'Stage' autocomplete
 	When User selects 'Mailbox Dropdown Non RAG Owner' option from 'Task' autocomplete
 	And User selects "Update" Update Value on Action panel
-	And User selects "Maybe" Value on Action panel
+	And User selects 'Maybe' in the 'Value' dropdown
 	And User selects "No change" Update Owner on Action panel
 	And User clicks 'CREATE' button 
 	#Create Action
@@ -194,7 +194,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInDevicesScop
 	When User selects 'Stage B' option from 'Stage' autocomplete
 	When User selects 'Readiness Date Comp Task' option from 'Task' autocomplete
 	And User selects "Update" Update Value on Action panel
-	And User selects "Started" Value on Action panel
+	And User selects 'Started' in the 'Value' dropdown
 	And User selects 'No change' in the 'Update Date' dropdown
 	And User clicks 'CREATE' button 
 	#Create Action
@@ -244,7 +244,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedA
 	When User selects 'Stage 2' option from 'Stage' autocomplete
 	When User selects 'Radio Date Slot Mail' option from 'Task' autocomplete
 	And User selects "Update" Update Value on Action panel
-	And User selects "Started" Value on Action panel
+	And User selects 'Started' in the 'Value' dropdown
 	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters '3 Oct 2019' text to 'Date' datepicker
 	And User selects 'Radio Slot' in the 'Capacity Slot' dropdown
@@ -331,8 +331,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueAndOwnerInDev
 	When User selects 'Stage A' option from 'Stage' autocomplete
 	When User selects 'Readiness Owner Task' option from 'Task' autocomplete
 	And User selects "Update" Update Value on Action panel
-	When User selects "Tested" Value on Action panel
-	And User selects "Tested" Value on Action panel
+	When User selects 'Tested' in the 'Value' dropdown
+	And User selects 'Tested' in the 'Value' dropdown
 	When User selects "Update" Update Owner on Action panel
 	When User selects "Admin IT" Team on Action panel
 	When User selects "Maryna Kyslyak" Owner on Action panel
@@ -439,7 +439,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedA
 	When User selects 'Stage A' option from 'Stage' autocomplete
 	When User selects 'Radiobutton Readiness Date Task No CS' option from 'Task' autocomplete
 	And User selects "Update" Update Value on Action panel
-	And User selects "Failed" Value on Action panel
+	And User selects 'Failed' in the 'Value' dropdown
 	And User selects 'Remove' in the 'Update Date' dropdown
 	And User clicks 'CREATE' button 
 	#Create Action
@@ -491,7 +491,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueActionDAS
 	When User selects 'Stage 1' in the 'Stage' dropdown for Actions
 	When User selects 'Radiobutton Readiness Date Owner Task (User)' option from 'Task' autocomplete
 	And User selects "Update" Update Value on Action panel
-	And User selects "Started" Value on Action panel
+	And User selects 'Started' in the 'Value' dropdown
 	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters '19 Nov 2019' text to 'Date' datepicker
 	And User selects "Update" Update Owner on Action panel

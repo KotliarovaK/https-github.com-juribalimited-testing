@@ -44,7 +44,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueAutomationValidationsForDel
 	When User selects '17429Project' option from 'Project' autocomplete
 	When User selects '17429_Stage' option from 'Stage' autocomplete
 	When User selects '17429_Task' option from 'Task' autocomplete
-	When User selects "Started" Value on Action panel
+	When User selects 'Started' in the 'Value' dropdown
 	And User clicks 'CREATE' button 
 	#Create Action
 	When User clicks "Automations" navigation link on the Admin page
@@ -105,7 +105,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueAutomationValidationsForDel
 	When User selects '17429Project1' option from 'Project' autocomplete
 	When User selects '17429_Stage1' option from 'Stage' autocomplete
 	When User selects '17429_Task1' option from 'Task' autocomplete
-	When User selects "Started" Value on Action panel
+	When User selects 'Started' in the 'Value' dropdown
 	And User clicks 'CREATE' button 
 	#Delete Stage
 	When User clicks 'Projects' on the left-hand menu
@@ -172,7 +172,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueAutomationValidationsForDel
 	When User selects '17429Project2' option from 'Project' autocomplete
 	When User selects '17429_Stage2' option from 'Stage' autocomplete
 	When User selects '17429_Task2' option from 'Task' autocomplete
-	When User selects "Started" Value on Action panel
+	When User selects 'Started' in the 'Value' dropdown
 	And User clicks 'CREATE' button 
 	#Delete Stage
 	When User clicks 'Projects' on the left-hand menu
