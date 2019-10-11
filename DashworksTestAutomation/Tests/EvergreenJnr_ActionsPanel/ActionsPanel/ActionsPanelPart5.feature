@@ -20,7 +20,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectFieldIsDisplayedCorrectl
 	When User selects 'User Scheduled Test (Jo)' option from 'Project' autocomplete
 	And User selects "Request Type A" Path on Action panel
 	When User clears Project field
-	And User clicks on Action drop-down
+	When User clicks 'Action' dropdown
 	Then "User Scheduled Test (Jo)" Project is displayed on Action panel
 
 @Evergreen @Mailboxes @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13142 @DAS16826
@@ -45,7 +45,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatProjectFieldIsDisplayedCorrectlyAf
 	And User selects 'Email Migration' option from 'Project' autocomplete
 	And User selects "Personal Mailbox - VIP" Path on Action panel
 	When User clears Project field
-	And User clicks on Action drop-down
+	When User clicks 'Action' dropdown
 	Then "Email Migration" Project is displayed on Action panel
 
 @Evergreen @AllLists @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13355 @DAS13260 @DAS13281

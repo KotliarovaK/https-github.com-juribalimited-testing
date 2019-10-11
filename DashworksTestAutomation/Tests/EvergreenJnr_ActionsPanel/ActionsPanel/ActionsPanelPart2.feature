@@ -17,8 +17,7 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatRemoveFromStaticListOptionIsNo
 	When User select "<ColumnHeader>" rows in the grid
 	| SelectedRowsName |
 	| <RowName>        |
-	And User clicks on Action drop-down
-	Then following Values are displayed in Action drop-down:
+	Then following Values are displayed in the 'Action' dropdown:
 	| Value              |
 	| Create static list |
 	| Bulk update        |
@@ -61,8 +60,7 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatAddToStaticListOptionIsNotShow
 	When User select "<ColumnHeader>" rows in the grid
 	| SelectedRowsName |
 	| <RowName>        |
-	And User clicks on Action drop-down
-	Then following Values are displayed in Action drop-down:
+	Then following Values are displayed in the 'Action' dropdown:
 	| Value                   |
 	| Create static list      |
 	| Remove from static list |
@@ -96,7 +94,7 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatStaticListsCreatedFromAFilterO
 	Then Actions panel is displayed to the user
 	When User select all rows
 	#Then "<SelectedRowsCount>" selected rows are displayed in the Actions panel
-	When User clicks on Action drop-down
+	When User clicks 'Action' dropdown
 
 Examples:
 	| PageName     | FilterName       | Checkboxes | SelectedRowsCount |

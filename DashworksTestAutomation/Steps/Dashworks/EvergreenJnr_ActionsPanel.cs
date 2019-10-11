@@ -35,7 +35,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 "Actions panel was not displayed");
 
             var button = _driver.NowAt<BaseDashboardPage>();
-            Verify.Contains("active", button.ActionsButton.GetAttribute("class"),
+            Verify.IsTrue(button.ActionsButton.IsElementActive(),
                 "Action button is not active");
         }
 
@@ -45,7 +45,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             //TODO add assertion that ActionsElement.ActionsPanelis not displayed!
 
             var button = _driver.NowAt<BaseDashboardPage>();
-            Verify.DoesNotContain("active", button.ActionsButton.GetAttribute("class"),
+            Verify.IsFalse(button.ActionsButton.IsElementActive(),
                 "Action button is active");
         }
 
@@ -66,13 +66,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             dashboardPage.SelectAllCheckbox.Click();
             _driver.WaitForDataLoading();
             _driver.WaitForDataLoadingInActionsPanel();
-        }
-
-        [When(@"User clicks on Action drop-down")]
-        public void WhenUserClicksOnActionDrop_Down()
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            action.ActionsDropdown.Click();
         }
 
         [Then(@"Bulk Update Type dropdown is displayed on Action panel")]
@@ -105,7 +98,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenProjectIsDisplayedOnActionPanel(string projectName)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
-            Utils.Verify.AreEqual(projectName, action.ProjectField.GetAttribute("value"), "Project is not displayed");
+            Verify.AreEqual(projectName, action.ProjectField.GetAttribute("value"), "Project is not displayed");
         }
 
         [When(@"User clears Project field")]
@@ -734,17 +727,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             //Wait for All checkboxes are checked
             Thread.Sleep(1000);
             Verify.IsFalse(dashboardPage.UncheckedCheckbox.Displayed(), "Not all checkboxes are checked in the table");
-        }
-
-        [Then(@"following Values are displayed in Action drop-down:")]
-        public void ThenFollowingValuesAreDisplayedInActionDrop_Down(Table table)
-        {
-            var actionsElement = _driver.NowAt<ActionsElement>();
-            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            var actualList = actionsElement.ActionValues.Select(value => value.Text).ToList();
-            Verify.AreEqual(expectedList, actualList, "Action values are different");
-            var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            filterElement.BodyContainer.Click();
         }
     }
 }

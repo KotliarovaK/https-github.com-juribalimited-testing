@@ -42,8 +42,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatUserWithoutRelevantRolesCannotSeeBulkU
 	| SelectedRowsName    |
 	| 002B5DC7D4D34D5C895 |
 	| 0088FC8A50DD4344B92 |
-	And User clicks on Action drop-down
-	Then following Values are displayed in Action drop-down:
+	Then following Values are displayed in the 'Action' dropdown:
 	| Value              |
 	| Create static list |
 	When User clicks Profile in Account Dropdown

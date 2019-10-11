@@ -94,7 +94,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatProjectFieldIsDisplayedCorrectlyAfte
 	And User selects 'Barry's User Project' option from 'Project' autocomplete
 	And User selects "Desktop Replacement" Path on Action panel
 	When User clears Project field
-	And User clicks on Action drop-down
+	When User clicks 'Action' dropdown
 	Then "Barry's User Project" Project is displayed on Action panel
 
 @Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13142 @DAS16826
@@ -119,5 +119,5 @@ Scenario: EvergreenJnr_UsersList_CheckThatProjectFieldIsDisplayedCorrectlyAfterC
 	And User selects 'Havoc (Big Data)' option from 'Project' autocomplete
 	And User selects "User Request Type 2" Path on Action panel
 	When User clears Project field
-	And User clicks on Action drop-down
+	When User clicks 'Action' dropdown
 	Then "Havoc (Big Data)" Project is displayed on Action panel
