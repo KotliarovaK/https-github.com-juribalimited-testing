@@ -226,7 +226,7 @@ this.FeatureBackground();
             table4.AddRow(new string[] {
                         "No change"});
 #line 42
- testRunner.Then("the Update Value options are displayed in following order:", ((string)(null)), table4, "Then ");
+ testRunner.Then("following Values are displayed in the \'Update Value\' dropdown:", ((string)(null)), table4, "Then ");
 #line 46
  testRunner.When("User selects \'No change\' in the \'Update Value\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -239,7 +239,7 @@ this.FeatureBackground();
             table5.AddRow(new string[] {
                         "No change"});
 #line 47
- testRunner.Then("the Update Date options are displayed in following order:", ((string)(null)), table5, "Then ");
+ testRunner.Then("following Values are displayed in the \'Update Date\' dropdown:", ((string)(null)), table5, "Then ");
 #line 52
  testRunner.When("User selects \'No change\' in the \'Update Date\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -254,21 +254,21 @@ this.FeatureBackground();
             table6.AddRow(new string[] {
                         "No change"});
 #line 53
- testRunner.Then("the Update Owner options are displayed in following order:", ((string)(null)), table6, "Then ");
+ testRunner.Then("following Values are displayed in the \'Update Owner\' dropdown:", ((string)(null)), table6, "Then ");
 #line 59
- testRunner.When("User selects \"Update\" Update Owner on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Update\' in the \'Update Owner\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 60
- testRunner.Then("Teams are displayed in alphabetical order on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Team\' autocomplete options are sorted in the alphabetical order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 61
- testRunner.When("User selects \"Team 0\" Team on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Team 0\' option from \'Team\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 62
- testRunner.Then("Owner field is not displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Owner\' textbox is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 63
- testRunner.When("User selects \"IB Team\" Team on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'IB Team\' option from \'Team\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 64
- testRunner.Then("Owner field is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Owner\' textbox is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 65
- testRunner.When("User selects \"IB User\" Owner on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'IB User\' option from \'Owner\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 66
  testRunner.And("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 67
@@ -589,7 +589,7 @@ this.FeatureBackground();
             table13.AddRow(new string[] {
                         "No change"});
 #line 153
- testRunner.Then("the Update Value options are displayed in following order:", ((string)(null)), table13, "Then ");
+ testRunner.Then("following Values are displayed in the \'Update Value\' dropdown:", ((string)(null)), table13, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
                         "Options"});
@@ -600,7 +600,7 @@ this.FeatureBackground();
             table14.AddRow(new string[] {
                         "No change"});
 #line 157
- testRunner.And("the Update Date options are displayed in following order:", ((string)(null)), table14, "And ");
+ testRunner.Then("following Values are displayed in the \'Update Date\' dropdown:", ((string)(null)), table14, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
                         "Options"});
@@ -613,7 +613,7 @@ this.FeatureBackground();
             table15.AddRow(new string[] {
                         "No change"});
 #line 162
- testRunner.And("the Update Owner options are displayed in following order:", ((string)(null)), table15, "And ");
+ testRunner.Then("following Values are displayed in the \'Update Owner\' dropdown:", ((string)(null)), table15, "Then ");
 #line 168
  testRunner.When("User selects \'Workstation Text Task\' option from \'Task\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -624,7 +624,7 @@ this.FeatureBackground();
             table16.AddRow(new string[] {
                         "Remove"});
 #line 169
- testRunner.Then("the Update Value options are displayed in following order:", ((string)(null)), table16, "Then ");
+ testRunner.Then("following Values are displayed in the \'Update Value\' dropdown:", ((string)(null)), table16, "Then ");
 #line 173
  testRunner.When("User selects \'Computer Read Only Task in Self Service\' option from \'Task\' autocom" +
                     "plete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -636,7 +636,7 @@ this.FeatureBackground();
             table17.AddRow(new string[] {
                         "No change"});
 #line 174
- testRunner.Then("the Update Value options are displayed in following order:", ((string)(null)), table17, "Then ");
+ testRunner.Then("following Values are displayed in the \'Update Value\' dropdown:", ((string)(null)), table17, "Then ");
 #line 178
  testRunner.When("User selects \'Update\' in the \'Update Value\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 179
@@ -646,7 +646,7 @@ this.FeatureBackground();
 #line 181
  testRunner.And("User navigate to the bottom of the Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 182
- testRunner.And("User selects \"No change\" Update Owner on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User selects \'No change\' in the \'Update Owner\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 183
  testRunner.And("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 184
@@ -850,9 +850,9 @@ this.FeatureBackground();
 #line 247
  testRunner.And("User selects \'No change\' in the \'Update Date\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 248
- testRunner.And("User selects \"Update\" Update Owner on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User selects \'Update\' in the \'Update Owner\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 249
- testRunner.And(string.Format("User selects \"{0}\" Team on Action panel", newTeam), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When(string.Format("User selects \'{0}\' option from \'Team\' autocomplete", newTeam), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 250
  testRunner.And("User navigate to the bottom of the Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 251
@@ -889,9 +889,9 @@ this.FeatureBackground();
 #line 266
  testRunner.And("User selects \'No change\' in the \'Update Date\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 267
- testRunner.And("User selects \"Update\" Update Owner on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User selects \'Update\' in the \'Update Owner\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 268
- testRunner.And(string.Format("User selects \"{0}\" Team on Action panel", defaultTeam), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When(string.Format("User selects \'{0}\' option from \'Team\' autocomplete", defaultTeam), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 269
  testRunner.And("User navigate to the bottom of the Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 270

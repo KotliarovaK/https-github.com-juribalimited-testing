@@ -52,49 +52,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = "//div[@id='content']//i[@class='material-icons mat-menu']")]
         public IWebElement ExpandSideNavPanelIcon { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//admin-header//span[@class='ng-star-inserted']")]
-        public IWebElement FoundRowsLabel { get; set; }
-
-        //TODO move this to separate component
-        #region Action Panel
-
-        [FindsBy(How = How.XPath, Using = "//i[contains(@class, 'static-list')]/ancestor::button")]
-        public IWebElement ActionsButton { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'actions-container-row')]")]
-        public IWebElement ActionsRowsCount { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//mat-select[contains(@class, 'mat-select')]//span[text()='Update Value']")]
-        public IWebElement UpdateValueDropdown { get; set; }
-
-        //TODO delete this webelement
-        [FindsBy(How = How.XPath, Using = ".//mat-select[contains(@class, 'mat-select')]//span[text()='Update Date']")]
-        public IWebElement UpdateDateDropdown { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//mat-select[contains(@class, 'mat-select')]//span[text()='Update Owner']")]
-        public IWebElement UpdateOwnerDropdown { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Team']")]
-        public IWebElement TeamField { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Owner']")]
-        public IWebElement OwnerField { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//button[@aria-label='Open calendar']")]
         public IWebElement DatePickerIcon { get; set; }
 
-        //TODO Remove this step
-        [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Date']")]
-        public IWebElement DateField { get; set; }
-
-        //TODO should be replaced by AutocompleteSelect
-        [FindsBy(How = How.XPath, Using = ".//input[@placeholder='Path']")]
-        public IWebElement PathDropdown { get; set; }
-
-        #endregion
-
-        [FindsBy(How = How.XPath, Using = ".//button[contains(@id, 'listDtlBtn')]")]
-        public IWebElement ListDetailsButton { get; set; }
+        //TODO revisit this 
+        [FindsBy(How = How.XPath, Using = ".//admin-header//span[@class='ng-star-inserted']")]
+        public IWebElement FoundRowsLabel { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[contains(@id, 'clmnBtn')]")]
         public IWebElement ColumnButton { get; set; }
@@ -751,7 +714,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         public List<string> GetAllAutocompleteOptions(string placeholder)
         {
-            GetNamedTextbox(placeholder).Click();
+            GetTextbox(placeholder).Click();
 
             var foundOptions = GetAllOptionsFromOpenedAutocomplete();
 
@@ -771,8 +734,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         public void AutocompleteSelect(string placeholder, string searchText, bool withSearch = false, bool containsOption = false, params string[] optionsToSelect)
         {
-            GetNamedTextbox(placeholder).ClearWithBackspaces();
-            GetNamedTextbox(placeholder).Click();
+            GetTextbox(placeholder).ClearWithBackspaces();
+            GetTextbox(placeholder).Click();
 
             //Options to select
             //If we do not provide options to select
@@ -789,8 +752,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
             if (withSearch)
             {
-                GetNamedTextbox(placeholder).ClearWithBackspaces();
-                GetNamedTextbox(placeholder).SendKeys(searchText);
+                GetTextbox(placeholder).ClearWithBackspaces();
+                GetTextbox(placeholder).SendKeys(searchText);
                 if (!Driver.IsElementDisplayed(By.XPath(AutocompleteOptionsSelector),
                     WebDriverExtensions.WaitTime.Short))
                 {
@@ -838,31 +801,31 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         #region Textbox
 
-        public IWebElement GetNamedTextbox(string placeholder)
+        public IWebElement GetTextbox(string placeholder, WebDriverExtensions.WaitTime wait = WebDriverExtensions.WaitTime.Medium)
         {
             var by = By.XPath(string.Format(NamedTextboxSelector, placeholder));
-            if (!Driver.IsElementDisplayed(by, WebDriverExtensions.WaitTime.Medium))
+            if (!Driver.IsElementDisplayed(by, wait))
                 throw new Exception($"Textbox with '{placeholder}' placeholder is not displayed");
             return Driver.FindElement(by);
         }
 
         public void ClearTextbox(string placeholder)
         {
-            GetNamedTextbox(placeholder).Clear();
+            GetTextbox(placeholder).Clear();
         }
 
         public void PopulateTextbox(string placeholder, string value, bool clear = true)
         {
             if (clear)
-                GetNamedTextbox(placeholder).Clear();
+                GetTextbox(placeholder).Clear();
 
             if (!string.IsNullOrEmpty(value))
-                GetNamedTextbox(placeholder).SendKeys(value);
+                GetTextbox(placeholder).SendKeys(value);
         }
 
         public void PopulateTextboxWithAddButton(string placeholder, string option)
         {
-            var button = GetNamedTextbox(placeholder);
+            var button = GetTextbox(placeholder);
             button.Click();
             button.ClearWithBackspaces();
             button.SendKeys(option);
@@ -871,14 +834,14 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         public IWebElement GetTextboxAddButton(string placeholder)
         {
-            var selector = GetNamedTextbox(placeholder).FindElement(By.XPath(".//../ancestor::mat-form-field//button"));
+            var selector = GetTextbox(placeholder).FindElement(By.XPath(".//../ancestor::mat-form-field//button"));
             Driver.WaitForElementToBeDisplayed(selector);
             return selector;
         }
 
         public IWebElement GetTextboxErrorMessageElement(string placeholder)
         {
-            var namedTextbox = GetNamedTextbox(placeholder);
+            var namedTextbox = GetTextbox(placeholder);
             var elementAttributes = Driver.GetElementAttributes(namedTextbox);
             if (!elementAttributes.Any(x => x.Contains("_ngcontent")))
             {
@@ -913,6 +876,18 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return exclamationIcon;
         }
 
+        public bool IsTextboxDisplayed(string placeholder)
+        {
+            try
+            {
+                return GetTextbox(placeholder, WebDriverExtensions.WaitTime.Short).Disabled();
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         #endregion
 
         #region Button
@@ -943,10 +918,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         #region Dropdown
 
-        public IWebElement GetDropdown(string dropdownName)
+        public IWebElement GetDropdown(string dropdownName, WebDriverExtensions.WaitTime wait = WebDriverExtensions.WaitTime.Long)
         {
             var selector = By.XPath(string.Format(NamedDropdownSelector, dropdownName));
-            Driver.WaitForElementToBeDisplayed(selector);
+            if (!Driver.IsElementDisplayed(selector, wait))
+                throw new Exception($"'{dropdownName}' dropdown is not displayed");
             return Driver.FindElement(selector);
         }
 
@@ -964,6 +940,18 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         {
             GetDropdown(dropdownName).Click();
             GetDropdownValueByName(value).Click();
+        }
+
+        public bool IsDropdownDisplayed(string dropdownName)
+        {
+            try
+            {
+                return GetDropdown(dropdownName, WebDriverExtensions.WaitTime.Short).Disabled();
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         //Get all span with text
@@ -1102,7 +1090,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         {
             foreach (string itemText in items)
             {
-                var search = GetNamedTextbox("Search");
+                var search = GetTextbox("Search");
                 search.Clear();
                 search.SendKeys(itemText);
                 AddItem(itemText);

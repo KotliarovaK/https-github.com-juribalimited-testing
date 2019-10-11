@@ -73,5 +73,40 @@ namespace DashworksTestAutomation.Extensions
         {
             return str.Split(new string[] { separator }, StringSplitOptions.None).ToList();
         }
+
+        public static string ToDate(this string str)
+        {
+            string format = "yyyy-MM-dd";
+
+            string strFormat = str.Split(')').LastOrDefault();
+
+            if (!string.IsNullOrEmpty(strFormat))
+                format = strFormat;
+
+            if (string.IsNullOrEmpty(str))
+                return str;
+
+            if (str.StartsWith("D(") && str.EndsWith(")"))
+            {
+                Regex regex = new Regex(@"(?<=\()(.*)(?=\))");
+                Match m = regex.Match(str);
+                var match = m.Value;
+                var isNumeric = int.TryParse(match, out int n);
+                if (isNumeric)
+                    return DateTime.Now.AddDays(int.Parse(match)).ToString(format);
+            }
+
+            return str;
+        }
+
+        public static DateTime GetNextWeekday(this string dayOfWeek)
+        {
+            var day = EnumExtensions.Parse<DayOfWeek>(dayOfWeek);
+            //to get the value for "today or in the next 6 days"
+            var start = DateTime.Today.AddDays(1);
+            // The (... + 7) % 7 ensures we end up with a value in the range [0, 6]
+            int daysToAdd = ((int)day - (int)start.DayOfWeek + 7) % 7;
+            return start.AddDays(daysToAdd);
+        }
     }
 }

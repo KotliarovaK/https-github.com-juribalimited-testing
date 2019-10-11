@@ -9,12 +9,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
 {
     internal class ActionsElement : SeleniumBasePage
     {
-        private const string ActionValuesSelector = ".//mat-option[contains(@id, 'mat-option')]";
         private const string RowsSelectedCountSelector = ".//div[@class='actions-container-row-select']";
         private const string ListsDropdownSelector = ".//mat-select[@aria-label='Static Lists']";
-
-        [FindsBy(How = How.XPath, Using = ".//div[@class='actions-container']")]
-        public IWebElement ActionsPanel { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[text()='Select at least one row']")]
         public IWebElement ActionsContainerMessage { get; set; }
@@ -34,16 +30,10 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[text()='ADD']//ancestor::button")]
         public IWebElement AddButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ActionValuesSelector)]
-        public IList<IWebElement> ActionValues { get; set; }
-
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
-            return new List<By>
-            {
-                SelectorFor(this, p => p.ActionsPanel)
-            };
+            return new List<By> { };
         }
 
         public void SelectList(string listName)

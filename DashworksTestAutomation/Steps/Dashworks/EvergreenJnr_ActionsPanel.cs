@@ -7,6 +7,7 @@ using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.Base;
 using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
 using DashworksTestAutomation.Pages.Evergreen.ItemDetails;
+using DashworksTestAutomation.Pages.Evergreen.RightSideActionPanels;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -30,11 +31,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"Actions panel is displayed to the user")]
         public void ThenActionsPanelIsDisplayedToTheUser()
         {
-            var columnElement = _driver.NowAt<ActionsElement>();
-            Verify.IsTrue(columnElement.ActionsPanel.Displayed(),
+            var panel = _driver.NowAt<ActionsPanelElement>();
+            Verify.IsTrue(panel.ActionsPanel.Displayed(),
                 "Actions panel was not displayed");
 
-            var button = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsTrue(panel.IsPanelOpened("Actions"),
+                "Action panel is not opened");
+
+            var button = _driver.NowAt<BaseHeaderElement>();
             Verify.IsTrue(button.ActionsButton.IsElementActive(),
                 "Action button is not active");
         }
@@ -42,18 +46,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"Actions panel is not displayed to the user")]
         public void ThenActionsPanelIsNotDisplayedToTheUser()
         {
-            //TODO add assertion that ActionsElement.ActionsPanelis not displayed!
-
-            var button = _driver.NowAt<BaseDashboardPage>();
+            var button = _driver.NowAt<BaseHeaderElement>();
             Verify.IsFalse(button.ActionsButton.IsElementActive(),
                 "Action button is active");
+
+            var panel = _driver.NowAt<BaseRightSideActionsPanel>();
+            Verify.IsFalse(panel.IsPanelOpened("Actions"),
+                "Action panel is opened");
         }
 
         [Then(@"Actions message container is displayed to the user")]
         public void ThenActionsMessageContainerIsDisplayedToTheUser()
         {
             var columnElement = _driver.NowAt<ActionsElement>();
-            Utils.Verify.IsTrue(columnElement.ActionsContainerMessage.Displayed(),
+            Verify.IsTrue(columnElement.ActionsContainerMessage.Displayed(),
                 "Actions message container was not displayed");
             Logger.Write("Actions message container is visible");
         }
@@ -66,16 +72,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             dashboardPage.SelectAllCheckbox.Click();
             _driver.WaitForDataLoading();
             _driver.WaitForDataLoadingInActionsPanel();
-        }
-
-        [When(@"User selects ""(.*)"" Path on Action panel")]
-        public void WhenUserSelectsPathOnActionPanel(string requestType)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitForElementToBeDisplayed(action.PathDropdown);
-            action.PathDropdown.Clear();
-            action.PathDropdown.SendKeys(requestType);
-            action.GetDropdownValueByName(requestType).Click();
         }
 
         [When(@"User selects ""(.*)"" option in ""(.*)"" drop-down on Action panel")]
@@ -135,129 +131,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             page.BodyContainer.Click();
-        }
-
-        [Then(@"the Update Value options are displayed in following order:")]
-        public void ThenTheUpdateValueOptionsAreDisplayedInFollowingOrder(Table table)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-
-            action.UpdateValueDropdown.Click();
-            _driver.WaitForElementsToBeDisplayed(action.OptionListOnActionsPanel);
-            var actualList = action.OptionListOnActionsPanel.Select(value => value.Text).ToList();
-            Verify.AreEqual(expectedList, actualList, "Update Value options are different");
-            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            page.BodyContainer.Click();
-        }
-
-        [When(@"User selects next Tuesday Date on Action panel")]
-        public void WhenUserSelectsNextTuesdayDateOnActionPanel()
-        {
-            DateTime today = DateTime.Today;
-            int daysUntilTuesday = ((int)DayOfWeek.Tuesday - (int)today.DayOfWeek + 7) % 7;
-            DateTime nextTuesday = today.AddDays(daysUntilTuesday);
-
-            string dateValue = nextTuesday.ToString("dd MMM yyyy");
-
-            var action = _driver.NowAt<BaseDashboardPage>();
-            action.DateField.Click();
-            action.DateField.Clear();
-            action.DateField.SendKeys(dateValue);
-            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            page.BodyContainer.Click();
-        }
-
-        [Then(@"the Update Date options are displayed in following order:")]
-        public void ThenTheUpdateDateOptionsAreDisplayedInFollowingOrder(Table table)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-
-            action.UpdateDateDropdown.Click();
-            _driver.WaitForElementsToBeDisplayed(action.OptionListOnActionsPanel);
-            var actualList = action.OptionListOnActionsPanel.Select(value => value.Text).ToList();
-            Utils.Verify.AreEqual(expectedList, actualList, "Update Date options are different");
-            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            page.BodyContainer.Click();
-        }
-
-        [When(@"User selects ""(.*)"" Update Owner on Action panel")]
-        public void WhenUserSelectsUpdateOwnerOnActionPanel(string owner)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            action.UpdateOwnerDropdown.Click();
-            action.GetDropdownValueByName(owner).Click();
-        }
-
-        [Then(@"the Update Owner options are displayed in following order:")]
-        public void ThenTheUpdateOwnerOptionsAreDisplayedInFollowingOrder(Table table)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-
-            action.UpdateOwnerDropdown.Click();
-            _driver.WaitForElementsToBeDisplayed(action.OptionListOnActionsPanel);
-            var actualList = action.OptionListOnActionsPanel.Select(value => value.Text).ToList();
-            Utils.Verify.AreEqual(expectedList, actualList, "Update Owner options are different");
-            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            page.BodyContainer.Click();
-        }
-
-        [When(@"User selects ""(.*)"" Team on Action panel")]
-        public void WhenUserSelectsTeamOnActionPanel(string team)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            action.TeamField.Click();
-            action.TeamField.Clear();
-            action.TeamField.SendKeys(team);
-            action.GetDropdownValueByName(team).Click();
-        }
-
-        [Then(@"Teams are displayed in alphabetical order on Action panel")]
-        public void ThenTeamsAreDisplayedInAlphabeticalOrderOnActionPanel()
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            action.TeamField.Click();
-            var list = action.OptionListOnActionsPanel.Select(x => x.Text).ToList();
-            Verify.AreEqual(list.OrderBy(s => s), list, "Teams are not in alphabetical order");
-            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            page.BodyContainer.Click();
-        }
-
-        [When(@"User selects ""(.*)"" Owner on Action panel")]
-        public void WhenUserSelectsOwnerOnActionPanel(string owner)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            action.OwnerField.Click();
-            action.OwnerField.Clear();
-            action.OwnerField.SendKeys(owner);
-            action.GetDropdownValueByName(owner).Click();
-        }
-
-        [Then(@"Owner field is not displayed on Action panel")]
-        public void ThenOwnerFieldIsNotDisplayedOnActionPanel()
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            Verify.IsFalse(action.OwnerField.Displayed(), "Owner Field is displayed");
-        }
-
-        [Then(@"Owner field is displayed on Action panel")]
-        public void ThenOwnerFieldIsDisplayedOnActionPanel()
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            Verify.IsTrue(action.OwnerField.Displayed(), "Owner Field is not displayed");
-        }
-
-        [Then(@"the following Update Value are displayed in opened DLL on Action panel:")]
-        public void ThenTheFollowingUpdateValueAreDisplayedInOpenedDLLOnActionPanel(Table table)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            action.UpdateValueDropdown.Click();
-            _driver.WaitForElementsToBeDisplayed(action.OptionsDll);
-            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            var actualList = action.OptionsDll.Select(value => value.Text).ToList();
-            Utils.Verify.AreEqual(expectedList, actualList, "Project list are different");
         }
 
         //TODO looks like this section should be moved to BaseDashboard

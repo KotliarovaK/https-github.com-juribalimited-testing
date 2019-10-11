@@ -169,7 +169,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithRemoveOwnerIsLoaded
 	When User selects 'Radio Rag Date Owner User Req B' option from 'Task' autocomplete
 	And User selects 'No change' in the 'Update Value' dropdown
 	And User selects 'No change' in the 'Update Date' dropdown
-	And User selects "Remove" Update Owner on Action panel
+	When User selects 'Remove' in the 'Update Owner' dropdown
 	And User clicks 'CREATE' button 
 	When User clicks "Automations" navigation link on the Admin page
 	When User enters "17619_Automation" text in the Search field for "Automation" column
@@ -206,9 +206,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithUpdateOwnerIsLoaded
 	When User selects 'Radio Rag Date Owner Comp Req B' option from 'Task' autocomplete
 	And User selects 'No change' in the 'Update Value' dropdown
 	And User selects 'No change' in the 'Update Date' dropdown
-	And User selects "Update" Update Owner on Action panel
-	And User selects "1803 Team" Team on Action panel
-	And User selects "Akhila Varghese" Owner on Action panel
+	When User selects 'Update' in the 'Update Owner' dropdown
+	When User selects '1803 Team' option from 'Team' autocomplete
+	When User selects 'Akhila Varghese' option from 'Owner' autocomplete
 	And User clicks 'CREATE' button 
 	When User clicks "Automations" navigation link on the Admin page
 	When User enters "17617_Automation" text in the Search field for "Automation" column

@@ -687,7 +687,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenContentIsDisplayedInField(string text, string fieldName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            Utils.Verify.IsTrue(page.GetNamedTextbox(fieldName).GetAttribute("value").Contains(text),
+            Utils.Verify.IsTrue(page.GetTextbox(fieldName).GetAttribute("value").Contains(text),
                 $"Text in {fieldName} field is different");
         }
 

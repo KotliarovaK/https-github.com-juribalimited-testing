@@ -27,8 +27,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitForElementToBeDisplayed(page.TableBody);
-            var menu = _driver.NowAt<BaseDashboardPage>();
-            //TODO move Action to separate component
+            var menu = _driver.NowAt<BaseHeaderElement>();
             _driver.WaitForElementToBeDisplayed(menu.ActionsButton);
             menu.ActionsButton.Click();
         }
@@ -36,13 +35,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User clicks the List Details button")]
         public void WhenUserClicksTheListDetailsButton()
         {
-            var menu = _driver.NowAt<BaseDashboardPage>();
+            var menu = _driver.NowAt<BaseHeaderElement>();
             _driver.WaitForDataLoadingInActionsPanel();
             _driver.WaitForDataLoading();
             _driver.WaitForElementToBeDisplayed(menu.ListDetailsButton);
             menu.ListDetailsButton.Click();
             _driver.WaitForDataLoading();
-            Logger.Write("List Details button was clicked");
         }
 
         [When(@"User clicks the Columns button")]
@@ -185,28 +183,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"List details button is disabled")]
         public void ThenListDetailsButtonIsDisabled()
         {
-            var menu = _driver.NowAt<BaseDashboardPage>();
+            var menu = _driver.NowAt<BaseHeaderElement>();
             //Waiting for changed List details button state
             Thread.Sleep(500);
             _driver.WaitForElementToBeDisplayed(menu.ListDetailsButton);
             Utils.Verify.IsTrue(Convert.ToBoolean(menu.ListDetailsButton.GetAttribute("disabled")),
                 "List Details Button is active");
-        }
-
-        [Then(@"Actions button is active")]
-        public void ThenActionsButtonIsActive()
-        {
-            var menu = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitForElementToBeDisplayed(menu.ListDetailsButton);
-            Utils.Verify.Contains("active", menu.ActionsButton.GetAttribute("class"), "Actions button is inactive");
-        }
-
-        [Then(@"Actions button is not active")]
-        public void ThenActionsButtonIsNotActive()
-        {
-            var menu = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitForElementToBeDisplayed(menu.ListDetailsButton);
-            Utils.Verify.DoesNotContain("active", menu.ActionsButton.GetAttribute("class"), "Actions button is active");
         }
 
         [Then(@"Filter Expression icon displayed within Filter Panel")]

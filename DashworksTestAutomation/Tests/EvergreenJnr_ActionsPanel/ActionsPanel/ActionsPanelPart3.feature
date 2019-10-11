@@ -33,7 +33,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersP
 	And User selects 'Update path' in the 'Bulk Update Type' dropdown
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
 	Then "UPDATE" Action button is disabled
-	When User selects "User; Maternity" Path on Action panel
+	When User selects 'User; Maternity' option from 'Path' autocomplete
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	When User clicks 'UPDATE' button
@@ -58,7 +58,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersP
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update path' in the 'Bulk Update Type' dropdown
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
-	And User selects "User: VIP" Path on Action panel
+	And User selects 'User: VIP' option from 'Path' autocomplete
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	When User clicks 'UPDATE' button
@@ -72,7 +72,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersP
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update path' in the 'Bulk Update Type' dropdown
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
-	And User selects "User: No Agent" Path on Action panel
+	And User selects 'User: No Agent' option from 'Path' autocomplete
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	When User clicks 'UPDATE' button
@@ -86,7 +86,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersP
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update path' in the 'Bulk Update Type' dropdown
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
-	And User selects "[Default (User)]" Path on Action panel
+	And User selects '[Default (User)]' option from 'Path' autocomplete
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	When User clicks 'UPDATE' button
@@ -117,7 +117,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatRequestTypeIsUpdatedCorrectlyO
 	And User selects 'Update path' in the 'Bulk Update Type' dropdown
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
 	Then "UPDATE" Action button is disabled
-	When User selects "Application: Request Type B" Path on Action panel
+	When User selects 'Application: Request Type B' option from 'Path' autocomplete
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	When User clicks 'UPDATE' button
@@ -139,7 +139,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatRequestTypeIsUpdatedCorrectlyO
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update path' in the 'Bulk Update Type' dropdown
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
-	And User selects "[Default (Application)]" Path on Action panel
+	And User selects '[Default (Application)]' option from 'Path' autocomplete
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	When User clicks 'UPDATE' button
@@ -153,7 +153,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatRequestTypeIsUpdatedCorrectlyO
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update path' in the 'Bulk Update Type' dropdown
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
-	And User selects "Application: Request Type A" Path on Action panel
+	And User selects 'Application: Request Type A' option from 'Path' autocomplete
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	When User clicks 'UPDATE' button
@@ -185,7 +185,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnMa
 	And User selects 'Update path' in the 'Bulk Update Type' dropdown
 	And User selects 'Email Migration' option from 'Project' autocomplete
 	Then "UPDATE" Action button is disabled
-	When User selects "Personal Mailbox - VIP" Path on Action panel
+	When User selects 'Personal Mailbox - VIP' option from 'Path' autocomplete
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	When User clicks 'UPDATE' button
@@ -209,7 +209,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnMa
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update path' in the 'Bulk Update Type' dropdown
 	And User selects 'Email Migration' option from 'Project' autocomplete
-	And User selects "Shared Mailbox" Path on Action panel
+	And User selects 'Shared Mailbox' option from 'Path' autocomplete
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	When User clicks 'UPDATE' button
@@ -223,7 +223,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnMa
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update path' in the 'Bulk Update Type' dropdown
 	And User selects 'Email Migration' option from 'Project' autocomplete
-	And User selects "Personal Mailbox - EA" Path on Action panel
+	And User selects 'Personal Mailbox - EA' option from 'Path' autocomplete
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	When User clicks 'UPDATE' button
@@ -237,7 +237,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnMa
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update path' in the 'Bulk Update Type' dropdown
 	And User selects 'Email Migration' option from 'Project' autocomplete
-	And User selects "Personal Mailbox" Path on Action panel
+	And User selects 'Personal Mailbox' option from 'Path' autocomplete
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	When User clicks 'UPDATE' button
@@ -264,7 +264,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyWhereS
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update path' in the 'Bulk Update Type' dropdown
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
-	And User selects "Computer: Workstation Replacement" Path on Action panel
+	And User selects 'Computer: Workstation Replacement' option from 'Path' autocomplete
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	When User clicks 'UPDATE' button
@@ -294,7 +294,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyWhereS
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update path' in the 'Bulk Update Type' dropdown
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
-	And User selects "[This is the Default Request Type for Computer)] " Path on Action panel
+	And User selects '[This is the Default Request Type for Computer)] ' option from 'Path' autocomplete
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	When User clicks 'UPDATE' button
@@ -308,7 +308,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyWhereS
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update path' in the 'Bulk Update Type' dropdown
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
-	And User selects "Computer: Virtual Machine" Path on Action panel
+	And User selects 'Computer: Virtual Machine' option from 'Path' autocomplete
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	When User clicks 'UPDATE' button
@@ -322,7 +322,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyWhereS
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update path' in the 'Bulk Update Type' dropdown
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
-	And User selects "Computer: Laptop Replacement" Path on Action panel
+	And User selects 'Computer: Laptop Replacement' option from 'Path' autocomplete
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	When User clicks 'UPDATE' button

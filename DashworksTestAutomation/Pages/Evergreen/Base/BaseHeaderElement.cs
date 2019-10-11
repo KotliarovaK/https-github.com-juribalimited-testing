@@ -13,6 +13,16 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = ".//h1")]
         public IWebElement Header { get; set; }
 
+        #region Right side buttons
+
+        [FindsBy(How = How.XPath, Using = "//i[contains(@class, 'static-list')]/ancestor::button")]
+        public IWebElement ActionsButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//button[contains(@id, 'listDtlBtn')]")]
+        public IWebElement ListDetailsButton { get; set; }
+
+        #endregion
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();

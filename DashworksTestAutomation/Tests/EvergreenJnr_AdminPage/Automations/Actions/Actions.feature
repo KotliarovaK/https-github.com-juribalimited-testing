@@ -670,9 +670,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThanActionFieldsAreNotPrepopulatedWithOldD
 	And User selects 'Complete' in the 'Value' dropdown
 	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters '31 Aug 2019' text to 'Date' datepicker
-	And User selects "Update" Update Owner on Action panel
-	And User selects "1803 Team" Team on Action panel
-	And User selects "Lisa Bailey" Owner on Action panel
+	When User selects 'Update' in the 'Update Owner' dropdown
+	When User selects '1803 Team' option from 'Team' autocomplete
+	When User selects 'Lisa Bailey' option from 'Owner' autocomplete
 	And User clicks 'CREATE' button 
 	#Test
 	When User enters "DAS17797_Action" text in the Search field for "Action" column
@@ -706,9 +706,9 @@ Scenario: EvergreenJnr_AdminPage_CheckValueDataInTheGridForActions
 	And User selects 'Started' in the 'Value' dropdown
 	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters '5 Sep 2019' text to 'Date' datepicker
-	And User selects "Update" Update Owner on Action panel
-	And User selects "1803 Team" Team on Action panel
-	And User selects "Lisa Bailey" Owner on Action panel
+	When User selects 'Update' in the 'Update Owner' dropdown
+	When User selects '1803 Team' option from 'Team' autocomplete
+	When User selects 'Lisa Bailey' option from 'Owner' autocomplete
 	And User clicks 'CREATE' button 
 	#Test
 	When User enters "DAS17744_Action" text in the Search field for "Action" column
