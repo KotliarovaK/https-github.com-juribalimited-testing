@@ -102,49 +102,5 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         {
             return Driver.IsElementDisplayed(By.XPath($".//a[text()='{tabName}']/ancestor::mat-nested-tree-node[contains(@class, 'disabled')]"));
         }
-
-        public List<Point> LoadingIndicatorCoordinates()
-        {
-            Thread.Sleep(2000);
-            List<Point> points = new List<Point>();
-            IList<IWebElement> links = Driver.FindElements(By.XPath(".//li[contains(@class, 'das-mat-tree')]//a[contains(@href, 'details')]"));
-
-            int attempt = 0;
-
-            while (attempt != 3 && points.Count == 0)
-            {
-                foreach (var link in links)
-                {
-                    try
-                    {
-                        link.Click();
-                    }
-                    catch (Exception)
-                    {
-                        break;
-                    }
-
-                    for (int i = 0; i < 5; i++)
-                    {
-                        try
-                        {
-                            if (Driver.FindElements(
-                                        By.XPath(".//div[contains(@class,'spinner') and not(contains(@class,'small'))]"))
-                                    .Count > 0)
-                            {
-                                points.Add(Driver.FindElements(By.XPath(".//div[contains(@class,'spinner') and not(contains(@class,'small'))]")).First().Location);
-                            }
-                        }
-                        catch (Exception)
-                        {
-                            break;
-                        }
-                    }
-                    Driver.WaitForDataLoading();
-                }
-            }
-
-            return points;
-        }
     }
 }
