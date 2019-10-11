@@ -571,5 +571,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<AddWidgetPage>();
             Utils.Verify.That(page.GetOrderBySelectedOption(), Is.EqualTo(option), $"DDL has wrong option selected {page.GetOrderBySelectedOption()}");
         }
+
+        [Then(@"List dropdown has next item categories:")]
+        public void ThenListDdlHasNextItemCategories(Table items)
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            page.List.Click();
+
+            var actualItems = page.GetMainCategoriesOfListDDL().Select(x => x.Text).ToList();
+            var expectedItems = items.Rows.SelectMany(row => row.Values).ToList();
+
+            for (int i = 0; i < expectedItems.Count; i++)
+            {
+                Utils.Verify.That(actualItems[i].StartsWith(expectedItems[i]), Is.True,
+                                  $"List has wrong items/order at {actualItems[i]}");
+            }
+            Utils.Verify.That(actualItems.Count, Is.EqualTo(expectedItems.Count),$"Lists item count is different");
+        }
     }
 }

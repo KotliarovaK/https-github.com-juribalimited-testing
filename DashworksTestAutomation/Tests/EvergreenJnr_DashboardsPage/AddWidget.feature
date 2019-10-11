@@ -69,7 +69,7 @@ Examples:
 	| Table      |
 	| Card       |
 	
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15437 @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15437 @DAS14605 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatAggregateFunctionOrAggregateByDropdownAreMissingForListWidget
 	When Dashboard with "Dashboard for DAS15437" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
@@ -77,6 +77,12 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatAggregateFunctionOrAggregateByDro
 	And User selects "List" in the "Widget Type" Widget dropdown
 	Then "Aggregate Function" dropdown is missing
 	And "Aggregate By" dropdown is missing
+	Then List dropdown has next item categories:
+	| item         |
+	| Devices      |
+	| Users        |
+	| Applications |
+	| Mailboxes    |
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS16958 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatEditWidgetPageCanBeOpenedForWidgetHavingDeletedList

@@ -99,3 +99,34 @@ Scenario: EvergreenJnr_AdminPage_CheckTasksWithoutRequestTypeAlwaysAvailableForS
 	Then Success message is displayed and contains "Your capacity slot has been created" text
 	When User clicks newly created object link
 	Then 'Stage 1 \ WO Task13671' value is displayed in the 'Tasks' dropdown
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13147 @Cleanup
+Scenario: EvergreenJnr_AdminPage_ChecksThatDisplayOrderIsResetAfterSlotDeletion
+	When Project created via API and opened
+	| ProjectName        | Scope       | ProjectTemplate | Mode               |
+	| ProjectForDAS13147 | All Devices | None            | Standalone Project |
+	And User creates new Slot via Api
+	| Project            | SlotName | DisplayName | CapacityUnits | CapacityType    |
+	| ProjectForDAS13147 | Slot 1   | Slot 1      | Unassigned    |                 |
+	| ProjectForDAS13147 | Slot 2   | Slot 2      |               | Teams and Paths |
+	| ProjectForDAS13147 | Slot 3   | Slot 3      |               |                 |
+	| ProjectForDAS13147 | Slot 4   | Slot 4      |               |                 |
+	And User navigates to the 'Capacity' left menu item
+	And User selects "Slots" tab on the Project details page
+	When User select "Capacity Slot" rows in the grid
+	| SelectedRowsName |
+	| Slot 3           |
+	When User selects 'Delete' in the 'Actions' dropdown
+	When User clicks 'DELETE' button
+	And User clicks Delete button in the warning message
+	Then Success message is displayed and contains "The selected slot has been deleted" text
+	When User have opened Column Settings for "Capacity Slot" column
+	And User clicks Column button on the Column Settings panel
+	Then Column Settings was opened
+	When User select "Display Order" checkbox on the Column Settings panel
+	And User clicks Column button on the Column Settings panel
+	Then User sees following Display order on the Automation page
+	| Values |
+	| 1      |
+	| 2      |
+	| 3      |

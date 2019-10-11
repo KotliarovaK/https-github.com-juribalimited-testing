@@ -545,6 +545,124 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Senior_TasksPage_ChecksThatSpecialSymbolsCanBeUsedInTaskName")]
+        [NUnit.Framework.CategoryAttribute("Senior")]
+        [NUnit.Framework.CategoryAttribute("Projects_Dashboards")]
+        [NUnit.Framework.CategoryAttribute("Senior_Tasks")]
+        [NUnit.Framework.CategoryAttribute("DAS18247")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        public virtual void Senior_TasksPage_ChecksThatSpecialSymbolsCanBeUsedInTaskName()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.Senior_TasksPage_ChecksThatSpecialSymbolsCanBeUsedInTaskNameInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void Senior_TasksPage_ChecksThatSpecialSymbolsCanBeUsedInTaskNameInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Senior_TasksPage_ChecksThatSpecialSymbolsCanBeUsedInTaskName", null, new string[] {
+                        "Senior",
+                        "Projects_Dashboards",
+                        "Senior_Tasks",
+                        "DAS18247",
+                        "Cleanup"});
+#line 116
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ProjectName",
+                        "Scope",
+                        "ProjectTemplate",
+                        "Mode"});
+            table7.AddRow(new string[] {
+                        "ProjectForTask18247",
+                        "All Devices",
+                        "None",
+                        "Standalone Project"});
+#line 117
+ testRunner.When("Project created via API and opened", ((string)(null)), table7, "When ");
+#line 120
+ testRunner.When("User clicks \'Projects\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 121
+ testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 122
+ testRunner.When("User navigate to \"ProjectForTask18247\" Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 123
+ testRunner.Then("Project with \"ProjectForTask18247\" name is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 124
+ testRunner.When("User navigate to \"Stages\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 125
+ testRunner.Then("\"Manage Stages\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 126
+ testRunner.When("User clicks \"Create Stage\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+                        "StageName"});
+            table8.AddRow(new string[] {
+                        "Stage18247"});
+#line 127
+ testRunner.And("User create Stage", ((string)(null)), table8, "And ");
+#line 130
+ testRunner.And("User clicks \"Create Stage\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 131
+ testRunner.And("User navigate to \"Tasks\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 132
+ testRunner.Then("\"Manage Tasks\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 133
+ testRunner.When("User clicks \"Create Task\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "Help",
+                        "StagesNameString",
+                        "TaskTypeString",
+                        "ValueTypeString",
+                        "ObjectTypeString",
+                        "TaskValuesTemplateString"});
+            table9.AddRow(new string[] {
+                        "Task“\'<>13152",
+                        "Help“\'<>13152",
+                        "Stage18247",
+                        "Normal",
+                        "Date",
+                        "Computer",
+                        ""});
+#line 134
+ testRunner.And("User creates Task", ((string)(null)), table9, "And ");
+#line 137
+ testRunner.Then("Success message is displayed with \"Task successfully created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 138
+ testRunner.When("User clicks property icon on task details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 139
+ testRunner.Then("Task name displayed as \'Task“\'<>13152\' on Task details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore

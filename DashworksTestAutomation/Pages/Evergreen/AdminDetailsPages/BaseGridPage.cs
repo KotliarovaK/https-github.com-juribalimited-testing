@@ -168,6 +168,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = Row)]
         public IList<IWebElement> RowsList { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@role='row']/div[@col-id='displayOrder' and @role='gridcell']")]
+        public IList<IWebElement> DisplayOrderValues { get; set; }
+
         #region Messages
 
         [FindsBy(How = How.XPath, Using = ".//admin-header/div[@id='messageAdmin' and @role='alert']")]

@@ -111,3 +111,29 @@ Scenario: Senior_TasksPage_ChecksThatTasksObjectTypeDropBoxValuesNotDuplicatedAf
 	| User        |
 	| Computer    |
 	| Application |
+
+@Senior @Projects_Dashboards @Senior_Tasks @DAS18247 @Cleanup
+Scenario: Senior_TasksPage_ChecksThatSpecialSymbolsCanBeUsedInTaskName
+	When Project created via API and opened
+	| ProjectName         | Scope       | ProjectTemplate | Mode               |
+	| ProjectForTask18247 | All Devices | None            | Standalone Project |
+	When User clicks 'Projects' on the left-hand menu
+	Then "Projects Home" page is displayed to the user
+	When User navigate to "ProjectForTask18247" Project
+	Then Project with "ProjectForTask18247" name is displayed correctly
+	When User navigate to "Stages" tab
+	Then "Manage Stages" page is displayed to the user
+	When User clicks "Create Stage" button
+	And User create Stage
+	| StageName  |
+	| Stage18247 |
+	And User clicks "Create Stage" button
+	And User navigate to "Tasks" tab
+	Then "Manage Tasks" page is displayed to the user
+	When User clicks "Create Task" button
+	And User creates Task
+	| Name          | Help          | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString |
+	| Task“'<>13152 | Help“'<>13152 | Stage18247       | Normal         | Date            | Computer         |                          |
+	Then Success message is displayed with "Task successfully created" text
+	When User clicks property icon on task details page
+	Then Task name displayed as 'Task“'<>13152' on Task details page

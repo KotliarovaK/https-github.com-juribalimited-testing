@@ -2026,3 +2026,20 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThaSearchfieldHasProperPlaceholder
     | Users        | All Users        |
     | Applications | All Applications |
     | Mailboxes    | All Mailboxes    |
+
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS18375
+Scenario: EvergreenJnr_DevicesList_CheckAppearanceOfComplianceValuesInTheFilterBlock
+	When User clicks 'Devices' on the left-hand menu
+	And User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Application Compliance" filter
+	Then the values are displayed for "applicationCompliance" filter on "Devices" page in the following order:
+    | Value   |
+    | Empty   |
+    | Unknown |
+    | Red     |
+    | Amber   |
+    | Green   |
+    | None    |
+	When User clicks in search field in the Filter block
+	Then No ring icon displayed for Empty item in Lookup

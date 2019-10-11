@@ -97,7 +97,7 @@ namespace DashworksTestAutomation.Steps.API
             var filterValueList = responseContent.Select(x => x["text"].ToString()).ToList();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             foreach (var value in expectedList)
-                Utils.Verify.AreEqual(filterValueList, expectedList, "Values are not displayed in the correct order");
+                Utils.Verify.AreEqual(expectedList, filterValueList, "Values are not displayed in the correct order");
         }
 
         [Then(@"""(.*)"" is displayed after ""(.*)"" in Application list filter")]
