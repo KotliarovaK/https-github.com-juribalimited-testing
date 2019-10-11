@@ -530,6 +530,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AdminPage.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\CreateActionsPart2.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreateActionsPart2.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\UpdateCustomField\UpdateCustomFieldAutomations3.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -560,10 +565,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CreateAutomation.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\CreateAction.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\CreateActionsPart1.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CreateAction.feature</DependentUpon>
+      <DependentUpon>CreateActionsPart1.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\Actions.feature.cs">
       <AutoGen>True</AutoGen>
@@ -1662,6 +1667,10 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AdminPage.feature.cs</LastGenOutput>
     </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\CreateActionsPart2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CreateActionsPart2.feature.cs</LastGenOutput>
+    </None>
     <None Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\UpdateCustomField\UpdateCustomFieldAutomations3.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>UpdateCustomFieldAutomations3.feature.cs</LastGenOutput>
@@ -1686,9 +1695,9 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CreateAutomation.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\CreateAction.feature">
+    <None Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\CreateActionsPart1.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>CreateAction.feature.cs</LastGenOutput>
+      <LastGenOutput>CreateActionsPart1.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\Actions.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
