@@ -527,6 +527,20 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
             page.GetTaskByName(taskName).Click();
         }
 
+        [Then(@"Task name displayed as '(.*)' on Task details page")]
+        public void ThenTaskNameDisplayedAsExpectedOnTaskDetailsPage(string name)
+        {
+            var page = _driver.NowAt<TaskProperties_DetailsPage>();
+            Utils.Verify.That(page.TaskNameInput.GetAttribute("value"), Is.EqualTo(name), "Task name is different");
+        }
+
+        [When(@"User clicks property icon on task details page")]
+        public void UserClicksPropertyIconOnTaskDetailsPage()
+        {
+            var page = _driver.NowAt<TaskProperties_DetailsPage>();
+            page.TaskPropertiesIcon.Click();
+        }
+
         [When(@"User publishes the task")]
         public void WhenUserPublishesTheTask()
         {

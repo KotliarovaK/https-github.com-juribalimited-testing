@@ -25,7 +25,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenAllListsIsUniqueOnTheListsPanel()
         {
             var lists = _driver.NowAt<CustomListElement>();
-            var listData = lists.ListsNames;
+            var listData = lists.GetAllListNames();
 
             //Get all elements that has more than one occurence in the list
             var duplicates = listData.GroupBy(x => x)

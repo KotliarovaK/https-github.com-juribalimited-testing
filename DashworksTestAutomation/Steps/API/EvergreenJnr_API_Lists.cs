@@ -67,10 +67,10 @@ namespace DashworksTestAutomation.Steps.API
 
             //Add created list to context
             _listsDetails.AddList(listName, listId);
-            var list = _driver.NowAt<BaseDashboardPage>();
+            var list = _driver.NowAt<CustomListElement>();
             try
             {
-                _driver.WaitForElementToBeDisplayed(list.ActiveCustomList);
+                _driver.WaitForElementToBeDisplayed(list.GetActiveList());
             }
             catch (Exception)
             {
@@ -78,9 +78,10 @@ namespace DashworksTestAutomation.Steps.API
                     $"Active list was not switched automatically, browser URL: {_driver.Url}");
                 _driver.Navigate().Refresh();
                 _driver.WaitForDataLoading();
+                _driver.WaitForElementToBeDisplayed(list.GetListElementByName(listName));
                 list.GetListElementByName(listName).Click();
                 _driver.WaitForDataLoading();
-                Verify.IsTrue(list.ActiveCustomList.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
+                Verify.IsTrue(list.GetActiveList().Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
             }
         }
 
@@ -227,10 +228,10 @@ namespace DashworksTestAutomation.Steps.API
 
             //Add created list to context
             _listsDetails.AddList(listName, listId);
-            var list = _driver.NowAt<BaseDashboardPage>();
+            var list = _driver.NowAt<CustomListElement>();
             try
             {
-                _driver.WaitForElementToBeDisplayed(list.ActiveCustomList);
+                _driver.WaitForElementToBeDisplayed(list.GetActiveList());
             }
             catch (Exception)
             {
@@ -240,7 +241,7 @@ namespace DashworksTestAutomation.Steps.API
                 _driver.WaitForDataLoading();
                 list.GetListElementByName(listName).Click();
                 _driver.WaitForDataLoading();
-                Utils.Verify.IsTrue(list.ActiveCustomList.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
+                Utils.Verify.IsTrue(list.GetActiveList().Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
             }
         }
 

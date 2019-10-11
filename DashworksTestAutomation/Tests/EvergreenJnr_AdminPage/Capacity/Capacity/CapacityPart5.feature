@@ -50,26 +50,25 @@ Scenario: EvergreenJnr_AdminPage_CheckingMapsToEvergreenColumnDisplayedForDiffer
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13156 @Cleanup @Set_Default_Capacity_Unit @Do_Not_Run_With_CapacityUnits @Do_Not_Run_With_Units @Do_Not_Run_With_Capacity
 Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedApplicationsAreDisplayedCapacityUnits
-	Given Save Default Capacity Unit for 'Email Migration' project
+	When Project created via API and opened
+	| ProjectName  | Scope       | ProjectTemplate | Mode               |
+	| Project13156 | All Devices | None            | Standalone Project |
 	When User creates new Capacity Unit via api
-	| Name  | Description | IsDefault | Project         |
-	| 1Test | DAS13156    | true      | Email Migration |
-	When User clicks 'Applications' on the left-hand menu
-	Then 'All Applications' list should be displayed to the user
-	When User clicks the Actions button
-	Then Actions panel is displayed to the user
-	When User select "Application" rows in the grid
-	| SelectedRowsName         |
-	| 7-Zip 16.04 (x64)        |
-	| 7-Zip 9.20 (x64 edition) |
-	And User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
-	And User selects 'Project' in the 'Project or Evergreen' dropdown
-	And User selects 'Email Migration' option from 'Project' autocomplete
-	And User selects '1Test' option from 'Capacity Unit' autocomplete
-	And User clicks 'UPDATE' button 
-	When User clicks 'UPDATE' button
-	Then Success message with "2 of 2 objects were in the selected project and have been queued" text is displayed on Action panel
+	| Name  | Description | IsDefault | Project      |
+	| 1Test | DAS13156    | true      | Project13156 |
+	When User navigates to the 'Scope' left menu item
+	When User navigates to the "Scope Changes" sub-menu on the Details page
+	When User navigates to the 'Applications' tab on Project Scope Changes page
+	When User expands 'Applications to add' multiselect to the 'Applications' tab on Project Scope Changes page and selects following Objects
+	| Objects                                                                       |
+	| ACDSee 4.0.2 PowerPack Trial Version (4.00.0002)                              |
+	| 0036 - Microsoft Access 97 SR-2 English (8.0)                                 |
+	When User clicks 'UPDATE ALL CHANGES' button 
+	When User clicks 'UPDATE PROJECT' button 
+	Then Blue banner with "Object updates being queued, please wait" text is displayed
+	Then Success message is displayed and contains "2 objects queued for onboarding, 0 objects offboarded" text
+	When User selects "Queue" tab on the Project details page
+	When User waits until Queue disappears
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Evergreen' left menu item
@@ -78,7 +77,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedApplicationsAreDisplayedCapac
 	When User clicks String Filter button for "Project" column
 	When User selects "Evergreen" checkbox from String Filter with item list on the Admin page
 	When User clicks String Filter button for "Project" column
-	When User selects "Email Migration" checkbox from String Filter with item list on the Admin page
+	When User selects "Project13156" checkbox from String Filter with item list on the Admin page
 	Then "2" content is displayed in "Applications" column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS14967 @Not_Run

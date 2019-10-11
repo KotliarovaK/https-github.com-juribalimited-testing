@@ -17,20 +17,18 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatRemoveFromStaticListOptionIsNo
 	When User select "<ColumnHeader>" rows in the grid
 	| SelectedRowsName |
 	| <RowName>        |
-	And User clicks on Action drop-down
-	Then following Values are displayed in Action drop-down:
+	Then following Values are displayed in the 'Action' dropdown:
 	| Value              |
 	| Create static list |
 	| Bulk update        |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	Then Bulk Update Type dropdown is displayed on Action panel
 	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	Then "UPDATE" Action button is disabled
 	And "CANCEL" Action button is active
 	When User selects '<ProjectName>' option from 'Project' autocomplete
 	And User selects '<StageName>' option from 'Stage' autocomplete
 	And User selects '<TaskName>' option from 'Task' autocomplete
-	And User selects "<Value>" Value on Action panel
+	And User selects '<Value>' in the 'Value' dropdown
 	When User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	When User clicks 'UPDATE' button
@@ -61,8 +59,7 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatAddToStaticListOptionIsNotShow
 	When User select "<ColumnHeader>" rows in the grid
 	| SelectedRowsName |
 	| <RowName>        |
-	And User clicks on Action drop-down
-	Then following Values are displayed in Action drop-down:
+	Then following Values are displayed in the 'Action' dropdown:
 	| Value                   |
 	| Create static list      |
 	| Remove from static list |
@@ -96,7 +93,7 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatStaticListsCreatedFromAFilterO
 	Then Actions panel is displayed to the user
 	When User select all rows
 	#Then "<SelectedRowsCount>" selected rows are displayed in the Actions panel
-	When User clicks on Action drop-down
+	When User clicks 'Action' dropdown
 
 Examples:
 	| PageName     | FilterName       | Checkboxes | SelectedRowsCount |

@@ -1489,6 +1489,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
+        [Then(@"No ring icon displayed for Empty item in Lookup")]
+        public void ThenNoRingIconDisplayedForEmptyItemInLookup()
+        {
+            var page = _driver.NowAt<FiltersElement>();
+            Utils.Verify.That(page.IsComplianceOptionHasRingIcon("Empty"), Is.False, "Status icon displayed for current option");
+        }
+
         [Then(@"Category Automations displayed before projects categories")]
         public void SpecifiedCategoryDisplayedBeforeProjectsCategories()
         {

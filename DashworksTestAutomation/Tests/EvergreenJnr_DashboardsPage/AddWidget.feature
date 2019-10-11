@@ -69,7 +69,7 @@ Examples:
 	| Table      |
 	| Card       |
 	
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15437 @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15437 @DAS14605 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatAggregateFunctionOrAggregateByDropdownAreMissingForListWidget
 	When Dashboard with "Dashboard for DAS15437" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
@@ -77,6 +77,12 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatAggregateFunctionOrAggregateByDro
 	And User selects "List" in the "Widget Type" Widget dropdown
 	Then "Aggregate Function" dropdown is missing
 	And "Aggregate By" dropdown is missing
+	Then List dropdown has next item categories:
+	| item         |
+	| Devices      |
+	| Users        |
+	| Applications |
+	| Mailboxes    |
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS16958 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatEditWidgetPageCanBeOpenedForWidgetHavingDeletedList
@@ -157,7 +163,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatThereIsNoPossibilityToCreateWidge
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18151 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatDuplicateWidgetsWillNotbeCreatedIfUserClicksFastOnTheCreateButtonSeveralTimes
-	When Dashboard with "DAS16853_Dashboard" name created via API and opened
+	When Dashboard with "DAS18151_Dashboard" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
 	Then "Show legend" checkbox has a correct label
@@ -168,3 +174,17 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDuplicateWidgetsWillNotbeCreatedI
 	And User double clicks 'CREATE' button
 	Then User sees Widget with "UniqeWidget" name on Dashboards page
 	And User sees '1' widgets with 'UniqeWidget' name on Dashboards page
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18167 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatTheAggregateFunctionAndAggregateByAndOrderFieldsAreEnabledForEditingAndTheWidgetIsDisplayedInThePreviewBlock
+	When Dashboard with "DAS18167_Dashboard" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks 'ADD WIDGET' button
+	When User creates new Widget
+	| WidgetType | Title             | List         | SplitBy  | AggregateFunction   | AggregateBy | OrderBy      | MaxValues |
+	| Bar        | WidgetForDAS16853 | 1803 Rollout | Hostname | Count distinct      | Hostname    |Hostname DESC | 10        |
+	And User clicks Ellipsis menu for "WidgetForDAS16853" Widget on Dashboards page
+	And User clicks "Edit" item from Ellipsis menu on Dashboards page
+	When User selects "Count distinct" in the "Aggregate Function" Widget dropdown
+	When User selects "Hostname" in the "Aggregate By" Widget dropdown
+	Then Widget Preview is displayed to the user

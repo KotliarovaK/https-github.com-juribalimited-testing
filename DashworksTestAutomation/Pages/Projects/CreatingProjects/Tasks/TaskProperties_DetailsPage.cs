@@ -10,6 +10,12 @@ namespace DashworksTestAutomation.Pages.Projects.CreatingProjects.Tasks
         [FindsBy(How = How.XPath, Using = ".//select[contains(@id, 'TaskControlTypeID')]")]
         public IWebElement ValueType { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//table[@id='table_TaskUpdateData']//input[contains(@class, 'updateName')]")]
+        public IWebElement TaskNameInput { get; set; }
+
+        [FindsBy(How = How.XPath, Using = " .//table[@id='table_TaskUpdateData']//img[@title='Properties']")]
+        public IWebElement TaskPropertiesIcon { get; set; }
+       
         [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'HasDueDate')]")]
         public IWebElement TaskHaADueDate { get; set; }
 

@@ -1937,12 +1937,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [Then(@"User sees following Display order on the Automation page")]
-        public void ThenUserSeesFollowingDisplayOrderOnTheAutomationPage(Table displaygOrder)
+        public void ThenUserSeesFollowingDisplayOrderOnTheAutomationPage(Table displayOrder)
         {
-            var page = _driver.NowAt<RingsPage>();
+            var page = _driver.NowAt<ProjectsPage>();
             _driver.WaitForDataLoading();
-            for (var i = 0; i < displaygOrder.RowCount; i++)
-                Utils.Verify.That(page.DisplayOrderValues[i].Text, Is.EqualTo(displaygOrder.Rows[i].Values.FirstOrDefault()),
+            for (var i = 0; i < displayOrder.RowCount; i++)
+                Utils.Verify.That(page.DisplayOrderValues[i].Text, Is.EqualTo(displayOrder.Rows[i].Values.FirstOrDefault()),
                     "Display order values are displayed in the wrong order");
         }
 

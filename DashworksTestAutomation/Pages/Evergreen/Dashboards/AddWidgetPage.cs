@@ -254,5 +254,13 @@ namespace DashworksTestAutomation.Pages
                 return string.Empty;
             }
         }
+
+        public IList<IWebElement> GetMainCategoriesOfListDDL()
+        {
+            var listCategories = ".//*[contains(@id, 'mat-optgroup-label')]";
+            Driver.WaitForElementToBeDisplayed(By.XPath(listCategories));
+            return Driver.FindElements(By.XPath(listCategories));
+        }
+        
     }
 }

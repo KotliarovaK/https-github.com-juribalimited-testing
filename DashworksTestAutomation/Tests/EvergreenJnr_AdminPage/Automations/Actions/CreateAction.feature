@@ -137,14 +137,14 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueAction
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	When User selects 'One' option from 'Stage' autocomplete
 	When User selects 'Radio Rag Date Comp' option from 'Task' autocomplete
-	And User selects "Update" Update Value on Action panel
-	And User selects "Failed" Value on Action panel
+	And User selects 'Update' in the 'Update Value' dropdown
+	And User selects 'Failed' in the 'Value' dropdown
 	And User selects 'No change' in the 'Update Date' dropdown
 	Then "CREATE" Action button is active
 	When User selects "No change" value for "Update" dropdown on Action panel
 	Then "CREATE" Action button is disabled
 	When User selects "Update" value for "No change" dropdown on Action panel
-	And User selects "Failed" Value on Action panel
+	And User selects 'Failed' in the 'Value' dropdown
 	Then "CREATE" Action button is active
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17615 @DAS17619 @Cleanup @Not_Ready
@@ -167,7 +167,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithRemoveOwnerIsLoaded
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	When User selects 'One' option from 'Stage' autocomplete
 	When User selects 'Radio Rag Date Owner User Req B' option from 'Task' autocomplete
-	And User selects "No change" Update Value on Action panel
+	And User selects 'No change' in the 'Update Value' dropdown
 	And User selects 'No change' in the 'Update Date' dropdown
 	And User selects "Remove" Update Owner on Action panel
 	And User clicks 'CREATE' button 
@@ -204,7 +204,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithUpdateOwnerIsLoaded
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	When User selects 'One' option from 'Stage' autocomplete
 	When User selects 'Radio Rag Date Owner Comp Req B' option from 'Task' autocomplete
-	And User selects "No change" Update Value on Action panel
+	And User selects 'No change' in the 'Update Value' dropdown
 	And User selects 'No change' in the 'Update Date' dropdown
 	And User selects "Update" Update Owner on Action panel
 	And User selects "1803 Team" Team on Action panel
