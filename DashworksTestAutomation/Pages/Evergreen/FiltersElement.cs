@@ -75,7 +75,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'filter-category-label blue-color')]")]
         public IList<IWebElement> FilterCategoryLabels { get; set; }
-        
+
         [FindsBy(How = How.XPath,
             Using =
                 "//div[@class='btn-group-sm']//button//span//i[@class='material-icons mat-clear mat-18']")]
@@ -178,7 +178,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         private IWebElement FilterCategory(string filterCategoryName)
         {
             return Driver.FindElement(By.XPath(
-                $".//div[contains(@class,'filter-category-label blue-color bold-text')][text()=\""+filterCategoryName+"\"]/ancestor::div[@class='filter-category ng-star-inserted']"));
+                $".//div[contains(@class,'filter-category-label blue-color bold-text')][text()=\"" + filterCategoryName + "\"]/ancestor::div[@class='filter-category ng-star-inserted']"));
         }
 
         public List<string> GetFilterValuesByFilterName(string filterName)
@@ -215,7 +215,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
             //TODO: 16Aug2019 Yurii T. don't know why we jump to the bottom and then to the top; it makes tests on CI fail
             //if (FilterCategories.Any())
-                //Driver.MouseHover(FilterCategories.Last());
+            //Driver.MouseHover(FilterCategories.Last());
             Driver.MouseHover(By.XPath(SearchTextBoxSelector));
             Driver.WaitForElementToBeEnabled(By.XPath(SearchTextBoxSelector));
             Driver.FindElement(By.XPath(SearchTextBoxSelector)).Click();
@@ -296,7 +296,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             }
             //TODO: 28aug2019 Yurii: removed logic that jumps to the end of the list
             //if (FilterCategories.Any())
-                //Driver.MouseHover(FilterCategories.Last());
+            //Driver.MouseHover(FilterCategories.Last());
             Driver.MoveToElement(SearchTextBox);
             SearchTextBox.SendKeys(filterName);
             string selector;
@@ -577,8 +577,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public bool IsComplianceOptionHasRingIcon(string color)
         {
-            var selector = By.XPath( $"//ul[contains(@class, 'dropdown-select-results-list')]/li//span[@class='mat-checkbox-label']//span[text()='{color}']/preceding-sibling::div[contains(@class, 'status')]");
-            return Driver.FindElements(selector).Count==1;
+            var selector = By.XPath($"//ul[contains(@class, 'dropdown-select-results-list')]/li//span[@class='mat-checkbox-label']//span[text()='{color}']/preceding-sibling::div[contains(@class, 'status')]");
+            return Driver.FindElements(selector).Count == 1;
         }
 
 
