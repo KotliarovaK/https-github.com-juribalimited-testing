@@ -53,7 +53,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogMessageForDeletedTaskInAction
 	When User selects '17247Project' option from 'Project' autocomplete
 	When User selects 'Test' option from 'Stage' autocomplete
 	When User selects 'DAS17247_Task' option from 'Task' autocomplete
-	When User selects "Update" Update Value on Action panel
+	When User selects 'Update' in the 'Update Value' dropdown
 	When User selects 'Not Applicable' in the 'Value' dropdown
 	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters '7 Aug 2019' text to 'Date' datepicker
@@ -93,7 +93,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedU
 	When User selects 'USE ME FOR AUTOMATION(USR SCHDLD)' option from 'Project' autocomplete
 	When User selects 'Stage 1' option from 'Stage' autocomplete
 	When User selects 'Radiobutton Readiness Date Owner Task (User)' option from 'Task' autocomplete
-	And User selects "Update" Update Value on Action panel
+	And User selects 'Update' in the 'Update Value' dropdown
 	And User selects 'On Hold' in the 'Value' dropdown
 	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters '1 Aug 2019' text to 'Date' datepicker
@@ -147,7 +147,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedU
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	When User selects 'One' option from 'Stage' autocomplete
 	When User selects 'Radio Date Owner User' option from 'Task' autocomplete
-	And User selects "No change" Update Value on Action panel
+	And User selects 'No change' in the 'Update Value' dropdown
 	And User selects 'No change' in the 'Update Date' dropdown
 	And User selects "No change" Update Owner on Action panel
 	Then "CREATE" Action button is disabled

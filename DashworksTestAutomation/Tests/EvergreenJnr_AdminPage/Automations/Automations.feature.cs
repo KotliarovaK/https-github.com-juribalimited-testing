@@ -1524,8 +1524,8 @@ this.FeatureBackground();
 #line 458
  testRunner.Then("\"CANCEL\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 459
- testRunner.Then("\"UPDATE\" Action button have tooltip with \"Some values are missing or not valid\" t" +
-                    "ext", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'UPDATE\' Action button has tooltip with \'Some values are missing or not valid\' te" +
+                    "xt", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 462
  testRunner.When("User clicks \"Automations\" navigation link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 463
@@ -2484,32 +2484,32 @@ this.FeatureBackground();
  testRunner.And("user select \"DAS15949_Automation \\ 15949_Action_1\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 724
  testRunner.And("User select \"Equals\" Operator value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 725
+ testRunner.When("User selects current date checkbox from Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 726
- testRunner.When("User select last checkbox from available options", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 727
  testRunner.And("User clicks Save filter button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 728
+#line 727
  testRunner.Then("\"5,179\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 730
+#line 729
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 731
+#line 730
  testRunner.And("User navigates to the \'Automations\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 732
+#line 731
  testRunner.And("User selects \"Automation Log\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 733
+#line 732
  testRunner.And("User enters \"DAS15949_Automation\" text in the Search field for \"Automation\" colum" +
                     "n", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 734
+#line 733
  testRunner.And("User clicks String Filter button for \"Action\" column on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 735
+#line 734
  testRunner.And("User selects \"Select All\" checkbox from String Filter with item list on the Admin" +
                     " page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 736
+#line 735
  testRunner.And("User clicks String Filter button for \"Action\" column on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 737
+#line 736
  testRunner.And("User selects \"15949_Action_1\" checkbox from String Filter with item list on the A" +
                     "dmin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 738
+#line 737
  testRunner.Then("\"5179\" content is displayed in \"Objects\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

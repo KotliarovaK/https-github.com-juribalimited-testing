@@ -7818,21 +7818,21 @@ this.FeatureBackground();
 #line 1763
  testRunner.And("User select \"Equals\" Operator value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1764
- testRunner.Then("\"UPDATE\" Action button have tooltip with \"You must enter a date\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'UPDATE\' Action button has tooltip with \'You must enter a date\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 1765
  testRunner.When("User select \"Between\" Operator value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1766
- testRunner.Then("\"UPDATE\" Action button have tooltip with \"You must enter a start date\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'UPDATE\' Action button has tooltip with \'You must enter a start date\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 1767
  testRunner.When("User select \"Empty\" Operator value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1768
- testRunner.Then("\"UPDATE\" Action button have tooltip with \"Complete all fields before saving this " +
-                    "filter\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'UPDATE\' Action button has tooltip with \'Complete all fields before saving this f" +
+                    "ilter\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 1769
  testRunner.When("User select \"Not empty\" Operator value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1770
- testRunner.Then("\"UPDATE\" Action button have tooltip with \"Complete all fields before saving this " +
-                    "filter\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'UPDATE\' Action button has tooltip with \'Complete all fields before saving this f" +
+                    "ilter\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

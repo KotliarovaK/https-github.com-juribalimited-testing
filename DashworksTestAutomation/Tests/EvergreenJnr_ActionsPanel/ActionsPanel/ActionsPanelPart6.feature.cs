@@ -228,7 +228,7 @@ this.FeatureBackground();
 #line 42
  testRunner.Then("the Update Value options are displayed in following order:", ((string)(null)), table4, "Then ");
 #line 46
- testRunner.When("User selects \"No change\" Update Value on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'No change\' in the \'Update Value\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "Options"});
@@ -638,7 +638,7 @@ this.FeatureBackground();
 #line 174
  testRunner.Then("the Update Value options are displayed in following order:", ((string)(null)), table17, "Then ");
 #line 178
- testRunner.When("User selects \"Update\" Update Value on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Update\' in the \'Update Value\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 179
  testRunner.And("User selects \'Started\' in the \'Value\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 180
@@ -844,7 +844,7 @@ this.FeatureBackground();
 #line 244
  testRunner.And("User selects \'Perform User Acceptance Test\' option from \'Task\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 245
- testRunner.And("User selects \"Update\" Update Value on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects \'Update\' in the \'Update Value\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 246
  testRunner.And(string.Format("User selects \'{0}\' in the \'Value\' dropdown", newValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 247
@@ -883,7 +883,7 @@ this.FeatureBackground();
 #line 263
  testRunner.And("User selects \'Perform User Acceptance Test\' option from \'Task\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 264
- testRunner.And("User selects \"Update\" Update Value on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects \'Update\' in the \'Update Value\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 265
  testRunner.And(string.Format("User selects \'{0}\' in the \'Value\' dropdown", defaultValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 266

@@ -64,9 +64,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'actions-container-row')]")]
         public IWebElement ActionsRowsCount { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//textarea[@placeholder='Value']")]
-        public IWebElement ValueField { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//mat-select[contains(@class, 'mat-select')]//span[text()='Update Value']")]
         public IWebElement UpdateValueDropdown { get; set; }
 

@@ -137,25 +137,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.BodyContainer.Click();
         }
 
-        [When(@"User types ""(.*)"" Value on Action panel")]
-        public void WhenUserTypesValueOnActionPanel(string value)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            action.ValueField.Clear();
-            action.ValueField.SendKeys(value);
-            action.BodyContainer.Click();
-            _driver.WaitForDataLoading();
-        }
-
-        //TODO replace by WhenUserSelectsInTheDropdown
-        [When(@"User selects ""(.*)"" Update Value on Action panel")]
-        public void WhenUserSelectsUpdateValueOnActionPanel(string value)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            action.UpdateValueDropdown.Click();
-            action.GetDropdownValueByName(value).Click();
-        }
-
         [Then(@"the Update Value options are displayed in following order:")]
         public void ThenTheUpdateValueOptionsAreDisplayedInFollowingOrder(Table table)
         {

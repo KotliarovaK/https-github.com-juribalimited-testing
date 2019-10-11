@@ -43,7 +43,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelIsWorkingCorrectlyWhenS
 	| Options               |
 	| Update                |
 	| No change             |
-	When User selects "No change" Update Value on Action panel
+	When User selects 'No change' in the 'Update Value' dropdown
 	Then the Update Date options are displayed in following order:
 	| Options   |
 	| Update    |
@@ -175,7 +175,7 @@ Scenario Outline: EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorre
 	| Options               |
 	| Update                |
 	| No change             |
-	When User selects "Update" Update Value on Action panel
+	When User selects 'Update' in the 'Update Value' dropdown
 	And User selects 'Started' in the 'Value' dropdown
 	And User selects 'No change' in the 'Update Date' dropdown
 	And User navigate to the bottom of the Action panel
@@ -242,7 +242,7 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
 	And User selects 'User Acceptance Test' option from 'Stage' autocomplete
 	And User selects 'Perform User Acceptance Test' option from 'Task' autocomplete
-	And User selects "Update" Update Value on Action panel
+	And User selects 'Update' in the 'Update Value' dropdown
 	And User selects '<NewValue>' in the 'Value' dropdown
 	And User selects 'No change' in the 'Update Date' dropdown
 	And User selects "Update" Update Owner on Action panel
@@ -261,7 +261,7 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
 	And User selects 'User Acceptance Test' option from 'Stage' autocomplete
 	And User selects 'Perform User Acceptance Test' option from 'Task' autocomplete
-	And User selects "Update" Update Value on Action panel
+	And User selects 'Update' in the 'Update Value' dropdown
 	And User selects '<DefaultValue>' in the 'Value' dropdown
 	And User selects 'No change' in the 'Update Date' dropdown
 	And User selects "Update" Update Owner on Action panel
