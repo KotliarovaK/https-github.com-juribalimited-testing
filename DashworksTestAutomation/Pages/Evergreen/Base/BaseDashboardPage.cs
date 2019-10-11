@@ -319,9 +319,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = ".//mat-select[@name='createActions']/div[@class='mat-select-trigger']/ancestor::mat-select")]
         public IWebElement CreateActionButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'active-list')]//span[contains(@class,'name')]")]
-        public IWebElement ActiveCustomList { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-body-viewport')]//div[@class='ag-center-cols-viewport']//div[@role='row']")]
         public IList<IWebElement> GridRows { get; set; }
 
@@ -642,13 +639,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             Driver.WaitForElementToBeDisplayed(byControl);
             Driver.FindElement(byControl).GetAttribute("href");
             return Driver.FindElement(byControl);
-        }
-
-        public IWebElement GetListElementByName(string listName)
-        {
-            var selector = By.XPath($".//div[@id='submenuBlock']//*[text()='{listName}']");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
         }
 
         public void OpenColumnSettingsByName(string columnName)
