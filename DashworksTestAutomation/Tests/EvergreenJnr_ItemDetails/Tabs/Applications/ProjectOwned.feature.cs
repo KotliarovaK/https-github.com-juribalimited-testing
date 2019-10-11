@@ -86,6 +86,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails.Tabs.Applicatio
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS17808")]
+        [NUnit.Framework.CategoryAttribute("DAS18408")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_UsersList_CheckThatProjectOwnedSubtabIsDisplayedCorrectly()
         {
@@ -121,6 +122,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails.Tabs.Applicatio
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS17808",
+                        "DAS18408",
                         "Not_Ready"});
 #line 10
 this.ScenarioInitialize(scenarioInfo);
@@ -140,6 +142,58 @@ this.FeatureBackground();
  testRunner.When("User navigates to the \"Project Owned\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 16
  testRunner.Then("\"No applications owned by this user\" message is displayed on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 17
+ testRunner.When("User navigates to the \'User\' details page for \'AAH0343264\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 18
+ testRunner.Then("Details page for \"AAH0343264\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 19
+ testRunner.When("User switches to the \"Windows 7 Migration (Computer Scheduled Project)\" project i" +
+                    "n the Top bar on Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 20
+ testRunner.When("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 21
+ testRunner.When("User navigates to the \"Project Owned\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 22
+ testRunner.Then("\"1\" rows found label displays on Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 23
+ testRunner.When("User have opened column settings for \"Current App\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 24
+ testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 25
+ testRunner.And("User select \"Current App\" checkbox on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 26
+ testRunner.And("User select \"Target App\" checkbox on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 27
+ testRunner.And("User select \"Target App Readiness\" checkbox on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 28
+ testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table1.AddRow(new string[] {
+                        "Vendor"});
+            table1.AddRow(new string[] {
+                        "Version"});
+            table1.AddRow(new string[] {
+                        "Rationalisation"});
+            table1.AddRow(new string[] {
+                        "Target App Core"});
+            table1.AddRow(new string[] {
+                        "Path"});
+            table1.AddRow(new string[] {
+                        "Category"});
+            table1.AddRow(new string[] {
+                        "Workflow"});
+            table1.AddRow(new string[] {
+                        "Date"});
+            table1.AddRow(new string[] {
+                        "App Readiness"});
+            table1.AddRow(new string[] {
+                        "Application Information"});
+            table1.AddRow(new string[] {
+                        "Communication"});
+#line 29
+ testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table1, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
