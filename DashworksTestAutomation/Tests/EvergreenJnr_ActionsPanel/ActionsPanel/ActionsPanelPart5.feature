@@ -16,12 +16,12 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectFieldIsDisplayedCorrectl
 	| 0047 - Microsoft Access 97 SR-2 Francais |
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update path' in the 'Bulk Update Type' dropdown
-	Then Projects are displayed in alphabetical order on Action panel
+	Then 'Project' autocomplete options are sorted in the alphabetical order
 	When User selects 'User Scheduled Test (Jo)' option from 'Project' autocomplete
 	And User selects "Request Type A" Path on Action panel
-	When User clears Project field
-	And User clicks on Action drop-down
-	Then "User Scheduled Test (Jo)" Project is displayed on Action panel
+	When User clears 'Project' autocomplete
+	When User clicks 'Action' dropdown
+	Then 'User Scheduled Test (Jo)' content is displayed in 'Project' autocomplete
 
 @Evergreen @Mailboxes @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13142 @DAS16826
 Scenario: EvergreenJnr_MailboxesList_CheckThatProjectFieldIsDisplayedCorrectlyAfterClearingOnMailboxesPage
@@ -44,9 +44,9 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatProjectFieldIsDisplayedCorrectlyAf
 	When User selects 'Update path' in the 'Bulk Update Type' dropdown
 	And User selects 'Email Migration' option from 'Project' autocomplete
 	And User selects "Personal Mailbox - VIP" Path on Action panel
-	When User clears Project field
-	And User clicks on Action drop-down
-	Then "Email Migration" Project is displayed on Action panel
+	When User clears 'Project' autocomplete
+	When User clicks 'Action' dropdown
+	Then 'Email Migration' content is displayed in 'Project' autocomplete
 
 @Evergreen @AllLists @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13355 @DAS13260 @DAS13281
 Scenario Outline: EvergreenJnr_AllLists_ChecksThatTextValueHaveOptionToRemoveExistingTextValue

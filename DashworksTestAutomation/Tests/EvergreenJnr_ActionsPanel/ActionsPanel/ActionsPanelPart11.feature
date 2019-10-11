@@ -23,7 +23,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatNoErrorDisplayedWhenBulkUpdateMai
 	And User selects 'Update ring' in the 'Bulk Update Type' dropdown
 	And User selects 'Project' in the 'Project or Evergreen' dropdown
 	And User selects 'Mailbox Evergreen Capacity Project' option from 'Project' autocomplete
-	And User selects "Unassigned" Ring on Action panel
+	When User selects 'Unassigned' option from 'Ring' autocomplete
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	When User clicks 'UPDATE' button
@@ -91,7 +91,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatBulkUpdateOfArchivedItemsWorks
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
 	And User selects 'Evergreen' in the 'Project or Evergreen' dropdown
-	And User selects "Evergreen Capacity Unit 1" Capacity Unit on Action panel
+	When User selects 'Evergreen Capacity Unit 1' option from 'Capacity Unit' autocomplete
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	When User clicks 'UPDATE' button

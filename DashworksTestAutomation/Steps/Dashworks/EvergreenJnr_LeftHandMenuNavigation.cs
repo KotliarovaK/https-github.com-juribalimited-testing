@@ -51,23 +51,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"'(.*)' list should be displayed to the user")]
         public void ThenListShouldBeDisplayedToTheUser(string listPage)
         {
+            var header = _driver.NowAt<BaseHeaderElement>();
+
             switch (listPage)
             {
-                case "All Devices":
-                case "All Users":
-                case "All Applications":
-                case "All Mailboxes":
-                    var header = _driver.NowAt<BaseHeaderElement>();
-                    header.CheckPageHeader(listPage.ToLower());
-                    break;
-
                 case "Admin":
-                    var adminPage = _driver.NowAt<BaseHeaderElement>();
-                    adminPage.CheckPageHeader("projects");
+                    header.CheckPageHeader("projects");
                     break;
 
                 default:
-                    throw new Exception($"'{listPage}' menu item is not valid ");
+                    header.CheckPageHeader(listPage.ToLower());
+                    break;
             }
         }
 

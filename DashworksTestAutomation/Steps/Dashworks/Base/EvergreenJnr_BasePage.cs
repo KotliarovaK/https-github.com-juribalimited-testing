@@ -62,6 +62,40 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         #region Autocomplete
 
+        [When(@"User selects '(.*)' option from '(.*)' autocomplete")]
+        public void WhenUserSelectsOptionFromAutocomplete(string option, string placeholder)
+        {
+            UserSelectsOptionFromAutocomplete(option, placeholder, true);
+        }
+
+        [When(@"User selects '(.*)' option from '(.*)' autocomplete without search")]
+        public void WhenUserSelectsOptionFromAutocompleteWithoutSearch(string option, string placeholder)
+        {
+            UserSelectsOptionFromAutocomplete(option, placeholder, false);
+        }
+
+        [When(@"User enters '(.*)' in the '(.*)' autocomplete field and selects '(.*)' value")]
+        public void WhenUserEntersInTheAutocompleteFieldAndSelectsValue(string text, string placeholder, string value)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.PopulateTextbox(placeholder, text);
+            page.AutocompleteSelect(placeholder, text, true, true, new[] { value });
+        }
+
+        [When(@"User selects '(.*)' option after search from '(.*)' autocomplete")]
+        public void WhenUserSelectsOptionAfterSearchFromAutocomplete(string option, string placeholder)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.AutocompleteSelect(placeholder, option, true);
+        }
+
+        [When(@"User clears '(.*)' autocomplete")]
+        public void WhenUserClearsAutocomplete(string placeholder)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.ClearTextbox(placeholder);
+        }
+
         [Then(@"'(.*)' autocomplete last option is '(.*)'")]
         public void ThenAutocompleteLastOptionIs(string placeholder, string option)
         {
@@ -175,38 +209,11 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 $"Incorrect values are selected in the '{placeholder}' autocomplete");
         }
 
-        [When(@"User selects '(.*)' option from '(.*)' autocomplete")]
-        public void WhenUserSelectsOptionFromAutocomplete(string option, string placeholder)
-        {
-            UserSelectsOptionFromAutocomplete(option, placeholder, true);
-        }
-
-        [When(@"User selects '(.*)' option from '(.*)' autocomplete without search")]
-        public void WhenUserSelectsOptionFromAutocompleteWithoutSearch(string option, string placeholder)
-        {
-            UserSelectsOptionFromAutocomplete(option, placeholder, false);
-        }
-
         private void UserSelectsOptionFromAutocomplete(string option, string placeholder, bool withSearch)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             page.AutocompleteSelect(placeholder, option, withSearch);
             _driver.WaitForDataLoadingInActionsPanel();
-        }
-
-        [When(@"User enters '(.*)' in the '(.*)' autocomplete field and selects '(.*)' value")]
-        public void WhenUserEntersInTheAutocompleteFieldAndSelectsValue(string text, string placeholder, string value)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            page.PopulateTextbox(placeholder, text);
-            page.AutocompleteSelect(placeholder, text, true, true, new[] { value });
-        }
-
-        [When(@"User selects '(.*)' option after search from '(.*)' autocomplete")]
-        public void WhenUserSelectsOptionAfterSearchFromAutocomplete(string option, string placeholder)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            page.AutocompleteSelect(placeholder, option, true);
         }
 
         private void CheckAutocompletAndTextboxText(string placeholder, string expectedText)
@@ -246,6 +253,20 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             _driver.WaitForDataLoading();
         }
 
+        [When(@"User adds '(.*)' value from '(.*)' textbox")]
+        public void WhenUserAddsValueFromTextbox(string option, string fieldName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.PopulateTextboxWithAddButton(fieldName, option);
+        }
+
+        [When(@"User clears '(.*)' textbox")]
+        public void WhenUserClearsTextbox(string placeholder)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.ClearTextbox(placeholder);
+        }
+
         [Then(@"'(.*)' content is displayed in '(.*)' textbox")]
         public void ThenContentIsDisplayedInTextbox(string expectedText, string placeholder)
         {
@@ -266,13 +287,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
             Verify.AreEqual("rgba(242, 88, 49, 1)", page.GetTextboxErrorMessageExclamationIcon(placeholder).GetCssValue("color"),
                 $"Incorrect error message color for '{placeholder}' field exclamation icon");
-        }
-
-        [When(@"User adds '(.*)' value from '(.*)' textbox")]
-        public void WhenUserAddsValueFromTextbox(string option, string fieldName)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            page.PopulateTextboxWithAddButton(fieldName, option);
         }
 
         [Then(@"'(.*)' add button tooltip is displayed for '(.*)' textbox")]
@@ -341,7 +355,16 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenDropdownIsDisplayed(string dropdownName)
         {
             var dropdown = _driver.NowAt<BaseDashboardPage>();
-            Verify.IsTrue(dropdown.GetDropdown(dropdownName).Displayed(), $"{dropdownName} is not displayed");
+            Verify.IsTrue(dropdown.GetDropdown(dropdownName).Displayed(), 
+                $"{dropdownName} is not displayed");
+        }
+
+        [Then(@"'(.*)' dropdown is not displayed")]
+        public void ThenDropdownIsNotDisplayed(string dropdownName)
+        {
+            var dropdown = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsFalse(dropdown.GetDropdown(dropdownName).Displayed(), 
+                $"{dropdownName} is not displayed");
         }
 
         //Exact much

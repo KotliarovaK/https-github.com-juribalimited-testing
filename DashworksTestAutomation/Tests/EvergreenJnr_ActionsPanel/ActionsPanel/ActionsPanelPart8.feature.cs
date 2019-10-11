@@ -177,7 +177,7 @@ this.FeatureBackground();
 #line 30
  testRunner.And("User selects \'Task 0\' option from \'Task\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 31
- testRunner.And("User selects \"Started\" Value on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects \'Started\' in the \'Value\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 32
  testRunner.And("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 33
@@ -300,7 +300,7 @@ this.FeatureBackground();
             table4.AddRow(new string[] {
                         "Laptop & Workstation 2"});
 #line 53
- testRunner.Then("following Tasks are displayed in drop-down:", ((string)(null)), table4, "Then ");
+ testRunner.Then("only below options are displayed in the \'Task\' autocomplete", ((string)(null)), table4, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -387,7 +387,7 @@ this.FeatureBackground();
             table6.AddRow(new string[] {
                         "Three"});
 #line 82
- testRunner.Then("following Stage are displayed in drop-down:", ((string)(null)), table6, "Then ");
+ testRunner.Then("only below options are displayed in the \'Stage\' autocomplete", ((string)(null)), table6, "Then ");
 #line 87
  testRunner.When("User selects \'One\' option from \'Stage\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -418,7 +418,7 @@ this.FeatureBackground();
             table7.AddRow(new string[] {
                         "SS Department and Location Enabled"});
 #line 88
- testRunner.Then("following Tasks are displayed in drop-down:", ((string)(null)), table7, "Then ");
+ testRunner.Then("only below options are displayed in the \'Task\' autocomplete", ((string)(null)), table7, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -492,7 +492,7 @@ this.FeatureBackground();
 #line 113
  testRunner.And("User selects \'Email Migration\' option from \'Project\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 114
- testRunner.And("User selects \"Unassigned\" Capacity Unit on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User selects \'Unassigned\' option from \'Capacity Unit\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                         "Options"});
@@ -503,7 +503,7 @@ this.FeatureBackground();
             table9.AddRow(new string[] {
                         "All linked mailboxes"});
 #line 115
- testRunner.Then("following Move Mailboxes are displayed in drop-down:", ((string)(null)), table9, "Then ");
+ testRunner.Then("following Values are displayed in the \'Also Move Users\' dropdown:", ((string)(null)), table9, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
