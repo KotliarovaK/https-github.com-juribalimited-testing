@@ -68,9 +68,8 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForDeviceScopedProject
 	When User select "Ring" rows in the grid
 	| SelectedRowsName |
 	| Unassigned       |
-	And User clicks on Actions button
-	And User selects "Delete" in the Actions
-	And User clicks Delete button
+	And User selects 'Delete' in the 'Actions' dropdown
+	When User clicks 'DELETE' button
 	Then Warning message with "This ring will be permanently deleted and any objects within it reassigned to the default ring" text is displayed on the Admin page
 	When User clicks Delete button in the warning message
 
@@ -127,7 +126,7 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForMailboxScopedProject
 	| Ring_Test        |
 	| 14705_Ring       |
 	And User clicks on Actions button
-	And User selects "Delete" in the Actions
-	And User clicks Delete button
+	And User selects 'Delete' in the 'Actions' dropdown
+	When User clicks 'DELETE' button
 	Then Warning message with "These rings will be permanently deleted and any objects within them reassigned to the default ring" text is displayed on the Admin page
 	When User clicks Delete button in the warning message

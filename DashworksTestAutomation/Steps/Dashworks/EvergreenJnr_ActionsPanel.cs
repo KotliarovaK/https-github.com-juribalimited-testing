@@ -31,15 +31,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenActionsPanelIsDisplayedToTheUser()
         {
             var columnElement = _driver.NowAt<ActionsElement>();
-            Verify.IsTrue(columnElement.ActionsPanel.Displayed(), "Actions panel was not displayed");
-            Logger.Write("Actions panel is visible");
+            Verify.IsTrue(columnElement.ActionsPanel.Displayed(),
+                "Actions panel was not displayed");
+
+            var button = _driver.NowAt<BaseDashboardPage>();
+            Verify.Contains("active", button.ActionsButton.GetAttribute("class"),
+                "Action button is not active");
         }
 
         [Then(@"Actions panel is not displayed to the user")]
         public void ThenActionsPanelIsNotDisplayedToTheUser()
         {
+            //TODO add assertion that ActionsElement.ActionsPanelis not displayed!
+
             var button = _driver.NowAt<BaseDashboardPage>();
-            Utils.Verify.IsFalse(button.ActiveActionsButton.Displayed(), "Actions panel was displayed");
+            Verify.DoesNotContain("active", button.ActionsButton.GetAttribute("class"),
+                "Action button is active");
         }
 
         [Then(@"Actions message container is displayed to the user")]
@@ -141,17 +148,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
-        [When(@"User selects ""(.*)"" option in ""(.*)"" field on Action panel")]
-        public void WhenUserSelectsOptionInFieldOnActionPanel(string option, string fieldName)
-        {
-            var field = _driver.NowAt<ActionsElement>();
-            field.GetFieldOnActionPanelByName(fieldName).Clear();
-            field.GetFieldOnActionPanelByName(fieldName).SendKeys(option);
-            var action = _driver.NowAt<BaseDashboardPage>();
-            action.GetDropdownValueByName(option).Click();
-            _driver.WaitForDataLoading();
-        }
-
         [When(@"User selects ""(.*)"" option in ""(.*)"" drop-down on Action panel")]
         public void WhenUserSelectsOptionInDrop_DownOnActionPanel(string option, string fieldName)
         {
@@ -246,22 +242,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             page.BodyContainer.Click();
-        }
-
-        [Then(@"following values are displayed in ""(.*)"" drop-down with searchfield on Action panel:")]
-        public void ThenFollowingValuesAreDisplayedInDrop_DownWithSearchfieldOnActionPanel(string fieldName, Table table)
-        {
-            var field = _driver.NowAt<ActionsElement>();
-            field.GetSearchDropDownOnActionPanelByName(fieldName).Click();
-
-            var action = _driver.NowAt<BaseDashboardPage>(); ;
-            var actualList = action.OptionListOnActionsPanel.Select(value => value.Text).ToList();
-            foreach (var row in table.Rows)
-            {
-                Utils.Verify.Contains(row["Options"], actualList, $"This {fieldName} project in drop-down with search field not found");
-            }
-
-            field.BodyContainer.Click();
         }
 
         [Then(@"Stages are displayed in alphabetical order on Action panel")]
@@ -507,8 +487,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Verify.AreNotEqual(buttonState, "true", $"{buttonName} Button state is incorrect");
         }
 
-        [Then(@"""(.*)"" Action button have tooltip with ""(.*)"" text")]
-        public void ThenActionButtonHaveTooltipWithText(string buttonName, string text)
+        [Then(@"'(.*)' Action button has tooltip with '(.*)' text")]
+        public void ThenActionButtonHasTooltipWithText(string buttonName, string text)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             var button = page.GetButtonByName(buttonName);
@@ -719,21 +699,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             listElement.ListNameTextBox.SendKeys(listName);
         }
 
-        [When(@"User clicks Cancel button on the Actions panel")]
-        public void WhenUserClicksCancelButtonOnTheActionsPanel()
-        {
-            var listElement = _driver.NowAt<ActionsElement>();
-            listElement.CancelButton.Click();
-        }
-
         [When(@"User create static list with ""(.*)"" name")]
         public void WhenUserCreateStaticListWithName(string listName)
         {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var createButton = page.GetButtonByName("CREATE");
+
             var listElement = _driver.NowAt<ActionsElement>();
-            _driver.WaitForElementToBeDisplayed(listElement.CreateButton);
             listElement.ListNameTextBox.SendKeys(listName);
-            _driver.WaitForElementToBeDisplayed(listElement.CreateButton);
-            listElement.CreateButton.Click();
+            createButton.Click();
             _driver.WaitForDataLoadingInActionsPanel();
 
             //Small wait for message display
@@ -745,8 +719,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"User type ""(.*)"" into Static list name field")]
         public void ThenUserTypeIntoStaticListNameField(string listName)
         {
+            //Just to wait Create button
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.GetButtonByName("CREATE");
+
             var listElement = _driver.NowAt<ActionsElement>();
-            _driver.WaitForElementToBeDisplayed(listElement.CreateButton);
             listElement.ListNameTextBox.SendKeys(listName);
         }
 
@@ -756,16 +733,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var dashboardPage = _driver.NowAt<BaseDashboardPage>();
             //Wait for All checkboxes are checked
             Thread.Sleep(1000);
-            Utils.Verify.IsFalse(dashboardPage.UncheckedCheckbox.Displayed(), "Not all checkboxes are checked in the table");
-        }
-
-        [Then(@"Following options are available in lists dropdown:")]
-        public void ThenFollowingOptionsAreAvailableInListsDropdown(Table table)
-        {
-            var actionsElement = _driver.NowAt<ActionsElement>();
-            actionsElement.ListsDropdown.Click();
-            Utils.Verify.AreEqual(table.Rows.SelectMany(row => row.Values).ToList(),
-                actionsElement.GetDropdownOptions().Select(p => p.Text), "Incorrect options in lists dropdown");
+            Verify.IsFalse(dashboardPage.UncheckedCheckbox.Displayed(), "Not all checkboxes are checked in the table");
         }
 
         [Then(@"following Values are displayed in Action drop-down:")]
@@ -774,7 +742,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var actionsElement = _driver.NowAt<ActionsElement>();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var actualList = actionsElement.ActionValues.Select(value => value.Text).ToList();
-            Utils.Verify.AreEqual(expectedList, actualList, "Action values are different");
+            Verify.AreEqual(expectedList, actualList, "Action values are different");
             var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             filterElement.BodyContainer.Click();
         }

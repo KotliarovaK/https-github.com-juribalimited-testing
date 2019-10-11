@@ -761,49 +761,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             teamElement.RemoveButtonInWarningMessage.Click();
         }
 
-        [When(@"User selects ""(.*)"" team to add")]
-        public void WhenUserSelectsTeamToAdd(string teamName)
-        {
-            var teamElement = _driver.NowAt<AddToAnotherTeamPage>();
-            teamElement.AddUsersToAnotherTeam(teamName);
-        }
-
-        [When(@"User type ""(.*)"" search criteria in Select a new Team field")]
-        public void WhenUserTypeSearchCriteriaInSelectANewTeamField(string text)
-        {
-            var teamPage = _driver.NowAt<AddToAnotherTeamPage>();
-            teamPage.TeamSelectBox.Click();
-            teamPage.TeamSelectBox.Clear();
-            teamPage.TeamSelectBox.SendKeys(text);
-        }
-
-        [Then(@"following Team are displayed in Select a new Team drop-down:")]
-        public void ThenFollowingTeamAreDisplayedInSelectANewTeamDrop_Down(Table table)
-        {
-            var teamPage = _driver.NowAt<BaseDashboardPage>();
-            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            var actualList = teamPage.OptionListOnActionsPanel.Select(value => value.Text).ToList();
-            Utils.Verify.AreEqual(expectedList, actualList, "Teams in Select a new Team drop-down are different");
-            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            page.BodyContainer.Click();
-        }
-
-        [Then(@"Change Team page is displayed to the user")]
-        public void ThenChangeTeamPageIsDisplayedToTheUser()
-        {
-            var page = _driver.NowAt<ChangeTeamPage>();
-            Utils.Verify.IsTrue(page.PageTitle.Displayed(), "Change Team page is not displayed");
-        }
-
-        [When(@"User selects ""(.*)"" in the Team dropdown")]
-        public void WhenUserSelectsInTheTeamDropdown(string teamName)
-        {
-            var page = _driver.NowAt<ChangeTeamPage>();
-            page.SelectTeamDropdown.Click();
-            _driver.WaitForDataLoading();
-            page.SelectTeamToChange(teamName);
-        }
-
         #region Column Settings
 
         [When(@"User have opened Column Settings for ""(.*)"" column")]
@@ -864,23 +821,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 "Create Team button is active");
         }
 
-        //TODO should be moved to ActionPanel
-        [When(@"User clicks Delete button")]
-        public void WhenUserClicksDeleteButton()
-        {
-            var button = _driver.NowAt<ActionPanelPage>();
-            _driver.WaitForElementToBeDisplayed(button.DeleteButtonOnPage);
-            button.DeleteButtonOnPage.Click();
-        }
-
-        //TODO should be moved to ActionPanel
-        [When(@"User clicks Delete button in Actions")]
-        public void WhenUserClicksDeleteButtonInActions()
-        {
-            var button = _driver.NowAt<ActionPanelPage>();
-            button.GetActionButtonByName("Delete").Click();
-        }
-
         [Then(@"Reassign Objects is displayed on the Teams page")]
         public void ThenReassignObjectsIsDisplayedOnTheTeamsPage()
         {
@@ -919,13 +859,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var button = _driver.NowAt<ActionPanelPage>();
             _driver.WaitForElementToBeDisplayed(button.ActionsDropDown);
             button.ActionsDropDown.Click();
-        }
-
-        [When(@"User selects ""(.*)"" in the Actions")]
-        public void ThenUserSelectInTheActions(string actionName)
-        {
-            var action = _driver.NowAt<BaseGridPage>();
-            action.SelectActions(actionName);
         }
 
         [When(@"User selects all objects to the Project")]
@@ -1825,14 +1758,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         //TODO should be moved to ActionPanel
-        [When(@"User clicks Actions button on the Projects page")]
-        public void WhenUserClicksActionsButtonOnTheProjectsPage()
-        {
-            var projectElement = _driver.NowAt<ActionPanelPage>();
-            projectElement.ActionsDropDown.Click();
-        }
-
-        //TODO should be moved to ActionPanel
         [Then(@"Actions button on the Projects page is active")]
         public void ThenActionsButtonOnTheProjectsPageIsActive()
         {
@@ -1851,10 +1776,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User removes selected item")]
         public void WhenUserRemovesSelectedItem()
         {
-            var action = _driver.NowAt<ActionPanelPage>();
-            action.ActionsDropDown.Click();
-            WhenUserClicksDeleteButtonInActions();
-            action.DeleteButtonOnPage.Click();
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.SelectDropdown("Delete", "Actions");
+            page.ClickButtonByName("DELETE");
+
             var projectElement = _driver.NowAt<BaseGridPage>();
             _driver.WaitForElementToBeDisplayed(projectElement.WarningMessage);
             _driver.WaitForDataLoading();

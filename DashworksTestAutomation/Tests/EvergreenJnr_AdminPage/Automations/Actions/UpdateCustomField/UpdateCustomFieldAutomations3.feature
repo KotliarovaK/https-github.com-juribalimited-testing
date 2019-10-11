@@ -24,3 +24,23 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsUpdateCustomFieldValues
 	#Create Action
 	Then There are no errors in the browser console
 	Then "new_value" content is displayed for "Value" column
+
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18411 @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckThatSelectedContentIsUpdatedAfterChangingUpdateValues
+	When User creates new Automation via API and open it
+	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
+	| 18411_Automation | 18411       | true   | false              | All Devices | Manual |
+	Then Automation page is displayed correctly
+	When User navigates to the 'Actions' left menu item
+	#Create Action
+	When User clicks 'CREATE ACTION' button 
+	And User enters '18411_Action' text to 'Action Name' textbox
+	And User selects 'Update custom field' in the 'Action Type' dropdown
+	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
+	When User selects 'Replace single value' in the 'Update Values' dropdown
+	When User enters '0' text to 'Find Value' textbox
+	When User enters '12' text to 'Replace Value' textbox
+	And User selects 'Add to existing values' in the 'Update Values' dropdown
+	When User selects 'Replace single value' in the 'Update Values' dropdown
+	Then '' content is displayed in 'Find Value' textbox
+	Then '' content is displayed in 'Replace Value' textbox

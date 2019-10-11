@@ -136,3 +136,29 @@ Scenario: EvergreenJnr_AdminPage_CheckOpIdColumnInTheAutomationLog
 	| Operation ID |
 	When User clicks content from "Scope" column
 	Then 'All Mailboxes' list should be displayed to the user
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS18265 @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckArchivedObjectNumbersFromAnutomationLogGrid
+	When User creates new Automation via API and open it
+	| AutomationName   | Description | Active | StopOnFailedAction | Scope        | Run    |
+	| 18265_Automation | 18265       | true   | false              | 1803 Rollout | Manual |
+	Then Automation page is displayed correctly
+	When User navigates to the 'Actions' left menu item
+	#Create Action
+	When User clicks 'CREATE ACTION' button
+	When User enters '18265_Action' text to 'Action Name' textbox
+	And User selects 'Update custom field' in the 'Action Type' dropdown
+	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
+	When User selects 'Replace single value' in the 'Update Values' dropdown
+	When User enters '0' text to 'Find Value' textbox
+	When User enters '1' text to 'Replace Value' textbox
+	When User clicks 'CREATE' button
+	#Create Action
+	When User clicks "Automations" navigation link on the Admin page
+	When User enters "18265_Automation" text in the Search field for "Automation" column
+	When User clicks "Run now" option in Cog-menu for "18265_Automation" item on Admin page
+	When User selects "Automation Log" tab on the Project details page
+	When User clicks refresh button in the browser
+	When User enters "59" text in the Search field for "Objects" column
+	And User clicks content from "Objects" column
+	Then "59" rows are displayed in the agGrid

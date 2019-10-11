@@ -17,8 +17,8 @@ Scenario: EvergreenJnr_DevicesList_CheckBucketBulkUpdateOptionsOnDevicesListForE
 	| 001PSUMZYOW581   |
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update bucket' in the 'Bulk Update Type' dropdown
-	And User selects "Evergreen" Project or Evergreen on Action panel
-	And User selects "Unassigned" option in "Bucket" field on Action panel
+	And User selects 'Evergreen' in the 'Project or Evergreen' dropdown
+	And User selects 'Unassigned' option from 'Bucket' autocomplete
 	Then following values are displayed in "Also Move Users" drop-down on Action panel:
 	| Options          |
 	| None             |
@@ -40,8 +40,8 @@ Scenario: EvergreenJnr_UsersList_CheckBucketBulkUpdateOptionsOnUsersListForEverg
 	| 00C8BC63E7424A6E862 |
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update bucket' in the 'Bulk Update Type' dropdown
-	And User selects "Evergreen" Project or Evergreen on Action panel
-	And User selects "Unassigned" option in "Bucket" field on Action panel
+	And User selects 'Evergreen' in the 'Project or Evergreen' dropdown
+	And User selects 'Unassigned' option from 'Bucket' autocomplete
 	Then following values are displayed in "Also Move Devices" drop-down on Action panel:
 	| Options            |
 	| None               |
@@ -68,9 +68,9 @@ Scenario: EvergreenJnr_UsersList_CheckBucketBulkUpdateOptionsOnUsersListForUserS
 	| 00C8BC63E7424A6E862 |
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update bucket' in the 'Bulk Update Type' dropdown
-	And User selects "Project" Project or Evergreen on Action panel
+	And User selects 'Project' in the 'Project or Evergreen' dropdown
 	And User selects 'User Evergreen Capacity Project' option from 'Project' autocomplete
-	And User selects "Unassigned" option in "Bucket" field on Action panel
+	And User selects 'Unassigned' option from 'Bucket' autocomplete
 	Then following values are displayed in "Also Move Devices" drop-down on Action panel:
 	| Options            |
 	| None               |
@@ -91,9 +91,9 @@ Scenario: EvergreenJnr_UsersList_CheckBucketBulkUpdateOptionsOnUsersListForMailb
 	| 00C8BC63E7424A6E862 |
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update bucket' in the 'Bulk Update Type' dropdown
-	And User selects "Project" Project or Evergreen on Action panel
+	And User selects 'Project' in the 'Project or Evergreen' dropdown
 	And User selects 'Mailbox Evergreen Capacity Project' option from 'Project' autocomplete
-	And User selects "Unassigned" option in "Bucket" field on Action panel
+	And User selects 'Unassigned' option from 'Bucket' autocomplete
 	Then following values are displayed in "Also Move Mailboxes" drop-down on Action panel:
 	| Options          |
 	| None             |

@@ -8,6 +8,7 @@ using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
+using DashworksTestAutomation.Pages.Evergreen.Base;
 using DashworksTestAutomation.Pages.Evergreen.ItemDetails;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
@@ -64,19 +65,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         {
             var detailsPage = _driver.NowAt<BaseNavigationElements>();
             _driver.ExecuteAction(() => detailsPage.GetNavigationLinkByName(linkName).Click());
-        }
-
-        [Then(@"Loading indicator appears in the same place when switching between main-menu")]
-        public void LoadingIndicatorAppearsInTheSamePlaceWhenSwitchingBetweenMainMenu()
-        {
-            List<Point> loader = new List<Point>();
-
-            var detailsPage = _driver.NowAt<BaseNavigationElements>();
-            _driver.WaitForDataLoading();
-
-            loader = detailsPage.LoadingIndicatorCoordinates();
-
-            Utils.Verify.That(loader.First(), Is.EqualTo(loader.Last()), "Wrong point loading position");
         }
 
         //TODO rename to something generic

@@ -42,8 +42,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsLogGridForRunningAutomationWith
 	When User navigates to the 'Automations' left menu item
 	When User enters "16890_Automation" text in the Search field for "Automation" column
 	When User selects all rows on the grid
-	When User clicks on Actions button
-	And User selects "Run now" in the Actions
+	And User selects 'Run now' in the 'Actions' dropdown
 	When User clicks 'RUN' button 
 	When User clicks "RUN" button in the warning message on Admin page
 	When User selects "Automation Log" tab on the Project details page
@@ -76,8 +75,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatInactiveAutomationShouldBeLoggedButNot
 	Then Page with 'Automations' header is displayed to user
 	When User enters "17104_Automation" text in the Search field for "Automation" column
 	When User selects all rows on the grid
-	When User clicks on Actions button
-	And User selects "Run now" in the Actions
+	And User selects 'Run now' in the 'Actions' dropdown
 	When User clicks 'RUN' button 
 	When User clicks "RUN" button in the warning message on Admin page
 	Then Success message is displayed and contains "1 automation started," text
@@ -118,8 +116,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSuccessfulRunInOutcomeColumn
 	When User clicks "Automations" navigation link on the Admin page
 	When User enters "D16974_Automation" text in the Search field for "Automation" column
 	When User selects all rows on the grid
-	When User clicks on Actions button
-	And User selects "Run now" in the Actions
+	And User selects 'Run now' in the 'Actions' dropdown
 	When User clicks 'RUN' button 
 	When User clicks "RUN" button in the warning message on Admin page
 	Then Success message is displayed and contains "1 automation started," text
@@ -182,7 +179,7 @@ Scenario: EvergreenJnr_AdminPage_CheckBrokenListValidationWhenRunningAnAutomatio
 	When User enters "17011_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
 	Then 'This list has errors' error message is displayed for 'Scope' field
-	Then "UPDATE" Action button have tooltip with "Some values are missing or not valid" text
+	Then 'UPDATE' Action button has tooltip with 'Some values are missing or not valid' text
 	#DAS-17374
 	When User clicks 'CANCEL' button 
 	When User navigates to the 'Projects' left menu item
@@ -194,8 +191,7 @@ Scenario: EvergreenJnr_AdminPage_CheckBrokenListValidationWhenRunningAnAutomatio
 	When User clicks 'CANCEL' button 
 	When User enters "17011_Automation" text in the Search field for "Automation" column
 	When User selects all rows on the grid
-	When User clicks on Actions button
-	And User selects "Run now" in the Actions
+	And User selects 'Run now' in the 'Actions' dropdown
 	When User clicks 'RUN' button 
 	When User clicks "RUN" button in the warning message on Admin page
 	When User selects "Automation Log" tab on the Project details page
@@ -221,8 +217,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckSuccessfulRunningAutomationWithMai
 	When User clicks "Automations" navigation link on the Admin page
 	When User enters "<AutomationName>" text in the Search field for "Automation" column
 	When User selects all rows on the grid
-	When User clicks on Actions button
-	And User selects "Run now" in the Actions
+	And User selects 'Run now' in the 'Actions' dropdown
 	When User clicks 'RUN' button 
 	When User clicks "RUN" button in the warning message on Admin page
 	Then Success message is displayed and contains "1 automation started," text

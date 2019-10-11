@@ -42,22 +42,6 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatNoConsoleErrorsWhenViewingMailboxD
 	Then Item content is displayed to the User
 	And There are no errors in the browser console
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11483 @DAS17352 @DAS17281 @DAS17352
-Scenario: EvergreenJnr_DevicesList_CheckThatDataOfColumnsIsDisplayedInTheCustomFieldSection
-	When User clicks 'Devices' on the left-hand menu
-	Then 'All Devices' list should be displayed to the user
-	When User perform search by "Benjamin S. Vaughn"
-	And User click content from "Hostname" column
-	And User navigates to the "Custom Fields" sub-menu on the Details page
-	#row counters ready on 'quasar' 
-	#Then "1" rows found label displays on Details Page
-	Then Content is present in the column of the Details Page table
-	| ColumnName   |
-	| Custom Field |
-	| Value        |
-	#top bar is missing.  ready on 'quasar'
-	#And Custom fields agGrid columns are displayed fully 
-
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11762 @DAS12235 @DAS13813 @DAS14923
 Scenario Outline: EvergreenJnr_AllLists_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteDataFromFilterTextField
 	When User navigates to the '<PageName>' details page for '<SearchTerm>' item

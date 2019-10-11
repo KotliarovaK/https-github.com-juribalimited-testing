@@ -82,8 +82,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations
 	| Make active   |
 	| Make inactive |
 	| Delete        |
-	When User clicks on Actions button
-	And User selects "Run now" in the Actions
+	When User selects 'Run now' in the 'Actions' dropdown
 	When User clicks 'RUN' button 
 	Then Warning message with "Are you sure you wish to run 1 automation?" text is displayed on the Admin page
 	When User clicks "RUN" button in the warning message on Admin page
@@ -100,9 +99,8 @@ Scenario: EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations
 	| Move to position |
 	| Make inactive    |
 	When User selects all rows on the grid
-	And User clicks on Actions button
-	And User selects "Delete" in the Actions
-	And User clicks Delete button
+	And User selects 'Delete' in the 'Actions' dropdown
+	And User clicks 'DELETE' button
 	When User clicks Delete button in the warning message
 	Then Warning message with "Cannot delete a running automation" text is displayed on the Admin page
 	When User moves "Applications_Scope" automation to "DELAY_8" automation
@@ -362,9 +360,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeleteOptionForAutomationsCogmenuWorks
 	Then Page with 'Automations' header is displayed to user
 	When User enters "DELAY - do not delete3" text in the Search field for "Automation" column
 	When User selects all rows on the grid
-	And User clicks on Actions button
-	And User selects "Delete" in the Actions
-	And User clicks Delete button
+	And User selects 'Delete' in the 'Actions' dropdown
+	And User clicks 'DELETE' button
 	When User clicks Delete button in the warning message
 	Then Warning message with "Cannot delete a running automation" text is displayed on the Admin page
 	When User clicks Cog-menu for "DELAY - do not delete3" item on Admin page
@@ -459,7 +456,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality
 	Then "Stop on failed action" checkbox is checked on the Admin page
 	Then "UPDATE" Action button is disabled
 	Then "CANCEL" Action button is active
-	Then "UPDATE" Action button have tooltip with "Some values are missing or not valid" text
+	Then 'UPDATE' Action button has tooltip with 'Some values are missing or not valid' text
 	#Wait for "RUN NOW" button
 	#Then "RUN NOW" Action button is active
 	When User clicks "Automations" navigation link on the Admin page
@@ -547,8 +544,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRunNowFunctionalityToRunMoreThanOneAutomat
 	Then Page with 'Automations' header is displayed to user
 	When User enters "Test_Automation" text in the Search field for "Automation" column
 	When User selects all rows on the grid
-	When User clicks on Actions button
-	And User selects "Run now" in the Actions
+	And User selects 'Run now' in the 'Actions' dropdown
 	When User clicks 'RUN' button 
 	Then Warning message with "Are you sure you wish to run 2 automations?" text is displayed on the Admin page
 	When User clicks "RUN" button in the warning message on Admin page
@@ -567,15 +563,13 @@ Scenario: EvergreenJnr_AdminPage_CheckRunNowfunctionalityInBulkActions
 	Then Page with 'Automations' header is displayed to user
 	When User enters "DAS-15949 - all users scope" text in the Search field for "Automation" column
 	When User selects all rows on the grid
-	When User clicks on Actions button
-	And User selects "Run now" in the Actions
+	And User selects 'Run now' in the 'Actions' dropdown
 	When User clicks 'RUN' button 
 	When User clicks "RUN" button in the warning message on Admin page
 	Then Success message is displayed and contains "1 automation started," text
 	When User enters "Devices_Scope" text in the Search field for "Automation" column
 	When User selects all rows on the grid
-	When User clicks on Actions button
-	And User selects "Run now" in the Actions
+	And User selects 'Run now' in the 'Actions' dropdown
 	When User clicks 'RUN' button 
 	When User clicks "RUN" button in the warning message on Admin page
 	Then Success message is displayed and contains "1 automation started," text
@@ -712,7 +706,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeviceLisFiltertHasAppropriateAutomati
 	And User selects 'Update path' in the 'Action Type' dropdown
 	And User selects 'Barry's User Project' option from 'Project' autocomplete
 	And User selects 'Desktop Replacement' option from 'Path' autocomplete
-	And User clicks 'CREATE' button 
+	And User clicks 'CREATE' button
 	#run automation
 	When User clicks "Automations" navigation link on the Admin page
 	And User clicks "Run now" option in Cog-menu for "DAS15949_Automation" item on Admin page and wait for processing
@@ -728,8 +722,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeviceLisFiltertHasAppropriateAutomati
 	When User clears search textbox in Filters panel
 	And user select "DAS15949_Automation \ 15949_Action_1" filter
 	And User select "Equals" Operator value
-	#And User select first checkbox from available options
-	When User select last checkbox from available options
+	When User selects current date checkbox from Filter panel
 	And User clicks Save filter button
 	Then "5,179" rows are displayed in the agGrid
 	#check log

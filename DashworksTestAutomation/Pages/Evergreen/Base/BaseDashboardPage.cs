@@ -55,9 +55,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = ".//admin-header//span[@class='ng-star-inserted']")]
         public IWebElement FoundRowsLabel { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'active')]//i[contains(@class, 'static-list')]")]
-        public IWebElement ActiveActionsButton { get; set; }
-
         //TODO move this to separate component
         #region Action Panel
 
@@ -409,6 +406,21 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         public string GetHeaderFontWeight()
         {
             return Driver.FindElement(By.XPath(".//span[@class='ag-header-cell-text']")).GetCssValue("font-weight");
+        }
+
+        public int GetTotalWidthOfGridHeaders()
+        {
+            var headers = ".//div[@class='ag-header-container']//div[contains(@class, 'ag-header-cell') and @col-id]";
+            int size = 0;
+
+            IList<IWebElement> els = Driver.FindElements(By.XPath(headers));
+
+            foreach (var el in els)
+            {
+                size += el.Size.Width;
+            }
+
+            return size;
         }
 
         public bool IsColumnPresent(string columnName)
@@ -792,8 +804,15 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         {
             GetNamedTextbox(placeholder).Click();
 
+            var foundOptions = GetAllOptionsFromOpenedAutocomplete();
+
+            return foundOptions;
+        }
+
+        public List<string> GetAllOptionsFromOpenedAutocomplete()
+        {
             if (!Driver.IsElementDisplayed(By.XPath(AutocompleteOptionsSelector), WebDriverExtensions.WaitTime.Short))
-                throw new Exception($"Options are not displayed for '{placeholder}' autocomplete");
+                throw new Exception($"Options are not displayed for autocomplete");
 
             var foundOptions =
                 AutocompleteDropdown.FindElements(By.XPath(AutocompleteOptionsSelector)).Select(x => x.Text).ToList();
@@ -985,6 +1004,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             Driver.WaitFor(() => Driver.FindElements(selector).Count >= index);
             Driver.WaitForElementToBeDisplayed(Driver.FindElements(selector)[index]);
             return Driver.FindElement(selector);
+        }
+
+        public void SelectDropdown(string value, string dropdownName)
+        {
+            GetDropdown(dropdownName).Click();
+            GetDropdownValueByName(value).Click();
         }
 
         //Get all span with text

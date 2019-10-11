@@ -152,8 +152,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedU
 	And User selects "No change" Update Owner on Action panel
 	Then "CREATE" Action button is disabled
 	Then "SAVE AND CREATE ANOTHER" Action button is disabled
-	Then "CREATE" Action button have tooltip with "Select at least one value to change" text
-	Then "SAVE AND CREATE ANOTHER" Action button have tooltip with "Select at least one value to change" text
+	Then 'CREATE' Action button has tooltip with 'Select at least one value to change' text
+	Then 'SAVE AND CREATE ANOTHER' Action button has tooltip with 'Select at least one value to change' text
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17830 @Cleanup @Not_Ready
 #Waiting for "zDevice Sch for Automations Feature" project on automation server from GD
