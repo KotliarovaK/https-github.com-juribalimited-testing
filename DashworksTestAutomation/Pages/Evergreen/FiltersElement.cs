@@ -577,9 +577,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public bool IsComplianceOptionHasRingIcon(string color)
         {
-            var selector =
-                By.XPath(
-                    $"//ul[contains(@class, 'dropdown-select-results-list')]/li//span[@class='mat-checkbox-label']//span[text()='{color}']/preceding-sibling::div[contains(@class, 'status')]");
+            var selector = By.XPath( $"//ul[contains(@class, 'dropdown-select-results-list')]/li//span[@class='mat-checkbox-label']//span[text()='{color}']/preceding-sibling::div[contains(@class, 'status')]");
             return Driver.FindElements(selector).Count==1;
         }
 

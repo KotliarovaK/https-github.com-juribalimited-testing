@@ -7,6 +7,7 @@ using DashworksTestAutomation.Pages;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.Base;
+using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
@@ -583,10 +584,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             for (int i = 0; i < expectedItems.Count; i++)
             {
-                Utils.Verify.That(actualItems[i].StartsWith(expectedItems[i]), Is.True,
+                Verify.That(actualItems[i].StartsWith(expectedItems[i]), Is.True,
                                   $"List has wrong items/order at {actualItems[i]}");
             }
-            Utils.Verify.That(actualItems.Count, Is.EqualTo(expectedItems.Count),$"Lists item count is different");
+            Verify.That(actualItems.Count, Is.EqualTo(expectedItems.Count),$"Lists item count is different");
         }
     }
 }
