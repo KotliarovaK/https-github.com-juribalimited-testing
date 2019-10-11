@@ -47,7 +47,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Scope
             var projectElement = _driver.NowAt<ScopeChangePage>();
             foreach (var row in table.Rows)
             {
-                var search = basePage.GetNamedTextbox("Search");
+                var search = basePage.GetTextbox("Search");
                 search.Clear();
                 search.SendKeys(row["Objects"]);
                 Verify.IsTrue(projectElement.CheckedAllItemCheckbox.Displayed(), "Some object is present");

@@ -62,7 +62,7 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatTextValueHaveOptionToRemoveExi
 	And User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	And User selects 'One' option from 'Stage' autocomplete
 	And User selects '<TaskName>' option from 'Task' autocomplete
-	Then the following Update Value are displayed in opened DLL on Action panel:
+	Then following Values are displayed in the 'Update Value' dropdown:
 	| Value  |
 	| Update |
 	| Remove |

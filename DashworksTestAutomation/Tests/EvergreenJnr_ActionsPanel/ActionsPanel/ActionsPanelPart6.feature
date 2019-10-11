@@ -39,30 +39,30 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelIsWorkingCorrectlyWhenS
 	When User selects 'Audit & Configuration' option from 'Stage' autocomplete
 	Then 'Task' autocomplete options are sorted in the alphabetical order
 	When User selects 'Validate User Device Ownership' option from 'Task' autocomplete
-	Then the Update Value options are displayed in following order:
+	Then following Values are displayed in the 'Update Value' dropdown:
 	| Options               |
 	| Update                |
 	| No change             |
 	When User selects 'No change' in the 'Update Value' dropdown
-	Then the Update Date options are displayed in following order:
+	Then following Values are displayed in the 'Update Date' dropdown:
 	| Options   |
 	| Update    |
 	| Remove    |
 	| No change |
 	When User selects 'No change' in the 'Update Date' dropdown
-	Then the Update Owner options are displayed in following order:
+	Then following Values are displayed in the 'Update Owner' dropdown:
 	| Options      |
 	| Update       |
 	| Remove owner |
 	| Remove owner and team |
 	| No change             |
-	When User selects "Update" Update Owner on Action panel
-	Then Teams are displayed in alphabetical order on Action panel
-	When User selects "Team 0" Team on Action panel
-	Then Owner field is not displayed on Action panel
-	When User selects "IB Team" Team on Action panel
-	Then Owner field is displayed on Action panel
-	When User selects "IB User" Owner on Action panel
+	When User selects 'Update' in the 'Update Owner' dropdown
+	Then 'Team' autocomplete options are sorted in the alphabetical order
+	When User selects 'Team 0' option from 'Team' autocomplete
+	Then 'Owner' textbox is not displayed
+	When User selects 'IB Team' option from 'Team' autocomplete
+	Then 'Owner' textbox is displayed
+	When User selects 'IB User' option from 'Owner' autocomplete
 	And User clicks the Logout button
 	Then User is logged out
 	When User clicks on the Login link
@@ -150,28 +150,28 @@ Scenario Outline: EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorre
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
 	And User selects 'Computer Information ---- Text fill; Text fill;' option from 'Stage' autocomplete
 	And User selects 'Computer Read Only Task in Self Service' option from 'Task' autocomplete
-	Then the Update Value options are displayed in following order:
+	Then following Values are displayed in the 'Update Value' dropdown:
 	| Options               |
 	| Update                |
 	| No change             |
-	And the Update Date options are displayed in following order:
+	Then following Values are displayed in the 'Update Date' dropdown:
 	| Options   |
 	| Update    |
 	| Remove    |
 	| No change |
-	And the Update Owner options are displayed in following order:
+	Then following Values are displayed in the 'Update Owner' dropdown:
 	| Options               |
 	| Update                |
 	| Remove owner          |
 	| Remove owner and team |
 	| No change             |
 	When User selects 'Workstation Text Task' option from 'Task' autocomplete
-	Then the Update Value options are displayed in following order:
+	Then following Values are displayed in the 'Update Value' dropdown:
 	| Options   |
 	| Update    |
 	| Remove    |
 	When User selects 'Computer Read Only Task in Self Service' option from 'Task' autocomplete
-	Then the Update Value options are displayed in following order:
+	Then following Values are displayed in the 'Update Value' dropdown:
 	| Options               |
 	| Update                |
 	| No change             |
@@ -179,7 +179,7 @@ Scenario Outline: EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorre
 	And User selects 'Started' in the 'Value' dropdown
 	And User selects 'No change' in the 'Update Date' dropdown
 	And User navigate to the bottom of the Action panel
-	And User selects "No change" Update Owner on Action panel
+	When User selects 'No change' in the 'Update Owner' dropdown
 	And User clicks 'UPDATE' button 
 	Then the amber message is displayed correctly
 	When User clicks 'CANCEL' button
@@ -245,8 +245,8 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User selects 'Update' in the 'Update Value' dropdown
 	And User selects '<NewValue>' in the 'Value' dropdown
 	And User selects 'No change' in the 'Update Date' dropdown
-	And User selects "Update" Update Owner on Action panel
-	And User selects "<NewTeam>" Team on Action panel
+	When User selects 'Update' in the 'Update Owner' dropdown
+	When User selects '<NewTeam>' option from 'Team' autocomplete
 	And User navigate to the bottom of the Action panel
 	And User clicks 'UPDATE' button 
 	Then the amber message is displayed correctly
@@ -264,8 +264,8 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User selects 'Update' in the 'Update Value' dropdown
 	And User selects '<DefaultValue>' in the 'Value' dropdown
 	And User selects 'No change' in the 'Update Date' dropdown
-	And User selects "Update" Update Owner on Action panel
-	And User selects "<DefaultTeam>" Team on Action panel
+	When User selects 'Update' in the 'Update Owner' dropdown
+	When User selects '<DefaultTeam>' option from 'Team' autocomplete
 	And User navigate to the bottom of the Action panel
 	And User clicks 'UPDATE' button 
 	And User navigate to the top of the Action panel

@@ -62,7 +62,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForRemoveOwnerInMailboxScop
 	When User selects 'Radio Date Owner' option from 'Task' autocomplete
 	And User selects 'No change' in the 'Update Value' dropdown
 	And User selects 'No change' in the 'Update Date' dropdown
-	And User selects "Remove owner" Update Owner on Action panel
+	When User selects 'Remove owner' in the 'Update Owner' dropdown
 	And User clicks 'CREATE' button
 	#Create Action
 	When User clicks "Automations" navigation link on the Admin page

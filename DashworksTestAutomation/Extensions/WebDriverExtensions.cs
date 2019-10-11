@@ -15,7 +15,7 @@ using ExpectedConditions = SeleniumExtras.WaitHelpers.ExpectedConditions;
 
 namespace DashworksTestAutomation.Extensions
 {
-    internal static class WebDriverExtensions
+    public static class WebDriverExtensions
     {
         private const int NumberOfTimesToWait = 2;
         private const int WaitTimeoutSeconds = 30;
