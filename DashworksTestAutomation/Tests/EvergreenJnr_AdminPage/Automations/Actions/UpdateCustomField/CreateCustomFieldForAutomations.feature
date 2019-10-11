@@ -6,8 +6,7 @@ Background: Pre-Conditions
 	When User navigate to Manage link
 	And User select "Custom Fields" option in Management Console
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17847 @Cleanup @Not_Ready
-#Waiting 'Update custom field' in the 'Action Type' dropdown for automation
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17847 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldValidations
 	When User creates new Custom Field
 	| FieldName | FieldLabel | AllowExternalUpdate | Enabled | Computer |
