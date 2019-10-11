@@ -103,7 +103,10 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 default:
                     var listElement = ListElementsInListsPanel.Select(x => x.FindElement(AllListNamesInListsPanel))
                         .FirstOrDefault(c => c.Text.Equals(listName));
-                    if (listElement.Displayed()) return listElement;
+                    if (listElement.Displayed())
+                    {
+                        return listElement;
+                    }
                     else
                     {
                         throw new Exception($"'{listName}' list is not found in Lists panel");
@@ -113,6 +116,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IWebElement GetActiveList()
         {
+            Driver.WaitForAnyElementToContainsTextInAttribute(ListElementsInListsPanel.Select(x => x.FindElement(ListSubMenusInListsPanel)).ToList(), 
+                "active", "class");
             return ListElementsInListsPanel.Select(x => x.FindElement(ListSubMenusInListsPanel))
                 .FirstOrDefault(WebElementExtensions.IsElementActive);
         }
