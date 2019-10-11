@@ -101,15 +101,20 @@ namespace DashworksTestAutomation.Pages.Evergreen
                     return Driver.FindElementByXPath(string.Format(TopSubMenuItemByName, listName));
 
                 default:
-                    return ListElementsInListsPanel.Select(x => x.FindElement(AllListNamesInListsPanel))
+                    var listElement = ListElementsInListsPanel.Select(x => x.FindElement(AllListNamesInListsPanel))
                         .FirstOrDefault(c => c.Text.Equals(listName));
+                    if (listElement.Displayed()) return listElement;
+                    else
+                    {
+                        throw new Exception($"'{listName}' list is not found in Lists panel");
+                    }
             }
         }
 
         public IWebElement GetActiveList()
         {
             return ListElementsInListsPanel.Select(x => x.FindElement(ListSubMenusInListsPanel))
-                .FirstOrDefault(c => c.GetAttribute("class").Contains("active"));
+                .FirstOrDefault(WebElementExtensions.IsElementActive);
         }
 
         public bool GetFavoriteStatus(string listName)
