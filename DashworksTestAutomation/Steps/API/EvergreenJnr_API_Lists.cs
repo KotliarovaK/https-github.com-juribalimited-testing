@@ -223,6 +223,7 @@ namespace DashworksTestAutomation.Steps.API
             var url = $"{UrlProvider.EvergreenUrl}#/{pageName.ToLower()}?$listid={listId}";
 
             _driver.Navigate().GoToUrl(url);
+            _driver.WaitForDataLoading();
 
             #endregion
 
