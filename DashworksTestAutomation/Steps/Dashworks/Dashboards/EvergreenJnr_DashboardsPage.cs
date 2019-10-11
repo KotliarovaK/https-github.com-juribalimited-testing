@@ -681,8 +681,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.IsTrue(page.IconOnlyCardWidget.Displayed(), "Icon Only is not displayed for Card widget");
         }
 
-
-
         [Then(@"User sees ""(.*)"" text in warning message on Dashboards page")]
         public void ThenUserSeesTextInWarningMessageOnDashboardsPage(string text)
         {
