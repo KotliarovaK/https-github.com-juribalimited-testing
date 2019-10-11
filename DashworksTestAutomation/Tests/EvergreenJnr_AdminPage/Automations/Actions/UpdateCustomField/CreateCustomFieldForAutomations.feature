@@ -27,8 +27,8 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldValidations
 	When User selects '17847' option from 'Custom Field' autocomplete
 	And User selects 'Replace all values' in the 'Update Values' dropdown
 	When User adds 'Long test value Long test value Long test value Long test value Long test value' value from 'Value' textbox
-	#Create Action
 	When User clicks 'CREATE' button
+	#Create Action
 	When User removes Custom Field with '17847' label
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -43,10 +43,8 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldValidations
 	When User clicks content from "Action" column
 	Then "17881_Action" content is displayed in "Action Name" field
 	Then 'Update custom field' content is displayed in 'Action Type' dropdown
-	#Then '17847' content is displayed in 'Custom Field' textbox
-	#Then 'Long test value Long test value Long test value Long test value Long test value' content is displayed in 'Value' textbox
 	Then 'The selected custom field cannot be found' error message is displayed for 'Custom Field' field
-	Then '[Custom field not found]' value is displayed in the 'Custom Field' dropdown
+	Then '[Custom field not found]' content is displayed in 'Custom Field' textbox
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18166 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldForDisabledCustomFieldOnCreateActionPage
@@ -67,8 +65,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldForDisabledCus
 	And User selects 'Update custom field' in the 'Action Type' dropdown
 	Then 'CustomField_18166' content is not displayed in 'Custom Field' autocomplete after search
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18166 @Cleanup @Not_Ready
-#Waiting for 'Phoenix Field' from GD to automation
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18166 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldForDisabledCustomFieldOnUpdateActionPage
 	When User creates new Custom Field
 	| FieldName | FieldLabel        | AllowExternalUpdate | Enabled | Computer |
