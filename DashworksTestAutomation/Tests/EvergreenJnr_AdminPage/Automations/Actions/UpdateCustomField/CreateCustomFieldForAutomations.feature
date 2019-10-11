@@ -94,3 +94,44 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldForDisabledCus
 	When User clicks content from "Action" column
 	Then Edit Action page is displayed to the User
 	Then 'CustomField_18166' content is not displayed in 'Custom Field' autocomplete after search
+
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18464 @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckThatObjectsColumnContainsNullOfObjectsForFailedAction
+	When User creates new Custom Field
+	| FieldName | FieldLabel        | AllowExternalUpdate | Enabled | Computer |
+	| DAS18464  | CustomField_18464 | true                | true    | true     |
+	And User navigate to Evergreen URL
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User creates new Automation via API and open it
+	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
+	| 18464_Automation | 18464       | true   | false              | All Devices | Manual |
+	Then Automation page is displayed correctly
+	When User navigates to the 'Actions' left menu item
+	#Create Action1
+	When User clicks 'CREATE ACTION' button
+	And User enters '18464_Action1' text to 'Action Name' textbox
+	And User selects 'Update path' in the 'Action Type' dropdown
+	When User selects '1803 Rollout' option from 'Project' autocomplete
+	When User selects 'Undetermined' option from 'Path' autocomplete
+	When User clicks 'CREATE' button
+	#Create Action2
+	When User clicks 'CREATE ACTION' button
+	And User enters '18464_Action2' text to 'Action Name' textbox
+	And User selects 'Update custom field' in the 'Action Type' dropdown
+	When User selects 'CustomField_18464' option from 'Custom Field' autocomplete
+	And User selects 'Remove all values' in the 'Update Values' dropdown
+	When User clicks 'CREATE' button
+	#Remove Custom Field
+	When User removes Custom Field with 'CustomField_18464' label
+	#Run Automation
+	When User clicks "Automations" navigation link on the Admin page
+	When User enters "18464_Automation" text in the Search field for "Automation" column
+	When User clicks "Run now" option in Cog-menu for "18464_Automation" item on Admin page
+	#Check Automation Log
+	When User selects "Automation Log" tab on the Project details page
+	When User clicks refresh button in the browser
+	When User enters "18464_Automation" text in the Search field for "Automation" column
+	When User enters "0" text in the Search field for "Objects" column
+	Then "18464_Action2" content is displayed for "Action" column
+	Then "CUSTOM FIELD DOES NOT EXIST" content is displayed for "Outcome" column
