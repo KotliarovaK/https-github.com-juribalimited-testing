@@ -83,6 +83,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatApplicationsInTheApplicationColumnAr
 	When User navigates to the 'Applications' left menu item
 	When User navigates to the "Advertisements" sub-menu on the Details page
 	Then table content is present
+	When User enters "Microsoft Internet Explorer" text in the Search field for "Application" column
 	When User clicks "Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" link on the Details Page
 	Then Details page for "Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" item is displayed correctly
 

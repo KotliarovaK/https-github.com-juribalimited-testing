@@ -19,6 +19,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public const string ColumnHeader = "//div[@class='ag-header-cell-label']";
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='title-container']//h1")]
+        public IWebElement TitleContainer { get; set; }
+
         [FindsBy(How = How.XPath, Using = "//div[@class='mat-drawer-inner-container']")]
         public IWebElement TabContainer { get; set; }
 
@@ -314,11 +317,17 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElements(by).Select(x => x.Text).ToList();
         }
 
-        public IWebElement GetItemDetailsPageByName(string itemName)
+        public bool DisplayedDetailsPageByName(string headerTitleText)
         {
-            var selector = By.XPath($".//div[@id='pagetitle-text']//h1[text()='{itemName}']");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
+            try
+            {
+                Driver.WaitForElementToContainsText(TitleContainer, headerTitleText);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }
