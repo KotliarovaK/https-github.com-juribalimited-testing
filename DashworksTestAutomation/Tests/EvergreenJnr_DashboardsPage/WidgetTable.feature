@@ -392,3 +392,35 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorsOccurWhenCreatingE
 	| Table      | WidgetForDAS18324 | ListForDAS18324 | App Count (Used) | Count             | App Count (Used) |
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18327 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatFiltersSectionDisplayedCorrectlyAfterClickingThroughTableWidget
+	When User clicks 'Devices' on the left-hand menu
+	When User clicks the Filters button
+	When User add "1803: In Scope" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| TRUE               |
+	When User Add And "1803: Readiness" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| None               |
+	| Green              |
+	| Amber              |
+	When User clicks Save button on the list panel
+	When User create dynamic list with "Devices_List_DAS18327" name on "Devices" page
+	Then "Devices_List_DAS18327" list is displayed to user
+	When Dashboard with "DAS18327_Dashboard" name created via API and opened
+	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'ADD WIDGET' button 
+	When User adds new Widget
+	| WidgetType | Title           | List                  | SplitBy        | AggregateFunction | AggregateBy     | OrderBy            |
+	| Table      | DAS18327_Widget | Devices_List_DAS18327 | 1803: In Scope | Severity          | 1803: Readiness | 1803: In Scope ASC |
+	Then Widget Preview is displayed to the user
+	When User clicks 'CREATE' button 
+	Then "DAS18327_Widget" Widget is displayed to the user
+	When User clicks Edit mode trigger on Dashboards page
+	When User clicks "GREEN" value for "True" column
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User clicks Filter Expression icon in Filter Panel
+	Then Filter Expression displayed within Filter Panel
+	Then "(1803: In Scope = true AND 1803: Readiness = None, Green or Amber)" text is displayed in filter container
