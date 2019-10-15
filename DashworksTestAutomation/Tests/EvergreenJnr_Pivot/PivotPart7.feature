@@ -92,17 +92,17 @@ Scenario: EvergreenJnr_DevicesList_CheckThatThePivotPanelShowNoFiltersAppliedIfT
 	When User create dynamic list with "TestListForDAS15139" name on "Devices" page
 	Then "TestListForDAS15139" list is displayed to user
 	When User selects 'Pivot' in the 'Create' dropdown
-	Then "ADD ROW GROUP" Action button is displayed
-	And "ADD COLUMN" Action button is displayed
-	And "ADD VALUE" Action button is displayed
+	Then 'ADD ROW GROUP' button is displayed
+	And 'ADD COLUMN' button is displayed
+	And 'ADD VALUE' button is displayed
 	When User clicks Close panel button
 	Then Actions panel is not displayed to the user
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User selects 'Pivot' in the 'Create' dropdown
-	Then "ADD ROW GROUP" Action button is displayed
-	And "ADD COLUMN" Action button is displayed
-	And "ADD VALUE" Action button is displayed
+	Then 'ADD ROW GROUP' button is displayed
+	And 'ADD COLUMN' button is displayed
+	And 'ADD VALUE' button is displayed
 	When User navigates to the "All Devices" list
 	Then Actions panel is not displayed to the user
 
@@ -131,9 +131,9 @@ Scenario: EvergreenJnr_DevicesList_CheckResetButtonOnPivot
 	| Owner City |
 	Then reset button on main panel is displayed
 	When User clicks reset button on main panel
-	Then "ADD ROW GROUP" Action button is displayed
-	And "ADD COLUMN" Action button is displayed
-	And "ADD VALUE" Action button is displayed
+	Then 'ADD ROW GROUP' button is displayed
+	And 'ADD COLUMN' button is displayed
+	And 'ADD VALUE' button is displayed
 	#2
 	When User navigates to the "All Devices" list
 	And User selects 'Pivot' in the 'Create' dropdown
@@ -150,9 +150,9 @@ Scenario: EvergreenJnr_DevicesList_CheckResetButtonOnPivot
 	Then "RUN PIVOT" Action button is active
 	And "SAVE" Action button is disabled
 	When User clicks reset button on main panel
-	Then "ADD ROW GROUP" Action button is displayed
-	And "ADD COLUMN" Action button is displayed
-	And "ADD VALUE" Action button is displayed
+	Then 'ADD ROW GROUP' button is displayed
+	And 'ADD COLUMN' button is displayed
+	And 'ADD VALUE' button is displayed
 	#And "SAVE" Action button is not displayed
 	#3
 	When User selects the following Row Groups on Pivot:
@@ -171,9 +171,9 @@ Scenario: EvergreenJnr_DevicesList_CheckResetButtonOnPivot
 	Then Pivot run was completed
 	And "SAVE" Action button is active
 	When User clicks reset button on main panel
-	Then "ADD ROW GROUP" Action button is displayed
-	And "ADD COLUMN" Action button is displayed
-	And "ADD VALUE" Action button is displayed
+	Then 'ADD ROW GROUP' button is displayed
+	And 'ADD COLUMN' button is displayed
+	And 'ADD VALUE' button is displayed
 	#And "SAVE" Action button is not displayed
 	#4
 	When User selects the following Row Groups on Pivot:
@@ -191,9 +191,9 @@ Scenario: EvergreenJnr_DevicesList_CheckResetButtonOnPivot
 	Then "PivotList_DAS_13844_1" list is displayed to user
 	When User clicks the Pivot button
 	And User clicks reset button on main panel
-	Then "ADD ROW GROUP" Action button is displayed
-	And "ADD COLUMN" Action button is displayed
-	And "ADD VALUE" Action button is displayed
+	Then 'ADD ROW GROUP' button is displayed
+	And 'ADD COLUMN' button is displayed
+	And 'ADD VALUE' button is displayed
 	And "SAVE" Action button is disabled
 	And "RUN PIVOT" Action button is disabled
 	And User remove list with "PivotList_DAS_13844" name on "Devices" page

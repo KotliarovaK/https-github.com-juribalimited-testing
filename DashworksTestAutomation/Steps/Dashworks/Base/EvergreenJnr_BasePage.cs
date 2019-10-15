@@ -592,6 +592,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             _driver.DoubleClick(action.GetButtonByName(buttonName));
         }
 
+        [Then(@"'(.*)' button is displayed")]
+        public void ThenButtonIsDisplayed(string buttonName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsTrue(page.GetButtonByName(buttonName, "", WebDriverExtensions.WaitTime.Medium).Disabled(),
+                $"'{buttonName}' is displayed");
+        }
+
         [Then(@"'(.*)' button is not displayed")]
         public void ThenButtonIsNotDisplayed(string buttonName)
         {

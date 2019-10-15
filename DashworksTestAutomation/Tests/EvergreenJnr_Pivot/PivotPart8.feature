@@ -44,7 +44,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatPivotSubmenuIsDisplayedCorrectlyAfte
 	When User closed list panel
 	Then Lists panel is hidden
 	And "PivotList_DAS13652" list name is displayed correctly on top tools panel
-	And "RUN PIVOT" Action button is displayed
+	And 'RUN PIVOT' button is displayed
 	And Export button is displayed in panel
 
 @Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS11103 @DAS11264 @DAS11360 @Cleanup

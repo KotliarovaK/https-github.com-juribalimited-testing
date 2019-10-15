@@ -92,10 +92,10 @@ Scenario: EvergreenJnr_DevicesList_CheckThatActionPanelImplementedForItemDetails
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
 	When User navigates to the 'Users' left menu item
-	Then "ADD USERS" Action button is displayed
+	Then 'ADD USERS' button is displayed
 	Then 'Actions' dropdown is displayed
 	When User selects 'Remove' in the 'Actions' dropdown
-	Then "REMOVE" Action button is displayed 
+	Then 'REMOVE' button is displayed 
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16338
 Scenario: EvergreenJnr_DevicesList_CheckThatCrumbTrailElementInTheHeaderOfThePageIsDisplayed

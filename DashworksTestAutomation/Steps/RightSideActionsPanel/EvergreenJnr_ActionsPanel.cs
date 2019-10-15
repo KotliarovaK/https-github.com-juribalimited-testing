@@ -72,20 +72,6 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
             action.SaveNewListButton.Click();
         }
 
-        [Then(@"""(.*)"" Action button is displayed")]
-        public void ThenActionButtonIsDisplayed(string buttonName)
-        {
-            var button = _driver.NowAt<BaseDashboardPage>();
-            Verify.IsTrue(button.GetButtonByName(buttonName).Displayed(), $"{buttonName} Action button is not displayed");
-        }
-
-        [Then(@"""(.*)"" Action button is not displayed")]
-        public void ThenActionButtonIsNotDisplayed(string buttonName)
-        {
-            var button = _driver.NowAt<BaseDashboardPage>();
-            Verify.IsFalse(button.GetButtonByName(buttonName).Displayed(), $"{buttonName} Action button is displayed");
-        }
-
         [Then(@"""(.*)"" Action button is disabled")]
         public void ThenActionButtonIsDisabled(string buttonName)
         {

@@ -69,8 +69,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptio
 	| Delete           |
 	When User clicks "Edit" option in Cog-menu for "15427_Action1" item on Admin page
 	Then Edit Action page is displayed to the User
-	And "UPDATE" Action button is displayed
-	And "CANCEL" Action button is displayed
+	And 'UPDATE' button is displayed
+	And 'CANCEL' button is displayed
 	And Page with 'Test_Automation_15427' header is displayed to user
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15427 @DAS15428 @DAS16728 @DAS16976 @DAS17067 @DAS16890 @DAS17594 @DAS17774 @Cleanup
