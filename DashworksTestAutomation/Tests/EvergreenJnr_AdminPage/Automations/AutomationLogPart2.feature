@@ -488,10 +488,10 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueActionDAS
 	When User enters '17430_Action' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'USE ME FOR AUTOMATION(USR SCHDLD)' option from 'Project' autocomplete
-	When User selects 'Stage 1' in the 'Stage' dropdown
+	When User selects 'Stage 1' option from 'Stage' autocomplete
 	When User selects 'Radiobutton Readiness Date Owner Task (User)' option from 'Task' autocomplete
 	And User selects 'Update' in the 'Update Value' dropdown
-	And User selects 'Started' in the 'Value' dropdown
+	And User selects 'Not Started' in the 'Value' dropdown
 	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters '19 Nov 2019' text to 'Date' datepicker
 	When User selects 'Update' in the 'Update Owner' dropdown
@@ -514,4 +514,4 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueActionDAS
 	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName                                                         |
 	| USEMEFORA2: Stage 1 \ Radiobutton Readiness Date Owner Task (User) |
-	Then "STARTED" content is displayed in "USEMEFORA2: Stage 1 \ Radiobutton Readiness Date Owner Task (User)" column
+	Then "NOT STARTED" content is displayed in "USEMEFORA2: Stage 1 \ Radiobutton Readiness Date Owner Task (User)" column
