@@ -24,7 +24,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeletin
 	| Greater than or equal |
 	When User enters "IB Team" text in the Search field for "Team" column
 	And User clicks content from "Team" column
-	Then "IB Team" team details is displayed to the user
+	Then Page with 'IB Team' header is displayed to user
 	When User navigates to the 'Buckets' left menu item
 	And User enters "Group IB Team" text in the Search field for "Bucket" column
 	And User selects all rows on the grid

@@ -805,13 +805,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.IsTrue(panel.TeamMembersPanel.Displayed(), "Team Members Panel is not displayed on the Teams page");
         }
 
-        [Then(@"""(.*)"" team details is displayed to the user")]
-        public void ThenTeamDetailsIsDisplayedToTheUser(string teamName)
-        {
-            var teamElement = _driver.NowAt<TeamsPage>();
-            Utils.Verify.IsTrue(teamElement.AppropriateTeamName(teamName), $"{teamName} is not displayed on the Teams page");
-        }
-
         [Then(@"Create Team button is disabled")]
         public void ThenCreateTeamButtonIsDisabled()
         {

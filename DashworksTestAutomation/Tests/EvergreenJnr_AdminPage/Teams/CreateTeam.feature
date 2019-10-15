@@ -39,7 +39,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedTeamUsingTh
 	Then Page with 'Teams' header is displayed to user
 	When User enters "99770" text in the Search field for "Team" column
 	And User clicks content from "Team" column
-	Then "99770" team details is displayed to the user
+	Then Page with '99770' header is displayed to user
 	When User navigates to the 'Team Settings' left menu item
 	And User clicks Default Team checkbox
 	And User clicks 'UPDATE' button 

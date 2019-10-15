@@ -26,7 +26,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	When User enters "Administrative Team" text in the Search field for "Team" column
 	Then Rows counter contains "1" found row of all rows
 	When User clicks content from "Team" column
-	Then "Administrative Team" team details is displayed to the user
+	Then Page with 'Administrative' header is displayed to user
 	When User have opened Column Settings for "Username" column
 	And User clicks Filter button in the Column Settings panel on the Teams Page
 	And User enters "123455465" text in the Filter field
