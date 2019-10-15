@@ -1940,9 +1940,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var projectId = GetProjectId(projectName);
             _driver.Navigate().GoToUrl($"{UrlProvider.EvergreenUrl}#/admin/project/{projectId}/details");
 
-            var page = _driver.NowAt<ProjectsPage>();
-            _driver.WaitForDataLoading();
-            Verify.IsTrue(page.ActiveProjectByName(projectName), $"{projectName} is not displayed on the Project page");
+            var header = _driver.NowAt<BaseHeaderElement>();
+            header.CheckPageHeader(projectName);
         }
 
         [When(@"User hides side panel in project details page")]

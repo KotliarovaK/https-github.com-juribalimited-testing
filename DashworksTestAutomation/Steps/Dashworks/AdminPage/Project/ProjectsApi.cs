@@ -81,9 +81,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project
             _driver.NowAt<BaseHeaderElement>();
             _driver.Navigate().GoToUrl($"{UrlProvider.EvergreenUrl}#/admin/project/{projectId}/details");
 
-            var page = _driver.NowAt<ProjectsPage>();
-            _driver.WaitForDataLoading();
-            Verify.IsTrue(page.ActiveProjectByName(pName), $"{pName} is not displayed on the Project page");
+            var header = _driver.NowAt<BaseHeaderElement>();
+            header.CheckPageHeader(pName);
         }
 
         [When(@"Projects created by User are removed via API")]
