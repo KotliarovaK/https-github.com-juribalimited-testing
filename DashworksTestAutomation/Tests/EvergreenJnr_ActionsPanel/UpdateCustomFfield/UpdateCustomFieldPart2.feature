@@ -43,7 +43,7 @@ Scenario: EvergreenJnr_DevicesList_CheckUpdateCustomFieldUpdatingValuesForRemove
 	| Phoenix Field |
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
-	When User select all rows
+	When User selects all rows on the grid
 	When User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update custom field' in the 'Bulk Update Type' dropdown
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
@@ -84,7 +84,7 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateCustomFieldUpdatingValuesForAddToExi
 	| Phoenix Field |
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
-	When User select all rows
+	When User selects all rows on the grid
 	When User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update custom field' in the 'Bulk Update Type' dropdown
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
@@ -131,7 +131,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateCustomFieldUpdatingValuesForR
 	| Phoenix Field |
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
-	When User select all rows
+	When User selects all rows on the grid
 	When User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update custom field' in the 'Bulk Update Type' dropdown
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
@@ -176,7 +176,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckUpdateCustomFieldUpdatingValuesForRepl
 	| Phoenix Field |
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
-	When User select all rows
+	When User selects all rows on the grid
 	When User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update custom field' in the 'Bulk Update Type' dropdown
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete

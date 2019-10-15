@@ -549,8 +549,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"{text} is not displayed in the Project Scope Changes section");
         }
 
-        [When(@"User deselect all rows on the grid")]
-        [When(@"User selects all rows on the grid")]
+        //TODO replace by WhenUserDeselectAllRowsOnTheGrid
         [When(@"User clicks Select All checkbox on the grid")]
         public void WhenUserSelectsAllRowsOnTheGrid()
         {

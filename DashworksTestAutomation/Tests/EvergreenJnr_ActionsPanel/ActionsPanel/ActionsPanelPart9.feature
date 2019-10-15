@@ -24,7 +24,7 @@ Scenario: EvergreenJnr_DevicesList_CheckBucketBulkUpdateOptionsOnDevicesListForE
 	| None             |
 	| Owners only      |
 	| All linked users |
-	When User selects "Owners only" option in "Also Move Users" drop-down on Action panel
+	When User selects 'Owners only' in the 'Also Move Users' dropdown
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 
@@ -47,13 +47,13 @@ Scenario: EvergreenJnr_UsersList_CheckBucketBulkUpdateOptionsOnUsersListForEverg
 	| None               |
 	| Owned devices only |
 	| All linked devices |
-	When User selects "Owned devices only" option in "Also Move Devices" drop-down on Action panel
+	When User selects 'Owned devices only' in the 'Also Move Users' dropdown
 	Then following values are displayed in "Also Move Mailboxes" drop-down on Action panel:
 	| Options              |
 	| None                 |
 	| Owned mailboxes only |
 	| All linked mailboxes |
-	When User selects "Owned mailboxes only" option in "Also Move Mailboxes" drop-down on Action panel
+	When User selects 'Owned mailboxes only' in the 'Also Move Users' dropdown
 	Then "UPDATE" Action button is active
 
 @Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS14563 @DAS13960 @DAS14143
@@ -76,7 +76,7 @@ Scenario: EvergreenJnr_UsersList_CheckBucketBulkUpdateOptionsOnUsersListForUserS
 	| None               |
 	| Owned devices only |
 	| All linked devices |
-	When User selects "Owned devices only" option in "Also Move Devices" drop-down on Action panel
+	When User selects 'Owned devices only' in the 'Also Move Users' dropdown
 	Then "UPDATE" Action button is active
 
 @Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS14563 @DAS13960 @DAS14160
@@ -99,5 +99,5 @@ Scenario: EvergreenJnr_UsersList_CheckBucketBulkUpdateOptionsOnUsersListForMailb
 	| None             |
 	| Owners only      |
 	| All linked users |
-	When User selects "Owners only" option in "Also Move Mailboxes" drop-down on Action panel
+	When User selects 'Owners only' in the 'Also Move Users' dropdown
 	Then "UPDATE" Action button is active

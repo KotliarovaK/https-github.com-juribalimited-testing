@@ -814,7 +814,7 @@ Scenario: EvergreenJnr_AllLists_CheckThat500ErrorIsNotDisplayedForStaticListAfte
 	Then 'All Applications' list should be displayed to the user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
-	When User select all rows
+	When User selects all rows on the grid
 	And User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "StaticListTestName" name
 	When User clicks 'Devices' on the left-hand menu

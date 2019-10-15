@@ -30,7 +30,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatListDetailsPanelDisplaysIfItWas
 	When User clicks '<PageName>' on the left-hand menu
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
-	When User select all rows
+	When User selects all rows on the grid
 	And User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "<ListName>" name
 	Then "<ListName>" list is displayed to user
@@ -80,7 +80,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatAllRowsDisplayedOnGridWhenCreat
 	When User perform search by "<SearchTerm>"
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
-	When User select all rows
+	When User selects all rows on the grid
 	And User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "<ListName>" name
 	Then "<RowsCount>" rows are displayed in the agGrid

@@ -26,7 +26,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatTheEditListFunctionIsHiddenAfte
 	Then Edit List menu is not displayed
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
-	When User select all rows
+	When User selects all rows on the grid
 	And User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "StaticList3" name
 	And User have opened column settings for "<PinnedColumnName>" column
@@ -125,7 +125,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatActionsPanelIsHiddenAfterCancellingProc
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	Then Save and Cancel buttons are not displayed on the list panel
-	When User select all rows
+	When User selects all rows on the grid
 	And User selects 'Create static list' in the 'Action' dropdown
 	And User types "StaticList7841" static list name
 	When User clicks 'CANCEL' button

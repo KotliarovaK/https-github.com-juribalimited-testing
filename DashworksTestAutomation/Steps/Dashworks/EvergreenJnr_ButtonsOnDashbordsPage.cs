@@ -46,25 +46,23 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User clicks the Columns button")]
         public void WhenUserClicksTheColumnsButton()
         {
-            var menu = _driver.NowAt<BaseDashboardPage>();
+            var menu = _driver.NowAt<BaseHeaderElement>();
             _driver.WaitForDataLoading();
             _driver.WaitForDataLoadingInActionsPanel();
             _driver.WaitForElementToBeDisplayed(menu.ColumnButton);
             menu.ColumnButton.Click();
             _driver.WaitForDataLoading();
-            Logger.Write("Column button was clicked");
         }
 
         [When(@"User clicks the Filters button")]
         public void WhenUserClicksTheFiltersButton()
         {
-            var menu = _driver.NowAt<BaseDashboardPage>();
+            var menu = _driver.NowAt<BaseHeaderElement>();
             _driver.WaitForDataLoading();
             _driver.WaitForDataLoadingInActionsPanel();
             _driver.WaitForElementToBeDisplayed(menu.FilterButton);
             menu.FilterButton.Click();
             _driver.WaitForDataLoading();
-            Logger.Write("Filters button was clicked");
         }
 
         [When(@"User clicks Create Project from the main list")]
@@ -124,7 +122,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"Filters Button is disabled")]
         public void ThenFiltersButtonIsDisabled()
         {
-            var menu = _driver.NowAt<BaseDashboardPage>();
+            var menu = _driver.NowAt<BaseHeaderElement>();
             _driver.WaitForElementToBeDisplayed(menu.FilterButton);
             Verify.IsTrue(Convert.ToBoolean(menu.FilterButton.GetAttribute("disabled")), "Filter Button is active");
         }
@@ -132,7 +130,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"Filter button on AGgrid is disabled")]
         public void ThenFilterButtonOnAGgridIsDisabled()
         {
-            var menu = _driver.NowAt<BaseDashboardPage>();
+            var menu = _driver.NowAt<BaseHeaderElement>();
             _driver.WaitForElementToBeDisplayed(menu.FilterButton);
             Utils.Verify.IsTrue(Convert.ToBoolean(menu.FilterButton.GetAttribute("disabled")),
                 "Filter button on AGgrid is active");
@@ -148,7 +146,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"Account Profile menu is displayed correctly")]
         public void ThenAccountProfileMenuIsDisplayedCorrectly()
         {
-            var panel = _driver.NowAt<BaseDashboardPage>();
+            var panel = _driver.NowAt<BaseHeaderElement>();
             var menu = _driver.NowAt<HeaderElement>();
             try
             {
@@ -156,16 +154,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
             catch
             {
-                Utils.Verify.IsTrue(menu.UserItemsMenu.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
+                Verify.IsTrue(menu.UserItemsMenu.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
             }
 
-            Utils.Verify.IsTrue(menu.UserItemsMenu.Displayed, "Item Menu is not displayed correctly");
+            Verify.IsTrue(menu.UserItemsMenu.Displayed, "Item Menu is not displayed correctly");
         }
 
         [Then(@"Notifications message is displayed correctly")]
         public void ThenNotificationsMessageIsDisplayedCorrectly()
         {
-            var panel = _driver.NowAt<BaseDashboardPage>();
+            var panel = _driver.NowAt<BaseHeaderElement>();
             var menu = _driver.NowAt<HeaderElement>();
             try
             {
@@ -173,10 +171,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
             catch
             {
-                Utils.Verify.IsTrue(menu.UserNotificationsMessage.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
+                Verify.IsTrue(menu.UserNotificationsMessage.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
             }
 
-            Utils.Verify.IsTrue(menu.UserNotificationsMessage.Displayed,
+            Verify.IsTrue(menu.UserNotificationsMessage.Displayed,
                 "User Notifications Message is not displayed correctly");
         }
 
@@ -194,27 +192,30 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"Filter Expression icon displayed within Filter Panel")]
         public void ThenFilterExpressionIconDisplayedWithinCorrectBlock()
         {
-            var filterPane = _driver.NowAt<BaseDashboardPage>();
+            var filterPane = _driver.NowAt<BaseHeaderElement>();
             _driver.WaitForElementToBeDisplayed(filterPane.FilterButton);
 
-            Utils.Verify.That(filterPane.FilterExpressionIcon.Displayed, "Filter expression icon placed in wrong block");
+            var panel = _driver.NowAt<BaseDashboardPage>();
+            Verify.That(panel.FilterExpressionIcon.Displayed(), "Filter expression icon placed in wrong block");
         }
 
         [When(@"User clicks Filter Expression icon in Filter Panel")]
         public void UserClicksFilterExpressionIconInFilterPanel()
         {
-            var filterPane = _driver.NowAt<BaseDashboardPage>();
+            var filterPane = _driver.NowAt<BaseHeaderElement>();
             _driver.WaitForElementToBeDisplayed(filterPane.FilterButton);
-            filterPane.FilterExpressionIcon.Click();
+            var panel = _driver.NowAt<BaseDashboardPage>();
+            panel.FilterExpressionIcon.Click();
         }
 
         [Then(@"Filter Expression displayed within Filter Panel")]
         public void ThenFilterExpressionDisplayedWithinCorrectBlock()
         {
-            var filterPane = _driver.NowAt<BaseDashboardPage>();
+            var filterPane = _driver.NowAt<BaseHeaderElement>();
             _driver.WaitForElementToBeDisplayed(filterPane.FilterButton);
 
-            Utils.Verify.That(filterPane.FiltersExpression.Displayed, "Filter expression placed in wrong block");
+            var panel = _driver.NowAt<BaseDashboardPage>();
+            Verify.That(panel.FiltersExpression.Displayed(), "Filter expression placed in wrong block");
         }
     }
 }
