@@ -26,7 +26,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithUpdateOwnerIsLoaded
 	When User selects 'Radio Rag Date Owner Comp Req B' option from 'Task' autocomplete
 	And User selects 'No change' in the 'Update Value' dropdown
 	And User selects 'No change' in the 'Update Date' dropdown
-	And User selects "Update" Update Owner on Action panel
+	And User selects 'Update' in the 'Update Owner' dropdown
 	And User selects "1803 Team" Team on Action panel
 	And User selects "Akhila Varghese" Owner on Action panel
 	And User clicks 'CREATE' button 
