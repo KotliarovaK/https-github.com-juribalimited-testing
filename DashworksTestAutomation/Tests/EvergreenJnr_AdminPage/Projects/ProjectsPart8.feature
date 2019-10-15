@@ -63,7 +63,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckOnboardingObjectUsingUpdateAppropr
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
-	Then Project "TestProject9753" is displayed to user
+	Then Page with 'TestProject9753' header is displayed to user
 	Then Info message is displayed and contains "There are no objects in this project, use Scope Changes to add objects to your project" text
 	When User selects "Scope Changes" tab on the Project details page
 	And User navigates to the '<TabName>' tab on Project Scope Changes page
@@ -105,7 +105,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingBucketFromUseEvergreenBucketsToCloneEve
 	When User navigates to the 'Projects' left menu item
 	When User enters "1MailboxesProject" text in the Search field for "Project" column
 	And User clicks content from "Project" column
-	Then Project "1MailboxesProject" is displayed to user
+	Then Page with '1MailboxesProject' header is displayed to user
 	When User navigates to the 'Details' left menu item
 	Then "Mailbox scoped project" is displayed in the disabled Project Type field
 	When User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
@@ -147,7 +147,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoAdditionalCapacityUnitsAreCreatedWhe
 	When User navigates to the 'Projects' left menu item
 	And User enters "13530Project" text in the Search field for "Project" column
 	And User clicks content from "Project" column
-	Then Project "13530Project" is displayed to user
+	Then Page with '13530Project' header is displayed to user
 	When User navigates to the 'Capacity' left menu item
 	And User selects 'Clone evergreen capacity units to project capacity units' in the 'Capacity Units' dropdown
 	And User clicks 'UPDATE' button 

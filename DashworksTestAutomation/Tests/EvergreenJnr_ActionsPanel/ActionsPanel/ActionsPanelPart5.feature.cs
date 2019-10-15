@@ -155,7 +155,7 @@ this.FeatureBackground();
 #line 20
  testRunner.When("User selects \'User Scheduled Test (Jo)\' option from \'Project\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 21
- testRunner.And("User selects \"Request Type A\" Path on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects \'Request Type A\' option from \'Path\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 22
  testRunner.When("User clears \'Project\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 23
@@ -256,7 +256,7 @@ this.FeatureBackground();
 #line 45
  testRunner.And("User selects \'Email Migration\' option from \'Project\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 46
- testRunner.And("User selects \"Personal Mailbox - VIP\" Path on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects \'Personal Mailbox - VIP\' option from \'Path\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 47
  testRunner.When("User clears \'Project\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 48
@@ -361,7 +361,7 @@ this.FeatureBackground();
             table5.AddRow(new string[] {
                         "Remove"});
 #line 65
- testRunner.Then("the following Update Value are displayed in opened DLL on Action panel:", ((string)(null)), table5, "Then ");
+ testRunner.Then("following Values are displayed in the \'Update Value\' dropdown:", ((string)(null)), table5, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -332,16 +332,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseGridPage>();
             var numbers = page.GetSumOfObjectsContent(columnName);
             var total = numbers.Where(x => !string.IsNullOrEmpty(x)).Sum(x => Convert.ToInt32(x));
-            Utils.Verify.That(total, Is.EqualTo(sumOfObjects), $"Sum of objects in {columnName} list is incorrect!");
-        }
-
-        [Then(@"Project ""(.*)"" is displayed to user")]
-        [Then(@"Automation ""(.*)"" is displayed to user")]
-        public void ThenProjectIsDisplayedToUser(string projectName)
-        {
-            var page = _driver.NowAt<ProjectsPage>();
-            _driver.WaitForDataLoading();
-            Verify.IsTrue(page.ActiveProjectByName(projectName), $"{projectName} is not displayed on the Project page");
+            Verify.That(total, Is.EqualTo(sumOfObjects), $"Sum of objects in {columnName} list is incorrect!");
         }
 
         [Then(@"field for Date column is empty")]
@@ -687,7 +678,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenContentIsDisplayedInField(string text, string fieldName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            Utils.Verify.IsTrue(page.GetNamedTextbox(fieldName).GetAttribute("value").Contains(text),
+            Utils.Verify.IsTrue(page.GetTextbox(fieldName).GetAttribute("value").Contains(text),
                 $"Text in {fieldName} field is different");
         }
 
@@ -803,13 +794,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var panel = _driver.NowAt<TeamsPage>();
             _driver.WaitForElementToBeDisplayed(panel.TeamMembersPanel);
             Utils.Verify.IsTrue(panel.TeamMembersPanel.Displayed(), "Team Members Panel is not displayed on the Teams page");
-        }
-
-        [Then(@"""(.*)"" team details is displayed to the user")]
-        public void ThenTeamDetailsIsDisplayedToTheUser(string teamName)
-        {
-            var teamElement = _driver.NowAt<TeamsPage>();
-            Utils.Verify.IsTrue(teamElement.AppropriateTeamName(teamName), $"{teamName} is not displayed on the Teams page");
         }
 
         [Then(@"Create Team button is disabled")]
@@ -1956,9 +1940,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var projectId = GetProjectId(projectName);
             _driver.Navigate().GoToUrl($"{UrlProvider.EvergreenUrl}#/admin/project/{projectId}/details");
 
-            var page = _driver.NowAt<ProjectsPage>();
-            _driver.WaitForDataLoading();
-            Verify.IsTrue(page.ActiveProjectByName(projectName), $"{projectName} is not displayed on the Project page");
+            var header = _driver.NowAt<BaseHeaderElement>();
+            header.CheckPageHeader(projectName);
         }
 
         [When(@"User hides side panel in project details page")]

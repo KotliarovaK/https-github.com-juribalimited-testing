@@ -10,9 +10,9 @@ Scenario: EvergreenJnr_UsersList_CheckThatAfterClosingActionsPanelTheActionsButt
 	When User clicks 'Users' on the left-hand menu
 	Then 'All Users' list should be displayed to the user
 	When User clicks the Actions button
-	Then Actions button is active
+	Then Actions panel is displayed to the user
 	When User clicks the Actions button
-	Then Actions button is not active
+	Then Actions panel is not displayed to the user
 
 @Evergreen @Users @EvergreenJnr_ActionsPanel @DAS12864 @DAS12932 @DAS13262 @Cleanup
 Scenario: EvergreenJnr_UsersList_CheckThatUserWithoutRelevantRolesCannotSeeBulkUpdateOptionInActionsPanel
@@ -97,7 +97,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatUserWithoutJustTheProjectAdministrat
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update path' in the 'Bulk Update Type' dropdown
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
-	And User selects "Computer: Laptop Replacement" Path on Action panel
+	When User selects 'Computer: Laptop Replacement' option from 'Path' autocomplete
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	When User clicks 'UPDATE' button
@@ -150,7 +150,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUserWithoutJustTheProjectBulkUp
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update path' in the 'Bulk Update Type' dropdown
 	And User selects 'Email Migration' option from 'Project' autocomplete
-	And User selects "Sharepoint Application" Path on Action panel
+	And User selects 'Sharepoint Application' option from 'Path' autocomplete
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	When User clicks 'UPDATE' button

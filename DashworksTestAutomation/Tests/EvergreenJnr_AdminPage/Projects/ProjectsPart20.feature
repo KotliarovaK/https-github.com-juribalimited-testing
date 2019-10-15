@@ -10,7 +10,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatBlueBannerIsDisplayedWithCorrectlyTex
 	When Project created via API and opened
 	| ProjectName  | Scope       | ProjectTemplate | Mode               |
 	| Project13347 | All Devices | None            | Standalone Project |
-	Then Project "Project13347" is displayed to user
+	Then Page with 'Project13347' header is displayed to user
 	When User selects "Scope" tab on the Project details page
 	When User selects "Scope Changes" tab on the Project details page
 	And User navigates to the 'Devices' tab on Project Scope Changes page

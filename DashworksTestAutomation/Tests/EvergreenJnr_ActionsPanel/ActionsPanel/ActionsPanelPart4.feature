@@ -27,7 +27,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelWorkedCorrectlyAfterCic
 	| Update task value    |
 	When User selects 'Update path' in the 'Bulk Update Type' dropdown
 	And User selects 'Babel (English, German and French)' option from 'Project' autocomplete
-	And User selects "Machines" Path on Action panel
+	And User selects 'Machines' option from 'Path' autocomplete
 	And User clicks 'CANCEL' button 
 	Then Actions panel is not displayed to the user
 	And Checkboxes are not displayed
@@ -92,7 +92,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatProjectFieldIsDisplayedCorrectlyAfte
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update path' in the 'Bulk Update Type' dropdown
 	And User selects 'Barry's User Project' option from 'Project' autocomplete
-	And User selects "Desktop Replacement" Path on Action panel
+	And User selects 'Desktop Replacement' option from 'Path' autocomplete
 	When User clears 'Project' autocomplete
 	When User clicks 'Action' dropdown
 	Then 'Barry's User Project' content is displayed in 'Project' autocomplete
@@ -117,7 +117,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatProjectFieldIsDisplayedCorrectlyAfterC
 	| Update task value    |
 	When User selects 'Update path' in the 'Bulk Update Type' dropdown
 	And User selects 'Havoc (Big Data)' option from 'Project' autocomplete
-	And User selects "User Request Type 2" Path on Action panel
+	And User selects 'User Request Type 2' option from 'Path' autocomplete
 	When User clears 'Project' autocomplete
 	When User clicks 'Action' dropdown
 	Then 'Havoc (Big Data)' content is displayed in 'Project' autocomplete

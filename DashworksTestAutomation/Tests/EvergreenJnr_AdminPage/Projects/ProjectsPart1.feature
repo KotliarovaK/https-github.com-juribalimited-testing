@@ -33,7 +33,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAllAssociationsAreSelectedByDefaultInT
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
-	Then Project "TestProject7" is displayed to user
+	Then Page with 'TestProject7' header is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
 	When User navigates to the 'Applications' tab on Project Scope Changes page
 	Then "Applications to add (0 of 2129 selected)" is displayed to the user in the Project Scope Changes section
@@ -62,7 +62,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatExistingProjectNameCantBeRemoved
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
-	Then Project "TestProject14283" is displayed to user
+	Then Page with 'TestProject14283' header is displayed to user
 	When User selects 'Dependant List Filter - BROKEN LIST' in the 'Scope' dropdown
 	Then 'This list has errors' error message is displayed for 'Scope' dropdown
 	When User navigates to the 'Details' left menu item
@@ -101,7 +101,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorsAreDisplayedInTheProjectScopeC
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
-	Then Project "TestProject9" is displayed to user
+	Then Page with 'TestProject9' header is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
 	And User navigates to the 'Users' tab on Project Scope Changes page
 	And User navigates to the 'Devices' tab on Project Scope Changes page

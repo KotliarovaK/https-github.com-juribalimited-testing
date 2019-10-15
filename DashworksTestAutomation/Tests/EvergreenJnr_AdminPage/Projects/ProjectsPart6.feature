@@ -85,7 +85,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDevicesToAddAndRemoveAreChangingApprop
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
-	Then Project "DevicesProject" is displayed to user
+	Then Page with 'DevicesProject' header is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Devices to add (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
 	When User expands multiselect to add objects 

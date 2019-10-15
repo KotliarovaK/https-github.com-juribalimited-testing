@@ -168,7 +168,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithRemoveOwnerIsLoaded
 	When User selects 'Radio Rag Date Owner User Req B' option from 'Task' autocomplete
 	And User selects 'No change' in the 'Update Value' dropdown
 	And User selects 'No change' in the 'Update Date' dropdown
-	And User selects "Remove" Update Owner on Action panel
+	When User selects 'Remove' in the 'Update Owner' dropdown
 	And User clicks 'CREATE' button 
 	When User clicks "Automations" navigation link on the Admin page
 	When User enters "17619_Automation" text in the Search field for "Automation" column
@@ -183,3 +183,44 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithRemoveOwnerIsLoaded
 	Then 'No change' value is displayed in the 'Update Value' dropdown
 	Then 'No change' value is displayed in the 'Update Date' dropdown
 	Then 'Remove' value is displayed in the 'Update Owner' dropdown
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17615 @DAS17617 @Cleanup @Not_Ready
+Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithUpdateOwnerIsLoadedCorrectly
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User creates new Automation via API
+	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
+	| 17617_Automation | 17617       | true   | false              | All Devices | Manual |
+	When User navigates to the 'Automations' left menu item
+	Then Page with 'Automations' header is displayed to user
+	When User enters "17617_Automation" text in the Search field for "Automation" column
+	And User clicks content from "Automation" column
+	And User navigates to the 'Actions' left menu item
+	#Create Action
+	When User clicks 'CREATE ACTION' button 
+	When User enters 'Update Migrated devices' text to 'Action Name' textbox
+	And User selects 'Update task value' in the 'Action Type' dropdown
+	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
+	When User selects 'One' option from 'Stage' autocomplete
+	When User selects 'Radio Rag Date Owner Comp Req B' option from 'Task' autocomplete
+	And User selects 'No change' in the 'Update Value' dropdown
+	And User selects 'No change' in the 'Update Date' dropdown
+	When User selects 'Update' in the 'Update Owner' dropdown
+	When User selects '1803 Team' option from 'Team' autocomplete
+	When User selects 'Akhila Varghese' option from 'Owner' autocomplete
+	And User clicks 'CREATE' button 
+	When User clicks "Automations" navigation link on the Admin page
+	When User enters "17617_Automation" text in the Search field for "Automation" column
+	When User clicks content from "Automation" column
+	When User navigates to the 'Actions' left menu item
+	When User clicks content from "Action" column
+	#Actions content check
+	Then "Update Migrated devices" content is displayed in "Action Name" field
+	Then 'Update task value' content is displayed in 'Action Type' dropdown
+	And 'One' content is displayed in 'Stage' textbox
+	And 'Radio Rag Date Owner Comp Req B' content is displayed in 'Task' textbox
+	Then 'No change' value is displayed in the 'Update Value' dropdown
+	Then 'No change' value is displayed in the 'Update Date' dropdown
+	Then 'Update' value is displayed in the 'Update Owner' dropdown
+	Then "1803 Team" content is displayed in "Team" field
+	Then "Akhila Varghese" content is displayed in "Owner" field

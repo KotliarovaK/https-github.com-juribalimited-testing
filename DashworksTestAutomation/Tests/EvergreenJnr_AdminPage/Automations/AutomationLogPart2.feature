@@ -112,7 +112,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInMailboxScop
 	When User selects 'Mailbox Dropdown Non RAG Owner' option from 'Task' autocomplete
 	And User selects 'Update' in the 'Update Value' dropdown
 	And User selects 'Maybe' in the 'Value' dropdown
-	And User selects "No change" Update Owner on Action panel
+	When User selects 'No change' in the 'Update Owner' dropdown
 	And User clicks 'CREATE' button 
 	#Create Action
 	When User clicks "Automations" navigation link on the Admin page
@@ -333,9 +333,9 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueAndOwnerInDev
 	And User selects 'Update' in the 'Update Value' dropdown
 	When User selects 'Tested' in the 'Value' dropdown
 	And User selects 'Tested' in the 'Value' dropdown
-	When User selects "Update" Update Owner on Action panel
-	When User selects "Admin IT" Team on Action panel
-	When User selects "Maryna Kyslyak" Owner on Action panel
+	When User selects 'Update' in the 'Update Owner' dropdown
+	When User selects 'Admin IT' option from 'Team' autocomplete
+	When User selects 'Maryna Kyslyak' option from 'Owner' autocomplete
 	And User clicks 'CREATE' button 
 	#Create Action
 	When User clicks "Automations" navigation link on the Admin page
@@ -386,7 +386,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForRemoveOwnerAndTeamInDevi
 	And User selects 'Readiness Owner Date Don't Change' option from 'Task' autocomplete
 	And User selects 'No change' in the 'Update Value' dropdown
 	And User selects 'No change' in the 'Update Date' dropdown
-	And User selects "Remove owner and team" Update Owner on Action panel
+	When User selects 'Remove owner and team' in the 'Update Owner' dropdown
 	And User clicks 'CREATE' button 
 	#Create Action
 	And User clicks "Automations" navigation link on the Admin page
@@ -494,9 +494,9 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueActionDAS
 	And User selects 'Started' in the 'Value' dropdown
 	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters '19 Nov 2019' text to 'Date' datepicker
-	And User selects "Update" Update Owner on Action panel
-	And User selects "Admin IT" Team on Action panel
-	When User selects "Akhila Varghese" Owner on Action panel
+	When User selects 'Update' in the 'Update Owner' dropdown
+	When User selects 'Admin IT' option from 'Team' autocomplete
+	When User selects 'Akhila Varghese' option from 'Owner' autocomplete
 	And User clicks 'CREATE' button 
 	#Create Action
 	When User clicks "Automations" navigation link on the Admin page

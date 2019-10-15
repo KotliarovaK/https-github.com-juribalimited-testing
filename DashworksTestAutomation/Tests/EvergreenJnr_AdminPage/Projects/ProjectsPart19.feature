@@ -53,7 +53,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	When Project created via API and opened
 	| ProjectName          | Scope        | ProjectTemplate | Mode               |
 	| Project13110Dynamic1 | Dynamic13110 | None            | Standalone Project |
-	Then Project "Project13110Dynamic1" is displayed to user
+	Then Page with 'Project13110Dynamic1' header is displayed to user
 	When User selects "Scope" tab on the Project details page
 	When User selects "Scope Changes" tab on the Project details page
 	And User expands multiselect to add objects
@@ -106,7 +106,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	When Project created via API and opened
 	| ProjectName          | Scope        | ProjectTemplate | Mode               |
 	| Project13110Dynamic2 | Dynamic13110 | None            | Standalone Project |
-	Then Project "Project13110Dynamic2" is displayed to user
+	Then Page with 'Project13110Dynamic2' header is displayed to user
 	When User selects "Scope" tab on the Project details page
 	When User selects "Scope Changes" tab on the Project details page
 	And User navigates to the 'Applications' tab on Project Scope Changes page
@@ -169,7 +169,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	When Project created via API and opened
 	| ProjectName         | Scope       | ProjectTemplate | Mode               |
 	| Project13110Static1 | Static13110 | None            | Standalone Project |
-	Then Project "Project13110Static1" is displayed to user
+	Then Page with 'Project13110Static1' header is displayed to user
 	When User selects "Scope" tab on the Project details page
 	When User selects "Scope Changes" tab on the Project details page
 	And User expands multiselect to add objects
@@ -215,7 +215,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	When Project created via API and opened
 	| ProjectName         | Scope       | ProjectTemplate | Mode               |
 	| Project13110Static2 | Static13110 | None            | Standalone Project |
-	Then Project "Project13110Static2" is displayed to user
+	Then Page with 'Project13110Static2' header is displayed to user
 	When User selects "Scope" tab on the Project details page
 	When User selects "Scope Changes" tab on the Project details page
 	And User navigates to the 'Applications' tab on Project Scope Changes page
@@ -270,7 +270,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderForQueueAndHistoryTab
 	When Project created via API and opened
 	| ProjectName   | Scope       | ProjectTemplate | Mode               |
 	| TestProject55 | All Devices | None            | Standalone Project |
-	Then Project "TestProject55" is displayed to user	
+	Then Page with 'TestProject55' header is displayed to user	
 	Then "Show Original Application Column On Application Dashboards" checkbox is not displayed on the Admin page
 	When User selects "Scope" tab on the Project details page
 	When User selects "Scope Changes" tab on the Project details page

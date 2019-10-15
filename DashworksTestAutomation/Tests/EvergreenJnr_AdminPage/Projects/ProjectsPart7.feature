@@ -28,7 +28,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUsersToAddAndRemoveAreChangingAppropri
 	And User clicks Create button on the Create Project page
 	Then Success message with "The project has been created" text is displayed on the Projects page
 	When User clicks newly created object link
-	Then Project "UsersProject" is displayed to user
+	Then Page with 'UsersProject' header is displayed to user
 	Then Info message is displayed and contains "There are no objects in this project, use Scope Changes to add objects to your project" text
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Users to add (0 of 2 selected)" is displayed to the user in the Project Scope Changes section

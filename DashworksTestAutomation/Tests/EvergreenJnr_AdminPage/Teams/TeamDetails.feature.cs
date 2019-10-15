@@ -215,7 +215,7 @@ this.FeatureBackground();
 #line 29
  testRunner.And("User clicks content from \"Team\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 30
- testRunner.Then("\"K-Team\" team details is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Page with \'K-Team\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 31
  testRunner.When("User clicks Add Members button on the Teams page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 32

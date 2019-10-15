@@ -286,12 +286,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
                 $".//mat-checkbox[contains(@class, 'checkbox-checked')]/label/span[contains(text(), '{checkboxes}')]"));
         }
 
-        //TODO this method should be removed, replaced by generic web element
-        public bool ActiveProjectByName(string projectName)
-        {
-            return Driver.IsElementDisplayed(By.XPath($".//h1[text()='{projectName}']"));
-        }
-
         public bool BucketDropdownDisplay(string textBucket)
         {
             return Driver.IsElementDisplayed(By.XPath($".//span[text()='{textBucket}']"));
@@ -395,7 +389,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.IsElementDisplayed(By.XPath($".//span[text()='{text}']"));
         }
 
-        //TODO this method should be removed. We already have GetNamedTextbox on BaseDashboardPage
+        //TODO this method should be removed. We already have GetTextbox on BaseDashboardPage
         public IWebElement GetFieldByName(string name)
         {
             var selector = By.XPath($".//input[@placeholder='{name}']");

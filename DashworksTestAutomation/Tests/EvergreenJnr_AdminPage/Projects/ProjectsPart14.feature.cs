@@ -454,7 +454,7 @@ this.FeatureBackground();
 #line 94
  testRunner.When("Project created via API and opened", ((string)(null)), table7, "When ");
 #line 97
- testRunner.Then("Project \"Project12965\" is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Page with \'Project12965\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 98
  testRunner.When("User selects \"Scope\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 99
@@ -590,7 +590,7 @@ this.FeatureBackground();
 #line 128
  testRunner.When("Project created via API and opened", ((string)(null)), table11, "When ");
 #line 131
- testRunner.Then("Project \"UsersProject2\" is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Page with \'UsersProject2\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 132
  testRunner.When("User selects \"Scope\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 133

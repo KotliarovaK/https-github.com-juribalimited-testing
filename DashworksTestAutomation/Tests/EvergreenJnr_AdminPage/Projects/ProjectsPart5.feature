@@ -10,7 +10,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEmptyGreenAlertLineIsNotDisplayedOnPro
 	When Project created via API and opened
 	| ProjectName   | Scope     | ProjectTemplate | Mode               |
 	| TestName11881 | All Users | None            | Standalone Project |
-	Then Project "TestName11881" is displayed to user
+	Then Page with 'TestName11881' header is displayed to user
 	When User selects "Scope" tab on the Project details page
 	When User selects "Scope Details" tab on the Project details page
 	And User navigates to the 'Application Scope' tab on Project Scope Changes page
@@ -73,7 +73,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThat500ISEInvalidColumnNameIsNotDisplayedW
 	When Project created via API and opened
 	| ProjectName      | Scope          | ProjectTemplate | Mode               |
 	| TestProject12349 | SavedList12349 | None            | Standalone Project |
-	Then Project "TestProject12349" is displayed to user
+	Then Page with 'TestProject12349' header is displayed to user
 	And There are no errors in the browser console
 	Then Error message is not displayed
 	When User selects "Scope" tab on the Project details page

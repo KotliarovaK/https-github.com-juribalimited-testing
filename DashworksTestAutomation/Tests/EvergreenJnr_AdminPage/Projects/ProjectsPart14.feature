@@ -94,7 +94,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatColourOfOnboardedAppIsDisplayedCorrec
 	When Project created via API and opened
 	| ProjectName  | Scope       | ProjectTemplate | Mode               |
 	| Project12965 | All Devices | None            | Standalone Project |
-	Then Project "Project12965" is displayed to user
+	Then Page with 'Project12965' header is displayed to user
 	When User selects "Scope" tab on the Project details page
 	When User selects "Scope Details" tab on the Project details page
 	And User navigates to the 'Application Scope' tab on Project Scope Changes page
@@ -128,7 +128,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOffboardedObjectsAreListedAfterSelectO
 	When Project created via API and opened
 	| ProjectName   | Scope     | ProjectTemplate | Mode               |
 	| UsersProject2 | All Users | None            | Standalone Project |
-	Then Project "UsersProject2" is displayed to user
+	Then Page with 'UsersProject2' header is displayed to user
 	When User selects "Scope" tab on the Project details page
 	When User selects "Scope Changes" tab on the Project details page
 	And User navigates to the 'Devices' tab on Project Scope Changes page

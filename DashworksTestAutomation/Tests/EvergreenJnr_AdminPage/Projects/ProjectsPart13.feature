@@ -33,7 +33,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameEditedInSeniorIsUpdatedInA
 	When Project created via API and opened
 	| ProjectName     | Scope       | ProjectTemplate | Mode               |
 	| 10_Project13096 | All Devices | None            | Standalone Project |
-	Then Project "10_Project13096" is displayed to user
+	Then Page with '10_Project13096' header is displayed to user
 	When User click on Back button
 	Then created Project with "10_Project13096" name is displayed correctly
 	When User clicks 'Projects' on the left-hand menu
@@ -65,7 +65,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	When Project created via API and opened
 	| ProjectName      | Scope       | ProjectTemplate | Mode               |
 	| TestProject12776 | All Devices | None            | Standalone Project |
-	Then Project "TestProject12776" is displayed to user
+	Then Page with 'TestProject12776' header is displayed to user
 	When User selects "Scope" tab on the Project details page
 	And User selects "Scope Changes" tab on the Project details page
 	And User expands multiselect to add objects 
@@ -114,7 +114,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	When Project created via API and opened
 	| ProjectName      | Scope     | ProjectTemplate | Mode                            |
 	| TestProject12777 | All Users | None            | Clone from Evergreen to Project |
-	Then Project "TestProject12777" is displayed to user
+	Then Page with 'TestProject12777' header is displayed to user
 	Then 'Clone evergreen buckets to project buckets' content is displayed in 'Buckets' dropdown
 	When User navigates to the 'Capacity' left menu item
 	Then 'Clone evergreen capacity units to project capacity units' content is displayed in 'Capacity Units' dropdown

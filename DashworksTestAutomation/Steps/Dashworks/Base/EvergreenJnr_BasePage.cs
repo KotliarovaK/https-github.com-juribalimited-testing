@@ -123,14 +123,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var page = _driver.NowAt<BaseDashboardPage>();
             if (field.Equals("Bucket") || field.Equals("Capacity Unit") || field.Equals("Ring"))
             {
-                page.GetNamedTextbox(field).Click();
+                page.GetTextbox(field).Click();
                 var listWithoutUnassigned = page.GetAllAutocompleteOptions(field).Where(x => !x.Contains("Unassigned")).ToList();
                 Verify.AreEqual(listWithoutUnassigned.OrderBy(s => s), listWithoutUnassigned,
                     $"Options in the '{field}' autocomplete are not in alphabetical order");
             }
             else
             {
-                page.GetNamedTextbox(field).Click();
+                page.GetTextbox(field).Click();
                 var list = page.GetAllAutocompleteOptions(field).ToList();
                 Verify.AreEqual(list.OrderBy(s => s), list,
                     $"Options in the '{field}' autocomplete are not in alphabetical order");
@@ -194,7 +194,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenOnlyBelowOptionsAreSelectedInTheAutocomplete(string placeholder, Table table)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            var textbox = page.GetNamedTextbox(placeholder);
+            var textbox = page.GetTextbox(placeholder);
             //Expand if more than 3 items are selected
             if (_driver.IsElementInElementDisplayed(textbox, By.XPath(page.ExpandNamedTextboxSelector),
                 WebDriverExtensions.WaitTime.Short))
@@ -219,7 +219,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         private void CheckAutocompletAndTextboxText(string placeholder, string expectedText)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            var text = page.GetNamedTextbox(placeholder).GetAttribute("value");
+            var text = page.GetTextbox(placeholder).GetAttribute("value");
             Verify.AreEqual(expectedText, text, "Incorrect text in the autocomplete");
         }
 
@@ -231,8 +231,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void WhenUserEntersTextToTextbox(string text, string placeholder)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            page.GetNamedTextbox(placeholder).Clear();
-            page.GetNamedTextbox(placeholder).SendKeys(text);
+            page.GetTextbox(placeholder).Clear();
+            page.GetTextbox(placeholder).SendKeys(text);
             page.BodyContainer.Click();
 
             if (placeholder.Equals("Action Name"))
@@ -251,6 +251,16 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 _capacityUnits.Value.Add(new CapacityUnitDto() { Name = text });
 
             _driver.WaitForDataLoading();
+        }
+
+        [When(@"User enters next '(.*)' day to '(.*)' textbox")]
+        public void WhenUserEntersNextDayToTextbox(string dayOfWeek, string placeholder)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.GetTextbox(placeholder).Clear();
+            page.GetTextbox(placeholder).
+                SendKeys(dayOfWeek.GetNextWeekday().ToString("dd MMM yyyy"));
+            page.BodyContainer.Click();
         }
 
         [When(@"User adds '(.*)' value from '(.*)' textbox")]
@@ -307,6 +317,22 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.IsTrue(Convert.ToBoolean(page.GetTextboxAddButton(fieldName).Disabled()), $"Add button for {fieldName} textbox is active");
         }
 
+        [Then(@"'(.*)' textbox is displayed")]
+        public void ThenTextboxIsDisplayed(string placeholder)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsTrue(page.IsTextboxDisplayed(placeholder),
+                $"'{placeholder}' textbox is not displayed");
+        }
+
+        [Then(@"'(.*)' textbox is not displayed")]
+        public void ThenTextboxIsNotDisplayed(string placeholder)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsFalse(page.IsTextboxDisplayed(placeholder),
+                $"'{placeholder}' textbox is displayed");
+        }
+
         #endregion
 
         #region Dropdown
@@ -355,7 +381,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenDropdownIsDisplayed(string dropdownName)
         {
             var dropdown = _driver.NowAt<BaseDashboardPage>();
-            Verify.IsTrue(dropdown.GetDropdown(dropdownName).Displayed(), 
+            Verify.IsTrue(dropdown.IsDropdownDisplayed(dropdownName),
                 $"{dropdownName} is not displayed");
         }
 
@@ -363,7 +389,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenDropdownIsNotDisplayed(string dropdownName)
         {
             var dropdown = _driver.NowAt<BaseDashboardPage>();
-            Verify.IsFalse(dropdown.GetDropdown(dropdownName).Displayed(), 
+            Verify.IsFalse(dropdown.IsDropdownDisplayed(dropdownName),
                 $"{dropdownName} is not displayed");
         }
 
@@ -423,7 +449,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void WhenUserEntersTextToDatepicker(string text, string placeholder)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            var datepicker = page.GetNamedTextbox(placeholder);
+            var datepicker = page.GetTextbox(placeholder);
             //Just clear is not working for some reason
             datepicker.Click();
             datepicker.SendKeys(OpenQA.Selenium.Keys.Control + "a");

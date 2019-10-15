@@ -433,7 +433,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatOnTheProjectDetailsTabDisplaysTheL
 	When User navigates to the 'Projects' left menu item
 	Then Page with 'Projects' header is displayed to user
 	When User clicks on 'USE ME FOR AUTOMATION(MAIL SCHDLD)' cell from 'Project' column
-	Then Project "USE ME FOR AUTOMATION(MAIL SCHDLD)" is displayed to user
+	Then Page with 'USE ME FOR AUTOMATION(MAIL SCHDLD)' header is displayed to user
 	When User navigates to the 'Details' left menu item
 	And User clicks 'ADD LANGUAGE' button 
 	And User selects "German" language on the Project details page

@@ -97,9 +97,9 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedU
 	And User selects 'On Hold' in the 'Value' dropdown
 	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters '1 Aug 2019' text to 'Date' datepicker
-	And User selects "Update" Update Owner on Action panel
-	And User selects "1803 Team" Team on Action panel
-	When User selects "Akhila Varghese" Owner on Action panel
+	When User selects 'Update' in the 'Update Owner' dropdown
+	When User selects '1803 Team' option from 'Team' autocomplete
+	When User selects 'Akhila Varghese' option from 'Owner' autocomplete
 	And User clicks 'CREATE' button 
 	#Create Action
 	When User clicks "Automations" navigation link on the Admin page
@@ -149,7 +149,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedU
 	When User selects 'Radio Date Owner User' option from 'Task' autocomplete
 	And User selects 'No change' in the 'Update Value' dropdown
 	And User selects 'No change' in the 'Update Date' dropdown
-	And User selects "No change" Update Owner on Action panel
+	When User selects 'No change' in the 'Update Owner' dropdown
 	Then "CREATE" Action button is disabled
 	Then "SAVE AND CREATE ANOTHER" Action button is disabled
 	Then 'CREATE' Action button has tooltip with 'Select at least one value to change' text

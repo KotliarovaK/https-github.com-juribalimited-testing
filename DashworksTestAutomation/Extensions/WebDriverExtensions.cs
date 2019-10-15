@@ -15,7 +15,7 @@ using ExpectedConditions = SeleniumExtras.WaitHelpers.ExpectedConditions;
 
 namespace DashworksTestAutomation.Extensions
 {
-    internal static class WebDriverExtensions
+    public static class WebDriverExtensions
     {
         private const int NumberOfTimesToWait = 2;
         private const int WaitTimeoutSeconds = 30;
@@ -1638,6 +1638,11 @@ namespace DashworksTestAutomation.Extensions
             WaitElementContainsTextInAttribute(driver, selector, expectedText, attribute, true, waitSec);
         }
 
+        public static void WaitForAnyElementToContainsTextInAttribute(this RemoteWebDriver driver, List<IWebElement> elements, string expectedText, string attribute, int waitSec = WaitTimeoutSeconds)
+        {
+            WaitElementContainsTextInAttribute(driver, elements, expectedText, attribute, true, waitSec);
+        }
+
         private static void WaitElementContainsTextInAttribute(this RemoteWebDriver driver, IWebElement element, string expectedText, string attribute, bool condition, int waitSec)
         {
             try
@@ -1661,6 +1666,19 @@ namespace DashworksTestAutomation.Extensions
             catch (Exception)
             {
                 throw new Exception($"Text '{expectedText}' is not appears/disappears in the '{attribute}' element attribute located by '{by}' selector after {waitSec} seconds");
+            }
+        }
+
+        private static void WaitElementContainsTextInAttribute(this RemoteWebDriver driver, IList<IWebElement> elements, string expectedText, string attribute, bool condition, int waitSec)
+        {
+            try
+            {
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(waitSec));
+                wait.Until(TextToBeContainsInElementAttribute(elements, expectedText, attribute, condition));
+            }
+            catch (Exception)
+            {
+                throw new Exception($"Text '{expectedText}' is not appears/disappears in the '{attribute}' element attribute after {waitSec} seconds");
             }
         }
 
@@ -1699,6 +1717,33 @@ namespace DashworksTestAutomation.Extensions
                 {
                     var element = driver.FindElement(by);
                     return element.GetAttribute(attribute).Contains(text).Equals(condition);
+                }
+                catch (NoSuchElementException)
+                {
+                    // Returns false because the element is not present in DOM.
+                    return false.Equals(condition);
+                }
+                catch (StaleElementReferenceException)
+                {
+                    // Returns false because stale element reference implies that element
+                    // is no longer visible.
+                    return false.Equals(condition);
+                }
+                catch (InvalidOperationException)
+                {
+                    // Return false as no elements was located
+                    return false.Equals(condition);
+                }
+            };
+        }
+
+        private static Func<IWebDriver, bool> TextToBeContainsInElementAttribute(IList<IWebElement> elements, string text, string attribute, bool condition)
+        {
+            return (driver) =>
+            {
+                try
+                {
+                    return elements.Any(x => x.GetAttribute(attribute).Contains(text).Equals(condition));
                 }
                 catch (NoSuchElementException)
                 {

@@ -2043,3 +2043,39 @@ Scenario: EvergreenJnr_DevicesList_CheckAppearanceOfComplianceValuesInTheFilterB
     | None    |
 	When User clicks in search field in the Filter block
 	Then No ring icon displayed for Empty item in Lookup
+
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS18150
+Scenario: EvergreenJnr_DevicesList_CheckThatFilterSubcategoriesAreSortedByCaseInsensitiveAlphabetOrder
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User removes "Operating System" column by Column panel
+	When User clicks the Filters button
+	When User clicks Add New button on the Filter panel
+	When User closes "Suggested" filter category
+	When User expands "Operating System" filter category
+	Then the following Filters subcategories are displayed for open category:
+    | Subcategories |
+    | Operating System              |
+    | OS Architecture       |
+    | OS Branch             |
+    | OS Full Name          |
+    | OS Servicing State    |
+    | OS Version Number     |
+    | Service Pack or Build |
+	When User clicks 'Applications' on the left-hand menu
+	Then 'All Applications' list should be displayed to the user
+	When User clicks the Filters button
+	When User clicks Add New button on the Filter panel
+	When User closes "Suggested" filter category
+	When User expands "Device Operating System" filter category
+	Then the following Filters subcategories are displayed for open category:
+    | Subcategories                |
+    | Device Operating System      |
+    | Device OS Architecture       |
+    | Device OS Branch             |
+    | Device OS Full Name          |
+    | Device OS Servicing State    |
+    | Device OS Version Number     |
+    | Device Service Pack or Build |

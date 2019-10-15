@@ -18,7 +18,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectFieldIsDisplayedCorrectl
 	And User selects 'Update path' in the 'Bulk Update Type' dropdown
 	Then 'Project' autocomplete options are sorted in the alphabetical order
 	When User selects 'User Scheduled Test (Jo)' option from 'Project' autocomplete
-	And User selects "Request Type A" Path on Action panel
+	And User selects 'Request Type A' option from 'Path' autocomplete
 	When User clears 'Project' autocomplete
 	When User clicks 'Action' dropdown
 	Then 'User Scheduled Test (Jo)' content is displayed in 'Project' autocomplete
@@ -43,7 +43,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatProjectFieldIsDisplayedCorrectlyAf
 	| Update task value    |
 	When User selects 'Update path' in the 'Bulk Update Type' dropdown
 	And User selects 'Email Migration' option from 'Project' autocomplete
-	And User selects "Personal Mailbox - VIP" Path on Action panel
+	And User selects 'Personal Mailbox - VIP' option from 'Path' autocomplete
 	When User clears 'Project' autocomplete
 	When User clicks 'Action' dropdown
 	Then 'Email Migration' content is displayed in 'Project' autocomplete
@@ -62,7 +62,7 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatTextValueHaveOptionToRemoveExi
 	And User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	And User selects 'One' option from 'Stage' autocomplete
 	And User selects '<TaskName>' option from 'Task' autocomplete
-	Then the following Update Value are displayed in opened DLL on Action panel:
+	Then following Values are displayed in the 'Update Value' dropdown:
 	| Value  |
 	| Update |
 	| Remove |

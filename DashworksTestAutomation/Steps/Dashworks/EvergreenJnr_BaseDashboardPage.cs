@@ -9,6 +9,7 @@ using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.Base;
+using DashworksTestAutomation.Pages.Evergreen.RightSideActionPanels;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
@@ -89,10 +90,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User navigate to the top of the Action panel")]
         public void WhenUserNavigateToTheTopOfTheActionPanel()
         {
-            var page = _driver.NowAt<BaseDashboardPage>();
+            var page = _driver.NowAt<ActionsPanelElement>();
             //TODO: 27Aug2019 replaced drag and drop to moveTo
             //_driver.DragAndDrop(page.ActionsScrollBar, page.ActionsRowsCount);
-            _driver.MoveToElement(page.ActionsRowsCount);
+            _driver.MoveToElement(page.RowsCount);
             Thread.Sleep(2000);
         }
 

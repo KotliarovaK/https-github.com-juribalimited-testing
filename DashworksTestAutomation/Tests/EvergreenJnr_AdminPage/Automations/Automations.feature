@@ -176,7 +176,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuIsWorkedCorrectly
 	Then "TRUE" content is displayed for "Active" column
 	When User clicks "Edit" option in Cog-menu for "15431_Third_Active" item on Admin page
 	Then "Edit Automation" title is displayed on the Automations page
-	Then Automation "15431_Third_Active" is displayed to user
+	Then Page with '15431_Third_Active' header is displayed to user
 
 #Need to use three Automations: inactive, inactive, active
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15431 @DAS15742 @DAS16764 @Not_Ready
