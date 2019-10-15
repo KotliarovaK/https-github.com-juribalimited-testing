@@ -1069,21 +1069,21 @@ this.FeatureBackground();
 
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatTheDropdownIsExpandedWithTheListOfAvailableO" +
-            "ptionsForSelecting")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatTheOrderByDropdownIsExpandedWithTheListOfAva" +
+            "ilableOptionsForSelecting")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS18163")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        public virtual void EvergreenJnr_DashboardsPage_CheckThatTheDropdownIsExpandedWithTheListOfAvailableOptionsForSelecting()
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatTheOrderByDropdownIsExpandedWithTheListOfAvailableOptionsForSelecting()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_DashboardsPage_CheckThatTheDropdownIsExpandedWithTheListOfAvailableOptionsForSelectingInternal();
+                    this.EvergreenJnr_DashboardsPage_CheckThatTheOrderByDropdownIsExpandedWithTheListOfAvailableOptionsForSelectingInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -1102,10 +1102,10 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_DashboardsPage_CheckThatTheDropdownIsExpandedWithTheListOfAvailableOptionsForSelectingInternal()
+        private void EvergreenJnr_DashboardsPage_CheckThatTheOrderByDropdownIsExpandedWithTheListOfAvailableOptionsForSelectingInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckThatTheDropdownIsExpandedWithTheListOfAvailableO" +
-                    "ptionsForSelecting", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckThatTheOrderByDropdownIsExpandedWithTheListOfAva" +
+                    "ilableOptionsForSelecting", null, new string[] {
                         "Evergreen",
                         "EvergreenJnr_DashboardsPage",
                         "Widgets",

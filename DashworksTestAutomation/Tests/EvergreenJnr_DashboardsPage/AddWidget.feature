@@ -190,7 +190,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTheAggregateFunctionAndAggregateB
 	Then Widget Preview is displayed to the user
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18163 @Cleanup
-Scenario: EvergreenJnr_DashboardsPage_CheckThatTheDropdownIsExpandedWithTheListOfAvailableOptionsForSelecting
+Scenario: EvergreenJnr_DashboardsPage_CheckThatTheOrderByDropdownIsExpandedWithTheListOfAvailableOptionsForSelecting
 	When Dashboard with "DAS18163_Dashboard" name created via API and opened
 	When User clicks Edit mode trigger on Dashboards page
 	When User clicks 'ADD WIDGET' button
