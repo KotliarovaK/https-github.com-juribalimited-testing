@@ -561,7 +561,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateTextValue
 	When User selects 'One' option from 'Stage' autocomplete
 	When User selects 'Text Computer' option from 'Task' autocomplete
 	And User selects 'Update' in the 'Update Value' dropdown
-	When User selects 'To be updated' option from 'Value' autocomplete
+	When User enters 'To be updated' text to 'Value' textbox
 	And User clicks 'CREATE' button 
 	#Create Action
 	When User clicks "Automations" navigation link on the Admin page
