@@ -158,7 +158,8 @@ Examples:
 @Evergreen @DevicesLists @EvergreenJnr_Pivot @Pivot @DAS14263 @DAS16403 @DAS16407
 Scenario: EvergreenJnr_DevicesLists_CheckAddTeamsPermissionsOnDetailsPanel
 	When User clicks 'Devices' on the left-hand menu
-	And User selects 'Pivot' in the 'Create' dropdown
+	Then 'All Devices' list should be displayed to the user
+	When User selects 'Pivot' in the 'Create' dropdown
 	And User selects the following Row Groups on Pivot:
 	| RowGroups  |
 	| Compliance |
