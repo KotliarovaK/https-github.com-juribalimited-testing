@@ -52,55 +52,6 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
                 "Action panel is opened");
         }
 
-        [Then(@"following values are displayed in ""(.*)"" drop-down on Action panel:")]
-        public void ThenFollowingValuesAreDisplayedInDrop_DownOnActionPanel(string fieldName, Table table)
-        {
-            var field = _driver.NowAt<ActionsElement>();
-            field.GetDropdownOnActionPanelByName(fieldName).Click();
-            var action = _driver.NowAt<BaseDashboardPage>();
-            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            var actualList = action.OptionListOnActionsPanel.Select(value => value.Text).ToList();
-            Utils.Verify.AreEqual(expectedList, actualList, $"Values in {fieldName} drop-down are different");
-            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            page.BodyContainer.Click();
-        }
-
-        [Then(@"following values are presented in ""(.*)"" drop-down on Action panel:")]
-        public void ThenFollowingValuesArePresentedInDrop_DownOnActionPanel(string fieldName, Table table)
-        {
-            var field = _driver.NowAt<ActionsElement>();
-            field.GetDropdownOnActionPanelByName(fieldName).Click();
-            var action = _driver.NowAt<BaseDashboardPage>();
-            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            var actualList = action.OptionListOnActionsPanel.Select(value => value.Text).ToList();
-
-            foreach (var expectedIem in expectedList)
-            {
-                Assert.That(actualList.Contains(expectedIem), Is.True, $"Values in {fieldName} drop-down is missing");
-            }
-
-            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            page.BodyContainer.Click();
-        }
-
-        [Then(@"following values are not presented in ""(.*)"" drop-down on Action panel:")]
-        public void ThenFollowingValuesAreNotPresentedInDrop_DownOnActionPanel(string fieldName, Table table)
-        {
-            var field = _driver.NowAt<ActionsElement>();
-            field.GetDropdownOnActionPanelByName(fieldName).Click();
-            var action = _driver.NowAt<BaseDashboardPage>();
-            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            var actualList = action.OptionListOnActionsPanel.Select(value => value.Text).ToList();
-
-            foreach (var expectedIem in expectedList)
-            {
-                Assert.That(actualList, Does.Not.Contain(expectedIem), $"Values in {fieldName} drop-down is displayed");
-            }
-
-            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            page.BodyContainer.Click();
-        }
-
         //TODO looks like this section should be moved to BaseDashboard
         #region Action button
 
@@ -176,21 +127,6 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
         }
 
         #endregion
-
-        [Then(@"""(.*)"" button is not displayed")]
-        public void ThenButtonIsNotDisplayed(string buttonName)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            Verify.IsFalse(page.GetButtonByName(buttonName).Disabled(), $"{buttonName} is displayed");
-        }
-
-        //TODO move this this actionPanel
-        [Then(@"Actions menu is not displayed to the user")]
-        public void ThenActionsMenuIsNotDisplayedToTheUser()
-        {
-            var action = _driver.NowAt<ActionPanelPage>();
-            Verify.IsFalse(action.ActionsDropDown.Displayed(), "Actions menu is displayed");
-        }
 
         [Then(@"Objects to add panel is disabled")]
         public void ThenObjectsToAddPanelIsDisabled()

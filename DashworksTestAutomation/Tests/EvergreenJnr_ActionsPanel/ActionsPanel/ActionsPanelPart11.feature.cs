@@ -613,7 +613,7 @@ this.FeatureBackground();
             table10.AddRow(new string[] {
                         "Slot 17639"});
 #line 118
- testRunner.Then("following values are presented in \"Capacity Slot\" drop-down on Action panel:", ((string)(null)), table10, "Then ");
+ testRunner.Then("User sees that \'Capacity Slot\' dropdown contains following options:", ((string)(null)), table10, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -759,7 +759,7 @@ this.FeatureBackground();
             table12.AddRow(new string[] {
                         "Slot17833_2"});
 #line 153
- testRunner.Then("following values are presented in \"Capacity Slot\" drop-down on Action panel:", ((string)(null)), table12, "Then ");
+ testRunner.Then("User sees that \'Capacity Slot\' dropdown contains following options:", ((string)(null)), table12, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

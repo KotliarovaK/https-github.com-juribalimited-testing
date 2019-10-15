@@ -93,9 +93,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatActionPanelImplementedForItemDetails
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
 	When User navigates to the 'Users' left menu item
 	Then "ADD USERS" Action button is displayed
-	Then Actions drop-down is displayed on the Item Details page
-	When User clicks Actions button on the Item Details page
-	When User clicks "Remove" button in Actions drop-down on the Item Details page
+	Then 'Actions' dropdown is displayed
+	When User selects 'Remove' in the 'Actions' dropdown
 	Then "REMOVE" Action button is displayed 
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16338

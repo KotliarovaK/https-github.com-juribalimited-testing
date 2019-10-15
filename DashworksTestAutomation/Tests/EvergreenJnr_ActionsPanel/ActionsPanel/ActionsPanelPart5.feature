@@ -33,7 +33,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatProjectFieldIsDisplayedCorrectlyAf
 	| SelectedRowsName                 |
 	| 00A5B910A1004CF5AC4@bclabs.local |
 	And User selects 'Bulk update' in the 'Action' dropdown
-	Then following values are displayed in "Bulk Update Type" drop-down on Action panel:
+	Then following Values are displayed in the 'Bulk Update Type' dropdown:
 	| Options              |
 	| Update bucket        |
 	| Update capacity unit |

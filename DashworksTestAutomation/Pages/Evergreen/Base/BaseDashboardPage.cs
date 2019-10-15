@@ -882,12 +882,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return GetButtonByName(button, this.GetStringByFor(() => this.PopupElement));
         }
 
-        public IWebElement GetButtonByName(string button, string parentElementSelector = "")
+        public IWebElement GetButtonByName(string button, string parentElementSelector = "", WebDriverExtensions.WaitTime waitTime = WebDriverExtensions.WaitTime.Long)
         {
+            var time = int.Parse(waitTime.GetValue());
             var selector = By.XPath(
                 $"{parentElementSelector}//span[text()='{button}']/ancestor::button");
             Driver.WaitForDataLoading();
-            Driver.WaitForElementsToBeDisplayed(selector, 30, false);
+            Driver.WaitForElementsToBeDisplayed(selector, time, false);
             return Driver.FindElements(selector).First(x => x.Displayed());
         }
 

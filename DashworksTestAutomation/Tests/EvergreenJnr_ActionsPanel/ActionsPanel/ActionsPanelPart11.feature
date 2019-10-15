@@ -115,7 +115,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSlotIsDisplayedInDDLIfSelectDateWith
 	And User selects 'Migrated Date' option from 'Task' autocomplete
 	And User selects 'Update' in the 'Update Date' dropdown
 	When User enters next 'Tuesday' day to 'Date' textbox
-	Then following values are presented in "Capacity Slot" drop-down on Action panel:
+	Then User sees that 'Capacity Slot' dropdown contains following options:
 	| Options    |
 	| None       |
 	| Slot 17639 |
@@ -150,7 +150,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFullSlotIsDisplayedWhileRulesShouldH
 	And User selects 'Migrated Date' option from 'Task' autocomplete
 	And User selects 'Update' in the 'Update Date' dropdown
 	When User enters next 'Tuesday' day to 'Date' textbox
-	Then following values are presented in "Capacity Slot" drop-down on Action panel:
+	Then User sees that 'Capacity Slot' dropdown contains following options:
 	| Options    |
 	| None       |
 	| Slot17833_1|
