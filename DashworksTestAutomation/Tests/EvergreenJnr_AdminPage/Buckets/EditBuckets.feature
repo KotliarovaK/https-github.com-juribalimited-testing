@@ -16,7 +16,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNotificationMessageIsDisplayedAfterUpd
 	Then Page with 'Buckets' header is displayed to user
 	When User enters "TestBucket2" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
-	Then "TestBucket2" bucket details is displayed to the user
+	Then Page with 'TestBucket2' header is displayed to user
 	When User updates the "Default Bucket" checkbox state
 	And User clicks Update Bucket button on the Buckets page
 	Then Success message The "TestBucket2" bucket has been updated is displayed on the Buckets page

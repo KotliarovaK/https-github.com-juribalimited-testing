@@ -53,10 +53,5 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             var tab = Driver.FindElement(By.XPath($".//div[contains(@class, 'menuItems')]/a/span[text()='{tabName}']"));
             tab.Click();
         }
-
-        public bool AppropriateTeamName(string teamName)
-        {
-            return Driver.IsElementDisplayed(By.XPath($".//h1[text()='{teamName}']"));
-        }
     }
 }

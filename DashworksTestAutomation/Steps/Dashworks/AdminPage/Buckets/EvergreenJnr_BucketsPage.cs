@@ -92,14 +92,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             createBucketElement.GetDefaultCheckboxByName(checkbox).Click();
         }
 
-        [Then(@"""(.*)"" bucket details is displayed to the user")]
-        public void ThenBucketDetailsIsDisplayedToTheUser(string bucketName)
-        {
-            var teamElement = _driver.NowAt<BucketsPage>();
-            Utils.Verify.IsTrue(teamElement.AppropriateBucketName(bucketName),
-                $"{bucketName} is not displayed on the Bucket page");
-        }
-
         [Then(@"Move To Another Bucket Page is displayed to the user")]
         public void ThenMoveToAnotherBucketPageIsDisplayedToTheUser()
         {

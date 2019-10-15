@@ -394,7 +394,7 @@ this.FeatureBackground();
 #line 81
  testRunner.When("Project created via API and opened", ((string)(null)), table4, "When ");
 #line 84
- testRunner.Then("Project \"17122_Project\" is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Page with \'17122_Project\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 85
  testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 86

@@ -10,7 +10,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedObjectsAreDisplayedAfterChang
 	When Project created via API and opened
 	| ProjectName   | Scope       | ProjectTemplate | Mode               |
 	| TestProject20 | All Devices | None            | Standalone Project |
-	Then Project "TestProject20" is displayed to user
+	Then Page with 'TestProject20' header is displayed to user
 	When User navigates to the 'Details' left menu item
 	And User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
 	When User navigates to the 'Scope' left menu item

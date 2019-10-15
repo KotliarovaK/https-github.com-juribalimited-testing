@@ -80,7 +80,7 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForMailboxScopedProject
 	Then Page with 'Projects' header is displayed to user
 	When User enters "Email Migration" text in the Search field for "Project" column
 	And User clicks content from "Project" column
-	Then Project "Email Migration" is displayed to user
+	Then Page with 'Email Migration' header is displayed to user
 	When User navigates to the 'Rings' left menu item
 	Then "729" content is displayed in "Mailboxes" column
 	Then Columns on Admin page is displayed in following order:

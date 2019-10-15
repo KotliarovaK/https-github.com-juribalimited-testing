@@ -10,7 +10,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatRingsOptionMapsToEvergreenCanBeChanged
 	When Project created via API and opened
 	| ProjectName        | Scope       | ProjectTemplate | Mode                            |
 	| ProjectForDAS14780 | All Devices | None            | Clone from Evergreen to Project |
-	Then Project "ProjectForDAS14780" is displayed to user
+	Then Page with 'ProjectForDAS14780' header is displayed to user
 	When User navigates to the 'Details' left menu item
 	Then 'Clone evergreen rings to project rings' content is displayed in 'Rings' dropdown
 	When User navigates to the 'Rings' left menu item
@@ -69,7 +69,7 @@ Scenario: EvergreenJnr_AdminPage_CheckProjectDetailFormAndRingDropdown
 	When User clicks "Projects" navigation link on the Admin page
 	When User enters "New_14690_Project" text in the Search field for "Project" column
 	And User clicks content from "Project" column
-	Then Project "New_14690_Project" is displayed to user
+	Then Page with 'New_14690_Project' header is displayed to user
 	When User navigates to the 'Details' left menu item
 	Then 'Clone evergreen buckets to project buckets' content is displayed in 'Buckets' dropdown
 	Then 'Clone evergreen rings to project rings' content is displayed in 'Rings' dropdown

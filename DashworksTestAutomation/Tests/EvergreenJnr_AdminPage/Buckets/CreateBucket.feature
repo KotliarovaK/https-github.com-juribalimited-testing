@@ -37,7 +37,7 @@ Scenario: EvergreenJnr_AdminPage_CreatingDefaultBucket
 	| Name        | TeamName | IsDefault |
 	| TestBucket5 | Admin IT | true      |
 	And User navigates to newly created Bucket
-	Then "TestBucket5" bucket details is displayed to the user
+	Then Page with 'TestBucket5' header is displayed to user
 	When User enters "NewBucket5" in the "Bucket Name" field
 	And User selects "I-Team" team in the Team dropdown on the Buckets page
 	And User clicks 'UPDATE' button 

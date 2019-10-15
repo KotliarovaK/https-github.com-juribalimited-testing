@@ -24,17 +24,14 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
-            return new List<By>
-            {
-                SelectorFor(this, p => p.PanelHeaderElement)
-            };
+            return new List<By> { };
         }
 
         public bool IsPanelOpened(string panelTitleText)
         {
             try
             {
-                Driver.WaitForElementToContainsText(PanelTitle, panelTitleText);
+                Driver.WaitForElementToContainsText(PanelTitle, panelTitleText, 10);
                 return true;
             }
             catch

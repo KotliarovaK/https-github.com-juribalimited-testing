@@ -27,7 +27,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitInAProjectMappedTo
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS14218
 Scenario: EvergreenJnr_AdminPage_CheckingMapsToEvergreenColumnDisplayedForDifferentProjectTypes
 	When User navigates to "User Evergreen Capacity Project" project details
-	Then Project "User Evergreen Capacity Project" is displayed to user
+	Then Page with 'User Evergreen Capacity Project' header is displayed to user
 	When User navigates to the 'Capacity' left menu item
 	And User selects "Units" tab on the Project details page
 	When User enters "1" text in the Search field for "Capacity Unit" column

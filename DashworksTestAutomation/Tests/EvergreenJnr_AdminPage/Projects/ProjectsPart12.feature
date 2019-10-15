@@ -56,7 +56,7 @@ Scenario: EvergreenJnr_AdminPage_AddingAndDeletingPermissionsForMailboxProject
 	When Project created via API and opened
 	| ProjectName   | Scope         | ProjectTemplate | Mode               |
 	| TestName12581 | All Mailboxes | None            | Standalone Project |
-	Then Project "TestName12581" is displayed to user
+	Then Page with 'TestName12581' header is displayed to user
 	When User selects "Scope" tab on the Project details page
 	When User selects "Scope Changes" tab on the Project details page
 	And User navigates to the 'Users' tab on Project Scope Changes page
@@ -152,7 +152,7 @@ Scenario: EvergreenJnr_AdminPage_AddingRequestTypesAndCategories
 	Then Page with 'Projects' header is displayed to user
 	When User enters "TestName18" text in the Search field for "Project" column
 	And User clicks content from "Project" column
-	Then Project "TestName18" is displayed to user
+	Then Page with 'TestName18' header is displayed to user
 	When User changes Path to "18RequestTypeName"
 	And User changes Category to "18MailboxCategory"
 	And User selects "Scope Details" tab on the Project details page

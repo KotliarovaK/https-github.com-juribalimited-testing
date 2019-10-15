@@ -256,7 +256,7 @@ this.FeatureBackground();
 #line 33
  testRunner.When("Project created via API and opened", ((string)(null)), table4, "When ");
 #line 36
- testRunner.Then("Project \"10_Project13096\" is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Page with \'10_Project13096\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 37
  testRunner.When("User click on Back button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 38
@@ -379,7 +379,7 @@ this.FeatureBackground();
 #line 65
  testRunner.When("Project created via API and opened", ((string)(null)), table5, "When ");
 #line 68
- testRunner.Then("Project \"TestProject12776\" is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Page with \'TestProject12776\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 69
  testRunner.When("User selects \"Scope\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 70
@@ -547,7 +547,7 @@ this.FeatureBackground();
 #line 114
  testRunner.When("Project created via API and opened", ((string)(null)), table11, "When ");
 #line 117
- testRunner.Then("Project \"TestProject12777\" is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Page with \'TestProject12777\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 118
  testRunner.Then("\'Clone evergreen buckets to project buckets\' content is displayed in \'Buckets\' dr" +
                     "opdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
