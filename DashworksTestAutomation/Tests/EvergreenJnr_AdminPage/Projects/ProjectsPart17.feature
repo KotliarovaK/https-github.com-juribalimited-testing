@@ -47,7 +47,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCo
 	When Project created via API and opened
 	| ProjectName  | Scope     | ProjectTemplate | Mode               |
 	| TestProject5 | All Users | None            | Standalone Project |
-	Then Project "TestProject5" is displayed to user
+	Then Page with 'TestProject5' header is displayed to user
 	When User selects "Scope" tab on the Project details page
 	When User selects "Scope Changes" tab on the Project details page
 	And User navigates to the 'Applications' tab on Project Scope Changes page
@@ -101,7 +101,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeleting
 	When User navigates to the 'Projects' left menu item
 	Then Page with 'Projects' header is displayed to user
 	When User clicks on 'TestProject1' cell from 'Project' column
-	Then Project "TestProject1" is displayed to user
+	Then Page with 'TestProject1' header is displayed to user
 	Then Warning message with "The scope for this project refers to a deleted list, this must be updated before proceeding" text is displayed on the Admin page
 	And Update Project buttons is disabled
 	When User selects "Scope Details" tab on the Project details page
@@ -114,7 +114,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	When Project created via API and opened
 	| ProjectName         | Scope       | ProjectTemplate | Mode               |
 	| TestProjectDAS11977 | All Devices | None            | Standalone Project |
-	Then Project "TestProjectDAS11977" is displayed to user
+	Then Page with 'TestProjectDAS11977' header is displayed to user
 	When User navigates to the 'Details' left menu item
 	And User changes Project Name to "NewProjectName"
 	And User changes Project Short Name to "NewShort4875"
@@ -163,7 +163,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	When Project created via API and opened
 	| ProjectName         | Scope       | ProjectTemplate | Mode               |
 	| TestProjectDAS11977 | All Devices | None            | Standalone Project |
-	Then Project "TestProjectDAS11977" is displayed to user
+	Then Page with 'TestProjectDAS11977' header is displayed to user
 	When User navigates to the 'Details' left menu item
 	And User changes Project Name to "NewProjectName"
 	And User changes Project Short Name to "NewShort4875"

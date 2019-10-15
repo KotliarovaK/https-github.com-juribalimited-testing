@@ -49,7 +49,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingUserScopePermissionsForMailboxProject
 	When Project created via API and opened
 	| ProjectName   | Scope         | ProjectTemplate | Mode               |
 	| TestName11881 | All Mailboxes | None            | Standalone Project |
-	Then Project "TestName11881" is displayed to user
+	Then Page with 'TestName11881' header is displayed to user
 	When User selects "Scope" tab on the Project details page
 	When User selects "Scope Details" tab on the Project details page
 	And User navigates to the 'User Scope' tab on Project Scope Changes page
@@ -75,7 +75,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingApplicationScopePermissionsForMailboxPr
 	When Project created via API and opened
 	| ProjectName   | Scope         | ProjectTemplate | Mode               |
 	| TestName12881 | All Mailboxes | None            | Standalone Project |
-	Then Project "TestName12881" is displayed to user
+	Then Page with 'TestName12881' header is displayed to user
 	When User selects "Scope" tab on the Project details page
 	And User selects "Scope Details" tab on the Project details page
 	And User navigates to the 'Application Scope' tab on Project Scope Changes page
@@ -103,7 +103,7 @@ Scenario: EvergreenJnr_AdminPage_OnboardingMailboxesUsersApplicationsObjectsUsin
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Info message is displayed and contains "There are no objects in this project, use Scope Changes to add objects to your project" text
-	Then Project "TestProject65" is displayed to user
+	Then Page with 'TestProject65' header is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Mailboxes to add (0 of 14784 selected)" is displayed to the user in the Project Scope Changes section
 	When User expands multiselect and selects following Objects

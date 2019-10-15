@@ -142,7 +142,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckThatExtraUnknownReadinessIsNotCrea
 	And User enters "DAS15989_TestProject" in the Project Name field on Import Project page
 	When User clicks Import Project button on the Import Project page
 	When User clicks newly created object link
-	Then Project "DAS15989_TestProject" is displayed to user
+	Then Page with 'DAS15989_TestProject' header is displayed to user
 	When User navigates to the 'Readiness' left menu item
 	Then "UNKNOWN" content is not displayed in the grid on the Project details page
 

@@ -29,7 +29,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedBucketsIsDisplayedForOnboarded
 	And Page with 'Projects' header is displayed to user
 	When User enters "UsersProject3" text in the Search field for "Project" column
 	And User clicks content from "Project" column
-	Then Project "UsersProject3" is displayed to user
+	Then Page with 'UsersProject3' header is displayed to user
 	When user selects "UsersProject3Group" in the Bucket dropdown
 	And User expands multiselect and selects following Objects
 	| Objects                               |
@@ -94,7 +94,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectScopeChangesIsLoadedSuc
 	When Project created via API and opened
 	| ProjectName | Scope      | ProjectTemplate | Mode               |
 	| <TestName>  | <MainList> | None            | Standalone Project |
-	Then Project "<TestName>" is displayed to user
+	Then Page with '<TestName>' header is displayed to user
 	When User selects "Scope" tab on the Project details page
 	When User selects '<ListToScope1>' in the 'Scope' dropdown with wait
 	And User navigates to the '<ScopeTab1>' tab on Project Scope Changes page
@@ -151,7 +151,7 @@ Scenario: EvergreenJnr_AdminPage_TheGreenBannerIsNotDisplayedIfBannerWasBeShownO
 	When Project created via API and opened
 	| ProjectName  | Scope       | ProjectTemplate | Mode               |
 	| Project12965 | All Devices | None            | Standalone Project |
-	Then Project "Project12965" is displayed to user
+	Then Page with 'Project12965' header is displayed to user
 	When User selects "Scope" tab on the Project details page
 	When User selects "Scope Changes" tab on the Project details page
 	And User navigates to the 'Devices' tab on Project Scope Changes page

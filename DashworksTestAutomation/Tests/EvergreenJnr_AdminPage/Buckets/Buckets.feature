@@ -177,7 +177,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketA
 	Then Page with 'Projects' header is displayed to user
 	When User enters "Project12905" text in the Search field for "Project" column
 	And User clicks content from "Project" column
-	Then Project "Project12905" is displayed to user
+	Then Page with 'Project12905' header is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
 	And User navigates to the 'Devices' tab on Project Scope Changes page
 	And User expands multiselect and selects following Objects
@@ -231,7 +231,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketA
 	Then Page with 'Projects' header is displayed to user
 	When User enters "Project12905" text in the Search field for "Project" column
 	And User clicks content from "Project" column
-	Then Project "Project12905" is displayed to user
+	Then Page with 'Project12905' header is displayed to user
 	When User selects "History" tab on the Project details page
 	When User enters "001BAQXT6JWFPI" text in the Search field for "Item" column
 	Then "Unassigned" content is displayed in "Bucket" column

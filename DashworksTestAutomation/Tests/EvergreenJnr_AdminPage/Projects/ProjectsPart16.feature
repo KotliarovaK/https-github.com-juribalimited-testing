@@ -207,7 +207,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingSortingOrderOfTheObjectsInTheProjectSco
 	When Project created via API and opened
 	| ProjectName      | Scope         | ProjectTemplate | Mode               |
 	| TestProject12645 | All Mailboxes | None            | Standalone Project |
-	Then Project "TestProject12645" is displayed to user
+	Then Page with 'TestProject12645' header is displayed to user
 	When User selects "Scope" tab on the Project details page
 	When User selects "Scope Changes" tab on the Project details page
 	When User expands multiselect to add objects

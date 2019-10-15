@@ -81,7 +81,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRedErrorMessageOnScopeChangesIfBrokenListI
 	When Project created via API and opened
 	| ProjectName   | Scope      | ProjectTemplate | Mode               |
 	| 17122_Project | 17122_List | None            | Standalone Project |
-	Then Project "17122_Project" is displayed to user
+	Then Page with '17122_Project' header is displayed to user
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User navigates to the "17122_List" list

@@ -10,7 +10,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatRedBannerWithOkMessageIsNotDisplaye
 	When Project created via API and opened
 	| ProjectName      | Scope       | ProjectTemplate | Mode               |
 	| TestProject12332 | All Devices | None            | Standalone Project |
-	Then Project "TestProject12332" is displayed to user
+	Then Page with 'TestProject12332' header is displayed to user
 	When User selects "Scope" tab on the Project details page
 	When User selects "Scope Changes" tab on the Project details page
 	When User expands multiselect to add objects
@@ -50,7 +50,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatNumberOfObjectIsUpdatedInTheSc
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
-	Then Project "<ProjectName>" is displayed to user
+	Then Page with '<ProjectName>' header is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
 	Then "<ObjectsCount>" is displayed to the user in the Project Scope Changes section
 	When User clicks '<ListName>' on the left-hand menu
@@ -66,7 +66,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatNumberOfObjectIsUpdatedInTheSc
 	Then 'Admin' list should be displayed to the user
 	When User enters "<ProjectName>" text in the Search field for "Project" column
 	And User clicks content from "Project" column
-	Then Project "<ProjectName>" is displayed to user
+	Then Page with '<ProjectName>' header is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
 	Then "<NewCount>" is displayed to the user in the Project Scope Changes section
 
@@ -91,7 +91,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatObjectsIsOnboardedToTheProjectWithClon
 	Then Success message is displayed and contains "The project has been created" text
 	And There are no errors in the browser console
 	When User clicks newly created object link
-	Then Project "TestProject19" is displayed to user
+	Then Page with 'TestProject19' header is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
 	And User expands multiselect and selects following Objects
 	| Objects         |

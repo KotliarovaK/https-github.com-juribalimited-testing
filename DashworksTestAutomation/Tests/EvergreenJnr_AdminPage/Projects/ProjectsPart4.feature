@@ -46,7 +46,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 	When Project created via API and opened
 	| ProjectName      | Scope     | ProjectTemplate | Mode               |
 	| TestProject12364 | All Users | None            | Standalone Project |
-	Then Project "TestProject12364" is displayed to user
+	Then Page with 'TestProject12364' header is displayed to user
 	When User selects "Scope" tab on the Project details page
 	Then Info message is displayed and contains "There are no objects in this project, use Scope Changes to add objects to your project" text
 	When User selects "Scope Changes" tab on the Project details page
@@ -129,6 +129,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedIfTryToRemove
 	Then Page with 'Projects' header is displayed to user
 	When User enters "TestName11729" text in the Search field for "Project" column
 	And User clicks content from "Project" column
-	Then Project "TestName11729" is displayed to user
+	Then Page with 'TestName11729' header is displayed to user
 	Then Warning message with "The scope for this project refers to a deleted list, this must be updated before proceeding" text is displayed on the Admin page
 	And There are no errors in the browser console

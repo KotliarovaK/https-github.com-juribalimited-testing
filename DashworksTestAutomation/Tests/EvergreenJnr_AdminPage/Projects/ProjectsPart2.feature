@@ -10,7 +10,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedAfterUpdati
 	When Project created via API and opened
 	| ProjectName  | Scope       | ProjectTemplate | Mode               |
 	| TestProject5 | All Devices | None            | Standalone Project |
-	Then Project "TestProject5" is displayed to user
+	Then Page with 'TestProject5' header is displayed to user
 	When User selects "Scope" tab on the Project details page
 	And User selects "Scope Details" tab on the Project details page
 	And User navigates to the 'Application Scope' tab on Project Scope Changes page
@@ -57,7 +57,7 @@ Scenario: EvergreenJnr_ChecksThatDeviceScopeDDLIsDisabledWhenDoNotIncludeOwnedDe
 	When User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
-	Then Project "Rainbow" is displayed to user
+	Then Page with 'Rainbow' header is displayed to user
 	When User selects "Scope Details" tab on the Project details page
 	And User navigates to the 'User Scope' tab on Project Scope Changes page
 	When User selects "Do not include device owners" checkbox on the Project details page
@@ -68,7 +68,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedCheckboxIsSelectedAfterSwitchi
 	When Project created via API and opened
 	| ProjectName   | Scope       | ProjectTemplate | Mode               |
 	| TestProject13 | All Devices | None            | Standalone Project |
-	Then Project "TestProject13" is displayed to user
+	Then Page with 'TestProject13' header is displayed to user
 	When User selects "Scope" tab on the Project details page
 	And User selects "Scope Changes" tab on the Project details page
 	And User navigates to the 'Devices' tab on Project Scope Changes page
@@ -117,7 +117,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedP
 	And Project created via API and opened
 	| ProjectName  | Scope     | ProjectTemplate | Mode               |
 	| NewProject15 | All Users | None            | Standalone Project |
-	Then Project "NewProject15" is displayed to user
+	Then Page with 'NewProject15' header is displayed to user
 	And Success message is not displayed on the Admin page
 	When User click on Back button
 	Then data in table is sorted by "Project" column in ascending order by default on the Admin page

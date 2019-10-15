@@ -91,7 +91,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectWithUseEvergreenCapacityUnitsIs
 	When User clicks 'CREATE PROJECT' button 
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
-	Then Project "13510TestProject" is displayed to user
+	Then Page with '13510TestProject' header is displayed to user
 	When User navigates to the 'Capacity' left menu item
 	And User selects 'Use project capacity units' in the 'Capacity Units' dropdown
 	And User clicks 'UPDATE' button 
