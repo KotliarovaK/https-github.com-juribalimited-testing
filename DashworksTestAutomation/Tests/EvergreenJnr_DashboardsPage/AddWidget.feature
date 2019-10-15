@@ -199,7 +199,17 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTheDropdownIsExpandedWithTheListO
 	| Bar        | WidgetForDAS16853 | 1803 Rollout | Hostname | Count distinct      | Hostname    |Hostname DESC | 10        |
 	When User clicks Ellipsis menu for "WidgetForDAS16853" Widget on Dashboards page
 	When User clicks "Edit" item from Ellipsis menu on Dashboards page
-	Then User is able to select "Hostname ASC" in the "Order By" Widget dropdown
-	Then User is able to select "Hostname DESC" in the "Order By" Widget dropdown
-	Then User is able to select "Hostname Count distinct ASC" in the "Order By" Widget dropdown
-	Then User is able to select "Hostname Count distinct DESC" in the "Order By" Widget dropdown
+	Then following Values are displayed in the 'Order By' dropdown:
+    | Dropdowns                    |
+    | Hostname ASC                 |
+    | Hostname DESC                |
+    | Hostname Count distinct ASC  |
+    | Hostname Count distinct DESC |
+	When User selects 'Hostname ASC' in the 'Order By' dropdown
+	Then 'Hostname ASC' content is displayed in 'Order By' dropdown
+	When User selects 'Hostname DESC' in the 'Order By' dropdown
+	Then 'Hostname DESC' content is displayed in 'Order By' dropdown
+	When User selects 'Hostname Count distinct ASC' in the 'Order By' dropdown
+	Then 'Hostname Count distinct ASC' content is displayed in 'Order By' dropdown
+	When User selects 'Hostname DESC' in the 'Order By' dropdown
+	Then 'Hostname DESC' content is displayed in 'Order By' dropdown

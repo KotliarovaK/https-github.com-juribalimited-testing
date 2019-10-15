@@ -1147,16 +1147,35 @@ this.FeatureBackground();
  testRunner.When("User clicks Ellipsis menu for \"WidgetForDAS16853\" Widget on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 201
  testRunner.When("User clicks \"Edit\" item from Ellipsis menu on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Dropdowns"});
+            table18.AddRow(new string[] {
+                        "Hostname ASC"});
+            table18.AddRow(new string[] {
+                        "Hostname DESC"});
+            table18.AddRow(new string[] {
+                        "Hostname Count distinct ASC"});
+            table18.AddRow(new string[] {
+                        "Hostname Count distinct DESC"});
 #line 202
- testRunner.Then("User is able to select \"Hostname ASC\" in the \"Order By\" Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 203
- testRunner.Then("User is able to select \"Hostname DESC\" in the \"Order By\" Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 204
- testRunner.Then("User is able to select \"Hostname Count distinct ASC\" in the \"Order By\" Widget dro" +
-                    "pdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 205
- testRunner.Then("User is able to select \"Hostname Count distinct DESC\" in the \"Order By\" Widget dr" +
-                    "opdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("following Values are displayed in the \'Order By\' dropdown:", ((string)(null)), table18, "Then ");
+#line 208
+ testRunner.When("User selects \'Hostname ASC\' in the \'Order By\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 209
+ testRunner.Then("\'Hostname ASC\' content is displayed in \'Order By\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 210
+ testRunner.When("User selects \'Hostname DESC\' in the \'Order By\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 211
+ testRunner.Then("\'Hostname DESC\' content is displayed in \'Order By\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 212
+ testRunner.When("User selects \'Hostname Count distinct ASC\' in the \'Order By\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 213
+ testRunner.Then("\'Hostname Count distinct ASC\' content is displayed in \'Order By\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 214
+ testRunner.When("User selects \'Hostname DESC\' in the \'Order By\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 215
+ testRunner.Then("\'Hostname DESC\' content is displayed in \'Order By\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
