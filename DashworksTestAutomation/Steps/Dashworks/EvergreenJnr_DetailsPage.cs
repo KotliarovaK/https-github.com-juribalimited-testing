@@ -9,6 +9,7 @@ using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.Base;
 using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
 using DashworksTestAutomation.Pages.Evergreen.ItemDetails;
+using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
@@ -134,13 +135,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
             Utils.Verify.IsTrue(detailsPage.GroupIcon.Displayed(), "Group con is not displayed to the user!");
             Utils.Verify.IsTrue(detailsPage.ItemDetailsContainer.Displayed(), "Details object page is not displayed to the user!");
-        }
-
-        [Then(@"Details page for ""(.*)"" item is displayed correctly")]
-        public void ThenDetailsPageForItemIsDisplayedCorrectly(string itemName)
-        {
-            var detailsPage = _driver.NowAt<DetailsPage>();
-            Utils.Verify.IsTrue(detailsPage.GetItemDetailsPageByName(itemName).Displayed(), $"Details page for {itemName} item is not loaded");
         }
 
         [Then(@"Image item from ""(.*)"" column is displayed to the user")]
