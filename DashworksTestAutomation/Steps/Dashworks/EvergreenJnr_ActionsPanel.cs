@@ -35,7 +35,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Verify.IsTrue(panel.ActionsPanel.Displayed(),
                 "Actions panel was not displayed");
 
-            Verify.IsTrue(panel.IsPanelOpened("Actions"),
+            Verify.IsTrue(panel.IsPanelOpened("ACTIONS"),
                 "Action panel is not opened");
 
             var button = _driver.NowAt<BaseHeaderElement>();
