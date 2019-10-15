@@ -1268,8 +1268,7 @@ this.FeatureBackground();
 #line 383
  testRunner.And("User selects \'Update capacity unit\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 384
- testRunner.And("User selects \"Evergreen\" option in \"Project or Evergreen\" drop-down on Action pan" +
-                    "el", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects \'Evergreen\' in the \'Also Move Users\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 385
  testRunner.And("User selects \'CapacityUnit13201\' option from \'Capacity Unit\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 386
@@ -1315,8 +1314,7 @@ this.FeatureBackground();
 #line 404
  testRunner.And("User selects \'Update capacity unit\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 405
- testRunner.And("User selects \"Evergreen\" option in \"Project or Evergreen\" drop-down on Action pan" +
-                    "el", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects \'Evergreen\' in the \'Also Move Users\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 406
  testRunner.And("User selects \'CapacityUnit13201\' option from \'Capacity Unit\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 407
@@ -1364,8 +1362,7 @@ this.FeatureBackground();
 #line 426
  testRunner.And("User selects \'Update capacity unit\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 427
- testRunner.And("User selects \"Evergreen\" option in \"Project or Evergreen\" drop-down on Action pan" +
-                    "el", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects \'Evergreen\' in the \'Also Move Users\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 428
  testRunner.And("User selects \'CapacityUnit13201\' option from \'Capacity Unit\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 429
@@ -1411,8 +1408,7 @@ this.FeatureBackground();
 #line 447
  testRunner.And("User selects \'Update capacity unit\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 448
- testRunner.And("User selects \"Evergreen\" option in \"Project or Evergreen\" drop-down on Action pan" +
-                    "el", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects \'Evergreen\' in the \'Also Move Users\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 449
  testRunner.And("User selects \'CapacityUnit13201\' option from \'Capacity Unit\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 450

@@ -52,16 +52,6 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
                 "Action panel is opened");
         }
 
-        [When(@"User selects ""(.*)"" option in ""(.*)"" drop-down on Action panel")]
-        public void WhenUserSelectsOptionInDrop_DownOnActionPanel(string option, string fieldName)
-        {
-            var field = _driver.NowAt<ActionsElement>();
-            field.GetDropdownOnActionPanelByName(fieldName).Click();
-            var action = _driver.NowAt<BaseDashboardPage>();
-            action.GetDropdownValueByName(option).Click();
-            _driver.WaitForDataLoading();
-        }
-
         [Then(@"following values are displayed in ""(.*)"" drop-down on Action panel:")]
         public void ThenFollowingValuesAreDisplayedInDrop_DownOnActionPanel(string fieldName, Table table)
         {

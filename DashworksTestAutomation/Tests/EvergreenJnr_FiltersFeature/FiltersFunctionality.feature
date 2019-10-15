@@ -381,7 +381,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	| 00KLL9S8NRF0X6   |
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
-	And User selects "Evergreen" option in "Project or Evergreen" drop-down on Action panel
+	And User selects 'Evergreen' in the 'Also Move Users' dropdown
 	And User selects 'CapacityUnit13201' option from 'Capacity Unit' autocomplete
 	And User clicks 'UPDATE' button 
 	When User clicks 'UPDATE' button
@@ -402,7 +402,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	| 00DBB114BE1B41B0A38 |
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
-	And User selects "Evergreen" option in "Project or Evergreen" drop-down on Action panel
+	And User selects 'Evergreen' in the 'Also Move Users' dropdown
 	And User selects 'CapacityUnit13201' option from 'Capacity Unit' autocomplete
 	And User clicks 'UPDATE' button 
 	When User clicks 'UPDATE' button
@@ -424,7 +424,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	| 01C4FB7C6D2C4F979BD@bclabs.local |
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
-	And User selects "Evergreen" option in "Project or Evergreen" drop-down on Action panel
+	And User selects 'Evergreen' in the 'Also Move Users' dropdown
 	And User selects 'CapacityUnit13201' option from 'Capacity Unit' autocomplete
 	And User clicks 'UPDATE' button 
 	When User clicks 'UPDATE' button
@@ -445,7 +445,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	| 7-Zip 9.20 (x64 edition) |
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
-	And User selects "Evergreen" option in "Project or Evergreen" drop-down on Action panel
+	And User selects 'Evergreen' in the 'Also Move Users' dropdown
 	And User selects 'CapacityUnit13201' option from 'Capacity Unit' autocomplete
 	And User clicks 'UPDATE' button 
 	When User clicks 'UPDATE' button
