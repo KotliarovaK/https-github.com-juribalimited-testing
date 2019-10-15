@@ -51,7 +51,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 "Action button is active");
 
             var panel = _driver.NowAt<BaseRightSideActionsPanel>();
-            Verify.IsFalse(panel.IsPanelOpened("Actions"),
+            Verify.IsFalse(panel.IsPanelOpened("ACTIONS"),
                 "Action panel is opened");
         }
 
