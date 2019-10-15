@@ -66,7 +66,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             //columnElement.MinimizeGroupButton.Click();
             //_driver.WaitWhileControlIsDisplayedObsolete<ColumnsElement>(() => columnElement.MinimizeGroupButton);
             //Close the Columns Panel
-            var listpageMenu = _driver.NowAt<BaseDashboardPage>();
+            var listpageMenu = _driver.NowAt<BaseHeaderElement>();
             listpageMenu.ColumnButton.Click();
         }
 
@@ -84,7 +84,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             //columnElement.MinimizeGroupButton.Click();
             //_driver.WaitWhileControlIsDisplayedObsolete<ColumnsElement>(() => columnElement.MinimizeGroupButton);
             //Close the Columns Panel
-            var listpageMenu = _driver.NowAt<BaseDashboardPage>();
+            var listpageMenu = _driver.NowAt<BaseHeaderElement>();
             listpageMenu.ColumnButton.Click();
         }
 
