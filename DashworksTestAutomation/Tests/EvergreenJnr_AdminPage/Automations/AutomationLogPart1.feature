@@ -202,7 +202,7 @@ Scenario: EvergreenJnr_AdminPage_CheckBrokenListValidationWhenRunningAnAutomatio
 	When User selects "Automation Start" checkbox from String Filter on the Admin page
 	Then "LIST HAS ERRORS" content is displayed for "Outcome" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AutomationLog @Automations @DAS17212 @Cleanup @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @AutomationLog @Automations @DAS17212 @Cleanup
 Scenario Outline: EvergreenJnr_AdminPage_CheckSuccessfulRunningAutomationWithMainListsInTheScope
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user

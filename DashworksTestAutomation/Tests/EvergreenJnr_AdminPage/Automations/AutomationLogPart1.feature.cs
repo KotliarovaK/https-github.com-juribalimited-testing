@@ -818,7 +818,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS17212")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         [NUnit.Framework.TestCaseAttribute("17212_Devices", "All Devices", null)]
         [NUnit.Framework.TestCaseAttribute("17212_Users", "All Users", null)]
         [NUnit.Framework.TestCaseAttribute("17212_Applications", "All Applications", null)]
@@ -858,8 +857,7 @@ this.FeatureBackground();
                     "AutomationLog",
                     "Automations",
                     "DAS17212",
-                    "Cleanup",
-                    "Not_Ready"};
+                    "Cleanup"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
