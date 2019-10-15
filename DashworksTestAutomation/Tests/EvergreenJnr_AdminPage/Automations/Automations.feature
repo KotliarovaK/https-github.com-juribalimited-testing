@@ -694,7 +694,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeviceLisFiltertHasAppropriateAutomati
 	| DAS15949_Automation | DAS15949    | true   | false              | DAS15949_List | Manual |
 	And User navigates to the 'Actions' left menu item
 	#create action #1
-	And User clicks 'CREATE ACTION' button 
+	When User clicks 'CREATE ACTION' button
 	And User enters '15949_Action_1' text to 'Action Name' textbox
 	And User selects 'Update path' in the 'Action Type' dropdown
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
