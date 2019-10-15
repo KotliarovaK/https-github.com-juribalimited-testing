@@ -1844,7 +1844,7 @@ this.FeatureBackground();
 #line 563
  testRunner.And("User selects \'Update\' in the \'Update Value\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 564
- testRunner.When("User selects \'To be updated\' option from \'Value\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User enters \'To be updated\' text to \'Value\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 565
  testRunner.And("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 567

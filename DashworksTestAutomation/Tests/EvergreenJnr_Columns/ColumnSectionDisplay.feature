@@ -128,7 +128,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckTheColumnCategoriesUpdatesAfterAddi
 	Then 'All Applications' list should be displayed to the user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
-	When User select all rows
+	When User selects all rows on the grid
 	When User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "StaticList" name
 	Then "StaticList" list is displayed to user

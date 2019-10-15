@@ -1739,14 +1739,14 @@ this.FeatureBackground();
  testRunner.When("User selects \'USE ME FOR AUTOMATION(USR SCHDLD)\' option from \'Project\' autocomple" +
                     "te", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 491
- testRunner.When("User selects \'Stage 1\' in the \'Stage\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Stage 1\' option from \'Stage\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 492
  testRunner.When("User selects \'Radiobutton Readiness Date Owner Task (User)\' option from \'Task\' au" +
                     "tocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 493
  testRunner.And("User selects \'Update\' in the \'Update Value\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 494
- testRunner.And("User selects \'Started\' in the \'Value\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects \'Not Started\' in the \'Value\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 495
  testRunner.And("User selects \'Update\' in the \'Update Date\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 496
@@ -1793,8 +1793,8 @@ this.FeatureBackground();
 #line 514
  testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table21, "When ");
 #line 517
- testRunner.Then("\"STARTED\" content is displayed in \"USEMEFORA2: Stage 1 \\ Radiobutton Readiness Da" +
-                    "te Owner Task (User)\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"NOT STARTED\" content is displayed in \"USEMEFORA2: Stage 1 \\ Radiobutton Readines" +
+                    "s Date Owner Task (User)\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

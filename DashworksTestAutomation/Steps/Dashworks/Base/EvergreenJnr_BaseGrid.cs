@@ -22,6 +22,31 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             _driver = driver;
         }
 
+        #region Select content
+
+        [When(@"User deselect all rows on the grid")]
+        public void WhenUserDeselectAllRowsOnTheGrid()
+        {
+            SelectUnselectAllRows(false);
+        }
+
+        [When(@"User selects all rows on the grid")]
+        public void WhenUserSelectsAllRowsOnTheGrid()
+        {
+            SelectUnselectAllRows(true);
+        }
+
+        private void SelectUnselectAllRows(bool expectedCondition)
+        {
+            var dashboardPage = _driver.NowAt<BaseGridPage>();
+            _driver.SetEvergreenCheckboxState(dashboardPage.SelectAllCheckbox, expectedCondition);
+            _driver.WhatForElementToBeSelected(dashboardPage.SelectAllCheckbox, expectedCondition);
+            _driver.WaitForDataLoading();
+            _driver.WaitForDataLoadingInActionsPanel();
+        }
+
+        #endregion
+
         #region Export
 
         [Then(@"Export button is displayed in panel")]
@@ -30,7 +55,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var pivot = _driver.NowAt<BaseGridPage>();
             Utils.Verify.IsTrue(pivot.ExportListButton.Displayed(), "Export button is not displayed");
         }
-        
+
         #endregion
 
         #region Archived Devices

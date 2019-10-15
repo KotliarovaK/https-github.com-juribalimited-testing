@@ -11,7 +11,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorsAreDisplayedWhenCreateLis
 	Then 'All Users' list should be displayed to the user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
-	When User select all rows
+	When User selects all rows on the grid
 	And User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "Static_List_15432" name
 	And Dashboard with "Dashboard for DAS15432" name created via API and opened

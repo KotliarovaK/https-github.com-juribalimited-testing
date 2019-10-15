@@ -11,7 +11,7 @@ Scenario: EvergreenJnr_UsersList_SelectAllCheckboxStatusCheckAfterSearch
 	Then 'All Users' list should be displayed to the user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
-	When User select all rows
+	When User selects all rows on the grid
 	Then The number of rows selected matches the number of rows of the main object list
 	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
@@ -24,9 +24,9 @@ Scenario: EvergreenJnr_UsersList_SelectAllCheckboxStatusCheckAfterSearch
 	And "41339" selected rows are displayed in the Actions panel
 	And Clearing the agGrid Search Box
 	And Select All selectbox is checked
-	When User is deselect all rows
+	When User deselect all rows on the grid
 	Then "0" selected rows are displayed in the Actions panel
-	When User select all rows
+	When User selects all rows on the grid
 	Then The number of rows selected matches the number of rows of the main object list
 	And Select All selectbox is checked
 
@@ -36,7 +36,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatSelectAllCheckboxStatusAfterClo
 	Then 'All <PageName>' list should be displayed to the user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
-	When User select all rows
+	When User selects all rows on the grid
 	And User clicks the Actions button
 	Then Select all checkbox is not displayed
 
@@ -53,7 +53,7 @@ Scenario: EvergreenJnr_DevicesList_SearchWithinAllRows
 	Then 'All Devices' list should be displayed to the user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
-	When User select all rows
+	When User selects all rows on the grid
 	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria  | NumberOfRows |
 	| Mary            | 18           |
@@ -68,12 +68,12 @@ Scenario Outline: EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest
 	Then 'All <PageName>' list should be displayed to the user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
-	When User select all rows
+	When User selects all rows on the grid
 	Then "<SelectedRowsCount>" selected rows are displayed in the Actions panel
 	When User clicks the Actions button
 	Then Select all checkbox is not displayed
 	When User clicks the Actions button
-	And User select all rows
+	When User selects all rows on the grid
 	And User select "<Columnname>" rows in the grid
 	| SelectedRowsName  |
 	| <SelectedRowName> |
@@ -106,7 +106,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatSelectAllWorksCorrectlyForFilteredList
 	And table data is filtered correctly
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
-	When User select all rows
+	When User selects all rows on the grid
 	Then "41339" selected rows are displayed in the Actions panel
 
 @Evergreen @Mailboxes @Evergreen_ActionsPanel @AllCheckbox @DAS11894 @DAS12602
@@ -115,6 +115,6 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatAllCheckboxesAreCheckedAfterAFirst
 	Then 'All Mailboxes' list should be displayed to the user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
-	When User select all rows
+	When User selects all rows on the grid
 	Then All checkboxes are checked in the table
 	And The number of rows selected matches the number of rows of the main object list
