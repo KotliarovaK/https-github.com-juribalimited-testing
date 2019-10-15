@@ -137,13 +137,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.IsTrue(detailsPage.ItemDetailsContainer.Displayed(), "Details object page is not displayed to the user!");
         }
 
-        [Then(@"Details page for ""(.*)"" item is displayed correctly")]
-        public void ThenDetailsPageForItemIsDisplayedCorrectly(string itemName)
-        {
-            var detailsPage = _driver.NowAt<DetailsPage>();
-            Verify.IsTrue(detailsPage.DisplayedDetailsPageByName(itemName), $"Details page for {itemName} item is not loaded");
-        }
-
         [Then(@"Image item from ""(.*)"" column is displayed to the user")]
         public void ThenImageItemFromColumnIsDisplayedToTheUser(string columnName)
         {

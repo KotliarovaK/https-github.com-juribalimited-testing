@@ -446,6 +446,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS16067")]
+        [NUnit.Framework.CategoryAttribute("DAS18535")]
         public virtual void EvergreenJnr_DevicesList_CheckThatApplicationsInTheApplicationColumnAreLinksAndAfterClickingUserIsRedirectedCorrectApplication()
         {
             System.Exception lastException = null;
@@ -480,7 +481,8 @@ this.FeatureBackground();
                         "Devices",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS16067"});
+                        "DAS16067",
+                        "DAS18535"});
 #line 81
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
