@@ -114,7 +114,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	Then Page with 'Buckets' header is displayed to user
 	When User enters "Unassigned" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
-	Then "Unassigned" bucket details is displayed to the user
+	Then Page with 'Unassigned' header is displayed to user
 	When User updates the "Default Bucket" checkbox state
 	And User clicks Update Bucket button on the Buckets page
 	Then Success message The "Unassigned" bucket has been updated is displayed on the Buckets page

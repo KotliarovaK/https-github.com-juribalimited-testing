@@ -11,10 +11,10 @@ Scenario: EvergreenJnr_AdminPage_AddingDevicesFromBuckets
 	| Name        | TeamName | IsDefault |
 	| TestBucket6 | Admin IT | false     |
 	And User navigates to newly created Bucket
-	Then "TestBucket6" bucket details is displayed to the user
+	Then Page with 'TestBucket6' header is displayed to user
 	When User navigates to the 'Devices' tab on Project Scope Changes page
 	And User clicks 'ADD DEVICE' button 
-	And User navigates to the 'Add from buckets' left menu item on the Buckets page
+	And User navigates to the 'Add from buckets' left menu item
 	And User adds "Unassigned" objects to bucket
 	And User clicks 'ADD DEVICES' button 
 	Then Success message is displayed and contains "The selected devices have been added to the selected bucket" text
@@ -63,10 +63,10 @@ Scenario: EvergreenJnr_AdminPage_AddingMailboxesFromBuckets
 	| Name        | TeamName | IsDefault |
 	| TestBucket8 | Admin IT | false     |
 	And User navigates to newly created Bucket
-	Then "TestBucket8" bucket details is displayed to the user
+	Then Page with 'TestBucket8' header is displayed to user
 	When User navigates to the 'Mailboxes' left menu item
 	And User clicks 'ADD MAILBOX' button 
-	And User navigates to the 'Add from buckets' left menu item on the Buckets page
+	And User navigates to the 'Add from buckets' left menu item
 	And User adds "Unassigned" objects to bucket
 	And User clicks 'ADD MAILBOXES' button 
 	Then Success message is displayed and contains "The selected mailboxes have been added to the selected bucket" text
@@ -133,7 +133,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketA
 	Then Page with 'Buckets' header is displayed to user
 	When User enters "1Bucket12905" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
-	Then "1Bucket12905" bucket details is displayed to the user
+	Then Page with '1Bucket12905' header is displayed to user
 	When User clicks 'ADD DEVICE' button 
 	When User expands 'UPDATE INPUT DATA' multiselect and selects following Objects
 	| Objects         |
@@ -154,7 +154,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketA
 	When User click on Back button
 	When User enters "2Bucket12905" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
-	Then "2Bucket12905" bucket details is displayed to the user
+	Then Page with '2Bucket12905' header is displayed to user
 	When User clicks 'ADD DEVICE' button 
 	When User expands 'UPDATE INPUT DATA' multiselect and selects following Objects
 	| Objects         |
