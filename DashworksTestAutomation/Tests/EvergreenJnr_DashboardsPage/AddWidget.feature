@@ -192,11 +192,14 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTheAggregateFunctionAndAggregateB
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18163 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatTheDropdownIsExpandedWithTheListOfAvailableOptionsForSelecting
 	When Dashboard with "DAS18163_Dashboard" name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
-	And User clicks 'ADD WIDGET' button
+	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'ADD WIDGET' button
 	When User creates new Widget
 	| WidgetType | Title             | List         | SplitBy  | AggregateFunction   | AggregateBy | OrderBy      | MaxValues |
 	| Bar        | WidgetForDAS16853 | 1803 Rollout | Hostname | Count distinct      | Hostname    |Hostname DESC | 10        |
-	And User clicks Ellipsis menu for "WidgetForDAS16853" Widget on Dashboards page
-	And User clicks "Edit" item from Ellipsis menu on Dashboards page
-	And User selects "Hostname ASC" in the "Order By" Widget dropdown
+	When User clicks Ellipsis menu for "WidgetForDAS16853" Widget on Dashboards page
+	When User clicks "Edit" item from Ellipsis menu on Dashboards page
+	Then User is able to select "Hostname ASC" in the "Order By" Widget dropdown
+	Then User is able to select "Hostname DESC" in the "Order By" Widget dropdown
+	Then User is able to select "Hostname Count distinct ASC" in the "Order By" Widget dropdown
+	Then User is able to select "Hostname Count distinct DESC" in the "Order By" Widget dropdown

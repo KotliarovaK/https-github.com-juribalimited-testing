@@ -152,6 +152,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             createWidgetElement.SelectObjectForWidgetCreation(objectName);
         }
 
+        [Then(@"User is able to select ""(.*)"" in the ""(.*)"" Widget dropdown")]
+        public void ThenUserIsAbleToSelectInTheWidgetDropdown(string objectName, string dropdownName)
+        {
+            var createWidgetElement = _driver.NowAt<AddWidgetPage>();
+            _driver.WaitForDataLoading();
+            _driver.ClickByJavascript(createWidgetElement.GetDropdownForWidgetByName(dropdownName));
+            createWidgetElement.SelectObjectForWidgetCreation(objectName);
+        }
+
         [When(@"User enters ""(.*)"" as Widget Title")]
         public void WhenUserSetsWidgetTitle(string widgetTitle)
         {
