@@ -382,11 +382,9 @@ this.FeatureBackground();
 #line 63
  testRunner.And(string.Format("User navigates to the \'{0}\' tab on Project Scope Changes page", tab), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 64
- testRunner.When("User clicks \'Scope\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("User sees all lists displayed with icon in \'Scope\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 65
- testRunner.Then("User sees all lists displayed with icon in List dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 66
- testRunner.Then("User sees all lists icon displayed with tooltip in List dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("User sees all lists icon displayed with tooltip in \'Scope\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

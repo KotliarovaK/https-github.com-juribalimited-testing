@@ -457,18 +457,32 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 $"Incorrect error message color for '{placeholder}' field exclamation icon");
         }
 
-        [Then(@"User sees all lists displayed with icon in List dropdown")]
-        public void WhenUserSeesAllListDisplayedWithIcon()
+        [Then(@"User sees all lists displayed with icon in '(.*)' autocomplete")]
+        public void WhenUserSeesAllListDisplayedWithIconInTextBox(string dropdown)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
+            page.GetTextbox(dropdown).Click();
 
             Verify.That(page.GetIconsOfDropdownOptions().Count, Is.EqualTo(page.GetDropdownValues().Count), "Incorrect options in lists dropdown");
+            page.BodyContainer.Click();
         }
 
-        [Then(@"User sees all lists icon displayed with tooltip in List dropdown")]
-        public void ThenUserSeesAllListsIconDisplayedWithTooltip()
+        [Then(@"User sees all lists displayed with icon in '(.*)' dropdown")]
+        public void WhenUserSeesAllListDisplayedWithIconInDropdown(string dropdown)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
+            page.GetDropdown(dropdown).Click();
+
+            Verify.That(page.GetIconsOfDropdownOptions().Count, Is.EqualTo(page.GetDropdownValues().Count), "Incorrect options in lists dropdown");
+            page.BodyContainer.Click();
+        }
+
+        [Then(@"User sees all lists icon displayed with tooltip in '(.*)' autocomplete")]
+        public void ThenUserSeesAllListsIconDisplayedWithTooltipInTextBox(string dropdown)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.GetTextbox(dropdown).Click();
+
             var icons = page.GetIconsOfDropdownOptions();
             int attempts = 0;
 
@@ -485,6 +499,32 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
                 attempts++;
             }
+            page.BodyContainer.Click();
+        }
+
+        [Then(@"User sees all lists icon displayed with tooltip in '(.*)' dropdown")]
+        public void ThenUserSeesAllListsIconDisplayedWithTooltipInDropdown(string dropdown)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.GetDropdown(dropdown).Click();
+
+            var icons = page.GetIconsOfDropdownOptions();
+            int attempts = 0;
+
+            foreach (var icon in icons)
+            {
+                //check for first three
+                if (attempts == 3)
+                    break;
+
+                _driver.MouseHover(icon);
+                var toolTipText = _driver.GetTooltipText();
+
+                Utils.Verify.That(new List<string> { "System", "Private", "Shared" }, Does.Contain(toolTipText), "Unexpected/missing tooltip");
+
+                attempts++;
+            }
+            page.BodyContainer.Click();
         }
 
         #endregion

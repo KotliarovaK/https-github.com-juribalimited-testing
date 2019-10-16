@@ -988,7 +988,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         public IList<IWebElement> GetIconsOfDropdownOptions()
         {
-            return Driver.FindElements(By.XPath(".//span[@class='mat-option-text']//i[contains(@class, 'material-icons')]"));
+            Driver.WaitForElementsToBeDisplayed(By.XPath(_dropdownOptions));
+            return Driver.FindElements(By.XPath($"{_dropdownOptions}/preceding-sibling::i[contains(@class, 'material-icons')]"));
         }
         #endregion
 
