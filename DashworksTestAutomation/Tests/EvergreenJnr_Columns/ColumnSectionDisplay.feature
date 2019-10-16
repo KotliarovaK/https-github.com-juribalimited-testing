@@ -305,7 +305,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromThe
 	| 00YWR8TJU4ZF8V   |
 	| 00RUUMAH9OZN9A   |
 	And User selects 'Add to static list' in the 'Action' dropdown
-	Then "ADD" Action button is disabled
+	Then 'ADD' button is disabled
 	And User selects "StaticListFromTheAllList" List in Saved List dropdown
 	When User clicks 'ADD' button 
 	Then "4" rows are displayed in the agGrid

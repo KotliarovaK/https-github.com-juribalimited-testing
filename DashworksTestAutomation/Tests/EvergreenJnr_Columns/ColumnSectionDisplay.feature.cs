@@ -1340,7 +1340,7 @@ this.FeatureBackground();
 #line 307
  testRunner.And("User selects \'Add to static list\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 308
- testRunner.Then("\"ADD\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'ADD\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 309
  testRunner.And("User selects \"StaticListFromTheAllList\" List in Saved List dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 310

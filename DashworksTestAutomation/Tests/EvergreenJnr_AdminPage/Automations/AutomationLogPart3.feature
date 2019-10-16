@@ -150,8 +150,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedU
 	And User selects 'No change' in the 'Update Value' dropdown
 	And User selects 'No change' in the 'Update Date' dropdown
 	When User selects 'No change' in the 'Update Owner' dropdown
-	Then "CREATE" Action button is disabled
-	Then "SAVE AND CREATE ANOTHER" Action button is disabled
+	Then 'CREATE' button is disabled
+	Then 'SAVE AND CREATE ANOTHER' button is disabled
 	Then 'CREATE' Action button has tooltip with 'Select at least one value to change' text
 	Then 'SAVE AND CREATE ANOTHER' Action button has tooltip with 'Select at least one value to change' text
 

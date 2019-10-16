@@ -721,7 +721,7 @@ this.FeatureBackground();
 #line 155
  testRunner.And("User changes value to \"1\" for \"Tuesday\" day column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 156
- testRunner.Then("\"UPDATE\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 157
  testRunner.Then("\'UPDATE\' Action button has tooltip with \'This slot cannot be saved because it is " +
                     "associated to at least 1 unpublished task (Stage13812 \\ 1Task13812)\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -769,7 +769,7 @@ this.FeatureBackground();
 #line 176
  testRunner.And("User changes value to \"1\" for \"Tuesday\" day column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 177
- testRunner.Then("\"UPDATE\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'UPDATE\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

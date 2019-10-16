@@ -597,7 +597,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             Verify.IsTrue(page.GetButtonByName(buttonName, "", WebDriverExtensions.WaitTime.Medium).Displayed(),
-                $"'{buttonName}' is displayed");
+                $"'{buttonName}' button is displayed");
         }
 
         [Then(@"'(.*)' button is not displayed")]
@@ -605,7 +605,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             Verify.IsFalse(page.GetButtonByName(buttonName, "", WebDriverExtensions.WaitTime.Short).Displayed(),
-                $"'{buttonName}' is displayed");
+                $"'{buttonName}' button is displayed");
         }
 
         [Then(@"'(.*)' button is disabled")]
@@ -613,15 +613,18 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             Verify.IsTrue(page.GetButtonByName(buttonName, "", WebDriverExtensions.WaitTime.Medium).Disabled(),
-                $"'{buttonName}' is displayed");
+                $"'{buttonName}' button is displayed");
         }
 
         [Then(@"'(.*)' button is not disabled")]
         public void ThenButtonIsNotDisabled(string buttonName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            Verify.IsFalse(page.GetButtonByName(buttonName, "", WebDriverExtensions.WaitTime.Short).Disabled(),
-                $"'{buttonName}' is displayed");
+            var button = page.GetButtonByName(buttonName, "", WebDriverExtensions.WaitTime.Short);
+            Verify.IsTrue(button.Displayed(),
+                $"'{buttonName}' button is not displayed");
+            Verify.IsFalse(button.Disabled(),
+                $"'{buttonName}' button is displayed");
         }
 
         #endregion
