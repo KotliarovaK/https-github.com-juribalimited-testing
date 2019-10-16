@@ -122,6 +122,7 @@ Scenario: EvergreenJnr_DevicesList_CheckTooltipDisplayingInDatePickerOfBulkUpdat
 	Then User sees that 'Capacity Slot' dropdown contains following options:
 	| Options                    |
 	| Birmingham Morning         |
+	| Manchester Morning         |
 	| London - City Morning      |
 	| London - Southbank Morning |
 	| London Depot 09:00 - 11:00 |

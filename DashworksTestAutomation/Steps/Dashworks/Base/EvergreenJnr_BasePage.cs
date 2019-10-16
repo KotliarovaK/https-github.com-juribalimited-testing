@@ -454,8 +454,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.GetDropdown(dropDownName).Click();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var actualList = page.GetDropdownValues();
-            page.BodyContainer.Click();
-            Verify.AreEqual(expectedList, actualList, $"Value for '{dropDownName}' are different");
 
             foreach (var expectedIem in expectedList)
             {
