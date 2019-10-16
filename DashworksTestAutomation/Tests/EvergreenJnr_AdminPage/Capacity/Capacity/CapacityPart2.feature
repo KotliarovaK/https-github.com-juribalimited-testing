@@ -71,8 +71,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreated
 	Then URL contains "capacity/units/unit/"
 	And "Default Unit" checkbox is checked and cannot be unchecked
 	#DAS-13151
-	And "UPDATE" Action button is disabled
-	And "CANCEL" Action button is enabled
+	And 'UPDATE' button is disabled
+	And 'CANCEL' button is not disabled
 	When User navigates to the 'Capacity' left menu item
 	And User selects "Units" tab on the Project details page
 	And User enters "CapacityUnit12672" text in the Search field for "Capacity Unit" column
@@ -144,4 +144,4 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitWithEmptyNam
 	And User clicks 'CREATE PROJECT CAPACITY UNIT' button 
 	And User enters ' ' text to 'Capacity Unit Name' textbox
 	And User enters '13945' text to 'Description' textbox
-	Then "CREATE" Action button is disabled
+	Then 'CREATE' button is disabled

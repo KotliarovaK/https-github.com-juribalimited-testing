@@ -1,0 +1,109 @@
+﻿Feature: CreateActionsPart2
+	Create Actions functionality tests
+
+Background: Pre-Conditions
+	Given User is logged in to the Evergreen
+	Then Evergreen Dashboards page should be displayed to the user
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17615 @DAS17617 @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithUpdateOwnerIsLoadedCorrectly
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User creates new Automation via API
+	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
+	| 17617_Automation | 17617       | true   | false              | All Devices | Manual |
+	When User navigates to the 'Automations' left menu item
+	Then Page with 'Automations' header is displayed to user
+	When User enters "17617_Automation" text in the Search field for "Automation" column
+	And User clicks content from "Automation" column
+	And User navigates to the 'Actions' left menu item
+	#Create Action
+	When User clicks 'CREATE ACTION' button 
+	When User enters 'Update Migrated devices' text to 'Action Name' textbox
+	And User selects 'Update task value' in the 'Action Type' dropdown
+	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
+	When User selects 'One' option from 'Stage' autocomplete
+	When User selects 'Radio Rag Date Owner Comp Req B' option from 'Task' autocomplete
+	And User selects 'No change' in the 'Update Value' dropdown
+	And User selects 'No change' in the 'Update Date' dropdown
+	And User selects 'Update' in the 'Update Owner' dropdown
+	And User selects "1803 Team" Team on Action panel
+	And User selects "Akhila Varghese" Owner on Action panel
+	And User clicks 'CREATE' button 
+	When User clicks "Automations" navigation link on the Admin page
+	When User enters "17617_Automation" text in the Search field for "Automation" column
+	When User clicks content from "Automation" column
+	When User navigates to the 'Actions' left menu item
+	When User clicks content from "Action" column
+	#Actions content check
+	Then "Update Migrated devices" content is displayed in "Action Name" field
+	Then 'Update task value' content is displayed in 'Action Type' dropdown
+	And 'One' content is displayed in 'Stage' textbox
+	And 'Radio Rag Date Owner Comp Req B' content is displayed in 'Task' textbox
+	Then 'No change' value is displayed in the 'Update Value' dropdown
+	Then 'No change' value is displayed in the 'Update Date' dropdown
+	Then 'Update' value is displayed in the 'Update Owner' dropdown
+	Then "1803 Team" content is displayed in "Team" field
+	Then "Akhila Varghese" content is displayed in "Owner" field
+
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18432 @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckThatTheFieldIsBlankAfterChangingProject
+	When Project created via API and opened
+	| ProjectName  | Scope       | ProjectTemplate | Mode               |
+	| 18432Project | All Devices | None            | Standalone Project |
+	When User clicks 'Projects' on the left-hand menu
+	Then "Projects Home" page is displayed to the user
+	When User navigate to "18432Project" Project
+	Then "Manage Project Details" page is displayed to the user
+	When User navigate to "Stages" tab
+	Then "Manage Stages" page is displayed to the user
+	When User clicks "Create Stage" button
+	And User create Stage
+	| StageName   |
+	| 18432_Stage |
+	And User clicks "Create Stage" button
+	And User navigate to "Tasks" tab
+	Then "Manage Tasks" page is displayed to the user
+	When User clicks "Create Task" button
+	And User creates Task
+	| Name       | Help  | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString | ApplyToAllCheckbox |
+	| 18432_Task | 18432 | 18432_Stage      | Normal         | Radiobutton     | Computer         |                          | false              |
+	Then Success message is displayed with "Task successfully created" text
+	When User publishes the task
+	Then selected task was published
+	When User navigate to Evergreen link
+	When User clicks 'Admin' on the left-hand menu
+	When User creates new Automation via API and open it
+	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
+	| 18432_Automation | 18432       | true   | false              | All Devices | Manual |
+	Then Automation page is displayed correctly
+	When User navigates to the 'Actions' left menu item
+	#Create Action
+	When User clicks 'CREATE ACTION' button 
+	When User enters '18432_Action' text to 'Action Name' textbox
+	When User selects 'Update task value' in the 'Action Type' dropdown
+	When User selects '18432Project' option from 'Project' autocomplete
+	When User selects '18432_Stage' option from 'Stage' autocomplete
+	When User selects '18432_Task' option from 'Task' autocomplete
+	When User selects 'Started' in the 'Value' dropdown
+	And User clicks 'CREATE' button 
+	#Create Action
+	When User clicks "Automations" navigation link on the Admin page
+	When User navigates to the 'Projects' left menu item
+	And User enters "18432Project" text in the Search field for "Project" column
+	And User selects all rows on the grid
+	And User removes selected item
+	When User navigates to the 'Automations' left menu item
+	When User enters "18432_Automation" text in the Search field for "Automation" column
+	When User clicks content from "Automation" column
+	Then Automation page is displayed correctly
+	When User navigates to the 'Actions' left menu item
+	When User clicks content from "Action" column
+	#Actions content check
+	Then '18432_Action' content is displayed in 'Action Name' textbox
+	Then 'Update task value' content is displayed in 'Action Type' dropdown
+	Then '[Project not found]' content is displayed in 'Project' textbox
+	When User selects '1803 Rollout' option from 'Project' autocomplete
+	Then '' content is displayed in 'Stage' textbox
+	When User selects 'Information' option from 'Stage' autocomplete
+	Then '' content is displayed in 'Task' textbox

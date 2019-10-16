@@ -26,7 +26,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckBucketBulkUpdateOptionsOnMailboxesList
 	| Owners only      |
 	| All linked users |
 	When User selects 'Owners only' in the 'Also Move Users' dropdown
-	Then "UPDATE" Action button is active
+	Then 'UPDATE' button is not disabled
 
 @Evergreen @Mailboxes @EvergreenJnr_ActionsPanel @BulkUpdate @DAS14563 @DAS13960 @DAS14162
 Scenario: EvergreenJnr_MailboxesList_CheckThatOnMailboxesListForBucketBulkUpdateOptionsOnlyDisplayedEvergreenOrMailboxScopedProjects 

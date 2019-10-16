@@ -18,9 +18,9 @@ Scenario: EvergreenJnr_DevicesList_CheckAddCustomFieldPopupUiAndTooltips
 	Then Details page for "QFI94WAUX17N4I" item is displayed to the user
 	When User navigates to the "Custom Fields" sub-menu on the Details page
 	And User clicks 'ADD CUSTOM FIELD' button 
-	Then "ADD" Action button is disabled
+	Then 'ADD' button is disabled
 	Then 'ADD' Action button has tooltip with 'Some values are missing or invalid' text
-	Then "CANCEL" Action button is enabled
+	Then 'CANCEL' button is not disabled
 	When User clicks Body container
 	Then 'Custom Field' autocomplete last option is 'FlDAS16487_1a'
 	And 'Custom Field' autocomplete does NOT have options
@@ -28,7 +28,7 @@ Scenario: EvergreenJnr_DevicesList_CheckAddCustomFieldPopupUiAndTooltips
 	| FlDAS16487_1b |
 	| FlDAS16487_1c |
 	When User selects 'FlDAS16487_1a' option after search from 'Custom Field' autocomplete
-	Then "ADD" Action button is enabled
+	Then 'ADD' button is not disabled
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @CustomFields @DAS16487 @Cleanup
 Scenario: EvergreenJnr_MailboxesList_CreateCustomFieldWithEmptyValue

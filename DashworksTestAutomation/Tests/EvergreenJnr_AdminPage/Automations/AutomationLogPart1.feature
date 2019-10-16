@@ -105,7 +105,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSuccessfulRunInOutcomeColumn
 	When User enters 'D16974_Automation' text to 'Automation Name' textbox
 	When User enters '1745104' text to 'Description' textbox
 	When User selects 'All Users' option from 'Scope' autocomplete
-	Then "CREATE" Action button is disabled
+	Then 'CREATE' button is disabled
 	When User selects 'Manual' in the 'Run' dropdown
 	And User clicks 'CREATE' button 
 	When User enters 'D16974_Action' text to 'Action Name' textbox

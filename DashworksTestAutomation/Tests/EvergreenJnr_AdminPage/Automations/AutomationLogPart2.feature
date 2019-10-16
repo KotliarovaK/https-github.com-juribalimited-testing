@@ -23,8 +23,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueActionDAS
 	And User selects 'Radiobutton Date App Task' option from 'Task' autocomplete
 	And User selects 'No change' in the 'Update Value' dropdown
 	And User selects 'No change' in the 'Update Date' dropdown
-	Then "CREATE" Action button is disabled
-	And "SAVE AND CREATE ANOTHER" Action button is disabled
+	Then 'CREATE' button is disabled
+	And 'SAVE AND CREATE ANOTHER' button is disabled
 	When User selects 'Update' in the 'Update Value' dropdown
 	And User selects 'Failed' in the 'Value' dropdown
 	And User selects 'Update' in the 'Update Date' dropdown

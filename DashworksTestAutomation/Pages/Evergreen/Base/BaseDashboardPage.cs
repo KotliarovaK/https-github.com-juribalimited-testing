@@ -932,7 +932,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         {
             try
             {
-                return GetDropdown(dropdownName, WebDriverExtensions.WaitTime.Short).Disabled();
+                return GetDropdown(dropdownName, WebDriverExtensions.WaitTime.Short).Displayed();
             }
             catch
             {
