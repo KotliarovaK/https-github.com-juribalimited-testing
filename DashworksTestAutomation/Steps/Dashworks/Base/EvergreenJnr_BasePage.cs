@@ -62,6 +62,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         #region Autocomplete
 
+        [When(@"User expands '(.*)' autocomplete")]
+        public void WhenUserExpandsAutocomplete(string placeholder)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.GetTextbox(placeholder).Click();
+        }
+
         [When(@"User selects '(.*)' option from '(.*)' autocomplete")]
         public void WhenUserSelectsOptionFromAutocomplete(string option, string placeholder)
         {
@@ -448,6 +455,36 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
             Verify.AreEqual("rgba(242, 88, 49, 1)", page.GetDropdownErrorMessageExclamationIcon(placeholder).GetCssValue("color"),
                 $"Incorrect error message color for '{placeholder}' field exclamation icon");
+        }
+
+        [Then(@"User sees all lists displayed with icon in List dropdown")]
+        public void WhenUserSeesAllListDisplayedWithIcon()
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+
+            Verify.That(page.GetIconsOfDropdownOptions().Count, Is.EqualTo(page.GetDropdownValues().Count), "Incorrect options in lists dropdown");
+        }
+
+        [Then(@"User sees all lists icon displayed with tooltip in List dropdown")]
+        public void ThenUserSeesAllListsIconDisplayedWithTooltip()
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var icons = page.GetIconsOfDropdownOptions();
+            int attempts = 0;
+
+            foreach (var icon in icons)
+            {
+                //check for first three
+                if (attempts == 3)
+                    break;
+
+                _driver.MouseHover(icon);
+                var toolTipText = _driver.GetTooltipText();
+
+                Utils.Verify.That(new List<string> { "System", "Private", "Shared" }, Does.Contain(toolTipText), "Unexpected/missing tooltip");
+
+                attempts++;
+            }
         }
 
         #endregion

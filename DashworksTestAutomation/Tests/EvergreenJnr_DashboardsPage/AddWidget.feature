@@ -213,3 +213,20 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTheOrderByDropdownIsExpandedWithT
 	Then 'Hostname Count distinct ASC' content is displayed in 'Order By' dropdown
 	When User selects 'Hostname DESC' in the 'Order By' dropdown
 	Then 'Hostname DESC' content is displayed in 'Order By' dropdown
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16842 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckImageAndTooltipDisplayingForListDropdown
+	When Dashboard with "DAS16842_Dashboard" name created via API and opened
+	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'ADD WIDGET' button
+	When User expands Widget List dropdown
+	Then User sees all lists displayed with icon in List dropdown
+	Then User sees all lists icon displayed with tooltip in List dropdown
+	When User creates new Widget
+	| WidgetType | Title             | List         | SplitBy  | AggregateFunction   | AggregateBy | OrderBy      |
+	| Bar        | WidgetForDAS16842 | 1803 Rollout | Hostname | Count distinct      | Hostname    |Hostname DESC |
+	Then "WidgetForDAS16842" Widget is displayed to the user
+	When User clicks Dashboards Details icon on Dashboards page
+	When User expands the list of shared lists
+	Then User sees list icon displayed for 'WidgetForDAS16842' widget in List section of Dashboards Details
+	Then User sees list icon displayed with tooltip for 'WidgetForDAS16842' widget in List section of Dashboards Details

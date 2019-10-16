@@ -702,5 +702,10 @@ namespace DashworksTestAutomation.Pages
             return columnNumber;
         }
 
+        public IWebElement GetListIconFromListSectionOfDetailsPanel(string listname)
+        {
+            var by = By.XPath($".//td[text()='{listname}']/following-sibling :: td/i");
+            return Driver.FindElement(by);
+        }
     }
 }

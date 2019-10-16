@@ -986,6 +986,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return exclamationIcon;
         }
 
+        public IList<IWebElement> GetIconsOfDropdownOptions()
+        {
+            return Driver.FindElements(By.XPath(".//span[@class='mat-option-text']//i[contains(@class, 'material-icons')]"));
+        }
         #endregion
 
         #region Datepicker
