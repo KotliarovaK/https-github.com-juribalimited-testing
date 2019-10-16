@@ -687,7 +687,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeviceLisFiltertHasAppropriateAutomati
 	When User clicks 'Devices' on the left-hand menu
 	And User clicks the Filters button
 	And User add "Device Type" filter where type is "Equals" with added column and "Virtual" Lookup option
-	And User create dynamic list with "DAS15949_List" name on "Devices" page
+	And User create dynamic list with "Das15949_list" name on "Devices" page
 	#create automation
 	And User creates new Automation via API and open it
 	| AutomationName      | Description | Active | StopOnFailedAction | Scope         | Run    |
@@ -709,6 +709,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeviceLisFiltertHasAppropriateAutomati
 	And User clicks 'CREATE' button
 	#run automation
 	When User clicks "Automations" navigation link on the Admin page
+	When User enters "DAS15949_Automation" text in the Search field for "Automation" column
 	And User clicks "Run now" option in Cog-menu for "DAS15949_Automation" item on Admin page and wait for processing
 	#check filters
 	And User clicks 'Devices' on the left-hand menu
