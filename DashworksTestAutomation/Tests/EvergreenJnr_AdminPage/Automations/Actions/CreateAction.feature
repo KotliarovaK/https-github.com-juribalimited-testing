@@ -51,7 +51,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckUpdateTaskValueEditPageLoadsProjec
 	When User selects '<Project>' option from 'Project' autocomplete
 	When User selects '<Stage>' option from 'Stage' autocomplete
 	When User selects '<Task>' option from 'Task' autocomplete
-	Then "CREATE" Action button is disabled
+	Then 'CREATE' button is disabled
 	When User selects 'Not Started' in the 'Value' dropdown
 	When User clicks 'CREATE' button 
 	When User clicks content from "Action" column
@@ -140,12 +140,12 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueAction
 	And User selects 'Update' in the 'Update Value' dropdown
 	And User selects 'Failed' in the 'Value' dropdown
 	And User selects 'No change' in the 'Update Date' dropdown
-	Then "CREATE" Action button is active
+	Then 'CREATE' button is not disabled
 	When User selects "No change" value for "Update" dropdown on Action panel
-	Then "CREATE" Action button is disabled
+	Then 'CREATE' button is disabled
 	When User selects "Update" value for "No change" dropdown on Action panel
 	And User selects 'Failed' in the 'Value' dropdown
-	Then "CREATE" Action button is active
+	Then 'CREATE' button is not disabled
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17615 @DAS17619 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithRemoveOwnerIsLoadedCorrectly

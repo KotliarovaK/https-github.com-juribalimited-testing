@@ -147,8 +147,8 @@ Scenario: EvergreenJnr_DevicesList_CheckResetButtonOnPivot
 	| Values     |
 	| Owner City |
 	#aggregate function?
-	Then "RUN PIVOT" Action button is active
-	And "SAVE" Action button is disabled
+	Then 'RUN PIVOT' button is not disabled
+	And 'SAVE' button is disabled
 	When User clicks reset button on main panel
 	Then 'ADD ROW GROUP' button is displayed
 	And 'ADD COLUMN' button is displayed
@@ -165,11 +165,11 @@ Scenario: EvergreenJnr_DevicesList_CheckResetButtonOnPivot
 	| Values     |
 	| Owner City |
 	#aggregate function?
-	Then "RUN PIVOT" Action button is active
-	And "SAVE" Action button is disabled
+	Then 'RUN PIVOT' button is not disabled
+	And 'SAVE' button is disabled
 	When User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
-	And "SAVE" Action button is active
+	And 'SAVE' button is not disabled
 	When User clicks reset button on main panel
 	Then 'ADD ROW GROUP' button is displayed
 	And 'ADD COLUMN' button is displayed
@@ -194,8 +194,8 @@ Scenario: EvergreenJnr_DevicesList_CheckResetButtonOnPivot
 	Then 'ADD ROW GROUP' button is displayed
 	And 'ADD COLUMN' button is displayed
 	And 'ADD VALUE' button is displayed
-	And "SAVE" Action button is disabled
-	And "RUN PIVOT" Action button is disabled
+	And 'SAVE' button is disabled
+	And 'RUN PIVOT' button is disabled
 	And User remove list with "PivotList_DAS_13844" name on "Devices" page
 	And User remove list with "PivotList_DAS_13844_1" name on "Devices" page
 

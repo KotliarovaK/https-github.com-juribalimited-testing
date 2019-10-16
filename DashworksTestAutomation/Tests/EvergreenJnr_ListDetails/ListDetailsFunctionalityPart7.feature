@@ -71,7 +71,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatListDetailsIsLoadedCorrectlyAf
 	Then "Specific users / teams" sharing option is selected
 	When User clicks 'ADD TEAM' button 
 	When User selects the "1803 Team" team for sharing
-	Then "ADD TEAM" Action button is disabled
+	Then 'ADD TEAM' button is disabled
 	When User clicks 'CANCEL' button 
 	When User clicks 'ADD TEAM' button 
 	When User selects the "1803 Team" team for sharing

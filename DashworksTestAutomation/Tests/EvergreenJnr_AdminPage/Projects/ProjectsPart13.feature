@@ -84,7 +84,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	Then Objects to add panel is disabled
 	When User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "2 objects queued for onboarding, 0 objects offboarded" text
-	Then "UPDATE ALL CHANGES" Action button is disabled
+	Then 'UPDATE ALL CHANGES' button is disabled
 	And "Devices to add (0 of 17278 selected)" is displayed to the user in the Project Scope Changes section
 	Then Objects to add panel is active
 	When User navigates to the 'Users' tab on Project Scope Changes page
@@ -94,13 +94,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	And User selects following Objects from the expandable multiselect
 	| Objects                    |
 	| AAK881049 (Miguel W. Owen) |
-	Then "UPDATE ALL CHANGES" Action button is active
+	Then 'UPDATE ALL CHANGES' button is not disabled
 	When User navigates to the 'Devices' tab on Project Scope Changes page
 	And User expands multiselect to add objects 
 	And User selects following Objects from the expandable multiselect
 	| Objects        |
 	| 00SH8162NAS524 |
-	Then "UPDATE ALL CHANGES" Action button is active
+	Then 'UPDATE ALL CHANGES' button is not disabled
 	And There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12776 @DAS13973 @Cleanup
@@ -132,7 +132,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	Then Objects to add panel is disabled
 	When User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "2 objects queued for onboarding, 0 objects offboarded" text
-	Then "UPDATE ALL CHANGES" Action button is disabled
+	Then 'UPDATE ALL CHANGES' button is disabled
 	When User navigates to the 'Users' tab on Project Scope Changes page
 	Then "Users to add (0 of 41337 selected)" is displayed to the user in the Project Scope Changes section
 	When User navigates to the 'Devices' tab on Project Scope Changes page
@@ -143,5 +143,5 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	And User selects following Objects from the expandable multiselect
 	| Objects                             |
 	| 000F977AC8824FE39B8 (Spruill, Shea) |
-	Then "UPDATE ALL CHANGES" Action button is active
+	Then 'UPDATE ALL CHANGES' button is not disabled
 	And There are no errors in the browser console
