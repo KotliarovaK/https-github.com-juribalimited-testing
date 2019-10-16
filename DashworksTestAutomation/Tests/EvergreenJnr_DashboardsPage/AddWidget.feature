@@ -188,3 +188,28 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTheAggregateFunctionAndAggregateB
 	When User selects "Count distinct" in the "Aggregate Function" Widget dropdown
 	When User selects "Hostname" in the "Aggregate By" Widget dropdown
 	Then Widget Preview is displayed to the user
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18163 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatTheOrderByDropdownIsExpandedWithTheListOfAvailableOptionsForSelecting
+	When Dashboard with "DAS18163_Dashboard" name created via API and opened
+	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'ADD WIDGET' button
+	When User creates new Widget
+	| WidgetType | Title             | List         | SplitBy  | AggregateFunction   | AggregateBy | OrderBy      | MaxValues |
+	| Bar        | WidgetForDAS16853 | 1803 Rollout | Hostname | Count distinct      | Hostname    |Hostname DESC | 10        |
+	When User clicks Ellipsis menu for "WidgetForDAS16853" Widget on Dashboards page
+	When User clicks "Edit" item from Ellipsis menu on Dashboards page
+	Then following Values are displayed in the 'Order By' dropdown:
+    | Dropdowns                    |
+    | Hostname ASC                 |
+    | Hostname DESC                |
+    | Hostname Count distinct ASC  |
+    | Hostname Count distinct DESC |
+	When User selects 'Hostname ASC' in the 'Order By' dropdown
+	Then 'Hostname ASC' content is displayed in 'Order By' dropdown
+	When User selects 'Hostname DESC' in the 'Order By' dropdown
+	Then 'Hostname DESC' content is displayed in 'Order By' dropdown
+	When User selects 'Hostname Count distinct ASC' in the 'Order By' dropdown
+	Then 'Hostname Count distinct ASC' content is displayed in 'Order By' dropdown
+	When User selects 'Hostname DESC' in the 'Order By' dropdown
+	Then 'Hostname DESC' content is displayed in 'Order By' dropdown

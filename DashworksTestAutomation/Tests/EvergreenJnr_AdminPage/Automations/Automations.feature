@@ -443,7 +443,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality
 	When User selects 'All Devices' option from 'Scope' autocomplete
 	When User selects "Active" checkbox on the Automation Page
 	When User selects "Stop on failed action" checkbox on the Automation Page
-	Then "CREATE" Action button is disabled
+	Then 'CREATE' button is disabled
 	When User selects 'Manual' in the 'Run' dropdown
 	And User clicks 'CREATE' button 
 	Then Success message is displayed and contains "click here to view the 16764_Automation automation" link
@@ -454,11 +454,11 @@ Scenario: EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality
 	Then 'Manual' content is displayed in 'Run' dropdown
 	Then "Active" checkbox is checked on the Admin page
 	Then "Stop on failed action" checkbox is checked on the Admin page
-	Then "UPDATE" Action button is disabled
-	Then "CANCEL" Action button is active
+	Then 'UPDATE' button is disabled
+	Then 'CANCEL' button is not disabled
 	Then 'UPDATE' Action button has tooltip with 'Some values are missing or not valid' text
 	#Wait for "RUN NOW" button
-	#Then "RUN NOW" Action button is active
+	#Then 'RUN NOW' button is not disabled
 	When User clicks "Automations" navigation link on the Admin page
 	When User enters "16764_Automation" text in the Search field for "Automation" column
 	When User clicks "Delete" option in Cog-menu for "16764_Automation" item on Admin page
@@ -687,7 +687,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeviceLisFiltertHasAppropriateAutomati
 	When User clicks 'Devices' on the left-hand menu
 	And User clicks the Filters button
 	And User add "Device Type" filter where type is "Equals" with added column and "Virtual" Lookup option
-	And User create dynamic list with "DAS15949_List" name on "Devices" page
+	And User create dynamic list with "Das15949_list" name on "Devices" page
 	#create automation
 	And User creates new Automation via API and open it
 	| AutomationName      | Description | Active | StopOnFailedAction | Scope         | Run    |
@@ -709,6 +709,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeviceLisFiltertHasAppropriateAutomati
 	And User clicks 'CREATE' button
 	#run automation
 	When User clicks "Automations" navigation link on the Admin page
+	When User enters "DAS15949_Automation" text in the Search field for "Automation" column
 	And User clicks "Run now" option in Cog-menu for "DAS15949_Automation" item on Admin page and wait for processing
 	#check filters
 	And User clicks 'Devices' on the left-hand menu

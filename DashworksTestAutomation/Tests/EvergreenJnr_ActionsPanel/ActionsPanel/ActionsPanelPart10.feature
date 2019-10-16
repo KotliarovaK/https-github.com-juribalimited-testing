@@ -20,13 +20,13 @@ Scenario: EvergreenJnr_MailboxesList_CheckBucketBulkUpdateOptionsOnMailboxesList
 	And User selects 'Project' in the 'Project or Evergreen' dropdown
 	And User selects 'Mailbox Evergreen Capacity Project' option from 'Project' autocomplete
 	And User selects 'Unassigned' option from 'Bucket' autocomplete
-	Then following values are displayed in "Also Move Users" drop-down on Action panel:
+	Then following Values are displayed in the 'Also Move Users' dropdown:
 	| Options          |
 	| None             |
 	| Owners only      |
 	| All linked users |
-	When User selects "Owners only" option in "Also Move Users" drop-down on Action panel
-	Then "UPDATE" Action button is active
+	When User selects 'Owners only' in the 'Also Move Users' dropdown
+	Then 'UPDATE' button is not disabled
 
 @Evergreen @Mailboxes @EvergreenJnr_ActionsPanel @BulkUpdate @DAS14563 @DAS13960 @DAS14162
 Scenario: EvergreenJnr_MailboxesList_CheckThatOnMailboxesListForBucketBulkUpdateOptionsOnlyDisplayedEvergreenOrMailboxScopedProjects 
@@ -57,7 +57,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatBucketBulkUpdateOptionNotAvaila
 	| %SQL_PRODUCT_SHORT_NAME% SSIS 64Bit For SSDTBI             |
 	| "WPF/E" (codename) Community Technology Preview (Feb 2007) |
 	And User selects 'Bulk update' in the 'Action' dropdown
-	Then following values are displayed in "Bulk Update Type" drop-down on Action panel:
+	Then following Values are displayed in the 'Bulk Update Type' dropdown:
 	| Options              |
 	| Update capacity unit |
 	| Update custom field  |
@@ -81,7 +81,7 @@ Scenario: EvergreenJnr_DevicesList_CheckSortOrderForBulkUpdateCapacitySlot
 	And User selects 'Scheduled Date' option from 'Task' autocomplete
 	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters '23 Nov 2018' text to 'Date' datepicker
-	Then following values are displayed in "Capacity Slot" drop-down on Action panel:
+	Then following Values are displayed in the 'Capacity Slot' dropdown:
 	| Options                      |
 	| None                         |
 	| Birmingham Morning           |
@@ -119,7 +119,7 @@ Scenario: EvergreenJnr_DevicesList_CheckTooltipDisplayingInDatePickerOfBulkUpdat
 	Then '5' day is displayed green in the Datepicker
 	And Datepicker has tooltip with '8' rows for '5' day
 	When User selects '5' day in the Datepicker
-	Then following values are presented in "Capacity Slot" drop-down on Action panel:
+	Then User sees that 'Capacity Slot' dropdown contains following options:
 	| Options                    |
 	| Birmingham Morning         |
 	| London - City Morning      |
@@ -128,7 +128,7 @@ Scenario: EvergreenJnr_DevicesList_CheckTooltipDisplayingInDatePickerOfBulkUpdat
 	| London Depot 11:00 - 13:00 |
 	| London Depot 13:00 - 15:00 |
 	| London Depot 15:00 - 17:00 |
-	And following values are not presented in "Capacity Slot" drop-down on Action panel:
+	Then following Values are not displayed in the 'Capacity Slot' dropdown:
 	| Options              |
 	| Manchester Afternoon |
 

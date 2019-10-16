@@ -381,7 +381,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	| 00KLL9S8NRF0X6   |
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
-	And User selects "Evergreen" option in "Project or Evergreen" drop-down on Action panel
+	And User selects 'Evergreen' in the 'Also Move Users' dropdown
 	And User selects 'CapacityUnit13201' option from 'Capacity Unit' autocomplete
 	And User clicks 'UPDATE' button 
 	When User clicks 'UPDATE' button
@@ -402,7 +402,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	| 00DBB114BE1B41B0A38 |
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
-	And User selects "Evergreen" option in "Project or Evergreen" drop-down on Action panel
+	And User selects 'Evergreen' in the 'Also Move Users' dropdown
 	And User selects 'CapacityUnit13201' option from 'Capacity Unit' autocomplete
 	And User clicks 'UPDATE' button 
 	When User clicks 'UPDATE' button
@@ -424,7 +424,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	| 01C4FB7C6D2C4F979BD@bclabs.local |
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
-	And User selects "Evergreen" option in "Project or Evergreen" drop-down on Action panel
+	And User selects 'Evergreen' in the 'Also Move Users' dropdown
 	And User selects 'CapacityUnit13201' option from 'Capacity Unit' autocomplete
 	And User clicks 'UPDATE' button 
 	When User clicks 'UPDATE' button
@@ -445,7 +445,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	| 7-Zip 9.20 (x64 edition) |
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
-	And User selects "Evergreen" option in "Project or Evergreen" drop-down on Action panel
+	And User selects 'Evergreen' in the 'Also Move Users' dropdown
 	And User selects 'CapacityUnit13201' option from 'Capacity Unit' autocomplete
 	And User clicks 'UPDATE' button 
 	When User clicks 'UPDATE' button
@@ -692,7 +692,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatCorrectDeviceDataIsReturnedAfte
 	When User clicks on 'Device Count (Entitled)' column header
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
-	When User select all rows
+	When User selects all rows on the grid
 	And User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "StaticList6581" name
 	And User clicks 'Devices' on the left-hand menu
@@ -723,7 +723,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatCorrectDeviceDataIsReturnedWhen
 	| MKS Source Integrity 7.3d |
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
-	When User select all rows
+	When User selects all rows on the grid
 	And User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "StaticList6778" name
 	And User clicks 'Devices' on the left-hand menu
@@ -806,7 +806,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatNoErrorIsDisplayedAfterAddingAdvancedF
 	Then 'All Users' list should be displayed to the user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
-	When User select all rows
+	When User selects all rows on the grid
 	And User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "StaticList8546" name
 	When User clicks 'Applications' on the left-hand menu
@@ -2334,7 +2334,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNo500ErrorOnApplicationPageAfterUpda
 	|                | Used on device      |
 	|                | Entitled to device  |
 	|                | Installed on device |
-	Then "UPDATE" Action button is disabled
+	Then 'UPDATE' button is disabled
 
 @Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS17715 @Cleanup
 Scenario: EvergreenJnr_DevicedList_CheckCustomFieldsUsingInFilterAndProjectCreation

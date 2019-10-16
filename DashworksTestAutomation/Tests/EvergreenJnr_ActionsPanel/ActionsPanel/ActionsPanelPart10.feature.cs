@@ -169,11 +169,11 @@ this.FeatureBackground();
             table2.AddRow(new string[] {
                         "All linked users"});
 #line 23
- testRunner.Then("following values are displayed in \"Also Move Users\" drop-down on Action panel:", ((string)(null)), table2, "Then ");
+ testRunner.Then("following Values are displayed in the \'Also Move Users\' dropdown:", ((string)(null)), table2, "Then ");
 #line 28
- testRunner.When("User selects \"Owners only\" option in \"Also Move Users\" drop-down on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Owners only\' in the \'Also Move Users\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 29
- testRunner.Then("\"UPDATE\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'UPDATE\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -353,7 +353,7 @@ this.FeatureBackground();
             table6.AddRow(new string[] {
                         "Update task value"});
 #line 60
- testRunner.Then("following values are displayed in \"Bulk Update Type\" drop-down on Action panel:", ((string)(null)), table6, "Then ");
+ testRunner.Then("following Values are displayed in the \'Bulk Update Type\' dropdown:", ((string)(null)), table6, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -468,7 +468,7 @@ this.FeatureBackground();
             table8.AddRow(new string[] {
                         "London Depot 15:00 - 17:00"});
 #line 84
- testRunner.Then("following values are displayed in \"Capacity Slot\" drop-down on Action panel:", ((string)(null)), table8, "Then ");
+ testRunner.Then("following Values are displayed in the \'Capacity Slot\' dropdown:", ((string)(null)), table8, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -575,14 +575,14 @@ this.FeatureBackground();
             table10.AddRow(new string[] {
                         "London Depot 15:00 - 17:00"});
 #line 122
- testRunner.Then("following values are presented in \"Capacity Slot\" drop-down on Action panel:", ((string)(null)), table10, "Then ");
+ testRunner.Then("User sees that \'Capacity Slot\' dropdown contains following options:", ((string)(null)), table10, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "Options"});
             table11.AddRow(new string[] {
                         "Manchester Afternoon"});
 #line 131
- testRunner.And("following values are not presented in \"Capacity Slot\" drop-down on Action panel:", ((string)(null)), table11, "And ");
+ testRunner.Then("following Values are not displayed in the \'Capacity Slot\' dropdown:", ((string)(null)), table11, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

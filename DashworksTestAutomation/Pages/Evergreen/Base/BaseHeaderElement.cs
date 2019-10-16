@@ -15,11 +15,17 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         #region Right side buttons
 
-        [FindsBy(How = How.XPath, Using = "//i[contains(@class, 'static-list')]/ancestor::button")]
+        [FindsBy(How = How.XPath, Using = ".//i[contains(@class, 'static-list')]/ancestor::button")]
         public IWebElement ActionsButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[contains(@id, 'listDtlBtn')]")]
         public IWebElement ListDetailsButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//button[contains(@id, 'clmnBtn')]")]
+        public IWebElement ColumnButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//button[contains(@id, 'fltrBtn')]")]
+        public IWebElement FilterButton { get; set; }
 
         #endregion
 

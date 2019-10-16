@@ -42,9 +42,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	| 03063X2ZUCDN0A1 |
 	| 03U75EKEMUQMUS  |
 	And User clicks 'UPDATE ALL CHANGES' button 
-	Then "UPDATE ALL CHANGES" Action button is disabled
+	Then 'UPDATE ALL CHANGES' button is disabled
 	When User clicks 'CANCEL' button 
-	Then "UPDATE ALL CHANGES" Action button is active
+	Then 'UPDATE ALL CHANGES' button is not disabled
 	When User navigates to the 'Users' tab on Project Scope Changes page
 	And User expands multiselect to add objects 
 	And User selects following Objects from the expandable multiselect

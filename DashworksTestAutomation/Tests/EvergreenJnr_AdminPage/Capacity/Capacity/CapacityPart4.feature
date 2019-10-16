@@ -39,7 +39,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingPercentageCapacityToReachBeforeShowingA
 	| ProjectForDAS13422 | 1803 Rollout | None            | Standalone Project |
 	And User navigates to the 'Capacity' left menu item
 	And User changes Percentage to reach before showing amber to "101"
-	Then "UPDATE" Action button is disabled
+	Then 'UPDATE' button is disabled
 	When User changes Percentage to reach before showing amber to "100"
 	And User clicks 'UPDATE' button 
 	Then Success message is displayed and contains "The project capacity details have been updated" text

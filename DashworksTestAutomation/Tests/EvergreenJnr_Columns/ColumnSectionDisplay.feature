@@ -128,7 +128,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckTheColumnCategoriesUpdatesAfterAddi
 	Then 'All Applications' list should be displayed to the user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
-	When User select all rows
+	When User selects all rows on the grid
 	When User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "StaticList" name
 	Then "StaticList" list is displayed to user
@@ -305,7 +305,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromThe
 	| 00YWR8TJU4ZF8V   |
 	| 00RUUMAH9OZN9A   |
 	And User selects 'Add to static list' in the 'Action' dropdown
-	Then "ADD" Action button is disabled
+	Then 'ADD' button is disabled
 	And User selects "StaticListFromTheAllList" List in Saved List dropdown
 	When User clicks 'ADD' button 
 	Then "4" rows are displayed in the agGrid

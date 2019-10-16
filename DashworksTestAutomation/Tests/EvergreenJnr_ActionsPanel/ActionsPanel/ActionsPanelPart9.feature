@@ -19,12 +19,12 @@ Scenario: EvergreenJnr_DevicesList_CheckBucketBulkUpdateOptionsOnDevicesListForE
 	And User selects 'Update bucket' in the 'Bulk Update Type' dropdown
 	And User selects 'Evergreen' in the 'Project or Evergreen' dropdown
 	And User selects 'Unassigned' option from 'Bucket' autocomplete
-	Then following values are displayed in "Also Move Users" drop-down on Action panel:
+	Then following Values are displayed in the 'Also Move Users' dropdown:
 	| Options          |
 	| None             |
 	| Owners only      |
 	| All linked users |
-	When User selects "Owners only" option in "Also Move Users" drop-down on Action panel
+	When User selects 'Owners only' in the 'Also Move Users' dropdown
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 
@@ -42,19 +42,19 @@ Scenario: EvergreenJnr_UsersList_CheckBucketBulkUpdateOptionsOnUsersListForEverg
 	And User selects 'Update bucket' in the 'Bulk Update Type' dropdown
 	And User selects 'Evergreen' in the 'Project or Evergreen' dropdown
 	And User selects 'Unassigned' option from 'Bucket' autocomplete
-	Then following values are displayed in "Also Move Devices" drop-down on Action panel:
+	Then following Values are displayed in the 'Also Move Devices' dropdown:
 	| Options            |
 	| None               |
 	| Owned devices only |
 	| All linked devices |
-	When User selects "Owned devices only" option in "Also Move Devices" drop-down on Action panel
-	Then following values are displayed in "Also Move Mailboxes" drop-down on Action panel:
+	When User selects 'Owned devices only' in the 'Also Move Users' dropdown
+	Then following Values are displayed in the 'Also Move Mailboxes' dropdown:
 	| Options              |
 	| None                 |
 	| Owned mailboxes only |
 	| All linked mailboxes |
-	When User selects "Owned mailboxes only" option in "Also Move Mailboxes" drop-down on Action panel
-	Then "UPDATE" Action button is active
+	When User selects 'Owned mailboxes only' in the 'Also Move Users' dropdown
+	Then 'UPDATE' button is not disabled
 
 @Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS14563 @DAS13960 @DAS14143
 Scenario: EvergreenJnr_UsersList_CheckBucketBulkUpdateOptionsOnUsersListForUserScopedProjectAreDisplayedCorrectly
@@ -71,13 +71,13 @@ Scenario: EvergreenJnr_UsersList_CheckBucketBulkUpdateOptionsOnUsersListForUserS
 	And User selects 'Project' in the 'Project or Evergreen' dropdown
 	And User selects 'User Evergreen Capacity Project' option from 'Project' autocomplete
 	And User selects 'Unassigned' option from 'Bucket' autocomplete
-	Then following values are displayed in "Also Move Devices" drop-down on Action panel:
+	Then following Values are displayed in the 'Also Move Devices' dropdown:
 	| Options            |
 	| None               |
 	| Owned devices only |
 	| All linked devices |
-	When User selects "Owned devices only" option in "Also Move Devices" drop-down on Action panel
-	Then "UPDATE" Action button is active
+	When User selects 'Owned devices only' in the 'Also Move Users' dropdown
+	Then 'UPDATE' button is not disabled
 
 @Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS14563 @DAS13960 @DAS14160
 Scenario: EvergreenJnr_UsersList_CheckBucketBulkUpdateOptionsOnUsersListForMailboxScopedProjectAreDisplayedCorrectly
@@ -94,10 +94,10 @@ Scenario: EvergreenJnr_UsersList_CheckBucketBulkUpdateOptionsOnUsersListForMailb
 	And User selects 'Project' in the 'Project or Evergreen' dropdown
 	And User selects 'Mailbox Evergreen Capacity Project' option from 'Project' autocomplete
 	And User selects 'Unassigned' option from 'Bucket' autocomplete
-	Then following values are displayed in "Also Move Mailboxes" drop-down on Action panel:
+	Then following Values are displayed in the 'Also Move Mailboxes' dropdown:
 	| Options          |
 	| None             |
 	| Owners only      |
 	| All linked users |
-	When User selects "Owners only" option in "Also Move Mailboxes" drop-down on Action panel
-	Then "UPDATE" Action button is active
+	When User selects 'Owners only' in the 'Also Move Users' dropdown
+	Then 'UPDATE' button is not disabled

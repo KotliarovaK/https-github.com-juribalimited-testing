@@ -15,7 +15,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = ".//div[@class='device-context-header']")]
         public IWebElement PanelHeaderElement { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='device-context-header']/span")]
+        [FindsBy(How = How.XPath, Using = ".//span[@class='device-label']")]
         public IWebElement PanelTitle { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='device-context-header']//i[contains(@class,'mat-clear')]")]
@@ -24,17 +24,14 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
-            return new List<By>
-            {
-                SelectorFor(this, p => p.PanelHeaderElement)
-            };
+            return new List<By> { };
         }
 
         public bool IsPanelOpened(string panelTitleText)
         {
             try
             {
-                Driver.WaitForElementToContainsText(PanelTitle, panelTitleText);
+                Driver.WaitForElementToContainsText(PanelTitle, panelTitleText, 10);
                 return true;
             }
             catch

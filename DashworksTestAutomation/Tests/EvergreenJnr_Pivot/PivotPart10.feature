@@ -183,9 +183,9 @@ Scenario: EvergreenJnr_DevicesLists_CheckAddTeamsPermissionsOnDetailsPanel
 	When User clicks 'CANCEL' button 
 	When User clicks 'ADD TEAM' button 
 	When User selects the "Team 1062" team for sharing
-	Then "ADD TEAM" Action button is disabled
+	Then 'ADD TEAM' button is disabled
 	When User select "Edit" in Select Access dropdown
-	Then "ADD TEAM" Action button is active
+	Then 'ADD TEAM' button is not disabled
 	When User clicks 'CANCEL' button 
 	When User clicks 'ADD TEAM' button 
 	When User selects the "Team 1062" team for sharing

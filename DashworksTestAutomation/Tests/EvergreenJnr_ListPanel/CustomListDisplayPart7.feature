@@ -128,7 +128,7 @@ Scenario Outline: EvergreenJnr_AllList_CheckThatTheEditListFunctionIsHiddenAfter
 	Then '<ListLabel>' list should be displayed to the user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
-	When User select all rows
+	When User selects all rows on the grid
 	And User selects 'Create static list' in the 'Action' dropdown
 	When User create static list with "StaticList2" name
 	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned

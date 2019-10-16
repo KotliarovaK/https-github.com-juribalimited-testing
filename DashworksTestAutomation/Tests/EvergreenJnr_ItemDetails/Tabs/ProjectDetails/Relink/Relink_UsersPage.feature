@@ -5,7 +5,8 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Users @EvergreenJnr_ItemDetails @Relink @DAS18002 @DAS18112
+	#need to add cleanup
+@Evergreen @Users @EvergreenJnr_ItemDetails @Relink @DAS18002 @DAS18112 @Cleanup @Not_Run
 Scenario: EvergreenJnr_UsersList_CheckThatRelinkOptionIsWorkedCorrectlyForProjectDetailsOnUsersPage
 	When User navigates to the 'User' details page for 'ZZR457072' item
 	Then Details page for "ZZR457072" item is displayed to the user
@@ -25,8 +26,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatRelinkOptionIsWorkedCorrectlyForProjec
 	When User clicks 'RELINK' button in Dialog Pop-up
 	Then Warning message with "This object will be relinked to the selected Evergreen object in this project" text is displayed on the Project Details Page
 	When User clicks 'RELINK' button in Dialog Pop-up
-	#Andrew will check the delay time for message
-	#Then Success message is displayed and contains "User successfully relinked" text
+	Then Success message is displayed and contains "User successfully relinked" text
 	#waiting for the RELINK process to be completed
 	When User waits for three seconds
 	Then Details page for "DSF4350513" item is displayed to the user
@@ -35,8 +35,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatRelinkOptionIsWorkedCorrectlyForProjec
 	| Name  | ZZR457072 |
 	When User clicks 'RESYNC' button
 	And User clicks 'RESYNC' button in Dialog Pop-up
-	#Andrew will check the delay time for message
-	#Then Success message is displayed and contains "User successfully resynced" text
+	Then Success message is displayed and contains "User successfully resynced" text
 	#waiting for the RESYNC process to be completed
 	When User waits for three seconds
 	Then following content is displayed on the Details Page
@@ -51,5 +50,6 @@ Scenario: EvergreenJnr_UsersList_CheckThatRelinkOptionIsWorkedCorrectlyForProjec
 	And User enters 'ZZR457072' in the 'User' autocomplete field and selects 'ZZR457072' value
 	And User clicks 'RELINK' button in Dialog Pop-up
 	And User clicks 'RELINK' button in Dialog Pop-up
-	#Andrew will check the delay time for message
-	#Then Success message is displayed and contains "User successfully relinked" text
+	Then Success message is displayed and contains "User successfully relinked" text
+	#waiting for the RELINK process to be completed
+	When User waits for three seconds

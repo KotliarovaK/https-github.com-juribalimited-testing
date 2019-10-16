@@ -40,7 +40,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCancelButtonIsDisplayedWithCorrectColo
 	And User click on Back button
 	When User enters "TestName12891" text in the Search field for "Project" column
 	And User selects all rows on the grid
-	Then Actions dropdown is displayed correctly
+	Then 'Actions' dropdown is displayed
 	When User selects 'Delete' in the 'Actions' dropdown
 	Then User sees Cancel button in banner
 	And Cancel button is displayed with correctly color

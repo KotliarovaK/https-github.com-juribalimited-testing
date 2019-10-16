@@ -182,7 +182,7 @@ Scenario Outline: EvergreenJnr_AllList_CheckThatEditListFunctionIsAvailableAfter
 	Then Edit List menu is not displayed
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
-	When User select all rows
+	When User selects all rows on the grid
 	And User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "StaticList1" name
 	And User clicks on '<ColumnName>' column header

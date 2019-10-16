@@ -274,7 +274,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatUsersTabIsDisplayedWithCorrectColu
 	When User clicks String Filter button for "Path" column
 	Then "[Default (User)]" checkbox is checked on the Details Page
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15039
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15039 @DAS18535
 Scenario: EvergreenJnr_DevicesList_CheckThatTheRelatedTabIsDisplayedCorrectlyWithTheCorrectElementsAndColumns
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
@@ -300,19 +300,19 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheRelatedTabIsDisplayedCorrectlyWit
 	#link function is not ready yet
 	#And Links from "Linked By" column is displayed to the user on the Details Page
 	When User clicks "03ME2G7TIR4GBN" link on the Details Page
-	Then Details page for "03ME2G7TIR4GBN" item is displayed correctly
+	Then Details page for "03ME2G7TIR4GBN" item is displayed to the user
 	And User click back button in the browser
 	And Details page for "001BAQXT6JWFPI" item is displayed to the user
 	When User navigates to the 'Related' left menu item
 	And User enters "ACG370114" text in the Search field for "Owner" column
 	And User clicks "ACG370114" link on the Details Page
-	Then Details page for "ACG370114 (James N. Snow)" item is displayed correctly
+	Then Details page for "ACG370114 (James N. Snow)" item is displayed to the user
 	And User click back button in the browser
 	And Details page for "001BAQXT6JWFPI" item is displayed to the user
 	When User navigates to the 'Related' left menu item
 	And User enters "James N. Snow" text in the Search field for "Owner Display Name" column
 	And User clicks "James N. Snow" link on the Details Page
-	Then Details page for "ACG370114 (James N. Snow)" item is displayed correctly
+	Then Details page for "ACG370114 (James N. Snow)" item is displayed to the user
 	And User click back button in the browser
 	And Details page for "001BAQXT6JWFPI" item is displayed to the user
 	When User navigates to the 'Related' left menu item

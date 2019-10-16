@@ -77,12 +77,13 @@ Scenario: EvergreenJnr_DevicesList_CheckThatApplicationsSummaryRowCanBeCopied
 	And User selects 'Copy row' option in context menu
 	Then Next data 'egcs-objc   Red Hat   1.1.2   Red   Unknown   True   False' is copied
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16067
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16067 DAS18535
 Scenario: EvergreenJnr_DevicesList_CheckThatApplicationsInTheApplicationColumnAreLinksAndAfterClickingUserIsRedirectedCorrectApplication
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	When User navigates to the 'Applications' left menu item
 	When User navigates to the "Advertisements" sub-menu on the Details page
 	Then table content is present
+	When User enters "Microsoft Internet Explorer" text in the Search field for "Application" column
 	When User clicks "Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" link on the Details Page
 	Then Details page for "Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" item is displayed correctly
 
@@ -92,11 +93,10 @@ Scenario: EvergreenJnr_DevicesList_CheckThatActionPanelImplementedForItemDetails
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
 	When User navigates to the 'Users' left menu item
-	Then "ADD USERS" Action button is displayed
-	Then Actions drop-down is displayed on the Item Details page
-	When User clicks Actions button on the Item Details page
-	When User clicks "Remove" button in Actions drop-down on the Item Details page
-	Then "REMOVE" Action button is displayed 
+	Then 'ADD USERS' button is displayed
+	Then 'Actions' dropdown is displayed
+	When User selects 'Remove' in the 'Actions' dropdown
+	Then 'REMOVE' button is displayed 
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16338
 Scenario: EvergreenJnr_DevicesList_CheckThatCrumbTrailElementInTheHeaderOfThePageIsDisplayed

@@ -151,7 +151,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.ClickByJavascript(createWidgetElement.GetDropdownForWidgetByName(dropdownName));
             createWidgetElement.SelectObjectForWidgetCreation(objectName);
         }
-
+       
         [When(@"User enters ""(.*)"" as Widget Title")]
         public void WhenUserSetsWidgetTitle(string widgetTitle)
         {

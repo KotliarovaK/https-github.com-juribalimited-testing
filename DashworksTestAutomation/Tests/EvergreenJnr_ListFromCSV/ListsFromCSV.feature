@@ -15,7 +15,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckCreatingStaticListFromCSVFirstPage
 	When User selects "CSV-Upload-Devices - Hostname no header.csv" file to upload on Import Lists from CSV page
 	Then "File has headers" checkbox is unchecked on the Base Dashboard Page
 	When User selects '<FileContains>' in the 'File Contains' dropdown
-	Then "NEXT" Action button is active
+	Then 'NEXT' button is not disabled
 
 Examples:
 	| ListName     | ListName1        | ImportPage                   | FileContains    |
@@ -39,7 +39,7 @@ Scenario: EvergreenJnr_AllLists_CheckCancelButtonFunctionalityOnCreateListFromCS
 	Then "File has headers" checkbox is unchecked on the Base Dashboard Page
 	Then "Include archived applications" checkbox is unchecked on the Base Dashboard Page
 	When User selects 'Hostname' in the 'File Contains' dropdown
-	Then "NEXT" Action button is active
+	Then 'NEXT' button is not disabled
 	When User clicks 'CANCEL' button 
 	Then Warning Pop-up is displayed to the User
 	When User clicks "NO" button in the Warning Pop-up message

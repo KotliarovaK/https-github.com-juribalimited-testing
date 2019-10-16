@@ -153,7 +153,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheE
 	And User selects "Slots" tab on the Project details page
 	And User clicks content from "Capacity Slot" column
 	And User changes value to "1" for "Tuesday" day column
-	Then "UPDATE" Action button is disabled
+	Then 'UPDATE' button is disabled
 	Then 'UPDATE' Action button has tooltip with 'This slot cannot be saved because it is associated to at least 1 unpublished task (Stage13812 \ 1Task13812)' text
 	When User clicks 'CANCEL' button 
 	And User creates new Slot
@@ -174,4 +174,4 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheE
 	And User enters "Slot 2" text in the Search field for "Capacity Slot" column
 	And User clicks content from "Capacity Slot" column
 	And User changes value to "1" for "Tuesday" day column
-	Then "UPDATE" Action button is active
+	Then 'UPDATE' button is not disabled

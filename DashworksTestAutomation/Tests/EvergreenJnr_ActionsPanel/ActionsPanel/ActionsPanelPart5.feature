@@ -33,7 +33,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatProjectFieldIsDisplayedCorrectlyAf
 	| SelectedRowsName                 |
 	| 00A5B910A1004CF5AC4@bclabs.local |
 	And User selects 'Bulk update' in the 'Action' dropdown
-	Then following values are displayed in "Bulk Update Type" drop-down on Action panel:
+	Then following Values are displayed in the 'Bulk Update Type' dropdown:
 	| Options              |
 	| Update bucket        |
 	| Update capacity unit |
@@ -106,14 +106,14 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatUpdateAndCancelButtonsAreEnable
 	And User selects '<StageName>' option from 'Stage' autocomplete
 	And User selects '<TaskName>' option from 'Task' autocomplete
 	And User selects '<UpdateDate>' in the 'Update Date' dropdown
-	Then "UPDATE" Action button is active
-	And "CANCEL" Action button is active
+	Then 'UPDATE' button is not disabled
+	And 'CANCEL' button is not disabled
 	When User clicks 'UPDATE' button 
 	Then the amber message is displayed correctly
 	When User clicks 'CANCEL' button
 	Then the amber message is not displayed
-	And "UPDATE" Action button is active
-	And "CANCEL" Action button is active
+	And 'UPDATE' button is not disabled
+	And 'CANCEL' button is not disabled
 	When User clicks the Logout button
 	Then User is logged out
 	When User clicks on the Login link

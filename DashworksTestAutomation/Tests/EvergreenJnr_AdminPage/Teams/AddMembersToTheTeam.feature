@@ -31,7 +31,7 @@ Scenario: EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam
 	When User enters "My Team" text in the Search field for "Team" column
 	Then 'TRUE' content is displayed in the 'Default' column
 	When User selects all rows on the grid
-	Then Actions dropdown is displayed correctly
+	Then 'Actions' dropdown is displayed
 	When User selects 'Delete' in the 'Actions' dropdown
 	When User clicks 'DELETE' button
 	Then Warning message with "You cannot delete the default team" text is displayed on the Admin page
@@ -97,7 +97,7 @@ Scenario: EvergreenJnr_AdminPage_AddingMembersToTheTeam
 	When User enters "automation_admin1" text in the Search field for "Username" column
 	Then Rows counter shows "1" of "4" rows
 	When User selects all rows on the grid
-	Then Actions dropdown is displayed correctly
+	Then 'Actions' dropdown is displayed
 	When User removes selected members
 	Then Success message is displayed and contains "The selected user has been removed" text
 	When User enters "automation_admin2" text in the Search field for "Username" column

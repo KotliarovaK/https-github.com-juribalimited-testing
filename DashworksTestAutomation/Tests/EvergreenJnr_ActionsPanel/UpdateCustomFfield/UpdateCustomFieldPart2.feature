@@ -18,7 +18,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckUpdateCustomFieldValues
 	And User selects 'Update custom field' in the 'Bulk Update Type' dropdown
 	When User selects '<CustomFieldValue>' option from 'Custom Field' autocomplete
 	Then '<MissingContent>' content is not displayed in 'Custom Field' autocomplete after search
-	Then "UPDATE" Action button is disabled
+	Then 'UPDATE' button is disabled
 
 Examples:
 	| ListName     | ColumnName    | Row                              | CustomFieldValue  | MissingContent      |
@@ -43,7 +43,7 @@ Scenario: EvergreenJnr_DevicesList_CheckUpdateCustomFieldUpdatingValuesForRemove
 	| Phoenix Field |
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
-	When User select all rows
+	When User selects all rows on the grid
 	When User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update custom field' in the 'Bulk Update Type' dropdown
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
@@ -84,7 +84,7 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateCustomFieldUpdatingValuesForAddToExi
 	| Phoenix Field |
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
-	When User select all rows
+	When User selects all rows on the grid
 	When User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update custom field' in the 'Bulk Update Type' dropdown
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
@@ -106,7 +106,7 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateCustomFieldUpdatingValuesForAddToExi
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
 	When User selects 'Replace all values' in the 'Update Values' dropdown
 	#DAS18031
-	Then "UPDATE" Action button is disabled
+	Then 'UPDATE' button is disabled
 	Then 'UPDATE' Action button has tooltip with 'Some values are missing or not valid' text
 	#DAS18031
 	When User adds 'beta' value from 'Value' textbox
@@ -131,13 +131,13 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateCustomFieldUpdatingValuesForR
 	| Phoenix Field |
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
-	When User select all rows
+	When User selects all rows on the grid
 	When User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update custom field' in the 'Bulk Update Type' dropdown
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
 	When User selects 'Replace single value' in the 'Update Values' dropdown
 	#DAS18031
-	Then "UPDATE" Action button is disabled
+	Then 'UPDATE' button is disabled
 	Then 'UPDATE' Action button has tooltip with 'Some values are missing or not valid' text
 	#DAS18031
 	When User enters 'first value' text to 'Find Value' textbox
@@ -176,13 +176,13 @@ Scenario: EvergreenJnr_MailboxesList_CheckUpdateCustomFieldUpdatingValuesForRepl
 	| Phoenix Field |
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
-	When User select all rows
+	When User selects all rows on the grid
 	When User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update custom field' in the 'Bulk Update Type' dropdown
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
 	When User selects 'Remove specific values' in the 'Update Values' dropdown
 	#DAS18031
-	Then "UPDATE" Action button is disabled
+	Then 'UPDATE' button is disabled
 	Then 'UPDATE' Action button has tooltip with 'Some values are missing or not valid' text
 	Then 'Enter a value' add button tooltip is displayed for 'Value' textbox
 	Then Add button for 'Value' textbox is disabled

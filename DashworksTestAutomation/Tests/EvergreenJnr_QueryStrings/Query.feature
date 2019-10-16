@@ -214,7 +214,7 @@ Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForSt
 	| Application (Saved List) - Static - Specific rows selected by Compliance = Red, Amber or Unknown | evergreen/#/applications?$filter=(migrationRAG%20EQUALS%20('Red'%2C'Amber'%2C'Unknown'))&$select=packageName,packageManufacturer,packageVersion,migrationRAG |
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
-	When User select all rows
+	When User selects all rows on the grid
 	When User selects 'Create static list' in the 'Action' dropdown
 	When User create static list with "StaticList12911" name
 	Then "StaticList12911" list is displayed to user
