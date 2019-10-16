@@ -41,9 +41,9 @@ Scenario: EvergreenJnr_AdminPage_CheckProjectDetailFormAndRingDropdown
 	When User clicks content from "Ring" column
 	Then "Unassigned" content is displayed in "Ring name" field
 	Then "Unassigned" content is displayed in "Description" field
-	Then "UPDATE" Action button is disabled
+	Then 'UPDATE' button is disabled
 	When User enters 'NewDescription' text to 'Description' textbox
-	Then "UPDATE" Action button is active
+	Then 'UPDATE' button is not disabled
 	Then "Default Ring" checkbox is checked and cannot be unchecked
 	Then "Maps to Evergreen Ring" dropdown is not displayed on the Admin Settings screen
 	When User clicks 'CANCEL' button 

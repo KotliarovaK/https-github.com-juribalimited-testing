@@ -17,9 +17,9 @@ Scenario Outline: EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveAllValues
 	When User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update custom field' in the 'Bulk Update Type' dropdown
 	And User selects 'Phoenix Field' option from 'Custom Field' autocomplete
-	Then "UPDATE" Action button is disabled
+	Then 'UPDATE' button is disabled
 	When User selects 'Remove all values' in the 'Update Values' dropdown
-	Then "UPDATE" Action button is active
+	Then 'UPDATE' button is not disabled
 
 Examples:
 	| ListName     | ColumnName    | Row                              |
@@ -53,7 +53,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceAllValue
 	When User adds '10' value from 'Value' textbox
 	#DAS18031
 	Then 'Value limit has been reached' add button tooltip is displayed for 'Value' textbox
-	Then "UPDATE" Action button is active
+	Then 'UPDATE' button is not disabled
 
 Examples:
 	| ListName     | ColumnName    | Row                                        |
@@ -76,7 +76,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckUpdateCustomFieldForAddToExistingVa
 	And User selects 'Phoenix Field' option from 'Custom Field' autocomplete
 	And User selects 'Add to existing values' in the 'Update Values' dropdown
 	When User adds 'test' value from 'Value' textbox
-	Then "UPDATE" Action button is active
+	Then 'UPDATE' button is not disabled
 
 Examples:
 	| ListName     | ColumnName    | Row                                        |
@@ -99,7 +99,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveSpecificV
 	And User selects 'Phoenix Field' option from 'Custom Field' autocomplete
 	And User selects 'Remove specific values' in the 'Update Values' dropdown
 	When User adds 'test' value from 'Value' textbox
-	Then "UPDATE" Action button is active
+	Then 'UPDATE' button is not disabled
 
 Examples:
 	| ListName     | ColumnName    | Row                                        |
@@ -122,9 +122,9 @@ Scenario Outline: EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceSingleVa
 	And User selects 'Phoenix Field' option from 'Custom Field' autocomplete
 	And User selects 'Replace single value' in the 'Update Values' dropdown
 	When User enters 'tests' text to 'Find Value' textbox
-	Then "UPDATE" Action button is disabled
+	Then 'UPDATE' button is disabled
 	When User enters '012' text to 'Replace Value' textbox
-	Then "UPDATE" Action button is active
+	Then 'UPDATE' button is not disabled
 
 Examples:
 	| ListName     | ColumnName    | Row                                        |

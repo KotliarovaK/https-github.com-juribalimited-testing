@@ -23,8 +23,8 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatRemoveFromStaticListOptionIsNo
 	| Bulk update        |
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
-	Then "UPDATE" Action button is disabled
-	And "CANCEL" Action button is active
+	Then 'UPDATE' button is disabled
+	And 'CANCEL' button is not disabled
 	When User selects '<ProjectName>' option from 'Project' autocomplete
 	And User selects '<StageName>' option from 'Stage' autocomplete
 	And User selects '<TaskName>' option from 'Task' autocomplete
@@ -127,7 +127,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnDevi
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update path' in the 'Bulk Update Type' dropdown
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
-	Then "UPDATE" Action button is disabled
+	Then 'UPDATE' button is disabled
 	When User selects 'Computer: PC Rebuild' option from 'Path' autocomplete
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel

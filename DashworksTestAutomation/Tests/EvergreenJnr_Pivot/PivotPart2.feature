@@ -101,9 +101,9 @@ Scenario: EvergreenJnr_UsersList_ChecksThatUserCanCreateOneMorePivotOnSelectedPa
 	Then "Pivot_DAS_14206" list is displayed to user
 	When User navigates to the "All Users" list
 	And User selects 'Pivot' in the 'Create' dropdown
-	Then "ADD ROW GROUP" Action button is active
-	And "ADD COLUMN" Action button is active
-	And "ADD VALUE" Action button is active
+	Then 'ADD ROW GROUP' button is not disabled
+	And 'ADD COLUMN' button is not disabled
+	And 'ADD VALUE' button is not disabled
 	And User remove list with "Pivot_DAS_14206" name on "Users" page
 
 @Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS14206 @Cleanup
@@ -129,9 +129,9 @@ Scenario: EvergreenJnr_UsersList_ChecksThatUserCanCreateOneMorePivotOnCreatedLis
 	When User navigates to the "Dynamic_List_DAS14206" list
 	Then "Dynamic_List_DAS14206" list is displayed to user
 	When User selects 'Pivot' in the 'Create' dropdown
-	Then "ADD ROW GROUP" Action button is active
-	And "ADD COLUMN" Action button is active
-	And "ADD VALUE" Action button is active
+	Then 'ADD ROW GROUP' button is not disabled
+	And 'ADD COLUMN' button is not disabled
+	And 'ADD VALUE' button is not disabled
 	When User selects the following Row Groups on Pivot:
 	| RowGroups   |
 	| Common Name |
@@ -171,9 +171,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatPivotPanelIsDisplayedCorrectlyAfterC
 	| Value      |
 	| Owner City |
 	And User clicks reset button on main panel
-	Then "ADD ROW GROUP" Action button is active
-	And "ADD COLUMN" Action button is active
-	And "ADD VALUE" Action button is active
+	Then 'ADD ROW GROUP' button is not disabled
+	And 'ADD COLUMN' button is not disabled
+	And 'ADD VALUE' button is not disabled
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14379 @DAS11291 @DAS14745 @DAS16399
 Scenario: EvergreenJnr_DevicesList_ChecksTooltipsOnPivot

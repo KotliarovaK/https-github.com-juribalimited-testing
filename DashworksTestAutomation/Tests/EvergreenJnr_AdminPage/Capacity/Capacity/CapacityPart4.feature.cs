@@ -253,7 +253,7 @@ this.FeatureBackground();
 #line 41
  testRunner.And("User changes Percentage to reach before showing amber to \"101\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 42
- testRunner.Then("\"UPDATE\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 43
  testRunner.When("User changes Percentage to reach before showing amber to \"100\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 44

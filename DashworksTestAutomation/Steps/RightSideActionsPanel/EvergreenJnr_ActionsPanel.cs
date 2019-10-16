@@ -72,36 +72,6 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
             action.SaveNewListButton.Click();
         }
 
-        [Then(@"""(.*)"" Action button is disabled")]
-        public void ThenActionButtonIsDisabled(string buttonName)
-        {
-            Verify.IsTrue(IsButtonDisabled(buttonName), $"{buttonName} Button state is not disabled");
-        }
-
-        [Then(@"""(.*)"" Action button is enabled")]
-        public void ThenActionButtonIsEnabled(string buttonName)
-        {
-            Utils.Verify.IsFalse(IsButtonDisabled(buttonName), $"{buttonName} Button state is not enabled");
-        }
-
-        private bool IsButtonDisabled(string buttonName)
-        {
-            var button = _driver.NowAt<BaseDashboardPage>();
-            var buttonState = button.GetButtonByName(buttonName).GetAttribute("disabled");
-            if (buttonState == null)
-                return false;
-            else
-                return bool.Parse(buttonState);
-        }
-
-        [Then(@"""(.*)"" Action button is active")]
-        public void ThenActionButtonIsActive(string buttonName)
-        {
-            var button = _driver.NowAt<BaseDashboardPage>();
-            var buttonState = button.GetButtonByName(buttonName).GetAttribute("disabled");
-            Verify.AreNotEqual(buttonState, "true", $"{buttonName} Button state is incorrect");
-        }
-
         [Then(@"'(.*)' Action button has tooltip with '(.*)' text")]
         public void ThenActionButtonHasTooltipWithText(string buttonName, string text)
         {

@@ -411,7 +411,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var dropdown = _driver.NowAt<BaseDashboardPage>();
             Verify.IsTrue(dropdown.IsDropdownDisplayed(dropdownName),
-                $"{dropdownName} is not displayed");
+                $"{dropdownName} dropdown is not displayed");
         }
 
         [Then(@"'(.*)' dropdown is not displayed")]
@@ -419,7 +419,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var dropdown = _driver.NowAt<BaseDashboardPage>();
             Verify.IsFalse(dropdown.IsDropdownDisplayed(dropdownName),
-                $"{dropdownName} is not displayed");
+                $"'{dropdownName}' dropdown' is not displayed");
         }
 
         //Exact much
@@ -640,16 +640,35 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenButtonIsDisplayed(string buttonName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            Verify.IsTrue(page.GetButtonByName(buttonName, "", WebDriverExtensions.WaitTime.Medium).Disabled(),
-                $"'{buttonName}' is displayed");
+            Verify.IsTrue(page.GetButtonByName(buttonName, "", WebDriverExtensions.WaitTime.Medium).Displayed(),
+                $"'{buttonName}' button is displayed");
         }
 
         [Then(@"'(.*)' button is not displayed")]
         public void ThenButtonIsNotDisplayed(string buttonName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            Verify.IsFalse(page.GetButtonByName(buttonName, "", WebDriverExtensions.WaitTime.Short).Disabled(),
-                $"'{buttonName}' is displayed");
+            Verify.IsFalse(page.GetButtonByName(buttonName, "", WebDriverExtensions.WaitTime.Short).Displayed(),
+                $"'{buttonName}' button is displayed");
+        }
+
+        [Then(@"'(.*)' button is disabled")]
+        public void ThenButtonIsDisabled(string buttonName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsTrue(page.GetButtonByName(buttonName, "", WebDriverExtensions.WaitTime.Medium).Disabled(),
+                $"'{buttonName}' button is displayed");
+        }
+
+        [Then(@"'(.*)' button is not disabled")]
+        public void ThenButtonIsNotDisabled(string buttonName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var button = page.GetButtonByName(buttonName, "", WebDriverExtensions.WaitTime.Short);
+            Verify.IsTrue(button.Displayed(),
+                $"'{buttonName}' button is not displayed");
+            Verify.IsFalse(button.Disabled(),
+                $"'{buttonName}' button is displayed");
         }
 
         #endregion
