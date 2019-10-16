@@ -596,12 +596,28 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenButtonIsDisplayed(string buttonName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            Verify.IsTrue(page.GetButtonByName(buttonName, "", WebDriverExtensions.WaitTime.Medium).Disabled(),
+            Verify.IsTrue(page.GetButtonByName(buttonName, "", WebDriverExtensions.WaitTime.Medium).Displayed(),
                 $"'{buttonName}' is displayed");
         }
 
         [Then(@"'(.*)' button is not displayed")]
         public void ThenButtonIsNotDisplayed(string buttonName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsFalse(page.GetButtonByName(buttonName, "", WebDriverExtensions.WaitTime.Short).Displayed(),
+                $"'{buttonName}' is displayed");
+        }
+
+        [Then(@"'(.*)' button is disabled")]
+        public void ThenButtonIsDisabled(string buttonName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsTrue(page.GetButtonByName(buttonName, "", WebDriverExtensions.WaitTime.Medium).Disabled(),
+                $"'{buttonName}' is displayed");
+        }
+
+        [Then(@"'(.*)' button is not disabled")]
+        public void ThenButtonIsNotDisabled(string buttonName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             Verify.IsFalse(page.GetButtonByName(buttonName, "", WebDriverExtensions.WaitTime.Short).Disabled(),
