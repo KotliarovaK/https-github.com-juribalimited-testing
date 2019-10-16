@@ -141,9 +141,9 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueAction
 	And User selects 'Failed' in the 'Value' dropdown
 	And User selects 'No change' in the 'Update Date' dropdown
 	Then 'CREATE' button is not disabled
-	When User selects "No change" value for "Update" dropdown on Action panel
+	When User selects 'No change' in the 'Update Value' dropdown
 	Then 'CREATE' button is disabled
-	When User selects "Update" value for "No change" dropdown on Action panel
+	When User selects 'Update' in the 'Update Value' dropdown
 	And User selects 'Failed' in the 'Value' dropdown
 	Then 'CREATE' button is not disabled
 
