@@ -219,8 +219,12 @@ Scenario: EvergreenJnr_DashboardsPage_CheckImageAndTooltipDisplayingForListDropd
 	When Dashboard with "DAS16842_Dashboard" name created via API and opened
 	When User clicks Edit mode trigger on Dashboards page
 	When User clicks 'ADD WIDGET' button
-	Then User sees all lists displayed with icon in 'List' autocomplete
-	Then User sees all lists icon displayed with tooltip in 'List' autocomplete
+	Then All items in the 'List' autocomplete have icons
+	Then All icon items in the 'List' autocomplete have any of tooltip
+	| tooltip |
+	| System  |
+	| Private |
+	| Shared  |
 	When User creates new Widget
 	| WidgetType | Title             | List         | SplitBy  | AggregateFunction   | AggregateBy | OrderBy      |
 	| Bar        | WidgetForDAS16842 | 1803 Rollout | Hostname | Count distinct      | Hostname    |Hostname DESC |

@@ -382,9 +382,18 @@ this.FeatureBackground();
 #line 63
  testRunner.And(string.Format("User navigates to the \'{0}\' tab on Project Scope Changes page", tab), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 64
- testRunner.Then("User sees all lists displayed with icon in \'Scope\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("All items in the \'Scope\' dropdown have icons", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "tooltip"});
+            table1.AddRow(new string[] {
+                        "System"});
+            table1.AddRow(new string[] {
+                        "Private"});
+            table1.AddRow(new string[] {
+                        "Shared"});
 #line 65
- testRunner.Then("User sees all lists icon displayed with tooltip in \'Scope\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("All icon items in the \'Scope\' dropdown have any of tooltip", ((string)(null)), table1, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

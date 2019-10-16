@@ -28,8 +28,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAllAssociationsAreSelectedByDefaultInT
 	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
 	Then Page with 'Create Project' subheader is displayed to user
-	Then User sees all lists displayed with icon in 'Scope' autocomplete
-	Then User sees all lists icon displayed with tooltip in 'Scope' autocomplete
+	Then All items in the 'Scope' autocomplete have icons
+	Then All icon items in the 'Scope' autocomplete have any of tooltip
+	| tooltip |
+	| System  |
+	| Private |
+	| Shared  |
 	When User enters "TestProject7" in the "Project Name" field
 	And User selects 'All Devices' option from 'Scope' autocomplete
 	And User clicks Create button on the Create Project page

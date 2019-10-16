@@ -456,9 +456,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.AreEqual("rgba(242, 88, 49, 1)", page.GetDropdownErrorMessageExclamationIcon(placeholder).GetCssValue("color"),
                 $"Incorrect error message color for '{placeholder}' field exclamation icon");
         }
-
-        [Then(@"User sees all lists displayed with icon in '(.*)' autocomplete")]
-        public void WhenUserSeesAllListDisplayedWithIconInTextBox(string dropdown)
+        
+        [Then(@"All items in the '(.*)' autocomplete have icons")]
+        public void AllItemsInTheAutocompleteHaveIcons(string dropdown)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             page.GetTextbox(dropdown).Click();
@@ -467,8 +467,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.BodyContainer.Click();
         }
 
-        [Then(@"User sees all lists displayed with icon in '(.*)' dropdown")]
-        public void WhenUserSeesAllListDisplayedWithIconInDropdown(string dropdown)
+        [Then(@"All items in the '(.*)' dropdown have icons")]
+        public void AllItemsInTheDropdownHaveIcons(string dropdown)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             page.GetDropdown(dropdown).Click();
@@ -477,54 +477,46 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.BodyContainer.Click();
         }
 
-        [Then(@"User sees all lists icon displayed with tooltip in '(.*)' autocomplete")]
-        public void ThenUserSeesAllListsIconDisplayedWithTooltipInTextBox(string dropdown)
+        [Then(@"All icon items in the '(.*)' autocomplete have any of tooltip")]
+        public void ThenUserSeesAllListsIconDisplayedWithTooltipInTextBox(string dropdown, Table table)
         {
+            var expectedTooltips = table.Rows.SelectMany(row => row.Values).ToList();
             var page = _driver.NowAt<BaseDashboardPage>();
+
             page.GetTextbox(dropdown).Click();
-
-            var icons = page.GetIconsOfDropdownOptions();
-            int attempts = 0;
-
-            foreach (var icon in icons)
-            {
-                //check for first three
-                if (attempts == 3)
-                    break;
-
-                _driver.MouseHover(icon);
-                var toolTipText = _driver.GetTooltipText();
-
-                Utils.Verify.That(new List<string> { "System", "Private", "Shared" }, Does.Contain(toolTipText), "Unexpected/missing tooltip");
-
-                attempts++;
-            }
+            VerifyTooltipOfDropdownIcons(page, expectedTooltips);
             page.BodyContainer.Click();
         }
 
-        [Then(@"User sees all lists icon displayed with tooltip in '(.*)' dropdown")]
-        public void ThenUserSeesAllListsIconDisplayedWithTooltipInDropdown(string dropdown)
+        [Then(@"All icon items in the '(.*)' dropdown have any of tooltip")]
+        public void ThenUserSeesAllListsIconDisplayedWithTooltipInDropdown(string dropdown, Table table)
         {
+            var expectedTooltips = table.Rows.SelectMany(row => row.Values).ToList();
             var page = _driver.NowAt<BaseDashboardPage>();
-            page.GetDropdown(dropdown).Click();
 
+            page.GetDropdown(dropdown).Click();
+            VerifyTooltipOfDropdownIcons(page, expectedTooltips);
+            page.BodyContainer.Click();
+        }
+
+        private void VerifyTooltipOfDropdownIcons(BaseDashboardPage page, List<string> tooltips)
+        {
             var icons = page.GetIconsOfDropdownOptions();
             int attempts = 0;
 
             foreach (var icon in icons)
             {
                 //check for first three
-                if (attempts == 3)
+                if (attempts == 5)
                     break;
 
                 _driver.MouseHover(icon);
                 var toolTipText = _driver.GetTooltipText();
 
-                Utils.Verify.That(new List<string> { "System", "Private", "Shared" }, Does.Contain(toolTipText), "Unexpected/missing tooltip");
+                Utils.Verify.That(tooltips, Does.Contain(toolTipText), "Unexpected/missing tooltip");
 
                 attempts++;
             }
-            page.BodyContainer.Click();
         }
 
         #endregion

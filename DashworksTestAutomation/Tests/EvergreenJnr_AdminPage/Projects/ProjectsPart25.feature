@@ -61,8 +61,12 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckCorrectListTooltipDisplayingInScop
 	And User selects "Scope" tab on the Project details page
 	And User selects "Scope Details" tab on the Project details page
 	And User navigates to the '<tab>' tab on Project Scope Changes page
-	Then User sees all lists displayed with icon in 'Scope' dropdown
-	Then User sees all lists icon displayed with tooltip in 'Scope' dropdown
+	Then All items in the 'Scope' dropdown have icons
+	Then All icon items in the 'Scope' dropdown have any of tooltip
+	| tooltip |
+	| System  |
+	| Private |
+	| Shared  |
 
 Examples:
 	| ProjectName                        | tab           |

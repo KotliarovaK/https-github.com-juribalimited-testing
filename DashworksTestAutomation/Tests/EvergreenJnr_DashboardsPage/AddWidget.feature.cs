@@ -1234,11 +1234,20 @@ this.FeatureBackground();
 #line 221
  testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 222
- testRunner.Then("User sees all lists displayed with icon in \'List\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 223
- testRunner.Then("User sees all lists icon displayed with tooltip in \'List\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("All items in the \'List\' autocomplete have icons", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
+                        "tooltip"});
+            table19.AddRow(new string[] {
+                        "System"});
+            table19.AddRow(new string[] {
+                        "Private"});
+            table19.AddRow(new string[] {
+                        "Shared"});
+#line 223
+ testRunner.Then("All icon items in the \'List\' autocomplete have any of tooltip", ((string)(null)), table19, "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
                         "WidgetType",
                         "Title",
                         "List",
@@ -1246,7 +1255,7 @@ this.FeatureBackground();
                         "AggregateFunction",
                         "AggregateBy",
                         "OrderBy"});
-            table19.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         "Bar",
                         "WidgetForDAS16842",
                         "1803 Rollout",
@@ -1254,18 +1263,18 @@ this.FeatureBackground();
                         "Count distinct",
                         "Hostname",
                         "Hostname DESC"});
-#line 224
- testRunner.When("User creates new Widget", ((string)(null)), table19, "When ");
-#line 227
- testRunner.Then("\"WidgetForDAS16842\" Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 228
+ testRunner.When("User creates new Widget", ((string)(null)), table20, "When ");
+#line 231
+ testRunner.Then("\"WidgetForDAS16842\" Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 232
  testRunner.When("User clicks Dashboards Details icon on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 229
+#line 233
  testRunner.When("User expands the list of shared lists", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 230
+#line 234
  testRunner.Then("User sees list icon displayed for \'WidgetForDAS16842\' widget in List section of D" +
                     "ashboards Details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 231
+#line 235
  testRunner.Then("User sees list icon displayed with tooltip for \'WidgetForDAS16842\' widget in List" +
                     " section of Dashboards Details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
