@@ -72,7 +72,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoMoreSectionsCanBeAddedAfter10Wi
 	#==========================================================#
 	Then 'ADD SECTION' button is disabled
 	And 'ADD WIDGET' button is disabled
-	Then 'ADD WIDGET' Action button has tooltip with 'Maximum number of widgets has been reached for this dashboard' text
+	Then 'ADD WIDGET' button has tooltip with 'Maximum number of widgets has been reached for this dashboard' text
 	When User clicks Ellipsis menu for "10_Widget" Widget on Dashboards page
 	Then User sees following Ellipsis menu items on Dashboards page:
 	| items            |

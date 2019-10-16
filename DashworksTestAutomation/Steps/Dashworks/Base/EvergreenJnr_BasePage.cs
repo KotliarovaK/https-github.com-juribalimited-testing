@@ -627,6 +627,43 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 $"'{buttonName}' button is displayed");
         }
 
+        [Then(@"tooltip is not displayed for '(.*)' button")]
+        public void ThenTooltipIsNotDisplayedForButton(string buttonName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var button = page.GetButtonByName(buttonName);
+
+            _driver.MouseHover(button);
+            //For tooltip display
+            Thread.Sleep(300);
+            Verify.IsFalse(_driver.IsTooltipDisplayed(),
+                $"Tooltip for '{buttonName}' button is displayed");
+        }
+
+        [Then(@"'(.*)' button has tooltip with '(.*)' text")]
+        public void ThenButtonHasTooltipWithText(string buttonName, string text)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var button = page.GetButtonByName(buttonName);
+            _driver.MouseHover(button);
+            var toolTipText = _driver.GetTooltipText();
+            Verify.AreEqual(text, toolTipText, 
+                $"'{buttonName}' button tooltip is incorrect");
+        }
+
+        #endregion
+
+        #region Menu button
+
+        [When(@"User clicks '(.*)' button and select '(.*)' menu button")]
+        public void WhenUserClicksButtonAndSelectMenuButton(string buttonName, string menuButtonName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.ClickButtonByName(buttonName);
+
+            page.GetMenuButtonByName(menuButtonName).Click();
+        }
+
         #endregion
     }
 }

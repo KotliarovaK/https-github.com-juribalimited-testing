@@ -723,8 +723,8 @@ this.FeatureBackground();
 #line 156
  testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 157
- testRunner.Then("\'UPDATE\' Action button has tooltip with \'This slot cannot be saved because it is " +
-                    "associated to at least 1 unpublished task (Stage13812 \\ 1Task13812)\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'UPDATE\' button has tooltip with \'This slot cannot be saved because it is associa" +
+                    "ted to at least 1 unpublished task (Stage13812 \\ 1Task13812)\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 158
  testRunner.When("User clicks \'CANCEL\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden

@@ -52,38 +52,6 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
                 "Action panel is opened");
         }
 
-        //TODO looks like this section should be moved to BaseDashboard
-        #region Action button
-
-        [Then(@"""(.*)"" button is displayed without tooltip on Update form")]
-        public void ThenUpdateButtonIsDisplayedWithoutTooltipOnUpdateForm(string buttonName)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            var button = action.GetButtonByName(buttonName);
-
-            _driver.MouseHover(button);
-            Verify.IsFalse(_driver.IsTooltipDisplayed(), "Tooltip for Update button displayed");
-        }
-
-        [When(@"User selects 'Save as new pilot' option")]
-        public void WhenUserSelectsSaveAsNewPilotOption()
-        {
-            var action = _driver.NowAt<PivotElementPage>();
-            action.SaveNewListButton.Click();
-        }
-
-        [Then(@"'(.*)' Action button has tooltip with '(.*)' text")]
-        public void ThenActionButtonHasTooltipWithText(string buttonName, string text)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            var button = page.GetButtonByName(buttonName);
-            _driver.MouseHover(button);
-            var toolTipText = _driver.GetTooltipText();
-            Utils.Verify.AreEqual(text, toolTipText, "Tooltip is incorrect");
-        }
-
-        #endregion
-
         [Then(@"Objects to add panel is disabled")]
         public void ThenObjectsToAddPanelIsDisabled()
         {

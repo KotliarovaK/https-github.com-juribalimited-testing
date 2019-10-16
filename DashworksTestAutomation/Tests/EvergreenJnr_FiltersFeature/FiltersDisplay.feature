@@ -1761,13 +1761,13 @@ Scenario: EvergreenJnr_ApplicationsList_CheckTooltipsForUpdateButtonWhenDateFiel
 	Then Filters panel is displayed to the user
 	When user select "User Dashworks First Seen" filter
 	And User select "Equals" Operator value
-	Then 'UPDATE' Action button has tooltip with 'You must enter a date' text
+	Then 'UPDATE' button has tooltip with 'You must enter a date' text
 	When User select "Between" Operator value
-	Then 'UPDATE' Action button has tooltip with 'You must enter a start date' text
+	Then 'UPDATE' button has tooltip with 'You must enter a start date' text
 	When User select "Empty" Operator value
-	Then 'UPDATE' Action button has tooltip with 'Complete all fields before saving this filter' text
+	Then 'UPDATE' button has tooltip with 'Complete all fields before saving this filter' text
 	When User select "Not empty" Operator value
-	Then 'UPDATE' Action button has tooltip with 'Complete all fields before saving this filter' text
+	Then 'UPDATE' button has tooltip with 'Complete all fields before saving this filter' text
 
 @Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS16845
 Scenario: EvergreenJnr_MailboxesList_CheckThatApplicationReadinessSubCategoryIsMissingForProjectOfMailboxesLists
