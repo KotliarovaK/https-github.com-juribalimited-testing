@@ -382,7 +382,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var dropdown = _driver.NowAt<BaseDashboardPage>();
             Verify.IsTrue(dropdown.IsDropdownDisplayed(dropdownName),
-                $"{dropdownName} is not displayed");
+                $"{dropdownName} dropdown is not displayed");
         }
 
         [Then(@"'(.*)' dropdown is not displayed")]
@@ -390,7 +390,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var dropdown = _driver.NowAt<BaseDashboardPage>();
             Verify.IsFalse(dropdown.IsDropdownDisplayed(dropdownName),
-                $"{dropdownName} is not displayed");
+                $"'{dropdownName}' dropdown' is not displayed");
         }
 
         //Exact much
