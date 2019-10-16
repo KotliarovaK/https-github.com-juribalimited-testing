@@ -230,6 +230,28 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.AreEqual(expectedText, text, "Incorrect text in the autocomplete");
         }
 
+        [Then(@"All items in the '(.*)' autocomplete have icons")]
+        public void AllItemsInTheAutocompleteHaveIcons(string dropdown)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.GetTextbox(dropdown).Click();
+
+            Verify.That(page.GetIconsOfDropdownOptions().Count, Is.EqualTo(page.GetDropdownValues().Count), "Incorrect options in lists dropdown");
+            page.BodyContainer.Click();
+        }
+
+        [Then(@"All icon items in the '(.*)' autocomplete have any of tooltip")]
+        public void ThenUserSeesAllListsIconDisplayedWithTooltipInTextBox(string dropdown, Table table)
+        {
+            var expectedTooltips = table.Rows.SelectMany(row => row.Values).ToList();
+            var page = _driver.NowAt<BaseDashboardPage>();
+
+            page.GetTextbox(dropdown).Click();
+            VerifyTooltipOfDropdownIcons(page, expectedTooltips);
+            page.BodyContainer.Click();
+        }
+
+
         #endregion
 
         #region Textbox
@@ -439,53 +461,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             {
                 Assert.That(actualList, Does.Not.Contain(expectedIem), $"Values in {dropDownName} drop-down is displayed");
             }
-        }
-
-        [Then(@"'(.*)' error message is displayed for '(.*)' dropdown")]
-        public void ThenErrorMessageIsDisplayedForDropdown(string errorMessage, string placeholder)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            page.BodyContainer.Click();
-
-            Verify.AreEqual(errorMessage, page.GetDropdownErrorMessage(placeholder),
-                $"Incorrect error message is displayed in the '{placeholder}' field");
-
-            Verify.AreEqual("rgba(242, 88, 49, 1)", page.GetDropdownErrorMessageElement(placeholder).GetCssValue("color"),
-                $"Incorrect error message color for '{placeholder}' field");
-
-            Verify.AreEqual("rgba(242, 88, 49, 1)", page.GetDropdownErrorMessageExclamationIcon(placeholder).GetCssValue("color"),
-                $"Incorrect error message color for '{placeholder}' field exclamation icon");
-        }
-        
-        [Then(@"All items in the '(.*)' autocomplete have icons")]
-        public void AllItemsInTheAutocompleteHaveIcons(string dropdown)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            page.GetTextbox(dropdown).Click();
-
-            Verify.That(page.GetIconsOfDropdownOptions().Count, Is.EqualTo(page.GetDropdownValues().Count), "Incorrect options in lists dropdown");
-            page.BodyContainer.Click();
-        }
-
-        [Then(@"All items in the '(.*)' dropdown have icons")]
-        public void AllItemsInTheDropdownHaveIcons(string dropdown)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            page.GetDropdown(dropdown).Click();
-
-            Verify.That(page.GetIconsOfDropdownOptions().Count, Is.EqualTo(page.GetDropdownValues().Count), "Incorrect options in lists dropdown");
-            page.BodyContainer.Click();
-        }
-
-        [Then(@"All icon items in the '(.*)' autocomplete have any of tooltip")]
-        public void ThenUserSeesAllListsIconDisplayedWithTooltipInTextBox(string dropdown, Table table)
-        {
-            var expectedTooltips = table.Rows.SelectMany(row => row.Values).ToList();
-            var page = _driver.NowAt<BaseDashboardPage>();
-
-            page.GetTextbox(dropdown).Click();
-            VerifyTooltipOfDropdownIcons(page, expectedTooltips);
-            page.BodyContainer.Click();
         }
 
         [Then(@"All icon items in the '(.*)' dropdown have any of tooltip")]
