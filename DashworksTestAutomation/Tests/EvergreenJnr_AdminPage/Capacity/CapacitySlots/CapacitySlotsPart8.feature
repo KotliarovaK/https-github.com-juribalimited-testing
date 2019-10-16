@@ -144,9 +144,11 @@ Scenario Outline: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCountersOfUserPr
 	And Values is displayed in added filter info
 	| Values                    |
 	| Evergreen Capacity Unit 3 |
+	| Offboarded                |
 	And Options is displayed in added filter info
 	| Values |
 	| is     |
+	| is not |
 
 Examples:
 	| ListName     |
@@ -178,9 +180,11 @@ Scenario Outline: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCountersOfMailPr
 	And Values is displayed in added filter info
 	| Values     |
 	| Unassigned |
+	| Offboarded |
 	And Options is displayed in added filter info
 	| Values |
 	| is     |
+	| is not |
 
 Examples:
 	| ListName  |
