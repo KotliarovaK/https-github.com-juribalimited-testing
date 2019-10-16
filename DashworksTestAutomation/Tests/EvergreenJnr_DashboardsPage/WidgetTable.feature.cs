@@ -2041,7 +2041,7 @@ this.FeatureBackground();
 #line 420
  testRunner.When("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 421
- testRunner.When("User clicks \"GREEN\" value for \"True\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \"AMBER\" value for \"True\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 422
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 423
