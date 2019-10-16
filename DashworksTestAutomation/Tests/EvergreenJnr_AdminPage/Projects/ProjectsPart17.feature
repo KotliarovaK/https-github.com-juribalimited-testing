@@ -35,11 +35,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedWhenDeleti
 	And User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User navigates to the "TestList0A78U9" list
-	And User clicks Settings button in the list panel
-	Then Settings panel is displayed to the user
-	When User clicks Delete in the list panel
+	When User clicks Settings button for "TestList0A78U9" list
+	Then Cog menu is displayed to the user
+	When User clicks 'Delete' option in opened Cog-menu
 	Then "TestList0A78U9 list will be permanently deleted" message is displayed in the lists panel
-	And User clicks 'DELETE' button on the warning message in the lists panel
+	And User clicks Delete button on the warning message in the lists panel
 	And no Warning message is displayed in the lists panel
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12182 @DAS12999 @DAS13199 @DAS13297 @DAS12485 @DAS13803 @DAS13930 @Cleanup @Project_Creation_and_Scope
@@ -91,11 +91,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeleting
 	Then 'All Users' list should be displayed to the user
 	When User navigates to the "ListForProject" list
 	Then "ListForProject" list is displayed to user
-	When User clicks Settings button in the list panel
-	Then Settings panel is displayed to the user
-	When User clicks Delete in the list panel
+	When User clicks Settings button for "ListForProject" list
+	Then Cog menu is displayed to the user
+	When User clicks 'Delete' option in opened Cog-menu
 	Then "list is used by 1 project, do you wish to proceed?" message is displayed in the lists panel
-	And User clicks 'DELETE' button on the warning message in the lists panel
+	And User clicks Delete button on the warning message in the lists panel
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item

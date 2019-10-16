@@ -130,7 +130,7 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatColumnsCanBeAddedAfterRunningP
 	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	Then Plus button is not displayed in the left-pinned column
-	When User clicks "<Link>" link in Lists panel
+	When User navigates to the "<Link>" list
 	And User clicks the Columns button
 	And ColumnName is entered into the search box and the selection is clicked
 	| ColumnName        |

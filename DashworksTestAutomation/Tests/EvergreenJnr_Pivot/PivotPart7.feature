@@ -221,6 +221,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatPivotPanelIsDisplayedCorrectlyAfterC
 	When User navigates to the "All Devices" list
 	And User navigates to the "PivotList_DAS13842" list
 	Then "PivotList_DAS13842" list is displayed to user
-	When User opens manage pane for list with "PivotList_DAS13842" name
+	When User clicks 'Manage' Settings menu item for 'PivotList_DAS13842' list
 	Then "Dynamic Pivot Details" panel is displayed to the user
 	And User remove list with "PivotList_DAS13842" name on "Devices" page

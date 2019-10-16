@@ -1431,7 +1431,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatAddNewOptionAvailableAfterClick
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User clicks Add New button on the Filter panel
-	And User clicks "<LinkName>" link in Lists panel
+	When User navigates to the "<LinkName>" list
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
 	And Add New button is displayed on the Filter panel
@@ -1827,7 +1827,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUserPostalCodeOptionsDisplaying
 Scenario: EvergreenJnr_MailboxesList_CheckThatFilterExpressionSectionIsMovedToFilterPanel
 	When User clicks 'Mailboxes' on the left-hand menu
 	Then 'All Mailboxes' list should be displayed to the user
-	When User clicks "Mailbox Pivot (Complex)" list name in left panel
+	When User navigates to the "Mailbox Pivot (Complex)" list
 	And User clicks the Filters button
 	Then Filter Expression icon displayed within Filter Panel
 	When User clicks Filter Expression icon in Filter Panel

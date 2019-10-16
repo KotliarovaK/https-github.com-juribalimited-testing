@@ -6372,7 +6372,7 @@ this.FeatureBackground();
 #line 1433
  testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1434
- testRunner.And(string.Format("User clicks \"{0}\" link in Lists panel", linkName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When(string.Format("User navigates to the \"{0}\" list", linkName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1435
  testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1436
@@ -8139,7 +8139,7 @@ this.FeatureBackground();
 #line 1829
  testRunner.Then("\'All Mailboxes\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 1830
- testRunner.When("User clicks \"Mailbox Pivot (Complex)\" list name in left panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \"Mailbox Pivot (Complex)\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1831
  testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1832

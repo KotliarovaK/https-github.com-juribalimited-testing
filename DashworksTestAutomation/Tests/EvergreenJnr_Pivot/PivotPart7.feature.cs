@@ -824,7 +824,7 @@ this.FeatureBackground();
 #line 223
  testRunner.Then("\"PivotList_DAS13842\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 224
- testRunner.When("User opens manage pane for list with \"PivotList_DAS13842\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Manage\' Settings menu item for \'PivotList_DAS13842\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 225
  testRunner.Then("\"Dynamic Pivot Details\" panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 226

@@ -72,8 +72,9 @@ namespace DashworksTestAutomation.Steps.API
             {
                 _driver.WaitForElementToBeDisplayed(list.GetActiveList());
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                Logger.Write($"Created list was not active. " + e);
                 Logger.Write(
                     $"Active list was not switched automatically, browser URL: {_driver.Url}");
                 _driver.Navigate().Refresh();

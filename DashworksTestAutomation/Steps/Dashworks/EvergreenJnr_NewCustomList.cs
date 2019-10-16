@@ -55,21 +55,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("The Save to Custom List Element was NOT displayed");
         }
 
-        [When(@"User clicks Settings button in the list panel")]
-        public void WhenUserClicksSettingsButtonInTheListPanel()
-        {
-            var listElement = _driver.NowAt<CustomListElement>();
-            _driver.WaitForDataLoading();
-            _driver.MouseHover(listElement.SettingsButton);
-            _driver.WaitForElementToBeDisplayed(listElement.SettingsButton);
-            listElement.SettingsButton.Click();
-        }
-
         [When(@"User clicks Settings button for ""(.*)"" list")]
         public void WhenUserClicksSettingsButtonForList(string listName)
         {
             var page = _driver.NowAt<CustomListElement>();
-            page.OpenSettingsByListName(listName).Click();
+            var icon = page.GetSettingsIconForList(listName);
+            _driver.MouseHover(icon);
+            _driver.WaitForElementToBeDisplayed(icon);
+            icon.Click();
         }
 
         [When(@"User clicks Delete button for custom list")]
@@ -81,13 +74,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Thread.Sleep(1000);
             button.DeleteButton.Click();
             _driver.WaitForElementToBeNotDisplayed(button.MenuItem);
-        }
-
-        [Then(@"Settings panel is displayed to the user")]
-        public void ThenSettingsPanelIsDisplayedToTheUser()
-        {
-            var listElement = _driver.NowAt<CustomListElement>();
-            Utils.Verify.IsTrue(listElement.SettingsPanel.Displayed(), "Settings panel is not displayed");
         }
 
         [Then(@"""(.*)"" list is displayed in the bottom section of the List Panel")]
@@ -195,7 +181,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<CustomListElement>();
             _driver.WaitForDataLoading(45);
             _driver.WaitForElementToBeDisplayed(page.GetActiveList());
-            Verify.AreEqual(listName, page.GetActiveList().Text, "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.AreEqual(listName, page.GetActiveList().Text, "Incorrect list name is displayed");
         }
 
         [Then(@"""(.*)"" edited list is displayed to user")]
@@ -206,13 +192,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoadingInActionsPanel();
             _driver.WaitForElementToBeDisplayed(page.ActiveCustomListEdited);
             Utils.Verify.AreEqual(listName, page.ActiveCustomListEdited.Text, "PLEASE ADD EXCEPTION MESSAGE");
-        }
-
-        [Then(@"""(.*)"" list name is displayed correctly")]
-        public void ThenListNameIsDisplayedCorrectly(string listName)
-        {
-            var listElement = _driver.NowAt<CustomListElement>();
-            Utils.Verify.AreEqual(listName, listElement.CheckAllListName(listName).Text, "Incorrect list name is displayed");
         }
 
         [Then(@"""(.*)"" list name is displayed correctly on top tools panel")]
@@ -228,29 +207,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 Utils.Verify.That(listNameOnTopPanel, Is.Null, $"'{listName}' list is not displayed on top tools panel");
             }
-        }
-
-        [When(@"User clicks ""(.*)"" link in Lists panel")]
-        public void WhenUserClicksLinkInListsPanel(string listName)
-        {
-            var listElement = _driver.NowAt<CustomListElement>();
-            listElement.CheckAllListName(listName).Click();
-        }
-
-        [When(@"User clicks Manage in the list panel")]
-        public void WhenUserClicksManageInTheListPanel()
-        {
-            var listDetailsElement = _driver.NowAt<CustomListElement>();
-            _driver.WaitForElementToBeDisplayed(listDetailsElement.ManageButton);
-            listDetailsElement.ManageButton.Click();
-        }
-
-        [When(@"User clicks Delete in the list panel")]
-        public void WhenUserClicksDeleteInTheListPanel()
-        {
-            var listDetailsElement = _driver.NowAt<CustomListElement>();
-            _driver.WaitForElementToBeDisplayed(listDetailsElement.DeleteButton);
-            listDetailsElement.DeleteButton.Click();
         }
 
         [When(@"User waits for three seconds")]
@@ -341,7 +297,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listElement = _driver.NowAt<CustomListElement>();
 
-            listElement.ClickSettingsButtonByListName(listName);
+            WhenUserClicksSettingsButtonForList(listName);
             _driver.WaitForElementToBeDisplayed(listElement.DeleteButton);
             listElement.DeleteButton.Click();
             _driver.WaitForElementToBeDisplayed(listElement.DeleteConfirmationMessage);
@@ -353,7 +309,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listElement = _driver.NowAt<CustomListElement>();
 
-            listElement.ClickSettingsButtonByListName(listName);
+            WhenUserClicksSettingsButtonForList(listName);
             _driver.WaitForElementToBeDisplayed(listElement.DeleteButton);
             listElement.DeleteButton.Click();
         }
@@ -380,25 +336,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.IsTrue(button.CancelDeletingButton.Displayed(), "Cancel button is not displayed in banner");
         }
 
-        [When(@"User duplicates list with ""(.*)"" name")]
-        public void WhenUserDuplicatesListWithName(string listName)
+        [When(@"User clicks '(.*)' Settings menu item for '(.*)' list")]
+        public void WhenUserClicksSettingsMenuItemForList(string menuItem, string listName)
         {
-            var listElement = _driver.NowAt<CustomListElement>();
-
-            listElement.ClickSettingsButtonByListName(listName);
-            _driver.WaitForElementToBeDisplayed(listElement.DuplicateButton);
-            listElement.DuplicateButton.Click();
+            WhenUserClicksSettingsButtonForList(listName);
+            var cogMenu = _driver.NowAt<CogMenuElements>();
+            _driver.WaitForElementToBeDisplayed(cogMenu.CogMenuList);
+            cogMenu.GetCogmenuOptionByName(menuItem).Click();
             _driver.WaitForDataLoading();
-        }
-
-        [When(@"User opens manage pane for list with ""(.*)"" name")]
-        public void WhenUserManagePaneForListName(string listName)
-        {
-            var listElement = _driver.NowAt<CustomListElement>();
-
-            listElement.ClickSettingsButtonByListName(listName);
-            _driver.WaitForElementToBeDisplayed(listElement.ManageButton);
-            listElement.ManageButton.Click();
         }
 
         [Then(@"list name automatically changed to ""(.*)"" name")]
@@ -456,13 +401,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listElement = _driver.NowAt<CustomListElement>();
             var list = listElement.GetAllListNames();
             Utils.Verify.AreEqual(list.OrderBy(s => s), list, "Lists names are not in alphabetical order");
-        }
-
-        [When(@"User clicks ""(.*)"" list name in left panel")]
-        public void WhenUserClicksListNameInLeftPane(string listName)
-        {
-            var listElement = _driver.NowAt<CustomListElement>();
-            listElement.GetListElementByName(listName).Click();
         }
 
         [Then(@"Columnmetadata request contains ArchivedItem parameter")]
