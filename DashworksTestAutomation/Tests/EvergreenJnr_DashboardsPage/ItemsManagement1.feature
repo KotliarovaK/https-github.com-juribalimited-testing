@@ -146,9 +146,9 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheEditMode
 	And User clicks Edit mode trigger on Dashboards page
 	Then User sees Edit mode trigger is in the On position on Dashboards page
 	And User sees Edit mode trigger has blue style on Dashboards page
-	And "CREATE DASHBOARD" Action button is disabled
-	And "ADD SECTION" Action button is active
-	And "ADD WIDGET" Action button is active
+	And 'CREATE DASHBOARD' button is disabled
+	And 'ADD SECTION' button is not disabled
+	And 'ADD WIDGET' button is not disabled
 	And User sees Collapse/Expand icon enabled for Section having "WidgetForDAS12978" Widget on Dashboards page
 	And User sees Ellipsis icon enabled for Section having "WidgetForDAS12978" Widget on Dashboards page
 	And User sees Ellipsis icon enabled for "WidgetForDAS12978" Widget on Dashboards page
@@ -183,7 +183,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheReadOnlyMode
 	When User clicks Show Dashboards panel icon on Dashboards page
 	Then User sees Dashboards sub menu on Dashboards page
 	When User navigates to the "Dashboard for DAS12977" list
-	Then "CREATE DASHBOARD" Action button is active
+	Then 'CREATE DASHBOARD' button is not disabled
 	And 'ADD SECTION' button is not displayed
 	And 'ADD WIDGET' button is not displayed
 	And User sees Edit mode trigger is in the Off position on Dashboards page

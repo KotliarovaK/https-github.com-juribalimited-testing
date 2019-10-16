@@ -2334,7 +2334,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNo500ErrorOnApplicationPageAfterUpda
 	|                | Used on device      |
 	|                | Entitled to device  |
 	|                | Installed on device |
-	Then "UPDATE" Action button is disabled
+	Then 'UPDATE' button is disabled
 
 @Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS17715 @Cleanup
 Scenario: EvergreenJnr_DevicedList_CheckCustomFieldsUsingInFilterAndProjectCreation

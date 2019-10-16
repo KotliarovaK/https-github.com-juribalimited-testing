@@ -626,9 +626,9 @@ this.FeatureBackground();
 #line 146
  testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table20, "And ");
 #line 150
- testRunner.Then("\"RUN PIVOT\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'RUN PIVOT\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 151
- testRunner.And("\"SAVE\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'SAVE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 152
  testRunner.When("User clicks reset button on main panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 153
@@ -659,15 +659,15 @@ this.FeatureBackground();
 #line 164
  testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table23, "And ");
 #line 168
- testRunner.Then("\"RUN PIVOT\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'RUN PIVOT\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 169
- testRunner.And("\"SAVE\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'SAVE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 170
  testRunner.When("User clicks \'RUN PIVOT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 171
  testRunner.Then("Pivot run was completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 172
- testRunner.And("\"SAVE\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'SAVE\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 173
  testRunner.When("User clicks reset button on main panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 174
@@ -716,9 +716,9 @@ this.FeatureBackground();
 #line 196
  testRunner.And("\'ADD VALUE\' button is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 197
- testRunner.And("\"SAVE\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'SAVE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 198
- testRunner.And("\"RUN PIVOT\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'RUN PIVOT\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 199
  testRunner.And("User remove list with \"PivotList_DAS_13844\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 200

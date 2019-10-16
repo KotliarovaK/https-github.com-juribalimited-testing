@@ -581,9 +581,9 @@ this.FeatureBackground();
 #line 152
  testRunner.When("User selects \'No change\' in the \'Update Owner\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 153
- testRunner.Then("\"CREATE\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'CREATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 154
- testRunner.Then("\"SAVE AND CREATE ANOTHER\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'SAVE AND CREATE ANOTHER\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 155
  testRunner.Then("\'CREATE\' Action button has tooltip with \'Select at least one value to change\' tex" +
                     "t", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
