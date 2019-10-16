@@ -511,6 +511,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ActionsPanelPart1.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\ActionsPanelPart13.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ActionsPanelPart13.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr_ActionsPanel\UpdateCustomFfield\CreateCustomFieldForBulkUpdate.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1651,6 +1656,10 @@
     <None Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\ActionsPanelPart1.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ActionsPanelPart1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\ActionsPanelPart13.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ActionsPanelPart13.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_ActionsPanel\UpdateCustomFfield\CreateCustomFieldForBulkUpdate.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
