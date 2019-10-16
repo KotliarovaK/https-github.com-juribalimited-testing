@@ -16,7 +16,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMessageThatDisplayedWhenDeletingBucket
 	Then Page with 'Buckets' header is displayed to user
 	When User clicks Reset Filters button on the Admin page
 	And User enters "Amsterdam" text in the Search field for "Bucket" column
-	Then Actions dropdown is displayed correctly
+	Then 'Actions' dropdown is displayed
 	When User selects all rows on the grid
 	And User selects 'Delete' in the 'Actions' dropdown
 	And User clicks 'DELETE' button 

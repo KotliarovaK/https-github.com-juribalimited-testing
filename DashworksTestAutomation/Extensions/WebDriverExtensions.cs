@@ -2081,6 +2081,23 @@ namespace DashworksTestAutomation.Extensions
 
         #endregion
 
+        #region Checkbox
+
+        public static void SetEvergreenCheckboxState(this RemoteWebDriver driver, IWebElement checkbox, bool desiredState)
+        {
+            if (!checkbox.Selected.Equals(desiredState))
+            {
+                driver.ClickByJavascript(checkbox);
+            }
+        }
+
+        public static bool GetEvergreenCheckboxState(this RemoteWebDriver driver, IWebElement checkbox)
+        {
+            return bool.Parse(checkbox.GetAttribute("aria-checked"));
+        }
+
+        #endregion
+
         public static bool IsAttributePresent(this IWebElement element, string attribute)
         {
             try

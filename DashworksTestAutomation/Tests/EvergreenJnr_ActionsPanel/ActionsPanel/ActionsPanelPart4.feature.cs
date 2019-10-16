@@ -170,7 +170,7 @@ this.FeatureBackground();
             table2.AddRow(new string[] {
                         "Update task value"});
 #line 20
- testRunner.Then("following values are displayed in \"Bulk Update Type\" drop-down on Action panel:", ((string)(null)), table2, "Then ");
+ testRunner.Then("following Values are displayed in the \'Bulk Update Type\' dropdown:", ((string)(null)), table2, "Then ");
 #line 28
  testRunner.When("User selects \'Update path\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 29
@@ -504,7 +504,7 @@ this.FeatureBackground();
             table8.AddRow(new string[] {
                         "Update task value"});
 #line 110
- testRunner.Then("following values are displayed in \"Bulk Update Type\" drop-down on Action panel:", ((string)(null)), table8, "Then ");
+ testRunner.Then("following Values are displayed in the \'Bulk Update Type\' dropdown:", ((string)(null)), table8, "Then ");
 #line 118
  testRunner.When("User selects \'Update path\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 119

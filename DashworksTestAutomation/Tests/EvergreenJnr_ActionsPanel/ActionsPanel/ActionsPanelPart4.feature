@@ -17,7 +17,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelWorkedCorrectlyAfterCic
 	| 00RUUMAH9OZN9A   |
 	| 00SH8162NAS524   |
 	And User selects 'Bulk update' in the 'Action' dropdown
-	Then following values are displayed in "Bulk Update Type" drop-down on Action panel:
+	Then following Values are displayed in the 'Bulk Update Type' dropdown:
 	| Options              |
 	| Update bucket        |
 	| Update capacity unit |
@@ -107,7 +107,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatProjectFieldIsDisplayedCorrectlyAfterC
 	| SelectedRowsName    |
 	| 002B5DC7D4D34D5C895 |
 	And User selects 'Bulk update' in the 'Action' dropdown
-	Then following values are displayed in "Bulk Update Type" drop-down on Action panel:
+	Then following Values are displayed in the 'Bulk Update Type' dropdown:
 	| Options              |
 	| Update bucket        |
 	| Update capacity unit |

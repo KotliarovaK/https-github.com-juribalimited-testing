@@ -549,8 +549,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"{text} is not displayed in the Project Scope Changes section");
         }
 
-        [When(@"User deselect all rows on the grid")]
-        [When(@"User selects all rows on the grid")]
+        //TODO replace by WhenUserDeselectAllRowsOnTheGrid
         [When(@"User clicks Select All checkbox on the grid")]
         public void WhenUserSelectsAllRowsOnTheGrid()
         {
@@ -740,9 +739,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User removes selected members")]
         public void WhenUserRemovesSelectedMembers()
         {
-            var action = _driver.NowAt<ActionPanelPage>();
-            action.ActionsDropDown.Click();
-            action.GetActionButtonByName("Remove Members").Click();
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.SelectDropdown("Remove Members", "Actions");
 
             var teamElement = _driver.NowAt<TeamsPage>();
             _driver.WaitForElementToBeDisplayed(teamElement.RemoveButtonOnPage);
@@ -820,29 +818,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Verify.IsTrue(page.GetMovingElementByName(name).Displayed(), $"{name} Page is not displayed to the user");
         }
 
-        //TODO should be moved to ActionPanel
-        [Then(@"Actions dropdown is displayed correctly")]
-        public void ThenActionsDropdownIsDisplayedCorrectly()
-        {
-            var button = _driver.NowAt<ActionPanelPage>();
-            _driver.WaitForElementToBeDisplayed(button.ActionsDropDown);
-            Verify.IsTrue(button.ActionsDropDown.Displayed(), "Actions dropdown is not displayed correctly");
-        }
-
         [Then(@"Actions dropdown is disabled")]
         public void ThenActionsDropdownIsDisabled()
         {
             var button = _driver.NowAt<BaseGridPage>();
             Verify.IsTrue(button.ActionsSelectBox.GetAttribute("class").Contains("disabled"), "Actions dropdown is active");
-        }
-
-        //TODO should be moved to ActionPanel
-        [When(@"User clicks on Actions button")]
-        public void ThenUserClicksOnActionsButton()
-        {
-            var button = _driver.NowAt<ActionPanelPage>();
-            _driver.WaitForElementToBeDisplayed(button.ActionsDropDown);
-            button.ActionsDropDown.Click();
         }
 
         [When(@"User selects all objects to the Project")]
@@ -1741,22 +1721,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             projectElement.OnboardedObjectNumber(objectsNumber);
         }
 
-        //TODO should be moved to ActionPanel
-        [Then(@"Actions button on the Projects page is active")]
-        public void ThenActionsButtonOnTheProjectsPageIsActive()
-        {
-            var projectElement = _driver.NowAt<ActionPanelPage>();
-            Verify.Contains("false", projectElement.ActionsDropDown.GetAttribute("aria-disabled"), "Actions button is inactive");
-        }
-
-        //TODO should be moved to ActionPanel
-        [Then(@"Actions button on the Projects page is not active")]
-        public void ThenActionsButtonOnTheProjectsPageIsNotActive()
-        {
-            var projectElement = _driver.NowAt<ActionPanelPage>();
-            Verify.Contains("true", projectElement.ActionsDropDown.GetAttribute("aria-disabled"), "Actions button is inactive");
-        }
-
         [When(@"User removes selected item")]
         public void WhenUserRemovesSelectedItem()
         {
@@ -1793,15 +1757,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             var bannerElement = _driver.NowAt<BaseGridPage>();
             Verify.IsTrue(bannerElement.DeleteButtonInWarningMessage.Displayed(), "Delete button is not displayed in banner");
-        }
-
-        //TODO should be moved to ActionPanel
-        [Then(@"Delete button is not displayed to the User on the Projects page")]
-        public void ThenDeleteButtonIsNotDisplayedToTheUserOnTheProjectsPage()
-        {
-            var projectElement = _driver.NowAt<ActionPanelPage>();
-            Verify.IsTrue(projectElement.ActionsDropDown.Displayed(), "Actions is not displayed in the dropdown");
-            Verify.IsFalse(projectElement.DeleteButtonOnPage.Displayed(), "Delete button is displayed");
         }
 
         [Then(@"Counter shows ""(.*)"" found rows")]

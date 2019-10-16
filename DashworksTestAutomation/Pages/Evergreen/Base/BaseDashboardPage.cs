@@ -59,12 +59,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = ".//admin-header//span[@class='ng-star-inserted']")]
         public IWebElement FoundRowsLabel { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[contains(@id, 'clmnBtn')]")]
-        public IWebElement ColumnButton { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//button[contains(@id, 'fltrBtn')]")]
-        public IWebElement FilterButton { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//div[@class='device-context-header']//button[@aria-label='filters']")]
         public IWebElement FilterExpressionIcon { get; set; }
 
@@ -166,15 +160,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         [FindsBy(How = How.XPath, Using = ".//span[contains(@class, 'rowCount')]")]
         public IWebElement ResultsOnPageCount { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'checkbox-styled')]//mat-checkbox")]
-        public IWebElement SelectAllCheckbox { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'checkbox-styled')]//mat-checkbox//input")]
-        public IWebElement SelectAllCheckboxState { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//span[@class='ag-selection-checkbox']")]
-        public IWebElement Checkbox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-body-viewport')]//div[@class='ag-center-cols-container']")]
         public IWebElement TableContent { get; set; }
@@ -897,12 +882,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return GetButtonByName(button, this.GetStringByFor(() => this.PopupElement));
         }
 
-        public IWebElement GetButtonByName(string button, string parentElementSelector = "")
+        public IWebElement GetButtonByName(string button, string parentElementSelector = "", WebDriverExtensions.WaitTime waitTime = WebDriverExtensions.WaitTime.Long)
         {
+            var time = int.Parse(waitTime.GetValue());
             var selector = By.XPath(
                 $"{parentElementSelector}//span[text()='{button}']/ancestor::button");
             Driver.WaitForDataLoading();
-            Driver.WaitForElementsToBeDisplayed(selector, 30, false);
+            Driver.WaitForElementsToBeDisplayed(selector, time, false);
             return Driver.FindElements(selector).First(x => x.Displayed());
         }
 

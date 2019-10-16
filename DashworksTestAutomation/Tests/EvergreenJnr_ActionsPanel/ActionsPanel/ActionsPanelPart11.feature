@@ -115,7 +115,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSlotIsDisplayedInDDLIfSelectDateWith
 	And User selects 'Migrated Date' option from 'Task' autocomplete
 	And User selects 'Update' in the 'Update Date' dropdown
 	When User enters next 'Tuesday' day to 'Date' textbox
-	Then following values are presented in "Capacity Slot" drop-down on Action panel:
+	Then User sees that 'Capacity Slot' dropdown contains following options:
 	| Options    |
 	| None       |
 	| Slot 17639 |
@@ -128,7 +128,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFullSlotIsDisplayedWhileRulesShouldH
 	| 1803 Rollout | Slot17833_2 | 17833_2     | Teams and Paths | Device     | 2       | Migration \ Migrated Date |
 	And User clicks 'Devices' on the left-hand menu
 	And User clicks the Actions button
-	And User select all rows
+	When User selects all rows on the grid
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	And User selects '1803 Rollout' option from 'Project' autocomplete
@@ -142,7 +142,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFullSlotIsDisplayedWhileRulesShouldH
 	When User clicks 'UPDATE' button
 	And User clicks refresh button in the browser
 	And User clicks the Actions button
-	And User select all rows
+	When User selects all rows on the grid
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	And User selects '1803 Rollout' option from 'Project' autocomplete
@@ -150,7 +150,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFullSlotIsDisplayedWhileRulesShouldH
 	And User selects 'Migrated Date' option from 'Task' autocomplete
 	And User selects 'Update' in the 'Update Date' dropdown
 	When User enters next 'Tuesday' day to 'Date' textbox
-	Then following values are presented in "Capacity Slot" drop-down on Action panel:
+	Then User sees that 'Capacity Slot' dropdown contains following options:
 	| Options    |
 	| None       |
 	| Slot17833_1|

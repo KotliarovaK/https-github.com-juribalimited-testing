@@ -313,12 +313,5 @@ namespace DashworksTestAutomation.Pages.Evergreen
             var by = By.XPath(".//th[@role='columnheader']//span[contains(@class, 'status-text')]");
             return Driver.FindElements(by).Select(x => x.Text).ToList();
         }
-
-        public IWebElement GetItemDetailsPageByName(string itemName)
-        {
-            var selector = By.XPath($".//div[@id='pagetitle-text']//h1[text()='{itemName}']");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
     }
 }

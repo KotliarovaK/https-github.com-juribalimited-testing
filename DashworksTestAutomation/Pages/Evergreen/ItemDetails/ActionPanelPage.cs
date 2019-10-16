@@ -12,9 +12,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
 {
     class ActionPanelPage : SeleniumBasePage
     {
-        [FindsBy(How = How.XPath, Using = ".//mat-select[@name='actions']")]
-        public IWebElement ActionsDropDown { get; set; }
-
         //Button for deleting confirmation
         [FindsBy(How = How.XPath,
             Using = ".//button[contains(@class, 'button-small mat-raised-button')]/span[text()='DELETE']")]
@@ -28,13 +25,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
             {
                 //SelectorFor(this, p => p.PageIdentitySelectors)
             };
-        }
-
-        public IWebElement GetActionButtonByName(string name)
-        {
-            var selector = By.XPath($".//span[@class='mat-accent'][text()='{name}']/ancestor::mat-option");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
         }
     }
 }

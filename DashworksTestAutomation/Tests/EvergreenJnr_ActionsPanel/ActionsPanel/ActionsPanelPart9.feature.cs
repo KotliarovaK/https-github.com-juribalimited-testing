@@ -168,9 +168,9 @@ this.FeatureBackground();
             table2.AddRow(new string[] {
                         "All linked users"});
 #line 22
- testRunner.Then("following values are displayed in \"Also Move Users\" drop-down on Action panel:", ((string)(null)), table2, "Then ");
+ testRunner.Then("following Values are displayed in the \'Also Move Users\' dropdown:", ((string)(null)), table2, "Then ");
 #line 27
- testRunner.When("User selects \"Owners only\" option in \"Also Move Users\" drop-down on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Owners only\' in the \'Also Move Users\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 28
  testRunner.And("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 29
@@ -268,10 +268,9 @@ this.FeatureBackground();
             table4.AddRow(new string[] {
                         "All linked devices"});
 #line 45
- testRunner.Then("following values are displayed in \"Also Move Devices\" drop-down on Action panel:", ((string)(null)), table4, "Then ");
+ testRunner.Then("following Values are displayed in the \'Also Move Devices\' dropdown:", ((string)(null)), table4, "Then ");
 #line 50
- testRunner.When("User selects \"Owned devices only\" option in \"Also Move Devices\" drop-down on Acti" +
-                    "on panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Owned devices only\' in the \'Also Move Users\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "Options"});
@@ -282,11 +281,9 @@ this.FeatureBackground();
             table5.AddRow(new string[] {
                         "All linked mailboxes"});
 #line 51
- testRunner.Then("following values are displayed in \"Also Move Mailboxes\" drop-down on Action panel" +
-                    ":", ((string)(null)), table5, "Then ");
+ testRunner.Then("following Values are displayed in the \'Also Move Mailboxes\' dropdown:", ((string)(null)), table5, "Then ");
 #line 56
- testRunner.When("User selects \"Owned mailboxes only\" option in \"Also Move Mailboxes\" drop-down on " +
-                    "Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Owned mailboxes only\' in the \'Also Move Users\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 57
  testRunner.Then("\"UPDATE\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -384,10 +381,9 @@ this.FeatureBackground();
             table7.AddRow(new string[] {
                         "All linked devices"});
 #line 74
- testRunner.Then("following values are displayed in \"Also Move Devices\" drop-down on Action panel:", ((string)(null)), table7, "Then ");
+ testRunner.Then("following Values are displayed in the \'Also Move Devices\' dropdown:", ((string)(null)), table7, "Then ");
 #line 79
- testRunner.When("User selects \"Owned devices only\" option in \"Also Move Devices\" drop-down on Acti" +
-                    "on panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Owned devices only\' in the \'Also Move Users\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 80
  testRunner.Then("\"UPDATE\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -485,11 +481,9 @@ this.FeatureBackground();
             table9.AddRow(new string[] {
                         "All linked users"});
 #line 97
- testRunner.Then("following values are displayed in \"Also Move Mailboxes\" drop-down on Action panel" +
-                    ":", ((string)(null)), table9, "Then ");
+ testRunner.Then("following Values are displayed in the \'Also Move Mailboxes\' dropdown:", ((string)(null)), table9, "Then ");
 #line 102
- testRunner.When("User selects \"Owners only\" option in \"Also Move Mailboxes\" drop-down on Action pa" +
-                    "nel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Owners only\' in the \'Also Move Users\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 103
  testRunner.Then("\"UPDATE\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

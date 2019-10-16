@@ -250,7 +250,7 @@ this.FeatureBackground();
             table3.AddRow(new string[] {
                         "Update task value"});
 #line 36
- testRunner.Then("following values are displayed in \"Bulk Update Type\" drop-down on Action panel:", ((string)(null)), table3, "Then ");
+ testRunner.Then("following Values are displayed in the \'Bulk Update Type\' dropdown:", ((string)(null)), table3, "Then ");
 #line 44
  testRunner.When("User selects \'Update path\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 45

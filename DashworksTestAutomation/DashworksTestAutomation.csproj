@@ -398,7 +398,6 @@
     <Compile Include="Steps\Dashworks\ItemDetailsPage\CustomFields\AfterScenarios\RemoveCustomFieldAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\ItemDetailsPage\CustomFields\CreateCustomField.cs" />
     <Compile Include="Steps\Dashworks\ItemDetailsPage\CustomFields\CreateCustomFieldViaApi.cs" />
-    <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_ActionsPanel.cs" />
     <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_AggridHeaderCounter.cs" />
     <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_Navigation.cs" />
     <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_TabContent.cs" />
@@ -432,7 +431,7 @@
     <Compile Include="Providers\UrlProvider.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_AdminPage.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_AccountDetailsPage.cs" />
-    <Compile Include="Steps\Dashworks\EvergreenJnr_ActionsPanel.cs" />
+    <Compile Include="Steps\RightSideActionsPanel\EvergreenJnr_ActionsPanel.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_BaseDashboardPage.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_ButtonsOnDashbordsPage.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_ColumnsPanel.cs" />

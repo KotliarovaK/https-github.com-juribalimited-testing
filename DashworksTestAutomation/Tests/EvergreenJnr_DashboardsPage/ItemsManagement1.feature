@@ -184,8 +184,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheReadOnlyMode
 	Then User sees Dashboards sub menu on Dashboards page
 	When User navigates to the "Dashboard for DAS12977" list
 	Then "CREATE DASHBOARD" Action button is active
-	And "ADD SECTION" button is not displayed
-	And "ADD WIDGET" button is not displayed
+	And 'ADD SECTION' button is not displayed
+	And 'ADD WIDGET' button is not displayed
 	And User sees Edit mode trigger is in the Off position on Dashboards page
 	And User sees Edit mode trigger has grey style on Dashboards page
 	And User sees Collapse/Expand icon disabled for Section having "WidgetForDAS12977" Widget on Dashboards page

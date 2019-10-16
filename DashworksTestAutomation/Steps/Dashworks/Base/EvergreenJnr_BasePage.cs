@@ -418,6 +418,22 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 "Some options are missing!");
         }
 
+        [Then(@"following Values are not displayed in the '(.*)' dropdown:")]
+        public void ThenFollowingValuesAreNotDisplayedInTheDropdown(string dropDownName, Table table)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.GetDropdown(dropDownName).Click();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = page.GetDropdownValues();
+            page.BodyContainer.Click();
+            Verify.AreEqual(expectedList, actualList, $"Value for '{dropDownName}' are different");
+
+            foreach (var expectedIem in expectedList)
+            {
+                Assert.That(actualList, Does.Not.Contain(expectedIem), $"Values in {dropDownName} drop-down is displayed");
+            }
+        }
+
         [Then(@"'(.*)' error message is displayed for '(.*)' dropdown")]
         public void ThenErrorMessageIsDisplayedForDropdown(string errorMessage, string placeholder)
         {
@@ -574,6 +590,38 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             _driver.DoubleClick(action.GetButtonByName(buttonName));
+        }
+
+        [Then(@"'(.*)' button is displayed")]
+        public void ThenButtonIsDisplayed(string buttonName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsTrue(page.GetButtonByName(buttonName, "", WebDriverExtensions.WaitTime.Medium).Displayed(),
+                $"'{buttonName}' is displayed");
+        }
+
+        [Then(@"'(.*)' button is not displayed")]
+        public void ThenButtonIsNotDisplayed(string buttonName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsFalse(page.GetButtonByName(buttonName, "", WebDriverExtensions.WaitTime.Short).Displayed(),
+                $"'{buttonName}' is displayed");
+        }
+
+        [Then(@"'(.*)' button is disabled")]
+        public void ThenButtonIsDisabled(string buttonName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsTrue(page.GetButtonByName(buttonName, "", WebDriverExtensions.WaitTime.Medium).Disabled(),
+                $"'{buttonName}' is displayed");
+        }
+
+        [Then(@"'(.*)' button is not disabled")]
+        public void ThenButtonIsNotDisabled(string buttonName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsFalse(page.GetButtonByName(buttonName, "", WebDriverExtensions.WaitTime.Short).Disabled(),
+                $"'{buttonName}' is displayed");
         }
 
         #endregion

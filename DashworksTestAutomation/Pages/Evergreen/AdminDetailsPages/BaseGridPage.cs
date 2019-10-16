@@ -25,6 +25,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public const string FirstColumnTableContent = ".//div[@role='gridcell']//a[@href]";
 
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'checkbox-styled')]//mat-checkbox//input")]
+        public IWebElement SelectAllCheckbox { get; set; }
+
+        //TODO delete or rework this
+        [FindsBy(How = How.XPath, Using = ".//span[@class='ag-selection-checkbox']")]
+        public IWebElement Checkbox { get; set; }
+
         #region Inline Edit. Appears on double click on cell
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'ag-cell-inline-editing')]//i[contains(@class,'mat-done')]")]

@@ -123,7 +123,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifie
 	Then 'All Devices' list should be displayed to the user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
-	When User select all rows
+	When User selects all rows on the grid
 	When User selects 'Add to static list' in the 'Action' dropdown
 	Then following Values are displayed in the 'Action' dropdown:
 	| Listnames               |
