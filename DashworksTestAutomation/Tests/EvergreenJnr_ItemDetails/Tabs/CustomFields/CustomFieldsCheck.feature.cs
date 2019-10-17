@@ -470,6 +470,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("CustomFields")]
         [NUnit.Framework.CategoryAttribute("DAS17776")]
         [NUnit.Framework.CategoryAttribute("DAS18363")]
+        [NUnit.Framework.CategoryAttribute("DAS18502")]
         public virtual void EvergreenJnr_DevicesList_CheckThatItsNotPossibleToUnselectTheLastColumnOnCustomFieldsTab()
         {
             System.Exception lastException = null;
@@ -505,7 +506,8 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "CustomFields",
                         "DAS17776",
-                        "DAS18363"});
+                        "DAS18363",
+                        "DAS18502"});
 #line 80
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
