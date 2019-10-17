@@ -159,7 +159,7 @@ Examples:
 	| Applications | All Applications |
 	| Mailboxes    | All Mailboxes    |
 
-@Evergreen @Applications @CustomListDisplay @EvergreenJnr_ListPanel @DAS17472
+@Evergreen @Applications @CustomListDisplay @EvergreenJnr_ListPanel @DAS17472 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThat500ErrorIsNotDisplayedAfterSavingListWithDeviceOwnerSavedListFilter
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user

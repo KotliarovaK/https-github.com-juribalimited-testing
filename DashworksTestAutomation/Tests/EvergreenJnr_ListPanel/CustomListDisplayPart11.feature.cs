@@ -701,6 +701,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
         [NUnit.Framework.CategoryAttribute("DAS17472")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThat500ErrorIsNotDisplayedAfterSavingListWithDeviceOwnerSavedListFilter()
         {
             System.Exception lastException = null;
@@ -735,7 +736,8 @@ this.FeatureBackground();
                         "Applications",
                         "CustomListDisplay",
                         "EvergreenJnr_ListPanel",
-                        "DAS17472"});
+                        "DAS17472",
+                        "Cleanup"});
 #line 163
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
