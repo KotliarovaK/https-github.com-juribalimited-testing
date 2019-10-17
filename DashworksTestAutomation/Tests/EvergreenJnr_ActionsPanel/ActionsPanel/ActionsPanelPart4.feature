@@ -30,7 +30,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelWorkedCorrectlyAfterCic
 	And User selects 'Machines' option from 'Path' autocomplete
 	And User clicks 'CANCEL' button 
 	Then Actions panel is not displayed to the user
-	And Checkboxes are not displayed
+	Then checkboxes are not displayed for content in the grid
 
 @Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13074 @Do_Not_Run_With_AdminPage @Do_Not_Run_With_Projects
 Scenario: EvergreenJnr_DevicesList_ChecksThatProjectNamesAreDisplayedCorrectlyInTheActionsDllAndInSelectedSection

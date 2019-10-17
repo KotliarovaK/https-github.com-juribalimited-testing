@@ -173,6 +173,16 @@ namespace DashworksTestAutomation.Extensions
             return checkbox.GetAttribute("class").Contains("mat-checkbox-checked");
         }
 
+        /// <summary>
+        ///     This method is used for checkboxes in grid when selecting rows
+        /// </summary>
+        /// <param name="checkbox"></param>
+        /// <returns></returns>
+        public static bool GetGridCheckboxSelectedState(this IWebElement checkbox)
+        {
+            return checkbox.FindElement(By.XPath(".//span[contains(@class,'unchecked')]")).GetAttribute("class").Contains("hidden");
+        }
+
         #endregion Checkboxes
 
         #region Coordinates/Location
