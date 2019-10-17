@@ -480,6 +480,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Units")]
         [NUnit.Framework.CategoryAttribute("DAS14967")]
         [NUnit.Framework.CategoryAttribute("DAS15291")]
+        [NUnit.Framework.CategoryAttribute("DAS18538")]
         [NUnit.Framework.TestCaseAttribute("Devices", null)]
         [NUnit.Framework.TestCaseAttribute("Users", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", null)]
@@ -518,7 +519,8 @@ this.FeatureBackground();
                     "Capacity",
                     "Units",
                     "DAS14967",
-                    "DAS15291"};
+                    "DAS15291",
+                    "DAS18538"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -577,8 +579,6 @@ this.FeatureBackground();
                         "Values"});
             table9.AddRow(new string[] {
                         "Evergreen Capacity Unit 3"});
-            table9.AddRow(new string[] {
-                        "Offboarded"});
 #line 144
  testRunner.And("Values is displayed in added filter info", ((string)(null)), table9, "And ");
 #line hidden
@@ -586,9 +586,7 @@ this.FeatureBackground();
                         "Values"});
             table10.AddRow(new string[] {
                         "is"});
-            table10.AddRow(new string[] {
-                        "is not"});
-#line 148
+#line 147
  testRunner.And("Options is displayed in added filter info", ((string)(null)), table10, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -605,6 +603,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Units")]
         [NUnit.Framework.CategoryAttribute("DAS14967")]
         [NUnit.Framework.CategoryAttribute("DAS15291")]
+        [NUnit.Framework.CategoryAttribute("DAS18538")]
         [NUnit.Framework.TestCaseAttribute("Users", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", null)]
         public virtual void EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCountersOfMailProjectLeadToCorrectFilteredLists(string listName, string[] exampleTags)
@@ -642,23 +641,24 @@ this.FeatureBackground();
                     "Capacity",
                     "Units",
                     "DAS14967",
-                    "DAS15291"};
+                    "DAS15291",
+                    "DAS18538"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCountersOfMailProjectLeadToCorrectF" +
                     "ilteredLists", null, @__tags);
-#line 160
+#line 158
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 161
+#line 159
  testRunner.When("User navigates to \"Mailbox Evergreen Capacity Project\" project details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 162
+#line 160
  testRunner.And("User navigates to the \'Capacity\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 163
+#line 161
  testRunner.And("User navigates to the \'Slots\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
@@ -673,43 +673,39 @@ this.FeatureBackground();
                         "TRT-Dec 1, 2018-Dec 31, 2018 - Unlimited"});
             table11.AddRow(new string[] {
                         "CA-Mailbox-Jan 1, 2018-Oct 31, 2018"});
-#line 164
+#line 162
  testRunner.Then("\"Capacity Slot\" column content is displayed in the following order:", ((string)(null)), table11, "Then ");
-#line 171
+#line 169
  testRunner.When("User selects \"Units\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 172
+#line 170
  testRunner.And("User enters \"Unassigned\" text in the Search field for \"Capacity Unit\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 173
+#line 171
  testRunner.And(string.Format("User remembers value in \"{0}\" column", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 174
+#line 172
  testRunner.And(string.Format("User clicks content from \"{0}\" column", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 175
+#line 173
  testRunner.Then(string.Format("\'All {0}\' list should be displayed to the user", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 176
+#line 174
  testRunner.And("Rows counter number equals to remembered value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 177
+#line 175
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 178
+#line 176
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 179
+#line 177
  testRunner.And("\"MailboxEve: Capacity Unit\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table12.AddRow(new string[] {
                         "Unassigned"});
-            table12.AddRow(new string[] {
-                        "Offboarded"});
-#line 180
+#line 178
  testRunner.And("Values is displayed in added filter info", ((string)(null)), table12, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table13.AddRow(new string[] {
                         "is"});
-            table13.AddRow(new string[] {
-                        "is not"});
-#line 184
+#line 181
  testRunner.And("Options is displayed in added filter info", ((string)(null)), table13, "And ");
 #line hidden
             this.ScenarioCleanup();
