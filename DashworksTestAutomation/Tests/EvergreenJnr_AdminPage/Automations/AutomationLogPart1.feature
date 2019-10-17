@@ -34,7 +34,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsLogGridForRunningAutomationWith
 	When User selects '1803 Rollout' option from 'Project' autocomplete
 	When User selects 'Undetermined' option from 'Path' autocomplete
 	And User clicks 'CREATE' button 
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
 	When User navigates to the 'Projects' left menu item
 	And User enters "16890Project" text in the Search field for "Project" column
 	And User selects all rows on the grid
@@ -113,7 +113,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSuccessfulRunInOutcomeColumn
 	When User selects 'User Evergreen Capacity Project' option from 'Project' autocomplete
 	When User selects '[Default (User)]' option from 'Path' autocomplete
 	And User clicks 'CREATE' button 
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
 	When User enters "D16974_Automation" text in the Search field for "Automation" column
 	When User selects all rows on the grid
 	And User selects 'Run now' in the 'Actions' dropdown
@@ -159,7 +159,7 @@ Scenario: EvergreenJnr_AdminPage_CheckBrokenListValidationWhenRunningAnAutomatio
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope      | Run    |
 	| 17011_Automation | 17011       | true   | false              | 17011_List | Manual |
 	Then Automation page is displayed correctly
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
 	When User creates new Automation via API and open it
 	| AutomationName    | Description | Active | StopOnFailedAction | Scope       | Run    |
 	| Second_Automation | 17011_1     | true   | false              | All Devices | Manual |
@@ -214,7 +214,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckSuccessfulRunningAutomationWithMai
 	When User selects 'Manual' in the 'Run' dropdown
 	When User selects "Active" checkbox on the Automation Page
 	And User clicks 'CREATE' button 
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
 	When User enters "<AutomationName>" text in the Search field for "Automation" column
 	When User selects all rows on the grid
 	And User selects 'Run now' in the 'Actions' dropdown

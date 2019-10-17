@@ -24,7 +24,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateAndRemoveTaskValueForUpdateValueInUs
 	And User selects 'Remove' in the 'Update Date' dropdown
 	And User clicks 'CREATE' button
 	#Create Action
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
 	When User enters "17974_Automation" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "17974_Automation" item on Admin page
 	When User selects "Automation Log" tab on the Project details page
@@ -65,7 +65,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForRemoveOwnerInMailboxScop
 	When User selects 'Remove owner' in the 'Update Owner' dropdown
 	And User clicks 'CREATE' button
 	#Create Action
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
 	When User enters "17829_Automation" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "17829_Automation" item on Admin page
 	When User selects "Automation Log" tab on the Project details page
@@ -154,7 +154,7 @@ Scenario: EvergreenJnr_AdminPage_CheckArchivedObjectNumbersFromAnutomationLogGri
 	When User enters '1' text to 'Replace Value' textbox
 	When User clicks 'CREATE' button
 	#Create Action
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
 	When User enters "18265_Automation" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "18265_Automation" item on Admin page
 	When User selects "Automation Log" tab on the Project details page

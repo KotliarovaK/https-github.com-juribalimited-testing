@@ -121,7 +121,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatObjectsColumnContainsNullOfObjectsForF
 	#Remove Custom Field
 	When User removes Custom Field with 'CustomField_18464' label
 	#Run Automation
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
 	When User enters "18464_Automation" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "18464_Automation" item on Admin page
 	#Check Automation Log

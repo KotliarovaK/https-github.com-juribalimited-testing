@@ -115,7 +115,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType
 	| Items                  |
 	| Public Folder          |
 	| Sharepoint Application |
-	When User clicks "Projects" navigation link on the Admin page
+	When User clicks 'Projects' header breadcrumb
 	And User clicks Yes button in Leave Page Warning
 	When User navigates to "Windows 7 Migration (Computer Scheduled Project)" project details
 	And User navigates to the 'Capacity' left menu item

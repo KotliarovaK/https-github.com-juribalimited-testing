@@ -30,5 +30,12 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var header = _driver.NowAt<BaseHeaderElement>();
             header.CheckPageHeader(pageTitle);
         }
+
+        [When(@"User clicks '(.*)' header breadcrumb")]
+        public void WhenUserClicksHeaderBreadcrumb(string breadcrumb)
+        {
+            var header = _driver.NowAt<BaseHeaderElement>();
+            header.ClickBreadcrumb(breadcrumb);
+        }
     }
 }

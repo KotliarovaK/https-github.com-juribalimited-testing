@@ -540,7 +540,7 @@ this.FeatureBackground();
 #line 114
  testRunner.Then("following checkbox items are displayed in the dropdown:", ((string)(null)), table8, "Then ");
 #line 118
- testRunner.When("User clicks \"Projects\" navigation link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Projects\' header breadcrumb", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 119
  testRunner.And("User clicks Yes button in Leave Page Warning", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 120

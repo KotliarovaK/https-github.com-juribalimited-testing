@@ -31,7 +31,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueActionDAS
 	And User enters '13 Aug 2019' text to 'Date' textbox
 	And User clicks 'CREATE' button 
 	#Create Action
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
 	And User enters "17684_Automation" text in the Search field for "Automation" column
 	And User clicks "Run now" option in Cog-menu for "17684_Automation" item on Admin page
 	And User selects "Automation Log" tab on the Project details page
@@ -73,7 +73,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInDeviceScope
 	And User selects 'Started' in the 'Value' dropdown
 	And User clicks 'CREATE' button 
 	#Create Action
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
 	When User enters "17636_Automation" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "17636_Automation" item on Admin page
 	When User selects "Automation Log" tab on the Project details page
@@ -115,7 +115,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInMailboxScop
 	When User selects 'No change' in the 'Update Owner' dropdown
 	And User clicks 'CREATE' button 
 	#Create Action
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
 	When User enters "17642_Automation" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "17642_Automation" item on Admin page
 	When User selects "Automation Log" tab on the Project details page
@@ -156,7 +156,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInApplication
 	When User selects 'New Text value' option from 'Value' autocomplete
 	And User clicks 'CREATE' button 
 	#Create Action
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
 	When User enters "17643_Automation" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "17643_Automation" item on Admin page
 	When User selects "Automation Log" tab on the Project details page
@@ -198,7 +198,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInDevicesScop
 	And User selects 'No change' in the 'Update Date' dropdown
 	And User clicks 'CREATE' button 
 	#Create Action
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
 	When User enters "17799_Automation" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "17799_Automation" item on Admin page
 	When User selects "Automation Log" tab on the Project details page
@@ -250,7 +250,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedA
 	And User selects 'Radio Slot' in the 'Capacity Slot' dropdown
 	And User clicks 'CREATE' button 
 	#Create Action
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
 	When User enters "17678_Automation" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "17678_Automation" item on Admin page
 	When User selects "Automation Log" tab on the Project details page
@@ -285,7 +285,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedA
 	And User selects 'Remove' in the 'Update Date' dropdown
 	And User clicks 'UPDATE' button 
 	#Check updated Automation
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
 	When User enters "17678_Automation" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "17678_Automation" item on Admin page
 	When User selects "Automation Log" tab on the Project details page
@@ -338,7 +338,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueAndOwnerInDev
 	When User selects 'Maryna Kyslyak' option from 'Owner' autocomplete
 	And User clicks 'CREATE' button 
 	#Create Action
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
 	When User enters "17682_Automation" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "17682_Automation" item on Admin page
 	When User selects "Automation Log" tab on the Project details page
@@ -389,7 +389,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForRemoveOwnerAndTeamInDevi
 	When User selects 'Remove owner and team' in the 'Update Owner' dropdown
 	And User clicks 'CREATE' button 
 	#Create Action
-	And User clicks "Automations" navigation link on the Admin page
+	And User clicks 'Automations' header breadcrumb
 	And User enters "17682_Automation_2" text in the Search field for "Automation" column
 	And User clicks "Run now" option in Cog-menu for "17682_Automation_2" item on Admin page
 	And User selects "Automation Log" tab on the Project details page
@@ -443,7 +443,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedA
 	And User selects 'Remove' in the 'Update Date' dropdown
 	And User clicks 'CREATE' button 
 	#Create Action
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
 	When User enters "17678_Automation_1" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "17678_Automation_1" item on Admin page
 	When User selects "Automation Log" tab on the Project details page
@@ -499,7 +499,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueActionDAS
 	When User selects 'Akhila Varghese' option from 'Owner' autocomplete
 	And User clicks 'CREATE' button 
 	#Create Action
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
 	When User enters "17430_Automation" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "17430_Automation" item on Admin page
 	When User selects "Automation Log" tab on the Project details page

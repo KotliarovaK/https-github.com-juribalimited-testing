@@ -82,7 +82,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProj
 	| 0004 - Adobe Acrobat Reader 5.0.5 Francais                      |
 	And User clicks 'ADD APPLICATIONS' button 
 	Then Success message is displayed and contains "The selected application has been queued for update, if it does not appear immediately try refreshing the grid" text
-	When User clicks "Administration" navigation link on the Admin page
+	When User clicks 'Administration' header breadcrumb
 	And User enters "ProjectForDAS14103" text in the Search field for "Project" column
 	And User click content from "Project" column
 	And User selects "Scope Changes" tab on the Project details page
@@ -136,7 +136,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProj
 	Then "1" content is displayed in "Devices" column
 	And "1" content is displayed in "Users" column
 	And "1" content is displayed in "Applications" column
-	When User clicks "Administration" navigation link on the Admin page
+	When User clicks 'Administration' header breadcrumb
 	When User navigates to the 'Evergreen' left menu item
 	When User navigates to the 'Capacity Units' left menu item
 	And User select "Capacity Unit" rows in the grid

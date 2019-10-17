@@ -22,12 +22,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             _driver = driver;
         }
 
-        [When(@"User clicks ""(.*)"" navigation link on the Admin page")]
-        public void WhenUserClicksNavigationLinkOnTheAdminPage(string linkName)
-        {
-            var link = _driver.NowAt<ProjectsPage>();
-            link.GetNavigationLinkByName(linkName).Click();
-        }
 
         [When(@"User open ""(.*)"" sub menu on Admin page")]
         public void WhenUserOpenSubMenuOnAdminPage(string menuName)
