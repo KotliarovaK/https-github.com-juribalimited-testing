@@ -727,6 +727,19 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         #endregion
 
+        #region Button on popup
+
+        [Then(@"'(.*)' popup button color is '(.*)'")]
+        public void ThenPopupButtonColorIs(string button, string color)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var getColor = page.GetButtonByNameOnPopup(button).GetCssValue("background-color");
+            Verify.AreEqual(color, getColor, 
+                $"'{button}' sah incorrect color");
+        }
+
+        #endregion
+
         #region Menu button
 
         [When(@"User clicks '(.*)' button and select '(.*)' menu button")]

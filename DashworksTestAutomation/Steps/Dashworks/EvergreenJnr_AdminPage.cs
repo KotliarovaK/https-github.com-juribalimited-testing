@@ -62,17 +62,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         #region Check button state
 
-        [Then(@"Update Project buttons is disabled")]
-        public void ThenUpdateProjectButtonsIsDisabled()
-        {
-            var button = _driver.NowAt<ProjectsPage>();
-            _driver.WaitForElementToBeDisplayed(button.UpdateProjectButton);
-            Utils.Verify.IsTrue(Convert.ToBoolean(button.UpdateProjectButton.GetAttribute("disabled")),
-                "Update Project button is active");
-            Utils.Verify.IsTrue(Convert.ToBoolean(button.UpdateAllChangesButton.GetAttribute("disabled")),
-                "Update All Changes button is active");
-        }
-
         [Then(@"Create Project button is disabled")]
         public void ThenCreateProjectButtonIsDisabled()
         {
