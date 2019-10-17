@@ -83,7 +83,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldRemoveAllValue
 	Then Success message is displayed and contains "The automation action has been created" text
 	#Create Action
 	When User clicks content from "Action" column
-	Then Edit Action page is displayed to the User
+	Then 'Edit Action' page subheader is displayed to user
 	Then 'UPDATE' button is disabled
 	Then 'UPDATE' button has tooltip with 'No changes made' text
 	Then 'Remove all values' content is displayed in 'Update Values' dropdown
@@ -139,7 +139,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldReplaceSingleV
 	Then Create Action page is displayed to the User
 	When User clicks 'CANCEL' button
 	When User clicks content from "Action" column
-	Then Edit Action page is displayed to the User
+	Then 'Edit Action' page subheader is displayed to user
 	Then 'UPDATE' button is disabled
 	Then 'UPDATE' button has tooltip with 'No changes made' text
 	Then 'Replace single value' content is displayed in 'Update Values' dropdown

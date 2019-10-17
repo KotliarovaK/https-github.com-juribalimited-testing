@@ -88,7 +88,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldForDisabledCus
 	Then Success message is displayed and contains "The automation action has been created" text
 	#Create Action
 	When User clicks content from "Action" column
-	Then Edit Action page is displayed to the User
+	Then 'Edit Action' page subheader is displayed to user
 	Then 'CustomField_18166' content is not displayed in 'Custom Field' autocomplete after search
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18464 @Cleanup
