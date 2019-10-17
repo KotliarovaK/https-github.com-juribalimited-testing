@@ -32,7 +32,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingI
 	And User navigates to newly created Slot
 	And User enters 'NewSlotName' text to 'Slot Name' textbox
 	And User enters 'NewDisplayName' text to 'Display Name' textbox
-	Then "UPDATE" button is displayed without tooltip on Update form
+	Then tooltip is not displayed for 'UPDATE' button
 	When User clicks 'UPDATE' button 
 	Then Success message is displayed and contains "The capacity slot details have been updated" text
 	And 'NewSlotName' content is displayed in the 'Capacity Slot' column

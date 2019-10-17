@@ -15,9 +15,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public string SettingButtonSelector =
             ".//li//i[@class='menu-trigger material-icons mat-settings mat-18 pull-right settings-icon settings-area']";
 
-        public string TopSubMenuItemByName = ".//div[@class='submenu-top']//*[text()='{0}']";
+        public string TopSubMenuItemByName = ".//div[contains(@class,'submenu-top')]//*[text()='{0}']";
 
-        public By AllListNamesInListsPanel = By.XPath(".//span[@class='submenu-actions-list-name']");
+        public By AllListNamesInListsPanel = By.XPath(".//span[contains(@class,'list-name')]");
 
         public By ListSubMenusInListsPanel = By.XPath(".//ancestor::submenu-item");
 
@@ -71,7 +71,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'SelectDropdownActions')]//mat-select")]
         public IWebElement DropdownFilterList { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@id='submenuBlock']//ul[contains(@class,'submenu-actions-list')]/li")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@id,'submenuBlock')]//ul[contains(@class,'submenu-actions-list')]/li")]
         public IList<IWebElement> ListElementsInListsPanel { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@id='submenu']")]
@@ -116,7 +116,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IWebElement GetActiveList()
         {
-            Driver.WaitForAnyElementToContainsTextInAttribute(ListElementsInListsPanel.Select(x => x.FindElement(ListSubMenusInListsPanel)).ToList(), 
+            Driver.WaitForAnyElementToContainsTextInAttribute(ListElementsInListsPanel.Select(x => x.FindElement(ListSubMenusInListsPanel)).ToList(),
                 "active", "class");
             return ListElementsInListsPanel.Select(x => x.FindElement(ListSubMenusInListsPanel))
                 .FirstOrDefault(WebElementExtensions.IsElementActive);

@@ -140,11 +140,8 @@ Scenario: EvergreenJnr_UsersList_ChecksThatUserCanCreateOneMorePivotOnCreatedLis
 	| Building |
 	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
-	When User clicks 'SAVE' button 
-	And User selects 'Save as new pilot' option
+	When User clicks 'SAVE' button and select 'SAVE AS NEW PIVOT' menu button
 	Then Pivot Name field is empty
-	And User remove list with "Dynamic_List_DAS14206" name on "Users" page
-	And User remove list with "PivotList_DAS_14206" name on "Users" page
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14413
 Scenario: EvergreenJnr_DevicesList_CheckThatPivotPanelIsDisplayedCorrectlyAfterClicksOnResetButton
@@ -182,7 +179,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksTooltipsOnPivot
 	When User selects 'Pivot' in the 'Create' dropdown
 	And User clicks 'ADD ROW GROUP' button 
 	When "Compliance" value is entered into the search box and the selection is clicked on Pivot
-	Then 'DONE' Action button has tooltip with 'Confirm changes' text
+	Then 'DONE' button has tooltip with 'Confirm changes' text
 	Then back button on Pivot panel have tooltip with "Close" text
 	When User clicks 'DONE' button 
 	And User selects the following Columns on Pivot:

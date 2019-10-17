@@ -10,6 +10,7 @@ using DashworksTestAutomation.Pages.Evergreen.ItemDetails;
 using DashworksTestAutomation.Pages.Evergreen.RightSideActionPanels;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
@@ -50,52 +51,6 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
             var panel = _driver.NowAt<BaseRightSideActionsPanel>();
             Verify.IsFalse(panel.IsPanelOpened("ACTIONS"),
                 "Action panel is opened");
-        }
-
-        //TODO looks like this section should be moved to BaseDashboard
-        #region Action button
-
-        [Then(@"""(.*)"" button is displayed without tooltip on Update form")]
-        public void ThenUpdateButtonIsDisplayedWithoutTooltipOnUpdateForm(string buttonName)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            var button = action.GetButtonByName(buttonName);
-
-            _driver.MouseHover(button);
-            Verify.IsFalse(_driver.IsTooltipDisplayed(), "Tooltip for Update button displayed");
-        }
-
-        [When(@"User selects 'Save as new pilot' option")]
-        public void WhenUserSelectsSaveAsNewPilotOption()
-        {
-            var action = _driver.NowAt<PivotElementPage>();
-            action.SaveNewListButton.Click();
-        }
-
-        [Then(@"'(.*)' Action button has tooltip with '(.*)' text")]
-        public void ThenActionButtonHasTooltipWithText(string buttonName, string text)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            var button = page.GetButtonByName(buttonName);
-            _driver.MouseHover(button);
-            var toolTipText = _driver.GetTooltipText();
-            Utils.Verify.AreEqual(text, toolTipText, "Tooltip is incorrect");
-        }
-
-        #endregion
-
-        [Then(@"Objects to add panel is disabled")]
-        public void ThenObjectsToAddPanelIsDisabled()
-        {
-            var component = _driver.NowAt<BaseDashboardPage>();
-            Verify.IsTrue(component.DisabledObjectsToAddPanel.Displayed(), "Objects to add panel is active");
-        }
-
-        [Then(@"Objects to add panel is active")]
-        public void ThenObjectsToAddPanelIsActive()
-        {
-            var component = _driver.NowAt<BaseDashboardPage>();
-            Utils.Verify.IsTrue(component.ActiveObjectsToAddPanel.Displayed(), "Objects to add panel is active");
         }
 
         [Then(@"Warning message with ""(.*)"" text is displayed on Action panel")]

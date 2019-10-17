@@ -21,8 +21,8 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldReplaceAllValu
 	And User selects 'Replace all values' in the 'Update Values' dropdown
 	Then 'CREATE' button is disabled
 	Then 'SAVE AND CREATE ANOTHER' button is disabled
-	Then 'CREATE' Action button has tooltip with 'Some values are missing or not valid' text
-	Then 'SAVE AND CREATE ANOTHER' Action button has tooltip with 'Some values are missing or not valid' text
+	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
+	Then 'SAVE AND CREATE ANOTHER' button has tooltip with 'Some values are missing or not valid' text
 	Then Add button for 'Value' textbox is disabled
 	Then 'Enter a value' add button tooltip is displayed for 'Value' textbox
 	When User enters 'test' text to 'Value' textbox
@@ -50,8 +50,8 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldAddToExistingV
 	And User selects 'Add to existing values' in the 'Update Values' dropdown
 	Then 'CREATE' button is disabled
 	Then 'SAVE AND CREATE ANOTHER' button is disabled
-	Then 'CREATE' Action button has tooltip with 'Some values are missing or not valid' text
-	Then 'SAVE AND CREATE ANOTHER' Action button has tooltip with 'Some values are missing or not valid' text
+	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
+	Then 'SAVE AND CREATE ANOTHER' button has tooltip with 'Some values are missing or not valid' text
 	When User adds 'TEST' value from 'Value' textbox
 	Then 'CREATE' button is not disabled
 	Then 'SAVE AND CREATE ANOTHER' button is not disabled
@@ -85,7 +85,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldRemoveAllValue
 	When User clicks content from "Action" column
 	Then Edit Action page is displayed to the User
 	Then 'UPDATE' button is disabled
-	Then 'UPDATE' Action button has tooltip with 'No changes made' text
+	Then 'UPDATE' button has tooltip with 'No changes made' text
 	Then 'Remove all values' content is displayed in 'Update Values' dropdown
 	Then "17881_Action" content is displayed in "Action Name" field
 	Then 'Update custom field' content is displayed in 'Action Type' dropdown
@@ -109,8 +109,8 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldRemoveSpecific
 	And User selects 'Remove specific values' in the 'Update Values' dropdown
 	Then 'CREATE' button is disabled
 	Then 'SAVE AND CREATE ANOTHER' button is disabled
-	Then 'CREATE' Action button has tooltip with 'Some values are missing or not valid' text
-	Then 'SAVE AND CREATE ANOTHER' Action button has tooltip with 'Some values are missing or not valid' text
+	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
+	Then 'SAVE AND CREATE ANOTHER' button has tooltip with 'Some values are missing or not valid' text
 	When User adds '1' value from 'Value' textbox
 	Then 'CREATE' button is not disabled
 	Then 'SAVE AND CREATE ANOTHER' button is not disabled
@@ -141,7 +141,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldReplaceSingleV
 	When User clicks content from "Action" column
 	Then Edit Action page is displayed to the User
 	Then 'UPDATE' button is disabled
-	Then 'UPDATE' Action button has tooltip with 'No changes made' text
+	Then 'UPDATE' button has tooltip with 'No changes made' text
 	Then 'Replace single value' content is displayed in 'Update Values' dropdown
 	Then "17881_Action" content is displayed in "Action Name" field
 	Then 'Update custom field' content is displayed in 'Action Type' dropdown

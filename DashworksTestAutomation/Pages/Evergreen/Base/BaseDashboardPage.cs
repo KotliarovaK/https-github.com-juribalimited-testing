@@ -902,6 +902,20 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         #endregion
 
+        #region Menu button
+
+        public IWebElement GetMenuButtonByName(string button, WebDriverExtensions.WaitTime waitTime = WebDriverExtensions.WaitTime.Long)
+        {
+            var time = int.Parse(waitTime.GetValue());
+            var selector = By.XPath(
+                $".//button[contains(@class,'mat-menu-item')][text()='{button}']");
+            Driver.WaitForDataLoading();
+            Driver.WaitForElementsToBeDisplayed(selector, time, false);
+            return Driver.FindElements(selector).First(x => x.Displayed());
+        }
+
+        #endregion
+
         #region Dropdown
 
         public IWebElement GetDropdown(string dropdownName, WebDriverExtensions.WaitTime wait = WebDriverExtensions.WaitTime.Long)
@@ -1096,6 +1110,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             if (!Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Medium))
                 throw new Exception($"'{titleText}' multiselect was not found");
             return Driver.FindElement(selector);
+        }
+
+        //Top level element with search box and all items
+        public IWebElement GetExpandableMultiselectElement(string titleText)
+        {
+            var element = GetExpandableMultiselect(titleText).FindElement(By.XPath("./ancestor::div[contains(@class,'sectionAddObjects')]"));
+            return element;
         }
 
         public string GetTitleFomExpandableMultiselect(string partOfTitle)
