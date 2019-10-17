@@ -158,3 +158,17 @@ Examples:
 	| Users        | All Users        |
 	| Applications | All Applications |
 	| Mailboxes    | All Mailboxes    |
+
+@Evergreen @Applications @CustomListDisplay @EvergreenJnr_ListPanel @DAS17472
+Scenario: EvergreenJnr_ApplicationsList_CheckThat500ErrorIsNotDisplayedAfterSavingListWithDeviceOwnerSavedListFilter
+	When User clicks 'Applications' on the left-hand menu
+	Then 'All Applications' list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Device Owner (Saved List)" filter where type is "In list" with selected Expanded Checkboxes and following Association:
+	| SelectedCheckboxes                | Association    |
+	| Users Readiness Columns & Filters | Used on device |
+	Then "100" rows are displayed in the agGrid
+	When User create custom list with "Test_Application_List_DAS_17472" name
+	Then "Test_Application_List_DAS_17472" list is displayed to user
+	Then There are no errors in the browser console
