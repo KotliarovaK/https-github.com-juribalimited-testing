@@ -1107,6 +1107,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return Driver.FindElement(selector);
         }
 
+        //Top level element with search box and all items
+        public IWebElement GetExpandableMultiselectElement(string titleText)
+        {
+            var element = GetExpandableMultiselect(titleText).FindElement(By.XPath("./ancestor::div[contains(@class,'sectionAddObjects')]"));
+            return element;
+        }
+
         public string GetTitleFomExpandableMultiselect(string partOfTitle)
         {
             var element = GetExpandableMultiselect(partOfTitle);

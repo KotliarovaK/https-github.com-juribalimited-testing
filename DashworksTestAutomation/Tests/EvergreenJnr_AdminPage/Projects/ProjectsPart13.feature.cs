@@ -410,11 +410,11 @@ this.FeatureBackground();
  testRunner.Then("Warning message with \"1 device will be added, 1 user will be added\" text is displ" +
                     "ayed on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 82
- testRunner.And("Objects to add panel is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("multiselect is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 83
  testRunner.When("User navigates to the \'Devices\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 84
- testRunner.Then("Objects to add panel is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("multiselect is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 85
  testRunner.When("User clicks \'UPDATE PROJECT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 86
@@ -426,14 +426,14 @@ this.FeatureBackground();
  testRunner.And("\"Devices to add (0 of 17278 selected)\" is displayed to the user in the Project Sc" +
                     "ope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 89
- testRunner.Then("Objects to add panel is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("multiselect is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 90
  testRunner.When("User navigates to the \'Users\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 91
  testRunner.Then("\"Users to add (0 of 14628 selected)\" is displayed to the user in the Project Scop" +
                     "e Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 92
- testRunner.Then("Objects to add panel is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("multiselect is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 93
  testRunner.When("User expands multiselect to add objects", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -576,11 +576,11 @@ this.FeatureBackground();
 #line 129
  testRunner.Then("Warning message with \"2 users will be added\" text is displayed on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 130
- testRunner.Then("Objects to add panel is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("multiselect is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 131
  testRunner.When("User navigates to the \'Devices\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 132
- testRunner.Then("Objects to add panel is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("multiselect is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 133
  testRunner.When("User clicks \'UPDATE PROJECT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 134
@@ -596,11 +596,11 @@ this.FeatureBackground();
 #line 138
  testRunner.When("User navigates to the \'Devices\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 139
- testRunner.Then("Objects to add panel is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("multiselect is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 140
  testRunner.When("User navigates to the \'Users\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 141
- testRunner.Then("Objects to add panel is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("multiselect is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 142
  testRunner.When("User expands multiselect to add objects", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden

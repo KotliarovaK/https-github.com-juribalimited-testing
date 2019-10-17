@@ -555,6 +555,38 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             basePage.AddItemsToMultiSelect(itemsToAdd);
         }
 
+        [Then(@"multiselect is not disabled")]
+        public void ThenMultiselectIsNotDisabled()
+        {
+            var component = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsFalse(component.GetExpandableMultiselectElement("").Displayed(),
+                "First multiselect on page is disabled");
+        }
+
+        [Then(@"'(.*)' multiselect is not disabled")]
+        public void ThenMultiselectIsNotDisabled(string multiselectTitle)
+        {
+            var component = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsFalse(component.GetExpandableMultiselectElement(multiselectTitle).Displayed(),
+                $"''{multiselectTitle}'' multiselect on page is disabled");
+        }
+
+        [Then(@"multiselect is disabled")]
+        public void ThenMultiselectIsDisabled()
+        {
+            var component = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsTrue(component.GetExpandableMultiselectElement("").Displayed(),
+                "First multiselect on page is not disabled");
+        }
+
+        [Then(@"'(.*)' multiselect is disabled")]
+        public void ThenMultiselectIsDisabled(string multiselectTitle)
+        {
+            var component = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsTrue(component.GetExpandableMultiselectElement(multiselectTitle).Displayed(),
+                $"''{multiselectTitle}'' multiselect on page is not disabled");
+        }
+
         #endregion
 
         #region Checkbox
@@ -647,7 +679,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var button = page.GetButtonByName(buttonName);
             _driver.MouseHover(button);
             var toolTipText = _driver.GetTooltipText();
-            Verify.AreEqual(text, toolTipText, 
+            Verify.AreEqual(text, toolTipText,
                 $"'{buttonName}' button tooltip is incorrect");
         }
 

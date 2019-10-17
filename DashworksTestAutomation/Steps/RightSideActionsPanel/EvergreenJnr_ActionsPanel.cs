@@ -10,6 +10,7 @@ using DashworksTestAutomation.Pages.Evergreen.ItemDetails;
 using DashworksTestAutomation.Pages.Evergreen.RightSideActionPanels;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
@@ -50,20 +51,6 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
             var panel = _driver.NowAt<BaseRightSideActionsPanel>();
             Verify.IsFalse(panel.IsPanelOpened("ACTIONS"),
                 "Action panel is opened");
-        }
-
-        [Then(@"Objects to add panel is disabled")]
-        public void ThenObjectsToAddPanelIsDisabled()
-        {
-            var component = _driver.NowAt<BaseDashboardPage>();
-            Verify.IsTrue(component.DisabledObjectsToAddPanel.Displayed(), "Objects to add panel is active");
-        }
-
-        [Then(@"Objects to add panel is active")]
-        public void ThenObjectsToAddPanelIsActive()
-        {
-            var component = _driver.NowAt<BaseDashboardPage>();
-            Utils.Verify.IsTrue(component.ActiveObjectsToAddPanel.Displayed(), "Objects to add panel is active");
         }
 
         [Then(@"Warning message with ""(.*)"" text is displayed on Action panel")]

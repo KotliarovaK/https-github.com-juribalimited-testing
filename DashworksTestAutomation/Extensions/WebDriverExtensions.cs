@@ -864,11 +864,7 @@ namespace DashworksTestAutomation.Extensions
             {
                 try
                 {
-                    driver.SwitchTo().DefaultContent();
-                    var t3 = driver.PageSource;
                     var elements = driver.FindElements(locator);
-                    var t = elements.Any(element => element.Displayed().Equals(expectedCondition));
-                    var tt = elements.Any(element => element.Displayed());
                     return elements.Any(element => element.Displayed().Equals(expectedCondition));
                 }
                 catch (NoSuchElementException)
