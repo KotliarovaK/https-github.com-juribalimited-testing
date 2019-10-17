@@ -98,16 +98,6 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
             Verify.IsFalse(action.SuccessMessage.Displayed(), "Success message is displayed for more than 5 seconds");
         }
 
-        [Then(@"Checkboxes are not displayed")]
-        public void ThenCheckboxesAreNotDisplayed()
-        {
-            var dashboardPage = _driver.NowAt<BaseGridPage>();
-            Verify.IsFalse(dashboardPage.Checkbox.Displayed(),
-                "Checkbox is displayed for content in the grid");
-            Verify.IsFalse(dashboardPage.SelectAllCheckbox.Displayed(),
-                "Select all checkbox is displayed");
-        }
-
         [When(@"User select ""(.*)"" rows in the grid")]
         public void WhenUserSelectRowsInTheGrid(string columnName, Table table)
         {
@@ -124,6 +114,7 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
             }
         }
 
+        //TODO need to move this somewhere
         [Then(@"User removes selected rows")]
         public void WhenUserIsRemovedSelectedRows()
         {
@@ -153,24 +144,6 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
         {
             var actionsElement = _driver.NowAt<ActionsElement>();
             actionsElement.SelectList(listName);
-        }
-
-        [Then(@"Select All selectbox is checked")]
-        public void ThenSelectAllSelectboxIsChecked()
-        {
-            var dashboardPage = _driver.NowAt<BaseGridPage>();
-            //_driver.WaitToBeSelected(dashboardPage.SelectAllCheckbox, true);
-            Utils.Verify.IsTrue(_driver.GetEvergreenCheckboxState(dashboardPage.SelectAllCheckbox),
-                "Select All checkbox is unchecked");
-        }
-
-        [Then(@"Select All selectbox is unchecked")]
-        public void ThenSelectAllSelectboxIsUnchecked()
-        {
-            var dashboardPage = _driver.NowAt<BaseGridPage>();
-            _driver.WhatForElementToBeSelected(dashboardPage.SelectAllCheckbox, false);
-            Verify.IsTrue(_driver.GetEvergreenCheckboxState(dashboardPage.SelectAllCheckbox),
-                "Select All checkbox is checked");
         }
 
         [Then(@"""(.*)"" selected rows are displayed in the Actions panel")]
@@ -214,14 +187,6 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
                 "Number of rows are not equal in table and in Actions");
         }
 
-        [Then(@"Select all checkbox is not displayed")]
-        public void ThenSelectAllCheckboxIsNotDisplayed()
-        {
-            var dashboardPage = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsFalse(dashboardPage.SelectAllCheckbox.Displayed(),
-                "Select All checkbox is displayed");
-        }
-
         [When(@"User types ""(.*)"" static list name")]
         public void WhenUserTypesStaticListName(string listName)
         {
@@ -255,15 +220,6 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
 
             var listElement = _driver.NowAt<ActionsElement>();
             listElement.ListNameTextBox.SendKeys(listName);
-        }
-
-        [Then(@"All checkboxes are checked in the table")]
-        public void ThenAllCheckboxesAreCheckedInTheTable()
-        {
-            var dashboardPage = _driver.NowAt<BaseDashboardPage>();
-            //Wait for All checkboxes are checked
-            Thread.Sleep(1000);
-            Verify.IsFalse(dashboardPage.UncheckedCheckbox.Displayed(), "Not all checkboxes are checked in the table");
         }
     }
 }

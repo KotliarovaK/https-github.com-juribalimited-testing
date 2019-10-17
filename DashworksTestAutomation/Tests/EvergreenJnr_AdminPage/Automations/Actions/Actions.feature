@@ -68,7 +68,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptio
 	| Move to position |
 	| Delete           |
 	When User clicks "Edit" option in Cog-menu for "15427_Action1" item on Admin page
-	Then Edit Action page is displayed to the User
+	#Then Edit Action page is displayed to the User
+	Then 'Edit Action' page subheader is displayed to user
 	And 'UPDATE' button is disabled
 	And 'CANCEL' button is displayed
 	And Page with 'Test_Automation_15427' header is displayed to user
@@ -306,7 +307,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditActionPage
 	When User navigates to the 'Actions' left menu item
 	When User enters "15425_Action" text in the Search field for "Action" column
 	When User clicks content from "Action" column
-	Then Edit Action page is displayed to the User
+	Then 'Edit Action' page subheader is displayed to user
 	Then "15425_Action" content is displayed in "Action Name" field
 	Then '[Default (User)]' value is displayed in the 'Path' dropdown
 	Then 'Update path' content is displayed in 'Action Type' dropdown
