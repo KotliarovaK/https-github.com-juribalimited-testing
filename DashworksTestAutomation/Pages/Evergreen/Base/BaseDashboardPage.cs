@@ -103,9 +103,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = ".//mat-dialog-container//button[contains(@class, 'mat-primary')]")]
         public IWebElement DeleteButtonInPopUp { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//mat-dialog-container//button[@class='mat-raised-button']")]
-        public IWebElement CancelButtonInPopUp { get; set; }
-
         [FindsBy(How = How.XPath,
             Using = "//div[contains(@class, 'notification')]//span[text()='UPDATE']/ancestor::button")]
         public IWebElement UpdateButtonOnAmberMessage { get; set; }
