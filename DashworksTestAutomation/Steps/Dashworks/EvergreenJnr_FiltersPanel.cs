@@ -71,6 +71,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.IsTrue(button.AddAndFilterButton.Displayed(), "Add And button is not displayed");
         }
 
+        [When(@"User moves to the end of categories list")]
+        public void WhenUserMovesToTheEndOfCategoriesList()
+        {
+            var panel = _driver.NowAt<FiltersElement>();
+            _driver.MoveToElement(panel.FilterCategories.Last());
+            Logger.Write("Filter panel is scrolled down");
+        }
+
         [Then(@"User sees ""(.*)"" section expanded by default in Filters panel")]
         public void ThenUserSeesSectionExpandedByDefaultInFilterPanel(string expectedSection)
         {
@@ -1523,6 +1531,19 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 .Single(p => p.Value.StartsWith("Automation Actions"));
 
             Utils.Verify.That(getFirstAutomationItem.Index, Is.LessThan(getFirstProjectItem.Index), "Looks like projects placed before Automations");
+        }
+
+        [Then(@"the following Filters categories are presented in Filter panel:")]
+        public void ThenTheFollowingFiltersCategoriesArePresentedInFilterPanel(Table table)
+        {
+            var page = _driver.NowAt<FiltersElement>();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var VisibleLabels = page.FilterCategoryLabels.Select(x => x.Text).ToList();
+
+            foreach (var item in expectedList)
+            {
+                Utils.Verify.That(VisibleLabels, Does.Contain(item), $"{item} value is missing");
+            }
         }
 
         [Then(@"Filter Searchfield placeholder is '(.*)'")]
