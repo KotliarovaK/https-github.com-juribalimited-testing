@@ -47,7 +47,7 @@ Examples:
 Scenario: EvergreenJnr_DashboardsPage_CheckThatArchivedItemsCheckboxDisplayedInListDetails
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User clicks "1803 Rollout" list name in left panel
+	When User navigates to the "1803 Rollout" list
 	And User clicks the List Details button
 	Then List details panel is displayed to the user
 	And 'Archived devices included' label is displayed in List Details
@@ -60,7 +60,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckArchivedItemsIconDisplayingAfterDesel
 	When User clicks 'Devices' on the left-hand menu
 	And User sets includes archived devices in 'true'
 	And User create dynamic list with "List17440" name on "Devices" page
-	And User clicks "List17440" list name in left panel
+	When User navigates to the "List17440" list
 	And User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User clicks 'Archived devices included' checkbox in List Details
@@ -71,7 +71,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckArchivedItemsIconDisplayingAfterDesel
 Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatArchivedItemsCheckboxINotDisplayedInListDetails
 	When User clicks '<PageName>' on the left-hand menu
 	Then '<ListToNavigate>' list should be displayed to the user
-	When User clicks "<List>" list name in left panel
+	When User navigates to the "<List>" list
 	And User clicks the List Details button
 	Then List details panel is displayed to the user
 	And 'Archived devices included' label is not displayed in List Details

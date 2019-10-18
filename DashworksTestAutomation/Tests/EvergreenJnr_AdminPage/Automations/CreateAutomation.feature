@@ -51,7 +51,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateAutomationFieldsIsNotPopulatedWi
 	When User selects 'Manual' in the 'Run' dropdown
 	When User selects "Active" checkbox on the Automation Page
 	And User clicks 'CREATE' button 
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
 	When User clicks 'CREATE AUTOMATION' button 
 	Then "Description" field is empty on the Admin page
 	Then "Automation Name" field is empty on the Admin page

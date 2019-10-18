@@ -20,13 +20,16 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public IWebElement CogMenu { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='menu']")]
-        public IWebElement CogMenuDropdown { get; set; }
+        public IWebElement CogMenuList { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div/ul[@class='menu-settings']//a")]
         public IWebElement CogMenuDropdownLabel { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@placeholder='Move to position']")]
         public IWebElement MoveToPositionField { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//ul[contains(@class,'menu-settings')]//*[string-length(text()) > 0]")]
+        public IList<IWebElement> CogMenuItems { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {
@@ -41,8 +44,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public string GetCogMenuDropdownColor()
         {
-            Driver.WaitForElementToBeDisplayed(CogMenuDropdown);
-            return CogMenuDropdown.GetCssValue("background-color");
+            Driver.WaitForElementToBeDisplayed(CogMenuList);
+            return CogMenuList.GetCssValue("background-color");
         }
 
         public string GetCogMenuDropdownLabelColor()
@@ -59,10 +62,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return selector;
         }
 
-        public IWebElement GetCogmenuOptionByName(string option)
+        public IWebElement GetCogMenuOptionByName(string option)
         {
-            var selector = By.XPath($"//*[contains(text(), '{option}')]/ancestor::li[@class='ng-star-inserted']");
-            return Driver.FindElement(selector);
+            return CogMenuItems.FirstOrDefault(x => x.Text.Equals(option));
         }
 
         public bool CheckItemDisplay(string name)

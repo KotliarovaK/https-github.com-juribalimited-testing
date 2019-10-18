@@ -62,6 +62,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         #region Autocomplete
 
+        [When(@"User expands '(.*)' autocomplete")]
+        public void WhenUserExpandsAutocomplete(string placeholder)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.GetTextbox(placeholder).Click();
+        }
+
         [When(@"User selects '(.*)' option from '(.*)' autocomplete")]
         public void WhenUserSelectsOptionFromAutocomplete(string option, string placeholder)
         {
@@ -223,6 +230,28 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.AreEqual(expectedText, text, "Incorrect text in the autocomplete");
         }
 
+        [Then(@"All items in the '(.*)' autocomplete have icons")]
+        public void AllItemsInTheAutocompleteHaveIcons(string dropdown)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.GetTextbox(dropdown).Click();
+
+            Verify.That(page.GetIconsOfDropdownOptions().Count, Is.EqualTo(page.GetDropdownValues().Count), "Incorrect options in lists dropdown");
+            page.BodyContainer.Click();
+        }
+
+        [Then(@"All icon items in the '(.*)' autocomplete have any of tooltip")]
+        public void ThenUserSeesAllListsIconDisplayedWithTooltipInTextBox(string dropdown, Table table)
+        {
+            var expectedTooltips = table.Rows.SelectMany(row => row.Values).ToList();
+            var page = _driver.NowAt<BaseDashboardPage>();
+
+            page.GetTextbox(dropdown).Click();
+            VerifyTooltipOfDropdownIcons(page, expectedTooltips);
+            page.BodyContainer.Click();
+        }
+
+
         #endregion
 
         #region Textbox
@@ -371,10 +400,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         [Then(@"'(.*)' value is displayed in the '(.*)' dropdown")]
         public void ThenValueIsDisplayedInTheDropdown(string value, string dropdownName)
         {
-            var dropdown = _driver.NowAt<BaseGridPage>();
-
-            Verify.IsTrue(dropdown.GetDropdownByValueByName(value, dropdownName).Displayed(),
-                $"{value} is not displayed in the {dropdownName}");
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.AreEqual(value, page.GetDropdown(dropdownName).Text,
+                $"Incorrect value is displayed in the '{dropdownName}' dropdown");
         }
 
         [Then(@"'(.*)' dropdown is displayed")]
@@ -425,8 +453,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.GetDropdown(dropDownName).Click();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var actualList = page.GetDropdownValues();
-            page.BodyContainer.Click();
-            Verify.AreEqual(expectedList, actualList, $"Value for '{dropDownName}' are different");
 
             foreach (var expectedIem in expectedList)
             {
@@ -434,20 +460,45 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             }
         }
 
-        [Then(@"'(.*)' error message is displayed for '(.*)' dropdown")]
-        public void ThenErrorMessageIsDisplayedForDropdown(string errorMessage, string placeholder)
+        [Then(@"All items in the '(.*)' dropdown have icons")]
+        public void AllItemsInTheDropdownHaveIcons(string dropdown)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
+            page.GetDropdown(dropdown).Click();
+
+            Verify.That(page.GetIconsOfDropdownOptions().Count, Is.EqualTo(page.GetDropdownValues().Count), "Incorrect options in lists dropdown");
             page.BodyContainer.Click();
+        }
 
-            Verify.AreEqual(errorMessage, page.GetDropdownErrorMessage(placeholder),
-                $"Incorrect error message is displayed in the '{placeholder}' field");
+        [Then(@"All icon items in the '(.*)' dropdown have any of tooltip")]
+        public void ThenUserSeesAllListsIconDisplayedWithTooltipInDropdown(string dropdown, Table table)
+        {
+            var expectedTooltips = table.Rows.SelectMany(row => row.Values).ToList();
+            var page = _driver.NowAt<BaseDashboardPage>();
 
-            Verify.AreEqual("rgba(242, 88, 49, 1)", page.GetDropdownErrorMessageElement(placeholder).GetCssValue("color"),
-                $"Incorrect error message color for '{placeholder}' field");
+            page.GetDropdown(dropdown).Click();
+            VerifyTooltipOfDropdownIcons(page, expectedTooltips);
+            page.BodyContainer.Click();
+        }
 
-            Verify.AreEqual("rgba(242, 88, 49, 1)", page.GetDropdownErrorMessageExclamationIcon(placeholder).GetCssValue("color"),
-                $"Incorrect error message color for '{placeholder}' field exclamation icon");
+        private void VerifyTooltipOfDropdownIcons(BaseDashboardPage page, List<string> tooltips)
+        {
+            var icons = page.GetIconsOfDropdownOptions();
+            int attempts = 0;
+
+            foreach (var icon in icons)
+            {
+                //check for first three
+                if (attempts == 5)
+                    break;
+
+                _driver.MouseHover(icon);
+                var toolTipText = _driver.GetTooltipText();
+
+                Utils.Verify.That(tooltips, Does.Contain(toolTipText), "Unexpected/missing tooltip");
+
+                attempts++;
+            }
         }
 
         #endregion
@@ -555,6 +606,38 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             basePage.AddItemsToMultiSelect(itemsToAdd);
         }
 
+        [Then(@"multiselect is not disabled")]
+        public void ThenMultiselectIsNotDisabled()
+        {
+            var component = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsFalse(component.GetExpandableMultiselectElement("").Displayed(),
+                "First multiselect on page is disabled");
+        }
+
+        [Then(@"'(.*)' multiselect is not disabled")]
+        public void ThenMultiselectIsNotDisabled(string multiselectTitle)
+        {
+            var component = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsFalse(component.GetExpandableMultiselectElement(multiselectTitle).Displayed(),
+                $"''{multiselectTitle}'' multiselect on page is disabled");
+        }
+
+        [Then(@"multiselect is disabled")]
+        public void ThenMultiselectIsDisabled()
+        {
+            var component = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsTrue(component.GetExpandableMultiselectElement("").Displayed(),
+                "First multiselect on page is not disabled");
+        }
+
+        [Then(@"'(.*)' multiselect is disabled")]
+        public void ThenMultiselectIsDisabled(string multiselectTitle)
+        {
+            var component = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsTrue(component.GetExpandableMultiselectElement(multiselectTitle).Displayed(),
+                $"''{multiselectTitle}'' multiselect on page is not disabled");
+        }
+
         #endregion
 
         #region Checkbox
@@ -625,6 +708,56 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 $"'{buttonName}' button is not displayed");
             Verify.IsFalse(button.Disabled(),
                 $"'{buttonName}' button is displayed");
+        }
+
+        [Then(@"tooltip is not displayed for '(.*)' button")]
+        public void ThenTooltipIsNotDisplayedForButton(string buttonName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var button = page.GetButtonByName(buttonName);
+
+            _driver.MouseHover(button);
+            //For tooltip display
+            Thread.Sleep(300);
+            Verify.IsFalse(_driver.IsTooltipDisplayed(),
+                $"Tooltip for '{buttonName}' button is displayed");
+        }
+
+        [Then(@"'(.*)' button has tooltip with '(.*)' text")]
+        public void ThenButtonHasTooltipWithText(string buttonName, string text)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var button = page.GetButtonByName(buttonName);
+            _driver.MouseHover(button);
+            var toolTipText = _driver.GetTooltipText();
+            Verify.AreEqual(text, toolTipText,
+                $"'{buttonName}' button tooltip is incorrect");
+        }
+
+        #endregion
+
+        #region Button on popup
+
+        [Then(@"'(.*)' popup button color is '(.*)'")]
+        public void ThenPopupButtonColorIs(string button, string color)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var getColor = page.GetButtonByNameOnPopup(button).GetCssValue("background-color");
+            Verify.AreEqual(color, getColor,
+                $"'{button}' sah incorrect color");
+        }
+
+        #endregion
+
+        #region Menu button
+
+        [When(@"User clicks '(.*)' button and select '(.*)' menu button")]
+        public void WhenUserClicksButtonAndSelectMenuButton(string buttonName, string menuButtonName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.ClickButtonByName(buttonName);
+
+            page.GetMenuButtonByName(menuButtonName).Click();
         }
 
         #endregion

@@ -213,7 +213,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToTopOptionWorksC
 	| Items        |
 	| AM 150419 II |
 	| Add data     |
-	When User clicks "Administration" navigation link on the Admin page
+	When User clicks 'Administration' header breadcrumb
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
 	When User have opened column settings for "Automation" column
@@ -272,7 +272,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToBottomOptionWor
 	| AM 150419 III |
 	| AM Test 1     |
 	| AM 150419 II  |
-	When User clicks "Administration" navigation link on the Admin page
+	When User clicks 'Administration' header breadcrumb
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
 	When User have opened column settings for "Automation" column
@@ -456,10 +456,10 @@ Scenario: EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality
 	Then "Stop on failed action" checkbox is checked on the Admin page
 	Then 'UPDATE' button is disabled
 	Then 'CANCEL' button is not disabled
-	Then 'UPDATE' Action button has tooltip with 'Some values are missing or not valid' text
+	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
 	#Wait for "RUN NOW" button
 	#Then 'RUN NOW' button is not disabled
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
 	When User enters "16764_Automation" text in the Search field for "Automation" column
 	When User clicks "Delete" option in Cog-menu for "16764_Automation" item on Admin page
 	Then Warning message with "This automation will be permanently deleted" text is displayed on the Admin page
@@ -708,7 +708,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeviceLisFiltertHasAppropriateAutomati
 	And User selects 'Desktop Replacement' option from 'Path' autocomplete
 	And User clicks 'CREATE' button
 	#run automation
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
 	When User enters "DAS15949_Automation" text in the Search field for "Automation" column
 	And User clicks "Run now" option in Cog-menu for "DAS15949_Automation" item on Admin page and wait for processing
 	#check filters

@@ -1431,7 +1431,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatAddNewOptionAvailableAfterClick
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User clicks Add New button on the Filter panel
-	And User clicks "<LinkName>" link in Lists panel
+	When User navigates to the "<LinkName>" list
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
 	And Add New button is displayed on the Filter panel
@@ -1761,13 +1761,13 @@ Scenario: EvergreenJnr_ApplicationsList_CheckTooltipsForUpdateButtonWhenDateFiel
 	Then Filters panel is displayed to the user
 	When user select "User Dashworks First Seen" filter
 	And User select "Equals" Operator value
-	Then 'UPDATE' Action button has tooltip with 'You must enter a date' text
+	Then 'UPDATE' button has tooltip with 'You must enter a date' text
 	When User select "Between" Operator value
-	Then 'UPDATE' Action button has tooltip with 'You must enter a start date' text
+	Then 'UPDATE' button has tooltip with 'You must enter a start date' text
 	When User select "Empty" Operator value
-	Then 'UPDATE' Action button has tooltip with 'Complete all fields before saving this filter' text
+	Then 'UPDATE' button has tooltip with 'Complete all fields before saving this filter' text
 	When User select "Not empty" Operator value
-	Then 'UPDATE' Action button has tooltip with 'Complete all fields before saving this filter' text
+	Then 'UPDATE' button has tooltip with 'Complete all fields before saving this filter' text
 
 @Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS16845
 Scenario: EvergreenJnr_MailboxesList_CheckThatApplicationReadinessSubCategoryIsMissingForProjectOfMailboxesLists
@@ -1827,7 +1827,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUserPostalCodeOptionsDisplaying
 Scenario: EvergreenJnr_MailboxesList_CheckThatFilterExpressionSectionIsMovedToFilterPanel
 	When User clicks 'Mailboxes' on the left-hand menu
 	Then 'All Mailboxes' list should be displayed to the user
-	When User clicks "Mailbox Pivot (Complex)" list name in left panel
+	When User navigates to the "Mailbox Pivot (Complex)" list
 	And User clicks the Filters button
 	Then Filter Expression icon displayed within Filter Panel
 	When User clicks Filter Expression icon in Filter Panel
@@ -2079,3 +2079,21 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFilterSubcategoriesAreSortedByCaseIn
     | Device OS Servicing State    |
     | Device OS Version Number     |
     | Device Service Pack or Build |
+
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS16814
+Scenario Outline: EvergreenJnr_AllLists_CheckThatCorrectScopedProjectAppearsForStatusFilter
+	When User clicks '<ListName>' on the left-hand menu
+	Then '<ListHeader>' list should be displayed to the user
+	When User clicks the Filters button
+	And User clicks Add New button on the Filter panel
+	And User enters "Status" text in Search field at Filters Panel
+	And User moves to the end of categories list
+	Then the following Filters categories are presented in Filter panel:
+    | Subcategories |
+    | <Project>     |
+
+	Examples:
+    | ListName     | ListHeader       | Project             |
+    | Applications | All Applications | Project: zDeviceAut |
+    | Users        | All Users        | Project: zDeviceAut |
+    | Devices      | All Devices      | Project: zUserAutom |

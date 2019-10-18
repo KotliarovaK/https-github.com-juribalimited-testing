@@ -144,13 +144,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectDetailsIsPopulatedOnTheAdminPag
 	| Units            |
 	| Slots            |
 	| Override Dates   |
-	When User clicks "Administration" navigation link on the Admin page
+	When User clicks 'Administration' header breadcrumb
 	When User enters "Barry's User Project" text in the Search field for "Project" column
 	When User clicks content from "Project" column
 	Then "Barry's User Project" content is displayed in "Project Name" field
 	Then "Barry'sUse" content is displayed in "Project Short Name" field
 	Then "Barry's User Project" content is displayed in "Project Description" field
-	When User clicks "Administration" navigation link on the Admin page
+	When User clicks 'Administration' header breadcrumb
 	When User enters "Email Migration" text in the Search field for "Project" column
 	When User clicks content from "Project" column
 	Then "Email Migration" content is displayed in "Project Name" field

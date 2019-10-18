@@ -11,7 +11,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOwnerCanBeAddedToSharedUsersAsSpe
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks Show Dashboards panel icon on Dashboards page
 	And User clicks Settings button for "Dashboard for DAS14911" dashboard
-	And User clicks Manage in the list panel
+	When User clicks 'Manage' option in opened Cog-menu
 	Then Permission panel is displayed to the user
 	When User changes sharing type from "Private" to "Specific users"
 	And User adds user to list of shared person
@@ -175,7 +175,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatIgnoreAndShareWorksProperlyInWarn
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks Settings button for "DeviceListFor14841_1" list
-	And User clicks Manage in the list panel
+	When User clicks 'Manage' option in opened Cog-menu
 	Then List details panel is displayed to the user
 	And "Private" sharing option is selected
 
@@ -209,7 +209,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksProperlyInWarn
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks Settings button for "DeviceListFor14841_2" list
-	And User clicks Manage in the list panel
+	When User clicks 'Manage' option in opened Cog-menu
 	Then List details panel is displayed to the user
 	And "Everyone can see" sharing option is selected
 
@@ -257,11 +257,11 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksOnlyForParticu
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks Settings button for "DeviceListFor14841_3" list
-	And User clicks Manage in the list panel
+	When User clicks 'Manage' option in opened Cog-menu
 	Then List details panel is displayed to the user
 	And "Everyone can edit" sharing option is selected
 	When User clicks Settings button for "DeviceListFor14841_4" list
-	And User clicks Manage in the list panel
+	When User clicks 'Manage' option in opened Cog-menu
 	Then List details panel is displayed to the user
 	And "Private" sharing option is selected
 

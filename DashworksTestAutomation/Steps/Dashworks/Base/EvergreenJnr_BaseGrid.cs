@@ -36,6 +36,43 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             SelectUnselectAllRows(true);
         }
 
+        [Then(@"checkboxes are not displayed for content in the grid")]
+        public void ThenCheckboxesAreNotDisplayedForContentInTheGrid()
+        {
+            var dashboardPage = _driver.NowAt<BaseGridPage>();
+            Verify.IsTrue(dashboardPage.Checkboxes.All(x => !x.Displayed()),
+                "Checkboxes in the grid are displayed");
+            Verify.IsFalse(dashboardPage.SelectAllCheckbox.Displayed(),
+                "'Select all rows' checkbox is displayed");
+        }
+
+        [Then(@"select all rows checkbox is checked")]
+        public void ThenSelectAllRowsCheckboxIsChecked()
+        {
+            var dashboardPage = _driver.NowAt<BaseGridPage>();
+            Verify.IsTrue(_driver.GetEvergreenCheckboxState(dashboardPage.SelectAllCheckbox),
+                "'Select all rows' checkbox is unchecked");
+        }
+
+        [Then(@"select all rows checkbox is unchecked")]
+        public void ThenSelectAllRowsCheckboxIsUnchecked()
+        {
+            var dashboardPage = _driver.NowAt<BaseGridPage>();
+            _driver.WhatForElementToBeSelected(dashboardPage.SelectAllCheckbox, false);
+            Verify.IsTrue(_driver.GetEvergreenCheckboxState(dashboardPage.SelectAllCheckbox),
+                "'Select all rows' checkbox is checked");
+        }
+
+        [Then(@"all checkboxes are checked in the grid")]
+        public void ThenAllCheckboxesAreCheckedInTheGrid()
+        {
+            var dashboardPage = _driver.NowAt<BaseGridPage>();
+            //Wait for All checkboxes are checked
+            Thread.Sleep(1000);
+            Verify.IsTrue(dashboardPage.Checkboxes.All(x => x.GetGridCheckboxSelectedState()),
+                "Not all checkboxes are checked in the grid");
+        }
+
         private void SelectUnselectAllRows(bool expectedCondition)
         {
             var dashboardPage = _driver.NowAt<BaseGridPage>();
@@ -54,6 +91,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var pivot = _driver.NowAt<BaseGridPage>();
             Utils.Verify.IsTrue(pivot.ExportListButton.Displayed(), "Export button is not displayed");
+        }
+
+        [Then(@"Export button is displayed disabled")]
+        public void ThenExportButtonIsDisplayedDisabled()
+        {
+            var pivot = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForElementToBeDisplayed(pivot.ExportListButton);
+            Utils.Verify.That(pivot.ExportListButton.Disabled(), Is.True, "Export button is displayed enabled");
         }
 
         #endregion

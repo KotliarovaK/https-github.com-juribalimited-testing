@@ -30,7 +30,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithUpdateOwnerIsLoaded
 	And User selects "1803 Team" Team on Action panel
 	And User selects "Akhila Varghese" Owner on Action panel
 	And User clicks 'CREATE' button 
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
 	When User enters "17617_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
 	When User navigates to the 'Actions' left menu item
@@ -88,7 +88,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTheFieldIsBlankAfterChangingProject
 	When User selects 'Started' in the 'Value' dropdown
 	And User clicks 'CREATE' button 
 	#Create Action
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
 	When User navigates to the 'Projects' left menu item
 	And User enters "18432Project" text in the Search field for "Project" column
 	And User selects all rows on the grid
@@ -105,5 +105,5 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTheFieldIsBlankAfterChangingProject
 	Then '[Project not found]' content is displayed in 'Project' textbox
 	When User selects '1803 Rollout' option from 'Project' autocomplete
 	Then '' content is displayed in 'Stage' textbox
-	When User selects 'Information' option from 'Stage' autocomplete
+	When User selects 'Pre-Migration' option from 'Stage' autocomplete
 	Then '' content is displayed in 'Task' textbox

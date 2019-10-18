@@ -40,7 +40,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatChangingTheProjectNameOrShortNameInSen
 	And User clicks content from "Project" column
 	Then "13498NewProjectName" content is displayed in "Project Name" field
 	And "13498ShN" content is displayed in "Project Short Name" field
-	When User clicks "Projects" navigation link on the Admin page
+	When User clicks 'Projects' header breadcrumb
 	And User enters "13498NewProjectName" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
@@ -101,7 +101,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectWithUseEvergreenCapacityUnitsIs
 	Then 'CREATE PROJECT CAPACITY UNIT' button is not displayed
 	Then 'Actions' dropdown is not displayed
 	Then Cog menu is not displayed on the Admin page
-	When User clicks "Administration" navigation link on the Admin page
+	When User clicks 'Administration' header breadcrumb
 	When User navigates to the 'Evergreen' left menu item
 	When User navigates to the 'Capacity Units' left menu item
 	Then Page with 'Capacity Units' header is displayed to user

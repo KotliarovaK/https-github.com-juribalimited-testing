@@ -23,14 +23,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public const string Row = "//div[@col-id='name']//a";
 
-        public const string FirstColumnTableContent = ".//div[@role='gridcell']//a[@href]";
-
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'checkbox-styled')]//mat-checkbox//input")]
         public IWebElement SelectAllCheckbox { get; set; }
 
-        //TODO delete or rework this
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-selection-checkbox']")]
-        public IWebElement Checkbox { get; set; }
+        public IList<IWebElement> Checkboxes { get; set; }
 
         #region Inline Edit. Appears on double click on cell
 
@@ -491,13 +488,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public bool GetMissingDropdownOnSettingsScreenByName(string dropdownName)
         {
             return Driver.IsElementDisplayed(By.XPath($".//div[@class='mat-form-field-infix']//label[text()='{dropdownName}']"));
-        }
-
-        public IWebElement GetDropdownByValueByName(string value, string dropdownName)
-        {
-            var selector = By.XPath($".//mat-form-field//label[text()='{dropdownName}']//ancestor::div//span[text()='{value}']");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
         }
 
         public IWebElement GetButtonInWarningPopUp(string buttonName)

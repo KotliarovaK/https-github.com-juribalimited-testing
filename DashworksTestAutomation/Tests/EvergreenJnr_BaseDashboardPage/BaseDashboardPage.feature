@@ -322,5 +322,5 @@ Scenario: EvergreenJnr_UsersList_CheckThatFullPpageWith403ErrorIsDisplayedCorrec
 Scenario: EvergreenJnr_DevicesList_CheckThatRequestHasSpecificParameterWhenNavigatingIntoList
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User clicks "Migration Type Capacity" list name in left panel
+	When User navigates to the "Migration Type Capacity" list
 	Then Columnmetadata request contains ArchivedItem parameter

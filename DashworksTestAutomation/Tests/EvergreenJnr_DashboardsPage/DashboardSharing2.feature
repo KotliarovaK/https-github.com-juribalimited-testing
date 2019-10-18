@@ -120,7 +120,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdmi
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks Settings button for "DeviceListFor14841_Admin" list
-	And User clicks Manage in the list panel
+	When User clicks 'Manage' option in opened Cog-menu
 	Then List details panel is displayed to the user
 	And "Everyone can see" sharing option is selected
 
@@ -130,7 +130,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckUserCanRemoveYourselfFromSharedDashbo
 	When Dashboard with "Dashboard for DAS15876" name created via API and opened
 	And User clicks Show Dashboards panel icon on Dashboards page
 	And User clicks Settings button for "Dashboard for DAS15876" dashboard
-	And User clicks Manage in the list panel
+	When User clicks 'Manage' option in opened Cog-menu
 	Then Permission panel is displayed to the user
 	When User changes sharing type from "Private" to "Specific users"
 	And User adds user to list of shared person
@@ -149,7 +149,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckUserCanRemoveYourselfFromSharedDashbo
 	#remove share
 	And User clicks Show Dashboards panel icon on Dashboards page
 	And User clicks Settings button for "Dashboard for DAS15876" dashboard
-	And User clicks Manage in the list panel
+	When User clicks 'Manage' option in opened Cog-menu
 	Then Permission panel is displayed to the user
 	When User clicks Settings button for "automation_admin10" shared user
 	And User selects "Remove" option from Settings
@@ -167,7 +167,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckUserCanEditWidgetFromSharedDashboard
 	| Table      | WidgetForDAS15550 | All Applications | Application | Application | Count distinct    | Application ASC | 10        |
 	And User clicks Show Dashboards panel icon on Dashboards page
 	And User clicks Settings button for "Dashboard for DAS15550" dashboard
-	And User clicks Manage in the list panel
+	When User clicks 'Manage' option in opened Cog-menu
 	Then Permission panel is displayed to the user
 	When User changes sharing type from "Private" to "Specific users"
 	And User adds user to list of shared person
@@ -186,7 +186,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckUserCanEditWidgetFromSharedDashboard
 	#edit widget
 	And User clicks Show Dashboards panel icon on Dashboards page
 	And User clicks Settings button for "Dashboard for DAS15550" dashboard
-	And User clicks Manage in the list panel
+	When User clicks 'Manage' option in opened Cog-menu
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks Ellipsis menu for "WidgetForDAS15550" Widget on Dashboards page
 	And User clicks "Edit" item from Ellipsis menu on Dashboards page
@@ -201,7 +201,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserWithEditRightsCanChangeDashbo
 	When Dashboard with "Dashboard for DAS14915" name created via API and opened
 	And User clicks Show Dashboards panel icon on Dashboards page
 	And User clicks Settings button for "Dashboard for DAS14915" dashboard
-	And User clicks Manage in the list panel
+	When User clicks 'Manage' option in opened Cog-menu
 	Then Permission panel is displayed to the user
 	When User changes sharing type from "Private" to "Specific users"
 	And User adds user to list of shared person
@@ -219,7 +219,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserWithEditRightsCanChangeDashbo
 	And User clicks the Switch to Evergreen link
 	And User clicks Show Dashboards panel icon on Dashboards page
 	And User clicks Settings button for "Dashboard for DAS14915" dashboard
-	And User clicks Manage in the list panel
+	When User clicks 'Manage' option in opened Cog-menu
 	Then Permission panel is displayed to the user
 	When User changes dashboard name to "DashboardUpdated"
 	Then Dashboard with "DashboardUpdated" title displayed in All Dashboards
@@ -230,7 +230,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserWithAdminRightsCanAddUserInSh
 	When Dashboard with "Dashboard for Share" name created via API and opened
 	And User clicks Show Dashboards panel icon on Dashboards page
 	And User clicks Settings button for "Dashboard for Share" dashboard
-	And User clicks Manage in the list panel
+	When User clicks 'Manage' option in opened Cog-menu
 	Then Permission panel is displayed to the user
 	When User changes sharing type from "Private" to "Specific users"
 	And User adds user to list of shared person
@@ -248,7 +248,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserWithAdminRightsCanAddUserInSh
 	And User clicks the Switch to Evergreen link
 	And User clicks Show Dashboards panel icon on Dashboards page
 	And User clicks Settings button for "Dashboard for Share" dashboard
-	And User clicks Manage in the list panel
+	When User clicks 'Manage' option in opened Cog-menu
 	Then Permission panel is displayed to the user
 	When User adds user to list of shared person
 	| User          | Permission |

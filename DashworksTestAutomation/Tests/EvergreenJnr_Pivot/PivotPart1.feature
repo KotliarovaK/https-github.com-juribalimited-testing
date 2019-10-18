@@ -40,7 +40,8 @@ Examples:
 @Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS14325
 Scenario Outline: EvergreenJnr_AllLists_ChecksThatGroupsColumnsAndValuesContainEvergreenCatagoryWithCorrectSubcategories
 	When User clicks '<ListName>' on the left-hand menu
-	And User selects 'Pivot' in the 'Create' dropdown
+	Then 'All <ListName>' list should be displayed to the user
+	When User selects 'Pivot' in the 'Create' dropdown
 	And User clicks "ADD ROW GROUP" button in Pivot panel
 	Then User sees "Evergreen" category in Pivot panel
 	When User closed "Selected Columns" columns category
@@ -83,7 +84,8 @@ Examples:
 @Evergreen @Applications @EvergreenJnr_Pivot @Pivot @DAS14325
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatGroupsColumnsAndValuesContainEvergreenCatagoryWithCorrectSubcategories
 	When User clicks 'Applications' on the left-hand menu
-	And User selects 'Pivot' in the 'Create' dropdown
+	Then 'All Applications' list should be displayed to the user
+	When User selects 'Pivot' in the 'Create' dropdown
 	And User clicks "ADD ROW GROUP" button in Pivot panel
 	Then User sees "Evergreen" category in Pivot panel
 	When User closed "Selected Columns" columns category
@@ -114,7 +116,8 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatGroupsColumnsAndValuesContainE
 @Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS14188 @DAS14748 @DAS15682
 Scenario Outline: EvergreenJnr_AllLists_ChecksThatColumnsCanBeAddedAfterRunningPivot
 	When User clicks '<ListName>' on the left-hand menu
-	And User selects 'Pivot' in the 'Create' dropdown
+	Then 'All <ListName>' list should be displayed to the user
+	When User selects 'Pivot' in the 'Create' dropdown
 	And User selects the following Row Groups on Pivot:
 	| RowGroups  |
 	| <RowGroup> |
@@ -127,7 +130,7 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatColumnsCanBeAddedAfterRunningP
 	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	Then Plus button is not displayed in the left-pinned column
-	When User clicks "<Link>" link in Lists panel
+	When User navigates to the "<Link>" list
 	And User clicks the Columns button
 	And ColumnName is entered into the search box and the selection is clicked
 	| ColumnName        |
@@ -146,7 +149,8 @@ Examples:
 @Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS13747
 Scenario Outline: EvergreenJnr_AllLists_CheckThatAddColumnCheckBoxRemovedFromFilterPanelWhenUsingNewPivot
 	When User clicks '<ListName>' on the left-hand menu
-	And User selects 'Pivot' in the 'Create' dropdown
+	Then 'All <ListName>' list should be displayed to the user
+	When User selects 'Pivot' in the 'Create' dropdown
 	And User selects the following Row Groups on Pivot:
 	| RowGroups  |
 	| <RowGroup> |
@@ -172,7 +176,8 @@ Examples:
 @Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS13747
 Scenario Outline: EvergreenJnr_AllLists_CheckThatAddColumnCheckBoxRemovedFromFilterPanelWhenUsingSavedPivot
 	When User clicks '<ListName>' on the left-hand menu
-	And User selects 'Pivot' in the 'Create' dropdown
+	Then 'All <ListName>' list should be displayed to the user
+	When User selects 'Pivot' in the 'Create' dropdown
 	And User selects the following Row Groups on Pivot:
 	| RowGroups  |
 	| <RowGroup> |

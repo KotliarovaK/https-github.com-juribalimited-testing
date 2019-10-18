@@ -70,10 +70,11 @@ namespace DashworksTestAutomation.Steps.API
             var list = _driver.NowAt<CustomListElement>();
             try
             {
-                _driver.WaitForElementToBeDisplayed(list.GetActiveList());
+                _driver.ExecuteAction(() => _driver.WaitForElementToBeDisplayed(list.GetActiveList()));
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                Logger.Write($"Created list was not active. {e}");
                 Logger.Write(
                     $"Active list was not switched automatically, browser URL: {_driver.Url}");
                 _driver.Navigate().Refresh();
@@ -232,17 +233,18 @@ namespace DashworksTestAutomation.Steps.API
             var list = _driver.NowAt<CustomListElement>();
             try
             {
-                _driver.WaitForElementToBeDisplayed(list.GetActiveList());
+                _driver.ExecuteAction(() => _driver.WaitForElementToBeDisplayed(list.GetActiveList()));
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                Logger.Write($"Created list was not active. {e}");
                 Logger.Write(
                     $"Active list was not switched automatically, browser URL: {_driver.Url}");
                 _driver.Navigate().Refresh();
                 _driver.WaitForDataLoading();
                 list.GetListElementByName(listName).Click();
                 _driver.WaitForDataLoading();
-                Utils.Verify.IsTrue(list.GetActiveList().Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
+                Verify.IsTrue(list.GetActiveList().Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
             }
         }
 

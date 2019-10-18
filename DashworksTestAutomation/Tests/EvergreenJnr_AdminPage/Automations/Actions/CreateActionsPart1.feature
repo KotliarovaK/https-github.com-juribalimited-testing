@@ -171,7 +171,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithRemoveOwnerIsLoaded
 	And User selects 'No change' in the 'Update Date' dropdown
 	When User selects 'Remove' in the 'Update Owner' dropdown
 	And User clicks 'CREATE' button 
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
 	When User enters "17619_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
 	When User navigates to the 'Actions' left menu item

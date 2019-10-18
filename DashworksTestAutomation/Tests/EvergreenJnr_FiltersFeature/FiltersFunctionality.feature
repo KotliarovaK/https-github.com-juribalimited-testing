@@ -223,7 +223,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredCorrectlyAfterL
 	When User perform search by "Microsoft Office 97, Professional Edition"
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
-	Then Select All selectbox is unchecked
+	Then select all rows checkbox is unchecked
 	When User click content from "Application" column
 	Then User click back button in the browser
 	Then "5" rows are displayed in the agGrid
@@ -2432,4 +2432,16 @@ Scenario: EvergreenJnr_DevicesList_CheckThatThereIsNoErrorAfterSavingListWithFil
 	And User add "1803: Pre-Migration \ Scheduled Date" filter where type is "Equals (relative)" with added column and following value:
 	| Values |
 	| 1      |
+	Then There are no errors in the browser console
+
+@Evergreen @AllDeviceApplications @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18425 @DAS18458 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorAppearsAfterOpenningItemFromCreatedAllDeviceApplicationsList
+	When User clicks 'Applications' on the left-hand menu
+	Then 'All Applications' list should be displayed to the user
+	When User clicks "All Device Applications" list name in left panel
+	Then Export button is displayed disabled
+	When User clicks Add New button on the Filter panel
+	When User selects 'Used on device' option in expanded associations list
+	When User clicks 'RUN LIST' button
+	When User click content from "Application Name" column
 	Then There are no errors in the browser console

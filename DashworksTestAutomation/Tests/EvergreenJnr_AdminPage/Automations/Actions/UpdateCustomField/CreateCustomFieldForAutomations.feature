@@ -88,7 +88,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldForDisabledCus
 	Then Success message is displayed and contains "The automation action has been created" text
 	#Create Action
 	When User clicks content from "Action" column
-	Then Edit Action page is displayed to the User
+	Then 'Edit Action' page subheader is displayed to user
 	Then 'CustomField_18166' content is not displayed in 'Custom Field' autocomplete after search
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18464 @Cleanup
@@ -121,7 +121,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatObjectsColumnContainsNullOfObjectsForF
 	#Remove Custom Field
 	When User removes Custom Field with 'CustomField_18464' label
 	#Run Automation
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
 	When User enters "18464_Automation" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "18464_Automation" item on Admin page
 	#Check Automation Log
