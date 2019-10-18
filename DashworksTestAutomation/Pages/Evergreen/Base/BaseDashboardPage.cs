@@ -24,8 +24,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         public const string GridCell = ".//div[@role='gridcell']";
 
-        public const string OptionsDllOnActionsPanel = "//mat-option[@role='option']//span";
-
         public const string ColumnSubcategory = "//div[@class='selected-column-name']//span";
 
         public const string FilterSubcategory = "//div[contains(@class, 'sub-categories')]//div//div";
@@ -240,14 +238,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'sub-categories-item')]")]
         public IList<IWebElement> ColumnSubcategories { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//ul[@class='menu-settings']/li[@class='ng-star-inserted']")]
-        public IList<IWebElement> CogMenuItems { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'DateTime')]/span[contains(text(), ':')]")]
         public IWebElement DateTimeColumnValue { get; set; }
-
-        [FindsBy(How = How.XPath, Using = OptionsDllOnActionsPanel)]
-        public IList<IWebElement> OptionsDll { get; set; }
 
         [FindsBy(How = How.XPath, Using = ColumnSubcategory)]
         public IList<IWebElement> ColumnSubcategoryList { get; set; }

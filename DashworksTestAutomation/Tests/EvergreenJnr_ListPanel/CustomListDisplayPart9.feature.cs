@@ -146,7 +146,8 @@ this.FeatureBackground();
 #line 16
  testRunner.Then("\'All Devices\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 17
- testRunner.When("User duplicates list with \"1111111111111111111111111111111111111111\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Duplicate\' Settings menu item for \'111111111111111111111111111111111" +
+                    "1111111\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 18
  testRunner.Then("\"111111111111111111111111111111111111112\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 19
@@ -247,7 +248,7 @@ this.FeatureBackground();
 #line 40
  testRunner.Then("\"2\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 41
- testRunner.When("User duplicates list with \"StaticList1412\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Duplicate\' Settings menu item for \'StaticList1412\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 42
  testRunner.Then("\"StaticList14122\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 43
@@ -487,17 +488,17 @@ this.FeatureBackground();
 #line 86
  testRunner.Then("\"List17711\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 87
- testRunner.When("User duplicates list with \"List17711\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Duplicate\' Settings menu item for \'List17711\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 88
  testRunner.Then("\"List177112\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 89
  testRunner.When("User navigates to the \"List177112\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 90
- testRunner.And("User clicks Settings button in the list panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User clicks Settings button for \"List177112\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 91
- testRunner.Then("Settings panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Cog menu is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 92
- testRunner.When("User clicks Delete in the list panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Delete\' option in opened Cog-menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 93
  testRunner.Then("\"list will be permanently deleted\" message is displayed in the lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 94

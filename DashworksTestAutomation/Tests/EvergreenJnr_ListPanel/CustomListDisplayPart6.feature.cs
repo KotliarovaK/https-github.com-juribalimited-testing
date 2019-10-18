@@ -338,7 +338,8 @@ this.FeatureBackground();
 #line 61
  testRunner.Then("\"1234567890123456789012345678901234567890\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 62
- testRunner.When("User duplicates list with \"1234567890123456789012345678901234567890\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Duplicate\' Settings menu item for \'123456789012345678901234567890123" +
+                    "4567890\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 63
  testRunner.Then("\"123456789012345678901234567890123456782\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 64
@@ -427,7 +428,7 @@ this.FeatureBackground();
 #line 78
  testRunner.Then(string.Format("\'{0}\' list should be displayed to the user", allListName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 79
- testRunner.Then(string.Format("\"{0}\" list name is displayed correctly", allListName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("\"{0}\" list is displayed to user", allListName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

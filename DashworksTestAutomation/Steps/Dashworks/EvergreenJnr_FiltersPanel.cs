@@ -1553,5 +1553,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var actualPlaceholderName = filtersElement.SearchTextBox.GetAttribute("placeholder");
             Verify.AreEqual(expectedPlaceholderName, actualPlaceholderName, "Incorrect Placeholder in the search field");
         }
+
+        [When(@"User selects '(.*)' option in expanded associations list")]
+        public void WhenUserSelectsOptionInExpandedAssociationsList(string option)
+        {
+            var page = _driver.NowAt<FiltersElement>();
+            page.AssociationItem(option).Click();
+        }
     }
 }
