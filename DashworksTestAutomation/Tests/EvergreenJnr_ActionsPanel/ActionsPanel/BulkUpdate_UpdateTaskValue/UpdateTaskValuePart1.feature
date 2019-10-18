@@ -49,6 +49,7 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateTaskValueWithBeforeCurrentValueUpdat
 	Then the amber message is displayed correctly
 	When User clicks 'UPDATE' button
 	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
+	When User refreshes agGrid
 	Then "15 Oct 2019" content is displayed for "zDeviceAut: Relative BU \ DT BU Dev" column
 
 @Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18245 @Not_Ready
@@ -59,13 +60,13 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateTaskValueWithNoChangeUpdateValue
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName                                   |
-	| zMailboxAu: Relative BU \ DT BU Users (Date) |
+	| ColumnName                                |
+	| zUserAutom: Relative BU \ DT BU Us (Date) |
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Username" filter where type is "Equals" with added column and following value:
 	| Values              |
-	| 06C02CDC00044A7DB59 |
+	| 2176236000044A2CA08 |
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User selects all rows on the grid
@@ -82,9 +83,8 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateTaskValueWithNoChangeUpdateValue
 	And User clicks 'UPDATE' button
 	Then the amber message is displayed correctly
 	When User clicks 'UPDATE' button
-	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	When User refreshes agGrid
-	Then "Oct 15, 2019 8:30 PM" content is displayed for "zUserAutom: Relative BU \ DT BU Us (Date)" column
+	#Then '16 Oct 2019' content is displayed in the 'zUserAutom: Relative BU \ DT BU Us (Date)' column
 	#Return value
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
@@ -99,9 +99,7 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateTaskValueWithNoChangeUpdateValue
 	And User clicks 'UPDATE' button
 	Then the amber message is displayed correctly
 	When User clicks 'UPDATE' button
-	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
-	Then "15 Oct 2019" content is displayed for "zUserAutom: Relative BU \ DT BU Us (Date)" column
-	Then 'Oct 15, 2019 6:30 PM' content is displayed in the 'zUserAutom: Relative BU \ DT BU Us (Date)' column
+	#Then '16 Oct 2019' content is displayed in the 'zUserAutom: Relative BU \ DT BU Us (Date)' column
 
 @Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18245 @Not_Ready
 #Waiting for 'Update relative to now' value
@@ -117,7 +115,7 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateTaskValueWithAfterCurrentValueUpdate
 	Then Filters panel is displayed to the user
 	When User add "Username" filter where type is "Equals" with added column and following value:
 	| Values              |
-	| 2176236000044A2CA08 |
+	| 06C02CDC00044A7DB59 |
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User selects all rows on the grid
