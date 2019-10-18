@@ -400,10 +400,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         [Then(@"'(.*)' value is displayed in the '(.*)' dropdown")]
         public void ThenValueIsDisplayedInTheDropdown(string value, string dropdownName)
         {
-            var dropdown = _driver.NowAt<BaseGridPage>();
-
-            Verify.IsTrue(dropdown.GetDropdownByValueByName(value, dropdownName).Displayed(),
-                $"{value} is not displayed in the {dropdownName}");
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.AreEqual(value, page.GetDropdown(dropdownName).Text,
+                $"Incorrect value is displayed in the '{dropdownName}' dropdown");
         }
 
         [Then(@"'(.*)' dropdown is displayed")]
@@ -734,7 +733,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             var getColor = page.GetButtonByNameOnPopup(button).GetCssValue("background-color");
-            Verify.AreEqual(color, getColor, 
+            Verify.AreEqual(color, getColor,
                 $"'{button}' sah incorrect color");
         }
 

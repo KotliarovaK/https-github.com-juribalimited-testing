@@ -55,9 +55,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         public void ClickBreadcrumb(string breadcrumb)
         {
-            Driver.text
-            if (!Breadcrumbs.Any() || !Breadcrumbs.Any(x => x.Equals(breadcrumb)))
-                throw new Exception($"Unable to find breadcrumb with '{breadcrumb}' text");
+            Driver.WaitForElementToContainsText(Breadcrumbs, breadcrumb);
 
             Breadcrumbs.First(x => x.Text.Equals(breadcrumb)).Click();
         }

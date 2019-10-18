@@ -490,13 +490,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.IsElementDisplayed(By.XPath($".//div[@class='mat-form-field-infix']//label[text()='{dropdownName}']"));
         }
 
-        public IWebElement GetDropdownByValueByName(string value, string dropdownName)
-        {
-            var selector = By.XPath($".//mat-form-field//label[text()='{dropdownName}']//ancestor::div//span[text()='{value}']");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
         public IWebElement GetButtonInWarningPopUp(string buttonName)
         {
             var selector = By.XPath($".//mat-dialog-container//button/span[text()='{buttonName}']");
