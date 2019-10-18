@@ -18,12 +18,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorMessageAppearsWhenCreatingDuplica
 	And User selects "Override Dates" tab on the Project details page
 	And User clicks 'CREATE OVERRIDE DATE' button 
 	Then Create Override Date is displayed correctly
-	Then 'CREATE' Action button has tooltip with 'Some settings are not valid' text
+	Then 'CREATE' button has tooltip with 'Some settings are not valid' text
 	And 'CREATE' button is disabled
 	When User enters '29 Oct 2018' text to 'Override Start Date' datepicker
-	Then 'CREATE' Action button has tooltip with 'Some settings are not valid' text
+	Then 'CREATE' button has tooltip with 'Some settings are not valid' text
 	Then 'CREATE' button is disabled
-	Then 'CREATE' Action button has tooltip with 'Some settings are not valid' text
+	Then 'CREATE' button has tooltip with 'Some settings are not valid' text
 	When User enters '29 Oct 2018' text to 'Override End Date' datepicker
 	Then 'CREATE' button is not disabled
 	When User selects 'SlotDAS13779' in the 'Slot' dropdown

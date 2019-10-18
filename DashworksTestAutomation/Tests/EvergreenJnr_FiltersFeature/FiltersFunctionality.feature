@@ -223,7 +223,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredCorrectlyAfterL
 	When User perform search by "Microsoft Office 97, Professional Edition"
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
-	Then Select All selectbox is unchecked
+	Then select all rows checkbox is unchecked
 	When User click content from "Application" column
 	Then User click back button in the browser
 	Then "5" rows are displayed in the agGrid

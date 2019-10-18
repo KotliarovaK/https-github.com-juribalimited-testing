@@ -515,7 +515,7 @@ this.FeatureBackground();
 #line 131
  testRunner.When("User clicks \'CANCEL\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 132
- testRunner.Then("Checkboxes are not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("checkboxes are not displayed for content in the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 133
  testRunner.And("Actions panel is not displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 134

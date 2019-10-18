@@ -71,7 +71,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = "//mat-dialog-container[contains(@class, 'dialogContainer ')]")]
         public IWebElement PopupChangesPanel { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//span[@class='mat-checkbox-label']/ancestor::mat-checkbox")]
+        [FindsBy(How = How.XPath, Using = ".//span[@class='mat-checkbox-label']/ancestor::mat-checkbox")]
         public IWebElement SelectAllCheckBox { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//mat-dialog-container//div[@class='field-category collapsed']")]

@@ -72,7 +72,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedCheckboxIsSelectedAfterSwitchi
 	When User selects "Scope" tab on the Project details page
 	And User selects "Scope Changes" tab on the Project details page
 	And User navigates to the 'Devices' tab on Project Scope Changes page
-	Then Update Project buttons is disabled
+	Then 'UPDATE ALL CHANGES' button is disabled
 	When User expands multiselect to add objects
 	Then Objects are displayed in alphabetical order on the Admin page
 	When User selects following Objects from the expandable multiselect

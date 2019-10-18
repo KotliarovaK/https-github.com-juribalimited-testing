@@ -24,5 +24,5 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectWithoutTasksForScopeIsNotDispla
 	And User clicks 'CREATE' button 
 	#Create Action
 	When User clicks content from "Action" column
-	Then Edit Action page is displayed to the User
+	Then 'Edit Action' page subheader is displayed to user
 	Then 'Mailbox Evergreen Capacity Project' content is not displayed in 'Project' autocomplete after search

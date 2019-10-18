@@ -70,7 +70,7 @@ namespace DashworksTestAutomation.Steps.API
             var list = _driver.NowAt<CustomListElement>();
             try
             {
-                _driver.WaitForElementToBeDisplayed(list.GetActiveList());
+                _driver.ExecuteAction(() => _driver.WaitForElementToBeDisplayed(list.GetActiveList()));
             }
             catch (Exception e)
             {
@@ -233,7 +233,7 @@ namespace DashworksTestAutomation.Steps.API
             var list = _driver.NowAt<CustomListElement>();
             try
             {
-                _driver.WaitForElementToBeDisplayed(list.GetActiveList());
+                _driver.ExecuteAction(() => _driver.WaitForElementToBeDisplayed(list.GetActiveList()));
             }
             catch (Exception e)
             {
@@ -244,7 +244,7 @@ namespace DashworksTestAutomation.Steps.API
                 _driver.WaitForDataLoading();
                 list.GetListElementByName(listName).Click();
                 _driver.WaitForDataLoading();
-                Utils.Verify.IsTrue(list.GetActiveList().Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
+                Verify.IsTrue(list.GetActiveList().Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
             }
         }
 

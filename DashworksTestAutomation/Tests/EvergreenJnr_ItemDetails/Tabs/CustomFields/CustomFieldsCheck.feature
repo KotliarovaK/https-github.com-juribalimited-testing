@@ -76,7 +76,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCustomFieldsTheGroupByElementContain
 	| Values       |
 	| Custom Field |
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @CustomFields @DAS17776 @DAS18363
+@Evergreen @Devices @EvergreenJnr_ItemDetails @CustomFields @DAS17776 @DAS18363 @DAS18502
 Scenario: EvergreenJnr_DevicesList_CheckThatItsNotPossibleToUnselectTheLastColumnOnCustomFieldsTab
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	And User navigates to the "Custom Fields" sub-menu on the Details page
@@ -117,3 +117,31 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDataOfColumnsIsDisplayedInTheCustomF
 	| Custom Field |
 	| Value        |
 	And Custom fields agGrid columns are displayed fully
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18121
+Scenario: EvergreenJnr_DashboardsPage_CheckThatCustomFieldOrderIsCorrectInGrid
+	When User navigates to the 'device' details page for 'Z75ievru6r751l' item
+	Then Details page for "Z75ievru6r751l" item is displayed to the user
+	When User navigates to the "Custom Fields" sub-menu on the Details page
+	When User clicks 'ADD CUSTOM FIELD' button 
+	When User selects 'Computer Warranty' option from 'Custom Field' autocomplete
+	When User enters 'bbb' text to 'Value' textbox
+	When User clicks Add button on Add Custom Field popup
+	When User clicks 'ADD CUSTOM FIELD' button 
+	When User selects 'Computer Warranty' option from 'Custom Field' autocomplete
+	When User enters '001' text to 'Value' textbox
+	When User clicks Add button on Add Custom Field popup
+	When User clicks 'ADD CUSTOM FIELD' button 
+	When User selects 'Computer Warranty' option from 'Custom Field' autocomplete
+	When User enters 'aaa' text to 'Value' textbox
+	When User clicks Add button on Add Custom Field popup
+	When User clicks 'ADD CUSTOM FIELD' button 
+	When User selects 'Computer Warranty' option from 'Custom Field' autocomplete
+	When User enters '002' text to 'Value' textbox
+	When User clicks Add button on Add Custom Field popup
+	When User clicks 'Devices' on the left-hand menu
+	When User add following columns using URL to the "Devices" page:
+	| ColumnName                 |
+	| Computer Warranty |
+	When User perform search by "Z75ievru6r751l"
+	Then '001, 002, aaa, bbb' content is displayed in the 'Computer Warranty' column
