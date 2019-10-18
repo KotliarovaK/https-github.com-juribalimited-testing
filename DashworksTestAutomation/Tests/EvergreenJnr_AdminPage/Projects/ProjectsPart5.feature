@@ -11,22 +11,22 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEmptyGreenAlertLineIsNotDisplayedOnPro
 	| ProjectName   | Scope     | ProjectTemplate | Mode               |
 	| TestName11881 | All Users | None            | Standalone Project |
 	Then Page with 'TestName11881' header is displayed to user
-	When User selects "Scope" tab on the Project details page
-	When User selects "Scope Details" tab on the Project details page
+	When User navigates to the 'Scope' left menu item
+	When User navigates to the 'Scope Details' left menu item
 	And User navigates to the 'Application Scope' tab on Project Scope Changes page
 	And User selects "Do not include applications" checkbox on the Project details page
 	Then Scope List dropdown is disabled
 	Then All Associations are disabled
-	When User selects "Scope Changes" tab on the Project details page
+	When User navigates to the 'Scope Changes' left menu item
 	Then Warning message is not displayed on the Admin page
 	When User navigates to the 'Applications' tab on Project Scope Changes page
 	Then "Applications to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
-	When User selects "Scope Details" tab on the Project details page
+	When User navigates to the 'Scope Details' left menu item
 	And User navigates to the 'Application Scope' tab on Project Scope Changes page
 	And User selects "Include applications" checkbox on the Project details page
 	Then All Associations are selected by default
 	Then Scope List dropdown is active
-	When User selects "Scope Changes" tab on the Project details page
+	When User navigates to the 'Scope Changes' left menu item
 	When User navigates to the 'Applications' tab on Project Scope Changes page
 	Then "Applications to add (0 of 2081 selected)" is displayed to the user in the Project Scope Changes section
 
@@ -76,8 +76,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThat500ISEInvalidColumnNameIsNotDisplayedW
 	Then Page with 'TestProject12349' header is displayed to user
 	And There are no errors in the browser console
 	Then Error message is not displayed
-	When User selects "Scope" tab on the Project details page
-	And User selects "Scope Changes" tab on the Project details page
+	When User navigates to the 'Scope' left menu item
+	And User navigates to the 'Scope Changes' left menu item
 	And User expands multiselect to add objects 
 	And User expands multiselect and selects following Objects
 	| Objects         |
@@ -88,7 +88,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThat500ISEInvalidColumnNameIsNotDisplayedW
 	Then Success message is displayed and contains "2 objects queued for onboarding, 0 objects offboarded" text
 	Then There are no errors in the browser console
 	Then Error message is not displayed
-	When User selects "Scope Details" tab on the Project details page
+	When User navigates to the 'Scope Details' left menu item
 	Then There are no errors in the browser console
 	Then Error message is not displayed
 

@@ -36,7 +36,7 @@ Scenario: EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboa
 	When User enters "USE ME FOR AUTOMATION(USR SCHDLD)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Scope' left menu item
-	And User selects "History" tab on the Project details page
+	And User navigates to the 'History' left menu item
 	Then "01F6D54271D74F1BB8D" content is displayed in "Item" column
 	And "02X387UQLFP3ISU" content is displayed in "Item" column
 	And '03AK1ZP1C9MPFV' content is not displayed in the 'Item' column
@@ -67,7 +67,7 @@ Scenario: EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboa
 	When User enters "USE ME FOR AUTOMATION(USR SCHDLD)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Scope' left menu item
-	And User selects "History" tab on the Project details page
+	And User navigates to the 'History' left menu item
 	Then '01F6D54271D74F1BB8D' content is displayed in the 'Item' column
 	And '02X387UQLFP3ISU' content is displayed in the 'Item' column
 

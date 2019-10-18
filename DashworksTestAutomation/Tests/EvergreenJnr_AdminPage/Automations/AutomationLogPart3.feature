@@ -71,7 +71,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogMessageForDeletedTaskInAction
 	When User navigates to the 'Automations' left menu item
 	When User enters "17247_Automation" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "17247_Automation" item on Admin page
-	When User selects "Automation Log" tab on the Project details page
+	When User navigates to the 'Automation Log' left menu item
 	When User enters "17247_Automation" text in the Search field for "Automation" column
 	When User clicks String Filter button for "Type" column on the Admin page
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
@@ -105,7 +105,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedU
 	When User clicks 'Automations' header breadcrumb
 	When User enters "DAS17681_Automation" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "DAS17681_Automation" item on Admin page
-	When User selects "Automation Log" tab on the Project details page
+	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "DAS17681_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
@@ -182,7 +182,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateOwnerForUpdateValueInDevicesScopedAu
 	When User clicks 'Automations' header breadcrumb
 	And User enters "17830_Automation" text in the Search field for "Automation" column
 	And User clicks "Run now" option in Cog-menu for "17830_Automation" item on Admin page
-	And User selects "Automation Log" tab on the Project details page
+	And User navigates to the 'Automation Log' left menu item
 	And User enters "17830_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
 	When User clicks String Filter button for "Type" column on the Admin page
@@ -230,7 +230,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateDateForUpdateValueInDevicesScopedAut
 	When User clicks 'Automations' header breadcrumb
 	And User enters "17846_Automation" text in the Search field for "Automation" column
 	And User clicks "Run now" option in Cog-menu for "17846_Automation" item on Admin page
-	And User selects "Automation Log" tab on the Project details page
+	And User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	And User enters "17846_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
@@ -259,7 +259,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateDateForUpdateValueInDevicesScopedAut
 	When User clicks 'Automations' header breadcrumb
 	When User enters "17846_Automation" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "17846_Automation" item on Admin page
-	When User selects "Automation Log" tab on the Project details page
+	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "17846_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
@@ -300,7 +300,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateDateForUpdateValueInUsersScopedAutom
 	When User clicks 'Automations' header breadcrumb
 	And User enters "DAS17846_Automation" text in the Search field for "Automation" column
 	And User clicks "Run now" option in Cog-menu for "DAS17846_Automation" item on Admin page
-	And User selects "Automation Log" tab on the Project details page
+	And User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	And User enters "DAS17846_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column

@@ -949,7 +949,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var secondsToWait = 80;
             foreach (var row in table.Rows)
             {
-                Utils.Verify.IsTrue(projectElement.WaitForHistoryOnboardedObject(row["Items"], secondsToWait),
+                Verify.IsTrue(projectElement.WaitForHistoryOnboardedObject(row["Items"], secondsToWait),
                     $"History onboarded object with '{row["Items"]}' text was not appears in the grid in {secondsToWait} seconds");
             }
         }

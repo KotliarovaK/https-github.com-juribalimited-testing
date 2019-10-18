@@ -16,7 +16,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotIsSuccessfullyCreatedUsingExist
 	| 13382ProjectForCapacity | NewName   | Name1       |
 	| 13382ProjectForCapacity | Name1     | Name1       |
 	And User navigates to the 'Capacity' left menu item
-	And User selects "Slots" tab on the Project details page
+	And User navigates to the 'Slots' left menu item
 	When User have opened Column Settings for "Capacity Slot" column
 	And User clicks Column button on the Column Settings panel
 	Then Column Settings was opened
@@ -48,7 +48,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlyLanguageIsDisplayedForSlotsA
 	And User clicks 'ADD LANGUAGE' button 
 	And User selects "German" language on the Project details page
 	And User navigates to the 'Capacity' left menu item
-	And User selects "Slots" tab on the Project details page
+	And User navigates to the 'Slots' left menu item
 	And User enters "ChecksLanguage" text in the Search field for "Capacity Slot" column
 	And User clicks content from "Capacity Slot" column
 	And User clicks "See Translations" link on the Capacity Slot page
@@ -70,7 +70,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlyLanguageIsDisplayedForSlotsA
 	Then User selects "Remove" option for selected language
 	When User clicks "REMOVE" button in the warning message on Admin page
 	And User navigates to the 'Capacity' left menu item
-	And User selects "Slots" tab on the Project details page
+	And User navigates to the 'Slots' left menu item
 	And User creates new Slot via Api
 	| Project             | SlotName         | DisplayName |
 	| ChecksLanguage13955 | ChecksLanguage 2 | DAS13955    |
@@ -86,7 +86,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCreatedSlotWithSelectedTypeTeamsAndRe
 	| Project            | SlotName                        | DisplayName                     | CapacityType    |
 	| ProjectForDAS14103 | capacity type = Teams and Paths | capacity type = Teams and Paths | Teams and Paths |
 	And User navigates to the 'Capacity' left menu item
-	And User selects "Slots" tab on the Project details page
+	And User navigates to the 'Slots' left menu item
 	Then "" content is displayed in "Capacity Units" column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13417 @Cleanup
@@ -99,7 +99,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatNoUnitsOptionsWasAddedToCapacityUnits
 	| ProjectForDAS13417 | capacity type = Teams and Paths | capacity type = Teams and Paths | Teams and Paths |
 	| ProjectForDAS13417 | capacity type = Capacity Units  | capacity type = Capacity Units  | Capacity Units  |
 	And User navigates to the 'Capacity' left menu item
-	And User selects "Slots" tab on the Project details page
+	And User navigates to the 'Slots' left menu item
 	When User clicks String Filter button for "Capacity Units" column on the Admin page
 	And User selects "All Capacity Units" checkbox from String Filter with item list on the Admin page
 	Then Rows counter shows "1" of "2" rows

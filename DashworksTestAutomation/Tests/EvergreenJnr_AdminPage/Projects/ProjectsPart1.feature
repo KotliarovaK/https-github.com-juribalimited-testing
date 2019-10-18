@@ -40,18 +40,18 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAllAssociationsAreSelectedByDefaultInT
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Page with 'TestProject7' header is displayed to user
-	When User selects "Scope Changes" tab on the Project details page
+	When User navigates to the 'Scope Changes' left menu item
 	When User navigates to the 'Applications' tab on Project Scope Changes page
 	Then "Applications to add (0 of 2129 selected)" is displayed to the user in the Project Scope Changes section
-	When User selects "Scope Details" tab on the Project details page
+	When User navigates to the 'Scope Details' left menu item
 	When User navigates to the 'Application Scope' tab on Project Scope Changes page
 	Then All Associations are selected by default
 	When User selects "Do not include applications" checkbox on the Project details page
 	Then All Associations are disabled
-	When User selects "Scope Changes" tab on the Project details page
+	When User navigates to the 'Scope Changes' left menu item
 	When User navigates to the 'Applications' tab on Project Scope Changes page
 	Then "Applications to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
-	When User selects "Scope Details" tab on the Project details page
+	When User navigates to the 'Scope Details' left menu item
 	When User navigates to the 'Application Scope' tab on Project Scope Changes page
 	When User selects "Include applications" checkbox on the Project details page
 	Then All Associations are selected by default
@@ -108,7 +108,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorsAreDisplayedInTheProjectScopeC
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Page with 'TestProject9' header is displayed to user
-	When User selects "Scope Changes" tab on the Project details page
+	When User navigates to the 'Scope Changes' left menu item
 	And User navigates to the 'Users' tab on Project Scope Changes page
 	And User navigates to the 'Devices' tab on Project Scope Changes page
 	And User navigates to the 'Applications' tab on Project Scope Changes page

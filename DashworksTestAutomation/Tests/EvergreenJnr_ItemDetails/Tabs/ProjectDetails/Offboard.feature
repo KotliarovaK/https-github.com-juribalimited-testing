@@ -30,7 +30,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectly
 	When User enters "<ProjectName>" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	When User navigates to the 'Scope' left menu item
-	And User selects "History" tab on the Project details page
+	And User navigates to the 'History' left menu item
 	And User enters "<ItemName>" text in the Search field for "Item" column
 	Then "<ItemName>" content is displayed in "Item" column
 
@@ -65,7 +65,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectly
 	When User enters "<ProjectName>" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	When User navigates to the 'Scope' left menu item
-	And User selects "History" tab on the Project details page
+	And User navigates to the 'History' left menu item
 	And User enters "<ItemName>" text in the Search field for "Item" column
 	Then "<ItemName>" content is displayed in "Item" column
 

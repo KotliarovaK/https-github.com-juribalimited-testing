@@ -26,7 +26,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatPivotsAreNotShownInTheListToSelectO
 	| ProjectName         | Scope       | ProjectTemplate | Mode               |
 	| Pivot_Project_14224 | All Devices | None            | Standalone Project |
 	And User navigates to the 'Scope' left menu item
-	And User selects "Scope Details" tab on the Project details page
+	And User navigates to the 'Scope Details' left menu item
 	And User navigates to the 'Device Scope' tab on Project Scope Changes page
 	Then User sees that 'Scope' dropdown contains following options:
 	| Values                                |

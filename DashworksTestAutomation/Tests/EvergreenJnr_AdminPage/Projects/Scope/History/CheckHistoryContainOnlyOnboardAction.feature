@@ -8,8 +8,8 @@ Background: Pre-Conditions
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13959 @Projects
 Scenario: EvergreenJnr_AdminPage_CheckHistoryContainOnlyOnboardActionIn1803Rollout
 	When User navigates to "1803 Rollout" project details
-	And User selects "Scope" tab on the Project details page
-	And User selects "History" tab on the Project details page
+	And User navigates to the 'Scope' left menu item
+	And User navigates to the 'History' left menu item
 	Then Counter shows "409" found rows
 	When User clicks String Filter button for "Action" column on the Admin page
 	Then following String Values are displayed in the filter on the Details Page
@@ -26,8 +26,8 @@ Scenario: EvergreenJnr_AdminPage_CheckHistoryContainOnlyOnboardActionIn1803Rollo
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13959 @Projects
 Scenario: EvergreenJnr_AdminPage_CheckHistoryContainOnlyOnboardActionInEmailMigration
 	When User navigates to "Email Migration" project details
-	And User selects "Scope" tab on the Project details page
-	And User selects "History" tab on the Project details page
+	And User navigates to the 'Scope' left menu item
+	And User navigates to the 'History' left menu item
 	Then Counter shows "1,527" found rows
 	When User clicks String Filter button for "Action" column on the Admin page
 	Then following String Values are displayed in the filter on the Details Page
@@ -43,8 +43,8 @@ Scenario: EvergreenJnr_AdminPage_CheckHistoryContainOnlyOnboardActionInEmailMigr
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13959 @Projects
 Scenario: EvergreenJnr_AdminPage_CheckHistoryContainOnlyOnboardActionInUserEvergreenCapacityProject
 	When User navigates to "User Evergreen Capacity Project" project details
-	And User selects "Scope" tab on the Project details page
-	And User selects "History" tab on the Project details page
+	And User navigates to the 'Scope' left menu item
+	And User navigates to the 'History' left menu item
 	Then Counter shows "60,371" found rows
 	When User clicks String Filter button for "Action" column on the Admin page
 	Then following String Values are displayed in the filter on the Details Page

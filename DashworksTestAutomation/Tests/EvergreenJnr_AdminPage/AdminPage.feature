@@ -95,13 +95,13 @@ Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	Then Page with 'Projects' header is displayed to user
 	When User enters "Project12948" text in the Search field for "Project" column
 	And User clicks content from "Project" column
-	And User selects "Scope Changes" tab on the Project details page
+	And User navigates to the 'Scope Changes' left menu item
 	And User expands multiselect and selects following Objects
 	| Objects        |
 	| 0TTSZRQ1ZTIXWM |
 	And User clicks 'UPDATE ALL CHANGES' button 
 	And User clicks 'UPDATE PROJECT' button 
-	And User selects "Queue" tab on the Project details page
+	And User navigates to the 'Queue' left menu item
 	Then following Items are displayed in the Queue table
 	| Items          |
 	| 0TTSZRQ1ZTIXWM |
@@ -127,7 +127,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	And user selects "Clone evergreen buckets to project buckets" in the Bucket dropdown
 	Then There are no errors in the browser console
 	When User navigates to the 'Scope' left menu item
-	When User selects "Scope Changes" tab on the Project details page
+	When User navigates to the 'Scope Changes' left menu item
 	Then "Match to Evergreen Bucket" is displayed in the Bucket dropdown
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS15989 @Cleanup
@@ -246,8 +246,8 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromC
 	When User clicks 'Admin' on the left-hand menu
 	When User enters "1803 Rollout" text in the Search field for "Project" column
 	When User clicks content from "Project" column
-	When User selects "Capacity" tab on the Project details page
-	When User selects "Units" tab on the Project details page
+	When User navigates to the 'Capacity' left menu item
+	When User navigates to the 'Units' left menu item
 	When User clicks content from "Applications" column
 	Then 'All Applications' list should be displayed to the user
 	Then ColumnName is added to the list
@@ -287,7 +287,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromR
 	When User clicks 'Admin' on the left-hand menu
 	When User enters "Barry's User Project" text in the Search field for "Project" column
 	When User clicks content from "Project" column
-	When User selects "Rings" tab on the Project details page
+	When User navigates to the 'Rings' left menu item
 	When User clicks content from "Users" column
 	Then 'All Users' list should be displayed to the user
 	Then ColumnName is added to the list
@@ -299,26 +299,25 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAppropriatePageIsDisplayedAfterClickin
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Evergreen' left menu item
-	When User selects "Buckets" tab on the Project details page
+	When User navigates to the 'Buckets' left menu item
 	Then Page with 'Buckets' header is displayed to user
 	When User clicks content from "Bucket" column
 	When User clicks on "Buckets" navigation link
 	Then Page with 'Buckets' header is displayed to user
-	When User selects "Capacity Units" tab on the Project details page
+	When User navigates to the 'Capacity Units' left menu item
 	Then Page with 'Capacity Units' header is displayed to user
 	When User clicks content from "Capacity Unit" column
 	When User clicks on "Capacity Units" navigation link
 	Then Page with 'Capacity Units' header is displayed to user
-	When User selects "Rings" tab on the Project details page
+	When User navigates to the 'Rings' left menu item
 	Then Page with 'Rings' header is displayed to user
 	When User clicks content from "Ring" column
 	When User clicks on "Rings" navigation link
 	Then Page with 'Rings' header is displayed to user
-	#ready on 'Nova'
-	#When User navigates to the 'Automations' left menu item
-	#When User selects "Automations" tab on the Project details page
-	#Then Page with 'Automations' header is displayed to user
-	#When User clicks content from "Automation" column
-	#When User clicks on "Automations" navigation link
-	#Then Page with 'Automations' header is displayed to user
-	#Then "Automations" tab-menu on the Admin page is expanded
+	When User navigates to the 'Automations' left menu item
+	When User navigates to the 'Automations' left menu item
+	Then Page with 'Automations' header is displayed to user
+	When User clicks content from "Automation" column
+	When User clicks on "Automations" navigation link
+	Then Page with 'Automations' header is displayed to user
+	Then "Automations" tab-menu on the Admin page is expanded

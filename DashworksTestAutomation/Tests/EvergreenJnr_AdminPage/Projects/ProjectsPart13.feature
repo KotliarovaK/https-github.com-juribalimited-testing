@@ -23,8 +23,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnlyFilteredListObjectsAreUsedAsAScope
 	When Project created via API and opened
 	| ProjectName        | Scope           | ProjectTemplate | Mode               |
 	| DevicesProject1982 | DynamicList4811 | None            | Standalone Project |
-	And User selects "Scope" tab on the Project details page
-	And User selects "Scope Changes" tab on the Project details page
+	And User navigates to the 'Scope' left menu item
+	And User navigates to the 'Scope Changes' left menu item
 	Then "Devices to add (0 of 222 selected)" is displayed to the user in the Project Scope Changes section
 	Then There are no errors in the browser console
 
@@ -66,8 +66,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	| ProjectName      | Scope       | ProjectTemplate | Mode               |
 	| TestProject12776 | All Devices | None            | Standalone Project |
 	Then Page with 'TestProject12776' header is displayed to user
-	When User selects "Scope" tab on the Project details page
-	And User selects "Scope Changes" tab on the Project details page
+	When User navigates to the 'Scope' left menu item
+	And User navigates to the 'Scope Changes' left menu item
 	And User expands multiselect to add objects 
 	And User selects following Objects from the expandable multiselect
 	| Objects        |
@@ -119,7 +119,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	When User navigates to the 'Capacity' left menu item
 	Then 'Clone evergreen capacity units to project capacity units' content is displayed in 'Capacity Units' dropdown
 	When User navigates to the 'Scope' left menu item
-	When User selects "Scope Changes" tab on the Project details page
+	When User navigates to the 'Scope Changes' left menu item
 	And User expands multiselect to add objects 
 	And User selects following Objects from the expandable multiselect
 	| Objects                                |

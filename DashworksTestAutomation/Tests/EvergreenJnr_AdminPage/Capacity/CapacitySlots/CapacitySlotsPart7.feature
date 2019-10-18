@@ -95,7 +95,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnlyDateTasksCanBeAvailableForSelectio
 	And User clicks 'Admin' on the left-hand menu
 	And User navigates to "ProjectDAS13593" project details
 	And User navigates to the 'Capacity' left menu item
-	And User selects "Slots" tab on the Project details page
+	And User navigates to the 'Slots' left menu item
 	And User clicks 'CREATE SLOT' button 
 	And User selects 'Device' in the 'Object Type' dropdown
 	And User clicks on "Tasks" dropdown on the Capacity Slots page
@@ -124,7 +124,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreUnpublishedAfterBeingAssociat
 	| Windows 7 Migration (Computer Scheduled Project) | Slot 1   | Slot 1      | Pre-Migration \ Scheduled Date‡Pre-Migration \ Forecast Date‡Computer Information ---- Text fill; Text fill; \ Group Computer Rag Radio Date Owner |
 	And User clicks content from "Project" column
 	And User navigates to the 'Capacity' left menu item
-	And User selects "Slots" tab on the Project details page
+	And User navigates to the 'Slots' left menu item
 	#TODO Remove commented steps. I have saved them just to save data during NotRun removing
 	#And User clicks 'CREATE NEW SLOT' button 
 	#And User enters 'Slot 1' text to 'Slot Name' textbox
@@ -145,8 +145,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreUnpublishedAfterBeingAssociat
 	And User navigate to Evergreen link
 	And User clicks 'Admin' on the left-hand menu
 	And User navigates to "Windows 7 Migration (Computer Scheduled Project)" project details
-	And User open "Capacity" sub menu on Admin page
-	And User selects "Slots" tab on the Project details page
+	When User navigates to the 'Capacity' left menu item
+	And User navigates to the 'Slots' left menu item
 	And User enters "Slot 1" text in the Search field for "Capacity Slot" column
 	And User clicks content from "Capacity Slot" column
 	Then only below options are selected in the '(.*)' autocomplete
@@ -239,7 +239,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreDeletedAfterBeingAssociatedTo
 	And User clicks 'Admin' on the left-hand menu
 	And User navigates to "Windows 7 Migration (Computer Scheduled Project)" project details
 	And User navigates to the 'Capacity' left menu item
-	And User selects "Slots" tab on the Project details page
+	And User navigates to the 'Slots' left menu item
 	And User enters "Slot 1" text in the Search field for "Capacity Slot" column
 	And User clicks content from "Capacity Slot" column
 	Then only below options are selected in the 'Tasks' autocomplete

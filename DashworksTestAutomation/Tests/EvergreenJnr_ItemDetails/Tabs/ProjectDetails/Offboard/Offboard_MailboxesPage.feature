@@ -38,7 +38,7 @@ Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOf
 	When User enters "USE ME FOR AUTOMATION(MAIL SCHDLD)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Scope' left menu item
-	And User selects "History" tab on the Project details page
+	And User navigates to the 'History' left menu item
 	Then '01DEAC5F18B34084B04@bclabs.local' content is displayed in the 'Item' column
 	And '01DEAC5F18B34084B04' content is displayed in the 'Item' column
 	And 'svc_dashworks' content is not displayed in the 'Item' column
@@ -72,7 +72,7 @@ Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOf
 	When User enters "USE ME FOR AUTOMATION(MAIL SCHDLD)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	When User navigates to the 'Scope' left menu item
-	And User selects "History" tab on the Project details page
+	And User navigates to the 'History' left menu item
 	Then '01DEAC5F18B34084B04@bclabs.local' content is displayed in the 'Item' column
 	And '01DEAC5F18B34084B04' content is displayed in the 'Item' column
 

@@ -47,9 +47,9 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 	| ProjectName      | Scope     | ProjectTemplate | Mode               |
 	| TestProject12364 | All Users | None            | Standalone Project |
 	Then Page with 'TestProject12364' header is displayed to user
-	When User selects "Scope" tab on the Project details page
+	When User navigates to the 'Scope' left menu item
 	Then Info message is displayed and contains "There are no objects in this project, use Scope Changes to add objects to your project" text
-	When User selects "Scope Changes" tab on the Project details page
+	When User navigates to the 'Scope Changes' left menu item
 	Then "Users to add (0 of 41339 selected)" is displayed to the user in the Project Scope Changes section
 	When User expands multiselect to add objects
 	Then Objects are displayed in alphabetical order on the Admin page
@@ -95,8 +95,8 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 	Then "Devices to add (0 of 16817 selected)" is displayed to the user in the Project Scope Changes section
 	When User navigates to the 'Users' tab on Project Scope Changes page
 	Then "Users to add (0 of 41337 selected)" is displayed to the user in the Project Scope Changes section
-	When User selects "Scope Details" tab on the Project details page
-	When User selects "Scope Changes" tab on the Project details page
+	When User navigates to the 'Scope Details' left menu item
+	When User navigates to the 'Scope Changes' left menu item
 	When User navigates to the 'Applications' tab on Project Scope Changes page
 	Then There are no errors in the browser console
 

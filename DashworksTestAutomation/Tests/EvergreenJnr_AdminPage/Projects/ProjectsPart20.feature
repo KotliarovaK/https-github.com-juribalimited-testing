@@ -11,8 +11,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatBlueBannerIsDisplayedWithCorrectlyTex
 	| ProjectName  | Scope       | ProjectTemplate | Mode               |
 	| Project13347 | All Devices | None            | Standalone Project |
 	Then Page with 'Project13347' header is displayed to user
-	When User selects "Scope" tab on the Project details page
-	When User selects "Scope Changes" tab on the Project details page
+	When User navigates to the 'Scope' left menu item
+	When User navigates to the 'Scope Changes' left menu item
 	And User navigates to the 'Devices' tab on Project Scope Changes page
 	And User expands 'Devices to add' multiselect to the 'Devices' tab on Project Scope Changes page and selects following Objects
 	| Objects         |
@@ -41,14 +41,14 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatBlueBannerIsDisplayedWithCorrectlyTex
 	Then Success message is displayed and contains "13 objects queued for onboarding, 0 objects offboarded" text
 	#waiting for the process to be completed
 	When User waits for three seconds
-	When User selects "Scope Details" tab on the Project details page
+	When User navigates to the 'Scope Details' left menu item
 	And User navigates to the 'User Scope' tab on Project Scope Changes page
 	When User selects "Do not include device owners" checkbox on the Project details page
 	And User navigates to the 'Application Scope' tab on Project Scope Changes page
 	When User selects "Do not include applications" checkbox on the Project details page
 	#wait until the settings are applied
 	When User waits for three seconds
-	And User selects "Scope Changes" tab on the Project details page
+	And User navigates to the 'Scope Changes' left menu item
 	And User navigates to the 'Users' tab on Project Scope Changes page
 	And User expands 'Users to remove' multiselect to the 'Users' tab on Project Scope Changes page and selects following Objects
 	| Objects                        |
@@ -100,7 +100,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAllCheckboxesOnScopeDetailsTabAreWork
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
-	And User selects "Scope Details" tab on the Project details page
+	And User navigates to the 'Scope Details' left menu item
 	And User navigates to the 'User Scope' tab on Project Scope Changes page
 	And User selects "Include users associated to mailboxes" checkbox on the Project details page
 	And User clicks "Owned mailboxes" associated checkbox on the Project details page

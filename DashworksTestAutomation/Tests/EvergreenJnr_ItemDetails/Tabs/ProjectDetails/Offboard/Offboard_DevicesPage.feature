@@ -38,7 +38,7 @@ Scenario: EvergreenJnr_DevicesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffb
 	When User enters "USE ME FOR AUTOMATION(DEVICE SCHDLD)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Scope' left menu item
-	And User selects "History" tab on the Project details page
+	And User navigates to the 'History' left menu item
 	Then '01ONL5I8LY44R3' content is displayed in the 'Item' column
 	And 'ABQ575757' content is displayed in the 'Item' column
 	And 'ABS188911' content is not displayed in the 'Item' column
@@ -71,7 +71,7 @@ Scenario: EvergreenJnr_DevicesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffb
 	When User enters "USE ME FOR AUTOMATION(DEVICE SCHDLD)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Scope' left menu item
-	And User selects "History" tab on the Project details page
+	And User navigates to the 'History' left menu item
 	Then '01ONL5I8LY44R3' content is displayed in the 'Item' column
 	And 'ABS188911' content is displayed in the 'Item' column
 

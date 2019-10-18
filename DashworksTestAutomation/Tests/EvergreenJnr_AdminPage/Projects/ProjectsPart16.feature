@@ -10,8 +10,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	When Project created via API and opened
 	| ProjectName  | Scope       | ProjectTemplate | Mode               |
 	| Project13390 | All Devices | None            | Standalone Project |
-	And User selects "Scope" tab on the Project details page
-	And User selects "Scope Changes" tab on the Project details page
+	And User navigates to the 'Scope' left menu item
+	And User navigates to the 'Scope Changes' left menu item
 	And User navigates to the 'Devices' tab on Project Scope Changes page
 	Then open tab in the Project Scope Changes section is active
 	When User expands multiselect and selects following Objects
@@ -147,7 +147,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	Then Page with 'Projects' header is displayed to user
 	When User enters "Project13390" text in the Search field for "Project" column
 	And User clicks content from "Project" column
-	And User selects "Scope Changes" tab on the Project details page
+	And User navigates to the 'Scope Changes' left menu item
 	Then Success message is not displayed on the Admin page
 	And "Devices to add (0 of 17254 selected)" is displayed to the user in the Project Scope Changes section
 	And following objects were not found
@@ -168,8 +168,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	When Project created via API and opened
 	| ProjectName  | Scope       | ProjectTemplate | Mode               |
 	| Project13391 | All Devices | None            | Standalone Project |
-	And User selects "Scope" tab on the Project details page
-	And User selects "Scope Changes" tab on the Project details page
+	And User navigates to the 'Scope' left menu item
+	And User navigates to the 'Scope Changes' left menu item
 	And User navigates to the 'Devices' tab on Project Scope Changes page
 	Then open tab in the Project Scope Changes section is active
 	When User expands multiselect to add objects 
@@ -208,8 +208,8 @@ Scenario: EvergreenJnr_AdminPage_CheckingSortingOrderOfTheObjectsInTheProjectSco
 	| ProjectName      | Scope         | ProjectTemplate | Mode               |
 	| TestProject12645 | All Mailboxes | None            | Standalone Project |
 	Then Page with 'TestProject12645' header is displayed to user
-	When User selects "Scope" tab on the Project details page
-	When User selects "Scope Changes" tab on the Project details page
+	When User navigates to the 'Scope' left menu item
+	When User navigates to the 'Scope Changes' left menu item
 	When User expands multiselect to add objects
 	Then Objects are displayed in alphabetical order on the Admin page
 	When User selects following Objects from the expandable multiselect
