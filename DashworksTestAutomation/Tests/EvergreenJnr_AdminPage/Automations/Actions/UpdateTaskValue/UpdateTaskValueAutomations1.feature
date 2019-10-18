@@ -27,7 +27,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectWithoutTasksForScopeIsNotDispla
 	Then 'Edit Action' page subheader is displayed to user
 	Then 'Mailbox Evergreen Capacity Project' content is not displayed in 'Project' autocomplete after search
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18248 @Cleanup
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18248 @DAS18276 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckDevicesAutomationsUpdateRelativeToCurrentValue
 	When User creates new Automation via API and open it
 	| AutomationName    | Description | Active | StopOnFailedAction | Scope       | Run    |
@@ -61,7 +61,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDevicesAutomationsUpdateRelativeToCurrentV
 	Then 'Days' value is displayed in the 'Units' dropdown
 	Then 'Before current value' value is displayed in the 'Before or After' dropdown
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18248 @Cleanup
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18248 @DAS18276 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckApplicationsAutomationsUpdateRelativeToCurrentValue
 	When User creates new Automation via API and open it
 	| AutomationName    | Description | Active | StopOnFailedAction | Scope            | Run    |
@@ -103,7 +103,7 @@ Scenario: EvergreenJnr_AdminPage_CheckApplicationsAutomationsUpdateRelativeToCur
 	Then 'Days' value is displayed in the 'Units' dropdown
 	Then 'After current value' value is displayed in the 'Before or After' dropdown
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18248 @Cleanup
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18248 @DAS18276 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckMailboxesAutomationsUpdateRelativeToCurrentValue
 	When User creates new Automation via API and open it
 	| AutomationName    | Description | Active | StopOnFailedAction | Scope         | Run    |
@@ -138,7 +138,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMailboxesAutomationsUpdateRelativeToCurren
 	Then 'Days' value is displayed in the 'Units' dropdown
 	Then 'After current value' value is displayed in the 'Before or After' dropdown
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18248 @Cleanup
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18248 @DAS18276 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUsersAutomationsUpdateRelativeToCurrentValue
 	When User creates new Automation via API and open it
 	| AutomationName    | Description | Active | StopOnFailedAction | Scope     | Run    |
@@ -152,9 +152,14 @@ Scenario: EvergreenJnr_AdminPage_CheckUsersAutomationsUpdateRelativeToCurrentVal
 	When User selects 'Barry's User Project' option from 'Project' autocomplete
 	When User selects 'Project Dates' option from 'Stage' autocomplete
 	When User selects 'Forecast Date' option from 'Task' autocomplete
-	When User selects 'Update relative to current value' in the 'Update Date' dropdown
+	When User selects 'Update relative to now' in the 'Update Date' dropdown
+	Then following Values are displayed in the 'Before or After' dropdown:
+	| Options    |
+	| Before now |
+	| After now  |
 	When User enters '4' text to 'Value' textbox
 	When User selects 'Hours' in the 'Units' dropdown
+	When User selects 'Before now' in the 'Before or After' dropdown
 	And User clicks 'CREATE' button
 	#Check created Action
 	When User clicks content from "Action" column
@@ -166,5 +171,5 @@ Scenario: EvergreenJnr_AdminPage_CheckUsersAutomationsUpdateRelativeToCurrentVal
 	Then 'Forecast Date' content is displayed in 'Task' textbox
 	Then '4' content is displayed in 'Value' textbox
 	Then 'Hours' value is displayed in the 'Units' dropdown
-	Then 'Update relative to current value' value is displayed in the 'Update Date' dropdown
-	Then 'After current value' value is displayed in the 'Before or After' dropdown
+	Then 'Update relative to now' value is displayed in the 'Update Date' dropdown
+	Then 'Before now' value is displayed in the 'Before or After' dropdown

@@ -129,8 +129,12 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithDateAndTimeTask
 	When User selects 'Barry's User Project' option from 'Project' autocomplete
 	When User selects 'Project Dates' option from 'Stage' autocomplete
 	When User selects 'Forecast Date' option from 'Task' autocomplete
-	When User selects 'Update relative to current value' in the 'Update Date' dropdown
+	When User selects 'Update relative to now' in the 'Update Date' dropdown
 	When User enters '12' text to 'Value' textbox
 	When User selects 'Days' in the 'Units' dropdown
-	Then 'After current value' content is displayed in 'Before or After' dropdown
-	When User selects 'Before current value' in the 'Before or After' dropdown
+	Then following Values are displayed in the 'Before or After' dropdown:
+	| Options    |
+	| Before now |
+	| After now  |
+	Then 'After now' content is displayed in 'Before or After' dropdown
+	When User selects 'Before now' in the 'Before or After' dropdown
