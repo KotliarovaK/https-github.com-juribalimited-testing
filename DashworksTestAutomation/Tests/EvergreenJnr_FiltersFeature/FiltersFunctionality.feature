@@ -2433,3 +2433,15 @@ Scenario: EvergreenJnr_DevicesList_CheckThatThereIsNoErrorAfterSavingListWithFil
 	| Values |
 	| 1      |
 	Then There are no errors in the browser console
+
+@Evergreen @AllDeviceApplications @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18425 @DAS18458 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorAppearsAfterOpenningItemFromCreatedAllDeviceApplicationsList
+	When User clicks 'Applications' on the left-hand menu
+	Then 'All Applications' list should be displayed to the user
+	When User clicks "All Device Applications" list name in left panel
+	Then Export button is displayed disabled
+	When User clicks Add New button on the Filter panel
+	When User selects 'Used on device' option in expanded associations list
+	When User clicks 'RUN LIST' button
+	When User click content from "Application Name" column
+	Then There are no errors in the browser console

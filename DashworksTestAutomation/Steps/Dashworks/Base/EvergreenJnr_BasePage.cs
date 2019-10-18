@@ -461,6 +461,16 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             }
         }
 
+        [Then(@"All items in the '(.*)' dropdown have icons")]
+        public void AllItemsInTheDropdownHaveIcons(string dropdown)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.GetDropdown(dropdown).Click();
+
+            Verify.That(page.GetIconsOfDropdownOptions().Count, Is.EqualTo(page.GetDropdownValues().Count), "Incorrect options in lists dropdown");
+            page.BodyContainer.Click();
+        }
+
         [Then(@"All icon items in the '(.*)' dropdown have any of tooltip")]
         public void ThenUserSeesAllListsIconDisplayedWithTooltipInDropdown(string dropdown, Table table)
         {

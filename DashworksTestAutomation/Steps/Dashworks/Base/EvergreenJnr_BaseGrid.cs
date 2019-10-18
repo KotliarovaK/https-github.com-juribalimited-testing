@@ -93,6 +93,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Utils.Verify.IsTrue(pivot.ExportListButton.Displayed(), "Export button is not displayed");
         }
 
+        [Then(@"Export button is displayed disabled")]
+        public void ThenExportButtonIsDisplayedDisabled()
+        {
+            var pivot = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForElementToBeDisplayed(pivot.ExportListButton);
+            Utils.Verify.That(pivot.ExportListButton.Disabled(), Is.True, "Export button is displayed enabled");
+        }
+
         #endregion
 
         #region Archived Devices
