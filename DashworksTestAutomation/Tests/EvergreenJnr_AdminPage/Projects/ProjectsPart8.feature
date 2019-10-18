@@ -11,7 +11,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationWithProjectBucketsF
 	Then 'All <PageName>' list should be displayed to the user
 	When User selects 'Project' in the 'Create' dropdown
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "<ProjectName>" in the "Project Name" field
+	When User enters '<ProjectName>' text to 'Project Name' textbox
 	Then Scope field is automatically populated
 	When User clicks 'CREATE' button
 	Then Success message is displayed and contains "The project has been created" text
@@ -26,7 +26,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationWithProjectBucketsF
 	Then "<StaticList>" list is displayed to user
 	When User selects 'Project' in the 'Create' dropdown
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "<ProjectName>" in the "Project Name" field
+	When User enters '<ProjectName>' text to 'Project Name' textbox
 	Then Scope field is automatically populated
 	When User clicks 'CREATE' button
 	Then Success message is displayed and contains "The project has been created" text
@@ -40,7 +40,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationWithProjectBucketsF
 	Then "<DynamicList>" list is displayed to user
 	When User selects 'Project' in the 'Create' dropdown
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "<ProjectName>" in the "Project Name" field
+	When User enters '<ProjectName>' text to 'Project Name' textbox
 	Then Scope field is automatically populated
 	When User clicks 'CREATE' button
 	Then Success message is displayed and contains "The project has been created" text
@@ -58,7 +58,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckOnboardingObjectUsingUpdateAppropr
 	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "TestProject9753" in the "Project Name" field
+	When User enters 'TestProject9753' text to 'Project Name' textbox
 	And User selects '<AllListName>' option from 'Scope' autocomplete
 	And User clicks 'CREATE' button
 	Then Success message is displayed and contains "The project has been created" text
@@ -88,7 +88,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingBucketFromUseEvergreenBucketsToCloneEve
 	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "1MailboxesProject" in the "Project Name" field
+	When User enters '1MailboxesProject' text to 'Project Name' textbox
 	#And User selects "Evergreen" in the Mode Project dropdown
 	When User selects 'All Mailboxes' option from 'Scope' autocomplete
 	And User clicks 'CREATE' button
@@ -132,7 +132,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoAdditionalCapacityUnitsAreCreatedWhe
 	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "13530Project" in the "Project Name" field
+	When User enters '13530Project' text to 'Project Name' textbox
 	And User selects 'All Devices' option from 'Scope' autocomplete
 	And User clicks 'CREATE' button
 	Then Success message is displayed and contains "The project has been created" text

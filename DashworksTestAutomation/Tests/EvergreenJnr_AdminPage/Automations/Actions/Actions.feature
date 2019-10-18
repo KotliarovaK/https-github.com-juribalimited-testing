@@ -222,7 +222,7 @@ Scenario: EvergreenJnr_AdminPage_CheckParametersToCreateUpdatePathAction
 	When User selects 'Project' in the 'Create' dropdown
 	Then Page with 'Create Project' subheader is displayed to user
 	Then 'CREATE' button is displayed
-	When User enters "Melbourne User Migration" in the "Project Name" field
+	When User enters 'Melbourne User Migration' text to 'Project Name' textbox
 	Then 'CREATE' button is not displayed
 	When User clicks 'CREATE' button
 	Then Success message is displayed and contains "The project has been created" text
@@ -337,7 +337,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActions
 	And User create dynamic list with "Edinburgh Devices" name on "Devices" page
 	And User selects 'Project' in the 'Create' dropdown
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "Edinburgh Devices Migration" in the "Project Name" field
+	When User enters 'Edinburgh Devices Migration' text to 'Project Name' textbox
 	When User clicks 'CREATE' button
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks 'Projects' on the left-hand menu

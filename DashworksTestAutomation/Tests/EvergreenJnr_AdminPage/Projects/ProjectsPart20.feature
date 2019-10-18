@@ -68,19 +68,19 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectTypesInTheFilterAlphabetised
 	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "DeviceProject56" in the "Project Name" field
+	When User enters 'DeviceProject56' text to 'Project Name' textbox
 	And User selects 'All Devices' option from 'Scope' autocomplete
 	And User clicks 'CREATE' button
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks 'CREATE PROJECT' button 
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "UserProject56" in the "Project Name" field
+	When User enters 'UserProject56' text to 'Project Name' textbox
 	And User selects 'All Users' option from 'Scope' autocomplete
 	And User clicks 'CREATE' button
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks 'CREATE PROJECT' button 
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "MailboxProject56" in the "Project Name" field
+	When User enters 'MailboxProject56' text to 'Project Name' textbox
 	And User selects 'All Mailboxes' option from 'Scope' autocomplete
 	And User clicks 'CREATE' button
 	Then Success message is displayed and contains "The project has been created" text
@@ -95,7 +95,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAllCheckboxesOnScopeDetailsTabAreWork
 	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "Project12183" in the "Project Name" field
+	When User enters 'Project12183' text to 'Project Name' textbox
 	And User selects 'All Mailboxes' option from 'Scope' autocomplete
 	And User clicks 'CREATE' button
 	Then Success message is displayed and contains "The project has been created" text

@@ -23,7 +23,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUsersToAddAndRemoveAreChangingAppropri
 	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "UsersProject" in the "Project Name" field
+	When User enters 'UsersProject' text to 'Project Name' textbox
 	And User selects 'StaticList6529' option from 'Scope' autocomplete
 	And User clicks 'CREATE' button
 	Then Success message with "The project has been created" text is displayed on the Projects page
@@ -53,7 +53,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationFromListPageWithUse
 	Then 'All <ListName>' list should be displayed to the user
 	When User selects 'Project' in the 'Create' dropdown
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "<ProjectName>" in the "Project Name" field
+	When User enters '<ProjectName>' text to 'Project Name' textbox
 	Then Scope field is automatically populated
 	When User selects "Standalone Project" in the Mode Project dropdown
 	When User clicks 'CREATE' button
@@ -67,7 +67,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationFromListPageWithUse
 	Then "<StaticList>" list is displayed to user
 	When User selects 'Project' in the 'Create' dropdown
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "<ProjectName>" in the "Project Name" field
+	When User enters '<ProjectName>' text to 'Project Name' textbox
 	Then Scope field is automatically populated
 	When User selects "Standalone Project" in the Mode Project dropdown
 	When User clicks 'CREATE' button
@@ -82,7 +82,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationFromListPageWithUse
 	Then "<DynamicList>" list is displayed to user
 	When User selects 'Project' in the 'Create' dropdown
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "<ProjectName>" in the "Project Name" field
+	When User enters '<ProjectName>' text to 'Project Name' textbox
 	Then Scope field is automatically populated
 	When User selects "Standalone Project" in the Mode Project dropdown
 	And User clicks 'CREATE' button
@@ -101,7 +101,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMailboxProjectCreationWithCloneEvergreenBu
 	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "MailboxesProject25" in the "Project Name" field
+	When User enters 'MailboxesProject25' text to 'Project Name' textbox
 	When User selects "Standalone Project" in the Mode Project dropdown
 	And User selects 'All Mailboxes' option from 'Scope' autocomplete
 	And User clicks 'CREATE' button
@@ -123,7 +123,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMailboxProjectCreationWithCloneEvergreenBu
 	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "MailboxesProject26" in the "Project Name" field
+	When User enters 'MailboxesProject26' text to 'Project Name' textbox
 	And User selects 'StaticList5846' option from 'Scope' autocomplete
 	When User selects "Standalone Project" in the Mode Project dropdown
 	And User clicks 'CREATE' button
@@ -142,7 +142,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMailboxProjectCreationWithCloneEvergreenBu
 	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "MailboxesProject27" in the "Project Name" field
+	When User enters 'MailboxesProject27' text to 'Project Name' textbox
 	And User selects 'DynamicList9513' option from 'Scope' autocomplete
 	When User selects "Standalone Project" in the Mode Project dropdown
 	And User clicks 'CREATE' button
@@ -157,7 +157,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationWithCloneEvergreenB
 	Then 'All <PageName>' list should be displayed to the user
 	When User selects 'Project' in the 'Create' dropdown
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "<ProjectName>" in the "Project Name" field
+	When User enters '<ProjectName>' text to 'Project Name' textbox
 	Then Scope field is automatically populated
 	When User selects "Standalone Project" in the Mode Project dropdown
 	And User clicks 'CREATE' button
@@ -173,7 +173,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationWithCloneEvergreenB
 	Then "<StaticList>" list is displayed to user
 	When User selects 'Project' in the 'Create' dropdown
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "<ProjectName>" in the "Project Name" field
+	When User enters '<ProjectName>' text to 'Project Name' textbox
 	Then Scope field is automatically populated
 	When User selects "Standalone Project" in the Mode Project dropdown
 	And User clicks 'CREATE' button
@@ -188,7 +188,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationWithCloneEvergreenB
 	Then "<DynamicList>" list is displayed to user
 	When User selects 'Project' in the 'Create' dropdown
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "<ProjectName>" in the "Project Name" field
+	When User enters '<ProjectName>' text to 'Project Name' textbox
 	Then Scope field is automatically populated
 	When User selects "Standalone Project" in the Mode Project dropdown
 	And User clicks 'CREATE' button

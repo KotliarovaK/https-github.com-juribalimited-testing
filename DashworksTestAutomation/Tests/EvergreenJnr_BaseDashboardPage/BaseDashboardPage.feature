@@ -264,7 +264,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCorrectMessageIsDisplayedBeforeDelet
 	When User create dynamic list with "DynamicList15444" name on "Devices" page
 	Then "DynamicList15444" list is displayed to user
 	When User selects 'Project' in the 'Create' dropdown
-	When User enters "Project_DAS15444" in the "Project Name" field
+	When User enters 'Project_DAS15444' text to 'Project Name' textbox
 	When User selects "Standalone Project" in the Mode Project dropdown
 	And User clicks 'CREATE' button
 	Then Success message is displayed and contains "The project has been created" text

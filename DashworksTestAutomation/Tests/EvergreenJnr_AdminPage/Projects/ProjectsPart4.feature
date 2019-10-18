@@ -13,7 +13,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIdColumnIsAddedAndDisplay
 	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "TestProject11700" in the "Project Name" field
+	When User enters 'TestProject11700' text to 'Project Name' textbox
 	And User selects 'All Devices' option from 'Scope' autocomplete
 	When User clicks 'CREATE' button 
 	When User have opened Column Settings for "Project" column
@@ -36,7 +36,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectNameIsDisplayedCorrectlyWhen
 	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "<TestProject11985>" in the "Project Name" field
+	When User enters '<TestProject11985>' text to 'Project Name' textbox
 	And User selects 'All Devices' option from 'Scope' autocomplete
 	And User clicks 'CREATE' button
 	Then created Project with "<TestProject11985>" name is displayed correctly
@@ -113,7 +113,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedIfTryToRemove
 	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "TestName11729" in the "Project Name" field
+	When User enters 'TestName11729' text to 'Project Name' textbox
 	And User selects 'TestDynamicList11729' option from 'Scope' autocomplete
 	And User clicks 'CREATE' button
 	Then created Project with "TestName11729" name is displayed correctly

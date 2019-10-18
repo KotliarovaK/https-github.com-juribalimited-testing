@@ -23,7 +23,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedWhenDeleti
 	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "TestProject6" in the "Project Name" field
+	When User enters 'TestProject6' text to 'Project Name' textbox
 	And User selects 'TestList0A78U9' option from 'Scope' autocomplete
 	And User clicks 'CREATE' button
 	Then Page with 'Projects' header is displayed to user

@@ -83,45 +83,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         #endregion
 
-        [When(@"User enters ""(.*)"" in the ""(.*)"" field")]
-        public void WhenUserEntersInTheField(string name, string fieldName)
-        {
-            var bucketName = _driver.NowAt<ProjectsPage>();
-            bucketName.GetFieldByName(fieldName).Clear();
-            bucketName.GetFieldByName(fieldName).SendKeys(name);
-            bucketName.BodyContainer.Click();
-
-            if (!string.IsNullOrEmpty(name))
-                switch (fieldName)
-                {
-                    case "Project Name":
-                        _projects.Value.Add(name);
-                        break;
-                    case "Team Name":
-                        TeamDto teamDto = new TeamDto();
-                        teamDto.TeamName = name;
-                        _teams.Value.Add(teamDto);
-                        break;
-                    case "Bucket Name":
-                        _buckets.Value.Add(new BucketDto() { Name = name });
-                        break;
-                    //case "Capacity Unit Name":
-                    //    break;
-                    default:
-                        throw new Exception($"{fieldName} not found");
-                }
-            _driver.WaitForDataLoading();
-        }
-
-        [When(@"User enters ""(.*)"" value in the ""(.*)"" field")]
-        public void WhenUserEntersValueInTheField(string name, string fieldName)
-        {
-            var page = _driver.NowAt<ProjectsPage>();
-            page.GetFieldByName(fieldName).Clear();
-            page.GetFieldByName(fieldName).SendKeys(name);
-            page.BodyContainer.Click();
-        }
-
         [Then(@"Scope field is automatically populated")]
         public void ThenScopeFieldIsAutomaticallyPopulated()
         {

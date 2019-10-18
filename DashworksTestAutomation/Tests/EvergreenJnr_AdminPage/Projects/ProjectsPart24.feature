@@ -18,7 +18,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFillingFieldErrorIsNotDisplayed
 	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "DAS16816_Project_Users" in the "Project Name" field
+	When User enters 'DAS16816_Project_Users' text to 'Project Name' textbox
 	And User selects 'DAS16816_List' option from 'Scope' autocomplete
 	Then Filling field error is not displayed
 	When User clicks 'CREATE' button
@@ -34,7 +34,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFillingFieldErrorIsNotDisplayed
 	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "DAS16816_Project_Mailboxes" in the "Project Name" field
+	When User enters 'DAS16816_Project_Mailboxes' text to 'Project Name' textbox
 	And User selects 'DAS16816_MailboxesList' option from 'Scope' autocomplete
 	Then Filling field error is not displayed
 	When User clicks 'CREATE' button
@@ -50,7 +50,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFillingFieldErrorIsNotDisplayed
 	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "DAS16816_Project_Devices" in the "Project Name" field
+	When User enters 'DAS16816_Project_Devices' text to 'Project Name' textbox
 	And User selects 'DAS16816_DevicesList' option from 'Scope' autocomplete
 	Then Filling field error is not displayed
 	When User clicks 'CREATE' button
@@ -64,7 +64,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTrueValueDisplayedInGridForEvergreenPr
 	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "15666Project" in the "Project Name" field
+	When User enters '15666Project' text to 'Project Name' textbox
 	And User selects 'All Devices' option from 'Scope' autocomplete
 	When User selects "Clone from Evergreen to Project" in the Mode Project dropdown
 	And User clicks 'CREATE' button
