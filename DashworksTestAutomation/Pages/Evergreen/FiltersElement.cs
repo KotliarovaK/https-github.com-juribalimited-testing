@@ -588,5 +588,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Driver.MouseHover(filterCategory);
             return Convert.ToInt32(filterCategory.FindElement(By.XPath(".//strong")).Text);
         }
+
+        public IWebElement AssociationItem(string option) => Driver.FindElementByXPath($".//div[@class='sub-categories-associations']//div[contains(text(), '{option}')]");
     }
 }
