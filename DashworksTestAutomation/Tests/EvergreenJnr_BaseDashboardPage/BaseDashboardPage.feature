@@ -263,10 +263,10 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCorrectMessageIsDisplayedBeforeDelet
 	When User clicks on 'Hostname' column header
 	When User create dynamic list with "DynamicList15444" name on "Devices" page
 	Then "DynamicList15444" list is displayed to user
-	When User clicks Create Project from the main list
-	When User enters "Project_DAS15444" in the "Project Name" field
+	When User selects 'Project' in the 'Create' dropdown
+	When User enters 'Project_DAS15444' text to 'Project Name' textbox
 	When User selects "Standalone Project" in the Mode Project dropdown
-	And User clicks Create button on the Create Project page
+	And User clicks 'CREATE' button
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user

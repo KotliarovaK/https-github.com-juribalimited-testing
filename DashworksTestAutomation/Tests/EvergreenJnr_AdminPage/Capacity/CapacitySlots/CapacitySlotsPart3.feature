@@ -27,13 +27,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorMessageAppearsWhenCreatingDuplica
 	When User enters '29 Oct 2018' text to 'Override End Date' datepicker
 	Then 'CREATE' button is not disabled
 	When User selects 'SlotDAS13779' in the 'Slot' dropdown
-	And User enters "0" value in the "Capacity" field
+	And User enters '0' text to 'Capacity' textbox
 	And User clicks 'CREATE' button 
 	And User clicks 'CREATE OVERRIDE DATE' button 
 	And User enters '29 Oct 2018' text to 'Override Start Date' datepicker
 	And User enters '29 Oct 2018' text to 'Override End Date' datepicker
 	And User selects 'SlotDAS13779' in the 'Slot' dropdown
-	And User enters "0" value in the "Capacity" field
+	And User enters '0' text to 'Capacity' textbox
 	And User clicks 'CREATE' button 
 	Then Error message with "An override already exists for this date" text is displayed
 	And "1" rows label displays in Action panel

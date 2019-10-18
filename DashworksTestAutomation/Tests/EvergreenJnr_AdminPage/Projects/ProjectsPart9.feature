@@ -13,10 +13,10 @@ Scenario Outline: EvergreenJnr_AdminPage_ChangingBucketFromCloneEvergreenBuckets
 	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "<ProjectName>" in the "Project Name" field
+	When User enters '<ProjectName>' text to 'Project Name' textbox
 	And User selects '<ScopeValue>' option from 'Scope' autocomplete
 	When User selects "Clone from Evergreen to Project" in the Mode Project dropdown
-	And User clicks Create button on the Create Project page
+	And User clicks 'CREATE' button
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	And User navigates to the 'Details' left menu item
@@ -45,9 +45,9 @@ Scenario: EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherListUsingEverg
 	Then "3,806" rows are displayed in the agGrid
 	When User create dynamic list with "DynamicList54" name on "Devices" page
 	Then "DynamicList54" list is displayed to user
-	When User clicks Create Project from the main list
+	When User selects 'Project' in the 'Create' dropdown
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "DevicesProject34" in the "Project Name" field
+	When User enters 'DevicesProject34' text to 'Project Name' textbox
 	Then Scope field is automatically populated
 	When User selects "Standalone Project" in the Mode Project dropdown
 	And User clicks 'CREATE' button 
@@ -86,7 +86,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherListForDevices
 	Then 'Admin' list should be displayed to the user
 	When User clicks 'CREATE PROJECT' button 
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "DevicesProject2" in the "Project Name" field
+	When User enters 'DevicesProject2' text to 'Project Name' textbox
 	And User selects 'All Devices' option from 'Scope' autocomplete
 	And User clicks 'CREATE' button 
 	Then Success message is displayed and contains "The project has been created" text

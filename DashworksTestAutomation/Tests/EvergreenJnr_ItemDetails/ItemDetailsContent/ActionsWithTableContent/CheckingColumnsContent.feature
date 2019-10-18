@@ -222,7 +222,7 @@ Scenario: EvergreenJnr_DevicesList_CheckUpdatingDeviceBucketViaRelatedUserProjec
 	When User navigates to the 'Evergreen' left menu item
 	When User navigates to the 'Buckets' left menu item
 	And User clicks 'CREATE EVERGREEN BUCKET' button 
-	And User enters "AutoTestBucket_DAS_13335" in the "Bucket Name" field
+	And User enters 'AutoTestBucket_DAS_13335' text to 'Bucket Name' textbox
 	And User selects "Admin IT" team in the Team dropdown on the Buckets page
 	And User clicks 'CREATE' button 
 	When User navigates to the 'User' details page for 'AAG081456' item

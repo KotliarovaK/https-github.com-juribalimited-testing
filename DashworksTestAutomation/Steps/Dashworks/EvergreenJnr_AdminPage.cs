@@ -62,24 +62,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         #region Check button state
 
-        [Then(@"Create Project button is disabled")]
-        public void ThenCreateProjectButtonIsDisabled()
-        {
-            var button = _driver.NowAt<CreateProjectPage>();
-            _driver.WaitForElementToBeDisplayed(button.CreateProjectButton);
-            Utils.Verify.IsTrue(Convert.ToBoolean(button.CreateProjectButton.GetAttribute("disabled")),
-                "Create Project button is active");
-        }
-
-        [Then(@"Create Project button is enabled")]
-        public void ThenCreateProjectButtonIsEnabled()
-        {
-            var button = _driver.NowAt<CreateProjectPage>();
-            _driver.WaitForElementToBeDisplayed(button.CreateProjectButton);
-            Utils.Verify.IsFalse(Convert.ToBoolean(button.CreateProjectButton.GetAttribute("disabled")),
-                "Create Project button is active");
-        }
-
         [Then(@"Update Project button is active")]
         public void ThenUpdateProjectButtonIsActive()
         {
@@ -100,45 +82,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         #endregion
-
-        [When(@"User enters ""(.*)"" in the ""(.*)"" field")]
-        public void WhenUserEntersInTheField(string name, string fieldName)
-        {
-            var bucketName = _driver.NowAt<ProjectsPage>();
-            bucketName.GetFieldByName(fieldName).Clear();
-            bucketName.GetFieldByName(fieldName).SendKeys(name);
-            bucketName.BodyContainer.Click();
-
-            if (!string.IsNullOrEmpty(name))
-                switch (fieldName)
-                {
-                    case "Project Name":
-                        _projects.Value.Add(name);
-                        break;
-                    case "Team Name":
-                        TeamDto teamDto = new TeamDto();
-                        teamDto.TeamName = name;
-                        _teams.Value.Add(teamDto);
-                        break;
-                    case "Bucket Name":
-                        _buckets.Value.Add(new BucketDto() { Name = name });
-                        break;
-                    //case "Capacity Unit Name":
-                    //    break;
-                    default:
-                        throw new Exception($"{fieldName} not found");
-                }
-            _driver.WaitForDataLoading();
-        }
-
-        [When(@"User enters ""(.*)"" value in the ""(.*)"" field")]
-        public void WhenUserEntersValueInTheField(string name, string fieldName)
-        {
-            var page = _driver.NowAt<ProjectsPage>();
-            page.GetFieldByName(fieldName).Clear();
-            page.GetFieldByName(fieldName).SendKeys(name);
-            page.BodyContainer.Click();
-        }
 
         [Then(@"Scope field is automatically populated")]
         public void ThenScopeFieldIsAutomaticallyPopulated()
@@ -982,6 +925,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var refresh_icon = ".//i[@class='material-icons' and contains(text(),'refresh')]";
             var filter_label = ".//div[@class='top-tools-inner']//span[contains(text(),'row')]";
 
+            _driver.WaitForElementToBeDisplayed(By.XPath(filter_label));
+
             for (int i = 0; i < 30; i++)
             {
                 if (i == 29)
@@ -1031,16 +976,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         #endregion
-
-        [When(@"User clicks Create button on the Create Project page")]
-        public void WhenUserClicksCreateButtonOnTheCreateProjectPage()
-        {
-            var page = _driver.NowAt<CreateProjectPage>();
-            _driver.WaitForElementToBeEnabled(page.CreateProjectButton);
-            _driver.ClickByJavascript(page.CreateProjectButton);
-            _driver.WaitForDataLoading();
-            Logger.Write("Create Project button was clicked");
-        }
 
         [When(@"User tries to open same page with ""(.*)"" item id")]
         public void WhenUserOpensSamePageForNotExistingItem(string Id)

@@ -10,7 +10,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSelectedRowsCountDisplayingOnProjectsGrid
 	When User clicks 'Admin' on the left-hand menu
 	And User navigates to the 'Projects' left menu item
 	And User clicks 'CREATE PROJECT' button 
-	And User enters "TestProjectDAS11944" in the "Project Name" field
+	And User enters 'TestProjectDAS11944' text to 'Project Name' textbox
 	And User selects 'All Devices' option from 'Scope' autocomplete
 	And User clicks 'CREATE' button 
 	When User enters "Barry's User Project" text in the Search field for "Project" column
@@ -41,7 +41,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectsAreDeletedSuccessfully
 	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "<ProjectName>" in the "Project Name" field
+	When User enters '<ProjectName>' text to 'Project Name' textbox
 	And User selects '<StaticList>' option from 'Scope' autocomplete
 	When User selects "Standalone Project" in the Mode Project dropdown
 	And User clicks 'CREATE' button 
@@ -60,7 +60,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectsAreDeletedSuccessfully
 	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "<ProjectName>" in the "Project Name" field
+	When User enters '<ProjectName>' text to 'Project Name' textbox
 	And User selects '<DynamicList>' option from 'Scope' autocomplete
 	When User selects "Standalone Project" in the Mode Project dropdown
 	And User clicks 'CREATE' button 
@@ -80,16 +80,16 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyProjectN
 	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters " " in the "Project Name" field
+	When User enters ' ' text to 'Project Name' textbox
 	And User selects 'All Devices' option from 'Scope' autocomplete
-	Then Create Project button is disabled
-	When User enters "AllDevices Project" in the "Project Name" field
-	And User clicks Create button on the Create Project page
+	Then 'CREATE' button is displayed
+	When User enters 'AllDevices Project' text to 'Project Name' textbox
+	And User clicks 'CREATE' button
 	When User clicks 'CREATE PROJECT' button 
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters " alldevices project" in the "Project Name" field
+	When User enters ' alldevices project' text to 'Project Name' textbox
 	And User selects 'All Devices' option from 'Scope' autocomplete
-	And User clicks Create button on the Create Project page
+	And User clicks 'CREATE' button
 	Then Error message with "A project already exists with this name" text is displayed
 	When User create static list with "StaticList4581" name on "Devices" page with following items
 	| ItemName       |
@@ -102,9 +102,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyProjectN
 	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "TestProject84" in the "Project Name" field
+	When User enters 'TestProject84' text to 'Project Name' textbox
 	And User selects 'StaticList4581' option from 'Scope' autocomplete
-	And User clicks Create button on the Create Project page
+	And User clicks 'CREATE' button
 	Then Success message is displayed and contains "The project has been created" text
 	When User enters "TestProject84" text in the Search field for "Project" column
 	Then "TestProject84" text in search field is displayed correctly for "Project" column
@@ -121,9 +121,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyProjectN
 	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "AllDevices Project1258" in the "Project Name" field
+	When User enters 'AllDevices Project1258' text to 'Project Name' textbox
 	And User selects 'DynamicList5531' option from 'Scope' autocomplete
-	And User clicks Create button on the Create Project page
+	And User clicks 'CREATE' button
 	And User enters "AllDevices Project" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item

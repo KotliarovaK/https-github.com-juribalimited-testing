@@ -18,7 +18,7 @@ Scenario: EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam
 	Then Page with 'Teams' header is displayed to user
 	When User clicks 'CREATE TEAM' button 
 	Then Page with 'Create Team' subheader is displayed to user
-	When User enters "TestTeam8" in the "Team Name" field
+	When User enters 'TestTeam8' text to 'Team Name' textbox
 	And User enters "test" in the Team Description field
 	When User selects "Add members from another team" in the Add Members dropdown
 	Then There are no errors in the browser console
@@ -37,7 +37,7 @@ Scenario: EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam
 	Then Warning message with "You cannot delete the default team" text is displayed on the Admin page
 	When User clicks 'CREATE TEAM' button 
 	Then Page with 'Create Team' subheader is displayed to user
-	When User enters "TestTeam88" in the "Team Name" field
+	When User enters 'TestTeam88' text to 'Team Name' textbox
 	And User enters "test" in the Team Description field
 	And User clicks Default Team checkbox
 	When User selects "Add individual members" in the Add Members dropdown

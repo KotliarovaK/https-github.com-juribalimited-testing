@@ -61,7 +61,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatNameForProjectThatCreatedInSeniorWasU
 	Then Page with 'Projects' header is displayed to user
 	When User enters "ProjectDAS13501" text in the Search field for "Project" column
 	And User clicks content from "Project" column
-	And User enters "ProjectDAS13501 upd" in the "Project Name" field
+	And User enters 'ProjectDAS13501 upd' text to 'Project Name' textbox
 	Then There are no errors in the browser console
 	When User click on Back button
 	And User enters "ProjectDAS13501 upd" text in the Search field for "Project" column
@@ -86,7 +86,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectWithUseEvergreenCapacityUnitsIs
 	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "13510TestProject" in the "Project Name" field
+	When User enters '13510TestProject' text to 'Project Name' textbox
 	And User selects 'All Devices' option from 'Scope' autocomplete
 	When User clicks 'CREATE PROJECT' button 
 	Then Success message is displayed and contains "The project has been created" text

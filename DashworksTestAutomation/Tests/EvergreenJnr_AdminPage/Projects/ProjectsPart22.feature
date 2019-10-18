@@ -13,10 +13,10 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatMatchToEvergreenBucketDisplaye
 	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "12768Project" in the "Project Name" field
+	When User enters '12768Project' text to 'Project Name' textbox
 	And User selects '<ScopeList>' option from 'Scope' autocomplete
 	When User selects "Clone from Evergreen to Project" in the Mode Project dropdown
-	And User clicks Create button on the Create Project page
+	And User clicks 'CREATE' button
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	And User navigates to the 'Scope Changes' left menu item
@@ -71,7 +71,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksRequestTypesAndCategoriesAreNotD
 	Then Page with 'Projects' header is displayed to user
 	When User enters "DAS13499Project" text in the Search field for "Project" column
 	And User clicks content from "Project" column
-	When User enters "New_DAS13499_Project_Name" in the "Project Name" field
+	When User enters 'New_DAS13499_Project_Name' text to 'Project Name' textbox
 	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	#Update bottom step to "New_DAS13499_Project_Name" after Project renamed faster
@@ -123,9 +123,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatConvertToEvergreenButtonIsNotDisplaye
 	When User clicks 'CANCEL' button 
 	When User clicks 'CREATE PROJECT' button 
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "TestNegativeProject15262" in the "Project Name" field
+	When User enters 'TestNegativeProject15262' text to 'Project Name' textbox
 	When User selects 'All Devices' option from 'Scope' autocomplete
-	And User clicks Create button on the Create Project page
+	And User clicks 'CREATE' button
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	And User navigates to the 'Details' left menu item
