@@ -738,6 +738,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Capacity\Capacity\CloningOfEvergreenCapacityUnitsToProject.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CloningOfEvergreenCapacityUnitsToProject.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart25.feature.cs">
       <DependentUpon>ProjectsPart25.feature</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -1842,6 +1847,10 @@
     <None Include="Tests\EvergreenJnr_AdminPage\Capacity\Capacity\CapacityPart2.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CapacityPart2.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Capacity\Capacity\CloningOfEvergreenCapacityUnitsToProject.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CloningOfEvergreenCapacityUnitsToProject.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart25.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

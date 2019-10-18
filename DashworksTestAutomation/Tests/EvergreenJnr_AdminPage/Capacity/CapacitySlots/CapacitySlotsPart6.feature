@@ -16,7 +16,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSortingWorkCorrectlyForRequestTypeTea
 	| ProjectForDAS13792 | Slot 2   | Slot 2      |               | Teams and Paths |
 	| ProjectForDAS13792 | Slot 3   | Slot 3      |               |                 |
 	And User navigates to the 'Capacity' left menu item
-	And User selects "Slots" tab on the Project details page
+	And User navigates to the 'Slots' left menu item
 	When User clicks on 'Capacity Units' column header
 	Then data in table is sorted by "Capacity Units" column in ascending order on the Admin page
 	When User clicks on 'Capacity Units' column header
@@ -51,7 +51,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatListOfSelectedItemsIsTruncatedForReque
 	| Windows 7 Migration (Computer Scheduled Project) | DAS_13811_1 | 13811_1     | Teams and Paths | Computer: PC Rebuild‡Computer: Workstation Replacement | Administrative Team‡Admin IT |                                            |
 	| Windows 7 Migration (Computer Scheduled Project) | DAS_13811_2 | 13811_2     | Capacity Units  |                                                        |                              | Unassigned‡Capacity Unit 1‡Capacity Unit 2 |
 	And User navigates to the 'Capacity' left menu item
-	And User selects "Slots" tab on the Project details page
+	And User navigates to the 'Slots' left menu item
 	Then User sees following text in cell truncated with ellipsis:
 	| cellText                                                |
 	| Computer: PC Rebuild, Computer: Workstation Replacement |
@@ -71,19 +71,19 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatInSlotsColumnOnCapacityUnitsPageTheCo
 	| Project            | SlotName | DisplayName |
 	| ProjectForDAS13526 | Slot 1   | Slot 1      |
 	And User navigates to the 'Capacity' left menu item
-	And User selects "Slots" tab on the Project details page
-	And User selects "Units" tab on the Project details page
+	And User navigates to the 'Slots' left menu item
+	And User navigates to the 'Units' left menu item
 	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
 	Then "1" content is displayed in "Slots" column
 	When User enters "Unit 1" text in the Search field for "Capacity Unit" column
 	Then "1" content is displayed in "Slots" column
 	When User enters "Unit 2" text in the Search field for "Capacity Unit" column
 	Then "1" content is displayed in "Slots" column
-	When User selects "Slots" tab on the Project details page
+	When User navigates to the 'Slots' left menu item
 	And User creates new Slot
 	| SlotName | DisplayName | CapacityUnits |
 	| Slot 2   | Slot 2      | Unassigned    |
-	And User selects "Units" tab on the Project details page
+	And User navigates to the 'Units' left menu item
 	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
 	Then "2" content is displayed in "Slots" column
 	When User enters "Unit 1" text in the Search field for "Capacity Unit" column
@@ -139,7 +139,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheE
 	| Project            | SlotName | DisplayName | Tasks                                                                   |
 	| ProjectForDAS13812 | Slot 1   | Slot 1      | Stage13812 \ 1Task13812‡Stage13812 \ 2Task13812‡Stage13812 \ 3Task13812 |
 	And User navigates to the 'Capacity' left menu item
-	And User selects "Slots" tab on the Project details page
+	And User navigates to the 'Slots' left menu item
 	And User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "ProjectForDAS13812" Project
@@ -150,7 +150,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheE
 	And User clicks 'Admin' on the left-hand menu
 	And User navigates to "ProjectForDAS13812" project details
 	And User navigates to the 'Capacity' left menu item
-	And User selects "Slots" tab on the Project details page
+	And User navigates to the 'Slots' left menu item
 	And User clicks content from "Capacity Slot" column
 	And User changes value to "1" for "Tuesday" day column
 	Then 'UPDATE' button is disabled
@@ -170,7 +170,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheE
 	When User navigates to "ProjectForDAS13812" project details
 	Then Page with 'ProjectForDAS13812' header is displayed to user
 	When User navigates to the 'Capacity' left menu item
-	And User selects "Slots" tab on the Project details page
+	And User navigates to the 'Slots' left menu item
 	And User enters "Slot 2" text in the Search field for "Capacity Slot" column
 	And User clicks content from "Capacity Slot" column
 	And User changes value to "1" for "Tuesday" day column

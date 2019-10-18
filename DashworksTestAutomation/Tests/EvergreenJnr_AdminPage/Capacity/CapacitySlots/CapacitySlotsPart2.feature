@@ -26,7 +26,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToDeleteParticularCapacitySl
 	| *Project K-Computer Scheduled Project | CapacitySlot13866 | DAS13866    |
 	When User navigates to "*Project K-Computer Scheduled Project" project details
 	And User navigates to the 'Capacity' left menu item
-	And User selects "Slots" tab on the Project details page
+	And User navigates to the 'Slots' left menu item
 	When User select "Capacity Slot" rows in the grid
 	| SelectedRowsName  |
 	| CapacitySlot13866 |
@@ -40,7 +40,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToDeleteParticularCapacitySl
 Scenario: EvergreenJnr_AdminPage_ChecksThatSpellingIsCorrectInCapacitySlotsDeletionMessages
 	When User navigates to "User Evergreen Capacity Project" project details
 	And User navigates to the 'Capacity' left menu item
-	And User selects "Slots" tab on the Project details page
+	And User navigates to the 'Slots' left menu item
 	When User select "Capacity Slot" rows in the grid
 	| SelectedRowsName |
 	| User Slot 1      |

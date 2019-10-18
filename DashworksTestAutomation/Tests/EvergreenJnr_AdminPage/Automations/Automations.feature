@@ -12,7 +12,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationsLogGridLoads
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
-	When User selects "Automation Log" tab on the Project details page
+	When User navigates to the 'Automation Log' left menu item
 	Then "Automations" sub-menu section is expanded
 	Then Columns on Admin page is displayed in following order:
 	| ColumnName          |
@@ -467,8 +467,8 @@ Scenario: EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality
 	When User clicks "Delete" option in Cog-menu for "16764_Automation" item on Admin page
 	When User clicks Delete button in the warning message
 	Then Success message is displayed and contains "1 automation deleted" text
-	When User selects "Automation Log" tab on the Project details page
-	When User selects "Automations" tab on the Project details page
+	When User navigates to the 'Automation Log' left menu item
+	When User navigates to the 'Automations' left menu item
 	Then Success message is not displayed on the Admin page
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15767 @DAS15423 @DAS18328
@@ -529,7 +529,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextFor
 	When User clicks 'CANCEL' button 
 	When User enters "DAS15423_Automation" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "DAS15423_Automation" item on Admin page
-	When User selects "Automation Log" tab on the Project details page
+	When User navigates to the 'Automation Log' left menu item
 	When User enters "DAS15423_Automation" text in the Search field for "Automation" column
 	Then "LIST NOT FOUND" content is displayed for "Outcome" column
 
@@ -549,7 +549,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRunNowFunctionalityToRunMoreThanOneAutomat
 	Then Warning message with "Are you sure you wish to run 2 automations?" text is displayed on the Admin page
 	When User clicks "RUN" button in the warning message on Admin page
 	Then Success message is displayed and contains "2 automations started," text
-	When User selects "Automation Log" tab on the Project details page
+	When User navigates to the 'Automation Log' left menu item
 	When User enters "Test_Automation1" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
 	When User enters "Test_Automation2" text in the Search field for "Automation" column
@@ -729,7 +729,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeviceLisFiltertHasAppropriateAutomati
 	#check log
 	When User clicks 'Admin' on the left-hand menu
 	And User navigates to the 'Automations' left menu item
-	And User selects "Automation Log" tab on the Project details page
+	And User navigates to the 'Automation Log' left menu item
 	And User enters "DAS15949_Automation" text in the Search field for "Automation" column
 	And User clicks String Filter button for "Action" column on the Admin page
 	And User selects "Select All" checkbox from String Filter with item list on the Admin page

@@ -26,16 +26,16 @@ Scenario Outline: EvergreenJnr_ChangingMailboxScopeListToAnotherListForMailboxPr
 	When Project created via API and opened
 	| ProjectName       | Scope         | ProjectTemplate | Mode               |
 	| MailboxesProject3 | All Mailboxes | None            | Standalone Project |
-	And User selects "Scope" tab on the Project details page
-	And User selects "Scope Changes" tab on the Project details page
+	And User navigates to the 'Scope' left menu item
+	And User navigates to the 'Scope Changes' left menu item
 	Then "Mailboxes to add (0 of 14784 selected)" is displayed to the user in the Project Scope Changes section
-	When User selects "Scope Details" tab on the Project details page
+	When User navigates to the 'Scope Details' left menu item
 	And User selects '<ChangingToList1>' in the 'Scope' dropdown with wait
-	And User selects "Scope Changes" tab on the Project details page
+	And User navigates to the 'Scope Changes' left menu item
 	Then "<ObjectsToAdd1>" is displayed to the user in the Project Scope Changes section
-	When User selects "Scope Details" tab on the Project details page
+	When User navigates to the 'Scope Details' left menu item
 	And User selects '<ChangingToList2>' in the 'Scope' dropdown with wait
-	And User selects "Scope Changes" tab on the Project details page
+	And User navigates to the 'Scope Changes' left menu item
 	Then "<ObjectsToAdd2>" is displayed to the user in the Project Scope Changes section
 	#Then There are no errors in the browser console
 
@@ -50,23 +50,23 @@ Scenario: EvergreenJnr_AdminPage_ChangingUserScopePermissionsForMailboxProject
 	| ProjectName   | Scope         | ProjectTemplate | Mode               |
 	| TestName11881 | All Mailboxes | None            | Standalone Project |
 	Then Page with 'TestName11881' header is displayed to user
-	When User selects "Scope" tab on the Project details page
-	When User selects "Scope Details" tab on the Project details page
+	When User navigates to the 'Scope' left menu item
+	When User navigates to the 'Scope Details' left menu item
 	And User navigates to the 'User Scope' tab on Project Scope Changes page
 	And User selects "Do not include users" checkbox on the Project details page
 	Then Scope List dropdown is disabled
 	Then User Scope checkboxes are disabled
 	Then Application Scope tab is hidden
-	When User selects "Scope Changes" tab on the Project details page
+	When User navigates to the 'Scope Changes' left menu item
 	When User navigates to the 'Users' tab on Project Scope Changes page
 	Then "Users to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
-	When User selects "Scope Details" tab on the Project details page
+	When User navigates to the 'Scope Details' left menu item
 	And User navigates to the 'User Scope' tab on Project Scope Changes page
 	And User selects "Include users associated to mailboxes" checkbox on the Project details page
 	Then Scope List dropdown is active
 	Then User Scope checkboxes are active
 	Then Application Scope tab is displayed
-	When User selects "Scope Changes" tab on the Project details page
+	When User navigates to the 'Scope Changes' left menu item
 	When User navigates to the 'Users' tab on Project Scope Changes page
 	Then "Users to add (0 of 14747 selected)" is displayed to the user in the Project Scope Changes section
 
@@ -76,8 +76,8 @@ Scenario: EvergreenJnr_AdminPage_ChangingApplicationScopePermissionsForMailboxPr
 	| ProjectName   | Scope         | ProjectTemplate | Mode               |
 	| TestName12881 | All Mailboxes | None            | Standalone Project |
 	Then Page with 'TestName12881' header is displayed to user
-	When User selects "Scope" tab on the Project details page
-	And User selects "Scope Details" tab on the Project details page
+	When User navigates to the 'Scope' left menu item
+	And User navigates to the 'Scope Details' left menu item
 	And User navigates to the 'Application Scope' tab on Project Scope Changes page
 	And User selects "Include applications" checkbox on the Project details page
 	Then Scope List dropdown is active
@@ -85,7 +85,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingApplicationScopePermissionsForMailboxPr
 	When User selects "Do not include applications" checkbox on the Project details page
 	Then Scope List dropdown is disabled
 	Then Application Scope checkboxes are disabled
-	When User selects "Scope Changes" tab on the Project details page
+	When User navigates to the 'Scope Changes' left menu item
 	When User navigates to the 'Applications' tab on Project Scope Changes page
 	Then "Applications to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
 
@@ -104,7 +104,7 @@ Scenario: EvergreenJnr_AdminPage_OnboardingMailboxesUsersApplicationsObjectsUsin
 	When User clicks newly created object link
 	Then Info message is displayed and contains "There are no objects in this project, use Scope Changes to add objects to your project" text
 	Then Page with 'TestProject65' header is displayed to user
-	When User selects "Scope Changes" tab on the Project details page
+	When User navigates to the 'Scope Changes' left menu item
 	Then "Mailboxes to add (0 of 14784 selected)" is displayed to the user in the Project Scope Changes section
 	When User expands multiselect and selects following Objects
 	| Objects                                            |

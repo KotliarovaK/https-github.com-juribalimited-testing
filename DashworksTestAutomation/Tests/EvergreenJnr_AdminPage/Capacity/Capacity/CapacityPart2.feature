@@ -11,7 +11,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBanner
 	| ProjectName             | Scope       | ProjectTemplate | Mode               |
 	| ProjectForCapacity13790 | All Devices | None            | Standalone Project |
 	And User navigates to the 'Capacity' left menu item
-	And User selects "Units" tab on the Project details page
+	And User navigates to the 'Units' left menu item
 	When User clicks 'CREATE PROJECT CAPACITY UNIT' button 
 	And User enters 'CapacityUnit13790' text to 'Capacity Unit Name' textbox
 	And User enters '13720' text to 'Description' textbox
@@ -34,7 +34,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBanner
 	| Name              | Description | IsDefault | Project                 |
 	| CapacityUnit13790 | DAS13528    | false     | ProjectForCapacity13790 |
 	| CapacityUnit2     | DAS13528    | false     | ProjectForCapacity13790 |
-	When User selects "Capacity Details" tab on the Project details page
+	When User navigates to the 'Capacity Details' left menu item
 	And User selects 'Clone evergreen capacity units to project capacity units' in the 'Capacity Units' dropdown
 	And User clicks 'UPDATE' button 
 	Then Success message is displayed correctly
@@ -47,7 +47,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreated
 	| ProjectName           | Scope         | ProjectTemplate | Mode               |
 	| ProjectForCapacity12672 | All Devices | None            | Standalone Project |
 	And User navigates to the 'Capacity' left menu item
-	And User selects "Units" tab on the Project details page
+	And User navigates to the 'Units' left menu item
 	Then User sees next Units on the Capacity Units page:
 	| units             |
 	| Unassigned        |
@@ -74,7 +74,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreated
 	And 'UPDATE' button is disabled
 	And 'CANCEL' button is not disabled
 	When User navigates to the 'Capacity' left menu item
-	And User selects "Units" tab on the Project details page
+	And User navigates to the 'Units' left menu item
 	And User enters "CapacityUnit12672" text in the Search field for "Capacity Unit" column
 	Then "TRUE" content is displayed in "Default" column
 	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
@@ -82,7 +82,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreated
 	When User clicks content from "Capacity Unit" column
 	And User updates the "Default Unit" checkbox state
 	And User clicks 'UPDATE' button 
-	And User selects "Units" tab on the Project details page
+	And User navigates to the 'Units' left menu item
 	And User enters "CapacityUnit12672" text in the Search field for "Capacity Unit" column
 	Then "FALSE" content is displayed in "Default" column
 	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
@@ -95,7 +95,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCapacityUnitsGridUpdatedAfterUnitUpdat
 	| CapacityUnit14240 | 14240       | false     | Email Migration |
 	And User navigates to "Email Migration" project details
 	And User navigates to the 'Capacity' left menu item
-	And User selects "Units" tab on the Project details page
+	And User navigates to the 'Units' left menu item
 	And User clicks content from "Capacity Unit" column
 	When User clicks 'Projects' header breadcrumb
 	Then Warning Pop-up is not displayed
@@ -103,7 +103,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCapacityUnitsGridUpdatedAfterUnitUpdat
 	When User enters "Email Migration" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Capacity' left menu item
-	And User selects "Units" tab on the Project details page
+	And User navigates to the 'Units' left menu item
 	And User clicks content from "Capacity Unit" column
 	When User clicks 'Administration' header breadcrumb
 	Then Warning Pop-up is not displayed
@@ -111,7 +111,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCapacityUnitsGridUpdatedAfterUnitUpdat
 	When User enters "Email Migration" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Capacity' left menu item
-	And User selects "Units" tab on the Project details page
+	And User navigates to the 'Units' left menu item
 	Then User sees next Units on the Capacity Units page:
 	| units             |
 	| Unassigned        |
@@ -140,7 +140,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitWithEmptyNam
 	| ProjectName        | Scope       | ProjectTemplate | Mode               |
 	| ProjectForDAS13945 | All Devices | None            | Standalone Project |
 	And User navigates to the 'Capacity' left menu item
-	And User selects "Units" tab on the Project details page
+	And User navigates to the 'Units' left menu item
 	And User clicks 'CREATE PROJECT CAPACITY UNIT' button 
 	And User enters ' ' text to 'Capacity Unit Name' textbox
 	And User enters '13945' text to 'Description' textbox

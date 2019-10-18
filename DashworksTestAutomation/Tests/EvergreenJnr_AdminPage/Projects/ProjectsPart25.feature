@@ -8,14 +8,14 @@ Background: Pre-Conditions
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS17699
 Scenario Outline: EvergreenJnr_AdminPage_CheckSavingOfChangesOnScopeDetailsPageForDeviceAndMailboxProjects
 	When User navigates to "<ProjectName>" project details
-	And User selects "Scope" tab on the Project details page
-	And User selects "Scope Details" tab on the Project details page
+	And User navigates to the 'Scope' left menu item
+	And User navigates to the 'Scope Details' left menu item
 	And User navigates to the '<tab1>' tab on Project Scope Changes page
 	And User selects '<List1>' in the 'User Scope' dropdown with wait
 	And User navigates to the '<tab2>' tab on Project Scope Changes page
 	And User selects '<List2>' in the 'Application Scope' dropdown with wait
-	And User selects "Scope Changes" tab on the Project details page
-	And User selects "Scope Details" tab on the Project details page
+	And User navigates to the 'Scope Changes' left menu item
+	And User navigates to the 'Scope Details' left menu item
 	When User navigates to the '<tab1>' tab on Project Scope Changes page
 	Then Scope List dropdown displayed with "<List1>" value
 	When User navigates to the '<tab2>' tab on Project Scope Changes page
@@ -29,14 +29,14 @@ Examples:
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS17699
 Scenario Outline: EvergreenJnr_AdminPage_CheckSavingOfChangesOnScopeDetailsPageForUserProject
 	When User navigates to "<ProjectName>" project details
-	And User selects "Scope" tab on the Project details page
-	And User selects "Scope Details" tab on the Project details page
+	And User navigates to the 'Scope' left menu item
+	And User navigates to the 'Scope Details' left menu item
 	And User navigates to the '<tab1>' tab on Project Scope Changes page
 	And User selects '<List1>' in the 'Device Scope' dropdown with wait
 	And User navigates to the '<tab2>' tab on Project Scope Changes page
 	And User selects '<List2>' in the 'Application Scope' dropdown with wait
-	And User selects "Scope Changes" tab on the Project details page
-	And User selects "Scope Details" tab on the Project details page
+	And User navigates to the 'Scope Changes' left menu item
+	And User navigates to the 'Scope Details' left menu item
 	When User navigates to the '<tab1>' tab on Project Scope Changes page
 	Then Scope List dropdown displayed with "<List1>" value
 	When User navigates to the '<tab2>' tab on Project Scope Changes page
@@ -58,8 +58,8 @@ Scenario: EvergreenJnr_AdminPage_CheckNoConsoleErrorDisplayedWhenUsingGroupByFil
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS16842
 Scenario Outline: EvergreenJnr_AdminPage_CheckCorrectListTooltipDisplayingInScopeDetailsPage
 	When User navigates to "<ProjectName>" project details
-	And User selects "Scope" tab on the Project details page
-	And User selects "Scope Details" tab on the Project details page
+	And User navigates to the 'Scope' left menu item
+	And User navigates to the 'Scope Details' left menu item
 	And User navigates to the '<tab>' tab on Project Scope Changes page
 	Then All items in the 'Scope' dropdown have icons
 	Then All icon items in the 'Scope' dropdown have any of tooltip

@@ -38,7 +38,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForCa
 	| Project            | SlotName  | DisplayName | CapacityType   | Tasks                  | CapacityUnits |
 	| ProjectForDAS13152 | Slot13152 | 13152       | Capacity Units | Stage13152 \ Task13152 | Unassigned    |
 	And User navigates to the 'Capacity' left menu item
-	And User selects "Slots" tab on the Project details page
+	And User navigates to the 'Slots' left menu item
 	When User clicks content from "Capacity Slot" column
 	Then 'Stage13152 \ Task13152' value is displayed in the 'Tasks' dropdown
 	And 'Unassigned' value is displayed in the 'Capacity Units' dropdown
@@ -82,7 +82,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTe
 	And User clicks 'Admin' on the left-hand menu
 	And User navigates to "ProjectForDAS13152" project details
 	And User navigates to the 'Capacity' left menu item
-	And User selects "Slots" tab on the Project details page
+	And User navigates to the 'Slots' left menu item
 	And User clicks 'CREATE SLOT' button 
 	And User enters 'Slot13152' text to 'Slot Name' textbox
 	And User enters '13152' text to 'Display Name' textbox
@@ -132,7 +132,7 @@ Scenario Outline: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCountersOfUserPr
 	| Device Slot 2      |
 	| Application Slot 1 |
 	| Application Slot 2 |
-	When User selects "Units" tab on the Project details page
+	When User navigates to the 'Units' left menu item
 	And User enters "Evergreen Capacity Unit 3" text in the Search field for "Capacity Unit" column
 	And User remembers value in "<ListName>" column
 	And User clicks content from "<ListName>" column
@@ -166,7 +166,7 @@ Scenario Outline: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCountersOfMailPr
 	| TRT-Mailbox-Nov 11, 2018-Nov 24, 2018\RT=A\T=Admin |
 	| TRT-Dec 1, 2018-Dec 31, 2018 - Unlimited           |
 	| CA-Mailbox-Jan 1, 2018-Oct 31, 2018                |
-	When User selects "Units" tab on the Project details page
+	When User navigates to the 'Units' left menu item
 	And User enters "Unassigned" text in the Search field for "Capacity Unit" column
 	And User remembers value in "<ListName>" column
 	And User clicks content from "<ListName>" column

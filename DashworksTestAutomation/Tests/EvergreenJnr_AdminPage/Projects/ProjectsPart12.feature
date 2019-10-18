@@ -26,22 +26,22 @@ Scenario Outline: EvergreenJnr_ChangingApplicationScopeListToAnotherListForMailb
 	When Project created via API and opened
 	| ProjectName     | Scope         | ProjectTemplate | Mode               |
 	| MailboxProject2 | All Mailboxes | None            | Standalone Project |
-	And User selects "Scope" tab on the Project details page
-	And User selects "Scope Changes" tab on the Project details page
+	And User navigates to the 'Scope' left menu item
+	And User navigates to the 'Scope Changes' left menu item
 	When User navigates to the 'Applications' tab on Project Scope Changes page
 	Then "Applications to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
-	When User selects "Scope Details" tab on the Project details page
+	When User navigates to the 'Scope Details' left menu item
 	When User navigates to the 'Application Scope' tab on Project Scope Changes page
 	When User selects "Include applications" checkbox on the Project details page
 	And User selects '<ChangingToList1>' in the 'Application Scope' dropdown with wait
-	And User selects "Scope Changes" tab on the Project details page
+	And User navigates to the 'Scope Changes' left menu item
 	When User navigates to the 'Applications' tab on Project Scope Changes page
 	Then "<ObjectsToAdd1>" is displayed to the user in the Project Scope Changes section
 	Then There are no errors in the browser console
-	When User selects "Scope Details" tab on the Project details page
+	When User navigates to the 'Scope Details' left menu item
 	When User navigates to the 'Application Scope' tab on Project Scope Changes page
 	And User selects '<ChangingToList2>' in the 'Application Scope' dropdown with wait
-	And User selects "Scope Changes" tab on the Project details page
+	And User navigates to the 'Scope Changes' left menu item
 	When User navigates to the 'Applications' tab on Project Scope Changes page
 	Then "<ObjectsToAdd2>" is displayed to the user in the Project Scope Changes section
 	Then There are no errors in the browser console
@@ -57,11 +57,11 @@ Scenario: EvergreenJnr_AdminPage_AddingAndDeletingPermissionsForMailboxProject
 	| ProjectName   | Scope         | ProjectTemplate | Mode               |
 	| TestName12581 | All Mailboxes | None            | Standalone Project |
 	Then Page with 'TestName12581' header is displayed to user
-	When User selects "Scope" tab on the Project details page
-	When User selects "Scope Changes" tab on the Project details page
+	When User navigates to the 'Scope' left menu item
+	When User navigates to the 'Scope Changes' left menu item
 	And User navigates to the 'Users' tab on Project Scope Changes page
 	Then "Users to add (0 of 14747 selected)" is displayed to the user in the Project Scope Changes section
-	When User selects "Scope Details" tab on the Project details page
+	When User navigates to the 'Scope Details' left menu item
 	And User navigates to the 'User Scope' tab on Project Scope Changes page
 	And User clicks "Other mailbox permissions" associated checkbox on the Project details page
 	And User selects following Mailbox permissions
@@ -81,7 +81,7 @@ Scenario: EvergreenJnr_AdminPage_AddingAndDeletingPermissionsForMailboxProject
 	| AvailabilityOnly |
 	When User clicks "Delegated mailboxes" associated checkbox on the Project details page
 	And User clicks "Owned mailboxes" associated checkbox on the Project details page
-	And User selects "Scope Details" tab on the Project details page
+	And User navigates to the 'Scope Details' left menu item
 	And User navigates to the 'User Scope' tab on Project Scope Changes page
 	Then following Mailbox permissions are displayed to the user
 	| Permissions      |
@@ -93,17 +93,17 @@ Scenario: EvergreenJnr_AdminPage_AddingAndDeletingPermissionsForMailboxProject
 	| Checkboxes          |
 	| Owned mailboxes     |
 	| Delegated mailboxes |
-	When User selects "Scope Changes" tab on the Project details page
+	When User navigates to the 'Scope Changes' left menu item
 	And User navigates to the 'Users' tab on Project Scope Changes page
 	Then "Users to add (0 of 14753 selected)" is displayed to the user in the Project Scope Changes section
-	When User selects "Scope Details" tab on the Project details page
+	When User navigates to the 'Scope Details' left menu item
 	And User navigates to the 'User Scope' tab on Project Scope Changes page
 	And User removes following Mailbox permissions
 	| Permissions |
 	| FullAccess  |
 	| Author      |
-	And User selects "Scope Changes" tab on the Project details page
-	And User selects "Scope Details" tab on the Project details page
+	And User navigates to the 'Scope Changes' left menu item
+	And User navigates to the 'Scope Details' left menu item
 	And User navigates to the 'User Scope' tab on Project Scope Changes page
 	Then following Mailbox permissions are displayed to the user
 	| Permissions      |
@@ -155,8 +155,8 @@ Scenario: EvergreenJnr_AdminPage_AddingRequestTypesAndCategories
 	Then Page with 'TestName18' header is displayed to user
 	When User changes Path to "18RequestTypeName"
 	And User changes Category to "18MailboxCategory"
-	And User selects "Scope Details" tab on the Project details page
-	And User selects "Scope Changes" tab on the Project details page
+	And User navigates to the 'Scope Details' left menu item
+	And User navigates to the 'Scope Changes' left menu item
 	#Then "18RequestTypeName" Path is displayed to the user
 	#Then "18MailboxCategory" Category is displayed to the user
 	Then "Mailboxes to add (0 of 14784 selected)" is displayed to the user in the Project Scope Changes section

@@ -54,8 +54,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	| ProjectName          | Scope        | ProjectTemplate | Mode               |
 	| Project13110Dynamic1 | Dynamic13110 | None            | Standalone Project |
 	Then Page with 'Project13110Dynamic1' header is displayed to user
-	When User selects "Scope" tab on the Project details page
-	When User selects "Scope Changes" tab on the Project details page
+	When User navigates to the 'Scope' left menu item
+	When User navigates to the 'Scope Changes' left menu item
 	And User expands multiselect to add objects
 	Then Objects are displayed in alphabetical order on the Admin page
 	When User expands multiselect and selects following Objects
@@ -66,20 +66,20 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	And User clicks 'UPDATE ALL CHANGES' button 
 	And User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
-	When User selects "Queue" tab on the Project details page
+	When User navigates to the 'Queue' left menu item
 	Then following Items are displayed in the Queue table
 	| Items           |
 	| 00HA7MKAVVFDAV  |
 	| 001PSUMZYOW581  |
 	| 00BDM1JUR8IF419 |
-	When User selects "History" tab on the Project details page
+	When User navigates to the 'History' left menu item
 	Then following Items are displayed in the History table
 	| Items           |
 	| 00HA7MKAVVFDAV  |
 	| 001PSUMZYOW581  |
 	| 00BDM1JUR8IF419 |
 	And There are no errors in the browser console
-	When User selects "Scope Changes" tab on the Project details page
+	When User navigates to the 'Scope Changes' left menu item
 	And User navigates to the 'Applications' tab on Project Scope Changes page
 	And User expands multiselect to add objects 
 	And User selects following Objects from the expandable multiselect
@@ -90,13 +90,13 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	And User clicks 'UPDATE ALL CHANGES' button 
 	And User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
-	When User selects "Queue" tab on the Project details page
+	When User navigates to the 'Queue' left menu item
 	Then following Items are displayed in the Queue table
 	| Items                                                      |
 	| "WPF/E" (codename) Community Technology Preview (Feb 2007) |
 	| 0004 - Adobe Acrobat Reader 5.0.5 Francais                 |
 	| 0036 - Microsoft Access 97 SR-2 English                    |
-	When User selects "History" tab on the Project details page
+	When User navigates to the 'History' left menu item
 	Then additional onboarded Items are displayed in the History table
 	| Items                                                      |
 	| "WPF/E" (codename) Community Technology Preview (Feb 2007) |
@@ -107,8 +107,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	| ProjectName          | Scope        | ProjectTemplate | Mode               |
 	| Project13110Dynamic2 | Dynamic13110 | None            | Standalone Project |
 	Then Page with 'Project13110Dynamic2' header is displayed to user
-	When User selects "Scope" tab on the Project details page
-	When User selects "Scope Changes" tab on the Project details page
+	When User navigates to the 'Scope' left menu item
+	When User navigates to the 'Scope Changes' left menu item
 	And User navigates to the 'Applications' tab on Project Scope Changes page
 	And User expands multiselect to add objects 
 	And User selects following Objects from the expandable multiselect
@@ -119,20 +119,20 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	When User clicks 'UPDATE ALL CHANGES' button 
 	And User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
-	When User selects "Queue" tab on the Project details page
+	When User navigates to the 'Queue' left menu item
 	Then following Items are displayed in the Queue table
 	| Items                                                      |
 	| "WPF/E" (codename) Community Technology Preview (Feb 2007) |
 	| 0004 - Adobe Acrobat Reader 5.0.5 Francais                 |
 	| 0036 - Microsoft Access 97 SR-2 English                    |
-	When User selects "History" tab on the Project details page
+	When User navigates to the 'History' left menu item
 	Then following Items are displayed in the History table
 	| Items                                                      |
 	| "WPF/E" (codename) Community Technology Preview (Feb 2007) |
 	| 0004 - Adobe Acrobat Reader 5.0.5 Francais                 |
 	| 0036 - Microsoft Access 97 SR-2 English                    |
 	And There are no errors in the browser console
-	When User selects "Scope Changes" tab on the Project details page
+	When User navigates to the 'Scope Changes' left menu item
 	And User navigates to the 'Devices' tab on Project Scope Changes page
 	And User expands multiselect to add objects
 	Then Objects are displayed in alphabetical order on the Admin page
@@ -144,13 +144,13 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	And User clicks 'UPDATE ALL CHANGES' button 
 	And User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
-	When User selects "Queue" tab on the Project details page
+	When User navigates to the 'Queue' left menu item
 	Then following Items are displayed in the Queue table
 	| Items           |
 	| 00HA7MKAVVFDAV  |
 	| 001PSUMZYOW581  |
 	| 00BDM1JUR8IF419 |
-	When User selects "History" tab on the Project details page
+	When User navigates to the 'History' left menu item
 	Then additional onboarded Items are displayed in the History table
 	| Items           |
 	| 00HA7MKAVVFDAV  |
@@ -170,8 +170,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	| ProjectName         | Scope       | ProjectTemplate | Mode               |
 	| Project13110Static1 | Static13110 | None            | Standalone Project |
 	Then Page with 'Project13110Static1' header is displayed to user
-	When User selects "Scope" tab on the Project details page
-	When User selects "Scope Changes" tab on the Project details page
+	When User navigates to the 'Scope' left menu item
+	When User navigates to the 'Scope Changes' left menu item
 	And User expands multiselect to add objects
 	Then Objects are displayed in alphabetical order on the Admin page
 	When User expands multiselect and selects following Objects
@@ -182,20 +182,20 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	And User clicks 'UPDATE ALL CHANGES' button 
 	And User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
-	When User selects "Queue" tab on the Project details page
+	When User navigates to the 'Queue' left menu item
 	Then following Items are displayed in the Queue table
 	| Items           |
 	| 001BAQXT6JWFPI  |
 	| 001PSUMZYOW581  |
 	| 00BDM1JUR8IF419 |
-	When User selects "History" tab on the Project details page
+	When User navigates to the 'History' left menu item
 	Then following Items are displayed in the History table
 	| Items           |
 	| 001BAQXT6JWFPI  |
 	| 001PSUMZYOW581  |
 	| 00BDM1JUR8IF419 |
 	And There are no errors in the browser console
-	When User selects "Scope Changes" tab on the Project details page
+	When User navigates to the 'Scope Changes' left menu item
 	And User navigates to the 'Applications' tab on Project Scope Changes page 
 	When User expands multiselect and selects following Objects
 	| Objects                                                      |
@@ -203,11 +203,11 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	When User clicks 'UPDATE ALL CHANGES' button 
 	And User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "1 object queued for onboarding, 0 objects offboarded" text
-	When User selects "Queue" tab on the Project details page
+	When User navigates to the 'Queue' left menu item
 	Then following Items are displayed in the Queue table
 	| Items                                                |
 	| NI LabVIEW PID Control Toolset 6.0 (for LabVIEW 7.1) |
-	When User selects "History" tab on the Project details page
+	When User navigates to the 'History' left menu item
 	Then additional onboarded Items are displayed in the History table
 	| Items                                                |
 	| NI LabVIEW PID Control Toolset 6.0 (for LabVIEW 7.1) |
@@ -216,8 +216,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	| ProjectName         | Scope       | ProjectTemplate | Mode               |
 	| Project13110Static2 | Static13110 | None            | Standalone Project |
 	Then Page with 'Project13110Static2' header is displayed to user
-	When User selects "Scope" tab on the Project details page
-	When User selects "Scope Changes" tab on the Project details page
+	When User navigates to the 'Scope' left menu item
+	When User navigates to the 'Scope Changes' left menu item
 	And User navigates to the 'Applications' tab on Project Scope Changes page
 	When User expands multiselect and selects following Objects
 	| Objects                        |
@@ -227,20 +227,20 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	When User clicks 'UPDATE ALL CHANGES' button 
 	And User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
-	When User selects "Queue" tab on the Project details page
+	When User navigates to the 'Queue' left menu item
 	Then following Items are displayed in the Queue table
 	| Items                    |
 	| 20040610sqlserverck      |
 	| AddressGrabber Standard  |
 	| Adobe Acrobat Reader 5.0 |
-	When User selects "History" tab on the Project details page
+	When User navigates to the 'History' left menu item
 	Then following Items are displayed in the History table
 	| Items                    |
 	| 20040610sqlserverck      |
 	| AddressGrabber Standard  |
 	| Adobe Acrobat Reader 5.0 | 
 	And There are no errors in the browser console
-	When User selects "Scope Changes" tab on the Project details page
+	When User navigates to the 'Scope Changes' left menu item
 	And User expands multiselect to add objects
 	Then Objects are displayed in alphabetical order on the Admin page
 	When User expands multiselect and selects following Objects
@@ -251,13 +251,13 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	And User clicks 'UPDATE ALL CHANGES' button 
 	And User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
-	When User selects "Queue" tab on the Project details page
+	When User navigates to the 'Queue' left menu item
 	Then following Items are displayed in the Queue table
 	| Items           |
 	| 001BAQXT6JWFPI  |
 	| 001PSUMZYOW581  |
 	| 00BDM1JUR8IF419 |
-	When User selects "History" tab on the Project details page
+	When User navigates to the 'History' left menu item
 	Then additional onboarded Items are displayed in the History table
 	| Items           |
 	| 001BAQXT6JWFPI  |
@@ -272,8 +272,8 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderForQueueAndHistoryTab
 	| TestProject55 | All Devices | None            | Standalone Project |
 	Then Page with 'TestProject55' header is displayed to user	
 	Then "Show Original Application Column On Application Dashboards" checkbox is not displayed on the Admin page
-	When User selects "Scope" tab on the Project details page
-	When User selects "Scope Changes" tab on the Project details page
+	When User navigates to the 'Scope' left menu item
+	When User navigates to the 'Scope Changes' left menu item
 	Then open tab in the Project Scope Changes section is active
 	When User expands multiselect and selects following Objects
 	| Objects         |
@@ -290,7 +290,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderForQueueAndHistoryTab
 	And User clicks 'UPDATE ALL CHANGES' button 
 	And User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "10 objects queued for onboarding, 0 objects offboarded" text
-	When User selects "Queue" tab on the Project details page
+	When User navigates to the 'Queue' left menu item
 	Then following Items are displayed in the Queue table
 	| Items           |
 	| 00K4CEEQ737BA4L |
@@ -305,7 +305,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderForQueueAndHistoryTab
 	| DK1LF3X47N7PWX7 |
 	Then data in table is sorted by "Item" column in ascending order by default on the Admin page
 	Then data in table is sorted by "Date" column in descending order by default on the Admin page
-	When User selects "History" tab on the Project details page
+	When User navigates to the 'History' left menu item
 	Then following Items are displayed in the History table
 	| Items           |
 	| 00K4CEEQ737BA4L |
@@ -320,7 +320,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderForQueueAndHistoryTab
 	| DK1LF3X47N7PWX7 |
 	Then data in table is sorted by "Item" column in ascending order by default on the Admin page
 	Then data in table is sorted by "Date" column in descending order by default on the Admin page
-	When User selects "Scope Changes" tab on the Project details page
+	When User navigates to the 'Scope Changes' left menu item
 	And User navigates to the 'Applications' tab on Project Scope Changes page
 	When User expands multiselect and selects following Objects
 	| Objects                                                       |
@@ -332,7 +332,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderForQueueAndHistoryTab
 	And User clicks 'UPDATE ALL CHANGES' button 
 	And User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "5 objects queued for onboarding, 0 objects offboarded" text
-	When User selects "Queue" tab on the Project details page
+	When User navigates to the 'Queue' left menu item
 	Then following Items are displayed in the Queue table
 	| Items                                           |
 	| ACD Display 3.4                                 |
@@ -349,7 +349,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderForQueueAndHistoryTab
 	| NJStar Chinese Word Processor                   |
 	Then data in table is sorted by "Item" column in ascending order by default on the Admin page
 	Then data in table is sorted by "Date" column in descending order by default on the Admin page
-	When User selects "History" tab on the Project details page
+	When User navigates to the 'History' left menu item
 	Then additional onboarded Items are displayed in the History table
 	| Items                                           |
 	| ACD Display 3.4                                 |

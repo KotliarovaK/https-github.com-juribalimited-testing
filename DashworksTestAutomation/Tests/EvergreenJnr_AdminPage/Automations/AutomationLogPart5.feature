@@ -27,7 +27,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateAndRemoveTaskValueForUpdateValueInUs
 	When User clicks 'Automations' header breadcrumb
 	When User enters "17974_Automation" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "17974_Automation" item on Admin page
-	When User selects "Automation Log" tab on the Project details page
+	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "17974_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
@@ -68,7 +68,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForRemoveOwnerInMailboxScop
 	When User clicks 'Automations' header breadcrumb
 	When User enters "17829_Automation" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "17829_Automation" item on Admin page
-	When User selects "Automation Log" tab on the Project details page
+	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User refreshes agGrid
 	When User enters "17829_Automation" text in the Search field for "Automation" column
@@ -102,7 +102,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionValueIDInTheAutomationLog
 	Then Page with 'Automations' header is displayed to user
 	When User enters "Applications_Scope" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "Applications_Scope" item on Admin page
-	When User selects "Automation Log" tab on the Project details page
+	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User have opened column settings for "Type" column
 	And User clicks Column button on the Column Settings panel
@@ -124,7 +124,7 @@ Scenario: EvergreenJnr_AdminPage_CheckOpIdColumnInTheAutomationLog
 	Then Page with 'Automations' header is displayed to user
 	When User enters "Mailboxes_Scope" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "Mailboxes_Scope" item on Admin page
-	When User selects "Automation Log" tab on the Project details page
+	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User have opened column settings for "Type" column
 	And User clicks Column button on the Column Settings panel
@@ -157,7 +157,7 @@ Scenario: EvergreenJnr_AdminPage_CheckArchivedObjectNumbersFromAnutomationLogGri
 	When User clicks 'Automations' header breadcrumb
 	When User enters "18265_Automation" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "18265_Automation" item on Admin page
-	When User selects "Automation Log" tab on the Project details page
+	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "59" text in the Search field for "Objects" column
 	And User clicks content from "Objects" column

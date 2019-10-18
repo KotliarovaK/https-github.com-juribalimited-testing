@@ -65,7 +65,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckOnboardingObjectUsingUpdateAppropr
 	When User clicks newly created object link
 	Then Page with 'TestProject9753' header is displayed to user
 	Then Info message is displayed and contains "There are no objects in this project, use Scope Changes to add objects to your project" text
-	When User selects "Scope Changes" tab on the Project details page
+	When User navigates to the 'Scope Changes' left menu item
 	And User navigates to the '<TabName>' tab on Project Scope Changes page
 	And User expands multiselect and selects following Objects
 	| Objects        |
@@ -111,7 +111,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingBucketFromUseEvergreenBucketsToCloneEve
 	When User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
 	Then There are no errors in the browser console
 	When User navigates to the 'Scope' left menu item
-	And User selects "Scope Changes" tab on the Project details page
+	And User navigates to the 'Scope Changes' left menu item
 	Then "Match to Evergreen Bucket" is displayed in the Bucket dropdown
 	When User clicks 'Administration' header breadcrumb
 	When User navigates to the 'Evergreen' left menu item

@@ -10,7 +10,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOutcomeStringFiltersValueAreNotDuplica
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Automations' left menu item
-	When User selects "Automation Log" tab on the Project details page
+	When User navigates to the 'Automation Log' left menu item
 	When User clicks String Filter button for "Outcome" column on the Admin page
 	Then String filter values are not duplicated
 
@@ -39,7 +39,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateAndRemoveTaskValueForUpdateValueInUs
 	When User clicks 'Automations' header breadcrumb
 	When User enters "17683_Automation" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "17683_Automation" item on Admin page
-	When User selects "Automation Log" tab on the Project details page
+	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "17683_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
@@ -68,7 +68,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateAndRemoveTaskValueForUpdateValueInUs
 	When User clicks 'Automations' header breadcrumb
 	When User enters "17683_Automation" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "17683_Automation" item on Admin page
-	When User selects "Automation Log" tab on the Project details page
+	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "17683_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
@@ -110,7 +110,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInAppsScopedA
 	When User clicks 'Automations' header breadcrumb
 	And User enters "DAS17859_Automation" text in the Search field for "Automation" column
 	And User clicks "Run now" option in Cog-menu for "DAS17859_Automation" item on Admin page
-	And User selects "Automation Log" tab on the Project details page
+	And User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	And User enters "DAS17859_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
@@ -156,7 +156,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueWithNoChangeDateForUpdateTaskVa
 	When User clicks 'Automations' header breadcrumb
 	And User enters "DAS17859_Aut_Test" text in the Search field for "Automation" column
 	And User clicks "Run now" option in Cog-menu for "DAS17859_Aut_Test" item on Admin page
-	And User selects "Automation Log" tab on the Project details page
+	And User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	And User enters "DAS17859_Aut_Test" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column

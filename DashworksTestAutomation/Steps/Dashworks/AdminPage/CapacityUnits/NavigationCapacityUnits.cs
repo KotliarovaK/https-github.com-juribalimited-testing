@@ -30,8 +30,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.CapacityUnits
                 throw new Exception("There are no created Capacity Units to navigate");
 
             var url = string.IsNullOrEmpty(_capacityUnits.Value.Last().Project) ?
-                $"{UrlProvider.EvergreenUrl}/#/admin/capacityUnit/{_capacityUnits.Value.Last().GetId()}/settings" :
-                $"{UrlProvider.EvergreenUrl}/#/admin/project/{DatabaseHelper.GetProjectId(_capacityUnits.Value.Last().Project)}/capacity/units/unit/{_capacityUnits.Value.Last().GetId()}";
+                $"{UrlProvider.EvergreenUrl}#/admin/capacityUnit/{_capacityUnits.Value.Last().GetId()}/settings" :
+                $"{UrlProvider.EvergreenUrl}#/admin/project/{DatabaseHelper.GetProjectId(_capacityUnits.Value.Last().Project)}/capacity/units/unit/{_capacityUnits.Value.Last().GetId()}";
             _driver.NavigateToUrl(url);
             _driver.WaitForDataLoading();
         }

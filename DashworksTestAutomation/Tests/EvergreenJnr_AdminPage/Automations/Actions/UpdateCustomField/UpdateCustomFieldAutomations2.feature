@@ -26,7 +26,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	When User clicks 'Automations' header breadcrumb
 	When User enters "18187_Automation" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "18187_Automation" item on Admin page
-	When User selects "Automation Log" tab on the Project details page
+	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "18187_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
@@ -56,7 +56,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	When User clicks 'Automations' header breadcrumb
 	When User enters "18187_Automation" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "18187_Automation" item on Admin page
-	When User selects "Automation Log" tab on the Project details page
+	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "18187_Automation" text in the Search field for "Automation" column
 	When User clicks String Filter button for "Type" column on the Admin page
@@ -90,7 +90,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	When User clicks 'Automations' header breadcrumb
 	When User enters "18187_Automation_1" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "18187_Automation_1" item on Admin page
-	When User selects "Automation Log" tab on the Project details page
+	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "18187_Automation_1" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
@@ -116,7 +116,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	When User clicks 'Automations' header breadcrumb
 	When User enters "18187_Automation_1" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "18187_Automation_1" item on Admin page
-	When User selects "Automation Log" tab on the Project details page
+	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "18187_Automation_1" text in the Search field for "Automation" column
 	When User clicks String Filter button for "Type" column on the Admin page
@@ -148,7 +148,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	When User clicks 'Automations' header breadcrumb
 	When User enters "18187_Automation_2" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "18187_Automation_2" item on Admin page
-	When User selects "Automation Log" tab on the Project details page
+	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "18187_Automation_2" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
@@ -175,7 +175,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	When User clicks 'Automations' header breadcrumb
 	When User enters "18187_Automation_2" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "18187_Automation_2" item on Admin page
-	When User selects "Automation Log" tab on the Project details page
+	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "18187_Automation_2" text in the Search field for "Automation" column
 	When User clicks String Filter button for "Type" column on the Admin page
@@ -209,7 +209,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	When User clicks 'Automations' header breadcrumb
 	When User enters "18187_Automation_3" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "18187_Automation_3" item on Admin page
-	When User selects "Automation Log" tab on the Project details page
+	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "18187_Automation_3" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
@@ -236,7 +236,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	When User clicks 'Automations' header breadcrumb
 	When User enters "18187_Automation_3" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "18187_Automation_3" item on Admin page
-	When User selects "Automation Log" tab on the Project details page
+	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "18187_Automation_3" text in the Search field for "Automation" column
 	When User clicks String Filter button for "Type" column on the Admin page

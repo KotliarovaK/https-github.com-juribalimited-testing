@@ -12,7 +12,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDefaultCapacityUnitRenamedInUnassigned
 	| ProjectForCapacity13720 | All Users | None            | Standalone Project |
 	And User navigates to the 'Capacity' left menu item
 	Then 'Capacity Units' content is displayed in 'Capacity Mode' dropdown
-	When User selects "Units" tab on the Project details page
+	When User navigates to the 'Units' left menu item
 	And User enters "Unassigned" text in the Search field for "Capacity Unit" column
 	Then Counter shows "1" found rows
 	When User clicks content from "Capacity Unit" column
@@ -37,7 +37,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultColumnsForDevicesProjectCapacityUni
 	| ProjectName         | Scope       | ProjectTemplate | Mode               |
 	| 13431DevicesProject | All Devices | None            | Standalone Project |
 	And User navigates to the 'Capacity' left menu item
-	And User selects "Units" tab on the Project details page
+	And User navigates to the 'Units' left menu item
 	Then Columns on Admin page is displayed in following order:
 	| ColumnName    |
 	| Capacity Unit |
@@ -55,7 +55,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultColumnsForMailboxesProjectCapacityU
 	| ProjectName           | Scope         | ProjectTemplate | Mode               |
 	| 13431MailboxesProject | All Mailboxes | None            | Standalone Project |
 	And User navigates to the 'Capacity' left menu item
-	And User selects "Units" tab on the Project details page
+	And User navigates to the 'Units' left menu item
 	Then Columns on Admin page is displayed in following order:
 	| ColumnName    |
 	| Capacity Unit |
@@ -73,7 +73,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedValueIsDisplayedForCapacityCo
 	| ProjectName             | Scope       | ProjectTemplate | Mode               |
 	| ProjectForCapacity13723 | All Devices | None            | Standalone Project |
 	And User navigates to the 'Capacity' left menu item
-	And User selects "Override Dates" tab on the Project details page
+	And User navigates to the 'Override Dates' left menu item
 	When User clicks 'CREATE OVERRIDE DATE' button 
 	And User enters '5 Jan 2019' text to 'Override Start Date' datepicker
 	And User enters '' text to 'Override End Date' datepicker

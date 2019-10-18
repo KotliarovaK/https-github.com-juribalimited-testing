@@ -96,7 +96,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectWithUseEvergreenCapacityUnitsIs
 	And User selects 'Use project capacity units' in the 'Capacity Units' dropdown
 	And User clicks 'UPDATE' button 
 	Then Success message with "The project capacity details have been updated" text is displayed on the Projects page
-	When User selects "Units" tab on the Project details page
+	When User navigates to the 'Units' left menu item
 	Then Blue banner with "This project uses evergreen capacity units" text is displayed
 	Then 'CREATE PROJECT CAPACITY UNIT' button is not displayed
 	Then 'Actions' dropdown is not displayed

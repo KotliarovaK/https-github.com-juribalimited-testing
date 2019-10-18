@@ -101,7 +101,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRedErrorMessageOnScopeChangesIfBrokenListI
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS17510
 Scenario: EvergreenJnr_AdminPage_CheckHidePanelIconOverlappingInScopeChanges
 	When User navigates to "Mailbox Evergreen Capacity Project" project details
-	And User selects "Scope" tab on the Project details page
-	And User selects "Scope Changes" tab on the Project details page
+	And User navigates to the 'Scope' left menu item
+	And User navigates to the 'Scope Changes' left menu item
 	And User hides side panel in project details page
 	Then Button toggle zindex is greater than tab zindex
