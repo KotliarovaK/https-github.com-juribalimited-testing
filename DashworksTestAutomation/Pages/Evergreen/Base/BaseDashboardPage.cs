@@ -103,9 +103,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = ".//mat-dialog-container//button[contains(@class, 'mat-primary')]")]
         public IWebElement DeleteButtonInPopUp { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//mat-dialog-container//button[@class='mat-raised-button']")]
-        public IWebElement CancelButtonInPopUp { get; set; }
-
         [FindsBy(How = How.XPath,
             Using = "//div[contains(@class, 'notification')]//span[text()='UPDATE']/ancestor::button")]
         public IWebElement UpdateButtonOnAmberMessage { get; set; }
@@ -193,9 +190,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='filter-content']")]
         public IWebElement FilterContainer { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//span[@class='ag-selection-checkbox']//span[@class='checkbox-unchecked']")]
-        public IWebElement UncheckedCheckbox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-selection-checkbox']")]
         public IWebElement SelectOneRowsCheckboxes { get; set; }
@@ -902,6 +896,20 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         #endregion
 
+        #region Menu button
+
+        public IWebElement GetMenuButtonByName(string button, WebDriverExtensions.WaitTime waitTime = WebDriverExtensions.WaitTime.Long)
+        {
+            var time = int.Parse(waitTime.GetValue());
+            var selector = By.XPath(
+                $".//button[contains(@class,'mat-menu-item')][text()='{button}']");
+            Driver.WaitForDataLoading();
+            Driver.WaitForElementsToBeDisplayed(selector, time, false);
+            return Driver.FindElements(selector).First(x => x.Displayed());
+        }
+
+        #endregion
+
         #region Dropdown
 
         public IWebElement GetDropdown(string dropdownName, WebDriverExtensions.WaitTime wait = WebDriverExtensions.WaitTime.Long)
@@ -986,6 +994,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return exclamationIcon;
         }
 
+        public IList<IWebElement> GetIconsOfDropdownOptions()
+        {
+            Driver.WaitForElementsToBeDisplayed(By.XPath(_dropdownOptions));
+            return Driver.FindElements(By.XPath($"{_dropdownOptions}/preceding-sibling::i[contains(@class, 'material-icons')]"));
+        }
         #endregion
 
         #region Datepicker
@@ -1091,6 +1104,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             if (!Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Medium))
                 throw new Exception($"'{titleText}' multiselect was not found");
             return Driver.FindElement(selector);
+        }
+
+        //Top level element with search box and all items
+        public IWebElement GetExpandableMultiselectElement(string titleText)
+        {
+            var element = GetExpandableMultiselect(titleText).FindElement(By.XPath("./ancestor::div[contains(@class,'sectionAddObjects')]"));
+            return element;
         }
 
         public string GetTitleFomExpandableMultiselect(string partOfTitle)

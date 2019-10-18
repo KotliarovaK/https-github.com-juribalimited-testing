@@ -7,10 +7,7 @@ Background: Pre-Conditions
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16378 @DAS16379 @DAS16415 @DAS16500 @DAS16297 @DAS15583 @DAS15559 @DAS17553
 Scenario: EvergreenJnr_DevicesList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForDevicesPageInEvergreenMode
-	When User clicks 'Devices' on the left-hand menu
-	Then 'All Devices' list should be displayed to the user
-	When User perform search by "001BAQXT6JWFPI"
-	And User click content from "Hostname" column
+	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
 	And User sees following main-tabs on left menu on the Details page:
 	| TabName          |
@@ -106,10 +103,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewPatternOfTheVerticalMenuIsDisplay
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15583 @DAS15560 @DAS17553
 Scenario: EvergreenJnr_DevicesList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForDevicesPageInProjectMode
-	When User clicks 'Devices' on the left-hand menu
-	Then 'All Devices' list should be displayed to the user
-	When User perform search by "001BAQXT6JWFPI"
-	And User click content from "Hostname" column
+	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
 	When User switches to the "Havoc (Big Data)" project in the Top bar on Item details page
 	Then User sees following main-tabs on left menu on the Details page:

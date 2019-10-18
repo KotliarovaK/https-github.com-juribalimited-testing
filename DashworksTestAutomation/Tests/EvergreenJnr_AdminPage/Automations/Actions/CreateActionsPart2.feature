@@ -105,5 +105,5 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTheFieldIsBlankAfterChangingProject
 	Then '[Project not found]' content is displayed in 'Project' textbox
 	When User selects '1803 Rollout' option from 'Project' autocomplete
 	Then '' content is displayed in 'Stage' textbox
-	When User selects 'Information' option from 'Stage' autocomplete
+	When User selects 'Pre-Migration' option from 'Stage' autocomplete
 	Then '' content is displayed in 'Task' textbox

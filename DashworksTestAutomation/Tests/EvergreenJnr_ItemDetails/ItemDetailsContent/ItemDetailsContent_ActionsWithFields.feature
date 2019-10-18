@@ -102,17 +102,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheLinkCanBeOpenedAndTheLinkHasARigh
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12883 @DAS13208 @DAS13478 @DAS13971 @DAS13892 @DAS16824 @DAS17093 @Cleanup
 Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResumeWorksCorrectly
-	When User clicks 'Admin' on the left-hand menu
-	Then 'Admin' list should be displayed to the user
-	When User navigates to the 'Evergreen' left menu item
-	When User navigates to the 'Buckets' left menu item
-	Then Page with 'Buckets' header is displayed to user
-	When User clicks 'CREATE EVERGREEN BUCKET' button 
-	Then Page with 'Create Evergreen Bucket' subheader is displayed to user
-	When User enters "Bucket12883" in the "Bucket Name" field
-	And User selects "My Team" team in the Team dropdown on the Buckets page
-	And User clicks 'CREATE' button 
-	Then Success message is displayed and contains "The bucket has been created" text
+	When User creates new Bucket via api
+	| Name        | TeamName | IsDefault |
+	| Bucket12883 | My Team  | false     |
 	#============================================================================#
 		#go to Devices page
 	When User navigates to the 'Device' details page for '01ERDGD48UDQKE' item

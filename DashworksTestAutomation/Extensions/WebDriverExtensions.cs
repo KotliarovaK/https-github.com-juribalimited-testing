@@ -63,7 +63,7 @@ namespace DashworksTestAutomation.Extensions
 
         public static string GetTooltipBubbleText(this RemoteWebDriver driver)
         {
-            var by = By.XPath(".//div[contains(@class,'ag-tooltip')]");
+            var by = By.XPath(_toolTipBubbleSelector);
             if (!driver.IsElementDisplayed(by, WaitTime.Short))
                 return string.Empty;
 
@@ -356,12 +356,14 @@ namespace DashworksTestAutomation.Extensions
         }
 
         private static string _toolTipSelector = ".//mat-tooltip-component";
+        private static string _toolTipBubbleSelector = ".//div[contains(@class,'ag-tooltip')]";
 
         public static bool IsTooltipDisplayed(this RemoteWebDriver driver)
         {
             var toolTips = driver.FindElements(By.XPath(_toolTipSelector));
+            var toolTipBubbles = driver.FindElements(By.XPath(_toolTipBubbleSelector));
 
-            return toolTips.Count > 0;
+            return toolTips.Count > 0 || toolTipBubbles.Count > 0;
         }
 
         public static void WhatForElementToBeSelected(this RemoteWebDriver driver, IWebElement element, bool selectorState)

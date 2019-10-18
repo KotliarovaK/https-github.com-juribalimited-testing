@@ -68,7 +68,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptio
 	| Move to position |
 	| Delete           |
 	When User clicks "Edit" option in Cog-menu for "15427_Action1" item on Admin page
-	Then Edit Action page is displayed to the User
+	#Then Edit Action page is displayed to the User
+	Then 'Edit Action' page subheader is displayed to user
 	And 'UPDATE' button is disabled
 	And 'CANCEL' button is displayed
 	And Page with 'Test_Automation_15427' header is displayed to user
@@ -255,9 +256,9 @@ Scenario: EvergreenJnr_AdminPage_CheckParametersToCreateUpdatePathAction
 	When User selects 'Manual' in the 'Run' dropdown
 	And User clicks 'CREATE' button 
 	Then Create Action page is displayed to the User
-	Then 'CREATE' Action button has tooltip with 'Some values are missing or not valid' text
+	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
 	Then 'CREATE' button is disabled
-	Then 'SAVE AND CREATE ANOTHER' Action button has tooltip with 'Some values are missing or not valid' text
+	Then 'SAVE AND CREATE ANOTHER' button has tooltip with 'Some values are missing or not valid' text
 	Then 'SAVE AND CREATE ANOTHER' button is disabled
 	Then 'CANCEL' button is not disabled
 	When User enters '' text to 'Action Name' textbox
@@ -302,11 +303,11 @@ Scenario: EvergreenJnr_AdminPage_CheckEditActionPage
 	Then There are no errors in the browser console
 	When User enters "15425_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
-	Then 'UPDATE' Action button has tooltip with 'No changes made' text
+	Then 'UPDATE' button has tooltip with 'No changes made' text
 	When User navigates to the 'Actions' left menu item
 	When User enters "15425_Action" text in the Search field for "Action" column
 	When User clicks content from "Action" column
-	Then Edit Action page is displayed to the User
+	Then 'Edit Action' page subheader is displayed to user
 	Then "15425_Action" content is displayed in "Action Name" field
 	Then '[Default (User)]' value is displayed in the 'Path' dropdown
 	Then 'Update path' content is displayed in 'Action Type' dropdown
@@ -322,7 +323,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditActionPage
 	When User selects 'Migration Project Phase 2 (User Project)' option from 'Project' autocomplete
 	Then 'UPDATE' button is disabled
 	Then '' value is displayed in the 'Path' dropdown
-	Then 'UPDATE' Action button has tooltip with 'Some values are missing or not valid' text
+	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
 	When User clicks 'CANCEL' button 
 	Then Actions page is displayed to the User
 
@@ -403,9 +404,9 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActions
 	#Create Action
 	And User clicks 'CREATE' button 
 	Then 'CREATE' button is disabled
-	Then 'CREATE' Action button has tooltip with 'Some values are missing or not valid' text
+	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
 	Then 'SAVE AND CREATE ANOTHER' button is disabled
-	Then 'SAVE AND CREATE ANOTHER' Action button has tooltip with 'Some values are missing or not valid' text
+	Then 'SAVE AND CREATE ANOTHER' button has tooltip with 'Some values are missing or not valid' text
 	When User enters 'DAS16992_Action' text to 'Action Name' textbox
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'Edinburgh Devices Migration' option from 'Project' autocomplete
@@ -680,7 +681,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThanActionFieldsAreNotPrepopulatedWithOldD
 	#DAS-17816 =>
 	Then 'UPDATE' button is disabled
 	Then 'CANCEL' button is not disabled
-	Then 'UPDATE' Action button has tooltip with 'No changes made' text
+	Then 'UPDATE' button has tooltip with 'No changes made' text
 	#DAS-17816 <=
 	When User selects 'Radio Rag only Comp' option from 'Task' autocomplete
 	And User clicks Body container

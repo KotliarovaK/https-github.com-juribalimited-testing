@@ -418,7 +418,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatFiltersSectionDisplayedCorrectlyA
 	When User clicks 'CREATE' button 
 	Then "DAS18327_Widget" Widget is displayed to the user
 	When User clicks Edit mode trigger on Dashboards page
-	When User clicks "GREEN" value for "True" column
+	When User clicks "AMBER" value for "True" column
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User clicks Filter Expression icon in Filter Panel

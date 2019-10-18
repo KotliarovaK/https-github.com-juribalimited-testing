@@ -456,7 +456,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality
 	Then "Stop on failed action" checkbox is checked on the Admin page
 	Then 'UPDATE' button is disabled
 	Then 'CANCEL' button is not disabled
-	Then 'UPDATE' Action button has tooltip with 'Some values are missing or not valid' text
+	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
 	#Wait for "RUN NOW" button
 	#Then 'RUN NOW' button is not disabled
 	When User clicks "Automations" navigation link on the Admin page

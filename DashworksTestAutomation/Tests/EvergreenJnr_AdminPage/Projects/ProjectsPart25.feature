@@ -26,7 +26,7 @@ Examples:
 	| 1803 Rollout                       | User Scope   | Users Readiness Columns & Filters | Application Scope | 1803 Apps |
 	| Mailbox Evergreen Capacity Project | User Scope   | Users Readiness Columns & Filters | Application Scope | 1803 Apps |
 
-	@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS17699
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS17699
 Scenario Outline: EvergreenJnr_AdminPage_CheckSavingOfChangesOnScopeDetailsPageForUserProject
 	When User navigates to "<ProjectName>" project details
 	And User selects "Scope" tab on the Project details page
@@ -54,3 +54,22 @@ Scenario: EvergreenJnr_AdminPage_CheckNoConsoleErrorDisplayedWhenUsingGroupByFil
 	Then There are no errors in the browser console
 	When User selects all rows on the grid
 	Then There are no errors in the browser console
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS16842
+Scenario Outline: EvergreenJnr_AdminPage_CheckCorrectListTooltipDisplayingInScopeDetailsPage
+	When User navigates to "<ProjectName>" project details
+	And User selects "Scope" tab on the Project details page
+	And User selects "Scope Details" tab on the Project details page
+	And User navigates to the '<tab>' tab on Project Scope Changes page
+	Then All items in the 'Scope' dropdown have icons
+	Then All icon items in the 'Scope' dropdown have any of tooltip
+	| tooltip |
+	| System  |
+	| Private |
+	| Shared  |
+
+Examples:
+	| ProjectName                        | tab           |
+	| 1803 Rollout                       | Device Scope  |
+	| User Evergreen Capacity Project    | User Scope    |
+	| Mailbox Evergreen Capacity Project | Mailbox Scope |

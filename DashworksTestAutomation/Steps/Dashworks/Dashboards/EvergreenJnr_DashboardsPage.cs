@@ -925,6 +925,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             page.DetailsPanelExpandListsIcon.Click();
+            _driver.WaitForElementsToBeDisplayed(page.DetailsPanelSharedListsTableHeaders);
         }
 
         [Then(@"User sees table headers as ""(.*)"" and ""(.*)""")]
@@ -933,6 +934,23 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForElementsToBeDisplayed(page.DetailsPanelSharedListsTableHeaders);
             Utils.Verify.That(page.DetailsPanelSharedListsTableHeaders.Select(x => x.Text).ToList(), Is.EqualTo(new List<string> { a, b }), "Headers are different");
+        }
+
+        [Then(@"User sees list icon displayed for '(.*)' widget in List section of Dashboards Details")]
+        public void ThenUserSeesListIconDisplayedForListInListSectionOfDashboardsDetails(string widgetName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            Verify.That(page.GetListIconFromListSectionOfDetailsPanel(widgetName).Displayed, Is.True, "List icon is not displayed");
+        }
+
+        [Then(@"User sees list icon displayed with tooltip for '(.*)' widget in List section of Dashboards Details")]
+        public void ThenUserSeesListIconDisplayedWithTooltipForListInListSectionOfDashboardsDetails(string widgetName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.MouseHover(page.GetListIconFromListSectionOfDetailsPanel(widgetName));
+
+            var toolTipText = _driver.GetTooltipText();
+            Verify.That(toolTipText, Is.EqualTo("Shared"), "Unexpected/missing tooltip");
         }
 
         [When(@"User clicks Settings button for ""(.*)"" shared user")]
