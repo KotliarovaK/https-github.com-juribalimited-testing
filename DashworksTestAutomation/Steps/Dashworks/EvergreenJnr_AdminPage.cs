@@ -964,6 +964,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var refresh_icon = ".//i[@class='material-icons' and contains(text(),'refresh')]";
             var filter_label = ".//div[@class='top-tools-inner']//span[contains(text(),'row')]";
 
+            _driver.WaitForElementToBeDisplayed(By.XPath(filter_label));
+
             for (int i = 0; i < 30; i++)
             {
                 if (i == 29)

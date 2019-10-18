@@ -180,12 +180,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'context-header')]//div[@role='group']")]
         public IWebElement FilterOptions { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'sectionAddObjects wrapper-disabled')]")]
-        public IWebElement DisabledObjectsToAddPanel { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "//div[@class='sectionAddObjects']")]
-        public IWebElement ActiveObjectsToAddPanel { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//span[@class='filter-content']")]
         public IWebElement FilterContainer { get; set; }
 
