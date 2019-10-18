@@ -103,12 +103,16 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithDateTaskOnlyPro
 	| Update relative to now           |
 	| Remove                           |
 	When User selects 'Update relative to current value' in the 'Update Date' dropdown
-	#Then 'Days' content is displayed in 'Units' textbox
-	#Then 'After current value' content is displayed in 'Before or After' dropdown
-	#Then following Values are displayed in the 'Before or After' dropdown:
-	#| Options              |
-	#| Before current value |
-	#| After current value  |
+	Then 'Days' content is displayed in 'Units' dropdown
+	Then 'After current value' content is displayed in 'Before or After' dropdown
+	When User enters '999999' text to 'Value' textbox
+	Then '100000' content is displayed in 'Value' textbox
+	When User enters '-5' text to 'Value' textbox
+	Then '1' content is displayed in 'Value' textbox
+	Then following Values are displayed in the 'Before or After' dropdown:
+	| Options              |
+	| Before current value |
+	| After current value  |
 
 @Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18281 @DAS18233 @Not_Ready
 #Waiting for 'Update relative to now' value
@@ -126,27 +130,6 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithDateAndTimeTask
 	When User selects 'Project Dates' option from 'Stage' autocomplete
 	When User selects 'Forecast Date' option from 'Task' autocomplete
 	When User selects 'Update relative to current value' in the 'Update Date' dropdown
-	When User enters '12' text to 'Value' textbox
-	When User selects 'Days' in the 'Units' dropdown
-	Then 'After current value' content is displayed in 'Before or After' dropdown
-	When User selects 'Before current value' in the 'Before or After' dropdown
-
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18281 @DAS18233 @Not_Ready
-#Waiting for 'Update relative to now' value
-Scenario: EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithDateAndTimeTaskProperties
-	When User clicks 'Mailboxes' on the left-hand menu
-	Then 'All Mailboxes' list should be displayed to the user
-	When User clicks the Actions button
-	Then Actions panel is displayed to the user
-	When User searches and selects following rows in the grid on Details page:
-	| SelectedRowsName                 |
-	| 000F977AC8824FE39B8@bclabs.local |
-	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
-	When User selects ' ' option from 'Project' autocomplete
-	When User selects ' ' option from 'Stage' autocomplete
-	When User selects ' ' option from 'Task' autocomplete
-	When User selects ' ' in the 'Update Date' dropdown
 	When User enters '12' text to 'Value' textbox
 	When User selects 'Days' in the 'Units' dropdown
 	Then 'After current value' content is displayed in 'Before or After' dropdown
