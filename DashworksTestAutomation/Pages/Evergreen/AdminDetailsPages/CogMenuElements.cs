@@ -28,7 +28,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//input[@placeholder='Move to position']")]
         public IWebElement MoveToPositionField { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//ul[@class='menu-settings']/li[@class='ng-star-inserted']")]
+        [FindsBy(How = How.XPath, Using = ".//ul[contains(@class,'menu-settings')]//*[string-length(text()) > 0]")]
         public IList<IWebElement> CogMenuItems { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
@@ -62,10 +62,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return selector;
         }
 
-        public IWebElement GetCogmenuOptionByName(string option)
+        public IWebElement GetCogMenuOptionByName(string option)
         {
-            var selector = By.XPath($".//ul[@class='menu-settings']//*[contains(text(), '{option}')]");
-            return Driver.FindElement(selector);
+            return CogMenuItems.FirstOrDefault(x => x.Text.Equals(option));
         }
 
         public bool CheckItemDisplay(string name)

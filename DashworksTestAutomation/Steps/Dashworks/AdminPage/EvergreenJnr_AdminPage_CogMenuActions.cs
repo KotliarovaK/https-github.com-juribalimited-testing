@@ -74,7 +74,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             _driver.MouseHover(cogMenu.GetCogMenuByItem(itemName));
             cogMenu.GetCogMenuByItem(itemName).Click();
             _driver.WaitForElementToBeDisplayed(cogMenu.CogMenuList);
-            cogMenu.GetCogmenuOptionByName(option).Click();
+            cogMenu.GetCogMenuOptionByName(option).Click();
             //Thread.Sleep(500);
             //TODO decrease to standard wait time after DAS-17940 fix
             _driver.WaitForDataLoading();
@@ -85,7 +85,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         {
             var cogMenu = _driver.NowAt<CogMenuElements>();
             _driver.WaitForElementToBeDisplayed(cogMenu.CogMenuList);
-            cogMenu.GetCogmenuOptionByName(option).Click();
+            cogMenu.GetCogMenuOptionByName(option).Click();
             _driver.WaitForDataLoading();
         }
 
@@ -113,7 +113,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             _driver.MouseHover(cogMenu.GetCogMenuByItem(itemName));
             cogMenu.GetCogMenuByItem(itemName).Click();
             _driver.WaitForDataLoading();
-            cogMenu.GetCogmenuOptionByName("Move to position").Click();
+            cogMenu.GetCogMenuOptionByName("Move to position").Click();
             cogMenu.MoveToPositionField.Clear();
             cogMenu.MoveToPositionField.SendKeys(position);
             var action = _driver.NowAt<BaseDashboardPage>();

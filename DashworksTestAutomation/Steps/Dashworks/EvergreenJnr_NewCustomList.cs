@@ -342,7 +342,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             WhenUserClicksSettingsButtonForList(listName);
             var cogMenu = _driver.NowAt<CogMenuElements>();
             _driver.WaitForElementToBeDisplayed(cogMenu.CogMenuList);
-            cogMenu.GetCogmenuOptionByName(menuItem).Click();
+            cogMenu.GetCogMenuOptionByName(menuItem).Click();
             _driver.WaitForDataLoading();
         }
 
