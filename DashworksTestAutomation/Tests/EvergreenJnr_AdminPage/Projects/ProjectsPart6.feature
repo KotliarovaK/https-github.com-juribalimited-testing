@@ -82,7 +82,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDevicesToAddAndRemoveAreChangingApprop
 	Then Page with 'Create Project' subheader is displayed to user
 	When User enters "DevicesProject" in the "Project Name" field
 	And User selects 'StaticList6527' option from 'Scope' autocomplete
-	And User clicks Create button on the Create Project page
+	And User clicks 'CREATE' button
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Page with 'DevicesProject' header is displayed to user

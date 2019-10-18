@@ -62,24 +62,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         #region Check button state
 
-        [Then(@"Create Project button is disabled")]
-        public void ThenCreateProjectButtonIsDisabled()
-        {
-            var button = _driver.NowAt<CreateProjectPage>();
-            _driver.WaitForElementToBeDisplayed(button.CreateProjectButton);
-            Utils.Verify.IsTrue(Convert.ToBoolean(button.CreateProjectButton.GetAttribute("disabled")),
-                "Create Project button is active");
-        }
-
-        [Then(@"Create Project button is enabled")]
-        public void ThenCreateProjectButtonIsEnabled()
-        {
-            var button = _driver.NowAt<CreateProjectPage>();
-            _driver.WaitForElementToBeDisplayed(button.CreateProjectButton);
-            Utils.Verify.IsFalse(Convert.ToBoolean(button.CreateProjectButton.GetAttribute("disabled")),
-                "Create Project button is active");
-        }
-
         [Then(@"Update Project button is active")]
         public void ThenUpdateProjectButtonIsActive()
         {
@@ -1031,16 +1013,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         #endregion
-
-        [When(@"User clicks Create button on the Create Project page")]
-        public void WhenUserClicksCreateButtonOnTheCreateProjectPage()
-        {
-            var page = _driver.NowAt<CreateProjectPage>();
-            _driver.WaitForElementToBeEnabled(page.CreateProjectButton);
-            _driver.ClickByJavascript(page.CreateProjectButton);
-            _driver.WaitForDataLoading();
-            Logger.Write("Create Project button was clicked");
-        }
 
         [When(@"User tries to open same page with ""(.*)"" item id")]
         public void WhenUserOpensSamePageForNotExistingItem(string Id)

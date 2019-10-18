@@ -21,7 +21,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFillingFieldErrorIsNotDisplayed
 	When User enters "DAS16816_Project_Users" in the "Project Name" field
 	And User selects 'DAS16816_List' option from 'Scope' autocomplete
 	Then Filling field error is not displayed
-	When User clicks Create button on the Create Project page
+	When User clicks 'CREATE' button
 	Then Success message is displayed and contains "The project has been created" text
 	#For Mailboxes filter
 	When Evergreen QueryStringURL is entered for Simple QueryType
@@ -37,7 +37,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFillingFieldErrorIsNotDisplayed
 	When User enters "DAS16816_Project_Mailboxes" in the "Project Name" field
 	And User selects 'DAS16816_MailboxesList' option from 'Scope' autocomplete
 	Then Filling field error is not displayed
-	When User clicks Create button on the Create Project page
+	When User clicks 'CREATE' button
 	Then Success message is displayed and contains "The project has been created" text
 	#For Devices filter
 	When Evergreen QueryStringURL is entered for Simple QueryType
@@ -53,7 +53,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFillingFieldErrorIsNotDisplayed
 	When User enters "DAS16816_Project_Devices" in the "Project Name" field
 	And User selects 'DAS16816_DevicesList' option from 'Scope' autocomplete
 	Then Filling field error is not displayed
-	When User clicks Create button on the Create Project page
+	When User clicks 'CREATE' button
 	Then Success message is displayed and contains "The project has been created" text
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS15666 @Cleanup
@@ -67,7 +67,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTrueValueDisplayedInGridForEvergreenPr
 	When User enters "15666Project" in the "Project Name" field
 	And User selects 'All Devices' option from 'Scope' autocomplete
 	When User selects "Clone from Evergreen to Project" in the Mode Project dropdown
-	And User clicks Create button on the Create Project page
+	And User clicks 'CREATE' button
 	Then Success message is displayed and contains "The project has been created" text
 	When User enters "15666Project" text in the Search field for "Project" column
 	Then "TRUE" content is displayed in "Evergreen" column 

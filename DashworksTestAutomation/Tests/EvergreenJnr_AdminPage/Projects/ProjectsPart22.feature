@@ -16,7 +16,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatMatchToEvergreenBucketDisplaye
 	When User enters "12768Project" in the "Project Name" field
 	And User selects '<ScopeList>' option from 'Scope' autocomplete
 	When User selects "Clone from Evergreen to Project" in the Mode Project dropdown
-	And User clicks Create button on the Create Project page
+	And User clicks 'CREATE' button
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	And User navigates to the 'Scope Changes' left menu item
@@ -125,7 +125,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatConvertToEvergreenButtonIsNotDisplaye
 	Then Page with 'Create Project' subheader is displayed to user
 	When User enters "TestNegativeProject15262" in the "Project Name" field
 	When User selects 'All Devices' option from 'Scope' autocomplete
-	And User clicks Create button on the Create Project page
+	And User clicks 'CREATE' button
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	And User navigates to the 'Details' left menu item

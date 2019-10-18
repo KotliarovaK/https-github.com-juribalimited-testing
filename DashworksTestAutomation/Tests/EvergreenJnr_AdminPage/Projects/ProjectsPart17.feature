@@ -25,7 +25,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedWhenDeleti
 	Then Page with 'Create Project' subheader is displayed to user
 	When User enters "TestProject6" in the "Project Name" field
 	And User selects 'TestList0A78U9' option from 'Scope' autocomplete
-	And User clicks Create button on the Create Project page
+	And User clicks 'CREATE' button
 	Then Page with 'Projects' header is displayed to user
 	Then Success message is displayed and contains "The project has been created" text
 	And There are no errors in the browser console

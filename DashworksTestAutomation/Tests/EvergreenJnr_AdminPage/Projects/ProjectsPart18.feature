@@ -82,14 +82,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyProjectN
 	Then Page with 'Create Project' subheader is displayed to user
 	When User enters " " in the "Project Name" field
 	And User selects 'All Devices' option from 'Scope' autocomplete
-	Then Create Project button is disabled
+	Then 'CREATE' button is displayed
 	When User enters "AllDevices Project" in the "Project Name" field
-	And User clicks Create button on the Create Project page
+	And User clicks 'CREATE' button
 	When User clicks 'CREATE PROJECT' button 
 	Then Page with 'Create Project' subheader is displayed to user
 	When User enters " alldevices project" in the "Project Name" field
 	And User selects 'All Devices' option from 'Scope' autocomplete
-	And User clicks Create button on the Create Project page
+	And User clicks 'CREATE' button
 	Then Error message with "A project already exists with this name" text is displayed
 	When User create static list with "StaticList4581" name on "Devices" page with following items
 	| ItemName       |
@@ -104,7 +104,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyProjectN
 	Then Page with 'Create Project' subheader is displayed to user
 	When User enters "TestProject84" in the "Project Name" field
 	And User selects 'StaticList4581' option from 'Scope' autocomplete
-	And User clicks Create button on the Create Project page
+	And User clicks 'CREATE' button
 	Then Success message is displayed and contains "The project has been created" text
 	When User enters "TestProject84" text in the Search field for "Project" column
 	Then "TestProject84" text in search field is displayed correctly for "Project" column
@@ -123,7 +123,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyProjectN
 	Then Page with 'Create Project' subheader is displayed to user
 	When User enters "AllDevices Project1258" in the "Project Name" field
 	And User selects 'DynamicList5531' option from 'Scope' autocomplete
-	And User clicks Create button on the Create Project page
+	And User clicks 'CREATE' button
 	And User enters "AllDevices Project" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item

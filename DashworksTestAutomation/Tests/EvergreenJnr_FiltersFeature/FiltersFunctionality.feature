@@ -2347,10 +2347,10 @@ Scenario: EvergreenJnr_DevicedList_CheckCustomFieldsUsingInFilterAndProjectCreat
 	And There are no errors in the browser console
 	When User create dynamic list with "TestList_DAS17715" name on "Devices" page
 	Then "TestList_DAS17715" list is displayed to user
-	When User clicks Create Project from the main list
+	When User selects 'Project' in the 'Create' dropdown
 	Then Page with 'Projects' header is displayed to user
 	When User enters "TestProjectFor17715" in the "Project Name" field
-	And User clicks Create button on the Create Project page
+	And User clicks 'CREATE' button
 	Then Success message is displayed and contains "The project has been created" text
 	And There are no errors in the browser console
 
