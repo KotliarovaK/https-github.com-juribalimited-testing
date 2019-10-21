@@ -13,6 +13,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 {
     public class BaseGridPage : SeleniumBasePage
     {
+        //Text that displayed near expand (plus) button for grouped values in the grid
+        public const string GroupedValue =
+            ".//div[@role='row'][@row-index]//span[@class='ag-group-value']";
+
         public const string ProjectInFilterDropdown =
             "//mat-option[@class='mat-option mat-option-multiple ng-star-inserted']";
 
@@ -526,20 +530,15 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElement(selector);
         }
 
-        public List<string> GetSumOfObjectsContent(string columnName)
-        {
-            var by = By.XPath(
-                $".//div[@role='gridcell'][{GetColumnNumberByName(columnName)}]//a");
-            return Driver.FindElements(by).Select(x => x.Text).ToList();
-        }
-
-        public IWebElement GetValueInGroupByFilterOnAdminPAge(string value)
+        //TODO probably should be separate control or moved to GridHeaderElement 
+        public IWebElement GetValueInGroupByFilterOnAdminPage(string value)
         {
             var selector = By.XPath($".//*[text()='{value}']/ancestor::label[contains(@class, 'checkbox')]");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
+        //TODO probably should be separate control or moved to GridHeaderElement 
         public List<KeyValuePair<string, bool>> GetAllOptionsInGroupByFilter()
         {
             var selector = By.XPath($".//div[@class='mat-menu-content']/mat-checkbox");
@@ -555,15 +554,17 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return result;
         }
 
+        #region GroupBy
+
         public bool IsGridGrouped()
         {
-            return Driver.IsElementDisplayed(By.XPath(".//div[@role='row'][@row-index]//span[@class='ag-group-value']"),
+            return Driver.IsElementDisplayed(By.XPath(GroupedValue),
                 WebDriverExtensions.WaitTime.Short);
         }
 
         public IWebElement GetGroupedRowByContent(string groupedValue)
         {
-            var selector = By.XPath($".//div[@role='row'][@row-index]//span[@class='ag-group-value'][text()='{groupedValue}']/..");
+            var selector = By.XPath($"{GroupedValue}[text()='{groupedValue}']/..");
             if (Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Long))
                 return Driver.FindElement(selector);
             else
@@ -572,7 +573,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public string GetGroupedCountByContent(string groupedValue)
         {
-            var number = GetGroupedRowByContent(groupedValue).FindElement(By.XPath(".//span[@ref='eChildCount']")).Text;
+            var number = GetGroupedRowByContent(groupedValue).
+                FindElement(By.XPath(".//span[@ref='eChildCount']")).Text;
             number = number.TrimStart('(').TrimEnd(')');
             return number;
         }
@@ -605,6 +607,18 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             }
         }
 
+        #endregion
+
+        #region Column content
+
+        public IList<IWebElement> GetColumnContentByColumnName(string columnName)
+        {
+            var selector = 
+                By.XPath($".//div[@class='ag-center-cols-clipper']//div[contains(@class, 'ag-row')]/div[{GetColumnNumberByName(columnName)}]//*[not(*)]");
+            Driver.WaitForDataLoading();
+            return Driver.FindElements(selector).ToList();
+        }
+
         public IWebElement GetCellFromColumn(string columnName, string cellText)
         {
             var allData = GetColumnContentByColumnName(columnName);
@@ -614,15 +628,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
                 throw new Exception($"There is no cell with '{cellText}' text in the '{columnName}' column");
         }
 
-        #region Column content
-
-        public IList<IWebElement> GetColumnContentByColumnName(string columnName)
+        public List<string> GetSumOfObjectsContent(string columnName)
         {
-            var selector = 
-                By.XPath($".//div[@class='ag-center-cols-clipper']//div[contains(@class, 'ag-row')]/div[{GetColumnNumberByName(columnName)}]//*[not(*)]");
-            //TODO probably should wait for any cell to be displayed
-            Driver.WaitForDataLoading();
-            return Driver.FindElements(selector).ToList();
+            var by = By.XPath(
+                $".//div[@role='gridcell'][{GetColumnNumberByName(columnName)}]//a");
+            return Driver.FindElements(by).Select(x => x.Text).ToList();
         }
 
         #endregion

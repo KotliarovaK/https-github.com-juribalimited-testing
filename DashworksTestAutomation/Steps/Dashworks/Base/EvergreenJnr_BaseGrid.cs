@@ -239,6 +239,20 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             }
         }
 
+        //For case when just empty cell are displayed. Probably also for case when no cells displayed
+        [Then(@"Column '(.*)' with no data displayed")]
+        public void ThenFollowingColumnDisplayedWithoutNoData(string columnName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            var originalList = page.GetColumnContentByColumnName(columnName)
+                .Select(column => column.Text).ToList();
+
+            foreach (var item in originalList)
+            {
+                Verify.That(item, Is.EqualTo(""), $"Incorrect content is displayed in the {columnName}");
+            }
+        }
+
         #endregion
 
         #region Clicable value

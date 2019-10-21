@@ -1676,7 +1676,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTaskSlotHasEmptyAndNotEmptyOperators
 	And User enters "Empty" text in Search field at selected Lookup Filter
 	And User clicks checkbox at selected Lookup Filter
 	And User clicks Save filter button
-	Then Column "1803: Pre-Migration \ Scheduled Date (Slot)" with no data displayed
+	Then Column '1803: Pre-Migration \ Scheduled Date (Slot)' with no data displayed
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS15899
 Scenario: EvergreenJnr_DevicesList_CheckStageNameInTheFiltestForDevicesLists

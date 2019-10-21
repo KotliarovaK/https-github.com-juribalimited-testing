@@ -763,27 +763,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 page.GetTableWidgetContentWithoutLink(content).GetCssValue("color"), "PLEASE ADD EXCEPTION MESSAGE");
         }
 
-        [Then(@"following content is displayed in the ""(.*)"" column")]
-        public void ThenFollowingContentIsDisplayedInTheColumn(string columnName, Table table)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            var originalList = page.GetColumnContentByColumnName(columnName).Select(column => column.Text).ToList();
-            var tableContent = table.Rows.SelectMany(row => row.Values);
-            Utils.Verify.AreEqual(originalList, tableContent, $"Incorrect content is displayed in the {columnName}");
-        }
-
-        [Then(@"Column ""(.*)"" with no data displayed")]
-        public void ThenFollowingColumnDisplayedWithoutNoData(string columnName)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            var originalList = page.GetColumnContentByColumnName(columnName).Select(column => column.Text).ToList();
-
-            foreach (var item in originalList)
-            {
-                Utils.Verify.That(item, Is.EqualTo(""), $"Incorrect content is displayed in the {columnName}");
-            }
-        }
-
         [Then(@"following content is displayed in the ""(.*)"" column for Widget")]
         public void ThenFollowingContentIsDisplayedInTheColumnForWidget(string columnName, Table table)
         {

@@ -1606,20 +1606,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             button.ExportButton.Click();
         }
 
-        //TODO should be changed to generic method. Remove Admin page
+        //TODO probably should be separate control or moved to GridHeaderElement 
         [When(@"User clicks Group By button on the Admin page and selects ""(.*)"" value")]
         public void WhenUserClicksGroupByButtonOnTheAdminPageAndSelectsValue(string value)
         {
             var page = _driver.NowAt<BaseGridPage>();
             page.GroupByButton.Click();
-            _driver.MouseHover(page.GetValueInGroupByFilterOnAdminPAge(value));
-            page.GetValueInGroupByFilterOnAdminPAge(value).Click();
+            _driver.MouseHover(page.GetValueInGroupByFilterOnAdminPage(value));
+            page.GetValueInGroupByFilterOnAdminPage(value).Click();
             //Wait for option to be applied
             Thread.Sleep(400);
             page.BodyContainer.Click();
         }
 
-        //TODO should be changed to generic method. Remove Admin page
+        //TODO probably should be separate control or moved to GridHeaderElement
         [Then(@"'(.*)' options are selected in the Group By menu")]
         public void ThenOptionsAreSelectedInTheGroupByMenu(int expectedCount)
         {
