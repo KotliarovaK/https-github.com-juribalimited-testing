@@ -92,7 +92,9 @@ Scenario: EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType
 	And User navigates to the 'Capacity' left menu item
 	And User navigates to the 'Slots' left menu item
 	When User clicks content from "Capacity Slot" column
-	Then 'Pre-Migration \ Scheduled date' value is displayed in the 'Tasks' dropdown
+	Then only below options are selected in the 'Tasks' autocomplete
+	| Options                        |
+	| Pre-Migration \ Scheduled date |
 	When User clicks on "Paths" dropdown on the Capacity Slots page
 	Then following checkbox items are displayed in the dropdown:
 	| Items                  |
@@ -121,7 +123,9 @@ Scenario: EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType
 	And User navigates to the 'Capacity' left menu item
 	And User navigates to the 'Slots' left menu item
 	And User clicks content from "Capacity Slot" column
-	Then 'Pre-Migration \ Scheduled Date' value is displayed in the 'Tasks' dropdown
+	Then only below options are selected in the 'Tasks' autocomplete
+	| Options                        |
+	| Pre-Migration \ Scheduled Date |
 	When User clicks on "Paths" dropdown on the Capacity Slots page
 	Then following checkbox items are displayed in the dropdown:
 	| Items                                            |

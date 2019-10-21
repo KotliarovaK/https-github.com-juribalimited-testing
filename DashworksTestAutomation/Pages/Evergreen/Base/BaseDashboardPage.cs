@@ -266,7 +266,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         public string ExpandNamedTextboxSelector = "//preceding-sibling::button[contains(@class,'chips-expand')]";
 
         //For cases when more than 4 items are selected they are collapsed to '1 more'
-        public string SelectedValuesForNamedTextboxSelector = "//preceding-sibling::mat-chip/span";
+        public string SelectedValuesForNamedTextboxSelector = ".//preceding-sibling::mat-chip/span";
 
         private static string AutocompleteOptionsSelector = ".//mat-option";
 
