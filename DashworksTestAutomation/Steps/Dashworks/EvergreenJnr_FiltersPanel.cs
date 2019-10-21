@@ -59,8 +59,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksAddAndButtonOnTheFilterPanel()
         {
             var menu = _driver.NowAt<FiltersElement>();
-            _driver.WaitForElementToBeDisplayed(menu.AddNewFilterButton);
-            menu.AddNewFilterButton.Click();
+            _driver.WaitForElementToBeDisplayed(menu.AddAndFilterButton);
+            menu.AddAndFilterButton.Click();
             Logger.Write("Add And button was clicked");
         }
 
@@ -860,6 +860,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"Edit button is not displayed for '{filterName}' filter");
         }
 
+        [Then(@"There are no any expanded blocks in Filter panel")]
+        public void ThenThereAreNoAnyExpandedBlocksInFilterPanel()
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+
+            Verify.That(_driver.IsElementDisplayed(filterElement.ExpandedFilterBlock), Is.False,
+                $"Looks like there is an expanded block in Filter panel");
+        }
+
         [Then(@"""(.*)"" value is displayed in the filter info")]
         public void ThenValueIsDisplayedInTheFilterInfo(string value)
         {
@@ -1050,8 +1059,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 filterElement.GetBooleanCheckboxImg("FALSE").GetAttribute("src"), "Incorrect image for False value");
             //TODO: Yurii 10oct2019 - remove below check per Kristina's answer about UNKNOWN option and img, it was changed to Empty
             //Utils.Verify.AreEqual($"{UrlProvider.Url}evergreen/assets/img/unknown.png",
-                //filterElement.GetBooleanCheckboxImg("UNKNOWN").GetAttribute("src"),
-                //"Incorrect image for Unknown value");
+            //filterElement.GetBooleanCheckboxImg("UNKNOWN").GetAttribute("src"),
+            //"Incorrect image for Unknown value");
         }
 
         [Then(@"""(.*)"" option is available for this filter")]
@@ -1559,6 +1568,19 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<FiltersElement>();
             page.AssociationItem(option).Click();
+        }
+
+        [Then(@"Remove icon displayed in '(.*)' state for '(.*)' association")]
+        public void ThenRemoveIconDisplayedInStateForAssociation(string state, string association)
+        {
+            var filtersElement = _driver.NowAt<FiltersElement>();
+
+            string actualState =
+                string.IsNullOrEmpty(filtersElement.RemoveIconForAssociation(association).GetAttribute("disabled"))
+                    ? "true"
+                    : "false";
+
+            Verify.That(actualState, Is.EqualTo(state), "Wrong Remove icon state");
         }
     }
 }

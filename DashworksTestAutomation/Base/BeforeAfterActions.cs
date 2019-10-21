@@ -26,11 +26,13 @@ namespace DashworksTestAutomation.Base
     {
         private readonly IObjectContainer _objectContainer;
         private readonly ScenarioContext _scenarioContext;
+        private readonly RestWebClient _client;
 
-        public BeforeAfterActions(IObjectContainer objectContainer, ScenarioContext scenarioContext)
+        public BeforeAfterActions(IObjectContainer objectContainer, ScenarioContext scenarioContext, RestWebClient client)
         {
             _objectContainer = objectContainer;
             _scenarioContext = scenarioContext;
+            _client = client;
         }
 
         [BeforeTestRun]
@@ -159,6 +161,24 @@ namespace DashworksTestAutomation.Base
                     Logger.Write($"TEST FINISHED: {GetTestName()}");
                 }
                 catch { }
+            }
+
+            try
+            {
+                var requestUri = "http://autorelease.corp.juriba.com:81/admin/projects/1/projectDetailsSummary";
+                var request = requestUri.GenerateRequest();
+
+                var resp = _client.Value.Get(request);
+
+                if (resp.StatusCode != HttpStatusCode.OK)
+                {
+                    Logger.Write("============> !!! PROJECT WAS DELETE !!! <============");
+                }
+            }
+            catch (Exception e)
+            {
+                Logger.Write(e);
+                Logger.Write("============> !!! PROJECT WAS DELETE !!! <============");
             }
         }
 

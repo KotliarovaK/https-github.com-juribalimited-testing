@@ -1202,10 +1202,10 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatCapacityUnitSubcategoryPlacedIn
 Scenario: EvergreenJnr_AllLists_CheckThatParticularProjectCapacityUnitFilterShowsProperItems
 	When User clicks 'Admin' on the left-hand menu
 	And User clicks 'CREATE PROJECT' button 
-	And User enters "13201" in the "Project Name" field
+	And User enters '13201' text to 'Project Name' textbox
 	And User selects 'All Mailboxes' option from 'Scope' autocomplete
 	When User selects 'Evergreen' in the 'Mode' dropdown
-	When User clicks Create button on the Create Project page
+	When User clicks 'CREATE' button
 	And User clicks 'Devices' on the left-hand menu
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
@@ -1248,7 +1248,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatDeletedBucketIsNotAvailableInEvergreenB
 	When User navigates to the 'Evergreen' left menu item
 	When User navigates to the 'Buckets' left menu item
 	And User clicks 'CREATE EVERGREEN BUCKET' button 
-	And User enters "Bucket_DAS12940_to_be_deleted" in the "Bucket Name" field
+	And User enters 'Bucket_DAS12940_to_be_deleted' text to 'Bucket Name' textbox
 	And User selects "Admin IT" team in the Team dropdown on the Buckets page
 	And User clicks 'CREATE' button 
 	And User select "Bucket" rows in the grid

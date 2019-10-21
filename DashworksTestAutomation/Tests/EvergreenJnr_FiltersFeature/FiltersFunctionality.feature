@@ -2347,10 +2347,10 @@ Scenario: EvergreenJnr_DevicedList_CheckCustomFieldsUsingInFilterAndProjectCreat
 	And There are no errors in the browser console
 	When User create dynamic list with "TestList_DAS17715" name on "Devices" page
 	Then "TestList_DAS17715" list is displayed to user
-	When User clicks Create Project from the main list
+	When User selects 'Project' in the 'Create' dropdown
 	Then Page with 'Projects' header is displayed to user
-	When User enters "TestProjectFor17715" in the "Project Name" field
-	And User clicks Create button on the Create Project page
+	When User enters 'TestProjectFor17715' text to 'Project Name' textbox
+	And User clicks 'CREATE' button
 	Then Success message is displayed and contains "The project has been created" text
 	And There are no errors in the browser console
 
@@ -2438,10 +2438,39 @@ Scenario: EvergreenJnr_DevicesList_CheckThatThereIsNoErrorAfterSavingListWithFil
 Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorAppearsAfterOpenningItemFromCreatedAllDeviceApplicationsList
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
-	When User clicks "All Device Applications" list name in left panel
+	When User navigates to the "All Device Applications" list
 	Then Export button is displayed disabled
 	When User clicks Add New button on the Filter panel
 	When User selects 'Used on device' option in expanded associations list
 	When User clicks 'RUN LIST' button
 	When User click content from "Application Name" column
 	Then There are no errors in the browser console
+
+@Evergreen @Devices @Evergreen_FiltersFeature @FilterFunctionality @DAS18140
+Scenario: EvergreenJnr_DevicesList_CheckCancelFilterButtonWorkIfSameFiltersWereApplied
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User clicks the Filters button
+	When User add "Display Name" filter where type is "Not Empty" with added column and Lookup option
+	| SelectedValues |
+	When User Add And "Display Name" filter where type is "Contains" with added column and following value:
+	| Values |
+	| a      |
+	When User click Edit button for "Display Name" filter
+	When User clicks 'CANCEL' button 
+	Then There are no any expanded blocks in Filter panel
+
+@Evergreen @AllDeviceApplications @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18425
+Scenario: EvergreenJnr_ApplicationsList_CheckThatFirstAssociationsCantBeRemovedIfThereAreTwoMoreAdded
+	When User clicks 'Applications' on the left-hand menu
+	Then 'All Applications' list should be displayed to the user
+	When User navigates to the "All Device Applications" list
+	When User clicks Add New button on the Filter panel
+	When User selects 'Used on device' option in expanded associations list
+	When User clicks Add And button on the Filter panel
+	When User selects 'Not installed on device' option in expanded associations list
+	When User clicks Add And button on the Filter panel
+	When User selects 'Entitled to device' option in expanded associations list
+	Then Remove icon displayed in 'false' state for 'Used on device' association
+	Then Remove icon displayed in 'true' state for 'Not installed on device' association
+	Then Remove icon displayed in 'true' state for 'Entitled to device' association

@@ -65,19 +65,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
-        [When(@"User clicks Create Project from the main list")]
-        public void WhenUserClicksCreateProjectFromTheMainList()
-        {
-            var menu = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitForElementToBeDisplayed(menu.CreateActionButton);
-            menu.CreateActionButton.Click();
-
-            _driver.WaitForElementToBeDisplayed(menu.CreateProjectButton);
-            menu.CreateProjectButton.Click();
-
-            _driver.WaitForDataLoading();
-        }
-
         [Then(@"Create Project button is disabled on the Base Dashboard Page")]
         public void ThenCreateProjectButtonIsDisabledOnTheBaseDashboardPage()
         {

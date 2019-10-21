@@ -65,13 +65,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsUnableToCreateMoreThanOneOverrid
 	And User enters '17 Oct 2018' text to 'Override Start Date' datepicker
 	And User enters '17 Oct 2018' text to 'Override End Date' datepicker
 	And User selects 'SlotDAS13780_1' in the 'Slot' dropdown
-	And User enters "0" value in the "Capacity" field
+	And User enters '0' text to 'Capacity' textbox
 	And User clicks 'CREATE' button 
 	And User clicks 'CREATE OVERRIDE DATE' button 
 	And User enters '17 Oct 2018' text to 'Override Start Date' datepicker
 	And User enters '17 Oct 2018' text to 'Override End Date' datepicker
 	And User selects 'SlotDAS13780_2' in the 'Slot' dropdown
-	And User enters "0" value in the "Capacity" field
+	And User enters '0' text to 'Capacity' textbox
 	And User clicks 'CREATE' button 
 	And User clicks 'CREATE OVERRIDE DATE' button 
 	And User enters '17 Oct 2018' text to 'Override Start Date' datepicker

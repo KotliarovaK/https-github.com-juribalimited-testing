@@ -6,10 +6,13 @@ using System.Threading;
 using System.Threading.Tasks;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Automations;
+using DashworksTestAutomation.DTO.Evergreen.Admin.Bucket;
 using DashworksTestAutomation.DTO.Evergreen.Admin.CapacityUnits;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Rings;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Slots;
+using DashworksTestAutomation.DTO.Evergreen.Admin.Teams;
 using DashworksTestAutomation.DTO.RuntimeVariables;
+using DashworksTestAutomation.DTO.RuntimeVariables.Buckets;
 using DashworksTestAutomation.DTO.RuntimeVariables.CapacityUnits;
 using DashworksTestAutomation.DTO.RuntimeVariables.Rings;
 using DashworksTestAutomation.Extensions;
@@ -36,9 +39,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         private readonly Rings _rings;
         private readonly Automations _automations;
         private readonly CapacityUnits _capacityUnits;
+        private readonly DTO.RuntimeVariables.Projects _projects;
+        private readonly Teams _teams;
+        private readonly Buckets _buckets;
 
         public EvergreenJnr_BasePage(RemoteWebDriver driver, AutomationActions automationActions,
-            Automations automations, Slots slots, Rings rings, CapacityUnits capacityUnits)
+            Automations automations, Slots slots, Rings rings, CapacityUnits capacityUnits, DTO.RuntimeVariables.Projects projects,
+            Teams teams, Buckets buckets)
         {
             _driver = driver;
             _automationActions = automationActions;
@@ -46,6 +53,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             _slots = slots;
             _rings = rings;
             _capacityUnits = capacityUnits;
+            _projects = projects;
+            _teams = teams;
+            _buckets = buckets;
         }
 
         #region Page Header/SubHeader
@@ -264,8 +274,22 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.GetTextbox(placeholder).SendKeys(text);
             page.BodyContainer.Click();
 
+            //TODO rework to use switch
             if (placeholder.Equals("Action Name"))
                 _automationActions.Value.Add(text);
+
+            if (placeholder.Equals("Project Name"))
+                _projects.Value.Add(text);
+
+            if (placeholder.Equals("Team Name"))
+            {
+                TeamDto teamDto = new TeamDto();
+                teamDto.TeamName = text;
+                _teams.Value.Add(teamDto);
+            }
+
+            if (placeholder.Equals("Bucket Name"))
+                _buckets.Value.Add(new BucketDto() { Name = text });
 
             if (placeholder.Equals("Slot Name"))
                 _slots.Value.Add(new SlotDto() { SlotName = text });

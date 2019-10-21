@@ -216,15 +216,15 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
 Scenario: EvergreenJnr_AdminPage_CheckParametersToCreateUpdatePathAction
 #Pre-requisites:
 	When User clicks 'Users' on the left-hand menu
-	And User clicks the Filters button
-	And User add "City" filter where type is "Equals" with added column and "Melbourne" Lookup option
-	And User create dynamic list with "Melbourne Users" name on "Users" page
-	And User clicks Create Project from the main list
+	When User clicks the Filters button
+	When User add "City" filter where type is "Equals" with added column and "Melbourne" Lookup option
+	When User create dynamic list with "Melbourne Users" name on "Users" page
+	When User selects 'Project' in the 'Create' dropdown
 	Then Page with 'Create Project' subheader is displayed to user
-	Then Create Project button is disabled
-	When User enters "Melbourne User Migration" in the "Project Name" field
-	Then Create Project button is enabled
-	When User clicks Create button on the Create Project page
+	Then 'CREATE' button is displayed
+	When User enters 'Melbourne User Migration' text to 'Project Name' textbox
+	Then 'CREATE' button is not displayed
+	When User clicks 'CREATE' button
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -335,11 +335,10 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActions
 	And User clicks the Filters button
 	And User add "City" filter where type is "Equals" with added column and "Edinburgh" Lookup option
 	And User create dynamic list with "Edinburgh Devices" name on "Devices" page
-	And User clicks Create Project from the main list
+	And User selects 'Project' in the 'Create' dropdown
 	Then Page with 'Create Project' subheader is displayed to user
-	Then Create Project button is disabled
-	When User enters "Edinburgh Devices Migration" in the "Project Name" field
-	When User clicks Create button on the Create Project page
+	When User enters 'Edinburgh Devices Migration' text to 'Project Name' textbox
+	When User clicks 'CREATE' button
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user

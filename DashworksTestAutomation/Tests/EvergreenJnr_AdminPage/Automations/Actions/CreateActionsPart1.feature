@@ -180,7 +180,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithRemoveOwnerIsLoaded
 	Then "Update Migrated devices" content is displayed in "Action Name" field
 	Then 'Update task value' content is displayed in 'Action Type' dropdown
 	And 'One' content is displayed in 'Stage' textbox
-	And 'Radio Rag Date Owner Comp Req B' content is displayed in 'Task' textbox
+	And 'Radio Rag Date Owner User Req B' content is displayed in 'Task' textbox
 	Then 'No change' value is displayed in the 'Update Value' dropdown
 	Then 'No change' value is displayed in the 'Update Date' dropdown
-	Then 'Remove' value is displayed in the 'Update Owner' dropdown
+	Then 'Remove owner' value is displayed in the 'Update Owner' dropdown
