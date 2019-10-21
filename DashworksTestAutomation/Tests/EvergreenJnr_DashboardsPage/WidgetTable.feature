@@ -407,7 +407,6 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatFiltersSectionDisplayedCorrectlyA
 	| Amber              |
 	When User clicks Save button on the list panel
 	When User create dynamic list with "Devices_List_DAS18327" name on "Devices" page
-	Then "Devices_List_DAS18327" list is displayed to user
 	When Dashboard with "DAS18327_Dashboard" name created via API and opened
 	When User clicks Edit mode trigger on Dashboards page
 	When User clicks 'ADD WIDGET' button 
