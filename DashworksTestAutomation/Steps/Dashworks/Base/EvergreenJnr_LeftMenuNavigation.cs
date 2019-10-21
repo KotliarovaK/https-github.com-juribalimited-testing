@@ -25,11 +25,24 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         #region Menu naviagtion
 
-        [When(@"User navigates to the '(.*)' left menu item")]
+        [When(
+@"User navigates to the '(.*)' left menu item")]
         public void WhenUserNavigatesToTheLeftMenuItem(string tabMenuName)
         {
             var detailsPage = _driver.NowAt<BaseNavigationElements>();
             _driver.ExecuteAction(() => detailsPage.GetLeftMenuByName(tabMenuName).Click());
+        }
+
+        #endregion
+
+        #region Expanded/Collapsed state
+
+        [Then(@"'(.*)' left menu item is expanded")]
+        public void ThenLeftMenuItemIsExpanded(string section)
+        {
+            var page = _driver.NowAt<BaseNavigationElements>();
+            Verify.IsTrue(page.IsMenuExpanded(section),
+                $"'{section}' section is collapsed");
         }
 
         #endregion

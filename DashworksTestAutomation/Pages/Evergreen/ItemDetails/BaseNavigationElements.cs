@@ -64,6 +64,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         {
             return Driver.IsElementDisplayed(By.XPath($"//li[@class='das-mat-tree-parent']/div[contains(@class, 'collapsed')]/a[text()='{tabName}']"));
         }
+
         public bool GetTabByName(string tabName)
         {
             return Driver.IsElementDisplayed(By.XPath($"//a[@class='ng-star-inserted'][text()='{tabName}']"));
@@ -98,9 +99,18 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         {
             return Driver.IsElementDisplayed(By.XPath($".//a[text()='{tabName}']/ancestor::mat-tree-node[contains(@class, 'disabled')]"));
         }
+
         public bool GetDisplayStatusForDisabledMainTabByName(string tabName)
         {
             return Driver.IsElementDisplayed(By.XPath($".//a[text()='{tabName}']/ancestor::mat-nested-tree-node[contains(@class, 'disabled')]"));
+        }
+
+        public bool IsMenuExpanded(string tabName)
+        {
+            var result = Driver.ExecuteFunc(() => bool.Parse(GetLeftMenuByName(tabName)
+                .FindElement(By.XPath(".//ancestor::*[contains(@class,'mat-nested-tree-node')]"))
+                .GetAttribute("aria-expanded")));
+            return result;
         }
     }
 }

@@ -53,9 +53,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateAutomationFieldsIsNotPopulatedWi
 	And User clicks 'CREATE' button 
 	When User clicks 'Automations' header breadcrumb
 	When User clicks 'CREATE AUTOMATION' button 
-	Then "Description" field is empty on the Admin page
-	Then "Automation Name" field is empty on the Admin page
-	Then "Scope" field is empty on the Admin page
+	Then '' content is displayed in 'Description' textbox
+	Then '' content is displayed in 'Automation Name' textbox
+	Then '' content is displayed in 'Scope' textbox
 	Then "Active" checkbox is unchecked on the Admin page
 	When User enters 'DAS16801_Automation_Second' text to 'Automation Name' textbox
 	When User enters 'DAS16801' text to 'Description' textbox

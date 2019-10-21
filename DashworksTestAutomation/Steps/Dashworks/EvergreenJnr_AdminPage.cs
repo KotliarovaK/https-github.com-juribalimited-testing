@@ -258,15 +258,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     "Units are not the same");
         }
 
-        [Then(@"sum of objects in ""(.*)"" list is ""(.*)"" on the Admin page")]
-        public void ThenSumOfObjectsInListIsOnTheAdminPage(string columnName, int sumOfObjects)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            var numbers = page.GetSumOfObjectsContent(columnName);
-            var total = numbers.Where(x => !string.IsNullOrEmpty(x)).Sum(x => Convert.ToInt32(x));
-            Verify.That(total, Is.EqualTo(sumOfObjects), $"Sum of objects in {columnName} list is incorrect!");
-        }
-
         [Then(@"field for Date column is empty")]
         public void ThenFieldForDateColumnIsEmpty()
         {

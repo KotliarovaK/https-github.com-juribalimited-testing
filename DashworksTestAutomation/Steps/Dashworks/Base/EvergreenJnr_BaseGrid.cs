@@ -253,6 +253,16 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             }
         }
 
+        [Then(@"numbers sum in the '(.*)' column is equal to '(.*)'")]
+        public void ThenNumbersSumInTheColumnIsEqualTo(string columnName, int expectedSum)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            var numbers = page.GetColumnContentByColumnName(columnName).ToList().Select(x => x.Text);
+            var total = numbers.Where(x => !string.IsNullOrEmpty(x)).Sum(x => Convert.ToInt32(x));
+            Verify.That(total, Is.EqualTo(expectedSum), 
+                $"Sum of objects in the '{columnName}' column is incorrect!");
+        }
+
         #endregion
 
         #region Clicable value

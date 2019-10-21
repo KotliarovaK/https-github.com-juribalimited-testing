@@ -511,25 +511,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElement(selector);
         }
 
-        public IWebElement GetExpandedSubMenuSection(string section)
-        {
-            var selector = By.XPath($".//mat-nested-tree-node[@aria-expanded='true']//a[text()='{section}']");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
-        public IWebElement GetOpenedPageByName(string pageName)
-        {
-            var selector = By.XPath($".//div[contains(@class, 'wrapper-container')]//h2[text()='{pageName}']");
-            return Driver.FindElement(selector);
-        }
-
-        public IWebElement GetEmptyFieldByName(string fieldName)
-        {
-            var selector = By.XPath($".//mat-form-field[contains(@class, 'invalid')]//label[text()='{fieldName}']");
-            return Driver.FindElement(selector);
-        }
-
         //TODO probably should be separate control or moved to GridHeaderElement 
         public IWebElement GetValueInGroupByFilterOnAdminPage(string value)
         {
@@ -626,13 +607,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
                 return allData.First(x => x.Text.Contains(cellText));
             else
                 throw new Exception($"There is no cell with '{cellText}' text in the '{columnName}' column");
-        }
-
-        public List<string> GetSumOfObjectsContent(string columnName)
-        {
-            var by = By.XPath(
-                $".//div[@role='gridcell'][{GetColumnNumberByName(columnName)}]//a");
-            return Driver.FindElements(by).Select(x => x.Text).ToList();
         }
 
         #endregion

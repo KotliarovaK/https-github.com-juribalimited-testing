@@ -13,7 +13,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationsLogGridLoads
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
 	When User navigates to the 'Automation Log' left menu item
-	Then "Automations" sub-menu section is expanded
+	Then 'Automations' left menu item is expanded
 	Then Columns on Admin page is displayed in following order:
 	| ColumnName          |
 	| Date                |
