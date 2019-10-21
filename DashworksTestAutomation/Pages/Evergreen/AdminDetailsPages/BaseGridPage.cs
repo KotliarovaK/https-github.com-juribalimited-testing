@@ -139,9 +139,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Date']")]
         public IWebElement DateSearchField { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[contains(@class, 'mat-select-placeholder')]")]
-        public IWebElement ActionsInDropdown { get; set; }
-
         [FindsBy(How = How.XPath, Using = ObjectsToAdd)]
         public IList<IWebElement> ObjectsList { get; set; }
 
@@ -608,13 +605,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             }
         }
 
-        public IList<IWebElement> GetColumnContentByColumnName(string columnName)
-        {
-            var selector = By.XPath($".//div[@class='ag-center-cols-clipper']//div[contains(@class, 'ag-row')]/div[{GetColumnNumberByName(columnName)}]//*[not(*)]");
-            Driver.WaitForDataLoading();
-            return Driver.FindElements(selector).ToList();
-        }
-
         public IWebElement GetCellFromColumn(string columnName, string cellText)
         {
             var allData = GetColumnContentByColumnName(columnName);
@@ -623,5 +613,18 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             else
                 throw new Exception($"There is no cell with '{cellText}' text in the '{columnName}' column");
         }
+
+        #region Column content
+
+        public IList<IWebElement> GetColumnContentByColumnName(string columnName)
+        {
+            var selector = 
+                By.XPath($".//div[@class='ag-center-cols-clipper']//div[contains(@class, 'ag-row')]/div[{GetColumnNumberByName(columnName)}]//*[not(*)]");
+            //TODO probably should wait for any cell to be displayed
+            Driver.WaitForDataLoading();
+            return Driver.FindElements(selector).ToList();
+        }
+
+        #endregion
     }
 }

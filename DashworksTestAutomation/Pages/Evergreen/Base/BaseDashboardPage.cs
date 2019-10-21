@@ -165,9 +165,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = ".//div[@class='ag-center-cols-viewport']//div[@role='row']")]
         public IList<IWebElement> TableRows { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[@class='status-text'][text()='RED']")]
-        public IList<IWebElement> ContentColor { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//div[@class='empty-message ng-star-inserted']/span")]
         public IWebElement NoResultsFoundMessage { get; set; }
 
