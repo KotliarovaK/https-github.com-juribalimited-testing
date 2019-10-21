@@ -27,8 +27,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithUpdateOwnerIsLoaded
 	And User selects 'No change' in the 'Update Value' dropdown
 	And User selects 'No change' in the 'Update Date' dropdown
 	And User selects 'Update' in the 'Update Owner' dropdown
-	And User selects "1803 Team" Team on Action panel
-	And User selects "Akhila Varghese" Owner on Action panel
+	When User selects '1803 Team' option from 'Team' autocomplete
+	When User selects 'Akhila Varghese' option from 'Owner' autocomplete
 	And User clicks 'CREATE' button 
 	When User clicks 'Automations' header breadcrumb
 	When User enters "17617_Automation" text in the Search field for "Automation" column

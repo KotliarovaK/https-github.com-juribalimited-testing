@@ -245,7 +245,7 @@ this.FeatureBackground();
 #line 51
  testRunner.When("User selects \'Update\' in the \'Update Owner\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 52
- testRunner.And(string.Format("User selects \"{0}\" Team on Action panel", newTeam), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When(string.Format("User selects \'{0}\' option from \'Team\' autocomplete", newTeam), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 53
  testRunner.When("User navigate to the bottom of the Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 54
@@ -286,7 +286,7 @@ this.FeatureBackground();
 #line 71
  testRunner.When("User selects \'Update\' in the \'Update Owner\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 72
- testRunner.And(string.Format("User selects \"{0}\" Team on Action panel", defaultTeam), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When(string.Format("User selects \'{0}\' option from \'Team\' autocomplete", defaultTeam), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 73
  testRunner.And("User navigate to the bottom of the Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 74
