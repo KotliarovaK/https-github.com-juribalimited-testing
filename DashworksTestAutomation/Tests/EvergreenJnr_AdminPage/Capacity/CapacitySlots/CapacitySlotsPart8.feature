@@ -43,7 +43,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForCa
 	Then only below options are selected in the 'Tasks' autocomplete
 	| Options                |
 	| Stage13152 \ Task13152 |
-	And 'Unassigned' value is displayed in the 'Capacity Units' dropdown
+	Then only below options are selected in the 'Capacity Units' autocomplete
+	| Options    |
+	| Unassigned |
 	And 'Device' content is displayed in 'Object Type' dropdown
 	When User selects 'Application' in the 'Object Type' dropdown
 	And User selects "Unassigned" checkbox in the "Capacity Units" field on the Project details page
