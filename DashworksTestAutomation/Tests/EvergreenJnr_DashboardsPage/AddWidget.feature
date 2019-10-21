@@ -213,3 +213,15 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTheOrderByDropdownIsExpandedWithT
 	Then 'Hostname Count distinct ASC' content is displayed in 'Order By' dropdown
 	When User selects 'Hostname DESC' in the 'Order By' dropdown
 	Then 'Hostname DESC' content is displayed in 'Order By' dropdown
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18066 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatTheAppropriateFilterWithTheEmptyValueIsApplied
+	When Dashboard with "DAS18167_Dashboard" name created via API and opened
+	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'ADD WIDGET' button
+	When User creates new Widget
+	| WidgetType | Title             | List             | SplitBy | AggregateFunction | OrderBy    | DrillDown |
+	| Pie        | WidgetForDAS18066 | All Applications | Vendor  | Count             | Count DESC | Yes       |
+	When User clicks on 'Empty' category of 'WidgetForDAS18066' widget
+
+

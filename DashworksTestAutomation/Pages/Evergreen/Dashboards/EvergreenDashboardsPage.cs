@@ -702,5 +702,13 @@ namespace DashworksTestAutomation.Pages
             return columnNumber;
         }
 
+        public IWebElement GetWidgetChartItem(string widgetName, string chartCategory)
+        {
+            var legendColor = Driver.FindElementByXPath($".//h5//span[text()='{widgetName}']/ancestor::div[@class='widget-whole']//*[text()='{chartCategory}']/../following-sibling::*").GetCssValue("background-color");
+
+            return Driver.FindElements(By.XPath($".//h5//span[text()='{widgetName}']/ancestor::div[@class='widget-whole']//*[contains(@class,'highcharts-series-group')]//*"))
+                .First(x => x.GetCssValue("background-color").Equals(legendColor));
+        }
+
     }
 }
