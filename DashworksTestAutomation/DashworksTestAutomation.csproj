@@ -513,6 +513,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ActionsPanelPart13.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateTaskValue\UpdateTaskValuePart2.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UpdateTaskValuePart2.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateTaskValue\UpdateTaskValuePart1.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1667,6 +1672,10 @@
     <None Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\ActionsPanelPart13.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ActionsPanelPart13.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateTaskValue\UpdateTaskValuePart2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UpdateTaskValuePart2.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateTaskValue\UpdateTaskValuePart1.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
