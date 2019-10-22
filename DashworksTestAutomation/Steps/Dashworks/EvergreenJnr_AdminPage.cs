@@ -481,20 +481,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             checkbox.SelectAllCheckBox.Click();
         }
 
-        [Then(@"'Select All' checkbox have full checked state on the Admin page")]
-        public void ThenSelectAllCheckboxHaveFullCheckedStateOnTheAdminPage()
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsTrue(page.SelectAllCheckboxWithFullCheckedState.Displayed(), "State for 'Select All' checkbox is displayed incorrectly");
-        }
-
-        [Then(@"'Select All' checkbox have indeterminate checked state on the Admin page")]
-        public void ThenSelectAllCheckboxHaveIndeterminateCheckedStateOnTheAdminPage()
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsTrue(page.SelectAllCheckboxWithIndeterminateCheckedState.Displayed(), "State for 'Select All' checkbox is displayed incorrectly");
-        }
-
         [When(@"User selects ""(.*)"" checkbox on the Project details page")]
         public void WhenUserSelectCheckboxOnTheProjectDetailsPage(string radioButtonName)
         {

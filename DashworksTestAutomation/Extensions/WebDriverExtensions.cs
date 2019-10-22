@@ -2184,6 +2184,39 @@ namespace DashworksTestAutomation.Extensions
 
         #region Checkbox
 
+        //0 - not checked
+        //1 - indeterminate
+        //2 - all checked
+        public static int GetEvergreenCheckboxTripleState(this RemoteWebDriver driver, IWebElement checkbox)
+        {
+            //Get mat-checkbox webElement
+            var checkboxElement = checkbox.TagName.Equals("mat-checkbox")
+                ? checkbox
+                : checkbox.FindElement(By.XPath(".//ancestor::*[contains(@class,'mat-checkbox')][not(div)]"));
+            var classAttribute = checkboxElement.GetAttribute("class");
+
+            if (classAttribute.Contains("indeterminate"))
+            {
+                return 1;
+            }
+            else
+            {
+                if (!classAttribute.Contains("checked"))
+                {
+                    return 0;
+                }
+                else
+                {
+                    if (classAttribute.Contains("checked"))
+                    {
+                        return 2;
+                    }
+                }
+            }
+
+            throw new Exception("Unable to get checkbox selected state");
+        }
+
         public static void SetEvergreenCheckboxState(this RemoteWebDriver driver, IWebElement checkbox, bool desiredState)
         {
             if (!checkbox.Selected.Equals(desiredState))

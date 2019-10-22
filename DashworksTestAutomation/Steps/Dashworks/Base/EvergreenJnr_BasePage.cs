@@ -785,5 +785,36 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         }
 
         #endregion
+
+        #region Checkbox
+
+        //TODO This is for BaseGrid but method can be changed to generic
+        [Then(@"Select All checkbox have full checked state")]
+        public void ThenSelectAllCheckboxHaveFullCheckedState()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Verify.AreEqual(2, _driver.GetEvergreenCheckboxTripleState(page.SelectAllCheckbox),
+                "'Select all' checkbox is not fully selected");
+        }
+
+        //TODO This is for BaseGrid but method can be changed to generic
+        [Then(@"Select All checkbox have indeterminate checked state")]
+        public void ThenSelectAllCheckboxHaveIndeterminateCheckedState()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Verify.AreEqual(1, _driver.GetEvergreenCheckboxTripleState(page.SelectAllCheckbox),
+                "'Select all' checkbox is not in the indeterminate state");
+        }
+
+        //TODO This is for BaseGrid but method can be changed to generic
+        [Then(@"Select All checkbox have unchecked state")]
+        public void ThenSelectAllCheckboxHaveUncheckedState()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Verify.AreEqual(0, _driver.GetEvergreenCheckboxTripleState(page.SelectAllCheckbox),
+                "'Select all' checkbox is not in the indeterminate state");
+        }
+
+        #endregion
     }
 }
