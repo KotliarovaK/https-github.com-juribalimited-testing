@@ -255,7 +255,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Readiness
         public void WhenUserEntersStoredReadinessNameInTheSearchFieldForColumn(string columnName)
         {
             var searchElement = _driver.NowAt<BaseGridPage>();
-            searchElement.GetSearchFieldByColumnName(columnName, readinessDto.ReadinessName);
+            searchElement.PopulateSearchFieldByColumnName(columnName, readinessDto.ReadinessName);
         }
 
         [Then(@"User checks that opened readiness name is the same as stored one")]

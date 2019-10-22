@@ -445,6 +445,22 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 $"'{dropdownName}' dropdown' is not displayed");
         }
 
+        [Then(@"'(.*)' dropdown is disabled")]
+        public void ThenDropdownIsDisabled(string dropdownName)
+        {
+            var dropdown = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsTrue(dropdown.IsDropdownDisabled(dropdownName),
+                $"{dropdownName} dropdown is not displayed");
+        }
+
+        [Then(@"'(.*)' dropdown is not disabled")]
+        public void ThenDropdownIsNotDisabled(string dropdownName)
+        {
+            var dropdown = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsFalse(dropdown.IsDropdownDisabled(dropdownName),
+                $"'{dropdownName}' dropdown' is not displayed");
+        }
+
         //Exact much
         [Then(@"following Values are displayed in the '(.*)' dropdown:")]
         public void ThenFollowingValuesAreDisplayedInTheDropdown(string dropDownName, Table table)
@@ -634,7 +650,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenMultiselectIsNotDisabled()
         {
             var component = _driver.NowAt<BaseDashboardPage>();
-            Verify.IsFalse(component.GetExpandableMultiselectElement("").Displayed(),
+            Verify.IsFalse(component.GetExpandableMultiselectElement("").Disabled(),
                 "First multiselect on page is disabled");
         }
 
@@ -642,7 +658,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenMultiselectIsNotDisabled(string multiselectTitle)
         {
             var component = _driver.NowAt<BaseDashboardPage>();
-            Verify.IsFalse(component.GetExpandableMultiselectElement(multiselectTitle).Displayed(),
+            Verify.IsFalse(component.GetExpandableMultiselectElement(multiselectTitle).Disabled(),
                 $"''{multiselectTitle}'' multiselect on page is disabled");
         }
 
@@ -703,7 +719,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenButtonIsDisplayed(string buttonName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            Verify.IsTrue(page.GetButtonByName(buttonName, "", WebDriverExtensions.WaitTime.Medium).Displayed(),
+            Verify.IsTrue(page.IsButtonDisplayed(buttonName),
                 $"'{buttonName}' button is displayed");
         }
 
@@ -711,7 +727,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenButtonIsNotDisplayed(string buttonName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            Verify.IsFalse(page.GetButtonByName(buttonName, "", WebDriverExtensions.WaitTime.Short).Displayed(),
+            Verify.IsFalse(page.IsButtonDisplayed(buttonName),
                 $"'{buttonName}' button is displayed");
         }
 
@@ -812,7 +828,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseGridPage>();
             Verify.AreEqual(0, _driver.GetEvergreenCheckboxTripleState(page.SelectAllCheckbox),
-                "'Select all' checkbox is not in the indeterminate state");
+                "'Select all' checkbox is not unchecked");
         }
 
         #endregion

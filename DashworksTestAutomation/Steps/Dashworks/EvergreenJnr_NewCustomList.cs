@@ -180,7 +180,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<CustomListElement>();
             _driver.WaitForDataLoading(45);
-            _driver.WaitForElementToBeDisplayed(page.GetActiveList());
+            _driver.ExecuteAction(() => page.GetActiveList().Displayed());
             Verify.AreEqual(listName, page.GetActiveList().Text, "Incorrect list name is displayed");
         }
 

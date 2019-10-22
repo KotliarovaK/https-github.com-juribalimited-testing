@@ -877,6 +877,18 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             Driver.WaitForDataLoading(50);
         }
 
+        public bool IsButtonDisplayed(string dropdownName)
+        {
+            try
+            {
+                return GetButtonByName(dropdownName, string.Empty, WebDriverExtensions.WaitTime.Short).Displayed();
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         #endregion
 
         #region Menu button
@@ -924,6 +936,18 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             try
             {
                 return GetDropdown(dropdownName, WebDriverExtensions.WaitTime.Short).Displayed();
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool IsDropdownDisabled(string dropdownName)
+        {
+            try
+            {
+                return GetDropdown(dropdownName, WebDriverExtensions.WaitTime.Short).Disabled();
             }
             catch
             {

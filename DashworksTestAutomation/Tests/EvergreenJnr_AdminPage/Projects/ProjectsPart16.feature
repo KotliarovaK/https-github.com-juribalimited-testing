@@ -259,6 +259,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectAllCheckboxIsWorkingCorrectlyOnA
 	When User selects all rows on the grid
 	Then Select All checkbox have indeterminate checked state
 	When User removes selected item
+	Then Success message is displayed and contains "The selected projects have been deleted" text
 	Then Select All checkbox have unchecked state
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12578 @DAS12999 @DAS13429 @Cleanup

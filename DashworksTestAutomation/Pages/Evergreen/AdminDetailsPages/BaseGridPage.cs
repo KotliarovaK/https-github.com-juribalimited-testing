@@ -27,6 +27,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public const string Row = "//div[@col-id='name']//a";
 
+        public string AllCellsInTheGrid = ".//div[@ref='eBodyViewport']//div[@role='gridcell']";
+
         //TODO probably can be changed to something more generic
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'checkbox-styled')]//mat-checkbox//input")]
         public IWebElement SelectAllCheckbox { get; set; }
@@ -46,9 +48,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public IWebElement InputInlineTextbox { get; set; }
 
         #endregion
-
-        [FindsBy(How = How.XPath, Using = ".//a[@href]/img")]
-        public IWebElement DashworksLogo { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'das-mat-tree-node-collapsed')]/following-sibling::ul/*[@mattreenodetoggle]")]
         public IList<IWebElement> MenuTabOptionListOnAdminPage { get; set; }
@@ -85,9 +84,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='rowCount ng-star-inserted']")]
         public IWebElement ListRowsCounter { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//span[text()='CONTINUE']")]
-        public IWebElement ContinueButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//div[@class='panel-expand']")]
         public IWebElement AddObjectsPanelCollapsed { get; set; }
@@ -173,9 +169,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//admin-header/div[@id='messageAdmin' and @role='alert']")]
         public IWebElement Banner { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'empty-message')]")]
-        public IWebElement NoObjectsMessage { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-success')]")]
         public IWebElement SuccessMessage { get; set; }
 
@@ -220,10 +213,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
-            return new List<By>
-            {
-                SelectorFor(this, p => p.DashworksLogo)
-            };
+            return new List<By> { };
         }
 
         public int GetColumnNumberByName(string columnName)
@@ -246,42 +236,48 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return columnNumber;
         }
 
-        public void GetSearchFieldByColumnName(string columnName, string text)
+        //Selector to the Action element below Column header
+        //This can be textbox filter or other
+        private string ActionElementSelector(string columnName)
         {
-            var byControl =
-                By.XPath(
-                    $".//div[@role='presentation']//div[@class='ag-header-row'][2]/div[{GetColumnNumberByName(columnName)}]//div[contains(@class, 'ag-floating-filter')]//div[@class='mat-form-field-infix']//input");
-            Driver.WaitForDataLoading();
-            Driver.WaitForElementToBeDisplayed(byControl);
-            Driver.FindElement(byControl).Click();
-            Driver.FindElement(byControl).Clear();
-            Driver.FindElement(byControl).SendKeys(text);
-            BodyContainer.Click();
+            var results =
+                $".//div[@role='presentation']//div[@class='ag-header-row'][2]/div[{GetColumnNumberByName(columnName)}]//div[@class='ag-floating-filter-full-body']";
+            return results;
         }
 
-        public IWebElement GetFilterByColumnName(string columnName)
-        {
-            var allFilters =
-                Driver.FindElements(By.XPath(".//div[@class='aggrid-input-styled']"));
-            return allFilters[GetColumnNumberByName(columnName) - 1];
-        }
+        #region Search field
 
         public IWebElement GetSearchFieldTextByColumnName(string columnName)
         {
             var selector =
                 By.XPath(
-                    $".//div[@role='presentation']//div[@class='ag-header-row'][2]/div[{GetColumnNumberByName(columnName)}]//div[@class='ag-floating-filter-full-body']//input[@placeholder='Search']");
+                    $"{ActionElementSelector(columnName)}//input[@placeholder='Search']");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
+        public void PopulateSearchFieldByColumnName(string columnName, string text)
+        {
+            var input = GetSearchFieldTextByColumnName(columnName);
+            input.Click();
+            input.Clear();
+            input.SendKeys(text);
+            BodyContainer.Click();
+        }
+
+        #endregion
+
+        #region Dropdown
+
         public IWebElement GetDropdownFilterTextByColumnName(string columnName, string text)
         {
             var selector =
-                By.XPath($".//div[@role='presentation']//div[@class='ag-header-row'][2]/div[{GetColumnNumberByName(columnName)}]//div[@class='ag-floating-filter-full-body']//mat-placeholder[text()='{text}']");
+                By.XPath($"{ActionElementSelector(columnName)}//mat-placeholder[text()='{text}']");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
+
+        #endregion
 
         public void OpenColumnSettingsByName(string columnName)
         {
@@ -342,7 +338,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public string GetTableStringRowNumber(string itemName)
         {
-            return Driver.FindElement(By.XPath($".//div[@ref='eBodyViewport']//div[@role='gridcell']//span[text()='{itemName}']/ancestor::div[@role='row']"))
+            return Driver.FindElement(By.XPath($"{AllCellsInTheGrid}//span[text()='{itemName}']/ancestor::div[@role='row']"))
                 .GetAttribute("row-index");
         }
 
@@ -583,7 +579,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public IList<IWebElement> GetColumnContentByColumnName(string columnName)
         {
-            var selector = 
+            var selector =
                 By.XPath($".//div[@class='ag-center-cols-clipper']//div[contains(@class, 'ag-row')]/div[{GetColumnNumberByName(columnName)}]//*[not(*)]");
             Driver.WaitForDataLoading();
             return Driver.FindElements(selector).ToList();
