@@ -880,7 +880,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFilterLogicForBooleanFieldsIsWorkedC
 	When User add "Secure Boot Enabled" filter where type is "Does not equal" with added column and following checkboxes:
     | SelectedCheckboxes |
     | FALSE              |
-    | UNKNOWN            |
+    | Empty              |
 	Then "Secure Boot Enabled" filter is added to the list
 	Then table data in column is filtered correctly
 

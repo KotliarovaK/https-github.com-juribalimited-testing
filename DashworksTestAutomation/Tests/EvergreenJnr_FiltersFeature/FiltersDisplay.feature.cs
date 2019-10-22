@@ -3915,7 +3915,7 @@ this.FeatureBackground();
             table80.AddRow(new string[] {
                         "FALSE"});
             table80.AddRow(new string[] {
-                        "UNKNOWN"});
+                        "Empty"});
 #line 880
  testRunner.When("User add \"Secure Boot Enabled\" filter where type is \"Does not equal\" with added c" +
                     "olumn and following checkboxes:", ((string)(null)), table80, "When ");

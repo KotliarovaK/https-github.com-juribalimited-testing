@@ -86,13 +86,13 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
         [NUnit.Framework.CategoryAttribute("NewFilterCheck")]
         [NUnit.Framework.CategoryAttribute("DAS10828")]
-        [NUnit.Framework.TestCaseAttribute("Windows7Mi: Target App", "Equals, Does not equal", "WebZIP (A01)", "Windows7Mi: Target App is WebZIP (A01)", "3", null)]
-        [NUnit.Framework.TestCaseAttribute("Babel(Engl: Target App", "Equals, Does not equal", "sndconfig", "Babel(Engl: Target App is sndconfig", "1", null)]
-        [NUnit.Framework.TestCaseAttribute("Barry\'sUse: Target App", "Equals, Does not equal", "World Watch (A01)", "Barry\'sUse: Target App is World Watch (A01)", "1", null)]
-        [NUnit.Framework.TestCaseAttribute("ComputerSc: Target App", "Equals, Does not equal", "World Watch (A01)", "ComputerSc: Target App is World Watch (A01)", "1", null)]
-        [NUnit.Framework.TestCaseAttribute("Havoc(BigD: Target App", "Equals, Does not equal", "WebZIP (A01)", "Havoc(BigD: Target App is WebZIP (A01)", "1", null)]
-        [NUnit.Framework.TestCaseAttribute("MigrationP: Target App", "Equals, Does not equal", "Zune (A01)", "MigrationP: Target App is Zune (A01)", "1", null)]
-        [NUnit.Framework.TestCaseAttribute("UserSchedu: Target App", "Equals, Does not equal", "Zune (A01)", "UserSchedu: Target App is Zune (A01)", "1", null)]
+        [NUnit.Framework.TestCaseAttribute("Windows7Mi: Target App", "Equals, Does not equal, Not empty", "WebZIP (A01)", "Windows7Mi: Target App is WebZIP (A01)", "3", null)]
+        [NUnit.Framework.TestCaseAttribute("Babel(Engl: Target App", "Equals, Does not equal, Not empty", "sndconfig", "Babel(Engl: Target App is sndconfig", "1", null)]
+        [NUnit.Framework.TestCaseAttribute("Barry\'sUse: Target App", "Equals, Does not equal, Not empty", "World Watch (A01)", "Barry\'sUse: Target App is World Watch (A01)", "1", null)]
+        [NUnit.Framework.TestCaseAttribute("ComputerSc: Target App", "Equals, Does not equal, Not empty", "World Watch (A01)", "ComputerSc: Target App is World Watch (A01)", "1", null)]
+        [NUnit.Framework.TestCaseAttribute("Havoc(BigD: Target App", "Equals, Does not equal, Not empty", "WebZIP (A01)", "Havoc(BigD: Target App is WebZIP (A01)", "1", null)]
+        [NUnit.Framework.TestCaseAttribute("MigrationP: Target App", "Equals, Does not equal, Not empty", "Zune (A01)", "MigrationP: Target App is Zune (A01)", "1", null)]
+        [NUnit.Framework.TestCaseAttribute("UserSchedu: Target App", "Equals, Does not equal, Not empty", "Zune (A01)", "UserSchedu: Target App is Zune (A01)", "1", null)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatTargetAppFilterIsAddedToTheList(string columnName, string operators, string filterOption, string text, string rowsCount, string[] exampleTags)
         {
             System.Exception lastException = null;
@@ -1417,7 +1417,7 @@ this.FeatureBackground();
 #line 379
  testRunner.When(string.Format("user select \"{0}\" filter", filterName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 380
- testRunner.Then("\"Off, On\" checkbox is available for this filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"Empty, Off, On\" checkbox is available for this filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

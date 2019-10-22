@@ -21,14 +21,14 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTargetAppFilterIsAddedT
 	Then data in table is sorted by '<ColumnName>' column in ascending order 
 
 Examples:
-	| ColumnName             | Operators              | FilterOption      | Text                                        | RowsCount |
-	| Windows7Mi: Target App | Equals, Does not equal | WebZIP (A01)      | Windows7Mi: Target App is WebZIP (A01)      | 3         |
-	| Babel(Engl: Target App | Equals, Does not equal | sndconfig         | Babel(Engl: Target App is sndconfig         | 1         |
-	| Barry'sUse: Target App | Equals, Does not equal | World Watch (A01) | Barry'sUse: Target App is World Watch (A01) | 1         |
-	| ComputerSc: Target App | Equals, Does not equal | World Watch (A01) | ComputerSc: Target App is World Watch (A01) | 1         |
-	| Havoc(BigD: Target App | Equals, Does not equal | WebZIP (A01)      | Havoc(BigD: Target App is WebZIP (A01)      | 1         |
-	| MigrationP: Target App | Equals, Does not equal | Zune (A01)        | MigrationP: Target App is Zune (A01)        | 1         |
-	| UserSchedu: Target App | Equals, Does not equal | Zune (A01)        | UserSchedu: Target App is Zune (A01)        | 1         |
+	| ColumnName             | Operators                         | FilterOption      | Text                                        | RowsCount |
+	| Windows7Mi: Target App | Equals, Does not equal, Not empty | WebZIP (A01)      | Windows7Mi: Target App is WebZIP (A01)      | 3         |
+	| Babel(Engl: Target App | Equals, Does not equal, Not empty | sndconfig         | Babel(Engl: Target App is sndconfig         | 1         |
+	| Barry'sUse: Target App | Equals, Does not equal, Not empty | World Watch (A01) | Barry'sUse: Target App is World Watch (A01) | 1         |
+	| ComputerSc: Target App | Equals, Does not equal, Not empty | World Watch (A01) | ComputerSc: Target App is World Watch (A01) | 1         |
+	| Havoc(BigD: Target App | Equals, Does not equal, Not empty | WebZIP (A01)      | Havoc(BigD: Target App is WebZIP (A01)      | 1         |
+	| MigrationP: Target App | Equals, Does not equal, Not empty | Zune (A01)        | MigrationP: Target App is Zune (A01)        | 1         |
+	| UserSchedu: Target App | Equals, Does not equal, Not empty | Zune (A01)        | UserSchedu: Target App is Zune (A01)        | 1         |
 
 @Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS10828 @DAS14287
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTargetAppKeyFilterIsAddedToTheList
@@ -377,7 +377,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatOptionsIsAvailableForFiltersOfP
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "<FilterName>" filter
-	Then "Off, On" checkbox is available for this filter
+	Then "Empty, Off, On" checkbox is available for this filter
 
 Examples:
 	| PageName     | FilterName                           |
