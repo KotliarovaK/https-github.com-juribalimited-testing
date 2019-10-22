@@ -128,11 +128,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	When User click on Back button
 	And User selects all rows on the grid
 	Then 'Actions' dropdown is displayed
+	Then 'Actions' dropdown is not disabled
 	When User selects 'Delete' in the 'Actions' dropdown
 	When User clicks 'DELETE' button
 	Then Delete buttons are displayed to the User in Actions and Banner on the Projects page
 	When User cancels the selection of all rows on the Projects page
-	Then 'Actions' dropdown is not displayed
+	Then 'Actions' dropdown is disabled
 	Then 'DELETE' button is not displayed
 	When User enters "NewProjectName" text in the Search field for "Project" column
 	And User clicks content from "Project" column

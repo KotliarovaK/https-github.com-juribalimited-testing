@@ -42,6 +42,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCancelButtonIsDisplayedWithCorrectColo
 	And User selects all rows on the grid
 	Then 'Actions' dropdown is displayed
 	When User selects 'Delete' in the 'Actions' dropdown
+	When User clicks 'DELETE' button
 	Then User sees Cancel button in banner
 	And Cancel button is displayed with correctly color
 	When User clicks Delete button in the warning message
