@@ -97,23 +97,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatProjectFieldIsDisplayedCorrectlyAfte
 	When User clicks 'Action' dropdown
 	Then 'Barry's User Project' content is displayed in 'Project' autocomplete
 
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13142
-Scenario: EvergreenJnr_DevicesList_CheckThatProjectFieldIsDisplayedCorrectlyAfterClearingOnDevicesPage
-	When User clicks 'Devices' on the left-hand menu
-	Then 'All Devices' list should be displayed to the user
-	When User clicks the Actions button
-	Then Actions panel is displayed to the user
-	When User select "Hostname" rows in the grid
-	| SelectedRowsName |
-	| 00KLL9S8NRF0X6   |
-	And User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update path' in the 'Bulk Update Type' dropdown
-	And User selects 'Barry's User Project' option from 'Project' autocomplete
-	And User selects 'Desktop Replacement' option from 'Path' autocomplete
-	When User clears 'Project' autocomplete
-	When User clicks 'Action' dropdown
-	Then 'Barry's User Project' content is displayed in 'Project' autocomplete
-
 @Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13142 @DAS16826
 Scenario: EvergreenJnr_UsersList_CheckThatProjectFieldIsDisplayedCorrectlyAfterClearingOnUsersPage
 	When User clicks 'Users' on the left-hand menu
