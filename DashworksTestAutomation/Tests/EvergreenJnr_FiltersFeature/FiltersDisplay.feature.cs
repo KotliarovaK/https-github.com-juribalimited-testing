@@ -3284,7 +3284,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table72 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
             table72.AddRow(new string[] {
-                        "UNKNOWN"});
+                        "Empty"});
 #line 751
  testRunner.When("User add \"Enabled\" filter where type is \"Equals\" with added column and following " +
                     "checkboxes:", ((string)(null)), table72, "When ");
