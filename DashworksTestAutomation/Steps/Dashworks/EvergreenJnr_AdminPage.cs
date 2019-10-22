@@ -112,13 +112,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Verify.IsTrue(page.EvergreenUnit.Displayed(), "Evergreen Unit is not displayed");
         }
 
-        [Then(@"string filter is displayed for ""(.*)"" column on the Admin Page")]
-        public void ThenStringFilterIsDisplayedForColumnOnTheAdminPage(string columnName)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            Verify.IsFalse(Convert.ToBoolean(page.GetFilterByColumnName(columnName).GetAttribute("readonly")), "PLEASE ADD EXCEPTION MESSAGE");
-        }
-
         [When(@"User selects ""(.*)"" color in the Application Scope tab on the Project details page")]
         public void WhenUserSelectsColorInTheApplicationScopeTabOnTheProjectDetailsPage(string colorName)
         {
@@ -795,7 +788,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             int iteration = 0;
             foreach (var row in table.Rows)
             {
-                dashboardPage.GetSearchFieldByColumnName(columnName, row.Values.FirstOrDefault());
+                dashboardPage.PopulateSearchFieldByColumnName(columnName, row.Values.FirstOrDefault());
                 _driver.WaitForDataLoading();
                 dashboardPage.SelectAllCheckBox.Click();
                 if (iteration != 0)
@@ -1318,7 +1311,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserEntersTextInTheSearchFieldForColumn(string text, string columnName)
         {
             var searchElement = _driver.NowAt<BaseGridPage>();
-            searchElement.GetSearchFieldByColumnName(columnName, text);
+            searchElement.PopulateSearchFieldByColumnName(columnName, text);
             //TODO why we store bucket that was used just for search?
             //Store bucket name for further usage
             if (columnName.Equals("Bucket"))

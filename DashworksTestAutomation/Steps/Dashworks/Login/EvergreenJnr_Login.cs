@@ -143,10 +143,10 @@ namespace DashworksTestAutomation.Steps.Dashworks.Login
         [Then(@"Evergreen Dashboards page should be displayed to the user")]
         public void ThenEvergreenDashboardsPageShouldBeDisplayedToTheUser()
         {
-            var dashboardsPage = _driver.NowAt<BaseDashboardPage>();
+            var dashboardsPage = _driver.NowAt<BaseErrorPage>();
 
-            if (_driver.IsElementExists(dashboardsPage.StatusCodeLabel))
-                throw new Exception("500 error was displayed");
+            if (_driver.IsElementExists(dashboardsPage.StatusCode))
+                throw new Exception($"'{dashboardsPage.StatusCode.Text}'Error was displayed");
 
             Logger.Write("Evergreen Dashboards page is displayed");
         }
