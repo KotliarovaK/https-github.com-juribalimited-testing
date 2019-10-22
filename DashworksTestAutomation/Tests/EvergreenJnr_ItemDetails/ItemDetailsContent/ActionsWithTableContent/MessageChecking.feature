@@ -9,7 +9,7 @@ Background: Pre-Conditions
 Scenario Outline: EvergreenJnr_AllLists_CheckThatErrorsAreNotDisplayedWhenOpenedDetailsPageThatDoesNotContainOwnerInformation
 	When User navigates to the '<PageName>' details page for '<ObjectName>' item
 	Then Details page for "<ObjectName>" item is displayed to the user
-	When User navigates to the "<TabName>" sub-menu on the Details page
+	When User navigates to the '<TabName>' left submenu item
 	Then "<MessageText>" message is displayed on the Details Page
 	And There are no errors in the browser console
 
@@ -25,7 +25,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatCorrectMessageIsDisplayedForDev
 	When User navigates to the 'Application' details page for 'ACT Data Collection Packages' item
 	Then Details page for "ACT Data Collection Packages" item is displayed to the user
 	When User navigates to the 'Distribution' left menu item
-	When User navigates to the "Devices" sub-menu on the Details page
+	When User navigates to the 'Devices' left submenu item
 	Then "No devices found for this application" message is displayed on the Details Page
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17278

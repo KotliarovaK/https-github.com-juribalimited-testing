@@ -12,7 +12,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatRelinkOptionIsWorkedCorrectlyForPr
 	Then Details page for "01A921EFD05545818AA@bclabs.local" item is displayed to the user
 	When User switches to the "USE ME FOR AUTOMATION(MAIL SCHDLD)" project in the Top bar on Item details page
 	And User navigates to the 'Projects' left menu item
-	And User navigates to the "Project Details" sub-menu on the Details page
+	And User navigates to the 'Project Details' left submenu item
 	Then User verifies data in the fields on details page
 	| Field         | Data                             |
 	| Name          | 01A921EFD05545818AA@bclabs.local |
@@ -54,7 +54,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatRelinkOptionIsWorkedCorrectlyForPr
 	When User navigates to the 'User' details page for '04D158C83A0142F3B79' item
 	When User switches to the "USE ME FOR AUTOMATION(MAIL SCHDLD)" project in the Top bar on Item details page
 	When User navigates to the 'Projects' left menu item
-	And User navigates to the "Project Details" sub-menu on the Details page
+	And User navigates to the 'Project Details' left submenu item
 	And User clicks 'OFFBOARD' button 
 	When User clicks 'OFFBOARD' button in Dialog Pop-up
 	And User clicks 'OFFBOARD' button in Dialog Pop-up

@@ -23,7 +23,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
 
         //TODO probably should be replaced by LeftMenuSelector
         private static string MenuSelector = ".//a[text()='{0}']//span[@class='ng-star-inserted']";
-        private static string LeftSubMenuSelector = ".//ul[@class='das-mat-tree-submenu']//a[text()='{0}']";
+        private static string LeftSubMenuSelector = ".//li[contains(@class,'das-mat-tree-node')]//a";
+        private static string LeftParentMenuSelector = ".//li[contains(@class,'das-mat-tree-parent')]//a";
         private static string LeftMenuSelector = ".//li[contains(@class, 'das-mat-tree')]//a[text()='{0}']";
 
         public override List<By> GetPageIdentitySelectors()
@@ -36,6 +37,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
             };
         }
 
+        #region Get Parent/Sub menu
+
         public IWebElement GetLeftMenuByName(string name)
         {
             var selector = By.XPath(string.Format(LeftMenuSelector, name));
@@ -44,20 +47,36 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
             return Driver.FindElement(selector);
         }
 
+        public IWebElement GetSubMenuByName(string name)
+        {
+            Driver.WaitForElementsToBeDisplayed(By.XPath(LeftSubMenuSelector), 30, false);
+            return Driver.FindElements(By.XPath(LeftSubMenuSelector))
+                .First(x => x.Text.Equals(name) && x.Displayed());
+        }
+
+        public IWebElement GetParentMenuByName(string name)
+        {
+            Driver.WaitForElementsToBeDisplayed(By.XPath(LeftParentMenuSelector), 30, false);
+            return Driver.FindElements(By.XPath(LeftParentMenuSelector))
+                .First(x => x.Text.Equals(name) && x.Displayed());
+        }
+
+        public List<IWebElement> GetSubMenuItems(string parentName)
+        {
+            var parentMenu = GetParentMenuByName(parentName);
+            var section = parentMenu.FindElement(By.XPath(".//ancestor::li[contains(@class,'das-mat-tree-parent')]"));
+            var result = section.FindElements(By.XPath(LeftSubMenuSelector)).ToList();
+            return result;
+        }
+
+        #endregion
+
         public IWebElement GetNavigationLinkByName(string linkName)
         {
             var link = By.XPath($".//div[@class='title-container']//a[text()='{linkName}']");
             if (!Driver.IsElementDisplayed(link, WebDriverExtensions.WaitTime.Long))
                 throw new Exception($"'{linkName}' Navigation link was not displayed");
             return Driver.FindElement(link);
-        }
-
-        public IWebElement GetSubMenuByName(string name)
-        {
-            var selector = By.XPath(string.Format(LeftSubMenuSelector, name));
-            if (!Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Long))
-                throw new Exception($"'{name}' Sub menu was not displayed. Displayed condition is '{Driver.IsElementDisplayed(selector)}'");
-            return Driver.FindElement(selector);
         }
 
         public bool GetExpandedTabByName(string tabName)

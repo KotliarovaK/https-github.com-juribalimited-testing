@@ -12,7 +12,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatResyncOptionIsWorkedCorrectlyFo
 	Then Details page for "Borland Together Edition for Microsoft Visual Studio .NET" item is displayed to the user
 	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
 	When User navigates to the 'Projects' left menu item
-	And User navigates to the "Project Details" sub-menu on the Details page
+	And User navigates to the 'Project Details' left submenu item
 	When User clicks 'RESYNC' button 
 	Then Dialog Pop-up is displayed for User
 	Then 'Resync name' checkbox is checked

@@ -160,7 +160,7 @@ Examples:
 Scenario Outline: EvergreenJnr_AllLists_CheckThatComplianceInKeyValueTableMatchesTheOverallComplianceFromTopBarInEvergreenMode
 	When User navigates to the '<PageName>' details page for '<ItemName>' item
 	Then Details page for "<ItemName>" item is displayed to the user
-	When User navigates to the "<SubMenu>" sub-menu on the Details page
+	When User navigates to the '<SubMenu>' left submenu item
 	Then following content is displayed on the Details Page
 	| Title      | Value   |
 	| Compliance | <Value> |
@@ -180,7 +180,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatComplianceInKeyValueTableMatche
 	Then Details page for "<ItemName>" item is displayed to the user
 	When User switches to the "<ProjectName>" project in the Top bar on Item details page
 	And User navigates to the 'Projects' left menu item
-	And User navigates to the "Project Details" sub-menu on the Details page
+	And User navigates to the 'Project Details' left submenu item
 	Then following content is displayed on the Details Page
 	| Title   | Value   |
 	| <Title> | <Value> |
@@ -201,7 +201,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatReadinessValuesIsDisplayedAccor
 	Then Details page for "ACD Display 3.4" item is displayed to the user
 	When User switches to the "Havoc (Big Data)" project in the Top bar on Item details page
 	When User navigates to the 'Projects' left menu item
-	And User navigates to the "Project Details" sub-menu on the Details page
+	And User navigates to the 'Project Details' left submenu item
 	Then following content is displayed on the Details Page
 	| Title         | Value |
 	| Readiness     | RED   |

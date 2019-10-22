@@ -17,7 +17,7 @@ Scenario: EvergreenJnr_DevicesList_CheckCustomFieldDeleting
 	# 17152_-------->| original ObjId 17152
 	And User navigates to the 'Device' details page for 'WIN-KTJC6PMV2P5' item
 	Then Details page for "WIN-KTJC6PMV2P5" item is displayed to the user
-	When User navigates to the "Custom Fields" sub-menu on the Details page
+	When User navigates to the 'Custom Fields' left submenu item
 	#Cancel
 	And User clicks "Delete" option in Cog-menu for "FlDAS16489_1" item on Admin page
 	Then Warning message with "The selected custom field will be permanently deleted" text is displayed on the Project Details Page
@@ -45,7 +45,7 @@ Scenario: EvergreenJnr_MailboxesList_DeleteGroupedCustomFields
 	| mailbox    | 48731    | CfDAS17695_1 | ValueDAS17695_1B |
 	And User navigates to the 'Mailbox' details page for 'gregoja@bclabs.local' item
 	Then Details page for "gregoja@bclabs.local" item is displayed to the user
-	When User navigates to the "Custom Fields" sub-menu on the Details page
+	When User navigates to the 'Custom Fields' left submenu item
 	When User clicks Group By button on the Admin page and selects "Value" value
 	Then Cog menu is not displayed on the Admin page
 	When User expands 'ValueDAS17695_1A' row in the groped grid

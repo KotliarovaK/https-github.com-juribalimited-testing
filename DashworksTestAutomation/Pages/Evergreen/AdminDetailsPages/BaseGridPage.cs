@@ -49,9 +49,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         #endregion
 
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'das-mat-tree-node-collapsed')]/following-sibling::ul/*[@mattreenodetoggle]")]
-        public IList<IWebElement> MenuTabOptionListOnAdminPage { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//li//label//span[@class='mat-checkbox-label']")]
         public IList<IWebElement> DropdownTaskItemsList { get; set; }
 

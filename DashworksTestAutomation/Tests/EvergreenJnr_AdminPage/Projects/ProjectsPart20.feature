@@ -138,7 +138,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectDetailsIsPopulatedOnTheAdminPag
 	Then 'Capacity Mode' dropdown is displayed
 	Then 'Capacity Units' dropdown is displayed
 	Then "90" content is displayed in "Percentage capacity to reach before showing amber" field
-	Then Menu options are displayed in the following order on the Admin page:
+	Then 'Capacity' left menu have following submenu items:
 	| Options          |
 	| Capacity Details |
 	| Units            |

@@ -1411,15 +1411,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 "Text in search field is different");
         }
 
-        [Then(@"Menu options are displayed in the following order on the Admin page:")]
-        public void ThenMenuOptionsAreDisplayedInTheFollowingOrderOnTheAdminPage(Table table)
-        {
-            var action = _driver.NowAt<BaseGridPage>();
-            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            var actualList = action.MenuTabOptionListOnAdminPage.Select(value => value.Text).ToList();
-            Verify.AreEqual(expectedList, actualList, "Menu options are different");
-        }
-
         //TODO move to the BaseGrid
         [Then(@"""(.*)"" column content is displayed in the following order:")]
         public void ThenColumnContentIsDisplayedInTheFollowingOrder(string columnName, Table table)

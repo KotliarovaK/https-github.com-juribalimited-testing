@@ -9,7 +9,7 @@ Background: Pre-Conditions
 Scenario: EvergreenJnr_ApplicationsList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForDetailsTabAdvertisementsOnApplicationsPage
 	When User navigates to the 'Application' details page for 'Accessible FormNet Fill 2.2' item
 	Then Details page for "Accessible FormNet Fill 2.2" item is displayed to the user
-	When User navigates to the "Advertisements" sub-menu on the Details page
+	When User navigates to the 'Advertisements' left submenu item
 	Then 'TRUE' content is displayed in the 'Active' column
 	When User clicks String Filter button for "Active" column
 	Then following Boolean Values are displayed in the filter on the Details Page
@@ -22,7 +22,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatOnlyValueIncludedInTheColumnIsD
 	When User navigates to the 'Application' details page for 'Accessible FormNet Fill 2.2' item
 	Then Details page for "Accessible FormNet Fill 2.2" item is displayed to the user
 	When User navigates to the 'MSI' left menu item
-	When User navigates to the "MSI Files" sub-menu on the Details page
+	When User navigates to the 'MSI Files' left submenu item
 	And User have opened Column Settings for "File Name" column in the Details Page table
 	And User clicks Column button on the Column Settings panel
 	And User select "Product Code" checkbox on the Column Settings panel
@@ -45,7 +45,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatOnlyValueIncludedInTheColumnIsD
 	| Values |
 	| GREEN  |
 	When User closes Checkbox filter for "Compliance" column
-	When User navigates to the "AOK" sub-menu on the Details page
+	When User navigates to the 'AOK' left submenu item
 	Then 'AOK Import' content is displayed in the 'Source' column
 	Then 'Windows 7' content is displayed in the 'AOK Report' column
 	Then 'GREEN' content is displayed in the 'Compatibility' column
@@ -70,7 +70,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatOnlyValueIncludedInTheColumnIsD
 	When User navigates to the 'Application' details page for 'Accessible FormNet Fill 2.2' item
 	Then Details page for "Accessible FormNet Fill 2.2" item is displayed to the user
 	When User navigates to the 'Distribution' left menu item
-	When User navigates to the "Devices" sub-menu on the Details page
+	When User navigates to the 'Devices' left submenu item
 	Then 'TRUE' content is displayed in the 'Installed' column
 	Then 'UNKNOWN' content is displayed in the 'Used' column
 	Then 'TRUE' content is displayed in the 'Entitled' column
@@ -89,7 +89,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatOnlyValueIncludedInTheColumnIsD
 	| Values |
 	| True   |
 	When User closes Checkbox filter for "Entitled" column
-	When User navigates to the "AD" sub-menu on the Details page
+	When User navigates to the 'AD' left submenu item
 	Then 'UK' content is displayed in the 'Domain' column
 	When User clicks String Filter button for "Domain" column
 	Then following String Values are displayed in the filter on the Details Page

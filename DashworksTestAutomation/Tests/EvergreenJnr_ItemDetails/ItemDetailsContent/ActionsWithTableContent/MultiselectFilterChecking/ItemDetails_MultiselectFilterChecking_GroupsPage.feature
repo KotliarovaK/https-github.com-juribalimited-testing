@@ -11,7 +11,7 @@ Scenario: EvergreenJnr_GroupsList_CheckThatOnlyValueIncludedInTheColumnIsDisplay
 	Then User clicks on "Schema Admins" search result
 	And Details page for "Schema Admins" item is displayed to the user
 	When User navigates to the 'Members' left menu item
-	When User navigates to the "User Members" sub-menu on the Details page
+	When User navigates to the 'User Members' left submenu item
 	Then 'DEV50' content is displayed in the 'Domain' column
 	Then 'TRUE' content is displayed in the 'Enabled' column
 	When User have opened Column Settings for "Username" column in the Details Page table
