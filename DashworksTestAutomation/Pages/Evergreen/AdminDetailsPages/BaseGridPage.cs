@@ -47,9 +47,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         #endregion
 
-        [FindsBy(How = How.XPath, Using = ".//div[@id='pagetitle-text']/descendant::h1")]
-        public IWebElement PageTitle { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//a[@href]/img")]
         public IWebElement DashworksLogo { get; set; }
 
@@ -208,9 +205,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='empty-message ng-star-inserted'][text()='No items']")]
         public IWebElement NoItemsMessage { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div//span[text()='403']//ancestor::div//div[@class='error-message-box']")]
-        public IWebElement Error403 { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//mat-error/span/i[@class='material-icons mat-warning']")]
         public IWebElement UnderFieldWarningIcon { get; set; }

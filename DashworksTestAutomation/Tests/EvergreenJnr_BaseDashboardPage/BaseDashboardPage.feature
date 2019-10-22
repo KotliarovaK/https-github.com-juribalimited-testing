@@ -304,9 +304,9 @@ Scenario: EvergreenJnr_UsersList_CheckThatFullPpageWith403ErrorIsDisplayedCorrec
 	| DAS16558 | 1234qwer |
 	Then Dashworks homepage is displayed to the user in a logged in state
 	When User clicks the Switch to Evergreen link
-	Then Error page is displayed correctly
+	Then error page with '403' status code and 'You are not authorized to view this page, speak to your Dashworks administrator' error message is displayed
 	When User clicks 'Admin' hidden left-hand menu
-	Then Error page is displayed correctly
+	Then error page with '403' status code and 'You are not authorized to view this page, speak to your Dashworks administrator' error message is displayed
 	When User clicks 'Devices' hidden left-hand menu
 	When User clicks the Logout button
 	Then User is logged out

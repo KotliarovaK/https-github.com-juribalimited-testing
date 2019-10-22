@@ -220,6 +220,7 @@
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Automations\ActionsPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Automations\CreateAutomationsPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Automations\CreateActionsPage.cs" />
+    <Compile Include="Pages\Evergreen\Base\BaseErrorPage.cs" />
     <Compile Include="Pages\Evergreen\Base\BaseHeaderElement.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateReadinessPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\RingsPage.cs" />
@@ -375,6 +376,7 @@
     <Compile Include="Steps\Dashworks\AdminPage\Teams\Api\CreateTeamViaApi.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Teams\BeforeScenario\SaveDefaultTeamBeforeScenario.cs" />
     <Compile Include="Steps\Dashworks\Base\EvergreenJnr_BaseDialog.cs" />
+    <Compile Include="Steps\Dashworks\Base\EvergreenJnr_BaseErrorPage.cs" />
     <Compile Include="Steps\Dashworks\Base\EvergreenJnr_BaseGrid.cs" />
     <Compile Include="Steps\Dashworks\Base\EvergreenJnr_BaseHeader.cs" />
     <Compile Include="Steps\Dashworks\Base\EvergreenJnr_BasePage.cs" />

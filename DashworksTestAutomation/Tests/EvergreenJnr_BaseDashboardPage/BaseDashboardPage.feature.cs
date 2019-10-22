@@ -1438,11 +1438,13 @@ this.FeatureBackground();
 #line 306
  testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 307
- testRunner.Then("Error page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("error page with \'403\' status code and \'You are not authorized to view this page, " +
+                    "speak to your Dashworks administrator\' error message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 308
  testRunner.When("User clicks \'Admin\' hidden left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 309
- testRunner.Then("Error page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("error page with \'403\' status code and \'You are not authorized to view this page, " +
+                    "speak to your Dashworks administrator\' error message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 310
  testRunner.When("User clicks \'Devices\' hidden left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 311
