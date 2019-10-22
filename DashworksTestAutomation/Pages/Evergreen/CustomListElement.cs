@@ -101,7 +101,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IWebElement GetActiveList()
         {
-            Driver.WaitForAnyElementToContainsTextInAttribute(ListElementsInListsPanel.Select(x => x.FindElement(ListSubMenusInListsPanel)).ToList(),
+            Driver.WaitForAnyElementToContainsTextInAttribute(ListElementsInListsPanel.Select(x => x.FindElement(ListSubMenusInListsPanel)),
                 "active", "class");
             return ListElementsInListsPanel.Select(x => x.FindElement(ListSubMenusInListsPanel))
                 .FirstOrDefault(WebElementExtensions.IsElementActive);

@@ -1741,7 +1741,7 @@ namespace DashworksTestAutomation.Extensions
             WaitElementContainsTextInAttribute(driver, selector, expectedText, attribute, true, waitSec);
         }
 
-        public static void WaitForAnyElementToContainsTextInAttribute(this RemoteWebDriver driver, List<IWebElement> elements, string expectedText, string attribute, int waitSec = WaitTimeoutSeconds)
+        public static void WaitForAnyElementToContainsTextInAttribute(this RemoteWebDriver driver, IEnumerable<IWebElement> elements, string expectedText, string attribute, int waitSec = WaitTimeoutSeconds)
         {
             WaitElementContainsTextInAttribute(driver, elements, expectedText, attribute, true, waitSec);
         }
@@ -1772,7 +1772,7 @@ namespace DashworksTestAutomation.Extensions
             }
         }
 
-        private static void WaitElementContainsTextInAttribute(this RemoteWebDriver driver, IList<IWebElement> elements, string expectedText, string attribute, bool condition, int waitSec)
+        private static void WaitElementContainsTextInAttribute(this RemoteWebDriver driver, IEnumerable<IWebElement> elements, string expectedText, string attribute, bool condition, int waitSec)
         {
             try
             {
@@ -1840,7 +1840,7 @@ namespace DashworksTestAutomation.Extensions
             };
         }
 
-        private static Func<IWebDriver, bool> TextToBeContainsInElementAttribute(IList<IWebElement> elements, string text, string attribute, bool condition)
+        private static Func<IWebDriver, bool> TextToBeContainsInElementAttribute(IEnumerable<IWebElement> elements, string text, string attribute, bool condition)
         {
             return (driver) =>
             {
