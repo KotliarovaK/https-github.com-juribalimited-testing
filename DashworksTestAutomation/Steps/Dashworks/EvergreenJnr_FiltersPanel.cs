@@ -1582,5 +1582,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             Verify.That(actualState, Is.EqualTo(state), "Wrong Remove icon state");
         }
+
+        [When(@"User removes '(.*)' association in Association panel")]
+        public void WhenUserRemovesФssociationInAssociationPanel(string option)
+        {
+            var page = _driver.NowAt<FiltersElement>();
+            page.RemoveIconForAssociation(option).Click();
+        }
     }
 }

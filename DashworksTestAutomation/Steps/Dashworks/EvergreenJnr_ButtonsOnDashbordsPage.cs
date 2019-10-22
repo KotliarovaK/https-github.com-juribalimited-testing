@@ -64,6 +64,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
             menu.FilterButton.Click();
             _driver.WaitForDataLoading();
         }
+        
+        [When(@"User clicks the Associations button")]
+        public void WhenUserClicksTheAssociationButton()
+        {
+            var menu = _driver.NowAt<BaseHeaderElement>();
+            _driver.WaitForDataLoading();
+            _driver.WaitForDataLoadingInActionsPanel();
+            _driver.WaitForElementToBeDisplayed(menu.AssociationButton);
+            menu.AssociationButton.Click();
+            _driver.WaitForDataLoading();
+        }
 
         [Then(@"Create Project button is disabled on the Base Dashboard Page")]
         public void ThenCreateProjectButtonIsDisabledOnTheBaseDashboardPage()
