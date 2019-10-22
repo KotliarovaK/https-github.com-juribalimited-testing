@@ -750,7 +750,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatRelevantDataSetBeDisplayedAfterResetti
 	Then Filters panel is displayed to the user
 	When User add "Enabled" filter where type is "Equals" with added column and following checkboxes:
     | SelectedCheckboxes |
-    | UNKNOWN            |
+    | Empty            |
 	Then "Enabled" filter is added to the list
 	And message 'No users found' is displayed to the user
 	When User have reset all filters
