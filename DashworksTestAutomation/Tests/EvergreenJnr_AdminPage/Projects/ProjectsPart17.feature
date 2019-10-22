@@ -76,7 +76,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCo
 	Then There are no errors in the browser console
 	When User navigates to the 'Scope' left menu item
 	And User navigates to the 'Scope Changes' left menu item
-	Then "Match to Evergreen Bucket" is displayed in the Bucket dropdown
+	Then 'Match to Evergreen Bucket' content is displayed in 'Bucket' dropdown
 
 @Evergreen @AllLists @EvergreenJnr_AdminPage @AdminPage @Projects @DAS11886 @DAS12613 @DAS13199 @Cleanup @Project_Creation_and_Scope
 Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeletingUsedForProjectLists 

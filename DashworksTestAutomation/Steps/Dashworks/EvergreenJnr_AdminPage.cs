@@ -1099,22 +1099,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Thread.Sleep(3000);
         }
 
-        [When(@"user selects ""(.*)"" in the Bucket dropdown")]
-        public void WhenUserSelectsInTheBucketDropdown(string objectName)
-        {
-            var projectElement = _driver.NowAt<ProjectsPage>();
-            projectElement.BucketDropdown.Click();
-            projectElement.SelectObjectForProjectCreation(objectName);
-        }
-
-        [Then(@"""(.*)"" is displayed in the Bucket dropdown")]
-        public void ThenIsDisplayedInTheBucketDropdown(string textBucket)
-        {
-            var projectElement = _driver.NowAt<ProjectsPage>();
-            Utils.Verify.IsTrue(projectElement.BucketDropdownDisplay(textBucket),
-                "Incorrect text is displayed in the Bucket dropdown");
-        }
-
         [When(@"User changes Project Name to ""(.*)""")]
         public void WhenUserChangesProjectNameTo(string projectName)
         {

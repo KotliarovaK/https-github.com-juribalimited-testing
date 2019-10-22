@@ -112,7 +112,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingBucketFromUseEvergreenBucketsToCloneEve
 	Then There are no errors in the browser console
 	When User navigates to the 'Scope' left menu item
 	And User navigates to the 'Scope Changes' left menu item
-	Then "Match to Evergreen Bucket" is displayed in the Bucket dropdown
+	Then 'Match to Evergreen Bucket' content is displayed in 'Bucket' dropdown
 	When User clicks 'Administration' header breadcrumb
 	When User navigates to the 'Evergreen' left menu item
 	When User navigates to the 'Buckets' left menu item

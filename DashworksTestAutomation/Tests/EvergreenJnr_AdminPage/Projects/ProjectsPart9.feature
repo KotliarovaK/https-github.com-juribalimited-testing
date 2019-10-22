@@ -25,7 +25,7 @@ Scenario Outline: EvergreenJnr_AdminPage_ChangingBucketFromCloneEvergreenBuckets
 	Then There are no errors in the browser console
 	When User navigates to the 'Scope' left menu item
 	And User navigates to the 'Scope Changes' left menu item
-	Then "Unassigned" is displayed in the Bucket dropdown
+	Then 'Unassigned' content is displayed in 'Bucket' dropdown
 	And There are no errors in the browser console
 
 Examples:
