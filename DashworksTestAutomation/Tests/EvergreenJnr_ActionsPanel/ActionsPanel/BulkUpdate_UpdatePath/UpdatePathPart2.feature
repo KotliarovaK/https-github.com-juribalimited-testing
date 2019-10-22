@@ -1,5 +1,5 @@
-﻿Feature: ActionsPanelPart4
-	Runs Actions Panel related tests
+﻿Feature: UpdatePathPart2
+	Runs Bulk Update Update path related tests
 
 Background: Pre-Conditions
 	Given User is logged in to the Evergreen
@@ -97,6 +97,23 @@ Scenario: EvergreenJnr_DevicesList_CheckThatProjectFieldIsDisplayedCorrectlyAfte
 	When User clicks 'Action' dropdown
 	Then 'Barry's User Project' content is displayed in 'Project' autocomplete
 
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13142
+Scenario: EvergreenJnr_DevicesList_CheckThatProjectFieldIsDisplayedCorrectlyAfterClearingOnDevicesPage
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00KLL9S8NRF0X6   |
+	And User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update path' in the 'Bulk Update Type' dropdown
+	And User selects 'Barry's User Project' option from 'Project' autocomplete
+	And User selects 'Desktop Replacement' option from 'Path' autocomplete
+	When User clears 'Project' autocomplete
+	When User clicks 'Action' dropdown
+	Then 'Barry's User Project' content is displayed in 'Project' autocomplete
+
 @Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13142 @DAS16826
 Scenario: EvergreenJnr_UsersList_CheckThatProjectFieldIsDisplayedCorrectlyAfterClearingOnUsersPage
 	When User clicks 'Users' on the left-hand menu
@@ -121,3 +138,83 @@ Scenario: EvergreenJnr_UsersList_CheckThatProjectFieldIsDisplayedCorrectlyAfterC
 	When User clears 'Project' autocomplete
 	When User clicks 'Action' dropdown
 	Then 'Havoc (Big Data)' content is displayed in 'Project' autocomplete
+
+@Evergreen @Applications @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13142 @DAS12864 @DAS13270
+Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectFieldIsDisplayedCorrectlyAfterClearingOnApplicationsPage
+	When User clicks 'Applications' on the left-hand menu
+	Then 'All Applications' list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Application" rows in the grid
+	| SelectedRowsName                         |
+	| 0047 - Microsoft Access 97 SR-2 Francais |
+	And User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update path' in the 'Bulk Update Type' dropdown
+	Then 'Project' autocomplete options are sorted in the alphabetical order
+	When User selects 'User Scheduled Test (Jo)' option from 'Project' autocomplete
+	And User selects 'Request Type A' option from 'Path' autocomplete
+	When User clears 'Project' autocomplete
+	When User clicks 'Action' dropdown
+	Then 'User Scheduled Test (Jo)' content is displayed in 'Project' autocomplete
+
+@Evergreen @Mailboxes @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13142 @DAS16826
+Scenario: EvergreenJnr_MailboxesList_CheckThatProjectFieldIsDisplayedCorrectlyAfterClearingOnMailboxesPage
+	When User clicks 'Mailboxes' on the left-hand menu
+	Then 'All Mailboxes' list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Email Address" rows in the grid
+	| SelectedRowsName                 |
+	| 00A5B910A1004CF5AC4@bclabs.local |
+	And User selects 'Bulk update' in the 'Action' dropdown
+	Then following Values are displayed in the 'Bulk Update Type' dropdown:
+	| Options              |
+	| Update bucket        |
+	| Update capacity unit |
+	| Update custom field  |
+	| Update path          |
+	| Update ring          |
+	| Update task value    |
+	When User selects 'Update path' in the 'Bulk Update Type' dropdown
+	And User selects 'Email Migration' option from 'Project' autocomplete
+	And User selects 'Personal Mailbox - VIP' option from 'Path' autocomplete
+	When User clears 'Project' autocomplete
+	When User clicks 'Action' dropdown
+	Then 'Email Migration' content is displayed in 'Project' autocomplete
+
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS16125
+Scenario: EvergreenJnr_DevicesList_CheckThatChangingProjectOrEvergreenDoesNotMakeBrowserTabUnresponsiveAndDoesNotLoadTheClientProcessor
+	When User clicks 'Devices' on the left-hand menu
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00CWZRC4UK6W20   |
+	| 00HA7MKAVVFDAV   |
+	And User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
+	And User selects 'Evergreen' in the 'Project or Evergreen' dropdown
+	And User selects 'London - Southbank' option from 'Capacity Unit' autocomplete
+	#====#
+	And User selects 'Update path' in the 'Bulk Update Type' dropdown
+	And User selects 'I-Computer Scheduled Project' option from 'Project' autocomplete
+	And User selects '[Default (Computer)]' option from 'Path' autocomplete
+	#====#
+	And User selects 'Update ring' in the 'Bulk Update Type' dropdown
+	And User selects 'Project' in the 'Project or Evergreen' dropdown
+	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
+	And User selects 'Unassigned' option from 'Ring' autocomplete
+	And User selects 'Evergreen' in the 'Project or Evergreen' dropdown
+	And User selects 'Evergreen Ring 1' option from 'Ring' autocomplete
+	#====#
+	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	And User selects 'Babel (English, German and French)' option from 'Project' autocomplete
+	And User selects 'Initiation' option from 'Stage' autocomplete
+	And User selects 'Scheduled Date' option from 'Task' autocomplete
+	#====#
+	And User selects 'Update bucket' in the 'Bulk Update Type' dropdown
+	And User selects 'Evergreen' in the 'Project or Evergreen' dropdown
+	And User selects 'Evergreen Bucket 1' option from 'Bucket' autocomplete
+	And User clicks 'UPDATE' button 
+	When User clicks 'UPDATE' button
+	Then Success message with "2 updates have been queued" text is displayed on Action panel
