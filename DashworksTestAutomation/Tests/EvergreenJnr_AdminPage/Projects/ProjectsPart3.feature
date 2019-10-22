@@ -126,7 +126,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	And User navigates to the 'Devices' tab on Project Scope Changes page
 	Then "[Default (Computer)]" Path is displayed to the user
 	And "[None]" Category is displayed to the user
-	And "Unassigned" is displayed in the Bucket dropdown
+	And 'Unassigned' content is displayed in 'Bucket' dropdown
 	When User expands multiselect and selects following Objects
 	| Objects        |
 	| 0IJB93JZPG72PX |
@@ -141,7 +141,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	When User navigates to the 'Users' tab on Project Scope Changes page
 	Then "[Default (User)]" Path is displayed to the user
 	And "[None]" Category is displayed to the user
-	And "Unassigned" is displayed in the Bucket dropdown
+	And 'Unassigned' content is displayed in 'Bucket' dropdown
 	When User expands multiselect and selects following Objects
 	| Objects                        |
 	| ABQ575757 (Salvador K. Waller) |

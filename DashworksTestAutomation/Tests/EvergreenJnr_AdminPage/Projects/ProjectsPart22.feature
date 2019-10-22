@@ -20,7 +20,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatMatchToEvergreenBucketDisplaye
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	And User navigates to the 'Scope Changes' left menu item
-	Then "Match to Evergreen Bucket" is displayed in the Bucket dropdown
+	Then 'Match to Evergreen Bucket' content is displayed in 'Bucket' dropdown
 
 Examples:
 	| ScopeList     |
