@@ -496,6 +496,8 @@ namespace DashworksTestAutomation.Extensions
             IJavaScriptExecutor ex = driver;
 
             var clientHeight = int.Parse(ex.ExecuteScript("return arguments[0].clientHeight", gridElement).ToString());
+            if (clientHeight <= 0)
+                throw new Exception("Unable to get client Height");
             var scrollHeight = int.Parse(ex.ExecuteScript("return arguments[0].scrollHeight", gridElement).ToString());
 
             for (int i = 0; i < scrollHeight / clientHeight; i++)

@@ -6,6 +6,7 @@ using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
@@ -407,6 +408,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void WhenUserScrollsGridToTheBottom()
         {
             var page = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForElementsToBeDisplayed(By.XPath(page.AllCellsInTheGrid));
             _driver.ScrollGridToTheEnd(page.TableBody);
         }
 

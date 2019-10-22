@@ -27,6 +27,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public const string Row = "//div[@col-id='name']//a";
 
+        public string AllCellsInTheGrid = ".//div[@ref='eBodyViewport']//div[@role='gridcell']";
+
         //TODO probably can be changed to something more generic
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'checkbox-styled')]//mat-checkbox//input")]
         public IWebElement SelectAllCheckbox { get; set; }
@@ -336,7 +338,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public string GetTableStringRowNumber(string itemName)
         {
-            return Driver.FindElement(By.XPath($".//div[@ref='eBodyViewport']//div[@role='gridcell']//span[text()='{itemName}']/ancestor::div[@role='row']"))
+            return Driver.FindElement(By.XPath($"{AllCellsInTheGrid}//span[text()='{itemName}']/ancestor::div[@role='row']"))
                 .GetAttribute("row-index");
         }
 

@@ -22,10 +22,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
-            return new List<By>
-            {
-                SelectorFor(this, p => p.StatusCode)
-            };
+            return new List<By> { };
         }
 
         public void VerifyStatusCode(string statusCode)
