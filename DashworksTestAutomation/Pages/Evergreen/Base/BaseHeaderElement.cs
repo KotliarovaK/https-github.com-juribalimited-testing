@@ -51,7 +51,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         public void CheckPageHeader(string text)
         {
-            Verify.AreEqual(text.ToLower(), Header.Text.ToLower(), "Incorrect page header");
+            Driver.WaitForElementToHaveText(Header, text, 10, false);
+            Verify.AreEqual(text, Header.Text, "Incorrect page header");
         }
 
         public void CheckPageHeaderContainsText(string text)
