@@ -248,7 +248,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         {
             var selector =
                 By.XPath(
-                    $"{ActionElementSelector(columnName)}//input[@placeholder='Search']");
+                    $"{ActionElementSelector(columnName)}//input");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
