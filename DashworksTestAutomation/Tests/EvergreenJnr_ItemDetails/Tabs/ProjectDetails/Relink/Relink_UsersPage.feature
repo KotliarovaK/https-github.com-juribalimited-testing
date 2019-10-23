@@ -12,7 +12,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatRelinkOptionIsWorkedCorrectlyForProjec
 	Then Details page for "ZZR457072" item is displayed to the user
 	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
 	And User navigates to the 'Projects' left menu item
-	And User navigates to the "Project Details" sub-menu on the Details page
+	And User navigates to the 'Project Details' left submenu item
 	Then following content is displayed on the Details Page
 	| Title | Value     |
 	| Name  | ZZR457072 |
@@ -42,10 +42,10 @@ Scenario: EvergreenJnr_UsersList_CheckThatRelinkOptionIsWorkedCorrectlyForProjec
 	| Title | Value      |
 	| Name  | DSF4350513 |
 	When User navigates to the 'Applications' left menu item
-	And User navigates to the "Evergreen Summary" sub-menu on the Details page
+	And User navigates to the 'Evergreen Summary' left submenu item
 	Then "11" rows found label displays on Details Page
 	When User navigates to the 'Projects' left menu item
-	And User navigates to the "Project Details" sub-menu on the Details page
+	And User navigates to the 'Project Details' left submenu item
 	And User clicks 'RELINK' button
 	And User enters 'ZZR457072' in the 'User' autocomplete field and selects 'ZZR457072' value
 	And User clicks 'RELINK' button in Dialog Pop-up

@@ -727,7 +727,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
             table10.AddRow(new string[] {
-                        "None"});
+                        "Empty"});
 #line 134
  testRunner.When(string.Format("User add \"{0}\" filter where type is \"Equals\" without added column and following c" +
                         "heckboxes:", filterName), ((string)(null)), table10, "When ");
@@ -747,7 +747,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
             table11.AddRow(new string[] {
-                        "None"});
+                        "Empty"});
 #line 143
  testRunner.When(string.Format("User add \"{0}\" filter where type is \"Equals\" without added column and following c" +
                         "heckboxes:", filterName), ((string)(null)), table11, "When ");
@@ -3284,7 +3284,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table72 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
             table72.AddRow(new string[] {
-                        "UNKNOWN"});
+                        "Empty"});
 #line 751
  testRunner.When("User add \"Enabled\" filter where type is \"Equals\" with added column and following " +
                     "checkboxes:", ((string)(null)), table72, "When ");
@@ -3915,7 +3915,7 @@ this.FeatureBackground();
             table80.AddRow(new string[] {
                         "FALSE"});
             table80.AddRow(new string[] {
-                        "UNKNOWN"});
+                        "Empty"});
 #line 880
  testRunner.When("User add \"Secure Boot Enabled\" filter where type is \"Does not equal\" with added c" +
                     "olumn and following checkboxes:", ((string)(null)), table80, "When ");
@@ -7419,7 +7419,7 @@ this.FeatureBackground();
 #line 1678
  testRunner.And("User clicks Save filter button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1679
- testRunner.Then("Column \"1803: Pre-Migration \\ Scheduled Date (Slot)\" with no data displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Column \'1803: Pre-Migration \\ Scheduled Date (Slot)\' with no data displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

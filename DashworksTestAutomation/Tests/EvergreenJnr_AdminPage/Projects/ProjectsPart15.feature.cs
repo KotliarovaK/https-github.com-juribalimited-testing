@@ -192,7 +192,7 @@ this.FeatureBackground();
 #line 32
  testRunner.Then("Page with \'UsersProject3\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 33
- testRunner.When("user selects \"UsersProject3Group\" in the Bucket dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'UsersProject3Group\' in the \'Bucket\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});

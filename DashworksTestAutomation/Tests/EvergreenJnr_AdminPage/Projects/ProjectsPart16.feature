@@ -248,15 +248,19 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectAllCheckboxIsWorkingCorrectlyOnA
 	And created Project with "2Checkbox11758" name is displayed correctly
 	And created Project with "3Checkbox11758" name is displayed correctly
 	When User selects all rows on the grid
-	Then 'Select All' checkbox have full checked state on the Admin page
+	Then Select All checkbox have full checked state
 	When User select "Project" rows in the grid
 	| SelectedRowsName |
 	| 1Checkbox11758   |
-	Then 'Select All' checkbox have indeterminate checked state on the Admin page
+	Then Select All checkbox have indeterminate checked state
+	When User deselect all rows on the grid
+	Then Select All checkbox have unchecked state
+	When User enters "Checkbox11758" text in the Search field for "Project" column
 	When User selects all rows on the grid
-	And User enters "Checkbox11758" text in the Search field for "Project" column
-	When User selects all rows on the grid
-	And User removes selected item
+	Then Select All checkbox have indeterminate checked state
+	When User removes selected item
+	Then Success message is displayed and contains "The selected projects have been deleted" text
+	Then Select All checkbox have unchecked state
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12578 @DAS12999 @DAS13429 @Cleanup
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatTheEditListFunctionIsHiddenAfterCancelingCreatingProjectFromTheMainLists

@@ -9,7 +9,7 @@ Background: Pre-Conditions
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatDisabledDistributionSectionCantBeEnteredByUsingTheBackButtonInTheBrowser
 	When User navigates to the 'Application' details page for 'ACD Display 3.4' item
 	When User navigates to the 'Distribution' left menu item
-	When User navigates to the "Devices" sub-menu on the Details page
+	When User navigates to the 'Devices' left submenu item
 	When User switches to the "Email Migration" project in the Top bar on Item details page
 	Then User click back button in the browser
 	Then "Distribution" tab-menu on the Details page is expanded
@@ -26,7 +26,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatVerticalMenuIsUnfoldedCorrectlyOnMen
 	Then "Applications" tab-menu on the Details page is not expanded
 	Then "Compliance" tab-menu on the Details page is not expanded
 	When User navigates to the 'Projects' left menu item
-	When User navigates to the "Projects Summary" sub-menu on the Details page
+	When User navigates to the 'Projects Summary' left submenu item
 	Then "Projects" tab-menu on the Details page is expanded
 	Then "Details" tab-menu on the Details page is not expanded
 	Then "Specification" tab-menu on the Details page is not expanded
@@ -34,7 +34,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatVerticalMenuIsUnfoldedCorrectlyOnMen
 	Then "Applications" tab-menu on the Details page is not expanded
 	Then "Compliance" tab-menu on the Details page is not expanded
 	When User navigates to the 'Active Directory' left menu item
-	When User navigates to the "Active Directory" sub-menu on the Details page
+	When User navigates to the 'Active Directory' left submenu item
 	Then "Active Directory" tab-menu on the Details page is expanded
 	Then "Details" tab-menu on the Details page is not expanded
 	Then "Projects" tab-menu on the Details page is not expanded

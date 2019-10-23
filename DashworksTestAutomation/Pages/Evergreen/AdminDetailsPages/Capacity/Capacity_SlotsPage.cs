@@ -116,6 +116,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
         public IList<string> GetSlotContent()
         {
             var by = By.XPath(".//div[@col-id='slotName' and @role='gridcell']");
+            Driver.WaitForElementsToBeDisplayed(by,30,false);
             return Driver.FindElements(by).Select(x => x.Text).ToList();
         }
 

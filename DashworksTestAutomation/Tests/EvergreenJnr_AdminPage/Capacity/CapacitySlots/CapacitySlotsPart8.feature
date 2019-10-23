@@ -40,8 +40,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForCa
 	And User navigates to the 'Capacity' left menu item
 	And User navigates to the 'Slots' left menu item
 	When User clicks content from "Capacity Slot" column
-	Then 'Stage13152 \ Task13152' value is displayed in the 'Tasks' dropdown
-	And 'Unassigned' value is displayed in the 'Capacity Units' dropdown
+	Then only below options are selected in the 'Tasks' autocomplete
+	| Options                |
+	| Stage13152 \ Task13152 |
+	Then only below options are selected in the 'Capacity Units' autocomplete
+	| Options    |
+	| Unassigned |
 	And 'Device' content is displayed in 'Object Type' dropdown
 	When User selects 'Application' in the 'Object Type' dropdown
 	And User selects "Unassigned" checkbox in the "Capacity Units" field on the Project details page
@@ -96,10 +100,16 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTe
 	#Check data in the slot after creation
 	When User clicks content from "Capacity Slot" column
 	Then 'Teams and Paths' value is displayed in the 'Capacity Type' dropdown
-	And 'Stage13152 \ Task13152' value is displayed in the 'Tasks' dropdown
+	Then only below options are selected in the 'Tasks' autocomplete
+	| Options                |
+	| Stage13152 \ Task13152 |
 	And 'Device' content is displayed in 'Object Type' dropdown
-	And '[Default (Computer)]' value is displayed in the 'Paths' dropdown
-	And 'Admin IT' value is displayed in the 'Teams' dropdown
+	Then only below options are selected in the 'Paths' autocomplete
+	| Options              |
+	| [Default (Computer)] |
+	Then only below options are selected in the 'Teams' autocomplete
+	| Options  |
+	| Admin IT |
 	#Change data in the slot
 	When User selects 'Application' in the 'Object Type' dropdown
 	And User selects "Admin IT" checkbox in the "Teams" field on the Project details page
@@ -111,8 +121,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTe
 	When User clicks content from "Capacity Slot" column
 	Then 'Teams and Paths' content is displayed in 'Capacity Type' dropdown
 	And 'Application' content is displayed in 'Object Type' dropdown
-	And '[Default (Application)]' value is displayed in the 'Paths' dropdown
-	And '1803 Team' value is displayed in the 'Teams' dropdown
+	Then only below options are selected in the 'Paths' autocomplete
+	| Options                 |
+	| [Default (Application)] |
+	| [Default (Computer)]    |
+	Then only below options are selected in the 'Teams' autocomplete
+	| Options   |
+	| 1803 Team |
 	When User selects 'Capacity Units' in the 'Capacity Type' dropdown
 	And User clicks 'UPDATE' button 
 	#Check updated Capacity Type value

@@ -278,11 +278,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
                 $".//mat-checkbox[contains(@class, 'checkbox-checked')]/label/span[contains(text(), '{checkboxes}')]"));
         }
 
-        public bool BucketDropdownDisplay(string textBucket)
-        {
-            return Driver.IsElementDisplayed(By.XPath($".//span[text()='{textBucket}']"));
-        }
-
         public bool SelectedItemInProjectScopeChangesSection(string text)
         {
             return Driver.IsElementDisplayed(By.XPath($".//span[@class='title'][contains(text(), '{text}')]"));

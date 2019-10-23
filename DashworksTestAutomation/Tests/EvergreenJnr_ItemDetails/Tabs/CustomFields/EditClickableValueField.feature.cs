@@ -162,7 +162,7 @@ this.FeatureBackground();
 #line 18
  testRunner.Then("Details page for \"00YWR8TJU4ZF8V\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 19
- testRunner.When("User navigates to the \"Custom Fields\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Custom Fields\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 20
  testRunner.When("User doubleclicks on \'ValueDAS15473_#$‡!_1\' cell from \'Value\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 21
@@ -253,7 +253,7 @@ this.FeatureBackground();
 #line 32
  testRunner.Then("Details page for \"ACDSee 8\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 33
- testRunner.When("User navigates to the \"Custom Fields\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Custom Fields\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 35
  testRunner.When("User change text in \'ValueDAS15473_2\' cell from \'Value\' column to \'UPDATED_V\' tex" +
                     "t", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -355,7 +355,7 @@ this.FeatureBackground();
 #line 53
  testRunner.Then("Details page for \"PCFriendly\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 54
- testRunner.When("User navigates to the \"Custom Fields\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Custom Fields\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 56
  testRunner.When("User clicks \"Edit\" option in Cog-menu for \"FlDAS17584_1\" item on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 57
@@ -462,7 +462,7 @@ this.FeatureBackground();
  testRunner.Then("Details page for \"0072B088173449E3A93@bclabs.local\" item is displayed to the user" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 77
- testRunner.When("User navigates to the \"Custom Fields\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Custom Fields\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 79
  testRunner.When("User change text in \'ValueDAS15473_3\' cell from \'Value\' column to \'UPDATED_Focus_" +
                     "Lost\' text without saving", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

@@ -7588,7 +7588,7 @@ this.FeatureBackground();
                     " header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table134 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Values"});
+                        "Content"});
             table134.AddRow(new string[] {
                         "User Slot 1"});
             table134.AddRow(new string[] {
@@ -7604,14 +7604,14 @@ this.FeatureBackground();
             table134.AddRow(new string[] {
                         "User Slot 2"});
 #line 1744
- testRunner.Then("following content is displayed in the \"UserEvergr: Stage 2 \\ Dropdown Non RAG Dat" +
-                    "e (User) (Slot)\" column", ((string)(null)), table134, "Then ");
+ testRunner.Then("Content in the \'UserEvergr: Stage 2 \\ Dropdown Non RAG Date (User) (Slot)\' column" +
+                    " is equal to", ((string)(null)), table134, "Then ");
 #line 1753
  testRunner.When("User clicks on \'UserEvergr: Stage 2 \\ Dropdown Non RAG Date (User) (Slot)\' column" +
                     " header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table135 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Values"});
+                        "Content"});
             table135.AddRow(new string[] {
                         "User Slot 2"});
             table135.AddRow(new string[] {
@@ -7627,8 +7627,8 @@ this.FeatureBackground();
             table135.AddRow(new string[] {
                         "User Slot 1"});
 #line 1754
- testRunner.Then("following content is displayed in the \"UserEvergr: Stage 2 \\ Dropdown Non RAG Dat" +
-                    "e (User) (Slot)\" column", ((string)(null)), table135, "Then ");
+ testRunner.Then("Content in the \'UserEvergr: Stage 2 \\ Dropdown Non RAG Date (User) (Slot)\' column" +
+                    " is equal to", ((string)(null)), table135, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -7708,7 +7708,7 @@ this.FeatureBackground();
  testRunner.When("User clicks on \'1803: Pre-Migration \\ Scheduled Date (Slot)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table138 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Values"});
+                        "Content"});
             table138.AddRow(new string[] {
                         "Birmingham Morning"});
             table138.AddRow(new string[] {
@@ -7730,13 +7730,12 @@ this.FeatureBackground();
             table138.AddRow(new string[] {
                         "London Depot 09:00 - 11:00"});
 #line 1777
- testRunner.Then("following content is displayed in the \"1803: Pre-Migration \\ Scheduled Date (Slot" +
-                    ")\" column", ((string)(null)), table138, "Then ");
+ testRunner.Then("Content in the \'1803: Pre-Migration \\ Scheduled Date (Slot)\' column is equal to", ((string)(null)), table138, "Then ");
 #line 1789
  testRunner.When("User clicks on \'1803: Pre-Migration \\ Scheduled Date (Slot)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table139 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Values"});
+                        "Content"});
             table139.AddRow(new string[] {
                         "London Depot 09:00 - 11:00"});
             table139.AddRow(new string[] {
@@ -7758,8 +7757,7 @@ this.FeatureBackground();
             table139.AddRow(new string[] {
                         "Birmingham Morning"});
 #line 1790
- testRunner.Then("following content is displayed in the \"1803: Pre-Migration \\ Scheduled Date (Slot" +
-                    ")\" column", ((string)(null)), table139, "Then ");
+ testRunner.Then("Content in the \'1803: Pre-Migration \\ Scheduled Date (Slot)\' column is equal to", ((string)(null)), table139, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -7833,7 +7831,7 @@ this.FeatureBackground();
                     "on) (Slot)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table141 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Values"});
+                        "Content"});
             table141.AddRow(new string[] {
                         "Application Slot 1"});
             table141.AddRow(new string[] {
@@ -7845,14 +7843,14 @@ this.FeatureBackground();
             table141.AddRow(new string[] {
                         "Application Slot 2"});
 #line 1813
- testRunner.Then("following content is displayed in the \"UserEvergr: Stage 3 \\ Radiobutton Readines" +
-                    "s Date Owner (Application) (Slot)\" column", ((string)(null)), table141, "Then ");
+ testRunner.Then("Content in the \'UserEvergr: Stage 3 \\ Radiobutton Readiness Date Owner (Applicati" +
+                    "on) (Slot)\' column is equal to", ((string)(null)), table141, "Then ");
 #line 1820
  testRunner.When("User clicks on \'UserEvergr: Stage 3 \\ Radiobutton Readiness Date Owner (Applicati" +
                     "on) (Slot)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table142 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Values"});
+                        "Content"});
             table142.AddRow(new string[] {
                         "Application Slot 2"});
             table142.AddRow(new string[] {
@@ -7864,8 +7862,8 @@ this.FeatureBackground();
             table142.AddRow(new string[] {
                         "Application Slot 1"});
 #line 1821
- testRunner.Then("following content is displayed in the \"UserEvergr: Stage 3 \\ Radiobutton Readines" +
-                    "s Date Owner (Application) (Slot)\" column", ((string)(null)), table142, "Then ");
+ testRunner.Then("Content in the \'UserEvergr: Stage 3 \\ Radiobutton Readiness Date Owner (Applicati" +
+                    "on) (Slot)\' column is equal to", ((string)(null)), table142, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -7949,7 +7947,7 @@ this.FeatureBackground();
  testRunner.When("User clicks on \'MailboxEve: 1 \\ Scheduled - mailbox (Slot)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table145 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Values"});
+                        "Content"});
             table145.AddRow(new string[] {
                         "CA -Mailbox-Nov 1, 2018-Nov 10, 2018"});
             table145.AddRow(new string[] {
@@ -7957,13 +7955,12 @@ this.FeatureBackground();
             table145.AddRow(new string[] {
                         "TRT-Mailbox-Nov 11, 2018-Nov 24, 2018\\RT=A\\T=Admin"});
 #line 1844
- testRunner.Then("following content is displayed in the \"MailboxEve: 1 \\ Scheduled - mailbox (Slot)" +
-                    "\" column", ((string)(null)), table145, "Then ");
+ testRunner.Then("Content in the \'MailboxEve: 1 \\ Scheduled - mailbox (Slot)\' column is equal to", ((string)(null)), table145, "Then ");
 #line 1849
  testRunner.When("User clicks on \'MailboxEve: 1 \\ Scheduled - mailbox (Slot)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table146 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Values"});
+                        "Content"});
             table146.AddRow(new string[] {
                         "TRT-Mailbox-Nov 11, 2018-Nov 24, 2018\\RT=A\\T=Admin"});
             table146.AddRow(new string[] {
@@ -7971,8 +7968,7 @@ this.FeatureBackground();
             table146.AddRow(new string[] {
                         "CA -Mailbox-Nov 1, 2018-Nov 10, 2018"});
 #line 1850
- testRunner.Then("following content is displayed in the \"MailboxEve: 1 \\ Scheduled - mailbox (Slot)" +
-                    "\" column", ((string)(null)), table146, "Then ");
+ testRunner.Then("Content in the \'MailboxEve: 1 \\ Scheduled - mailbox (Slot)\' column is equal to", ((string)(null)), table146, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -10734,7 +10730,7 @@ this.FeatureBackground();
  testRunner.Then("\"4\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table226 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Values"});
+                        "Content"});
             table226.AddRow(new string[] {
                         "Offboarded"});
             table226.AddRow(new string[] {
@@ -10744,7 +10740,7 @@ this.FeatureBackground();
             table226.AddRow(new string[] {
                         "Offboarded"});
 #line 2421
- testRunner.And("following content is displayed in the \"1803: Status\" column", ((string)(null)), table226, "And ");
+ testRunner.And("Content in the \'1803: Status\' column is equal to", ((string)(null)), table226, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -11041,6 +11037,218 @@ this.FeatureBackground();
  testRunner.Then("Remove icon displayed in \'true\' state for \'Not installed on device\' association", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 2476
  testRunner.Then("Remove icon displayed in \'true\' state for \'Entitled to device\' association", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatGridIsNotDisappearedAfterSelectingFilterOn" +
+            "AllDeviceApplicationsPage")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("AllDeviceApplications")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
+        [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
+        [NUnit.Framework.CategoryAttribute("DAS18456")]
+        [NUnit.Framework.CategoryAttribute("DAS18530")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatGridIsNotDisappearedAfterSelectingFilterOnAllDeviceApplicationsPage()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ApplicationsList_CheckThatGridIsNotDisappearedAfterSelectingFilterOnAllDeviceApplicationsPageInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ApplicationsList_CheckThatGridIsNotDisappearedAfterSelectingFilterOnAllDeviceApplicationsPageInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThatGridIsNotDisappearedAfterSelectingFilterOn" +
+                    "AllDeviceApplicationsPage", null, new string[] {
+                        "Evergreen",
+                        "AllDeviceApplications",
+                        "EvergreenJnr_ListDetails",
+                        "ListDetailsFunctionality",
+                        "DAS18456",
+                        "DAS18530",
+                        "Cleanup"});
+#line 2479
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 2480
+ testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2481
+ testRunner.Then("\'All Applications\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 2482
+ testRunner.When("User navigates to the \"All Device Applications\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2483
+ testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2484
+ testRunner.When("User selects \'Used on device\' option in expanded associations list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2485
+ testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table230 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table230.AddRow(new string[] {
+                        "s"});
+#line 2486
+ testRunner.When("User add \"App Vendor\" filter where type is \"Does not equal\" with added column and" +
+                    " following value:", ((string)(null)), table230, "When ");
+#line 2489
+ testRunner.When("User clicks \'RUN LIST\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2490
+ testRunner.When("User click Edit button for \"App Vendor\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2491
+ testRunner.Then("message \"\" is displayed to the user below Search results", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 2493
+ testRunner.When("User clicks Save button on the list panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2494
+ testRunner.When("User selects Save as new list option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2495
+ testRunner.When("User creates new custom list with \"AssociationList18530\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2496
+ testRunner.Then("\"AssociationList18530\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 2497
+ testRunner.When("User navigates to the \"All Device Applications\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2498
+ testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 2499
+ testRunner.When("User navigates to the \"AssociationList18530\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2500
+ testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 2501
+ testRunner.When("User navigates to the \"All Device Applications\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2502
+ testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatPivotCantBeRunIfAssociationWasRemoved")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("AllDeviceApplications")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
+        [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
+        [NUnit.Framework.CategoryAttribute("DAS18489")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatPivotCantBeRunIfAssociationWasRemoved()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ApplicationsList_CheckThatPivotCantBeRunIfAssociationWasRemovedInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ApplicationsList_CheckThatPivotCantBeRunIfAssociationWasRemovedInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThatPivotCantBeRunIfAssociationWasRemoved", null, new string[] {
+                        "Evergreen",
+                        "AllDeviceApplications",
+                        "EvergreenJnr_ListDetails",
+                        "ListDetailsFunctionality",
+                        "DAS18489",
+                        "Cleanup"});
+#line 2505
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 2506
+ testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2507
+ testRunner.Then("\'All Applications\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 2508
+ testRunner.When("User navigates to the \"All Device Applications\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2509
+ testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2510
+ testRunner.When("User selects \'Used on device\' option in expanded associations list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2511
+ testRunner.When("User clicks \'RUN LIST\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2512
+ testRunner.When("User selects \'Pivot\' in the \'Create\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2513
+ testRunner.When("User clicks the Pivot button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table231 = new TechTalk.SpecFlow.Table(new string[] {
+                        "RowGroups"});
+            table231.AddRow(new string[] {
+                        "App Vendor"});
+#line 2514
+ testRunner.When("User selects the following Row Groups on Pivot:", ((string)(null)), table231, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table232 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Columns"});
+            table232.AddRow(new string[] {
+                        "App Version"});
+#line 2517
+ testRunner.When("User selects the following Columns on Pivot:", ((string)(null)), table232, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table233 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table233.AddRow(new string[] {
+                        "Hostname"});
+#line 2520
+ testRunner.When("User selects the following Values on Pivot:", ((string)(null)), table233, "When ");
+#line 2523
+ testRunner.When("User clicks \'RUN PIVOT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2524
+ testRunner.Then("Pivot run was completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 2525
+ testRunner.When("User creates Pivot list with \"Pivot18489\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2526
+ testRunner.Then("\"Pivot18489\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 2527
+ testRunner.When("User navigates to the \"Pivot18489\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2528
+ testRunner.When("User clicks the Associations button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2529
+ testRunner.When("User removes \'Used on device\' association in Association panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2530
+ testRunner.Then("\'RUN PIVOT\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 2531
+ testRunner.Then("\'RUN PIVOT\' button has tooltip with \'Use association panel to create a list\' text" +
+                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

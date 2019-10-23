@@ -453,6 +453,22 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 $"'{dropdownName}' dropdown' is not displayed");
         }
 
+        [Then(@"'(.*)' dropdown is disabled")]
+        public void ThenDropdownIsDisabled(string dropdownName)
+        {
+            var dropdown = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsTrue(dropdown.IsDropdownDisabled(dropdownName),
+                $"{dropdownName} dropdown is not displayed");
+        }
+
+        [Then(@"'(.*)' dropdown is not disabled")]
+        public void ThenDropdownIsNotDisabled(string dropdownName)
+        {
+            var dropdown = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsFalse(dropdown.IsDropdownDisabled(dropdownName),
+                $"'{dropdownName}' dropdown' is not displayed");
+        }
+
         //Exact much
         [Then(@"following Values are displayed in the '(.*)' dropdown:")]
         public void ThenFollowingValuesAreDisplayedInTheDropdown(string dropDownName, Table table)
@@ -511,6 +527,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.GetDropdown(dropdown).Click();
             VerifyTooltipOfDropdownIcons(page, expectedTooltips);
             page.BodyContainer.Click();
+        }
+
+        [Then(@"'(.*)' error message is displayed for '(.*)' dropdown")]
+        public void ThenErrorMessageIsDisplayedForDropdown(string errorMassage, string dropdown)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.AreEqual(errorMassage, page.GetDropdownErrorMessage(dropdown),
+                $"Incorrect error message for '{dropdown}' dropdown is displayed");
         }
 
         private void VerifyTooltipOfDropdownIcons(BaseDashboardPage page, List<string> tooltips)
@@ -642,7 +666,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenMultiselectIsNotDisabled()
         {
             var component = _driver.NowAt<BaseDashboardPage>();
-            Verify.IsFalse(component.GetExpandableMultiselectElement("").Displayed(),
+            Verify.IsFalse(component.GetExpandableMultiselectElement("").Disabled(),
                 "First multiselect on page is disabled");
         }
 
@@ -650,7 +674,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenMultiselectIsNotDisabled(string multiselectTitle)
         {
             var component = _driver.NowAt<BaseDashboardPage>();
-            Verify.IsFalse(component.GetExpandableMultiselectElement(multiselectTitle).Displayed(),
+            Verify.IsFalse(component.GetExpandableMultiselectElement(multiselectTitle).Disabled(),
                 $"''{multiselectTitle}'' multiselect on page is disabled");
         }
 
@@ -711,7 +735,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenButtonIsDisplayed(string buttonName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            Verify.IsTrue(page.GetButtonByName(buttonName, "", WebDriverExtensions.WaitTime.Medium).Displayed(),
+            Verify.IsTrue(page.IsButtonDisplayed(buttonName),
                 $"'{buttonName}' button is displayed");
         }
 
@@ -719,7 +743,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenButtonIsNotDisplayed(string buttonName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            Verify.IsFalse(page.GetButtonByName(buttonName, "", WebDriverExtensions.WaitTime.Short).Displayed(),
+            Verify.IsFalse(page.IsButtonDisplayed(buttonName),
                 $"'{buttonName}' button is displayed");
         }
 
@@ -790,6 +814,37 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.ClickButtonByName(buttonName);
 
             page.GetMenuButtonByName(menuButtonName).Click();
+        }
+
+        #endregion
+
+        #region Checkbox
+
+        //TODO This is for BaseGrid but method can be changed to generic
+        [Then(@"Select All checkbox have full checked state")]
+        public void ThenSelectAllCheckboxHaveFullCheckedState()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Verify.AreEqual(2, _driver.GetEvergreenCheckboxTripleState(page.SelectAllCheckbox),
+                "'Select all' checkbox is not fully selected");
+        }
+
+        //TODO This is for BaseGrid but method can be changed to generic
+        [Then(@"Select All checkbox have indeterminate checked state")]
+        public void ThenSelectAllCheckboxHaveIndeterminateCheckedState()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Verify.AreEqual(1, _driver.GetEvergreenCheckboxTripleState(page.SelectAllCheckbox),
+                "'Select all' checkbox is not in the indeterminate state");
+        }
+
+        //TODO This is for BaseGrid but method can be changed to generic
+        [Then(@"Select All checkbox have unchecked state")]
+        public void ThenSelectAllCheckboxHaveUncheckedState()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Verify.AreEqual(0, _driver.GetEvergreenCheckboxTripleState(page.SelectAllCheckbox),
+                "'Select all' checkbox is not unchecked");
         }
 
         #endregion

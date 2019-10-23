@@ -633,6 +633,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS14263")]
         [NUnit.Framework.CategoryAttribute("DAS16403")]
         [NUnit.Framework.CategoryAttribute("DAS16407")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesLists_CheckAddTeamsPermissionsOnDetailsPanel()
         {
             System.Exception lastException = null;
@@ -668,7 +669,8 @@ this.FeatureBackground();
                         "Pivot",
                         "DAS14263",
                         "DAS16403",
-                        "DAS16407"});
+                        "DAS16407",
+                        "Cleanup"});
 #line 159
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

@@ -180,7 +180,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<CustomListElement>();
             _driver.WaitForDataLoading(45);
-            _driver.WaitForElementToBeDisplayed(page.GetActiveList());
+            _driver.ExecuteAction(() => page.GetActiveList().Displayed());
             Verify.AreEqual(listName, page.GetActiveList().Text, "Incorrect list name is displayed");
         }
 
@@ -344,13 +344,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForElementToBeDisplayed(cogMenu.CogMenuList);
             cogMenu.GetCogMenuOptionByName(menuItem).Click();
             _driver.WaitForDataLoading();
-        }
-
-        [Then(@"list name automatically changed to ""(.*)"" name")]
-        public void ThenListNameAutomaticallyChangedToName(string listName)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            Utils.Verify.AreEqual(listName, page.ActiveCustomListName(), "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"list with ""(.*)"" name is not displayed")]

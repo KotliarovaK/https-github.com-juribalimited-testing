@@ -58,7 +58,6 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatPivotsAreNotShownInTheListToSelectO
 	| Application List (Complex)               |
 	| Application List (Complex) - BROKEN LIST |
 	| Apps with a Vendor                       |
-	And User remove list with "Pivot_DAS_14224" name on "Devices" page
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13765 @DAS13833 @DAS13855
 Scenario: EvergreenJnr_DevicesList_ChecksThatPivotTableDisplayedCorrectlyAfterRemovingColumn
@@ -82,7 +81,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatPivotTableDisplayedCorrectlyAfterRe
 	Then Save button is inactive for Pivot list
 	And No pivot generated message is displayed
 
-@Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS14206 @DAS14413 @DAS14748 @DAS13786 @DAS13869
+@Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS14206 @DAS14413 @DAS14748 @DAS13786 @DAS13869 @Cleanup
 Scenario: EvergreenJnr_UsersList_ChecksThatUserCanCreateOneMorePivotOnSelectedPage
 	When User clicks 'Users' on the left-hand menu
 	Then 'All Users' list should be displayed to the user
@@ -104,7 +103,6 @@ Scenario: EvergreenJnr_UsersList_ChecksThatUserCanCreateOneMorePivotOnSelectedPa
 	Then 'ADD ROW GROUP' button is not disabled
 	And 'ADD COLUMN' button is not disabled
 	And 'ADD VALUE' button is not disabled
-	And User remove list with "Pivot_DAS_14206" name on "Users" page
 
 @Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS14206 @Cleanup
 Scenario: EvergreenJnr_UsersList_ChecksThatUserCanCreateOneMorePivotOnCreatedList

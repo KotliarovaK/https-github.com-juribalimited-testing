@@ -30,7 +30,7 @@ Examples:
 Scenario Outline: EvergreenJnr_AllLists_CheckThatCopyCellWorksInItemDetails
 	When User navigates to the '<PageName>' details page for '<SearchTerm>' item
 	When User navigates to the '<MainTabName>' left menu item
-	When User navigates to the "<SubTabName>" sub-menu on the Details page
+	When User navigates to the '<SubTabName>' left submenu item
 	And User performs right-click on "<TargetCell>" cell in the grid
 	And User selects 'Copy cell' option in context menu
 	Then Next data '<TargetCell>' is copied
@@ -46,7 +46,7 @@ Examples:
 Scenario Outline: EvergreenJnr_AllLists_CheckThatCopyRowWorksInItemDetailsOnSelectedMainTab
 	When User navigates to the '<PageName>' details page for '<SearchTerm>' item
 	When User navigates to the '<MainTabName>' left menu item
-	When User navigates to the "<SubTabName>" sub-menu on the Details page
+	When User navigates to the '<SubTabName>' left submenu item
 	And User performs right-click on "<TargetCell>" cell in the grid
 	And User selects 'Copy row' option in context menu
 	Then Next data '<ExpectedData>' is copied
@@ -59,7 +59,7 @@ Examples:
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12968
 Scenario Outline: EvergreenJnr_AllLists_CheckThatCopyRowWorksInItemDetailsOnSelectedSabTab
 	When User navigates to the '<PageName>' details page for '<SearchTerm>' item
-	When User navigates to the "<SubTabName>" sub-menu on the Details page
+	When User navigates to the '<SubTabName>' left submenu item
 	And User performs right-click on "<TargetCell>" cell in the grid
 	And User selects 'Copy row' option in context menu
 	Then Next data '<ExpectedData>' is copied
@@ -81,7 +81,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatApplicationsSummaryRowCanBeCopied
 Scenario: EvergreenJnr_DevicesList_CheckThatApplicationsInTheApplicationColumnAreLinksAndAfterClickingUserIsRedirectedCorrectApplication
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	When User navigates to the 'Applications' left menu item
-	When User navigates to the "Advertisements" sub-menu on the Details page
+	When User navigates to the 'Advertisements' left submenu item
 	Then table content is present
 	When User enters "Microsoft Internet Explorer" text in the Search field for "Application" column
 	When User clicks "Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" link on the Details Page
@@ -157,7 +157,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatToolTipForMailboxPermissionOnMailboxPe
 	When User navigates to the 'User' details page for '0072B088173449E3A93' item
 	Then Details page for "0072B088173449E3A93" item is displayed to the user
 	When User navigates to the 'Mailboxes' left menu item
-	When User navigates to the "Mailbox Permissions" sub-menu on the Details page
+	When User navigates to the 'Mailbox Permissions' left submenu item
 	When User enters "Exchange 2007" text in the Search field for "Mailbox Platform" column
 	Then "FullAccess" content is displayed in "Permission" column
 	And "FullAccess" tooltip displayed in "Permission" column

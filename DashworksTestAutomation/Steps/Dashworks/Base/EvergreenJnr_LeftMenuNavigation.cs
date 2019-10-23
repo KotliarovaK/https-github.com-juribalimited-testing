@@ -25,6 +25,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         #region Menu naviagtion
 
+        //Can be used for parent and for sub menu.
+        //Please avoid usage and replace by more specific methods
         [When(@"User navigates to the '(.*)' left menu item")]
         public void WhenUserNavigatesToTheLeftMenuItem(string tabMenuName)
         {
@@ -32,7 +34,43 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             _driver.ExecuteAction(() => detailsPage.GetLeftMenuByName(tabMenuName).Click());
         }
 
+        [When(@"User navigates to the '(.*)' parent left menu item")]
+        public void WhenUserNavigatesToTheParentLeftMenuItem(string tabMenuName)
+        {
+            var detailsPage = _driver.NowAt<BaseNavigationElements>();
+            _driver.ExecuteAction(() => detailsPage.GetParentMenuByName(tabMenuName).Click());
+        }
+
+        [When(@"User navigates to the '(.*)' left submenu item")]
+        public void WhenUserNavigatesToTheParentLeftSubmenuItem(string tabMenuName)
+        {
+            var detailsPage = _driver.NowAt<BaseNavigationElements>();
+            _driver.ExecuteAction(() => detailsPage.GetSubMenuByName(tabMenuName).Click());
+        }
+
         #endregion
+
+        #region Expanded/Collapsed state
+
+        [Then(@"'(.*)' left menu item is expanded")]
+        public void ThenLeftMenuItemIsExpanded(string section)
+        {
+            var page = _driver.NowAt<BaseNavigationElements>();
+            Verify.IsTrue(page.IsMenuExpanded(section),
+                $"'{section}' section is collapsed");
+        }
+
+        #endregion
+
+        [Then(@"'(.*)' left menu have following submenu items:")]
+        public void ThenLeftMenuHaveFollowingSubmenuItems(string parent, Table table)
+        {
+            var element = _driver.NowAt<BaseNavigationElements>();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = element.GetSubMenuItems(parent).Select(value => value.Text).ToList();
+            Verify.AreEqual(expectedList, actualList,
+                $"Incorrect submenu items for '{parent}' parent left menu");
+        }
 
         //TODO subheader should be moved to separate web element
         #region Subheader

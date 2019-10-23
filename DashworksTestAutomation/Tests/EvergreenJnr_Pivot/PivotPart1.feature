@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS14224
+@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS14224 @Cleanup
 Scenario Outline: EvergreenJnr_AllLists_ChecksThatPivotsAreNotShownInTheListToSelectAsAnAdvancedFilter
 	When User clicks '<PageNameForPivot>' on the left-hand menu
 	Then '<PageLabelForPivot>' list should be displayed to the user
@@ -30,7 +30,6 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatPivotsAreNotShownInTheListToSe
 	When User clicks Add New button on the Filter panel
 	And user select "<FilterName>" filter
 	Then "<PivotName>" list is not displayed for Saved List filter
-	And User remove list with "<PivotName>" name on "<PageNameForPivot>" page
 
 Examples:
 	| PageNameForPivot | PageLabelForPivot | RowGroups  | Columns         | Values               | PivotName                     | PageNameForFilter | PageLabelForFilter | FilterName               |
@@ -173,7 +172,7 @@ Examples:
 	| Mailboxes    | Alias       | Department Name                   | Country         | Display Name    | Mailbox      |
 	| Applications | Vendor      | Babel(Engl: Category              | Application Key | Application Key | Application  |
 
-@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS13747
+@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS13747 @Cleanup
 Scenario Outline: EvergreenJnr_AllLists_CheckThatAddColumnCheckBoxRemovedFromFilterPanelWhenUsingSavedPivot
 	When User clicks '<ListName>' on the left-hand menu
 	Then 'All <ListName>' list should be displayed to the user
@@ -195,7 +194,6 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatAddColumnCheckBoxRemovedFromFil
 	And User clicks the Filters button
 	And User selects "<FilterName>" filter from "<CategoryName>" category
 	Then "Add column" checkbox is not displayed
-	And User remove list with "<PivotName>" name on "<ListName>" page
 
 Examples:
 	| ListName     | RowGroup    | Column                            | Value          | PivotName                     | FilterName      | CategoryName |

@@ -73,6 +73,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSelectedRowsCountDisplayingOnBucketsGrids
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12491 @DAS16389 @Buckets
 Scenario: EvergreenJnr_AdminPage_CheckThatSingularFoundItemLabelDisplaysOnActionsToolbarforBucketsList
+	When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Evergreen' left menu item
 	Then Page with 'Buckets' header is displayed to user
 	When User clicks Reset Filters button on the Admin page

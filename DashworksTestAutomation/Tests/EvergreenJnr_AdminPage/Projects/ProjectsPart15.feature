@@ -30,7 +30,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedBucketsIsDisplayedForOnboarded
 	When User enters "UsersProject3" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	Then Page with 'UsersProject3' header is displayed to user
-	When user selects "UsersProject3Group" in the Bucket dropdown
+	When User selects 'UsersProject3Group' in the 'Bucket' dropdown
 	And User expands multiselect and selects following Objects
 	| Objects                               |
 	| 003F5D8E1A844B1FAA5 (Hunter, Melanie) |

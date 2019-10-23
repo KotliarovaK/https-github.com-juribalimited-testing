@@ -56,11 +56,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             switch (listPage)
             {
                 case "Admin":
-                    header.CheckPageHeader("projects");
+                    header.CheckPageHeader("Projects");
                     break;
 
                 default:
-                    header.CheckPageHeader(listPage.ToLower());
+                    header.CheckPageHeader(listPage);
                     break;
             }
         }

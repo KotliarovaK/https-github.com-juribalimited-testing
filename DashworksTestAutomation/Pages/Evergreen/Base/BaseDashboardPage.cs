@@ -165,9 +165,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = ".//div[@class='ag-center-cols-viewport']//div[@role='row']")]
         public IList<IWebElement> TableRows { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[@class='status-text'][text()='RED']")]
-        public IList<IWebElement> ContentColor { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//div[@class='empty-message ng-star-inserted']/span")]
         public IWebElement NoResultsFoundMessage { get; set; }
 
@@ -266,7 +263,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         public string ExpandNamedTextboxSelector = "//preceding-sibling::button[contains(@class,'chips-expand')]";
 
         //For cases when more than 4 items are selected they are collapsed to '1 more'
-        public string SelectedValuesForNamedTextboxSelector = "//preceding-sibling::mat-chip/span";
+        public string SelectedValuesForNamedTextboxSelector = ".//preceding-sibling::mat-chip/span";
 
         private static string AutocompleteOptionsSelector = ".//mat-option";
 
@@ -489,14 +486,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             var selector = By.XPath($"//span[@class='agEmptyValue'][text()='{text}']");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
-        }
-
-        public string ActiveCustomListName()
-        {
-            var by = By.XPath(
-                ".//div[contains(@class, 'active-list')]//span[contains(@class,'name')]");
-            Driver.WaitForElement(by);
-            return Driver.FindElement(by).Text;
         }
 
         public void ClickContentByColumnName(string columnName)
@@ -880,6 +869,18 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             Driver.WaitForDataLoading(50);
         }
 
+        public bool IsButtonDisplayed(string dropdownName)
+        {
+            try
+            {
+                return GetButtonByName(dropdownName, string.Empty, WebDriverExtensions.WaitTime.Short).Displayed();
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         #endregion
 
         #region Menu button
@@ -927,6 +928,18 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             try
             {
                 return GetDropdown(dropdownName, WebDriverExtensions.WaitTime.Short).Displayed();
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool IsDropdownDisabled(string dropdownName)
+        {
+            try
+            {
+                return GetDropdown(dropdownName, WebDriverExtensions.WaitTime.Short).Disabled();
             }
             catch
             {

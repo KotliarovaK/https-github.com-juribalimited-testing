@@ -29,6 +29,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = ".//button[contains(@id, 'clmnBtn')]")]
         public IWebElement ColumnButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//button[contains(@id, 'associationsList')]")]
+        public IWebElement AssociationButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//button[contains(@id, 'pivotModeBtn')]")]
+        public IWebElement PivotButton { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//button[contains(@id, 'fltrBtn')]")]
         public IWebElement FilterButton { get; set; }
 
@@ -45,7 +51,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         public void CheckPageHeader(string text)
         {
-            Verify.AreEqual(text.ToLower(), Header.Text.ToLower(), "Incorrect page header");
+            Driver.WaitForElementToHaveText(Header, text, 10, false);
+            Verify.AreEqual(text, Header.Text, "Incorrect page header");
         }
 
         public void CheckPageHeaderContainsText(string text)

@@ -16,7 +16,7 @@ Scenario: EvergreenJnr_DevicesList_CheckAddCustomFieldPopupUiAndTooltips
 	And User navigate to Evergreen URL
 	And User navigates to the 'Device' details page for 'QFI94WAUX17N4I' item
 	Then Details page for "QFI94WAUX17N4I" item is displayed to the user
-	When User navigates to the "Custom Fields" sub-menu on the Details page
+	When User navigates to the 'Custom Fields' left submenu item
 	And User clicks 'ADD CUSTOM FIELD' button 
 	Then 'ADD' button is disabled
 	Then 'ADD' button has tooltip with 'Some values are missing or invalid' text
@@ -37,7 +37,7 @@ Scenario: EvergreenJnr_MailboxesList_CreateCustomFieldWithEmptyValue
 	| CfDAS16487_1 | FlDAS16487_1 | true                | true    | true    | true     | true | true        |
 	And User navigates to the 'Mailbox' details page for '03F0CCD0F3384DE5A9F@bclabs.local' item
 	Then Details page for "03F0CCD0F3384DE5A9F@bclabs.local" item is displayed to the user
-	When User navigates to the "Custom Fields" sub-menu on the Details page
+	When User navigates to the 'Custom Fields' left submenu item
 	And User creates Custom Field
 	| ObjectType | ObjectId | FieldName    |
 	| mailbox    | 43801    | FlDAS16487_1 |
@@ -52,7 +52,7 @@ Scenario: EvergreenJnr_UsersList_CreateCustomField
 	| CfDAS16487_2 | FlDAS16487_2 | true                | true    | true |
 	And User navigates to the 'User' details page for 'BrissonTa' item
 	Then Details page for "BrissonTa (Ta Brisson)" item is displayed to the user
-	When User navigates to the "Custom Fields" sub-menu on the Details page
+	When User navigates to the 'Custom Fields' left submenu item
 	And User creates Custom Field
 	| ObjectType | ObjectId | FieldName    | Value                |
 	| user       | 98968    | FlDAS16487_2 | Value_@#†_DAS16487_2 |
@@ -68,7 +68,7 @@ Scenario: EvergreenJnr_UsersList_CancelCustomFieldCreation
 	| CfDAS16487_3 | FlDAS16487_3 | true                | true    | true |
 	And User navigates to the 'User' details page for 'VriezeGi' item
 	Then Details page for "VriezeGi (Ginette Vrieze)" item is displayed to the user
-	When User navigates to the "Custom Fields" sub-menu on the Details page
+	When User navigates to the 'Custom Fields' left submenu item
 	And User clicks 'ADD CUSTOM FIELD' button 
 	When User selects 'FlDAS16487_3' option from 'Custom Field' autocomplete
 	And User enters 'Somve_Value' text to 'Value' textbox
@@ -82,7 +82,7 @@ Scenario: EvergreenJnr_UsersList_CreateCustomFieldWithSameData
 	| CfDAS17614_4 | FlDAS17614_4 | true                | true    | true |
 	And User navigates to the 'User' details page for 'OBM473400' item
 	Then Details page for "OBM473400 (Jeannie L. Moreno)" item is displayed to the user
-	When User navigates to the "Custom Fields" sub-menu on the Details page
+	When User navigates to the 'Custom Fields' left submenu item
 	Then 'No custom fields found for this user' message is displayed on empty greed
 	When User creates Custom Field
 	| ObjectType | ObjectId | FieldName    | Value       |
@@ -116,7 +116,7 @@ Scenario: EvergreenJnr_UsersList_CheckGroupByResetAfterCreatingNewCustomField
 	| user       | 3532     | CfDAS17695_2 | ValueDAS17695_2A |
 	| user       | 3532     | CfDAS17695_2 | ValueDAS17695_2B |
 	And User navigates to the 'User' details page for 'TAI6096068' item
-	And User navigates to the "Custom Fields" sub-menu on the Details page
+	And User navigates to the 'Custom Fields' left submenu item
 	And User clicks Group By button on the Admin page and selects "Custom Field" value
 	Then Cog menu is not displayed on the Admin page
 	When User creates Custom Field

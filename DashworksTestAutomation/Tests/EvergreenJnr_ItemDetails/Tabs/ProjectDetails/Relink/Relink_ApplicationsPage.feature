@@ -12,7 +12,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyFo
 	Then Details page for ""WPF/E" (codename) Community Technology Preview (Feb 2007)" item is displayed to the user
 	When User switches to the "USE ME FOR AUTOMATION(USR SCHDLD)" project in the Top bar on Item details page
 	And User navigates to the 'Projects' left menu item
-	And User navigates to the "Project Details" sub-menu on the Details page
+	And User navigates to the 'Project Details' left submenu item
 	Then User verifies data in the fields on details page
 	| Field | Data                                                       |
 	| Name  | "WPF/E" (codename) Community Technology Preview (Feb 2007) |

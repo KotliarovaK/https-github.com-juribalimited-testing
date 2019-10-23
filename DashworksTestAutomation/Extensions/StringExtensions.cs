@@ -108,5 +108,20 @@ namespace DashworksTestAutomation.Extensions
             int daysToAdd = ((int)day - (int)start.DayOfWeek + 7) % 7;
             return start.AddDays(daysToAdd);
         }
+
+        public static string RemoveBracketsText(this string str)
+        {
+            Regex regex = new Regex(@"\(.*?\)");
+            string cleanString = regex.Replace(str, String.Empty).TrimEnd(' ');
+            return cleanString;
+        }
+
+        public static string GetBracketsValue(this string str)
+        {
+            Regex regex = new Regex(@"(?<=\()(.*)(?=\))");
+            Match m = regex.Match(str);
+            var match = m.Value;
+            return match;
+        }
     }
 }

@@ -112,13 +112,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Verify.IsTrue(page.EvergreenUnit.Displayed(), "Evergreen Unit is not displayed");
         }
 
-        [Then(@"string filter is displayed for ""(.*)"" column on the Admin Page")]
-        public void ThenStringFilterIsDisplayedForColumnOnTheAdminPage(string columnName)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            Verify.IsFalse(Convert.ToBoolean(page.GetFilterByColumnName(columnName).GetAttribute("readonly")), "PLEASE ADD EXCEPTION MESSAGE");
-        }
-
         [When(@"User selects ""(.*)"" color in the Application Scope tab on the Project details page")]
         public void WhenUserSelectsColorInTheApplicationScopeTabOnTheProjectDetailsPage(string colorName)
         {
@@ -256,15 +249,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             for (var i = 0; i < slots.RowCount; i++)
                 Utils.Verify.That(page.GridUnitsNames[i].Text, Is.EqualTo(slots.Rows[i].Values.FirstOrDefault()),
                     "Units are not the same");
-        }
-
-        [Then(@"sum of objects in ""(.*)"" list is ""(.*)"" on the Admin page")]
-        public void ThenSumOfObjectsInListIsOnTheAdminPage(string columnName, int sumOfObjects)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            var numbers = page.GetSumOfObjectsContent(columnName);
-            var total = numbers.Where(x => !string.IsNullOrEmpty(x)).Sum(x => Convert.ToInt32(x));
-            Verify.That(total, Is.EqualTo(sumOfObjects), $"Sum of objects in {columnName} list is incorrect!");
         }
 
         [Then(@"field for Date column is empty")]
@@ -488,20 +472,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var checkbox = _driver.NowAt<BaseGridPage>();
             checkbox.BodyContainer.Click();
             checkbox.SelectAllCheckBox.Click();
-        }
-
-        [Then(@"'Select All' checkbox have full checked state on the Admin page")]
-        public void ThenSelectAllCheckboxHaveFullCheckedStateOnTheAdminPage()
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsTrue(page.SelectAllCheckboxWithFullCheckedState.Displayed(), "State for 'Select All' checkbox is displayed incorrectly");
-        }
-
-        [Then(@"'Select All' checkbox have indeterminate checked state on the Admin page")]
-        public void ThenSelectAllCheckboxHaveIndeterminateCheckedStateOnTheAdminPage()
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsTrue(page.SelectAllCheckboxWithIndeterminateCheckedState.Displayed(), "State for 'Select All' checkbox is displayed incorrectly");
         }
 
         [When(@"User selects ""(.*)"" checkbox on the Project details page")]
@@ -818,7 +788,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             int iteration = 0;
             foreach (var row in table.Rows)
             {
-                dashboardPage.GetSearchFieldByColumnName(columnName, row.Values.FirstOrDefault());
+                dashboardPage.PopulateSearchFieldByColumnName(columnName, row.Values.FirstOrDefault());
                 _driver.WaitForDataLoading();
                 dashboardPage.SelectAllCheckBox.Click();
                 if (iteration != 0)
@@ -1129,22 +1099,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Thread.Sleep(3000);
         }
 
-        [When(@"user selects ""(.*)"" in the Bucket dropdown")]
-        public void WhenUserSelectsInTheBucketDropdown(string objectName)
-        {
-            var projectElement = _driver.NowAt<ProjectsPage>();
-            projectElement.BucketDropdown.Click();
-            projectElement.SelectObjectForProjectCreation(objectName);
-        }
-
-        [Then(@"""(.*)"" is displayed in the Bucket dropdown")]
-        public void ThenIsDisplayedInTheBucketDropdown(string textBucket)
-        {
-            var projectElement = _driver.NowAt<ProjectsPage>();
-            Utils.Verify.IsTrue(projectElement.BucketDropdownDisplay(textBucket),
-                "Incorrect text is displayed in the Bucket dropdown");
-        }
-
         [When(@"User changes Project Name to ""(.*)""")]
         public void WhenUserChangesProjectNameTo(string projectName)
         {
@@ -1341,11 +1295,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserEntersTextInTheSearchFieldForColumn(string text, string columnName)
         {
             var searchElement = _driver.NowAt<BaseGridPage>();
-            searchElement.GetSearchFieldByColumnName(columnName, text);
+            searchElement.PopulateSearchFieldByColumnName(columnName, text);
             //TODO why we store bucket that was used just for search?
             //Store bucket name for further usage
             if (columnName.Equals("Bucket"))
                 _lastUsedBucket.Value = text;
+        }
+
+        [When(@"User enters '(.*)' text in the Search field for '(.*)' datepicker")]
+        public void WhenUserEntersTextInTheSearchFieldForDatepicker(string text, string columnName)
+        {
+            var searchElement = _driver.NowAt<BaseGridPage>();
+            searchElement.PopulateDatepickerByColumnName(columnName, text);
         }
 
         [When(@"User changes value to ""(.*)"" for ""(.*)"" column")]
@@ -1455,15 +1416,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseGridPage>();
             Verify.AreEqual(page.GetTextInSearchFieldByColumnName(columnName).GetAttribute("value"), searchText,
                 "Text in search field is different");
-        }
-
-        [Then(@"Menu options are displayed in the following order on the Admin page:")]
-        public void ThenMenuOptionsAreDisplayedInTheFollowingOrderOnTheAdminPage(Table table)
-        {
-            var action = _driver.NowAt<BaseGridPage>();
-            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            var actualList = action.MenuTabOptionListOnAdminPage.Select(value => value.Text).ToList();
-            Verify.AreEqual(expectedList, actualList, "Menu options are different");
         }
 
         //TODO move to the BaseGrid
@@ -1606,20 +1558,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             button.ExportButton.Click();
         }
 
-        //TODO should be changed to generic method. Remove Admin page
+        //TODO probably should be separate control or moved to GridHeaderElement 
         [When(@"User clicks Group By button on the Admin page and selects ""(.*)"" value")]
         public void WhenUserClicksGroupByButtonOnTheAdminPageAndSelectsValue(string value)
         {
             var page = _driver.NowAt<BaseGridPage>();
             page.GroupByButton.Click();
-            _driver.MouseHover(page.GetValueInGroupByFilterOnAdminPAge(value));
-            page.GetValueInGroupByFilterOnAdminPAge(value).Click();
+            _driver.MouseHover(page.GetValueInGroupByFilterOnAdminPage(value));
+            page.GetValueInGroupByFilterOnAdminPage(value).Click();
             //Wait for option to be applied
             Thread.Sleep(400);
             page.BodyContainer.Click();
         }
 
-        //TODO should be changed to generic method. Remove Admin page
+        //TODO probably should be separate control or moved to GridHeaderElement
         [Then(@"'(.*)' options are selected in the Group By menu")]
         public void ThenOptionsAreSelectedInTheGroupByMenu(int expectedCount)
         {

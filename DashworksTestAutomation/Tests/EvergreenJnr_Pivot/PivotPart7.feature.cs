@@ -506,6 +506,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Pivot")]
         [NUnit.Framework.CategoryAttribute("DAS13833")]
         [NUnit.Framework.CategoryAttribute("DAS13844")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesList_CheckResetButtonOnPivot()
         {
             System.Exception lastException = null;
@@ -540,7 +541,8 @@ this.FeatureBackground();
                         "EvergreenJnr_Pivot",
                         "Pivot",
                         "DAS13833",
-                        "DAS13844"});
+                        "DAS13844",
+                        "Cleanup"});
 #line 110
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -719,10 +721,6 @@ this.FeatureBackground();
  testRunner.And("\'SAVE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 198
  testRunner.And("\'RUN PIVOT\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 199
- testRunner.And("User remove list with \"PivotList_DAS_13844\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 200
- testRunner.And("User remove list with \"PivotList_DAS_13844_1\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -775,60 +773,58 @@ this.FeatureBackground();
                         "DAS13833",
                         "DAS13842",
                         "Cleanup"});
-#line 203
+#line 201
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 204
+#line 202
  testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 205
+#line 203
  testRunner.Then("\'All Devices\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 206
+#line 204
  testRunner.When("User selects \'Pivot\' in the \'Create\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 207
+#line 205
  testRunner.Then("\"Pivot\" panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
                         "RowGroups"});
             table27.AddRow(new string[] {
                         "Application Compliance"});
-#line 208
+#line 206
  testRunner.When("User selects the following Row Groups on Pivot:", ((string)(null)), table27, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
                         "Columns"});
             table28.AddRow(new string[] {
                         "Operating System"});
-#line 211
+#line 209
  testRunner.And("User selects the following Columns on Pivot:", ((string)(null)), table28, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table29.AddRow(new string[] {
                         "App Count (Entitled)"});
-#line 214
+#line 212
  testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table29, "And ");
-#line 217
+#line 215
  testRunner.When("User clicks \'RUN PIVOT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 218
+#line 216
  testRunner.Then("Pivot run was completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 219
+#line 217
  testRunner.When("User creates Pivot list with \"PivotList_DAS13842\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 220
+#line 218
  testRunner.Then("\"PivotList_DAS13842\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 221
+#line 219
  testRunner.When("User navigates to the \"All Devices\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 222
+#line 220
  testRunner.And("User navigates to the \"PivotList_DAS13842\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 223
+#line 221
  testRunner.Then("\"PivotList_DAS13842\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 224
+#line 222
  testRunner.When("User clicks \'Manage\' Settings menu item for \'PivotList_DAS13842\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 225
+#line 223
  testRunner.Then("\"Dynamic Pivot Details\" panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 226
- testRunner.And("User remove list with \"PivotList_DAS13842\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -13,7 +13,7 @@ Scenario: EvergreenJnr_DevicesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffb
 	Then Details page for "01ONL5I8LY44R3" item is displayed to the user
 	When User switches to the "USE ME FOR AUTOMATION(DEVICE SCHDLD)" project in the Top bar on Item details page
 	And User navigates to the 'Projects' left menu item
-	And User navigates to the "Project Details" sub-menu on the Details page
+	And User navigates to the 'Project Details' left submenu item
 	And User clicks 'OFFBOARD' button 
 	Then Dialog Pop-up is displayed for User
 	And 'Offboard all associated users' checkbox is checked
@@ -51,7 +51,7 @@ Scenario: EvergreenJnr_DevicesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffb
 	Then Details page for "01ONL5I8LY44R3" item is displayed to the user
 	When User switches to the "USE ME FOR AUTOMATION(DEVICE SCHDLD)" project in the Top bar on Item details page
 	And User navigates to the 'Projects' left menu item
-	And User navigates to the "Project Details" sub-menu on the Details page
+	And User navigates to the 'Project Details' left submenu item
 	And User clicks 'OFFBOARD' button 
 	Then Dialog Pop-up is displayed for User
 	And 'Offboard all associated users' checkbox is checked
@@ -81,7 +81,7 @@ Scenario: EvergreenJnr_DevicesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffb
 	Then Details page for "03AK1ZP1C9MPFV" item is displayed to the user
 	When User switches to the "USE ME FOR AUTOMATION(USR SCHDLD)" project in the Top bar on Item details page
 	When User navigates to the 'Projects' left menu item
-	And User navigates to the "Project Details" sub-menu on the Details page
+	And User navigates to the 'Project Details' left submenu item
 	And User clicks 'OFFBOARD' button 
 	Then Dialog Pop-up is displayed for User
 	And following text 'Offboarding device 03AK1ZP1C9MPFV. Offboarding an object deletes all project related information about it.' is displayed in Dialog Pop-up
@@ -93,12 +93,12 @@ Scenario: EvergreenJnr_DevicesList_CheckThatGreenBannerIsNotVisibleOnTheOtherPag
 	Then Details page for "03AK1ZP1C9MPFV" item is displayed to the user
 	When User switches to the "USE ME FOR AUTOMATION(DEVICE SCHDLD)" project in the Top bar on Item details page
 	When User navigates to the 'Projects' left menu item
-	And User navigates to the "Project Details" sub-menu on the Details page
+	And User navigates to the 'Project Details' left submenu item
 	And User clicks 'OFFBOARD' button 
 	And User clicks 'OFFBOARD' button in Dialog Pop-up 
 	And User clicks 'OFFBOARD' button in Dialog Pop-up 
 	Then Success message is displayed and contains "The device was successfully queued for offboarding from USE ME FOR AUTOMATION(DEVICE SCHDLD)" text
-	When User navigates to the "Projects Summary" sub-menu on the Details page
+	When User navigates to the 'Projects Summary' left submenu item
 	Then Success message is not displayed
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @Offboard @DAS18036
@@ -107,7 +107,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddingAndRemovingColumnsInPopUpWorks
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
 	When User switches to the "USE ME FOR AUTOMATION(DEVICE SCHDLD)" project in the Top bar on Item details page
 	And User navigates to the 'Projects' left menu item
-	And User navigates to the "Project Details" sub-menu on the Details page
+	And User navigates to the 'Project Details' left submenu item
 	And User clicks 'OFFBOARD' button 
 	Then Dialog Pop-up is displayed for User
 	And following columns are displayed on the Item details page:

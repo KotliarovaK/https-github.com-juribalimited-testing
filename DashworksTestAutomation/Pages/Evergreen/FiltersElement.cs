@@ -29,6 +29,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='filter-panel']")]
         public IWebElement FiltersPanel { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@id='context-container']")]
+        public IWebElement ContextPanel { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'filter-add-group')]")]
         public IWebElement AddNewFilterButton { get; set; }
 
@@ -119,7 +122,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='filterAddPanel ng-star-inserted']//i[@class='material-icons mat-item_delete']/ancestor::button")]
         public IWebElement RemoveFilterButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[text()='RESET']/ancestor::button")]
+        [FindsBy(How = How.XPath, Using = ".//button[contains(@class,'reset')]")]
         public IWebElement ResetFiltersButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//ul//mat-checkbox")]
@@ -172,7 +175,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Driver.WaitForDataLoading();
             return new List<By>
             {
-                SelectorFor(this, p => p.FiltersPanel)
+                SelectorFor(this, p => p.ContextPanel)
             };
         }
 

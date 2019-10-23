@@ -10,7 +10,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatLinksAndImageItemAreDisplayedInThe
 	When User navigates to the 'Mailbox' details page for '00C8BC63E7424A6E862@bclabs.local' item
 	Then Details page for "00C8BC63E7424A6E862@bclabs.local" item is displayed to the user
 	When User navigates to the 'Users' left menu item
-	And User navigates to the "Mailbox Permissions" sub-menu on the Details page
+	And User navigates to the 'Mailbox Permissions' left submenu item
 	Then "100" rows found label displays on Details Page
 	And Image item from "Name" column is displayed to the user
 	And Links from "Name" column is displayed to the user on the Details Page
@@ -35,7 +35,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatLinksFromTheDeviceColumnInDevicePro
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
 	When User navigates to the 'Projects' left menu item
-	And User navigates to the "Projects Summary" sub-menu on the Details page
+	And User navigates to the 'Projects Summary' left submenu item
 	And User clicks "Computer Scheduled Test (Jo)" link on the Details Page
 	Then "Project Object" page is displayed to the user
 	And PMObject page for "Computer: 001BAQXT6JWFPI" object is displayed to the user
@@ -54,7 +54,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatLinksFromTheDeviceColumnInDevicePro
 	And User click back button in the browser
 	#=====================================================================================#
 	And Details page for "001BAQXT6JWFPI" item is displayed to the user
-	When User navigates to the "Owner Projects Summary" sub-menu on the Details page
+	When User navigates to the 'Owner Projects Summary' left submenu item
 	And User clicks "Computer Scheduled Test (Jo)" link on the Details Page
 	Then "Project Object" page is displayed to the user
 	And PMObject page for "User: QLL295118 (Nicole P. Braun)" object is displayed to the user
@@ -75,7 +75,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatLinksFromTheDeviceColumnInDeviceProje
 	When User navigates to the 'User' details page for '000F977AC8824FE39B8' item
 	Then Details page for "000F977AC8824FE39B8" item is displayed to the user
 	When User navigates to the 'Projects' left menu item
-	And User navigates to the "User Projects" sub-menu on the Details page
+	And User navigates to the 'User Projects' left submenu item
 	And User clicks "*Project K-Computer Scheduled Project" link on the Details Page
 	#waiting for the switching process to Senior page to be completed
 	When User waits for three seconds
@@ -98,7 +98,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatLinksFromTheDeviceColumnInDeviceProje
 	And User click back button in the browser
 	#=====================================================================================#
 	And Details page for "000F977AC8824FE39B8" item is displayed to the user
-	When User navigates to the "Mailbox Project Summary" sub-menu on the Details page
+	When User navigates to the 'Mailbox Project Summary' left submenu item
 	And User clicks "Mailbox Evergreen Capacity Project" link on the Details Page
 	#waiting for the switching process to Senior page to be completed
 	When User waits for three seconds
@@ -123,7 +123,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatLinksFromTheDeviceColumnInDeviceProje
 	When User navigates to the 'User' details page for 'QLL295118' item
 	Then Details page for "QLL295118" item is displayed to the user
 	When User navigates to the 'Projects' left menu item
-	And User navigates to the "Device Project Summary" sub-menu on the Details page
+	And User navigates to the 'Device Project Summary' left submenu item
 	And User clicks "Windows 7 Migration (Computer Scheduled Project)" link on the Details Page
 	#waiting for the switching process to Senior page to be completed
 	When User waits for three seconds
@@ -149,7 +149,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatLinksFromTheDeviceColumnInDevi
 	When User navigates to the 'Application' details page for '"WPF/E" (codename) Community Technology Preview (Feb 2007)' item
 	Then Details page for ""WPF/E" (codename) Community Technology Preview (Feb 2007)" item is displayed to the user
 	When User navigates to the 'Projects' left menu item
-	And User navigates to the "Projects" sub-menu on the Details page
+	And User navigates to the 'Projects' left submenu item
 	And User clicks "Windows 7 Migration (Computer Scheduled Project)" link on the Details Page
 	Then "Project Object" page is displayed to the user
 	And PMObject page for "Application: "WPF/E" (codename) Community Technology Preview (Feb 2007) (A01)" object is displayed to the user
@@ -171,7 +171,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatLinksFromTheDeviceColumnInDeviceP
 	When User navigates to the 'Mailbox' details page for '000F977AC8824FE39B8@bclabs.local' item
 	Then Details page for "000F977AC8824FE39B8@bclabs.local" item is displayed to the user
 	When User navigates to the 'Projects' left menu item
-	And User navigates to the "Mailbox Projects" sub-menu on the Details page
+	And User navigates to the 'Mailbox Projects' left submenu item
 	And User clicks "Mailbox Evergreen Capacity Project" link on the Details Page
 	Then "Project Object" page is displayed to the user
 	And PMObject page for "Mailbox: 000F977AC8824FE39B8@bclabs.local (Spruill, Shea)" object is displayed to the user
@@ -190,7 +190,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatLinksFromTheDeviceColumnInDeviceP
 	And User click back button in the browser
 	#=====================================================================================#
 	And Details page for "000F977AC8824FE39B8@bclabs.local" item is displayed to the user
-	When User navigates to the "Mailbox User Projects" sub-menu on the Details page
+	When User navigates to the 'Mailbox User Projects' left submenu item
 	And User clicks "*Project K-Computer Scheduled Project" link on the Details Page
 	Then "Project Object" page is displayed to the user
 	And PMObject page for "User: 000F977AC8824FE39B8 (Spruill, Shea)" object is displayed to the user
@@ -213,7 +213,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNoDuplicatedRowsDisplayInDeviceProje
 	And User perform search by "00BDM1JUR8IF419"
 	And User click content from "Hostname" column
 	When User navigates to the 'Projects' left menu item
-	When User navigates to the "Projects Summary" sub-menu on the Details page
+	When User navigates to the 'Projects Summary' left submenu item
 	Then All data is unique in the 'Project' column
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13335 @DAS14923 @DAS12963 @DAS16233 @Cleanup
@@ -372,6 +372,6 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUnknownValuesAreEmptyOnObjectDe
 	When User navigates to the 'Application' details page for '7zip' item
 	Then Details page for "7zip" item is displayed to the user
 	When User navigates to the 'Distribution' left menu item
-	And User navigates to the "Devices" sub-menu on the Details page
+	And User navigates to the 'Devices' left submenu item
 	Then "" content is displayed for "Owner" column
 	Then "" content is displayed for "Owner Display Name" column

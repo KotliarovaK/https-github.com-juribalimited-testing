@@ -133,7 +133,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatNoneOptionIsAvailableForFilters
 	Then Filters panel is displayed to the user
 	When User add "<FilterName>" filter where type is "Equals" without added column and following checkboxes:
 	| SelectedCheckboxes |
-	| None               |
+	| Empty              |
 	Then Save to New Custom List element is displayed
 	When User click Edit button for "<FilterName>" filter
 	Then User changes filter type to "Does not equal"
@@ -142,7 +142,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatNoneOptionIsAvailableForFilters
 	Then Save to New Custom List element is NOT displayed
 	When User add "<FilterName>" filter where type is "Equals" without added column and following checkboxes:
     | SelectedCheckboxes |
-    | None               |
+    | Empty              |
 	Then Save to New Custom List element is displayed
 	When User Add And "<NewFilterName>" filter where type is "Equals" without added column and following checkboxes:
     | SelectedCheckboxes |
@@ -749,8 +749,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatRelevantDataSetBeDisplayedAfterResetti
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Enabled" filter where type is "Equals" with added column and following checkboxes:
-    | SelectedCheckboxes |
-    | UNKNOWN            |
+	| SelectedCheckboxes |
+    | Empty              |
 	Then "Enabled" filter is added to the list
 	And message 'No users found' is displayed to the user
 	When User have reset all filters
@@ -880,7 +880,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFilterLogicForBooleanFieldsIsWorkedC
 	When User add "Secure Boot Enabled" filter where type is "Does not equal" with added column and following checkboxes:
     | SelectedCheckboxes |
     | FALSE              |
-    | UNKNOWN            |
+    | Empty              |
 	Then "Secure Boot Enabled" filter is added to the list
 	Then table data in column is filtered correctly
 
@@ -1676,7 +1676,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTaskSlotHasEmptyAndNotEmptyOperators
 	And User enters "Empty" text in Search field at selected Lookup Filter
 	And User clicks checkbox at selected Lookup Filter
 	And User clicks Save filter button
-	Then Column "1803: Pre-Migration \ Scheduled Date (Slot)" with no data displayed
+	Then Column '1803: Pre-Migration \ Scheduled Date (Slot)' with no data displayed
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS15899
 Scenario: EvergreenJnr_DevicesList_CheckStageNameInTheFiltestForDevicesLists

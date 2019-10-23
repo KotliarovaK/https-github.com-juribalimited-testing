@@ -579,7 +579,7 @@ this.FeatureBackground();
             table6.AddRow(new string[] {
                         "Override Dates"});
 #line 141
- testRunner.Then("Menu options are displayed in the following order on the Admin page:", ((string)(null)), table6, "Then ");
+ testRunner.Then("\'Capacity\' left menu have following submenu items:", ((string)(null)), table6, "Then ");
 #line 147
  testRunner.When("User clicks \'Administration\' header breadcrumb", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 148

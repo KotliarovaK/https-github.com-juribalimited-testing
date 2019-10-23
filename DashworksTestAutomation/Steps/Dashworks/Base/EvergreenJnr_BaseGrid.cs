@@ -6,6 +6,7 @@ using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
@@ -59,7 +60,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var dashboardPage = _driver.NowAt<BaseGridPage>();
             _driver.WhatForElementToBeSelected(dashboardPage.SelectAllCheckbox, false);
-            Verify.IsTrue(_driver.GetEvergreenCheckboxState(dashboardPage.SelectAllCheckbox),
+            Verify.IsFalse(_driver.GetEvergreenCheckboxState(dashboardPage.SelectAllCheckbox),
                 "'Select all rows' checkbox is checked");
         }
 
@@ -239,6 +240,30 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             }
         }
 
+        //For case when just empty cell are displayed. Probably also for case when no cells displayed
+        [Then(@"Column '(.*)' with no data displayed")]
+        public void ThenFollowingColumnDisplayedWithoutNoData(string columnName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            var originalList = page.GetColumnContentByColumnName(columnName)
+                .Select(column => column.Text).ToList();
+
+            foreach (var item in originalList)
+            {
+                Verify.That(item, Is.EqualTo(""), $"Incorrect content is displayed in the {columnName}");
+            }
+        }
+
+        [Then(@"numbers sum in the '(.*)' column is equal to '(.*)'")]
+        public void ThenNumbersSumInTheColumnIsEqualTo(string columnName, int expectedSum)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            var numbers = page.GetColumnContentByColumnName(columnName).ToList().Select(x => x.Text);
+            var total = numbers.Where(x => !string.IsNullOrEmpty(x)).Sum(x => Convert.ToInt32(x));
+            Verify.That(total, Is.EqualTo(expectedSum), 
+                $"Sum of objects in the '{columnName}' column is incorrect!");
+        }
+
         #endregion
 
         #region Clicable value
@@ -383,6 +408,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void WhenUserScrollsGridToTheBottom()
         {
             var page = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForElementsToBeDisplayed(By.XPath(page.AllCellsInTheGrid));
             _driver.ScrollGridToTheEnd(page.TableBody);
         }
 

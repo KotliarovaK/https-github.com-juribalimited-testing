@@ -21,14 +21,14 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTargetAppFilterIsAddedT
 	Then data in table is sorted by '<ColumnName>' column in ascending order 
 
 Examples:
-	| ColumnName             | Operators              | FilterOption      | Text                                        | RowsCount |
-	| Windows7Mi: Target App | Equals, Does not equal | WebZIP (A01)      | Windows7Mi: Target App is WebZIP (A01)      | 3         |
-	| Babel(Engl: Target App | Equals, Does not equal | sndconfig         | Babel(Engl: Target App is sndconfig         | 1         |
-	| Barry'sUse: Target App | Equals, Does not equal | World Watch (A01) | Barry'sUse: Target App is World Watch (A01) | 1         |
-	| ComputerSc: Target App | Equals, Does not equal | World Watch (A01) | ComputerSc: Target App is World Watch (A01) | 1         |
-	| Havoc(BigD: Target App | Equals, Does not equal | WebZIP (A01)      | Havoc(BigD: Target App is WebZIP (A01)      | 1         |
-	| MigrationP: Target App | Equals, Does not equal | Zune (A01)        | MigrationP: Target App is Zune (A01)        | 1         |
-	| UserSchedu: Target App | Equals, Does not equal | Zune (A01)        | UserSchedu: Target App is Zune (A01)        | 1         |
+	| ColumnName             | Operators                         | FilterOption      | Text                                        | RowsCount |
+	| Windows7Mi: Target App | Equals, Does not equal, Not empty | WebZIP (A01)      | Windows7Mi: Target App is WebZIP (A01)      | 3         |
+	| Babel(Engl: Target App | Equals, Does not equal, Not empty | sndconfig         | Babel(Engl: Target App is sndconfig         | 1         |
+	| Barry'sUse: Target App | Equals, Does not equal, Not empty | World Watch (A01) | Barry'sUse: Target App is World Watch (A01) | 1         |
+	| ComputerSc: Target App | Equals, Does not equal, Not empty | World Watch (A01) | ComputerSc: Target App is World Watch (A01) | 1         |
+	| Havoc(BigD: Target App | Equals, Does not equal, Not empty | WebZIP (A01)      | Havoc(BigD: Target App is WebZIP (A01)      | 1         |
+	| MigrationP: Target App | Equals, Does not equal, Not empty | Zune (A01)        | MigrationP: Target App is Zune (A01)        | 1         |
+	| UserSchedu: Target App | Equals, Does not equal, Not empty | Zune (A01)        | UserSchedu: Target App is Zune (A01)        | 1         |
 
 @Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS10828 @DAS14287
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTargetAppKeyFilterIsAddedToTheList
@@ -181,14 +181,14 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatApplicationReadinessFil
 	Then data in table is sorted by '<ColumnName>' column in descending order 
 
 Examples:
-	| ColumnName                        | Operators              | FilterOption | Text                                       | RowsCount |
-	| Windows7Mi: Application Readiness | Equals, Does not equal | Red          | Windows7Mi: Application Readiness is Red   | 27        |
-	| Babel(Engl: Application Readiness | Equals, Does not equal | None         | Babel(Engl: Application Readiness is None  | 302       |
-	| Barry'sUse: Application Readiness | Equals, Does not equal | None         | Barry'sUse: Application Readiness is None  | 1,072     |
-	| ComputerSc: Application Readiness | Equals, Does not equal | Green        | ComputerSc: Application Readiness is Green | 911       |
-	| Havoc(BigD: Application Readiness | Equals, Does not equal | None         | Havoc(BigD: Application Readiness is None  | 1,066     |
-	| MigrationP: Application Readiness | Equals, Does not equal | Blue         | MigrationP: Application Readiness is Blue  | 189       |
-	| UserSchedu: Application Readiness | Equals, Does not equal | None         | UserSchedu: Application Readiness is None  | 981       |
+	| ColumnName                        | Operators                         | FilterOption | Text                                       | RowsCount |
+	| Windows7Mi: Application Readiness | Equals, Does not equal, Not empty | Red          | Windows7Mi: Application Readiness is Red   | 27        |
+	| Babel(Engl: Application Readiness | Equals, Does not equal, Not empty | None         | Babel(Engl: Application Readiness is None  | 302       |
+	| Barry'sUse: Application Readiness | Equals, Does not equal, Not empty | None         | Barry'sUse: Application Readiness is None  | 1,072     |
+	| ComputerSc: Application Readiness | Equals, Does not equal, Not empty | Green        | ComputerSc: Application Readiness is Green | 911       |
+	| Havoc(BigD: Application Readiness | Equals, Does not equal, Not empty | None         | Havoc(BigD: Application Readiness is None  | 1,066     |
+	| MigrationP: Application Readiness | Equals, Does not equal, Not empty | Blue         | MigrationP: Application Readiness is Blue  | 189       |
+	| UserSchedu: Application Readiness | Equals, Does not equal, Not empty | None         | UserSchedu: Application Readiness is None  | 981       |
 
 @Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS10512 @DAS11509 @DAS11507 @DAS11509 @DAS12026
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheList
@@ -212,14 +212,14 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisat
 	Then data in table is sorted by '<ColumnName>' column in ascending order 
 
 Examples: 
-	| ColumnName                              | Operators              | FilterOption  | Text                                                     | RowsCount |
-	| Windows7Mi: Application Rationalisation | Equals, Does not equal | RETIRE        | Windows7Mi: Application Rationalisation is Retire        | 85        |
+	| ColumnName                              | Operators                         | FilterOption  | Text                                                     | RowsCount |
+	| Windows7Mi: Application Rationalisation | Equals, Does not equal, Not empty | RETIRE        | Windows7Mi: Application Rationalisation is Retire        | 85        |
 	#| Babel(Engl: Application Rationalisation | Equals, Does not equal | UNCATEGORISED | Babel(Engl: Application Rationalisation is Uncategorised | 302       |
-	| Barry'sUse: Application Rationalisation | Equals, Does not equal | KEEP          | Barry'sUse: Application Rationalisation is Keep          | 2         |
-	| ComputerSc: Application Rationalisation | Equals, Does not equal | FORWARD PATH  | ComputerSc: Application Rationalisation is Forward Path  | 15        |
-	| Havoc(BigD: Application Rationalisation | Equals, Does not equal | UNCATEGORISED | Havoc(BigD: Application Rationalisation is Uncategorised | 1,067     |
-	| MigrationP: Application Rationalisation | Equals, Does not equal | RETIRE        | MigrationP: Application Rationalisation is Retire        | 1         |
-	| UserSchedu: Application Rationalisation | Equals, Does not equal | UNCATEGORISED | UserSchedu: Application Rationalisation is Uncategorised | 981       |
+	| Barry'sUse: Application Rationalisation | Equals, Does not equal, Not empty | KEEP          | Barry'sUse: Application Rationalisation is Keep          | 2         |
+	| ComputerSc: Application Rationalisation | Equals, Does not equal, Not empty | FORWARD PATH  | ComputerSc: Application Rationalisation is Forward Path  | 15        |
+	| Havoc(BigD: Application Rationalisation | Equals, Does not equal, Not empty | UNCATEGORISED | Havoc(BigD: Application Rationalisation is Uncategorised | 1,067     |
+	| MigrationP: Application Rationalisation | Equals, Does not equal, Not empty | RETIRE        | MigrationP: Application Rationalisation is Retire        | 1         |
+	| UserSchedu: Application Rationalisation | Equals, Does not equal, Not empty | UNCATEGORISED | UserSchedu: Application Rationalisation is Uncategorised | 981       |
 
 @Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS10512 @DAS11507
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatCoreApplicationFilterIsAddedToTheList
@@ -243,14 +243,14 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatCoreApplicationFilterIs
 	Then data in table is sorted by '<ColumnName>' column in descending order 
 
 Examples: 
-	| ColumnName                   | Operators              | FilterOption | Text                                    | RowsCount |
-	| Windows7Mi: Core Application | Equals, Does not equal | TRUE         | Windows7Mi: Core Application is True    | 11        |
-	| Babel(Engl: Core Application | Equals, Does not equal | FALSE        | Babel(Engl: Core Application is False   | 302       |
-	| Barry'sUse: Core Application | Equals, Does not equal | UNKNOWN      | Barry'sUse: Core Application is Unknown | 1,146     |
-	| ComputerSc: Core Application | Equals, Does not equal | FALSE        | ComputerSc: Core Application is False   | 1,043     |
-	| Havoc(BigD: Core Application | Equals, Does not equal | UNKNOWN      | Havoc(BigD: Core Application is Unknown | 1,156     |
-	| MigrationP: Core Application | Equals, Does not equal | FALSE        | MigrationP: Core Application is False   | 220       |
-	| UserSchedu: Core Application | Equals, Does not equal | UNKNOWN      | UserSchedu: Core Application is Unknown | 1,242     |
+	| ColumnName                   | Operators                         | FilterOption | Text                                  | RowsCount |
+	| Windows7Mi: Core Application | Equals, Does not equal, Not empty | TRUE         | Windows7Mi: Core Application is True  | 11        |
+	| Babel(Engl: Core Application | Equals, Does not equal, Not empty | FALSE        | Babel(Engl: Core Application is False | 302       |
+	| Barry'sUse: Core Application | Equals, Does not equal, Not empty | Empty        | Barry'sUse: Core Application is Empty | 1,146     |
+	| ComputerSc: Core Application | Equals, Does not equal, Not empty | FALSE        | ComputerSc: Core Application is False | 1,043     |
+	| Havoc(BigD: Core Application | Equals, Does not equal, Not empty | Empty        | Havoc(BigD: Core Application is Empty | 1,156     |
+	| MigrationP: Core Application | Equals, Does not equal, Not empty | FALSE        | MigrationP: Core Application is False | 220       |
+	| UserSchedu: Core Application | Equals, Does not equal, Not empty | Empty        | UserSchedu: Core Application is Empty | 1,242     |
 
 @Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS10512 @DAS11509 @DAS11507 @DAS11509
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatHideFromEndUsersFilterIsAddedToTheList
@@ -274,14 +274,14 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatHideFromEndUsersFilterI
 	Then data in table is sorted by '<ColumnName>' column in descending order 
 
 Examples: 
-	| ColumnName                      | Operators                         | FilterOption | Text                                       | RowsCount |
-	| Windows7Mi: Hide from End Users | Equals, Does not equal, Not empty | FALSE        | Windows7Mi: Hide from End Users is False   | 1,067     |
-	| Babel(Engl: Hide from End Users | Equals, Does not equal, Not empty | UNKNOWN      | Babel(Engl: Hide from End Users is Unknown | 1,921     |
-	| Barry'sUse: Hide from End Users | Equals, Does not equal, Not empty | FALSE        | Barry'sUse: Hide from End Users is False   | 1,077     |
-	| ComputerSc: Hide from End Users | Equals, Does not equal, Not empty | FALSE        | ComputerSc: Hide from End Users is False   | 1,043     |
-	| Havoc(BigD: Hide from End Users | Equals, Does not equal, Not empty | UNKNOWN      | Havoc(BigD: Hide from End Users is Unknown | 1,156     |
-	| MigrationP: Hide from End Users | Equals, Does not equal, Not empty | FALSE        | MigrationP: Hide from End Users is False   | 220       |
-	| UserSchedu: Hide from End Users | Equals, Does not equal, Not empty | UNKNOWN      | UserSchedu: Hide from End Users is Unknown | 1,242     |
+	| ColumnName                      | Operators                         | FilterOption | Text                                     | RowsCount |
+	| Windows7Mi: Hide from End Users | Equals, Does not equal, Not empty | FALSE        | Windows7Mi: Hide from End Users is False | 1,067     |
+	| Babel(Engl: Hide from End Users | Equals, Does not equal, Not empty | Empty        | Babel(Engl: Hide from End Users is Empty | 1,921     |
+	| Barry'sUse: Hide from End Users | Equals, Does not equal, Not empty | FALSE        | Barry'sUse: Hide from End Users is False | 1,077     |
+	| ComputerSc: Hide from End Users | Equals, Does not equal, Not empty | FALSE        | ComputerSc: Hide from End Users is False | 1,043     |
+	| Havoc(BigD: Hide from End Users | Equals, Does not equal, Not empty | Empty        | Havoc(BigD: Hide from End Users is Empty | 1,156     |
+	| MigrationP: Hide from End Users | Equals, Does not equal, Not empty | FALSE        | MigrationP: Hide from End Users is False | 220       |
+	| UserSchedu: Hide from End Users | Equals, Does not equal, Not empty | Empty        | UserSchedu: Hide from End Users is Empty | 1,242     |
 
 @Evergreen @Devices @Evergreen_FiltersFeature @NewFilterCheck @DAS12232 @DAS12351 @DAS12639 @DAS14288
 Scenario: EvergreenJnr_DevicesList_CheckThatMultiSelectProjectTaskFiltersAreDisplayedCorrectlyOnDevicesPage
@@ -377,7 +377,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatOptionsIsAvailableForFiltersOfP
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "<FilterName>" filter
-	Then "Off, On" checkbox is available for this filter
+	Then "Empty, Off, On" checkbox is available for this filter
 
 Examples:
 	| PageName     | FilterName                           |

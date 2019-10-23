@@ -19,7 +19,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitInAProjectMappedTo
 	And User selects 'Clone evergreen capacity units to project capacity units' in the 'Capacity Units' dropdown
 	And User clicks 'UPDATE' button 
 	Then Success message is displayed and contains "The project capacity details have been updated" text
-	When User navigates to the "Units" sub-menu on the Details page
+	When User navigates to the 'Units' left submenu item
 	Then Counter shows "1" found rows
 	And "Unassigned" content is displayed for "Capacity Unit" column
 	And "New Name" content is displayed for "Maps to Evergreen" column
@@ -57,7 +57,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedApplicationsAreDisplayedCapac
 	| Name  | Description | IsDefault | Project      |
 	| 1Test | DAS13156    | true      | Project13156 |
 	When User navigates to the 'Scope' left menu item
-	When User navigates to the "Scope Changes" sub-menu on the Details page
+	When User navigates to the 'Scope Changes' left submenu item
 	When User navigates to the 'Applications' tab on Project Scope Changes page
 	When User expands 'Applications to add' multiselect to the 'Applications' tab on Project Scope Changes page and selects following Objects
 	| Objects                                                                       |

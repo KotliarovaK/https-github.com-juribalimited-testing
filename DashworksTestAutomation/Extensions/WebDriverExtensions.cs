@@ -496,6 +496,8 @@ namespace DashworksTestAutomation.Extensions
             IJavaScriptExecutor ex = driver;
 
             var clientHeight = int.Parse(ex.ExecuteScript("return arguments[0].clientHeight", gridElement).ToString());
+            if (clientHeight <= 0)
+                throw new Exception("Unable to get client Height");
             var scrollHeight = int.Parse(ex.ExecuteScript("return arguments[0].scrollHeight", gridElement).ToString());
 
             for (int i = 0; i < scrollHeight / clientHeight; i++)
@@ -1355,9 +1357,19 @@ namespace DashworksTestAutomation.Extensions
             WaitElementContainsText(driver, selector, expectedText, false, waitSec);
         }
 
-        public static void WaitForElementToHaveText(this RemoteWebDriver driver, IWebElement element, string expectedText, int waitSec = WaitTimeoutSeconds)
+        public static void WaitForElementToHaveText(this RemoteWebDriver driver, IWebElement element, string expectedText, int waitSec = WaitTimeoutSeconds, bool throwException = true)
         {
-            WaitElementContainsText(driver, element, expectedText, true, waitSec);
+            try
+            {
+                WaitElementContainsText(driver, element, expectedText, true, waitSec);
+            }
+            catch (Exception e)
+            {
+                if (throwException)
+                {
+                    throw e;
+                }
+            }
         }
 
         public static void WaitForElementToHaveText(this RemoteWebDriver driver, By selector, string expectedText, int waitSec = WaitTimeoutSeconds)
@@ -1739,7 +1751,7 @@ namespace DashworksTestAutomation.Extensions
             WaitElementContainsTextInAttribute(driver, selector, expectedText, attribute, true, waitSec);
         }
 
-        public static void WaitForAnyElementToContainsTextInAttribute(this RemoteWebDriver driver, List<IWebElement> elements, string expectedText, string attribute, int waitSec = WaitTimeoutSeconds)
+        public static void WaitForAnyElementToContainsTextInAttribute(this RemoteWebDriver driver, IEnumerable<IWebElement> elements, string expectedText, string attribute, int waitSec = WaitTimeoutSeconds)
         {
             WaitElementContainsTextInAttribute(driver, elements, expectedText, attribute, true, waitSec);
         }
@@ -1770,7 +1782,7 @@ namespace DashworksTestAutomation.Extensions
             }
         }
 
-        private static void WaitElementContainsTextInAttribute(this RemoteWebDriver driver, IList<IWebElement> elements, string expectedText, string attribute, bool condition, int waitSec)
+        private static void WaitElementContainsTextInAttribute(this RemoteWebDriver driver, IEnumerable<IWebElement> elements, string expectedText, string attribute, bool condition, int waitSec)
         {
             try
             {
@@ -1838,7 +1850,7 @@ namespace DashworksTestAutomation.Extensions
             };
         }
 
-        private static Func<IWebDriver, bool> TextToBeContainsInElementAttribute(IList<IWebElement> elements, string text, string attribute, bool condition)
+        private static Func<IWebDriver, bool> TextToBeContainsInElementAttribute(IEnumerable<IWebElement> elements, string text, string attribute, bool condition)
         {
             return (driver) =>
             {
@@ -2183,6 +2195,39 @@ namespace DashworksTestAutomation.Extensions
         #endregion
 
         #region Checkbox
+
+        //0 - not checked
+        //1 - indeterminate
+        //2 - all checked
+        public static int GetEvergreenCheckboxTripleState(this RemoteWebDriver driver, IWebElement checkbox)
+        {
+            //Get mat-checkbox webElement
+            var checkboxElement = checkbox.TagName.Equals("mat-checkbox")
+                ? checkbox
+                : checkbox.FindElement(By.XPath(".//ancestor::*[contains(@class,'mat-checkbox')][not(div)]"));
+            var classAttribute = checkboxElement.GetAttribute("class");
+
+            if (classAttribute.Contains("indeterminate"))
+            {
+                return 1;
+            }
+            else
+            {
+                if (!classAttribute.Contains("checked"))
+                {
+                    return 0;
+                }
+                else
+                {
+                    if (classAttribute.Contains("checked"))
+                    {
+                        return 2;
+                    }
+                }
+            }
+
+            throw new Exception("Unable to get checkbox selected state");
+        }
 
         public static void SetEvergreenCheckboxState(this RemoteWebDriver driver, IWebElement checkbox, bool desiredState)
         {

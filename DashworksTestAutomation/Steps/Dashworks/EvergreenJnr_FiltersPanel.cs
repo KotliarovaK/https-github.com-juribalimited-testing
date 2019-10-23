@@ -940,8 +940,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"{filterName} filter is not removed from filters");
         }
 
+        [When(@"User have reset all columns")]
         [When(@"User have reset all filters")]
-        public void WhenUserHaveResetAllFilters()
+        public void WhenUserHaveResetAllFiltersOrColumns()
         {
             var filterElement = _driver.NowAt<FiltersElement>();
             _driver.WaitForElementToBeDisplayed(filterElement.ResetFiltersButton);
@@ -1581,6 +1582,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     : "false";
 
             Verify.That(actualState, Is.EqualTo(state), "Wrong Remove icon state");
+        }
+
+        [When(@"User removes '(.*)' association in Association panel")]
+        public void WhenUserRemovesФssociationInAssociationPanel(string option)
+        {
+            var page = _driver.NowAt<FiltersElement>();
+            page.RemoveIconForAssociation(option).Click();
         }
     }
 }

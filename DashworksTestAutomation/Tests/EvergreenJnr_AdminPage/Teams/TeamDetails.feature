@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11944 @Teams
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11944 @Teams @Do_Not_Run_With_Projects @Do_Not_Run_With_Teams
 Scenario: EvergreenJnr_AdminPage_CheckSelectedRowsCountDisplayingOnTeamsGrids
 	When User clicks 'Admin' on the left-hand menu
 	And User navigates to the 'Teams' left menu item
