@@ -14,7 +14,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNoErrorsAreDisplayedAfterDuplicating
 	Then "1111111111111111111111111111111111111111" list is displayed to user
 	When User navigates to the "All Devices" list
 	Then 'All Devices' list should be displayed to the user
-	When User duplicates list with "1111111111111111111111111111111111111111" name
+	When User clicks 'Duplicate' Settings menu item for '1111111111111111111111111111111111111111' list
 	Then "111111111111111111111111111111111111112" list is displayed to user
 	Then There are no errors in the browser console
 
@@ -38,7 +38,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatDataFromTheStaticListAreSavedInTheNewL
 	When User creates new custom list with "CustomList5588" name
 	Then "CustomList5588" list is displayed to user
 	Then "2" rows are displayed in the agGrid
-	When User duplicates list with "StaticList1412" name
+	When User clicks 'Duplicate' Settings menu item for 'StaticList1412' list
 	Then "StaticList14122" list is displayed to user
 	Then "2" rows are displayed in the agGrid
 
@@ -84,12 +84,12 @@ Scenario: EvergreenJnr_DevicesList_CheckThatConfirmationDeletionMessageDoesntDis
 	When User add "Device Type" filter where type is "Does not equal" without added column and "Virtual" Lookup option
 	And User create dynamic list with "List17711" name on "Devices" page
 	Then "List17711" list is displayed to user
-	When User duplicates list with "List17711" name
+	When User clicks 'Duplicate' Settings menu item for 'List17711' list
 	Then "List177112" list is displayed to user
 	When User navigates to the "List177112" list
-	And User clicks Settings button in the list panel
-	Then Settings panel is displayed to the user
-	When User clicks Delete in the list panel
+	When User clicks Settings button for "List177112" list
+	Then Cog menu is displayed to the user
+	When User clicks 'Delete' option in opened Cog-menu
 	Then "list will be permanently deleted" message is displayed in the lists panel
 	When User waits for three seconds
 	Then "list will be permanently deleted" message is displayed in the lists panel

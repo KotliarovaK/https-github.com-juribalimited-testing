@@ -35,7 +35,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Scope
         {
             var page = _driver.NowAt<ScopeChangePage>();
             _driver.ExecuteAction(() => page.GetTabByName(tabName).Click());
-            _driver.WaitForDataLoading();
+            _driver.WaitForDataLoading(40);
         }
 
         [Then(@"following objects were not found")]

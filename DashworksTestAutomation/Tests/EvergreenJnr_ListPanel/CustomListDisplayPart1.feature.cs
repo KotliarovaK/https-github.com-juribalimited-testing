@@ -141,7 +141,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
             table1.AddRow(new string[] {
-                        "None"});
+                        "Empty"});
 #line 14
  testRunner.When("User add \"Windows7Mi: Category\" filter where type is \"Equals\" without added colum" +
                     "n and following checkboxes:", ((string)(null)), table1, "When ");
@@ -218,7 +218,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
             table2.AddRow(new string[] {
-                        "None"});
+                        "Empty"});
 #line 27
  testRunner.When("User add \"Windows7Mi: Category\" filter where type is \"Equals\" without added colum" +
                     "n and following checkboxes:", ((string)(null)), table2, "When ");
@@ -297,7 +297,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
             table3.AddRow(new string[] {
-                        "None"});
+                        "Empty"});
 #line 40
  testRunner.When("User add \"Windows7Mi: Category\" filter where type is \"Equals\" without added colum" +
                     "n and following checkboxes:", ((string)(null)), table3, "When ");
@@ -398,7 +398,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
             table5.AddRow(new string[] {
-                        "None"});
+                        "Empty"});
 #line 63
  testRunner.When("User add \"Windows7Mi: Category\" filter where type is \"Equals\" without added colum" +
                     "n and following checkboxes:", ((string)(null)), table5, "When ");

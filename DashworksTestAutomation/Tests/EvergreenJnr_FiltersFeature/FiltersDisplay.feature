@@ -133,7 +133,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatNoneOptionIsAvailableForFilters
 	Then Filters panel is displayed to the user
 	When User add "<FilterName>" filter where type is "Equals" without added column and following checkboxes:
 	| SelectedCheckboxes |
-	| None               |
+	| Empty              |
 	Then Save to New Custom List element is displayed
 	When User click Edit button for "<FilterName>" filter
 	Then User changes filter type to "Does not equal"
@@ -142,7 +142,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatNoneOptionIsAvailableForFilters
 	Then Save to New Custom List element is NOT displayed
 	When User add "<FilterName>" filter where type is "Equals" without added column and following checkboxes:
     | SelectedCheckboxes |
-    | None               |
+    | Empty              |
 	Then Save to New Custom List element is displayed
 	When User Add And "<NewFilterName>" filter where type is "Equals" without added column and following checkboxes:
     | SelectedCheckboxes |
@@ -749,8 +749,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatRelevantDataSetBeDisplayedAfterResetti
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Enabled" filter where type is "Equals" with added column and following checkboxes:
-    | SelectedCheckboxes |
-    | UNKNOWN            |
+	| SelectedCheckboxes |
+    | Empty              |
 	Then "Enabled" filter is added to the list
 	And message 'No users found' is displayed to the user
 	When User have reset all filters
@@ -880,7 +880,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFilterLogicForBooleanFieldsIsWorkedC
 	When User add "Secure Boot Enabled" filter where type is "Does not equal" with added column and following checkboxes:
     | SelectedCheckboxes |
     | FALSE              |
-    | UNKNOWN            |
+    | Empty              |
 	Then "Secure Boot Enabled" filter is added to the list
 	Then table data in column is filtered correctly
 
@@ -1202,10 +1202,10 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatCapacityUnitSubcategoryPlacedIn
 Scenario: EvergreenJnr_AllLists_CheckThatParticularProjectCapacityUnitFilterShowsProperItems
 	When User clicks 'Admin' on the left-hand menu
 	And User clicks 'CREATE PROJECT' button 
-	And User enters "13201" in the "Project Name" field
+	And User enters '13201' text to 'Project Name' textbox
 	And User selects 'All Mailboxes' option from 'Scope' autocomplete
 	When User selects 'Evergreen' in the 'Mode' dropdown
-	When User clicks Create button on the Create Project page
+	When User clicks 'CREATE' button
 	And User clicks 'Devices' on the left-hand menu
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
@@ -1248,7 +1248,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatDeletedBucketIsNotAvailableInEvergreenB
 	When User navigates to the 'Evergreen' left menu item
 	When User navigates to the 'Buckets' left menu item
 	And User clicks 'CREATE EVERGREEN BUCKET' button 
-	And User enters "Bucket_DAS12940_to_be_deleted" in the "Bucket Name" field
+	And User enters 'Bucket_DAS12940_to_be_deleted' text to 'Bucket Name' textbox
 	And User selects "Admin IT" team in the Team dropdown on the Buckets page
 	And User clicks 'CREATE' button 
 	And User select "Bucket" rows in the grid
@@ -1431,7 +1431,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatAddNewOptionAvailableAfterClick
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User clicks Add New button on the Filter panel
-	And User clicks "<LinkName>" link in Lists panel
+	When User navigates to the "<LinkName>" list
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
 	And Add New button is displayed on the Filter panel
@@ -1676,7 +1676,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTaskSlotHasEmptyAndNotEmptyOperators
 	And User enters "Empty" text in Search field at selected Lookup Filter
 	And User clicks checkbox at selected Lookup Filter
 	And User clicks Save filter button
-	Then Column "1803: Pre-Migration \ Scheduled Date (Slot)" with no data displayed
+	Then Column '1803: Pre-Migration \ Scheduled Date (Slot)' with no data displayed
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS15899
 Scenario: EvergreenJnr_DevicesList_CheckStageNameInTheFiltestForDevicesLists
@@ -1761,13 +1761,13 @@ Scenario: EvergreenJnr_ApplicationsList_CheckTooltipsForUpdateButtonWhenDateFiel
 	Then Filters panel is displayed to the user
 	When user select "User Dashworks First Seen" filter
 	And User select "Equals" Operator value
-	Then 'UPDATE' Action button has tooltip with 'You must enter a date' text
+	Then 'UPDATE' button has tooltip with 'You must enter a date' text
 	When User select "Between" Operator value
-	Then 'UPDATE' Action button has tooltip with 'You must enter a start date' text
+	Then 'UPDATE' button has tooltip with 'You must enter a start date' text
 	When User select "Empty" Operator value
-	Then 'UPDATE' Action button has tooltip with 'Complete all fields before saving this filter' text
+	Then 'UPDATE' button has tooltip with 'Complete all fields before saving this filter' text
 	When User select "Not empty" Operator value
-	Then 'UPDATE' Action button has tooltip with 'Complete all fields before saving this filter' text
+	Then 'UPDATE' button has tooltip with 'Complete all fields before saving this filter' text
 
 @Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS16845
 Scenario: EvergreenJnr_MailboxesList_CheckThatApplicationReadinessSubCategoryIsMissingForProjectOfMailboxesLists
@@ -1827,7 +1827,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUserPostalCodeOptionsDisplaying
 Scenario: EvergreenJnr_MailboxesList_CheckThatFilterExpressionSectionIsMovedToFilterPanel
 	When User clicks 'Mailboxes' on the left-hand menu
 	Then 'All Mailboxes' list should be displayed to the user
-	When User clicks "Mailbox Pivot (Complex)" list name in left panel
+	When User navigates to the "Mailbox Pivot (Complex)" list
 	And User clicks the Filters button
 	Then Filter Expression icon displayed within Filter Panel
 	When User clicks Filter Expression icon in Filter Panel
@@ -2079,3 +2079,21 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFilterSubcategoriesAreSortedByCaseIn
     | Device OS Servicing State    |
     | Device OS Version Number     |
     | Device Service Pack or Build |
+
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS16814
+Scenario Outline: EvergreenJnr_AllLists_CheckThatCorrectScopedProjectAppearsForStatusFilter
+	When User clicks '<ListName>' on the left-hand menu
+	Then '<ListHeader>' list should be displayed to the user
+	When User clicks the Filters button
+	And User clicks Add New button on the Filter panel
+	And User enters "Status" text in Search field at Filters Panel
+	And User moves to the end of categories list
+	Then the following Filters categories are presented in Filter panel:
+    | Subcategories |
+    | <Project>     |
+
+	Examples:
+    | ListName     | ListHeader       | Project             |
+    | Applications | All Applications | Project: zDeviceAut |
+    | Users        | All Users        | Project: zDeviceAut |
+    | Devices      | All Devices      | Project: zUserAutom |

@@ -41,7 +41,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageAboutUnconfirmedChangesA
 	When User navigates to "1803 Rollout" project details
 	And User navigates to the 'Capacity' left menu item
 	And User clicks "Enable Capacity" checkbox on the Project details page
-	And User selects "Units" tab on the Project details page
+	And User navigates to the 'Units' left menu item
 	Then "You have unsaved changes. Are you sure you want to leave the page?" text is displayed in the warning message
 	Then "YES" button is displayed in the warning message
 	Then "NO" button is displayed in the warning message
@@ -50,7 +50,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageAboutUnconfirmedChangesA
 Scenario: EvergreenJnr_AdminPage_ChecksThatWhenValueIsZeroThenBlankShouldBeDisplayed
 	When User navigates to "1803 Rollout" project details
 	When User navigates to the 'Capacity' left menu item
-	And User selects "Units" tab on the Project details page
+	And User navigates to the 'Units' left menu item
 	When User enters "Evergreen Capacity Unit 3" text in the Search field for "Capacity Unit" column
 	Then "" content is displayed in "Devices" column
 	And "" content is displayed in "Users" column

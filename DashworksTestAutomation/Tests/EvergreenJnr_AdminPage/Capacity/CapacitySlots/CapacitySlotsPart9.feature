@@ -9,7 +9,7 @@ Background: Pre-Conditions
 Scenario: EvergreenJnr_AdminPage_CheckDragAndDropFunctionalityForSlot
 	When User navigates to "1803 Rollout" project details
 	And User navigates to the 'Capacity' left menu item
-	And User selects "Slots" tab on the Project details page
+	And User navigates to the 'Slots' left menu item
 	When User moves "Birmingham Morning" slot to "London Depot 15:00 - 17:00" slot
 	Then "Capacity Slot" column content is displayed in the following order:
 	| Items                        |
@@ -45,7 +45,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDragAndDropFunctionalityForSlot
 Scenario: EvergreenJnr_AdminPage_CheckTasksListDisplayingOnCreateAndEditSlotsScreen
 	When User navigates to "I-Computer Scheduled Project" project details
 	And User navigates to the 'Capacity' left menu item
-	And User selects "Slots" tab on the Project details page
+	And User navigates to the 'Slots' left menu item
 	And User enters "Scheduled/Targeted" text in the Search field for "Capacity Slot" column
 	And User clicks content from "Capacity Slot" column
 	And User clicks on "Tasks" dropdown on the Capacity Slots page
@@ -58,7 +58,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTasksListDisplayingOnCreateAndEditSlotsScr
 	| i-stage A \ i-Schedule  |
 	| i-stage A \ i-Targeted  |
 	When User navigates to the 'Capacity' left menu item
-	When User selects "Slots" tab on the Project details page
+	When User navigates to the 'Slots' left menu item
 	And User clicks 'CREATE SLOT' button 
 	And User selects following items in "Paths" dropdown:
 	| items                             |
@@ -88,7 +88,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTasksWithoutRequestTypeAlwaysAvailableForS
 	When User publishes the task
 	When User navigates to "Devices Evergreen Capacity Project" project details
 	And User navigates to the 'Capacity' left menu item
-	And User selects "Slots" tab on the Project details page
+	And User navigates to the 'Slots' left menu item
 	And User clicks 'CREATE SLOT' button 
 	And User enters 'Slot13671' text to 'Slot Name' textbox
 	And User enters '13671' text to 'Display Name' textbox
@@ -112,7 +112,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDisplayOrderIsResetAfterSlotDeletion
 	| ProjectForDAS13147 | Slot 3   | Slot 3      |               |                 |
 	| ProjectForDAS13147 | Slot 4   | Slot 4      |               |                 |
 	And User navigates to the 'Capacity' left menu item
-	And User selects "Slots" tab on the Project details page
+	And User navigates to the 'Slots' left menu item
 	When User select "Capacity Slot" rows in the grid
 	| SelectedRowsName |
 	| Slot 3           |

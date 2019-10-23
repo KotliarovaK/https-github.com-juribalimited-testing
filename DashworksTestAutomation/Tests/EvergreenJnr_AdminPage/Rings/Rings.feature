@@ -19,7 +19,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatRingsOptionMapsToEvergreenCanBeChanged
 	Then Ring settings Maps to evergreen ring is displayed as "Unassigned"
 	When User sets "None" value in Maps to evergreen ring field
 	Then Ring settings Maps to evergreen ring is displayed as "None"
-	When User clicks "Administration" navigation link on the Admin page
+	When User clicks 'Administration' header breadcrumb
 	And User clicks Yes button in Leave Page Warning
 	And User navigates to the 'Evergreen' left menu item
 	And User navigates to the 'Buckets' left menu item
@@ -41,9 +41,9 @@ Scenario: EvergreenJnr_AdminPage_CheckProjectDetailFormAndRingDropdown
 	When User clicks content from "Ring" column
 	Then "Unassigned" content is displayed in "Ring name" field
 	Then "Unassigned" content is displayed in "Description" field
-	Then "UPDATE" Action button is disabled
+	Then 'UPDATE' button is disabled
 	When User enters 'NewDescription' text to 'Description' textbox
-	Then "UPDATE" Action button is active
+	Then 'UPDATE' button is not disabled
 	Then "Default Ring" checkbox is checked and cannot be unchecked
 	Then "Maps to Evergreen Ring" dropdown is not displayed on the Admin Settings screen
 	When User clicks 'CANCEL' button 
@@ -66,7 +66,7 @@ Scenario: EvergreenJnr_AdminPage_CheckProjectDetailFormAndRingDropdown
 	When User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
 	Then 'Use project rings' content is displayed in 'Rings' dropdown
 	When User selects 'Clone evergreen rings to project rings' in the 'Rings' dropdown
-	When User clicks "Projects" navigation link on the Admin page
+	When User clicks 'Projects' header breadcrumb
 	When User enters "New_14690_Project" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	Then Page with 'New_14690_Project' header is displayed to user

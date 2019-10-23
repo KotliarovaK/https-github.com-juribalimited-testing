@@ -13,7 +13,7 @@ Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOf
 	Then Details page for "01DEAC5F18B34084B04@bclabs.local" item is displayed to the user
 	When User switches to the "USE ME FOR AUTOMATION(MAIL SCHDLD)" project in the Top bar on Item details page
 	And User navigates to the 'Projects' left menu item
-	And User navigates to the "Project Details" sub-menu on the Details page
+	And User navigates to the 'Project Details' left submenu item
 	And User clicks 'OFFBOARD' button 
 	Then Dialog Pop-up is displayed for User
 	And 'Offboard all associated users' checkbox is checked
@@ -38,7 +38,7 @@ Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOf
 	When User enters "USE ME FOR AUTOMATION(MAIL SCHDLD)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Scope' left menu item
-	And User selects "History" tab on the Project details page
+	And User navigates to the 'History' left menu item
 	Then '01DEAC5F18B34084B04@bclabs.local' content is displayed in the 'Item' column
 	And '01DEAC5F18B34084B04' content is displayed in the 'Item' column
 	And 'svc_dashworks' content is not displayed in the 'Item' column
@@ -51,7 +51,7 @@ Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOf
 	Then Details page for "01DEAC5F18B34084B04@bclabs.local" item is displayed to the user
 	When User switches to the "USE ME FOR AUTOMATION(MAIL SCHDLD)" project in the Top bar on Item details page
 	And User navigates to the 'Projects' left menu item
-	And User navigates to the "Project Details" sub-menu on the Details page
+	And User navigates to the 'Project Details' left submenu item
 	And User clicks 'OFFBOARD' button 
 	Then Dialog Pop-up is displayed for User
 	And 'Offboard all associated users' checkbox is checked
@@ -72,7 +72,7 @@ Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOf
 	When User enters "USE ME FOR AUTOMATION(MAIL SCHDLD)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	When User navigates to the 'Scope' left menu item
-	And User selects "History" tab on the Project details page
+	And User navigates to the 'History' left menu item
 	Then '01DEAC5F18B34084B04@bclabs.local' content is displayed in the 'Item' column
 	And '01DEAC5F18B34084B04' content is displayed in the 'Item' column
 
@@ -82,7 +82,7 @@ Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOf
 	Then Details page for "alex.cristea@juriba.com" item is displayed to the user
 	When User switches to the "Email Migration" project in the Top bar on Item details page
 	When User navigates to the 'Projects' left menu item
-	And User navigates to the "Project Details" sub-menu on the Details page
+	And User navigates to the 'Project Details' left submenu item
 	And User clicks 'OFFBOARD' button 
 	Then Dialog Pop-up is displayed for User
 	Then following text 'Offboarding mailbox alex.cristea@juriba.com (Alex Cristea). Offboarding an object deletes all project related information about it.' is displayed in Dialog Pop-up

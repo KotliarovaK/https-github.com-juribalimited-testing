@@ -10,6 +10,7 @@ using DashworksTestAutomation.Pages.Evergreen.ItemDetails;
 using DashworksTestAutomation.Pages.Evergreen.RightSideActionPanels;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
@@ -50,82 +51,6 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
             var panel = _driver.NowAt<BaseRightSideActionsPanel>();
             Verify.IsFalse(panel.IsPanelOpened("ACTIONS"),
                 "Action panel is opened");
-        }
-
-        //TODO looks like this section should be moved to BaseDashboard
-        #region Action button
-
-        [Then(@"""(.*)"" button is displayed without tooltip on Update form")]
-        public void ThenUpdateButtonIsDisplayedWithoutTooltipOnUpdateForm(string buttonName)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            var button = action.GetButtonByName(buttonName);
-
-            _driver.MouseHover(button);
-            Verify.IsFalse(_driver.IsTooltipDisplayed(), "Tooltip for Update button displayed");
-        }
-
-        [When(@"User selects 'Save as new pilot' option")]
-        public void WhenUserSelectsSaveAsNewPilotOption()
-        {
-            var action = _driver.NowAt<PivotElementPage>();
-            action.SaveNewListButton.Click();
-        }
-
-        [Then(@"""(.*)"" Action button is disabled")]
-        public void ThenActionButtonIsDisabled(string buttonName)
-        {
-            Verify.IsTrue(IsButtonDisabled(buttonName), $"{buttonName} Button state is not disabled");
-        }
-
-        [Then(@"""(.*)"" Action button is enabled")]
-        public void ThenActionButtonIsEnabled(string buttonName)
-        {
-            Utils.Verify.IsFalse(IsButtonDisabled(buttonName), $"{buttonName} Button state is not enabled");
-        }
-
-        private bool IsButtonDisabled(string buttonName)
-        {
-            var button = _driver.NowAt<BaseDashboardPage>();
-            var buttonState = button.GetButtonByName(buttonName).GetAttribute("disabled");
-            if (buttonState == null)
-                return false;
-            else
-                return bool.Parse(buttonState);
-        }
-
-        [Then(@"""(.*)"" Action button is active")]
-        public void ThenActionButtonIsActive(string buttonName)
-        {
-            var button = _driver.NowAt<BaseDashboardPage>();
-            var buttonState = button.GetButtonByName(buttonName).GetAttribute("disabled");
-            Verify.AreNotEqual(buttonState, "true", $"{buttonName} Button state is incorrect");
-        }
-
-        [Then(@"'(.*)' Action button has tooltip with '(.*)' text")]
-        public void ThenActionButtonHasTooltipWithText(string buttonName, string text)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            var button = page.GetButtonByName(buttonName);
-            _driver.MouseHover(button);
-            var toolTipText = _driver.GetTooltipText();
-            Utils.Verify.AreEqual(text, toolTipText, "Tooltip is incorrect");
-        }
-
-        #endregion
-
-        [Then(@"Objects to add panel is disabled")]
-        public void ThenObjectsToAddPanelIsDisabled()
-        {
-            var component = _driver.NowAt<BaseDashboardPage>();
-            Verify.IsTrue(component.DisabledObjectsToAddPanel.Displayed(), "Objects to add panel is active");
-        }
-
-        [Then(@"Objects to add panel is active")]
-        public void ThenObjectsToAddPanelIsActive()
-        {
-            var component = _driver.NowAt<BaseDashboardPage>();
-            Utils.Verify.IsTrue(component.ActiveObjectsToAddPanel.Displayed(), "Objects to add panel is active");
         }
 
         [Then(@"Warning message with ""(.*)"" text is displayed on Action panel")]
@@ -173,16 +98,6 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
             Verify.IsFalse(action.SuccessMessage.Displayed(), "Success message is displayed for more than 5 seconds");
         }
 
-        [Then(@"Checkboxes are not displayed")]
-        public void ThenCheckboxesAreNotDisplayed()
-        {
-            var dashboardPage = _driver.NowAt<BaseGridPage>();
-            Verify.IsFalse(dashboardPage.Checkbox.Displayed(),
-                "Checkbox is displayed for content in the grid");
-            Verify.IsFalse(dashboardPage.SelectAllCheckbox.Displayed(),
-                "Select all checkbox is displayed");
-        }
-
         [When(@"User select ""(.*)"" rows in the grid")]
         public void WhenUserSelectRowsInTheGrid(string columnName, Table table)
         {
@@ -199,6 +114,7 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
             }
         }
 
+        //TODO need to move this somewhere
         [Then(@"User removes selected rows")]
         public void WhenUserIsRemovedSelectedRows()
         {
@@ -228,24 +144,6 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
         {
             var actionsElement = _driver.NowAt<ActionsElement>();
             actionsElement.SelectList(listName);
-        }
-
-        [Then(@"Select All selectbox is checked")]
-        public void ThenSelectAllSelectboxIsChecked()
-        {
-            var dashboardPage = _driver.NowAt<BaseGridPage>();
-            //_driver.WaitToBeSelected(dashboardPage.SelectAllCheckbox, true);
-            Utils.Verify.IsTrue(_driver.GetEvergreenCheckboxState(dashboardPage.SelectAllCheckbox),
-                "Select All checkbox is unchecked");
-        }
-
-        [Then(@"Select All selectbox is unchecked")]
-        public void ThenSelectAllSelectboxIsUnchecked()
-        {
-            var dashboardPage = _driver.NowAt<BaseGridPage>();
-            _driver.WhatForElementToBeSelected(dashboardPage.SelectAllCheckbox, false);
-            Verify.IsTrue(_driver.GetEvergreenCheckboxState(dashboardPage.SelectAllCheckbox),
-                "Select All checkbox is checked");
         }
 
         [Then(@"""(.*)"" selected rows are displayed in the Actions panel")]
@@ -289,14 +187,6 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
                 "Number of rows are not equal in table and in Actions");
         }
 
-        [Then(@"Select all checkbox is not displayed")]
-        public void ThenSelectAllCheckboxIsNotDisplayed()
-        {
-            var dashboardPage = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsFalse(dashboardPage.SelectAllCheckbox.Displayed(),
-                "Select All checkbox is displayed");
-        }
-
         [When(@"User types ""(.*)"" static list name")]
         public void WhenUserTypesStaticListName(string listName)
         {
@@ -330,15 +220,6 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
 
             var listElement = _driver.NowAt<ActionsElement>();
             listElement.ListNameTextBox.SendKeys(listName);
-        }
-
-        [Then(@"All checkboxes are checked in the table")]
-        public void ThenAllCheckboxesAreCheckedInTheTable()
-        {
-            var dashboardPage = _driver.NowAt<BaseDashboardPage>();
-            //Wait for All checkboxes are checked
-            Thread.Sleep(1000);
-            Verify.IsFalse(dashboardPage.UncheckedCheckbox.Displayed(), "Not all checkboxes are checked in the table");
         }
     }
 }

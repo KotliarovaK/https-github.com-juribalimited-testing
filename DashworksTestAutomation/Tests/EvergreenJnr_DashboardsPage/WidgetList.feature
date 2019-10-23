@@ -49,7 +49,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDataFromTheWidgetMatchesTheOrigin
 	| WidgetType | Title               | List              | MaxRows | MaxColumns |
 	| List       | Widget_For_DAS15413 | TestList_DAS15413 | 500     | 10         |
 	Then "Widget_For_DAS15413" Widget is displayed to the user
-	Then following content is displayed in the "Vendor" column for Widget
+	Then Content in the 'Vendor' column is equal to for Widget
 	| Values                |
 	| Microsoft Corporation |
 

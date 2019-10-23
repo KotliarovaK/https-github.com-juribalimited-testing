@@ -12,7 +12,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRelinkOptionIsWorkedCorrectlyForProj
 	Then Details page for "06RIV0KXJMHJ1K" item is displayed to the user
 	When User switches to the "Havoc (Big Data)" project in the Top bar on Item details page
 	And User navigates to the 'Projects' left menu item
-	And User navigates to the "Project Details" sub-menu on the Details page
+	And User navigates to the 'Project Details' left submenu item
 	Then User verifies data in the fields on details page
 	| Field        | Data           |
 	| Name         | 06RIV0KXJMHJ1K |
@@ -56,7 +56,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRelinkOptionIsWorkedCorrectlyForProj
 	When User navigates to the 'User' details page for 'ZHC394580' item
 	When User switches to the "Havoc (Big Data)" project in the Top bar on Item details page
 	And User navigates to the 'Projects' left menu item
-	And User navigates to the "Project Details" sub-menu on the Details page
+	And User navigates to the 'Project Details' left submenu item
 	And User clicks 'OFFBOARD' button 
 	When User clicks 'OFFBOARD' button in Dialog Pop-up
 	And User clicks 'OFFBOARD' button in Dialog Pop-up
@@ -68,16 +68,16 @@ Scenario: EvergreenJnr_DevicesList_CheckThatGreenBannerIsNotVisibleOnTheOtherPag
 	Then Details page for "FISC5NOXFB8Q7M" item is displayed to the user
 	When User switches to the "Havoc (Big Data)" project in the Top bar on Item details page
 	And User navigates to the 'Projects' left menu item
-	And User navigates to the "Project Details" sub-menu on the Details page
+	And User navigates to the 'Project Details' left submenu item
 	When User clicks 'RELINK' button 
 	And User enters '5XW9ZW6O6HG7IP9' in the 'Device' autocomplete field and selects '5XW9ZW6O6HG7IP9' value
 	And User clicks 'RELINK' button in Dialog Pop-up
 	Then Warning message with "This object will be relinked to the selected Evergreen object in this project" text is displayed on the Project Details Page
 	When User clicks 'RELINK' button in Dialog Pop-up
 	Then Success message is displayed and contains "The Evergreen owner of this Device has been queued for onboarding into this project, the change in ownership for this Device will show once this is complete" text
-	When User navigates to the "Projects Summary" sub-menu on the Details page
+	When User navigates to the 'Projects Summary' left submenu item
 	Then Success message is not displayed
-	When User navigates to the "Project Details" sub-menu on the Details page
+	When User navigates to the 'Project Details' left submenu item
 	When User clicks 'RELINK' button 
 	And User enters 'FISC5NOXFB8Q7M' in the 'Device' autocomplete field and selects 'FISC5NOXFB8Q7M' value
 	And User clicks 'RELINK' button in Dialog Pop-up
@@ -86,7 +86,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatGreenBannerIsNotVisibleOnTheOtherPag
 	When User waits for three seconds
 	When User clicks "Sherri R. Bautista" link on the Details Page
 	And User navigates to the 'Projects' left menu item
-	And User navigates to the "Project Details" sub-menu on the Details page
+	And User navigates to the 'Project Details' left submenu item
 	And User clicks 'OFFBOARD' button 
 	When User clicks 'OFFBOARD' button in Dialog Pop-up
 	And User clicks 'OFFBOARD' button in Dialog Pop-up

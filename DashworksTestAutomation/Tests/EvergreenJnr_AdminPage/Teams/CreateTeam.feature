@@ -13,16 +13,16 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyTeamName
 	Then Page with 'Teams' header is displayed to user
 	When User clicks 'CREATE TEAM' button 
 	Then Page with 'Create Team' subheader is displayed to user
-	When User enters " " in the "Team Name" field
+	When User enters ' ' text to 'Team Name' textbox
 	And User enters "test" in the Team Description field
 	Then Create Team button is disabled
-	When User enters "TestTeam" in the "Team Name" field
+	When User enters 'TestTeam' text to 'Team Name' textbox
 	And User enters "test" in the Team Description field
 	And User clicks 'CREATE' button 
 	Then Success message is displayed and contains "The team has been created" text
 	When User clicks 'CREATE TEAM' button 
 	Then Page with 'Create Team' subheader is displayed to user
-	When User enters "TestTeam" in the "Team Name" field
+	When User enters 'TestTeam' text to 'Team Name' textbox
 	And User enters "test" in the Team Description field
 	And User clicks 'CREATE' button 
 	Then Error message with "A team already exists with this name" text is displayed
@@ -44,12 +44,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedTeamUsingTh
 	And User clicks Default Team checkbox
 	And User clicks 'UPDATE' button 
 	Then Success message is displayed and contains "The team was successfully updated" text
-	When User clicks "Teams" navigation link on the Admin page
+	When User clicks 'Teams' header breadcrumb
 	When User enters "99770" text in the Search field for "Team" column
 	When User clicks content from "Team" column
 	When User navigates to the 'Team Settings' left menu item
 	Then Default Team checkbox is not active
-	When User clicks "Teams" navigation link on the Admin page
+	When User clicks 'Teams' header breadcrumb
 	When User enters "99770" text in the Search field for "Team" column
 	And User selects all rows on the grid
 	And User selects 'Delete' in the 'Actions' dropdown
@@ -63,12 +63,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedTeamUsingTh
 	And User clicks Default Team checkbox
 	And User clicks 'UPDATE' button 
 	Then Success message is displayed and contains "The team was successfully updated" text
-	When User clicks "Teams" navigation link on the Admin page
+	When User clicks 'Teams' header breadcrumb
 	When User enters "My Team" text in the Search field for "Team" column
 	Then 'TRUE' content is displayed in the 'Default' column
 	When User clicks 'CREATE TEAM' button 
 	Then Page with 'Create Team' subheader is displayed to user
-	When User enters " 99770" in the "Team Name" field
+	When User enters ' 99770' text to 'Team Name' textbox
 	And User enters "test" in the Team Description field
 	And User clicks 'CREATE' button 
 	Then Error message with "A team already exists with this name" text is displayed

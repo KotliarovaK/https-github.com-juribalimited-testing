@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.Extensions;
@@ -158,13 +159,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.ClickByJavascript(createWidgetElement.GetDropdownForWidgetByName(dropdownName));
             createWidgetElement.SelectObjectForWidgetCreation(objectName);
         }
-       
+
         [When(@"User enters ""(.*)"" as Widget Title")]
         public void WhenUserSetsWidgetTitle(string widgetTitle)
         {
             var createWidgetElement = _driver.NowAt<AddWidgetPage>();
             createWidgetElement.Title.Clear();
             createWidgetElement.Title.SendKeys(widgetTitle);
+        }
+
+        [When(@"User expands Widget List dropdown")]
+        public void WhenUserExpandsWidgetListDropdown()
+        {
+            var createWidgetElement = _driver.NowAt<AddWidgetPage>();
+            createWidgetElement.List.Click();
+            _driver.WaitForElementsToBeDisplayed(createWidgetElement.GetDropdownOptions());
         }
 
         [When(@"User selects ""(.*)"" as Widget List")]
@@ -594,7 +603,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 Verify.That(actualItems[i].StartsWith(expectedItems[i]), Is.True,
                                   $"List has wrong items/order at {actualItems[i]}");
             }
-            Verify.That(actualItems.Count, Is.EqualTo(expectedItems.Count),$"Lists item count is different");
+            Verify.That(actualItems.Count, Is.EqualTo(expectedItems.Count), $"Lists item count is different");
         }
 
         [When(@"User clicks on '(.*)' category of '(.*)' widget")]

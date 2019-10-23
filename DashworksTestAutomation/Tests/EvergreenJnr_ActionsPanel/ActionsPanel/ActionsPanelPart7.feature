@@ -49,7 +49,7 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User enters 'Nov 29, 2018' text to 'Date' datepicker
 	And User selects 'User Slot' in the 'Capacity Slot' dropdown
 	When User selects 'Update' in the 'Update Owner' dropdown
-	And User selects "<NewTeam>" Team on Action panel
+	When User selects '<NewTeam>' option from 'Team' autocomplete
 	When User navigate to the bottom of the Action panel
 	And User clicks 'UPDATE' button 
 	Then the amber message is displayed correctly
@@ -69,7 +69,7 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User enters 'Jan 5, 2019' text to 'Date' datepicker
 	And User selects 'User Slot' in the 'Capacity Slot' dropdown
 	When User selects 'Update' in the 'Update Owner' dropdown
-	And User selects "<DefaultTeam>" Team on Action panel
+	When User selects '<DefaultTeam>' option from 'Team' autocomplete
 	And User navigate to the bottom of the Action panel
 	And User clicks 'UPDATE' button 
 	And User navigate to the top of the Action panel

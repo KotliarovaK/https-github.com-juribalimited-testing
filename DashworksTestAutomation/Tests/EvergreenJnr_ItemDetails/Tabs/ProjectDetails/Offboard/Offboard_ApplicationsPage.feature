@@ -17,7 +17,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatOffboardOptionIsWorkedCorrectly
 	Then Details page for "Technical Information Sampler: January 2003" item is displayed to the user
 	When User switches to the "Project17919" project in the Top bar on Item details page
 	When User navigates to the 'Projects' left menu item
-	And User navigates to the "Project Details" sub-menu on the Details page
+	And User navigates to the 'Project Details' left submenu item
 	And User clicks 'OFFBOARD' button 
 	Then Warning message with "This application will be offboarded, this cannot be undone" text is displayed on the Project Details Page
 	When User clicks 'OFFBOARD' button 

@@ -155,10 +155,11 @@ Examples:
 	| Applications | All Applications | 1803: Current User Count | Count(1803: Current User Count) | Sum(1803: Current User Count) | Min(1803: Current User Count) | Max(1803: Current User Count) | Avg(1803: Current User Count) |
 	| Mailboxes    | All Mailboxes    | Associated Item Count    | Count(Associated Item Count)    | Sum(Associated Item Count)    | Min(Associated Item Count)    | Max(Associated Item Count)    | Avg(Associated Item Count)    |
 
-@Evergreen @DevicesLists @EvergreenJnr_Pivot @Pivot @DAS14263 @DAS16403 @DAS16407
+@Evergreen @DevicesLists @EvergreenJnr_Pivot @Pivot @DAS14263 @DAS16403 @DAS16407 @Cleanup
 Scenario: EvergreenJnr_DevicesLists_CheckAddTeamsPermissionsOnDetailsPanel
 	When User clicks 'Devices' on the left-hand menu
-	And User selects 'Pivot' in the 'Create' dropdown
+	Then 'All Devices' list should be displayed to the user
+	When User selects 'Pivot' in the 'Create' dropdown
 	And User selects the following Row Groups on Pivot:
 	| RowGroups  |
 	| Compliance |
@@ -183,9 +184,9 @@ Scenario: EvergreenJnr_DevicesLists_CheckAddTeamsPermissionsOnDetailsPanel
 	When User clicks 'CANCEL' button 
 	When User clicks 'ADD TEAM' button 
 	When User selects the "Team 1062" team for sharing
-	Then "ADD TEAM" Action button is disabled
+	Then 'ADD TEAM' button is disabled
 	When User select "Edit" in Select Access dropdown
-	Then "ADD TEAM" Action button is active
+	Then 'ADD TEAM' button is not disabled
 	When User clicks 'CANCEL' button 
 	When User clicks 'ADD TEAM' button 
 	When User selects the "Team 1062" team for sharing

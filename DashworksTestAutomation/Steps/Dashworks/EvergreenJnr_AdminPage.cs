@@ -62,35 +62,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         #region Check button state
 
-        [Then(@"Update Project buttons is disabled")]
-        public void ThenUpdateProjectButtonsIsDisabled()
-        {
-            var button = _driver.NowAt<ProjectsPage>();
-            _driver.WaitForElementToBeDisplayed(button.UpdateProjectButton);
-            Utils.Verify.IsTrue(Convert.ToBoolean(button.UpdateProjectButton.GetAttribute("disabled")),
-                "Update Project button is active");
-            Utils.Verify.IsTrue(Convert.ToBoolean(button.UpdateAllChangesButton.GetAttribute("disabled")),
-                "Update All Changes button is active");
-        }
-
-        [Then(@"Create Project button is disabled")]
-        public void ThenCreateProjectButtonIsDisabled()
-        {
-            var button = _driver.NowAt<CreateProjectPage>();
-            _driver.WaitForElementToBeDisplayed(button.CreateProjectButton);
-            Utils.Verify.IsTrue(Convert.ToBoolean(button.CreateProjectButton.GetAttribute("disabled")),
-                "Create Project button is active");
-        }
-
-        [Then(@"Create Project button is enabled")]
-        public void ThenCreateProjectButtonIsEnabled()
-        {
-            var button = _driver.NowAt<CreateProjectPage>();
-            _driver.WaitForElementToBeDisplayed(button.CreateProjectButton);
-            Utils.Verify.IsFalse(Convert.ToBoolean(button.CreateProjectButton.GetAttribute("disabled")),
-                "Create Project button is active");
-        }
-
         [Then(@"Update Project button is active")]
         public void ThenUpdateProjectButtonIsActive()
         {
@@ -111,45 +82,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         #endregion
-
-        [When(@"User enters ""(.*)"" in the ""(.*)"" field")]
-        public void WhenUserEntersInTheField(string name, string fieldName)
-        {
-            var bucketName = _driver.NowAt<ProjectsPage>();
-            bucketName.GetFieldByName(fieldName).Clear();
-            bucketName.GetFieldByName(fieldName).SendKeys(name);
-            bucketName.BodyContainer.Click();
-
-            if (!string.IsNullOrEmpty(name))
-                switch (fieldName)
-                {
-                    case "Project Name":
-                        _projects.Value.Add(name);
-                        break;
-                    case "Team Name":
-                        TeamDto teamDto = new TeamDto();
-                        teamDto.TeamName = name;
-                        _teams.Value.Add(teamDto);
-                        break;
-                    case "Bucket Name":
-                        _buckets.Value.Add(new BucketDto() { Name = name });
-                        break;
-                    //case "Capacity Unit Name":
-                    //    break;
-                    default:
-                        throw new Exception($"{fieldName} not found");
-                }
-            _driver.WaitForDataLoading();
-        }
-
-        [When(@"User enters ""(.*)"" value in the ""(.*)"" field")]
-        public void WhenUserEntersValueInTheField(string name, string fieldName)
-        {
-            var page = _driver.NowAt<ProjectsPage>();
-            page.GetFieldByName(fieldName).Clear();
-            page.GetFieldByName(fieldName).SendKeys(name);
-            page.BodyContainer.Click();
-        }
 
         [Then(@"Scope field is automatically populated")]
         public void ThenScopeFieldIsAutomaticallyPopulated()
@@ -178,13 +110,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseGridPage>();
             Verify.IsTrue(page.EvergreenUnit.Displayed(), "Evergreen Unit is not displayed");
-        }
-
-        [Then(@"string filter is displayed for ""(.*)"" column on the Admin Page")]
-        public void ThenStringFilterIsDisplayedForColumnOnTheAdminPage(string columnName)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            Verify.IsFalse(Convert.ToBoolean(page.GetFilterByColumnName(columnName).GetAttribute("readonly")), "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [When(@"User selects ""(.*)"" color in the Application Scope tab on the Project details page")]
@@ -324,15 +249,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             for (var i = 0; i < slots.RowCount; i++)
                 Utils.Verify.That(page.GridUnitsNames[i].Text, Is.EqualTo(slots.Rows[i].Values.FirstOrDefault()),
                     "Units are not the same");
-        }
-
-        [Then(@"sum of objects in ""(.*)"" list is ""(.*)"" on the Admin page")]
-        public void ThenSumOfObjectsInListIsOnTheAdminPage(string columnName, int sumOfObjects)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            var numbers = page.GetSumOfObjectsContent(columnName);
-            var total = numbers.Where(x => !string.IsNullOrEmpty(x)).Sum(x => Convert.ToInt32(x));
-            Verify.That(total, Is.EqualTo(sumOfObjects), $"Sum of objects in {columnName} list is incorrect!");
         }
 
         [Then(@"field for Date column is empty")]
@@ -556,20 +472,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var checkbox = _driver.NowAt<BaseGridPage>();
             checkbox.BodyContainer.Click();
             checkbox.SelectAllCheckBox.Click();
-        }
-
-        [Then(@"'Select All' checkbox have full checked state on the Admin page")]
-        public void ThenSelectAllCheckboxHaveFullCheckedStateOnTheAdminPage()
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsTrue(page.SelectAllCheckboxWithFullCheckedState.Displayed(), "State for 'Select All' checkbox is displayed incorrectly");
-        }
-
-        [Then(@"'Select All' checkbox have indeterminate checked state on the Admin page")]
-        public void ThenSelectAllCheckboxHaveIndeterminateCheckedStateOnTheAdminPage()
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsTrue(page.SelectAllCheckboxWithIndeterminateCheckedState.Displayed(), "State for 'Select All' checkbox is displayed incorrectly");
         }
 
         [When(@"User selects ""(.*)"" checkbox on the Project details page")]
@@ -886,7 +788,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             int iteration = 0;
             foreach (var row in table.Rows)
             {
-                dashboardPage.GetSearchFieldByColumnName(columnName, row.Values.FirstOrDefault());
+                dashboardPage.PopulateSearchFieldByColumnName(columnName, row.Values.FirstOrDefault());
                 _driver.WaitForDataLoading();
                 dashboardPage.SelectAllCheckBox.Click();
                 if (iteration != 0)
@@ -960,7 +862,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var secondsToWait = 80;
             foreach (var row in table.Rows)
             {
-                Utils.Verify.IsTrue(projectElement.WaitForHistoryOnboardedObject(row["Items"], secondsToWait),
+                Verify.IsTrue(projectElement.WaitForHistoryOnboardedObject(row["Items"], secondsToWait),
                     $"History onboarded object with '{row["Items"]}' text was not appears in the grid in {secondsToWait} seconds");
             }
         }
@@ -992,6 +894,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var refresh_icon = ".//i[@class='material-icons' and contains(text(),'refresh')]";
             var filter_label = ".//div[@class='top-tools-inner']//span[contains(text(),'row')]";
+
+            _driver.WaitForElementToBeDisplayed(By.XPath(filter_label));
 
             for (int i = 0; i < 30; i++)
             {
@@ -1042,16 +946,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         #endregion
-
-        [When(@"User clicks Create button on the Create Project page")]
-        public void WhenUserClicksCreateButtonOnTheCreateProjectPage()
-        {
-            var page = _driver.NowAt<CreateProjectPage>();
-            _driver.WaitForElementToBeEnabled(page.CreateProjectButton);
-            _driver.ClickByJavascript(page.CreateProjectButton);
-            _driver.WaitForDataLoading();
-            Logger.Write("Create Project button was clicked");
-        }
 
         [When(@"User tries to open same page with ""(.*)"" item id")]
         public void WhenUserOpensSamePageForNotExistingItem(string Id)
@@ -1203,22 +1097,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             createProjectElement.SelectProjectsMode(optionName);
             //Waiting for option change
             Thread.Sleep(3000);
-        }
-
-        [When(@"user selects ""(.*)"" in the Bucket dropdown")]
-        public void WhenUserSelectsInTheBucketDropdown(string objectName)
-        {
-            var projectElement = _driver.NowAt<ProjectsPage>();
-            projectElement.BucketDropdown.Click();
-            projectElement.SelectObjectForProjectCreation(objectName);
-        }
-
-        [Then(@"""(.*)"" is displayed in the Bucket dropdown")]
-        public void ThenIsDisplayedInTheBucketDropdown(string textBucket)
-        {
-            var projectElement = _driver.NowAt<ProjectsPage>();
-            Utils.Verify.IsTrue(projectElement.BucketDropdownDisplay(textBucket),
-                "Incorrect text is displayed in the Bucket dropdown");
         }
 
         [When(@"User changes Project Name to ""(.*)""")]
@@ -1417,7 +1295,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserEntersTextInTheSearchFieldForColumn(string text, string columnName)
         {
             var searchElement = _driver.NowAt<BaseGridPage>();
-            searchElement.GetSearchFieldByColumnName(columnName, text);
+            searchElement.PopulateSearchFieldByColumnName(columnName, text);
             //TODO why we store bucket that was used just for search?
             //Store bucket name for further usage
             if (columnName.Equals("Bucket"))
@@ -1531,15 +1409,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseGridPage>();
             Verify.AreEqual(page.GetTextInSearchFieldByColumnName(columnName).GetAttribute("value"), searchText,
                 "Text in search field is different");
-        }
-
-        [Then(@"Menu options are displayed in the following order on the Admin page:")]
-        public void ThenMenuOptionsAreDisplayedInTheFollowingOrderOnTheAdminPage(Table table)
-        {
-            var action = _driver.NowAt<BaseGridPage>();
-            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            var actualList = action.MenuTabOptionListOnAdminPage.Select(value => value.Text).ToList();
-            Verify.AreEqual(expectedList, actualList, "Menu options are different");
         }
 
         //TODO move to the BaseGrid
@@ -1682,20 +1551,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             button.ExportButton.Click();
         }
 
-        //TODO should be changed to generic method. Remove Admin page
+        //TODO probably should be separate control or moved to GridHeaderElement 
         [When(@"User clicks Group By button on the Admin page and selects ""(.*)"" value")]
         public void WhenUserClicksGroupByButtonOnTheAdminPageAndSelectsValue(string value)
         {
             var page = _driver.NowAt<BaseGridPage>();
             page.GroupByButton.Click();
-            _driver.MouseHover(page.GetValueInGroupByFilterOnAdminPAge(value));
-            page.GetValueInGroupByFilterOnAdminPAge(value).Click();
+            _driver.MouseHover(page.GetValueInGroupByFilterOnAdminPage(value));
+            page.GetValueInGroupByFilterOnAdminPage(value).Click();
             //Wait for option to be applied
             Thread.Sleep(400);
             page.BodyContainer.Click();
         }
 
-        //TODO should be changed to generic method. Remove Admin page
+        //TODO probably should be separate control or moved to GridHeaderElement
         [Then(@"'(.*)' options are selected in the Group By menu")]
         public void ThenOptionsAreSelectedInTheGroupByMenu(int expectedCount)
         {

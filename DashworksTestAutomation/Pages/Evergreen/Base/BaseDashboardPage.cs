@@ -24,8 +24,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         public const string GridCell = ".//div[@role='gridcell']";
 
-        public const string OptionsDllOnActionsPanel = "//mat-option[@role='option']//span";
-
         public const string ColumnSubcategory = "//div[@class='selected-column-name']//span";
 
         public const string FilterSubcategory = "//div[contains(@class, 'sub-categories')]//div//div";
@@ -103,9 +101,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = ".//mat-dialog-container//button[contains(@class, 'mat-primary')]")]
         public IWebElement DeleteButtonInPopUp { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//mat-dialog-container//button[@class='mat-raised-button']")]
-        public IWebElement CancelButtonInPopUp { get; set; }
-
         [FindsBy(How = How.XPath,
             Using = "//div[contains(@class, 'notification')]//span[text()='UPDATE']/ancestor::button")]
         public IWebElement UpdateButtonOnAmberMessage { get; set; }
@@ -170,9 +165,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = ".//div[@class='ag-center-cols-viewport']//div[@role='row']")]
         public IList<IWebElement> TableRows { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[@class='status-text'][text()='RED']")]
-        public IList<IWebElement> ContentColor { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//div[@class='empty-message ng-star-inserted']/span")]
         public IWebElement NoResultsFoundMessage { get; set; }
 
@@ -185,17 +177,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'context-header')]//div[@role='group']")]
         public IWebElement FilterOptions { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'sectionAddObjects wrapper-disabled')]")]
-        public IWebElement DisabledObjectsToAddPanel { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "//div[@class='sectionAddObjects']")]
-        public IWebElement ActiveObjectsToAddPanel { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//span[@class='filter-content']")]
         public IWebElement FilterContainer { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//span[@class='ag-selection-checkbox']//span[@class='checkbox-unchecked']")]
-        public IWebElement UncheckedCheckbox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-selection-checkbox']")]
         public IWebElement SelectOneRowsCheckboxes { get; set; }
@@ -246,14 +229,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'sub-categories-item')]")]
         public IList<IWebElement> ColumnSubcategories { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//ul[@class='menu-settings']/li[@class='ng-star-inserted']")]
-        public IList<IWebElement> CogMenuItems { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'DateTime')]/span[contains(text(), ':')]")]
         public IWebElement DateTimeColumnValue { get; set; }
-
-        [FindsBy(How = How.XPath, Using = OptionsDllOnActionsPanel)]
-        public IList<IWebElement> OptionsDll { get; set; }
 
         [FindsBy(How = How.XPath, Using = ColumnSubcategory)]
         public IList<IWebElement> ColumnSubcategoryList { get; set; }
@@ -286,7 +263,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         public string ExpandNamedTextboxSelector = "//preceding-sibling::button[contains(@class,'chips-expand')]";
 
         //For cases when more than 4 items are selected they are collapsed to '1 more'
-        public string SelectedValuesForNamedTextboxSelector = "//preceding-sibling::mat-chip/span";
+        public string SelectedValuesForNamedTextboxSelector = ".//preceding-sibling::mat-chip/span";
 
         private static string AutocompleteOptionsSelector = ".//mat-option";
 
@@ -509,14 +486,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             var selector = By.XPath($"//span[@class='agEmptyValue'][text()='{text}']");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
-        }
-
-        public string ActiveCustomListName()
-        {
-            var by = By.XPath(
-                ".//div[contains(@class, 'active-list')]//span[contains(@class,'name')]");
-            Driver.WaitForElement(by);
-            return Driver.FindElement(by).Text;
         }
 
         public void ClickContentByColumnName(string columnName)
@@ -900,6 +869,32 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             Driver.WaitForDataLoading(50);
         }
 
+        public bool IsButtonDisplayed(string dropdownName)
+        {
+            try
+            {
+                return GetButtonByName(dropdownName, string.Empty, WebDriverExtensions.WaitTime.Short).Displayed();
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        #endregion
+
+        #region Menu button
+
+        public IWebElement GetMenuButtonByName(string button, WebDriverExtensions.WaitTime waitTime = WebDriverExtensions.WaitTime.Long)
+        {
+            var time = int.Parse(waitTime.GetValue());
+            var selector = By.XPath(
+                $".//button[contains(@class,'mat-menu-item')][text()='{button}']");
+            Driver.WaitForDataLoading();
+            Driver.WaitForElementsToBeDisplayed(selector, time, false);
+            return Driver.FindElements(selector).First(x => x.Displayed());
+        }
+
         #endregion
 
         #region Dropdown
@@ -929,6 +924,18 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         }
 
         public bool IsDropdownDisplayed(string dropdownName)
+        {
+            try
+            {
+                return GetDropdown(dropdownName, WebDriverExtensions.WaitTime.Short).Displayed();
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool IsDropdownDisabled(string dropdownName)
         {
             try
             {
@@ -986,6 +993,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return exclamationIcon;
         }
 
+        public IList<IWebElement> GetIconsOfDropdownOptions()
+        {
+            Driver.WaitForElementsToBeDisplayed(By.XPath(_dropdownOptions));
+            return Driver.FindElements(By.XPath($"{_dropdownOptions}/preceding-sibling::i[contains(@class, 'material-icons')]"));
+        }
         #endregion
 
         #region Datepicker
@@ -1091,6 +1103,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             if (!Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Medium))
                 throw new Exception($"'{titleText}' multiselect was not found");
             return Driver.FindElement(selector);
+        }
+
+        //Top level element with search box and all items
+        public IWebElement GetExpandableMultiselectElement(string titleText)
+        {
+            var element = GetExpandableMultiselect(titleText).FindElement(By.XPath("./ancestor::div[contains(@class,'sectionAddObjects')]"));
+            return element;
         }
 
         public string GetTitleFomExpandableMultiselect(string partOfTitle)

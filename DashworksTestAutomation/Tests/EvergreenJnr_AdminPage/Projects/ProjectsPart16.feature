@@ -10,8 +10,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	When Project created via API and opened
 	| ProjectName  | Scope       | ProjectTemplate | Mode               |
 	| Project13390 | All Devices | None            | Standalone Project |
-	And User selects "Scope" tab on the Project details page
-	And User selects "Scope Changes" tab on the Project details page
+	And User navigates to the 'Scope' left menu item
+	And User navigates to the 'Scope Changes' left menu item
 	And User navigates to the 'Devices' tab on Project Scope Changes page
 	Then open tab in the Project Scope Changes section is active
 	When User expands multiselect and selects following Objects
@@ -42,9 +42,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	| 03063X2ZUCDN0A1 |
 	| 03U75EKEMUQMUS  |
 	And User clicks 'UPDATE ALL CHANGES' button 
-	Then "UPDATE ALL CHANGES" Action button is disabled
+	Then 'UPDATE ALL CHANGES' button is disabled
 	When User clicks 'CANCEL' button 
-	Then "UPDATE ALL CHANGES" Action button is active
+	Then 'UPDATE ALL CHANGES' button is not disabled
 	When User navigates to the 'Users' tab on Project Scope Changes page
 	And User expands multiselect to add objects 
 	And User selects following Objects from the expandable multiselect
@@ -147,7 +147,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	Then Page with 'Projects' header is displayed to user
 	When User enters "Project13390" text in the Search field for "Project" column
 	And User clicks content from "Project" column
-	And User selects "Scope Changes" tab on the Project details page
+	And User navigates to the 'Scope Changes' left menu item
 	Then Success message is not displayed on the Admin page
 	And "Devices to add (0 of 17254 selected)" is displayed to the user in the Project Scope Changes section
 	And following objects were not found
@@ -168,8 +168,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	When Project created via API and opened
 	| ProjectName  | Scope       | ProjectTemplate | Mode               |
 	| Project13391 | All Devices | None            | Standalone Project |
-	And User selects "Scope" tab on the Project details page
-	And User selects "Scope Changes" tab on the Project details page
+	And User navigates to the 'Scope' left menu item
+	And User navigates to the 'Scope Changes' left menu item
 	And User navigates to the 'Devices' tab on Project Scope Changes page
 	Then open tab in the Project Scope Changes section is active
 	When User expands multiselect to add objects 
@@ -208,8 +208,8 @@ Scenario: EvergreenJnr_AdminPage_CheckingSortingOrderOfTheObjectsInTheProjectSco
 	| ProjectName      | Scope         | ProjectTemplate | Mode               |
 	| TestProject12645 | All Mailboxes | None            | Standalone Project |
 	Then Page with 'TestProject12645' header is displayed to user
-	When User selects "Scope" tab on the Project details page
-	When User selects "Scope Changes" tab on the Project details page
+	When User navigates to the 'Scope' left menu item
+	When User navigates to the 'Scope Changes' left menu item
 	When User expands multiselect to add objects
 	Then Objects are displayed in alphabetical order on the Admin page
 	When User selects following Objects from the expandable multiselect
@@ -248,15 +248,19 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectAllCheckboxIsWorkingCorrectlyOnA
 	And created Project with "2Checkbox11758" name is displayed correctly
 	And created Project with "3Checkbox11758" name is displayed correctly
 	When User selects all rows on the grid
-	Then 'Select All' checkbox have full checked state on the Admin page
+	Then Select All checkbox have full checked state
 	When User select "Project" rows in the grid
 	| SelectedRowsName |
 	| 1Checkbox11758   |
-	Then 'Select All' checkbox have indeterminate checked state on the Admin page
+	Then Select All checkbox have indeterminate checked state
+	When User deselect all rows on the grid
+	Then Select All checkbox have unchecked state
+	When User enters "Checkbox11758" text in the Search field for "Project" column
 	When User selects all rows on the grid
-	And User enters "Checkbox11758" text in the Search field for "Project" column
-	When User selects all rows on the grid
-	And User removes selected item
+	Then Select All checkbox have indeterminate checked state
+	When User removes selected item
+	Then Success message is displayed and contains "The selected projects have been deleted" text
+	Then Select All checkbox have unchecked state
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12578 @DAS12999 @DAS13429 @Cleanup
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatTheEditListFunctionIsHiddenAfterCancelingCreatingProjectFromTheMainLists
@@ -265,7 +269,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatTheEditListFunctionIsHiddenAft
 	When User clicks on '<ColumnName>' column header
 	And User create dynamic list with "<DynamicListName>" name on "<ListName>" page
 	Then "<DynamicListName>" list is displayed to user
-	When User clicks Create Project from the main list
+	When User selects 'Project' in the 'Create' dropdown
 	Then Page with 'Create Project' subheader is displayed to user
 	When User clicks 'CANCEL' button 
 	Then "<DynamicListName>" list is displayed to user
@@ -274,7 +278,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatTheEditListFunctionIsHiddenAft
 	Then 'Admin' list should be displayed to the user
 	When User clicks 'CREATE PROJECT' button 
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "TestProject7894" in the "Project Name" field
+	When User enters 'TestProject7894' text to 'Project Name' textbox
 	And User selects 'All Devices' option from 'Scope' autocomplete
 	When User clicks 'CANCEL' button 
 	Then Page with 'Projects' header is displayed to user

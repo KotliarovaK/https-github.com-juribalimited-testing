@@ -13,7 +13,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIdColumnIsAddedAndDisplay
 	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "TestProject11700" in the "Project Name" field
+	When User enters 'TestProject11700' text to 'Project Name' textbox
 	And User selects 'All Devices' option from 'Scope' autocomplete
 	When User clicks 'CREATE' button 
 	When User have opened Column Settings for "Project" column
@@ -36,9 +36,9 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectNameIsDisplayedCorrectlyWhen
 	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "<TestProject11985>" in the "Project Name" field
+	When User enters '<TestProject11985>' text to 'Project Name' textbox
 	And User selects 'All Devices' option from 'Scope' autocomplete
-	And User clicks Create button on the Create Project page
+	And User clicks 'CREATE' button
 	Then created Project with "<TestProject11985>" name is displayed correctly
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12364 @DAS12999 @DAS13199 @DAS13297 @DAS12485 @DAS12108 @DAS12645 @Cleanup @Project_Creation_and_Scope @Projects
@@ -47,9 +47,9 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 	| ProjectName      | Scope     | ProjectTemplate | Mode               |
 	| TestProject12364 | All Users | None            | Standalone Project |
 	Then Page with 'TestProject12364' header is displayed to user
-	When User selects "Scope" tab on the Project details page
+	When User navigates to the 'Scope' left menu item
 	Then Info message is displayed and contains "There are no objects in this project, use Scope Changes to add objects to your project" text
-	When User selects "Scope Changes" tab on the Project details page
+	When User navigates to the 'Scope Changes' left menu item
 	Then "Users to add (0 of 41339 selected)" is displayed to the user in the Project Scope Changes section
 	When User expands multiselect to add objects
 	Then Objects are displayed in alphabetical order on the Admin page
@@ -95,8 +95,8 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 	Then "Devices to add (0 of 16817 selected)" is displayed to the user in the Project Scope Changes section
 	When User navigates to the 'Users' tab on Project Scope Changes page
 	Then "Users to add (0 of 41337 selected)" is displayed to the user in the Project Scope Changes section
-	When User selects "Scope Details" tab on the Project details page
-	When User selects "Scope Changes" tab on the Project details page
+	When User navigates to the 'Scope Details' left menu item
+	When User navigates to the 'Scope Changes' left menu item
 	When User navigates to the 'Applications' tab on Project Scope Changes page
 	Then There are no errors in the browser console
 
@@ -113,14 +113,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedIfTryToRemove
 	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "TestName11729" in the "Project Name" field
+	When User enters 'TestName11729' text to 'Project Name' textbox
 	And User selects 'TestDynamicList11729' option from 'Scope' autocomplete
-	And User clicks Create button on the Create Project page
+	And User clicks 'CREATE' button
 	Then created Project with "TestName11729" name is displayed correctly
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks Settings button for "TestDynamicList11729" list
-	And User clicks 'DELETE' button for custom list
+	And User clicks 'DELETE' button
 	Then "TestDynamicList11729" list "list is used by 1 project, do you wish to proceed?" message is displayed in the list panel
 	And User clicks 'DELETE' button on the warning message in the lists panel
 	When User clicks 'Admin' on the left-hand menu

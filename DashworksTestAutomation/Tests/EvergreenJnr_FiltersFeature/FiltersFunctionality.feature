@@ -223,7 +223,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredCorrectlyAfterL
 	When User perform search by "Microsoft Office 97, Professional Edition"
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
-	Then Select All selectbox is unchecked
+	Then select all rows checkbox is unchecked
 	When User click content from "Application" column
 	Then User click back button in the browser
 	Then "5" rows are displayed in the agGrid
@@ -1741,8 +1741,8 @@ Scenario: EvergreenJnr_UsersList_CheckSlotsSortOrderForUsersList
 	| SelectedValues |
 	| BCLABS         |
 	When User clicks on 'UserEvergr: Stage 2 \ Dropdown Non RAG Date (User) (Slot)' column header
-	Then following content is displayed in the "UserEvergr: Stage 2 \ Dropdown Non RAG Date (User) (Slot)" column
-	| Values      |
+	Then Content in the 'UserEvergr: Stage 2 \ Dropdown Non RAG Date (User) (Slot)' column is equal to
+	| Content     |
 	| User Slot 1 |
 	| User Slot 1 |
 	| User Slot 1 |
@@ -1751,8 +1751,8 @@ Scenario: EvergreenJnr_UsersList_CheckSlotsSortOrderForUsersList
 	| User Slot 2 |
 	| User Slot 2 |
 	When User clicks on 'UserEvergr: Stage 2 \ Dropdown Non RAG Date (User) (Slot)' column header
-	Then following content is displayed in the "UserEvergr: Stage 2 \ Dropdown Non RAG Date (User) (Slot)" column
-	| Values      |
+	Then Content in the 'UserEvergr: Stage 2 \ Dropdown Non RAG Date (User) (Slot)' column is equal to
+	| Content     |
 	| User Slot 2 |
 	| User Slot 2 |
 	| User Slot 1 |
@@ -1774,8 +1774,8 @@ Scenario: EvergreenJnr_DevicesList_CheckSlotsSortOrderForDevicesList
 	| SelectedValues |
 	| Laptop         |
 	When User clicks on '1803: Pre-Migration \ Scheduled Date (Slot)' column header
-	Then following content is displayed in the "1803: Pre-Migration \ Scheduled Date (Slot)" column
-	| Values                     |
+	Then Content in the '1803: Pre-Migration \ Scheduled Date (Slot)' column is equal to
+	| Content                    |
 	| Birmingham Morning         |
 	| Manchester Morning         |
 	| Manchester Morning         |
@@ -1787,8 +1787,8 @@ Scenario: EvergreenJnr_DevicesList_CheckSlotsSortOrderForDevicesList
 	| London Depot 09:00 - 11:00 |
 	| London Depot 09:00 - 11:00 |
 	When User clicks on '1803: Pre-Migration \ Scheduled Date (Slot)' column header
-	Then following content is displayed in the "1803: Pre-Migration \ Scheduled Date (Slot)" column
-	| Values                     |
+	Then Content in the '1803: Pre-Migration \ Scheduled Date (Slot)' column is equal to
+	| Content                    |
 	| London Depot 09:00 - 11:00 |
 	| London Depot 09:00 - 11:00 |
 	| London Depot 09:00 - 11:00 |
@@ -1810,16 +1810,16 @@ Scenario: EvergreenJnr_ApplicationsList_CheckSlotsSortOrderForApplicationsList
 	| SelectedCheckboxes |
 	| Empty              |
 	When User clicks on 'UserEvergr: Stage 3 \ Radiobutton Readiness Date Owner (Application) (Slot)' column header
-	Then following content is displayed in the "UserEvergr: Stage 3 \ Radiobutton Readiness Date Owner (Application) (Slot)" column
-	| Values             |
+	Then Content in the 'UserEvergr: Stage 3 \ Radiobutton Readiness Date Owner (Application) (Slot)' column is equal to
+	| Content            |
 	| Application Slot 1 |
 	| Application Slot 1 |
 	| Application Slot 1 |
 	| Application Slot 1 |
 	| Application Slot 2 |
 	When User clicks on 'UserEvergr: Stage 3 \ Radiobutton Readiness Date Owner (Application) (Slot)' column header
-	Then following content is displayed in the "UserEvergr: Stage 3 \ Radiobutton Readiness Date Owner (Application) (Slot)" column
-	| Values             |
+	Then Content in the 'UserEvergr: Stage 3 \ Radiobutton Readiness Date Owner (Application) (Slot)' column is equal to
+	| Content            |
 	| Application Slot 2 |
 	| Application Slot 1 |
 	| Application Slot 1 |
@@ -1841,14 +1841,14 @@ Scenario: EvergreenJnr_MailboxesList_CheckSlotsSortOrderForMailboxes
 	| Bandyopadhyay, Sudipta    |
 	| Balanceactiv, Info        |
 	When User clicks on 'MailboxEve: 1 \ Scheduled - mailbox (Slot)' column header
-	Then following content is displayed in the "MailboxEve: 1 \ Scheduled - mailbox (Slot)" column
-	| Values                                             |
+	Then Content in the 'MailboxEve: 1 \ Scheduled - mailbox (Slot)' column is equal to
+	| Content                                            |
 	| CA -Mailbox-Nov 1, 2018-Nov 10, 2018               |
 	| CA -Mailbox-Nov 11, 2018-Nov 30, 2018              |
 	| TRT-Mailbox-Nov 11, 2018-Nov 24, 2018\RT=A\T=Admin |
 	When User clicks on 'MailboxEve: 1 \ Scheduled - mailbox (Slot)' column header
-	Then following content is displayed in the "MailboxEve: 1 \ Scheduled - mailbox (Slot)" column
-	| Values                                             |
+	Then Content in the 'MailboxEve: 1 \ Scheduled - mailbox (Slot)' column is equal to
+	| Content                                            |
 	| TRT-Mailbox-Nov 11, 2018-Nov 24, 2018\RT=A\T=Admin |
 	| CA -Mailbox-Nov 11, 2018-Nov 30, 2018              |
 	| CA -Mailbox-Nov 1, 2018-Nov 10, 2018               |
@@ -2334,7 +2334,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNo500ErrorOnApplicationPageAfterUpda
 	|                | Used on device      |
 	|                | Entitled to device  |
 	|                | Installed on device |
-	Then "UPDATE" Action button is disabled
+	Then 'UPDATE' button is disabled
 
 @Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS17715 @Cleanup
 Scenario: EvergreenJnr_DevicedList_CheckCustomFieldsUsingInFilterAndProjectCreation
@@ -2347,10 +2347,10 @@ Scenario: EvergreenJnr_DevicedList_CheckCustomFieldsUsingInFilterAndProjectCreat
 	And There are no errors in the browser console
 	When User create dynamic list with "TestList_DAS17715" name on "Devices" page
 	Then "TestList_DAS17715" list is displayed to user
-	When User clicks Create Project from the main list
+	When User selects 'Project' in the 'Create' dropdown
 	Then Page with 'Projects' header is displayed to user
-	When User enters "TestProjectFor17715" in the "Project Name" field
-	And User clicks Create button on the Create Project page
+	When User enters 'TestProjectFor17715' text to 'Project Name' textbox
+	And User clicks 'CREATE' button
 	Then Success message is displayed and contains "The project has been created" text
 	And There are no errors in the browser console
 
@@ -2418,8 +2418,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOffboardedItemsDontShowAnyOtherProje
 	| SelectedValues |
 	| Offboarded     |
 	Then "4" rows are displayed in the agGrid
-	And following content is displayed in the "1803: Status" column
-	| Values     |
+	And Content in the '1803: Status' column is equal to
+	| Content    |
 	| Offboarded |
 	| Offboarded |
 	| Offboarded |
@@ -2433,3 +2433,99 @@ Scenario: EvergreenJnr_DevicesList_CheckThatThereIsNoErrorAfterSavingListWithFil
 	| Values |
 	| 1      |
 	Then There are no errors in the browser console
+
+@Evergreen @AllDeviceApplications @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18425 @DAS18458 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorAppearsAfterOpenningItemFromCreatedAllDeviceApplicationsList
+	When User clicks 'Applications' on the left-hand menu
+	Then 'All Applications' list should be displayed to the user
+	When User navigates to the "All Device Applications" list
+	Then Export button is displayed disabled
+	When User clicks Add New button on the Filter panel
+	When User selects 'Used on device' option in expanded associations list
+	When User clicks 'RUN LIST' button
+	When User click content from "Application Name" column
+	Then There are no errors in the browser console
+
+@Evergreen @Devices @Evergreen_FiltersFeature @FilterFunctionality @DAS18140
+Scenario: EvergreenJnr_DevicesList_CheckCancelFilterButtonWorkIfSameFiltersWereApplied
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User clicks the Filters button
+	When User add "Display Name" filter where type is "Not Empty" with added column and Lookup option
+	| SelectedValues |
+	When User Add And "Display Name" filter where type is "Contains" with added column and following value:
+	| Values |
+	| a      |
+	When User click Edit button for "Display Name" filter
+	When User clicks 'CANCEL' button 
+	Then There are no any expanded blocks in Filter panel
+
+@Evergreen @AllDeviceApplications @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18425
+Scenario: EvergreenJnr_ApplicationsList_CheckThatFirstAssociationsCantBeRemovedIfThereAreTwoMoreAdded
+	When User clicks 'Applications' on the left-hand menu
+	Then 'All Applications' list should be displayed to the user
+	When User navigates to the "All Device Applications" list
+	When User clicks Add New button on the Filter panel
+	When User selects 'Used on device' option in expanded associations list
+	When User clicks Add And button on the Filter panel
+	When User selects 'Not installed on device' option in expanded associations list
+	When User clicks Add And button on the Filter panel
+	When User selects 'Entitled to device' option in expanded associations list
+	Then Remove icon displayed in 'false' state for 'Used on device' association
+	Then Remove icon displayed in 'true' state for 'Not installed on device' association
+	Then Remove icon displayed in 'true' state for 'Entitled to device' association
+
+@Evergreen @AllDeviceApplications @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18456 @DAS18530 @Cleanup
+Scenario: EvergreenJnr_ApplicationsList_CheckThatGridIsNotDisappearedAfterSelectingFilterOnAllDeviceApplicationsPage
+	When User clicks 'Applications' on the left-hand menu
+	Then 'All Applications' list should be displayed to the user
+	When User navigates to the "All Device Applications" list
+	When User clicks Add New button on the Filter panel
+	When User selects 'Used on device' option in expanded associations list
+	When User clicks the Filters button
+	When User add "App Vendor" filter where type is "Does not equal" with added column and following value:
+	| Values |
+	| s      |
+	When User clicks 'RUN LIST' button
+	When User click Edit button for "App Vendor" filter
+	Then message "" is displayed to the user below Search results
+	#18530
+	When User clicks Save button on the list panel
+	When User selects Save as new list option
+	When User creates new custom list with "AssociationList18530" name
+	Then "AssociationList18530" list is displayed to user
+	When User navigates to the "All Device Applications" list
+	Then There are no errors in the browser console
+	When User navigates to the "AssociationList18530" list
+	Then There are no errors in the browser console
+	When User navigates to the "All Device Applications" list
+	Then There are no errors in the browser console
+
+@Evergreen @AllDeviceApplications @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18489 @Cleanup
+Scenario: EvergreenJnr_ApplicationsList_CheckThatPivotCantBeRunIfAssociationWasRemoved
+	When User clicks 'Applications' on the left-hand menu
+	Then 'All Applications' list should be displayed to the user
+	When User navigates to the "All Device Applications" list
+	When User clicks Add New button on the Filter panel
+	When User selects 'Used on device' option in expanded associations list
+	When User clicks 'RUN LIST' button
+	When User selects 'Pivot' in the 'Create' dropdown
+	When User clicks the Pivot button
+	When User selects the following Row Groups on Pivot:
+	| RowGroups  |
+	| App Vendor |
+	When User selects the following Columns on Pivot:
+	| Columns  |
+	| App Version |
+	When User selects the following Values on Pivot:
+	| Values  |
+	| Hostname |
+	When User clicks 'RUN PIVOT' button 
+	Then Pivot run was completed
+	When User creates Pivot list with "Pivot18489" name
+	Then "Pivot18489" list is displayed to user
+	When User navigates to the "Pivot18489" list
+	When User clicks the Associations button
+	When User removes 'Used on device' association in Association panel
+	Then 'RUN PIVOT' button is disabled
+	Then 'RUN PIVOT' button has tooltip with 'Use association panel to create a list' text

@@ -47,7 +47,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueAutomationValidationsForDel
 	When User selects 'Started' in the 'Value' dropdown
 	And User clicks 'CREATE' button 
 	#Create Action
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
 	When User navigates to the 'Projects' left menu item
 	And User enters "17429Project" text in the Search field for "Project" column
 	And User selects all rows on the grid

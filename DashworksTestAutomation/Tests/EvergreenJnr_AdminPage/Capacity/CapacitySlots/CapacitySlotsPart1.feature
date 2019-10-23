@@ -11,7 +11,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingI
 	| ProjectName             | Scope       | ProjectTemplate | Mode               |
 	| ProjectForCapacity13171 | All Devices | None            | Standalone Project |
 	And User navigates to the 'Capacity' left menu item
-	And User selects "Slots" tab on the Project details page
+	And User navigates to the 'Slots' left menu item
 	And User clicks 'CREATE SLOT' button 
 	And User clicks on the Unlimited field on the Capacity Slots page
 	Then Unlimited text disappears from column
@@ -32,7 +32,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingI
 	And User navigates to newly created Slot
 	And User enters 'NewSlotName' text to 'Slot Name' textbox
 	And User enters 'NewDisplayName' text to 'Display Name' textbox
-	Then "UPDATE" button is displayed without tooltip on Update form
+	Then tooltip is not displayed for 'UPDATE' button
 	When User clicks 'UPDATE' button 
 	Then Success message is displayed and contains "The capacity slot details have been updated" text
 	And 'NewSlotName' content is displayed in the 'Capacity Slot' column
@@ -59,19 +59,19 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsUnableToCreateMoreThanOneOverrid
 	| ProjectDAS13780 | SlotDAS13780_1 | 13780_1     | 17 Oct 2018       | 18 Oct 2018     |
 	| ProjectDAS13780 | SlotDAS13780_2 | 13780_2     | 17 Oct 2018       | 18 Oct 2018     |
 	And User navigates to the 'Capacity' left menu item
-	And User selects "Slots" tab on the Project details page
-	And User selects "Override Dates" tab on the Project details page
+	And User navigates to the 'Slots' left menu item
+	And User navigates to the 'Override Dates' left menu item
 	And User clicks 'CREATE OVERRIDE DATE' button 
 	And User enters '17 Oct 2018' text to 'Override Start Date' datepicker
 	And User enters '17 Oct 2018' text to 'Override End Date' datepicker
 	And User selects 'SlotDAS13780_1' in the 'Slot' dropdown
-	And User enters "0" value in the "Capacity" field
+	And User enters '0' text to 'Capacity' textbox
 	And User clicks 'CREATE' button 
 	And User clicks 'CREATE OVERRIDE DATE' button 
 	And User enters '17 Oct 2018' text to 'Override Start Date' datepicker
 	And User enters '17 Oct 2018' text to 'Override End Date' datepicker
 	And User selects 'SlotDAS13780_2' in the 'Slot' dropdown
-	And User enters "0" value in the "Capacity" field
+	And User enters '0' text to 'Capacity' textbox
 	And User clicks 'CREATE' button 
 	And User clicks 'CREATE OVERRIDE DATE' button 
 	And User enters '17 Oct 2018' text to 'Override Start Date' datepicker
@@ -96,7 +96,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToUpdateCapacityUnitOrSlotUs
 	And User clicks 'UPDATE' button 
 	Then Error message is not displayed on the Capacity Slots page
 	And Success message is displayed and contains "The capacity slot details have been updated" text
-	When User selects "Units" tab on the Project details page
+	When User navigates to the 'Units' left menu item
 	And User clicks 'CREATE PROJECT CAPACITY UNIT' button 
 	And User enters 'capacityunitDAS13789' text to 'Capacity Unit Name' textbox
 	And User enters '13789' text to 'Description' textbox

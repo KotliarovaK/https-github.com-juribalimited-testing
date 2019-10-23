@@ -56,7 +56,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameWhichStartsWithLowerCaseLe
 	| Adobe Reader 5ver2.1 |
 	| allCLEAR 6.0 Viewer  |
 	| AnalogX TrackSeek    |
-	When User selects "History" tab on the Project details page
+	When User navigates to the 'History' left menu item
 	Then onboarded objects are displayed in the dropdown
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12755 @DAS12763 @DAS14604 @Cleanup
@@ -95,11 +95,11 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatColourOfOnboardedAppIsDisplayedCorrec
 	| ProjectName  | Scope       | ProjectTemplate | Mode               |
 	| Project12965 | All Devices | None            | Standalone Project |
 	Then Page with 'Project12965' header is displayed to user
-	When User selects "Scope" tab on the Project details page
-	When User selects "Scope Details" tab on the Project details page
+	When User navigates to the 'Scope' left menu item
+	When User navigates to the 'Scope Details' left menu item
 	And User navigates to the 'Application Scope' tab on Project Scope Changes page
 	And User selects "RED" color in the Application Scope tab on the Project details page
-	And User selects "Scope Changes" tab on the Project details page
+	And User navigates to the 'Scope Changes' left menu item
 	And User navigates to the 'Applications' tab on Project Scope Changes page
 	And User expands multiselect to add objects 
 	And User selects following Objects from the expandable multiselect
@@ -108,12 +108,12 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatColourOfOnboardedAppIsDisplayedCorrec
 	When User clicks 'UPDATE ALL CHANGES' button 
 	And User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "1 object queued for onboarding, 0 objects offboarded" text
-	When User selects "Queue" tab on the Project details page
+	When User navigates to the 'Queue' left menu item
 	Then following Items are displayed in the Queue table
 	| Items                                                        |
 	| ALS - Designing a Microsoft Windows 2000 Dir. Services eBook |
 	When User refreshes agGrid
-	When User selects "History" tab on the Project details page
+	When User navigates to the 'History' left menu item
 	Then following Items are displayed in the History table
 	| Items                                                        |
 	| ALS - Designing a Microsoft Windows 2000 Dir. Services eBook |
@@ -129,8 +129,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOffboardedObjectsAreListedAfterSelectO
 	| ProjectName   | Scope     | ProjectTemplate | Mode               |
 	| UsersProject2 | All Users | None            | Standalone Project |
 	Then Page with 'UsersProject2' header is displayed to user
-	When User selects "Scope" tab on the Project details page
-	When User selects "Scope Changes" tab on the Project details page
+	When User navigates to the 'Scope' left menu item
+	When User navigates to the 'Scope Changes' left menu item
 	And User navigates to the 'Devices' tab on Project Scope Changes page
 	And User expands multiselect to add objects
 	And User selects following Objects from the expandable multiselect
@@ -145,12 +145,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOffboardedObjectsAreListedAfterSelectO
 	Then Warning message with "4 devices will be added" text is displayed on the Admin page
 	When User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "4 objects queued for onboarding, 0 objects offboarded" text
-	When User selects "Scope Details" tab on the Project details page
+	When User navigates to the 'Scope Details' left menu item
 	And User navigates to the 'Device Scope' tab on Project Scope Changes page
 	When User selects "Do not include owned devices" checkbox on the Project details page
 	And User navigates to the 'Application Scope' tab on Project Scope Changes page
 	And User selects "Do not include applications" checkbox on the Project details page
-	And User selects "Scope Changes" tab on the Project details page
+	And User navigates to the 'Scope Changes' left menu item
 	And User navigates to the 'Devices' tab on Project Scope Changes page
 	And User expands 'Devices to remove' multiselect to the 'Devices' tab on Project Scope Changes page and selects following Objects
 	| Objects         |
@@ -160,7 +160,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOffboardedObjectsAreListedAfterSelectO
 	Then Warning message with "2 devices will be removed" text is displayed on the Admin page
 	When User clicks 'UPDATE PROJECT' button 
 	Then Success message with "0 objects queued for onboarding, 2 objects offboarded" text is displayed on the Projects page
-	When User selects "History" tab on the Project details page
+	When User navigates to the 'History' left menu item
 	And User clicks String Filter button for "Action" column on the Admin page
 	And User selects "Onboard Device Object" checkbox from String Filter with item list on the Admin page
 	Then Rows counter shows "2" of "6" rows

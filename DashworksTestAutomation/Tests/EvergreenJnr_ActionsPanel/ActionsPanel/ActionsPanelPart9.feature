@@ -54,7 +54,7 @@ Scenario: EvergreenJnr_UsersList_CheckBucketBulkUpdateOptionsOnUsersListForEverg
 	| Owned mailboxes only |
 	| All linked mailboxes |
 	When User selects 'Owned mailboxes only' in the 'Also Move Users' dropdown
-	Then "UPDATE" Action button is active
+	Then 'UPDATE' button is not disabled
 
 @Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS14563 @DAS13960 @DAS14143
 Scenario: EvergreenJnr_UsersList_CheckBucketBulkUpdateOptionsOnUsersListForUserScopedProjectAreDisplayedCorrectly
@@ -77,7 +77,7 @@ Scenario: EvergreenJnr_UsersList_CheckBucketBulkUpdateOptionsOnUsersListForUserS
 	| Owned devices only |
 	| All linked devices |
 	When User selects 'Owned devices only' in the 'Also Move Users' dropdown
-	Then "UPDATE" Action button is active
+	Then 'UPDATE' button is not disabled
 
 @Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS14563 @DAS13960 @DAS14160
 Scenario: EvergreenJnr_UsersList_CheckBucketBulkUpdateOptionsOnUsersListForMailboxScopedProjectAreDisplayedCorrectly
@@ -100,4 +100,4 @@ Scenario: EvergreenJnr_UsersList_CheckBucketBulkUpdateOptionsOnUsersListForMailb
 	| Owners only      |
 	| All linked users |
 	When User selects 'Owners only' in the 'Also Move Users' dropdown
-	Then "UPDATE" Action button is active
+	Then 'UPDATE' button is not disabled

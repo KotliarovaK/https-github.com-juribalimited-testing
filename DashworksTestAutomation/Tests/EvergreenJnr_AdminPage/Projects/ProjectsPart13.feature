@@ -23,8 +23,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnlyFilteredListObjectsAreUsedAsAScope
 	When Project created via API and opened
 	| ProjectName        | Scope           | ProjectTemplate | Mode               |
 	| DevicesProject1982 | DynamicList4811 | None            | Standalone Project |
-	And User selects "Scope" tab on the Project details page
-	And User selects "Scope Changes" tab on the Project details page
+	And User navigates to the 'Scope' left menu item
+	And User navigates to the 'Scope Changes' left menu item
 	Then "Devices to add (0 of 222 selected)" is displayed to the user in the Project Scope Changes section
 	Then There are no errors in the browser console
 
@@ -66,8 +66,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	| ProjectName      | Scope       | ProjectTemplate | Mode               |
 	| TestProject12776 | All Devices | None            | Standalone Project |
 	Then Page with 'TestProject12776' header is displayed to user
-	When User selects "Scope" tab on the Project details page
-	And User selects "Scope Changes" tab on the Project details page
+	When User navigates to the 'Scope' left menu item
+	And User navigates to the 'Scope Changes' left menu item
 	And User expands multiselect to add objects 
 	And User selects following Objects from the expandable multiselect
 	| Objects        |
@@ -79,28 +79,28 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	| ACD252468 (Nicolas O. Mc Millan) |
 	And User clicks 'UPDATE ALL CHANGES' button 
 	Then Warning message with "1 device will be added, 1 user will be added" text is displayed on the Admin page
-	And Objects to add panel is disabled
+	Then multiselect is disabled
 	When User navigates to the 'Devices' tab on Project Scope Changes page
-	Then Objects to add panel is disabled
+	Then multiselect is disabled
 	When User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "2 objects queued for onboarding, 0 objects offboarded" text
-	Then "UPDATE ALL CHANGES" Action button is disabled
+	Then 'UPDATE ALL CHANGES' button is disabled
 	And "Devices to add (0 of 17278 selected)" is displayed to the user in the Project Scope Changes section
-	Then Objects to add panel is active
+	Then multiselect is not disabled
 	When User navigates to the 'Users' tab on Project Scope Changes page
 	Then "Users to add (0 of 14628 selected)" is displayed to the user in the Project Scope Changes section
-	Then Objects to add panel is active
+	Then multiselect is not disabled
 	When User expands multiselect to add objects 
 	And User selects following Objects from the expandable multiselect
 	| Objects                    |
 	| AAK881049 (Miguel W. Owen) |
-	Then "UPDATE ALL CHANGES" Action button is active
+	Then 'UPDATE ALL CHANGES' button is not disabled
 	When User navigates to the 'Devices' tab on Project Scope Changes page
 	And User expands multiselect to add objects 
 	And User selects following Objects from the expandable multiselect
 	| Objects        |
 	| 00SH8162NAS524 |
-	Then "UPDATE ALL CHANGES" Action button is active
+	Then 'UPDATE ALL CHANGES' button is not disabled
 	And There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12776 @DAS13973 @Cleanup
@@ -119,7 +119,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	When User navigates to the 'Capacity' left menu item
 	Then 'Clone evergreen capacity units to project capacity units' content is displayed in 'Capacity Units' dropdown
 	When User navigates to the 'Scope' left menu item
-	When User selects "Scope Changes" tab on the Project details page
+	When User navigates to the 'Scope Changes' left menu item
 	And User expands multiselect to add objects 
 	And User selects following Objects from the expandable multiselect
 	| Objects                                |
@@ -127,21 +127,21 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	| 00CFE13AAE104724AF5 (Hardieway, Linda) |
 	And User clicks 'UPDATE ALL CHANGES' button 
 	Then Warning message with "2 users will be added" text is displayed on the Admin page
-	Then Objects to add panel is disabled
+	Then multiselect is disabled
 	When User navigates to the 'Devices' tab on Project Scope Changes page
-	Then Objects to add panel is disabled
+	Then multiselect is disabled
 	When User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "2 objects queued for onboarding, 0 objects offboarded" text
-	Then "UPDATE ALL CHANGES" Action button is disabled
+	Then 'UPDATE ALL CHANGES' button is disabled
 	When User navigates to the 'Users' tab on Project Scope Changes page
 	Then "Users to add (0 of 41337 selected)" is displayed to the user in the Project Scope Changes section
 	When User navigates to the 'Devices' tab on Project Scope Changes page
-	Then Objects to add panel is active
+	Then multiselect is not disabled
 	When User navigates to the 'Users' tab on Project Scope Changes page
-	Then Objects to add panel is active
+	Then multiselect is not disabled
 	When User expands multiselect to add objects 
 	And User selects following Objects from the expandable multiselect
 	| Objects                             |
 	| 000F977AC8824FE39B8 (Spruill, Shea) |
-	Then "UPDATE ALL CHANGES" Action button is active
+	Then 'UPDATE ALL CHANGES' button is not disabled
 	And There are no errors in the browser console

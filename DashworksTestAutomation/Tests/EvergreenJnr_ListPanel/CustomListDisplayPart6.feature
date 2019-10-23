@@ -59,7 +59,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatUserIsNotAbleToCreateListsWithLongN
 	Then data in table is sorted by 'Hostname' column in ascending order
 	When User create dynamic list with "1234567890123456789012345678901234567890" name on "Devices" page
 	Then "1234567890123456789012345678901234567890" list is displayed to user
-	When User duplicates list with "1234567890123456789012345678901234567890" name
+	When User clicks 'Duplicate' Settings menu item for '1234567890123456789012345678901234567890' list
 	Then "123456789012345678901234567890123456782" list is displayed to user
 	When User removes custom list with "123456789012345678901234567890123456782" name
 	Then list with "123456789012345678901234567890123456782" name is removed
@@ -69,18 +69,17 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatUserIsNotAbleToCreateListsWithLongN
 	When User selects all rows on the grid
 	And User selects 'Create static list' in the 'Action' dropdown
 	When User create static list with "1234567890123456789012345678901234567890111" name
-	Then list name automatically changed to "1234567890123456789012345678901234567890" name
-	And "1234567890123456789012345678901234567890" list is displayed to user
+	Then "1234567890123456789012345678901234567890" list is displayed to user
 
 @Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS11342
 Scenario Outline: EvergreenJnr_AllLists_CheckThatAllListsNamesAreDisplayedCorrectly
 	When User clicks '<ListName>' on the left-hand menu
-	Then '<AllListName>' list should be displayed to the user
-	Then "<AllListName>" list name is displayed correctly
+	Then 'All <ListName>' list should be displayed to the user
+	Then "All <ListName>" list is displayed to user
 
 Examples:
-	| ListName     | AllListName      |
-	| Devices      | All Devices      |
-	| Applications | All Applications |
-	| Users        | All Users        |
-	| Mailboxes    | All Mailboxes    |
+	| ListName     |
+	| Devices      |
+	| Applications |
+	| Users        |
+	| Mailboxes    |

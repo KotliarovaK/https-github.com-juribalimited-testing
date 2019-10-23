@@ -10,13 +10,13 @@ Scenario: EvergreenJnr_DevicesList_CheckRenamedColumnForApplicationTabOnTheDetai
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
 	When User navigates to the 'Applications' left menu item
-	When User navigates to the "Evergreen Summary" sub-menu on the Details page
+	When User navigates to the 'Evergreen Summary' left submenu item
 	Then "Manufacturer" column is not displayed to the user
 	Then "Vendor" column is displayed to the user
-	When User navigates to the "Evergreen Detail" sub-menu on the Details page
+	When User navigates to the 'Evergreen Detail' left submenu item
 	Then "Manufacturer" column is not displayed to the user
 	Then "Vendor" column is displayed to the user
-	When User navigates to the "Advertisements" sub-menu on the Details page
+	When User navigates to the 'Advertisements' left submenu item
 	Then "Manufacturer" column is not displayed to the user
 	Then "Vendor" column is displayed to the user
 
@@ -25,10 +25,10 @@ Scenario: EvergreenJnr_UsersList_CheckRenamedColumnForApplicationTabOnTheDetails
 	When User navigates to the 'User' details page for 'ZZZ588323' item
 	Then Details page for "ZZZ588323" item is displayed to the user
 	When User navigates to the 'Applications' left menu item
-	When User navigates to the "Evergreen Summary" sub-menu on the Details page
+	When User navigates to the 'Evergreen Summary' left submenu item
 	Then "Manufacturer" column is not displayed to the user
 	Then "Vendor" column is displayed to the user
-	When User navigates to the "Evergreen Detail" sub-menu on the Details page
+	When User navigates to the 'Evergreen Detail' left submenu item
 	Then "Manufacturer" column is not displayed to the user
 	Then "Vendor" column is displayed to the user
 
@@ -37,10 +37,10 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatMailboxPermissionsAndFolderPermiss
 	When User navigates to the 'Mailbox' details page for 'abraham.f.wong@dwlabs.local' item
 	Then Details page for "abraham.f.wong@dwlabs.local" item is displayed to the user
 	When User navigates to the 'Users' left menu item
-	And User navigates to the "Mailbox Permissions" sub-menu on the Details page
+	And User navigates to the 'Mailbox Permissions' left submenu item
 	Then Content is present in the table on the Details Page
 	And "68" rows found label displays on Details Page
-	When User navigates to the "Folder Permissions" sub-menu on the Details page
+	When User navigates to the 'Folder Permissions' left submenu item
 	Then Content is present in the table on the Details Page
 	And "14" rows found label displays on Details Page
 
@@ -49,7 +49,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatBucketColumnIsDisplayedOnDetail
 	When User navigates to the '<PageName>' details page for '<SearchTerm>' item
 	Then Details page for "<SearchTerm>" item is displayed to the user
 	When User navigates to the 'Projects' left menu item
-	When User navigates to the "<SubTabName>" sub-menu on the Details page
+	When User navigates to the '<SubTabName>' left submenu item
 	Then "Bucket" column is displayed to the user
 
 Examples:

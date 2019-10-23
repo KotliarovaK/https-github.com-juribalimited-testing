@@ -68,8 +68,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptio
 	| Move to position |
 	| Delete           |
 	When User clicks "Edit" option in Cog-menu for "15427_Action1" item on Admin page
-	Then Edit Action page is displayed to the User
-	And 'UPDATE' button is displayed
+	#Then Edit Action page is displayed to the User
+	Then 'Edit Action' page subheader is displayed to user
+	And 'UPDATE' button is disabled
 	And 'CANCEL' button is displayed
 	And Page with 'Test_Automation_15427' header is displayed to user
 
@@ -215,15 +216,15 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
 Scenario: EvergreenJnr_AdminPage_CheckParametersToCreateUpdatePathAction
 #Pre-requisites:
 	When User clicks 'Users' on the left-hand menu
-	And User clicks the Filters button
-	And User add "City" filter where type is "Equals" with added column and "Melbourne" Lookup option
-	And User create dynamic list with "Melbourne Users" name on "Users" page
-	And User clicks Create Project from the main list
+	When User clicks the Filters button
+	When User add "City" filter where type is "Equals" with added column and "Melbourne" Lookup option
+	When User create dynamic list with "Melbourne Users" name on "Users" page
+	When User selects 'Project' in the 'Create' dropdown
 	Then Page with 'Create Project' subheader is displayed to user
-	Then Create Project button is disabled
-	When User enters "Melbourne User Migration" in the "Project Name" field
-	Then Create Project button is enabled
-	When User clicks Create button on the Create Project page
+	Then 'CREATE' button is displayed
+	When User enters 'Melbourne User Migration' text to 'Project Name' textbox
+	Then 'CREATE' button is not displayed
+	When User clicks 'CREATE' button
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -251,32 +252,32 @@ Scenario: EvergreenJnr_AdminPage_CheckParametersToCreateUpdatePathAction
 	When User enters 'Melbourne users' text to 'Description' textbox
 	When User selects 'Melbourne Users' option from 'Scope' autocomplete
 	When User selects "Stop on failed action" checkbox on the Automation Page
-	Then "CREATE" Action button is disabled
+	Then 'CREATE' button is disabled
 	When User selects 'Manual' in the 'Run' dropdown
 	And User clicks 'CREATE' button 
 	Then Create Action page is displayed to the User
-	Then 'CREATE' Action button has tooltip with 'Some values are missing or not valid' text
-	Then "CREATE" Action button is disabled
-	Then 'SAVE AND CREATE ANOTHER' Action button has tooltip with 'Some values are missing or not valid' text
-	Then "SAVE AND CREATE ANOTHER" Action button is disabled
-	Then "CANCEL" Action button is active
+	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
+	Then 'CREATE' button is disabled
+	Then 'SAVE AND CREATE ANOTHER' button has tooltip with 'Some values are missing or not valid' text
+	Then 'SAVE AND CREATE ANOTHER' button is disabled
+	Then 'CANCEL' button is not disabled
 	When User enters '' text to 'Action Name' textbox
 	Then 'An action name must be entered' error message is displayed for 'Action Name' field
 	When User enters 'Melbourne users' text to 'Action Name' textbox
-	Then "CREATE" Action button is disabled
-	Then "SAVE AND CREATE ANOTHER" Action button is disabled
-	Then "CANCEL" Action button is active
+	Then 'CREATE' button is disabled
+	Then 'SAVE AND CREATE ANOTHER' button is disabled
+	Then 'CANCEL' button is not disabled
 	When User selects 'Update path' in the 'Action Type' dropdown
-	Then "CREATE" Action button is disabled
-	Then "SAVE AND CREATE ANOTHER" Action button is disabled
-	Then "CANCEL" Action button is active
+	Then 'CREATE' button is disabled
+	Then 'SAVE AND CREATE ANOTHER' button is disabled
+	Then 'CANCEL' button is not disabled
 	When User selects 'Melbourne User Migration' option from 'Project' autocomplete
-	Then "CREATE" Action button is disabled
-	Then "SAVE AND CREATE ANOTHER" Action button is disabled
-	Then "CANCEL" Action button is active
+	Then 'CREATE' button is disabled
+	Then 'SAVE AND CREATE ANOTHER' button is disabled
+	Then 'CANCEL' button is not disabled
 	When User selects 'User Migration' option from 'Path' autocomplete
-	Then "SAVE AND CREATE ANOTHER" Action button is active
-	Then "CANCEL" Action button is active
+	Then 'SAVE AND CREATE ANOTHER' button is not disabled
+	Then 'CANCEL' button is not disabled
 	When User clicks 'CREATE' button 
 	Then Success message is displayed and contains "The automation action has been created" text
 
@@ -298,31 +299,31 @@ Scenario: EvergreenJnr_AdminPage_CheckEditActionPage
 	When User selects '[Default (User)]' option from 'Path' autocomplete
 	And User clicks 'CREATE' button 
 	#Create Action
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
 	Then There are no errors in the browser console
 	When User enters "15425_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
-	Then 'UPDATE' Action button has tooltip with 'No changes made' text
+	Then 'UPDATE' button has tooltip with 'No changes made' text
 	When User navigates to the 'Actions' left menu item
 	When User enters "15425_Action" text in the Search field for "Action" column
 	When User clicks content from "Action" column
-	Then Edit Action page is displayed to the User
+	Then 'Edit Action' page subheader is displayed to user
 	Then "15425_Action" content is displayed in "Action Name" field
 	Then '[Default (User)]' value is displayed in the 'Path' dropdown
 	Then 'Update path' content is displayed in 'Action Type' dropdown
-	Then "UPDATE" Action button is disabled
-	Then "CANCEL" Action button is active
+	Then 'UPDATE' button is disabled
+	Then 'CANCEL' button is not disabled
 	When User enters '' text to 'Action Name' textbox
 	Then 'An action name must be entered' error message is displayed for 'Action Name' field
-	Then "UPDATE" Action button is disabled
+	Then 'UPDATE' button is disabled
 	When User enters '15425_Action' text to 'Action Name' textbox
-	Then "UPDATE" Action button is disabled
+	Then 'UPDATE' button is disabled
 	When User enters 'TEST NEW' text to 'Action Name' textbox
-	Then "UPDATE" Action button is active
+	Then 'UPDATE' button is not disabled
 	When User selects 'Migration Project Phase 2 (User Project)' option from 'Project' autocomplete
-	Then "UPDATE" Action button is disabled
+	Then 'UPDATE' button is disabled
 	Then '' value is displayed in the 'Path' dropdown
-	Then 'UPDATE' Action button has tooltip with 'Some values are missing or not valid' text
+	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
 	When User clicks 'CANCEL' button 
 	Then Actions page is displayed to the User
 
@@ -334,11 +335,10 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActions
 	And User clicks the Filters button
 	And User add "City" filter where type is "Equals" with added column and "Edinburgh" Lookup option
 	And User create dynamic list with "Edinburgh Devices" name on "Devices" page
-	And User clicks Create Project from the main list
+	And User selects 'Project' in the 'Create' dropdown
 	Then Page with 'Create Project' subheader is displayed to user
-	Then Create Project button is disabled
-	When User enters "Edinburgh Devices Migration" in the "Project Name" field
-	When User clicks Create button on the Create Project page
+	When User enters 'Edinburgh Devices Migration' text to 'Project Name' textbox
+	When User clicks 'CREATE' button
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -402,10 +402,10 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActions
 	When User selects "Active" checkbox on the Automation Page
 	#Create Action
 	And User clicks 'CREATE' button 
-	Then "CREATE" Action button is disabled
-	Then 'CREATE' Action button has tooltip with 'Some values are missing or not valid' text
-	Then "SAVE AND CREATE ANOTHER" Action button is disabled
-	Then 'SAVE AND CREATE ANOTHER' Action button has tooltip with 'Some values are missing or not valid' text
+	Then 'CREATE' button is disabled
+	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
+	Then 'SAVE AND CREATE ANOTHER' button is disabled
+	Then 'SAVE AND CREATE ANOTHER' button has tooltip with 'Some values are missing or not valid' text
 	When User enters 'DAS16992_Action' text to 'Action Name' textbox
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'Edinburgh Devices Migration' option from 'Project' autocomplete
@@ -415,7 +415,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActions
 	| Device Task 1 |
 	When User selects 'Device Task 1' option from 'Task' autocomplete
 	When User selects "Unknown" Value for Actions
-	Then "CREATE" Action button is active
+	Then 'CREATE' button is not disabled
 	When User clicks 'SAVE AND CREATE ANOTHER' button 
 	Then Create Action page is displayed to the User
 	#Add steps for running Automation (DAS-17427)
@@ -489,7 +489,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdatingTaskWhichImpactsReadinessOwnerAndD
 	| Remove owner and team |
 	| No change             |
 	When User selects "Unknown" Value for Actions
-	Then "UPDATE" Action button is active
+	Then 'UPDATE' button is not disabled
 	When User clicks 'SAVE AND CREATE ANOTHER' button 
 	Then Create Action page is displayed to the User
 
@@ -564,7 +564,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateTextValue
 	When User enters 'To be updated' text to 'Value' textbox
 	And User clicks 'CREATE' button 
 	#Create Action
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
 	When User enters "17602_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
 	When User navigates to the 'Actions' left menu item
@@ -599,7 +599,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForRemoveTextValue
 	When User selects 'Text Computer' option from 'Task' autocomplete
 	When User selects 'Remove' in the 'Update Value' dropdown
 	And User clicks 'CREATE' button 
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
 	When User enters "17605_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
 	When User navigates to the 'Actions' left menu item
@@ -638,7 +638,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateDate
 	When User selects 'None' in the 'Capacity Slot' dropdown
 	#Delete After clarifications
 	And User clicks 'CREATE' button 
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
 	When User enters "17606_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
 	When User navigates to the 'Actions' left menu item
@@ -678,9 +678,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThanActionFieldsAreNotPrepopulatedWithOldD
 	When User enters "DAS17797_Action" text in the Search field for "Action" column
 	And User clicks content from "Action" column
 	#DAS-17816 =>
-	Then "UPDATE" Action button is disabled
-	Then "CANCEL" Action button is active
-	Then 'UPDATE' Action button has tooltip with 'No changes made' text
+	Then 'UPDATE' button is disabled
+	Then 'CANCEL' button is not disabled
+	Then 'UPDATE' button has tooltip with 'No changes made' text
 	#DAS-17816 <=
 	When User selects 'Radio Rag only Comp' option from 'Task' autocomplete
 	And User clicks Body container

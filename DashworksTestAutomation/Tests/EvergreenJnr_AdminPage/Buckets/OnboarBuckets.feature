@@ -14,8 +14,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedObjectsAreDisplayedAfterChang
 	When User navigates to the 'Details' left menu item
 	And User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
 	When User navigates to the 'Scope' left menu item
-	And User selects "Scope Changes" tab on the Project details page
-	Then "Match to Evergreen Bucket" is displayed in the Bucket dropdown
+	And User navigates to the 'Scope Changes' left menu item
+	Then 'Match to Evergreen Bucket' content is displayed in 'Bucket' dropdown
 	When User expands multiselect and selects following Objects
 	| Objects         |
 	| 0281Z793OLLLDU6 |

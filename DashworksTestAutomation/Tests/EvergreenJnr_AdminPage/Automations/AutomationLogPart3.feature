@@ -71,7 +71,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogMessageForDeletedTaskInAction
 	When User navigates to the 'Automations' left menu item
 	When User enters "17247_Automation" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "17247_Automation" item on Admin page
-	When User selects "Automation Log" tab on the Project details page
+	When User navigates to the 'Automation Log' left menu item
 	When User enters "17247_Automation" text in the Search field for "Automation" column
 	When User clicks String Filter button for "Type" column on the Admin page
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
@@ -102,10 +102,10 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedU
 	When User selects 'Akhila Varghese' option from 'Owner' autocomplete
 	And User clicks 'CREATE' button 
 	#Create Action
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
 	When User enters "DAS17681_Automation" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "DAS17681_Automation" item on Admin page
-	When User selects "Automation Log" tab on the Project details page
+	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "DAS17681_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
@@ -150,10 +150,10 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedU
 	And User selects 'No change' in the 'Update Value' dropdown
 	And User selects 'No change' in the 'Update Date' dropdown
 	When User selects 'No change' in the 'Update Owner' dropdown
-	Then "CREATE" Action button is disabled
-	Then "SAVE AND CREATE ANOTHER" Action button is disabled
-	Then 'CREATE' Action button has tooltip with 'Select at least one value to change' text
-	Then 'SAVE AND CREATE ANOTHER' Action button has tooltip with 'Select at least one value to change' text
+	Then 'CREATE' button is disabled
+	Then 'SAVE AND CREATE ANOTHER' button is disabled
+	Then 'CREATE' button has tooltip with 'Select at least one value to change' text
+	Then 'SAVE AND CREATE ANOTHER' button has tooltip with 'Select at least one value to change' text
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17830 @Cleanup @Not_Ready
 #Waiting for "zDevice Sch for Automations Feature" project on automation server from GD
@@ -179,10 +179,10 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateOwnerForUpdateValueInDevicesScopedAu
 	And User selects 'Maryna Kyslyak' option from 'Owner' autocomplete
 	And User clicks 'CREATE' button 
 	#Create Action
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
 	And User enters "17830_Automation" text in the Search field for "Automation" column
 	And User clicks "Run now" option in Cog-menu for "17830_Automation" item on Admin page
-	And User selects "Automation Log" tab on the Project details page
+	And User navigates to the 'Automation Log' left menu item
 	And User enters "17830_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
 	When User clicks String Filter button for "Type" column on the Admin page
@@ -227,10 +227,10 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateDateForUpdateValueInDevicesScopedAut
 	And User selects 'DAS-17846 Slot Device' in the 'Capacity Slot' dropdown
 	And User clicks 'CREATE' button 
 	#Create Action
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
 	And User enters "17846_Automation" text in the Search field for "Automation" column
 	And User clicks "Run now" option in Cog-menu for "17846_Automation" item on Admin page
-	And User selects "Automation Log" tab on the Project details page
+	And User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	And User enters "17846_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
@@ -256,10 +256,10 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateDateForUpdateValueInDevicesScopedAut
 	And User selects 'Remove' in the 'Update Date' dropdown
 	And User clicks 'UPDATE' button 
 	#Check updated Automation
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
 	When User enters "17846_Automation" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "17846_Automation" item on Admin page
-	When User selects "Automation Log" tab on the Project details page
+	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "17846_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
@@ -297,10 +297,10 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateDateForUpdateValueInUsersScopedAutom
 	And User selects 'None' in the 'Capacity Slot' dropdown
 	And User clicks 'CREATE' button 
 	#Create Action
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
 	And User enters "DAS17846_Automation" text in the Search field for "Automation" column
 	And User clicks "Run now" option in Cog-menu for "DAS17846_Automation" item on Admin page
-	And User selects "Automation Log" tab on the Project details page
+	And User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	And User enters "DAS17846_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column

@@ -57,7 +57,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.CapacityUnits
 
                 if (response.StatusCode != HttpStatusCode.OK)
                 {
-                    throw new Exception($"Capacity Unit with {capacityUnit.Name} name was not created via api: {response.ErrorMessage}");
+                    throw new Exception($"Capacity Unit with '{capacityUnit.Name}' name was not created via api: {response.ErrorMessage}");
                 }
 
                 _capacityUnits.Value.Add(capacityUnit);

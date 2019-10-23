@@ -23,10 +23,10 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	When User adds ''green'' value from 'Value' textbox
 	When User clicks 'CREATE' button 
 	#Create Action
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
 	When User enters "18187_Automation" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "18187_Automation" item on Admin page
-	When User selects "Automation Log" tab on the Project details page
+	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "18187_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
@@ -53,10 +53,10 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	When User adds 'bla¿ck' value from 'Value' textbox
 	When User adds ''green'' value from 'Value' textbox
 	When User clicks 'UPDATE' button 
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
 	When User enters "18187_Automation" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "18187_Automation" item on Admin page
-	When User selects "Automation Log" tab on the Project details page
+	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "18187_Automation" text in the Search field for "Automation" column
 	When User clicks String Filter button for "Type" column on the Admin page
@@ -87,10 +87,10 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	When User enters 'new value' text to 'Replace Value' textbox
 	When User clicks 'CREATE' button
 	#Create Action
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
 	When User enters "18187_Automation_1" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "18187_Automation_1" item on Admin page
-	When User selects "Automation Log" tab on the Project details page
+	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "18187_Automation_1" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
@@ -113,10 +113,10 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	And User selects 'Replace all values' in the 'Update Values' dropdown
 	When User adds '012345' value from 'Value' textbox
 	When User clicks 'UPDATE' button 
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
 	When User enters "18187_Automation_1" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "18187_Automation_1" item on Admin page
-	When User selects "Automation Log" tab on the Project details page
+	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "18187_Automation_1" text in the Search field for "Automation" column
 	When User clicks String Filter button for "Type" column on the Admin page
@@ -145,10 +145,10 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	And User selects 'Remove all values' in the 'Update Values' dropdown
 	When User clicks 'CREATE' button 
 	#Create Action
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
 	When User enters "18187_Automation_2" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "18187_Automation_2" item on Admin page
-	When User selects "Automation Log" tab on the Project details page
+	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "18187_Automation_2" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
@@ -172,10 +172,10 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	And User selects 'Add to existing values' in the 'Update Values' dropdown
 	When User adds '1 value' value from 'Value' textbox
 	When User clicks 'UPDATE' button 
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
 	When User enters "18187_Automation_2" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "18187_Automation_2" item on Admin page
-	When User selects "Automation Log" tab on the Project details page
+	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "18187_Automation_2" text in the Search field for "Automation" column
 	When User clicks String Filter button for "Type" column on the Admin page
@@ -206,10 +206,10 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	When User adds 'two' value from 'Value' textbox
 	When User clicks 'CREATE' button 
 	#Create Action
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
 	When User enters "18187_Automation_3" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "18187_Automation_3" item on Admin page
-	When User selects "Automation Log" tab on the Project details page
+	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "18187_Automation_3" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
@@ -233,10 +233,10 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	And User selects 'Remove specific values' in the 'Update Values' dropdown
 	When User adds 'two' value from 'Value' textbox
 	When User clicks 'UPDATE' button 
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
 	When User enters "18187_Automation_3" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "18187_Automation_3" item on Admin page
-	When User selects "Automation Log" tab on the Project details page
+	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "18187_Automation_3" text in the Search field for "Automation" column
 	When User clicks String Filter button for "Type" column on the Admin page

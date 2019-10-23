@@ -38,10 +38,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForCa
 	| Project            | SlotName  | DisplayName | CapacityType   | Tasks                  | CapacityUnits |
 	| ProjectForDAS13152 | Slot13152 | 13152       | Capacity Units | Stage13152 \ Task13152 | Unassigned    |
 	And User navigates to the 'Capacity' left menu item
-	And User selects "Slots" tab on the Project details page
+	And User navigates to the 'Slots' left menu item
 	When User clicks content from "Capacity Slot" column
-	Then 'Stage13152 \ Task13152' value is displayed in the 'Tasks' dropdown
-	And 'Unassigned' value is displayed in the 'Capacity Units' dropdown
+	Then only below options are selected in the 'Tasks' autocomplete
+	| Options                |
+	| Stage13152 \ Task13152 |
+	Then only below options are selected in the 'Capacity Units' autocomplete
+	| Options    |
+	| Unassigned |
 	And 'Device' content is displayed in 'Object Type' dropdown
 	When User selects 'Application' in the 'Object Type' dropdown
 	And User selects "Unassigned" checkbox in the "Capacity Units" field on the Project details page
@@ -82,7 +86,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTe
 	And User clicks 'Admin' on the left-hand menu
 	And User navigates to "ProjectForDAS13152" project details
 	And User navigates to the 'Capacity' left menu item
-	And User selects "Slots" tab on the Project details page
+	And User navigates to the 'Slots' left menu item
 	And User clicks 'CREATE SLOT' button 
 	And User enters 'Slot13152' text to 'Slot Name' textbox
 	And User enters '13152' text to 'Display Name' textbox
@@ -96,10 +100,16 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTe
 	#Check data in the slot after creation
 	When User clicks content from "Capacity Slot" column
 	Then 'Teams and Paths' value is displayed in the 'Capacity Type' dropdown
-	And 'Stage13152 \ Task13152' value is displayed in the 'Tasks' dropdown
+	Then only below options are selected in the 'Tasks' autocomplete
+	| Options                |
+	| Stage13152 \ Task13152 |
 	And 'Device' content is displayed in 'Object Type' dropdown
-	And '[Default (Computer)]' value is displayed in the 'Paths' dropdown
-	And 'Admin IT' value is displayed in the 'Teams' dropdown
+	Then only below options are selected in the 'Paths' autocomplete
+	| Options              |
+	| [Default (Computer)] |
+	Then only below options are selected in the 'Teams' autocomplete
+	| Options  |
+	| Admin IT |
 	#Change data in the slot
 	When User selects 'Application' in the 'Object Type' dropdown
 	And User selects "Admin IT" checkbox in the "Teams" field on the Project details page
@@ -111,15 +121,20 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTe
 	When User clicks content from "Capacity Slot" column
 	Then 'Teams and Paths' content is displayed in 'Capacity Type' dropdown
 	And 'Application' content is displayed in 'Object Type' dropdown
-	And '[Default (Application)]' value is displayed in the 'Paths' dropdown
-	And '1803 Team' value is displayed in the 'Teams' dropdown
+	Then only below options are selected in the 'Paths' autocomplete
+	| Options                 |
+	| [Default (Application)] |
+	| [Default (Computer)]    |
+	Then only below options are selected in the 'Teams' autocomplete
+	| Options   |
+	| 1803 Team |
 	When User selects 'Capacity Units' in the 'Capacity Type' dropdown
 	And User clicks 'UPDATE' button 
 	#Check updated Capacity Type value
 	When User clicks content from "Capacity Slot" column
 	Then 'Capacity Units' content is displayed in 'Capacity Type' dropdown
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS14967 @DAS15291
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS14967 @DAS15291 @DAS18538
 Scenario Outline: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCountersOfUserProjectLeadToCorrectFilteredLists
 	When User navigates to "User Evergreen Capacity Project" project details
 	And User navigates to the 'Capacity' left menu item
@@ -132,7 +147,7 @@ Scenario Outline: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCountersOfUserPr
 	| Device Slot 2      |
 	| Application Slot 1 |
 	| Application Slot 2 |
-	When User selects "Units" tab on the Project details page
+	When User navigates to the 'Units' left menu item
 	And User enters "Evergreen Capacity Unit 3" text in the Search field for "Capacity Unit" column
 	And User remembers value in "<ListName>" column
 	And User clicks content from "<ListName>" column
@@ -144,11 +159,9 @@ Scenario Outline: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCountersOfUserPr
 	And Values is displayed in added filter info
 	| Values                    |
 	| Evergreen Capacity Unit 3 |
-	| Offboarded                |
 	And Options is displayed in added filter info
 	| Values |
 	| is     |
-	| is not |
 
 Examples:
 	| ListName     |
@@ -156,7 +169,7 @@ Examples:
 	| Users        |
 	| Applications |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS14967 @DAS15291
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS14967 @DAS15291 @DAS18538
 Scenario Outline: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCountersOfMailProjectLeadToCorrectFilteredLists
 	When User navigates to "Mailbox Evergreen Capacity Project" project details
 	And User navigates to the 'Capacity' left menu item
@@ -168,7 +181,7 @@ Scenario Outline: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCountersOfMailPr
 	| TRT-Mailbox-Nov 11, 2018-Nov 24, 2018\RT=A\T=Admin |
 	| TRT-Dec 1, 2018-Dec 31, 2018 - Unlimited           |
 	| CA-Mailbox-Jan 1, 2018-Oct 31, 2018                |
-	When User selects "Units" tab on the Project details page
+	When User navigates to the 'Units' left menu item
 	And User enters "Unassigned" text in the Search field for "Capacity Unit" column
 	And User remembers value in "<ListName>" column
 	And User clicks content from "<ListName>" column
@@ -180,11 +193,9 @@ Scenario Outline: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCountersOfMailPr
 	And Values is displayed in added filter info
 	| Values     |
 	| Unassigned |
-	| Offboarded |
 	And Options is displayed in added filter info
 	| Values |
 	| is     |
-	| is not |
 
 Examples:
 	| ListName  |

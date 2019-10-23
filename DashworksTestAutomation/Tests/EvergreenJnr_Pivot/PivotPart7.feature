@@ -106,7 +106,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatThePivotPanelShowNoFiltersAppliedIfT
 	When User navigates to the "All Devices" list
 	Then Actions panel is not displayed to the user
 
-@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13833 @DAS13844
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13833 @DAS13844 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckResetButtonOnPivot
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -147,8 +147,8 @@ Scenario: EvergreenJnr_DevicesList_CheckResetButtonOnPivot
 	| Values     |
 	| Owner City |
 	#aggregate function?
-	Then "RUN PIVOT" Action button is active
-	And "SAVE" Action button is disabled
+	Then 'RUN PIVOT' button is not disabled
+	And 'SAVE' button is disabled
 	When User clicks reset button on main panel
 	Then 'ADD ROW GROUP' button is displayed
 	And 'ADD COLUMN' button is displayed
@@ -165,11 +165,11 @@ Scenario: EvergreenJnr_DevicesList_CheckResetButtonOnPivot
 	| Values     |
 	| Owner City |
 	#aggregate function?
-	Then "RUN PIVOT" Action button is active
-	And "SAVE" Action button is disabled
+	Then 'RUN PIVOT' button is not disabled
+	And 'SAVE' button is disabled
 	When User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
-	And "SAVE" Action button is active
+	And 'SAVE' button is not disabled
 	When User clicks reset button on main panel
 	Then 'ADD ROW GROUP' button is displayed
 	And 'ADD COLUMN' button is displayed
@@ -194,10 +194,8 @@ Scenario: EvergreenJnr_DevicesList_CheckResetButtonOnPivot
 	Then 'ADD ROW GROUP' button is displayed
 	And 'ADD COLUMN' button is displayed
 	And 'ADD VALUE' button is displayed
-	And "SAVE" Action button is disabled
-	And "RUN PIVOT" Action button is disabled
-	And User remove list with "PivotList_DAS_13844" name on "Devices" page
-	And User remove list with "PivotList_DAS_13844_1" name on "Devices" page
+	And 'SAVE' button is disabled
+	And 'RUN PIVOT' button is disabled
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13833 @DAS13842 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatPivotPanelIsDisplayedCorrectlyAfterClicksOnManagerButton
@@ -221,7 +219,5 @@ Scenario: EvergreenJnr_DevicesList_CheckThatPivotPanelIsDisplayedCorrectlyAfterC
 	When User navigates to the "All Devices" list
 	And User navigates to the "PivotList_DAS13842" list
 	Then "PivotList_DAS13842" list is displayed to user
-	When User clicks Settings button in the list panel
-	And User clicks Manage in the list panel
+	When User clicks 'Manage' Settings menu item for 'PivotList_DAS13842' list
 	Then "Dynamic Pivot Details" panel is displayed to the user
-	And User remove list with "PivotList_DAS13842" name on "Devices" page

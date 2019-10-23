@@ -219,8 +219,8 @@
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Automations\AutomationsGridPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Automations\ActionsPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Automations\CreateAutomationsPage.cs" />
-    <Compile Include="Pages\Evergreen\AdminDetailsPages\Automations\EditActionPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Automations\CreateActionsPage.cs" />
+    <Compile Include="Pages\Evergreen\Base\BaseErrorPage.cs" />
     <Compile Include="Pages\Evergreen\Base\BaseHeaderElement.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateReadinessPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\RingsPage.cs" />
@@ -257,7 +257,6 @@
     <Compile Include="Pages\Evergreen\AdminDetailsPages\ProjectDetailsPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\ReassignBucketsPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\ImportProjectPage.cs" />
-    <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateProjectPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateBucketPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateTeamPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\MoveToAnotherBucketPage.cs" />
@@ -343,9 +342,7 @@
     <Compile Include="Steps\Dashworks\AdminPage\Automations\CreateAutomationSteps\CreateAutomationViaApiAndOpen.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\CreateAutomationSteps\CreateAutomationViaApi.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\CreateAutomationSteps\CreateAutomationBase.cs" />
-    <Compile Include="Steps\Dashworks\AdminPage\Automations\EditActions.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\CreateAction.cs" />
-    <Compile Include="Steps\Dashworks\AdminPage\Automations\EditAutomation.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\CreateAutomation.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Buckets\AfterScenario\RemoveBucketAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Buckets\AfterScenario\SetDefaultBucketAfterScenario.cs" />
@@ -362,7 +359,6 @@
     <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_CogMenuActions.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_GridActions.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_Messages.cs" />
-    <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_PageActions.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_TableSorting.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Project\Readiness\ReadinessSteps.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Project\Readiness\AfterScenario\RemoveReadinessAfterScenario.cs" />
@@ -380,6 +376,7 @@
     <Compile Include="Steps\Dashworks\AdminPage\Teams\Api\CreateTeamViaApi.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Teams\BeforeScenario\SaveDefaultTeamBeforeScenario.cs" />
     <Compile Include="Steps\Dashworks\Base\EvergreenJnr_BaseDialog.cs" />
+    <Compile Include="Steps\Dashworks\Base\EvergreenJnr_BaseErrorPage.cs" />
     <Compile Include="Steps\Dashworks\Base\EvergreenJnr_BaseGrid.cs" />
     <Compile Include="Steps\Dashworks\Base\EvergreenJnr_BaseHeader.cs" />
     <Compile Include="Steps\Dashworks\Base\EvergreenJnr_BasePage.cs" />
@@ -511,17 +508,37 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ActionsPanelPart1.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_ActionsPanel\UpdateCustomFfield\CreateCustomFieldForBulkUpdate.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\ActionsPanelPart13.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ActionsPanelPart13.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdatePath\UpdatePathPart1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UpdatePathPart1.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateTaskValue\UpdateTaskValuePart2.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UpdateTaskValuePart2.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateTaskValue\UpdateTaskValuePart1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UpdateTaskValuePart1.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateCustomFfield\CreateCustomFieldForBulkUpdate.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CreateCustomFieldForBulkUpdate.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_ActionsPanel\UpdateCustomFfield\UpdateCustomFieldPart2.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateCustomFfield\UpdateCustomFieldPart2.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>UpdateCustomFieldPart2.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_ActionsPanel\UpdateCustomFfield\UpdateCustomFieldPart1.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateCustomFfield\UpdateCustomFieldPart1.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>UpdateCustomFieldPart1.feature</DependentUpon>
@@ -530,6 +547,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AdminPage.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\CreateActionsPart2.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreateActionsPart2.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\UpdateCustomField\UpdateCustomFieldAutomations3.feature.cs">
       <AutoGen>True</AutoGen>
@@ -561,10 +583,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CreateAutomation.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\CreateAction.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\CreateActionsPart1.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CreateAction.feature</DependentUpon>
+      <DependentUpon>CreateActionsPart1.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\Actions.feature.cs">
       <AutoGen>True</AutoGen>
@@ -725,6 +747,11 @@
       <DependentUpon>CapacityPart2.feature</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Capacity\Capacity\CloningOfEvergreenCapacityUnitsToProject.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CloningOfEvergreenCapacityUnitsToProject.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart25.feature.cs">
       <DependentUpon>ProjectsPart25.feature</DependentUpon>
@@ -1647,21 +1674,41 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ActionsPanelPart1.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_ActionsPanel\UpdateCustomFfield\CreateCustomFieldForBulkUpdate.feature">
+    <None Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\ActionsPanelPart13.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ActionsPanelPart13.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdatePath\UpdatePathPart1.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UpdatePathPart1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateTaskValue\UpdateTaskValuePart2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UpdateTaskValuePart2.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateTaskValue\UpdateTaskValuePart1.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UpdateTaskValuePart1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateCustomFfield\CreateCustomFieldForBulkUpdate.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CreateCustomFieldForBulkUpdate.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_ActionsPanel\UpdateCustomFfield\UpdateCustomFieldPart2.feature">
+    <None Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateCustomFfield\UpdateCustomFieldPart2.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>UpdateCustomFieldPart2.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_ActionsPanel\UpdateCustomFfield\UpdateCustomFieldPart1.feature">
+    <None Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateCustomFfield\UpdateCustomFieldPart1.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>UpdateCustomFieldPart1.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_AdminPage\AdminPage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AdminPage.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\CreateActionsPart2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CreateActionsPart2.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\UpdateCustomField\UpdateCustomFieldAutomations3.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -1687,9 +1734,9 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CreateAutomation.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\CreateAction.feature">
+    <None Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\CreateActionsPart1.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>CreateAction.feature.cs</LastGenOutput>
+      <LastGenOutput>CreateActionsPart1.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\Actions.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -1818,6 +1865,10 @@
     <None Include="Tests\EvergreenJnr_AdminPage\Capacity\Capacity\CapacityPart2.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CapacityPart2.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Capacity\Capacity\CloningOfEvergreenCapacityUnitsToProject.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CloningOfEvergreenCapacityUnitsToProject.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart25.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -2511,6 +2562,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Steps\Dashworks\AdminPage\CapacityDetails\" />
+    <Folder Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateBucket\" />
+    <Folder Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateCapacityUnit\" />
+    <Folder Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateRing\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

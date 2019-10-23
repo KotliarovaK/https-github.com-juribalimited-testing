@@ -15,26 +15,19 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public string SettingButtonSelector =
             ".//li//i[@class='menu-trigger material-icons mat-settings mat-18 pull-right settings-icon settings-area']";
 
-        public string TopSubMenuItemByName = ".//div[@class='submenu-top']//*[text()='{0}']";
+        public string TopSubMenuItemByName = ".//div[contains(@class,'submenu-top')]//*[text()='{0}']";
 
-        public By AllListNamesInListsPanel = By.XPath(".//span[@class='submenu-actions-list-name']");
+        public By AllListNamesInListsPanel = By.XPath(".//span[contains(@class,'list-name')]");
 
         public By ListSubMenusInListsPanel = By.XPath(".//ancestor::submenu-item");
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='listEdit list-edit-wrapper']")]
-        public IWebElement CreateCustomListElement { get; set; }
+        public By SettingsIcon = By.XPath(".//ancestor::div[@class='submenu-item']//i[contains(@class,'settings')]");
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'list-edit-wrapper')]//button")]
         public IWebElement CreateNewListButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='search']")]
         public IWebElement ListPanelSearchTextBox { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[@class='top-tools']//div[@aria-controls='submenu']")]
-        public IWebElement TopToolsSubmenu { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[@class='save-action-bar ng-star-inserted']")]
-        public IWebElement SavePivotButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='clearButton ng-star-inserted']")]
         public IWebElement SearchTextBoxResetButtonInListPanel { get; set; }
@@ -57,25 +50,20 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = "//div[@id='content']//i[@class='material-icons mat-menu']")]
         public IWebElement ExpandSideNavPanelIcon { get; set; }
 
-        [FindsBy(How = How.XPath,
-            Using =
-                ".//i[@class='menu-trigger material-icons mat-settings mat-18 pull-right settings-icon settings-area']")]
-        public IWebElement SettingsButton { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[@class='menu']")]
-        public IWebElement SettingsPanel { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//div[@class='inline-success ng-star-inserted']")]
         public IWebElement SuccessCreateMessage { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'SelectDropdownActions')]//mat-select")]
         public IWebElement DropdownFilterList { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@id='submenuBlock']//ul[contains(@class,'submenu-actions-list')]/li")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@id,'submenuBlock')]//ul[contains(@class,'submenu-actions-list')]/li")]
         public IList<IWebElement> ListElementsInListsPanel { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@id='submenu']")]
         public IWebElement ListsPanel { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'submenu-top-item')]")]
+        public IList<IWebElement> SubMenuTopItems { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {
@@ -116,32 +104,23 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IWebElement GetActiveList()
         {
-            Driver.WaitForAnyElementToContainsTextInAttribute(ListElementsInListsPanel.Select(x => x.FindElement(ListSubMenusInListsPanel)).ToList(), 
+            Driver.WaitForElementsToBeDisplayed(SubMenuTopItems);
+
+            if (SubMenuTopItems.Any(x => x.GetAttribute("class").Contains("selected")))
+            {
+                return SubMenuTopItems.FirstOrDefault(x => x.IsElementSelected());
+            }
+
+            Driver.WaitForAnyElementToContainsTextInAttribute(ListElementsInListsPanel.Select(x => x.FindElement(ListSubMenusInListsPanel)),
                 "active", "class");
             return ListElementsInListsPanel.Select(x => x.FindElement(ListSubMenusInListsPanel))
-                .FirstOrDefault(WebElementExtensions.IsElementActive);
+                .FirstOrDefault(c => c.IsElementActive());
         }
 
         public bool GetFavoriteStatus(string listName)
         {
             return Driver.IsElementDisplayed(By.XPath(
                 $".//span[@class='submenu-actions-list-name'][text()='{listName}']//ancestor::li//i[@class='material-icons mat-star']"), WebDriverExtensions.WaitTime.Medium);
-        }
-
-        public void ClickSettingsButtonByListName(string listName)
-        {
-            var settingsButton =
-                $".//span[@class='submenu-actions-list-name'][text()='{listName}']//ancestor::li//i[contains(@class,'settings')]";
-            Driver.WaitForElementToBeNotDisplayed(UpdateCurrentListButton);
-            Driver.MouseHover(By.XPath(settingsButton));
-            Driver.FindElement(By.XPath(settingsButton)).Click();
-        }
-
-        public IWebElement CheckAllListName(string listName)
-        {
-            var allListName = $".//div[@class='submenu-selected-list list-selected'][text()='{listName}']";
-            Driver.WaitForElementToBeDisplayed(By.XPath(allListName));
-            return Driver.FindElement(By.XPath(allListName));
         }
 
         public bool ListNameWarningMessage(string listName)
@@ -161,15 +140,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 By.XPath($".//span[@class='submenu-actions-list-name'][text()='{listName}']"));
         }
 
-        public IWebElement OpenSettingsByListName(string listName)
+        public IWebElement GetSettingsIconForList(string listName)
         {
-            var listSettingsSelector =
-                By.XPath(
-                    $".//ul[@class='submenu-actions-list ng-star-inserted']//span[text()='{listName}']//ancestor::li[@class='menu-show-on-hover ng-star-inserted']//div[@class='menu-wrapper']//i");
-            Driver.MouseHover(listSettingsSelector);
-            Driver.WaitForDataLoading();
-            Driver.WaitForElementToBeDisplayed(listSettingsSelector);
-            return Driver.FindElement(listSettingsSelector);
+            return GetListElementByName(listName).FindElement(SettingsIcon);
         }
 
         public IWebElement ListInBottomSection(string listName)
@@ -206,15 +179,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
         }
 
         #region ListSettings
-
-        [FindsBy(How = How.XPath, Using = ".//li[text()='Manage']")]
-        public IWebElement ManageButton { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//li[text()='Make Favorite']")]
-        public IWebElement MakeFavoriteButton { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//li[text()='Duplicate']")]
-        public IWebElement DuplicateButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span/div[contains(@class,'inline-tip')]")]
         public IWebElement DeleteWarning { get; set; }
@@ -253,9 +217,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
         #endregion DeleteListBlock
 
         #region UpdateList
-
-        [FindsBy(How = How.XPath, Using = ".//div[@role='menu']")]
-        public IWebElement SaveAsMenu { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//span[text()='SAVE']/ancestor::button")]
         public IWebElement SaveAsDropdown { get; set; }

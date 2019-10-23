@@ -25,12 +25,12 @@ Scenario: EvergreenJnr_AdminPage_CheckActionGridInAutomations
 	When User selects 'All Devices' option from 'Scope' autocomplete
 	When User selects "Active" checkbox on the Automation Page
 	When User selects "Stop on failed action" checkbox on the Automation Page
-	Then "CREATE" Action button is disabled
+	Then 'CREATE' button is disabled
 	When User selects 'Manual' in the 'Run' dropdown
 	And User clicks 'CREATE' button 
 	When User navigates to the 'Actions' left menu item
 	Then "No actions found" message is displayed on the Admin Page
-	Then "CREATE ACTION" Action button is active
+	Then 'CREATE ACTION' button is not disabled
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS16801 @DAS15764 @DAS15423 @DAS17134 @DAS17771 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatCreateAutomationFieldsIsNotPopulatedWithPreviouslyCreatedAutomation
@@ -51,11 +51,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateAutomationFieldsIsNotPopulatedWi
 	When User selects 'Manual' in the 'Run' dropdown
 	When User selects "Active" checkbox on the Automation Page
 	And User clicks 'CREATE' button 
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
 	When User clicks 'CREATE AUTOMATION' button 
-	Then "Description" field is empty on the Admin page
-	Then "Automation Name" field is empty on the Admin page
-	Then "Scope" field is empty on the Admin page
+	Then '' content is displayed in 'Description' textbox
+	Then '' content is displayed in 'Automation Name' textbox
+	Then '' content is displayed in 'Scope' textbox
 	Then "Active" checkbox is unchecked on the Admin page
 	When User enters 'DAS16801_Automation_Second' text to 'Automation Name' textbox
 	When User enters 'DAS16801' text to 'Description' textbox
@@ -65,7 +65,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateAutomationFieldsIsNotPopulatedWi
 	And User clicks 'CREATE' button 
 	When User navigates to the 'Details' left menu item
 	When User enters 'LongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescription' text to 'Description' textbox
-	Then "UPDATE" Action button is active
+	Then 'UPDATE' button is not disabled
 	When User enters 'DAS16801_Automation' text to 'Automation Name' textbox
 	Then 'An automation with this name already exists' error message is displayed for 'Automation Name' field
 

@@ -16,19 +16,19 @@ Scenario: EvergreenJnr_UsersList_SelectAllCheckboxStatusCheckAfterSearch
 	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
 	| alain          | 42           |
-	And Select All selectbox is checked
+	Then select all rows checkbox is checked
 	When User clicks on 'Username' column header
 	Then data in table is sorted by 'Username' column in ascending order
-	And Select All selectbox is checked
+	Then select all rows checkbox is checked
 	And "42" rows are displayed in the agGrid
 	And "41339" selected rows are displayed in the Actions panel
 	And Clearing the agGrid Search Box
-	And Select All selectbox is checked
+	Then select all rows checkbox is checked
 	When User deselect all rows on the grid
 	Then "0" selected rows are displayed in the Actions panel
 	When User selects all rows on the grid
 	Then The number of rows selected matches the number of rows of the main object list
-	And Select All selectbox is checked
+	Then select all rows checkbox is checked
 
 @Evergreen @AllLists @Evergreen_ActionsPanel @AllCheckbox @DAS10775 @DAS10656 @DAS12602
 Scenario Outline: EvergreenJnr_AllLists_CheckThatSelectAllCheckboxStatusAfterClosingActionPanel
@@ -38,7 +38,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatSelectAllCheckboxStatusAfterClo
 	Then Actions panel is displayed to the user
 	When User selects all rows on the grid
 	And User clicks the Actions button
-	Then Select all checkbox is not displayed
+	Then checkboxes are not displayed for content in the grid
 
 Examples: 
 	| PageName     |
@@ -71,7 +71,7 @@ Scenario Outline: EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest
 	When User selects all rows on the grid
 	Then "<SelectedRowsCount>" selected rows are displayed in the Actions panel
 	When User clicks the Actions button
-	Then Select all checkbox is not displayed
+	Then checkboxes are not displayed for content in the grid
 	When User clicks the Actions button
 	When User selects all rows on the grid
 	And User select "<Columnname>" rows in the grid
@@ -116,5 +116,5 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatAllCheckboxesAreCheckedAfterAFirst
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User selects all rows on the grid
-	Then All checkboxes are checked in the table
+	Then all checkboxes are checked in the grid
 	And The number of rows selected matches the number of rows of the main object list

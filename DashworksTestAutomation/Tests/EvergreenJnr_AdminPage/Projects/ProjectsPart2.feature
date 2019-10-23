@@ -11,11 +11,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedAfterUpdati
 	| ProjectName  | Scope       | ProjectTemplate | Mode               |
 	| TestProject5 | All Devices | None            | Standalone Project |
 	Then Page with 'TestProject5' header is displayed to user
-	When User selects "Scope" tab on the Project details page
-	And User selects "Scope Details" tab on the Project details page
+	When User navigates to the 'Scope' left menu item
+	And User navigates to the 'Scope Details' left menu item
 	And User navigates to the 'Application Scope' tab on Project Scope Changes page
 	And User clicks "Entitled to the device owner" checkbox on the Project details page
-	And User selects "Scope Changes" tab on the Project details page
+	And User navigates to the 'Scope Changes' left menu item
 	And User navigates to the 'Applications' tab on Project Scope Changes page
 	Then "Applications to add (0 of 2129 selected)" is displayed to the user in the Project Scope Changes section
 	When User expands multiselect to add objects 
@@ -30,14 +30,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedAfterUpdati
 	When User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
 	And "Applications to add (0 of 2126 selected)" is displayed to the user in the Project Scope Changes section
-	When User selects "Queue" tab on the Project details page
+	When User navigates to the 'Queue' left menu item
 	Then following Items are displayed in the Queue table
 	| Items               |
 	| 20040610sqlserverck |
 	| 7zip                |
 	| ACDSee 4.0          |
 	Then "" content is displayed in "Bucket" column
-	When User selects "History" tab on the Project details page
+	When User navigates to the 'History' left menu item
 	Then following Items are displayed in the History table
 	| Items               |
 	| 20040610sqlserverck |
@@ -52,13 +52,13 @@ Scenario: EvergreenJnr_ChecksThatDeviceScopeDDLIsDisabledWhenDoNotIncludeOwnedDe
 	Then 'Admin' list should be displayed to the user
 	When User clicks 'CREATE PROJECT' button 
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "Rainbow" in the "Project Name" field
+	When User enters 'Rainbow' text to 'Project Name' textbox
 	And User selects 'All Devices' option from 'Scope' autocomplete
-	When User clicks Create button on the Create Project page
+	When User clicks 'CREATE' button
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Page with 'Rainbow' header is displayed to user
-	When User selects "Scope Details" tab on the Project details page
+	When User navigates to the 'Scope Details' left menu item
 	And User navigates to the 'User Scope' tab on Project Scope Changes page
 	When User selects "Do not include device owners" checkbox on the Project details page
 	Then Scope List dropdown is disabled
@@ -69,10 +69,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedCheckboxIsSelectedAfterSwitchi
 	| ProjectName   | Scope       | ProjectTemplate | Mode               |
 	| TestProject13 | All Devices | None            | Standalone Project |
 	Then Page with 'TestProject13' header is displayed to user
-	When User selects "Scope" tab on the Project details page
-	And User selects "Scope Changes" tab on the Project details page
+	When User navigates to the 'Scope' left menu item
+	And User navigates to the 'Scope Changes' left menu item
 	And User navigates to the 'Devices' tab on Project Scope Changes page
-	Then Update Project buttons is disabled
+	Then 'UPDATE ALL CHANGES' button is disabled
 	When User expands multiselect to add objects
 	Then Objects are displayed in alphabetical order on the Admin page
 	When User selects following Objects from the expandable multiselect
@@ -96,8 +96,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedP
 	When Project created via API and opened
 	| ProjectName   | Scope       | ProjectTemplate | Mode               |
 	| DDPPProject14 | All Devices | None            | Standalone Project |
-	And User selects "Scope" tab on the Project details page
-	And User selects "Scope Changes" tab on the Project details page
+	And User navigates to the 'Scope' left menu item
+	And User navigates to the 'Scope Changes' left menu item
 	When User expands multiselect and selects following Objects
 	| Objects        |
 	| 0317IPQGQBVAQV |

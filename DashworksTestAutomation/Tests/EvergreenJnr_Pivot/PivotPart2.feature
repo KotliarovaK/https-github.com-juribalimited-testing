@@ -26,7 +26,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatPivotsAreNotShownInTheListToSelectO
 	| ProjectName         | Scope       | ProjectTemplate | Mode               |
 	| Pivot_Project_14224 | All Devices | None            | Standalone Project |
 	And User navigates to the 'Scope' left menu item
-	And User selects "Scope Details" tab on the Project details page
+	And User navigates to the 'Scope Details' left menu item
 	And User navigates to the 'Device Scope' tab on Project Scope Changes page
 	Then User sees that 'Scope' dropdown contains following options:
 	| Values                                |
@@ -58,7 +58,6 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatPivotsAreNotShownInTheListToSelectO
 	| Application List (Complex)               |
 	| Application List (Complex) - BROKEN LIST |
 	| Apps with a Vendor                       |
-	And User remove list with "Pivot_DAS_14224" name on "Devices" page
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13765 @DAS13833 @DAS13855
 Scenario: EvergreenJnr_DevicesList_ChecksThatPivotTableDisplayedCorrectlyAfterRemovingColumn
@@ -82,7 +81,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatPivotTableDisplayedCorrectlyAfterRe
 	Then Save button is inactive for Pivot list
 	And No pivot generated message is displayed
 
-@Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS14206 @DAS14413 @DAS14748 @DAS13786 @DAS13869
+@Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS14206 @DAS14413 @DAS14748 @DAS13786 @DAS13869 @Cleanup
 Scenario: EvergreenJnr_UsersList_ChecksThatUserCanCreateOneMorePivotOnSelectedPage
 	When User clicks 'Users' on the left-hand menu
 	Then 'All Users' list should be displayed to the user
@@ -101,10 +100,9 @@ Scenario: EvergreenJnr_UsersList_ChecksThatUserCanCreateOneMorePivotOnSelectedPa
 	Then "Pivot_DAS_14206" list is displayed to user
 	When User navigates to the "All Users" list
 	And User selects 'Pivot' in the 'Create' dropdown
-	Then "ADD ROW GROUP" Action button is active
-	And "ADD COLUMN" Action button is active
-	And "ADD VALUE" Action button is active
-	And User remove list with "Pivot_DAS_14206" name on "Users" page
+	Then 'ADD ROW GROUP' button is not disabled
+	And 'ADD COLUMN' button is not disabled
+	And 'ADD VALUE' button is not disabled
 
 @Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS14206 @Cleanup
 Scenario: EvergreenJnr_UsersList_ChecksThatUserCanCreateOneMorePivotOnCreatedList
@@ -129,9 +127,9 @@ Scenario: EvergreenJnr_UsersList_ChecksThatUserCanCreateOneMorePivotOnCreatedLis
 	When User navigates to the "Dynamic_List_DAS14206" list
 	Then "Dynamic_List_DAS14206" list is displayed to user
 	When User selects 'Pivot' in the 'Create' dropdown
-	Then "ADD ROW GROUP" Action button is active
-	And "ADD COLUMN" Action button is active
-	And "ADD VALUE" Action button is active
+	Then 'ADD ROW GROUP' button is not disabled
+	And 'ADD COLUMN' button is not disabled
+	And 'ADD VALUE' button is not disabled
 	When User selects the following Row Groups on Pivot:
 	| RowGroups   |
 	| Common Name |
@@ -140,11 +138,8 @@ Scenario: EvergreenJnr_UsersList_ChecksThatUserCanCreateOneMorePivotOnCreatedLis
 	| Building |
 	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
-	When User clicks 'SAVE' button 
-	And User selects 'Save as new pilot' option
+	When User clicks 'SAVE' button and select 'SAVE AS NEW PIVOT' menu button
 	Then Pivot Name field is empty
-	And User remove list with "Dynamic_List_DAS14206" name on "Users" page
-	And User remove list with "PivotList_DAS_14206" name on "Users" page
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14413
 Scenario: EvergreenJnr_DevicesList_CheckThatPivotPanelIsDisplayedCorrectlyAfterClicksOnResetButton
@@ -171,9 +166,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatPivotPanelIsDisplayedCorrectlyAfterC
 	| Value      |
 	| Owner City |
 	And User clicks reset button on main panel
-	Then "ADD ROW GROUP" Action button is active
-	And "ADD COLUMN" Action button is active
-	And "ADD VALUE" Action button is active
+	Then 'ADD ROW GROUP' button is not disabled
+	And 'ADD COLUMN' button is not disabled
+	And 'ADD VALUE' button is not disabled
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14379 @DAS11291 @DAS14745 @DAS16399
 Scenario: EvergreenJnr_DevicesList_ChecksTooltipsOnPivot
@@ -182,7 +177,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksTooltipsOnPivot
 	When User selects 'Pivot' in the 'Create' dropdown
 	And User clicks 'ADD ROW GROUP' button 
 	When "Compliance" value is entered into the search box and the selection is clicked on Pivot
-	Then 'DONE' Action button has tooltip with 'Confirm changes' text
+	Then 'DONE' button has tooltip with 'Confirm changes' text
 	Then back button on Pivot panel have tooltip with "Close" text
 	When User clicks 'DONE' button 
 	And User selects the following Columns on Pivot:

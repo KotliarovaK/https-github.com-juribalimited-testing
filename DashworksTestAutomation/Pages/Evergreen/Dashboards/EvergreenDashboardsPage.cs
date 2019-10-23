@@ -711,5 +711,10 @@ namespace DashworksTestAutomation.Pages
                 .First(x => x.GetCssValue("fill").Equals(legendColor));
         }
 
+        public IWebElement GetListIconFromListSectionOfDetailsPanel(string listname)
+        {
+            var by = By.XPath($".//td[text()='{listname}']/following-sibling :: td/i");
+            return Driver.FindElement(by);
+        }
     }
 }

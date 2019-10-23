@@ -12,7 +12,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatResyncOptionIsWorkedCorrectlyForProj
 	Then Details page for "011PLA470S0B9DJ" item is displayed to the user
 	When User switches to the "USE ME FOR AUTOMATION(DEVICE SCHDLD)" project in the Top bar on Item details page
 	When User navigates to the 'Projects' left menu item
-	And User navigates to the "Project Details" sub-menu on the Details page
+	And User navigates to the 'Project Details' left submenu item
 	When User clicks 'RESYNC' button 
 	Then Dialog Pop-up is displayed for User
 	Then 'Resync owner' checkbox is checked

@@ -9,19 +9,19 @@ Background: Pre-Conditions
 Scenario: EvergreenJnr_DevicesList_CheckThatOpenedSectionIsDisplayedCorrectlyOnTheDetailsPage
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	When User navigates to the 'Applications' left menu item
-	And User navigates to the "Evergreen Detail" sub-menu on the Details page
+	And User navigates to the 'Evergreen Detail' left submenu item
 	Then "Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" content is displayed in "Application" column
 	And "Advert - A0129C4E" content is displayed in "Advertisement" column
 	And "14" rows found label displays on Details Page
 	And table content is present
 	Then User sees loaded tab "Evergreen Detail" on the Details page
-	When User navigates to the "Advertisements" sub-menu on the Details page
+	When User navigates to the 'Advertisements' left submenu item
 	Then "Advert - A0121431" content is displayed in "Advertisement" column
 	And "Hewlett-Packard" content is displayed in "Vendor" column
 	And "7" rows found label displays on Details Page
 	And table content is present
 	Then User sees loaded tab "Advertisements" on the Details page
-	When User navigates to the "Collections" sub-menu on the Details page
+	When User navigates to the 'Collections' left submenu item
 	Then "Collection A01131CA" content is displayed in "Collection" column
 	And "A01 SMS (Spoof)" content is displayed in "Source" column
 	And "7" rows found label displays on Details Page
@@ -47,6 +47,6 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatGroupsCountIsCorrectOnEvergreen
 	When User navigates to the 'Application' details page for 'Folder Size for Windows (2.3)' item
 	When User navigates to the 'Distribution' left menu item
 	Then 'Groups' tab is displayed on left menu on the Details page and contains '1' count of items
-	When User navigates to the "Groups" sub-menu on the Details page
+	When User navigates to the 'Groups' left submenu item
 	Then "GSMS-FolderSize-2.3" content is displayed in "Group" column
 	And "1" rows found label displays on Details Page

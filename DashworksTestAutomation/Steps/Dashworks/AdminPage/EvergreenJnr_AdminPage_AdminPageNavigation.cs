@@ -22,31 +22,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             _driver = driver;
         }
 
-        [When(@"User clicks ""(.*)"" navigation link on the Admin page")]
-        public void WhenUserClicksNavigationLinkOnTheAdminPage(string linkName)
-        {
-            var link = _driver.NowAt<ProjectsPage>();
-            link.GetNavigationLinkByName(linkName).Click();
-        }
-
-        [When(@"User open ""(.*)"" sub menu on Admin page")]
-        public void WhenUserOpenSubMenuOnAdminPage(string menuName)
-        {
-            var projectTabs = _driver.NowAt<ProjectsPage>();
-            projectTabs.GetSubMenuByName(menuName).Click();
-            _driver.WaitForDataLoading();
-        }
-
-        //TODO should be removed
-        [When(@"User selects ""(.*)"" tab on the Project details page")]
-        public void WhenUserSelectTabOnTheProjectDetailsPage(string tabName)
-        {
-            var projectTabs = _driver.NowAt<ProjectsPage>();
-            _driver.WaitForDataLoading();
-            projectTabs.NavigateToProjectTabByName(tabName);
-            _driver.WaitForDataLoading();
-        }
-
         [Then(@"""(.*)"" tab is selected on the Admin page")]
         public void ThenTabIsSelectedOnTheAdminPage(string tabName)
         {
@@ -61,6 +36,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             Utils.Verify.IsTrue(projectTabs.GetsSelectedTabInProjectByName(tabName).Displayed(), $"'{tabName}' tab is not active");
         }
 
+        //User navigates to the 'Applications' tab on Project Scope Changes page
         [When(@"User selects ""(.*)"" tab on the Capacity Units page")]
         public void WhenUserSelectsTabOnTheCapacityUnitsPage(string tabName)
         {

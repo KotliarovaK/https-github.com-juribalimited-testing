@@ -6,10 +6,13 @@ using System.Threading;
 using System.Threading.Tasks;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Automations;
+using DashworksTestAutomation.DTO.Evergreen.Admin.Bucket;
 using DashworksTestAutomation.DTO.Evergreen.Admin.CapacityUnits;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Rings;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Slots;
+using DashworksTestAutomation.DTO.Evergreen.Admin.Teams;
 using DashworksTestAutomation.DTO.RuntimeVariables;
+using DashworksTestAutomation.DTO.RuntimeVariables.Buckets;
 using DashworksTestAutomation.DTO.RuntimeVariables.CapacityUnits;
 using DashworksTestAutomation.DTO.RuntimeVariables.Rings;
 using DashworksTestAutomation.Extensions;
@@ -36,9 +39,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         private readonly Rings _rings;
         private readonly Automations _automations;
         private readonly CapacityUnits _capacityUnits;
+        private readonly DTO.RuntimeVariables.Projects _projects;
+        private readonly Teams _teams;
+        private readonly Buckets _buckets;
 
         public EvergreenJnr_BasePage(RemoteWebDriver driver, AutomationActions automationActions,
-            Automations automations, Slots slots, Rings rings, CapacityUnits capacityUnits)
+            Automations automations, Slots slots, Rings rings, CapacityUnits capacityUnits, DTO.RuntimeVariables.Projects projects,
+            Teams teams, Buckets buckets)
         {
             _driver = driver;
             _automationActions = automationActions;
@@ -46,6 +53,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             _slots = slots;
             _rings = rings;
             _capacityUnits = capacityUnits;
+            _projects = projects;
+            _teams = teams;
+            _buckets = buckets;
         }
 
         #region Page Header/SubHeader
@@ -61,6 +71,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         #endregion
 
         #region Autocomplete
+
+        [When(@"User expands '(.*)' autocomplete")]
+        public void WhenUserExpandsAutocomplete(string placeholder)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.GetTextbox(placeholder).Click();
+        }
 
         [When(@"User selects '(.*)' option from '(.*)' autocomplete")]
         public void WhenUserSelectsOptionFromAutocomplete(string option, string placeholder)
@@ -223,6 +240,28 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.AreEqual(expectedText, text, "Incorrect text in the autocomplete");
         }
 
+        [Then(@"All items in the '(.*)' autocomplete have icons")]
+        public void AllItemsInTheAutocompleteHaveIcons(string dropdown)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.GetTextbox(dropdown).Click();
+
+            Verify.That(page.GetIconsOfDropdownOptions().Count, Is.EqualTo(page.GetDropdownValues().Count), "Incorrect options in lists dropdown");
+            page.BodyContainer.Click();
+        }
+
+        [Then(@"All icon items in the '(.*)' autocomplete have any of tooltip")]
+        public void ThenUserSeesAllListsIconDisplayedWithTooltipInTextBox(string dropdown, Table table)
+        {
+            var expectedTooltips = table.Rows.SelectMany(row => row.Values).ToList();
+            var page = _driver.NowAt<BaseDashboardPage>();
+
+            page.GetTextbox(dropdown).Click();
+            VerifyTooltipOfDropdownIcons(page, expectedTooltips);
+            page.BodyContainer.Click();
+        }
+
+
         #endregion
 
         #region Textbox
@@ -235,8 +274,22 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.GetTextbox(placeholder).SendKeys(text);
             page.BodyContainer.Click();
 
+            //TODO rework to use switch
             if (placeholder.Equals("Action Name"))
                 _automationActions.Value.Add(text);
+
+            if (placeholder.Equals("Project Name"))
+                _projects.Value.Add(text);
+
+            if (placeholder.Equals("Team Name"))
+            {
+                TeamDto teamDto = new TeamDto();
+                teamDto.TeamName = text;
+                _teams.Value.Add(teamDto);
+            }
+
+            if (placeholder.Equals("Bucket Name"))
+                _buckets.Value.Add(new BucketDto() { Name = text });
 
             if (placeholder.Equals("Slot Name"))
                 _slots.Value.Add(new SlotDto() { SlotName = text });
@@ -371,10 +424,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         [Then(@"'(.*)' value is displayed in the '(.*)' dropdown")]
         public void ThenValueIsDisplayedInTheDropdown(string value, string dropdownName)
         {
-            var dropdown = _driver.NowAt<BaseGridPage>();
-
-            Verify.IsTrue(dropdown.GetDropdownByValueByName(value, dropdownName).Displayed(),
-                $"{value} is not displayed in the {dropdownName}");
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.AreEqual(value, page.GetDropdown(dropdownName).Text,
+                $"Incorrect value is displayed in the '{dropdownName}' dropdown");
         }
 
         [Then(@"'(.*)' dropdown is displayed")]
@@ -382,7 +434,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var dropdown = _driver.NowAt<BaseDashboardPage>();
             Verify.IsTrue(dropdown.IsDropdownDisplayed(dropdownName),
-                $"{dropdownName} is not displayed");
+                $"{dropdownName} dropdown is not displayed");
         }
 
         [Then(@"'(.*)' dropdown is not displayed")]
@@ -390,7 +442,23 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var dropdown = _driver.NowAt<BaseDashboardPage>();
             Verify.IsFalse(dropdown.IsDropdownDisplayed(dropdownName),
-                $"{dropdownName} is not displayed");
+                $"'{dropdownName}' dropdown' is not displayed");
+        }
+
+        [Then(@"'(.*)' dropdown is disabled")]
+        public void ThenDropdownIsDisabled(string dropdownName)
+        {
+            var dropdown = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsTrue(dropdown.IsDropdownDisabled(dropdownName),
+                $"{dropdownName} dropdown is not displayed");
+        }
+
+        [Then(@"'(.*)' dropdown is not disabled")]
+        public void ThenDropdownIsNotDisabled(string dropdownName)
+        {
+            var dropdown = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsFalse(dropdown.IsDropdownDisabled(dropdownName),
+                $"'{dropdownName}' dropdown' is not displayed");
         }
 
         //Exact much
@@ -425,8 +493,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.GetDropdown(dropDownName).Click();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var actualList = page.GetDropdownValues();
-            page.BodyContainer.Click();
-            Verify.AreEqual(expectedList, actualList, $"Value for '{dropDownName}' are different");
 
             foreach (var expectedIem in expectedList)
             {
@@ -434,20 +500,53 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             }
         }
 
-        [Then(@"'(.*)' error message is displayed for '(.*)' dropdown")]
-        public void ThenErrorMessageIsDisplayedForDropdown(string errorMessage, string placeholder)
+        [Then(@"All items in the '(.*)' dropdown have icons")]
+        public void AllItemsInTheDropdownHaveIcons(string dropdown)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
+            page.GetDropdown(dropdown).Click();
+
+            Verify.That(page.GetIconsOfDropdownOptions().Count, Is.EqualTo(page.GetDropdownValues().Count), "Incorrect options in lists dropdown");
             page.BodyContainer.Click();
+        }
 
-            Verify.AreEqual(errorMessage, page.GetDropdownErrorMessage(placeholder),
-                $"Incorrect error message is displayed in the '{placeholder}' field");
+        [Then(@"All icon items in the '(.*)' dropdown have any of tooltip")]
+        public void ThenUserSeesAllListsIconDisplayedWithTooltipInDropdown(string dropdown, Table table)
+        {
+            var expectedTooltips = table.Rows.SelectMany(row => row.Values).ToList();
+            var page = _driver.NowAt<BaseDashboardPage>();
 
-            Verify.AreEqual("rgba(242, 88, 49, 1)", page.GetDropdownErrorMessageElement(placeholder).GetCssValue("color"),
-                $"Incorrect error message color for '{placeholder}' field");
+            page.GetDropdown(dropdown).Click();
+            VerifyTooltipOfDropdownIcons(page, expectedTooltips);
+            page.BodyContainer.Click();
+        }
 
-            Verify.AreEqual("rgba(242, 88, 49, 1)", page.GetDropdownErrorMessageExclamationIcon(placeholder).GetCssValue("color"),
-                $"Incorrect error message color for '{placeholder}' field exclamation icon");
+        [Then(@"'(.*)' error message is displayed for '(.*)' dropdown")]
+        public void ThenErrorMessageIsDisplayedForDropdown(string errorMassage, string dropdown)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.AreEqual(errorMassage, page.GetDropdownErrorMessage(dropdown),
+                $"Incorrect error message for '{dropdown}' dropdown is displayed");
+        }
+
+        private void VerifyTooltipOfDropdownIcons(BaseDashboardPage page, List<string> tooltips)
+        {
+            var icons = page.GetIconsOfDropdownOptions();
+            int attempts = 0;
+
+            foreach (var icon in icons)
+            {
+                //check for first three
+                if (attempts == 5)
+                    break;
+
+                _driver.MouseHover(icon);
+                var toolTipText = _driver.GetTooltipText();
+
+                Utils.Verify.That(tooltips, Does.Contain(toolTipText), "Unexpected/missing tooltip");
+
+                attempts++;
+            }
         }
 
         #endregion
@@ -555,6 +654,38 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             basePage.AddItemsToMultiSelect(itemsToAdd);
         }
 
+        [Then(@"multiselect is not disabled")]
+        public void ThenMultiselectIsNotDisabled()
+        {
+            var component = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsFalse(component.GetExpandableMultiselectElement("").Disabled(),
+                "First multiselect on page is disabled");
+        }
+
+        [Then(@"'(.*)' multiselect is not disabled")]
+        public void ThenMultiselectIsNotDisabled(string multiselectTitle)
+        {
+            var component = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsFalse(component.GetExpandableMultiselectElement(multiselectTitle).Disabled(),
+                $"''{multiselectTitle}'' multiselect on page is disabled");
+        }
+
+        [Then(@"multiselect is disabled")]
+        public void ThenMultiselectIsDisabled()
+        {
+            var component = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsTrue(component.GetExpandableMultiselectElement("").Displayed(),
+                "First multiselect on page is not disabled");
+        }
+
+        [Then(@"'(.*)' multiselect is disabled")]
+        public void ThenMultiselectIsDisabled(string multiselectTitle)
+        {
+            var component = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsTrue(component.GetExpandableMultiselectElement(multiselectTitle).Displayed(),
+                $"''{multiselectTitle}'' multiselect on page is not disabled");
+        }
+
         #endregion
 
         #region Checkbox
@@ -596,16 +727,16 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenButtonIsDisplayed(string buttonName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            Verify.IsTrue(page.GetButtonByName(buttonName, "", WebDriverExtensions.WaitTime.Medium).Displayed(),
-                $"'{buttonName}' is displayed");
+            Verify.IsTrue(page.IsButtonDisplayed(buttonName),
+                $"'{buttonName}' button is displayed");
         }
 
         [Then(@"'(.*)' button is not displayed")]
         public void ThenButtonIsNotDisplayed(string buttonName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            Verify.IsFalse(page.GetButtonByName(buttonName, "", WebDriverExtensions.WaitTime.Short).Displayed(),
-                $"'{buttonName}' is displayed");
+            Verify.IsFalse(page.IsButtonDisplayed(buttonName),
+                $"'{buttonName}' button is displayed");
         }
 
         [Then(@"'(.*)' button is disabled")]
@@ -613,15 +744,99 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             Verify.IsTrue(page.GetButtonByName(buttonName, "", WebDriverExtensions.WaitTime.Medium).Disabled(),
-                $"'{buttonName}' is displayed");
+                $"'{buttonName}' button is displayed");
         }
 
         [Then(@"'(.*)' button is not disabled")]
         public void ThenButtonIsNotDisabled(string buttonName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            Verify.IsFalse(page.GetButtonByName(buttonName, "", WebDriverExtensions.WaitTime.Short).Disabled(),
-                $"'{buttonName}' is displayed");
+            var button = page.GetButtonByName(buttonName, "", WebDriverExtensions.WaitTime.Short);
+            Verify.IsTrue(button.Displayed(),
+                $"'{buttonName}' button is not displayed");
+            Verify.IsFalse(button.Disabled(),
+                $"'{buttonName}' button is displayed");
+        }
+
+        [Then(@"tooltip is not displayed for '(.*)' button")]
+        public void ThenTooltipIsNotDisplayedForButton(string buttonName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var button = page.GetButtonByName(buttonName);
+
+            _driver.MouseHover(button);
+            //For tooltip display
+            Thread.Sleep(300);
+            Verify.IsFalse(_driver.IsTooltipDisplayed(),
+                $"Tooltip for '{buttonName}' button is displayed");
+        }
+
+        [Then(@"'(.*)' button has tooltip with '(.*)' text")]
+        public void ThenButtonHasTooltipWithText(string buttonName, string text)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var button = page.GetButtonByName(buttonName);
+            _driver.MouseHover(button);
+            var toolTipText = _driver.GetTooltipText();
+            Verify.AreEqual(text, toolTipText,
+                $"'{buttonName}' button tooltip is incorrect");
+        }
+
+        #endregion
+
+        #region Button on popup
+
+        [Then(@"'(.*)' popup button color is '(.*)'")]
+        public void ThenPopupButtonColorIs(string button, string color)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var getColor = page.GetButtonByNameOnPopup(button).GetCssValue("background-color");
+            Verify.AreEqual(color, getColor,
+                $"'{button}' sah incorrect color");
+        }
+
+        #endregion
+
+        #region Menu button
+
+        [When(@"User clicks '(.*)' button and select '(.*)' menu button")]
+        public void WhenUserClicksButtonAndSelectMenuButton(string buttonName, string menuButtonName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.ClickButtonByName(buttonName);
+
+            page.GetMenuButtonByName(menuButtonName).Click();
+        }
+
+        #endregion
+
+        #region Checkbox
+
+        //TODO This is for BaseGrid but method can be changed to generic
+        [Then(@"Select All checkbox have full checked state")]
+        public void ThenSelectAllCheckboxHaveFullCheckedState()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Verify.AreEqual(2, _driver.GetEvergreenCheckboxTripleState(page.SelectAllCheckbox),
+                "'Select all' checkbox is not fully selected");
+        }
+
+        //TODO This is for BaseGrid but method can be changed to generic
+        [Then(@"Select All checkbox have indeterminate checked state")]
+        public void ThenSelectAllCheckboxHaveIndeterminateCheckedState()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Verify.AreEqual(1, _driver.GetEvergreenCheckboxTripleState(page.SelectAllCheckbox),
+                "'Select all' checkbox is not in the indeterminate state");
+        }
+
+        //TODO This is for BaseGrid but method can be changed to generic
+        [Then(@"Select All checkbox have unchecked state")]
+        public void ThenSelectAllCheckboxHaveUncheckedState()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Verify.AreEqual(0, _driver.GetEvergreenCheckboxTripleState(page.SelectAllCheckbox),
+                "'Select all' checkbox is not unchecked");
         }
 
         #endregion

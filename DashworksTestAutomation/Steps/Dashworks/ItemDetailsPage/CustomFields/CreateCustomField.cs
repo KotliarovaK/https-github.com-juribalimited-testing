@@ -70,5 +70,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage.CustomFields
             popup.CancelCustomFieldButton.Click();
             _driver.WaitForElementToBeNotDisplayed(popup.CancelCustomFieldButton);
         }
+
+        [When(@"User clicks Add button on Add Custom Field popup")]
+        public void WhenUserClicksAddButtonOnAddCustomFieldPopup()
+        {
+            var popup = _driver.NowAt<CustomFieldPopup>();
+
+            popup.AddCustomFieldButton.Click();
+            _driver.WaitForElementToBeNotDisplayed(popup.AddCustomFieldButton);
+        }
     }
 }

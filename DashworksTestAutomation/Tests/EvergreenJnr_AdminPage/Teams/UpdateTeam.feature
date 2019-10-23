@@ -26,11 +26,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterUpdatingTeamDesc
 	Then Success message is displayed and contains "The team was successfully updated" text
 	And There are no errors in the browser console
 	When User clicks refresh button in the browser
-	When User enters "" in the "Team Name" field
+	When User enters '' text to 'Team Name' textbox
 	Then Update Team button is disabled
-	When User enters " " in the "Team Name" field
+	When User enters ' ' text to 'Team Name' textbox
 	Then Update Team button is disabled
-	When User enters "NewTeamName" in the "Team Name" field
+	When User enters 'NewTeamName' text to 'Team Name' textbox
 	And User clicks Update Team button
 	Then Success message is displayed and contains "The team was successfully updated" text
 	And There are no errors in the browser console

@@ -23,9 +23,6 @@ namespace DashworksTestAutomation.Pages.Projects.CreatingProjects
         [FindsBy(How = How.XPath, Using = ".//input[contains(@id,'SelectUsersToAdd_Btn_Narrow')]")]
         public IWebElement SearchButtonForMembers { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[contains(@id,'SelectUsersToAdd_Btn_Reset')]")]
-        public IWebElement ResetButtonForMembers { get; set; }
-
         [FindsBy(How = How.XPath, Using = "//a[text()='Next  >']")]
         public IWebElement NextTeamsListLink { get; set; }
 

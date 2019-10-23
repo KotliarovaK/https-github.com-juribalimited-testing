@@ -23,18 +23,18 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueActionDAS
 	And User selects 'Radiobutton Date App Task' option from 'Task' autocomplete
 	And User selects 'No change' in the 'Update Value' dropdown
 	And User selects 'No change' in the 'Update Date' dropdown
-	Then "CREATE" Action button is disabled
-	And "SAVE AND CREATE ANOTHER" Action button is disabled
+	Then 'CREATE' button is disabled
+	And 'SAVE AND CREATE ANOTHER' button is disabled
 	When User selects 'Update' in the 'Update Value' dropdown
 	And User selects 'Failed' in the 'Value' dropdown
 	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters '13 Aug 2019' text to 'Date' textbox
 	And User clicks 'CREATE' button 
 	#Create Action
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
 	And User enters "17684_Automation" text in the Search field for "Automation" column
 	And User clicks "Run now" option in Cog-menu for "17684_Automation" item on Admin page
-	And User selects "Automation Log" tab on the Project details page
+	And User navigates to the 'Automation Log' left menu item
 	And User enters "17684_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
 	When User clicks String Filter button for "Type" column on the Admin page
@@ -73,10 +73,10 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInDeviceScope
 	And User selects 'Started' in the 'Value' dropdown
 	And User clicks 'CREATE' button 
 	#Create Action
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
 	When User enters "17636_Automation" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "17636_Automation" item on Admin page
-	When User selects "Automation Log" tab on the Project details page
+	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "17636_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
@@ -115,10 +115,10 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInMailboxScop
 	When User selects 'No change' in the 'Update Owner' dropdown
 	And User clicks 'CREATE' button 
 	#Create Action
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
 	When User enters "17642_Automation" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "17642_Automation" item on Admin page
-	When User selects "Automation Log" tab on the Project details page
+	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "17642_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
@@ -156,10 +156,10 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInApplication
 	When User selects 'New Text value' option from 'Value' autocomplete
 	And User clicks 'CREATE' button 
 	#Create Action
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
 	When User enters "17643_Automation" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "17643_Automation" item on Admin page
-	When User selects "Automation Log" tab on the Project details page
+	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "17643_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
@@ -198,10 +198,10 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInDevicesScop
 	And User selects 'No change' in the 'Update Date' dropdown
 	And User clicks 'CREATE' button 
 	#Create Action
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
 	When User enters "17799_Automation" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "17799_Automation" item on Admin page
-	When User selects "Automation Log" tab on the Project details page
+	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "17799_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
@@ -250,10 +250,10 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedA
 	And User selects 'Radio Slot' in the 'Capacity Slot' dropdown
 	And User clicks 'CREATE' button 
 	#Create Action
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
 	When User enters "17678_Automation" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "17678_Automation" item on Admin page
-	When User selects "Automation Log" tab on the Project details page
+	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "17678_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
@@ -285,10 +285,10 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedA
 	And User selects 'Remove' in the 'Update Date' dropdown
 	And User clicks 'UPDATE' button 
 	#Check updated Automation
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
 	When User enters "17678_Automation" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "17678_Automation" item on Admin page
-	When User selects "Automation Log" tab on the Project details page
+	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "17678_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
@@ -338,10 +338,10 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueAndOwnerInDev
 	When User selects 'Maryna Kyslyak' option from 'Owner' autocomplete
 	And User clicks 'CREATE' button 
 	#Create Action
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
 	When User enters "17682_Automation" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "17682_Automation" item on Admin page
-	When User selects "Automation Log" tab on the Project details page
+	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "17682_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
@@ -389,10 +389,10 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForRemoveOwnerAndTeamInDevi
 	When User selects 'Remove owner and team' in the 'Update Owner' dropdown
 	And User clicks 'CREATE' button 
 	#Create Action
-	And User clicks "Automations" navigation link on the Admin page
+	And User clicks 'Automations' header breadcrumb
 	And User enters "17682_Automation_2" text in the Search field for "Automation" column
 	And User clicks "Run now" option in Cog-menu for "17682_Automation_2" item on Admin page
-	And User selects "Automation Log" tab on the Project details page
+	And User navigates to the 'Automation Log' left menu item
 	And User clicks refresh button in the browser
 	And User enters "17682_Automation_2" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
@@ -443,10 +443,10 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedA
 	And User selects 'Remove' in the 'Update Date' dropdown
 	And User clicks 'CREATE' button 
 	#Create Action
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
 	When User enters "17678_Automation_1" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "17678_Automation_1" item on Admin page
-	When User selects "Automation Log" tab on the Project details page
+	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "17678_Automation_1" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
@@ -468,7 +468,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatClickingOnTheObjectsCountOpensTheCorre
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
-	When User selects "Automation Log" tab on the Project details page
+	When User navigates to the 'Automation Log' left menu item
 	And User enters "X-Proj Path Reset" text in the Search field for "Automation" column
 	And User enters "2" text in the Search field for "Objects" column
 	Then "2" content is displayed for "Objects" column
@@ -499,10 +499,10 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueActionDAS
 	When User selects 'Akhila Varghese' option from 'Owner' autocomplete
 	And User clicks 'CREATE' button 
 	#Create Action
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
 	When User enters "17430_Automation" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "17430_Automation" item on Admin page
-	When User selects "Automation Log" tab on the Project details page
+	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "17430_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column

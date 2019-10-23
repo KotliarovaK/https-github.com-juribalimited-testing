@@ -6,6 +6,7 @@ using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
@@ -36,6 +37,43 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             SelectUnselectAllRows(true);
         }
 
+        [Then(@"checkboxes are not displayed for content in the grid")]
+        public void ThenCheckboxesAreNotDisplayedForContentInTheGrid()
+        {
+            var dashboardPage = _driver.NowAt<BaseGridPage>();
+            Verify.IsTrue(dashboardPage.Checkboxes.All(x => !x.Displayed()),
+                "Checkboxes in the grid are displayed");
+            Verify.IsFalse(dashboardPage.SelectAllCheckbox.Displayed(),
+                "'Select all rows' checkbox is displayed");
+        }
+
+        [Then(@"select all rows checkbox is checked")]
+        public void ThenSelectAllRowsCheckboxIsChecked()
+        {
+            var dashboardPage = _driver.NowAt<BaseGridPage>();
+            Verify.IsTrue(_driver.GetEvergreenCheckboxState(dashboardPage.SelectAllCheckbox),
+                "'Select all rows' checkbox is unchecked");
+        }
+
+        [Then(@"select all rows checkbox is unchecked")]
+        public void ThenSelectAllRowsCheckboxIsUnchecked()
+        {
+            var dashboardPage = _driver.NowAt<BaseGridPage>();
+            _driver.WhatForElementToBeSelected(dashboardPage.SelectAllCheckbox, false);
+            Verify.IsFalse(_driver.GetEvergreenCheckboxState(dashboardPage.SelectAllCheckbox),
+                "'Select all rows' checkbox is checked");
+        }
+
+        [Then(@"all checkboxes are checked in the grid")]
+        public void ThenAllCheckboxesAreCheckedInTheGrid()
+        {
+            var dashboardPage = _driver.NowAt<BaseGridPage>();
+            //Wait for All checkboxes are checked
+            Thread.Sleep(1000);
+            Verify.IsTrue(dashboardPage.Checkboxes.All(x => x.GetGridCheckboxSelectedState()),
+                "Not all checkboxes are checked in the grid");
+        }
+
         private void SelectUnselectAllRows(bool expectedCondition)
         {
             var dashboardPage = _driver.NowAt<BaseGridPage>();
@@ -54,6 +92,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var pivot = _driver.NowAt<BaseGridPage>();
             Utils.Verify.IsTrue(pivot.ExportListButton.Displayed(), "Export button is not displayed");
+        }
+
+        [Then(@"Export button is displayed disabled")]
+        public void ThenExportButtonIsDisplayedDisabled()
+        {
+            var pivot = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForElementToBeDisplayed(pivot.ExportListButton);
+            Utils.Verify.That(pivot.ExportListButton.Disabled(), Is.True, "Export button is displayed enabled");
         }
 
         #endregion
@@ -192,6 +238,30 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 Verify.IsTrue(columnContent.Contains(content),
                     $"'{content}' content is not displayed in the '{columnName}' column");
             }
+        }
+
+        //For case when just empty cell are displayed. Probably also for case when no cells displayed
+        [Then(@"Column '(.*)' with no data displayed")]
+        public void ThenFollowingColumnDisplayedWithoutNoData(string columnName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            var originalList = page.GetColumnContentByColumnName(columnName)
+                .Select(column => column.Text).ToList();
+
+            foreach (var item in originalList)
+            {
+                Verify.That(item, Is.EqualTo(""), $"Incorrect content is displayed in the {columnName}");
+            }
+        }
+
+        [Then(@"numbers sum in the '(.*)' column is equal to '(.*)'")]
+        public void ThenNumbersSumInTheColumnIsEqualTo(string columnName, int expectedSum)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            var numbers = page.GetColumnContentByColumnName(columnName).ToList().Select(x => x.Text);
+            var total = numbers.Where(x => !string.IsNullOrEmpty(x)).Sum(x => Convert.ToInt32(x));
+            Verify.That(total, Is.EqualTo(expectedSum), 
+                $"Sum of objects in the '{columnName}' column is incorrect!");
         }
 
         #endregion
@@ -338,6 +408,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void WhenUserScrollsGridToTheBottom()
         {
             var page = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForElementsToBeDisplayed(By.XPath(page.AllCellsInTheGrid));
             _driver.ScrollGridToTheEnd(page.TableBody);
         }
 

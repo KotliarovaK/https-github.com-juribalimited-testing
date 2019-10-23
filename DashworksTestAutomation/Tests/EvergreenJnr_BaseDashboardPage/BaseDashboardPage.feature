@@ -263,10 +263,10 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCorrectMessageIsDisplayedBeforeDelet
 	When User clicks on 'Hostname' column header
 	When User create dynamic list with "DynamicList15444" name on "Devices" page
 	Then "DynamicList15444" list is displayed to user
-	When User clicks Create Project from the main list
-	When User enters "Project_DAS15444" in the "Project Name" field
+	When User selects 'Project' in the 'Create' dropdown
+	When User enters 'Project_DAS15444' text to 'Project Name' textbox
 	When User selects "Standalone Project" in the Mode Project dropdown
-	And User clicks Create button on the Create Project page
+	And User clicks 'CREATE' button
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -304,9 +304,9 @@ Scenario: EvergreenJnr_UsersList_CheckThatFullPpageWith403ErrorIsDisplayedCorrec
 	| DAS16558 | 1234qwer |
 	Then Dashworks homepage is displayed to the user in a logged in state
 	When User clicks the Switch to Evergreen link
-	Then Error page is displayed correctly
+	Then error page with '403' status code and 'You are not authorized to view this page, speak to your Dashworks administrator' error message is displayed
 	When User clicks 'Admin' hidden left-hand menu
-	Then Error page is displayed correctly
+	Then error page with '403' status code and 'You are not authorized to view this page, speak to your Dashworks administrator' error message is displayed
 	When User clicks 'Devices' hidden left-hand menu
 	When User clicks the Logout button
 	Then User is logged out
@@ -322,5 +322,5 @@ Scenario: EvergreenJnr_UsersList_CheckThatFullPpageWith403ErrorIsDisplayedCorrec
 Scenario: EvergreenJnr_DevicesList_CheckThatRequestHasSpecificParameterWhenNavigatingIntoList
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User clicks "Migration Type Capacity" list name in left panel
+	When User navigates to the "Migration Type Capacity" list
 	Then Columnmetadata request contains ArchivedItem parameter

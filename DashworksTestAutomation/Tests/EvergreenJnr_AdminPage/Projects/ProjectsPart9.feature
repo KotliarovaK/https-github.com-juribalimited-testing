@@ -13,10 +13,10 @@ Scenario Outline: EvergreenJnr_AdminPage_ChangingBucketFromCloneEvergreenBuckets
 	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "<ProjectName>" in the "Project Name" field
+	When User enters '<ProjectName>' text to 'Project Name' textbox
 	And User selects '<ScopeValue>' option from 'Scope' autocomplete
 	When User selects "Clone from Evergreen to Project" in the Mode Project dropdown
-	And User clicks Create button on the Create Project page
+	And User clicks 'CREATE' button
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	And User navigates to the 'Details' left menu item
@@ -24,8 +24,8 @@ Scenario Outline: EvergreenJnr_AdminPage_ChangingBucketFromCloneEvergreenBuckets
 	When User selects "Use project buckets" in the Buckets Project dropdown
 	Then There are no errors in the browser console
 	When User navigates to the 'Scope' left menu item
-	And User selects "Scope Changes" tab on the Project details page
-	Then "Unassigned" is displayed in the Bucket dropdown
+	And User navigates to the 'Scope Changes' left menu item
+	Then 'Unassigned' content is displayed in 'Bucket' dropdown
 	And There are no errors in the browser console
 
 Examples:
@@ -45,19 +45,19 @@ Scenario: EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherListUsingEverg
 	Then "3,806" rows are displayed in the agGrid
 	When User create dynamic list with "DynamicList54" name on "Devices" page
 	Then "DynamicList54" list is displayed to user
-	When User clicks Create Project from the main list
+	When User selects 'Project' in the 'Create' dropdown
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "DevicesProject34" in the "Project Name" field
+	When User enters 'DevicesProject34' text to 'Project Name' textbox
 	Then Scope field is automatically populated
 	When User selects "Standalone Project" in the Mode Project dropdown
 	And User clicks 'CREATE' button 
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
-	And User selects "Scope Changes" tab on the Project details page
+	And User navigates to the 'Scope Changes' left menu item
 	Then "Devices to add (0 of 3806 selected)" is displayed to the user in the Project Scope Changes section
-	When User selects "Scope Details" tab on the Project details page
+	When User navigates to the 'Scope Details' left menu item
 	And User selects 'All Devices' in the 'Scope' dropdown with wait
-	And User selects "Scope Changes" tab on the Project details page
+	And User navigates to the 'Scope Changes' left menu item
 	Then "Devices to add (0 of 17279 selected)" is displayed to the user in the Project Scope Changes section
 	When User navigates to the 'Users' tab on Project Scope Changes page
 	When User navigates to the 'Applications' tab on Project Scope Changes page
@@ -86,20 +86,20 @@ Scenario: EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherListForDevices
 	Then 'Admin' list should be displayed to the user
 	When User clicks 'CREATE PROJECT' button 
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "DevicesProject2" in the "Project Name" field
+	When User enters 'DevicesProject2' text to 'Project Name' textbox
 	And User selects 'All Devices' option from 'Scope' autocomplete
 	And User clicks 'CREATE' button 
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
-	And User selects "Scope Changes" tab on the Project details page
+	And User navigates to the 'Scope Changes' left menu item
 	Then "Devices to add (0 of 17279 selected)" is displayed to the user in the Project Scope Changes section
-	When User selects "Scope Details" tab on the Project details page
+	When User navigates to the 'Scope Details' left menu item
 	And User selects 'StaticList6579' in the 'Scope' dropdown with wait
-	And User selects "Scope Changes" tab on the Project details page
+	And User navigates to the 'Scope Changes' left menu item
 	Then "Devices to add (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
-	When User selects "Scope Details" tab on the Project details page
+	When User navigates to the 'Scope Details' left menu item
 	And User selects 'DynamicList56' in the 'Scope' dropdown with wait
-	And User selects "Scope Changes" tab on the Project details page
+	And User navigates to the 'Scope Changes' left menu item
 	Then "Devices to add (0 of 1 selected)" is displayed to the user in the Project Scope Changes section
 	Then There are no errors in the browser console
 
@@ -117,14 +117,14 @@ Scenario: EvergreenJnr_AdminPage_ChangingUserScopeListToAnotherList
 	When Project created via API and opened
 	| ProjectName     | Scope       | ProjectTemplate | Mode               |
 	| DevicesProject6 | All Devices | None            | Standalone Project |
-	And User selects "Scope" tab on the Project details page
-	And User selects "Scope Changes" tab on the Project details page
+	And User navigates to the 'Scope' left menu item
+	And User navigates to the 'Scope Changes' left menu item
 	When User navigates to the 'Users' tab on Project Scope Changes page
 	Then "Users to add (0 of 14629 selected)" is displayed to the user in the Project Scope Changes section
-	When User selects "Scope Details" tab on the Project details page
+	When User navigates to the 'Scope Details' left menu item
 	When User navigates to the 'User Scope' tab on Project Scope Changes page
 	And User selects 'StaticList6179' in the 'User Scope' dropdown with wait
-	And User selects "Scope Changes" tab on the Project details page
+	And User navigates to the 'Scope Changes' left menu item
 	When User navigates to the 'Users' tab on Project Scope Changes page
 	#here we should see only users that have devices
 	Then "Users to add (0 of 1 selected)" is displayed to the user in the Project Scope Changes section

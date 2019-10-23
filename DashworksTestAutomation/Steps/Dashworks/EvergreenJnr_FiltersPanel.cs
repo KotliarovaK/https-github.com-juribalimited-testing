@@ -59,8 +59,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksAddAndButtonOnTheFilterPanel()
         {
             var menu = _driver.NowAt<FiltersElement>();
-            _driver.WaitForElementToBeDisplayed(menu.AddNewFilterButton);
-            menu.AddNewFilterButton.Click();
+            _driver.WaitForElementToBeDisplayed(menu.AddAndFilterButton);
+            menu.AddAndFilterButton.Click();
             Logger.Write("Add And button was clicked");
         }
 
@@ -69,6 +69,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var button = _driver.NowAt<FiltersElement>();
             Utils.Verify.IsTrue(button.AddAndFilterButton.Displayed(), "Add And button is not displayed");
+        }
+
+        [When(@"User moves to the end of categories list")]
+        public void WhenUserMovesToTheEndOfCategoriesList()
+        {
+            var panel = _driver.NowAt<FiltersElement>();
+            _driver.MoveToElement(panel.FilterCategories.Last());
+            Logger.Write("Filter panel is scrolled down");
         }
 
         [Then(@"User sees ""(.*)"" section expanded by default in Filters panel")]
@@ -852,6 +860,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"Edit button is not displayed for '{filterName}' filter");
         }
 
+        [Then(@"There are no any expanded blocks in Filter panel")]
+        public void ThenThereAreNoAnyExpandedBlocksInFilterPanel()
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+
+            Verify.That(_driver.IsElementDisplayed(filterElement.ExpandedFilterBlock), Is.False,
+                $"Looks like there is an expanded block in Filter panel");
+        }
+
         [Then(@"""(.*)"" value is displayed in the filter info")]
         public void ThenValueIsDisplayedInTheFilterInfo(string value)
         {
@@ -923,8 +940,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"{filterName} filter is not removed from filters");
         }
 
+        [When(@"User have reset all columns")]
         [When(@"User have reset all filters")]
-        public void WhenUserHaveResetAllFilters()
+        public void WhenUserHaveResetAllFiltersOrColumns()
         {
             var filterElement = _driver.NowAt<FiltersElement>();
             _driver.WaitForElementToBeDisplayed(filterElement.ResetFiltersButton);
@@ -1042,8 +1060,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 filterElement.GetBooleanCheckboxImg("FALSE").GetAttribute("src"), "Incorrect image for False value");
             //TODO: Yurii 10oct2019 - remove below check per Kristina's answer about UNKNOWN option and img, it was changed to Empty
             //Utils.Verify.AreEqual($"{UrlProvider.Url}evergreen/assets/img/unknown.png",
-                //filterElement.GetBooleanCheckboxImg("UNKNOWN").GetAttribute("src"),
-                //"Incorrect image for Unknown value");
+            //filterElement.GetBooleanCheckboxImg("UNKNOWN").GetAttribute("src"),
+            //"Incorrect image for Unknown value");
         }
 
         [Then(@"""(.*)"" option is available for this filter")]
@@ -1525,12 +1543,52 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.That(getFirstAutomationItem.Index, Is.LessThan(getFirstProjectItem.Index), "Looks like projects placed before Automations");
         }
 
+        [Then(@"the following Filters categories are presented in Filter panel:")]
+        public void ThenTheFollowingFiltersCategoriesArePresentedInFilterPanel(Table table)
+        {
+            var page = _driver.NowAt<FiltersElement>();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var VisibleLabels = page.FilterCategoryLabels.Select(x => x.Text).ToList();
+
+            foreach (var item in expectedList)
+            {
+                Utils.Verify.That(VisibleLabels, Does.Contain(item), $"{item} value is missing");
+            }
+        }
+
         [Then(@"Filter Searchfield placeholder is '(.*)'")]
         public void ThenFilterSearchfieldPlaceholderIs(string expectedPlaceholderName)
         {
             var filtersElement = _driver.NowAt<FiltersElement>();
             var actualPlaceholderName = filtersElement.SearchTextBox.GetAttribute("placeholder");
             Verify.AreEqual(expectedPlaceholderName, actualPlaceholderName, "Incorrect Placeholder in the search field");
+        }
+
+        [When(@"User selects '(.*)' option in expanded associations list")]
+        public void WhenUserSelectsOptionInExpandedAssociationsList(string option)
+        {
+            var page = _driver.NowAt<FiltersElement>();
+            page.AssociationItem(option).Click();
+        }
+
+        [Then(@"Remove icon displayed in '(.*)' state for '(.*)' association")]
+        public void ThenRemoveIconDisplayedInStateForAssociation(string state, string association)
+        {
+            var filtersElement = _driver.NowAt<FiltersElement>();
+
+            string actualState =
+                string.IsNullOrEmpty(filtersElement.RemoveIconForAssociation(association).GetAttribute("disabled"))
+                    ? "true"
+                    : "false";
+
+            Verify.That(actualState, Is.EqualTo(state), "Wrong Remove icon state");
+        }
+
+        [When(@"User removes '(.*)' association in Association panel")]
+        public void WhenUserRemovesФssociationInAssociationPanel(string option)
+        {
+            var page = _driver.NowAt<FiltersElement>();
+            page.RemoveIconForAssociation(option).Click();
         }
     }
 }

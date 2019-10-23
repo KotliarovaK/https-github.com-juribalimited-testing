@@ -12,7 +12,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatResyncOptionIsWorkedCorrectlyForProjec
 	Then Details page for "ZUF3029607" item is displayed to the user
 	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
 	When User navigates to the 'Projects' left menu item
-	And User navigates to the "Project Details" sub-menu on the Details page
+	And User navigates to the 'Project Details' left submenu item
 	When User clicks 'RESYNC' button 
 	Then Dialog Pop-up is displayed for User
 	Then 'Resync apps' checkbox is checked

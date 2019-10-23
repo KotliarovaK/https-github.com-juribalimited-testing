@@ -407,7 +407,6 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatFiltersSectionDisplayedCorrectlyA
 	| Amber              |
 	When User clicks Save button on the list panel
 	When User create dynamic list with "Devices_List_DAS18327" name on "Devices" page
-	Then "Devices_List_DAS18327" list is displayed to user
 	When Dashboard with "DAS18327_Dashboard" name created via API and opened
 	When User clicks Edit mode trigger on Dashboards page
 	When User clicks 'ADD WIDGET' button 
@@ -418,7 +417,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatFiltersSectionDisplayedCorrectlyA
 	When User clicks 'CREATE' button 
 	Then "DAS18327_Widget" Widget is displayed to the user
 	When User clicks Edit mode trigger on Dashboards page
-	When User clicks "GREEN" value for "True" column
+	When User clicks "AMBER" value for "True" column
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User clicks Filter Expression icon in Filter Panel

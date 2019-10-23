@@ -727,7 +727,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
             table10.AddRow(new string[] {
-                        "None"});
+                        "Empty"});
 #line 134
  testRunner.When(string.Format("User add \"{0}\" filter where type is \"Equals\" without added column and following c" +
                         "heckboxes:", filterName), ((string)(null)), table10, "When ");
@@ -747,7 +747,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
             table11.AddRow(new string[] {
-                        "None"});
+                        "Empty"});
 #line 143
  testRunner.When(string.Format("User add \"{0}\" filter where type is \"Equals\" without added column and following c" +
                         "heckboxes:", filterName), ((string)(null)), table11, "When ");
@@ -3284,7 +3284,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table72 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
             table72.AddRow(new string[] {
-                        "UNKNOWN"});
+                        "Empty"});
 #line 751
  testRunner.When("User add \"Enabled\" filter where type is \"Equals\" with added column and following " +
                     "checkboxes:", ((string)(null)), table72, "When ");
@@ -3915,7 +3915,7 @@ this.FeatureBackground();
             table80.AddRow(new string[] {
                         "FALSE"});
             table80.AddRow(new string[] {
-                        "UNKNOWN"});
+                        "Empty"});
 #line 880
  testRunner.When("User add \"Secure Boot Enabled\" filter where type is \"Does not equal\" with added c" +
                     "olumn and following checkboxes:", ((string)(null)), table80, "When ");
@@ -5437,13 +5437,13 @@ this.FeatureBackground();
 #line 1204
  testRunner.And("User clicks \'CREATE PROJECT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1205
- testRunner.And("User enters \"13201\" in the \"Project Name\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User enters \'13201\' text to \'Project Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1206
  testRunner.And("User selects \'All Mailboxes\' option from \'Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1207
  testRunner.When("User selects \'Evergreen\' in the \'Mode\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1208
- testRunner.When("User clicks Create button on the Create Project page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1209
  testRunner.And("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1210
@@ -5580,7 +5580,7 @@ this.FeatureBackground();
 #line 1250
  testRunner.And("User clicks \'CREATE EVERGREEN BUCKET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1251
- testRunner.And("User enters \"Bucket_DAS12940_to_be_deleted\" in the \"Bucket Name\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User enters \'Bucket_DAS12940_to_be_deleted\' text to \'Bucket Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1252
  testRunner.And("User selects \"Admin IT\" team in the Team dropdown on the Buckets page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1253
@@ -6372,7 +6372,7 @@ this.FeatureBackground();
 #line 1433
  testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1434
- testRunner.And(string.Format("User clicks \"{0}\" link in Lists panel", linkName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When(string.Format("User navigates to the \"{0}\" list", linkName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1435
  testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1436
@@ -7419,7 +7419,7 @@ this.FeatureBackground();
 #line 1678
  testRunner.And("User clicks Save filter button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1679
- testRunner.Then("Column \"1803: Pre-Migration \\ Scheduled Date (Slot)\" with no data displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Column \'1803: Pre-Migration \\ Scheduled Date (Slot)\' with no data displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -7818,21 +7818,21 @@ this.FeatureBackground();
 #line 1763
  testRunner.And("User select \"Equals\" Operator value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1764
- testRunner.Then("\'UPDATE\' Action button has tooltip with \'You must enter a date\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'UPDATE\' button has tooltip with \'You must enter a date\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 1765
  testRunner.When("User select \"Between\" Operator value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1766
- testRunner.Then("\'UPDATE\' Action button has tooltip with \'You must enter a start date\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'UPDATE\' button has tooltip with \'You must enter a start date\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 1767
  testRunner.When("User select \"Empty\" Operator value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1768
- testRunner.Then("\'UPDATE\' Action button has tooltip with \'Complete all fields before saving this f" +
-                    "ilter\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'UPDATE\' button has tooltip with \'Complete all fields before saving this filter\' " +
+                    "text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 1769
  testRunner.When("User select \"Not empty\" Operator value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1770
- testRunner.Then("\'UPDATE\' Action button has tooltip with \'Complete all fields before saving this f" +
-                    "ilter\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'UPDATE\' button has tooltip with \'Complete all fields before saving this filter\' " +
+                    "text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -8139,7 +8139,7 @@ this.FeatureBackground();
 #line 1829
  testRunner.Then("\'All Mailboxes\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 1830
- testRunner.When("User clicks \"Mailbox Pivot (Complex)\" list name in left panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \"Mailbox Pivot (Complex)\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1831
  testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1832
@@ -9037,6 +9037,84 @@ this.FeatureBackground();
                         "Device Service Pack or Build"});
 #line 2073
  testRunner.Then("the following Filters subcategories are displayed for open category:", ((string)(null)), table141, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatCorrectScopedProjectAppearsForStatusFilter")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Applications")]
+        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
+        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS16814")]
+        [NUnit.Framework.TestCaseAttribute("Applications", "All Applications", "Project: zDeviceAut", null)]
+        [NUnit.Framework.TestCaseAttribute("Users", "All Users", "Project: zDeviceAut", null)]
+        [NUnit.Framework.TestCaseAttribute("Devices", "All Devices", "Project: zUserAutom", null)]
+        public virtual void EvergreenJnr_AllLists_CheckThatCorrectScopedProjectAppearsForStatusFilter(string listName, string listHeader, string project, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatCorrectScopedProjectAppearsForStatusFilterInternal(listName,listHeader,project,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckThatCorrectScopedProjectAppearsForStatusFilterInternal(string listName, string listHeader, string project, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "Applications",
+                    "Evergreen_FiltersFeature",
+                    "FiltersDisplay",
+                    "DAS16814"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatCorrectScopedProjectAppearsForStatusFilter", null, @__tags);
+#line 2084
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 2085
+ testRunner.When(string.Format("User clicks \'{0}\' on the left-hand menu", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2086
+ testRunner.Then(string.Format("\'{0}\' list should be displayed to the user", listHeader), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 2087
+ testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2088
+ testRunner.And("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 2089
+ testRunner.And("User enters \"Status\" text in Search field at Filters Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 2090
+ testRunner.And("User moves to the end of categories list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table142 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Subcategories"});
+            table142.AddRow(new string[] {
+                        string.Format("{0}", project)});
+#line 2091
+ testRunner.Then("the following Filters categories are presented in Filter panel:", ((string)(null)), table142, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

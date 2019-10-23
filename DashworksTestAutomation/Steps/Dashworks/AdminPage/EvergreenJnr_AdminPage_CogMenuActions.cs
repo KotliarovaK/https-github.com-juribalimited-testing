@@ -40,6 +40,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             cogMenu.GetCogMenuByItem(itemName).Click();
         }
 
+        [Then(@"Cog menu is displayed to the user")]
+        public void ThenCogMenuIsDisplayedToTheUser()
+        {
+            var listElement = _driver.NowAt<CogMenuElements>();
+            _driver.WaitForElementToBeDisplayed(listElement.CogMenuList);
+            Utils.Verify.IsTrue(listElement.CogMenuList.Displayed(), "Cog menu is not displayed");
+        }
+
         [Then(@"Cog menu is not displayed on the Admin page")]
         public void ThenCogMenuIsNotDisplayedOnTheAdminPage()
         {
@@ -50,7 +58,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         [Then(@"User sees following cog-menu items on Admin page:")]
         public void ThenUserSeesFollowingCog_MenuItemsOnAdminPage(Table items)
         {
-            var page = _driver.NowAt<BaseDashboardPage>();
+            var page = _driver.NowAt<CogMenuElements>();
             for (var i = 0; i < items.RowCount; i++)
                 Utils.Verify.That(page.CogMenuItems[i].Text, Is.EqualTo(items.Rows[i].Values.FirstOrDefault()),
                     "Items are not the same");
@@ -65,14 +73,22 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             var cogMenu = _driver.NowAt<CogMenuElements>();
             _driver.MouseHover(cogMenu.GetCogMenuByItem(itemName));
             cogMenu.GetCogMenuByItem(itemName).Click();
-            _driver.WaitForElementToBeDisplayed(cogMenu.CogMenuDropdown);
-            cogMenu.GetCogmenuOptionByName(option).Click();
+            _driver.WaitForElementToBeDisplayed(cogMenu.CogMenuList);
+            cogMenu.GetCogMenuOptionByName(option).Click();
             //Thread.Sleep(500);
             //TODO decrease to standard wait time after DAS-17940 fix
             _driver.WaitForDataLoading();
         }
 
-        
+        [When(@"User clicks '(.*)' option in opened Cog-menu")]
+        public void WhenUserClicksOptionInOpenedCogMenu(string option)
+        {
+            var cogMenu = _driver.NowAt<CogMenuElements>();
+            _driver.WaitForElementToBeDisplayed(cogMenu.CogMenuList);
+            cogMenu.GetCogMenuOptionByName(option).Click();
+            _driver.WaitForDataLoading();
+        }
+
         [When(@"User clicks ""(.*)"" option in Cog-menu for ""(.*)"" item on Admin page and wait for processing")]
         public void WhenUserClicksOptionInCog_MenuForItemOnAdminPageAndWaitsProcessing(string option, string itemName)
         {
@@ -97,7 +113,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             _driver.MouseHover(cogMenu.GetCogMenuByItem(itemName));
             cogMenu.GetCogMenuByItem(itemName).Click();
             _driver.WaitForDataLoading();
-            cogMenu.GetCogmenuOptionByName("Move to position").Click();
+            cogMenu.GetCogMenuOptionByName("Move to position").Click();
             cogMenu.MoveToPositionField.Clear();
             cogMenu.MoveToPositionField.SendKeys(position);
             var action = _driver.NowAt<BaseDashboardPage>();

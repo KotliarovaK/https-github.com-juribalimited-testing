@@ -40,7 +40,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatChangingTheProjectNameOrShortNameInSen
 	And User clicks content from "Project" column
 	Then "13498NewProjectName" content is displayed in "Project Name" field
 	And "13498ShN" content is displayed in "Project Short Name" field
-	When User clicks "Projects" navigation link on the Admin page
+	When User clicks 'Projects' header breadcrumb
 	And User enters "13498NewProjectName" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
@@ -61,7 +61,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatNameForProjectThatCreatedInSeniorWasU
 	Then Page with 'Projects' header is displayed to user
 	When User enters "ProjectDAS13501" text in the Search field for "Project" column
 	And User clicks content from "Project" column
-	And User enters "ProjectDAS13501 upd" in the "Project Name" field
+	And User enters 'ProjectDAS13501 upd' text to 'Project Name' textbox
 	Then There are no errors in the browser console
 	When User click on Back button
 	And User enters "ProjectDAS13501 upd" text in the Search field for "Project" column
@@ -86,7 +86,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectWithUseEvergreenCapacityUnitsIs
 	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "13510TestProject" in the "Project Name" field
+	When User enters '13510TestProject' text to 'Project Name' textbox
 	And User selects 'All Devices' option from 'Scope' autocomplete
 	When User clicks 'CREATE PROJECT' button 
 	Then Success message is displayed and contains "The project has been created" text
@@ -96,12 +96,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectWithUseEvergreenCapacityUnitsIs
 	And User selects 'Use project capacity units' in the 'Capacity Units' dropdown
 	And User clicks 'UPDATE' button 
 	Then Success message with "The project capacity details have been updated" text is displayed on the Projects page
-	When User selects "Units" tab on the Project details page
+	When User navigates to the 'Units' left menu item
 	Then Blue banner with "This project uses evergreen capacity units" text is displayed
 	Then 'CREATE PROJECT CAPACITY UNIT' button is not displayed
 	Then 'Actions' dropdown is not displayed
 	Then Cog menu is not displayed on the Admin page
-	When User clicks "Administration" navigation link on the Admin page
+	When User clicks 'Administration' header breadcrumb
 	When User navigates to the 'Evergreen' left menu item
 	When User navigates to the 'Capacity Units' left menu item
 	Then Page with 'Capacity Units' header is displayed to user

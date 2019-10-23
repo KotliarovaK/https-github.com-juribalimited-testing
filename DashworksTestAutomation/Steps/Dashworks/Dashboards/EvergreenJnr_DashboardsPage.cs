@@ -763,27 +763,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 page.GetTableWidgetContentWithoutLink(content).GetCssValue("color"), "PLEASE ADD EXCEPTION MESSAGE");
         }
 
-        [Then(@"following content is displayed in the ""(.*)"" column")]
-        public void ThenFollowingContentIsDisplayedInTheColumn(string columnName, Table table)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            var originalList = page.GetColumnContentByColumnName(columnName).Select(column => column.Text).ToList();
-            var tableContent = table.Rows.SelectMany(row => row.Values);
-            Utils.Verify.AreEqual(originalList, tableContent, $"Incorrect content is displayed in the {columnName}");
-        }
-
-        [Then(@"Column ""(.*)"" with no data displayed")]
-        public void ThenFollowingColumnDisplayedWithoutNoData(string columnName)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            var originalList = page.GetColumnContentByColumnName(columnName).Select(column => column.Text).ToList();
-
-            foreach (var item in originalList)
-            {
-                Utils.Verify.That(item, Is.EqualTo(""), $"Incorrect content is displayed in the {columnName}");
-            }
-        }
-
         [Then(@"following content is displayed in the ""(.*)"" column for Widget")]
         public void ThenFollowingContentIsDisplayedInTheColumnForWidget(string columnName, Table table)
         {
@@ -925,6 +904,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             page.DetailsPanelExpandListsIcon.Click();
+            _driver.WaitForElementsToBeDisplayed(page.DetailsPanelSharedListsTableHeaders);
         }
 
         [Then(@"User sees table headers as ""(.*)"" and ""(.*)""")]
@@ -933,6 +913,23 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForElementsToBeDisplayed(page.DetailsPanelSharedListsTableHeaders);
             Utils.Verify.That(page.DetailsPanelSharedListsTableHeaders.Select(x => x.Text).ToList(), Is.EqualTo(new List<string> { a, b }), "Headers are different");
+        }
+
+        [Then(@"User sees list icon displayed for '(.*)' widget in List section of Dashboards Details")]
+        public void ThenUserSeesListIconDisplayedForListInListSectionOfDashboardsDetails(string widgetName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            Verify.That(page.GetListIconFromListSectionOfDetailsPanel(widgetName).Displayed, Is.True, "List icon is not displayed");
+        }
+
+        [Then(@"User sees list icon displayed with tooltip for '(.*)' widget in List section of Dashboards Details")]
+        public void ThenUserSeesListIconDisplayedWithTooltipForListInListSectionOfDashboardsDetails(string widgetName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.MouseHover(page.GetListIconFromListSectionOfDetailsPanel(widgetName));
+
+            var toolTipText = _driver.GetTooltipText();
+            Verify.That(toolTipText, Is.EqualTo("Shared"), "Unexpected/missing tooltip");
         }
 
         [When(@"User clicks Settings button for ""(.*)"" shared user")]

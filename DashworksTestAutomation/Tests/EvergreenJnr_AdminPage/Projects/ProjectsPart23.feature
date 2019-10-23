@@ -48,7 +48,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectCountersDisplayedInRingGridFor
 	And User navigates to the 'Projects' left menu item
 	And User enters "DAS15260Project" text in the Search field for "Project" column
 	And User clicks content from "Project" column
-	And User selects "Scope Changes" tab on the Project details page
+	And User navigates to the 'Scope Changes' left menu item
 	And User navigates to the 'Devices' tab on Project Scope Changes page
 	And User expands multiselect and selects following Objects
 	| Objects         |
@@ -64,7 +64,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectCountersDisplayedInRingGridFor
 	And User clicks 'UPDATE ALL CHANGES' button 
 	Then Warning message with "1 device will be added, 1 user will be added, 1 application will be added" text is displayed on the Admin page
 	When User clicks 'UPDATE PROJECT' button 
-	And User selects "Queue" tab on the Project details page
+	And User navigates to the 'Queue' left menu item
 	And User waits until Queue disappears
 	And User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user

@@ -185,53 +185,53 @@ Scenario: EvergreenJnr_UsersList_ChecksThatTheNumberOfCountersInTheTabIsEqualToT
 	When User navigates to the 'User' details page for 'ACG370114' item
 	Then Details page for "ACG370114" item is displayed to the user
 	And 'Custom Fields' tab is displayed on left menu on the Details page and contains '2' count of items
-	When User navigates to the "Custom Fields" sub-menu on the Details page
+	When User navigates to the 'Custom Fields' left submenu item
 	Then "2" rows found label displays on Details Page
 	When User navigates to the 'Projects' left menu item
-	And User navigates to the "User Projects" sub-menu on the Details page
+	And User navigates to the 'User Projects' left submenu item
 	Then 'User Projects' tab is displayed on left menu on the Details page and contains '8' count of items
 	And "8" rows found label displays on Details Page
-	When User navigates to the "Device Project Summary" sub-menu on the Details page
+	When User navigates to the 'Device Project Summary' left submenu item
 	Then 'Device Project Summary' tab is displayed on left menu on the Details page and contains '15' count of items
 	And "15" rows found label displays on Details Page
 	When User navigates to the 'Devices' left menu item
 	Then 'Devices' tab is displayed on left menu on the Details page and contains '2' count of items
 	And "2" rows found label displays on Details Page
 	When User navigates to the 'Applications' left menu item
-	And User navigates to the "Evergreen Summary" sub-menu on the Details page
+	And User navigates to the 'Evergreen Summary' left submenu item
 	Then 'Evergreen Summary' tab is displayed on left menu on the Details page and contains '7' count of items
 	And "7" rows found label displays on Details Page
-	When User navigates to the "Evergreen Detail" sub-menu on the Details page
+	When User navigates to the 'Evergreen Detail' left submenu item
 	Then 'Evergreen Detail' tab is displayed on left menu on the Details page and contains '16' count of items
 	And "16" rows found label displays on Details Page
 	When User navigates to the 'Compliance' left menu item
-	And User navigates to the "Hardware Rules" sub-menu on the Details page
+	And User navigates to the 'Hardware Rules' left submenu item
 	Then 'Hardware Rules' tab is displayed on left menu on the Details page and contains '2' count of items
 	And "2" rows found label displays on Details Page
-	When User navigates to the "Application Issues" sub-menu on the Details page
+	When User navigates to the 'Application Issues' left submenu item
 	Then 'Application Issues' tab is displayed on left menu on the Details page and contains '2' count of items
 	And "2" rows found label displays on Details Page
 	When User navigates to the 'User' details page for '0137C8E69921432992B' item
 	Then Details page for "0137C8E69921432992B" item is displayed to the user
 	When User navigates to the 'Projects' left menu item
-	And User navigates to the "Mailbox Project Summary" sub-menu on the Details page
+	And User navigates to the 'Mailbox Project Summary' left submenu item
 	Then 'Mailbox Project Summary' tab is displayed on left menu on the Details page and contains '3' count of items
 	And "3" rows found label displays on Details Page
 	When User navigates to the 'Active Directory' left menu item
-	And User navigates to the "Groups" sub-menu on the Details page
+	And User navigates to the 'Groups' left submenu item
 	Then 'Groups' tab is displayed on left menu on the Details page and contains '1' count of items
 	And "1" rows found label displays on Details Page
 	When User navigates to the 'Mailboxes' left menu item
-	And User navigates to the "Mailboxes" sub-menu on the Details page
+	And User navigates to the 'Mailboxes' left submenu item
 	Then 'Mailboxes' tab is displayed on left menu on the Details page and contains '1' count of items
 	And "1" rows found label displays on Details Page
 	When User navigates to the 'User' details page for 'allanj' item
 	Then Details page for "allanj" item is displayed to the user
 	When User navigates to the 'Applications' left menu item
-	And User navigates to the "Advertisements" sub-menu on the Details page
+	And User navigates to the 'Advertisements' left submenu item
 	Then 'Advertisements' tab is displayed on left menu on the Details page and contains '5' count of items
 	And "5" rows found label displays on Details Page
-	When User navigates to the "Collections" sub-menu on the Details page
+	When User navigates to the 'Collections' left submenu item
 	Then 'Collections' tab is displayed on left menu on the Details page and contains '9' count of items
 	And "9" rows found label displays on Details Page
 	
@@ -240,6 +240,6 @@ Scenario: EvergreenJnr_UsersList_CheckThatCollectionsSubMenuCounterMatchTheNumbe
 	When User navigates to the 'User' details page for 'allanj' item
 	Then Details page for "allanj (Jo Allan)" item is displayed to the user
 	When User navigates to the 'Applications' left menu item
-	And User navigates to the "Collections" sub-menu on the Details page
+	And User navigates to the 'Collections' left submenu item
 	Then "9" rows found label displays on Details Page
 	And 'Collections' tab is displayed on left menu on the Details page and contains '9' count of items

@@ -11,7 +11,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCapacityUnitCanBeCreatedWithNameAlread
 	| ProjectName        | Scope         | ProjectTemplate | Mode               |
 	| ProjectForDAS13945 | All Mailboxes | None            | Standalone Project |
 	And User navigates to the 'Capacity' left menu item
-	And User selects "Units" tab on the Project details page
+	And User navigates to the 'Units' left menu item
 	And User clicks 'CREATE PROJECT CAPACITY UNIT' button 
 	#next capacity name used in "1803 Rollout" project
 	And User enters 'Manchester' text to 'Capacity Unit Name' textbox 
@@ -26,7 +26,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitStartedWithS
 	| ProjectName        | Scope       | ProjectTemplate | Mode               |
 	| ProjectForDAS13945 | All Devices | None            | Standalone Project |
 	And User navigates to the 'Capacity' left menu item
-	And User selects "Units" tab on the Project details page
+	And User navigates to the 'Units' left menu item
 	And User clicks 'CREATE PROJECT CAPACITY UNIT' button 
 	And User enters ' test1' text to 'Capacity Unit Name' textbox
 	And User enters '13945' text to 'Description' textbox
@@ -36,7 +36,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitStartedWithS
 	| units      |
 	| Unassigned |
 	| test1      |
-	When User selects "Units" tab on the Project details page
+	When User navigates to the 'Units' left menu item
 	And User clicks 'CREATE PROJECT CAPACITY UNIT' button 
 	And User enters ' test1' text to 'Capacity Unit Name' textbox
 	And User enters '13945_2' text to 'Description' textbox
@@ -59,7 +59,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingSortOrderForCapacityUnits
 	| 13159             |             | false     | 13159ProjectForCapacity |
 	| A13159Unit        |             | false     | 13159ProjectForCapacity |
 	And User navigates to the 'Capacity' left menu item
-	And User selects "Units" tab on the Project details page
+	And User navigates to the 'Units' left menu item
 	Then "Capacity Unit" column content is displayed in the following order:
 	| Items             |
 	| Unassigned        |
@@ -81,11 +81,11 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultValueForCapacityModeFieldEqual
 	And User clicks 'Admin' on the left-hand menu
 	And User navigates to "Project14029 Snr" project details
 	And User navigates to the 'Capacity' left menu item
-	And User selects "Capacity Details" tab on the Project details page
+	And User navigates to the 'Capacity Details' left menu item
 	Then Capacity Units value is displayed for Capacity Mode field
 	When Project created via API and opened
 	| ProjectName  | Scope       | ProjectTemplate | Mode               |
 	| Project14029 | All Devices | None            | Standalone Project |
 	And User navigates to the 'Capacity' left menu item
-	And User selects "Capacity Details" tab on the Project details page
+	And User navigates to the 'Capacity Details' left menu item
 	Then Capacity Units value is displayed for Capacity Mode field

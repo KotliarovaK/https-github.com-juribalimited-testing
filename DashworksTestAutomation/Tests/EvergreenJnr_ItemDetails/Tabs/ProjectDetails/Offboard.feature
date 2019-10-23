@@ -16,7 +16,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectly
 	Then Details page for "<ItemName>" item is displayed to the user
 	When User switches to the "<ProjectName>" project in the Top bar on Item details page
 	When User navigates to the 'Projects' left menu item
-	And User navigates to the "Project Details" sub-menu on the Details page
+	And User navigates to the 'Project Details' left submenu item
 	And User clicks 'OFFBOARD' button 
 	Then Dialog Pop-up is displayed for User
 	When User clicks 'OFFBOARD' button in Dialog Pop-up
@@ -30,7 +30,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectly
 	When User enters "<ProjectName>" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	When User navigates to the 'Scope' left menu item
-	And User selects "History" tab on the Project details page
+	And User navigates to the 'History' left menu item
 	And User enters "<ItemName>" text in the Search field for "Item" column
 	Then "<ItemName>" content is displayed in "Item" column
 
@@ -51,7 +51,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectly
 	Then Details page for "<ItemName>" item is displayed to the user
 	When User switches to the "<ProjectName>" project in the Top bar on Item details page
 	When User navigates to the 'Projects' left menu item
-	And User navigates to the "Project Details" sub-menu on the Details page
+	And User navigates to the 'Project Details' left submenu item
 	And User clicks 'OFFBOARD' button 
 	Then Dialog Pop-up is displayed for User
 	When User clicks 'OFFBOARD' button in Dialog Pop-up
@@ -65,7 +65,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectly
 	When User enters "<ProjectName>" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	When User navigates to the 'Scope' left menu item
-	And User selects "History" tab on the Project details page
+	And User navigates to the 'History' left menu item
 	And User enters "<ItemName>" text in the Search field for "Item" column
 	Then "<ItemName>" content is displayed in "Item" column
 

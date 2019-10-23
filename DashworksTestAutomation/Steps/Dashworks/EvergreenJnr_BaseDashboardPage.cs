@@ -677,13 +677,5 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseGridPage>();
             page.GetButtonInWarningPopUp(buttonName).Click();
         }
-
-        [Then(@"Error page is displayed correctly")]
-        public void ThenErrorPageIsDisplayedCorrectly()
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsTrue(page.Error403.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
-            Utils.Verify.IsFalse(page.PageTitle.Displayed(), "Error page is not displayed correctly");
-        }
     }
 }

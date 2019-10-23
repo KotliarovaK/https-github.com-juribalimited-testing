@@ -9,11 +9,11 @@ Background: Pre-Conditions
 Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationWithProjectBucketsFromListPage
 	When User clicks '<PageName>' on the left-hand menu
 	Then 'All <PageName>' list should be displayed to the user
-	When User clicks Create Project from the main list
+	When User selects 'Project' in the 'Create' dropdown
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "<ProjectName>" in the "Project Name" field
+	When User enters '<ProjectName>' text to 'Project Name' textbox
 	Then Scope field is automatically populated
-	When User clicks Create button on the Create Project page
+	When User clicks 'CREATE' button
 	Then Success message is displayed and contains "The project has been created" text
 	When User navigates to the 'Projects' left menu item
 	Then Page with 'Projects' header is displayed to user
@@ -24,11 +24,11 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationWithProjectBucketsF
 	| ItemName |
 	| <Item>   |
 	Then "<StaticList>" list is displayed to user
-	When User clicks Create Project from the main list
+	When User selects 'Project' in the 'Create' dropdown
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "<ProjectName>" in the "Project Name" field
+	When User enters '<ProjectName>' text to 'Project Name' textbox
 	Then Scope field is automatically populated
-	When User clicks Create button on the Create Project page
+	When User clicks 'CREATE' button
 	Then Success message is displayed and contains "The project has been created" text
 	When User enters "<ProjectName>" text in the Search field for "Project" column
 	And User selects all rows on the grid
@@ -38,11 +38,11 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationWithProjectBucketsF
 	When User clicks on '<ColumnName>' column header
 	And User create dynamic list with "<DynamicList>" name on "<PageName>" page
 	Then "<DynamicList>" list is displayed to user
-	When User clicks Create Project from the main list
+	When User selects 'Project' in the 'Create' dropdown
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "<ProjectName>" in the "Project Name" field
+	When User enters '<ProjectName>' text to 'Project Name' textbox
 	Then Scope field is automatically populated
-	When User clicks Create button on the Create Project page
+	When User clicks 'CREATE' button
 	Then Success message is displayed and contains "The project has been created" text
 
 Examples:
@@ -58,14 +58,14 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckOnboardingObjectUsingUpdateAppropr
 	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "TestProject9753" in the "Project Name" field
+	When User enters 'TestProject9753' text to 'Project Name' textbox
 	And User selects '<AllListName>' option from 'Scope' autocomplete
-	And User clicks Create button on the Create Project page
+	And User clicks 'CREATE' button
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Page with 'TestProject9753' header is displayed to user
 	Then Info message is displayed and contains "There are no objects in this project, use Scope Changes to add objects to your project" text
-	When User selects "Scope Changes" tab on the Project details page
+	When User navigates to the 'Scope Changes' left menu item
 	And User navigates to the '<TabName>' tab on Project Scope Changes page
 	And User expands multiselect and selects following Objects
 	| Objects        |
@@ -88,10 +88,10 @@ Scenario: EvergreenJnr_AdminPage_ChangingBucketFromUseEvergreenBucketsToCloneEve
 	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "1MailboxesProject" in the "Project Name" field
+	When User enters '1MailboxesProject' text to 'Project Name' textbox
 	#And User selects "Evergreen" in the Mode Project dropdown
 	When User selects 'All Mailboxes' option from 'Scope' autocomplete
-	And User clicks Create button on the Create Project page
+	And User clicks 'CREATE' button
 	Then Success message is displayed and contains "The project has been created" text
 	When User navigates to the 'Evergreen' left menu item
 	When User navigates to the 'Buckets' left menu item
@@ -111,9 +111,9 @@ Scenario: EvergreenJnr_AdminPage_ChangingBucketFromUseEvergreenBucketsToCloneEve
 	When User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
 	Then There are no errors in the browser console
 	When User navigates to the 'Scope' left menu item
-	And User selects "Scope Changes" tab on the Project details page
-	Then "Match to Evergreen Bucket" is displayed in the Bucket dropdown
-	When User clicks "Administration" navigation link on the Admin page
+	And User navigates to the 'Scope Changes' left menu item
+	Then 'Match to Evergreen Bucket' content is displayed in 'Bucket' dropdown
+	When User clicks 'Administration' header breadcrumb
 	When User navigates to the 'Evergreen' left menu item
 	When User navigates to the 'Buckets' left menu item
 	When User clicks Reset Filters button on the Admin page
@@ -132,9 +132,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoAdditionalCapacityUnitsAreCreatedWhe
 	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "13530Project" in the "Project Name" field
+	When User enters '13530Project' text to 'Project Name' textbox
 	And User selects 'All Devices' option from 'Scope' autocomplete
-	And User clicks Create button on the Create Project page
+	And User clicks 'CREATE' button
 	Then Success message is displayed and contains "The project has been created" text
 	When User navigates to the 'Evergreen' left menu item
 	And User navigates to the 'Capacity Units' left menu item
@@ -152,7 +152,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoAdditionalCapacityUnitsAreCreatedWhe
 	And User selects 'Clone evergreen capacity units to project capacity units' in the 'Capacity Units' dropdown
 	And User clicks 'UPDATE' button 
 	Then Success message is displayed and contains "The project capacity details have been updated" text
-	When User clicks "Administration" navigation link on the Admin page
+	When User clicks 'Administration' header breadcrumb
 	And User navigates to the 'Evergreen' left menu item
 	And User navigates to the 'Capacity Units' left menu item
 	And User clicks String Filter button for "Project" column on the Admin page

@@ -34,9 +34,9 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatListDetailsPanelDisplaysIfItWas
 	And User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "<ListName>" name
 	Then "<ListName>" list is displayed to user
-	When User clicks Settings button in the list panel
-	Then Settings panel is displayed to the user
-	When User clicks Manage in the list panel
+	When User clicks Settings button for "<ListName>" list
+	Then Cog menu is displayed to the user
+	When User clicks 'Manage' option in opened Cog-menu
 	Then List details panel is displayed to the user
 
 Examples:
@@ -62,14 +62,14 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatListDetailsPanelIsDisplayedAfterSe
 	And "2" rows are displayed in the agGrid
 	When User navigates to the "All Mailboxes" list
 	And User clicks Settings button for "DynamicList4557" list
-	And User clicks Manage in the list panel
+	When User clicks 'Manage' option in opened Cog-menu
 	Then "DynamicList4557" list is displayed to user
 	And List details panel is displayed to the user
 	When User navigates to the "StaticList2845" list
 	Then "StaticList2845" list is displayed to user
-	When User clicks Settings button in the list panel
-	Then Settings panel is displayed to the user
-	When User clicks Manage in the list panel
+	When User clicks Settings button for "StaticList2845" list
+	Then Cog menu is displayed to the user
+	When User clicks 'Manage' option in opened Cog-menu
 	Then "StaticList2845" list is displayed to user
 	And List details panel is displayed to the user
 

@@ -12,8 +12,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationsLogGridLoads
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
-	When User selects "Automation Log" tab on the Project details page
-	Then "Automations" sub-menu section is expanded
+	When User navigates to the 'Automation Log' left menu item
+	Then 'Automations' left menu item is expanded
 	Then Columns on Admin page is displayed in following order:
 	| ColumnName          |
 	| Date                |
@@ -213,7 +213,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToTopOptionWorksC
 	| Items        |
 	| AM 150419 II |
 	| Add data     |
-	When User clicks "Administration" navigation link on the Admin page
+	When User clicks 'Administration' header breadcrumb
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
 	When User have opened column settings for "Automation" column
@@ -272,7 +272,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToBottomOptionWor
 	| AM 150419 III |
 	| AM Test 1     |
 	| AM 150419 II  |
-	When User clicks "Administration" navigation link on the Admin page
+	When User clicks 'Administration' header breadcrumb
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
 	When User have opened column settings for "Automation" column
@@ -443,7 +443,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality
 	When User selects 'All Devices' option from 'Scope' autocomplete
 	When User selects "Active" checkbox on the Automation Page
 	When User selects "Stop on failed action" checkbox on the Automation Page
-	Then "CREATE" Action button is disabled
+	Then 'CREATE' button is disabled
 	When User selects 'Manual' in the 'Run' dropdown
 	And User clicks 'CREATE' button 
 	Then Success message is displayed and contains "click here to view the 16764_Automation automation" link
@@ -454,12 +454,12 @@ Scenario: EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality
 	Then 'Manual' content is displayed in 'Run' dropdown
 	Then "Active" checkbox is checked on the Admin page
 	Then "Stop on failed action" checkbox is checked on the Admin page
-	Then "UPDATE" Action button is disabled
-	Then "CANCEL" Action button is active
-	Then 'UPDATE' Action button has tooltip with 'Some values are missing or not valid' text
+	Then 'UPDATE' button is disabled
+	Then 'CANCEL' button is not disabled
+	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
 	#Wait for "RUN NOW" button
-	#Then "RUN NOW" Action button is active
-	When User clicks "Automations" navigation link on the Admin page
+	#Then 'RUN NOW' button is not disabled
+	When User clicks 'Automations' header breadcrumb
 	When User enters "16764_Automation" text in the Search field for "Automation" column
 	When User clicks "Delete" option in Cog-menu for "16764_Automation" item on Admin page
 	Then Warning message with "This automation will be permanently deleted" text is displayed on the Admin page
@@ -467,8 +467,8 @@ Scenario: EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality
 	When User clicks "Delete" option in Cog-menu for "16764_Automation" item on Admin page
 	When User clicks Delete button in the warning message
 	Then Success message is displayed and contains "1 automation deleted" text
-	When User selects "Automation Log" tab on the Project details page
-	When User selects "Automations" tab on the Project details page
+	When User navigates to the 'Automation Log' left menu item
+	When User navigates to the 'Automations' left menu item
 	Then Success message is not displayed on the Admin page
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15767 @DAS15423 @DAS18328
@@ -529,7 +529,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextFor
 	When User clicks 'CANCEL' button 
 	When User enters "DAS15423_Automation" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "DAS15423_Automation" item on Admin page
-	When User selects "Automation Log" tab on the Project details page
+	When User navigates to the 'Automation Log' left menu item
 	When User enters "DAS15423_Automation" text in the Search field for "Automation" column
 	Then "LIST NOT FOUND" content is displayed for "Outcome" column
 
@@ -549,7 +549,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRunNowFunctionalityToRunMoreThanOneAutomat
 	Then Warning message with "Are you sure you wish to run 2 automations?" text is displayed on the Admin page
 	When User clicks "RUN" button in the warning message on Admin page
 	Then Success message is displayed and contains "2 automations started," text
-	When User selects "Automation Log" tab on the Project details page
+	When User navigates to the 'Automation Log' left menu item
 	When User enters "Test_Automation1" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
 	When User enters "Test_Automation2" text in the Search field for "Automation" column
@@ -687,14 +687,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeviceLisFiltertHasAppropriateAutomati
 	When User clicks 'Devices' on the left-hand menu
 	And User clicks the Filters button
 	And User add "Device Type" filter where type is "Equals" with added column and "Virtual" Lookup option
-	And User create dynamic list with "DAS15949_List" name on "Devices" page
+	And User create dynamic list with "Das15949_list" name on "Devices" page
 	#create automation
 	And User creates new Automation via API and open it
 	| AutomationName      | Description | Active | StopOnFailedAction | Scope         | Run    |
 	| DAS15949_Automation | DAS15949    | true   | false              | DAS15949_List | Manual |
 	And User navigates to the 'Actions' left menu item
 	#create action #1
-	And User clicks 'CREATE ACTION' button 
+	When User clicks 'CREATE ACTION' button
 	And User enters '15949_Action_1' text to 'Action Name' textbox
 	And User selects 'Update path' in the 'Action Type' dropdown
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
@@ -708,7 +708,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeviceLisFiltertHasAppropriateAutomati
 	And User selects 'Desktop Replacement' option from 'Path' autocomplete
 	And User clicks 'CREATE' button
 	#run automation
-	When User clicks "Automations" navigation link on the Admin page
+	When User clicks 'Automations' header breadcrumb
+	When User enters "DAS15949_Automation" text in the Search field for "Automation" column
 	And User clicks "Run now" option in Cog-menu for "DAS15949_Automation" item on Admin page and wait for processing
 	#check filters
 	And User clicks 'Devices' on the left-hand menu
@@ -728,7 +729,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeviceLisFiltertHasAppropriateAutomati
 	#check log
 	When User clicks 'Admin' on the left-hand menu
 	And User navigates to the 'Automations' left menu item
-	And User selects "Automation Log" tab on the Project details page
+	And User navigates to the 'Automation Log' left menu item
 	And User enters "DAS15949_Automation" text in the Search field for "Automation" column
 	And User clicks String Filter button for "Action" column on the Admin page
 	And User selects "Select All" checkbox from String Filter with item list on the Admin page

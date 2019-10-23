@@ -261,6 +261,5 @@ namespace DashworksTestAutomation.Pages
             Driver.WaitForElementToBeDisplayed(By.XPath(listCategories));
             return Driver.FindElements(By.XPath(listCategories));
         }
-        
     }
 }

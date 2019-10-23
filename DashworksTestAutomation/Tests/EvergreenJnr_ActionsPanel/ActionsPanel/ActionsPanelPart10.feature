@@ -26,7 +26,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckBucketBulkUpdateOptionsOnMailboxesList
 	| Owners only      |
 	| All linked users |
 	When User selects 'Owners only' in the 'Also Move Users' dropdown
-	Then "UPDATE" Action button is active
+	Then 'UPDATE' button is not disabled
 
 @Evergreen @Mailboxes @EvergreenJnr_ActionsPanel @BulkUpdate @DAS14563 @DAS13960 @DAS14162
 Scenario: EvergreenJnr_MailboxesList_CheckThatOnMailboxesListForBucketBulkUpdateOptionsOnlyDisplayedEvergreenOrMailboxScopedProjects 
@@ -122,6 +122,7 @@ Scenario: EvergreenJnr_DevicesList_CheckTooltipDisplayingInDatePickerOfBulkUpdat
 	Then User sees that 'Capacity Slot' dropdown contains following options:
 	| Options                    |
 	| Birmingham Morning         |
+	| Manchester Morning         |
 	| London - City Morning      |
 	| London - Southbank Morning |
 	| London Depot 09:00 - 11:00 |

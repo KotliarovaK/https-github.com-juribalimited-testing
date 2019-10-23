@@ -552,7 +552,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var grid = _driver.NowAt<AggridHeaderCounterElement>();
             int toolbar = grid.AgGridToolbar.Size.Width;
 
-            Utils.Verify.That((toolbar - totalHeaderWidth), Is.EqualTo(0), 
+            Verify.That((toolbar - totalHeaderWidth), Is.EqualTo(0),
                 $"Check Toolbar: {toolbar} VS Grid headers: {totalHeaderWidth} size");
         }
 
@@ -783,7 +783,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 detailsPage.SelectAllCheckBox.Click();
             }
             else
-                detailsPage.SelectAllCheckBox.Click();
+                _driver.WaitForElementToBeDisplayed(detailsPage.SelectAllCheckBox);
+            detailsPage.SelectAllCheckBox.Click();
         }
 
         private void CheckColumnDisplayedState(Table table, bool displayedState)

@@ -420,15 +420,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             foreach (var row in table.Rows) columnElement.AddAllColumnsFromCategory(row["CategoryName"]);
         }
 
-        [When(@"User have reset all columns")]
-        public void WhenUserHaveResetAllColumns()
-        {
-            var columnElement = _driver.NowAt<ColumnsElement>();
-            _driver.WaitForElementToBeDisplayed(columnElement.ResetColumnsButton);
-            _driver.MouseHover(columnElement.ResetColumnsButton);
-            columnElement.ResetColumnsButton.Click();
-        }
-
         [Then(@"Lowest value of ""(.*)"" column is null")]
         public void ThenLowestValueOfColumnIsNull(string columnName)
         {

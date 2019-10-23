@@ -47,6 +47,6 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSumOfObjectsInApplicationsListIsCorre
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Evergreen' left menu item
-	And User navigates to the 'Capacity Units' left menu item
+	When User navigates to the 'Capacity Units' left menu item
 	Then Page with 'Capacity Units' header is displayed to user
-	Then sum of objects in "Applications" list is "2223" on the Admin page
+	Then numbers sum in the 'Applications' column is equal to '2223'

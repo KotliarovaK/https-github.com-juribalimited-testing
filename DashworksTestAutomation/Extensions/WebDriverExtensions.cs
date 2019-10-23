@@ -63,7 +63,7 @@ namespace DashworksTestAutomation.Extensions
 
         public static string GetTooltipBubbleText(this RemoteWebDriver driver)
         {
-            var by = By.XPath(".//div[contains(@class,'ag-tooltip')]");
+            var by = By.XPath(_toolTipBubbleSelector);
             if (!driver.IsElementDisplayed(by, WaitTime.Short))
                 return string.Empty;
 
@@ -356,12 +356,14 @@ namespace DashworksTestAutomation.Extensions
         }
 
         private static string _toolTipSelector = ".//mat-tooltip-component";
+        private static string _toolTipBubbleSelector = ".//div[contains(@class,'ag-tooltip')]";
 
         public static bool IsTooltipDisplayed(this RemoteWebDriver driver)
         {
             var toolTips = driver.FindElements(By.XPath(_toolTipSelector));
+            var toolTipBubbles = driver.FindElements(By.XPath(_toolTipBubbleSelector));
 
-            return toolTips.Count > 0;
+            return toolTips.Count > 0 || toolTipBubbles.Count > 0;
         }
 
         public static void WhatForElementToBeSelected(this RemoteWebDriver driver, IWebElement element, bool selectorState)
@@ -494,6 +496,8 @@ namespace DashworksTestAutomation.Extensions
             IJavaScriptExecutor ex = driver;
 
             var clientHeight = int.Parse(ex.ExecuteScript("return arguments[0].clientHeight", gridElement).ToString());
+            if (clientHeight <= 0)
+                throw new Exception("Unable to get client Height");
             var scrollHeight = int.Parse(ex.ExecuteScript("return arguments[0].scrollHeight", gridElement).ToString());
 
             for (int i = 0; i < scrollHeight / clientHeight; i++)
@@ -648,6 +652,60 @@ namespace DashworksTestAutomation.Extensions
                 catch (StaleElementReferenceException)
                 {
                     return false.Equals(condition);
+                }
+            };
+        }
+
+        #endregion
+
+        #region Wait for Element to be (not) Exists in Element
+
+        public static void WaitForElementToBeNotExists(this RemoteWebDriver driver, IWebElement element, By selector, int waitSeconds = WaitTimeoutSeconds)
+        {
+            WaitForElementInElementExistsCondition(driver, element, selector, false, waitSeconds);
+        }
+
+        public static void WaitForElementInElementToBeExists(this RemoteWebDriver driver, IWebElement element, By selector, int waitSeconds = WaitTimeoutSeconds)
+        {
+            WaitForElementInElementExistsCondition(driver, element, selector, true, waitSeconds);
+        }
+
+        private static void WaitForElementInElementExistsCondition(this RemoteWebDriver driver, IWebElement element, By selector, bool condition, int waitSeconds)
+        {
+            try
+            {
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(waitSeconds));
+                wait.Until(ElementInElementIsInExistsCondition(element, selector, condition));
+            }
+            catch (WebDriverTimeoutException e)
+            {
+                throw new Exception($"Element was not changed Display condition to '{condition}' after {waitSeconds} seconds", e);
+            }
+        }
+
+        private static Func<IWebDriver, bool> ElementInElementIsInExistsCondition(IWebElement element, By selector, bool displayedCondition)
+        {
+            return (driver) =>
+            {
+                try
+                {
+                    return element.IsElementExists(selector).Equals(displayedCondition);
+                }
+                catch (NoSuchElementException)
+                {
+                    // Returns false because the element is not present in DOM.
+                    return false.Equals(displayedCondition);
+                }
+                catch (StaleElementReferenceException)
+                {
+                    // Returns false because stale element reference implies that element
+                    // is no longer visible.
+                    return false.Equals(displayedCondition);
+                }
+                catch (InvalidOperationException)
+                {
+                    // Return false as no elements was located
+                    return false.Equals(displayedCondition);
                 }
             };
         }
@@ -1299,9 +1357,19 @@ namespace DashworksTestAutomation.Extensions
             WaitElementContainsText(driver, selector, expectedText, false, waitSec);
         }
 
-        public static void WaitForElementToHaveText(this RemoteWebDriver driver, IWebElement element, string expectedText, int waitSec = WaitTimeoutSeconds)
+        public static void WaitForElementToHaveText(this RemoteWebDriver driver, IWebElement element, string expectedText, int waitSec = WaitTimeoutSeconds, bool throwException = true)
         {
-            WaitElementContainsText(driver, element, expectedText, true, waitSec);
+            try
+            {
+                WaitElementContainsText(driver, element, expectedText, true, waitSec);
+            }
+            catch (Exception e)
+            {
+                if (throwException)
+                {
+                    throw e;
+                }
+            }
         }
 
         public static void WaitForElementToHaveText(this RemoteWebDriver driver, By selector, string expectedText, int waitSec = WaitTimeoutSeconds)
@@ -1409,6 +1477,11 @@ namespace DashworksTestAutomation.Extensions
             WaitElementContainsText(driver, element, expectedText, true, waitSec);
         }
 
+        public static void WaitForElementToContainsText(this RemoteWebDriver driver, IList<IWebElement> elements, string expectedText, int waitSec = WaitTimeoutSeconds)
+        {
+            WaitElementContainsText(driver, elements, expectedText, true, waitSec);
+        }
+
         public static void WaitForElementToContainsText(this RemoteWebDriver driver, By selector, string expectedText, int waitSec = WaitTimeoutSeconds)
         {
             WaitElementContainsText(driver, selector, expectedText, true, waitSec);
@@ -1420,6 +1493,19 @@ namespace DashworksTestAutomation.Extensions
             {
                 WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(waitSec));
                 wait.Until(TextToBeContainsInElement(element, expectedText, condition));
+            }
+            catch (Exception)
+            {
+                throw new Exception($"Text '{expectedText}' is not appears/disappears in the element after {waitSec} seconds");
+            }
+        }
+
+        private static void WaitElementContainsText(this RemoteWebDriver driver, IList<IWebElement> elements, string expectedText, bool condition, int waitSec)
+        {
+            try
+            {
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(waitSec));
+                wait.Until(TextToBeContainsInElement(elements, expectedText, condition));
             }
             catch (Exception)
             {
@@ -1447,6 +1533,33 @@ namespace DashworksTestAutomation.Extensions
                 try
                 {
                     return element.Text.Contains(text).Equals(condition);
+                }
+                catch (NoSuchElementException)
+                {
+                    // Returns false because the element is not present in DOM.
+                    return false.Equals(condition);
+                }
+                catch (StaleElementReferenceException)
+                {
+                    // Returns false because stale element reference implies that element
+                    // is no longer visible.
+                    return false.Equals(condition);
+                }
+                catch (InvalidOperationException)
+                {
+                    // Return false as no elements was located
+                    return false.Equals(condition);
+                }
+            };
+        }
+
+        private static Func<IWebDriver, bool> TextToBeContainsInElement(IList<IWebElement> elements, string text, bool condition)
+        {
+            return (driver) =>
+            {
+                try
+                {
+                    return elements.Any(x => x.Text.Contains(text)).Equals(condition);
                 }
                 catch (NoSuchElementException)
                 {
@@ -1638,7 +1751,7 @@ namespace DashworksTestAutomation.Extensions
             WaitElementContainsTextInAttribute(driver, selector, expectedText, attribute, true, waitSec);
         }
 
-        public static void WaitForAnyElementToContainsTextInAttribute(this RemoteWebDriver driver, List<IWebElement> elements, string expectedText, string attribute, int waitSec = WaitTimeoutSeconds)
+        public static void WaitForAnyElementToContainsTextInAttribute(this RemoteWebDriver driver, IEnumerable<IWebElement> elements, string expectedText, string attribute, int waitSec = WaitTimeoutSeconds)
         {
             WaitElementContainsTextInAttribute(driver, elements, expectedText, attribute, true, waitSec);
         }
@@ -1669,7 +1782,7 @@ namespace DashworksTestAutomation.Extensions
             }
         }
 
-        private static void WaitElementContainsTextInAttribute(this RemoteWebDriver driver, IList<IWebElement> elements, string expectedText, string attribute, bool condition, int waitSec)
+        private static void WaitElementContainsTextInAttribute(this RemoteWebDriver driver, IEnumerable<IWebElement> elements, string expectedText, string attribute, bool condition, int waitSec)
         {
             try
             {
@@ -1737,7 +1850,7 @@ namespace DashworksTestAutomation.Extensions
             };
         }
 
-        private static Func<IWebDriver, bool> TextToBeContainsInElementAttribute(IList<IWebElement> elements, string text, string attribute, bool condition)
+        private static Func<IWebDriver, bool> TextToBeContainsInElementAttribute(IEnumerable<IWebElement> elements, string text, string attribute, bool condition)
         {
             return (driver) =>
             {
@@ -2082,6 +2195,39 @@ namespace DashworksTestAutomation.Extensions
         #endregion
 
         #region Checkbox
+
+        //0 - not checked
+        //1 - indeterminate
+        //2 - all checked
+        public static int GetEvergreenCheckboxTripleState(this RemoteWebDriver driver, IWebElement checkbox)
+        {
+            //Get mat-checkbox webElement
+            var checkboxElement = checkbox.TagName.Equals("mat-checkbox")
+                ? checkbox
+                : checkbox.FindElement(By.XPath(".//ancestor::*[contains(@class,'mat-checkbox')][not(div)]"));
+            var classAttribute = checkboxElement.GetAttribute("class");
+
+            if (classAttribute.Contains("indeterminate"))
+            {
+                return 1;
+            }
+            else
+            {
+                if (!classAttribute.Contains("checked"))
+                {
+                    return 0;
+                }
+                else
+                {
+                    if (classAttribute.Contains("checked"))
+                    {
+                        return 2;
+                    }
+                }
+            }
+
+            throw new Exception("Unable to get checkbox selected state");
+        }
 
         public static void SetEvergreenCheckboxState(this RemoteWebDriver driver, IWebElement checkbox, bool desiredState)
         {

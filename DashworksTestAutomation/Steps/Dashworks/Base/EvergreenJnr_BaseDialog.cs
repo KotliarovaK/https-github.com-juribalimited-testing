@@ -14,7 +14,6 @@ using TechTalk.SpecFlow;
 namespace DashworksTestAutomation.Steps.Dashworks.Base
 {
     [Binding]
-
     internal class EvergreenJnr_BaseDialog : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;

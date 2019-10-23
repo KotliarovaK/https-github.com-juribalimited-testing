@@ -54,7 +54,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	When User navigates to the 'Device' details page for '00RUUMAH9OZN9A' item
 	Then Details page for "00RUUMAH9OZN9A" item is displayed to the user
 	When User navigates to the 'Applications' left menu item
-	And User navigates to the "Evergreen Summary" sub-menu on the Details page
+	And User navigates to the 'Evergreen Summary' left submenu item
 	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
 	And User enters "Microsoft Office PowerPoint 2002 (XP)" text in the Search field for "Application" column
 	Then 'GREEN' content is displayed in the 'Compliance' column
@@ -87,7 +87,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	When User navigates to the 'Device' details page for '00RUUMAH9OZN9A' item
 	Then Details page for "00RUUMAH9OZN9A" item is displayed to the user
 	When User navigates to the 'Applications' left menu item
-	And User navigates to the "Evergreen Detail" sub-menu on the Details page
+	And User navigates to the 'Evergreen Detail' left submenu item
 	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
 	And User enters "Microsoft Office PowerPoint 2002 (XP)" text in the Search field for "Application" column
 	Then 'GREEN' content is displayed in the 'Compliance' column
@@ -143,7 +143,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	When User navigates to the 'Device' details page for '00RUUMAH9OZN9A' item
 	Then Details page for "00RUUMAH9OZN9A" item is displayed to the user
 	When User navigates to the 'Applications' left menu item
-	And User navigates to the "Advertisements" sub-menu on the Details page
+	And User navigates to the 'Advertisements' left submenu item
 	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
 	And User enters "Microsoft Office PowerPoint 2002 (XP)" text in the Search field for "Application" column
 	Then 'TierA Site01' content is displayed in the 'Site' column
@@ -158,7 +158,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	When User navigates to the 'Device' details page for '00RUUMAH9OZN9A' item
 	Then Details page for "00RUUMAH9OZN9A" item is displayed to the user
 	When User navigates to the 'Applications' left menu item
-	And User navigates to the "Collections" sub-menu on the Details page
+	And User navigates to the 'Collections' left submenu item
 	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
 	Then 'SMS/SCCM 2007' content is displayed in the 'Source Type' column
 	Then 'A01 SMS (Spoof)' content is displayed in the 'Source' column
@@ -184,7 +184,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	When User navigates to the 'Device' details page for '00RUUMAH9OZN9A' item
 	Then Details page for "00RUUMAH9OZN9A" item is displayed to the user
 	When User navigates to the 'Compliance' left menu item
-	And User navigates to the "Hardware Rules" sub-menu on the Details page
+	And User navigates to the 'Hardware Rules' left submenu item
 	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
 	Then 'AMBER' content is displayed in the 'Compliance' column
 	When User clicks String Filter button for "Compliance" column
@@ -198,7 +198,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
 	When User navigates to the 'Compliance' left menu item
-	And User navigates to the "Application Issues" sub-menu on the Details page
+	And User navigates to the 'Application Issues' left submenu item
 	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
 	And User enters "Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" text in the Search field for "Application" column
 	Then 'TierA Site01' content is displayed in the 'Site' column
@@ -225,7 +225,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThePossibilityToRecheckingTheWorkflowCol
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
 	When User navigates to the 'Projects' left menu item
-	When User navigates to the "Projects Summary" sub-menu on the Details page
+	When User navigates to the 'Projects Summary' left submenu item
 	And User clicks String Filter button for "Workflow" column
 	When User selects "Empty" checkbox from String Filter on the Details Page
 	And User clicks String Filter button for "Workflow" column

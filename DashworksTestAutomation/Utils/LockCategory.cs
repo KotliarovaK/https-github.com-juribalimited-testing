@@ -69,12 +69,12 @@ namespace DashworksTestAutomation.Utils
                 //If test contains tag that depends on other tags
                 if (categories.Any(x => x.Contains("Do_Not_Run_With")))
                 {
-                    var lockTag = categories.First(x => x.Contains("Do_Not_Run_With"))
-                        .Replace("Do_Not_Run_With_", string.Empty);
+                    var lockTags = categories.Where(x => x.Contains("Do_Not_Run_With_"))
+                        .Select(x => x.Replace("Do_Not_Run_With_", string.Empty));
                     //Check that there is no tests with mentioned tag
-                    if (IsTagExistInCurrentSession(lockTag))
+                    if (lockTags != null && lockTags.Any() && lockTags.Any(IsTagExistInCurrentSession))
                     {
-                        while (IsTagExistInCurrentSession(lockTag) && GetTags().Any())
+                        while (GetTags().Any() && lockTags.Any(IsTagExistInCurrentSession))
                         {
                             Thread.Sleep(5000);
                             Logger.Write("1. Tag exists in the context");

@@ -71,14 +71,18 @@ Scenario: EvergreenJnr_AdminPage_CheckSelectedRowsCountDisplayingOnBucketsGrids
 	And User selects all rows on the grid
 	Then User sees "14538" of "14538" rows selected label
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12491 @Buckets
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12491 @DAS16389 @Buckets
 Scenario: EvergreenJnr_AdminPage_CheckThatSingularFoundItemLabelDisplaysOnActionsToolbarforBucketsList
 	When User clicks 'Admin' on the left-hand menu
-	And User navigates to the 'Evergreen' left menu item
+	When User navigates to the 'Evergreen' left menu item
 	Then Page with 'Buckets' header is displayed to user
 	When User clicks Reset Filters button on the Admin page
-	And User enters "birmingham" text in the Search field for "Bucket" column
+	When User enters "birmingham" text in the Search field for "Bucket" column
 	Then Rows counter contains "3" found row of all rows
+	#DAS16389
+	When User enters "143" text in the Search field for "Users" column
+	When User clicks content from "Users" column
+	Then "143" rows are displayed in the agGrid
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12939 @Buckets @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderOfBucketsAfterCreateOrUpdateOrDeleteAction
@@ -95,7 +99,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderOfBucketsAfterCreateOrUpda
 	Then data in table is sorted by "Bucket" column in ascending order by default on the Admin page
 	When User enters "1ba" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
-	And User enters "a1ba" in the "Bucket Name" field
+	And User enters 'a1ba' text to 'Bucket Name' textbox
 	And User clicks 'UPDATE' button 
 	Then data in table is sorted by "Bucket" column in ascending order by default on the Admin page
 	When User deletes "aab" Bucket in the Administration

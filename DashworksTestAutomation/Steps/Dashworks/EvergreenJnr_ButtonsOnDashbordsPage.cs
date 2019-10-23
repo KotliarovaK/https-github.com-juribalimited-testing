@@ -64,17 +64,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             menu.FilterButton.Click();
             _driver.WaitForDataLoading();
         }
-
-        [When(@"User clicks Create Project from the main list")]
-        public void WhenUserClicksCreateProjectFromTheMainList()
+        
+        [When(@"User clicks the Associations button")]
+        public void WhenUserClicksTheAssociationButton()
         {
-            var menu = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitForElementToBeDisplayed(menu.CreateActionButton);
-            menu.CreateActionButton.Click();
-
-            _driver.WaitForElementToBeDisplayed(menu.CreateProjectButton);
-            menu.CreateProjectButton.Click();
-
+            var menu = _driver.NowAt<BaseHeaderElement>();
+            _driver.WaitForDataLoading();
+            _driver.WaitForDataLoadingInActionsPanel();
+            _driver.WaitForElementToBeDisplayed(menu.AssociationButton);
+            menu.AssociationButton.Click();
             _driver.WaitForDataLoading();
         }
 

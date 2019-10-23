@@ -30,14 +30,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedBucketsIsDisplayedForOnboarded
 	When User enters "UsersProject3" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	Then Page with 'UsersProject3' header is displayed to user
-	When user selects "UsersProject3Group" in the Bucket dropdown
+	When User selects 'UsersProject3Group' in the 'Bucket' dropdown
 	And User expands multiselect and selects following Objects
 	| Objects                               |
 	| 003F5D8E1A844B1FAA5 (Hunter, Melanie) |
 	And User clicks 'UPDATE ALL CHANGES' button 
 	And User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "1 object queued for onboarding, 0 objects offboarded" text
-	When User selects "Queue" tab on the Project details page
+	When User navigates to the 'Queue' left menu item
 	Then following Items are displayed in the Queue table
 	| Items               |
 	| 003F5D8E1A844B1FAA5 |
@@ -54,7 +54,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedBucketsIsDisplayedForOnboarded
 	| Ring          |
 	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
 	Then Rows counter shows "1" of "1" rows
-	When User selects "History" tab on the Project details page
+	When User navigates to the 'History' left menu item
 	Then following Items are displayed in the History table
 	| Items               |
 	| 003F5D8E1A844B1FAA5 |
@@ -95,14 +95,14 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectScopeChangesIsLoadedSuc
 	| ProjectName | Scope      | ProjectTemplate | Mode               |
 	| <TestName>  | <MainList> | None            | Standalone Project |
 	Then Page with '<TestName>' header is displayed to user
-	When User selects "Scope" tab on the Project details page
+	When User navigates to the 'Scope' left menu item
 	When User selects '<ListToScope1>' in the 'Scope' dropdown with wait
 	And User navigates to the '<ScopeTab1>' tab on Project Scope Changes page
 	And User selects '<ListToScope2>' in the '<ScopeSelectbox>' dropdown with wait
 	And User navigates to the 'Application Scope' tab on Project Scope Changes page
 	When  User selects "Include applications" checkbox on the Project details page
 	And User selects 'ApplicationsStaticList12157' in the 'Application Scope' dropdown with wait
-	And User selects "Scope Changes" tab on the Project details page
+	And User navigates to the 'Scope Changes' left menu item
 	Then "<ObjectsToAdd1>" is displayed to the user in the Project Scope Changes section
 	When User navigates to the '<ScopeChanges1>' tab on Project Scope Changes page
 	Then "<ObjectsToAdd2>" is displayed to the user in the Project Scope Changes section
@@ -121,7 +121,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatItemsToAddValuesAreNotCachedAfterScope
 	When Project created via API and opened
 	| ProjectName | Scope       | ProjectTemplate | Mode               |
 	| DAS11981    | All Devices | None            | Standalone Project |
-	When User selects "Scope" tab on the Project details page
+	When User navigates to the 'Scope' left menu item
 	And User navigates to the 'Application Scope' tab on Project Scope Changes page
 	And User clicks following checkboxes on the Project details page:
 	| CheckboxesToBeClicked                  |
@@ -130,17 +130,17 @@ Scenario: EvergreenJnr_AdminPage_CheckThatItemsToAddValuesAreNotCachedAfterScope
 	| Used by the device owner on any device |
 	| Used on the device by the device owner |
 	| Used on the device by any user         |
-	And User selects "Scope Changes" tab on the Project details page
+	And User navigates to the 'Scope Changes' left menu item
 	And User navigates to the 'Applications' tab on Project Scope Changes page
 	Then "Applications to add (0 of 212 selected)" is displayed to the user in the Project Scope Changes section
 	When User navigates to the 'Users' tab on Project Scope Changes page
 	Then "Users to add (0 of 14629 selected)" is displayed to the user in the Project Scope Changes section
-	When User selects "Scope Details" tab on the Project details page
+	When User navigates to the 'Scope Details' left menu item
 	And User navigates to the 'Application Scope' tab on Project Scope Changes page
 	And User clicks "Entitled to the device" checkbox on the Project details page
 	And User navigates to the 'User Scope' tab on Project Scope Changes page
 	And User selects "Do not include device owners" checkbox on the Project details page
-	And User selects "Scope Changes" tab on the Project details page
+	And User navigates to the 'Scope Changes' left menu item
 	And User navigates to the 'Applications' tab on Project Scope Changes page
 	Then "Applications to add (0 of 1059 selected)" is displayed to the user in the Project Scope Changes section
 	When User navigates to the 'Users' tab on Project Scope Changes page
@@ -152,8 +152,8 @@ Scenario: EvergreenJnr_AdminPage_TheGreenBannerIsNotDisplayedIfBannerWasBeShownO
 	| ProjectName  | Scope       | ProjectTemplate | Mode               |
 	| Project12965 | All Devices | None            | Standalone Project |
 	Then Page with 'Project12965' header is displayed to user
-	When User selects "Scope" tab on the Project details page
-	When User selects "Scope Changes" tab on the Project details page
+	When User navigates to the 'Scope' left menu item
+	When User navigates to the 'Scope Changes' left menu item
 	And User navigates to the 'Devices' tab on Project Scope Changes page
 	And User expands multiselect to add objects 
 	And User selects following Objects from the expandable multiselect
@@ -162,13 +162,13 @@ Scenario: EvergreenJnr_AdminPage_TheGreenBannerIsNotDisplayedIfBannerWasBeShownO
 	When User clicks 'UPDATE ALL CHANGES' button 
 	And User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "1 object queued for onboarding, 0 objects offboarded" text
-	When User selects "Queue" tab on the Project details page
+	When User navigates to the 'Queue' left menu item
 	Then following Items are displayed in the Queue table
 	| Items           |
 	| 0623U41CZ73RV2Q |
-	When User selects "History" tab on the Project details page
+	When User navigates to the 'History' left menu item
 	Then following Items are displayed in the History table
 	| Items           |
 	| 0623U41CZ73RV2Q |
-	When User selects "Scope Changes" tab on the Project details page
+	When User navigates to the 'Scope Changes' left menu item
 	Then Success message is not displayed on the Admin page

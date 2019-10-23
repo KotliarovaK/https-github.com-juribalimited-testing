@@ -10,7 +10,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckRenamedColumnAndStringFilterForSoft
 	When User navigates to the '<PageName>' details page for '<SelectedName>' item
 	Then Details page for "<SelectedName>" item is displayed to the user
 	When User navigates to the 'Compliance' left menu item
-	And User navigates to the "Application Summary" sub-menu on the Details page
+	And User navigates to the 'Application Summary' left submenu item
 	Then Name of colors are displayed in following order on the Details Page:
 	| ColumnHeader |
 	| RED          |
@@ -18,7 +18,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckRenamedColumnAndStringFilterForSoft
 	| GREEN        |
 	| UNKNOWN      |
 	| NONE         |
-	When User navigates to the "Application Issues" sub-menu on the Details page
+	When User navigates to the 'Application Issues' left submenu item
 	Then "<CountRows>" rows found label displays on Details Page
 	And "Manufacturer" column is not displayed to the user
 	And following columns added to the table:
@@ -65,7 +65,7 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckThatAutosizeOptionWorksCorrectly
 	When User navigates to the 'Device' details page for '30BGMTLBM9PTW5' item
 	Then Details page for "30BGMTLBM9PTW5" item is displayed to the user
 	When User navigates to the 'Applications' left menu item
-	When User navigates to the "<SubMenuName>" sub-menu on the Details page
+	When User navigates to the '<SubMenuName>' left submenu item
 	Then "87" rows found label displays on Details Page
 	When User have opened Column Settings for "Site" column in the Details Page table
 	And User have select "Autosize this column" option from column settings
@@ -81,7 +81,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysO
 	When User navigates to the '<PageName>' details page for '<SearchTerm>' item
 	Then Details page for "<SearchTerm>" item is displayed to the user
 	When User navigates to the '<MainTab>' left menu item
-	And User navigates to the "<SubTab>" sub-menu on the Details page
+	And User navigates to the '<SubTab>' left submenu item
 	Then "1" rows found label displays on Details Page
 
 Examples:
@@ -94,7 +94,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUsersAndDevicesDistributionList
 	When User navigates to the 'Application' details page for 'Microsoft DirectX 5 DDK' item
 	Then Details page for "Microsoft DirectX 5 DDK" item is displayed to the user
 	When User navigates to the 'Distribution' left menu item
-	When User navigates to the "Users" sub-menu on the Details page
+	When User navigates to the 'Users' left submenu item
 	And User clicks String Filter button for "Used" column
 	And User clicks "False" checkbox from String Filter on the Details Page
 	And User closes Checkbox filter for "Used" column
@@ -102,7 +102,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUsersAndDevicesDistributionList
 	And User have select "Sort descending" option from column settings
 	Then Content is present in the table on the Details Page
 	And Rows do not have unknown values
-	When User navigates to the "Devices" sub-menu on the Details page
+	When User navigates to the 'Devices' left submenu item
 	And User clicks String Filter button for "Used" column
 	And User clicks "False" checkbox from String Filter on the Details Page
 	And User closes Checkbox filter for "Used" column
@@ -116,7 +116,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatNoErrorsAreDisplayedAfterClickingThro
 	When User navigates to the 'User' details page for 'TON2490708' item
 	Then Details page for "TON2490708" item is displayed to the user
 	When User navigates to the 'Projects' left menu item
-	When User navigates to the "Device Project Summary" sub-menu on the Details page
+	When User navigates to the 'Device Project Summary' left submenu item
 	When User enters "K-group" text in the Search field for "Bucket" column
 	And User clicks "00BDM1JUR8IF419" link on the Details Page
 	Then "Project Object" page is displayed to the user
@@ -134,7 +134,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnsAreDisplayedCorrectlyInApplic
 	| Installed   |
 	| Used        |
 	| Entitled    |
-	When User navigates to the "Evergreen Detail" sub-menu on the Details page
+	When User navigates to the 'Evergreen Detail' left submenu item
 	Then "Application" column is displayed to the user
 	When User have opened Column Settings for "Vendor" column in the Details Page table
 	And User clicks Column button on the Column Settings panel
@@ -158,7 +158,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnsAreDisplayedCorrectlyInApplic
 Scenario: EvergreenJnr_DevicesList_CheckThatReadinessValuesInDdlOnProjectsTabAreDisplayedCorrectly
 	When User navigates to the 'Device' details page for '0G0WTR5KN85N2X' item
 	And User navigates to the 'Projects' left menu item
-	And User navigates to the "Projects Summary" sub-menu on the Details page
+	And User navigates to the 'Projects Summary' left submenu item
 	And User have opened Column Settings for "Project" column in the Details Page table
 	And User clicks Column button on the Column Settings panel
 	And User select "Project Type" checkbox on the Column Settings panel
@@ -175,7 +175,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatDataIsDisplayedInHardwareSummaryTabFor
 	When User navigates to the 'User' details page for 'AAD1011948' item
 	Then Details page for "AAD1011948" item is displayed to the user
 	When User navigates to the 'Compliance' left menu item
-	When User navigates to the "Hardware Summary" sub-menu on the Details page
+	When User navigates to the 'Hardware Summary' left submenu item
 	Then element table is displayed on the Details page
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15913
@@ -183,7 +183,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatUnknownValuesAreNotDisplayedOnLevelO
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
 	When User navigates to the 'Applications' left menu item
-	And User navigates to the "Evergreen Summary" sub-menu on the Details page
+	And User navigates to the 'Evergreen Summary' left submenu item
 	And User clicks Group By button on the Details page and selects "Vendor" value
 	Then "UNKNOWN" content is not displayed in the grid on the Item details page
 
@@ -193,7 +193,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAgGridActionsWorksCorrectlyForDetail
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
 	When User navigates to the 'Details' left menu item
-	And User navigates to the "Custom Fields" sub-menu on the Details page
+	And User navigates to the 'Custom Fields' left submenu item
 		#cannot be checked because there is only one item in the table (need to wait for new data in GD?)
 	#When User clicks on 'Custom Field' column header
 	#Then date in table is sorted by 'Custom Field' column in ascending order

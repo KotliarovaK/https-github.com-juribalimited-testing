@@ -227,14 +227,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElement(button);
         }
 
-        public IWebElement GetNavigationLinkByName(string linkName)
-        {
-            var link = By.XPath($".//div[@class='title-container']//a[text()='{linkName}']");
-            Driver.WaitForElementToBeDisplayed(link);
-            Driver.WaitForElementToBeEnabled(link);
-            return Driver.FindElement(link);
-        }
-
         public IWebElement GetButtonOnWarningContainerByName(string linkName)
         {
             var button = By.XPath($".//div[@class='mat-dialog-actions']//span[text()='{linkName}']/ancestor::button");
@@ -284,11 +276,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         {
             return Driver.IsElementDisplayed(By.XPath(
                 $".//mat-checkbox[contains(@class, 'checkbox-checked')]/label/span[contains(text(), '{checkboxes}')]"));
-        }
-
-        public bool BucketDropdownDisplay(string textBucket)
-        {
-            return Driver.IsElementDisplayed(By.XPath($".//span[text()='{textBucket}']"));
         }
 
         public bool SelectedItemInProjectScopeChangesSection(string text)

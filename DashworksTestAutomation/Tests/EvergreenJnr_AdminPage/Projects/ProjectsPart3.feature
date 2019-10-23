@@ -11,8 +11,8 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatRedBannerWithOkMessageIsNotDisplaye
 	| ProjectName      | Scope       | ProjectTemplate | Mode               |
 	| TestProject12332 | All Devices | None            | Standalone Project |
 	Then Page with 'TestProject12332' header is displayed to user
-	When User selects "Scope" tab on the Project details page
-	When User selects "Scope Changes" tab on the Project details page
+	When User navigates to the 'Scope' left menu item
+	When User navigates to the 'Scope Changes' left menu item
 	When User expands multiselect to add objects
 	Then Objects are displayed in alphabetical order on the Admin page
 	When User expands multiselect and selects following Objects
@@ -44,14 +44,14 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatNumberOfObjectIsUpdatedInTheSc
 	And User create dynamic list with "<DynamicListName>" name on "<ListName>" page
 	Then "<DynamicListName>" list is displayed to user
 	And "<RowsCount>" rows are displayed in the agGrid
-	When User clicks Create Project from the main list
+	When User selects 'Project' in the 'Create' dropdown
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "<ProjectName>" in the "Project Name" field
-	And User clicks Create button on the Create Project page
+	When User enters '<ProjectName>' text to 'Project Name' textbox
+	And User clicks 'CREATE' button
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Page with '<ProjectName>' header is displayed to user
-	When User selects "Scope Changes" tab on the Project details page
+	When User navigates to the 'Scope Changes' left menu item
 	Then "<ObjectsCount>" is displayed to the user in the Project Scope Changes section
 	When User clicks '<ListName>' on the left-hand menu
 	And User navigates to the "<DynamicListName>" list
@@ -67,7 +67,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatNumberOfObjectIsUpdatedInTheSc
 	When User enters "<ProjectName>" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	Then Page with '<ProjectName>' header is displayed to user
-	When User selects "Scope Changes" tab on the Project details page
+	When User navigates to the 'Scope Changes' left menu item
 	Then "<NewCount>" is displayed to the user in the Project Scope Changes section
 
 Examples:
@@ -84,28 +84,28 @@ Scenario: EvergreenJnr_AdminPage_CheckThatObjectsIsOnboardedToTheProjectWithClon
 	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters "TestProject19" in the "Project Name" field
+	When User enters 'TestProject19' text to 'Project Name' textbox
 	And User selects 'All Devices' option from 'Scope' autocomplete
 	When User selects "Clone from Evergreen to Project" in the Mode Project dropdown
-	And User clicks Create button on the Create Project page
+	And User clicks 'CREATE' button
 	Then Success message is displayed and contains "The project has been created" text
 	And There are no errors in the browser console
 	When User clicks newly created object link
 	Then Page with 'TestProject19' header is displayed to user
-	When User selects "Scope Changes" tab on the Project details page
+	When User navigates to the 'Scope Changes' left menu item
 	And User expands multiselect and selects following Objects
 	| Objects         |
 	| 01BQIYGGUW5PRP6 |
 	And User clicks 'UPDATE ALL CHANGES' button 
 	And User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "1 object queued for onboarding, 0 objects offboarded" text
-	When User selects "Queue" tab on the Project details page
+	When User navigates to the 'Queue' left menu item
 	Then There are no errors in the browser console
 	Then Error message is not displayed on the Projects page
 	Then following Items are displayed in the Queue table
 	| Items           |
 	| 01BQIYGGUW5PRP6 |
-	When User selects "History" tab on the Project details page
+	When User navigates to the 'History' left menu item
 	Then There are no errors in the browser console
 	Then Error message is not displayed on the Projects page
 	Then following Items are displayed in the History table
@@ -121,12 +121,12 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	When Project created via API and opened
 	| ProjectName      | Scope       | ProjectTemplate | Mode               |
 	| TestProject12490 | All Devices | None            | Standalone Project |
-	And User selects "Scope" tab on the Project details page
-	And User selects "Scope Changes" tab on the Project details page
+	And User navigates to the 'Scope' left menu item
+	And User navigates to the 'Scope Changes' left menu item
 	And User navigates to the 'Devices' tab on Project Scope Changes page
 	Then "[Default (Computer)]" Path is displayed to the user
 	And "[None]" Category is displayed to the user
-	And "Unassigned" is displayed in the Bucket dropdown
+	And 'Unassigned' content is displayed in 'Bucket' dropdown
 	When User expands multiselect and selects following Objects
 	| Objects        |
 	| 0IJB93JZPG72PX |
@@ -141,7 +141,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	When User navigates to the 'Users' tab on Project Scope Changes page
 	Then "[Default (User)]" Path is displayed to the user
 	And "[None]" Category is displayed to the user
-	And "Unassigned" is displayed in the Bucket dropdown
+	And 'Unassigned' content is displayed in 'Bucket' dropdown
 	When User expands multiselect and selects following Objects
 	| Objects                        |
 	| ABQ575757 (Salvador K. Waller) |
@@ -154,7 +154,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	Then "Devices 0/0" is displayed in the tab header on the Admin page
 	And "Users 0/0" is displayed in the tab header on the Admin page
 	And "Applications 0/0" is displayed in the tab header on the Admin page
-	When User selects "Queue" tab on the Project details page
+	When User navigates to the 'Queue' left menu item
 	Then There are no errors in the browser console
 	Then Error message is not displayed on the Projects page
 	Then following Items are displayed in the Queue table
@@ -206,7 +206,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	When User selects "Onboard Computer Object" checkbox from String Filter with item list on the Admin page
 	Then Rows counter shows "4" of "6" rows
 	When User waits until Queue disappears
-	And User selects "History" tab on the Project details page
+	And User navigates to the 'History' left menu item
 	Then There are no errors in the browser console
 	Then Error message is not displayed on the Projects page
 	Then Following items displayed in the History table
@@ -265,7 +265,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	When User type "0IJB93JZPG72PX" in Global Search Field
 	Then User clicks on "0IJB93JZPG72PX" search result
 	When User navigates to the 'Projects' left menu item
-	And User navigates to the "Projects Summary" sub-menu on the Details page
+	And User navigates to the 'Projects Summary' left submenu item
 	And User clicks "TestProject12490" link on the Details Page
 	Then "Project Object" page is displayed to the user
 	Then There are no errors in the browser console

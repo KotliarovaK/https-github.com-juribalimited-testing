@@ -100,8 +100,8 @@ Scenario: EvergreenJnr_AdminPage_CheckReadinessDialogContainerDisplay
 	And User clicks 'DELETE' button 
 	Then Readiness Dialog Container is displayed to the User
 	Then "Delete Readinesses" title is displayed in the Readiness Dialog Container
-	Then Cancel button in the pop up is colored gray
-	Then Delete button in the pop up is colored amber
+	Then 'CANCEL' popup button color is 'rgba(236, 237, 239, 1)'
+	Then 'DELETE' popup button color is 'rgba(242, 88, 49, 1)'
 	When User clicks "DELETE" button in the Readiness dialog screen
 	Then Success message is displayed and contains "The selected readinesses have been deleted, changes might not take effect immediately" text
 
