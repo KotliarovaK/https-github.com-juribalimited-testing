@@ -191,11 +191,12 @@ Scenario: EvergreenJnr_AdminPage_CheckTheAvailabilityOfTheUnitsfieldDependingOnT
 	When User selects 'Date Only with Capacity User' option from 'Task' autocomplete
 	When User selects 'Update relative to current value' in the 'Update Date' dropdown
 	When User enters '10' text to 'Value' textbox
-	Then 'Utils' dropdown is disabled
+	Then 'Units' dropdown is disabled
 	#Change task with date and time
 	When User selects 'DDL Slot Task' option from 'Task' autocomplete
 	When User selects 'No change' in the 'Update Value' dropdown
 	When User selects 'Update relative to current value' in the 'Update Date' dropdown
 	When User enters '10' text to 'Value' textbox
+	Then 'Units' dropdown is disabled
 	When User selects 'Hours' in the 'Units' dropdown
 	Then 'CREATE' button is not disabled

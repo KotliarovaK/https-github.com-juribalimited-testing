@@ -374,8 +374,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenDropdownIsDisabled(string dropdown)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            var dropdownState = page.GetDropdown(dropdown).GetAttribute("disabled");
-            //Verify.Contains(page.GetDropdown(dropdown).GetAttribute("disabled"));
+            page.GetDropdown(dropdown).Disabled();
+            //Verify.IsTrue(Convert.ToBoolean(page.GetDropdown(dropdown).Disabled());
         }
 
         [Then(@"'(.*)' textbox is displayed")]
