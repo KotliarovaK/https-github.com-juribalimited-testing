@@ -66,7 +66,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInApplicati
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName    |
+	| ColumnName                                   |
 	| zUserAutom: Relative BU \ DT Auto App (Date) |
 	Then "10 Oct 2019 00:00" content is displayed in "zUserAutom: Relative BU \ DT Auto App (Date)" column
 
@@ -173,3 +173,29 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInDevicesAu
 	| zDeviceAut: Relative BU \ DT Auto Device (Date) |
 	Then "NOT STARTED" content is displayed in "zDeviceAut: Relative BU \ DT Auto Device" column
 	Then "" content is displayed in "zDeviceAut: Relative BU \ DT Auto Device (Date)" column
+
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18543 @Cleanup @Not_Ready
+#Waiting for 'Update relative to current value' value in dropdown
+Scenario: EvergreenJnr_AdminPage_CheckTheAvailabilityOfTheUnitsfieldDependingOnTheTask
+	When User creates new Automation via API and open it
+	| AutomationName   | Description | Active | StopOnFailedAction | Scope     | Run    |
+	| 18543_Automation | 18543       | true   | false              | All Users | Manual |
+	Then Automation page is displayed correctly
+	When User navigates to the 'Actions' left menu item
+	#Create Action
+	When User clicks 'CREATE ACTION' button 
+	When User enters '18543_Action' text to 'Action Name' textbox
+	When User selects 'Update task value' in the 'Action Type' dropdown
+	When User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
+	When User selects 'Stage 3' option from 'Stage' autocomplete
+	When User selects 'Date Only with Capacity User' option from 'Task' autocomplete
+	When User selects 'Update relative to current value' in the 'Update Date' dropdown
+	When User enters '10' text to 'Value' textbox
+	Then 'Utils' dropdown is disabled
+	#Change task with date and time
+	When User selects 'DDL Slot Task' option from 'Task' autocomplete
+	When User selects 'No change' in the 'Update Value' dropdown
+	When User selects 'Update relative to current value' in the 'Update Date' dropdown
+	When User enters '10' text to 'Value' textbox
+	When User selects 'Hours' in the 'Units' dropdown
+	Then 'CREATE' button is not disabled
