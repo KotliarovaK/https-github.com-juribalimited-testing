@@ -13,8 +13,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDynamicFiltersAreClearedForStaticLis
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Windows7Mi: Category" filter where type is "Equals" with added column and following checkboxes:
-	| SelectedCheckboxes  |
-	| None                |
+	| SelectedCheckboxes |
+	| Empty              |
 	Then "Windows7Mi: Category" filter is added to the list
 	When User create dynamic list with "TestListE5FC4A" name on "Devices" page
 	Then "TestListE5FC4A" list is displayed to user

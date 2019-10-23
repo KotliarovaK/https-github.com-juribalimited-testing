@@ -133,7 +133,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatNoneOptionIsAvailableForFilters
 	Then Filters panel is displayed to the user
 	When User add "<FilterName>" filter where type is "Equals" without added column and following checkboxes:
 	| SelectedCheckboxes |
-	| None               |
+	| Empty              |
 	Then Save to New Custom List element is displayed
 	When User click Edit button for "<FilterName>" filter
 	Then User changes filter type to "Does not equal"
@@ -142,7 +142,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatNoneOptionIsAvailableForFilters
 	Then Save to New Custom List element is NOT displayed
 	When User add "<FilterName>" filter where type is "Equals" without added column and following checkboxes:
     | SelectedCheckboxes |
-    | None               |
+    | Empty              |
 	Then Save to New Custom List element is displayed
 	When User Add And "<NewFilterName>" filter where type is "Equals" without added column and following checkboxes:
     | SelectedCheckboxes |

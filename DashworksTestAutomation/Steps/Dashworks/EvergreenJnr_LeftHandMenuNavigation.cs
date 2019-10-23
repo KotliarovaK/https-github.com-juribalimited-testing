@@ -60,7 +60,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     break;
 
                 default:
-                    header.CheckPageHeader(listPage.ToLower());
+                    header.CheckPageHeader(listPage);
                     break;
             }
         }
