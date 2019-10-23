@@ -488,14 +488,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return Driver.FindElement(selector);
         }
 
-        public string ActiveCustomListName()
-        {
-            var by = By.XPath(
-                ".//div[contains(@class, 'active-list')]//span[contains(@class,'name')]");
-            Driver.WaitForElement(by);
-            return Driver.FindElement(by).Text;
-        }
-
         public void ClickContentByColumnName(string columnName)
         {
             var byControl = By.XPath($".//div[@col-id='{GetColIdByColumnName(columnName)}' and @role='gridcell']//a");

@@ -12,8 +12,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplaye
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Windows7Mi: Category" filter where type is "Equals" without added column and following checkboxes:
-	| SelectedCheckboxes  |
-	| None                |
+	| SelectedCheckboxes |
+	| Empty              |
 	Then "Windows7Mi: Category" filter is added to the list
 	When User have removed "Windows7Mi: Category" filter
 	Then Save to New Custom List element is NOT displayed
@@ -25,8 +25,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplaye
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Windows7Mi: Category" filter where type is "Equals" without added column and following checkboxes:
-	| SelectedCheckboxes  |
-	| None                |
+	| SelectedCheckboxes |
+	| Empty              |
 	Then "Windows7Mi: Category" filter is added to the list
 	When User have reset all filters
 	Then Save to New Custom List element is NOT displayed
@@ -38,8 +38,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplaye
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Windows7Mi: Category" filter where type is "Equals" without added column and following checkboxes:
-	| SelectedCheckboxes  |
-	| None                |
+	| SelectedCheckboxes |
+	| Empty              |
 	Then "Windows7Mi: Category" filter is added to the list
 	When User create dynamic list with "TestListF20A85" name on "Devices" page
 	Then "TestListF20A85" list is displayed to user
@@ -61,8 +61,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplaye
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Windows7Mi: Category" filter where type is "Equals" without added column and following checkboxes:
-	| SelectedCheckboxes  |
-	| None                |
+	| SelectedCheckboxes |
+	| Empty              |
 	Then "Windows7Mi: Category" filter is added to the list
 	When User create dynamic list with "TestListE63B7D" name on "Devices" page
 	Then "TestListE63B7D" list is displayed to user
