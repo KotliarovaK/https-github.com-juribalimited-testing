@@ -62,6 +62,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@id='submenu']")]
         public IWebElement ListsPanel { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'submenu-top-item')]")]
+        public IList<IWebElement> SubMenuTopItems { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -101,10 +104,17 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IWebElement GetActiveList()
         {
+            Driver.WaitForElementsToBeDisplayed(SubMenuTopItems);
+
+            if (SubMenuTopItems.Any(x => x.GetAttribute("class").Contains("selected")))
+            {
+                return SubMenuTopItems.FirstOrDefault(x => x.IsElementSelected());
+            }
+
             Driver.WaitForAnyElementToContainsTextInAttribute(ListElementsInListsPanel.Select(x => x.FindElement(ListSubMenusInListsPanel)),
                 "active", "class");
             return ListElementsInListsPanel.Select(x => x.FindElement(ListSubMenusInListsPanel))
-                .FirstOrDefault(WebElementExtensions.IsElementActive);
+                .FirstOrDefault(c => c.IsElementActive());
         }
 
         public bool GetFavoriteStatus(string listName)

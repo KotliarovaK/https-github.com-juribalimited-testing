@@ -29,6 +29,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='filter-panel']")]
         public IWebElement FiltersPanel { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@id='context-container']")]
+        public IWebElement ContextPanel { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'filter-add-group')]")]
         public IWebElement AddNewFilterButton { get; set; }
 
@@ -172,7 +175,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Driver.WaitForDataLoading();
             return new List<By>
             {
-                SelectorFor(this, p => p.FiltersPanel)
+                SelectorFor(this, p => p.ContextPanel)
             };
         }
 

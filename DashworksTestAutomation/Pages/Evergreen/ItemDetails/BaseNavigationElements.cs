@@ -51,7 +51,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         {
             Driver.WaitForElementsToBeDisplayed(By.XPath(LeftSubMenuSelector), 30, false);
             return Driver.FindElements(By.XPath(LeftSubMenuSelector))
-                .First(x => x.Text.Equals(name) && x.Displayed());
+                .First(x => x.Text.RemoveBracketsText().Equals(name) && x.Displayed());
         }
 
         public IWebElement GetParentMenuByName(string name)

@@ -135,6 +135,18 @@ namespace DashworksTestAutomation.Extensions
             }
         }
 
+        public static bool IsElementSelected(this IWebElement element)
+        {
+            try
+            {
+                return element.GetAttribute("class").Contains("selected");
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         #region Checkboxes
 
         public static void CheckCheckBox(this IWebElement checkbox)

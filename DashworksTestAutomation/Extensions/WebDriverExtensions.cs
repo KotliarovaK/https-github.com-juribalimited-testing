@@ -1357,9 +1357,19 @@ namespace DashworksTestAutomation.Extensions
             WaitElementContainsText(driver, selector, expectedText, false, waitSec);
         }
 
-        public static void WaitForElementToHaveText(this RemoteWebDriver driver, IWebElement element, string expectedText, int waitSec = WaitTimeoutSeconds)
+        public static void WaitForElementToHaveText(this RemoteWebDriver driver, IWebElement element, string expectedText, int waitSec = WaitTimeoutSeconds, bool throwException = true)
         {
-            WaitElementContainsText(driver, element, expectedText, true, waitSec);
+            try
+            {
+                WaitElementContainsText(driver, element, expectedText, true, waitSec);
+            }
+            catch (Exception e)
+            {
+                if (throwException)
+                {
+                    throw e;
+                }
+            }
         }
 
         public static void WaitForElementToHaveText(this RemoteWebDriver driver, By selector, string expectedText, int waitSec = WaitTimeoutSeconds)
