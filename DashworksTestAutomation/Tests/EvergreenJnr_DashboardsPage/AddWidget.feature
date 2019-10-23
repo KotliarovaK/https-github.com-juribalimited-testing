@@ -225,7 +225,6 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTheAppropriateFilterWithTheEmptyV
 	When User clicks on 'Empty' category of 'WidgetForDAS18066' widget
 	Then All text is not displayed for "Vendor" column in the String Filter
 
-
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16842 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckImageAndTooltipDisplayingForListDropdown
 	When Dashboard with "DAS16842_Dashboard" name created via API and opened
