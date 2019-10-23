@@ -238,7 +238,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         private string ActionElementSelector(string columnName)
         {
             var results =
-                $".//div[@role='presentation']//div[@class='ag-header-row'][2]/div[{GetColumnNumberByName(columnName)}]//div[contains(@class, 'ag-floating-filter')]";
+                $".//div[@role='presentation']//div[@class='ag-header-row'][2]/div[{GetColumnNumberByName(columnName)}]//div[contains(@ref,'eFloatingFilterBody')]";
             return results;
         }
 
@@ -278,7 +278,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public void PopulateDatepickerByColumnName(string columnName, string text)
         {
             var input = GetDatepickerByColumnName(columnName);
-            input.Click();
             input.Clear();
             input.SendKeys(text);
             BodyContainer.Click();
