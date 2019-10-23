@@ -238,7 +238,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         private string ActionElementSelector(string columnName)
         {
             var results =
-                $".//div[@role='presentation']//div[@class='ag-header-row'][2]/div[{GetColumnNumberByName(columnName)}]//div[@class='ag-floating-filter-full-body']";
+                $".//div[@role='presentation']//div[@class='ag-header-row'][2]/div[{GetColumnNumberByName(columnName)}]//div[contains(@class, 'ag-floating-filter')]";
             return results;
         }
 
