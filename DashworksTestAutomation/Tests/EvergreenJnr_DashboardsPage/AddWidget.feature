@@ -220,8 +220,9 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTheAppropriateFilterWithTheEmptyV
 	When User clicks Edit mode trigger on Dashboards page
 	When User clicks 'ADD WIDGET' button
 	When User creates new Widget
-	| WidgetType | Title             | List             | SplitBy | AggregateFunction | OrderBy    | DrillDown |
-	| Pie        | WidgetForDAS18066 | All Applications | Vendor  | Count             | Count DESC | Yes       |
+	| WidgetType | Title             | List             | SplitBy | AggregateFunction | OrderBy    | DrillDown | ShowLegend |
+	| Pie        | WidgetForDAS18066 | All Applications | Vendor  | Count             | Count DESC | Yes       | true       |
 	When User clicks on 'Empty' category of 'WidgetForDAS18066' widget
+	Then All text is not displayed for "Vendor" column in the String Filter
 
 

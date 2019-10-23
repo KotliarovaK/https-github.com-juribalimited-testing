@@ -920,7 +920,8 @@ this.FeatureBackground();
                         "SplitBy",
                         "AggregateFunction",
                         "OrderBy",
-                        "DrillDown"});
+                        "DrillDown",
+                        "ShowLegend"});
             table19.AddRow(new string[] {
                         "Pie",
                         "WidgetForDAS18066",
@@ -928,11 +929,14 @@ this.FeatureBackground();
                         "Vendor",
                         "Count",
                         "Count DESC",
-                        "Yes"});
+                        "Yes",
+                        "true"});
 #line 222
  testRunner.When("User creates new Widget", ((string)(null)), table19, "When ");
 #line 225
  testRunner.When("User clicks on \'Empty\' category of \'WidgetForDAS18066\' widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 226
+ testRunner.Then("All text is not displayed for \"Vendor\" column in the String Filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
