@@ -264,6 +264,28 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         #endregion
 
+        #region Datepicker
+
+        public IWebElement GetDatepickerByColumnName(string columnName)
+        {
+            var selector =
+                By.XPath(
+                    $"{ActionElementSelector(columnName)}//input[@aria-label='Date']");
+            Driver.WaitForElementToBeDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public void PopulateDatepickerByColumnName(string columnName, string text)
+        {
+            var input = GetDatepickerByColumnName(columnName);
+            input.Click();
+            input.Clear();
+            input.SendKeys(text);
+            BodyContainer.Click();
+        }
+
+        #endregion
+
         #region Dropdown
 
         public IWebElement GetDropdownFilterTextByColumnName(string columnName, string text)
