@@ -260,8 +260,17 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var page = _driver.NowAt<BaseGridPage>();
             var numbers = page.GetColumnContentByColumnName(columnName).ToList().Select(x => x.Text);
             var total = numbers.Where(x => !string.IsNullOrEmpty(x)).Sum(x => Convert.ToInt32(x));
-            Verify.That(total, Is.EqualTo(expectedSum), 
+            Verify.That(total, Is.EqualTo(expectedSum),
                 $"Sum of objects in the '{columnName}' column is incorrect!");
+        }
+
+        [Then(@"all cells in the '(.*)' column are empty")]
+        public void ThenAllCellsInTheColumnAreEmpty(string columnName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            var cells = page.GetColumnContentByColumnName(columnName).ToList().Select(x => x.Text);
+            Verify.IsTrue(cells.All(string.IsNullOrEmpty),
+                $"Some content is displayed in the '{columnName}' column");
         }
 
         #endregion
