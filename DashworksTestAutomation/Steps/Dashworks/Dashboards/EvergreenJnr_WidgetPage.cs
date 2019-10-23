@@ -613,8 +613,5 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             _driver.ExecuteAction(() => page.GetWidgetChartItem(widgetName, category).Click());
         }
-
-
-
     }
 }
