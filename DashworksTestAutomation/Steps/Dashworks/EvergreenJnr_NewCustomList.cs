@@ -346,13 +346,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
-        [Then(@"list name automatically changed to ""(.*)"" name")]
-        public void ThenListNameAutomaticallyChangedToName(string listName)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            Utils.Verify.AreEqual(listName, page.ActiveCustomListName(), "PLEASE ADD EXCEPTION MESSAGE");
-        }
-
         [Then(@"list with ""(.*)"" name is not displayed")]
         [Then(@"list with ""(.*)"" name is removed")]
         public void ThenListWithNameIsRemoved(string listName)

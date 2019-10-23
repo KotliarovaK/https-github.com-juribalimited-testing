@@ -34,12 +34,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = GroupTitleSelector)]
         public IList<IWebElement> GroupTitle { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[text()='RESET']")]
-        public IWebElement ResetColumnsButton { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'filter-category ng-star-inserted')]")]
-        public IList<IWebElement> ColumnCategories { get; set; }
-
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'sub-categories-item')]")]
         public IList<IWebElement> ColumnSubcategories { get; set; }
 
