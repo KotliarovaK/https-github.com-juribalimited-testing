@@ -87,6 +87,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Teams
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS11944")]
         [NUnit.Framework.CategoryAttribute("Teams")]
+        [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Projects")]
+        [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Teams")]
         public virtual void EvergreenJnr_AdminPage_CheckSelectedRowsCountDisplayingOnTeamsGrids()
         {
             System.Exception lastException = null;
@@ -121,7 +123,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Teams
                         "EvergreenJnr_AdminPage",
                         "AdminPage",
                         "DAS11944",
-                        "Teams"});
+                        "Teams",
+                        "Do_Not_Run_With_Projects",
+                        "Do_Not_Run_With_Teams"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
