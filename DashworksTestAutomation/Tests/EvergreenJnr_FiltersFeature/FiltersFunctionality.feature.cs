@@ -7588,7 +7588,7 @@ this.FeatureBackground();
                     " header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table134 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Values"});
+                        "Content"});
             table134.AddRow(new string[] {
                         "User Slot 1"});
             table134.AddRow(new string[] {
@@ -7611,7 +7611,7 @@ this.FeatureBackground();
                     " header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table135 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Values"});
+                        "Content"});
             table135.AddRow(new string[] {
                         "User Slot 2"});
             table135.AddRow(new string[] {
@@ -7708,7 +7708,7 @@ this.FeatureBackground();
  testRunner.When("User clicks on \'1803: Pre-Migration \\ Scheduled Date (Slot)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table138 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Values"});
+                        "Content"});
             table138.AddRow(new string[] {
                         "Birmingham Morning"});
             table138.AddRow(new string[] {
@@ -7735,7 +7735,7 @@ this.FeatureBackground();
  testRunner.When("User clicks on \'1803: Pre-Migration \\ Scheduled Date (Slot)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table139 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Values"});
+                        "Content"});
             table139.AddRow(new string[] {
                         "London Depot 09:00 - 11:00"});
             table139.AddRow(new string[] {
@@ -7831,7 +7831,7 @@ this.FeatureBackground();
                     "on) (Slot)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table141 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Values"});
+                        "Content"});
             table141.AddRow(new string[] {
                         "Application Slot 1"});
             table141.AddRow(new string[] {
@@ -7850,7 +7850,7 @@ this.FeatureBackground();
                     "on) (Slot)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table142 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Values"});
+                        "Content"});
             table142.AddRow(new string[] {
                         "Application Slot 2"});
             table142.AddRow(new string[] {
@@ -7947,7 +7947,7 @@ this.FeatureBackground();
  testRunner.When("User clicks on \'MailboxEve: 1 \\ Scheduled - mailbox (Slot)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table145 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Values"});
+                        "Content"});
             table145.AddRow(new string[] {
                         "CA -Mailbox-Nov 1, 2018-Nov 10, 2018"});
             table145.AddRow(new string[] {
@@ -7960,7 +7960,7 @@ this.FeatureBackground();
  testRunner.When("User clicks on \'MailboxEve: 1 \\ Scheduled - mailbox (Slot)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table146 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Values"});
+                        "Content"});
             table146.AddRow(new string[] {
                         "TRT-Mailbox-Nov 11, 2018-Nov 24, 2018\\RT=A\\T=Admin"});
             table146.AddRow(new string[] {
@@ -10730,7 +10730,7 @@ this.FeatureBackground();
  testRunner.Then("\"4\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table226 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Values"});
+                        "Content"});
             table226.AddRow(new string[] {
                         "Offboarded"});
             table226.AddRow(new string[] {

@@ -1742,7 +1742,7 @@ Scenario: EvergreenJnr_UsersList_CheckSlotsSortOrderForUsersList
 	| BCLABS         |
 	When User clicks on 'UserEvergr: Stage 2 \ Dropdown Non RAG Date (User) (Slot)' column header
 	Then Content in the 'UserEvergr: Stage 2 \ Dropdown Non RAG Date (User) (Slot)' column is equal to
-	| Values      |
+	| Content     |
 	| User Slot 1 |
 	| User Slot 1 |
 	| User Slot 1 |
@@ -1752,7 +1752,7 @@ Scenario: EvergreenJnr_UsersList_CheckSlotsSortOrderForUsersList
 	| User Slot 2 |
 	When User clicks on 'UserEvergr: Stage 2 \ Dropdown Non RAG Date (User) (Slot)' column header
 	Then Content in the 'UserEvergr: Stage 2 \ Dropdown Non RAG Date (User) (Slot)' column is equal to
-	| Values      |
+	| Content     |
 	| User Slot 2 |
 	| User Slot 2 |
 	| User Slot 1 |
@@ -1775,7 +1775,7 @@ Scenario: EvergreenJnr_DevicesList_CheckSlotsSortOrderForDevicesList
 	| Laptop         |
 	When User clicks on '1803: Pre-Migration \ Scheduled Date (Slot)' column header
 	Then Content in the '1803: Pre-Migration \ Scheduled Date (Slot)' column is equal to
-	| Values                     |
+	| Content                    |
 	| Birmingham Morning         |
 	| Manchester Morning         |
 	| Manchester Morning         |
@@ -1788,7 +1788,7 @@ Scenario: EvergreenJnr_DevicesList_CheckSlotsSortOrderForDevicesList
 	| London Depot 09:00 - 11:00 |
 	When User clicks on '1803: Pre-Migration \ Scheduled Date (Slot)' column header
 	Then Content in the '1803: Pre-Migration \ Scheduled Date (Slot)' column is equal to
-	| Values                     |
+	| Content                    |
 	| London Depot 09:00 - 11:00 |
 	| London Depot 09:00 - 11:00 |
 	| London Depot 09:00 - 11:00 |
@@ -1811,7 +1811,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckSlotsSortOrderForApplicationsList
 	| Empty              |
 	When User clicks on 'UserEvergr: Stage 3 \ Radiobutton Readiness Date Owner (Application) (Slot)' column header
 	Then Content in the 'UserEvergr: Stage 3 \ Radiobutton Readiness Date Owner (Application) (Slot)' column is equal to
-	| Values             |
+	| Content            |
 	| Application Slot 1 |
 	| Application Slot 1 |
 	| Application Slot 1 |
@@ -1819,7 +1819,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckSlotsSortOrderForApplicationsList
 	| Application Slot 2 |
 	When User clicks on 'UserEvergr: Stage 3 \ Radiobutton Readiness Date Owner (Application) (Slot)' column header
 	Then Content in the 'UserEvergr: Stage 3 \ Radiobutton Readiness Date Owner (Application) (Slot)' column is equal to
-	| Values             |
+	| Content            |
 	| Application Slot 2 |
 	| Application Slot 1 |
 	| Application Slot 1 |
@@ -1842,13 +1842,13 @@ Scenario: EvergreenJnr_MailboxesList_CheckSlotsSortOrderForMailboxes
 	| Balanceactiv, Info        |
 	When User clicks on 'MailboxEve: 1 \ Scheduled - mailbox (Slot)' column header
 	Then Content in the 'MailboxEve: 1 \ Scheduled - mailbox (Slot)' column is equal to
-	| Values                                             |
+	| Content                                            |
 	| CA -Mailbox-Nov 1, 2018-Nov 10, 2018               |
 	| CA -Mailbox-Nov 11, 2018-Nov 30, 2018              |
 	| TRT-Mailbox-Nov 11, 2018-Nov 24, 2018\RT=A\T=Admin |
 	When User clicks on 'MailboxEve: 1 \ Scheduled - mailbox (Slot)' column header
 	Then Content in the 'MailboxEve: 1 \ Scheduled - mailbox (Slot)' column is equal to
-	| Values                                             |
+	| Content                                            |
 	| TRT-Mailbox-Nov 11, 2018-Nov 24, 2018\RT=A\T=Admin |
 	| CA -Mailbox-Nov 11, 2018-Nov 30, 2018              |
 	| CA -Mailbox-Nov 1, 2018-Nov 10, 2018               |
@@ -2419,7 +2419,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOffboardedItemsDontShowAnyOtherProje
 	| Offboarded     |
 	Then "4" rows are displayed in the agGrid
 	And Content in the '1803: Status' column is equal to
-	| Values     |
+	| Content    |
 	| Offboarded |
 	| Offboarded |
 	| Offboarded |
