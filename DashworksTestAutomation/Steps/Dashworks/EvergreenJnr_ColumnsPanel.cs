@@ -6,6 +6,7 @@ using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages;
 using DashworksTestAutomation.Pages.Evergreen;
+using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.Base;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
@@ -169,7 +170,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenAscendingOrderSortedOnColumnIsDisplayedInURL(string columnName)
         {
             var currentUrl = _driver.Url;
-            var sorting = _driver.NowAt<BaseDashboardPage>();
+            var sorting = _driver.NowAt<BaseGridPage>();
             Utils.Verify.IsTrue(sorting.AscendingSortingIcon.Displayed(), "Ascending icon is not displayed");
             Utils.Verify.Contains("%20asc", currentUrl, columnName);
         }
@@ -423,8 +424,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"Lowest value of ""(.*)"" column is null")]
         public void ThenLowestValueOfColumnIsNull(string columnName)
         {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            var content = page.GetColumnContent(columnName);
+            var page = _driver.NowAt<BaseGridPage>();
+            var content = page.GetColumnContentByColumnName(columnName);
             Verify.IsFalse(content.Contains("-1"), "The Lowest value is not null");
         }
 

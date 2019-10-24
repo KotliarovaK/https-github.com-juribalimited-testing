@@ -506,12 +506,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"content is present in the following newly added columns:")]
         public void ThenContentIsPresentInTheFollowingNewlyAddedColumns(Table table)
         {
-            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            var page = _driver.NowAt<BaseGridPage>();
 
             foreach (var row in table.Rows)
                 if (row["ColumnName"] != "Group Key" && row["ColumnName"] != "Category Key")
                 {
-                    var content = page.GetColumnIdContent(row["ColumnName"]);
+                    var content = page.GetColumnContentByColumnName(row["ColumnName"]);
                     Utils.Verify.IsTrue(content.Count(x => !string.IsNullOrEmpty(x)) > 0, "Newly added column is empty");
                 }
         }
@@ -533,11 +533,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"Content is present in the column of the Details Page table")]
         public void ThenContentIsPresentInTheColumnOfTheDetailsPageTable(Table table)
         {
-            var page = _driver.NowAt<BaseDashboardPage>();
+            var page = _driver.NowAt<BaseGridPage>();
 
             foreach (var row in table.Rows)
             {
-                var content = page.GetColumnContent(row["ColumnName"]);
+                var content = page.GetColumnContentByColumnName(row["ColumnName"]);
                 //Check that at least 1 cell has some content
                 Utils.Verify.IsTrue(content.Count(x => !string.IsNullOrEmpty(x)) > 0, "Column is empty");
             }

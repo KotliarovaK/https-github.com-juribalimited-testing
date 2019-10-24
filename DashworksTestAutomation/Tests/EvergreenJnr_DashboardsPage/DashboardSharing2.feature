@@ -8,9 +8,7 @@ Background: Pre-Conditions
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14841 @DAS14282 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForEditSharedList
 	When User clicks the Logout button
-	When User clicks the Switch to Evergreen link
-	And User clicks on the Login link
-	And User login with following credentials:
+	When User is logged in to the Evergreen as
 	| Username          | Password  |
 	| automation_admin1 | m!gration |
 	When User clicks the Switch to Evergreen link
@@ -27,11 +25,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForEdit
 	And User select "Edit" in Select Access dropdown
 	And User clicks 'ADD USER' button 
 	And User clicks 'ADD USER' button 
-	And User clicks the Logout button
-	Then User is logged out
-	When User clicks the Switch to Evergreen link
-	When User clicks on the Login link
-	And User login with following credentials:
+	When User clicks the Logout button
+	When User is logged in to the Evergreen as
 	| Username           | Password  |
 	| automation_admin10 | m!gration |
 	When User clicks the Switch to Evergreen link
@@ -58,10 +53,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForEdit
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14841 @DAS11120 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdminSharedList
 	When User clicks the Logout button
-	Then User is logged out
-	When User clicks the Switch to Evergreen link
-	When User clicks on the Login link
-	And User login with following credentials:
+	When User is logged in to the Evergreen as
 	| Username          | Password  |
 	| automation_admin1 | m!gration |
 	When User clicks the Switch to Evergreen link
@@ -81,10 +73,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdmi
 	And User clicks 'ADD USER' button 
 	
 	When User clicks the Logout button
-	Then User is logged out
-	When User clicks the Switch to Evergreen link
-	When User clicks on the Login link
-	And User login with following credentials:
+	When User is logged in to the Evergreen as
 	| Username           | Password  |
 	| automation_admin10 | m!gration |
 	When User clicks the Switch to Evergreen link
@@ -110,10 +99,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdmi
 	And Permission "Everyone can see" displayed in Dashboard Details
 	#login as user1 and check if list permission changed
 	When User clicks the Logout button
-	Then User is logged out
-	When User clicks the Switch to Evergreen link
-	When User clicks on the Login link
-	And User login with following credentials:
+	When User is logged in to the Evergreen as
 	| Username          | Password  |
 	| automation_admin1 | m!gration |
 	When User clicks the Switch to Evergreen link
@@ -136,13 +122,10 @@ Scenario: EvergreenJnr_DashboardsPage_CheckUserCanRemoveYourselfFromSharedDashbo
 	And User adds user to list of shared person
 	| User                | Permission |
 	| Automation Admin 10 | Admin      |
-	Then User "automation_admin10" was added to shared list with "Admin" permission
+	Then User 'automation_admin10' was added to shared list with 'Admin' permission
 	#login as user2
 	When User clicks the Logout button
-	Then User is logged out
-	When User clicks the Switch to Evergreen link
-	And User clicks on the Login link
-	And User login with following credentials:
+	When User is logged in to the Evergreen as
 	| Username           | Password  |
 	| automation_admin10 | m!gration |
 	And User clicks the Switch to Evergreen link
@@ -173,14 +156,10 @@ Scenario: EvergreenJnr_DashboardsPage_CheckUserCanEditWidgetFromSharedDashboard
 	And User adds user to list of shared person
 	| User                | Permission |
 	| Automation Admin 10 | Edit       |
-	Then User "automation_admin10" was added to shared list with "Edit" permission
+	Then User 'automation_admin10' was added to shared list with 'Edit' permission
 	#login as user2
 	When User clicks the Logout button
-	Then User is logged out
-	When User clicks the Switch to Evergreen link
-	And User clicks on the Login link
-	And User login with following credentials:
-	| Username           | Password  |
+	When User is logged in to the Evergreen as
 	| automation_admin10 | m!gration |
 	And User clicks the Switch to Evergreen link
 	#edit widget
@@ -207,13 +186,10 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserWithEditRightsCanChangeDashbo
 	And User adds user to list of shared person
 	| User                | Permission |
 	| Automation Admin 10 | Admin      |
-	Then User "automation_admin10" was added to shared list with "Admin" permission
+	Then User 'automation_admin10' was added to shared list with 'Admin' permission
 	#login as user2
 	When User clicks the Logout button
-	Then User is logged out
-	When User clicks the Switch to Evergreen link
-	And User clicks on the Login link
-	And User login with following credentials:
+	When User is logged in to the Evergreen as
 	| Username           | Password  |
 	| automation_admin10 | m!gration |
 	And User clicks the Switch to Evergreen link
@@ -228,39 +204,33 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserWithEditRightsCanChangeDashbo
 Scenario: EvergreenJnr_DashboardsPage_CheckThatUserWithAdminRightsCanAddUserInSharedSection
 	#create dashboard and share it
 	When Dashboard with "Dashboard for Share" name created via API and opened
-	And User clicks Show Dashboards panel icon on Dashboards page
-	And User clicks Settings button for "Dashboard for Share" dashboard
+	When User clicks Show Dashboards panel icon on Dashboards page
+	When User clicks Settings button for "Dashboard for Share" dashboard
 	When User clicks 'Manage' option in opened Cog-menu
 	Then Permission panel is displayed to the user
 	When User changes sharing type from "Private" to "Specific users"
-	And User adds user to list of shared person
+	When User adds user to list of shared person
 	| User                | Permission |
 	| Automation Admin 10 | Admin      |
-	Then User "automation_admin10" was added to shared list with "Admin" permission
-	#login as user2
+	Then User 'automation_admin10' was added to shared list with 'Admin' permission
 	When User clicks the Logout button
-	Then User is logged out
-	When User clicks the Switch to Evergreen link
-	And User clicks on the Login link
-	And User login with following credentials:
+	When User is logged in to the Evergreen as
 	| Username           | Password  |
 	| automation_admin10 | m!gration |
-	And User clicks the Switch to Evergreen link
-	And User clicks Show Dashboards panel icon on Dashboards page
-	And User clicks Settings button for "Dashboard for Share" dashboard
+	When User clicks Show Dashboards panel icon on Dashboards page
+	When User clicks Settings button for "Dashboard for Share" dashboard
 	When User clicks 'Manage' option in opened Cog-menu
 	Then Permission panel is displayed to the user
 	When User adds user to list of shared person
 	| User          | Permission |
 	| Administrator | Edit       |
-	Then User "Admin" was added to shared list with "Edit" permission
+	Then User 'Admin' was added to shared list with 'Edit' permission
 	When User clicks Settings button for "Admin" shared user
-	And User selects "Remove" option from Settings
-	And User adds user to list of shared person
+	When User selects "Remove" option from Settings
+	When User adds user to list of shared person
 	| User          | Permission |
 	| Administrator | Read       |
-	Then User "Admin" was added to shared list with "Read Only" permission
-
+	Then User 'Admin' was added to shared list with 'Read Only' permission
 
 	#Sergiy: DAS14263 create test and recomment issue
 	#When User clicks Dashboards Details icon on Dashboards page

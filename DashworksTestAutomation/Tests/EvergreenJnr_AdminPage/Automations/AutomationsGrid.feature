@@ -106,5 +106,5 @@ Scenario: EvergreenJnr_AdminPage_CheckCreatedByAndCreatedDateColumnOnTheAutomati
 	When User enters "[User not found]" text in the Search field for "Created By" column
 	Then Rows counter contains "7" found row of all rows
 	When User clicks Reset Filters button on the Admin page
-	When User enters "9 Aug 2019" text in the Search field for "Created Date" column
+	When User enters '9 Aug 2019' text in the Search field for 'Created Date' datepicker
 	Then Rows counter contains "6" found row of all rows

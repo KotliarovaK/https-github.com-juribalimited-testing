@@ -1302,6 +1302,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 _lastUsedBucket.Value = text;
         }
 
+        [When(@"User enters '(.*)' text in the Search field for '(.*)' datepicker")]
+        public void WhenUserEntersTextInTheSearchFieldForDatepicker(string text, string columnName)
+        {
+            var searchElement = _driver.NowAt<BaseGridPage>();
+            searchElement.PopulateDatepickerByColumnName(columnName, text);
+        }
+
         [When(@"User changes value to ""(.*)"" for ""(.*)"" column")]
         public void WhenUserChangesValueToForColumn(string value, string columnName)
         {
@@ -1415,10 +1422,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"""(.*)"" column content is displayed in the following order:")]
         public void ThenColumnContentIsDisplayedInTheFollowingOrder(string columnName, Table table)
         {
-            var action = _driver.NowAt<BaseDashboardPage>();
+            var action = _driver.NowAt<BaseGridPage>();
             _driver.WaitForDataLoading();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            var actualList = action.GetColumnContent(columnName);
+            var actualList = action.GetColumnContentByColumnName(columnName);
             Verify.AreEqual(expectedList, actualList, "Column content is different");
         }
 

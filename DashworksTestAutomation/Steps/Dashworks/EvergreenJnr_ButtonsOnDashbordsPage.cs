@@ -137,8 +137,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"Empty link is displayed for first row in the ""(.*)"" column")]
         public void ThenEmptyLinkIsDisplayedForFirstRowInTheColumn(string columnName)
         {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            Utils.Verify.AreEqual("Empty", page.GetColumnContent(columnName).First(), "PLEASE ADD EXCEPTION MESSAGE");
+            var page = _driver.NowAt<BaseGridPage>();
+            Utils.Verify.AreEqual("Empty", page.GetColumnContentByColumnName(columnName).First(), "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"Account Profile menu is displayed correctly")]
