@@ -2168,6 +2168,8 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DataInTable.feature.cs</LastGenOutput>
     </None>
+    <None Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsContent\ActionsWithFieldsContent\CheckingExistingFields.feature" />
+    <None Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsContent\ActionsWithFieldsContent\CheckingFieldsContent.feature" />
     <None Include="Tests\EvergreenJnr_ItemDetails\Tabs\Applications\ProjectOwned.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ProjectOwned.feature.cs</LastGenOutput>
