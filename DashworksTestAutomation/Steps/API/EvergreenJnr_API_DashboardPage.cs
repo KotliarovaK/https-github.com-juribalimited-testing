@@ -71,7 +71,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Dashboard
             _driver.WaitForDataLoading();
         }
 
-        [AfterScenario("Cleanup")]
+        [AfterScenario("Cleanup", Order = 10)]
         public void DeleteNewlyCreatedDashboard()
         {
             if (!_dashboard.Value.Any())
