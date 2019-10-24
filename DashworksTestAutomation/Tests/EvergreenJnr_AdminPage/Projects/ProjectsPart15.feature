@@ -150,8 +150,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatItemsToAddValuesAreNotCachedAfterScope
 Scenario: EvergreenJnr_AdminPage_TheGreenBannerIsNotDisplayedIfBannerWasBeShownOnce
 	When Project created via API and opened
 	| ProjectName  | Scope       | ProjectTemplate | Mode               |
-	| Project12965 | All Devices | None            | Standalone Project |
-	Then Page with 'Project12965' header is displayed to user
+	| Project13428 | All Devices | None            | Standalone Project |
+	Then Page with 'Project13428' header is displayed to user
 	When User navigates to the 'Scope' left menu item
 	When User navigates to the 'Scope Changes' left menu item
 	And User navigates to the 'Devices' tab on Project Scope Changes page
