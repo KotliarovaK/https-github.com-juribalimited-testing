@@ -733,10 +733,10 @@ namespace DashworksTestAutomation.Pages
 
             if (allElementsWithColor == 1)
             {
-                var pie = Driver.FindElements(By.XPath(chartSection))
+                var chart = Driver.FindElements(By.XPath(chartSection))
                     .First(x => x.GetCssValue("fill").Equals(legendColor));
 
-                return pie;
+                return chart;
             }
 
             foreach (IWebElement webElement in WidgetElement(widgetName)
@@ -749,7 +749,7 @@ namespace DashworksTestAutomation.Pages
                 {
                     return webElement;
                 }
-
+                //Waiting till tooltip disappears 
                 BodyContainer.Click();
                 Thread.Sleep(2000);
             }
