@@ -29,6 +29,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public string AllCellsInTheGrid = ".//div[@ref='eBodyViewport']//div[@role='gridcell']";
 
+        private string GridCellByColumnName = ".//div[@col-id='{0}' and @role='gridcell']";
+
         //TODO probably can be changed to something more generic
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'checkbox-styled')]//mat-checkbox//input")]
         public IWebElement SelectAllCheckbox { get; set; }
@@ -596,7 +598,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         private string GetColIdByColumnName(string columnName)
         {
-            var by = By.XPath($".//span[text()=\"{columnName}\"]/ancestor::div[@col-id]");
+            var by = By.XPath($".//span[text()='{columnName}']/ancestor::div[@col-id]");
             if (!Driver.IsElementDisplayed(by, WebDriverExtensions.WaitTime.Short))
                 throw new Exception($"'{columnName}' column was not displayed");
             return Driver.FindElement(by).GetAttribute("col-id");
@@ -691,25 +693,26 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public List<string> GetColumnTooltips(string columnName)
         {
-            var by = By.XPath($".//div[@col-id='{GetColIdByColumnName(columnName)}' and @role='gridcell']");
-            return Driver.FindElements(by).Select(x => x.GetAttribute("title")).ToList();
+            return Driver.FindElements(By.XPath(string.Format(GridCellByColumnName, GetColIdByColumnName(columnName))))
+                .Select(x => x.GetAttribute("title")).ToList();
         }
 
         public List<string> GetColumnColors(string columnName)
         {
-            var by = By.XPath($".//div[@col-id='{GetColIdByColumnName(columnName)}' and @role='gridcell']//div[@class='status']");
-            return Driver.FindElements(by).Select(x => x.GetAttribute("style")).ToList();
+            return Driver.FindElements(By.XPath(string.Concat(string.Format(GridCellByColumnName,
+                GetColIdByColumnName(columnName)), "//div[@class='status']"))).Select(x => x.GetAttribute("style")).ToList();
         }
 
         public string GetColumnWidthByName(string columnName)
         {
-            var by = By.XPath($".//div[@col-id='{GetColIdByColumnName(columnName)}' and @role='gridcell']");
-            return Driver.FindElement(by).GetCssValue("width");
+            return Driver.FindElement(By.XPath(string.Format(GridCellByColumnName,
+                GetColIdByColumnName(columnName)))).GetCssValue("width");
         }
 
         public void ClickContentByColumnName(string columnName)
         {
-            var byControl = By.XPath($".//div[@col-id='{GetColIdByColumnName(columnName)}' and @role='gridcell']//a");
+            var byControl = By.XPath(string.Concat(string.Format(GridCellByColumnName,
+                GetColIdByColumnName(columnName)), "//a"));
 
             Driver.WaitForDataLoading();
             Driver.WaitForElementToBeDisplayed(byControl);
@@ -726,9 +729,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public IWebElement GetHrefByColumnName(string columnName)
         {
-            var byControl =
-                By.XPath(
-                    $".//div[@col-id='{GetColIdByColumnName(columnName)}' and @role='gridcell']//a");
+            var byControl = By.XPath(string.Concat(string.Format(GridCellByColumnName,
+                    GetColIdByColumnName(columnName)), "//a"));
 
             Driver.WaitForDataLoading();
             Driver.WaitForElementToBeDisplayed(byControl);
