@@ -1302,6 +1302,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 _lastUsedBucket.Value = text;
         }
 
+        [When(@"User enters '(.*)' text in the Search field for '(.*)' datepicker")]
+        public void WhenUserEntersTextInTheSearchFieldForDatepicker(string text, string columnName)
+        {
+            var searchElement = _driver.NowAt<BaseGridPage>();
+            searchElement.PopulateDatepickerByColumnName(columnName, text);
+        }
+
         [When(@"User changes value to ""(.*)"" for ""(.*)"" column")]
         public void WhenUserChangesValueToForColumn(string value, string columnName)
         {

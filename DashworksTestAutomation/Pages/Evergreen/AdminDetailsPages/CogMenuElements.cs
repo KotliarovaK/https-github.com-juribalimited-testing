@@ -56,7 +56,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public IWebElement GetCogMenuByItem(string item)
         {
             var page = Driver.NowAt<BaseDashboardPage>();
-            
+
             var selector = page.GetGridCellByText(item).FindElement(By.XPath($".//following-sibling::div//div[@class='cell-menu-settings']"));
             Driver.WaitForElementToBeDisplayed(selector);
             return selector;
@@ -64,7 +64,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public IWebElement GetCogMenuOptionByName(string option)
         {
-            return CogMenuItems.FirstOrDefault(x => x.Text.Equals(option));
+            if (CogMenuItems.Any(x => x.Text.Equals(option)))
+            {
+                return CogMenuItems.FirstOrDefault(x => x.Text.Equals(option));
+            }
+
+            throw new Exception($"'{option}' cog-menu item was not found");
         }
 
         public bool CheckItemDisplay(string name)

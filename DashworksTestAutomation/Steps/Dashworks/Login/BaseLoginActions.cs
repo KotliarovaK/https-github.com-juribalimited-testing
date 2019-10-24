@@ -41,9 +41,11 @@ namespace DashworksTestAutomation.Steps.Dashworks.Login
             return user;
         }
 
-        protected void LoginViaApi(RemoteWebDriver driver)
+        protected void LoginViaApiAsUser(RemoteWebDriver driver, UserDto user)
         {
-            var user = GetFreeUserAndAddToUsedUsersList();
+            //Add user credentials to context
+            UsedUsers.Value.Add(user);
+            user.CopyPropertiesTo(User);
 
             var restClient = new RestClient(UrlProvider.Url);
             //Get cookies
@@ -77,6 +79,12 @@ namespace DashworksTestAutomation.Steps.Dashworks.Login
             {
                 _client.ChangeUserProfileLanguage(User.Username, User.Language);
             }
+        }
+
+        protected void LoginViaApi(RemoteWebDriver driver)
+        {
+            var user = GetFreeUserAndAddToUsedUsersList();
+            LoginViaApiAsUser(driver, user);
         }
 
         protected void LoginViaApiOnSenior(RemoteWebDriver driver, UserDto user)
