@@ -720,7 +720,7 @@ namespace DashworksTestAutomation.Pages
 
         public IWebElement GetWidgetChartItem(string widgetName, string chartCategory)
         {
-            var pieSection = ".//*[contains(@class,'highcharts-series-group')]//*";
+            var chartSection = ".//*[contains(@class,'highcharts-series-group')]//*";
 
             var legendColor = WidgetElement(widgetName)
                 .FindElement(By.XPath($".//*[text()='{chartCategory}']/../following-sibling::*"))
@@ -728,19 +728,19 @@ namespace DashworksTestAutomation.Pages
 
             //Count of pieces with the same color
             var allElementsWithColor = WidgetElement(widgetName)
-                .FindElements(By.XPath(pieSection))
+                .FindElements(By.XPath(chartSection))
                 .Count(x => x.GetCssValue("fill").Equals(legendColor));
 
             if (allElementsWithColor == 1)
             {
-                var pie = Driver.FindElements(By.XPath(pieSection))
+                var pie = Driver.FindElements(By.XPath(chartSection))
                     .First(x => x.GetCssValue("fill").Equals(legendColor));
 
                 return pie;
             }
 
             foreach (IWebElement webElement in WidgetElement(widgetName)
-                .FindElements(By.XPath(pieSection))
+                .FindElements(By.XPath(chartSection))
                 .Where(x => x.GetCssValue("fill").Equals(legendColor)))
             {
                 Driver.MouseHover(webElement);
@@ -754,7 +754,7 @@ namespace DashworksTestAutomation.Pages
                 Thread.Sleep(2000);
             }
 
-            throw new Exception($"Unable to find pie with '{widgetName}' text");
+            throw new Exception($"Unable to find widget chart category '{chartCategory}'");
         }
 
         public IWebElement GetListIconFromListSectionOfDetailsPanel(string listname)

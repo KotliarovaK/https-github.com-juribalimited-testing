@@ -223,7 +223,10 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTheAppropriateFilterWithTheEmptyV
 	| WidgetType | Title             | List             | SplitBy | AggregateFunction | OrderBy    | DrillDown | ShowLegend |
 	| Pie        | WidgetForDAS18066 | All Applications | Vendor  | Count             | Count DESC | Yes       | true       |
 	When User clicks on 'Empty' category of 'WidgetForDAS18066' widget
-	Then All text is not displayed for "Vendor" column in the String Filter
+	Then all cells in the 'Vendor' column are empty
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	Then Check that filter 'Vendor' with option 'is empty' is added
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16842 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckImageAndTooltipDisplayingForListDropdown
