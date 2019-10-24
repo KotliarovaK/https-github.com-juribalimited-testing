@@ -269,7 +269,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Readiness
         [Then(@"Filtered readiness item equals to stored one")]
         public void ThenFilteredReadinessItemEqualsToStoredOne()
         {
-            var page = _driver.NowAt<BaseDashboardPage>();
+            var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitForDataLoading();
 
             var tooltip = page.GetRowContentByColumnName("Tooltip");

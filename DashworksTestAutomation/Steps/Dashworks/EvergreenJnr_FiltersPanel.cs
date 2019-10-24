@@ -765,10 +765,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenTableDataIsFilteredCorrectly()
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            var basePage = _driver.NowAt<BaseDashboardPage>();
+            var basePage = _driver.NowAt<BaseGridPage>();
             var filtersNames = filterElement.GetFiltersNames();
             var allColumns = filtersNames.Select(filtersName =>
-                new KeyValuePair<string, List<string>>(filtersName, basePage.GetColumnContent(filtersName))).ToList();
+                new KeyValuePair<string, List<string>>(filtersName, basePage.GetColumnContentByColumnName(filtersName)));
             for (var i = 0; i < allColumns.First().Value.Count; i++)
             {
                 var result = false;

@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
+using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.Base;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -244,8 +245,8 @@ namespace DashworksTestAutomation.Helpers
 
         public override void CheckFilterDate(string filtersName)
         {
-            var basePage = _driver.NowAt<BaseDashboardPage>();
-            var columnContent = basePage.GetColumnContent(filtersName);
+            var basePage = _driver.NowAt<BaseGridPage>();
+            var columnContent = basePage.GetColumnContentByColumnName(filtersName);
             var allValuesAreEmpty = columnContent.All(string.IsNullOrEmpty);
             if (allValuesAreEmpty)
                 throw new Exception($"Column '{filtersName}' does not contain any date.");

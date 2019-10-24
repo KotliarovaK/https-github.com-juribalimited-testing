@@ -2,6 +2,7 @@
 using System.Threading;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
+using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.Base;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
@@ -117,7 +118,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User click content from ""(.*)"" column")]
         public void WhenUserClickContentFromColumn(string columnName)
         {
-            var tableElement = _driver.NowAtWithoutWait<BaseDashboardPage>();
+            var tableElement = _driver.NowAtWithoutWait<BaseGridPage>();
             _driver.WaitForDataLoading();
             tableElement.ClickContentByColumnName(columnName);
             _driver.WaitForDataLoading();
