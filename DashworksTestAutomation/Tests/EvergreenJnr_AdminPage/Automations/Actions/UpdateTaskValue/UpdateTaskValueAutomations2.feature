@@ -249,7 +249,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRemoveOwnerOptionWhenTaskDoesNotHaveDate
 	Then Success message is displayed with "Task successfully created" text
 	When User updates the Task page
 	| TaskHaADueDate | DateModeString | TaskProjectRoleString | TaskHasAnOwner | TaskImpactsReadiness | ShowDetails | ProjectObject | BulkUpdate | SelfService |
-	| true           | DateOnly       | None                  | true           | true                 | false       | false         | false      | false       |
+	| false          | DateOnly       | None                  | true           | true                 | false       | false         | false      | false       |
 	When User publishes the task
 	Then selected task was published
 	When User navigate to Evergreen link
