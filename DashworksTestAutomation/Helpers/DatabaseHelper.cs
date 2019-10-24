@@ -526,5 +526,21 @@ namespace DashworksTestAutomation.Helpers
         }
 
         #endregion
+
+        #region Dashboar
+
+        public static string GetDashboardId(string readinessName, int projectId)
+        {
+            try
+            {
+                return DatabaseHelper.ExecuteReader($"select [RAGStatusId] from [PM].[dbo].[RAGStatus] where [ProjectId] = projectId and [RAGStatus] = '{readinessName}'", 0)[0];
+            }
+            catch (Exception e)
+            {
+                throw new Exception("GetReadinessId returned no results", e);
+            }
+        }
+
+        #endregion
     }
 }
