@@ -156,10 +156,10 @@ namespace DashworksTestAutomation.Pages
         public IWebElement PermissionTypeField { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='permissions-container']//td[@class='userName']")]
-        public IWebElement PermissionNameOfAddedUser { get; set; }
+        public IList<IWebElement> PermissionNameOfAddedUser { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='permissions-container']//td[@class='permission']")]
-        public IWebElement PermissionAccessTypeOfAddedUser { get; set; }
+        public IList<IWebElement> PermissionAccessTypeOfAddedUser { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-labelledby='sharing-label']")]
         public IWebElement SharingDropdown { get; set; }
