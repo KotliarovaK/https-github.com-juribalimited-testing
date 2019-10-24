@@ -127,7 +127,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
             _driver.WaitForElementToBeDisplayed(dashboardElement.SuccessMessage);
 
-            _dashboard.Value.dashboardId = DatabaseHelper.GetDashboardId(dashboardName + "2");
+            _dashboard.Value.DashboardId = DatabaseHelper.GetDashboardId(dashboardName + "2");
         }
 
         [Then(@"Dashboard with name ""(.*)"" marked as favorite")]
@@ -621,7 +621,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             listElement.SaveButton.Click();
             _driver.WaitForElementToBeNotDisplayed(listElement.SaveButton);
             _driver.WaitForDataLoading();
-            _dashboard.Value.dashboardId = DatabaseHelper.GetDashboardId(dashboardName);
+            _dashboard.Value.DashboardId = DatabaseHelper.GetDashboardId(dashboardName);
         }
 
         [When(@"User types ""(.*)"" as dashboard title")]

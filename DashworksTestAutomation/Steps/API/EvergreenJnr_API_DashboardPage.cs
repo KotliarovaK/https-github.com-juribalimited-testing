@@ -49,9 +49,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Dashboard
                     $"Unable to execute request. Error details: {JsonConvert.DeserializeObject<JObject>(response.Content)["details"]}");
 
             var responseContent = JsonConvert.DeserializeObject<JObject>(response.Content);
-            _dashboard.Value.dashboardId = responseContent["dashboardId"].ToString();
+            _dashboard.Value.DashboardId = responseContent["dashboardId"].ToString();
 
-            _driver.Navigate().GoToUrl($"{UrlProvider.EvergreenUrl}/#/dashboards/{_dashboard.Value.dashboardId}");
+            _driver.Navigate().GoToUrl($"{UrlProvider.EvergreenUrl}/#/dashboards/{_dashboard.Value.DashboardId}");
         }
 
         [When(@"Dashboard with ""(.*)"" name is opened via API")]
@@ -66,10 +66,10 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Dashboard
         {
             try
             {
-                if (string.IsNullOrEmpty(_dashboard.Value.dashboardId))
+                if (string.IsNullOrEmpty(_dashboard.Value.DashboardId))
                     return;
 
-                var requestUri = $"{UrlProvider.RestClientBaseUrl}dashboard/{_dashboard.Value.dashboardId}";
+                var requestUri = $"{UrlProvider.RestClientBaseUrl}dashboard/{_dashboard.Value.DashboardId}";
 
                 var request = new RestRequest(requestUri);
                 request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
