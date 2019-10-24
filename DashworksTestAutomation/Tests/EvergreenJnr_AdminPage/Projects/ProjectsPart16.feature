@@ -107,20 +107,23 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	Then Warning message with "25 devices will be added, 25 users will be added, 25 applications will be added" text is displayed on the Admin page
 	When User clicks 'UPDATE PROJECT' button 
 	Then Success message with "75 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
-	And "Applications to add (0 of 2104 selected)" is displayed to the user in the Project Scope Changes section
+	When User navigates to the 'Queue' left menu item
+	When User waits until Queue disappears
+	When User navigates to the 'Scope Changes' left menu item
+	Then "Devices to add (0 of 17254 selected)" is displayed to the user in the Project Scope Changes section
 	And following objects were not found
-	| Objects                                                              |
-	| "WPF/E" (codename) Community Technology Preview (Feb 2007) (0.8.5.0) |
+	| Objects         |
+	| 019BFPQGKK5QT8N |
 	When User navigates to the 'Users' tab on Project Scope Changes page
 	Then "Users to add (0 of 14604 selected)" is displayed to the user in the Project Scope Changes section
 	And following objects were not found
 	| Objects                    |
 	| AAC860150 (Kerrie D. Ruiz) |
-	When User navigates to the 'Devices' tab on Project Scope Changes page
-	Then "Devices to add (0 of 17254 selected)" is displayed to the user in the Project Scope Changes section
+	When User navigates to the 'Applications' tab on Project Scope Changes page
+	Then "Applications to add (0 of 1915 selected)" is displayed to the user in the Project Scope Changes section
 	And following objects were not found
-	| Objects         |
-	| 019BFPQGKK5QT8N |
+	| Objects                                                              |
+	| "WPF/E" (codename) Community Technology Preview (Feb 2007) (0.8.5.0) |
 	#go to create new user
 	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -159,7 +162,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	| Objects                    |
 	| AAC860150 (Kerrie D. Ruiz) |
 	When User navigates to the 'Applications' tab on Project Scope Changes page
-	Then "Applications to add (0 of 2104 selected)" is displayed to the user in the Project Scope Changes section 
+	Then "Applications to add (0 of 1915 selected)" is displayed to the user in the Project Scope Changes section 
 	And following objects were not found
 	| Objects                                                              |
 	| "WPF/E" (codename) Community Technology Preview (Feb 2007) (0.8.5.0) |
