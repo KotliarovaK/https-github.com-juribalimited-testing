@@ -222,3 +222,54 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDropdownAfterChangingItem
 	When User clicks content from "Action" column
 	When User selects 'Update' in the 'Update Value' dropdown
 	Then 'Value' content is displayed in 'Value' dropdown
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS18644 @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckRemoveOwnerOptionWhenTaskDoesNotHaveDate
+	#Pre-requisites:
+	When Project created via API and opened
+	| ProjectName      | Scope       | ProjectTemplate | Mode               |
+	| DAS18644_Project | All Devices | None            | Standalone Project |
+	When User clicks 'Projects' on the left-hand menu
+	Then "Projects Home" page is displayed to the user
+	When User navigate to "DAS18644_Project" Project
+	Then "Manage Project Details" page is displayed to the user
+	When User navigate to "Stages" tab
+	Then "Manage Stages" page is displayed to the user
+	When User clicks "Create Stage" button
+	And User create Stage
+	| StageName      |
+	| DAS18644_Stage |
+	And User clicks "Create Stage" button
+	And User navigate to "Tasks" tab
+	Then "Manage Tasks" page is displayed to the user
+	When User clicks "Create Task" button
+	And User creates Task
+	| Name          | Help     | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString | ApplyToAllCheckbox |
+	| DAS18644_Task | DAS18644 | DAS18644_Stage   | Normal         | Radiobutton     | Computer         |                          | false              |
+	Then Success message is displayed with "Task successfully created" text
+	When User updates the Task page
+	| TaskHaADueDate | DateModeString | TaskProjectRoleString | TaskHasAnOwner | TaskImpactsReadiness | ShowDetails | ProjectObject | BulkUpdate | SelfService |
+	| true           | DateOnly       | None                  | true           | true                 | false       | false         | false      | false       |
+	When User publishes the task
+	Then selected task was published
+	When User navigate to Evergreen link
+	#Pre-requisites:
+	When User creates new Automation via API and open it
+	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
+	| 18644_Automation | 18644       | true   | false              | All Devices | Manual |
+	Then Automation page is displayed correctly
+	When User navigates to the 'Actions' left menu item
+	#Create Action
+	When User clicks 'CREATE ACTION' button 
+	When User enters '18644_Action' text to 'Action Name' textbox
+	When User selects 'Update task value' in the 'Action Type' dropdown
+	When User selects 'DAS18644_Project' option from 'Project' autocomplete
+	When User selects 'DAS18644_Stage' option from 'Stage' autocomplete
+	When User selects 'DAS18644_Task' option from 'Task' autocomplete
+	When User selects 'No change' in the 'Update Value' dropdown
+	Then following Values are displayed in the 'Update Owner' dropdown:
+	| Options               |
+	| Update                |
+	| Remove owner          |
+	| Remove owner and team |
+	| No change             |
