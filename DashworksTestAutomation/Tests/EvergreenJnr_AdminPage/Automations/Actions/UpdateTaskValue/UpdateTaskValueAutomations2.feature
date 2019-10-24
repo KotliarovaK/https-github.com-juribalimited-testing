@@ -197,6 +197,28 @@ Scenario: EvergreenJnr_AdminPage_CheckTheAvailabilityOfTheUnitsfieldDependingOnT
 	When User selects 'No change' in the 'Update Value' dropdown
 	When User selects 'Update relative to current value' in the 'Update Date' dropdown
 	When User enters '10' text to 'Value' textbox
-	Then 'Units' dropdown is disabled
 	When User selects 'Hours' in the 'Units' dropdown
 	Then 'CREATE' button is not disabled
+
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18619 @Cleanup @Not_Ready
+#Waiting for 'Update relative to current value' value in dropdown
+Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDropdownAfterChangingItem
+	When User creates new Automation via API and open it
+	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
+	| 18619_Automation | 18619       | true   | false              | All Devices | Manual |
+	Then Automation page is displayed correctly
+	When User navigates to the 'Actions' left menu item
+	#Create Action
+	When User clicks 'CREATE ACTION' button 
+	When User enters '18619_Action' text to 'Action Name' textbox
+	When User selects 'Update task value' in the 'Action Type' dropdown
+	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
+	When User selects 'One' option from 'Stage' autocomplete
+	When User selects 'Radio Rag Date Comp' option from 'Task' autocomplete
+	When User selects 'No change' in the 'Update Value' dropdown
+	When User selects 'Remove' in the 'Update Date' dropdown
+	When User clicks 'CREATE' button
+	#Check Value dropdown
+	When User clicks content from "Action" column
+	When User selects 'Update' in the 'Update Value' dropdown
+	Then 'Value' content is displayed in 'Value' dropdown
