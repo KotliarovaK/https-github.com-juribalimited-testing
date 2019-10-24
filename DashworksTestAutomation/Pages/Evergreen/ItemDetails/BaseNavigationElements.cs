@@ -50,6 +50,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         public IWebElement GetSubMenuByName(string name)
         {
             Driver.WaitForElementsToBeDisplayed(By.XPath(LeftSubMenuSelector), 30, false);
+            if (!Driver.FindElements(By.XPath(LeftSubMenuSelector))
+                .Any(x => x.Text.RemoveBracketsText().Equals(name) && x.Displayed()))
+            {
+                throw new Exception($"Sub menu with '{name}' is not displayed");
+            }
             return Driver.FindElements(By.XPath(LeftSubMenuSelector))
                 .First(x => x.Text.RemoveBracketsText().Equals(name) && x.Displayed());
         }
