@@ -43,7 +43,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Login
         public void GivenSpecificUserIsLoggedInToTheEvergreen(Table table)
         {
             UserDto user = table.CreateInstance<UserDto>();
-            user.Language = ConfigurationManager.AppSettings["user.language"];
+            user.Language = UserProvider.DefaultUserLanguage;
 
             if (user == null)
                 throw new Exception("User table is not set");
