@@ -364,8 +364,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var page = _driver.NowAt<BaseGridPage>();
 
             var ColumnValues = page.GetColumnContentByColumnName(column).Where(x => !x.Equals("")).ToList();
-            var ColumnColors = page.GetColumnContentByColumnName(column).Where(x => !x.Equals("")).ToList();
-            var ColumnToolTips = page.GetColumnContentByColumnName(column).Where(x => !x.Equals("")).ToList();
+            var ColumnColors = page.GetColumnColors(column).Where(x => !x.Equals("")).ToList();
+            var ColumnToolTips = page.GetColumnTooltips(column).Where(x => !x.Equals("")).ToList();
 
             for (int i = 0; i < ColumnValues.Count; i++)
             {
