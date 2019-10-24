@@ -248,7 +248,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         {
             var selector =
                 By.XPath(
-                    $"{ActionElementSelector(columnName)}//input[@placeholder='Search']");
+                    $"{ActionElementSelector(columnName)}//input");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
@@ -257,6 +257,27 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         {
             var input = GetSearchFieldTextByColumnName(columnName);
             input.Click();
+            input.Clear();
+            input.SendKeys(text);
+            BodyContainer.Click();
+        }
+
+        #endregion
+
+        #region Datepicker
+
+        public IWebElement GetDatepickerByColumnName(string columnName)
+        {
+            var selector =
+                By.XPath(
+                    $"{ActionElementSelector(columnName)}//input[@aria-label='Date']");
+            Driver.WaitForElementToBeDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public void PopulateDatepickerByColumnName(string columnName, string text)
+        {
+            var input = GetDatepickerByColumnName(columnName);
             input.Clear();
             input.SendKeys(text);
             BodyContainer.Click();

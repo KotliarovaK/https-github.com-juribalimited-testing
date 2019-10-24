@@ -120,9 +120,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedIfTryToRemove
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks Settings button for "TestDynamicList11729" list
-	And User clicks 'DELETE' button
+	When User clicks 'Delete' option in opened Cog-menu
 	Then "TestDynamicList11729" list "list is used by 1 project, do you wish to proceed?" message is displayed in the list panel
-	And User clicks 'DELETE' button on the warning message in the lists panel
+	When User clicks 'DELETE' button
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item

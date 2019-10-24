@@ -17,7 +17,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOwnerCanBeAddedToSharedUsersAsSpe
 	And User adds user to list of shared person
 	| User          | Permission |
 	| Administrator | Admin      |
-	Then User "Admin" was added to shared list with "Admin" permission
+	Then User 'Admin' was added to shared list with 'Admin' permission
 	And There are no errors in the browser console
 	When User clicks Settings button for "Admin" shared user
 	And User selects "Remove" option from Settings
@@ -26,7 +26,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOwnerCanBeAddedToSharedUsersAsSpe
 	When User adds user to list of shared person
 	| User          | Permission |
 	| Administrator | Edit       |
-	Then User "Admin" was added to shared list with "Edit" permission
+	Then User 'Admin' was added to shared list with 'Edit' permission
 	And There are no errors in the browser console
 	When User clicks Settings button for "Admin" shared user
 	And User selects "Remove" option from Settings
@@ -35,7 +35,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOwnerCanBeAddedToSharedUsersAsSpe
 	When User adds user to list of shared person
 	| User          | Permission |
 	| Administrator | Read       |
-	Then User "Admin" was added to shared list with "Read Only" permission
+	Then User 'Admin' was added to shared list with 'Read Only' permission
 	And There are no errors in the browser console
 	When User clicks Settings button for "Admin" shared user
 	And User selects "Remove" option from Settings
@@ -268,9 +268,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksOnlyForParticu
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14841 @DAS14393 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCantBeChangedForReadOnlySharedList
 	When User clicks the Logout button
-	When User clicks the Switch to Evergreen link
-	And User clicks on the Login link
-	And User login with following credentials:
+	When User is logged in to the Evergreen as
 	| Username          | Password  |
 	| automation_admin1 | m!gration |
 	When User clicks the Switch to Evergreen link
@@ -287,11 +285,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCantBeChangedForRea
 	And User select "Read" in Select Access dropdown
 	And User clicks 'ADD USER' button 
 	And User clicks 'ADD USER' button 
-	And User clicks the Logout button
-	Then User is logged out
-	When User clicks the Switch to Evergreen link
-	When User clicks on the Login link
-	And User login with following credentials:
+	When User clicks the Logout button
+	When User is logged in to the Evergreen as
 	| Username           | Password  |
 	| automation_admin10 | m!gration |
 	When User clicks the Switch to Evergreen link
