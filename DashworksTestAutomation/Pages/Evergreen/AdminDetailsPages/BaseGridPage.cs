@@ -29,6 +29,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public string AllCellsInTheGrid = ".//div[@ref='eBodyViewport']//div[@role='gridcell']";
 
+        private string GridCellByColumnName = ".//div[@col-id='{0}' and @role='gridcell']";
+
         //TODO probably can be changed to something more generic
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'checkbox-styled')]//mat-checkbox//input")]
         public IWebElement SelectAllCheckbox { get; set; }
@@ -103,7 +105,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'actions-right-button')]/button[@aria-label='Export']")]
         public IWebElement ExportButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'actions-right-button')]/button[@aria-label='reload']")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'action')][not(contains(@class,'edit'))]//button[@aria-label='reload']")]
         public IWebElement RefreshButton { get; set; }
 
         #region Lists Action Bar Old version
@@ -160,6 +162,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = ".//div[@role='row']/div[@col-id='displayOrder' and @role='gridcell']")]
         public IList<IWebElement> DisplayOrderValues { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//span[@class='ag-header-icon ag-sort-descending-icon']")]
+        public IWebElement DescendingSortingIcon { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//span[@class='ag-header-icon ag-sort-ascending-icon']")]
+        public IWebElement AscendingSortingIcon { get; set; }
 
         #region Messages
 
@@ -397,13 +405,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElement(By.XPath(selector));
         }
 
-        public List<string> GetColumnContent(string columnName)
-        {
-            var by = By.XPath(
-                $".//div[contains(@class, 'ag-body-viewport')]//div[contains(@class, 'ag-body-container')]/div/div[{GetColumnNumberByName(columnName)}]");
-            return Driver.FindElements(by).Select(x => x.Text).ToList();
-        }
-
         public bool GetStringFilterByName(string filterName)
         {
             return Driver.IsElementDisplayed(By.XPath($"//div[@class='ng-star-inserted']/span[(text()='{filterName}')]"));
@@ -595,21 +596,146 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         #region Column content
 
-        public IList<IWebElement> GetColumnContentByColumnName(string columnName)
+        private string GetColIdByColumnName(string columnName)
+        {
+            var by = By.XPath($".//span[text()='{columnName}']/ancestor::div[@col-id]");
+            if (!Driver.IsElementDisplayed(by, WebDriverExtensions.WaitTime.Short))
+                throw new Exception($"'{columnName}' column was not displayed");
+            return Driver.FindElement(by).GetAttribute("col-id");
+        }
+
+        public IList<IWebElement> GetColumnElementsByColumnName(string columnName)
         {
             var selector =
-                By.XPath($".//div[@class='ag-center-cols-clipper']//div[contains(@class, 'ag-row')]/div[{GetColumnNumberByName(columnName)}]//*[not(*)]");
+                By.XPath($".//div[@col-id='{GetColIdByColumnName(columnName)}' and @role='gridcell']//*[not(*)]");
             Driver.WaitForDataLoading();
             return Driver.FindElements(selector).ToList();
         }
 
+        public List<string> GetColumnContentByColumnName(string columnName)
+        {
+            return GetColumnElementsByColumnName(columnName).Select(x => x.Text).ToList();
+        }
+
         public IWebElement GetCellFromColumn(string columnName, string cellText)
         {
-            var allData = GetColumnContentByColumnName(columnName);
+            var allData = GetColumnElementsByColumnName(columnName);
             if (allData.Any(x => x.Text.Contains(cellText)))
                 return allData.First(x => x.Text.Contains(cellText));
             else
                 throw new Exception($"There is no cell with '{cellText}' text in the '{columnName}' column");
+        }
+
+        //Null value can be returned
+        public IWebElement GetGridCell(int rowIndex, int columnNumber)
+        {
+            return (IWebElement)Driver.ExecuteScript(
+                $"return document.querySelector(\"div[row-index = '{rowIndex}']>div:nth-of-type({columnNumber})\")");
+        }
+
+        public List<string> GetColumnDataByScrolling(string columnName)
+        {
+            var columnData = new List<string>();
+            var columnNumber = GetColumnNumberByName(columnName);
+            var iter = 0;
+            var element = GetGridCell(iter, columnNumber);
+            columnData.Add(element.Text);
+            do
+            {
+                iter++;
+                try
+                {
+                    Driver.MouseHoverByJavascript(element);
+                    element = GetGridCell(iter, columnNumber);
+                }
+                catch (StaleElementReferenceException)
+                {
+                    Thread.Sleep(5000);
+                    element = GetGridCell(iter, columnNumber);
+                    Driver.MouseHoverByJavascript(element);
+                }
+
+                //Data loading
+                if (element == null)
+                {
+                    Thread.Sleep(3000);
+                    element = GetGridCell(iter, columnNumber);
+                }
+
+                try
+                {
+                    columnData.Add(element.Text);
+                }
+                catch (StaleElementReferenceException)
+                {
+                    Thread.Sleep(3000);
+                    element = GetGridCell(iter, columnNumber);
+                    columnData.Add(element.Text);
+                }
+                catch (NullReferenceException)
+                {
+                    break;
+                }
+
+                if (iter > 2002)
+                    break;
+            } while (element != null);
+
+            return columnData;
+        }
+
+        public string GetRowContentByColumnName(string columnName)
+        {
+            var by = By.XPath(
+                $".//div[@role='gridcell'][{GetColumnNumberByName(columnName)}]");
+            return Driver.FindElement(by).Text;
+        }
+
+        public List<string> GetColumnTooltips(string columnName)
+        {
+            return Driver.FindElements(By.XPath(string.Format(GridCellByColumnName, GetColIdByColumnName(columnName))))
+                .Select(x => x.GetAttribute("title")).ToList();
+        }
+
+        public List<string> GetColumnColors(string columnName)
+        {
+            return Driver.FindElements(By.XPath(string.Concat(string.Format(GridCellByColumnName,
+                GetColIdByColumnName(columnName)), "//div[@class='status']"))).Select(x => x.GetAttribute("style")).ToList();
+        }
+
+        public string GetColumnWidthByName(string columnName)
+        {
+            return Driver.FindElement(By.XPath(string.Format(GridCellByColumnName,
+                GetColIdByColumnName(columnName)))).GetCssValue("width");
+        }
+
+        public void ClickContentByColumnName(string columnName)
+        {
+            var byControl = By.XPath(string.Concat(string.Format(GridCellByColumnName,
+                GetColIdByColumnName(columnName)), "//a"));
+
+            Driver.WaitForDataLoading();
+            Driver.WaitForElementToBeDisplayed(byControl);
+            try
+            {
+                Driver.FindElement(byControl).Click();
+            }
+            catch (StaleElementReferenceException)
+            {
+                if (Driver.IsElementDisplayed(byControl, WebDriverExtensions.WaitTime.Short))
+                    Driver.FindElement(byControl).Click();
+            }
+        }
+
+        public IWebElement GetHrefByColumnName(string columnName)
+        {
+            var byControl = By.XPath(string.Concat(string.Format(GridCellByColumnName,
+                    GetColIdByColumnName(columnName)), "//a"));
+
+            Driver.WaitForDataLoading();
+            Driver.WaitForElementToBeDisplayed(byControl);
+            Driver.FindElement(byControl).GetAttribute("href");
+            return Driver.FindElement(byControl);
         }
 
         #endregion

@@ -101,16 +101,16 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
         [When(@"User select ""(.*)"" rows in the grid")]
         public void WhenUserSelectRowsInTheGrid(string columnName, Table table)
         {
-            var dashboardPage = _driver.NowAt<BaseDashboardPage>();
+            var dashboardPage = _driver.NowAt<BaseGridPage>();
             _driver.WaitForDataLoading();
-            var columnContent = dashboardPage.GetColumnContent(columnName);
+            var columnContent = dashboardPage.GetColumnContentByColumnName(columnName);
             foreach (var row in table.Rows)
             {
                 var rowIndex = columnContent.IndexOf(row["SelectedRowsName"]);
                 if (rowIndex < 0)
                     throw new Exception($"'{row["SelectedRowsName"]}' is not found in the '{columnName}' column");
                 _driver.WaitForDataLoading();
-                _driver.ClickByJavascript(dashboardPage.SelectRowsCheckboxes.ElementAt(rowIndex));
+                _driver.ClickByJavascript(dashboardPage.Checkboxes.ElementAt(rowIndex));
             }
         }
 

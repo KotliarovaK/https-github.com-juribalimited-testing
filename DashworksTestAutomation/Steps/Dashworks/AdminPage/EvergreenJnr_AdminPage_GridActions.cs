@@ -41,7 +41,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             //tableElement.ClickContentByColumnName(columnName);
             //_driver.WaitForDataLoading(); //TODO: remove if below code works for all lists
 
-            var tableElement = _driver.NowAtWithoutWait<BaseDashboardPage>();
+            var tableElement = _driver.NowAtWithoutWait<BaseGridPage>();
             _driver.WaitForDataLoading();
             tableElement.ClickContentByColumnName(columnName);
             _driver.WaitForDataLoading();
