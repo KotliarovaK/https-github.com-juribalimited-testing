@@ -38,7 +38,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             var currentList = page.AllDashboardsInPanel.Select(title => title.Text).ToList();
 
-            Utils.Verify.That(page.AllDashboardsInPanel.Select(title => title.Text).ToList().Contains(dashboardName), Is.True, $"Dashboard name is missing");
+            Verify.That(page.AllDashboardsInPanel.Select(title => title.Text).ToList().Contains(dashboardName), Is.True, $"Dashboard name is missing");
         }
 
         [When(@"User clicks Settings button for ""(.*)"" dashboard")]
@@ -135,7 +135,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
 
-            Utils.Verify.That(page.IsDashboardMarkedAsFavoriteInList(dashboardName), Is.True);
+            Verify.That(page.IsDashboardMarkedAsFavoriteInList(dashboardName), Is.True);
         }
 
         [Then(@"Dashboard with name ""(.*)"" marked as default")]
@@ -143,7 +143,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
 
-            Utils.Verify.That(page.IsDashboardMarkedAsDefaultInList(dashboardName), Is.True);
+            Verify.That(page.IsDashboardMarkedAsDefaultInList(dashboardName), Is.True);
         }
 
         [Then(@"Dashboard with name ""(.*)"" not marked as favorite")]
@@ -151,7 +151,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
 
-            Utils.Verify.That(page.IsDashboardMarkedAsFavoriteInList(dashboardName), Is.False);
+            Verify.That(page.IsDashboardMarkedAsFavoriteInList(dashboardName), Is.False);
         }
 
         [Then(@"Dashboard with name ""(.*)"" not marked as default")]
@@ -159,7 +159,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
 
-            Utils.Verify.That(page.IsDashboardMarkedAsDefaultInList(dashboardName), Is.False);
+            Verify.That(page.IsDashboardMarkedAsDefaultInList(dashboardName), Is.False);
         }
 
         [When(@"User clicks ""(.*)"" section from ""(.*)"" circle chart on Dashboards page")]
@@ -177,7 +177,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.MouseHover(page.ExpandSideNavPanelIcon);
 
             var toolTipText = _driver.GetTooltipText();
-            Utils.Verify.That(toolTipText, Is.EqualTo("Open menu"), $"Other tooltip is displayed to user: {toolTipText}");
+            Verify.That(toolTipText, Is.EqualTo("Open menu"), $"Other tooltip is displayed to user: {toolTipText}");
         }
 
         [When(@"User clicks Show Dashboards panel icon on Dashboards page")]
@@ -229,14 +229,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
 
-            Utils.Verify.That(page.GetEllipsisMenuForWidget(widgetName).Displayed(), Is.True);
+            Verify.That(page.GetEllipsisMenuForWidget(widgetName).Displayed(), Is.True);
         }
 
         [Then(@"User sees Dashboards context menu on Dashboards page")]
         public void ThenUserSeesDashboardsContextMenuOnDashboardsPage()
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            Utils.Verify.That(page.DashboardsContextMenu.Displayed(), Is.True);
+            Verify.That(page.DashboardsContextMenu.Displayed(), Is.True);
         }
 
         [Then(@"Dashboards context menu is hidden on Dashboards page")]
@@ -244,7 +244,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
 
-            Utils.Verify.That(page.DashboardsContextMenu.Displayed(), Is.False);
+            Verify.That(page.DashboardsContextMenu.Displayed(), Is.False);
         }
 
         [Then(@"User sees Dashboards sub menu on Dashboards page")]
@@ -252,7 +252,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
 
-            Utils.Verify.That(page.DashboardsSubmenu.Displayed(), Is.True);
+            Verify.That(page.DashboardsSubmenu.Displayed(), Is.True);
         }
 
         [Then(@"Dashboards sub menu is hidden on Dashboards page")]
@@ -260,7 +260,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
 
-            Utils.Verify.That(page.DashboardsSubmenu.Displayed(), Is.False);
+            Verify.That(page.DashboardsSubmenu.Displayed(), Is.False);
         }
 
         [Then(@"User sees Ellipsis icon disabled for ""(.*)"" Widget on Dashboards page")]
@@ -268,7 +268,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
 
-            Utils.Verify.That(page.GetEllipsisMenuForWidget(widgetName), Is.Null);
+            Verify.That(page.GetEllipsisMenuForWidget(widgetName), Is.Null);
         }
 
         [When(@"User clicks Ellipsis menu for Section having ""(.*)"" Widget on Dashboards page")]
@@ -285,7 +285,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
 
-            Utils.Verify.That(page.GetEllipsisIconsForSectionsHavingWidget(widgetName).FirstOrDefault().Displayed(), Is.True);
+            Verify.That(page.GetEllipsisIconsForSectionsHavingWidget(widgetName).FirstOrDefault().Displayed(), Is.True);
         }
 
         [Then(@"User sees Ellipsis icon disabled for Section having ""(.*)"" Widget on Dashboards page")]
@@ -293,7 +293,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
 
-            Utils.Verify.That(page.GetEllipsisIconsForSectionsHavingWidget(widgetName).FirstOrDefault().Displayed(), Is.False);
+            Verify.That(page.GetEllipsisIconsForSectionsHavingWidget(widgetName).FirstOrDefault().Displayed(), Is.False);
         }
 
         [Then(@"User sees Collapse/Expand icon enabled for Section having ""(.*)"" Widget on Dashboards page")]
@@ -303,7 +303,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
 
             var aa = page.GetExpandCollapseIconsForSectionsHavingWidget(widgetName).FirstOrDefault();
-            Utils.Verify.That(page.GetExpandCollapseIconsForSectionsHavingWidget(widgetName).FirstOrDefault().Displayed(),
+            Verify.That(page.GetExpandCollapseIconsForSectionsHavingWidget(widgetName).FirstOrDefault().Displayed(),
                 Is.True);
         }
 
@@ -312,7 +312,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
 
-            Utils.Verify.That(page.GetExpandCollapseIconsForSectionsHavingWidget(widgetName).FirstOrDefault().Displayed(),
+            Verify.That(page.GetExpandCollapseIconsForSectionsHavingWidget(widgetName).FirstOrDefault().Displayed(),
                 Is.False);
         }
 
@@ -350,7 +350,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<EvergreenDashboardsPage>();
 
             for (var i = 0; i < items.RowCount; i++)
-                Utils.Verify.That(page.EllipsisMenuItems[i].Text, Is.EqualTo(items.Rows[i].Values.FirstOrDefault()),
+                Verify.That(page.EllipsisMenuItems[i].Text, Is.EqualTo(items.Rows[i].Values.FirstOrDefault()),
                     "Items are not the same");
         }
 
@@ -358,7 +358,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenEllipsisMenuItemIsDisabledOnDashboardsPage(string itemName)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            Utils.Verify.IsTrue(page.GetDisabledEllipsisItemByName(itemName).Displayed(), "Ellipsis menu item is enabled");
+            Verify.IsTrue(page.GetDisabledEllipsisItemByName(itemName).Displayed(), "Ellipsis menu item is enabled");
             var body = _driver.NowAt<BaseGridPage>();
             body.BodyContainer.Click();
         }
@@ -383,7 +383,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenWidgetDeleteSquareColoredInAmber()
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            Utils.Verify.That(page.GetDeleteWidgetSquareColor(), Is.EqualTo("rgba(235, 175, 37, 1)"),
+            Verify.That(page.GetDeleteWidgetSquareColor(), Is.EqualTo("rgba(235, 175, 37, 1)"),
                 "Wrong widget delete message color");
         }
 
@@ -401,7 +401,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
 
-            Utils.Verify.That(page.NumberOfWidgetLegends.Count.ToString(), Is.EqualTo(expected),
+            Verify.That(page.NumberOfWidgetLegends.Count.ToString(), Is.EqualTo(expected),
                 "Number of Widgets with Legend is different");
         }
 
@@ -411,7 +411,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<EvergreenDashboardsPage>();
 
             int expectedCount = _sectionsAndWidgets.SectionsCount + increasedBy;
-            Utils.Verify.That(page.AllSections.Count, Is.EqualTo(expectedCount), "Number of Sections is different");
+            Verify.That(page.AllSections.Count, Is.EqualTo(expectedCount), "Number of Sections is different");
         }
 
         [Then(@"User sees number of Widgets increased by ""(.*)"" on Dashboards page")]
@@ -420,7 +420,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<EvergreenDashboardsPage>();
 
             int expectedCount = _sectionsAndWidgets.WidgetsCount + increasedBy;
-            Utils.Verify.That(page.AllWidgetsTitles.Count, Is.EqualTo(expectedCount), "Number of Widgets is different");
+            Verify.That(page.AllWidgetsTitles.Count, Is.EqualTo(expectedCount), "Number of Widgets is different");
         }
 
         [Then(@"User sees following Widgets on Dashboards page:")]
@@ -432,7 +432,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             List<string> expectedWidgetsNames =
                 table.Rows.Select(x => x.Values).Select(c => c.FirstOrDefault()).ToList();
 
-            Utils.Verify.That(page.AllWidgetsTitles.Select(x => x.Text).ToList(), Is.EqualTo(expectedWidgetsNames),
+            Verify.That(page.AllWidgetsTitles.Select(x => x.Text).ToList(), Is.EqualTo(expectedWidgetsNames),
                 "Names of Widgets are different");
         }
 
@@ -445,7 +445,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             List<string> expectedWidgetsNames =
                 table.Rows.Select(x => x.Values).Select(c => c.FirstOrDefault()).ToList();
 
-            Utils.Verify.That(page.GetWidgetsNamesInSections(), Does.Contain(expectedWidgetsNames),
+            Verify.That(page.GetWidgetsNamesInSections(), Does.Contain(expectedWidgetsNames),
                 "Names of Widgets are different");
         }
 
@@ -468,7 +468,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenTeamUserSectionInNotDisplayedOnDashboardDetails()
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            Utils.Verify.IsFalse(page.UserTeamSectionOnDashboardDetails.Displayed(), "Team/User section in not displayed");
+            Verify.IsFalse(page.UserTeamSectionOnDashboardDetails.Displayed(), "Team/User section in not displayed");
         }
 
         [Then(@"User sees widget with the next name ""(.*)"" on Dashboards page")]
@@ -476,7 +476,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForDataLoading();
-            Utils.Verify.That(page.AllWidgetsTitles.Select(x => x.Text).ToList(), Does.Contain(widgetName),
+            Verify.That(page.AllWidgetsTitles.Select(x => x.Text).ToList(), Does.Contain(widgetName),
                 "Widget name is missing");
         }
 
@@ -485,7 +485,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForDataLoading();
-            Utils.Verify.That(page.AllWidgetsTitles.Select(x => x.Text).ToList(), Does.Not.Contain(widgetName),
+            Verify.That(page.AllWidgetsTitles.Select(x => x.Text).ToList(), Does.Not.Contain(widgetName),
                 "Widget name is missing");
         }
 
@@ -494,7 +494,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForDataLoading();
-            Utils.Verify.That(page.GetEditModeState(), Is.True, "Trigger is in the OFF position");
+            Verify.That(page.GetEditModeState(), Is.True, "Trigger is in the OFF position");
         }
 
         [Then(@"User sees Edit mode trigger is in the Off position on Dashboards page")]
@@ -502,7 +502,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForDataLoading();
-            Utils.Verify.That(page.GetEditModeState(), Is.False, "Trigger is in the ON position");
+            Verify.That(page.GetEditModeState(), Is.False, "Trigger is in the ON position");
         }
 
         [Then(@"User sees Edit mode trigger has blue style on Dashboards page")]
@@ -510,9 +510,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForDataLoading();
-            Utils.Verify.That(page.GetEditModeSlideBarColor(), Is.EqualTo("rgba(49, 122, 193, 0.54)"),
+            Verify.That(page.GetEditModeSlideBarColor(), Is.EqualTo("rgba(49, 122, 193, 0.54)"),
                 "Edit mode slider is not blue");
-            Utils.Verify.That(page.GetEditModeSlideToggleColor(), Is.EqualTo("rgba(49, 122, 193, 1)"),
+            Verify.That(page.GetEditModeSlideToggleColor(), Is.EqualTo("rgba(49, 122, 193, 1)"),
                 "Edit mode trigger is not blue");
         }
 
@@ -521,9 +521,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForDataLoading();
-            Utils.Verify.That(page.GetEditModeSlideBarColor(), Is.EqualTo("rgba(0, 0, 0, 0.38)"),
+            Verify.That(page.GetEditModeSlideBarColor(), Is.EqualTo("rgba(0, 0, 0, 0.38)"),
                 "Edit mode slider is not grey");
-            Utils.Verify.That(page.GetEditModeSlideToggleColor(), Is.EqualTo("rgba(250, 250, 250, 1)"),
+            Verify.That(page.GetEditModeSlideToggleColor(), Is.EqualTo("rgba(250, 250, 250, 1)"),
                 "Edit mode trigger is not grey");
         }
 
@@ -535,14 +535,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             try
             {
                 var widget = page.AllWidgetsTitles.FirstOrDefault(x => x.Text.Equals(widgetName));
-                Utils.Verify.That(widget.GetCssValue("word-break"), Is.EqualTo("break-word"),
+                Verify.That(widget.GetCssValue("word-break"), Is.EqualTo("break-word"),
                     "Word break formatting is missing");
-                Utils.Verify.That(widget.GetCssValue("word-wrap"), Is.EqualTo("break-word"),
+                Verify.That(widget.GetCssValue("word-wrap"), Is.EqualTo("break-word"),
                     "Word break formatting is missing");
             }
             catch (NullReferenceException)
             {
-                Utils.Verify.IsFalse(true, "Widget not found");
+                Verify.IsFalse(true, "Widget not found");
             }
         }
 
@@ -552,7 +552,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForDataLoading();
 
-            Utils.Verify.That(page.IsWidgetExists(widgetName), Is.True, $"Widget with name {widgetName} doesn't exist");
+            Verify.That(page.IsWidgetExists(widgetName), Is.True, $"Widget with name {widgetName} doesn't exist");
         }
 
         [Then(@"User sees '(.*)' widgets with '(.*)' name on Dashboards page")]
@@ -616,7 +616,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listElement = _driver.NowAt<CustomListElement>();
 
             _driver.WaitForElementToBeDisplayed(listElement.SaveButton);
-            Utils.Verify.IsTrue(listElement.SaveButton.Displayed(), "SaveButton is displayed");
+            Verify.IsTrue(listElement.SaveButton.Displayed(), "SaveButton is displayed");
             listElement.DashboardNameTextBox.SendKeys(dashboardName);
             listElement.SaveButton.Click();
             _driver.WaitForElementToBeNotDisplayed(listElement.SaveButton);
@@ -630,7 +630,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listElement = _driver.NowAt<CustomListElement>();
 
             _driver.WaitForElementToBeDisplayed(listElement.SaveButton);
-            Utils.Verify.IsTrue(listElement.SaveButton.Displayed(), "SaveButton is displayed");
+            Verify.IsTrue(listElement.SaveButton.Displayed(), "SaveButton is displayed");
             listElement.DashboardNameTextBox.SendKeys(dashboardName);
         }
 
@@ -639,11 +639,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForElementToBeDisplayed(page.DashboardUniqueError);
-            Utils.Verify.IsTrue(page.DashboardUniqueError.Displayed(), "Dashboard should be unique error is not displayed");
-            Utils.Verify.That(page.DashboardUniqueError.GetCssValue("background-color"), Is.EqualTo("rgba(242, 88, 49, 1)"), "Wrong message color");
+            Verify.IsTrue(page.DashboardUniqueError.Displayed(), "Dashboard should be unique error is not displayed");
+            Verify.That(page.DashboardUniqueError.GetCssValue("background-color"), Is.EqualTo("rgba(242, 88, 49, 1)"), "Wrong message color");
 
             var listElement = _driver.NowAt<CustomListElement>();
-            Utils.Verify.IsTrue(Convert.ToBoolean(listElement.SaveButton.GetAttribute("disabled")), "Save button is active");
+            Verify.IsTrue(Convert.ToBoolean(listElement.SaveButton.GetAttribute("disabled")), "Save button is active");
         }
 
         [Then(@"Red Dashboard should be unique error disappears")]
@@ -651,10 +651,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForElementToBeNotDisplayed(page.DashboardUniqueError);
-            Utils.Verify.IsFalse(page.DashboardUniqueError.Displayed(), "Dashboard should be unique error is still displayed");
+            Verify.IsFalse(page.DashboardUniqueError.Displayed(), "Dashboard should be unique error is still displayed");
 
             var listElement = _driver.NowAt<CustomListElement>();
-            Utils.Verify.IsFalse(Convert.ToBoolean(listElement.SaveButton.GetAttribute("disabled")), "Save button is active");
+            Verify.IsFalse(Convert.ToBoolean(listElement.SaveButton.GetAttribute("disabled")), "Save button is active");
         }
 
         [Then(@"Text Only is displayed for Card widget")]
@@ -662,7 +662,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForDataLoading();
-            Utils.Verify.IsTrue(page.TextOnlyCardWidget.Displayed(), "Text Only is not displayed for Card widget");
+            Verify.IsTrue(page.TextOnlyCardWidget.Displayed(), "Text Only is not displayed for Card widget");
         }
 
         [Then(@"Icon and Text is displayed for Card widget")]
@@ -670,7 +670,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForDataLoading();
-            Utils.Verify.IsTrue(page.IconAndTextCardWidget.Displayed(), "Icon and Text is not displayed for Card widget");
+            Verify.IsTrue(page.IconAndTextCardWidget.Displayed(), "Icon and Text is not displayed for Card widget");
         }
 
         [Then(@"Icon Only is displayed for Card widget")]
@@ -678,7 +678,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForDataLoading();
-            Utils.Verify.IsTrue(page.IconOnlyCardWidget.Displayed(), "Icon Only is not displayed for Card widget");
+            Verify.IsTrue(page.IconOnlyCardWidget.Displayed(), "Icon Only is not displayed for Card widget");
         }
 
         [Then(@"User sees ""(.*)"" text in warning message on Dashboards page")]
@@ -686,7 +686,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForDataLoading();
-            Utils.Verify.AreEqual(text, page.TextInDeleteAlert.First().Text, "Delete confirmation text is different");
+            Verify.AreEqual(text, page.TextInDeleteAlert.First().Text, "Delete confirmation text is different");
         }
 
         [Then(@"Delete widget warning message is displayed on Dashboards page")]
@@ -694,28 +694,28 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForDataLoading();
-            Utils.Verify.That(page.TextInDeleteAlert.Count, Is.EqualTo(0), "Delete confirmation is still displayed");
+            Verify.That(page.TextInDeleteAlert.Count, Is.EqualTo(0), "Delete confirmation is still displayed");
         }
 
         [Then(@"User sees ""(.*)"" text in ""(.*)"" warning messages on Dashboards page")]
         public void ThenUserSeesTextInWarningMessageOnDashboardsPage(string text, string number)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            Utils.Verify.AreEqual(text, page.TextInDeleteAlert[Convert.ToInt32(number) - 1].Text, "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.AreEqual(text, page.TextInDeleteAlert[Convert.ToInt32(number) - 1].Text, "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"""(.*)"" link is displayed in warning message on Dashboards page")]
         public void ThenLinkIsDisplayedInWarningMessageOnDashboardsPage(string text)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            Utils.Verify.AreEqual(text, page.LinkInWarningMessage.Text, "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.AreEqual(text, page.LinkInWarningMessage.Text, "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"User sees ""(.*)"" text in warning message on Dashboards submenu pane")]
         public void ThenUserSeesTextInWarningMessageOnSubmenuDashboardsPage(string text)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            Utils.Verify.AreEqual(text, page.SubmenuAlertMessage.Text, "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.AreEqual(text, page.SubmenuAlertMessage.Text, "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"content in the Widget is displayed in following order:")]
@@ -725,7 +725,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
             var contentList = page.TableWidgetContent.Select(x => x.Text).ToList();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            Utils.Verify.AreEqual(contentList, expectedList, "content in the Widget is displayed in the incorrect order");
+            Verify.AreEqual(contentList, expectedList, "content in the Widget is displayed in the incorrect order");
         }
 
         [Then(@"""(.*)"" Widget is displayed to the user")]
@@ -733,7 +733,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForElementToBeDisplayed(page.GetWidgetByName(widgetName));
-            //Utils.Verify.IsTrue(page.GetWidgetByName(widgetName).Displayed(), $"{widgetName} Widget is not displayed");
+            //Verify.IsTrue(page.GetWidgetByName(widgetName).Displayed(), $"{widgetName} Widget is not displayed");
         }
 
         [Then(@"Label ""(.*)"" displayed for ""(.*)"" widget")]
@@ -742,7 +742,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForDataLoading();
 
-            Utils.Verify.That(page.GetWidgetLabels(widgetName).Select(x => x.Text).ToList(), Does.Contain(label), $"{label} label is not found");
+            Verify.That(page.GetWidgetLabels(widgetName).Select(x => x.Text).ToList(), Does.Contain(label), $"{label} label is not found");
         }
 
         [Then(@"Label icon displayed gray for ""(.*)"" widget")]
@@ -751,15 +751,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForDataLoading();
 
-            Utils.Verify.That(page.GetLegendColor(widgetName), Does.Contain("#C6CBD2"), $"#C6CBD2 color is not found");
+            Verify.That(page.GetLegendColor(widgetName), Does.Contain("#C6CBD2"), $"#C6CBD2 color is not found");
         }
 
         [Then(@"link is not displayed for the ""(.*)"" value in the Widget")]
         public void ThenLinkIsNotDisplayedForTheValueInTheWidget(string content)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            Utils.Verify.IsTrue(page.GetTableWidgetContentWithoutLink(content).Displayed(), $"link is displayed for the {content} value");
-            Utils.Verify.AreEqual("rgba(0, 0, 0, 0.87)",
+            Verify.IsTrue(page.GetTableWidgetContentWithoutLink(content).Displayed(), $"link is displayed for the {content} value");
+            Verify.AreEqual("rgba(0, 0, 0, 0.87)",
                 page.GetTableWidgetContentWithoutLink(content).GetCssValue("color"), "PLEASE ADD EXCEPTION MESSAGE");
         }
 
@@ -771,7 +771,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var tableContent = table.Rows.SelectMany(row => row.Values).First();
             foreach (var content in originalList)
             {
-                Utils.Verify.AreEqual(originalList, tableContent, "PLEASE ADD EXCEPTION MESSAGE");
+                Verify.AreEqual(originalList, tableContent, "PLEASE ADD EXCEPTION MESSAGE");
             }
         }
 
@@ -780,7 +780,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForDataLoading();
-            Utils.Verify.IsTrue(page.GetCardWidgetByName(widgetName).Displayed(), $"{widgetName} Widget is not displayed");
+            Verify.IsTrue(page.GetCardWidgetByName(widgetName).Displayed(), $"{widgetName} Widget is not displayed");
         }
 
         [Then(@"""(.*)"" color is displayed for widget")]
@@ -788,7 +788,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             var getColor = page.GetCardWidgetPreviewText().GetCssValue("color");
-            Utils.Verify.AreEqual(ColorWidgetConvertor.Convert(color), getColor, $"{color} color is displayed for widget");
+            Verify.AreEqual(ColorWidgetConvertor.Convert(color), getColor, $"{color} color is displayed for widget");
         }
 
         [Then(@"""(.*)"" color is displayed for Card Widget")]
@@ -797,14 +797,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForDataLoading();
             var getColor = page.GetCardWidgetPreviewText().GetCssValue("color");
-            Utils.Verify.AreEqual(ColorWidgetConvertor.ConvertComplianceColorWidget(color), getColor, $"{color} color is displayed for widget");
+            Verify.AreEqual(ColorWidgetConvertor.ConvertComplianceColorWidget(color), getColor, $"{color} color is displayed for widget");
         }
 
         [Then(@"""(.*)"" count is displayed for ""(.*)"" in the table Widget")]
         public void ThenCountIsDisplayedForInTheTableWidget(string boolean, string count)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            Utils.Verify.IsTrue(page.GetCountForTableWidget(count, boolean).Displayed(), $"{count} is not display for {boolean}");
+            Verify.IsTrue(page.GetCountForTableWidget(count, boolean).Displayed(), $"{count} is not display for {boolean}");
         }
 
         [When(@"User clicks ""(.*)"" value for ""(.*)"" column")]
@@ -820,7 +820,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             var headers = page.GetTableWidgetHeaders(widget);
 
-            Utils.Verify.That(headers.Select(x => x.Text).ToList().FindAll(x => x.ToLower().Contains(column.ToLower())).Count(), Is.EqualTo(0), $"Table contains {column} header");
+            Verify.That(headers.Select(x => x.Text).ToList().FindAll(x => x.ToLower().Contains(column.ToLower())).Count(), Is.EqualTo(0), $"Table contains {column} header");
         }
 
         [Then(@"Table columns of '(.*)' widget placed in the next order:")]
@@ -832,14 +832,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var headers = page.GetTableWidgetHeaders(widget).Select(column => column.Text).ToList();
             var expectedTable = table.Rows.SelectMany(row => row.Values);
 
-            Utils.Verify.That(headers, Is.EqualTo(expectedTable), $"Table orders is wrong");
+            Verify.That(headers, Is.EqualTo(expectedTable), $"Table orders is wrong");
         }
 
         [Then(@"Permission panel is displayed to the user")]
         public void ThenPermissionPanelIsDisplayedToTheUser()
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            Utils.Verify.IsTrue(page.PermissionPanel.Displayed(), "Actions panel was not displayed");
+            Verify.IsTrue(page.PermissionPanel.Displayed(), "Actions panel was not displayed");
         }
 
         [When(@"User changes sharing type from ""(.*)"" to ""(.*)""")]
@@ -847,56 +847,50 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             page.ChangePermissionSharingFieldFromTo(from, to);
+            //TODO Section reloads with delay
+            Thread.Sleep(1000);
         }
 
         [When(@"User adds user to list of shared person")]
         public void WhenUserAddsNewPersonToSharingList(Table table)
         {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-
-            _driver.WaitForElementToBeDisplayed(page.PermissionAddUserButton);
-            _driver.WaitForElementToBeEnabled(page.PermissionAddUserButton);
-            page.PermissionAddUserButton.Click();
-
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.ClickButtonByName("ADD USER");
+            
             foreach (var row in table.Rows)
             {
                 if (!string.IsNullOrEmpty(row["User"]))
                 {
-                    _driver.WaitForElementToBeEnabled(page.PermissionUserField);
-                    page.PermissionUserField.Click();
-                    page.PermissionUserField.Clear();
-                    page.PermissionUserField.SendKeys(row["User"]);
-                    page.SelectOptionFromList(row["User"]);
+                    action.AutocompleteSelect("User", row["User"], true);
                 }
 
                 if (!string.IsNullOrEmpty(row["Permission"]))
                 {
-                    _driver.WaitForElementToBeEnabled(page.PermissionTypeField);
-                    page.PermissionTypeField.Click();
-                    page.SelectOptionFromList(row["Permission"]);
+                    action.SelectDropdown(row["Permission"], "Select access");
                 }
+                action.ClickButtonByName("ADD USER");
 
-                _driver.WaitForElementToBeEnabled(page.PermissionAddUserButton);
-                page.PermissionAddUserButton.Click();
-
+                //TODO Section reloads with delay
                 Thread.Sleep(2000);
             }
         }
 
-        [Then(@"User ""(.*)"" was added to shared list with ""(.*)"" permission")]
+        [Then(@"User '(.*)' was added to shared list with '(.*)' permission")]
         public void ThenUserWasAddedToSharedList(string username, string permission)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            Utils.Verify.That(page.PermissionNameOfAddedUser.Text, Is.EqualTo(username), "Username is not one that expected");
-            Utils.Verify.That(page.PermissionAccessTypeOfAddedUser.Text, Is.EqualTo(permission), "Permission is not one that expected");
+            _driver.WaitForElementsToBeDisplayed(page.PermissionNameOfAddedUser);
+
+            Verify.That(page.PermissionNameOfAddedUser.Select(x=>x.Text).ToList(), Does.Contain(username), "Username is not one that expected");
+            Verify.That(page.PermissionAccessTypeOfAddedUser.Select(x => x.Text).ToList(), Does.Contain(permission), "Permission is not one that expected");
         }
 
         [Then(@"There is no user in shared list")]
         public void ThenNoUserFoundInSharedList()
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            _driver.WaitForElementToBeNotDisplayed(page.PermissionNameOfAddedUser);
-            Utils.Verify.That(page.PermissionNameOfAddedUser.Displayed(), Is.False, "Username found in shared list");
+           // _driver.WaitForElementToBeNotDisplayed(page.PermissionNameOfAddedUser);
+            Verify.That(page.PermissionNameOfAddedUser.Count, Is.EqualTo(0), "Username found in shared list");
         }
 
         [When(@"User expands the list of shared lists")]
@@ -912,7 +906,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForElementsToBeDisplayed(page.DetailsPanelSharedListsTableHeaders);
-            Utils.Verify.That(page.DetailsPanelSharedListsTableHeaders.Select(x => x.Text).ToList(), Is.EqualTo(new List<string> { a, b }), "Headers are different");
+            Verify.That(page.DetailsPanelSharedListsTableHeaders.Select(x => x.Text).ToList(), Is.EqualTo(new List<string> { a, b }), "Headers are different");
         }
 
         [Then(@"User sees list icon displayed for '(.*)' widget in List section of Dashboards Details")]
@@ -944,6 +938,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             page.GetSettingsOption(option).Click();
+            //TODO Section reloads with delay
+            Thread.Sleep(2000);
         }
 
         [When(@"User clicks data in card ""(.*)"" widget")]
@@ -958,14 +954,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
 
-            Utils.Verify.That(page.GetCardWidgetContent(widgetName).Text, Is.EqualTo(value), "Card value is different.");
+            Verify.That(page.GetCardWidgetContent(widgetName).Text, Is.EqualTo(value), "Card value is different.");
         }
 
         [Then(@"'(.*)' message is displayed in '(.*)' widget")]
         public void ThenEmptyMessageTextDisplayedForWidget(string message, string widgetName)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            Utils.Verify.That(page.GetWidgetEmptyMessageByName(widgetName).Text, Is.EqualTo(message), "Widget message is different.");
+            Verify.That(page.GetWidgetEmptyMessageByName(widgetName).Text, Is.EqualTo(message), "Widget message is different.");
         }
 
         [Then(@"Tooltip is displayed for the point of Line widget")]
@@ -979,7 +975,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 _driver.MouseHover(page.GetPointOfLineWidgetByName(row["WidgetName"], row["NumberOfPoint"]));
                 _driver.MouseHover(page.GetPointOfLineWidgetByName(row["WidgetName"], row["NumberOfPoint"]));
 
-                Utils.Verify.That(page.GetFocusedPointHover(row["WidgetName"]), Is.EqualTo(row["Tooltip"]));
+                Verify.That(page.GetFocusedPointHover(row["WidgetName"]), Is.EqualTo(row["Tooltip"]));
             }
         }
 
@@ -999,7 +995,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
 
-            Utils.Verify.That(page.IsLineWidgetPointsAreDisplayed(widgetName), Is.True, "Points are not displayed");
+            Verify.That(page.IsLineWidgetPointsAreDisplayed(widgetName), Is.True, "Points are not displayed");
         }
 
         [Then(@"Line X labels of ""(.*)"" widget is displayed in following order:")]
@@ -1009,7 +1005,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             List<string> labelList = page.GetPointOfLineWidgetByName(widgetName);
             var expectedList = table.Rows.SelectMany(row => row.Values).Where(x => !x.Equals(String.Empty)).ToList();
 
-            Utils.Verify.AreEqual(expectedList, labelList, "Label order is incorrect");
+            Verify.AreEqual(expectedList, labelList, "Label order is incorrect");
         }
 
         [Then(@"Line X labels of ""(.*)"" column widget is displayed in following order:")]
@@ -1020,7 +1016,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             List<string> labelList = page.GetPointOfColumnWidgetByName(widgetName);
             var expectedList = table.Rows.SelectMany(row => row.Values).Where(x => !x.Equals(String.Empty)).ToList();
 
-            Utils.Verify.AreEqual(expectedList, labelList, "Label order is incorrect");
+            Verify.AreEqual(expectedList, labelList, "Label order is incorrect");
         }
 
         //TODO does it make sense to make this step more generic?
@@ -1038,23 +1034,23 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.MouseHover(page.GetTopBarActionButton(buttonName));
             var toolTipText = _driver.GetTooltipText();
-            Utils.Verify.AreEqual(tooltip, toolTipText, "Tooltip is incorrect");
+            Verify.AreEqual(tooltip, toolTipText, "Tooltip is incorrect");
         }
 
         [Then(@"Print Preview is displayed to the User")]
         public void ThenPrintPreviewIsDisplayedToTheUser()
         {
             var page = _driver.NowAt<PrintDashboardsPage>();
-            Utils.Verify.IsTrue(page.PrintPreviewSettingsPopUp.Displayed(), "Print Preview is not Displayed");
-            Utils.Verify.IsTrue(page.DashWorksPrintLogo.Displayed(), "Dashworks logo isn't displayed");
-            Utils.Verify.IsTrue(page.PrintPreviewWidgets.Displayed, "Print preview widgets aren't displayed");
+            Verify.IsTrue(page.PrintPreviewSettingsPopUp.Displayed(), "Print Preview is not Displayed");
+            Verify.IsTrue(page.DashWorksPrintLogo.Displayed(), "Dashworks logo isn't displayed");
+            Verify.IsTrue(page.PrintPreviewWidgets.Displayed, "Print preview widgets aren't displayed");
         }
 
         [Then(@"There is no breadcrumbs displayed on Dashboard page")]
         public void ThereIsNoBreadcrumbsDisplayedOnDashboardPage()
         {
             var page = _driver.NowAt<PrintDashboardsPage>();
-            Utils.Verify.That(page.PrintBreadcrumbs.Displayed(), Is.False, "Print Preview displayed with breadcrumbs");
+            Verify.That(page.PrintBreadcrumbs.Displayed(), Is.False, "Print Preview displayed with breadcrumbs");
         }
 
         [When(@"User selects ""(.*)"" option in the ""(.*)"" dropdown for Print Preview Settings")]
@@ -1072,7 +1068,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
             //Wait for style changing
             Thread.Sleep(1000);
-            Utils.Verify.IsTrue(page.A4PrintPreviewView.Displayed, "Print Preview is not displayed in A4 format view");
+            Verify.IsTrue(page.A4PrintPreviewView.Displayed, "Print Preview is not displayed in A4 format view");
         }
 
         [Then(@"Print Preview is displayed in Letter format view")]
@@ -1081,7 +1077,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<PrintDashboardsPage>();
             //Wait for style changing
             Thread.Sleep(500);
-            Utils.Verify.IsTrue(page.LetterPrintPreviewView.Displayed, "Print Preview is not displayed in Letter format view");
+            Verify.IsTrue(page.LetterPrintPreviewView.Displayed, "Print Preview is not displayed in Letter format view");
         }
 
         [Then(@"Print Preview is displayed in Portrait orientation")]
@@ -1090,7 +1086,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<PrintDashboardsPage>();
             //Wait for style changing
             Thread.Sleep(500);
-            Utils.Verify.IsTrue(page.PortraitPrintPreviewOrientation.Displayed, "Print Preview is not displayed in Portrait orientation");
+            Verify.IsTrue(page.PortraitPrintPreviewOrientation.Displayed, "Print Preview is not displayed in Portrait orientation");
         }
 
         [Then(@"Print Preview is displayed in Landscape orientation")]
@@ -1099,7 +1095,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<PrintDashboardsPage>();
             //Wait for style changing
             Thread.Sleep(500);
-            Utils.Verify.IsTrue(page.LandscapePrintPreviewOrientation.Displayed, "Print Preview is not displayed in Landscape orientation");
+            Verify.IsTrue(page.LandscapePrintPreviewOrientation.Displayed, "Print Preview is not displayed in Landscape orientation");
         }
 
         [When(@"User clicks Cancel button on the Print Preview Settings pop-up")]
@@ -1114,7 +1110,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForDataLoading();
-            Utils.Verify.IsTrue(page.DataLabels.Displayed(), "Data Labels are not displayed");
+            Verify.IsTrue(page.DataLabels.Displayed(), "Data Labels are not displayed");
         }
 
         [Then(@"""(.*)"" data label is displayed on the Dashboards page")]
@@ -1122,21 +1118,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForDataLoading();
-            Utils.Verify.That(page.DataLabels.Text, Is.EqualTo(text), $"{text} data label is not displayed");
+            Verify.That(page.DataLabels.Text, Is.EqualTo(text), $"{text} data label is not displayed");
         }
 
         [Then(@"Move to Section pop up is displayed to the User")]
         public void ThenMoveToSectionPopUpIsDisplayedToTheUser()
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            Utils.Verify.IsTrue(page.MoveToSectionPopUp.Displayed(), "Move to Section pop up is not displayed");
+            Verify.IsTrue(page.MoveToSectionPopUp.Displayed(), "Move to Section pop up is not displayed");
         }
 
         [Then(@"Move to Section pop up is not displayed to the User")]
         public void ThenMoveToSectionPopUpIsNotDisplayedToTheUser()
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            Utils.Verify.IsFalse(page.MoveToSectionPopUp.Displayed(), "Move to Section pop up is displayed");
+            Verify.IsFalse(page.MoveToSectionPopUp.Displayed(), "Move to Section pop up is displayed");
         }
 
         [When(@"User selects ""(.*)"" section on the Move to Section pop up")]
@@ -1159,7 +1155,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForDataLoading();
 
-            Utils.Verify.That(page.GetWidgetLinks(widgetName).Count, Is.EqualTo(0), $"Found some links in widget");
+            Verify.That(page.GetWidgetLinks(widgetName).Count, Is.EqualTo(0), $"Found some links in widget");
         }
 
         [Then(@"'(.*)' color displayed for '(.*)' value in table '(.*)' widget")]
@@ -1168,7 +1164,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForDataLoading();
 
-            Utils.Verify.That(page.GetTableGridValues(widget)
+            Verify.That(page.GetTableGridValues(widget)
                 .Select(x => x.Text.Equals(value) && x.GetAttribute("style").Contains(ColorsConvertor.ConvertToHex(color))).Count(), Is.GreaterThan(0), $"Wrong color detected");
         }
 
@@ -1196,14 +1192,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenDefaultDashboardCheckboxBecomesDisabled()
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            Utils.Verify.That(page.DefaultDashboardCheckbox.GetAttribute("disabled"), Is.EqualTo("true"), $"Default dashboard displayed enabled");
+            Verify.That(page.DefaultDashboardCheckbox.GetAttribute("disabled"), Is.EqualTo("true"), $"Default dashboard displayed enabled");
         }
 
         [Then(@"Default dashboard checkbox displayed checked in Dashboard details")]
         public void ThenDefaultDashboardCheckboxDisplayedChecked()
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            Utils.Verify.That(page.DefaultDashboardCheckbox.Selected, Is.EqualTo(true), $"Default dashboard displayed deselected");
+            Verify.That(page.DefaultDashboardCheckbox.Selected, Is.EqualTo(true), $"Default dashboard displayed deselected");
         }
 
         [When(@"User select ""(.*)"" sharing option on the Dashboards page")]
@@ -1218,7 +1214,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenDashboardShowsPermissionToTheUser(string permission)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            Utils.Verify.That(page.SharingDropdownPermissionValue.Text, Is.EqualTo(permission), $"Permission {permission} was not the same in Dashboard Details");
+            Verify.That(page.SharingDropdownPermissionValue.Text, Is.EqualTo(permission), $"Permission {permission} was not the same in Dashboard Details");
         }
 
 
@@ -1226,14 +1222,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenReviewWidgetListPermissionsIsDisplayedToTheUser()
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            Utils.Verify.IsTrue(page.ReviewWidgetListPermissionsPopUp.Displayed(), "Review Widget List Permissions is not displayed");
+            Verify.IsTrue(page.ReviewWidgetListPermissionsPopUp.Displayed(), "Review Widget List Permissions is not displayed");
         }
 
         [Then(@"Review Widget List Permissions is not displayed to the User")]
         public void ThenReviewWidgetListPermissionsIsNotDisplayedToTheUser()
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            Utils.Verify.IsFalse(page.ReviewWidgetListPermissionsPopUp.Displayed(), "Review Widget List Permissions is displayed");
+            Verify.IsFalse(page.ReviewWidgetListPermissionsPopUp.Displayed(), "Review Widget List Permissions is displayed");
         }
 
 
@@ -1241,7 +1237,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenListPermissionsPopupShowsWidgetNameToTheUser(string widget, string listName)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            Utils.Verify.That(page.WidgetValueForList(listName).Text, Is.EqualTo(widget), $"Widget name {widget} was not found in Review Permissions popup");
+            Verify.That(page.WidgetValueForList(listName).Text, Is.EqualTo(widget), $"Widget name {widget} was not found in Review Permissions popup");
         }
 
         [Then(@"Current user displayed for ""(.*)"" list on Permissions Pop-up")]
@@ -1250,7 +1246,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var header = _driver.NowAt<HeaderElement>();
             var page = _driver.NowAt<EvergreenDashboardsPage>();
 
-            Utils.Verify.That(page.OwnerValueForList(listName).Text,
+            Verify.That(page.OwnerValueForList(listName).Text,
                 Is.EqualTo(header.UserNameDropdown.Text), $"Owner name was not found in Review Permissions popup");
         }
 
@@ -1259,7 +1255,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
 
-            Utils.Verify.That(page.OwnerValueForList(listName).Text,
+            Verify.That(page.OwnerValueForList(listName).Text,
                 Is.EqualTo(user), $"User name was not found in Review Permissions popup");
         }
 
@@ -1267,7 +1263,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenListPermissionsPopupShowsCurrentPermissionToTheUser(string permission, string listName)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            Utils.Verify.That(page.CurrentPermissionValueForList(listName).Text,
+            Verify.That(page.CurrentPermissionValueForList(listName).Text,
                 Is.EqualTo(permission), $"Current permission {permission} was not found in Review Permissions popup");
         }
 
@@ -1275,7 +1271,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenListPermissionsPopupShowsNewPermissionToTheUser(string permission, string listName)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            Utils.Verify.That(page.NewPermissionsValueForList(listName).Text, Is.EqualTo(permission), $"New permission {permission} was not found in Review Permissions popup");
+            Verify.That(page.NewPermissionsValueForList(listName).Text, Is.EqualTo(permission), $"New permission {permission} was not found in Review Permissions popup");
         }
 
         [Then(@"User sees next options of New Permission field for ""(.*)"" list on Permissions Pop-up")]
@@ -1291,7 +1287,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 Assert.That(options.FindAll(x => x.Equals(row["Options"])).Count == 1, "PLEASE ADD EXCEPTION MESSAGE");
             }
-            Utils.Verify.That(options.Count, Is.EqualTo(table.Rows.Count));
+            Verify.That(options.Count, Is.EqualTo(table.Rows.Count));
 
             //hide menu
             page.SelectDoNotChangeReviewPermission();
@@ -1312,7 +1308,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
 
-            Utils.Verify.That(page.GetDropdownStateOfReviewWidgetPermissionsPopup(listName),
+            Verify.That(page.GetDropdownStateOfReviewWidgetPermissionsPopup(listName),
                 Is.EqualTo(state.ToUpper()), $"New permission {state} states is different");
         }
 
@@ -1322,7 +1318,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.MouseHover(page.NewPermissionsDropdownForList(listName));
             var toolTipText = _driver.GetTooltipText();
-            Utils.Verify.That(tooltip, Is.EqualTo(toolTipText), "Tooltip is different");
+            Verify.That(tooltip, Is.EqualTo(toolTipText), "Tooltip is different");
         }
 
         [Then(@"Button ""(.*)"" has enabled property ""(.*)"" on Permissions Pop-up")]
@@ -1330,7 +1326,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
 
-            Utils.Verify.That(page.GetButtonStateOfReviewWidgetPermissionsPopup(buttonCapture),
+            Verify.That(page.GetButtonStateOfReviewWidgetPermissionsPopup(buttonCapture),
                 Is.EqualTo(buttonState.ToUpper()), $"Button {buttonCapture} states is different");
         }
 
@@ -1341,7 +1337,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.MouseHover(button.ReviewPermissionsPopupsButton(buttonCapture));
             _driver.WaitForDataLoading();
             var toolTipText = _driver.GetTooltipText();
-            Utils.Verify.That(tooltip, Is.EqualTo(toolTipText), "Tooltip is different");
+            Verify.That(tooltip, Is.EqualTo(toolTipText), "Tooltip is different");
         }
 
         [When(@"User clicks the ""(.*)"" button on Permissions Pop-up")]
@@ -1362,10 +1358,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             foreach (var row in table.Rows)
             {
-                Utils.Verify.That(options.FindAll(x => x.Equals(row["OptionsName"])).Count == 1,
+                Verify.That(options.FindAll(x => x.Equals(row["OptionsName"])).Count == 1,
                     "PLEASE ADD EXCEPTION MESSAGE");
             }
-            Utils.Verify.That(options.Count, Is.EqualTo(table.Rows.Count));
+            Verify.That(options.Count, Is.EqualTo(table.Rows.Count));
         }
 
         [When(@"Dashboard page loaded")]

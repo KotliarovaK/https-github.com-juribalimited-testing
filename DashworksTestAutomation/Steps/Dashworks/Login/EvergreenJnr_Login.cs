@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Configuration;
+using System.Linq;
 using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
@@ -13,6 +15,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using RestSharp;
 using TechTalk.SpecFlow;
+using TechTalk.SpecFlow.Assist;
 
 namespace DashworksTestAutomation.Steps.Dashworks.Login
 {
@@ -32,6 +35,21 @@ namespace DashworksTestAutomation.Steps.Dashworks.Login
         {
             //Login to website via api
             LoginViaApi(_driver);
+            //Navigate to Evergreen page
+            _driver.NavigateToUrl(UrlProvider.EvergreenUrl);
+        }
+
+        [When(@"User is logged in to the Evergreen as")]
+        public void GivenSpecificUserIsLoggedInToTheEvergreen(Table table)
+        {
+            UserDto user = table.CreateInstance<UserDto>();
+            user.Language = ConfigurationManager.AppSettings["user.language"];
+
+            if (user == null)
+                throw new Exception("User table is not set");
+            
+            //Login to website via api
+            LoginViaApiAsUser(_driver, user);
             //Navigate to Evergreen page
             _driver.NavigateToUrl(UrlProvider.EvergreenUrl);
         }
