@@ -10,6 +10,8 @@ namespace DashworksTestAutomation.Providers
 {
     internal class UserProvider
     {
+        public static string DefaultUserLanguage = ConfigurationManager.AppSettings["user.language"];
+
         static readonly RestClient client = new RestClient(JuribaAutomationApiProvider.Uri);
 
         private static readonly Mutex _mut = new Mutex();
@@ -27,7 +29,7 @@ namespace DashworksTestAutomation.Providers
                 {
                     Username = $"automation_admin{i}",
                     Password = Password,
-                    Language = ConfigurationManager.AppSettings["user.language"]
+                    Language = DefaultUserLanguage
                 });
         }
 
@@ -37,7 +39,7 @@ namespace DashworksTestAutomation.Providers
             {
                 Username = $"admin",
                 Password = Password,
-                Language = ConfigurationManager.AppSettings["user.language"]
+                Language = DefaultUserLanguage
             };
         }
 
