@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Utils;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 
@@ -43,7 +44,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         {
             var selector = By.XPath(string.Format(LeftMenuSelector, name));
             if (!Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Long))
+            {
+                Logger.Write(Driver.PageSource);
                 throw new Exception($"'{name}' left menu was not displayed");
+            }
             return Driver.FindElement(selector);
         }
 
