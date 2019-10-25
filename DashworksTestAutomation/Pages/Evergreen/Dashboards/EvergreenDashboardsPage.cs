@@ -706,7 +706,7 @@ namespace DashworksTestAutomation.Pages
             return columnNumber;
         }
 
-        public List<string> GetPieTooltipText()
+        public List<string> GetChartCategoryTooltipText()
         {
             Driver.WaitForElementToBeDisplayed(PieTooltip);
             return PieTooltip.FindElements(By.XPath(".//*[string-length(text())>0]")).Select(x => x.Text).ToList();
@@ -747,7 +747,7 @@ namespace DashworksTestAutomation.Pages
             {
                 Driver.MouseHover(webElement);
 
-                if (GetPieTooltipText().First().Equals(chartCategory))
+                if (GetChartCategoryTooltipText().First().Equals(chartCategory))
                 {
                     return webElement;
                 }
@@ -756,7 +756,7 @@ namespace DashworksTestAutomation.Pages
                 Thread.Sleep(2000);
             }
 
-            throw new Exception($"Unable to find widget chart category '{chartCategory}'");
+            throw new Exception($"Chart category '{chartCategory}' wasn't found");
         }
 
         public IWebElement GetListIconFromListSectionOfDetailsPanel(string listname)
