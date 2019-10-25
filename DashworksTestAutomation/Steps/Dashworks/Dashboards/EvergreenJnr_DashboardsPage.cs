@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using DashworksTestAutomation.DTO.Evergreen.Admin;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
@@ -22,10 +23,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
     internal class EvergreenJnr_DashboardsPage : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
-        private readonly Dashboard _dashboard;
+        private readonly Dashboards _dashboard;
         private readonly SectionsAndWidgetsCount _sectionsAndWidgets;
 
-        public EvergreenJnr_DashboardsPage(RemoteWebDriver driver, Dashboard dashboard, SectionsAndWidgetsCount sectionsAndWidgets)
+        public EvergreenJnr_DashboardsPage(RemoteWebDriver driver, Dashboards dashboard, SectionsAndWidgetsCount sectionsAndWidgets)
         {
             _driver = driver;
             _dashboard = dashboard;
@@ -127,7 +128,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
             _driver.WaitForElementToBeDisplayed(dashboardElement.SuccessMessage);
 
-            _dashboard.Value.dashboardId = DatabaseHelper.GetDashboardId(dashboardName + "2");
+            _dashboard.Value.Add(new DashboardDto() { DashboardName = $"{dashboardName}2" });
         }
 
         [Then(@"Dashboard with name ""(.*)"" marked as favorite")]
@@ -170,7 +171,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.ClickSectionFromCircleChart(chartName, sectionName);
         }
 
-        [Then (@"User sees correct tooltip for Show Dashboards panel")]
+        [Then(@"User sees correct tooltip for Show Dashboards panel")]
         public void WhenUserSeesCorrectTooltipForShowDashboardsPanel()
         {
             var page = _driver.NowAt<BaseDashboardPage>();
@@ -621,7 +622,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             listElement.SaveButton.Click();
             _driver.WaitForElementToBeNotDisplayed(listElement.SaveButton);
             _driver.WaitForDataLoading();
-            _dashboard.Value.dashboardId = DatabaseHelper.GetDashboardId(dashboardName);
+            _dashboard.Value.Add(new DashboardDto() { DashboardName = dashboardName });
         }
 
         [When(@"User types ""(.*)"" as dashboard title")]
@@ -856,7 +857,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             action.ClickButtonByName("ADD USER");
-            
+
             foreach (var row in table.Rows)
             {
                 if (!string.IsNullOrEmpty(row["User"]))
@@ -881,7 +882,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForElementsToBeDisplayed(page.PermissionNameOfAddedUser);
 
-            Verify.That(page.PermissionNameOfAddedUser.Select(x=>x.Text).ToList(), Does.Contain(username), "Username is not one that expected");
+            Verify.That(page.PermissionNameOfAddedUser.Select(x => x.Text).ToList(), Does.Contain(username), "Username is not one that expected");
             Verify.That(page.PermissionAccessTypeOfAddedUser.Select(x => x.Text).ToList(), Does.Contain(permission), "Permission is not one that expected");
         }
 
@@ -889,7 +890,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenNoUserFoundInSharedList()
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-           // _driver.WaitForElementToBeNotDisplayed(page.PermissionNameOfAddedUser);
+            // _driver.WaitForElementToBeNotDisplayed(page.PermissionNameOfAddedUser);
             Verify.That(page.PermissionNameOfAddedUser.Count, Is.EqualTo(0), "Username found in shared list");
         }
 

@@ -442,18 +442,6 @@ namespace DashworksTestAutomation.Helpers
 
         #endregion
 
-        #region Dashboard
-
-        public static string GetDashboardId(string dashboardName)
-        {
-            return
-                DatabaseHelper.ExecuteReader(
-                    $"select [DashboardId] from [desktopBI].[dbo].[EvergreenDashboards] where [DashboardName] = '{dashboardName}'",
-                    0).LastOrDefault();
-        }
-
-        #endregion
-
         #region Custom Field
 
         public static string GetCustomFieldId(string name)
@@ -522,6 +510,22 @@ namespace DashworksTestAutomation.Helpers
             catch (Exception e)
             {
                 throw new Exception("GetProjectReadinessesIds returned no results", e);
+            }
+        }
+
+        #endregion
+
+        #region Dashboard
+
+        public static string GetDashboardId(string dashboardName, string userId)
+        {
+            try
+            {
+                return DatabaseHelper.ExecuteReader($"SELECT [DashboardId] FROM [DesktopBI].[dbo].[EvergreenDashboards] where [DashboardName] = '{dashboardName}' AND [UserId] = '{userId}'", 0)[0];
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Unable to get '{dashboardName}' Dashboard name for '{userId}' user", e);
             }
         }
 

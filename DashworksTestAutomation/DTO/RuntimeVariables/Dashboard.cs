@@ -3,14 +3,14 @@ using DashworksTestAutomation.DTO.Evergreen.Admin;
 
 namespace DashworksTestAutomation.DTO.RuntimeVariables
 {
-
-    public class Dashboard
+    //Store created Dashboards here
+    public class Dashboards
     {
-        public DashboardDto Value { get; set; }
+        public List<DashboardDto> Value { get; set; }
 
-        public Dashboard()
+        public Dashboards()
         {
-            Value = new DashboardDto();
+            Value = new List<DashboardDto>();
         }
     }
 }

@@ -1,11 +1,15 @@
 ﻿using System;
+using System.Drawing.Text;
 using System.Linq;
 using System.Net;
+using DashworksTestAutomation.DTO;
+using DashworksTestAutomation.DTO.Evergreen.Admin;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages;
 using DashworksTestAutomation.Providers;
+using DashworksTestAutomation.Utils;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using OpenQA.Selenium.Remote;
@@ -18,14 +22,17 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Dashboard
     public class EvergreenJnr_API_DashboardPage : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
-        private readonly DTO.RuntimeVariables.Dashboard _dashboard;
+        private readonly Dashboards _dashboard;
         private readonly RestWebClient _client;
+        private readonly UserDto _user;
 
-        private EvergreenJnr_API_DashboardPage(RemoteWebDriver driver, DTO.RuntimeVariables.Dashboard dashboard, RestWebClient client)
+        private EvergreenJnr_API_DashboardPage(RemoteWebDriver driver, Dashboards dashboard,
+            RestWebClient client, UserDto user)
         {
             _driver = driver;
             _dashboard = dashboard;
             _client = client;
+            _user = user;
         }
 
         [When(@"Dashboard with ""(.*)"" name created via API and opened")]
@@ -49,42 +56,49 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Dashboard
                     $"Unable to execute request. Error details: {JsonConvert.DeserializeObject<JObject>(response.Content)["details"]}");
 
             var responseContent = JsonConvert.DeserializeObject<JObject>(response.Content);
-            _dashboard.Value.dashboardId = responseContent["dashboardId"].ToString();
+            var newDashboard = new DashboardDto()
+            { DashboardName = name, DashboardId = responseContent["dashboardId"].ToString() };
+            _dashboard.Value.Add(newDashboard);
 
-            _driver.Navigate().GoToUrl($"{UrlProvider.EvergreenUrl}/#/dashboards/{_dashboard.Value.dashboardId}");
+            _driver.Navigate().GoToUrl($"{UrlProvider.EvergreenUrl}/#/dashboards/{newDashboard.DashboardId}");
         }
 
         [When(@"Dashboard with ""(.*)"" name is opened via API")]
         public void WhenDashboardWithNameIsOpenedViaApi(string name)
         {
-            _driver.Navigate().GoToUrl($"{UrlProvider.EvergreenUrl}/#/dashboards/{DatabaseHelper.GetDashboardId(name)}");
+            _driver.Navigate()
+                .GoToUrl($"{UrlProvider.EvergreenUrl}/#/dashboards/{DatabaseHelper.GetDashboardId(name, _user.Id)}");
             _driver.WaitForDataLoading();
         }
 
-        [AfterScenario("Cleanup")]
+        [AfterScenario("Cleanup", Order = 10)]
         public void DeleteNewlyCreatedDashboard()
         {
-            try
+            if (!_dashboard.Value.Any())
+                return;
+
+            foreach (DashboardDto dashboardDto in _dashboard.Value)
             {
-                if (string.IsNullOrEmpty(_dashboard.Value.dashboardId))
-                    return;
+                try
+                {
+                    var requestUri = $"{UrlProvider.RestClientBaseUrl}dashboard/{dashboardDto.DashboardId}";
 
-                var requestUri = $"{UrlProvider.RestClientBaseUrl}dashboard/{_dashboard.Value.dashboardId}";
+                    var request = new RestRequest(requestUri);
+                    request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
+                    request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
+                    request.AddParameter("Referer", UrlProvider.EvergreenUrl);
+                    var response = _client.Value.Delete(request);
 
-                var request = new RestRequest(requestUri);
-                request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
-                request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
-                request.AddParameter("Referer", UrlProvider.EvergreenUrl);
-                var response = _client.Value.Delete(request);
-
-                if (response.StatusCode != HttpStatusCode.OK)
-                    throw new Exception(
-                        $"Unable to execute request. Status Code: {response.StatusCode}, URI: {requestUri}");
+                    if (response.StatusCode != HttpStatusCode.OK)
+                    {
+                        Console.WriteLine($"Unable to delete dashboard with '{dashboardDto.DashboardName}' name: {response.StatusCode}");
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine($"Unable to delete dashboard with '{dashboardDto.DashboardName}' name: {e}");
+                }
             }
-            catch
-            {
-            }
-
         }
     }
 }
