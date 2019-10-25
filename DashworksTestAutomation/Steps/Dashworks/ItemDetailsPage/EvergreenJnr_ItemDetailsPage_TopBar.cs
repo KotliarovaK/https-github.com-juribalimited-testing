@@ -10,6 +10,7 @@ using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.Base;
 using DashworksTestAutomation.Pages.Evergreen.ItemDetails;
+using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
@@ -118,7 +119,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
 
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var actualList = topBar.GetComplianceItemsOnTopBar();
-            Utils.Verify.AreEqual(expectedList, actualList, "Compliance items in Top bar on the Item details page is incorrect!");
+            Verify.AreEqual(expectedList, actualList, "Compliance items in Top bar on the Item details page is incorrect!");
         }
 
         [Then(@"following Compliance items with appropriate colors are displayed in Top bar on the Item details page:")]
@@ -128,8 +129,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
 
             foreach (var row in table.Rows)
             {
-                Utils.Verify.IsTrue(topBar.GetComplianceValueOnTheDetailsPageByComplianceName(row["ComplianceItems"], row["ColorName"]).Displayed(),
-                    $"'{row["ComplianceItems"]}' does not match the '{row["ColorName"]}'!");
+                _driver.WaitForElementToHaveText(topBar.GetTobBarItemTextElement(row["ComplianceItems"]), row["ColorName"]);
+                Verify.AreEqual(row["ColorName"],topBar.GetTobBarItemTextElement(row["ComplianceItems"]).Text,
+                    $"Incorrect text is displayed in the '{row["ComplianceItems"]}' tob bar");
             }
         }
 

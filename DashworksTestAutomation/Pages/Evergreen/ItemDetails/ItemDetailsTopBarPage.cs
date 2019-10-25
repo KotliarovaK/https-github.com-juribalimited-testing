@@ -14,6 +14,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
     {
         public const string ProjectOnSwitcherPanel = ".//mat-option[@class='mat-option ng-star-inserted']";
 
+        public const string TopBarTitleSelector = ".//div[contains(@class,'topbar-item-label')]";
+
         [FindsBy(How = How.XPath, Using = ".//div[@id='pagetitle']")]
         public IWebElement PageIdentitySelectors { get; set; }
 
@@ -25,10 +27,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='topbar-select']")]
         public IWebElement ProjectSwitcherDropdownTopBar { get; set; }
-        
+
         [FindsBy(How = How.XPath, Using = ProjectOnSwitcherPanel)]
         public IList<IWebElement> ProjectsOnSwitcherPanel { get; set; }
-       
 
         public override List<By> GetPageIdentitySelectors()
         {
@@ -40,6 +41,32 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
             };
         }
 
+        public IList<IWebElement> GetTopBarItems()
+        {
+            var selector = By.XPath(".//div[contains(@class,'topbar-items')]/div[contains(@class,'topbar-item')]");
+            Driver.WaitForElementsToBeDisplayed(selector);
+            return Driver.FindElements(selector);
+        }
+
+        public IWebElement GetTopBarElementWithTitle(string title)
+        {
+            if (GetTopBarItems()
+                .Any(x => x.FindElement(By.XPath(TopBarTitleSelector)).Text.Equals(title)))
+            {
+                return
+                    GetTopBarItems().First(x =>
+                        x.FindElement(By.XPath(TopBarTitleSelector)).Text.Equals(title));
+            }
+
+            throw new Exception($"Unable to find top toolbar item with '{title}' title");
+        }
+
+        public IWebElement GetTobBarItemTextElement(string tobBarTitle)
+        {
+            return GetTopBarElementWithTitle(tobBarTitle)
+                .FindElement(By.XPath(".//div[contains(@class,'topbar-item-value')]"));
+        }
+
         public List<string> GetComplianceItemsOnTopBar()
         {
             var selector = By.XPath(".//div[@class='topbar-item-label']");
@@ -49,13 +76,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         public bool GetProjectSwitcherDisplayedState()
         {
             return Driver.IsElementDisplayed(By.XPath(".//div[contains(@class, 'transformPanel')]"));
-        }
-
-        public IWebElement GetComplianceValueOnTheDetailsPageByComplianceName(string title, string value)
-        {
-            var selector = By.XPath($".//div[text()='{title}']//ancestor::div//div[@class='topbar-item-value']//span[text()='{value}']");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
         }
 
         public IWebElement GetSelectedProjectOnTopBarByName(string projectName)
