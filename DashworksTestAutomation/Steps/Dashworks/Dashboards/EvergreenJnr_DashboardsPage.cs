@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.DTO.Evergreen.Admin;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
@@ -25,12 +26,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
         private readonly RemoteWebDriver _driver;
         private readonly Dashboards _dashboard;
         private readonly SectionsAndWidgetsCount _sectionsAndWidgets;
+        private readonly UserDto _user;
 
-        public EvergreenJnr_DashboardsPage(RemoteWebDriver driver, Dashboards dashboard, SectionsAndWidgetsCount sectionsAndWidgets)
+        public EvergreenJnr_DashboardsPage(RemoteWebDriver driver, Dashboards dashboard, SectionsAndWidgetsCount sectionsAndWidgets,
+            UserDto user)
         {
             _driver = driver;
             _dashboard = dashboard;
             _sectionsAndWidgets = sectionsAndWidgets;
+            _user = user;
         }
 
         [Then(@"Dashboard with ""(.*)"" title displayed in All Dashboards")]
@@ -128,7 +132,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
             _driver.WaitForElementToBeDisplayed(dashboardElement.SuccessMessage);
 
-            _dashboard.Value.Add(new DashboardDto() { DashboardName = $"{dashboardName}2" });
+            _dashboard.Value.Add(new DashboardDto() { DashboardName = $"{dashboardName}2", User = _user });
         }
 
         [Then(@"Dashboard with name ""(.*)"" marked as favorite")]
@@ -622,7 +626,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             listElement.SaveButton.Click();
             _driver.WaitForElementToBeNotDisplayed(listElement.SaveButton);
             _driver.WaitForDataLoading();
-            _dashboard.Value.Add(new DashboardDto() { DashboardName = dashboardName });
+            _dashboard.Value.Add(new DashboardDto() { DashboardName = dashboardName, User = _user });
         }
 
         [When(@"User types ""(.*)"" as dashboard title")]

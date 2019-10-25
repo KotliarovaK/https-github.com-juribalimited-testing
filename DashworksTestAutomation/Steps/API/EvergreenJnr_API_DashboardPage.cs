@@ -56,8 +56,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Dashboard
                     $"Unable to execute request. Error details: {JsonConvert.DeserializeObject<JObject>(response.Content)["details"]}");
 
             var responseContent = JsonConvert.DeserializeObject<JObject>(response.Content);
+
             var newDashboard = new DashboardDto()
-            { DashboardName = name, DashboardId = responseContent["dashboardId"].ToString() };
+            {
+                DashboardName = name,
+                DashboardId = responseContent["dashboardId"].ToString(),
+                User = _user
+            };
             _dashboard.Value.Add(newDashboard);
 
             _driver.Navigate().GoToUrl($"{UrlProvider.EvergreenUrl}/#/dashboards/{newDashboard.DashboardId}");
@@ -66,8 +71,12 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Dashboard
         [When(@"Dashboard with ""(.*)"" name is opened via API")]
         public void WhenDashboardWithNameIsOpenedViaApi(string name)
         {
+            var id = _dashboard.Value.Any(x => x.DashboardName.Equals(name))
+                ? _dashboard.Value.First(x => x.DashboardName.Equals(name)).DashboardId
+                : DatabaseHelper.GetDashboardId(name, _user.Id);
+
             _driver.Navigate()
-                .GoToUrl($"{UrlProvider.EvergreenUrl}/#/dashboards/{DatabaseHelper.GetDashboardId(name, _user.Id)}");
+                .GoToUrl($"{UrlProvider.EvergreenUrl}/#/dashboards/{id}");
             _driver.WaitForDataLoading();
         }
 
