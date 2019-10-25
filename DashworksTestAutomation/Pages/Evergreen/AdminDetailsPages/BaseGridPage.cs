@@ -389,20 +389,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public IWebElement GetColumnHeaderByName(string columnName)
         {
-            string selector;
-            if (columnName.Contains("'"))
-            {
-                var strings = columnName.Split('\'');
-                selector =
-                    $".//div[@role='presentation']/span[contains(text(),'{strings[0]}')][contains(text(), '{strings[1]}')]/..";
-            }
-            else
-            {
-                selector = $".//div[@role='presentation']/span[text()='{columnName}']/..";
-            }
-
-            Driver.WaitForElementToBeDisplayed(By.XPath(selector));
-            return Driver.FindElement(By.XPath(selector));
+            var colId = GetColIdByColumnName(columnName);
+            var headerSelector = By.XPath($".//div[contains(@class,'ag-header')][@col-id='{colId}']");
+            if (!Driver.IsElementDisplayed(headerSelector, WebDriverExtensions.WaitTime.Long))
+                throw new Exception($"'{columnName}' header was not displayed");
+            return Driver.FindElement(headerSelector);
         }
 
         public bool GetStringFilterByName(string filterName)
@@ -598,7 +589,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         private string GetColIdByColumnName(string columnName)
         {
-            var by = By.XPath($".//span[text()='{columnName}']/ancestor::div[@col-id]");
+            var textParts = columnName.Split('\'');
+            var spanPart = textParts.Where(part => !string.IsNullOrEmpty(part))
+                .Aggregate(string.Empty, (current, part) => current + $"[contains(text(),'{part}')]");
+            var by = By.XPath($".//span{spanPart}/ancestor::div[@col-id]");
             if (!Driver.IsElementDisplayed(by, WebDriverExtensions.WaitTime.Short))
                 throw new Exception($"'{columnName}' column was not displayed");
             return Driver.FindElement(by).GetAttribute("col-id");
