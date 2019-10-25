@@ -110,6 +110,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 createWidgetElement.MaxValues.SendKeys(row["MaxValues"]);
             }
 
+            if (row.ContainsKey("DrillDown") && !string.IsNullOrEmpty(row["DrillDown"]))
+            {
+                createWidgetElement.Drilldown.Click();
+                createWidgetElement.SelectObjectForWidgetCreation(row["DrillDown"]);
+                _driver.WaitForDataLoadingOnProjects();
+            }
+
             if (row.ContainsKey("TableOrientation") && !string.IsNullOrEmpty(row["TableOrientation"]))
             {
                 createWidgetElement.TableOrientation.Click();
@@ -597,6 +604,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
                                   $"List has wrong items/order at {actualItems[i]}");
             }
             Verify.That(actualItems.Count, Is.EqualTo(expectedItems.Count), $"Lists item count is different");
+        }
+
+        [When(@"User clicks on '(.*)' category of '(.*)' widget")]
+        public void WhenUserClicksOnCategoryOfWidget(string category, string widgetName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+
+            _driver.ExecuteAction(() => page.GetWidgetChartItem(widgetName, category).Click());
         }
     }
 }

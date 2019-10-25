@@ -264,6 +264,15 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 $"Sum of objects in the '{columnName}' column is incorrect!");
         }
 
+        [Then(@"all cells in the '(.*)' column are empty")]
+        public void ThenAllCellsInTheColumnAreEmpty(string columnName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            var cells = page.GetColumnContentByColumnName(columnName);
+            Verify.IsTrue(cells.All(string.IsNullOrEmpty),
+                $"Some content is displayed in the '{columnName}' column");
+        }
+
         [Then(@"data in table is sorted by '(.*)' column in descending order")]
         public void ThenDataInTableIsSortedByColumnInDescendingOrder(string columnName)
         {
@@ -272,7 +281,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var expectedList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSorted(expectedList, false);
             _driver.WaitForDataLoading();
-            Utils.Verify.IsTrue(listPageMenu.DescendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.IsTrue(listPageMenu.DescendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"data in table is sorted by '(.*)' column in ascending order")]
@@ -355,7 +364,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             {
                 SortingHelper.IsListSortedByEnum<Color>(new List<string>(expectedList), false);
             }
-            Utils.Verify.IsTrue(listPageMenu.DescendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.IsTrue(listPageMenu.DescendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"Color data displayed with correct color and tooltip for ""(.*)"" column")]
@@ -369,7 +378,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
             for (int i = 0; i < ColumnValues.Count; i++)
             {
-                Utils.Verify.That(ColumnColors[i], Does.Contain(ColorsConvertor.Convert(ColumnValues[i])),
+                Verify.That(ColumnColors[i], Does.Contain(ColorsConvertor.Convert(ColumnValues[i])),
                     $"Wrong color {ColumnColors[i]} for label {ColumnValues[i]}");
             }
 
@@ -385,7 +394,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var listPageMenu = _driver.NowAt<BaseGridPage>();
             var expectedList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSortedByEnum<BooleanState>(new List<string>(expectedList));
-            Utils.Verify.IsTrue(listPageMenu.AscendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.IsTrue(listPageMenu.AscendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"boolean data is sorted by '(.*)' column in descending order")]
@@ -394,7 +403,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var listPageMenu = _driver.NowAt<BaseGridPage>();
             var expectedList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSortedByEnum<BooleanState>(new List<string>(expectedList), false);
-            Utils.Verify.IsTrue(listPageMenu.DescendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.IsTrue(listPageMenu.DescendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"The first cell of the table matches to default sorting ""(.*)"" list")]

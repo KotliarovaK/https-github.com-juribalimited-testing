@@ -1590,5 +1590,23 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<FiltersElement>();
             page.RemoveIconForAssociation(option).Click();
         }
+
+        [Then(@"Check that filter '(.*)' with option '(.*)' is added")]
+        public void ThenAppropriateFilterIsAdded(string expectedFilterName, string expectedFilterOption)
+        {
+            var filterPanel = _driver.NowAt<FiltersElement>();
+
+            foreach (IWebElement filter in filterPanel.GetAddedFilters())
+            {
+                var actualFilterName = filter.FindElement(By.XPath(FiltersElement.FilterNameSelector)).Text;
+                var actualFilterOption = filter.FindElement(By.XPath(FiltersElement.FilterOptionsSelector)).Text;
+                if (actualFilterName.Equals(expectedFilterName))
+                {
+                    Verify.AreEqual(expectedFilterOption, actualFilterOption, $"Expected filter option wasn't found");
+                    return;
+                }
+            }
+            throw new Exception($" Filter '{expectedFilterName}' isn't exist on that page");
+        }
     }
 }

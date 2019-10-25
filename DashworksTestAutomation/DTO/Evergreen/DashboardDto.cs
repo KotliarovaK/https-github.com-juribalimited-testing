@@ -1,4 +1,5 @@
-﻿using DashworksTestAutomation.Helpers;
+﻿using System;
+using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Utils;
 
 namespace DashworksTestAutomation.DTO.Evergreen.Admin
@@ -13,6 +14,11 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin
             {
                 if (string.IsNullOrEmpty(_id))
                 {
+                    if (User == null)
+                    {
+                        throw new Exception($"Unable to get '{DashboardName}' dashboard as related User is not set");
+                    }
+
                     _id = DatabaseHelper.GetDashboardId(DashboardName, User.Id);
                 }
 
