@@ -615,14 +615,14 @@ this.FeatureBackground();
                         "ProjectTemplate",
                         "Mode"});
             table15.AddRow(new string[] {
-                        "Project12965",
+                        "Project13428",
                         "All Devices",
                         "None",
                         "Standalone Project"});
 #line 151
  testRunner.When("Project created via API and opened", ((string)(null)), table15, "When ");
 #line 154
- testRunner.Then("Page with \'Project12965\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Page with \'Project13428\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 155
  testRunner.When("User navigates to the \'Scope\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 156

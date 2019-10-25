@@ -191,39 +191,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
                 By.XPath($".//div[@class='boolean-icon ng-star-inserted']/span[(text()='{filterName}')]"));
         }
 
-        public string GetInstalledFilterPanelHeight()
-        {
-            return Driver.FindElement(By.XPath(".//div[contains(@class, 'ag-menu')]")).GetCssValue("height");
-        }
-
-        public string CollectionSiteColumnWidth()
-        {
-            return Driver.FindElement(By.XPath(".//div[@col-id='collectionSite']")).GetCssValue("width");
-        }
-
         public string PackageSiteColumnWidth()
         {
             return Driver.FindElement(By.XPath(".//div[@col-id='packageSite']")).GetCssValue("width");
-        }
-
-        public string GetInstalledFilterPanelWidth()
-        {
-            return Driver.FindElement(By.XPath(".//div[contains(@class, 'ag-menu')]")).GetCssValue("width");
-        }
-
-        public List<string> GetColumnIdContent(string columnName)
-        {
-            var by = By.XPath(
-                $".//div[contains(@class, 'ag-body-viewport')]//div[@col-id='{GetColumnIdByColumnName(columnName)}']");
-            return Driver.FindElements(by).Select(x => x.Text).ToList();
-        }
-
-        public string GetColumnIdByColumnName(string columnName)
-        {
-            var headerSelector =
-                By.XPath($".//div[@class='ag-header-container']//span[text()='{columnName}']//ancestor::div[@col-id]");
-            Driver.WaitForDataLoading();
-            return Driver.FindElement(headerSelector).GetAttribute("col-id");
         }
 
         public IWebElement GetFilterByColumnName(string columnName)
@@ -241,14 +211,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
             return Driver.FindElements(by).Select(x => x.Text).ToList();
         }
 
-        public void ClosesSectionByName(string sectionName)
-        {
-            var section = Driver.FindElement(
-                By.XPath(
-                    $".//button[@class='btn btn-default blue-color mat-icon-button ng-star-inserted'][@aria-label='{sectionName}']"));
-            section.Click();
-        }
-
         public void GetCheckboxByName(string checkboxName)
         {
             var checkboxSettingsSelector = By.XPath($".//div[@class='ag-column-select-panel']//span[text()='{checkboxName}']");
@@ -262,14 +224,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
             var selector = By.XPath(".//span[@role='columnheader']");
             Driver.WaitForDataLoading();
             return Driver.FindElements(selector);
-        }
-
-        public void FilterValuesCheckbox(string checkboxName)
-        {
-            var filterCheckboxSelector =
-                $".//div[@class='boolean-icon ng-star-inserted']/span[text()='{checkboxName}']";
-            //Driver.MouseHover(By.XPath(filterCheckboxSelector));
-            Driver.WaitForElementToBeDisplayed(By.XPath(filterCheckboxSelector));
         }
 
         public bool ColumnIsDisplayed(string columnName)

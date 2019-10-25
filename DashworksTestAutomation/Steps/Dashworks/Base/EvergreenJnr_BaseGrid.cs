@@ -1,12 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.Base;
+using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
+using DashworksTestAutomation.Pages.Evergreen.Base;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
@@ -182,8 +187,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitForDataLoading();
-            var column = page.GetColumnContentByColumnName(columnName).ToList();
-            var columnContent = column.Select(x => x.Text).ToList();
+            var columnContent = page.GetColumnContentByColumnName(columnName);
             Verify.Contains(textContent, columnContent, $"'{textContent}' is not present in the '{columnName}' column");
         }
 
@@ -199,11 +203,10 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             }
             else
             {
-                var column = page.GetColumnContentByColumnName(columnName).ToList();
+                var column = page.GetColumnContentByColumnName(columnName);
                 if (column.Any())
                 {
-                    var columnContent = column.Select(x => x.Text).ToList();
-                    Verify.IsFalse(columnContent.Contains(textContent), $"'{textContent}' is present in the '{columnName}' column");
+                    Verify.IsFalse(column.Contains(textContent), $"'{textContent}' is present in the '{columnName}' column");
                 }
                 else
                 {
@@ -218,8 +221,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitForDataLoading();
-            var column = page.GetColumnContentByColumnName(columnName).ToList();
-            var columnContent = column.Select(x => x.Text).ToList();
+            var columnContent = page.GetColumnContentByColumnName(columnName);
             var expectedList = table.Rows.Select(x => x["Content"]).ToList();
             Verify.IsTrue(columnContent.SequenceEqual(expectedList),
                 $"Expected content is not present in the '{columnName}' column");
@@ -230,8 +232,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitForDataLoading();
-            var column = page.GetColumnContentByColumnName(columnName).ToList();
-            var columnContent = column.Select(x => x.Text).ToList();
+            var columnContent = page.GetColumnContentByColumnName(columnName);
             var expectedList = table.Rows.Select(x => x["Content"]).ToList();
             foreach (string content in expectedList)
             {
@@ -245,8 +246,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenFollowingColumnDisplayedWithoutNoData(string columnName)
         {
             var page = _driver.NowAt<BaseGridPage>();
-            var originalList = page.GetColumnContentByColumnName(columnName)
-                .Select(column => column.Text).ToList();
+            var originalList = page.GetColumnContentByColumnName(columnName);
 
             foreach (var item in originalList)
             {
@@ -258,10 +258,234 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenNumbersSumInTheColumnIsEqualTo(string columnName, int expectedSum)
         {
             var page = _driver.NowAt<BaseGridPage>();
-            var numbers = page.GetColumnContentByColumnName(columnName).ToList().Select(x => x.Text);
+            var numbers = page.GetColumnContentByColumnName(columnName);
             var total = numbers.Where(x => !string.IsNullOrEmpty(x)).Sum(x => Convert.ToInt32(x));
-            Verify.That(total, Is.EqualTo(expectedSum), 
+            Verify.That(total, Is.EqualTo(expectedSum),
                 $"Sum of objects in the '{columnName}' column is incorrect!");
+        }
+
+        [Then(@"data in table is sorted by '(.*)' column in descending order")]
+        public void ThenDataInTableIsSortedByColumnInDescendingOrder(string columnName)
+        {
+            var listPageMenu = _driver.NowAt<BaseGridPage>();
+
+            var expectedList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsListSorted(expectedList, false);
+            _driver.WaitForDataLoading();
+            Utils.Verify.IsTrue(listPageMenu.DescendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
+        }
+
+        [Then(@"data in table is sorted by '(.*)' column in ascending order")]
+        public void ThenDataInTableIsSortedByColumnInAscendingOrder(string columnName)
+        {
+            var listPageMenu = _driver.NowAt<BaseGridPage>();
+
+            var actualList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsListSorted(actualList);
+            _driver.WaitForDataLoading();
+            Utils.Verify.IsTrue(listPageMenu.AscendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
+        }
+
+        [Then(@"date in table is sorted by '(.*)' column in descending order")]
+        public void ThenDateInTableIsSortedByColumnInDescendingOrder(string columnName)
+        {
+            var listPageMenu = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForDataLoading();
+
+            var originalList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsListSortedByDate(originalList, false);
+            Utils.Verify.IsTrue(listPageMenu.DescendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
+        }
+
+        [Then(@"date in table is sorted by '(.*)' column in ascending order")]
+        public void ThenDateInTableIsSortedByColumnInAscendingOrder(string columnName)
+        {
+            var listPageMenu = _driver.NowAt<BaseGridPage>();
+
+            var originalList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsListSortedByDate(originalList);
+            Utils.Verify.IsTrue(listPageMenu.AscendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
+        }
+
+        [Then(@"numeric data in table is sorted by '(.*)' column in ascending order")]
+        public void ThenNumericDataInTableIsSortedByColumnInAscendingOrder(string columnName)
+        {
+            var listPageMenu = _driver.NowAt<BaseGridPage>();
+            var actualList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsNumericListSorted(actualList);
+            Utils.Verify.IsTrue(listPageMenu.AscendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
+        }
+
+        [Then(@"numeric data in table is sorted by '(.*)' column in descending order")]
+        public void ThenNumericDataInTableIsSortedByColumnInDescendingOrder(string columnName)
+        {
+            var listPageMenu = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForDataLoading();
+            var expectedList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsNumericListSorted(expectedList, false);
+            Utils.Verify.IsTrue(listPageMenu.DescendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
+        }
+
+        [Then(@"color data is sorted by '(.*)' column in ascending order")]
+        public void ThenColorDataIsSortedByColumnInAscendingOrder(string columnName)
+        {
+            var listPageMenu = _driver.NowAt<BaseGridPage>();
+            var expectedList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
+            if (columnName.Equals("Compliance") || columnName.Equals("Owner Compliance"))
+            {
+                SortingHelper.IsListSortedByEnum<ColorCompliance>(new List<string>(expectedList));
+            }
+            else
+            {
+                SortingHelper.IsListSortedByEnum<Color>(new List<string>(expectedList));
+            }
+            Utils.Verify.IsTrue(listPageMenu.AscendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
+        }
+
+        [Then(@"color data is sorted by '(.*)' column in descending order")]
+        public void ThenColorDataIsSortedByColumnInDescendingOrder(string columnName)
+        {
+            var listPageMenu = _driver.NowAt<BaseGridPage>();
+            var expectedList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
+            if (columnName.Equals("Compliance") || columnName.Equals("Owner Compliance"))
+            {
+                SortingHelper.IsListSortedByEnum<ColorCompliance>(new List<string>(expectedList), false);
+            }
+            else
+            {
+                SortingHelper.IsListSortedByEnum<Color>(new List<string>(expectedList), false);
+            }
+            Utils.Verify.IsTrue(listPageMenu.DescendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
+        }
+
+        [Then(@"Color data displayed with correct color and tooltip for ""(.*)"" column")]
+        public void ThenColorDataDisplayedWithCorrectColorAndTooltip(string column)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+
+            var ColumnValues = page.GetColumnContentByColumnName(column).Where(x => !x.Equals("")).ToList();
+            var ColumnColors = page.GetColumnColors(column).Where(x => !x.Equals("")).ToList();
+            var ColumnToolTips = page.GetColumnTooltips(column).Where(x => !x.Equals("")).ToList();
+
+            for (int i = 0; i < ColumnValues.Count; i++)
+            {
+                Utils.Verify.That(ColumnColors[i], Does.Contain(ColorsConvertor.Convert(ColumnValues[i])),
+                    $"Wrong color {ColumnColors[i]} for label {ColumnValues[i]}");
+            }
+
+            ColumnValues = ColumnValues.ConvertAll(d => d.ToLower());
+            ColumnToolTips = ColumnToolTips.ConvertAll(d => d.ToLower());
+
+            Utils.Verify.That(ColumnValues, Is.EqualTo(ColumnToolTips));
+        }
+
+        [Then(@"boolean data is sorted by '(.*)' column in ascending order")]
+        public void ThenBooleanDataIsSortedByColumnInAscendingOrder(string columnName)
+        {
+            var listPageMenu = _driver.NowAt<BaseGridPage>();
+            var expectedList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsListSortedByEnum<BooleanState>(new List<string>(expectedList));
+            Utils.Verify.IsTrue(listPageMenu.AscendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
+        }
+
+        [Then(@"boolean data is sorted by '(.*)' column in descending order")]
+        public void ThenBooleanDataIsSortedByColumnInDescendingOrder(string columnName)
+        {
+            var listPageMenu = _driver.NowAt<BaseGridPage>();
+            var expectedList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsListSortedByEnum<BooleanState>(new List<string>(expectedList), false);
+            Utils.Verify.IsTrue(listPageMenu.DescendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
+        }
+
+        [Then(@"The first cell of the table matches to default sorting ""(.*)"" list")]
+        public void ThenTheFirstCellOfTheTableMatchesToDefaultSortingList(string listName)
+        {
+            var content = _driver.NowAt<BaseGridPage>();
+
+            switch (listName)
+            {
+                case "Devices":
+                    Utils.Verify.AreEqual("001BAQXT6JWFPI", content.GetColumnContentByColumnName("Hostname").First(), "PLEASE ADD EXCEPTION MESSAGE");
+                    break;
+
+                case "Users":
+                    Utils.Verify.AreEqual("Empty", content.GetColumnContentByColumnName("Username").First(), "PLEASE ADD EXCEPTION MESSAGE");
+                    break;
+
+                case "Applications":
+                    Utils.Verify.AreEqual("Empty", content.GetColumnContentByColumnName("Application").First(), "PLEASE ADD EXCEPTION MESSAGE");
+                    break;
+
+                case "Mailboxes":
+                    Utils.Verify.AreEqual("Empty", content.GetColumnContentByColumnName("Email Address").First(), "PLEASE ADD EXCEPTION MESSAGE");
+                    break;
+
+                default:
+                    throw new Exception($"'{listName}' has the incorrect first cell");
+            }
+        }
+
+        [Then(@"data in the table is sorted by ""(.*)"" column in ascending order by default")]
+        public void ThenDataInTheTableIsSortedByColumnInAscendingOrderByDefault(string columnName)
+        {
+            var listPageMenu = _driver.NowAt<BaseGridPage>();
+            var originalList = listPageMenu.GetColumnContentByColumnName(columnName).ToList();
+            SortingHelper.IsListSorted(originalList);
+        }
+
+        [Then(@"Content is present in the newly added column")]
+        public void ThenContentIsPresentInTheNewlyAddedColumn(Table table)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+
+            foreach (var row in table.Rows)
+            {
+                //Sort newly added column to got only value at first places
+                WhenUserClicksOnColumnHeader(row["ColumnName"]);
+                var content = page.GetColumnContentByColumnName(row["ColumnName"]);
+
+                //Check that at least 10 cells has some content
+                Verify.IsTrue(content.Count(x => !string.IsNullOrEmpty(x)) > 10, "Newly added column is empty");
+                //Reset column sorting to default value
+                WhenUserClicksOnColumnHeader(row["ColumnName"]);
+                WhenUserClicksOnColumnHeader(row["ColumnName"]);
+            }
+        }
+
+        [Then(@"width of the '(.*)' column is '(.*)' pixels")]
+        public void ThenWidthOfTheColumnIsPixels(string columnName, string columnWidth)
+        {
+            var dashboardPage = _driver.NowAt<BaseGridPage>();
+            Utils.Verify.AreEqual(columnWidth, dashboardPage.GetColumnWidthByName(columnName), $"width '{columnName}' column is not '{columnWidth}'");
+        }
+
+        [Then(@"Links from ""(.*)"" column is displayed to the user")]
+        public void ThenLinksFromColumnIsDisplayedToTheUser(string columnName)
+        {
+            var content = _driver.NowAt<BaseGridPage>();
+            content.GetHrefByColumnName(columnName);
+            Utils.Verify.IsTrue(content.GetHrefByColumnName(columnName) != null, "PLEASE ADD EXCEPTION MESSAGE");
+        }
+
+        [Then(@"Content is empty in the column")]
+        public void ThenContentIsEmptyInTheColumn(Table table)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+
+            foreach (var row in table.Rows)
+            {
+                var content = page.GetColumnContentByColumnName(row["ColumnName"]);
+                Verify.IsFalse(content.Count(x => !string.IsNullOrEmpty(x)) > 20, "Column is empty");
+            }
+        }
+
+        [When(@"User clicks on '(.*)' column header")]
+        public void WhenUserClicksOnColumnHeader(string columnName)
+        {
+            var listPageMenu = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForDataLoading();
+            listPageMenu.GetColumnHeaderByName(columnName).Click();
+            _driver.WaitForDataLoading();
         }
 
         #endregion
@@ -393,11 +617,26 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void WhenUserMovesItemToItemInTheColumn(string itemFrom, string itemTo, string columnName)
         {
             var page = _driver.NowAt<BaseGridPage>();
-            var itemsList = page.GetColumnContentByColumnName(columnName);
-            var columnContent = itemsList.Select(x => x.Text).ToList();
+            var columnContent = page.GetColumnContentByColumnName(columnName);
             var indexFrom = columnContent.IndexOf(itemFrom);
             var indexTo = columnContent.IndexOf(itemTo);
             _driver.DragAndDrop(page.DragRowElements[indexFrom], page.DragRowElements[indexTo]);
+        }
+
+        [When(@"User move '(.*)' column to '(.*)' column")]
+        public void WhenUserMoveColumnToColumn(string columnName, string columnNameToMove)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            _driver.DragAndDrop(page.GetColumnHeaderByName(columnName),
+                page.GetColumnHeaderByName(columnNameToMove));
+        }
+
+        [When(@"User moves ""(.*)"" column beyond the Grid")]
+        public void WhenUserMovesColumnBeyondTheGrid(string columnName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            _driver.DragAndDrop(page.GetColumnHeaderByName(columnName), page.RefreshButton);
+            page.GetColumnHeaderByName(columnName).Click();
         }
 
         #endregion
@@ -410,6 +649,61 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitForElementsToBeDisplayed(By.XPath(page.AllCellsInTheGrid));
             _driver.ScrollGridToTheEnd(page.TableBody);
+        }
+
+        #endregion
+
+        #region DataInColumn
+
+        [Then(@"All data is unique in the '(.*)' column")]
+        public void ThenAllDataIsUniqueInTheColumn(string columnName)
+        {
+            var grid = _driver.NowAt<BaseGridPage>();
+            var columnData = grid.GetColumnDataByScrolling(columnName);
+
+            //Get all elements that has more than one occurence in the list
+            var duplicates = columnData.GroupBy(x => x)
+                .Select(g => new { Value = g.Key, Count = g.Count() })
+                .Where(x => x.Count > 1).ToList();
+            if (duplicates.Any())
+                throw new Exception($"Some duplicates are spotted in the '{columnName}' column");
+        }
+
+        [Then(@"User sees following duplicates counts for columns:")]
+        public void ThenUserSeesFollowingDuplicatesCountsForColumns(Table table)
+        {
+            var grid = _driver.NowAt<BaseGridPage>();
+            foreach (var column in table.Rows)
+            {
+                var columnData = grid.GetColumnDataByScrolling(column["column"]);
+
+                //Get all elements that has more than one occurence in the list
+                var duplicates = columnData.GroupBy(x => x)
+                    .Select(g => new { Value = g.Key, Count = g.Count() })
+                    .Where(x => x.Count > 1).ToList();
+
+                Verify.That(
+                    duplicates.Where(x => x.Value.Equals(column["duplicatedValue"])).FirstOrDefault().Count.ToString(),
+                    Is.EqualTo(column["duplicateCount"]), "Duplicates counts are not equal");
+            }
+        }
+
+        #endregion
+
+        #region Sorting
+
+        [When(@"User sort table by multiple columns")]
+        public void WhenUserSortTableByMultipleColumns(Table table)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            foreach (var row in table.Rows)
+            {
+                _driver.MouseHoverByJavascript(page.GetColumnHeaderByName(row["ColumnName"]));
+                var shiftClick = new Actions(_driver);
+                shiftClick.KeyDown(OpenQA.Selenium.Keys.Shift).Click(page.GetColumnHeaderByName(row["ColumnName"]))
+                    .KeyUp(OpenQA.Selenium.Keys.Shift).Perform();
+            }
+            _driver.WaitForDataLoading();
         }
 
         #endregion
