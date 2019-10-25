@@ -715,6 +715,8 @@ namespace DashworksTestAutomation.Pages
         public IWebElement WidgetElement(string widgetName)
         {
             var selector = By.XPath($".//h5//span[text()='{widgetName}']/ancestor::div[@class='widget-whole']");
+            if (!Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Long))
+                throw new Exception($"Widget with '{widgetName}' is not displayed");
             return Driver.FindElement(selector);
         }
 
