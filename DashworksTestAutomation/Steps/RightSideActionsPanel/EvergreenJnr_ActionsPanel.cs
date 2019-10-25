@@ -110,7 +110,7 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
                 if (rowIndex < 0)
                     throw new Exception($"'{row["SelectedRowsName"]}' is not found in the '{columnName}' column");
                 _driver.WaitForDataLoading();
-                _driver.ClickByJavascript(dashboardPage.Checkboxes.ElementAt(rowIndex));;
+                dashboardPage.Checkboxes.ElementAt(rowIndex).Click();
             }
         }
 
