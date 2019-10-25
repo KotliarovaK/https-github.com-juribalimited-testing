@@ -698,13 +698,6 @@ this.FeatureBackground();
 #line 179
  testRunner.Then("\'Before now\' value is displayed in the \'Before or After\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Items"});
-            table9.AddRow(new string[] {
-                        ""});
-#line 180
- testRunner.Then("Tasks are displayed in the following order on Action panel:", ((string)(null)), table9, "Then ");
-#line hidden
             this.ScenarioCleanup();
         }
 
