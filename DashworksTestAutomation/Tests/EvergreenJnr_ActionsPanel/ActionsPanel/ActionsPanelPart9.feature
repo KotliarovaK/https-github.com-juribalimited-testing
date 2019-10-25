@@ -71,7 +71,8 @@ Scenario: EvergreenJnr_UsersList_CheckBucketBulkUpdateOptionsOnUsersListForUserS
 	And User selects 'Project' in the 'Project or Evergreen' dropdown
 	And User selects 'User Evergreen Capacity Project' option from 'Project' autocomplete
 	And User selects 'Unassigned' option from 'Bucket' autocomplete
-	Then following Values are displayed in the 'Also Move Devices' dropdown:
+	#Yurii T. 25oct2019 - on UI this drop-down has 'Also Move Devices' name, but in DOM everything is ok
+	Then following Values are displayed in the 'Also Move Users' dropdown:
 	| Options            |
 	| None               |
 	| Owned devices only |
@@ -94,7 +95,8 @@ Scenario: EvergreenJnr_UsersList_CheckBucketBulkUpdateOptionsOnUsersListForMailb
 	And User selects 'Project' in the 'Project or Evergreen' dropdown
 	And User selects 'Mailbox Evergreen Capacity Project' option from 'Project' autocomplete
 	And User selects 'Unassigned' option from 'Bucket' autocomplete
-	Then following Values are displayed in the 'Also Move Mailboxes' dropdown:
+	#Yurii T. 25oct2019 - on UI this drop-down has 'Also Move Devices' name, but in DOM everything is ok
+	Then following Values are displayed in the 'Also Move Users' dropdown:
 	| Options          |
 	| None             |
 	| Owners only      |
