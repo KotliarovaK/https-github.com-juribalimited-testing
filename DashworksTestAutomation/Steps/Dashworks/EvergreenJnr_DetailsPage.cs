@@ -775,8 +775,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 detailsPage.SelectAllCheckBox.Click();
             }
             else
+            {
                 _driver.WaitForElementToBeDisplayed(detailsPage.SelectAllCheckBox);
-            detailsPage.SelectAllCheckBox.Click();
+                detailsPage.SelectAllCheckBox.Click();
+            }
         }
 
         private void CheckColumnDisplayedState(Table table, bool displayedState)

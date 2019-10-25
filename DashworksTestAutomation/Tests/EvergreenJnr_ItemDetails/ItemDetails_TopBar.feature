@@ -180,7 +180,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatComplianceInKeyValueTableMatche
 	Then Details page for "<ItemName>" item is displayed to the user
 	When User switches to the "<ProjectName>" project in the Top bar on Item details page
 	And User navigates to the 'Projects' left menu item
-	And User navigates to the 'Project Details' left submenu item
+	And User navigates to the 'Project Details' left submenu item 
 	Then following content is displayed on the Details Page
 	| Title   | Value   |
 	| <Title> | <Value> |

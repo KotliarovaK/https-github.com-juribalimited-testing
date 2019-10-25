@@ -118,27 +118,14 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDataOfColumnsIsDisplayedInTheCustomF
 	| Value        |
 	And Custom fields agGrid columns are displayed fully
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18121
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18121 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCustomFieldOrderIsCorrectInGrid
-	When User navigates to the 'device' details page for 'Z75ievru6r751l' item
-	Then Details page for "Z75ievru6r751l" item is displayed to the user
-	When User navigates to the 'Custom Fields' left submenu item
-	When User clicks 'ADD CUSTOM FIELD' button 
-	When User selects 'Computer Warranty' option from 'Custom Field' autocomplete
-	When User enters 'bbb' text to 'Value' textbox
-	When User clicks Add button on Add Custom Field popup
-	When User clicks 'ADD CUSTOM FIELD' button 
-	When User selects 'Computer Warranty' option from 'Custom Field' autocomplete
-	When User enters '001' text to 'Value' textbox
-	When User clicks Add button on Add Custom Field popup
-	When User clicks 'ADD CUSTOM FIELD' button 
-	When User selects 'Computer Warranty' option from 'Custom Field' autocomplete
-	When User enters 'aaa' text to 'Value' textbox
-	When User clicks Add button on Add Custom Field popup
-	When User clicks 'ADD CUSTOM FIELD' button 
-	When User selects 'Computer Warranty' option from 'Custom Field' autocomplete
-	When User enters '002' text to 'Value' textbox
-	When User clicks Add button on Add Custom Field popup
+	When User creates Custom Field via API
+	| ObjectType | ObjectId | FieldName        | Value | FieldIndex |
+	| device     | 5539     | ComputerWarranty | bbb   | 0          |
+	| device     | 5539     | ComputerWarranty | 001   | 0          |
+	| device     | 5539     | ComputerWarranty | aaa   | 0          |
+	| device     | 5539     | ComputerWarranty | 002   | 0          |
 	When User clicks 'Devices' on the left-hand menu
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName        |
