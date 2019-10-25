@@ -49,6 +49,9 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsLogGridForRunningAutomationWith
 	When User enters "16890_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
 	When User navigates to the 'Actions' left menu item
+	#DAS18491
+	Then "[Project not found]" content is displayed for "Project" column
+	#DAS18491
 	When User clicks content from "Action" column
 	Then '[Project not found]' content is displayed in 'Project' textbox
 	#Then 'The selected project cannot be found' error message is displayed for 'Project' field
