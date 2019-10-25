@@ -23,7 +23,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage.CustomFields
             _customFields = customFields;
         }
 
-        //| List | ObjectId | FieldName | Value | FieldIndex |
+        //| ObjectType | ObjectId | FieldName | Value | FieldIndex |
         [When(@"User creates Custom Field via API")]
         public void WhenUserCreatesCustomFieldViaAPI(Table table)
         {
