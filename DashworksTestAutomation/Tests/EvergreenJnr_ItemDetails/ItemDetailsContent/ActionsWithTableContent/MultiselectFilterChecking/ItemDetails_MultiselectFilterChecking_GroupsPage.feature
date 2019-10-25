@@ -14,7 +14,7 @@ Scenario: EvergreenJnr_GroupsList_CheckThatOnlyValueIncludedInTheColumnIsDisplay
 	When User navigates to the 'User Members' left submenu item
 	Then 'DEV50' content is displayed in the 'Domain' column
 	Then 'TRUE' content is displayed in the 'Enabled' column
-	When User have opened Column Settings for "Username" column in the Details Page table
+	When User have opened Column Settings for "Username" column
 	And User clicks Column button on the Column Settings panel
 	And User select "Username" checkbox on the Column Settings panel
 	And User select "Directory Type" checkbox on the Column Settings panel

@@ -100,7 +100,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheLinkCanBeOpenedAndTheLinkHasARigh
 	And "Havoc (Big Data)" project is selected in the Top bar on Item details page
 	And URL contains "application/373/details/application?$projectId=43"
 
-#TODO: Ann.Ilchenko 9/4/19: remove 'not_ready' tag when the gold data arrives at the automation server
+#Ann.Ilchenko 10/25/19: will be ready in the future (contact Lana for details)
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17768 @Not_Ready
 Scenario: EvergreenJnr_MailboxesList_CheckThatOnTheProjectDetailsTabDisplaysTheLanguageDefinedInTheAdminPageAsTheDefaultLanguage
 	When User clicks 'Admin' on the left-hand menu

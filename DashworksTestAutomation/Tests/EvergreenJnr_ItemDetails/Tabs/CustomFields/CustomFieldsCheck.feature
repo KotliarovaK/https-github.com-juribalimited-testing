@@ -25,7 +25,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatContextMenuCopyRowForTheRowActionsIs
 Scenario Outline: EvergreenJnr_AllLists_CheckThatContextMenuCopyRowForTheRowActionsIsDisplayedAndWorkedCorrectlyForCustomFields
 	When User navigates to the '<ItemType>' details page for '<ItemName>' item
 	And User navigates to the 'Custom Fields' left submenu item
-	And User have opened Column Settings for "Custom Field" column in the Details Page table
+	And User have opened Column Settings for "Custom Field" column
 	Then User sees the following Column Settings
 	| ColumnSettings        |
 	| Pin left              |
@@ -50,7 +50,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnSettingsOnCustomFieldsAreTrans
 	When User language is changed to "Deutsch" via API
 	And User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	When User navigates to the 'Benutzerdefinierte Felder' left submenu item
-	And User have opened Column Settings for "Benutzerdefiniertes Feld" column in the Details Page table
+	And User have opened Column Settings for "Benutzerdefiniertes Feld" column
 	Then User sees the following Column Settings
 	| ColumnSettings                            |
 	| Links fixieren                            |
@@ -67,7 +67,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnSettingsOnCustomFieldsAreTrans
 Scenario: EvergreenJnr_DevicesList_CheckThatCustomFieldsTheGroupByElementContainOnlyVisibleColumns
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	And User navigates to the 'Custom Fields' left submenu item
-	And User have opened Column Settings for "Custom Field" column in the Details Page table
+	And User have opened Column Settings for "Custom Field" column
 	And User clicks Column button on the Column Settings panel
 	And User select "Value" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
@@ -80,7 +80,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCustomFieldsTheGroupByElementContain
 Scenario: EvergreenJnr_DevicesList_CheckThatItsNotPossibleToUnselectTheLastColumnOnCustomFieldsTab
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	And User navigates to the 'Custom Fields' left submenu item
-	And User have opened Column Settings for "Custom Field" column in the Details Page table
+	And User have opened Column Settings for "Custom Field" column
 	And User clicks Column button on the Column Settings panel
 	And User clicks Select All checkbox on Column Settings panel
 	And User clicks Column button on the Column Settings panel
@@ -141,7 +141,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCustomFieldOrderIsCorrectInGrid
 	When User clicks Add button on Add Custom Field popup
 	When User clicks 'Devices' on the left-hand menu
 	When User add following columns using URL to the "Devices" page:
-	| ColumnName                 |
+	| ColumnName        |
 	| Computer Warranty |
 	When User perform search by "Z75ievru6r751l"
 	Then '001, 002, aaa, bbb' content is displayed in the 'Computer Warranty' column
