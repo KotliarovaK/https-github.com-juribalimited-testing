@@ -214,6 +214,20 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTheOrderByDropdownIsExpandedWithT
 	When User selects 'Hostname DESC' in the 'Order By' dropdown
 	Then 'Hostname DESC' content is displayed in 'Order By' dropdown
 
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18066 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatTheAppropriateFilterWithTheEmptyValueIsApplied
+	When Dashboard with "DAS18167_Dashboard" name created via API and opened
+	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'ADD WIDGET' button
+	When User creates new Widget
+	| WidgetType | Title             | List             | SplitBy | AggregateFunction | OrderBy    | DrillDown | ShowLegend |
+	| Pie        | WidgetForDAS18066 | All Applications | Vendor  | Count             | Count DESC | Yes       | true       |
+	When User clicks on 'Empty' category of 'WidgetForDAS18066' widget
+	Then all cells in the 'Vendor' column are empty
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	Then Check that filter 'Vendor' with option 'is empty' is added
+
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16842 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckImageAndTooltipDisplayingForListDropdown
 	When Dashboard with "DAS16842_Dashboard" name created via API and opened

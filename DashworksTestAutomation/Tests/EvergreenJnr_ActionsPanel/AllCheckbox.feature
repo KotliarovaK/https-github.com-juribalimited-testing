@@ -40,7 +40,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatSelectAllCheckboxStatusAfterClo
 	And User clicks the Actions button
 	Then checkboxes are not displayed for content in the grid
 
-Examples: 
+Examples:
 	| PageName     |
 	| Devices      |
 	| Users        |
