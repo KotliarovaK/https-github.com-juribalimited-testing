@@ -47,7 +47,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDevicesAutomationsUpdateRelativeToCurrentV
 	Then '100000' content is displayed in 'Value' textbox
 	When User enters '-5' text to 'Value' textbox
 	Then '1' content is displayed in 'Value' textbox
-	When User enters '1' text to 'Value' textbox
+	When User enters '2' text to 'Value' textbox
 	Then 'CREATE' button is not disabled
 	When User selects 'Before current value' in the 'Before or After' dropdown
 	And User clicks 'CREATE' button
@@ -59,7 +59,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDevicesAutomationsUpdateRelativeToCurrentV
 	Then 'Computer Scheduled Test (Jo)' content is displayed in 'Project' textbox
 	Then 'One' content is displayed in 'Stage' textbox
 	Then 'Date Computer' content is displayed in 'Task' textbox
-	Then '1' content is displayed in 'Value' textbox
+	Then '2' content is displayed in 'Value' textbox
 	Then 'Days' value is displayed in the 'Units' dropdown
 	Then 'Before current value' value is displayed in the 'Before or After' dropdown
 
