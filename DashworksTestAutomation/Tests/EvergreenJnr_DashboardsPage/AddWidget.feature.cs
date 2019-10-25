@@ -1182,6 +1182,96 @@ this.FeatureBackground();
 
         
         [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatTheAppropriateFilterWithTheEmptyValueIsAppli" +
+            "ed")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
+        [NUnit.Framework.CategoryAttribute("Widgets")]
+        [NUnit.Framework.CategoryAttribute("DAS18066")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatTheAppropriateFilterWithTheEmptyValueIsApplied()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DashboardsPage_CheckThatTheAppropriateFilterWithTheEmptyValueIsAppliedInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DashboardsPage_CheckThatTheAppropriateFilterWithTheEmptyValueIsAppliedInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckThatTheAppropriateFilterWithTheEmptyValueIsAppli" +
+                    "ed", null, new string[] {
+                        "Evergreen",
+                        "EvergreenJnr_DashboardsPage",
+                        "Widgets",
+                        "DAS18066",
+                        "Cleanup"});
+#line 218
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 219
+ testRunner.When("Dashboard with \"DAS18167_Dashboard\" name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 220
+ testRunner.When("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 221
+ testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
+                        "WidgetType",
+                        "Title",
+                        "List",
+                        "SplitBy",
+                        "AggregateFunction",
+                        "OrderBy",
+                        "DrillDown",
+                        "ShowLegend"});
+            table19.AddRow(new string[] {
+                        "Pie",
+                        "WidgetForDAS18066",
+                        "All Applications",
+                        "Vendor",
+                        "Count",
+                        "Count DESC",
+                        "Yes",
+                        "true"});
+#line 222
+ testRunner.When("User creates new Widget", ((string)(null)), table19, "When ");
+#line 225
+ testRunner.When("User clicks on \'Empty\' category of \'WidgetForDAS18066\' widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 226
+ testRunner.Then("all cells in the \'Vendor\' column are empty", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 227
+ testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 228
+ testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 229
+ testRunner.Then("Check that filter \'Vendor\' with option \'is empty\' is added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckImageAndTooltipDisplayingForListDropdown")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
@@ -1222,32 +1312,32 @@ this.FeatureBackground();
                         "Widgets",
                         "DAS16842",
                         "Cleanup"});
-#line 218
+#line 232
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 219
+#line 233
  testRunner.When("Dashboard with \"DAS16842_Dashboard\" name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 220
+#line 234
  testRunner.When("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 221
+#line 235
  testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 222
+#line 236
  testRunner.Then("All items in the \'List\' autocomplete have icons", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-            TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
-                        "tooltip"});
-            table19.AddRow(new string[] {
-                        "System"});
-            table19.AddRow(new string[] {
-                        "Private"});
-            table19.AddRow(new string[] {
-                        "Shared"});
-#line 223
- testRunner.Then("All icon items in the \'List\' autocomplete have any of tooltip", ((string)(null)), table19, "Then ");
-#line hidden
             TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
+                        "tooltip"});
+            table20.AddRow(new string[] {
+                        "System"});
+            table20.AddRow(new string[] {
+                        "Private"});
+            table20.AddRow(new string[] {
+                        "Shared"});
+#line 237
+ testRunner.Then("All icon items in the \'List\' autocomplete have any of tooltip", ((string)(null)), table20, "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
                         "WidgetType",
                         "Title",
                         "List",
@@ -1255,7 +1345,7 @@ this.FeatureBackground();
                         "AggregateFunction",
                         "AggregateBy",
                         "OrderBy"});
-            table20.AddRow(new string[] {
+            table21.AddRow(new string[] {
                         "Bar",
                         "WidgetForDAS16842",
                         "1803 Rollout",
@@ -1263,18 +1353,18 @@ this.FeatureBackground();
                         "Count distinct",
                         "Hostname",
                         "Hostname DESC"});
-#line 228
- testRunner.When("User creates new Widget", ((string)(null)), table20, "When ");
-#line 231
+#line 242
+ testRunner.When("User creates new Widget", ((string)(null)), table21, "When ");
+#line 245
  testRunner.Then("\"WidgetForDAS16842\" Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 232
+#line 246
  testRunner.When("User clicks Dashboards Details icon on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 233
+#line 247
  testRunner.When("User expands the list of shared lists", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 234
+#line 248
  testRunner.Then("User sees list icon displayed for \'WidgetForDAS16842\' widget in List section of D" +
                     "ashboards Details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 235
+#line 249
  testRunner.Then("User sees list icon displayed with tooltip for \'WidgetForDAS16842\' widget in List" +
                     " section of Dashboards Details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
