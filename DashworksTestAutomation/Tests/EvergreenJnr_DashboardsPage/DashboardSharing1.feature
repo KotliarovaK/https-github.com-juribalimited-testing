@@ -13,7 +13,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOwnerCanBeAddedToSharedUsersAsSpe
 	And User clicks Settings button for "Dashboard for DAS14911" dashboard
 	When User clicks 'Manage' option in opened Cog-menu
 	Then Permission panel is displayed to the user
-	When User changes sharing type from "Private" to "Specific users"
+	When User selects 'Specific users' dashboard sharing option
 	And User adds user to list of shared person
 	| User          | Permission |
 	| Administrator | Admin      |
@@ -271,7 +271,6 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCantBeChangedForRea
 	When User is logged in to the Evergreen as
 	| Username          | Password  |
 	| automation_admin1 | m!gration |
-	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -289,7 +288,6 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCantBeChangedForRea
 	When User is logged in to the Evergreen as
 	| Username           | Password  |
 	| automation_admin10 | m!gration |
-	When User clicks the Switch to Evergreen link
 	#create dashboard
 	When Dashboard with "Dashboard for DAS14841_Read" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page

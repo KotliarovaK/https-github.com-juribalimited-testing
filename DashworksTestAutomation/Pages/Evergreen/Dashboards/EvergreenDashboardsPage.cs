@@ -318,18 +318,11 @@ namespace DashworksTestAutomation.Pages
                 }
         }
 
-        public void ChangePermissionSharingFieldFromTo(string valueInField, string newValue)
+        public void SetPermissionSharingFieldTo(string newValue)
         {
-            var from = $" .//div[@class='permissions-container']//span[contains(text(), '{valueInField}')]";
-            Driver.WaitForElementToBeDisplayed(By.XPath(from));
-            Driver.FindElement(By.XPath(from)).Click();
-
-            var to = $".//span[@class='mat-option-text'][contains(text(), '{newValue}')]";
-            Driver.WaitForElementToBeDisplayed(By.XPath(to));
-            Driver.FindElement(By.XPath(to)).Click();
-
-            var newVal = $" .//div[@class='permissions-container']//span[contains(text(), '{newValue}')]";
-            Driver.WaitForElementToBeDisplayed(By.XPath(newVal));
+            var shareType = By.XPath(".//div[@class='permissions-container']//*[@aria-labelledby='sharing-label']");
+            Driver.WaitForElementToBeDisplayed(Driver.FindElement(shareType));
+            Driver.SelectCustomSelectbox(Driver.FindElement(shareType), newValue);
         }
 
         public void SelectOptionFromList(string option)

@@ -843,11 +843,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Verify.IsTrue(page.PermissionPanel.Displayed(), "Actions panel was not displayed");
         }
 
-        [When(@"User changes sharing type from ""(.*)"" to ""(.*)""")]
-        public void WhenUserSelectsSharingType(string from, string to)
+        [When(@"User selects '(.*)' dashboard sharing option")]
+        public void WhenUserSelectsSharingType(string to)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            page.ChangePermissionSharingFieldFromTo(from, to);
+            page.SetPermissionSharingFieldTo(to);
             //TODO Section reloads with delay
             Thread.Sleep(1000);
         }

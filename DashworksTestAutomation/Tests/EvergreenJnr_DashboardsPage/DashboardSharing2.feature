@@ -11,7 +11,6 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForEdit
 	When User is logged in to the Evergreen as
 	| Username          | Password  |
 	| automation_admin1 | m!gration |
-	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -29,7 +28,6 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForEdit
 	When User is logged in to the Evergreen as
 	| Username           | Password  |
 	| automation_admin10 | m!gration |
-	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
 	#create dashboard
 	When Dashboard with "Dashboard for DAS14841_Edit" name created via API and opened
@@ -52,31 +50,29 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForEdit
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14841 @DAS11120 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdminSharedList
+	#login as user1
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
 	| Username          | Password  |
 	| automation_admin1 | m!gration |
-	When User clicks the Switch to Evergreen link
-	
+	#create and share list
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks on 'Hostname' column header
-	And User create custom list with "DeviceListFor14841_Admin" name
+	When User create custom list with "DeviceListFor14841_Admin" name
 	Then "DeviceListFor14841_Admin" list is displayed to user
-	
 	When User clicks the List Details button
-	And User select "Specific users / teams" sharing option
-	And User clicks 'ADD USER' button 
-	And User selects the "Automation Admin 10" user for sharing
-	And User select "Admin" in Select Access dropdown
-	And User clicks 'ADD USER' button 
-	And User clicks 'ADD USER' button 
-	
+	When User select "Specific users / teams" sharing option
+	When User clicks 'ADD USER' button 
+	When User selects the "Automation Admin 10" user for sharing
+	When User select "Admin" in Select Access dropdown
+	When User clicks 'ADD USER' button 
+	When User clicks 'ADD USER' button 
+	#login as user2
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
 	| Username           | Password  |
 	| automation_admin10 | m!gration |
-	When User clicks the Switch to Evergreen link
 	#create dashboard
 	When Dashboard with "Dashboard for DAS14841_Admin" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
@@ -102,7 +98,6 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdmi
 	When User is logged in to the Evergreen as
 	| Username          | Password  |
 	| automation_admin1 | m!gration |
-	When User clicks the Switch to Evergreen link
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks Settings button for "DeviceListFor14841_Admin" list
@@ -118,7 +113,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckUserCanRemoveYourselfFromSharedDashbo
 	And User clicks Settings button for "Dashboard for DAS15876" dashboard
 	When User clicks 'Manage' option in opened Cog-menu
 	Then Permission panel is displayed to the user
-	When User changes sharing type from "Private" to "Specific users"
+	When User selects 'Specific users' dashboard sharing option
 	And User adds user to list of shared person
 	| User                | Permission |
 	| Automation Admin 10 | Admin      |
@@ -128,7 +123,6 @@ Scenario: EvergreenJnr_DashboardsPage_CheckUserCanRemoveYourselfFromSharedDashbo
 	When User is logged in to the Evergreen as
 	| Username           | Password  |
 	| automation_admin10 | m!gration |
-	And User clicks the Switch to Evergreen link
 	#remove share
 	And User clicks Show Dashboards panel icon on Dashboards page
 	And User clicks Settings button for "Dashboard for DAS15876" dashboard
@@ -152,7 +146,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckUserCanEditWidgetFromSharedDashboard
 	And User clicks Settings button for "Dashboard for DAS15550" dashboard
 	When User clicks 'Manage' option in opened Cog-menu
 	Then Permission panel is displayed to the user
-	When User changes sharing type from "Private" to "Specific users"
+	When User selects 'Specific users' dashboard sharing option
 	And User adds user to list of shared person
 	| User                | Permission |
 	| Automation Admin 10 | Edit       |
@@ -161,7 +155,6 @@ Scenario: EvergreenJnr_DashboardsPage_CheckUserCanEditWidgetFromSharedDashboard
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
 	| automation_admin10 | m!gration |
-	And User clicks the Switch to Evergreen link
 	#edit widget
 	And User clicks Show Dashboards panel icon on Dashboards page
 	And User clicks Settings button for "Dashboard for DAS15550" dashboard
@@ -182,7 +175,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserWithEditRightsCanChangeDashbo
 	And User clicks Settings button for "Dashboard for DAS14915" dashboard
 	When User clicks 'Manage' option in opened Cog-menu
 	Then Permission panel is displayed to the user
-	When User changes sharing type from "Private" to "Specific users"
+	When User selects 'Specific users' dashboard sharing option
 	And User adds user to list of shared person
 	| User                | Permission |
 	| Automation Admin 10 | Admin      |
@@ -192,7 +185,6 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserWithEditRightsCanChangeDashbo
 	When User is logged in to the Evergreen as
 	| Username           | Password  |
 	| automation_admin10 | m!gration |
-	And User clicks the Switch to Evergreen link
 	And User clicks Show Dashboards panel icon on Dashboards page
 	And User clicks Settings button for "Dashboard for DAS14915" dashboard
 	When User clicks 'Manage' option in opened Cog-menu
@@ -208,7 +200,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserWithAdminRightsCanAddUserInSh
 	When User clicks Settings button for "Dashboard for Share" dashboard
 	When User clicks 'Manage' option in opened Cog-menu
 	Then Permission panel is displayed to the user
-	When User changes sharing type from "Private" to "Specific users"
+	When User selects 'Specific users' dashboard sharing option
 	When User adds user to list of shared person
 	| User                | Permission |
 	| Automation Admin 10 | Admin      |
