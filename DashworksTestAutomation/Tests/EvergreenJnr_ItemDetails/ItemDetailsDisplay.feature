@@ -85,7 +85,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatApplicationsInTheApplicationColumnAr
 	Then table content is present
 	When User enters "Microsoft Internet Explorer" text in the Search field for "Application" column
 	When User clicks "Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" link on the Details Page
-	Then Details page for "Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" item is displayed correctly
+	Then Details page for "Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" item is displayed to the user
 
 	#upd Ann.Ilchenko 7.11.19: ready for 'radiant'(?)
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16322 @Not_Ready
