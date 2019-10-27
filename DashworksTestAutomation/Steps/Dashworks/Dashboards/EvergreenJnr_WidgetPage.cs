@@ -1,17 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages;
-using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.Base;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
@@ -51,30 +48,26 @@ namespace DashworksTestAutomation.Steps.Dashworks
         private void PopulateWidgetData(TableRow row)
         {
             var createWidgetElement = _driver.NowAt<AddWidgetPage>();
+            var baseActionItem   = _driver.NowAt<BaseDashboardPage>();
 
-            createWidgetElement.WidgetType.Click();
-            createWidgetElement.SelectObjectForWidgetCreation(row["WidgetType"]);
+            baseActionItem.SelectDropdown(row["WidgetType"], "WidgetType");
 
-            if (string.IsNullOrEmpty(row["Title"])) createWidgetElement.Title.SendKeys(" ");
+            if (string.IsNullOrEmpty(row["Title"]))
+                baseActionItem.PopulateTextbox("Title", " ");
 
             if (!string.IsNullOrEmpty(row["Title"]))
             {
-                createWidgetElement.Title.Clear();
-                createWidgetElement.Title.SendKeys(row["Title"]);
+                baseActionItem.PopulateTextbox("Title",row["Title"]);
             }
 
             if (row.ContainsKey("List") && !string.IsNullOrEmpty(row["List"]))
             {
-                createWidgetElement.List.Click();
-                createWidgetElement.SelectListForWidgetCreation(row["List"]);
-                _driver.WaitForDataLoadingOnProjects();
+                baseActionItem.AutocompleteSelect("List", row["List"], true);
             }
 
             if (row.ContainsKey("Type") && !string.IsNullOrEmpty(row["Type"]))
             {
-                createWidgetElement.Type.Click();
-                createWidgetElement.SelectObjectForWidgetCreation(row["Type"]);
-                _driver.WaitForDataLoadingOnProjects();
+                baseActionItem.SelectDropdown(row["Type"], "Type");
             }
 
             if (row.ContainsKey("SplitBy") && !string.IsNullOrEmpty(row["SplitBy"]))
@@ -84,30 +77,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             if (row.ContainsKey("AggregateFunction") && !string.IsNullOrEmpty(row["AggregateFunction"]))
             {
-                _driver.WaitForElementToBeEnabled(createWidgetElement.AggregateFunction);
-                createWidgetElement.AggregateFunction.Click();
-                createWidgetElement.SelectObjectForWidgetCreation(row["AggregateFunction"]);
-                _driver.WaitForDataLoadingOnProjects();
+                baseActionItem.SelectDropdown(row["AggregateFunction"], "AggregateFunction");
             }
 
             if (row.ContainsKey("AggregateBy") && !string.IsNullOrEmpty(row["AggregateBy"]))
             {
-                createWidgetElement.AggregateBy.Click();
-                createWidgetElement.SelectObjectForWidgetCreation(row["AggregateBy"]);
-                _driver.WaitForDataLoadingOnProjects();
+                baseActionItem.SelectDropdown(row["AggregateBy"], "AggregateBy");
             }
 
             if (row.ContainsKey("OrderBy") && !string.IsNullOrEmpty(row["OrderBy"]))
             {
-                createWidgetElement.OrderBy.Click();
-                createWidgetElement.SelectObjectForWidgetCreation(row["OrderBy"]);
-                _driver.WaitForDataLoadingOnProjects();
+                baseActionItem.SelectDropdown(row["OrderBy"], "OrderBy");
             }
 
             if (row.ContainsKey("MaxValues") && !string.IsNullOrEmpty(row["MaxValues"]))
             {
-                createWidgetElement.MaxValues.Clear();
-                createWidgetElement.MaxValues.SendKeys(row["MaxValues"]);
+                baseActionItem.PopulateTextbox("Max Values", row["MaxValues"], true);
             }
 
             if (row.ContainsKey("DrillDown") && !string.IsNullOrEmpty(row["DrillDown"]))
@@ -151,94 +136,42 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         #endregion
 
-        [When(@"User selects ""(.*)"" in the ""(.*)"" Widget dropdown")]
-        public void WhenUserSelectsInTheWidgetDropdown(string objectName, string dropdownName)
+        [When(@"User selects '(.*)' in the '(.*)' Widget dropdown")]
+        public void WhenUserSelectsInTheWidgetDropdown(string option, string dropdown)
         {
             var createWidgetElement = _driver.NowAt<AddWidgetPage>();
             _driver.WaitForDataLoading();
-            _driver.ClickByJavascript(createWidgetElement.GetDropdownForWidgetByName(dropdownName));
-            createWidgetElement.SelectObjectForWidgetCreation(objectName);
+            _driver.ClickByJavascript(createWidgetElement.GetDropdownForWidgetByName(dropdown));
+            createWidgetElement.SelectObjectForWidgetCreation(option);
         }
 
-        [When(@"User enters ""(.*)"" as Widget Title")]
+        [When(@"User enters '(.*)' as Widget Title")]
         public void WhenUserSetsWidgetTitle(string widgetTitle)
         {
-            var createWidgetElement = _driver.NowAt<AddWidgetPage>();
-            createWidgetElement.Title.Clear();
-            createWidgetElement.Title.SendKeys(widgetTitle);
+            var baseActionItem = _driver.NowAt<BaseDashboardPage>();
+            baseActionItem.PopulateTextbox("Title", widgetTitle);
         }
 
         [When(@"User expands Widget List dropdown")]
         public void WhenUserExpandsWidgetListDropdown()
         {
-            var createWidgetElement = _driver.NowAt<AddWidgetPage>();
-            createWidgetElement.List.Click();
-            _driver.WaitForElementsToBeDisplayed(createWidgetElement.GetDropdownOptions());
+            var baseActionItem = _driver.NowAt<BaseDashboardPage>();
+            baseActionItem.GetDropdown("List").Click();
+            Thread.Sleep(1000);
         }
 
-        [When(@"User selects ""(.*)"" as Widget List")]
+        [When(@"User selects '(.*)' as Widget List")]
         public void WhenUserSetsWidgetList(string widgetList)
         {
-            var createWidgetElement = _driver.NowAt<AddWidgetPage>();
-
-            createWidgetElement.List.Click();
-            createWidgetElement.SelectListForWidgetCreation(widgetList);
-            _driver.WaitForDataLoadingOnProjects();
+            var baseActionItem = _driver.NowAt<BaseDashboardPage>();
+            baseActionItem.AutocompleteSelect("List", widgetList, true);
         }
-
-        [When(@"User selects ""(.*)"" as Widget Split By")]
-        public void WhenUserSetsWidgetSplitBy(string SplitBy)
-        {
-            var createWidgetElement = _driver.NowAt<AddWidgetPage>();
-            createWidgetElement.SelectSplitByItem(SplitBy);
-        }
-
-        [When(@"User selects ""(.*)"" as Widget Type")]
-        public void WhenUserSetsWidgetType(string Type)
-        {
-            var createWidgetElement = _driver.NowAt<AddWidgetPage>();
-            createWidgetElement.Type.Click();
-            createWidgetElement.SelectObjectForWidgetCreation(Type);
-            _driver.WaitForDataLoadingOnProjects();
-        }
-
-        [When(@"User selects ""(.*)"" as Widget AggregateBy")]
-        public void WhenUserSetsWidgetAggregateBy(string aggregateBy)
-        {
-            var createWidgetElement = _driver.NowAt<AddWidgetPage>();
-
-            createWidgetElement.AggregateBy.Click();
-            createWidgetElement.SelectObjectForWidgetCreation(aggregateBy);
-            _driver.WaitForDataLoadingOnProjects();
-        }
-
-        [When(@"User selects ""(.*)"" as Widget Aggregate Function")]
-        public void WhenUserSetsWidgetAggregateFunction(string aggregateFunc)
-        {
-            var createWidgetElement = _driver.NowAt<AddWidgetPage>();
-
-            createWidgetElement.AggregateFunction.Click();
-            createWidgetElement.SelectObjectForWidgetCreation(aggregateFunc);
-            _driver.WaitForDataLoadingOnProjects();
-        }
-
-        [When(@"User selects ""(.*)"" as Widget OrderBy")]
-        public void WhenUserSetsWidgetOrderBy(string orderBy)
-        {
-            var createWidgetElement = _driver.NowAt<AddWidgetPage>();
-
-            createWidgetElement.OrderBy.Click();
-            createWidgetElement.SelectObjectForWidgetCreation(orderBy);
-            _driver.WaitForDataLoadingOnProjects();
-        }
-
-        [When(@"User enters ""(.*)"" as Widget Max Values")]
+        
+        [When(@"User enters '(.*)' as Widget Max Values")]
         public void WhenUserSetsWidgetMaxValues(string value)
         {
-            var createWidgetElement = _driver.NowAt<AddWidgetPage>();
-
-            createWidgetElement.MaxValues.Clear();
-            createWidgetElement.MaxValues.SendKeys(value);
+            var baseActionItem = _driver.NowAt<BaseDashboardPage>();
+            baseActionItem.PopulateTextbox("Max Values", value, true);
         }
 
         [When(@"User clicks on the Colour Scheme dropdown")]
@@ -248,7 +181,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             createWidgetElement.ColorScheme.Click();
         }
 
-        [When(@"User selects ""(.*)"" in the Colour Scheme")]
+        [When(@"User selects '(.*)' in the Colour Scheme")]
         public void WhenUserSelectsInTheColourScheme(string colorTitle)
         {
             var createWidgetElement = _driver.NowAt<AddWidgetPage>();
@@ -257,26 +190,28 @@ namespace DashworksTestAutomation.Steps.Dashworks
             createWidgetElement.GetColorFromColorScheme(colorTitle).Click();
         }
 
-        [When(@"User selects the Colour Scheme by index ""(.*)""")]
+        [When(@"User selects the Colour Scheme by index '(.*)'")]
         public void SetColourSchemeByIndex(string index)
         {
             var createWidgetElement = _driver.NowAt<AddWidgetPage>();
             createWidgetElement.ColorScheme.Click();
             Thread.Sleep(500);
+
+
             if (Convert.ToInt32(index) <= createWidgetElement.GetDropdownOptions().Count)
             {
                 createWidgetElement.ClickColorSchemeByIndex(Convert.ToInt32(index));
             }
         }
 
-        [When(@"User selects ""(.*)"" checkbox on the Create Widget page")]
+        [When(@"User selects '(.*)' checkbox on the Create Widget page")]
         public void WhenUserSelectsCheckboxOnTheCreateWidgetPage(string checkboxName)
         {
             var page = _driver.NowAt<AddWidgetPage>();
             page.GetDashboardCheckboxByName(checkboxName).Click();
         }
 
-        [When(@"User clicks ""(.*)"" button in Unsaved Changes alert")]
+        [When(@"User clicks '(.*)' button in Unsaved Changes alert")]
         public void WhenUserClickButtonInUnsavedChangesAlert(string buttonTitle)
         {
             var page = _driver.NowAt<AddWidgetPage>();
@@ -290,7 +225,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             foreach (var element in dropdownContainer)
             {
                 var innerColour = element.FindElement(By.XPath(AddWidgetPage.ColorSchemeDropdownContent));
-                Utils.Verify.IsTrue(_driver.IsElementExists(innerColour), "Colour item is not found");
+                Verify.IsTrue(_driver.IsElementExists(innerColour), "Colour item is not found");
             }
             var page = _driver.NowAt<BaseGridPage>();
             page.BodyContainer.Click();
@@ -301,15 +236,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<AddWidgetPage>();
             _driver.WaitForDataLoading();
-            Utils.Verify.IsFalse(page.ColorScheme.Displayed(), "Colour Scheme dropdown is displayed to the user");
+            Verify.IsFalse(page.ColorScheme.Displayed(), "Colour Scheme dropdown is displayed to the user");
         }
 
-        [Then(@"Color Scheme dropdown displayed with ""(.*)"" placeholder")]
+        [Then(@"Color Scheme dropdown displayed with '(.*)' placeholder")]
         public void ThenColourSchemeHasCorrectPlaceholder(string placeholder)
         {
             var page = _driver.NowAt<AddWidgetPage>();
             _driver.WaitForDataLoading();
-            Utils.Verify.That(page.ColorSchemePlaceholder.Text, Is.EqualTo(placeholder), "Colour Scheme dropdown is displayed with wrong placeholder");
+            Verify.That(page.ColorSchemePlaceholder.Text, Is.EqualTo(placeholder), "Colour Scheme dropdown is displayed with wrong placeholder");
         }
 
         [Then(@"Table widget displayed inside preview pane correctly")]
@@ -321,23 +256,25 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var widget = _driver.NowAt<AddWidgetPage>();
             int widgetWidth = widget.GetTableWidgetPreview().Size.Width;
 
-            Utils.Verify.That(widgetWidth > prevWidth * 0.85 && widgetWidth < prevWidth, Is.True, "Widget preview less than 85 percent preview box");
+            Verify.That(widgetWidth > prevWidth * 0.85 && widgetWidth < prevWidth, Is.True, "Widget preview less than 85 percent preview box");
         }
 
-        [Then(@"Widget title ""(.*)"" is displayed on Widget page")]
+        [Then(@"Widget title '(.*)' is displayed on Widget page")]
         public void ThenWidgetTitleDisplayedOnThePage(string text)
         {
-            var page = _driver.NowAt<AddWidgetPage>();
-            Utils.Verify.AreEqual(text, page.Title.GetAttribute("innerHTML"), "Widget title is not the same");
+            var baseActionItem = _driver.NowAt<BaseDashboardPage>();
+
+            Verify.AreEqual(baseActionItem.GetDropdown(").Title").GetAttribute("innerHTML"), text,
+                "Widget title is not the same");
         }
 
-        [Then(@"Error message with ""(.*)"" text is displayed on Widget page")]
+        [Then(@"Error message with '(.*)' text is displayed on Widget page")]
         public void ThenErrorMessageWithTextIsDisplayedOnTheBucketsPage(string text)
         {
             var page = _driver.NowAt<AddWidgetPage>();
             _driver.WaitForDataLoading();
             _driver.WaitForElementToBeDisplayed(page.ErrorMessage);
-            Utils.Verify.AreEqual(text, page.ErrorMessage.Text, "Error Message is not displayed");
+            Verify.AreEqual(text, page.ErrorMessage.Text, "Error Message is not displayed");
         }
 
         [Then(@"Unsaved Changes alert not displayed to the user")]
@@ -345,85 +282,84 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<AddWidgetPage>();
             _driver.WaitForElementToBeNotDisplayed(page.UnsavedChangesAlert);
-            Utils.Verify.IsFalse(_driver.IsElementDisplayed(page.UnsavedChangesAlert), "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.IsFalse(_driver.IsElementDisplayed(page.UnsavedChangesAlert), "PLEASE ADD EXCEPTION MESSAGE");
         }
 
-        [Then(@"User sees ""(.*)"" text in alert on Edit Widget page")]
+        [Then(@"User sees '(.*)' text in alert on Edit Widget page")]
         public void ThenUserSeesTextInAlertOnEditWidgetPage(string text)
         {
             var page = _driver.NowAt<AddWidgetPage>();
             _driver.WaitForElementToBeDisplayed(page.UnsavedChangesAlert);
-            Utils.Verify.AreEqual(text, page.GetUnsavedChangesAlertText().Text, "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.AreEqual(text, page.GetUnsavedChangesAlertText().Text, "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"User sees following options for Order By selector on Create Widget page:")]
         public void WhenUserSeesFollowingOptionsForOrderBySelectorOnCreateWidgetPage(Table items)
         {
             var page = _driver.NowAt<AddWidgetPage>();
-            page.OrderBy.Click();
+            var baseActionItem = _driver.NowAt<BaseDashboardPage>();
+
+            baseActionItem.GetDropdown("OrderBy").Click();
+           
             Thread.Sleep(1000);
 
-            Utils.Verify.AreEqual(items.Rows.SelectMany(row => row.Values).ToList(),
+            Verify.AreEqual(items.Rows.SelectMany(row => row.Values).ToList(),
                 page.GetDropdownOptions().Select(p => p.Text), "Incorrect options in lists dropdown");
             //close expanded list
-            page.OrderBy.SendKeys(OpenQA.Selenium.Keys.Escape);
-
-            //Actions action = new Actions(driver);
-            //action.SendKeys(OpenQA.Selenium.Keys.Escape);
+            baseActionItem.GetDropdown("OrderBy").SendKeys(OpenQA.Selenium.Keys.Escape);
         }
 
-        [Then(@"User sees ""(.*)"" option for Order By selector on Create Widget page")]
+        [Then(@"User sees '(.*)' option for Order By selector on Create Widget page")]
         public void WhenUserSeesFollowingOptionForOrderBySelectorOnCreateWidgetPage(string option)
         {
-            var page = _driver.NowAt<AddWidgetPage>();
-            Utils.Verify.AreEqual(page.OrderBy.Text, option, "Incorrect option in OrderBy dropdown");
+            var baseActionItem = _driver.NowAt<BaseDashboardPage>();
+            Verify.AreEqual(baseActionItem.GetDropdown("OrderBy").Text, option, "Incorrect option in OrderBy dropdown");
         }
 
-        [Then(@"""(.*)"" checkbox is checked on the Create Widget page")]
+        [Then(@"'(.*)' checkbox is checked on the Create Widget page")]
         public void ThenCheckboxIsCheckedOnTheCreateWidgetPage(string checkboxName)
         {
             var page = _driver.NowAt<AddWidgetPage>();
             _driver.WaitForDataLoading();
-            Utils.Verify.IsTrue(page.GetDashboardCheckboxByName(checkboxName).GetAttribute("class").Contains("checked"),
+            Verify.IsTrue(page.GetDashboardCheckboxByName(checkboxName).GetAttribute("class").Contains("checked"),
                 "PLEASE ADD EXCEPTION MESSAGE");
         }
 
-        [Then(@"""(.*)"" checkbox is not displayed on the Create Widget page")]
+        [Then(@"'(.*)' checkbox is not displayed on the Create Widget page")]
         public void ThenCheckboxIsNotDisplayedOnTheCreateWidgetPage(string checkboxName)
         {
             var page = _driver.NowAt<AddWidgetPage>();
-            Utils.Verify.IsFalse(page.GetCheckboxByName(checkboxName), $"{checkboxName} checkbox is displayed");
+            Verify.IsFalse(page.GetCheckboxByName(checkboxName), $"{checkboxName} checkbox is displayed");
         }
 
-        [Then(@"User sees ""(.*)"" warning text below Lists field")]
+        [Then(@"User sees '(.*)' warning text below Lists field")]
         public void ThenUserSeesWarningTextBelowListsField(string text)
         {
             var page = _driver.NowAt<AddWidgetPage>();
-            Utils.Verify.AreEqual(text, page.WarningTextUnderField.Text, "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.AreEqual(text, page.WarningTextUnderField.Text, "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"Aggregate Function dropdown is placed above the Aggregate By dropdown")]
         public void ThenUserSeesAggregateFunctionAboveTheAggregateByDropdown()
         {
-            var page = _driver.NowAt<AddWidgetPage>();
+            var baseActionItem = _driver.NowAt<BaseDashboardPage>();
 
-            Utils.Verify.That(page.AggregateFunction.Location.Y, Is.LessThan(page.AggregateBy.Location.Y));
+            Verify.That(baseActionItem.GetDropdown("AggregateFunction").Location.Y, Is.LessThan(baseActionItem.GetDropdown("AggregateBy").Location.Y));
         }
 
-        [Then(@"""(.*)"" dropdown is missing")]
+        [Then(@"'(.*)' dropdown is missing")]
         public void ThenSelectedDropdownIsMissing(string label)
         {
             var page = _driver.NowAt<AddWidgetPage>();
 
-            Utils.Verify.That(page.Dropdowns.Any(x => x.Text.Equals(label)), Is.EqualTo(false));
+            Verify.That(page.Dropdowns.Any(x => x.Text.Equals(label)), Is.EqualTo(false));
         }
 
         [Then(@"Aggregate By dropdown is disabled")]
         public void ThenSelectedDropdownIsMissing()
         {
-            var page = _driver.NowAt<AddWidgetPage>();
-
-            Assert.That(page.IsAggregateByDropdownDisabled, Is.EqualTo(true), "PLEASE ADD EXCEPTION MESSAGE");
+            var baseActionItem = _driver.NowAt<BaseDashboardPage>();
+            Assert.That(Convert.ToBoolean(baseActionItem.GetDropdown("AggregateBy").GetAttribute("aria-disabled")), Is.EqualTo(true), "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"Color Scheme dropdown is disabled")]
@@ -438,10 +374,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSeesFollowingOptionsForAggregateBySelectorOnCreateWidgetPage(Table items)
         {
             var page = _driver.NowAt<AddWidgetPage>();
-            page.AggregateBy.Click();
+            var baseActionItem = _driver.NowAt<BaseDashboardPage>();
+
+            baseActionItem.GetDropdown("AggregateBy").Click();
             Thread.Sleep(1000);
 
-            Utils.Verify.AreEqual(items.Rows.SelectMany(row => row.Values).ToList(),
+            Verify.AreEqual(items.Rows.SelectMany(row => row.Values).ToList(),
                 page.GetDropdownOptions().Select(p => p.Text), "Incorrect options in lists dropdown");
         }
 
@@ -449,10 +387,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenMessageIsDisplayedInTheListsPanel()
         {
             var listElement = _driver.NowAt<AddWidgetPage>();
-            _driver.WaitForElementToBeDisplayed(listElement.ListDoesntExistMessage);
+            _driver.WaitForElementToBeDisplayed(listElement.ListDoesNotExistMessage);
         }
 
-        [Then(@"""(.*)"" checkbox has a correct label")]
+        [Then(@"'(.*)' checkbox has a correct label")]
         public void ThenCheckboxLabelDisplayedOnForm(string checkbox)
         {
             var page = _driver.NowAt<AddWidgetPage>();
@@ -461,14 +399,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             switch (checkbox)
             {
                 case "Show legend":
-                    Utils.Verify.That(page.ShowLegendLabel.Text, Is.EqualTo("Show legend"), "Show legend label wrong");
+                    Verify.That(page.ShowLegendLabel.Text, Is.EqualTo("Show legend"), "Show legend label wrong");
                     break;
                 case "Show data labels":
-                    Utils.Verify.That(page.ShowDataLabel.Text, Is.EqualTo("Show data labels"), "Show data labels label wrong");
+                    Verify.That(page.ShowDataLabel.Text, Is.EqualTo("Show data labels"), "Show data labels label wrong");
                     break;
 
                 default:
-                    Utils.Verify.IsTrue(false, "Wrong checkbox specified");
+                    Verify.IsTrue(false, "Wrong checkbox specified");
                     break;
             }
         }
@@ -478,7 +416,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<AddWidgetPage>();
             _driver.WaitForDataLoading();
-            Utils.Verify.IsTrue(page.TextOnlyCardWidget.Displayed(), "Text Only is not displayed for Card widget");
+            Verify.IsTrue(page.TextOnlyCardWidget.Displayed(), "Text Only is not displayed for Card widget");
         }
 
         [Then(@"Icon and Text is displayed for Card widget on Preview")]
@@ -486,7 +424,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<AddWidgetPage>();
             _driver.WaitForDataLoading();
-            Utils.Verify.IsTrue(page.IconAndTextCardWidget.Displayed(), "Icon and Text is not displayed for Card widget");
+            Verify.IsTrue(page.IconAndTextCardWidget.Displayed(), "Icon and Text is not displayed for Card widget");
         }
 
         [Then(@"Icon Only is displayed for Card widget on Preview")]
@@ -494,7 +432,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<AddWidgetPage>();
             _driver.WaitForDataLoading();
-            Utils.Verify.IsTrue(page.IconOnlyCardWidget.Displayed(), "Icon Only is not displayed for Card widget");
+            Verify.IsTrue(page.IconOnlyCardWidget.Displayed(), "Icon Only is not displayed for Card widget");
         }
 
         [Then(@"Widget Preview is displayed to the user")]
@@ -502,14 +440,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<AddWidgetPage>();
             _driver.WaitForDataLoading();
-            Utils.Verify.IsTrue(page.WidgetPreview.Displayed(), "Widget Preview is not displayed");
+            Verify.IsTrue(page.WidgetPreview.Displayed(), "Widget Preview is not displayed");
         }
 
         [Then(@"Widget Preview is not displayed to the user")]
         public void ThenWidgetPreviewIsNotDisplayedToTheUser()
         {
             var page = _driver.NowAt<AddWidgetPage>();
-            Utils.Verify.IsTrue(page.WidgetPreviewEmpty.Displayed(), "Widget Preview displayed not empty");
+            Verify.IsTrue(page.WidgetPreviewEmpty.Displayed(), "Widget Preview displayed not empty");
         }
 
         [Then(@"Card widget displayed inside preview pane")]
@@ -525,31 +463,31 @@ namespace DashworksTestAutomation.Steps.Dashworks
             int widgetX = widget.GetCardWidgetPreviewText().Location.X;
             int widgetY = widget.GetCardWidgetPreviewText().Location.Y;
 
-            Utils.Verify.That(prevX < widgetX && prevY < widgetY, Is.True, "Widget XY coordinate displayed outside preview box");
-            Utils.Verify.That(prevWidth > widgetWidth, Is.True, "Widget width displayed outside preview box");
+            Verify.That(prevX < widgetX && prevY < widgetY, Is.True, "Widget XY coordinate displayed outside preview box");
+            Verify.That(prevWidth > widgetWidth, Is.True, "Widget width displayed outside preview box");
         }
 
-        [Then(@"""(.*)"" color is displayed for Card Widget on Preview")]
+        [Then(@"'(.*)' color is displayed for Card Widget on Preview")]
         public void ThenColorIsDisplayedForCardWidgetOnPreview(string color)
         {
             var page = _driver.NowAt<AddWidgetPage>();
             _driver.WaitForDataLoading();
             var getColor = page.GetCardWidgetPreviewText().GetCssValue("color");
-            Utils.Verify.AreEqual(ColorWidgetConvertor.ConvertComplianceColorWidget(color), getColor, $"{color} color is displayed for widget");
+            Verify.AreEqual(ColorWidgetConvertor.ConvertComplianceColorWidget(color), getColor, $"{color} color is displayed for widget");
         }
 
         [Then(@"'(.*)' message is displayed in Preview")]
         public void ThenEmptyMessageTextDisplayedInPreview(string message)
         {
             var page = _driver.NowAt<AddWidgetPage>();
-            Utils.Verify.That(page.PreviewPaneMessageText.Text, Is.EqualTo(message), "Preview message is different.");
+            Verify.That(page.PreviewPaneMessageText.Text, Is.EqualTo(message), "Preview message is different.");
         }
 
         [Then(@"'(.*)' alert is displayed in Preview")]
         public void ThenAlertTestDisplayedInPreview(string message)
         {
             var page = _driver.NowAt<AddWidgetPage>();
-            Utils.Verify.That(page.PreviewPaneAlertText.Text, Is.EqualTo(message), "Preview alert is different.");
+            Verify.That(page.PreviewPaneAlertText.Text, Is.EqualTo(message), "Preview alert is different.");
         }
 
         [When(@"User clicks first Dashboard in dashboards list")]
@@ -564,37 +502,38 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<AddWidgetPage>();
             _driver.WaitForDataLoading();
-            Utils.Verify.IsTrue(page.DataLabels.Displayed(), "Data Labels are not displayed");
+            Verify.IsTrue(page.DataLabels.Displayed(), "Data Labels are not displayed");
         }
 
-        [Then(@"""(.*)"" data label is displayed on the Preview page")]
+        [Then(@"'(.*)' data label is displayed on the Preview page")]
         public void ThenDataLabelIsDisplayedOnThePreviewPage(string text)
         {
             var page = _driver.NowAt<AddWidgetPage>();
             _driver.WaitForDataLoading();
-            Utils.Verify.That(page.DataLabels.Text, Is.EqualTo(text), $"{text} data label is not displayed");
+            Verify.That(page.DataLabels.Text, Is.EqualTo(text), $"{text} data label is not displayed");
         }
 
-        [Then(@"Widget Preview shows ""(.*)"" as First Cell value")]
+        [Then(@"Widget Preview shows '(.*)' as First Cell value")]
         public void ThenWidgetPreviewShowsAsFirstCellValue(string option)
         {
             var page = _driver.NowAt<AddWidgetPage>();
-            Utils.Verify.That(page.GetCardWidgetPreviewText().Text, Is.EqualTo(option), "Widget Preview shown different value");
+            Verify.That(page.GetCardWidgetPreviewText().Text, Is.EqualTo(option), "Widget Preview shown different value");
         }
 
         [Then(@"'(.*)' option displayed for Widget OrderBy")]
         public void ThenTheNextOptionDisplayedForWidgetOrderBy(string option)
         {
             var page = _driver.NowAt<AddWidgetPage>();
-            Utils.Verify.That(page.GetOrderBySelectedOption(), Is.EqualTo(option), $"DDL has wrong option selected {page.GetOrderBySelectedOption()}");
+            Verify.That(page.GetOrderBySelectedOption(), Is.EqualTo(option), $"DDL has wrong option selected {page.GetOrderBySelectedOption()}");
         }
 
         [Then(@"List dropdown has next item categories:")]
         public void ThenListDdlHasNextItemCategories(Table items)
         {
-            var page = _driver.NowAt<AddWidgetPage>();
-            page.List.Click();
+            var baseActionItem = _driver.NowAt<BaseDashboardPage>();
+            baseActionItem.GetDropdown("List").Click();
 
+            var page = _driver.NowAt<AddWidgetPage>();
             var actualItems = page.GetMainCategoriesOfListDDL().Select(x => x.Text).ToList();
             var expectedItems = items.Rows.SelectMany(row => row.Values).ToList();
 

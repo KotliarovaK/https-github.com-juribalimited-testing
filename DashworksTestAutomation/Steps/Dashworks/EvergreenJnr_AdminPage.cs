@@ -947,7 +947,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         #endregion
 
-        [When(@"User tries to open same page with ""(.*)"" item id")]
+        [When(@"User tries to open same page with '(.*)' item id")]
         public void WhenUserOpensSamePageForNotExistingItem(string Id)
         {
             string current = _driver.Url;
