@@ -392,12 +392,13 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatAfterAddingRowsToAStaticListFr
 	Then User add selected rows in "StaticListFromTheAllList" list
 	Then "4" rows are displayed in the agGrid
 	And Column is displayed in following order:
-	| ColumnName  |
-	| Application |
-	| Vendor      |
-	| Version     |
-	| Compliance  |
-	| Import      |
+	| ColumnName         |
+	| Application        |
+	| Vendor             |
+	| Version            |
+	| Owner Display Name |
+	| Compliance         |
+	| Import             |
 
 @Evergreen @Mailboxes @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13059 @Cleanup
 Scenario: EvergreenJnr_MailboxesList_ChecksThatAfterAddingRowsToAStaticListFromTheAllListTheColumnsIsDisplayedCorrectlyOnMailboxesPage
@@ -661,23 +662,25 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatSubcategoriesOnColumnsPanelAre
 	When User add "Inventory Site" filter where type is "Equals" with added column and "Altiris" Lookup option
 	Then "Inventory Site" filter is added to the list
 	And Column is displayed in following order:
-	| ColumnName      |
-	| Application     |
-	| Vendor          |
-	| Version         |
-	| Application Key |
-	| Inventory Site  |
+	| ColumnName         |
+	| Application        |
+	| Vendor             |
+	| Version            |
+	| Owner Display Name |
+	| Application Key    |
+	| Inventory Site     |
 	When User clicks Add New button on the Filter panel
 	Then the subcategories are displayed for open category in alphabetical order on Filters panel
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	And the following subcategories are displayed for Selected Columns category:
-	| Subcategories   |
-	| Application     |
-	| Vendor          |
-	| Version         |
-	| Application Key |
-	| Inventory Site  |
+	| Subcategories      |
+	| Application        |
+	| Vendor             |
+	| Version            |
+	| Owner Display Name |
+	| Application Key    |
+	| Inventory Site     |
 
 @Evergreen @Users @EvergreenJnr_Columns @ColumnSectionOrder @ColumnSectionDisplay @DAS12861
 Scenario: EvergreenJnr_UsersList_ChecksThatSubcategoriesOnColumnsPanelAreDisplayedInAlphabeticalOrderAfterAddingDepartmentFilters

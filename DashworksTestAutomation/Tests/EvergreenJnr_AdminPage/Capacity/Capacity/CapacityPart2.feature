@@ -137,11 +137,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCapacityUnitsGridUpdatedAfterUnitUpdat
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13945 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitWithEmptyName
 	When Project created via API and opened
-	| ProjectName        | Scope       | ProjectTemplate | Mode               |
-	| ProjectForDAS13945 | All Devices | None            | Standalone Project |
+	| ProjectName          | Scope       | ProjectTemplate | Mode               |
+	| ProjectForDAS13945_2 | All Devices | None            | Standalone Project |
 	And User navigates to the 'Capacity' left menu item
 	And User navigates to the 'Units' left menu item
 	And User clicks 'CREATE PROJECT CAPACITY UNIT' button 
 	And User enters ' ' text to 'Capacity Unit Name' textbox
-	And User enters '13945' text to 'Description' textbox
+	And User enters '13945_2' text to 'Description' textbox
 	Then 'CREATE' button is disabled

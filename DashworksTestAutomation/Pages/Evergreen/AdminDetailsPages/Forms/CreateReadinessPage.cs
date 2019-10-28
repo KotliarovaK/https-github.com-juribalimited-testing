@@ -11,12 +11,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Forms
         [FindsBy(How = How.XPath, Using = "//div[contains(@class,'action-container')]/h2")]
         public IWebElement CreateReadinessFormTitle { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//label[text()='Readiness']/ancestor::div[@class='form-item']//input")]
-        public IWebElement ReadinessField { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//label[text()='Tooltip']/ancestor::div[@class='form-item']//input")]
-        public IWebElement TooltipField { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//label[@class='mat-checkbox-layout']/span[text()='Ready']")]
         public IWebElement ReadyCheckbox { get; set; }
 

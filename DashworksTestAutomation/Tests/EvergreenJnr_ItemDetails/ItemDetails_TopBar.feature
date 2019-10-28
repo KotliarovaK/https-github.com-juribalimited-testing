@@ -179,7 +179,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatComplianceInKeyValueTableMatche
 	When User navigates to the '<PageName>' details page for '<ItemName>' item
 	Then Details page for "<ItemName>" item is displayed to the user
 	When User switches to the "<ProjectName>" project in the Top bar on Item details page
-	And User navigates to the 'Projects' left menu item
+	When User navigates to the 'Projects' parent left menu item
 	And User navigates to the 'Project Details' left submenu item 
 	Then following content is displayed on the Details Page
 	| Title   | Value   |
@@ -200,7 +200,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatReadinessValuesIsDisplayedAccor
 	When User navigates to the 'Application' details page for 'ACD Display 3.4' item
 	Then Details page for "ACD Display 3.4" item is displayed to the user
 	When User switches to the "Havoc (Big Data)" project in the Top bar on Item details page
-	When User navigates to the 'Projects' left menu item
+	When User navigates to the 'Projects' parent left menu item
 	And User navigates to the 'Project Details' left submenu item
 	Then following content is displayed on the Details Page
 	| Title         | Value |

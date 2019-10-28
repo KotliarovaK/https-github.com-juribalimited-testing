@@ -235,13 +235,15 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksOnlyForParticu
 	#add widget#1
 	When User clicks 'ADD WIDGET' button 
 	And User creates new Widget
-	| WidgetType | Title             | List                 | SplitBy  | AggregateFunction | OrderBy    |
-	| Table      | WidgetForDAS14841 | DeviceListFor14841_3 | Hostname | Count             | Count DESC |
+	| WidgetType | Title               | List                 | SplitBy  | AggregateFunction | OrderBy    |
+	| Table      | WidgetForDAS14841_1 | DeviceListFor14841_3 | Hostname | Count             | Count DESC |
+	Then 'WidgetForDAS14841_1' Widget is displayed to the user
 	#add widget#2
 	When User clicks 'ADD WIDGET' button 
 	And User creates new Widget
-	| WidgetType | Title             | List                 | SplitBy  | AggregateFunction | OrderBy    |
-	| Table      | WidgetForDAS14841 | DeviceListFor14841_4 | Hostname | Count             | Count DESC |
+	| WidgetType | Title               | List                 | SplitBy  | AggregateFunction | OrderBy    |
+	| Table      | WidgetForDAS14841_2 | DeviceListFor14841_4 | Hostname | Count             | Count DESC |
+	Then 'WidgetForDAS14841_2' Widget is displayed to the user
 	#display permission modal
 	When User clicks Dashboards Details icon on Dashboards page
 	Then User sees Dashboards context menu on Dashboards page
