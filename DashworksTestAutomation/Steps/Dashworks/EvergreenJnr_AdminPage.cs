@@ -566,14 +566,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             teamName.TeamDescriptionField.SendKeys(descriptionText);
         }
 
-        [When(@"User selects ""(.*)"" in the Add Members dropdown")]
-        public void WhenUserSelectsInTheAddMembersDropdown(string optionName)
-        {
-            var createProjectElement = _driver.NowAt<CreateTeamPage>();
-            createProjectElement.AddMembersCheckbox.Click();
-            createProjectElement.SelectObjectForTeamCreation(optionName);
-        }
-
         //TODO remove this. Replace by already created generic method
         [Then(@"""(.*)"" content is displayed in ""(.*)"" field")]
         public void ThenContentIsDisplayedInField(string text, string fieldName)

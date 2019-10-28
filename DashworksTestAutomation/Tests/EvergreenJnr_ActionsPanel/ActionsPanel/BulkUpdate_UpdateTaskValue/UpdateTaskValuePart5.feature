@@ -1,5 +1,5 @@
-﻿Feature: ActionsPanelPart13
-	Runs Actions Panel related tests
+﻿Feature: UpdateTaskValuePart5
+	Runs Bulk Update Update task value related tests
 
 Background: Pre-Conditions
 	Given User is logged in to the Evergreen

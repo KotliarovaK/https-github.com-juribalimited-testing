@@ -714,7 +714,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var tableContent = table.Rows.SelectMany(row => row.Values).First();
             foreach (var content in originalList)
             {
-                Verify.AreEqual(originalList, tableContent, "PLEASE ADD EXCEPTION MESSAGE");
+                Verify.AreEqual(originalList, tableContent, "Unexpected column");
             }
         }
 

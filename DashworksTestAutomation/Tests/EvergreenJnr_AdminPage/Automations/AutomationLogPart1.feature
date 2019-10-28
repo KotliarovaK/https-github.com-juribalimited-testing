@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_AdminPage @AutomationLog @Automations @DAS16890 @DAS17063 @DAS17364 @DAS17402 @DAS17425 @DAS17774 @Cleanup @Not_Ready
+@Evergreen @EvergreenJnr_AdminPage @AutomationLog @Automations @DAS16890 @DAS17063 @DAS17364 @DAS17402 @DAS17425 @DAS17774 @DAS18491 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckAutomationsLogGridForRunningAutomationWithDeletedProject
 	When Project created via API and opened
 	| ProjectName  | Scope       | ProjectTemplate | Mode               |
@@ -28,7 +28,8 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsLogGridForRunningAutomationWith
 	When User selects '16890Project' option from 'Project' autocomplete
 	When User selects '[Default (Computer)]' option from 'Path' autocomplete
 	And User clicks 'CREATE' button 
-	When User clicks 'CREATE ACTION' button 
+	When User clicks 'CREATE ACTION' button
+	#Action 2
 	When User enters 'New_Action' text to 'Action Name' textbox
 	When User selects 'Update path' in the 'Action Type' dropdown
 	When User selects '1803 Rollout' option from 'Project' autocomplete
@@ -45,6 +46,16 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsLogGridForRunningAutomationWith
 	And User selects 'Run now' in the 'Actions' dropdown
 	When User clicks 'RUN' button 
 	When User clicks "RUN" button in the warning message on Admin page
+	When User enters "16890_Automation" text in the Search field for "Automation" column
+	When User clicks content from "Automation" column
+	When User navigates to the 'Actions' left menu item
+	#DAS18491
+	Then "[Project not found]" content is displayed for "Project" column
+	#DAS18491
+	When User clicks content from "Action" column
+	Then '[Project not found]' content is displayed in 'Project' textbox
+	#Then 'The selected project cannot be found' error message is displayed for 'Project' field
+	When User clicks 'Automations' header breadcrumb
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User clicks String Filter button for "Action" column on the Admin page
@@ -53,6 +64,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsLogGridForRunningAutomationWith
 	When User selects "New_Action" checkbox from String Filter with item list on the Admin page
 	Then "SUCCESS" content is displayed for "Outcome" column
 	When User clicks String Filter button for "Outcome" column on the Admin page
+	When User clicks Reset Filters button on the Admin page
 	When User selects "Select All" checkbox from String Filter with item list on the Admin page
 	When User clicks String Filter button for "Outcome" column on the Admin page
 	When User selects "PROJECT DOES NOT EXIST" checkbox from String Filter with item list on the Admin page

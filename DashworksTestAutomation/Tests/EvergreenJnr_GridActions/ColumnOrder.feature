@@ -137,9 +137,10 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAfterDeletingFirstColumnTheColu
 	| ColumnName  |
 	| Application |
 	Then Column is displayed in following order:
-	| ColumnName |
-	| Vendor     |
-	| Version    |
+	| ColumnName         |
+	| Vendor             |
+	| Version            |
+	| Owner Display Name |
 
 @Evergreen @AllLists @EvergreenJnr_Columns @ColumnOrder @DAS12345 @DAS12823 @DAS13668
 Scenario Outline: EvergreenJnr_AllLists_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasReturnedToDefaultPositionWhenActionsPanelWasOpen

@@ -453,51 +453,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ActionsPanelPart1.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\ActionsPanelPart12.feature.cs">
-      <DependentUpon>ActionsPanelPart12.feature</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\ActionsPanelPart11.feature.cs">
-      <DependentUpon>ActionsPanelPart11.feature</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\ActionsPanelPart10.feature.cs">
-      <DependentUpon>ActionsPanelPart10.feature</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\ActionsPanelPart9.feature.cs">
-      <DependentUpon>ActionsPanelPart9.feature</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\ActionsPanelPart8.feature.cs">
-      <DependentUpon>ActionsPanelPart8.feature</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\ActionsPanelPart7.feature.cs">
-      <DependentUpon>ActionsPanelPart7.feature</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\ActionsPanelPart6.feature.cs">
-      <DependentUpon>ActionsPanelPart6.feature</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\ActionsPanelPart5.feature.cs">
-      <DependentUpon>ActionsPanelPart5.feature</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\ActionsPanelPart4.feature.cs">
-      <DependentUpon>ActionsPanelPart4.feature</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\ActionsPanelPart3.feature.cs">
       <DependentUpon>ActionsPanelPart3.feature</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -507,11 +462,6 @@
       <DependentUpon>ActionsPanelPart2.feature</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\ActionsPanelPart13.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ActionsPanelPart13.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdatePath\UpdatePathPart1.feature.cs">
       <AutoGen>True</AutoGen>
@@ -577,6 +527,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>UpdateTaskValueAutomations.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\UpdateTaskValue\UpdateTaskValueAutomations2.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UpdateTaskValueAutomations2.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\UpdateTaskValue\UpdateTaskValueAutomations3.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UpdateTaskValueAutomations3.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_AdminPage\Automations\CreateAutomation.feature.cs">
       <AutoGen>True</AutoGen>
@@ -1636,42 +1596,6 @@
     <None Include="TestData\Filters\Users.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\ActionsPanelPart12.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>ActionsPanelPart12.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\ActionsPanelPart11.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>ActionsPanelPart11.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\ActionsPanelPart10.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>ActionsPanelPart10.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\ActionsPanelPart9.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>ActionsPanelPart9.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\ActionsPanelPart8.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>ActionsPanelPart8.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\ActionsPanelPart7.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>ActionsPanelPart7.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\ActionsPanelPart6.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>ActionsPanelPart6.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\ActionsPanelPart5.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>ActionsPanelPart5.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\ActionsPanelPart4.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>ActionsPanelPart4.feature.cs</LastGenOutput>
-    </None>
     <None Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\ActionsPanelPart3.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ActionsPanelPart3.feature.cs</LastGenOutput>
@@ -1683,10 +1607,6 @@
     <None Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\ActionsPanelPart1.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ActionsPanelPart1.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\ActionsPanelPart13.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>ActionsPanelPart13.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdatePath\UpdatePathPart1.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -1739,6 +1659,14 @@
     <None Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\UpdateTaskValue\UpdateTaskValueAutomations.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>UpdateTaskValueAutomations.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\UpdateTaskValue\UpdateTaskValueAutomations2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UpdateTaskValueAutomations2.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\UpdateTaskValue\UpdateTaskValueAutomations3.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UpdateTaskValueAutomations3.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_AdminPage\Automations\CreateAutomation.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

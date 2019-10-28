@@ -685,12 +685,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElement(by).Text;
         }
 
-        public List<string> GetColumnTooltips(string columnName)
-        {
-            return Driver.FindElements(By.XPath(string.Format(GridCellByColumnName, GetColIdByColumnName(columnName))))
-                .Select(x => x.GetAttribute("title")).ToList();
-        }
-
         public List<string> GetColumnColors(string columnName)
         {
             return Driver.FindElements(By.XPath(string.Concat(string.Format(GridCellByColumnName,

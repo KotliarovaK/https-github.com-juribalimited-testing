@@ -93,7 +93,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatColumnWidgetCanBeAdded
 	And User selects 'Column' in the 'Widget Type' Widget dropdown
 	And User enters 'ColumnWidget' as Widget Title
 	And User selects 'All Devices' as Widget List
-	And User selects 'Operating System' as Widget Split By
+	And User selects 'Operating System' in the 'Split By' Widget dropdown
 	When User selects 'Count distinct' in the 'Aggregate Function' Widget dropdown
 	When User selects 'Hostname' in the 'Aggregate By' Widget dropdown
 	When User selects 'Operating System ASC' in the 'Order By' Widget dropdown
@@ -115,7 +115,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatColumnWidgetCanBeEdited
 	And User selects 'Column' in the 'Widget Type' Widget dropdown
 	And User enters 'ColumnWidget#1' as Widget Title
 	And User selects 'All Devices' as Widget List
-	And User selects 'Operating System' as Widget Split By
+	When User selects 'Operating System' in the 'Split By' Widget dropdown
 	When User selects 'Count distinct' in the 'Aggregate Function' Widget dropdown
 	When User selects 'Hostname' in the 'Aggregate By' Widget dropdown
 	When User selects 'Operating System ASC' in the 'Order By' Widget dropdown
@@ -129,7 +129,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatColumnWidgetCanBeEdited
 	And User selects 'Pie' in the 'Widget Type' Widget dropdown
 	And User enters 'ColumnWidget#2' as Widget Title
 	And User selects 'All Devices' as Widget List
-	And User selects 'Operating System' as Widget Split By
+	When User selects 'Operating System' in the 'Split By' Widget dropdown
 	When User selects 'Count distinct' in the 'Aggregate Function' Widget dropdown
 	When User selects 'Hostname' in the 'Aggregate By' Widget dropdown
 	When User selects 'Operating System ASC' in the 'Order By' Widget dropdown

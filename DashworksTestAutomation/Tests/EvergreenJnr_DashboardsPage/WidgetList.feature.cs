@@ -286,7 +286,7 @@ this.FeatureBackground();
             table6.AddRow(new string[] {
                         "Microsoft Corporation"});
 #line 52
- testRunner.Then("Content in the \'Vendor\' column is equal to for Widget", ((string)(null)), table6, "Then ");
+ testRunner.Then("following content is displayed in the \'Vendor\' column for Widget", ((string)(null)), table6, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

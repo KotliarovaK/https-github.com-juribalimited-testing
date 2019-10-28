@@ -370,6 +370,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.IsTrue(Convert.ToBoolean(page.GetTextboxAddButton(fieldName).Disabled()), $"Add button for {fieldName} textbox is active");
         }
 
+        [Then(@"Add button for '(.*)' textbox is not disabled")]
+        public void ThenAddButtonForTextboxIsNotDisabled(string fieldName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsFalse(Convert.ToBoolean(page.GetTextboxAddButton(fieldName).Disabled()), $"Add button for {fieldName} textbox is active");
+        }
+
         [Then(@"'(.*)' textbox is displayed")]
         public void ThenTextboxIsDisplayed(string placeholder)
         {
@@ -461,7 +468,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 $"'{dropdownName}' dropdown' is not displayed");
         }
 
-        //Exact much
+        //Exact match
         [Then(@"following Values are displayed in the '(.*)' dropdown:")]
         public void ThenFollowingValuesAreDisplayedInTheDropdown(string dropDownName, Table table)
         {
@@ -810,6 +817,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         #endregion
 
+
         #region Checkbox
 
         //TODO This is for BaseGrid but method can be changed to generic
@@ -837,6 +845,17 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var page = _driver.NowAt<BaseGridPage>();
             Verify.AreEqual(0, _driver.GetEvergreenCheckboxTripleState(page.SelectAllCheckbox),
                 "'Select all' checkbox is not unchecked");
+        }
+
+        #endregion
+
+        #region Chips
+
+        [Then(@"Chips for '(.*)' field are not displayed")]
+        public void ThenChipBoxIsNotDisplayedOnThePage(string field)
+        {
+            var baseActionItem = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsTrue(baseActionItem.GetChipsOfTextbox(field).Count == 0, "Chip box is displayed on the page");
         }
 
         #endregion
