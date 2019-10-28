@@ -14,7 +14,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Forms
         [FindsBy(How = How.XPath, Using = ".//button[contains(@class,'mat-primary mat-raised-button')]")]
         public IWebElement CreateTeamButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//span[text()='Add Members (Optional)']")]
+        [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-label='Add Members (Optional)']")]
         public IWebElement AddMembersCheckbox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//textarea[contains(@placeholder,'Description')]")]

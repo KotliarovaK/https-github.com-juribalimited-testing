@@ -840,5 +840,16 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         }
 
         #endregion
+
+        #region Chips
+
+        [Then(@"Chip box is not displayed on the page")]
+        public void ThenChipBoxIsNotDisplayedOnThePage()
+        {
+            var filterElement = _driver.NowAt<BaseDashboardPage>();
+            Utils.Verify.IsTrue(filterElement.ChipsItem.Count==0, "Chip box is displayed in on the page");
+        }
+
+        #endregion
     }
 }
