@@ -848,7 +848,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenChipBoxIsNotDisplayedOnThePage(string field)
         {
             var baseActionItem = _driver.NowAt<BaseDashboardPage>();
-            Verify.IsTrue(baseActionItem.GetChipsOfTextbox(field).Count == 0, "Chip box is displayed in on the page");
+            Verify.IsTrue(baseActionItem.GetChipsOfTextbox(field).Count == 0, "Chip box is displayed on the page");
         }
 
         #endregion
