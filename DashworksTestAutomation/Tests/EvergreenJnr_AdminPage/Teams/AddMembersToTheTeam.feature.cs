@@ -162,7 +162,8 @@ this.FeatureBackground();
 #line 22
  testRunner.And("User enters \"test\" in the Team Description field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 23
- testRunner.When("User selects \"Add members from another team\" in the Add Members dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Add members from another team\' in the \'Add Members (Optional)\' drop" +
+                    "down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 24
  testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -204,7 +205,7 @@ this.FeatureBackground();
 #line 42
  testRunner.And("User clicks Default Team checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 43
- testRunner.When("User selects \"Add individual members\" in the Add Members dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Add individual members\' in the \'Add Members (Optional)\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
@@ -604,7 +605,8 @@ this.FeatureBackground();
 #line 150
  testRunner.When("User enters \"test\" in the Team Description field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 151
- testRunner.When("User selects \"Add members from another team\" in the Add Members dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Add members from another team\' in the \'Add Members (Optional)\' drop" +
+                    "down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 152
  testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -615,11 +617,11 @@ this.FeatureBackground();
 #line 153
  testRunner.When("User selects following Objects from the expandable multiselect", ((string)(null)), table8, "When ");
 #line 156
- testRunner.When("User selects \"Add individual members\" in the Add Members dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Add individual members\' in the \'Add Members (Optional)\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 157
  testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 158
- testRunner.Then("Chip box is not displayed on the page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Chips for \'Search\' field are not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 159
  testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 160

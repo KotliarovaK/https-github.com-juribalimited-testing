@@ -258,9 +258,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'mat-autocomplete-panel')]")]
         public IWebElement AutocompleteDropdown { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//li[contains(@class, 'chips-item')]")]
-        public IList<IWebElement> ChipsItem { get; set; }
-
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -988,5 +985,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         }
 
         #endregion
+
+        public IList<IWebElement> GetChipsOfTextbox(string textbox)
+        {
+            var chipsSelector = By.XPath("./ancestor::div[contains(@class, 'multiselect')]//li[contains(@class, 'chips-item')]");
+            return GetTextbox(textbox).FindElements(chipsSelector);
+        }
     }
 }

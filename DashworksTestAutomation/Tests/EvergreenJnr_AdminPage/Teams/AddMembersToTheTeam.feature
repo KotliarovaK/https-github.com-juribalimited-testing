@@ -20,7 +20,7 @@ Scenario: EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam
 	Then Page with 'Create Team' subheader is displayed to user
 	When User enters 'TestTeam8' text to 'Team Name' textbox
 	And User enters "test" in the Team Description field
-	When User selects "Add members from another team" in the Add Members dropdown
+	When User selects 'Add members from another team' in the 'Add Members (Optional)' dropdown
 	Then There are no errors in the browser console
 	When User selects following Objects from the expandable multiselect
 	| Objects                |
@@ -40,7 +40,7 @@ Scenario: EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam
 	When User enters 'TestTeam88' text to 'Team Name' textbox
 	And User enters "test" in the Team Description field
 	And User clicks Default Team checkbox
-	When User selects "Add individual members" in the Add Members dropdown
+	When User selects 'Add individual members' in the 'Add Members (Optional)' dropdown
 	And User selects following Objects from the expandable multiselect
 	| Objects           |
 	| automation_admin1 |
@@ -148,14 +148,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorAppearsAfterCreatingTeamHavingC
 	Then Page with 'Create Team' subheader is displayed to user
 	When User enters 'TestTeam18614' text to 'Team Name' textbox
 	When User enters "test" in the Team Description field
-	When User selects "Add members from another team" in the Add Members dropdown
+	When User selects 'Add members from another team' in the 'Add Members (Optional)' dropdown
 	Then There are no errors in the browser console
 	When User selects following Objects from the expandable multiselect
 	| Objects   |
 	| 1803 Team |
-	When User selects "Add individual members" in the Add Members dropdown
+	When User selects 'Add individual members' in the 'Add Members (Optional)' dropdown
 	Then There are no errors in the browser console
-	Then Chip box is not displayed on the page
+	Then Chips for 'Search' field are not displayed
 	When User clicks 'CREATE' button 
 	Then There are no errors in the browser console
 	Then Success message is displayed and contains "The team has been created" text

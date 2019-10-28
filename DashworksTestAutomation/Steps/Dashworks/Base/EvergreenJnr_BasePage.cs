@@ -844,11 +844,11 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         #region Chips
 
-        [Then(@"Chip box is not displayed on the page")]
-        public void ThenChipBoxIsNotDisplayedOnThePage()
+        [Then(@"Chips for '(.*)' field are not displayed")]
+        public void ThenChipBoxIsNotDisplayedOnThePage(string field)
         {
-            var filterElement = _driver.NowAt<BaseDashboardPage>();
-            Verify.IsTrue(filterElement.ChipsItem.Count==0, "Chip box is displayed in on the page");
+            var baseActionItem = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsTrue(baseActionItem.GetChipsOfTextbox(field).Count == 0, "Chip box is displayed in on the page");
         }
 
         #endregion
