@@ -544,7 +544,7 @@ this.FeatureBackground();
  testRunner.When("User selects \"TestProject22\" checkbox from String Filter with item list on the Ad" +
                     "min page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 115
- testRunner.And("User have opened Column Settings for \"Project\" column in the Details Page table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User have opened Column Settings for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 116
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 117
@@ -566,7 +566,7 @@ this.FeatureBackground();
  testRunner.When("User selects \"TestProject22\" checkbox from String Filter with item list on the Ad" +
                     "min page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 125
- testRunner.And("User have opened Column Settings for \"Project\" column in the Details Page table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User have opened Column Settings for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 126
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 127

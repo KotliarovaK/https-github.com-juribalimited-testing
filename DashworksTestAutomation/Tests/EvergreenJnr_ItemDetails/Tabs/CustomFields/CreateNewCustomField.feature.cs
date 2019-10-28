@@ -388,6 +388,8 @@ this.FeatureBackground();
 #line 61
  testRunner.And("\'Custom Fields\' tab is displayed on left menu on the Details page and contains \'1" +
                     "\' count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 62
+ testRunner.Then("\"1\" rows found label displays on Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -569,6 +571,8 @@ this.FeatureBackground();
 #line 92
  testRunner.And("\'Custom Fields\' tab is displayed on left menu on the Details page and contains \'1" +
                     "\' count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 93
+ testRunner.Then("\"1\" rows found label displays on Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "ObjectType",
@@ -606,6 +610,8 @@ this.FeatureBackground();
 #line 106
  testRunner.And("\'Custom Fields\' tab is displayed on left menu on the Details page and contains \'2" +
                     "\' count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 107
+ testRunner.Then("\"2\" rows found label displays on Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

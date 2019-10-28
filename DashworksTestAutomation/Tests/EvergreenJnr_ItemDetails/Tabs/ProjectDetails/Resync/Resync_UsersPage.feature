@@ -5,8 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-	#Ready on the 'radiant' server
-@Evergreen @Users @EvergreenJnr_ItemDetails @Resync @DAS18035 @Not_Ready
+@Evergreen @Users @EvergreenJnr_ItemDetails @Resync @DAS18035
 Scenario: EvergreenJnr_UsersList_CheckThatResyncOptionIsWorkedCorrectlyForProjectDetailsOnUsersPage
 	When User navigates to the 'User' details page for 'ZUF3029607' item
 	Then Details page for "ZUF3029607" item is displayed to the user

@@ -87,7 +87,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails.Tabs.ProjectDet
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("Resync")]
         [NUnit.Framework.CategoryAttribute("DAS18035")]
-        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_DevicesList_CheckThatResyncOptionIsWorkedCorrectlyForProjectDetailsOnDevicesPage()
         {
             System.Exception lastException = null;
@@ -122,37 +121,36 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails.Tabs.ProjectDet
                         "Devices",
                         "EvergreenJnr_ItemDetails",
                         "Resync",
-                        "DAS18035",
-                        "Not_Ready"});
-#line 10
+                        "DAS18035"});
+#line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 11
+#line 10
  testRunner.When("User navigates to the \'Device\' details page for \'011PLA470S0B9DJ\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 12
+#line 11
  testRunner.Then("Details page for \"011PLA470S0B9DJ\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 13
+#line 12
  testRunner.When("User switches to the \"USE ME FOR AUTOMATION(DEVICE SCHDLD)\" project in the Top ba" +
                     "r on Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 14
+#line 13
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 15
+#line 14
  testRunner.And("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 16
+#line 15
  testRunner.When("User clicks \'RESYNC\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 17
+#line 16
  testRunner.Then("Dialog Pop-up is displayed for User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 18
+#line 17
  testRunner.Then("\'Resync owner\' checkbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 19
+#line 18
  testRunner.Then("\'Resync apps\' checkbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 20
+#line 19
  testRunner.Then("\'Resync name\' checkbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 21
+#line 20
  testRunner.When("User clicks \'RESYNC\' button in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 22
+#line 21
  testRunner.Then("Success message is displayed and contains \"Device successfully resynced\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

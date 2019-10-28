@@ -11,7 +11,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColum
 	Then Details page for "<SearchTerm>" item is displayed to the user
 	When User navigates to the '<MainTabName>' left menu item
 	When User navigates to the '<SubTabName>' left submenu item
-	And User have opened Column Settings for "<ColumnName>" column in the Details Page table
+	And User have opened Column Settings for "<ColumnName>" column
 	And User clicks Column button on the Column Settings panel
 	And User select "<CheckboxName>" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
@@ -36,7 +36,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColum
 	When User click content from "Hostname" column
 	And User navigates to the '<MainTabName>' left menu item
 	And User navigates to the '<SubTabName>' left submenu item
-	And User have opened Column Settings for "<ColumnName>" column in the Details Page table
+	And User have opened Column Settings for "<ColumnName>" column
 	And User clicks Column button on the Column Settings panel
 	And User select "<CheckboxName>" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
@@ -65,7 +65,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColum
 	Then Details page for "<SearchTerm>" item is displayed to the user
 	When User navigates to the '<MainTabName>' left menu item
 	And User navigates to the '<SubTabName>' left submenu item
-	And User have opened Column Settings for "<ColumnName>" column in the Details Page table
+	And User have opened Column Settings for "<ColumnName>" column
 	And User clicks Column button on the Column Settings panel
 	And User select "<CheckboxName>" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
@@ -102,7 +102,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColum
 	When User navigates to the '<PageName>' details page for '<SearchTerm>' item
 	Then Details page for "<SearchTerm>" item is displayed to the user
 	When User navigates to the '<SubTabName>' left submenu item
-	And User have opened Column Settings for "<ColumnName>" column in the Details Page table
+	And User have opened Column Settings for "<ColumnName>" column
 	And User clicks Column button on the Column Settings panel
 	And User select "<CheckboxName>" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
@@ -126,7 +126,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColum
 	Then Details page for "Microsoft Office Visio 2000 Solutions - Custom Patterns" item is displayed to the user
 	When User navigates to the '<MainTabName>' left menu item
 	And User navigates to the '<SubTabName>' left submenu item
-	And User have opened Column Settings for "Device" column in the Details Page table
+	And User have opened Column Settings for "Device" column
 	And User clicks Column button on the Column Settings panel
 	And User select "Device" checkbox on the Column Settings panel
 	And User select "Installed" checkbox on the Column Settings panel
@@ -155,37 +155,39 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSelectedCheckboxesMatchTheColumnsInT
 	Then Details page for "01WNOSNMP5QLXC" item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Projects Summary' left submenu item
-	And User have opened Column Settings for "Project Type" column in the Details Page table
+	And User have opened Column Settings for "Project Type" column
 	And User clicks Column button on the Column Settings panel
-	And User select "Key" checkbox on the Column Settings panel
 	And User select "Project" checkbox on the Column Settings panel
+	And User select "Project Type" checkbox on the Column Settings panel
+	And User select "Category" checkbox on the Column Settings panel
+	And User select "Key" checkbox on the Column Settings panel
+	And User select "Object ID" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
 	Then following columns added to the table:
 	| ColumnName |
 	| Key        |
+	| Object ID  |
 	And ColumnName is displayed in following order on the Details page:
-	| ColumnName   |
-	| Key          |
-	| Project Type |
-	| Bucket       |
-	| Ring         |
-	| Path         |
-	| Workflow     |
-	| Category     |
-	| Status       |
-	| Date         |
-	| Slot         |
-	| Readiness    |
+	| ColumnName |
+	| Key        |
+	| Object ID  |
+	| Bucket     |
+	| Ring       |
+	| Path       |
+	| Workflow   |
+	| Status     |
+	| Date       |
+	| Slot       |
+	| Readiness  |
 	And Checkboxes are checked on the Column Settings panel for "Key" Column Settings panel:
-	| Checkbox     |
-	| Key          |
-	| Project Type |
-	| Bucket       |
-	| Ring         |
-	| Path         |
-	| Workflow     |
-	| Category     |
-	| Status       |
-	| Date         |
-	| Slot         |
-	| Readiness    |
+	| Checkbox  |
+	| Key       |
+	| Object ID |
+	| Bucket    |
+	| Ring      |
+	| Path      |
+	| Workflow  |
+	| Status    |
+	| Date      |
+	| Slot      |
+	| Readiness |

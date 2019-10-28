@@ -13,7 +13,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplaye
 	Then 'US-W' content is displayed in the 'Domain' column
 	Then 'Global Security Group' content is displayed in the 'Type' column
 	When User navigates to the 'Groups' left submenu item
-	And User have opened Column Settings for "Group" column in the Details Page table
+	And User have opened Column Settings for "Group" column
 	And User clicks Column button on the Column Settings panel
 	And User select "Directory Type" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
@@ -173,7 +173,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplaye
 	| AMBER  |
 	When User closes Checkbox filter for "Compliance" column
 	And User navigates to the 'Application Issues' left submenu item
-	And User have opened Column Settings for "Type" column in the Details Page table
+	And User have opened Column Settings for "Type" column
 	And User clicks Column button on the Column Settings panel
 	And User select "Application" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel

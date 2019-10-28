@@ -288,15 +288,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
-        [When(@"User have opened Column Settings for ""(.*)"" column in the Details Page table")]
-        public void WhenUserHaveOpenedColumnSettingsForColumnInTheDetailsPageTable(string columnName)
-        {
-            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-
-            _driver.WaitForDataLoading();
-            page.OpenColumnSettingsByName(columnName);
-        }
-
         [When(@"User clicks Column button on the Column Settings panel")]
         public void WhenUserClicksColumnButtonOnTheColumnSettingsPanel()
         {
@@ -493,8 +484,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            page.OpenColumnSettingsByName(columnName);
-            Utils.Verify.AreEqual(expectedList, page.GetCheckedElementsText(), "Checkbox is not selected");
+            var column = _driver.NowAt<BaseGridPage>();
+            column.OpenColumnSettingsByName(columnName);
+            Verify.AreEqual(expectedList, page.GetCheckedElementsText(), "Checkbox is not selected");
         }
 
         [Then(@"following columns added to the table:")]
@@ -678,7 +670,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var detailsPage = _driver.NowAt<DetailsPage>();
             //Wait for rows label is displayed
             Thread.Sleep(2000);
-            Utils.Verify.AreEqualIgnoringCase(numberOfRows == "1" ? $"{numberOfRows} row" : $"{numberOfRows} rows",
+            Verify.AreEqualIgnoringCase(numberOfRows == "1" ? $"{numberOfRows} row" : $"{numberOfRows} rows",
                 detailsPage.RowsLabel.Text,
                 "Incorrect rows count");
         }
