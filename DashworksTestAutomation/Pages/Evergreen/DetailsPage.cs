@@ -34,12 +34,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'details-wrap')]")]
         public IWebElement ItemDetailsContainer { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='category-content ng-star-inserted']")]
-        public IWebElement SectionContainer { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'empty-message')]")]
-        public IWebElement NoFoundMessage { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//tbody//tr")]
         public IList<IWebElement> TableRowDetails { get; set; }
 
@@ -303,7 +297,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public string GetFildWithEmptyValueByName(string title)
         {
-            var selector = By.XPath($".//span[text()='Dashworks First Seen Date']//ancestor::tr/td[contains(@class, 'column-value')]");
+            var selector = By.XPath($".//span[text()='{title}']//ancestor::tr/td[contains(@class, 'column-value')]");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector).Text;
         }

@@ -10,7 +10,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatErrorsAreNotDisplayedWhenOpened
 	When User navigates to the '<PageName>' details page for '<ObjectName>' item
 	Then Details page for "<ObjectName>" item is displayed to the user
 	When User navigates to the '<TabName>' left submenu item
-	Then "<MessageText>" message is displayed on the Details Page
+	Then '<MessageText>' message is displayed on empty greed
 	And There are no errors in the browser console
 
 Examples:
@@ -26,11 +26,11 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatCorrectMessageIsDisplayedForDev
 	Then Details page for "ACT Data Collection Packages" item is displayed to the user
 	When User navigates to the 'Distribution' left menu item
 	When User navigates to the 'Devices' left submenu item
-	Then "No devices found for this application" message is displayed on the Details Page
+	Then 'No devices found for this application' message is displayed on empty greed
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17278
 Scenario: EvergreenJnr_DevicesList_CheckThatCorrectMessageIsDisplayedForDevicesSectionIfTheOwnerEqualUnknownForDeviceObjectInEvergreen
 	When User navigates to the 'Device' details page for '06Y8HSNCPVHENV' item
 	Then Details page for "06Y8HSNCPVHENV" item is displayed to the user
 	When User navigates to the 'Users' left menu item
-	Then "No users found for this device" message is displayed on the Details Page
+	Then 'No users found for this device' message is displayed on empty greed
