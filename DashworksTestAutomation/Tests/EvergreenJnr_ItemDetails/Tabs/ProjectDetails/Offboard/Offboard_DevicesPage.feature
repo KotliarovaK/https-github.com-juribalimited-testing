@@ -157,6 +157,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddingAndRemovingColumnsInPopUpWorks
 	| Domain       |
 	| Owner        |
 
+#tag 'not_rady' added because this bug is fixed only for Spectrum
 #tag 'not_rady' added because need to create Cleanup (DAS-18070)
 @Evergreen @Devices @EvergreenJnr_ItemDetails @Offboard @DAS18026 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_DevicesList_CheckThatErrorIsNotDisplayedForAssociatedObjectsOnOffboardingPopUpWhenMainObjectWasAlreadyOffboardedWithAssociatedObjectsFromAnotherTabOrByAnotherUser
