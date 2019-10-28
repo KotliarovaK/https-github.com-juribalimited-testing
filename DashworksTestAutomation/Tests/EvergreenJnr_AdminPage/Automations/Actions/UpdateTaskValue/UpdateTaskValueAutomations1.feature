@@ -27,7 +27,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectWithoutTasksForScopeIsNotDispla
 	Then 'Edit Action' page subheader is displayed to user
 	Then 'Mailbox Evergreen Capacity Project' content is not displayed in 'Project' autocomplete after search
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18248 @DAS18276 @Cleanup @Not_Ready
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18248 @DAS18276 @DAS18640 @Cleanup @Not_Ready
 #Waiting for 'Update relative to current value' value in dropdown
 Scenario: EvergreenJnr_AdminPage_CheckDevicesAutomationsUpdateRelativeToCurrentValue
 	When User creates new Automation via API and open it
@@ -47,7 +47,8 @@ Scenario: EvergreenJnr_AdminPage_CheckDevicesAutomationsUpdateRelativeToCurrentV
 	Then '100000' content is displayed in 'Value' textbox
 	When User enters '-5' text to 'Value' textbox
 	Then '1' content is displayed in 'Value' textbox
-	When User enters '1' text to 'Value' textbox
+	When User enters '2' text to 'Value' textbox
+	Then 'CREATE' button is not disabled
 	When User selects 'Before current value' in the 'Before or After' dropdown
 	And User clicks 'CREATE' button
 	#Check created Action
@@ -58,7 +59,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDevicesAutomationsUpdateRelativeToCurrentV
 	Then 'Computer Scheduled Test (Jo)' content is displayed in 'Project' textbox
 	Then 'One' content is displayed in 'Stage' textbox
 	Then 'Date Computer' content is displayed in 'Task' textbox
-	Then '1' content is displayed in 'Value' textbox
+	Then '2' content is displayed in 'Value' textbox
 	Then 'Days' value is displayed in the 'Units' dropdown
 	Then 'Before current value' value is displayed in the 'Before or After' dropdown
 

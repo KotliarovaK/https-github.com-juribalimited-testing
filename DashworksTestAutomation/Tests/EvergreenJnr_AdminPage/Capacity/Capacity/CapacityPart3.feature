@@ -9,7 +9,7 @@ Background: Pre-Conditions
 Scenario: EvergreenJnr_AdminPage_CheckThatCapacityUnitCanBeCreatedWithNameAlreadyUsedInDifferentProject
 	When Project created via API and opened
 	| ProjectName        | Scope         | ProjectTemplate | Mode               |
-	| ProjectForDAS13945 | All Mailboxes | None            | Standalone Project |
+	| ProjectForDAS13166 | All Mailboxes | None            | Standalone Project |
 	And User navigates to the 'Capacity' left menu item
 	And User navigates to the 'Units' left menu item
 	And User clicks 'CREATE PROJECT CAPACITY UNIT' button 

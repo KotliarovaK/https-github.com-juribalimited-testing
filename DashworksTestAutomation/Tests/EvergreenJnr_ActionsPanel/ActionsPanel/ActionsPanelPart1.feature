@@ -61,55 +61,61 @@ Scenario: EvergreenJnr_UsersList_CheckThatUserWithoutRelevantRolesCannotSeeBulkU
 	And User select "Manage Users" option in Management Console
 	And User removes "000WithoutRoles" User
 
-@Evergreen @Applications @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS12932 @DAS13261 @DAS16826 @DAS18267 @Cleanup
-Scenario: EvergreenJnr_ApplicationsList_CheckThatUserWithoutJustTheProjectBulkUpdaterRoleCanStillBulkUpdateObjects
-	When User clicks 'Projects' on the left-hand menu
-	Then "Projects Home" page is displayed to the user
-	When User navigate to Manage link
-	And User select "Manage Users" option in Management Console
-	And User create new User
-	| Username  | FullName              | Password | ConfirmPassword | Roles                 |
-	| 000WithPA | Project Administrator | 1234qwer | 1234qwer        | Project Administrator |
-	Then Success message is displayed
-	When User cliks Logout link
-	Then User is logged out
-	When User clicks on the Login link
-	Then Login Page is displayed to the user
-	When User login with following credentials:
-	| Username  | Password |
-	| 000WithPA | 1234qwer |
-	Then Dashworks homepage is displayed to the user in a logged in state
-	When User clicks the Switch to Evergreen link
-	Then Evergreen Dashboards page should be displayed to the user
+@Evergreen @Mailboxes @EvergreenJnr_ActionsPanel @BulkUpdate @DAS14563 @DAS13960 @DAS14161
+Scenario: EvergreenJnr_MailboxesList_CheckBucketBulkUpdateOptionsOnMailboxesListForMailboxScopedProjectAreDisplayedCorrectly
+	When User clicks 'Mailboxes' on the left-hand menu
+	Then 'All Mailboxes' list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Email Address" rows in the grid
+	| SelectedRowsName                 |
+	| 00BDBAEA57334C7C8F4@bclabs.local |
+	| 016E1B57C2DD4FCC986@bclabs.local |
+	And User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update bucket' in the 'Bulk Update Type' dropdown
+	And User selects 'Project' in the 'Project or Evergreen' dropdown
+	And User selects 'Mailbox Evergreen Capacity Project' option from 'Project' autocomplete
+	And User selects 'Unassigned' option from 'Bucket' autocomplete
+	Then following Values are displayed in the 'Also Move Users' dropdown:
+	| Options          |
+	| None             |
+	| Owners only      |
+	| All linked users |
+	When User selects 'Owners only' in the 'Also Move Users' dropdown
+	Then 'UPDATE' button is not disabled
+
+@Evergreen @Mailboxes @EvergreenJnr_ActionsPanel @BulkUpdate @DAS14563 @DAS13960 @DAS14162
+Scenario: EvergreenJnr_MailboxesList_CheckThatOnMailboxesListForBucketBulkUpdateOptionsOnlyDisplayedEvergreenOrMailboxScopedProjects 
+	When User clicks 'Mailboxes' on the left-hand menu
+	Then 'All Mailboxes' list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Email Address" rows in the grid
+	| SelectedRowsName                 |
+	| 00BDBAEA57334C7C8F4@bclabs.local |
+	| 016E1B57C2DD4FCC986@bclabs.local |
+	And User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update bucket' in the 'Bulk Update Type' dropdown
+	And User selects 'Project' in the 'Project or Evergreen' dropdown
+	Then 'Project' autocomplete contains following options:
+	| Options                            |
+	| Email Migration                    |
+	| Mailbox Evergreen Capacity Project |
+
+@Evergreen @Applications @EvergreenJnr_ActionsPanel @BulkUpdate @DAS14563 @DAS13960 @DAS14164 @DAS16826
+Scenario: EvergreenJnr_ApplicationsList_CheckThatBucketBulkUpdateOptionNotAvailableOnApplicationsList
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName       |
-	| EmailMigra: Path |
-	And User perform search by "0047 - Microsoft Access 97 SR-2 Francais"
-	And User clicks the Actions button
+	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Application" rows in the grid
-	| SelectedRowsName                         |
-	| 0047 - Microsoft Access 97 SR-2 Francais |
+	| SelectedRowsName                                           |
+	| %SQL_PRODUCT_SHORT_NAME% SSIS 64Bit For SSDTBI             |
+	| "WPF/E" (codename) Community Technology Preview (Feb 2007) |
 	And User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update path' in the 'Bulk Update Type' dropdown
-	And User selects 'Email Migration' option from 'Project' autocomplete
-	And User selects 'Sharepoint Application' option from 'Path' autocomplete
-	And User clicks 'UPDATE' button 
-	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
-	When User clicks 'UPDATE' button
-	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
-	When User refreshes agGrid
-	Then "Sharepoint Application" content is displayed for "EmailMigra: Path" column
-	When User clicks the Logout button
-	Then User is logged out
-	When User clicks on the Login link
-	Then Login Page is displayed to the user
-	When User provides the Login and Password and clicks on the login button
-	Then Dashworks homepage is displayed to the user in a logged in state
-	When User navigate to Manage link
-	And User select "Manage Users" option in Management Console
-	And User removes "000WithPA" User
+	Then following Values are displayed in the 'Bulk Update Type' dropdown:
+	| Options              |
+	| Update capacity unit |
+	| Update custom field  |
+	| Update path          |
+	| Update task value    |

@@ -25,7 +25,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         //TODO probably should be replaced by LeftMenuSelector
         private static string MenuSelector = ".//a[text()='{0}']//span[@class='ng-star-inserted']";
         private static string LeftSubMenuSelector = ".//li[contains(@class,'das-mat-tree-node')]//a";
-        private static string LeftParentMenuSelector = ".//li[contains(@class,'das-mat-tree-parent')]//a";
+        private static string LeftParentMenuSelector = MainTabsOnDetailsPage;//".//li[contains(@class,'das-mat-tree-parent')]//a[contains(@class,'parent')]";
         private static string LeftMenuSelector = ".//li[contains(@class, 'das-mat-tree')]//a[text()='{0}']";
 
         public override List<By> GetPageIdentitySelectors()
@@ -40,6 +40,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
 
         #region Get Parent/Sub menu
 
+        //TODO Please do not use this method and try to switch to some other more specific
         public IWebElement GetLeftMenuByName(string name)
         {
             var selector = By.XPath(string.Format(LeftMenuSelector, name));
@@ -63,11 +64,17 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
                 .First(x => x.Text.RemoveBracketsText().Equals(name) && x.Displayed());
         }
 
-        public IWebElement GetParentMenuByName(string name)
+        public IEnumerable<IWebElement> GetParentMenuByName()
         {
             Driver.WaitForElementsToBeDisplayed(By.XPath(LeftParentMenuSelector), 30, false);
             return Driver.FindElements(By.XPath(LeftParentMenuSelector))
-                .First(x => x.Text.Equals(name) && x.Displayed());
+                .Where(x => x.Displayed());
+        }
+
+        public IWebElement GetParentMenuByName(string name)
+        {
+            Driver.WaitForElementsToBeDisplayed(By.XPath(LeftParentMenuSelector), 30, false);
+            return GetParentMenuByName().First(x => x.Text.Equals(name));
         }
 
         public List<IWebElement> GetSubMenuItems(string parentName)

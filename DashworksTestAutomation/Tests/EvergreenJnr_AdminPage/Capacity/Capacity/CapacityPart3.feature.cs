@@ -138,7 +138,7 @@ this.FeatureBackground();
                         "ProjectTemplate",
                         "Mode"});
             table1.AddRow(new string[] {
-                        "ProjectForDAS13945",
+                        "ProjectForDAS13166",
                         "All Mailboxes",
                         "None",
                         "Standalone Project"});
