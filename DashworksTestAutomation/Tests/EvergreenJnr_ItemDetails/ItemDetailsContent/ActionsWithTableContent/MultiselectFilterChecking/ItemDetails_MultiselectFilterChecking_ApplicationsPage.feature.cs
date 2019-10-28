@@ -146,7 +146,7 @@ this.FeatureBackground();
 #line 15
  testRunner.Then("following Boolean Values are displayed in the filter on the Details Page", ((string)(null)), table1, "Then ");
 #line 18
- testRunner.When("User closes Checkbox filter for \"Active\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User closes Checkbox filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -233,7 +233,7 @@ this.FeatureBackground();
 #line 34
  testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table2, "Then ");
 #line 37
- testRunner.When("User closes Checkbox filter for \"Source\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User closes Checkbox filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 38
  testRunner.When("User clicks String Filter button for \"Source Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -244,7 +244,7 @@ this.FeatureBackground();
 #line 39
  testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table3, "Then ");
 #line 42
- testRunner.When("User closes Checkbox filter for \"Source Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User closes Checkbox filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 43
  testRunner.When("User clicks String Filter button for \"Compliance\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -255,7 +255,7 @@ this.FeatureBackground();
 #line 44
  testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table4, "Then ");
 #line 47
- testRunner.When("User closes Checkbox filter for \"Compliance\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User closes Checkbox filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 48
  testRunner.When("User navigates to the \'AOK\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 49
@@ -274,7 +274,7 @@ this.FeatureBackground();
 #line 53
  testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table5, "Then ");
 #line 56
- testRunner.When("User closes Checkbox filter for \"Source\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User closes Checkbox filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 57
  testRunner.When("User clicks String Filter button for \"AOK Report\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -285,7 +285,7 @@ this.FeatureBackground();
 #line 58
  testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table6, "Then ");
 #line 61
- testRunner.When("User closes Checkbox filter for \"AOK Report\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User closes Checkbox filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 62
  testRunner.When("User clicks String Filter button for \"Compatibility\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -296,7 +296,7 @@ this.FeatureBackground();
 #line 63
  testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table7, "Then ");
 #line 66
- testRunner.When("User closes Checkbox filter for \"Compatibility\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User closes Checkbox filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -375,7 +375,7 @@ this.FeatureBackground();
 #line 78
  testRunner.Then("following Boolean Values are displayed in the filter on the Details Page", ((string)(null)), table8, "Then ");
 #line 81
- testRunner.When("User closes Checkbox filter for \"Installed\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User closes Checkbox filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 82
  testRunner.When("User clicks String Filter button for \"Used\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -386,7 +386,7 @@ this.FeatureBackground();
 #line 83
  testRunner.Then("following Boolean Values are displayed in the filter on the Details Page", ((string)(null)), table9, "Then ");
 #line 86
- testRunner.When("User closes Checkbox filter for \"Used\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User closes Checkbox filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 87
  testRunner.When("User clicks String Filter button for \"Entitled\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -397,7 +397,7 @@ this.FeatureBackground();
 #line 88
  testRunner.Then("following Boolean Values are displayed in the filter on the Details Page", ((string)(null)), table10, "Then ");
 #line 91
- testRunner.When("User closes Checkbox filter for \"Entitled\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User closes Checkbox filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 92
  testRunner.When("User navigates to the \'AD\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 93
@@ -420,7 +420,7 @@ this.FeatureBackground();
 #line 95
  testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table11, "Then ");
 #line 102
- testRunner.When("User closes Checkbox filter for \"Domain\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User closes Checkbox filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             this.ScenarioCleanup();
         }

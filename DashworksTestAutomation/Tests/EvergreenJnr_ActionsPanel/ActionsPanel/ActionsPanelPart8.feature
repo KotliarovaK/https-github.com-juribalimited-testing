@@ -33,8 +33,25 @@ Scenario: EvergreenJnr_UsersList_CheckThatBulkUpdateOfThousandsOfRowsUpdateToSuc
 	Then the amber message is displayed correctly
 	When User clicks 'UPDATE' button
 	Then Success message with "7578 of 7578 objects were in the selected project and have been queued" text is displayed on Action panel
+	#wait for the process to complete
+	When User waits for three seconds
 	When User refreshes agGrid
 	Then "STARTED" content is displayed for "Havoc(BigD: Stage 0 \ Task 0" column
+	#returns default object state
+	When User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	And User selects 'Havoc (Big Data)' option from 'Project' autocomplete
+	And User selects 'Stage 0' option from 'Stage' autocomplete
+	And User selects 'Task 0' option from 'Task' autocomplete
+	And User selects 'Not Started' in the 'Value' dropdown
+	And User clicks 'UPDATE' button 
+	Then the amber message is displayed correctly
+	When User clicks 'UPDATE' button
+	Then Success message with "7578 of 7578 objects were in the selected project and have been queued" text is displayed on Action panel
+	#wait for the process to complete
+	When User waits for three seconds
+	When User refreshes agGrid
+	Then "NOT STARTED" content is displayed for "Havoc(BigD: Stage 0 \ Task 0" column
 
 @Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13386
 Scenario: EvergreenJnr_DevicesList_CheckThatBulkUpdateOfTasksDoesNotIncludeUnpublishedTasks

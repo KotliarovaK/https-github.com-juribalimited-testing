@@ -15,7 +15,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatOnlyValueIncludedInTheColumnIsD
 	Then following Boolean Values are displayed in the filter on the Details Page
 	| Values |
 	| True   |
-	When User closes Checkbox filter for "Active" column
+	When User closes Checkbox filter
 
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
 Scenario: EvergreenJnr_ApplicationsList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForMsiTabOnApplicationsPage
@@ -34,17 +34,17 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatOnlyValueIncludedInTheColumnIsD
 	Then following String Values are displayed in the filter on the Details Page
 	| Values     |
 	| AOK Import |
-	When User closes Checkbox filter for "Source" column
+	When User closes Checkbox filter
 	When User clicks String Filter button for "Source Type" column
 	Then following String Values are displayed in the filter on the Details Page
 	| Values         |
 	| ChangeBASE AOK |
-	When User closes Checkbox filter for "Source Type" column
+	When User closes Checkbox filter
 	When User clicks String Filter button for "Compliance" column
 	Then following String Values are displayed in the filter on the Details Page
 	| Values |
 	| GREEN  |
-	When User closes Checkbox filter for "Compliance" column
+	When User closes Checkbox filter
 	When User navigates to the 'AOK' left submenu item
 	Then 'AOK Import' content is displayed in the 'Source' column
 	Then 'Windows 7' content is displayed in the 'AOK Report' column
@@ -53,17 +53,17 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatOnlyValueIncludedInTheColumnIsD
 	Then following String Values are displayed in the filter on the Details Page
 	| Values     |
 	| AOK Import |
-	When User closes Checkbox filter for "Source" column
+	When User closes Checkbox filter
 	When User clicks String Filter button for "AOK Report" column
 	Then following String Values are displayed in the filter on the Details Page
 	| Values    |
 	| Windows 7 |
-	When User closes Checkbox filter for "AOK Report" column
+	When User closes Checkbox filter
 	When User clicks String Filter button for "Compatibility" column
 	Then following String Values are displayed in the filter on the Details Page
 	| Values |
 	| GREEN  |
-	When User closes Checkbox filter for "Compatibility" column
+	When User closes Checkbox filter
 
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
 Scenario: EvergreenJnr_ApplicationsList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForDistributionTabOnApplicationsPage
@@ -78,17 +78,17 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatOnlyValueIncludedInTheColumnIsD
 	Then following Boolean Values are displayed in the filter on the Details Page
 	| Values |
 	| True   |
-	When User closes Checkbox filter for "Installed" column
+	When User closes Checkbox filter
 	When User clicks String Filter button for "Used" column
 	Then following Boolean Values are displayed in the filter on the Details Page
 	| Values  |
 	| Unknown |
-	When User closes Checkbox filter for "Used" column
+	When User closes Checkbox filter
 	When User clicks String Filter button for "Entitled" column
 	Then following Boolean Values are displayed in the filter on the Details Page
 	| Values |
 	| True   |
-	When User closes Checkbox filter for "Entitled" column
+	When User closes Checkbox filter
 	When User navigates to the 'AD' left submenu item
 	Then 'UK' content is displayed in the 'Domain' column
 	When User clicks String Filter button for "Domain" column
@@ -99,4 +99,4 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatOnlyValueIncludedInTheColumnIsD
 	| UK     |
 	| US-E   |
 	| US-W   |
-	When User closes Checkbox filter for "Domain" column
+	When User closes Checkbox filter

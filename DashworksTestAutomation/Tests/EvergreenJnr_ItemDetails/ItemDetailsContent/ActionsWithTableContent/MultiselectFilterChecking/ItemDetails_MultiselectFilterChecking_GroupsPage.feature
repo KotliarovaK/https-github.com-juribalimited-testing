@@ -23,14 +23,14 @@ Scenario: EvergreenJnr_GroupsList_CheckThatOnlyValueIncludedInTheColumnIsDisplay
 	Then following String Values are displayed in the filter on the Details Page
 	| Values |
 	| DEV50  |
-	When User closes Checkbox filter for "Domain" column
+	When User closes Checkbox filter
 	And User clicks String Filter button for "Enabled" column
 	Then following Boolean Values are displayed in the filter on the Details Page
 	| Values |
 	| True   |
-	When User closes Checkbox filter for "Enabled" column
+	When User closes Checkbox filter
 	And User clicks String Filter button for "Directory Type" column
 	Then following String Values are displayed in the filter on the Details Page
 	| Values           |
 	| Active Directory |
-	When User closes Checkbox filter for "Directory Type" column
+	When User closes Checkbox filter

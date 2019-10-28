@@ -97,7 +97,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUsersAndDevicesDistributionList
 	When User navigates to the 'Users' left submenu item
 	And User clicks String Filter button for "Used" column
 	And User clicks "False" checkbox from String Filter on the Details Page
-	And User closes Checkbox filter for "Used" column
+	And User closes Checkbox filter
 	And User have opened Column Settings for "User" column
 	And User have select "Sort descending" option from column settings
 	Then Content is present in the table on the Details Page
@@ -105,7 +105,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUsersAndDevicesDistributionList
 	When User navigates to the 'Devices' left submenu item
 	And User clicks String Filter button for "Used" column
 	And User clicks "False" checkbox from String Filter on the Details Page
-	And User closes Checkbox filter for "Used" column
+	And User closes Checkbox filter
 	And User have opened Column Settings for "Device" column
 	And User have select "Sort descending" option from column settings
 	Then Content is present in the table on the Details Page
