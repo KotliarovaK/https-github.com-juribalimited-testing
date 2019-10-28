@@ -5,8 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-	#Ready on the 'radiant' server
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @Resync @DAS18035 @Not_Ready
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @Resync @DAS18035
 Scenario: EvergreenJnr_MailboxesList_CheckThatResyncOptionIsWorkedCorrectlyForProjectDetailsOnMailboxesPage
 	When User navigates to the 'Mailbox' details page for '016E1B57C2DD4FCC986@bclabs.local' item
 	Then Details page for "016E1B57C2DD4FCC986@bclabs.local" item is displayed to the user

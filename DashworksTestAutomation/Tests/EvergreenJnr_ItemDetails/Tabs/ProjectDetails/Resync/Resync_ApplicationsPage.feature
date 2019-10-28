@@ -5,8 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-	#Ready on the 'radiant' server
-@Evergreen @Applications @EvergreenJnr_ItemDetails @Resync @DAS18035 @Not_Ready
+@Evergreen @Applications @EvergreenJnr_ItemDetails @Resync @DAS18035
 Scenario: EvergreenJnr_ApplicationsList_CheckThatResyncOptionIsWorkedCorrectlyForProjectDetailsOnApplicationsPage
 	When User navigates to the 'Application' details page for 'Borland Together Edition for Microsoft Visual Studio .NET' item
 	Then Details page for "Borland Together Edition for Microsoft Visual Studio .NET" item is displayed to the user

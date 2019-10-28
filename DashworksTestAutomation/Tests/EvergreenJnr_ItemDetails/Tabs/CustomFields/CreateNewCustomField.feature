@@ -59,7 +59,7 @@ Scenario: EvergreenJnr_UsersList_CreateCustomField
 	Then Success message with "New custom field value added successfully" text is displayed on Action panel
 	And 'Value_@#†_DAS16487_2' content is displayed in the 'Value' column
 	And 'Custom Fields' tab is displayed on left menu on the Details page and contains '1' count of items
-	#ADD VERIFICATION FOR ROW COUNTER!!!
+	Then "1" rows found label displays on Details Page
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @CustomFields @DAS16487 @Cleanup
 Scenario: EvergreenJnr_UsersList_CancelCustomFieldCreation
@@ -90,7 +90,7 @@ Scenario: EvergreenJnr_UsersList_CreateCustomFieldWithSameData
 	Then 'FlDAS17614_4' content is displayed in the 'Custom Field' column
 	And 'Value_17614' content is displayed in the 'Value' column
 	And 'Custom Fields' tab is displayed on left menu on the Details page and contains '1' count of items
-	#ADD VERIFICATION FOR ROW COUNTER!!!
+	Then "1" rows found label displays on Details Page
 	When User creates Custom Field
 	| ObjectType | ObjectId | FieldName    | Value       |
 	| user       | 98968    | FlDAS17614_4 | Value_17614 |
@@ -104,7 +104,7 @@ Scenario: EvergreenJnr_UsersList_CreateCustomFieldWithSameData
 	| Value_17614 |
 	| Value_17614 |
 	And 'Custom Fields' tab is displayed on left menu on the Details page and contains '2' count of items
-	#ADD VERIFICATION FOR ROW COUNTER!!!
+	Then "2" rows found label displays on Details Page
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @CustomFields @DAS17695 @DAS17960 @Cleanup
 Scenario: EvergreenJnr_UsersList_CheckGroupByResetAfterCreatingNewCustomField
