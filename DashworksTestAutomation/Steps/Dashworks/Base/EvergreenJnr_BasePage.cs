@@ -810,6 +810,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         #endregion
 
+
         #region Checkbox
 
         //TODO This is for BaseGrid but method can be changed to generic
@@ -847,7 +848,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenChipBoxIsNotDisplayedOnThePage()
         {
             var filterElement = _driver.NowAt<BaseDashboardPage>();
-            Utils.Verify.IsTrue(filterElement.ChipsItem.Count==0, "Chip box is displayed in on the page");
+            Verify.IsTrue(filterElement.ChipsItem.Count==0, "Chip box is displayed in on the page");
         }
 
         #endregion

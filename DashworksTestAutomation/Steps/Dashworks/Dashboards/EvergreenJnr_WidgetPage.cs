@@ -48,7 +48,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         private void PopulateWidgetData(TableRow row)
         {
             var createWidgetElement = _driver.NowAt<AddWidgetPage>();
-            var baseActionItem   = _driver.NowAt<BaseDashboardPage>();
+            var baseActionItem = _driver.NowAt<BaseDashboardPage>();
 
             baseActionItem.SelectDropdown(row["WidgetType"], "WidgetType");
 
@@ -57,7 +57,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             if (!string.IsNullOrEmpty(row["Title"]))
             {
-                baseActionItem.PopulateTextbox("Title",row["Title"]);
+                baseActionItem.PopulateTextbox("Title", row["Title"]);
             }
 
             if (row.ContainsKey("List") && !string.IsNullOrEmpty(row["List"]))
@@ -143,7 +143,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
 
             if (dropdown.Equals("Split By"))
+            {
                 createWidgetElement.SelectSplitByItem(option);
+            }
             else
             {
                 _driver.ClickByJavascript(createWidgetElement.GetDropdownForWidgetByName(dropdown));
@@ -172,7 +174,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var baseActionItem = _driver.NowAt<BaseDashboardPage>();
             baseActionItem.AutocompleteSelect("List", widgetList, true);
         }
-        
+
         [When(@"User enters '(.*)' as Widget Max Values")]
         public void WhenUserSetsWidgetMaxValues(string value)
         {
@@ -306,7 +308,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var baseActionItem = _driver.NowAt<BaseDashboardPage>();
 
             baseActionItem.GetDropdown("OrderBy").Click();
-           
+
             Thread.Sleep(1000);
 
             Verify.AreEqual(items.Rows.SelectMany(row => row.Values).ToList(),
