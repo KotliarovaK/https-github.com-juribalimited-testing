@@ -87,6 +87,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Automations.Actio
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS17847")]
+        [NUnit.Framework.CategoryAttribute("DAS18243")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldValidations()
         {
@@ -121,6 +122,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Automations.Actio
                         "EvergreenJnr_AdminPage",
                         "Automations",
                         "DAS17847",
+                        "DAS18243",
                         "Cleanup"});
 #line 10
 this.ScenarioInitialize(scenarioInfo);

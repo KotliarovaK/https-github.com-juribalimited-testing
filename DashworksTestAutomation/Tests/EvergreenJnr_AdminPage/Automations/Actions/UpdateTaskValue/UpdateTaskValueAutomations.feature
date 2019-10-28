@@ -132,7 +132,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueAutomationValidationsForDel
 	Then '[Stage not found]' content is displayed in 'Stage' textbox
 	Then 'The selected stage cannot be found' error message is displayed for 'Stage' field
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17429 @Cleanup @Not_Ready
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17429 @DAS18491 @Cleanup @Not_Ready
 #Waiting for updated Validation messages on the automation
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueAutomationValidationsForDeletedTask
 	When Project created via API and opened
@@ -188,6 +188,9 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueAutomationValidationsForDel
 	When User clicks content from "Automation" column
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
+	#DAS18491
+	Then "[Task not found]" content is displayed for "Task or Field" column
+	#DAS18491
 	When User clicks content from "Action" column
 	#Actions content check
 	Then "17429_Action2" content is displayed in "Action Name" field

@@ -613,7 +613,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForRemoveTextValue
 	Then 'Text Computer' value is displayed in the 'Task' dropdown
 	Then 'Remove' value is displayed in the 'Update Value' dropdown
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17602 @DAS17606 @Cleanup @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17602 @DAS17606 @Cleanup @Not_Ready 
 Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateDate
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
