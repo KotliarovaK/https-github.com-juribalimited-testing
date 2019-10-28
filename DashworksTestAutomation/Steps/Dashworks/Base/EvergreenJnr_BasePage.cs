@@ -468,7 +468,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 $"'{dropdownName}' dropdown' is not displayed");
         }
 
-        //Exact much
+        //Exact match
         [Then(@"following Values are displayed in the '(.*)' dropdown:")]
         public void ThenFollowingValuesAreDisplayedInTheDropdown(string dropDownName, Table table)
         {

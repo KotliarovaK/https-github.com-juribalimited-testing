@@ -158,7 +158,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountAsAggregateFunction
 	And User selects 'Pie' in the 'Widget Type' Widget dropdown
 	And User enters 'Widget Name' as Widget Title
 	And User selects 'ListWithAllDatatypes' as Widget List
-	And User selects 'Operating System' as Widget Split By
+	When User selects 'Operating System' in the 'Split By' Widget dropdown
 	When User selects 'Count' in the 'Aggregate Function' Widget dropdown
 	Then Aggregate By dropdown is disabled
 
@@ -180,7 +180,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountDistinctAsAggregate
 	And User selects 'Pie' in the 'Widget Type' Widget dropdown
 	And User enters 'Widget Name' as Widget Title
 	And User selects 'ListWithAllDatatypes' as Widget List
-	And User selects 'Operating System' as Widget Split By
+	When User selects 'Operating System' in the 'Split By' Widget dropdown
 	When User selects 'Count' in the 'Aggregate Function' Widget dropdown
 	Then User sees following options for Aggregate By selector on Create Widget page:
 	| items                                |
@@ -214,7 +214,7 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatSelectingAggregateFunctio
 	And User selects 'Pie' in the 'Widget Type' Widget dropdown
 	And User enters 'Widget Name' as Widget Title
 	And User selects 'ListWithAllDatatypes' as Widget List
-	And User selects 'Operating System' as Widget Split By
+	When User selects 'Operating System' in the 'Split By' Widget dropdown
 	And User selects '<AggFunc>' as Widget Aggregate Function
 	Then User sees following options for Aggregate By selector on Create Widget page:
 	| items               |
@@ -245,7 +245,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountAsAggregateFunction
 	And User selects 'Pie' in the 'Widget Type' Widget dropdown
 	And User enters 'Widget Name' as Widget Title
 	And User selects 'ListWithAllDatatypes' as Widget List
-	And User selects 'Operating System' as Widget Split By
+	When User selects 'Operating System' in the 'Split By' Widget dropdown
 	When User selects 'Count' in the 'Aggregate Function' Widget dropdown
 	Then Aggregate By dropdown is disabled
 	And User sees following options for Order By selector on Create Widget page:
@@ -263,7 +263,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenCountAgg
 	And User selects 'Pie' in the 'Widget Type' Widget dropdown
 	And User enters 'Widget Name' as Widget Title
 	And User selects 'All Devices' as Widget List
-	And User selects 'Operating System' as Widget Split By
+	When User selects 'Operating System' in the 'Split By' Widget dropdown
 	When User selects 'Count' in the 'Aggregate Function' Widget dropdown
 	Then User sees following options for Order By selector on Create Widget page:
 	| items                 |
@@ -280,7 +280,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenCountDis
 	And User selects 'Pie' in the 'Widget Type' Widget dropdown
 	And User enters 'Widget Name' as Widget Title
 	And User selects 'All Devices' as Widget List
-	And User selects 'Operating System' as Widget Split By
+	When User selects 'Operating System' in the 'Split By' Widget dropdown
 	When User selects 'Count distinct' in the 'Aggregate Function' Widget dropdown
 	When User selects 'Hostname' in the 'Aggregate By' Widget dropdown
 	Then User sees following options for Order By selector on Create Widget page:

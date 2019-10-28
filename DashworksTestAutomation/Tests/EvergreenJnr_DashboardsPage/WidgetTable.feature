@@ -208,7 +208,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenLastAggr
 	And User enters 'Widget Name' as Widget Title
 	And User selects 'LastLogout' as Widget List
 	And User selects 'Domain' in the 'Split By' Widget dropdown
-	When User selects 'First' in the 'Aggregate Function' Widget dropdown
+	When User selects 'Last' in the 'Aggregate Function' Widget dropdown
 	When User selects 'Last Logon Date' in the 'Aggregate By' Widget dropdown
 	Then User sees following options for Order By selector on Create Widget page:
 	| items                     |
