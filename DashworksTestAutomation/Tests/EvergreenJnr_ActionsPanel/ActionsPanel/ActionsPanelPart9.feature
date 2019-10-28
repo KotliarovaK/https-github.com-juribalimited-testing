@@ -42,18 +42,22 @@ Scenario: EvergreenJnr_UsersList_CheckBucketBulkUpdateOptionsOnUsersListForEverg
 	And User selects 'Update bucket' in the 'Bulk Update Type' dropdown
 	And User selects 'Evergreen' in the 'Project or Evergreen' dropdown
 	And User selects 'Unassigned' option from 'Bucket' autocomplete
-	Then following Values are displayed in the 'Also Move Devices' dropdown:
+	#Yurii T. 28Oct2019 - actually on UI this dropdown called 'Also Move Devices' but on attributes we need to use '... Users'
+	Then following Values are displayed in the 'Also Move Users' dropdown:
 	| Options            |
 	| None               |
 	| Owned devices only |
 	| All linked devices |
+	#Yurii T. 28Oct2019 - actually on UI this dropdown called 'Also Move Devices' but on attributes we need to use '... Users'
 	When User selects 'Owned devices only' in the 'Also Move Users' dropdown
-	Then following Values are displayed in the 'Also Move Mailboxes' dropdown:
+	#Yurii T. 28Oct2019 - actually on UI this dropdown called 'Also Move Mailboxes' but on attributes we need to use '... Devices'
+	Then following Values are displayed in the 'Also Move Devices' dropdown:
 	| Options              |
 	| None                 |
 	| Owned mailboxes only |
 	| All linked mailboxes |
-	When User selects 'Owned mailboxes only' in the 'Also Move Users' dropdown
+	#Yurii T. 28Oct2019 - actually on UI this dropdown called 'Also Move Mailboxes' but on attributes we need to use '... Devices'
+	When User selects 'Owned mailboxes only' in the 'Also Move Devices' dropdown
 	Then 'UPDATE' button is not disabled
 
 @Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS14563 @DAS13960 @DAS14143

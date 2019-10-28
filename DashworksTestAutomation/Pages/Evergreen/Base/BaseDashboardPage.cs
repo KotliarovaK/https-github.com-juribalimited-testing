@@ -657,7 +657,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         {
             try
             {
-                return GetTextbox(placeholder, WebDriverExtensions.WaitTime.Short).Disabled();
+                return GetTextbox(placeholder, WebDriverExtensions.WaitTime.Short).Displayed();
             }
             catch
             {
@@ -775,7 +775,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         public IWebElement GetDropdownValueByName(string dropdownName)
         {
-            var text = dropdownName.Split('\'').Aggregate(string.Empty, (current, s) => current + $"[contains(text(),'{s}')]");
+            var text = dropdownName.Contains('\'') ? dropdownName.Split('\'')
+                .Aggregate(string.Empty, (current, s) => current + $"[contains(text(),'{s}')]") : $"[text()='{dropdownName}']";
             var selector = By.XPath($"{_dropdownOptions}{text}");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);

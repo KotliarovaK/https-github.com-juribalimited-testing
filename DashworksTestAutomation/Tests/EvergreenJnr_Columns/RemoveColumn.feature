@@ -24,7 +24,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When User removes "Device Key" column by Column panel
-	Then 'All Devices' list should be displayed to the user
+	Then 'RemovingSortedColumnInCustomList' list should be displayed to the user
 	Then ColumnName is removed from the list
 	| ColumnName |
 	| Device Key |
@@ -58,7 +58,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When User removes "Build Date" column by Column panel
-	Then 'All Devices' list should be displayed to the user
+	Then 'TestList474460' list should be displayed to the user
 	Then ColumnName is removed from the list
 	| ColumnName |
 	| Build Date |
@@ -78,8 +78,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Windows7Mi: Category" filter where type is "Equals" with added column and following checkboxes:
-	| SelectedCheckboxes  |
-	| None                |
+	| SelectedCheckboxes |
+	| Empty              |
 	Then "Windows7Mi: Category" filter is added to the list
 	When User create dynamic list with "TestList32EDC3" name on "Devices" page
 	Then "TestList32EDC3" list is displayed to user
@@ -94,7 +94,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	Then Columns panel is displayed to the user
 	Then User is expand "Selected Columns" columns category
 	When User removes "Windows7Mi: Category" column by Column panel
-	Then 'All Devices' list should be displayed to the user
+	Then 'TestList32EDC3' list should be displayed to the user
 	Then ColumnName is removed from the list
 	| ColumnName           |
 	| Windows7Mi: Category |
@@ -172,8 +172,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Windows7Mi: Category" filter where type is "Equals" with added column and following checkboxes:
-	| SelectedCheckboxes  |
-	| None                |
+	| SelectedCheckboxes |
+	| Empty              |
 	Then "Windows7Mi: Category" filter is added to the list
 	When User add "Directory Type" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes  |
