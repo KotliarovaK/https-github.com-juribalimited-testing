@@ -448,11 +448,13 @@
     <Compile Include="Steps\Senior\Senior_CreatingProject\Projects_Removing.cs" />
     <Compile Include="Steps\Senior\Senior_CreatingProject\Projects_SelfService.cs" />
     <Compile Include="Steps\Senior\Tasks\AfterScenario\RemoveTaskAfterScenario.cs" />
-    <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\ActionsPanelPart3.feature.cs">
-      <DependentUpon>ActionsPanelPart3.feature</DependentUpon>
+    <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\ActionsPanelPart1.feature.cs">
+      <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ActionsPanelPart1.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\ActionsPanelPart3.feature.cs">
+      <DependentUpon>ActionsPanelPart3.feature</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
@@ -461,32 +463,10 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\ActionsPanelPart1.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ActionsPanelPart1.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdatePath\UpdatePathPart2.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UpdatePathPart2.feature</DependentUpon>
-    </Compile>
     <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdatePath\UpdatePathPart1.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>UpdatePathPart1.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateTaskValue\UpdateTaskValuePart5.feature.cs">
-      <DependentUpon>UpdateTaskValuePart5.feature</DependentUpon>
-    <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateTaskValue\UpdateTaskValuePart4.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UpdateTaskValuePart4.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateTaskValue\UpdateTaskValuePart3.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UpdateTaskValuePart3.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateTaskValue\UpdateTaskValuePart2.feature.cs">
       <AutoGen>True</AutoGen>
@@ -537,16 +517,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CreateCustomFieldForAutomations.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\UpdateTaskValue\UpdateTaskValueAutomations3.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UpdateTaskValueAutomations3.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\UpdateTaskValue\UpdateTaskValueAutomations2.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UpdateTaskValueAutomations2.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\UpdateTaskValue\UpdateTaskValueAutomations1.feature.cs">
       <AutoGen>True</AutoGen>
@@ -1628,25 +1598,9 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ActionsPanelPart1.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdatePath\UpdatePathPart2.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>UpdatePathPart2.feature.cs</LastGenOutput>
-    </None>
     <None Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdatePath\UpdatePathPart1.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>UpdatePathPart1.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateTaskValue\UpdateTaskValuePart5.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>UpdateTaskValuePart5.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateTaskValue\UpdateTaskValuePart4.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>UpdateTaskValuePart4.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateTaskValue\UpdateTaskValuePart3.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>UpdateTaskValuePart3.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateTaskValue\UpdateTaskValuePart2.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -1687,14 +1641,6 @@
     <None Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\UpdateCustomField\CreateCustomFieldForAutomations.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CreateCustomFieldForAutomations.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\UpdateTaskValue\UpdateTaskValueAutomations3.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>UpdateTaskValueAutomations3.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\UpdateTaskValue\UpdateTaskValueAutomations2.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>UpdateTaskValueAutomations2.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\UpdateTaskValue\UpdateTaskValueAutomations1.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
