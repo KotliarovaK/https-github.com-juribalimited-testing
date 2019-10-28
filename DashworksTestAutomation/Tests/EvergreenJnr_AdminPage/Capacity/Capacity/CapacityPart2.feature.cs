@@ -607,7 +607,7 @@ this.FeatureBackground();
                         "ProjectTemplate",
                         "Mode"});
             table10.AddRow(new string[] {
-                        "ProjectForDAS13945",
+                        "ProjectForDAS13945_2",
                         "All Devices",
                         "None",
                         "Standalone Project"});
@@ -622,7 +622,7 @@ this.FeatureBackground();
 #line 145
  testRunner.And("User enters \' \' text to \'Capacity Unit Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 146
- testRunner.And("User enters \'13945\' text to \'Description\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User enters \'13945_2\' text to \'Description\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 147
  testRunner.Then("\'CREATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
