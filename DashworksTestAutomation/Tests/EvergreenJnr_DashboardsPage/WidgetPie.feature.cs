@@ -983,7 +983,7 @@ this.FeatureBackground();
 #line 217
  testRunner.When("User selects \'Operating System\' in the \'Split By\' Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 218
- testRunner.And(string.Format("User selects \'{0}\' as Widget Aggregate Function", aggFunc), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When(string.Format("User selects \'{0}\' in the \'Aggregate Function\' Widget dropdown", aggFunc), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
                         "items"});
