@@ -643,6 +643,98 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatErrorIsNotDisplayedForAssociatedObjectsOnOffboa" +
+            "rdingPopUpWhenMainObjectWasAlreadyOffboardedWithAssociatedObjectsFromAnotherTabO" +
+            "rByAnotherUser")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
+        [NUnit.Framework.CategoryAttribute("Offboard")]
+        [NUnit.Framework.CategoryAttribute("DAS18026")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
+        public virtual void EvergreenJnr_DevicesList_CheckThatErrorIsNotDisplayedForAssociatedObjectsOnOffboardingPopUpWhenMainObjectWasAlreadyOffboardedWithAssociatedObjectsFromAnotherTabOrByAnotherUser()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckThatErrorIsNotDisplayedForAssociatedObjectsOnOffboardingPopUpWhenMainObjectWasAlreadyOffboardedWithAssociatedObjectsFromAnotherTabOrByAnotherUserInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_CheckThatErrorIsNotDisplayedForAssociatedObjectsOnOffboardingPopUpWhenMainObjectWasAlreadyOffboardedWithAssociatedObjectsFromAnotherTabOrByAnotherUserInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatErrorIsNotDisplayedForAssociatedObjectsOnOffboa" +
+                    "rdingPopUpWhenMainObjectWasAlreadyOffboardedWithAssociatedObjectsFromAnotherTabO" +
+                    "rByAnotherUser", null, new string[] {
+                        "Evergreen",
+                        "Devices",
+                        "EvergreenJnr_ItemDetails",
+                        "Offboard",
+                        "DAS18026",
+                        "Cleanup",
+                        "Not_Ready"});
+#line 162
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 163
+ testRunner.When("User navigates to the \'Device\' details page for \'M2IMTW2YFVK1KLT\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 164
+ testRunner.Then("Details page for \"M2IMTW2YFVK1KLT\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 165
+ testRunner.When("User switches to the \"User Evergreen Capacity Project\" project in the Top bar on " +
+                    "Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 166
+ testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 167
+ testRunner.When("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 168
+ testRunner.When("User navigates to \"evergreen/#/device/3105/projects/project?$projectId=56\" URL in" +
+                    " a new tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 169
+ testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 170
+ testRunner.When("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 171
+ testRunner.When("User clicks \'OFFBOARD\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 172
+ testRunner.When("User clicks \'OFFBOARD\' button in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 173
+ testRunner.When("User clicks \'OFFBOARD\' button in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 174
+ testRunner.When("User switches to previous tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 175
+ testRunner.When("User clicks \'OFFBOARD\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 176
+ testRunner.Then("Warning message with \"This device has already been offboarded from User Evergreen" +
+                    " Capacity Project\" text is displayed on the Project Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 177
+ testRunner.Then("\'OFFBOARD\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore

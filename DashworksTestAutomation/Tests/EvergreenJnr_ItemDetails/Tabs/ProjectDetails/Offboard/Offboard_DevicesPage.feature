@@ -156,3 +156,22 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddingAndRemovingColumnsInPopUpWorks
 	| Display Name |
 	| Domain       |
 	| Owner        |
+
+#tag 'not_rady' added because need to create Cleanup (DAS-18070)
+@Evergreen @Devices @EvergreenJnr_ItemDetails @Offboard @DAS18026 @Cleanup @Not_Ready
+Scenario: EvergreenJnr_DevicesList_CheckThatErrorIsNotDisplayedForAssociatedObjectsOnOffboardingPopUpWhenMainObjectWasAlreadyOffboardedWithAssociatedObjectsFromAnotherTabOrByAnotherUser
+	When User navigates to the 'Device' details page for 'M2IMTW2YFVK1KLT' item
+	Then Details page for "M2IMTW2YFVK1KLT" item is displayed to the user
+	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
+	When User navigates to the 'Projects' left menu item
+	When User navigates to the 'Project Details' left submenu item
+	When User navigates to "evergreen/#/device/3105/projects/project?$projectId=56" URL in a new tab
+	When User navigates to the 'Projects' left menu item
+	When User navigates to the 'Project Details' left submenu item
+	When User clicks 'OFFBOARD' button
+	When User clicks 'OFFBOARD' button in Dialog Pop-up 
+	When User clicks 'OFFBOARD' button in Dialog Pop-up 
+	When User switches to previous tab
+	When User clicks 'OFFBOARD' button
+	Then Warning message with "This device has already been offboarded from User Evergreen Capacity Project" text is displayed on the Project Details Page
+	Then 'OFFBOARD' button is disabled
