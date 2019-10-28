@@ -1757,8 +1757,10 @@ this.FeatureBackground();
 #line 377
  testRunner.Then("Content is present in the newly added column", ((string)(null)), table39, "Then ");
 #line 380
- testRunner.Then("Color data displayed with correct color and tooltip for \"Barry\'sUse: Application " +
-                    "Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Color data displayed with correct color for \"Barry\'sUse: Application Readiness\" c" +
+                    "olumn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 381
+ testRunner.Then("\"None\" tooltip displayed in \"Barry\'sUse: Application Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1805,27 +1807,27 @@ this.FeatureBackground();
                         "EvergreenJnr_Columns",
                         "AddColumnAction",
                         "DAS16364"});
-#line 383
+#line 384
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 384
+#line 385
  testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table40 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table40.AddRow(new string[] {
                         "1803: Status"});
-#line 385
+#line 386
  testRunner.And("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table40, "And ");
-#line 388
- testRunner.When("User clicks on \'1803: Status\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 389
- testRunner.Then("\"Not Onboarded\" content is displayed in \"1803: Status\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 390
  testRunner.When("User clicks on \'1803: Status\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 390
+ testRunner.Then("\"Not Onboarded\" content is displayed in \"1803: Status\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 391
+ testRunner.When("User clicks on \'1803: Status\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 392
  testRunner.Then("\"Offboarded\" content is displayed in \"1803: Status\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

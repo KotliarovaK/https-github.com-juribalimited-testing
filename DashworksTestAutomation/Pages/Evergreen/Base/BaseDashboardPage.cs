@@ -657,7 +657,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         {
             try
             {
-                return GetTextbox(placeholder, WebDriverExtensions.WaitTime.Short).Disabled();
+                return GetTextbox(placeholder, WebDriverExtensions.WaitTime.Short).Displayed();
             }
             catch
             {
