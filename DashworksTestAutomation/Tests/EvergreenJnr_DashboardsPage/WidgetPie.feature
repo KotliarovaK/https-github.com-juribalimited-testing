@@ -20,18 +20,18 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetsCanBeCreatedWhenUsingSplit
 	| 00SH8162NAS524   |
 	And User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "TestList_DAS14668" name
-	And Dashboard with "Dashboard for DAS14668" name created via API and opened
+	And Dashboard with 'Dashboard for DAS14668' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title                  | List              | SplitBy                      | AggregateFunction | OrderBy   | MaxValues |
 	| Pie        | Test_Widget_DAS14668_1 | TestList_DAS14668 | ICSP: i-stage A \ i-Schedule | Count             | Count ASC | 5         |
-	Then User sees widget with the next name "Test_Widget_DAS14668_1" on Dashboards page
+	Then User sees widget with the next name 'Test_Widget_DAS14668_1' on Dashboards page
 	When User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title                  | List              | SplitBy                      | AggregateBy                  | AggregateFunction | OrderBy                           | MaxValues |
 	| Pie        | Test_Widget_DAS14668_2 | TestList_DAS14668 | ICSP: i-stage A \ i-Schedule | ICSP: i-stage A \ i-Schedule | Count distinct    | ICSP: i-stage A \ i-Schedule DESC | 20        |
-	Then User sees widget with the next name "Test_Widget_DAS14668_2" on Dashboards page
+	Then User sees widget with the next name 'Test_Widget_DAS14668_2' on Dashboards page
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15372 @DAS15317 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWidgetThatUsesCpuArchitField
@@ -49,7 +49,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWid
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
 	When User clicks 'CREATE' button 
-	Then "WidgetForDAS15372" Widget is displayed to the user
+	Then 'WidgetForDAS15372' Widget is displayed to the user
 	And There are no errors in the browser console
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15365 @DAS15352 @Cleanup
@@ -67,19 +67,19 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingPie
 	| Pie        | WidgetForDAS15365 | List15365 | Model   | Model       | Count distinct    | Model ASC | 10        | true       |
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
-	When User selects "Bar" in the "Widget Type" Widget dropdown
+	When User selects 'Bar' in the 'Widget Type' Widget dropdown
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
-	When User selects "Column" in the "Widget Type" Widget dropdown
+	When User selects 'Column' in the 'Widget Type' Widget dropdown
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
-	When User selects "Line" in the "Widget Type" Widget dropdown
+	When User selects 'Line' in the 'Widget Type' Widget dropdown
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
-	When User selects "Donut" in the "Widget Type" Widget dropdown
+	When User selects 'Donut' in the 'Widget Type' Widget dropdown
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
-	When User selects "Half donut" in the "Widget Type" Widget dropdown
+	When User selects 'Half donut' in the 'Widget Type' Widget dropdown
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
 	When User adds new Widget
@@ -92,25 +92,25 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingPie
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15662 @Cleanup
 Scenario Outline: EvergreenJnr_DashboardsPage_CheckDataLabelsOnTheWidget
-	When Dashboard with "DAS15662_Dashboard" name created via API and opened
+	When Dashboard with 'DAS15662_Dashboard' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType   | Title             | List        | SplitBy  | AggregateFunction | OrderBy   |
 	| <WidgetType> | WidgetForDAS15662 | All Devices | Hostname | Count             | Count ASC |
-	And User selects "Show data labels" checkbox on the Create Widget page
+	And User selects 'Show data labels' checkbox on the Create Widget page
 	Then Data Labels are displayed on the Preview page
-	And "<DataLabel>" data label is displayed on the Preview page
+	And '<DataLabel>' data label is displayed on the Preview page
 	When User clicks 'CREATE' button 
 	Then Data Labels are displayed on the Dashboards page
-	And "<DataLabel>" data label is displayed on the Dashboards page
-	When User clicks Ellipsis menu for "WidgetForDAS15662" Widget on Dashboards page
-	And User clicks "Duplicate" item from Ellipsis menu on Dashboards page
-	And User clicks Ellipsis menu for "WidgetForDAS156622" Widget on Dashboards page
-	And User clicks "Edit" item from Ellipsis menu on Dashboards page
-	Then "Show data labels" checkbox is checked on the Create Widget page
+	And '<DataLabel>' data label is displayed on the Dashboards page
+	When User clicks Ellipsis menu for 'WidgetForDAS15662' Widget on Dashboards page
+	And User clicks 'Duplicate' item from Ellipsis menu on Dashboards page
+	And User clicks Ellipsis menu for 'WidgetForDAS156622' Widget on Dashboards page
+	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	Then 'Show data labels' checkbox is checked on the Create Widget page
 	And Data Labels are displayed on the Preview page
-	And "<DataLabel>" data label is displayed on the Preview page
+	And '<DataLabel>' data label is displayed on the Preview page
 
 Examples:
 	| WidgetType | DataLabel      |
@@ -120,16 +120,16 @@ Examples:
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15500 @Cleanup
 Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatWhenEditingPieWidgetAggregateFunctionSelectionIsBeforeAggregateBySelection
-	When Dashboard with "Dashboard for DAS15500" name created via API and opened
+	When Dashboard with 'Dashboard for DAS15500' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title           | List        | SplitBy  | AggregateFunction | OrderBy      | MaxValues |
 	| Pie        | Widget_DAS15500 | All Devices | Hostname | Count             | Hostname ASC | 5         |
-	Then User sees widget with the next name "Widget_DAS15500" on Dashboards page
-	When User clicks Ellipsis menu for "Widget_DAS15500" Widget on Dashboards page
-	And User clicks "Edit" item from Ellipsis menu on Dashboards page
-	And User selects "<WidgetType>" in the "Widget Type" Widget dropdown
+	Then User sees widget with the next name 'Widget_DAS15500' on Dashboards page
+	When User clicks Ellipsis menu for 'Widget_DAS15500' Widget on Dashboards page
+	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	And User selects '<WidgetType>' in the 'Widget Type' Widget dropdown
 	Then Aggregate Function dropdown is placed above the Aggregate By dropdown
 
 Examples: 
@@ -152,14 +152,14 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountAsAggregateFunction
 	| Windows7Mi: Communication \ DateTime |
 	| Compliance                           |
 	And User create dynamic list with "ListWithAllDatatypes" name on "Devices" page
-	And Dashboard with "All Data Types for DAS15508" name created via API and opened
+	And Dashboard with 'All Data Types for DAS15508' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
-	And User selects "Pie" in the "Widget Type" Widget dropdown
-	And User enters "Widget Name" as Widget Title
-	And User selects "ListWithAllDatatypes" as Widget List
-	And User selects "Operating System" as Widget Split By
-	And User selects "Count" as Widget Aggregate Function
+	And User selects 'Pie' in the 'Widget Type' Widget dropdown
+	And User enters 'Widget Name' as Widget Title
+	And User selects 'ListWithAllDatatypes' as Widget List
+	And User selects 'Operating System' as Widget Split By
+	When User selects 'Count' in the 'Aggregate Function' Widget dropdown
 	Then Aggregate By dropdown is disabled
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15509 @Cleanup
@@ -174,14 +174,14 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountDistinctAsAggregate
 	| Windows7Mi: Communication \ DateTime |
 	| Compliance                           |
 	And User create dynamic list with "ListWithAllDatatypes" name on "Devices" page
-	And Dashboard with "All Data Types for DAS15509" name created via API and opened
+	And Dashboard with 'All Data Types for DAS15509' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
-	And User selects "Pie" in the "Widget Type" Widget dropdown
-	And User enters "Widget Name" as Widget Title
-	And User selects "ListWithAllDatatypes" as Widget List
-	And User selects "Operating System" as Widget Split By
-	And User selects "Count distinct" as Widget Aggregate Function
+	And User selects 'Pie' in the 'Widget Type' Widget dropdown
+	And User enters 'Widget Name' as Widget Title
+	And User selects 'ListWithAllDatatypes' as Widget List
+	And User selects 'Operating System' as Widget Split By
+	When User selects 'Count' in the 'Aggregate Function' Widget dropdown
 	Then User sees following options for Aggregate By selector on Create Widget page:
 	| items                                |
 	| Device Key                           |
@@ -208,14 +208,14 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatSelectingAggregateFunctio
 	| Windows7Mi: Communication \ DateTime |
 	| Compliance                           |
 	And User create dynamic list with "ListWithAllDatatypes" name on "Devices" page
-	And Dashboard with "All Data Types for DAS15510" name created via API and opened
+	And Dashboard with 'All Data Types for DAS15510' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
-	And User selects "Pie" in the "Widget Type" Widget dropdown
-	And User enters "Widget Name" as Widget Title
-	And User selects "ListWithAllDatatypes" as Widget List
-	And User selects "Operating System" as Widget Split By
-	And User selects "<AggFunc>" as Widget Aggregate Function
+	And User selects 'Pie' in the 'Widget Type' Widget dropdown
+	And User enters 'Widget Name' as Widget Title
+	And User selects 'ListWithAllDatatypes' as Widget List
+	And User selects 'Operating System' as Widget Split By
+	And User selects '<AggFunc>' as Widget Aggregate Function
 	Then User sees following options for Aggregate By selector on Create Widget page:
 	| items               |
 	| HDD Total Size (GB) |
@@ -239,14 +239,14 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountAsAggregateFunction
 	| Windows7Mi: Communication \ DateTime |
 	| Compliance                           |
 	And User create dynamic list with "ListWithAllDatatypes" name on "Devices" page
-	And Dashboard with "All Data Types for DAS15524" name created via API and opened
+	And Dashboard with 'All Data Types for DAS15524' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
-	And User selects "Pie" in the "Widget Type" Widget dropdown
-	And User enters "Widget Name" as Widget Title
-	And User selects "ListWithAllDatatypes" as Widget List
-	And User selects "Operating System" as Widget Split By
-	And User selects "Count" as Widget Aggregate Function
+	And User selects 'Pie' in the 'Widget Type' Widget dropdown
+	And User enters 'Widget Name' as Widget Title
+	And User selects 'ListWithAllDatatypes' as Widget List
+	And User selects 'Operating System' as Widget Split By
+	When User selects 'Count' in the 'Aggregate Function' Widget dropdown
 	Then Aggregate By dropdown is disabled
 	And User sees following options for Order By selector on Create Widget page:
 	| items                 |
@@ -257,14 +257,14 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountAsAggregateFunction
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenCountAggregateFunctionIsSelected
-	When Dashboard with "TestDashboardForDAS15362" name created via API and opened
+	When Dashboard with 'TestDashboardForDAS15362' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
-	And User selects "Pie" in the "Widget Type" Widget dropdown
-	And User enters "Widget Name" as Widget Title
-	And User selects "All Devices" as Widget List
-	And User selects "Operating System" as Widget Split By
-	And User selects "Count" as Widget Aggregate Function
+	And User selects 'Pie' in the 'Widget Type' Widget dropdown
+	And User enters 'Widget Name' as Widget Title
+	And User selects 'All Devices' as Widget List
+	And User selects 'Operating System' as Widget Split By
+	When User selects 'Count' in the 'Aggregate Function' Widget dropdown
 	Then User sees following options for Order By selector on Create Widget page:
 	| items                 |
 	| Operating System ASC  |
@@ -274,15 +274,15 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenCountAgg
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenCountDistinctAggregateFunctionIsSelected
-	When Dashboard with "TestDashboardForDAS15362" name created via API and opened
+	When Dashboard with 'TestDashboardForDAS15362' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
-	And User selects "Pie" in the "Widget Type" Widget dropdown
-	And User enters "Widget Name" as Widget Title
-	And User selects "All Devices" as Widget List
-	And User selects "Operating System" as Widget Split By
-	And User selects "Count distinct" as Widget Aggregate Function
-	And User selects "Hostname" as Widget AggregateBy
+	And User selects 'Pie' in the 'Widget Type' Widget dropdown
+	And User enters 'Widget Name' as Widget Title
+	And User selects 'All Devices' as Widget List
+	And User selects 'Operating System' as Widget Split By
+	When User selects 'Count distinct' in the 'Aggregate Function' Widget dropdown
+	When User selects 'Hostname' in the 'Aggregate By' Widget dropdown
 	Then User sees following options for Order By selector on Create Widget page:
 	| items                        |
 	| Operating System ASC         |
@@ -297,15 +297,15 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenSumAggre
 	| ColumnName          |
 	| HDD Total Size (GB) |
 	And User create dynamic list with "HddList" name on "Devices" page
-	And Dashboard with "TestDashboardForDAS15362" name created via API and opened
+	And Dashboard with 'TestDashboardForDAS15362' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
-	And User selects "Pie" in the "Widget Type" Widget dropdown
-	And User enters "Widget Name" as Widget Title
-	And User selects "HddList" as Widget List
-	And User selects "Operating System" as Widget Split By
-	And User selects "Sum" as Widget Aggregate Function
-	And User selects "HDD Total Size (GB)" as Widget AggregateBy
+	And User selects 'Pie' in the 'Widget Type' Widget dropdown
+	And User enters 'Widget Name' as Widget Title
+	And User selects 'HddList' as Widget List
+	And User selects 'Operating System' as Widget Split By
+	When User selects 'Sum' in the 'Aggregate Function' Widget dropdown
+	When User selects 'HDD Total Size (GB)' in the 'Aggregate By' Widget dropdown
 	Then User sees following options for Order By selector on Create Widget page:
 	| items                        |
 	| Operating System ASC         |
@@ -320,15 +320,15 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenMinAggre
 	| ColumnName          |
 	| HDD Total Size (GB) |
 	And User create dynamic list with "HddList" name on "Devices" page
-	And Dashboard with "TestDashboardForDAS15362" name created via API and opened
+	And Dashboard with 'TestDashboardForDAS15362' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
-	And User selects "Pie" in the "Widget Type" Widget dropdown
-	And User enters "Widget Name" as Widget Title
-	And User selects "HddList" as Widget List
-	And User selects "Operating System" as Widget Split By
-	And User selects "Minimum" as Widget Aggregate Function
-	And User selects "HDD Total Size (GB)" as Widget AggregateBy
+	And User selects 'Pie' in the 'Widget Type' Widget dropdown
+	And User enters 'Widget Name' as Widget Title
+	And User selects 'HddList' as Widget List
+	And User selects 'Operating System' as Widget Split By
+	When User selects 'Minimum' in the 'Aggregate Function' Widget dropdown
+	When User selects 'HDD Total Size (GB)' in the 'Aggregate By' Widget dropdown
 	Then User sees following options for Order By selector on Create Widget page:
 	| items                            |
 	| Operating System ASC             |
@@ -343,15 +343,15 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenMaxAggre
 	| ColumnName          |
 	| HDD Total Size (GB) |
 	And User create dynamic list with "HddList" name on "Devices" page
-	And Dashboard with "TestDashboardForDAS15362" name created via API and opened
+	And Dashboard with 'TestDashboardForDAS15362' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
-	And User selects "Pie" in the "Widget Type" Widget dropdown
-	And User enters "Widget Name" as Widget Title
-	And User selects "HddList" as Widget List
-	And User selects "Operating System" as Widget Split By
-	And User selects "Maximum" as Widget Aggregate Function
-	And User selects "HDD Total Size (GB)" as Widget AggregateBy
+	And User selects 'Pie' in the 'Widget Type' Widget dropdown
+	And User enters 'Widget Name' as Widget Title
+	And User selects 'HddList' as Widget List
+	And User selects 'Operating System' as Widget Split By
+	When User selects 'Maximum' in the 'Aggregate Function' Widget dropdown
+	When User selects 'HDD Total Size (GB)' in the 'Aggregate By' Widget dropdown
 	Then User sees following options for Order By selector on Create Widget page:
 	| items                            |
 	| Operating System ASC             |
@@ -366,15 +366,15 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenAvgAggre
 	| ColumnName          |
 	| HDD Total Size (GB) |
 	And User create dynamic list with "HddList" name on "Devices" page
-	And Dashboard with "TestDashboardForDAS15362" name created via API and opened
+	And Dashboard with 'TestDashboardForDAS15362' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
-	And User selects "Pie" in the "Widget Type" Widget dropdown
-	And User enters "Widget Name" as Widget Title
-	And User selects "HddList" as Widget List
-	And User selects "Operating System" as Widget Split By
-	And User selects "Average" as Widget Aggregate Function
-	And User selects "HDD Total Size (GB)" as Widget AggregateBy
+	And User selects 'Pie' in the 'Widget Type' Widget dropdown
+	And User enters 'Widget Name' as Widget Title
+	And User selects 'HddList' as Widget List
+	And User selects 'Operating System' as Widget Split By
+	When User selects 'Average' in the 'Aggregate Function' Widget dropdown
+	When User selects 'HDD Total Size (GB)' in the 'Aggregate By' Widget dropdown
 	Then User sees following options for Order By selector on Create Widget page:
 	| items                            |
 	| Operating System ASC             |
@@ -397,20 +397,20 @@ Scenario: EvergreenJnr_DashboardsPage_CheckNameAndLabelAndColorSchemeForEmptyOwn
 	And User clicks Save button on the list panel
 	And User create dynamic list with "ListForDAS17467" name on "Devices" page
 	Then "ListForDAS17467" list is displayed to user
-	When Dashboard with "Dashboard for DAS17467" name created via API and opened
+	When Dashboard with 'Dashboard for DAS17467' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title             | List            | SplitBy          | AggregateFunction | OrderBy              | ShowLegend |
 	| Pie        | WidgetForDAS17467 | ListForDAS17467 | Owner Compliance | Count             | Owner Compliance ASC | true       |
-	And User selects "Show data labels" checkbox on the Create Widget page
+	And User selects 'Show data labels' checkbox on the Create Widget page
 	Then Widget Preview is displayed to the user
-	And Color Scheme dropdown displayed with "Compliance Colour Scheme" placeholder 
+	And Color Scheme dropdown displayed with 'Compliance Colour Scheme' placeholder 
 	And Color Scheme dropdown is disabled
 	When User clicks 'CREATE' button 
-	Then "WidgetForDAS17467" Widget is displayed to the user
-	And Label "Empty" displayed for "WidgetForDAS17467" widget
-	And Label icon displayed gray for "WidgetForDAS17467" widget
+	Then 'WidgetForDAS17467' Widget is displayed to the user
+	And Label 'Empty' displayed for 'WidgetForDAS17467' widget
+	And Label icon displayed gray for 'WidgetForDAS17467' widget
 	And There are no errors in the browser console
 	
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17467 @DAS17515 @Cleanup
@@ -428,15 +428,15 @@ Scenario: EvergreenJnr_DashboardsPage_CheckColorSchemePlaceholderForReadiness
 	And User clicks Save button on the list panel
 	And User create dynamic list with "ListForDAS17467_1" name on "Devices" page
 	Then "ListForDAS17467_1" list is displayed to user
-	When Dashboard with "Dashboard for DAS17467_1" name created via API and opened
+	When Dashboard with 'Dashboard for DAS17467_1' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title               | List              | SplitBy         | AggregateFunction | OrderBy             | ShowLegend |
 	| Pie        | WidgetForDAS17467_1 | ListForDAS17467_1 | 1803: Readiness | Count             | 1803: Readiness ASC | true       |
-	And User selects "Show data labels" checkbox on the Create Widget page
+	And User selects 'Show data labels' checkbox on the Create Widget page
 	Then Widget Preview is displayed to the user
-	And Color Scheme dropdown displayed with "Readiness Colour Scheme" placeholder 
+	And Color Scheme dropdown displayed with 'Readiness Colour Scheme' placeholder 
 	And Color Scheme dropdown is disabled
 	And There are no errors in the browser console
 
@@ -455,7 +455,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCorrectColorSchemeisUsedWhenWidge
 	| TRUE               |
 	And User create dynamic list with "ListForDAS17515" name on "Devices" page
 	Then "ListForDAS17515" list is displayed to user
-	When Dashboard with "DAS17515_Dashboard" name created via API and opened
+	When Dashboard with 'DAS17515_Dashboard' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	When User clicks 'ADD WIDGET' button 
 	And User adds new Widget
@@ -463,22 +463,22 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCorrectColorSchemeisUsedWhenWidge
 	| Pie        | WidgetForDAS17515 | ListForDAS17515 | Windows7Mi: Application Readiness | Count             | Windows7Mi: Application Readiness ASC | 10        | true       |
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
-	And Color Scheme dropdown displayed with "Readiness Colour Scheme" placeholder
+	And Color Scheme dropdown displayed with 'Readiness Colour Scheme' placeholder
 	And Color Scheme dropdown is disabled
 	When User clicks 'CREATE' button 
 	Then There are no errors in the browser console
-	When User clicks Ellipsis menu for "WidgetForDAS17515" Widget on Dashboards page
-	And User clicks "Edit" item from Ellipsis menu on Dashboards page
-	When User selects "Application Compliance" in the "Split By" Widget dropdown
-	Then User sees "Application Compliance ASC" option for Order By selector on Create Widget page
-	And Color Scheme dropdown displayed with "Compliance Colour Scheme" placeholder 
+	When User clicks Ellipsis menu for 'WidgetForDAS17515' Widget on Dashboards page
+	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	When User selects 'Application Compliance' in the 'Split By' Widget dropdown
+	Then User sees 'Application Compliance ASC' option for Order By selector on Create Widget page
+	And Color Scheme dropdown displayed with 'Compliance Colour Scheme' placeholder 
 	And Color Scheme dropdown is disabled
 	When User clicks 'UPDATE' button 
 	Then There are no errors in the browser console
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18072 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFilterChangedInUiPartAfterSelectingAnotherFilter
-	When Dashboard with "DAS18072_Dashboard" name created via API and opened
+	When Dashboard with 'DAS18072_Dashboard' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
@@ -487,9 +487,9 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFilterChangedInUiPartAfter
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
 	And 'Device Type DESC' option displayed for Widget OrderBy
-	When User selects "Hostname" as Widget Split By
+	When User selects 'Hostname' as Widget Split By
 	Then '' option displayed for Widget OrderBy
 	And Widget Preview is not displayed to the user
-	When User selects "Hostname ASC" as Widget OrderBy
+	When User selects 'Hostname ASC' in the 'Order By' Widget dropdown
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console

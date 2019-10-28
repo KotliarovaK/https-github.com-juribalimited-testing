@@ -35,7 +35,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Dashboard
             _user = user;
         }
 
-        [When(@"Dashboard with ""(.*)"" name created via API and opened")]
+        [When(@"Dashboard with '(.*)' name created via API and opened")]
         public void WhenUserCreateNewDashboardViaApi(string name)
         {
             var requestUri = $"{UrlProvider.RestClientBaseUrl}dashboard";
@@ -68,7 +68,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Dashboard
             _driver.Navigate().GoToUrl($"{UrlProvider.EvergreenUrl}/#/dashboards/{newDashboard.DashboardId}");
         }
 
-        [When(@"Dashboard with ""(.*)"" name is opened via API")]
+        [When(@"Dashboard with '(.*)' name is opened via API")]
         public void WhenDashboardWithNameIsOpenedViaApi(string name)
         {
             var id = _dashboard.Value.Any(x => x.DashboardName.Equals(name))

@@ -12,8 +12,7 @@ namespace DashworksTestAutomation.Pages
 {
     internal class EvergreenDashboardsPage : SeleniumBasePage
     {
-        [FindsBy(How = How.XPath, Using = ".//*[contains(@class,'highcharts-tooltip')][@visibility]")]
-        public IWebElement PieTooltip { get; set; }
+        #region Header
 
         [FindsBy(How = How.XPath, Using = ".//span[text()='CREATE DASHBOARD' or text()='DASHBOARD ERSTELLEN']")]
         public IWebElement CreateDashboardBtn { get; set; }
@@ -27,47 +26,38 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//div[@class='mat-slide-toggle-thumb']")]
         public IWebElement EditModeSlideToggle { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@id='pagetitle-actions']/button")]
+        public IWebElement DashboardsDetailsIcon { get; set; }
+
+        #endregion
+
+        #region Dashboards Panel
+
         [FindsBy(How = How.XPath, Using = ".//div[@id='submenu']")]
-        public IWebElement DashboardsSubmenu { get; set; }
+        public IWebElement DashboardsListPanel { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@id='context']/app-dashboards-details/div[@class='context-container']")]
         public IWebElement DashboardsContextMenu { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@id='pagetitle-actions']/button")]
-        public IWebElement DashboardsDetailsIcon { get; set; }
-
-
-        #region Dashboards Panel
-
-        [FindsBy(How = How.XPath, Using = ".//ul[@class='submenu-actions-dashboards']//span[@class='submenu-actions-dashboards-name']")]
-        public IList<IWebElement> AllDashboardsInPanel { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//div[text()='Dashboard name should be unique']")]
         public IWebElement DashboardUniqueError { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//app-dashboard-submenu-action//div[@class='menu']//li")]
-        public IList<IWebElement> DashboardMenuOptions { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//li[text()='Manage']")]
-        public IWebElement ManageContextMenuItem { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//li[text()='Make favourite']")]
-        public IWebElement MakeFavoriteContextMenuItem { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//li[text()='Unfavourite']")]
-        public IWebElement UnfavoriteContextMenuItem { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//li[text()='Set default']")]
-        public IWebElement MakeDefaultContextMenuItem { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//li[text()='Duplicate']")]
-        public IWebElement DuplicateContextMenuItem { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='inline-success ng-star-inserted']")]
         public IWebElement SuccessMessage { get; set; }
 
-        #endregion
+        [FindsBy(How = How.XPath, Using = ".//div[@id='submenuBlock']//*[starts-with(@class, 'inline-tip')]")]
+        public IWebElement DashboardsPanelAlert { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//ul[@class='submenu-actions-dashboards']//span[contains(@class,'submenu-actions-dashboards-name')]")]
+        public IList<IWebElement> ListDashboards { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//app-dashboard-submenu-action//div[@class='menu']//li")]
+        public IList<IWebElement> DashboardMenuItems { get; set; }
+
+        public IWebElement DashboardMenuItem(string itemName) =>
+            Driver.FindElement(By.XPath($".//li[text()='{itemName}']"));
+
+        #endregion
 
         #region Dashboard Area
 
@@ -80,12 +70,6 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'section-edit-block')]//i[contains(@class,'arrow')]")]
         public IList<IWebElement> AllCollapseExpandSectionsArrows { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='widgets']//h5")]
-        public IList<IWebElement> AllWidgetsTitles { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//*[@class='highcharts-legend']")]
-        public IList<IWebElement> NumberOfWidgetLegends { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'section-edit-block')]")]
         public IList<IWebElement> AllSections { get; set; }
 
@@ -95,17 +79,8 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//mat-select//span[text()='Select Section']")]
         public IWebElement SelectSectionDropdown { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//table//td[contains(@class, 'splitValue')]//span")]
-        public IList<IWebElement> TableWidgetContent { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'delete-alert') and not(@hidden)]//span[text()='DELETE']")]
-        public IWebElement DeleteButtonInAlert { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'delete-alert') and not(@hidden)]//span[text()='CANCEL']")]
-        public IWebElement CancelButtonInAlert { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'delete-alert') and not(@hidden)]//span[text()='EDIT']")]
-        public IWebElement EditButtonInAlert { get; set; }
+        public IWebElement AlertButton(string buttonName) =>
+            Driver.FindElement(By.XPath($".//div[contains(@class,'delete-alert') and not(@hidden)]//span[text()='{buttonName}']"));
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'delete-alert') and not(@hidden)]//div[@class='inline-box-text']")]
         public IList<IWebElement> TextInDeleteAlert { get; set; }
@@ -113,10 +88,21 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'delete-alert')]//a[@href]")]
         public IWebElement LinkInWarningMessage { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@id='submenuBlock']//*[starts-with(@class, 'inline-tip')]")]
-        public IWebElement SubmenuAlertMessage { get; set; }
+        #endregion
 
+        #region Widget
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='widgets']//h5")]
+        public IList<IWebElement> AllWidgetsTitles { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//*[@class='highcharts-legend']")]
+        public IList<IWebElement> NumberOfWidgetLegends { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//*[contains(@class,'highcharts-tooltip')][@visibility]")]
+        public IWebElement PieTooltip { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//table//td[contains(@class, 'splitValue')]//span")]
+        public IList<IWebElement> TableWidgetContent { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'only-icon')]")]
         public IWebElement IconOnlyCardWidget { get; set; }
@@ -132,14 +118,10 @@ namespace DashworksTestAutomation.Pages
 
         #endregion
 
-
         #region Dashboard Details
 
         [FindsBy(How = How.XPath, Using = ".//input[@id='DashboardName']")]
         public IWebElement DashboardDetailsNameInput { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[@class='form-container']/form")]
-        public IWebElement UserTeamSectionOnDashboardDetails { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='permissions-container']//input[@type='checkbox']")]
         public IWebElement DefaultDashboardCheckbox { get; set; }
@@ -148,22 +130,13 @@ namespace DashworksTestAutomation.Pages
         public IWebElement DefaultDashboardCheckboxLabel { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='permissions-container']")]
-        public IWebElement PermissionPanel { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[@class='permissions-container']//span[contains(text(), 'ADD USER')]")]
-        public IWebElement PermissionAddUserButton { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[@class='permissions-container']//input[@placeholder='User']")]
-        public IWebElement PermissionUserField { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[@class='permissions-container']//mat-select[@role='listbox']//span[contains(text(), 'Permission')]")]
-        public IWebElement PermissionTypeField { get; set; }
+        public IWebElement PermissionSection { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='permissions-container']//td[@class='userName']")]
-        public IList<IWebElement> PermissionNameOfAddedUser { get; set; }
+        public IList<IWebElement> PermissionAddedUser { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='permissions-container']//td[@class='permission']")]
-        public IList<IWebElement> PermissionAccessTypeOfAddedUser { get; set; }
+        public IList<IWebElement> PermissionTypeOfAccess { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-labelledby='sharing-label']")]
         public IWebElement SharingDropdown { get; set; }
@@ -195,6 +168,22 @@ namespace DashworksTestAutomation.Pages
             };
         }
 
+
+        public string GetEditModeSlideBarColor()
+        {
+            return EditModeSlideBar.GetCssValue("background-color");
+        }
+
+        public string GetEditModeSlideToggleColor()
+        {
+            return EditModeSlideToggle.GetCssValue("background-color");
+        }
+
+        public bool GetEditModeState()
+        {
+            return EditModeOnOffTrigger.GetAttribute("class").Contains("checked");
+        }
+
         public void SelectSectionToMove(string sectionName)
         {
             SelectSectionDropdown.Click();
@@ -210,10 +199,10 @@ namespace DashworksTestAutomation.Pages
 
         public bool IsWidgetExists(string widgetName)
         {
-            return WidgetsCount(widgetName) > 0;
+            return GetWidgetsNumberByName(widgetName) > 0;
         }
 
-        public int WidgetsCount(string widgetName)
+        public int GetWidgetsNumberByName(string widgetName)
         {
             var numberOfWidgets = Driver.FindElements(By.XPath($".//div[@class='widgets']//span[contains(text(),'{widgetName}')]")).Count;
             return numberOfWidgets;
@@ -239,12 +228,6 @@ namespace DashworksTestAutomation.Pages
             return Driver.FindElements(selector);
         }
 
-        public IWebElement GetDashboardDetailsButtonsByName(string buttonLabel)
-        {
-            var selector = By.XPath($".//div[@class='context-container']//span[text()='{buttonLabel}']/ancestor::button");
-            return Driver.FindElement(selector);
-        }
-
         public IWebElement GetEllipsisMenuForWidget(string widgetName)
         {
             try
@@ -268,115 +251,36 @@ namespace DashworksTestAutomation.Pages
             return Driver.FindElements(By.XPath(
                 $".//span[contains(text(),'{widgetName}')]/ancestor::div[contains(@class,'section')]//i[contains(@class,'arrow')]"));
         }
-
-        public string GetEditModeSlideToggleColor()
+        
+        public void SetPermissionSharingFieldTo(string newValue)
         {
-            return EditModeSlideToggle.GetCssValue("background-color");
+            var shareType = By.XPath(".//div[@class='permissions-container']//*[@aria-labelledby='sharing-label']");
+            Driver.WaitForElementToBeDisplayed(Driver.FindElement(shareType));
+            Driver.SelectCustomSelectbox(Driver.FindElement(shareType), newValue);
         }
 
-        public bool GetEditModeState()
-        {
-            return EditModeOnOffTrigger.GetAttribute("class").Contains("checked");
-        }
-
-        public void ClickSectionFromCircleChart(string chartName, string sectionName)
-        {
-            //JavaScript to get all circle charts on page
-            var javaScriptCodeToGetCharts = "return document.getElementsByTagName('svg')";
-            //get all circle charts as web elements
-            var allChartsAsWebElements =
-                GetWebElementsByJavaScript(javaScriptCodeToGetCharts);
-
-            //find index of chart by chart name
-            var i = GetIndexOfElementContainingText(allChartsAsWebElements, chartName);
-
-            //JavaScript to get all text of particular chart(determined by i index)
-            var javaScriptCodeToGetTextInParticularChart =
-                $"return document.getElementsByTagName('svg')[{i}].getElementsByTagName('tspan')";
-            //get all texts in particular chart as web elements
-            var allTextsInParticularChartAsWebElements =
-                GetWebElementsByJavaScript(javaScriptCodeToGetTextInParticularChart);
-
-            //find index of section by name in particular chart
-            var j = GetIndexOfElementContainingText(allTextsInParticularChartAsWebElements, sectionName);
-
-            //find color of required section by text
-            var color = ((IJavaScriptExecutor)Driver)
-                .ExecuteScript(
-                    $"return document.getElementsByTagName('svg')[{i}].getElementsByTagName('tspan')[{j}].parentElement.nextSibling.getAttribute('fill')")
-                .ToString();
-
-            //JavaScript to get all sections in particular chart
-            var javaScriptCodeToGetAllSectionsInParticularChart =
-                $"return document.getElementsByTagName('svg')[{i}].getElementsByTagName('path')";
-            //get all sections in particular chart as web elements
-            var allSectionsInParticularChartAsWebElement =
-                GetWebElementsByJavaScript(javaScriptCodeToGetAllSectionsInParticularChart);
-
-            //click section in particular chart by color
-            foreach (var section in allSectionsInParticularChartAsWebElement)
-                if (section.GetAttribute("fill").Contains(color))
-                {
-                    section.Click();
-                    break;
-                }
-        }
-
-        public void ChangePermissionSharingFieldFromTo(string valueInField, string newValue)
-        {
-            var from = $" .//div[@class='permissions-container']//span[contains(text(), '{valueInField}')]";
-            Driver.WaitForElementToBeDisplayed(By.XPath(from));
-            Driver.FindElement(By.XPath(from)).Click();
-
-            var to = $".//span[@class='mat-option-text'][contains(text(), '{newValue}')]";
-            Driver.WaitForElementToBeDisplayed(By.XPath(to));
-            Driver.FindElement(By.XPath(to)).Click();
-
-            var newVal = $" .//div[@class='permissions-container']//span[contains(text(), '{newValue}')]";
-            Driver.WaitForElementToBeDisplayed(By.XPath(newVal));
-        }
-
-        public void SelectOptionFromList(string option)
-        {
-            var selector = $".//span[@class='mat-option-text'][contains(text(), '{option}')]";
-            Driver.WaitForElementToBeDisplayed(By.XPath(selector));
-            Driver.FindElement(By.XPath(selector)).Click();
-        }
-
-        public IWebElement OpenSettingsByDashboardName(string dashboardName)
+        public IWebElement DashboardMenuSelector(string dashboardName)
         {
             var dashboardSettingsSelector =
                 By.XPath(
                     $".//ul[@class='submenu-actions-dashboards']//span[text()='{dashboardName}']/ancestor::li//i[contains(@class,'menu')]");
             Driver.MouseHover(dashboardSettingsSelector);
-            Driver.WaitForDataLoading();
             Driver.WaitForElementToBeDisplayed(dashboardSettingsSelector);
             return Driver.FindElement(dashboardSettingsSelector);
         }
 
-        public IWebElement GetSettingsMenuOfSharedUser(string username)
+        public IWebElement GetMenuOfSharedUser(string username)
         {
             var dashboardSettingsSelector =
                 By.XPath($".//div[@class='permissions-container']//td[contains(text(),'{username}')]/following-sibling::td/div[starts-with(@class, 'cog-menu')]//i");
             Driver.MouseHover(dashboardSettingsSelector);
-            Driver.WaitForDataLoading();
             Driver.WaitForElementToBeDisplayed(dashboardSettingsSelector);
             return Driver.FindElement(dashboardSettingsSelector);
         }
 
-        public IWebElement GetSettingsOption(string option)
+        public IWebElement GetMenuOption(string option)
         {
             return Driver.FindElement(By.XPath($".//div[@class='permissions-container']//ul[@class='menu-settings']/li[contains(text(),'{option}')]"));
-        }
-
-        private int GetIndexOfElementContainingText(IEnumerable<IWebElement> webElements, string text)
-        {
-            return webElements.TakeWhile(chart => !chart.GetAttribute("textContent").Contains(text)).Count();
-        }
-
-        private IReadOnlyCollection<IWebElement> GetWebElementsByJavaScript(string javaScriptCode)
-        {
-            return (IReadOnlyCollection<IWebElement>)((IJavaScriptExecutor)Driver).ExecuteScript(javaScriptCode);
         }
 
         public IWebElement GetWidgetByName(string widgetName)
@@ -395,7 +299,7 @@ namespace DashworksTestAutomation.Pages
             return Driver.FindElement(ellipsisItem);
         }
 
-        public string GetDeleteWidgetSquareColor()
+        public string GetDeleteWidgetAreaColor()
         {
             return Driver.FindElement(By.XPath(".//div[@class='widgets']//div[@class='inline-tip' and @role='alert']")).GetCssValue("background-color");
         }
@@ -413,8 +317,7 @@ namespace DashworksTestAutomation.Pages
             Driver.WaitForDataLoading();
             return Driver.FindElement(page);
         }
-
-
+        
         public IList<IWebElement> GetWidgetLabels(string widgetName)
         {
             var legend =
@@ -442,63 +345,14 @@ namespace DashworksTestAutomation.Pages
                 Driver.FindElements(widg).First().GetAttribute("widget-value"));
         }
 
-        public IWebElement ReviewPermissionsPopupsButton(string buttonCaption)
-        {
-            return Driver.FindElement(By.XPath($".//mat-dialog-container/permission-popup//span[contains(text(),'{buttonCaption.ToUpper()}')]/parent::button"));
-        }
+        #region Details Panel
 
-        public string GetButtonStateOfReviewWidgetPermissionsPopup(string buttonCaption)
-        {
-            return ReviewPermissionsPopupsButton(buttonCaption).Enabled.ToString().ToUpper();
-        }
-
-        public void SelectDoNotChangeReviewPermission()
-        {
-            Driver.FindElement(By.XPath(".//span[@class='mat-option-text'][contains(text(), 'Do not change')]")).Click();
-        }
-
-        public IWebElement NewPermissionsDropdownForList(string listName)
-        {
-            return Driver.FindElement(By.XPath($".//td[contains(text(), '{listName}')]/parent::tr//mat-select[@aria-label='New Permissions']"));
-        }
-
-        public IWebElement WidgetValueForList(string listName)
-        {
-            return Driver.FindElement(By.XPath($".//td[contains(text(), '{listName}')]/parent::tr//td[contains(@class, 'widgetNames')]/span"));
-        }
-
-        public IWebElement OwnerValueForList(string listName)
-        {
-            return Driver.FindElement(By.XPath($".//td[contains(text(), '{listName}')]/parent::tr//td[contains(@class, 'ownerName')]"));
-        }
-
-        public IWebElement CurrentPermissionValueForList(string listName)
-        {
-            return Driver.FindElement(By.XPath($".//td[contains(text(), '{listName}')]/parent::tr//td[contains(@class, 'sharedAccessType')]"));
-        }
-
-        public IWebElement NewPermissionsValueForList(string listName)
-        {
-            return Driver.FindElement(By.XPath($".//td[contains(text(), '{listName}')]/parent::tr//mat-select[@aria-label='New Permissions']//span[not (contains(@class, 'mat-select'))]"));
-        }
-
-        public string GetDropdownStateOfReviewWidgetPermissionsPopup(string listName)
-        {
-            return NewPermissionsDropdownForList(listName).GetAttribute("aria-disabled").ToString().ToUpper();
-        }
-
-        public void ClickSettingsButtonByDashboardName(string dashboardName)
+        public void ClickMenuButtonByDashboardName(string dashboardName)
         {
             var settingsButton =
                 $".//span[@class='submenu-actions-dashboards-name' and text()='{dashboardName}']//ancestor::li//i[contains(@class,'settings')]";
             Driver.MouseHover(By.XPath(settingsButton));
             Driver.FindElement(By.XPath(settingsButton)).Click();
-        }
-
-        public void ClickDashboardByName(string dashboardName)
-        {
-            var dashboardItem = $".//span[@class='submenu-actions-dashboards-name' and text()='{dashboardName}']";
-            Driver.FindElement(By.XPath(dashboardItem)).Click();
         }
 
         public bool GetFavoriteStateInDashboardDetailsPane()
@@ -538,18 +392,54 @@ namespace DashworksTestAutomation.Pages
             return Driver.FindElements(By.XPath(starIcon)).Count == 1;
         }
 
-        public IList<IWebElement> GetWidgetLinks(string widgetName)
+        public IWebElement ReviewPermissionsPopupsButton(string buttonCaption)
         {
-            var links =
-                By.XPath($".//span[text()='{widgetName}']/ancestor ::div[@class='widget-whole']//a");
-
-            Driver.WaitForDataLoading();
-            return Driver.FindElements(links);
+            return Driver.FindElement(By.XPath($".//mat-dialog-container/permission-popup//span[contains(text(),'{buttonCaption.ToUpper()}')]/parent::button"));
         }
 
+        public string GetButtonStateOfReviewWidgetPermissionsPopup(string buttonCaption)
+        {
+            return ReviewPermissionsPopupsButton(buttonCaption).Enabled.ToString().ToUpper();
+        }
 
+        public void SelectDoNotChangeReviewPermission()
+        {
+            Driver.FindElement(By.XPath(".//span[@class='mat-option-text'][contains(text(), 'Do not change')]")).Click();
+        }
 
-        #region table
+        public IWebElement NewPermissionsDropdownForList(string listName)
+        {
+            return Driver.FindElement(By.XPath($".//td[contains(text(), '{listName}')]/parent::tr//mat-select[@aria-label='New Permissions']"));
+        }
+
+        public IWebElement CurrentPermissionValueForList(string listName)
+        {
+            return Driver.FindElement(By.XPath($".//td[contains(text(), '{listName}')]/parent::tr//td[contains(@class, 'sharedAccessType')]"));
+        }
+
+        public IWebElement NewPermissionsValueForList(string listName)
+        {
+            return Driver.FindElement(By.XPath($".//td[contains(text(), '{listName}')]/parent::tr//mat-select[@aria-label='New Permissions']//span[not (contains(@class, 'mat-select'))]"));
+        }
+
+        public string GetDropdownStateOfReviewWidgetPermissionsPopup(string listName)
+        {
+            return NewPermissionsDropdownForList(listName).GetAttribute("aria-disabled").ToString().ToUpper();
+        }
+
+        public IWebElement WidgetValueForList(string listName)
+        {
+            return Driver.FindElement(By.XPath($".//td[contains(text(), '{listName}')]/parent::tr//td[contains(@class, 'widgetNames')]/span"));
+        }
+
+        public IWebElement OwnerValueForList(string listName)
+        {
+            return Driver.FindElement(By.XPath($".//td[contains(text(), '{listName}')]/parent::tr//td[contains(@class, 'ownerName')]"));
+        }
+
+        #endregion
+        
+        #region Table
         public IWebElement GetTableWidgetContentWithoutLink(string content)
         {
             var columnContent = By.XPath($".//td[not(contains(@class, 'link'))]/span[text()='{content}']");
@@ -576,7 +466,7 @@ namespace DashworksTestAutomation.Pages
         }
         #endregion
 
-        #region card
+        #region Card
         public IWebElement GetCardWidgetPreviewText()
         {
             var nested = By.XPath(".//div[@class='card-widget-data']//*");
@@ -649,14 +539,6 @@ namespace DashworksTestAutomation.Pages
         }
         #endregion
 
-
-        #region Bar
-        public string GetEditModeSlideBarColor()
-        {
-            return EditModeSlideBar.GetCssValue("background-color");
-        }
-        #endregion
-
         #region Column
         public List<string> GetPointOfColumnWidgetByName(string widgetName)
         {
@@ -684,6 +566,14 @@ namespace DashworksTestAutomation.Pages
         }
         #endregion
 
+        public IList<IWebElement> GetWidgetLinks(string widgetName)
+        {
+            var links =
+                By.XPath($".//span[text()='{widgetName}']/ancestor ::div[@class='widget-whole']//a");
+
+            Driver.WaitForDataLoading();
+            return Driver.FindElements(links);
+        }
 
         public string GetWidgetRowContentByColumnName(string columnName)
         {
