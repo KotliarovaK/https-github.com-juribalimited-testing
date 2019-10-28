@@ -152,8 +152,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             var detailsPage = _driver.NowAt<BaseNavigationElements>();
 
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            var actualList = detailsPage.MainTabsOnDetailsPageList.Select(value => value.Text).ToList();
-            Utils.Verify.AreEqual(expectedList, actualList, "Tabs for the details page are incorrect");
+            var actualList = detailsPage.GetParentMenuByName().Select(value => value.Text).ToList();
+            Verify.AreEqual(expectedList, actualList, "Tabs for the details page are incorrect");
         }
 
         //TODO should be moved to Navigation

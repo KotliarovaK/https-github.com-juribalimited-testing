@@ -936,7 +936,7 @@ this.FeatureBackground();
                         "RED"});
             table11.AddRow(new string[] {
                         "App Readiness",
-                        "RED"});
+                        "BLUE"});
             table11.AddRow(new string[] {
                         "Task Readiness",
                         "PURPLE"});

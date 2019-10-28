@@ -135,7 +135,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatValueForUseMeForAutomationProjectIsD
 	Then following Compliance items with appropriate colors are displayed in Top bar on the Item details page:
 	| ComplianceItems   | ColorName |
 	| Overall Readiness | RED       |
-	| App Readiness     | RED       |
+	| App Readiness     | BLUE      |
 	| Task Readiness    | PURPLE    |
 	| Workflow          | Failed    |
 
