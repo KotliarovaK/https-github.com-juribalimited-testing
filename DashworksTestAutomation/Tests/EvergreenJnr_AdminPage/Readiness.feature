@@ -151,11 +151,11 @@ Scenario: EvergreenJnr_AdminPage_ChecksCreateReadinessElements
 	And User clicks content from "Project" column
 	And User navigates to the 'Readiness' left menu item
 	And User clicks 'CREATE READINESS' button 
-	And User enters "testreadinesname_testreadinesname_testreadinesname_t" in Readiness input on Edit Readiness
-	Then User sees "testreadinesname_testreadinesname_testreadinesname" in Readiness input on Edit Readiness
-	And User sees "testreadinesname_testreadinesname_testreadinesname" in Tooltip input on Edit Readiness
-	When User enters "testtooltipname_testtooltipname_testtooltipname_test" in Tooltip input on Edit Readiness
-	Then User sees "testtooltipname_testtooltipname_testtooltipname_te" in Tooltip input on Edit Readiness
+	When User enters 'testreadinesname_testreadinesname_testreadinesname_t' text to 'Readiness' textbox
+	Then 'testreadinesname_testreadinesname_testreadinesname' content is displayed in 'Readiness' textbox
+	Then 'testreadinesname_testreadinesname_testreadinesname' content is displayed in 'Tooltip' textbox
+	When User enters 'testtooltipname_testtooltipname_testtooltipname_test' text to 'Readiness' textbox
+	Then 'testtooltipname_testtooltipname_testtooltipname_te' content is displayed in 'Readiness' textbox
 	When User clicks Colour Template field on Edit Readiness
 	Then List of available colours displayed to user on Edit Readiness
 
@@ -202,8 +202,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoneReadinessCanBePartiallyEdited
 	And User navigates to the 'Readiness' left menu item
 	And User enters "None" text in the Search field for "Readiness" column
 	And User click content from "Readiness" column
-	Then Readiness input displayed disabled on Edit Readiness
-	When User enters "tooltip14938_1" in Tooltip input on Edit Readiness
+	Then Add button for 'Readiness' textbox is not disabled
+	When User enters 'tooltip14938_1' text to 'Tooltip' textbox
 	And User sets Ready checkbox in "TRUE" on Edit Readiness
 	And User sets Default for Applications checkbox in "TRUE" on Edit Readiness
 	And User clicks Colour Template field on Edit Readiness
@@ -211,8 +211,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoneReadinessCanBePartiallyEdited
 	When User clicks 'UPDATE' button 
 	And User enters "None" text in the Search field for "Readiness" column
 	And User click content from "Readiness" column
-	Then User sees "None" in Readiness input on Edit Readiness
-	And User sees "tooltip14938_1" in Tooltip input on Edit Readiness
+	Then 'None' content is displayed in 'Readiness' textbox
+	Then 'tooltip14938_1' content is displayed in 'Tooltip' textbox
 	And User sees Ready checkbox in "TRUE" state on Edit Readiness
 	And User sees Default for Applications checkbox in "TRUE" state on Edit Readiness
 	
@@ -225,11 +225,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoChangesAppliedAfterCancelButtonPress
 	And User navigates to the 'Readiness' left menu item
 	And User enters "None" text in the Search field for "Readiness" column
 	And User click content from "Readiness" column
-	And User enters "tooltip14938_2" in Tooltip input on Edit Readiness
+	When User enters 'tooltip14938_2' text to 'Tooltip' textbox
 	And User clicks 'CANCEL' button 
 	And User enters "None" text in the Search field for "Readiness" column
 	And User click content from "Readiness" column
-	Then User sees "None" in Readiness input on Edit Readiness
+	Then 'None' content is displayed in 'Readiness' textbox
 	And User sees Tooltip field not equal to "tooltip14938_2" on Edit Readiness
 	
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14938 @Cleanup

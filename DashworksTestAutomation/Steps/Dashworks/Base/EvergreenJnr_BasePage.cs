@@ -370,6 +370,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.IsTrue(Convert.ToBoolean(page.GetTextboxAddButton(fieldName).Disabled()), $"Add button for {fieldName} textbox is active");
         }
 
+        [Then(@"Add button for '(.*)' textbox is not disabled")]
+        public void ThenAddButtonForTextboxIsNotDisabled(string fieldName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsFalse(Convert.ToBoolean(page.GetTextboxAddButton(fieldName).Disabled()), $"Add button for {fieldName} textbox is active");
+        }
+
         [Then(@"'(.*)' textbox is displayed")]
         public void ThenTextboxIsDisplayed(string placeholder)
         {
