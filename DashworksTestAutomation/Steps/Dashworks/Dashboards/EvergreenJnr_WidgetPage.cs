@@ -141,8 +141,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var createWidgetElement = _driver.NowAt<AddWidgetPage>();
             _driver.WaitForDataLoading();
-            _driver.ClickByJavascript(createWidgetElement.GetDropdownForWidgetByName(dropdown));
-            createWidgetElement.SelectObjectForWidgetCreation(option);
+
+            if (dropdown.Equals("Split By"))
+                createWidgetElement.SelectSplitByItem(option);
+            else
+            {
+                _driver.ClickByJavascript(createWidgetElement.GetDropdownForWidgetByName(dropdown));
+                createWidgetElement.SelectObjectForWidgetCreation(option);
+            }
         }
 
         [When(@"User enters '(.*)' as Widget Title")]
