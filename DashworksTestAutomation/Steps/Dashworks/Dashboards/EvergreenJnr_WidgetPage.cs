@@ -539,7 +539,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenListDdlHasNextItemCategories(Table items)
         {
             var baseActionItem = _driver.NowAt<BaseDashboardPage>();
-            baseActionItem.GetDropdown("List").Click();
+            baseActionItem.GetTextbox("List").Click();
 
             var page = _driver.NowAt<AddWidgetPage>();
             var actualItems = page.GetMainCategoriesOfListDDL().Select(x => x.Text).ToList();
