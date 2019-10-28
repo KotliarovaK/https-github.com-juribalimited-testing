@@ -40,6 +40,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
 
         #region Get Parent/Sub menu
 
+        //TODO Please do not use this method and try to switch to some other more specific
         public IWebElement GetLeftMenuByName(string name)
         {
             var selector = By.XPath(string.Format(LeftMenuSelector, name));
