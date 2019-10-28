@@ -987,5 +987,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         }
 
         #endregion
+
+        public IList<IWebElement> GetChipsOfTextbox(string textbox)
+        {
+            var chipsSelector = By.XPath("./ancestor::div[contains(@class, 'multiselect')]//li[contains(@class, 'chips-item')]");
+            return GetTextbox(textbox).FindElements(chipsSelector);
+        }
     }
 }
