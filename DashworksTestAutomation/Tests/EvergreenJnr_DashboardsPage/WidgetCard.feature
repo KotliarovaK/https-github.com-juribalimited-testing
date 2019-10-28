@@ -16,7 +16,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingCar
 	Then 'All Devices' list should be displayed to the user
 	When User create dynamic list with "List15364" name on "Devices" page
 	Then "List15364" list is displayed to user
-	When Dashboard with "Dashboard for DAS15364" name created via API and opened
+	When Dashboard with 'Dashboard for DAS15364' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
@@ -30,7 +30,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingCar
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15207 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIsCreatedWhenListIsAnObjectList
-	When Dashboard with "Dashboard for DAS15207" name created via API and opened
+	When Dashboard with 'Dashboard for DAS15207' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
@@ -39,12 +39,12 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIsCreatedWhenListIsAnOb
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
 	When User clicks 'CREATE' button 
-	Then Card "WidgetForDAS15207" Widget is displayed to the user
+	Then Card 'WidgetForDAS15207' Widget is displayed to the user
 	And There are no errors in the browser console
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16138 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValueLeadsToCorrectFilteredPage
-	When Dashboard with "Dashboard for DAS16138" name created via API and opened
+	When Dashboard with 'Dashboard for DAS16138' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
@@ -52,9 +52,9 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValueLeadsToCorrectFilt
 	| Card       | WidgetForDAS16138 | 1803 Rollout | Aggregate | 1803: Pre-Migration \ Scheduled Date | First             | Yes       |
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
-	Then Card "WidgetForDAS16138" Widget is displayed to the user
+	Then Card 'WidgetForDAS16138' Widget is displayed to the user
 	When User clicks Edit mode trigger on Dashboards page
-	And User clicks data in card "WidgetForDAS16138" widget
+	And User clicks data in card 'WidgetForDAS16138' widget
 	Then Save as a new list option is available
 	When User selects Save as new list option
 	Then "8" rows are displayed in the agGrid
@@ -81,7 +81,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValuesLeadsToApplicatio
 	And User clicks on 'Compliance' column header
 	And User create custom list with "1803 App Compliance" name
 	Then "1803 App Compliance" list is displayed to user
-	When Dashboard with "Dashboard for DAS16069_2" name created via API and opened
+	When Dashboard with 'Dashboard for DAS16069_2' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
@@ -89,9 +89,9 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValuesLeadsToApplicatio
 	| Card       | WidgetForDAS16069_2 | 1803 App Compliance | Aggregate | Count             | Yes       |
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
-	Then Card "WidgetForDAS16069_2" Widget is displayed to the user
+	Then Card 'WidgetForDAS16069_2' Widget is displayed to the user
 	When User clicks Edit mode trigger on Dashboards page
-	And User clicks data in card "WidgetForDAS16069_2" widget
+	And User clicks data in card 'WidgetForDAS16069_2' widget
 	Then Save as a new list option is available
 	And "43" rows are displayed in the agGrid
 
@@ -115,7 +115,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatComplianceLayoutCorrectlyDisplaye
 	And User create custom list with "1803 App Compliance" name
 	Then "1803 App Compliance" list is displayed to user
 	
-	When Dashboard with "Dashboard for DAS15355" name created via API and opened
+	When Dashboard with 'Dashboard for DAS15355' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 
 	And User clicks 'ADD WIDGET' button 
@@ -123,52 +123,52 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatComplianceLayoutCorrectlyDisplaye
 	| WidgetType | Title             | List                | Type       |
 	| Card       | WidgetForDAS15355 | 1803 App Compliance | First Cell |
 	Then Colour Scheme dropdown is not displayed to the user
-	When User selects "Text Only" in the "Layout" Widget dropdown
+	When User selects 'Text Only' in the 'Layout' Widget dropdown
 	Then Text Only is displayed for Card widget on Preview
-	And "Red" color is displayed for Card Widget on Preview
+	And 'Red' color is displayed for Card Widget on Preview
 	When User clicks 'CREATE' button 
 	
 	Then Text Only is displayed for Card widget
-	And "Red" color is displayed for Card Widget
+	And 'Red' color is displayed for Card Widget
 	
-	When User clicks Ellipsis menu for "WidgetForDAS15355" Widget on Dashboards page
-	And User clicks "Edit" item from Ellipsis menu on Dashboards page
-	And User selects "Icon and Text" in the "Layout" Widget dropdown
+	When User clicks Ellipsis menu for 'WidgetForDAS15355' Widget on Dashboards page
+	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	And User selects 'Icon and Text' in the 'Layout' Widget dropdown
 	Then Icon and Text is displayed for Card widget on Preview
-	And "Red" color is displayed for Card Widget on Preview
+	And 'Red' color is displayed for Card Widget on Preview
 	When User clicks 'UPDATE' button 
 	
-	Then "Red" color is displayed for Card Widget
+	Then 'Red' color is displayed for Card Widget
 	And Icon and Text is displayed for Card widget
 	
-	When User clicks Ellipsis menu for "WidgetForDAS15355" Widget on Dashboards page
-	And User clicks "Edit" item from Ellipsis menu on Dashboards page
-	And User selects "Icon Only" in the "Layout" Widget dropdown
+	When User clicks Ellipsis menu for 'WidgetForDAS15355' Widget on Dashboards page
+	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	And User selects 'Icon Only' in the 'Layout' Widget dropdown
 	Then Icon Only is displayed for Card widget on Preview
-	And "Red" color is displayed for Card Widget on Preview
+	And 'Red' color is displayed for Card Widget on Preview
 	When User clicks 'UPDATE' button 
 	
-	Then "Red" color is displayed for Card Widget
+	Then 'Red' color is displayed for Card Widget
 	And Icon Only is displayed for Card widget
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15134 @DAS16263 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIncludeSelectionOfEvergreenColours
-	When Dashboard with "Dashboard for DAS15134" name created via API and opened
+	When Dashboard with 'Dashboard for DAS15134' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title             | List        | Type       |
 	| Card       | WidgetForDAS15134 | All Devices | First Cell |
-	And User selects "Pink" in the Colour Scheme
+	And User selects 'Pink' in the Colour Scheme
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
-	Then Card "WidgetForDAS15134" Widget is displayed to the user
-	And "Pink" color is displayed for widget
-	When User clicks Ellipsis menu for "WidgetForDAS15134" Widget on Dashboards page
-	And User clicks "Edit" item from Ellipsis menu on Dashboards page
-	And User selects "Amber" in the Colour Scheme
+	Then Card 'WidgetForDAS15134' Widget is displayed to the user
+	And 'Pink' color is displayed for widget
+	When User clicks Ellipsis menu for 'WidgetForDAS15134' Widget on Dashboards page
+	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	And User selects 'Amber' in the Colour Scheme
 	And User clicks 'UPDATE' button 
-	Then "Amber" color is displayed for widget
+	Then 'Amber' color is displayed for widget
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15722 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetHavingDateColumnsDisplayedCorrectlyOnDashboard
@@ -178,7 +178,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetHavingDateColumnsDispla
 	| Build Date |
 	Then 'All Devices' list should be displayed to the user
 	When User create dynamic list with "ListForDas15722" name on "Devices" page
-	And Dashboard with "DashboardForDas15722" name created via API and opened
+	And Dashboard with 'DashboardForDas15722' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
@@ -187,10 +187,10 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetHavingDateColumnsDispla
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
 	When User clicks 'CREATE' button 
-	Then Card "WidgetForDAS15722" Widget is displayed to the user
+	Then Card 'WidgetForDAS15722' Widget is displayed to the user
 	And There are no errors in the browser console
 	When User clicks Edit mode trigger on Dashboards page
-	When User clicks data in card "WidgetForDAS15722" widget
+	When User clicks data in card 'WidgetForDAS15722' widget
 	Then "1" rows are displayed in the agGrid
 
 @Evergreen@EvergreenJnr_DashboardsPage @Widgets @DAS15355 @Cleanup
@@ -208,7 +208,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckComplianceFirstCellIconsForCardWidget
 	Then 'All Applications' list should be displayed to the user
 	When User create dynamic list with "DAS15355_Applications_List" name on "Applications" page
 	Then "DAS15355_Applications_List" list is displayed to user
-	When Dashboard with "Dashboard_DAS15355" name created via API and opened
+	When Dashboard with 'Dashboard_DAS15355' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	When User clicks 'ADD WIDGET' button 
 	And User adds new Widget
@@ -216,23 +216,23 @@ Scenario: EvergreenJnr_DashboardsPage_CheckComplianceFirstCellIconsForCardWidget
 	| Card       | WidgetForDAS15355 | DAS15355_Applications_List | First Cell | Text Only |
 	Then Widget Preview is displayed to the user
 	And Text Only is displayed for Card widget on Preview
-	And "Amber" color is displayed for Card Widget on Preview
+	And 'Amber' color is displayed for Card Widget on Preview
 	When User clicks 'CREATE' button 
 	Then Text Only is displayed for Card widget
 	
-	When User clicks Ellipsis menu for "WidgetForDAS15355" Widget on Dashboards page
-	And User clicks "Edit" item from Ellipsis menu on Dashboards page
-	And User selects "Icon and Text" in the "Layout" Widget dropdown
+	When User clicks Ellipsis menu for 'WidgetForDAS15355' Widget on Dashboards page
+	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	And User selects 'Icon and Text' in the 'Layout' Widget dropdown
 	Then Icon and Text is displayed for Card widget on Preview
-	And "Amber" color is displayed for Card Widget on Preview
+	And 'Amber' color is displayed for Card Widget on Preview
 	When User clicks 'UPDATE' button 
 	Then Icon and Text is displayed for Card widget
 
-	When User clicks Ellipsis menu for "WidgetForDAS15355" Widget on Dashboards page
-	And User clicks "Edit" item from Ellipsis menu on Dashboards page
-	And User selects "Icon Only" in the "Layout" Widget dropdown
+	When User clicks Ellipsis menu for 'WidgetForDAS15355' Widget on Dashboards page
+	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	And User selects 'Icon Only' in the 'Layout' Widget dropdown
 	Then Icon Only is displayed for Card widget on Preview
-	And "Amber" color is displayed for Card Widget on Preview
+	And 'Amber' color is displayed for Card Widget on Preview
 	When User clicks 'UPDATE' button 
 	Then Icon Only is displayed for Card widget
 	
@@ -250,35 +250,35 @@ Scenario: EvergreenJnr_DashboardsPage_CheckReadinessFirstCellIconsForCardWidget
 	When User create dynamic list with "DAS15355_List" name on "Devices" page
 	Then "DAS15355_List" list is displayed to user
 
-	When Dashboard with "Dashboard_DAS15355_1" name created via API and opened
+	When Dashboard with 'Dashboard_DAS15355_1' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title               | List          | Type       | Layout    |
 	| Card       | WidgetForDAS15355_1 | DAS15355_List | First Cell | Text Only |
 	Then Text Only is displayed for Card widget on Preview
-	And "Green" color is displayed for Card Widget on Preview
-	And "Data Label" checkbox is not displayed on the Create Widget page
+	And 'Green' color is displayed for Card Widget on Preview
+	And 'Data Label' checkbox is not displayed on the Create Widget page
 	When User clicks 'CREATE' button 
 	Then Text Only is displayed for Card widget
-	And "Green" color is displayed for Card Widget
+	And 'Green' color is displayed for Card Widget
 	
-	When User clicks Ellipsis menu for "WidgetForDAS15355_1" Widget on Dashboards page
-	And User clicks "Edit" item from Ellipsis menu on Dashboards page
-	And User selects "Icon and Text" in the "Layout" Widget dropdown
+	When User clicks Ellipsis menu for 'WidgetForDAS15355_1' Widget on Dashboards page
+	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	And User selects 'Icon and Text' in the 'Layout' Widget dropdown
 	Then Icon and Text is displayed for Card widget on Preview
-	And "Green" color is displayed for Card Widget on Preview
+	And 'Green' color is displayed for Card Widget on Preview
 	When User clicks 'UPDATE' button 
-	Then "Green" color is displayed for Card Widget
+	Then 'Green' color is displayed for Card Widget
 	And Icon and Text is displayed for Card widget
 
-	When User clicks Ellipsis menu for "WidgetForDAS15355_1" Widget on Dashboards page
-	And User clicks "Edit" item from Ellipsis menu on Dashboards page
-	And User selects "Icon Only" in the "Layout" Widget dropdown
+	When User clicks Ellipsis menu for 'WidgetForDAS15355_1' Widget on Dashboards page
+	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	And User selects 'Icon Only' in the 'Layout' Widget dropdown
 	Then Icon Only is displayed for Card widget on Preview
-	And "Green" color is displayed for Card Widget on Preview
+	And 'Green' color is displayed for Card Widget on Preview
 	When User clicks 'UPDATE' button 
-	Then "Green" color is displayed for Card Widget
+	Then 'Green' color is displayed for Card Widget
 	And Icon Only is displayed for Card widget
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16266 @Cleanup
@@ -290,14 +290,14 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIsDisplayedCorrectlyWit
 	Then 'All Devices' list should be displayed to the user
 	When User create dynamic list with "DAS16266_List" name on "Devices" page
 	Then "DAS16266_List" list is displayed to user
-	When Dashboard with "DAS16266_Dashboard" name created via API and opened
+	When Dashboard with 'DAS16266_Dashboard' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title             | List          | Type       |
 	| Card       | WidgetForDAS16266 | DAS16266_List | First Cell |
 	And User clicks 'CREATE' button 
-	Then Widget Preview shows "Empty" as First Cell value
+	Then Widget Preview shows 'Empty' as First Cell value
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15914 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhenFirstCellSelected
@@ -319,14 +319,14 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhe
 	Then 'All Devices' list should be displayed to the user
 	When User create dynamic list with "DeviceListFor15914" name on "Devices" page
 	Then "DeviceListFor15914" list is displayed to user
-	When Dashboard with "Dashboard for DAS15914" name created via API and opened
+	When Dashboard with 'Dashboard for DAS15914' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	When User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title             | List               | Type       |
 	| Card       | WidgetForDAS15914 | DeviceListFor15914 | First Cell |
 	Then Widget Preview is displayed to the user
-	Then Widget Preview shows "READY" as First Cell value
+	Then Widget Preview shows 'READY' as First Cell value
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16127 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhenListHasReadinessColumnFirst
@@ -344,14 +344,14 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhe
 	Then 'All Devices' list should be displayed to the user
 	When User create dynamic list with "DeviceListFor16127" name on "Devices" page
 	Then "DeviceListFor16127" list is displayed to user
-	When Dashboard with "Dashboard for DAS16127" name created via API and opened
+	When Dashboard with 'Dashboard for DAS16127' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	When User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title             | List               | Type       |
 	| Card       | WidgetForDAS16127 | DeviceListFor16127 | First Cell |
 	Then Widget Preview is displayed to the user
-	And Widget Preview shows "GREEN" as First Cell value
+	And Widget Preview shows 'GREEN' as First Cell value
 	And There are no errors in the browser console
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15765 @Cleanup
@@ -371,14 +371,14 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhe
 	Then 'All Devices' list should be displayed to the user
 	When User create dynamic list with "DeviceListFor15765" name on "Devices" page
 	Then "DeviceListFor15765" list is displayed to user
-	When Dashboard with "Dashboard for DAS15765" name created via API and opened
+	When Dashboard with 'Dashboard for DAS15765' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	When User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title             | List               | Type       |
 	| Card       | WidgetForDAS15765 | DeviceListFor15765 | First Cell |
 	Then Widget Preview is displayed to the user
-	And Widget Preview shows "Empty" as First Cell value
+	And Widget Preview shows 'Empty' as First Cell value
 	And There are no errors in the browser console
 	
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16336 @Cleanup
@@ -393,7 +393,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorsInConsoleAfterAddingAppli
 	Then 'All Applications' list should be displayed to the user
 	When User create dynamic list with "DAS16336_Applications_List" name on "Applications" page
 	Then "DAS16336_Applications_List" list is displayed to user
-	When Dashboard with "Dashboard_DAS16336" name created via API and opened
+	When Dashboard with 'Dashboard_DAS16336' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	When User clicks 'ADD WIDGET' button 
 	And User adds new Widget
@@ -401,33 +401,33 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorsInConsoleAfterAddingAppli
 	| Card       | WidgetForDAS16336 | DAS16336_Applications_List | First Cell | Text Only |
 	Then Widget Preview is displayed to the user
 	And Text Only is displayed for Card widget on Preview
-	And "Really Extremely Orange" color is displayed for Card Widget on Preview
+	And 'Really Extremely Orange' color is displayed for Card Widget on Preview
 	
 	When User clicks 'CREATE' button 
 	Then There are no errors in the browser console
 	Then Text Only is displayed for Card widget
-	And "Really Extremely Orange" color is displayed for Card Widget
+	And 'Really Extremely Orange' color is displayed for Card Widget
 
-	When User clicks Ellipsis menu for "WidgetForDAS16336" Widget on Dashboards page
-	And User clicks "Edit" item from Ellipsis menu on Dashboards page
-	And User selects "Icon Only" in the "Layout" Widget dropdown
+	When User clicks Ellipsis menu for 'WidgetForDAS16336' Widget on Dashboards page
+	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	And User selects 'Icon Only' in the 'Layout' Widget dropdown
 	Then Icon Only is displayed for Card widget on Preview
-	And "Really Extremely Orange" color is displayed for Card Widget on Preview
+	And 'Really Extremely Orange' color is displayed for Card Widget on Preview
 	
 	When User clicks 'UPDATE' button 
 	Then There are no errors in the browser console
 	And Icon Only is displayed for Card widget
-	And "Really Extremely Orange" color is displayed for Card Widget
+	And 'Really Extremely Orange' color is displayed for Card Widget
 	
-	When User clicks Ellipsis menu for "WidgetForDAS16336" Widget on Dashboards page
-	And User clicks "Edit" item from Ellipsis menu on Dashboards page
-	And User selects "Icon and Text" in the "Layout" Widget dropdown
+	When User clicks Ellipsis menu for 'WidgetForDAS16336' Widget on Dashboards page
+	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	And User selects 'Icon and Text' in the 'Layout' Widget dropdown
 	Then Icon and Text is displayed for Card widget on Preview
-	And "Really Extremely Orange" color is displayed for Card Widget on Preview
+	And 'Really Extremely Orange' color is displayed for Card Widget on Preview
 	
 	When User clicks 'UPDATE' button 
 	Then There are no errors in the browser console
-	And "Really Extremely Orange" color is displayed for Card Widget
+	And 'Really Extremely Orange' color is displayed for Card Widget
 	And Icon and Text is displayed for Card widget
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16325 @DAS15145 @Cleanup
@@ -443,14 +443,14 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhe
 	Then 'All Devices' list should be displayed to the user
 	When User create dynamic list with "DeviceListFor16325" name on "Devices" page
 	Then "DeviceListFor16325" list is displayed to user
-	When Dashboard with "Dashboard for DAS16325" name created via API and opened
+	When Dashboard with 'Dashboard for DAS16325' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	When User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title             | List               | Type       |
 	| Card       | WidgetForDAS16325 | DeviceListFor16325 | First Cell |
 	Then Widget Preview is displayed to the user
-	And Widget Preview shows "TRUE" as First Cell value
+	And Widget Preview shows 'TRUE' as First Cell value
 	And There are no errors in the browser console
 
 @Evergreen@EvergreenJnr_DashboardsPage @Widgets @DAS16347 @Cleanup
@@ -469,7 +469,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckWidgetCreatingFromListHavingSortedRin
 	Then data in table is sorted by 'Barry'sUse: Ring (Primary Device Only)' column in descending order
 	When User clicks Save button on the list panel
 	And User create dynamic list with "List16347" name on "Devices" page
-	And Dashboard with "Dashboard_DAS16347" name created via API and opened
+	And Dashboard with 'Dashboard_DAS16347' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
@@ -491,7 +491,7 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatCardSelectingAggregateFun
 	| Compliance                           |
 	Then 'All Devices' list should be displayed to the user
 	When User create dynamic list with "ListWithAllDatatypes" name on "Devices" page
-	And Dashboard with "All Data Types for DAS15514" name created via API and opened
+	And Dashboard with 'All Data Types for DAS15514' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
@@ -513,16 +513,16 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatArchivedItemsIncludedInCountWhenR
 	And User sets includes archived devices in 'true'
 	Then 'All Devices' list should be displayed to the user
 	When User create dynamic list with "List16844" name on "Devices" page
-	And Dashboard with "Dashboard for DAS16844" name created via API and opened
+	And Dashboard with 'Dashboard for DAS16844' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title             | List      | Type      | AggregateFunction |
 	| Card       | WidgetForDAS16844 | List16844 | Aggregate | Count             |
-	Then "WidgetForDAS16844" Widget is displayed to the user
+	Then 'WidgetForDAS16844' Widget is displayed to the user
 	When User clicks Edit mode trigger on Dashboards page
 	Then Value '17,427' is displayed in the card 'WidgetForDAS16844' widget
-	When User clicks data in card "WidgetForDAS16844" widget
+	When User clicks data in card 'WidgetForDAS16844' widget
 	Then Save as a new list option is available
 	And "17,427" rows are displayed in the agGrid
 
@@ -537,16 +537,16 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatArchivedItemsIncludedInCountWhenR
 	| Empty            |
 	And User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "StaticList16844" name
-	And Dashboard with "Dashboard for DAS16844" name created via API and opened
+	And Dashboard with 'Dashboard for DAS16844' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title             | List            | Type      | AggregateFunction |
 	| Card       | WidgetForDAS16844 | StaticList16844 | Aggregate | Count             |
-	Then "WidgetForDAS16844" Widget is displayed to the user
+	Then 'WidgetForDAS16844' Widget is displayed to the user
 	When User clicks Edit mode trigger on Dashboards page
 	Then Value '1' is displayed in the card 'WidgetForDAS16844' widget
-	When User clicks data in card "WidgetForDAS16844" widget
+	When User clicks data in card 'WidgetForDAS16844' widget
 	Then "1" rows are displayed in the agGrid
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16167 @Cleanup
@@ -560,7 +560,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnCardWidget
 	Then 'All Devices' list should be displayed to the user
 	When User create dynamic list with "ListForDAS16167" name on "Devices" page
 	Then "ListForDAS16167" list is displayed to user
-	When Dashboard with "DAS16167_Dashboard" name created via API and opened
+	When Dashboard with 'DAS16167_Dashboard' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
@@ -569,5 +569,5 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnCardWidget
 	Then Widget Preview is displayed to the user
 	And 'This list does not contain any rows' message is displayed in Preview
 	When User clicks 'CREATE' button 
-	Then "WidgetForDAS16167" Widget is displayed to the user
+	Then 'WidgetForDAS16167' Widget is displayed to the user
 	And 'This list does not contain any rows' message is displayed in 'WidgetForDAS16167' widget

@@ -14,13 +14,13 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorsAreDisplayedWhenCreateLis
 	When User selects all rows on the grid
 	And User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "Static_List_15432" name
-	And Dashboard with "Dashboard for DAS15432" name created via API and opened
+	And Dashboard with 'Dashboard for DAS15432' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title               | List              | MaxRows | MaxColumns |
 	| List       | Widget_For_DAS15432 | Static_List_15432 | 500     | 10         |
-	Then "Widget_For_DAS15432" Widget is displayed to the user
+	Then 'Widget_For_DAS15432' Widget is displayed to the user
 	And There are no errors in the browser console
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15413 @Cleanup
@@ -42,13 +42,13 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDataFromTheWidgetMatchesTheOrigin
 	| Microsoft |
 	When User create dynamic list with "TestList_DAS15413" name on "Applications" page
 	Then "TestList_DAS15413" list is displayed to user
-	When Dashboard with "Dashboard for DAS15413" name created via API and opened
+	When Dashboard with 'Dashboard for DAS15413' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title               | List              | MaxRows | MaxColumns |
 	| List       | Widget_For_DAS15413 | TestList_DAS15413 | 500     | 10         |
-	Then "Widget_For_DAS15413" Widget is displayed to the user
+	Then 'Widget_For_DAS15413' Widget is displayed to the user
 	Then Content in the 'Vendor' column is equal to for Widget
 	| Values                |
 	| Microsoft Corporation |
@@ -58,14 +58,14 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThahtArchivedObjectsShouldNotBeLinked
 	When User clicks 'Devices' on the left-hand menu
 	And User sets includes archived devices in 'true'
 	And User create dynamic list with "List17814" name on "Devices" page
-	When Dashboard with "Dashboard for DAS17814" name created via API and opened
+	When Dashboard with 'Dashboard for DAS17814' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title             | List      | MaxRows | MaxColumns |
 	| List       | WidgetForDAS17814 | List17814 | 10      | 10         |
-	Then "WidgetForDAS17814" Widget is displayed to the user
-	And There are no links placed in "WidgetForDAS17814" Widget
+	Then 'WidgetForDAS17814' Widget is displayed to the user
+	And There are no links placed in 'WidgetForDAS17814' Widget
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16167 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnListWidgetsIfTheSourceListHasNoRows
@@ -77,7 +77,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnListWidget
 	And User clicks Save button on the list panel
 	And User create dynamic list with "ListForDAS16167" name on "Devices" page
 	Then "ListForDAS16167" list is displayed to user
-	When Dashboard with "DAS16167_Dashboard" name created via API and opened
+	When Dashboard with 'DAS16167_Dashboard' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
@@ -86,5 +86,5 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnListWidget
 	Then Widget Preview is displayed to the user
 	And 'This list does not contain any rows' message is displayed in Preview
 	When User clicks 'CREATE' button 
-	Then "WidgetForDAS16167" Widget is displayed to the user
+	Then 'WidgetForDAS16167' Widget is displayed to the user
 	And 'This list does not contain any rows' message is displayed in 'WidgetForDAS16167' widget

@@ -37,7 +37,7 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWi
 	And User clicks Save button on the list panel
 	And User create dynamic list with "ListForDAS16167" name on "Devices" page
 	Then "ListForDAS16167" list is displayed to user
-	When Dashboard with "DAS16167_Dashboard" name created via API and opened
+	When Dashboard with 'DAS16167_Dashboard' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
@@ -46,7 +46,7 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWi
 	Then Widget Preview is displayed to the user
 	And 'This list does not contain any rows' message is displayed in Preview
 	When User clicks 'CREATE' button 
-	Then "WidgetForDAS16167" Widget is displayed to the user
+	Then 'WidgetForDAS16167' Widget is displayed to the user
 	And 'This list does not contain any rows' message is displayed in 'WidgetForDAS16167' widget
 
 Examples: 

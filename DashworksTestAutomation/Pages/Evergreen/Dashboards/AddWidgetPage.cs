@@ -4,7 +4,6 @@ using System.Linq;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.Extensions;
 using SeleniumExtras.PageObjects;
 
 namespace DashworksTestAutomation.Pages
@@ -12,7 +11,6 @@ namespace DashworksTestAutomation.Pages
     internal class AddWidgetPage : SeleniumBasePage
     {
         public const string ColorSchemeDropdownContent = ".//div/mat-option[contains(@class, 'colour-scheme')]//div[contains(@class, 'inner-colour')]";
-
         public const string ColorSchemeDropdownContainer = ".//div[@class='cdk-overlay-pane']";
 
         [FindsBy(How = How.XPath, Using = ".//*[@aria-label='WidgetType']")]
@@ -21,27 +19,6 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//span[contains(@class, 'mat-select-placeholder')]")]
         public IList<IWebElement> Dropdowns { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@placeholder='Title']")]
-        public IWebElement Title { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//input[@placeholder='List']")]
-        public IWebElement List { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//*[@aria-label='SplitBy']")]
-        public IWebElement SplitBy { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//*[@aria-label='Type']")]
-        public IWebElement Type { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//*[@aria-label='AggregateBy']")]
-        public IWebElement AggregateBy { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//*[@aria-label='AggregateFunction']")]
-        public IWebElement AggregateFunction { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//*[@aria-label='OrderBy']")]
-        public IWebElement OrderBy { get; set; }
-    
         [FindsBy(How = How.XPath, Using = ".//*[@formcontrolname='layout']")]
         public IWebElement Layout { get; set; }
 
@@ -50,15 +27,6 @@ namespace DashworksTestAutomation.Pages
 
         [FindsBy(How = How.XPath, Using = ".//*[@aria-label='Drilldown']")]
         public IWebElement Drilldown { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//input[@placeholder='Max Rows']")]
-        public IWebElement MaxRows { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//input[@placeholder='Max Columns']")]
-        public IWebElement MaxColumns { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//input[@placeholder='Max Values']")]
-        public IWebElement MaxValues { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//*[@aria-label='Colour Scheme']")]
         public IWebElement ColorScheme { get; set; }
@@ -78,6 +46,8 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//mat-checkbox[@formcontrolname='displayDataLabels']/label/span")]
         public IWebElement ShowDataLabel { get; set; }
 
+        #region Messages
+
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-error ng-star-inserted')]")]
         public IWebElement ErrorMessage { get; set; }
 
@@ -88,13 +58,15 @@ namespace DashworksTestAutomation.Pages
         public IWebElement WarningTextUnderField { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[text()='This list does not exist or you do not have access to it']")]
-        public IWebElement ListDoesntExistMessage { get; set; }
+        public IWebElement ListDoesNotExistMessage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'empty-message')]")]
         public IWebElement PreviewPaneMessageText { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@role='alert']/div[last()]")]
         public IWebElement PreviewPaneAlertText { get; set; }
+
+        #endregion
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'only-icon')]")]
         public IWebElement IconOnlyCardWidget { get; set; }
@@ -136,14 +108,7 @@ namespace DashworksTestAutomation.Pages
             Driver.FindElement(By.XPath(listNameSelector)).Click();
         }
 
-        public void SelectListForWidgetCreation(string listName)
-        {
-            var listNameSelector = $".//mat-option//span[contains(text(), '{listName}')]";
-            Driver.WaitForElementToBeDisplayed(By.XPath(listNameSelector));
-            Driver.FindElement(By.XPath(listNameSelector)).Click();
-        }
-
-        public void SelectSplitByItem(string item)
+       public void SelectSplitByItem(string item)
         {
             var splitByDdl = ".//*[@aria-label='SplitBy']";
             var expandedItems = $".//span[@class='mat-option-text']";
@@ -212,11 +177,6 @@ namespace DashworksTestAutomation.Pages
         public IWebElement GetTableWidgetPreview()
         {
             return Driver.FindElement(By.XPath(".//div[@class='table-responsive']"));
-        }
-
-        public bool IsAggregateByDropdownDisabled()
-        {
-            return Convert.ToBoolean(AggregateBy.GetAttribute("aria-disabled"));
         }
 
         public bool IsColorSchemeDropdownDisabled()

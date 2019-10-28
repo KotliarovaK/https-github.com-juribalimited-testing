@@ -26,7 +26,7 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWi
 	| ColumnName          |
 	| HDD Total Size (GB) |
 	And User create dynamic list with "DAS16167_HddList" name on "Devices" page
-	When Dashboard with "DAS16167_HddList" name created via API and opened
+	When Dashboard with 'DAS16167_HddList' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
@@ -35,7 +35,7 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWi
 	Then Widget Preview is displayed to the user
 	And 'All values are 0' message is displayed in Preview
 	When User clicks 'CREATE' button 
-	Then "HddListDAS16167" Widget is displayed to the user
+	Then 'HddListDAS16167' Widget is displayed to the user
 	And 'All values are 0' message is displayed in 'HddListDAS16167' widget
 
 Examples: 

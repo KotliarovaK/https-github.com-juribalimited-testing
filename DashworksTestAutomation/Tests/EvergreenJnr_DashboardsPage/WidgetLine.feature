@@ -12,18 +12,18 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatColourSchemeIsDisplayedForReadine
 	| ColumnName                 |
 	| prK: Application Readiness |
 	And User create dynamic list with "TestList_DAS15737" name on "Users" page
-	And Dashboard with "Dashboard for DAS15737" name created via API and opened
+	And Dashboard with 'Dashboard for DAS15737' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
-	And User selects "Line" in the "Widget Type" Widget dropdown
-	And User enters "DAS15737" as Widget Title
-	And User selects "TestList_DAS15737" as Widget List
-	And User selects "prK: Application Readiness" in the "Split By" Widget dropdown
-	And User selects "Count" in the "Aggregate Function" Widget dropdown
-	And User selects "prK: Application Readiness ASC" in the "Order By" Widget dropdown
+	And User selects 'Line' in the 'Widget Type' Widget dropdown
+	And User enters 'DAS15737' as Widget Title
+	And User selects 'TestList_DAS15737' as Widget List
+	And User selects 'prK: Application Readiness' in the 'Split By' Widget dropdown
+	And User selects 'Count' in the 'Aggregate Function' Widget dropdown
+	And User selects 'prK: Application Readiness ASC' in the 'Order By' Widget dropdown
 	And User clicks on the Colour Scheme dropdown
 	Then Colour Scheme dropdown is displayed to the user
-	And "Data Label" checkbox is not displayed on the Create Widget page
+	And 'Data Label' checkbox is not displayed on the Create Widget page
 	When User clicks 'CREATE' button 
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16069 @Cleanup
@@ -42,7 +42,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetValuesLeadsToDeviceList
 	| 1803: Pre-Migration \ Scheduled Date |
 	And User create dynamic list with "1803 ScheduleDAS16069" name on "Devices" page
 	Then "1803 ScheduleDAS16069" list is displayed to user
-	When Dashboard with "1803 ProjectDAS16069" name created via API and opened
+	When Dashboard with '1803 ProjectDAS16069' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	When User clicks 'ADD WIDGET' button 
 	And User adds new Widget
@@ -50,7 +50,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetValuesLeadsToDeviceList
 	| Line       | Project ScheduleDAS16069 | 1803 ScheduleDAS16069 | Hostname    | Count distinct    | 1803: Pre-Migration \ Scheduled Date | 1803: Pre-Migration \ Scheduled Date ASC | Yes       |
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
-	Then Card "Project ScheduleDAS16069" Widget is displayed to the user
+	Then Card 'Project ScheduleDAS16069' Widget is displayed to the user
 	When User clicks Edit mode trigger on Dashboards page
 	Then Tooltip is displayed for the point of Line widget
 	| WidgetName               | NumberOfPoint | Tooltip      |
@@ -76,17 +76,17 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetHavingComplianceColumns
 	| Device Application Compliance |
 	| Compliance                    |
 	And User create dynamic list with "ListForDas15920" name on "Users" page
-	And Dashboard with "DashboardForDas15920" name created via API and opened
+	And Dashboard with 'DashboardForDas15920' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title                 | List            | AggregateFunction | SplitBy                       | OrderBy                           | Drilldown |
 	| Line       | LineWidgetForDas15920 | ListForDas15920 | Count             | Device Application Compliance | Device Application Compliance ASC | Yes       |
 	Then Widget Preview is displayed to the user
-	Then "Data Label" checkbox is not displayed on the Create Widget page
+	Then 'Data Label' checkbox is not displayed on the Create Widget page
 	When User clicks 'CREATE' button 
-	Then Card "LineWidgetForDas15920" Widget is displayed to the user
-	And Line chart displayed in "LineWidgetForDas15920" widget
+	Then Card 'LineWidgetForDas15920' Widget is displayed to the user
+	And Line chart displayed in 'LineWidgetForDas15920' widget
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS15544 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetHasCorrectChronologicalOrder
@@ -95,7 +95,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetHasCorrectChronological
 	| ColumnName          |
 	| Service Pack or Build |
 	And User create dynamic list with "ListForDas15544" name on "Devices" page
-	And Dashboard with "1803 ProjectDAS15544" name created via API and opened
+	And Dashboard with '1803 ProjectDAS15544' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
@@ -103,8 +103,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetHasCorrectChronological
 	| Line       | SortOrderCheckForDas15544 | ListForDas15544 | Count             | Service Pack or Build | Service Pack or Build ASC | Yes       |
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
-	Then Card "SortOrderCheckForDas15544" Widget is displayed to the user
-	And Line X labels of "SortOrderCheckForDas15544" widget is displayed in following order:
+	Then Card 'SortOrderCheckForDas15544' Widget is displayed to the user
+	And Line X labels of 'SortOrderCheckForDas15544' widget is displayed in following order:
 	| ColumnName             |
 	| Empty                  |
 	| No Service Pack        |
@@ -127,7 +127,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetTooltipsShowsNameAndCou
 	| Line       | Project AllDevicesDAS15462 | All Devices | Hostname    | Count distinct    | Operating System | Operating System ASC |
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
-	Then Card "Project AllDevicesDAS15462" Widget is displayed to the user
+	Then Card 'Project AllDevicesDAS15462' Widget is displayed to the user
 	When User clicks Edit mode trigger on Dashboards page
 	Then Tooltip is displayed for the point of Line widget
 	| WidgetName                 | NumberOfPoint | Tooltip     |
@@ -143,25 +143,25 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetsShowsGraphDataWhenSpli
 	| Application Compliance            |
 	And User create dynamic list with "ListForDAS17825" name on "Devices" page
 	Then "ListForDAS17825" list is displayed to user
-	When Dashboard with "DAS17825_Dashboard" name created via API and opened
+	When Dashboard with 'DAS17825_Dashboard' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	When User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title             | List            | SplitBy                           | AggregateFunction | OrderBy   |
 	| Line       | WidgetForDAS17825 | ListForDAS17825 | Windows7Mi: Application Readiness | Count             | Count ASC |
 	Then Widget Preview is displayed to the user
-	And Color Scheme dropdown displayed with "Readiness Colour Scheme" placeholder
+	And Color Scheme dropdown displayed with 'Readiness Colour Scheme' placeholder
 	And Color Scheme dropdown is disabled
 	When User clicks 'CREATE' button 
-	Then Card "WidgetForDAS17825" Widget is displayed to the user
-	And Line chart displayed in "WidgetForDAS17825" widget
-	When User clicks Ellipsis menu for "WidgetForDAS17825" Widget on Dashboards page
-	And User clicks "Edit" item from Ellipsis menu on Dashboards page
-	And User selects "Application Compliance" as Widget Split By
-	And User selects "Application Compliance ASC" as Widget OrderBy 
+	Then Card 'WidgetForDAS17825' Widget is displayed to the user
+	And Line chart displayed in 'WidgetForDAS17825' widget
+	When User clicks Ellipsis menu for 'WidgetForDAS17825' Widget on Dashboards page
+	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	And User selects 'Application Compliance' as Widget Split By
+	When User selects 'Application Compliance ASC' in the 'Order By' Widget dropdown
 	Then Widget Preview is displayed to the user
-	And Color Scheme dropdown displayed with "Compliance Colour Scheme" placeholder 
+	And Color Scheme dropdown displayed with 'Compliance Colour Scheme' placeholder 
 	And Color Scheme dropdown is disabled
 	When User clicks 'UPDATE' button 
-	Then Card "WidgetForDAS17825" Widget is displayed to the user
-	And Line chart displayed in "WidgetForDAS17825" widget
+	Then Card 'WidgetForDAS17825' Widget is displayed to the user
+	And Line chart displayed in 'WidgetForDAS17825' widget

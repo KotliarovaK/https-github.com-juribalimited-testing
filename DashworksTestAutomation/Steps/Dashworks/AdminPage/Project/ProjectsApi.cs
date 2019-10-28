@@ -118,7 +118,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project
                     var response = _client.Value.Post(request);
 
                     if (response.StatusCode != HttpStatusCode.OK)
-                        Logger.Write($"Unable to execute request. URI: {requestUri}");
+                        Logger.Write($"Unable to execute request. \r\nStatus code: {response.StatusCode}URI: {requestUri}\r\nError message: {response.ErrorMessage}");
                 }
                 catch (Exception e)
                 {

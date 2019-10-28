@@ -601,7 +601,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public IList<IWebElement> GetColumnElementsByColumnName(string columnName)
         {
             var selector =
-                By.XPath($".//div[@col-id='{GetColIdByColumnName(columnName)}' and @role='gridcell']//*[not(*)][name(.) !='img']");
+                By.XPath($".//div[@col-id='{GetColIdByColumnName(columnName)}' and @role='gridcell']//*[not(*)][last()]");
             Driver.WaitForDataLoading();
             return Driver.FindElements(selector).ToList();
         }
