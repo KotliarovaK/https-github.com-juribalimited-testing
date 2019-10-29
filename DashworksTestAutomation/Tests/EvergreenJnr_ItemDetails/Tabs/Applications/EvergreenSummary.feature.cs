@@ -80,20 +80,21 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails.Tabs.Applicatio
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatEvergreenOwnedSubtabIsDisplayedCorrectly")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatApplicationsWhichAreOwnedAreAppearInApplicationsE" +
+            "vergreenDetailsForUser")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Users")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS18198")]
-        public virtual void EvergreenJnr_UsersList_CheckThatEvergreenOwnedSubtabIsDisplayedCorrectly()
+        [NUnit.Framework.CategoryAttribute("DAS18618")]
+        public virtual void EvergreenJnr_UsersList_CheckThatApplicationsWhichAreOwnedAreAppearInApplicationsEvergreenDetailsForUser()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_UsersList_CheckThatEvergreenOwnedSubtabIsDisplayedCorrectlyInternal();
+                    this.EvergreenJnr_UsersList_CheckThatApplicationsWhichAreOwnedAreAppearInApplicationsEvergreenDetailsForUserInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -112,14 +113,15 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails.Tabs.Applicatio
             }
         }
 
-        private void EvergreenJnr_UsersList_CheckThatEvergreenOwnedSubtabIsDisplayedCorrectlyInternal()
+        private void EvergreenJnr_UsersList_CheckThatApplicationsWhichAreOwnedAreAppearInApplicationsEvergreenDetailsForUserInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckThatEvergreenOwnedSubtabIsDisplayedCorrectly", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckThatApplicationsWhichAreOwnedAreAppearInApplicationsE" +
+                    "vergreenDetailsForUser", null, new string[] {
                         "Evergreen",
                         "Users",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS18198"});
+                        "DAS18618"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
