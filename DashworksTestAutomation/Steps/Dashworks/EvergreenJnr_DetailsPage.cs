@@ -48,7 +48,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
             if (!_driver.IsElementDisplayed(detailsPage.GetLinkByNameSelector(linkName), WebDriverExtensions.WaitTime.Short))
-                _driver.WaitForElementToBeDisplayedAfterRefresh(detailsPage.GetLinkByNameSelector(linkName), true, 640);
+                _driver.WaitForElementToBeDisplayedAfterRefresh(detailsPage.GetLinkByNameSelector(linkName), true, 50);
             detailsPage.GetLinkByName(linkName).Click();
             _driver.WaitForDataLoading();
         }
