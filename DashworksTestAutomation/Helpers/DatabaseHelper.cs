@@ -374,6 +374,21 @@ namespace DashworksTestAutomation.Helpers
 
         #endregion
 
+        #region Stage
+
+        public static void DeleteStageFromDb(string stageName, string projectId)
+        {
+            DatabaseHelper.ExecuteQuery($"Delete from [PM].[dbo].[ProjectStages] where [StageName] = '{stageName}' AND [ProjectID] = {projectId}");
+        }
+
+        //TODO try to avoid usage of this method
+        public static void DeleteStageFromDb(string stageName)
+        {
+            DatabaseHelper.ExecuteQuery($"Delete from [PM].[dbo].[ProjectStages] where [StageName] = '{stageName}'");
+        }
+
+        #endregion
+
         #region User
 
         public static string GetUserId(string name)
