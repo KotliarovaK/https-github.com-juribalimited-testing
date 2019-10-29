@@ -665,6 +665,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             }
         }
 
+        public bool IsTextboxDisabled(string placeholder)
+        {
+            return GetTextbox(placeholder, WebDriverExtensions.WaitTime.Short).Disabled();
+        }
+
         #endregion
 
         #region Button

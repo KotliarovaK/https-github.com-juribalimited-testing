@@ -393,6 +393,22 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 $"'{placeholder}' textbox is displayed");
         }
 
+
+        [Then(@"'(.*)' textbox is disabled")]
+        public void ThenTextboxIsDisabled(string placeholder)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsTrue(page.IsTextboxDisabled(placeholder),
+                $"'{placeholder}' textbox is not disabled");
+        }
+
+        [Then(@"'(.*)' textbox is not disabled")]
+        public void ThenTextboxIsNotDisabled(string placeholder)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsFalse(page.IsTextboxDisabled(placeholder),
+                $"'{placeholder}' textbox is disabled");
+        }
         #endregion
 
         #region Dropdown
