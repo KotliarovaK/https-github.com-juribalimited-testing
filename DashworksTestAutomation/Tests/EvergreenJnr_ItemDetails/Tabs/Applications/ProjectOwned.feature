@@ -13,7 +13,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatProjectOwnedSubtabIsDisplayedCorrectly
 	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
 	When User navigates to the 'Applications' left menu item
 	When User navigates to the 'Project Owned' left submenu item
-	Then "No applications owned by this user" message is displayed on the Details Page
+	Then 'No applications owned by this user' message is displayed on empty greed
 	When User navigates to the 'User' details page for 'AAH0343264' item
 	Then Details page for "AAH0343264" item is displayed to the user
 	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
