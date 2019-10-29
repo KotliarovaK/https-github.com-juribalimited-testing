@@ -85,6 +85,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheLinkCanBeOpenedAndTheLinkHasARigh
 	And User click back button in the browser
 	And Details page for "001BAQXT6JWFPI" item is displayed to the user
 	When User switches to the "Havoc (Big Data)" project in the Top bar on Item details page
+	#wait until the menu loading process is complete
+	When User waits for three seconds
 	And User navigates to the 'Details' left menu item
 	And User navigates to the 'Device Owner' left submenu item
 	And User clicks "QLL295118" link on the Details Page
