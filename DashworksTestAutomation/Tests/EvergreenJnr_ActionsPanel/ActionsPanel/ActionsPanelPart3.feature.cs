@@ -270,7 +270,7 @@ this.FeatureBackground();
 #line 45
  testRunner.Then("following Values are displayed in the \'Also Move Devices\' dropdown:", ((string)(null)), table4, "Then ");
 #line 50
- testRunner.When("User selects \'Owned devices only\' in the \'Also Move Users\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Owned devices only\' in the \'Also Move Devices\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "Options"});
@@ -283,7 +283,7 @@ this.FeatureBackground();
 #line 51
  testRunner.Then("following Values are displayed in the \'Also Move Mailboxes\' dropdown:", ((string)(null)), table5, "Then ");
 #line 56
- testRunner.When("User selects \'Owned mailboxes only\' in the \'Also Move Users\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Owned mailboxes only\' in the \'Also Move Mailboxes\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 57
  testRunner.Then("\'UPDATE\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -383,7 +383,7 @@ this.FeatureBackground();
 #line 74
  testRunner.Then("following Values are displayed in the \'Also Move Devices\' dropdown:", ((string)(null)), table7, "Then ");
 #line 79
- testRunner.When("User selects \'Owned devices only\' in the \'Also Move Users\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Owned devices only\' in the \'Also Move Devices\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 80
  testRunner.Then("\'UPDATE\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -483,7 +483,7 @@ this.FeatureBackground();
 #line 97
  testRunner.Then("following Values are displayed in the \'Also Move Mailboxes\' dropdown:", ((string)(null)), table9, "Then ");
 #line 102
- testRunner.When("User selects \'Owners only\' in the \'Also Move Users\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Owners only\' in the \'Also Move Mailboxes\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 103
  testRunner.Then("\'UPDATE\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

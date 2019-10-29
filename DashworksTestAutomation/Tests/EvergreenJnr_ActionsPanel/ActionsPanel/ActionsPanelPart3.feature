@@ -47,13 +47,13 @@ Scenario: EvergreenJnr_UsersList_CheckBucketBulkUpdateOptionsOnUsersListForEverg
 	| None               |
 	| Owned devices only |
 	| All linked devices |
-	When User selects 'Owned devices only' in the 'Also Move Users' dropdown
+	When User selects 'Owned devices only' in the 'Also Move Devices' dropdown
 	Then following Values are displayed in the 'Also Move Mailboxes' dropdown:
 	| Options              |
 	| None                 |
 	| Owned mailboxes only |
 	| All linked mailboxes |
-	When User selects 'Owned mailboxes only' in the 'Also Move Users' dropdown
+	When User selects 'Owned mailboxes only' in the 'Also Move Mailboxes' dropdown
 	Then 'UPDATE' button is not disabled
 
 @Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS14563 @DAS13960 @DAS14143
@@ -76,7 +76,7 @@ Scenario: EvergreenJnr_UsersList_CheckBucketBulkUpdateOptionsOnUsersListForUserS
 	| None               |
 	| Owned devices only |
 	| All linked devices |
-	When User selects 'Owned devices only' in the 'Also Move Users' dropdown
+	When User selects 'Owned devices only' in the 'Also Move Devices' dropdown
 	Then 'UPDATE' button is not disabled
 
 @Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS14563 @DAS13960 @DAS14160
@@ -99,7 +99,7 @@ Scenario: EvergreenJnr_UsersList_CheckBucketBulkUpdateOptionsOnUsersListForMailb
 	| None             |
 	| Owners only      |
 	| All linked users |
-	When User selects 'Owners only' in the 'Also Move Users' dropdown
+	When User selects 'Owners only' in the 'Also Move Mailboxes' dropdown
 	Then 'UPDATE' button is not disabled
 
 @Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS14421

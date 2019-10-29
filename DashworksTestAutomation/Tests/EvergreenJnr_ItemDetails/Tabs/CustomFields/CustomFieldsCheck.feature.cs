@@ -618,82 +618,6 @@ this.FeatureBackground();
 
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatDataOfColumnsIsDisplayedInTheCustomFieldSection" +
-            "")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS11483")]
-        [NUnit.Framework.CategoryAttribute("DAS17352")]
-        [NUnit.Framework.CategoryAttribute("DAS17281")]
-        [NUnit.Framework.CategoryAttribute("DAS17352")]
-        public virtual void EvergreenJnr_DevicesList_CheckThatDataOfColumnsIsDisplayedInTheCustomFieldSection()
-        {
-            System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
-            {
-                try
-                {
-                    this.EvergreenJnr_DevicesList_CheckThatDataOfColumnsIsDisplayedInTheCustomFieldSectionInternal();
-                    return;
-                }
-                catch (System.Exception exc)
-                {
-                    lastException = exc;
-                }
-                if (((i + 1)
-                     <= 1))
-                {
-                    testRunner.OnScenarioEnd();
-                }
-            }
-            if ((lastException != null))
-            {
-                throw lastException;
-            }
-        }
-
-        private void EvergreenJnr_DevicesList_CheckThatDataOfColumnsIsDisplayedInTheCustomFieldSectionInternal()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatDataOfColumnsIsDisplayedInTheCustomFieldSection" +
-                    "", null, new string[] {
-                        "Evergreen",
-                        "Devices",
-                        "EvergreenJnr_ItemDetails",
-                        "ItemDetailsDisplay",
-                        "DAS11483",
-                        "DAS17352",
-                        "DAS17281",
-                        "DAS17352"});
-#line 111
-this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 4
-this.FeatureBackground();
-#line 112
- testRunner.When("User navigates to the \'Device\' details page for \'54S1MGR8DYMYKH\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 113
- testRunner.And("User navigates to the \'Custom Fields\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 114
- testRunner.Then("\"1\" rows found label displays on Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
-                        "ColumnName"});
-            table5.AddRow(new string[] {
-                        "Custom Field"});
-            table5.AddRow(new string[] {
-                        "Value"});
-#line 115
- testRunner.Then("Content is present in the column of the Details Page table", ((string)(null)), table5, "Then ");
-#line 119
- testRunner.And("Custom fields agGrid columns are displayed fully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-
-        
-        [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatCustomFieldOrderIsCorrectInGrid")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
@@ -736,56 +660,56 @@ this.FeatureBackground();
                         "ItemDetailsDisplay",
                         "DAS18121",
                         "Cleanup"});
-#line 122
+#line 111
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
 #line hidden
-            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "ObjectType",
                         "ObjectId",
                         "FieldName",
                         "Value",
                         "FieldIndex"});
-            table6.AddRow(new string[] {
+            table5.AddRow(new string[] {
                         "device",
                         "5539",
                         "ComputerWarranty",
                         "bbb",
                         "0"});
-            table6.AddRow(new string[] {
+            table5.AddRow(new string[] {
                         "device",
                         "5539",
                         "ComputerWarranty",
                         "001",
                         "0"});
-            table6.AddRow(new string[] {
+            table5.AddRow(new string[] {
                         "device",
                         "5539",
                         "ComputerWarranty",
                         "aaa",
                         "0"});
-            table6.AddRow(new string[] {
+            table5.AddRow(new string[] {
                         "device",
                         "5539",
                         "ComputerWarranty",
                         "002",
                         "0"});
-#line 123
- testRunner.When("User creates Custom Field via API", ((string)(null)), table6, "When ");
-#line 129
+#line 112
+ testRunner.When("User creates Custom Field via API", ((string)(null)), table5, "When ");
+#line 118
  testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table7.AddRow(new string[] {
+            table6.AddRow(new string[] {
                         "Computer Warranty"});
-#line 130
- testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table7, "When ");
-#line 133
+#line 119
+ testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table6, "When ");
+#line 122
  testRunner.When("User perform search by \"Z75ievru6r751l\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 134
+#line 123
  testRunner.Then("\'001, 002, aaa, bbb\' content is displayed in the \'Computer Warranty\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
