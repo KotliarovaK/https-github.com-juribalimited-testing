@@ -130,6 +130,7 @@
     <Compile Include="DTO\ManagementConsole\SeniorCustomFieldDto.cs" />
     <Compile Include="DTO\Projects\Capacity\Capacity_SummaryDto.cs" />
     <Compile Include="DTO\Projects\StagePropertiesDto.cs" />
+    <Compile Include="DTO\Projects\Tasks\Stages.cs" />
     <Compile Include="DTO\Projects\Tasks\TaskProperties_EmailsDto.cs" />
     <Compile Include="DTO\Projects\Tasks\TaskProperties_ValuesDto.cs" />
     <Compile Include="DTO\Color.cs" />
@@ -447,6 +448,7 @@
     <Compile Include="Steps\Senior\Senior_ProjectsHome.cs" />
     <Compile Include="Steps\Senior\Senior_CreatingProject\Projects_Removing.cs" />
     <Compile Include="Steps\Senior\Senior_CreatingProject\Projects_SelfService.cs" />
+    <Compile Include="Steps\Senior\Stage\AfterScenario\RemoveStageAfterScenario.cs" />
     <Compile Include="Steps\Senior\Tasks\AfterScenario\RemoveTaskAfterScenario.cs" />
     <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\ActionsPanelPart1.feature.cs">
       <AutoGen>True</AutoGen>
@@ -1114,6 +1116,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CheckingFieldsContent.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_ItemDetails\Tabs\Applications\EvergreenSummary.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EvergreenSummary.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_ItemDetails\Tabs\Applications\ProjectOwned.feature.cs">
       <AutoGen>True</AutoGen>
@@ -2149,6 +2156,10 @@
     <None Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsContent\ActionsWithFieldsContent\CheckingFieldsContent.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CheckingFieldsContent.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ItemDetails\Tabs\Applications\EvergreenSummary.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>EvergreenSummary.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_ItemDetails\Tabs\Applications\ProjectOwned.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

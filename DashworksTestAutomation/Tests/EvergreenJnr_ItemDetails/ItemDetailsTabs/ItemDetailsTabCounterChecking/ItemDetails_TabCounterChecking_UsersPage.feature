@@ -99,8 +99,6 @@ Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayed
 	When User navigates to the 'User' details page for '0072B088173449E3A93' item
 	Then Details page for "0072B088173449E3A93" item is displayed to the user
 	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
-	#wait until the menu loading process is complete
-	When User waits for three seconds
 	Then User sees following main-tabs on left menu on the Details page:
 	| TabName          |
 	| Details          |

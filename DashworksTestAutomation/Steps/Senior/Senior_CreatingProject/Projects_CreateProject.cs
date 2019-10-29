@@ -38,6 +38,7 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
         private readonly MailTemplatePropertiesDto _mailTemplatePropertiesDto;
         private readonly NewsDto _newsDto;
         private readonly Tasks _tasks;
+        private readonly Stages _stages;
 
         public Projects_CreateProject(RemoteWebDriver driver, ProjectDto projectDto, DetailsDto detailsDto,
             RequestTypesDto requestTypesDto, CategoryPropertiesDto categoryPropertiesDto,
@@ -46,7 +47,7 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
             MailTemplatePropertiesDto mailTemplatePropertiesDto, NewsDto newsDto,
             TaskProperties_DetailsDto taskPropertiesDetailsDto, RequestType_DetailsDto requestTypeDetailsDto,
             TaskProperties_ValuesDto taskPropertiesValuesDto, TaskProperties_EmailsDto taskPropertiesEmailsDto,
-            Tasks tasks)
+            Tasks tasks, Stages stages)
         {
             _driver = driver;
             _projectDto = projectDto;
@@ -64,6 +65,7 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
             _taskPropertiesValuesDto = taskPropertiesValuesDto;
             _taskPropertiesEmailsDto = taskPropertiesEmailsDto;
             _tasks = tasks;
+            _stages = stages;
         }
 
         [When(@"User clicks create Project button")]
@@ -336,7 +338,9 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
             //_stagePropertiesDto.StageName += TestDataGenerator.RandomString();
             var tempStagePropertiesDto = new StagePropertiesDto();
             _stagePropertiesDto.CopyPropertiesTo(tempStagePropertiesDto);
+
             _projectDto.Stages.Add(tempStagePropertiesDto);
+            _stages.Value.Add(tempStagePropertiesDto);
 
             page.StageName.SendKeys(_stagePropertiesDto.StageName);
             _driver.WaitForDataLoadingOnProjects();
@@ -355,11 +359,11 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
             var task = table.CreateInstance<TaskPropertiesDto>();
             task.ProjectId = projectId;
             task.CopyPropertiesTo(_taskPropertiesDto);
-            
+
             //assign StagesNameString to StageNameEnum
             //_taskPropertiesDto.Stages =
             //    (StageNameEnum)Enum.Parse(typeof(StageNameEnum), _taskPropertiesDto.StagesNameString);
-            
+
             //assign TaskTypeString to TaskTypeEnum
             _taskPropertiesDto.TaskType =
                 EnumExtensions.Parse<TaskTypeEnum>(_taskPropertiesDto.TaskTypeString);
