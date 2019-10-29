@@ -188,14 +188,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.IsFalse(listDetailsElement.AvailableOwnerField.Displayed(), "Owner field is active");
         }
 
-        [When(@"User clicks Delete List button on the List Details panel")]
-        public void WhenUserClicksDeleteListButtonOnTheListDetailsPanel()
-        {
-            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
-            listDetailsElement.RemoveListButton.Click();
-            listDetailsElement.DeleteButtonInTheWarningMessage.Click();
-        }
-
         [Then(@"no Warning message is displayed in the list details panel")]
         public void ThenNoWarningMessageIsDisplayedInTheListDetailsPanel()
         {

@@ -929,7 +929,7 @@ namespace DashworksTestAutomation.Extensions
             WaitForElementDisplayCondition(driver, locator, false, waitSeconds);
         }
 
-        public static void WaitForElementDisplayCondition(this RemoteWebDriver driver, By by, bool condition, int waitSeconds)
+        private static void WaitForElementDisplayCondition(this RemoteWebDriver driver, By by, bool condition, int waitSeconds)
         {
             try
             {
@@ -1028,7 +1028,7 @@ namespace DashworksTestAutomation.Extensions
             WaitForElementInElementDisplayCondition(driver, element, selector, true, waitSeconds);
         }
 
-        private static void WaitForElementInElementDisplayCondition(this RemoteWebDriver driver, IWebElement element, By selector, bool condition, int waitSeconds)
+        public static void WaitForElementInElementDisplayCondition(this RemoteWebDriver driver, IWebElement element, By selector, bool condition, int waitSeconds)
         {
             try
             {

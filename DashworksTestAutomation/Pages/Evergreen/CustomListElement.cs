@@ -21,6 +21,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public By ListSubMenusInListsPanel = By.XPath(".//ancestor::submenu-item");
 
+        public By ListStarIcons = By.XPath(".//preceding-sibling::span//i[contains(@class,'star')]");
+
         public By SettingsIcon = By.XPath(".//ancestor::div[@class='submenu-item']//i[contains(@class,'settings')]");
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'list-edit-wrapper')]//button")]
@@ -119,10 +121,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public bool GetFavoriteStatus(string listName, bool expectedCondition)
         {
-            Driver.WaitForElementDisplayCondition(By.XPath(
-                $".//span[@class='submenu-actions-list-name'][text()='{listName}']//ancestor::li//i[@class='material-icons mat-star']"), expectedCondition, 15);
-            return Driver.IsElementDisplayed(By.XPath(
-                $".//span[@class='submenu-actions-list-name'][text()='{listName}']//ancestor::li//i[@class='material-icons mat-star']"), WebDriverExtensions.WaitTime.Medium);
+            Driver.ExecuteAction(() => Driver.WaitForElementInElementDisplayCondition(GetListElementByName(listName),
+                ListStarIcons, expectedCondition, 15));
+            return Driver.IsElementInElementDisplayed(GetListElementByName(listName), ListStarIcons, WebDriverExtensions.WaitTime.Short);
         }
 
         public bool ListNameWarningMessage(string listName)

@@ -148,7 +148,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             _driver.InsertFromClipboard(searchElement.SearchEverythingField);
 
-            Verify.That(searchElement.SearchEverythingField.GetAttribute("value").Replace("\t", "   "),
+            Verify.That(searchElement.SearchEverythingField.GetAttribute("value").Replace("\t", "   ").Trim(),
                 Is.EqualTo(data.Replace(@"\t", "   ")));
         }
 
