@@ -203,7 +203,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	Then Rows counter shows "4" of "6" rows
 	When User clicks Reset Filters button on the Admin page
 	When User clicks String Filter button for "Action" column on the Admin page
-	When User selects "Onboard Computer Object" checkbox from String Filter with item list on the Admin page
+	When User selects "Onboard Device Object" checkbox from String Filter with item list on the Admin page
 	Then Rows counter shows "4" of "6" rows
 	When User waits until Queue disappears
 	And User navigates to the 'History' left menu item
@@ -257,15 +257,8 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	Then Rows counter shows "4" of "6" rows
 	When User clicks Reset Filters button on the Admin page
 	When User clicks String Filter button for "Action" column on the Admin page
-	When User selects "Onboard Computer Object" checkbox from String Filter with item list on the Admin page
+	When User selects "Onboard Device Object" checkbox from String Filter with item list on the Admin page
 	Then Rows counter shows "4" of "6" rows
 	When User clicks String Filter button for "Status" column on the Admin page
 	When User selects "Succeeded" checkbox from String Filter on the Admin page
 	Then Rows counter shows "0" of "6" rows
-	When User type "0IJB93JZPG72PX" in Global Search Field
-	Then User clicks on "0IJB93JZPG72PX" search result
-	When User navigates to the 'Projects' left menu item
-	And User navigates to the 'Projects Summary' left submenu item
-	And User clicks "TestProject12490" link on the Details Page
-	Then "Project Object" page is displayed to the user
-	Then There are no errors in the browser console

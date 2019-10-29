@@ -893,12 +893,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 if (i == 29)
                 {
-                    throw new Exception("Queue processing took too much time: 60 sec");
+                    throw new Exception("Queue processing took too much time: 90 sec");
                 }
 
                 if (!_driver.FindElement(By.XPath(filter_label)).Text.Equals("0 rows"))
                 {
-                    Thread.Sleep(2000);
+                    Thread.Sleep(3000);
                     _driver.FindElement(By.XPath(refresh_icon)).Click();
                     _driver.WaitForDataLoading();
                 }
