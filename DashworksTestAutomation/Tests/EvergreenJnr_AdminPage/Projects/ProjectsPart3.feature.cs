@@ -752,8 +752,8 @@ this.FeatureBackground();
 #line 205
  testRunner.When("User clicks String Filter button for \"Action\" column on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 206
- testRunner.When("User selects \"Onboard Computer Object\" checkbox from String Filter with item list" +
-                    " on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \"Onboard Device Object\" checkbox from String Filter with item list o" +
+                    "n the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 207
  testRunner.Then("Rows counter shows \"4\" of \"6\" rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 208
@@ -867,8 +867,8 @@ this.FeatureBackground();
 #line 259
  testRunner.When("User clicks String Filter button for \"Action\" column on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 260
- testRunner.When("User selects \"Onboard Computer Object\" checkbox from String Filter with item list" +
-                    " on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \"Onboard Device Object\" checkbox from String Filter with item list o" +
+                    "n the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 261
  testRunner.Then("Rows counter shows \"4\" of \"6\" rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 262
@@ -877,20 +877,6 @@ this.FeatureBackground();
  testRunner.When("User selects \"Succeeded\" checkbox from String Filter on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 264
  testRunner.Then("Rows counter shows \"0\" of \"6\" rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 265
- testRunner.When("User type \"0IJB93JZPG72PX\" in Global Search Field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 266
- testRunner.Then("User clicks on \"0IJB93JZPG72PX\" search result", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 267
- testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 268
- testRunner.And("User navigates to the \'Projects Summary\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 269
- testRunner.And("User clicks \"TestProject12490\" link on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 270
- testRunner.Then("\"Project Object\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 271
- testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
