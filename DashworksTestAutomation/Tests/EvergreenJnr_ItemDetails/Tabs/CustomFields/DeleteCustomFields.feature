@@ -29,7 +29,7 @@ Scenario: EvergreenJnr_DevicesList_CheckCustomFieldDeleting
 	Then Warning message with "The selected custom field will be permanently deleted" text is displayed on the Project Details Page
 	When User clicks Delete button in the warning message
 	Then Success message with "Custom field value deleted successfully" text is displayed on Action panel
-	And "No custom fields found for this device" message is displayed on the Details Page
+	Then 'No custom fields found for this device' message is displayed on empty greed
 	And 'ValueDAS16489_1' content is not displayed in the 'Value' column
 	And 'Custom Fields' tab is displayed on left menu on the Details page and contains '0' count of items
 	And There are no errors in the browser console

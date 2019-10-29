@@ -169,7 +169,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithRemoveOwnerIsLoaded
 	When User selects 'Radio Rag Date Owner User Req B' option from 'Task' autocomplete
 	And User selects 'No change' in the 'Update Value' dropdown
 	And User selects 'No change' in the 'Update Date' dropdown
-	When User selects 'Remove' in the 'Update Owner' dropdown
+	When User selects 'Remove owner' in the 'Update Owner' dropdown
 	And User clicks 'CREATE' button 
 	When User clicks 'Automations' header breadcrumb
 	When User enters "17619_Automation" text in the Search field for "Automation" column

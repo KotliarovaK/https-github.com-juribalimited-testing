@@ -40,7 +40,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 detailsPage.NavigateToSectionByName(sectionName).Click();
             }
             else
-                Utils.Verify.IsTrue(detailsPage.OpenedSection.Displayed(), "Section content is not loaded");
+                Verify.IsTrue(detailsPage.OpenedSection.Displayed(), "Section content is not loaded");
         }
 
         [When(@"User clicks ""(.*)"" link on the Details Page")]
@@ -82,11 +82,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
             foreach (var row in table.Rows)
             {
-                Utils.Verify.IsTrue(detailsPage.GetCompareContentOnTheDetailsPage(row["Title"], row["Value"]).Displayed(),
+                Verify.IsTrue(detailsPage.GetCompareContentOnTheDetailsPage(row["Title"], row["Value"]).Displayed(),
                     $"{row["Title"]} does not match the {row["Value"]}");
             }
         }
 
+        //	| Fields |
         [Then(@"following fields are displayed in the open section:")]
         public void ThenFollowingFieldsAreDisplayedInTheOpenSection(Table table)
         {
@@ -100,7 +101,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenEmptyValueIsDisplayedForFieldOnTheDetailsPage(string fieldName)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            Utils.Verify.AreEqual(detailsPage.GetFildWithEmptyValueByName(fieldName), "", $"{fieldName} field must be empty!");
+            Verify.AreEqual(detailsPage.GetFildWithEmptyValueByName(fieldName), "", $"{fieldName} field must be empty!");
 
         }
 
@@ -110,15 +111,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var detailsPage = _driver.NowAt<DetailsPage>();
             _driver.WaitForElementToBeDisplayed(detailsPage.GraphicInOpenedSection);
             Utils.Verify.IsTrue(detailsPage.GraphicInOpenedSection.Displayed(), "Graphic content is not displayed");
-        }
-
-        [Then(@"""(.*)"" message is displayed on the Details Page")]
-        public void ThenMessageIsDisplayedOnTheDetailsPage(string message)
-        {
-            var listElement = _driver.NowAt<DetailsPage>();
-            if (!_driver.IsElementDisplayed(listElement.NoFoundMessage, WebDriverExtensions.WaitTime.Long))
-                throw new Exception($"'{message}' was not displayed");
-            Utils.Verify.AreEqual(message, listElement.NoFoundMessage.Text, $"{message} is not displayed");
         }
 
         [Then(@"Item content is displayed to the User")]
@@ -161,13 +153,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var content = _driver.NowAt<DetailsPage>();
             Utils.Verify.IsFalse(content.GetHrefByColumnName(columnName) != null, $"Links from '{columnName}' column is displayed, but should not be displayed!");
-        }
-
-        [Then(@"expanded section is displayed to the User")]
-        public void ThenExpandedSectionIsDisplayedToTheUser()
-        {
-            var detailsPage = _driver.NowAt<DetailsPage>();
-            Utils.Verify.IsTrue(detailsPage.SectionContainer.Displayed(), "Section is not displayed");
         }
 
         [Then(@"""(.*)"" column is displayed to the user")]
