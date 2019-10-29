@@ -78,7 +78,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyFo
 	When User navigates to the "<ListToNavigate>" list
 	Then Star icon is displayed for "TestList80EA23" list
 	When User navigates to the "TestList80EA23" list
-	Then Star icon is not displayed for "TestList80EA23" list
+	Then Star icon is displayed for "TestList80EA23" list
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User mark list as unfavorite
@@ -108,7 +108,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyFo
 	When User navigates to the "<ListToNavigate>" list
 	Then Star icon is displayed for "Static List TestName36" list
 	When User navigates to the "Static List TestName36" list
-	Then Star icon is not displayed for "Static List TestName36" list
+	Then Star icon is displayed for "Static List TestName36" list
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User mark list as unfavorite
