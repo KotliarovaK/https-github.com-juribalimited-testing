@@ -107,17 +107,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAllAgGridHeaderButtonsAreDisplayedFo
 	Then "Custom Field" column is "Left" Pinned
 	Then Grid is grouped
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11483 @DAS17352 @DAS17281 @DAS17352
-Scenario: EvergreenJnr_DevicesList_CheckThatDataOfColumnsIsDisplayedInTheCustomFieldSection
-	When User navigates to the 'Device' details page for '54S1MGR8DYMYKH' item
-	And User navigates to the 'Custom Fields' left submenu item
-	Then "1" rows found label displays on Details Page
-	Then Content is present in the column of the Details Page table
-	| ColumnName   |
-	| Custom Field |
-	| Value        |
-	And Custom fields agGrid columns are displayed fully
-
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18121 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCustomFieldOrderIsCorrectInGrid
 	When User creates Custom Field via API
