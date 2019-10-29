@@ -142,13 +142,13 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatMultiselectFilterIsAppliedForDoma
 	Then Details page for "000F977AC8824FE39B8@bclabs.local" item is displayed to the user
 	When User navigates to the 'Users' left menu item
 	When User clicks String Filter button for "Domain" column
-	And User closes Checkbox filter for "Domain" column
+	And User closes Checkbox filter
 	When User navigates to the 'Groups' left submenu item
 	When User clicks String Filter button for "Domain" column
-	And User closes Checkbox filter for "Domain" column
+	And User closes Checkbox filter
 	When User navigates to the 'Mailbox Permissions' left submenu item
 	When User clicks String Filter button for "Domain" column
-	And User closes Checkbox filter for "Domain" column
+	And User closes Checkbox filter
 
 	#Ann.Ilchenko 8/10/19: Waiting for attribute updates for automation (from Andrey).
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12292 @Not_Run
@@ -186,12 +186,12 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatDevicesUsersUsedQuantityMatchE
 	When User navigates to the 'Users' left submenu item
 	And User clicks String Filter button for "Used" column
 	And User clicks "False" checkbox from String Filter on the Details Page
-	And User closes Checkbox filter for "Used" column
+	And User closes Checkbox filter
 	Then Rows counter shows "98" of "194" rows
 	When User navigates to the 'Devices' left submenu item
 	And User clicks String Filter button for "Used" column
 	And User clicks "False" checkbox from String Filter on the Details Page
-	And User closes Checkbox filter for "Used" column
+	And User closes Checkbox filter
 	Then Rows counter shows "94" of "168" rows
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS14431
@@ -227,7 +227,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatBlanksValueChangedToEmptyValueOnDevi
 	Then following String Values are contained in the filter on the Details Page
 	| Values |
 	| None   |
-	When User closes Checkbox filter for "Status" column
+	When User closes Checkbox filter
 	When User navigates to the 'Owner Projects Summary' left submenu item
 	When User clicks String Filter button for "Workflow" column
 	Then following String Values are contained in the filter on the Details Page
@@ -241,7 +241,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatBlanksValueChangedToEmptyValueOnDevi
 	Then following String Values are contained in the filter on the Details Page
 	| Values |
 	| None   |
-	When User closes Checkbox filter for "Status" column
+	When User closes Checkbox filter
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16817 @DAS17726
 Scenario: EvergreenJnr_UsersList_CheckThatBlanksValueChangedToEmptyValueOnUsersPage
@@ -261,7 +261,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatBlanksValueChangedToEmptyValueOnUsersP
 	Then following String Values are contained in the filter on the Details Page
 	| Values |
 	| None   |
-	When User closes Checkbox filter for "Status" column
+	When User closes Checkbox filter
 	When User navigates to the 'Device Project Summary' left submenu item
 	And User clicks String Filter button for "Workflow" column
 	Then following String Values are contained in the filter on the Details Page
@@ -275,7 +275,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatBlanksValueChangedToEmptyValueOnUsersP
 	Then following String Values are contained in the filter on the Details Page
 	| Values |
 	| None   |
-	When User closes Checkbox filter for "Status" column
+	When User closes Checkbox filter
 	When User navigates to the 'User' details page for '0137C8E69921432992B' item
 	Then Details page for "0137C8E69921432992B" item is displayed to the user
 	When User navigates to the 'Projects' left menu item
@@ -288,7 +288,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatBlanksValueChangedToEmptyValueOnUsersP
 	Then following String Values are contained in the filter on the Details Page
 	| Values            |
 	| Empty             |
-	When User closes Checkbox filter for "Category" column
+	When User closes Checkbox filter
 
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16817
 Scenario: EvergreenJnr_ApplicationsList_CheckThatBlanksValueChangedToEmptyValueOnApplicationsPage
@@ -304,7 +304,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatBlanksValueChangedToEmptyValueO
 	Then following String Values are contained in the filter on the Details Page
 	| Values            |
 	| Empty             |
-	When User closes Checkbox filter for "Category" column
+	When User closes Checkbox filter
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16817 @DAS17726
 Scenario: EvergreenJnr_MailboxesList_CheckThatBlanksValueChangedToEmptyValueOnMailboxesPage
@@ -320,7 +320,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatBlanksValueChangedToEmptyValueOnMa
 	Then following String Values are contained in the filter on the Details Page
 	| Values            |
 	| Empty             |
-	When User closes Checkbox filter for "Category" column
+	When User closes Checkbox filter
 	And User navigates to the 'Mailbox User Projects' left submenu item
 	And User clicks String Filter button for "Workflow" column
 	Then following String Values are contained in the filter on the Details Page
@@ -334,4 +334,4 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatBlanksValueChangedToEmptyValueOnMa
 	Then following String Values are contained in the filter on the Details Page
 	| Values |
 	| None   |
-	When User closes Checkbox filter for "Status" column
+	When User closes Checkbox filter

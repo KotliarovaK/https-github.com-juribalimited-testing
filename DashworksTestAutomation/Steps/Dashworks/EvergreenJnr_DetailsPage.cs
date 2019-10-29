@@ -189,8 +189,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.GetStringFilterByColumnName(columnName);
         }
 
-        [When(@"User closes Checkbox filter for ""(.*)"" column")]
-        public void WhenUserClosesCheckboxFilterForColumn(string columnName)
+        [When(@"User closes Checkbox filter")]
+        public void WhenUserClosesCheckboxFilter()
         {
             var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             filterElement.BodyContainer.Click();
