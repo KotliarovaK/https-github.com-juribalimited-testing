@@ -141,7 +141,7 @@ this.FeatureBackground();
 #line 15
  testRunner.When("User navigates to the \'Project Owned\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 16
- testRunner.Then("\"No applications owned by this user\" message is displayed on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'No applications owned by this user\' message is displayed on empty greed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 17
  testRunner.When("User navigates to the \'User\' details page for \'AAH0343264\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 18

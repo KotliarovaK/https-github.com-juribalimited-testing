@@ -202,7 +202,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoneReadinessCanBePartiallyEdited
 	And User navigates to the 'Readiness' left menu item
 	And User enters "None" text in the Search field for "Readiness" column
 	And User click content from "Readiness" column
-	Then Add button for 'Readiness' textbox is not disabled
+	Then 'Readiness' textbox is disabled
 	When User enters 'tooltip14938_1' text to 'Tooltip' textbox
 	And User sets Ready checkbox in "TRUE" on Edit Readiness
 	And User sets Default for Applications checkbox in "TRUE" on Edit Readiness

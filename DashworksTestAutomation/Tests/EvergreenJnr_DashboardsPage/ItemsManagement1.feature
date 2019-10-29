@@ -159,8 +159,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheEditMode
     And User clicks Ellipsis menu for 'WidgetForDAS12978_2' Widget on Dashboards page
 	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
 	And User updates Widget with following info:
-	| WidgetType | Title                      | List | SplitBy | AggregateBy | OrderBy     |
-	|            | WidgetForDAS12978_2_Edited |      | Version | Application | Version ASC |
+	| WidgetType | Title                      | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy     | MaxValues | ShowLegend |
+	| Bar        | WidgetForDAS12978_2_Edited | All Applications | Version | Application | Count distinct    | Version ASC | 10        | true       |
 	Then User sees following Widgets on Dashboards page:
 	| WidgetTitles               |
 	| WidgetForDAS12978          |
@@ -216,8 +216,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetStaysOnTopPositionAfterEdit
 	And User clicks Ellipsis menu for 'WidgetForDAS14583_3' Widget on Dashboards page
 	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
 	And User updates Widget with following info:
-	| WidgetType | Title | List | SplitBy | AggregateBy |
-	|            |       |      |         | Vendor      |
+	| WidgetType | Title               | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
+	| Pie        | WidgetForDAS14583_3 | All Applications | Vendor  | Vendor      | Count distinct    | Vendor ASC | 10        | false      |
 	Then User sees following Widgets on Dashboards page:
 	| WidgetTitles        |
 	| WidgetForDAS14583_3 |
@@ -242,6 +242,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckWarningMessageDisplayingWhenDeletingW
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS14610
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCorrectMessageAppearsWhenOpenningNotExistingDashboard
+	When User clicks Show Dashboards panel icon on Dashboards page
 	When User tries to open same page with '9898998' item id
 	Then User sees 'This dashboard does not exist or you do not have access to it' text in warning message on Dashboards submenu pane
-	And There are no errors in the browser console
+	Then There are no errors in the browser console

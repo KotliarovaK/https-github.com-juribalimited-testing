@@ -27,12 +27,16 @@ Scenario: EvergreenJnr_AllLists_CheckThatSelfServiceUrlIsNotDisplayedOnObjectDet
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
 	When User switches to the "Devices Evergreen Capacity Project" project in the Top bar on Item details page
+	#wait for the data to be updated.
+	When User waits for three seconds
 	And User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	Then field with "Self Service URL" text is not displayed in expanded tab on the Details Page
 	When User navigates to the 'User' details page for '0072B088173449E3A93' item
 	Then Details page for "0072B088173449E3A93" item is displayed to the user
 	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
+	#wait for the data to be updated.
+	When User waits for three seconds
 	And User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	Then field with "Self Service URL" text is displayed in expanded tab on the Details Page

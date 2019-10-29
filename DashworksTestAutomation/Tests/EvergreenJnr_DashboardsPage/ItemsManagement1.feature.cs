@@ -900,14 +900,20 @@ this.FeatureBackground();
                         "List",
                         "SplitBy",
                         "AggregateBy",
-                        "OrderBy"});
+                        "AggregateFunction",
+                        "OrderBy",
+                        "MaxValues",
+                        "ShowLegend"});
             table13.AddRow(new string[] {
-                        "",
+                        "Bar",
                         "WidgetForDAS12978_2_Edited",
-                        "",
+                        "All Applications",
                         "Version",
                         "Application",
-                        "Version ASC"});
+                        "Count distinct",
+                        "Version ASC",
+                        "10",
+                        "true"});
 #line 161
  testRunner.And("User updates Widget with following info:", ((string)(null)), table13, "And ");
 #line hidden
@@ -1187,13 +1193,21 @@ this.FeatureBackground();
                         "Title",
                         "List",
                         "SplitBy",
-                        "AggregateBy"});
+                        "AggregateBy",
+                        "AggregateFunction",
+                        "OrderBy",
+                        "MaxValues",
+                        "ShowLegend"});
             table20.AddRow(new string[] {
-                        "",
-                        "",
-                        "",
-                        "",
-                        "Vendor"});
+                        "Pie",
+                        "WidgetForDAS14583_3",
+                        "All Applications",
+                        "Vendor",
+                        "Vendor",
+                        "Count distinct",
+                        "Vendor ASC",
+                        "10",
+                        "false"});
 #line 218
  testRunner.And("User updates Widget with following info:", ((string)(null)), table20, "And ");
 #line hidden
@@ -1350,12 +1364,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line 245
- testRunner.When("User tries to open same page with \'9898998\' item id", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks Show Dashboards panel icon on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 246
+ testRunner.When("User tries to open same page with \'9898998\' item id", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 247
  testRunner.Then("User sees \'This dashboard does not exist or you do not have access to it\' text in" +
                     " warning message on Dashboards submenu pane", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 247
- testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 248
+ testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

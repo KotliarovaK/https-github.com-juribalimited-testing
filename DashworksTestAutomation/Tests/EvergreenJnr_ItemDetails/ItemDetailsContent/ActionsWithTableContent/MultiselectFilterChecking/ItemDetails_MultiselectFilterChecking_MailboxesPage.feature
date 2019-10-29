@@ -16,12 +16,12 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatOnlyValueIncludedInTheColumnIsDisp
 	Then following String Values are displayed in the filter on the Details Page
 	| Values |
 	| SMTP   |
-	When User closes Checkbox filter for "Type" column
+	When User closes Checkbox filter
 	When User clicks String Filter button for "Reply To" column
 	Then following Boolean Values are displayed in the filter on the Details Page
 	| Values |
 	| True   |
-	When User closes Checkbox filter for "Reply To" column
+	When User closes Checkbox filter
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
 Scenario: EvergreenJnr_MailboxesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForUsersTabOnMailboxesPage
@@ -36,19 +36,19 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatOnlyValueIncludedInTheColumnIsDisp
 	Then following Boolean Values are displayed in the filter on the Details Page
 	| Values |
 	| True   |
-	When User closes Checkbox filter for "Owner" column
+	When User closes Checkbox filter
 	When User clicks String Filter button for "Domain" column
 	Then following String Values are displayed in the filter on the Details Page
 	| Values |
 	| Empty  |
-	When User closes Checkbox filter for "Domain" column
+	When User closes Checkbox filter
 	When User navigates to the 'Groups' left submenu item
 	Then 'BCLABS' content is displayed in the 'Domain' column
 	When User clicks String Filter button for "Domain" column
 	Then following String Values are displayed in the filter on the Details Page
 	| Values |
 	| BCLABS |
-	When User closes Checkbox filter for "Domain" column
+	When User closes Checkbox filter
 	When User navigates to the 'Mailbox Permissions' left submenu item
 	Then 'BCLABS' content is displayed in the 'Domain' column
 	Then 'FullAccess' content is displayed in the 'Permission' column
@@ -56,7 +56,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatOnlyValueIncludedInTheColumnIsDisp
 	Then following String Values are displayed in the filter on the Details Page
 	| Values |
 	| BCLABS |
-	When User closes Checkbox filter for "Domain" column
+	When User closes Checkbox filter
 	When User clicks String Filter button for "Permission" column
 	#Order of the options in the dropdown is the same as on Senior
 	Then following String Values are displayed in the filter on the Details Page
@@ -66,4 +66,4 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatOnlyValueIncludedInTheColumnIsDisp
 	| DeleteItem       |
 	| ChangeOwner      |
 	| ChangePermission |
-	When User closes Checkbox filter for "Permission" column
+	When User closes Checkbox filter
