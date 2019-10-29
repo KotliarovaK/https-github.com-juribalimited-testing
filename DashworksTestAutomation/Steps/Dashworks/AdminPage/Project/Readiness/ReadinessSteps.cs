@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using DashworksTestAutomation.Base;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Readiness;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
@@ -31,20 +32,18 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Readiness
         public void WhenUserUpdatesReadinessPropertiesOnEditReadiness(Table table)
         {
             var createReadiness = _driver.NowAt<CreateReadinessPage>();
-
+            var bpage = _driver.NowAt<BaseDashboardPage>();
             foreach (var row in table.Rows)
             {
                 if (!string.IsNullOrEmpty(row["Readiness"]))
                 {
-                    createReadiness.ReadinessField.Clear();
-                    createReadiness.ReadinessField.SendKeys(row["Readiness"]);
+                    bpage.PopulateTextbox("Readiness", row["Readiness"]);
                     _readiness.Value.Add(new ReadinessDto() { ReadinessName = row["Readiness"], ProjectId = Int32.Parse(DatabaseHelper.GetProjectId(row["ProjectName"])) });
                 }
 
                 if (!string.IsNullOrEmpty(row["Tooltip"]))
                 {
-                    createReadiness.TooltipField.Clear();
-                    createReadiness.TooltipField.SendKeys(row["Tooltip"]);
+                    bpage.PopulateTextbox("Tooltip", row["Tooltip"]);
                 }
 
                 if (!string.IsNullOrEmpty(row["Ready"]))
@@ -83,61 +82,12 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Readiness
             }
         }
 
-        [When(@"User enters ""(.*)"" in Readiness input on Edit Readiness")]
-        public void WhenUserEntersInReadinessInputOnEditReadiness(string text)
-        {
-            var createReadiness = _driver.NowAt<CreateReadinessPage>();
-
-            if (!string.IsNullOrEmpty(text))
-            {
-                createReadiness.ReadinessField.Clear();
-                createReadiness.ReadinessField.SendKeys(text);
-            }
-        }
-
-        [Then(@"User sees ""(.*)"" in Readiness input on Edit Readiness")]
-        public void ThenUserSeesInReadinessInputOnEditReadiness(string text)
-        {
-            var createReadiness = _driver.NowAt<CreateReadinessPage>();
-
-            Utils.Verify.That(createReadiness.ReadinessField.GetAttribute("value"), Is.EqualTo(text));
-        }
-
-        [Then(@"Readiness input displayed disabled on Edit Readiness")]
-        public void ThenReadinessInputDisplayedDisabledOnEditReadiness()
-        {
-            var createReadiness = _driver.NowAt<CreateReadinessPage>();
-
-            Utils.Verify.That(createReadiness.ReadinessField.Enabled,
-                Is.EqualTo(false), "Readiness input is in different state");
-        }
-
-        [When(@"User enters ""(.*)"" in Tooltip input on Edit Readiness")]
-        public void WhenUserEntersInTooltipInputOnEditReadiness(string text)
-        {
-            var createReadiness = _driver.NowAt<CreateReadinessPage>();
-
-            if (!string.IsNullOrEmpty(text))
-            {
-                createReadiness.TooltipField.Clear();
-                createReadiness.TooltipField.SendKeys(text);
-            }
-        }
-
-        [Then(@"User sees ""(.*)"" in Tooltip input on Edit Readiness")]
-        public void ThenUserSeesInTooltipInputOnEditReadiness(string text)
-        {
-            var createReadiness = _driver.NowAt<CreateReadinessPage>();
-
-            Utils.Verify.That(createReadiness.TooltipField.GetAttribute("value"), Is.EqualTo(text));
-        }
-
         [Then(@"User sees Tooltip field not equal to ""(.*)"" on Edit Readiness")]
         public void ThenUserSeesTooltipFieldNotEqualToOnEditReadiness(string text)
         {
-            var createReadiness = _driver.NowAt<CreateReadinessPage>();
+            var page = _driver.NowAt<BaseDashboardPage>();
 
-            Utils.Verify.That(createReadiness.TooltipField.GetAttribute("value"), Is.Not.EqualTo(text));
+            Utils.Verify.That(page.GetTextbox("Tooltip").GetAttribute("value"), Is.Not.EqualTo(text));
         }
 
         [When(@"User sets Ready checkbox in ""(.*)"" on Edit Readiness")]
@@ -245,8 +195,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Readiness
         public void WhenUserRemembersReadinessDataOnEditReadiness()
         {
             var page = _driver.NowAt<CreateReadinessPage>();
-            readinessDto.ReadinessName = page.ReadinessField.GetAttribute("value");
-            readinessDto.Tooltip = page.TooltipField.GetAttribute("value");
+            var bpage = _driver.NowAt<BaseDashboardPage>();
+            readinessDto.ReadinessName = bpage.GetTextbox("Readiness").GetAttribute("value");
+            readinessDto.Tooltip = bpage.GetTextbox("Tooltip").GetAttribute("value");
             readinessDto.Ready = page.ReadyCheckboxState.Selected;
             readinessDto.DefaultForApplications = page.DefaultCheckBoxState.Selected;
         }
@@ -261,9 +212,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Readiness
         [Then(@"User checks that opened readiness name is the same as stored one")]
         public void ThenUserChecksThatOpenedReadinessNameIsTheSameAsStoredOne()
         {
-            var page = _driver.NowAt<CreateReadinessPage>();
+            var page = _driver.NowAt<BaseDashboardPage>();
 
-            Utils.Verify.That(readinessDto.ReadinessName, Is.EqualTo(page.ReadinessField.GetAttribute("value")), "Name is different from stored one");
+            Utils.Verify.That(readinessDto.ReadinessName, Is.EqualTo(page.GetTextbox("Readiness").GetAttribute("value")), "Name is different from stored one");
         }
 
         [Then(@"Filtered readiness item equals to stored one")]

@@ -589,10 +589,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         private string GetColIdByColumnName(string columnName)
         {
-            var textParts = columnName.Split('\'');
-            var spanPart = textParts.Where(part => !string.IsNullOrEmpty(part))
-                .Aggregate(string.Empty, (current, part) => current + $"[contains(text(),'{part}')]");
-            var by = By.XPath($".//span{spanPart}/ancestor::div[@col-id]");
+            var text = columnName.Contains('\'') ?
+                columnName.Split('\'').Aggregate(string.Empty, (current, s) => current + $"[contains(text(),'{s}')]") :
+                $"[text()='{columnName}']";
+            var by = By.XPath($".//span{text}/ancestor::div[@col-id]");
             if (!Driver.IsElementDisplayed(by, WebDriverExtensions.WaitTime.Short))
                 throw new Exception($"'{columnName}' column was not displayed");
             return Driver.FindElement(by).GetAttribute("col-id");
@@ -683,12 +683,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             var by = By.XPath(
                 $".//div[@role='gridcell'][{GetColumnNumberByName(columnName)}]");
             return Driver.FindElement(by).Text;
-        }
-
-        public List<string> GetColumnTooltips(string columnName)
-        {
-            return Driver.FindElements(By.XPath(string.Format(GridCellByColumnName, GetColIdByColumnName(columnName))))
-                .Select(x => x.GetAttribute("title")).ToList();
         }
 
         public List<string> GetColumnColors(string columnName)

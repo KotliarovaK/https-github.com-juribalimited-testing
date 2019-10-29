@@ -142,9 +142,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheEditMode
 	| Pie        | WidgetForDAS12978 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC | 10        | true       |
 	And User clicks refresh button in the browser
 	And User clicks Show Dashboards panel icon on Dashboards page
-	
 	And User navigates to the "Dashboard for DAS12978" list
-	
 	And User clicks Edit mode trigger on Dashboards page
 	Then User sees Edit mode trigger is in the On position on Dashboards page
 	And User sees Edit mode trigger has blue style on Dashboards page
@@ -184,9 +182,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheReadOnlyMode
 	Then Dashboards sub menu is hidden on Dashboards page
 	When User clicks Show Dashboards panel icon on Dashboards page
 	Then User sees Dashboards sub menu on Dashboards page
-	
 	When User navigates to the "Dashboard for DAS12977" list
-	
 	Then 'CREATE DASHBOARD' button is not disabled
 	And 'ADD SECTION' button is not displayed
 	And 'ADD WIDGET' button is not displayed

@@ -529,6 +529,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             var selector =
                 By.XPath(
                     $".//div[contains(@class,'filter-category-title')]//div[text()='{filterName}']/parent::div//div//strong[text()='{category}']");
+            Driver.MouseHover(selector);
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
