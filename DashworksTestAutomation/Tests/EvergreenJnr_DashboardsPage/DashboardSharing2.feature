@@ -164,8 +164,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckUserCanEditWidgetFromSharedDashboard
 	And User clicks Ellipsis menu for 'WidgetForDAS15550' Widget on Dashboards page
 	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
 	And User updates Widget with following info:
-	| WidgetType | Title                    | List | SplitBy | AggregateBy | OrderBy     |
-	|            | WidgetForDAS15550_Edited |      | Version | Application | Version ASC |
+	| WidgetType | Title                    | List             | SplitBy     | AggregateBy | AggregateFunction | OrderBy         | MaxValues |
+	| Table      | WidgetForDAS15550_Edited | All Applications | Application | Application | Count distinct    | Application ASC | 10        |
 	Then User sees widget with the next name 'WidgetForDAS15550_Edited' on Dashboards page
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS14915 @Cleanup

@@ -75,12 +75,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
+        [When(@"User clicks menu for '(.*)' dashboard")]
+        public void WhenUserClicksMenuForDashboard(string dashboardName)
+        {
+            var dashboardElement = _driver.NowAt<EvergreenDashboardsPage>();
+            dashboardElement.ClickMenuButtonByDashboardName(dashboardName);
+            Thread.Sleep(500);
+        }
+
         [When(@"User selects '(.*)' menu for '(.*)' dashboard")]
         public void WhenUserManagePaneForListName(string menuItem, string dashboardName)
         {
             var dashboardElement = _driver.NowAt<EvergreenDashboardsPage>();
 
-            dashboardElement.ClickMenuButtonByDashboardName(dashboardName);
+            WhenUserClicksMenuForDashboard(dashboardName);
             _driver.WaitForElementToBeDisplayed(dashboardElement.DashboardMenuItem(menuItem));
             dashboardElement.DashboardMenuItem(menuItem).Click();
             _driver.WaitForDataLoading();

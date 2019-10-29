@@ -948,6 +948,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             if (index > 0)
                 current = current.Substring(0, index) + "/" + Id;
             _driver.Navigate().GoToUrl(current);
+            _driver.Navigate().Refresh();
         }
 
         [When(@"User tries to open not existing page")]

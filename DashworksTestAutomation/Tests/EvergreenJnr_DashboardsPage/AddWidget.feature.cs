@@ -169,7 +169,7 @@ this.FeatureBackground();
                         "AggregateFunction",
                         "OrderBy"});
             table2.AddRow(new string[] {
-                        "",
+                        "Pie",
                         "Dashboard for DAS14587",
                         "All Devices",
                         "Device Type",

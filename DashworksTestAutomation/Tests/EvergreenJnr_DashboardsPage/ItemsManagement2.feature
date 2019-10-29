@@ -153,8 +153,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorAppearsAndCorrectTe
 @Evergreen @EvergreenJnr_DashboardsPage @DAS15877 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatSettingsDisplayedForDashboard
 	When Dashboard with 'Dashboard_DAS15877' name created via API and opened
-	And User clicks Show Dashboards panel icon on Dashboards page
-	When User selects 'Settings' menu for 'Dashboard_DAS15877' dashboard
+	When User clicks Show Dashboards panel icon on Dashboards page
+	When User clicks menu for 'Dashboard_DAS15877' dashboard
 	Then User sees dashboard menu with next options
 	| OptionsName    |
 	| Manage         |
