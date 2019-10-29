@@ -16,7 +16,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         public const string DatepickerCellSelector = "//td[contains(@class,'cell')]";
 
-        private string NamedDropdownSelector = ".//mat-select[@aria-label='{0}' or @automation='{0}']";
+        private string NamedDropdownSelector = ".//mat-select[@aria-label='{0}' or @automation='{0}']|//label[text()='{0}']/ancestor::span//preceding-sibling::mat-select";
 
         public const string ColorItem = ".//div[@class='status']";
 
@@ -663,6 +663,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             {
                 return false;
             }
+        }
+
+        public bool IsTextboxDisabled(string placeholder)
+        {
+            return GetTextbox(placeholder, WebDriverExtensions.WaitTime.Short).Disabled();
         }
 
         #endregion

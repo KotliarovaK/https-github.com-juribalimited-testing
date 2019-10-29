@@ -262,10 +262,3 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	When User clicks String Filter button for "Status" column on the Admin page
 	When User selects "Succeeded" checkbox from String Filter on the Admin page
 	Then Rows counter shows "0" of "6" rows
-	When User type "0IJB93JZPG72PX" in Global Search Field
-	Then User clicks on "0IJB93JZPG72PX" search result
-	When User navigates to the 'Projects' left menu item
-	And User navigates to the 'Projects Summary' left submenu item
-	And User clicks "TestProject12490" link on the Details Page
-	Then "Project Object" page is displayed to the user
-	Then There are no errors in the browser console
