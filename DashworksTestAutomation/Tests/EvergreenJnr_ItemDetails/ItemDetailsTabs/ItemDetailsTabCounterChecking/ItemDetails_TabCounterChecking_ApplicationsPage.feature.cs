@@ -320,8 +320,6 @@ this.FeatureBackground();
 #line 68
  testRunner.When("User switches to the \"*Project K-Computer Scheduled Project\" project in the Top b" +
                     "ar on Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 70
- testRunner.When("User waits for three seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "TabName"});
@@ -333,9 +331,9 @@ this.FeatureBackground();
                         "MSI"});
             table6.AddRow(new string[] {
                         "Distribution"});
-#line 71
+#line 69
  testRunner.Then("User sees following main-tabs on left menu on the Details page:", ((string)(null)), table6, "Then ");
-#line 77
+#line 75
  testRunner.And("\"Distribution\" main-tab is displayed with disabled state on left menu on the Deta" +
                     "ils page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -349,21 +347,21 @@ this.FeatureBackground();
                         "Programs"});
             table7.AddRow(new string[] {
                         "Custom Fields"});
-#line 79
+#line 77
  testRunner.And("\"Details\" main-menu on the Details page contains following sub-menu:", ((string)(null)), table7, "And ");
-#line 86
+#line 84
  testRunner.And("\"Advertisements\" tab is displayed on left menu on the Details page and contains c" +
                     "ount of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 87
+#line 85
  testRunner.And("\"Programs\" tab is displayed on left menu on the Details page and contains count o" +
                     "f items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 88
+#line 86
  testRunner.And("\"Custom Fields\" tab is displayed on left menu on the Details page and contains co" +
                     "unt of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 89
+#line 87
  testRunner.And("\"Application\" tab is displayed on left menu on the Details page and NOT contains " +
                     "count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 91
+#line 89
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
@@ -374,18 +372,18 @@ this.FeatureBackground();
                         "Project Details"});
             table8.AddRow(new string[] {
                         "Projects"});
-#line 92
+#line 90
  testRunner.Then("\"Projects\" main-menu on the Details page contains following sub-menu:", ((string)(null)), table8, "Then ");
-#line 98
+#line 96
  testRunner.And("\"Projects\" tab is displayed on left menu on the Details page and contains count o" +
                     "f items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 99
+#line 97
  testRunner.And("\"Evergreen Details\" tab is displayed on left menu on the Details page and NOT con" +
                     "tains count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 100
+#line 98
  testRunner.And("\"Project Details\" tab is displayed on left menu on the Details page and NOT conta" +
                     "ins count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 102
+#line 100
  testRunner.When("User navigates to the \'MSI\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
@@ -394,12 +392,12 @@ this.FeatureBackground();
                         "MSI Files"});
             table9.AddRow(new string[] {
                         "AOK"});
-#line 103
+#line 101
  testRunner.Then("\"MSI\" main-menu on the Details page contains following sub-menu:", ((string)(null)), table9, "Then ");
-#line 108
+#line 106
  testRunner.And("\"MSIFiles\" tab is displayed on left menu on the Details page and NOT contains cou" +
                     "nt of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 109
+#line 107
  testRunner.And("\"AOK\" tab is displayed on left menu on the Details page and NOT contains count of" +
                     " items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden

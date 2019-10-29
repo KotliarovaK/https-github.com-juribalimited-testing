@@ -81,8 +81,6 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDispl
 	When User navigates to the 'Mailbox' details page for '00B5CCB89AD0404B965@bclabs.local' item
 	Then Details page for "00B5CCB89AD0404B965@bclabs.local" item is displayed to the user
 	When User switches to the "Mailbox Evergreen Capacity Project" project in the Top bar on Item details page
-	#wait until the menu loading process is complete
-	When User waits for three seconds
 	Then User sees following main-tabs on left menu on the Details page:
 	| TabName  |
 	| Details  |

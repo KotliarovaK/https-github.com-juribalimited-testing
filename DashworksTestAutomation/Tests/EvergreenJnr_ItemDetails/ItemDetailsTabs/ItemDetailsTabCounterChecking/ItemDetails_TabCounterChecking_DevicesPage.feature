@@ -106,8 +106,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewPatternOfTheVerticalMenuIsDisplay
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
 	When User switches to the "Havoc (Big Data)" project in the Top bar on Item details page
-	#wait until the menu loading process is complete
-	When User waits for three seconds
 	Then User sees following main-tabs on left menu on the Details page:
 	| TabName          |
 	| Details          |
