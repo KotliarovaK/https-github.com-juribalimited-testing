@@ -75,10 +75,11 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetValuesLeadsToApplicati
 	When User clicks '918' value for 'Microsoft Corporation' column
 	Then "918" rows are displayed in the agGrid
 	And Column is displayed in following order:
-	| ColumnName  |
-	| Application |
-	| Vendor      |
-	| Version     |
+	| ColumnName         |
+	| Application        |
+	| Vendor             |
+	| Version            |
+	| Owner Display Name |
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15208
 Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetDisplayedFullyInPreviewPane
@@ -300,10 +301,11 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNewSeverityOptionDisplayedForWidg
 	Then Table columns of 'DAS-15852' widget placed in the next order:
 	| headers   |
 	| Empty     |
+	| Unknown   |
 	| Not Ready |
 	| On Target |
 	| Ready     |
-	| Unknown   |
+	
 	When User clicks Ellipsis menu for 'DAS-15852' Widget on Dashboards page
 	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
 	When User selects '1803: Pre-Migration \ Ready to Migrate ASC' in the 'Order By' Widget dropdown
@@ -311,8 +313,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNewSeverityOptionDisplayedForWidg
 	When User clicks 'UPDATE' button
 	Then Table columns of 'DAS-15852' widget placed in the next order:
 	| headers   |
-	| Not Ready |
 	| Empty     |
+	| Not Ready |
 	| On Target |
 	| Ready     |
 	| Unknown   |
@@ -382,14 +384,14 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorsOccurWhenCreatingE
     | Values |
     | 1      |
 	And User clicks Save button on the list panel
-	And User create dynamic list with "ListForDAS18324" name on "Devices" page
-	Then "ListForDAS18324" list is displayed to user
+	And User create dynamic list with "AListForDAS18324" name on "Devices" page
+	Then "AListForDAS18324" list is displayed to user
 	When Dashboard with 'Dashboard for DAS18324' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
-	| WidgetType | Title             | List            | SplitBy          | AggregateFunction | OrderBy          |
-	| Table      | WidgetForDAS18324 | ListForDAS18324 | App Count (Used) | Count             | App Count (Used) |
+	| WidgetType | Title             | List             | SplitBy          | AggregateFunction | OrderBy              |
+	| Table      | WidgetForDAS18324 | AListForDAS18324 | App Count (Used) | Count             | App Count (Used) ASC |
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
 

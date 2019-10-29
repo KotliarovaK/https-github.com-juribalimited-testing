@@ -239,13 +239,13 @@ Scenario: EvergreenJnr_DashboardsPage_CheckComplianceFirstCellIconsForCardWidget
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15355 @DAS15662 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckReadinessFirstCellIconsForCardWidget
 	When User clicks 'Devices' on the left-hand menu
-	And User clicks the Columns button
-	And ColumnName is entered into the search box and the selection is clicked
-	| ColumnName      |
-	| 1803: Readiness |
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "1803: Readiness" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues |
+	| Green          |
 	And User move '1803: Readiness' column to 'Hostname' column
 	And User move 'Hostname' column to 'Operating System' column
-	And User clicks on '1803: Readiness' column header
 	Then 'All Devices' list should be displayed to the user
 	When User create dynamic list with "DAS15355_List" name on "Devices" page
 	Then "DAS15355_List" list is displayed to user

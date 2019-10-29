@@ -181,7 +181,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountDistinctAsAggregate
 	And User enters 'Widget Name' as Widget Title
 	And User selects 'ListWithAllDatatypes' as Widget List
 	When User selects 'Operating System' in the 'Split By' Widget dropdown
-	When User selects 'Count' in the 'Aggregate Function' Widget dropdown
+	When User selects 'Count distinct' in the 'Aggregate Function' Widget dropdown
 	Then User sees following options for Aggregate By selector on Create Widget page:
 	| items                                |
 	| Device Key                           |
