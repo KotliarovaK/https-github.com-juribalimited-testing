@@ -117,8 +117,10 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 .FirstOrDefault(c => c.IsElementActive());
         }
 
-        public bool GetFavoriteStatus(string listName)
+        public bool GetFavoriteStatus(string listName, bool expectedCondition)
         {
+            Driver.WaitForElementDisplayCondition(By.XPath(
+                $".//span[@class='submenu-actions-list-name'][text()='{listName}']//ancestor::li//i[@class='material-icons mat-star']"), expectedCondition, 15);
             return Driver.IsElementDisplayed(By.XPath(
                 $".//span[@class='submenu-actions-list-name'][text()='{listName}']//ancestor::li//i[@class='material-icons mat-star']"), WebDriverExtensions.WaitTime.Medium);
         }
