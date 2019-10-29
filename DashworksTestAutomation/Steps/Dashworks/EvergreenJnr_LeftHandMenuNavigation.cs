@@ -41,7 +41,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 _driver.NowAt<LeftHandMenuElement>() :
                 _driver.NowAtWithoutWait<LeftHandMenuElement>();
 
-            menu.GetMenuElementByName(menuItemName).Click();
+            var menuItem = menu.GetMenuElementByName(menuItemName);
+            _driver.WaitForElementToBeDisplayed(menuItem);
+            menuItem.Click();
         }
 
         #endregion

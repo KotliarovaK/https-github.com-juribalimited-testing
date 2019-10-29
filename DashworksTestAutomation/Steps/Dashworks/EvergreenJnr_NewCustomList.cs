@@ -470,14 +470,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenStarIconIsDisplayedForList(string listName)
         {
             var listElement = _driver.NowAt<CustomListElement>();
-            Utils.Verify.IsTrue(listElement.GetFavoriteStatus(listName), "Star icon is NOT displayed");
+            Utils.Verify.IsTrue(listElement.GetFavoriteStatus(listName, true), "Star icon is NOT displayed");
         }
 
         [Then(@"Star icon is not displayed for ""(.*)"" list")]
         public void ThenStarIconIsNotDisplayedForList(string listName)
         {
             var listElement = _driver.NowAt<CustomListElement>();
-            Verify.IsFalse(listElement.GetFavoriteStatus(listName), "Star icon is displayed but shouldn't");
+            Verify.IsFalse(listElement.GetFavoriteStatus(listName, false), "Star icon is displayed but shouldn't");
         }
 
         [When(@"User enters ""(.*)"" text in Search field at List Panel")]
