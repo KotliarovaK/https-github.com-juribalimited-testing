@@ -63,7 +63,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             _driver.WaitForDataLoadingInActionsPanel();
             _driver.WaitForDataLoadingInTopBarOnItemDetailsPage();
 
-            Thread.Sleep(3000);
+            //waiting for menu to finish loading
+            Thread.Sleep(1500);
         }
 
         [Then(@"""(.*)"" project is selected in the Top bar on Item details page")]
