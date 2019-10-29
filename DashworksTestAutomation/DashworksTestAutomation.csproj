@@ -1115,6 +1115,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CheckingFieldsContent.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr_ItemDetails\Tabs\Applications\EvergreenSummary.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EvergreenSummary.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr_ItemDetails\Tabs\Applications\ProjectOwned.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2149,6 +2154,10 @@
     <None Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsContent\ActionsWithFieldsContent\CheckingFieldsContent.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CheckingFieldsContent.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ItemDetails\Tabs\Applications\EvergreenSummary.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>EvergreenSummary.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_ItemDetails\Tabs\Applications\ProjectOwned.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
