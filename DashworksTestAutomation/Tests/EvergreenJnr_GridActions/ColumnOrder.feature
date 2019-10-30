@@ -140,7 +140,6 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAfterDeletingFirstColumnTheColu
 	| ColumnName         |
 	| Vendor             |
 	| Version            |
-	| Owner Display Name |
 
 @Evergreen @AllLists @EvergreenJnr_Columns @ColumnOrder @DAS12345 @DAS12823 @DAS13668
 Scenario Outline: EvergreenJnr_AllLists_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasReturnedToDefaultPositionWhenActionsPanelWasOpen

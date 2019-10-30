@@ -1760,7 +1760,7 @@ this.FeatureBackground();
  testRunner.Then("Color data displayed with correct color for \"Barry\'sUse: Application Readiness\" c" +
                     "olumn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 381
- testRunner.Then("\"None\" tooltip displayed in \"Barry\'sUse: Application Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"NONE\" tooltip displayed in \"Barry\'sUse: Application Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
