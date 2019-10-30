@@ -833,7 +833,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         #endregion
 
-
         #region Checkbox
 
         //TODO This is for BaseGrid but method can be changed to generic

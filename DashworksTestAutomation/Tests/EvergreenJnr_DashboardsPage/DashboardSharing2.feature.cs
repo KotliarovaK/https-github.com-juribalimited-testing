@@ -644,7 +644,7 @@ this.FeatureBackground();
                         "Application",
                         "Count distinct",
                         "Application ASC",
-                        "10"});
+                        "5"});
 #line 166
  testRunner.And("User updates Widget with following info:", ((string)(null)), table13, "And ");
 #line 169
