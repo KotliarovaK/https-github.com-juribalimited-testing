@@ -380,22 +380,21 @@ this.FeatureBackground();
 
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithDateTaskOnlyProperties")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckUpdateDateDropdownValueWithDateTaskOnlyProperties")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
         [NUnit.Framework.CategoryAttribute("BulkUpdate")]
         [NUnit.Framework.CategoryAttribute("DAS18270")]
         [NUnit.Framework.CategoryAttribute("DAS18233")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
-        public virtual void EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithDateTaskOnlyProperties()
+        public virtual void EvergreenJnr_AdminPage_CheckUpdateDateDropdownValueWithDateTaskOnlyProperties()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithDateTaskOnlyPropertiesInternal();
+                    this.EvergreenJnr_AdminPage_CheckUpdateDateDropdownValueWithDateTaskOnlyPropertiesInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -414,11 +413,10 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithDateTaskOnlyPropertiesInternal()
+        private void EvergreenJnr_AdminPage_CheckUpdateDateDropdownValueWithDateTaskOnlyPropertiesInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithDateTaskOnlyProperties", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckUpdateDateDropdownValueWithDateTaskOnlyProperties", null, new string[] {
                         "Evergreen",
-                        "Users",
                         "EvergreenJnr_ActionsPanel",
                         "BulkUpdate",
                         "DAS18270",

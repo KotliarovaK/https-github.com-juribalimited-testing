@@ -81,9 +81,9 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithRadiobuttonProp
 	| Remove                           |
 	| No change                        |
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18270 @DAS18233 @Not_Ready
+@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18270 @DAS18233 @Not_Ready
 #Waiting for 'Update relative to now' value
-Scenario: EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithDateTaskOnlyProperties
+Scenario: EvergreenJnr_AdminPage_CheckUpdateDateDropdownValueWithDateTaskOnlyProperties
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks the Actions button
