@@ -978,6 +978,22 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         #endregion
 
+        #region Checkbox
+
+        public IWebElement GetCheckbox(string ariaLabel)
+        {
+            //TODO mb first selector in the or statement should be deleted
+            var selector = By.XPath($".//mat-checkbox[@aria-label='{ariaLabel}']|.//input[@aria-label='{ariaLabel}']//ancestor::mat-checkbox");
+            if (!Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Long))
+            {
+                throw new Exception($"'{ariaLabel}' checkbox was not displayed");
+            }
+
+            return Driver.FindElement(selector);
+        }
+
+        #endregion
+
         public IList<IWebElement> GetChipsOfTextbox(string textbox)
         {
             var chipsSelector = By.XPath("./ancestor::div[contains(@class, 'multiselect')]//li[contains(@class, 'chips-item')]");

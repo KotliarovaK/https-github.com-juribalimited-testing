@@ -45,7 +45,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogMessageForDeletedTaskInAction
 	When User enters '17247' text to 'Description' textbox
 	When User selects 'All Devices' option from 'Scope' autocomplete
 	When User selects 'Manual' in the 'Run' dropdown
-	When User selects "Active" checkbox on the Automation Page
+	When User checks 'Active' checkbox
 	And User clicks 'CREATE' button 
 	#Create Action
 	When User enters '17247_Action' text to 'Action Name' textbox

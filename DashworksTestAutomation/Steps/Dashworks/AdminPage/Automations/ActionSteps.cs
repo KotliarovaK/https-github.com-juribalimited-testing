@@ -23,15 +23,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations
             _driver = driver;
         }
 
-        [When(@"User selects ""(.*)"" in the ""(.*)"" dropdown for Actions")]
-        public void WhenUserSelectsInTheDropdownForActions(string item, string dropdownName)
-        {
-            var page = _driver.NowAt<ActionsPage>();
-            page.GetDropdownByName(dropdownName).Click();
-            var dropdown = _driver.NowAt<BaseDashboardPage>();
-            dropdown.GetDropdownValueByName(item).Click();
-        }
-
         [When(@"User selects ""(.*)"" Value for Actions")]
         public void WhenUserSelectsValueForActions(string dropdownName)
         {
