@@ -40,13 +40,5 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations
             var actualList = element.OptionListOnActionsPanel.Select(value => value.Text).ToList();
             Verify.AreEqual(expectedList, actualList, $"Value for {dropDownName} are different");
         }
-
-        [Then(@"Actions page is displayed to the User")]
-        public void ThenActionsPageIsDisplayedToTheUser()
-        {
-            var page = _driver.NowAt<ActionsPage>();
-            _driver.WaitForElementToBeDisplayed(page.CreateActionButton);
-            Verify.IsTrue(page.CreateActionButton.Displayed(), "Actions page is not displayed");
-        }
     }
 }

@@ -326,7 +326,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditActionPage
 	Then '' value is displayed in the 'Path' dropdown
 	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
 	When User clicks 'CANCEL' button 
-	Then Actions page is displayed to the User
+	Then Create Action page is displayed to the User
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS16992 @DAS17427 @DAS17625 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActions
