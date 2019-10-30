@@ -2488,7 +2488,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatGridIsNotDisappearedAfterSelect
 	| s      |
 	When User clicks 'RUN LIST' button
 	When User click Edit button for "App Vendor" filter
-	Then message "" is displayed to the user below Search results
+	Then table content is present
 	#18530
 	When User clicks Save button on the list panel
 	When User selects Save as new list option
