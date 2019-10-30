@@ -26,23 +26,5 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Automations
                 SelectorFor(this, p => p.AutomationsLink)
             };
         }
-
-        //TODO REMOVE THIS METHOD
-        public IWebElement GetDropdownByName(string dropdown)
-        {
-            var selector = By.XPath($".//div//*[@placeholder='{dropdown}']");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
-        //TODO REMOVE THIS METHOD
-        public void GetSelectValueForActions(string dropdown)
-        {
-            Driver.WaitForElementToBeDisplayed(ValueDropdown);
-            ValueDropdown.Click();
-            var selector = By.XPath($".//mat-option//span[text()='{dropdown}']");
-            Driver.WaitForElementToBeDisplayed(selector);
-            Driver.FindElement(selector).Click();
-        }
     }
 }
