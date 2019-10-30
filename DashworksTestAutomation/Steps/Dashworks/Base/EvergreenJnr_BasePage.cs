@@ -873,6 +873,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.IsTrue(baseActionItem.GetChipsOfTextbox(field).Count == 0, "Chip box is displayed on the page");
         }
 
+        [Then(@"'(.*)' chip value displayed for '(.*)' textbox")]
+        public void ThenChipValueDisplayedForTextbox(string value, string field)
+        {
+            var baseActionItem = _driver.NowAt<BaseDashboardPage>();
+            var chipsValue = baseActionItem.GetChipsOfTextbox(field).First().Text;
+            Verify.AreEqual(chipsValue, value, $"Chip value is not {value}");
+        }
         #endregion
     }
 }

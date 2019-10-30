@@ -485,17 +485,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UpdateTaskValuePart1.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateCustomFfield\CreateCustomFieldForBulkUpdate.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateCustomField\CreateCustomFieldForBulkUpdate.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CreateCustomFieldForBulkUpdate.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateCustomFfield\UpdateCustomFieldPart2.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateCustomField\UpdateCustomFieldPart2.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>UpdateCustomFieldPart2.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateCustomFfield\UpdateCustomFieldPart1.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateCustomField\UpdateCustomFieldPart1.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>UpdateCustomFieldPart1.feature</DependentUpon>
@@ -539,6 +539,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CreateCustomFieldForAutomations.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\UpdateTaskValue\UpdateTaskValueAutomations4.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UpdateTaskValueAutomations4.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\UpdateTaskValue\UpdateTaskValueAutomations1.feature.cs">
       <AutoGen>True</AutoGen>
@@ -1651,15 +1656,15 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>UpdateTaskValuePart1.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateCustomFfield\CreateCustomFieldForBulkUpdate.feature">
+    <None Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateCustomField\CreateCustomFieldForBulkUpdate.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CreateCustomFieldForBulkUpdate.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateCustomFfield\UpdateCustomFieldPart2.feature">
+    <None Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateCustomField\UpdateCustomFieldPart2.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>UpdateCustomFieldPart2.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateCustomFfield\UpdateCustomFieldPart1.feature">
+    <None Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateCustomField\UpdateCustomFieldPart1.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>UpdateCustomFieldPart1.feature.cs</LastGenOutput>
     </None>
@@ -1694,6 +1699,10 @@
     <None Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\UpdateCustomField\CreateCustomFieldForAutomations.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CreateCustomFieldForAutomations.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\UpdateTaskValue\UpdateTaskValueAutomations4.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UpdateTaskValueAutomations4.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\UpdateTaskValue\UpdateTaskValueAutomations1.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
