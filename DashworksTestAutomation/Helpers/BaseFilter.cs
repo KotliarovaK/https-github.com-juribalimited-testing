@@ -290,7 +290,7 @@ namespace DashworksTestAutomation.Helpers
                 var selector = string.Format(CheckboxSelector, row["Option"]);
                 var checkbox = _driver.FindElements(By.XPath(selector));
 
-                if (checkbox.Count > 1)
+                if (checkbox.FirstOrDefault().Displayed())
                 {
                     if (bool.Parse(row["State"]) != checkbox.FirstOrDefault().GetFilterCheckboxSelectedState())
                         checkbox.FirstOrDefault().Click();
@@ -305,7 +305,8 @@ namespace DashworksTestAutomation.Helpers
                     {
                         Console.WriteLine(e);
                     }
-                    checkbox.FirstOrDefault().Click();
+                    if (bool.Parse(row["State"]) != checkbox.FirstOrDefault().GetFilterCheckboxSelectedState())
+                        checkbox.FirstOrDefault().Click();
                 }
             }
 

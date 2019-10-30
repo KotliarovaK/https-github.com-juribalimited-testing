@@ -1434,7 +1434,7 @@ this.FeatureBackground();
 #line 326
  testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 327
- testRunner.And("Next data \'\\tRed\\t\\tRed\\tFalse\\tFalse\\t50\\t1\\t0\\t0\\t4\' is copied", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Next data \'Red\\t\\tRed\\tFalse\\tFalse\\t50\\t1\\t0\\t0\\t4\' is copied", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 328
  testRunner.When("User clicks refresh button in the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 329
