@@ -141,7 +141,7 @@ this.FeatureBackground();
  testRunner.Then("\'Infragistics Expense Reference Site 2004 Vol. 1\' content is not displayed in the" +
                     " \'Application\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 16
- testRunner.When("User navigates to the \'Evergreen Detail\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Evergreen Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 17
  testRunner.Then("\'Infragistics Expense Reference Site 2004 Vol. 1\' content is not displayed in the" +
                     " \'Application\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

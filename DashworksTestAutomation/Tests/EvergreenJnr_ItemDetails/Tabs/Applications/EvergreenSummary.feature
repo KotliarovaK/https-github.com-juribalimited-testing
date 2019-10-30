@@ -13,7 +13,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatApplicationsWhichAreOwnedAreAppearInAp
 	When User navigates to the 'Applications' left menu item
 	And User navigates to the 'Evergreen Summary' left submenu item
 	Then 'Infragistics Expense Reference Site 2004 Vol. 1' content is not displayed in the 'Application' column
-	When User navigates to the 'Evergreen Detail' left submenu item
+	When User navigates to the 'Evergreen Details' left submenu item
 	Then 'Infragistics Expense Reference Site 2004 Vol. 1' content is not displayed in the 'Application' column
 	When User navigates to the 'Evergreen Owned' left submenu item
 	Then 'Infragistics Expense Reference Site 2004 Vol. 1' content is displayed in the 'Application' column
