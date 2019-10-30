@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.DTO;
@@ -16,6 +17,7 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Remote;
+using RestSharp.Extensions;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -170,7 +172,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var cellElement = page.GetGridCellByText(textTooltip);
             _driver.MouseHover(cellElement);
             var tooltip = _driver.GetTooltipBubbleText();
-            Verify.AreEqual(textTooltip, tooltip, "Tooltip is not displayed correctly");
+            Verify.AreEqual(textTooltip.ToLower(), tooltip.ToLower(), "Tooltip is not displayed correctly");
         }
 
         [Then(@"""(.*)"" content is displayed for ""(.*)"" column")]

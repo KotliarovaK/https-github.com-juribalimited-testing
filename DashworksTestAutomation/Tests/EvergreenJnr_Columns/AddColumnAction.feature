@@ -378,7 +378,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatApplicationReadinessColumnIsDisplayed
 	| ColumnName                        |
 	| Barry'sUse: Application Readiness |
 	Then Color data displayed with correct color for "Barry'sUse: Application Readiness" column
-	Then "None" tooltip displayed in "Barry'sUse: Application Readiness" column
+	Then "NONE" tooltip displayed in "Barry'sUse: Application Readiness" column
 
 @Evergreen @Devices @EvergreenJnr_Columns @AddColumnAction @DAS16364
 Scenario: EvergreenJnr_Devices_CheckOrderByStatusColumnSorting
