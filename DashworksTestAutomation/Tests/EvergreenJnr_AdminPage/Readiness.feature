@@ -324,7 +324,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatReadinessRightClickMenuCopyOptionsWork
 	And User performs right-click on "Red" cell in the grid
 	And User selects 'Copy row' option in context menu
 	Then There are no errors in the browser console
-	And Next data '\tRed\t\tRed\tFalse\tFalse\t50\t1\t0\t0\t4' is copied
+	And Next data 'Red\t\tRed\tFalse\tFalse\t50\t1\t0\t0\t4' is copied
 	When User clicks refresh button in the browser
 	And User performs right-click on "Amber" cell in the grid
 	And User selects 'Copy cell' option in context menu

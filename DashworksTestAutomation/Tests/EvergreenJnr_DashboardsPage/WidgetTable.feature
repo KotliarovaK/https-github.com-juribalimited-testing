@@ -79,7 +79,6 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetValuesLeadsToApplicati
 	| Application        |
 	| Vendor             |
 	| Version            |
-	| Owner Display Name |
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15208
 Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetDisplayedFullyInPreviewPane

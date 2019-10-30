@@ -16,7 +16,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         public const string DatepickerCellSelector = "//td[contains(@class,'cell')]";
 
-        private string NamedDropdownSelector = ".//mat-select[@aria-label='{0}' or @automation='{0}']|//label[text()='{0}']/ancestor::span//preceding-sibling::mat-select";
+        private string NamedDropdownSelector = ".//mat-select[@aria-label='{0}' or @automation='{0}']|//label[text()='{0}']/ancestor::span[contains(@class,'label')]//preceding-sibling::mat-select";
 
         public const string ColorItem = ".//div[@class='status']";
 

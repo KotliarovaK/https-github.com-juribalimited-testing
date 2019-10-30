@@ -396,7 +396,6 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatAfterAddingRowsToAStaticListFr
 	| Application        |
 	| Vendor             |
 	| Version            |
-	| Owner Display Name |
 	| Compliance         |
 	| Import             |
 
@@ -666,7 +665,6 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatSubcategoriesOnColumnsPanelAre
 	| Application        |
 	| Vendor             |
 	| Version            |
-	| Owner Display Name |
 	| Application Key    |
 	| Inventory Site     |
 	When User clicks Add New button on the Filter panel
@@ -678,7 +676,6 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatSubcategoriesOnColumnsPanelAre
 	| Application        |
 	| Vendor             |
 	| Version            |
-	| Owner Display Name |
 	| Application Key    |
 	| Inventory Site     |
 
