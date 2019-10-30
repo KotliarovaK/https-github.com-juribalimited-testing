@@ -6,7 +6,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS17564 @Cleanup @Not_Ready
-#Waiting for 
+#Waiting for new banner message on the Create Actions page
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueCapacitySlotValidationsForDevicesAutomation
 	When Project created via API and opened
 	| ProjectName   | Scope       | ProjectTemplate | Mode               |
