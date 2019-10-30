@@ -35,7 +35,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations.AfterSce
             var resp = _client.Value.Put(request);
 
             if (resp.StatusCode != HttpStatusCode.OK)
+            {
                 throw new Exception($"Unable to set '{order}' processing order for '{actionName}' action");
+            }
         }
     }
 }

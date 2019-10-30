@@ -113,7 +113,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSuccessfulRunInOutcomeColumn
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
 	When User clicks 'CREATE AUTOMATION' button 
-	Then "Create Automation" title is displayed on the Automations page
+	Then 'Create Automation' page subheader is displayed to user
 	When User enters 'D16974_Automation' text to 'Automation Name' textbox
 	When User enters '1745104' text to 'Description' textbox
 	When User selects 'All Users' option from 'Scope' autocomplete
@@ -224,7 +224,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckSuccessfulRunningAutomationWithMai
 	When User enters '17212' text to 'Description' textbox
 	When User selects '<Scope>' option from 'Scope' autocomplete
 	When User selects 'Manual' in the 'Run' dropdown
-	When User selects "Active" checkbox on the Automation Page
+	When User checks 'Active' checkbox
 	And User clicks 'CREATE' button 
 	When User clicks 'Automations' header breadcrumb
 	When User enters "<AutomationName>" text in the Search field for "Automation" column

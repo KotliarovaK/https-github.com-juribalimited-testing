@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
@@ -23,39 +24,22 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations
             _driver = driver;
         }
 
-        [When(@"User selects ""(.*)"" in the ""(.*)"" dropdown for Actions")]
-        public void WhenUserSelectsInTheDropdownForActions(string item, string dropdownName)
-        {
-            var page = _driver.NowAt<ActionsPage>();
-            page.GetDropdownByName(dropdownName).Click();
-            var dropdown = _driver.NowAt<BaseDashboardPage>();
-            dropdown.GetDropdownValueByName(item).Click();
-        }
-
         [When(@"User selects ""(.*)"" Value for Actions")]
         public void WhenUserSelectsValueForActions(string dropdownName)
         {
-            var page = _driver.NowAt<ActionsPage>();
-            page.GetSelectValueForActions(dropdownName);
+           throw new Exception("DELETE THIS METHOD AND REUSE GENERIC");
         }
 
         [Then(@"following items are displayed in the ""(.*)"" dropdown for Actions:")]
         public void ThenFollowingItemsAreDisplayedInTheDropdownForActions(string dropDownName, Table table)
         {
-            var page = _driver.NowAt<ActionsPage>();
-            page.GetDropdownByName(dropDownName).Click();
-            var element = _driver.NowAt<BaseDashboardPage>();
-            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            var actualList = element.OptionListOnActionsPanel.Select(value => value.Text).ToList();
-            Verify.AreEqual(expectedList, actualList, $"Value for {dropDownName} are different");
-        }
-
-        [Then(@"Actions page is displayed to the User")]
-        public void ThenActionsPageIsDisplayedToTheUser()
-        {
-            var page = _driver.NowAt<ActionsPage>();
-            _driver.WaitForElementToBeDisplayed(page.CreateActionButton);
-            Verify.IsTrue(page.CreateActionButton.Displayed(), "Actions page is not displayed");
+            throw new Exception("DELETE THIS METHOD AND REUSE GENERIC");
+            //var page = _driver.NowAt<ActionsPage>();
+            //page.GetDropdownByName(dropDownName).Click();
+            //var element = _driver.NowAt<BaseDashboardPage>();
+            //var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            //var actualList = element.OptionListOnActionsPanel.Select(value => value.Text).ToList();
+            //Verify.AreEqual(expectedList, actualList, $"Value for {dropDownName} are different");
         }
     }
 }

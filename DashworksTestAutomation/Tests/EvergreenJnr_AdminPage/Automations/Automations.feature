@@ -53,7 +53,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationsLogGridLoads
 	#Then Counter shows "8 of 10" found rows
 	When User clicks content from "Automation" column
 	Then Automation page is displayed correctly
-	Then "Edit Automation" title is displayed on the Automations page
+	Then 'Edit Automation' page subheader is displayed to user
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15735 @DAS15805 @DAS16764 @DAS16728 @DAS17222 @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations
@@ -175,7 +175,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuIsWorkedCorrectly
 	When User enters "15431_Third_Active" text in the Search field for "Automation" column
 	Then "TRUE" content is displayed for "Active" column
 	When User clicks "Edit" option in Cog-menu for "15431_Third_Active" item on Admin page
-	Then "Edit Automation" title is displayed on the Automations page
+	Then 'Edit Automation' page subheader is displayed to user
 	Then Page with '15431_Third_Active' header is displayed to user
 
 #Need to use three Automations: inactive, inactive, active
@@ -437,12 +437,12 @@ Scenario: EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
 	When User clicks 'CREATE AUTOMATION' button 
-	Then "Create Automation" title is displayed on the Automations page
+	Then 'Create Automation' page subheader is displayed to user
 	When User enters '16764_Automation' text to 'Automation Name' textbox
 	When User enters '16764' text to 'Description' textbox
 	When User selects 'All Devices' option from 'Scope' autocomplete
-	When User selects "Active" checkbox on the Automation Page
-	When User selects "Stop on failed action" checkbox on the Automation Page
+	When User checks 'Active' checkbox
+	When User checks 'Stop on failed action' checkbox
 	Then 'CREATE' button is disabled
 	When User selects 'Manual' in the 'Run' dropdown
 	And User clicks 'CREATE' button 
@@ -479,7 +479,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeListIsLoadedWithCor
 	Then Page with 'Automations' header is displayed to user
 	When User enters "Mailboxes_Scope" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
-	Then "Edit Automation" title is displayed on the Automations page
+	Then 'Edit Automation' page subheader is displayed to user
 	Then following lists are displayed in the Scope dropdown:
 	| Lists            |
 	| Devices (0)      |
@@ -501,7 +501,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextFor
 	When User enters 'DAS15423' text to 'Description' textbox
 	When User selects 'DAS15423_List' option from 'Scope' autocomplete
 	When User selects 'Manual' in the 'Run' dropdown
-	When User selects "Active" checkbox on the Automation Page
+	When User checks 'Active' checkbox
 	And User clicks 'CREATE' button 
 	When User clicks newly created object link
 	Then Automation page is displayed correctly
