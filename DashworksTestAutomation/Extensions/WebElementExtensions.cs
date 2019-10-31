@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Utils;
@@ -165,12 +166,12 @@ namespace DashworksTestAutomation.Extensions
         {
             if (desiredState)
             {
-                if (!checkbox.Selected)
+                if (!checkbox.Selected())
                     checkbox.Click();
             }
             else
             {
-                if (checkbox.Selected)
+                if (checkbox.Selected())
                     checkbox.Click();
             }
         }
@@ -193,6 +194,26 @@ namespace DashworksTestAutomation.Extensions
         public static bool GetGridCheckboxSelectedState(this IWebElement checkbox)
         {
             return checkbox.FindElement(By.XPath(".//span[contains(@class,'unchecked')]")).GetAttribute("class").Contains("hidden");
+        }
+
+        public static bool Selected(this IWebElement checkbox)
+        {
+            if (checkbox.GetAttribute("aria-checked") != null)
+            {
+                return bool.Parse(checkbox.GetAttribute("aria-checked"));
+            }
+            else
+            {
+                if (checkbox.FindElements(By.XPath(".//input")).Any())
+                {
+                    var firstInput = checkbox.FindElements(By.XPath(".//input")).First(x => x.GetAttribute("aria-checked") != null);
+                    return bool.Parse(firstInput.GetAttribute("aria-checked"));
+                }
+                else
+                {
+                    return checkbox.Selected;
+                }
+            }
         }
 
         #endregion Checkboxes
