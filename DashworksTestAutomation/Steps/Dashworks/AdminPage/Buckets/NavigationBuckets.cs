@@ -26,7 +26,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Buckets
         public void WhenUserNavigatesToNewlyCreatedBucket()
         {
             if (!_buckets.Value.Any())
+            {
                 throw new Exception("There are no created Buckets to navigate");
+            }
 
             var url = $"{UrlProvider.EvergreenUrl}/#/admin/bucket/{_buckets.Value.Last().GetId()}/settings";
             _driver.NavigateToUrl(url);

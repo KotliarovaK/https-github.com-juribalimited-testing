@@ -939,7 +939,7 @@ this.FeatureBackground();
 #line 206
  testRunner.When("User enters \'tooltip14938_1\' text to \'Tooltip\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 207
- testRunner.And("User sets Ready checkbox in \"TRUE\" on Edit Readiness", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User selects state \'true\' for \'Ready\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 208
  testRunner.And("User sets Default for Applications checkbox in \"TRUE\" on Edit Readiness", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 209
@@ -957,7 +957,7 @@ this.FeatureBackground();
 #line 215
  testRunner.Then("\'tooltip14938_1\' content is displayed in \'Tooltip\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 216
- testRunner.And("User sees Ready checkbox in \"TRUE\" state on Edit Readiness", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("\'Ready\' checkbox is unchecked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 217
  testRunner.And("User sees Default for Applications checkbox in \"TRUE\" state on Edit Readiness", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -1039,7 +1039,7 @@ this.FeatureBackground();
 #line 232
  testRunner.Then("\'None\' content is displayed in \'Readiness\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 233
- testRunner.And("User sees Tooltip field not equal to \"tooltip14938_2\" on Edit Readiness", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("\'Tooltip\' textbox content is not equal to \'tooltip14938_2\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

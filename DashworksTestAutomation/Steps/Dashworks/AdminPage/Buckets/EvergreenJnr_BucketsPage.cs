@@ -34,13 +34,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             createBucketElement.GetDefaultCheckboxByName(checkbox).Click();
         }
 
-        [Then(@"No items text is displayed")]
-        public void ThenNoItemsTextIsDisplayed()
-        {
-            var text = _driver.NowAt<BucketsPage>();
-            Utils.Verify.IsTrue(text.NoItemsMessage.Displayed, "No items text is not displayed");
-        }
-
         [Then(@"following Objects are displayed in Buckets table:")]
         public void ThenFollowingObjectsAreDisplayedInBuckets(Table table)
         {

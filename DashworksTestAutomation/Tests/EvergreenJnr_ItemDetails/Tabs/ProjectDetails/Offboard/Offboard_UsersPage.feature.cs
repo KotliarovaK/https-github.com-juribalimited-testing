@@ -162,7 +162,7 @@ this.FeatureBackground();
 #line 20
  testRunner.And("following columns are displayed on the Item details page:", ((string)(null)), table1, "And ");
 #line 24
- testRunner.And("User selects state \'true\' for \'Offboard all associated devices\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User selects state \'true\' for \'Offboard all associated devices\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});

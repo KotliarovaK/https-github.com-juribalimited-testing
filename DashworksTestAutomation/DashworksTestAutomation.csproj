@@ -2550,7 +2550,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Steps\Dashworks\AdminPage\CapacityDetails\" />
     <Folder Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateBucket\" />
     <Folder Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateCapacityUnit\" />
     <Folder Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateRing\" />

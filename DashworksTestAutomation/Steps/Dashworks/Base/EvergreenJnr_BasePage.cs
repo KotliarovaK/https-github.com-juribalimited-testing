@@ -180,7 +180,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         [Then(@"'(.*)' content is displayed in '(.*)' autocomplete")]
         public void ThenContentIsDisplayedInAutocomplete(string expectedText, string placeholder)
         {
-            CheckAutocompletAndTextboxText(placeholder, expectedText);
+            CheckAutocompletAndTextboxText(placeholder, expectedText, true);
         }
 
         //TODO this step verify just that some results were found. Rework to verify found results
@@ -233,11 +233,12 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             _driver.WaitForDataLoadingInActionsPanel();
         }
 
-        private void CheckAutocompletAndTextboxText(string placeholder, string expectedText)
+        private void CheckAutocompletAndTextboxText(string placeholder, string expectedText, bool expectedCondition)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             var text = page.GetTextbox(placeholder).GetAttribute("value");
-            Verify.AreEqual(expectedText, text, "Incorrect text in the autocomplete");
+            Verify.That(expectedText.Equals(text), Is.EqualTo(expectedCondition),
+                $"Incorrect text in the '{placeholder}' autocomplete/textbox");
         }
 
         [Then(@"All items in the '(.*)' autocomplete have icons")]
@@ -333,7 +334,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         [Then(@"'(.*)' content is displayed in '(.*)' textbox")]
         public void ThenContentIsDisplayedInTextbox(string expectedText, string placeholder)
         {
-            CheckAutocompletAndTextboxText(placeholder, expectedText);
+            CheckAutocompletAndTextboxText(placeholder, expectedText, true);
+        }
+
+        [Then(@"'(.*)' textbox content is not equal to '(.*)' text")]
+        public void ThenTextboxContentIsNotEqualToText(string placeholder, string expectedText)
+        {
+            CheckAutocompletAndTextboxText(placeholder, expectedText, false);
         }
 
         [Then(@"'(.*)' error message is displayed for '(.*)' field")]
@@ -392,7 +399,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.IsFalse(page.IsTextboxDisplayed(placeholder),
                 $"'{placeholder}' textbox is displayed");
         }
-
 
         [Then(@"'(.*)' textbox is disabled")]
         public void ThenTextboxIsDisabled(string placeholder)
@@ -861,7 +867,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.GetCheckbox(checkboxName).SetCheckboxState(false);
         }
 
-        [Then(@"User selects state '(.*)' for '(.*)' checkbox")]
+        [When(@"User selects state '(.*)' for '(.*)' checkbox")]
         public void ThenUserSelectsStateForCheckbox(bool checkboxState, string checkboxName)
         {
             var dialogContainer = _driver.NowAt<BaseDashboardPage>();
@@ -874,6 +880,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var dialogContainer = _driver.NowAt<BaseDashboardPage>();
             Verify.IsTrue(dialogContainer.GetCheckbox(checkbox).Selected,
                 $"'{checkbox}' checkbox is not checked");
+        }
+
+        [Then(@"'(.*)' checkbox is unchecked")]
+        public void ThenCheckboxIsUnChecked(string checkbox)
+        {
+            var dialogContainer = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsFalse(dialogContainer.GetCheckbox(checkbox).Selected,
+                $"'{checkbox}' checkbox is checked");
         }
 
         #endregion
