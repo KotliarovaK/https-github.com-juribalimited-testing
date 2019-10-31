@@ -14,13 +14,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedBucketUsing
 	When User clicks 'CREATE EVERGREEN BUCKET' button 
 	Then Page with 'Create Evergreen Bucket' subheader is displayed to user
 	When User enters '11770' text to 'Bucket Name' textbox
-	And User selects "Admin IT" team in the Team dropdown on the Buckets page
+	When User selects 'Admin IT' option from 'Team' autocomplete
 	And User clicks 'CREATE' button 
 	Then Success message is displayed and contains "The bucket has been created" text
 	When User clicks 'CREATE EVERGREEN BUCKET' button 
 	Then Page with 'Create Evergreen Bucket' subheader is displayed to user
 	When User enters ' 11770' text to 'Bucket Name' textbox
-	And User selects "Admin IT" team in the Team dropdown on the Buckets page
+	When User selects 'Admin IT' option from 'Team' autocomplete
 	And User clicks 'CREATE' button 
 	Then Error message with "A bucket already exists with this name" text is displayed
 	And There are no errors in the browser console
@@ -39,7 +39,7 @@ Scenario: EvergreenJnr_AdminPage_CreatingDefaultBucket
 	And User navigates to newly created Bucket
 	Then Page with 'TestBucket5' header is displayed to user
 	When User enters 'NewBucket5' text to 'Bucket Name' textbox
-	And User selects "I-Team" team in the Team dropdown on the Buckets page
+	When User selects 'I-Team' option from 'Team' autocomplete
 	And User clicks 'UPDATE' button 
 	Then Success message is displayed and contains "The NewBucket5 bucket has been updated" text
 	When User enters "Unassigned" text in the Search field for "Bucket" column
@@ -57,5 +57,5 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyBucketNa
 	When User clicks 'CREATE EVERGREEN BUCKET' button 
 	Then Page with 'Create Evergreen Bucket' subheader is displayed to user
 	When User enters ' ' text to 'Bucket Name' textbox
-	And User selects "Admin IT" team in the Team dropdown on the Buckets page
+	When User selects 'Admin IT' option from 'Team' autocomplete
 	Then 'CREATE' button is disabled

@@ -56,7 +56,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenSelectAllRowsCheckboxIsChecked()
         {
             var dashboardPage = _driver.NowAt<BaseGridPage>();
-            Verify.IsTrue(_driver.GetEvergreenCheckboxState(dashboardPage.SelectAllCheckbox),
+            Verify.IsTrue(dashboardPage.SelectAllCheckbox.Selected(),
                 "'Select all rows' checkbox is unchecked");
         }
 
@@ -65,7 +65,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var dashboardPage = _driver.NowAt<BaseGridPage>();
             _driver.WhatForElementToBeSelected(dashboardPage.SelectAllCheckbox, false);
-            Verify.IsFalse(_driver.GetEvergreenCheckboxState(dashboardPage.SelectAllCheckbox),
+            Verify.IsFalse(dashboardPage.SelectAllCheckbox.Selected(),
                 "'Select all rows' checkbox is checked");
         }
 

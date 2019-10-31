@@ -48,30 +48,12 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Readiness
 
                 if (!string.IsNullOrEmpty(row["Ready"]))
                 {
-                    if (row["Ready"].ToLower().Equals("true"))
-                    {
-                        if (!createReadiness.ReadyCheckboxState.Selected)
-                            createReadiness.ReadyCheckbox.Click();
-                    }
-                    if (row["Ready"].ToLower().Equals("false"))
-                    {
-                        if (createReadiness.ReadyCheckboxState.Selected)
-                            createReadiness.ReadyCheckbox.Click();
-                    }
+                    bpage.GetCheckbox("Ready").SetCheckboxState(bool.Parse(row["Ready"].ToLower()));
                 }
 
                 if (!string.IsNullOrEmpty(row["DefaultForApplications"]))
                 {
-                    if (row["DefaultForApplications"].ToLower().Equals("true"))
-                    {
-                        if (!createReadiness.DefaultCheckBoxState.Selected)
-                            createReadiness.DefaultForAppCheckBox.Click();
-                    }
-                    if (row["DefaultForApplications"].ToLower().Equals("false"))
-                    {
-                        if (createReadiness.DefaultCheckBoxState.Selected)
-                            createReadiness.DefaultForAppCheckBox.Click();
-                    }
+                    bpage.GetCheckbox("Default").SetCheckboxState(bool.Parse(row["DefaultForApplications"].ToLower()));
                 }
 
                 if (!string.IsNullOrEmpty(row["ColourTemplate"]))
@@ -82,57 +64,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Readiness
             }
         }
 
-        [Then(@"User sees Tooltip field not equal to ""(.*)"" on Edit Readiness")]
-        public void ThenUserSeesTooltipFieldNotEqualToOnEditReadiness(string text)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-
-            Utils.Verify.That(page.GetTextbox("Tooltip").GetAttribute("value"), Is.Not.EqualTo(text));
-        }
-
-        [When(@"User sets Ready checkbox in ""(.*)"" on Edit Readiness")]
-        public void WhenUserSetsReadyCheckboxInOnEditReadiness(string state)
-        {
-            var createReadiness = _driver.NowAt<CreateReadinessPage>();
-
-            if (state.ToLower().Equals("true"))
-            {
-                if (!createReadiness.ReadyCheckboxState.Selected)
-                    createReadiness.ReadyCheckbox.Click();
-            }
-            if (state.ToLower().Equals("false"))
-            {
-                if (createReadiness.ReadyCheckboxState.Selected)
-                    createReadiness.ReadyCheckbox.Click();
-            }
-        }
-
-        [Then(@"User sees Ready checkbox in ""(.*)"" state on Edit Readiness")]
-        public void ThenUserSeesReadyCheckboxInStateOnEditReadiness(string state)
-        {
-            var createReadiness = _driver.NowAt<CreateReadinessPage>();
-
-            Utils.Verify.That(createReadiness.ReadyCheckboxState.Selected.ToString().ToLower(),
-                Is.EqualTo(state.ToLower()), "Readiness ready state is different");
-        }
-
-        [When(@"User sets Default for Applications checkbox in ""(.*)"" on Edit Readiness")]
-        public void WhenUserSetsDefaultForApplicationsCheckboxInOnEditReadiness(string state)
-        {
-            var createReadiness = _driver.NowAt<CreateReadinessPage>();
-
-            if (state.ToLower().Equals("true"))
-            {
-                if (!createReadiness.DefaultCheckBoxState.Selected)
-                    createReadiness.DefaultForAppCheckBox.Click();
-            }
-            if (state.ToLower().Equals("false"))
-            {
-                if (createReadiness.DefaultCheckBoxState.Selected)
-                    createReadiness.DefaultForAppCheckBox.Click();
-            }
-        }
-
         [When(@"User clicks Default for Applications checkbox on Edit Readiness")]
         public void WhenUserClicksDefaultForApplicationsCheckboxOnEditReadiness()
         {
@@ -140,21 +71,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Readiness
             createReadiness.DefaultForAppCheckBox.Click();
         }
 
-        [Then(@"User sees Default for Applications checkbox in ""(.*)"" state on Edit Readiness")]
-        public void ThenUserSeesDefaultForApplicationsCheckboxInStateOnEditReadiness(string state)
-        {
-            var createReadiness = _driver.NowAt<CreateReadinessPage>();
-
-            Utils.Verify.That(createReadiness.DefaultCheckBoxState.Selected.ToString().ToLower(),
-                Is.EqualTo(state.ToLower()), "Readiness default state is different");
-        }
-
+        //TODO DELETE THIS
         [Then(@"User sees Default for Applications checkbox disabled on Edit Readiness")]
         public void ThenUserSeesDefaultForApplicationsCheckboxDisabledOnEditReadiness()
         {
-            var createReadiness = _driver.NowAt<CreateReadinessPage>();
+            var createReadiness = _driver.NowAt<BaseDashboardPage>();
 
-            Utils.Verify.That(createReadiness.DefaultCheckBoxState.Enabled, Is.EqualTo(false), "Readiness default state is enabled");
+            Utils.Verify.That(createReadiness.GetCheckbox("Default").Enabled, Is.EqualTo(false), "Readiness default state is enabled");
         }
 
         [When(@"User clicks Colour Template field on Edit Readiness")]
@@ -194,12 +117,11 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Readiness
         [When(@"User remembers opened Readiness data on Edit Readiness")]
         public void WhenUserRemembersReadinessDataOnEditReadiness()
         {
-            var page = _driver.NowAt<CreateReadinessPage>();
             var bpage = _driver.NowAt<BaseDashboardPage>();
             readinessDto.ReadinessName = bpage.GetTextbox("Readiness").GetAttribute("value");
             readinessDto.Tooltip = bpage.GetTextbox("Tooltip").GetAttribute("value");
-            readinessDto.Ready = page.ReadyCheckboxState.Selected;
-            readinessDto.DefaultForApplications = page.DefaultCheckBoxState.Selected;
+            readinessDto.Ready = bpage.GetCheckbox("Ready").Selected();
+            readinessDto.DefaultForApplications = bpage.GetCheckbox("Default").Selected();
         }
 
         [When(@"User enters stored readiness name in Search field for ""(.*)"" column")]

@@ -16,7 +16,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         public const string DatepickerCellSelector = "//td[contains(@class,'cell')]";
 
-        private string NamedDropdownSelector = ".//mat-select[@aria-label='{0}' or @automation='{0}']|//label[text()='{0}']/ancestor::span//preceding-sibling::mat-select";
+        private string NamedDropdownSelector = ".//mat-select[@aria-label='{0}' or @automation='{0}']|//label[text()='{0}']/ancestor::span[contains(@class,'label')]//preceding-sibling::mat-select";
 
         public const string ColorItem = ".//div[@class='status']";
 
@@ -974,6 +974,22 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             {
                 return null;
             }
+        }
+
+        #endregion
+
+        #region Checkbox
+
+        public IWebElement GetCheckbox(string ariaLabel)
+        {
+            //TODO mb first selector in the or statement should be deleted
+            var selector = By.XPath($".//mat-checkbox[@aria-label='{ariaLabel}']|.//input[@aria-label='{ariaLabel}']//ancestor::mat-checkbox|.//span[text()='{ariaLabel}']//ancestor::mat-checkbox");
+            if (!Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Long))
+            {
+                throw new Exception($"'{ariaLabel}' checkbox was not displayed");
+            }
+
+            return Driver.FindElement(selector);
         }
 
         #endregion

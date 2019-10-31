@@ -5,49 +5,6 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14841 @DAS14282 @Cleanup
-Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForEditSharedList
-	When User clicks the Logout button
-	When User is logged in to the Evergreen as
-	| Username          | Password  |
-	| automation_admin1 | m!gration |
-	Then Evergreen Dashboards page should be displayed to the user
-	When User clicks 'Devices' on the left-hand menu
-	Then 'All Devices' list should be displayed to the user
-	When User clicks on 'Hostname' column header
-	And User create custom list with "DeviceListFor14841_Edit" name
-	Then "DeviceListFor14841_Edit" list is displayed to user
-	When User clicks the List Details button
-	And User select "Specific users / teams" sharing option
-	And User clicks 'ADD USER' button 
-	And User selects the "Automation Admin 10" user for sharing
-	And User select "Edit" in Select Access dropdown
-	And User clicks 'ADD USER' button 
-	And User clicks 'ADD USER' button 
-	When User clicks the Logout button
-	When User is logged in to the Evergreen as
-	| Username           | Password  |
-	| automation_admin10 | m!gration |
-	Then Evergreen Dashboards page should be displayed to the user
-	#create dashboard
-	When Dashboard with 'Dashboard for DAS14841_Edit' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
-	And User clicks 'ADD WIDGET' button 
-	And User creates new Widget
-	| WidgetType | Title                  | List                    | SplitBy  | AggregateFunction | OrderBy    |
-	| Table      | WidgetForDAS14841_Edit | DeviceListFor14841_Edit | Hostname | Count             | Count DESC |
-	#display permission modal
-	When User clicks Dashboards Details icon on Dashboards page
-	Then User sees Dashboards context menu on Dashboards page
-	When User select 'Everyone can edit' sharing option on the Dashboards page
-	Then Review Widget List Permissions is displayed to the User
-	And Widget 'WidgetForDAS14841_Edit' displayed for 'DeviceListFor14841_Edit' list on Permissions Pop-up
-	And User 'Automation Admin 1' displayed for 'DeviceListFor14841_Edit' list on Permissions Pop-up
-	And Current permission 'Specific users / teams' displayed for 'DeviceListFor14841_Edit' list on Permissions Pop-up
-	And New Permission 'Do not change' displayed for 'DeviceListFor14841_Edit' list on Permissions Pop-up
-	And New Permission dropdown has disabled property 'true' for 'DeviceListFor14841_Edit' list on Permissions Pop-up
-	And New Permission dropdown has 'You cannot change the permission for this list' tooltip for 'DeviceListFor14841_Edit' list on Permissions Pop-up
-
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14841 @DAS11120 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdminSharedList
 	#login as user1

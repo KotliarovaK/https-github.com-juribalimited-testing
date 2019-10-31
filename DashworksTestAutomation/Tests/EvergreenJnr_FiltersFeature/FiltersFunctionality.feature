@@ -2390,7 +2390,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckCustomFieldsUsingInFilterAndWidgetC
 	And There are no errors in the browser console
 	When User create dynamic list with "TestList_DAS17715" name on "Applications" page
 	Then "TestList_DAS17715" list is displayed to user
-	When Dashboard with "Dashboard for DAS17715" name created via API and opened
+	When Dashboard with 'Dashboard for DAS17715' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
@@ -2434,18 +2434,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatThereIsNoErrorAfterSavingListWithFil
 	| 1      |
 	Then There are no errors in the browser console
 
-@Evergreen @AllDeviceApplications @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18425 @DAS18458 @Cleanup
-Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorAppearsAfterOpenningItemFromCreatedAllDeviceApplicationsList
-	When User clicks 'Applications' on the left-hand menu
-	Then 'All Applications' list should be displayed to the user
-	When User navigates to the "All Device Applications" list
-	Then Export button is displayed disabled
-	When User clicks Add New button on the Filter panel
-	When User selects 'Used on device' option in expanded associations list
-	When User clicks 'RUN LIST' button
-	When User click content from "Application Name" column
-	Then There are no errors in the browser console
-
 @Evergreen @Devices @Evergreen_FiltersFeature @FilterFunctionality @DAS18140
 Scenario: EvergreenJnr_DevicesList_CheckCancelFilterButtonWorkIfSameFiltersWereApplied
 	When User clicks 'Devices' on the left-hand menu
@@ -2460,72 +2448,15 @@ Scenario: EvergreenJnr_DevicesList_CheckCancelFilterButtonWorkIfSameFiltersWereA
 	When User clicks 'CANCEL' button 
 	Then There are no any expanded blocks in Filter panel
 
-@Evergreen @AllDeviceApplications @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18425
-Scenario: EvergreenJnr_ApplicationsList_CheckThatFirstAssociationsCantBeRemovedIfThereAreTwoMoreAdded
-	When User clicks 'Applications' on the left-hand menu
-	Then 'All Applications' list should be displayed to the user
-	When User navigates to the "All Device Applications" list
-	When User clicks Add New button on the Filter panel
-	When User selects 'Used on device' option in expanded associations list
-	When User clicks Add And button on the Filter panel
-	When User selects 'Not installed on device' option in expanded associations list
-	When User clicks Add And button on the Filter panel
-	When User selects 'Entitled to device' option in expanded associations list
-	Then Remove icon displayed in 'false' state for 'Used on device' association
-	Then Remove icon displayed in 'true' state for 'Not installed on device' association
-	Then Remove icon displayed in 'true' state for 'Entitled to device' association
-
-@Evergreen @AllDeviceApplications @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18456 @DAS18530 @Cleanup
-Scenario: EvergreenJnr_ApplicationsList_CheckThatGridIsNotDisappearedAfterSelectingFilterOnAllDeviceApplicationsPage
-	When User clicks 'Applications' on the left-hand menu
-	Then 'All Applications' list should be displayed to the user
-	When User navigates to the "All Device Applications" list
-	When User clicks Add New button on the Filter panel
-	When User selects 'Used on device' option in expanded associations list
-	When User clicks the Filters button
-	When User add "App Vendor" filter where type is "Does not equal" with added column and following value:
-	| Values |
-	| s      |
-	When User clicks 'RUN LIST' button
-	When User click Edit button for "App Vendor" filter
-	Then message "" is displayed to the user below Search results
-	#18530
-	When User clicks Save button on the list panel
-	When User selects Save as new list option
-	When User creates new custom list with "AssociationList18530" name
-	Then "AssociationList18530" list is displayed to user
-	When User navigates to the "All Device Applications" list
-	Then There are no errors in the browser console
-	When User navigates to the "AssociationList18530" list
-	Then There are no errors in the browser console
-	When User navigates to the "All Device Applications" list
-	Then There are no errors in the browser console
-
-@Evergreen @AllDeviceApplications @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18489 @Cleanup
-Scenario: EvergreenJnr_ApplicationsList_CheckThatPivotCantBeRunIfAssociationWasRemoved
-	When User clicks 'Applications' on the left-hand menu
-	Then 'All Applications' list should be displayed to the user
-	When User navigates to the "All Device Applications" list
-	When User clicks Add New button on the Filter panel
-	When User selects 'Used on device' option in expanded associations list
-	When User clicks 'RUN LIST' button
-	When User selects 'Pivot' in the 'Create' dropdown
-	When User clicks the Pivot button
-	When User selects the following Row Groups on Pivot:
-	| RowGroups  |
-	| App Vendor |
-	When User selects the following Columns on Pivot:
-	| Columns  |
-	| App Version |
-	When User selects the following Values on Pivot:
-	| Values  |
-	| Hostname |
-	When User clicks 'RUN PIVOT' button 
-	Then Pivot run was completed
-	When User creates Pivot list with "Pivot18489" name
-	Then "Pivot18489" list is displayed to user
-	When User navigates to the "Pivot18489" list
-	When User clicks the Associations button
-	When User removes 'Used on device' association in Association panel
-	Then 'RUN PIVOT' button is disabled
-	Then 'RUN PIVOT' button has tooltip with 'Use association panel to create a list' text
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS18709
+Scenario: EvergreenJnr_DevicesList_CheckDeviceOwnerComplianceFilterWork
+	When User clicks 'Devices' on the left-hand menu
+	And User clicks the Filters button
+	And User add "Owner Compliance" filter where type is "Does not equal" with added column and Lookup option
+	| SelectedValues |
+	| Empty          |
+	Then "16,819" rows are displayed in the agGrid
+	When User have removed "Owner Compliance" filter
+	And User add "Owner Compliance" filter where type is "Not empty" with added column and Lookup option
+	| SelectedValues |
+	Then "16,819" rows are displayed in the agGrid

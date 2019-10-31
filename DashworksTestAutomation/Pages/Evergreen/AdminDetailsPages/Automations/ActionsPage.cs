@@ -9,9 +9,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Automations
 {
     internal class ActionsPage : SeleniumBasePage
     {
-        [FindsBy(How = How.XPath, Using = ".//button//span[text()='CREATE ACTION']")]
-        public IWebElement CreateActionButton { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//a[contains(text(), 'Automations')]")]
         public IWebElement AutomationsLink { get; set; }
 
@@ -28,23 +25,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Automations
             {
                 SelectorFor(this, p => p.AutomationsLink)
             };
-        }
-
-        //TODO PLEASE REMOVE THIS METHOD
-        public IWebElement GetDropdownByName(string dropdown)
-        {
-            var selector = By.XPath($".//div//*[@placeholder='{dropdown}']");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
-        public void GetSelectValueForActions(string dropdown)
-        {
-            Driver.WaitForElementToBeDisplayed(ValueDropdown);
-            ValueDropdown.Click();
-            var selector = By.XPath($".//mat-option//span[text()='{dropdown}']");
-            Driver.WaitForElementToBeDisplayed(selector);
-            Driver.FindElement(selector).Click();
         }
     }
 }

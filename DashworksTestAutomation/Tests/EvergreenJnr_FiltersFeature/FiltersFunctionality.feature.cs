@@ -10568,7 +10568,7 @@ this.FeatureBackground();
 #line 2392
  testRunner.Then("\"TestList_DAS17715\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 2393
- testRunner.When("Dashboard with \"Dashboard for DAS17715\" name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("Dashboard with \'Dashboard for DAS17715\' name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 2394
  testRunner.And("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 2395
@@ -10814,81 +10814,6 @@ this.FeatureBackground();
 
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatNoErrorAppearsAfterOpenningItemFromCreatedAl" +
-            "lDeviceApplicationsList")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllDeviceApplications")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
-        [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
-        [NUnit.Framework.CategoryAttribute("DAS18425")]
-        [NUnit.Framework.CategoryAttribute("DAS18458")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        public virtual void EvergreenJnr_DashboardsPage_CheckThatNoErrorAppearsAfterOpenningItemFromCreatedAllDeviceApplicationsList()
-        {
-            System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
-            {
-                try
-                {
-                    this.EvergreenJnr_DashboardsPage_CheckThatNoErrorAppearsAfterOpenningItemFromCreatedAllDeviceApplicationsListInternal();
-                    return;
-                }
-                catch (System.Exception exc)
-                {
-                    lastException = exc;
-                }
-                if (((i + 1)
-                     <= 1))
-                {
-                    testRunner.OnScenarioEnd();
-                }
-            }
-            if ((lastException != null))
-            {
-                throw lastException;
-            }
-        }
-
-        private void EvergreenJnr_DashboardsPage_CheckThatNoErrorAppearsAfterOpenningItemFromCreatedAllDeviceApplicationsListInternal()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckThatNoErrorAppearsAfterOpenningItemFromCreatedAl" +
-                    "lDeviceApplicationsList", null, new string[] {
-                        "Evergreen",
-                        "AllDeviceApplications",
-                        "EvergreenJnr_ListDetails",
-                        "ListDetailsFunctionality",
-                        "DAS18425",
-                        "DAS18458",
-                        "Cleanup"});
-#line 2438
-this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 4
-this.FeatureBackground();
-#line 2439
- testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 2440
- testRunner.Then("\'All Applications\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 2441
- testRunner.When("User navigates to the \"All Device Applications\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 2442
- testRunner.Then("Export button is displayed disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 2443
- testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 2444
- testRunner.When("User selects \'Used on device\' option in expanded associations list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 2445
- testRunner.When("User clicks \'RUN LIST\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 2446
- testRunner.When("User click content from \"Application Name\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 2447
- testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-
-        
-        [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckCancelFilterButtonWorkIfSameFiltersWereApplied")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
@@ -10929,21 +10854,21 @@ this.FeatureBackground();
                         "Evergreen_FiltersFeature",
                         "FilterFunctionality",
                         "DAS18140"});
-#line 2450
+#line 2438
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 2451
+#line 2439
  testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 2452
+#line 2440
  testRunner.Then("\'All Devices\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 2453
+#line 2441
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table228 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedValues"});
-#line 2454
+#line 2442
  testRunner.When("User add \"Display Name\" filter where type is \"Not Empty\" with added column and Lo" +
                     "okup option", ((string)(null)), table228, "When ");
 #line hidden
@@ -10951,14 +10876,14 @@ this.FeatureBackground();
                         "Values"});
             table229.AddRow(new string[] {
                         "a"});
-#line 2456
+#line 2444
  testRunner.When("User Add And \"Display Name\" filter where type is \"Contains\" with added column and" +
                     " following value:", ((string)(null)), table229, "When ");
-#line 2459
+#line 2447
  testRunner.When("User click Edit button for \"Display Name\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 2460
+#line 2448
  testRunner.When("User clicks \'CANCEL\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 2461
+#line 2449
  testRunner.Then("There are no any expanded blocks in Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -10966,21 +10891,20 @@ this.FeatureBackground();
 
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatFirstAssociationsCantBeRemovedIfThereAreTw" +
-            "oMoreAdded")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckDeviceOwnerComplianceFilterWork")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllDeviceApplications")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
-        [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
-        [NUnit.Framework.CategoryAttribute("DAS18425")]
-        public virtual void EvergreenJnr_ApplicationsList_CheckThatFirstAssociationsCantBeRemovedIfThereAreTwoMoreAdded()
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_FiltersFeature")]
+        [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
+        [NUnit.Framework.CategoryAttribute("DAS18709")]
+        public virtual void EvergreenJnr_DevicesList_CheckDeviceOwnerComplianceFilterWork()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_ApplicationsList_CheckThatFirstAssociationsCantBeRemovedIfThereAreTwoMoreAddedInternal();
+                    this.EvergreenJnr_DevicesList_CheckDeviceOwnerComplianceFilterWorkInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -10999,256 +10923,43 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_ApplicationsList_CheckThatFirstAssociationsCantBeRemovedIfThereAreTwoMoreAddedInternal()
+        private void EvergreenJnr_DevicesList_CheckDeviceOwnerComplianceFilterWorkInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThatFirstAssociationsCantBeRemovedIfThereAreTw" +
-                    "oMoreAdded", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckDeviceOwnerComplianceFilterWork", null, new string[] {
                         "Evergreen",
-                        "AllDeviceApplications",
-                        "EvergreenJnr_ListDetails",
-                        "ListDetailsFunctionality",
-                        "DAS18425"});
-#line 2464
+                        "Devices",
+                        "EvergreenJnr_FiltersFeature",
+                        "FilterFunctionality",
+                        "DAS18709"});
+#line 2452
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 2465
- testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 2466
- testRunner.Then("\'All Applications\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 2467
- testRunner.When("User navigates to the \"All Device Applications\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 2468
- testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 2469
- testRunner.When("User selects \'Used on device\' option in expanded associations list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 2470
- testRunner.When("User clicks Add And button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 2471
- testRunner.When("User selects \'Not installed on device\' option in expanded associations list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 2472
- testRunner.When("User clicks Add And button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 2473
- testRunner.When("User selects \'Entitled to device\' option in expanded associations list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 2474
- testRunner.Then("Remove icon displayed in \'false\' state for \'Used on device\' association", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 2475
- testRunner.Then("Remove icon displayed in \'true\' state for \'Not installed on device\' association", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 2476
- testRunner.Then("Remove icon displayed in \'true\' state for \'Entitled to device\' association", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatGridIsNotDisappearedAfterSelectingFilterOn" +
-            "AllDeviceApplicationsPage")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllDeviceApplications")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
-        [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
-        [NUnit.Framework.CategoryAttribute("DAS18456")]
-        [NUnit.Framework.CategoryAttribute("DAS18530")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        public virtual void EvergreenJnr_ApplicationsList_CheckThatGridIsNotDisappearedAfterSelectingFilterOnAllDeviceApplicationsPage()
-        {
-            System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
-            {
-                try
-                {
-                    this.EvergreenJnr_ApplicationsList_CheckThatGridIsNotDisappearedAfterSelectingFilterOnAllDeviceApplicationsPageInternal();
-                    return;
-                }
-                catch (System.Exception exc)
-                {
-                    lastException = exc;
-                }
-                if (((i + 1)
-                     <= 1))
-                {
-                    testRunner.OnScenarioEnd();
-                }
-            }
-            if ((lastException != null))
-            {
-                throw lastException;
-            }
-        }
-
-        private void EvergreenJnr_ApplicationsList_CheckThatGridIsNotDisappearedAfterSelectingFilterOnAllDeviceApplicationsPageInternal()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThatGridIsNotDisappearedAfterSelectingFilterOn" +
-                    "AllDeviceApplicationsPage", null, new string[] {
-                        "Evergreen",
-                        "AllDeviceApplications",
-                        "EvergreenJnr_ListDetails",
-                        "ListDetailsFunctionality",
-                        "DAS18456",
-                        "DAS18530",
-                        "Cleanup"});
-#line 2479
-this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 4
-this.FeatureBackground();
-#line 2480
- testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 2481
- testRunner.Then("\'All Applications\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 2482
- testRunner.When("User navigates to the \"All Device Applications\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 2483
- testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 2484
- testRunner.When("User selects \'Used on device\' option in expanded associations list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 2485
- testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2453
+ testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2454
+ testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table230 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Values"});
+                        "SelectedValues"});
             table230.AddRow(new string[] {
-                        "s"});
-#line 2486
- testRunner.When("User add \"App Vendor\" filter where type is \"Does not equal\" with added column and" +
-                    " following value:", ((string)(null)), table230, "When ");
-#line 2489
- testRunner.When("User clicks \'RUN LIST\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 2490
- testRunner.When("User click Edit button for \"App Vendor\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 2491
- testRunner.Then("message \"\" is displayed to the user below Search results", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 2493
- testRunner.When("User clicks Save button on the list panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 2494
- testRunner.When("User selects Save as new list option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 2495
- testRunner.When("User creates new custom list with \"AssociationList18530\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 2496
- testRunner.Then("\"AssociationList18530\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 2497
- testRunner.When("User navigates to the \"All Device Applications\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 2498
- testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 2499
- testRunner.When("User navigates to the \"AssociationList18530\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 2500
- testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 2501
- testRunner.When("User navigates to the \"All Device Applications\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 2502
- testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatPivotCantBeRunIfAssociationWasRemoved")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllDeviceApplications")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
-        [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
-        [NUnit.Framework.CategoryAttribute("DAS18489")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        public virtual void EvergreenJnr_ApplicationsList_CheckThatPivotCantBeRunIfAssociationWasRemoved()
-        {
-            System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
-            {
-                try
-                {
-                    this.EvergreenJnr_ApplicationsList_CheckThatPivotCantBeRunIfAssociationWasRemovedInternal();
-                    return;
-                }
-                catch (System.Exception exc)
-                {
-                    lastException = exc;
-                }
-                if (((i + 1)
-                     <= 1))
-                {
-                    testRunner.OnScenarioEnd();
-                }
-            }
-            if ((lastException != null))
-            {
-                throw lastException;
-            }
-        }
-
-        private void EvergreenJnr_ApplicationsList_CheckThatPivotCantBeRunIfAssociationWasRemovedInternal()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThatPivotCantBeRunIfAssociationWasRemoved", null, new string[] {
-                        "Evergreen",
-                        "AllDeviceApplications",
-                        "EvergreenJnr_ListDetails",
-                        "ListDetailsFunctionality",
-                        "DAS18489",
-                        "Cleanup"});
-#line 2505
-this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 4
-this.FeatureBackground();
-#line 2506
- testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 2507
- testRunner.Then("\'All Applications\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 2508
- testRunner.When("User navigates to the \"All Device Applications\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 2509
- testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 2510
- testRunner.When("User selects \'Used on device\' option in expanded associations list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 2511
- testRunner.When("User clicks \'RUN LIST\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 2512
- testRunner.When("User selects \'Pivot\' in the \'Create\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 2513
- testRunner.When("User clicks the Pivot button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                        "Empty"});
+#line 2455
+ testRunner.And("User add \"Owner Compliance\" filter where type is \"Does not equal\" with added colu" +
+                    "mn and Lookup option", ((string)(null)), table230, "And ");
+#line 2458
+ testRunner.Then("\"16,819\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 2459
+ testRunner.When("User have removed \"Owner Compliance\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table231 = new TechTalk.SpecFlow.Table(new string[] {
-                        "RowGroups"});
-            table231.AddRow(new string[] {
-                        "App Vendor"});
-#line 2514
- testRunner.When("User selects the following Row Groups on Pivot:", ((string)(null)), table231, "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table232 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Columns"});
-            table232.AddRow(new string[] {
-                        "App Version"});
-#line 2517
- testRunner.When("User selects the following Columns on Pivot:", ((string)(null)), table232, "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table233 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Values"});
-            table233.AddRow(new string[] {
-                        "Hostname"});
-#line 2520
- testRunner.When("User selects the following Values on Pivot:", ((string)(null)), table233, "When ");
-#line 2523
- testRunner.When("User clicks \'RUN PIVOT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 2524
- testRunner.Then("Pivot run was completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 2525
- testRunner.When("User creates Pivot list with \"Pivot18489\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 2526
- testRunner.Then("\"Pivot18489\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 2527
- testRunner.When("User navigates to the \"Pivot18489\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 2528
- testRunner.When("User clicks the Associations button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 2529
- testRunner.When("User removes \'Used on device\' association in Association panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 2530
- testRunner.Then("\'RUN PIVOT\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 2531
- testRunner.Then("\'RUN PIVOT\' button has tooltip with \'Use association panel to create a list\' text" +
-                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+                        "SelectedValues"});
+#line 2460
+ testRunner.And("User add \"Owner Compliance\" filter where type is \"Not empty\" with added column an" +
+                    "d Lookup option", ((string)(null)), table231, "And ");
+#line 2462
+ testRunner.Then("\"16,819\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

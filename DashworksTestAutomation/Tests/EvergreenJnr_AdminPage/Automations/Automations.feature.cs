@@ -230,7 +230,7 @@ this.FeatureBackground();
 #line 55
  testRunner.Then("Automation page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 56
- testRunner.Then("\"Edit Automation\" title is displayed on the Automations page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Edit Automation\' page subheader is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -617,7 +617,7 @@ this.FeatureBackground();
  testRunner.When("User clicks \"Edit\" option in Cog-menu for \"15431_Third_Active\" item on Admin page" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 178
- testRunner.Then("\"Edit Automation\" title is displayed on the Automations page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Edit Automation\' page subheader is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 179
  testRunner.Then("Page with \'15431_Third_Active\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -1485,7 +1485,7 @@ this.FeatureBackground();
 #line 439
  testRunner.When("User clicks \'CREATE AUTOMATION\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 440
- testRunner.Then("\"Create Automation\" title is displayed on the Automations page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Create Automation\' page subheader is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 441
  testRunner.When("User enters \'16764_Automation\' text to \'Automation Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 442
@@ -1493,9 +1493,9 @@ this.FeatureBackground();
 #line 443
  testRunner.When("User selects \'All Devices\' option from \'Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 444
- testRunner.When("User selects \"Active\" checkbox on the Automation Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User checks \'Active\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 445
- testRunner.When("User selects \"Stop on failed action\" checkbox on the Automation Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User checks \'Stop on failed action\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 446
  testRunner.Then("\'CREATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 447
@@ -1618,7 +1618,7 @@ this.FeatureBackground();
 #line 481
  testRunner.When("User clicks content from \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 482
- testRunner.Then("\"Edit Automation\" title is displayed on the Automations page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Edit Automation\' page subheader is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
                         "Lists"});
@@ -1725,7 +1725,7 @@ this.FeatureBackground();
 #line 503
  testRunner.When("User selects \'Manual\' in the \'Run\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 504
- testRunner.When("User selects \"Active\" checkbox on the Automation Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User checks \'Active\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 505
  testRunner.And("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 506

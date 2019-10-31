@@ -67,7 +67,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSpecificWarningMessageIsNotDisplayedAf
 	When User clicks Reset Filters button on the Admin page
 	When User enters "Administration" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
-	Then Default Bucket checkbox is selected
+	Then 'Default Bucket' checkbox is checked
 	When User navigates to the 'Evergreen' left menu item
 	Then Page with 'Buckets' header is displayed to user
 	When User clicks Reset Filters button on the Admin page

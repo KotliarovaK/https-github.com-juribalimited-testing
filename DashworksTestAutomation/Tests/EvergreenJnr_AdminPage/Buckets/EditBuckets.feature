@@ -18,16 +18,16 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNotificationMessageIsDisplayedAfterUpd
 	And User clicks content from "Bucket" column
 	Then Page with 'TestBucket2' header is displayed to user
 	When User updates the "Default Bucket" checkbox state
-	And User clicks Update Bucket button on the Buckets page
+	When User clicks 'UPDATE' button
 	Then Success message The "TestBucket2" bucket has been updated is displayed on the Buckets page
 	When User enters "TestBucket2" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
-	Then Default Bucket checkbox is selected
+	Then 'Default Bucket' checkbox is checked
 	When User navigates to the 'Evergreen' left menu item
 	Then Page with 'Buckets' header is displayed to user
 	When User enters "Unassigned" text in the Search field for "Bucket" column
 	Then 'FALSE' content is displayed in the 'Default' column
 	When User clicks content from "Bucket" column
 	And User updates the "Default Bucket" checkbox state
-	And User clicks Update Bucket button on the Buckets page
+	When User clicks 'UPDATE' button
 	Then Success message The "Unassigned" bucket has been updated is displayed on the Buckets page

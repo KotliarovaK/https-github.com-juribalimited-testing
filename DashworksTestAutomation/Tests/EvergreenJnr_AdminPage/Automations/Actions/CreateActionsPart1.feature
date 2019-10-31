@@ -12,7 +12,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonForActionsWorksCorrectly
 	When User creates new Automation via API and open it
 	| AutomationName        | Description | Active | StopOnFailedAction | Scope       | Run    |
 	| Test_Automation_17511 | 17511       | true   | false              | All Devices | Manual |
-	Then "Edit Automation" title is displayed on the Automations page
+	Then 'Edit Automation' page subheader is displayed to user
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -43,7 +43,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckUpdateTaskValueEditPageLoadsProjec
 	When User enters '<AutomationName>' text to 'Automation Name' textbox
 	When User enters 'DAS17428' text to 'Description' textbox
 	When User selects '<Scope>' option from 'Scope' autocomplete
-	When User selects "Active" checkbox on the Automation Page
+	When User checks 'Active' checkbox
 	When User selects 'Manual' in the 'Run' dropdown
 	When User clicks 'CREATE' button 
 	When User enters 'Update Migrated devices to Started' text to 'Action Name' textbox

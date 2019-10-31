@@ -113,7 +113,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultForApplicationsCheckboxWorksOn
 	And User clicks content from "Project" column
 	And User navigates to the 'Readiness' left menu item
 	And User click content from "Readiness" column
-	And User sets Default for Applications checkbox in "TRUE" on Edit Readiness
+	When User selects state 'true' for 'Default' checkbox
 	And User clicks 'UPDATE' button 
 	And User clicks 'CREATE READINESS' button 
 	And User updates readiness properties on Edit Readiness
@@ -122,11 +122,11 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultForApplicationsCheckboxWorksOn
 	And User clicks 'CREATE' button 
 	And User enters "BLUE" text in the Search field for "Readiness" column
 	And User click content from "Readiness" column
-	When User sets Default for Applications checkbox in "FALSE" on Edit Readiness
+	When User selects state 'false' for 'Default' checkbox
 	And User clicks 'CANCEL' button 
 	And User enters "DAS14937" text in the Search field for "Readiness" column
 	And User click content from "Readiness" column
-	Then User sees Default for Applications checkbox in "TRUE" state on Edit Readiness
+	Then 'Default' checkbox is checked
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14937 @DAS15669 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatNewReadinessAddedBeforeNone
@@ -171,10 +171,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDefaultCheckboxCanNotBeUncheckedForRea
 	Then "TRUE" content is displayed in "Default for Applications" column
 	When User click content from "Readiness" column
 	And User remembers opened Readiness data on Edit Readiness
-	Then User sees Default for Applications checkbox in "TRUE" state on Edit Readiness
+	Then 'Default' checkbox is checked
 	When User clicks Default for Applications checkbox on Edit Readiness
 	Then User sees Default for Applications checkbox disabled on Edit Readiness
-	And User sees Default for Applications checkbox in "TRUE" state on Edit Readiness
+	Then 'Default' checkbox is checked
 	When User navigates to the 'Readiness' left menu item
 	And User clicks 'CREATE READINESS' button 
 	And User updates readiness properties on Edit Readiness
@@ -185,36 +185,35 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDefaultCheckboxCanNotBeUncheckedForRea
 	When User enters stored readiness name in Search field for "Readiness" column
 	And User click content from "Readiness" column
 	Then User checks that opened readiness name is the same as stored one
-	And User sees Default for Applications checkbox in "FALSE" state on Edit Readiness
+	Then 'Default' checkbox is unchecked
 	When User navigates to the 'Readiness' left menu item
 	And User clicks String Filter button for "Default for Applications" column on the Admin page
 	And User clicks "False" checkbox from boolean filter on the Admin page
 	And User click content from "Readiness" column
 	Then User sees Default for Applications checkbox disabled on Edit Readiness
-	And User sees Default for Applications checkbox in "TRUE" state on Edit Readiness
+	Then 'Default' checkbox is checked
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14938
+@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14938 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatNoneReadinessCanBePartiallyEdited
-	When User clicks 'Admin' on the left-hand menu
-	And User navigates to the 'Projects' left menu item
-	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
-	And User clicks content from "Project" column
+	When Project created via API and opened
+	| ProjectName       | Scope       | ProjectTemplate | Mode               |
+	| ReadinessDAS14938 | All Devices | None            | Standalone Project |
 	And User navigates to the 'Readiness' left menu item
 	And User enters "None" text in the Search field for "Readiness" column
 	And User click content from "Readiness" column
 	Then 'Readiness' textbox is disabled
 	When User enters 'tooltip14938_1' text to 'Tooltip' textbox
-	And User sets Ready checkbox in "TRUE" on Edit Readiness
-	And User sets Default for Applications checkbox in "TRUE" on Edit Readiness
+	When User selects state 'true' for 'Ready' checkbox
+	When User selects state 'true' for 'Default' checkbox
 	And User clicks Colour Template field on Edit Readiness
 	Then List of available colours is not displayed to user on Edit Readiness
 	When User clicks 'UPDATE' button 
 	And User enters "None" text in the Search field for "Readiness" column
 	And User click content from "Readiness" column
-	Then 'None' content is displayed in 'Readiness' textbox
+	Then 'NONE' content is displayed in 'Readiness' textbox
 	Then 'tooltip14938_1' content is displayed in 'Tooltip' textbox
-	And User sees Ready checkbox in "TRUE" state on Edit Readiness
-	And User sees Default for Applications checkbox in "TRUE" state on Edit Readiness
+	Then 'Ready' checkbox is checked
+	Then 'Default' checkbox is checked
 	
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14938
 Scenario: EvergreenJnr_AdminPage_CheckThatNoChangesAppliedAfterCancelButtonPressedOnEditReadiness
@@ -230,7 +229,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoChangesAppliedAfterCancelButtonPress
 	And User enters "None" text in the Search field for "Readiness" column
 	And User click content from "Readiness" column
 	Then 'None' content is displayed in 'Readiness' textbox
-	And User sees Tooltip field not equal to "tooltip14938_2" on Edit Readiness
+	Then 'Tooltip' textbox content is not equal to 'tooltip14938_2' text
 	
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14938 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatCancelReadinessAffectsNothingOnEditReadiness
@@ -357,7 +356,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageAboutUnconfirmedChangesA
 	And User navigates to the 'Readiness' left menu item
 	And User enters "GREY" text in the Search field for "Readiness" column
 	And User click content from "Readiness" column
-	And User sets Default for Applications checkbox in "TRUE" on Edit Readiness
+	When User selects state 'true' for 'Default' checkbox
 	And User navigates to the 'Capacity' left menu item
 	Then "You have unsaved changes. Are you sure you want to leave the page?" text is displayed in the warning message
 	Then "YES" button is displayed in the warning message

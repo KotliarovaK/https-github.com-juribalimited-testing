@@ -165,9 +165,9 @@ this.FeatureBackground();
  testRunner.When("User enters \'dsf\' in the \'User\' autocomplete field and selects \'DSF4350513\' value" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 24
- testRunner.Then("User selects state \'true\' for \'Resync apps\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User selects state \'true\' for \'Resync apps\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 25
- testRunner.And("User selects state \'true\' for \'Resync name\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User selects state \'true\' for \'Resync name\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 26
  testRunner.When("User clicks \'RELINK\' button in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 27

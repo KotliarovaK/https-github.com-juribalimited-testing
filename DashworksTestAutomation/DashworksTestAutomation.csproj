@@ -219,8 +219,6 @@
     <Compile Include="Helpers\SortingHelper.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Automations\AutomationsGridPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Automations\ActionsPage.cs" />
-    <Compile Include="Pages\Evergreen\AdminDetailsPages\Automations\CreateAutomationsPage.cs" />
-    <Compile Include="Pages\Evergreen\AdminDetailsPages\Automations\CreateActionsPage.cs" />
     <Compile Include="Pages\Evergreen\Base\BaseErrorPage.cs" />
     <Compile Include="Pages\Evergreen\Base\BaseHeaderElement.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateReadinessPage.cs" />
@@ -260,7 +258,6 @@
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\ImportProjectPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateBucketPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateTeamPage.cs" />
-    <Compile Include="Pages\Evergreen\AdminDetailsPages\MoveToAnotherBucketPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\TeamsPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\ProjectsPage.cs" />
     <Compile Include="Pages\Evergreen\Base\BaseDashboardPage.cs" />
@@ -339,12 +336,11 @@
     <Compile Include="Steps\Dashworks\AdminPage\Automations\AfterScenario\RemoveAutomationAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\ActionSteps.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\AfterScenario\SetActionDisplayOrder.cs" />
-    <Compile Include="Steps\Dashworks\AdminPage\Automations\AutomationsGrid.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\CreateAutomationSteps\CreateAutomationViaApiAndOpen.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\CreateAutomationSteps\CreateAutomationViaApi.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\CreateAutomationSteps\CreateAutomationBase.cs" />
-    <Compile Include="Steps\Dashworks\AdminPage\Automations\CreateAction.cs" />
-    <Compile Include="Steps\Dashworks\AdminPage\Automations\CreateAutomation.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\Automations\CreateActionPage.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\Automations\CreateAutomationPage.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Buckets\AfterScenario\RemoveBucketAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Buckets\AfterScenario\SetDefaultBucketAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Buckets\Api\CreateBucketViaApi.cs" />
@@ -1071,6 +1067,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PermissionsSettings.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_FiltersFeature\AssociationsAllDeviceApplications.feature.cs">
+      <DependentUpon>AssociationsAllDeviceApplications.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_FiltersFeature\FiltersFunctionality.feature.cs">
       <AutoGen>True</AutoGen>
@@ -2121,6 +2122,10 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>PermissionsSettings.feature.cs</LastGenOutput>
     </None>
+    <None Include="Tests\EvergreenJnr_FiltersFeature\AssociationsAllDeviceApplications.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AssociationsAllDeviceApplications.feature.cs</LastGenOutput>
+    </None>
     <None Include="Tests\EvergreenJnr_FiltersFeature\FiltersFunctionality.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>FiltersFunctionality.feature.cs</LastGenOutput>
@@ -2554,7 +2559,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Steps\Dashworks\AdminPage\CapacityDetails\" />
     <Folder Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateBucket\" />
     <Folder Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateCapacityUnit\" />
     <Folder Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateRing\" />

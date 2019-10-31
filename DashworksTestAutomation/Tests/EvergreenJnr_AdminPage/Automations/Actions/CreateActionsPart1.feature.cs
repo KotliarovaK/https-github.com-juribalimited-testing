@@ -149,7 +149,7 @@ this.FeatureBackground();
 #line 12
  testRunner.When("User creates new Automation via API and open it", ((string)(null)), table1, "When ");
 #line 15
- testRunner.Then("\"Edit Automation\" title is displayed on the Automations page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Edit Automation\' page subheader is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 16
  testRunner.Then("Automation page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 17
@@ -271,7 +271,7 @@ this.FeatureBackground();
 #line 45
  testRunner.When(string.Format("User selects \'{0}\' option from \'Scope\' autocomplete", scope), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 46
- testRunner.When("User selects \"Active\" checkbox on the Automation Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User checks \'Active\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 47
  testRunner.When("User selects \'Manual\' in the \'Run\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 48

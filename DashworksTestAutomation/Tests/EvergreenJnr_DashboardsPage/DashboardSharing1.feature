@@ -268,7 +268,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksOnlyForParticu
 	And "Private" sharing option is selected
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14841 @DAS14393 @Cleanup
-Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCantBeChangedForReadOnlySharedList
+Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatListPermissionCantBeChangedForReadOnlySharedList
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
 	| Username          | Password  |
@@ -277,34 +277,40 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCantBeChangedForRea
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks on 'Hostname' column header
-	And User create custom list with "DeviceListFor14841_Read" name
-	Then "DeviceListFor14841_Read" list is displayed to user
+	And User create custom list with "<listName>" name
+	Then "<listName>" list is displayed to user
 	When User clicks the List Details button
 	And User select "Specific users / teams" sharing option
 	And User clicks 'ADD USER' button 
 	And User selects the "Automation Admin 10" user for sharing
-	And User select "Read" in Select Access dropdown
+	And User select "<shareType>" in Select Access dropdown
 	And User clicks 'ADD USER' button 
 	And User clicks 'ADD USER' button 
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
 	| Username           | Password  |
 	| automation_admin10 | m!gration |
+	Then Evergreen Dashboards page should be displayed to the user
 	#create dashboard
-	When Dashboard with 'Dashboard for DAS14841_Read' name created via API and opened
+	When Dashboard with '<dashboardName>' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
-	| WidgetType | Title                  | List                    | SplitBy  | AggregateFunction | OrderBy    |
-	| Table      | WidgetForDAS14841_Read | DeviceListFor14841_Read | Hostname | Count             | Count DESC |
+	| WidgetType | Title                  | List       | SplitBy  | AggregateFunction | OrderBy    |
+	| Table      | <widgetName> | <listName> | Hostname | Count             | Count DESC |
 	#display permission modal
 	When User clicks Dashboards Details icon on Dashboards page
 	Then User sees Dashboards context menu on Dashboards page
 	When User select 'Everyone can edit' sharing option on the Dashboards page
 	Then Review Widget List Permissions is displayed to the User
-	And Widget 'WidgetForDAS14841_Read' displayed for 'DeviceListFor14841_Read' list on Permissions Pop-up
-	And User 'Automation Admin 1' displayed for 'DeviceListFor14841_Read' list on Permissions Pop-up
-	And Current permission 'Specific users / teams' displayed for 'DeviceListFor14841_Read' list on Permissions Pop-up
-	And New Permission 'Do not change' displayed for 'DeviceListFor14841_Read' list on Permissions Pop-up
-	And New Permission dropdown has disabled property 'true' for 'DeviceListFor14841_Read' list on Permissions Pop-up
-	And New Permission dropdown has 'You cannot change the permission for this list' tooltip for 'DeviceListFor14841_Read' list on Permissions Pop-up
+	And Widget '<widgetName>' displayed for '<listName>' list on Permissions Pop-up
+	And User 'Automation Admin 1' displayed for '<listName>' list on Permissions Pop-up
+	And Current permission 'Specific users / teams' displayed for '<listName>' list on Permissions Pop-up
+	And New Permission 'Do not change' displayed for '<listName>' list on Permissions Pop-up
+	And New Permission dropdown has disabled property 'true' for '<listName>' list on Permissions Pop-up
+	And New Permission dropdown has 'You cannot change the permission for this list' tooltip for '<listName>' list on Permissions Pop-up
+
+Examples:
+| listName                | shareType | dashboardName                        | widgetName             |
+| DeviceListFor14841_Read | Read      | Dashboard for DAS14841_Read          | WidgetForDAS14841_Read |
+| DeviceListFor14841_Edit | Edit      | Dashboard for WidgetForDAS14841_Edit | WidgetForDAS14841_Edit |

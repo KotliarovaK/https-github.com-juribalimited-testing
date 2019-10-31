@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Net;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Automations;
 using DashworksTestAutomation.DTO.Evergreen.Admin.CapacityUnits;
 using DashworksTestAutomation.DTO.RuntimeVariables;
@@ -52,6 +53,11 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.CapacityUnits.AfterS
                         request.AddParameter("selectedObjectsList", actionId);
 
                         var resp = _client.Value.Put(request);
+
+                        if (resp.StatusCode != HttpStatusCode.OK)
+                        {
+                            Logger.Write($"Unable to delete Action for Automation via API: {resp.StatusCode}");
+                        }
                     }
                 }
                 catch (Exception e)

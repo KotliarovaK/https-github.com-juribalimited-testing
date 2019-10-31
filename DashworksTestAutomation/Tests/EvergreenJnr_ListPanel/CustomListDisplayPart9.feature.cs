@@ -325,13 +325,13 @@ this.FeatureBackground();
 #line 54
  testRunner.When("User clicks Settings button for \"StaticList6542\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 55
- testRunner.When("User clicks \'DELETE\' button for custom list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks Delete button for custom list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 56
  testRunner.Then("\"list will be permanently deleted\" message is displayed in the lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 57
- testRunner.And("User clicks \'DELETE\' button on the warning message in the lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User clicks \'DELETE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 58
- testRunner.And("\"List deleted\" message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("\"List deleted\" message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
