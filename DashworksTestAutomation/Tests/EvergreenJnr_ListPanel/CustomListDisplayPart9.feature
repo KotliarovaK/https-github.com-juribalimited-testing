@@ -52,10 +52,10 @@ Scenario: EvergreenJnr_UsersList_CheckThatStaticListIsDisplayedInTheBottomOfTheL
 	When User navigates to the "All Users" list
 	Then "StaticList6542" list is displayed in the bottom section of the List Panel
 	When User clicks Settings button for "StaticList6542" list
-	When User clicks 'DELETE' button for custom list
+	When User clicks Delete button for custom list
 	Then "list will be permanently deleted" message is displayed in the lists panel
-	And User clicks 'DELETE' button on the warning message in the lists panel
-	And "List deleted" message is displayed
+	When User clicks 'DELETE' button
+	Then "List deleted" message is displayed
 
 @Evergreen @Devices @CustomListDisplay @EvergreenJnr_ListPanel @DAS12917
 Scenario: EvergreenJnr_DevicesList_CheckThatFilterNameIsNotChangedAfterRenameWhileUpdateValuesOfFilter
