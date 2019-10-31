@@ -1249,7 +1249,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatDeletedBucketIsNotAvailableInEvergreenB
 	When User navigates to the 'Buckets' left menu item
 	And User clicks 'CREATE EVERGREEN BUCKET' button 
 	And User enters 'Bucket_DAS12940_to_be_deleted' text to 'Bucket Name' textbox
-	And User selects "Admin IT" team in the Team dropdown on the Buckets page
+	When User selects 'Admin IT' option from 'Team' autocomplete
 	And User clicks 'CREATE' button 
 	And User select "Bucket" rows in the grid
     | SelectedRowsName              |

@@ -29,62 +29,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _buckets = buckets;
         }
 
-        [Then(@"Bucket dropdown is not displayed on the Project details page")]
-        public void ThenBucketDropdownIsNotDisplayedOnTheProjectDetailsPage()
-        {
-            var projectPage = _driver.NowAt<ProjectsPage>();
-            Verify.IsFalse(projectPage.BucketDropdown.Displayed(), "Bucket dropdown is displayed");
-        }
-
-        [Then(@"Reassign Buckets page is displayed to the user")]
-        public void ThenReassignBucketsPageIsDisplayedToTheUser()
-        {
-            var page = _driver.NowAt<ReassignBucketsPage>();
-            Verify.IsTrue(page.PageReassignBucketsTitle.Displayed(), "Reassign Buckets page is not displayed");
-        }
-
-        [When(@"User selects ""(.*)"" in the Select a team dropdown")]
-        public void WhenUserSelectsInTheSelectATeamDropdown(string teamName)
-        {
-            var page = _driver.NowAt<ReassignBucketsPage>();
-            page.SelectTeamDropdown.Click();
-            _driver.WaitForDataLoading();
-            page.SelectTeamToReassign(teamName);
-        }
-
-        [Then(@"Default Bucket checkbox is selected")]
-        public void ThenDefaultBucketCheckboxIsSelected()
-        {
-            var page = _driver.NowAt<BucketsPage>();
-            Verify.IsTrue(page.SelectedDefaultBucketCheckbox.Displayed(), "Default Bucket checkbox is not selected");
-        }
-
-        [When(@"User clicks ""(.*)"" tab on the Buckets page")]
-        public void WhenUserClicksTabOnTheBucketsPage(string tabName)
-        {
-            var tab = _driver.NowAt<BucketsPage>();
-            tab.ClickTabByName(tabName);
-        }
-
-        [When(@"User adds ""(.*)"" objects to bucket")]
-        public void WhenUserAddsObjectsToBucket(string objectName)
-        {
-            var objects = _driver.NowAt<BucketsPage>();
-            objects.SearchFieldForBucketsPage.SendKeys(objectName);
-            objects.SelectObjectByName(objectName).Click();
-        }
-
-        [When(@"User selects ""(.*)"" team in the Team dropdown on the Buckets page")]
-        public void ThenUserSelectTeamInTheTeamDropdownOnTheBucketsPage(string teamName)
-        {
-            var createBucketElement = _driver.NowAt<CreateBucketPage>();
-            createBucketElement.TeamsNameField.Clear();
-            _driver.WaitForDataLoading();
-            createBucketElement.TeamsNameField.SendKeys(teamName);
-            createBucketElement.SelectTeam(teamName);
-            _buckets.Value.Last().TeamName = teamName;
-        }
-
         [When(@"User updates the ""(.*)"" checkbox state")]
         public void WhenUserUpdatesTheCheckboxState(string checkbox)
         {
@@ -92,40 +36,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             createBucketElement.GetDefaultCheckboxByName(checkbox).Click();
         }
 
-        [Then(@"Move To Another Bucket Page is displayed to the user")]
-        public void ThenMoveToAnotherBucketPageIsDisplayedToTheUser()
-        {
-            var page = _driver.NowAt<MoveToAnotherBucketPage>();
-            Utils.Verify.IsTrue(page.MoveToSelectBox.Displayed, "Move To Another Bucket Page is not displayed to the user");
-        }
-
-        [When(@"User moves selected objects to ""(.*)"" Capacity Unit")]
-        [When(@"User moves selected objects to ""(.*)"" bucket")]
-        public void WhenUserMovesSelectedObjectsToBucket(string bucketName)
-        {
-            var page = _driver.NowAt<MoveToAnotherBucketPage>();
-            page.MoveToBucketByName(bucketName);
-        }
-
-        [Then(@"Bucket ""(.*)"" is displayed to user")]
-        public void ThenBucketIsDisplayedToUser(string bucketName)
-        {
-            var page = _driver.NowAt<BucketsPage>();
-            Utils.Verify.IsTrue(page.ActiveBucketByName(bucketName), $"{bucketName} is not displayed on the Buckets page");
-        }
-
         [Then(@"No items text is displayed")]
         public void ThenNoItemsTextIsDisplayed()
         {
             var text = _driver.NowAt<BucketsPage>();
             Utils.Verify.IsTrue(text.NoItemsMessage.Displayed, "No items text is not displayed");
-        }
-
-        [When(@"User clicks Update Bucket button on the Buckets page")]
-        public void WhenUserClicksUpdateBucketButtonOnTheBucketsPage()
-        {
-            var button = _driver.NowAt<BucketsPage>();
-            button.UpdateBucketButton.Click();
         }
 
         [Then(@"following Objects are displayed in Buckets table:")]
