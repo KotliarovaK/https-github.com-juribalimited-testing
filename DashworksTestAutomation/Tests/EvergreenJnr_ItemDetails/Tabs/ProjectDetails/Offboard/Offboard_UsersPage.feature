@@ -21,7 +21,7 @@ Scenario: EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboa
 	| ColumnName   |
 	| Hostname     |
 	| Owned        |
-	And User selects state 'true' for 'Offboard all associated devices' checkbox
+	When User selects state 'true' for 'Offboard all associated devices' checkbox
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 02X387UQLFP3ISU  |

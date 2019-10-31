@@ -166,7 +166,7 @@ this.FeatureBackground();
 #line 20
  testRunner.And("following columns are displayed on the Item details page:", ((string)(null)), table1, "And ");
 #line 26
- testRunner.And("User selects state \'true\' for \'Offboard all associated users\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User selects state \'true\' for \'Offboard all associated users\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
@@ -555,7 +555,7 @@ this.FeatureBackground();
 #line 113
  testRunner.And("following columns are displayed on the Item details page:", ((string)(null)), table4, "And ");
 #line 119
- testRunner.And("User selects state \'true\' for \'Offboard all associated users\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User selects state \'true\' for \'Offboard all associated users\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
@@ -568,9 +568,9 @@ this.FeatureBackground();
             table5.AddRow(new string[] {
                         "Owner"});
 #line 120
- testRunner.And("following columns are displayed on the Item details page:", ((string)(null)), table5, "And ");
+ testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table5, "Then ");
 #line 126
- testRunner.And("User selects state \'true\' for \'Offboard all associated users\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User selects state \'true\' for \'Offboard all associated users\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
@@ -583,7 +583,7 @@ this.FeatureBackground();
             table6.AddRow(new string[] {
                         "Owner"});
 #line 127
- testRunner.And("following columns are displayed on the Item details page:", ((string)(null)), table6, "And ");
+ testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table6, "Then ");
 #line 133
  testRunner.When("User have opened Column Settings for \"Owner\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 134

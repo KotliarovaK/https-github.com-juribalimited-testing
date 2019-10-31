@@ -204,7 +204,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoneReadinessCanBePartiallyEdited
 	And User click content from "Readiness" column
 	Then 'Readiness' textbox is disabled
 	When User enters 'tooltip14938_1' text to 'Tooltip' textbox
-	And User sets Ready checkbox in "TRUE" on Edit Readiness
+	When User selects state 'true' for 'Ready' checkbox
 	And User sets Default for Applications checkbox in "TRUE" on Edit Readiness
 	And User clicks Colour Template field on Edit Readiness
 	Then List of available colours is not displayed to user on Edit Readiness
@@ -213,7 +213,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoneReadinessCanBePartiallyEdited
 	And User click content from "Readiness" column
 	Then 'None' content is displayed in 'Readiness' textbox
 	Then 'tooltip14938_1' content is displayed in 'Tooltip' textbox
-	And User sees Ready checkbox in "TRUE" state on Edit Readiness
+	Then 'Ready' checkbox is unchecked
 	And User sees Default for Applications checkbox in "TRUE" state on Edit Readiness
 	
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14938
@@ -230,7 +230,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoChangesAppliedAfterCancelButtonPress
 	And User enters "None" text in the Search field for "Readiness" column
 	And User click content from "Readiness" column
 	Then 'None' content is displayed in 'Readiness' textbox
-	And User sees Tooltip field not equal to "tooltip14938_2" on Edit Readiness
+	Then 'Tooltip' textbox content is not equal to 'tooltip14938_2' text
 	
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14938 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatCancelReadinessAffectsNothingOnEditReadiness

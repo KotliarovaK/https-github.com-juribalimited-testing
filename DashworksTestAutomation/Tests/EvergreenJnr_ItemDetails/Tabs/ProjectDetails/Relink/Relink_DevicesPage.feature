@@ -23,9 +23,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRelinkOptionIsWorkedCorrectlyForProj
 	And 'Resync apps' checkbox is checked
 	And 'Resync name' checkbox is checked
 	When User enters 'QSFCLB19N5524S' in the 'Device' autocomplete field and selects 'QSFCLB19N5524S' value
-	Then User selects state 'true' for 'Resync owner' checkbox
-	And User selects state 'true' for 'Resync apps' checkbox
-	And User selects state 'true' for 'Resync name' checkbox
+	When User selects state 'true' for 'Resync owner' checkbox
+	When User selects state 'true' for 'Resync apps' checkbox
+	When User selects state 'true' for 'Resync name' checkbox
 	When User clicks 'RELINK' button in Dialog Pop-up
 	Then Warning message with "This object will be relinked to the selected Evergreen object in this project" text is displayed on the Project Details Page
 	When User clicks 'RELINK' button in Dialog Pop-up

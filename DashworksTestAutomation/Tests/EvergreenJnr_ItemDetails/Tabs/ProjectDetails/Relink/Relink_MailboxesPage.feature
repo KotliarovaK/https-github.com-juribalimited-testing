@@ -22,8 +22,8 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatRelinkOptionIsWorkedCorrectlyForPr
 	And 'Resync owner and users' checkbox is checked
 	And 'Resync name' checkbox is checked
 	When User enters '04D158C83A0142F3B79' in the 'Mailbox' autocomplete field and selects '04D158C83A0142F3B79@bclabs.local' value
-	Then User selects state 'true' for 'Resync owner and users' checkbox
-	And User selects state 'true' for 'Resync name' checkbox
+	When User selects state 'true' for 'Resync owner and users' checkbox
+	When User selects state 'true' for 'Resync name' checkbox
 	When User clicks 'RELINK' button in Dialog Pop-up
 	Then Warning message with "This object will be relinked to the selected Evergreen object in this project" text is displayed on the Project Details Page
 	When User clicks 'RELINK' button in Dialog Pop-up
