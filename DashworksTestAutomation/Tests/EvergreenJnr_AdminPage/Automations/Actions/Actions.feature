@@ -158,7 +158,8 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
 	| AutomationName           | Description | Active | StopOnFailedAction | Scope       | Run    |
 	| Test_Automation_DAS15938 | DAS15938    | true   | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
-	Then "Edit Automation" title is displayed on the Automations page
+	#Then 'Edit Automation' page subheader is displayed to user
+	Then 'Edit Automation' page subheader is displayed to user
 	When User navigates to the 'Actions' left menu item
 	#Action 1
 	When User clicks 'CREATE ACTION' button 
@@ -244,14 +245,14 @@ Scenario: EvergreenJnr_AdminPage_CheckParametersToCreateUpdatePathAction
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
 	When User clicks 'CREATE AUTOMATION' button 
-	Then "Create Automation" title is displayed on the Automations page
+	Then 'Create Automation' page subheader is displayed to user
 	When User enters '' text to 'Automation Name' textbox
 	When User enters '' text to 'Description' textbox
 	Then 'An automation name must be entered' error message is displayed for 'Automation Name' field
 	When User enters 'Melbourne User' text to 'Automation Name' textbox
 	When User enters 'Melbourne users' text to 'Description' textbox
 	When User selects 'Melbourne Users' option from 'Scope' autocomplete
-	When User selects "Stop on failed action" checkbox on the Automation Page
+	When User checks 'Stop on failed action' checkbox
 	Then 'CREATE' button is disabled
 	When User selects 'Manual' in the 'Run' dropdown
 	And User clicks 'CREATE' button 
@@ -325,7 +326,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditActionPage
 	Then '' value is displayed in the 'Path' dropdown
 	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
 	When User clicks 'CANCEL' button 
-	Then Actions page is displayed to the User
+	Then Create Action page is displayed to the User
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS16992 @DAS17427 @DAS17625 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActions
@@ -394,12 +395,12 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActions
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
 	When User clicks 'CREATE AUTOMATION' button 
-	Then "Create Automation" title is displayed on the Automations page
+	Then 'Create Automation' page subheader is displayed to user
 	When User enters 'DAS16992_Edinburgh_Automation' text to 'Automation Name' textbox
 	When User enters 'Task value change' text to 'Description' textbox
 	When User selects 'Edinburgh Devices' option from 'Scope' autocomplete
 	When User selects 'Manual' in the 'Run' dropdown
-	When User selects "Active" checkbox on the Automation Page
+	When User checks 'Active' checkbox
 	#Create Action
 	And User clicks 'CREATE' button 
 	Then 'CREATE' button is disabled
@@ -465,7 +466,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdatingTaskWhichImpactsReadinessOwnerAndD
 	When User enters 'Task value change' text to 'Description' textbox
 	When User selects 'EdinburghDevices_17234' option from 'Scope' autocomplete
 	When User selects 'Manual' in the 'Run' dropdown
-	When User selects "Active" checkbox on the Automation Page
+	When User checks 'Active' checkbox
 	And User clicks 'CREATE' button 
 	#Create Action
 	When User enters '17234_Action' text to 'Action Name' textbox
@@ -504,7 +505,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckListOfProjectsOnTheCreateActionsPa
 	When User enters '17544' text to 'Description' textbox
 	When User selects '<Scope>' option from 'Scope' autocomplete
 	When User selects 'Manual' in the 'Run' dropdown
-	When User selects "Active" checkbox on the Automation Page
+	When User checks 'Active' checkbox
 	And User clicks 'CREATE' button 
 	#Create Action
 	When User enters '17544_Action' text to 'Action Name' textbox
@@ -530,7 +531,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateTaskValueIsDisplayInAutomationsL
 	When User enters 'Test_Automation_17542' text to 'Automation Name' textbox
 	When User enters 'DAS17542' text to 'Description' textbox
 	When User selects 'All Devices' option from 'Scope' autocomplete
-	When User selects "Active" checkbox on the Automation Page
+	When User checks 'Active' checkbox
 	When User selects 'Manual' in the 'Run' dropdown
 	And User clicks 'CREATE' button 
 	#Create Action

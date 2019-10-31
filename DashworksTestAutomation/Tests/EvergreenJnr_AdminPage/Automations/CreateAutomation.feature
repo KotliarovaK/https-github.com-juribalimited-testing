@@ -12,7 +12,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionGridInAutomations
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
 	When User clicks 'CREATE AUTOMATION' button 
-	Then "Create Automation" title is displayed on the Automations page
+	Then 'Create Automation' page subheader is displayed to user
 	When User enters '15309_laptop' text to 'Automation Name' textbox
 	When User enters '15309' text to 'Description' textbox
 	Then Main lists are displayed correctly in the Scope dropdown
@@ -23,8 +23,8 @@ Scenario: EvergreenJnr_AdminPage_CheckActionGridInAutomations
 	| All Applications |
 	| All Mailboxes    |
 	When User selects 'All Devices' option from 'Scope' autocomplete
-	When User selects "Active" checkbox on the Automation Page
-	When User selects "Stop on failed action" checkbox on the Automation Page
+	When User checks 'Active' checkbox
+	When User checks 'Stop on failed action' checkbox
 	Then 'CREATE' button is disabled
 	When User selects 'Manual' in the 'Run' dropdown
 	And User clicks 'CREATE' button 
@@ -39,7 +39,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateAutomationFieldsIsNotPopulatedWi
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
 	When User clicks 'CREATE AUTOMATION' button 
-	Then "Create Automation" title is displayed on the Automations page
+	Then 'Create Automation' page subheader is displayed to user
 	Then following Values are displayed in the 'Run' dropdown:
 	| Values                     |
 	| Manual                     |
@@ -49,7 +49,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateAutomationFieldsIsNotPopulatedWi
 	When User enters 'LongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescription' text to 'Description' textbox
 	When User selects '1803 Rollout' option from 'Scope' autocomplete
 	When User selects 'Manual' in the 'Run' dropdown
-	When User selects "Active" checkbox on the Automation Page
+	When User checks 'Active' checkbox
 	And User clicks 'CREATE' button 
 	When User clicks 'Automations' header breadcrumb
 	When User clicks 'CREATE AUTOMATION' button 
@@ -61,7 +61,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateAutomationFieldsIsNotPopulatedWi
 	When User enters 'DAS16801' text to 'Description' textbox
 	When User selects '1803 Rollout' option from 'Scope' autocomplete
 	When User selects 'Manual' in the 'Run' dropdown
-	When User selects "Active" checkbox on the Automation Page
+	When User checks 'Active' checkbox
 	And User clicks 'CREATE' button 
 	When User navigates to the 'Details' left menu item
 	When User enters 'LongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescription' text to 'Description' textbox
@@ -76,7 +76,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAdminTabIsHighlightedAfterClickingOnAu
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
 	When User clicks content from "Automation" column
-	Then "Edit Automation" title is displayed on the Automations page
+	Then 'Edit Automation' page subheader is displayed to user
 	Then 'Admin' left-hand menu is highlighted
 	Then Automation page is displayed correctly
 	Then 'Admin' left-hand menu is highlighted
@@ -89,11 +89,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCanBeCreatedWithListHavingAr
 	And User clicks 'Admin' on the left-hand menu
 	And User navigates to the 'Automations' left menu item
 	And User clicks 'CREATE AUTOMATION' button 
-	Then "Create Automation" title is displayed on the Automations page
+	Then 'Create Automation' page subheader is displayed to user
 	When User enters 'DAS16844_Automation' text to 'Automation Name' textbox
 	And User enters 'DAS16844' text to 'Description' textbox
 	When User selects 'List16844' option from 'Scope' autocomplete
 	And User selects 'Manual' in the 'Run' dropdown
-	And User selects "Active" checkbox on the Automation Page
+	And User checks 'Active' checkbox
 	And User clicks 'CREATE' button 
 	Then Success message is displayed and contains "The automation has been created" text

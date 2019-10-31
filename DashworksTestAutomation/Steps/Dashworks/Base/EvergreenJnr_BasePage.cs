@@ -833,7 +833,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         #endregion
 
-        #region Checkbox
+        #region Checkbox on Grid - TBR
 
         //TODO This is for BaseGrid but method can be changed to generic
         [Then(@"Select All checkbox have full checked state")]
@@ -860,6 +860,24 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var page = _driver.NowAt<BaseGridPage>();
             Verify.AreEqual(0, _driver.GetEvergreenCheckboxTripleState(page.SelectAllCheckbox),
                 "'Select all' checkbox is not unchecked");
+        }
+
+        #endregion
+
+        #region Checkbox
+
+        [When(@"User checks '(.*)' checkbox")]
+        public void WhenUserChecksCheckbox(string checkboxName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.GetCheckbox(checkboxName).SetCheckboxState(true);
+        }
+
+        [When(@"User unchecks '(.*)' checkbox")]
+        public void WhenUserUnchecksCheckbox(string checkboxName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.GetCheckbox(checkboxName).SetCheckboxState(false);
         }
 
         #endregion
