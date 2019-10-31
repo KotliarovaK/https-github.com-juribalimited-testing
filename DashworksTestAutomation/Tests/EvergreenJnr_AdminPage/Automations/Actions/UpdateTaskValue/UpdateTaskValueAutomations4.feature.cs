@@ -636,22 +636,21 @@ this.FeatureBackground();
 
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckUpdateTaskValueCapacitySlotValidationsForApplications" +
-            "Automation")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckUpdateTaskValueCapacitySlotValidations")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS17564")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
-        public virtual void EvergreenJnr_AdminPage_CheckUpdateTaskValueCapacitySlotValidationsForApplicationsAutomation()
+        public virtual void EvergreenJnr_AdminPage_CheckUpdateTaskValueCapacitySlotValidations()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AdminPage_CheckUpdateTaskValueCapacitySlotValidationsForApplicationsAutomationInternal();
+                    this.EvergreenJnr_AdminPage_CheckUpdateTaskValueCapacitySlotValidationsInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -670,10 +669,9 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_AdminPage_CheckUpdateTaskValueCapacitySlotValidationsForApplicationsAutomationInternal()
+        private void EvergreenJnr_AdminPage_CheckUpdateTaskValueCapacitySlotValidationsInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckUpdateTaskValueCapacitySlotValidationsForApplications" +
-                    "Automation", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckUpdateTaskValueCapacitySlotValidations", null, new string[] {
                         "Evergreen",
                         "EvergreenJnr_AdminPage",
                         "Automations",
@@ -693,7 +691,7 @@ this.FeatureBackground();
                         "Mode"});
             table13.AddRow(new string[] {
                         "17566_Project",
-                        "All Applications",
+                        "All Devices",
                         "None",
                         "Standalone Project"});
 #line 190
@@ -709,7 +707,7 @@ this.FeatureBackground();
 #line 197
  testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 198
- testRunner.When("User navigate to \"17564_Project\" Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigate to \"17566_Project\" Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 199
  testRunner.Then("\"Manage Project Details\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 201
@@ -722,7 +720,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
                         "StageName"});
             table14.AddRow(new string[] {
-                        "17564_Stage"});
+                        "17566_Stage"});
 #line 204
  testRunner.And("User create Stage", ((string)(null)), table14, "And ");
 #line 207
@@ -744,9 +742,9 @@ this.FeatureBackground();
                         "TaskValuesTemplateString",
                         "ApplyToAllCheckbox"});
             table15.AddRow(new string[] {
-                        "17564_Task",
+                        "17566_Task",
                         "17481",
-                        "17564_Stage",
+                        "17566_Stage",
                         "Normal",
                         "Date",
                         "Computer",
@@ -793,20 +791,14 @@ this.FeatureBackground();
                         "ObjectType",
                         "Tasks"});
             table17.AddRow(new string[] {
-                        "17564_Project",
+                        "17566_Project",
                         "CapacitySlot1",
                         "17564_Slot1",
                         "Device",
-                        "17564_Task"});
-            table17.AddRow(new string[] {
-                        "17564_Project",
-                        "CapacitySlot2",
-                        "17564_Slot2",
-                        "Device",
-                        "17564_Task"});
+                        "17566_Task"});
 #line 223
  testRunner.When("User creates new Slot via Api", ((string)(null)), table17, "When ");
-#line 228
+#line 227
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
@@ -817,94 +809,91 @@ this.FeatureBackground();
                         "Scope",
                         "Run"});
             table18.AddRow(new string[] {
-                        "17564_Automation",
+                        "17566_Automation",
                         "17564",
                         "true",
                         "false",
                         "All Devices",
                         "Manual"});
-#line 229
+#line 228
  testRunner.When("User creates new Automation via API and open it", ((string)(null)), table18, "When ");
+#line 231
+ testRunner.Then("Automation page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 232
- testRunner.Then("Automation page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 233
  testRunner.When("User navigates to the \'Actions\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 235
+#line 234
  testRunner.When("User clicks \'CREATE ACTION\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 236
+#line 235
  testRunner.When("User enters \'17564_Action\' text to \'Action Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 237
+#line 236
  testRunner.When("User selects \'Update task value\' in the \'Action Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 237
+ testRunner.When("User selects \'17566_Project\' option from \'Project\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 238
- testRunner.When("User selects \'17564_Project\' option from \'Project\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'17566_Stage\' option from \'Stage\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 239
- testRunner.When("User selects \'17564_Stage\' option from \'Stage\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'17566_Task\' option from \'Task\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 240
- testRunner.When("User selects \'17564_Task\' option from \'Task\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 241
  testRunner.When("User selects \'Update\' in the \'Update Date\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 242
+#line 241
  testRunner.And("User enters \'1 Oct 2019\' text to \'Date\' datepicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 243
+#line 242
  testRunner.And("User selects \'CapacitySlot1\' in the \'Capacity Slot\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 244
+#line 243
  testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 246
+#line 245
  testRunner.When("User clicks \'Administration\' header breadcrumb", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 246
+ testRunner.When("User enters \"17566_Project\" text in the Search field for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 247
- testRunner.When("User enters \"17564_Project\" text in the Search field for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 248
  testRunner.When("User clicks content from \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 249
+#line 248
  testRunner.When("User navigates to the \'Capacity\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 250
+#line 249
  testRunner.When("User navigates to the \'Slots\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 251
+#line 250
  testRunner.When("User clicks content from \"Capacity Slot\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 252
- testRunner.When("User selects \"17564_Stage \\ 17564_Task\" checkbox in the \"Tasks\" field on the Proj" +
+#line 251
+ testRunner.When("User selects \"17566_Stage \\ 17566_Task\" checkbox in the \"Tasks\" field on the Proj" +
                     "ect details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 253
+#line 252
  testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 255
+#line 254
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 256
+#line 255
  testRunner.When("User navigates to the \'Automations\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 256
+ testRunner.When("User enters \"17566_Automation\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 257
- testRunner.When("User enters \"17564_Automation\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 258
  testRunner.When("User clicks content from \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 259
+#line 258
  testRunner.Then("Automation page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 260
+#line 259
  testRunner.When("User navigates to the \'Actions\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 261
+#line 260
  testRunner.When("User clicks content from \"Action\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 262
- testRunner.Then("\'[Slot not associated to this task]\' content is displayed in \'Capacity Slot\' drop" +
-                    "down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 261
+ testRunner.Then("Error message with \"This action has parameters which are now available for the ta" +
+                    "sk type, update the action to add these\" text is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 263
- testRunner.Then("\'The selected slot is not associated to this task\' error message is displayed for" +
-                    " \'Capacity Slot\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 266
  testRunner.When("User clicks \'Automations\' header breadcrumb", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 267
- testRunner.When("User enters \"17564_Automation\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 268
- testRunner.When("User clicks \"Run now\" option in Cog-menu for \"17564_Automation\" item on Admin pag" +
+#line 264
+ testRunner.When("User enters \"17566_Automation\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 265
+ testRunner.When("User clicks \"Run now\" option in Cog-menu for \"17566_Automation\" item on Admin pag" +
                     "e", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 269
+#line 266
  testRunner.When("User navigates to the \'Automation Log\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 270
+#line 267
  testRunner.When("User clicks refresh button in the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 271
- testRunner.When("User enters \"17564_Automation\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 272
+#line 268
+ testRunner.When("User enters \"17566_Automation\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 269
  testRunner.When("User clicks String Filter button for \"Type\" column on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 273
+#line 270
  testRunner.When("User selects \"Automation Finish\" checkbox from String Filter with item list on th" +
                     "e Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 274
+#line 271
  testRunner.Then("\"SLOT NOT ASSOCIATED TO THE TASK\" content is displayed for \"Outcome\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

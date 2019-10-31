@@ -28,6 +28,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations
             var autocompleteElement = _driver.NowAt<BaseDashboardPage>();
             Verify.IsTrue(autocompleteElement.IsTextboxDisplayed("Automation Name"),
                 "Automation page is not displayed correctly");
+            _driver.WaitForElementToNotContainsText(autocompleteElement.GetTextbox("Scope"), "Scope");
             _driver.WaitForElementToNotContainsTextInAttribute(autocompleteElement.GetTextbox("Scope"), "Scope", "value");
         }
     }
