@@ -878,7 +878,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenCheckboxIsChecked(string checkbox)
         {
             var dialogContainer = _driver.NowAt<BaseDashboardPage>();
-            Verify.IsTrue(dialogContainer.GetCheckbox(checkbox).Selected,
+            Verify.IsTrue(dialogContainer.GetCheckbox(checkbox).Selected(),
                 $"'{checkbox}' checkbox is not checked");
         }
 
@@ -886,7 +886,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenCheckboxIsUnChecked(string checkbox)
         {
             var dialogContainer = _driver.NowAt<BaseDashboardPage>();
-            Verify.IsFalse(dialogContainer.GetCheckbox(checkbox).Selected,
+            Verify.IsFalse(dialogContainer.GetCheckbox(checkbox).Selected(),
                 $"'{checkbox}' checkbox is checked");
         }
 
