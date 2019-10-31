@@ -55,7 +55,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
 
             _driver.NowAt<BaseHeaderElement>();
             var url = $"{UrlProvider.EvergreenUrl}#/{listName}/{id}/details/{listName}";
-            
+
             _driver.NavigateToUrl(url);
             _driver.WaitForDataLoading();
         }
@@ -152,7 +152,17 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             var detailsPage = _driver.NowAt<BaseNavigationElements>();
 
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            var actualList = detailsPage.GetParentMenuByName().Select(value => value.Text).ToList();
+            List<string> actualList = new List<string>();
+            //TODO temporary workaround
+            try
+            {
+                actualList = detailsPage.GetParentMenuByName().Select(value => value.Text).ToList();
+            }
+            catch (StaleElementReferenceException e)
+            {
+                Logger.Write($"StaleElementReferenceException during retrieving of parent menu items: {e}");
+                actualList = detailsPage.GetParentMenuByName().Select(value => value.Text).ToList();
+            }
             Verify.AreEqual(expectedList, actualList, "Tabs for the details page are incorrect");
         }
 
