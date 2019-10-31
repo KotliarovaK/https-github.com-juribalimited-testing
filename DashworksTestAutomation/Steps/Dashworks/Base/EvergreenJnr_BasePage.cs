@@ -711,25 +711,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         #endregion
 
-        #region Checkbox
-
-        [Then(@"'(.*)' checkbox is checked")]
-        public void ThenCheckboxIsChecked(string checkbox)
-        {
-            var dialogContainer = _driver.NowAt<BasePage>();
-            Verify.IsTrue(dialogContainer.GetCheckboxStateByName(checkbox).Selected, $"'{checkbox}' checkbox is not checked");
-        }
-
-        [Then(@"User selects state '(.*)' for '(.*)' checkbox")]
-        public void ThenUserSelectsStateForCheckbox(bool checkboxState, string checkboxName)
-        {
-            var dialogContainer = _driver.NowAt<BasePage>();
-            dialogContainer.GetCheckboxByName(checkboxName).SetCheckboxState(checkboxState);
-            Logger.Write("Checkbox successfully pressed");
-        }
-
-        #endregion
-
         #region Button
 
         [When(@"User clicks '(.*)' button")]
@@ -878,6 +859,21 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             page.GetCheckbox(checkboxName).SetCheckboxState(false);
+        }
+
+        [Then(@"User selects state '(.*)' for '(.*)' checkbox")]
+        public void ThenUserSelectsStateForCheckbox(bool checkboxState, string checkboxName)
+        {
+            var dialogContainer = _driver.NowAt<BaseDashboardPage>();
+            dialogContainer.GetCheckbox(checkboxName).SetCheckboxState(checkboxState);
+        }
+
+        [Then(@"'(.*)' checkbox is checked")]
+        public void ThenCheckboxIsChecked(string checkbox)
+        {
+            var dialogContainer = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsTrue(dialogContainer.GetCheckbox(checkbox).Selected,
+                $"'{checkbox}' checkbox is not checked");
         }
 
         #endregion

@@ -258,7 +258,6 @@
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\ImportProjectPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateBucketPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateTeamPage.cs" />
-    <Compile Include="Pages\Evergreen\AdminDetailsPages\MoveToAnotherBucketPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\TeamsPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\ProjectsPage.cs" />
     <Compile Include="Pages\Evergreen\Base\BaseDashboardPage.cs" />
@@ -1068,6 +1067,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PermissionsSettings.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_FiltersFeature\AssociationsAllDeviceApplications.feature.cs">
+      <DependentUpon>AssociationsAllDeviceApplications.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_FiltersFeature\FiltersFunctionality.feature.cs">
       <AutoGen>True</AutoGen>
@@ -2117,6 +2121,10 @@
     <None Include="Tests\EvergreenJnr_DynamicLists\PermissionsSettings.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>PermissionsSettings.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_FiltersFeature\AssociationsAllDeviceApplications.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AssociationsAllDeviceApplications.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_FiltersFeature\FiltersFunctionality.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
