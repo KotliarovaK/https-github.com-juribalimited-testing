@@ -213,7 +213,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoneReadinessCanBePartiallyEdited
 	And User click content from "Readiness" column
 	Then 'None' content is displayed in 'Readiness' textbox
 	Then 'tooltip14938_1' content is displayed in 'Tooltip' textbox
-	Then 'Ready' checkbox is unchecked
+	Then 'Ready' checkbox is checked
 	And User sees Default for Applications checkbox in "TRUE" state on Edit Readiness
 	
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14938
