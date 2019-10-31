@@ -1585,7 +1585,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [When(@"User removes '(.*)' association in Association panel")]
-        public void WhenUserRemovesФssociationInAssociationPanel(string option)
+        public void WhenUserRemovesAssociationInAssociationPanel(string option)
         {
             var page = _driver.NowAt<FiltersElement>();
             page.RemoveIconForAssociation(option).Click();
