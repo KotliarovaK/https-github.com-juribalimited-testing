@@ -14,9 +14,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Forms
         [FindsBy(How = How.XPath, Using = ".//label[@class='mat-checkbox-layout']/span[text()='Default for applications']")]
         public IWebElement DefaultForAppCheckBox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//label[@class='mat-checkbox-layout']//input[@aria-label='Default']")]
-        public IWebElement DefaultCheckBoxState { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//mat-select[@id='colorTemplate']")]
         public IWebElement ColourDropbox { get; set; }
 
