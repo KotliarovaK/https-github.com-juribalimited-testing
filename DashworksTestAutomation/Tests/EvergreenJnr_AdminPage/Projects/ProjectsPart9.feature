@@ -33,7 +33,7 @@ Examples:
 	| UsersProject5     | All Users     |
 	| MailboxesProject5 | All Mailboxes |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS12903 @DAS12485 @DAS13973 @Cleanup @Cleanup @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12999 @DAS12903 @DAS12485 @DAS13973 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherListUsingEvergreenBuckets
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -61,8 +61,8 @@ Scenario: EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherListUsingEverg
 	Then "Devices to add (0 of 17279 selected)" is displayed to the user in the Project Scope Changes section
 	When User navigates to the 'Users' tab on Project Scope Changes page
 	When User navigates to the 'Applications' tab on Project Scope Changes page
-	Then Bucket dropdown is not displayed on the Project details page
-	And There are no errors in the browser console
+	Then 'Buckets' dropdown is not displayed
+	Then There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Cleanup @Cleanup @Projects
 Scenario: EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherListForDevicesProject

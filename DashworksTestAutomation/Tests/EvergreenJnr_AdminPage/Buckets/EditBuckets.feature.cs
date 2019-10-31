@@ -163,7 +163,7 @@ this.FeatureBackground();
 #line 20
  testRunner.When("User updates the \"Default Bucket\" checkbox state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 21
- testRunner.And("User clicks Update Bucket button on the Buckets page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 22
  testRunner.Then("Success message The \"TestBucket2\" bucket has been updated is displayed on the Buc" +
                     "kets page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -172,7 +172,7 @@ this.FeatureBackground();
 #line 24
  testRunner.And("User clicks content from \"Bucket\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 25
- testRunner.Then("Default Bucket checkbox is selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Default Bucket\' checkbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 26
  testRunner.When("User navigates to the \'Evergreen\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 27
@@ -186,7 +186,7 @@ this.FeatureBackground();
 #line 31
  testRunner.And("User updates the \"Default Bucket\" checkbox state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 32
- testRunner.And("User clicks Update Bucket button on the Buckets page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 33
  testRunner.Then("Success message The \"Unassigned\" bucket has been updated is displayed on the Buck" +
                     "ets page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

@@ -983,7 +983,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         public IWebElement GetCheckbox(string ariaLabel)
         {
             //TODO mb first selector in the or statement should be deleted
-            var selector = By.XPath($".//mat-checkbox[@aria-label='{ariaLabel}']|.//input[@aria-label='{ariaLabel}']//ancestor::mat-checkbox");
+            var selector = By.XPath($".//mat-checkbox[@aria-label='{ariaLabel}']|.//input[@aria-label='{ariaLabel}']//ancestor::mat-checkbox|.//span[text()='{ariaLabel}']//ancestor::mat-checkbox");
             if (!Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Long))
             {
                 throw new Exception($"'{ariaLabel}' checkbox was not displayed");
