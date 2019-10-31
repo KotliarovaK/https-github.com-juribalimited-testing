@@ -154,8 +154,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Readiness
             var bpage = _driver.NowAt<BaseDashboardPage>();
             readinessDto.ReadinessName = bpage.GetTextbox("Readiness").GetAttribute("value");
             readinessDto.Tooltip = bpage.GetTextbox("Tooltip").GetAttribute("value");
-            readinessDto.Ready = bpage.GetCheckbox("Ready").Selected;
-            readinessDto.DefaultForApplications = bpage.GetCheckbox("Default").Selected;
+            readinessDto.Ready = bpage.GetCheckbox("Ready").Selected();
+            readinessDto.DefaultForApplications = bpage.GetCheckbox("Default").Selected();
         }
 
         [When(@"User enters stored readiness name in Search field for ""(.*)"" column")]
