@@ -21,12 +21,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
     internal class EvergreenJnr_BucketsPage : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
-        private readonly Buckets _buckets;
 
-        public EvergreenJnr_BucketsPage(RemoteWebDriver driver, Buckets buckets)
+        public EvergreenJnr_BucketsPage(RemoteWebDriver driver)
         {
             _driver = driver;
-            _buckets = buckets;
         }
 
         [When(@"User updates the ""(.*)"" checkbox state")]
