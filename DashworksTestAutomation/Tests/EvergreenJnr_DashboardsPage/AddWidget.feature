@@ -247,3 +247,27 @@ Scenario: EvergreenJnr_DashboardsPage_CheckImageAndTooltipDisplayingForListDropd
 	When User expands the list of shared lists
 	Then User sees list icon displayed for 'WidgetForDAS16842' widget in List section of Dashboards Details
 	Then User sees list icon displayed with tooltip for 'WidgetForDAS16842' widget in List section of Dashboards Details
+
+	@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18168 @Cleanup
+Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatAllValuesInTheLegendAndInTheLabelAreDisplayed
+    When User clicks '<PageName>' on the left-hand menu
+	Then '<LoadedPage>' list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	Then User is expand "{categoryName}" columns category
+	When User adds columns to the list
+         | ColumnName |
+         | Build Date |
+	When User clicks Save button on the list panel
+	When User selects Save as new list option
+	When User creates new custom list with "DAS18168_List" name
+	When User creates new Widget
+         | WidgetType    | Title                | List              | SplitBy    | AggregateBy    | AggregateFunction           | OrderBy              | MaxValues   | ShowLegend |
+         |      Pie      |   DAS18168_Widget    |   DAS18168_List   |     Vendor |      Hostname  |          Count distinct     |     Hostname DESC    |     10      | true     |
+
+	Examples: 
+	| PageName | LoadedPage  | categoryName |
+	| Devices  | All Devices | Device       |
+
+
+
