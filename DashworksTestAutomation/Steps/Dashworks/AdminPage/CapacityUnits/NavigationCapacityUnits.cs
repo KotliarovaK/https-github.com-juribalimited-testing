@@ -27,7 +27,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.CapacityUnits
         public void WhenUserNavigatesToNewlyCreatedCapacityUnit()
         {
             if (!_capacityUnits.Value.Any())
+            {
                 throw new Exception("There are no created Capacity Units to navigate");
+            }
 
             var url = string.IsNullOrEmpty(_capacityUnits.Value.Last().Project) ?
                 $"{UrlProvider.EvergreenUrl}#/admin/capacityUnit/{_capacityUnits.Value.Last().GetId()}/settings" :
