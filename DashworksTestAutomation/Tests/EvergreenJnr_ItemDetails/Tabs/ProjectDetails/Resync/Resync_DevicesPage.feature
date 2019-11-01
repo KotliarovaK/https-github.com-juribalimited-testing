@@ -17,6 +17,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatResyncOptionIsWorkedCorrectlyForProj
 	Then 'Resync owner' checkbox is checked
 	Then 'Resync apps' checkbox is checked
 	Then 'Resync name' checkbox is checked
-	When User selects state 'true' for 'Resync owner' checkbox
+	When User selects state 'false' for 'Resync owner' checkbox
 	When User clicks 'RESYNC' button in Dialog Pop-up
 	Then Success message is displayed and contains "Device successfully resynced" text
