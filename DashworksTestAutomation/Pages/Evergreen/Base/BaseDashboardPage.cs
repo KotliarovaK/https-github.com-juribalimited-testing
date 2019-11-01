@@ -41,8 +41,17 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = ".//h2")]
         public IWebElement SubHeader { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//mat-dialog-container")]
+        #region Popup
+
+        private const string PopupSelector = ".//mat-dialog-container";
+
+        [FindsBy(How = How.XPath, Using = PopupSelector)]
         public IWebElement PopupElement { get; set; }
+
+        [FindsBy(How = How.XPath, Using = PopupSelector + "//div[@mat-dialog-title]")]
+        public IWebElement PopupTitle { get; set; }
+
+        #endregion
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='status-code']")]
         public IWebElement StatusCodeLabel { get; set; }

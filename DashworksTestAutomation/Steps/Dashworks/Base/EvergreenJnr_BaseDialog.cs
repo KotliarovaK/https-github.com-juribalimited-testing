@@ -38,12 +38,5 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var actualText = dialogContainer.GetPopupText().Replace("\r\n", " ");
             Verify.Contains(text, actualText, $"'{text}' in Dialog Pop-up is not displayed correctly!");
         }
-
-        [When(@"User clicks '(.*)' button in Dialog Pop-up")]
-        public void WhenUserClicksButtonInDialogPopUp(string buttonName)
-        {
-            var dialogContainer = _driver.NowAt<BaseDashboardPage>();
-            dialogContainer.GetButtonByNameOnPopup(buttonName).Click();
-        }
     }
 }
