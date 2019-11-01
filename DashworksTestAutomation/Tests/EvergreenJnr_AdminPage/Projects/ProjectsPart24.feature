@@ -70,7 +70,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTrueValueDisplayedInGridForEvergreenPr
 	And User clicks 'CREATE' button
 	Then Success message is displayed and contains "The project has been created" text
 	When User enters "15666Project" text in the Search field for "Project" column
-	Then "TRUE" content is displayed in "Evergreen" column 
+	Then 'TRUE' content is displayed in the 'Evergreen' column 
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS17122 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckRedErrorMessageOnScopeChangesIfBrokenListIsSetInProjectScope

@@ -675,13 +675,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return columnData;
         }
 
-        public string GetRowContentByColumnName(string columnName)
-        {
-            var by = By.XPath(
-                $".//div[@role='gridcell'][{GetColumnNumberByName(columnName)}]");
-            return Driver.FindElement(by).Text;
-        }
-
         public List<string> GetColumnColors(string columnName)
         {
             return Driver.FindElements(By.XPath(string.Concat(string.Format(GridCellByColumnName,

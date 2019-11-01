@@ -10,6 +10,7 @@ using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Forms;
 using DashworksTestAutomation.Pages.Evergreen.Base;
 using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
@@ -69,15 +70,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Readiness
         {
             var createReadiness = _driver.NowAt<CreateReadinessPage>();
             createReadiness.DefaultForAppCheckBox.Click();
-        }
-
-        //TODO DELETE THIS
-        [Then(@"User sees Default for Applications checkbox disabled on Edit Readiness")]
-        public void ThenUserSeesDefaultForApplicationsCheckboxDisabledOnEditReadiness()
-        {
-            var createReadiness = _driver.NowAt<BaseDashboardPage>();
-
-            Utils.Verify.That(createReadiness.GetCheckbox("Default").Enabled, Is.EqualTo(false), "Readiness default state is enabled");
         }
 
         [When(@"User clicks Colour Template field on Edit Readiness")]
@@ -145,8 +137,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Readiness
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitForDataLoading();
 
-            var tooltip = page.GetRowContentByColumnName("Tooltip");
-            var defaultFor = page.GetRowContentByColumnName("Default for Applications");
+            var tooltip = page.GetColumnContentByColumnName("Tooltip");
+            var defaultFor = page.GetColumnContentByColumnName("Default for Applications");
 
             Utils.Verify.That(readinessDto.Tooltip, Is.EqualTo(tooltip), "Tooltip is different from stored one");
             Utils.Verify.That(readinessDto.DefaultForApplications.ToString(), Is.EqualTo(defaultFor).IgnoreCase, "Default For state different from stored one");

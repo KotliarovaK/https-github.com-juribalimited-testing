@@ -73,7 +73,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsLinkFromUnitGridLeadsToCorrectFil
 	And User navigates to the 'Capacity' left menu item
 	And User navigates to the 'Units' left menu item
 	And User enters "Unassigned" text in the Search field for "Capacity Unit" column
-	Then "1" content is displayed in "Slots" column
+	Then '1' content is displayed in the 'Slots' column
 	When User clicks content from "Slots" column
 	Then "All Capacity Units" is displayed in the dropdown filter for "Capacity Units" column
 	And Rows counter contains "1" found row of all rows
@@ -84,7 +84,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsLinkFromUnitGridLeadsToCorrectFil
 	When User navigates to the 'Capacity' left menu item
 	And User navigates to the 'Units' left menu item
 	And User enters "Capacity Unit 1" text in the Search field for "Capacity Unit" column
-	Then "2" content is displayed in "Slots" column
+	Then '2' content is displayed in the 'Slots' column
 	When User clicks content from "Slots" column
 	Then "Capacity Unit 1,All Capacity Units" is displayed in the dropdown filter for "Capacity Units" column
 	And Rows counter contains "2" found row of all rows
@@ -96,7 +96,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsLinkFromUnitGridLeadsToCorrectFil
 	When User navigates to the 'Capacity' left menu item
 	And User navigates to the 'Units' left menu item
 	And User enters "Capacity Unit 2" text in the Search field for "Capacity Unit" column
-	Then "2" content is displayed in "Slots" column
+	Then '2' content is displayed in the 'Slots' column
 	When User clicks content from "Slots" column
 	Then "Capacity Unit 2,All Capacity Units" is displayed in the dropdown filter for "Capacity Units" column
 	And Rows counter contains "2" found row of all rows

@@ -324,7 +324,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatLanguageColumnIsDisplayedOnTheUserList
 	| Windows7Mi: Language |
 	When User clicks on 'Windows7Mi: Language' column header
 	When User clicks on 'Windows7Mi: Language' column header
-	Then "English" content is displayed in "Windows7Mi: Language" column
+	Then 'English' content is displayed in the 'Windows7Mi: Language' column
 
 @Evergreen @Mailboxes @Users @EvergreenJnr_Columns @AddColumnAction @DAS16716
 Scenario Outline: EvergreenJnr_AllList_CheckThatSortingByEvergreenRingColumnWorks
@@ -387,6 +387,6 @@ Scenario: EvergreenJnr_Devices_CheckOrderByStatusColumnSorting
 	| ColumnName   |
 	| 1803: Status |
 	When User clicks on '1803: Status' column header
-	Then "Not Onboarded" content is displayed in "1803: Status" column
+	Then 'Not Onboarded' content is displayed in the '1803: Status' column
 	When User clicks on '1803: Status' column header
-	Then "Offboarded" content is displayed in "1803: Status" column
+	Then 'Offboarded' content is displayed in the '1803: Status' column

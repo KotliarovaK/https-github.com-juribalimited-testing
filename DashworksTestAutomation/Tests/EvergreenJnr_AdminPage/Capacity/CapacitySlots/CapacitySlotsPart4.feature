@@ -87,7 +87,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCreatedSlotWithSelectedTypeTeamsAndRe
 	| ProjectForDAS14103 | capacity type = Teams and Paths | capacity type = Teams and Paths | Teams and Paths |
 	And User navigates to the 'Capacity' left menu item
 	And User navigates to the 'Slots' left menu item
-	Then "" content is displayed in "Capacity Units" column
+	Then '' content is displayed in the 'Capacity Units' column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13417 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatNoUnitsOptionsWasAddedToCapacityUnitsFilter
@@ -103,4 +103,4 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatNoUnitsOptionsWasAddedToCapacityUnits
 	When User clicks String Filter button for "Capacity Units" column on the Admin page
 	And User selects "All Capacity Units" checkbox from String Filter with item list on the Admin page
 	Then Rows counter shows "1" of "2" rows
-	And "" content is displayed in "Capacity Units" column
+	And '' content is displayed in the 'Capacity Units' column

@@ -41,9 +41,9 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateAndRemoveTaskValueForUpdateValueInUs
 	| zUserAutom: Stage 3 \ DDL Slot Task        |
 	| zUserAutom: Stage 3 \ DDL Slot Task (Date) |
 	| zUserAutom: Stage 3 \ DDL Slot Task (Slot) |
-	Then "Started" content is displayed in "zUserAutom: Stage 3 \ DDL Slot Task" column
-	Then "" content is displayed in "zUserAutom: Stage 3 \ DDL Slot Task (Date)" column
-	Then "" content is displayed in "zUserAutom: Stage 3 \ DDL Slot Task (Slot)" column
+	Then 'Started' content is displayed in the 'zUserAutom: Stage 3 \ DDL Slot Task' column
+	Then '' content is displayed in the 'zUserAutom: Stage 3 \ DDL Slot Task (Date)' column
+	Then '' content is displayed in the 'zUserAutom: Stage 3 \ DDL Slot Task (Slot)' column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17829 @Cleanup @Not_Ready
 #Waiting for 'zMailbox Sch for Automations Feature' project
@@ -89,10 +89,10 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForRemoveOwnerInMailboxScop
 	When User removes "Email Address" column by Column panel
 	When User removes "Mailbox Platform" column by Column panel
 	When User clicks the Columns button
-	Then "NOT STARTED" content is displayed in "zMailboxAu: Stage 3 \ Radio Date Owner" column
-	Then "7 Sep 2019" content is displayed in "zMailboxAu: Stage 3 \ Radio Date Owner (Date)" column
-	Then "Unassigned" content is displayed in "zMailboxAu: Stage 3 \ Radio Date Owner (Owner)" column
-	Then "Admin IT" content is displayed in "zMailboxAu: Stage 3 \ Radio Date Owner (Team)" column
+	Then 'NOT STARTED' content is displayed in the 'zMailboxAu: Stage 3 \ Radio Date Owner' column
+	Then '7 Sep 2019' content is displayed in the 'zMailboxAu: Stage 3 \ Radio Date Owner (Date)' column
+	Then 'Unassigned' content is displayed in the 'zMailboxAu: Stage 3 \ Radio Date Owner (Owner)' column
+	Then 'Admin IT' content is displayed in the 'zMailboxAu: Stage 3 \ Radio Date Owner (Team)' column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS18207 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckActionValueIDInTheAutomationLog

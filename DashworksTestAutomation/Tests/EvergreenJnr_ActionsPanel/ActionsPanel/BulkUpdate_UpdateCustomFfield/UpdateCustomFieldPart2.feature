@@ -53,7 +53,7 @@ Scenario: EvergreenJnr_DevicesList_CheckUpdateCustomFieldUpdatingValuesForRemove
 	When User clicks 'UPDATE' button
 	Then Success message with "2 updates have been queued" text is displayed on Action panel
 	When User refreshes agGrid
-	Then "" content is displayed in "Phoenix Field" column
+	Then '' content is displayed in the 'Phoenix Field' column
 		#Revert 'Update custom field' changes to default
 	When User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update custom field' in the 'Bulk Update Type' dropdown
@@ -66,7 +66,7 @@ Scenario: EvergreenJnr_DevicesList_CheckUpdateCustomFieldUpdatingValuesForRemove
 	When User clicks 'UPDATE' button
 	Then Success message with "2 updates have been queued" text is displayed on Action panel
 	When User refreshes agGrid
-	Then "111, 000" content is displayed in "Phoenix Field" column
+	Then '111, 000' content is displayed in the 'Phoenix Field' column
 
 @Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18045 @DAS18031 @DAS18027 @Not_Ready
 #Waiting for "Update custom field" on the automation
@@ -99,7 +99,7 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateCustomFieldUpdatingValuesForAddToExi
 	When User clicks 'UPDATE' button
 	Then Success message with "2 updates have been queued" text is displayed on Action panel
 	When User refreshes agGrid
-	Then "beta, alpha" content is displayed in "Phoenix Field" column
+	Then 'beta, alpha' content is displayed in the 'Phoenix Field' column
 		#Revert 'Update custom field' changes to default
 	When User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update custom field' in the 'Bulk Update Type' dropdown
@@ -147,7 +147,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateCustomFieldUpdatingValuesForR
 	When User clicks 'UPDATE' button
 	Then Success message with "2 updates have been queued" text is displayed on Action panel
 	When User refreshes agGrid
-	Then "second" content is displayed in "Phoenix Field" column
+	Then 'second' content is displayed in the 'Phoenix Field' column
 		#Revert 'Update custom field' changes to default
 	When User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update custom field' in the 'Bulk Update Type' dropdown
@@ -196,7 +196,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckUpdateCustomFieldUpdatingValuesForRepl
 	When User clicks 'UPDATE' button
 	Then Success message with "2 updates have been queued" text is displayed on Action panel
 	When User refreshes agGrid
-	Then "02" content is displayed in "Phoenix Field" column
+	Then '02' content is displayed in the 'Phoenix Field' column
 		#Revert 'Update custom field' changes to default
 	When User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update custom field' in the 'Bulk Update Type' dropdown

@@ -36,14 +36,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedAfterUpdati
 	| 20040610sqlserverck |
 	| 7zip                |
 	| ACDSee 4.0          |
-	Then "" content is displayed in "Bucket" column
+	Then '' content is displayed in the 'Bucket' column
 	When User navigates to the 'History' left menu item
 	Then following Items are displayed in the History table
 	| Items               |
 	| 20040610sqlserverck |
 	| 7zip                |
 	| ACDSee 4.0          |
-	Then "" content is displayed in "Bucket" column
+	Then '' content is displayed in the 'Bucket' column
 	And There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12333 @DAS12999 @Cleanup @Projects

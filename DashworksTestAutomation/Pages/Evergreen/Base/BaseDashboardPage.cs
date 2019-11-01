@@ -992,6 +992,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return Driver.FindElement(selector);
         }
 
+        public bool IsCheckboxEnabled(string ariaLabel)
+        {
+            var enabled = GetCheckbox(ariaLabel).FindElement(By.XPath(".//input")).Enabled;
+            return enabled;
+        }
+
         #endregion
 
         public IList<IWebElement> GetChipsOfTextbox(string textbox)

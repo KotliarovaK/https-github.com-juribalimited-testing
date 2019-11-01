@@ -83,7 +83,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplaye
 	And User navigates to the 'Evergreen Detail' left submenu item
 	Then 'UNKNOWN' content is displayed in the 'Compliance' column
 	And 'JuribaDEV50' content is displayed in the 'Site' column
-	Then "Entitled" content is displayed in "Association Type" column
+	Then 'Entitled' content is displayed in the 'Association Type' column
 	When User clicks String Filter button for "Compliance" column
 	Then following String Values are displayed in the filter on the Details Page
 	| Values  |

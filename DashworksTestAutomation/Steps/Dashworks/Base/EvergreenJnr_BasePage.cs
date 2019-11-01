@@ -890,6 +890,22 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 $"'{checkbox}' checkbox is checked");
         }
 
+        [Then(@"'(.*)' checkbox is disabled")]
+        public void ThenCheckboxIsDisabled(string checkbox)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsFalse(page.IsCheckboxEnabled("Default"),
+                $"'{checkbox}' checkbox is not disabled");
+        }
+
+        [Then(@"'(.*)' checkbox is not disabled")]
+        public void ThenCheckboxIsNotDisabled(string checkbox)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsTrue(page.IsCheckboxEnabled(checkbox),
+                $"'{checkbox}' checkbox is disabled");
+        }
+
         #endregion
 
         #region Chips

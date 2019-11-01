@@ -63,7 +63,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOriginalCapacityUnitStoredAndDisplaye
 	| Items          |
 	| 001BAQXT6JWFPI |
 	When User enters "001BAQXT6JWFPI" text in the Search field for "Item" column
-	Then "Unassigned" content is displayed in "Capacity Unit" column
+	Then 'Unassigned' content is displayed in the 'Capacity Unit' column
 	When User navigates to the 'Capacity' left menu item
 	When User creates new Capacity Unit via api
 	| Name              | Description | IsDefault | Project            |
@@ -71,4 +71,4 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOriginalCapacityUnitStoredAndDisplaye
 	And User navigates to the 'Scope' left menu item
 	And User navigates to the 'History' left menu item
 	And User enters "001BAQXT6JWFPI" text in the Search field for "Item" column
-	Then "Unassigned" content is displayed in "Capacity Unit" column
+	Then 'Unassigned' content is displayed in the 'Capacity Unit' column

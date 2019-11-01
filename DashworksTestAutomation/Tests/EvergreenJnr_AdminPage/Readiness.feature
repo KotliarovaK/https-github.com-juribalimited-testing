@@ -161,25 +161,24 @@ Scenario: EvergreenJnr_AdminPage_ChecksCreateReadinessElements
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14938 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatDefaultCheckboxCanNotBeUncheckedForReadiness
-	When User clicks 'Admin' on the left-hand menu
-	And User navigates to the 'Projects' left menu item
-	And User enters "Project 00 M Computer Scheduled" text in the Search field for "Project" column
-	And User clicks content from "Project" column
+	When Project created via API and opened
+	| ProjectName           | Scope       | ProjectTemplate | Mode               |
+	| ReadinessDAS14938_4A2 | All Devices | None            | Standalone Project |
 	And User navigates to the 'Readiness' left menu item
 	When User clicks String Filter button for "Default for Applications" column on the Admin page
 	And User clicks "False" checkbox from boolean filter on the Admin page
-	Then "TRUE" content is displayed in "Default for Applications" column
+	Then 'TRUE' content is displayed in the 'Default for Applications' column
 	When User click content from "Readiness" column
 	And User remembers opened Readiness data on Edit Readiness
 	Then 'Default' checkbox is checked
-	When User clicks Default for Applications checkbox on Edit Readiness
-	Then User sees Default for Applications checkbox disabled on Edit Readiness
+	When User checks 'Default' checkbox
+	Then 'Default' checkbox is disabled
 	Then 'Default' checkbox is checked
 	When User navigates to the 'Readiness' left menu item
 	And User clicks 'CREATE READINESS' button 
 	And User updates readiness properties on Edit Readiness
-	| Readiness  | Tooltip              | Ready | DefaultForApplications | ColourTemplate | ProjectName                     |
-	| DAS14938_1 | tooltipForDas14938_1 | TRUE  | TRUE                   | RED            | Project 00 M Computer Scheduled |
+	| Readiness  | Tooltip              | Ready | DefaultForApplications | ColourTemplate | ProjectName           |
+	| DAS14938_1 | tooltipForDas14938_1 | TRUE  | TRUE                   | RED            | ReadinessDAS14938_4A2 |
 	And User clicks 'CREATE' button 
 	Then Success message is displayed and contains "The readiness has been created" text
 	When User enters stored readiness name in Search field for "Readiness" column
@@ -190,7 +189,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDefaultCheckboxCanNotBeUncheckedForRea
 	And User clicks String Filter button for "Default for Applications" column on the Admin page
 	And User clicks "False" checkbox from boolean filter on the Admin page
 	And User click content from "Readiness" column
-	Then User sees Default for Applications checkbox disabled on Edit Readiness
+	Then 'Default' checkbox is disabled
 	Then 'Default' checkbox is checked
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14938 @Cleanup

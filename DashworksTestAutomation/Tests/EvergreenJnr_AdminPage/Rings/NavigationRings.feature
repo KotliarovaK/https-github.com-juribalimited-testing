@@ -13,7 +13,7 @@ Scenario: EvergreenJnr_AdminPage_CheckNavigationToDevicesListFromProjectsRingsLi
 	When User enters "1803 Rollout" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Rings' left menu item
-	Then "1" content is displayed in "Devices" column
+	Then '1' content is displayed in the 'Devices' column
 	When User clicks content from "Devices" column
 	Then 'All Devices' list should be displayed to the user
 	Then "1" rows are displayed in the agGrid
