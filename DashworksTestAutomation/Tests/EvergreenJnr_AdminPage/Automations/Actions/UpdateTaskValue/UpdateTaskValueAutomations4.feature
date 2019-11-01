@@ -82,7 +82,6 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueCapacitySlotValidationsForD
 	When User clicks content from "Action" column
 	Then '[Slot not associated to this task]' content is displayed in 'Capacity Slot' dropdown
 	Then 'The selected slot is not associated to this task' error message is displayed for 'Capacity Slot' dropdown
-	#Then Error message with "This action has parameters which are not shown and no longer applicable to the task type, update the action to remove these" text is displayed
 	#Run Automation
 	When User clicks 'Automations' header breadcrumb
 	When User enters "17564_Automation" text in the Search field for "Automation" column
@@ -172,7 +171,6 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueCapacitySlotValidationsForU
 	Then 'Edit Action' page subheader is displayed to user
 	Then '[Slot not found]' content is displayed in 'Capacity Slot' dropdown
 	Then 'The selected slot cannot be found' error message is displayed for 'Capacity Slot' dropdown
-	Then Error message with "This action has parameters which are now available for the task type, update the action to add these" text is displayed
 	#Run Automation
 	When User clicks 'Automations' header breadcrumb
 	When User enters "17565_Automation" text in the Search field for "Automation" column
