@@ -1,9 +1,68 @@
-﻿Feature: UpdateTaskValuePart2
-	Runs Bulk Update Update task value related tests
+﻿Feature: СheckingDropdownListValuesForSpecificUser
+	Runs Checking Dropdown List Values For Specific User related tests
 
 Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
+
+@Evergreen @AllLists @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13264 @DAS13265 @DAS13278 @DAS14448 @Cleanup
+Scenario Outline: EvergreenJnr_AllLists_CheckThatUpdateAndCancelButtonsAreEnabledWhenUserLoggedWithProjectBulkUpdaterRole
+	When User clicks 'Projects' on the left-hand menu
+	Then "Projects Home" page is displayed to the user
+	When User navigate to Manage link
+	And User select "Manage Users" option in Management Console
+	And User create new User
+	| Username   | FullName | Password | ConfirmPassword | Roles                |
+	| <UserName> | DAS13264 | 1234qwer | 1234qwer        | Project Bulk Updater |
+	Then Success message is displayed
+	When User cliks Logout link
+	Then User is logged out
+	When User clicks on the Login link
+	Then Login Page is displayed to the user
+	When User login with following credentials:
+	| Username   | Password |
+	| <UserName> | 1234qwer |
+	Then Dashworks homepage is displayed to the user in a logged in state
+	When User clicks the Switch to Evergreen link
+	Then Evergreen Dashboards page should be displayed to the user
+	When User clicks '<PageName>' on the left-hand menu
+	Then 'All <PageName>' list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "<ColumnName>" rows in the grid
+	| SelectedRowsName |
+	| <RowName>        |
+	And User selects 'Bulk update' in the 'Action' dropdown
+	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	And User selects '<ProjectName>' option from 'Project' autocomplete
+	And User selects '<StageName>' option from 'Stage' autocomplete
+	And User selects '<TaskName>' option from 'Task' autocomplete
+	And User selects '<UpdateDate>' in the 'Update Date' dropdown
+	Then 'UPDATE' button is not disabled
+	And 'CANCEL' button is not disabled
+	When User clicks 'UPDATE' button 
+	Then the amber message is displayed correctly
+	When User clicks 'CANCEL' button
+	Then the amber message is not displayed
+	And 'UPDATE' button is not disabled
+	And 'CANCEL' button is not disabled
+	When User clicks the Logout button
+	Then User is logged out
+	When User clicks on the Login link
+	Then Login Page is displayed to the user
+	When User provides the Login and Password and clicks on the login button
+	Then Dashworks homepage is displayed to the user in a logged in state
+	When User navigate to Manage link
+	And User select "Manage Users" option in Management Console
+	And User removes "<UserName>" User
+
+Examples:
+	| UserName              | PageName     | ColumnName    | RowName                                  | ProjectName                        | StageName             | TaskName                 | UpdateDate |
+	| DAS13264_Devices      | Devices      | Hostname      | 00CWZRC4UK6W20                           | Babel (English, German and French) | Initiation            | Scheduled Date           | Remove     |
+	| DAS13264_Users        | Users        | Username      | 0088FC8A50DD4344B92                      | Barry's User Project               | Project Dates         | Scheduled Date           | Remove     |
+	| DAS13264_Applications | Applications | Application   | 0047 - Microsoft Access 97 SR-2 Francais | Barry's User Project               | Audit & Configuration | Package Delivery Date    | Remove     |
+	| DAS13264_Mailboxes    | Mailboxes    | Email Address | 00C8BC63E7424A6E862@bclabs.local         | Email Migration                    | Pre-Migration         | Out Of Office Start Date | Remove     |
+
 
 @Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13268 @DAS13269 @DAS13272 @DAS13273 @DAS13276 @DAS13275 @Cleanup
 Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelIsWorkingCorrectlyWhenSelectedTaskThatHasAnTeamOrOwner
@@ -203,84 +262,6 @@ Examples:
 	| RowName        | MessageText                                                   |
 	| 00HA7MKAVVFDAV | 1 of 1 object was in the selected project and has been queued |
 	| 00I0COBFWHOF27 | 0 of 1 object was in the selected project and has been queued |
-
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287 @DAS14127 @DAS18267 @Cleanup
-Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForValueField
-	When User clicks 'Projects' on the left-hand menu
-	Then "Projects Home" page is displayed to the user
-	When User navigate to Manage link
-	And User select "Manage Users" option in Management Console
-	And User create new User
-	| Username | FullName | Password | ConfirmPassword | Roles                |
-	| <Name>   | Value    | 1234qwer | 1234qwer        | Project Bulk Updater |
-	Then Success message is displayed
-	When User cliks Logout link
-	Then User is logged out
-	When User clicks on the Login link
-	Then Login Page is displayed to the user
-	When User login with following credentials:
-	| Username | Password |
-	| <Name>   | 1234qwer |
-	Then Dashworks homepage is displayed to the user in a logged in state
-	When User clicks the Switch to Evergreen link
-	Then Evergreen Dashboards page should be displayed to the user
-	When User clicks 'Users' on the left-hand menu
-	Then 'All Users' list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName                                                      |
-	| Windows7Mi: User Acceptance Test \ Perform User Acceptance Test |
-	And User perform search by "<RowName>"
-	And User clicks the Actions button
-	Then Actions panel is displayed to the user
-	When User select "Username" rows in the grid
-	| SelectedRowsName |
-	| <RowName>        |
-	And User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
-	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
-	And User selects 'User Acceptance Test' option from 'Stage' autocomplete
-	And User selects 'Perform User Acceptance Test' option from 'Task' autocomplete
-	And User selects 'Update' in the 'Update Value' dropdown
-	And User selects '<NewValue>' in the 'Value' dropdown
-	And User selects 'No change' in the 'Update Date' dropdown
-	When User selects 'Update' in the 'Update Owner' dropdown
-	When User selects '<NewTeam>' option from 'Team' autocomplete
-	And User navigate to the bottom of the Action panel
-	And User clicks 'UPDATE' button 
-	Then the amber message is displayed correctly
-	When User clicks 'UPDATE' button
-	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
-	And Success message is hidden after five seconds
-	When User refreshes agGrid
-	Then '<NewValue>' content is displayed in the 'Windows7Mi: User Acceptance Test \ Perform User Acceptance Test' column
-		#returns default object state
-	When User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
-	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
-	And User selects 'User Acceptance Test' option from 'Stage' autocomplete
-	And User selects 'Perform User Acceptance Test' option from 'Task' autocomplete
-	And User selects 'Update' in the 'Update Value' dropdown
-	And User selects '<DefaultValue>' in the 'Value' dropdown
-	And User selects 'No change' in the 'Update Date' dropdown
-	When User selects 'Update' in the 'Update Owner' dropdown
-	When User selects '<DefaultTeam>' option from 'Team' autocomplete
-	And User navigate to the bottom of the Action panel
-	And User clicks 'UPDATE' button 
-	And User navigate to the top of the Action panel
-	When User clicks 'UPDATE' button
-	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
-	When User refreshes agGrid
-	Then '<DefaultValue>' content is displayed in the 'Windows7Mi: User Acceptance Test \ Perform User Acceptance Test' column
-
-Examples:
-	| Name    | RowName    | NewValue       | NewTeam  | DefaultValue   | DefaultTeam         |
-	| DAS1321 | CQV0623434 | Complete       | Admin IT | Started        | Administrative Team |
-	| DAS1322 | BBZ877343  | Failed         | Admin IT | Not Applicable | Retail Team         |
-	| DAS1323 | DLL972653  | Complete       | Admin IT | Not Started    | K-Team              |
-	| DAS1324 | LZI970280  | Not Applicable | Admin IT | Failed         | IB Team             |
-	| DAS1325 | ZQX656408  | Not Applicable | Admin IT | Complete       | Migration Phase 2   |
 
 #Awaiting Lisa's response and updating the autotest scenario 
 @Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287 @DAS14127 @Cleanup @Not_Run
