@@ -26,12 +26,12 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetsCanBeCreatedWhenUsingSplit
 	And User creates new Widget
 	| WidgetType | Title                  | List              | SplitBy                      | AggregateFunction | OrderBy   | MaxValues |
 	| Pie        | Test_Widget_DAS14668_1 | TestList_DAS14668 | ICSP: i-stage A \ i-Schedule | Count             | Count ASC | 5         |
-	Then User sees widget with the next name 'Test_Widget_DAS14668_1' on Dashboards page
+	Then 'Test_Widget_DAS14668_1' Widget is displayed to the user
 	When User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title                  | List              | SplitBy                      | AggregateBy                  | AggregateFunction | OrderBy                           | MaxValues |
 	| Pie        | Test_Widget_DAS14668_2 | TestList_DAS14668 | ICSP: i-stage A \ i-Schedule | ICSP: i-stage A \ i-Schedule | Count distinct    | ICSP: i-stage A \ i-Schedule DESC | 20        |
-	Then User sees widget with the next name 'Test_Widget_DAS14668_2' on Dashboards page
+	Then 'Test_Widget_DAS14668_2' Widget is displayed to the user
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15372 @DAS15317 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWidgetThatUsesCpuArchitField
@@ -126,7 +126,7 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatWhenEditingPieWidgetAggre
 	And User creates new Widget
 	| WidgetType | Title           | List        | SplitBy  | AggregateFunction | OrderBy      | MaxValues |
 	| Pie        | Widget_DAS15500 | All Devices | Hostname | Count             | Hostname ASC | 5         |
-	Then User sees widget with the next name 'Widget_DAS15500' on Dashboards page
+	Then 'Widget_DAS15500' Widget is displayed to the user
 	When User clicks Ellipsis menu for 'Widget_DAS15500' Widget on Dashboards page
 	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
 	And User selects '<WidgetType>' in the 'Widget Type' Widget dropdown

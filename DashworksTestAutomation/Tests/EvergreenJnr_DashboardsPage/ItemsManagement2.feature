@@ -196,6 +196,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatAnyDashboardCanBeMarkedFavorite
 @Evergreen @EvergreenJnr_DashboardsPage @DAS12974 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatAnyDashboardCanBeMarkedAsDefault
 	When Dashboard with 'Dashboard_DAS12974Default' name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
 	Then User sees correct tooltip for Show Dashboards panel
 	When User clicks Show Dashboards panel icon on Dashboards page
 	When User selects 'Manage' menu for 'Dashboard_DAS12974Default' dashboard

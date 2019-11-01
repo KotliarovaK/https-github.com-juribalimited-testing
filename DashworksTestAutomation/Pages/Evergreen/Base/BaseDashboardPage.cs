@@ -47,7 +47,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = ".//div[@class='status-code']")]
         public IWebElement StatusCodeLabel { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//div[@id='content']//i[@class='material-icons mat-menu']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@id='content']//i[@class='material-icons mat-menu']")]
         public IWebElement ExpandSideNavPanelIcon { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[@aria-label='Open calendar']")]

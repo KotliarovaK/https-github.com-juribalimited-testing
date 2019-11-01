@@ -14,7 +14,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorAppearsWhenCreating
 	| WidgetType | Title             | List             | SplitBy     | AggregateBy | AggregateFunction | OrderBy         | MaxValues |
 	| Table      | WidgetForDAS14685 | All Applications | Application | Application | Count distinct    | Application ASC | 10        |
 	Then There are no errors in the browser console
-	And User sees widget with the next name 'WidgetForDAS14685' on Dashboards page
+	Then 'WidgetForDAS14685' Widget is displayed to the user
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14920 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccursWhenCreatingDashboardWidgetThatUsesBooleanField
