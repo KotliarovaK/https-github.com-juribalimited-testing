@@ -209,7 +209,7 @@ this.FeatureBackground();
 #line 40
  testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table2, "When ");
 #line 43
- testRunner.Then("\"zero, bla¿ck, \'green\'\" content is displayed in \"Phoenix Field\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'zero, bla¿ck, \'green\'\' content is displayed in the \'Phoenix Field\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 45
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 46
@@ -264,7 +264,7 @@ this.FeatureBackground();
 #line 67
  testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table3, "When ");
 #line 70
- testRunner.Then("\"zero\" content is displayed in \"Phoenix Field\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'zero\' content is displayed in the \'Phoenix Field\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -394,7 +394,7 @@ this.FeatureBackground();
 #line 101
  testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table5, "When ");
 #line 104
- testRunner.Then("\"new value\" content is displayed in \"Phoenix Field\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'new value\' content is displayed in the \'Phoenix Field\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 106
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 107
@@ -450,7 +450,7 @@ this.FeatureBackground();
 #line 127
  testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table6, "When ");
 #line 130
- testRunner.Then("\"012345\" content is displayed in \"Phoenix Field\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'012345\' content is displayed in the \'Phoenix Field\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -577,7 +577,7 @@ this.FeatureBackground();
 #line 160
  testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table8, "When ");
 #line 163
- testRunner.Then("\"\" content is displayed in \"Phoenix Field\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'\' content is displayed in the \'Phoenix Field\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 165
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 166
@@ -633,7 +633,7 @@ this.FeatureBackground();
 #line 186
  testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table9, "When ");
 #line 189
- testRunner.Then("\"1 value\" content is displayed in \"Phoenix Field\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'1 value\' content is displayed in the \'Phoenix Field\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -764,7 +764,7 @@ this.FeatureBackground();
 #line 221
  testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table11, "When ");
 #line 224
- testRunner.Then("\"one, two\" content is displayed in \"Phoenix Field\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'one, two\' content is displayed in the \'Phoenix Field\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 226
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 227
@@ -820,7 +820,7 @@ this.FeatureBackground();
 #line 247
  testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table12, "When ");
 #line 250
- testRunner.Then("\"one\" content is displayed in \"Phoenix Field\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'one\' content is displayed in the \'Phoenix Field\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

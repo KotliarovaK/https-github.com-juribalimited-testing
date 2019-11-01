@@ -1485,13 +1485,13 @@ this.FeatureBackground();
             table27.AddRow(new string[] {
                         "Empty"});
             table27.AddRow(new string[] {
-                        "Unknown"});
-            table27.AddRow(new string[] {
                         "Not Ready"});
             table27.AddRow(new string[] {
                         "On Target"});
             table27.AddRow(new string[] {
                         "Ready"});
+            table27.AddRow(new string[] {
+                        "Unknown"});
 #line 300
  testRunner.Then("Table columns of \'DAS-15852\' widget placed in the next order:", ((string)(null)), table27, "Then ");
 #line 308

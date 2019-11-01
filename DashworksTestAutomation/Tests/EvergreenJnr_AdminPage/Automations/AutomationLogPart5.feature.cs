@@ -209,11 +209,14 @@ this.FeatureBackground();
 #line 39
  testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table2, "When ");
 #line 44
- testRunner.Then("\"Started\" content is displayed in \"zUserAutom: Stage 3 \\ DDL Slot Task\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Started\' content is displayed in the \'zUserAutom: Stage 3 \\ DDL Slot Task\' colum" +
+                    "n", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 45
- testRunner.Then("\"\" content is displayed in \"zUserAutom: Stage 3 \\ DDL Slot Task (Date)\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'\' content is displayed in the \'zUserAutom: Stage 3 \\ DDL Slot Task (Date)\' colum" +
+                    "n", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 46
- testRunner.Then("\"\" content is displayed in \"zUserAutom: Stage 3 \\ DDL Slot Task (Slot)\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'\' content is displayed in the \'zUserAutom: Stage 3 \\ DDL Slot Task (Slot)\' colum" +
+                    "n", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -365,17 +368,17 @@ this.FeatureBackground();
 #line 91
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 92
- testRunner.Then("\"NOT STARTED\" content is displayed in \"zMailboxAu: Stage 3 \\ Radio Date Owner\" co" +
-                    "lumn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'NOT STARTED\' content is displayed in the \'zMailboxAu: Stage 3 \\ Radio Date Owner" +
+                    "\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 93
- testRunner.Then("\"7 Sep 2019\" content is displayed in \"zMailboxAu: Stage 3 \\ Radio Date Owner (Dat" +
-                    "e)\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'7 Sep 2019\' content is displayed in the \'zMailboxAu: Stage 3 \\ Radio Date Owner " +
+                    "(Date)\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 94
- testRunner.Then("\"Unassigned\" content is displayed in \"zMailboxAu: Stage 3 \\ Radio Date Owner (Own" +
-                    "er)\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Unassigned\' content is displayed in the \'zMailboxAu: Stage 3 \\ Radio Date Owner " +
+                    "(Owner)\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 95
- testRunner.Then("\"Admin IT\" content is displayed in \"zMailboxAu: Stage 3 \\ Radio Date Owner (Team)" +
-                    "\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Admin IT\' content is displayed in the \'zMailboxAu: Stage 3 \\ Radio Date Owner (T" +
+                    "eam)\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

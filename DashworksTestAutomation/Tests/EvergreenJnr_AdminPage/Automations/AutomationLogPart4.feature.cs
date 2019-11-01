@@ -276,11 +276,11 @@ this.FeatureBackground();
 #line 51
  testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table2, "When ");
 #line 55
- testRunner.Then("\"NOT STARTED\" content is displayed in \"zMailboxAu: Stage 3 \\ Radio Date Task\" col" +
-                    "umn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'NOT STARTED\' content is displayed in the \'zMailboxAu: Stage 3 \\ Radio Date Task\'" +
+                    " column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 56
- testRunner.Then("\"3 Apr 2019\" content is displayed in \"zMailboxAu: Stage 3 \\ Radio Date Task (Date" +
-                    ")\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'3 Apr 2019\' content is displayed in the \'zMailboxAu: Stage 3 \\ Radio Date Task (" +
+                    "Date)\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 58
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 59
@@ -335,10 +335,11 @@ this.FeatureBackground();
 #line 80
  testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table3, "When ");
 #line 84
- testRunner.Then("\"NOT STARTED\" content is displayed in \"zMailboxAu: Stage 3 \\ Radio Date Task\" col" +
-                    "umn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'NOT STARTED\' content is displayed in the \'zMailboxAu: Stage 3 \\ Radio Date Task\'" +
+                    " column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 85
- testRunner.Then("\"\" content is displayed in \"zMailboxAu: Stage 3 \\ Radio Date Task (Date)\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'\' content is displayed in the \'zMailboxAu: Stage 3 \\ Radio Date Task (Date)\' col" +
+                    "umn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -492,14 +493,14 @@ this.FeatureBackground();
 #line 130
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 131
- testRunner.Then("\"COMPLETE\" content is displayed in \"zUserAutom: Stage 2 \\ Radio Date Slot App\" co" +
-                    "lumn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'COMPLETE\' content is displayed in the \'zUserAutom: Stage 2 \\ Radio Date Slot App" +
+                    "\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 132
- testRunner.Then("\"9 Sep 2019\" content is displayed in \"zUserAutom: Stage 2 \\ Radio Date Slot App (" +
-                    "Date)\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'9 Sep 2019\' content is displayed in the \'zUserAutom: Stage 2 \\ Radio Date Slot A" +
+                    "pp (Date)\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 133
- testRunner.And("\"\" content is displayed in \"zUserAutom: Stage 2 \\ Radio Date Slot App (Slot)\" col" +
-                    "umn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'\' content is displayed in the \'zUserAutom: Stage 2 \\ Radio Date Slot App (Slot)\'" +
+                    " column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -641,14 +642,14 @@ this.FeatureBackground();
 #line 168
  testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table7, "When ");
 #line 173
- testRunner.Then("\"NOT STARTED\" content is displayed in \"zDeviceAut: Stage C \\ Radio Date Slot Devi" +
-                    "ce\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'NOT STARTED\' content is displayed in the \'zDeviceAut: Stage C \\ Radio Date Slot " +
+                    "Device\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 174
- testRunner.Then("\"10 Sep 2019\" content is displayed in \"zDeviceAut: Stage C \\ Radio Date Slot Devi" +
-                    "ce (Date)\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'10 Sep 2019\' content is displayed in the \'zDeviceAut: Stage C \\ Radio Date Slot " +
+                    "Device (Date)\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 175
- testRunner.Then("\"DAS-17846 Slot Device\" content is displayed in \"zDeviceAut: Stage C \\ Radio Date" +
-                    " Slot Device (Slot)\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'DAS-17846 Slot Device\' content is displayed in the \'zDeviceAut: Stage C \\ Radio " +
+                    "Date Slot Device (Slot)\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

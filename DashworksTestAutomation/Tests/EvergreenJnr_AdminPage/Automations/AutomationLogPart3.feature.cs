@@ -471,17 +471,17 @@ this.FeatureBackground();
 #line 129
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 130
- testRunner.Then("\"ON HOLD\" content is displayed in \"USEMEFORA2: StagEdit Automation page is displa" +
-                    "yed to the Usere 1 \\ Radiobutton Readiness Date Owner Task (User)\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'ON HOLD\' content is displayed in the \'USEMEFORA2: StagEdit Automation page is di" +
+                    "splayed to the Usere 1 \\ Radiobutton Readiness Date Owner Task (User)\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 131
- testRunner.Then("\"1 Aug 2019\" content is displayed in \"USEMEFORA2: Stage 1 \\ Radiobutton Readiness" +
-                    " Date Owner Task (User) (Date)\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'1 Aug 2019\' content is displayed in the \'USEMEFORA2: Stage 1 \\ Radiobutton Readi" +
+                    "ness Date Owner Task (User) (Date)\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 132
- testRunner.Then("\"Akhila Varghese\" content is displayed in \"USEMEFORA2: Stage 1 \\ Radiobutton Read" +
-                    "iness Date Owner Task (User) (Owner)\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Akhila Varghese\' content is displayed in the \'USEMEFORA2: Stage 1 \\ Radiobutton " +
+                    "Readiness Date Owner Task (User) (Owner)\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 133
- testRunner.Then("\"1803 Team\" content is displayed in \"USEMEFORA2: Stage 1 \\ Radiobutton Readiness " +
-                    "Date Owner Task (User) (Team)\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'1803 Team\' content is displayed in the \'USEMEFORA2: Stage 1 \\ Radiobutton Readin" +
+                    "ess Date Owner Task (User) (Team)\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -740,17 +740,17 @@ this.FeatureBackground();
 #line 202
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 203
- testRunner.Then("\"FAILED\" content is displayed in \"zDeviceAut: Stage B \\ Combination Task App\" col" +
-                    "umn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'FAILED\' content is displayed in the \'zDeviceAut: Stage B \\ Combination Task App\'" +
+                    " column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 204
- testRunner.And("\"1 Sep 2019\" content is displayed in \"zDeviceAut: Stage B \\ Combination Task App " +
-                    "(Date)\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'1 Sep 2019\' content is displayed in the \'zDeviceAut: Stage B \\ Combination Task " +
+                    "App (Date)\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 205
- testRunner.And("\"Maryna Kyslyak\" content is displayed in \"zDeviceAut: Stage B \\ Combination Task " +
-                    "App (Owner)\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Maryna Kyslyak\' content is displayed in the \'zDeviceAut: Stage B \\ Combination T" +
+                    "ask App (Owner)\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 206
- testRunner.And("\"Admin IT\" content is displayed in \"zDeviceAut: Stage B \\ Combination Task App (T" +
-                    "eam)\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Admin IT\' content is displayed in the \'zDeviceAut: Stage B \\ Combination Task Ap" +
+                    "p (Team)\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -892,11 +892,11 @@ this.FeatureBackground();
 #line 242
  testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table11, "When ");
 #line 246
- testRunner.Then("\"5 Sep 2019\" content is displayed in \"zDeviceAut: Stage C \\ Date Only with Capaci" +
-                    "ty\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'5 Sep 2019\' content is displayed in the \'zDeviceAut: Stage C \\ Date Only with Ca" +
+                    "pacity\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 247
- testRunner.And("\"DAS-17846 Slot Device\" content is displayed in \"zDeviceAut: Stage C \\ Date Only " +
-                    "with Capacity (Slot)\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'DAS-17846 Slot Device\' content is displayed in the \'zDeviceAut: Stage C \\ Date O" +
+                    "nly with Capacity (Slot)\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 249
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 250
@@ -951,11 +951,11 @@ this.FeatureBackground();
 #line 271
  testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table12, "When ");
 #line 275
- testRunner.Then("\"\" content is displayed in \"zDeviceAut: Stage C \\ Date Only with Capacity\" column" +
-                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'\' content is displayed in the \'zDeviceAut: Stage C \\ Date Only with Capacity\' co" +
+                    "lumn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 276
- testRunner.And("\"\" content is displayed in \"zDeviceAut: Stage C \\ Date Only with Capacity (Slot)\"" +
-                    " column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'\' content is displayed in the \'zDeviceAut: Stage C \\ Date Only with Capacity (Sl" +
+                    "ot)\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1097,11 +1097,11 @@ this.FeatureBackground();
 #line 312
  testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table14, "When ");
 #line 316
- testRunner.Then("\"13 Aug 2019\" content is displayed in \"zUserAutom: Stage 3 \\ Date Only with Capac" +
-                    "ity User\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'13 Aug 2019\' content is displayed in the \'zUserAutom: Stage 3 \\ Date Only with C" +
+                    "apacity User\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 317
- testRunner.And("\"\" content is displayed in \"zUserAutom: Stage 3 \\ Date Only with Capacity User (S" +
-                    "lot)\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'\' content is displayed in the \'zUserAutom: Stage 3 \\ Date Only with Capacity Use" +
+                    "r (Slot)\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
