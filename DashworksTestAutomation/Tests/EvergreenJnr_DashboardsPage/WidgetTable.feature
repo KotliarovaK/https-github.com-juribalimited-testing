@@ -300,11 +300,11 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNewSeverityOptionDisplayedForWidg
 	Then Table columns of 'DAS-15852' widget placed in the next order:
 	| headers   |
 	| Empty     |
-	| Unknown   |
 	| Not Ready |
 	| On Target |
 	| Ready     |
-	
+	| Unknown   |
+
 	When User clicks Ellipsis menu for 'DAS-15852' Widget on Dashboards page
 	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
 	When User selects '1803: Pre-Migration \ Ready to Migrate ASC' in the 'Order By' Widget dropdown
