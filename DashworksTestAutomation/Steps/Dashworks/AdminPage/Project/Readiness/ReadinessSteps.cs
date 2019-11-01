@@ -137,8 +137,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Readiness
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitForDataLoading();
 
-            var tooltip = page.GetColumnContentByColumnName("Tooltip");
-            var defaultFor = page.GetColumnContentByColumnName("Default for Applications");
+            var tooltip = page.GetColumnContentByColumnName("Tooltip").First();
+            var defaultFor = page.GetColumnContentByColumnName("Default for Applications").First();
 
             Utils.Verify.That(readinessDto.Tooltip, Is.EqualTo(tooltip), "Tooltip is different from stored one");
             Utils.Verify.That(readinessDto.DefaultForApplications.ToString(), Is.EqualTo(defaultFor).IgnoreCase, "Default For state different from stored one");
