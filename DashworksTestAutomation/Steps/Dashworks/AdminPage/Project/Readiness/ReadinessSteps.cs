@@ -152,36 +152,5 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Readiness
 
             Utils.Verify.That(labels.FindIndex(x => x.Equals(title)) + 1, Is.EqualTo(labels.FindIndex(x => x.Equals("NONE"))));
         }
-
-        [When(@"User clicks ""(.*)"" button in the Readiness dialog screen")]
-        public void WhenUserClicksButtonInTheReadinessDialogScreen(string buttonName)
-        {
-            var button = _driver.NowAt<ReadinessPage>();
-            button.GetReadinessDialogContainerButtonByName(buttonName).Click();
-        }
-
-        [Then(@"""(.*)"" text is displayed in the Readiness Dialog Container")]
-        public void ThenTextIsDisplayedInTheReadinessDialogContainer(string text)
-        {
-            var page = _driver.NowAt<ReadinessPage>();
-
-            Utils.Verify.IsTrue(page.GetReadinessDialogContainerText(text).Displayed(), $"{text} title is not displayed in the Readiness Dialog Container");
-        }
-
-        [Then(@"""(.*)"" title is displayed in the Readiness Dialog Container")]
-        public void ThenTitleIsDisplayedInTheReadinessDialogContainer(string text)
-        {
-            var page = _driver.NowAt<ReadinessPage>();
-
-            Utils.Verify.IsTrue(page.GetReadinessDialogContainerTitle(text).Displayed(), $"{text} title is not displayed in the Readiness Dialog Container");
-        }
-
-        [Then(@"Readiness Dialog Container is displayed to the User")]
-        public void ThenReadinessDialogContainerIsDisplayedToTheUser()
-        {
-            var page = _driver.NowAt<ReadinessPage>();
-
-            Utils.Verify.IsTrue(page.ReadinessDialogContainer.Displayed(), "Readiness Dialog Container is displayed");
-        }
     }
 }
