@@ -33,7 +33,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyFo
 	And User verifies data in the fields on details page
 	| Field | Data                                                       |
 	| Name  | "WPF/E" (codename) Community Technology Preview (Feb 2007) |
-	When User clicks 'RESYNC' button 
+	When User clicks 'RESYNC' button
 	And User clicks 'RESYNC' button in Dialog Pop-up
 	Then Success message is displayed and contains "Application successfully resynced" text
 	#waiting for the resync process to be completed

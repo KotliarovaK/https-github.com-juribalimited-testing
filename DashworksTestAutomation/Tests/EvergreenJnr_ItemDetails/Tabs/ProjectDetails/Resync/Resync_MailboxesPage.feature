@@ -16,5 +16,6 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatResyncOptionIsWorkedCorrectlyForPr
 	Then Dialog Pop-up is displayed for User
 	Then 'Resync owner and users' checkbox is checked
 	Then 'Resync name' checkbox is checked
+	When User selects state 'false' for 'Resync owner and users' checkbox
 	When User clicks 'RESYNC' button in Dialog Pop-up
 	Then Success message is displayed and contains "Mailbox successfully resynced" text
