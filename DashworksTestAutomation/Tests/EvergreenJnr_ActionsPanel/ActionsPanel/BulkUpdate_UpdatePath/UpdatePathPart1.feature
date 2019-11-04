@@ -145,11 +145,11 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnDevi
 	Then Success message with "3 of 3 objects were in the selected project and have been queued" text is displayed on Action panel
 	When User refreshes agGrid
 	And User perform search by "001PSUMZYOW581"
-	Then "Computer: PC Rebuild" content is displayed in "Windows7Mi: Path" column
+	Then 'Computer: PC Rebuild' content is displayed in the 'Windows7Mi: Path' column
 	When User perform search by "00BDM1JUR8IF419"
-	Then "Computer: PC Rebuild" content is displayed in "Windows7Mi: Path" column
+	Then 'Computer: PC Rebuild' content is displayed in the 'Windows7Mi: Path' column
 	When User perform search by "00RUUMAH9OZN9A"
-	Then "Computer: PC Rebuild" content is displayed in "Windows7Mi: Path" column
+	Then 'Computer: PC Rebuild' content is displayed in the 'Windows7Mi: Path' column
 	When User closes Tools panel
 	And User clicks Close panel button
 		#returns default object state
@@ -231,11 +231,11 @@ Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersP
 	When User refreshes agGrid
 	When User clicks Search button and opens Search panel for agGrid
 	And User perform search by "FMN5805290"
-	Then "User; Maternity" content is displayed in "Windows7Mi: Path" column
+	Then 'User; Maternity' content is displayed in the 'Windows7Mi: Path' column
 	When User perform search by "AKX995383"
-	Then "User; Maternity" content is displayed in "Windows7Mi: Path" column
+	Then 'User; Maternity' content is displayed in the 'Windows7Mi: Path' column
 	When User perform search by "AAD1011948"
-	Then "User; Maternity" content is displayed in "Windows7Mi: Path" column
+	Then 'User; Maternity' content is displayed in the 'Windows7Mi: Path' column
 	When User closes Tools panel
 	And User clicks Close panel button
 	When User refreshes agGrid
@@ -314,9 +314,9 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatRequestTypeIsUpdatedCorrectlyO
 	Then Success message with "2 of 2 objects were in the selected project and have been queued" text is displayed on Action panel
 	When User refreshes agGrid
 	And User perform search by ""WPF/E" (codename) Community Technology Preview (Feb 2007)"
-	Then "Application: Request Type B" content is displayed in "Windows7Mi: Path" column
+	Then 'Application: Request Type B' content is displayed in the 'Windows7Mi: Path' column
 	When User perform search by "0004 - Adobe Acrobat Reader 5.0.5 Francais"
-	Then "Application: Request Type B" content is displayed in "Windows7Mi: Path" column
+	Then 'Application: Request Type B' content is displayed in the 'Windows7Mi: Path' column
 	When User closes Tools panel
 	And User clicks Close panel button
 	When User refreshes agGrid
@@ -382,11 +382,11 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnMa
 	Then Success message with "3 of 3 objects were in the selected project and have been queued" text is displayed on Action panel
 	When User refreshes agGrid
 	And User perform search by "0F1ED67386AD4FA7BF4@bclabs.local"
-	Then "Personal Mailbox - VIP" content is displayed in "EmailMigra: Path" column
+	Then 'Personal Mailbox - VIP' content is displayed in the 'EmailMigra: Path' column
 	When User perform search by "10A919CA1E7641E08E7@bclabs.local"
-	Then "Personal Mailbox - VIP" content is displayed in "EmailMigra: Path" column
+	Then 'Personal Mailbox - VIP' content is displayed in the 'EmailMigra: Path' column
 	When User perform search by "229DCF8E575243E9928@bclabs.local"
-	Then "Personal Mailbox - VIP" content is displayed in "EmailMigra: Path" column
+	Then 'Personal Mailbox - VIP' content is displayed in the 'EmailMigra: Path' column
 	When User closes Tools panel
 	And User clicks Close panel button
 	When User refreshes agGrid

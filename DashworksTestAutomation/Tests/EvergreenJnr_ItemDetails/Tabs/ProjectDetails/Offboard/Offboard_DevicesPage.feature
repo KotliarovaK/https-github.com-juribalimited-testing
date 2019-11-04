@@ -23,7 +23,7 @@ Scenario: EvergreenJnr_DevicesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffb
 	| Display Name |
 	| Domain       |
 	| Owner        |
-	And User selects state 'true' for 'Offboard all associated users' checkbox
+	When User selects state 'true' for 'Offboard all associated users' checkbox
 	When User select "Username" rows in the grid
 	| SelectedRowsName |
 	| ABQ575757        |
@@ -116,15 +116,15 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddingAndRemovingColumnsInPopUpWorks
 	| Display Name |
 	| Domain       |
 	| Owner        |
-	And User selects state 'true' for 'Offboard all associated users' checkbox
-	And following columns are displayed on the Item details page:
+	When User selects state 'true' for 'Offboard all associated users' checkbox
+	Then following columns are displayed on the Item details page:
 	| ColumnName   |
 	| Username     |
 	| Display Name |
 	| Domain       |
 	| Owner        |
-	And User selects state 'true' for 'Offboard all associated users' checkbox
-	And following columns are displayed on the Item details page:
+	When User selects state 'true' for 'Offboard all associated users' checkbox
+	Then following columns are displayed on the Item details page:
 	| ColumnName   |
 	| Username     |
 	| Display Name |

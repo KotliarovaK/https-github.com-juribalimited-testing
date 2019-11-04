@@ -34,7 +34,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDevicesAreAddedCorrectly
 	And User navigates to the 'Capacity Units' left menu item
 	Then Page with 'Capacity Units' header is displayed to user
 	When User enters "CapacityUnit12141Devices" text in the Search field for "Capacity Unit" column
-	Then "5" content is displayed in "Devices" column
+	Then '5' content is displayed in the 'Devices' column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @DAS13808 @DAS14200 @DAS14236 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatUsersAreAddedCorrectly
@@ -65,7 +65,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatUsersAreAddedCorrectly
 	And User navigates to the 'Capacity Units' left menu item
 	Then Page with 'Capacity Units' header is displayed to user
 	When User enters "CapacityUnit12141Users" text in the Search field for "Capacity Unit" column
-	Then "5" content is displayed in "Users" column
+	Then '5' content is displayed in the 'Users' column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @DAS13808 @DAS14200 @DAS14236 @DAS14237 @DAS14757 @DAS16124 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatApplicationsAreAddedCorrectly
@@ -96,7 +96,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatApplicationsAreAddedCorrectly
 	And User navigates to the 'Capacity Units' left menu item
 	Then Page with 'Capacity Units' header is displayed to user
 	When User enters "CapacityUnit12141Applications" text in the Search field for "Capacity Unit" column
-	Then "5" content is displayed in "Applications" column
+	Then '5' content is displayed in the 'Applications' column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @DAS13808 @DAS14200 @DAS14236 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatMailboxesAreAddedCorrectly
@@ -127,4 +127,4 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatMailboxesAreAddedCorrectly
 	And User navigates to the 'Capacity Units' left menu item
 	Then Page with 'Capacity Units' header is displayed to user
 	When User enters "CapacityUnit12141Mailboxes" text in the Search field for "Capacity Unit" column
-	Then "5" content is displayed in "Mailboxes" column
+	Then '5' content is displayed in the 'Mailboxes' column

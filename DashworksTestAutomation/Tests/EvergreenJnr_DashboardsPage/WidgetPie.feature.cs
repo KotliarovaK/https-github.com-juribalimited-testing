@@ -181,7 +181,7 @@ this.FeatureBackground();
 #line 26
  testRunner.And("User creates new Widget", ((string)(null)), table3, "And ");
 #line 29
- testRunner.Then("User sees widget with the next name \'Test_Widget_DAS14668_1\' on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Test_Widget_DAS14668_1\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 30
  testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -206,7 +206,7 @@ this.FeatureBackground();
 #line 31
  testRunner.And("User creates new Widget", ((string)(null)), table4, "And ");
 #line 34
- testRunner.Then("User sees widget with the next name \'Test_Widget_DAS14668_2\' on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Test_Widget_DAS14668_2\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -665,7 +665,7 @@ this.FeatureBackground();
 #line 126
  testRunner.And("User creates new Widget", ((string)(null)), table11, "And ");
 #line 129
- testRunner.Then("User sees widget with the next name \'Widget_DAS15500\' on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Widget_DAS15500\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 130
  testRunner.When("User clicks Ellipsis menu for \'Widget_DAS15500\' Widget on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 131

@@ -245,7 +245,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             }
             else
             {
-                Driver.FindElement(By.XPath(selector)).Click();
+                Driver.ExecuteAction(() => Driver.FindElement(By.XPath(selector)).Click());
             }
 
             Driver.WaitForDataLoading();

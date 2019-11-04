@@ -74,22 +74,22 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatInSlotsColumnOnCapacityUnitsPageTheCo
 	And User navigates to the 'Slots' left menu item
 	And User navigates to the 'Units' left menu item
 	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
-	Then "1" content is displayed in "Slots" column
+	Then '1' content is displayed in the 'Slots' column
 	When User enters "Unit 1" text in the Search field for "Capacity Unit" column
-	Then "1" content is displayed in "Slots" column
+	Then '1' content is displayed in the 'Slots' column
 	When User enters "Unit 2" text in the Search field for "Capacity Unit" column
-	Then "1" content is displayed in "Slots" column
+	Then '1' content is displayed in the 'Slots' column
 	When User navigates to the 'Slots' left menu item
 	And User creates new Slot
 	| SlotName | DisplayName | CapacityUnits |
 	| Slot 2   | Slot 2      | Unassigned    |
 	And User navigates to the 'Units' left menu item
 	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
-	Then "2" content is displayed in "Slots" column
+	Then '2' content is displayed in the 'Slots' column
 	When User enters "Unit 1" text in the Search field for "Capacity Unit" column
-	Then "1" content is displayed in "Slots" column
+	Then '1' content is displayed in the 'Slots' column
 	When User enters "Unit 2" text in the Search field for "Capacity Unit" column
-	Then "1" content is displayed in "Slots" column
+	Then '1' content is displayed in the 'Slots' column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Senior_Projects @DAS13812 @DAS13676 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheEditCapacitySlotScreenIfAnAllocatedTaskHasSinceBeenChanged

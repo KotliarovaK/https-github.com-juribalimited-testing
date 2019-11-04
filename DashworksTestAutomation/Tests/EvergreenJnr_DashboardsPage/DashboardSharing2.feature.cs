@@ -496,8 +496,7 @@ this.FeatureBackground();
 #line 123
  testRunner.And("User updates Widget with following info:", ((string)(null)), table10, "And ");
 #line 126
- testRunner.Then("User sees widget with the next name \'WidgetForDAS15550_Edited\' on Dashboards page" +
-                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'WidgetForDAS15550_Edited\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -22,7 +22,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyFo
 	And 'Resync owner' checkbox is checked
 	And 'Resync name' checkbox is checked
 	When User enters 'Microsoft SQL' in the 'Application' autocomplete field and selects 'Microsoft SQL Server 2012' value
-	Then User selects state 'true' for 'Resync name' checkbox
+	When User selects state 'true' for 'Resync name' checkbox
 	When User clicks 'RELINK' button in Dialog Pop-up
 	Then Warning message with "This object will be relinked to the selected Evergreen object in this project" text is displayed on the Project Details Page
 	When User clicks 'RELINK' button in Dialog Pop-up
@@ -33,7 +33,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyFo
 	And User verifies data in the fields on details page
 	| Field | Data                                                       |
 	| Name  | "WPF/E" (codename) Community Technology Preview (Feb 2007) |
-	When User clicks 'RESYNC' button 
+	When User clicks 'RESYNC' button
 	And User clicks 'RESYNC' button in Dialog Pop-up
 	Then Success message is displayed and contains "Application successfully resynced" text
 	#waiting for the resync process to be completed

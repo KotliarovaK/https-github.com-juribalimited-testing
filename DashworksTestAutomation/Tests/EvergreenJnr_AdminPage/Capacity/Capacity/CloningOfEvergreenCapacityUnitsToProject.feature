@@ -59,11 +59,11 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProj
 	Then following Items are displayed in the History table
 	| Items           |
 	| N7GXB25TPJY73EH |
-	Then "Devices_CU_DAS14103" content is displayed in "Capacity Unit" column
+	Then 'Devices_CU_DAS14103' content is displayed in the 'Capacity Unit' column
 	When User navigates to the 'Capacity' left menu item
 	When User navigates to the 'Units' left menu item
 	When User enters "Devices_CU_DAS14103" text in the Search field for "Capacity Unit" column
-	Then "1" content is displayed in "Devices" column
+	Then '1' content is displayed in the 'Devices' column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @DAS14103 @DAS14172 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProjectCapacityUnitsIsWorkedCorrectlyIfTheCapacityModeEqualsCapacityUnits_Users
@@ -116,12 +116,12 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProj
 	Then following Items are displayed in the History table
 	| Items               |
 	| B569F47FE6B1491CAEC |
-	Then "Users_CU_DAS14103" content is displayed in "Capacity Unit" column
+	Then 'Users_CU_DAS14103' content is displayed in the 'Capacity Unit' column
 	When User navigates to the 'Capacity' left menu item
 	When User navigates to the 'Units' left menu item
 	When User enters "Users_CU_DAS14103" text in the Search field for "Capacity Unit" column
-	Then "" content is displayed in "Devices" column
-	Then "1" content is displayed in "Users" column
+	Then '' content is displayed in the 'Devices' column
+	Then '1' content is displayed in the 'Users' column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @DAS14103 @DAS14172 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProjectCapacityUnitsIsWorkedCorrectlyIfTheCapacityModeEqualsCapacityUnits_Applications
@@ -174,10 +174,10 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProj
 	Then following Items are displayed in the History table
 	| Items                                |
 	| Windows Live Messenger (8.1.0178.00) |
-	Then "Applications_CU_DAS14103" content is displayed in "Capacity Unit" column
+	Then 'Applications_CU_DAS14103' content is displayed in the 'Capacity Unit' column
 	When User navigates to the 'Capacity' left menu item
 	When User navigates to the 'Units' left menu item
 	When User enters "Applications_CU_DAS14103" text in the Search field for "Capacity Unit" column
-	Then "" content is displayed in "Devices" column
-	Then "" content is displayed in "Users" column
-	Then "1" content is displayed in "Applications" column
+	Then '' content is displayed in the 'Devices' column
+	Then '' content is displayed in the 'Users' column
+	Then '1' content is displayed in the 'Applications' column

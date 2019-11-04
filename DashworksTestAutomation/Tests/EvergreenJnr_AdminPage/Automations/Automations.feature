@@ -26,7 +26,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationsLogGridLoads
 	| User                |
 	| Outcome             |
 	Then Export button is displayed in panel
-	Then "SUCCESS" content is displayed in "Outcome" column
+	Then 'SUCCESS' content is displayed in the 'Outcome' column
 	When User have opened column settings for "Date" column
 	And User clicks Column button on the Column Settings panel
 	Then Column Settings was opened
@@ -72,9 +72,9 @@ Scenario: EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations
 	| Run         |
 	| Actions     |
 	| Description |
-	Then "FALSE" content is displayed in "Running" column
+	Then 'FALSE' content is displayed in the 'Running' column
 	When User enters "DELAY_2" text in the Search field for "Automation" column
-	Then "TRUE" content is displayed in "Active" column
+	Then 'TRUE' content is displayed in the 'Active' column
 	When User selects all rows on the grid
 	Then following Values are displayed in the 'Actions' dropdown:
 	| Values        |
@@ -88,7 +88,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations
 	When User clicks "RUN" button in the warning message on Admin page
 	Then Success message is displayed and contains "1 automation started," text
 	When User enters "DELAY_2" text in the Search field for "Automation" column
-	Then "TRUE" content is displayed in "Running" column
+	Then 'TRUE' content is displayed in the 'Running' column
 	When User clicks Cog-menu for "DELAY_2" item on Admin page
 	Then User sees following cog-menu items on Admin page:
 	| items            |
@@ -382,7 +382,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridLoadsWithActionsForAnAutoma
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
 	When User enters "AM 030619 Devices 145" text in the Search field for "Automation" column
-	Then "3" content is displayed in "Actions" column
+	Then '3' content is displayed in the 'Actions' column
 	When User clicks content from "Automation" column
 	When User navigates to the 'Actions' left menu item
 	Then Counter shows "3" found rows
@@ -735,4 +735,4 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeviceLisFiltertHasAppropriateAutomati
 	And User selects "Select All" checkbox from String Filter with item list on the Admin page
 	And User clicks String Filter button for "Action" column on the Admin page
 	And User selects "15949_Action_1" checkbox from String Filter with item list on the Admin page
-	Then "5179" content is displayed in "Objects" column
+	Then '5179' content is displayed in the 'Objects' column

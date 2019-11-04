@@ -14,7 +14,7 @@ Scenario: EvergreenJnr_AdminPage_CheckFiltersForAutomationsGrid
 	When User clicks String Filter button for "Active" column on the Admin page
 	When User selects "True" checkbox from String Filter on the Admin page
 	Then "Inactive_Automation" content is displayed for "Automation" column
-	Then "FALSE" content is displayed in "Active" column
+	Then 'FALSE' content is displayed in the 'Active' column
 	When User clicks Reset Filters button on the Admin page
 	When User clicks String Filter button for "Scope" column on the Admin page
 	When User selects "All Mailboxes" checkbox from String Filter on the Admin page
@@ -24,7 +24,7 @@ Scenario: EvergreenJnr_AdminPage_CheckFiltersForAutomationsGrid
 	When User selects "Auto: X-Proj Paths Scope" checkbox from String Filter on the Admin page
 	When User clicks String Filter button for "Scope" column on the Admin page
 	When User selects "Empty" checkbox from String Filter on the Admin page
-	Then "All Devices" content is displayed in "Scope" column
+	Then 'All Devices' content is displayed in the 'Scope' column
 	When User clicks Reset Filters button on the Admin page
 	And User enters "3" text in the Search field for "Actions" column
 	Then Rows counter shows "4" of "16" rows

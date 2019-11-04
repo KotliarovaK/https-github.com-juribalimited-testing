@@ -154,16 +154,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 Is.EqualTo(data.Replace(@"\t", "   ")));
         }
 
-        //TODO this should be deleted. Use ThenContentIsDisplayedInTheColumn or ThenContentIsDisplayedInTheColumn instead
-        [Then(@"""(.*)"" content is displayed in ""(.*)"" column")]
-        public void ThenContentIsDisplayedInColumn(string textContent, string columnName)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            _driver.WaitForDataLoading();
-            var originalList = page.GetRowContentByColumnName(columnName);
-            Verify.AreEqual(textContent, originalList, "Content is not displayed correctly");
-        }
-
         [Then(@"""(.*)"" tooltip displayed in ""(.*)"" column")]
         public void ThenTooltipIsDisplayedInColumn(string textTooltip, string columnName)
         {
@@ -342,7 +332,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitForDataLoading();
-            _columnValue.Value = page.GetRowContentByColumnName(columnName);
+            _columnValue.Value = page.GetColumnContentByColumnName(columnName).First();
         }
 
         [Then(@"Rows counter number equals to remembered value")]

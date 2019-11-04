@@ -17,20 +17,5 @@ namespace DashworksTestAutomation.Base
 
             return new List<By> { };
         }
-
-        //TODO Need to be removed or updated later?
-        public IWebElement GetCheckboxStateByName(string checkbox)
-        {
-            var selector = By.XPath($".//*[text()='{checkbox}']/preceding::div[@class='mat-checkbox-inner-container']//input");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
-        public IWebElement GetCheckboxByName(string checkbox)
-        {
-            var selector = By.XPath($".//*[text()='{checkbox}']/ancestor::mat-checkbox");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
     }
 }

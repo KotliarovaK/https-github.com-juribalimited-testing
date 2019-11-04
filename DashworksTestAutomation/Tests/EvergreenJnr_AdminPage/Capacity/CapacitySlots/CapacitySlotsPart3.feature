@@ -76,12 +76,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThat0ValuesAreCorrectlyShownOnTheCapacityS
 	When User navigates to "User Scheduled Test (Jo)" project details
 	And User navigates to the 'Capacity' left menu item
 	And User navigates to the 'Slots' left menu item
-	Then "40" content is displayed in "Monday" column
+	Then '40' content is displayed in the 'Monday' column
 	When User clicks content from "Capacity Slot" column
 	And User changes value to "0" for "Monday" column
 	And User clicks 'UPDATE' button 
 	Then Success message is displayed and contains "The capacity slot details have been updated" text
-	And "0" content is displayed in "Monday" column
+	And '0' content is displayed in the 'Monday' column
 	When User clicks content from "Capacity Slot" column
 	And User changes value to "40" for "Monday" column
 	And User clicks 'UPDATE' button 

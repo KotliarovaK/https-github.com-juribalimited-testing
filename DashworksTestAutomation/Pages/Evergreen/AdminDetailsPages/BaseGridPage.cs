@@ -201,9 +201,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             Using = ".//button[contains(@class, 'messageAction')]/span[contains(text(), 'CANCEL')]")]
         public IWebElement CancelButtonInWarningMessage { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='empty-message ng-star-inserted'][text()='No items']")]
-        public IWebElement NoItemsMessage { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//mat-error/span/i[@class='material-icons mat-warning']")]
         public IWebElement UnderFieldWarningIcon { get; set; }
 
@@ -676,13 +673,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             } while (element != null);
 
             return columnData;
-        }
-
-        public string GetRowContentByColumnName(string columnName)
-        {
-            var by = By.XPath(
-                $".//div[@role='gridcell'][{GetColumnNumberByName(columnName)}]");
-            return Driver.FindElement(by).Text;
         }
 
         public List<string> GetColumnColors(string columnName)

@@ -41,8 +41,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedBucketsIsDisplayedForOnboarded
 	Then following Items are displayed in the Queue table
 	| Items               |
 	| 003F5D8E1A844B1FAA5 |
-	Then "UsersProject3Group" content is displayed in "Bucket" column
-	Then "Unassigned" content is displayed in "Capacity Unit" column
+	Then 'UsersProject3Group' content is displayed in the 'Bucket' column
+	Then 'Unassigned' content is displayed in the 'Capacity Unit' column
 	Then Column is displayed in following order:
 	| ColumnName    |
 	| Date          |
@@ -58,8 +58,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedBucketsIsDisplayedForOnboarded
 	Then following Items are displayed in the History table
 	| Items               |
 	| 003F5D8E1A844B1FAA5 |
-	And "UsersProject3Group" content is displayed in "Bucket" column
-	Then "Unassigned" content is displayed in "Capacity Unit" column
+	And 'UsersProject3Group' content is displayed in the 'Bucket' column
+	Then 'Unassigned' content is displayed in the 'Capacity Unit' column
 	Then Column is displayed in following order:
 	| ColumnName    |
 	| Date          |

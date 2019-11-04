@@ -14,12 +14,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatListCanBeFilteredSortedByDefaultColumn
 	Then Page with 'Capacity Units' header is displayed to user
 	When User clicks String Filter button for "Default" column on the Admin page
 	And User clicks "True" checkbox from boolean filter on the Admin page
-	Then "FALSE" content is displayed in "Default" column
+	Then 'FALSE' content is displayed in the 'Default' column
 	When User clicks Refresh button on the Admin page
 	Then Page with 'Capacity Units' header is displayed to user
 	When User clicks String Filter button for "Default" column on the Admin page
 	And User clicks "False" checkbox from boolean filter on the Admin page
-	Then "TRUE" content is displayed in "Default" column
+	Then 'TRUE' content is displayed in the 'Default' column
 	When User clicks Refresh button on the Admin page
 	Then Page with 'Capacity Units' header is displayed to user
 	When User clicks on 'Default' column header

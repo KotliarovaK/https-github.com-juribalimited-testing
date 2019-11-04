@@ -52,14 +52,14 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatWhenValueIsZeroThenBlankShouldBeDispl
 	When User navigates to the 'Capacity' left menu item
 	And User navigates to the 'Units' left menu item
 	When User enters "Evergreen Capacity Unit 3" text in the Search field for "Capacity Unit" column
-	Then "" content is displayed in "Devices" column
-	And "" content is displayed in "Users" column
+	Then '' content is displayed in the 'Devices' column
+	And '' content is displayed in the 'Users' column
 	And "" tooltip displayed in "Slots" column
 	And "" tooltip displayed in "Devices" column
 	And "" tooltip displayed in "Users" column
 	When User enters "Birmingham" text in the Search field for "Capacity Unit" column
-	Then "" content is displayed in "Applications" column
-	And "2" content is displayed in "Slots" column
+	Then '' content is displayed in the 'Applications' column
+	And '2' content is displayed in the 'Slots' column
 	And "2" tooltip displayed in "Slots" column
 	When User clicks content from "Slots" column
 	Then URL contains "/capacity/slots/:Birmingham"

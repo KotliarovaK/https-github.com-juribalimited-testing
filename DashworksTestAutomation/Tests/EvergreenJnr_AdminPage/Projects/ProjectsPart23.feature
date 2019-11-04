@@ -74,9 +74,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectCountersDisplayedInRingGridFor
 	And User selects "Evergreen" checkbox from String Filter with item list on the Admin page
 	And User clicks String Filter button for "Project" column on the Admin page
 	And User selects "DAS15260Project" checkbox from String Filter with item list on the Admin page
-	Then "1" content is displayed in "Devices" column
-	And "" content is displayed in "Users" column
-	And "" content is displayed in "Mailboxes" column
+	Then '1' content is displayed in the 'Devices' column
+	And '' content is displayed in the 'Users' column
+	And '' content is displayed in the 'Mailboxes' column
 	When User clicks 'Admin' on the left-hand menu
 	And User enters "DAS15260Project" text in the Search field for "Project" column
 	And User selects all rows on the grid

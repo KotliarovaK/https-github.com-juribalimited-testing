@@ -41,13 +41,22 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = ".//h2")]
         public IWebElement SubHeader { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//mat-dialog-container")]
+        #region Popup
+
+        private const string PopupSelector = ".//mat-dialog-container";
+
+        [FindsBy(How = How.XPath, Using = PopupSelector)]
         public IWebElement PopupElement { get; set; }
+
+        [FindsBy(How = How.XPath, Using = PopupSelector + "//div[@mat-dialog-title]")]
+        public IWebElement PopupTitle { get; set; }
+
+        #endregion
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='status-code']")]
         public IWebElement StatusCodeLabel { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//div[@id='content']//i[@class='material-icons mat-menu']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@id='content']//i[@class='material-icons mat-menu']")]
         public IWebElement ExpandSideNavPanelIcon { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[@aria-label='Open calendar']")]
@@ -983,13 +992,19 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         public IWebElement GetCheckbox(string ariaLabel)
         {
             //TODO mb first selector in the or statement should be deleted
-            var selector = By.XPath($".//mat-checkbox[@aria-label='{ariaLabel}']|.//input[@aria-label='{ariaLabel}']//ancestor::mat-checkbox");
+            var selector = By.XPath($".//mat-checkbox[@aria-label='{ariaLabel}']|.//input[@aria-label='{ariaLabel}']//ancestor::mat-checkbox|.//span[text()='{ariaLabel}']//ancestor::mat-checkbox");
             if (!Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Long))
             {
                 throw new Exception($"'{ariaLabel}' checkbox was not displayed");
             }
 
             return Driver.FindElement(selector);
+        }
+
+        public bool IsCheckboxEnabled(string ariaLabel)
+        {
+            var enabled = GetCheckbox(ariaLabel).FindElement(By.XPath(".//input")).Enabled;
+            return enabled;
         }
 
         #endregion

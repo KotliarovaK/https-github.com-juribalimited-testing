@@ -11,24 +11,14 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Forms
         [FindsBy(How = How.XPath, Using = "//div[contains(@class,'action-container')]/h2")]
         public IWebElement CreateReadinessFormTitle { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//label[@class='mat-checkbox-layout']/span[text()='Ready']")]
-        public IWebElement ReadyCheckbox { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//label[@class='mat-checkbox-layout']//input[@aria-label='Ready']")]
-        public IWebElement ReadyCheckboxState { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//label[@class='mat-checkbox-layout']/span[text()='Default for applications']")]
         public IWebElement DefaultForAppCheckBox { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//label[@class='mat-checkbox-layout']//input[@aria-label='Default']")]
-        public IWebElement DefaultCheckBoxState { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//mat-select[@id='colorTemplate']")]
         public IWebElement ColourDropbox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='mat-option-text']//span")]
         public IList<IWebElement> ColourPicker { get; set; }
-
 
         public override List<By> GetPageIdentitySelectors()
         {
@@ -38,7 +28,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Forms
                 SelectorFor(this, p => p.CreateReadinessFormTitle)
             };
         }
-
 
         public void SelectObjectForReadinessCreation(string objectName)
         {

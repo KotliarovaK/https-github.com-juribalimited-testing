@@ -127,10 +127,10 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedU
 	When User removes "Username" column by Column panel
 	When User removes "Domain" column by Column panel
 	When User clicks the Columns button
-	Then "ON HOLD" content is displayed in "USEMEFORA2: StagEdit Automation page is displayed to the Usere 1 \ Radiobutton Readiness Date Owner Task (User)" column
-	Then "1 Aug 2019" content is displayed in "USEMEFORA2: Stage 1 \ Radiobutton Readiness Date Owner Task (User) (Date)" column
-	Then "Akhila Varghese" content is displayed in "USEMEFORA2: Stage 1 \ Radiobutton Readiness Date Owner Task (User) (Owner)" column
-	Then "1803 Team" content is displayed in "USEMEFORA2: Stage 1 \ Radiobutton Readiness Date Owner Task (User) (Team)" column
+	Then 'ON HOLD' content is displayed in the 'USEMEFORA2: StagEdit Automation page is displayed to the Usere 1 \ Radiobutton Readiness Date Owner Task (User)' column
+	Then '1 Aug 2019' content is displayed in the 'USEMEFORA2: Stage 1 \ Radiobutton Readiness Date Owner Task (User) (Date)' column
+	Then 'Akhila Varghese' content is displayed in the 'USEMEFORA2: Stage 1 \ Radiobutton Readiness Date Owner Task (User) (Owner)' column
+	Then '1803 Team' content is displayed in the 'USEMEFORA2: Stage 1 \ Radiobutton Readiness Date Owner Task (User) (Team)' column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17681 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedUpdateValueDateOwnerCombinationWithNoChange
@@ -200,10 +200,10 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateOwnerForUpdateValueInDevicesScopedAu
 	Then Columns panel is displayed to the user
 	When User removes "Application" column by Column panel
 	When User clicks the Columns button
-	Then "FAILED" content is displayed in "zDeviceAut: Stage B \ Combination Task App" column
-	And "1 Sep 2019" content is displayed in "zDeviceAut: Stage B \ Combination Task App (Date)" column
-	And "Maryna Kyslyak" content is displayed in "zDeviceAut: Stage B \ Combination Task App (Owner)" column
-	And "Admin IT" content is displayed in "zDeviceAut: Stage B \ Combination Task App (Team)" column
+	Then 'FAILED' content is displayed in the 'zDeviceAut: Stage B \ Combination Task App' column
+	And '1 Sep 2019' content is displayed in the 'zDeviceAut: Stage B \ Combination Task App (Date)' column
+	And 'Maryna Kyslyak' content is displayed in the 'zDeviceAut: Stage B \ Combination Task App (Owner)' column
+	And 'Admin IT' content is displayed in the 'zDeviceAut: Stage B \ Combination Task App (Team)' column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17846 @DAS17974 @Cleanup @Not_Ready
 #Waiting for "zDevice Sch for Automations Feature" project on automation server from GD
@@ -243,8 +243,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateDateForUpdateValueInDevicesScopedAut
 	| ColumnName                                           |
 	| zDeviceAut: Stage C \ Date Only with Capacity        |
 	| zDeviceAut: Stage C \ Date Only with Capacity (Slot) |
-	Then "5 Sep 2019" content is displayed in "zDeviceAut: Stage C \ Date Only with Capacity" column
-	And "DAS-17846 Slot Device" content is displayed in "zDeviceAut: Stage C \ Date Only with Capacity (Slot)" column
+	Then '5 Sep 2019' content is displayed in the 'zDeviceAut: Stage C \ Date Only with Capacity' column
+	And 'DAS-17846 Slot Device' content is displayed in the 'zDeviceAut: Stage C \ Date Only with Capacity (Slot)' column
 	#Update Action
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -272,8 +272,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateDateForUpdateValueInDevicesScopedAut
 	| ColumnName                                           |
 	| zDeviceAut: Stage C \ Date Only with Capacity        |
 	| zDeviceAut: Stage C \ Date Only with Capacity (Slot) |
-	Then "" content is displayed in "zDeviceAut: Stage C \ Date Only with Capacity" column
-	And "" content is displayed in "zDeviceAut: Stage C \ Date Only with Capacity (Slot)" column
+	Then '' content is displayed in the 'zDeviceAut: Stage C \ Date Only with Capacity' column
+	And '' content is displayed in the 'zDeviceAut: Stage C \ Date Only with Capacity (Slot)' column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17846 @Cleanup @Not_Ready
 #Waiting for "zDevice Sch for Automations Feature" project on automation server from GD
@@ -313,5 +313,5 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateDateForUpdateValueInUsersScopedAutom
 	| ColumnName                                                |
 	| zUserAutom: Stage 3 \ Date Only with Capacity User        |
 	| zUserAutom: Stage 3 \ Date Only with Capacity User (Slot) |
-	Then "13 Aug 2019" content is displayed in "zUserAutom: Stage 3 \ Date Only with Capacity User" column
-	And "" content is displayed in "zUserAutom: Stage 3 \ Date Only with Capacity User (Slot)" column
+	Then '13 Aug 2019' content is displayed in the 'zUserAutom: Stage 3 \ Date Only with Capacity User' column
+	And '' content is displayed in the 'zUserAutom: Stage 3 \ Date Only with Capacity User (Slot)' column

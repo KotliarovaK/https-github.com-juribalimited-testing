@@ -116,7 +116,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorIsNotDisplayedWhenCreatingProject
 	And User clicks Column button on the Column Settings panel
 	And User select "Maps to Evergreen" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
-	Then "Unassigned" content is displayed in "Maps to Evergreen" column
+	Then 'Unassigned' content is displayed in the 'Maps to Evergreen' column
 	When User navigates to the 'Capacity Units' left menu item
 	When User clicks String Filter button for "Project" column on the Admin page
 	When User selects "Evergreen" checkbox from String Filter with item list on the Admin page
@@ -126,7 +126,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorIsNotDisplayedWhenCreatingProject
 	And User clicks Column button on the Column Settings panel
 	And User select "Maps to Evergreen" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
-	Then "Unassigned" content is displayed in "Maps to Evergreen" column
+	Then 'Unassigned' content is displayed in the 'Maps to Evergreen' column
 	When User navigates to the 'Projects' left menu item
 	When User enters "TestProject22" text in the Search field for "Project" column
 	And User selects all rows on the grid
