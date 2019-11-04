@@ -1080,6 +1080,12 @@ this.FeatureBackground();
  testRunner.When("User selects Save as new list option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 263
  testRunner.When("User creates new custom list with \"DAS18168_List\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 264
+ testRunner.When("Dashboard with \'DAS18167_Dashboard\' name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 265
+ testRunner.When("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 266
+ testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
                         "WidgetType",
@@ -1090,19 +1096,23 @@ this.FeatureBackground();
                         "AggregateFunction",
                         "OrderBy",
                         "MaxValues",
-                        "ShowLegend"});
+                        "ShowLegend",
+                        "ShowDataLAble"});
             table23.AddRow(new string[] {
                         "Pie",
-                        "DAS18168_Widget",
+                        "WidgetForDAS18168",
                         "DAS18168_List",
-                        "Vendor",
+                        "Hostname",
                         "Hostname",
                         "Count distinct",
                         "Hostname DESC",
                         "10",
+                        "true",
                         "true"});
-#line 264
+#line 267
  testRunner.When("User creates new Widget", ((string)(null)), table23, "When ");
+#line 270
+ testRunner.Then("Data Labels are displayed on the Preview page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

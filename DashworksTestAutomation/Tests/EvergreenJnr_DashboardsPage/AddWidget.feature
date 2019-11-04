@@ -261,9 +261,13 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatAllValuesInTheLegendAndIn
 	When User clicks Save button on the list panel
 	When User selects Save as new list option
 	When User creates new custom list with "DAS18168_List" name
+	When Dashboard with 'DAS18167_Dashboard' name created via API and opened
+	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'ADD WIDGET' button
 	When User creates new Widget
-         | WidgetType    | Title                | List              | SplitBy    | AggregateBy    | AggregateFunction           | OrderBy              | MaxValues   | ShowLegend |
-         |      Pie      |   DAS18168_Widget    |   DAS18168_List   |     Vendor |      Hostname  |          Count distinct     |     Hostname DESC    |     10      | true     |
+         | WidgetType | Title             | List          | SplitBy  | AggregateBy | AggregateFunction | OrderBy       | MaxValues | ShowLegend | ShowDataLAble |
+         | Pie        | WidgetForDAS18168 | DAS18168_List | Hostname | Hostname    | Count distinct    | Hostname DESC | 10        | true       |       true    |
+	Then Data Labels are displayed on the Preview page
 
 	Examples: 
 	| PageName | LoadedPage  | categoryName |

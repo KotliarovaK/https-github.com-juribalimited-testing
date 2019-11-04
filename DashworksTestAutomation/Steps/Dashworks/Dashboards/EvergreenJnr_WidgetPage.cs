@@ -115,6 +115,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 createWidgetElement.ShowLegend.Click();
             }
 
+            if (row.ContainsKey("ShowDataLabels") && !string.IsNullOrEmpty(row["ShowDataLabels"])
+                                              && row["ShowDataLabels"].Equals("true"))
+            {
+                createWidgetElement.ShowDataLabel.Click();
+            }
+
             if (row.ContainsKey("Layout") && !string.IsNullOrEmpty(row["Layout"]))
             {
                 _driver.WaitForElementToBeDisplayed(createWidgetElement.Layout);
