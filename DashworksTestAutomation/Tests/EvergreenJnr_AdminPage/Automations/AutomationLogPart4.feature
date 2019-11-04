@@ -52,8 +52,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateAndRemoveTaskValueForUpdateValueInUs
 	| ColumnName                                   |
 	| zMailboxAu: Stage 3 \ Radio Date Task        |
 	| zMailboxAu: Stage 3 \ Radio Date Task (Date) |
-	Then "NOT STARTED" content is displayed in "zMailboxAu: Stage 3 \ Radio Date Task" column
-	Then "3 Apr 2019" content is displayed in "zMailboxAu: Stage 3 \ Radio Date Task (Date)" column
+	Then 'NOT STARTED' content is displayed in the 'zMailboxAu: Stage 3 \ Radio Date Task' column
+	Then '3 Apr 2019' content is displayed in the 'zMailboxAu: Stage 3 \ Radio Date Task (Date)' column
 	#Update Action
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -81,8 +81,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateAndRemoveTaskValueForUpdateValueInUs
 	| ColumnName                                   |
 	| zMailboxAu: Stage 3 \ Radio Date Task        |
 	| zMailboxAu: Stage 3 \ Radio Date Task (Date) |
-	Then "NOT STARTED" content is displayed in "zMailboxAu: Stage 3 \ Radio Date Task" column
-	Then "" content is displayed in "zMailboxAu: Stage 3 \ Radio Date Task (Date)" column
+	Then 'NOT STARTED' content is displayed in the 'zMailboxAu: Stage 3 \ Radio Date Task' column
+	Then '' content is displayed in the 'zMailboxAu: Stage 3 \ Radio Date Task (Date)' column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17859 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInAppsScopedAutomation
@@ -128,9 +128,9 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInAppsScopedA
 	Then Columns panel is displayed to the user
 	When User removes "Application" column by Column panel
 	When User clicks the Columns button
-	Then "COMPLETE" content is displayed in "zUserAutom: Stage 2 \ Radio Date Slot App" column
-	Then "9 Sep 2019" content is displayed in "zUserAutom: Stage 2 \ Radio Date Slot App (Date)" column
-	And "" content is displayed in "zUserAutom: Stage 2 \ Radio Date Slot App (Slot)" column
+	Then 'COMPLETE' content is displayed in the 'zUserAutom: Stage 2 \ Radio Date Slot App' column
+	Then '9 Sep 2019' content is displayed in the 'zUserAutom: Stage 2 \ Radio Date Slot App (Date)' column
+	And '' content is displayed in the 'zUserAutom: Stage 2 \ Radio Date Slot App (Slot)' column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17859 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckUpdateValueWithNoChangeDateForUpdateTaskValueInDevocesScopedAutomation
@@ -170,6 +170,6 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueWithNoChangeDateForUpdateTaskVa
 	| zDeviceAut: Stage C \ Radio Date Slot Device        |
 	| zDeviceAut: Stage C \ Radio Date Slot Device (Date) |
 	| zDeviceAut: Stage C \ Radio Date Slot Device (Slot) |
-	Then "NOT STARTED" content is displayed in "zDeviceAut: Stage C \ Radio Date Slot Device" column
-	Then "10 Sep 2019" content is displayed in "zDeviceAut: Stage C \ Radio Date Slot Device (Date)" column
-	Then "DAS-17846 Slot Device" content is displayed in "zDeviceAut: Stage C \ Radio Date Slot Device (Slot)" column
+	Then 'NOT STARTED' content is displayed in the 'zDeviceAut: Stage C \ Radio Date Slot Device' column
+	Then '10 Sep 2019' content is displayed in the 'zDeviceAut: Stage C \ Radio Date Slot Device (Date)' column
+	Then 'DAS-17846 Slot Device' content is displayed in the 'zDeviceAut: Stage C \ Radio Date Slot Device (Slot)' column

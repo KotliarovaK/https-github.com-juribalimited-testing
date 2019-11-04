@@ -78,7 +78,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedApplicationsAreDisplayedCapac
 	When User selects "Evergreen" checkbox from String Filter with item list on the Admin page
 	When User clicks String Filter button for "Project" column
 	When User selects "Project13156" checkbox from String Filter with item list on the Admin page
-	Then "2" content is displayed in "Applications" column
+	Then '2' content is displayed in the 'Applications' column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS14967 @Not_Run
 Scenario Outline: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCountersOfDeviceProjectLeadToCorrectFilteredLists

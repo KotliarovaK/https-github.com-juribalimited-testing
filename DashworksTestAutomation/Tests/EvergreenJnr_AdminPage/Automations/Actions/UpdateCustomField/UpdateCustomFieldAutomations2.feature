@@ -40,7 +40,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName    |
 	| Phoenix Field |
-	Then "zero, bla¿ck, 'green'" content is displayed in "Phoenix Field" column
+	Then 'zero, bla¿ck, 'green'' content is displayed in the 'Phoenix Field' column
 		#Revert 'Update custom field' changes to default
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -67,7 +67,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName    |
 	| Phoenix Field |
-	Then "zero" content is displayed in "Phoenix Field" column
+	Then 'zero' content is displayed in the 'Phoenix Field' column
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18187 @DAS18374 @DAS18374 @Cleanup @Not_Ready
 #Waiting for 'Phoenix Field' from GD to automation
@@ -101,7 +101,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName    |
 	| Phoenix Field |
-	Then "new value" content is displayed in "Phoenix Field" column
+	Then 'new value' content is displayed in the 'Phoenix Field' column
 		#Revert 'Update custom field' changes to default
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -127,7 +127,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName    |
 	| Phoenix Field |
-	Then "012345" content is displayed in "Phoenix Field" column
+	Then '012345' content is displayed in the 'Phoenix Field' column
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18187 @DAS18374 @Cleanup @Not_Ready
 #Waiting for 'Phoenix Field' from GD to automation
@@ -160,7 +160,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName    |
 	| Phoenix Field |
-	Then "" content is displayed in "Phoenix Field" column
+	Then '' content is displayed in the 'Phoenix Field' column
 		#Revert 'Update custom field' changes to default
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -186,7 +186,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName    |
 	| Phoenix Field |
-	Then "1 value" content is displayed in "Phoenix Field" column
+	Then '1 value' content is displayed in the 'Phoenix Field' column
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18187 @DAS18374 @Cleanup @Not_Ready
 #Waiting for 'Phoenix Field' from GD to automation
@@ -221,7 +221,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName    |
 	| Phoenix Field |
-	Then "one, two" content is displayed in "Phoenix Field" column
+	Then 'one, two' content is displayed in the 'Phoenix Field' column
 		#Revert 'Update custom field' changes to default
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -247,4 +247,4 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName    |
 	| Phoenix Field |
-	Then "one" content is displayed in "Phoenix Field" column
+	Then 'one' content is displayed in the 'Phoenix Field' column

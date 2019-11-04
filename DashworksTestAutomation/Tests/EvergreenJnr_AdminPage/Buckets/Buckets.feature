@@ -213,9 +213,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketA
 	When User clicks String Filter button for "Project" column on the Admin page
 	When User selects "Project12905" checkbox from String Filter with item list on the Admin page
 	When User enters "2Bucket12905" text in the Search field for "Bucket" column
-	Then "5" content is displayed in "Devices" column
+	Then '5' content is displayed in the 'Devices' column
 	When User enters "Unassigned" text in the Search field for "Bucket" column
-	Then "5" content is displayed in "Devices" column
+	Then '5' content is displayed in the 'Devices' column
 	When User enters "2Bucket12905" text in the Search field for "Bucket" column
 	And User selects all rows on the grid
 	And User selects 'Delete' in the 'Actions' dropdown
@@ -226,7 +226,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketA
 	When User clicks String Filter button for "Project" column on the Admin page
 	When User selects "Project12905" checkbox from String Filter on the Admin page
 	When User enters "Unassigned" text in the Search field for "Bucket" column
-	Then "10" content is displayed in "Devices" column
+	Then '10' content is displayed in the 'Devices' column
 	When User navigates to the 'Projects' left menu item
 	Then Page with 'Projects' header is displayed to user
 	When User enters "Project12905" text in the Search field for "Project" column
@@ -234,6 +234,6 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketA
 	Then Page with 'Project12905' header is displayed to user
 	When User navigates to the 'History' left menu item
 	When User enters "001BAQXT6JWFPI" text in the Search field for "Item" column
-	Then "Unassigned" content is displayed in "Bucket" column
+	Then 'Unassigned' content is displayed in the 'Bucket' column
 	When User enters "00I0COBFWHOF27" text in the Search field for "Item" column
 	Then "Deleted bucket" italic content is displayed

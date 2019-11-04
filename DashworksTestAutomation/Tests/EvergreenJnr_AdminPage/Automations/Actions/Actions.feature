@@ -713,7 +713,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValueDataInTheGridForActions
 	And User clicks 'CREATE' button 
 	#Test
 	When User enters "DAS17744_Action" text in the Search field for "Action" column
-	Then "Started, 2019-09-05, 1803 Team, Lisa Bailey" content is displayed in "Value" column
+	Then 'Started, 2019-09-05, 1803 Team, Lisa Bailey' content is displayed in the 'Value' column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17772 @DAS17948 @Not_Ready @Cleanup
 #Waiting for 'zUser Sch for Automations Feature' Project on the GD

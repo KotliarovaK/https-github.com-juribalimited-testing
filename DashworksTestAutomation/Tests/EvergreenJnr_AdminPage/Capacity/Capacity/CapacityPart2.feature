@@ -51,7 +51,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreated
 	Then User sees next Units on the Capacity Units page:
 	| units             |
 	| Unassigned        |
-	And "TRUE" content is displayed in "Default" column
+	And 'TRUE' content is displayed in the 'Default' column
 	When User select "Capacity Unit" rows in the grid
 	| SelectedRowsName |
 	| Unassigned       |
@@ -76,17 +76,17 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreated
 	When User navigates to the 'Capacity' left menu item
 	And User navigates to the 'Units' left menu item
 	And User enters "CapacityUnit12672" text in the Search field for "Capacity Unit" column
-	Then "TRUE" content is displayed in "Default" column
+	Then 'TRUE' content is displayed in the 'Default' column
 	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
-	Then "FALSE" content is displayed in "Default" column
+	Then 'FALSE' content is displayed in the 'Default' column
 	When User clicks content from "Capacity Unit" column
 	And User updates the "Default Unit" checkbox state
 	And User clicks 'UPDATE' button 
 	And User navigates to the 'Units' left menu item
 	And User enters "CapacityUnit12672" text in the Search field for "Capacity Unit" column
-	Then "FALSE" content is displayed in "Default" column
+	Then 'FALSE' content is displayed in the 'Default' column
 	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
-	Then "TRUE" content is displayed in "Default" column
+	Then 'TRUE' content is displayed in the 'Default' column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS14240 @DAS16372 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatCapacityUnitsGridUpdatedAfterUnitUpdatingOrCreation

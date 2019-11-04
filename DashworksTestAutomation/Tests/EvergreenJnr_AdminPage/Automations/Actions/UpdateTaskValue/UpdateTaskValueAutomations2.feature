@@ -42,7 +42,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInApplicati
 	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName                                   |
 	| zUserAutom: Relative BU \ DT Auto App (Date) |
-	Then "9 Oct 2019 14:00" content is displayed in "zUserAutom: Relative BU \ DT Auto App (Date)" column
+	Then '9 Oct 2019 14:00' content is displayed in the 'zUserAutom: Relative BU \ DT Auto App (Date)' column
 	#Return to previous value
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -68,7 +68,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInApplicati
 	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName                                   |
 	| zUserAutom: Relative BU \ DT Auto App (Date) |
-	Then "10 Oct 2019 00:00" content is displayed in "zUserAutom: Relative BU \ DT Auto App (Date)" column
+	Then '10 Oct 2019 00:00' content is displayed in the 'zUserAutom: Relative BU \ DT Auto App (Date)' column
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18292 @Cleanup @Not_Ready
 #Waiting for 'Update relative to current value' value in dropdown
@@ -105,7 +105,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInMailboxes
 	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName                             |
 	| zMailboxAu: Relative BU \ DT Auto Mail |
-	Then "25 Oct 2019" content is displayed in "zMailboxAu: Relative BU \ DT Auto Mail" column
+	Then '25 Oct 2019' content is displayed in the 'zMailboxAu: Relative BU \ DT Auto Mail' column
 	#Return to previous value
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -131,7 +131,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInMailboxes
 	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName                             |
 	| zMailboxAu: Relative BU \ DT Auto Mail |
-	Then "15 Oct 2019" content is displayed in "zMailboxAu: Relative BU \ DT Auto Mail" column
+	Then '15 Oct 2019' content is displayed in the 'zMailboxAu: Relative BU \ DT Auto Mail' column
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18292 @Cleanup @Not_Ready
 #Waiting for 'Update relative to current value' value in dropdown
@@ -171,8 +171,8 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInDevicesAu
 	| ColumnName                                      |
 	| zDeviceAut: Relative BU \ DT Auto Device        |
 	| zDeviceAut: Relative BU \ DT Auto Device (Date) |
-	Then "NOT STARTED" content is displayed in "zDeviceAut: Relative BU \ DT Auto Device" column
-	Then "" content is displayed in "zDeviceAut: Relative BU \ DT Auto Device (Date)" column
+	Then 'NOT STARTED' content is displayed in the 'zDeviceAut: Relative BU \ DT Auto Device' column
+	Then '' content is displayed in the 'zDeviceAut: Relative BU \ DT Auto Device (Date)' column
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18543 @Cleanup @Not_Ready
 #Waiting for 'Update relative to current value' value in dropdown

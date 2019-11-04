@@ -87,7 +87,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedValueIsDisplayedForCapacityCo
 	And User enters '7 Oct 2018' text to 'Override End Date' datepicker
 	And User clicks 'CREATE' button 
 	Then Success message is displayed and contains "Your override date has been created" text
-	And "Unlimited" content is displayed in "Capacity" column
+	And 'Unlimited' content is displayed in the 'Capacity' column
 	When User enters ">1" text in the Search field for "Capacity" column
 	Then Rows counter shows "1" of "1" rows
 	When User clicks content from "Start Date" column

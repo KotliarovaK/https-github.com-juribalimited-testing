@@ -18,7 +18,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatValidationMessageAppearsWhenSavin
 	When User creates new Widget
 	| WidgetType | Title                  | List        | SplitBy     | AggregateBy | AggregateFunction | OrderBy         |
 	| Pie        | Dashboard for DAS14587 | All Devices | Device Type | Hostname    | Count distinct    | Device Type ASC |
-	Then User sees widget with the next name 'Dashboard for DAS14587' on Dashboards page
+	Then 'Dashboard for DAS14587' Widget is displayed to the user
 	
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14578 @DAS14584 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckWidgetTitleIsLimitedToOneHundredChars
@@ -28,7 +28,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckWidgetTitleIsLimitedToOneHundredChars
 	And User creates new Widget
 	| WidgetType | Title                                                                                                       | List             | SplitBy     | AggregateBy | AggregateFunction | OrderBy         | TableOrientation | MaxValues |
 	| Table      | Line with one hundred and seven chars Line with one hundred and seven chars Line with one hundred and seven | All Applications | Application | Application | Count distinct    | Application ASC | Horizontal       | 10        |
-	Then User sees widget with the next name 'Line with one hundred and seven chars Line with one hundred and seven chars Line with one hundred an' on Dashboards page
+	Then 'Line with one hundred and seven chars Line with one hundred and seven chars Line with one hundred an' Widget is displayed to the user
 	And Widget name 'Line with one hundred and seven chars Line with one hundred and seven chars Line with one hundred an' has word break style on Dashboards page
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15900 @Cleanup
@@ -39,7 +39,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWarningMessageAppearsOnceWhenSwit
 	And User creates new Widget
 	| WidgetType | Title             | List             | SplitBy | AggregateFunction | OrderBy   | MaxValues | ShowLegend |
 	| Pie        | WidgetForDAS15900 | All Applications | Vendor  | Count             | Count ASC | 10        | true       |
-	And User clicks Ellipsis menu for 'WidgetForDAS15900' Widget on Dashboards page
+	Then 'WidgetForDAS15900' Widget is displayed to the user
+	When User clicks Ellipsis menu for 'WidgetForDAS15900' Widget on Dashboards page
 	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
 	And User adds new Widget
 	| WidgetType | Title                    | List        | SplitBy  | AggregateFunction | OrderBy   | MaxValues | ShowLegend |
@@ -116,6 +117,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckCheckboxLabelDisplaying
 	When User creates new Widget
 	| WidgetType | Title             | List        | SplitBy  | AggregateFunction | OrderBy   | MaxValues | ShowLegend |
 	| Pie        | WidgetForDAS16853 | All Devices | Hostname | Count             | Count ASC | 10        | true       |
+	Then 'WidgetForDAS16853' Widget is displayed to the user
 	When User clicks Ellipsis menu for 'WidgetForDAS16853' Widget on Dashboards page
 	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
 	Then 'Show legend' checkbox has a correct label
@@ -183,7 +185,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTheAggregateFunctionAndAggregateB
 	When User creates new Widget
 	| WidgetType | Title             | List         | SplitBy  | AggregateFunction   | AggregateBy | OrderBy      | MaxValues |
 	| Bar        | WidgetForDAS16853 | 1803 Rollout | Hostname | Count distinct      | Hostname    |Hostname DESC | 10        |
-	And User clicks Ellipsis menu for 'WidgetForDAS16853' Widget on Dashboards page
+	Then 'WidgetForDAS16853' Widget is displayed to the user
+	When  User clicks Ellipsis menu for 'WidgetForDAS16853' Widget on Dashboards page
 	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
 	When User selects 'Count distinct' in the 'Aggregate Function' Widget dropdown
 	When User selects 'Hostname' in the 'Aggregate By' Widget dropdown
@@ -197,6 +200,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTheOrderByDropdownIsExpandedWithT
 	When User creates new Widget
 	| WidgetType | Title             | List         | SplitBy  | AggregateFunction   | AggregateBy | OrderBy      | MaxValues |
 	| Bar        | WidgetForDAS16853 | 1803 Rollout | Hostname | Count distinct      | Hostname    |Hostname DESC | 10        |
+	Then 'WidgetForDAS16853' Widget is displayed to the user
 	When User clicks Ellipsis menu for 'WidgetForDAS16853' Widget on Dashboards page
 	When User clicks 'Edit' item from Ellipsis menu on Dashboards page
 	Then following Values are displayed in the 'OrderBy' dropdown:
@@ -222,6 +226,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTheAppropriateFilterWithTheEmptyV
 	When User creates new Widget
 	| WidgetType | Title             | List             | SplitBy | AggregateFunction | OrderBy    | DrillDown | ShowLegend |
 	| Pie        | WidgetForDAS18066 | All Applications | Vendor  | Count             | Count DESC | Yes       | true       |
+	Then 'WidgetForDAS18066' Widget is displayed to the user
 	When User clicks on 'Empty' category of 'WidgetForDAS18066' widget
 	Then all cells in the 'Vendor' column are empty
 	When User clicks the Filters button

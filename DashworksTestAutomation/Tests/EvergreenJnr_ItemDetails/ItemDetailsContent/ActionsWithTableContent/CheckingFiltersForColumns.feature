@@ -179,8 +179,8 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatDevicesUsersUsedQuantityMatchE
 	| Device Count (Used) |
 	| User Count (Used)   |
 	When User perform search by "Microsoft DirectX 5 DDK"
-	Then "94" content is displayed in "Device Count (Used)" column
-	And "98" content is displayed in "User Count (Used)" column
+	Then '94' content is displayed in the 'Device Count (Used)' column
+	And '98' content is displayed in the 'User Count (Used)' column
 	When User click content from "Application" column
 	When User navigates to the 'Distribution' left menu item
 	When User navigates to the 'Users' left submenu item

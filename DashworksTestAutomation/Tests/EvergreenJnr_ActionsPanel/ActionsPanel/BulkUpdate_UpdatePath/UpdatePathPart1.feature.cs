@@ -555,15 +555,15 @@ this.FeatureBackground();
 #line 147
  testRunner.And("User perform search by \"001PSUMZYOW581\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 148
- testRunner.Then("\"Computer: PC Rebuild\" content is displayed in \"Windows7Mi: Path\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Computer: PC Rebuild\' content is displayed in the \'Windows7Mi: Path\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 149
  testRunner.When("User perform search by \"00BDM1JUR8IF419\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 150
- testRunner.Then("\"Computer: PC Rebuild\" content is displayed in \"Windows7Mi: Path\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Computer: PC Rebuild\' content is displayed in the \'Windows7Mi: Path\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 151
  testRunner.When("User perform search by \"00RUUMAH9OZN9A\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 152
- testRunner.Then("\"Computer: PC Rebuild\" content is displayed in \"Windows7Mi: Path\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Computer: PC Rebuild\' content is displayed in the \'Windows7Mi: Path\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 153
  testRunner.When("User closes Tools panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 154
@@ -794,15 +794,15 @@ this.FeatureBackground();
 #line 233
  testRunner.And("User perform search by \"FMN5805290\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 234
- testRunner.Then("\"User; Maternity\" content is displayed in \"Windows7Mi: Path\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'User; Maternity\' content is displayed in the \'Windows7Mi: Path\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 235
  testRunner.When("User perform search by \"AKX995383\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 236
- testRunner.Then("\"User; Maternity\" content is displayed in \"Windows7Mi: Path\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'User; Maternity\' content is displayed in the \'Windows7Mi: Path\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 237
  testRunner.When("User perform search by \"AAD1011948\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 238
- testRunner.Then("\"User; Maternity\" content is displayed in \"Windows7Mi: Path\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'User; Maternity\' content is displayed in the \'Windows7Mi: Path\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 239
  testRunner.When("User closes Tools panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 240
@@ -1031,11 +1031,13 @@ this.FeatureBackground();
  testRunner.And("User perform search by \"\"WPF/E\" (codename) Community Technology Preview (Feb 2007" +
                     ")\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 317
- testRunner.Then("\"Application: Request Type B\" content is displayed in \"Windows7Mi: Path\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Application: Request Type B\' content is displayed in the \'Windows7Mi: Path\' colu" +
+                    "mn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 318
  testRunner.When("User perform search by \"0004 - Adobe Acrobat Reader 5.0.5 Francais\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 319
- testRunner.Then("\"Application: Request Type B\" content is displayed in \"Windows7Mi: Path\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Application: Request Type B\' content is displayed in the \'Windows7Mi: Path\' colu" +
+                    "mn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 320
  testRunner.When("User closes Tools panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 321
@@ -1232,15 +1234,15 @@ this.FeatureBackground();
 #line 384
  testRunner.And("User perform search by \"0F1ED67386AD4FA7BF4@bclabs.local\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 385
- testRunner.Then("\"Personal Mailbox - VIP\" content is displayed in \"EmailMigra: Path\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Personal Mailbox - VIP\' content is displayed in the \'EmailMigra: Path\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 386
  testRunner.When("User perform search by \"10A919CA1E7641E08E7@bclabs.local\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 387
- testRunner.Then("\"Personal Mailbox - VIP\" content is displayed in \"EmailMigra: Path\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Personal Mailbox - VIP\' content is displayed in the \'EmailMigra: Path\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 388
  testRunner.When("User perform search by \"229DCF8E575243E9928@bclabs.local\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 389
- testRunner.Then("\"Personal Mailbox - VIP\" content is displayed in \"EmailMigra: Path\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Personal Mailbox - VIP\' content is displayed in the \'EmailMigra: Path\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 390
  testRunner.When("User closes Tools panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 391

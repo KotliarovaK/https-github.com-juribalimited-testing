@@ -213,7 +213,7 @@ this.FeatureBackground();
 #line 34
  testRunner.Then("following Items are displayed in the Queue table", ((string)(null)), table3, "Then ");
 #line 39
- testRunner.Then("\"\" content is displayed in \"Bucket\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'\' content is displayed in the \'Bucket\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 40
  testRunner.When("User navigates to the \'History\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -228,7 +228,7 @@ this.FeatureBackground();
 #line 41
  testRunner.Then("following Items are displayed in the History table", ((string)(null)), table4, "Then ");
 #line 46
- testRunner.Then("\"\" content is displayed in \"Bucket\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'\' content is displayed in the \'Bucket\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 47
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden

@@ -1512,7 +1512,7 @@ this.FeatureBackground();
 #line 326
  testRunner.When("User clicks on \'Windows7Mi: Language\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 327
- testRunner.Then("\"English\" content is displayed in \"Windows7Mi: Language\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'English\' content is displayed in the \'Windows7Mi: Language\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1824,11 +1824,11 @@ this.FeatureBackground();
 #line 389
  testRunner.When("User clicks on \'1803: Status\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 390
- testRunner.Then("\"Not Onboarded\" content is displayed in \"1803: Status\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Not Onboarded\' content is displayed in the \'1803: Status\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 391
  testRunner.When("User clicks on \'1803: Status\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 392
- testRunner.Then("\"Offboarded\" content is displayed in \"1803: Status\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Offboarded\' content is displayed in the \'1803: Status\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

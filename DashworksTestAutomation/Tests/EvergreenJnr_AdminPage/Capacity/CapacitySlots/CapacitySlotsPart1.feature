@@ -21,7 +21,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingI
 	| SlotName      | DisplayName | CapacityType   |
 	| CapacitySlot1 | DAS13432    | Capacity Units |
 	Then Success message is displayed and contains "Your capacity slot has been created" text
-	Then "All Capacity Units" content is displayed in "Capacity Units" column
+	Then 'All Capacity Units' content is displayed in the 'Capacity Units' column
 	When User creates new Slot
 	| SlotName      | DisplayName | CapacityType   |
 	| CapacitySlot1 | DAS13432    | Capacity Units |

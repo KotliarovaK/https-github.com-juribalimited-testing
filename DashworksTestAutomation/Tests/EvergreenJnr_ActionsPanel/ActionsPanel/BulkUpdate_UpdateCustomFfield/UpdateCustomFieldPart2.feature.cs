@@ -264,7 +264,7 @@ this.FeatureBackground();
 #line 55
  testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 56
- testRunner.Then("\"\" content is displayed in \"Phoenix Field\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'\' content is displayed in the \'Phoenix Field\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 58
  testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 59
@@ -290,7 +290,7 @@ this.FeatureBackground();
 #line 68
  testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 69
- testRunner.Then("\"111, 000\" content is displayed in \"Phoenix Field\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'111, 000\' content is displayed in the \'Phoenix Field\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -408,7 +408,7 @@ this.FeatureBackground();
 #line 101
  testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 102
- testRunner.Then("\"beta, alpha\" content is displayed in \"Phoenix Field\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'beta, alpha\' content is displayed in the \'Phoenix Field\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 104
  testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 105
@@ -552,7 +552,7 @@ this.FeatureBackground();
 #line 149
  testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 150
- testRunner.Then("\"second\" content is displayed in \"Phoenix Field\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'second\' content is displayed in the \'Phoenix Field\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 152
  testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 153
@@ -702,7 +702,7 @@ this.FeatureBackground();
 #line 198
  testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 199
- testRunner.Then("\"02\" content is displayed in \"Phoenix Field\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'02\' content is displayed in the \'Phoenix Field\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 201
  testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 202

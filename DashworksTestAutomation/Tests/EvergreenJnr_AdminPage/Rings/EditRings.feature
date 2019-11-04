@@ -13,7 +13,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatRingsDetailsPageCanBeSeenAfterTypeOfRi
 	And User navigates to the 'Details' left menu item
 	Then 'Clone evergreen rings to project rings' content is displayed in 'Rings' dropdown
 	When User navigates to the 'Rings' left menu item
-	Then "TRUE" content is displayed in "Default" column
+	Then 'TRUE' content is displayed in the 'Default' column
 	When User navigates to the 'Details' left menu item
 	And User selects 'Use project rings' in the 'Rings' dropdown
 	And User navigates to the 'Rings' left menu item

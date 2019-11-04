@@ -123,7 +123,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckUserCanEditWidgetFromSharedDashboard
 	And User updates Widget with following info:
 	| WidgetType | Title                    | List             | SplitBy     | AggregateBy | AggregateFunction | OrderBy         | MaxValues |
 	| Table      | WidgetForDAS15550_Edited | All Applications | Application | Application | Count distinct    | Application ASC | 5         |
-	Then User sees widget with the next name 'WidgetForDAS15550_Edited' on Dashboards page
+	Then 'WidgetForDAS15550_Edited' Widget is displayed to the user
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS14915 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatUserWithEditRightsCanChangeDashboardName

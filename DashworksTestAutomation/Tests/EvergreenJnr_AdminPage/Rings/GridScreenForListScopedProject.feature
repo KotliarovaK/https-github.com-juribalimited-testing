@@ -11,7 +11,7 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForDeviceScopedProject
 	| ProjectName   | Scope       | ProjectTemplate | Mode               |
 	| 14695_Project | All Devices | None            | Standalone Project |
 	When User navigates to the 'Rings' left menu item
-	Then "" content is displayed in "Devices" column
+	Then '' content is displayed in the 'Devices' column
 	Then table with Setting menu column on Admin page is displayed in following order:
 	| ColumnName |
 	| Ring       |
@@ -82,7 +82,7 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForMailboxScopedProject
 	And User clicks content from "Project" column
 	Then Page with 'Email Migration' header is displayed to user
 	When User navigates to the 'Rings' left menu item
-	Then "729" content is displayed in "Mailboxes" column
+	Then '729' content is displayed in the 'Mailboxes' column
 	Then Columns on Admin page is displayed in following order:
 	| ColumnName |
 	|            |

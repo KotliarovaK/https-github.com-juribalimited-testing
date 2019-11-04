@@ -159,5 +159,5 @@ Scenario: EvergreenJnr_UsersList_CheckThatToolTipForMailboxPermissionOnMailboxPe
 	When User navigates to the 'Mailboxes' left menu item
 	When User navigates to the 'Mailbox Permissions' left submenu item
 	When User enters "Exchange 2007" text in the Search field for "Mailbox Platform" column
-	Then "FullAccess" content is displayed in "Permission" column
+	Then 'FullAccess' content is displayed in the 'Permission' column
 	And "FullAccess" tooltip displayed in "Permission" column

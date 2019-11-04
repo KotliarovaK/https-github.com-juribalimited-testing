@@ -794,7 +794,25 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         #endregion
 
+        #region Popup
+
+        [Then(@"Popup with '(.*)' title is displayed")]
+        public void ThenPopupWithTitleIsDisplayed(string title)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForElementToContainsText(page.PopupTitle, title);
+        }
+
+        #endregion
+
         #region Button on popup
+
+        [When(@"User clicks '(.*)' button in Dialog Pop-up")]
+        public void WhenUserClicksButtonInDialogPopUp(string buttonName)
+        {
+            var dialogContainer = _driver.NowAt<BaseDashboardPage>();
+            dialogContainer.GetButtonByNameOnPopup(buttonName).Click();
+        }
 
         [Then(@"'(.*)' popup button color is '(.*)'")]
         public void ThenPopupButtonColorIs(string button, string color)
@@ -888,6 +906,22 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var dialogContainer = _driver.NowAt<BaseDashboardPage>();
             Verify.IsFalse(dialogContainer.GetCheckbox(checkbox).Selected(),
                 $"'{checkbox}' checkbox is checked");
+        }
+
+        [Then(@"'(.*)' checkbox is disabled")]
+        public void ThenCheckboxIsDisabled(string checkbox)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsFalse(page.IsCheckboxEnabled("Default"),
+                $"'{checkbox}' checkbox is not disabled");
+        }
+
+        [Then(@"'(.*)' checkbox is not disabled")]
+        public void ThenCheckboxIsNotDisabled(string checkbox)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsTrue(page.IsCheckboxEnabled(checkbox),
+                $"'{checkbox}' checkbox is disabled");
         }
 
         #endregion

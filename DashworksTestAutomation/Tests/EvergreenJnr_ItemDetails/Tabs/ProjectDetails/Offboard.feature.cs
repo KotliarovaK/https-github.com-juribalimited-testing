@@ -187,7 +187,7 @@ this.FeatureBackground();
 #line 34
  testRunner.And(string.Format("User enters \"{0}\" text in the Search field for \"Item\" column", itemName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 35
- testRunner.Then(string.Format("\"{0}\" content is displayed in \"Item\" column", itemName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("\'{0}\' content is displayed in the \'Item\' column", itemName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -300,7 +300,7 @@ this.FeatureBackground();
 #line 69
  testRunner.And(string.Format("User enters \"{0}\" text in the Search field for \"Item\" column", itemName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 70
- testRunner.Then(string.Format("\"{0}\" content is displayed in \"Item\" column", itemName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("\'{0}\' content is displayed in the \'Item\' column", itemName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

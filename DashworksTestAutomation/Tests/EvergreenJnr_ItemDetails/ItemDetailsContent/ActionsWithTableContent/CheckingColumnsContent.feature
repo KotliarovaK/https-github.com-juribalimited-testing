@@ -22,13 +22,13 @@ Scenario: EvergreenJnr_AllLists_CheckThatDataAboutUsersDevicesOnUsersMailboxObje
 	Then Details page for "AAD1011948" item is displayed to the user
 	When User switches to the "USE ME FOR AUTOMATION(DEVICE SCHDLD)" project in the Top bar on Item details page
 	When User navigates to the 'Devices' left menu item
-	Then "001BAQXT6JWFPI" content is displayed in "Hostname" column
+	Then '001BAQXT6JWFPI' content is displayed in the 'Hostname' column
 	#=====================================================================================#
 	When User navigates to the 'Mailbox' details page for '00A5B910A1004CF5AC4@bclabs.local' item
 	Then Details page for "00A5B910A1004CF5AC4@bclabs.local" item is displayed to the user
 	When User switches to the "USE ME FOR AUTOMATION(MAIL SCHDLD)" project in the Top bar on Item details page
 	When User navigates to the 'Users' left menu item
-	Then "00A5B910A1004CF5AC4" content is displayed in "Username" column
+	Then '00A5B910A1004CF5AC4' content is displayed in the 'Username' column
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16860
 Scenario: EvergreenJnr_DevicesList_ChecksThatLinksFromTheDeviceColumnInDeviceProjectSummaryOnDevicesPageGoingToSenior
@@ -336,10 +336,10 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatUsersAreReloadedAfterSelectingAPr
 	Then Details page for "abel.y.hanson@dwlabs.local" item is displayed to the user
 	When User navigates to the 'Users' left menu item
 	Then "7" rows found label displays on Details Page
-	And "Administrator" content is displayed in "Username" column
+	And 'Administrator' content is displayed in the 'Username' column
 	When User switches to the "Email Migration" project in the Top bar on Item details page
 	Then "1" rows found label displays on Details Page
-	And "hansonay" content is displayed in "Username" column
+	And 'hansonay' content is displayed in the 'Username' column
 
 @Evergreen @Device @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17734 @DAS17733
 Scenario: EvergreenJnr_DeviceList_CheckThatUsersTabIsDisplayedWithCorrectStagesOnDevicesDetailsPageForProjectMode

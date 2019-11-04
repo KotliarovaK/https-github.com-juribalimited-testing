@@ -166,20 +166,20 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckFormattingForIntegerValues
 	When User navigates to the 'Evergreen' left menu item
 	When User navigates to the 'Buckets' left menu item
 	And User enters "Unassigned" text in the Search field for "Bucket" column
-	Then "16933" content is displayed in "Devices" column
-	Then "41050" content is displayed in "Users" column
-	Then "14538" content is displayed in "Mailboxes" column
+	Then '16933' content is displayed in the 'Devices' column
+	Then '41050' content is displayed in the 'Users' column
+	Then '14538' content is displayed in the 'Mailboxes' column
 	When User navigates to the 'Capacity Units' left menu item
 	And User enters "Unassigned" text in the Search field for "Capacity Unit" column
-	Then "9435" content is displayed in "Devices" column
-	Then "27155" content is displayed in "Users" column
-	Then "5288" content is displayed in "Mailboxes" column
+	Then '9435' content is displayed in the 'Devices' column
+	Then '27155' content is displayed in the 'Users' column
+	Then '5288' content is displayed in the 'Mailboxes' column
 	When User navigates to the 'Evergreen' left menu item
 	When User navigates to the 'Rings' left menu item
 	And User enters "Unassigned" text in the Search field for "Ring" column
-	Then "15802" content is displayed in "Devices" column
-	Then "38677" content is displayed in "Users" column
-	Then "13752" content is displayed in "Mailboxes" column
+	Then '15802' content is displayed in the 'Devices' column
+	Then '38677' content is displayed in the 'Users' column
+	Then '13752' content is displayed in the 'Mailboxes' column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS16384
 Scenario: EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromBuckets
