@@ -49,6 +49,9 @@ namespace DashworksTestAutomation.Pages.Projects.CreatingProjects.Tasks
         [FindsBy(How = How.XPath, Using = "//tr[contains(@id, 'SelfService')]//input[contains(@id, 'SelfService')]")]
         public IWebElement SelfService { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//tr[contains(@id, 'Automation')]//input[contains(@id, 'Automation')]")]
+        public IWebElement Automation { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//input[@value='Update Task']")]
         public IWebElement UpdateTaskButton { get; set; }
 

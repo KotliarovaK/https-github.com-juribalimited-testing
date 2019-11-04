@@ -20,6 +20,7 @@ namespace DashworksTestAutomation.DTO.Projects
         public bool GroupTaskDashboard { get; set; }
         public bool BulkUpdate { get; set; }
         public bool SelfService { get; set; }
+        public bool Automation { get; set; }
     }
 
     public enum ValueTypeUpdateEnum
