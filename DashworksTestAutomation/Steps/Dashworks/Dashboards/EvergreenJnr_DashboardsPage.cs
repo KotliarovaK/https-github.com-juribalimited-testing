@@ -177,9 +177,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
-
-
-
         [When(@"User clicks Dashboards Details icon on Dashboards page")]
         public void WhenUserClicksDashboardsDetailsIconOnDashboardsPage()
         {
@@ -420,15 +417,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<EvergreenDashboardsPage>();
 
             page.GetButtonsByName(buttonLabel).ElementAt(section - 1).Click();
-        }
-
-        [Then(@"User sees widget with the next name '(.*)' on Dashboards page")]
-        public void ThenUserSeesWidgetWithTheNextNameOnDashboardsPage(string widgetName)
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            _driver.WaitForDataLoading();
-            Verify.That(page.AllWidgetsTitles.Select(x => x.Text).ToList(), Does.Contain(widgetName),
-                "Widget name is missing");
         }
 
         [Then(@"User cant see widget with the next name '(.*)' on Dashboards page")]
@@ -684,7 +672,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForElementToBeDisplayed(page.GetWidgetByName(widgetName));
-            //Verify.IsTrue(page.GetWidgetByName(widgetName).Displayed(), $"{widgetName} Widget is not displayed");
+            Verify.IsTrue(page.GetWidgetByName(widgetName).Displayed(), $"{widgetName} Widget is not displayed");
         }
 
         [Then(@"Label '(.*)' displayed for '(.*)' widget")]

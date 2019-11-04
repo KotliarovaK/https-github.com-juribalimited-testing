@@ -55,8 +55,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAppearWhenDeleteReadine
 	| RED              |
 	When User selects 'Delete' in the 'Actions' dropdown
 	When User clicks 'DELETE' button 
-	Then Readiness Dialog Container is displayed to the User
-	When User clicks "DELETE" button in the Readiness dialog screen
+	Then Popup with 'Delete Readiness' title is displayed
+	When User clicks 'DELETE' button in Dialog Pop-up
 	Then Success message is displayed and contains "The selected readiness has been deleted" text
 	Then There are no errors in the browser console
 	When User select "Readiness" rows in the grid
@@ -64,8 +64,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAppearWhenDeleteReadine
 	| AMBER            |
 	When User selects 'Delete' in the 'Actions' dropdown
 	When User clicks 'DELETE' button 
-	Then Readiness Dialog Container is displayed to the User
-	When User clicks "DELETE" button in the Readiness dialog screen
+	Then Popup with 'Delete Readiness' title is displayed
+	When User clicks 'DELETE' button in Dialog Pop-up
 	Then There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS16131 @DAS16226 @DAS16163 @Cleanup
@@ -91,18 +91,16 @@ Scenario: EvergreenJnr_AdminPage_CheckReadinessDialogContainerDisplay
 	| RED              |
 	When User selects 'Delete' in the 'Actions' dropdown
 	And User clicks 'DELETE' button 
-	Then Readiness Dialog Container is displayed to the User
-	And "Delete Readiness" title is displayed in the Readiness Dialog Container
-	When User clicks "CANCEL" button in the Readiness dialog screen
+	Then Popup with 'Delete Readiness' title is displayed
+	When User clicks 'CANCEL' button in Dialog Pop-up
 	And User select "Readiness" rows in the grid
 	| SelectedRowsName |
 	| GREEN            |
 	And User clicks 'DELETE' button 
-	Then Readiness Dialog Container is displayed to the User
-	Then "Delete Readinesses" title is displayed in the Readiness Dialog Container
+	Then Popup with 'Delete Readiness' title is displayed
 	Then 'CANCEL' popup button color is 'rgba(236, 237, 239, 1)'
 	Then 'DELETE' popup button color is 'rgba(242, 88, 49, 1)'
-	When User clicks "DELETE" button in the Readiness dialog screen
+	When User clicks 'DELETE' button in Dialog Pop-up
 	Then Success message is displayed and contains "The selected readinesses have been deleted, changes might not take effect immediately" text
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14937 @DAS16649 @Cleanup
