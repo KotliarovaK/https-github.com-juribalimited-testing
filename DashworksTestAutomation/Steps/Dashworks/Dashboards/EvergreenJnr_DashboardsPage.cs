@@ -680,8 +680,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForDataLoading();
-
-            Verify.That(page.GetWidgetLabels(widgetName).Select(x => x.Text).ToList(), Does.Contain(label), $"{label} label is not found");
+            Verify.That(page.GetWidgetLabels(widgetName).Select(x => x.Text).ToList(), 
+                Does.Contain(label), $"'{label}' label is not found");
         }
 
         [Then(@"Label icon displayed gray for '(.*)' widget")]
