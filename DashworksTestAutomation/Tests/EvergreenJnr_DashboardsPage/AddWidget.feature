@@ -266,7 +266,7 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatAllValuesInTheLegendAndIn
 	When User clicks Save button on the list panel
 	When User selects Save as new list option
 	When User creates new custom list with "DAS18168_List" name
-	When Dashboard with 'DAS18167_Dashboard' name created via API and opened
+	When Dashboard with 'DAS18168_Dashboard' name created via API and opened
 	When User clicks Edit mode trigger on Dashboards page
 	When User clicks 'ADD WIDGET' button
 	When User adds new Widget
