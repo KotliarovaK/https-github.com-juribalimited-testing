@@ -269,7 +269,7 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatAllValuesInTheLegendAndIn
 	When Dashboard with 'DAS18167_Dashboard' name created via API and opened
 	When User clicks Edit mode trigger on Dashboards page
 	When User clicks 'ADD WIDGET' button
-	And User adds new Widget
+	When User adds new Widget
          | WidgetType | Title             | List          | SplitBy  | AggregateBy | AggregateFunction | OrderBy       | MaxValues | ShowLegend | ShowDataLabels |
          | Pie        | WidgetForDAS18168 | DAS18168_List | Hostname | Hostname    | Count distinct    | Hostname DESC | 10        | true       | true           |
 	Then Widget Preview is displayed to the user
@@ -284,3 +284,10 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatAllValuesInTheLegendAndIn
 	Examples: 
 	| PageName | LoadedPage  | СategoryName |
 	| Devices  | All Devices | Device       |
+
+	@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18741 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatRelevantListIsShownAfterTypingAnyCharacters
+	When Dashboard with 'DAS18741_Dashboard' name created via API and opened
+	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'ADD WIDGET' button
+	Then only options having search term 'De' are displayed in 'List' autocomplete

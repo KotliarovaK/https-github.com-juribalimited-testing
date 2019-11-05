@@ -597,10 +597,21 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public IList<IWebElement> GetColumnElementsByColumnName(string columnName)
         {
+            //Used for some columns on Projects->Capacity->Override Dates table
+            var firstPartSelector = $".//div[@col-id='{GetColIdByColumnName(columnName)}' and @role='gridcell']";
             var selector =
-                By.XPath($".//div[@col-id='{GetColIdByColumnName(columnName)}' and @role='gridcell']//*[not(*)][last()]");
+                By.XPath($"{firstPartSelector}//*[not(*)][last()]");
             Driver.WaitForDataLoading();
-            return Driver.FindElements(selector).ToList();
+            IList<IWebElement> elements = new List<IWebElement>();
+            if (!Driver.FindElements(selector).Any())
+            {
+                elements = Driver.FindElements(By.XPath(firstPartSelector));
+            }
+            else
+            {
+                elements = Driver.FindElements(selector);
+            }
+            return elements;
         }
 
         public List<string> GetColumnContentByColumnName(string columnName)
