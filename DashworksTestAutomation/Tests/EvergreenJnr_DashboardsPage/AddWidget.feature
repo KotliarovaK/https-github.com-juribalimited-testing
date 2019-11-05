@@ -269,14 +269,18 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatAllValuesInTheLegendAndIn
 	When Dashboard with 'DAS18167_Dashboard' name created via API and opened
 	When User clicks Edit mode trigger on Dashboards page
 	When User clicks 'ADD WIDGET' button
-	When User creates new Widget
-         | WidgetType | Title             | List          | SplitBy  | AggregateBy | AggregateFunction | OrderBy       | MaxValues | ShowLegend | ShowDataLAble |
-         | Pie        | WidgetForDAS18168 | DAS18168_List | Hostname | Hostname    | Count distinct    | Hostname DESC | 10        | true       |       true    |
+	And User adds new Widget
+         | WidgetType | Title             | List          | SplitBy  | AggregateBy | AggregateFunction | OrderBy       | MaxValues | ShowLegend | ShowDataLabels |
+         | Pie        | WidgetForDAS18168 | DAS18168_List | Hostname | Hostname    | Count distinct    | Hostname DESC | 10        | true       | true           |
+	Then Widget Preview is displayed to the user
+	Then There are no errors in the browser console
 	Then Data Labels are displayed on the Preview page
+	Then Data Legends are displayed on the Preview page
+	When User clicks 'CREATE' button
+	Then There are no errors in the browser console
+	Then Data Labels are displayed on the Dashboards page
+	Then Data Legends are displayed on the Dashboards page
 
 	Examples: 
-	| PageName | LoadedPage  | categoryName |
+	| PageName | LoadedPage  | СategoryName |
 	| Devices  | All Devices | Device       |
-
-
-

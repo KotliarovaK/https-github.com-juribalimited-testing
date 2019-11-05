@@ -116,6 +116,9 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//div[@class='chartContainer ng-star-inserted']//*[@style='font-weight:bold']")]
         public IWebElement DataLabels { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//*[@class='highcharts-legend']//*[@text-anchor='start']")]
+        public IWebElement DataLegends { get; set; }
+
         #endregion
 
         #region Dashboard Details
