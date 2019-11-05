@@ -13,12 +13,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-tab']//span[@class='ag-icon ag-icon-filter']")]
         public IWebElement FilterButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//h2[text()='Reassign Objects']")]
-        public IWebElement ReassignObjectsSummary { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//button[contains(@class,'mat-primary mat-raised-button')]")]
-        public IWebElement UpdateTeamButton { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//span[text()='ADD MEMBERS']")]
         public IWebElement AddMembersButton { get; set; }
 
@@ -35,9 +29,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='width100']")]
         public IWebElement TeamMembersPanel { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//span[@class='ng-star-inserted']")]
-        public IWebElement ResultsOnPageCount { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {

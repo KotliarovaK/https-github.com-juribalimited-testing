@@ -18,19 +18,19 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterUpdatingTeamDesc
 	And User clicks content from "Team" column
 	And User navigates to the 'Team Settings' left menu item
 	And User enters "" in the Team Description field
-	Then Update Team button is disabled
+	Then 'UPDATE' button is disabled
 	When User enters " " in the Team Description field
-	Then Update Team button is disabled
+	Then 'UPDATE' button is disabled
 	When User enters "testTeamtest" in the Team Description field
-	And User clicks Update Team button
+	When User clicks 'UPDATE' button
 	Then Success message is displayed and contains "The team was successfully updated" text
 	And There are no errors in the browser console
 	When User clicks refresh button in the browser
 	When User enters '' text to 'Team Name' textbox
-	Then Update Team button is disabled
+	Then 'UPDATE' button is disabled
 	When User enters ' ' text to 'Team Name' textbox
-	Then Update Team button is disabled
+	Then 'UPDATE' button is disabled
 	When User enters 'NewTeamName' text to 'Team Name' textbox
-	And User clicks Update Team button
+	When User clicks 'UPDATE' button
 	Then Success message is displayed and contains "The team was successfully updated" text
 	And There are no errors in the browser console

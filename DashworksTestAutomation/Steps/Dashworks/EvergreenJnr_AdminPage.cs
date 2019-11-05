@@ -582,24 +582,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Verify.IsTrue(page.DefaultCapacityMode.Displayed, "Default value is not displayed for Capacity Mode");
         }
 
-        [When(@"User clicks Update Team button")]
-        public void WhenUserClicksUpdateTeamButton()
-        {
-            var button = _driver.NowAt<TeamsPage>();
-            _driver.WaitForElementToBeDisplayed(button.UpdateTeamButton);
-            button.UpdateTeamButton.Click();
-            Logger.Write("Update Team button was clicked");
-        }
-
-        [Then(@"Update Team button is disabled")]
-        public void ThenUpdateTeamButtonIsDisabled()
-        {
-            var button = _driver.NowAt<TeamsPage>();
-            _driver.WaitForElementToBeDisplayed(button.UpdateTeamButton);
-            Utils.Verify.IsTrue(Convert.ToBoolean(button.UpdateTeamButton.GetAttribute("disabled")),
-                "Update Team button is active");
-        }
-
         [When(@"User clicks Default Team checkbox")]
         public void WhenUserClicksDefaultTeamCheckbox()
         {
@@ -695,14 +677,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForElementToBeDisplayed(button.CreateTeamButton);
             Utils.Verify.IsTrue(Convert.ToBoolean(button.CreateTeamButton.GetAttribute("disabled")),
                 "Create Team button is active");
-        }
-
-        [Then(@"Reassign Objects is displayed on the Teams page")]
-        public void ThenReassignObjectsIsDisplayedOnTheTeamsPage()
-        {
-            var page = _driver.NowAt<TeamsPage>();
-            _driver.WaitForElementToBeDisplayed(page.ReassignObjectsSummary);
-            Utils.Verify.IsTrue(page.ReassignObjectsSummary.Displayed(), "Reassign Objects was not displayed");
         }
 
         [Then(@"""(.*)"" is displayed on the Admin page")]
