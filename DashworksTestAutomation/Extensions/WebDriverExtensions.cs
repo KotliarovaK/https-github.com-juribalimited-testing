@@ -80,7 +80,7 @@ namespace DashworksTestAutomation.Extensions
             var toolTipText = toolTips.First().FindElement(By.XPath("./div")).Text;
             if (String.IsNullOrEmpty(toolTipText))
             {
-                driver.WaitForElementToBeDisplayed(By.XPath(_toolTipSelector + "/div"));
+                driver.WaitForElementToBeDisplayed(By.XPath(_toolTipSelector + "/div"), 6);
                 toolTipText = toolTips.First().FindElement(By.XPath("./div")).Text;
             }
             return toolTipText;
@@ -386,7 +386,7 @@ namespace DashworksTestAutomation.Extensions
         public static void MouseHover(this RemoteWebDriver driver, IWebElement element)
         {
             Actions action = new Actions(driver);
-            action.MoveToElement(element).Perform();
+            action.MoveToElement(element).MoveByOffset(1, 1).Build().Perform();
         }
 
         public static void MouseHover(this RemoteWebDriver driver, By by)
