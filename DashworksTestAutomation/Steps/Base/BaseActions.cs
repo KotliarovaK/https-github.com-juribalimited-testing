@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Providers;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
@@ -50,6 +51,12 @@ namespace DashworksTestAutomation.Steps.Base
         {
             var page = _driver.NowAt<BasePage>();
             page.BodyContainer.Click();
+        }
+
+        [When(@"User navigates to '(.*)' url via address line")]
+        public void ThenUserNavigatesToTheSpecificUrlViaAddressLine(string url)
+        {
+            _driver.Navigate().GoToUrl($"{UrlProvider.EvergreenUrl}#/{url}");
         }
     }
 }
