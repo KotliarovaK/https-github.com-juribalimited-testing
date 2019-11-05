@@ -56,7 +56,7 @@ namespace DashworksTestAutomation.Steps.Base
         [When(@"User navigates to '(.*)' url via address line")]
         public void ThenUserNavigatesToTheSpecificUrlViaAddressLine(string url)
         {
-            _driver.Navigate().GoToUrl($"{UrlProvider.EvergreenUrl}#/{url}");
+            _driver.NavigateToUrl($"{UrlProvider.EvergreenUrl}#/{url}");
         }
     }
 }
