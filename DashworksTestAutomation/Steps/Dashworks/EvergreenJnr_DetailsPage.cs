@@ -67,14 +67,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
-        [Then(@"""(.*)"" content is displayed in ""(.*)"" field on Item Details page")]
-        public void ThenContentIsDisplayedInFieldOnItemDetailsPage(string text, string fieldName)
-        {
-            var detailsPage = _driver.NowAt<DetailsPage>();
-            Utils.Verify.IsTrue(detailsPage.FieldContentByName(text, fieldName).Displayed(),
-                $"'{fieldName}' field does not contain the '{text}' content");
-        }
-
         [Then(@"following content is displayed on the Details Page")]
         public void ThenFollowingContentIsDisplayedOnTheDetailsPage(Table table)
         {

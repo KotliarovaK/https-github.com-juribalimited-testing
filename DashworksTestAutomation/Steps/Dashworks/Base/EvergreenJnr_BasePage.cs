@@ -595,6 +595,28 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         #endregion
 
+        #region Dropdown for field
+
+        [When(@"User selects '(.*)' in the dropdown for the '(.*)' field")]
+        public void WhenUserSelectsInTheDropdownForTheField(string value, string fieldName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.SelectDropdownForField(value, fieldName);
+        }
+
+        [Then(@"following Values are displayed in the dropdown for the '(.*)' field:")]
+        public void ThenFollowingValuesAreDisplayedInTheDropdownForTheField(string fieldName, Table table)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.GetDropdownForField(fieldName).Click();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = page.GetDropdownValues();
+            page.BodyContainer.Click();
+            Verify.AreEqual(expectedList, actualList, $"Value in the dropdown for the '{fieldName}' field are different");
+        }
+
+        #endregion
+
         #region Datepicker textbox
 
         [When(@"User clicks datepicker icon")]

@@ -18,6 +18,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         private string NamedDropdownSelector = ".//mat-select[@aria-label='{0}' or @automation='{0}']|//label[text()='{0}']/ancestor::span[contains(@class,'label')]//preceding-sibling::mat-select";
 
+        private string NamedDropdownForFieldSelector = ".//span[text()='{0}']/../ancestor::tr//mat-select";
+
         public const string ColorItem = ".//div[@class='status']";
 
         public const string ImageItem = ".//div[contains(@class, 'ag-body-container')]//img[contains(@src,'png')]";
@@ -822,6 +824,24 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             Driver.WaitForElementsToBeDisplayed(By.XPath(_dropdownOptions));
             return Driver.FindElements(By.XPath($"{_dropdownOptions}/preceding-sibling::i[contains(@class, 'material-icons')]"));
         }
+        #endregion
+
+        #region Dropdown for field
+
+        public IWebElement GetDropdownForField(string dropdownName)
+        {
+            var selector = By.XPath(string.Format(NamedDropdownForFieldSelector, dropdownName));
+            if (!Driver.IsElementDisplayed(selector))
+                throw new Exception($"'{dropdownName}' dropdown is not displayed");
+            return Driver.FindElement(selector);
+        }
+
+        public void SelectDropdownForField(string value, string fieldName)
+        {
+            GetDropdownForField(fieldName).Click();
+            GetDropdownValueByName(value).Click();
+        }
+
         #endregion
 
         #region Datepicker
