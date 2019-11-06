@@ -2097,3 +2097,58 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatCorrectScopedProjectAppearsForS
     | Applications | All Applications | Project: zDeviceAut |
     | Users        | All Users        | Project: zDeviceAut |
     | Devices      | All Devices      | Project: zUserAutom |
+
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS18367
+Scenario Outline: EvergreenJnr_DevicesList_CheckThatThereIsNoEmptyOptionInInListFilter
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User clicks the Filters button
+	When User clicks Add New button on the Filter panel
+	When User selects "<List>" filter from "Saved List" category
+	When User enters "Empty" text in Search field at selected Lookup Filter
+	Then "0 shown" results are displayed in the Filter panel
+
+Examples:
+    | List                     |
+    | Device (Saved List)      |
+    | Application (Saved List) |
+    | 1803: Owner (Saved List) |
+
+@Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS18367
+Scenario Outline: EvergreenJnr_UsersList_CheckThatThereIsNoEmptyOptionInInListFilter
+	When User clicks 'Users' on the left-hand menu
+	Then 'All Users' list should be displayed to the user
+	When User clicks the Filters button
+	When User clicks Add New button on the Filter panel
+	When User selects "<List>" filter from "Saved List" category
+	Then "Empty" checkbox is not available for current opened filter
+
+Examples:
+    | List                     |
+    | User (Saved List)        |
+    | Application (Saved List) |
+
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS18367
+Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatThereIsNoEmptyOptionInInListFilter
+	When User clicks 'Applications' on the left-hand menu
+	Then 'All Applications' list should be displayed to the user
+	When User clicks the Filters button
+	When User clicks Add New button on the Filter panel
+	When User selects "<List>" filter from "Saved List" category
+	Then "Empty" checkbox is not available for current opened filter
+
+Examples:
+    | List                      |
+    | Application (Saved List)  |
+    | Device (Saved List)       |
+    | Device Owner (Saved List) |
+    | User (Saved List)         |
+
+@Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS18367
+Scenario: EvergreenJnr_MailboxesList_CheckThatThereIsNoEmptyOptionInInListFilter
+	When User clicks 'Mailboxes' on the left-hand menu
+	Then 'All Mailboxes' list should be displayed to the user
+	When User clicks the Filters button
+	When User clicks Add New button on the Filter panel
+	When User selects "Mailbox (Saved List)" filter from "Saved List" category
+	Then "Empty" checkbox is not available for current opened filter
