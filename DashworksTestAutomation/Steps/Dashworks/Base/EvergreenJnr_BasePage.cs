@@ -464,6 +464,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.AreEqual(dropdownContent, text, $"Text in '{dropdown}' drop-down is different");
         }
 
+        //TODO looks like the same as ThenContentIsDisplayedInDropdown
         [Then(@"'(.*)' value is displayed in the '(.*)' dropdown")]
         public void ThenValueIsDisplayedInTheDropdown(string value, string dropdownName)
         {
