@@ -731,14 +731,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return Driver.FindElement(selector);
         }
 
-        public IWebElement GetDropdownForField(string dropdownName)
-        {
-            var selector = By.XPath(string.Format(NamedDropdownForFieldSelector, dropdownName));
-            if (!Driver.IsElementDisplayed(selector))
-                throw new Exception($"'{dropdownName}' dropdown is not displayed");
-            return Driver.FindElement(selector);
-        }
-
         //Index starts from 1
         public IWebElement GetDropdown(string dropdownName, int index)
         {
@@ -752,12 +744,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         public void SelectDropdown(string value, string dropdownName)
         {
             GetDropdown(dropdownName).Click();
-            GetDropdownValueByName(value).Click();
-        }
-
-        public void SelectDropdownForField(string value, string fieldName)
-        {
-            GetDropdownForField(fieldName).Click();
             GetDropdownValueByName(value).Click();
         }
 
@@ -838,6 +824,24 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             Driver.WaitForElementsToBeDisplayed(By.XPath(_dropdownOptions));
             return Driver.FindElements(By.XPath($"{_dropdownOptions}/preceding-sibling::i[contains(@class, 'material-icons')]"));
         }
+        #endregion
+
+        #region Dropdown for field
+
+        public IWebElement GetDropdownForField(string dropdownName)
+        {
+            var selector = By.XPath(string.Format(NamedDropdownForFieldSelector, dropdownName));
+            if (!Driver.IsElementDisplayed(selector))
+                throw new Exception($"'{dropdownName}' dropdown is not displayed");
+            return Driver.FindElement(selector);
+        }
+
+        public void SelectDropdownForField(string value, string fieldName)
+        {
+            GetDropdownForField(fieldName).Click();
+            GetDropdownValueByName(value).Click();
+        }
+
         #endregion
 
         #region Datepicker

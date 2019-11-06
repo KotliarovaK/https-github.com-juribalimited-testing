@@ -447,13 +447,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.SelectDropdown(value, dropdownName);
         }
 
-        [When(@"User selects '(.*)' in the dropdown for the '(.*)' field")]
-        public void WhenUserSelectsInTheDropdownForTheField(string value, string fieldName)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            page.SelectDropdownForField(value, fieldName);
-        }
-
         [When(@"User selects '(.*)' in the '(.*)' dropdown with wait")]
         public void WhenUserSelectsInTheDropdownWithWait(string value, string dropdownName)
         {
@@ -521,17 +514,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var actualList = page.GetDropdownValues();
             page.BodyContainer.Click();
             Verify.AreEqual(expectedList, actualList, $"Value for '{dropDownName}' are different");
-        }
-
-        [Then(@"following Values are displayed in the dropdown for the '(.*)' field:")]
-        public void ThenFollowingValuesAreDisplayedInTheDropdownForTheField(string fieldName, Table table)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            page.GetDropdownForField(fieldName).Click();
-            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            var actualList = page.GetDropdownValues();
-            page.BodyContainer.Click();
-            Verify.AreEqual(expectedList, actualList, $"Value for '{fieldName}' are different");
         }
 
         //Contains
@@ -608,6 +590,28 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
                 attempts++;
             }
+        }
+
+        #endregion
+
+        #region Dropdown for field
+
+        [When(@"User selects '(.*)' in the dropdown for the '(.*)' field")]
+        public void WhenUserSelectsInTheDropdownForTheField(string value, string fieldName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.SelectDropdownForField(value, fieldName);
+        }
+
+        [Then(@"following Values are displayed in the dropdown for the '(.*)' field:")]
+        public void ThenFollowingValuesAreDisplayedInTheDropdownForTheField(string fieldName, Table table)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.GetDropdownForField(fieldName).Click();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = page.GetDropdownValues();
+            page.BodyContainer.Click();
+            Verify.AreEqual(expectedList, actualList, $"Value in the dropdown for the '{fieldName}' field are different");
         }
 
         #endregion
