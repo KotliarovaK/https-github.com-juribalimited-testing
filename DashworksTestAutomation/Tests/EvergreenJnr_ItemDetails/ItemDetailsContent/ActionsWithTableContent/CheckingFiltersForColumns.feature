@@ -81,13 +81,10 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetail
 	And User clicks String Filter button for "Readiness" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 
-	#//TODO: Ann.Ilchenko 4/10/19: find correct name for an object after bugfix (DAS-18354)
 Examples:
 	| PageName | SearchTerm                                      | MainTabName | SubTabName              | CountRows |
-	#| User     | Loya\, Dan.Employees.Birmingham.UK.bclabs.local | Projects    | Mailbox Project Summary | 2         |
 	| Device   | 001BAQXT6JWFPI                                  | Projects    | Projects Summary        | 10        |
 	| Device   | 001BAQXT6JWFPI                                  | Projects    | Owner Projects Summary  | 7         |
-	#| User     | Loya\, Dan.Employees.Birmingham.UK.bclabs.local | Projects    | User Projects           | 3         |
 	
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738 @DAS12371 @DAS13409
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetailsFiltersAreDisplayedCorrectlyForExpandedSections

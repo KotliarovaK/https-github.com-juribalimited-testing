@@ -24,9 +24,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCommonNameFieldIsDisplayedInTheCompu
 Scenario: EvergreenJnr_DevicesList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForDeviceObjects
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
-	When User navigates to the 'Projects' left menu item
 	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
 	Then "Windows 7 Migration (Computer Scheduled Project)" project is selected in the Top bar on Item details page
+	When User navigates to the 'Projects' left menu item
 	When User navigates to the 'Project Details' left submenu item
 	Then following fields are displayed in the open section:
 	| Fields           |

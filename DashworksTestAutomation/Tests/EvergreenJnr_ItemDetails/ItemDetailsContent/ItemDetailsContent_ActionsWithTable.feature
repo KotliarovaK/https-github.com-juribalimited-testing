@@ -56,7 +56,6 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatNoConsoleErrorsAreDisplayedWhen
 Examples:
 	| PageName    | SearchTerm                                              | TabName      | SelectedColumn |
 	| Device      | 30BGMTLBM9PTW5                                          | Applications | Application    |
-	#| User        | svc_dashworks                                           | Groups       | Group          |
 	| Application | Microsoft Office Visio 2000 Solutions - Custom Patterns | MSI          | File Name      |
 	| Mailbox     | aaron.u.flores@dwlabs.local                             | Users        | Username       |
 
