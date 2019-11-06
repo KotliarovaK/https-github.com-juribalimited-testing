@@ -134,7 +134,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTe
 	When User clicks content from "Capacity Slot" column
 	Then 'Capacity Units' content is displayed in 'Capacity Type' dropdown
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS14967 @DAS15291 @DAS18538
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS14967 @DAS15291 @DAS18538 @DAS14967
 Scenario Outline: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCountersOfUserProjectLeadToCorrectFilteredLists
 	When User navigates to "User Evergreen Capacity Project" project details
 	And User navigates to the 'Capacity' left menu item
@@ -169,7 +169,7 @@ Examples:
 	| Users        |
 	| Applications |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS14967 @DAS15291 @DAS18538
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS14967 @DAS15291 @DAS18538 @DAS14967
 Scenario Outline: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCountersOfMailProjectLeadToCorrectFilteredLists
 	When User navigates to "Mailbox Evergreen Capacity Project" project details
 	And User navigates to the 'Capacity' left menu item
