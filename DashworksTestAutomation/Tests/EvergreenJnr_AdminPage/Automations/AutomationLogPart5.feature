@@ -111,8 +111,6 @@ Scenario: EvergreenJnr_AdminPage_CheckActionValueIDInTheAutomationLog
 	Then "Action_3" content is displayed for "Action" column
 	When User enters "562" text in the Search field for "Action Value ID" column
 	Then "Action_2" content is displayed for "Action" column
-	When User enters "562" text in the Search field for "Action Value ID" column
-	Then "Action_2" content is displayed for "Action" column
 	When User enters "498" text in the Search field for "Action Value ID" column
 	Then "Action_1" content is displayed for "Action" column
 

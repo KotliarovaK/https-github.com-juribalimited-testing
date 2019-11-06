@@ -45,7 +45,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckThatImportProjectButtonEnabledAfte
 	Then 'Admin' list should be displayed to the user
 	And Page with 'Projects' header is displayed to user
 	When User clicks 'IMPORT PROJECT' button 
-	Then Page with 'Import Project' header is displayed to user
+	Then Page with 'Import Project' subheader is displayed to user
 	When User selects "IncorrectFile.zip" file to upload on Import Project page
 	And User selects 'Import to new project' in the 'Import' dropdown
 	And User enters "TestProjectNameDAS12370" in the Project Name field on Import Project page

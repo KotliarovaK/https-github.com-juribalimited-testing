@@ -29,17 +29,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[@class='wrapper-disabled']")]
         public IWebElement ApplicationScopeCheckboxes { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[@class='mat-option-text']")]
-        public IWebElement DeleteProjectInActions { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//label[contains(@class, 'mat-form-field-empty')]")]
         public IWebElement EmptyScopeField { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//button[contains(@title, 'Update')]")]
-        public IWebElement UpdateProjectButton { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//button[@title='Update All Changes']")]
-        public IWebElement UpdateAllChangesButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//mat-select[@id='mode']")]
         public IWebElement ModeProjectField { get; set; }

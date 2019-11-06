@@ -207,6 +207,20 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.BodyContainer.Click();
         }
 
+        [Then(@"only options having search term '(.*)' are displayed in '(.*)' autocomplete")]
+        public void ThenOnlyOptionsHavingSearchTermAreDisplayedInAutocompleteAfterSearchByText(string searchText, string placeholder)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.PopulateTextbox(placeholder, searchText);
+
+            var actualOptions = page.GetAllOptionsFromOpenedAutocomplete();
+
+            Verify.That(actualOptions.All(x=>x.Contains(searchText)), Is.True,
+                $"Incorrect values are present in the '{placeholder}' autocomplete after search by '{searchText}' text");
+
+            page.BodyContainer.Click();
+        }
+
         [Then(@"only below options are selected in the '(.*)' autocomplete")]
         public void ThenOnlyBelowOptionsAreSelectedInTheAutocomplete(string placeholder, Table table)
         {

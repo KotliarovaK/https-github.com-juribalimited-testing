@@ -2425,14 +2425,19 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOffboardedItemsDontShowAnyOtherProje
 	| Offboarded |
 	| Offboarded |
 
-@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS18377
-Scenario: EvergreenJnr_DevicesList_CheckThatThereIsNoErrorAfterSavingListWithFilterEqualsRelative
-	When User clicks 'Devices' on the left-hand menu
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS18377 @DAS18621
+Scenario Outline: EvergreenJnr_DevicesList_CheckThatThereIsNoErrorAfterSavingListWithFilterEqualsRelative
+	When User clicks '<List>' on the left-hand menu
 	And User clicks the Filters button
-	And User add "1803: Pre-Migration \ Scheduled Date" filter where type is "Equals (relative)" with added column and following value:
+	And User add "<Filter>" filter where type is "Equals (relative)" with added column and following value:
 	| Values |
 	| 1      |
 	Then There are no errors in the browser console
+
+Examples:
+	| List         | Filter                               |
+	| Devices      | 1803: Pre-Migration \ Scheduled Date |
+	| Applications | Owner Last Logon Date                |
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FilterFunctionality @DAS18140
 Scenario: EvergreenJnr_DevicesList_CheckCancelFilterButtonWorkIfSameFiltersWereApplied
@@ -2491,3 +2496,52 @@ Scenario: EvergreenJnr_CheckThatNoErrorMessageDisplayedAfterOpeningListWithFilte
 	When User navigates to the "SecondList18560" list
 	When User clicks the Filters button
 	Then message 'This list could not be processed, it may refer to a list with errors' is displayed to the user
+
+@Evergreen @AllDeviceApplications @DAS18100 @Cleanup
+Scenario: EvergreenJnr_CheckThatNotEmptyOperatorWasAddedToMultipleFilters
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User clicks the Filters button
+	When User add "Import Type" filter where type is "Not empty" with added column and Lookup option
+    | SelectedValues |
+	Then "17,279" rows are displayed in the agGrid
+	Then URL contains "filter=(distributionType%20IS%20NOT%20EMPTY%20())&$select=hostname,chassisCategory,oSCategory,ownerDisplayName,distributionType"
+	When User have removed "Import Type" filter
+	When User add "Import Type" filter where type is "Does not equal" with added column and Lookup option
+    | SelectedValues |
+    | Empty          |
+	Then "17,279" rows are displayed in the agGrid
+	When User clicks Save button on the list panel
+	When User selects Save as new list option
+	When User creates new custom list with "NewFilter_18100_1" name
+	Then "NewFilter_18100_1" list is displayed to user
+	Then There are no errors in the browser console
+
+@Evergreen @AllDeviceApplications @DAS18100 @Cleanup
+Scenario: EvergreenJnr_CheckThatNotEmptyOperatorWasAddedToMultipleFiltersIfFilterWasCreatedViaAddressRow
+	When User navigates to 'devices?$filter=(distributionType%20IS%20NOT%20EMPTY%20())&$select=hostname,chassisCategory,oSCategory,ownerDisplayName,distributionType' url via address line
+	Then "17,279" rows are displayed in the agGrid
+	When User clicks the Filters button
+	Then "Import Type is not empty" is displayed in added filter info
+
+@Evergreen @AllDeviceApplications @DAS18560 @Cleanup
+Scenario: EvergreenJnr_CheckThatFilterBasedOnListHavingNotEmptyOperatorCanBeCreated
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User clicks the Filters button
+	When User add "Import Type" filter where type is "Not empty" with added column and Lookup option
+    | SelectedValues |
+	When User clicks Save button on the list panel
+	When User create dynamic list with "ListForDAS18100_4" name on "Devices" page
+	Then "ListForDAS18100_4" list is displayed to user
+	When User clicks 'Applications' on the left-hand menu
+	Then 'All Applications' list should be displayed to the user
+	When User clicks the Filters button
+	When User add "Device (Saved List)" filter where type is "In list" with following Lookup Value and Association:
+    | SelectedValues    | Association    |
+    | ListForDAS18100_4 | Used on device |
+	When User clicks Save button on the list panel
+	When User selects Save as new list option
+	When User creates new custom list with "SecondList18100" name
+	Then "SecondList18100" list is displayed to user
+	Then There are no errors in the browser console

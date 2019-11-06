@@ -252,3 +252,10 @@ Scenario: EvergreenJnr_DashboardsPage_CheckImageAndTooltipDisplayingForListDropd
 	When User expands the list of shared lists
 	Then User sees list icon displayed for 'WidgetForDAS16842' widget in List section of Dashboards Details
 	Then User sees list icon displayed with tooltip for 'WidgetForDAS16842' widget in List section of Dashboards Details
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18741 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatRelevantListIsShownAfterTypingAnyCharacters
+	When Dashboard with 'DAS18741_Dashboard' name created via API and opened
+	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'ADD WIDGET' button
+	Then only options having search term 'De' are displayed in 'List' autocomplete
