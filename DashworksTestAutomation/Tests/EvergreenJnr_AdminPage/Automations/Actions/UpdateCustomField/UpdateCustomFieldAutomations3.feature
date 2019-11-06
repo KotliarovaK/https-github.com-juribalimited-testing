@@ -73,7 +73,9 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsValueForDuplacatedAutomation
 	Then 'Update custom field' content is displayed in 'Action Type' dropdown
 	Then 'Phoenix Field' content is displayed in 'Custom Field' textbox
 	Then 'Replace all values' content is displayed in 'Update Values' dropdown
-	Then '1' chip value displayed for 'Value' textbox
+	Then following chips value displayed for 'Value' textbox
+	| ChipValue |
+	| 1         |
 	When User clicks 'Automations' header breadcrumb
 	When User enters "18705_Automation" text in the Search field for "Automation" column
 	When User selects all rows on the grid

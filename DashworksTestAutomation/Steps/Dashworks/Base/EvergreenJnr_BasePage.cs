@@ -949,13 +949,15 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.IsTrue(baseActionItem.GetChipsOfTextbox(field).Count == 0, "Chip box is displayed on the page");
         }
 
-        [Then(@"'(.*)' chip value displayed for '(.*)' textbox")]
-        public void ThenChipValueDisplayedForTextbox(string value, string field)
+        [Then(@"following chips value displayed for '(.*)' textbox")]
+        public void ThenFollowingChipsValueDisplayedForTextbox(string field, Table table)
         {
             var baseActionItem = _driver.NowAt<BaseDashboardPage>();
-            var chipsValue = baseActionItem.GetChipsOfTextbox(field).First().Text;
-            Verify.AreEqual(chipsValue, value, $"Chip value is not {value}");
+            var expectedChipList = table.Rows.SelectMany(row => row.Values).ToList();
+            var chipsValueList = baseActionItem.GetChipsOfTextbox(field).Select(value => value.Text);
+            Utils.Verify.AreEqual(expectedChipList, chipsValueList, "Chips value are different");
         }
+
         #endregion
-    }
+        }
 }
