@@ -518,6 +518,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS14967")]
         [NUnit.Framework.CategoryAttribute("DAS15291")]
         [NUnit.Framework.CategoryAttribute("DAS18538")]
+        [NUnit.Framework.CategoryAttribute("DAS14967")]
         [NUnit.Framework.TestCaseAttribute("Devices", null)]
         [NUnit.Framework.TestCaseAttribute("Users", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", null)]
@@ -557,7 +558,8 @@ this.FeatureBackground();
                     "Units",
                     "DAS14967",
                     "DAS15291",
-                    "DAS18538"};
+                    "DAS18538",
+                    "DAS14967"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -641,6 +643,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS14967")]
         [NUnit.Framework.CategoryAttribute("DAS15291")]
         [NUnit.Framework.CategoryAttribute("DAS18538")]
+        [NUnit.Framework.CategoryAttribute("DAS14967")]
         [NUnit.Framework.TestCaseAttribute("Users", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", null)]
         public virtual void EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCountersOfMailProjectLeadToCorrectFilteredLists(string listName, string[] exampleTags)
@@ -679,7 +682,8 @@ this.FeatureBackground();
                     "Units",
                     "DAS14967",
                     "DAS15291",
-                    "DAS18538"};
+                    "DAS18538",
+                    "DAS14967"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));

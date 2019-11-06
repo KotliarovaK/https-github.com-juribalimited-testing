@@ -469,15 +469,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UpdatePathPart2.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateTaskValue\UpdateTaskValuePart2.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateTaskValue\CheckingUpdatedValue.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UpdateTaskValuePart2.feature</DependentUpon>
+      <DependentUpon>CheckingUpdatedValue.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateTaskValue\UpdateTaskValuePart1.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateTaskValue\CheckingUpdatedValueForSpecificUser.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UpdateTaskValuePart1.feature</DependentUpon>
+      <DependentUpon>CheckingUpdatedValueForSpecificUser.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateCustomFfield\CreateCustomFieldForBulkUpdate.feature.cs">
       <AutoGen>True</AutoGen>
@@ -494,20 +494,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UpdateCustomFieldPart1.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateTaskValue\UpdateTaskValuePart3.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateTaskValue\СheckingDropdownListValues.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UpdateTaskValuePart3.feature</DependentUpon>
+      <DependentUpon>СheckingDropdownListValues.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateTaskValue\UpdateTaskValuePart4.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateTaskValue\СheckingDropdownListValuesForSpecificUser.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UpdateTaskValuePart4.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateTaskValue\UpdateTaskValuePart5.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UpdateTaskValuePart5.feature</DependentUpon>
+      <DependentUpon>СheckingDropdownListValuesForSpecificUser.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_AdminPage\AdminPage.feature.cs">
       <AutoGen>True</AutoGen>
@@ -1642,13 +1637,13 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>UpdatePathPart2.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateTaskValue\UpdateTaskValuePart2.feature">
+    <None Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateTaskValue\CheckingUpdatedValue.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>UpdateTaskValuePart2.feature.cs</LastGenOutput>
+      <LastGenOutput>CheckingUpdatedValue.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateTaskValue\UpdateTaskValuePart1.feature">
+    <None Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateTaskValue\CheckingUpdatedValueForSpecificUser.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>UpdateTaskValuePart1.feature.cs</LastGenOutput>
+      <LastGenOutput>CheckingUpdatedValueForSpecificUser.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateCustomFfield\CreateCustomFieldForBulkUpdate.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -1662,17 +1657,13 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>UpdateCustomFieldPart1.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateTaskValue\UpdateTaskValuePart3.feature">
+    <None Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateTaskValue\СheckingDropdownListValues.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>UpdateTaskValuePart3.feature.cs</LastGenOutput>
+      <LastGenOutput>СheckingDropdownListValues.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateTaskValue\UpdateTaskValuePart4.feature">
+    <None Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateTaskValue\СheckingDropdownListValuesForSpecificUser.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>UpdateTaskValuePart4.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateTaskValue\UpdateTaskValuePart5.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>UpdateTaskValuePart5.feature.cs</LastGenOutput>
+      <LastGenOutput>СheckingDropdownListValuesForSpecificUser.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_AdminPage\AdminPage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
