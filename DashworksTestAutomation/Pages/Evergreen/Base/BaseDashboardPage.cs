@@ -18,6 +18,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         private string NamedDropdownSelector = ".//mat-select[@aria-label='{0}' or @automation='{0}']|//label[text()='{0}']/ancestor::span[contains(@class,'label')]//preceding-sibling::mat-select";
 
+        private string NamedDropdownForFieldSelector = ".//span[text()='{0}']/../ancestor::tr//mat-select";
+
         public const string ColorItem = ".//div[@class='status']";
 
         public const string ImageItem = ".//div[contains(@class, 'ag-body-container')]//img[contains(@src,'png')]";
@@ -729,6 +731,14 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return Driver.FindElement(selector);
         }
 
+        public IWebElement GetDropdownForField(string dropdownName)
+        {
+            var selector = By.XPath(string.Format(NamedDropdownForFieldSelector, dropdownName));
+            if (!Driver.IsElementDisplayed(selector))
+                throw new Exception($"'{dropdownName}' dropdown is not displayed");
+            return Driver.FindElement(selector);
+        }
+
         //Index starts from 1
         public IWebElement GetDropdown(string dropdownName, int index)
         {
@@ -742,6 +752,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         public void SelectDropdown(string value, string dropdownName)
         {
             GetDropdown(dropdownName).Click();
+            GetDropdownValueByName(value).Click();
+        }
+
+        public void SelectDropdownForField(string value, string fieldName)
+        {
+            GetDropdownForField(fieldName).Click();
             GetDropdownValueByName(value).Click();
         }
 

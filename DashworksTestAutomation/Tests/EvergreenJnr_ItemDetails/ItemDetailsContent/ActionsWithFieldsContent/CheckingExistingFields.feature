@@ -18,7 +18,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCommonNameFieldIsDisplayedInTheCompu
 	| Common Name                     |
 	| Display Name                    |
 	| Description                     |
-	Then "00OMQQXWA1DRI6" content is displayed in "Common Name" field on Item Details page
+	Then following content is displayed on the Details Page
+	| Title       | Value          |
+	| Common Name | 00OMQQXWA1DRI6 |
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16859 @DAS17645 @DAS17785 @DAS17809 @DAS18095 @DAS18011 @DAS17810
 Scenario: EvergreenJnr_DevicesList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForDeviceObjects
