@@ -274,13 +274,6 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatAllValuesInTheLegendAndInTheLabel
 	Then Widget Preview is displayed to the user
 	Then There are no errors in the browser console
 	Then Data Labels are displayed on the Preview page
-	Then Data Legends values are displayed on the Add Widget page
-	| LegendsValue |
-	| 0            |
-	| 1            |
-	| 2            |
-	| 4            |
-	| 6            |
 	When User clicks 'CREATE' button
 	Then There are no errors in the browser console
 	Then Data Labels are displayed on the Dashboards page
