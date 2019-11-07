@@ -119,7 +119,7 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//*[@class='highcharts-legend']//*[@text-anchor='start']")]
         public IWebElement DataLegends { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//*[@class='widget-preview']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='widget-preview']")]
         public IWebElement WidgetPreview { get; set; }
 
         #endregion
@@ -289,10 +289,19 @@ namespace DashworksTestAutomation.Pages
 
         public IWebElement GetWidgetByName(string widgetName)
         {
-            var selector = By.XPath($".//h5//span[text()='{widgetName}']/ancestor::div[@class='widget-whole']");
-            if (!Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Long))
-                throw new Exception($"Widget with '{widgetName}' is not displayed");
-            return Driver.FindElement(selector);
+            if (string.IsNullOrEmpty(widgetName))
+            {
+                if (!Driver.IsElementDisplayed(WidgetPreview, WebDriverExtensions.WaitTime.Long))
+                    throw new Exception($"Widget preview is not displayed");
+                return WidgetPreview;
+            }
+            else
+            {
+                var selector = By.XPath($".//h5//span[text()='{widgetName}']/ancestor::div[@class='widget-whole']");
+                if (!Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Long))
+                    throw new Exception($"Widget with '{widgetName}' is not displayed");
+                return Driver.FindElement(selector);
+            }
         }
 
         public IWebElement GetDisabledEllipsisItemByName(string itemName)
