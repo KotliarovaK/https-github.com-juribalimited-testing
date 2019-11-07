@@ -692,7 +692,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeviceLisFiltertHasAppropriateAutomati
 	And User creates new Automation via API and open it
 	| AutomationName      | Description | Active | StopOnFailedAction | Scope         | Run    |
 	| DAS15949_Automation | DAS15949    | true   | false              | DAS15949_List | Manual |
-	And User navigates to the 'Actions' left menu item
+	Then Automation page is displayed correctly
+	When User navigates to the 'Actions' left menu item
 	#create action #1
 	When User clicks 'CREATE ACTION' button
 	And User enters '15949_Action_1' text to 'Action Name' textbox

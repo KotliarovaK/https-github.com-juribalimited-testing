@@ -55,7 +55,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations.CreateAu
                 }
 
                 var responseContent = JsonConvert.DeserializeObject<JObject>(response.Content);
-                automation.Id = responseContent["id"].ToString();
+                var respId = responseContent["id"].ToString();
+                automation.Id = respId.Equals("0") ? string.Empty : respId;
             }
 
             return _automation.Value.Last().Id;

@@ -1372,6 +1372,21 @@ namespace DashworksTestAutomation.Extensions
             }
         }
 
+        public static void WaitForElementToHaveText(this RemoteWebDriver driver, IWebElement element, int waitSec = WaitTimeoutSeconds, bool throwException = true)
+        {
+            try
+            {
+                WaitElementHaveText(driver, element, true, waitSec);
+            }
+            catch (Exception e)
+            {
+                if (throwException)
+                {
+                    throw e;
+                }
+            }
+        }
+
         public static void WaitForElementToHaveText(this RemoteWebDriver driver, By selector, string expectedText, int waitSec = WaitTimeoutSeconds)
         {
             WaitElementContainsText(driver, selector, expectedText, true, waitSec);
@@ -1409,7 +1424,7 @@ namespace DashworksTestAutomation.Extensions
             {
                 try
                 {
-                    return element.Text.Equals(text).Equals(condition);
+                    return element.GetText().Equals(text).Equals(condition);
                 }
                 catch (NoSuchElementException)
                 {
@@ -1437,7 +1452,7 @@ namespace DashworksTestAutomation.Extensions
                 try
                 {
                     var element = driver.FindElement(by);
-                    return element.Text.Equals(text).Equals(condition);
+                    return element.GetText().Equals(text).Equals(condition);
                 }
                 catch (NoSuchElementException)
                 {
@@ -1536,13 +1551,26 @@ namespace DashworksTestAutomation.Extensions
             }
         }
 
+        private static void WaitElementHaveText(this RemoteWebDriver driver, IWebElement elements, bool condition, int waitSec)
+        {
+            try
+            {
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(waitSec));
+                wait.Until(TextToBePresentInElement(elements, condition));
+            }
+            catch (Exception)
+            {
+                throw new Exception($"Text is not appears/disappears in the element after {waitSec} seconds");
+            }
+        }
+
         private static Func<IWebDriver, bool> TextToBeContainsInElement(IWebElement element, string text, bool condition)
         {
             return (driver) =>
             {
                 try
                 {
-                    return element.Text.Contains(text).Equals(condition);
+                    return element.GetText().Contains(text).Equals(condition);
                 }
                 catch (NoSuchElementException)
                 {
@@ -1569,7 +1597,7 @@ namespace DashworksTestAutomation.Extensions
             {
                 try
                 {
-                    return elements.Any(x => x.Text.Contains(text)).Equals(condition);
+                    return elements.Any(x => x.GetText().Contains(text)).Equals(condition);
                 }
                 catch (NoSuchElementException)
                 {
@@ -1597,7 +1625,34 @@ namespace DashworksTestAutomation.Extensions
                 try
                 {
                     var element = driver.FindElement(by);
-                    return element.Text.Contains(text).Equals(condition);
+                    return element.GetText().Contains(text).Equals(condition);
+                }
+                catch (NoSuchElementException)
+                {
+                    // Returns false because the element is not present in DOM.
+                    return false.Equals(condition);
+                }
+                catch (StaleElementReferenceException)
+                {
+                    // Returns false because stale element reference implies that element
+                    // is no longer visible.
+                    return false.Equals(condition);
+                }
+                catch (InvalidOperationException)
+                {
+                    // Return false as no elements was located
+                    return false.Equals(condition);
+                }
+            };
+        }
+
+        private static Func<IWebDriver, bool> TextToBePresentInElement(IWebElement element, bool condition)
+        {
+            return (driver) =>
+            {
+                try
+                {
+                    return (element.GetText().Length > 0).Equals(condition);
                 }
                 catch (NoSuchElementException)
                 {
@@ -1676,7 +1731,7 @@ namespace DashworksTestAutomation.Extensions
                 {
                     WaitForElementToBeDisplayedAfterRefresh((RemoteWebDriver)driver, element, waitForDataLoading, 5);
 
-                    return element.Text.Contains(text).Equals(condition);
+                    return element.GetText().Contains(text).Equals(condition);
                 }
                 catch (TimeoutException)
                 {
@@ -1711,7 +1766,7 @@ namespace DashworksTestAutomation.Extensions
                     WaitForElementToBeDisplayedAfterRefresh((RemoteWebDriver)driver, by, waitForDataLoading, 5);
 
                     var element = driver.FindElement(by);
-                    return element.Text.Contains(text).Equals(condition);
+                    return element.GetText().Contains(text).Equals(condition);
                 }
                 catch (TimeoutException)
                 {
