@@ -168,3 +168,21 @@ Scenario: EvergreenJnr_AllDeviceApplications_CheckMessageAppearingAfterDeletedRe
 	When User navigates to the "AssociationList18531" list
 	When User clicks the Associations button
 	Then message 'This list has errors' is displayed to the user
+
+@Evergreen @AllDeviceApplications @DAS18424
+Scenario Outline: EvergreenJnr_AllDeviceApplications_CheckThatAddAndButtonIsNotDisplayedIfAllPossibleAssociationsAreAdde
+	When User clicks 'Applications' on the left-hand menu
+	When User navigates to the "All Device Applications" list
+	When User clicks Add New button on the Filter panel
+	When User selects '<operator1>' option in expanded associations list
+	When User clicks Add And button on the Filter panel
+	When User selects '<operator2>' option in expanded associations list
+	When User clicks Add And button on the Filter panel
+	When User selects '<operator3>' option in expanded associations list
+	Then Add And button is not displayed on the Filter panel
+
+Examples: 
+	| operator1          | operator2              | operator3               |
+	| Used on device     | Entitled to device     | Installed on device     |
+	| Used on device     | Not entitled to device | Not installed on device |
+	| Entitled to device | Not used on device     | Installed on device     |
