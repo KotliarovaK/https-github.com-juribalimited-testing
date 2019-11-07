@@ -41,8 +41,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[contains(@class, 'rowCount')]")]
         public IWebElement ResultsOnPageCount { get; set; }
 
-        [FindsBy(How = How.XPath,
-            Using = ".//button[contains(@class, 'addNewContainer')]")]
+        [FindsBy(How = How.XPath,Using = ".//button[contains(@class, 'addNewContainer')]//span[contains(text(), 'ADD AND')]")] // old locator => .//button[contains(@class, 'addNewContainer')]
         public IWebElement AddAndFilterButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = SearchTextBoxSelector)]

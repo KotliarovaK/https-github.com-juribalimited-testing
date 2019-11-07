@@ -71,6 +71,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.IsTrue(button.AddAndFilterButton.Displayed(), "Add And button is not displayed");
         }
 
+        [Then(@"Add And button is not displayed on the Filter panel")]
+        public void ThenAddAndButtonIsNotDisplayedOnTheFilterPanel()
+        {
+            var button = _driver.NowAt<FiltersElement>();
+            Utils.Verify.IsFalse(button.AddAndFilterButton.Displayed(), "Add And button is displayed");
+        }
+
         [When(@"User moves to the end of categories list")]
         public void WhenUserMovesToTheEndOfCategoriesList()
         {
