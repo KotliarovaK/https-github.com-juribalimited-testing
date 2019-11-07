@@ -121,7 +121,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             if (row.ContainsKey("Layout") && !string.IsNullOrEmpty(row["Layout"]))
             {
-                _driver.WaitForElementToBeDisplayed(createWidgetElement.Layout);
                 baseActionItem.SelectDropdown(row["Layout"], "Layout");
             }
         }

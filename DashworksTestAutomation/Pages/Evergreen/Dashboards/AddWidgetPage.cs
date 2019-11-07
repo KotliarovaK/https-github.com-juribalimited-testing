@@ -20,15 +20,6 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//span[contains(@class, 'mat-select-placeholder')]")]
         public IList<IWebElement> Dropdowns { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//*[@formcontrolname='layout']")]
-        public IWebElement Layout { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//*[@aria-label='TableOrientation']")]
-        public IWebElement TableOrientation { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//*[@aria-label='Drilldown']")]
-        public IWebElement Drilldown { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//*[@aria-label='Colour Scheme']")]
         public IWebElement ColorScheme { get; set; }
 
@@ -147,7 +138,7 @@ namespace DashworksTestAutomation.Pages
 
         public IWebElement GetFirstDashboardFromList()
         {
-            var widg = By.XPath($".//ul[@class='submenu-actions-dashboards']/li[@mattooltipposition]");
+            var widg = By.XPath(".//ul[@class='submenu-actions-dashboards']/li[@mattooltipposition]");
             Driver.WaitForDataLoading();
             return Driver.FindElements(widg).First();
         }
