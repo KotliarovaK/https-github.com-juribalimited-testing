@@ -684,6 +684,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 Does.Contain(label), $"'{label}' label is not found");
         }
 
+        [Then(@"Data Legends values are displayed in '(.*)' widget on the Dashboard page")]
+        public void ThenDataLegendsValuesAreDisplayedInWidgetOnThePreviewPage(string widgetName, Table table)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
+            var expectedLabels = table.Rows.Select(x => x.Values).Select(x => x.FirstOrDefault());
+            var actualLables = page.GetWidgetLabels(widgetName).Select(x => x.Text).ToList();
+
+            Verify.AreEqual(expectedLabels, actualLables, $"The label(s) was not found in '{widgetName}'");
+        }
+
         [Then(@"Label icon displayed gray for '(.*)' widget")]
         public void ThenWidgetLabelContainsImageColoredInGray(string widgetName)
         {
@@ -1050,14 +1061,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForDataLoading();
             Verify.IsTrue(page.DataLabels.Displayed(), "Data Labels are not displayed");
-        }
-
-        [Then(@"Data Legends are displayed on the Dashboards page")]
-        public void ThenDataLegendsAreDisplayedOnTheDashboardsPage()
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            _driver.WaitForDataLoading();
-            Verify.IsTrue(page.DataLegends.Displayed(), "Data Labels are not displayed");
         }
 
         [Then(@"'(.*)' data label is displayed on the Dashboards page")]

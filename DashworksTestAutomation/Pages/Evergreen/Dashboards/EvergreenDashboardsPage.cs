@@ -119,6 +119,9 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//*[@class='highcharts-legend']//*[@text-anchor='start']")]
         public IWebElement DataLegends { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//*[@class='widget-preview']")]
+        public IWebElement WidgetPreview { get; set; }
+
         #endregion
 
         #region Dashboard Details

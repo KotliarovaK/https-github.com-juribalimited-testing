@@ -519,12 +519,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Verify.IsTrue(page.DataLabels.Displayed(), "Data Labels are not displayed");
         }
 
-        [Then(@"Data Legends are displayed on the Preview page")]
-        public void ThenDataLegendsAreDisplayedOnThePreviewPage()
+        [Then(@"Data Legends values are displayed on the Add Widget page")]
+        public void ThenDataLegendsValuesAreDisplayedOnTheAddWidgetPage(Table table)
         {
             var page = _driver.NowAt<AddWidgetPage>();
             _driver.WaitForDataLoading();
-            Verify.IsTrue(page.DataLegends.Displayed(), "Data Legends are not displayed");
+
+            var expectedLabels = table.Rows.Select(x => x.Values).Select(x => x.FirstOrDefault());
+            var actualLables = page.GetWidgetLegends().Select(x => x.Text).ToList();
+
+            Verify.AreEqual(expectedLabels, actualLables, $"The label(s) was not found");
         }
 
         [Then(@"'(.*)' data label is displayed on the Preview page")]

@@ -86,7 +86,7 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//div[@class='chartContainer ng-star-inserted']//*[@style='font-weight:bold']")]
         public IWebElement DataLabels { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//*[@class='highcharts-legend']//*[@text-anchor='start']")]
+        [FindsBy(How = How.XPath, Using = ".//[contains(@class,'highcharts-legend')]//[@text-anchor='start']")]
         public IWebElement DataLegends { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
@@ -222,6 +222,30 @@ namespace DashworksTestAutomation.Pages
             var listCategories = ".//*[contains(@id, 'mat-optgroup-label')]";
             Driver.WaitForElementToBeDisplayed(By.XPath(listCategories));
             return Driver.FindElements(By.XPath(listCategories));
+        }
+
+        public IWebElement GetWidgetByName(string widgetName)
+        {
+            var selector = By.XPath($".//h5//span[text()='{widgetName}']/ancestor::div[@class='widget-whole']");
+            if (!Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Long))
+                throw new Exception($"Widget with '{widgetName}' is not displayed");
+            return Driver.FindElement(selector);
+        }
+
+        public IList<IWebElement> GetWidgetLabels(string widgetName)
+        {
+            var legend =
+                By.XPath(".//ancestor::div[@class='widget-whole']//*[contains(@class, 'highcharts-legend-item')]");
+
+            Driver.WaitForDataLoading();
+            return GetWidgetByName(widgetName).FindElements(legend);
+        }
+        public IList<IWebElement> GetWidgetLegends()
+        {
+            var legend = By.XPath(".//*[contains(@class, 'highcharts-legend-item')]");
+
+            Driver.WaitForDataLoading();
+            return WidgetPreview.FindElements(legend);
         }
     }
 }

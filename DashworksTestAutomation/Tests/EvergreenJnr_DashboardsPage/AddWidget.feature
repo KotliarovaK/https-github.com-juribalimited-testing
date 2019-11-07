@@ -254,15 +254,14 @@ Scenario: EvergreenJnr_DashboardsPage_CheckImageAndTooltipDisplayingForListDropd
 	Then User sees list icon displayed with tooltip for 'WidgetForDAS16842' widget in List section of Dashboards Details
 
 	@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18168 @Cleanup
-Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatAllValuesInTheLegendAndInTheLabelAreDisplayed
-    When User clicks '<PageName>' on the left-hand menu
-	Then '<LoadedPage>' list should be displayed to the user
+Scenario: EvergreenJnr_DashboardsPage_CheckThatAllValuesInTheLegendAndInTheLabelAreDisplayed
+    When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
-	Then User is expand "{categoryName}" columns category
 	When User adds columns to the list
          | ColumnName |
-         | Build Date |
+         | CPU Count  |
 	When User clicks Save button on the list panel
 	When User selects Save as new list option
 	When User creates new custom list with "DAS18168_List" name
@@ -270,20 +269,30 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatAllValuesInTheLegendAndIn
 	When User clicks Edit mode trigger on Dashboards page
 	When User clicks 'ADD WIDGET' button
 	When User adds new Widget
-         | WidgetType | Title             | List          | SplitBy  | AggregateBy | AggregateFunction | OrderBy       | MaxValues | ShowLegend | ShowDataLabels |
-         | Pie        | WidgetForDAS18168 | DAS18168_List | Hostname | Hostname    | Count distinct    | Hostname DESC | 10        | true       | true           |
+         | WidgetType | Title             | List          | SplitBy   | AggregateBy | AggregateFunction | OrderBy       | MaxValues | ShowLegend | ShowDataLabels |
+         | Pie        | WidgetForDAS18168 | DAS18168_List | CPU Count | Hostname    | Count distinct    | CPU Count ASC | 5         | true       | true           |
 	Then Widget Preview is displayed to the user
 	Then There are no errors in the browser console
 	Then Data Labels are displayed on the Preview page
-	Then Data Legends are displayed on the Preview page
+	Then Data Legends values are displayed on the Add Widget page
+		| LegendsValue |
+		| 0            |
+		| 1            |
+		| 2            |
+		| 4            |
+		| 6            |
 	When User clicks 'CREATE' button
 	Then There are no errors in the browser console
 	Then Data Labels are displayed on the Dashboards page
-	Then Data Legends are displayed on the Dashboards page
+	Then Data Legends values are displayed in 'WidgetForDAS18168' widget on the Dashboard page
+		| LegendsValue |
+		| 0            |
+		| 1            |
+		| 2            |
+		| 4            |
+		| 6            |
 
-	Examples: 
-	| PageName | LoadedPage  | СategoryName |
-	| Devices  | All Devices | Device       |
+
 
 	@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18741 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatRelevantListIsShownAfterTypingAnyCharacters
