@@ -671,8 +671,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenWidgetIsDisplayedToTheUser(string widgetName)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            _driver.WaitForElementToBeDisplayed(page.GetWidgetByName(widgetName));
-            Verify.IsTrue(page.GetWidgetByName(widgetName).Displayed(), $"{widgetName} Widget is not displayed");
+            _driver.WaitForElementToBeDisplayed(page.GetWidget(widgetName));
+            Verify.IsTrue(page.GetWidget(widgetName).Displayed(), $"{widgetName} Widget is not displayed");
         }
 
         [Then(@"Label '(.*)' displayed for '(.*)' widget")]
@@ -680,8 +680,19 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForDataLoading();
+            Verify.That(page.GetWidgetLabels(widgetName).Select(x => x.Text).ToList(), 
+                Does.Contain(label), $"'{label}' label is not found");
+        }
 
-            Verify.That(page.GetWidgetLabels(widgetName).Select(x => x.Text).ToList(), Does.Contain(label), $"{label} label is not found");
+        [Then(@"Data Legends values are displayed in '(.*)' widget on the Dashboard page")]
+        public void ThenDataLegendsValuesAreDisplayedInWidgetOnThePreviewPage(string widgetName, Table table)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
+            var expectedLabels = table.Rows.Select(x => x.Values).Select(x => x.FirstOrDefault());
+            var actualLables = page.GetWidgetLabels(widgetName).Select(x => x.Text).ToList();
+
+            Verify.AreEqual(expectedLabels, actualLables, $"The label(s) was not found in '{widgetName}'");
         }
 
         [Then(@"Label icon displayed gray for '(.*)' widget")]

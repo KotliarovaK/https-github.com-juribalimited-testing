@@ -409,7 +409,9 @@ Scenario: EvergreenJnr_DashboardsPage_CheckNameAndLabelAndColorSchemeForEmptyOwn
 	And Color Scheme dropdown is disabled
 	When User clicks 'CREATE' button 
 	Then 'WidgetForDAS17467' Widget is displayed to the user
-	And Label 'Empty' displayed for 'WidgetForDAS17467' widget
+	Then Data Legends values are displayed in 'WidgetForDAS17467' widget on the Dashboard page
+	| LegendsValue |
+	|   Empty      |
 	And Label icon displayed gray for 'WidgetForDAS17467' widget
 	And There are no errors in the browser console
 	

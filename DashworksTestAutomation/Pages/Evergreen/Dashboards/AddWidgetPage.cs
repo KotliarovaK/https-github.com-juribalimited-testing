@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Pages.Evergreen.Base;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 
 namespace DashworksTestAutomation.Pages
 {
-    internal class AddWidgetPage : SeleniumBasePage
+    internal class AddWidgetPage : BaseWidgetPage
     {
         public const string ColorSchemeDropdownContent = ".//div/mat-option[contains(@class, 'colour-scheme')]//div[contains(@class, 'inner-colour')]";
         public const string ColorSchemeDropdownContainer = ".//div[@class='cdk-overlay-pane']";
@@ -68,24 +69,8 @@ namespace DashworksTestAutomation.Pages
 
         #endregion
 
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'only-icon')]")]
-        public IWebElement IconOnlyCardWidget { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'icon-and-text')]")]
-        public IWebElement IconAndTextCardWidget { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'only-text')]")]
-        public IWebElement TextOnlyCardWidget { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[@class='widget-preview']")]  ////div[@class='widget-preview']//div[@dir='ltr'] old locator
-        public IWebElement WidgetPreview { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//div[@class='widget-preview']//*[text()='No preview available']")]
         public IWebElement WidgetPreviewEmpty { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[@class='chartContainer ng-star-inserted']//*[@style='font-weight:bold']")]
-        public IWebElement DataLabels { get; set; }
-
 
         public override List<By> GetPageIdentitySelectors()
         {
@@ -106,30 +91,6 @@ namespace DashworksTestAutomation.Pages
             var listNameSelector = $".//span[@class='mat-option-text'][contains(text(), '{objectName}')]";
             Driver.WaitForElementToBeDisplayed(By.XPath(listNameSelector));
             Driver.FindElement(By.XPath(listNameSelector)).Click();
-        }
-
-       public void SelectSplitByItem(string item)
-        {
-            var splitByDdl = ".//*[@aria-label='SplitBy']";
-            var expandedItems = $".//span[@class='mat-option-text']";
-            var itemToBeSelected = $".//mat-option//span[contains(text(), '{item}')]";
-
-            for (int i = 0; i < 3; i++)
-            {
-                if (Driver.FindElements(By.XPath(expandedItems)).Count > 0)
-                {
-                    //click item in expanded ddl
-                    Driver.FindElement(By.XPath(itemToBeSelected)).Click();
-                    System.Threading.Thread.Sleep(500);
-                    break;
-                }
-                else
-                {
-                    //expand ddl
-                    Driver.FindElement(By.XPath(splitByDdl)).Click();
-                    System.Threading.Thread.Sleep(1000);
-                }
-            }
         }
 
         public IWebElement GetUnsavedChangesAlertText()
@@ -188,9 +149,13 @@ namespace DashworksTestAutomation.Pages
         {
             var nested = By.XPath(".//div[@class='card-widget-data']//*");
             if (Driver.FindElements(nested).Count > 0)
-            { return Driver.FindElement(By.XPath(".//div[@class='card-widget-data']//span[contains(@class, 'text')]")); }
+            {
+                return Driver.FindElement(By.XPath(".//div[@class='card-widget-data']//span[contains(@class, 'text')]"));
+            }
             else
-            { return Driver.FindElement(By.XPath(".//div[@class='card-widget-data']")); }
+            {
+                return Driver.FindElement(By.XPath(".//div[@class='card-widget-data']"));
+            }
         }
 
         public IWebElement GetFirstDashboardFromList()

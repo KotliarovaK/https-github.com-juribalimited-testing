@@ -229,6 +229,7 @@
     <Compile Include="Pages\Evergreen\BaseDetailsPage.cs" />
     <Compile Include="Pages\Evergreen\BaseDialogPage.cs" />
     <Compile Include="Pages\Evergreen\Base\BaseRightSideActionsPanel.cs" />
+    <Compile Include="Pages\Evergreen\Base\BaseWidgetPage.cs" />
     <Compile Include="Pages\Evergreen\ImportListsFromCSVPage.cs" />
     <Compile Include="Pages\Evergreen\Dashboards\PrintDashboardsPage.cs" />
     <Compile Include="Pages\Evergreen\ItemDetails\ActionPanelPage.cs" />
