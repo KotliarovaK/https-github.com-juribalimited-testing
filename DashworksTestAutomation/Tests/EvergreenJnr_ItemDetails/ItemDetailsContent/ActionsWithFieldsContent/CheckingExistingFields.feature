@@ -18,15 +18,17 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCommonNameFieldIsDisplayedInTheCompu
 	| Common Name                     |
 	| Display Name                    |
 	| Description                     |
-	Then "00OMQQXWA1DRI6" content is displayed in "Common Name" field on Item Details page
+	Then following content is displayed on the Details Page
+	| Title       | Value          |
+	| Common Name | 00OMQQXWA1DRI6 |
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16859 @DAS17645 @DAS17785 @DAS17809 @DAS18095 @DAS18011 @DAS17810
 Scenario: EvergreenJnr_DevicesList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForDeviceObjects
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
-	When User navigates to the 'Projects' left menu item
 	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
 	Then "Windows 7 Migration (Computer Scheduled Project)" project is selected in the Top bar on Item details page
+	When User navigates to the 'Projects' left menu item
 	When User navigates to the 'Project Details' left submenu item
 	Then following fields are displayed in the open section:
 	| Fields           |

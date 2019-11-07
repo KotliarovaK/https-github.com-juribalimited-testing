@@ -418,7 +418,7 @@ this.FeatureBackground();
 #line 78
  testRunner.When("User selects following Objects from the expandable multiselect", ((string)(null)), table6, "When ");
 #line 81
- testRunner.Then("\'Update All Changes\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'UPDATE ALL CHANGES\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 82
  testRunner.And("\"Devices to add (1 of 17279 selected)\" is displayed to the user in the Project Sc" +
                     "ope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

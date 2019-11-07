@@ -77,8 +77,6 @@ Scenario: EvergreenJnr_UsersList_ChecksThatLinksFromTheDeviceColumnInDeviceProje
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'User Projects' left submenu item
 	And User clicks "*Project K-Computer Scheduled Project" link on the Details Page
-	#waiting for the switching process to Senior page to be completed
-	When User waits for three seconds
 	Then "Project Object" page is displayed to the user
 	And PMObject page for "User: 000F977AC8824FE39B8 (Spruill, Shea)" object is displayed to the user
 	And User click back button in the browser

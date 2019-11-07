@@ -78,7 +78,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedCheckboxIsSelectedAfterSwitchi
 	When User selects following Objects from the expandable multiselect
 	| Objects        |
 	| 00HA7MKAVVFDAV |
-	Then 'Update All Changes' button is not disabled
+	Then 'UPDATE ALL CHANGES' button is not disabled
 	And "Devices to add (1 of 17279 selected)" is displayed to the user in the Project Scope Changes section
 	When User navigates to the 'Users' tab on Project Scope Changes page
 	When User expands multiselect to add objects
