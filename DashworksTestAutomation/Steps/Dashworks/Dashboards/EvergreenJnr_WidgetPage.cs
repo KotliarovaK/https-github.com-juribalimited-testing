@@ -72,7 +72,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             if (row.ContainsKey("SplitBy") && !string.IsNullOrEmpty(row["SplitBy"]))
             {
-                createWidgetElement.SelectSplitByItem(row["SplitBy"]);
+                baseActionItem.SelectDropdown(row["SplitBy"], "SplitBy");
             }
 
             if (row.ContainsKey("AggregateFunction") && !string.IsNullOrEmpty(row["AggregateFunction"]))
@@ -145,15 +145,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User selects '(.*)' in the '(.*)' Widget dropdown")]
         public void WhenUserSelectsInTheWidgetDropdown(string option, string dropdown)
         {
-            var createWidgetElement = _driver.NowAt<AddWidgetPage>();
             _driver.WaitForDataLoading();
 
             if (dropdown.Equals("Split By"))
             {
-                createWidgetElement.SelectSplitByItem(option);
+                var basePage = _driver.NowAt<BaseDashboardPage>();
+                basePage.SelectDropdown(option, "SplitBy");
             }
             else
             {
+                var createWidgetElement = _driver.NowAt<AddWidgetPage>();
                 _driver.ClickByJavascript(createWidgetElement.GetDropdownForWidgetByName(dropdown));
                 createWidgetElement.SelectObjectForWidgetCreation(option);
             }

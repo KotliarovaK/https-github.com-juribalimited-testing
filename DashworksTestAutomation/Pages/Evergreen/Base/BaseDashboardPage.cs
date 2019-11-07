@@ -728,6 +728,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             var selector = By.XPath(string.Format(NamedDropdownSelector, dropdownName));
             if (!Driver.IsElementDisplayed(selector, wait))
                 throw new Exception($"'{dropdownName}' dropdown is not displayed");
+            Driver.WaitForElementToBeEnabled(selector);
             return Driver.FindElement(selector);
         }
 

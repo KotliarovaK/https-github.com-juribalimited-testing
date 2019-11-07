@@ -46,6 +46,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = ".//*[@class='highcharts-legend']//*[@text-anchor='start']")]
         public IWebElement DataLegends { get; set; }
 
+        public override List<By> GetPageIdentitySelectors()
+        {
+            return new List<By> { };
+        }
+
         //Do not pass 'widgetName' to work with widget preview
         public IWebElement GetWidget(string widgetName)
         {
@@ -67,18 +72,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         public IList<IWebElement> GetWidgetLabels(string widgetName)
         {
             var legend =
-                By.XPath(".//ancestor::div[@class='widget-whole']//*[contains(@class, 'highcharts-legend-item')]");
+                By.XPath(".//*[contains(@class, 'highcharts-legend-item')]");
 
             Driver.WaitForDataLoading();
             return GetWidget(widgetName).FindElements(legend);
-        }
-
-        public IList<IWebElement> GetWidgetLegends()
-        {
-            var legend = By.XPath(".//*[contains(@class, 'highcharts-legend-item')]");
-
-            Driver.WaitForDataLoading();
-            return WidgetPreview.FindElements(legend);
         }
     }
 }
