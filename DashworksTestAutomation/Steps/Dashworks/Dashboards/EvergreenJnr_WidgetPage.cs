@@ -97,15 +97,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             if (row.ContainsKey("DrillDown") && !string.IsNullOrEmpty(row["DrillDown"]))
             {
-                createWidgetElement.Drilldown.Click();
-                createWidgetElement.SelectObjectForWidgetCreation(row["DrillDown"]);
+                baseActionItem.SelectDropdown(row["DrillDown"], "DrillDown");
                 _driver.WaitForDataLoadingOnProjects();
             }
 
             if (row.ContainsKey("TableOrientation") && !string.IsNullOrEmpty(row["TableOrientation"]))
             {
-                createWidgetElement.TableOrientation.Click();
-                createWidgetElement.SelectObjectForWidgetCreation(row["TableOrientation"]);
+                baseActionItem.SelectDropdown(row["TableOrientation"], "TableOrientation");
                 _driver.WaitForDataLoadingOnProjects();
             }
 
@@ -124,8 +122,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             if (row.ContainsKey("Layout") && !string.IsNullOrEmpty(row["Layout"]))
             {
                 _driver.WaitForElementToBeDisplayed(createWidgetElement.Layout);
-                _driver.ClickByJavascript(createWidgetElement.GetDropdownForWidgetByName("Layout"));
-                createWidgetElement.SelectObjectForWidgetCreation(row["Layout"]);
+                baseActionItem.SelectDropdown(row["Layout"], "Layout");
             }
         }
 
@@ -145,18 +142,19 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User selects '(.*)' in the '(.*)' Widget dropdown")]
         public void WhenUserSelectsInTheWidgetDropdown(string option, string dropdown)
         {
+            var basePage = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForDataLoading();
 
             if (dropdown.Equals("Split By"))
             {
-                var basePage = _driver.NowAt<BaseDashboardPage>();
                 basePage.SelectDropdown(option, "SplitBy");
             }
             else
             {
-                var createWidgetElement = _driver.NowAt<AddWidgetPage>();
-                _driver.ClickByJavascript(createWidgetElement.GetDropdownForWidgetByName(dropdown));
-                createWidgetElement.SelectObjectForWidgetCreation(option);
+                basePage.SelectDropdown(option, dropdown);
+                //var createWidgetElement = _driver.NowAt<AddWidgetPage>();
+                //_driver.ClickByJavascript(createWidgetElement.GetDropdownForWidgetByName(dropdown));
+                //createWidgetElement.SelectObjectForWidgetCreation(option);
             }
         }
 

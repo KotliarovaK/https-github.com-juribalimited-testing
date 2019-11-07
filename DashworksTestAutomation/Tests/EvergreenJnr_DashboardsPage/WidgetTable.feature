@@ -147,7 +147,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckRingsDisplayOrderInAWidgetOnDashboard
 	| Evergreen Ring 3 |
 	When User clicks Ellipsis menu for 'DAS15826_Widget' Widget on Dashboards page
 	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
-	And User selects 'UserEvergr: Ring (All Users) DESC' in the 'Order By' Widget dropdown
+	And User selects 'UserEvergr: Ring (All Users) DESC' in the 'OrderBy' Widget dropdown
 	And User clicks 'UPDATE' button 
 	Then Card 'DAS15826_Widget' Widget is displayed to the user
 	And content in the Widget is displayed in following order:

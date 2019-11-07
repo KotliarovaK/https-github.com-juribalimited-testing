@@ -793,8 +793,8 @@ this.FeatureBackground();
 #line 149
  testRunner.And("User clicks \'Edit\' item from Ellipsis menu on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 150
- testRunner.And("User selects \'UserEvergr: Ring (All Users) DESC\' in the \'Order By\' Widget dropdow" +
-                    "n", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects \'UserEvergr: Ring (All Users) DESC\' in the \'OrderBy\' Widget dropdown" +
+                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 151
  testRunner.And("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 152

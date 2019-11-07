@@ -80,19 +80,6 @@ namespace DashworksTestAutomation.Pages
             };
         }
 
-        public IWebElement GetDropdownForWidgetByName(string dropdownName)
-        {
-            var dropdownSelector = By.XPath($".//div[contains(@class, 'mat-form')]/span/label[text()='{dropdownName}']");
-            return Driver.FindElement(dropdownSelector);
-        }
-
-        public void SelectObjectForWidgetCreation(string objectName)
-        {
-            var listNameSelector = $".//span[@class='mat-option-text'][contains(text(), '{objectName}')]";
-            Driver.WaitForElementToBeDisplayed(By.XPath(listNameSelector));
-            Driver.FindElement(By.XPath(listNameSelector)).Click();
-        }
-
         public IWebElement GetUnsavedChangesAlertText()
         {
             var selector = $".//deactivate-guard-dialog/parent::mat-dialog-container//p";
