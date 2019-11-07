@@ -514,7 +514,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"Data Labels are displayed on the Preview page")]
         public void ThenDataLabelsAreDisplayedOnThePreviewPage()
         {
-            var page = _driver.NowAt<AddWidgetPage>();
+            var page = _driver.NowAt<BaseWidgetPage>();
             _driver.WaitForDataLoading();
             Verify.IsTrue(page.DataLabels.Displayed(), "Data Labels are not displayed");
         }

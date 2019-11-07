@@ -14,7 +14,10 @@ using SeleniumExtras.PageObjects;
 namespace DashworksTestAutomation.Pages.Evergreen.Base
 {
     public class BaseWidgetPage : SeleniumBasePage
-    {
+    { 
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='chartContainer ng-star-inserted']//*[@style='font-weight:bold']")]
+        public IWebElement DataLabels { get; set; }
 
     }
 }
