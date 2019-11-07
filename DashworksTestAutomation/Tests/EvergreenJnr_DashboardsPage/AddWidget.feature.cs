@@ -1119,12 +1119,6 @@ this.FeatureBackground();
  testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 276
  testRunner.Then("Data Labels are displayed on the Preview page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 277
- testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 278
- testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 279
- testRunner.Then("Data Labels are displayed on the Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
                         "LegendsValue"});
@@ -1138,9 +1132,30 @@ this.FeatureBackground();
                         "4"});
             table24.AddRow(new string[] {
                         "6"});
-#line 280
+#line 277
+ testRunner.Then("Data Legends values are displayed on the Add Widget page", ((string)(null)), table24, "Then ");
+#line 284
+ testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 285
+ testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 286
+ testRunner.Then("Data Labels are displayed on the Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
+                        "LegendsValue"});
+            table25.AddRow(new string[] {
+                        "0"});
+            table25.AddRow(new string[] {
+                        "1"});
+            table25.AddRow(new string[] {
+                        "2"});
+            table25.AddRow(new string[] {
+                        "4"});
+            table25.AddRow(new string[] {
+                        "6"});
+#line 287
  testRunner.Then("Data Legends values are displayed in \'WidgetForDAS18168\' widget on the Dashboard " +
-                    "page", ((string)(null)), table24, "Then ");
+                    "page", ((string)(null)), table25, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1160,18 +1175,18 @@ this.FeatureBackground();
                         "Widgets",
                         "DAS18741",
                         "Cleanup"});
-#line 289
+#line 296
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 290
+#line 297
  testRunner.When("Dashboard with \'DAS18741_Dashboard\' name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 291
+#line 298
  testRunner.When("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 292
+#line 299
  testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 293
+#line 300
  testRunner.Then("only options having search term \'De\' are displayed in \'List\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
