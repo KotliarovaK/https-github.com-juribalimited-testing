@@ -257,34 +257,3 @@ Scenario: EvergreenJnr_UsersList_CheckRelativeUpdatesToTaskValues
 	Then Success message with " " text is displayed on Action panel
 	When User refreshes agGrid
 	Then "+5 days from current" content is displayed for "zDeviceAut: Relative BU \ DT BU App" column
-
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18269 @DAS18245 @Not_Ready
-#Waiting for 'Update relative to now'
-Scenario: EvergreenJnr_UsersList_CheckRelativeUpdatesToTaskValues
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName                          |
-	| zDeviceAut: Relative BU \ DT BU App |
-	When User clicks the Filters button
-	Then Filters panel is displayed to the user
-	When User add "Application" filter where type is "Begins with" with added column and following value:
-	| Values |
-	| boot   |
-	When User clicks the Actions button
-	Then Actions panel is displayed to the user
-	When User selects all rows on the grid
-	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
-	When User selects 'zDevice Sch for Automations Feature' option from 'Project' autocomplete
-	When User selects 'Relative BU' option from 'Stage' autocomplete
-	When User selects 'DT BU App' option from 'Task' autocomplete
-	When User selects 'Update relative to now' in the 'Update Date' dropdown
-	When User enters '5' text to 'Value' textbox
-	When User selects 'After now' in the 'Before or After' dropdown
-	And User clicks 'UPDATE' button 
-	Then the amber message is displayed correctly
-	When User clicks 'UPDATE' button
-	Then Success message with " " text is displayed on Action panel
-	When User refreshes agGrid
-	Then "+5 days from current" content is displayed for "zDeviceAut: Relative BU \ DT BU App" column
