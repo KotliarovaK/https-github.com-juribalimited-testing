@@ -274,13 +274,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(selector);
         }
 
-        public IWebElement FieldContentByName(string fieldName, string text)
-        {
-            var selector = By.XPath($".//td//span[text()='{fieldName}']//ancestor::div//span[text()='{text}']");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
         public IWebElement GetFieldToOpenTheTableByName(string fieldName)
         {
             var selector = By.XPath($"//div[@class='application-category-title']//span[contains(text(), '{fieldName}')]");

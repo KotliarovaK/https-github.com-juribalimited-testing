@@ -28,5 +28,5 @@ Scenario: EvergreenJnr_AdminPage_CheckThatPanelOfAvailableMemberslIsExpandedByDe
 	When User enters "K-Team" text in the Search field for "Team" column
 	And User clicks content from "Team" column
 	Then Page with 'K-Team' header is displayed to user
-	When User clicks Add Members button on the Teams page
+	When User clicks 'ADD MEMBERS' button
 	Then Panel of available members is displayed to the user

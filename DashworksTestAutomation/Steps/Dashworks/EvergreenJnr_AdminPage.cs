@@ -36,40 +36,24 @@ namespace DashworksTestAutomation.Steps.Dashworks
     internal class EvergreenJnr_AdminPage : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
-        private readonly Teams _teams;
         private readonly DTO.RuntimeVariables.Projects _projects;
-        private readonly Buckets _buckets;
         private readonly LastUsedBucket _lastUsedBucket;
         private readonly Rings _rings;
         private readonly CapacityUnits _capacityUnits;
         private readonly Tasks _tasks;
         private readonly ElementCoordinates _elementCoordinates;
 
-        public EvergreenJnr_AdminPage(RemoteWebDriver driver, Teams teams, DTO.RuntimeVariables.Projects projects,
-            Buckets buckets, LastUsedBucket lastUsedBucket, Rings rings, CapacityUnits capacityUnits,
+        public EvergreenJnr_AdminPage(RemoteWebDriver driver, DTO.RuntimeVariables.Projects projects,
+            LastUsedBucket lastUsedBucket, Rings rings, CapacityUnits capacityUnits,
             Tasks tasks, ElementCoordinates elementCoordinates)
         {
             _driver = driver;
-            _teams = teams;
             _projects = projects;
-            _buckets = buckets;
             _lastUsedBucket = lastUsedBucket;
             _rings = rings;
             _capacityUnits = capacityUnits;
             _tasks = tasks;
             _elementCoordinates = elementCoordinates;
-        }
-
-        #region Check button state
-
-        [Then(@"Update Project button is active")]
-        public void ThenUpdateProjectButtonIsActive()
-        {
-            var button = _driver.NowAt<ProjectsPage>();
-            Utils.Verify.IsFalse(Convert.ToBoolean(button.UpdateProjectButton.GetAttribute("disabled")),
-                "Update Project button is disabled");
-            Utils.Verify.IsFalse(Convert.ToBoolean(button.UpdateAllChangesButton.GetAttribute("disabled")),
-                "Update All Changes button is disabled");
         }
 
         [Then(@"Import Project button is enabled")]
@@ -80,8 +64,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.IsFalse(Convert.ToBoolean(button.ImportProjectButton.GetAttribute("disabled")),
                 "Import button is disabled");
         }
-
-        #endregion
 
         [Then(@"Scope field is automatically populated")]
         public void ThenScopeFieldIsAutomaticallyPopulated()
@@ -582,24 +564,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Verify.IsTrue(page.DefaultCapacityMode.Displayed, "Default value is not displayed for Capacity Mode");
         }
 
-        [When(@"User clicks Update Team button")]
-        public void WhenUserClicksUpdateTeamButton()
-        {
-            var button = _driver.NowAt<TeamsPage>();
-            _driver.WaitForElementToBeDisplayed(button.UpdateTeamButton);
-            button.UpdateTeamButton.Click();
-            Logger.Write("Update Team button was clicked");
-        }
-
-        [Then(@"Update Team button is disabled")]
-        public void ThenUpdateTeamButtonIsDisabled()
-        {
-            var button = _driver.NowAt<TeamsPage>();
-            _driver.WaitForElementToBeDisplayed(button.UpdateTeamButton);
-            Utils.Verify.IsTrue(Convert.ToBoolean(button.UpdateTeamButton.GetAttribute("disabled")),
-                "Update Team button is active");
-        }
-
         [When(@"User clicks Default Team checkbox")]
         public void WhenUserClicksDefaultTeamCheckbox()
         {
@@ -635,10 +599,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             page.SelectDropdown("Remove Members", "Actions");
+            page.ClickButtonByName("REMOVE");
 
             var teamElement = _driver.NowAt<TeamsPage>();
-            _driver.WaitForElementToBeDisplayed(teamElement.RemoveButtonOnPage);
-            teamElement.RemoveButtonOnPage.Click();
             _driver.WaitForElementToBeDisplayed(teamElement.WarningMessage);
             _driver.WaitForDataLoading();
             teamElement.RemoveButtonInWarningMessage.Click();
@@ -671,15 +634,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.IsTrue(tableElement.TableContent.Displayed(), "Table is empty");
         }
 
-        [When(@"User clicks Add Members button on the Teams page")]
-        public void WhenUserClicksAddMembersButtonOnTheTeamsPage()
-        {
-            var button = _driver.NowAt<TeamsPage>();
-            _driver.WaitForElementToBeDisplayed(button.AddMembersButton);
-            button.AddMembersButton.Click();
-            Logger.Write("Add Members button was clicked");
-        }
-
         [Then(@"Panel of available members is displayed to the user")]
         public void ThenPanelOfAvailableMembersIsDisplayedToTheUser()
         {
@@ -695,14 +649,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForElementToBeDisplayed(button.CreateTeamButton);
             Utils.Verify.IsTrue(Convert.ToBoolean(button.CreateTeamButton.GetAttribute("disabled")),
                 "Create Team button is active");
-        }
-
-        [Then(@"Reassign Objects is displayed on the Teams page")]
-        public void ThenReassignObjectsIsDisplayedOnTheTeamsPage()
-        {
-            var page = _driver.NowAt<TeamsPage>();
-            _driver.WaitForElementToBeDisplayed(page.ReassignObjectsSummary);
-            Utils.Verify.IsTrue(page.ReassignObjectsSummary.Displayed(), "Reassign Objects was not displayed");
         }
 
         [Then(@"""(.*)"" is displayed on the Admin page")]

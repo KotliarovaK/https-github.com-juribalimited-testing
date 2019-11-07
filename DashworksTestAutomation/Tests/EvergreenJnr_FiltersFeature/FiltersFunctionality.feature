@@ -2425,14 +2425,19 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOffboardedItemsDontShowAnyOtherProje
 	| Offboarded |
 	| Offboarded |
 
-@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS18377
-Scenario: EvergreenJnr_DevicesList_CheckThatThereIsNoErrorAfterSavingListWithFilterEqualsRelative
-	When User clicks 'Devices' on the left-hand menu
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS18377 @DAS18621
+Scenario Outline: EvergreenJnr_DevicesList_CheckThatThereIsNoErrorAfterSavingListWithFilterEqualsRelative
+	When User clicks '<List>' on the left-hand menu
 	And User clicks the Filters button
-	And User add "1803: Pre-Migration \ Scheduled Date" filter where type is "Equals (relative)" with added column and following value:
+	And User add "<Filter>" filter where type is "Equals (relative)" with added column and following value:
 	| Values |
 	| 1      |
 	Then There are no errors in the browser console
+
+Examples:
+	| List         | Filter                               |
+	| Devices      | 1803: Pre-Migration \ Scheduled Date |
+	| Applications | Owner Last Logon Date                |
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FilterFunctionality @DAS18140
 Scenario: EvergreenJnr_DevicesList_CheckCancelFilterButtonWorkIfSameFiltersWereApplied

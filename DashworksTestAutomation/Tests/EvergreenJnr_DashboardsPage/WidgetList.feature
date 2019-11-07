@@ -88,3 +88,13 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnListWidget
 	When User clicks 'CREATE' button 
 	Then 'WidgetForDAS16167' Widget is displayed to the user
 	And 'This list does not contain any rows' message is displayed in 'WidgetForDAS16167' widget
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18634 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorDisplayedWhenSlectingWidgetTypeValue
+	When Dashboard with 'TestDashboardForDAS18634' name created via API and opened
+	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'ADD WIDGET' button 
+	When User selects 'Card' in the 'Widget Type' Widget dropdown
+	Then There are no errors in the browser console
+	When User selects 'List' in the 'Widget Type' Widget dropdown
+	Then There are no errors in the browser console

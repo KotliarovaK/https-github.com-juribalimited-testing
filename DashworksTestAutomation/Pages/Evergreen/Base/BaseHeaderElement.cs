@@ -57,6 +57,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         public void CheckPageHeaderContainsText(string text)
         {
+            Driver.WaitForElementToContainsText(Header, text, 10, false);
             Verify.IsTrue(Header.Text.ToLower().Contains(text.ToLower()), $"Page header do not contains '{text}' text");
         }
 
