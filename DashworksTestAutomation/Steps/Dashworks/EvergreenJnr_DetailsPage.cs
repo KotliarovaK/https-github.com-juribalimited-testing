@@ -308,7 +308,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.BodyContainer.Click();
         }
 
-
         [Then(@"Dropdown List is displayed correctly in the Filter on the Details Page")]
         public void ThenDropdownListIsDisplayedCorrectlyInTheFilterOnTheDetailsPage()
         {
@@ -595,7 +594,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.AreEqual(textMessage, detailsPage.NoFoundContent.Text,
                 $"{textMessage} is not displayed");
         }
-
 
         [Then(@"User sees ""(.*)"" Evergreen Bucket in Project Summary section on the Details Page")]
         public void ThenUserSeesEvergreenBucketInProjectSummarySectionOnTheDetailsPage(string bucketName)
