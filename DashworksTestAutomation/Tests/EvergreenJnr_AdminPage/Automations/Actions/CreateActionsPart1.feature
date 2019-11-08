@@ -161,7 +161,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithRemoveOwnerIsLoaded
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
-	When User clicks 'CREATE ACTION' button 
+	When User clicks 'CREATE ACTION' button
 	When User enters 'Update Migrated devices' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
@@ -170,7 +170,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithRemoveOwnerIsLoaded
 	And User selects 'No change' in the 'Update Value' dropdown
 	And User selects 'No change' in the 'Update Date' dropdown
 	When User selects 'Remove owner' in the 'Update Owner' dropdown
-	And User clicks 'CREATE' button 
+	And User clicks 'CREATE' button
 	When User clicks 'Automations' header breadcrumb
 	When User enters "17619_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column

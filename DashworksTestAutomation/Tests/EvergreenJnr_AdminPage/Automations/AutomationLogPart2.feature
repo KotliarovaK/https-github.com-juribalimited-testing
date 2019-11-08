@@ -491,7 +491,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueActionDAS
 	When User selects 'Stage 1' option from 'Stage' autocomplete
 	When User selects 'Radiobutton Readiness Date Owner Task (User)' option from 'Task' autocomplete
 	And User selects 'Update' in the 'Update Value' dropdown
-	And User selects 'Not Started' in the 'Value' dropdown
+	And User selects 'Failed' in the 'Value' dropdown
 	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters '19 Nov 2019' text to 'Date' datepicker
 	When User selects 'Update' in the 'Update Owner' dropdown
@@ -514,4 +514,4 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueActionDAS
 	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName                                                         |
 	| USEMEFORA2: Stage 1 \ Radiobutton Readiness Date Owner Task (User) |
-	Then 'NOT STARTED' content is displayed in the 'USEMEFORA2: Stage 1 \ Radiobutton Readiness Date Owner Task (User)' column
+	Then 'FAILED' content is displayed in the 'USEMEFORA2: Stage 1 \ Radiobutton Readiness Date Owner Task (User)' column
