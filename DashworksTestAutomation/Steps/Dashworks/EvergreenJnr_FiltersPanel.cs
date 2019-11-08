@@ -31,6 +31,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [Then(@"Filters panel is displayed to the user")]
+        [Then(@"Associations panel is displayed to the user")]
         public void ThenFiltersPanelIsDisplayedToTheUser()
         {
             var filterElement = _driver.NowAt<FiltersElement>();

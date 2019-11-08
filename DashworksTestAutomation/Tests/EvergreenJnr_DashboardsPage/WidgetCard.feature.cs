@@ -603,7 +603,7 @@ this.FeatureBackground();
 #line 125
  testRunner.Then("Colour Scheme dropdown is not displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 126
- testRunner.When("User selects \'Text Only\' in the \'Layout\' Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Text Only\' in the \'Layout\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 127
  testRunner.Then("Text Only is displayed for Card widget on Preview", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 128
@@ -619,7 +619,7 @@ this.FeatureBackground();
 #line 135
  testRunner.And("User clicks \'Edit\' item from Ellipsis menu on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 136
- testRunner.And("User selects \'Icon and Text\' in the \'Layout\' Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User selects \'Icon and Text\' in the \'Layout\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 137
  testRunner.Then("Icon and Text is displayed for Card widget on Preview", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 138
@@ -635,7 +635,7 @@ this.FeatureBackground();
 #line 145
  testRunner.And("User clicks \'Edit\' item from Ellipsis menu on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 146
- testRunner.And("User selects \'Icon Only\' in the \'Layout\' Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User selects \'Icon Only\' in the \'Layout\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 147
  testRunner.Then("Icon Only is displayed for Card widget on Preview", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 148
@@ -962,7 +962,7 @@ this.FeatureBackground();
 #line 224
  testRunner.And("User clicks \'Edit\' item from Ellipsis menu on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 225
- testRunner.And("User selects \'Icon and Text\' in the \'Layout\' Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User selects \'Icon and Text\' in the \'Layout\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 226
  testRunner.Then("Icon and Text is displayed for Card widget on Preview", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 227
@@ -976,7 +976,7 @@ this.FeatureBackground();
 #line 232
  testRunner.And("User clicks \'Edit\' item from Ellipsis menu on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 233
- testRunner.And("User selects \'Icon Only\' in the \'Layout\' Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User selects \'Icon Only\' in the \'Layout\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 234
  testRunner.Then("Icon Only is displayed for Card widget on Preview", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 235
@@ -1100,7 +1100,7 @@ this.FeatureBackground();
 #line 267
  testRunner.And("User clicks \'Edit\' item from Ellipsis menu on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 268
- testRunner.And("User selects \'Icon and Text\' in the \'Layout\' Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User selects \'Icon and Text\' in the \'Layout\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 269
  testRunner.Then("Icon and Text is displayed for Card widget on Preview", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 270
@@ -1116,7 +1116,7 @@ this.FeatureBackground();
 #line 276
  testRunner.And("User clicks \'Edit\' item from Ellipsis menu on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 277
- testRunner.And("User selects \'Icon Only\' in the \'Layout\' Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User selects \'Icon Only\' in the \'Layout\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 278
  testRunner.Then("Icon Only is displayed for Card widget on Preview", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 279
@@ -1669,7 +1669,7 @@ this.FeatureBackground();
 #line 412
  testRunner.And("User clicks \'Edit\' item from Ellipsis menu on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 413
- testRunner.And("User selects \'Icon Only\' in the \'Layout\' Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User selects \'Icon Only\' in the \'Layout\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 414
  testRunner.Then("Icon Only is displayed for Card widget on Preview", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 415
@@ -1687,7 +1687,7 @@ this.FeatureBackground();
 #line 423
  testRunner.And("User clicks \'Edit\' item from Ellipsis menu on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 424
- testRunner.And("User selects \'Icon and Text\' in the \'Layout\' Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User selects \'Icon and Text\' in the \'Layout\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 425
  testRunner.Then("Icon and Text is displayed for Card widget on Preview", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 426

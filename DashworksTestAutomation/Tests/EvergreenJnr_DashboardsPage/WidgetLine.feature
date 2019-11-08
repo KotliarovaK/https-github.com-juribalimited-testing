@@ -15,12 +15,12 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatColourSchemeIsDisplayedForReadine
 	And Dashboard with 'Dashboard for DAS15737' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
-	And User selects 'Line' in the 'Widget Type' Widget dropdown
+	When User selects 'Line' in the 'WidgetType' dropdown
 	And User enters 'DAS15737' as Widget Title
 	And User selects 'TestList_DAS15737' as Widget List
-	And User selects 'prK: Application Readiness' in the 'Split By' Widget dropdown
-	And User selects 'Count' in the 'Aggregate Function' Widget dropdown
-	And User selects 'prK: Application Readiness ASC' in the 'Order By' Widget dropdown
+	When User selects 'prK: Application Readiness' in the 'SplitBy' dropdown
+	When User selects 'Count' in the 'AggregateFunction' dropdown
+	When User selects 'prK: Application Readiness ASC' in the 'OrderBy' dropdown
 	And User clicks on the Colour Scheme dropdown
 	Then Colour Scheme dropdown is displayed to the user
 	And 'Data Label' checkbox is not displayed on the Create Widget page
@@ -157,8 +157,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetsShowsGraphDataWhenSpli
 	And Line chart displayed in 'WidgetForDAS17825' widget
 	When User clicks Ellipsis menu for 'WidgetForDAS17825' Widget on Dashboards page
 	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
-	And User selects 'Application Compliance' in the 'Split By' Widget dropdown
-	When User selects 'Application Compliance ASC' in the 'Order By' Widget dropdown
+	When User selects 'Application Compliance' in the 'SplitBy' dropdown
+	When User selects 'Application Compliance ASC' in the 'OrderBy' dropdown
 	Then Widget Preview is displayed to the user
 	And Color Scheme dropdown displayed with 'Compliance Colour Scheme' placeholder 
 	And Color Scheme dropdown is disabled
