@@ -67,19 +67,19 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingPie
 	| Pie        | WidgetForDAS15365 | List15365 | Model   | Model       | Count distinct    | Model ASC | 10        | true       |
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
-	When User selects 'Bar' in the 'Widget Type' Widget dropdown
+	When User selects 'Bar' in the 'WidgetType' dropdown
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
-	When User selects 'Column' in the 'Widget Type' Widget dropdown
+	When User selects 'Column' in the 'WidgetType' dropdown
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
-	When User selects 'Line' in the 'Widget Type' Widget dropdown
+	When User selects 'Line' in the 'WidgetType' dropdown
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
-	When User selects 'Donut' in the 'Widget Type' Widget dropdown
+	When User selects 'Donut' in the 'WidgetType' dropdown
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
-	When User selects 'Half donut' in the 'Widget Type' Widget dropdown
+	When User selects 'Half donut' in the 'WidgetType' dropdown
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
 	When User adds new Widget
@@ -129,7 +129,7 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatWhenEditingPieWidgetAggre
 	Then 'Widget_DAS15500' Widget is displayed to the user
 	When User clicks Ellipsis menu for 'Widget_DAS15500' Widget on Dashboards page
 	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
-	And User selects '<WidgetType>' in the 'Widget Type' Widget dropdown
+	When User selects '<WidgetType>' in the 'WidgetType' dropdown
 	Then Aggregate Function dropdown is placed above the Aggregate By dropdown
 
 Examples: 
@@ -155,11 +155,11 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountAsAggregateFunction
 	And Dashboard with 'All Data Types for DAS15508' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
-	And User selects 'Pie' in the 'Widget Type' Widget dropdown
+	When User selects 'Pie' in the 'WidgetType' dropdown
 	And User enters 'Widget Name' as Widget Title
 	And User selects 'ListWithAllDatatypes' as Widget List
-	When User selects 'Operating System' in the 'Split By' Widget dropdown
-	When User selects 'Count' in the 'Aggregate Function' Widget dropdown
+	When User selects 'Operating System' in the 'SplitBy' dropdown
+	When User selects 'Count' in the 'AggregateFunction' dropdown
 	Then Aggregate By dropdown is disabled
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15509 @Cleanup
@@ -177,11 +177,11 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountDistinctAsAggregate
 	And Dashboard with 'All Data Types for DAS15509' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
-	And User selects 'Pie' in the 'Widget Type' Widget dropdown
+	When User selects 'Pie' in the 'WidgetType' dropdown
 	And User enters 'Widget Name' as Widget Title
 	And User selects 'ListWithAllDatatypes' as Widget List
-	When User selects 'Operating System' in the 'Split By' Widget dropdown
-	When User selects 'Count distinct' in the 'Aggregate Function' Widget dropdown
+	When User selects 'Operating System' in the 'SplitBy' dropdown
+	When User selects 'Count distinct' in the 'AggregateFunction' dropdown
 	Then User sees following options for Aggregate By selector on Create Widget page:
 	| items                                |
 	| Device Key                           |
@@ -211,11 +211,11 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatSelectingAggregateFunctio
 	And Dashboard with 'All Data Types for DAS15510' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
-	And User selects 'Pie' in the 'Widget Type' Widget dropdown
+	When User selects 'Pie' in the 'WidgetType' dropdown
 	And User enters 'Widget Name' as Widget Title
 	And User selects 'ListWithAllDatatypes' as Widget List
-	When User selects 'Operating System' in the 'Split By' Widget dropdown
-	When User selects '<AggFunc>' in the 'Aggregate Function' Widget dropdown
+	When User selects 'Operating System' in the 'SplitBy' dropdown
+	When User selects '<AggFunc>' in the 'AggregateFunction' dropdown
 	Then User sees following options for Aggregate By selector on Create Widget page:
 	| items               |
 	| HDD Total Size (GB) |
@@ -242,11 +242,11 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountAsAggregateFunction
 	And Dashboard with 'All Data Types for DAS15524' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
-	And User selects 'Pie' in the 'Widget Type' Widget dropdown
+	When User selects 'Pie' in the 'WidgetType' dropdown
 	And User enters 'Widget Name' as Widget Title
 	And User selects 'ListWithAllDatatypes' as Widget List
-	When User selects 'Operating System' in the 'Split By' Widget dropdown
-	When User selects 'Count' in the 'Aggregate Function' Widget dropdown
+	When User selects 'Operating System' in the 'SplitBy' dropdown
+	When User selects 'Count' in the 'AggregateFunction' dropdown
 	Then Aggregate By dropdown is disabled
 	And User sees following options for Order By selector on Create Widget page:
 	| items                 |
@@ -260,11 +260,11 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenCountAgg
 	When Dashboard with 'TestDashboardForDAS15362' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
-	And User selects 'Pie' in the 'Widget Type' Widget dropdown
+	When User selects 'Pie' in the 'WidgetType' dropdown
 	And User enters 'Widget Name' as Widget Title
 	And User selects 'All Devices' as Widget List
-	When User selects 'Operating System' in the 'Split By' Widget dropdown
-	When User selects 'Count' in the 'Aggregate Function' Widget dropdown
+	When User selects 'Operating System' in the 'SplitBy' dropdown
+	When User selects 'Count' in the 'AggregateFunction' dropdown
 	Then User sees following options for Order By selector on Create Widget page:
 	| items                 |
 	| Operating System ASC  |
@@ -277,12 +277,12 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenCountDis
 	When Dashboard with 'TestDashboardForDAS15362' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
-	And User selects 'Pie' in the 'Widget Type' Widget dropdown
+	When User selects 'Pie' in the 'WidgetType' dropdown
 	And User enters 'Widget Name' as Widget Title
 	And User selects 'All Devices' as Widget List
-	When User selects 'Operating System' in the 'Split By' Widget dropdown
-	When User selects 'Count distinct' in the 'Aggregate Function' Widget dropdown
-	When User selects 'Hostname' in the 'Aggregate By' Widget dropdown
+	When User selects 'Operating System' in the 'SplitBy' dropdown
+	When User selects 'Count distinct' in the 'AggregateFunction' dropdown
+	When User selects 'Hostname' in the 'AggregateBy' dropdown
 	Then User sees following options for Order By selector on Create Widget page:
 	| items                        |
 	| Operating System ASC         |
@@ -300,12 +300,12 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenSumAggre
 	And Dashboard with 'TestDashboardForDAS15362' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
-	And User selects 'Pie' in the 'Widget Type' Widget dropdown
+	When User selects 'Pie' in the 'WidgetType' dropdown
 	And User enters 'Widget Name' as Widget Title
 	And User selects 'HddList' as Widget List
-	And User selects 'Operating System' in the 'Split By' Widget dropdown
-	When User selects 'Sum' in the 'Aggregate Function' Widget dropdown
-	When User selects 'HDD Total Size (GB)' in the 'Aggregate By' Widget dropdown
+	When User selects 'Operating System' in the 'SplitBy' dropdown
+	When User selects 'Sum' in the 'AggregateFunction' dropdown
+	When User selects 'HDD Total Size (GB)' in the 'AggregateBy' dropdown
 	Then User sees following options for Order By selector on Create Widget page:
 	| items                        |
 	| Operating System ASC         |
@@ -323,12 +323,12 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenMinAggre
 	And Dashboard with 'TestDashboardForDAS15362' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
-	And User selects 'Pie' in the 'Widget Type' Widget dropdown
+	When User selects 'Pie' in the 'WidgetType' dropdown
 	And User enters 'Widget Name' as Widget Title
 	And User selects 'HddList' as Widget List
-	And User selects 'Operating System' in the 'Split By' Widget dropdown
-	When User selects 'Minimum' in the 'Aggregate Function' Widget dropdown
-	When User selects 'HDD Total Size (GB)' in the 'Aggregate By' Widget dropdown
+	When User selects 'Operating System' in the 'SplitBy' dropdown
+	When User selects 'Minimum' in the 'AggregateFunction' dropdown
+	When User selects 'HDD Total Size (GB)' in the 'AggregateBy' dropdown
 	Then User sees following options for Order By selector on Create Widget page:
 	| items                            |
 	| Operating System ASC             |
@@ -346,12 +346,12 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenMaxAggre
 	And Dashboard with 'TestDashboardForDAS15362' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
-	And User selects 'Pie' in the 'Widget Type' Widget dropdown
+	When User selects 'Pie' in the 'WidgetType' dropdown
 	And User enters 'Widget Name' as Widget Title
 	And User selects 'HddList' as Widget List
-	And User selects 'Operating System' in the 'Split By' Widget dropdown
-	When User selects 'Maximum' in the 'Aggregate Function' Widget dropdown
-	When User selects 'HDD Total Size (GB)' in the 'Aggregate By' Widget dropdown
+	When User selects 'Operating System' in the 'SplitBy' dropdown
+	When User selects 'Maximum' in the 'AggregateFunction' dropdown
+	When User selects 'HDD Total Size (GB)' in the 'AggregateBy' dropdown
 	Then User sees following options for Order By selector on Create Widget page:
 	| items                            |
 	| Operating System ASC             |
@@ -369,12 +369,12 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenAvgAggre
 	And Dashboard with 'TestDashboardForDAS15362' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
-	And User selects 'Pie' in the 'Widget Type' Widget dropdown
+	When User selects 'Pie' in the 'WidgetType' dropdown
 	And User enters 'Widget Name' as Widget Title
 	And User selects 'HddList' as Widget List
-	And User selects 'Operating System' in the 'Split By' Widget dropdown
-	When User selects 'Average' in the 'Aggregate Function' Widget dropdown
-	When User selects 'HDD Total Size (GB)' in the 'Aggregate By' Widget dropdown
+	When User selects 'Operating System' in the 'SplitBy' dropdown
+	When User selects 'Average' in the 'AggregateFunction' dropdown
+	When User selects 'HDD Total Size (GB)' in the 'AggregateBy' dropdown
 	Then User sees following options for Order By selector on Create Widget page:
 	| items                            |
 	| Operating System ASC             |
@@ -409,7 +409,9 @@ Scenario: EvergreenJnr_DashboardsPage_CheckNameAndLabelAndColorSchemeForEmptyOwn
 	And Color Scheme dropdown is disabled
 	When User clicks 'CREATE' button 
 	Then 'WidgetForDAS17467' Widget is displayed to the user
-	And Label 'Empty' displayed for 'WidgetForDAS17467' widget
+	Then Data Legends values are displayed in 'WidgetForDAS17467' widget on the Dashboard page
+	| LegendsValue |
+	|   Empty      |
 	And Label icon displayed gray for 'WidgetForDAS17467' widget
 	And There are no errors in the browser console
 	
@@ -469,7 +471,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCorrectColorSchemeisUsedWhenWidge
 	Then There are no errors in the browser console
 	When User clicks Ellipsis menu for 'WidgetForDAS17515' Widget on Dashboards page
 	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
-	When User selects 'Application Compliance' in the 'Split By' Widget dropdown
+	When User selects 'Application Compliance' in the 'SplitBy' dropdown
 	Then User sees 'Application Compliance ASC' option for Order By selector on Create Widget page
 	And Color Scheme dropdown displayed with 'Compliance Colour Scheme' placeholder 
 	And Color Scheme dropdown is disabled
@@ -487,9 +489,9 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFilterChangedInUiPartAfter
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
 	And 'Device Type DESC' option displayed for Widget OrderBy
-	When User selects 'Hostname' in the 'Split By' Widget dropdown
+	When User selects 'Hostname' in the 'SplitBy' dropdown
 	Then '' option displayed for Widget OrderBy
 	And Widget Preview is not displayed to the user
-	When User selects 'Hostname ASC' in the 'Order By' Widget dropdown
+	When User selects 'Hostname ASC' in the 'Order By' dropdown
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console

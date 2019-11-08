@@ -41,7 +41,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckStatusDisplayOrderForColumnWidget
 	| Offboarded    |
 	When User clicks Ellipsis menu for 'DAS16278_Widget' Widget on Dashboards page
 	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
-	When User selects 'Windows7Mi: Status DESC' in the 'Order By' Widget dropdown
+	When User selects 'Windows7Mi: Status DESC' in the 'OrderBy' dropdown
 	When User clicks 'UPDATE' button 
 	Then Card 'DAS16278_Widget' Widget is displayed to the user
 	Then Line X labels of 'DAS16278_Widget' column widget is displayed in following order:
@@ -90,13 +90,13 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatColumnWidgetCanBeAdded
 	When Dashboard with 'Dashboard12983' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And  User clicks 'ADD WIDGET' button 
-	And User selects 'Column' in the 'Widget Type' Widget dropdown
+	When User selects 'Column' in the 'WidgetType' dropdown
 	And User enters 'ColumnWidget' as Widget Title
 	And User selects 'All Devices' as Widget List
-	And User selects 'Operating System' in the 'Split By' Widget dropdown
-	When User selects 'Count distinct' in the 'Aggregate Function' Widget dropdown
-	When User selects 'Hostname' in the 'Aggregate By' Widget dropdown
-	When User selects 'Operating System ASC' in the 'Order By' Widget dropdown
+	When User selects 'Operating System' in the 'SplitBy' dropdown
+	When User selects 'Count distinct' in the 'AggregateFunction' dropdown
+	When User selects 'Hostname' in the 'AggregateBy' dropdown
+	When User selects 'Operating System AS' in the 'OrderBy' dropdown
 	And User enters '2' as Widget Max Values
 	And User selects the Colour Scheme by index '2'
 	Then Widget Preview is displayed to the user
@@ -112,13 +112,13 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatColumnWidgetCanBeEdited
 	When Dashboard with 'Dashboard12983' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And  User clicks 'ADD WIDGET' button 
-	And User selects 'Column' in the 'Widget Type' Widget dropdown
+	When User selects 'Column' in the 'WidgetType' dropdown
 	And User enters 'ColumnWidget#1' as Widget Title
 	And User selects 'All Devices' as Widget List
-	When User selects 'Operating System' in the 'Split By' Widget dropdown
-	When User selects 'Count distinct' in the 'Aggregate Function' Widget dropdown
-	When User selects 'Hostname' in the 'Aggregate By' Widget dropdown
-	When User selects 'Operating System ASC' in the 'Order By' Widget dropdown
+	When User selects 'Operating System' in the 'SplitBy' dropdown
+	When User selects 'Count distinct' in the 'AggregateFunction' dropdown
+	When User selects 'Hostname' in the 'AggregateBy' dropdown
+	When User selects 'Operating System AS' in the 'OrderBy' dropdown
 	And User enters '2' as Widget Max Values
 	And User selects the Colour Scheme by index '2'
 	Then Widget Preview is displayed to the user
@@ -126,13 +126,13 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatColumnWidgetCanBeEdited
 	Then Card 'ColumnWidget#1' Widget is displayed to the user
 	When User clicks Ellipsis menu for 'ColumnWidget#1' Widget on Dashboards page
 	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
-	And User selects 'Pie' in the 'Widget Type' Widget dropdown
+	When User selects 'Pie' in the 'WidgetType' dropdown
 	And User enters 'ColumnWidget#2' as Widget Title
 	And User selects 'All Devices' as Widget List
-	When User selects 'Operating System' in the 'Split By' Widget dropdown
-	When User selects 'Count distinct' in the 'Aggregate Function' Widget dropdown
-	When User selects 'Hostname' in the 'Aggregate By' Widget dropdown
-	When User selects 'Operating System ASC' in the 'Order By' Widget dropdown
+	When User selects 'Operating System' in the 'SplitBy' dropdown
+	When User selects 'Count distinct' in the 'AggregateFunction' dropdown
+	When User selects 'Hostname' in the 'AggregateBy' dropdown
+	When User selects 'Operating System AS' in the 'OrderBy' dropdown
 	And User enters '3' as Widget Max Values
 	And User selects the Colour Scheme by index '3'
 	Then Widget Preview is displayed to the user

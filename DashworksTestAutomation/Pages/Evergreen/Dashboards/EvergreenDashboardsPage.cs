@@ -5,12 +5,13 @@ using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Pages.Evergreen.Base;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 
 namespace DashworksTestAutomation.Pages
 {
-    internal class EvergreenDashboardsPage : SeleniumBasePage
+    internal class EvergreenDashboardsPage : BaseWidgetPage
     {
         #region Header
 
@@ -95,27 +96,6 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//div[@class='widgets']//h5")]
         public IList<IWebElement> AllWidgetsTitles { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//*[@class='highcharts-legend']")]
-        public IList<IWebElement> NumberOfWidgetLegends { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//*[contains(@class,'highcharts-tooltip')][@visibility]")]
-        public IWebElement PieTooltip { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//table//td[contains(@class, 'splitValue')]//span")]
-        public IList<IWebElement> TableWidgetContent { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'only-icon')]")]
-        public IWebElement IconOnlyCardWidget { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'icon-and-text')]")]
-        public IWebElement IconAndTextCardWidget { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'only-text')]")]
-        public IWebElement TextOnlyCardWidget { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[@class='chartContainer ng-star-inserted']//*[@style='font-weight:bold']")]
-        public IWebElement DataLabels { get; set; }
-
         #endregion
 
         #region Dashboard Details
@@ -158,7 +138,6 @@ namespace DashworksTestAutomation.Pages
 
         #endregion
 
-
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -167,7 +146,6 @@ namespace DashworksTestAutomation.Pages
                 SelectorFor(this, p => p.CreateDashboardBtn)
             };
         }
-
 
         public string GetEditModeSlideBarColor()
         {
@@ -251,7 +229,7 @@ namespace DashworksTestAutomation.Pages
             return Driver.FindElements(By.XPath(
                 $".//span[contains(text(),'{widgetName}')]/ancestor::div[contains(@class,'section')]//i[contains(@class,'arrow')]"));
         }
-        
+
         public void SetPermissionSharingFieldTo(string newValue)
         {
             var shareType = By.XPath(".//div[@class='permissions-container']//*[@aria-labelledby='sharing-label']");
@@ -283,15 +261,6 @@ namespace DashworksTestAutomation.Pages
             return Driver.FindElement(By.XPath($".//div[@class='permissions-container']//ul[@class='menu-settings']/li[contains(text(),'{option}')]"));
         }
 
-        public IWebElement GetWidgetByName(string widgetName)
-        {
-            var dashboardWidget =
-                By.XPath($".//div[@class='widget']//span[text()='{widgetName}']//ancestor::div/div[@class='widget']");
-
-            Driver.WaitForElementToBeDisplayed(dashboardWidget);
-            return Driver.FindElement(dashboardWidget);
-        }
-
         public IWebElement GetDisabledEllipsisItemByName(string itemName)
         {
             var ellipsisItem = By.XPath($".//button[@aria-disabled='true'][text()='{itemName}']");
@@ -317,23 +286,14 @@ namespace DashworksTestAutomation.Pages
             Driver.WaitForDataLoading();
             return Driver.FindElement(page);
         }
-        
-        public IList<IWebElement> GetWidgetLabels(string widgetName)
-        {
-            var legend =
-                By.XPath($".//span[text()='{widgetName}']/ancestor ::div[@class='widget-whole']//*[contains(@class, 'highcharts-legend-item')]");
-
-            Driver.WaitForDataLoading();
-            return Driver.FindElements(legend);
-        }
 
         public List<string> GetLegendColor(string widgetName)
         {
             var colors =
-                By.XPath($".//span[text()='{widgetName}']/ancestor ::div[@class='widget-whole']//*[contains(@class, 'highcharts-legend-item')]//*[contains(@class, 'highcharts-point')]");
+                By.XPath($".//ancestor ::div[@class='widget-whole']//*[contains(@class, 'highcharts-legend-item')]//*[contains(@class, 'highcharts-point')]");
 
             Driver.WaitForDataLoading();
-            return Driver.FindElements(colors).Select(x => x.GetAttribute("fill")).ToList();
+            return GetWidget(widgetName).FindElements(colors).Select(x => x.GetAttribute("fill")).ToList();
         }
 
         public string GetFocusedPointHover(string widgetName)
@@ -438,7 +398,7 @@ namespace DashworksTestAutomation.Pages
         }
 
         #endregion
-        
+
         #region Table
         public IWebElement GetTableWidgetContentWithoutLink(string content)
         {
@@ -602,24 +562,16 @@ namespace DashworksTestAutomation.Pages
             return PieTooltip.FindElements(By.XPath(".//*[string-length(text())>0]")).Select(x => x.Text).ToList();
         }
 
-        public IWebElement WidgetElement(string widgetName)
-        {
-            var selector = By.XPath($".//h5//span[text()='{widgetName}']/ancestor::div[@class='widget-whole']");
-            if (!Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Long))
-                throw new Exception($"Widget with '{widgetName}' is not displayed");
-            return Driver.FindElement(selector);
-        }
-
         public IWebElement GetWidgetChartItem(string widgetName, string chartCategory)
         {
             var chartSection = ".//*[contains(@class,'highcharts-series-group')]//*";
 
-            var legendColor = WidgetElement(widgetName)
+            var legendColor = GetWidget(widgetName)
                 .FindElement(By.XPath($".//*[text()='{chartCategory}']/../following-sibling::*"))
                 .GetCssValue("fill");
 
             //Count of pieces with the same color
-            var allElementsWithColor = WidgetElement(widgetName)
+            var allElementsWithColor = GetWidget(widgetName)
                 .FindElements(By.XPath(chartSection))
                 .Count(x => x.GetCssValue("fill").Equals(legendColor));
 
@@ -631,7 +583,7 @@ namespace DashworksTestAutomation.Pages
                 return chart;
             }
 
-            foreach (IWebElement webElement in WidgetElement(widgetName)
+            foreach (IWebElement webElement in GetWidget(widgetName)
                 .FindElements(By.XPath(chartSection))
                 .Where(x => x.GetCssValue("fill").Equals(legendColor)))
             {
@@ -649,9 +601,9 @@ namespace DashworksTestAutomation.Pages
             throw new Exception($"Chart category '{chartCategory}' wasn't found");
         }
 
-        public IWebElement GetListIconFromListSectionOfDetailsPanel(string listname)
+        public IWebElement GetListIconFromListSectionOfDetailsPanel(string listName)
         {
-            var by = By.XPath($".//td[text()='{listname}']/following-sibling :: td/i");
+            var by = By.XPath($".//td[text()='{listName}']/following-sibling::td/i");
             return Driver.FindElement(by);
         }
     }

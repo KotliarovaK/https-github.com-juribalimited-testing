@@ -31,6 +31,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [Then(@"Filters panel is displayed to the user")]
+        [Then(@"Associations panel is displayed to the user")]
         public void ThenFiltersPanelIsDisplayedToTheUser()
         {
             var filterElement = _driver.NowAt<FiltersElement>();
@@ -275,7 +276,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectsCurrentDateCheckboxFromFilterPanel()
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            filterElement.GetFilterCheckboxByName(DateTime.Now.ToString("dd/MM/yyyy")).Click();
+            filterElement.GetFilterCheckboxByName(DateTime.Now.ToString("dd MMM yyyy")).Click();
         }
 
         [When(@"User select ""(.*)"" Association for Application filter with Lookup value")]

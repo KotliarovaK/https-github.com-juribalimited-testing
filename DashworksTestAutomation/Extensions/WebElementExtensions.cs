@@ -245,5 +245,12 @@ namespace DashworksTestAutomation.Extensions
         }
 
         #endregion
+
+        public static string GetText(this IWebElement element)
+        {
+            var elementText = string.IsNullOrEmpty(element.Text) ? element.GetAttribute("value") : element.Text;
+
+            return elementText;
+        }
     }
 }

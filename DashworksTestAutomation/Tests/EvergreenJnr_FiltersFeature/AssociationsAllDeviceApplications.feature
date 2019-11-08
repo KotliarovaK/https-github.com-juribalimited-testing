@@ -10,6 +10,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorAppearsAfterOpenningItemFr
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
 	When User navigates to the "All Device Applications" list
+	Then Associations panel is displayed to the user
 	Then Export button is displayed disabled
 	When User clicks Add New button on the Filter panel
 	When User selects 'Used on device' option in expanded associations list
@@ -32,7 +33,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFirstAssociationsCantBeRemovedI
 	Then Remove icon displayed in 'true' state for 'Not installed on device' association
 	Then Remove icon displayed in 'true' state for 'Entitled to device' association
 
-@Evergreen @AllDeviceApplications @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18456 @DAS18530 @18562 @Cleanup
+@Evergreen @AllDeviceApplications @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18456 @DAS18530 @18562 @18127 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatGridIsNotDisappearedAfterSelectingFilterOnAllDeviceApplicationsPage
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
@@ -49,7 +50,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatGridIsNotDisappearedAfterSelect
 	When user select "App Vendor" filter
 	When User select "Does not equal" Operator value
 	When User enters "s" text in Search field at selected Filter
-	Then User save change in current filter
+	When User clicks Save filter button
 	When User clicks 'RUN LIST' button
 	When User move 'Hostname' column to 'App Vendor' column
 	Then table content is present
@@ -61,6 +62,12 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatGridIsNotDisappearedAfterSelect
 	When User creates new custom list with "AssociationList18530_1" name
 	Then "AssociationList18530_1" list is displayed to user
 	Then table content is present
+	#==>18127
+	When User clicks the List Details button
+	Then List details panel is displayed to the user
+	Then 'List Type: Dynamic' label is displayed in List Details
+	Then 'Data: Device Applications' label is displayed in List Details
+	#==<
 	When User navigates to the "All Device Applications" list
 	Then There are no errors in the browser console
 	When User navigates to the "AssociationList18530_1" list
@@ -77,6 +84,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatPivotCantBeRunIfAssociationWasR
 	When User selects 'Used on device' option in expanded associations list
 	When User clicks 'RUN LIST' button
 	When User selects 'Pivot' in the 'Create' dropdown
+	Then No pivot generated message is displayed
 	When User clicks the Pivot button
 	When User selects the following Row Groups on Pivot:
 	| RowGroups  |
@@ -186,3 +194,19 @@ Examples:
 	| Used on device     | Entitled to device     | Installed on device     |
 	| Used on device     | Not entitled to device | Not installed on device |
 	| Entitled to device | Not used on device     | Installed on device     |
+
+@Evergreen @AllDeviceApplications @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18379 @Cleanup
+Scenario: EvergreenJnr_ApplicationsList_CheckThatAllDevicesApplicationsListCanBeDownloaded
+	When User clicks 'Applications' on the left-hand menu
+	When User navigates to the "All Device Applications" list
+	When User clicks Add New button on the Filter panel
+	When User selects 'Entitled to device' option in expanded associations list
+	When User clicks Add And button on the Filter panel
+	When User selects 'Used on device' option in expanded associations list
+	When User clicks 'RUN LIST' button
+	When User clicks Save button on the list panel
+	When User selects Save as new list option
+	When User creates new custom list with "AssociationList18379" name
+	Then "AssociationList18379" list is displayed to user
+	When User clicks Export button on the Admin page
+	Then User checks that file "Dashworks-Device-Applications-TestAllDeviceApplications" was downloaded

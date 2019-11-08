@@ -56,7 +56,7 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatAggregateFunctionSelectio
 	When Dashboard with 'Dashboard for DAS15437' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
-	And User selects '<WidgetType>' in the 'Widget Type' Widget dropdown
+	When User selects '<WidgetType>' in the 'WidgetType' dropdown
 	Then Aggregate Function dropdown is placed above the Aggregate By dropdown
 
 Examples: 
@@ -75,7 +75,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatAggregateFunctionOrAggregateByDro
 	When Dashboard with 'Dashboard for DAS15437' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
-	And User selects 'List' in the 'Widget Type' Widget dropdown
+	When User selects 'List' in the 'WidgetType' dropdown
 	Then 'Aggregate Function' dropdown is missing
 	And 'Aggregate By' dropdown is missing
 	Then List dropdown has next item categories:
@@ -188,8 +188,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTheAggregateFunctionAndAggregateB
 	Then 'WidgetForDAS16853' Widget is displayed to the user
 	When  User clicks Ellipsis menu for 'WidgetForDAS16853' Widget on Dashboards page
 	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
-	When User selects 'Count distinct' in the 'Aggregate Function' Widget dropdown
-	When User selects 'Hostname' in the 'Aggregate By' Widget dropdown
+	When User selects 'Count distinct' in the 'AggregateFunction' dropdown
+	When User selects 'Hostname' in the 'AggregateBy' dropdown
 	Then Widget Preview is displayed to the user
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18163 @Cleanup
@@ -253,7 +253,46 @@ Scenario: EvergreenJnr_DashboardsPage_CheckImageAndTooltipDisplayingForListDropd
 	Then User sees list icon displayed for 'WidgetForDAS16842' widget in List section of Dashboards Details
 	Then User sees list icon displayed with tooltip for 'WidgetForDAS16842' widget in List section of Dashboards Details
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18741 @Cleanup
+	@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18168 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatAllValuesInTheLegendAndInTheLabelAreDisplayed
+    When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User adds columns to the list
+    | ColumnName |
+    | CPU Count  |
+	When User clicks Save button on the list panel
+	When User selects Save as new list option
+	When User creates new custom list with "DAS18168_List" name
+	When Dashboard with 'DAS18168_Dashboard' name created via API and opened
+	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'ADD WIDGET' button
+	When User adds new Widget
+    | WidgetType | Title             | List          | SplitBy   | AggregateBy | AggregateFunction | OrderBy       | MaxValues | ShowLegend | ShowDataLabels |
+    | Pie        | WidgetForDAS18168 | DAS18168_List | CPU Count | Hostname    | Count distinct    | CPU Count ASC | 5         | true       | true           |
+	Then Widget Preview is displayed to the user
+	Then There are no errors in the browser console
+	Then Data Labels are displayed on the Preview page
+	Then Data Legends values are displayed on the Add Widget page
+	| LegendsValue |
+	| 0            |
+	| 1            |
+	| 2            |
+	| 4            |
+	| 6            |
+	When User clicks 'CREATE' button
+	Then There are no errors in the browser console
+	Then Data Labels are displayed on the Dashboards page
+	Then Data Legends values are displayed in 'WidgetForDAS18168' widget on the Dashboard page
+	| LegendsValue |
+	| 0            |
+	| 1            |
+	| 2            |
+	| 4            |
+	| 6            |
+
+	@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18741 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatRelevantListIsShownAfterTypingAnyCharacters
 	When Dashboard with 'DAS18741_Dashboard' name created via API and opened
 	When User clicks Edit mode trigger on Dashboards page

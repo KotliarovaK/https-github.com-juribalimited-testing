@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-#this functionality is ready only on 'radiant'
+#upd Ann.I. 11/07/19: waiting for gold data
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17808 @DAS18408 @Not_Ready
 Scenario: EvergreenJnr_UsersList_CheckThatProjectOwnedSubtabIsDisplayedCorrectly
 	When User navigates to the 'User' details page for 'ZZP911429' item
@@ -39,3 +39,25 @@ Scenario: EvergreenJnr_UsersList_CheckThatProjectOwnedSubtabIsDisplayedCorrectly
 	| App Readiness           |
 	| Application Information |
 	| Communication           |
+
+#Ann.I. 11/07/19: waiting for gold data
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18700 @Not_Ready
+Scenario: EvergreenJnr_UsersList_CheckThatRationalisationColumnIsDisplayedCorrectlyOnProjectOwnedTab 
+	When User navigates to the 'User' details page for 'FWU5490440' item
+	Then Details page for "FWU5490440" item is displayed to the user
+	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
+	When User navigates to the 'Applications' left menu item
+	When User navigates to the 'Project Owned' left submenu item
+	Then "Rationalisation" column is displayed to the user
+	When User clicks String Filter button for "Rationalisation" column
+	Then following Boolean Values are displayed in the filter on the Details Page
+	| Values        |
+	| FORWARD PATH  |
+	| KEEP          |
+	| UNCATEGORISED |
+	When User closes Checkbox filter
+	Then 'Rationalisation' column contains following content
+	| Content       |
+	| KEEP          |
+	| UNCATEGORISED |
+	| FORWARD PATH  |

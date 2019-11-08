@@ -94,7 +94,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorDisplayedWhenSlecti
 	When Dashboard with 'TestDashboardForDAS18634' name created via API and opened
 	When User clicks Edit mode trigger on Dashboards page
 	When User clicks 'ADD WIDGET' button 
-	When User selects 'Card' in the 'Widget Type' Widget dropdown
+	When User selects 'Card' in the 'WidgetType' dropdown
 	Then There are no errors in the browser console
-	When User selects 'List' in the 'Widget Type' Widget dropdown
+	When User selects 'List' in the 'WidgetType' dropdown
 	Then There are no errors in the browser console

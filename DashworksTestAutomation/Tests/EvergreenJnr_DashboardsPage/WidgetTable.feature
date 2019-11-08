@@ -115,7 +115,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckCapacitySlotsDisplayOrderInDashboards
 	| Empty                         |
 	When User clicks Ellipsis menu for 'DAS16275_Widget' Widget on Dashboards page
 	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
-	And User selects 'Count DESC' in the 'Order By' Widget dropdown
+	When User selects 'Count DESC' in the 'Order By' dropdown
 	And User clicks 'UPDATE' button 
 	Then content in the Widget is displayed in following order:
 	| TableValue                    |
@@ -147,7 +147,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckRingsDisplayOrderInAWidgetOnDashboard
 	| Evergreen Ring 3 |
 	When User clicks Ellipsis menu for 'DAS15826_Widget' Widget on Dashboards page
 	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
-	And User selects 'UserEvergr: Ring (All Users) DESC' in the 'Order By' Widget dropdown
+	When User selects 'UserEvergr: Ring (All Users) DESC' in the 'OrderBy' dropdown
 	And User clicks 'UPDATE' button 
 	Then Card 'DAS15826_Widget' Widget is displayed to the user
 	And content in the Widget is displayed in following order:
@@ -163,12 +163,12 @@ Scenario: EvergreenJnr_DashboardsPage_CheckRingsDisplayOrderInAWidgetOnDashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingAggregateFunctionWhereThereAreNoColumnsAvailableShowsWarning
 	When Dashboard with 'Dashboard for DAS15582' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
-	When User clicks 'ADD WIDGET' button 
-	And User selects 'Table' in the 'Widget Type' Widget dropdown
+	When User clicks 'ADD WIDGET' button
+	When User selects 'Table' in the 'WidgetType' dropdown
 	And User enters 'Widget Name' as Widget Title
 	And User selects 'All Devices' as Widget List
-	When User selects 'Operating System' in the 'Split By' Widget dropdown
-	When User selects 'Sum' in the 'Aggregate Function' Widget dropdown
+	When User selects 'Operating System' in the 'SplitBy' dropdown
+	When User selects 'Sum' in the 'AggregateFunction' dropdown
 	Then User sees 'There are no fields available for this aggregate function' warning text below Lists field
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Cleanup
@@ -181,12 +181,12 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenFirstAgg
 	And Dashboard with 'TestDashboardForDAS15362' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
-	And User selects 'Table' in the 'Widget Type' Widget dropdown
+	When User selects 'Table' in the 'WidgetType' dropdown
 	And User enters 'Widget Name' as Widget Title
 	And User selects 'LastLogout' as Widget List
-	And User selects 'Domain' in the 'Split By' Widget dropdown
-	When User selects 'First' in the 'Aggregate Function' Widget dropdown
-	When User selects 'Last Logon Date' in the 'Aggregate By' Widget dropdown
+	When User selects 'Domain' in the 'SplitBy' dropdown
+	When User selects 'First' in the 'AggregateFunction' dropdown
+	When User selects 'Last Logon Date' in the 'AggregateBy' dropdown
 	Then User sees following options for Order By selector on Create Widget page:
 	| items                      |
 	| Domain ASC                 |
@@ -204,12 +204,12 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenLastAggr
 	And Dashboard with 'TestDashboardForDAS15362' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
-	And User selects 'Table' in the 'Widget Type' Widget dropdown
+	When User selects 'Table' in the 'WidgetType' dropdown
 	And User enters 'Widget Name' as Widget Title
 	And User selects 'LastLogout' as Widget List
-	And User selects 'Domain' in the 'Split By' Widget dropdown
-	When User selects 'Last' in the 'Aggregate Function' Widget dropdown
-	When User selects 'Last Logon Date' in the 'Aggregate By' Widget dropdown
+	When User selects 'Domain' in the 'SplitBy' dropdown
+	When User selects 'Last' in the 'AggregateFunction' dropdown
+	When User selects 'Last Logon Date' in the 'AggregateBy' dropdown
 	Then User sees following options for Order By selector on Create Widget page:
 	| items                     |
 	| Domain ASC                |
@@ -294,7 +294,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNewSeverityOptionDisplayedForWidg
 	| 1803: Pre-Migration \ Ready to Migrate DESC         |
 	| 1803: Pre-Migration \ Ready to Migrate Severity ASC |
 	| 1803: Pre-Migration \ Ready to Migrate Severity DESC |
-	When User selects '1803: Pre-Migration \ Ready to Migrate Severity ASC' in the 'Order By' Widget dropdown
+	When User selects '1803: Pre-Migration \ Ready to Migrate Severity ASC' in the 'OrderBy' dropdown
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
 	Then Table columns of 'DAS-15852' widget placed in the next order:
@@ -307,7 +307,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNewSeverityOptionDisplayedForWidg
 
 	When User clicks Ellipsis menu for 'DAS-15852' Widget on Dashboards page
 	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
-	When User selects '1803: Pre-Migration \ Ready to Migrate ASC' in the 'Order By' Widget dropdown
+	When User selects '1803: Pre-Migration \ Ready to Migrate ASC' in the 'OrderBy' dropdown
 	Then Widget Preview is displayed to the user
 	When User clicks 'UPDATE' button
 	Then Table columns of 'DAS-15852' widget placed in the next order:

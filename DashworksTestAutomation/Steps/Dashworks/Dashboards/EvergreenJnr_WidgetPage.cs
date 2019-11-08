@@ -15,7 +15,7 @@ using TechTalk.SpecFlow;
 namespace DashworksTestAutomation.Steps.Dashworks
 {
     [Binding]
-    internal class EvergreenJnr_WidgetPage : SpecFlowContext
+    internal class EvergreenJnr_WidgetPage : BaseWidgetPage
     {
         private readonly RemoteWebDriver _driver;
 
@@ -72,7 +72,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             if (row.ContainsKey("SplitBy") && !string.IsNullOrEmpty(row["SplitBy"]))
             {
-                createWidgetElement.SelectSplitByItem(row["SplitBy"]);
+                baseActionItem.SelectDropdown(row["SplitBy"], "SplitBy");
             }
 
             if (row.ContainsKey("AggregateFunction") && !string.IsNullOrEmpty(row["AggregateFunction"]))
@@ -97,15 +97,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             if (row.ContainsKey("DrillDown") && !string.IsNullOrEmpty(row["DrillDown"]))
             {
-                createWidgetElement.Drilldown.Click();
-                createWidgetElement.SelectObjectForWidgetCreation(row["DrillDown"]);
+                baseActionItem.SelectDropdown(row["DrillDown"], "DrillDown");
                 _driver.WaitForDataLoadingOnProjects();
             }
 
             if (row.ContainsKey("TableOrientation") && !string.IsNullOrEmpty(row["TableOrientation"]))
             {
-                createWidgetElement.TableOrientation.Click();
-                createWidgetElement.SelectObjectForWidgetCreation(row["TableOrientation"]);
+                baseActionItem.SelectDropdown(row["TableOrientation"], "TableOrientation");
                 _driver.WaitForDataLoadingOnProjects();
             }
 
@@ -115,11 +113,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 createWidgetElement.ShowLegend.Click();
             }
 
+            if (row.ContainsKey("ShowDataLabels") && !string.IsNullOrEmpty(row["ShowDataLabels"])
+                                              && row["ShowDataLabels"].Equals("true"))
+            {
+                createWidgetElement.ShowDataLabel.Click();
+            }
+
             if (row.ContainsKey("Layout") && !string.IsNullOrEmpty(row["Layout"]))
             {
-                _driver.WaitForElementToBeDisplayed(createWidgetElement.Layout);
-                _driver.ClickByJavascript(createWidgetElement.GetDropdownForWidgetByName("Layout"));
-                createWidgetElement.SelectObjectForWidgetCreation(row["Layout"]);
+                baseActionItem.SelectDropdown(row["Layout"], "Layout");
             }
         }
 
@@ -135,23 +137,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         #endregion
-
-        [When(@"User selects '(.*)' in the '(.*)' Widget dropdown")]
-        public void WhenUserSelectsInTheWidgetDropdown(string option, string dropdown)
-        {
-            var createWidgetElement = _driver.NowAt<AddWidgetPage>();
-            _driver.WaitForDataLoading();
-
-            if (dropdown.Equals("Split By"))
-            {
-                createWidgetElement.SelectSplitByItem(option);
-            }
-            else
-            {
-                _driver.ClickByJavascript(createWidgetElement.GetDropdownForWidgetByName(dropdown));
-                createWidgetElement.SelectObjectForWidgetCreation(option);
-            }
-        }
 
         [When(@"User enters '(.*)' as Widget Title")]
         public void WhenUserSetsWidgetTitle(string widgetTitle)
@@ -508,9 +493,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"Data Labels are displayed on the Preview page")]
         public void ThenDataLabelsAreDisplayedOnThePreviewPage()
         {
-            var page = _driver.NowAt<AddWidgetPage>();
+            var page = _driver.NowAt<BaseWidgetPage>();
             _driver.WaitForDataLoading();
             Verify.IsTrue(page.DataLabels.Displayed(), "Data Labels are not displayed");
+        }
+
+        [Then(@"Data Legends values are displayed on the Add Widget page")]
+        public void ThenDataLegendsValuesAreDisplayedOnTheAddWidgetPage(Table table)
+        {
+            var page = _driver.NowAt<BaseWidgetPage>();
+            _driver.WaitForDataLoading();
+            var expectedLabels = table.Rows.Select(x => x.Values).Select(x => x.FirstOrDefault());
+            var actualLables = page.GetWidgetLabels(string.Empty).Select(x => x.Text).ToList();
+
+            Verify.AreEqual(expectedLabels, actualLables, $"The label(s) was not found'");
         }
 
         [Then(@"'(.*)' data label is displayed on the Preview page")]
