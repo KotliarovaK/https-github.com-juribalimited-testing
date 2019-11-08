@@ -460,7 +460,7 @@ this.FeatureBackground();
 #line 58
  testRunner.And("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 59
- testRunner.And(string.Format("User selects \'{0}\' in the \'WidgetType\' Widget dropdown", widgetType), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When(string.Format("User selects \'{0}\' in the \'WidgetType\' dropdown", widgetType), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 60
  testRunner.Then("Aggregate Function dropdown is placed above the Aggregate By dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

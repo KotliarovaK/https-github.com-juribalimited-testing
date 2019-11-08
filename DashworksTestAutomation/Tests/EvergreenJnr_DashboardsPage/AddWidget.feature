@@ -56,7 +56,7 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatAggregateFunctionSelectio
 	When Dashboard with 'Dashboard for DAS15437' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
-	And User selects '<WidgetType>' in the 'WidgetType' Widget dropdown
+	When User selects '<WidgetType>' in the 'WidgetType' dropdown
 	Then Aggregate Function dropdown is placed above the Aggregate By dropdown
 
 Examples: 
