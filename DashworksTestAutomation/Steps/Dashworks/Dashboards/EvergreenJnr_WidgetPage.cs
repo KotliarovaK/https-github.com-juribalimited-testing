@@ -138,25 +138,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         #endregion
 
-        [When(@"User selects '(.*)' in the '(.*)' Widget dropdown")]
-        public void WhenUserSelectsInTheWidgetDropdown(string option, string dropdown)
-        {
-            var basePage = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitForDataLoading();
-
-            if (dropdown.Equals("Split By"))
-            {
-                basePage.SelectDropdown(option, "SplitBy");
-            }
-            else
-            {
-                basePage.SelectDropdown(option, dropdown);
-                //var createWidgetElement = _driver.NowAt<AddWidgetPage>();
-                //_driver.ClickByJavascript(createWidgetElement.GetDropdownForWidgetByName(dropdown));
-                //createWidgetElement.SelectObjectForWidgetCreation(option);
-            }
-        }
-
         [When(@"User enters '(.*)' as Widget Title")]
         public void WhenUserSetsWidgetTitle(string widgetTitle)
         {

@@ -56,7 +56,7 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatAggregateFunctionSelectio
 	When Dashboard with 'Dashboard for DAS15437' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
-	And User selects '<WidgetType>' in the 'Widget Type' Widget dropdown
+	And User selects '<WidgetType>' in the 'WidgetType' Widget dropdown
 	Then Aggregate Function dropdown is placed above the Aggregate By dropdown
 
 Examples: 
@@ -75,7 +75,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatAggregateFunctionOrAggregateByDro
 	When Dashboard with 'Dashboard for DAS15437' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
-	And User selects 'List' in the 'Widget Type' Widget dropdown
+	When User selects 'List' in the 'WidgetType' dropdown
 	Then 'Aggregate Function' dropdown is missing
 	And 'Aggregate By' dropdown is missing
 	Then List dropdown has next item categories:
@@ -188,8 +188,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTheAggregateFunctionAndAggregateB
 	Then 'WidgetForDAS16853' Widget is displayed to the user
 	When  User clicks Ellipsis menu for 'WidgetForDAS16853' Widget on Dashboards page
 	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
-	When User selects 'Count distinct' in the 'Aggregate Function' Widget dropdown
-	When User selects 'Hostname' in the 'Aggregate By' Widget dropdown
+	When User selects 'Count distinct' in the 'AggregateFunction' dropdown
+	When User selects 'Hostname' in the 'AggregateBy' dropdown
 	Then Widget Preview is displayed to the user
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18163 @Cleanup
