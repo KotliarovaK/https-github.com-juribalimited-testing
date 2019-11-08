@@ -165,20 +165,20 @@ namespace DashworksTestAutomation.Base
 
             try
             {
-                var requestUri = "http://autorelease.corp.juriba.com:81/admin/projects/1/projectDetailsSummary";
+                var requestUri = "http://autorelease.corp.juriba.com/PMManageProject.aspx?ProjectId=1&v=Details";
                 var request = requestUri.GenerateRequest();
 
                 var resp = _client.Value.Get(request);
 
-                if (resp.StatusCode != HttpStatusCode.OK)
+                if (resp.Content.Contains("Page Error"))
                 {
-                    Logger.Write("============> !!! PROJECT WAS DELETE !!! <============");
+                    Logger.Write("============> !!! PROJECT WAS BROKEN !!! <============");
                 }
             }
             catch (Exception e)
             {
                 Logger.Write(e);
-                Logger.Write("============> !!! PROJECT WAS DELETE !!! <============");
+                Logger.Write("============> !!! PROJECT WAS BROKEN !!! <============");
             }
         }
 
