@@ -174,7 +174,7 @@ Examples:
 	| User        | ACG370114      | User         | RED     |
 	| Application | 7zip           | Application  | UNKNOWN |
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16857 @DAS16928
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16857 @DAS16928 @DAS18405
 Scenario Outline: EvergreenJnr_AllLists_CheckThatComplianceInKeyValueTableMatchesTheOverallComplianceFromTopBarInProjectMode
 	When User navigates to the '<PageName>' details page for '<ItemName>' item
 	Then Details page for "<ItemName>" item is displayed to the user
@@ -189,11 +189,11 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatComplianceInKeyValueTableMatche
 	| Overall Readiness | <Value>   |
 
 Examples:
-	| PageName    | ItemName                         | Title     | Value | ProjectName                        |
-	| Device      | 001BAQXT6JWFPI                   | Readiness | GREY  | Devices Evergreen Capacity Project |
-	| User        | ACG370114                        | Readiness | GREY  | User Evergreen Capacity Project    |
-	| Application | 7zip                             | Readiness | GREY  | Devices Evergreen Capacity Project |
-	| Mailbox     | 000F977AC8824FE39B8@bclabs.local | Readiness | NONE  | Mailbox Evergreen Capacity Project |
+	| PageName    | ItemName                         | Title     | Value  | ProjectName                        |
+	| Device      | 001BAQXT6JWFPI                   | Readiness | GREY   | Devices Evergreen Capacity Project |
+	| User        | ACG370114                        | Readiness | GREY   | User Evergreen Capacity Project    |
+	| Application | 7zip                             | Readiness | GREY   | Devices Evergreen Capacity Project |
+	| Mailbox     | 000F977AC8824FE39B8@bclabs.local | Readiness | IGNORE | Mailbox Evergreen Capacity Project |
 
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17002
 Scenario: EvergreenJnr_ApplicationsList_CheckThatReadinessValuesIsDisplayedAccordingToHavocBigDataProject

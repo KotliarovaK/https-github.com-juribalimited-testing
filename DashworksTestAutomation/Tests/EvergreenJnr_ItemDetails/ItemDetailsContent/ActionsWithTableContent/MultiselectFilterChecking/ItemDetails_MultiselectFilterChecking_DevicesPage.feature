@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761 @DAS18405
 Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForUsersTabOnDevicesPage
 	When User navigates to the 'Device' details page for '00RUUMAH9OZN9A' item
 	Then Details page for "00RUUMAH9OZN9A" item is displayed to the user
@@ -13,7 +13,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	And User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
 	Then 'OUT OF SCOPE' content is displayed in the 'Stage for User Tasks' column
 	And 'TRUE' content is displayed in the 'Owner' column
-	And 'NONE' content is displayed in the 'Application Readiness' column
+	And 'IGNORE' content is displayed in the 'Application Readiness' column
 	And 'GREY' content is displayed in the 'Pre-Migration' column
 	And 'GREY' content is displayed in the 'Migration' column
 	#Column should not be displayed if no content to display
@@ -32,7 +32,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	And User clicks String Filter button for "Application Readiness" column
 	Then following String Values are displayed in the filter on the Details Page
 	| Values |
-	| NONE   |
+	| IGNORE |
 	When User closes Checkbox filter
 	And User clicks String Filter button for "Pre-Migration" column
 	Then following String Values are displayed in the filter on the Details Page

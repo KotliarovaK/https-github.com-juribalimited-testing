@@ -454,6 +454,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             page.GetCheckboxByName(checkboxName);
         }
+
         //TODO change check logic for checkboxes
         [Then(@"Checkboxes are checked on the Column Settings panel for ""(.*)"" Column Settings panel:")]
         public void ThenCheckboxesAreCheckedOnTheColumnSettingsPanelForColumnSettingsPanel(string columnName,

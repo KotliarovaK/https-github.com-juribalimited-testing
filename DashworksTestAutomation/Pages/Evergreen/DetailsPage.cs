@@ -101,7 +101,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IWebElement GetCellByTextFromKeyValueGrid(string text)
         {
-            return Driver.FindElement(By.XPath($".//tbody/*/td/*/span[text()='{text}']"));
+            return Driver.FindElement(By.XPath($".//tbody/*/td//span[text()='{text}']"));
         }
 
         public string GetSelectedText()

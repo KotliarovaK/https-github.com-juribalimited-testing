@@ -17,7 +17,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckRenamedColumnAndStringFilterForSoft
 	| AMBER        |
 	| GREEN        |
 	| UNKNOWN      |
-	| NONE         |
+	| IGNORE       |
 	When User navigates to the 'Application Issues' left submenu item
 	Then "<CountRows>" rows found label displays on Details Page
 	And "Manufacturer" column is not displayed to the user
