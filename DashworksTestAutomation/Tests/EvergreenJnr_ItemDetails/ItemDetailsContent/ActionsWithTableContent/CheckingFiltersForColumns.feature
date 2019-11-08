@@ -12,12 +12,11 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOneUnknownFilterValueIsShownInGroupD
 	When User type "Denied RODC Password Replication Group" in Global Search Field
 	Then User clicks on "Denied RODC Password Replication Group" search result
 	When User navigates to the 'Members' left menu item
-	And User clicks String Filter button for "Enabled" column
-	Then following Boolean Values are displayed in the filter on the Details Page
+	Then following Boolean Values are displayed in the filter dropdown for the 'Enabled' column
 	| Values  |
 	| True    |
 	| False   |
-	When User clicks "True" checkbox from String Filter on the Details Page
+	When User clicks 'True' checkbox from String Filter in the filter dropdown for the 'Enabled' column
 	Then Content is present in the table on the Details Page
 	When User clicks Reset Filters button on the Item Details page
 	And User enters "wheelern" text in the Search field for "Username" column
@@ -26,8 +25,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOneUnknownFilterValueIsShownInGroupD
 	And User enters "Administrator" text in the Search field for "Display Name" column
 	Then Rows counter shows "1" of "7" rows
 	When User clicks Reset Filters button on the Item Details page
-	And User clicks String Filter button for "Domain" column
-	When User selects "DWLABS" checkbox from String Filter on the Details Page
+	When User clicks 'DWLABS' checkbox from String Filter in the filter dropdown for the 'Domain' column
 	Then Rows counter shows "0" of "7" rows
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12239
@@ -36,8 +34,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAllTextIsDisplayedAfterClearingFilte
 	Then Details page for "001PSUMZYOW581" item is displayed to the user
 	When User navigates to the 'Applications' left menu item
 	Then All text is displayed for "Compliance" column in the String Filter
-	When User clicks String Filter button for "Compliance" column
-	And User clicks "Red" checkbox from String Filter on the Details Page
+	When User clicks 'Red' checkbox from String Filter in the filter dropdown for the 'Compliance' column
 	Then All text is not displayed for "Compliance" column in the String Filter
 	When User clicks Reset Filters button on the Item Details page
 	Then All text is displayed for "Compliance" column in the String Filter
@@ -47,12 +44,10 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAllTextIsDisplayedAfterClearingFilte
 	And User enters "3.0.0" text in the Search field for "Version" column
 	Then Rows counter contains "1" found row of all rows
 	When User clicks Reset Filters button on the Item Details page
-	And User clicks String Filter button for "Used" column
-	And User clicks "Unknown" checkbox from String Filter on the Details Page
+	When User clicks 'Unknown' checkbox from String Filter in the filter dropdown for the 'Used' column
 	Then Rows counter contains "0" found row of all rows
 	When User clicks Reset Filters button on the Item Details page
-	And User clicks String Filter button for "Entitled" column
-	When User clicks "True" checkbox from String Filter on the Details Page
+	When User clicks 'True' checkbox from String Filter in the filter dropdown for the 'Entitled' column
 	Then Rows counter contains "0" found row of all rows
 	When User clicks Reset Filters button on the Item Details page
 
@@ -138,14 +133,11 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatMultiselectFilterIsAppliedForDoma
 	When User navigates to the 'Mailbox' details page for '000F977AC8824FE39B8@bclabs.local' item
 	Then Details page for "000F977AC8824FE39B8@bclabs.local" item is displayed to the user
 	When User navigates to the 'Users' left menu item
-	When User clicks String Filter button for "Domain" column
-	And User closes Checkbox filter
+	Then string filter is displayed for 'Domain' column
 	When User navigates to the 'Groups' left submenu item
-	When User clicks String Filter button for "Domain" column
-	And User closes Checkbox filter
+	Then string filter is displayed for 'Domain' column
 	When User navigates to the 'Mailbox Permissions' left submenu item
-	When User clicks String Filter button for "Domain" column
-	And User closes Checkbox filter
+	Then string filter is displayed for 'Domain' column
 
 	#Ann.Ilchenko 8/10/19: Waiting for attribute updates for automation (from Andrey).
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12292 @Not_Run
@@ -181,14 +173,10 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatDevicesUsersUsedQuantityMatchE
 	When User click content from "Application" column
 	When User navigates to the 'Distribution' left menu item
 	When User navigates to the 'Users' left submenu item
-	And User clicks String Filter button for "Used" column
-	And User clicks "False" checkbox from String Filter on the Details Page
-	And User closes Checkbox filter
+	When User clicks 'False' checkbox from String Filter in the filter dropdown for the 'Used' column
 	Then Rows counter shows "98" of "194" rows
 	When User navigates to the 'Devices' left submenu item
-	And User clicks String Filter button for "Used" column
-	And User clicks "False" checkbox from String Filter on the Details Page
-	And User closes Checkbox filter
+	When User clicks 'False' checkbox from String Filter in the filter dropdown for the 'Used' column
 	Then Rows counter shows "94" of "168" rows
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS14431
@@ -212,33 +200,26 @@ Scenario: EvergreenJnr_DevicesList_CheckThatBlanksValueChangedToEmptyValueOnDevi
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Projects Summary' left submenu item
-	And User clicks String Filter button for "Workflow" column
-	Then following String Values are contained in the filter on the Details Page
+	Then following String Values are contained in the filter dropdown for the 'Workflow' column
 	| Values         |
 	| Empty          |
-	When User clicks String Filter button for "Category" column
-	Then following String Values are contained in the filter on the Details Page
+	Then following String Values are contained in the filter dropdown for the 'Category' column
 	| Values            |
 	| Empty             |
-	When User clicks String Filter button for "Status" column
-	Then following String Values are contained in the filter on the Details Page
+	Then following String Values are contained in the filter dropdown for the 'Status' column
 	| Values |
 	| None   |
 	When User closes Checkbox filter
 	When User navigates to the 'Owner Projects Summary' left submenu item
-	When User clicks String Filter button for "Workflow" column
-	Then following String Values are contained in the filter on the Details Page
+	Then following String Values are contained in the filter dropdown for the 'Workflow' column
 	| Values         |
 	| Empty          |
-	When User clicks String Filter button for "Category" column
-	Then following String Values are contained in the filter on the Details Page
+	Then following String Values are contained in the filter dropdown for the 'Category' column
 	| Values            |
 	| Empty             |
-	When User clicks String Filter button for "Status" column
-	Then following String Values are contained in the filter on the Details Page
+	Then following String Values are contained in the filter dropdown for the 'Status' column
 	| Values |
 	| None   |
-	When User closes Checkbox filter
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16817 @DAS17726
 Scenario: EvergreenJnr_UsersList_CheckThatBlanksValueChangedToEmptyValueOnUsersPage
@@ -246,46 +227,35 @@ Scenario: EvergreenJnr_UsersList_CheckThatBlanksValueChangedToEmptyValueOnUsersP
 	Then Details page for "ZXJ550185" item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'User Projects' left submenu item
-	And User clicks String Filter button for "Workflow" column
-	Then following String Values are contained in the filter on the Details Page
+	Then following String Values are contained in the filter dropdown for the 'Workflow' column
 	| Values         |
 	| Empty          |
-	When User clicks String Filter button for "Category" column
-	Then following String Values are contained in the filter on the Details Page
+	Then following String Values are contained in the filter dropdown for the 'Category' column
 	| Values            |
 	| Empty             |
-	When User clicks String Filter button for "Status" column
-	Then following String Values are contained in the filter on the Details Page
+	Then following String Values are contained in the filter dropdown for the 'Status' column
 	| Values |
 	| None   |
-	When User closes Checkbox filter
 	When User navigates to the 'Device Project Summary' left submenu item
-	And User clicks String Filter button for "Workflow" column
-	Then following String Values are contained in the filter on the Details Page
+	Then following String Values are contained in the filter dropdown for the 'Workflow' column
 	| Values         |
 	| Empty          |
-	When User clicks String Filter button for "Category" column
-	Then following String Values are contained in the filter on the Details Page
+	Then following String Values are contained in the filter dropdown for the 'Category' column
 	| Values            |
 	| Empty             |
-	When User clicks String Filter button for "Status" column
-	Then following String Values are contained in the filter on the Details Page
+	Then following String Values are contained in the filter dropdown for the 'Status' column
 	| Values |
 	| None   |
-	When User closes Checkbox filter
 	When User navigates to the 'User' details page for '0137C8E69921432992B' item
 	Then Details page for "0137C8E69921432992B" item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	When User navigates to the 'Mailbox Project Summary' left submenu item
-	And User clicks String Filter button for "Workflow" column
-	Then following String Values are contained in the filter on the Details Page
+	Then following String Values are contained in the filter dropdown for the 'Workflow' column
 	| Values         |
 	| Empty          |
-	When User clicks String Filter button for "Category" column
-	Then following String Values are contained in the filter on the Details Page
+	Then following String Values are contained in the filter dropdown for the 'Category' column
 	| Values            |
 	| Empty             |
-	When User closes Checkbox filter
 
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16817
 Scenario: EvergreenJnr_ApplicationsList_CheckThatBlanksValueChangedToEmptyValueOnApplicationsPage
@@ -293,15 +263,12 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatBlanksValueChangedToEmptyValueO
 	Then Details page for "ACDSee 5.0.1 PowerPack" item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Projects' left submenu item
-	And User clicks String Filter button for "Workflow" column
-	Then following String Values are contained in the filter on the Details Page
+	Then following String Values are contained in the filter dropdown for the 'Workflow' column
 	| Values         |
 	| Empty          |
-	When User clicks String Filter button for "Category" column
-	Then following String Values are contained in the filter on the Details Page
+	Then following String Values are contained in the filter dropdown for the 'Category' column
 	| Values            |
 	| Empty             |
-	When User closes Checkbox filter
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16817 @DAS17726
 Scenario: EvergreenJnr_MailboxesList_CheckThatBlanksValueChangedToEmptyValueOnMailboxesPage
@@ -309,26 +276,19 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatBlanksValueChangedToEmptyValueOnMa
 	Then Details page for "06C02CDC00044A7DB59@bclabs.local" item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Mailbox Projects' left submenu item
-	And User clicks String Filter button for "Workflow" column
-	Then following String Values are contained in the filter on the Details Page
+	Then following String Values are contained in the filter dropdown for the 'Workflow' column
 	| Values         |
 	| Empty          |
-	When User clicks String Filter button for "Category" column
-	Then following String Values are contained in the filter on the Details Page
+	Then following String Values are contained in the filter dropdown for the 'Category' column
 	| Values            |
 	| Empty             |
-	When User closes Checkbox filter
-	And User navigates to the 'Mailbox User Projects' left submenu item
-	And User clicks String Filter button for "Workflow" column
-	Then following String Values are contained in the filter on the Details Page
+	When User navigates to the 'Mailbox User Projects' left submenu item
+	Then following String Values are contained in the filter dropdown for the 'Workflow' column
 	| Values         |
 	| Empty          |
-	When User clicks String Filter button for "Category" column
-	Then following String Values are contained in the filter on the Details Page
+	Then following String Values are contained in the filter dropdown for the 'Category' column
 	| Values            |
 	| Empty             |
-	When User clicks String Filter button for "Status" column
-	Then following String Values are contained in the filter on the Details Page
+	Then following String Values are contained in the filter dropdown for the 'Status' column
 	| Values |
 	| None   |
-	When User closes Checkbox filter

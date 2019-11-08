@@ -150,70 +150,54 @@ this.FeatureBackground();
  testRunner.And("\"Email Controls\" column is not displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 21
  testRunner.And("\'GREY\' content is displayed in the \'Communication\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 22
- testRunner.When("User clicks String Filter button for \"Stage for User Tasks\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table1.AddRow(new string[] {
                         "OUT OF SCOPE"});
-#line 23
- testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table1, "Then ");
-#line 26
- testRunner.When("User closes Checkbox filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 27
- testRunner.And("User clicks String Filter button for \"Owner\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 22
+ testRunner.Then("following String Values are displayed in the filter dropdown for the \'Stage for U" +
+                    "ser Tasks\' column", ((string)(null)), table1, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table2.AddRow(new string[] {
                         "True"});
-#line 28
- testRunner.Then("following Boolean Values are displayed in the filter on the Details Page", ((string)(null)), table2, "Then ");
-#line 31
- testRunner.When("User closes Checkbox filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 32
- testRunner.And("User clicks String Filter button for \"Application Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 25
+ testRunner.Then("following Boolean Values are displayed in the filter dropdown for the \'Owner\' col" +
+                    "umn", ((string)(null)), table2, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table3.AddRow(new string[] {
                         "NONE"});
-#line 33
- testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table3, "Then ");
-#line 36
- testRunner.When("User closes Checkbox filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 37
- testRunner.And("User clicks String Filter button for \"Pre-Migration\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 28
+ testRunner.Then("following String Values are displayed in the filter dropdown for the \'Application" +
+                    " Readiness\' column", ((string)(null)), table3, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table4.AddRow(new string[] {
                         "GREY"});
-#line 38
- testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table4, "Then ");
-#line 41
- testRunner.When("User closes Checkbox filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 42
- testRunner.And("User clicks String Filter button for \"Migration\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 31
+ testRunner.Then("following String Values are displayed in the filter dropdown for the \'Pre-Migrati" +
+                    "on\' column", ((string)(null)), table4, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table5.AddRow(new string[] {
                         "GREY"});
-#line 43
- testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table5, "Then ");
-#line 46
- testRunner.When("User closes Checkbox filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 47
- testRunner.And("User clicks String Filter button for \"Communication\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 34
+ testRunner.Then("following String Values are displayed in the filter dropdown for the \'Migration\' " +
+                    "column", ((string)(null)), table5, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table6.AddRow(new string[] {
                         "GREY"});
-#line 48
- testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table6, "Then ");
+#line 37
+ testRunner.Then("following String Values are displayed in the filter dropdown for the \'Communicati" +
+                    "on\' column", ((string)(null)), table6, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -262,77 +246,65 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS17761"});
-#line 53
+#line 42
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 54
+#line 43
  testRunner.When("User navigates to the \'Device\' details page for \'00RUUMAH9OZN9A\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 55
+#line 44
  testRunner.Then("Details page for \"00RUUMAH9OZN9A\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 56
+#line 45
  testRunner.When("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 57
+#line 46
  testRunner.And("User navigates to the \'Evergreen Summary\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 58
+#line 47
  testRunner.When("User switches to the \"Windows 7 Migration (Computer Scheduled Project)\" project i" +
                     "n the Top bar on Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 59
+#line 48
  testRunner.And("User enters \"Microsoft Office PowerPoint 2002 (XP)\" text in the Search field for " +
                     "\"Application\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 60
+#line 49
  testRunner.Then("\'GREEN\' content is displayed in the \'Compliance\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 61
+#line 50
  testRunner.Then("\'TRUE\' content is displayed in the \'Installed\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 62
+#line 51
  testRunner.Then("\'UNKNOWN\' content is displayed in the \'Used\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 63
+#line 52
  testRunner.Then("\'TRUE\' content is displayed in the \'Entitled\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 64
- testRunner.When("User clicks String Filter button for \"Compliance\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table7.AddRow(new string[] {
                         "GREEN"});
-#line 65
- testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table7, "Then ");
-#line 68
- testRunner.When("User closes Checkbox filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 69
- testRunner.When("User clicks String Filter button for \"Installed\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 53
+ testRunner.Then("following String Values are displayed in the filter dropdown for the \'Compliance\'" +
+                    " column", ((string)(null)), table7, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table8.AddRow(new string[] {
                         "True"});
-#line 70
- testRunner.Then("following Boolean Values are displayed in the filter on the Details Page", ((string)(null)), table8, "Then ");
-#line 73
- testRunner.When("User closes Checkbox filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 74
- testRunner.When("User clicks String Filter button for \"Used\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 56
+ testRunner.Then("following Boolean Values are displayed in the filter dropdown for the \'Installed\'" +
+                    " column", ((string)(null)), table8, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table9.AddRow(new string[] {
                         "Unknown"});
-#line 75
- testRunner.Then("following Boolean Values are displayed in the filter on the Details Page", ((string)(null)), table9, "Then ");
-#line 78
- testRunner.When("User closes Checkbox filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 79
- testRunner.When("User clicks String Filter button for \"Entitled\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 59
+ testRunner.Then("following Boolean Values are displayed in the filter dropdown for the \'Used\' colu" +
+                    "mn", ((string)(null)), table9, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table10.AddRow(new string[] {
                         "True"});
-#line 80
- testRunner.Then("following Boolean Values are displayed in the filter on the Details Page", ((string)(null)), table10, "Then ");
-#line 83
- testRunner.When("User closes Checkbox filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 62
+ testRunner.Then("following Boolean Values are displayed in the filter dropdown for the \'Entitled\' " +
+                    "column", ((string)(null)), table10, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -381,26 +353,26 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS17761"});
-#line 86
+#line 67
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 87
+#line 68
  testRunner.When("User navigates to the \'Device\' details page for \'00RUUMAH9OZN9A\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 88
+#line 69
  testRunner.Then("Details page for \"00RUUMAH9OZN9A\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 89
+#line 70
  testRunner.When("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 90
+#line 71
  testRunner.And("User navigates to the \'Evergreen Detail\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 91
+#line 72
  testRunner.When("User switches to the \"Windows 7 Migration (Computer Scheduled Project)\" project i" +
                     "n the Top bar on Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 92
+#line 73
  testRunner.And("User enters \"Microsoft Office PowerPoint 2002 (XP)\" text in the Search field for " +
                     "\"Application\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 93
+#line 74
  testRunner.Then("\'GREEN\' content is displayed in the \'Compliance\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
@@ -409,7 +381,7 @@ this.FeatureBackground();
                         "Advert - A0123BFF"});
             table11.AddRow(new string[] {
                         "Advert - A0123BFF"});
-#line 94
+#line 75
  testRunner.And("Content in the \'Advertisement\' column is equal to", ((string)(null)), table11, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
@@ -418,7 +390,7 @@ this.FeatureBackground();
                         "Collection A011618A"});
             table12.AddRow(new string[] {
                         "Collection A011618A"});
-#line 98
+#line 79
  testRunner.And("Content in the \'Collection\' column is equal to", ((string)(null)), table12, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
@@ -427,21 +399,16 @@ this.FeatureBackground();
                         "Install"});
             table13.AddRow(new string[] {
                         "Install"});
-#line 102
+#line 83
  testRunner.And("Content in the \'Program\' column is equal to", ((string)(null)), table13, "And ");
-#line 106
- testRunner.When("User clicks String Filter button for \"Compliance\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table14.AddRow(new string[] {
                         "GREEN"});
-#line 107
- testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table14, "Then ");
-#line 110
- testRunner.When("User closes Checkbox filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 111
- testRunner.When("User clicks String Filter button for \"Association\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 87
+ testRunner.Then("following String Values are displayed in the filter dropdown for the \'Compliance\'" +
+                    " column", ((string)(null)), table14, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
@@ -449,12 +416,9 @@ this.FeatureBackground();
                         "Installed"});
             table15.AddRow(new string[] {
                         "Entitled"});
-#line 112
- testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table15, "Then ");
-#line 116
- testRunner.When("User closes Checkbox filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 117
- testRunner.When("User clicks String Filter button for \"Advertisement\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 90
+ testRunner.Then("following String Values are displayed in the filter dropdown for the \'Association" +
+                    "\' column", ((string)(null)), table15, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
@@ -468,12 +432,9 @@ this.FeatureBackground();
                         "Advert - A0126E99"});
             table16.AddRow(new string[] {
                         "Advert - A012A5EB"});
-#line 118
- testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table16, "Then ");
-#line 125
- testRunner.When("User closes Checkbox filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 126
- testRunner.When("User clicks String Filter button for \"Collection\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 94
+ testRunner.Then("following String Values are displayed in the filter dropdown for the \'Advertiseme" +
+                    "nt\' column", ((string)(null)), table16, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
@@ -487,21 +448,17 @@ this.FeatureBackground();
                         "Collection A011A360"});
             table17.AddRow(new string[] {
                         "Collection A011EB46"});
-#line 127
- testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table17, "Then ");
-#line 134
- testRunner.When("User closes Checkbox filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 135
- testRunner.When("User clicks String Filter button for \"Program\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 101
+ testRunner.Then("following String Values are displayed in the filter dropdown for the \'Collection\'" +
+                    " column", ((string)(null)), table17, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table18.AddRow(new string[] {
                         "Install"});
-#line 136
- testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table18, "Then ");
-#line 139
- testRunner.When("User closes Checkbox filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 108
+ testRunner.Then("following String Values are displayed in the filter dropdown for the \'Program\' co" +
+                    "lumn", ((string)(null)), table18, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -550,38 +507,35 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS17761"});
-#line 142
+#line 113
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 143
+#line 114
  testRunner.When("User navigates to the \'Device\' details page for \'00RUUMAH9OZN9A\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 144
+#line 115
  testRunner.Then("Details page for \"00RUUMAH9OZN9A\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 145
+#line 116
  testRunner.When("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 146
+#line 117
  testRunner.And("User navigates to the \'Advertisements\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 147
+#line 118
  testRunner.When("User switches to the \"Windows 7 Migration (Computer Scheduled Project)\" project i" +
                     "n the Top bar on Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 148
+#line 119
  testRunner.And("User enters \"Microsoft Office PowerPoint 2002 (XP)\" text in the Search field for " +
                     "\"Application\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 149
+#line 120
  testRunner.Then("\'TierA Site01\' content is displayed in the \'Site\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 150
- testRunner.When("User clicks String Filter button for \"Site\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table19.AddRow(new string[] {
                         "TierA Site01"});
-#line 151
- testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table19, "Then ");
-#line 154
- testRunner.When("User closes Checkbox filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 121
+ testRunner.Then("following String Values are displayed in the filter dropdown for the \'Site\' colum" +
+                    "n", ((string)(null)), table19, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -630,64 +584,55 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS17761"});
-#line 157
+#line 126
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 158
+#line 127
  testRunner.When("User navigates to the \'Device\' details page for \'00RUUMAH9OZN9A\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 159
+#line 128
  testRunner.Then("Details page for \"00RUUMAH9OZN9A\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 160
+#line 129
  testRunner.When("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 161
+#line 130
  testRunner.And("User navigates to the \'Collections\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 162
+#line 131
  testRunner.When("User switches to the \"Windows 7 Migration (Computer Scheduled Project)\" project i" +
                     "n the Top bar on Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 163
+#line 132
  testRunner.And("User enters \"Collection A011166A\" text in the Search field for \"Collection\" colum" +
                     "n", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 164
+#line 133
  testRunner.Then("\'SMS/SCCM 2007\' content is displayed in the \'Source Type\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 165
+#line 134
  testRunner.Then("\'A01 SMS (Spoof)\' content is displayed in the \'Source\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 166
+#line 135
  testRunner.Then("\'TierA Site01\' content is displayed in the \'Site\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 167
- testRunner.When("User clicks String Filter button for \"Source Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table20.AddRow(new string[] {
                         "SMS/SCCM 2007"});
-#line 168
- testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table20, "Then ");
-#line 171
- testRunner.When("User closes Checkbox filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 172
- testRunner.When("User clicks String Filter button for \"Source\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 136
+ testRunner.Then("following String Values are displayed in the filter dropdown for the \'Source Type" +
+                    "\' column", ((string)(null)), table20, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table21.AddRow(new string[] {
                         "A01 SMS (Spoof)"});
-#line 173
- testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table21, "Then ");
-#line 176
- testRunner.When("User closes Checkbox filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 177
- testRunner.When("User clicks String Filter button for \"Site\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 139
+ testRunner.Then("following String Values are displayed in the filter dropdown for the \'Source\' col" +
+                    "umn", ((string)(null)), table21, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table22.AddRow(new string[] {
                         "TierA Site01"});
-#line 178
- testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table22, "Then ");
-#line 181
- testRunner.When("User closes Checkbox filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 142
+ testRunner.Then("following String Values are displayed in the filter dropdown for the \'Site\' colum" +
+                    "n", ((string)(null)), table22, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -736,35 +681,32 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS17761"});
-#line 184
+#line 147
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 185
+#line 148
  testRunner.When("User navigates to the \'Device\' details page for \'00RUUMAH9OZN9A\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 186
+#line 149
  testRunner.Then("Details page for \"00RUUMAH9OZN9A\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 187
+#line 150
  testRunner.When("User navigates to the \'Compliance\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 188
+#line 151
  testRunner.And("User navigates to the \'Hardware Rules\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 189
+#line 152
  testRunner.When("User switches to the \"Windows 7 Migration (Computer Scheduled Project)\" project i" +
                     "n the Top bar on Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 190
+#line 153
  testRunner.Then("\'AMBER\' content is displayed in the \'Compliance\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 191
- testRunner.When("User clicks String Filter button for \"Compliance\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table23.AddRow(new string[] {
                         "AMBER"});
-#line 192
- testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table23, "Then ");
-#line 195
- testRunner.When("User closes Checkbox filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 154
+ testRunner.Then("following String Values are displayed in the filter dropdown for the \'Compliance\'" +
+                    " column", ((string)(null)), table23, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -813,64 +755,55 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS17761"});
-#line 198
+#line 159
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 199
+#line 160
  testRunner.When("User navigates to the \'Device\' details page for \'001BAQXT6JWFPI\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 200
+#line 161
  testRunner.Then("Details page for \"001BAQXT6JWFPI\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 201
+#line 162
  testRunner.When("User navigates to the \'Compliance\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 202
+#line 163
  testRunner.And("User navigates to the \'Application Issues\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 203
+#line 164
  testRunner.When("User switches to the \"Windows 7 Migration (Computer Scheduled Project)\" project i" +
                     "n the Top bar on Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 204
+#line 165
  testRunner.And("User enters \"Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" +
                     "\" text in the Search field for \"Application\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 205
+#line 166
  testRunner.Then("\'TierA Site01\' content is displayed in the \'Site\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 206
+#line 167
  testRunner.Then("\'TRUE\' content is displayed in the \'Installed\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 207
+#line 168
  testRunner.Then("\'RED\' content is displayed in the \'Compliance\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 208
- testRunner.When("User clicks String Filter button for \"Site\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table24.AddRow(new string[] {
                         "TierA Site01"});
-#line 209
- testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table24, "Then ");
-#line 212
- testRunner.When("User closes Checkbox filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 213
- testRunner.When("User clicks String Filter button for \"Installed\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 169
+ testRunner.Then("following String Values are displayed in the filter dropdown for the \'Site\' colum" +
+                    "n", ((string)(null)), table24, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table25.AddRow(new string[] {
                         "True"});
-#line 214
- testRunner.Then("following Boolean Values are displayed in the filter on the Details Page", ((string)(null)), table25, "Then ");
-#line 217
- testRunner.When("User closes Checkbox filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 218
- testRunner.When("User clicks String Filter button for \"Compliance\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 172
+ testRunner.Then("following Boolean Values are displayed in the filter dropdown for the \'Installed\'" +
+                    " column", ((string)(null)), table25, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table26.AddRow(new string[] {
                         "RED"});
-#line 219
- testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table26, "Then ");
-#line 222
- testRunner.When("User closes Checkbox filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 175
+ testRunner.Then("following String Values are displayed in the filter dropdown for the \'Compliance\'" +
+                    " column", ((string)(null)), table26, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -919,31 +852,27 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS12253"});
-#line 225
+#line 180
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 226
+#line 181
  testRunner.When("User navigates to the \'Device\' details page for \'001BAQXT6JWFPI\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 227
+#line 182
  testRunner.Then("Details page for \"001BAQXT6JWFPI\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 228
+#line 183
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 229
+#line 184
  testRunner.When("User navigates to the \'Projects Summary\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 230
- testRunner.And("User clicks String Filter button for \"Workflow\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 231
- testRunner.When("User selects \"Empty\" checkbox from String Filter on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 232
- testRunner.And("User clicks String Filter button for \"Workflow\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 233
- testRunner.When("User selects \"Empty\" checkbox from String Filter on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 234
- testRunner.And("User clicks String Filter button for \"Workflow\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 235
- testRunner.Then("\"Empty\" checkbox is checked on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 185
+ testRunner.When("User clicks \'Empty\' checkbox from String Filter in the filter dropdown for the \'W" +
+                    "orkflow\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 186
+ testRunner.When("User clicks \'Empty\' checkbox from String Filter in the filter dropdown for the \'W" +
+                    "orkflow\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 187
+ testRunner.Then("\'Empty\' checkbox is checked in the filter dropdown for the \'Workflow\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

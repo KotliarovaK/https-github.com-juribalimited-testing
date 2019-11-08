@@ -19,33 +19,22 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	#Column should not be displayed if no content to display
 	And "Email Controls" column is not displayed to the user
 	And 'GREY' content is displayed in the 'Communication' column
-	When User clicks String Filter button for "Stage for User Tasks" column
-	Then following String Values are displayed in the filter on the Details Page
+	Then following String Values are displayed in the filter dropdown for the 'Stage for User Tasks' column
 	| Values       |
 	| OUT OF SCOPE |
-	When User closes Checkbox filter
-	And User clicks String Filter button for "Owner" column
-	Then following Boolean Values are displayed in the filter on the Details Page
+	Then following Boolean Values are displayed in the filter dropdown for the 'Owner' column
 	| Values |
 	| True   |
-	When User closes Checkbox filter
-	And User clicks String Filter button for "Application Readiness" column
-	Then following String Values are displayed in the filter on the Details Page
+	Then following String Values are displayed in the filter dropdown for the 'Application Readiness' column
 	| Values |
 	| NONE   |
-	When User closes Checkbox filter
-	And User clicks String Filter button for "Pre-Migration" column
-	Then following String Values are displayed in the filter on the Details Page
+	Then following String Values are displayed in the filter dropdown for the 'Pre-Migration' column
 	| Values |
 	| GREY   |
-	When User closes Checkbox filter
-	And User clicks String Filter button for "Migration" column
-	Then following String Values are displayed in the filter on the Details Page
+	Then following String Values are displayed in the filter dropdown for the 'Migration' column
 	| Values |
 	| GREY   |
-	When User closes Checkbox filter
-	And User clicks String Filter button for "Communication" column
-	Then following String Values are displayed in the filter on the Details Page
+	Then following String Values are displayed in the filter dropdown for the 'Communication' column
 	| Values |
 	| GREY   |
 
@@ -61,26 +50,18 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	Then 'TRUE' content is displayed in the 'Installed' column
 	Then 'UNKNOWN' content is displayed in the 'Used' column
 	Then 'TRUE' content is displayed in the 'Entitled' column
-	When User clicks String Filter button for "Compliance" column
-	Then following String Values are displayed in the filter on the Details Page
+	Then following String Values are displayed in the filter dropdown for the 'Compliance' column
 	| Values |
 	| GREEN  |
-	When User closes Checkbox filter
-	When User clicks String Filter button for "Installed" column
-	Then following Boolean Values are displayed in the filter on the Details Page
+	Then following Boolean Values are displayed in the filter dropdown for the 'Installed' column
 	| Values |
 	| True   |
-	When User closes Checkbox filter
-	When User clicks String Filter button for "Used" column
-	Then following Boolean Values are displayed in the filter on the Details Page
+	Then following Boolean Values are displayed in the filter dropdown for the 'Used' column
 	| Values  |
 	| Unknown |
-	When User closes Checkbox filter
-	When User clicks String Filter button for "Entitled" column
-	Then following Boolean Values are displayed in the filter on the Details Page
+	Then following Boolean Values are displayed in the filter dropdown for the 'Entitled' column
 	| Values |
 	| True   |
-	When User closes Checkbox filter
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
 Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForApplicationsTabEvergreenDetailOnDevicesPage
@@ -103,40 +84,30 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	| Content |
 	| Install |
 	| Install |
-	When User clicks String Filter button for "Compliance" column
-	Then following String Values are displayed in the filter on the Details Page
+	Then following String Values are displayed in the filter dropdown for the 'Compliance' column
 	| Values |
 	| GREEN  |
-	When User closes Checkbox filter
-	When User clicks String Filter button for "Association" column
-	Then following String Values are displayed in the filter on the Details Page
+	Then following String Values are displayed in the filter dropdown for the 'Association' column
 	| Values    |
 	| Installed |
 	| Entitled  |
-	When User closes Checkbox filter
-	When User clicks String Filter button for "Advertisement" column
-	Then following String Values are displayed in the filter on the Details Page
+	Then following String Values are displayed in the filter dropdown for the 'Advertisement' column
 	| Values            |
 	| Advert - A0123493 |
 	| Advert - A0123BFF |
 	| Advert - A01267E3 |
 	| Advert - A0126E99 |
 	| Advert - A012A5EB |
-	When User closes Checkbox filter
-	When User clicks String Filter button for "Collection" column
-	Then following String Values are displayed in the filter on the Details Page
+	Then following String Values are displayed in the filter dropdown for the 'Collection' column
 	| Values              |
 	| Collection A011166A |
 	| Collection A0114711 |
 	| Collection A011618A |
 	| Collection A011A360 |
 	| Collection A011EB46 |
-	When User closes Checkbox filter
-	When User clicks String Filter button for "Program" column
-	Then following String Values are displayed in the filter on the Details Page
+	Then following String Values are displayed in the filter dropdown for the 'Program' column
 	| Values  |
 	| Install |
-	When User closes Checkbox filter
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
 Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForApplicationsTabAdvertisementsOnDevicesPage
@@ -147,11 +118,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
 	And User enters "Microsoft Office PowerPoint 2002 (XP)" text in the Search field for "Application" column
 	Then 'TierA Site01' content is displayed in the 'Site' column
-	When User clicks String Filter button for "Site" column
-	Then following String Values are displayed in the filter on the Details Page
+	Then following String Values are displayed in the filter dropdown for the 'Site' column
 	| Values       |
 	| TierA Site01 |
-	When User closes Checkbox filter
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
 Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForApplicationsTabCollectionsOnDevicesPage
@@ -164,21 +133,15 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	Then 'SMS/SCCM 2007' content is displayed in the 'Source Type' column
 	Then 'A01 SMS (Spoof)' content is displayed in the 'Source' column
 	Then 'TierA Site01' content is displayed in the 'Site' column
-	When User clicks String Filter button for "Source Type" column
-	Then following String Values are displayed in the filter on the Details Page
+	Then following String Values are displayed in the filter dropdown for the 'Source Type' column
 	| Values        |
 	| SMS/SCCM 2007 |
-	When User closes Checkbox filter
-	When User clicks String Filter button for "Source" column
-	Then following String Values are displayed in the filter on the Details Page
+	Then following String Values are displayed in the filter dropdown for the 'Source' column
 	| Values          |
 	| A01 SMS (Spoof) |
-	When User closes Checkbox filter
-	When User clicks String Filter button for "Site" column
-	Then following String Values are displayed in the filter on the Details Page
+	Then following String Values are displayed in the filter dropdown for the 'Site' column
 	| Values       |
 	| TierA Site01 |
-	When User closes Checkbox filter
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
 Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForComplianceTabHardwareRulesOnDevicesPage
@@ -188,11 +151,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	And User navigates to the 'Hardware Rules' left submenu item
 	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
 	Then 'AMBER' content is displayed in the 'Compliance' column
-	When User clicks String Filter button for "Compliance" column
-	Then following String Values are displayed in the filter on the Details Page
+	Then following String Values are displayed in the filter dropdown for the 'Compliance' column
 	| Values |
 	| AMBER  |
-	When User closes Checkbox filter
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
 Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForComplianceTabApplicationIssuesOnDevicesPage
@@ -205,21 +166,15 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	Then 'TierA Site01' content is displayed in the 'Site' column
 	Then 'TRUE' content is displayed in the 'Installed' column
 	Then 'RED' content is displayed in the 'Compliance' column
-	When User clicks String Filter button for "Site" column
-	Then following String Values are displayed in the filter on the Details Page
+	Then following String Values are displayed in the filter dropdown for the 'Site' column
 	| Values       |
 	| TierA Site01 |
-	When User closes Checkbox filter
-	When User clicks String Filter button for "Installed" column
-	Then following Boolean Values are displayed in the filter on the Details Page
+	Then following Boolean Values are displayed in the filter dropdown for the 'Installed' column
 	| Values |
 	| True   |
-	When User closes Checkbox filter
-	When User clicks String Filter button for "Compliance" column
-	Then following String Values are displayed in the filter on the Details Page
+	Then following String Values are displayed in the filter dropdown for the 'Compliance' column
 	| Values |
 	| RED    |
-	When User closes Checkbox filter
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12253
 Scenario: EvergreenJnr_DevicesList_CheckThePossibilityToRecheckingTheWorkflowColumnBlanksFilterAfterUncheckingIt
@@ -227,9 +182,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThePossibilityToRecheckingTheWorkflowCol
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	When User navigates to the 'Projects Summary' left submenu item
-	And User clicks String Filter button for "Workflow" column
-	When User selects "Empty" checkbox from String Filter on the Details Page
-	And User clicks String Filter button for "Workflow" column
-	When User selects "Empty" checkbox from String Filter on the Details Page
-	And User clicks String Filter button for "Workflow" column
-	Then "Empty" checkbox is checked on the Details Page
+	When User clicks 'Empty' checkbox from String Filter in the filter dropdown for the 'Workflow' column
+	When User clicks 'Empty' checkbox from String Filter in the filter dropdown for the 'Workflow' column
+	Then 'Empty' checkbox is checked in the filter dropdown for the 'Workflow' column
