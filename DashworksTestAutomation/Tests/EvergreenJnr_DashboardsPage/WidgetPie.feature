@@ -129,7 +129,7 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatWhenEditingPieWidgetAggre
 	Then 'Widget_DAS15500' Widget is displayed to the user
 	When User clicks Ellipsis menu for 'Widget_DAS15500' Widget on Dashboards page
 	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
-	And User selects '<WidgetType>' in the 'WidgetType' Widget dropdown
+	When User selects '<WidgetType>' in the 'WidgetType' dropdown
 	Then Aggregate Function dropdown is placed above the Aggregate By dropdown
 
 Examples: 
@@ -215,7 +215,7 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatSelectingAggregateFunctio
 	And User enters 'Widget Name' as Widget Title
 	And User selects 'ListWithAllDatatypes' as Widget List
 	When User selects 'Operating System' in the 'SplitBy' dropdown
-	When User selects '<AggFunc>' in the 'Aggregate Function' Widget dropdown
+	When User selects '<AggFunc>' in the 'AggregateFunction' dropdown
 	Then User sees following options for Aggregate By selector on Create Widget page:
 	| items               |
 	| HDD Total Size (GB) |
