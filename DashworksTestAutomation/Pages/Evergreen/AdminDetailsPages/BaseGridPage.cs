@@ -102,7 +102,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'actions-right-button')]//button[@aria-label='GroupBy']")]
         public IWebElement GroupByButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'actions-right-button')]/button[@aria-label='Export']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='action-container']//button[@automation = 'grid bar export']")]
         public IWebElement ExportButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'action')][not(contains(@class,'edit'))]//button[@aria-label='reload']")]
