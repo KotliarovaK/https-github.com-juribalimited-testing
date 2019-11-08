@@ -80,21 +80,21 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatArchivedItemStillRemainsInStaticList")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatArchivedItemStillRemainsInStaticList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("AllLists")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
         [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS17651")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        public virtual void EvergreenJnr_DashboardsPage_CheckThatArchivedItemStillRemainsInStaticList()
+        public virtual void EvergreenJnr_DevicesList_CheckThatArchivedItemStillRemainsInStaticList()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_DashboardsPage_CheckThatArchivedItemStillRemainsInStaticListInternal();
+                    this.EvergreenJnr_DevicesList_CheckThatArchivedItemStillRemainsInStaticListInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -113,9 +113,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
             }
         }
 
-        private void EvergreenJnr_DashboardsPage_CheckThatArchivedItemStillRemainsInStaticListInternal()
+        private void EvergreenJnr_DevicesList_CheckThatArchivedItemStillRemainsInStaticListInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckThatArchivedItemStillRemainsInStaticList", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatArchivedItemStillRemainsInStaticList", null, new string[] {
                         "Evergreen",
                         "AllLists",
                         "EvergreenJnr_ListDetails",
@@ -175,7 +175,7 @@ this.FeatureBackground();
 
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatCustomFieldFiltersAndColumnsAreMultiValue")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatCustomFieldFiltersAndColumnsAreMultiValue")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("AllLists")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
@@ -184,14 +184,14 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Devices", "aaa", "Equals", "0.665371384, 1kk, 2kk, 3kk, aaa, bbb, ccc", "ComputerCustomField", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "aaa", "Equals", "1kk, 2kk, 3kk, aaa, bbb, ccc", "Mailbox Filter 1", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "aaa", "Equals", "1kk, 2 kk, 3kk, abdc, aaa, bbb", "App field 1", null)]
-        public virtual void EvergreenJnr_DashboardsPage_CheckThatCustomFieldFiltersAndColumnsAreMultiValue(string listName, string customValue, string @operator, string columnData, string customColumn, string[] exampleTags)
+        public virtual void EvergreenJnr_AllLists_CheckThatCustomFieldFiltersAndColumnsAreMultiValue(string listName, string customValue, string @operator, string columnData, string customColumn, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_DashboardsPage_CheckThatCustomFieldFiltersAndColumnsAreMultiValueInternal(listName,customValue,@operator,columnData,customColumn,exampleTags);
+                    this.EvergreenJnr_AllLists_CheckThatCustomFieldFiltersAndColumnsAreMultiValueInternal(listName,customValue,@operator,columnData,customColumn,exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -210,7 +210,7 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_DashboardsPage_CheckThatCustomFieldFiltersAndColumnsAreMultiValueInternal(string listName, string customValue, string @operator, string columnData, string customColumn, string[] exampleTags)
+        private void EvergreenJnr_AllLists_CheckThatCustomFieldFiltersAndColumnsAreMultiValueInternal(string listName, string customValue, string @operator, string columnData, string customColumn, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -222,7 +222,7 @@ this.FeatureBackground();
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckThatCustomFieldFiltersAndColumnsAreMultiValue", null, @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatCustomFieldFiltersAndColumnsAreMultiValue", null, @__tags);
 #line 32
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -247,20 +247,20 @@ this.FeatureBackground();
 
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatArchivedItemsCheckboxDisplayedInListDetails")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatArchivedItemsCheckboxDisplayedInListDetails")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
         [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS18089")]
-        public virtual void EvergreenJnr_DashboardsPage_CheckThatArchivedItemsCheckboxDisplayedInListDetails()
+        public virtual void EvergreenJnr_DevicesList_CheckThatArchivedItemsCheckboxDisplayedInListDetails()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_DashboardsPage_CheckThatArchivedItemsCheckboxDisplayedInListDetailsInternal();
+                    this.EvergreenJnr_DevicesList_CheckThatArchivedItemsCheckboxDisplayedInListDetailsInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -279,9 +279,9 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_DashboardsPage_CheckThatArchivedItemsCheckboxDisplayedInListDetailsInternal()
+        private void EvergreenJnr_DevicesList_CheckThatArchivedItemsCheckboxDisplayedInListDetailsInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckThatArchivedItemsCheckboxDisplayedInListDetails", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatArchivedItemsCheckboxDisplayedInListDetails", null, new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_ListDetails",
@@ -316,22 +316,22 @@ this.FeatureBackground();
 
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckArchivedItemsIconDisplayingAfterDeselectingArchi" +
-            "vedItems")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckArchivedItemsIconDisplayingAfterDeselectingArchived" +
+            "Items")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
         [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS17440")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        public virtual void EvergreenJnr_DashboardsPage_CheckArchivedItemsIconDisplayingAfterDeselectingArchivedItems()
+        public virtual void EvergreenJnr_DevicesList_CheckArchivedItemsIconDisplayingAfterDeselectingArchivedItems()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_DashboardsPage_CheckArchivedItemsIconDisplayingAfterDeselectingArchivedItemsInternal();
+                    this.EvergreenJnr_DevicesList_CheckArchivedItemsIconDisplayingAfterDeselectingArchivedItemsInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -350,10 +350,10 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_DashboardsPage_CheckArchivedItemsIconDisplayingAfterDeselectingArchivedItemsInternal()
+        private void EvergreenJnr_DevicesList_CheckArchivedItemsIconDisplayingAfterDeselectingArchivedItemsInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckArchivedItemsIconDisplayingAfterDeselectingArchi" +
-                    "vedItems", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckArchivedItemsIconDisplayingAfterDeselectingArchived" +
+                    "Items", null, new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_ListDetails",
@@ -389,8 +389,8 @@ this.FeatureBackground();
 
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatArchivedItemsCheckboxINotDisplayedInListDeta" +
-            "ils")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatArchivedItemsCheckboxINotDisplayedInListDetails" +
+            "")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("AllLists")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
@@ -399,14 +399,14 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Users", "All Users", "Users Readiness Columns & Filters", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "All Applications", "1803 Apps", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "All Mailboxes", "Mailbox Pivot (Complex)", null)]
-        public virtual void EvergreenJnr_DashboardsPage_CheckThatArchivedItemsCheckboxINotDisplayedInListDetails(string pageName, string listToNavigate, string list, string[] exampleTags)
+        public virtual void EvergreenJnr_DevicesList_CheckThatArchivedItemsCheckboxINotDisplayedInListDetails(string pageName, string listToNavigate, string list, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_DashboardsPage_CheckThatArchivedItemsCheckboxINotDisplayedInListDetailsInternal(pageName,listToNavigate,list,exampleTags);
+                    this.EvergreenJnr_DevicesList_CheckThatArchivedItemsCheckboxINotDisplayedInListDetailsInternal(pageName,listToNavigate,list,exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -425,7 +425,7 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_DashboardsPage_CheckThatArchivedItemsCheckboxINotDisplayedInListDetailsInternal(string pageName, string listToNavigate, string list, string[] exampleTags)
+        private void EvergreenJnr_DevicesList_CheckThatArchivedItemsCheckboxINotDisplayedInListDetailsInternal(string pageName, string listToNavigate, string list, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -437,8 +437,8 @@ this.FeatureBackground();
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckThatArchivedItemsCheckboxINotDisplayedInListDeta" +
-                    "ils", null, @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatArchivedItemsCheckboxINotDisplayedInListDetails" +
+                    "", null, @__tags);
 #line 71
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -456,6 +456,280 @@ this.FeatureBackground();
  testRunner.Then("List details panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 77
  testRunner.And("\'Archived devices included\' label is not displayed in List Details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatListDataTypeIsDisplayedCorrectlyForDynamicList")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
+        [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
+        [NUnit.Framework.CategoryAttribute("DAS18127")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "00CWZRC4UK6W20", "ADynamicDevices18127", "List Type: Dynamic", "Data: Devices", null)]
+        [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Microsoft Office 97, Professional Edition", "ADynamicApplications18127", "List Type: Dynamic", "Data: Applications", null)]
+        public virtual void EvergreenJnr_AllLists_CheckThatListDataTypeIsDisplayedCorrectlyForDynamicList(string lists, string filter, string searchTerm, string listName, string listType, string data, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatListDataTypeIsDisplayedCorrectlyForDynamicListInternal(lists,filter,searchTerm,listName,listType,data,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckThatListDataTypeIsDisplayedCorrectlyForDynamicListInternal(string lists, string filter, string searchTerm, string listName, string listType, string data, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "Devices",
+                    "EvergreenJnr_ListDetails",
+                    "ListDetailsFunctionality",
+                    "DAS18127",
+                    "Cleanup"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatListDataTypeIsDisplayedCorrectlyForDynamicList", null, @__tags);
+#line 86
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 87
+ testRunner.When(string.Format("User clicks \'{0}\' on the left-hand menu", lists), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 88
+ testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table4.AddRow(new string[] {
+                        string.Format("{0}", searchTerm)});
+#line 89
+ testRunner.When(string.Format("User add \"{0}\" filter where type is \"Equals\" with added column and following valu" +
+                        "e:", filter), ((string)(null)), table4, "When ");
+#line 92
+ testRunner.When(string.Format("User create dynamic list with \"{0}\" name on \"{1}\" page", listName, lists), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 93
+ testRunner.When(string.Format("User navigates to the \"{0}\" list", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 94
+ testRunner.When("User clicks the List Details button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 95
+ testRunner.Then("List details panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 96
+ testRunner.Then(string.Format("\'{0}\' label is displayed in List Details", listType), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 97
+ testRunner.Then(string.Format("\'{0}\' label is displayed in List Details", data), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatListDataTypeIsDisplayedCorrectlyForStaticList")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
+        [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
+        [NUnit.Framework.CategoryAttribute("DAS18127")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.TestCaseAttribute("Users", "Username", "$231000-3AC04R8AR431", "AStaticUsers18127", "List Type: Static", "Data: Users", null)]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "000F977AC8824FE39B8@bclabs.local", "AStaticApplications18127", "List Type: Static", "Data: Mailboxes", null)]
+        public virtual void EvergreenJnr_AllLists_CheckThatListDataTypeIsDisplayedCorrectlyForStaticList(string lists, string column, string row, string listName, string listType, string data, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatListDataTypeIsDisplayedCorrectlyForStaticListInternal(lists,column,row,listName,listType,data,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckThatListDataTypeIsDisplayedCorrectlyForStaticListInternal(string lists, string column, string row, string listName, string listType, string data, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "Devices",
+                    "EvergreenJnr_ListDetails",
+                    "ListDetailsFunctionality",
+                    "DAS18127",
+                    "Cleanup"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatListDataTypeIsDisplayedCorrectlyForStaticList", null, @__tags);
+#line 105
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 106
+ testRunner.When(string.Format("User clicks \'{0}\' on the left-hand menu", lists), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 107
+ testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedRowsName"});
+            table5.AddRow(new string[] {
+                        string.Format("{0}", row)});
+#line 108
+ testRunner.When(string.Format("User select \"{0}\" rows in the grid", column), ((string)(null)), table5, "When ");
+#line 111
+ testRunner.When("User selects \'Create static list\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 112
+ testRunner.When(string.Format("User create static list with \"{0}\" name", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 113
+ testRunner.Then(string.Format("\"{0}\" list is displayed to user", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 114
+ testRunner.When(string.Format("User navigates to the \"{0}\" list", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 115
+ testRunner.When("User clicks the List Details button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 116
+ testRunner.Then("List details panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 117
+ testRunner.Then(string.Format("\'{0}\' label is displayed in List Details", listType), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 118
+ testRunner.Then(string.Format("\'{0}\' label is displayed in List Details", data), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatListDataTypeIsDisplayedCorrectlyForPivot")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
+        [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
+        [NUnit.Framework.CategoryAttribute("DAS18127")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Owner Compliance", "Owner City", "APivotDevices18127", "List Type: Dynamic Pivot", "Data: Devices", null)]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Alias", "Owner City", "Created Date", "APivotMailboxes18127", "List Type: Dynamic Pivot", "Data: Mailboxes", null)]
+        public virtual void EvergreenJnr_AllLists_CheckThatListDataTypeIsDisplayedCorrectlyForPivot(string lists, string rowGroup, string column, string value, string pivotName, string listType, string data, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatListDataTypeIsDisplayedCorrectlyForPivotInternal(lists,rowGroup,column,value,pivotName,listType,data,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckThatListDataTypeIsDisplayedCorrectlyForPivotInternal(string lists, string rowGroup, string column, string value, string pivotName, string listType, string data, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "Devices",
+                    "EvergreenJnr_ListDetails",
+                    "ListDetailsFunctionality",
+                    "DAS18127",
+                    "Cleanup"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatListDataTypeIsDisplayedCorrectlyForPivot", null, @__tags);
+#line 126
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 127
+ testRunner.When(string.Format("User clicks \'{0}\' on the left-hand menu", lists), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 128
+ testRunner.When("User selects \'Pivot\' in the \'Create\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                        "RowGroups"});
+            table6.AddRow(new string[] {
+                        string.Format("{0}", rowGroup)});
+#line 129
+ testRunner.When("User selects the following Row Groups on Pivot:", ((string)(null)), table6, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Columns"});
+            table7.AddRow(new string[] {
+                        string.Format("{0}", column)});
+#line 132
+ testRunner.When("User selects the following Columns on Pivot:", ((string)(null)), table7, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table8.AddRow(new string[] {
+                        string.Format("{0}", value)});
+#line 135
+ testRunner.When("User selects the following Values on Pivot:", ((string)(null)), table8, "When ");
+#line 138
+ testRunner.When("User clicks \'RUN PIVOT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 139
+ testRunner.Then("Pivot run was completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 140
+ testRunner.When(string.Format("User creates Pivot list with \"{0}\" name", pivotName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 141
+ testRunner.Then(string.Format("\"{0}\" list is displayed to user", pivotName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 142
+ testRunner.When(string.Format("User navigates to the \"{0}\" list", pivotName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 143
+ testRunner.When("User clicks the List Details button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 144
+ testRunner.Then("List details panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 145
+ testRunner.Then(string.Format("\'{0}\' label is displayed in List Details", listType), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 146
+ testRunner.Then(string.Format("\'{0}\' label is displayed in List Details", data), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

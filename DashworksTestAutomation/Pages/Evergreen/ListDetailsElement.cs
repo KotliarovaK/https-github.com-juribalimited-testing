@@ -155,7 +155,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IWebElement GetListDetailsLabelByText(string text)
         {
-            var selector = By.XPath($".//div[@class='listPanel']//span[contains(text(),'{text}')]");
+            var selector = By.XPath($".//div[@class='listPanel']//*[contains(text(),'{text}')]");
 
             try
             {

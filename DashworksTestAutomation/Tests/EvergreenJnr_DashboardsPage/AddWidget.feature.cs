@@ -460,7 +460,7 @@ this.FeatureBackground();
 #line 58
  testRunner.And("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 59
- testRunner.And(string.Format("User selects \'{0}\' in the \'Widget Type\' Widget dropdown", widgetType), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When(string.Format("User selects \'{0}\' in the \'WidgetType\' dropdown", widgetType), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 60
  testRunner.Then("Aggregate Function dropdown is placed above the Aggregate By dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -525,7 +525,7 @@ this.FeatureBackground();
 #line 77
  testRunner.And("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 78
- testRunner.And("User selects \'List\' in the \'Widget Type\' Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User selects \'List\' in the \'WidgetType\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 79
  testRunner.Then("\'Aggregate Function\' dropdown is missing", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 80
@@ -1072,9 +1072,9 @@ this.FeatureBackground();
 #line 190
  testRunner.And("User clicks \'Edit\' item from Ellipsis menu on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 191
- testRunner.When("User selects \'Count distinct\' in the \'Aggregate Function\' Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Count distinct\' in the \'AggregateFunction\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 192
- testRunner.When("User selects \'Hostname\' in the \'Aggregate By\' Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Hostname\' in the \'AggregateBy\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 193
  testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

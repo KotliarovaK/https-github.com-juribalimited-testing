@@ -68,7 +68,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckWarningMessageUsingPrivateListForPubl
 	When User selects 'Everyone can see' permission for 'First_List_DAS16380' list on Permissions Pop-up
 	And User clicks 'UPDATE & SHARE' button 
 	And User clicks 'ADD WIDGET' button 
-	When User selects 'List' in the 'Widget Type' Widget dropdown
+	When User selects 'List' in the 'WidgetType' dropdown
 	And User enters 'Widget_For_DAS16380_1' as Widget Title
 	And User selects 'Second_List_DAS16380' as Widget List
 	Then User sees 'You have chosen a restricted list for a shared dashboard, some users may not be able to see this widget' warning text below Lists field
@@ -80,7 +80,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckWarningMessageUsingPrivateListForPubl
 	Then Review Widget List Permissions is displayed to the User
 	When User clicks 'IGNORE & SHARE' button 
 	And User clicks 'ADD WIDGET' button 
-	When User selects 'List' in the 'Widget Type' Widget dropdown
+	When User selects 'List' in the 'WidgetType' dropdown
 	And User enters 'Widget_For_DAS16380_2' as Widget Title
 	And User selects 'Second_List_DAS16380' as Widget List
 	Then User sees 'You have chosen a restricted list for a shared dashboard, some users may not be able to see this widget' warning text below Lists field
@@ -92,7 +92,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckWarningMessageUsingPrivateListForPubl
 	Then Review Widget List Permissions is displayed to the User
 	When User clicks 'IGNORE & SHARE' button 
 	And User clicks 'ADD WIDGET' button 
-	When User selects 'List' in the 'Widget Type' Widget dropdown
+	When User selects 'List' in the 'WidgetType' dropdown
 	And User enters 'Widget_For_DAS16380_3' as Widget Title
 	And User selects 'Second_List_DAS16380' as Widget List
 	Then User sees 'You have chosen a restricted list for a shared dashboard, some users may not be able to see this widget' warning text below Lists field
