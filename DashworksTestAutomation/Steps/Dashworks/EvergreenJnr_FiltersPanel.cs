@@ -640,7 +640,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserAddFilterWhereTypeIsWithoutAddedColumnAndDateOptions(string filterName, string operatorValue, Table table)
         {
             var filtersNames = _driver.NowAt<FiltersElement>();
-            filtersNames.AddAndFilter(filterName);
+            filtersNames.AddFilter(filterName);
             var filter = new BetweenOperatorFilter(_driver, operatorValue, false, table);
             filter.Do();
         }
