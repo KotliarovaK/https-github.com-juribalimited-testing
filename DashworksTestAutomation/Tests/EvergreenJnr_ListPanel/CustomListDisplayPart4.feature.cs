@@ -504,7 +504,7 @@ this.FeatureBackground();
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 110
  testRunner.When("User add \"Babel(Engl: Readiness\" filter where type is \"Equals\" with added column " +
-                    "and \"None\" Lookup option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                    "and \"Empty\" Lookup option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 111
  testRunner.Then("\"Babel(Engl: Readiness\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 112

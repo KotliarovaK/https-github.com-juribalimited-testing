@@ -697,6 +697,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS11291")]
         [NUnit.Framework.CategoryAttribute("DAS14745")]
         [NUnit.Framework.CategoryAttribute("DAS16399")]
+        [NUnit.Framework.CategoryAttribute("DAS18912")]
         public virtual void EvergreenJnr_DevicesList_ChecksTooltipsOnPivot()
         {
             System.Exception lastException = null;
@@ -733,7 +734,8 @@ this.FeatureBackground();
                         "DAS14379",
                         "DAS11291",
                         "DAS14745",
-                        "DAS16399"});
+                        "DAS16399",
+                        "DAS18912"});
 #line 174
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
