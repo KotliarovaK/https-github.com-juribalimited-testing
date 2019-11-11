@@ -164,8 +164,9 @@ namespace DashworksTestAutomation.Pages
 
         public void SelectSectionToMove(string sectionName)
         {
-            SelectSectionDropdown.Click();
             var selector = $".//mat-option//span[text()='{sectionName}']";
+            SelectSectionDropdown.Click();
+            Driver.WaitForElementToBeDisplayed(Driver.FindElement(By.XPath(selector)));
             Driver.FindElement(By.XPath(selector)).Click();
         }
 
@@ -587,6 +588,7 @@ namespace DashworksTestAutomation.Pages
                 .FindElements(By.XPath(chartSection))
                 .Where(x => x.GetCssValue("fill").Equals(legendColor)))
             {
+                //Driver.MouseHover(webElement);
                 Driver.MouseHover(webElement);
 
                 if (GetChartCategoryTooltipText().First().Equals(chartCategory))

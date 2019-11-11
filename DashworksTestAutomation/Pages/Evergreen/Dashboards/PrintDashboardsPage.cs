@@ -19,7 +19,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Dashboards
         [FindsBy(How = How.XPath, Using = ".//body[contains(@class,'dashboardPrintPreview')]//img[@alt='DashWorks']")]
         public IWebElement DashWorksPrintLogo { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div [@class='cdk-drop-list']//div[@class='widget']")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'cdk-drop-list')]//div[@class='widget']")]
         public IWebElement PrintPreviewWidgets { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@id='dashboardsModes' and contains(@style, 'min-width: 777px;')]")]
@@ -47,7 +47,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Dashboards
 
         public IWebElement GetPrintPreviewDropdownByName(string dropdown)
         {
-            var selector = $".//div[@class='styleSelectDropdown']//label[text()='{dropdown}']";
+            var selector = $".//div[@class='styleSelectDropdown']//*[@aria-label='{dropdown}']";
             Driver.WaitForElementToBeDisplayed(By.XPath(selector));
             return Driver.FindElement(By.XPath(selector));
         }

@@ -336,6 +336,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatReadinessValuesAreShownWithTheCor
 	| Table      | DAS16275_Widget | Devices_List_DAS15852 | Device Type | Severity          | 1803: Readiness | 1803: Readiness Severity ASC |
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
+	Then 'DAS16275_Widget' Widget is displayed to the user
 	Then 'Green' color displayed for 'GREEN' value in table 'DAS16275_Widget' widget
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15852 @Cleanup
@@ -355,7 +356,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatComplianceValuesAreShownWithTheCo
 	| WidgetType | Title           | List                  | SplitBy     | AggregateFunction | AggregateBy      | OrderBy                       |
 	| Table      | DAS16275_Widget | Devices_List_DAS15852 | Device Type | Severity          | Owner Compliance | Owner Compliance Severity ASC |
 	Then Widget Preview is displayed to the user
-	When User clicks 'CREATE' button 
+	When User clicks 'CREATE' button
+	Then 'DAS16275_Widget' Widget is displayed to the user
 	Then 'Green' color displayed for 'GREEN' value in table 'DAS16275_Widget' widget
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15852 @Cleanup

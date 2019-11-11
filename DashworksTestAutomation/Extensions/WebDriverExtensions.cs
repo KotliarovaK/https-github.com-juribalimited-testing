@@ -386,7 +386,7 @@ namespace DashworksTestAutomation.Extensions
         public static void MouseHover(this RemoteWebDriver driver, IWebElement element)
         {
             Actions action = new Actions(driver);
-            action.MoveToElement(element).MoveByOffset(1, 1).Build().Perform();
+            action.MoveToElement(element).Perform();
         }
 
         public static void MouseHover(this RemoteWebDriver driver, By by)

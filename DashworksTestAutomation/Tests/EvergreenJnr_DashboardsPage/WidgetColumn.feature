@@ -96,7 +96,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatColumnWidgetCanBeAdded
 	When User selects 'Operating System' in the 'SplitBy' dropdown
 	When User selects 'Count distinct' in the 'AggregateFunction' dropdown
 	When User selects 'Hostname' in the 'AggregateBy' dropdown
-	When User selects 'Operating System AS' in the 'OrderBy' dropdown
+	When User selects 'Operating System ASC' in the 'OrderBy' dropdown
 	And User enters '2' as Widget Max Values
 	And User selects the Colour Scheme by index '2'
 	Then Widget Preview is displayed to the user
@@ -118,7 +118,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatColumnWidgetCanBeEdited
 	When User selects 'Operating System' in the 'SplitBy' dropdown
 	When User selects 'Count distinct' in the 'AggregateFunction' dropdown
 	When User selects 'Hostname' in the 'AggregateBy' dropdown
-	When User selects 'Operating System AS' in the 'OrderBy' dropdown
+	When User selects 'Operating System ASC' in the 'OrderBy' dropdown
 	And User enters '2' as Widget Max Values
 	And User selects the Colour Scheme by index '2'
 	Then Widget Preview is displayed to the user
@@ -132,7 +132,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatColumnWidgetCanBeEdited
 	When User selects 'Operating System' in the 'SplitBy' dropdown
 	When User selects 'Count distinct' in the 'AggregateFunction' dropdown
 	When User selects 'Hostname' in the 'AggregateBy' dropdown
-	When User selects 'Operating System AS' in the 'OrderBy' dropdown
+	When User selects 'Operating System ASC' in the 'OrderBy' dropdown
 	And User enters '3' as Widget Max Values
 	And User selects the Colour Scheme by index '3'
 	Then Widget Preview is displayed to the user
