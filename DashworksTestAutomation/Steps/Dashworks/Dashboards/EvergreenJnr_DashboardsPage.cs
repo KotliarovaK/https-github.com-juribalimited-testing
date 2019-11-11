@@ -725,14 +725,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
-        [Then(@"Card '(.*)' Widget is displayed to the user")]
-        public void ThenCardWidgetIsDisplayedToTheUser(string widgetName)
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            _driver.WaitForDataLoading();
-            Verify.IsTrue(page.GetCardWidgetByName(widgetName).Displayed(), $"{widgetName} Widget is not displayed");
-        }
-
         [Then(@"'(.*)' color is displayed for widget")]
         public void ThenColorIsDisplayedForWidget(string color)
         {
@@ -963,6 +955,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForDataLoading();
+
             List<string> labelList = page.GetPointOfColumnWidgetByName(widgetName);
             var expectedList = table.Rows.SelectMany(row => row.Values).Where(x => !x.Equals(String.Empty)).ToList();
 

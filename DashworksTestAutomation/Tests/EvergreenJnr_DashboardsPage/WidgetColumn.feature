@@ -15,7 +15,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckStatusDisplayOrderForColumnWidget
 	| HDD Total Size (GB) |
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User Add And "Windows7Mi: In Scope" filter where type is "Equals" with added column and following checkboxes:
+	When User add "Windows7Mi: In Scope" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| TRUE               |
 	And User create dynamic list with "ListForDAS16278" name on "Devices" page
@@ -28,7 +28,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckStatusDisplayOrderForColumnWidget
 	| Column     | DAS16278_Widget | ListForDAS16278 | Windows7Mi: Status | HDD Total Size (GB) | Sum               | Windows7Mi: Status ASC | 10        | true       |
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
-	Then Card 'DAS16278_Widget' Widget is displayed to the user
+	Then 'DAS16278_Widget' Widget is displayed to the user
 	Then Line X labels of 'DAS16278_Widget' column widget is displayed in following order:
 	| ColumnName    |
 	| Not Onboarded |
@@ -43,7 +43,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckStatusDisplayOrderForColumnWidget
 	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
 	When User selects 'Windows7Mi: Status DESC' in the 'OrderBy' dropdown
 	When User clicks 'UPDATE' button 
-	Then Card 'DAS16278_Widget' Widget is displayed to the user
+	Then 'DAS16278_Widget' Widget is displayed to the user
 	Then Line X labels of 'DAS16278_Widget' column widget is displayed in following order:
 	| ColumnName    |
 	| Offboarded    |
@@ -74,7 +74,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatReadinessWidgetHasCorrectseverity
 	| Column     | SortOrderCheckForDas15780 | ListForDas15780 | Count             | Babel(Engl: Readiness | Babel(Engl: Readiness ASC | Yes       |
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
-	Then Card 'SortOrderCheckForDas15780' Widget is displayed to the user
+	Then 'SortOrderCheckForDas15780' Widget is displayed to the user
 	And Line X labels of 'SortOrderCheckForDas15780' column widget is displayed in following order:
 	| ColumnName   |
 	| Empty        |
@@ -101,7 +101,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatColumnWidgetCanBeAdded
 	And User selects the Colour Scheme by index '2'
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
-	Then Card 'ColumnWidget' Widget is displayed to the user
+	Then 'ColumnWidget' Widget is displayed to the user
 	And Line X labels of 'ColumnWidget' column widget is displayed in following order:
 	| ColumnName |
 	| Other      |
@@ -123,7 +123,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatColumnWidgetCanBeEdited
 	And User selects the Colour Scheme by index '2'
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
-	Then Card 'ColumnWidget#1' Widget is displayed to the user
+	Then 'ColumnWidget' Widget is displayed to the user
 	When User clicks Ellipsis menu for 'ColumnWidget#1' Widget on Dashboards page
 	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
 	When User selects 'Pie' in the 'WidgetType' dropdown
@@ -137,4 +137,4 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatColumnWidgetCanBeEdited
 	And User selects the Colour Scheme by index '3'
 	Then Widget Preview is displayed to the user
 	When User clicks 'UPDATE' button 
-	Then Card 'ColumnWidget#2' Widget is displayed to the user
+	Then 'ColumnWidget#2' Widget is displayed to the user
