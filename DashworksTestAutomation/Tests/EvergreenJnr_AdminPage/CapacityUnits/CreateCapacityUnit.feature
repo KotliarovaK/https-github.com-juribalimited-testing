@@ -66,7 +66,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitsCreatedCorrectly
 	When User clicks content from "Capacity Unit" column
 	Then "Default Unit" checkbox is checked and cannot be unchecked
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS13013 @DAS12926 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS13013 @DAS12926 @DAS18351 @DAS18920 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatMessageAppearsWhenUserCreatesUnitWithTheSameNameInDifferentCase
 	When User clicks 'Admin' on the left-hand menu
 	And User creates new Capacity Unit via api
@@ -77,6 +77,5 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatMessageAppearsWhenUserCreatesUnitWith
 	When User clicks 'CREATE EVERGREEN CAPACITY UNIT' button 
 	And User enters 'samenamecaseSensative' text to 'Capacity Unit Name' textbox
 	And User enters 'SameNameCaseSensative' text to 'Description' textbox
-	And User clicks 'CREATE' button 
-	Then Error message with "A capacity unit already exists with this name" text is displayed
+	Then 'A capacity unit already exists with this name' error message is displayed for 'Capacity Unit Name' field
 	And There are no errors in the browser console
