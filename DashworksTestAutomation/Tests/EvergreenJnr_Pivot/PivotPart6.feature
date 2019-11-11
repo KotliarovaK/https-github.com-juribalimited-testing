@@ -102,7 +102,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatMailboxOwnerComplianceColumnsDispl
 	| ColumnName |
 	| UNKNOWN    |
 	| GREEN      |
-	| NONE       |
+	| IGNORE     |
 
 @Evergreen @Applications @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14429
 Scenario: EvergreenJnr_ApplicationsLists_CheckThatComplianceColumnsDisplayInTheCorrectOrderForApplications
@@ -127,4 +127,4 @@ Scenario: EvergreenJnr_ApplicationsLists_CheckThatComplianceColumnsDisplayInTheC
 	| RED        |
 	| AMBER      |
 	| GREEN      |
-	| NONE       |
+	| IGNORE     |
