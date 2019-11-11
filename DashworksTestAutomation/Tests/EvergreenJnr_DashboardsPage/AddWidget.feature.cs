@@ -1514,8 +1514,10 @@ this.FeatureBackground();
 #line 284
  testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 285
- testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'WidgetForDAS18168\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 286
+ testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 287
  testRunner.Then("Data Labels are displayed on the Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1530,7 +1532,7 @@ this.FeatureBackground();
                         "4"});
             table25.AddRow(new string[] {
                         "6"});
-#line 287
+#line 288
  testRunner.Then("Data Legends values are displayed in \'WidgetForDAS18168\' widget on the Dashboard " +
                     "page", ((string)(null)), table25, "Then ");
 #line hidden
@@ -1579,19 +1581,100 @@ this.FeatureBackground();
                         "Widgets",
                         "DAS18741",
                         "Cleanup"});
-#line 296
+#line 297
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 297
- testRunner.When("Dashboard with \'DAS18741_Dashboard\' name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 298
- testRunner.When("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("Dashboard with \'DAS18741_Dashboard\' name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 299
- testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 300
+ testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 301
  testRunner.Then("only options having search term \'De\' are displayed in \'List\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatUserProfilePageOpenedWhenUserNavigatesFromUn" +
+            "savedWidgetPage")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
+        [NUnit.Framework.CategoryAttribute("DAS18054")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatUserProfilePageOpenedWhenUserNavigatesFromUnsavedWidgetPage()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DashboardsPage_CheckThatUserProfilePageOpenedWhenUserNavigatesFromUnsavedWidgetPageInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DashboardsPage_CheckThatUserProfilePageOpenedWhenUserNavigatesFromUnsavedWidgetPageInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckThatUserProfilePageOpenedWhenUserNavigatesFromUn" +
+                    "savedWidgetPage", null, new string[] {
+                        "Evergreen",
+                        "EvergreenJnr_DashboardsPage",
+                        "DAS18054",
+                        "Cleanup"});
+#line 305
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 306
+ testRunner.When("Dashboard with \'Dashboard for DAS18054\' name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 307
+ testRunner.When("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 308
+ testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
+                        "WidgetType",
+                        "Title",
+                        "List"});
+            table26.AddRow(new string[] {
+                        "Bar",
+                        "WidgetForDAS18054",
+                        "All Devices"});
+#line 309
+ testRunner.When("User adds new Widget", ((string)(null)), table26, "When ");
+#line 312
+ testRunner.When("User clicks Profile in Account Dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 313
+ testRunner.Then("User sees \'You have unsaved changes. Are you sure you want to leave the page?\' te" +
+                    "xt in alert on Edit Widget page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 314
+ testRunner.When("User clicks \'YES\' button in Unsaved Changes alert", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 315
+ testRunner.When("User waits for three seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 316
+ testRunner.When("User waits for three seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 317
+ testRunner.Then("Profile page is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

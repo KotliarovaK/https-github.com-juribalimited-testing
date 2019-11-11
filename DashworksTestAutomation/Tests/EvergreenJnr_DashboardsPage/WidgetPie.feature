@@ -393,7 +393,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckNameAndLabelAndColorSchemeForEmptyOwn
 	| Red                |
 	| Amber              |
 	| Green              |
-	| None               |
+	#| None               |
 	And User clicks Save button on the list panel
 	And User create dynamic list with "ListForDAS17467" name on "Devices" page
 	Then "ListForDAS17467" list is displayed to user
@@ -411,7 +411,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckNameAndLabelAndColorSchemeForEmptyOwn
 	Then 'WidgetForDAS17467' Widget is displayed to the user
 	Then Data Legends values are displayed in 'WidgetForDAS17467' widget on the Dashboard page
 	| LegendsValue |
-	|   Empty      |
+	| Empty        |
+	| Ignore       |
 	And Label icon displayed gray for 'WidgetForDAS17467' widget
 	And There are no errors in the browser console
 	

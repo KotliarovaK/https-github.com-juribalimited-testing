@@ -770,7 +770,7 @@ this.FeatureBackground();
 #line 136
  testRunner.And("User creates new Widget", ((string)(null)), table14, "And ");
 #line 139
- testRunner.Then("Card \'DAS15826_Widget\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'DAS15826_Widget\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
                         "TableValue"});
@@ -797,7 +797,7 @@ this.FeatureBackground();
 #line 151
  testRunner.And("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 152
- testRunner.Then("Card \'DAS15826_Widget\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'DAS15826_Widget\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
                         "TableValue"});
@@ -1997,7 +1997,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table39 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
             table39.AddRow(new string[] {
-                        "None"});
+                        "Empty"});
             table39.AddRow(new string[] {
                         "Green"});
             table39.AddRow(new string[] {
@@ -2051,10 +2051,8 @@ this.FeatureBackground();
 #line 426
  testRunner.When("User clicks Filter Expression icon in Filter Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 427
- testRunner.Then("Filter Expression displayed within Filter Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 428
- testRunner.Then("\"(1803: In Scope = true AND 1803: Readiness = None, Green or Amber)\" text is disp" +
-                    "layed in filter container", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"(1803: In Scope = true AND 1803: Readiness = Empty, Green or Amber)\" text is dis" +
+                    "played in filter container", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
