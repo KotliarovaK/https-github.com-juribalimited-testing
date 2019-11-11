@@ -168,6 +168,7 @@
     <Compile Include="DTO\RuntimeVariables\ColumnValue.cs" />
     <Compile Include="DTO\RuntimeVariables\CustomFields.cs" />
     <Compile Include="DTO\RuntimeVariables\ElementCoordinates.cs" />
+    <Compile Include="DTO\RuntimeVariables\Readiness\DefaultReadinessId.cs" />
     <Compile Include="DTO\RuntimeVariables\Readiness\Readiness.cs" />
     <Compile Include="DTO\RuntimeVariables\Rings\Rings.cs" />
     <Compile Include="DTO\RuntimeVariables\Rings\RingUnassignedId.cs" />
