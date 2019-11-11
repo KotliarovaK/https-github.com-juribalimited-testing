@@ -87,7 +87,7 @@ namespace DashworksTestAutomation.Pages.Projects.CreatingProjects
                 SelectorFor(this, p => p.ApplicationRationalisation),
                 SelectorFor(this, p => p.OriginalApplicationColumnCheckbox),
                 SelectorFor(this, p => p.IncludeSiteNameCheckbox),
-                SelectorFor(this, p => p.OnboardNotApplicableApplicationsCheckbox),
+                //SelectorFor(this, p => p.OnboardNotApplicableApplicationsCheckbox),
                 SelectorFor(this, p => p.OnboardInstalledApplicationsByAssociationCheckbox),
                 SelectorFor(this, p => p.OnboardEntitledApplicationsByAssociationCheckbox),
                 SelectorFor(this, p => p.OnboardUsedApplicationsByAssociationTo),

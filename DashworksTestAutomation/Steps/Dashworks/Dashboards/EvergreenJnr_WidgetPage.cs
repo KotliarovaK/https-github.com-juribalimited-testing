@@ -72,7 +72,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             if (row.ContainsKey("SplitBy") && !string.IsNullOrEmpty(row["SplitBy"]))
             {
-                baseActionItem.SelectDropdown(row["SplitBy"], "SplitBy");
+                createWidgetElement.SelectSplitByItem(row["SplitBy"]);
+                //baseActionItem.SelectDropdown(row["SplitBy"], "SplitBy");
             }
 
             if (row.ContainsKey("AggregateFunction") && !string.IsNullOrEmpty(row["AggregateFunction"]))
@@ -97,7 +98,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             if (row.ContainsKey("DrillDown") && !string.IsNullOrEmpty(row["DrillDown"]))
             {
-                baseActionItem.SelectDropdown(row["DrillDown"], "DrillDown");
+                baseActionItem.SelectDropdown(row["DrillDown"], "Drilldown");
                 _driver.WaitForDataLoadingOnProjects();
             }
 

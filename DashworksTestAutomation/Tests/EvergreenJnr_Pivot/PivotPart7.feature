@@ -28,7 +28,7 @@ Scenario: EvergreenJnr_UsersLists_CheckThatComplianceColumnsDisplayInTheCorrectO
 	| RED        |
 	| AMBER      |
 	| GREEN      |
-	| NONE       |
+	| IGNORE     |
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14429
 Scenario: EvergreenJnr_DevicesLists_CheckThatComplianceColumnsDisplayInTheCorrectOrderForDevices
@@ -77,7 +77,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDeviceOwnerComplianceColumnsDisplayI
 	| RED        |
 	| AMBER      |
 	| GREEN      |
-	| NONE       |
+	| IGNORE     |
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS15139 @DAS13833 @DAS13843 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatThePivotPanelShowNoFiltersAppliedIfThatWereAppliedToTheCustomList
