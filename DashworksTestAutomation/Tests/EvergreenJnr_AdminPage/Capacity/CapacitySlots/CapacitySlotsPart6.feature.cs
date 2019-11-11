@@ -219,8 +219,8 @@ this.FeatureBackground();
  testRunner.When("User selects \"All Capacity Units\" checkbox from String Filter with item list on t" +
                     "he Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 37
- testRunner.Then("\"No units,Unassigned\" is displayed in the dropdown filter for \"Capacity Units\" co" +
-                    "lumn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'No units,Unassigned\' text is displayed in the filter dropdown for the \'Capacity " +
+                    "Units\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 38
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 39
@@ -233,8 +233,8 @@ this.FeatureBackground();
 #line 42
  testRunner.When("User selects \"Unassigned\" checkbox from String Filter on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 43
- testRunner.Then("\"All Capacity Units,No units\" is displayed in the dropdown filter for \"Capacity U" +
-                    "nits\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'All Capacity Units,No units\' text is displayed in the filter dropdown for the \'C" +
+                    "apacity Units\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 44
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden

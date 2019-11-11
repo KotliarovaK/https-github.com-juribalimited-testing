@@ -299,11 +299,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.IsTrue(page.GetGreyedOutCheckboxByName(checkbox).Displayed(), "checkbox is available");
         }
 
-        [Then(@"""(.*)"" is displayed in the dropdown filter for ""(.*)"" column")]
-        public void ThenIsDisplayedInTheDropdownFilterForColumn(string text, string columnName)
+        [Then(@"'(.*)' text is displayed in the filter dropdown for the '(.*)' column")]
+        public void ThenTextIsDisplayedInTheFilterDropdownForTheColumn(string text, string columnName)
         {
             var page = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsTrue(page.GetDropdownFilterTextByColumnName(columnName, text).Displayed(), $"{text} is not displayed in the dropdown filter for {columnName}");
+            Verify.IsTrue(page.GetDropdownFilterTextByColumnName(columnName, text).Displayed(), $"'{text}' text is not displayed in the dropdown filter for the'{columnName}'");
+        }
+
+        [Then(@"'(.*)' text is not displayed in the filter dropdown for the '(.*)' column")]
+        public void ThenTextIsNotDisplayedInTheFilterDropdownForTheColumn(string text, string columnName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Verify.IsFalse(page.GetDropdownFilterTextByColumnName(columnName, text).Displayed(), $"'{text}' text is not displayed in the dropdown filter for the'{columnName}'");
         }
 
         [Then(@"All Associations are selected by default")]
@@ -1424,19 +1431,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.GetStringFilterByColumnName(columnName);
         }
 
-        [Then(@"""(.*)"" checkbox is checked in the filter dropdown")]
-        public void ThenCheckboxIsCheckedInTheFilterDropdown(string filterName)
-        {
-            var filterElement = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsTrue(filterElement.GetCheckedFilterByCheckboxName(filterName).Displayed(),
-                $"{filterName} checkbox is not checked");
-        }
-
         [Then(@"""(.*)"" is not displayed in the filter dropdown")]
         public void ThenIsNotDisplayedInTheFilterDropdown(string filterName)
         {
             var filterElement = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsFalse(filterElement.GetStringFilterByName(filterName), "PLEASE ADD EXCEPTION MESSAGE");
+            Utils.Verify.IsFalse(filterElement.GetDisplayStateForStringFilterByName(filterName), "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"Projects in filter dropdown are displayed in alphabetical order")]

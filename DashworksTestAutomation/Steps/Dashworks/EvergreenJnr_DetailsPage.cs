@@ -103,14 +103,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.BodyContainer.Click();
         }
 
-        [Then(@"All text is displayed for ""(.*)"" column in the String Filter")]
-        public void ThenAllTextIsDisplayedForColumnInTheStringFilter(string columnName)
-        {
-            var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            Verify.IsTrue(filterElement.GetStringFilterTextByColumnName(columnName),
-                $"All text is not displayed for {columnName} column");
-        }
-
         [Then(@"All text is not displayed for ""(.*)"" column in the String Filter")]
         public void ThenAllTextIsNotDisplayedForColumnInTheStringFilter(string columnName)
         {
@@ -128,9 +120,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             var filter = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             if (filter.CheckboxesStringFilter.Displayed())
-                filter.GetStringFilterByName(filterName).Click();
+                page.GetStringFilterByName(filterName);
             else
-                filter.GetBooleanStringFilterByName(filterName).Click();
+                page.GetBooleanStringFilterByName(filterName);
 
             page.BodyContainer.Click();
         }
@@ -142,8 +134,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.BodyContainer.Click();
             page.GetStringFilterByColumnName(columnName);
 
-            var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            Verify.IsTrue(filterElement.ColumnCheckboxChecked.Displayed(), $"{checkboxName} Checkbox is not selected");
+            Verify.IsTrue(page.GetCheckedFilterByCheckboxName(checkboxName).Displayed(), $"{checkboxName} Checkbox is not selected");
 
             page.BodyContainer.Click();
         }
@@ -230,7 +221,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var columnNames = column.ColumnHeadersList.Select(value => value.Text).ToList();
-            Verify.AreEqual(expectedList, columnNames, "Columns order on Item details page is incorrect");
+            Verify.AreEqual(expectedList, columnNames, "The column order is incorrect.");
         }
 
         #endregion

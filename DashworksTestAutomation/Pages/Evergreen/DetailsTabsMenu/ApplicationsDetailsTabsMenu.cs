@@ -72,14 +72,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-tab']//span[@class='ag-icon ag-icon-filter']")]
         public IWebElement FilterButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[@class='ag-column-select-label']")]
-        public IWebElement ColumnCheckboxName { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-body-container')]/div")]
         public IWebElement TableContent { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//mat-pseudo-checkbox[contains(@class, 'mat-pseudo-checkbox-checked')]")]
-        public IWebElement ColumnCheckboxChecked { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='ag-filter-body']//input")]
         public IWebElement FilterSearchTextBox { get; set; }
@@ -161,27 +155,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
         {
             return Driver.IsElementDisplayed(By.XPath(
                     $".//div[@role='presentation']/div[2]/div[{GetColumnNumberByName(columnName)}]//mat-placeholder[@class='ng-star-inserted'][text()='All']"));
-        }
-
-        public IWebElement GetFilterByName(string filterName)
-        {
-            Driver.WaitForElementToBeDisplayed(By.XPath($".//div[@class='ag-filter']//span[text()='{filterName}']"));
-            return Driver.FindElement(By.XPath($".//div[@class='ag-filter']//span[text()='{filterName}']"));
-        }
-
-        public IWebElement GetStringFilterByName(string filterName)
-        {
-            Driver.WaitForElementToBeDisplayed(
-                By.XPath($".//div[@class='ng-star-inserted']/span[(text()='{filterName}')]"));
-            return Driver.FindElement(By.XPath($".//div[@class='ng-star-inserted']//span[(text()='{filterName}')]"));
-        }
-
-        public IWebElement GetBooleanStringFilterByName(string filterName)
-        {
-            Driver.WaitForElementToBeDisplayed(
-                By.XPath($".//div[@class='boolean-icon ng-star-inserted']/span[(text()='{filterName}')]"));
-            return Driver.FindElement(
-                By.XPath($".//div[@class='boolean-icon ng-star-inserted']/span[(text()='{filterName}')]"));
         }
 
         public string PackageSiteColumnWidth()

@@ -33,11 +33,12 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAllTextIsDisplayedAfterClearingFilte
 	When User navigates to the 'Device' details page for '001PSUMZYOW581' item
 	Then Details page for "001PSUMZYOW581" item is displayed to the user
 	When User navigates to the 'Applications' left menu item
-	Then All text is displayed for "Compliance" column in the String Filter
+	Then 'All' text is displayed in the filter dropdown for the 'Compliance' column
 	When User clicks 'Red' checkbox from String Filter in the filter dropdown for the 'Compliance' column
+	#TODO upd!!!
 	Then All text is not displayed for "Compliance" column in the String Filter
 	When User clicks Reset Filters button on the Item Details page
-	Then All text is displayed for "Compliance" column in the String Filter
+	Then 'All' text is displayed in the filter dropdown for the 'Compliance' column
 	When User enters "ea" text in the Search field for "Application" column
 	Then Rows counter contains "3" found row of all rows
 	When User clicks Reset Filters button on the Item Details page
