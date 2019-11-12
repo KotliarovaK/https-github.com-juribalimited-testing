@@ -111,7 +111,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultForApplicationsCheckboxWorksOn
 	And User clicks content from "Project" column
 	And User navigates to the 'Readiness' left menu item
 	And User click content from "Readiness" column
-	When User selects state 'true' for 'Default' checkbox
+	And User updates readiness properties on Edit Readiness
+	| Readiness | Tooltip | Ready | DefaultForApplications | ColourTemplate | ProjectName                                      |
+	|           |         |       | TRUE                   |                | Windows 7 Migration (Computer Scheduled Project) |
 	And User clicks 'UPDATE' button 
 	And User clicks 'CREATE READINESS' button 
 	And User updates readiness properties on Edit Readiness
