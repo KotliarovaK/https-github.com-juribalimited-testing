@@ -44,6 +44,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Verify.That(page.ListDashboards.Select(title => title.Text).ToList().Contains(dashboardName), Is.True, $"Dashboard name is missing");
         }
 
+        [When(@"User opens '(.*)' dashboard in All Dashboards")]
+        public void WhenUserOpensDashboardInAllDashboards(string dashboardName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            page.DashboardSelector(dashboardName).Click();
+        }
+
         [When(@"User clicks Settings button for '(.*)' dashboard")]
         public void WhenUserClicksSettingsButtonForDashboard(string dashboardName)
         {

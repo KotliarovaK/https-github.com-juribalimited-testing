@@ -248,6 +248,13 @@ namespace DashworksTestAutomation.Pages
             return Driver.FindElement(dashboardSettingsSelector);
         }
 
+        public IWebElement DashboardSelector(string dashboardName)
+        {
+            var dashboardSelector =
+                By.XPath($".//div[@id='submenuBlock']//*[text()[contains(.,'{dashboardName}')]]");
+            return Driver.FindElement(dashboardSelector);
+        }
+
         public IWebElement GetMenuOfSharedUser(string username)
         {
             var dashboardSettingsSelector =

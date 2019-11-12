@@ -314,3 +314,10 @@ Examples:
 | listName                | shareType | dashboardName                        | widgetName             |
 | DeviceListFor14841_Read | Read      | Dashboard for DAS14841_Read          | WidgetForDAS14841_Read |
 | DeviceListFor14841_Edit | Edit      | Dashboard for WidgetForDAS14841_Edit | WidgetForDAS14841_Edit |
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18251 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorInConsoleWhenNavigateToDashboardThatContainsWidgetThatRefersToListThatIsNotAvailable
+ When User clicks Show Dashboards panel icon on Dashboards page
+ When User opens 'Project Status' dashboard in All Dashboards
+ Then Dashboard with 'Project Status' title displayed in All Dashboards
+ Then There are no errors in the browser console
