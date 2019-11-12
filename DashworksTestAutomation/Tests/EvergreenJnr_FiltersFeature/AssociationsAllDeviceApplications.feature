@@ -212,21 +212,27 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAllDevicesApplicationsListCanBe
 	Then User checks that file "Dashworks-Device-Applications-TestAllDeviceApplications" was downloaded
 
 @Evergreen @AllDeviceApplications @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18426 @Cleanup
-Scenario: EvergreenJnr_ApplicationsList_CheckThatApplicationsItemIsDisplayedAfterApplyingEntitledToDeviceFilter
+Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatApplicationsItemIsDisplayedAfterApplyingEntitledToDeviceFilter
 	When User clicks 'Applications' on the left-hand menu
 	When User navigates to the "All Device Applications" list
-	When User clicks the Columns button
-	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName |
-	| Device Key |
-	When User clicks the Associations button
 	When User clicks Add New button on the Filter panel
-	When User selects 'Entitled to device' option in expanded associations list
+	When User selects '<operator1>' option in expanded associations list
+	When User clicks Add And button on the Filter panel
+	When User selects '<operator2>' option in expanded associations list
+	When User clicks Add And button on the Filter panel
+	When User selects '<operator3>' option in expanded associations list
 	When User clicks 'RUN LIST' button
-	When User clicks on 'Device Key' column header
-	Then numeric data in table is sorted by 'Device Key' column in ascending order
-	When User clicks content from "Device Key" column
-	Then Details page for "00BDM1JUR8IF419" item is displayed to the user
+	When User clicks content from "Hostname" column
+	Then Details page for "<hostname>" item is displayed to the user
 	When User navigates to the 'Applications' left menu item
-	When User enters "WSE 2.0" text in the Search field for "Application" column
-	Then 'TRUE' content is displayed in the 'Entitled' column
+	When User enters "<application>" text in the Search field for "Application" column
+	Then '<installed>' content is displayed in the 'Installed' column
+	Then '<used>' content is displayed in the 'Used' column
+	Then '<entitled>' content is displayed in the 'Entitled' column
+
+Examples: 
+	| operator1           | operator2               | operator3               | hostname        | application                   | installed | used    | entitled |
+	| Used on device      | Not entitled to device  | Not installed on device | 00BDM1JUR8IF419 | 20040610sqlserverck           | UNKNOWN   | TRUE    | FALSE    |
+	| Entitled to device  | Installed on device     | Not used on device      | 001BAQXT6JWFPI  | AddressGrabber Standard       | TRUE      | UNKNOWN | TRUE     |
+	| Entitled to device  | Not installed on device | Not used on device      | 00BDM1JUR8IF419 | cdparanoia-libs               | UNKNOWN   | FALSE   | TRUE     |
+	| Installed on device | Not entitled to device  | Not used on device      | 00KWQ4J3WKQM0G  | Adobe Reader 6.0.1 - Fran?ais | TRUE      | UNKNOWN | FALSE    |
