@@ -210,3 +210,23 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAllDevicesApplicationsListCanBe
 	Then "AssociationList18379" list is displayed to user
 	When User clicks Export button on the Admin page
 	Then User checks that file "Dashworks-Device-Applications-TestAllDeviceApplications" was downloaded
+
+@Evergreen @AllDeviceApplications @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18426 @Cleanup
+Scenario: EvergreenJnr_ApplicationsList_CheckThatApplicationsItemIsDisplayedAfterApplyingEntitledToDeviceFilter
+	When User clicks 'Applications' on the left-hand menu
+	When User navigates to the "All Device Applications" list
+	When User clicks the Columns button
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName |
+	| Device Key |
+	When User clicks the Associations button
+	When User clicks Add New button on the Filter panel
+	When User selects 'Entitled to device' option in expanded associations list
+	When User clicks 'RUN LIST' button
+	When User clicks on 'Device Key' column header
+	Then numeric data in table is sorted by 'Device Key' column in ascending order
+	When User clicks content from "Device Key" column
+	Then Details page for "00BDM1JUR8IF419" item is displayed to the user
+	When User navigates to the 'Applications' left menu item
+	When User enters "WSE 2.0" text in the Search field for "Application" column
+	Then 'TRUE' content is displayed in the 'Entitled' column
