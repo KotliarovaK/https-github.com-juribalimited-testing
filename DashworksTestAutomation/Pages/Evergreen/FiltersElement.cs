@@ -368,10 +368,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public List<string> GetFiltersNamesFromFilterPanel(string filterName)
         {
-            return Driver.FindElements(By.XPath($".//div[@class='filter-label']//span[@class='filter-label-name']"))
+            return Driver.FindElements(By.XPath($".//div[contains(@class,'filter-label')]//span[@class='filter-label-name']"))
                 .Select(x => x.Text).ToList();
-
-            //return Driver.IsElementDisplayed(By.XPath($".//div[@class='filter-label']//span[text()='{filterName}']"));//TODO: remove if fix above works for all
         }
 
         public IWebElement CloseFiltersLookupValue(string filterValue)

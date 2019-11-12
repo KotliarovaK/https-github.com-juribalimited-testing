@@ -50,7 +50,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetValuesLeadsToDeviceList
 	| Line       | Project ScheduleDAS16069 | 1803 ScheduleDAS16069 | Hostname    | Count distinct    | 1803: Pre-Migration \ Scheduled Date | 1803: Pre-Migration \ Scheduled Date ASC | Yes       |
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
-	Then Card 'Project ScheduleDAS16069' Widget is displayed to the user
+	Then 'Project ScheduleDAS16069' Widget is displayed to the user
 	When User clicks Edit mode trigger on Dashboards page
 	Then Tooltip is displayed for the point of Line widget
 	| WidgetName               | NumberOfPoint | Tooltip      |
@@ -84,8 +84,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetHavingComplianceColumns
 	| Line       | LineWidgetForDas15920 | ListForDas15920 | Count             | Device Application Compliance | Device Application Compliance ASC | Yes       |
 	Then Widget Preview is displayed to the user
 	Then 'Data Label' checkbox is not displayed on the Create Widget page
-	When User clicks 'CREATE' button 
-	Then Card 'LineWidgetForDas15920' Widget is displayed to the user
+	When User clicks 'CREATE' button
+	Then 'LineWidgetForDas15920' Widget is displayed to the user
 	And Line chart displayed in 'LineWidgetForDas15920' widget
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS15544 @Cleanup
@@ -103,7 +103,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetHasCorrectChronological
 	| Line       | SortOrderCheckForDas15544 | ListForDas15544 | Count             | Service Pack or Build | Service Pack or Build ASC | Yes       |
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
-	Then Card 'SortOrderCheckForDas15544' Widget is displayed to the user
+	Then 'SortOrderCheckForDas15544' Widget is displayed to the user
 	And Line X labels of 'SortOrderCheckForDas15544' widget is displayed in following order:
 	| ColumnName             |
 	| Empty                  |
@@ -116,7 +116,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetHasCorrectChronological
 	| Windows 8.1            |
 	| 1507                   |
 	| 1607                   |
-	
+
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15462
 Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetTooltipsShowsNameAndCount
 	When User clicks 'Dashboards' on the left-hand menu
@@ -127,7 +127,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetTooltipsShowsNameAndCou
 	| Line       | Project AllDevicesDAS15462 | All Devices | Hostname    | Count distinct    | Operating System | Operating System ASC |
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
-	Then Card 'Project AllDevicesDAS15462' Widget is displayed to the user
+	Then 'AllDevicesDAS15462' Widget is displayed to the user
 	When User clicks Edit mode trigger on Dashboards page
 	Then Tooltip is displayed for the point of Line widget
 	| WidgetName                 | NumberOfPoint | Tooltip     |
@@ -153,7 +153,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetsShowsGraphDataWhenSpli
 	And Color Scheme dropdown displayed with 'Readiness Colour Scheme' placeholder
 	And Color Scheme dropdown is disabled
 	When User clicks 'CREATE' button 
-	Then Card 'WidgetForDAS17825' Widget is displayed to the user
+	Then 'WidgetForDAS17825' Widget is displayed to the user
 	And Line chart displayed in 'WidgetForDAS17825' widget
 	When User clicks Ellipsis menu for 'WidgetForDAS17825' Widget on Dashboards page
 	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
@@ -163,5 +163,5 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetsShowsGraphDataWhenSpli
 	And Color Scheme dropdown displayed with 'Compliance Colour Scheme' placeholder 
 	And Color Scheme dropdown is disabled
 	When User clicks 'UPDATE' button 
-	Then Card 'WidgetForDAS17825' Widget is displayed to the user
+	Then 'WidgetForDAS17825' Widget is displayed to the user
 	And Line chart displayed in 'WidgetForDAS17825' widget

@@ -282,6 +282,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatAllValuesInTheLegendAndInTheLabel
 	| 4            |
 	| 6            |
 	When User clicks 'CREATE' button
+	Then 'WidgetForDAS18168' Widget is displayed to the user
 	Then There are no errors in the browser console
 	Then Data Labels are displayed on the Dashboards page
 	Then Data Legends values are displayed in 'WidgetForDAS18168' widget on the Dashboard page
@@ -292,9 +293,25 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatAllValuesInTheLegendAndInTheLabel
 	| 4            |
 	| 6            |
 
-	@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18741 @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18741 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatRelevantListIsShownAfterTypingAnyCharacters
 	When Dashboard with 'DAS18741_Dashboard' name created via API and opened
 	When User clicks Edit mode trigger on Dashboards page
 	When User clicks 'ADD WIDGET' button
 	Then only options having search term 'De' are displayed in 'List' autocomplete
+
+
+@Evergreen @EvergreenJnr_DashboardsPage @DAS18054 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatUserProfilePageOpenedWhenUserNavigatesFromUnsavedWidgetPage
+	When Dashboard with 'Dashboard for DAS18054' name created via API and opened
+	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'ADD WIDGET' button 
+	When User adds new Widget
+	| WidgetType | Title             | List        |
+	| Bar        | WidgetForDAS18054 | All Devices |
+	When User clicks Profile in Account Dropdown
+	Then User sees 'You have unsaved changes. Are you sure you want to leave the page?' text in alert on Edit Widget page
+	When User clicks 'YES' button in Unsaved Changes alert
+	When User waits for three seconds
+	When User waits for three seconds
+	Then Profile page is displayed to user

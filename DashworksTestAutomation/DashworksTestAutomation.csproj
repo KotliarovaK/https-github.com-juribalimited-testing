@@ -168,6 +168,7 @@
     <Compile Include="DTO\RuntimeVariables\ColumnValue.cs" />
     <Compile Include="DTO\RuntimeVariables\CustomFields.cs" />
     <Compile Include="DTO\RuntimeVariables\ElementCoordinates.cs" />
+    <Compile Include="DTO\RuntimeVariables\Readiness\DefaultReadinessId.cs" />
     <Compile Include="DTO\RuntimeVariables\Readiness\Readiness.cs" />
     <Compile Include="DTO\RuntimeVariables\Rings\Rings.cs" />
     <Compile Include="DTO\RuntimeVariables\Rings\RingUnassignedId.cs" />
@@ -1332,6 +1333,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EvergreenOwned.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr_ListDetails\ListDetailsFunctionalityPart10.feature.cs">
+      <DependentUpon>ListDetailsFunctionalityPart10.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr_ListDetails\ListDetailsFunctionalityPart9.feature.cs">
       <DependentUpon>ListDetailsFunctionalityPart9.feature</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -2337,6 +2343,10 @@
     <None Include="Tests\EvergreenJnr_ItemDetails\Tabs\Applications\EvergreenOwned.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>EvergreenOwned.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ListDetails\ListDetailsFunctionalityPart10.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ListDetailsFunctionalityPart10.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_ListDetails\ListDetailsFunctionalityPart9.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

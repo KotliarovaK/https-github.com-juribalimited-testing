@@ -210,3 +210,29 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAllDevicesApplicationsListCanBe
 	Then "AssociationList18379" list is displayed to user
 	When User clicks Export button on the Admin page
 	Then User checks that file "Dashworks-Device-Applications-TestAllDeviceApplications" was downloaded
+
+@Evergreen @AllDeviceApplications @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18426 @Cleanup
+Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatApplicationsItemIsDisplayedAfterApplyingEntitledToDeviceFilter
+	When User clicks 'Applications' on the left-hand menu
+	When User navigates to the "All Device Applications" list
+	When User clicks Add New button on the Filter panel
+	When User selects '<operator1>' option in expanded associations list
+	When User clicks Add And button on the Filter panel
+	When User selects '<operator2>' option in expanded associations list
+	When User clicks Add And button on the Filter panel
+	When User selects '<operator3>' option in expanded associations list
+	When User clicks 'RUN LIST' button
+	When User clicks content from "Hostname" column
+	Then Details page for "<hostname>" item is displayed to the user
+	When User navigates to the 'Applications' left menu item
+	When User enters "<application>" text in the Search field for "Application" column
+	Then '<installed>' content is displayed in the 'Installed' column
+	Then '<used>' content is displayed in the 'Used' column
+	Then '<entitled>' content is displayed in the 'Entitled' column
+
+Examples: 
+	| operator1           | operator2               | operator3               | hostname        | application                   | installed | used    | entitled |
+	| Used on device      | Not entitled to device  | Not installed on device | 00BDM1JUR8IF419 | 20040610sqlserverck           | UNKNOWN   | TRUE    | FALSE    |
+	| Entitled to device  | Installed on device     | Not used on device      | 001BAQXT6JWFPI  | AddressGrabber Standard       | TRUE      | UNKNOWN | TRUE     |
+	| Entitled to device  | Not installed on device | Not used on device      | 00BDM1JUR8IF419 | cdparanoia-libs               | UNKNOWN   | FALSE   | TRUE     |
+	| Installed on device | Not entitled to device  | Not used on device      | 00KWQ4J3WKQM0G  | Adobe Reader 6.0.1 - Fran?ais | TRUE      | UNKNOWN | FALSE    |

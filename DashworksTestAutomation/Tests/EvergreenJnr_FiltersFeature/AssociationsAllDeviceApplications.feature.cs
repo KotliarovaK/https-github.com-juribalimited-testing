@@ -907,6 +907,102 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatApplicationsItemIsDisplayedAfterApplyingEn" +
+            "titledToDeviceFilter")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("AllDeviceApplications")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
+        [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
+        [NUnit.Framework.CategoryAttribute("DAS18426")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.TestCaseAttribute("Used on device", "Not entitled to device", "Not installed on device", "00BDM1JUR8IF419", "20040610sqlserverck", "UNKNOWN", "TRUE", "FALSE", null)]
+        [NUnit.Framework.TestCaseAttribute("Entitled to device", "Installed on device", "Not used on device", "001BAQXT6JWFPI", "AddressGrabber Standard", "TRUE", "UNKNOWN", "TRUE", null)]
+        [NUnit.Framework.TestCaseAttribute("Entitled to device", "Not installed on device", "Not used on device", "00BDM1JUR8IF419", "cdparanoia-libs", "UNKNOWN", "FALSE", "TRUE", null)]
+        [NUnit.Framework.TestCaseAttribute("Installed on device", "Not entitled to device", "Not used on device", "00KWQ4J3WKQM0G", "Adobe Reader 6.0.1 - Fran?ais", "TRUE", "UNKNOWN", "FALSE", null)]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatApplicationsItemIsDisplayedAfterApplyingEntitledToDeviceFilter(string operator1, string operator2, string operator3, string hostname, string application, string installed, string used, string entitled, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ApplicationsList_CheckThatApplicationsItemIsDisplayedAfterApplyingEntitledToDeviceFilterInternal(operator1,operator2,operator3,hostname,application,installed,used,entitled,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ApplicationsList_CheckThatApplicationsItemIsDisplayedAfterApplyingEntitledToDeviceFilterInternal(string operator1, string operator2, string operator3, string hostname, string application, string installed, string used, string entitled, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "AllDeviceApplications",
+                    "EvergreenJnr_ListDetails",
+                    "ListDetailsFunctionality",
+                    "DAS18426",
+                    "Cleanup"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThatApplicationsItemIsDisplayedAfterApplyingEn" +
+                    "titledToDeviceFilter", null, @__tags);
+#line 215
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 216
+ testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 217
+ testRunner.When("User navigates to the \"All Device Applications\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 218
+ testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 219
+ testRunner.When(string.Format("User selects \'{0}\' option in expanded associations list", operator1), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 220
+ testRunner.When("User clicks Add And button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 221
+ testRunner.When(string.Format("User selects \'{0}\' option in expanded associations list", operator2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 222
+ testRunner.When("User clicks Add And button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 223
+ testRunner.When(string.Format("User selects \'{0}\' option in expanded associations list", operator3), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 224
+ testRunner.When("User clicks \'RUN LIST\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 225
+ testRunner.When("User clicks content from \"Hostname\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 226
+ testRunner.Then(string.Format("Details page for \"{0}\" item is displayed to the user", hostname), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 227
+ testRunner.When("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 228
+ testRunner.When(string.Format("User enters \"{0}\" text in the Search field for \"Application\" column", application), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 229
+ testRunner.Then(string.Format("\'{0}\' content is displayed in the \'Installed\' column", installed), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 230
+ testRunner.Then(string.Format("\'{0}\' content is displayed in the \'Used\' column", used), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 231
+ testRunner.Then(string.Format("\'{0}\' content is displayed in the \'Entitled\' column", entitled), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore

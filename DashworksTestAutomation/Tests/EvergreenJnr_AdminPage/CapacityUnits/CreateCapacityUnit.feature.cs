@@ -327,6 +327,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("CapacityUnits")]
         [NUnit.Framework.CategoryAttribute("DAS13013")]
         [NUnit.Framework.CategoryAttribute("DAS12926")]
+        [NUnit.Framework.CategoryAttribute("DAS18351")]
+        [NUnit.Framework.CategoryAttribute("DAS18920")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatMessageAppearsWhenUserCreatesUnitWithTheSameNameInDifferentCase()
         {
@@ -364,6 +366,8 @@ this.FeatureBackground();
                         "CapacityUnits",
                         "DAS13013",
                         "DAS12926",
+                        "DAS18351",
+                        "DAS18920",
                         "Cleanup"});
 #line 70
 this.ScenarioInitialize(scenarioInfo);
@@ -394,11 +398,9 @@ this.FeatureBackground();
 #line 79
  testRunner.And("User enters \'SameNameCaseSensative\' text to \'Description\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 80
- testRunner.And("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("\'A capacity unit already exists with this name\' error message is displayed for \'C" +
+                    "apacity Unit Name\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 81
- testRunner.Then("Error message with \"A capacity unit already exists with this name\" text is displa" +
-                    "yed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 82
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();

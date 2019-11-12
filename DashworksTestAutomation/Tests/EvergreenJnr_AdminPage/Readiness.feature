@@ -111,7 +111,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultForApplicationsCheckboxWorksOn
 	And User clicks content from "Project" column
 	And User navigates to the 'Readiness' left menu item
 	And User click content from "Readiness" column
-	When User selects state 'true' for 'Default' checkbox
+	And User updates readiness properties on Edit Readiness
+	| Readiness | Tooltip | Ready | DefaultForApplications | ColourTemplate | ProjectName                                      |
+	|           |         |       | TRUE                   |                | Windows 7 Migration (Computer Scheduled Project) |
 	And User clicks 'UPDATE' button 
 	And User clicks 'CREATE READINESS' button 
 	And User updates readiness properties on Edit Readiness
@@ -127,7 +129,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultForApplicationsCheckboxWorksOn
 	Then 'Default' checkbox is checked
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14937 @DAS15669 @Cleanup
-Scenario: EvergreenJnr_AdminPage_ChecksThatNewReadinessAddedBeforeNone
+Scenario: EvergreenJnr_AdminPage_ChecksThatNewReadinessAddedBeforeIgnore
 	When User clicks 'Admin' on the left-hand menu
 	And User navigates to the 'Projects' left menu item
 	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
@@ -139,7 +141,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatNewReadinessAddedBeforeNone
 	| DAS14937_1 | tooltipForDas14937_1 | TRUE  | TRUE                   | RED            | Windows 7 Migration (Computer Scheduled Project) |
 	And User clicks 'CREATE' button 
 	Then Success message is displayed and contains "The readiness has been created" text
-	And Readiness "DAS14937_1" displayed before None
+	And Readiness "DAS14937_1" displayed before Ignore
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14937
 Scenario: EvergreenJnr_AdminPage_ChecksCreateReadinessElements
@@ -191,12 +193,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDefaultCheckboxCanNotBeUncheckedForRea
 	Then 'Default' checkbox is checked
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14938 @Cleanup
-Scenario: EvergreenJnr_AdminPage_CheckThatNoneReadinessCanBePartiallyEdited
+Scenario: EvergreenJnr_AdminPage_CheckThatIgnoreReadinessCanBePartiallyEdited
 	When Project created via API and opened
 	| ProjectName       | Scope       | ProjectTemplate | Mode               |
 	| ReadinessDAS14938 | All Devices | None            | Standalone Project |
 	And User navigates to the 'Readiness' left menu item
-	And User enters "None" text in the Search field for "Readiness" column
+	And User enters "Ignore" text in the Search field for "Readiness" column
 	And User click content from "Readiness" column
 	Then 'Readiness' textbox is disabled
 	When User enters 'tooltip14938_1' text to 'Tooltip' textbox
@@ -205,9 +207,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoneReadinessCanBePartiallyEdited
 	And User clicks Colour Template field on Edit Readiness
 	Then List of available colours is not displayed to user on Edit Readiness
 	When User clicks 'UPDATE' button 
-	And User enters "None" text in the Search field for "Readiness" column
+	And User enters "Ignore" text in the Search field for "Readiness" column
 	And User click content from "Readiness" column
-	Then 'NONE' content is displayed in 'Readiness' textbox
+	Then 'IGNORE' content is displayed in 'Readiness' textbox
 	Then 'tooltip14938_1' content is displayed in 'Tooltip' textbox
 	Then 'Ready' checkbox is checked
 	Then 'Default' checkbox is checked
@@ -219,13 +221,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoChangesAppliedAfterCancelButtonPress
 	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Readiness' left menu item
-	And User enters "None" text in the Search field for "Readiness" column
+	And User enters "Ignore" text in the Search field for "Readiness" column
 	And User click content from "Readiness" column
 	When User enters 'tooltip14938_2' text to 'Tooltip' textbox
 	And User clicks 'CANCEL' button 
-	And User enters "None" text in the Search field for "Readiness" column
+	And User enters "Ignore" text in the Search field for "Readiness" column
 	And User click content from "Readiness" column
-	Then 'None' content is displayed in 'Readiness' textbox
+	Then 'Ignore' content is displayed in 'Readiness' textbox
 	Then 'Tooltip' textbox content is not equal to 'tooltip14938_2' text
 	
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14938 @Cleanup
