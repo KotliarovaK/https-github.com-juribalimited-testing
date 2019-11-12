@@ -155,13 +155,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Readiness
             Utils.Verify.That(readinessDto.DefaultForApplications.ToString(), Is.EqualTo(defaultFor).IgnoreCase, "Default For state different from stored one");
         }
 
-        [Then(@"Readiness ""(.*)"" displayed before None")]
+        [Then(@"Readiness ""(.*)"" displayed before Ignore")]
         public void ThenReadinessDisplayedBeforeNone(string title)
         {
             var readiness = _driver.NowAt<ReadinessPage>();
             List<string> labels = readiness.GetListOfReadinessLabel();
 
-            Utils.Verify.That(labels.FindIndex(x => x.Equals(title)) + 1, Is.EqualTo(labels.FindIndex(x => x.Equals("NONE"))));
+            Utils.Verify.That(labels.FindIndex(x => x.Equals(title)) + 1, Is.EqualTo(labels.FindIndex(x => x.Equals("IGNORE"))));
         }
     }
 }

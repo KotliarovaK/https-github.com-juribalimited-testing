@@ -567,7 +567,7 @@ this.FeatureBackground();
 
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_ChecksThatNewReadinessAddedBeforeNone")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_ChecksThatNewReadinessAddedBeforeIgnore")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
@@ -575,14 +575,14 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS14937")]
         [NUnit.Framework.CategoryAttribute("DAS15669")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        public virtual void EvergreenJnr_AdminPage_ChecksThatNewReadinessAddedBeforeNone()
+        public virtual void EvergreenJnr_AdminPage_ChecksThatNewReadinessAddedBeforeIgnore()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AdminPage_ChecksThatNewReadinessAddedBeforeNoneInternal();
+                    this.EvergreenJnr_AdminPage_ChecksThatNewReadinessAddedBeforeIgnoreInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -601,9 +601,9 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_AdminPage_ChecksThatNewReadinessAddedBeforeNoneInternal()
+        private void EvergreenJnr_AdminPage_ChecksThatNewReadinessAddedBeforeIgnoreInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_ChecksThatNewReadinessAddedBeforeNone", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_ChecksThatNewReadinessAddedBeforeIgnore", null, new string[] {
                         "Evergreen",
                         "Admin",
                         "EvergreenJnr_AdminPage",
@@ -651,7 +651,7 @@ this.FeatureBackground();
 #line 141
  testRunner.Then("Success message is displayed and contains \"The readiness has been created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 142
- testRunner.And("Readiness \"DAS14937_1\" displayed before None", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Readiness \"DAS14937_1\" displayed before Ignore", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -874,21 +874,21 @@ this.FeatureBackground();
 
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckThatNoneReadinessCanBePartiallyEdited")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckThatIgnoreReadinessCanBePartiallyEdited")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Readiness")]
         [NUnit.Framework.CategoryAttribute("DAS14938")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        public virtual void EvergreenJnr_AdminPage_CheckThatNoneReadinessCanBePartiallyEdited()
+        public virtual void EvergreenJnr_AdminPage_CheckThatIgnoreReadinessCanBePartiallyEdited()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AdminPage_CheckThatNoneReadinessCanBePartiallyEditedInternal();
+                    this.EvergreenJnr_AdminPage_CheckThatIgnoreReadinessCanBePartiallyEditedInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -907,9 +907,9 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_AdminPage_CheckThatNoneReadinessCanBePartiallyEditedInternal()
+        private void EvergreenJnr_AdminPage_CheckThatIgnoreReadinessCanBePartiallyEditedInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckThatNoneReadinessCanBePartiallyEdited", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckThatIgnoreReadinessCanBePartiallyEdited", null, new string[] {
                         "Evergreen",
                         "Admin",
                         "EvergreenJnr_AdminPage",
@@ -937,7 +937,7 @@ this.FeatureBackground();
 #line 198
  testRunner.And("User navigates to the \'Readiness\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 199
- testRunner.And("User enters \"None\" text in the Search field for \"Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User enters \"Ignore\" text in the Search field for \"Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 200
  testRunner.And("User click content from \"Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 201
@@ -955,11 +955,11 @@ this.FeatureBackground();
 #line 207
  testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 208
- testRunner.And("User enters \"None\" text in the Search field for \"Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User enters \"Ignore\" text in the Search field for \"Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 209
  testRunner.And("User click content from \"Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 210
- testRunner.Then("\'NONE\' content is displayed in \'Readiness\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'IGNORE\' content is displayed in \'Readiness\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 211
  testRunner.Then("\'tooltip14938_1\' content is displayed in \'Tooltip\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 212
@@ -1031,7 +1031,7 @@ this.FeatureBackground();
 #line 221
  testRunner.And("User navigates to the \'Readiness\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 222
- testRunner.And("User enters \"None\" text in the Search field for \"Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User enters \"Ignore\" text in the Search field for \"Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 223
  testRunner.And("User click content from \"Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 224
@@ -1039,11 +1039,11 @@ this.FeatureBackground();
 #line 225
  testRunner.And("User clicks \'CANCEL\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 226
- testRunner.And("User enters \"None\" text in the Search field for \"Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User enters \"Ignore\" text in the Search field for \"Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 227
  testRunner.And("User click content from \"Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 228
- testRunner.Then("\'None\' content is displayed in \'Readiness\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Ignore\' content is displayed in \'Readiness\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 229
  testRunner.Then("\'Tooltip\' textbox content is not equal to \'tooltip14938_2\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
