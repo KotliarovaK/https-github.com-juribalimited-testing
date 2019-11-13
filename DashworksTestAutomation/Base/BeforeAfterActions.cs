@@ -163,23 +163,23 @@ namespace DashworksTestAutomation.Base
                 catch { }
             }
 
-            try
-            {
-                var requestUri = "http://autorelease.corp.juriba.com/PMManageProject.aspx?ProjectId=1&v=Details";
-                var request = requestUri.GenerateRequest();
+            //try
+            //{
+            //    var requestUri = "http://autorelease.corp.juriba.com/PMManageProject.aspx?ProjectId=1&v=Details";
+            //    var request = requestUri.GenerateRequest();
 
-                var resp = _client.Value.Get(request);
+            //    var resp = _client.Value.Get(request);
 
-                if (resp.Content.Contains("Page Error"))
-                {
-                    Logger.Write("============> !!! PROJECT WAS BROKEN !!! <============");
-                }
-            }
-            catch (Exception e)
-            {
-                Logger.Write(e);
-                Logger.Write("============> !!! PROJECT WAS BROKEN !!! <============");
-            }
+            //    if (resp.Content.Contains("Page Error"))
+            //    {
+            //        Logger.Write("============> !!! PROJECT WAS BROKEN !!! <============");
+            //    }
+            //}
+            //catch (Exception e)
+            //{
+            //    Logger.Write(e);
+            //    Logger.Write("============> !!! PROJECT WAS BROKEN !!! <============");
+            //}
         }
 
         [BeforeTestRun]
