@@ -318,6 +318,6 @@ Examples:
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18251 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorInConsoleWhenNavigateToDashboardThatContainsWidgetThatRefersToListThatIsNotAvailable
  When User clicks Show Dashboards panel icon on Dashboards page
- When User opens 'Project Status' dashboard in All Dashboards
  Then Dashboard with 'Project Status' title displayed in All Dashboards
+ When User opens 'Project Status' dashboard in All Dashboards
  Then There are no errors in the browser console

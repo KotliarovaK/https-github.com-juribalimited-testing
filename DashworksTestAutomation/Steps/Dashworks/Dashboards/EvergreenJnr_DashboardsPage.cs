@@ -48,8 +48,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User opens '(.*)' dashboard in All Dashboards")]
         public void WhenUserOpensDashboardInAllDashboards(string dashboardName)
         {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            page.DashboardSelector(dashboardName).Click();
+            var page = _driver.NowAt<CustomListElement>();
+            page.GetListElementByName(dashboardName).Click();
         }
 
         [When(@"User clicks Settings button for '(.*)' dashboard")]
