@@ -125,24 +125,21 @@ Scenario: EvergreenJnr_AllDeviceApplications_CheckThatOnlyOneFilterDeletedAfterC
 	When User removes 'Used on device' association in Association panel
 	Then Remove icon displayed in 'true' state for 'Entitled to device' association
 
-@Evergreen @AllDeviceApplications @DAS18531
+@Evergreen @AllDeviceApplications @DAS18531 @DAS18763
 Scenario: EvergreenJnr_AllDeviceApplications_CheckMessageAppearingAfterResetAssociations
 	When User clicks 'Applications' on the left-hand menu
-	Then 'All Applications' list should be displayed to the user
 	When User navigates to the "All Device Applications" list
 	When User clicks Add New button on the Filter panel
 	When User selects 'Used on device' option in expanded associations list
 	When User clicks the Filters button
-	When User add "App Vendor" filter where type is "Equals" with added column and following value:
+	When User add "App Version" filter where type is "Equals" with added column and following value:
 	| Values |
-	| 0      |
-	When User clicks 'RUN LIST' button
-	Then table content is present
+	| sss    |
 	When User clicks the Associations button
+	When User clicks 'RUN LIST' button
 	When User have reset all filters
-	Then message 'No device applications found' is displayed to the user
-	
-#link with DAS-18763 after fail
+	Then message 'No list generated Use association panel to create a list' is displayed to the user
+
 @Evergreen @AllDeviceApplications @DAS18531 @Cleanup
 Scenario: EvergreenJnr_AllDeviceApplications_CheckMessageAppearingAfterDeletedRelatedList
 	When User clicks 'Devices' on the left-hand menu
@@ -155,7 +152,6 @@ Scenario: EvergreenJnr_AllDeviceApplications_CheckMessageAppearingAfterDeletedRe
 	When User create dynamic list with "DevicesList18531" name on "Devices" page
 	Then "DevicesList18531" list is displayed to user
 	When User clicks 'Applications' on the left-hand menu
-	Then 'All Applications' list should be displayed to the user
 	When User navigates to the "All Device Applications" list
 	When User clicks Add New button on the Filter panel
 	When User selects 'Used on device' option in expanded associations list
@@ -171,11 +167,11 @@ Scenario: EvergreenJnr_AllDeviceApplications_CheckMessageAppearingAfterDeletedRe
 	When User removes custom list with "DevicesList18531" name
 	Then list with "DevicesList18531" name is removed
 	When User clicks 'Applications' on the left-hand menu
-	Then 'All Applications' list should be displayed to the user
 	When User navigates to the "All Device Applications" list
 	When User navigates to the "AssociationList18531" list
 	When User clicks the Associations button
-	Then message 'This list has errors' is displayed to the user
+	#link with DAS-18763 after fail
+	Then message 'No list generated Use association panel to create a list' is displayed to the user
 
 @Evergreen @AllDeviceApplications @DAS18424
 Scenario Outline: EvergreenJnr_AllDeviceApplications_CheckThatAddAndButtonIsNotDisplayedIfAllPossibleAssociationsAreAdde

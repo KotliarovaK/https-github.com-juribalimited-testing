@@ -37,6 +37,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _user = user;
         }
 
+        //TODO should be deleted and replaced by the same step as it done for Lists - GetAllListNames
         [Then(@"Dashboard with '(.*)' title displayed in All Dashboards")]
         public void ThenFollowingDashboardDisplayedInAllDashboardList(string dashboardName)
         {

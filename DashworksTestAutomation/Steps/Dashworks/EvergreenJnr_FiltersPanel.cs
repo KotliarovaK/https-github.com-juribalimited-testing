@@ -1416,7 +1416,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<FiltersElement>();
             _driver.WaitForDataLoading();
-            Utils.Verify.AreEqual(message, page.NoResultsFoundMessage.Text, $"{message} is not displayed");
+            Utils.Verify.AreEqual(message, page.NoResultsFoundMessage.Text.Replace("\r\n", " "), $"{message} is not displayed");
         }
 
         [When(@"User change selected checkboxes:")]
