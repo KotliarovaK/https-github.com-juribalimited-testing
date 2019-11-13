@@ -58,12 +58,12 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Readiness
                 if (!string.IsNullOrEmpty(row["DefaultForApplications"]))
                 {
                     var condition = bool.Parse(row["DefaultForApplications"].ToLower());
-                    //Save default Readiness
                     if (condition)
                     {
-                        var projId = int.Parse(DatabaseHelper.GetProjectId(row["ProjectName"]));
-                        var readinessId = int.Parse(DatabaseHelper.GetProjectDefaultReadinessId(projId));
-                        _defaultReadinessId.Value.Add(new KeyValuePair<int, int>(projId, readinessId));
+                        if (!_defaultReadinessId.Value.Any())
+                        {
+                            throw new Exception("Use specific Given step (from SetDefaultReadinessBeforeScenario class) before your tests to store Default Readiness ID");
+                        }
                     }
                     bpage.GetCheckbox("Default").SetCheckboxState(condition);
                 }

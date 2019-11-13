@@ -35,18 +35,18 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Readiness.Af
         public void DeleteNewlyCreatedReadiness()
         {
             //Default readiness
-            //if (!_defaultReadinessId.Value.Any())
-            //    throw new Exception("Default Readiness ID was not saved or set.");
-
-            foreach (KeyValuePair<int, int> pair in _defaultReadinessId.Value)
+            if (_defaultReadinessId.Value.Any())
             {
-                try
+                foreach (KeyValuePair<int, int> pair in _defaultReadinessId.Value)
                 {
-                    DatabaseHelper.SetProjectDefaultReadinessId(pair.Key, pair.Value);
-                }
-                catch (Exception e)
-                {
-                    Logger.Write($"Some issues appears during set of Default Bucket in after scenario: {e}");
+                    try
+                    {
+                        DatabaseHelper.SetProjectDefaultReadinessId(pair.Key, pair.Value);
+                    }
+                    catch (Exception e)
+                    {
+                        Logger.Write($"Some issues appears during set of Default Bucket in after scenario: {e}");
+                    }
                 }
             }
 

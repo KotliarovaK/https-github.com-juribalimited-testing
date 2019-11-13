@@ -103,17 +103,16 @@ Scenario: EvergreenJnr_AdminPage_CheckReadinessDialogContainerDisplay
 	When User clicks 'DELETE' button in Dialog Pop-up
 	Then Success message is displayed and contains "The selected readinesses have been deleted, changes might not take effect immediately" text
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14937 @DAS16649 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14937 @DAS16649 @Cleanup @Do_Not_Runt_With_Readiness
 Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultForApplicationsCheckboxWorksOnEditReadinessPage
+	Given User remembers default Readiness for 'Windows 7 Migration (Computer Scheduled Project)' project
 	When User clicks 'Admin' on the left-hand menu
 	And User navigates to the 'Projects' left menu item
 	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Readiness' left menu item
 	And User click content from "Readiness" column
-	And User updates readiness properties on Edit Readiness
-	| Readiness | Tooltip | Ready | DefaultForApplications | ColourTemplate | ProjectName                                      |
-	|           |         |       | TRUE                   |                | Windows 7 Migration (Computer Scheduled Project) |
+	When User selects state 'true' for 'Default' checkbox
 	And User clicks 'UPDATE' button 
 	And User clicks 'CREATE READINESS' button 
 	And User updates readiness properties on Edit Readiness
