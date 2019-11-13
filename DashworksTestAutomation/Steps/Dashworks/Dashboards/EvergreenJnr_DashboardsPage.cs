@@ -1112,6 +1112,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 .Select(x => x.Text.Equals(value) && x.GetAttribute("style").Contains(ColorsConvertor.ConvertToHex(color))).Count(), Is.GreaterThan(0), $"Wrong color detected");
         }
 
+        public void WhenUserOpensDashboard(string p0)
+        {
+            //For dashboards navigations is used the same method as for List Navigation
+        }
+
         #region Dashboards details
 
         [When(@"User changes dashboard name to '(.*)'")]
