@@ -45,13 +45,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Verify.That(page.ListDashboards.Select(title => title.Text).ToList().Contains(dashboardName), Is.True, $"Dashboard name is missing");
         }
 
-        [When(@"User opens '(.*)' dashboard in All Dashboards")]
-        public void WhenUserOpensDashboardInAllDashboards(string dashboardName)
-        {
-            var page = _driver.NowAt<CustomListElement>();
-            page.GetListElementByName(dashboardName).Click();
-        }
-
         [When(@"User clicks Settings button for '(.*)' dashboard")]
         public void WhenUserClicksSettingsButtonForDashboard(string dashboardName)
         {
@@ -1117,6 +1110,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             Verify.That(page.GetTableGridValues(widget)
                 .Select(x => x.Text.Equals(value) && x.GetAttribute("style").Contains(ColorsConvertor.ConvertToHex(color))).Count(), Is.GreaterThan(0), $"Wrong color detected");
+        }
+
+        public void WhenUserOpensDashboard(string p0)
+        {
+            //For dashboards navigations is used the same method as for List Navigation
         }
 
         #region Dashboards details
