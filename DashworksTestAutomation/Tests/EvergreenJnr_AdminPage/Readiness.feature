@@ -129,6 +129,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultForApplicationsCheckboxWorksOn
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14937 @DAS15669 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatNewReadinessAddedBeforeIgnore
+	Given User remembers default Readiness for 'Windows 7 Migration (Computer Scheduled Project)' project
 	When User clicks 'Admin' on the left-hand menu
 	And User navigates to the 'Projects' left menu item
 	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
@@ -163,6 +164,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDefaultCheckboxCanNotBeUncheckedForRea
 	When Project created via API and opened
 	| ProjectName           | Scope       | ProjectTemplate | Mode               |
 	| ReadinessDAS14938_4A2 | All Devices | None            | Standalone Project |
+	When User remembers default Readiness for 'ReadinessDAS14938_4A2' project
 	And User navigates to the 'Readiness' left menu item
 	When User clicks String Filter button for "Default for Applications" column on the Admin page
 	And User clicks "False" checkbox from boolean filter on the Admin page
