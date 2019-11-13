@@ -35,8 +35,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Readiness.Af
         public void DeleteNewlyCreatedReadiness()
         {
             //Default readiness
-            if (!_defaultReadinessId.Value.Any())
-                throw new Exception("Default Readiness ID was not saved or set.");
+            //if (!_defaultReadinessId.Value.Any())
+            //    throw new Exception("Default Readiness ID was not saved or set.");
 
             foreach (KeyValuePair<int, int> pair in _defaultReadinessId.Value)
             {

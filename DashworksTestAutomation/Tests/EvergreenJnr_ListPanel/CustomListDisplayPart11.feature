@@ -172,3 +172,11 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThat500ErrorIsNotDisplayedAfterSavi
 	When User create custom list with "Test_Application_List_DAS_17472" name
 	Then "Test_Application_List_DAS_17472" list is displayed to user
 	Then There are no errors in the browser console
+
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS18483
+Scenario: EvergreenJnr_DevicesList_CheckThatListCanBeFoundUsingAnyCapsOrSmallLetters
+	When User clicks 'Devices' on the left-hand menu
+	When User enters "new" text in Search field at List Panel
+	Then "New York - Devices" list is not displayed in the bottom section of the List Panel
+	When User enters "New" text in Search field at List Panel
+	Then "New York - Devices" list is not displayed in the bottom section of the List Panel

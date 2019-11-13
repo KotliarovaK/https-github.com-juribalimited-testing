@@ -17,7 +17,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public string TopSubMenuItemByName = ".//div[contains(@class,'submenu-top')]//*[text()='{0}']";
 
-        public By AllListNamesInListsPanel = By.XPath(".//span[contains(@class,'list-name')]");
+        public By AllListNamesInListsPanel = By.XPath(".//a[contains(@class,'list-name')]"); //old .//span[contains(@class,'list-name')]
 
         public By ListSubMenusInListsPanel = By.XPath(".//ancestor::submenu-item");
 
