@@ -178,7 +178,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table3.AddRow(new string[] {
-                        "NONE"});
+                        "IGNORE"});
 #line 33
  testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table3, "Then ");
 #line 36

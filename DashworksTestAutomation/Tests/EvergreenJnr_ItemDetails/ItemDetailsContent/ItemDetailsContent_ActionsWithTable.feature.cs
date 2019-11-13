@@ -160,7 +160,7 @@ this.FeatureBackground();
             table1.AddRow(new string[] {
                         "UNKNOWN"});
             table1.AddRow(new string[] {
-                        "NONE"});
+                        "IGNORE"});
 #line 14
  testRunner.Then("Name of colors are displayed in following order on the Details Page:", ((string)(null)), table1, "Then ");
 #line 21

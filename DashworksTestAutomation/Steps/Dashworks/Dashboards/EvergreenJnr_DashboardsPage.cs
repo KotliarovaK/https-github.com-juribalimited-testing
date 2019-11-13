@@ -37,6 +37,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _user = user;
         }
 
+        //TODO should be deleted and replaced by the same step as it done for Lists - GetAllListNames
         [Then(@"Dashboard with '(.*)' title displayed in All Dashboards")]
         public void ThenFollowingDashboardDisplayedInAllDashboardList(string dashboardName)
         {
@@ -1109,6 +1110,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             Verify.That(page.GetTableGridValues(widget)
                 .Select(x => x.Text.Equals(value) && x.GetAttribute("style").Contains(ColorsConvertor.ConvertToHex(color))).Count(), Is.GreaterThan(0), $"Wrong color detected");
+        }
+
+        public void WhenUserOpensDashboard(string p0)
+        {
+            //For dashboards navigations is used the same method as for List Navigation
         }
 
         #region Dashboards details

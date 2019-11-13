@@ -32,7 +32,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	And User clicks String Filter button for "Application Readiness" column
 	Then following String Values are displayed in the filter on the Details Page
 	| Values |
-	| NONE   |
+	| IGNORE |
 	When User closes Checkbox filter
 	And User clicks String Filter button for "Pre-Migration" column
 	Then following String Values are displayed in the filter on the Details Page

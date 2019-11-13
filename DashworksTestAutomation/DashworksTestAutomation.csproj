@@ -358,6 +358,7 @@
     <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_GridActions.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_Messages.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_TableSorting.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\Project\Readiness\BeforeScenario\SetDefaultReadinessBeforeScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Project\Readiness\ReadinessSteps.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Project\Readiness\AfterScenario\RemoveReadinessAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Project\Scope\ScopeChangesSteps.cs" />
