@@ -355,6 +355,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [When(@"User navigates to the ""(.*)"" list")]
+        [When(@"User opens '(.*)' dashboard")]
         public void WhenUserNavigatesToTheList(string listName)
         {
             var page = _driver.NowAt<CustomListElement>();
