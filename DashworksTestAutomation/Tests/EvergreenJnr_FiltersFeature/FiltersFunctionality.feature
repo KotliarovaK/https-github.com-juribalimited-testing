@@ -2425,19 +2425,20 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOffboardedItemsDontShowAnyOtherProje
 	| Offboarded |
 	| Offboarded |
 
-@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS18377 @DAS18621
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS18377 @DAS18621 @DAS18686
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatThereIsNoErrorAfterSavingListWithFilterEqualsRelative
 	When User clicks '<List>' on the left-hand menu
 	And User clicks the Filters button
 	And User add "<Filter>" filter where type is "Equals (relative)" with added column and following value:
-	| Values |
-	| 1      |
+	| Values  |
+	| <Value> |
 	Then There are no errors in the browser console
 
 Examples:
-	| List         | Filter                               |
-	| Devices      | 1803: Pre-Migration \ Scheduled Date |
-	| Applications | Owner Last Logon Date                |
+	| List         | Filter                               | Value                                       |
+	| Devices      | 1803: Pre-Migration \ Scheduled Date | 1                                           |
+	| Applications | Owner Last Logon Date                | 1                                           |
+	| Devices      | Owner Last Logon Date                | 2.37457468568568568568658464554575547547547 |
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FilterFunctionality @DAS18140
 Scenario: EvergreenJnr_DevicesList_CheckCancelFilterButtonWorkIfSameFiltersWereApplied
@@ -2545,3 +2546,21 @@ Scenario: EvergreenJnr_CheckThatFilterBasedOnListHavingNotEmptyOperatorCanBeCrea
 	When User creates new custom list with "SecondList18100" name
 	Then "SecondList18100" list is displayed to user
 	Then There are no errors in the browser console
+
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS18616
+Scenario Outline: EvergreenJnr_DevicesList_CheckThatCpuVirtualisationCapableFilterReturnValidResults
+	When User clicks 'Devices' on the left-hand menu
+	When User clicks the Filters button
+	When User add "CPU Virtualisation Capable" filter where type is "Equals" with added column and following checkboxes:
+    | SelectedCheckboxes |
+    | <Operator>         |
+	When User clicks on 'CPU Virtualisation Capable' column header
+	Then '<Value>' content is displayed in the 'CPU Virtualisation Capable' column
+	When User clicks on 'CPU Virtualisation Capable' column header
+	Then '<Value>' content is displayed in the 'CPU Virtualisation Capable' column
+
+Examples:
+	| Operator | Value   |
+	| Empty    | UNKNOWN |
+	| FALSE    | FALSE   |
+	| TRUE     | TRUE    |

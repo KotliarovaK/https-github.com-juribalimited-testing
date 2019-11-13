@@ -567,6 +567,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("AllDeviceApplications")]
         [NUnit.Framework.CategoryAttribute("DAS18531")]
+        [NUnit.Framework.CategoryAttribute("DAS18763")]
         public virtual void EvergreenJnr_AllDeviceApplications_CheckMessageAppearingAfterResetAssociations()
         {
             System.Exception lastException = null;
@@ -598,7 +599,8 @@ this.FeatureBackground();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllDeviceApplications_CheckMessageAppearingAfterResetAssociations", null, new string[] {
                         "Evergreen",
                         "AllDeviceApplications",
-                        "DAS18531"});
+                        "DAS18531",
+                        "DAS18763"});
 #line 129
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -607,33 +609,30 @@ this.FeatureBackground();
 #line 130
  testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 131
- testRunner.Then("\'All Applications\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 132
  testRunner.When("User navigates to the \"All Device Applications\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 133
+#line 132
  testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 134
+#line 133
  testRunner.When("User selects \'Used on device\' option in expanded associations list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 135
+#line 134
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table4.AddRow(new string[] {
-                        "0"});
-#line 136
- testRunner.When("User add \"App Vendor\" filter where type is \"Equals\" with added column and followi" +
-                    "ng value:", ((string)(null)), table4, "When ");
+                        "sss"});
+#line 135
+ testRunner.When("User add \"App Version\" filter where type is \"Equals\" with added column and follow" +
+                    "ing value:", ((string)(null)), table4, "When ");
+#line 138
+ testRunner.When("User clicks the Associations button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 139
  testRunner.When("User clicks \'RUN LIST\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 140
- testRunner.Then("table content is present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 141
- testRunner.When("User clicks the Associations button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 142
  testRunner.When("User have reset all filters", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 143
- testRunner.Then("message \'No device applications found\' is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 141
+ testRunner.Then("message \'No list generated Use association panel to create a list\' is displayed t" +
+                    "o the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -678,76 +677,73 @@ this.FeatureBackground();
                         "AllDeviceApplications",
                         "DAS18531",
                         "Cleanup"});
-#line 147
+#line 144
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 148
+#line 145
  testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 149
+#line 146
  testRunner.Then("\'All Devices\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 150
+#line 147
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 151
+#line 148
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedValues"});
             table5.AddRow(new string[] {
                         "Mobile"});
-#line 152
+#line 149
  testRunner.When("User add \"Device Type\" filter where type is \"Equals\" with added column and Lookup" +
                     " option", ((string)(null)), table5, "When ");
-#line 155
+#line 152
  testRunner.When("User create dynamic list with \"DevicesList18531\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 156
+#line 153
  testRunner.Then("\"DevicesList18531\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 157
+#line 154
  testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 158
- testRunner.Then("\'All Applications\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 159
+#line 155
  testRunner.When("User navigates to the \"All Device Applications\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 160
+#line 156
  testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 161
+#line 157
  testRunner.When("User selects \'Used on device\' option in expanded associations list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 162
+#line 158
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 163
+#line 159
  testRunner.When("User add \"Device (Saved List)\" filter where type is \"In list\" without added colum" +
                     "n and \"DevicesList18531\" Lookup option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 164
+#line 160
  testRunner.When("User clicks \'RUN LIST\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 165
+#line 161
  testRunner.When("User clicks Save button on the list panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 166
+#line 162
  testRunner.When("User selects Save as new list option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 167
+#line 163
  testRunner.When("User creates new custom list with \"AssociationList18531\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 168
+#line 164
  testRunner.Then("\"AssociationList18531\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 169
+#line 165
  testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 170
+#line 166
  testRunner.Then("\'All Devices\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 171
+#line 167
  testRunner.When("User removes custom list with \"DevicesList18531\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 172
+#line 168
  testRunner.Then("list with \"DevicesList18531\" name is removed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 173
+#line 169
  testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 174
- testRunner.Then("\'All Applications\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 175
+#line 170
  testRunner.When("User navigates to the \"All Device Applications\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 176
+#line 171
  testRunner.When("User navigates to the \"AssociationList18531\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 177
+#line 172
  testRunner.When("User clicks the Associations button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 178
- testRunner.Then("message \'This list has errors\' is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 174
+ testRunner.Then("message \'No list generated Use association panel to create a list\' is displayed t" +
+                    "o the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -800,28 +796,28 @@ this.FeatureBackground();
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllDeviceApplications_CheckThatAddAndButtonIsNotDisplayedIfAllPossib" +
                     "leAssociationsAreAdde", null, @__tags);
-#line 181
+#line 177
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 182
+#line 178
  testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 183
+#line 179
  testRunner.When("User navigates to the \"All Device Applications\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 184
+#line 180
  testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 185
+#line 181
  testRunner.When(string.Format("User selects \'{0}\' option in expanded associations list", operator1), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 186
+#line 182
  testRunner.When("User clicks Add And button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 187
+#line 183
  testRunner.When(string.Format("User selects \'{0}\' option in expanded associations list", operator2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 188
+#line 184
  testRunner.When("User clicks Add And button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 189
+#line 185
  testRunner.When(string.Format("User selects \'{0}\' option in expanded associations list", operator3), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 190
+#line 186
  testRunner.Then("Add And button is not displayed on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -871,36 +867,36 @@ this.FeatureBackground();
                         "ListDetailsFunctionality",
                         "DAS18379",
                         "Cleanup"});
-#line 199
+#line 195
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 200
+#line 196
  testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 201
+#line 197
  testRunner.When("User navigates to the \"All Device Applications\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 202
+#line 198
  testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 203
+#line 199
  testRunner.When("User selects \'Entitled to device\' option in expanded associations list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 204
+#line 200
  testRunner.When("User clicks Add And button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 205
+#line 201
  testRunner.When("User selects \'Used on device\' option in expanded associations list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 206
+#line 202
  testRunner.When("User clicks \'RUN LIST\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 207
+#line 203
  testRunner.When("User clicks Save button on the list panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 208
+#line 204
  testRunner.When("User selects Save as new list option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 209
+#line 205
  testRunner.When("User creates new custom list with \"AssociationList18379\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 210
+#line 206
  testRunner.Then("\"AssociationList18379\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 211
+#line 207
  testRunner.When("User clicks Export button on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 212
+#line 208
  testRunner.Then("User checks that file \"Dashworks-Device-Applications-TestAllDeviceApplications\" w" +
                     "as downloaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -962,42 +958,42 @@ this.FeatureBackground();
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThatApplicationsItemIsDisplayedAfterApplyingEn" +
                     "titledToDeviceFilter", null, @__tags);
-#line 215
+#line 211
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 216
+#line 212
  testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 217
+#line 213
  testRunner.When("User navigates to the \"All Device Applications\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 218
+#line 214
  testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 219
+#line 215
  testRunner.When(string.Format("User selects \'{0}\' option in expanded associations list", operator1), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 220
+#line 216
  testRunner.When("User clicks Add And button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 221
+#line 217
  testRunner.When(string.Format("User selects \'{0}\' option in expanded associations list", operator2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 222
+#line 218
  testRunner.When("User clicks Add And button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 223
+#line 219
  testRunner.When(string.Format("User selects \'{0}\' option in expanded associations list", operator3), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 224
+#line 220
  testRunner.When("User clicks \'RUN LIST\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 225
+#line 221
  testRunner.When("User clicks content from \"Hostname\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 226
+#line 222
  testRunner.Then(string.Format("Details page for \"{0}\" item is displayed to the user", hostname), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 227
+#line 223
  testRunner.When("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 228
+#line 224
  testRunner.When(string.Format("User enters \"{0}\" text in the Search field for \"Application\" column", application), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 229
+#line 225
  testRunner.Then(string.Format("\'{0}\' content is displayed in the \'Installed\' column", installed), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 230
+#line 226
  testRunner.Then(string.Format("\'{0}\' content is displayed in the \'Used\' column", used), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 231
+#line 227
  testRunner.Then(string.Format("\'{0}\' content is displayed in the \'Entitled\' column", entitled), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
