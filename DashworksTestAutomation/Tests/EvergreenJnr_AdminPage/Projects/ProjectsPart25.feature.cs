@@ -175,6 +175,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS17699")]
+        [NUnit.Framework.CategoryAttribute("DAS18943")]
         [NUnit.Framework.TestCaseAttribute("User Evergreen Capacity Project", "Device Scope", "1803 Rollout", "Application Scope", "1803 Apps", null)]
         public virtual void EvergreenJnr_AdminPage_CheckSavingOfChangesOnScopeDetailsPageForUserProject(string projectName, string tab1, string list1, string tab2, string list2, string[] exampleTags)
         {
@@ -210,7 +211,8 @@ this.FeatureBackground();
                     "EvergreenJnr_AdminPage",
                     "AdminPage",
                     "Projects",
-                    "DAS17699"};
+                    "DAS17699",
+                    "DAS18943"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));

@@ -73,7 +73,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedBucketsIsDisplayedForOnboarded
 	When User enters "Units" text in the Search field for "Capacity Unit" column
 	Then Rows counter shows "0" of "1" rows
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12157 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12157 @DAS18943 @Cleanup
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectScopeChangesIsLoadedSuccessfullyAfterChangingProjectScopeToACustomList
 	When User create static list with "DevicesList12157" name on "Devices" page with following items
 	| ItemName       |
