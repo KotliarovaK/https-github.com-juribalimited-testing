@@ -232,16 +232,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.AreEqual("400", dashboardPage.GetHeaderFontWeight(), "Header font weight is incorrect");
         }
 
-        [Then(@"Column is displayed in following order:")]
-        public void ThenColumnIsDisplayedInFollowingOrder(Table table)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-
-            var columnNames = page.GetAllColumnHeaders().Select(column => column.Text).ToList();
-            var expectedList = table.Rows.SelectMany(row => row.Values).Where(x => !x.Equals(String.Empty)).ToList();
-            Utils.Verify.AreEqual(expectedList, columnNames, "Columns order is incorrect");
-        }
-
         [Then(@"URL is ""(.*)""")]
         public void ThenURLIs(string urlPart)
         {

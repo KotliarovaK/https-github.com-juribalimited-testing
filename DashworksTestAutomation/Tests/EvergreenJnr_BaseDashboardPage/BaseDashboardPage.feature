@@ -38,7 +38,7 @@ Examples:
 Scenario Outline: EvergreenJnr_AllList_CheckDefaultColumnsDisplayingWhenUsingAllLink
 	When User clicks '<ListName>' on the left-hand menu
 	And User navigates to the "<AllItems>" list
-	Then Column is displayed in following order:
+	Then grid headers are displayed in the following order
 	| ColumnName |
 	| <Column1>  |
 	| <Column2>  |

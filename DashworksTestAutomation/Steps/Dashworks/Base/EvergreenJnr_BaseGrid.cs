@@ -28,6 +28,19 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             _driver = driver;
         }
 
+        #region Headers
+
+        [Then(@"grid headers are displayed in the following order")]
+        public void ThenGridHeadersAreDisplayedInTheFollowingOrder(Table table)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            var allHeaders = page.GetAllHeadersText();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            Verify.AreEqual(expectedList, allHeaders, "Columns order is incorrect");
+        }
+
+        #endregion
+
         #region Select content
 
         [When(@"User deselect all rows on the grid")]

@@ -999,7 +999,7 @@ this.FeatureBackground();
             table21.AddRow(new string[] {
                         "Owner Display Name"});
 #line 189
- testRunner.Then("Column is displayed in following order:", ((string)(null)), table21, "Then ");
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table21, "Then ");
 #line 195
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 196
@@ -1041,7 +1041,7 @@ this.FeatureBackground();
             table23.AddRow(new string[] {
                         "Distinguished Name"});
 #line 209
- testRunner.Then("Column is displayed in following order:", ((string)(null)), table23, "Then ");
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table23, "Then ");
 #line 215
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 216
@@ -1077,7 +1077,7 @@ this.FeatureBackground();
             table25.AddRow(new string[] {
                         "Version"});
 #line 227
- testRunner.Then("Column is displayed in following order:", ((string)(null)), table25, "Then ");
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table25, "Then ");
 #line 232
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 233
@@ -1121,7 +1121,7 @@ this.FeatureBackground();
             table27.AddRow(new string[] {
                         "Owner Display Name"});
 #line 246
- testRunner.Then("Column is displayed in following order:", ((string)(null)), table27, "Then ");
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table27, "Then ");
 #line 253
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 254
@@ -1363,7 +1363,7 @@ this.FeatureBackground();
             table34.AddRow(new string[] {
                         "Import"});
 #line 312
- testRunner.And("Column is displayed in following order:", ((string)(null)), table34, "And ");
+ testRunner.And("grid headers are displayed in the following order", ((string)(null)), table34, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1499,7 +1499,7 @@ this.FeatureBackground();
             table39.AddRow(new string[] {
                         "Enabled"});
 #line 353
- testRunner.And("Column is displayed in following order:", ((string)(null)), table39, "And ");
+ testRunner.And("grid headers are displayed in the following order", ((string)(null)), table39, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1633,7 +1633,7 @@ this.FeatureBackground();
             table44.AddRow(new string[] {
                         "Import"});
 #line 394
- testRunner.And("Column is displayed in following order:", ((string)(null)), table44, "And ");
+ testRunner.And("grid headers are displayed in the following order", ((string)(null)), table44, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1771,7 +1771,7 @@ this.FeatureBackground();
             table49.AddRow(new string[] {
                         "Import"});
 #line 434
- testRunner.And("Column is displayed in following order:", ((string)(null)), table49, "And ");
+ testRunner.And("grid headers are displayed in the following order", ((string)(null)), table49, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1919,7 +1919,7 @@ this.FeatureBackground();
             table56.AddRow(new string[] {
                         "Import"});
 #line 482
- testRunner.And("Column is displayed in following order:", ((string)(null)), table56, "And ");
+ testRunner.And("grid headers are displayed in the following order", ((string)(null)), table56, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -2082,7 +2082,7 @@ this.FeatureBackground();
             table64.AddRow(new string[] {
                         "Import"});
 #line 535
- testRunner.And("Column is displayed in following order:", ((string)(null)), table64, "And ");
+ testRunner.And("grid headers are displayed in the following order", ((string)(null)), table64, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -2381,7 +2381,7 @@ this.FeatureBackground();
             table72.AddRow(new string[] {
                         "Compliance"});
 #line 609
- testRunner.And("Column is displayed in following order:", ((string)(null)), table72, "And ");
+ testRunner.And("grid headers are displayed in the following order", ((string)(null)), table72, "And ");
 #line 616
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 617
@@ -2649,7 +2649,7 @@ this.FeatureBackground();
             table76.AddRow(new string[] {
                         "Inventory Site"});
 #line 663
- testRunner.And("Column is displayed in following order:", ((string)(null)), table76, "And ");
+ testRunner.And("grid headers are displayed in the following order", ((string)(null)), table76, "And ");
 #line 670
  testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 671
@@ -2754,7 +2754,7 @@ this.FeatureBackground();
             table78.AddRow(new string[] {
                         "Department Name"});
 #line 689
- testRunner.Then("Column is displayed in following order:", ((string)(null)), table78, "Then ");
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table78, "Then ");
 #line 696
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 697

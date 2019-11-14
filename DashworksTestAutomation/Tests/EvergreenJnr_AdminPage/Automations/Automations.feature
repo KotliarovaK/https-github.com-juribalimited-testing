@@ -14,7 +14,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationsLogGridLoads
 	Then Page with 'Automations' header is displayed to user
 	When User navigates to the 'Automation Log' left menu item
 	Then 'Automations' left menu item is expanded
-	Then Columns on Admin page is displayed in following order:
+	Then grid headers are displayed in the following order
 	| ColumnName          |
 	| Date                |
 	| Type                |
@@ -61,7 +61,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
-	Then Columns on Admin page is displayed in following order:
+	Then grid headers are displayed in the following order
 	| ColumnName  |
 	|             |
 	| Automation  |
@@ -190,7 +190,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToTopOptionWorksC
 	And User select "Processing order" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
 	#Update after gold data was complete
-	Then Columns on Admin page is displayed in following order:
+	Then grid headers are displayed in the following order
     | ColumnName       |
     |                  |
     | Automation       |
@@ -386,7 +386,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridLoadsWithActionsForAnAutoma
 	When User clicks content from "Automation" column
 	When User navigates to the 'Actions' left menu item
 	Then Counter shows "3" found rows
-	Then Columns on Admin page is displayed in following order:
+	Then grid headers are displayed in the following order
 	| ColumnName    |
 	|               |
 	| Action        |
@@ -402,7 +402,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridLoadsWithActionsForAnAutoma
 	When User select "Processing order" checkbox on the Column Settings panel
 	When User select "Action Type ID" checkbox on the Column Settings panel
 	When User select "Project ID" checkbox on the Column Settings panel
-	Then Columns on Admin page is displayed in following order:
+	Then grid headers are displayed in the following order
 	| ColumnName       |
 	|                  |
 	| Action ID        |

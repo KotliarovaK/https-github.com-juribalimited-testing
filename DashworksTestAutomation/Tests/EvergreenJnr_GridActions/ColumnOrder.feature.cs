@@ -335,7 +335,7 @@ this.FeatureBackground();
             table5.AddRow(new string[] {
                         "Compliance"});
 #line 49
- testRunner.Then("Column is displayed in following order:", ((string)(null)), table5, "Then ");
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table5, "Then ");
 #line 57
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 58
@@ -366,7 +366,7 @@ this.FeatureBackground();
             table7.AddRow(new string[] {
                         "Windows7Mi: Category"});
 #line 62
- testRunner.Then("Column is displayed in following order:", ((string)(null)), table7, "Then ");
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table7, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -451,7 +451,7 @@ this.FeatureBackground();
             table9.AddRow(new string[] {
                         "Compliance"});
 #line 82
- testRunner.Then("Column is displayed in following order:", ((string)(null)), table9, "Then ");
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table9, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
@@ -475,7 +475,7 @@ this.FeatureBackground();
             table11.AddRow(new string[] {
                         "User Key"});
 #line 92
- testRunner.Then("Column is displayed in following order:", ((string)(null)), table11, "Then ");
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table11, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -558,7 +558,7 @@ this.FeatureBackground();
             table13.AddRow(new string[] {
                         "Import Type"});
 #line 108
- testRunner.Then("Column is displayed in following order:", ((string)(null)), table13, "Then ");
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table13, "Then ");
 #line 117
  testRunner.When("User perform search by \"Smith\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -579,7 +579,7 @@ this.FeatureBackground();
             table14.AddRow(new string[] {
                         "Import Type"});
 #line 118
- testRunner.Then("Column is displayed in following order:", ((string)(null)), table14, "Then ");
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table14, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -660,7 +660,7 @@ this.FeatureBackground();
             table16.AddRow(new string[] {
                         "Version"});
 #line 139
- testRunner.Then("Column is displayed in following order:", ((string)(null)), table16, "Then ");
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table16, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

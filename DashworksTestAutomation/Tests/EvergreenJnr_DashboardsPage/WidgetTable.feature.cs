@@ -478,7 +478,7 @@ this.FeatureBackground();
             table7.AddRow(new string[] {
                         "Version"});
 #line 77
- testRunner.And("Column is displayed in following order:", ((string)(null)), table7, "And ");
+ testRunner.And("grid headers are displayed in the following order", ((string)(null)), table7, "And ");
 #line hidden
             this.ScenarioCleanup();
         }

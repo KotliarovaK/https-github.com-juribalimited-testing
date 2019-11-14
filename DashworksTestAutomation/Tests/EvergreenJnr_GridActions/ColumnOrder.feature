@@ -46,7 +46,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnsOrderSavedAfterAddingAFilter
 	| Compliance   |
 	| Boot Up Date |
 	When User move 'Boot Up Date' column to 'Hostname' column
-	Then Column is displayed in following order:
+	Then grid headers are displayed in the following order
 	| ColumnName         |
 	| Hostname           |
 	| Boot Up Date       |
@@ -59,7 +59,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnsOrderSavedAfterAddingAFilter
 	When User add "Windows7Mi: Category" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| None               |
-	Then Column is displayed in following order:
+	Then grid headers are displayed in the following order
 	| ColumnName           |
 	| Hostname             |
 	| Boot Up Date         |
@@ -79,7 +79,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatColumnsOrderSavedAfterAddingAnotherCol
 	And User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When User removes "Distinguished Name" column by Column panel
-	Then Column is displayed in following order:
+	Then grid headers are displayed in the following order
 	| ColumnName         |
 	| Username           |
 	| Email Address      |
@@ -89,7 +89,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatColumnsOrderSavedAfterAddingAnotherCol
 	When User add following columns using current URL on "Users" page:
 	| ColumnName |
 	| User Key   |
-	Then Column is displayed in following order:
+	Then grid headers are displayed in the following order
 	| ColumnName         |
 	| Username           |
 	| Email Address      |
@@ -105,7 +105,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatColumnsOrderSavedAfterUsingTheAgGr
 	| Email Count |
 	| Import Type |
 	When User move 'Email Count' column to 'Email Address' column
-	Then Column is displayed in following order:
+	Then grid headers are displayed in the following order
 	| ColumnName         |
 	| Email Address      |
 	| Email Count        |
@@ -115,7 +115,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatColumnsOrderSavedAfterUsingTheAgGr
 	| Owner Display Name |
 	| Import Type        |
 	When User perform search by "Smith"
-	Then Column is displayed in following order:
+	Then grid headers are displayed in the following order
 	| ColumnName         |
 	| Email Address      |
 	| Email Count        |
@@ -136,7 +136,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAfterDeletingFirstColumnTheColu
 	And ColumnName is removed from the list
 	| ColumnName  |
 	| Application |
-	Then Column is displayed in following order:
+	Then grid headers are displayed in the following order
 	| ColumnName         |
 	| Vendor             |
 	| Version            |

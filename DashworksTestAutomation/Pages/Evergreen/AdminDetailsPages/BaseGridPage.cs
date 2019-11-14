@@ -13,6 +13,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 {
     public class BaseGridPage : SeleniumBasePage
     {
+        public const string AllHeadersSelector = ".//div[@class='ag-header-container']/div[1]/div"; //.//span[@role='columnheader']
+
+        public const string AllHeadersTextSelector = ".//span[@class='ag-header-cell-text']";
+
         //Text that displayed near expand (plus) button for grouped values in the grid
         public const string GroupedValue =
             ".//div[@role='row'][@row-index]//span[@class='ag-group-value']";
@@ -220,12 +224,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public int GetColumnNumberByName(string columnName)
         {
-            var allHeadersSelector = By.XPath(".//div[@class='ag-header-container']/div/div");
-            Driver.WaitForDataLoading();
-            Driver.WaitForElementToBeDisplayed(allHeadersSelector);
-            var allHeaders = Driver.FindElements(allHeadersSelector);
-            List<string> allHeadersWithText =
-                allHeaders.Where(x => x.FindElements(By.XPath(".//span[@class='ag-header-cell-text']")).Count > 0).Select(x => x.Text).ToList();
+            List<string> allHeadersWithText = GetAllHeadersText();
             if (!allHeadersWithText.Any())
                 throw new Exception("Table does not contains any columns");
 
@@ -237,6 +236,25 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
             return columnNumber;
         }
+
+        #region Headers
+
+        public IList<IWebElement> GetAllHeaders()
+        {
+            var allHeadersSelector = By.XPath(AllHeadersSelector);
+            Driver.WaitForDataLoading();
+            Driver.WaitForElementToBeDisplayed(allHeadersSelector);
+            var allHeaders = Driver.FindElements(allHeadersSelector);
+            return allHeaders;
+        }
+
+        public List<string> GetAllHeadersText()
+        {
+            var allHeaders = GetAllHeaders()/*.Where(x => x.FindElements(By.XPath(AllHeadersTextSelector)).Count > 0)*/.Select(x => x.Text).ToList();
+            return allHeaders;
+        }
+
+        #endregion
 
         //Selector to the Action element below Column header
         //This can be textbox filter or other

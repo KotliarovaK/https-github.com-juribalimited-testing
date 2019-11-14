@@ -43,7 +43,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedBucketsIsDisplayedForOnboarded
 	| 003F5D8E1A844B1FAA5 |
 	Then 'UsersProject3Group' content is displayed in the 'Bucket' column
 	Then 'Unassigned' content is displayed in the 'Capacity Unit' column
-	Then Column is displayed in following order:
+	Then grid headers are displayed in the following order
 	| ColumnName    |
 	| Date          |
 	| Item          |
@@ -60,7 +60,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedBucketsIsDisplayedForOnboarded
 	| 003F5D8E1A844B1FAA5 |
 	And 'UsersProject3Group' content is displayed in the 'Bucket' column
 	Then 'Unassigned' content is displayed in the 'Capacity Unit' column
-	Then Column is displayed in following order:
+	Then grid headers are displayed in the following order
 	| ColumnName    |
 	| Date          |
 	| Item          |
